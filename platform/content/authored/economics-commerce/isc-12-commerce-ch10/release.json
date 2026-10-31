@@ -1,0 +1,5826 @@
+{
+ "unit": "isc-12-commerce-ch10",
+ "version": 1,
+ "academic_year": "2026-27",
+ "created_at": "2026-10-31",
+ "decks": [
+  {
+   "unit": "isc-12-commerce-ch10",
+   "part": 1,
+   "version": 1,
+   "title": "Staffing — Part 1: Meaning, Steps, Importance and Recruitment",
+   "language": "en",
+   "goals": [
+    "Explain the steps in the staffing process and why staffing matters",
+    "Compare internal and external sources of recruitment with their merits and demerits"
+   ],
+   "slides": [
+    {
+     "id": "s01",
+     "layout": "title",
+     "heading": "Staffing",
+     "body_md": "Part 1: what **staffing** is, its **steps**, why it **matters**, and **recruitment** with its sources.",
+     "bullets": [],
+     "visual": {
+      "kind": "flow",
+      "spec": {
+       "direction": "LR",
+       "nodes": [
+        {
+         "id": "n1",
+         "label": "What staffing is"
+        },
+        {
+         "id": "n2",
+         "label": "Its steps"
+        },
+        {
+         "id": "n3",
+         "label": "Why it matters"
+        },
+        {
+         "id": "n4",
+         "label": "Recruitment and its sources"
+        }
+       ],
+       "edges": [
+        {
+         "from": "n1",
+         "to": "n2"
+        },
+        {
+         "from": "n2",
+         "to": "n3"
+        },
+        {
+         "from": "n3",
+         "to": "n4"
+        }
+       ]
+      },
+      "alt": "Route map of Part 1: the meaning of staffing, its steps, its importance, and recruitment with internal and external sources",
+      "caption": "Part 1 at a glance"
+     },
+     "math": [],
+     "narration": "A firm can have the best plan and a perfect structure, but nothing happens until the right people fill its posts. That is the job of staffing. In this part we learn the steps of staffing, why it matters, and the first big step after estimating needs: recruitment.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s02",
+     "layout": "concept",
+     "heading": "What is staffing?",
+     "body_md": "**Staffing** is filling, and keeping filled, the positions in the organisation structure with suitable people.",
+     "bullets": [],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Staffing means…",
+        "Imagined example: a scientific-instruments firm in Ambala"
+       ],
+       "rows": [
+        [
+         "Finding how many people are needed",
+         "Ten lab technicians for a new line"
+        ],
+        [
+         "Getting suitable people",
+         "Advertising, testing and interviewing"
+        ],
+        [
+         "Placing and training them",
+         "Each technician trained on the firm's gauges"
+        ],
+        [
+         "Keeping posts filled",
+         "Replacing those who retire or are promoted"
+        ]
+       ]
+      },
+      "alt": "Table of what staffing involves, with an imagined scientific-instruments firm's examples"
+     },
+     "math": [],
+     "narration": "Staffing deals with the human element of management. It starts by working out how many people of what kind are needed, then finds them, places and trains them, judges their work, and rewards and promotes them. Because people retire, leave and are promoted, staffing never stops; it is a continuous function.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s03",
+     "layout": "diagram",
+     "heading": "Steps in staffing",
+     "body_md": "Staffing follows **eight steps**.",
+     "bullets": [],
+     "visual": {
+      "kind": "flow",
+      "spec": {
+       "direction": "LR",
+       "nodes": [
+        {
+         "id": "n1",
+         "label": "Estimate manpower needs"
+        },
+        {
+         "id": "n2",
+         "label": "Recruitment"
+        },
+        {
+         "id": "n3",
+         "label": "Selection"
+        },
+        {
+         "id": "n4",
+         "label": "Placement and orientation"
+        },
+        {
+         "id": "n5",
+         "label": "Training and development"
+        },
+        {
+         "id": "n6",
+         "label": "Performance appraisal"
+        },
+        {
+         "id": "n7",
+         "label": "Promotion and career planning"
+        },
+        {
+         "id": "n8",
+         "label": "Compensation"
+        }
+       ],
+       "edges": [
+        {
+         "from": "n1",
+         "to": "n2"
+        },
+        {
+         "from": "n2",
+         "to": "n3"
+        },
+        {
+         "from": "n3",
+         "to": "n4"
+        },
+        {
+         "from": "n4",
+         "to": "n5"
+        },
+        {
+         "from": "n5",
+         "to": "n6"
+        },
+        {
+         "from": "n6",
+         "to": "n7"
+        },
+        {
+         "from": "n7",
+         "to": "n8"
+        }
+       ]
+      },
+      "alt": "Flow of the eight steps of staffing: estimate manpower needs, recruitment, selection, placement and orientation, training and development, performance appraisal, promotion and career planning, and compensation",
+      "caption": "The staffing process."
+     },
+     "math": [],
+     "narration": "First, estimate manpower needs by comparing the people required with those available. Then recruit, which means getting suitable people to apply. Select the best. Place them in suitable jobs and introduce them to the firm. Train and develop them. Appraise their performance. Plan promotions and careers. And decide their compensation.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s04",
+     "layout": "example",
+     "heading": "Worked example 1: which step?",
+     "body_md": "An imagined yarn mill in Bhilwara is adding new machines.",
+     "bullets": [
+      "Step 1: ask whether the action comes **before, during or after** hiring.",
+      "Step 2: name the step.",
+      "Step 3: link it to the action."
+     ],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Imagined action at a yarn mill in Bhilwara",
+        "Step of staffing"
+       ],
+       "rows": [
+        [
+         "Works out how many spinners the new machines need",
+         "Estimating manpower needs"
+        ],
+        [
+         "Advertises and invites spinners to apply",
+         "Recruitment"
+        ],
+        [
+         "Tests and interviews applicants, then chooses",
+         "Selection"
+        ],
+        [
+         "Shows newcomers the mill and the safety rules",
+         "Placement and orientation"
+        ],
+        [
+         "Rates each spinner's output twice a year",
+         "Performance appraisal"
+        ]
+       ]
+      },
+      "alt": "Worked table: five imagined actions at a yarn mill matched to the steps of staffing",
+      "caption": "Ask: before hiring, during hiring, or after joining?"
+     },
+     "math": [],
+     "narration": "Working out how many spinners the machines need is estimating manpower. Advertising for spinners is recruitment. Testing and choosing is selection. Showing newcomers around is placement and orientation. Rating output twice a year is performance appraisal. Each action fits one step in the chain.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s05",
+     "layout": "check",
+     "heading": "Quick check: does it end at hiring?",
+     "body_md": "True or false: staffing ends as soon as a candidate is selected and appointed.",
+     "bullets": [],
+     "visual": null,
+     "math": [],
+     "narration": "Think about what happens after someone joins.",
+     "check_question_id": "q_isc12commerce_ch10_009",
+     "audio": null
+    },
+    {
+     "id": "s06",
+     "layout": "concept",
+     "heading": "Why staffing matters",
+     "body_md": "",
+     "bullets": [],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Importance",
+        "In short"
+       ],
+       "rows": [
+        [
+         "Obtains competent personnel",
+         "Finds capable people for each job"
+        ],
+        [
+         "Higher performance",
+         "Right person in the right job"
+        ],
+        [
+         "Survival and growth",
+         "Succession planning readies people for key posts"
+        ],
+        [
+         "Optimum use of people",
+         "Avoids both shortages and idle staff"
+        ],
+        [
+         "Job satisfaction and morale",
+         "Fair pay, training and promotion keep good people"
+        ]
+       ]
+      },
+      "alt": "Table of five points of importance of staffing with a short explanation of each"
+     },
+     "math": [],
+     "narration": "Staffing matters in five ways. It finds competent people. It puts the right person in the right job, raising performance. Through succession planning, it keeps the firm running when key people leave. It avoids both shortages and idle staff. And with fair pay, training and promotion, it keeps people satisfied and loyal.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s07",
+     "layout": "concept",
+     "heading": "Recruitment and internal sources",
+     "body_md": "**Recruitment** is searching for prospective employees and encouraging them to apply. **Internal sources** fill posts from within.",
+     "bullets": [],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Internal source",
+        "Meaning",
+        "Imagined example"
+       ],
+       "rows": [
+        [
+         "Promotion",
+         "Moving up to a higher post, pay and status",
+         "A senior tester becomes quality supervisor"
+        ],
+        [
+         "Transfer",
+         "Moving to another post or place at about the same level",
+         "A manager moves from one unit to another at the same pay"
+        ]
+       ]
+      },
+      "alt": "Table of the two internal sources of recruitment, promotion and transfer, with meanings and imagined examples"
+     },
+     "math": [],
+     "narration": "Recruitment builds a pool of applicants. The firm can look inside or outside. Inside, it has two sources. Promotion moves a person up to a higher post with more pay. Transfer moves a person to another post or place at about the same level. Both use people the firm already knows.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s08",
+     "layout": "concept",
+     "heading": "External sources",
+     "body_md": "",
+     "bullets": [],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "External source",
+        "Suits"
+       ],
+       "rows": [
+        [
+         "Direct recruitment (notice at the gate)",
+         "Unskilled and casual jobs"
+        ],
+        [
+         "Casual callers",
+         "Jobs filled from applications kept on file"
+        ],
+        [
+         "Advertisement",
+         "Senior and skilled posts needing wide choice"
+        ],
+        [
+         "Employment exchange",
+         "Clerical and skilled jobs"
+        ],
+        [
+         "Placement agencies and consultants",
+         "Senior or rare specialists"
+        ],
+        [
+         "Campus recruitment",
+         "Trainees for technical and managerial posts"
+        ],
+        [
+         "Recommendations of employees",
+         "Posts where trust matters"
+        ],
+        [
+         "Labour contractors",
+         "Unskilled workers, often short-term"
+        ],
+        [
+         "Web publishing",
+         "Many kinds of jobs, through job portals"
+        ]
+       ]
+      },
+      "alt": "Table of nine external sources of recruitment and the kind of post each suits"
+     },
+     "math": [],
+     "narration": "Outside the firm there are many sources. Notices at the gate and casual callers suit simple jobs. Advertisements and placement agencies suit senior or rare posts. Employment exchanges, campus visits, employee recommendations, labour contractors and job portals each suit their own kind of post.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s09",
+     "layout": "check",
+     "heading": "Quick check: a job portal",
+     "body_md": "A firm posts its openings on a job portal, and candidates apply online. Which source of recruitment is this?",
+     "bullets": [],
+     "visual": null,
+     "math": [],
+     "narration": "Where are the vacancies being published?",
+     "check_question_id": "q_isc12commerce_ch10_018",
+     "audio": null
+    },
+    {
+     "id": "s10",
+     "layout": "two-column",
+     "heading": "Internal or external?",
+     "body_md": "",
+     "bullets": [],
+     "columns": [
+      "**Internal**\n\nQuick, cheap, motivating; but no fresh talent and limited choice.",
+      "**External**\n\nFresh talent and wide choice; but slower, costlier and may disappoint insiders."
+     ],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Basis",
+        "Internal sources",
+        "External sources"
+       ],
+       "rows": [
+        [
+         "Speed and cost",
+         "Quicker and cheaper",
+         "Slower and costlier"
+        ],
+        [
+         "Choice",
+         "Limited to existing staff",
+         "Wide choice"
+        ],
+        [
+         "Fresh talent",
+         "None",
+         "Brings new ideas and skills"
+        ],
+        [
+         "Effect on staff",
+         "Motivates through promotion",
+         "May disappoint those hoping for promotion"
+        ]
+       ]
+      },
+      "alt": "Table comparing internal and external sources of recruitment on speed and cost, choice, fresh talent and effect on staff"
+     },
+     "math": [],
+     "narration": "Internal sources are quicker and cheaper, and promotion motivates staff, but choice is limited and no fresh ideas come in. External sources bring fresh talent and a wide choice, but they cost more, take longer, and may disappoint people hoping for promotion. A new firm has no choice: it must look outside.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s11",
+     "layout": "example",
+     "heading": "Worked example 2: matching posts to sources",
+     "body_md": "An imagined port firm in Kakinada has four posts to fill.",
+     "bullets": [
+      "Step 1: note the post's **skill**, **number** and **urgency**.",
+      "Step 2: choose the source.",
+      "Step 3: give a reason."
+     ],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Post at an imagined port firm in Kakinada",
+        "Best source",
+        "Why"
+       ],
+       "rows": [
+        [
+         "Fifty loaders for one season",
+         "Labour contractors",
+         "Many unskilled workers, quickly"
+        ],
+        [
+         "General manager for a new terminal",
+         "Advertisement or placement agency",
+         "Wide search for rare experience"
+        ],
+        [
+         "Six trainee accountants",
+         "Campus recruitment",
+         "Trained graduates in one place"
+        ],
+        [
+         "A supervisor who knows the firm",
+         "Promotion",
+         "Known ability; motivates staff"
+        ]
+       ]
+      },
+      "alt": "Worked table matching four posts at an imagined port firm with the best source of recruitment and a reason",
+      "caption": "Match the post's skill, number and urgency to the source."
+     },
+     "math": [],
+     "narration": "Fifty loaders for a season are best found through labour contractors, who supply many workers fast. A general manager needs a wide search through advertisement or a placement agency. Trainee accountants can be hired on a college campus. And a supervisor who must know the firm well can come through promotion.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s12",
+     "layout": "check",
+     "heading": "Quick check: an analogy",
+     "body_md": "Complete the analogy: promotion is to internal source as campus recruitment is to ___ source.",
+     "bullets": [],
+     "visual": null,
+     "math": [],
+     "narration": "Do campus recruits already work for the firm?",
+     "check_question_id": "q_isc12commerce_ch10_025",
+     "audio": null
+    },
+    {
+     "id": "s13",
+     "layout": "summary",
+     "heading": "Summary of Part 1",
+     "body_md": "",
+     "bullets": [],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Idea",
+        "Key point"
+       ],
+       "rows": [
+        [
+         "Staffing",
+         "Filling and keeping filled the posts with suitable people"
+        ],
+        [
+         "Steps",
+         "Estimate, recruit, select, place, train, appraise, promote, compensate"
+        ],
+        [
+         "Importance",
+         "Competent people, performance, succession, optimum use, morale"
+        ],
+        [
+         "Recruitment",
+         "Internal: promotion, transfer. External: many sources"
+        ]
+       ]
+      },
+      "alt": "Summary table of Part 1: staffing, its steps, its importance and recruitment sources"
+     },
+     "math": [],
+     "narration": "To sum up Part 1. Staffing fills and keeps filled the posts with suitable people. It has eight steps, from estimating needs to compensation. It brings competent people, better performance, succession and morale. Recruitment searches for applicants through internal sources, promotion and transfer, or many external ones.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s14",
+     "layout": "exam-tips",
+     "heading": "Exam tips",
+     "body_md": "",
+     "bullets": [
+      "Learn the **eight steps** of staffing in order.",
+      "Internal sources are only **promotion and transfer**.",
+      "For \"suggest a source\", match the **post's skill, number and urgency**.",
+      "A **new firm** must use external sources."
+     ],
+     "visual": {
+      "kind": "flow",
+      "spec": {
+       "direction": "LR",
+       "nodes": [
+        {
+         "id": "n1",
+         "label": "Quote the line"
+        },
+        {
+         "id": "n2",
+         "label": "Name the step, source or method"
+        },
+        {
+         "id": "n3",
+         "label": "Explain the link"
+        }
+       ],
+       "edges": [
+        {
+         "from": "n1",
+         "to": "n2"
+        },
+        {
+         "from": "n2",
+         "to": "n3"
+        }
+       ]
+      },
+      "alt": "Three steps for case questions: quote the line, name the step, source or method, and explain the link"
+     },
+     "math": [],
+     "narration": "A few tips. Learn the eight steps of staffing in order. Remember that the internal sources are just promotion and transfer. When asked to suggest a source, match it to the post's skill, number and urgency, and give a reason. And a brand-new firm can only recruit from outside.",
+     "check_question_id": null,
+     "audio": null
+    }
+   ],
+   "status": "draft",
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "unit": "isc-12-commerce-ch10",
+   "part": 2,
+   "version": 1,
+   "title": "Staffing — Part 2: Selection, Training and Development",
+   "language": "en",
+   "goals": [
+    "Describe the steps of the selection procedure in order and distinguish recruitment from selection",
+    "Distinguish training from development",
+    "Compare on-the-job and off-the-job methods of training"
+   ],
+   "slides": [
+    {
+     "id": "s01",
+     "layout": "title",
+     "heading": "Selection, Training and Development",
+     "body_md": "Part 2: the **selection** procedure, recruitment versus selection, and **training and development** with their methods.",
+     "bullets": [],
+     "visual": {
+      "kind": "flow",
+      "spec": {
+       "direction": "LR",
+       "nodes": [
+        {
+         "id": "n1",
+         "label": "Selection procedure"
+        },
+        {
+         "id": "n2",
+         "label": "Recruitment vs selection"
+        },
+        {
+         "id": "n3",
+         "label": "Training and development"
+        },
+        {
+         "id": "n4",
+         "label": "Methods of training"
+        }
+       ],
+       "edges": [
+        {
+         "from": "n1",
+         "to": "n2"
+        },
+        {
+         "from": "n2",
+         "to": "n3"
+        },
+        {
+         "from": "n3",
+         "to": "n4"
+        }
+       ]
+      },
+      "alt": "Route map of Part 2: the selection procedure, recruitment versus selection, training and development, and methods of training",
+      "caption": "Part 2 at a glance"
+     },
+     "math": [],
+     "narration": "Recruitment brings in applicants. Now the firm must choose the best of them, and then help them grow. In this part we walk through the steps of selection, compare recruitment with selection, and look at training and development and the many ways firms train their people.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s02",
+     "layout": "diagram",
+     "heading": "Steps in selection",
+     "body_md": "**Selection** is choosing the most suitable candidates from among the applicants.",
+     "bullets": [],
+     "visual": {
+      "kind": "flow",
+      "spec": {
+       "direction": "LR",
+       "nodes": [
+        {
+         "id": "n1",
+         "label": "Preliminary screening"
+        },
+        {
+         "id": "n2",
+         "label": "Selection tests"
+        },
+        {
+         "id": "n3",
+         "label": "Employment interview"
+        },
+        {
+         "id": "n4",
+         "label": "Reference and background checks"
+        },
+        {
+         "id": "n5",
+         "label": "Selection decision"
+        },
+        {
+         "id": "n6",
+         "label": "Medical examination"
+        },
+        {
+         "id": "n7",
+         "label": "Job offer"
+        },
+        {
+         "id": "n8",
+         "label": "Contract of employment"
+        }
+       ],
+       "edges": [
+        {
+         "from": "n1",
+         "to": "n2"
+        },
+        {
+         "from": "n2",
+         "to": "n3"
+        },
+        {
+         "from": "n3",
+         "to": "n4"
+        },
+        {
+         "from": "n4",
+         "to": "n5"
+        },
+        {
+         "from": "n5",
+         "to": "n6"
+        },
+        {
+         "from": "n6",
+         "to": "n7"
+        },
+        {
+         "from": "n7",
+         "to": "n8"
+        }
+       ]
+      },
+      "alt": "Flow of the eight steps of selection: preliminary screening, selection tests, employment interview, reference and background checks, selection decision, medical examination, job offer and contract of employment",
+      "caption": "The selection procedure."
+     },
+     "math": [],
+     "narration": "Selection has eight steps. Preliminary screening weeds out clearly unsuitable applicants. Selection tests measure abilities. The employment interview judges the candidate face to face. References and background are checked. Then the selection decision is made, a medical examination follows, a job offer is sent, and both sides sign the contract of employment.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s03",
+     "layout": "concept",
+     "heading": "Selection tests",
+     "body_md": "",
+     "bullets": [],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Test",
+        "What it measures",
+        "Imagined example"
+       ],
+       "rows": [
+        [
+         "Intelligence test",
+         "Reasoning, memory, number skill",
+         "Written reasoning test for trainees"
+        ],
+        [
+         "Aptitude test",
+         "Potential to learn new skills",
+         "How fast school-leavers pick up machining"
+        ],
+        [
+         "Personality test",
+         "Emotions, maturity, values",
+         "Questions on handling pressure"
+        ],
+        [
+         "Trade test",
+         "Skill already possessed",
+         "Join two steel plates"
+        ],
+        [
+         "Interest test",
+         "Likes and preferences for kinds of work",
+         "Machines, people or numbers?"
+        ]
+       ]
+      },
+      "alt": "Table of five selection tests, what each measures and an imagined example"
+     },
+     "math": [],
+     "narration": "Firms use five main tests. An intelligence test measures reasoning, memory and number skill. An aptitude test measures the potential to learn. A personality test looks at emotions, maturity and values. A trade test checks a skill the candidate already has. And an interest test finds what kind of work a person likes.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s04",
+     "layout": "example",
+     "heading": "Worked example 1: a school hires a bus driver",
+     "body_md": "An imagined school in Shimla is choosing a driver for its school bus.",
+     "bullets": [
+      "Step 1: read each action.",
+      "Step 2: match it to a **step of selection**.",
+      "Step 3: check the order."
+     ],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Imagined action: a school in Shimla hires a bus driver",
+        "Step of selection"
+       ],
+       "rows": [
+        [
+         "Rejects applicants without a heavy-vehicle licence",
+         "Preliminary screening"
+        ],
+        [
+         "Asks shortlisted drivers to drive a set route",
+         "Selection test (trade test)"
+        ],
+        [
+         "Principal and transport head meet each driver",
+         "Employment interview"
+        ],
+        [
+         "Checks the best driver's record with past employers",
+         "Reference and background check"
+        ],
+        [
+         "Checks his eyesight before appointing him",
+         "Medical examination"
+        ]
+       ]
+      },
+      "alt": "Worked table: five imagined actions of a school hiring a bus driver matched to the steps of selection",
+      "caption": "Follow the order: screen, test, interview, check, decide, medical, offer, contract."
+     },
+     "math": [],
+     "narration": "Rejecting applicants without a heavy-vehicle licence is preliminary screening. Asking drivers to drive a set route is a trade test. The principal meeting each driver is the interview. Checking the best driver's record with past employers is the reference check. Testing his eyesight is the medical examination.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s05",
+     "layout": "check",
+     "heading": "Quick check: an analogy",
+     "body_md": "Complete the analogy: joining two steel plates is to trade test as questions on reasoning, memory and numbers are to ___ test.",
+     "bullets": [],
+     "visual": null,
+     "math": [],
+     "narration": "Which test measures mental ability?",
+     "check_question_id": "q_isc12commerce_ch10_043",
+     "audio": null
+    },
+    {
+     "id": "s06",
+     "layout": "two-column",
+     "heading": "Recruitment versus selection",
+     "body_md": "",
+     "bullets": [],
+     "columns": [
+      "**Recruitment**\n\nPositive: attracts many applicants. Comes first.",
+      "**Selection**\n\nNegative: rejects many to choose the best. Comes after."
+     ],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Basis",
+        "Recruitment",
+        "Selection"
+       ],
+       "rows": [
+        [
+         "Purpose",
+         "Attract many suitable applicants",
+         "Choose the most suitable"
+        ],
+        [
+         "Nature",
+         "Positive: widens the pool",
+         "Negative: rejects many"
+        ],
+        [
+         "Order",
+         "Comes first",
+         "Comes after recruitment"
+        ],
+        [
+         "Process",
+         "Simple: notices, portals, visits",
+         "Longer: tests, interviews, checks"
+        ]
+       ]
+      },
+      "alt": "Table comparing recruitment and selection on purpose, nature, order and process"
+     },
+     "math": [],
+     "narration": "Recruitment and selection work in opposite directions. Recruitment is positive: it tries to bring in as many suitable applicants as possible. Selection is negative: it rejects most of them to choose the best. Recruitment comes first and is simple; selection follows and takes longer, with tests, interviews and checks.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s07",
+     "layout": "concept",
+     "heading": "Training and development",
+     "body_md": "**Training** builds skills for a specific job; **development** aims at the overall growth of the person.",
+     "bullets": [],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Basis",
+        "Training",
+        "Development"
+       ],
+       "rows": [
+        [
+         "Aim",
+         "Skills for a specific job",
+         "Overall growth of the person"
+        ],
+        [
+         "Focus",
+         "Present job",
+         "Future roles"
+        ],
+        [
+         "Who",
+         "Mainly operative staff",
+         "Mainly managers"
+        ],
+        [
+         "Nature",
+         "Job-oriented",
+         "Career-oriented"
+        ]
+       ]
+      },
+      "alt": "Table comparing training and development on aim, focus, who it is mainly for, and nature"
+     },
+     "math": [],
+     "narration": "Training teaches the skills needed for a particular job, such as using new software. Development is wider: it grows the whole person for future roles, such as a leadership programme for future managers. Training is mainly for operative staff and focuses on the present job; development is mainly for managers and looks ahead.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s08",
+     "layout": "concept",
+     "heading": "Types of training",
+     "body_md": "",
+     "bullets": [],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Type of training",
+        "Meaning"
+       ],
+       "rows": [
+        [
+         "Induction training",
+         "Introducing a new employee to the firm, people and rules"
+        ],
+        [
+         "Job instruction training",
+         "Step-by-step teaching of how to do a job"
+        ],
+        [
+         "Apprenticeship programme",
+         "Learning a trade for years under a master worker"
+        ],
+        [
+         "Internship training",
+         "Joint programme with an institute: study plus practical work"
+        ]
+       ]
+      },
+      "alt": "Table of four types of training, induction, job instruction, apprenticeship and internship, with their meanings"
+     },
+     "math": [],
+     "narration": "There are four common types of training. Induction training welcomes newcomers and introduces the firm. Job instruction training teaches a job step by step. Apprenticeship programmes train people in a trade over years under a master. And internship training links an institute with a firm, so that students combine study with practical work.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s09",
+     "layout": "concept",
+     "heading": "On-the-job methods",
+     "body_md": "**On-the-job** methods train people while they do the actual work.",
+     "bullets": [],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "On-the-job method",
+        "How it works"
+       ],
+       "rows": [
+        [
+         "Apprenticeship",
+         "Learning under a master over a long period, with a stipend"
+        ],
+        [
+         "Coaching",
+         "A superior guides a trainee daily, with goals and feedback"
+        ],
+        [
+         "Internship",
+         "Students work at the firm as part of their course"
+        ],
+        [
+         "Job rotation",
+         "Moving through different jobs to learn many tasks"
+        ]
+       ]
+      },
+      "alt": "Table of four on-the-job methods of training and how each works"
+     },
+     "math": [],
+     "narration": "On-the-job methods train people at the real workplace. In apprenticeship, a trainee works under a master for a long period. In coaching, a superior guides a trainee daily with goals and feedback. In internship, students work at the firm during their course. In job rotation, trainees move between jobs to learn many tasks.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s10",
+     "layout": "concept",
+     "heading": "Off-the-job methods",
+     "body_md": "**Off-the-job** methods train people away from the actual workplace.",
+     "bullets": [],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Off-the-job method",
+        "How it works"
+       ],
+       "rows": [
+        [
+         "Classroom lectures",
+         "Talks and presentations away from the workplace"
+        ],
+        [
+         "Films",
+         "Showing how a task should be done"
+        ],
+        [
+         "Case study",
+         "Analysing real situations and suggesting solutions"
+        ],
+        [
+         "Computer modelling",
+         "Simulating the work on a computer"
+        ],
+        [
+         "Vestibule training",
+         "Practice on copies of real equipment in a separate place"
+        ],
+        [
+         "Programmed instruction",
+         "Learning in small steps, with immediate feedback"
+        ]
+       ]
+      },
+      "alt": "Table of six off-the-job methods of training and how each works"
+     },
+     "math": [],
+     "narration": "Off-the-job methods take place away from the real work. They include classroom lectures, films, case studies, computer modelling, vestibule training on copies of real equipment, and programmed instruction in small steps. They let people learn without disturbing production or risking costly mistakes.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s11",
+     "layout": "check",
+     "heading": "Quick check: daily guidance",
+     "body_md": "A chief chemist meets a junior chemist every morning, sets her small targets and gives feedback on her recipes. Which method is this?",
+     "bullets": [],
+     "visual": null,
+     "math": [],
+     "narration": "Is the trainee learning at the real job, from a superior?",
+     "check_question_id": "q_isc12commerce_ch10_051",
+     "audio": null
+    },
+    {
+     "id": "s12",
+     "layout": "example",
+     "heading": "Worked example 2: choosing a method",
+     "body_md": "An imagined diesel-engine maker in Rajkot has four training needs.",
+     "bullets": [
+      "Step 1: ask whether mistakes would be **costly**, whether guidance is **daily**, or whether trainees are **students**.",
+      "Step 2: choose the method.",
+      "Step 3: give a reason."
+     ],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Training need at an imagined diesel-engine maker in Rajkot",
+        "Suitable method"
+       ],
+       "rows": [
+        [
+         "New assemblers on costly testing rigs",
+         "Vestibule training"
+        ],
+        [
+         "A junior engineer needing daily guidance",
+         "Coaching"
+        ],
+        [
+         "Diploma students spending six months at the plant",
+         "Internship"
+        ],
+        [
+         "Supervisors learning quality ideas from past failures",
+         "Case study"
+        ]
+       ]
+      },
+      "alt": "Worked table matching four imagined training needs at a diesel-engine maker with a suitable method",
+      "caption": "Ask: costly equipment, daily guidance, students, or learning from cases?"
+     },
+     "math": [],
+     "narration": "New assemblers on costly rigs should start with vestibule training, so mistakes cost little. A junior engineer needing daily guidance suits coaching. Diploma students spending six months at the plant fit internship. Supervisors learning from past quality failures can use case studies.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s13",
+     "layout": "check",
+     "heading": "Quick check: coaching",
+     "body_md": "True or false: coaching is an off-the-job method of training.",
+     "bullets": [],
+     "visual": null,
+     "math": [],
+     "narration": "Where does coaching happen: at the real job, or away from it?",
+     "check_question_id": "q_isc12commerce_ch10_054",
+     "audio": null
+    },
+    {
+     "id": "s14",
+     "layout": "summary",
+     "heading": "Summary of Part 2",
+     "body_md": "",
+     "bullets": [],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Idea",
+        "Key point"
+       ],
+       "rows": [
+        [
+         "Selection",
+         "Screen, test, interview, check, decide, medical, offer, contract"
+        ],
+        [
+         "Recruitment vs selection",
+         "Positive and first vs negative and after"
+        ],
+        [
+         "Training vs development",
+         "Present job skills vs overall growth"
+        ],
+        [
+         "Methods",
+         "On the job: apprenticeship, coaching, internship. Off the job: lectures, cases, vestibule"
+        ]
+       ]
+      },
+      "alt": "Summary table of Part 2: selection steps, recruitment versus selection, training versus development, and methods of training"
+     },
+     "math": [],
+     "narration": "To sum up Part 2. Selection follows eight steps, from screening to the contract of employment. Recruitment is positive and comes first; selection is negative and follows. Training builds job skills; development grows the person. On-the-job methods include apprenticeship, coaching and internship; off-the-job methods include lectures, case studies and vestibule training.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s15",
+     "layout": "exam-tips",
+     "heading": "Exam tips",
+     "body_md": "",
+     "bullets": [
+      "Learn the **eight steps of selection** in order.",
+      "Trade test = **existing skill**; aptitude test = **potential to learn**.",
+      "Vestibule training suits **costly equipment**.",
+      "Coaching and apprenticeship are **on the job**."
+     ],
+     "visual": {
+      "kind": "flow",
+      "spec": {
+       "direction": "LR",
+       "nodes": [
+        {
+         "id": "n1",
+         "label": "Quote the line"
+        },
+        {
+         "id": "n2",
+         "label": "Name the step, source or method"
+        },
+        {
+         "id": "n3",
+         "label": "Explain the link"
+        }
+       ],
+       "edges": [
+        {
+         "from": "n1",
+         "to": "n2"
+        },
+        {
+         "from": "n2",
+         "to": "n3"
+        }
+       ]
+      },
+      "alt": "Three steps for case questions: quote the line, name the step, source or method, and explain the link"
+     },
+     "math": [],
+     "narration": "Final tips. Learn the eight steps of selection in order. Keep trade and aptitude tests apart: one checks skill you already have, the other your potential to learn. Vestibule training is the answer when equipment is costly. And remember that coaching, apprenticeship and internship are on-the-job methods.",
+     "check_question_id": null,
+     "audio": null
+    }
+   ],
+   "status": "draft",
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  }
+ ],
+ "notes": {
+  "unit": "isc-12-commerce-ch10",
+  "version": 1,
+  "title": "Staffing — notes",
+  "language": "en",
+  "sections": [
+   {
+    "heading": "1. Staffing: meaning, steps and importance",
+    "body_md": "**Staffing** is the function of filling, and keeping filled, the positions in the organisation structure with suitable people. It deals with the **human element** and is a **continuous** function, because people retire, resign and are promoted.\n\n**Steps:**\n1. **Estimating manpower requirements** — workload analysis (people needed) and workforce analysis (people available).\n2. **Recruitment** — getting suitable people to apply.\n3. **Selection** — choosing the most suitable.\n4. **Placement and orientation** — putting each person in a suitable job and introducing them to the firm.\n5. **Training and development.**\n6. **Performance appraisal** — judging work against standards.\n7. **Promotion and career planning.**\n8. **Compensation** — pay and other benefits.\n\n**Importance:** obtains competent personnel; higher performance (right person, right job); continued survival and growth through succession planning; optimum use of human resources; job satisfaction and morale.",
+    "key_terms": [
+     {
+      "term": "Staffing",
+      "definition_md": "Filling and keeping filled the posts with suitable people."
+     },
+     {
+      "term": "Placement",
+      "definition_md": "Putting a selected person in the job for which he or she was chosen."
+     },
+     {
+      "term": "Orientation",
+      "definition_md": "Introducing a new employee to the firm, the team and the rules."
+     }
+    ],
+    "formulas": [],
+    "visual": {
+     "kind": "flow",
+     "spec": {
+      "direction": "LR",
+      "nodes": [
+       {
+        "id": "n1",
+        "label": "Estimate manpower needs"
+       },
+       {
+        "id": "n2",
+        "label": "Recruitment"
+       },
+       {
+        "id": "n3",
+        "label": "Selection"
+       },
+       {
+        "id": "n4",
+        "label": "Placement and orientation"
+       },
+       {
+        "id": "n5",
+        "label": "Training and development"
+       },
+       {
+        "id": "n6",
+        "label": "Performance appraisal"
+       },
+       {
+        "id": "n7",
+        "label": "Promotion and career planning"
+       },
+       {
+        "id": "n8",
+        "label": "Compensation"
+       }
+      ],
+      "edges": [
+       {
+        "from": "n1",
+        "to": "n2"
+       },
+       {
+        "from": "n2",
+        "to": "n3"
+       },
+       {
+        "from": "n3",
+        "to": "n4"
+       },
+       {
+        "from": "n4",
+        "to": "n5"
+       },
+       {
+        "from": "n5",
+        "to": "n6"
+       },
+       {
+        "from": "n6",
+        "to": "n7"
+       },
+       {
+        "from": "n7",
+        "to": "n8"
+       }
+      ]
+     },
+     "alt": "Flow of the eight steps of staffing: estimate manpower needs, recruitment, selection, placement and orientation, training and development, performance appraisal, promotion and career planning, and compensation",
+     "caption": "The staffing process."
+    },
+    "visuals": [
+     {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Staffing means…",
+        "Imagined example: a scientific-instruments firm in Ambala"
+       ],
+       "rows": [
+        [
+         "Finding how many people are needed",
+         "Ten lab technicians for a new line"
+        ],
+        [
+         "Getting suitable people",
+         "Advertising, testing and interviewing"
+        ],
+        [
+         "Placing and training them",
+         "Each technician trained on the firm's gauges"
+        ],
+        [
+         "Keeping posts filled",
+         "Replacing those who retire or are promoted"
+        ]
+       ]
+      },
+      "alt": "Table of what staffing involves, with an imagined scientific-instruments firm's examples"
+     },
+     {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Imagined action at a yarn mill in Bhilwara",
+        "Step of staffing"
+       ],
+       "rows": [
+        [
+         "Works out how many spinners the new machines need",
+         "Estimating manpower needs"
+        ],
+        [
+         "Advertises and invites spinners to apply",
+         "Recruitment"
+        ],
+        [
+         "Tests and interviews applicants, then chooses",
+         "Selection"
+        ],
+        [
+         "Shows newcomers the mill and the safety rules",
+         "Placement and orientation"
+        ],
+        [
+         "Rates each spinner's output twice a year",
+         "Performance appraisal"
+        ]
+       ]
+      },
+      "alt": "Worked table: five imagined actions at a yarn mill matched to the steps of staffing",
+      "caption": "Ask: before hiring, during hiring, or after joining?"
+     },
+     {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Importance",
+        "In short"
+       ],
+       "rows": [
+        [
+         "Obtains competent personnel",
+         "Finds capable people for each job"
+        ],
+        [
+         "Higher performance",
+         "Right person in the right job"
+        ],
+        [
+         "Survival and growth",
+         "Succession planning readies people for key posts"
+        ],
+        [
+         "Optimum use of people",
+         "Avoids both shortages and idle staff"
+        ],
+        [
+         "Job satisfaction and morale",
+         "Fair pay, training and promotion keep good people"
+        ]
+       ]
+      },
+      "alt": "Table of five points of importance of staffing with a short explanation of each"
+     }
+    ],
+    "topic_ids": [
+     "isc-12-commerce-ch10-t01"
+    ]
+   },
+   {
+    "heading": "2. Recruitment: internal and external sources",
+    "body_md": "**Recruitment** is the process of searching for prospective employees and stimulating them to apply. It is a **positive** process.\n\n**Internal sources:** **promotion** (moving up to a higher post) and **transfer** (moving to another post or place at about the same level). **Merits:** quicker and cheaper; motivates staff; ability already known. **Limits:** no fresh talent; limited choice; not possible for a new firm; may cause jealousy.\n\n**External sources:** direct recruitment; casual callers; advertisement; employment exchange; placement agencies and management consultants; campus recruitment; recommendations of employees; labour contractors; web publishing. **Merits:** fresh talent; wider choice; competitive spirit. **Limits:** costly and slow; may disappoint existing staff.",
+    "key_terms": [
+     {
+      "term": "Recruitment",
+      "definition_md": "Searching for prospective employees and encouraging them to apply."
+     },
+     {
+      "term": "Promotion",
+      "definition_md": "Moving to a higher post with more pay and status."
+     },
+     {
+      "term": "Transfer",
+      "definition_md": "Moving to another post or place at about the same level."
+     }
+    ],
+    "formulas": [],
+    "visual": {
+     "kind": "table",
+     "spec": {
+      "headers": [
+       "Internal source",
+       "Meaning",
+       "Imagined example"
+      ],
+      "rows": [
+       [
+        "Promotion",
+        "Moving up to a higher post, pay and status",
+        "A senior tester becomes quality supervisor"
+       ],
+       [
+        "Transfer",
+        "Moving to another post or place at about the same level",
+        "A manager moves from one unit to another at the same pay"
+       ]
+      ]
+     },
+     "alt": "Table of the two internal sources of recruitment, promotion and transfer, with meanings and imagined examples"
+    },
+    "visuals": [
+     {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "External source",
+        "Suits"
+       ],
+       "rows": [
+        [
+         "Direct recruitment (notice at the gate)",
+         "Unskilled and casual jobs"
+        ],
+        [
+         "Casual callers",
+         "Jobs filled from applications kept on file"
+        ],
+        [
+         "Advertisement",
+         "Senior and skilled posts needing wide choice"
+        ],
+        [
+         "Employment exchange",
+         "Clerical and skilled jobs"
+        ],
+        [
+         "Placement agencies and consultants",
+         "Senior or rare specialists"
+        ],
+        [
+         "Campus recruitment",
+         "Trainees for technical and managerial posts"
+        ],
+        [
+         "Recommendations of employees",
+         "Posts where trust matters"
+        ],
+        [
+         "Labour contractors",
+         "Unskilled workers, often short-term"
+        ],
+        [
+         "Web publishing",
+         "Many kinds of jobs, through job portals"
+        ]
+       ]
+      },
+      "alt": "Table of nine external sources of recruitment and the kind of post each suits"
+     },
+     {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Basis",
+        "Internal sources",
+        "External sources"
+       ],
+       "rows": [
+        [
+         "Speed and cost",
+         "Quicker and cheaper",
+         "Slower and costlier"
+        ],
+        [
+         "Choice",
+         "Limited to existing staff",
+         "Wide choice"
+        ],
+        [
+         "Fresh talent",
+         "None",
+         "Brings new ideas and skills"
+        ],
+        [
+         "Effect on staff",
+         "Motivates through promotion",
+         "May disappoint those hoping for promotion"
+        ]
+       ]
+      },
+      "alt": "Table comparing internal and external sources of recruitment on speed and cost, choice, fresh talent and effect on staff"
+     },
+     {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Post at an imagined port firm in Kakinada",
+        "Best source",
+        "Why"
+       ],
+       "rows": [
+        [
+         "Fifty loaders for one season",
+         "Labour contractors",
+         "Many unskilled workers, quickly"
+        ],
+        [
+         "General manager for a new terminal",
+         "Advertisement or placement agency",
+         "Wide search for rare experience"
+        ],
+        [
+         "Six trainee accountants",
+         "Campus recruitment",
+         "Trained graduates in one place"
+        ],
+        [
+         "A supervisor who knows the firm",
+         "Promotion",
+         "Known ability; motivates staff"
+        ]
+       ]
+      },
+      "alt": "Worked table matching four posts at an imagined port firm with the best source of recruitment and a reason",
+      "caption": "Match the post's skill, number and urgency to the source."
+     }
+    ],
+    "topic_ids": [
+     "isc-12-commerce-ch10-t02"
+    ]
+   },
+   {
+    "heading": "3. Selection: procedure; recruitment versus selection",
+    "body_md": "**Selection** is choosing the most suitable candidates from among the applicants. It is a **negative** process, since most applicants are rejected.\n\n**Steps:**\n1. **Preliminary screening** — weeding out clearly unsuitable applicants.\n2. **Selection tests** — intelligence, aptitude, personality, trade and interest tests.\n3. **Employment interview** — face-to-face assessment.\n4. **Reference and background checks.**\n5. **Selection decision.**\n6. **Medical examination.**\n7. **Job offer.**\n8. **Contract of employment** — terms signed by both sides.\n\n**Recruitment vs selection:** recruitment attracts applicants and is positive and first; selection chooses among them, is negative and comes after; recruitment is simple, selection is longer and more complex.",
+    "key_terms": [
+     {
+      "term": "Selection",
+      "definition_md": "Choosing the most suitable candidates from the applicants."
+     },
+     {
+      "term": "Aptitude test",
+      "definition_md": "Measures potential to learn new skills."
+     },
+     {
+      "term": "Trade test",
+      "definition_md": "Measures skill already possessed."
+     }
+    ],
+    "formulas": [],
+    "visual": {
+     "kind": "flow",
+     "spec": {
+      "direction": "LR",
+      "nodes": [
+       {
+        "id": "n1",
+        "label": "Preliminary screening"
+       },
+       {
+        "id": "n2",
+        "label": "Selection tests"
+       },
+       {
+        "id": "n3",
+        "label": "Employment interview"
+       },
+       {
+        "id": "n4",
+        "label": "Reference and background checks"
+       },
+       {
+        "id": "n5",
+        "label": "Selection decision"
+       },
+       {
+        "id": "n6",
+        "label": "Medical examination"
+       },
+       {
+        "id": "n7",
+        "label": "Job offer"
+       },
+       {
+        "id": "n8",
+        "label": "Contract of employment"
+       }
+      ],
+      "edges": [
+       {
+        "from": "n1",
+        "to": "n2"
+       },
+       {
+        "from": "n2",
+        "to": "n3"
+       },
+       {
+        "from": "n3",
+        "to": "n4"
+       },
+       {
+        "from": "n4",
+        "to": "n5"
+       },
+       {
+        "from": "n5",
+        "to": "n6"
+       },
+       {
+        "from": "n6",
+        "to": "n7"
+       },
+       {
+        "from": "n7",
+        "to": "n8"
+       }
+      ]
+     },
+     "alt": "Flow of the eight steps of selection: preliminary screening, selection tests, employment interview, reference and background checks, selection decision, medical examination, job offer and contract of employment",
+     "caption": "The selection procedure."
+    },
+    "visuals": [
+     {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Test",
+        "What it measures",
+        "Imagined example"
+       ],
+       "rows": [
+        [
+         "Intelligence test",
+         "Reasoning, memory, number skill",
+         "Written reasoning test for trainees"
+        ],
+        [
+         "Aptitude test",
+         "Potential to learn new skills",
+         "How fast school-leavers pick up machining"
+        ],
+        [
+         "Personality test",
+         "Emotions, maturity, values",
+         "Questions on handling pressure"
+        ],
+        [
+         "Trade test",
+         "Skill already possessed",
+         "Join two steel plates"
+        ],
+        [
+         "Interest test",
+         "Likes and preferences for kinds of work",
+         "Machines, people or numbers?"
+        ]
+       ]
+      },
+      "alt": "Table of five selection tests, what each measures and an imagined example"
+     },
+     {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Imagined action: a school in Shimla hires a bus driver",
+        "Step of selection"
+       ],
+       "rows": [
+        [
+         "Rejects applicants without a heavy-vehicle licence",
+         "Preliminary screening"
+        ],
+        [
+         "Asks shortlisted drivers to drive a set route",
+         "Selection test (trade test)"
+        ],
+        [
+         "Principal and transport head meet each driver",
+         "Employment interview"
+        ],
+        [
+         "Checks the best driver's record with past employers",
+         "Reference and background check"
+        ],
+        [
+         "Checks his eyesight before appointing him",
+         "Medical examination"
+        ]
+       ]
+      },
+      "alt": "Worked table: five imagined actions of a school hiring a bus driver matched to the steps of selection",
+      "caption": "Follow the order: screen, test, interview, check, decide, medical, offer, contract."
+     },
+     {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Basis",
+        "Recruitment",
+        "Selection"
+       ],
+       "rows": [
+        [
+         "Purpose",
+         "Attract many suitable applicants",
+         "Choose the most suitable"
+        ],
+        [
+         "Nature",
+         "Positive: widens the pool",
+         "Negative: rejects many"
+        ],
+        [
+         "Order",
+         "Comes first",
+         "Comes after recruitment"
+        ],
+        [
+         "Process",
+         "Simple: notices, portals, visits",
+         "Longer: tests, interviews, checks"
+        ]
+       ]
+      },
+      "alt": "Table comparing recruitment and selection on purpose, nature, order and process"
+     }
+    ],
+    "topic_ids": [
+     "isc-12-commerce-ch10-t03"
+    ]
+   },
+   {
+    "heading": "4. Training and development",
+    "body_md": "**Training** increases the knowledge and skills of employees for a **specific job**. **Development** aims at the **overall growth** of a person for future roles. Training is job-oriented and mainly for operative staff; development is career-oriented and mainly for managers.\n\n**Types of training:** induction training; job instruction training; apprenticeship programmes; internship training.\n\n**On-the-job methods:** apprenticeship, coaching, internship, job rotation. **Off-the-job methods:** classroom lectures, films, case studies, computer modelling, vestibule training, programmed instruction.\n\n**Benefits to the organisation:** less waste, higher output, fewer accidents, lower turnover. **Benefits to employees:** better skills, higher earnings, career growth, more confidence and safety.",
+    "key_terms": [
+     {
+      "term": "Training",
+      "definition_md": "Building skills for a specific job."
+     },
+     {
+      "term": "Development",
+      "definition_md": "Overall growth of a person for future roles."
+     },
+     {
+      "term": "Vestibule training",
+      "definition_md": "Practice on copies of real equipment away from the workplace."
+     }
+    ],
+    "formulas": [],
+    "visual": {
+     "kind": "table",
+     "spec": {
+      "headers": [
+       "Basis",
+       "Training",
+       "Development"
+      ],
+      "rows": [
+       [
+        "Aim",
+        "Skills for a specific job",
+        "Overall growth of the person"
+       ],
+       [
+        "Focus",
+        "Present job",
+        "Future roles"
+       ],
+       [
+        "Who",
+        "Mainly operative staff",
+        "Mainly managers"
+       ],
+       [
+        "Nature",
+        "Job-oriented",
+        "Career-oriented"
+       ]
+      ]
+     },
+     "alt": "Table comparing training and development on aim, focus, who it is mainly for, and nature"
+    },
+    "visuals": [
+     {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Type of training",
+        "Meaning"
+       ],
+       "rows": [
+        [
+         "Induction training",
+         "Introducing a new employee to the firm, people and rules"
+        ],
+        [
+         "Job instruction training",
+         "Step-by-step teaching of how to do a job"
+        ],
+        [
+         "Apprenticeship programme",
+         "Learning a trade for years under a master worker"
+        ],
+        [
+         "Internship training",
+         "Joint programme with an institute: study plus practical work"
+        ]
+       ]
+      },
+      "alt": "Table of four types of training, induction, job instruction, apprenticeship and internship, with their meanings"
+     },
+     {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "On-the-job method",
+        "How it works"
+       ],
+       "rows": [
+        [
+         "Apprenticeship",
+         "Learning under a master over a long period, with a stipend"
+        ],
+        [
+         "Coaching",
+         "A superior guides a trainee daily, with goals and feedback"
+        ],
+        [
+         "Internship",
+         "Students work at the firm as part of their course"
+        ],
+        [
+         "Job rotation",
+         "Moving through different jobs to learn many tasks"
+        ]
+       ]
+      },
+      "alt": "Table of four on-the-job methods of training and how each works"
+     },
+     {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Off-the-job method",
+        "How it works"
+       ],
+       "rows": [
+        [
+         "Classroom lectures",
+         "Talks and presentations away from the workplace"
+        ],
+        [
+         "Films",
+         "Showing how a task should be done"
+        ],
+        [
+         "Case study",
+         "Analysing real situations and suggesting solutions"
+        ],
+        [
+         "Computer modelling",
+         "Simulating the work on a computer"
+        ],
+        [
+         "Vestibule training",
+         "Practice on copies of real equipment in a separate place"
+        ],
+        [
+         "Programmed instruction",
+         "Learning in small steps, with immediate feedback"
+        ]
+       ]
+      },
+      "alt": "Table of six off-the-job methods of training and how each works"
+     },
+     {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Training need at an imagined diesel-engine maker in Rajkot",
+        "Suitable method"
+       ],
+       "rows": [
+        [
+         "New assemblers on costly testing rigs",
+         "Vestibule training"
+        ],
+        [
+         "A junior engineer needing daily guidance",
+         "Coaching"
+        ],
+        [
+         "Diploma students spending six months at the plant",
+         "Internship"
+        ],
+        [
+         "Supervisors learning quality ideas from past failures",
+         "Case study"
+        ]
+       ]
+      },
+      "alt": "Worked table matching four imagined training needs at a diesel-engine maker with a suitable method",
+      "caption": "Ask: costly equipment, daily guidance, students, or learning from cases?"
+     }
+    ],
+    "topic_ids": [
+     "isc-12-commerce-ch10-t04"
+    ]
+   }
+  ],
+  "exam_tips_md": "**Common mistakes**\n- Listing advertisement or campus recruitment as internal sources (only promotion and transfer are internal).\n- Mixing up aptitude (potential) and trade (existing skill) tests.\n- Calling coaching or apprenticeship off-the-job methods.\n- Writing the selection steps out of order, for example the interview before tests.\n\n**How marks are usually awarded**\n- 1 mark: the correct step, source, test or method.\n- 2–3 marks: each point named, explained and linked to the case.\n- 5 marks: steps in order with examples; sources or methods recommended with reasons.\n- Case questions: quote the line, name the idea, explain the link.",
+  "status": "draft",
+  "provenance": {
+   "origin": "human",
+   "template_version": null,
+   "model": null,
+   "generated_at": "2026-10-31",
+   "author": "claude-opus-5-5 (subject-producer)"
+  }
+ },
+ "flashcards": {
+  "unit": "isc-12-commerce-ch10",
+  "version": 1,
+  "language": "en",
+  "cards": [
+   {
+    "id": "f01",
+    "front_md": "**Staffing**",
+    "back_md": "Filling and keeping filled the posts with suitable people.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch10-t01"
+   },
+   {
+    "id": "f02",
+    "front_md": "Eight steps of staffing",
+    "back_md": "Estimate, recruit, select, place, train, appraise, promote, compensate.",
+    "tag": "exam-tip",
+    "topic_id": "isc-12-commerce-ch10-t01"
+   },
+   {
+    "id": "f03",
+    "front_md": "Why is staffing continuous?",
+    "back_md": "People retire, resign and are promoted; firms grow.",
+    "tag": "concept",
+    "topic_id": "isc-12-commerce-ch10-t01"
+   },
+   {
+    "id": "f04",
+    "front_md": "Workload vs workforce analysis",
+    "back_md": "People needed vs people available.",
+    "tag": "concept",
+    "topic_id": "isc-12-commerce-ch10-t01"
+   },
+   {
+    "id": "f05",
+    "front_md": "**Performance appraisal**",
+    "back_md": "Judging work against set standards.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch10-t01"
+   },
+   {
+    "id": "f06",
+    "front_md": "**Succession planning**",
+    "back_md": "Preparing people to take over key posts.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch10-t01"
+   },
+   {
+    "id": "f07",
+    "front_md": "**Recruitment**",
+    "back_md": "Searching for applicants and encouraging them to apply.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch10-t02"
+   },
+   {
+    "id": "f08",
+    "front_md": "Two internal sources",
+    "back_md": "Promotion and transfer.",
+    "tag": "fact",
+    "topic_id": "isc-12-commerce-ch10-t02"
+   },
+   {
+    "id": "f09",
+    "front_md": "Merits of internal sources",
+    "back_md": "Quick, cheap, motivating, ability known.",
+    "tag": "fact",
+    "topic_id": "isc-12-commerce-ch10-t02"
+   },
+   {
+    "id": "f10",
+    "front_md": "Limits of internal sources",
+    "back_md": "No fresh talent; limited choice; impossible for a new firm.",
+    "tag": "fact",
+    "topic_id": "isc-12-commerce-ch10-t02"
+   },
+   {
+    "id": "f11",
+    "front_md": "Merits of external sources",
+    "back_md": "Fresh talent, wide choice, competitive spirit.",
+    "tag": "fact",
+    "topic_id": "isc-12-commerce-ch10-t02"
+   },
+   {
+    "id": "f12",
+    "front_md": "Unskilled short-term workers → ?",
+    "back_md": "Labour contractors.",
+    "tag": "exam-tip",
+    "topic_id": "isc-12-commerce-ch10-t02"
+   },
+   {
+    "id": "f13",
+    "front_md": "Rare senior specialist → ?",
+    "back_md": "Placement agency or management consultant.",
+    "tag": "exam-tip",
+    "topic_id": "isc-12-commerce-ch10-t02"
+   },
+   {
+    "id": "f14",
+    "front_md": "**Selection**",
+    "back_md": "Choosing the most suitable applicants.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch10-t03"
+   },
+   {
+    "id": "f15",
+    "front_md": "Eight steps of selection",
+    "back_md": "Screen, test, interview, references, decision, medical, offer, contract.",
+    "tag": "exam-tip",
+    "topic_id": "isc-12-commerce-ch10-t03"
+   },
+   {
+    "id": "f16",
+    "front_md": "**Trade test**",
+    "back_md": "Skill already possessed.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch10-t03"
+   },
+   {
+    "id": "f17",
+    "front_md": "**Aptitude test**",
+    "back_md": "Potential to learn.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch10-t03"
+   },
+   {
+    "id": "f18",
+    "front_md": "**Intelligence test**",
+    "back_md": "Reasoning, memory, number skill.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch10-t03"
+   },
+   {
+    "id": "f19",
+    "front_md": "**Interest test**",
+    "back_md": "Likes and preferences for kinds of work.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch10-t03"
+   },
+   {
+    "id": "f20",
+    "front_md": "Recruitment vs selection",
+    "back_md": "Positive and first vs negative and after.",
+    "tag": "concept",
+    "topic_id": "isc-12-commerce-ch10-t03"
+   },
+   {
+    "id": "f21",
+    "front_md": "**Training**",
+    "back_md": "Skills for a specific job.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch10-t04"
+   },
+   {
+    "id": "f22",
+    "front_md": "**Development**",
+    "back_md": "Overall growth for future roles.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch10-t04"
+   },
+   {
+    "id": "f23",
+    "front_md": "Four types of training",
+    "back_md": "Induction, job instruction, apprenticeship, internship.",
+    "tag": "fact",
+    "topic_id": "isc-12-commerce-ch10-t04"
+   },
+   {
+    "id": "f24",
+    "front_md": "On-the-job methods",
+    "back_md": "Apprenticeship, coaching, internship, job rotation.",
+    "tag": "fact",
+    "topic_id": "isc-12-commerce-ch10-t04"
+   },
+   {
+    "id": "f25",
+    "front_md": "Off-the-job methods",
+    "back_md": "Lectures, films, case study, computer modelling, vestibule, programmed instruction.",
+    "tag": "fact",
+    "topic_id": "isc-12-commerce-ch10-t04"
+   },
+   {
+    "id": "f26",
+    "front_md": "**Vestibule training**",
+    "back_md": "Practice on copies of real equipment away from the floor.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch10-t04"
+   },
+   {
+    "id": "f27",
+    "front_md": "**Coaching**",
+    "back_md": "A superior guides a trainee daily with goals and feedback.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch10-t04"
+   },
+   {
+    "id": "f28",
+    "front_md": "Case routine",
+    "back_md": "Quote the line, name the step, source or method, explain the link.",
+    "tag": "exam-tip",
+    "topic_id": "isc-12-commerce-ch10-t03"
+   }
+  ],
+  "status": "draft",
+  "provenance": {
+   "origin": "human",
+   "template_version": null,
+   "model": null,
+   "generated_at": "2026-10-31",
+   "author": "claude-opus-5-5 (subject-producer)"
+  }
+ },
+ "questions": [
+  {
+   "id": "q_isc12commerce_ch10_001",
+   "unit": "isc-12-commerce-ch10",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "The new HR manager of the imagined Ambala Science Instruments describes her job as making sure every post on the organisation chart is filled with a suitable person, and stays filled as people retire or leave. This function is",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "organising"
+    },
+    {
+     "id": "b",
+     "text_md": "staffing"
+    },
+    {
+     "id": "c",
+     "text_md": "controlling"
+    },
+    {
+     "id": "d",
+     "text_md": "planning"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (b)** staffing. Filling the positions in the organisation structure with the right people, and keeping them filled, is staffing.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch10-t01"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "b"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (b)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch10_002",
+   "unit": "isc-12-commerce-ch10",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Before hiring anyone, the HR head of the imagined Bhilwara Yarn Mills works out how many spinners the new machines will need and compares this with the number and skills of spinners already on the rolls. Which step of staffing is this?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Recruitment"
+    },
+    {
+     "id": "b",
+     "text_md": "Placement and orientation"
+    },
+    {
+     "id": "c",
+     "text_md": "Performance appraisal"
+    },
+    {
+     "id": "d",
+     "text_md": "Estimating manpower requirements"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (d)** Estimating manpower requirements. Working out the people needed (workload) and those available (workforce) to find the gap is estimating manpower requirements, the first step of staffing.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch10-t01"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "d"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (d)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch10_003",
+   "unit": "isc-12-commerce-ch10",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Revathi, newly selected by the imagined Hassan Coffee Curers, is put in charge of the moisture-testing laboratory, where her chemistry training fits best. Which step of staffing is this?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Placement"
+    },
+    {
+     "id": "b",
+     "text_md": "Recruitment"
+    },
+    {
+     "id": "c",
+     "text_md": "Compensation"
+    },
+    {
+     "id": "d",
+     "text_md": "Estimating manpower requirements"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (a)** Placement. Putting a selected person in the job for which she was chosen and is best suited is placement.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch10-t01"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (a)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch10_004",
+   "unit": "isc-12-commerce-ch10",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Twice a year, supervisors at the imagined Pali Dye Works rate each dyer on colour accuracy, wastage and attendance against set standards, and discuss the ratings with the dyer. This step of staffing is",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "selection"
+    },
+    {
+     "id": "b",
+     "text_md": "orientation"
+    },
+    {
+     "id": "c",
+     "text_md": "performance appraisal"
+    },
+    {
+     "id": "d",
+     "text_md": "recruitment"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (c)** performance appraisal. Judging an employee's performance against set standards and giving feedback is performance appraisal.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch10-t01"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "c"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (c)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch10_005",
+   "unit": "isc-12-commerce-ch10",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "The imagined Rajkot Diesel Engines revises its pay scales, introduces a yearly bonus and adds medical cover for families. Which step of staffing do these decisions belong to?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Training and development"
+    },
+    {
+     "id": "b",
+     "text_md": "Selection"
+    },
+    {
+     "id": "c",
+     "text_md": "Compensation"
+    },
+    {
+     "id": "d",
+     "text_md": "Placement"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (c)** Compensation. Deciding pay and other direct and indirect benefits for employees is compensation.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch10-t01"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "c"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (c)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch10_006",
+   "unit": "isc-12-commerce-ch10",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "The imagined Durg Steel Fabricators trains a deputy for every senior post. When two plant managers retired in the same month, work went on without a break. Which importance of staffing does this show?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "It ensures continued survival and growth through succession planning"
+    },
+    {
+     "id": "b",
+     "text_md": "It removes the need for training"
+    },
+    {
+     "id": "c",
+     "text_md": "It reduces the need for planning"
+    },
+    {
+     "id": "d",
+     "text_md": "It makes recruitment unnecessary"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (a)** It ensures continued survival and growth through succession planning. Developing people to take over key posts keeps the firm running and growing when managers leave: succession planning.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch10-t01"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (a)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch10_007",
+   "unit": "isc-12-commerce-ch10",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "A Class 12 student at an imagined school in Ambala lists four activities:\nP. Recruitment.\nQ. Departmentalisation.\nR. Training and development.\nS. Performance appraisal.\nWhich of these are steps in the **staffing** process?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "P and Q only"
+    },
+    {
+     "id": "b",
+     "text_md": "Q and R only"
+    },
+    {
+     "id": "c",
+     "text_md": "P, Q, R and S"
+    },
+    {
+     "id": "d",
+     "text_md": "P, R and S"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (d)** P, R and S. Recruitment (P), training and development (R) and performance appraisal (S) are steps of staffing. Departmentalisation (Q) is a step of organising.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch10-t01"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "d"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (d)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch10_008",
+   "unit": "isc-12-commerce-ch10",
+   "language": "en",
+   "type": "assertion-reason",
+   "stem_md": "**Assertion (A):** Even the owner of a small firm with no HR department must perform staffing.\n\n**Reason (R):** The manager of a small firm has to choose, train and appraise the people in the team.\n\nChoose the correct option.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Both Assertion and Reason are true and Reason is the correct explanation for Assertion."
+    },
+    {
+     "id": "b",
+     "text_md": "Both Assertion and Reason are true but Reason is not the correct explanation for Assertion."
+    },
+    {
+     "id": "c",
+     "text_md": "Assertion is true and Reason is false."
+    },
+    {
+     "id": "d",
+     "text_md": "Both Assertion and Reason are false."
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (a)** Both are true, and the reason explains the assertion: staffing is part of every manager's job, so a small-firm owner does it herself.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch10-t01"
+   ],
+   "expected_time_sec": 75,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (a)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch10_009",
+   "unit": "isc-12-commerce-ch10",
+   "language": "en",
+   "type": "true-false",
+   "stem_md": "Staffing ends as soon as a candidate is selected and appointed.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "True"
+    },
+    {
+     "id": "b",
+     "text_md": "False"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**False.** False. Staffing continues with placement, training, appraisal, promotion and compensation, and posts must be refilled as people leave: it is a continuous function.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch10-t01"
+   ],
+   "expected_time_sec": 40,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "b"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct choice (False)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch10_010",
+   "unit": "isc-12-commerce-ch10",
+   "language": "en",
+   "type": "fill-blank",
+   "stem_md": "Complete the analogy. Controlling : comparing results with standards :: Staffing : managing the ___ element of the organisation",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Controlling compares results with standards; staffing is the function that deals with the human element, the people of the organisation.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch10-t01"
+   ],
+   "expected_time_sec": 45,
+   "assets": [],
+   "answer": {
+    "blanks": [
+     {
+      "accepted": [
+       "human",
+       "human resource",
+       "people"
+      ]
+     }
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Blank 1: human",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch10_011",
+   "unit": "isc-12-commerce-ch10",
+   "language": "en",
+   "type": "short",
+   "stem_md": "What is staffing? Why is it described as a continuous function?",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Meaning and reason for continuity.",
+   "marks": 2,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch10-t01"
+   ],
+   "expected_time_sec": 150,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "**Staffing** means **getting the right people** into every post on the organisation chart and **keeping those posts filled** over time. It is **continuous** because people **retire, resign or are promoted**, and the firm grows, so posts must be filled again and again."
+   },
+   "word_limit": {
+    "min": 30,
+    "max": 50
+   },
+   "marking_scheme": [
+    {
+     "step": "Meaning",
+     "marks": 1
+    },
+    {
+     "step": "Why continuous",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch10_012",
+   "unit": "isc-12-commerce-ch10",
+   "language": "en",
+   "type": "short",
+   "stem_md": "At the imagined Bhilwara Yarn Mills, some sections had idle workers while others ran short, and two skilled spinners left for better jobs. State two ways in which proper staffing could help.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Two points of importance linked to the mill.",
+   "marks": 2,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch10-t01"
+   ],
+   "expected_time_sec": 150,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Optimum use of human resources:** estimating needs correctly **prevents over-manning and shortages** in different sections.\n2. **Job satisfaction and morale:** fair pay, training and promotion chances help **keep skilled spinners**."
+   },
+   "word_limit": {
+    "min": 30,
+    "max": 50
+   },
+   "marking_scheme": [
+    {
+     "step": "First point",
+     "marks": 1
+    },
+    {
+     "step": "Second point",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch10_013",
+   "unit": "isc-12-commerce-ch10",
+   "language": "en",
+   "type": "short",
+   "stem_md": "The imagined Hassan Coffee Curers has just selected five new quality checkers. Explain three steps of staffing that should now follow, with an example of each.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Three later steps of staffing applied to the checkers.",
+   "marks": 3,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch10-t01"
+   ],
+   "expected_time_sec": 210,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Placement and orientation:** put each checker in the **section that suits her**, and introduce her to the team, the rules and the curing yard.\n2. **Training and development:** teach the **firm's grading method** and, later, build skills for higher posts.\n3. **Performance appraisal:** after six months, **rate each checker** against standards such as accuracy, and give feedback."
+   },
+   "word_limit": {
+    "min": 50,
+    "max": 75
+   },
+   "marking_scheme": [
+    {
+     "step": "First step",
+     "marks": 1
+    },
+    {
+     "step": "Second step",
+     "marks": 1
+    },
+    {
+     "step": "Third step",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch10_014",
+   "unit": "isc-12-commerce-ch10",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Explain three points of importance of staffing for an organisation.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Any three points (competent personnel, higher performance, survival and growth, optimum use of people, job satisfaction) explained.",
+   "marks": 3,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch10-t01"
+   ],
+   "expected_time_sec": 210,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Obtains competent personnel:** it helps **discover and get** capable people for different jobs.\n2. **Higher performance:** putting the **right person in the right job** raises efficiency and output.\n3. **Continued survival and growth:** through **succession planning**, trained people are ready to take over when managers retire or leave."
+   },
+   "word_limit": {
+    "min": 50,
+    "max": 75
+   },
+   "marking_scheme": [
+    {
+     "step": "First point",
+     "marks": 1
+    },
+    {
+     "step": "Second point",
+     "marks": 1
+    },
+    {
+     "step": "Third point",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch10_015",
+   "unit": "isc-12-commerce-ch10",
+   "language": "en",
+   "type": "long",
+   "stem_md": "The imagined Kolar Silk Reelers is setting up a new reeling unit that will employ forty people. Explain five steps of the staffing process it should follow, in order, with an example of each.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Five steps in order, each with an example for the reeling unit.",
+   "marks": 5,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch10-t01"
+   ],
+   "expected_time_sec": 600,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Estimating manpower requirements:** work out that the unit needs, say, **30 reelers, 6 helpers and 4 supervisors**, and compare with staff who could be shifted.\n2. **Recruitment:** **advertise** locally and ask **employees to recommend** skilled reelers, so many suitable people apply.\n3. **Selection:** screen applicants, give a **reeling test** and interview them, then choose the best.\n4. **Placement and orientation:** put each person in a **suitable job** and introduce them to the unit, the team and safety rules.\n5. **Training and development:** train reelers in the **unit's machines** and prepare supervisors for higher posts. Later steps are appraisal, promotion and compensation."
+   },
+   "word_limit": {
+    "min": 100,
+    "max": 150
+   },
+   "marking_scheme": [
+    {
+     "step": "Estimating requirements",
+     "marks": 1
+    },
+    {
+     "step": "Recruitment",
+     "marks": 1
+    },
+    {
+     "step": "Selection",
+     "marks": 1
+    },
+    {
+     "step": "Placement and orientation",
+     "marks": 1
+    },
+    {
+     "step": "Training and development",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch10_016",
+   "unit": "isc-12-commerce-ch10",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "The imagined Mirzapur Carpets advertises in local papers, visits weaving schools and asks its weavers to tell friends about openings, so that many suitable people apply. This activity is",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "selection"
+    },
+    {
+     "id": "b",
+     "text_md": "placement"
+    },
+    {
+     "id": "c",
+     "text_md": "training"
+    },
+    {
+     "id": "d",
+     "text_md": "recruitment"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (d)** recruitment. Searching for prospective employees and encouraging them to apply is recruitment.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch10-t02"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "d"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (d)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch10_017",
+   "unit": "isc-12-commerce-ch10",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "When the quality supervisor of the imagined Nellore Aqua Feeds retired, the most experienced feed tester was moved up to the post with higher pay and status. This is",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "transfer, an internal source"
+    },
+    {
+     "id": "b",
+     "text_md": "promotion, an internal source"
+    },
+    {
+     "id": "c",
+     "text_md": "casual callers, an external source"
+    },
+    {
+     "id": "d",
+     "text_md": "campus recruitment, an external source"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (b)** promotion, an internal source. Moving an employee to a higher post with more pay, status and responsibility is promotion, an internal source of recruitment.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch10-t02"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "b"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (b)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch10_018",
+   "unit": "isc-12-commerce-ch10",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "The imagined Ambala Science Instruments posts its openings for lab technicians on a job portal, and candidates upload their applications online. Which source of recruitment is this?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Web publishing, an external source"
+    },
+    {
+     "id": "b",
+     "text_md": "Promotion, an internal source"
+    },
+    {
+     "id": "c",
+     "text_md": "Employment exchange"
+    },
+    {
+     "id": "d",
+     "text_md": "Labour contractor"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (a)** Web publishing, an external source. Advertising vacancies on internet job sites and receiving applications online is web publishing, an external source.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch10-t02"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (a)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch10_019",
+   "unit": "isc-12-commerce-ch10",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "For a two-month rush to load coir bales onto ships, the imagined Kakinada Port Logistics asks a contractor to supply forty loaders at short notice. Which source of recruitment is this?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Campus recruitment"
+    },
+    {
+     "id": "b",
+     "text_md": "Labour contractors"
+    },
+    {
+     "id": "c",
+     "text_md": "Promotion"
+    },
+    {
+     "id": "d",
+     "text_md": "Placement agencies"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (b)** Labour contractors. Contractors who supply unskilled or semi-skilled workers, often for short periods, are labour contractors.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch10-t02"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "b"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (b)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch10_020",
+   "unit": "isc-12-commerce-ch10",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "For ten years the imagined Nellore Aqua Feeds has filled every senior post by promotion. Its products now look old-fashioned beside those of rivals who hire experts from outside. Which limitation of internal sources does this show?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "It is too costly and slow"
+    },
+    {
+     "id": "b",
+     "text_md": "It lowers the morale of existing staff"
+    },
+    {
+     "id": "c",
+     "text_md": "Fresh talent and new ideas do not enter the firm"
+    },
+    {
+     "id": "d",
+     "text_md": "It cannot be used in any firm"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (c)** Fresh talent and new ideas do not enter the firm. Relying only on internal sources keeps out new people with fresh skills and ideas.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch10-t02"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "c"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (c)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch10_021",
+   "unit": "isc-12-commerce-ch10",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "An HR officer of the imagined Mirzapur Carpets lists four claims about external sources of recruitment:\nP. They bring in fresh talent.\nQ. They offer a wider choice of candidates.\nR. They are always cheaper and quicker than internal sources.\nS. They create a competitive spirit among existing staff.\nWhich claims are correct?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "P and R only"
+    },
+    {
+     "id": "b",
+     "text_md": "P, Q and S"
+    },
+    {
+     "id": "c",
+     "text_md": "Q, R and S"
+    },
+    {
+     "id": "d",
+     "text_md": "P, Q, R and S"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (b)** P, Q and S. Fresh talent (P), wider choice (Q) and competitive spirit (S) are merits of external sources. R is wrong: external recruitment is usually costlier and slower.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch10-t02"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "b"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (b)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch10_022",
+   "unit": "isc-12-commerce-ch10",
+   "language": "en",
+   "type": "assertion-reason",
+   "stem_md": "**Assertion (A):** Internal recruitment is generally quicker and cheaper than external recruitment.\n\n**Reason (R):** Internal candidates are already known to the firm, so less advertising and checking is needed.\n\nChoose the correct option.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Both Assertion and Reason are true and Reason is the correct explanation for Assertion."
+    },
+    {
+     "id": "b",
+     "text_md": "Both Assertion and Reason are true but Reason is not the correct explanation for Assertion."
+    },
+    {
+     "id": "c",
+     "text_md": "Assertion is true and Reason is false."
+    },
+    {
+     "id": "d",
+     "text_md": "Both Assertion and Reason are false."
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (a)** Both are true, and the reason explains the assertion: known candidates need little searching or screening, which saves time and money.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch10-t02"
+   ],
+   "expected_time_sec": 75,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (a)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch10_023",
+   "unit": "isc-12-commerce-ch10",
+   "language": "en",
+   "type": "assertion-reason",
+   "stem_md": "**Assertion (A):** Transfers bring fresh talent from outside into the organisation.\n\n**Reason (R):** Promotion is an external source of recruitment.\n\nChoose the correct option.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Both Assertion and Reason are true and Reason is the correct explanation for Assertion."
+    },
+    {
+     "id": "b",
+     "text_md": "Both Assertion and Reason are true but Reason is not the correct explanation for Assertion."
+    },
+    {
+     "id": "c",
+     "text_md": "Assertion is true and Reason is false."
+    },
+    {
+     "id": "d",
+     "text_md": "Both Assertion and Reason are false."
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (d)** Both are false. A transfer moves an existing employee to another post, so no outside talent enters; and promotion is an internal source.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch10-t02"
+   ],
+   "expected_time_sec": 75,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "d"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (d)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch10_024",
+   "unit": "isc-12-commerce-ch10",
+   "language": "en",
+   "type": "true-false",
+   "stem_md": "Recruitment is called a positive process because it encourages as many suitable people as possible to apply.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "True"
+    },
+    {
+     "id": "b",
+     "text_md": "False"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**True.** True. Recruitment widens the pool of applicants, whereas selection narrows it by rejecting the unsuitable.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch10-t02"
+   ],
+   "expected_time_sec": 40,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct choice (True)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch10_025",
+   "unit": "isc-12-commerce-ch10",
+   "language": "en",
+   "type": "fill-blank",
+   "stem_md": "Complete the analogy. Promotion : internal source :: Campus recruitment : ___ source",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Promotion fills a post from within the firm (internal); campus recruitment brings in people from colleges (external).",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch10-t02"
+   ],
+   "expected_time_sec": 45,
+   "assets": [],
+   "answer": {
+    "blanks": [
+     {
+      "accepted": [
+       "external"
+      ]
+     }
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Blank 1: external",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch10_026",
+   "unit": "isc-12-commerce-ch10",
+   "language": "en",
+   "type": "match",
+   "stem_md": "Match each way in which the imagined Mirzapur Carpets finds staff with its source of recruitment.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Weavers suggest skilled relatives and friends"
+    },
+    {
+     "id": "b",
+     "text_md": "People drop in at the office asking for work, and their forms are kept on file"
+    },
+    {
+     "id": "c",
+     "text_md": "Vacancies are notified to the government office that keeps a register of job seekers"
+    },
+    {
+     "id": "d",
+     "text_md": "A finished-goods manager is shifted from the Bhadohi unit to the Mirzapur unit at the same pay"
+    }
+   ],
+   "match_right": [
+    {
+     "id": "p",
+     "text_md": "Casual callers"
+    },
+    {
+     "id": "q",
+     "text_md": "Transfer"
+    },
+    {
+     "id": "r",
+     "text_md": "Recommendations of employees"
+    },
+    {
+     "id": "s",
+     "text_md": "Employment exchange"
+    }
+   ],
+   "solution_md": "**Key:** (a)–(r), (b)–(p), (c)–(s), (d)–(q). Suggestions by staff are employee recommendations; walk-in applicants are casual callers; the government register is the employment exchange; moving a manager at the same level is a transfer.",
+   "marks": 2,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch10-t02"
+   ],
+   "expected_time_sec": 120,
+   "assets": [],
+   "answer": {
+    "pairs": [
+     {
+      "left_id": "a",
+      "right_id": "r"
+     },
+     {
+      "left_id": "b",
+      "right_id": "p"
+     },
+     {
+      "left_id": "c",
+      "right_id": "s"
+     },
+     {
+      "left_id": "d",
+      "right_id": "q"
+     }
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Each correct pair 0.5 mark (4 pairs)",
+     "marks": 2
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch10_027",
+   "unit": "isc-12-commerce-ch10",
+   "language": "en",
+   "type": "short",
+   "stem_md": "The imagined Kolar Silk Reelers has just opened its first unit. Give two reasons why it must rely on external sources of recruitment.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Two valid reasons.",
+   "marks": 2,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch10-t02"
+   ],
+   "expected_time_sec": 150,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **No existing staff:** a new firm has **no employees** to promote or transfer, so internal sources cannot fill posts.\n2. **Wide range of skills needed:** it needs reelers, supervisors and accountants at once, so it must search a **wide pool** outside."
+   },
+   "word_limit": {
+    "min": 30,
+    "max": 50
+   },
+   "marking_scheme": [
+    {
+     "step": "First reason",
+     "marks": 1
+    },
+    {
+     "step": "Second reason",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch10_028",
+   "unit": "isc-12-commerce-ch10",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Suggest a suitable source of recruitment for each post at the imagined Kakinada Port Logistics, with a reason: (i) thirty loaders for a six-week rush; (ii) a head of finance with rare port-industry experience.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "A suitable source with a reason for each post.",
+   "marks": 2,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch10-t02"
+   ],
+   "expected_time_sec": 150,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "(i) **Labour contractors:** they can supply many **unskilled workers quickly** for a short period.\n(ii) **Placement agency or management consultant:** they can **search, screen** and find a **rare senior specialist**, saving the firm time."
+   },
+   "word_limit": {
+    "min": 30,
+    "max": 50
+   },
+   "marking_scheme": [
+    {
+     "step": "(i) Source with reason",
+     "marks": 1
+    },
+    {
+     "step": "(ii) Source with reason",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch10_029",
+   "unit": "isc-12-commerce-ch10",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Explain advertisement, campus recruitment and labour contractors as external sources of recruitment, stating the kind of post each suits.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Each source explained with the posts it suits.",
+   "marks": 3,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch10-t02"
+   ],
+   "expected_time_sec": 210,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Advertisement:** vacancies are announced in **newspapers, journals or online**; suits **senior and skilled** posts needing a wide choice.\n2. **Campus recruitment:** firms visit **colleges and institutes** to test and hire final-year students; suits **trainee** posts for technical and managerial jobs.\n3. **Labour contractors:** contractors **supply workers** on demand; suit **unskilled and semi-skilled** posts, often for short periods."
+   },
+   "word_limit": {
+    "min": 50,
+    "max": 75
+   },
+   "marking_scheme": [
+    {
+     "step": "Advertisement",
+     "marks": 1
+    },
+    {
+     "step": "Campus recruitment",
+     "marks": 1
+    },
+    {
+     "step": "Labour contractors",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch10_030",
+   "unit": "isc-12-commerce-ch10",
+   "language": "en",
+   "type": "short",
+   "stem_md": "The imagined Nellore Aqua Feeds wants to fill the post of head of research by promoting its senior feed tester. Evaluate this choice with three points.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Points for and against leading to a verdict.",
+   "marks": 3,
+   "difficulty": 3,
+   "competency": "evaluation",
+   "bloom": "evaluate",
+   "topic_ids": [
+    "isc-12-commerce-ch10-t02"
+   ],
+   "expected_time_sec": 210,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **For — morale and loyalty:** promotion **rewards** long service and motivates other staff.\n2. **For — known and quick:** the tester's **ability is already known**, and no costly search is needed.\n3. **Against — no fresh ideas:** research needs **new knowledge**; an outsider may bring fresh methods. **Verdict:** promote only if the tester has the required **research skills**; otherwise search outside."
+   },
+   "word_limit": {
+    "min": 50,
+    "max": 75
+   },
+   "marking_scheme": [
+    {
+     "step": "First point",
+     "marks": 1
+    },
+    {
+     "step": "Second point",
+     "marks": 1
+    },
+    {
+     "step": "Third point with verdict",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch10_031",
+   "unit": "isc-12-commerce-ch10",
+   "language": "en",
+   "type": "long",
+   "stem_md": "(a) Distinguish between internal and external sources of recruitment on two bases. [2]\n(b) The imagined Kakinada Port Logistics needs (i) a general manager for a new port terminal, (ii) fifty loaders for one season, and (iii) six trainee accountants. Suggest the most suitable source for each, with a reason. [3]",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Two bases of difference; a suitable source with a reason for each post.",
+   "marks": 5,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch10-t02"
+   ],
+   "expected_time_sec": 600,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "(a) 1. **Where candidates come from:** internal sources fill posts **from within** (promotion, transfer); external sources look **outside** the firm.\n2. **Cost and fresh talent:** internal sources are **quicker and cheaper** but bring no new ideas; external sources cost more but bring **fresh talent** and wider choice.\n\n(b) (i) **Advertisement or placement agency/consultant:** a senior post needs a **wide search** for experienced candidates, which an agency can screen.\n(ii) **Labour contractors:** they supply **many unskilled workers quickly** for a short period.\n(iii) **Campus recruitment:** commerce colleges offer **trained graduates** who can be tested and hired as a group."
+   },
+   "word_limit": {
+    "min": 100,
+    "max": 150
+   },
+   "marking_scheme": [
+    {
+     "step": "(a) Two bases",
+     "marks": 2
+    },
+    {
+     "step": "(b) Three sources with reasons",
+     "marks": 3
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch10_032",
+   "unit": "isc-12-commerce-ch10",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Applicants for trainee coffee-tasters at the imagined Hassan Coffee Curers first fill in a short form and have a ten-minute chat at the gate; those clearly unsuitable are told politely that they will not be considered. This step of selection is",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "the employment interview"
+    },
+    {
+     "id": "b",
+     "text_md": "the medical examination"
+    },
+    {
+     "id": "c",
+     "text_md": "the job offer"
+    },
+    {
+     "id": "d",
+     "text_md": "preliminary screening"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (d)** preliminary screening. The first step, which weeds out clearly unsuitable applicants quickly, is preliminary screening.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch10-t03"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "d"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (d)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch10_033",
+   "unit": "isc-12-commerce-ch10",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Applicants for welder posts at the imagined Durg Steel Fabricators are asked to join two steel plates while a supervisor checks the strength and finish of the joint. Which selection test is this?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Intelligence test"
+    },
+    {
+     "id": "b",
+     "text_md": "Interest test"
+    },
+    {
+     "id": "c",
+     "text_md": "Personality test"
+    },
+    {
+     "id": "d",
+     "text_md": "Trade test"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (d)** Trade test. A test of the skill and knowledge a candidate already has in a trade is a trade test.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch10-t03"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "d"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (d)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch10_034",
+   "unit": "isc-12-commerce-ch10",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Candidates for management trainee posts at the imagined Ambala Science Instruments take a written test of reasoning, memory and working with numbers. Which selection test is this?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Trade test"
+    },
+    {
+     "id": "b",
+     "text_md": "Interest test"
+    },
+    {
+     "id": "c",
+     "text_md": "Intelligence test"
+    },
+    {
+     "id": "d",
+     "text_md": "Medical test"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (c)** Intelligence test. A test of mental abilities such as reasoning, memory and numerical skill measures intelligence.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch10-t03"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "c"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (c)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch10_035",
+   "unit": "isc-12-commerce-ch10",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "A questionnaire used by the imagined Rajkot Diesel Engines finds out whether each candidate enjoys working with machines, with people or with numbers. Which selection test is this?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Aptitude test"
+    },
+    {
+     "id": "b",
+     "text_md": "Interest test"
+    },
+    {
+     "id": "c",
+     "text_md": "Trade test"
+    },
+    {
+     "id": "d",
+     "text_md": "Intelligence test"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (b)** Interest test. A test that finds a person's likes and preferences for kinds of work is an interest test.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch10-t03"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "b"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (b)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch10_036",
+   "unit": "isc-12-commerce-ch10",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Before appointing a cashier, the imagined Tirunelveli Halwa House contacts the bank where she worked earlier and asks about her honesty and conduct. Which step of selection is this?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Reference and background checks"
+    },
+    {
+     "id": "b",
+     "text_md": "Preliminary screening"
+    },
+    {
+     "id": "c",
+     "text_md": "Placement"
+    },
+    {
+     "id": "d",
+     "text_md": "Selection tests"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (a)** Reference and background checks. Verifying a candidate's past record and character with former employers and referees is a reference and background check.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch10-t03"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (a)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch10_037",
+   "unit": "isc-12-commerce-ch10",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "The imagined Kakinada Port Logistics offers a crane operator's post to Sunil, subject to his passing a check of eyesight and general fitness. Which step of selection is this?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Employment interview"
+    },
+    {
+     "id": "b",
+     "text_md": "Medical examination"
+    },
+    {
+     "id": "c",
+     "text_md": "Preliminary screening"
+    },
+    {
+     "id": "d",
+     "text_md": "Contract of employment"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (b)** Medical examination. Checking that a chosen candidate is physically fit for the job is the medical examination.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch10-t03"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "b"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (b)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch10_038",
+   "unit": "isc-12-commerce-ch10",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Read these statements about recruitment and selection:\nP. Recruitment comes before selection.\nQ. Recruitment is a positive process; selection is a negative process.\nR. Selection aims to widen the pool of applicants.\nS. Selection uses tests and interviews to choose the most suitable candidate.\nWhich statements are correct?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "P, Q and S"
+    },
+    {
+     "id": "b",
+     "text_md": "P and R only"
+    },
+    {
+     "id": "c",
+     "text_md": "Q, R and S"
+    },
+    {
+     "id": "d",
+     "text_md": "P, Q, R and S"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (a)** P, Q and S. P, Q and S are correct. R is wrong: it is recruitment that widens the pool; selection narrows it by rejecting the unsuitable.",
+   "marks": 1,
+   "difficulty": 4,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch10-t03"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (a)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch10_039",
+   "unit": "isc-12-commerce-ch10",
+   "language": "en",
+   "type": "ordering",
+   "stem_md": "The imagined Tirunelveli Halwa House is hiring a store manager. Arrange its selection steps in the correct order.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Sort applications and reject those without retail experience"
+    },
+    {
+     "id": "b",
+     "text_md": "Both sides sign the terms of employment"
+    },
+    {
+     "id": "c",
+     "text_md": "Decide to appoint her"
+    },
+    {
+     "id": "d",
+     "text_md": "Arrange a health check-up"
+    },
+    {
+     "id": "e",
+     "text_md": "Give a short test on stock records"
+    },
+    {
+     "id": "f",
+     "text_md": "Interview the shortlisted candidates"
+    },
+    {
+     "id": "g",
+     "text_md": "Send her a letter offering the post"
+    },
+    {
+     "id": "h",
+     "text_md": "Contact former employers about the best candidate"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct order:** (a) → (e) → (f) → (h) → (c) → (d) → (g) → (b). Preliminary screening, selection tests, employment interview, reference and background checks, selection decision, medical examination, job offer and contract of employment.",
+   "marks": 2,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch10-t03"
+   ],
+   "expected_time_sec": 200,
+   "assets": [],
+   "answer": {
+    "order": [
+     "a",
+     "e",
+     "f",
+     "h",
+     "c",
+     "d",
+     "g",
+     "b"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Complete correct sequence (all items in place)",
+     "marks": 2
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch10_040",
+   "unit": "isc-12-commerce-ch10",
+   "language": "en",
+   "type": "assertion-reason",
+   "stem_md": "**Assertion (A):** Selection is often described as a negative process.\n\n**Reason (R):** It rejects unsuitable candidates in order to choose the best.\n\nChoose the correct option.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Both Assertion and Reason are true and Reason is the correct explanation for Assertion."
+    },
+    {
+     "id": "b",
+     "text_md": "Both Assertion and Reason are true but Reason is not the correct explanation for Assertion."
+    },
+    {
+     "id": "c",
+     "text_md": "Assertion is true and Reason is false."
+    },
+    {
+     "id": "d",
+     "text_md": "Both Assertion and Reason are false."
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (a)** Both are true, and the reason explains the assertion: selection works by turning away more candidates than it accepts.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch10-t03"
+   ],
+   "expected_time_sec": 75,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (a)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch10_041",
+   "unit": "isc-12-commerce-ch10",
+   "language": "en",
+   "type": "assertion-reason",
+   "stem_md": "**Assertion (A):** The employment interview is an important step in selection.\n\n**Reason (R):** The interview is always the very first step of the selection process.\n\nChoose the correct option.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Both Assertion and Reason are true and Reason is the correct explanation for Assertion."
+    },
+    {
+     "id": "b",
+     "text_md": "Both Assertion and Reason are true but Reason is not the correct explanation for Assertion."
+    },
+    {
+     "id": "c",
+     "text_md": "Assertion is true and Reason is false."
+    },
+    {
+     "id": "d",
+     "text_md": "Both Assertion and Reason are false."
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (c)** The assertion is true: the interview lets the employer judge suitability face to face. The reason is false: selection begins with preliminary screening, and tests usually come before the interview.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch10-t03"
+   ],
+   "expected_time_sec": 75,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "c"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (c)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch10_042",
+   "unit": "isc-12-commerce-ch10",
+   "language": "en",
+   "type": "true-false",
+   "stem_md": "In the selection process, reference checks are carried out before any tests or interviews.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "True"
+    },
+    {
+     "id": "b",
+     "text_md": "False"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**False.** False. References and background are checked after the tests and interview, for the candidates who are likely to be chosen.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch10-t03"
+   ],
+   "expected_time_sec": 40,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "b"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct choice (False)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch10_043",
+   "unit": "isc-12-commerce-ch10",
+   "language": "en",
+   "type": "fill-blank",
+   "stem_md": "Complete the analogy. Joining two steel plates : trade test :: Questions on reasoning, memory and numbers : ___ test",
+   "options": [],
+   "match_right": [],
+   "solution_md": "A practical welding task tests existing trade skill; reasoning, memory and number questions make up an intelligence test.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch10-t03"
+   ],
+   "expected_time_sec": 45,
+   "assets": [],
+   "answer": {
+    "blanks": [
+     {
+      "accepted": [
+       "intelligence"
+      ]
+     }
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Blank 1: intelligence",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch10_044",
+   "unit": "isc-12-commerce-ch10",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Distinguish between recruitment and selection on two bases.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Two valid bases of difference.",
+   "marks": 2,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch10-t03"
+   ],
+   "expected_time_sec": 150,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Purpose:** recruitment **attracts** as many suitable candidates as possible to apply; selection **chooses** the most suitable among them.\n2. **Nature and order:** recruitment is **positive** and comes **first**; selection is **negative**, rejecting many, and comes **after** recruitment."
+   },
+   "word_limit": {
+    "min": 30,
+    "max": 50
+   },
+   "marking_scheme": [
+    {
+     "step": "First basis",
+     "marks": 1
+    },
+    {
+     "step": "Second basis",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch10_045",
+   "unit": "isc-12-commerce-ch10",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Name the selection test the imagined Durg Steel Fabricators should use in each case, with a reason: (i) to check whether a fitter can already assemble a gearbox; (ii) to find whether school-leavers have the potential to learn machining quickly.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Correct test with a reason for each case.",
+   "marks": 2,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch10-t03"
+   ],
+   "expected_time_sec": 150,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "(i) **Trade test:** it checks the **skill a candidate already has** in a trade.\n(ii) **Aptitude test:** it measures a person's **potential to learn** new skills quickly."
+   },
+   "word_limit": {
+    "min": 30,
+    "max": 50
+   },
+   "marking_scheme": [
+    {
+     "step": "(i) Trade test with reason",
+     "marks": 1
+    },
+    {
+     "step": "(ii) Aptitude test with reason",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch10_046",
+   "unit": "isc-12-commerce-ch10",
+   "language": "en",
+   "type": "short",
+   "stem_md": "The imagined Pali Dye Works received 300 applications for the post of colour technician. Explain the first three steps of selection it should follow, with an example of each.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "The first three steps applied to the dye works.",
+   "marks": 3,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch10-t03"
+   ],
+   "expected_time_sec": 210,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Preliminary screening:** reject applicants who lack the **required diploma** or experience, leaving a manageable list.\n2. **Selection tests:** give a **trade test** on matching shades and an **aptitude test** for learning new dyes.\n3. **Employment interview:** a panel meets the shortlisted candidates to judge **knowledge, communication and fit** with the dye house."
+   },
+   "word_limit": {
+    "min": 50,
+    "max": 75
+   },
+   "marking_scheme": [
+    {
+     "step": "Preliminary screening",
+     "marks": 1
+    },
+    {
+     "step": "Selection tests",
+     "marks": 1
+    },
+    {
+     "step": "Employment interview",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch10_047",
+   "unit": "isc-12-commerce-ch10",
+   "language": "en",
+   "type": "long",
+   "stem_md": "The imagined Kolar Silk Reelers has shortlisted six candidates for the post of quality supervisor after preliminary screening. Explain the next five steps of selection it should follow, in order, with an example of each.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Five steps after screening, in order, each applied to the reeling firm.",
+   "marks": 5,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch10-t03"
+   ],
+   "expected_time_sec": 600,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Selection tests:** a **trade test** on judging silk grades and an **intelligence test** of reasoning.\n2. **Employment interview:** a panel asks about **experience, problem solving and handling workers**.\n3. **Reference and background checks:** the firm contacts **former employers** about the best candidate's honesty and record.\n4. **Selection decision:** the panel **chooses** the candidate who did best overall in tests, interview and checks.\n5. **Medical examination:** the chosen candidate's **eyesight and fitness** are checked, since grading silk needs good vision.\nThe **job offer** and **contract of employment** then complete selection."
+   },
+   "word_limit": {
+    "min": 100,
+    "max": 150
+   },
+   "marking_scheme": [
+    {
+     "step": "Selection tests",
+     "marks": 1
+    },
+    {
+     "step": "Interview",
+     "marks": 1
+    },
+    {
+     "step": "Reference checks",
+     "marks": 1
+    },
+    {
+     "step": "Selection decision",
+     "marks": 1
+    },
+    {
+     "step": "Medical examination",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch10_048",
+   "unit": "isc-12-commerce-ch10",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "The imagined Rajkot Diesel Engines sends its future plant heads on a year-long programme in leadership, decision making and handling change. This programme is mainly an example of",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "training for one specific job"
+    },
+    {
+     "id": "b",
+     "text_md": "recruitment"
+    },
+    {
+     "id": "c",
+     "text_md": "placement"
+    },
+    {
+     "id": "d",
+     "text_md": "development"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (d)** development. Development aims at the overall growth of a person, preparing him or her for higher responsibilities, beyond the skills of one job.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch10-t04"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "d"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (d)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch10_049",
+   "unit": "isc-12-commerce-ch10",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "New crane operators at the imagined Kakinada Port Logistics practise on a crane simulator set up in a separate training hall before they handle real cranes on the docks. This method of training is",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "vestibule training"
+    },
+    {
+     "id": "b",
+     "text_md": "apprenticeship"
+    },
+    {
+     "id": "c",
+     "text_md": "coaching"
+    },
+    {
+     "id": "d",
+     "text_md": "internship"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (a)** vestibule training. Training on equipment set up away from the actual workplace, so that costly mistakes are avoided, is vestibule training.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch10-t04"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (a)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch10_050",
+   "unit": "isc-12-commerce-ch10",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Young weavers at the imagined Mirzapur Carpets work at the loom for three years under a master weaver, earning a stipend while they learn the craft. This method of training is",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "vestibule training"
+    },
+    {
+     "id": "b",
+     "text_md": "a case study"
+    },
+    {
+     "id": "c",
+     "text_md": "apprenticeship"
+    },
+    {
+     "id": "d",
+     "text_md": "a classroom lecture"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (c)** apprenticeship. Learning a skilled trade over a long period under the guidance of a master worker, while being paid, is apprenticeship.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch10-t04"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "c"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (c)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch10_051",
+   "unit": "isc-12-commerce-ch10",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "At the imagined Pali Dye Works, the chief chemist meets a junior chemist every morning, sets her small targets and gives feedback on her colour recipes. This method is",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "vestibule training"
+    },
+    {
+     "id": "b",
+     "text_md": "apprenticeship"
+    },
+    {
+     "id": "c",
+     "text_md": "coaching"
+    },
+    {
+     "id": "d",
+     "text_md": "a lecture"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (c)** coaching. A superior guiding and advising a trainee one to one, with goals and feedback, is coaching, an on-the-job method.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch10-t04"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "c"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (c)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch10_052",
+   "unit": "isc-12-commerce-ch10",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "The training plan of the imagined Hassan Coffee Curers lists four methods:\nP. Case studies of past quality failures.\nQ. Coaching by the head taster.\nR. Practice on a model roaster in a training room.\nS. Apprenticeship under a master curer.\nWhich of these are **off-the-job** methods?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "P and Q only"
+    },
+    {
+     "id": "b",
+     "text_md": "Q and S only"
+    },
+    {
+     "id": "c",
+     "text_md": "P and R only"
+    },
+    {
+     "id": "d",
+     "text_md": "P, Q, R and S"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (c)** P and R only. Case studies (P) and practice on a model roaster away from the real line, that is vestibule training (R), are off-the-job. Coaching (Q) and apprenticeship (S) are on-the-job.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch10-t04"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "c"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (c)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch10_053",
+   "unit": "isc-12-commerce-ch10",
+   "language": "en",
+   "type": "assertion-reason",
+   "stem_md": "**Assertion (A):** Development aims at the overall growth of an individual.\n\n**Reason (R):** Apprenticeship is an on-the-job method of training.\n\nChoose the correct option.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Both Assertion and Reason are true and Reason is the correct explanation for Assertion."
+    },
+    {
+     "id": "b",
+     "text_md": "Both Assertion and Reason are true but Reason is not the correct explanation for Assertion."
+    },
+    {
+     "id": "c",
+     "text_md": "Assertion is true and Reason is false."
+    },
+    {
+     "id": "d",
+     "text_md": "Both Assertion and Reason are false."
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (b)** Both statements are true, but the reason, about one training method, does not explain why development is broader than training.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch10-t04"
+   ],
+   "expected_time_sec": 75,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "b"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (b)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch10_054",
+   "unit": "isc-12-commerce-ch10",
+   "language": "en",
+   "type": "true-false",
+   "stem_md": "Coaching is an off-the-job method of training.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "True"
+    },
+    {
+     "id": "b",
+     "text_md": "False"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**False.** False. Coaching takes place while the trainee works on the actual job, under a superior's guidance, so it is an on-the-job method.",
+   "marks": 1,
+   "difficulty": 1,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch10-t04"
+   ],
+   "expected_time_sec": 40,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "b"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct choice (False)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch10_055",
+   "unit": "isc-12-commerce-ch10",
+   "language": "en",
+   "type": "fill-blank",
+   "stem_md": "Complete the analogy. Apprenticeship : on-the-job method :: Classroom lectures : ___ method",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Apprenticeship is learning while doing the job; classroom lectures happen away from the job, so they are an off-the-job method.",
+   "marks": 1,
+   "difficulty": 1,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch10-t04"
+   ],
+   "expected_time_sec": 45,
+   "assets": [],
+   "answer": {
+    "blanks": [
+     {
+      "accepted": [
+       "off-the-job",
+       "off the job",
+       "off-job"
+      ]
+     }
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Blank 1: off-the-job",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch10_056",
+   "unit": "isc-12-commerce-ch10",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Give one example each of training and of development from an imagined cooperative bank in Kolhapur, and state the difference they show.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "An example of each with the difference.",
+   "marks": 2,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch10-t04"
+   ],
+   "expected_time_sec": 150,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "**Training:** teaching new clerks to use the **bank's loan software**. **Development:** a programme in **leadership** for officers who may become branch managers. Training builds **skills for a specific job**; development aims at **overall growth** for future roles."
+   },
+   "word_limit": {
+    "min": 30,
+    "max": 50
+   },
+   "marking_scheme": [
+    {
+     "step": "Two examples",
+     "marks": 1
+    },
+    {
+     "step": "Difference stated",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch10_057",
+   "unit": "isc-12-commerce-ch10",
+   "language": "en",
+   "type": "short",
+   "stem_md": "The imagined Rajkot Diesel Engines must train (i) new assemblers who will handle costly testing rigs, (ii) a promising junior engineer who needs daily guidance, and (iii) diploma students who spend six months at the plant during their course. Suggest a method of training for each, with a reason.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "A suitable method with a reason for each group.",
+   "marks": 3,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch10-t04"
+   ],
+   "expected_time_sec": 210,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "(i) **Vestibule training:** assemblers practise on **rigs set up away from the line**, so costly mistakes do not damage real engines.\n(ii) **Coaching:** a senior engineer **guides him daily**, setting goals and giving feedback on the actual job.\n(iii) **Internship:** a joint programme with the **institute**, in which students combine study with practical work at the plant."
+   },
+   "word_limit": {
+    "min": 50,
+    "max": 75
+   },
+   "marking_scheme": [
+    {
+     "step": "(i) Vestibule training",
+     "marks": 1
+    },
+    {
+     "step": "(ii) Coaching",
+     "marks": 1
+    },
+    {
+     "step": "(iii) Internship",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch10_058",
+   "unit": "isc-12-commerce-ch10",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Explain three benefits of training to the employees of the imagined Pali Dye Works.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Three benefits to employees explained.",
+   "marks": 3,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch10-t04"
+   ],
+   "expected_time_sec": 210,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Better skills and knowledge:** dyers learn **new colour recipes and machines**, so they do their work better.\n2. **Higher earnings and career growth:** improved performance leads to **bonuses and promotion**.\n3. **Fewer accidents and more confidence:** knowing the **safe way** to handle dyes and chemicals reduces accidents and raises morale."
+   },
+   "word_limit": {
+    "min": 50,
+    "max": 75
+   },
+   "marking_scheme": [
+    {
+     "step": "First benefit",
+     "marks": 1
+    },
+    {
+     "step": "Second benefit",
+     "marks": 1
+    },
+    {
+     "step": "Third benefit",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch10_059",
+   "unit": "isc-12-commerce-ch10",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Explain three off-the-job methods of training, giving an example of each from an imagined hotel in Gangtok.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Three off-the-job methods with hotel examples.",
+   "marks": 3,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch10-t04"
+   ],
+   "expected_time_sec": 210,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Classroom lectures:** talks on **hygiene rules** or guest handling for new staff in a training room.\n2. **Case study:** trainees **analyse a real complaint** that went wrong and suggest better responses.\n3. **Vestibule training:** new front-desk staff practise on a **copy of the booking system** in a separate room before facing guests."
+   },
+   "word_limit": {
+    "min": 50,
+    "max": 75
+   },
+   "marking_scheme": [
+    {
+     "step": "First method",
+     "marks": 1
+    },
+    {
+     "step": "Second method",
+     "marks": 1
+    },
+    {
+     "step": "Third method",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch10_060",
+   "unit": "isc-12-commerce-ch10",
+   "language": "en",
+   "type": "long",
+   "stem_md": "The imagined Hassan Coffee Curers is opening a new roasting plant with costly machines. Its owner wants all new staff to \"learn on the real machines from day one\".\n(a) Distinguish between on-the-job and off-the-job methods of training on two bases. [2]\n(b) Evaluate the owner's plan and suggest a better mix of methods. [3]",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Two bases of difference; a reasoned evaluation of the plan with a better mix of methods.",
+   "marks": 5,
+   "difficulty": 4,
+   "competency": "evaluation",
+   "bloom": "evaluate",
+   "topic_ids": [
+    "isc-12-commerce-ch10-t04",
+    "isc-12-commerce-ch10-t03"
+   ],
+   "expected_time_sec": 600,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "(a) 1. **Place:** on-the-job training happens **at the actual workplace** while doing the job; off-the-job training happens **away from it**, such as in a classroom or training hall.\n2. **Cost of mistakes:** on-the-job methods are practical but **mistakes affect real output**; off-the-job methods let trainees **learn safely** but may feel less realistic.\n\n(b) The plan is **risky**: beginners on **costly roasting machines** may damage them or waste coffee. A better mix: **vestibule training** on a model roaster first, so mistakes cost little; then **coaching** by senior roasters on the real line; and short **lectures or case studies** on quality and safety. This combines safety with real practice."
+   },
+   "word_limit": {
+    "min": 100,
+    "max": 150
+   },
+   "marking_scheme": [
+    {
+     "step": "(a) Two bases",
+     "marks": 2
+    },
+    {
+     "step": "(b) Evaluation of the plan",
+     "marks": 1
+    },
+    {
+     "step": "(b) Better mix with reasons",
+     "marks": 2
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch10_061",
+   "unit": "isc-12-commerce-ch10",
+   "language": "en",
+   "type": "case-based",
+   "stem_md": "Read the passage and answer the questions that follow. *(Imagined firm and people, written by SOYL for practice.)*",
+   "options": [],
+   "match_right": [],
+   "solution_md": "**(a)** **Correct option: (a)** Internal source. Promotion fills a post from within the firm: an internal source.\n\n**(b)** Testing a skill the candidate already has: a trade test.\n\n**(c) (i)** Two steps with supporting words.\n\n**OR (c) (ii)** Two external sources and one merit.",
+   "marks": 4,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch10-t02",
+    "isc-12-commerce-ch10-t03"
+   ],
+   "expected_time_sec": 420,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "**(a)** (a) Internal source\n\n**(b)** **Trade test.**\n\n**(c) (i)** 1. **Preliminary screening:** \"**Those without basic schooling were turned away at once**\".\n2. **Reference and background checks:** \"**phoned their earlier employers**\".\n\n**OR (c) (ii)** **Advertisement** (\"notice in local papers\") and **web publishing** (\"job portal\"). **Merit:** a **wide choice** — 400 applicants — from which the best sorters could be chosen."
+   },
+   "marking_scheme": [
+    {
+     "step": "Part (a)",
+     "marks": 1
+    },
+    {
+     "step": "Part (b)",
+     "marks": 1
+    },
+    {
+     "step": "Part (c): either (i) or (ii)",
+     "marks": 2
+    }
+   ],
+   "passage_md": "**Hassan Coffee Curers (imagined), Karnataka**\n\nHassan Coffee Curers needed a new curing supervisor and twelve sorters. It promoted Mahesh, its senior sorter, to supervisor. For the sorters, it placed a notice in local papers and on a job portal, and 400 people applied. Those without basic schooling were turned away at once. The rest sorted a tray of mixed beans while an expert watched. Shortlisted candidates were interviewed, and the firm phoned their earlier employers before deciding.",
+   "passage_origin": "soyl-original",
+   "children": [
+    {
+     "id": "a",
+     "type": "mcq",
+     "stem_md": "Filling the supervisor's post by promoting Mahesh uses which source of recruitment?",
+     "options": [
+      {
+       "id": "a",
+       "text_md": "Internal source"
+      },
+      {
+       "id": "b",
+       "text_md": "External source"
+      },
+      {
+       "id": "c",
+       "text_md": "Labour contractor"
+      },
+      {
+       "id": "d",
+       "text_md": "Campus recruitment"
+      }
+     ],
+     "match_right": [],
+     "solution_md": "**Correct option: (a)** Internal source. Promotion fills a post from within the firm: an internal source.",
+     "marks": 1,
+     "difficulty": 2,
+     "competency": "application",
+     "bloom": "apply",
+     "topic_ids": [
+      "isc-12-commerce-ch10-t02"
+     ],
+     "expected_time_sec": 60,
+     "assets": [],
+     "answer": {
+      "option_ids": [
+       "a"
+      ]
+     },
+     "marking_scheme": [
+      {
+       "step": "Correct option (a)",
+       "marks": 1
+      }
+     ],
+     "alternatives": []
+    },
+    {
+     "id": "b",
+     "type": "short",
+     "stem_md": "Name the selection test shown by \"sorted a tray of mixed beans while an expert watched\".",
+     "options": [],
+     "match_right": [],
+     "solution_md": "Testing a skill the candidate already has: a trade test.",
+     "marks": 1,
+     "difficulty": 2,
+     "competency": "application",
+     "bloom": "apply",
+     "topic_ids": [
+      "isc-12-commerce-ch10-t03"
+     ],
+     "expected_time_sec": 90,
+     "assets": [],
+     "answer": {
+      "model_answer_md": "**Trade test.**"
+     },
+     "marking_scheme": [
+      {
+       "step": "Trade test",
+       "marks": 1
+      }
+     ],
+     "alternatives": []
+    },
+    {
+     "id": "c",
+     "type": "short",
+     "stem_md": "**Either** (i): Identify two other steps of selection from the passage, quoting the words.",
+     "options": [],
+     "match_right": [],
+     "solution_md": "Two steps with supporting words.",
+     "marks": 2,
+     "difficulty": 3,
+     "competency": "analysis",
+     "bloom": "analyze",
+     "topic_ids": [
+      "isc-12-commerce-ch10-t03"
+     ],
+     "expected_time_sec": 150,
+     "assets": [],
+     "answer": {
+      "model_answer_md": "1. **Preliminary screening:** \"**Those without basic schooling were turned away at once**\".\n2. **Reference and background checks:** \"**phoned their earlier employers**\"."
+     },
+     "marking_scheme": [
+      {
+       "step": "First step with words",
+       "marks": 1
+      },
+      {
+       "step": "Second step with words",
+       "marks": 1
+      }
+     ],
+     "alternatives": [
+      {
+       "id": "c-ii",
+       "type": "short",
+       "stem_md": "**Or** (ii): Identify two external sources of recruitment used for the sorters, and state one merit of using them.",
+       "options": [],
+       "match_right": [],
+       "solution_md": "Two external sources and one merit.",
+       "marks": 2,
+       "difficulty": 3,
+       "competency": "analysis",
+       "bloom": "analyze",
+       "topic_ids": [
+        "isc-12-commerce-ch10-t02"
+       ],
+       "expected_time_sec": 150,
+       "assets": [],
+       "answer": {
+        "model_answer_md": "**Advertisement** (\"notice in local papers\") and **web publishing** (\"job portal\"). **Merit:** a **wide choice** — 400 applicants — from which the best sorters could be chosen."
+       },
+       "marking_scheme": [
+        {
+         "step": "Two sources",
+         "marks": 1
+        },
+        {
+         "step": "Merit",
+         "marks": 1
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch10_062",
+   "unit": "isc-12-commerce-ch10",
+   "language": "en",
+   "type": "case-based",
+   "stem_md": "Read the passage and answer the questions that follow. *(Imagined firm and people, written by SOYL for practice.)*",
+   "options": [],
+   "match_right": [],
+   "solution_md": "**(a)** **Correct option: (d)** vestibule training. Training on equipment set up away from the actual line is vestibule training.\n\n**(b)** Learning a trade over years under a master is apprenticeship.\n\n**(c) (i)** Development identified and explained.\n\n**OR (c) (ii)** Internship with one benefit.",
+   "marks": 4,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch10-t04"
+   ],
+   "expected_time_sec": 420,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "**(a)** (d) vestibule training\n\n**(b)** **Apprenticeship.**\n\n**(c) (i)** **Development.** It aims at **overall growth** — leadership and export knowledge — to prepare them for **future top posts**, not just the skills of their present job.\n\n**OR (c) (ii)** **Internship.** **Benefit:** the firm can **observe students at work** and later hire the best, who already know its designs."
+   },
+   "marking_scheme": [
+    {
+     "step": "Part (a)",
+     "marks": 1
+    },
+    {
+     "step": "Part (b)",
+     "marks": 1
+    },
+    {
+     "step": "Part (c): either (i) or (ii)",
+     "marks": 2
+    }
+   ],
+   "passage_md": "**Mirzapur Carpets (imagined), Uttar Pradesh**\n\nMirzapur Carpets trains its people in several ways. Young weavers work for three years under master weavers. New dyeing staff first practise on a small dye vat in a separate shed before working on the main line. Design students from a nearby institute spend six months at the firm as part of their course. Promising supervisors attend a year-long programme on leadership and export markets to prepare them for top posts.",
+   "passage_origin": "soyl-original",
+   "children": [
+    {
+     "id": "a",
+     "type": "mcq",
+     "stem_md": "Practising on a small dye vat in a separate shed before working on the main line is",
+     "options": [
+      {
+       "id": "a",
+       "text_md": "apprenticeship"
+      },
+      {
+       "id": "b",
+       "text_md": "coaching"
+      },
+      {
+       "id": "c",
+       "text_md": "job rotation"
+      },
+      {
+       "id": "d",
+       "text_md": "vestibule training"
+      }
+     ],
+     "match_right": [],
+     "solution_md": "**Correct option: (d)** vestibule training. Training on equipment set up away from the actual line is vestibule training.",
+     "marks": 1,
+     "difficulty": 2,
+     "competency": "application",
+     "bloom": "apply",
+     "topic_ids": [
+      "isc-12-commerce-ch10-t04"
+     ],
+     "expected_time_sec": 60,
+     "assets": [],
+     "answer": {
+      "option_ids": [
+       "d"
+      ]
+     },
+     "marking_scheme": [
+      {
+       "step": "Correct option (d)",
+       "marks": 1
+      }
+     ],
+     "alternatives": []
+    },
+    {
+     "id": "b",
+     "type": "short",
+     "stem_md": "Name the method of training used for the young weavers.",
+     "options": [],
+     "match_right": [],
+     "solution_md": "Learning a trade over years under a master is apprenticeship.",
+     "marks": 1,
+     "difficulty": 2,
+     "competency": "application",
+     "bloom": "apply",
+     "topic_ids": [
+      "isc-12-commerce-ch10-t04"
+     ],
+     "expected_time_sec": 90,
+     "assets": [],
+     "answer": {
+      "model_answer_md": "**Apprenticeship.**"
+     },
+     "marking_scheme": [
+      {
+       "step": "Apprenticeship",
+       "marks": 1
+      }
+     ],
+     "alternatives": []
+    },
+    {
+     "id": "c",
+     "type": "short",
+     "stem_md": "**Either** (i): Is the supervisors' programme training or development? Explain.",
+     "options": [],
+     "match_right": [],
+     "solution_md": "Development identified and explained.",
+     "marks": 2,
+     "difficulty": 3,
+     "competency": "analysis",
+     "bloom": "analyze",
+     "topic_ids": [
+      "isc-12-commerce-ch10-t04"
+     ],
+     "expected_time_sec": 150,
+     "assets": [],
+     "answer": {
+      "model_answer_md": "**Development.** It aims at **overall growth** — leadership and export knowledge — to prepare them for **future top posts**, not just the skills of their present job."
+     },
+     "marking_scheme": [
+      {
+       "step": "Identified",
+       "marks": 1
+      },
+      {
+       "step": "Explanation",
+       "marks": 1
+      }
+     ],
+     "alternatives": [
+      {
+       "id": "c-ii",
+       "type": "short",
+       "stem_md": "**Or** (ii): Name the method used for the design students, and state one benefit of it to the firm.",
+       "options": [],
+       "match_right": [],
+       "solution_md": "Internship with one benefit.",
+       "marks": 2,
+       "difficulty": 3,
+       "competency": "analysis",
+       "bloom": "analyze",
+       "topic_ids": [
+        "isc-12-commerce-ch10-t04"
+       ],
+       "expected_time_sec": 150,
+       "assets": [],
+       "answer": {
+        "model_answer_md": "**Internship.** **Benefit:** the firm can **observe students at work** and later hire the best, who already know its designs."
+       },
+       "marking_scheme": [
+        {
+         "step": "Method",
+         "marks": 1
+        },
+        {
+         "step": "Benefit",
+         "marks": 1
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  }
+ ],
+ "build": {
+  "run_id": null,
+  "checks": {
+   "syllabus": "topics t01–t04 of isc-12-commerce-ch10 (meaning, steps and importance of staffing; recruitment and its internal and external sources; selection procedure and recruitment versus selection; training and development, their differences, types and on-the-job and off-the-job methods)",
+   "originality": "every firm, person and case is imagined and written by SOYL and labelled; no ISC or CBSE textbook text, illustration or exercise and no CISCE specimen or board item reused (D-036); firms, people and set-ups differ from CBSE 12 Business Studies ch06",
+   "data": "no computed figures; all examples are imagined and labelled",
+   "facts": "stable textbook concepts only (eight steps of staffing, internal and external sources, eight steps of selection, five selection tests, types and methods of training)",
+   "gate": "schema, pipeline lint, deterministic verify, word limits, narration and answer-leak checks run clean in this build"
+  }
+ }
+}
