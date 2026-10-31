@@ -1297,6 +1297,14 @@ answer is reproduced. Chapter tests still use the `isc-12-default-*` blueprints.
 - **Fetched:** 2026-10-31
 - **Use:** ISC 12 Commerce question style: 3 hours, 80 marks, 13 compulsory questions; Section A one question of 16 one-mark subparts (case-based MCQs including statement-combination items, an assertion-reason item whose option (d) reads "Both Assertion and Reason are false", analogies, true/false, fill-in-the-blank, identify-the-concept and a document-based item), B 8 x 4 (short case scenarios, some split 1 + 3 or 2 + 2), C 4 x 8 (parts of 5 + 3 and a 2 + 2 + 4 passage); internal choice in two questions of B and one of C; every subpart tagged with a cognitive level (Recall to Evaluate).
 
+### `isc-2027-specimen-856-economics`
+- **Title:** ISC 2027 Specimen Question Paper and Answer Key - Economics (856)
+- **URL:** https://cisce.org/wp-content/uploads/2026/07/856-ECONOMICS-SQP-AK.pdf
+- **Publisher:** CISCE
+- **Exam year:** ISC 2027
+- **Fetched:** 2026-10-31
+- **Use:** ISC 12 Economics question style only (pattern, never questions): 3 hours plus 15 minutes reading, 80 marks, 13 compulsory questions in three sections. Section A is one question of 16 one-mark subparts (MCQs, some on a diagram, table or dated news extract; two assertion-reason items whose option (d) reads "Both Assertion and Reason are false"; very short answers such as a calculation, a definition, defend-or-refute and a data trend). Section B has eight 4-mark questions, usually set as 2 + 2 subparts (scenario explanations, diagrams, a national-income calculation from a table), with internal choice in three of them (attempt either subparts (i) and (ii) or (iii) and (iv)). Section C has four 8-mark questions set as 4 + 4 subparts, with internal choice in two. Every subpart carries a cognitive tag (Recall, Understand, Apply, Analyse, Evaluate, Create). SOYL chapter tests use the isc-12-default blueprints (1/2/3/5 marks); each ISC 12 Economics chapter bank also has some 4-mark and 8-mark items in this paper style for a future subject blueprint.
+
 ### `isc-2027-prescribed-books`
 - **Title:** ISC 2027 - Appendix I: List of Prescribed Textbooks (revised April 2026)
 - **URL:** https://cisce.org/wp-content/uploads/2026/04/40.-ISC-Appendix-I-List-of-Prescribed-Textbooks.pdf
