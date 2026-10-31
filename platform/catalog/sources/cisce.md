@@ -1274,6 +1274,29 @@ some questions of B, C and D), which `cisce/blueprints/12/*.yaml` scale down to 
 - **Fetched:** 2026-10-30
 - **Use:** Class 12 default blueprints and the ISC 12 Biology question style: 3 hours, 70 marks, 18 compulsory questions; Section A one question of 18 one-mark subparts (MCQs, two assertion-reason items whose option (d) reads "both false", analogies, give-a-reason, short calculations), B 7 x 2, C 7 x 3, D 3 x 5 set in parts (pedigree, diagram and data stimuli); internal choice in two questions each of B, C and D; every subpart tagged with a cognitive level (Recall to Create).
 
+#### ISC Commerce (857): no 2027 specimen; the 2026 specimen is used for the pattern
+
+The ISC 2027 specimen index (checked 2026-10-31) has no Commerce paper, and the October 2026 circular (`cisce-circular-specimen-papers-2027`)
+says subjects without a 2027 specimen keep the rubric and assessment structure of the 2026 examination cycle. The 2026 Commerce specimen below
+was therefore used for the ISC 12 Commerce question style only (item forms, case set-ups, cognitive tags); no question, case, passage or
+answer is reproduced. Chapter tests still use the `isc-12-default-*` blueprints.
+
+### `isc-2026-specimen-papers`
+- **Title:** ISC (Class XII) Year 2026 Specimen Question Papers and Answer Keys (index page)
+- **URL:** https://cisce.org/specimen-question-papers-isc-class-xii-2026/
+- **Publisher:** CISCE
+- **Exam year:** ISC 2026
+- **Fetched:** 2026-10-31
+- **Use:** Index linking the 2026 Commerce specimen (857), the latest Commerce specimen published.
+
+### `isc-2026-specimen-857-commerce`
+- **Title:** ISC 2026 Specimen Question Paper and Answer Key - Commerce (857)
+- **URL:** https://cisce.org/wp-content/uploads/2025/08/857-COMMERCE-SQP-AK.pdf
+- **Publisher:** CISCE
+- **Exam year:** ISC 2026 (pattern carried into 2027 by the circular above)
+- **Fetched:** 2026-10-31
+- **Use:** ISC 12 Commerce question style: 3 hours, 80 marks, 13 compulsory questions; Section A one question of 16 one-mark subparts (case-based MCQs including statement-combination items, an assertion-reason item whose option (d) reads "Both Assertion and Reason are false", analogies, true/false, fill-in-the-blank, identify-the-concept and a document-based item), B 8 x 4 (short case scenarios, some split 1 + 3 or 2 + 2), C 4 x 8 (parts of 5 + 3 and a 2 + 2 + 4 passage); internal choice in two questions of B and one of C; every subpart tagged with a cognitive level (Recall to Evaluate).
+
 ### `isc-2027-prescribed-books`
 - **Title:** ISC 2027 - Appendix I: List of Prescribed Textbooks (revised April 2026)
 - **URL:** https://cisce.org/wp-content/uploads/2026/04/40.-ISC-Appendix-I-List-of-Prescribed-Textbooks.pdf
