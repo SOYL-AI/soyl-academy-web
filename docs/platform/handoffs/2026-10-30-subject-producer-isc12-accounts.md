@@ -1,6 +1,6 @@
 # subject-producer — ISC Class 12 Accounts (hand-authored) — 2026-10-30/31
 
-Status: partial — ch01–ch09 gated and committed; ch10–ch14 in progress (this note is updated as each chapter lands)
+Status: partial — ch01–ch12 gated and committed; ch13–ch14 in progress (this note is updated as each chapter lands)
 
 Branch: `platform/subject-producer/isc-12-accounts` (from local `platform/main` 4c30f89). Author `claude-opus-5-5 (subject-producer)`, D-025/D-026, provenance `origin: "human"`, all items `status: "draft"`. Session-limit cut-offs (2026-10-30 ~11:00 IST) interrupted the work; nothing partial was committed.
 
@@ -24,6 +24,9 @@ Tests use the ISC defaults `isc-12-default-chapter-test-short` (50 min, 20 marks
 | 07 | Issue of Debentures | 20 + 21 | 31 | 8 | 31 | 71 (141) | 59% | 1cacda2 |
 | 08 | Redemption of Debentures | 20 + 20 | 30 | 8 | 31 | 70 (141) | 56% | 33d106f |
 | 09 | Final Accounts of Companies | 20 + 23 | 33 | 8 | 31 | 73 (146) | 59% | 4ef4017 |
+| 10 | Financial Statement Analysis: Comparative and Common Size Statements | 21 + 20 | 31 | 8 | 30 | 77 (155) | 60% | dd10049 |
+| 11 | Cash Flow Statement | 20 + 24 | 34 | 8 | 34 | 76 (160) | 58% | b26ca94 |
+| 12 | Ratio Analysis | 19 + 20 | 29 | 8 | 32 | 84 (164) | 57% | 8fa32e6 |
 
 ## How to verify
 
@@ -43,6 +46,8 @@ From `platform/` in the worktree, wrapped in `_tools/heavy.sh` (script `isc-acc-
 Every chapter build prints NO ERRORS and rebuilds byte-identically.
 
 Gate run for ch06–ch09 (2026-10-31 22:39 IST, ch01–ch09 in the tree): content gate 1289/1289; lint 0/0 for every ISC unit; verify 9 units, 680 questions, 0 flags; originality 184 units, 0 errors; cross-bank 1,518 questions, 0 ISC flags; DB-6 8/8; API 13/13; catalog valid. Log `C:/Users/Prabhu/soyl-wt/isc12-accounts-gates3.log`.
+
+Gate runs for ch11 (2026-10-31 23:06 IST) and ch10 + ch12 (23:57 IST, ch01–ch12 in the tree): content gate 1296/1296 and 1310/1310; lint 0/0 for every ISC unit; verify 12 units, 917 questions, 0 flags; originality 187 units, 0 errors; cross-bank 1,755 questions, 0 ISC flags; DB-6 8/8; API 13/13; catalog valid. Logs `isc12-accounts-gates4.log`, `isc12-accounts-gates5.log`.
 
 ## Blueprint fit (no catalog edit)
 
