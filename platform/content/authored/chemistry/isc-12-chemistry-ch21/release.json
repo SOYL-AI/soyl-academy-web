@@ -1,0 +1,5397 @@
+{
+  "unit": "isc-12-chemistry-ch21",
+  "version": 1,
+  "academic_year": "2026-27",
+  "created_at": "2026-10-30T00:00:00+05:30",
+  "decks": [
+    {
+      "unit": "isc-12-chemistry-ch21",
+      "part": 1,
+      "version": 1,
+      "title": "Carbohydrates — Part 1: Classification and the structure of glucose",
+      "language": "en",
+      "goals": [
+        "Classify carbohydrates by hydrolysis and by reducing power",
+        "Explain how six reactions of glucose establish its open-chain structure",
+        "Explain why glucose must also exist as a six-membered ring, and what anomers are",
+        "Assign D or L configuration to a sugar from its Fischer projection"
+      ],
+      "slides": [
+        {
+          "id": "s01",
+          "layout": "title",
+          "heading": "Sugars, starch and fibre",
+          "body_md": "Part 1 — what makes a compound a carbohydrate, and how chemists proved the structure of glucose using nothing but test-tube reactions.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Everyday material",
+                "Main carbohydrate"
+              ],
+              "rows": [
+                [
+                  "Honey, grapes",
+                  "Glucose and fructose"
+                ],
+                [
+                  "Jaggery, table sugar",
+                  "Sucrose"
+                ],
+                [
+                  "Milk",
+                  "Lactose"
+                ],
+                [
+                  "Rice, wheat, potatoes",
+                  "Starch"
+                ],
+                [
+                  "Cotton, paper, jute",
+                  "Cellulose"
+                ]
+              ]
+            },
+            "alt": "Table of everyday materials and the carbohydrate each mainly contains"
+          },
+          "math": [],
+          "narration": "Namaste! The rice on your plate, the cotton in your shirt and the jaggery in your tea are all carbohydrates. They supply most of our energy and much of the material plants are built from. In this part we classify them and then follow the classic detective story of how the structure of glucose was worked out from its reactions.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s02",
+          "layout": "concept",
+          "heading": "Definition and classification",
+          "body_md": "Carbohydrates are **optically active polyhydroxy aldehydes or ketones**, or substances that give them on hydrolysis. Many fit Cₓ(H₂O)ᵧ, but the formula is not a definition: rhamnose C₆H₁₂O₅ is a carbohydrate, while ethanoic acid C₂H₄O₂ is not. By hydrolysis: **monosaccharides** (no simpler sugar), **oligosaccharides** (2–10 units) and **polysaccharides** (many units). Monosaccharides are **aldoses** (–CHO) or **ketoses** (C=O), named by carbon count: aldopentose, ketohexose.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Class",
+                "Units on hydrolysis",
+                "Examples",
+                "Taste and solubility"
+              ],
+              "rows": [
+                [
+                  "Monosaccharide",
+                  "Does not hydrolyse",
+                  "Glucose, fructose, ribose",
+                  "Sweet, soluble (sugars)"
+                ],
+                [
+                  "Disaccharide",
+                  "2",
+                  "Sucrose, maltose, lactose",
+                  "Sweet, soluble (sugars)"
+                ],
+                [
+                  "Trisaccharide",
+                  "3",
+                  "Raffinose",
+                  "Sweet, soluble"
+                ],
+                [
+                  "Polysaccharide",
+                  "Hundreds to thousands",
+                  "Starch, cellulose, glycogen",
+                  "Not sweet, mostly insoluble (non-sugars)"
+                ]
+              ]
+            },
+            "alt": "Table classifying carbohydrates by the number of units obtained on hydrolysis, with examples, taste and solubility"
+          },
+          "math": [],
+          "narration": "A carbohydrate is an optically active compound with several hydroxyl groups and an aldehyde or ketone group, or one that gives such compounds on hydrolysis. The old idea of a hydrate of carbon is only a rough guide, because some carbohydrates do not fit that formula and some non-carbohydrates do. We sort them by hydrolysis: monosaccharides cannot be split, disaccharides give two units, and polysaccharides give many. Monosaccharides are aldoses or ketoses, named by the number of carbon atoms.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s03",
+          "layout": "concept",
+          "heading": "Reducing and non-reducing sugars; importance",
+          "body_md": "A sugar that reduces **Tollens’ reagent** (silver mirror) or **Fehling’s solution** (red Cu₂O) is a **reducing sugar**: it has a free aldehyde or α-hydroxy ketone group, or a ring that can open to one. All monosaccharides are reducing. A disaccharide is **non-reducing** if both anomeric carbons are tied up in the glycosidic link (sucrose). **Importance:** energy source (glucose, starch, glycogen), structure (cellulose in plants), raw materials (cotton, paper, ethanol by fermentation), and the sugars ribose and deoxyribose in nucleic acids.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Sugar",
+                "Tollens’ / Fehling’s",
+                "Classification"
+              ],
+              "rows": [
+                [
+                  "Glucose",
+                  "Positive",
+                  "Reducing"
+                ],
+                [
+                  "Fructose",
+                  "Positive",
+                  "Reducing"
+                ],
+                [
+                  "Maltose",
+                  "Positive",
+                  "Reducing"
+                ],
+                [
+                  "Lactose",
+                  "Positive",
+                  "Reducing"
+                ],
+                [
+                  "Sucrose",
+                  "Negative",
+                  "Non-reducing"
+                ],
+                [
+                  "Starch",
+                  "Negative (practically)",
+                  "Non-reducing"
+                ]
+              ]
+            },
+            "alt": "Table of six carbohydrates with their response to Tollens’ and Fehling’s reagents and their classification as reducing or non-reducing"
+          },
+          "math": [],
+          "narration": "Sugars that turn Tollens’ reagent into a silver mirror, or Fehling’s solution into a red precipitate, are reducing sugars. They contain a free aldehyde group, or a ring that can open to give one. Every simple sugar is reducing, but table sugar is not, because its two reactive carbons are locked together. Carbohydrates matter as fuel, as plant structure, as raw materials for cloth, paper and alcohol, and as part of nucleic acids.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s04",
+          "layout": "check",
+          "heading": "Quick check: classifying sugars",
+          "body_md": "Classify a carbohydrate from its hydrolysis products and its reaction with Fehling’s solution.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Count the units given on hydrolysis, then ask whether a free reducing group remains.",
+          "check_question_id": "q_isc12chem_ch21_001",
+          "audio": null
+        },
+        {
+          "id": "s05",
+          "layout": "diagram",
+          "heading": "Glucose: the open-chain structure",
+          "body_md": "Glucose, C₆H₁₂O₆, is an **aldohexose**: an unbranched chain of six carbons, –CHO at C1, secondary –OH on C2 to C5 and a primary –CH₂OH at C6. C2, C3, C4 and C5 are chiral, so 2⁴ = 16 stereoisomeric aldohexoses exist; natural glucose is one of them.",
+          "bullets": [],
+          "visual": {
+            "kind": "svg",
+            "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 340 250\" role=\"img\" aria-label=\"Open-chain structure of D-glucose drawn as a vertical chain of six carbon atoms. Carbon 1 at the top is an aldehyde group, CHO. Carbons 2, 4 and 5 carry OH on the right and H on the left; carbon 3 carries OH on the left and H on the right. Carbon 6 at the bottom is CH2OH. The OH on carbon 5, on the right, marks it as the D form.\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>Open-chain structure of D-glucose drawn as a vertical chain of six carbon atoms. Carbon 1 at the top is an aldehyde group, CHO. Carbons 2, 4 and 5 carry OH on the right and H on the left; carbon 3 carries OH on the left and H on the right. Carbon 6 at the bottom is CH2OH. The OH on carbon 5, on the right, marks it as the D form.</title><text x=\"150\" y=\"34\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\">CHO</text><line x1=\"150\" y1=\"40\" x2=\"150\" y2=\"56\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"30\" y=\"34\" fill=\"var(--diagram-muted)\" stroke=\"none\" font-size=\"10\">C1</text><text x=\"150\" y=\"70\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\">C</text><line x1=\"150\" y1=\"76\" x2=\"150\" y2=\"92\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"140\" y1=\"66\" x2=\"112\" y2=\"66\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"105\" y=\"70\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"end\" font-size=\"11\">H</text><line x1=\"160\" y1=\"66\" x2=\"188\" y2=\"66\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"195\" y=\"70\" fill=\"var(--diagram-red)\" stroke=\"none\" font-size=\"11\">OH</text><text x=\"30\" y=\"70\" fill=\"var(--diagram-muted)\" stroke=\"none\" font-size=\"10\">C2</text><text x=\"150\" y=\"106\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\">C</text><line x1=\"150\" y1=\"112\" x2=\"150\" y2=\"128\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"140\" y1=\"102\" x2=\"112\" y2=\"102\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"105\" y=\"106\" fill=\"var(--diagram-red)\" stroke=\"none\" text-anchor=\"end\" font-size=\"11\">HO</text><line x1=\"160\" y1=\"102\" x2=\"188\" y2=\"102\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"195\" y=\"106\" fill=\"currentColor\" stroke=\"none\" font-size=\"11\">H</text><text x=\"30\" y=\"106\" fill=\"var(--diagram-muted)\" stroke=\"none\" font-size=\"10\">C3</text><text x=\"150\" y=\"142\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\">C</text><line x1=\"150\" y1=\"148\" x2=\"150\" y2=\"164\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"140\" y1=\"138\" x2=\"112\" y2=\"138\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"105\" y=\"142\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"end\" font-size=\"11\">H</text><line x1=\"160\" y1=\"138\" x2=\"188\" y2=\"138\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"195\" y=\"142\" fill=\"var(--diagram-red)\" stroke=\"none\" font-size=\"11\">OH</text><text x=\"30\" y=\"142\" fill=\"var(--diagram-muted)\" stroke=\"none\" font-size=\"10\">C4</text><text x=\"150\" y=\"178\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\">C</text><line x1=\"150\" y1=\"184\" x2=\"150\" y2=\"200\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"140\" y1=\"174\" x2=\"112\" y2=\"174\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"105\" y=\"178\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"end\" font-size=\"11\">H</text><line x1=\"160\" y1=\"174\" x2=\"188\" y2=\"174\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"195\" y=\"178\" fill=\"var(--diagram-red)\" stroke=\"none\" font-size=\"11\">OH</text><text x=\"30\" y=\"178\" fill=\"var(--diagram-muted)\" stroke=\"none\" font-size=\"10\">C5</text><text x=\"150\" y=\"214\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\">CH₂OH</text><text x=\"30\" y=\"214\" fill=\"var(--diagram-muted)\" stroke=\"none\" font-size=\"10\">C6</text><rect x=\"186\" y=\"158\" width=\"34\" height=\"20\" fill=\"none\" stroke=\"var(--diagram-accent)\" stroke-width=\"1.5\" stroke-dasharray=\"3 2\"/><text x=\"228\" y=\"172\" fill=\"var(--diagram-accent)\" stroke=\"none\" font-size=\"10\">D (OH right at C5)</text><text x=\"150\" y=\"242\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">D-Glucose, C₆H₁₂O₆ (aldohexose)</text></svg>",
+            "alt": "Fischer projection of open-chain D-glucose: six carbons in a vertical chain, aldehyde at carbon 1, hydroxyl on the right at carbons 2, 4 and 5 and on the left at carbon 3, CH2OH at carbon 6"
+          },
+          "math": [],
+          "narration": "Here is glucose drawn as a Fischer projection. Carbon one is an aldehyde group. Carbons two, three, four and five each carry a hydroxyl group and are all chiral, and carbon six is a primary alcohol group. With four chiral carbons there are sixteen possible stereoisomers, and glucose is just one of them. Next we see the reactions that proved this structure.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s06",
+          "layout": "concept",
+          "heading": "Evidence 1: the chain and the carbonyl group",
+          "body_md": "**Molecular formula** C₆H₁₂O₆ from analysis and molar mass. **Prolonged heating with HI** gives **n-hexane**: the six carbons are in a **straight chain**. **Hydroxylamine** gives an oxime and **HCN** a cyanohydrin: a **carbonyl group** is present. **Bromine water** (a mild oxidant) gives **gluconic acid**, C₆H₁₂O₇, with no loss of carbon: the carbonyl is an **aldehyde**.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Reagent",
+                "Product",
+                "Conclusion"
+              ],
+              "rows": [
+                [
+                  "HI, heat",
+                  "n-Hexane",
+                  "Unbranched C₆ chain"
+                ],
+                [
+                  "NH₂OH",
+                  "Glucose oxime",
+                  "C=O group present"
+                ],
+                [
+                  "HCN",
+                  "Glucose cyanohydrin",
+                  "C=O group present"
+                ],
+                [
+                  "Br₂ water",
+                  "Gluconic acid (C₆)",
+                  "The C=O is –CHO"
+                ]
+              ]
+            },
+            "alt": "Table of four reagents, the products they give with glucose and the structural conclusion from each"
+          },
+          "math": [
+            "\\ce{C6H12O6 + 14HI -> CH3(CH2)4CH3 + 6H2O + 7I2}",
+            "\\ce{HOCH2(CHOH)4CHO + NH2OH -> HOCH2(CHOH)4CH=NOH + H2O}",
+            "\\ce{HOCH2(CHOH)4CHO + Br2 + H2O -> HOCH2(CHOH)4COOH + 2HBr}"
+          ],
+          "narration": "Heating glucose for a long time with hydrogen iodide strips away all the oxygen and gives normal hexane, so the six carbons form an unbranched chain. Glucose reacts with hydroxylamine to give an oxime and adds hydrogen cyanide, so it has a carbonyl group. Bromine water, a gentle oxidising agent, converts it into gluconic acid with the same six carbons, which can only happen if the carbonyl group is an aldehyde.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s07",
+          "layout": "concept",
+          "heading": "Evidence 2: hydroxyl groups and the ends of the chain",
+          "body_md": "**Acetic anhydride** gives a **pentaacetate**: five –OH groups, on **different carbons** (the compound is stable; one carbon rarely holds two –OH). **Nitric acid** oxidises both ends to **saccharic acid**, HOOC(CHOH)₄COOH, as does nitric acid on gluconic acid: the second end is a **primary alcohol**, –CH₂OH. **Phenylhydrazine** (one mole) gives a phenylhydrazone; with **excess** (three moles) it gives a yellow crystalline **osazone**, involving C1 and C2.",
+          "bullets": [],
+          "visual": {
+            "kind": "flow",
+            "spec": {
+              "direction": "LR",
+              "nodes": [
+                {
+                  "id": "a",
+                  "label": "Glucose (CHO … CH₂OH)"
+                },
+                {
+                  "id": "b",
+                  "label": "Gluconic acid (COOH … CH₂OH)"
+                },
+                {
+                  "id": "c",
+                  "label": "Saccharic acid (COOH … COOH)"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "a",
+                  "to": "b",
+                  "label": "Br₂ water"
+                },
+                {
+                  "from": "b",
+                  "to": "c",
+                  "label": "HNO₃"
+                },
+                {
+                  "from": "a",
+                  "to": "c",
+                  "label": "HNO₃"
+                }
+              ]
+            },
+            "alt": "Flow showing bromine water oxidising only the aldehyde end of glucose to give gluconic acid, and nitric acid oxidising both glucose and gluconic acid to saccharic acid"
+          },
+          "math": [
+            "\\ce{C6H12O6 + 5(CH3CO)2O -> C6H7O(OCOCH3)5 + 5CH3COOH}",
+            "\\ce{C6H12O6 + 3C6H5NHNH2 -> C18H22N4O4 + C6H5NH2 + NH3 + 2H2O}"
+          ],
+          "narration": "Acetic anhydride converts glucose into a pentaacetate, so there are five hydroxyl groups, each on its own carbon. Nitric acid, a stronger oxidant, turns glucose into saccharic acid, which has an acid group at each end; since gluconic acid gives the same product, the far end must be a primary alcohol group. Phenylhydrazine first gives a phenylhydrazone, and with excess reagent a yellow osazone, in which both carbon one and carbon two have reacted.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s08",
+          "layout": "example",
+          "heading": "Worked example: assembling the structure",
+          "body_md": "**Problem.** A hexose X gives n-hexane with HI, an oxime with NH₂OH, a pentaacetate with acetic anhydride and a six-carbon monocarboxylic acid with bromine water. Deduce the open-chain structure of X.\n\n**Step 1.** HI → n-hexane: unbranched chain $\\ce{C-C-C-C-C-C}$.\n\n**Step 2.** Oxime: one C=O; bromine water gives an acid with no loss of carbon, so the C=O is –CHO at C1.\n\n**Step 3.** Pentaacetate: five –OH on C2–C6, one each; C6 must be –CH₂OH.\n\n**Result.** $\\ce{HOCH2-(CHOH)4-CHO}$, an aldohexose (glucose or one of its stereoisomers).",
+          "bullets": [],
+          "visual": {
+            "kind": "flow",
+            "spec": {
+              "direction": "LR",
+              "nodes": [
+                {
+                  "id": "a",
+                  "label": "Straight C₆ chain"
+                },
+                {
+                  "id": "b",
+                  "label": "–CHO at C1"
+                },
+                {
+                  "id": "c",
+                  "label": "Five –OH, one per carbon"
+                },
+                {
+                  "id": "d",
+                  "label": "HOCH₂(CHOH)₄CHO"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "a",
+                  "to": "b"
+                },
+                {
+                  "from": "b",
+                  "to": "c"
+                },
+                {
+                  "from": "c",
+                  "to": "d"
+                }
+              ]
+            },
+            "alt": "Flow combining three deductions into the open-chain aldohexose structure"
+          },
+          "math": [],
+          "narration": "Put the clues together one at a time. Normal hexane from hydrogen iodide fixes an unbranched chain of six carbons. The oxime shows one carbonyl group, and oxidation without losing carbon puts it at the end as an aldehyde. Five acetyl groups mean five hydroxyl groups, one on each remaining carbon, so carbon six is a primary alcohol group. That gives the aldohexose structure, although these reactions cannot tell us the arrangement in space.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s09",
+          "layout": "check",
+          "heading": "Quick check: reading the evidence",
+          "body_md": "Match a reaction of glucose to what it proves.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Decide which part of the molecule the reagent attacks and what the product tells us.",
+          "check_question_id": "q_isc12chem_ch21_010",
+          "audio": null
+        },
+        {
+          "id": "s10",
+          "layout": "concept",
+          "heading": "Cyclic structure and anomers",
+          "body_md": "Facts the open chain cannot explain: glucose gives **no Schiff’s test** and **no NaHSO₃ adduct**; the **pentaacetate does not react with NH₂OH**; glucose forms **two crystalline forms** with different rotations; and it forms two isomeric **methyl glucosides**. Explanation: the **C5 –OH adds to the C1 aldehyde**, giving a six-membered **pyranose** ring (a cyclic **hemiacetal**). C1 becomes a new chiral centre (the **anomeric carbon**), so there are two **anomers**, **α** and **β**, differing only at C1. In water each slowly changes to an equilibrium mixture with a trace of open chain: **mutarotation**.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Form",
+                "C1 –OH (Haworth)",
+                "m.p.",
+                "Specific rotation"
+              ],
+              "rows": [
+                [
+                  "α-D-Glucopyranose",
+                  "Below the ring",
+                  "419 K",
+                  "+111°"
+                ],
+                [
+                  "β-D-Glucopyranose",
+                  "Above the ring",
+                  "423 K",
+                  "+19.2°"
+                ],
+                [
+                  "Equilibrium in water",
+                  "α ⇌ open chain ⇌ β",
+                  "—",
+                  "+52.5°"
+                ]
+              ]
+            },
+            "alt": "Table comparing alpha and beta D-glucopyranose by position of the anomeric hydroxyl, melting point and specific rotation, and the equilibrium value in water"
+          },
+          "math": [],
+          "narration": "Some facts do not fit the open chain. Glucose does not restore the colour of Schiff’s reagent, it forms no bisulfite compound, and its pentaacetate has no free aldehyde group. The explanation is that the hydroxyl on carbon five adds to the aldehyde group, closing a six-membered ring called a pyranose. Carbon one becomes a new chiral centre, so two forms exist, alpha and beta, called anomers. In water each slowly turns into the same equilibrium mixture, a change in rotation called mutarotation.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s11",
+          "layout": "concept",
+          "heading": "D and L configuration",
+          "body_md": "D and L describe configuration **relative to glyceraldehyde**. In a Fischer projection with the carbonyl group at the top, look at the **chiral carbon farthest from the C=O** (C5 in a hexose): –OH on the **right** → **D**; on the **left** → **L**. D/L is unrelated to the sign of rotation, which is shown separately as (+) or (−): D-(+)-glucose, but **D-(−)-fructose**.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Compound",
+                "OH on lowest chiral C",
+                "Configuration",
+                "Rotation"
+              ],
+              "rows": [
+                [
+                  "Glyceraldehyde (reference)",
+                  "Right",
+                  "D",
+                  "(+)"
+                ],
+                [
+                  "Natural glucose",
+                  "Right (C5)",
+                  "D",
+                  "(+)"
+                ],
+                [
+                  "Natural fructose",
+                  "Right (C5)",
+                  "D",
+                  "(−)"
+                ],
+                [
+                  "Mirror image of natural glucose",
+                  "Left (C5)",
+                  "L",
+                  "(−)"
+                ]
+              ]
+            },
+            "alt": "Table relating the position of the hydroxyl group on the lowest chiral carbon to D or L configuration and showing that the sign of rotation is independent"
+          },
+          "math": [],
+          "narration": "The letters D and L compare a sugar with glyceraldehyde. Draw the sugar as a Fischer projection with the carbonyl group at the top and look at the chiral carbon farthest from it, which is carbon five in glucose. If its hydroxyl group points right, the sugar belongs to the D series; if left, to the L series. This says nothing about the direction of rotation: natural fructose is D, yet it rotates light to the left.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s12",
+          "layout": "example",
+          "heading": "Worked example: composition of the equilibrium mixture",
+          "body_md": "**Problem.** α-D-Glucose has $[\\alpha]_D = +111^\\circ$ and β-D-glucose $+19.2^\\circ$. At equilibrium in water the rotation is $+52.5^\\circ$. Ignoring the open chain, find the percentage of the β-anomer.\n\n**Step 1.** Let the fraction of β be $x$: $111(1 - x) + 19.2x = 52.5$.\n\n**Step 2.** $x = \\dfrac{111 - 52.5}{111 - 19.2} = \\dfrac{58.5}{91.8} = 0.637$.\n\n**Answer.** About **63.7% β** and 36.3% α: the β-anomer, with every –OH equatorial, is more stable.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Quantity",
+                "Value"
+              ],
+              "rows": [
+                [
+                  "Rotation of α",
+                  "+111°"
+                ],
+                [
+                  "Rotation of β",
+                  "+19.2°"
+                ],
+                [
+                  "Equilibrium rotation",
+                  "+52.5°"
+                ],
+                [
+                  "Fraction β",
+                  "0.637"
+                ]
+              ]
+            },
+            "alt": "Table of the rotations of the two anomers, the equilibrium rotation and the calculated fraction of the beta anomer"
+          },
+          "math": [],
+          "narration": "The equilibrium rotation is a weighted average of the rotations of the two anomers. Call the fraction of beta x, so the fraction of alpha is one minus x. Solving gives x as fifty eight point five divided by ninety one point eight, which is about point six four. So roughly two thirds of dissolved glucose is the beta form, the more stable anomer.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s13",
+          "layout": "check",
+          "heading": "Quick check: the ring and its anomers",
+          "body_md": "Explain an observation using the cyclic structure of glucose.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Think about which carbon becomes the new chiral centre when the ring closes.",
+          "check_question_id": "q_isc12chem_ch21_015",
+          "audio": null
+        },
+        {
+          "id": "s14",
+          "layout": "summary",
+          "heading": "Summary: Part 1",
+          "body_md": "",
+          "bullets": [
+            "Carbohydrates: optically active polyhydroxy aldehydes or ketones; mono-, oligo- and polysaccharides; aldoses and ketoses.",
+            "Reducing sugars reduce Tollens’ and Fehling’s; sucrose and polysaccharides do not.",
+            "Glucose evidence: HI → n-hexane; NH₂OH, HCN → C=O; Br₂ water → gluconic acid (–CHO); pentaacetate (5 –OH); HNO₃ → saccharic acid (–CH₂OH); excess PhNHNH₂ → osazone.",
+            "Cyclic pyranose (C5–OH + C1–CHO); α and β anomers at C1; mutarotation to +52.5°.",
+            "D/L from the lowest chiral carbon, independent of (+)/(−)."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Reagent",
+                "Feature shown"
+              ],
+              "rows": [
+                [
+                  "HI",
+                  "Straight chain"
+                ],
+                [
+                  "Br₂ water",
+                  "Aldehyde"
+                ],
+                [
+                  "(CH₃CO)₂O",
+                  "Five –OH"
+                ],
+                [
+                  "HNO₃",
+                  "Primary alcohol"
+                ]
+              ]
+            },
+            "alt": "Summary table of four reagents and the feature of glucose each shows"
+          },
+          "math": [],
+          "narration": "Let us sum up Part 1. Carbohydrates are polyhydroxy aldehydes or ketones, classified by hydrolysis and by whether they reduce Tollens’ and Fehling’s reagents. Six reactions establish the open-chain structure of glucose. A few facts need the six-membered ring, which gives two anomers that interconvert in water. D and L describe configuration at the lowest chiral carbon, not the direction of rotation.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s15",
+          "layout": "exam-tips",
+          "heading": "Exam tips: Part 1",
+          "body_md": "",
+          "bullets": [
+            "For each reaction, state the reagent, the product and the conclusion — all three earn marks.",
+            "Bromine water distinguishes aldehyde from ketone; nitric acid proves the –CH₂OH end.",
+            "Anomers differ only at C1; they are diastereomers, not enantiomers.",
+            "Never link D with (+) or L with (−)."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Slip",
+                "Fix"
+              ],
+              "rows": [
+                [
+                  "HI gives hexan-1-ol",
+                  "HI gives n-hexane"
+                ],
+                [
+                  "Pentaacetate shows six –OH",
+                  "Five –OH"
+                ],
+                [
+                  "α and β are mirror images",
+                  "They differ at C1 only"
+                ]
+              ]
+            },
+            "alt": "Table of three common slips in Part 1 and their fixes"
+          },
+          "math": [],
+          "narration": "Some tips. When asked about the evidence, give the reagent, the product and what it proves. Remember that bromine water picks out the aldehyde group and nitric acid the primary alcohol group. Alpha and beta glucose differ at carbon one only, so they are not mirror images. And keep the letters D and L separate from the plus and minus signs of rotation.",
+          "check_question_id": null,
+          "audio": null
+        }
+      ],
+      "status": "draft",
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "unit": "isc-12-chemistry-ch21",
+      "part": 2,
+      "version": 1,
+      "title": "Carbohydrates — Part 2: Fructose, disaccharides and polysaccharides",
+      "language": "en",
+      "goals": [
+        "Describe the open-chain and cyclic structures of fructose",
+        "Use the bromine-water test to distinguish glucose from fructose",
+        "Identify the units and glycosidic links in sucrose, maltose and lactose",
+        "Compare starch, cellulose and glycogen in structure and function"
+      ],
+      "slides": [
+        {
+          "id": "s01",
+          "layout": "title",
+          "heading": "From fruit sugar to fibre",
+          "body_md": "Part 2 — the ketose fructose, the three common disaccharides and the giant glucose polymers.",
+          "bullets": [],
+          "visual": {
+            "kind": "flow",
+            "spec": {
+              "direction": "LR",
+              "nodes": [
+                {
+                  "id": "a",
+                  "label": "Monosaccharides"
+                },
+                {
+                  "id": "b",
+                  "label": "Disaccharides"
+                },
+                {
+                  "id": "c",
+                  "label": "Polysaccharides"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "a",
+                  "to": "b",
+                  "label": "glycosidic link, − H₂O"
+                },
+                {
+                  "from": "b",
+                  "to": "c",
+                  "label": "many more links"
+                }
+              ]
+            },
+            "alt": "Flow showing monosaccharides joining by glycosidic links with loss of water to form disaccharides and then polysaccharides"
+          },
+          "math": [],
+          "narration": "In Part 2 we meet fructose, the sugar of fruit and honey, and learn a simple test to tell it from glucose. Then we see how sugar units join through glycosidic links, losing water each time, to give the disaccharides sucrose, maltose and lactose, and finally the polysaccharides starch, cellulose and glycogen.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s02",
+          "layout": "concept",
+          "heading": "Fructose: open chain and ring",
+          "body_md": "**Fructose**, C₆H₁₂O₆, is a **ketohexose**: HOCH₂–CO–(CHOH)₃–CH₂OH, with the ketone at **C2**. Like glucose it gives n-hexane with HI and a pentaacetate. Its cyanohydrin, hydrolysed and reduced with HI, gives **2-methylhexanoic acid**, which places the C=O at C2 (glucose gives straight-chain heptanoic acid). In solution the **C5 –OH adds to C2**, giving a five-membered **furanose** ring (a hemiketal) with α and β anomers. Natural fructose is **D-(−)**, laevorotatory, [α]D = −92.4°.",
+          "bullets": [],
+          "visual": {
+            "kind": "flow",
+            "spec": {
+              "direction": "LR",
+              "nodes": [
+                {
+                  "id": "a",
+                  "label": "Fructose (C=O at C2)"
+                },
+                {
+                  "id": "b",
+                  "label": "Cyanohydrin"
+                },
+                {
+                  "id": "c",
+                  "label": "Hydroxy acid"
+                },
+                {
+                  "id": "d",
+                  "label": "2-Methylhexanoic acid"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "a",
+                  "to": "b",
+                  "label": "HCN"
+                },
+                {
+                  "from": "b",
+                  "to": "c",
+                  "label": "hydrolysis"
+                },
+                {
+                  "from": "c",
+                  "to": "d",
+                  "label": "HI, heat"
+                }
+              ]
+            },
+            "alt": "Flow converting fructose through its cyanohydrin and hydroxy acid into 2-methylhexanoic acid, showing a branch at carbon 2"
+          },
+          "math": [],
+          "narration": "Fructose has the same formula as glucose, but its carbonyl group is a ketone at carbon two. Adding hydrogen cyanide, hydrolysing and then reducing with hydrogen iodide gives two-methylhexanoic acid, with a branch at carbon two, while glucose gives an unbranched acid. In solution fructose closes a five-membered ring, called a furanose, by joining the hydroxyl on carbon five to carbon two. It is laevorotatory.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s03",
+          "layout": "concept",
+          "heading": "The bromine-water test",
+          "body_md": "**Bromine water** is a mild oxidant that attacks **aldehydes** but not ketones (and it is not alkaline, so fructose cannot rearrange). **Glucose** decolourises the orange-brown bromine water, forming gluconic acid; **fructose** does not. Tollens’ and Fehling’s **cannot** distinguish them: in alkaline solution fructose isomerises (via an enediol) and so is also a reducing sugar. Both give the **same osazone**, because only C1 and C2 react and the two sugars have the same configuration at C3–C5.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Test",
+                "Glucose",
+                "Fructose"
+              ],
+              "rows": [
+                [
+                  "Bromine water",
+                  "Decolourised (gluconic acid)",
+                  "No change"
+                ],
+                [
+                  "Fehling’s / Tollens’",
+                  "Positive",
+                  "Positive"
+                ],
+                [
+                  "Excess phenylhydrazine",
+                  "Glucosazone",
+                  "Same osazone"
+                ],
+                [
+                  "Rotation",
+                  "D-(+)",
+                  "D-(−)"
+                ]
+              ]
+            },
+            "alt": "Table comparing glucose and fructose in four tests"
+          },
+          "math": [
+            "\\ce{HOCH2(CHOH)4CHO + Br2 + H2O -> HOCH2(CHOH)4COOH + 2HBr}"
+          ],
+          "narration": "Bromine water is the way to tell glucose from fructose. It oxidises an aldehyde group but not a ketone, and because it is not alkaline, fructose cannot first rearrange into an aldose. So glucose decolourises bromine water and fructose leaves it orange. Fehling’s solution and Tollens’ reagent do not help, because both sugars reduce them, and both give the same osazone.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s04",
+          "layout": "example",
+          "heading": "Worked example: two unlabelled sugar solutions",
+          "body_md": "**Problem.** Bottles P and Q contain glucose and fructose solutions. Both give a red precipitate with Fehling’s solution. P decolourises bromine water; Q does not. Identify P and Q and write the equation for the positive test.\n\n**Step 1.** Both are reducing sugars, so Fehling’s cannot separate them.\n\n**Step 2.** Only an aldose is oxidised by bromine water: **P is glucose**, **Q is fructose**.\n\n**Step 3.** $\\ce{HOCH2(CHOH)4CHO + Br2 + H2O -> HOCH2(CHOH)4COOH + 2HBr}$",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Bottle",
+                "Fehling’s",
+                "Bromine water",
+                "Sugar"
+              ],
+              "rows": [
+                [
+                  "P",
+                  "Red precipitate",
+                  "Decolourised",
+                  "Glucose"
+                ],
+                [
+                  "Q",
+                  "Red precipitate",
+                  "Stays orange",
+                  "Fructose"
+                ]
+              ]
+            },
+            "alt": "Table of results for bottles P and Q and the sugar identified"
+          },
+          "math": [],
+          "narration": "Both bottles give a red precipitate with Fehling’s solution, so that test alone cannot separate them. Bromine water oxidises only the aldehyde group, so the bottle that decolourises it, P, contains glucose, and Q contains fructose. The product from P is gluconic acid.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s05",
+          "layout": "check",
+          "heading": "Quick check: glucose or fructose?",
+          "body_md": "Choose the test or observation that distinguishes glucose from fructose.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Remember which reagent attacks only aldehyde groups and is not alkaline.",
+          "check_question_id": "q_isc12chem_ch21_035",
+          "audio": null
+        },
+        {
+          "id": "s06",
+          "layout": "concept",
+          "heading": "Sucrose",
+          "body_md": "Two monosaccharides join through a **glycosidic linkage**, C–O–C, formed from a hemiacetal –OH and an –OH of another sugar with loss of water. **Sucrose**, C₁₂H₂₂O₁₁: **α-D-glucopyranose (C1)** linked to **β-D-fructofuranose (C2)** — an **α1→β2** link joining the two anomeric carbons. No hemiacetal remains, so sucrose is **non-reducing** and shows no mutarotation. Hydrolysis (dilute acid or **invertase**) changes the rotation from +66.5° to about −20°: the product is **invert sugar**.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Feature",
+                "Sucrose"
+              ],
+              "rows": [
+                [
+                  "Units",
+                  "α-D-Glucose + β-D-fructose"
+                ],
+                [
+                  "Link",
+                  "C1 (glucose) – C2 (fructose)"
+                ],
+                [
+                  "Ring sizes",
+                  "Pyranose + furanose"
+                ],
+                [
+                  "Reducing?",
+                  "No"
+                ],
+                [
+                  "Rotation before / after hydrolysis",
+                  "+66.5° / about −20°"
+                ]
+              ]
+            },
+            "alt": "Table of the units, link, ring sizes, reducing behaviour and rotation of sucrose"
+          },
+          "math": [
+            "\\ce{C12H22O11 + H2O ->[invertase] C6H12O6 + C6H12O6}"
+          ],
+          "narration": "Sugar units join through a glycosidic linkage, an oxygen bridge formed with loss of water. In sucrose, carbon one of alpha glucose is joined to carbon two of beta fructose, so both reducing carbons are used up. That is why cane sugar is non-reducing and shows no mutarotation. When it is hydrolysed, the rotation changes from positive to negative, so the product is called invert sugar.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s07",
+          "layout": "concept",
+          "heading": "Maltose and lactose",
+          "body_md": "**Maltose** (malt sugar, from starch by the enzyme diastase): two **α-D-glucose** units, **C1 of one to C4 of the next** (α-1,4 link). **Lactose** (milk sugar): **β-D-galactose C1** linked to **C4 of D-glucose** (β-1,4 link). In both, the second unit keeps a free hemiacetal –OH at its C1, so both are **reducing** and show mutarotation.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Disaccharide",
+                "Units",
+                "Link",
+                "Reducing?",
+                "Enzyme"
+              ],
+              "rows": [
+                [
+                  "Sucrose",
+                  "Glucose + fructose",
+                  "α1 → β2",
+                  "No",
+                  "Invertase"
+                ],
+                [
+                  "Maltose",
+                  "Glucose + glucose",
+                  "α1 → 4",
+                  "Yes",
+                  "Maltase"
+                ],
+                [
+                  "Lactose",
+                  "Galactose + glucose",
+                  "β1 → 4",
+                  "Yes",
+                  "Lactase"
+                ]
+              ]
+            },
+            "alt": "Table comparing sucrose, maltose and lactose by units, glycosidic link, reducing power and hydrolysing enzyme"
+          },
+          "math": [
+            "\\ce{C12H22O11 + H2O ->[maltase] 2C6H12O6}"
+          ],
+          "narration": "Maltose is formed when the enzyme diastase breaks down starch. It contains two alpha glucose units joined from carbon one of the first to carbon four of the second. Lactose, the sugar of milk, contains beta galactose joined from its carbon one to carbon four of glucose. In both, the second unit keeps a free hemiacetal group, so maltose and lactose are reducing sugars.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s08",
+          "layout": "example",
+          "heading": "Worked example: identifying a disaccharide",
+          "body_md": "**Problem.** A disaccharide Y reduces Tollens’ reagent. Enzymic hydrolysis gives only D-glucose, and the enzyme used acts only on α-glycosidic links. Identify Y and describe its link.\n\n**Step 1.** Only glucose on hydrolysis: Y is maltose or a glucose–glucose disaccharide (not sucrose or lactose).\n\n**Step 2.** Reducing: one anomeric carbon is free, so the link is C1 → C4, not C1 → C1.\n\n**Step 3.** α-specific enzyme: the link is α.\n\n**Answer.** Y is **maltose**, an α-1,4 glycosidic link between two D-glucose units.",
+          "bullets": [],
+          "visual": {
+            "kind": "flow",
+            "spec": {
+              "direction": "LR",
+              "nodes": [
+                {
+                  "id": "a",
+                  "label": "Only glucose formed"
+                },
+                {
+                  "id": "b",
+                  "label": "Reducing: free C1"
+                },
+                {
+                  "id": "c",
+                  "label": "α-specific enzyme"
+                },
+                {
+                  "id": "d",
+                  "label": "Maltose (α-1,4)"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "a",
+                  "to": "b"
+                },
+                {
+                  "from": "b",
+                  "to": "c"
+                },
+                {
+                  "from": "c",
+                  "to": "d"
+                }
+              ]
+            },
+            "alt": "Flow combining three observations to identify maltose"
+          },
+          "math": [],
+          "narration": "Use each clue in turn. Getting only glucose rules out sucrose and lactose. Reducing Tollens’ reagent means one anomeric carbon is still free, so the link runs from carbon one to carbon four. An enzyme that cuts only alpha links shows the link is alpha. Together these identify maltose.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s09",
+          "layout": "check",
+          "heading": "Quick check: glycosidic links",
+          "body_md": "Identify the units or link in a disaccharide.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Name the two units and the carbons joined, then decide whether a free anomeric carbon remains.",
+          "check_question_id": "q_isc12chem_ch21_048",
+          "audio": null
+        },
+        {
+          "id": "s10",
+          "layout": "concept",
+          "heading": "Starch",
+          "body_md": "**Starch**, (C₆H₁₀O₅)ₙ, is the energy store of plants: a mixture of **amylose** (15–20%; long **unbranched** chains of α-D-glucose with **α-1,4** links; soluble in hot water; deep **blue with iodine**) and **amylopectin** (80–85%; α-1,4 chains **branched by α-1,6 links** about every 20–25 units; insoluble; red-violet with iodine). Acid hydrolysis gives dextrins, then maltose, then glucose.",
+          "bullets": [],
+          "visual": {
+            "kind": "flow",
+            "spec": {
+              "direction": "LR",
+              "nodes": [
+                {
+                  "id": "a",
+                  "label": "Starch"
+                },
+                {
+                  "id": "b",
+                  "label": "Dextrins"
+                },
+                {
+                  "id": "c",
+                  "label": "Maltose"
+                },
+                {
+                  "id": "d",
+                  "label": "Glucose"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "a",
+                  "to": "b",
+                  "label": "H⁺ or diastase"
+                },
+                {
+                  "from": "b",
+                  "to": "c"
+                },
+                {
+                  "from": "c",
+                  "to": "d",
+                  "label": "H⁺ or maltase"
+                }
+              ]
+            },
+            "alt": "Flow of the stepwise hydrolysis of starch through dextrins and maltose to glucose"
+          },
+          "math": [
+            "\\ce{(C6H10O5)_{n} + nH2O ->[H+] nC6H12O6}"
+          ],
+          "narration": "Starch is how plants store glucose. About a fifth is amylose, long unbranched chains of alpha glucose that give the deep blue colour with iodine. The rest is amylopectin, whose chains branch through carbon six roughly every twenty to twenty five units. Hydrolysis breaks starch down step by step into dextrins, then maltose, and finally glucose.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s11",
+          "layout": "concept",
+          "heading": "Cellulose and glycogen",
+          "body_md": "**Cellulose**: unbranched chains of **β-D-glucose** joined by **β-1,4** links; neighbouring chains are held by many **hydrogen bonds** into strong fibres — the main material of plant cell walls (cotton is nearly pure cellulose). Humans lack the enzyme for β-links, so cellulose is dietary fibre; cattle digest it with the help of gut microbes. **Glycogen** (animal starch): α-D-glucose with α-1,4 chains and **α-1,6 branches about every 8–12 units**, more branched than amylopectin; stored in **liver and muscle** and quickly broken down to glucose.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Property",
+                "Starch",
+                "Cellulose",
+                "Glycogen"
+              ],
+              "rows": [
+                [
+                  "Unit",
+                  "α-D-Glucose",
+                  "β-D-Glucose",
+                  "α-D-Glucose"
+                ],
+                [
+                  "Links",
+                  "α-1,4 (+ α-1,6)",
+                  "β-1,4",
+                  "α-1,4 + α-1,6"
+                ],
+                [
+                  "Branching",
+                  "None to moderate",
+                  "None",
+                  "High"
+                ],
+                [
+                  "Role",
+                  "Plant energy store",
+                  "Plant structure",
+                  "Animal energy store"
+                ],
+                [
+                  "Digested by humans?",
+                  "Yes",
+                  "No",
+                  "Yes"
+                ]
+              ]
+            },
+            "alt": "Table comparing starch, cellulose and glycogen by unit, links, branching, role and digestibility"
+          },
+          "math": [],
+          "narration": "Cellulose is also made of glucose, but beta glucose. Its straight chains lie side by side and hydrogen bond to one another, making tough fibres such as cotton. We have no enzyme for beta links, so cellulose passes through us as fibre, although cattle use gut microbes to digest it. Glycogen is the animal store, like amylopectin but even more branched, kept in the liver and muscles.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s12",
+          "layout": "example",
+          "heading": "Worked example: glucose from starch",
+          "body_md": "**Problem.** A mill hydrolyses $32.4\\ \\text{kg}$ of pure starch completely. What mass of glucose ($M = 180$) can be formed? (One chain unit, $\\ce{C6H10O5}$, has $M = 162$.)\n\n**Step 1.** Moles of units $= \\dfrac{32400}{162} = 200\\ \\text{mol}$.\n\n**Step 2.** Each unit gives one glucose: mass $= 200 \\times 180 = 36000\\ \\text{g} = 36.0\\ \\text{kg}$.\n\nThe mass rises because each unit takes up one $\\ce{H2O}$.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Quantity",
+                "Value"
+              ],
+              "rows": [
+                [
+                  "Starch",
+                  "32.4 kg"
+                ],
+                [
+                  "Moles of C₆H₁₀O₅ units",
+                  "200 mol"
+                ],
+                [
+                  "Glucose formed",
+                  "36.0 kg"
+                ]
+              ]
+            },
+            "alt": "Table of the starch mass, moles of chain units and mass of glucose formed"
+          },
+          "math": [],
+          "narration": "Each unit in the starch chain has a mass of one hundred and sixty two. Thirty two point four kilograms is therefore two hundred moles of units, and each unit gains a water molecule to become a glucose molecule of mass one hundred and eighty. So the product weighs thirty six kilograms, more than the starch used.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s13",
+          "layout": "check",
+          "heading": "Quick check: starch, cellulose and glycogen",
+          "body_md": "Relate a property of a polysaccharide to its linkages or branching.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Alpha links in starch and glycogen; beta links in cellulose.",
+          "check_question_id": "q_isc12chem_ch21_061",
+          "audio": null
+        },
+        {
+          "id": "s14",
+          "layout": "summary",
+          "heading": "Summary: Part 2",
+          "body_md": "",
+          "bullets": [
+            "Fructose: ketohexose, C=O at C2, furanose ring, D-(−); reducing; same osazone as glucose.",
+            "Bromine water oxidises glucose (aldose) but not fructose (ketose).",
+            "Sucrose: α-glucose C1 – β-fructose C2, non-reducing, gives invert sugar.",
+            "Maltose: α-1,4 glucose–glucose; lactose: β-galactose C1 – glucose C4; both reducing.",
+            "Starch (amylose + amylopectin, α-links), glycogen (highly branched), cellulose (β-1,4, fibres)."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Carbohydrate",
+                "Key link"
+              ],
+              "rows": [
+                [
+                  "Sucrose",
+                  "α1 → β2"
+                ],
+                [
+                  "Maltose",
+                  "α1 → 4"
+                ],
+                [
+                  "Lactose",
+                  "β1 → 4"
+                ],
+                [
+                  "Cellulose",
+                  "β1 → 4 (polymer)"
+                ],
+                [
+                  "Amylopectin, glycogen",
+                  "α1 → 4 and α1 → 6"
+                ]
+              ]
+            },
+            "alt": "Summary table of key glycosidic links"
+          },
+          "math": [],
+          "narration": "Let us sum up Part 2. Fructose is a ketose with a five-membered ring, told apart from glucose by bromine water. Sucrose joins both reducing carbons and so is non-reducing, while maltose and lactose keep a free one. Starch and glycogen use alpha links and are energy stores; cellulose uses beta links and forms strong fibres that we cannot digest.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s15",
+          "layout": "exam-tips",
+          "heading": "Exam tips: Part 2",
+          "body_md": "",
+          "bullets": [
+            "For any disaccharide, name both units, the carbons joined and α or β.",
+            "Explain reducing power by a free hemiacetal (anomeric) –OH.",
+            "Use bromine water, not Fehling’s, to distinguish glucose and fructose.",
+            "Cellulose differs from starch in the β-link, not in the monomer’s formula."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Slip",
+                "Fix"
+              ],
+              "rows": [
+                [
+                  "Fructose is non-reducing",
+                  "It reduces Fehling’s"
+                ],
+                [
+                  "Lactose is glucose + glucose",
+                  "Galactose + glucose"
+                ],
+                [
+                  "Cellulose has α-links",
+                  "β-1,4 links"
+                ]
+              ]
+            },
+            "alt": "Table of three common slips in Part 2 and fixes"
+          },
+          "math": [],
+          "narration": "Final tips. Describe each disaccharide fully: the two units, which carbons are joined, and whether the link is alpha or beta. Explain reducing power by a free hemiacetal group. Use bromine water to tell glucose from fructose. And remember that starch and cellulose are both made of glucose; the difference lies in the type of link.",
+          "check_question_id": null,
+          "audio": null
+        }
+      ],
+      "status": "draft",
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    }
+  ],
+  "notes": {
+    "unit": "isc-12-chemistry-ch21",
+    "version": 1,
+    "title": "Carbohydrates — Notes",
+    "language": "en",
+    "sections": [
+      {
+        "heading": "1. Definition and classification",
+        "body_md": "**Carbohydrates:** optically active polyhydroxy aldehydes or ketones, or compounds giving them on hydrolysis. The formula Cₓ(H₂O)ᵧ is only a rough guide (rhamnose C₆H₁₂O₅ is a carbohydrate; ethanoic acid C₂H₄O₂ is not).\n\n**By hydrolysis:** monosaccharides (glucose, fructose, ribose) → oligosaccharides (2–10 units: sucrose, maltose, lactose) → polysaccharides (starch, cellulose, glycogen). **Aldoses** (–CHO) and **ketoses** (C=O), named by carbon count (aldohexose, ketohexose, aldopentose). Mono- and disaccharides are sweet, soluble **sugars**; polysaccharides are **non-sugars**.\n\n**Reducing sugars** reduce Tollens’ and Fehling’s (free aldehyde or α-hydroxy ketone, or a ring that opens to one): all monosaccharides, maltose, lactose. **Non-reducing:** sucrose, polysaccharides.\n\n**Importance:** energy (glucose, starch, glycogen), structure (cellulose), materials (cotton, paper, ethanol), ribose and deoxyribose in nucleic acids.",
+        "key_terms": [
+          {
+            "term": "Monosaccharide",
+            "definition_md": "A carbohydrate that cannot be hydrolysed to a simpler sugar."
+          },
+          {
+            "term": "Reducing sugar",
+            "definition_md": "A sugar that reduces Tollens’ reagent and Fehling’s solution because it has a free (or potentially free) carbonyl group."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\ce{C12H22O11 + H2O -> C6H12O6 + C6H12O6}",
+            "label": "A disaccharide gives two monosaccharides"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Class",
+              "Example",
+              "Reducing?"
+            ],
+            "rows": [
+              [
+                "Monosaccharide",
+                "Glucose",
+                "Yes"
+              ],
+              [
+                "Disaccharide",
+                "Sucrose",
+                "No"
+              ],
+              [
+                "Disaccharide",
+                "Maltose",
+                "Yes"
+              ],
+              [
+                "Polysaccharide",
+                "Starch",
+                "No"
+              ]
+            ]
+          },
+          "alt": "Table of four carbohydrates with class and reducing behaviour"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "isc-12-chemistry-ch21-t01"
+        ]
+      },
+      {
+        "heading": "2. Structure of glucose",
+        "body_md": "**Open chain** HOCH₂(CHOH)₄CHO (aldohexose; C2–C5 chiral; 2⁴ = 16 stereoisomers). Evidence:\n\n| Reagent | Product | Shows |\n|---|---|---|\n| HI, prolonged heating | n-Hexane | Straight C₆ chain |\n| NH₂OH / HCN | Oxime / cyanohydrin | C=O group |\n| Br₂ water | Gluconic acid (C₆) | C=O is –CHO |\n| (CH₃CO)₂O | Pentaacetate | Five –OH, on different carbons |\n| HNO₃ | Saccharic acid HOOC(CHOH)₄COOH | Primary –CH₂OH |\n| C₆H₅NHNH₂ (1 mol / 3 mol) | Phenylhydrazone / osazone | C=O; C1 and C2 react |\n\n**Cyclic (pyranose) structure:** C5–OH adds to C1–CHO (hemiacetal). Explains: no Schiff’s test, no NaHSO₃ adduct, pentaacetate unreactive to NH₂OH, two crystalline forms, two methyl glucosides. C1 is the **anomeric carbon**: **α** (+111°, m.p. 419 K) and **β** (+19.2°, 423 K); **mutarotation** to +52.5° (about 36% α, 64% β).\n\n**D/L:** –OH on the lowest chiral carbon (C5) right = D, left = L (relative to glyceraldehyde); independent of (+)/(−).",
+        "key_terms": [
+          {
+            "term": "Anomers",
+            "definition_md": "Cyclic stereoisomers of a sugar that differ only in configuration at the anomeric carbon (C1 of glucose)."
+          },
+          {
+            "term": "Mutarotation",
+            "definition_md": "The gradual change in specific rotation of a freshly prepared solution of one anomer to a constant equilibrium value."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\ce{C6H12O6 + 3C6H5NHNH2 -> C18H22N4O4 + C6H5NH2 + NH3 + 2H2O}",
+            "label": "Osazone formation"
+          },
+          {
+            "latex": "\\ce{C6H12O6 + 5(CH3CO)2O -> C6H7O(OCOCH3)5 + 5CH3COOH}",
+            "label": "Pentaacetate"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Form",
+              "Rotation"
+            ],
+            "rows": [
+              [
+                "α-D-Glucose",
+                "+111°"
+              ],
+              [
+                "β-D-Glucose",
+                "+19.2°"
+              ],
+              [
+                "Equilibrium",
+                "+52.5°"
+              ]
+            ]
+          },
+          "alt": "Table of rotations of the glucose anomers"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "isc-12-chemistry-ch21-t02"
+        ]
+      },
+      {
+        "heading": "3. Fructose and the bromine-water test",
+        "body_md": "**Fructose:** ketohexose HOCH₂CO(CHOH)₃CH₂OH, C=O at **C2**; gives n-hexane with HI; cyanohydrin → hydrolysis → HI gives **2-methylhexanoic acid** (glucose gives heptanoic acid). Ring: C5–OH + C2 → five-membered **furanose** (α and β anomers). **D-(−)**, −92.4°.\n\nFructose reduces Tollens’ and Fehling’s (it isomerises in alkali), and gives the **same osazone** as glucose. **Bromine water** (mild, not alkaline) oxidises **glucose** (decolourised) but **not fructose**:\n\n$\\ce{HOCH2(CHOH)4CHO + Br2 + H2O -> HOCH2(CHOH)4COOH + 2HBr}$",
+        "key_terms": [
+          {
+            "term": "Furanose",
+            "definition_md": "A five-membered ring form of a sugar containing four carbons and one oxygen."
+          },
+          {
+            "term": "Ketose",
+            "definition_md": "A monosaccharide containing a ketone group."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\ce{HOCH2(CHOH)4CHO + Br2 + H2O -> HOCH2(CHOH)4COOH + 2HBr}",
+            "label": "Bromine water oxidises glucose"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Test",
+              "Glucose",
+              "Fructose"
+            ],
+            "rows": [
+              [
+                "Bromine water",
+                "Decolourised",
+                "No change"
+              ],
+              [
+                "Fehling’s",
+                "Positive",
+                "Positive"
+              ]
+            ]
+          },
+          "alt": "Table of bromine-water and Fehling’s results for glucose and fructose"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "isc-12-chemistry-ch21-t03"
+        ]
+      },
+      {
+        "heading": "4. Disaccharides",
+        "body_md": "**Glycosidic linkage:** C–O–C link formed between the anomeric –OH of one sugar and an –OH of another, with loss of water.\n\n| Disaccharide | Units | Link | Reducing? |\n|---|---|---|---|\n| Sucrose | α-D-glucose + β-D-fructose | C1 (Glc) – C2 (Fru), α1→β2 | No |\n| Maltose | 2 α-D-glucose | α-1,4 | Yes |\n| Lactose | β-D-galactose + D-glucose | β-1,4 | Yes |\n\nSucrose (+66.5°) hydrolyses (H⁺ or invertase) to an equimolar glucose + fructose mixture of rotation about −20°: **invert sugar**. Maltose comes from starch (diastase) and lactose from milk.",
+        "key_terms": [
+          {
+            "term": "Glycosidic linkage",
+            "definition_md": "The ether (C–O–C) link joining two monosaccharide units through an anomeric carbon."
+          },
+          {
+            "term": "Invert sugar",
+            "definition_md": "The equimolar mixture of glucose and fructose formed by hydrolysis of sucrose; laevorotatory although sucrose is dextrorotatory."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\ce{C12H22O11 + H2O ->[maltase] 2C6H12O6}",
+            "label": "Hydrolysis of maltose"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Sugar",
+              "Link"
+            ],
+            "rows": [
+              [
+                "Sucrose",
+                "α1 → β2"
+              ],
+              [
+                "Maltose",
+                "α1 → 4"
+              ],
+              [
+                "Lactose",
+                "β1 → 4"
+              ]
+            ]
+          },
+          "alt": "Table of disaccharide links"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "isc-12-chemistry-ch21-t04"
+        ]
+      },
+      {
+        "heading": "5. Polysaccharides",
+        "body_md": "**Starch** (plants): **amylose** 15–20% (unbranched α-1,4, water-soluble, blue with I₂) + **amylopectin** 80–85% (α-1,4 chains branched by α-1,6 about every 20–25 units, insoluble). Hydrolysis: starch → dextrins → maltose → glucose.\n\n**Cellulose** (cell walls, cotton): unbranched **β-1,4** chains, hydrogen-bonded into fibres; not digested by humans (no enzyme for β-links); digested by ruminants with gut microbes.\n\n**Glycogen** (liver, muscle): α-1,4 with α-1,6 branches about every 8–12 units — more branched than amylopectin.\n\nMass relation: each chain unit C₆H₁₀O₅ (162) gives one glucose (180).",
+        "key_terms": [
+          {
+            "term": "Amylopectin",
+            "definition_md": "The branched, water-insoluble component of starch with α-1,4 and α-1,6 links."
+          },
+          {
+            "term": "Glycogen",
+            "definition_md": "The highly branched glucose polymer that stores energy in animals."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\ce{(C6H10O5)_{n} + nH2O -> nC6H12O6}",
+            "label": "Complete hydrolysis of starch"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Polysaccharide",
+              "Link",
+              "Role"
+            ],
+            "rows": [
+              [
+                "Starch",
+                "α-1,4 (+ α-1,6)",
+                "Plant store"
+              ],
+              [
+                "Cellulose",
+                "β-1,4",
+                "Structure"
+              ],
+              [
+                "Glycogen",
+                "α-1,4 + α-1,6",
+                "Animal store"
+              ]
+            ]
+          },
+          "alt": "Table comparing three polysaccharides"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "isc-12-chemistry-ch21-t05"
+        ]
+      }
+    ],
+    "exam_tips_md": "**Common mistakes**\n- Using Fehling’s solution to distinguish glucose from fructose (both are positive; use bromine water).\n- Calling α- and β-glucose enantiomers (they are anomers, differing at C1 only).\n- Linking D with (+).\n- Writing lactose as glucose + glucose, or giving cellulose α-links.\n\n**How marks are usually awarded**\n- Evidence for glucose structure (1 mark per reaction): reagent, product and conclusion.\n- Disaccharide structure (2 marks): units, carbons joined, α/β, reducing or not.\n- Polysaccharide comparisons (3 marks): one point each for unit, link/branching and function.",
+    "status": "draft",
+    "provenance": {
+      "origin": "human",
+      "template_version": null,
+      "model": null,
+      "generated_at": "2026-10-30",
+      "author": "claude-opus-5-5 (subject-producer)"
+    }
+  },
+  "flashcards": {
+    "unit": "isc-12-chemistry-ch21",
+    "version": 1,
+    "language": "en",
+    "cards": [
+      {
+        "id": "f01",
+        "front_md": "Define carbohydrate.",
+        "back_md": "Optically active polyhydroxy aldehyde or ketone, or a compound that gives one on hydrolysis.",
+        "tag": "definition",
+        "topic_id": "isc-12-chemistry-ch21-t01"
+      },
+      {
+        "id": "f02",
+        "front_md": "Aldose vs ketose?",
+        "back_md": "Aldose has –CHO; ketose has C=O (ketone).",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch21-t01"
+      },
+      {
+        "id": "f03",
+        "front_md": "Oligosaccharide?",
+        "back_md": "Gives 2–10 monosaccharide units on hydrolysis.",
+        "tag": "definition",
+        "topic_id": "isc-12-chemistry-ch21-t01"
+      },
+      {
+        "id": "f04",
+        "front_md": "Reducing sugar?",
+        "back_md": "Reduces Tollens’ and Fehling’s: free or potentially free carbonyl group.",
+        "tag": "definition",
+        "topic_id": "isc-12-chemistry-ch21-t01"
+      },
+      {
+        "id": "f05",
+        "front_md": "Name a non-reducing disaccharide.",
+        "back_md": "Sucrose.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch21-t01"
+      },
+      {
+        "id": "f06",
+        "front_md": "Glucose + HI (prolonged heating)?",
+        "back_md": "n-Hexane: straight C₆ chain.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch21-t02"
+      },
+      {
+        "id": "f07",
+        "front_md": "Glucose + bromine water?",
+        "back_md": "Gluconic acid: proves –CHO.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch21-t02"
+      },
+      {
+        "id": "f08",
+        "front_md": "Glucose + acetic anhydride?",
+        "back_md": "Pentaacetate: five –OH.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch21-t02"
+      },
+      {
+        "id": "f09",
+        "front_md": "Glucose + nitric acid?",
+        "back_md": "Saccharic acid: proves –CH₂OH end.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch21-t02"
+      },
+      {
+        "id": "f10",
+        "front_md": "Glucose + excess phenylhydrazine?",
+        "back_md": "Osazone (C1 and C2 react).",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch21-t02"
+      },
+      {
+        "id": "f11",
+        "front_md": "Facts not explained by open-chain glucose?",
+        "back_md": "No Schiff’s test, no NaHSO₃ adduct, pentaacetate inert to NH₂OH, two anomers.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch21-t02"
+      },
+      {
+        "id": "f12",
+        "front_md": "Ring in glucose?",
+        "back_md": "Six-membered pyranose: C5–OH adds to C1.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch21-t02"
+      },
+      {
+        "id": "f13",
+        "front_md": "Anomers?",
+        "back_md": "α and β forms differing only at C1 (anomeric carbon).",
+        "tag": "definition",
+        "topic_id": "isc-12-chemistry-ch21-t02"
+      },
+      {
+        "id": "f14",
+        "front_md": "Mutarotation?",
+        "back_md": "Change of rotation of a fresh anomer solution to +52.5° at equilibrium.",
+        "tag": "definition",
+        "topic_id": "isc-12-chemistry-ch21-t02"
+      },
+      {
+        "id": "f15",
+        "front_md": "D or L?",
+        "back_md": "From the –OH on the lowest chiral carbon: right = D.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch21-t02"
+      },
+      {
+        "id": "f16",
+        "front_md": "Stereoisomers of an aldohexose?",
+        "back_md": "2⁴ = 16.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch21-t02"
+      },
+      {
+        "id": "f17",
+        "front_md": "Carbonyl position in fructose?",
+        "back_md": "C2 (ketone).",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch21-t03"
+      },
+      {
+        "id": "f18",
+        "front_md": "Ring in fructose?",
+        "back_md": "Five-membered furanose (C5–OH + C2).",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch21-t03"
+      },
+      {
+        "id": "f19",
+        "front_md": "Test to tell glucose from fructose?",
+        "back_md": "Bromine water: only glucose decolourises it.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch21-t03"
+      },
+      {
+        "id": "f20",
+        "front_md": "Why does fructose reduce Fehling’s?",
+        "back_md": "It isomerises in alkali (enediol) to aldoses.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch21-t03"
+      },
+      {
+        "id": "f21",
+        "front_md": "Glucose and fructose osazones?",
+        "back_md": "Identical.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch21-t03"
+      },
+      {
+        "id": "f22",
+        "front_md": "Glycosidic linkage?",
+        "back_md": "C–O–C link through an anomeric carbon, with loss of H₂O.",
+        "tag": "definition",
+        "topic_id": "isc-12-chemistry-ch21-t04"
+      },
+      {
+        "id": "f23",
+        "front_md": "Sucrose link?",
+        "back_md": "α-Glucose C1 – β-fructose C2.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch21-t04"
+      },
+      {
+        "id": "f24",
+        "front_md": "Maltose link?",
+        "back_md": "α-1,4 between two glucose units.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch21-t04"
+      },
+      {
+        "id": "f25",
+        "front_md": "Lactose units?",
+        "back_md": "β-D-Galactose + D-glucose (β-1,4).",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch21-t04"
+      },
+      {
+        "id": "f26",
+        "front_md": "Invert sugar?",
+        "back_md": "Glucose + fructose from sucrose; rotation (+) → (−).",
+        "tag": "definition",
+        "topic_id": "isc-12-chemistry-ch21-t04"
+      },
+      {
+        "id": "f27",
+        "front_md": "Amylose vs amylopectin?",
+        "back_md": "Amylose unbranched α-1,4; amylopectin branched by α-1,6.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch21-t05"
+      },
+      {
+        "id": "f28",
+        "front_md": "Cellulose link?",
+        "back_md": "β-1,4 (unbranched).",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch21-t05"
+      },
+      {
+        "id": "f29",
+        "front_md": "Glycogen?",
+        "back_md": "Highly branched α-glucose polymer in liver and muscle.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch21-t05"
+      },
+      {
+        "id": "f30",
+        "front_md": "Why can’t humans digest cellulose?",
+        "back_md": "No enzyme for β-glycosidic links.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch21-t05"
+      },
+      {
+        "id": "f31",
+        "front_md": "Exam tip: evidence questions",
+        "back_md": "Give reagent, product and conclusion for each reaction.",
+        "tag": "exam-tip",
+        "topic_id": "isc-12-chemistry-ch21-t02"
+      }
+    ],
+    "status": "draft",
+    "provenance": {
+      "origin": "human",
+      "template_version": null,
+      "model": null,
+      "generated_at": "2026-10-30",
+      "author": "claude-opus-5-5 (subject-producer)"
+    }
+  },
+  "questions": [
+    {
+      "id": "q_isc12chem_ch21_001",
+      "unit": "isc-12-chemistry-ch21",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Raffinose, a sugar in beans, gives one molecule each of galactose, glucose and fructose on complete hydrolysis and does not reduce Fehling’s solution. Raffinose is best described as:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "a reducing trisaccharide"
+        },
+        {
+          "id": "b",
+          "text_md": "a non-reducing oligosaccharide (trisaccharide)"
+        },
+        {
+          "id": "c",
+          "text_md": "a polysaccharide"
+        },
+        {
+          "id": "d",
+          "text_md": "a ketohexose"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Three units → oligosaccharide; no reaction with Fehling’s → non-reducing — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch21-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch21_002",
+      "unit": "isc-12-chemistry-ch21",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which compound can be written as Cₓ(H₂O)ᵧ but is NOT a carbohydrate?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Ribose, C₅H₁₀O₅"
+        },
+        {
+          "id": "b",
+          "text_md": "Maltose, C₁₂H₂₂O₁₁"
+        },
+        {
+          "id": "c",
+          "text_md": "Fructose, C₆H₁₂O₆"
+        },
+        {
+          "id": "d",
+          "text_md": "Lactic acid, CH₃CH(OH)COOH (C₃H₆O₃)"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Lactic acid fits C₃(H₂O)₃ but is a hydroxy acid, not a polyhydroxy aldehyde or ketone — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch21-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch21_003",
+      "unit": "isc-12-chemistry-ch21",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Dihydroxyacetone, HOCH₂COCH₂OH, the active ingredient of sunless tanning lotions, is the simplest:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "aldotriose"
+        },
+        {
+          "id": "b",
+          "text_md": "ketotetrose"
+        },
+        {
+          "id": "c",
+          "text_md": "disaccharide"
+        },
+        {
+          "id": "d",
+          "text_md": "ketotriose"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Three carbons and a ketone group — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch21-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch21_004",
+      "unit": "isc-12-chemistry-ch21",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? Every monosaccharide, whether an aldose or a ketose, reduces Fehling’s solution.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "t"
+        ]
+      },
+      "solution_md": "True: aldoses have –CHO; ketoses such as fructose isomerise in alkali and also reduce it.",
+      "marking_scheme": [
+        {
+          "step": "True",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch21-t01",
+        "isc-12-chemistry-ch21-t03"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch21_005",
+      "unit": "isc-12-chemistry-ch21",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "A carbohydrate that yields between two and ten monosaccharide units on hydrolysis is called an ___.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "oligosaccharide"
+            ]
+          }
+        ]
+      },
+      "solution_md": "**Oligosaccharide**.",
+      "marking_scheme": [
+        {
+          "step": "Writes \"oligosaccharide\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch21-t01"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch21_006",
+      "unit": "isc-12-chemistry-ch21",
+      "language": "en",
+      "type": "match",
+      "stem_md": "Match each carbohydrate with its correct description.",
+      "options": [
+        {
+          "id": "1",
+          "text_md": "Galactose"
+        },
+        {
+          "id": "2",
+          "text_md": "Lactose"
+        },
+        {
+          "id": "3",
+          "text_md": "Sucrose"
+        },
+        {
+          "id": "4",
+          "text_md": "Glycogen"
+        }
+      ],
+      "match_right": [
+        {
+          "id": "p",
+          "text_md": "Non-reducing disaccharide"
+        },
+        {
+          "id": "q",
+          "text_md": "Reducing disaccharide"
+        },
+        {
+          "id": "r",
+          "text_md": "Branched polysaccharide"
+        },
+        {
+          "id": "s",
+          "text_md": "Aldohexose (monosaccharide)"
+        }
+      ],
+      "answer": {
+        "pairs": [
+          {
+            "left_id": "1",
+            "right_id": "s"
+          },
+          {
+            "left_id": "2",
+            "right_id": "q"
+          },
+          {
+            "left_id": "3",
+            "right_id": "p"
+          },
+          {
+            "left_id": "4",
+            "right_id": "r"
+          }
+        ]
+      },
+      "solution_md": "Galactose → aldohexose; lactose → reducing disaccharide; sucrose → non-reducing disaccharide; glycogen → branched polysaccharide.",
+      "marking_scheme": [
+        {
+          "step": "1 → s",
+          "marks": 0.5
+        },
+        {
+          "step": "2 → q",
+          "marks": 0.5
+        },
+        {
+          "step": "3 → p",
+          "marks": 0.5
+        },
+        {
+          "step": "4 → r",
+          "marks": 0.5
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch21-t01",
+        "isc-12-chemistry-ch21-t04",
+        "isc-12-chemistry-ch21-t05"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch21_007",
+      "unit": "isc-12-chemistry-ch21",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Classify each of the following as a mono-, di- or polysaccharide, and as reducing or non-reducing: (a) maltose, (b) cellulose, (c) fructose, (d) sucrose.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Maltose: disaccharide, reducing. (b) Cellulose: polysaccharide, non-reducing. (c) Fructose: monosaccharide, reducing. (d) Sucrose: disaccharide, non-reducing."
+      },
+      "solution_md": "Four classifications.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 0.5
+        },
+        {
+          "step": "(b)",
+          "marks": 0.5
+        },
+        {
+          "step": "(c)",
+          "marks": 0.5
+        },
+        {
+          "step": "(d)",
+          "marks": 0.5
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch21-t01"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch21_008",
+      "unit": "isc-12-chemistry-ch21",
+      "language": "en",
+      "type": "short",
+      "stem_md": "(a) Define carbohydrates, and use rhamnose (C₆H₁₂O₅) and ethanoic acid (C₂H₄O₂) to show why “hydrates of carbon” is not a satisfactory definition. (b) Distinguish between sugars and non-sugars, with one example of each. (c) State two uses of carbohydrates other than as food.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Optically active polyhydroxy aldehydes or ketones, or compounds that give them on hydrolysis. Rhamnose is a carbohydrate but does not fit Cₓ(H₂O)ᵧ; ethanoic acid fits C₂(H₂O)₂ but is not a carbohydrate. (b) Sugars (mono- and disaccharides) are crystalline, sweet and water-soluble, e.g. sucrose; non-sugars (polysaccharides) are amorphous, tasteless and mostly insoluble, e.g. starch. (c) Cellulose for cotton textiles and paper; fermentation of starch or molasses to ethanol (also: wood for furniture, glucose drips)."
+      },
+      "solution_md": "Definition with counter-examples; sugars vs non-sugars; two uses.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch21-t01"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch21_009",
+      "unit": "isc-12-chemistry-ch21",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Four unlabelled solutions contain glucose, fructose, sucrose and starch. Using only iodine solution, Fehling’s solution and bromine water, describe how you would identify each, giving the observations.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Iodine: only starch gives a blue-black colour. Fehling’s on the other three: sucrose gives no red precipitate (non-reducing); glucose and fructose both give red Cu₂O. Bromine water on these two: glucose decolourises it (oxidised to gluconic acid); fructose leaves it orange-brown."
+      },
+      "solution_md": "Iodine → starch; Fehling’s → sucrose; bromine water → glucose vs fructose.",
+      "marking_scheme": [
+        {
+          "step": "Starch by iodine",
+          "marks": 1
+        },
+        {
+          "step": "Sucrose by Fehling’s",
+          "marks": 1
+        },
+        {
+          "step": "Glucose vs fructose by bromine water",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 4,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch21-t01",
+        "isc-12-chemistry-ch21-t03",
+        "isc-12-chemistry-ch21-t05"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch21_010",
+      "unit": "isc-12-chemistry-ch21",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Glucose gives n-hexane when heated for a long time with hydrogen iodide. This shows that glucose:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "contains an aldehyde group"
+        },
+        {
+          "id": "b",
+          "text_md": "has its six carbon atoms in an unbranched chain"
+        },
+        {
+          "id": "c",
+          "text_md": "contains five hydroxyl groups"
+        },
+        {
+          "id": "d",
+          "text_md": "exists as a six-membered ring"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "n-Hexane is the straight-chain C₆ alkane — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch21-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch21_011",
+      "unit": "isc-12-chemistry-ch21",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "D-Glucose is warmed with three moles of phenylhydrazine and gives a yellow osazone. The carbon atoms of glucose that take part are:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "C1 and C2"
+        },
+        {
+          "id": "b",
+          "text_md": "C1 only"
+        },
+        {
+          "id": "c",
+          "text_md": "C1 and C6"
+        },
+        {
+          "id": "d",
+          "text_md": "C5 and C6"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "C1 (aldehyde) and the adjacent C2 (oxidised to C=O by the second mole) each form =N–NHC₆H₅ — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch21-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch21_012",
+      "unit": "isc-12-chemistry-ch21",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "How many moles of acetic anhydride are needed to convert one mole of D-glucose completely into its acetyl ester?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "6"
+        },
+        {
+          "id": "b",
+          "text_md": "5"
+        },
+        {
+          "id": "c",
+          "text_md": "4"
+        },
+        {
+          "id": "d",
+          "text_md": "3"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Five –OH groups, one acetic anhydride each — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch21-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch21_013",
+      "unit": "isc-12-chemistry-ch21",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "D-Glucose is oxidised to acid X by nitric acid and to acid Y by bromine water. Which statement about X and Y is correct?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "X and Y are both gluconic acid"
+        },
+        {
+          "id": "b",
+          "text_md": "X has five carbons because nitric acid removes C1"
+        },
+        {
+          "id": "c",
+          "text_md": "X is a dicarboxylic acid (saccharic acid) and Y a monocarboxylic acid (gluconic acid), both with six carbons"
+        },
+        {
+          "id": "d",
+          "text_md": "Y is a dicarboxylic acid and X a monocarboxylic acid"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Bromine water oxidises only –CHO; nitric acid also oxidises –CH₂OH — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch21-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch21_014",
+      "unit": "isc-12-chemistry-ch21",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "In the Fischer projection of a hexose, drawn with the carbonyl group at the top, the –OH on the chiral carbon farthest from the carbonyl group points to the left. The sugar:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "belongs to the L series, whatever its sign of rotation"
+        },
+        {
+          "id": "b",
+          "text_md": "must be laevorotatory"
+        },
+        {
+          "id": "c",
+          "text_md": "must be a ketose"
+        },
+        {
+          "id": "d",
+          "text_md": "must be the β-anomer"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "D/L is fixed by configuration relative to glyceraldehyde, not by rotation — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch21-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch21_015",
+      "unit": "isc-12-chemistry-ch21",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "When the C5 hydroxyl group of D-glucose adds to the C1 aldehyde group to close the pyranose ring, which carbon atom becomes a new chiral centre?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "C1"
+        },
+        {
+          "id": "b",
+          "text_md": "C2"
+        },
+        {
+          "id": "c",
+          "text_md": "C5"
+        },
+        {
+          "id": "d",
+          "text_md": "C6"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "C1 gains an –OH and an –O– ring bond, becoming the anomeric carbon — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch21-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch21_016",
+      "unit": "isc-12-chemistry-ch21",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "D-Glucose does not form an addition compound with sodium hydrogensulfite, although its open-chain formula has an aldehyde group. The best explanation is that:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "in solution almost all glucose exists as the cyclic hemiacetal, with only a trace of free aldehyde"
+        },
+        {
+          "id": "b",
+          "text_md": "the aldehyde group of glucose is hindered by five –OH groups"
+        },
+        {
+          "id": "c",
+          "text_md": "sodium hydrogensulfite oxidises glucose to gluconic acid"
+        },
+        {
+          "id": "d",
+          "text_md": "glucose is a ketose"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "The aldehyde is tied up in the ring — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch21-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch21_017",
+      "unit": "isc-12-chemistry-ch21",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A freshly prepared solution of pure β-D-glucose is placed in a polarimeter and observed for several hours. Its specific rotation:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "falls slowly from +111° to +52.5°"
+        },
+        {
+          "id": "b",
+          "text_md": "stays constant at +19.2°"
+        },
+        {
+          "id": "c",
+          "text_md": "changes slowly to a negative value"
+        },
+        {
+          "id": "d",
+          "text_md": "rises slowly from +19.2° to a steady +52.5°"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "β converts partly to α until equilibrium (mutarotation) — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch21-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch21_018",
+      "unit": "isc-12-chemistry-ch21",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Prolonged heating of glucose with HI gives n-hexane.\n\n**Reason (R):** Glucose has an aldehyde group at C1.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Both are true, but the formation of n-hexane shows the straight chain, not the aldehyde group — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch21-t02"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch21_019",
+      "unit": "isc-12-chemistry-ch21",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** D-Glucose can be obtained in two crystalline forms with different melting points and specific rotations.\n\n**Reason (R):** Ring closure makes C1 of glucose a new chiral centre, giving two anomers.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Both are true, and R explains A — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch21-t02"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch21_020",
+      "unit": "isc-12-chemistry-ch21",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** D-Fructose is laevorotatory.\n\n**Reason (R):** The letter D shows that a sugar rotates plane-polarised light to the right.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "A is true; R is false: D refers to configuration, not rotation — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch21-t02",
+        "isc-12-chemistry-ch21-t03"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch21_021",
+      "unit": "isc-12-chemistry-ch21",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? During mutarotation, α-D-glucose is converted into its enantiomer.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "f"
+        ]
+      },
+      "solution_md": "False: α and β are anomers (diastereomers differing at C1), not enantiomers.",
+      "marking_scheme": [
+        {
+          "step": "False, with the correction",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch21-t02"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch21_022",
+      "unit": "isc-12-chemistry-ch21",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "The six-membered ring form of glucose, containing five carbon atoms and one oxygen atom, is called the ___ form.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "pyranose"
+            ]
+          }
+        ]
+      },
+      "solution_md": "**Pyranose**.",
+      "marking_scheme": [
+        {
+          "step": "Writes \"pyranose\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch21-t02"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch21_023",
+      "unit": "isc-12-chemistry-ch21",
+      "language": "en",
+      "type": "match",
+      "stem_md": "Match each reagent used in proving the structure of D-glucose with the product it forms.",
+      "options": [
+        {
+          "id": "1",
+          "text_md": "HI, prolonged heating"
+        },
+        {
+          "id": "2",
+          "text_md": "Hydroxylamine"
+        },
+        {
+          "id": "3",
+          "text_md": "Acetic anhydride"
+        },
+        {
+          "id": "4",
+          "text_md": "Nitric acid"
+        }
+      ],
+      "match_right": [
+        {
+          "id": "p",
+          "text_md": "Glucose oxime"
+        },
+        {
+          "id": "q",
+          "text_md": "Saccharic acid"
+        },
+        {
+          "id": "r",
+          "text_md": "n-Hexane"
+        },
+        {
+          "id": "s",
+          "text_md": "Glucose pentaacetate"
+        }
+      ],
+      "answer": {
+        "pairs": [
+          {
+            "left_id": "1",
+            "right_id": "r"
+          },
+          {
+            "left_id": "2",
+            "right_id": "p"
+          },
+          {
+            "left_id": "3",
+            "right_id": "s"
+          },
+          {
+            "left_id": "4",
+            "right_id": "q"
+          }
+        ]
+      },
+      "solution_md": "HI → n-hexane; NH₂OH → oxime; acetic anhydride → pentaacetate; HNO₃ → saccharic acid.",
+      "marking_scheme": [
+        {
+          "step": "1 → r",
+          "marks": 0.5
+        },
+        {
+          "step": "2 → p",
+          "marks": 0.5
+        },
+        {
+          "step": "3 → s",
+          "marks": 0.5
+        },
+        {
+          "step": "4 → q",
+          "marks": 0.5
+        }
+      ],
+      "marks": 2,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch21-t02"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch21_024",
+      "unit": "isc-12-chemistry-ch21",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "How many stereoisomers are possible for an open-chain aldohexose, HOCH₂(CHOH)₄CHO, which has four different chiral carbon atoms?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 16,
+        "tolerance": 0,
+        "unit": null
+      },
+      "solution_md": "Number $= 2^{4} = 16$.",
+      "marking_scheme": [
+        {
+          "step": "16",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch21-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch21_025",
+      "unit": "isc-12-chemistry-ch21",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "α-D-Glucose has $[\\alpha]_D = +111^\\circ$ and β-D-glucose $+19.2^\\circ$; an equilibrium solution in water shows $+52.5^\\circ$. Ignoring the open-chain form, what percentage of the dissolved glucose is the β-anomer?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 63.7,
+        "tolerance": 0.2,
+        "unit": "%"
+      },
+      "solution_md": "$111(1 - x) + 19.2x = 52.5$, so $x = \\dfrac{58.5}{91.8} = 0.637$; percentage β $= 0.637 \\times 100 = 63.7$.",
+      "marking_scheme": [
+        {
+          "step": "Weighted-average equation",
+          "marks": 1
+        },
+        {
+          "step": "63.7%",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch21-t02"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch21_026",
+      "unit": "isc-12-chemistry-ch21",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "$3.60\\ \\text{g}$ of glucose ($M = 180$) is converted completely into glucose pentaacetate, $\\ce{C16H22O11}$ ($M = 390$). What mass of the pentaacetate is formed?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 7.8,
+        "tolerance": 0.02,
+        "unit": "g"
+      },
+      "solution_md": "$n = 3.60 \\div 180 = 0.0200\\ \\text{mol}$; mass $= 0.0200 \\times 390 = 7.80\\ \\text{g}$.",
+      "marking_scheme": [
+        {
+          "step": "0.0200 mol",
+          "marks": 1
+        },
+        {
+          "step": "7.80 g",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch21-t02"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch21_027",
+      "unit": "isc-12-chemistry-ch21",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "What is the minimum mass of phenylhydrazine ($M = 108$) needed to convert $9.00\\ \\text{g}$ of glucose ($M = 180$) completely into its osazone? ($\\ce{C6H12O6 + 3C6H5NHNH2 -> C18H22N4O4 + C6H5NH2 + NH3 + 2H2O}$)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 16.2,
+        "tolerance": 0.05,
+        "unit": "g"
+      },
+      "solution_md": "$n(\\text{glucose}) = 9.00 \\div 180 = 0.0500\\ \\text{mol}$; phenylhydrazine $= 3 \\times 0.0500 = 0.150\\ \\text{mol}$; mass $= 0.150 \\times 108 = 16.2\\ \\text{g}$.",
+      "marking_scheme": [
+        {
+          "step": "1 : 3 ratio, 0.150 mol",
+          "marks": 1
+        },
+        {
+          "step": "16.2 g",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch21-t02"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch21_028",
+      "unit": "isc-12-chemistry-ch21",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write equations for the reactions of D-glucose with (a) hydroxylamine and (b) bromine water, and state what each reaction shows about its structure.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) $\\ce{HOCH2(CHOH)4CHO + NH2OH -> HOCH2(CHOH)4CH=NOH + H2O}$: a carbonyl group is present. (b) $\\ce{HOCH2(CHOH)4CHO + Br2 + H2O -> HOCH2(CHOH)4COOH + 2HBr}$: gluconic acid has the same six carbons, so the carbonyl is an aldehyde."
+      },
+      "solution_md": "Oxime → C=O; gluconic acid → –CHO.",
+      "marking_scheme": [
+        {
+          "step": "(a) equation + inference",
+          "marks": 1
+        },
+        {
+          "step": "(b) equation + inference",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch21-t02"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch21_029",
+      "unit": "isc-12-chemistry-ch21",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Explain what “D” and “(+)” mean in the name D-(+)-glucose. Why is natural fructose written as D-(−)-fructose?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "D: in the Fischer projection, the –OH on the chiral carbon farthest from the carbonyl (C5) is on the right, as in D-glyceraldehyde — a statement about configuration. (+): the sugar rotates plane-polarised light to the right (dextrorotatory). Fructose has the same configuration at C5 (D) but is laevorotatory, so it is D-(−); the two labels are independent."
+      },
+      "solution_md": "D = configuration; (+) = rotation; independent.",
+      "marking_scheme": [
+        {
+          "step": "Meaning of D and (+)",
+          "marks": 1
+        },
+        {
+          "step": "Fructose explanation",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch21-t02",
+        "isc-12-chemistry-ch21-t03"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch21_030",
+      "unit": "isc-12-chemistry-ch21",
+      "language": "en",
+      "type": "short",
+      "stem_md": "What are anomers? Using rotation values, describe what happens when crystals of α-D-glucose are dissolved in water and the solution is left to stand.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Anomers are cyclic stereoisomers that differ only in configuration at the anomeric carbon (C1 of glucose). A fresh solution of α-D-glucose shows +111°; the ring opens and closes, forming β until equilibrium, and the rotation falls to a constant +52.5° (mutarotation)."
+      },
+      "solution_md": "Definition; +111° → +52.5°.",
+      "marking_scheme": [
+        {
+          "step": "Definition",
+          "marks": 1
+        },
+        {
+          "step": "Mutarotation with values",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch21-t02"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch21_031",
+      "unit": "isc-12-chemistry-ch21",
+      "language": "en",
+      "type": "short",
+      "stem_md": "(a) Name the two groups in open-chain D-glucose that react to form the pyranose ring, and the type of compound formed. (b) Explain why methyl α-D-glucoside, formed with methanol and dry HCl, does not reduce Fehling’s solution, although glucose does. (c) Explain why a solution of glucose shows mutarotation but a solution of methyl α-D-glucoside does not.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) The C5 –OH adds to the C1 –CHO, forming a cyclic hemiacetal. (b) In the glucoside the anomeric –OH is replaced by –OCH₃ (an acetal), so the ring cannot open to give a free aldehyde; glucose itself has a hemiacetal that opens in alkaline Fehling’s. (c) Mutarotation needs the ring to open and re-close at C1, which a hemiacetal can do; the glucoside is an acetal, locked as one anomer, so its rotation stays constant."
+      },
+      "solution_md": "Hemiacetal; acetal cannot open; no ring opening, no mutarotation.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch21-t02"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch21_032",
+      "unit": "isc-12-chemistry-ch21",
+      "language": "en",
+      "type": "short",
+      "stem_md": "D-Glucose is treated separately with (a) acetic anhydride, (b) concentrated nitric acid and (c) excess phenylhydrazine. For each, name the product and state what it reveals about glucose.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Glucose pentaacetate: five –OH groups, each on a different carbon. (b) Saccharic acid, HOOC(CHOH)₄COOH: besides –CHO there is a primary –CH₂OH group at the other end of the chain. (c) Glucosazone: the carbonyl group is at C1 next to a –CHOH group (C1 and C2 react)."
+      },
+      "solution_md": "Pentaacetate; saccharic acid; osazone.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch21-t02"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch21_033",
+      "unit": "isc-12-chemistry-ch21",
+      "language": "en",
+      "type": "short",
+      "stem_md": "α-D-Galactose has a specific rotation of $+150.7^\\circ$ and β-D-galactose $+52.8^\\circ$; an equilibrium solution in water shows $+80.2^\\circ$. (a) Name the phenomenon. (b) Calculate the percentage of the β-anomer at equilibrium, ignoring the open chain. (c) Which anomer is more stable in water?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Mutarotation. (b) $150.7(1 - x) + 52.8x = 80.2$, so $x = \\dfrac{150.7 - 80.2}{150.7 - 52.8} = \\dfrac{70.5}{97.9} = 0.720$: about 72.0% β. (c) The β-anomer, which predominates."
+      },
+      "solution_md": "Mutarotation; 72.0% β; β more stable.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 0.5
+        },
+        {
+          "step": "(b) equation",
+          "marks": 1
+        },
+        {
+          "step": "(b) 72.0%",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 0.5
+        }
+      ],
+      "marks": 3,
+      "difficulty": 4,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch21-t02"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch21_034",
+      "unit": "isc-12-chemistry-ch21",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Describe the reactions of D-glucose with (i) HI, (ii) hydroxylamine and (iii) bromine water, and state what each shows about its open-chain structure. [3]\n\n(b) Give two observations that the open-chain structure cannot explain. [1]\n\n(c) What does the letter D in D-glucose signify? [1]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) (i) Prolonged heating with HI gives n-hexane: six carbons in an unbranched chain. (ii) $\\ce{HOCH2(CHOH)4CHO + NH2OH -> HOCH2(CHOH)4CH=NOH + H2O}$: a carbonyl group. (iii) $\\ce{HOCH2(CHOH)4CHO + Br2 + H2O -> HOCH2(CHOH)4COOH + 2HBr}$: no carbon lost, so the carbonyl is an aldehyde.\n\n(b) Any two: no Schiff’s test; no NaHSO₃ adduct; the pentaacetate does not react with NH₂OH; two crystalline forms (α and β) with different rotations; mutarotation.\n\n(c) In the Fischer projection, the –OH on C5 (lowest chiral carbon) is on the right, as in D-glyceraldehyde."
+      },
+      "solution_md": "Three reactions with inferences; two anomalies; meaning of D.",
+      "marking_scheme": [
+        {
+          "step": "(a)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(a)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(a)(iii)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 5,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch21-t02"
+      ],
+      "expected_time_sec": 570,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch21_035",
+      "unit": "isc-12-chemistry-ch21",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A laboratory assistant has two unlabelled bottles, one of glucose solution and one of fructose solution. Which reagent will tell them apart?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Fehling’s solution"
+        },
+        {
+          "id": "b",
+          "text_md": "Tollens’ reagent"
+        },
+        {
+          "id": "c",
+          "text_md": "Bromine water"
+        },
+        {
+          "id": "d",
+          "text_md": "Excess phenylhydrazine"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Only glucose decolourises bromine water; both reduce Fehling’s and Tollens’ and give the same osazone — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch21-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch21_036",
+      "unit": "isc-12-chemistry-ch21",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "The five-membered ring of D-fructose, as found in sucrose, is formed by reaction between:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "the C5 –OH and a C1 aldehyde group"
+        },
+        {
+          "id": "b",
+          "text_md": "the C5 –OH and the C2 ketone group"
+        },
+        {
+          "id": "c",
+          "text_md": "the C6 –OH and the C2 ketone group"
+        },
+        {
+          "id": "d",
+          "text_md": "the C4 –OH and the C1 –CH₂OH group"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "A hemiketal from C5–OH and C2=O gives a ring of four carbons and one oxygen — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch21-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch21_037",
+      "unit": "isc-12-chemistry-ch21",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Fructose is converted to its cyanohydrin, which is hydrolysed and then heated with HI. The final product is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "heptanoic acid"
+        },
+        {
+          "id": "b",
+          "text_md": "2-methylhexanoic acid"
+        },
+        {
+          "id": "c",
+          "text_md": "hexanoic acid"
+        },
+        {
+          "id": "d",
+          "text_md": "n-hexane"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "The new –COOH is on C2, so it forms a branch: CH₃(CH₂)₃CH(CH₃)COOH — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch21-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch21_038",
+      "unit": "isc-12-chemistry-ch21",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Fructose, a ketose, still reduces Fehling’s solution because:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "its ketone group is oxidised directly to a carboxylic acid"
+        },
+        {
+          "id": "b",
+          "text_md": "its furanose ring contains an aldehyde group"
+        },
+        {
+          "id": "c",
+          "text_md": "in the alkaline reagent it isomerises through an enediol to aldoses, which are oxidised"
+        },
+        {
+          "id": "d",
+          "text_md": "it is hydrolysed by Fehling’s solution to glucose"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Alkali causes keto–enol rearrangement (Lobry de Bruyn–van Ekenstein) — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch21-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch21_039",
+      "unit": "isc-12-chemistry-ch21",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Tollens’ reagent can be used to distinguish glucose from fructose.\n\n**Reason (R):** Fructose is a reducing sugar.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "A is false (both give a silver mirror); R is true — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch21-t03"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch21_040",
+      "unit": "isc-12-chemistry-ch21",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Bromine water oxidises glucose but not fructose.\n\n**Reason (R):** Bromine water is a mild oxidant that is not alkaline, so it attacks an aldehyde group but cannot first convert a ketose into an aldose.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Both are true, and R explains A — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch21-t03"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch21_041",
+      "unit": "isc-12-chemistry-ch21",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? D-Glucose and D-fructose give the same osazone with excess phenylhydrazine.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "t"
+        ]
+      },
+      "solution_md": "True: only C1 and C2 react, and C3–C5 are identical in the two sugars.",
+      "marking_scheme": [
+        {
+          "step": "True",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch21-t03"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch21_042",
+      "unit": "isc-12-chemistry-ch21",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "Because it turns plane-polarised light to the left, natural fructose is described as ___ (dextrorotatory or laevorotatory).",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "laevorotatory",
+              "levorotatory"
+            ]
+          }
+        ]
+      },
+      "solution_md": "**Laevorotatory**.",
+      "marking_scheme": [
+        {
+          "step": "Writes \"laevorotatory\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch21-t03"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch21_043",
+      "unit": "isc-12-chemistry-ch21",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "A solution containing $0.900\\ \\text{g}$ of glucose ($M = 180$) is oxidised completely by bromine water. What mass of bromine, $\\ce{Br2}$ ($M = 160$), is used? ($\\ce{HOCH2(CHOH)4CHO + Br2 + H2O -> HOCH2(CHOH)4COOH + 2HBr}$)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 0.8,
+        "tolerance": 0.005,
+        "unit": "g"
+      },
+      "solution_md": "$n = 0.900 \\div 180 = 0.00500\\ \\text{mol}$; 1 : 1, so mass of $\\ce{Br2} = 0.00500 \\times 160 = 0.800\\ \\text{g}$.",
+      "marking_scheme": [
+        {
+          "step": "0.00500 mol",
+          "marks": 1
+        },
+        {
+          "step": "0.800 g",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch21-t03"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch21_044",
+      "unit": "isc-12-chemistry-ch21",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write the open-chain formula of fructose, and explain how the formation of 2-methylhexanoic acid (via the cyanohydrin, hydrolysis and HI) proves the position of its carbonyl group.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "HOCH₂–CO–(CHOH)₃–CH₂OH. HCN adds at the C=O; the –CN becomes –COOH and HI removes all –OH groups. A branch (–COOH) appears on C2 of a six-carbon chain, so the C=O was at C2 (glucose, with C=O at C1, gives unbranched heptanoic acid)."
+      },
+      "solution_md": "Formula; branch on C2.",
+      "marking_scheme": [
+        {
+          "step": "Formula",
+          "marks": 1
+        },
+        {
+          "step": "Reasoning",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch21-t03"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch21_045",
+      "unit": "isc-12-chemistry-ch21",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Give a chemical test, with an equation, to distinguish glucose from fructose, and explain why Fehling’s solution cannot be used for this purpose.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Bromine water: glucose decolourises it, fructose does not. $\\ce{HOCH2(CHOH)4CHO + Br2 + H2O -> HOCH2(CHOH)4COOH + 2HBr}$. Fehling’s is alkaline; fructose isomerises in alkali to aldoses and so reduces it too — both give red Cu₂O."
+      },
+      "solution_md": "Bromine water; both reduce Fehling’s.",
+      "marking_scheme": [
+        {
+          "step": "Test + equation",
+          "marks": 1
+        },
+        {
+          "step": "Reason for Fehling’s",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch21-t03"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch21_046",
+      "unit": "isc-12-chemistry-ch21",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Compare glucose and fructose with respect to (a) the type and position of the carbonyl group, (b) the size of the ring in the cyclic form and (c) their behaviour with bromine water.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Glucose: aldehyde at C1 (aldohexose); fructose: ketone at C2 (ketohexose). (b) Glucose: six-membered pyranose (C5–OH + C1); fructose: five-membered furanose (C5–OH + C2). (c) Glucose decolourises bromine water (→ gluconic acid); fructose does not react."
+      },
+      "solution_md": "Carbonyl; ring; bromine water.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 2,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch21-t02",
+        "isc-12-chemistry-ch21-t03"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch21_047",
+      "unit": "isc-12-chemistry-ch21",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Write the open-chain structure of D-fructose and describe how its cyclic structure is formed, naming the ring type. [2]\n\n(b) Describe, with an equation, a test to distinguish glucose from fructose. [2]\n\n(c) Why do glucose and fructose give the same osazone? [1]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) HOCH₂–CO–(CHOH)₃–CH₂OH (ketohexose, C=O at C2). The C5 –OH adds to the C2 ketone, giving a five-membered furanose ring (cyclic hemiketal) with α and β anomers.\n\n(b) Bromine water: decolourised by glucose only. $\\ce{HOCH2(CHOH)4CHO + Br2 + H2O -> HOCH2(CHOH)4COOH + 2HBr}$.\n\n(c) Only C1 and C2 react with phenylhydrazine; the configurations at C3, C4 and C5 are the same in both sugars."
+      },
+      "solution_md": "Structure and furanose; bromine water; C1–C2 only.",
+      "marking_scheme": [
+        {
+          "step": "(a) open chain",
+          "marks": 1
+        },
+        {
+          "step": "(a) ring",
+          "marks": 1
+        },
+        {
+          "step": "(b) test",
+          "marks": 1
+        },
+        {
+          "step": "(b) equation",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 5,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch21-t03"
+      ],
+      "expected_time_sec": 570,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch21_048",
+      "unit": "isc-12-chemistry-ch21",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Maltose, formed when the enzyme diastase acts on starch, contains two glucose units joined by:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "a β-1,4 glycosidic link"
+        },
+        {
+          "id": "b",
+          "text_md": "an α-1,4 glycosidic link"
+        },
+        {
+          "id": "c",
+          "text_md": "an α-1,6 glycosidic link"
+        },
+        {
+          "id": "d",
+          "text_md": "an α1→β2 glycosidic link"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "C1 of one α-D-glucose to C4 of the next — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch21-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch21_049",
+      "unit": "isc-12-chemistry-ch21",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Sucrose does not reduce Tollens’ reagent because its glycosidic link joins:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "C1 of α-D-glucose to C2 of β-D-fructose, using both anomeric carbons"
+        },
+        {
+          "id": "b",
+          "text_md": "C1 of α-D-glucose to C4 of D-fructose"
+        },
+        {
+          "id": "c",
+          "text_md": "C1 of β-D-galactose to C4 of D-glucose"
+        },
+        {
+          "id": "d",
+          "text_md": "C1 of α-D-glucose to C6 of D-fructose"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "No free hemiacetal or hemiketal remains — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch21-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch21_050",
+      "unit": "isc-12-chemistry-ch21",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Lactose, the sugar of milk, contains a glycosidic link between:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "C1 of α-D-glucose and C2 of β-D-fructose"
+        },
+        {
+          "id": "b",
+          "text_md": "C1 of α-D-glucose and C4 of D-glucose"
+        },
+        {
+          "id": "c",
+          "text_md": "C1 of β-D-galactose and C4 of D-glucose"
+        },
+        {
+          "id": "d",
+          "text_md": "C1 of β-D-glucose and C6 of D-galactose"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "β-1,4 from galactose to glucose — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch21-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch21_051",
+      "unit": "isc-12-chemistry-ch21",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which of the following shows mutarotation when dissolved in water?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Lactose"
+        },
+        {
+          "id": "b",
+          "text_md": "Sucrose"
+        },
+        {
+          "id": "c",
+          "text_md": "Cellulose"
+        },
+        {
+          "id": "d",
+          "text_md": "Trehalose, in which two glucose units are joined C1 to C1"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Lactose keeps a free hemiacetal at C1 of its glucose unit; sucrose and trehalose use both anomeric carbons — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch21-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch21_052",
+      "unit": "isc-12-chemistry-ch21",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Lactose is a reducing sugar.\n\n**Reason (R):** Lactose is made of galactose and glucose units.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Both are true, but the reason for reducing power is the free hemiacetal at C1 of the glucose unit — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch21-t04"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch21_053",
+      "unit": "isc-12-chemistry-ch21",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? In sucrose, the glucose unit is present as a pyranose ring and the fructose unit as a furanose ring.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "t"
+        ]
+      },
+      "solution_md": "True.",
+      "marking_scheme": [
+        {
+          "step": "True",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch21-t04"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch21_054",
+      "unit": "isc-12-chemistry-ch21",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "The C–O–C link joining two monosaccharide units through an anomeric carbon, as in maltose, is called a ___ linkage.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "glycosidic"
+            ]
+          }
+        ]
+      },
+      "solution_md": "**Glycosidic**.",
+      "marking_scheme": [
+        {
+          "step": "Writes \"glycosidic\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch21-t04"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch21_055",
+      "unit": "isc-12-chemistry-ch21",
+      "language": "en",
+      "type": "match",
+      "stem_md": "Match each disaccharide with its glycosidic link.",
+      "options": [
+        {
+          "id": "1",
+          "text_md": "Sucrose"
+        },
+        {
+          "id": "2",
+          "text_md": "Maltose"
+        },
+        {
+          "id": "3",
+          "text_md": "Lactose"
+        },
+        {
+          "id": "4",
+          "text_md": "Cellobiose (from cellulose)"
+        }
+      ],
+      "match_right": [
+        {
+          "id": "p",
+          "text_md": "β-Galactose C1 – glucose C4"
+        },
+        {
+          "id": "q",
+          "text_md": "α-Glucose C1 – β-fructose C2"
+        },
+        {
+          "id": "r",
+          "text_md": "β-Glucose C1 – glucose C4"
+        },
+        {
+          "id": "s",
+          "text_md": "α-Glucose C1 – glucose C4"
+        }
+      ],
+      "answer": {
+        "pairs": [
+          {
+            "left_id": "1",
+            "right_id": "q"
+          },
+          {
+            "left_id": "2",
+            "right_id": "s"
+          },
+          {
+            "left_id": "3",
+            "right_id": "p"
+          },
+          {
+            "left_id": "4",
+            "right_id": "r"
+          }
+        ]
+      },
+      "solution_md": "Sucrose α1→β2; maltose α1→4; lactose β1→4 (galactose); cellobiose β1→4 (glucose).",
+      "marking_scheme": [
+        {
+          "step": "1 → q",
+          "marks": 0.5
+        },
+        {
+          "step": "2 → s",
+          "marks": 0.5
+        },
+        {
+          "step": "3 → p",
+          "marks": 0.5
+        },
+        {
+          "step": "4 → r",
+          "marks": 0.5
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch21-t04",
+        "isc-12-chemistry-ch21-t05"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch21_056",
+      "unit": "isc-12-chemistry-ch21",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "Sucrose is hydrolysed completely to an equimolar mixture of D-glucose ($[\\alpha]_D = +52.5^\\circ$ at equilibrium) and D-fructose ($-92.4^\\circ$). Taking the specific rotation of the mixture as the average of the two, calculate it.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": -19.95,
+        "tolerance": 0.1,
+        "unit": "°"
+      },
+      "solution_md": "$[\\alpha]_D = \\dfrac{52.5 - 92.4}{2} = -19.95^\\circ$ (about $-20^\\circ$): the sign has changed from $+$ to $-$, so the mixture is invert sugar.",
+      "marking_scheme": [
+        {
+          "step": "Average of the two",
+          "marks": 1
+        },
+        {
+          "step": "−19.95°",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch21-t04"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch21_057",
+      "unit": "isc-12-chemistry-ch21",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Name the monosaccharide units and describe the glycosidic link in (a) maltose and (b) lactose. Are these sugars reducing?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Maltose: two α-D-glucose units, C1 of one to C4 of the other (α-1,4). (b) Lactose: β-D-galactose and D-glucose, C1 of galactose to C4 of glucose (β-1,4). Both are reducing (free hemiacetal at C1 of the second unit)."
+      },
+      "solution_md": "Maltose α-1,4; lactose β-1,4; both reducing.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch21-t04"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch21_058",
+      "unit": "isc-12-chemistry-ch21",
+      "language": "en",
+      "type": "short",
+      "stem_md": "A solution of sucrose has a specific rotation of +66.5°. After warming with the enzyme invertase, the rotation is negative. Explain this change with an equation and name the product mixture.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "$\\ce{C12H22O11 + H2O ->[invertase] C6H12O6 + C6H12O6}$ (glucose + fructose). Glucose (+52.5°) is less dextrorotatory than fructose (−92.4°) is laevorotatory, so the equimolar mixture is laevorotatory (about −20°). The sign is inverted: invert sugar."
+      },
+      "solution_md": "Hydrolysis; fructose dominates; invert sugar.",
+      "marking_scheme": [
+        {
+          "step": "Equation",
+          "marks": 1
+        },
+        {
+          "step": "Explanation + name",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch21-t04"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch21_059",
+      "unit": "isc-12-chemistry-ch21",
+      "language": "en",
+      "type": "short",
+      "stem_md": "A disaccharide Z reduces Tollens’ reagent. The enzyme lactase hydrolyses it to D-galactose and D-glucose. (a) Identify Z. (b) Describe the glycosidic link in Z. (c) Explain why Z is a reducing sugar whereas sucrose is not.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Lactose. (b) β-1,4: C1 of β-D-galactose to C4 of D-glucose. (c) In lactose C1 of the glucose unit is a free hemiacetal that can open to –CHO; in sucrose both anomeric carbons (C1 of glucose, C2 of fructose) are used in the link, so no ring can open."
+      },
+      "solution_md": "Lactose; β-1,4; free hemiacetal.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch21-t04"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch21_060",
+      "unit": "isc-12-chemistry-ch21",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) What is a glycosidic linkage? [1]\n\n(b) Name the monosaccharide units and describe the glycosidic link in (i) sucrose, (ii) maltose and (iii) lactose. [3]\n\n(c) Explain why maltose is a reducing sugar but sucrose is not. [1]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) The C–O–C (ether) link formed between the anomeric –OH of one monosaccharide and an –OH of another, with loss of water.\n\n(b) (i) Sucrose: α-D-glucopyranose and β-D-fructofuranose, C1 of glucose to C2 of fructose (α1→β2). (ii) Maltose: two α-D-glucose units, C1 to C4 (α-1,4). (iii) Lactose: β-D-galactose and D-glucose, C1 of galactose to C4 of glucose (β-1,4).\n\n(c) Maltose has a free hemiacetal at C1 of its second glucose unit, which opens to –CHO; in sucrose both anomeric carbons are in the link."
+      },
+      "solution_md": "Definition; three structures; free hemiacetal.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(b)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(b)(iii)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 5,
+      "difficulty": 3,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch21-t04"
+      ],
+      "expected_time_sec": 570,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch21_061",
+      "unit": "isc-12-chemistry-ch21",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Amylopectin, the major component of potato starch, differs from amylose in that amylopectin:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "is built from β-D-glucose"
+        },
+        {
+          "id": "b",
+          "text_md": "gives a deep blue colour with iodine and dissolves readily in water"
+        },
+        {
+          "id": "c",
+          "text_md": "is a polymer of fructose"
+        },
+        {
+          "id": "d",
+          "text_md": "has branches formed by α-1,6 links"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Both use α-1,4 chains; amylopectin is branched through C6 — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch21-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch21_062",
+      "unit": "isc-12-chemistry-ch21",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "After a meal, excess glucose in the body is stored in the liver and muscles as:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "cellulose, an unbranched β-glucose polymer"
+        },
+        {
+          "id": "b",
+          "text_md": "amylose, an unbranched α-glucose polymer"
+        },
+        {
+          "id": "c",
+          "text_md": "sucrose, a non-reducing disaccharide"
+        },
+        {
+          "id": "d",
+          "text_md": "glycogen, a highly branched α-glucose polymer"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Glycogen is animal starch — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch21-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch21_063",
+      "unit": "isc-12-chemistry-ch21",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Cotton fibres, almost pure cellulose, are strong and do not dissolve in water even though each glucose unit has free –OH groups. The main reason is that:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "cellulose chains are highly branched like glycogen"
+        },
+        {
+          "id": "b",
+          "text_md": "cellulose contains α-1,6 cross-links"
+        },
+        {
+          "id": "c",
+          "text_md": "straight β-1,4 chains lie side by side, held together by many hydrogen bonds"
+        },
+        {
+          "id": "d",
+          "text_md": "the –OH groups of cellulose are all acetylated"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Inter-chain hydrogen bonding in parallel linear chains — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch21-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch21_064",
+      "unit": "isc-12-chemistry-ch21",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Glycogen can be broken down to glucose more rapidly than amylose.\n\n**Reason (R):** Glycogen is highly branched, so it has many chain ends at which enzymes can act at the same time.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Both are true, and R explains A — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch21-t05"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch21_065",
+      "unit": "isc-12-chemistry-ch21",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? Partial hydrolysis of starch by the enzyme diastase gives maltose.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "t"
+        ]
+      },
+      "solution_md": "True: starch → dextrins → maltose.",
+      "marking_scheme": [
+        {
+          "step": "True",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch21-t04",
+        "isc-12-chemistry-ch21-t05"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch21_066",
+      "unit": "isc-12-chemistry-ch21",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "$48.6\\ \\text{g}$ of pure starch is hydrolysed completely with dilute acid. What mass of glucose ($M = 180$) is formed? (One chain unit, $\\ce{C6H10O5}$, has $M = 162$.)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 54,
+        "tolerance": 0.1,
+        "unit": "g"
+      },
+      "solution_md": "Units $= 48.6 \\div 162 = 0.300\\ \\text{mol}$; mass of glucose $= 0.300 \\times 180 = 54.0\\ \\text{g}$.",
+      "marking_scheme": [
+        {
+          "step": "0.300 mol of units",
+          "marks": 1
+        },
+        {
+          "step": "54.0 g",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch21-t05"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch21_067",
+      "unit": "isc-12-chemistry-ch21",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Give two differences between amylose and amylopectin.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Amylose is unbranched (α-1,4 only) while amylopectin is branched (α-1,4 chains with α-1,6 branches); amylose is soluble in hot water and gives a deep blue colour with iodine, while amylopectin is insoluble and gives a red-violet colour. (Amylose is 15–20% of starch, amylopectin 80–85%.)"
+      },
+      "solution_md": "Branching; solubility/iodine colour.",
+      "marking_scheme": [
+        {
+          "step": "Branching",
+          "marks": 1
+        },
+        {
+          "step": "Solubility or iodine colour or proportion",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch21-t05"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch21_068",
+      "unit": "isc-12-chemistry-ch21",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Compare starch, cellulose and glycogen with respect to (a) the glucose anomer present, (b) the glycosidic links and branching and (c) their function in living things.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Starch and glycogen: α-D-glucose; cellulose: β-D-glucose. (b) Starch: α-1,4 (amylose) plus α-1,6 branches (amylopectin); glycogen: α-1,4 with more frequent α-1,6 branches; cellulose: unbranched β-1,4. (c) Starch: energy store in plants; glycogen: energy store in animals (liver, muscle); cellulose: structural material of plant cell walls."
+      },
+      "solution_md": "Anomer; links and branching; function.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 2,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch21-t05"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch21_069",
+      "unit": "isc-12-chemistry-ch21",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Describe the structure of starch, naming its two components and their glycosidic links. [2]\n\n(b) Describe the structure of cellulose and explain why humans cannot digest it. [2]\n\n(c) How does glycogen differ from amylopectin, and where is it stored? [1]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Starch = amylose (15–20%; unbranched chains of α-D-glucose, α-1,4 links; soluble; blue with iodine) + amylopectin (80–85%; α-1,4 chains branched by α-1,6 links about every 20–25 units; insoluble).\n\n(b) Cellulose: unbranched chains of β-D-glucose with β-1,4 links; chains lie parallel and are hydrogen bonded into fibres. Human digestive enzymes hydrolyse only α-glycosidic links, so β-links are not broken.\n\n(c) Glycogen is more highly branched (α-1,6 branches about every 8–12 units); it is stored in the liver and muscles of animals."
+      },
+      "solution_md": "Amylose + amylopectin; β-1,4 cellulose; glycogen more branched.",
+      "marking_scheme": [
+        {
+          "step": "(a) amylose",
+          "marks": 1
+        },
+        {
+          "step": "(a) amylopectin",
+          "marks": 1
+        },
+        {
+          "step": "(b) structure",
+          "marks": 1
+        },
+        {
+          "step": "(b) digestion",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 5,
+      "difficulty": 3,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch21-t05"
+      ],
+      "expected_time_sec": 570,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    }
+  ],
+  "build": {
+    "run_id": null,
+    "checks": {
+      "katex_mhchem": "83 math strings parsed with KaTeX 0.19.0 + mhchem (throwOnError, strict \"error\"), 0 failures",
+      "svg_allowlist": "1 SVG visuals (1 distinct diagrams) checked with saxes against svg-allowlist.ts: elements, attributes, class pattern, fragment-only refs, no style, palette incl. named hues, viewBox, title, per-page unique ids — 0 failures",
+      "narration": "30 slides, 12–83 words (mean 54), no symbols, formulae or unit abbreviations",
+      "resolve": "7/7 scripted re-solve checks pass",
+      "chemistry_facts": "Classification and reducing sugars, the reactions establishing the open-chain structure of glucose, cyclic structures and anomers, D/L configuration, fructose and the bromine-water test, disaccharide links and polysaccharide structures, and every numerical checked against the ISC 2027 syllabus (Unit 10)",
+      "content_gate": "npm test -w @soyl/content-templates: all checks pass for this chapter",
+      "verifier_pass": "2026-10-30: every question and every internal-choice alternative re-solved from its stem by the author; every numerical re-computed by the build script — see README \"Verifier pass\"",
+      "pipeline_lint": "npm run content -- lint --exemplars: 0 errors, 0 warnings"
+    }
+  }
+}
