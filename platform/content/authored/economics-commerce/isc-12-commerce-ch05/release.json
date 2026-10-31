@@ -1,0 +1,5340 @@
+{
+ "unit": "isc-12-commerce-ch05",
+ "version": 1,
+ "academic_year": "2026-27",
+ "created_at": "2026-10-31",
+ "decks": [
+  {
+   "unit": "isc-12-commerce-ch05",
+   "part": 1,
+   "version": 1,
+   "title": "Banking: Latest Trends — Part 1: Electronic Transfers and E-banking",
+   "language": "en",
+   "goals": [
+    "Compare RTGS, NEFT and IMPS by settlement, amount, timing and typical use",
+    "Explain how an online demand draft is obtained",
+    "Evaluate e-banking for customers and banks, including its security risks"
+   ],
+   "slides": [
+    {
+     "id": "s01",
+     "layout": "title",
+     "heading": "Banking: Latest Trends",
+     "body_md": "Part 1: moving money **electronically** — RTGS, NEFT, IMPS, online drafts — and **e-banking**.",
+     "bullets": [],
+     "visual": {
+      "kind": "flow",
+      "spec": {
+       "direction": "LR",
+       "nodes": [
+        {
+         "id": "n1",
+         "label": "RTGS"
+        },
+        {
+         "id": "n2",
+         "label": "NEFT"
+        },
+        {
+         "id": "n3",
+         "label": "IMPS"
+        },
+        {
+         "id": "n4",
+         "label": "Online demand drafts"
+        },
+        {
+         "id": "n5",
+         "label": "E-banking"
+        }
+       ],
+       "edges": [
+        {
+         "from": "n1",
+         "to": "n2"
+        },
+        {
+         "from": "n2",
+         "to": "n3"
+        },
+        {
+         "from": "n3",
+         "to": "n4"
+        },
+        {
+         "from": "n4",
+         "to": "n5"
+        }
+       ]
+      },
+      "alt": "Route map of Part 1: RTGS, NEFT, IMPS, online demand drafts and e-banking",
+      "caption": "Part 1 at a glance"
+     },
+     "math": [],
+     "narration": "Not long ago, paying a supplier in another city meant a cheque or a draft and days of waiting. Today money moves in seconds. In this part we learn the main electronic transfer systems and the internet banking that brings the bank to your screen.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s02",
+     "layout": "concept",
+     "heading": "What you need for an electronic transfer",
+     "body_md": "",
+     "bullets": [],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "To send money electronically you need…",
+        "Why"
+       ],
+       "rows": [
+        [
+         "Beneficiary's name and account number",
+         "To credit the right account"
+        ],
+        [
+         "IFSC of the beneficiary's branch",
+         "To route the money to the right branch"
+        ],
+        [
+         "For IMPS by phone: mobile number and MMID (or account and IFSC)",
+         "To identify the payee instantly"
+        ]
+       ]
+      },
+      "alt": "Table of details needed for an electronic transfer and why each is needed"
+     },
+     "math": [],
+     "narration": "To send money electronically you need the payee's name and account number, and the code of the payee's branch, called the IFSC. For instant transfers by phone, a mobile number with a mobile money identifier, or the account number and IFSC, identifies the payee.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s03",
+     "layout": "check",
+     "heading": "Quick check: IFSC",
+     "body_md": "What does the IFSC identify?",
+     "bullets": [],
+     "visual": null,
+     "math": [],
+     "narration": "Think of where the money must be routed.",
+     "check_question_id": "q_isc12commerce_ch05_005",
+     "audio": null
+    },
+    {
+     "id": "s04",
+     "layout": "diagram",
+     "heading": "RTGS and NEFT: how they settle",
+     "body_md": "",
+     "bullets": [],
+     "visual": {
+      "kind": "svg",
+      "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 560 290\" role=\"img\" aria-label=\"Two panels. Left, RTGS: payments 1, 2 and 3 each go straight to settled, one by one; minimum 2 lakh rupees. Right, NEFT: payments 1, 2 and 3 are collected and settled together as a batch every half hour; no minimum\" font-family=\"sans-serif\" font-size=\"14\" fill=\"none\"><title>Two panels. Left, RTGS: payments 1, 2 and 3 each go straight to settled, one by one; minimum 2 lakh rupees. Right, NEFT: payments 1, 2 and 3 are collected and settled together as a batch every half hour; no minimum</title><text x=\"140\" y=\"24\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"14\" font-weight=\"bold\">RTGS: one by one, at once</text><text x=\"420\" y=\"24\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"14\" font-weight=\"bold\">NEFT: collected into batches</text><line x1=\"280\" y1=\"10\" x2=\"280\" y2=\"280\" fill=\"none\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\" stroke-dasharray=\"6 4\"/><rect x=\"20\" y=\"60\" width=\"90\" height=\"34\" rx=\"8\" fill=\"var(--diagram-blue)\" fill-opacity=\"0.12\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.4\"/><text x=\"65\" y=\"77\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">Payment 1</text><line x1=\"112\" y1=\"77\" x2=\"166\" y2=\"77\" fill=\"none\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.6\"/><polygon points=\"166,77 157,81.5 157,72.5\" fill=\"var(--diagram-blue)\" stroke=\"none\"/><rect x=\"170\" y=\"60\" width=\"90\" height=\"34\" rx=\"8\" fill=\"var(--diagram-green)\" fill-opacity=\"0.12\" stroke=\"var(--diagram-green)\" stroke-width=\"1.4\"/><text x=\"215\" y=\"77\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">Settled</text><rect x=\"20\" y=\"120\" width=\"90\" height=\"34\" rx=\"8\" fill=\"var(--diagram-blue)\" fill-opacity=\"0.12\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.4\"/><text x=\"65\" y=\"137\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">Payment 2</text><line x1=\"112\" y1=\"137\" x2=\"166\" y2=\"137\" fill=\"none\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.6\"/><polygon points=\"166,137 157,141.5 157,132.5\" fill=\"var(--diagram-blue)\" stroke=\"none\"/><rect x=\"170\" y=\"120\" width=\"90\" height=\"34\" rx=\"8\" fill=\"var(--diagram-green)\" fill-opacity=\"0.12\" stroke=\"var(--diagram-green)\" stroke-width=\"1.4\"/><text x=\"215\" y=\"137\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">Settled</text><rect x=\"20\" y=\"180\" width=\"90\" height=\"34\" rx=\"8\" fill=\"var(--diagram-blue)\" fill-opacity=\"0.12\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.4\"/><text x=\"65\" y=\"197\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">Payment 3</text><line x1=\"112\" y1=\"197\" x2=\"166\" y2=\"197\" fill=\"none\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.6\"/><polygon points=\"166,197 157,201.5 157,192.5\" fill=\"var(--diagram-blue)\" stroke=\"none\"/><rect x=\"170\" y=\"180\" width=\"90\" height=\"34\" rx=\"8\" fill=\"var(--diagram-green)\" fill-opacity=\"0.12\" stroke=\"var(--diagram-green)\" stroke-width=\"1.4\"/><text x=\"215\" y=\"197\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">Settled</text><rect x=\"300\" y=\"60\" width=\"90\" height=\"34\" rx=\"8\" fill=\"var(--diagram-blue)\" fill-opacity=\"0.12\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.4\"/><text x=\"345\" y=\"77\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">Payment 1</text><line x1=\"392\" y1=\"77\" x2=\"430\" y2=\"137\" fill=\"none\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.4\"/><rect x=\"300\" y=\"120\" width=\"90\" height=\"34\" rx=\"8\" fill=\"var(--diagram-blue)\" fill-opacity=\"0.12\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.4\"/><text x=\"345\" y=\"137\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">Payment 2</text><line x1=\"392\" y1=\"137\" x2=\"430\" y2=\"137\" fill=\"none\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.4\"/><rect x=\"300\" y=\"180\" width=\"90\" height=\"34\" rx=\"8\" fill=\"var(--diagram-blue)\" fill-opacity=\"0.12\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.4\"/><text x=\"345\" y=\"197\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">Payment 3</text><line x1=\"392\" y1=\"197\" x2=\"430\" y2=\"137\" fill=\"none\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.4\"/><rect x=\"432\" y=\"112\" width=\"110\" height=\"50\" rx=\"8\" fill=\"var(--diagram-accent)\" fill-opacity=\"0.16\" stroke=\"var(--diagram-accent)\" stroke-width=\"1.5\"/><text x=\"487\" y=\"130\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\" font-weight=\"bold\">Batch settled</text><text x=\"487\" y=\"148\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">every half hour</text><text x=\"140\" y=\"250\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">Minimum ₹2 lakh</text><text x=\"420\" y=\"250\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">No minimum</text></svg>",
+      "alt": "Two panels. Left, RTGS: payments 1, 2 and 3 each go straight to settled, one by one; minimum 2 lakh rupees. Right, NEFT: payments 1, 2 and 3 are collected and settled together as a batch every half hour; no minimum",
+      "caption": "RTGS settles each payment at once; NEFT settles in half-hourly batches. Limits and timings as of 2026; the Reserve Bank of India can revise them."
+     },
+     "math": [],
+     "narration": "RTGS stands for real time gross settlement. Each payment is settled on its own, the moment it is processed, and the minimum is two lakh rupees. NEFT collects payments and settles them in batches every half hour, with no minimum. Both now run round the clock on all days.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s05",
+     "layout": "concept",
+     "heading": "RTGS, NEFT and IMPS compared",
+     "body_md": "",
+     "bullets": [],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Basis",
+        "RTGS",
+        "NEFT",
+        "IMPS"
+       ],
+       "rows": [
+        [
+         "Settlement",
+         "Each transaction, real time",
+         "Half-hourly batches",
+         "Instant, each transaction"
+        ],
+        [
+         "Minimum",
+         "₹2 lakh",
+         "None",
+         "None"
+        ],
+        [
+         "Maximum",
+         "No upper limit set by RBI",
+         "No upper limit set by RBI",
+         "₹5 lakh per transaction"
+        ],
+        [
+         "Availability",
+         "24x7 since December 2020",
+         "24x7 since December 2019",
+         "24x7"
+        ],
+        [
+         "Typical use",
+         "Large, urgent payments",
+         "Routine payments of any size",
+         "Small, urgent payments, often by phone"
+        ]
+       ]
+      },
+      "alt": "Table comparing RTGS, NEFT and IMPS on settlement, minimum, maximum, availability and typical use, as of 2026",
+      "caption": "Limits and timings as of 2026; the Reserve Bank of India can revise them."
+     },
+     "math": [],
+     "narration": "Compare the three. RTGS is for large, urgent payments. NEFT handles routine payments of any size in batches. IMPS sends money instantly, day and night, up to five lakh rupees per transaction, and is popular on mobile phones. These limits stood as of twenty twenty six and can be revised.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s06",
+     "layout": "check",
+     "heading": "Quick check: round the clock",
+     "body_md": "True or false: RTGS has been available 24x7 since December 2020.",
+     "bullets": [],
+     "visual": null,
+     "math": [],
+     "narration": "NEFT went round the clock first; RTGS followed a year later.",
+     "check_question_id": "q_isc12commerce_ch05_010",
+     "audio": null
+    },
+    {
+     "id": "s07",
+     "layout": "example",
+     "heading": "Worked example 1: choosing a method",
+     "body_md": "An imagined logistics firm has three payments to make today.",
+     "bullets": [
+      "Step 1: check the **amount** (is it at least ₹2 lakh?).",
+      "Step 2: check the **urgency** and the **time**.",
+      "Step 3: pick RTGS, NEFT or IMPS and give the reason."
+     ],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Payment (imagined: Lohargal Logistics)",
+        "Method",
+        "Reason"
+       ],
+       "rows": [
+        [
+         "₹25 lakh to a truck dealer, needed at once",
+         "RTGS",
+         "Above ₹2 lakh; immediate, individual settlement"
+        ],
+        [
+         "Salaries to 20 drivers",
+         "NEFT",
+         "Many routine transfers; no minimum"
+        ],
+        [
+         "₹5,000 refund late at night",
+         "IMPS",
+         "Instant, round the clock, small amount"
+        ]
+       ]
+      },
+      "alt": "Worked table choosing RTGS for a large urgent payment, NEFT for salaries and IMPS for a small late-night refund",
+      "caption": "Ask: how much, how urgent, and when?"
+     },
+     "math": [],
+     "narration": "Twenty five lakh rupees that must arrive at once goes by RTGS. Salaries to twenty drivers suit NEFT. A five thousand rupee refund late at night suits IMPS, which is instant and always open. Amount, urgency and timing decide the choice.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s08",
+     "layout": "diagram",
+     "heading": "Online demand drafts",
+     "body_md": "A demand draft can now be **requested through net banking**.",
+     "bullets": [],
+     "visual": {
+      "kind": "flow",
+      "spec": {
+       "direction": "LR",
+       "nodes": [
+        {
+         "id": "n1",
+         "label": "Log in to net banking"
+        },
+        {
+         "id": "n2",
+         "label": "Fill payee and amount"
+        },
+        {
+         "id": "n3",
+         "label": "Account debited"
+        },
+        {
+         "id": "n4",
+         "label": "Draft issued and delivered"
+        }
+       ],
+       "edges": [
+        {
+         "from": "n1",
+         "to": "n2"
+        },
+        {
+         "from": "n2",
+         "to": "n3"
+        },
+        {
+         "from": "n3",
+         "to": "n4"
+        }
+       ]
+      },
+      "alt": "Flow of an online demand draft: log in to net banking, fill in payee and amount, the account is debited, and the draft is issued and delivered",
+      "caption": "No queue at the branch."
+     },
+     "math": [],
+     "narration": "Some payees still want a demand draft. Instead of queuing at the branch, a customer can request one through net banking. The bank debits the account and issues the draft, which is delivered or collected. It saves time and travel.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s09",
+     "layout": "concept",
+     "heading": "E-banking",
+     "body_md": "**E-banking** (internet banking) lets customers bank **online**, at any time, from anywhere.",
+     "bullets": [],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "E-banking",
+        "Points"
+       ],
+       "rows": [
+        [
+         "Meaning",
+         "Banking through the internet without visiting a branch"
+        ],
+        [
+         "Services",
+         "Balance and statements, transfers, bill payments, deposits, demand drafts"
+        ],
+        [
+         "For customers",
+         "Anytime, anywhere; quick; cheap; good records"
+        ],
+        [
+         "For banks",
+         "Lower cost per transaction; less branch crowding; wider reach"
+        ],
+        [
+         "Disadvantages",
+         "Security risks (phishing, hacking); needs device, internet and skills; technical failures; impersonal"
+        ]
+       ]
+      },
+      "alt": "Table summarising e-banking: meaning, services, advantages for customers and banks, and disadvantages"
+     },
+     "math": [],
+     "narration": "E-banking puts the branch on a screen. Customers check balances, transfer funds, pay bills and open deposits at any hour. Banks save cost and space. But there are risks: phishing and hacking, the need for devices and skills, technical failures, and less personal contact.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s10",
+     "layout": "example",
+     "heading": "Worked example 2: spotting fraud",
+     "body_md": "An imagined sweet shop gets an email \"from the bank\" asking for its password on a link.",
+     "bullets": [
+      "Step 1: ask — would a bank **ever** ask for a password or OTP? (No.)",
+      "Step 2: name it: **phishing**.",
+      "Step 3: act: do not click; report to the bank through its **official** number."
+     ],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Safety rule",
+        "Why"
+       ],
+       "rows": [
+        [
+         "Never share OTP, PIN or password",
+         "Banks never ask for them"
+        ],
+        [
+         "Type the bank's address; do not click links",
+         "Fake links steal logins"
+        ],
+        [
+         "Keep SMS alerts on",
+         "Spot unauthorised debits at once"
+        ],
+        [
+         "Lock the phone; log out after use",
+         "Stops misuse if the device is lost"
+        ]
+       ]
+      },
+      "alt": "Table of four safety rules for digital banking with the reason for each"
+     },
+     "math": [],
+     "narration": "A message asking for a password or one time password is a trap called phishing. Banks never ask for these. The shop should not click the link, and should report it through the bank's official number. Simple habits keep online banking safe.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s11",
+     "layout": "check",
+     "heading": "Quick check: the fake email",
+     "body_md": "An email that looks like the bank asks the owner to \"verify\" a password on a link. This is…",
+     "bullets": [],
+     "visual": null,
+     "math": [],
+     "narration": "Who really sent it?",
+     "check_question_id": "q_isc12commerce_ch05_019",
+     "audio": null
+    },
+    {
+     "id": "s12",
+     "layout": "summary",
+     "heading": "Summary of Part 1",
+     "body_md": "",
+     "bullets": [],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Idea",
+        "Key point"
+       ],
+       "rows": [
+        [
+         "RTGS",
+         "Real time, gross; minimum ₹2 lakh; 24x7 since 2020"
+        ],
+        [
+         "NEFT",
+         "Half-hourly batches; no minimum; 24x7 since 2019"
+        ],
+        [
+         "IMPS",
+         "Instant, 24x7; up to ₹5 lakh per transaction"
+        ],
+        [
+         "Online DD",
+         "Requested through net banking"
+        ],
+        [
+         "E-banking",
+         "Anytime banking online; guard against fraud"
+        ]
+       ]
+      },
+      "alt": "Summary table of Part 1: RTGS, NEFT, IMPS, online demand drafts and e-banking",
+      "caption": "Limits and timings as of 2026; the Reserve Bank of India can revise them."
+     },
+     "math": [],
+     "narration": "To sum up. RTGS settles large payments one by one in real time. NEFT settles any amount in half hourly batches. IMPS is instant, day and night, up to its limit. Demand drafts can be requested online. E-banking is convenient and cheap, but must be used safely.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s13",
+     "layout": "exam-tips",
+     "heading": "Exam tips",
+     "body_md": "",
+     "bullets": [
+      "Compare transfer methods **basis by basis**: settlement, amount, timing, use.",
+      "Quote limits with **\"as of 2026\"** awareness; the RBI can revise them.",
+      "For e-banking, separate advantages to **customers** and to **banks**."
+     ],
+     "visual": {
+      "kind": "flow",
+      "spec": {
+       "direction": "LR",
+       "nodes": [
+        {
+         "id": "n1",
+         "label": "How much?"
+        },
+        {
+         "id": "n2",
+         "label": "How urgent?"
+        },
+        {
+         "id": "n3",
+         "label": "Which channel?"
+        }
+       ],
+       "edges": [
+        {
+         "from": "n1",
+         "to": "n2"
+        },
+        {
+         "from": "n2",
+         "to": "n3"
+        }
+       ]
+      },
+      "alt": "Three questions for choosing a payment method: how much, how urgent, and which channel"
+     },
+     "math": [],
+     "narration": "Some tips. Set out comparisons basis by basis. Remember that limits and timings are set by the Reserve Bank and can change. And when asked about e-banking, keep the advantages to customers separate from the advantages to banks.",
+     "check_question_id": null,
+     "audio": null
+    }
+   ],
+   "status": "draft",
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "unit": "isc-12-commerce-ch05",
+   "part": 2,
+   "version": 1,
+   "title": "Banking: Latest Trends — Part 2: Mobile Banking, Cards and Digital Payments",
+   "language": "en",
+   "goals": [
+    "State the services, advantages and disadvantages of mobile banking",
+    "Distinguish a debit card from a credit card and state the functions of ATMs",
+    "Explain the meaning of digital banking, UPI and e-wallets"
+   ],
+   "slides": [
+    {
+     "id": "s01",
+     "layout": "title",
+     "heading": "Mobile Banking, Cards and Digital Payments",
+     "body_md": "Part 2: banking on the **phone**, **ATMs**, **debit and credit cards**, and **UPI and e-wallets**.",
+     "bullets": [],
+     "visual": {
+      "kind": "flow",
+      "spec": {
+       "direction": "LR",
+       "nodes": [
+        {
+         "id": "n1",
+         "label": "Mobile banking"
+        },
+        {
+         "id": "n2",
+         "label": "ATMs"
+        },
+        {
+         "id": "n3",
+         "label": "Debit and credit cards"
+        },
+        {
+         "id": "n4",
+         "label": "Digital banking, UPI, e-wallets"
+        }
+       ],
+       "edges": [
+        {
+         "from": "n1",
+         "to": "n2"
+        },
+        {
+         "from": "n2",
+         "to": "n3"
+        },
+        {
+         "from": "n3",
+         "to": "n4"
+        }
+       ]
+      },
+      "alt": "Route map of Part 2: mobile banking, ATMs, debit and credit cards, and digital banking with UPI and e-wallets",
+      "caption": "Part 2 at a glance"
+     },
+     "math": [],
+     "narration": "In this part, banking moves into your pocket. We look at mobile banking, the cash machines on every street, the two kinds of cards, and the instant digital payments now used even at small stalls.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s02",
+     "layout": "concept",
+     "heading": "Mobile banking",
+     "body_md": "",
+     "bullets": [],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Mobile banking",
+        "Points"
+       ],
+       "rows": [
+        [
+         "Services",
+         "SMS alerts, balance enquiry, mini-statement, fund transfer, bill payment and recharge"
+        ],
+        [
+         "Advantages",
+         "Banking in the pocket; instant alerts; reaches remote areas; saves time"
+        ],
+        [
+         "Disadvantages",
+         "Lost phone risk; network problems; small screen; fraud calls and messages"
+        ]
+       ]
+      },
+      "alt": "Table of mobile-banking services, advantages and disadvantages"
+     },
+     "math": [],
+     "narration": "Mobile banking offers alerts, balance checks, transfers and bill payments on a phone, by app or even by text message. It brings banking to remote areas and saves time. But a lost phone, a weak network or a fraud call can cause trouble.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s03",
+     "layout": "check",
+     "heading": "Quick check: the instant message",
+     "body_md": "A customer gets a message within seconds of every debit, and spots a misuse. Which service helped?",
+     "bullets": [],
+     "visual": null,
+     "math": [],
+     "narration": "What arrives on the phone after each transaction?",
+     "check_question_id": "q_isc12commerce_ch05_027",
+     "audio": null
+    },
+    {
+     "id": "s04",
+     "layout": "concept",
+     "heading": "ATMs",
+     "body_md": "An **ATM** (automated teller machine) gives cash and basic services **round the clock**.",
+     "bullets": [],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "ATM services",
+        "Note"
+       ],
+       "rows": [
+        [
+         "Cash withdrawal",
+         "Round the clock"
+        ],
+        [
+         "Balance enquiry and mini-statement",
+         "Quick check of recent entries"
+        ],
+        [
+         "PIN change",
+         "Keep the card secure"
+        ],
+        [
+         "Cash deposit (some machines)",
+         "Saves a trip to the counter"
+        ]
+       ]
+      },
+      "alt": "Table of common ATM services with a note on each"
+     },
+     "math": [],
+     "narration": "Automated teller machines let customers withdraw cash, check balances, get a mini statement and change their PIN at any hour. Some also accept deposits. They take routine work away from bank counters.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s05",
+     "layout": "diagram",
+     "heading": "Debit card or credit card?",
+     "body_md": "",
+     "bullets": [],
+     "visual": {
+      "kind": "svg",
+      "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 560 270\" role=\"img\" aria-label=\"Two panels. Debit card: money goes from your own account to the shop at once. Credit card: the bank pays the shop from your credit limit and you repay the bank later, with interest if you pay late\" font-family=\"sans-serif\" font-size=\"14\" fill=\"none\"><title>Two panels. Debit card: money goes from your own account to the shop at once. Credit card: the bank pays the shop from your credit limit and you repay the bank later, with interest if you pay late</title><text x=\"140\" y=\"22\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"15\" font-weight=\"bold\">Debit card</text><text x=\"420\" y=\"22\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"15\" font-weight=\"bold\">Credit card</text><rect x=\"40\" y=\"40\" width=\"200\" height=\"52\" rx=\"8\" fill=\"var(--diagram-green)\" fill-opacity=\"0.14\" stroke=\"var(--diagram-green)\" stroke-width=\"1.5\"/><text x=\"140\" y=\"60\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"13\" font-weight=\"bold\">Your account</text><text x=\"140\" y=\"79\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">own money</text><rect x=\"40\" y=\"190\" width=\"200\" height=\"52\" rx=\"8\" fill=\"var(--diagram-blue)\" fill-opacity=\"0.14\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.5\"/><text x=\"140\" y=\"210\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"13\" font-weight=\"bold\">Shop</text><text x=\"140\" y=\"229\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">paid now</text><line x1=\"140\" y1=\"94\" x2=\"140\" y2=\"186\" fill=\"none\" stroke=\"var(--diagram-green)\" stroke-width=\"2\"/><polygon points=\"140,186 135.5,177 144.5,177\" fill=\"var(--diagram-green)\" stroke=\"none\"/><text x=\"150\" y=\"140\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"start\" dominant-baseline=\"middle\" font-size=\"12\">deducted at once</text><rect x=\"320\" y=\"40\" width=\"200\" height=\"52\" rx=\"8\" fill=\"var(--diagram-accent)\" fill-opacity=\"0.14\" stroke=\"var(--diagram-accent)\" stroke-width=\"1.5\"/><text x=\"420\" y=\"60\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"13\" font-weight=\"bold\">Bank</text><text x=\"420\" y=\"79\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">credit limit</text><rect x=\"320\" y=\"190\" width=\"200\" height=\"52\" rx=\"8\" fill=\"var(--diagram-blue)\" fill-opacity=\"0.14\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.5\"/><text x=\"420\" y=\"210\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"13\" font-weight=\"bold\">Shop</text><text x=\"420\" y=\"229\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">paid now</text><line x1=\"420\" y1=\"94\" x2=\"420\" y2=\"186\" fill=\"none\" stroke=\"var(--diagram-accent)\" stroke-width=\"2\"/><polygon points=\"420,186 415.5,177 424.5,177\" fill=\"var(--diagram-accent)\" stroke=\"none\"/><text x=\"430\" y=\"125\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"start\" dominant-baseline=\"middle\" font-size=\"12\">bank pays the shop;</text><text x=\"430\" y=\"143\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"start\" dominant-baseline=\"middle\" font-size=\"12\">you repay later</text><text x=\"430\" y=\"161\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"start\" dominant-baseline=\"middle\" font-size=\"12\">(interest if late)</text></svg>",
+      "alt": "Two panels. Debit card: money goes from your own account to the shop at once. Credit card: the bank pays the shop from your credit limit and you repay the bank later, with interest if you pay late",
+      "caption": "A debit card spends your money now; a credit card spends the bank's money, to be repaid."
+     },
+     "math": [],
+     "narration": "With a debit card, the money leaves your own account at once. With a credit card, the bank pays the shop from your credit limit, and you repay the bank later. Pay the full bill by the due date and there is no interest; leave a balance and interest is charged, often at a high rate.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s06",
+     "layout": "example",
+     "heading": "Worked example 1: comparing the cards",
+     "body_md": "An imagined shop owner holds both cards. Compare them basis by basis.",
+     "bullets": [
+      "Step 1: **whose money** is spent?",
+      "Step 2: is there a **credit period**?",
+      "Step 3: what does it **cost** if unpaid?"
+     ],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Basis",
+        "Debit card",
+        "Credit card"
+       ],
+       "rows": [
+        [
+         "Source of funds",
+         "Holder's own account",
+         "Bank's credit, up to a limit"
+        ],
+        [
+         "Credit period",
+         "None",
+         "Interest-free period if paid in full by the due date"
+        ],
+        [
+         "Interest",
+         "None on purchases",
+         "High interest on unpaid balance"
+        ],
+        [
+         "Spending limit",
+         "Account balance",
+         "Credit limit"
+        ],
+        [
+         "Risk of overspending",
+         "Low",
+         "Higher"
+        ]
+       ]
+      },
+      "alt": "Table distinguishing debit and credit cards on source of funds, credit period, interest, spending limit and risk of overspending"
+     },
+     "math": [],
+     "narration": "The debit card spends her own money, with no credit period and no interest. The credit card spends the bank's money up to a limit, gives an interest free period if she pays in full, but charges high interest on any balance left unpaid.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s07",
+     "layout": "check",
+     "heading": "Quick check: paying from savings",
+     "body_md": "A card payment is deducted from the holder's savings account at once. The card is a…",
+     "bullets": [],
+     "visual": null,
+     "math": [],
+     "narration": "Whose money is spent, and when?",
+     "check_question_id": "q_isc12commerce_ch05_034",
+     "audio": null
+    },
+    {
+     "id": "s08",
+     "layout": "concept",
+     "heading": "Digital banking, UPI and e-wallets",
+     "body_md": "The syllabus needs the **meaning only** of these three terms.",
+     "bullets": [],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Term",
+        "Meaning (only)",
+        "Imagined example"
+       ],
+       "rows": [
+        [
+         "Digital banking",
+         "Banking through internet, mobile, cards and UPI instead of paper",
+         "A kayak-rental firm runs all its banking on an app"
+        ],
+        [
+         "UPI",
+         "Instant transfer from a bank account using a UPI ID, mobile number or QR code",
+         "Tourists scan the counter QR to pay"
+        ],
+        [
+         "E-wallet",
+         "Prepaid digital wallet loaded with money in advance",
+         "A stall owner keeps ₹1,000 loaded for small bills"
+        ]
+       ]
+      },
+      "alt": "Table giving the meaning of digital banking, UPI and e-wallets, each with an imagined example"
+     },
+     "math": [],
+     "narration": "Digital banking means using electronic channels instead of paper and branches. UPI, the unified payments interface, sends money instantly from one bank account to another using an ID, a mobile number or a QR code. An e wallet is a prepaid digital purse, loaded with money in advance.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s09",
+     "layout": "diagram",
+     "heading": "UPI moves money bank to bank",
+     "body_md": "",
+     "bullets": [],
+     "visual": {
+      "kind": "flow",
+      "spec": {
+       "direction": "LR",
+       "nodes": [
+        {
+         "id": "n1",
+         "label": "Payer's bank account"
+        },
+        {
+         "id": "n2",
+         "label": "UPI app (no stored money)"
+        },
+        {
+         "id": "n3",
+         "label": "Payee's bank account"
+        }
+       ],
+       "edges": [
+        {
+         "from": "n1",
+         "to": "n2"
+        },
+        {
+         "from": "n2",
+         "to": "n3"
+        }
+       ]
+      },
+      "alt": "Flow of a UPI payment: money moves from the payer's bank account through the UPI app, which stores no money, directly to the payee's bank account",
+      "caption": "UPI moves money bank to bank; an e-wallet spends a balance loaded earlier."
+     },
+     "math": [],
+     "narration": "In a UPI payment, the app holds no money of its own. It simply instructs the payer's bank to send money straight to the payee's bank account. An e wallet is different: you load money into it first and then spend that balance.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s10",
+     "layout": "check",
+     "heading": "Quick check: the loaded app",
+     "body_md": "A stall owner loads ₹1,000 into an app and pays small bills from that balance. The app is…",
+     "bullets": [],
+     "visual": null,
+     "math": [],
+     "narration": "Was the money loaded in advance?",
+     "check_question_id": "q_isc12commerce_ch05_047",
+     "audio": null
+    },
+    {
+     "id": "s11",
+     "layout": "example",
+     "heading": "Worked example 2: matching needs to tools",
+     "body_md": "Six everyday needs, six tools.",
+     "bullets": [
+      "Step 1: note the **amount** and **urgency**.",
+      "Step 2: decide **whose money** should be used, now or later.",
+      "Step 3: name the tool."
+     ],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "If you want to…",
+        "Use"
+       ],
+       "rows": [
+        [
+         "send ₹10 lakh to arrive at once",
+         "RTGS"
+        ],
+        [
+         "pay many routine bills or salaries",
+         "NEFT"
+        ],
+        [
+         "send ₹2,000 instantly at night",
+         "IMPS or UPI"
+        ],
+        [
+         "pay at a shop counter by phone",
+         "UPI QR code"
+        ],
+        [
+         "buy now and pay next month",
+         "Credit card"
+        ],
+        [
+         "spend only what you have",
+         "Debit card"
+        ]
+       ]
+      },
+      "alt": "Decision table matching six needs to RTGS, NEFT, IMPS or UPI, a UPI QR code, a credit card or a debit card",
+      "caption": "Limits and timings as of 2026; the Reserve Bank of India can revise them."
+     },
+     "math": [],
+     "narration": "Ten lakh rupees needed at once: RTGS. Many routine bills: NEFT. A small instant transfer at night: IMPS or UPI. Paying at a counter: scan the QR code. Buying now and paying later: a credit card. Spending only what you have: a debit card.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s12",
+     "layout": "summary",
+     "heading": "Summary of Part 2",
+     "body_md": "",
+     "bullets": [],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Idea",
+        "Key point"
+       ],
+       "rows": [
+        [
+         "Mobile banking",
+         "Alerts, transfers, bills on the phone"
+        ],
+        [
+         "ATM",
+         "Cash and basic services round the clock"
+        ],
+        [
+         "Debit vs credit card",
+         "Own money now vs bank's money, repaid later"
+        ],
+        [
+         "Digital banking, UPI, e-wallet",
+         "Online channels; bank-to-bank instant; prepaid wallet"
+        ]
+       ]
+      },
+      "alt": "Summary table of Part 2: mobile banking, ATMs, debit and credit cards, and digital banking, UPI and e-wallets"
+     },
+     "math": [],
+     "narration": "To sum up. Mobile banking brings alerts, transfers and bill payments to the phone. ATMs give cash any time. A debit card spends your own money now; a credit card spends the bank's money, repaid later. UPI moves money bank to bank instantly, while an e wallet spends a prepaid balance.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s13",
+     "layout": "exam-tips",
+     "heading": "Exam tips",
+     "body_md": "",
+     "bullets": [
+      "For cards, use three bases: **source of funds, credit period, interest**.",
+      "Say **\"meaning only\"** answers crisply: one clear sentence for UPI, e-wallet, digital banking.",
+      "Add a **safety** point when asked about disadvantages of digital channels."
+     ],
+     "visual": {
+      "kind": "flow",
+      "spec": {
+       "direction": "LR",
+       "nodes": [
+        {
+         "id": "n1",
+         "label": "How much?"
+        },
+        {
+         "id": "n2",
+         "label": "How urgent?"
+        },
+        {
+         "id": "n3",
+         "label": "Which channel?"
+        }
+       ],
+       "edges": [
+        {
+         "from": "n1",
+         "to": "n2"
+        },
+        {
+         "from": "n2",
+         "to": "n3"
+        }
+       ]
+      },
+      "alt": "Three questions for choosing a payment method: how much, how urgent, and which channel"
+     },
+     "math": [],
+     "narration": "Final tips. Compare cards on source of funds, credit period and interest. For UPI, e wallets and digital banking, the syllabus asks for meaning only, so one clear sentence each is enough. And when listing disadvantages, remember fraud and safety.",
+     "check_question_id": null,
+     "audio": null
+    }
+   ],
+   "status": "draft",
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  }
+ ],
+ "notes": {
+  "unit": "isc-12-commerce-ch05",
+  "version": 1,
+  "title": "Banking: Latest Trends — notes",
+  "language": "en",
+  "sections": [
+   {
+    "heading": "1. Online fund transfer: RTGS, NEFT, IMPS and online demand drafts",
+    "body_md": "*Limits and timings as of 2026; the Reserve Bank of India can revise them.*\n\n- **RTGS (Real Time Gross Settlement):** each transaction settled individually and immediately; **minimum ₹2 lakh**, no upper limit set by the RBI; available **24x7 since December 2020**; used for large, urgent payments.\n- **NEFT (National Electronic Funds Transfer):** settled in **half-hourly batches** (deferred net settlement); **no minimum or maximum** set by the RBI; available **24x7 since December 2019**; used for routine payments of any size.\n- **IMPS (Immediate Payment Service):** **instant**, 24x7 transfer, often by mobile, using mobile number and MMID or account number and IFSC; per-transaction limit **₹5 lakh**.\n- **Online demand draft:** a draft requested through net banking; the account is debited and the draft is issued and delivered.\n\nTo transfer funds electronically, the sender needs the payee's **name, account number and IFSC** (the code of the payee's bank branch).",
+    "key_terms": [
+     {
+      "term": "RTGS",
+      "definition_md": "Real-time, transaction-by-transaction settlement for large payments."
+     },
+     {
+      "term": "NEFT",
+      "definition_md": "Electronic transfer settled in half-hourly batches."
+     },
+     {
+      "term": "IMPS",
+      "definition_md": "Instant electronic transfer available round the clock."
+     },
+     {
+      "term": "IFSC",
+      "definition_md": "Indian Financial System Code identifying a bank branch."
+     }
+    ],
+    "formulas": [],
+    "visual": {
+     "kind": "svg",
+     "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 560 290\" role=\"img\" aria-label=\"Two panels. Left, RTGS: payments 1, 2 and 3 each go straight to settled, one by one; minimum 2 lakh rupees. Right, NEFT: payments 1, 2 and 3 are collected and settled together as a batch every half hour; no minimum\" font-family=\"sans-serif\" font-size=\"14\" fill=\"none\"><title>Two panels. Left, RTGS: payments 1, 2 and 3 each go straight to settled, one by one; minimum 2 lakh rupees. Right, NEFT: payments 1, 2 and 3 are collected and settled together as a batch every half hour; no minimum</title><text x=\"140\" y=\"24\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"14\" font-weight=\"bold\">RTGS: one by one, at once</text><text x=\"420\" y=\"24\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"14\" font-weight=\"bold\">NEFT: collected into batches</text><line x1=\"280\" y1=\"10\" x2=\"280\" y2=\"280\" fill=\"none\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\" stroke-dasharray=\"6 4\"/><rect x=\"20\" y=\"60\" width=\"90\" height=\"34\" rx=\"8\" fill=\"var(--diagram-blue)\" fill-opacity=\"0.12\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.4\"/><text x=\"65\" y=\"77\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">Payment 1</text><line x1=\"112\" y1=\"77\" x2=\"166\" y2=\"77\" fill=\"none\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.6\"/><polygon points=\"166,77 157,81.5 157,72.5\" fill=\"var(--diagram-blue)\" stroke=\"none\"/><rect x=\"170\" y=\"60\" width=\"90\" height=\"34\" rx=\"8\" fill=\"var(--diagram-green)\" fill-opacity=\"0.12\" stroke=\"var(--diagram-green)\" stroke-width=\"1.4\"/><text x=\"215\" y=\"77\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">Settled</text><rect x=\"20\" y=\"120\" width=\"90\" height=\"34\" rx=\"8\" fill=\"var(--diagram-blue)\" fill-opacity=\"0.12\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.4\"/><text x=\"65\" y=\"137\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">Payment 2</text><line x1=\"112\" y1=\"137\" x2=\"166\" y2=\"137\" fill=\"none\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.6\"/><polygon points=\"166,137 157,141.5 157,132.5\" fill=\"var(--diagram-blue)\" stroke=\"none\"/><rect x=\"170\" y=\"120\" width=\"90\" height=\"34\" rx=\"8\" fill=\"var(--diagram-green)\" fill-opacity=\"0.12\" stroke=\"var(--diagram-green)\" stroke-width=\"1.4\"/><text x=\"215\" y=\"137\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">Settled</text><rect x=\"20\" y=\"180\" width=\"90\" height=\"34\" rx=\"8\" fill=\"var(--diagram-blue)\" fill-opacity=\"0.12\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.4\"/><text x=\"65\" y=\"197\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">Payment 3</text><line x1=\"112\" y1=\"197\" x2=\"166\" y2=\"197\" fill=\"none\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.6\"/><polygon points=\"166,197 157,201.5 157,192.5\" fill=\"var(--diagram-blue)\" stroke=\"none\"/><rect x=\"170\" y=\"180\" width=\"90\" height=\"34\" rx=\"8\" fill=\"var(--diagram-green)\" fill-opacity=\"0.12\" stroke=\"var(--diagram-green)\" stroke-width=\"1.4\"/><text x=\"215\" y=\"197\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">Settled</text><rect x=\"300\" y=\"60\" width=\"90\" height=\"34\" rx=\"8\" fill=\"var(--diagram-blue)\" fill-opacity=\"0.12\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.4\"/><text x=\"345\" y=\"77\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">Payment 1</text><line x1=\"392\" y1=\"77\" x2=\"430\" y2=\"137\" fill=\"none\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.4\"/><rect x=\"300\" y=\"120\" width=\"90\" height=\"34\" rx=\"8\" fill=\"var(--diagram-blue)\" fill-opacity=\"0.12\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.4\"/><text x=\"345\" y=\"137\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">Payment 2</text><line x1=\"392\" y1=\"137\" x2=\"430\" y2=\"137\" fill=\"none\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.4\"/><rect x=\"300\" y=\"180\" width=\"90\" height=\"34\" rx=\"8\" fill=\"var(--diagram-blue)\" fill-opacity=\"0.12\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.4\"/><text x=\"345\" y=\"197\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">Payment 3</text><line x1=\"392\" y1=\"197\" x2=\"430\" y2=\"137\" fill=\"none\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.4\"/><rect x=\"432\" y=\"112\" width=\"110\" height=\"50\" rx=\"8\" fill=\"var(--diagram-accent)\" fill-opacity=\"0.16\" stroke=\"var(--diagram-accent)\" stroke-width=\"1.5\"/><text x=\"487\" y=\"130\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\" font-weight=\"bold\">Batch settled</text><text x=\"487\" y=\"148\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">every half hour</text><text x=\"140\" y=\"250\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">Minimum ₹2 lakh</text><text x=\"420\" y=\"250\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">No minimum</text></svg>",
+     "alt": "Two panels. Left, RTGS: payments 1, 2 and 3 each go straight to settled, one by one; minimum 2 lakh rupees. Right, NEFT: payments 1, 2 and 3 are collected and settled together as a batch every half hour; no minimum",
+     "caption": "RTGS settles each payment at once; NEFT settles in half-hourly batches. Limits and timings as of 2026; the Reserve Bank of India can revise them."
+    },
+    "visuals": [
+     {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Basis",
+        "RTGS",
+        "NEFT",
+        "IMPS"
+       ],
+       "rows": [
+        [
+         "Settlement",
+         "Each transaction, real time",
+         "Half-hourly batches",
+         "Instant, each transaction"
+        ],
+        [
+         "Minimum",
+         "₹2 lakh",
+         "None",
+         "None"
+        ],
+        [
+         "Maximum",
+         "No upper limit set by RBI",
+         "No upper limit set by RBI",
+         "₹5 lakh per transaction"
+        ],
+        [
+         "Availability",
+         "24x7 since December 2020",
+         "24x7 since December 2019",
+         "24x7"
+        ],
+        [
+         "Typical use",
+         "Large, urgent payments",
+         "Routine payments of any size",
+         "Small, urgent payments, often by phone"
+        ]
+       ]
+      },
+      "alt": "Table comparing RTGS, NEFT and IMPS on settlement, minimum, maximum, availability and typical use, as of 2026",
+      "caption": "Limits and timings as of 2026; the Reserve Bank of India can revise them."
+     },
+     {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "To send money electronically you need…",
+        "Why"
+       ],
+       "rows": [
+        [
+         "Beneficiary's name and account number",
+         "To credit the right account"
+        ],
+        [
+         "IFSC of the beneficiary's branch",
+         "To route the money to the right branch"
+        ],
+        [
+         "For IMPS by phone: mobile number and MMID (or account and IFSC)",
+         "To identify the payee instantly"
+        ]
+       ]
+      },
+      "alt": "Table of details needed for an electronic transfer and why each is needed"
+     },
+     {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Payment (imagined: Lohargal Logistics)",
+        "Method",
+        "Reason"
+       ],
+       "rows": [
+        [
+         "₹25 lakh to a truck dealer, needed at once",
+         "RTGS",
+         "Above ₹2 lakh; immediate, individual settlement"
+        ],
+        [
+         "Salaries to 20 drivers",
+         "NEFT",
+         "Many routine transfers; no minimum"
+        ],
+        [
+         "₹5,000 refund late at night",
+         "IMPS",
+         "Instant, round the clock, small amount"
+        ]
+       ]
+      },
+      "alt": "Worked table choosing RTGS for a large urgent payment, NEFT for salaries and IMPS for a small late-night refund",
+      "caption": "Ask: how much, how urgent, and when?"
+     },
+     {
+      "kind": "flow",
+      "spec": {
+       "direction": "LR",
+       "nodes": [
+        {
+         "id": "n1",
+         "label": "Log in to net banking"
+        },
+        {
+         "id": "n2",
+         "label": "Fill payee and amount"
+        },
+        {
+         "id": "n3",
+         "label": "Account debited"
+        },
+        {
+         "id": "n4",
+         "label": "Draft issued and delivered"
+        }
+       ],
+       "edges": [
+        {
+         "from": "n1",
+         "to": "n2"
+        },
+        {
+         "from": "n2",
+         "to": "n3"
+        },
+        {
+         "from": "n3",
+         "to": "n4"
+        }
+       ]
+      },
+      "alt": "Flow of an online demand draft: log in to net banking, fill in payee and amount, the account is debited, and the draft is issued and delivered",
+      "caption": "No queue at the branch."
+     }
+    ],
+    "topic_ids": [
+     "isc-12-commerce-ch05-t01"
+    ]
+   },
+   {
+    "heading": "2. Online payments and e-banking",
+    "body_md": "**E-banking (internet banking)** is carrying out banking transactions through the internet. *Features:* anytime, anywhere access; self-service; instant information; secure login with password and OTP.\n\n**Advantages to customers:** convenience; 24x7 access; saves time and travel; quick transfers and bill payments; easy records.\n**Advantages to banks:** lower cost per transaction; less branch crowding; wider reach; more business at little extra cost.\n\n**Disadvantages:** security risks (phishing, hacking, fraud); needs devices, internet and digital skills; technical failures; impersonal service.\n\n**Safety:** never share OTP, PIN or password; use only official apps and websites; keep alerts on; log out and lock devices.",
+    "key_terms": [
+     {
+      "term": "E-banking",
+      "definition_md": "Banking through the internet."
+     },
+     {
+      "term": "Phishing",
+      "definition_md": "Fraud that tricks people into revealing login details."
+     },
+     {
+      "term": "OTP",
+      "definition_md": "One-time password for a single transaction."
+     }
+    ],
+    "formulas": [],
+    "visual": {
+     "kind": "table",
+     "spec": {
+      "headers": [
+       "E-banking",
+       "Points"
+      ],
+      "rows": [
+       [
+        "Meaning",
+        "Banking through the internet without visiting a branch"
+       ],
+       [
+        "Services",
+        "Balance and statements, transfers, bill payments, deposits, demand drafts"
+       ],
+       [
+        "For customers",
+        "Anytime, anywhere; quick; cheap; good records"
+       ],
+       [
+        "For banks",
+        "Lower cost per transaction; less branch crowding; wider reach"
+       ],
+       [
+        "Disadvantages",
+        "Security risks (phishing, hacking); needs device, internet and skills; technical failures; impersonal"
+       ]
+      ]
+     },
+     "alt": "Table summarising e-banking: meaning, services, advantages for customers and banks, and disadvantages"
+    },
+    "visuals": [
+     {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Safety rule",
+        "Why"
+       ],
+       "rows": [
+        [
+         "Never share OTP, PIN or password",
+         "Banks never ask for them"
+        ],
+        [
+         "Type the bank's address; do not click links",
+         "Fake links steal logins"
+        ],
+        [
+         "Keep SMS alerts on",
+         "Spot unauthorised debits at once"
+        ],
+        [
+         "Lock the phone; log out after use",
+         "Stops misuse if the device is lost"
+        ]
+       ]
+      },
+      "alt": "Table of four safety rules for digital banking with the reason for each"
+     }
+    ],
+    "topic_ids": [
+     "isc-12-commerce-ch05-t02"
+    ]
+   },
+   {
+    "heading": "3. Mobile banking",
+    "body_md": "**Mobile banking** is banking through a mobile phone, by app or SMS. *Services:* SMS alerts for every debit and credit; balance enquiry and mini-statement; fund transfer; bill payments and recharges.\n\n**Advantages:** banking anywhere; instant alerts help detect fraud; reaches remote areas where branches are few; saves time.\n**Disadvantages:** risk if the phone is lost or unlocked; poor networks; small screens; fraud calls and messages.",
+    "key_terms": [
+     {
+      "term": "Mobile banking",
+      "definition_md": "Banking services used through a mobile phone."
+     },
+     {
+      "term": "SMS alert",
+      "definition_md": "Text message sent on every account transaction."
+     }
+    ],
+    "formulas": [],
+    "visual": {
+     "kind": "table",
+     "spec": {
+      "headers": [
+       "Mobile banking",
+       "Points"
+      ],
+      "rows": [
+       [
+        "Services",
+        "SMS alerts, balance enquiry, mini-statement, fund transfer, bill payment and recharge"
+       ],
+       [
+        "Advantages",
+        "Banking in the pocket; instant alerts; reaches remote areas; saves time"
+       ],
+       [
+        "Disadvantages",
+        "Lost phone risk; network problems; small screen; fraud calls and messages"
+       ]
+      ]
+     },
+     "alt": "Table of mobile-banking services, advantages and disadvantages"
+    },
+    "visuals": [],
+    "topic_ids": [
+     "isc-12-commerce-ch05-t03"
+    ]
+   },
+   {
+    "heading": "4. ATMs, debit cards and credit cards",
+    "body_md": "**ATM (Automated Teller Machine):** cash withdrawal, balance enquiry, mini-statement, PIN change and, on some machines, cash deposit; available round the clock.\n\n**Debit card:** linked to the holder's account; amount deducted **at once**; spending limited to the balance; no credit period and no interest on purchases.\n**Credit card:** spends the **bank's credit** up to a limit; an **interest-free period** if the full bill is paid by the due date; **high interest** on unpaid balances; may encourage overspending.\n\n**Differences:** source of funds; credit period; interest; spending limit; risk of overspending.",
+    "key_terms": [
+     {
+      "term": "Debit card",
+      "definition_md": "Card that spends the holder's own balance immediately."
+     },
+     {
+      "term": "Credit card",
+      "definition_md": "Card that spends the bank's credit, repaid later."
+     },
+     {
+      "term": "PIN",
+      "definition_md": "Personal identification number securing a card."
+     }
+    ],
+    "formulas": [],
+    "visual": {
+     "kind": "svg",
+     "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 560 270\" role=\"img\" aria-label=\"Two panels. Debit card: money goes from your own account to the shop at once. Credit card: the bank pays the shop from your credit limit and you repay the bank later, with interest if you pay late\" font-family=\"sans-serif\" font-size=\"14\" fill=\"none\"><title>Two panels. Debit card: money goes from your own account to the shop at once. Credit card: the bank pays the shop from your credit limit and you repay the bank later, with interest if you pay late</title><text x=\"140\" y=\"22\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"15\" font-weight=\"bold\">Debit card</text><text x=\"420\" y=\"22\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"15\" font-weight=\"bold\">Credit card</text><rect x=\"40\" y=\"40\" width=\"200\" height=\"52\" rx=\"8\" fill=\"var(--diagram-green)\" fill-opacity=\"0.14\" stroke=\"var(--diagram-green)\" stroke-width=\"1.5\"/><text x=\"140\" y=\"60\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"13\" font-weight=\"bold\">Your account</text><text x=\"140\" y=\"79\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">own money</text><rect x=\"40\" y=\"190\" width=\"200\" height=\"52\" rx=\"8\" fill=\"var(--diagram-blue)\" fill-opacity=\"0.14\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.5\"/><text x=\"140\" y=\"210\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"13\" font-weight=\"bold\">Shop</text><text x=\"140\" y=\"229\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">paid now</text><line x1=\"140\" y1=\"94\" x2=\"140\" y2=\"186\" fill=\"none\" stroke=\"var(--diagram-green)\" stroke-width=\"2\"/><polygon points=\"140,186 135.5,177 144.5,177\" fill=\"var(--diagram-green)\" stroke=\"none\"/><text x=\"150\" y=\"140\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"start\" dominant-baseline=\"middle\" font-size=\"12\">deducted at once</text><rect x=\"320\" y=\"40\" width=\"200\" height=\"52\" rx=\"8\" fill=\"var(--diagram-accent)\" fill-opacity=\"0.14\" stroke=\"var(--diagram-accent)\" stroke-width=\"1.5\"/><text x=\"420\" y=\"60\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"13\" font-weight=\"bold\">Bank</text><text x=\"420\" y=\"79\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">credit limit</text><rect x=\"320\" y=\"190\" width=\"200\" height=\"52\" rx=\"8\" fill=\"var(--diagram-blue)\" fill-opacity=\"0.14\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.5\"/><text x=\"420\" y=\"210\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"13\" font-weight=\"bold\">Shop</text><text x=\"420\" y=\"229\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">paid now</text><line x1=\"420\" y1=\"94\" x2=\"420\" y2=\"186\" fill=\"none\" stroke=\"var(--diagram-accent)\" stroke-width=\"2\"/><polygon points=\"420,186 415.5,177 424.5,177\" fill=\"var(--diagram-accent)\" stroke=\"none\"/><text x=\"430\" y=\"125\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"start\" dominant-baseline=\"middle\" font-size=\"12\">bank pays the shop;</text><text x=\"430\" y=\"143\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"start\" dominant-baseline=\"middle\" font-size=\"12\">you repay later</text><text x=\"430\" y=\"161\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"start\" dominant-baseline=\"middle\" font-size=\"12\">(interest if late)</text></svg>",
+     "alt": "Two panels. Debit card: money goes from your own account to the shop at once. Credit card: the bank pays the shop from your credit limit and you repay the bank later, with interest if you pay late",
+     "caption": "A debit card spends your money now; a credit card spends the bank's money, to be repaid."
+    },
+    "visuals": [
+     {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Basis",
+        "Debit card",
+        "Credit card"
+       ],
+       "rows": [
+        [
+         "Source of funds",
+         "Holder's own account",
+         "Bank's credit, up to a limit"
+        ],
+        [
+         "Credit period",
+         "None",
+         "Interest-free period if paid in full by the due date"
+        ],
+        [
+         "Interest",
+         "None on purchases",
+         "High interest on unpaid balance"
+        ],
+        [
+         "Spending limit",
+         "Account balance",
+         "Credit limit"
+        ],
+        [
+         "Risk of overspending",
+         "Low",
+         "Higher"
+        ]
+       ]
+      },
+      "alt": "Table distinguishing debit and credit cards on source of funds, credit period, interest, spending limit and risk of overspending"
+     },
+     {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "ATM services",
+        "Note"
+       ],
+       "rows": [
+        [
+         "Cash withdrawal",
+         "Round the clock"
+        ],
+        [
+         "Balance enquiry and mini-statement",
+         "Quick check of recent entries"
+        ],
+        [
+         "PIN change",
+         "Keep the card secure"
+        ],
+        [
+         "Cash deposit (some machines)",
+         "Saves a trip to the counter"
+        ]
+       ]
+      },
+      "alt": "Table of common ATM services with a note on each"
+     }
+    ],
+    "topic_ids": [
+     "isc-12-commerce-ch05-t04"
+    ]
+   },
+   {
+    "heading": "5. Digital banking, UPI and e-wallets (meaning only)",
+    "body_md": "- **Digital banking:** providing banking services through digital channels — internet, mobile apps, cards and UPI — instead of paper and branches.\n- **UPI (Unified Payments Interface):** a system for instant transfers **directly between bank accounts**, using a UPI ID (virtual payment address), mobile number or **QR code**.\n- **E-wallet:** a **prepaid** digital wallet; money is loaded in advance and payments are made from the stored balance.",
+    "key_terms": [
+     {
+      "term": "UPI",
+      "definition_md": "Instant bank-to-bank payment by UPI ID, mobile number or QR code."
+     },
+     {
+      "term": "E-wallet",
+      "definition_md": "Prepaid digital wallet loaded with money in advance."
+     }
+    ],
+    "formulas": [],
+    "visual": {
+     "kind": "table",
+     "spec": {
+      "headers": [
+       "Term",
+       "Meaning (only)",
+       "Imagined example"
+      ],
+      "rows": [
+       [
+        "Digital banking",
+        "Banking through internet, mobile, cards and UPI instead of paper",
+        "A kayak-rental firm runs all its banking on an app"
+       ],
+       [
+        "UPI",
+        "Instant transfer from a bank account using a UPI ID, mobile number or QR code",
+        "Tourists scan the counter QR to pay"
+       ],
+       [
+        "E-wallet",
+        "Prepaid digital wallet loaded with money in advance",
+        "A stall owner keeps ₹1,000 loaded for small bills"
+       ]
+      ]
+     },
+     "alt": "Table giving the meaning of digital banking, UPI and e-wallets, each with an imagined example"
+    },
+    "visuals": [
+     {
+      "kind": "flow",
+      "spec": {
+       "direction": "LR",
+       "nodes": [
+        {
+         "id": "n1",
+         "label": "Payer's bank account"
+        },
+        {
+         "id": "n2",
+         "label": "UPI app (no stored money)"
+        },
+        {
+         "id": "n3",
+         "label": "Payee's bank account"
+        }
+       ],
+       "edges": [
+        {
+         "from": "n1",
+         "to": "n2"
+        },
+        {
+         "from": "n2",
+         "to": "n3"
+        }
+       ]
+      },
+      "alt": "Flow of a UPI payment: money moves from the payer's bank account through the UPI app, which stores no money, directly to the payee's bank account",
+      "caption": "UPI moves money bank to bank; an e-wallet spends a balance loaded earlier."
+     },
+     {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "If you want to…",
+        "Use"
+       ],
+       "rows": [
+        [
+         "send ₹10 lakh to arrive at once",
+         "RTGS"
+        ],
+        [
+         "pay many routine bills or salaries",
+         "NEFT"
+        ],
+        [
+         "send ₹2,000 instantly at night",
+         "IMPS or UPI"
+        ],
+        [
+         "pay at a shop counter by phone",
+         "UPI QR code"
+        ],
+        [
+         "buy now and pay next month",
+         "Credit card"
+        ],
+        [
+         "spend only what you have",
+         "Debit card"
+        ]
+       ]
+      },
+      "alt": "Decision table matching six needs to RTGS, NEFT, IMPS or UPI, a UPI QR code, a credit card or a debit card",
+      "caption": "Limits and timings as of 2026; the Reserve Bank of India can revise them."
+     }
+    ],
+    "topic_ids": [
+     "isc-12-commerce-ch05-t05"
+    ]
+   }
+  ],
+  "exam_tips_md": "**Common mistakes**\n- Saying NEFT settles instantly (it settles in batches) or that RTGS has no minimum.\n- Saying a debit card gives a credit period.\n- Treating UPI as a wallet that must be loaded with money.\n- Quoting limits without remembering they can be revised.\n\n**How marks are usually awarded**\n- 1 mark: correct option, term or method.\n- 2–3 marks: each basis stated for both items, or each point explained with an example.\n- 5 marks: parts answered separately; comparisons basis by basis; a reasoned recommendation.",
+  "status": "draft",
+  "provenance": {
+   "origin": "human",
+   "template_version": null,
+   "model": null,
+   "generated_at": "2026-10-31",
+   "author": "claude-opus-5-5 (subject-producer)"
+  }
+ },
+ "flashcards": {
+  "unit": "isc-12-commerce-ch05",
+  "version": 1,
+  "language": "en",
+  "cards": [
+   {
+    "id": "f01",
+    "front_md": "**RTGS**",
+    "back_md": "Real Time Gross Settlement: each transaction at once; minimum ₹2 lakh (as of 2026).",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch05-t01"
+   },
+   {
+    "id": "f02",
+    "front_md": "**NEFT**",
+    "back_md": "National Electronic Funds Transfer: settled in half-hourly batches; no minimum.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch05-t01"
+   },
+   {
+    "id": "f03",
+    "front_md": "**IMPS**",
+    "back_md": "Immediate Payment Service: instant, 24x7; up to ₹5 lakh per transaction (as of 2026).",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch05-t01"
+   },
+   {
+    "id": "f04",
+    "front_md": "NEFT 24x7 since…",
+    "back_md": "December 2019.",
+    "tag": "fact",
+    "topic_id": "isc-12-commerce-ch05-t01"
+   },
+   {
+    "id": "f05",
+    "front_md": "RTGS 24x7 since…",
+    "back_md": "December 2020.",
+    "tag": "fact",
+    "topic_id": "isc-12-commerce-ch05-t01"
+   },
+   {
+    "id": "f06",
+    "front_md": "**IFSC**",
+    "back_md": "Code identifying the payee's bank branch.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch05-t01"
+   },
+   {
+    "id": "f07",
+    "front_md": "₹1.5 lakh transfer: which method is ruled out?",
+    "back_md": "RTGS (minimum ₹2 lakh).",
+    "tag": "exam-tip",
+    "topic_id": "isc-12-commerce-ch05-t01"
+   },
+   {
+    "id": "f08",
+    "front_md": "**Online demand draft**",
+    "back_md": "A draft requested through net banking; account debited, draft delivered.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch05-t01"
+   },
+   {
+    "id": "f09",
+    "front_md": "**E-banking**",
+    "back_md": "Banking through the internet, any time, anywhere.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch05-t02"
+   },
+   {
+    "id": "f10",
+    "front_md": "E-banking: one advantage to banks",
+    "back_md": "Lower cost per transaction.",
+    "tag": "fact",
+    "topic_id": "isc-12-commerce-ch05-t02"
+   },
+   {
+    "id": "f11",
+    "front_md": "E-banking: main risk",
+    "back_md": "Security: phishing and hacking.",
+    "tag": "exam-tip",
+    "topic_id": "isc-12-commerce-ch05-t02"
+   },
+   {
+    "id": "f12",
+    "front_md": "**Phishing**",
+    "back_md": "Fake message or call that tries to steal login details.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch05-t02"
+   },
+   {
+    "id": "f13",
+    "front_md": "Golden safety rule",
+    "back_md": "Never share OTP, PIN or password.",
+    "tag": "exam-tip",
+    "topic_id": "isc-12-commerce-ch05-t02"
+   },
+   {
+    "id": "f14",
+    "front_md": "**Mobile banking**",
+    "back_md": "Banking through a phone, by app or SMS.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch05-t03"
+   },
+   {
+    "id": "f15",
+    "front_md": "Mobile-banking services",
+    "back_md": "Alerts, balance enquiry, transfers, bill payments.",
+    "tag": "fact",
+    "topic_id": "isc-12-commerce-ch05-t03"
+   },
+   {
+    "id": "f16",
+    "front_md": "Risk special to mobile banking",
+    "back_md": "A lost or unlocked phone.",
+    "tag": "exam-tip",
+    "topic_id": "isc-12-commerce-ch05-t03"
+   },
+   {
+    "id": "f17",
+    "front_md": "Why mobile banking helps remote areas",
+    "back_md": "Phones reach far more places than branches.",
+    "tag": "concept",
+    "topic_id": "isc-12-commerce-ch05-t03"
+   },
+   {
+    "id": "f18",
+    "front_md": "**ATM**",
+    "back_md": "Automated Teller Machine: cash and basic services round the clock.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch05-t04"
+   },
+   {
+    "id": "f19",
+    "front_md": "**Debit card**",
+    "back_md": "Spends your own balance at once; no credit period.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch05-t04"
+   },
+   {
+    "id": "f20",
+    "front_md": "**Credit card**",
+    "back_md": "Spends the bank's credit; pay later; interest on unpaid balance.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch05-t04"
+   },
+   {
+    "id": "f21",
+    "front_md": "Debit vs credit card: three bases",
+    "back_md": "Source of funds, credit period, interest.",
+    "tag": "exam-tip",
+    "topic_id": "isc-12-commerce-ch05-t04"
+   },
+   {
+    "id": "f22",
+    "front_md": "Paying only the minimum on a credit card",
+    "back_md": "Interest is charged on the rest.",
+    "tag": "fact",
+    "topic_id": "isc-12-commerce-ch05-t04"
+   },
+   {
+    "id": "f23",
+    "front_md": "Best first card for a new account holder",
+    "back_md": "Debit card (no debt, no interest).",
+    "tag": "concept",
+    "topic_id": "isc-12-commerce-ch05-t04"
+   },
+   {
+    "id": "f24",
+    "front_md": "**Digital banking**",
+    "back_md": "Banking through internet, mobile, cards and UPI.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch05-t05"
+   },
+   {
+    "id": "f25",
+    "front_md": "**UPI**",
+    "back_md": "Instant bank-to-bank transfer by UPI ID, mobile number or QR code.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch05-t05"
+   },
+   {
+    "id": "f26",
+    "front_md": "**E-wallet**",
+    "back_md": "Prepaid digital wallet loaded in advance.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch05-t05"
+   },
+   {
+    "id": "f27",
+    "front_md": "UPI vs e-wallet",
+    "back_md": "UPI pays from the bank account; a wallet spends a loaded balance.",
+    "tag": "exam-tip",
+    "topic_id": "isc-12-commerce-ch05-t05"
+   },
+   {
+    "id": "f28",
+    "front_md": "QR code at a shop counter",
+    "back_md": "Scan to pay by UPI into the shop's bank account.",
+    "tag": "fact",
+    "topic_id": "isc-12-commerce-ch05-t05"
+   },
+   {
+    "id": "f29",
+    "front_md": "Large urgent payment",
+    "back_md": "RTGS.",
+    "tag": "exam-tip",
+    "topic_id": "isc-12-commerce-ch05-t01"
+   },
+   {
+    "id": "f30",
+    "front_md": "Small instant payment at night",
+    "back_md": "IMPS or UPI.",
+    "tag": "exam-tip",
+    "topic_id": "isc-12-commerce-ch05-t01"
+   }
+  ],
+  "status": "draft",
+  "provenance": {
+   "origin": "human",
+   "template_version": null,
+   "model": null,
+   "generated_at": "2026-10-31",
+   "author": "claude-opus-5-5 (subject-producer)"
+  }
+ },
+ "questions": [
+  {
+   "id": "q_isc12commerce_ch05_001",
+   "unit": "isc-12-commerce-ch05",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "In RTGS (Real Time Gross Settlement), funds are transferred",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "in half-hourly batches, after netting all instructions"
+    },
+    {
+     "id": "b",
+     "text_md": "one transaction at a time, in real time, as soon as the instruction is processed"
+    },
+    {
+     "id": "c",
+     "text_md": "only by physical cheque"
+    },
+    {
+     "id": "d",
+     "text_md": "only on the last working day of the month"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (b)** one transaction at a time, in real time, as soon as the instruction is processed. RTGS settles each transaction individually (gross) and immediately (real time); NEFT settles in batches.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch05-t01"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "b"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (b)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch05_002",
+   "unit": "isc-12-commerce-ch05",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "NEFT (National Electronic Funds Transfer) differs from RTGS mainly because NEFT",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "settles each transfer instantly and individually"
+    },
+    {
+     "id": "b",
+     "text_md": "needs a minimum of ₹2 lakh"
+    },
+    {
+     "id": "c",
+     "text_md": "can be used only at a bank branch"
+    },
+    {
+     "id": "d",
+     "text_md": "settles transfers in batches at regular intervals"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (d)** settles transfers in batches at regular intervals. NEFT is a deferred net settlement system: instructions are collected and settled in half-hourly batches.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch05-t01"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "d"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (d)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch05_003",
+   "unit": "isc-12-commerce-ch05",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Meher, who runs an imagined bakery supplies shop, must send ₹1,50,000 to a flour mill. Which method can she **not** use for this amount? (Position as of 2026; the Reserve Bank of India can revise payment-system limits.)",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "RTGS, because its minimum amount is ₹2 lakh"
+    },
+    {
+     "id": "b",
+     "text_md": "NEFT"
+    },
+    {
+     "id": "c",
+     "text_md": "IMPS"
+    },
+    {
+     "id": "d",
+     "text_md": "An online demand draft"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (a)** RTGS, because its minimum amount is ₹2 lakh. RTGS is meant for large-value transfers with a minimum of ₹2 lakh; NEFT and IMPS have no such minimum.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch05-t01"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (a)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch05_004",
+   "unit": "isc-12-commerce-ch05",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "At 11 p.m. on a Sunday, Iqbal, an imagined college student, sends ₹3,000 instantly to a friend using the friend's mobile number and MMID (or account number and IFSC) through his bank's app. The service he is most likely using is",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "a cheque"
+    },
+    {
+     "id": "b",
+     "text_md": "a demand draft by post"
+    },
+    {
+     "id": "c",
+     "text_md": "IMPS"
+    },
+    {
+     "id": "d",
+     "text_md": "cash credit"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (c)** IMPS. IMPS (Immediate Payment Service) gives instant, round-the-clock transfers using mobile number and MMID or account number and IFSC.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch05-t01"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "c"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (c)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch05_005",
+   "unit": "isc-12-commerce-ch05",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "To send money by NEFT or RTGS, the sender needs the beneficiary's account number, name and the IFSC. IFSC identifies",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "the beneficiary's PAN"
+    },
+    {
+     "id": "b",
+     "text_md": "the sender's mobile phone"
+    },
+    {
+     "id": "c",
+     "text_md": "the beneficiary's bank branch"
+    },
+    {
+     "id": "d",
+     "text_md": "the amount to be sent"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (c)** the beneficiary's bank branch. The Indian Financial System Code is an alphanumeric code that identifies the bank branch taking part in electronic transfers.",
+   "marks": 1,
+   "difficulty": 1,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch05-t01"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "c"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (c)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch05_006",
+   "unit": "isc-12-commerce-ch05",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Tenzing, an imagined trekking-gear seller in Gangtok, must pay a university fee that is accepted only by demand draft. Without visiting his branch, he requests one through net banking and the bank sends it to his address. This facility is",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "an online demand draft"
+    },
+    {
+     "id": "b",
+     "text_md": "an e-wallet"
+    },
+    {
+     "id": "c",
+     "text_md": "a credit card"
+    },
+    {
+     "id": "d",
+     "text_md": "a debit card"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (a)** an online demand draft. Through internet banking a customer can request a demand draft; the bank debits the account and delivers or issues the draft.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch05-t01"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (a)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch05_007",
+   "unit": "isc-12-commerce-ch05",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Which statements about electronic fund transfer in India are correct? (Position as of 2026; the Reserve Bank of India can revise payment-system limits.)\nP. NEFT is available round the clock on all days.\nQ. RTGS settles each transaction individually.\nR. IMPS transfers are completed instantly.\nS. RTGS has no minimum amount.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "P, Q and S"
+    },
+    {
+     "id": "b",
+     "text_md": "Q, R and S"
+    },
+    {
+     "id": "c",
+     "text_md": "P and S only"
+    },
+    {
+     "id": "d",
+     "text_md": "P, Q and R"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (d)** P, Q and R. NEFT has run 24x7 since December 2019, RTGS settles gross in real time, and IMPS is instant. RTGS has a ₹2 lakh minimum, so S is wrong.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch05-t01"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "d"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (d)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch05_008",
+   "unit": "isc-12-commerce-ch05",
+   "language": "en",
+   "type": "assertion-reason",
+   "stem_md": "**Assertion (A):** RTGS is mainly used for large-value transfers.\n\n**Reason (R):** RTGS has a minimum transfer amount of ₹2 lakh and settles each transaction at once.\n\nChoose the correct option.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Both Assertion and Reason are true and Reason is the correct explanation for Assertion."
+    },
+    {
+     "id": "b",
+     "text_md": "Both Assertion and Reason are true but Reason is not the correct explanation for Assertion."
+    },
+    {
+     "id": "c",
+     "text_md": "Assertion is true and Reason is false."
+    },
+    {
+     "id": "d",
+     "text_md": "Both Assertion and Reason are false."
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (a)** Both are true, and the high minimum with immediate gross settlement is exactly why RTGS serves large payments.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch05-t01"
+   ],
+   "expected_time_sec": 75,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (a)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch05_009",
+   "unit": "isc-12-commerce-ch05",
+   "language": "en",
+   "type": "assertion-reason",
+   "stem_md": "**Assertion (A):** NEFT settles each transfer individually and instantly.\n\n**Reason (R):** NEFT can be used only during bank branch working hours on weekdays.\n\nChoose the correct option.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Both Assertion and Reason are true and Reason is the correct explanation for Assertion."
+    },
+    {
+     "id": "b",
+     "text_md": "Both Assertion and Reason are true but Reason is not the correct explanation for Assertion."
+    },
+    {
+     "id": "c",
+     "text_md": "Assertion is true and Reason is false."
+    },
+    {
+     "id": "d",
+     "text_md": "Both Assertion and Reason are false."
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (d)** Both are false. NEFT settles in half-hourly batches, and it has been available 24x7 on all days since December 2019.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch05-t01"
+   ],
+   "expected_time_sec": 75,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "d"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (d)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch05_010",
+   "unit": "isc-12-commerce-ch05",
+   "language": "en",
+   "type": "true-false",
+   "stem_md": "Since December 2020, RTGS has been available to customers round the clock on all days of the year.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "True"
+    },
+    {
+     "id": "b",
+     "text_md": "False"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**True.** True. RTGS became available 24x7x365 in December 2020, a year after NEFT.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch05-t01"
+   ],
+   "expected_time_sec": 40,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct choice (True)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch05_011",
+   "unit": "isc-12-commerce-ch05",
+   "language": "en",
+   "type": "fill-blank",
+   "stem_md": "Complete the analogy. RTGS : Real-time gross settlement :: NEFT : ___",
+   "options": [],
+   "match_right": [],
+   "solution_md": "RTGS settles each transaction in real time; NEFT settles in batches (deferred net settlement).",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch05-t01"
+   ],
+   "expected_time_sec": 45,
+   "assets": [],
+   "answer": {
+    "blanks": [
+     {
+      "accepted": [
+       "Batch settlement",
+       "deferred net settlement",
+       "batches",
+       "half-hourly batches",
+       "net settlement"
+      ]
+     }
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Blank 1: Batch settlement",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch05_012",
+   "unit": "isc-12-commerce-ch05",
+   "language": "en",
+   "type": "match",
+   "stem_md": "Match each transfer method with its typical feature. (Position as of 2026; the Reserve Bank of India can revise payment-system limits.)",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "RTGS"
+    },
+    {
+     "id": "b",
+     "text_md": "NEFT"
+    },
+    {
+     "id": "c",
+     "text_md": "IMPS"
+    },
+    {
+     "id": "d",
+     "text_md": "Online demand draft"
+    }
+   ],
+   "match_right": [
+    {
+     "id": "p",
+     "text_md": "Settled in half-hourly batches; no minimum"
+    },
+    {
+     "id": "q",
+     "text_md": "Requested through net banking for a payee who needs a draft"
+    },
+    {
+     "id": "r",
+     "text_md": "Minimum ₹2 lakh; settled individually in real time"
+    },
+    {
+     "id": "s",
+     "text_md": "Instant transfer, up to ₹5 lakh per transaction"
+    }
+   ],
+   "solution_md": "**Key:** (a)–(r), (b)–(p), (c)–(s), (d)–(q). RTGS is for large real-time transfers, NEFT works in batches, IMPS is instant up to its per-transaction limit, and an online DD is requested through net banking.",
+   "marks": 2,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch05-t01"
+   ],
+   "expected_time_sec": 120,
+   "assets": [],
+   "answer": {
+    "pairs": [
+     {
+      "left_id": "a",
+      "right_id": "r"
+     },
+     {
+      "left_id": "b",
+      "right_id": "p"
+     },
+     {
+      "left_id": "c",
+      "right_id": "s"
+     },
+     {
+      "left_id": "d",
+      "right_id": "q"
+     }
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Each correct pair 0.5 mark (4 pairs)",
+     "marks": 2
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch05_013",
+   "unit": "isc-12-commerce-ch05",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Lalit, an imagined furniture dealer, uses NEFT for small supplier bills and RTGS for a ₹12 lakh timber purchase. Distinguish NEFT and RTGS on settlement and minimum amount. (Position as of 2026; the Reserve Bank of India can revise payment-system limits.)",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Settlement and minimum amount distinguished.",
+   "marks": 2,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch05-t01"
+   ],
+   "expected_time_sec": 150,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Settlement:** NEFT settles in **half-hourly batches**; RTGS settles **each transaction individually in real time**.\n2. **Minimum amount:** NEFT has **no minimum**; RTGS needs at least **₹2 lakh**, so it suits the ₹12 lakh purchase."
+   },
+   "word_limit": {
+    "min": 30,
+    "max": 50
+   },
+   "marking_scheme": [
+    {
+     "step": "Settlement",
+     "marks": 1
+    },
+    {
+     "step": "Minimum amount",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch05_014",
+   "unit": "isc-12-commerce-ch05",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Fatima, an imagined tailor, must pay a fabric supplier ₹8,000 on a Sunday night so that the cloth is dispatched next morning. Which transfer method suits her best? Give two reasons.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "IMPS with two reasons (instant, 24x7, mobile, small amounts).",
+   "marks": 2,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch05-t01"
+   ],
+   "expected_time_sec": 150,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "**IMPS** suits her best.\n1. It is **instant**, so the supplier sees the money at once.\n2. It works **24x7, including Sundays**, through her mobile app, without visiting a branch."
+   },
+   "word_limit": {
+    "min": 30,
+    "max": 50
+   },
+   "marking_scheme": [
+    {
+     "step": "IMPS with first reason",
+     "marks": 1
+    },
+    {
+     "step": "Second reason",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch05_015",
+   "unit": "isc-12-commerce-ch05",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Lohargal Logistics (imagined) must make three payments today: ₹25 lakh to a truck dealer that must reach at once, ₹40,000 of salaries to 20 drivers, and a ₹5,000 refund to a customer late at night. Recommend a method for each and justify. (Position as of 2026; the Reserve Bank of India can revise payment-system limits.)",
+   "options": [],
+   "match_right": [],
+   "solution_md": "RTGS for the large urgent payment; NEFT for bulk small payments; IMPS for the instant small refund (NEFT is also acceptable for the refund if instant credit is not required).",
+   "marks": 3,
+   "difficulty": 4,
+   "competency": "evaluation",
+   "bloom": "evaluate",
+   "topic_ids": [
+    "isc-12-commerce-ch05-t01"
+   ],
+   "expected_time_sec": 210,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **₹25 lakh to the dealer: RTGS**, because it is above the **₹2 lakh minimum** and settles **immediately** and individually.\n2. **Salaries: NEFT**, suitable for **many small transfers** with no minimum, settled in batches the same day.\n3. **Late-night refund: IMPS**, which is **instant and 24x7** for small amounts."
+   },
+   "word_limit": {
+    "min": 50,
+    "max": 75
+   },
+   "marking_scheme": [
+    {
+     "step": "RTGS justified",
+     "marks": 1
+    },
+    {
+     "step": "NEFT justified",
+     "marks": 1
+    },
+    {
+     "step": "IMPS justified",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch05_016",
+   "unit": "isc-12-commerce-ch05",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "E-banking (internet banking) means",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "banking only with cash at the counter"
+    },
+    {
+     "id": "b",
+     "text_md": "carrying out banking transactions through the internet, without visiting a branch"
+    },
+    {
+     "id": "c",
+     "text_md": "a bank that has no customers"
+    },
+    {
+     "id": "d",
+     "text_md": "a loan given for buying electronics"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (b)** carrying out banking transactions through the internet, without visiting a branch. E-banking lets customers check balances, transfer funds, pay bills and use other services online, at any time.",
+   "marks": 1,
+   "difficulty": 1,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch05-t02"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "b"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (b)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch05_017",
+   "unit": "isc-12-commerce-ch05",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Kovalam Kayaks, an imagined rental business, pays its electricity bill, checks its balance and opens a fixed deposit at midnight from the owner's laptop. Which feature of e-banking does this show best?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Anytime, anywhere access"
+    },
+    {
+     "id": "b",
+     "text_md": "Need for physical presence"
+    },
+    {
+     "id": "c",
+     "text_md": "Use of cheques"
+    },
+    {
+     "id": "d",
+     "text_md": "Banking only in working hours"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (a)** Anytime, anywhere access. E-banking is available round the clock from any place with internet access.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch05-t02"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (a)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch05_018",
+   "unit": "isc-12-commerce-ch05",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Which is an advantage of e-banking to the **bank** rather than to the customer?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Ability to pay bills from home"
+    },
+    {
+     "id": "b",
+     "text_md": "Lower cost per transaction and less crowding at branches"
+    },
+    {
+     "id": "c",
+     "text_md": "No need to stand in queues"
+    },
+    {
+     "id": "d",
+     "text_md": "Instant account statements on the customer's laptop"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (b)** Lower cost per transaction and less crowding at branches. Online transactions cost banks less to handle and reduce branch workload; the other options are benefits to customers.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch05-t02"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "b"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (b)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch05_019",
+   "unit": "isc-12-commerce-ch05",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Sanchi Sweets (imagined) receives an email that looks like it is from its bank, asking the owner to \"verify\" the net-banking password on a link. This is an example of",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "a genuine service of e-banking"
+    },
+    {
+     "id": "b",
+     "text_md": "an RTGS transfer"
+    },
+    {
+     "id": "c",
+     "text_md": "phishing, a security risk of e-banking"
+    },
+    {
+     "id": "d",
+     "text_md": "a feature of debit cards"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (c)** phishing, a security risk of e-banking. Fake messages that try to steal login details are phishing; banks never ask for passwords or OTPs by email or phone.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch05-t02"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "c"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (c)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch05_020",
+   "unit": "isc-12-commerce-ch05",
+   "language": "en",
+   "type": "assertion-reason",
+   "stem_md": "**Assertion (A):** Customers using e-banking must protect their passwords and one-time passwords.\n\n**Reason (R):** Fraudsters may use stolen login details to transfer money out of an account.\n\nChoose the correct option.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Both Assertion and Reason are true and Reason is the correct explanation for Assertion."
+    },
+    {
+     "id": "b",
+     "text_md": "Both Assertion and Reason are true but Reason is not the correct explanation for Assertion."
+    },
+    {
+     "id": "c",
+     "text_md": "Assertion is true and Reason is false."
+    },
+    {
+     "id": "d",
+     "text_md": "Both Assertion and Reason are false."
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (a)** Both are true, and the risk of misuse of stolen details is the reason customers must guard passwords and OTPs.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch05-t02"
+   ],
+   "expected_time_sec": 75,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (a)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch05_021",
+   "unit": "isc-12-commerce-ch05",
+   "language": "en",
+   "type": "true-false",
+   "stem_md": "E-banking requires a device, internet access and some digital skills, which can be a barrier for some customers.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "True"
+    },
+    {
+     "id": "b",
+     "text_md": "False"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**True.** True. Lack of devices, connectivity or digital literacy is a disadvantage of e-banking.",
+   "marks": 1,
+   "difficulty": 1,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch05-t02"
+   ],
+   "expected_time_sec": 40,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct choice (True)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch05_022",
+   "unit": "isc-12-commerce-ch05",
+   "language": "en",
+   "type": "fill-blank",
+   "stem_md": "A code sent to the customer's registered mobile that is valid for a single transaction is called a ___ password (OTP).",
+   "options": [],
+   "match_right": [],
+   "solution_md": "It is a one-time password, an extra layer of security for online transactions.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch05-t02"
+   ],
+   "expected_time_sec": 45,
+   "assets": [],
+   "answer": {
+    "blanks": [
+     {
+      "accepted": [
+       "one-time",
+       "one time",
+       "onetime"
+      ]
+     }
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Blank 1: one-time",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch05_023",
+   "unit": "isc-12-commerce-ch05",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Nongpoh Nurseries (imagined) is located far from any bank branch in the Meghalaya hills. State two advantages of e-banking for this business.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Two advantages (convenience, 24x7, lower cost, quick records) linked to the case.",
+   "marks": 2,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch05-t02"
+   ],
+   "expected_time_sec": 150,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Saves travel and time:** the owner can **pay suppliers and check balances online** instead of travelling to a distant branch.\n2. **Available round the clock:** transactions can be done **any time**, even after the nursery closes."
+   },
+   "word_limit": {
+    "min": 30,
+    "max": 50
+   },
+   "marking_scheme": [
+    {
+     "step": "First advantage",
+     "marks": 1
+    },
+    {
+     "step": "Second advantage",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch05_024",
+   "unit": "isc-12-commerce-ch05",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Jhansi Jewellers (imagined) has moved its banking online. Explain three ways in which e-banking benefits the business as a customer.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Three customer benefits (convenience, 24x7, information, speed, low cost) linked to the jeweller.",
+   "marks": 3,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch05-t02"
+   ],
+   "expected_time_sec": 210,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Convenience:** it can **pay karigars and suppliers** from the shop without visiting the bank.\n2. **Quick information:** **balances and statements** are available instantly, helping it reconcile sales each evening.\n3. **Lower cost and speed:** online transfers are **fast and cheap**, so gold suppliers are paid on time."
+   },
+   "word_limit": {
+    "min": 50,
+    "max": 75
+   },
+   "marking_scheme": [
+    {
+     "step": "First benefit",
+     "marks": 1
+    },
+    {
+     "step": "Second benefit",
+     "marks": 1
+    },
+    {
+     "step": "Third benefit",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch05_025",
+   "unit": "isc-12-commerce-ch05",
+   "language": "en",
+   "type": "short",
+   "stem_md": "After an imagined café owner lost money to a fake bank link, her neighbour said e-banking is \"too risky\". Explain three disadvantages of e-banking and one precaution for any one of them.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Three disadvantages and one sensible precaution.",
+   "marks": 3,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch05-t02"
+   ],
+   "expected_time_sec": 210,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Security risk:** **phishing and hacking** can expose passwords; precaution: never share **passwords or OTPs**.\n2. **Technical failure:** a **server or network breakdown** can stop payments.\n3. **Digital divide:** customers without **devices, internet or skills** cannot use it, and there is **no personal contact** to resolve doubts."
+   },
+   "word_limit": {
+    "min": 50,
+    "max": 75
+   },
+   "marking_scheme": [
+    {
+     "step": "First disadvantage with precaution",
+     "marks": 1
+    },
+    {
+     "step": "Second disadvantage",
+     "marks": 1
+    },
+    {
+     "step": "Third disadvantage",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch05_026",
+   "unit": "isc-12-commerce-ch05",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Mobile banking refers to",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "a bank branch that moves from town to town only"
+    },
+    {
+     "id": "b",
+     "text_md": "loans given for buying mobile phones"
+    },
+    {
+     "id": "c",
+     "text_md": "cash deposited at an ATM"
+    },
+    {
+     "id": "d",
+     "text_md": "banking services used through a mobile phone, by app or SMS"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (d)** banking services used through a mobile phone, by app or SMS. Mobile banking lets customers receive alerts, transfer funds and pay bills using a phone.",
+   "marks": 1,
+   "difficulty": 1,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch05-t03"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "d"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (d)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch05_027",
+   "unit": "isc-12-commerce-ch05",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Aarav, an imagined shop assistant, gets an SMS within seconds whenever money is debited from his account. He once spotted a card misuse this way. Which mobile-banking service helped him?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Overdraft"
+    },
+    {
+     "id": "b",
+     "text_md": "Online demand draft"
+    },
+    {
+     "id": "c",
+     "text_md": "Fixed deposit"
+    },
+    {
+     "id": "d",
+     "text_md": "SMS alerts"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (d)** SMS alerts. SMS alerts inform the customer of every debit and credit, helping detect unauthorised transactions quickly.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch05-t03"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "d"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (d)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch05_028",
+   "unit": "isc-12-commerce-ch05",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Which is a disadvantage that is **specific to mobile banking** rather than banking in general?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Banks charge interest on loans"
+    },
+    {
+     "id": "b",
+     "text_md": "Branches close on holidays"
+    },
+    {
+     "id": "c",
+     "text_md": "A lost or stolen phone may be misused if it is not locked"
+    },
+    {
+     "id": "d",
+     "text_md": "Cheques can bounce"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (c)** A lost or stolen phone may be misused if it is not locked. Because the bank account is linked to the phone, losing an unprotected phone creates a special risk.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch05-t03"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "c"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (c)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch05_029",
+   "unit": "isc-12-commerce-ch05",
+   "language": "en",
+   "type": "assertion-reason",
+   "stem_md": "**Assertion (A):** Mobile banking has helped extend banking to many people in remote areas.\n\n**Reason (R):** Mobile phones are far more widely available than bank branches.\n\nChoose the correct option.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Both Assertion and Reason are true and Reason is the correct explanation for Assertion."
+    },
+    {
+     "id": "b",
+     "text_md": "Both Assertion and Reason are true but Reason is not the correct explanation for Assertion."
+    },
+    {
+     "id": "c",
+     "text_md": "Assertion is true and Reason is false."
+    },
+    {
+     "id": "d",
+     "text_md": "Both Assertion and Reason are false."
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (a)** Both are true, and the wide reach of phones compared with branches explains how mobile banking extends access.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch05-t03"
+   ],
+   "expected_time_sec": 75,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (a)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch05_030",
+   "unit": "isc-12-commerce-ch05",
+   "language": "en",
+   "type": "true-false",
+   "stem_md": "Some mobile-banking services, such as SMS alerts and SMS-based balance enquiry, can work even without a smartphone app.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "True"
+    },
+    {
+     "id": "b",
+     "text_md": "False"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**True.** True. SMS-based services work on basic phones; app-based services need a smartphone and data.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch05-t03"
+   ],
+   "expected_time_sec": 40,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct choice (True)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch05_031",
+   "unit": "isc-12-commerce-ch05",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Mr Banerjee, an imagined hardware-shop owner, is worried about using mobile banking. State two disadvantages of mobile banking he should know about.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Two disadvantages (lost phone, network, small screen, limits on amounts, fraud calls) explained.",
+   "marks": 2,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch05-t03"
+   ],
+   "expected_time_sec": 150,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Risk if the phone is lost:** an **unlocked phone** may let someone else access his account.\n2. **Network and device limits:** **poor connectivity** or an old phone can make transactions fail or be slow."
+   },
+   "word_limit": {
+    "min": 30,
+    "max": 50
+   },
+   "marking_scheme": [
+    {
+     "step": "First disadvantage",
+     "marks": 1
+    },
+    {
+     "step": "Second disadvantage",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch05_032",
+   "unit": "isc-12-commerce-ch05",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Rekha runs an imagined vegetable stall and has just started mobile banking. Explain three services she can use on her phone, with an example of each from her business.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Three services (alerts, transfers, bill payments, balance enquiry, mini statement) each with an example.",
+   "marks": 3,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch05-t03"
+   ],
+   "expected_time_sec": 210,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **SMS alerts:** she is told at once when a **customer's payment** is credited.\n2. **Fund transfer:** she can pay the **wholesale mandi trader** before collecting stock.\n3. **Bill payments and recharges:** she can pay the **stall's electricity bill** without leaving the market."
+   },
+   "word_limit": {
+    "min": 50,
+    "max": 75
+   },
+   "marking_scheme": [
+    {
+     "step": "First service with example",
+     "marks": 1
+    },
+    {
+     "step": "Second service with example",
+     "marks": 1
+    },
+    {
+     "step": "Third service with example",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch05_033",
+   "unit": "isc-12-commerce-ch05",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Which of these can usually be done at an ATM?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Opening a new company"
+    },
+    {
+     "id": "b",
+     "text_md": "Withdrawing cash, checking balance and getting a mini-statement"
+    },
+    {
+     "id": "c",
+     "text_md": "Applying for a passport"
+    },
+    {
+     "id": "d",
+     "text_md": "Filing an income-tax return"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (b)** Withdrawing cash, checking balance and getting a mini-statement. ATMs (Automated Teller Machines) give cash and basic account services round the clock.",
+   "marks": 1,
+   "difficulty": 1,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch05-t04"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "b"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (b)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch05_034",
+   "unit": "isc-12-commerce-ch05",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "When Aarav (imagined) pays ₹2,400 at a shoe shop with his card, the amount is deducted from his savings account at once. He is using a",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "debit card"
+    },
+    {
+     "id": "b",
+     "text_md": "credit card"
+    },
+    {
+     "id": "c",
+     "text_md": "demand draft"
+    },
+    {
+     "id": "d",
+     "text_md": "cheque"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (a)** debit card. A debit card draws directly on the holder's own account balance.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch05-t04"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (a)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch05_035",
+   "unit": "isc-12-commerce-ch05",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Meher (imagined) buys a ₹30,000 oven for her shop with a card in March and pays the bank in April, within the interest-free period. The card she used is a",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "debit card"
+    },
+    {
+     "id": "b",
+     "text_md": "credit card"
+    },
+    {
+     "id": "c",
+     "text_md": "ATM-only card"
+    },
+    {
+     "id": "d",
+     "text_md": "gift voucher"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (b)** credit card. A credit card lets the holder buy now and pay the bank later; no interest is charged if the full bill is paid by the due date.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch05-t04"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "b"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (b)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch05_036",
+   "unit": "isc-12-commerce-ch05",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Lalit (imagined) pays only the minimum amount due on his credit-card bill each month. What happens?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "The unpaid balance is written off"
+    },
+    {
+     "id": "b",
+     "text_md": "The bank converts the balance into a fixed deposit"
+    },
+    {
+     "id": "c",
+     "text_md": "Nothing; credit-card balances never carry interest"
+    },
+    {
+     "id": "d",
+     "text_md": "Interest is charged on the unpaid balance, often at a high rate"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (d)** Interest is charged on the unpaid balance, often at a high rate. Any amount not paid by the due date carries interest, usually at high rates, so paying only the minimum is costly.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch05-t04"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "d"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (d)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch05_037",
+   "unit": "isc-12-commerce-ch05",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Which statements are true of a **debit** card?\nP. It is linked to the holder's bank account.\nQ. It gives an interest-free credit period.\nR. Spending is limited by the balance (and any overdraft).\nS. It can be used at ATMs to withdraw cash.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "P, R and S"
+    },
+    {
+     "id": "b",
+     "text_md": "P, Q and R"
+    },
+    {
+     "id": "c",
+     "text_md": "Q and S only"
+    },
+    {
+     "id": "d",
+     "text_md": "All four"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (a)** P, R and S. A debit card is linked to the account, spends the holder's own money and works at ATMs. A credit period is a feature of credit cards.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch05-t04"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (a)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch05_038",
+   "unit": "isc-12-commerce-ch05",
+   "language": "en",
+   "type": "assertion-reason",
+   "stem_md": "**Assertion (A):** A credit card can encourage overspending.\n\n**Reason (R):** A credit card allows purchases without having money in the account at that moment.\n\nChoose the correct option.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Both Assertion and Reason are true and Reason is the correct explanation for Assertion."
+    },
+    {
+     "id": "b",
+     "text_md": "Both Assertion and Reason are true but Reason is not the correct explanation for Assertion."
+    },
+    {
+     "id": "c",
+     "text_md": "Assertion is true and Reason is false."
+    },
+    {
+     "id": "d",
+     "text_md": "Both Assertion and Reason are false."
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (a)** Both are true, and the ability to buy without current funds is what can lead to overspending.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch05-t04"
+   ],
+   "expected_time_sec": 75,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (a)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch05_039",
+   "unit": "isc-12-commerce-ch05",
+   "language": "en",
+   "type": "assertion-reason",
+   "stem_md": "**Assertion (A):** A debit card gives its holder a free credit period of several weeks.\n\n**Reason (R):** Payments made with a debit card are charged to the bank's own funds and billed later.\n\nChoose the correct option.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Both Assertion and Reason are true and Reason is the correct explanation for Assertion."
+    },
+    {
+     "id": "b",
+     "text_md": "Both Assertion and Reason are true but Reason is not the correct explanation for Assertion."
+    },
+    {
+     "id": "c",
+     "text_md": "Assertion is true and Reason is false."
+    },
+    {
+     "id": "d",
+     "text_md": "Both Assertion and Reason are false."
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (d)** Both are false. A debit card spends the holder's own balance at once; credit periods belong to credit cards.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch05-t04"
+   ],
+   "expected_time_sec": 75,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "d"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (d)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch05_040",
+   "unit": "isc-12-commerce-ch05",
+   "language": "en",
+   "type": "true-false",
+   "stem_md": "ATMs let customers withdraw cash outside bank working hours.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "True"
+    },
+    {
+     "id": "b",
+     "text_md": "False"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**True.** True. ATMs generally work round the clock.",
+   "marks": 1,
+   "difficulty": 1,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch05-t04"
+   ],
+   "expected_time_sec": 40,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct choice (True)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch05_041",
+   "unit": "isc-12-commerce-ch05",
+   "language": "en",
+   "type": "fill-blank",
+   "stem_md": "Complete the analogy. Debit card : Pay now from own account :: Credit card : ___",
+   "options": [],
+   "match_right": [],
+   "solution_md": "A debit card pays at once from the holder's balance; a credit card lets the holder pay later.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch05-t04"
+   ],
+   "expected_time_sec": 45,
+   "assets": [],
+   "answer": {
+    "blanks": [
+     {
+      "accepted": [
+       "Pay later",
+       "buy now pay later",
+       "pay later to the bank",
+       "Borrow and pay later"
+      ]
+     }
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Blank 1: Pay later",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch05_042",
+   "unit": "isc-12-commerce-ch05",
+   "language": "en",
+   "type": "match",
+   "stem_md": "Match each item with its description.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "ATM"
+    },
+    {
+     "id": "b",
+     "text_md": "Debit card"
+    },
+    {
+     "id": "c",
+     "text_md": "Credit card"
+    },
+    {
+     "id": "d",
+     "text_md": "PIN"
+    }
+   ],
+   "match_right": [
+    {
+     "id": "p",
+     "text_md": "Secret number needed to use a card at an ATM"
+    },
+    {
+     "id": "q",
+     "text_md": "Machine for cash withdrawal and balance enquiry"
+    },
+    {
+     "id": "r",
+     "text_md": "Spends within a limit set by the bank, paid later"
+    },
+    {
+     "id": "s",
+     "text_md": "Spends from the holder's account immediately"
+    }
+   ],
+   "solution_md": "**Key:** (a)–(q), (b)–(s), (c)–(r), (d)–(p). The ATM is the machine, the debit card spends own funds, the credit card spends the bank's credit, and the PIN secures the card.",
+   "marks": 2,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch05-t04"
+   ],
+   "expected_time_sec": 120,
+   "assets": [],
+   "answer": {
+    "pairs": [
+     {
+      "left_id": "a",
+      "right_id": "q"
+     },
+     {
+      "left_id": "b",
+      "right_id": "s"
+     },
+     {
+      "left_id": "c",
+      "right_id": "r"
+     },
+     {
+      "left_id": "d",
+      "right_id": "p"
+     }
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Each correct pair 0.5 mark (4 pairs)",
+     "marks": 2
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch05_043",
+   "unit": "isc-12-commerce-ch05",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Tenzing (imagined) uses the only ATM in his mountain village. State two services an ATM provides and one reason it helps him.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Two services and one benefit.",
+   "marks": 2,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch05-t04"
+   ],
+   "expected_time_sec": 150,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Cash withdrawal** and **balance enquiry or mini-statement** are its main services.\n2. **Benefit:** it works **round the clock**, so he gets cash without waiting for the **branch to open** in the town below."
+   },
+   "word_limit": {
+    "min": 30,
+    "max": 50
+   },
+   "marking_scheme": [
+    {
+     "step": "Two services",
+     "marks": 1
+    },
+    {
+     "step": "Benefit",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch05_044",
+   "unit": "isc-12-commerce-ch05",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Meher (imagined) holds both a debit card and a credit card. Distinguish the two cards on source of funds, credit period and charges.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Three bases distinguished.",
+   "marks": 3,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch05-t04"
+   ],
+   "expected_time_sec": 210,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Source of funds:** a debit card uses **her own account balance**; a credit card uses the **bank's credit** up to a limit.\n2. **Credit period:** a debit card gives **none**; a credit card allows an **interest-free period** before payment.\n3. **Charges:** a debit card has **no interest**; a credit card charges **interest on unpaid balances**."
+   },
+   "word_limit": {
+    "min": 50,
+    "max": 75
+   },
+   "marking_scheme": [
+    {
+     "step": "Source of funds",
+     "marks": 1
+    },
+    {
+     "step": "Credit period",
+     "marks": 1
+    },
+    {
+     "step": "Charges",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch05_045",
+   "unit": "isc-12-commerce-ch05",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Lalit (imagined) wants a credit card for his furniture business. Evaluate: two advantages and one disadvantage of a credit card for him.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Two advantages and one disadvantage linked to the business.",
+   "marks": 3,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch05-t04"
+   ],
+   "expected_time_sec": 210,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Buy now, pay later:** he can buy **polish and fittings** and pay after customers pay him, within the **interest-free period**.\n2. **Records and convenience:** the **monthly statement** lists business spending, and he need not carry cash.\n3. **Disadvantage:** unpaid balances attract **high interest**, and easy credit may lead to **overspending**."
+   },
+   "word_limit": {
+    "min": 50,
+    "max": 75
+   },
+   "marking_scheme": [
+    {
+     "step": "First advantage",
+     "marks": 1
+    },
+    {
+     "step": "Second advantage",
+     "marks": 1
+    },
+    {
+     "step": "Disadvantage",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch05_046",
+   "unit": "isc-12-commerce-ch05",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "UPI (Unified Payments Interface) allows a user to",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "withdraw cash only at a branch counter"
+    },
+    {
+     "id": "b",
+     "text_md": "buy shares of a company directly"
+    },
+    {
+     "id": "c",
+     "text_md": "send and receive money instantly from a bank account using a virtual payment address, mobile number or QR code"
+    },
+    {
+     "id": "d",
+     "text_md": "take a long-term loan without security"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (c)** send and receive money instantly from a bank account using a virtual payment address, mobile number or QR code. UPI links bank accounts to a mobile app so that payments can be made instantly with a UPI ID, mobile number or QR code.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch05-t05"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "c"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (c)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch05_047",
+   "unit": "isc-12-commerce-ch05",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Rekha (imagined) loads ₹1,000 from her bank account into an app and uses that stored balance to pay small bills, even when she does not want to use her account directly. The app is best described as",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "a credit card"
+    },
+    {
+     "id": "b",
+     "text_md": "a demand draft"
+    },
+    {
+     "id": "c",
+     "text_md": "an e-wallet"
+    },
+    {
+     "id": "d",
+     "text_md": "an RTGS account"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (c)** an e-wallet. An e-wallet is a prepaid digital wallet: money is loaded into it in advance and spent from the stored balance.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch05-t05"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "c"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (c)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch05_048",
+   "unit": "isc-12-commerce-ch05",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Digital banking is best described as",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "providing banking services through digital channels such as internet, mobile apps, cards and UPI"
+    },
+    {
+     "id": "b",
+     "text_md": "a bank that keeps only paper records"
+    },
+    {
+     "id": "c",
+     "text_md": "a cash-only branch"
+    },
+    {
+     "id": "d",
+     "text_md": "issuing coins and notes"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (a)** providing banking services through digital channels such as internet, mobile apps, cards and UPI. Digital banking covers all banking done through electronic and digital channels, rather than paper and branches.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch05-t05"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (a)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch05_049",
+   "unit": "isc-12-commerce-ch05",
+   "language": "en",
+   "type": "assertion-reason",
+   "stem_md": "**Assertion (A):** A UPI payment is made directly from the payer's bank account.\n\n**Reason (R):** Money must first be loaded into a UPI app before it can be spent.\n\nChoose the correct option.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Both Assertion and Reason are true and Reason is the correct explanation for Assertion."
+    },
+    {
+     "id": "b",
+     "text_md": "Both Assertion and Reason are true but Reason is not the correct explanation for Assertion."
+    },
+    {
+     "id": "c",
+     "text_md": "Assertion is true and Reason is false."
+    },
+    {
+     "id": "d",
+     "text_md": "Both Assertion and Reason are false."
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (c)** The assertion is true: UPI debits the linked bank account. The reason is false: loading money in advance is a feature of e-wallets, not UPI.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch05-t05"
+   ],
+   "expected_time_sec": 75,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "c"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (c)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch05_050",
+   "unit": "isc-12-commerce-ch05",
+   "language": "en",
+   "type": "true-false",
+   "stem_md": "Sanchi Sweets (imagined) displays a QR code at its counter so that customers can pay by scanning it with a UPI app. True or false: this lets the shop receive money directly into its bank account.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "True"
+    },
+    {
+     "id": "b",
+     "text_md": "False"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**True.** True. Scanning a UPI QR code sends money from the customer's bank account to the shop's linked account.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch05-t05"
+   ],
+   "expected_time_sec": 40,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct choice (True)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch05_051",
+   "unit": "isc-12-commerce-ch05",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Sanchi Sweets (imagined) accepts payments by UPI and through an e-wallet. Explain the meaning of each.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Meaning of UPI and e-wallet.",
+   "marks": 2,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch05-t05"
+   ],
+   "expected_time_sec": 150,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **UPI:** a system that lets customers pay **instantly from their bank accounts** using a UPI ID, mobile number or **QR code**.\n2. **E-wallet:** a **prepaid digital wallet** into which money is **loaded in advance** and then spent."
+   },
+   "word_limit": {
+    "min": 30,
+    "max": 50
+   },
+   "marking_scheme": [
+    {
+     "step": "UPI",
+     "marks": 1
+    },
+    {
+     "step": "E-wallet",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch05_052",
+   "unit": "isc-12-commerce-ch05",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Kovalam Kayaks (imagined) is going \"fully digital\". Explain the meaning of digital banking, UPI and e-wallets with an example of how the business could use each.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Each term explained with a use for the business.",
+   "marks": 3,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch05-t05"
+   ],
+   "expected_time_sec": 210,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Digital banking:** banking through **online and mobile channels**; the firm can **check accounts and pay staff online**.\n2. **UPI:** instant transfers from bank accounts by **UPI ID or QR code**; tourists can **scan a QR** to pay rent.\n3. **E-wallet:** a **prepaid** digital balance; the firm can keep a small wallet for **fuel and snack purchases**."
+   },
+   "word_limit": {
+    "min": 50,
+    "max": 75
+   },
+   "marking_scheme": [
+    {
+     "step": "Digital banking",
+     "marks": 1
+    },
+    {
+     "step": "UPI",
+     "marks": 1
+    },
+    {
+     "step": "E-wallet",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch05_053",
+   "unit": "isc-12-commerce-ch05",
+   "language": "en",
+   "type": "long",
+   "stem_md": "Jhansi Jewellers (imagined) makes many payments: large ones to gold suppliers, small ones to workers, and occasional fees that need a demand draft. (Position as of 2026; the Reserve Bank of India can revise payment-system limits.)\n(a) Distinguish between RTGS, NEFT and IMPS on two bases. [3]\n(b) Explain how the firm can obtain an online demand draft and one advantage of doing so. [2]",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Two bases across the three methods; online DD procedure and one advantage.",
+   "marks": 5,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch05-t01"
+   ],
+   "expected_time_sec": 600,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "(a) **Mode of settlement:** RTGS settles **each transaction individually in real time**; NEFT settles in **half-hourly batches**; IMPS credits the payee **instantly**.\n**Amount:** RTGS has a **minimum of ₹2 lakh**, so it suits payments to gold suppliers; NEFT has **no minimum or maximum**, so it suits workers' wages; IMPS has **no minimum** but a per-transaction limit of **₹5 lakh**, so it suits small urgent payments.\n\n(b) Through **net banking**, the firm fills in the payee's name and amount; the bank **debits its account** and issues the draft, which is sent to its address or kept for collection. **Advantage:** it saves a **trip to the branch** and the time spent queuing."
+   },
+   "word_limit": {
+    "min": 100,
+    "max": 150
+   },
+   "marking_scheme": [
+    {
+     "step": "(a) Two bases for three methods",
+     "marks": 3
+    },
+    {
+     "step": "(b) Procedure and advantage",
+     "marks": 2
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch05_054",
+   "unit": "isc-12-commerce-ch05",
+   "language": "en",
+   "type": "long",
+   "stem_md": "Dharwad Dairy Cooperative (imagined) pays 400 farmers every week and wants to move from cash to e-banking.\n(a) What is e-banking? [1]\n(b) Explain two advantages of e-banking for the cooperative and two for its bank. [4]",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Meaning; two advantages to the customer and two to the bank.",
+   "marks": 5,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch05-t02"
+   ],
+   "expected_time_sec": 600,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "(a) **E-banking** is carrying out banking transactions **through the internet**, without visiting a branch.\n\n(b) **For the cooperative:** it can pay **400 farmers in one batch** from the office instead of counting cash, which saves time and reduces the risk of theft; and it can see **balances and statements at any hour**, making weekly accounts easier.\n**For the bank:** the **cost of each transaction falls**, because no teller has to count notes or issue receipts; and **branch crowding drops**, so staff can concentrate on loans and advice to the cooperative."
+   },
+   "word_limit": {
+    "min": 100,
+    "max": 150
+   },
+   "marking_scheme": [
+    {
+     "step": "(a) Meaning",
+     "marks": 1
+    },
+    {
+     "step": "(b) Two advantages for the cooperative",
+     "marks": 2
+    },
+    {
+     "step": "(b) Two advantages for the bank",
+     "marks": 2
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch05_055",
+   "unit": "isc-12-commerce-ch05",
+   "language": "en",
+   "type": "long",
+   "stem_md": "Aarav (imagined) has just opened his first savings account and is offered a debit card and a credit card.\n(a) State two functions of an ATM. [1]\n(b) Distinguish between a debit card and a credit card on three bases. [3]\n(c) Which card would you advise him to use first, and why? [1]",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Two ATM functions; three bases; a reasoned recommendation (debit card for a first-time user).",
+   "marks": 5,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch05-t04"
+   ],
+   "expected_time_sec": 600,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "(a) An ATM lets him **withdraw cash** and **check his balance** at any time.\n\n(b) **Source of funds:** a debit card spends money **already in his account**; a credit card spends the **bank's money** up to a credit limit.\n**Credit period:** a debit card gives **no credit period**, as the amount is deducted at once; a credit card allows an **interest-free period** before the bill must be paid.\n**Cost:** a debit card normally carries **no interest**; a credit card charges **high interest** on any amount left unpaid after the due date.\n\n(c) The **debit card**, because he can spend only what he has, which avoids **debt and interest** while he learns to manage money."
+   },
+   "word_limit": {
+    "min": 100,
+    "max": 150
+   },
+   "marking_scheme": [
+    {
+     "step": "(a) Two functions",
+     "marks": 1
+    },
+    {
+     "step": "(b) Three bases",
+     "marks": 3
+    },
+    {
+     "step": "(c) Advice with reason",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch05_056",
+   "unit": "isc-12-commerce-ch05",
+   "language": "en",
+   "type": "long",
+   "stem_md": "Nongpoh Nurseries (imagined) sells plants at weekly markets. Most buyers want to pay by phone.\n(a) Explain two advantages and one disadvantage of mobile banking for the nursery. [3]\n(b) Explain the difference between paying by UPI and paying from an e-wallet. [2]",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Two advantages and one disadvantage; UPI versus e-wallet.",
+   "marks": 5,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch05-t03",
+    "isc-12-commerce-ch05-t05"
+   ],
+   "expected_time_sec": 600,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "(a) **Advantages:** the owner gets **SMS alerts** as each payment arrives, so she knows at once that a buyer has paid; and she can **pay suppliers and check her balance from the market**, without going to a branch far away. **Disadvantage:** **weak mobile networks** in the hills can make payments fail, and a **lost phone** that is not locked may be misused.\n\n(b) **UPI** sends money **directly from the buyer's bank account** to the nursery's account, using a UPI ID or a **QR code**. An **e-wallet** is **prepaid**: the buyer must first **load money into the wallet**, and the payment is made from that stored balance."
+   },
+   "word_limit": {
+    "min": 100,
+    "max": 150
+   },
+   "marking_scheme": [
+    {
+     "step": "(a) Two advantages and one disadvantage",
+     "marks": 3
+    },
+    {
+     "step": "(b) UPI versus e-wallet",
+     "marks": 2
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch05_057",
+   "unit": "isc-12-commerce-ch05",
+   "language": "en",
+   "type": "case-based",
+   "stem_md": "Read the passage and answer the questions that follow. *(Imagined shop and people, written by SOYL for practice. Payment-system limits as of 2026.)*",
+   "options": [],
+   "match_right": [],
+   "solution_md": "**(a)** **Correct option: (d)** UPI. Scanning a QR code with a payments app is a UPI payment.\n\n**(b)** RTGS, as a large immediate transfer (IMPS is limited to ₹5 lakh per transaction).\n\n**(c) (i)** SMS alerts with a benefit.\n\n**OR (c) (ii)** E-wallet identified; difference stated.",
+   "marks": 4,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch05-t01",
+    "isc-12-commerce-ch05-t05"
+   ],
+   "expected_time_sec": 420,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "**(a)** (d) UPI\n\n**(b)** **RTGS**: the amount is above the **₹2 lakh minimum**, and it is credited **immediately**.\n\n**(c) (i)** **SMS alerts:** she knows **at once** about every credit, so she can **match sales with payments** and spot any fraud quickly.\n\n**OR (c) (ii)** It is an **e-wallet**: money is **loaded in advance** and spent from that balance, whereas UPI or a bank transfer pays **directly from the bank account**."
+   },
+   "marking_scheme": [
+    {
+     "step": "Part (a)",
+     "marks": 1
+    },
+    {
+     "step": "Part (b)",
+     "marks": 1
+    },
+    {
+     "step": "Part (c): either (i) or (ii)",
+     "marks": 2
+    }
+   ],
+   "passage_md": "**Sanchi Sweets (imagined), Vidisha**\n\nSanchi Sweets has a QR code at its counter, and most customers now pay by scanning it. Each night the owner, Mrs Tiwari, receives an SMS for every credit. Before Diwali she must pay ₹6 lakh for ghee and dry fruits to a supplier in Indore, who wants the money credited immediately. Her son suggests paying through an app balance he loads every month, but she prefers to pay straight from the bank.",
+   "passage_origin": "soyl-original",
+   "children": [
+    {
+     "id": "a",
+     "type": "mcq",
+     "stem_md": "Customers scanning the QR code at the counter are most likely paying by",
+     "options": [
+      {
+       "id": "a",
+       "text_md": "RTGS"
+      },
+      {
+       "id": "b",
+       "text_md": "demand draft"
+      },
+      {
+       "id": "c",
+       "text_md": "cash credit"
+      },
+      {
+       "id": "d",
+       "text_md": "UPI"
+      }
+     ],
+     "match_right": [],
+     "solution_md": "**Correct option: (d)** UPI. Scanning a QR code with a payments app is a UPI payment.",
+     "marks": 1,
+     "difficulty": 2,
+     "competency": "application",
+     "bloom": "apply",
+     "topic_ids": [
+      "isc-12-commerce-ch05-t05"
+     ],
+     "expected_time_sec": 60,
+     "assets": [],
+     "answer": {
+      "option_ids": [
+       "d"
+      ]
+     },
+     "marking_scheme": [
+      {
+       "step": "Correct option (d)",
+       "marks": 1
+      }
+     ],
+     "alternatives": []
+    },
+    {
+     "id": "b",
+     "type": "short",
+     "stem_md": "Which transfer method suits the ₹6 lakh payment to the supplier? Give one reason.",
+     "options": [],
+     "match_right": [],
+     "solution_md": "RTGS, as a large immediate transfer (IMPS is limited to ₹5 lakh per transaction).",
+     "marks": 1,
+     "difficulty": 3,
+     "competency": "application",
+     "bloom": "apply",
+     "topic_ids": [
+      "isc-12-commerce-ch05-t01"
+     ],
+     "expected_time_sec": 90,
+     "assets": [],
+     "answer": {
+      "model_answer_md": "**RTGS**: the amount is above the **₹2 lakh minimum**, and it is credited **immediately**."
+     },
+     "marking_scheme": [
+      {
+       "step": "RTGS with reason",
+       "marks": 1
+      }
+     ],
+     "alternatives": []
+    },
+    {
+     "id": "c",
+     "type": "short",
+     "stem_md": "**Either** (i): Identify the mobile-banking service Mrs Tiwari uses each night and one benefit of it.",
+     "options": [],
+     "match_right": [],
+     "solution_md": "SMS alerts with a benefit.",
+     "marks": 2,
+     "difficulty": 3,
+     "competency": "analysis",
+     "bloom": "analyze",
+     "topic_ids": [
+      "isc-12-commerce-ch05-t03",
+      "isc-12-commerce-ch05-t05"
+     ],
+     "expected_time_sec": 150,
+     "assets": [],
+     "answer": {
+      "model_answer_md": "**SMS alerts:** she knows **at once** about every credit, so she can **match sales with payments** and spot any fraud quickly."
+     },
+     "marking_scheme": [
+      {
+       "step": "Service",
+       "marks": 1
+      },
+      {
+       "step": "Benefit",
+       "marks": 1
+      }
+     ],
+     "alternatives": [
+      {
+       "id": "c-ii",
+       "type": "short",
+       "stem_md": "**Or** (ii): What kind of payment tool is the \"app balance he loads every month\"? How does it differ from paying straight from the bank?",
+       "options": [],
+       "match_right": [],
+       "solution_md": "E-wallet identified; difference stated.",
+       "marks": 2,
+       "difficulty": 3,
+       "competency": "analysis",
+       "bloom": "analyze",
+       "topic_ids": [
+        "isc-12-commerce-ch05-t05"
+       ],
+       "expected_time_sec": 150,
+       "assets": [],
+       "answer": {
+        "model_answer_md": "It is an **e-wallet**: money is **loaded in advance** and spent from that balance, whereas UPI or a bank transfer pays **directly from the bank account**."
+       },
+       "marking_scheme": [
+        {
+         "step": "E-wallet",
+         "marks": 1
+        },
+        {
+         "step": "Difference",
+         "marks": 1
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch05_058",
+   "unit": "isc-12-commerce-ch05",
+   "language": "en",
+   "type": "case-based",
+   "stem_md": "Read the passage and answer the questions that follow. *(Imagined people, written by SOYL for practice.)*",
+   "options": [],
+   "match_right": [],
+   "solution_md": "**(a)** **Correct option: (b)** Interest was charged on the unpaid balance. Unpaid credit-card balances carry interest.\n\n**(b)** Phishing by phone.\n\n**(c) (i)** Cash from own account versus buy-now-pay-later.\n\n**OR (c) (ii)** Two sound safety rules.",
+   "marks": 4,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch05-t02",
+    "isc-12-commerce-ch05-t04"
+   ],
+   "expected_time_sec": 420,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "**(a)** (b) Interest was charged on the unpaid balance\n\n**(b)** **Phishing (vishing)**: an attempt to obtain his **OTP** by pretending to be the bank.\n\n**(c) (i)** Wages need **cash**, which the **debit card** draws from his own account at the ATM; supplies can be bought on **credit**, paid later within the **interest-free period**.\n\n**OR (c) (ii)** 1. **Never share an OTP, PIN or password**, even with someone claiming to be the bank.\n2. **Contact the bank only through official numbers** or the app."
+   },
+   "marking_scheme": [
+    {
+     "step": "Part (a)",
+     "marks": 1
+    },
+    {
+     "step": "Part (b)",
+     "marks": 1
+    },
+    {
+     "step": "Part (c): either (i) or (ii)",
+     "marks": 2
+    }
+   ],
+   "passage_md": "**Lalit's furniture business (imagined), Jodhpur**\n\nLalit buys polish and hinges with his credit card and usually pays the full bill by the due date. Last year, during a slow season, he paid only the minimum amount for three months. He uses his debit card at the ATM near his workshop for cash wages. Recently he received a call from someone claiming to be from his bank, asking for the OTP \"to block a suspicious transaction\". He refused and called the bank's official number.",
+   "passage_origin": "soyl-original",
+   "children": [
+    {
+     "id": "a",
+     "type": "mcq",
+     "stem_md": "What happened when Lalit paid only the minimum amount on his credit-card bill?",
+     "options": [
+      {
+       "id": "a",
+       "text_md": "The bank waived the rest"
+      },
+      {
+       "id": "b",
+       "text_md": "Interest was charged on the unpaid balance"
+      },
+      {
+       "id": "c",
+       "text_md": "The bill was transferred to his debit card"
+      },
+      {
+       "id": "d",
+       "text_md": "His credit limit doubled"
+      }
+     ],
+     "match_right": [],
+     "solution_md": "**Correct option: (b)** Interest was charged on the unpaid balance. Unpaid credit-card balances carry interest.",
+     "marks": 1,
+     "difficulty": 2,
+     "competency": "application",
+     "bloom": "apply",
+     "topic_ids": [
+      "isc-12-commerce-ch05-t04"
+     ],
+     "expected_time_sec": 60,
+     "assets": [],
+     "answer": {
+      "option_ids": [
+       "b"
+      ]
+     },
+     "marking_scheme": [
+      {
+       "step": "Correct option (b)",
+       "marks": 1
+      }
+     ],
+     "alternatives": []
+    },
+    {
+     "id": "b",
+     "type": "short",
+     "stem_md": "Name the kind of fraud attempted on the phone call.",
+     "options": [],
+     "match_right": [],
+     "solution_md": "Phishing by phone.",
+     "marks": 1,
+     "difficulty": 2,
+     "competency": "application",
+     "bloom": "apply",
+     "topic_ids": [
+      "isc-12-commerce-ch05-t02"
+     ],
+     "expected_time_sec": 90,
+     "assets": [],
+     "answer": {
+      "model_answer_md": "**Phishing (vishing)**: an attempt to obtain his **OTP** by pretending to be the bank."
+     },
+     "marking_scheme": [
+      {
+       "step": "Phishing",
+       "marks": 1
+      }
+     ],
+     "alternatives": []
+    },
+    {
+     "id": "c",
+     "type": "short",
+     "stem_md": "**Either** (i): Why does Lalit use the debit card for wages and the credit card for supplies?",
+     "options": [],
+     "match_right": [],
+     "solution_md": "Cash from own account versus buy-now-pay-later.",
+     "marks": 2,
+     "difficulty": 3,
+     "competency": "analysis",
+     "bloom": "analyze",
+     "topic_ids": [
+      "isc-12-commerce-ch05-t04"
+     ],
+     "expected_time_sec": 150,
+     "assets": [],
+     "answer": {
+      "model_answer_md": "Wages need **cash**, which the **debit card** draws from his own account at the ATM; supplies can be bought on **credit**, paid later within the **interest-free period**."
+     },
+     "marking_scheme": [
+      {
+       "step": "Debit for cash",
+       "marks": 1
+      },
+      {
+       "step": "Credit for supplies",
+       "marks": 1
+      }
+     ],
+     "alternatives": [
+      {
+       "id": "c-ii",
+       "type": "short",
+       "stem_md": "**Or** (ii): State two safety rules for digital banking that Lalit followed or should follow.",
+       "options": [],
+       "match_right": [],
+       "solution_md": "Two sound safety rules.",
+       "marks": 2,
+       "difficulty": 3,
+       "competency": "analysis",
+       "bloom": "analyze",
+       "topic_ids": [
+        "isc-12-commerce-ch05-t02"
+       ],
+       "expected_time_sec": 150,
+       "assets": [],
+       "answer": {
+        "model_answer_md": "1. **Never share an OTP, PIN or password**, even with someone claiming to be the bank.\n2. **Contact the bank only through official numbers** or the app."
+       },
+       "marking_scheme": [
+        {
+         "step": "First rule",
+         "marks": 1
+        },
+        {
+         "step": "Second rule",
+         "marks": 1
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch05_059",
+   "unit": "isc-12-commerce-ch05",
+   "language": "en",
+   "type": "short",
+   "stem_md": "The imagined Dharwad branch of a bank now handles most of its customers' payments online. State two advantages of e-banking to the bank itself.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Two advantages to the bank (lower cost, less branch load, wider reach, more business at little extra cost).",
+   "marks": 2,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch05-t02"
+   ],
+   "expected_time_sec": 150,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Lower cost:** an online transaction costs the bank **far less to process** than one handled by a teller at the counter.\n2. **Less crowding:** fewer customers **queue at the branch**, so staff can give time to loans and advice."
+   },
+   "word_limit": {
+    "min": 30,
+    "max": 50
+   },
+   "marking_scheme": [
+    {
+     "step": "First advantage",
+     "marks": 1
+    },
+    {
+     "step": "Second advantage",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch05_060",
+   "unit": "isc-12-commerce-ch05",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Jhansi Jewellers (imagined) handles lakhs of rupees through net banking and UPI every week. Suggest three precautions its staff should follow to bank safely online, with a reason for each.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Three sensible precautions, each with a reason.",
+   "marks": 3,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch05-t02"
+   ],
+   "expected_time_sec": 210,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Never share OTPs, PINs or passwords**, because the bank never asks for them and fraudsters use them to empty accounts.\n2. **Use only the official app or website**, typed in directly, so that **fake links** cannot capture login details.\n3. **Turn on SMS alerts** and check them, so any **unauthorised debit** is reported to the bank at once."
+   },
+   "word_limit": {
+    "min": 50,
+    "max": 75
+   },
+   "marking_scheme": [
+    {
+     "step": "First precaution",
+     "marks": 1
+    },
+    {
+     "step": "Second precaution",
+     "marks": 1
+    },
+    {
+     "step": "Third precaution",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch05_061",
+   "unit": "isc-12-commerce-ch05",
+   "language": "en",
+   "type": "fill-blank",
+   "stem_md": "Many small shops display a square printed ___ code that customers scan with a UPI app to pay.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "It is a QR (quick response) code linked to the shop's UPI ID and bank account.",
+   "marks": 1,
+   "difficulty": 1,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch05-t05"
+   ],
+   "expected_time_sec": 45,
+   "assets": [],
+   "answer": {
+    "blanks": [
+     {
+      "accepted": [
+       "QR",
+       "quick response",
+       "Quick Response"
+      ]
+     }
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Blank 1: QR",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch05_062",
+   "unit": "isc-12-commerce-ch05",
+   "language": "en",
+   "type": "true-false",
+   "stem_md": "An e-wallet must be loaded with money before it can be used to pay.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "True"
+    },
+    {
+     "id": "b",
+     "text_md": "False"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**True.** True. An e-wallet is a prepaid instrument; payments come from the balance loaded into it.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch05-t05"
+   ],
+   "expected_time_sec": 40,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct choice (True)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  }
+ ],
+ "build": {
+  "run_id": null,
+  "checks": {
+   "syllabus": "topics t01–t05 of isc-12-commerce-ch05 (RTGS, NEFT, IMPS and online demand drafts; e-banking; mobile banking; ATM, debit and credit cards; digital banking, UPI and e-wallets, meaning only)",
+   "originality": "every person, firm and case is imagined and written by SOYL and labelled; no ISC or CBSE textbook text, illustration or exercise and no CISCE specimen or board item reused (D-036)",
+   "data": "no computed figures",
+   "facts": "time-sensitive payment-system facts carry an \"as of 2026\" note wherever used: RTGS minimum ₹2 lakh and 24x7 since December 2020; NEFT 24x7 since December 2019 with no RBI minimum or maximum; IMPS ₹5 lakh per transaction; no fees, UPI limits or wallet limits are stated",
+   "gate": "schema, pipeline lint, deterministic verify, word limits, narration and answer-leak checks run clean in this build"
+  }
+ }
+}
