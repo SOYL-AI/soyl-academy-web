@@ -1,0 +1,4667 @@
+{
+  "unit": "isc-12-chemistry-ch20",
+  "version": 1,
+  "academic_year": "2026-27",
+  "created_at": "2026-10-30T00:00:00+05:30",
+  "decks": [
+    {
+      "unit": "isc-12-chemistry-ch20",
+      "part": 1,
+      "version": 1,
+      "title": "Cyanides, Isocyanides and Diazonium Salts — Part 1: Cyanides, isocyanides and making diazonium salts",
+      "language": "en",
+      "goals": [
+        "Write equations for preparing alkyl cyanides from alkyl halides and amides",
+        "Write equations for preparing isocyanides from alkyl halides and primary amines",
+        "Compare cyanides and isocyanides",
+        "Write the diazotisation equation and explain why it is carried out at 273–278 K"
+      ],
+      "slides": [
+        {
+          "id": "s01",
+          "layout": "title",
+          "heading": "C≡N compounds and diazonium salts",
+          "body_md": "Part 1 — two isomeric functional groups, –C≡N and –N≡C, and the versatile diazonium ion ArN₂⁺.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Compound",
+                "Where it matters"
+              ],
+              "rows": [
+                [
+                  "Propenenitrile (acrylonitrile)",
+                  "Acrylic fibres (Orlon)"
+                ],
+                [
+                  "Ethanenitrile",
+                  "Laboratory solvent"
+                ],
+                [
+                  "Isocyanides",
+                  "Foul smell: test for primary amines"
+                ],
+                [
+                  "Benzenediazonium salts",
+                  "Azo dyes, synthesis of many aromatic compounds"
+                ]
+              ]
+            },
+            "alt": "Table of cyanides, isocyanides and diazonium salts and their uses"
+          },
+          "math": [],
+          "narration": "Namaste! Acrylic fibres in sweaters are made from a nitrile, a compound with a carbon–nitrogen triple bond. Its isomer, the isocyanide, has one of the worst smells in chemistry. And diazonium salts, made from aniline in ice, are the gateway to dozens of aromatic compounds and to azo dyes. In this part we prepare and compare these compounds.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s02",
+          "layout": "concept",
+          "heading": "Structure and names",
+          "body_md": "**Alkyl cyanides (nitriles)** R–C≡N: carbon of the CN group is bonded to R. IUPAC: **alkanenitrile**, counting the CN carbon (CH₃CN ethanenitrile). **Alkyl isocyanides** R–N≡C (R–N⁺≡C⁻): nitrogen bonded to R; named **isocyanoalkanes** (CH₃NC isocyanomethane, methyl isocyanide). They are **functional isomers**.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Formula",
+                "Common name",
+                "IUPAC name"
+              ],
+              "rows": [
+                [
+                  "CH₃CN",
+                  "Methyl cyanide",
+                  "Ethanenitrile"
+                ],
+                [
+                  "CH₃CH₂CN",
+                  "Ethyl cyanide",
+                  "Propanenitrile"
+                ],
+                [
+                  "C₆H₅CN",
+                  "Phenyl cyanide",
+                  "Benzonitrile"
+                ],
+                [
+                  "CH₃NC",
+                  "Methyl isocyanide",
+                  "Isocyanomethane"
+                ],
+                [
+                  "C₂H₅NC",
+                  "Ethyl isocyanide",
+                  "Isocyanoethane"
+                ],
+                [
+                  "C₆H₅NC",
+                  "Phenyl isocyanide",
+                  "Isocyanobenzene"
+                ]
+              ]
+            },
+            "alt": "Table of names of cyanides and isocyanides"
+          },
+          "math": [],
+          "narration": "In a nitrile, the alkyl group is attached to the carbon of a carbon–nitrogen triple bond; in an isocyanide, it is attached to the nitrogen. Nitriles are named by counting the nitrile carbon in the chain: methyl cyanide is ethanenitrile. Isocyanides are named as isocyano alkanes. The two are isomers with the same formula but different properties.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s03",
+          "layout": "concept",
+          "heading": "Preparation of cyanides",
+          "body_md": "**From alkyl halides:** heat with **ethanolic KCN or NaCN** (ionic; attack through C) → nitrile (one more C). **From amides:** dehydration with **P₂O₅** (or SOCl₂, POCl₃) on heating.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Starting compound",
+                "Reagent",
+                "Product"
+              ],
+              "rows": [
+                [
+                  "1-Bromopropane",
+                  "KCN, ethanol, heat",
+                  "Butanenitrile"
+                ],
+                [
+                  "Propanamide",
+                  "P₂O₅, heat",
+                  "Propanenitrile"
+                ],
+                [
+                  "Benzamide",
+                  "P₂O₅, heat",
+                  "Benzonitrile"
+                ],
+                [
+                  "Benzenediazonium chloride",
+                  "CuCN (Sandmeyer)",
+                  "Benzonitrile"
+                ]
+              ]
+            },
+            "alt": "Table of preparations of cyanides"
+          },
+          "math": [
+            "\\ce{CH3CH2CH2Br + KCN -> CH3CH2CH2CN + KBr}",
+            "\\ce{CH3CH2CONH2 ->[P2O5][\\Delta] CH3CH2CN + H2O}"
+          ],
+          "narration": "Nitriles are made by heating an alkyl halide with potassium cyanide in ethanol. Cyanide is ambident, but in the ionic salt the carbon end attacks, so a nitrile forms, with one more carbon than the halide. Nitriles are also made by removing water from amides with phosphorus pentoxide. Aromatic nitriles such as benzonitrile come from benzamide or from diazonium salts.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s04",
+          "layout": "concept",
+          "heading": "Preparation of isocyanides",
+          "body_md": "**From alkyl halides:** heat with **AgCN** (covalent Ag–C bond; attack through N) → isocyanide. **From primary amines:** **carbylamine reaction** — warm with CHCl₃ and alcoholic KOH.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Starting compound",
+                "Reagent",
+                "Product"
+              ],
+              "rows": [
+                [
+                  "Iodoethane",
+                  "AgCN, heat",
+                  "Isocyanoethane"
+                ],
+                [
+                  "Methanamine",
+                  "CHCl₃ + alc. KOH",
+                  "Isocyanomethane"
+                ],
+                [
+                  "Aniline",
+                  "CHCl₃ + alc. KOH",
+                  "Isocyanobenzene"
+                ]
+              ]
+            },
+            "alt": "Table of preparations of isocyanides"
+          },
+          "math": [
+            "\\ce{CH3CH2I + AgCN -> CH3CH2NC + AgI}",
+            "\\ce{CH3NH2 + CHCl3 + 3KOH -> CH3NC + 3KCl + 3H2O}"
+          ],
+          "narration": "Isocyanides are formed when an alkyl halide is heated with silver cyanide. The silver–carbon bond is largely covalent, leaving only the nitrogen lone pair free to attack, so the alkyl group ends up on nitrogen. Primary amines, both aliphatic and aromatic, give isocyanides when warmed with chloroform and alcoholic potassium hydroxide: the carbylamine reaction, recognised by its foul smell.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s05",
+          "layout": "example",
+          "heading": "Worked example: KCN or AgCN?",
+          "body_md": "**Problem.** 1-Bromobutane is heated separately with (a) ethanolic KCN and (b) AgCN. Name the products and explain the difference. (c) How else could the product of (b) be obtained?\n\n**(a)** $\\ce{CH3(CH2)3CN}$, pentanenitrile — ionic CN⁻ attacks through C.\n\n**(b)** $\\ce{CH3(CH2)3NC}$, 1-isocyanobutane — in covalent AgCN only the N lone pair is free.\n\n**(c)** Butan-1-amine + CHCl₃ + alcoholic KOH (carbylamine reaction).",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Reagent",
+                "Bonding",
+                "Attacking atom",
+                "Product"
+              ],
+              "rows": [
+                [
+                  "KCN",
+                  "Ionic",
+                  "C",
+                  "Nitrile"
+                ],
+                [
+                  "AgCN",
+                  "Covalent",
+                  "N",
+                  "Isocyanide"
+                ]
+              ]
+            },
+            "alt": "Table comparing KCN and AgCN"
+          },
+          "math": [],
+          "narration": "Potassium cyanide is ionic, so the free cyanide ion attacks through carbon, the more nucleophilic end, and pentanenitrile forms. Silver cyanide is largely covalent, with silver bonded to carbon, so only the nitrogen lone pair is available, and one-isocyanobutane forms. The same isocyanide can be made from butan-one-amine by the carbylamine reaction.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s06",
+          "layout": "check",
+          "heading": "Quick check: cyanide or isocyanide?",
+          "body_md": "Predict whether a nitrile or an isocyanide forms.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Ionic cyanides give nitriles; silver cyanide and the carbylamine reaction give isocyanides.",
+          "check_question_id": "q_isc12chem_ch20_001",
+          "audio": null
+        },
+        {
+          "id": "s07",
+          "layout": "concept",
+          "heading": "Comparing cyanides and isocyanides",
+          "body_md": "The two isomers behave differently.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Property",
+                "Cyanide R–C≡N",
+                "Isocyanide R–N≡C"
+              ],
+              "rows": [
+                [
+                  "Smell",
+                  "Pleasant (lower members)",
+                  "Very unpleasant"
+                ],
+                [
+                  "Polarity / b.p.",
+                  "More polar, higher b.p.",
+                  "Less polar, lower b.p."
+                ],
+                [
+                  "Acid hydrolysis",
+                  "RCOOH + NH₄⁺",
+                  "RNH₂ + HCOOH"
+                ],
+                [
+                  "Reduction (H₂/Ni, LiAlH₄)",
+                  "1° amine RCH₂NH₂",
+                  "2° amine RNHCH₃"
+                ],
+                [
+                  "On heating",
+                  "Stable",
+                  "Isomerises to cyanide"
+                ]
+              ]
+            },
+            "alt": "Table comparing cyanides and isocyanides"
+          },
+          "math": [
+            "\\ce{CH3CN + 2H2O + HCl -> CH3COOH + NH4Cl}",
+            "\\ce{CH3NC + 2H2O ->[H+] CH3NH2 + HCOOH}"
+          ],
+          "narration": "Nitriles have pleasant smells and are more polar, so they boil higher than isocyanides, which smell terrible. Their hydrolysis products differ: a nitrile gives a carboxylic acid and ammonium ions, while an isocyanide gives a primary amine and methanoic acid. On reduction, a nitrile gives a primary amine and an isocyanide a secondary amine. On heating, isocyanides rearrange into the more stable nitriles.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s08",
+          "layout": "example",
+          "heading": "Worked example: hydrolysis and reduction products",
+          "body_md": "**Problem.** Give the products when (a) propanenitrile and (b) isocyanoethane are each (i) hydrolysed with dilute acid and (ii) reduced with LiAlH₄.\n\n**(a)(i)** Propanoic acid + NH₄⁺. **(a)(ii)** Propan-1-amine, $\\ce{CH3CH2CH2NH2}$.\n\n**(b)(i)** Ethanamine + methanoic acid. **(b)(ii)** N-Methylethanamine, $\\ce{CH3CH2NHCH3}$.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Compound",
+                "Hydrolysis",
+                "Reduction"
+              ],
+              "rows": [
+                [
+                  "CH₃CH₂CN",
+                  "CH₃CH₂COOH",
+                  "CH₃CH₂CH₂NH₂ (1°)"
+                ],
+                [
+                  "CH₃CH₂NC",
+                  "CH₃CH₂NH₂ + HCOOH",
+                  "CH₃CH₂NHCH₃ (2°)"
+                ]
+              ]
+            },
+            "alt": "Table of products"
+          },
+          "math": [],
+          "narration": "Both compounds contain three carbons and one nitrogen, but the products differ because the alkyl group is on carbon in one and on nitrogen in the other. Hydrolysis of the nitrile keeps all three carbons in propanoic acid, while the isocyanide splits into ethanamine and methanoic acid. Reduction gives a primary amine from the nitrile and a secondary amine from the isocyanide.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s09",
+          "layout": "check",
+          "heading": "Quick check: comparing the isomers",
+          "body_md": "Identify a property or product that distinguishes a cyanide from an isocyanide.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Think of the hydrolysis and reduction products, and the smell.",
+          "check_question_id": "q_isc12chem_ch20_002",
+          "audio": null
+        },
+        {
+          "id": "s10",
+          "layout": "concept",
+          "heading": "Preparation of benzenediazonium chloride",
+          "body_md": "**Diazotisation:** aniline in excess dilute HCl is treated with cold aqueous **NaNO₂** at **273–278 K** (ice). Nitrous acid is formed in situ and converts –NH₂ into –N₂⁺. Excess nitrous acid is shown by starch–iodide paper turning blue.",
+          "bullets": [],
+          "visual": {
+            "kind": "flow",
+            "spec": {
+              "direction": "LR",
+              "nodes": [
+                {
+                  "id": "a",
+                  "label": "Aniline + excess HCl (ice bath)"
+                },
+                {
+                  "id": "b",
+                  "label": "Add cold NaNO₂ solution slowly"
+                },
+                {
+                  "id": "c",
+                  "label": "HNO₂ formed in situ"
+                },
+                {
+                  "id": "d",
+                  "label": "C₆H₅N₂⁺Cl⁻ (use at once)"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "a",
+                  "to": "b"
+                },
+                {
+                  "from": "b",
+                  "to": "c"
+                },
+                {
+                  "from": "c",
+                  "to": "d"
+                }
+              ]
+            },
+            "alt": "Flow of diazotisation"
+          },
+          "math": [
+            "\\ce{NaNO2 + HCl -> HNO2 + NaCl}",
+            "\\ce{C6H5NH2 + HNO2 + HCl ->[273-278 K] C6H5N2Cl + 2H2O}"
+          ],
+          "narration": "To make benzenediazonium chloride, aniline is dissolved in excess hydrochloric acid and cooled in ice, and a cold solution of sodium nitrite is added slowly. Nitrous acid forms in the mixture and converts the amino group into the diazonium group. The temperature is kept between two hundred and seventy three and two hundred and seventy eight kelvin, and the solution is used at once.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s11",
+          "layout": "concept",
+          "heading": "Stability of diazonium salts",
+          "body_md": "Arenediazonium ions are stabilised by **resonance** with the ring (positive charge delocalised), so they survive in cold solution. Above about 278 K they decompose (giving phenol and N₂); dry salts are **explosive**. Alkanediazonium ions have no such resonance and decompose at once, releasing N₂.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Ion",
+                "Stability",
+                "Reason"
+              ],
+              "rows": [
+                [
+                  "C₆H₅N₂⁺ (cold, aqueous)",
+                  "Stable for a short time",
+                  "Resonance with ring"
+                ],
+                [
+                  "C₆H₅N₂⁺ (warm)",
+                  "Decomposes: phenol + N₂",
+                  "N₂ is a very stable leaving group"
+                ],
+                [
+                  "CH₃CH₂N₂⁺",
+                  "Decomposes at once",
+                  "No resonance"
+                ],
+                [
+                  "Dry ArN₂⁺Cl⁻",
+                  "Explosive",
+                  "Never isolated dry"
+                ]
+              ]
+            },
+            "alt": "Table of diazonium ion stability"
+          },
+          "math": [],
+          "narration": "An aromatic diazonium ion is stabilised because its positive charge can spread into the benzene ring. Even so, it is stable only in cold solution; on warming, nitrogen gas, an extremely stable molecule, is released and phenol forms. Aliphatic diazonium ions have no such stabilisation and break down immediately. Dry diazonium salts can explode, so they are always kept in solution.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s12",
+          "layout": "check",
+          "heading": "Quick check: diazotisation",
+          "body_md": "Answer a question about the conditions or stability in diazotisation.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Low temperature and use at once; aromatic diazonium ions are stabilised by resonance.",
+          "check_question_id": "q_isc12chem_ch20_018",
+          "audio": null
+        },
+        {
+          "id": "s13",
+          "layout": "summary",
+          "heading": "Summary: Part 1",
+          "body_md": "",
+          "bullets": [
+            "Nitriles R–C≡N (alkanenitriles); isocyanides R–N≡C (isocyanoalkanes); functional isomers.",
+            "Nitriles: RX + KCN; amides + P₂O₅. Isocyanides: RX + AgCN; 1° amines + CHCl₃/KOH.",
+            "Hydrolysis: nitrile → acid; isocyanide → amine + HCOOH. Reduction: 1° vs 2° amine.",
+            "Diazotisation: ArNH₂ + NaNO₂/HCl at 273–278 K → ArN₂⁺Cl⁻; resonance-stabilised; use at once."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Reagent with RX",
+                "Product"
+              ],
+              "rows": [
+                [
+                  "KCN",
+                  "Nitrile"
+                ],
+                [
+                  "AgCN",
+                  "Isocyanide"
+                ]
+              ]
+            },
+            "alt": "Summary table"
+          },
+          "math": [],
+          "narration": "Let us sum up Part 1. Nitriles and isocyanides are isomers, differing in which atom carries the alkyl group. Potassium cyanide gives nitriles and silver cyanide gives isocyanides; amides give nitriles on dehydration, and primary amines give isocyanides in the carbylamine reaction. Their hydrolysis and reduction products are different. Aniline is diazotised in the cold to give a diazonium salt that is used at once.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s14",
+          "layout": "exam-tips",
+          "heading": "Exam tips: Part 1",
+          "body_md": "",
+          "bullets": [
+            "Count carbons when naming nitriles (CH₃CN is ethanenitrile).",
+            "Explain KCN vs AgCN with ionic vs covalent bonding.",
+            "Give 273–278 K and the reason (decomposition) for diazotisation.",
+            "Isocyanide hydrolysis gives methanoic acid, not ethanoic acid."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Slip",
+                "Fix"
+              ],
+              "rows": [
+                [
+                  "CH₃CN = methanenitrile",
+                  "Ethanenitrile"
+                ],
+                [
+                  "AgCN gives nitrile",
+                  "Gives isocyanide"
+                ],
+                [
+                  "Diazotise at room temperature",
+                  "273–278 K"
+                ]
+              ]
+            },
+            "alt": "Table of three common slips in Part 1 and fixes"
+          },
+          "math": [],
+          "narration": "Some tips. Count the nitrile carbon when naming. Explain the different products of potassium and silver cyanide by their bonding. Give the temperature and reason for diazotisation. And remember that hydrolysis of an isocyanide gives an amine and methanoic acid.",
+          "check_question_id": null,
+          "audio": null
+        }
+      ],
+      "status": "draft",
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "unit": "isc-12-chemistry-ch20",
+      "part": 2,
+      "version": 1,
+      "title": "Cyanides, Isocyanides and Diazonium Salts — Part 2: Reactions of diazonium salts",
+      "language": "en",
+      "goals": [
+        "Write equations for converting benzenediazonium chloride into halobenzenes, phenol, benzene and nitrobenzene",
+        "Write equations for azo coupling with phenol and aniline and identify the coloured products",
+        "Plan syntheses that use a diazonium salt intermediate"
+      ],
+      "slides": [
+        {
+          "id": "s01",
+          "layout": "title",
+          "heading": "The diazonium toolkit",
+          "body_md": "Part 2 — replacing –N₂⁺ by other groups, and coupling to make azo dyes.",
+          "bullets": [],
+          "visual": {
+            "kind": "flow",
+            "spec": {
+              "direction": "LR",
+              "nodes": [
+                {
+                  "id": "a",
+                  "label": "ArNH₂"
+                },
+                {
+                  "id": "b",
+                  "label": "ArN₂⁺Cl⁻ (273–278 K)"
+                },
+                {
+                  "id": "c",
+                  "label": "Replacement: –Cl, –Br, –I, –F, –CN, –H, –OH, –NO₂"
+                },
+                {
+                  "id": "d",
+                  "label": "Coupling: Ar–N=N–Ar′ (azo dyes)"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "a",
+                  "to": "b"
+                },
+                {
+                  "from": "b",
+                  "to": "c"
+                },
+                {
+                  "from": "b",
+                  "to": "d"
+                }
+              ]
+            },
+            "alt": "Flow of diazonium reactions"
+          },
+          "math": [],
+          "narration": "The diazonium group is a superb leaving group, because it departs as nitrogen gas. That lets us replace it with halogens, a cyanide group, hydrogen, hydroxyl or nitro groups, often giving products that cannot be made directly. Alternatively, the diazonium ion can keep its nitrogens and attack a phenol or an amine, forming brightly coloured azo dyes.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s02",
+          "layout": "concept",
+          "heading": "Sandmeyer and Gattermann reactions",
+          "body_md": "**Sandmeyer:** copper(I) salts — **CuCl/HCl → ArCl; CuBr/HBr → ArBr; CuCN/KCN → ArCN**. **Gattermann:** freshly prepared **copper powder** with HCl or HBr → ArCl or ArBr (lower yields).",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Reagent",
+                "Product",
+                "Name"
+              ],
+              "rows": [
+                [
+                  "CuCl/HCl",
+                  "Chlorobenzene",
+                  "Sandmeyer"
+                ],
+                [
+                  "CuBr/HBr",
+                  "Bromobenzene",
+                  "Sandmeyer"
+                ],
+                [
+                  "CuCN/KCN",
+                  "Benzonitrile",
+                  "Sandmeyer"
+                ],
+                [
+                  "Cu + HCl",
+                  "Chlorobenzene",
+                  "Gattermann"
+                ],
+                [
+                  "Cu + HBr",
+                  "Bromobenzene",
+                  "Gattermann"
+                ]
+              ]
+            },
+            "alt": "Table of Sandmeyer and Gattermann reactions"
+          },
+          "math": [
+            "\\ce{C6H5N2Cl ->[CuCl/HCl] C6H5Cl + N2}",
+            "\\ce{C6H5N2Cl + CuCN -> C6H5CN + N2 + CuCl}",
+            "\\ce{C6H5N2Cl + HBr ->[Cu] C6H5Br + N2 + HCl}"
+          ],
+          "narration": "In the Sandmeyer reaction, copper one chloride, bromide or cyanide replaces the diazonium group by chlorine, bromine or a cyanide group. In the Gattermann reaction, copper powder with the hydrogen halide does the same job for chlorine and bromine, usually with lower yields. Nitrogen gas bubbles off in every case.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s03",
+          "layout": "concept",
+          "heading": "Iodide, fluoride, hydrogen, hydroxyl and nitro groups",
+          "body_md": "**KI:** warm → **iodobenzene**. **Balz–Schiemann:** HBF₄ → ArN₂⁺BF₄⁻ (stable solid), heat → **fluorobenzene** + BF₃ + N₂. **–H:** hypophosphorous acid (H₃PO₂) or ethanol → **benzene**. **–OH:** warm with water → **phenol**. **–NO₂:** ArN₂⁺BF₄⁻ + NaNO₂, Cu, heat → **nitrobenzene**.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Reagent",
+                "Product"
+              ],
+              "rows": [
+                [
+                  "KI (warm)",
+                  "Iodobenzene"
+                ],
+                [
+                  "HBF₄, then heat",
+                  "Fluorobenzene"
+                ],
+                [
+                  "H₃PO₂ or CH₃CH₂OH",
+                  "Benzene"
+                ],
+                [
+                  "H₂O, warm",
+                  "Phenol"
+                ],
+                [
+                  "NaNO₂/Cu on ArN₂BF₄",
+                  "Nitrobenzene"
+                ]
+              ]
+            },
+            "alt": "Table of other replacement reactions"
+          },
+          "math": [
+            "\\ce{C6H5N2Cl + KI -> C6H5I + KCl + N2}",
+            "\\ce{C6H5N2BF4 ->[\\Delta] C6H5F + BF3 + N2}",
+            "\\ce{C6H5N2Cl + H3PO2 + H2O -> C6H6 + N2 + H3PO3 + HCl}",
+            "\\ce{C6H5N2BF4 + NaNO2 ->[Cu][\\Delta] C6H5NO2 + N2 + NaBF4}"
+          ],
+          "narration": "Iodide ions replace the diazonium group simply on warming. Fluorine is introduced by the Balz–Schiemann reaction: the fluoroborate salt is precipitated and then heated. Hypophosphorous acid or ethanol replaces the group by hydrogen, which is useful for removing an amino group after it has done its job. Warming with water gives phenol, and sodium nitrite with copper converts the fluoroborate into nitrobenzene.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s04",
+          "layout": "example",
+          "heading": "Worked example: replacement products",
+          "body_md": "**Problem.** 4-Methylbenzenediazonium chloride is treated with (a) CuBr/HBr; (b) HBF₄, then heat; (c) H₃PO₂; (d) warm water; (e) CuCN/KCN. Name the products.\n\n**(a)** 4-Bromotoluene. **(b)** 4-Fluorotoluene. **(c)** Toluene.\n\n**(d)** 4-Methylphenol (p-cresol). **(e)** 4-Methylbenzonitrile.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Reagent",
+                "Group introduced",
+                "Product"
+              ],
+              "rows": [
+                [
+                  "CuBr/HBr",
+                  "–Br",
+                  "4-Bromotoluene"
+                ],
+                [
+                  "HBF₄; heat",
+                  "–F",
+                  "4-Fluorotoluene"
+                ],
+                [
+                  "H₃PO₂",
+                  "–H",
+                  "Toluene"
+                ],
+                [
+                  "H₂O, warm",
+                  "–OH",
+                  "4-Methylphenol"
+                ],
+                [
+                  "CuCN/KCN",
+                  "–CN",
+                  "4-Methylbenzonitrile"
+                ]
+              ]
+            },
+            "alt": "Table of products from 4-methylbenzenediazonium chloride"
+          },
+          "math": [],
+          "narration": "In each case the new group takes the exact position of the diazonium group, para to the methyl group. Copper one bromide gives four-bromotoluene; the Balz–Schiemann route gives four-fluorotoluene; hypophosphorous acid removes the group to leave toluene; warm water gives para-cresol; and copper one cyanide gives four-methylbenzonitrile.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s05",
+          "layout": "check",
+          "heading": "Quick check: replacement reactions",
+          "body_md": "Choose the reagent that introduces a given group in place of –N₂⁺.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Copper salts for chlorine, bromine and cyanide; potassium iodide; fluoroborate for fluorine; hypophosphorous acid for hydrogen.",
+          "check_question_id": "q_isc12chem_ch20_027",
+          "audio": null
+        },
+        {
+          "id": "s06",
+          "layout": "concept",
+          "heading": "Coupling with phenol",
+          "body_md": "In **mildly alkaline** solution (pH ≈ 9–10), the diazonium ion (a weak electrophile) attacks the strongly activated **phenoxide** ion at the **para** position: **4-hydroxyazobenzene** (orange). With **2-naphthol** an orange-red dye forms (test for aromatic 1° amines).",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Coupling partner",
+                "Conditions",
+                "Product",
+                "Colour"
+              ],
+              "rows": [
+                [
+                  "Phenol",
+                  "NaOH, 273–278 K",
+                  "4-Hydroxyazobenzene",
+                  "Orange"
+                ],
+                [
+                  "2-Naphthol",
+                  "NaOH, cold",
+                  "1-Phenylazo-2-naphthol",
+                  "Orange-red"
+                ],
+                [
+                  "Aniline",
+                  "Mildly acidic, cold",
+                  "4-Aminoazobenzene",
+                  "Yellow"
+                ]
+              ]
+            },
+            "alt": "Table of coupling reactions"
+          },
+          "math": [
+            "\\ce{C6H5N2Cl + C6H5OH + NaOH -> HOC6H4N=NC6H5 + NaCl + H2O}"
+          ],
+          "narration": "The diazonium ion is only a weak electrophile, so it reacts only with very activated rings. In mildly alkaline solution, phenol is present as the phenoxide ion, which is even more strongly activated, and coupling occurs at the para position to give orange four-hydroxyazobenzene. Two-naphthol gives an orange-red dye, the classic test for aniline.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s07",
+          "layout": "concept",
+          "heading": "Coupling with aniline",
+          "body_md": "In **mildly acidic** solution (pH ≈ 4–5), aniline couples at the **para** position to give **4-aminoazobenzene** (yellow; “aniline yellow”). Too acidic: aniline becomes anilinium (deactivated); too alkaline: the diazonium ion is converted to non-electrophilic species. The –N=N– **azo** group links two rings in a conjugated system, which is why azo compounds are **coloured**.",
+          "bullets": [],
+          "visual": {
+            "kind": "flow",
+            "spec": {
+              "direction": "LR",
+              "nodes": [
+                {
+                  "id": "a",
+                  "label": "ArN₂⁺ (weak electrophile)"
+                },
+                {
+                  "id": "b",
+                  "label": "Attacks para C of activated ring"
+                },
+                {
+                  "id": "c",
+                  "label": "Ar–N=N–Ar′ (extended conjugation)"
+                },
+                {
+                  "id": "d",
+                  "label": "Absorbs visible light: dye"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "a",
+                  "to": "b"
+                },
+                {
+                  "from": "b",
+                  "to": "c"
+                },
+                {
+                  "from": "c",
+                  "to": "d"
+                }
+              ]
+            },
+            "alt": "Flow of azo coupling"
+          },
+          "math": [
+            "\\ce{C6H5N2Cl + C6H5NH2 -> H2NC6H4N=NC6H5 + HCl}"
+          ],
+          "narration": "Aniline couples with the diazonium ion in slightly acidic solution, again at the para position, giving yellow four-aminoazobenzene. The pH matters: in strong acid, aniline is protonated and its ring deactivated; in strong alkali, the diazonium ion is destroyed. The azo group links two benzene rings in a long conjugated system, which absorbs visible light, so azo compounds are coloured and many are used as dyes.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s08",
+          "layout": "example",
+          "heading": "Worked example: coupling products",
+          "body_md": "**Problem.** Give the product and conditions for coupling benzenediazonium chloride with (a) phenol, (b) N,N-dimethylaniline and (c) 2-naphthol. Why does coupling occur at the para position?\n\n**(a)** Alkaline, cold: 4-hydroxyazobenzene (orange).\n\n**(b)** Mildly acidic, cold: 4-(dimethylamino)azobenzene (butter yellow).\n\n**(c)** Alkaline, cold: 1-phenylazo-2-naphthol (orange-red).\n\n**Para:** activated by –OH or –NR₂, and less hindered than ortho.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Partner",
+                "pH",
+                "Product"
+              ],
+              "rows": [
+                [
+                  "Phenol",
+                  "Alkaline",
+                  "4-Hydroxyazobenzene"
+                ],
+                [
+                  "N,N-Dimethylaniline",
+                  "Mildly acidic",
+                  "4-(Dimethylamino)azobenzene"
+                ],
+                [
+                  "2-Naphthol",
+                  "Alkaline",
+                  "1-Phenylazo-2-naphthol"
+                ]
+              ]
+            },
+            "alt": "Table of coupling products"
+          },
+          "math": [],
+          "narration": "Phenols couple in alkaline solution and amines in mildly acidic solution. With phenol and with N,N-dimethylaniline, the azo group enters para to the activating group, because that position is activated and less crowded than the ortho positions. With two-naphthol, coupling occurs at position one, next to the hydroxyl group, giving an orange-red dye.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s09",
+          "layout": "check",
+          "heading": "Quick check: coupling",
+          "body_md": "Predict the product or conditions of an azo coupling.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Phenols couple in alkali, amines in mild acid; the azo group goes para.",
+          "check_question_id": "q_isc12chem_ch20_042",
+          "audio": null
+        },
+        {
+          "id": "s10",
+          "layout": "concept",
+          "heading": "Importance in synthesis",
+          "body_md": "Diazonium salts let us introduce groups that **cannot be put directly** on the ring (F, I, CN, OH) and place groups in positions that **direct substitution would not give**: an –NH₂ group is used to direct substitution and then removed (–N₂⁺ → –H).",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Target",
+                "Route via ArN₂⁺"
+              ],
+              "rows": [
+                [
+                  "1,3,5-Tribromobenzene",
+                  "Aniline → Br₂(aq) → 2,4,6-tribromoaniline → diazotise → H₃PO₂"
+                ],
+                [
+                  "3-Bromotoluene",
+                  "4-Methylaniline → acetylate → brominate (ortho to NHCOCH₃) → hydrolyse → diazotise → H₃PO₂"
+                ],
+                [
+                  "Fluorobenzene",
+                  "Aniline → diazotise → HBF₄ → heat"
+                ],
+                [
+                  "Benzoic acid",
+                  "Aniline → diazotise → CuCN → hydrolyse"
+                ]
+              ]
+            },
+            "alt": "Table of syntheses using diazonium salts"
+          },
+          "math": [],
+          "narration": "Diazonium salts make many syntheses possible. Fluorine, iodine and cyanide groups cannot be put on a benzene ring directly, but they can replace a diazonium group. And an amino group can be used as a temporary director: for example, aniline is brominated at all three activated positions, and then the amino group is removed, giving one-three-five-tribromobenzene, a pattern impossible by direct bromination of benzene.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s11",
+          "layout": "example",
+          "heading": "Worked example: 1,3,5-tribromobenzene from aniline",
+          "body_md": "**Problem.** Show how 1,3,5-tribromobenzene can be made from aniline.\n\n**Step 1.** Bromine water: $\\ce{C6H5NH2 + 3Br2 -> C6H2Br3NH2 + 3HBr}$ (2,4,6-tribromoaniline).\n\n**Step 2.** Diazotise: NaNO₂ + HCl, 273–278 K → 2,4,6-tribromobenzenediazonium chloride.\n\n**Step 3.** H₃PO₂ (or ethanol): –N₂⁺ → –H, giving 1,3,5-tribromobenzene.",
+          "bullets": [],
+          "visual": {
+            "kind": "flow",
+            "spec": {
+              "direction": "LR",
+              "nodes": [
+                {
+                  "id": "a",
+                  "label": "Aniline"
+                },
+                {
+                  "id": "b",
+                  "label": "2,4,6-Tribromoaniline"
+                },
+                {
+                  "id": "c",
+                  "label": "Diazonium salt"
+                },
+                {
+                  "id": "d",
+                  "label": "1,3,5-Tribromobenzene"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "a",
+                  "to": "b"
+                },
+                {
+                  "from": "b",
+                  "to": "c"
+                },
+                {
+                  "from": "c",
+                  "to": "d"
+                }
+              ]
+            },
+            "alt": "Flow of the tribromobenzene synthesis"
+          },
+          "math": [],
+          "narration": "The amino group directs the three bromines to the two ortho and the para positions, which are meta to each other. Then the amino group is converted into a diazonium group and removed with hypophosphorous acid, leaving three bromines in the one, three and five positions. Direct bromination of benzene could never give this arrangement.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s12",
+          "layout": "check",
+          "heading": "Quick check: synthesis",
+          "body_md": "Choose a diazonium-based route to a target compound.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Use the amino group to place substituents, then replace or remove the diazonium group.",
+          "check_question_id": "q_isc12chem_ch20_045",
+          "audio": null
+        },
+        {
+          "id": "s13",
+          "layout": "summary",
+          "heading": "Summary: Part 2",
+          "body_md": "",
+          "bullets": [
+            "Sandmeyer: CuCl/HCl, CuBr/HBr, CuCN/KCN; Gattermann: Cu + HX.",
+            "KI → ArI; HBF₄ then heat → ArF (Balz–Schiemann); H₃PO₂ or ethanol → ArH; H₂O → ArOH; ArN₂BF₄ + NaNO₂/Cu → ArNO₂.",
+            "Coupling (para): phenols in alkali → hydroxyazo dyes; amines in mild acid → aminoazo dyes; colour from conjugated –N=N–.",
+            "Synthetic value: groups not introducible directly; –NH₂ as removable director."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Replacement",
+                "Reagent"
+              ],
+              "rows": [
+                [
+                  "–Cl / –Br",
+                  "CuX/HX"
+                ],
+                [
+                  "–I",
+                  "KI"
+                ],
+                [
+                  "–F",
+                  "HBF₄, heat"
+                ],
+                [
+                  "–H",
+                  "H₃PO₂"
+                ],
+                [
+                  "–OH",
+                  "H₂O, warm"
+                ]
+              ]
+            },
+            "alt": "Summary table of replacements"
+          },
+          "math": [],
+          "narration": "Let us sum up Part 2. The diazonium group can be replaced by chlorine, bromine and cyanide using copper salts, by iodine with potassium iodide, by fluorine via the fluoroborate, by hydrogen with hypophosphorous acid, by hydroxyl with warm water and by a nitro group. Or it can couple with phenols and amines to give coloured azo compounds. Together these make diazonium salts essential in aromatic synthesis.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s14",
+          "layout": "exam-tips",
+          "heading": "Exam tips: Part 2",
+          "body_md": "",
+          "bullets": [
+            "Distinguish Sandmeyer (Cu(I) salts) from Gattermann (Cu powder).",
+            "Give pH conditions for coupling with phenol (alkaline) and aniline (mildly acidic).",
+            "For multistep syntheses, give every reagent and intermediate.",
+            "Balz–Schiemann needs the fluoroborate salt to be heated."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Slip",
+                "Fix"
+              ],
+              "rows": [
+                [
+                  "KI with Cu needed",
+                  "KI alone (warm)"
+                ],
+                [
+                  "Phenol couples in acid",
+                  "Couples in alkali"
+                ],
+                [
+                  "H₃PO₂ gives phenol",
+                  "Gives benzene"
+                ]
+              ]
+            },
+            "alt": "Table of three common slips in Part 2 and fixes"
+          },
+          "math": [],
+          "narration": "Final tips. Keep the Sandmeyer and Gattermann reagents apart. Give the pH for coupling reactions. In multistep syntheses, show every reagent and intermediate. And remember that hypophosphorous acid replaces the diazonium group by hydrogen, while warm water gives phenol.",
+          "check_question_id": null,
+          "audio": null
+        }
+      ],
+      "status": "draft",
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    }
+  ],
+  "notes": {
+    "unit": "isc-12-chemistry-ch20",
+    "version": 1,
+    "title": "Cyanides, Isocyanides and Diazonium Salts — Notes",
+    "language": "en",
+    "sections": [
+      {
+        "heading": "1. Cyanides and isocyanides",
+        "body_md": "**Nitriles** R–C≡N (alkanenitriles; CH₃CN ethanenitrile) and **isocyanides** R–N≡C (isocyanoalkanes): functional isomers.\n\n**Cyanides:** RX + ethanolic KCN (ionic; C attacks; +1 C); amide + P₂O₅, heat. **Isocyanides:** RX + AgCN (covalent; N attacks); 1° amine + CHCl₃ + alcoholic KOH (carbylamine).\n\n| Property | Nitrile | Isocyanide |\n|---|---|---|\n| Smell | Pleasant | Foul |\n| Hydrolysis (H⁺) | RCOOH + NH₄⁺ | RNH₂ + HCOOH |\n| Reduction | RCH₂NH₂ (1°) | RNHCH₃ (2°) |\n| Heating | Stable | Isomerises to nitrile |",
+        "key_terms": [
+          {
+            "term": "Nitrile",
+            "definition_md": "A compound R–C≡N, named as an alkanenitrile."
+          },
+          {
+            "term": "Isocyanide",
+            "definition_md": "A compound R–N≡C, isomeric with the nitrile."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\ce{CH3CH2I + AgCN -> CH3CH2NC + AgI}",
+            "label": "Isocyanide from AgCN"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Reagent with RX",
+              "Product"
+            ],
+            "rows": [
+              [
+                "KCN",
+                "Nitrile"
+              ],
+              [
+                "AgCN",
+                "Isocyanide"
+              ]
+            ]
+          },
+          "alt": "Table of cyanide reagents"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "isc-12-chemistry-ch20-t01"
+        ]
+      },
+      {
+        "heading": "2. Preparation and stability of diazonium salts",
+        "body_md": "**Diazotisation:** $\\ce{C6H5NH2 + NaNO2 + 2HCl -> C6H5N2Cl + NaCl + 2H2O}$ at **273–278 K** (ice); HNO₂ formed in situ; excess HNO₂ turns starch–iodide paper blue. Aryl diazonium ions are resonance-stabilised but decompose on warming (→ phenol + N₂); dry salts are explosive; alkyl diazonium ions decompose at once.",
+        "key_terms": [
+          {
+            "term": "Diazotisation",
+            "definition_md": "Conversion of a primary aromatic amine into a diazonium salt with nitrous acid in the cold."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\ce{C6H5N2Cl + H2O -> C6H5OH + N2 + HCl}",
+            "label": "Decomposition on warming"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Condition",
+              "Result"
+            ],
+            "rows": [
+              [
+                "273–278 K",
+                "Stable in solution"
+              ],
+              [
+                "Warm",
+                "Phenol + N₂"
+              ],
+              [
+                "Dry",
+                "Explosive"
+              ]
+            ]
+          },
+          "alt": "Table of diazonium stability"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "isc-12-chemistry-ch20-t02"
+        ]
+      },
+      {
+        "heading": "3. Replacement reactions",
+        "body_md": "| Reagent | Product |\n|---|---|\n| CuCl/HCl (Sandmeyer) | ArCl |\n| CuBr/HBr (Sandmeyer) | ArBr |\n| CuCN/KCN (Sandmeyer) | ArCN |\n| Cu powder + HCl/HBr (Gattermann) | ArCl/ArBr |\n| KI, warm | ArI |\n| HBF₄; heat (Balz–Schiemann) | ArF |\n| H₃PO₂ or CH₃CH₂OH | ArH |\n| H₂O, warm | ArOH |\n| ArN₂BF₄ + NaNO₂, Cu, heat | ArNO₂ |\n\nIn each case N₂ is evolved and the new group occupies the position of –N₂⁺.",
+        "key_terms": [
+          {
+            "term": "Sandmeyer reaction",
+            "definition_md": "Replacement of –N₂⁺ by Cl, Br or CN using copper(I) salts."
+          },
+          {
+            "term": "Balz–Schiemann reaction",
+            "definition_md": "Preparation of aryl fluorides by heating arenediazonium fluoroborates."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\ce{C6H5N2BF4 -> C6H5F + BF3 + N2}",
+            "label": "Balz–Schiemann"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Group",
+              "Reagent"
+            ],
+            "rows": [
+              [
+                "–F",
+                "HBF₄, heat"
+              ],
+              [
+                "–I",
+                "KI"
+              ],
+              [
+                "–H",
+                "H₃PO₂"
+              ],
+              [
+                "–CN",
+                "CuCN"
+              ]
+            ]
+          },
+          "alt": "Table of key replacements"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "isc-12-chemistry-ch20-t03"
+        ]
+      },
+      {
+        "heading": "4. Coupling and synthetic importance",
+        "body_md": "**Coupling** (para): phenol in mildly alkaline solution → 4-hydroxyazobenzene (orange); 2-naphthol → orange-red dye (test for ArNH₂); aniline or N,N-dimethylaniline in mildly acidic solution → 4-aminoazobenzene (yellow) or butter yellow. Colour from the conjugated –N=N– system.\n\n**Importance:** introduces F, I, CN, OH not possible directly; –NH₂ used as a removable director (aniline → 2,4,6-tribromoaniline → diazotise → H₃PO₂ → 1,3,5-tribromobenzene); dyes.",
+        "key_terms": [
+          {
+            "term": "Azo coupling",
+            "definition_md": "Electrophilic substitution of an activated arene by a diazonium ion to give Ar–N=N–Ar′."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\ce{C6H5N2Cl + C6H5NH2 -> H2NC6H4N=NC6H5 + HCl}",
+            "label": "Coupling with aniline"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Partner",
+              "pH",
+              "Product"
+            ],
+            "rows": [
+              [
+                "Phenol",
+                "Alkaline",
+                "4-Hydroxyazobenzene"
+              ],
+              [
+                "Aniline",
+                "Mildly acidic",
+                "4-Aminoazobenzene"
+              ]
+            ]
+          },
+          "alt": "Table of coupling"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "isc-12-chemistry-ch20-t04"
+        ]
+      }
+    ],
+    "exam_tips_md": "**Common mistakes**\n- AgCN giving nitriles (it gives isocyanides).\n- Isocyanide hydrolysis giving a carboxylic acid with the same carbons.\n- Diazotising at room temperature.\n- Coupling phenol in acid or aniline in alkali.\n\n**How marks are usually awarded**\n- Replacement reactions (1 mark each): reagent, condition, product.\n- Syntheses (1 mark per step): every intermediate named.\n- Coupling (2 marks): equation with pH and product colour.",
+    "status": "draft",
+    "provenance": {
+      "origin": "human",
+      "template_version": null,
+      "model": null,
+      "generated_at": "2026-10-30",
+      "author": "claude-opus-5-5 (subject-producer)"
+    }
+  },
+  "flashcards": {
+    "unit": "isc-12-chemistry-ch20",
+    "version": 1,
+    "language": "en",
+    "cards": [
+      {
+        "id": "f01",
+        "front_md": "IUPAC name of CH₃CN?",
+        "back_md": "Ethanenitrile.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch20-t01"
+      },
+      {
+        "id": "f02",
+        "front_md": "RX + KCN?",
+        "back_md": "Nitrile RCN.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch20-t01"
+      },
+      {
+        "id": "f03",
+        "front_md": "RX + AgCN?",
+        "back_md": "Isocyanide RNC.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch20-t01"
+      },
+      {
+        "id": "f04",
+        "front_md": "Amide + P₂O₅?",
+        "back_md": "Nitrile.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch20-t01"
+      },
+      {
+        "id": "f05",
+        "front_md": "Carbylamine reaction product?",
+        "back_md": "Isocyanide.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch20-t01"
+      },
+      {
+        "id": "f06",
+        "front_md": "Nitrile hydrolysis?",
+        "back_md": "Carboxylic acid + NH₄⁺.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch20-t01"
+      },
+      {
+        "id": "f07",
+        "front_md": "Isocyanide hydrolysis?",
+        "back_md": "Amine + methanoic acid.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch20-t01"
+      },
+      {
+        "id": "f08",
+        "front_md": "Nitrile reduction?",
+        "back_md": "Primary amine.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch20-t01"
+      },
+      {
+        "id": "f09",
+        "front_md": "Isocyanide reduction?",
+        "back_md": "Secondary amine.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch20-t01"
+      },
+      {
+        "id": "f10",
+        "front_md": "Which isomer smells foul?",
+        "back_md": "Isocyanide.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch20-t01"
+      },
+      {
+        "id": "f11",
+        "front_md": "Diazotisation temperature?",
+        "back_md": "273–278 K.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch20-t02"
+      },
+      {
+        "id": "f12",
+        "front_md": "Why keep diazonium salts cold?",
+        "back_md": "They decompose to phenol + N₂.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch20-t02"
+      },
+      {
+        "id": "f13",
+        "front_md": "Why are aryl diazonium ions more stable?",
+        "back_md": "Resonance with the ring.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch20-t02"
+      },
+      {
+        "id": "f14",
+        "front_md": "Test for excess HNO₂?",
+        "back_md": "Starch–iodide paper turns blue.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch20-t02"
+      },
+      {
+        "id": "f15",
+        "front_md": "Sandmeyer reagents?",
+        "back_md": "CuCl/HCl, CuBr/HBr, CuCN/KCN.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch20-t03"
+      },
+      {
+        "id": "f16",
+        "front_md": "Gattermann reagent?",
+        "back_md": "Cu powder + HX.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch20-t03"
+      },
+      {
+        "id": "f17",
+        "front_md": "ArN₂⁺ → ArI?",
+        "back_md": "Warm with KI.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch20-t03"
+      },
+      {
+        "id": "f18",
+        "front_md": "ArN₂⁺ → ArF?",
+        "back_md": "HBF₄, then heat (Balz–Schiemann).",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch20-t03"
+      },
+      {
+        "id": "f19",
+        "front_md": "ArN₂⁺ → ArH?",
+        "back_md": "H₃PO₂ or ethanol.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch20-t03"
+      },
+      {
+        "id": "f20",
+        "front_md": "ArN₂⁺ → ArOH?",
+        "back_md": "Warm water.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch20-t03"
+      },
+      {
+        "id": "f21",
+        "front_md": "ArN₂⁺ → ArNO₂?",
+        "back_md": "ArN₂BF₄ + NaNO₂, Cu, heat.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch20-t03"
+      },
+      {
+        "id": "f22",
+        "front_md": "Coupling pH for phenol?",
+        "back_md": "Mildly alkaline.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch20-t04"
+      },
+      {
+        "id": "f23",
+        "front_md": "Coupling pH for aniline?",
+        "back_md": "Mildly acidic.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch20-t04"
+      },
+      {
+        "id": "f24",
+        "front_md": "Position of coupling?",
+        "back_md": "Para to –OH or –NH₂.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch20-t04"
+      },
+      {
+        "id": "f25",
+        "front_md": "Phenol coupling product?",
+        "back_md": "4-Hydroxyazobenzene (orange).",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch20-t04"
+      },
+      {
+        "id": "f26",
+        "front_md": "Aniline coupling product?",
+        "back_md": "4-Aminoazobenzene (yellow).",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch20-t04"
+      },
+      {
+        "id": "f27",
+        "front_md": "Why are azo compounds coloured?",
+        "back_md": "Extended conjugation through –N=N–.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch20-t04"
+      },
+      {
+        "id": "f28",
+        "front_md": "Test for ArNH₂?",
+        "back_md": "Diazotise, couple with alkaline 2-naphthol: orange-red.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch20-t04"
+      },
+      {
+        "id": "f29",
+        "front_md": "1,3,5-Tribromobenzene from aniline?",
+        "back_md": "Br₂(aq); diazotise; H₃PO₂.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch20-t04"
+      },
+      {
+        "id": "f30",
+        "front_md": "Benzoic acid from aniline?",
+        "back_md": "Diazotise; CuCN; hydrolyse.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch20-t04"
+      },
+      {
+        "id": "f31",
+        "front_md": "Exam tip: syntheses",
+        "back_md": "Name every intermediate and reagent.",
+        "tag": "exam-tip",
+        "topic_id": "isc-12-chemistry-ch20-t04"
+      }
+    ],
+    "status": "draft",
+    "provenance": {
+      "origin": "human",
+      "template_version": null,
+      "model": null,
+      "generated_at": "2026-10-30",
+      "author": "claude-opus-5-5 (subject-producer)"
+    }
+  },
+  "questions": [
+    {
+      "id": "q_isc12chem_ch20_001",
+      "unit": "isc-12-chemistry-ch20",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "2-Bromopropane is heated with silver cyanide. The main organic product is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "2-methylpropanenitrile, (CH₃)₂CHCN"
+        },
+        {
+          "id": "b",
+          "text_md": "2-isocyanopropane, (CH₃)₂CHNC"
+        },
+        {
+          "id": "c",
+          "text_md": "propan-2-amine"
+        },
+        {
+          "id": "d",
+          "text_md": "propene"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Covalent AgCN attacks through N — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch20-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch20_002",
+      "unit": "isc-12-chemistry-ch20",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Isocyanoethane, CH₃CH₂NC, is hydrolysed with dilute acid. The products are:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "propanoic acid and ammonium ions"
+        },
+        {
+          "id": "b",
+          "text_md": "ethanol and hydrogen cyanide"
+        },
+        {
+          "id": "c",
+          "text_md": "ethanamine and methanoic acid"
+        },
+        {
+          "id": "d",
+          "text_md": "ethanoic acid and methanamine"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "RNC + 2H₂O → RNH₂ + HCOOH — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch20-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch20_003",
+      "unit": "isc-12-chemistry-ch20",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "The IUPAC name of isopropyl cyanide, (CH₃)₂CHCN, is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "2-methylpropanenitrile"
+        },
+        {
+          "id": "b",
+          "text_md": "propanenitrile"
+        },
+        {
+          "id": "c",
+          "text_md": "2-cyanopropane"
+        },
+        {
+          "id": "d",
+          "text_md": "butanenitrile"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Count the CN carbon: four carbons with a methyl on C-2 — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch20-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch20_004",
+      "unit": "isc-12-chemistry-ch20",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Butanamide is heated with phosphorus pentoxide. The product is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "butan-1-amine"
+        },
+        {
+          "id": "b",
+          "text_md": "butanenitrile"
+        },
+        {
+          "id": "c",
+          "text_md": "propan-1-amine"
+        },
+        {
+          "id": "d",
+          "text_md": "butanoic acid"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Dehydration of the amide — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch20-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch20_005",
+      "unit": "isc-12-chemistry-ch20",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Isocyanomethane, CH₃NC, is reduced with H₂ over nickel. The product is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "ethanamine"
+        },
+        {
+          "id": "b",
+          "text_md": "methanamine"
+        },
+        {
+          "id": "c",
+          "text_md": "N-methylmethanamine (dimethylamine)"
+        },
+        {
+          "id": "d",
+          "text_md": "ethanenitrile"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Isocyanides give secondary amines: CH₃NHCH₃ — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch20-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch20_006",
+      "unit": "isc-12-chemistry-ch20",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which property distinguishes ethanenitrile from its isomer isocyanomethane?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Ethanenitrile has a lower boiling point"
+        },
+        {
+          "id": "b",
+          "text_md": "Isocyanomethane gives ethanoic acid on hydrolysis"
+        },
+        {
+          "id": "c",
+          "text_md": "They have different molecular formulae"
+        },
+        {
+          "id": "d",
+          "text_md": "Ethanenitrile has a pleasant smell; isocyanomethane has a very unpleasant smell"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch20-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch20_007",
+      "unit": "isc-12-chemistry-ch20",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "4-Methylaniline is warmed with chloroform and alcoholic KOH. The product is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "4-methylbenzonitrile"
+        },
+        {
+          "id": "b",
+          "text_md": "1-isocyano-4-methylbenzene (4-methylphenyl isocyanide)"
+        },
+        {
+          "id": "c",
+          "text_md": "4-methylphenol"
+        },
+        {
+          "id": "d",
+          "text_md": "N-methylaniline"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Carbylamine reaction of a primary amine — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch20-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch20_008",
+      "unit": "isc-12-chemistry-ch20",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Alkyl halides give mainly isocyanides with silver cyanide.\n\n**Reason (R):** In AgCN the Ag–C bond is largely covalent, so only the lone pair on nitrogen is available to attack.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Both are true, and R explains A — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch20-t01"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch20_009",
+      "unit": "isc-12-chemistry-ch20",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Nitriles have higher boiling points than the isomeric isocyanides.\n\n**Reason (R):** Nitriles are less polar than isocyanides.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "A is true. R is false: nitriles are more polar — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch20-t01"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch20_010",
+      "unit": "isc-12-chemistry-ch20",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? On heating, isocyanides rearrange into the more stable isomeric nitriles.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "t"
+        ]
+      },
+      "solution_md": "True.",
+      "marking_scheme": [
+        {
+          "step": "True",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch20-t01"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch20_011",
+      "unit": "isc-12-chemistry-ch20",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "The IUPAC name of CH₃CH₂CN is propane___.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "nitrile"
+            ]
+          }
+        ]
+      },
+      "solution_md": "Propane**nitrile**.",
+      "marking_scheme": [
+        {
+          "step": "Writes \"nitrile\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch20-t01"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch20_012",
+      "unit": "isc-12-chemistry-ch20",
+      "language": "en",
+      "type": "match",
+      "stem_md": "Match each reaction with its main organic product.",
+      "options": [
+        {
+          "id": "1",
+          "text_md": "1-Iodopropane + KCN"
+        },
+        {
+          "id": "2",
+          "text_md": "1-Iodopropane + AgCN"
+        },
+        {
+          "id": "3",
+          "text_md": "Propanamide + P₂O₅"
+        },
+        {
+          "id": "4",
+          "text_md": "Propan-1-amine + CHCl₃ + alc. KOH"
+        }
+      ],
+      "match_right": [
+        {
+          "id": "p",
+          "text_md": "1-Isocyanopropane"
+        },
+        {
+          "id": "q",
+          "text_md": "1-Isocyanopropane (foul smell)"
+        },
+        {
+          "id": "r",
+          "text_md": "Butanenitrile"
+        },
+        {
+          "id": "s",
+          "text_md": "Propanenitrile"
+        }
+      ],
+      "answer": {
+        "pairs": [
+          {
+            "left_id": "1",
+            "right_id": "r"
+          },
+          {
+            "left_id": "2",
+            "right_id": "p"
+          },
+          {
+            "left_id": "3",
+            "right_id": "s"
+          },
+          {
+            "left_id": "4",
+            "right_id": "q"
+          }
+        ]
+      },
+      "solution_md": "KCN → butanenitrile; AgCN → 1-isocyanopropane; P₂O₅ → propanenitrile; carbylamine → 1-isocyanopropane.",
+      "marking_scheme": [
+        {
+          "step": "1 → r",
+          "marks": 0.5
+        },
+        {
+          "step": "2 → p",
+          "marks": 0.5
+        },
+        {
+          "step": "3 → s",
+          "marks": 0.5
+        },
+        {
+          "step": "4 → q",
+          "marks": 0.5
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch20-t01"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch20_013",
+      "unit": "isc-12-chemistry-ch20",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "$13.7\\ \\text{g}$ of 1-bromobutane ($M = 137$) is heated with excess ethanolic KCN. If the yield of pentanenitrile ($M = 83$) is 80%, what mass is obtained?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 6.64,
+        "tolerance": 0.03,
+        "unit": "g"
+      },
+      "solution_md": "$n = 13.7 \\div 137 = 0.100\\ \\text{mol}$; mass $= 0.100 \\times 83 \\times 0.80 = 6.64\\ \\text{g}$.",
+      "marking_scheme": [
+        {
+          "step": "0.100 mol",
+          "marks": 1
+        },
+        {
+          "step": "6.64 g",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch20-t01"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch20_014",
+      "unit": "isc-12-chemistry-ch20",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write equations for preparing (a) propanenitrile from propanamide and (b) isocyanoethane from iodoethane.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) $\\ce{CH3CH2CONH2 ->[P2O5][\\Delta] CH3CH2CN + H2O}$. (b) $\\ce{CH3CH2I + AgCN -> CH3CH2NC + AgI}$."
+      },
+      "solution_md": "Dehydration; AgCN.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch20-t01"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch20_015",
+      "unit": "isc-12-chemistry-ch20",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Explain why 1-bromopropane gives butanenitrile with KCN but 1-isocyanopropane with AgCN.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "CN⁻ is ambident. KCN is ionic, so the free cyanide ion attacks through carbon, the more nucleophilic end, giving the nitrile. AgCN is largely covalent (Ag–C bond); the carbon lone pair is tied up, so attack occurs through nitrogen, giving the isocyanide."
+      },
+      "solution_md": "Ionic vs covalent cyanide.",
+      "marking_scheme": [
+        {
+          "step": "KCN ionic, C attacks",
+          "marks": 1
+        },
+        {
+          "step": "AgCN covalent, N attacks",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch20-t01"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch20_016",
+      "unit": "isc-12-chemistry-ch20",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Compare propanenitrile and isocyanoethane with respect to (a) the product of acid hydrolysis, (b) the product of reduction with LiAlH₄ and (c) smell.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Propanenitrile → propanoic acid + NH₄⁺; isocyanoethane → ethanamine + methanoic acid. (b) Propanenitrile → propan-1-amine (1°); isocyanoethane → N-methylethanamine (2°). (c) The nitrile has a pleasant smell; the isocyanide is foul-smelling."
+      },
+      "solution_md": "Hydrolysis; reduction; smell.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch20-t01"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch20_017",
+      "unit": "isc-12-chemistry-ch20",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write the IUPAC names of (a) CH₃CH₂CH₂CN, (b) C₆H₅CN and (c) (CH₃)₃CNC, and state which is an isocyanide.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Butanenitrile. (b) Benzonitrile. (c) 2-Isocyano-2-methylpropane — the isocyanide."
+      },
+      "solution_md": "Butanenitrile; benzonitrile; 2-isocyano-2-methylpropane.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch20-t01"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch20_018",
+      "unit": "isc-12-chemistry-ch20",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A student diazotises 4-chloroaniline but allows the mixture to warm to 300 K. The main organic product will be:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "4-chlorobenzenediazonium chloride, unchanged"
+        },
+        {
+          "id": "b",
+          "text_md": "4-chloronitrobenzene"
+        },
+        {
+          "id": "c",
+          "text_md": "chlorobenzene"
+        },
+        {
+          "id": "d",
+          "text_md": "4-chlorophenol, with evolution of nitrogen"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Warm diazonium salts are hydrolysed to phenols — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch20-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch20_019",
+      "unit": "isc-12-chemistry-ch20",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "In diazotisation, nitrous acid is generated in the reaction mixture from:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "sodium nitrite and hydrochloric acid"
+        },
+        {
+          "id": "b",
+          "text_md": "sodium nitrate and sulphuric acid"
+        },
+        {
+          "id": "c",
+          "text_md": "nitric acid alone"
+        },
+        {
+          "id": "d",
+          "text_md": "ammonium nitrite on heating"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "NaNO₂ + HCl → HNO₂ + NaCl — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch20-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch20_020",
+      "unit": "isc-12-chemistry-ch20",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Benzenediazonium chloride is far more stable in cold solution than ethanediazonium chloride because:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "benzene rings release nitrogen easily"
+        },
+        {
+          "id": "b",
+          "text_md": "ethanediazonium chloride is a solid"
+        },
+        {
+          "id": "c",
+          "text_md": "the positive charge of the aryl diazonium ion is delocalised into the benzene ring"
+        },
+        {
+          "id": "d",
+          "text_md": "aromatic amines are stronger bases"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Resonance stabilisation — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch20-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch20_021",
+      "unit": "isc-12-chemistry-ch20",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? Dry benzenediazonium chloride is a safe, stable solid that can be stored for long periods.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "f"
+        ]
+      },
+      "solution_md": "False. Dry diazonium salts can explode; they are used in solution at once.",
+      "marking_scheme": [
+        {
+          "step": "False, with the correction",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch20-t02"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch20_022",
+      "unit": "isc-12-chemistry-ch20",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "Excess nitrous acid at the end of diazotisation is detected with starch–___ paper, which turns blue.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "iodide",
+              "potassium iodide",
+              "KI"
+            ]
+          }
+        ]
+      },
+      "solution_md": "Starch–**iodide** paper.",
+      "marking_scheme": [
+        {
+          "step": "Writes \"iodide\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch20-t02"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch20_023",
+      "unit": "isc-12-chemistry-ch20",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Diazotisation of aniline is carried out in an ice bath.\n\n**Reason (R):** Benzenediazonium chloride decomposes to phenol and nitrogen at higher temperatures.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Both are true, and R explains A — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch20-t02"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch20_024",
+      "unit": "isc-12-chemistry-ch20",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "$4.65\\ \\text{g}$ of aniline ($M = 93$) is diazotised completely. How many grams of sodium nitrite ($M = 69$) are needed at least? ($\\ce{C6H5NH2 + NaNO2 + 2HCl -> C6H5N2Cl + NaCl + 2H2O}$)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 3.45,
+        "tolerance": 0.02,
+        "unit": "g"
+      },
+      "solution_md": "$n = 4.65 \\div 93 = 0.0500\\ \\text{mol}$; mass of NaNO₂ $= 0.0500 \\times 69 = 3.45\\ \\text{g}$.",
+      "marking_scheme": [
+        {
+          "step": "0.0500 mol",
+          "marks": 1
+        },
+        {
+          "step": "3.45 g",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch20-t02"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch20_025",
+      "unit": "isc-12-chemistry-ch20",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write the equation for the diazotisation of 4-methylaniline and state the conditions.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "$\\ce{CH3C6H4NH2 + NaNO2 + 2HCl -> CH3C6H4N2Cl + NaCl + 2H2O}$; aqueous solution in excess HCl, cooled in ice to 273–278 K, NaNO₂ added slowly."
+      },
+      "solution_md": "Equation; 273–278 K.",
+      "marking_scheme": [
+        {
+          "step": "Equation",
+          "marks": 1
+        },
+        {
+          "step": "Conditions",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch20-t02"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch20_026",
+      "unit": "isc-12-chemistry-ch20",
+      "language": "en",
+      "type": "short",
+      "stem_md": "(a) Why are aromatic diazonium salts more stable than aliphatic ones? (b) What happens when an aqueous solution of benzenediazonium chloride is warmed? (c) Why must dry diazonium salts be avoided?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) The –N₂⁺ group is conjugated with the ring, so the positive charge is delocalised (resonance); aliphatic diazonium ions have no such stabilisation and lose N₂ at once. (b) It decomposes: $\\ce{C6H5N2Cl + H2O -> C6H5OH + N2 + HCl}$. (c) Dry diazonium salts are shock-sensitive and can explode."
+      },
+      "solution_md": "Resonance; phenol + N₂; explosive.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch20-t02"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch20_027",
+      "unit": "isc-12-chemistry-ch20",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "4-Nitrobenzenediazonium chloride is treated with copper(I) cyanide in KCN solution. The product is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "4-nitrobenzonitrile"
+        },
+        {
+          "id": "b",
+          "text_md": "4-nitrophenyl isocyanide"
+        },
+        {
+          "id": "c",
+          "text_md": "4-nitroaniline"
+        },
+        {
+          "id": "d",
+          "text_md": "nitrobenzene"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Sandmeyer reaction introduces –CN — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch20-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch20_028",
+      "unit": "isc-12-chemistry-ch20",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "4-Fluorotoluene is best made from 4-methylaniline by:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "heating with F₂ and FeF₃"
+        },
+        {
+          "id": "b",
+          "text_md": "diazotising, precipitating the fluoroborate with HBF₄ and heating the dry salt"
+        },
+        {
+          "id": "c",
+          "text_md": "diazotising and adding KF"
+        },
+        {
+          "id": "d",
+          "text_md": "heating with CuF and HF"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Balz–Schiemann reaction — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch20-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch20_029",
+      "unit": "isc-12-chemistry-ch20",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "2,4,6-Tribromobenzenediazonium chloride is warmed with hypophosphorous acid, H₃PO₂. The product is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "2,4,6-tribromophenol"
+        },
+        {
+          "id": "b",
+          "text_md": "2,4,6-tribromoaniline"
+        },
+        {
+          "id": "c",
+          "text_md": "bromobenzene"
+        },
+        {
+          "id": "d",
+          "text_md": "1,3,5-tribromobenzene"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "H₃PO₂ replaces –N₂⁺ by –H — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch20-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch20_030",
+      "unit": "isc-12-chemistry-ch20",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "In the Gattermann reaction for preparing chlorobenzene from benzenediazonium chloride, the reagent used is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "copper(I) chloride and hydrochloric acid"
+        },
+        {
+          "id": "b",
+          "text_md": "chlorine and FeCl₃"
+        },
+        {
+          "id": "c",
+          "text_md": "copper powder and hydrochloric acid"
+        },
+        {
+          "id": "d",
+          "text_md": "potassium chloride alone"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "CuCl/HCl is Sandmeyer; Cu powder + HCl is Gattermann — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch20-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch20_031",
+      "unit": "isc-12-chemistry-ch20",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which reagent converts 3-methylbenzenediazonium chloride into 3-iodotoluene?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "CuI and HI"
+        },
+        {
+          "id": "b",
+          "text_md": "I₂ with FeI₃"
+        },
+        {
+          "id": "c",
+          "text_md": "HI with red phosphorus"
+        },
+        {
+          "id": "d",
+          "text_md": "Aqueous potassium iodide, warmed"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Iodide replaces –N₂⁺ without a copper catalyst — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch20-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch20_032",
+      "unit": "isc-12-chemistry-ch20",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Benzenediazonium fluoroborate is heated with aqueous NaNO₂ in the presence of copper. The product is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "nitrobenzene"
+        },
+        {
+          "id": "b",
+          "text_md": "fluorobenzene"
+        },
+        {
+          "id": "c",
+          "text_md": "phenol"
+        },
+        {
+          "id": "d",
+          "text_md": "nitrosobenzene"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "–N₂⁺ is replaced by –NO₂ — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch20-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch20_033",
+      "unit": "isc-12-chemistry-ch20",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Warming benzenediazonium chloride with ethanol gives benzene.\n\n**Reason (R):** Ethanol is oxidised to ethanal while the diazonium group is replaced by hydrogen.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Both true; R explains A — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch20-t03"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch20_034",
+      "unit": "isc-12-chemistry-ch20",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? Iodobenzene is obtained from benzenediazonium chloride only in the presence of a copper(I) catalyst.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "f"
+        ]
+      },
+      "solution_md": "False. Warming with KI alone is enough.",
+      "marking_scheme": [
+        {
+          "step": "False, with the correction",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch20-t03"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch20_035",
+      "unit": "isc-12-chemistry-ch20",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "The conversion of an arenediazonium fluoroborate into an aryl fluoride by heating is called the Balz–___ reaction.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "Schiemann"
+            ]
+          }
+        ]
+      },
+      "solution_md": "Balz–**Schiemann**.",
+      "marking_scheme": [
+        {
+          "step": "Writes \"Schiemann\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch20-t03"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch20_036",
+      "unit": "isc-12-chemistry-ch20",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "$0.050\\ \\text{mol}$ of 4-methylbenzenediazonium chloride is converted completely into 4-bromotoluene by the Sandmeyer reaction. What volume of nitrogen is released at STP? (Molar volume $22.4\\ \\text{L}$)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 1.12,
+        "tolerance": 0.01,
+        "unit": "L"
+      },
+      "solution_md": "1 mol N₂ per mol diazonium salt: $V = 0.050 \\times 22.4 = 1.12\\ \\text{L}$.",
+      "marking_scheme": [
+        {
+          "step": "1 : 1",
+          "marks": 1
+        },
+        {
+          "step": "1.12 L",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch20-t03"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch20_037",
+      "unit": "isc-12-chemistry-ch20",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "$9.3\\ \\text{g}$ of aniline ($M = 93$) is diazotised and treated with KI. If the overall yield of iodobenzene ($M = 204$) is 70%, what mass is obtained?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 14.28,
+        "tolerance": 0.05,
+        "unit": "g"
+      },
+      "solution_md": "$n = 9.3 \\div 93 = 0.100\\ \\text{mol}$; mass $= 0.100 \\times 204 \\times 0.70 = 14.28\\ \\text{g}$.",
+      "marking_scheme": [
+        {
+          "step": "0.100 mol",
+          "marks": 1
+        },
+        {
+          "step": "14.28 g",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch20-t03"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch20_038",
+      "unit": "isc-12-chemistry-ch20",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Distinguish between the Sandmeyer and Gattermann reactions, using the preparation of chlorobenzene as the example.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Sandmeyer: copper(I) chloride in HCl — $\\ce{C6H5N2Cl ->[CuCl/HCl] C6H5Cl + N2}$. Gattermann: copper powder with HCl — $\\ce{C6H5N2Cl ->[Cu/HCl] C6H5Cl + N2}$; yields are usually lower."
+      },
+      "solution_md": "CuCl/HCl vs Cu/HCl.",
+      "marking_scheme": [
+        {
+          "step": "Sandmeyer",
+          "marks": 1
+        },
+        {
+          "step": "Gattermann",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch20-t03"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch20_039",
+      "unit": "isc-12-chemistry-ch20",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write equations for the Balz–Schiemann preparation of fluorobenzene from benzenediazonium chloride.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "$\\ce{C6H5N2Cl + HBF4 -> C6H5N2BF4 + HCl}$ (fluoroborate precipitates); $\\ce{C6H5N2BF4 ->[\\Delta] C6H5F + BF3 + N2}$."
+      },
+      "solution_md": "Fluoroborate; heat.",
+      "marking_scheme": [
+        {
+          "step": "First step",
+          "marks": 1
+        },
+        {
+          "step": "Second step",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch20-t03"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch20_040",
+      "unit": "isc-12-chemistry-ch20",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Give reagents to convert 3-nitrobenzenediazonium chloride into (a) 1-bromo-3-nitrobenzene, (b) 3-nitrophenol and (c) nitrobenzene.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) CuBr/HBr (Sandmeyer) or Cu + HBr (Gattermann). (b) Warm with water (dilute H₂SO₄). (c) H₃PO₂ (or ethanol)."
+      },
+      "solution_md": "CuBr; water; H₃PO₂.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch20-t03"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch20_041",
+      "unit": "isc-12-chemistry-ch20",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write balanced equations for converting benzenediazonium chloride into (a) benzonitrile, (b) benzene with H₃PO₂ and (c) iodobenzene.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) $\\ce{C6H5N2Cl + CuCN -> C6H5CN + N2 + CuCl}$. (b) $\\ce{C6H5N2Cl + H3PO2 + H2O -> C6H6 + N2 + H3PO3 + HCl}$. (c) $\\ce{C6H5N2Cl + KI -> C6H5I + KCl + N2}$."
+      },
+      "solution_md": "Three equations.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch20-t03"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch20_042",
+      "unit": "isc-12-chemistry-ch20",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Benzenediazonium chloride is added to N,N-dimethylaniline in mildly acidic solution at 273 K. The product is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "N,N-dimethyl-4-nitroaniline"
+        },
+        {
+          "id": "b",
+          "text_md": "4-(dimethylamino)azobenzene, a yellow dye"
+        },
+        {
+          "id": "c",
+          "text_md": "diphenylamine"
+        },
+        {
+          "id": "d",
+          "text_md": "phenol and N₂"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Para coupling with the activated amine — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch20-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch20_043",
+      "unit": "isc-12-chemistry-ch20",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Coupling of benzenediazonium chloride with phenol is carried out in mildly alkaline solution because:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "the diazonium ion is more stable in strong alkali"
+        },
+        {
+          "id": "b",
+          "text_md": "alkali converts phenol into benzene"
+        },
+        {
+          "id": "c",
+          "text_md": "acid would oxidise phenol"
+        },
+        {
+          "id": "d",
+          "text_md": "phenol is converted into the more strongly activated phenoxide ion"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "PhO⁻ is a better nucleophile for the weakly electrophilic ArN₂⁺ — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch20-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch20_044",
+      "unit": "isc-12-chemistry-ch20",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Azo compounds such as 4-hydroxyazobenzene are coloured mainly because:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "the –N=N– group links two rings in an extended conjugated system that absorbs visible light"
+        },
+        {
+          "id": "b",
+          "text_md": "they contain metal ions"
+        },
+        {
+          "id": "c",
+          "text_md": "they are ionic salts"
+        },
+        {
+          "id": "d",
+          "text_md": "they contain a nitro group"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch20-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch20_045",
+      "unit": "isc-12-chemistry-ch20",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which sequence converts aniline into 1,3,5-tribromobenzene?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Bromine water; then NaNO₂/HCl at 273 K; then H₃PO₂"
+        },
+        {
+          "id": "b",
+          "text_md": "Br₂/FeBr₃ three times"
+        },
+        {
+          "id": "c",
+          "text_md": "NaNO₂/HCl; then CuBr/HBr; then Br₂ water"
+        },
+        {
+          "id": "d",
+          "text_md": "H₃PO₂; then Br₂/FeBr₃"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "NH₂ directs Br to 2,4,6; diazotise and remove — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch20-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch20_046",
+      "unit": "isc-12-chemistry-ch20",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A colourless aromatic amine is diazotised in the cold and the solution is added to alkaline 2-naphthol; an orange-red precipitate forms. The amine is most likely:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "a tertiary aliphatic amine"
+        },
+        {
+          "id": "b",
+          "text_md": "a secondary aliphatic amine"
+        },
+        {
+          "id": "c",
+          "text_md": "a primary aromatic amine such as 4-methylaniline"
+        },
+        {
+          "id": "d",
+          "text_md": "ethanamine"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Only ArNH₂ gives stable diazonium salts that couple — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch20-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch20_047",
+      "unit": "isc-12-chemistry-ch20",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Benzenediazonium ion couples with aniline in strongly acidic solution.\n\n**Reason (R):** In strongly acidic solution aniline is protonated to the deactivated anilinium ion.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "A is false (coupling needs mildly acidic conditions). R is true and explains why strong acid prevents coupling — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch20-t04"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch20_048",
+      "unit": "isc-12-chemistry-ch20",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? In azo coupling with phenol, the azo group enters mainly at the para position to the –OH group.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "t"
+        ]
+      },
+      "solution_md": "True.",
+      "marking_scheme": [
+        {
+          "step": "True",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch20-t04"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch20_049",
+      "unit": "isc-12-chemistry-ch20",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "Coupling benzenediazonium chloride with aniline in mildly acidic solution gives 4-aminoazobenzene, known as aniline ___.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "yellow"
+            ]
+          }
+        ]
+      },
+      "solution_md": "Aniline **yellow**.",
+      "marking_scheme": [
+        {
+          "step": "Writes \"yellow\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch20-t04"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch20_050",
+      "unit": "isc-12-chemistry-ch20",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "$0.025\\ \\text{mol}$ of benzenediazonium chloride couples completely with excess 2-naphthol to give 1-phenylazo-2-naphthol ($M = 248$). What mass of dye is formed?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 6.2,
+        "tolerance": 0.02,
+        "unit": "g"
+      },
+      "solution_md": "1 : 1: mass $= 0.025 \\times 248 = 6.2\\ \\text{g}$.",
+      "marking_scheme": [
+        {
+          "step": "1 : 1",
+          "marks": 1
+        },
+        {
+          "step": "6.2 g",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch20-t04"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch20_051",
+      "unit": "isc-12-chemistry-ch20",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write the equation for coupling benzenediazonium chloride with phenol and state the conditions and the colour of the product.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "$\\ce{C6H5N2Cl + C6H5OH + NaOH -> HOC6H4N=NC6H5 + NaCl + H2O}$; mildly alkaline, 273–278 K; orange 4-hydroxyazobenzene."
+      },
+      "solution_md": "Equation; alkaline, cold; orange.",
+      "marking_scheme": [
+        {
+          "step": "Equation",
+          "marks": 1
+        },
+        {
+          "step": "Conditions and colour",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch20-t04"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch20_052",
+      "unit": "isc-12-chemistry-ch20",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Show how benzoic acid can be made from aniline using a diazonium salt, naming the intermediates.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Aniline → (NaNO₂/HCl, 273–278 K) benzenediazonium chloride → (CuCN/KCN, Sandmeyer) benzonitrile → (H₃O⁺, heat) benzoic acid."
+      },
+      "solution_md": "Diazonium → nitrile → acid.",
+      "marking_scheme": [
+        {
+          "step": "Intermediates",
+          "marks": 1
+        },
+        {
+          "step": "Reagents",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch20-t04"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch20_053",
+      "unit": "isc-12-chemistry-ch20",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Explain, with one example each, why diazonium salts are important in synthesis: (a) introducing groups that cannot be put on a ring directly, (b) placing substituents in positions not available by direct substitution and (c) making dyes.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) F, I, CN and OH can replace –N₂⁺ (e.g. fluorobenzene by Balz–Schiemann; iodobenzene with KI). (b) The –NH₂ group directs substitution and is then removed via –N₂⁺ (e.g. aniline → 2,4,6-tribromoaniline → 1,3,5-tribromobenzene with H₃PO₂). (c) Coupling with phenols or amines gives azo dyes (e.g. 4-hydroxyazobenzene, orange)."
+      },
+      "solution_md": "Three uses with examples.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 3,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch20-t04"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch20_054",
+      "unit": "isc-12-chemistry-ch20",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Explain the pH conditions needed for coupling a diazonium salt with (a) phenol and (b) aniline, and (c) why coupling occurs at the para position.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Mildly alkaline: phenol is converted into the strongly activating phenoxide ion; strong alkali would convert the diazonium ion into a non-electrophilic diazotate. (b) Mildly acidic: free aniline remains (strong acid would give anilinium, deactivating the ring). (c) Para is strongly activated by –OH/–NH₂ and less hindered than ortho."
+      },
+      "solution_md": "Alkaline; mildly acidic; para.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 4,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch20-t04"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch20_055",
+      "unit": "isc-12-chemistry-ch20",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Write equations for preparing (i) butanenitrile from 1-bromopropane and (ii) isocyanomethane from methanamine. [2]\n\n(b) Compare ethanenitrile and isocyanomethane with respect to hydrolysis and reduction products. [2]\n\n(c) Explain why KCN and AgCN give different products with alkyl halides. [1]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) (i) $\\ce{CH3CH2CH2Br + KCN -> CH3CH2CH2CN + KBr}$. (ii) $\\ce{CH3NH2 + CHCl3 + 3KOH -> CH3NC + 3KCl + 3H2O}$.\n\n(b) Hydrolysis: CH₃CN → CH₃COOH + NH₄⁺; CH₃NC → CH₃NH₂ + HCOOH. Reduction: CH₃CN → CH₃CH₂NH₂ (1°); CH₃NC → CH₃NHCH₃ (2°).\n\n(c) KCN is ionic: CN⁻ attacks through C → nitrile. AgCN is covalent: only N attacks → isocyanide."
+      },
+      "solution_md": "Two preparations; comparison; ionic vs covalent.",
+      "marking_scheme": [
+        {
+          "step": "(a)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(a)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(b) Hydrolysis",
+          "marks": 1
+        },
+        {
+          "step": "(b) Reduction",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 5,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch20-t01"
+      ],
+      "expected_time_sec": 570,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch20_056",
+      "unit": "isc-12-chemistry-ch20",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) How is benzenediazonium chloride prepared from aniline? State the conditions. [1½]\n\n(b) Give reagents and equations to convert it into (i) fluorobenzene, (ii) benzonitrile and (iii) benzene. [3]\n\n(c) What is formed if the diazonium solution is allowed to warm up? [½]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) $\\ce{C6H5NH2 + NaNO2 + 2HCl -> C6H5N2Cl + NaCl + 2H2O}$ at 273–278 K, NaNO₂ added slowly to aniline in excess HCl.\n\n(b) (i) HBF₄, then heat the dry fluoroborate: $\\ce{C6H5N2BF4 -> C6H5F + BF3 + N2}$. (ii) CuCN/KCN: $\\ce{C6H5N2Cl + CuCN -> C6H5CN + N2 + CuCl}$. (iii) H₃PO₂: $\\ce{C6H5N2Cl + H3PO2 + H2O -> C6H6 + N2 + H3PO3 + HCl}$.\n\n(c) Phenol (+ N₂ + HCl)."
+      },
+      "solution_md": "Diazotisation; three replacements; phenol.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1.5
+        },
+        {
+          "step": "(b)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(b)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(b)(iii)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 0.5
+        }
+      ],
+      "marks": 5,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch20-t02",
+        "isc-12-chemistry-ch20-t03"
+      ],
+      "expected_time_sec": 570,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch20_057",
+      "unit": "isc-12-chemistry-ch20",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Write equations for coupling benzenediazonium chloride with (i) phenol and (ii) aniline, giving the conditions. [2]\n\n(b) Why are azo compounds coloured? [1]\n\n(c) Show how 1,3,5-tribromobenzene is made from aniline, and explain why it cannot be made by brominating benzene. [2]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) (i) $\\ce{C6H5N2Cl + C6H5OH + NaOH -> HOC6H4N=NC6H5 + NaCl + H2O}$ (mildly alkaline, cold; orange). (ii) $\\ce{C6H5N2Cl + C6H5NH2 -> H2NC6H4N=NC6H5 + HCl}$ (mildly acidic, cold; yellow).\n\n(b) The –N=N– group joins two aromatic rings in an extended conjugated system that absorbs visible light.\n\n(c) Aniline + bromine water → 2,4,6-tribromoaniline; NaNO₂/HCl at 273–278 K → diazonium salt; H₃PO₂ → 1,3,5-tribromobenzene. Bromine is o/p directing, so bromination of benzene gives 1,2- and 1,4-dibromo patterns, never three bromines all meta to one another."
+      },
+      "solution_md": "Two couplings; conjugation; tribromobenzene synthesis.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 2
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 2
+        }
+      ],
+      "marks": 5,
+      "difficulty": 4,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch20-t04"
+      ],
+      "expected_time_sec": 570,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch20_058",
+      "unit": "isc-12-chemistry-ch20",
+      "language": "en",
+      "type": "long",
+      "stem_md": "Starting from aniline, show how you would obtain each of the following, giving reagents and conditions. [1 each]\n\n(a) Phenol\n\n(b) Iodobenzene\n\n(c) Chlorobenzene (Gattermann)\n\n(d) Nitrobenzene\n\n(e) 4-Hydroxyazobenzene",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "First diazotise each time: NaNO₂ + HCl at 273–278 K. Then: (a) warm with water. (b) Warm with aqueous KI. (c) Copper powder + HCl. (d) HBF₄ to give the fluoroborate, then NaNO₂ with copper, heat. (e) Add to phenol in cold NaOH solution."
+      },
+      "solution_md": "Five conversions via the diazonium salt.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        },
+        {
+          "step": "(d)",
+          "marks": 1
+        },
+        {
+          "step": "(e)",
+          "marks": 1
+        }
+      ],
+      "marks": 5,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch20-t03",
+        "isc-12-chemistry-ch20-t04"
+      ],
+      "expected_time_sec": 570,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch20_059",
+      "unit": "isc-12-chemistry-ch20",
+      "language": "en",
+      "type": "long",
+      "stem_md": "Compound A, C₃H₅N, has a pleasant smell; on acid hydrolysis it gives B, C₃H₆O₂, and on reduction with LiAlH₄ it gives C, C₃H₉N. Its isomer D is foul-smelling and on hydrolysis gives methanoic acid and E, C₂H₇N.\n\n(a) Identify A to E. [4]\n\n(b) Name the reagent that converts bromoethane into A. [1]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) A: propanenitrile, CH₃CH₂CN. B: propanoic acid, CH₃CH₂COOH. C: propan-1-amine, CH₃CH₂CH₂NH₂. D: isocyanoethane, CH₃CH₂NC. E: ethanamine, CH₃CH₂NH₂.\n\n(b) Ethanolic KCN (or NaCN)."
+      },
+      "solution_md": "Propanenitrile, propanoic acid, propan-1-amine, isocyanoethane, ethanamine.",
+      "marking_scheme": [
+        {
+          "step": "A",
+          "marks": 1
+        },
+        {
+          "step": "B and C",
+          "marks": 1
+        },
+        {
+          "step": "D",
+          "marks": 1
+        },
+        {
+          "step": "E",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        }
+      ],
+      "marks": 5,
+      "difficulty": 4,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch20-t01"
+      ],
+      "expected_time_sec": 570,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch20_060",
+      "unit": "isc-12-chemistry-ch20",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Starting from 4-methylaniline, how would you obtain (a) 4-methylphenol, (b) 4-methylbenzoic acid and (c) toluene? Give reagents for each step.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Diazotise first: NaNO₂ + HCl at 273–278 K → 4-methylbenzenediazonium chloride. (a) Warm with water → 4-methylphenol. (b) CuCN/KCN → 4-methylbenzonitrile; then hydrolyse with hot dilute acid → 4-methylbenzoic acid. (c) H₃PO₂ (or ethanol) → toluene."
+      },
+      "solution_md": "Diazotise; water; CuCN then hydrolysis; H₃PO₂.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch20-t03",
+        "isc-12-chemistry-ch20-t04"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    }
+  ],
+  "build": {
+    "run_id": null,
+    "checks": {
+      "katex_mhchem": "69 math strings parsed with KaTeX 0.19.0 + mhchem (throwOnError, strict \"error\"), 0 failures",
+      "svg_allowlist": "0 SVG visuals (0 distinct diagrams) checked with saxes against svg-allowlist.ts: elements, attributes, class pattern, fragment-only refs, no style, palette incl. named hues, viewBox, title, per-page unique ids — 0 failures",
+      "narration": "28 slides, 12–67 words (mean 48), no symbols, formulae or unit abbreviations",
+      "resolve": "5/5 scripted re-solve checks pass",
+      "chemistry_facts": "Preparations and properties of nitriles and isocyanides, diazotisation and diazonium stability, Sandmeyer, Gattermann, Balz–Schiemann and other replacement reactions, azo coupling conditions, multistep syntheses and every numerical checked against the ISC 2027 syllabus (Unit 9)",
+      "content_gate": "npm test -w @soyl/content-templates: all checks pass for this chapter",
+      "verifier_pass": "2026-10-30: every question and every internal-choice alternative re-solved from its stem by the author; every numerical re-computed by the build script — see README \"Verifier pass\"",
+      "pipeline_lint": "npm run content -- lint --exemplars: 0 errors, 0 warnings"
+    }
+  }
+}
