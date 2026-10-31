@@ -1,0 +1,5188 @@
+{
+  "unit": "isc-12-chemistry-ch15",
+  "version": 1,
+  "academic_year": "2026-27",
+  "created_at": "2026-10-30T00:00:00+05:30",
+  "decks": [
+    {
+      "unit": "isc-12-chemistry-ch15",
+      "part": 1,
+      "version": 1,
+      "title": "Phenols and Ethers — Part 1: Phenols",
+      "language": "en",
+      "goals": [
+        "Classify and name phenols and write equations for preparing phenol by four methods",
+        "Explain why phenol is more acidic than ethanol, and write its reactions with NaOH, Na, Zn, acetyl chloride, acetic anhydride and PCl₅",
+        "Predict products of electrophilic substitution, Kolbe and Reimer–Tiemann reactions",
+        "Describe the ferric chloride and azo dye tests and uses of phenol"
+      ],
+      "slides": [
+        {
+          "id": "s01",
+          "layout": "title",
+          "heading": "Phenols",
+          "body_md": "Part 1 — compounds with an –OH group directly on a benzene ring.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Phenol",
+                "Where it is used"
+              ],
+              "rows": [
+                [
+                  "Phenol (carbolic acid)",
+                  "First surgical antiseptic; Bakelite; drugs"
+                ],
+                [
+                  "Salicylic acid (from phenol)",
+                  "Aspirin, skin creams"
+                ],
+                [
+                  "4-Chloro-3,5-dimethylphenol",
+                  "Household disinfectants"
+                ],
+                [
+                  "Picric acid",
+                  "Dyes; formerly explosives"
+                ]
+              ]
+            },
+            "alt": "Table of phenols and their uses"
+          },
+          "math": [],
+          "narration": "Namaste! Joseph Lister used phenol, then called carbolic acid, to make surgery safe. Today phenol is used to make plastics like Bakelite, aspirin and disinfectants. In phenols the hydroxyl group is joined directly to a benzene ring, and this makes them quite different from alcohols. In this part we see how phenol is made, why it is acidic, and how it reacts.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s02",
+          "layout": "concept",
+          "heading": "Classification and nomenclature",
+          "body_md": "Phenols are **monohydric**, **dihydric** or **trihydric** by the number of –OH groups on the ring. Substituted phenols are named as derivatives of phenol, numbering from the C–OH carbon.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Structure",
+                "Common name",
+                "IUPAC name"
+              ],
+              "rows": [
+                [
+                  "C₆H₅OH",
+                  "Phenol (carbolic acid)",
+                  "Phenol"
+                ],
+                [
+                  "CH₃C₆H₄OH (meta)",
+                  "m-Cresol",
+                  "3-Methylphenol"
+                ],
+                [
+                  "C₆H₄(OH)₂ (1,2)",
+                  "Catechol",
+                  "Benzene-1,2-diol"
+                ],
+                [
+                  "C₆H₄(OH)₂ (1,3)",
+                  "Resorcinol",
+                  "Benzene-1,3-diol"
+                ],
+                [
+                  "C₆H₄(OH)₂ (1,4)",
+                  "Quinol (hydroquinone)",
+                  "Benzene-1,4-diol"
+                ],
+                [
+                  "C₆H₃(OH)₃ (1,2,3)",
+                  "Pyrogallol",
+                  "Benzene-1,2,3-triol"
+                ]
+              ]
+            },
+            "alt": "Table of names of phenols"
+          },
+          "math": [],
+          "narration": "Phenol itself has one hydroxyl group on the ring. The cresols are methylphenols. Benzene diols have two hydroxyl groups: catechol, resorcinol and quinol, with the groups in the one-two, one-three and one-four positions. Pyrogallol has three. In IUPAC names, numbering starts at the carbon carrying the hydroxyl group.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s03",
+          "layout": "concept",
+          "heading": "Preparation of phenol",
+          "body_md": "Four methods: (1) from **benzenediazonium chloride** (warm with water); (2) from **chlorobenzene** (Dow process: NaOH, 623 K, 300 atm); (3) from **benzenesulphonic acid** (sodium salt fused with NaOH, then acid); (4) from **cumene** (industrial).",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Starting material",
+                "Key reagent and condition"
+              ],
+              "rows": [
+                [
+                  "Benzenediazonium chloride",
+                  "Warm with water"
+                ],
+                [
+                  "Chlorobenzene",
+                  "NaOH, 623 K, 300 atm; then HCl"
+                ],
+                [
+                  "Sodium benzenesulphonate",
+                  "Fuse with NaOH; then HCl"
+                ],
+                [
+                  "Cumene",
+                  "O₂ (air); then dilute acid"
+                ]
+              ]
+            },
+            "alt": "Table of methods of preparing phenol"
+          },
+          "math": [
+            "\\ce{C6H5N2Cl + H2O ->[warm] C6H5OH + N2 + HCl}",
+            "\\ce{C6H5Cl + 2NaOH ->[623 K, 300 atm] C6H5ONa + NaCl + H2O}",
+            "\\ce{C6H5SO3Na + 2NaOH ->[573 K] C6H5ONa + Na2SO3 + H2O}"
+          ],
+          "narration": "Phenol can be made in four ways. A diazonium salt gives phenol simply on warming with water. Chlorobenzene reacts with sodium hydroxide only at high temperature and pressure. Sodium benzenesulphonate is fused with solid sodium hydroxide. In the last three cases sodium phenoxide is formed first, and acid then releases phenol. Industry uses the cumene process.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s04",
+          "layout": "concept",
+          "heading": "The cumene process",
+          "body_md": "Benzene + propene (acid catalyst) → **cumene** (isopropylbenzene); air oxidises it to **cumene hydroperoxide**; dilute acid splits this into **phenol and propanone** (acetone).",
+          "bullets": [],
+          "visual": {
+            "kind": "flow",
+            "spec": {
+              "direction": "LR",
+              "nodes": [
+                {
+                  "id": "a",
+                  "label": "Benzene + propene"
+                },
+                {
+                  "id": "b",
+                  "label": "Cumene"
+                },
+                {
+                  "id": "c",
+                  "label": "Cumene hydroperoxide"
+                },
+                {
+                  "id": "d",
+                  "label": "Phenol + propanone"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "a",
+                  "to": "b"
+                },
+                {
+                  "from": "b",
+                  "to": "c"
+                },
+                {
+                  "from": "c",
+                  "to": "d"
+                }
+              ]
+            },
+            "alt": "Flow of the cumene process"
+          },
+          "math": [
+            "\\ce{C6H6 + CH2=CHCH3 ->[H3PO4] C6H5CH(CH3)2}",
+            "\\ce{C6H5CH(CH3)2 + O2 -> C6H5C(CH3)2OOH}",
+            "\\ce{C6H5C(CH3)2OOH ->[H+] C6H5OH + CH3COCH3}"
+          ],
+          "narration": "Most phenol is made by the cumene process. Benzene and propene combine to give cumene, which air oxidises to cumene hydroperoxide. Dilute acid then splits the hydroperoxide into phenol and propanone. The process is economical because it uses cheap raw materials and both products are valuable.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s05",
+          "layout": "example",
+          "heading": "Worked example: phenol from benzene",
+          "body_md": "**Problem.** Convert benzene into phenol by way of benzenesulphonic acid, giving reagents and conditions.\n\n**Step 1.** Sulphonate: $\\ce{C6H6 + H2SO4 ->[\\Delta] C6H5SO3H + H2O}$ (conc. or fuming H₂SO₄).\n\n**Step 2.** Neutralise: $\\ce{C6H5SO3H + NaOH -> C6H5SO3Na + H2O}$.\n\n**Step 3.** Fuse with NaOH at about 573 K: $\\ce{C6H5SO3Na + 2NaOH -> C6H5ONa + Na2SO3 + H2O}$.\n\n**Step 4.** Acidify: $\\ce{C6H5ONa + HCl -> C6H5OH + NaCl}$.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Step",
+                "Product"
+              ],
+              "rows": [
+                [
+                  "Sulphonation",
+                  "Benzenesulphonic acid"
+                ],
+                [
+                  "Neutralisation",
+                  "Sodium benzenesulphonate"
+                ],
+                [
+                  "Fusion with NaOH",
+                  "Sodium phenoxide"
+                ],
+                [
+                  "Acidification",
+                  "Phenol"
+                ]
+              ]
+            },
+            "alt": "Table of intermediates from benzene to phenol"
+          },
+          "math": [],
+          "narration": "Benzene is first heated with concentrated sulphuric acid to give benzenesulphonic acid, which is neutralised to its sodium salt. Fusing this salt with solid sodium hydroxide at about five hundred and seventy three kelvin replaces the sulphonate group by an oxide ion, giving sodium phenoxide and sodium sulphite. Finally, acid releases phenol.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s06",
+          "layout": "check",
+          "heading": "Quick check: preparation",
+          "body_md": "Identify a method or product in the preparation of phenol.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Remember the by-product of the cumene process and the conditions of the Dow process.",
+          "check_question_id": "q_isc12chem_ch15_001",
+          "audio": null
+        },
+        {
+          "id": "s07",
+          "layout": "concept",
+          "heading": "Physical properties",
+          "body_md": "Phenol is a colourless solid (m.p. 316 K) that turns pink in air; it has a characteristic smell and is **corrosive**. Hydrogen bonding gives phenols higher boiling points than arenes or haloarenes of similar mass; phenol is moderately soluble in water. **2-Nitrophenol** has **intramolecular** hydrogen bonding, so it is more volatile and less soluble than 4-nitrophenol (**intermolecular**) and can be steam distilled.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Compound",
+                "b.p. / K",
+                "H-bonding"
+              ],
+              "rows": [
+                [
+                  "Toluene (M = 92)",
+                  "384",
+                  "None"
+                ],
+                [
+                  "Phenol (M = 94)",
+                  "455",
+                  "Intermolecular"
+                ],
+                [
+                  "2-Nitrophenol",
+                  "487",
+                  "Intramolecular"
+                ],
+                [
+                  "4-Nitrophenol",
+                  "552 (decomposes)",
+                  "Intermolecular"
+                ]
+              ]
+            },
+            "alt": "Table of boiling points showing hydrogen bonding effects"
+          },
+          "math": [],
+          "narration": "Phenol is a colourless crystalline solid that slowly turns pink in air. It burns the skin, so it must be handled with care. Its hydrogen bonds give it a much higher boiling point than toluene of almost the same mass. In two-nitrophenol the hydrogen bond forms inside one molecule, so the molecules are not linked to each other: it is more volatile and can be separated from four-nitrophenol by steam distillation.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s08",
+          "layout": "diagram",
+          "heading": "Acidity of phenol",
+          "body_md": "Phenol (pKa 10.0) is about 10⁶ times more acidic than ethanol (pKa 15.9): the **phenoxide ion is stabilised by resonance**, the negative charge being delocalised over O and the ortho and para carbons. Electron-withdrawing groups (–NO₂) at o/p increase acidity; electron-donating groups (–CH₃, –OCH₃) decrease it. Phenol dissolves in NaOH but not in NaHCO₃ (weaker than carbonic acid).",
+          "bullets": [],
+          "visual": {
+            "kind": "svg",
+            "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 360 170\" role=\"img\" aria-label=\"Three resonance structures of the phenoxide ion. Left: the negative charge on oxygen. Centre: a carbon–oxygen double bond with the negative charge on a ring carbon ortho to oxygen. Right: a carbon–oxygen double bond with the negative charge on the carbon para to oxygen. Spreading the charge over the ring stabilises phenoxide, which is why phenol is more acidic than an alcohol.\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>Three resonance structures of the phenoxide ion. Left: the negative charge on oxygen. Centre: a carbon–oxygen double bond with the negative charge on a ring carbon ortho to oxygen. Right: a carbon–oxygen double bond with the negative charge on the carbon para to oxygen. Spreading the charge over the ring stabilises phenoxide, which is why phenol is more acidic than an alcohol.</title><line x1=\"60\" y1=\"72\" x2=\"84.2\" y2=\"86\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"84.2\" y1=\"86\" x2=\"84.2\" y2=\"114\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"79.9\" y1=\"91\" x2=\"79.9\" y2=\"109\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"84.2\" y1=\"114\" x2=\"60\" y2=\"128\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"60\" y1=\"128\" x2=\"35.8\" y2=\"114\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"57.8\" y1=\"121.7\" x2=\"42.3\" y2=\"112.7\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"35.8\" y1=\"114\" x2=\"35.8\" y2=\"86\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"35.8\" y1=\"86\" x2=\"60\" y2=\"72\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"42.3\" y1=\"87.3\" x2=\"57.8\" y2=\"78.3\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"60\" y1=\"72\" x2=\"60\" y2=\"48\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"60\" y=\"42\" fill=\"var(--diagram-red)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">O⁻</text><line x1=\"98\" y1=\"100\" x2=\"128\" y2=\"100\" stroke=\"currentColor\" stroke-width=\"1.5\"/><polygon points=\"132,100 127.4,102 127.4,98\" fill=\"currentColor\" stroke=\"none\"/><line x1=\"132\" y1=\"100\" x2=\"102\" y2=\"100\" stroke=\"currentColor\" stroke-width=\"1.5\"/><polygon points=\"98,100 102.6,98 102.6,102\" fill=\"currentColor\" stroke=\"none\"/><line x1=\"180\" y1=\"72\" x2=\"204.2\" y2=\"86\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"204.2\" y1=\"86\" x2=\"204.2\" y2=\"114\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"204.2\" y1=\"114\" x2=\"180\" y2=\"128\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"197.7\" y1=\"112.7\" x2=\"182.2\" y2=\"121.7\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"180\" y1=\"128\" x2=\"155.8\" y2=\"114\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"155.8\" y1=\"114\" x2=\"155.8\" y2=\"86\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"160.1\" y1=\"109\" x2=\"160.1\" y2=\"91\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"155.8\" y1=\"86\" x2=\"180\" y2=\"72\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"177.5\" y1=\"72\" x2=\"177.5\" y2=\"48\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"182.5\" y1=\"72\" x2=\"182.5\" y2=\"48\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"180\" y=\"42\" fill=\"var(--diagram-red)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">O</text><text x=\"210.2\" y=\"88\" fill=\"var(--diagram-blue)\" stroke=\"none\" font-size=\"14\" font-weight=\"bold\">−</text><line x1=\"218\" y1=\"100\" x2=\"248\" y2=\"100\" stroke=\"currentColor\" stroke-width=\"1.5\"/><polygon points=\"252,100 247.4,102 247.4,98\" fill=\"currentColor\" stroke=\"none\"/><line x1=\"252\" y1=\"100\" x2=\"222\" y2=\"100\" stroke=\"currentColor\" stroke-width=\"1.5\"/><polygon points=\"218,100 222.6,98 222.6,102\" fill=\"currentColor\" stroke=\"none\"/><line x1=\"300\" y1=\"72\" x2=\"324.2\" y2=\"86\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"324.2\" y1=\"86\" x2=\"324.2\" y2=\"114\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"319.9\" y1=\"91\" x2=\"319.9\" y2=\"109\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"324.2\" y1=\"114\" x2=\"300\" y2=\"128\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"300\" y1=\"128\" x2=\"275.8\" y2=\"114\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"275.8\" y1=\"114\" x2=\"275.8\" y2=\"86\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"280.1\" y1=\"109\" x2=\"280.1\" y2=\"91\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"275.8\" y1=\"86\" x2=\"300\" y2=\"72\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"297.5\" y1=\"72\" x2=\"297.5\" y2=\"48\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"302.5\" y1=\"72\" x2=\"302.5\" y2=\"48\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"300\" y=\"42\" fill=\"var(--diagram-red)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">O</text><text x=\"300\" y=\"146\" fill=\"var(--diagram-blue)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"bold\">−</text><text x=\"60\" y=\"160\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">charge on O</text><text x=\"180\" y=\"160\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">charge at ortho C</text><text x=\"300\" y=\"160\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">charge at para C</text></svg>",
+            "alt": "Three resonance structures of the phenoxide ion with the negative charge on oxygen, on an ortho carbon and on the para carbon"
+          },
+          "math": [],
+          "narration": "When phenol loses a proton, the negative charge on the phenoxide ion spreads into the ring, onto the ortho and para carbons, as these resonance structures show. Spreading the charge stabilises the ion, so phenol is far more acidic than ethanol. Nitro groups at ortho or para positions spread the charge further and increase acidity; methyl and methoxy groups push electrons in and decrease it. Phenol is still weaker than carbonic acid.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s09",
+          "layout": "example",
+          "heading": "Worked example: ranking acidity",
+          "body_md": "**Problem.** Arrange in increasing acid strength: cyclohexanol, phenol, 3-nitrophenol, 4-methoxyphenol, 2,4,6-trinitrophenol.\n\n**Step 1.** Cyclohexanol (pKa ≈ 16): no resonance in the alkoxide — weakest.\n\n**Step 2.** 4-Methoxyphenol (10.2): –OCH₃ releases electrons, slightly weaker than phenol (10.0).\n\n**Step 3.** 3-Nitrophenol (8.3): –I effect only from meta.\n\n**Step 4.** 2,4,6-Trinitrophenol (≈ 0.4): three o/p nitro groups.\n\n**Order:** cyclohexanol < 4-methoxyphenol < phenol < 3-nitrophenol < 2,4,6-trinitrophenol.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Compound",
+                "pKa (approx.)"
+              ],
+              "rows": [
+                [
+                  "Cyclohexanol",
+                  "16"
+                ],
+                [
+                  "4-Methoxyphenol",
+                  "10.2"
+                ],
+                [
+                  "Phenol",
+                  "10.0"
+                ],
+                [
+                  "3-Nitrophenol",
+                  "8.3"
+                ],
+                [
+                  "2,4,6-Trinitrophenol",
+                  "0.4"
+                ]
+              ]
+            },
+            "alt": "Table of pKa values"
+          },
+          "math": [],
+          "narration": "Compare the stability of each anion. Cyclohexanol has no ring to delocalise the charge, so it is the weakest acid. A methoxy group pushes electrons into the ring and makes phenoxide slightly less stable. A nitro group at the meta position withdraws electrons only inductively, but three nitro groups at ortho and para positions delocalise the charge so well that picric acid is almost as strong as a mineral acid.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s10",
+          "layout": "check",
+          "heading": "Quick check: acidity",
+          "body_md": "Compare the acidity of phenols and alcohols.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Think about resonance in the phenoxide ion and the effect of substituents at ortho and para positions.",
+          "check_question_id": "q_isc12chem_ch15_010",
+          "audio": null
+        },
+        {
+          "id": "s11",
+          "layout": "concept",
+          "heading": "Reactions of the –OH group",
+          "body_md": "Phenol reacts with **NaOH** and **Na** (phenoxide), is reduced by hot **zinc dust** to benzene, and is acylated by **acetyl chloride** or **acetic anhydride** to phenyl ethanoate. With **PCl₅** the yield of chlorobenzene is poor (C–O bond has partial double-bond character); triphenyl phosphate forms instead.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Reagent",
+                "Product"
+              ],
+              "rows": [
+                [
+                  "NaOH",
+                  "Sodium phenoxide + water"
+                ],
+                [
+                  "Na",
+                  "Sodium phenoxide + H₂"
+                ],
+                [
+                  "Zn dust, heat",
+                  "Benzene + ZnO"
+                ],
+                [
+                  "CH₃COCl or (CH₃CO)₂O",
+                  "Phenyl ethanoate"
+                ],
+                [
+                  "PCl₅",
+                  "Little chlorobenzene; mainly (C₆H₅O)₃PO"
+                ]
+              ]
+            },
+            "alt": "Table of reactions of the –OH group of phenol"
+          },
+          "math": [
+            "\\ce{C6H5OH + NaOH -> C6H5ONa + H2O}",
+            "\\ce{2C6H5OH + 2Na -> 2C6H5ONa + H2}",
+            "\\ce{C6H5OH + Zn -> C6H6 + ZnO}",
+            "\\ce{C6H5OH + CH3COCl -> CH3COOC6H5 + HCl}"
+          ],
+          "narration": "Being acidic, phenol dissolves in sodium hydroxide and reacts with sodium, forming sodium phenoxide. Heated with zinc dust, it loses its oxygen and gives benzene. Acetyl chloride or acetic anhydride converts it into the ester phenyl ethanoate. Unlike alcohols, phenol gives only a poor yield of chlorobenzene with phosphorus pentachloride, because its carbon–oxygen bond is strengthened by resonance.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s12",
+          "layout": "concept",
+          "heading": "Electrophilic substitution in phenol",
+          "body_md": "–OH strongly **activates** the ring (+R) and directs **ortho/para**. **Bromine water** → white precipitate of **2,4,6-tribromophenol**; Br₂ in CS₂ (low temperature) → 2- and 4-bromophenol. **Dilute HNO₃** → 2- and 4-nitrophenol; **conc. HNO₃** → picric acid. **Conc. H₂SO₄:** 2-hydroxybenzenesulphonic acid at about 290 K, 4-isomer at about 373 K.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Reagent",
+                "Product"
+              ],
+              "rows": [
+                [
+                  "Br₂(aq)",
+                  "2,4,6-Tribromophenol (white ppt)"
+                ],
+                [
+                  "Br₂ in CS₂, 273 K",
+                  "2- and 4-bromophenol"
+                ],
+                [
+                  "Dilute HNO₃",
+                  "2- and 4-nitrophenol"
+                ],
+                [
+                  "Conc. HNO₃",
+                  "2,4,6-Trinitrophenol"
+                ],
+                [
+                  "Conc. H₂SO₄",
+                  "2- (low T) or 4-hydroxybenzenesulphonic acid (high T)"
+                ]
+              ]
+            },
+            "alt": "Table of electrophilic substitution of phenol"
+          },
+          "math": [
+            "\\ce{C6H5OH + 3Br2 -> C6H2Br3OH + 3HBr}",
+            "\\ce{C6H5OH + 3HNO3 ->[conc. H2SO4] C6H2(NO2)3OH + 3H2O}"
+          ],
+          "narration": "The hydroxyl group feeds electrons into the ring, so phenol reacts with electrophiles far faster than benzene, at ortho and para positions. In water, bromine gives a white precipitate of tribromophenol at once; in a non-polar solvent at low temperature, only one bromine goes in. Dilute nitric acid gives the nitrophenols, concentrated nitric acid gives picric acid, and sulphonation gives the ortho acid at low temperature and the para acid at high temperature.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s13",
+          "layout": "concept",
+          "heading": "Kolbe and Reimer–Tiemann reactions",
+          "body_md": "**Kolbe:** sodium phenoxide + CO₂ (about 400 K, 4–7 atm), then H⁺ → **salicylic acid** (2-hydroxybenzoic acid). **Reimer–Tiemann:** phenol + CHCl₃ + aqueous NaOH (about 340 K), then H⁺ → **salicylaldehyde** (2-hydroxybenzaldehyde); the electrophile is dichlorocarbene, :CCl₂.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Reaction",
+                "Reagents",
+                "Product"
+              ],
+              "rows": [
+                [
+                  "Kolbe",
+                  "C₆H₅ONa + CO₂, 400 K, pressure; H⁺",
+                  "Salicylic acid"
+                ],
+                [
+                  "Reimer–Tiemann",
+                  "CHCl₃ + NaOH; H⁺",
+                  "Salicylaldehyde"
+                ]
+              ]
+            },
+            "alt": "Table of Kolbe and Reimer–Tiemann reactions"
+          },
+          "math": [
+            "\\ce{C6H5ONa + CO2 -> HOC6H4COONa}",
+            "\\ce{C6H5OH + CHCl3 + 3NaOH -> HOC6H4CHO + 3NaCl + 2H2O}"
+          ],
+          "narration": "Two named reactions add a carbon group at the ortho position. In the Kolbe reaction, sodium phenoxide is heated with carbon dioxide under pressure, and acidification gives salicylic acid, the starting point for aspirin. In the Reimer–Tiemann reaction, phenol is warmed with chloroform and sodium hydroxide; dichlorocarbene attacks the ring, and after hydrolysis and acidification salicylaldehyde is obtained.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s14",
+          "layout": "example",
+          "heading": "Worked example: products of phenol",
+          "body_md": "**Problem.** Name the main product: (a) phenol + bromine water; (b) phenol + Br₂ in CS₂ at 273 K; (c) sodium phenoxide + CO₂, 400 K, then acid; (d) phenol + CHCl₃/NaOH, then acid; (e) phenol + zinc dust, heat.\n\n**(a)** 2,4,6-Tribromophenol. **(b)** 4-Bromophenol (major) and 2-bromophenol.\n\n**(c)** Salicylic acid. **(d)** Salicylaldehyde. **(e)** Benzene.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Reagents",
+                "Product"
+              ],
+              "rows": [
+                [
+                  "Br₂(aq)",
+                  "2,4,6-Tribromophenol"
+                ],
+                [
+                  "Br₂/CS₂, 273 K",
+                  "4-Bromophenol"
+                ],
+                [
+                  "Kolbe",
+                  "Salicylic acid"
+                ],
+                [
+                  "Reimer–Tiemann",
+                  "Salicylaldehyde"
+                ],
+                [
+                  "Zn dust",
+                  "Benzene"
+                ]
+              ]
+            },
+            "alt": "Table of products from phenol"
+          },
+          "math": [],
+          "narration": "In water, bromine is strongly polarised and the phenol partly ionised, so all three activated positions are substituted. In carbon disulphide at low temperature the reaction is milder and gives mainly para-bromophenol. The Kolbe reaction gives salicylic acid and the Reimer–Tiemann reaction gives salicylaldehyde, both with the new group ortho to the hydroxyl. Zinc dust strips off the oxygen to give benzene.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s15",
+          "layout": "concept",
+          "heading": "Tests for phenol and uses",
+          "body_md": "**Ferric chloride test:** neutral FeCl₃ gives a **violet** colour with phenol (alcohols do not). **Azo dye test:** phenol in NaOH couples with benzenediazonium chloride at 273–278 K to give an **orange** dye, 4-hydroxyazobenzene. **Bromine water:** white precipitate. **Uses:** antiseptics and disinfectants, Bakelite (with methanal), salicylic acid and aspirin, picric acid, dyes, nylon intermediates.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Test",
+                "Observation with phenol",
+                "With ethanol"
+              ],
+              "rows": [
+                [
+                  "Neutral FeCl₃",
+                  "Violet colour",
+                  "No colour"
+                ],
+                [
+                  "Bromine water",
+                  "White precipitate",
+                  "No change"
+                ],
+                [
+                  "Benzenediazonium chloride (alkaline)",
+                  "Orange dye",
+                  "No dye"
+                ],
+                [
+                  "NaOH(aq)",
+                  "Dissolves",
+                  "No reaction"
+                ]
+              ]
+            },
+            "alt": "Table of tests distinguishing phenol from ethanol"
+          },
+          "math": [
+            "\\ce{C6H5N2Cl + C6H5OH + NaOH -> HOC6H4N=NC6H5 + NaCl + H2O}"
+          ],
+          "narration": "Several simple tests identify phenol. Neutral iron three chloride gives a violet colour. Bromine water gives a white precipitate. In alkaline solution, phenol couples with a cold diazonium salt to form an orange azo dye. Ethanol gives none of these results. Phenol is used to make disinfectants, Bakelite, aspirin and many dyes.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s16",
+          "layout": "check",
+          "heading": "Quick check: reactions and tests",
+          "body_md": "Predict a product of phenol or choose a test that distinguishes it from an alcohol.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Recall bromine water, ferric chloride, the azo dye test and the named reactions.",
+          "check_question_id": "q_isc12chem_ch15_024",
+          "audio": null
+        },
+        {
+          "id": "s17",
+          "layout": "summary",
+          "heading": "Summary: Part 1",
+          "body_md": "",
+          "bullets": [
+            "Phenol from diazonium salts, chlorobenzene (Dow), benzenesulphonate fusion, cumene (with propanone).",
+            "Acidic (pKa 10): phenoxide resonance; o/p-NO₂ increase, –CH₃/–OCH₃ decrease acidity; dissolves in NaOH, not NaHCO₃.",
+            "NaOH, Na → phenoxide; Zn → benzene; CH₃COCl/(CH₃CO)₂O → phenyl ethanoate; PCl₅ poor.",
+            "EAS: Br₂(aq) → tribromophenol; nitration; sulphonation; Kolbe → salicylic acid; Reimer–Tiemann → salicylaldehyde.",
+            "Tests: FeCl₃ violet; azo dye orange; bromine water white ppt."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Reaction",
+                "Product"
+              ],
+              "rows": [
+                [
+                  "Kolbe",
+                  "Salicylic acid"
+                ],
+                [
+                  "Reimer–Tiemann",
+                  "Salicylaldehyde"
+                ],
+                [
+                  "Br₂(aq)",
+                  "Tribromophenol"
+                ]
+              ]
+            },
+            "alt": "Summary table of named reactions"
+          },
+          "math": [],
+          "narration": "Let us sum up Part 1. Phenol is made from diazonium salts, chlorobenzene, benzenesulphonates and, industrially, from cumene. Resonance in the phenoxide ion makes phenol far more acidic than alcohols. The hydroxyl group activates the ring for ortho and para substitution, and the Kolbe and Reimer–Tiemann reactions add carboxyl and aldehyde groups. Phenol is identified with ferric chloride, bromine water and the azo dye test.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s18",
+          "layout": "exam-tips",
+          "heading": "Exam tips: Part 1",
+          "body_md": "",
+          "bullets": [
+            "For acidity, draw the phenoxide resonance structures.",
+            "Specify solvent for bromination: water (tribromo) vs CS₂ (mono).",
+            "Name the products of Kolbe and Reimer–Tiemann and state they are ortho.",
+            "For tests, give reagent, observation for phenol and for the other compound."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Slip",
+                "Fix"
+              ],
+              "rows": [
+                [
+                  "Phenol dissolves in NaHCO₃",
+                  "It does not"
+                ],
+                [
+                  "Bromine water gives monobromophenol",
+                  "Gives 2,4,6-tribromophenol"
+                ],
+                [
+                  "Kolbe gives benzoic acid",
+                  "Gives salicylic acid"
+                ]
+              ]
+            },
+            "alt": "Table of three common slips in Part 1 and fixes"
+          },
+          "math": [],
+          "narration": "Some tips. Draw the resonance structures of the phenoxide ion when explaining acidity. State the solvent in bromination. Name the products of the Kolbe and Reimer–Tiemann reactions correctly. And in distinguishing tests, describe what happens with both compounds.",
+          "check_question_id": null,
+          "audio": null
+        }
+      ],
+      "status": "draft",
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "unit": "isc-12-chemistry-ch15",
+      "part": 2,
+      "version": 1,
+      "title": "Phenols and Ethers — Part 2: Ethers",
+      "language": "en",
+      "goals": [
+        "Describe the structure of the ether group and name ethers",
+        "Choose reactants for Williamson’s synthesis of a given ether",
+        "Write reactions of ethers with chlorine, oxygen, HI and PCl₅",
+        "Write halogenation, nitration and Friedel–Crafts reactions of anisole, and state uses of ethers"
+      ],
+      "slides": [
+        {
+          "id": "s01",
+          "layout": "title",
+          "heading": "Ethers",
+          "body_md": "Part 2 — R–O–R′: structure, preparation, properties and reactions, including anisole.",
+          "bullets": [],
+          "visual": {
+            "kind": "flow",
+            "spec": {
+              "direction": "LR",
+              "nodes": [
+                {
+                  "id": "a",
+                  "label": "Alkoxide or phenoxide"
+                },
+                {
+                  "id": "b",
+                  "label": "+ primary alkyl halide"
+                },
+                {
+                  "id": "c",
+                  "label": "Ether (Williamson)"
+                },
+                {
+                  "id": "d",
+                  "label": "Cleavage by HI; anisole substitution"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "a",
+                  "to": "b"
+                },
+                {
+                  "from": "b",
+                  "to": "c"
+                },
+                {
+                  "from": "c",
+                  "to": "d"
+                }
+              ]
+            },
+            "alt": "Flow of the main ideas about ethers"
+          },
+          "math": [],
+          "narration": "Ethers contain an oxygen atom joined to two carbon groups. Diethyl ether was one of the first general anaesthetics and is still a common laboratory solvent, and anisole gives some perfumes their smell. In this part we look at the structure and names of ethers, how they are made, their physical properties and their reactions.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s02",
+          "layout": "diagram",
+          "heading": "Structure and nomenclature",
+          "body_md": "The ether oxygen is **sp³** with two lone pairs; the C–O–C angle (about 111.7° in methoxymethane) is larger than tetrahedral because the alkyl groups repel. Ethers are **symmetrical** (R–O–R) or **unsymmetrical** (R–O–R′). IUPAC: **alkoxyalkanes**, the larger group being the parent: CH₃OC₂H₅ methoxyethane; C₂H₅OC₂H₅ ethoxyethane; C₆H₅OCH₃ methoxybenzene (anisole).",
+          "bullets": [],
+          "visual": {
+            "kind": "svg",
+            "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 340 160\" role=\"img\" aria-label=\"Left: methanol, with the C–O–H bond angle of about 108.9 degrees, slightly less than the tetrahedral angle because of the two lone pairs on oxygen. Right: methoxymethane, with the C–O–C bond angle of about 111.7 degrees, larger because the two bulky methyl groups repel each other.\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>Left: methanol, with the C–O–H bond angle of about 108.9 degrees, slightly less than the tetrahedral angle because of the two lone pairs on oxygen. Right: methoxymethane, with the C–O–C bond angle of about 111.7 degrees, larger because the two bulky methyl groups repel each other.</title><circle cx=\"85\" cy=\"60\" r=\"14\" fill=\"var(--diagram-red)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"85\" y=\"64\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\">O</text><line x1=\"73\" y1=\"68\" x2=\"45\" y2=\"100\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"97\" y1=\"68\" x2=\"125\" y2=\"100\" stroke=\"currentColor\" stroke-width=\"2\"/><circle cx=\"38\" cy=\"108\" r=\"16\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"38\" y=\"112\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">CH₃</text><circle cx=\"130\" cy=\"106\" r=\"10\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"130\" y=\"110\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">H</text><path d=\"M66 82 Q85 96 104 82\" fill=\"none\" stroke=\"var(--diagram-accent)\" stroke-width=\"1\"/><text x=\"85\" y=\"118\" fill=\"var(--diagram-accent)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">108.9°</text><text x=\"85\" y=\"36\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"14\">··</text><text x=\"85\" y=\"150\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">Methanol</text><circle cx=\"255\" cy=\"60\" r=\"14\" fill=\"var(--diagram-red)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"255\" y=\"64\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\">O</text><line x1=\"243\" y1=\"68\" x2=\"213\" y2=\"100\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"267\" y1=\"68\" x2=\"297\" y2=\"100\" stroke=\"currentColor\" stroke-width=\"2\"/><circle cx=\"206\" cy=\"108\" r=\"16\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"206\" y=\"112\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">CH₃</text><circle cx=\"304\" cy=\"108\" r=\"16\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"304\" y=\"112\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">CH₃</text><path d=\"M236 82 Q255 97 274 82\" fill=\"none\" stroke=\"var(--diagram-accent)\" stroke-width=\"1\"/><text x=\"255\" y=\"118\" fill=\"var(--diagram-accent)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">111.7°</text><text x=\"255\" y=\"36\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"14\">··</text><text x=\"255\" y=\"150\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">Methoxymethane</text></svg>",
+            "alt": "Bent shapes of methanol, with a C–O–H angle of about 108.9 degrees, and methoxymethane, with a C–O–C angle of about 111.7 degrees"
+          },
+          "math": [],
+          "narration": "In an ether the oxygen atom is sp three hybridised with two lone pairs, like the oxygen in an alcohol, but the two bulky alkyl groups push each other apart, so the angle is about one hundred and twelve degrees. Ethers are named as alkoxy alkanes: the smaller group becomes the alkoxy prefix and the larger group is the parent. Diethyl ether is ethoxyethane and anisole is methoxybenzene.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s03",
+          "layout": "concept",
+          "heading": "Williamson’s synthesis",
+          "body_md": "An **alkoxide** (or phenoxide) reacts with a **primary alkyl halide** by **SN2**: R–O⁻Na⁺ + R′–X → R–O–R′ + NaX. With secondary and especially tertiary halides, the strongly basic alkoxide causes **elimination**, so the bulky group must be on the alkoxide. Aryl halides cannot be used (unreactive).",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Target",
+                "Good choice",
+                "Poor choice (why)"
+              ],
+              "rows": [
+                [
+                  "1-Ethoxypropane",
+                  "C₂H₅ONa + 1-bromopropane",
+                  "—"
+                ],
+                [
+                  "2-Ethoxy-2-methylpropane",
+                  "(CH₃)₃CONa + C₂H₅Br",
+                  "(CH₃)₃CBr + C₂H₅ONa (elimination)"
+                ],
+                [
+                  "Ethoxybenzene",
+                  "C₆H₅ONa + C₂H₅Br",
+                  "C₆H₅Br + C₂H₅ONa (aryl halide inert)"
+                ]
+              ]
+            },
+            "alt": "Table of Williamson choices"
+          },
+          "math": [
+            "\\ce{CH3CH2ONa + CH3CH2CH2Br -> CH3CH2OCH2CH2CH3 + NaBr}",
+            "\\ce{(CH3)3CONa + CH3CH2Br -> (CH3)3COCH2CH3 + NaBr}"
+          ],
+          "narration": "Williamson’s synthesis is the most general way to make ethers. An alkoxide ion attacks a primary alkyl halide from the back and pushes out the halide. If the halide is tertiary, the alkoxide acts as a base instead and an alkene forms. So, to make an ether with a tertiary group, put the tertiary group on the alkoxide. For an aryl ether, use the phenoxide and an alkyl halide.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s04",
+          "layout": "example",
+          "heading": "Worked example: planning a Williamson synthesis",
+          "body_md": "**Problem.** Choose reactants for (a) 2-methoxypropane, (b) 2-ethoxy-2-methylbutane and (c) 1-methoxy-4-methylbenzene.\n\n**(a)** Sodium propan-2-oxide + iodomethane: $\\ce{(CH3)2CHONa + CH3I -> (CH3)2CHOCH3 + NaI}$.\n\n**(b)** Sodium 2-methylbutan-2-oxide + bromoethane (the tertiary group on the alkoxide).\n\n**(c)** Sodium 4-methylphenoxide + iodomethane.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Ether",
+                "Alkoxide/phenoxide",
+                "Halide"
+              ],
+              "rows": [
+                [
+                  "2-Methoxypropane",
+                  "(CH₃)₂CHONa",
+                  "CH₃I"
+                ],
+                [
+                  "2-Ethoxy-2-methylbutane",
+                  "CH₃CH₂C(CH₃)₂ONa",
+                  "C₂H₅Br"
+                ],
+                [
+                  "1-Methoxy-4-methylbenzene",
+                  "CH₃C₆H₄ONa",
+                  "CH₃I"
+                ]
+              ]
+            },
+            "alt": "Table of reactants for Williamson syntheses"
+          },
+          "math": [],
+          "narration": "Look at the two groups on oxygen and put the more hindered one on the alkoxide, leaving the halide as primary or methyl as possible. For two-methoxypropane, use sodium isopropoxide and iodomethane. For the tertiary ether, the tertiary group must be the alkoxide and bromoethane the halide. For an aryl methyl ether, use the sodium phenoxide and iodomethane.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s05",
+          "layout": "concept",
+          "heading": "Physical properties",
+          "body_md": "Ethers have **no O–H**, so they cannot hydrogen-bond with each other: b.p. close to alkanes of similar mass and much lower than alcohols. They can accept hydrogen bonds from water, so lower ethers are about as soluble in water as alcohols of similar size. Ethoxyethane is volatile, highly **flammable**, and a good **solvent** for organic compounds.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Compound (M ≈ 72–74)",
+                "b.p. / K"
+              ],
+              "rows": [
+                [
+                  "Pentane",
+                  "309"
+                ],
+                [
+                  "Ethoxyethane",
+                  "308"
+                ],
+                [
+                  "Butan-1-ol",
+                  "391"
+                ]
+              ]
+            },
+            "alt": "Table of boiling points"
+          },
+          "math": [],
+          "narration": "Ether molecules have no hydrogen on oxygen, so they cannot form hydrogen bonds with each other, and their boiling points are close to those of alkanes. But the ether oxygen can accept a hydrogen bond from water, so small ethers dissolve in water about as well as alcohols of similar size. Ethoxyethane is very volatile and catches fire easily, so it must be kept away from flames.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s06",
+          "layout": "check",
+          "heading": "Quick check: Williamson synthesis",
+          "body_md": "Choose the reactants for preparing an ether.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. The alkyl halide should be primary; any tertiary group belongs on the alkoxide.",
+          "check_question_id": "q_isc12chem_ch15_040",
+          "audio": null
+        },
+        {
+          "id": "s07",
+          "layout": "concept",
+          "heading": "Reactions with chlorine, oxygen and PCl₅",
+          "body_md": "**Chlorine:** in the dark, α-hydrogens are substituted (1-chloroethoxyethane); in light, all H are replaced (perchlorodiethyl ether). **Oxygen:** on standing in air and light, ethers form **peroxides**, which are explosive on distillation; they are detected with FeSO₄ + KSCN (red colour) and removed by shaking with acidified FeSO₄. **PCl₅:** splits ethers into two chloroalkanes.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Reagent",
+                "Product",
+                "Note"
+              ],
+              "rows": [
+                [
+                  "Cl₂, dark",
+                  "α-Chloroether",
+                  "Substitution next to O"
+                ],
+                [
+                  "Cl₂, light",
+                  "Perchloroether",
+                  "All H replaced"
+                ],
+                [
+                  "O₂ (air, light)",
+                  "Peroxide",
+                  "Explosive; store in dark"
+                ],
+                [
+                  "PCl₅, heat",
+                  "2 RCl + POCl₃",
+                  "C–O cleavage"
+                ]
+              ]
+            },
+            "alt": "Table of reactions of ethers with chlorine, oxygen and PCl₅"
+          },
+          "math": [
+            "\\ce{C2H5OC2H5 + Cl2 ->[dark] CH3CHClOC2H5 + HCl}",
+            "\\ce{C2H5OC2H5 + 10Cl2 ->[light] C2Cl5OC2Cl5 + 10HCl}",
+            "\\ce{C2H5OC2H5 + PCl5 ->[\\Delta] 2C2H5Cl + POCl3}"
+          ],
+          "narration": "Ethers are fairly unreactive, which is why they make good solvents, but they do have some reactions. Chlorine substitutes hydrogens next to the oxygen in the dark, and replaces all of them in light. On standing in air and light, ethers slowly form peroxides, which can explode when the ether is distilled, so old ether is tested and treated with iron two sulphate first. Phosphorus pentachloride splits ethers into chloroalkanes.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s08",
+          "layout": "concept",
+          "heading": "Cleavage by hydrogen iodide",
+          "body_md": "Cold HI (1 mol): R–O–R′ → R–I + R′–OH; the **smaller** alkyl group gives the iodide (SN2), but a **tertiary** group gives the iodide (SN1). Hot excess HI: both groups → alkyl iodides. **Aryl alkyl ethers** always give **phenol + alkyl iodide** (the Ar–O bond does not break).",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Ether",
+                "Products with 1 mol HI"
+              ],
+              "rows": [
+                [
+                  "CH₃OCH₂CH₂CH₃",
+                  "CH₃I + propan-1-ol"
+                ],
+                [
+                  "(CH₃)₃COCH₃",
+                  "(CH₃)₃CI + CH₃OH"
+                ],
+                [
+                  "C₆H₅OC₂H₅",
+                  "C₆H₅OH + C₂H₅I"
+                ]
+              ]
+            },
+            "alt": "Table of products of ether cleavage by HI"
+          },
+          "math": [
+            "\\ce{C2H5OC2H5 + HI ->[cold] C2H5I + C2H5OH}",
+            "\\ce{C2H5OC2H5 + 2HI ->[hot] 2C2H5I + H2O}",
+            "\\ce{C6H5OC2H5 + HI -> C6H5OH + C2H5I}"
+          ],
+          "narration": "Hydrogen iodide first protonates the ether oxygen. Then iodide attacks a carbon. With methyl and primary groups this is an S N two attack on the less hindered carbon, so the smaller group becomes the iodide. With a tertiary group, a stable carbocation forms and picks up iodide. With aryl ethers, the aryl–oxygen bond has partial double-bond character and never breaks, so phenol is always formed.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s09",
+          "layout": "example",
+          "heading": "Worked example: products of cleavage",
+          "body_md": "**Problem.** Give the products with one equivalent of HI: (a) 1-methoxybutane; (b) 2-ethoxy-2-methylpropane; (c) methoxybenzene; (d) ethoxyethane with excess hot HI.\n\n**(a)** Iodomethane + butan-1-ol (SN2 at methyl).\n\n**(b)** 2-Iodo-2-methylpropane + ethanol (SN1 at the tertiary carbon).\n\n**(c)** Phenol + iodomethane.\n\n**(d)** Iodoethane only (2 mol) + water.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Ether",
+                "Mechanism",
+                "Iodide formed"
+              ],
+              "rows": [
+                [
+                  "1-Methoxybutane",
+                  "SN2",
+                  "CH₃I"
+                ],
+                [
+                  "2-Ethoxy-2-methylpropane",
+                  "SN1",
+                  "(CH₃)₃CI"
+                ],
+                [
+                  "Methoxybenzene",
+                  "SN2 at CH₃",
+                  "CH₃I"
+                ],
+                [
+                  "Ethoxyethane, hot excess",
+                  "Both C–O break",
+                  "2 C₂H₅I"
+                ]
+              ]
+            },
+            "alt": "Table of cleavage products"
+          },
+          "math": [],
+          "narration": "Identify the two groups on oxygen. Methyl and primary groups react by S N two, so iodide attacks the methyl carbon and butan-one-ol is released. A tertiary group forms a carbocation, so it becomes two-iodo-two-methylpropane and ethanol is released. Methoxybenzene gives phenol and iodomethane. With hot excess hydrogen iodide, the ethanol formed is also converted, so only iodoethane remains.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s10",
+          "layout": "check",
+          "heading": "Quick check: cleavage by HI",
+          "body_md": "Predict the products of cleaving an ether with HI.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Smaller group or tertiary group becomes the iodide; aryl ethers always give phenol.",
+          "check_question_id": "q_isc12chem_ch15_045",
+          "audio": null
+        },
+        {
+          "id": "s11",
+          "layout": "concept",
+          "heading": "Anisole: preparation and electrophilic substitution",
+          "body_md": "**Preparation** (Williamson): sodium phenoxide + iodomethane (or dimethyl sulphate). The **–OCH₃** group activates the ring (+R) and directs **ortho/para**; para usually predominates.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Reaction of anisole",
+                "Reagent",
+                "Major product"
+              ],
+              "rows": [
+                [
+                  "Bromination",
+                  "Br₂ in ethanoic acid (no catalyst)",
+                  "4-Bromoanisole"
+                ],
+                [
+                  "Nitration",
+                  "conc. HNO₃ + conc. H₂SO₄",
+                  "4-Nitroanisole (with 2-isomer)"
+                ],
+                [
+                  "FC alkylation",
+                  "CH₃Cl, anhydrous AlCl₃",
+                  "4-Methylanisole (with 2-isomer)"
+                ],
+                [
+                  "FC acylation",
+                  "CH₃COCl, anhydrous AlCl₃",
+                  "4-Methoxyacetophenone"
+                ]
+              ]
+            },
+            "alt": "Table of electrophilic substitution of anisole"
+          },
+          "math": [
+            "\\ce{C6H5ONa + CH3I -> C6H5OCH3 + NaI}",
+            "\\ce{C6H5OCH3 + Br2 ->[CH3COOH] BrC6H4OCH3 + HBr}",
+            "\\ce{C6H5OCH3 + CH3COCl ->[AlCl3] CH3COC6H4OCH3 + HCl}"
+          ],
+          "narration": "Anisole is made by Williamson’s synthesis from sodium phenoxide and iodomethane. Its methoxy group pushes electrons into the ring, so anisole is more reactive than benzene and is substituted at ortho and para positions. Bromine reacts even without a catalyst, in ethanoic acid. Nitration and Friedel–Crafts alkylation and acylation give mainly the para products.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s12",
+          "layout": "example",
+          "heading": "Worked example: products from anisole",
+          "body_md": "**Problem.** Give the major product of anisole with (a) Br₂ in ethanoic acid; (b) conc. HNO₃/H₂SO₄; (c) CH₃COCl/AlCl₃; (d) excess HI. Why is para favoured over ortho in (a)–(c)?\n\n**(a)** 1-Bromo-4-methoxybenzene. **(b)** 1-Methoxy-4-nitrobenzene. **(c)** 1-(4-Methoxyphenyl)ethan-1-one. **(d)** Phenol + iodomethane.\n\nThe –OCH₃ group hinders the adjacent ortho positions, so para substitution is preferred.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Reagent",
+                "Major product"
+              ],
+              "rows": [
+                [
+                  "Br₂/CH₃COOH",
+                  "4-Bromoanisole"
+                ],
+                [
+                  "HNO₃/H₂SO₄",
+                  "4-Nitroanisole"
+                ],
+                [
+                  "CH₃COCl/AlCl₃",
+                  "4-Methoxyacetophenone"
+                ],
+                [
+                  "HI",
+                  "Phenol + CH₃I"
+                ]
+              ]
+            },
+            "alt": "Table of anisole products"
+          },
+          "math": [],
+          "narration": "All three electrophilic substitutions go mainly para to the methoxy group, because the methoxy group crowds the neighbouring ortho positions. Bromination gives four-bromoanisole, nitration four-nitroanisole and acylation four-methoxyacetophenone. Hydrogen iodide is different: it attacks the ether linkage itself and gives phenol and iodomethane.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s13",
+          "layout": "concept",
+          "heading": "Uses of ethers",
+          "body_md": "Ethoxyethane: solvent for oils, fats, resins and Grignard reactions; formerly a general anaesthetic. Methoxymethane: refrigerant and aerosol propellant. Anisole: perfumes and as an intermediate. Ethers in general: inert reaction media.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Ether",
+                "Use"
+              ],
+              "rows": [
+                [
+                  "Ethoxyethane",
+                  "Solvent; Grignard reactions; early anaesthetic"
+                ],
+                [
+                  "Methoxymethane",
+                  "Refrigerant, propellant"
+                ],
+                [
+                  "Anisole",
+                  "Perfumes; synthesis intermediate"
+                ]
+              ]
+            },
+            "alt": "Table of uses of ethers"
+          },
+          "math": [],
+          "narration": "Ethoxyethane is an excellent solvent for fats, oils and resins, and it is the classic solvent for Grignard reactions because it is unreactive and dissolves the reagents. It was once used as a general anaesthetic. Methoxymethane is used as a refrigerant and aerosol propellant, and anisole is used in perfumes and as a starting material for other compounds.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s14",
+          "layout": "check",
+          "heading": "Quick check: anisole",
+          "body_md": "Predict a product of electrophilic substitution of anisole.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. The methoxy group activates the ring and directs ortho and para, mainly para.",
+          "check_question_id": "q_isc12chem_ch15_055",
+          "audio": null
+        },
+        {
+          "id": "s15",
+          "layout": "summary",
+          "heading": "Summary: Part 2",
+          "body_md": "",
+          "bullets": [
+            "Ether O sp³, C–O–C ≈ 111.7°; alkoxyalkane names.",
+            "Williamson: RONa + primary R′X (SN2); tertiary group on the alkoxide; aryl group on the phenoxide.",
+            "B.p. like alkanes (no H-bonds between molecules); soluble like alcohols (accept H-bonds).",
+            "Cl₂ (dark: α-substitution; light: perchloro); O₂ → explosive peroxides; PCl₅ → 2RCl.",
+            "HI: smaller or tertiary group → iodide; aryl ethers → phenol + RI.",
+            "Anisole: o/p activating; bromination, nitration, Friedel–Crafts give mainly para products."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Ether",
+                "HI products"
+              ],
+              "rows": [
+                [
+                  "CH₃OR (1°)",
+                  "CH₃I + ROH"
+                ],
+                [
+                  "R₃COCH₃",
+                  "R₃CI + CH₃OH"
+                ],
+                [
+                  "ArOR",
+                  "ArOH + RI"
+                ]
+              ]
+            },
+            "alt": "Summary table of HI cleavage"
+          },
+          "math": [],
+          "narration": "Let us sum up Part 2. Ethers are made by Williamson’s synthesis from an alkoxide and a primary halide. They boil like alkanes but dissolve like alcohols. They react with chlorine, slowly form explosive peroxides in air, and are split by phosphorus pentachloride and hydrogen iodide, with predictable products. Anisole is activated towards ortho and para substitution.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s16",
+          "layout": "exam-tips",
+          "heading": "Exam tips: Part 2",
+          "body_md": "",
+          "bullets": [
+            "In Williamson questions, explain why the halide must be primary.",
+            "For HI cleavage, state the mechanism (SN1 or SN2) behind your choice.",
+            "Mention peroxide hazards when asked about storing or distilling ethers.",
+            "Anisole bromination needs no Lewis acid."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Slip",
+                "Fix"
+              ],
+              "rows": [
+                [
+                  "(CH₃)₃CBr + CH₃ONa for tert-butyl methyl ether",
+                  "Gives alkene; use (CH₃)₃CONa + CH₃Br"
+                ],
+                [
+                  "Anisole + HI → iodobenzene",
+                  "Gives phenol + CH₃I"
+                ],
+                [
+                  "Ethers H-bond with each other",
+                  "No O–H; they cannot"
+                ]
+              ]
+            },
+            "alt": "Table of three common slips in Part 2 and fixes"
+          },
+          "math": [],
+          "narration": "Final tips. In Williamson questions, explain why the halide should be primary. In cleavage questions, give the mechanism that decides which group becomes the iodide. Mention peroxides when asked about the hazards of ethers. And remember that anisole is so reactive that bromination needs no catalyst.",
+          "check_question_id": null,
+          "audio": null
+        }
+      ],
+      "status": "draft",
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    }
+  ],
+  "notes": {
+    "unit": "isc-12-chemistry-ch15",
+    "version": 1,
+    "title": "Phenols and Ethers — Notes",
+    "language": "en",
+    "sections": [
+      {
+        "heading": "1. Phenols: classification, names and preparation",
+        "body_md": "Mono-, di-, trihydric phenols: phenol; cresols (methylphenols); catechol (1,2-), resorcinol (1,3-), quinol (1,4-diol); pyrogallol (1,2,3-triol).\n\n**Preparation:** (1) $\\ce{C6H5N2Cl + H2O ->[warm] C6H5OH + N2 + HCl}$; (2) Dow: C₆H₅Cl + NaOH, 623 K, 300 atm, then acid; (3) C₆H₅SO₃Na fused with NaOH (573 K), then acid; (4) **cumene process:** benzene + propene → cumene → (O₂) cumene hydroperoxide → (H⁺) phenol + propanone.",
+        "key_terms": [
+          {
+            "term": "Cumene",
+            "definition_md": "Isopropylbenzene, C₆H₅CH(CH₃)₂, made from benzene and propene."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\ce{C6H5C(CH3)2OOH ->[H+] C6H5OH + CH3COCH3}",
+            "label": "Cumene hydroperoxide cleavage"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Method",
+              "Key condition"
+            ],
+            "rows": [
+              [
+                "Diazonium salt",
+                "Warm with water"
+              ],
+              [
+                "Dow",
+                "623 K, 300 atm"
+              ],
+              [
+                "Sulphonate fusion",
+                "NaOH, 573 K"
+              ],
+              [
+                "Cumene",
+                "O₂, then H⁺"
+              ]
+            ]
+          },
+          "alt": "Table of preparations of phenol"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "isc-12-chemistry-ch15-t01"
+        ]
+      },
+      {
+        "heading": "2. Physical properties, acidity and reactions of the –OH group",
+        "body_md": "Phenol: colourless solid (m.p. 316 K), corrosive, turns pink in air; H-bonding → high b.p.; moderately soluble in water. 2-Nitrophenol: **intramolecular** H-bond → more volatile (steam distillable) than 4-nitrophenol.\n\n**Acidity:** pKa 10.0 (ethanol 15.9) — **phenoxide resonance**. o/p-NO₂ increase acidity (4-nitro 7.1; picric acid 0.4); –CH₃, –OCH₃ decrease. Dissolves in NaOH, not in NaHCO₃.\n\n**Reactions:** NaOH, Na → C₆H₅ONa; Zn dust → C₆H₆; CH₃COCl or (CH₃CO)₂O → phenyl ethanoate; PCl₅ → poor yield of C₆H₅Cl (C–O partial double bond), mainly (C₆H₅O)₃PO.",
+        "key_terms": [
+          {
+            "term": "Phenoxide ion",
+            "definition_md": "C₆H₅O⁻, stabilised by delocalisation of its negative charge into the ring."
+          },
+          {
+            "term": "Intramolecular hydrogen bond",
+            "definition_md": "A hydrogen bond within one molecule, e.g. in 2-nitrophenol."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\ce{C6H5OH + NaOH -> C6H5ONa + H2O}",
+            "label": "Phenol with NaOH"
+          }
+        ],
+        "visual": {
+          "kind": "svg",
+          "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 360 170\" role=\"img\" aria-label=\"Three resonance structures of the phenoxide ion. Left: the negative charge on oxygen. Centre: a carbon–oxygen double bond with the negative charge on a ring carbon ortho to oxygen. Right: a carbon–oxygen double bond with the negative charge on the carbon para to oxygen. Spreading the charge over the ring stabilises phenoxide, which is why phenol is more acidic than an alcohol.\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>Three resonance structures of the phenoxide ion. Left: the negative charge on oxygen. Centre: a carbon–oxygen double bond with the negative charge on a ring carbon ortho to oxygen. Right: a carbon–oxygen double bond with the negative charge on the carbon para to oxygen. Spreading the charge over the ring stabilises phenoxide, which is why phenol is more acidic than an alcohol.</title><line x1=\"60\" y1=\"72\" x2=\"84.2\" y2=\"86\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"84.2\" y1=\"86\" x2=\"84.2\" y2=\"114\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"79.9\" y1=\"91\" x2=\"79.9\" y2=\"109\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"84.2\" y1=\"114\" x2=\"60\" y2=\"128\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"60\" y1=\"128\" x2=\"35.8\" y2=\"114\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"57.8\" y1=\"121.7\" x2=\"42.3\" y2=\"112.7\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"35.8\" y1=\"114\" x2=\"35.8\" y2=\"86\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"35.8\" y1=\"86\" x2=\"60\" y2=\"72\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"42.3\" y1=\"87.3\" x2=\"57.8\" y2=\"78.3\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"60\" y1=\"72\" x2=\"60\" y2=\"48\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"60\" y=\"42\" fill=\"var(--diagram-red)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">O⁻</text><line x1=\"98\" y1=\"100\" x2=\"128\" y2=\"100\" stroke=\"currentColor\" stroke-width=\"1.5\"/><polygon points=\"132,100 127.4,102 127.4,98\" fill=\"currentColor\" stroke=\"none\"/><line x1=\"132\" y1=\"100\" x2=\"102\" y2=\"100\" stroke=\"currentColor\" stroke-width=\"1.5\"/><polygon points=\"98,100 102.6,98 102.6,102\" fill=\"currentColor\" stroke=\"none\"/><line x1=\"180\" y1=\"72\" x2=\"204.2\" y2=\"86\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"204.2\" y1=\"86\" x2=\"204.2\" y2=\"114\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"204.2\" y1=\"114\" x2=\"180\" y2=\"128\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"197.7\" y1=\"112.7\" x2=\"182.2\" y2=\"121.7\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"180\" y1=\"128\" x2=\"155.8\" y2=\"114\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"155.8\" y1=\"114\" x2=\"155.8\" y2=\"86\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"160.1\" y1=\"109\" x2=\"160.1\" y2=\"91\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"155.8\" y1=\"86\" x2=\"180\" y2=\"72\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"177.5\" y1=\"72\" x2=\"177.5\" y2=\"48\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"182.5\" y1=\"72\" x2=\"182.5\" y2=\"48\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"180\" y=\"42\" fill=\"var(--diagram-red)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">O</text><text x=\"210.2\" y=\"88\" fill=\"var(--diagram-blue)\" stroke=\"none\" font-size=\"14\" font-weight=\"bold\">−</text><line x1=\"218\" y1=\"100\" x2=\"248\" y2=\"100\" stroke=\"currentColor\" stroke-width=\"1.5\"/><polygon points=\"252,100 247.4,102 247.4,98\" fill=\"currentColor\" stroke=\"none\"/><line x1=\"252\" y1=\"100\" x2=\"222\" y2=\"100\" stroke=\"currentColor\" stroke-width=\"1.5\"/><polygon points=\"218,100 222.6,98 222.6,102\" fill=\"currentColor\" stroke=\"none\"/><line x1=\"300\" y1=\"72\" x2=\"324.2\" y2=\"86\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"324.2\" y1=\"86\" x2=\"324.2\" y2=\"114\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"319.9\" y1=\"91\" x2=\"319.9\" y2=\"109\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"324.2\" y1=\"114\" x2=\"300\" y2=\"128\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"300\" y1=\"128\" x2=\"275.8\" y2=\"114\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"275.8\" y1=\"114\" x2=\"275.8\" y2=\"86\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"280.1\" y1=\"109\" x2=\"280.1\" y2=\"91\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"275.8\" y1=\"86\" x2=\"300\" y2=\"72\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"297.5\" y1=\"72\" x2=\"297.5\" y2=\"48\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"302.5\" y1=\"72\" x2=\"302.5\" y2=\"48\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"300\" y=\"42\" fill=\"var(--diagram-red)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">O</text><text x=\"300\" y=\"146\" fill=\"var(--diagram-blue)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"bold\">−</text><text x=\"60\" y=\"160\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">charge on O</text><text x=\"180\" y=\"160\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">charge at ortho C</text><text x=\"300\" y=\"160\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">charge at para C</text></svg>",
+          "alt": "Three resonance structures of the phenoxide ion with the negative charge on oxygen, on an ortho carbon and on the para carbon"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "isc-12-chemistry-ch15-t02"
+        ]
+      },
+      {
+        "heading": "3. Electrophilic substitution, named reactions, tests and uses",
+        "body_md": "–OH activates (+R), o/p directing. Br₂(aq) → **2,4,6-tribromophenol** (white ppt); Br₂/CS₂, 273 K → 4- (and 2-) bromophenol. Dilute HNO₃ → 2- and 4-nitrophenol; conc. HNO₃ → **picric acid**. Conc. H₂SO₄: 2-sulphonic acid at about 290 K, 4- at about 373 K.\n\n**Kolbe:** C₆H₅ONa + CO₂ (400 K, 4–7 atm), H⁺ → **salicylic acid**. **Reimer–Tiemann:** CHCl₃ + NaOH (via :CCl₂), H⁺ → **salicylaldehyde**.\n\n**Tests:** neutral FeCl₃ → violet; azo dye with benzenediazonium chloride (alkaline, cold) → orange 4-hydroxyazobenzene; bromine water → white ppt. **Uses:** antiseptics, Bakelite, aspirin, dyes, picric acid.",
+        "key_terms": [
+          {
+            "term": "Kolbe reaction",
+            "definition_md": "Carboxylation of sodium phenoxide with CO₂ to give salicylic acid."
+          },
+          {
+            "term": "Reimer–Tiemann reaction",
+            "definition_md": "Formylation of phenol with CHCl₃ and NaOH to give salicylaldehyde."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\ce{C6H5OH + 3Br2 -> C6H2Br3OH + 3HBr}",
+            "label": "Bromine water"
+          },
+          {
+            "latex": "\\ce{C6H5OH + CHCl3 + 3NaOH -> HOC6H4CHO + 3NaCl + 2H2O}",
+            "label": "Reimer–Tiemann"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Test",
+              "Phenol"
+            ],
+            "rows": [
+              [
+                "FeCl₃ (neutral)",
+                "Violet"
+              ],
+              [
+                "Br₂(aq)",
+                "White ppt"
+              ],
+              [
+                "Diazonium salt, alkaline",
+                "Orange dye"
+              ]
+            ]
+          },
+          "alt": "Table of tests for phenol"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "isc-12-chemistry-ch15-t03"
+        ]
+      },
+      {
+        "heading": "4. Aliphatic ethers",
+        "body_md": "O sp³; C–O–C ≈ 111.7°; named as alkoxyalkanes (2-ethoxypropane). **Williamson:** RONa + primary R′X (SN2); tertiary groups go on the alkoxide (tertiary halides eliminate). Also 2ROH → ROR (conc. H₂SO₄, 413 K).\n\n**Physical:** no O–H → b.p. close to alkanes; accept H-bonds → lower ethers soluble like alcohols; volatile, flammable solvents.\n\n**Reactions:** Cl₂ (dark: α-chloro; light: perchloro); O₂ (air, light) → explosive **peroxides** (test FeSO₄/KSCN; remove with acidified FeSO₄); PCl₅ → 2RCl + POCl₃; HI: cold 1 mol → smaller (or tertiary) group becomes RI + alcohol; hot excess → 2RI.",
+        "key_terms": [
+          {
+            "term": "Williamson synthesis",
+            "definition_md": "Preparation of an ether from an alkoxide (or phenoxide) and a primary alkyl halide."
+          },
+          {
+            "term": "Ether peroxides",
+            "definition_md": "Explosive compounds formed slowly when ethers stand in air and light."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\ce{C2H5OC2H5 + 2HI -> 2C2H5I + H2O}",
+            "label": "Hot excess HI"
+          }
+        ],
+        "visual": {
+          "kind": "svg",
+          "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 340 160\" role=\"img\" aria-label=\"Left: methanol, with the C–O–H bond angle of about 108.9 degrees, slightly less than the tetrahedral angle because of the two lone pairs on oxygen. Right: methoxymethane, with the C–O–C bond angle of about 111.7 degrees, larger because the two bulky methyl groups repel each other.\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>Left: methanol, with the C–O–H bond angle of about 108.9 degrees, slightly less than the tetrahedral angle because of the two lone pairs on oxygen. Right: methoxymethane, with the C–O–C bond angle of about 111.7 degrees, larger because the two bulky methyl groups repel each other.</title><circle cx=\"85\" cy=\"60\" r=\"14\" fill=\"var(--diagram-red)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"85\" y=\"64\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\">O</text><line x1=\"73\" y1=\"68\" x2=\"45\" y2=\"100\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"97\" y1=\"68\" x2=\"125\" y2=\"100\" stroke=\"currentColor\" stroke-width=\"2\"/><circle cx=\"38\" cy=\"108\" r=\"16\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"38\" y=\"112\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">CH₃</text><circle cx=\"130\" cy=\"106\" r=\"10\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"130\" y=\"110\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">H</text><path d=\"M66 82 Q85 96 104 82\" fill=\"none\" stroke=\"var(--diagram-accent)\" stroke-width=\"1\"/><text x=\"85\" y=\"118\" fill=\"var(--diagram-accent)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">108.9°</text><text x=\"85\" y=\"36\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"14\">··</text><text x=\"85\" y=\"150\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">Methanol</text><circle cx=\"255\" cy=\"60\" r=\"14\" fill=\"var(--diagram-red)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"255\" y=\"64\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\">O</text><line x1=\"243\" y1=\"68\" x2=\"213\" y2=\"100\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"267\" y1=\"68\" x2=\"297\" y2=\"100\" stroke=\"currentColor\" stroke-width=\"2\"/><circle cx=\"206\" cy=\"108\" r=\"16\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"206\" y=\"112\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">CH₃</text><circle cx=\"304\" cy=\"108\" r=\"16\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"304\" y=\"112\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">CH₃</text><path d=\"M236 82 Q255 97 274 82\" fill=\"none\" stroke=\"var(--diagram-accent)\" stroke-width=\"1\"/><text x=\"255\" y=\"118\" fill=\"var(--diagram-accent)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">111.7°</text><text x=\"255\" y=\"36\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"14\">··</text><text x=\"255\" y=\"150\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">Methoxymethane</text></svg>",
+          "alt": "Bent shapes of methanol, with a C–O–H angle of about 108.9 degrees, and methoxymethane, with a C–O–C angle of about 111.7 degrees"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "isc-12-chemistry-ch15-t04"
+        ]
+      },
+      {
+        "heading": "5. Anisole",
+        "body_md": "**Preparation:** C₆H₅ONa + CH₃I → C₆H₅OCH₃ + NaI. –OCH₃ activates (+R), o/p directing, para major: Br₂ in ethanoic acid (no catalyst) → 4-bromoanisole; HNO₃/H₂SO₄ → 4-nitroanisole; CH₃Cl/AlCl₃ → 4-methylanisole; CH₃COCl/AlCl₃ → 4-methoxyacetophenone. **HI** → phenol + CH₃I (aryl C–O does not break).\n\n**Uses of ethers:** ethoxyethane — solvent, Grignard reactions, early anaesthetic; methoxymethane — refrigerant, propellant; anisole — perfumes.",
+        "key_terms": [
+          {
+            "term": "Anisole",
+            "definition_md": "Methoxybenzene, C₆H₅OCH₃."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\ce{C6H5OCH3 + HI -> C6H5OH + CH3I}",
+            "label": "Cleavage of anisole"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Reagent",
+              "Major product"
+            ],
+            "rows": [
+              [
+                "Br₂/CH₃COOH",
+                "4-Bromoanisole"
+              ],
+              [
+                "HNO₃/H₂SO₄",
+                "4-Nitroanisole"
+              ],
+              [
+                "CH₃COCl/AlCl₃",
+                "4-Methoxyacetophenone"
+              ],
+              [
+                "HI",
+                "Phenol + CH₃I"
+              ]
+            ]
+          },
+          "alt": "Table of reactions of anisole"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "isc-12-chemistry-ch15-t05"
+        ]
+      }
+    ],
+    "exam_tips_md": "**Common mistakes**\n- Saying phenol reacts with NaHCO₃.\n- Giving monobromophenol for bromine water (it is 2,4,6-tribromophenol).\n- Using a tertiary halide in Williamson’s synthesis.\n- Writing iodobenzene as a product of anisole + HI.\n\n**How marks are usually awarded**\n- Acidity (2 marks): resonance structures of phenoxide; substituent effects.\n- Named reactions (1–2 marks): reagents, conditions and product names.\n- Ether cleavage (1–2 marks): products with the mechanism that decides them.",
+    "status": "draft",
+    "provenance": {
+      "origin": "human",
+      "template_version": null,
+      "model": null,
+      "generated_at": "2026-10-30",
+      "author": "claude-opus-5-5 (subject-producer)"
+    }
+  },
+  "flashcards": {
+    "unit": "isc-12-chemistry-ch15",
+    "version": 1,
+    "language": "en",
+    "cards": [
+      {
+        "id": "f01",
+        "front_md": "Resorcinol?",
+        "back_md": "Benzene-1,3-diol.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch15-t01"
+      },
+      {
+        "id": "f02",
+        "front_md": "Pyrogallol?",
+        "back_md": "Benzene-1,2,3-triol.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch15-t01"
+      },
+      {
+        "id": "f03",
+        "front_md": "Cumene process products?",
+        "back_md": "Phenol + propanone.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch15-t01"
+      },
+      {
+        "id": "f04",
+        "front_md": "Phenol from sodium benzenesulphonate?",
+        "back_md": "Fuse with NaOH (573 K), then acid.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch15-t01"
+      },
+      {
+        "id": "f05",
+        "front_md": "Phenol from diazonium salt?",
+        "back_md": "Warm with water.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch15-t01"
+      },
+      {
+        "id": "f06",
+        "front_md": "pKa of phenol vs ethanol?",
+        "back_md": "10.0 vs 15.9.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch15-t02"
+      },
+      {
+        "id": "f07",
+        "front_md": "Why is phenol acidic?",
+        "back_md": "Phenoxide resonance stabilisation.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch15-t02"
+      },
+      {
+        "id": "f08",
+        "front_md": "Effect of p-NO₂ on acidity?",
+        "back_md": "Increases it.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch15-t02"
+      },
+      {
+        "id": "f09",
+        "front_md": "Does phenol react with NaHCO₃?",
+        "back_md": "No.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch15-t02"
+      },
+      {
+        "id": "f10",
+        "front_md": "Phenol + Zn dust?",
+        "back_md": "Benzene.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch15-t02"
+      },
+      {
+        "id": "f11",
+        "front_md": "Why poor yield with PCl₅?",
+        "back_md": "C–O partial double-bond character.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch15-t02"
+      },
+      {
+        "id": "f12",
+        "front_md": "Why is 2-nitrophenol steam volatile?",
+        "back_md": "Intramolecular H-bond.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch15-t02"
+      },
+      {
+        "id": "f13",
+        "front_md": "Phenol + bromine water?",
+        "back_md": "2,4,6-Tribromophenol (white ppt).",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch15-t03"
+      },
+      {
+        "id": "f14",
+        "front_md": "Phenol + Br₂/CS₂ at 273 K?",
+        "back_md": "4-Bromophenol (mainly).",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch15-t03"
+      },
+      {
+        "id": "f15",
+        "front_md": "Phenol + conc. HNO₃?",
+        "back_md": "Picric acid.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch15-t03"
+      },
+      {
+        "id": "f16",
+        "front_md": "Kolbe product?",
+        "back_md": "Salicylic acid.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch15-t03"
+      },
+      {
+        "id": "f17",
+        "front_md": "Reimer–Tiemann product?",
+        "back_md": "Salicylaldehyde.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch15-t03"
+      },
+      {
+        "id": "f18",
+        "front_md": "Electrophile in Reimer–Tiemann?",
+        "back_md": "Dichlorocarbene, :CCl₂.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch15-t03"
+      },
+      {
+        "id": "f19",
+        "front_md": "FeCl₃ test for phenol?",
+        "back_md": "Violet colour.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch15-t03"
+      },
+      {
+        "id": "f20",
+        "front_md": "Azo dye test colour?",
+        "back_md": "Orange (4-hydroxyazobenzene).",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch15-t03"
+      },
+      {
+        "id": "f21",
+        "front_md": "Williamson synthesis?",
+        "back_md": "RONa + primary R′X → ROR′.",
+        "tag": "definition",
+        "topic_id": "isc-12-chemistry-ch15-t04"
+      },
+      {
+        "id": "f22",
+        "front_md": "Why not tertiary halides in Williamson?",
+        "back_md": "Elimination to alkene.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch15-t04"
+      },
+      {
+        "id": "f23",
+        "front_md": "Why do ethers boil like alkanes?",
+        "back_md": "No O–H; no H-bonds between molecules.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch15-t04"
+      },
+      {
+        "id": "f24",
+        "front_md": "Ether + PCl₅?",
+        "back_md": "2RCl + POCl₃.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch15-t04"
+      },
+      {
+        "id": "f25",
+        "front_md": "Danger of old ether?",
+        "back_md": "Explosive peroxides.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch15-t04"
+      },
+      {
+        "id": "f26",
+        "front_md": "CH₃OR (1°) + HI?",
+        "back_md": "CH₃I + ROH.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch15-t04"
+      },
+      {
+        "id": "f27",
+        "front_md": "(CH₃)₃COR + HI?",
+        "back_md": "(CH₃)₃CI + ROH (SN1).",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch15-t04"
+      },
+      {
+        "id": "f28",
+        "front_md": "Anisole preparation?",
+        "back_md": "C₆H₅ONa + CH₃I.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch15-t05"
+      },
+      {
+        "id": "f29",
+        "front_md": "Anisole + HI?",
+        "back_md": "Phenol + CH₃I.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch15-t05"
+      },
+      {
+        "id": "f30",
+        "front_md": "Major product of anisole bromination?",
+        "back_md": "4-Bromoanisole (no catalyst needed).",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch15-t05"
+      },
+      {
+        "id": "f31",
+        "front_md": "Exam tip: bromination of phenol",
+        "back_md": "State the solvent: water → tribromo; CS₂ → mono.",
+        "tag": "exam-tip",
+        "topic_id": "isc-12-chemistry-ch15-t03"
+      }
+    ],
+    "status": "draft",
+    "provenance": {
+      "origin": "human",
+      "template_version": null,
+      "model": null,
+      "generated_at": "2026-10-30",
+      "author": "claude-opus-5-5 (subject-producer)"
+    }
+  },
+  "questions": [
+    {
+      "id": "q_isc12chem_ch15_001",
+      "unit": "isc-12-chemistry-ch15",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Sodium benzenesulphonate is fused with solid sodium hydroxide at about 573 K and the melt is then acidified. The organic product is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "phenol"
+        },
+        {
+          "id": "b",
+          "text_md": "benzene"
+        },
+        {
+          "id": "c",
+          "text_md": "benzoic acid"
+        },
+        {
+          "id": "d",
+          "text_md": "benzenethiol"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "C₆H₅SO₃Na + 2NaOH → C₆H₅ONa + Na₂SO₃ + H₂O; acid releases phenol — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch15-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch15_002",
+      "unit": "isc-12-chemistry-ch15",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Resorcinol, used in some antiseptic creams, has the IUPAC name:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "benzene-1,2-diol"
+        },
+        {
+          "id": "b",
+          "text_md": "benzene-1,4-diol"
+        },
+        {
+          "id": "c",
+          "text_md": "benzene-1,3-diol"
+        },
+        {
+          "id": "d",
+          "text_md": "benzene-1,2,3-triol"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Resorcinol is the meta-diol — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch15-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch15_003",
+      "unit": "isc-12-chemistry-ch15",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "m-Cresol, a constituent of coal-tar disinfectants, is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "3-methylphenol"
+        },
+        {
+          "id": "b",
+          "text_md": "2-methylphenol"
+        },
+        {
+          "id": "c",
+          "text_md": "4-methylphenol"
+        },
+        {
+          "id": "d",
+          "text_md": "phenylmethanol"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Meta = position 3 relative to –OH — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch15-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch15_004",
+      "unit": "isc-12-chemistry-ch15",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Cumene, the starting material for the industrial manufacture of phenol, is made by reacting benzene with:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "propanone, with zinc dust"
+        },
+        {
+          "id": "b",
+          "text_md": "propan-1-ol, with sodium"
+        },
+        {
+          "id": "c",
+          "text_md": "ethene, with ultraviolet light"
+        },
+        {
+          "id": "d",
+          "text_md": "propene, in the presence of an acid catalyst"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "C₆H₆ + CH₂=CHCH₃ → C₆H₅CH(CH₃)₂ — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch15-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch15_005",
+      "unit": "isc-12-chemistry-ch15",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? The cumene process yields propanone as a valuable co-product along with phenol.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "t"
+        ]
+      },
+      "solution_md": "True. Cumene hydroperoxide splits into phenol and propanone.",
+      "marking_scheme": [
+        {
+          "step": "True",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch15-t01"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch15_006",
+      "unit": "isc-12-chemistry-ch15",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "Benzene-1,4-diol, used as a photographic developer, is commonly called ___.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "quinol",
+              "hydroquinone"
+            ]
+          }
+        ]
+      },
+      "solution_md": "**Quinol** (hydroquinone).",
+      "marking_scheme": [
+        {
+          "step": "Writes \"quinol\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch15-t01"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch15_007",
+      "unit": "isc-12-chemistry-ch15",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "$12.0\\ \\text{g}$ of cumene ($M = 120$) is converted by the cumene process. If the overall yield is 80%, what mass of propanone ($M = 58$) is obtained?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 4.64,
+        "tolerance": 0.02,
+        "unit": "g"
+      },
+      "solution_md": "$n = 12.0 \\div 120 = 0.100\\ \\text{mol}$; mass $= 0.100 \\times 58 \\times 0.80 = 4.64\\ \\text{g}$.",
+      "marking_scheme": [
+        {
+          "step": "0.100 mol, 1 : 1",
+          "marks": 1
+        },
+        {
+          "step": "4.64 g",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch15-t01"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch15_008",
+      "unit": "isc-12-chemistry-ch15",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Starting from sodium benzenesulphonate, how is phenol obtained? Give the equations and conditions.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Fuse with solid NaOH at about 573 K: $\\ce{C6H5SO3Na + 2NaOH -> C6H5ONa + Na2SO3 + H2O}$. Acidify the sodium phenoxide: $\\ce{C6H5ONa + HCl -> C6H5OH + NaCl}$."
+      },
+      "solution_md": "Alkali fusion; acidification.",
+      "marking_scheme": [
+        {
+          "step": "Fusion equation with conditions",
+          "marks": 1
+        },
+        {
+          "step": "Acidification",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch15-t01"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch15_009",
+      "unit": "isc-12-chemistry-ch15",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write the structures and IUPAC names of catechol, quinol and pyrogallol, and classify each as dihydric or trihydric.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Catechol: 1,2-C₆H₄(OH)₂, benzene-1,2-diol (dihydric). Quinol: 1,4-C₆H₄(OH)₂, benzene-1,4-diol (dihydric). Pyrogallol: 1,2,3-C₆H₃(OH)₃, benzene-1,2,3-triol (trihydric)."
+      },
+      "solution_md": "Three structures and names.",
+      "marking_scheme": [
+        {
+          "step": "Catechol",
+          "marks": 1
+        },
+        {
+          "step": "Quinol",
+          "marks": 1
+        },
+        {
+          "step": "Pyrogallol",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch15-t01"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch15_010",
+      "unit": "isc-12-chemistry-ch15",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Phenol dissolves in aqueous sodium hydroxide but does not liberate CO₂ from aqueous sodium hydrogencarbonate. This shows that phenol is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "a stronger acid than carbonic acid"
+        },
+        {
+          "id": "b",
+          "text_md": "a weaker acid than water"
+        },
+        {
+          "id": "c",
+          "text_md": "a base"
+        },
+        {
+          "id": "d",
+          "text_md": "a stronger acid than water but a weaker acid than carbonic acid"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch15-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch15_011",
+      "unit": "isc-12-chemistry-ch15",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Of phenol, 4-methylphenol, 3-nitrophenol and 4-nitrophenol, which has the lowest pKa?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Phenol"
+        },
+        {
+          "id": "b",
+          "text_md": "4-Methylphenol"
+        },
+        {
+          "id": "c",
+          "text_md": "3-Nitrophenol"
+        },
+        {
+          "id": "d",
+          "text_md": "4-Nitrophenol"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "A para-NO₂ delocalises the negative charge by −R as well as −I (pKa 7.1) — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch15-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch15_012",
+      "unit": "isc-12-chemistry-ch15",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "2-Nitrophenol boils at a lower temperature than 4-nitrophenol. The reason is that 2-nitrophenol:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "has a smaller molar mass"
+        },
+        {
+          "id": "b",
+          "text_md": "cannot form any hydrogen bonds"
+        },
+        {
+          "id": "c",
+          "text_md": "forms intramolecular hydrogen bonds, so its molecules are not linked to one another"
+        },
+        {
+          "id": "d",
+          "text_md": "is more polar"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Chelation within the molecule replaces intermolecular association — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch15-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch15_013",
+      "unit": "isc-12-chemistry-ch15",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Phenol vapour is passed over heated zinc dust. The organic product is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "cyclohexanol"
+        },
+        {
+          "id": "b",
+          "text_md": "benzene"
+        },
+        {
+          "id": "c",
+          "text_md": "biphenyl"
+        },
+        {
+          "id": "d",
+          "text_md": "zinc phenoxide only"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "C₆H₅OH + Zn → C₆H₆ + ZnO — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch15-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch15_014",
+      "unit": "isc-12-chemistry-ch15",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Phenol gives only a poor yield of chlorobenzene with phosphorus pentachloride, unlike ethanol, which gives chloroethane readily. The main reason is that in phenol:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "the C–O bond has partial double-bond character because of resonance"
+        },
+        {
+          "id": "b",
+          "text_md": "the O–H bond is very weak"
+        },
+        {
+          "id": "c",
+          "text_md": "phenol is a gas"
+        },
+        {
+          "id": "d",
+          "text_md": "PCl₅ reacts only with alcohols that have a methyl group"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "The strengthened C–O bond is hard to break — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch15-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch15_015",
+      "unit": "isc-12-chemistry-ch15",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Phenol is warmed with ethanoic anhydride. The ester formed is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "ethyl benzoate"
+        },
+        {
+          "id": "b",
+          "text_md": "methyl benzoate"
+        },
+        {
+          "id": "c",
+          "text_md": "phenyl methanoate"
+        },
+        {
+          "id": "d",
+          "text_md": "phenyl ethanoate"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "C₆H₅OH + (CH₃CO)₂O → CH₃COOC₆H₅ + CH₃COOH — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch15-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch15_016",
+      "unit": "isc-12-chemistry-ch15",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Phenol is a stronger acid than ethanol.\n\n**Reason (R):** The phenoxide ion is stabilised by delocalisation of its negative charge into the benzene ring.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Both are true, and R explains A — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch15-t02"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch15_017",
+      "unit": "isc-12-chemistry-ch15",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** 4-Methoxyphenol is a slightly weaker acid than phenol.\n\n**Reason (R):** The methoxy group withdraws electrons from the ring by its −I effect.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Both statements are true, but A is due to the stronger +R (electron-releasing) effect of –OCH₃ at the para position, not its −I effect — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 4,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch15-t02"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch15_018",
+      "unit": "isc-12-chemistry-ch15",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? Phenol liberates carbon dioxide from aqueous sodium hydrogencarbonate.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "f"
+        ]
+      },
+      "solution_md": "False. Phenol (pKa 10) is weaker than carbonic acid.",
+      "marking_scheme": [
+        {
+          "step": "False, with the correction",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch15-t02"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch15_019",
+      "unit": "isc-12-chemistry-ch15",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "$4.7\\ \\text{g}$ of phenol ($M = 94$) is dissolved in excess aqueous NaOH. What mass of sodium phenoxide ($M = 116$) is present in the solution?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 5.8,
+        "tolerance": 0.02,
+        "unit": "g"
+      },
+      "solution_md": "$n = 4.7 \\div 94 = 0.050\\ \\text{mol}$; mass $= 0.050 \\times 116 = 5.8\\ \\text{g}$.",
+      "marking_scheme": [
+        {
+          "step": "0.050 mol",
+          "marks": 1
+        },
+        {
+          "step": "5.8 g",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch15-t02"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch15_020",
+      "unit": "isc-12-chemistry-ch15",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Using resonance, explain why phenol (pKa 10.0) is a much stronger acid than cyclohexanol (pKa about 16).",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Loss of H⁺ from phenol gives the phenoxide ion, in which the negative charge is delocalised from oxygen onto the ortho and para carbons of the ring (several resonance structures), stabilising the ion. The cyclohexoxide ion has no such delocalisation; its charge stays on oxygen, and the alkyl group (+I) destabilises it further."
+      },
+      "solution_md": "Phenoxide resonance; no delocalisation in alkoxide.",
+      "marking_scheme": [
+        {
+          "step": "Phenoxide delocalisation",
+          "marks": 1
+        },
+        {
+          "step": "Alkoxide not stabilised",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch15-t02"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch15_021",
+      "unit": "isc-12-chemistry-ch15",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Phenol (M = 94) boils at 455 K, whereas toluene (M = 92) boils at 384 K. Explain.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Phenol molecules are associated by intermolecular hydrogen bonds through their –OH groups; extra energy is needed to break these. Toluene has only weak van der Waals forces."
+      },
+      "solution_md": "Hydrogen bonding in phenol.",
+      "marking_scheme": [
+        {
+          "step": "H-bonding in phenol",
+          "marks": 1
+        },
+        {
+          "step": "Only dispersion in toluene",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch15-t02"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch15_022",
+      "unit": "isc-12-chemistry-ch15",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write equations for the reaction of phenol with (a) sodium, (b) ethanoyl chloride and (c) zinc dust on heating, naming the organic products.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) $\\ce{2C6H5OH + 2Na -> 2C6H5ONa + H2}$: sodium phenoxide. (b) $\\ce{C6H5OH + CH3COCl -> CH3COOC6H5 + HCl}$: phenyl ethanoate. (c) $\\ce{C6H5OH + Zn -> C6H6 + ZnO}$: benzene."
+      },
+      "solution_md": "Three equations.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch15-t02"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch15_023",
+      "unit": "isc-12-chemistry-ch15",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Arrange 2,4-dinitrophenol, phenol, 4-methylphenol and 3-nitrophenol in order of increasing acid strength, and explain the order.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "4-Methylphenol < phenol < 3-nitrophenol < 2,4-dinitrophenol. –CH₃ releases electrons (+I, hyperconjugation), destabilising the phenoxide. –NO₂ withdraws electrons: from the meta position only by −I; from ortho and para positions also by −R, delocalising the negative charge onto the nitro oxygens. Two o/p nitro groups give the greatest stabilisation."
+      },
+      "solution_md": "Order with +I/−I/−R reasoning.",
+      "marking_scheme": [
+        {
+          "step": "Order",
+          "marks": 1
+        },
+        {
+          "step": "Methyl effect",
+          "marks": 1
+        },
+        {
+          "step": "Nitro effects",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch15-t02"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch15_024",
+      "unit": "isc-12-chemistry-ch15",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which reagent distinguishes phenol from cyclohexanol by giving an orange dye with phenol only?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Sodium metal"
+        },
+        {
+          "id": "b",
+          "text_md": "Acidified potassium dichromate"
+        },
+        {
+          "id": "c",
+          "text_md": "Concentrated sulphuric acid"
+        },
+        {
+          "id": "d",
+          "text_md": "Benzenediazonium chloride in cold alkaline solution"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Coupling gives 4-hydroxyazobenzene, an orange azo dye — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch15-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch15_025",
+      "unit": "isc-12-chemistry-ch15",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Phenol is treated with bromine dissolved in carbon disulphide at 273 K. The main product is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "2,4,6-tribromophenol"
+        },
+        {
+          "id": "b",
+          "text_md": "4-bromophenol"
+        },
+        {
+          "id": "c",
+          "text_md": "3-bromophenol"
+        },
+        {
+          "id": "d",
+          "text_md": "bromobenzene"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "In a non-polar solvent at low temperature, monosubstitution occurs, mainly para — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch15-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch15_026",
+      "unit": "isc-12-chemistry-ch15",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "In the Reimer–Tiemann reaction of phenol with chloroform and aqueous NaOH, the electrophile that attacks the phenoxide ion is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "the trichloromethyl cation, CCl₃⁺"
+        },
+        {
+          "id": "b",
+          "text_md": "dichlorocarbene, :CCl₂"
+        },
+        {
+          "id": "c",
+          "text_md": "the chloride ion, Cl⁻"
+        },
+        {
+          "id": "d",
+          "text_md": "carbon dioxide"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "CHCl₃ + OH⁻ → :CCl₂ + H₂O + Cl⁻ — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch15-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch15_027",
+      "unit": "isc-12-chemistry-ch15",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Salicylic acid, made from sodium phenoxide by Kolbe’s reaction, is converted into aspirin by:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "nitration with conc. HNO₃"
+        },
+        {
+          "id": "b",
+          "text_md": "reduction with zinc dust"
+        },
+        {
+          "id": "c",
+          "text_md": "acetylation with ethanoic anhydride"
+        },
+        {
+          "id": "d",
+          "text_md": "bromination with bromine water"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Aspirin is acetylsalicylic acid — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch15-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch15_028",
+      "unit": "isc-12-chemistry-ch15",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Phenol is heated with concentrated sulphuric acid at about 373 K. The major product is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "4-hydroxybenzenesulphonic acid"
+        },
+        {
+          "id": "b",
+          "text_md": "2-hydroxybenzenesulphonic acid"
+        },
+        {
+          "id": "c",
+          "text_md": "3-hydroxybenzenesulphonic acid"
+        },
+        {
+          "id": "d",
+          "text_md": "diphenyl sulphate"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "At higher temperature the para isomer predominates (ortho at about 290 K) — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch15-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch15_029",
+      "unit": "isc-12-chemistry-ch15",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Picric acid, obtained by treating phenol with concentrated nitric acid, is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "2,4,6-trinitrophenol"
+        },
+        {
+          "id": "b",
+          "text_md": "2,4-dinitrophenol"
+        },
+        {
+          "id": "c",
+          "text_md": "4-nitrophenol"
+        },
+        {
+          "id": "d",
+          "text_md": "trinitrotoluene"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch15-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch15_030",
+      "unit": "isc-12-chemistry-ch15",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A few drops of neutral iron(III) chloride solution are added to an aqueous solution of phenol. The observation is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "a white precipitate"
+        },
+        {
+          "id": "b",
+          "text_md": "effervescence"
+        },
+        {
+          "id": "c",
+          "text_md": "a violet colour"
+        },
+        {
+          "id": "d",
+          "text_md": "a silver mirror"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Phenols give coloured iron(III) complexes — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch15-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch15_031",
+      "unit": "isc-12-chemistry-ch15",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Phenol gives 2,4,6-tribromophenol with bromine water but mainly monobromophenols with bromine in CS₂.\n\n**Reason (R):** In water phenol partly ionises to the more strongly activated phenoxide ion, and bromine is more polarised.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Both are true, and R explains A — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch15-t03"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch15_032",
+      "unit": "isc-12-chemistry-ch15",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? Kolbe’s reaction introduces the –COOH group mainly at the para position of phenol.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "f"
+        ]
+      },
+      "solution_md": "False. It gives mainly salicylic acid (ortho).",
+      "marking_scheme": [
+        {
+          "step": "False, with the correction",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch15-t03"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch15_033",
+      "unit": "isc-12-chemistry-ch15",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "The Reimer–Tiemann reaction of phenol gives 2-hydroxybenzaldehyde, commonly called ___.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "salicylaldehyde"
+            ]
+          }
+        ]
+      },
+      "solution_md": "**Salicylaldehyde**.",
+      "marking_scheme": [
+        {
+          "step": "Writes \"salicylaldehyde\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch15-t03"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch15_034",
+      "unit": "isc-12-chemistry-ch15",
+      "language": "en",
+      "type": "match",
+      "stem_md": "Match each reaction of phenol (or sodium phenoxide) with its product.",
+      "options": [
+        {
+          "id": "1",
+          "text_md": "Heat with zinc dust"
+        },
+        {
+          "id": "2",
+          "text_md": "CHCl₃ + aqueous NaOH, then acid"
+        },
+        {
+          "id": "3",
+          "text_md": "Sodium phenoxide + CO₂ under pressure, then acid"
+        },
+        {
+          "id": "4",
+          "text_md": "Concentrated HNO₃"
+        }
+      ],
+      "match_right": [
+        {
+          "id": "p",
+          "text_md": "Salicylaldehyde"
+        },
+        {
+          "id": "q",
+          "text_md": "Picric acid"
+        },
+        {
+          "id": "r",
+          "text_md": "Benzene"
+        },
+        {
+          "id": "s",
+          "text_md": "Salicylic acid"
+        }
+      ],
+      "answer": {
+        "pairs": [
+          {
+            "left_id": "1",
+            "right_id": "r"
+          },
+          {
+            "left_id": "2",
+            "right_id": "p"
+          },
+          {
+            "left_id": "3",
+            "right_id": "s"
+          },
+          {
+            "left_id": "4",
+            "right_id": "q"
+          }
+        ]
+      },
+      "solution_md": "Zn → benzene; Reimer–Tiemann → salicylaldehyde; Kolbe → salicylic acid; conc. HNO₃ → picric acid.",
+      "marking_scheme": [
+        {
+          "step": "1 → r",
+          "marks": 0.5
+        },
+        {
+          "step": "2 → p",
+          "marks": 0.5
+        },
+        {
+          "step": "3 → s",
+          "marks": 0.5
+        },
+        {
+          "step": "4 → q",
+          "marks": 0.5
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch15-t03"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch15_035",
+      "unit": "isc-12-chemistry-ch15",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "$4.7\\ \\text{g}$ of phenol ($M = 94$) is converted via sodium phenoxide into salicylic acid ($M = 138$) by Kolbe’s reaction with a 70% yield. What mass of salicylic acid is obtained?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 4.83,
+        "tolerance": 0.02,
+        "unit": "g"
+      },
+      "solution_md": "$n = 4.7 \\div 94 = 0.050\\ \\text{mol}$; mass $= 0.050 \\times 138 \\times 0.70 = 4.83\\ \\text{g}$.",
+      "marking_scheme": [
+        {
+          "step": "0.050 mol",
+          "marks": 1
+        },
+        {
+          "step": "4.83 g",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch15-t03"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch15_036",
+      "unit": "isc-12-chemistry-ch15",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write the equations for Kolbe’s reaction starting from sodium phenoxide, and name the product and one of its uses.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "$\\ce{C6H5ONa + CO2 ->[400 K, 4-7 atm] HOC6H4COONa}$ (sodium salicylate); $\\ce{HOC6H4COONa + HCl -> HOC6H4COOH + NaCl}$: salicylic acid (2-hydroxybenzoic acid), used to make aspirin (or in skin preparations)."
+      },
+      "solution_md": "Salicylic acid; aspirin.",
+      "marking_scheme": [
+        {
+          "step": "Equations with conditions",
+          "marks": 1
+        },
+        {
+          "step": "Product and use",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch15-t03"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch15_037",
+      "unit": "isc-12-chemistry-ch15",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Describe the azo dye test for phenol, with the equation.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Phenol is dissolved in NaOH and added to cold (273–278 K) benzenediazonium chloride; an orange dye, 4-hydroxyazobenzene, forms. $\\ce{C6H5N2Cl + C6H5OH + NaOH -> HOC6H4N=NC6H5 + NaCl + H2O}$."
+      },
+      "solution_md": "Orange 4-hydroxyazobenzene.",
+      "marking_scheme": [
+        {
+          "step": "Conditions and observation",
+          "marks": 1
+        },
+        {
+          "step": "Equation",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch15-t03"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch15_038",
+      "unit": "isc-12-chemistry-ch15",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Name the main products when phenol reacts with (a) dilute nitric acid at 298 K, (b) concentrated sulphuric acid at about 290 K and at about 373 K, and (c) bromine water.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) 2-Nitrophenol and 4-nitrophenol. (b) 2-Hydroxybenzenesulphonic acid at about 290 K; 4-hydroxybenzenesulphonic acid at about 373 K. (c) 2,4,6-Tribromophenol (white precipitate)."
+      },
+      "solution_md": "o/p-nitrophenols; o or p sulphonic acid; tribromophenol.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch15-t03"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch15_039",
+      "unit": "isc-12-chemistry-ch15",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Give one chemical test, with observations, to distinguish phenol from (a) benzoic acid, (b) anisole and (c) cyclohexanol.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Aqueous NaHCO₃: benzoic acid effervesces (CO₂); phenol does not. (b) Neutral FeCl₃: phenol gives a violet colour; anisole does not (or aqueous NaOH: phenol dissolves, anisole does not). (c) Bromine water: phenol gives a white precipitate of 2,4,6-tribromophenol; cyclohexanol does not."
+      },
+      "solution_md": "NaHCO₃; FeCl₃; bromine water.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch15-t03"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch15_040",
+      "unit": "isc-12-chemistry-ch15",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which pair of reactants gives the best yield of 2-methoxy-2-methylbutane, CH₃CH₂C(CH₃)₂OCH₃, by Williamson’s synthesis?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "2-Chloro-2-methylbutane and sodium methoxide"
+        },
+        {
+          "id": "b",
+          "text_md": "Sodium 2-methylbutan-2-oxide and iodomethane"
+        },
+        {
+          "id": "c",
+          "text_md": "2-Methylbutan-2-ol and methanol with conc. H₂SO₄"
+        },
+        {
+          "id": "d",
+          "text_md": "Methanol and 2-methylbut-2-ene with sodium"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "The tertiary group must be on the alkoxide; a tertiary halide would undergo elimination — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch15-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch15_041",
+      "unit": "isc-12-chemistry-ch15",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "The IUPAC name of ethyl isopropyl ether, CH₃CH₂OCH(CH₃)₂, is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "1-ethoxypropane"
+        },
+        {
+          "id": "b",
+          "text_md": "2-ethoxypropane"
+        },
+        {
+          "id": "c",
+          "text_md": "2-propoxyethane"
+        },
+        {
+          "id": "d",
+          "text_md": "ethoxyisopropane"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "The larger group (propane) is the parent; ethoxy at C-2 — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch15-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch15_042",
+      "unit": "isc-12-chemistry-ch15",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A bottle of ethoxyethane that has stood in sunlight for months should not be distilled to dryness because:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "it will have turned into ethanol"
+        },
+        {
+          "id": "b",
+          "text_md": "it may contain explosive peroxides formed by reaction with air"
+        },
+        {
+          "id": "c",
+          "text_md": "it decomposes into toxic chlorine"
+        },
+        {
+          "id": "d",
+          "text_md": "its boiling point will have risen above 500 K"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Ethers form peroxides with O₂ in light; these explode on concentration — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch15-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch15_043",
+      "unit": "isc-12-chemistry-ch15",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Ethoxyethane is heated with phosphorus pentachloride. The products are:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "chloroethane (2 mol) and POCl₃"
+        },
+        {
+          "id": "b",
+          "text_md": "ethanol and PCl₃"
+        },
+        {
+          "id": "c",
+          "text_md": "chloroethane and ethanol"
+        },
+        {
+          "id": "d",
+          "text_md": "1,1-dichloroethane and POCl₃"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "C₂H₅OC₂H₅ + PCl₅ → 2C₂H₅Cl + POCl₃ — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch15-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch15_044",
+      "unit": "isc-12-chemistry-ch15",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Ethoxyethane reacts with chlorine in the dark. The main product is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "perchlorodiethyl ether"
+        },
+        {
+          "id": "b",
+          "text_md": "1-chloroethoxyethane, CH₃CHClOC₂H₅"
+        },
+        {
+          "id": "c",
+          "text_md": "chloroethane and ethanol"
+        },
+        {
+          "id": "d",
+          "text_md": "2-chloroethanol"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "In the dark, the α-hydrogen next to oxygen is substituted — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch15-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch15_045",
+      "unit": "isc-12-chemistry-ch15",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "1-Methoxypropane is heated with one equivalent of hydrogen iodide. The products are:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "1-iodopropane and methanol"
+        },
+        {
+          "id": "b",
+          "text_md": "iodomethane and 1-iodopropane"
+        },
+        {
+          "id": "c",
+          "text_md": "propene and methanol"
+        },
+        {
+          "id": "d",
+          "text_md": "iodomethane and propan-1-ol"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "SN2 attack of I⁻ on the less hindered methyl carbon — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch15-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch15_046",
+      "unit": "isc-12-chemistry-ch15",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** 2-Ethoxy-2-methylpropane reacts with HI to give 2-iodo-2-methylpropane and ethanol.\n\n**Reason (R):** The protonated ether ionises by SN1 to give the stable tertiary carbocation.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Both are true, and R explains A — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch15-t04"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch15_047",
+      "unit": "isc-12-chemistry-ch15",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Ethoxyethane is much more soluble in water than pentane, which has a similar molar mass.\n\n**Reason (R):** Ethoxyethane molecules form hydrogen bonds with one another.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "A is true (water forms hydrogen bonds to the ether oxygen). R is false: ethers have no O–H and cannot hydrogen-bond with each other — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch15-t04"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch15_048",
+      "unit": "isc-12-chemistry-ch15",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? Ether molecules can accept hydrogen bonds from water but cannot form hydrogen bonds with one another.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "t"
+        ]
+      },
+      "solution_md": "True. The ether oxygen has lone pairs but there is no O–H hydrogen.",
+      "marking_scheme": [
+        {
+          "step": "True",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch15-t04"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch15_049",
+      "unit": "isc-12-chemistry-ch15",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "Peroxides are removed from old samples of ether by shaking with acidified iron(II) ___ solution.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "sulphate",
+              "sulfate"
+            ]
+          }
+        ]
+      },
+      "solution_md": "Iron(II) **sulphate**.",
+      "marking_scheme": [
+        {
+          "step": "Writes \"sulphate\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch15-t04"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch15_050",
+      "unit": "isc-12-chemistry-ch15",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "$6.8\\ \\text{g}$ of sodium ethoxide ($M = 68$) reacts with excess 1-bromopropane. If the yield of 1-ethoxypropane ($M = 88$) is 75%, what mass is obtained?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 6.6,
+        "tolerance": 0.02,
+        "unit": "g"
+      },
+      "solution_md": "$n = 6.8 \\div 68 = 0.100\\ \\text{mol}$; mass $= 0.100 \\times 88 \\times 0.75 = 6.6\\ \\text{g}$.",
+      "marking_scheme": [
+        {
+          "step": "0.100 mol",
+          "marks": 1
+        },
+        {
+          "step": "6.6 g",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch15-t04"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch15_051",
+      "unit": "isc-12-chemistry-ch15",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Explain why 2-ethoxy-2-methylbutane cannot be made in good yield from 2-bromo-2-methylbutane and sodium ethoxide, and suggest a better pair of reactants.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Sodium ethoxide is a strong base; with a tertiary halide, backside SN2 attack is blocked and elimination of HBr gives mainly 2-methylbut-2-ene. Better: sodium 2-methylbutan-2-oxide with bromoethane (primary halide, SN2)."
+      },
+      "solution_md": "Elimination with 3° halide; put 3° group on the alkoxide.",
+      "marking_scheme": [
+        {
+          "step": "Elimination explained",
+          "marks": 1
+        },
+        {
+          "step": "Correct pair",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch15-t04"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch15_052",
+      "unit": "isc-12-chemistry-ch15",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Give the products when ethoxyethane is heated with (a) one mole of cold HI and (b) excess hot HI.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) $\\ce{C2H5OC2H5 + HI -> C2H5I + C2H5OH}$: iodoethane and ethanol. (b) $\\ce{C2H5OC2H5 + 2HI -> 2C2H5I + H2O}$: iodoethane only (the ethanol is also converted)."
+      },
+      "solution_md": "Iodoethane + ethanol; 2 iodoethane.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch15-t04"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch15_053",
+      "unit": "isc-12-chemistry-ch15",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write equations or describe the products for the reaction of ethoxyethane with (a) chlorine in sunlight, (b) phosphorus pentachloride on heating and (c) oxygen of the air on long standing in light.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) All hydrogens replaced: $\\ce{C2H5OC2H5 + 10Cl2 -> C2Cl5OC2Cl5 + 10HCl}$ (perchlorodiethyl ether). (b) $\\ce{C2H5OC2H5 + PCl5 -> 2C2H5Cl + POCl3}$. (c) A peroxide forms, e.g. $\\ce{C2H5OC2H5 + O2 -> CH3CH(OOH)OC2H5}$, which can explode on distillation."
+      },
+      "solution_md": "Perchloroether; chloroethane + POCl₃; peroxide.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch15-t04"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch15_054",
+      "unit": "isc-12-chemistry-ch15",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Give the products of reaction with one equivalent of HI, and the mechanism type, for (a) 1-methoxybutane, (b) 2-ethoxy-2-methylpropane and (c) ethoxybenzene.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Iodomethane + butan-1-ol (SN2: I⁻ attacks the less hindered CH₃). (b) 2-Iodo-2-methylpropane + ethanol (SN1: stable tertiary carbocation). (c) Phenol + iodoethane (SN2 at ethyl; the aryl C–O bond does not break)."
+      },
+      "solution_md": "CH₃I + BuOH; t-BuI + EtOH; PhOH + EtI.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch15-t04",
+        "isc-12-chemistry-ch15-t05"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch15_055",
+      "unit": "isc-12-chemistry-ch15",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Anisole is treated with chloromethane and anhydrous aluminium chloride. The major product is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "3-methylanisole"
+        },
+        {
+          "id": "b",
+          "text_md": "phenol and chloromethane"
+        },
+        {
+          "id": "c",
+          "text_md": "4-methylanisole (1-methoxy-4-methylbenzene)"
+        },
+        {
+          "id": "d",
+          "text_md": "toluene and methanol"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "–OCH₃ is o/p directing; para predominates — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch15-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch15_056",
+      "unit": "isc-12-chemistry-ch15",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Anisole is nitrated with a mixture of concentrated nitric and sulphuric acids. The major product is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "4-nitroanisole"
+        },
+        {
+          "id": "b",
+          "text_md": "3-nitroanisole"
+        },
+        {
+          "id": "c",
+          "text_md": "nitrobenzene"
+        },
+        {
+          "id": "d",
+          "text_md": "4-nitrophenol"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Para substitution relative to –OCH₃ — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch15-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch15_057",
+      "unit": "isc-12-chemistry-ch15",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Anisole is best prepared in the laboratory from:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "bromobenzene and sodium methoxide"
+        },
+        {
+          "id": "b",
+          "text_md": "phenol and methanol with zinc dust"
+        },
+        {
+          "id": "c",
+          "text_md": "sodium phenoxide and iodomethane"
+        },
+        {
+          "id": "d",
+          "text_md": "benzene and methanol with AlCl₃"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Williamson synthesis; aryl halides do not react with alkoxides — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch15-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch15_058",
+      "unit": "isc-12-chemistry-ch15",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Anisole reacts with hydrogen iodide to give iodobenzene and methanol.\n\n**Reason (R):** The aryl C–O bond in anisole has partial double-bond character.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "A is false: anisole gives phenol and iodomethane. R is true, and is the reason the aryl C–O bond does not break — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch15-t05"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch15_059",
+      "unit": "isc-12-chemistry-ch15",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? Bromination of anisole requires a Lewis acid catalyst such as FeBr₃.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "f"
+        ]
+      },
+      "solution_md": "False. The ring is activated by –OCH₃; bromine in ethanoic acid suffices.",
+      "marking_scheme": [
+        {
+          "step": "False, with the correction",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch15-t05"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch15_060",
+      "unit": "isc-12-chemistry-ch15",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Explain why anisole undergoes electrophilic substitution faster than benzene and mainly at the ortho and para positions.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "A lone pair on the oxygen of –OCH₃ is delocalised into the ring (+R), increasing electron density, especially at ortho and para positions; this outweighs its −I effect. The ring is therefore activated, and the σ-complexes for o/p attack are stabilised by an extra resonance form with the positive charge on oxygen."
+      },
+      "solution_md": "+R activation; o/p stabilisation.",
+      "marking_scheme": [
+        {
+          "step": "+R activation",
+          "marks": 1
+        },
+        {
+          "step": "o/p directing",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch15-t05"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch15_061",
+      "unit": "isc-12-chemistry-ch15",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write equations for the reaction of anisole with (a) bromine in ethanoic acid, (b) ethanoyl chloride with anhydrous AlCl₃ and (c) concentrated nitric and sulphuric acids, naming the major products.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) $\\ce{C6H5OCH3 + Br2 -> BrC6H4OCH3 + HBr}$: 4-bromoanisole. (b) $\\ce{C6H5OCH3 + CH3COCl -> CH3COC6H4OCH3 + HCl}$: 4-methoxyacetophenone. (c) $\\ce{C6H5OCH3 + HNO3 -> O2NC6H4OCH3 + H2O}$: 4-nitroanisole (with some 2-isomer)."
+      },
+      "solution_md": "Three para products.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch15-t05"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch15_062",
+      "unit": "isc-12-chemistry-ch15",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Write equations for preparing phenol from (i) sodium benzenesulphonate and (ii) benzenediazonium chloride. [2]\n\n(b) Explain, using resonance, why phenol is acidic, and how a 4-nitro group and a 4-methyl group affect its acidity. [2]\n\n(c) Write equations for the reactions of phenol with sodium and with zinc dust. [1]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) (i) $\\ce{C6H5SO3Na + 2NaOH ->[573 K] C6H5ONa + Na2SO3 + H2O}$, then $\\ce{C6H5ONa + HCl -> C6H5OH + NaCl}$. (ii) $\\ce{C6H5N2Cl + H2O ->[warm] C6H5OH + N2 + HCl}$.\n\n(b) The phenoxide ion is stabilised by delocalisation of the negative charge over the oxygen and the ortho and para carbons. A 4-NO₂ group withdraws electrons (−R, −I) and delocalises the charge further onto its oxygens, increasing acidity; a 4-CH₃ group releases electrons (+I, hyperconjugation), destabilising the ion and decreasing acidity.\n\n(c) $\\ce{2C6H5OH + 2Na -> 2C6H5ONa + H2}$; $\\ce{C6H5OH + Zn -> C6H6 + ZnO}$."
+      },
+      "solution_md": "Two preparations; resonance and substituents; Na and Zn.",
+      "marking_scheme": [
+        {
+          "step": "(a)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(a)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 2
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 5,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch15-t01",
+        "isc-12-chemistry-ch15-t02"
+      ],
+      "expected_time_sec": 570,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch15_063",
+      "unit": "isc-12-chemistry-ch15",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Compare the bromination of phenol in water and in carbon disulphide, and explain the difference. [1½]\n\n(b) Write equations for the Kolbe and Reimer–Tiemann reactions. [2]\n\n(c) Give two tests that distinguish phenol from ethanol. [1½]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) In water: 2,4,6-tribromophenol (white precipitate) at once. In CS₂ at 273 K: mainly 4-bromophenol with some 2-bromophenol. In water phenol partly ionises to the strongly activating phenoxide ion and Br₂ is polarised; in non-polar CS₂ neither happens, so substitution is milder.\n\n(b) Kolbe: $\\ce{C6H5ONa + CO2 ->[400 K, 4-7 atm] HOC6H4COONa}$, then H⁺ → salicylic acid. Reimer–Tiemann: $\\ce{C6H5OH + CHCl3 + 3NaOH -> HOC6H4CHO + 3NaCl + 2H2O}$ (via the phenoxide; acidify) → salicylaldehyde.\n\n(c) Neutral FeCl₃: violet with phenol, none with ethanol. Bromine water: white precipitate with phenol only. (Or: phenol dissolves in NaOH; azo dye test.)"
+      },
+      "solution_md": "Tribromo vs mono; Kolbe and RT; FeCl₃ and Br₂ water.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1.5
+        },
+        {
+          "step": "(b) Kolbe",
+          "marks": 1
+        },
+        {
+          "step": "(b) Reimer–Tiemann",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1.5
+        }
+      ],
+      "marks": 5,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch15-t03"
+      ],
+      "expected_time_sec": 570,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch15_064",
+      "unit": "isc-12-chemistry-ch15",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Describe Williamson’s synthesis of 1-ethoxypropane, and explain why tertiary alkyl halides are unsuitable for this synthesis. [2]\n\n(b) Predict the products, and the mechanism type, when (i) 1-methoxybutane and (ii) 2-ethoxy-2-methylpropane react with one equivalent of HI. [2]\n\n(c) Why are ethers stored in dark, airtight bottles? [1]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) $\\ce{CH3CH2ONa + CH3CH2CH2Br -> CH3CH2OCH2CH2CH3 + NaBr}$ (SN2; or sodium propoxide + bromoethane). With a tertiary halide the alkoxide acts as a base and elimination gives an alkene.\n\n(b) (i) Iodomethane + butan-1-ol (SN2 at the methyl carbon). (ii) 2-Iodo-2-methylpropane + ethanol (SN1 via the tertiary carbocation).\n\n(c) In air and light ethers slowly form explosive peroxides."
+      },
+      "solution_md": "Williamson; HI cleavage; peroxides.",
+      "marking_scheme": [
+        {
+          "step": "(a) Equation",
+          "marks": 1
+        },
+        {
+          "step": "(a) Tertiary halides",
+          "marks": 1
+        },
+        {
+          "step": "(b)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(b)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 5,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch15-t04"
+      ],
+      "expected_time_sec": 570,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch15_065",
+      "unit": "isc-12-chemistry-ch15",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) How is anisole prepared? Give the equation. [1]\n\n(b) Write equations for the bromination, nitration and Friedel–Crafts acylation of anisole, naming the major products. [3]\n\n(c) What are the products when anisole is heated with HI? [1]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) $\\ce{C6H5ONa + CH3I -> C6H5OCH3 + NaI}$ (Williamson).\n\n(b) $\\ce{C6H5OCH3 + Br2 ->[CH3COOH] BrC6H4OCH3 + HBr}$: 4-bromoanisole. $\\ce{C6H5OCH3 + HNO3 ->[H2SO4] O2NC6H4OCH3 + H2O}$: 4-nitroanisole. $\\ce{C6H5OCH3 + CH3COCl ->[AlCl3] CH3COC6H4OCH3 + HCl}$: 4-methoxyacetophenone (2-isomers minor).\n\n(c) $\\ce{C6H5OCH3 + HI -> C6H5OH + CH3I}$: phenol and iodomethane."
+      },
+      "solution_md": "Williamson; three para products; phenol + CH₃I.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b) Three equations",
+          "marks": 3
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 5,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch15-t05"
+      ],
+      "expected_time_sec": 570,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch15_066",
+      "unit": "isc-12-chemistry-ch15",
+      "language": "en",
+      "type": "long",
+      "stem_md": "How would you carry out the following conversions? Give reagents and conditions. [1 each]\n\n(a) Phenol to anisole\n\n(b) Phenol to salicylaldehyde\n\n(c) Phenol to benzene\n\n(d) Chlorobenzene to 2,4,6-tribromophenol\n\n(e) Phenol to phenyl ethanoate",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) NaOH, then CH₃I (Williamson). (b) CHCl₃ + aqueous NaOH at about 340 K, then acidify (Reimer–Tiemann). (c) Heat with zinc dust. (d) NaOH at 623 K and 300 atm, acidify to phenol (Dow), then bromine water. (e) Ethanoyl chloride (with pyridine) or ethanoic anhydride."
+      },
+      "solution_md": "Five conversions.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        },
+        {
+          "step": "(d)",
+          "marks": 1
+        },
+        {
+          "step": "(e)",
+          "marks": 1
+        }
+      ],
+      "marks": 5,
+      "difficulty": 4,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch15-t02",
+        "isc-12-chemistry-ch15-t03",
+        "isc-12-chemistry-ch15-t05"
+      ],
+      "expected_time_sec": 570,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    }
+  ],
+  "build": {
+    "run_id": null,
+    "checks": {
+      "katex_mhchem": "87 math strings parsed with KaTeX 0.19.0 + mhchem (throwOnError, strict \"error\"), 0 failures",
+      "svg_allowlist": "4 SVG visuals (2 distinct diagrams) checked with saxes against svg-allowlist.ts: elements, attributes, class pattern, fragment-only refs, no style, palette incl. named hues, viewBox, title, per-page unique ids — 0 failures",
+      "narration": "34 slides, 15–73 words (mean 51), no symbols, formulae or unit abbreviations",
+      "resolve": "4/4 scripted re-solve checks pass",
+      "chemistry_facts": "Preparations of phenol (diazonium, Dow, sulphonate fusion, cumene), acidity and substituent effects, reactions of the –OH group, electrophilic substitution, Kolbe and Reimer–Tiemann reactions, tests, Williamson synthesis, ether reactions with Cl₂, O₂, HI and PCl₅, anisole and every numerical checked against the ISC 2027 syllabus (Unit 7)",
+      "content_gate": "npm test -w @soyl/content-templates: all checks pass for this chapter",
+      "verifier_pass": "2026-10-30: every question and every internal-choice alternative re-solved from its stem by the author; every numerical re-computed by the build script — see README \"Verifier pass\"",
+      "pipeline_lint": "npm run content -- lint --exemplars: 0 errors, 0 warnings"
+    }
+  }
+}

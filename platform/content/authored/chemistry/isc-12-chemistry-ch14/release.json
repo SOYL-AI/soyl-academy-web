@@ -1,0 +1,5386 @@
+{
+  "unit": "isc-12-chemistry-ch14",
+  "version": 1,
+  "academic_year": "2026-27",
+  "created_at": "2026-10-30T00:00:00+05:30",
+  "decks": [
+    {
+      "unit": "isc-12-chemistry-ch14",
+      "part": 1,
+      "version": 1,
+      "title": "Alcohols — Part 1: Classification, preparation and physical properties",
+      "language": "en",
+      "goals": [
+        "Classify and name alcohols and compare 1°, 2° and 3° alcohols",
+        "Write equations to prepare alcohols from alkenes, Grignard reagents, alkyl halides, carbonyl compounds and primary amines",
+        "Outline the manufacture of methanol and ethanol",
+        "Explain the boiling points and solubility of alcohols"
+      ],
+      "slides": [
+        {
+          "id": "s01",
+          "layout": "title",
+          "heading": "Alcohols",
+          "body_md": "Part 1 — compounds with an –OH group on an sp³ carbon: names, preparation and physical properties.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Alcohol",
+                "Where you meet it"
+              ],
+              "rows": [
+                [
+                  "Ethanol",
+                  "Hand sanitiser, fuel blended with petrol"
+                ],
+                [
+                  "Methanol",
+                  "Solvent; poisonous"
+                ],
+                [
+                  "Propan-2-ol",
+                  "Rubbing alcohol"
+                ],
+                [
+                  "Ethane-1,2-diol",
+                  "Antifreeze in car radiators"
+                ],
+                [
+                  "Propane-1,2,3-triol (glycerol)",
+                  "Soaps, cosmetics"
+                ]
+              ]
+            },
+            "alt": "Table of familiar alcohols"
+          },
+          "math": [],
+          "narration": "Namaste! The sanitiser on your hands, the antifreeze in a car radiator and the glycerol in soap are all alcohols, compounds in which a hydroxyl group is attached to an sp three carbon. In this part we classify and name alcohols, learn several ways to make them, outline how methanol and ethanol are produced industrially, and see how hydrogen bonding controls their physical properties.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s02",
+          "layout": "concept",
+          "heading": "Classification and general formula",
+          "body_md": "By the number of –OH groups: **monohydric** (CₙH₂ₙ₊₁OH), **dihydric** (glycols), **trihydric** (glycerol). Monohydric alcohols are **primary**, **secondary** or **tertiary** according to the carbon bearing –OH.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Class",
+                "Group",
+                "Example"
+              ],
+              "rows": [
+                [
+                  "Primary (1°)",
+                  "–CH₂OH",
+                  "Butan-1-ol, CH₃CH₂CH₂CH₂OH"
+                ],
+                [
+                  "Secondary (2°)",
+                  ">CHOH",
+                  "Butan-2-ol, CH₃CH₂CH(OH)CH₃"
+                ],
+                [
+                  "Tertiary (3°)",
+                  "≡C–OH",
+                  "2-Methylpropan-2-ol, (CH₃)₃COH"
+                ],
+                [
+                  "Dihydric",
+                  "Two –OH",
+                  "Ethane-1,2-diol"
+                ],
+                [
+                  "Trihydric",
+                  "Three –OH",
+                  "Propane-1,2,3-triol"
+                ]
+              ]
+            },
+            "alt": "Table classifying alcohols"
+          },
+          "math": [],
+          "narration": "Monohydric alcohols have one hydroxyl group and the general formula C n H two n plus one O H. Dihydric alcohols, or glycols, have two, and trihydric alcohols such as glycerol have three. Like haloalkanes, monohydric alcohols are primary, secondary or tertiary depending on how many carbons are bonded to the carbon carrying the hydroxyl group. The four butanol isomers show all three classes.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s03",
+          "layout": "concept",
+          "heading": "Nomenclature",
+          "body_md": "IUPAC: longest chain containing the C–OH; replace **-e** of the alkane by **-ol**; lowest locant to –OH. Diols and triols keep the **-e** (ethane-1,2-diol). Common names: alkyl + alcohol.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Structure",
+                "Common name",
+                "IUPAC name"
+              ],
+              "rows": [
+                [
+                  "CH₃OH",
+                  "Methyl alcohol (wood spirit)",
+                  "Methanol"
+                ],
+                [
+                  "CH₃CH₂CH₂OH",
+                  "n-Propyl alcohol",
+                  "Propan-1-ol"
+                ],
+                [
+                  "(CH₃)₂CHCH₂OH",
+                  "Isobutyl alcohol",
+                  "2-Methylpropan-1-ol"
+                ],
+                [
+                  "CH₃CH₂CH(OH)CH₃",
+                  "sec-Butyl alcohol",
+                  "Butan-2-ol"
+                ],
+                [
+                  "(CH₃)₃COH",
+                  "tert-Butyl alcohol",
+                  "2-Methylpropan-2-ol"
+                ],
+                [
+                  "HOCH₂CH₂OH",
+                  "Ethylene glycol",
+                  "Ethane-1,2-diol"
+                ]
+              ]
+            },
+            "alt": "Table of common and IUPAC names of alcohols"
+          },
+          "math": [],
+          "narration": "To name an alcohol, find the longest chain containing the carbon with the hydroxyl group, number it to give that carbon the lowest number, and change the ending e of the alkane to ol. So isobutyl alcohol is two-methylpropan-one-ol and tert-butyl alcohol is two-methylpropan-two-ol. For diols the e is kept: ethylene glycol is ethane-one-two-diol.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s04",
+          "layout": "diagram",
+          "heading": "Structure of the –OH group",
+          "body_md": "Oxygen is **sp³** hybridised with two lone pairs; the C–O–H angle in methanol (108.9°) is slightly less than tetrahedral because lone pairs repel more than bond pairs. The O–H bond is polar: H is δ+ and O is δ−.",
+          "bullets": [],
+          "visual": {
+            "kind": "svg",
+            "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 340 160\" role=\"img\" aria-label=\"Left: methanol, with the C–O–H bond angle of about 108.9 degrees, slightly less than the tetrahedral angle because of the two lone pairs on oxygen. Right: methoxymethane, with the C–O–C bond angle of about 111.7 degrees, larger because the two bulky methyl groups repel each other.\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>Left: methanol, with the C–O–H bond angle of about 108.9 degrees, slightly less than the tetrahedral angle because of the two lone pairs on oxygen. Right: methoxymethane, with the C–O–C bond angle of about 111.7 degrees, larger because the two bulky methyl groups repel each other.</title><circle cx=\"85\" cy=\"60\" r=\"14\" fill=\"var(--diagram-red)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"85\" y=\"64\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\">O</text><line x1=\"73\" y1=\"68\" x2=\"45\" y2=\"100\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"97\" y1=\"68\" x2=\"125\" y2=\"100\" stroke=\"currentColor\" stroke-width=\"2\"/><circle cx=\"38\" cy=\"108\" r=\"16\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"38\" y=\"112\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">CH₃</text><circle cx=\"130\" cy=\"106\" r=\"10\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"130\" y=\"110\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">H</text><path d=\"M66 82 Q85 96 104 82\" fill=\"none\" stroke=\"var(--diagram-accent)\" stroke-width=\"1\"/><text x=\"85\" y=\"118\" fill=\"var(--diagram-accent)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">108.9°</text><text x=\"85\" y=\"36\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"14\">··</text><text x=\"85\" y=\"150\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">Methanol</text><circle cx=\"255\" cy=\"60\" r=\"14\" fill=\"var(--diagram-red)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"255\" y=\"64\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\">O</text><line x1=\"243\" y1=\"68\" x2=\"213\" y2=\"100\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"267\" y1=\"68\" x2=\"297\" y2=\"100\" stroke=\"currentColor\" stroke-width=\"2\"/><circle cx=\"206\" cy=\"108\" r=\"16\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"206\" y=\"112\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">CH₃</text><circle cx=\"304\" cy=\"108\" r=\"16\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"304\" y=\"112\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">CH₃</text><path d=\"M236 82 Q255 97 274 82\" fill=\"none\" stroke=\"var(--diagram-accent)\" stroke-width=\"1\"/><text x=\"255\" y=\"118\" fill=\"var(--diagram-accent)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">111.7°</text><text x=\"255\" y=\"36\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"14\">··</text><text x=\"255\" y=\"150\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">Methoxymethane</text></svg>",
+            "alt": "Bent shapes of methanol, with a C–O–H angle of about 108.9 degrees, and methoxymethane, with a C–O–C angle of about 111.7 degrees"
+          },
+          "math": [],
+          "narration": "In an alcohol the oxygen atom is sp three hybridised. Two of its hybrid orbitals form the bonds to carbon and hydrogen; the other two hold lone pairs. The lone pairs push the bonds slightly closer, so the carbon–oxygen–hydrogen angle is about one hundred and nine degrees, a little less than the tetrahedral value. The very polar O–H bond is the key to hydrogen bonding.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s05",
+          "layout": "example",
+          "heading": "Worked example: naming and classifying",
+          "body_md": "**Problem.** Name and classify: (a) $\\ce{CH3CH2CH(CH3)CH2OH}$; (b) $\\ce{(CH3)2CHCH(OH)CH3}$; (c) $\\ce{CH3CH2C(OH)(CH3)CH2CH3}$; (d) $\\ce{HOCH2CH(OH)CH3}$.\n\n**(a)** 2-Methylbutan-1-ol — primary.\n\n**(b)** 3-Methylbutan-2-ol — secondary.\n\n**(c)** 3-Methylpentan-3-ol — tertiary.\n\n**(d)** Propane-1,2-diol — dihydric.",
+          "bullets": [],
+          "visual": {
+            "kind": "flow",
+            "spec": {
+              "direction": "LR",
+              "nodes": [
+                {
+                  "id": "a",
+                  "label": "Longest chain with C–OH"
+                },
+                {
+                  "id": "b",
+                  "label": "Lowest locant to –OH"
+                },
+                {
+                  "id": "c",
+                  "label": "Alkan-n-ol"
+                },
+                {
+                  "id": "d",
+                  "label": "Count C neighbours of C–OH"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "a",
+                  "to": "b"
+                },
+                {
+                  "from": "b",
+                  "to": "c"
+                },
+                {
+                  "from": "c",
+                  "to": "d"
+                }
+              ]
+            },
+            "alt": "Flow for naming and classifying an alcohol"
+          },
+          "math": [],
+          "narration": "Number from the end nearer the hydroxyl group. In the first example the hydroxyl carbon is at the end of the chain with one carbon neighbour, so it is primary. In the second it has two carbon neighbours: secondary. In the third, the hydroxyl carbon has three ethyl or methyl groups: tertiary. The last has two hydroxyl groups, so it is a diol.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s06",
+          "layout": "check",
+          "heading": "Quick check: classification",
+          "body_md": "Classify or name an alcohol.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Count carbons attached to the carbon bearing the hydroxyl group.",
+          "check_question_id": "q_isc12chem_ch14_001",
+          "audio": null
+        },
+        {
+          "id": "s07",
+          "layout": "concept",
+          "heading": "Preparation from alkenes",
+          "body_md": "**Direct hydration:** H₂O with H⁺ catalyst (Markovnikov). **Indirect hydration:** absorb the alkene in cold conc. H₂SO₄ to give an alkyl hydrogen sulphate, then boil with water. **Hydroboration–oxidation:** B₂H₆, then H₂O₂/OH⁻ — **anti-Markovnikov**, giving 1° alcohols from terminal alkenes.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Alkene",
+                "Method",
+                "Product"
+              ],
+              "rows": [
+                [
+                  "But-1-ene",
+                  "H₂O/H⁺ or H₂SO₄ then H₂O",
+                  "Butan-2-ol"
+                ],
+                [
+                  "But-1-ene",
+                  "B₂H₆; H₂O₂/OH⁻",
+                  "Butan-1-ol"
+                ],
+                [
+                  "2-Methylpropene",
+                  "H₂O/H⁺",
+                  "2-Methylpropan-2-ol"
+                ]
+              ]
+            },
+            "alt": "Table of alcohols from alkenes"
+          },
+          "math": [
+            "\\ce{CH2=CH2 + H2SO4 -> CH3CH2OSO3H}",
+            "\\ce{CH3CH2OSO3H + H2O ->[\\Delta] CH3CH2OH + H2SO4}",
+            "\\ce{CH3CH2CH=CH2 ->[(i) B2H6][(ii) H2O2/OH-] CH3CH2CH2CH2OH}"
+          ],
+          "narration": "Water can be added across a double bond in three ways. Direct hydration with an acid catalyst and indirect hydration through an alkyl hydrogen sulphate both follow Markovnikov’s rule, putting the hydroxyl group on the more substituted carbon. Hydroboration followed by oxidation with alkaline hydrogen peroxide does the reverse, putting the hydroxyl group on the end carbon: but-one-ene gives butan-one-ol.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s08",
+          "layout": "concept",
+          "heading": "Other preparations",
+          "body_md": "**Hydrolysis of alkyl halides:** aqueous NaOH/KOH or moist Ag₂O. **Reduction of carbonyl compounds:** aldehydes → 1°, ketones → 2° (H₂/Ni, NaBH₄, LiAlH₄). **Primary amines with nitrous acid** (NaNO₂ + HCl): R–NH₂ → R–OH + N₂. **Grignard reagents:** HCHO → 1°; RCHO → 2°; R₂CO → 3°, after hydrolysis.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Grignard + carbonyl",
+                "Alcohol after hydrolysis"
+              ],
+              "rows": [
+                [
+                  "RMgX + HCHO",
+                  "1°, RCH₂OH"
+                ],
+                [
+                  "RMgX + R′CHO",
+                  "2°, RR′CHOH"
+                ],
+                [
+                  "RMgX + R′COR″",
+                  "3°, RR′R″COH"
+                ]
+              ]
+            },
+            "alt": "Table of Grignard routes to alcohols"
+          },
+          "math": [
+            "\\ce{CH3CH2CH2Br + KOH(aq) -> CH3CH2CH2OH + KBr}",
+            "\\ce{CH3CH2NH2 + HNO2 -> CH3CH2OH + N2 + H2O}",
+            "\\ce{CH3CH2CHO + H2 ->[Ni] CH3CH2CH2OH}"
+          ],
+          "narration": "Alcohols also come from alkyl halides boiled with aqueous alkali, from aldehydes and ketones by reduction, and from primary amines treated with nitrous acid, which releases nitrogen gas. Grignard reagents are especially useful because they build a new carbon–carbon bond: methanal gives primary alcohols, other aldehydes give secondary alcohols and ketones give tertiary alcohols.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s09",
+          "layout": "example",
+          "heading": "Worked example: Grignard planning",
+          "body_md": "**Problem.** Choose a Grignard reagent and a carbonyl compound to make (a) ethanol, (b) propan-2-ol and (c) 2-methylbutan-2-ol.\n\n**(a)** $\\ce{CH3MgI}$ + methanal → $\\ce{CH3CH2OH}$ (1°).\n\n**(b)** $\\ce{CH3MgI}$ + ethanal → $\\ce{CH3CH(OH)CH3}$ (2°).\n\n**(c)** $\\ce{CH3CH2MgBr}$ + propanone → $\\ce{CH3CH2C(OH)(CH3)2}$ (3°) (or $\\ce{CH3MgI}$ + butanone).\n\nEach adduct is hydrolysed with dilute acid.",
+          "bullets": [],
+          "visual": {
+            "kind": "flow",
+            "spec": {
+              "direction": "LR",
+              "nodes": [
+                {
+                  "id": "a",
+                  "label": "Target alcohol"
+                },
+                {
+                  "id": "b",
+                  "label": "Cut one C–C bond at the carbinol carbon"
+                },
+                {
+                  "id": "c",
+                  "label": "Cut piece → RMgX"
+                },
+                {
+                  "id": "d",
+                  "label": "Rest → carbonyl compound"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "a",
+                  "to": "b"
+                },
+                {
+                  "from": "b",
+                  "to": "c"
+                },
+                {
+                  "from": "b",
+                  "to": "d"
+                }
+              ]
+            },
+            "alt": "Flow for planning a Grignard synthesis"
+          },
+          "math": [],
+          "narration": "Work backwards from the target. Look at the carbon carrying the hydroxyl group and cut one of its carbon–carbon bonds: the piece cut off becomes the Grignard reagent, and the rest, with the hydroxyl turned into a carbonyl group, is the carbonyl compound. For two-methylbutan-two-ol, cutting off the ethyl group leaves propanone, so ethylmagnesium bromide and propanone are needed.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s10",
+          "layout": "check",
+          "heading": "Quick check: preparation",
+          "body_md": "Choose a method or predict the alcohol formed.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Remember which methods follow Markovnikov’s rule and which carbonyl compounds give which class of alcohol.",
+          "check_question_id": "q_isc12chem_ch14_013",
+          "audio": null
+        },
+        {
+          "id": "s11",
+          "layout": "concept",
+          "heading": "Manufacture of methanol and ethanol (outline)",
+          "body_md": "**Methanol (Bosch process):** water gas (CO + H₂) from steam over hot coke, enriched with H₂, is passed over ZnO–Cr₂O₃ at about 573–673 K and 200–300 atm. **Ethanol (fermentation):** molasses (sucrose) or starch is fermented by yeast; invertase converts sucrose to glucose and fructose, zymase converts these to ethanol and CO₂ (about 8–10% ethanol).",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Alcohol",
+                "Raw material",
+                "Catalyst"
+              ],
+              "rows": [
+                [
+                  "Methanol",
+                  "Water gas (CO + H₂)",
+                  "ZnO–Cr₂O₃"
+                ],
+                [
+                  "Ethanol",
+                  "Molasses or starch",
+                  "Yeast enzymes (invertase, zymase)"
+                ]
+              ]
+            },
+            "alt": "Table outlining industrial manufacture of methanol and ethanol"
+          },
+          "math": [
+            "\\ce{C + H2O ->[1273 K] CO + H2}",
+            "\\ce{CO + 2H2 ->[ZnO-Cr2O3][573-673 K] CH3OH}",
+            "\\ce{C12H22O11 + H2O ->[invertase] C6H12O6 + C6H12O6}",
+            "\\ce{C6H12O6 ->[zymase] 2C2H5OH + 2CO2}"
+          ],
+          "narration": "Methanol is made from water gas, a mixture of carbon monoxide and hydrogen obtained by passing steam over red-hot coke. Extra hydrogen is added and the mixture is passed over zinc oxide and chromium three oxide at high temperature and pressure. Ethanol is made by fermentation: yeast enzymes convert the sucrose in molasses first into glucose and fructose, and then into ethanol and carbon dioxide.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s12",
+          "layout": "diagram",
+          "heading": "Physical properties: hydrogen bonding",
+          "body_md": "Alcohols are **associated by hydrogen bonds**, so they boil much higher than alkanes, ethers or haloalkanes of similar mass. B.p. rises with chain length and falls with branching (1° > 2° > 3° isomers). Lower alcohols are **miscible with water** (hydrogen bonding with water); solubility falls as the alkyl group grows.",
+          "bullets": [],
+          "visual": {
+            "kind": "svg",
+            "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 360 150\" role=\"img\" aria-label=\"Three alcohol molecules, each R–O–H, linked in a chain: the hydrogen of one O–H group is attracted to an oxygen lone pair of the next molecule by a hydrogen bond, drawn as a dotted line. These attractions must be broken when the alcohol boils, so alcohols boil far higher than ethers or alkanes of similar mass.\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>Three alcohol molecules, each R–O–H, linked in a chain: the hydrogen of one O–H group is attracted to an oxygen lone pair of the next molecule by a hydrogen bond, drawn as a dotted line. These attractions must be broken when the alcohol boils, so alcohols boil far higher than ethers or alkanes of similar mass.</title><line x1=\"46\" y1=\"44\" x2=\"54\" y2=\"48\" stroke=\"currentColor\" stroke-width=\"2\"/><circle cx=\"36\" cy=\"40\" r=\"11\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"36\" y=\"44\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">R</text><circle cx=\"60\" cy=\"50\" r=\"10\" fill=\"var(--diagram-red)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"60\" y=\"54\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">O</text><line x1=\"68\" y1=\"55\" x2=\"76\" y2=\"60\" stroke=\"currentColor\" stroke-width=\"2\"/><circle cx=\"82\" cy=\"63\" r=\"8\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"82\" y=\"67\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">H</text><line x1=\"146\" y1=\"79\" x2=\"154\" y2=\"83\" stroke=\"currentColor\" stroke-width=\"2\"/><circle cx=\"136\" cy=\"75\" r=\"11\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"136\" y=\"79\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">R</text><circle cx=\"160\" cy=\"85\" r=\"10\" fill=\"var(--diagram-red)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"160\" y=\"89\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">O</text><line x1=\"168\" y1=\"90\" x2=\"176\" y2=\"95\" stroke=\"currentColor\" stroke-width=\"2\"/><circle cx=\"182\" cy=\"98\" r=\"8\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"182\" y=\"102\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">H</text><line x1=\"246\" y1=\"44\" x2=\"254\" y2=\"48\" stroke=\"currentColor\" stroke-width=\"2\"/><circle cx=\"236\" cy=\"40\" r=\"11\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"236\" y=\"44\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">R</text><circle cx=\"260\" cy=\"50\" r=\"10\" fill=\"var(--diagram-red)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"260\" y=\"54\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">O</text><line x1=\"268\" y1=\"55\" x2=\"276\" y2=\"60\" stroke=\"currentColor\" stroke-width=\"2\"/><circle cx=\"282\" cy=\"63\" r=\"8\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"282\" y=\"67\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">H</text><line x1=\"90\" y1=\"64\" x2=\"150\" y2=\"82\" stroke=\"var(--diagram-accent)\" stroke-width=\"2\" stroke-dasharray=\"3 3\"/><line x1=\"190\" y1=\"98\" x2=\"250\" y2=\"54\" stroke=\"var(--diagram-accent)\" stroke-width=\"2\" stroke-dasharray=\"3 3\"/><text x=\"118\" y=\"92\" fill=\"var(--diagram-accent)\" stroke=\"none\" font-size=\"10\">H-bond</text><text x=\"222\" y=\"92\" fill=\"var(--diagram-accent)\" stroke=\"none\" font-size=\"10\">H-bond</text><text x=\"180\" y=\"140\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">Alcohol molecules held together by hydrogen bonds</text></svg>",
+            "alt": "Alcohol molecules joined in a chain by hydrogen bonds between the O–H hydrogen of one molecule and the oxygen of the next"
+          },
+          "math": [],
+          "narration": "Each hydroxyl hydrogen is attracted to a lone pair on the oxygen of a neighbouring molecule. These hydrogen bonds must be broken when the alcohol boils, so alcohols boil far higher than hydrocarbons of similar mass. Methanol, ethanol and propanol mix with water in all proportions because they hydrogen-bond with water, but solubility falls as the hydrocarbon part becomes larger.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s13",
+          "layout": "example",
+          "heading": "Worked example: boiling points",
+          "body_md": "**Problem.** Arrange in increasing boiling point and explain: butan-1-ol, 2-methylpropan-2-ol, pentane, ethoxyethane (all $M \\approx 72\\text{–}74$).\n\n**Step 1.** Pentane (309 K) and ethoxyethane (308 K): no O–H, no hydrogen bonding between molecules.\n\n**Step 2.** The alcohols hydrogen-bond; branching lowers b.p.: 2-methylpropan-2-ol (356 K) < butan-1-ol (391 K).\n\n**Order:** ethoxyethane ≈ pentane < 2-methylpropan-2-ol < butan-1-ol.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Compound",
+                "b.p. / K",
+                "Main attraction"
+              ],
+              "rows": [
+                [
+                  "Ethoxyethane",
+                  "308",
+                  "Dipole–dipole"
+                ],
+                [
+                  "Pentane",
+                  "309",
+                  "Dispersion"
+                ],
+                [
+                  "2-Methylpropan-2-ol",
+                  "356",
+                  "H-bonds (branched)"
+                ],
+                [
+                  "Butan-1-ol",
+                  "391",
+                  "H-bonds (unbranched)"
+                ]
+              ]
+            },
+            "alt": "Table of boiling points of compounds of similar molar mass"
+          },
+          "math": [],
+          "narration": "All four have similar molar masses. Ethoxyethane and pentane cannot form hydrogen bonds between their molecules, so they boil lowest, near three hundred and eight kelvin. Both alcohols hydrogen-bond, so they boil much higher. Between them, the compact, branched two-methylpropan-two-ol has a smaller contact area than straight-chain butan-one-ol, so it boils lower.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s14",
+          "layout": "check",
+          "heading": "Quick check: physical properties",
+          "body_md": "Compare boiling points or solubilities of alcohols.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Think of hydrogen bonding first, then chain length and branching.",
+          "check_question_id": "q_isc12chem_ch14_005",
+          "audio": null
+        },
+        {
+          "id": "s15",
+          "layout": "summary",
+          "heading": "Summary: Part 1",
+          "body_md": "",
+          "bullets": [
+            "Mono-, di-, trihydric; 1°, 2°, 3°; IUPAC alkan-n-ol.",
+            "O sp³; C–O–H ≈ 108.9°; polar O–H.",
+            "From alkenes (direct/indirect hydration: Markovnikov; hydroboration–oxidation: anti-Markovnikov), RX + aq. KOH, carbonyl reduction, RNH₂ + HNO₂, Grignard + HCHO/RCHO/R₂CO.",
+            "Methanol: CO + 2H₂ over ZnO–Cr₂O₃; ethanol: fermentation (invertase, zymase).",
+            "H-bonding: high b.p., water solubility of lower members; branching lowers b.p."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Carbonyl + RMgX",
+                "Alcohol"
+              ],
+              "rows": [
+                [
+                  "HCHO",
+                  "1°"
+                ],
+                [
+                  "RCHO",
+                  "2°"
+                ],
+                [
+                  "R₂CO",
+                  "3°"
+                ]
+              ]
+            },
+            "alt": "Summary table of Grignard routes"
+          },
+          "math": [],
+          "narration": "Let us sum up Part 1. Alcohols are classified by the number of hydroxyl groups and by the carbon carrying them, and named with the ending ol. They are made from alkenes, alkyl halides, carbonyl compounds, primary amines and Grignard reagents. Methanol comes from water gas and ethanol from fermentation. Hydrogen bonding gives alcohols high boiling points and makes the smaller ones soluble in water.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s16",
+          "layout": "exam-tips",
+          "heading": "Exam tips: Part 1",
+          "body_md": "",
+          "bullets": [
+            "State Markovnikov or anti-Markovnikov for each alkene method.",
+            "In Grignard questions, name both the reagent and the carbonyl compound, and mention hydrolysis.",
+            "Give enzymes by name in fermentation equations.",
+            "Explain b.p. differences with hydrogen bonding and branching."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Slip",
+                "Fix"
+              ],
+              "rows": [
+                [
+                  "Hydroboration gives 2° alcohol from alk-1-ene",
+                  "Gives 1° alcohol"
+                ],
+                [
+                  "HCHO + RMgX gives 2° alcohol",
+                  "Gives 1° alcohol"
+                ],
+                [
+                  "Ethers boil like alcohols",
+                  "Much lower (no H-bonds)"
+                ]
+              ]
+            },
+            "alt": "Table of three common slips in Part 1 and fixes"
+          },
+          "math": [],
+          "narration": "Some tips. For each alkene method, say whether it is Markovnikov or anti-Markovnikov. In Grignard questions, name both reactants and remember the hydrolysis step. Name the enzymes in fermentation. And explain boiling points with hydrogen bonding first, then branching.",
+          "check_question_id": null,
+          "audio": null
+        }
+      ],
+      "status": "draft",
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "unit": "isc-12-chemistry-ch14",
+      "part": 2,
+      "version": 1,
+      "title": "Alcohols — Part 2: Acidity, reactions, mechanisms and tests",
+      "language": "en",
+      "goals": [
+        "Explain why alcohols are weaker acids than water",
+        "Write reactions of alcohols with Na, HX, PCl₃, PCl₅, SOCl₂, acid chlorides and anhydrides; draw the esterification mechanism",
+        "Predict oxidation products and draw the dehydration mechanism of ethanol",
+        "Convert one alcohol into another and use the Lucas test"
+      ],
+      "slides": [
+        {
+          "id": "s01",
+          "layout": "title",
+          "heading": "Reactions of alcohols",
+          "body_md": "Part 2 — reactions breaking the O–H bond, reactions breaking the C–O bond, oxidation, and tests.",
+          "bullets": [],
+          "visual": {
+            "kind": "flow",
+            "spec": {
+              "direction": "LR",
+              "nodes": [
+                {
+                  "id": "a",
+                  "label": "R–O–H"
+                },
+                {
+                  "id": "b",
+                  "label": "O–H breaks: Na, esterification, acylation"
+                },
+                {
+                  "id": "c",
+                  "label": "C–O breaks: HX, PX₃, PCl₅, SOCl₂, dehydration"
+                },
+                {
+                  "id": "d",
+                  "label": "Oxidation at the carbinol carbon"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "a",
+                  "to": "b"
+                },
+                {
+                  "from": "a",
+                  "to": "c"
+                },
+                {
+                  "from": "a",
+                  "to": "d"
+                }
+              ]
+            },
+            "alt": "Flow classifying reactions of alcohols"
+          },
+          "math": [],
+          "narration": "Alcohol reactions fall into groups. Some break the oxygen–hydrogen bond, as with sodium and in ester formation. Others break the carbon–oxygen bond, as with hydrogen halides, phosphorus halides and thionyl chloride, or in dehydration. A third group oxidises the carbon carrying the hydroxyl group. In this part we study these, with the mechanisms of esterification and dehydration.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s02",
+          "layout": "concept",
+          "heading": "Acidic nature",
+          "body_md": "Alcohols react with active metals (Na, K) to give **alkoxides** and H₂, showing weak acidity. They are **weaker acids than water** because the alkyl group (+I) pushes electron density towards O, destabilising the alkoxide ion; alkoxides are strong bases. Acidity: CH₃OH > 1° > 2° > 3°.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Compound",
+                "pKa (approx.)"
+              ],
+              "rows": [
+                [
+                  "Water",
+                  "15.7"
+                ],
+                [
+                  "Methanol",
+                  "15.5"
+                ],
+                [
+                  "Ethanol",
+                  "15.9"
+                ],
+                [
+                  "2-Methylpropan-2-ol",
+                  "18"
+                ]
+              ]
+            },
+            "alt": "Table of pKa values of water and alcohols"
+          },
+          "math": [
+            "\\ce{2CH3CH2CH2OH + 2Na -> 2CH3CH2CH2ONa + H2}",
+            "\\ce{CH3CH2O- + H2O -> CH3CH2OH + OH-}"
+          ],
+          "narration": "Sodium reacts with alcohols, releasing hydrogen and forming an alkoxide, so alcohols are weak acids. They are weaker even than water, because the alkyl group pushes electrons towards oxygen and makes the alkoxide ion less stable. That is why an alkoxide added to water takes a proton from it and gives back the alcohol and hydroxide. Bulkier alkyl groups make alcohols weaker acids still.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s03",
+          "layout": "concept",
+          "heading": "Replacement of –OH by halogen",
+          "body_md": "The C–O bond breaks. Reactivity with HX: **HI > HBr > HCl**; 3° > 2° > 1° (via carbocations). PCl₃, PCl₅ and SOCl₂ (best, gaseous by-products) also convert ROH to RCl.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Reagent",
+                "By-products"
+              ],
+              "rows": [
+                [
+                  "HX",
+                  "H₂O"
+                ],
+                [
+                  "PCl₃",
+                  "H₃PO₃"
+                ],
+                [
+                  "PCl₅",
+                  "POCl₃, HCl (white fumes)"
+                ],
+                [
+                  "SOCl₂",
+                  "SO₂, HCl (gases)"
+                ]
+              ]
+            },
+            "alt": "Table of halogenating reagents and their by-products"
+          },
+          "math": [
+            "\\ce{CH3CH2OH + HBr -> CH3CH2Br + H2O}",
+            "\\ce{3CH3CH2OH + PCl3 -> 3CH3CH2Cl + H3PO3}",
+            "\\ce{CH3CH2OH + PCl5 -> CH3CH2Cl + POCl3 + HCl}",
+            "\\ce{CH3CH2OH + SOCl2 -> CH3CH2Cl + SO2 + HCl}"
+          ],
+          "narration": "Hydrogen halides replace the hydroxyl group by a halogen; hydrogen iodide reacts fastest and hydrogen chloride needs zinc chloride. Phosphorus trichloride and pentachloride also work; the white fumes of hydrogen chloride given off with phosphorus pentachloride are a test for a hydroxyl group. Thionyl chloride is best for a pure product, because both by-products are gases.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s04",
+          "layout": "concept",
+          "heading": "Esterification and acylation",
+          "body_md": "With a **carboxylic acid** and conc. H₂SO₄ (reversible) or with an **acid chloride** or **anhydride** (fast; pyridine removes HCl), the O–H hydrogen of the alcohol is replaced by an acyl group: an **ester** forms.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Acylating agent",
+                "By-product",
+                "Reversible?"
+              ],
+              "rows": [
+                [
+                  "Carboxylic acid + H⁺",
+                  "H₂O",
+                  "Yes"
+                ],
+                [
+                  "Acid chloride",
+                  "HCl",
+                  "No"
+                ],
+                [
+                  "Acid anhydride",
+                  "Carboxylic acid",
+                  "No"
+                ]
+              ]
+            },
+            "alt": "Table of acylating agents"
+          },
+          "math": [
+            "\\ce{CH3COOH + CH3CH2CH2OH <=>[H+] CH3COOCH2CH2CH3 + H2O}",
+            "\\ce{CH3COCl + C2H5OH ->[pyridine] CH3COOC2H5 + HCl}",
+            "\\ce{(CH3CO)2O + C2H5OH -> CH3COOC2H5 + CH3COOH}"
+          ],
+          "narration": "Alcohols react with carboxylic acids in the presence of concentrated sulphuric acid to form esters with fruity smells. The reaction is reversible, so water is removed or one reactant is used in excess. Acid chlorides and anhydrides react faster and completely; pyridine is added with acid chlorides to remove the hydrogen chloride formed.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s05",
+          "layout": "concept",
+          "heading": "Mechanism of acid-catalysed esterification",
+          "body_md": "(1) H⁺ **protonates the C=O oxygen** of the acid, making the carbon more electrophilic. (2) The alcohol oxygen **attacks** the carbonyl carbon (nucleophilic addition). (3) **Proton transfer** to an –OH group. (4) **Loss of water**. (5) **Loss of H⁺** gives the ester. Isotope labelling (¹⁸O in the alcohol) shows the ester oxygen comes from the **alcohol**: the acid loses –OH, the alcohol loses H.",
+          "bullets": [],
+          "visual": {
+            "kind": "flow",
+            "spec": {
+              "direction": "LR",
+              "nodes": [
+                {
+                  "id": "a",
+                  "label": "Protonate C=O of acid"
+                },
+                {
+                  "id": "b",
+                  "label": "R′OH attacks carbonyl C"
+                },
+                {
+                  "id": "c",
+                  "label": "Proton transfer"
+                },
+                {
+                  "id": "d",
+                  "label": "Lose H₂O"
+                },
+                {
+                  "id": "e",
+                  "label": "Lose H⁺ → ester"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "a",
+                  "to": "b"
+                },
+                {
+                  "from": "b",
+                  "to": "c"
+                },
+                {
+                  "from": "c",
+                  "to": "d"
+                },
+                {
+                  "from": "d",
+                  "to": "e"
+                }
+              ]
+            },
+            "alt": "Flow of the esterification mechanism"
+          },
+          "math": [],
+          "narration": "The acid catalyst first adds a proton to the carbonyl oxygen of the carboxylic acid, making its carbon more positive. The alcohol’s oxygen lone pair then attacks this carbon. After a proton moves onto one of the hydroxyl groups, water leaves, and finally a proton is lost to give the ester. Experiments with heavy oxygen in the alcohol show that it ends up in the ester, so the water comes from the acid.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s06",
+          "layout": "example",
+          "heading": "Worked example: esters from alcohols",
+          "body_md": "**Problem.** Name the ester formed in each case: (a) propan-1-ol + ethanoic acid (H⁺); (b) methanol + ethanoyl chloride; (c) ethanol + ethanoic anhydride. If ethanol labelled with ¹⁸O reacts with ethanoic acid, where is the ¹⁸O found?\n\n**(a)** Propyl ethanoate. **(b)** Methyl ethanoate. **(c)** Ethyl ethanoate (+ ethanoic acid).\n\n**Label:** in the ester, $\\ce{CH3CO-^{18}O-C2H5}$; the water formed contains ordinary oxygen.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Alcohol",
+                "Acylating agent",
+                "Ester"
+              ],
+              "rows": [
+                [
+                  "Propan-1-ol",
+                  "CH₃COOH/H⁺",
+                  "Propyl ethanoate"
+                ],
+                [
+                  "Methanol",
+                  "CH₃COCl",
+                  "Methyl ethanoate"
+                ],
+                [
+                  "Ethanol",
+                  "(CH₃CO)₂O",
+                  "Ethyl ethanoate"
+                ]
+              ]
+            },
+            "alt": "Table of esters formed"
+          },
+          "math": [],
+          "narration": "Name an ester by giving the alkyl group from the alcohol first, then the acid part ending in oate. Propan-one-ol and ethanoic acid give propyl ethanoate; methanol and ethanoyl chloride give methyl ethanoate. With labelled oxygen in ethanol, the label ends up in the ester, because the alcohol supplies the oxygen that links the two parts, and the acid supplies the hydroxyl that leaves as water.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s07",
+          "layout": "check",
+          "heading": "Quick check: acidity and esterification",
+          "body_md": "Answer a question on the acidity of alcohols or on ester formation.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Remember the effect of alkyl groups on alkoxide stability, and which bond breaks in esterification.",
+          "check_question_id": "q_isc12chem_ch14_031",
+          "audio": null
+        },
+        {
+          "id": "s08",
+          "layout": "concept",
+          "heading": "Oxidation of alcohols",
+          "body_md": "**1° alcohols** → aldehydes (PCC, or Cu at 573 K) → carboxylic acids (acidified K₂Cr₂O₇ or KMnO₄). **2° alcohols** → ketones. **3° alcohols** resist mild oxidation; over hot Cu they dehydrate to alkenes. With acidified dichromate, 1° and 2° alcohols turn the solution from orange to green.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Alcohol",
+                "Acidified K₂Cr₂O₇",
+                "Cu, 573 K"
+              ],
+              "rows": [
+                [
+                  "1°",
+                  "Aldehyde → acid",
+                  "Aldehyde"
+                ],
+                [
+                  "2°",
+                  "Ketone",
+                  "Ketone"
+                ],
+                [
+                  "3°",
+                  "No reaction (mild)",
+                  "Alkene"
+                ]
+              ]
+            },
+            "alt": "Table of oxidation products"
+          },
+          "math": [
+            "\\ce{CH3CH2CH2OH ->[Cu][573 K] CH3CH2CHO + H2}",
+            "\\ce{3CH3CH2OH + 2Cr2O7^2- + 16H+ -> 3CH3COOH + 4Cr^3+ + 11H2O}"
+          ],
+          "narration": "Oxidation removes hydrogen from the oxygen and from the carbon carrying it. A primary alcohol gives an aldehyde, and with excess strong oxidant goes on to a carboxylic acid. A secondary alcohol gives a ketone. A tertiary alcohol has no hydrogen on that carbon, so it resists mild oxidation; over hot copper it loses water instead and gives an alkene. These differences help identify the class of alcohol.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s09",
+          "layout": "concept",
+          "heading": "Dehydration: conditions and mechanism",
+          "body_md": "Ethanol with conc. H₂SO₄: **443 K → ethene**; **413 K** (excess alcohol) → ethoxyethane. Ease: 3° > 2° > 1°. **Mechanism:** (1) protonation of –OH: $\\ce{CH3CH2OH + H+ -> CH3CH2OH2+}$; (2) loss of water to a carbocation: $\\ce{CH3CH2OH2+ -> CH3CH2+ + H2O}$ (slow); (3) loss of H⁺ from the adjacent carbon: $\\ce{CH3CH2+ -> CH2=CH2 + H+}$.",
+          "bullets": [],
+          "visual": {
+            "kind": "flow",
+            "spec": {
+              "direction": "LR",
+              "nodes": [
+                {
+                  "id": "a",
+                  "label": "Protonated alcohol"
+                },
+                {
+                  "id": "b",
+                  "label": "Carbocation + H₂O (slow)"
+                },
+                {
+                  "id": "c",
+                  "label": "Loss of β-H⁺ → alkene"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "a",
+                  "to": "b"
+                },
+                {
+                  "from": "b",
+                  "to": "c"
+                }
+              ]
+            },
+            "alt": "Flow of the dehydration mechanism"
+          },
+          "math": [
+            "\\ce{C2H5OH ->[conc. H2SO4][443 K] CH2=CH2 + H2O}",
+            "\\ce{2C2H5OH ->[conc. H2SO4][413 K] C2H5OC2H5 + H2O}"
+          ],
+          "narration": "Concentrated sulphuric acid removes water from alcohols. With ethanol at four hundred and forty three kelvin, ethene forms; at four hundred and thirteen kelvin with excess ethanol, two molecules combine to give ethoxyethane. The acid first protonates the hydroxyl group, turning it into a good leaving group. Water leaves to give a carbocation, and a hydrogen ion is lost from the next carbon, forming the double bond. Tertiary alcohols dehydrate most easily.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s10",
+          "layout": "check",
+          "heading": "Quick check: oxidation and dehydration",
+          "body_md": "Predict the product of oxidising or dehydrating an alcohol.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Count hydrogens on the carbinol carbon for oxidation; check the temperature for dehydration.",
+          "check_question_id": "q_isc12chem_ch14_046",
+          "audio": null
+        },
+        {
+          "id": "s11",
+          "layout": "concept",
+          "heading": "Converting one alcohol into another",
+          "body_md": "**Ascent** (add one carbon): ROH → RCl (SOCl₂) → RMgCl (Mg, ether) → + HCHO, then H₃O⁺ → RCH₂OH. **Descent** (remove one carbon): RCH₂OH → RCOOH (K₂Cr₂O₇/H⁺) → RCONH₂ (NH₃, heat) → RNH₂ (Br₂ + KOH, Hofmann) → ROH (HNO₂).",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Change",
+                "Sequence"
+              ],
+              "rows": [
+                [
+                  "Methanol → ethanol",
+                  "CH₃OH → CH₃Cl → CH₃MgCl → (HCHO, H₃O⁺) CH₃CH₂OH"
+                ],
+                [
+                  "Ethanol → methanol",
+                  "C₂H₅OH → CH₃COOH → CH₃CONH₂ → CH₃NH₂ → CH₃OH"
+                ]
+              ]
+            },
+            "alt": "Table of ascent and descent sequences"
+          },
+          "math": [],
+          "narration": "To go up the series by one carbon, turn the alcohol into a chloroalkane, make the Grignard reagent, and add methanal: hydrolysis gives the next higher primary alcohol. To go down, oxidise the alcohol to a carboxylic acid, convert it into an amide with ammonia, use the Hofmann bromamide reaction to lose one carbon as the amine, and treat the amine with nitrous acid to get the alcohol with one carbon fewer.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s12",
+          "layout": "example",
+          "heading": "Worked example: ascent and descent",
+          "body_md": "**Problem.** (a) Convert ethanol into propan-1-ol. (b) Convert propan-1-ol into ethanol.\n\n**(a)** $\\ce{C2H5OH ->[SOCl2] C2H5Cl ->[Mg][dry ether] C2H5MgCl}$; + HCHO, then $\\ce{H3O+}$ → $\\ce{CH3CH2CH2OH}$.\n\n**(b)** (skeletal scheme, reagents over the arrows) $\\ce{CH3CH2CH2OH ->[K2Cr2O7/H+] CH3CH2COOH ->[NH3][\\Delta] CH3CH2CONH2 ->[Br2/KOH] CH3CH2NH2 ->[HNO2] CH3CH2OH}$.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Step",
+                "Ascent (a)",
+                "Descent (b)"
+              ],
+              "rows": [
+                [
+                  "1",
+                  "Chloroethane",
+                  "Propanoic acid"
+                ],
+                [
+                  "2",
+                  "Ethylmagnesium chloride",
+                  "Propanamide"
+                ],
+                [
+                  "3",
+                  "Adduct with HCHO",
+                  "Ethanamine"
+                ],
+                [
+                  "4",
+                  "Propan-1-ol",
+                  "Ethanol"
+                ]
+              ]
+            },
+            "alt": "Table of intermediates in ascent and descent"
+          },
+          "math": [],
+          "narration": "For the ascent, ethanol becomes chloroethane, then ethylmagnesium chloride; adding methanal and hydrolysing gives propan-one-ol, one carbon longer. For the descent, propan-one-ol is oxidised to propanoic acid, converted into propanamide, and the Hofmann reaction removes one carbon to give ethanamine. Nitrous acid then converts ethanamine into ethanol.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s13",
+          "layout": "concept",
+          "heading": "Lucas test; uses of methanol and ethanol",
+          "body_md": "**Lucas reagent** (conc. HCl + anhydrous ZnCl₂) at room temperature: **3°** turbid at once; **2°** in about 5 minutes; **1°** no turbidity (only on heating) — the insoluble chloroalkane forms fastest from the most stable carbocation.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Alcohol",
+                "Uses",
+                "Hazard"
+              ],
+              "rows": [
+                [
+                  "Methanol",
+                  "Solvent; making methanal; fuel; denaturing ethanol",
+                  "Poisonous: blindness, death"
+                ],
+                [
+                  "Ethanol",
+                  "Solvent, sanitisers, medicines, beverages, fuel (blended with petrol)",
+                  "Intoxicating; denatured for industry"
+                ]
+              ]
+            },
+            "alt": "Table of uses of methanol and ethanol"
+          },
+          "math": [],
+          "narration": "The Lucas test distinguishes the three classes. Shake the alcohol with concentrated hydrochloric acid and zinc chloride at room temperature. A tertiary alcohol turns cloudy immediately as the insoluble chloroalkane separates; a secondary one in about five minutes; a primary one stays clear. Methanol is a useful solvent and fuel but is very poisonous, while ethanol is used in medicines, sanitisers and as a petrol additive.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s14",
+          "layout": "check",
+          "heading": "Quick check: Lucas test and conversions",
+          "body_md": "Use the Lucas test or plan an ascent or descent.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Tertiary alcohols react fastest with Lucas reagent; Grignard plus methanal adds one carbon.",
+          "check_question_id": "q_isc12chem_ch14_058",
+          "audio": null
+        },
+        {
+          "id": "s15",
+          "layout": "summary",
+          "heading": "Summary: Part 2",
+          "body_md": "",
+          "bullets": [
+            "Alcohols weaker acids than water (+I); 2ROH + 2Na → 2RONa + H₂.",
+            "C–O cleavage: HX (HI > HBr > HCl), PCl₃, PCl₅, SOCl₂.",
+            "Esterification: H⁺-catalysed, reversible; mechanism via protonated acid; ester O from alcohol.",
+            "Oxidation: 1° → aldehyde → acid; 2° → ketone; 3° resist; Cu at 573 K.",
+            "Dehydration: 443 K ethene, 413 K ether; protonation → carbocation → loss of H⁺.",
+            "Ascent via Grignard + HCHO; descent via acid → amide → amine (Hofmann) → alcohol; Lucas test 3° > 2° > 1°."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Test or reaction",
+                "Observation"
+              ],
+              "rows": [
+                [
+                  "Na",
+                  "H₂ evolved"
+                ],
+                [
+                  "PCl₅",
+                  "White fumes of HCl"
+                ],
+                [
+                  "Lucas (3°)",
+                  "Turbid at once"
+                ],
+                [
+                  "Acidified K₂Cr₂O₇ (1°, 2°)",
+                  "Orange → green"
+                ]
+              ]
+            },
+            "alt": "Summary table of tests for alcohols"
+          },
+          "math": [],
+          "narration": "Let us sum up Part 2. Alcohols are weak acids, weaker than water. Their hydroxyl group can be replaced by halogens or acylated to give esters by a mechanism in which the alcohol oxygen attacks the protonated acid. Oxidation and the Lucas test distinguish primary, secondary and tertiary alcohols, and acid dehydration gives alkenes or ethers. Alcohols can be stepped up or down the series by known sequences.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s16",
+          "layout": "exam-tips",
+          "heading": "Exam tips: Part 2",
+          "body_md": "",
+          "bullets": [
+            "Show all five steps of the esterification mechanism with curly arrows.",
+            "For dehydration, give the temperature: 443 K ethene, 413 K ether.",
+            "Say why alcohols are weaker acids than water (+I of alkyl).",
+            "In conversions, give every reagent and intermediate."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Slip",
+                "Fix"
+              ],
+              "rows": [
+                [
+                  "Ester O comes from the acid",
+                  "From the alcohol"
+                ],
+                [
+                  "3° alcohol oxidised to ketone",
+                  "Resists oxidation"
+                ],
+                [
+                  "Lucas: 1° turbid at once",
+                  "3° turbid at once"
+                ]
+              ]
+            },
+            "alt": "Table of three common slips in Part 2 and fixes"
+          },
+          "math": [],
+          "narration": "Final tips. Draw every step of the esterification and dehydration mechanisms. State the temperatures for making ethene and ether. Explain weak acidity with the inductive effect of the alkyl group. And in conversion questions, name each reagent and intermediate.",
+          "check_question_id": null,
+          "audio": null
+        }
+      ],
+      "status": "draft",
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    }
+  ],
+  "notes": {
+    "unit": "isc-12-chemistry-ch14",
+    "version": 1,
+    "title": "Alcohols — Notes",
+    "language": "en",
+    "sections": [
+      {
+        "heading": "1. Classification, structure, names and physical properties",
+        "body_md": "Mono-, di-, trihydric; monohydric CₙH₂ₙ₊₁OH are **1°, 2°, 3°**. IUPAC: alkan-n-ol (3-methylbutan-1-ol, 2-methylpropan-2-ol); diols keep -e (ethane-1,2-diol). O is sp³; C–O–H ≈ 108.9°; O–H polar.\n\n**Physical:** hydrogen bonding → b.p. much higher than alkanes/ethers of similar mass; b.p. rises with chain length, falls with branching; lower alcohols miscible with water, solubility falls as the alkyl group grows.",
+        "key_terms": [
+          {
+            "term": "Monohydric alcohol",
+            "definition_md": "An alcohol with one –OH group."
+          },
+          {
+            "term": "Hydrogen bonding",
+            "definition_md": "Attraction between the δ+ H of an O–H group and a lone pair on another electronegative atom."
+          }
+        ],
+        "formulas": [],
+        "visual": {
+          "kind": "svg",
+          "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 360 150\" role=\"img\" aria-label=\"Three alcohol molecules, each R–O–H, linked in a chain: the hydrogen of one O–H group is attracted to an oxygen lone pair of the next molecule by a hydrogen bond, drawn as a dotted line. These attractions must be broken when the alcohol boils, so alcohols boil far higher than ethers or alkanes of similar mass.\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>Three alcohol molecules, each R–O–H, linked in a chain: the hydrogen of one O–H group is attracted to an oxygen lone pair of the next molecule by a hydrogen bond, drawn as a dotted line. These attractions must be broken when the alcohol boils, so alcohols boil far higher than ethers or alkanes of similar mass.</title><line x1=\"46\" y1=\"44\" x2=\"54\" y2=\"48\" stroke=\"currentColor\" stroke-width=\"2\"/><circle cx=\"36\" cy=\"40\" r=\"11\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"36\" y=\"44\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">R</text><circle cx=\"60\" cy=\"50\" r=\"10\" fill=\"var(--diagram-red)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"60\" y=\"54\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">O</text><line x1=\"68\" y1=\"55\" x2=\"76\" y2=\"60\" stroke=\"currentColor\" stroke-width=\"2\"/><circle cx=\"82\" cy=\"63\" r=\"8\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"82\" y=\"67\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">H</text><line x1=\"146\" y1=\"79\" x2=\"154\" y2=\"83\" stroke=\"currentColor\" stroke-width=\"2\"/><circle cx=\"136\" cy=\"75\" r=\"11\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"136\" y=\"79\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">R</text><circle cx=\"160\" cy=\"85\" r=\"10\" fill=\"var(--diagram-red)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"160\" y=\"89\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">O</text><line x1=\"168\" y1=\"90\" x2=\"176\" y2=\"95\" stroke=\"currentColor\" stroke-width=\"2\"/><circle cx=\"182\" cy=\"98\" r=\"8\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"182\" y=\"102\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">H</text><line x1=\"246\" y1=\"44\" x2=\"254\" y2=\"48\" stroke=\"currentColor\" stroke-width=\"2\"/><circle cx=\"236\" cy=\"40\" r=\"11\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"236\" y=\"44\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">R</text><circle cx=\"260\" cy=\"50\" r=\"10\" fill=\"var(--diagram-red)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"260\" y=\"54\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">O</text><line x1=\"268\" y1=\"55\" x2=\"276\" y2=\"60\" stroke=\"currentColor\" stroke-width=\"2\"/><circle cx=\"282\" cy=\"63\" r=\"8\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"282\" y=\"67\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">H</text><line x1=\"90\" y1=\"64\" x2=\"150\" y2=\"82\" stroke=\"var(--diagram-accent)\" stroke-width=\"2\" stroke-dasharray=\"3 3\"/><line x1=\"190\" y1=\"98\" x2=\"250\" y2=\"54\" stroke=\"var(--diagram-accent)\" stroke-width=\"2\" stroke-dasharray=\"3 3\"/><text x=\"118\" y=\"92\" fill=\"var(--diagram-accent)\" stroke=\"none\" font-size=\"10\">H-bond</text><text x=\"222\" y=\"92\" fill=\"var(--diagram-accent)\" stroke=\"none\" font-size=\"10\">H-bond</text><text x=\"180\" y=\"140\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">Alcohol molecules held together by hydrogen bonds</text></svg>",
+          "alt": "Alcohol molecules joined in a chain by hydrogen bonds between the O–H hydrogen of one molecule and the oxygen of the next"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "isc-12-chemistry-ch14-t01"
+        ]
+      },
+      {
+        "heading": "2. Preparation",
+        "body_md": "- **Alkenes:** direct hydration (H₂O/H⁺) or indirect (cold conc. H₂SO₄ then boil with water) — Markovnikov; **hydroboration–oxidation** (B₂H₆; H₂O₂/OH⁻) — anti-Markovnikov.\n- **Alkyl halides:** aqueous KOH or moist Ag₂O.\n- **Carbonyl reduction:** aldehyde → 1°, ketone → 2° (H₂/Ni, NaBH₄, LiAlH₄); esters/acids → 1° (LiAlH₄).\n- **Primary amines + HNO₂:** RNH₂ → ROH + N₂ + H₂O.\n- **Grignard:** HCHO → 1°; RCHO → 2°; R₂CO → 3° (then H₃O⁺).",
+        "key_terms": [
+          {
+            "term": "Hydroboration–oxidation",
+            "definition_md": "Addition of B₂H₆ to an alkene followed by H₂O₂/OH⁻; gives anti-Markovnikov alcohols."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\ce{CH3MgI + HCHO -> CH3CH2OMgI}",
+            "label": "Grignard addition to methanal (then H₃O⁺ gives ethanol)"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Carbonyl + RMgX",
+              "Alcohol"
+            ],
+            "rows": [
+              [
+                "HCHO",
+                "1°"
+              ],
+              [
+                "R′CHO",
+                "2°"
+              ],
+              [
+                "R′COR″",
+                "3°"
+              ]
+            ]
+          },
+          "alt": "Table of Grignard routes"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "isc-12-chemistry-ch14-t02"
+        ]
+      },
+      {
+        "heading": "3. Manufacture (outline)",
+        "body_md": "**Methanol (Bosch):** $\\ce{C + H2O -> CO + H2}$ (water gas, 1273 K); $\\ce{CO + 2H2 -> CH3OH}$ over ZnO–Cr₂O₃, 573–673 K, 200–300 atm.\n**Ethanol (fermentation):** molasses (sucrose) + yeast; invertase: sucrose → glucose + fructose; zymase: $\\ce{C6H12O6 -> 2C2H5OH + 2CO2}$.",
+        "key_terms": [
+          {
+            "term": "Zymase",
+            "definition_md": "Yeast enzyme complex converting glucose into ethanol and CO₂."
+          },
+          {
+            "term": "Water gas",
+            "definition_md": "A mixture of CO and H₂ made from steam and hot coke."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\ce{CO + 2H2 -> CH3OH}",
+            "label": "Methanol synthesis"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Product",
+              "Catalyst"
+            ],
+            "rows": [
+              [
+                "Methanol",
+                "ZnO–Cr₂O₃"
+              ],
+              [
+                "Ethanol",
+                "Invertase, zymase"
+              ]
+            ]
+          },
+          "alt": "Table of manufacture"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "isc-12-chemistry-ch14-t03"
+        ]
+      },
+      {
+        "heading": "4. Acidity and reactions of the O–H and C–O bonds",
+        "body_md": "**Acidity:** 2ROH + 2Na → 2RONa + H₂; alcohols are weaker acids than water (+I of alkyl); CH₃OH > 1° > 2° > 3°.\n\n**C–O cleavage:** HX (HI > HBr > HCl; ZnCl₂ for HCl); PCl₃, PCl₅ (white HCl fumes — test for –OH); SOCl₂ (gaseous by-products).\n\n**Esterification:** RCOOH + R′OH ⇌ RCOOR′ + H₂O (conc. H₂SO₄); acid chlorides (pyridine) and anhydrides give esters irreversibly. **Mechanism:** protonate acid C=O → alcohol O attacks → proton transfer → lose H₂O → lose H⁺; ester O comes from the alcohol.",
+        "key_terms": [
+          {
+            "term": "Esterification",
+            "definition_md": "Formation of an ester from an alcohol and a carboxylic acid (or acid chloride/anhydride)."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\ce{CH3COOH + C2H5OH <=>[H+] CH3COOC2H5 + H2O}",
+            "label": "Esterification"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Reagent",
+              "Product"
+            ],
+            "rows": [
+              [
+                "Na",
+                "RONa + H₂"
+              ],
+              [
+                "PCl₅",
+                "RCl + POCl₃ + HCl"
+              ],
+              [
+                "SOCl₂",
+                "RCl + SO₂ + HCl"
+              ],
+              [
+                "CH₃COCl",
+                "Ester + HCl"
+              ]
+            ]
+          },
+          "alt": "Table of reactions of alcohols"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "isc-12-chemistry-ch14-t04"
+        ]
+      },
+      {
+        "heading": "5. Oxidation and dehydration",
+        "body_md": "**Oxidation:** 1° → aldehyde (PCC; Cu, 573 K) → acid (K₂Cr₂O₇/H⁺, KMnO₄); 2° → ketone; 3° resist (Cu, 573 K → alkene). Dichromate turns orange → green with 1° and 2°.\n\n**Dehydration (conc. H₂SO₄):** ethanol → ethene at 443 K; → ethoxyethane at 413 K (excess ethanol). Ease 3° > 2° > 1°. **Mechanism:** $\\ce{CH3CH2OH + H+ -> CH3CH2OH2+}$; $\\ce{CH3CH2OH2+ -> CH3CH2+ + H2O}$ (slow); $\\ce{CH3CH2+ -> CH2=CH2 + H+}$.",
+        "key_terms": [
+          {
+            "term": "PCC",
+            "definition_md": "Pyridinium chlorochromate, a mild oxidant that converts 1° alcohols into aldehydes."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\ce{C2H5OH ->[conc. H2SO4][443 K] CH2=CH2 + H2O}",
+            "label": "Dehydration"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Alcohol",
+              "Oxidation product"
+            ],
+            "rows": [
+              [
+                "1°",
+                "Aldehyde → acid"
+              ],
+              [
+                "2°",
+                "Ketone"
+              ],
+              [
+                "3°",
+                "None (mild)"
+              ]
+            ]
+          },
+          "alt": "Table of oxidation products"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "isc-12-chemistry-ch14-t05"
+        ]
+      },
+      {
+        "heading": "6. Conversions, Lucas test and uses",
+        "body_md": "**Ascent:** ROH → RCl → RMgCl → + HCHO, H₃O⁺ → RCH₂OH. **Descent:** RCH₂OH → RCOOH → RCONH₂ → RNH₂ (Br₂/KOH, Hofmann) → ROH (HNO₂).\n\n**Lucas test** (anhydrous ZnCl₂ + conc. HCl, room temperature): 3° turbid at once; 2° about 5 min; 1° no turbidity.\n\n**Uses:** methanol — solvent, methanal manufacture, fuel; highly poisonous. Ethanol — solvent, medicines, sanitisers, beverages, fuel blended with petrol.",
+        "key_terms": [
+          {
+            "term": "Lucas reagent",
+            "definition_md": "Anhydrous ZnCl₂ in conc. HCl, used to distinguish 1°, 2° and 3° alcohols."
+          },
+          {
+            "term": "Hofmann bromamide reaction",
+            "definition_md": "RCONH₂ + Br₂ + KOH → RNH₂ with one carbon fewer."
+          }
+        ],
+        "formulas": [],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Alcohol class",
+              "Lucas test"
+            ],
+            "rows": [
+              [
+                "3°",
+                "Immediate"
+              ],
+              [
+                "2°",
+                "≈ 5 min"
+              ],
+              [
+                "1°",
+                "None at room temperature"
+              ]
+            ]
+          },
+          "alt": "Table of Lucas test"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "isc-12-chemistry-ch14-t06"
+        ]
+      }
+    ],
+    "exam_tips_md": "**Common mistakes**\n- Saying alcohols are stronger acids than water.\n- Placing the ¹⁸O label in the water during esterification (it stays in the ester).\n- Forgetting temperatures for dehydration (443 K ethene; 413 K ether).\n- Grignard + HCHO giving 2° alcohols (it gives 1°).\n\n**How marks are usually awarded**\n- Mechanisms (2–3 marks): every step with the intermediate.\n- Conversions (1 mark per step): reagent and intermediate.\n- Tests (1–2 marks): reagent and observation for each class.",
+    "status": "draft",
+    "provenance": {
+      "origin": "human",
+      "template_version": null,
+      "model": null,
+      "generated_at": "2026-10-30",
+      "author": "claude-opus-5-5 (subject-producer)"
+    }
+  },
+  "flashcards": {
+    "unit": "isc-12-chemistry-ch14",
+    "version": 1,
+    "language": "en",
+    "cards": [
+      {
+        "id": "f01",
+        "front_md": "General formula of monohydric alcohols?",
+        "back_md": "CₙH₂ₙ₊₁OH.",
+        "tag": "formula",
+        "topic_id": "isc-12-chemistry-ch14-t01"
+      },
+      {
+        "id": "f02",
+        "front_md": "IUPAC name of (CH₃)₃COH?",
+        "back_md": "2-Methylpropan-2-ol.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch14-t01"
+      },
+      {
+        "id": "f03",
+        "front_md": "Why do alcohols boil high?",
+        "back_md": "Intermolecular hydrogen bonding.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch14-t01"
+      },
+      {
+        "id": "f04",
+        "front_md": "Effect of branching on b.p.?",
+        "back_md": "Lowers it.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch14-t01"
+      },
+      {
+        "id": "f05",
+        "front_md": "Hydroboration–oxidation follows?",
+        "back_md": "Anti-Markovnikov.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch14-t02"
+      },
+      {
+        "id": "f06",
+        "front_md": "Indirect hydration reagent?",
+        "back_md": "Cold conc. H₂SO₄, then boil with water.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch14-t02"
+      },
+      {
+        "id": "f07",
+        "front_md": "RNH₂ + HNO₂?",
+        "back_md": "ROH + N₂ + H₂O.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch14-t02"
+      },
+      {
+        "id": "f08",
+        "front_md": "RMgX + HCHO gives?",
+        "back_md": "1° alcohol.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch14-t02"
+      },
+      {
+        "id": "f09",
+        "front_md": "RMgX + ketone gives?",
+        "back_md": "3° alcohol.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch14-t02"
+      },
+      {
+        "id": "f10",
+        "front_md": "Ketone reduced gives?",
+        "back_md": "2° alcohol.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch14-t02"
+      },
+      {
+        "id": "f11",
+        "front_md": "Methanol catalyst (Bosch)?",
+        "back_md": "ZnO–Cr₂O₃.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch14-t03"
+      },
+      {
+        "id": "f12",
+        "front_md": "Enzymes in fermentation of molasses?",
+        "back_md": "Invertase, zymase.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch14-t03"
+      },
+      {
+        "id": "f13",
+        "front_md": "Why are alcohols weaker acids than water?",
+        "back_md": "Alkyl +I destabilises alkoxide.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch14-t04"
+      },
+      {
+        "id": "f14",
+        "front_md": "Acidity order of alcohols?",
+        "back_md": "CH₃OH > 1° > 2° > 3°.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch14-t04"
+      },
+      {
+        "id": "f15",
+        "front_md": "Test for –OH with PCl₅?",
+        "back_md": "White fumes of HCl.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch14-t04"
+      },
+      {
+        "id": "f16",
+        "front_md": "HX reactivity with alcohols?",
+        "back_md": "HI > HBr > HCl.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch14-t04"
+      },
+      {
+        "id": "f17",
+        "front_md": "Where does ¹⁸O of the alcohol end up?",
+        "back_md": "In the ester.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch14-t04"
+      },
+      {
+        "id": "f18",
+        "front_md": "First step of esterification mechanism?",
+        "back_md": "Protonation of the acid C=O.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch14-t04"
+      },
+      {
+        "id": "f19",
+        "front_md": "Why add pyridine with acid chlorides?",
+        "back_md": "Removes HCl.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch14-t04"
+      },
+      {
+        "id": "f20",
+        "front_md": "1° alcohol + PCC?",
+        "back_md": "Aldehyde.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch14-t05"
+      },
+      {
+        "id": "f21",
+        "front_md": "2° alcohol + K₂Cr₂O₇/H⁺?",
+        "back_md": "Ketone.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch14-t05"
+      },
+      {
+        "id": "f22",
+        "front_md": "3° alcohol over Cu at 573 K?",
+        "back_md": "Alkene.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch14-t05"
+      },
+      {
+        "id": "f23",
+        "front_md": "Ethanol + conc. H₂SO₄ at 443 K?",
+        "back_md": "Ethene.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch14-t05"
+      },
+      {
+        "id": "f24",
+        "front_md": "Ethanol + conc. H₂SO₄ at 413 K?",
+        "back_md": "Ethoxyethane.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch14-t05"
+      },
+      {
+        "id": "f25",
+        "front_md": "Slow step of dehydration?",
+        "back_md": "Loss of water to form carbocation.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch14-t05"
+      },
+      {
+        "id": "f26",
+        "front_md": "Lucas reagent?",
+        "back_md": "Anhydrous ZnCl₂ + conc. HCl.",
+        "tag": "definition",
+        "topic_id": "isc-12-chemistry-ch14-t06"
+      },
+      {
+        "id": "f27",
+        "front_md": "Lucas: 3° alcohol?",
+        "back_md": "Turbid at once.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch14-t06"
+      },
+      {
+        "id": "f28",
+        "front_md": "Ascent of series uses?",
+        "back_md": "Grignard + HCHO.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch14-t06"
+      },
+      {
+        "id": "f29",
+        "front_md": "Descent of series uses?",
+        "back_md": "Hofmann bromamide on the amide.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch14-t06"
+      },
+      {
+        "id": "f30",
+        "front_md": "Why is methanol dangerous?",
+        "back_md": "Poisonous: blindness, death.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch14-t06"
+      },
+      {
+        "id": "f31",
+        "front_md": "Exam tip: dehydration",
+        "back_md": "State the temperature: 443 K ethene, 413 K ether.",
+        "tag": "exam-tip",
+        "topic_id": "isc-12-chemistry-ch14-t05"
+      }
+    ],
+    "status": "draft",
+    "provenance": {
+      "origin": "human",
+      "template_version": null,
+      "model": null,
+      "generated_at": "2026-10-30",
+      "author": "claude-opus-5-5 (subject-producer)"
+    }
+  },
+  "questions": [
+    {
+      "id": "q_isc12chem_ch14_001",
+      "unit": "isc-12-chemistry-ch14",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Pentan-3-ol, CH₃CH₂CH(OH)CH₂CH₃, is classified as a:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "primary alcohol"
+        },
+        {
+          "id": "b",
+          "text_md": "tertiary alcohol"
+        },
+        {
+          "id": "c",
+          "text_md": "secondary alcohol"
+        },
+        {
+          "id": "d",
+          "text_md": "dihydric alcohol"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "The C–OH carbon carries two ethyl groups — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch14-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch14_002",
+      "unit": "isc-12-chemistry-ch14",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "The IUPAC name of isoamyl alcohol, (CH₃)₂CHCH₂CH₂OH, is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "2-methylbutan-4-ol"
+        },
+        {
+          "id": "b",
+          "text_md": "3-methylbutan-4-ol"
+        },
+        {
+          "id": "c",
+          "text_md": "1-hydroxy-3-methylbutane"
+        },
+        {
+          "id": "d",
+          "text_md": "3-methylbutan-1-ol"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Number from the –OH end to give it locant 1 — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch14-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch14_003",
+      "unit": "isc-12-chemistry-ch14",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Propane-1,2-diol, HOCH₂CH(OH)CH₃, used in food colourings, contains:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "two primary –OH groups"
+        },
+        {
+          "id": "b",
+          "text_md": "one primary and one secondary –OH group"
+        },
+        {
+          "id": "c",
+          "text_md": "one secondary and one tertiary –OH group"
+        },
+        {
+          "id": "d",
+          "text_md": "two secondary –OH groups"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "C-1 (CH₂OH) is primary; C-2 (CHOH) is secondary — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch14-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch14_004",
+      "unit": "isc-12-chemistry-ch14",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "The general formula of the saturated, open-chain monohydric alcohols is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "CₙH₂ₙ₊₂O"
+        },
+        {
+          "id": "b",
+          "text_md": "CₙH₂ₙO"
+        },
+        {
+          "id": "c",
+          "text_md": "CₙH₂ₙ₊₁O"
+        },
+        {
+          "id": "d",
+          "text_md": "CₙH₂ₙO₂"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "CₙH₂ₙ₊₁OH = CₙH₂ₙ₊₂O — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch14-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch14_005",
+      "unit": "isc-12-chemistry-ch14",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Propan-1-ol, methoxyethane and butane have similar molar masses (58–60). Which has the highest boiling point, and why?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Propan-1-ol, because its molecules form hydrogen bonds with one another"
+        },
+        {
+          "id": "b",
+          "text_md": "Methoxyethane, because it is the most polar"
+        },
+        {
+          "id": "c",
+          "text_md": "Butane, because it has the most hydrogen atoms"
+        },
+        {
+          "id": "d",
+          "text_md": "All boil at about the same temperature"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Only the alcohol has an O–H group for intermolecular hydrogen bonding — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch14-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch14_006",
+      "unit": "isc-12-chemistry-ch14",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Ethanol mixes with water in all proportions, but butan-1-ol is only partly soluble. The reason is that in butan-1-ol:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "the –OH group cannot form hydrogen bonds"
+        },
+        {
+          "id": "b",
+          "text_md": "the larger hydrocarbon part cannot hydrogen-bond with water"
+        },
+        {
+          "id": "c",
+          "text_md": "the molecule is ionic"
+        },
+        {
+          "id": "d",
+          "text_md": "the oxygen has no lone pairs"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "The non-polar alkyl chain disrupts water’s hydrogen bonding — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch14-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch14_007",
+      "unit": "isc-12-chemistry-ch14",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? Butan-1-ol and 2-methylpropan-2-ol are functional group isomers.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "f"
+        ]
+      },
+      "solution_md": "False. Both are alcohols; they are chain/position isomers. A functional isomer would be an ether such as ethoxyethane.",
+      "marking_scheme": [
+        {
+          "step": "False, with the correction",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch14-t01"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch14_008",
+      "unit": "isc-12-chemistry-ch14",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "The number of structural isomers of C₄H₉OH that are alcohols is ___.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "4",
+              "four"
+            ]
+          }
+        ]
+      },
+      "solution_md": "**4**: butan-1-ol, butan-2-ol, 2-methylpropan-1-ol and 2-methylpropan-2-ol.",
+      "marking_scheme": [
+        {
+          "step": "Writes \"4\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch14-t01"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch14_009",
+      "unit": "isc-12-chemistry-ch14",
+      "language": "en",
+      "type": "match",
+      "stem_md": "Match each alcohol with its class.",
+      "options": [
+        {
+          "id": "1",
+          "text_md": "Butan-1-ol"
+        },
+        {
+          "id": "2",
+          "text_md": "Butan-2-ol"
+        },
+        {
+          "id": "3",
+          "text_md": "2-Methylpropan-2-ol"
+        },
+        {
+          "id": "4",
+          "text_md": "Ethane-1,2-diol"
+        }
+      ],
+      "match_right": [
+        {
+          "id": "p",
+          "text_md": "Secondary"
+        },
+        {
+          "id": "q",
+          "text_md": "Dihydric"
+        },
+        {
+          "id": "r",
+          "text_md": "Primary"
+        },
+        {
+          "id": "s",
+          "text_md": "Tertiary"
+        }
+      ],
+      "answer": {
+        "pairs": [
+          {
+            "left_id": "1",
+            "right_id": "r"
+          },
+          {
+            "left_id": "2",
+            "right_id": "p"
+          },
+          {
+            "left_id": "3",
+            "right_id": "s"
+          },
+          {
+            "left_id": "4",
+            "right_id": "q"
+          }
+        ]
+      },
+      "solution_md": "Butan-1-ol 1°; butan-2-ol 2°; 2-methylpropan-2-ol 3°; ethane-1,2-diol dihydric.",
+      "marking_scheme": [
+        {
+          "step": "1 → r",
+          "marks": 0.5
+        },
+        {
+          "step": "2 → p",
+          "marks": 0.5
+        },
+        {
+          "step": "3 → s",
+          "marks": 0.5
+        },
+        {
+          "step": "4 → q",
+          "marks": 0.5
+        }
+      ],
+      "marks": 2,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch14-t01"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch14_010",
+      "unit": "isc-12-chemistry-ch14",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write the structures of (a) 2,2-dimethylpropan-1-ol and (b) 2-methylbutan-2-ol, and classify each alcohol.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) (CH₃)₃CCH₂OH — primary (the C–OH carbon has one C neighbour). (b) CH₃CH₂C(OH)(CH₃)₂ — tertiary."
+      },
+      "solution_md": "1°; 3°.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch14-t01"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch14_011",
+      "unit": "isc-12-chemistry-ch14",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Butan-1-ol boils at 391 K but its isomer 2-methylpropan-2-ol boils at 356 K. Explain.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Both form hydrogen bonds, but 2-methylpropan-2-ol is highly branched and nearly spherical; its smaller surface area gives weaker van der Waals forces and the bulky groups around –OH hinder hydrogen bonding. The unbranched butan-1-ol has stronger intermolecular attractions and boils higher."
+      },
+      "solution_md": "Branching reduces surface area and hinders H-bonding.",
+      "marking_scheme": [
+        {
+          "step": "Both H-bond",
+          "marks": 1
+        },
+        {
+          "step": "Branching effect",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch14-t01"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch14_012",
+      "unit": "isc-12-chemistry-ch14",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write the structures and IUPAC names of the four alcohols with formula C₄H₁₀O, and classify each as primary, secondary or tertiary.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "CH₃CH₂CH₂CH₂OH, butan-1-ol (1°); CH₃CH₂CH(OH)CH₃, butan-2-ol (2°); (CH₃)₂CHCH₂OH, 2-methylpropan-1-ol (1°); (CH₃)₃COH, 2-methylpropan-2-ol (3°)."
+      },
+      "solution_md": "Four alcohols: 1°, 2°, 1°, 3°.",
+      "marking_scheme": [
+        {
+          "step": "Structures",
+          "marks": 1
+        },
+        {
+          "step": "Names",
+          "marks": 1
+        },
+        {
+          "step": "Classes",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch14-t01"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch14_013",
+      "unit": "isc-12-chemistry-ch14",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "But-1-ene is absorbed in cold concentrated sulphuric acid and the product is boiled with water. The alcohol formed is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "butan-1-ol"
+        },
+        {
+          "id": "b",
+          "text_md": "2-methylpropan-2-ol"
+        },
+        {
+          "id": "c",
+          "text_md": "butane-1,2-diol"
+        },
+        {
+          "id": "d",
+          "text_md": "butan-2-ol"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Indirect hydration follows Markovnikov’s rule — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch14-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch14_014",
+      "unit": "isc-12-chemistry-ch14",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "2-Methylpropene is treated with diborane and then with alkaline hydrogen peroxide. The alcohol formed is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "2-methylpropan-1-ol"
+        },
+        {
+          "id": "b",
+          "text_md": "2-methylpropan-2-ol"
+        },
+        {
+          "id": "c",
+          "text_md": "butan-1-ol"
+        },
+        {
+          "id": "d",
+          "text_md": "butan-2-ol"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Hydroboration–oxidation is anti-Markovnikov: –OH on the CH₂ end — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch14-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch14_015",
+      "unit": "isc-12-chemistry-ch14",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Propanal is reduced with hydrogen over nickel. The product is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "propan-2-ol"
+        },
+        {
+          "id": "b",
+          "text_md": "propan-1-ol"
+        },
+        {
+          "id": "c",
+          "text_md": "propanoic acid"
+        },
+        {
+          "id": "d",
+          "text_md": "propane"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Aldehydes are reduced to primary alcohols — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch14-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch14_016",
+      "unit": "isc-12-chemistry-ch14",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Ethanamine is treated with sodium nitrite and dilute hydrochloric acid in the cold. The organic product and the gas evolved are:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "ethanal and ammonia"
+        },
+        {
+          "id": "b",
+          "text_md": "ethanol and nitrogen"
+        },
+        {
+          "id": "c",
+          "text_md": "nitroethane and hydrogen"
+        },
+        {
+          "id": "d",
+          "text_md": "ethanol and nitrogen dioxide"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "C₂H₅NH₂ + HNO₂ → C₂H₅OH + N₂ + H₂O — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch14-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch14_017",
+      "unit": "isc-12-chemistry-ch14",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Methylmagnesium iodide is added to propanone and the product is hydrolysed with dilute acid. The alcohol formed is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "2-methylpropan-2-ol"
+        },
+        {
+          "id": "b",
+          "text_md": "propan-2-ol"
+        },
+        {
+          "id": "c",
+          "text_md": "butan-2-ol"
+        },
+        {
+          "id": "d",
+          "text_md": "2-methylpropan-1-ol"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Ketone + RMgX → tertiary alcohol — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch14-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch14_018",
+      "unit": "isc-12-chemistry-ch14",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "1-Bromobutane is warmed with moist silver oxide. The organic product is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "but-1-ene"
+        },
+        {
+          "id": "b",
+          "text_md": "dibutyl ether"
+        },
+        {
+          "id": "c",
+          "text_md": "butanal"
+        },
+        {
+          "id": "d",
+          "text_md": "butan-1-ol"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Moist Ag₂O acts as a source of OH⁻ — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch14-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch14_019",
+      "unit": "isc-12-chemistry-ch14",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Acid-catalysed hydration of propene gives mainly propan-1-ol.\n\n**Reason (R):** The reaction proceeds through the more stable secondary carbocation.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "A is false: the secondary carbocation leads to propan-2-ol. R is true — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch14-t02"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch14_020",
+      "unit": "isc-12-chemistry-ch14",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? Methanal and a Grignard reagent give a secondary alcohol after hydrolysis.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "f"
+        ]
+      },
+      "solution_md": "False. Methanal gives a primary alcohol, RCH₂OH.",
+      "marking_scheme": [
+        {
+          "step": "False, with the correction",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch14-t02"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch14_021",
+      "unit": "isc-12-chemistry-ch14",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "$4.4\\ \\text{g}$ of ethanal ($M = 44$) reacts with excess methylmagnesium iodide, and the product is hydrolysed. What mass of propan-2-ol ($M = 60$) forms, assuming complete conversion?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 6,
+        "tolerance": 0.02,
+        "unit": "g"
+      },
+      "solution_md": "$n = 4.4 \\div 44 = 0.10\\ \\text{mol}$; mass $= 0.10 \\times 60 = 6.0\\ \\text{g}$.",
+      "marking_scheme": [
+        {
+          "step": "0.10 mol",
+          "marks": 1
+        },
+        {
+          "step": "6.0 g",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch14-t02"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch14_022",
+      "unit": "isc-12-chemistry-ch14",
+      "language": "en",
+      "type": "short",
+      "stem_md": "But-1-ene is converted to an alcohol (a) by absorption in cold conc. H₂SO₄ followed by boiling with water and (b) by hydroboration–oxidation. Name each product and explain the difference.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Butan-2-ol: Markovnikov addition — H⁺ adds to C-1, giving the more stable secondary carbocation (alkyl hydrogen sulphate) at C-2. (b) Butan-1-ol: in hydroboration boron adds to the less substituted C-1 and is replaced by –OH (anti-Markovnikov)."
+      },
+      "solution_md": "Butan-2-ol vs butan-1-ol.",
+      "marking_scheme": [
+        {
+          "step": "(a) with reason",
+          "marks": 1
+        },
+        {
+          "step": "(b) with reason",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch14-t02"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch14_023",
+      "unit": "isc-12-chemistry-ch14",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Show two different combinations of a Grignard reagent and an aldehyde that give butan-2-ol after hydrolysis.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "CH₃CH₂MgBr + CH₃CHO (ethanal) → CH₃CH₂CH(OH)CH₃. CH₃MgI + CH₃CH₂CHO (propanal) → CH₃CH(OH)CH₂CH₃. Each adduct is hydrolysed with dilute acid."
+      },
+      "solution_md": "EtMgBr + ethanal; MeMgI + propanal.",
+      "marking_scheme": [
+        {
+          "step": "First combination",
+          "marks": 1
+        },
+        {
+          "step": "Second combination",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch14-t02"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch14_024",
+      "unit": "isc-12-chemistry-ch14",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write equations, with conditions, for preparing ethanol from (a) ethene by indirect hydration, (b) bromoethane and (c) ethanamine.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) $\\ce{CH2=CH2 + H2SO4 -> CH3CH2OSO3H}$; $\\ce{CH3CH2OSO3H + H2O ->[\\Delta] CH3CH2OH + H2SO4}$. (b) $\\ce{CH3CH2Br + KOH(aq) ->[\\Delta] CH3CH2OH + KBr}$. (c) $\\ce{CH3CH2NH2 + HNO2 -> CH3CH2OH + N2 + H2O}$ (NaNO₂ + HCl, cold)."
+      },
+      "solution_md": "Three routes.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch14-t02"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch14_025",
+      "unit": "isc-12-chemistry-ch14",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Name the alcohol(s) formed when (a) butanal is reduced with H₂/Ni, (b) butanone is reduced with LiAlH₄ and (c) ethyl ethanoate is reduced with LiAlH₄.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Butan-1-ol (aldehyde → 1° alcohol). (b) Butan-2-ol (ketone → 2° alcohol). (c) Ethanol only: both the acyl part (→ CH₃CH₂OH) and the ethoxy part give ethanol, 2 mol per mole of ester."
+      },
+      "solution_md": "Butan-1-ol; butan-2-ol; ethanol.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch14-t02"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch14_026",
+      "unit": "isc-12-chemistry-ch14",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "In the manufacture of methanol from water gas enriched with hydrogen, the catalyst used is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Finely divided iron"
+        },
+        {
+          "id": "b",
+          "text_md": "Platinum gauze"
+        },
+        {
+          "id": "c",
+          "text_md": "ZnO–Cr₂O₃"
+        },
+        {
+          "id": "d",
+          "text_md": "V₂O₅"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "CO + 2H₂ → CH₃OH over ZnO–Cr₂O₃ at 573–673 K and 200–300 atm — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch14-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch14_027",
+      "unit": "isc-12-chemistry-ch14",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "In the fermentation of molasses, the yeast enzyme invertase converts:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "glucose into ethanol and carbon dioxide"
+        },
+        {
+          "id": "b",
+          "text_md": "sucrose into glucose and fructose"
+        },
+        {
+          "id": "c",
+          "text_md": "starch into maltose"
+        },
+        {
+          "id": "d",
+          "text_md": "ethanol into ethanoic acid"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Invertase hydrolyses sucrose; zymase then gives ethanol — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch14-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch14_028",
+      "unit": "isc-12-chemistry-ch14",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "What mass of ethanol ($M = 46$) can be obtained from $34.2\\ \\text{g}$ of sucrose ($M = 342$) if hydrolysis and fermentation are complete? ($\\ce{C12H22O11 + H2O -> 2C6H12O6}$; $\\ce{C6H12O6 -> 2C2H5OH + 2CO2}$)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 18.4,
+        "tolerance": 0.05,
+        "unit": "g"
+      },
+      "solution_md": "$n(\\text{sucrose}) = 34.2 \\div 342 = 0.100\\ \\text{mol}$ → 0.200 mol hexose → 0.400 mol ethanol; mass $= 0.400 \\times 46 = 18.4\\ \\text{g}$.",
+      "marking_scheme": [
+        {
+          "step": "1 : 4 ratio",
+          "marks": 1
+        },
+        {
+          "step": "18.4 g",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch14-t03"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch14_029",
+      "unit": "isc-12-chemistry-ch14",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "In the Bosch process, $\\ce{CO + 2H2 -> CH3OH}$. What volume of hydrogen at STP is needed to make $16\\ \\text{g}$ of methanol ($M = 32$)? (Molar volume $22.4\\ \\text{L}$)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 22.4,
+        "tolerance": 0.1,
+        "unit": "L"
+      },
+      "solution_md": "$n(\\ce{CH3OH}) = 16 \\div 32 = 0.50\\ \\text{mol}$; $n(\\ce{H2}) = 1.0\\ \\text{mol}$; $V = 1.0 \\times 22.4 = 22.4\\ \\text{L}$.",
+      "marking_scheme": [
+        {
+          "step": "1.0 mol H₂",
+          "marks": 1
+        },
+        {
+          "step": "22.4 L",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch14-t03"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch14_030",
+      "unit": "isc-12-chemistry-ch14",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Outline, with equations, the manufacture of methanol starting from coke and steam.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Steam is passed over red-hot coke (about 1273 K) to give water gas: $\\ce{C + H2O -> CO + H2}$. Extra hydrogen is added and the mixture is passed over ZnO–Cr₂O₃ at 573–673 K and 200–300 atm: $\\ce{CO + 2H2 -> CH3OH}$."
+      },
+      "solution_md": "Water gas; catalytic conversion.",
+      "marking_scheme": [
+        {
+          "step": "Water gas equation",
+          "marks": 1
+        },
+        {
+          "step": "Methanol step with conditions",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch14-t03"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch14_031",
+      "unit": "isc-12-chemistry-ch14",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Sodium ethoxide dissolved in water gives ethanol and sodium hydroxide. This shows that:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "ethanol is a stronger acid than water"
+        },
+        {
+          "id": "b",
+          "text_md": "ethoxide is a weaker base than hydroxide"
+        },
+        {
+          "id": "c",
+          "text_md": "ethanol is neutral"
+        },
+        {
+          "id": "d",
+          "text_md": "ethanol is a weaker acid than water"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "The stronger base (ethoxide) takes a proton from the stronger acid (water) — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch14-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch14_032",
+      "unit": "isc-12-chemistry-ch14",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which order of acid strength is correct for these alcohols?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "(CH₃)₃COH > (CH₃)₂CHOH > CH₃CH₂OH > CH₃OH"
+        },
+        {
+          "id": "b",
+          "text_md": "CH₃CH₂OH > CH₃OH > (CH₃)₃COH > (CH₃)₂CHOH"
+        },
+        {
+          "id": "c",
+          "text_md": "All are equally acidic"
+        },
+        {
+          "id": "d",
+          "text_md": "CH₃OH > CH₃CH₂OH > (CH₃)₂CHOH > (CH₃)₃COH"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "More alkyl groups (+I) destabilise the alkoxide more — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch14-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch14_033",
+      "unit": "isc-12-chemistry-ch14",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A neutral organic liquid gives white fumes when a little phosphorus pentachloride is added. This indicates the presence of:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "a C=C double bond"
+        },
+        {
+          "id": "b",
+          "text_md": "a ketone group"
+        },
+        {
+          "id": "c",
+          "text_md": "an –OH group (HCl fumes are released)"
+        },
+        {
+          "id": "d",
+          "text_md": "an ester group"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "ROH + PCl₅ → RCl + POCl₃ + HCl — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch14-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch14_034",
+      "unit": "isc-12-chemistry-ch14",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "The order of reactivity of the hydrogen halides with a given alcohol is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "HCl > HBr > HI"
+        },
+        {
+          "id": "b",
+          "text_md": "HBr > HI > HCl"
+        },
+        {
+          "id": "c",
+          "text_md": "HI > HBr > HCl"
+        },
+        {
+          "id": "d",
+          "text_md": "all react equally"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Acid strength and nucleophilicity of X⁻ increase from Cl to I — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch14-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch14_035",
+      "unit": "isc-12-chemistry-ch14",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Methanol labelled with oxygen-18 is heated with ethanoic acid and a little conc. H₂SO₄. The ¹⁸O is found:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "in the water formed"
+        },
+        {
+          "id": "b",
+          "text_md": "shared equally between ester and water"
+        },
+        {
+          "id": "c",
+          "text_md": "in the ester, methyl ethanoate"
+        },
+        {
+          "id": "d",
+          "text_md": "in the unreacted ethanoic acid"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "The alcohol oxygen attacks the carbonyl carbon and stays in the ester; the acid loses –OH — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch14-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch14_036",
+      "unit": "isc-12-chemistry-ch14",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Ethanol is warmed with ethanoic anhydride. The products are:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "ethyl ethanoate and water"
+        },
+        {
+          "id": "b",
+          "text_md": "ethoxyethane and ethanoic acid"
+        },
+        {
+          "id": "c",
+          "text_md": "ethyl ethanoate and ethanoic acid"
+        },
+        {
+          "id": "d",
+          "text_md": "ethanal and ethanoic acid"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "(CH₃CO)₂O + C₂H₅OH → CH₃COOC₂H₅ + CH₃COOH — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch14-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch14_037",
+      "unit": "isc-12-chemistry-ch14",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Ethanol is a weaker acid than water.\n\n**Reason (R):** The ethyl group has a +I effect that increases electron density on oxygen and destabilises the ethoxide ion.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Both are true, and R explains A — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch14-t04"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch14_038",
+      "unit": "isc-12-chemistry-ch14",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Acid-catalysed esterification of ethanol with ethanoic acid is reversible.\n\n**Reason (R):** Concentrated sulphuric acid is a dehydrating agent.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Both are true, but R does not explain why the reaction is reversible (ester hydrolysis is the reverse reaction); it explains why H₂SO₄ improves the yield — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch14-t04"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch14_039",
+      "unit": "isc-12-chemistry-ch14",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? In the acylation of ethanol with ethanoyl chloride, pyridine is added to remove the hydrogen chloride formed.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "t"
+        ]
+      },
+      "solution_md": "True. Pyridine, a base, neutralises HCl and shifts the equilibrium forward.",
+      "marking_scheme": [
+        {
+          "step": "True",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch14-t04"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch14_040",
+      "unit": "isc-12-chemistry-ch14",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "Ethanol reacts with sodium metal to give hydrogen and sodium ___.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "ethoxide"
+            ]
+          }
+        ]
+      },
+      "solution_md": "Sodium **ethoxide**, C₂H₅ONa.",
+      "marking_scheme": [
+        {
+          "step": "Writes \"ethoxide\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch14-t04"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch14_041",
+      "unit": "isc-12-chemistry-ch14",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "Sodium is added to $6.0\\ \\text{g}$ of propan-1-ol ($M = 60$) until no more gas is evolved. Calculate the volume of hydrogen released at STP. (Molar volume $22.4\\ \\text{L}$)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 1.12,
+        "tolerance": 0.01,
+        "unit": "L"
+      },
+      "solution_md": "$\\ce{2C3H7OH + 2Na -> 2C3H7ONa + H2}$: $n(\\ce{H2}) = 0.10 \\div 2 = 0.050\\ \\text{mol}$; $V = 0.050 \\times 22.4 = 1.12\\ \\text{L}$.",
+      "marking_scheme": [
+        {
+          "step": "0.050 mol H₂",
+          "marks": 1
+        },
+        {
+          "step": "1.12 L",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch14-t04"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch14_042",
+      "unit": "isc-12-chemistry-ch14",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "$0.50\\ \\text{mol}$ of ethanol is refluxed with excess ethanoic acid and a little conc. H₂SO₄. At equilibrium 67% of the ethanol has been esterified. What mass of ethyl ethanoate ($M = 88$) is present?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 29.48,
+        "tolerance": 0.1,
+        "unit": "g"
+      },
+      "solution_md": "$n(\\text{ester}) = 0.50 \\times 0.67 = 0.335\\ \\text{mol}$; mass $= 0.335 \\times 88 = 29.48\\ \\text{g}$.",
+      "marking_scheme": [
+        {
+          "step": "0.335 mol",
+          "marks": 1
+        },
+        {
+          "step": "29.48 g",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch14-t04"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch14_043",
+      "unit": "isc-12-chemistry-ch14",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Arrange water, methanol, ethanol and 2-methylpropan-2-ol in order of increasing acid strength, and explain the order.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "2-Methylpropan-2-ol < ethanol < methanol ≈ water (water slightly stronger than ethanol; methanol about equal to water). Alkyl groups release electrons (+I), increasing negative charge on the alkoxide oxygen and destabilising the ion; the more alkyl groups, the weaker the acid. Bulky groups also hinder solvation of the alkoxide."
+      },
+      "solution_md": "3° < 2°… < CH₃OH ≈ H₂O; +I effect.",
+      "marking_scheme": [
+        {
+          "step": "Correct order",
+          "marks": 1
+        },
+        {
+          "step": "+I/solvation explanation",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch14-t04"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch14_044",
+      "unit": "isc-12-chemistry-ch14",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Give the mechanism of the acid-catalysed esterification of ethanoic acid with ethanol.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(1) H⁺ protonates the carbonyl oxygen of CH₃COOH, making the carbonyl carbon more electrophilic. (2) The lone pair on the ethanol oxygen attacks this carbon, giving a tetrahedral intermediate. (3) A proton is transferred to one of the –OH groups. (4) Water leaves, regenerating C=O (protonated). (5) Loss of H⁺ gives ethyl ethanoate and regenerates the catalyst."
+      },
+      "solution_md": "Protonation; attack; proton transfer; loss of water; loss of H⁺.",
+      "marking_scheme": [
+        {
+          "step": "Protonation and attack",
+          "marks": 1
+        },
+        {
+          "step": "Proton transfer and loss of water",
+          "marks": 1
+        },
+        {
+          "step": "Loss of H⁺, product",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 3,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch14-t04"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch14_045",
+      "unit": "isc-12-chemistry-ch14",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write equations for the reaction of ethanol with (a) ethanoyl chloride, (b) ethanoic anhydride and (c) phosphorus pentachloride, naming the organic products.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) $\\ce{CH3COCl + C2H5OH -> CH3COOC2H5 + HCl}$: ethyl ethanoate. (b) $\\ce{(CH3CO)2O + C2H5OH -> CH3COOC2H5 + CH3COOH}$: ethyl ethanoate and ethanoic acid. (c) $\\ce{C2H5OH + PCl5 -> C2H5Cl + POCl3 + HCl}$: chloroethane."
+      },
+      "solution_md": "Three equations.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch14-t04"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch14_046",
+      "unit": "isc-12-chemistry-ch14",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Butan-2-ol is warmed with acidified potassium dichromate. The organic product is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "butanal"
+        },
+        {
+          "id": "b",
+          "text_md": "butanone"
+        },
+        {
+          "id": "c",
+          "text_md": "butanoic acid"
+        },
+        {
+          "id": "d",
+          "text_md": "but-1-ene"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Secondary alcohols are oxidised to ketones — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch14-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch14_047",
+      "unit": "isc-12-chemistry-ch14",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which reagent oxidises propan-1-ol to propanal without further oxidation to propanoic acid?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Pyridinium chlorochromate (PCC)"
+        },
+        {
+          "id": "b",
+          "text_md": "Hot acidified KMnO₄"
+        },
+        {
+          "id": "c",
+          "text_md": "Excess acidified K₂Cr₂O₇ under reflux"
+        },
+        {
+          "id": "d",
+          "text_md": "Concentrated HNO₃"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "PCC is a mild oxidant that stops at the aldehyde — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch14-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch14_048",
+      "unit": "isc-12-chemistry-ch14",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "At 443 K, excess concentrated sulphuric acid converts ethanol mainly into:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "ethoxyethane"
+        },
+        {
+          "id": "b",
+          "text_md": "ethanal"
+        },
+        {
+          "id": "c",
+          "text_md": "ethyl hydrogen sulphate only"
+        },
+        {
+          "id": "d",
+          "text_md": "ethene"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Intramolecular dehydration at the higher temperature — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch14-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch14_049",
+      "unit": "isc-12-chemistry-ch14",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "The first step in the acid-catalysed dehydration of ethanol is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "loss of OH⁻ to form a carbocation"
+        },
+        {
+          "id": "b",
+          "text_md": "protonation of the –OH group to form CH₃CH₂OH₂⁺"
+        },
+        {
+          "id": "c",
+          "text_md": "loss of H⁺ from the methyl group"
+        },
+        {
+          "id": "d",
+          "text_md": "formation of a free radical"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Protonation turns –OH into a good leaving group (water) — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch14-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch14_050",
+      "unit": "isc-12-chemistry-ch14",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which of these alcohols is dehydrated most easily by acid: butan-1-ol, butan-2-ol, 2-methylpropan-1-ol or 2-methylpropan-2-ol?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Butan-1-ol"
+        },
+        {
+          "id": "b",
+          "text_md": "Butan-2-ol"
+        },
+        {
+          "id": "c",
+          "text_md": "2-Methylpropan-1-ol"
+        },
+        {
+          "id": "d",
+          "text_md": "2-Methylpropan-2-ol"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "It forms the most stable (tertiary) carbocation — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch14-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch14_051",
+      "unit": "isc-12-chemistry-ch14",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** 2-Methylpropan-2-ol is not oxidised by acidified potassium dichromate under mild conditions.\n\n**Reason (R):** 2-Methylpropan-2-ol is a primary alcohol.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "A is true (no H on the carbinol carbon). R is false: it is a tertiary alcohol — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch14-t05"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch14_052",
+      "unit": "isc-12-chemistry-ch14",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? When vapours of 2-methylpropan-2-ol are passed over copper at 573 K, a ketone is formed.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "f"
+        ]
+      },
+      "solution_md": "False. Tertiary alcohols cannot be dehydrogenated; they are dehydrated to 2-methylpropene.",
+      "marking_scheme": [
+        {
+          "step": "False, with the correction",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch14-t05"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch14_053",
+      "unit": "isc-12-chemistry-ch14",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "Ethanol heated with concentrated sulphuric acid at ___ K, with ethanol in excess, gives mainly ethoxyethane.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "413"
+            ]
+          }
+        ]
+      },
+      "solution_md": "**413** K.",
+      "marking_scheme": [
+        {
+          "step": "Writes \"413\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch14-t05"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch14_054",
+      "unit": "isc-12-chemistry-ch14",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "Acidified dichromate oxidises ethanol to ethanoic acid: $\\ce{3C2H5OH + 2Cr2O7^2- + 16H+ -> 3CH3COOH + 4Cr^3+ + 11H2O}$. What volume of $0.10\\ \\text{M}$ K₂Cr₂O₇ is needed to oxidise $0.46\\ \\text{g}$ of ethanol ($M = 46$)? Give the answer in mL.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 66.7,
+        "tolerance": 0.3,
+        "unit": "mL"
+      },
+      "solution_md": "$n(\\text{ethanol}) = 0.46 \\div 46 = 0.010\\ \\text{mol}$; $n(\\ce{Cr2O7^2-}) = 0.010 \\times 2 \\div 3 \\approx 6.67 \\times 10^{-3}\\ \\text{mol}$; $V = 0.010 \\times 2 \\div 3 \\div 0.10 \\times 1000 \\approx 66.7\\ \\text{mL}$.",
+      "marking_scheme": [
+        {
+          "step": "2 : 3 ratio",
+          "marks": 1
+        },
+        {
+          "step": "≈ 66.7 mL",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 4,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch14-t05"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch14_055",
+      "unit": "isc-12-chemistry-ch14",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Name the organic product when propan-1-ol is oxidised with (a) pyridinium chlorochromate and (b) excess acidified potassium permanganate.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Propanal, CH₃CH₂CHO (PCC stops at the aldehyde). (b) Propanoic acid, CH₃CH₂COOH (strong oxidant oxidises the aldehyde further)."
+      },
+      "solution_md": "Propanal; propanoic acid.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch14-t05"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch14_056",
+      "unit": "isc-12-chemistry-ch14",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Explain why ethanol heated with conc. H₂SO₄ gives ethene at 443 K but ethoxyethane at 413 K when ethanol is in excess.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "At 413 K with excess ethanol, a second ethanol molecule attacks the protonated alcohol (substitution, SN2), giving the ether: intermolecular dehydration. At the higher temperature, 443 K, elimination is favoured: the protonated alcohol loses water and H⁺ to form ethene (intramolecular dehydration)."
+      },
+      "solution_md": "Substitution at lower T with excess alcohol; elimination at higher T.",
+      "marking_scheme": [
+        {
+          "step": "413 K: ether by substitution",
+          "marks": 1
+        },
+        {
+          "step": "443 K: elimination to ethene",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch14-t05"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch14_057",
+      "unit": "isc-12-chemistry-ch14",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Give the three steps of the mechanism of the acid-catalysed dehydration of ethanol to ethene.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(1) Protonation: $\\ce{CH3CH2OH + H+ -> CH3CH2OH2+}$ (fast). (2) Loss of water to give the ethyl carbocation: $\\ce{CH3CH2OH2+ -> CH3CH2+ + H2O}$ (slow). (3) Loss of H⁺ from the adjacent carbon: $\\ce{CH3CH2+ -> CH2=CH2 + H+}$; the catalyst is regenerated."
+      },
+      "solution_md": "Protonation; loss of water; loss of H⁺.",
+      "marking_scheme": [
+        {
+          "step": "Step 1",
+          "marks": 1
+        },
+        {
+          "step": "Step 2",
+          "marks": 1
+        },
+        {
+          "step": "Step 3",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 3,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch14-t05"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch14_058",
+      "unit": "isc-12-chemistry-ch14",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Three test tubes contain pentan-1-ol, pentan-2-ol and 2-methylbutan-2-ol. On adding ZnCl₂ dissolved in conc. HCl at 298 K, which tube becomes cloudy first?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "The tube with 2-methylbutan-2-ol"
+        },
+        {
+          "id": "b",
+          "text_md": "The tube with pentan-1-ol"
+        },
+        {
+          "id": "c",
+          "text_md": "The tube with pentan-2-ol"
+        },
+        {
+          "id": "d",
+          "text_md": "All three at the same time"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Tertiary alcohols react at once via the stable tertiary carbocation — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch14-t06"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch14_059",
+      "unit": "isc-12-chemistry-ch14",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which sequence converts methanol into ethanol?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "SOCl₂; Mg in dry ether; methanal, then dilute acid"
+        },
+        {
+          "id": "b",
+          "text_md": "K₂Cr₂O₇/H⁺; NH₃, heat; Br₂/KOH"
+        },
+        {
+          "id": "c",
+          "text_md": "conc. H₂SO₄ at 443 K; H₂O"
+        },
+        {
+          "id": "d",
+          "text_md": "PCl₅; aqueous KOH"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "CH₃OH → CH₃Cl → CH₃MgCl → + HCHO → CH₃CH₂OH — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch14-t06"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch14_060",
+      "unit": "isc-12-chemistry-ch14",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "When ethanol is converted into methanol through ethanoic acid, ethanamide and methanamine, the step in which one carbon atom is lost is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "the reaction of ethanamide with bromine and KOH (Hofmann bromamide reaction)"
+        },
+        {
+          "id": "b",
+          "text_md": "the oxidation of ethanol to ethanoic acid"
+        },
+        {
+          "id": "c",
+          "text_md": "the conversion of ethanoic acid into ethanamide"
+        },
+        {
+          "id": "d",
+          "text_md": "the reaction of methanamine with nitrous acid"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "RCONH₂ + Br₂ + 4KOH → RNH₂ + K₂CO₃ + 2KBr + 2H₂O — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch14-t06"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch14_061",
+      "unit": "isc-12-chemistry-ch14",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which alcohol is blended with petrol in India to reduce oil imports?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Methanol"
+        },
+        {
+          "id": "b",
+          "text_md": "Glycerol"
+        },
+        {
+          "id": "c",
+          "text_md": "Ethanol"
+        },
+        {
+          "id": "d",
+          "text_md": "Ethane-1,2-diol"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Ethanol from molasses and grain — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch14-t06"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch14_062",
+      "unit": "isc-12-chemistry-ch14",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Tertiary alcohols give immediate turbidity with Lucas reagent at room temperature.\n\n**Reason (R):** Tertiary carbocations are the most stable, so the insoluble chloroalkane forms fastest.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Both are true, and R explains A — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch14-t06"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch14_063",
+      "unit": "isc-12-chemistry-ch14",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? Primary alcohols give turbidity with Lucas reagent within about five minutes at room temperature.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "f"
+        ]
+      },
+      "solution_md": "False. Primary alcohols give no turbidity at room temperature; secondary alcohols take about five minutes.",
+      "marking_scheme": [
+        {
+          "step": "False, with the correction",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch14-t06"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch14_064",
+      "unit": "isc-12-chemistry-ch14",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Describe the Lucas test and state the observations for pentan-1-ol, pentan-2-ol and 2-methylbutan-2-ol.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "The alcohol is shaken with Lucas reagent (anhydrous ZnCl₂ in conc. HCl) at room temperature; a chloroalkane forms, which is insoluble and makes the solution cloudy. 2-Methylbutan-2-ol (3°): cloudy at once. Pentan-2-ol (2°): cloudy in about 5 minutes. Pentan-1-ol (1°): no cloudiness at room temperature."
+      },
+      "solution_md": "Reagent; 3° at once, 2° 5 min, 1° none.",
+      "marking_scheme": [
+        {
+          "step": "Test described",
+          "marks": 1
+        },
+        {
+          "step": "Three observations",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch14-t06"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch14_065",
+      "unit": "isc-12-chemistry-ch14",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Show how propan-1-ol can be converted into butan-1-ol, giving the reagent for each step.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "$\\ce{CH3CH2CH2OH ->[SOCl2] CH3CH2CH2Cl ->[Mg][dry ether] CH3CH2CH2MgCl}$; then add methanal (HCHO) and hydrolyse with dilute acid: → $\\ce{CH3CH2CH2CH2OH}$."
+      },
+      "solution_md": "Chloride; Grignard; HCHO; hydrolysis.",
+      "marking_scheme": [
+        {
+          "step": "Chloroalkane",
+          "marks": 1
+        },
+        {
+          "step": "Grignard reagent",
+          "marks": 1
+        },
+        {
+          "step": "HCHO and hydrolysis",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch14-t06"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch14_066",
+      "unit": "isc-12-chemistry-ch14",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Show how ethanol can be converted into methanol, giving reagents and the name of each intermediate.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Oxidise with acidified K₂Cr₂O₇: ethanoic acid. Heat with NH₃ (via ammonium ethanoate): ethanamide, $\\ce{CH3CONH2}$. Br₂ + KOH (Hofmann bromamide): methanamine, $\\ce{CH3NH2}$. NaNO₂ + HCl (HNO₂): methanol."
+      },
+      "solution_md": "Acid → amide → amine → alcohol.",
+      "marking_scheme": [
+        {
+          "step": "Oxidation and amide",
+          "marks": 1
+        },
+        {
+          "step": "Hofmann step",
+          "marks": 1
+        },
+        {
+          "step": "HNO₂ step",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch14-t06"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch14_067",
+      "unit": "isc-12-chemistry-ch14",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Show how propene can be converted into (i) propan-2-ol and (ii) propan-1-ol, naming the rule each method follows. [2]\n\n(b) Choose a Grignard reagent and a carbonyl compound to prepare 3-methylpentan-3-ol, and write the equations. [1½]\n\n(c) Outline the manufacture of methanol, with equations. [1½]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) (i) $\\ce{CH3CH=CH2 + H2O ->[H+] CH3CH(OH)CH3}$ (or via H₂SO₄, then water) — Markovnikov. (ii) $\\ce{CH3CH=CH2 ->[(i) B2H6][(ii) H2O2/OH-] CH3CH2CH2OH}$ — anti-Markovnikov.\n\n(b) Ethylmagnesium bromide with butanone: $\\ce{CH3CH2MgBr + CH3COCH2CH3 -> (CH3CH2)2C(CH3)OMgBr}$; hydrolysis with dilute acid gives $\\ce{(CH3CH2)2C(OH)CH3}$, 3-methylpentan-3-ol.\n\n(c) $\\ce{C + H2O -> CO + H2}$ (water gas); $\\ce{CO + 2H2 ->[ZnO-Cr2O3][573-673 K, 200-300 atm] CH3OH}$."
+      },
+      "solution_md": "Hydration vs hydroboration; EtMgBr + butanone; Bosch.",
+      "marking_scheme": [
+        {
+          "step": "(a)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(a)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1.5
+        },
+        {
+          "step": "(c)",
+          "marks": 1.5
+        }
+      ],
+      "marks": 5,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch14-t02",
+        "isc-12-chemistry-ch14-t03"
+      ],
+      "expected_time_sec": 570,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch14_068",
+      "unit": "isc-12-chemistry-ch14",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Explain why alcohols are weaker acids than water, and write the equation for the reaction of propan-1-ol with sodium. [1½]\n\n(b) Give the mechanism of the acid-catalysed reaction between ethanoic acid and ethanol. [2]\n\n(c) Compare the reactions of ethanol with PCl₅ and with SOCl₂, and state which is preferred for preparing chloroethane and why. [1½]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) The alkyl group releases electrons (+I), destabilising the alkoxide ion, so the alcohol loses H⁺ less readily than water. $\\ce{2CH3CH2CH2OH + 2Na -> 2CH3CH2CH2ONa + H2}$.\n\n(b) Protonation of the acid C=O; attack by the ethanol oxygen on the carbonyl carbon; proton transfer; loss of water; loss of H⁺ to give ethyl ethanoate.\n\n(c) $\\ce{C2H5OH + PCl5 -> C2H5Cl + POCl3 + HCl}$; $\\ce{C2H5OH + SOCl2 -> C2H5Cl + SO2 + HCl}$. SOCl₂ is preferred: its by-products are gases and escape, leaving pure chloroethane, whereas POCl₃ (liquid) must be separated."
+      },
+      "solution_md": "+I effect; ester mechanism; SOCl₂ preferred.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1.5
+        },
+        {
+          "step": "(b) Mechanism",
+          "marks": 2
+        },
+        {
+          "step": "(c)",
+          "marks": 1.5
+        }
+      ],
+      "marks": 5,
+      "difficulty": 3,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch14-t04"
+      ],
+      "expected_time_sec": 570,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch14_069",
+      "unit": "isc-12-chemistry-ch14",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Three isomeric alcohols P, Q and R have the formula C₄H₁₀O. With acidified dichromate, P gives an aldehyde and then an acid, Q gives a ketone and R is not oxidised. Suggest structures for P, Q and R and name the oxidation products of P and Q. [2]\n\n(b) Give the mechanism of the acid-catalysed dehydration of ethanol to ethene. [2]\n\n(c) What is formed when ethanol is heated with conc. H₂SO₄ at 413 K? [1]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) P: butan-1-ol, CH₃CH₂CH₂CH₂OH (or 2-methylpropan-1-ol) → butanal → butanoic acid. Q: butan-2-ol, CH₃CH₂CH(OH)CH₃ → butanone. R: 2-methylpropan-2-ol, (CH₃)₃COH (tertiary, no H on the carbinol carbon).\n\n(b) $\\ce{CH3CH2OH + H+ -> CH3CH2OH2+}$; $\\ce{CH3CH2OH2+ -> CH3CH2+ + H2O}$ (slow); $\\ce{CH3CH2+ -> CH2=CH2 + H+}$.\n\n(c) Ethoxyethane (diethyl ether), $\\ce{C2H5OC2H5}$, with ethanol in excess."
+      },
+      "solution_md": "P 1°, Q 2°, R 3°; three-step mechanism; ether.",
+      "marking_scheme": [
+        {
+          "step": "(a) P, Q, R",
+          "marks": 1.5
+        },
+        {
+          "step": "(a) Products",
+          "marks": 0.5
+        },
+        {
+          "step": "(b)",
+          "marks": 2
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 5,
+      "difficulty": 4,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch14-t05"
+      ],
+      "expected_time_sec": 570,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch14_070",
+      "unit": "isc-12-chemistry-ch14",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Show how methanol can be converted into ethanol. [2]\n\n(b) Show how propan-1-ol can be converted into ethanol. [2]\n\n(c) How would you distinguish propan-2-ol from 2-methylpropan-2-ol by the Lucas test? [1]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) $\\ce{CH3OH ->[SOCl2] CH3Cl ->[Mg][dry ether] CH3MgCl}$; + HCHO, then dilute acid → $\\ce{CH3CH2OH}$.\n\n(b) $\\ce{CH3CH2CH2OH ->[K2Cr2O7/H+] CH3CH2COOH ->[NH3][\\Delta] CH3CH2CONH2 ->[Br2/KOH] CH3CH2NH2 ->[HNO2] CH3CH2OH}$.\n\n(c) With Lucas reagent at room temperature, 2-methylpropan-2-ol (3°) turns cloudy at once; propan-2-ol (2°) takes about 5 minutes."
+      },
+      "solution_md": "Ascent via Grignard; descent via Hofmann; Lucas.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 2
+        },
+        {
+          "step": "(b)",
+          "marks": 2
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 5,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch14-t06"
+      ],
+      "expected_time_sec": 570,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch14_071",
+      "unit": "isc-12-chemistry-ch14",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Write equations for the production of ethanol from sucrose by fermentation, naming the enzymes. [2]\n\n(b) Give two uses of methanol and explain why it must never be drunk. [1½]\n\n(c) Give a chemical test to distinguish ethanol from methanol. [1½]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) $\\ce{C12H22O11 + H2O ->[invertase] C6H12O6 + C6H12O6}$ (glucose + fructose); $\\ce{C6H12O6 ->[zymase] 2C2H5OH + 2CO2}$.\n\n(b) Uses: solvent for paints and varnishes; manufacture of methanal; fuel. It is very poisonous: it is oxidised in the body to methanal and methanoic acid, causing blindness and death.\n\n(c) Iodoform test: warm with I₂ and NaOH; ethanol gives a yellow precipitate of CHI₃, methanol does not."
+      },
+      "solution_md": "Invertase, zymase; uses and toxicity; iodoform test.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 2
+        },
+        {
+          "step": "(b)",
+          "marks": 1.5
+        },
+        {
+          "step": "(c)",
+          "marks": 1.5
+        }
+      ],
+      "marks": 5,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch14-t03",
+        "isc-12-chemistry-ch14-t06"
+      ],
+      "expected_time_sec": 570,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    }
+  ],
+  "build": {
+    "run_id": null,
+    "checks": {
+      "katex_mhchem": "123 math strings parsed with KaTeX 0.19.0 + mhchem (throwOnError, strict \"error\"), 0 failures",
+      "svg_allowlist": "3 SVG visuals (2 distinct diagrams) checked with saxes against svg-allowlist.ts: elements, attributes, class pattern, fragment-only refs, no style, palette incl. named hues, viewBox, title, per-page unique ids — 0 failures",
+      "narration": "32 slides, 12–73 words (mean 52), no symbols, formulae or unit abbreviations",
+      "resolve": "6/6 scripted re-solve checks pass",
+      "chemistry_facts": "Names, preparations (hydration, hydroboration, Grignard, reduction, amines), Bosch and fermentation outlines, acidity, esterification and dehydration mechanisms, oxidation, ascent and descent sequences, the Lucas test and every numerical checked against the ISC 2027 syllabus (Unit 7)",
+      "content_gate": "npm test -w @soyl/content-templates: all checks pass for this chapter",
+      "verifier_pass": "2026-10-30: every question and every internal-choice alternative re-solved from its stem by the author; every numerical re-computed by the build script — see README \"Verifier pass\"",
+      "pipeline_lint": "npm run content -- lint --exemplars: 0 errors, 0 warnings"
+    }
+  }
+}

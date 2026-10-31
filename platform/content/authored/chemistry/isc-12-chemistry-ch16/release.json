@@ -1,0 +1,5227 @@
+{
+  "unit": "isc-12-chemistry-ch16",
+  "version": 1,
+  "academic_year": "2026-27",
+  "created_at": "2026-10-30T00:00:00+05:30",
+  "decks": [
+    {
+      "unit": "isc-12-chemistry-ch16",
+      "part": 1,
+      "version": 1,
+      "title": "Aldehydes and Ketones — Part 1: Structure, properties and preparation",
+      "language": "en",
+      "goals": [
+        "Name aldehydes and ketones by IUPAC rules and describe the carbonyl group",
+        "Explain the boiling points of carbonyl compounds compared with alcohols and alkanes",
+        "Write equations to prepare aldehydes and ketones from alcohols, alkenes, alkynes, acid chlorides, calcium salts, nitriles and esters"
+      ],
+      "slides": [
+        {
+          "id": "s01",
+          "layout": "title",
+          "heading": "Carbonyl compounds",
+          "body_md": "Part 1 — aldehydes (R–CHO) and ketones (R–CO–R′): names, structure, properties and preparation.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Compound",
+                "Where you meet it"
+              ],
+              "rows": [
+                [
+                  "Methanal (formalin, 40%)",
+                  "Preserving biological specimens; resins"
+                ],
+                [
+                  "Propanone (acetone)",
+                  "Nail-polish remover; solvent"
+                ],
+                [
+                  "Butanone",
+                  "Industrial solvent"
+                ],
+                [
+                  "Vanillin (an aldehyde)",
+                  "Flavour of vanilla"
+                ],
+                [
+                  "Camphor (a ketone)",
+                  "Medicines, pujas"
+                ]
+              ]
+            },
+            "alt": "Table of familiar carbonyl compounds"
+          },
+          "math": [],
+          "narration": "Namaste! The smell of vanilla, the solvent in nail-polish remover and the preservative formalin all contain the carbonyl group, a carbon doubly bonded to oxygen. In aldehydes this carbon carries at least one hydrogen; in ketones it is joined to two carbon groups. In this part we name these compounds, study the carbonyl group and learn many ways of making them.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s02",
+          "layout": "concept",
+          "heading": "Nomenclature",
+          "body_md": "**Aldehydes:** replace -e of the alkane by **-al**; the CHO carbon is C-1. **Ketones:** replace -e by **-one**, with the lowest locant for C=O. Common names come from the related acids (formaldehyde, acetaldehyde) or alkyl groups + ketone.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Structure",
+                "Common name",
+                "IUPAC name"
+              ],
+              "rows": [
+                [
+                  "HCHO",
+                  "Formaldehyde",
+                  "Methanal"
+                ],
+                [
+                  "CH₃CH₂CHO",
+                  "Propionaldehyde",
+                  "Propanal"
+                ],
+                [
+                  "(CH₃)₂CHCHO",
+                  "Isobutyraldehyde",
+                  "2-Methylpropanal"
+                ],
+                [
+                  "CH₃COCH₂CH₃",
+                  "Ethyl methyl ketone",
+                  "Butan-2-one"
+                ],
+                [
+                  "CH₃CH₂COCH₂CH₃",
+                  "Diethyl ketone",
+                  "Pentan-3-one"
+                ],
+                [
+                  "CH₃CH=CHCHO",
+                  "Crotonaldehyde",
+                  "But-2-enal"
+                ]
+              ]
+            },
+            "alt": "Table of names of aldehydes and ketones"
+          },
+          "math": [],
+          "narration": "An aldehyde is named by changing the ending of the alkane to al; the aldehyde carbon is always carbon one, so it needs no number. A ketone ends in one, with a number for the carbonyl carbon when needed, as in butan-two-one and pentan-three-one. Many common names come from the related acids: formaldehyde from formic acid, acetaldehyde from acetic acid.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s03",
+          "layout": "diagram",
+          "heading": "Structure of the carbonyl group",
+          "body_md": "The carbonyl carbon is **sp²**: three σ bonds in a plane at about 120°, and a π bond to oxygen. C=O is **polar** (C δ+, O δ−) and is represented as a resonance hybrid of C=O and C⁺–O⁻. The carbon is attacked by **nucleophiles**; the oxygen by electrophiles (H⁺).",
+          "bullets": [],
+          "visual": {
+            "kind": "svg",
+            "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 340 170\" role=\"img\" aria-label=\"The carbonyl group. A carbon atom is joined by a double bond to an oxygen atom and by single bonds to two other groups, R and R′, with bond angles of about 120 degrees in one plane. Oxygen is more electronegative, so carbon carries a partial positive charge and oxygen a partial negative charge; a nucleophile attacks the carbon from above or below the plane.\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>The carbonyl group. A carbon atom is joined by a double bond to an oxygen atom and by single bonds to two other groups, R and R′, with bond angles of about 120 degrees in one plane. Oxygen is more electronegative, so carbon carries a partial positive charge and oxygen a partial negative charge; a nucleophile attacks the carbon from above or below the plane.</title><circle cx=\"150\" cy=\"85\" r=\"14\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"150\" y=\"89\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\">C</text><circle cx=\"240\" cy=\"85\" r=\"15\" fill=\"var(--diagram-red)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"240\" y=\"89\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\">O</text><line x1=\"164\" y1=\"87.5\" x2=\"225\" y2=\"87.5\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"164\" y1=\"82.5\" x2=\"225\" y2=\"82.5\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"140\" y1=\"75\" x2=\"105\" y2=\"40\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"140\" y1=\"95\" x2=\"105\" y2=\"130\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"96\" cy=\"32\" r=\"12\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"96\" y=\"36\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">R</text><circle cx=\"96\" cy=\"138\" r=\"12\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"96\" y=\"142\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">R′</text><text x=\"150\" y=\"60\" fill=\"var(--diagram-blue)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\">δ+</text><text x=\"240\" y=\"60\" fill=\"var(--diagram-red)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\">δ−</text><text x=\"118\" y=\"89\" fill=\"var(--diagram-accent)\" stroke=\"none\" font-size=\"10\">120°</text><line x1=\"190\" y1=\"20\" x2=\"162.6\" y2=\"62\" stroke=\"var(--diagram-blue)\" stroke-width=\"2\"/><polygon points=\"160,66 160.9,60.1 165,62.7\" fill=\"var(--diagram-blue)\" stroke=\"none\"/><text x=\"196\" y=\"22\" fill=\"var(--diagram-blue)\" stroke=\"none\" font-size=\"10\">Nu⁻ attacks the carbon</text><text x=\"170\" y=\"162\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">sp² carbon: planar, polar C=O</text></svg>",
+            "alt": "A planar carbonyl group with about 120 degree bond angles, a partial positive charge on carbon, a partial negative charge on oxygen and a nucleophile attacking the carbon"
+          },
+          "math": [],
+          "narration": "The carbonyl carbon is sp two hybridised, so the group is flat with angles of about one hundred and twenty degrees. Oxygen is more electronegative and pulls the pi electrons towards itself; we can think of the group as partly C plus, O minus. This makes the carbon a target for nucleophiles, and because the group is flat, attack can come from either face.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s04",
+          "layout": "concept",
+          "heading": "Physical properties",
+          "body_md": "Methanal is a gas; lower members are liquids, higher ones solids. Carbonyl compounds are **polar** (dipole–dipole attractions) but **cannot hydrogen-bond with each other**: b.p. higher than alkanes and ethers of similar mass, lower than alcohols. Lower members **dissolve in water** (H-bonds from water to C=O); solubility falls with chain length.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Compound (M ≈ 58–60)",
+                "b.p. / K",
+                "Main attraction"
+              ],
+              "rows": [
+                [
+                  "Butane",
+                  "273",
+                  "Dispersion"
+                ],
+                [
+                  "Methoxyethane",
+                  "281",
+                  "Weak dipole"
+                ],
+                [
+                  "Propanal",
+                  "322",
+                  "Dipole–dipole"
+                ],
+                [
+                  "Propanone",
+                  "329",
+                  "Dipole–dipole"
+                ],
+                [
+                  "Propan-1-ol",
+                  "370",
+                  "Hydrogen bonding"
+                ]
+              ]
+            },
+            "alt": "Table of boiling points of compounds of similar mass"
+          },
+          "math": [],
+          "narration": "Compare compounds of similar molar mass. Butane boils lowest, with only weak dispersion forces. Propanal and propanone boil higher, because their polar carbonyl groups attract each other. Propan-one-ol boils highest of all, because its molecules hydrogen-bond. Small aldehydes and ketones dissolve in water, because water molecules hydrogen-bond to the carbonyl oxygen.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s05",
+          "layout": "example",
+          "heading": "Worked example: naming",
+          "body_md": "**Problem.** Give IUPAC names: (a) $\\ce{CH3CH(CH3)CH2CHO}$; (b) $\\ce{CH3COCH(CH3)2}$; (c) $\\ce{CH3CH2CH(CH3)COCH3}$; (d) $\\ce{OHCCH2CH2CHO}$.\n\n**(a)** 3-Methylbutanal (CHO carbon is C-1).\n\n**(b)** 3-Methylbutan-2-one.\n\n**(c)** 3-Methylpentan-2-one.\n\n**(d)** Butanedial.",
+          "bullets": [],
+          "visual": {
+            "kind": "flow",
+            "spec": {
+              "direction": "LR",
+              "nodes": [
+                {
+                  "id": "a",
+                  "label": "Longest chain including C=O carbon"
+                },
+                {
+                  "id": "b",
+                  "label": "Aldehyde: CHO = C-1; ketone: lowest locant"
+                },
+                {
+                  "id": "c",
+                  "label": "Substituents with locants"
+                },
+                {
+                  "id": "d",
+                  "label": "-al or -one"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "a",
+                  "to": "b"
+                },
+                {
+                  "from": "b",
+                  "to": "c"
+                },
+                {
+                  "from": "c",
+                  "to": "d"
+                }
+              ]
+            },
+            "alt": "Flow for naming carbonyl compounds"
+          },
+          "math": [],
+          "narration": "Choose the longest chain containing the carbonyl carbon. For an aldehyde, number from the CHO carbon. For a ketone, number to give the carbonyl the lowest locant. So the first compound is three-methylbutanal, the second three-methylbutan-two-one and the third three-methylpentan-two-one. A chain with an aldehyde group at each end is a dial: butanedial.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s06",
+          "layout": "check",
+          "heading": "Quick check: names and properties",
+          "body_md": "Name a carbonyl compound or compare its boiling point.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Remember that carbonyl compounds are polar but cannot hydrogen-bond with each other.",
+          "check_question_id": "q_isc12chem_ch16_001",
+          "audio": null
+        },
+        {
+          "id": "s07",
+          "layout": "concept",
+          "heading": "From alcohols, alkenes and alkynes",
+          "body_md": "**Alcohols:** 1° → aldehyde (PCC, or Cu at 573 K); 2° → ketone (K₂Cr₂O₇/H⁺ or Cu at 573 K). **Alkenes:** ozonolysis (O₃, then Zn/H₂O) splits C=C into two C=O groups. **Alkynes:** hydration with dilute H₂SO₄ + HgSO₄: ethyne → ethanal; other alkynes → ketones.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Starting compound",
+                "Method",
+                "Product"
+              ],
+              "rows": [
+                [
+                  "Propan-1-ol",
+                  "PCC",
+                  "Propanal"
+                ],
+                [
+                  "Butan-2-ol",
+                  "Cu, 573 K",
+                  "Butanone"
+                ],
+                [
+                  "But-2-ene",
+                  "O₃; Zn/H₂O",
+                  "Ethanal (2 mol)"
+                ],
+                [
+                  "2-Methylpropene",
+                  "O₃; Zn/H₂O",
+                  "Propanone + methanal"
+                ],
+                [
+                  "Propyne",
+                  "H₂O, Hg²⁺, H⁺",
+                  "Propanone"
+                ]
+              ]
+            },
+            "alt": "Table of preparations from alcohols, alkenes and alkynes"
+          },
+          "math": [
+            "\\ce{CH3CH2OH ->[Cu][573 K] CH3CHO + H2}",
+            "\\ce{HC#CH + H2O ->[HgSO4][dil. H2SO4] CH3CHO}",
+            "\\ce{CH3C#CH + H2O ->[HgSO4][dil. H2SO4] CH3COCH3}"
+          ],
+          "narration": "Gentle oxidation or dehydrogenation of alcohols gives aldehydes from primary alcohols and ketones from secondary alcohols. Ozone cuts a carbon–carbon double bond, and work-up with zinc and water gives two carbonyl compounds; this also helps locate the double bond. Water adds to alkynes with mercury two ions as catalyst: ethyne gives ethanal, and other alkynes give ketones.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s08",
+          "layout": "concept",
+          "heading": "From acid chlorides and calcium salts",
+          "body_md": "**Rosenmund:** RCOCl + H₂ over Pd/BaSO₄ (poisoned, so the aldehyde is not reduced further) → RCHO. **Dialkylcadmium:** 2RCOCl + R′₂Cd → 2RCOR′ + CdCl₂ (ketones). **Calcium salts:** dry distillation of a calcium carboxylate gives a ketone; with calcium methanoate, an aldehyde.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Method",
+                "Product type"
+              ],
+              "rows": [
+                [
+                  "Rosenmund (H₂, Pd/BaSO₄)",
+                  "Aldehyde"
+                ],
+                [
+                  "R′₂Cd with RCOCl",
+                  "Ketone"
+                ],
+                [
+                  "Heat (RCOO)₂Ca",
+                  "Symmetrical ketone"
+                ],
+                [
+                  "Heat (RCOO)₂Ca + (HCOO)₂Ca",
+                  "Aldehyde"
+                ]
+              ]
+            },
+            "alt": "Table of preparations from acid chlorides and calcium salts"
+          },
+          "math": [
+            "\\ce{CH3CH2COCl + H2 ->[Pd/BaSO4] CH3CH2CHO + HCl}",
+            "\\ce{2CH3COCl + (CH3CH2)2Cd -> 2CH3COCH2CH3 + CdCl2}",
+            "\\ce{(CH3COO)2Ca ->[\\Delta] CH3COCH3 + CaCO3}",
+            "\\ce{(CH3COO)2Ca + (HCOO)2Ca ->[\\Delta] 2CH3CHO + 2CaCO3}"
+          ],
+          "narration": "Acid chlorides are reduced to aldehydes by hydrogen over palladium deliberately poisoned with barium sulphate, so the reduction stops at the aldehyde: the Rosenmund reaction. Dialkylcadmium compounds turn acid chlorides into ketones. Heating calcium salts of carboxylic acids also gives ketones, such as propanone from calcium ethanoate; heating with calcium methanoate gives an aldehyde instead.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s09",
+          "layout": "concept",
+          "heading": "From nitriles and esters",
+          "body_md": "**Stephen reaction:** nitrile + SnCl₂/HCl → imine hydrochloride → (H₂O) aldehyde. **Grignard:** nitrile + RMgX → imine salt → (H₃O⁺) **ketone**. **DIBAL-H** (diisobutylaluminium hydride) reduces nitriles and esters to aldehydes at low temperature.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Starting compound",
+                "Reagent",
+                "Product"
+              ],
+              "rows": [
+                [
+                  "CH₃CN",
+                  "SnCl₂/HCl; H₂O",
+                  "Ethanal"
+                ],
+                [
+                  "CH₃CN",
+                  "CH₃CH₂MgBr; H₃O⁺",
+                  "Butan-2-one"
+                ],
+                [
+                  "C₆H₅CN",
+                  "CH₃MgI; H₃O⁺",
+                  "Acetophenone"
+                ],
+                [
+                  "CH₃COOC₂H₅",
+                  "DIBAL-H; H₂O",
+                  "Ethanal"
+                ],
+                [
+                  "CH₃CH₂CN",
+                  "DIBAL-H; H₂O",
+                  "Propanal"
+                ]
+              ]
+            },
+            "alt": "Table of preparations from nitriles and esters"
+          },
+          "math": [],
+          "narration": "Nitriles are versatile. In the Stephen reaction, tin two chloride and hydrochloric acid reduce a nitrile to an imine, which water hydrolyses to an aldehyde. A Grignard reagent adds to the nitrile carbon, and acid hydrolysis then gives a ketone, so ethanenitrile and ethylmagnesium bromide give butanone. DIBAL-H reduces nitriles and esters gently, stopping at the aldehyde.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s10",
+          "layout": "example",
+          "heading": "Worked example: choosing a preparation",
+          "body_md": "**Problem.** Suggest a method: (a) propanoyl chloride → propanal; (b) ethanoyl chloride → pentan-2-one; (c) calcium propanoate → a ketone (name it); (d) propanenitrile → pentan-3-one.\n\n**(a)** H₂, Pd/BaSO₄ (Rosenmund).\n\n**(b)** Dipropylcadmium: $\\ce{2CH3COCl + (CH3CH2CH2)2Cd -> 2CH3COCH2CH2CH3 + CdCl2}$.\n\n**(c)** Heat: pentan-3-one, $\\ce{(CH3CH2COO)2Ca -> CH3CH2COCH2CH3 + CaCO3}$.\n\n**(d)** $\\ce{CH3CH2MgBr}$, then $\\ce{H3O+}$.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Conversion",
+                "Method"
+              ],
+              "rows": [
+                [
+                  "RCOCl → RCHO",
+                  "Rosenmund"
+                ],
+                [
+                  "RCOCl → RCOR′",
+                  "R′₂Cd"
+                ],
+                [
+                  "(RCOO)₂Ca → RCOR",
+                  "Dry distillation"
+                ],
+                [
+                  "RCN → RCOR′",
+                  "R′MgX, then H₃O⁺"
+                ]
+              ]
+            },
+            "alt": "Table of conversions"
+          },
+          "math": [],
+          "narration": "Choose by the target. To stop an acid chloride at the aldehyde, use the Rosenmund reduction. To turn ethanoyl chloride into pentan-two-one, add a propyl group with dipropylcadmium. Heating calcium propanoate gives pentan-three-one, a symmetrical ketone. And propanenitrile with ethylmagnesium bromide, after hydrolysis, also gives pentan-three-one.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s11",
+          "layout": "check",
+          "heading": "Quick check: preparation",
+          "body_md": "Pick the method that gives a particular aldehyde or ketone.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Rosenmund and Stephen give aldehydes; cadmium reagents and Grignard reagents with nitriles give ketones.",
+          "check_question_id": "q_isc12chem_ch16_010",
+          "audio": null
+        },
+        {
+          "id": "s12",
+          "layout": "concept",
+          "heading": "Preparation summary",
+          "body_md": "Every route at a glance.",
+          "bullets": [],
+          "visual": {
+            "kind": "flow",
+            "spec": {
+              "direction": "LR",
+              "nodes": [
+                {
+                  "id": "a",
+                  "label": "1° alcohol / RCOCl / RCN / RCOOR′"
+                },
+                {
+                  "id": "b",
+                  "label": "Aldehyde"
+                },
+                {
+                  "id": "c",
+                  "label": "2° alcohol / RCOCl + R′₂Cd / RCN + R′MgX / (RCOO)₂Ca"
+                },
+                {
+                  "id": "d",
+                  "label": "Ketone"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "a",
+                  "to": "b"
+                },
+                {
+                  "from": "c",
+                  "to": "d"
+                }
+              ]
+            },
+            "alt": "Flow summarising routes to aldehydes and ketones"
+          },
+          "math": [],
+          "narration": "Here is the whole picture. Aldehydes come from primary alcohols, acid chlorides by the Rosenmund reaction, nitriles by the Stephen reaction or DIBAL-H, and esters by DIBAL-H. Ketones come from secondary alcohols, acid chlorides with dialkylcadmium, nitriles with Grignard reagents, and calcium salts on heating. Alkenes and alkynes can give either, depending on their structure.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s13",
+          "layout": "check",
+          "heading": "Quick check: from alkenes and alkynes",
+          "body_md": "Predict the carbonyl compound formed by ozonolysis or by hydration of an alkyne.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Ozonolysis splits the double bond; only ethyne gives an aldehyde on hydration.",
+          "check_question_id": "q_isc12chem_ch16_011",
+          "audio": null
+        },
+        {
+          "id": "s14",
+          "layout": "summary",
+          "heading": "Summary: Part 1",
+          "body_md": "",
+          "bullets": [
+            "Aldehydes -al (CHO = C-1); ketones -one with locant.",
+            "C=O sp², planar, polar; carbon electrophilic.",
+            "B.p.: alkanes, ethers < aldehydes, ketones < alcohols; lower members water-soluble.",
+            "Aldehydes from 1° alcohols, Rosenmund, Stephen, DIBAL-H, ethyne hydration, calcium salts + formate.",
+            "Ketones from 2° alcohols, R′₂Cd + RCOCl, RCN + R′MgX, (RCOO)₂Ca, alkyne hydration; ozonolysis gives either."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Reaction",
+                "Gives"
+              ],
+              "rows": [
+                [
+                  "Rosenmund",
+                  "Aldehyde"
+                ],
+                [
+                  "Stephen",
+                  "Aldehyde"
+                ],
+                [
+                  "R′₂Cd + RCOCl",
+                  "Ketone"
+                ],
+                [
+                  "RCN + R′MgX",
+                  "Ketone"
+                ]
+              ]
+            },
+            "alt": "Summary table of named preparations"
+          },
+          "math": [],
+          "narration": "Let us sum up Part 1. Aldehydes and ketones are named with the endings al and one. The flat, polar carbonyl group gives them boiling points between those of alkanes and alcohols. They can be made from alcohols, alkenes, alkynes, acid chlorides, calcium salts, nitriles and esters, and the choice of method decides whether an aldehyde or a ketone is obtained.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s15",
+          "layout": "exam-tips",
+          "heading": "Exam tips: Part 1",
+          "body_md": "",
+          "bullets": [
+            "Explain why Pd is poisoned with BaSO₄ in the Rosenmund reaction.",
+            "For calcium salts, remember calcium methanoate gives aldehydes.",
+            "For Grignard + nitrile, include the hydrolysis step.",
+            "Compare b.p. using dipole–dipole forces and hydrogen bonding."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Slip",
+                "Fix"
+              ],
+              "rows": [
+                [
+                  "Propyne hydration gives propanal",
+                  "Gives propanone"
+                ],
+                [
+                  "Stephen gives ketones",
+                  "Gives aldehydes"
+                ],
+                [
+                  "Aldehydes H-bond with each other",
+                  "They cannot"
+                ]
+              ]
+            },
+            "alt": "Table of three common slips in Part 1 and fixes"
+          },
+          "math": [],
+          "narration": "Some tips. Explain the purpose of the barium sulphate poison in the Rosenmund reaction. Remember that calcium methanoate is needed to make aldehydes from calcium salts. Include the hydrolysis step in Grignard and Stephen reactions. And remember that carbonyl compounds cannot hydrogen-bond with each other.",
+          "check_question_id": null,
+          "audio": null
+        }
+      ],
+      "status": "draft",
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "unit": "isc-12-chemistry-ch16",
+      "part": 2,
+      "version": 1,
+      "title": "Aldehydes and Ketones — Part 2: Reactions, mechanisms and tests",
+      "language": "en",
+      "goals": [
+        "Draw the mechanism of nucleophilic addition of HCN and explain why aldehydes are more reactive than ketones",
+        "Write additions of NaHSO₃, Grignard reagents and ammonia derivatives",
+        "Write oxidation, iodoform and reduction reactions (Clemmensen, Wolff–Kishner, red P/HI)",
+        "Draw the aldol mechanism; predict aldol, cross aldol or Cannizzaro; use tests to distinguish carbonyl compounds"
+      ],
+      "slides": [
+        {
+          "id": "s01",
+          "layout": "title",
+          "heading": "Reactions of carbonyl compounds",
+          "body_md": "Part 2 — addition to C=O, oxidation and reduction, reactions of α-hydrogens, and tests.",
+          "bullets": [],
+          "visual": {
+            "kind": "flow",
+            "spec": {
+              "direction": "LR",
+              "nodes": [
+                {
+                  "id": "a",
+                  "label": "C=O"
+                },
+                {
+                  "id": "b",
+                  "label": "Nucleophilic addition"
+                },
+                {
+                  "id": "c",
+                  "label": "Oxidation (aldehydes) / reduction"
+                },
+                {
+                  "id": "d",
+                  "label": "α-H: aldol; no α-H: Cannizzaro"
+                },
+                {
+                  "id": "e",
+                  "label": "Tests"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "a",
+                  "to": "b"
+                },
+                {
+                  "from": "a",
+                  "to": "c"
+                },
+                {
+                  "from": "a",
+                  "to": "d"
+                },
+                {
+                  "from": "d",
+                  "to": "e"
+                }
+              ]
+            },
+            "alt": "Flow of the reactions in Part 2"
+          },
+          "math": [],
+          "narration": "The polar carbonyl group gives aldehydes and ketones a rich chemistry. Nucleophiles add to the carbonyl carbon. Aldehydes are easily oxidised, while both aldehydes and ketones can be reduced. Hydrogens on the neighbouring carbon are acidic, leading to aldol reactions. And these properties give simple tests to tell the compounds apart.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s02",
+          "layout": "diagram",
+          "heading": "Nucleophilic addition and reactivity",
+          "body_md": "A nucleophile attacks the carbonyl carbon; carbon becomes **sp³** in a tetrahedral alkoxide, which is protonated. **Reactivity: HCHO > RCHO > R₂CO**: alkyl groups (+I) reduce the δ+ on carbon and **sterically hinder** attack.",
+          "bullets": [],
+          "visual": {
+            "kind": "svg",
+            "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 360 150\" role=\"img\" aria-label=\"Nucleophilic addition to a carbonyl group in two steps. Step 1: the nucleophile attacks the carbonyl carbon, and the pi electrons move onto oxygen, giving a tetrahedral alkoxide intermediate. Step 2: the alkoxide oxygen takes a proton from the medium to give the addition product with an O–H group.\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>Nucleophilic addition to a carbonyl group in two steps. Step 1: the nucleophile attacks the carbonyl carbon, and the pi electrons move onto oxygen, giving a tetrahedral alkoxide intermediate. Step 2: the alkoxide oxygen takes a proton from the medium to give the addition product with an O–H group.</title><circle cx=\"40\" cy=\"70\" r=\"12\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"40\" y=\"74\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">C</text><line x1=\"52\" y1=\"72.5\" x2=\"80\" y2=\"72.5\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"52\" y1=\"67.5\" x2=\"80\" y2=\"67.5\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"92\" cy=\"70\" r=\"12\" fill=\"var(--diagram-red)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"92\" y=\"74\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">O</text><text x=\"40\" y=\"30\" fill=\"var(--diagram-blue)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">Nu⁻</text><line x1=\"40\" y1=\"36\" x2=\"40\" y2=\"52\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.5\"/><polygon points=\"40,56 38,51.4 42,51.4\" fill=\"var(--diagram-blue)\" stroke=\"none\"/><line x1=\"112\" y1=\"70\" x2=\"135.2\" y2=\"70\" stroke=\"currentColor\" stroke-width=\"1.5\"/><polygon points=\"140,70 134.5,72.4 134.5,67.6\" fill=\"currentColor\" stroke=\"none\"/><text x=\"126\" y=\"60\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">step 1</text><circle cx=\"180\" cy=\"75\" r=\"12\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"180\" y=\"79\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">C</text><line x1=\"180\" y1=\"63\" x2=\"180\" y2=\"42\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"180\" y=\"36\" fill=\"var(--diagram-blue)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">Nu</text><line x1=\"192\" y1=\"75\" x2=\"212\" y2=\"75\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"224\" cy=\"75\" r=\"12\" fill=\"var(--diagram-red)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"224\" y=\"79\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">O⁻</text><text x=\"200\" y=\"110\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">tetrahedral</text><text x=\"200\" y=\"123\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">intermediate</text><line x1=\"244\" y1=\"75\" x2=\"267.2\" y2=\"75\" stroke=\"currentColor\" stroke-width=\"1.5\"/><polygon points=\"272,75 266.5,77.4 266.5,72.6\" fill=\"currentColor\" stroke=\"none\"/><text x=\"258\" y=\"64\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">H⁺</text><circle cx=\"300\" cy=\"75\" r=\"12\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"300\" y=\"79\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">C</text><line x1=\"300\" y1=\"63\" x2=\"300\" y2=\"42\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"300\" y=\"36\" fill=\"var(--diagram-blue)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">Nu</text><line x1=\"312\" y1=\"75\" x2=\"326\" y2=\"75\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"340\" cy=\"75\" r=\"13\" fill=\"var(--diagram-red)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"340\" y=\"79\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">OH</text><text x=\"320\" y=\"123\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">addition product</text><text x=\"180\" y=\"145\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">sp² (planar) → sp³ (tetrahedral)</text></svg>",
+            "alt": "Two-step nucleophilic addition: the nucleophile attacks the carbonyl carbon to give a tetrahedral alkoxide intermediate, which takes a proton to give the product"
+          },
+          "math": [],
+          "narration": "The nucleophile attacks the partly positive carbonyl carbon, the pi electrons move onto oxygen, and a tetrahedral intermediate forms, which then picks up a proton. Methanal reacts fastest, then other aldehydes, then ketones. Alkyl groups push electrons towards the carbonyl carbon, making it less positive, and they crowd the approach of the nucleophile.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s03",
+          "layout": "concept",
+          "heading": "Mechanism: addition of HCN",
+          "body_md": "A trace of base generates CN⁻: $\\ce{HCN + OH- -> CN- + H2O}$. (1) CN⁻ attacks the carbonyl carbon (slow), giving a tetrahedral alkoxide. (2) The alkoxide takes H⁺ from HCN (fast), regenerating CN⁻. Product: a **cyanohydrin**, which can be hydrolysed to an α-hydroxy acid.",
+          "bullets": [],
+          "visual": {
+            "kind": "flow",
+            "spec": {
+              "direction": "LR",
+              "nodes": [
+                {
+                  "id": "a",
+                  "label": "HCN + OH⁻ → CN⁻"
+                },
+                {
+                  "id": "b",
+                  "label": "CN⁻ attacks C=O (slow)"
+                },
+                {
+                  "id": "c",
+                  "label": "Alkoxide ion"
+                },
+                {
+                  "id": "d",
+                  "label": "+ H⁺ from HCN → cyanohydrin"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "a",
+                  "to": "b"
+                },
+                {
+                  "from": "b",
+                  "to": "c"
+                },
+                {
+                  "from": "c",
+                  "to": "d"
+                }
+              ]
+            },
+            "alt": "Flow of the HCN addition mechanism"
+          },
+          "math": [
+            "\\ce{CH3CH2CHO + HCN -> CH3CH2CH(OH)CN}",
+            "\\ce{CH3COCH3 + HCN -> (CH3)2C(OH)CN}"
+          ],
+          "narration": "Hydrogen cyanide itself is a poor nucleophile, so a little base is added to make cyanide ions. In the slow step, cyanide attacks the carbonyl carbon, giving an alkoxide ion. This ion then takes a proton from hydrogen cyanide, forming the cyanohydrin and regenerating cyanide. Propanone gives propanone cyanohydrin, an industrial intermediate for Perspex.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s04",
+          "layout": "concept",
+          "heading": "Other additions: NaHSO₃, Grignard and ammonia derivatives",
+          "body_md": "**NaHSO₃:** crystalline bisulphite adducts (aldehydes and methyl ketones); decomposed by acid or alkali — used to purify. **Grignard:** HCHO → 1°, RCHO → 2°, R₂CO → 3° alcohols. **Ammonia derivatives** (Z–NH₂) add and then lose water (addition–elimination) to give C=N–Z.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Reagent Z–NH₂",
+                "Product",
+                "Example with propanone"
+              ],
+              "rows": [
+                [
+                  "NH₂OH (hydroxylamine)",
+                  "Oxime",
+                  "(CH₃)₂C=NOH"
+                ],
+                [
+                  "NH₂NH₂ (hydrazine)",
+                  "Hydrazone",
+                  "(CH₃)₂C=NNH₂"
+                ],
+                [
+                  "C₆H₅NHNH₂",
+                  "Phenylhydrazone",
+                  "(CH₃)₂C=NNHC₆H₅"
+                ],
+                [
+                  "NH₂NHCONH₂",
+                  "Semicarbazone",
+                  "(CH₃)₂C=NNHCONH₂"
+                ],
+                [
+                  "2,4-DNP",
+                  "2,4-Dinitrophenylhydrazone (orange)",
+                  "Test for C=O"
+                ]
+              ]
+            },
+            "alt": "Table of ammonia derivatives and products"
+          },
+          "math": [
+            "\\ce{CH3CHO + NaHSO3 -> CH3CH(OH)SO3Na}",
+            "\\ce{CH3CHO + NH2OH -> CH3CH=NOH + H2O}"
+          ],
+          "narration": "Sodium hydrogensulphite adds to aldehydes and methyl ketones to form crystalline solids, which can be filtered off and broken down again with acid or alkali: a good way to purify them. Grignard reagents give alcohols. Ammonia derivatives such as hydroxylamine, hydrazine, phenylhydrazine and semicarbazide add to the carbonyl group and then lose water, giving solid derivatives with sharp melting points used to identify the original compound.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s05",
+          "layout": "example",
+          "heading": "Worked example: addition products",
+          "body_md": "**Problem.** Give the product of butanone with (a) HCN, (b) NaHSO₃, (c) phenylhydrazine, (d) semicarbazide, (e) CH₃MgI then H₃O⁺.\n\n**(a)** $\\ce{CH3CH2C(OH)(CH3)CN}$, butanone cyanohydrin.\n\n**(b)** $\\ce{CH3CH2C(OH)(CH3)SO3Na}$.\n\n**(c)** $\\ce{CH3CH2C(CH3)=NNHC6H5}$, butanone phenylhydrazone.\n\n**(d)** $\\ce{CH3CH2C(CH3)=NNHCONH2}$, butanone semicarbazone.\n\n**(e)** 2-Methylbutan-2-ol.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Reagent",
+                "Product type"
+              ],
+              "rows": [
+                [
+                  "HCN",
+                  "Cyanohydrin"
+                ],
+                [
+                  "NaHSO₃",
+                  "Bisulphite adduct"
+                ],
+                [
+                  "C₆H₅NHNH₂",
+                  "Phenylhydrazone"
+                ],
+                [
+                  "Semicarbazide",
+                  "Semicarbazone"
+                ],
+                [
+                  "CH₃MgI; H₃O⁺",
+                  "Tertiary alcohol"
+                ]
+              ]
+            },
+            "alt": "Table of addition products of butanone"
+          },
+          "math": [],
+          "narration": "Each reagent adds to the same carbonyl carbon. Hydrogen cyanide and sodium hydrogensulphite simply add across the carbon–oxygen double bond. Phenylhydrazine and semicarbazide add and then lose water, giving a carbon–nitrogen double bond. A Grignard reagent adds a methyl group, and hydrolysis gives a tertiary alcohol, two-methylbutan-two-ol.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s06",
+          "layout": "check",
+          "heading": "Quick check: nucleophilic addition",
+          "body_md": "Predict an addition product or compare reactivity towards nucleophiles.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Methanal is most reactive; ammonia derivatives give compounds with a carbon–nitrogen double bond after losing water.",
+          "check_question_id": "q_isc12chem_ch16_023",
+          "audio": null
+        },
+        {
+          "id": "s07",
+          "layout": "concept",
+          "heading": "Oxidation and the iodoform reaction",
+          "body_md": "Aldehydes are oxidised easily to acids (even by Tollens’ and Fehling’s reagents); ketones resist mild oxidants and are cleaved only by strong oxidants on heating. **Iodoform reaction:** compounds with **CH₃CO–** (or CH₃CH(OH)–) react with I₂/NaOH to give yellow **CHI₃** and the carboxylate with one carbon fewer.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Compound",
+                "Iodoform test"
+              ],
+              "rows": [
+                [
+                  "Ethanal",
+                  "Positive"
+                ],
+                [
+                  "Methanal",
+                  "Negative"
+                ],
+                [
+                  "Propanone",
+                  "Positive"
+                ],
+                [
+                  "Butanone",
+                  "Positive"
+                ],
+                [
+                  "Pentan-3-one",
+                  "Negative"
+                ],
+                [
+                  "Propanal",
+                  "Negative"
+                ]
+              ]
+            },
+            "alt": "Table of iodoform test results"
+          },
+          "math": [
+            "\\ce{CH3COCH2CH3 + 3I2 + 4NaOH -> CHI3 + CH3CH2COONa + 3NaI + 3H2O}"
+          ],
+          "narration": "Aldehydes have a hydrogen on the carbonyl carbon, so they are easily oxidised to carboxylic acids. Ketones resist mild oxidants. Any compound with a methyl group next to the carbonyl, a methyl ketone or ethanal, gives the iodoform reaction: the methyl group becomes yellow iodoform and the rest becomes a carboxylate. So butanone gives iodoform but pentan-three-one does not.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s08",
+          "layout": "concept",
+          "heading": "Reduction",
+          "body_md": "**To alcohols:** NaBH₄, LiAlH₄ or H₂/Ni: aldehydes → 1°, ketones → 2°. **To alkanes (C=O → CH₂):** **Clemmensen** (Zn–Hg, conc. HCl); **Wolff–Kishner** (NH₂NH₂, then KOH in ethylene glycol, about 453–473 K); **red P + HI** (heat).",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Reagent",
+                "Butanone gives"
+              ],
+              "rows": [
+                [
+                  "NaBH₄",
+                  "Butan-2-ol"
+                ],
+                [
+                  "Zn–Hg, conc. HCl (Clemmensen)",
+                  "Butane"
+                ],
+                [
+                  "NH₂NH₂; KOH, heat (Wolff–Kishner)",
+                  "Butane"
+                ],
+                [
+                  "Red P + HI",
+                  "Butane"
+                ]
+              ]
+            },
+            "alt": "Table of reduction products of butanone"
+          },
+          "math": [
+            "\\ce{CH3COCH3 + 4HI ->[red P][\\Delta] CH3CH2CH3 + H2O + 2I2}",
+            "\\ce{(CH3)2C=NNH2 ->[KOH][ethylene glycol, \\Delta] CH3CH2CH3 + N2}"
+          ],
+          "narration": "Hydride reagents and catalytic hydrogen reduce aldehydes and ketones to alcohols. To remove the oxygen completely, three methods are used: the Clemmensen reduction with zinc amalgam and hydrochloric acid, suitable for compounds stable to acid; the Wolff–Kishner reduction, which forms the hydrazone and then heats it with alkali, suitable for compounds stable to base; and red phosphorus with hydrogen iodide.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s09",
+          "layout": "check",
+          "heading": "Quick check: oxidation and reduction",
+          "body_md": "Predict a reduction product or an iodoform result.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Clemmensen and Wolff–Kishner give alkanes; iodoform needs a methyl group next to the carbonyl.",
+          "check_question_id": "q_isc12chem_ch16_035",
+          "audio": null
+        },
+        {
+          "id": "s10",
+          "layout": "concept",
+          "heading": "Acidity of α-hydrogens; aldol mechanism",
+          "body_md": "α-Hydrogens are acidic because the **enolate** formed is resonance-stabilised (charge shared with O). **Aldol** (dilute NaOH): (1) OH⁻ removes an α-H → enolate; (2) enolate attacks the C=O of a second molecule; (3) the alkoxide takes H⁺ from water → **β-hydroxy carbonyl** (aldol); on heating, loss of water → **α,β-unsaturated** carbonyl.",
+          "bullets": [],
+          "visual": {
+            "kind": "flow",
+            "spec": {
+              "direction": "LR",
+              "nodes": [
+                {
+                  "id": "a",
+                  "label": "OH⁻ removes α-H"
+                },
+                {
+                  "id": "b",
+                  "label": "Enolate (resonance)"
+                },
+                {
+                  "id": "c",
+                  "label": "Attacks C=O of 2nd molecule"
+                },
+                {
+                  "id": "d",
+                  "label": "Protonation → aldol"
+                },
+                {
+                  "id": "e",
+                  "label": "Heat: −H₂O → enal"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "a",
+                  "to": "b"
+                },
+                {
+                  "from": "b",
+                  "to": "c"
+                },
+                {
+                  "from": "c",
+                  "to": "d"
+                },
+                {
+                  "from": "d",
+                  "to": "e"
+                }
+              ]
+            },
+            "alt": "Flow of the aldol mechanism"
+          },
+          "math": [
+            "\\ce{2CH3CHO ->[dil. NaOH] CH3CH(OH)CH2CHO}",
+            "\\ce{CH3CH(OH)CH2CHO ->[\\Delta] CH3CH=CHCHO + H2O}"
+          ],
+          "narration": "A hydrogen on the carbon next to the carbonyl group can be removed by a base, because the resulting enolate ion spreads its negative charge onto oxygen. In the aldol reaction, hydroxide removes such a hydrogen from ethanal; the enolate attacks the carbonyl carbon of a second ethanal molecule; and protonation gives three-hydroxybutanal, the aldol. Heating removes water to give but-two-enal.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s11",
+          "layout": "concept",
+          "heading": "Cross aldol and Cannizzaro reactions",
+          "body_md": "**Cross aldol:** two different carbonyl compounds; if both have α-H, four products form. Useful when one partner has **no α-H** (HCHO, C₆H₅CHO). **Cannizzaro:** aldehydes with **no α-H** + **concentrated** NaOH → alcohol + carboxylate salt (disproportionation, via hydride transfer). **Crossed Cannizzaro** with HCHO: HCHO is oxidised to methanoate, the other aldehyde reduced.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Aldehyde(s)",
+                "Alkali",
+                "Reaction"
+              ],
+              "rows": [
+                [
+                  "CH₃CHO",
+                  "Dilute",
+                  "Aldol"
+                ],
+                [
+                  "HCHO",
+                  "Concentrated",
+                  "Cannizzaro"
+                ],
+                [
+                  "HCHO + CH₃CHO",
+                  "Dilute",
+                  "Cross aldol (3-hydroxypropanal)"
+                ],
+                [
+                  "C₆H₅CHO + HCHO",
+                  "Concentrated",
+                  "Crossed Cannizzaro"
+                ]
+              ]
+            },
+            "alt": "Table of aldol and Cannizzaro conditions"
+          },
+          "math": [
+            "\\ce{HCHO + CH3CHO ->[dil. NaOH] HOCH2CH2CHO}",
+            "\\ce{2HCHO + NaOH -> HCOONa + CH3OH}",
+            "\\ce{C6H5CHO + HCHO + NaOH -> C6H5CH2OH + HCOONa}"
+          ],
+          "narration": "When two different carbonyl compounds both have alpha hydrogens, a cross aldol gives a mixture of four products, so it is most useful when one partner, such as methanal, has none. An aldehyde with no alpha hydrogen cannot form an enolate; with concentrated alkali, one molecule transfers a hydride to another, giving an alcohol and a carboxylate salt: the Cannizzaro reaction. With methanal present, methanal is always the one oxidised.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s12",
+          "layout": "example",
+          "heading": "Worked example: aldol or Cannizzaro?",
+          "body_md": "**Problem.** Give the products: (a) propanal + dilute NaOH, then heat; (b) 2,2-dimethylpropanal + conc. NaOH; (c) methanal + ethanal (dilute NaOH); (d) 4-methylbenzaldehyde + methanal + conc. NaOH.\n\n**(a)** Aldol: 3-hydroxy-2-methylpentanal → 2-methylpent-2-enal.\n\n**(b)** No α-H: Cannizzaro → 2,2-dimethylpropan-1-ol + sodium 2,2-dimethylpropanoate.\n\n**(c)** Cross aldol: 3-hydroxypropanal.\n\n**(d)** Crossed Cannizzaro: (4-methylphenyl)methanol + sodium methanoate.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Case",
+                "α-H?",
+                "Reaction"
+              ],
+              "rows": [
+                [
+                  "(a) Propanal",
+                  "Yes",
+                  "Aldol"
+                ],
+                [
+                  "(b) (CH₃)₃CCHO",
+                  "No",
+                  "Cannizzaro"
+                ],
+                [
+                  "(c) HCHO + CH₃CHO",
+                  "One partner",
+                  "Cross aldol"
+                ],
+                [
+                  "(d) ArCHO + HCHO",
+                  "No",
+                  "Crossed Cannizzaro"
+                ]
+              ]
+            },
+            "alt": "Table classifying four cases"
+          },
+          "math": [],
+          "narration": "Look for alpha hydrogens and check the alkali concentration. Propanal has them, so dilute alkali gives the aldol, which dehydrates on heating. Two-two-dimethylpropanal has a quaternary carbon next to the aldehyde group and no alpha hydrogens, so it undergoes the Cannizzaro reaction. Methanal and ethanal give a cross aldol. With methanal and an aromatic aldehyde in concentrated alkali, methanal is oxidised and the aromatic aldehyde reduced.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s13",
+          "layout": "check",
+          "heading": "Quick check: aldol or Cannizzaro",
+          "body_md": "Decide which base-catalysed reaction occurs.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Alpha hydrogens and dilute alkali: aldol. No alpha hydrogens and concentrated alkali: Cannizzaro.",
+          "check_question_id": "q_isc12chem_ch16_044",
+          "audio": null
+        },
+        {
+          "id": "s14",
+          "layout": "concept",
+          "heading": "Tests and uses",
+          "body_md": "**Aldehyde vs ketone:** Tollens’ reagent → silver mirror (aldehydes); Fehling’s / Benedict’s → red-brown Cu₂O (aliphatic aldehydes); Schiff’s reagent → pink (aldehydes). **Methanal vs ethanal:** iodoform (ethanal only). **Methyl ketone vs other ketone:** iodoform. **Uses:** methanal (formalin, Bakelite, urotropine), ethanal (ethanoic acid, ethyl ethanoate), propanone (solvent, nail-polish remover), butanone (solvent).",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Test",
+                "Methanal",
+                "Ethanal",
+                "Propanone"
+              ],
+              "rows": [
+                [
+                  "Tollens’",
+                  "Silver mirror",
+                  "Silver mirror",
+                  "No change"
+                ],
+                [
+                  "Fehling’s",
+                  "Red-brown ppt",
+                  "Red-brown ppt",
+                  "No change"
+                ],
+                [
+                  "Iodoform",
+                  "No",
+                  "Yellow ppt",
+                  "Yellow ppt"
+                ]
+              ]
+            },
+            "alt": "Table of tests for methanal, ethanal and propanone"
+          },
+          "math": [
+            "\\ce{CH3CHO + 2[Ag(NH3)2]+ + 3OH- -> CH3COO- + 2Ag + 2H2O + 4NH3}",
+            "\\ce{6HCHO + 4NH3 -> (CH2)6N4 + 6H2O}"
+          ],
+          "narration": "Tollens’ reagent, ammoniacal silver nitrate, is reduced by aldehydes to a silver mirror; Fehling’s solution gives a red-brown precipitate of copper one oxide with aliphatic aldehydes. Ketones give neither. Methanal and ethanal both reduce these reagents, but only ethanal gives iodoform. Methanal is used as formalin and to make resins and urotropine; propanone is a common solvent.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s15",
+          "layout": "summary",
+          "heading": "Summary: Part 2",
+          "body_md": "",
+          "bullets": [
+            "Nucleophilic addition: HCHO > RCHO > R₂CO (+I, steric). HCN via CN⁻ (base catalyst) → cyanohydrin.",
+            "NaHSO₃ adducts; Grignard → alcohols; Z–NH₂ → oxime, hydrazone, phenylhydrazone, semicarbazone.",
+            "Aldehydes oxidised easily; iodoform for CH₃CO–; reduction to alcohols (NaBH₄) or alkanes (Clemmensen, Wolff–Kishner, red P/HI).",
+            "α-H acidic (enolate); aldol (dilute alkali) → β-hydroxy carbonyl → enal; cross aldol.",
+            "No α-H + conc. alkali: Cannizzaro; crossed Cannizzaro with HCHO.",
+            "Tests: Tollens’, Fehling’s, iodoform; uses of methanal, ethanal, propanone."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Reaction",
+                "Condition"
+              ],
+              "rows": [
+                [
+                  "Aldol",
+                  "α-H, dilute OH⁻"
+                ],
+                [
+                  "Cannizzaro",
+                  "No α-H, conc. OH⁻"
+                ],
+                [
+                  "Clemmensen",
+                  "Zn–Hg/HCl"
+                ],
+                [
+                  "Wolff–Kishner",
+                  "NH₂NH₂/KOH"
+                ]
+              ]
+            },
+            "alt": "Summary table of key reactions"
+          },
+          "math": [],
+          "narration": "Let us sum up Part 2. Nucleophiles add to the carbonyl group, aldehydes more readily than ketones. Aldehydes are easily oxidised, which gives the Tollens’ and Fehling’s tests, while methyl ketones give iodoform. Carbonyl groups are reduced to alcohols or right down to CH two groups. Alpha hydrogens make the aldol reaction possible, and aldehydes without them undergo the Cannizzaro reaction.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s16",
+          "layout": "exam-tips",
+          "heading": "Exam tips: Part 2",
+          "body_md": "",
+          "bullets": [
+            "Show CN⁻ formation and both steps in the HCN mechanism.",
+            "State dilute or concentrated alkali when predicting aldol or Cannizzaro.",
+            "For reduction to alkane, name the method and its condition (acid or base).",
+            "For tests, give observations for both compounds."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Slip",
+                "Fix"
+              ],
+              "rows": [
+                [
+                  "Benzaldehyde gives aldol with itself",
+                  "No α-H: Cannizzaro"
+                ],
+                [
+                  "Ketones give silver mirror",
+                  "Only aldehydes"
+                ],
+                [
+                  "Methanal gives iodoform",
+                  "It does not"
+                ]
+              ]
+            },
+            "alt": "Table of three common slips in Part 2 and fixes"
+          },
+          "math": [],
+          "narration": "Final tips. In the hydrogen cyanide mechanism, show how cyanide ions are formed and both steps. Say whether the alkali is dilute or concentrated before choosing between aldol and Cannizzaro. Name the reduction method with its conditions. And in distinguishing tests, describe what happens with each compound.",
+          "check_question_id": null,
+          "audio": null
+        }
+      ],
+      "status": "draft",
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    }
+  ],
+  "notes": {
+    "unit": "isc-12-chemistry-ch16",
+    "version": 1,
+    "title": "Aldehydes and Ketones — Notes",
+    "language": "en",
+    "sections": [
+      {
+        "heading": "1. Nomenclature, structure and physical properties",
+        "body_md": "Aldehydes **-al** (CHO = C-1): 3-methylbutanal; ketones **-one**: pentan-3-one, 3-methylbutan-2-one; dialdehydes **-dial**. Carbonyl C is **sp²**, planar, ≈ 120°; C=O polar (C δ+).\n\nB.p.: alkanes/ethers < aldehydes/ketones (dipole–dipole) < alcohols (H-bonding); lower members water-soluble (water H-bonds to C=O).",
+        "key_terms": [
+          {
+            "term": "Carbonyl group",
+            "definition_md": "The C=O group; polar, with an electrophilic carbon."
+          }
+        ],
+        "formulas": [],
+        "visual": {
+          "kind": "svg",
+          "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 340 170\" role=\"img\" aria-label=\"The carbonyl group. A carbon atom is joined by a double bond to an oxygen atom and by single bonds to two other groups, R and R′, with bond angles of about 120 degrees in one plane. Oxygen is more electronegative, so carbon carries a partial positive charge and oxygen a partial negative charge; a nucleophile attacks the carbon from above or below the plane.\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>The carbonyl group. A carbon atom is joined by a double bond to an oxygen atom and by single bonds to two other groups, R and R′, with bond angles of about 120 degrees in one plane. Oxygen is more electronegative, so carbon carries a partial positive charge and oxygen a partial negative charge; a nucleophile attacks the carbon from above or below the plane.</title><circle cx=\"150\" cy=\"85\" r=\"14\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"150\" y=\"89\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\">C</text><circle cx=\"240\" cy=\"85\" r=\"15\" fill=\"var(--diagram-red)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"240\" y=\"89\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\">O</text><line x1=\"164\" y1=\"87.5\" x2=\"225\" y2=\"87.5\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"164\" y1=\"82.5\" x2=\"225\" y2=\"82.5\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"140\" y1=\"75\" x2=\"105\" y2=\"40\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"140\" y1=\"95\" x2=\"105\" y2=\"130\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"96\" cy=\"32\" r=\"12\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"96\" y=\"36\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">R</text><circle cx=\"96\" cy=\"138\" r=\"12\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"96\" y=\"142\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">R′</text><text x=\"150\" y=\"60\" fill=\"var(--diagram-blue)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\">δ+</text><text x=\"240\" y=\"60\" fill=\"var(--diagram-red)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\">δ−</text><text x=\"118\" y=\"89\" fill=\"var(--diagram-accent)\" stroke=\"none\" font-size=\"10\">120°</text><line x1=\"190\" y1=\"20\" x2=\"162.6\" y2=\"62\" stroke=\"var(--diagram-blue)\" stroke-width=\"2\"/><polygon points=\"160,66 160.9,60.1 165,62.7\" fill=\"var(--diagram-blue)\" stroke=\"none\"/><text x=\"196\" y=\"22\" fill=\"var(--diagram-blue)\" stroke=\"none\" font-size=\"10\">Nu⁻ attacks the carbon</text><text x=\"170\" y=\"162\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">sp² carbon: planar, polar C=O</text></svg>",
+          "alt": "A planar carbonyl group with about 120 degree bond angles, a partial positive charge on carbon, a partial negative charge on oxygen and a nucleophile attacking the carbon"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "isc-12-chemistry-ch16-t01"
+        ]
+      },
+      {
+        "heading": "2. Preparation",
+        "body_md": "- **Alcohols:** 1° → RCHO (PCC; Cu, 573 K); 2° → ketone.\n- **Alkenes:** ozonolysis (O₃; Zn/H₂O). **Alkynes:** H₂O/HgSO₄/H₂SO₄ — ethyne → ethanal; others → ketones.\n- **Acid chlorides:** Rosenmund (H₂, Pd/BaSO₄) → RCHO; $\\ce{2CH3COCl + (CH3)2Cd -> 2CH3COCH3 + CdCl2}$ → ketones.\n- **Calcium salts:** $\\ce{(CH3COO)2Ca -> CH3COCH3 + CaCO3}$; with calcium methanoate → aldehyde.\n- **Nitriles:** Stephen (SnCl₂/HCl; H₂O) → RCHO; R′MgX then H₃O⁺ → ketone; DIBAL-H → RCHO. **Esters:** DIBAL-H → RCHO.",
+        "key_terms": [
+          {
+            "term": "Rosenmund reduction",
+            "definition_md": "Reduction of an acid chloride to an aldehyde with H₂ over Pd poisoned with BaSO₄."
+          },
+          {
+            "term": "Stephen reaction",
+            "definition_md": "Reduction of a nitrile with SnCl₂/HCl followed by hydrolysis to an aldehyde."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\ce{CH3CH2COCl + H2 ->[Pd/BaSO4] CH3CH2CHO + HCl}",
+            "label": "Rosenmund"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Method",
+              "Product"
+            ],
+            "rows": [
+              [
+                "Rosenmund",
+                "Aldehyde"
+              ],
+              [
+                "Stephen",
+                "Aldehyde"
+              ],
+              [
+                "R′₂Cd + RCOCl",
+                "Ketone"
+              ],
+              [
+                "RCN + R′MgX",
+                "Ketone"
+              ],
+              [
+                "(RCOO)₂Ca, heat",
+                "Ketone"
+              ]
+            ]
+          },
+          "alt": "Table of preparations"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "isc-12-chemistry-ch16-t02"
+        ]
+      },
+      {
+        "heading": "3. Nucleophilic addition",
+        "body_md": "Reactivity **HCHO > RCHO > R₂CO** (+I and steric effects). **HCN** (trace base → CN⁻): CN⁻ attacks C=O (slow) → alkoxide → protonated → **cyanohydrin**. **NaHSO₃** → crystalline adduct (purification). **Grignard:** HCHO → 1°, RCHO → 2°, R₂CO → 3° alcohols. **Ammonia derivatives** (addition–elimination): NH₂OH → oxime; NH₂NH₂ → hydrazone; C₆H₅NHNH₂ → phenylhydrazone; NH₂NHCONH₂ → semicarbazone; 2,4-DNP → orange 2,4-dinitrophenylhydrazone.",
+        "key_terms": [
+          {
+            "term": "Cyanohydrin",
+            "definition_md": "Product of HCN addition to a carbonyl compound: R₂C(OH)CN."
+          },
+          {
+            "term": "Oxime",
+            "definition_md": "C=N–OH compound formed from a carbonyl compound and hydroxylamine."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\ce{CH3COCH3 + HCN -> (CH3)2C(OH)CN}",
+            "label": "Cyanohydrin formation"
+          }
+        ],
+        "visual": {
+          "kind": "svg",
+          "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 360 150\" role=\"img\" aria-label=\"Nucleophilic addition to a carbonyl group in two steps. Step 1: the nucleophile attacks the carbonyl carbon, and the pi electrons move onto oxygen, giving a tetrahedral alkoxide intermediate. Step 2: the alkoxide oxygen takes a proton from the medium to give the addition product with an O–H group.\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>Nucleophilic addition to a carbonyl group in two steps. Step 1: the nucleophile attacks the carbonyl carbon, and the pi electrons move onto oxygen, giving a tetrahedral alkoxide intermediate. Step 2: the alkoxide oxygen takes a proton from the medium to give the addition product with an O–H group.</title><circle cx=\"40\" cy=\"70\" r=\"12\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"40\" y=\"74\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">C</text><line x1=\"52\" y1=\"72.5\" x2=\"80\" y2=\"72.5\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"52\" y1=\"67.5\" x2=\"80\" y2=\"67.5\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"92\" cy=\"70\" r=\"12\" fill=\"var(--diagram-red)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"92\" y=\"74\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">O</text><text x=\"40\" y=\"30\" fill=\"var(--diagram-blue)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">Nu⁻</text><line x1=\"40\" y1=\"36\" x2=\"40\" y2=\"52\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.5\"/><polygon points=\"40,56 38,51.4 42,51.4\" fill=\"var(--diagram-blue)\" stroke=\"none\"/><line x1=\"112\" y1=\"70\" x2=\"135.2\" y2=\"70\" stroke=\"currentColor\" stroke-width=\"1.5\"/><polygon points=\"140,70 134.5,72.4 134.5,67.6\" fill=\"currentColor\" stroke=\"none\"/><text x=\"126\" y=\"60\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">step 1</text><circle cx=\"180\" cy=\"75\" r=\"12\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"180\" y=\"79\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">C</text><line x1=\"180\" y1=\"63\" x2=\"180\" y2=\"42\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"180\" y=\"36\" fill=\"var(--diagram-blue)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">Nu</text><line x1=\"192\" y1=\"75\" x2=\"212\" y2=\"75\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"224\" cy=\"75\" r=\"12\" fill=\"var(--diagram-red)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"224\" y=\"79\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">O⁻</text><text x=\"200\" y=\"110\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">tetrahedral</text><text x=\"200\" y=\"123\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">intermediate</text><line x1=\"244\" y1=\"75\" x2=\"267.2\" y2=\"75\" stroke=\"currentColor\" stroke-width=\"1.5\"/><polygon points=\"272,75 266.5,77.4 266.5,72.6\" fill=\"currentColor\" stroke=\"none\"/><text x=\"258\" y=\"64\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">H⁺</text><circle cx=\"300\" cy=\"75\" r=\"12\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"300\" y=\"79\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">C</text><line x1=\"300\" y1=\"63\" x2=\"300\" y2=\"42\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"300\" y=\"36\" fill=\"var(--diagram-blue)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">Nu</text><line x1=\"312\" y1=\"75\" x2=\"326\" y2=\"75\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"340\" cy=\"75\" r=\"13\" fill=\"var(--diagram-red)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"340\" y=\"79\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">OH</text><text x=\"320\" y=\"123\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">addition product</text><text x=\"180\" y=\"145\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">sp² (planar) → sp³ (tetrahedral)</text></svg>",
+          "alt": "Two-step nucleophilic addition: the nucleophile attacks the carbonyl carbon to give a tetrahedral alkoxide intermediate, which takes a proton to give the product"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "isc-12-chemistry-ch16-t03"
+        ]
+      },
+      {
+        "heading": "4. Oxidation, iodoform and reduction",
+        "body_md": "Aldehydes oxidised easily (K₂Cr₂O₇/H⁺, Tollens’, Fehling’s); ketones only by strong oxidants with C–C cleavage. **Iodoform:** CH₃CO– (or CH₃CH(OH)–) + I₂/NaOH → yellow CHI₃ + carboxylate (one C fewer).\n\n**Reduction:** NaBH₄/LiAlH₄/H₂–Ni → alcohols (1° from aldehydes, 2° from ketones). C=O → CH₂: **Clemmensen** (Zn–Hg, conc. HCl; acid); **Wolff–Kishner** (NH₂NH₂, then KOH/ethylene glycol, heat; base); **red P + HI**.",
+        "key_terms": [
+          {
+            "term": "Clemmensen reduction",
+            "definition_md": "Reduction of C=O to CH₂ with zinc amalgam and conc. HCl."
+          },
+          {
+            "term": "Wolff–Kishner reduction",
+            "definition_md": "Reduction of C=O to CH₂ via the hydrazone with KOH in ethylene glycol."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\ce{CH3COCH3 + 4HI ->[red P] CH3CH2CH3 + H2O + 2I2}",
+            "label": "Red P / HI reduction"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Reagent",
+              "Ketone gives"
+            ],
+            "rows": [
+              [
+                "NaBH₄",
+                "2° alcohol"
+              ],
+              [
+                "Zn–Hg/HCl",
+                "Alkane"
+              ],
+              [
+                "NH₂NH₂/KOH",
+                "Alkane"
+              ]
+            ]
+          },
+          "alt": "Table of reductions"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "isc-12-chemistry-ch16-t04"
+        ]
+      },
+      {
+        "heading": "5. Aldol, cross aldol and Cannizzaro",
+        "body_md": "**α-H** acidic (enolate resonance). **Aldol** (dilute OH⁻): enolate attacks C=O of another molecule → β-hydroxy carbonyl → (heat) α,β-unsaturated carbonyl. $\\ce{2CH3CHO -> CH3CH(OH)CH2CHO}$ → but-2-enal. **Cross aldol:** best with one partner lacking α-H (HCHO + CH₃CHO → 3-hydroxypropanal).\n\n**Cannizzaro** (no α-H, conc. OH⁻): $\\ce{2HCHO + NaOH -> HCOONa + CH3OH}$; crossed with HCHO: HCHO oxidised, the other aldehyde reduced.",
+        "key_terms": [
+          {
+            "term": "Aldol",
+            "definition_md": "A β-hydroxy aldehyde or ketone formed by base-catalysed self-addition of a carbonyl compound with α-H."
+          },
+          {
+            "term": "Cannizzaro reaction",
+            "definition_md": "Disproportionation of an aldehyde without α-H in concentrated alkali to an alcohol and a carboxylate."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\ce{2HCHO + NaOH -> HCOONa + CH3OH}",
+            "label": "Cannizzaro"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Condition",
+              "Reaction"
+            ],
+            "rows": [
+              [
+                "α-H, dilute OH⁻",
+                "Aldol"
+              ],
+              [
+                "No α-H, conc. OH⁻",
+                "Cannizzaro"
+              ]
+            ]
+          },
+          "alt": "Table of base-catalysed reactions"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "isc-12-chemistry-ch16-t05"
+        ]
+      },
+      {
+        "heading": "6. Tests and uses",
+        "body_md": "**Aldehyde vs ketone:** Tollens’ (silver mirror), Fehling’s (red-brown Cu₂O, aliphatic aldehydes), Schiff’s reagent (pink). **Methanal vs ethanal:** iodoform (ethanal +). **Methyl ketones:** iodoform. **2,4-DNP:** orange ppt for any C=O.\n\n**Uses:** methanal — formalin, Bakelite and urea–formaldehyde resins, urotropine ((CH₂)₆N₄); ethanal — ethanoic acid, ethyl ethanoate; propanone — solvent, nail-polish remover; butanone — solvent.",
+        "key_terms": [
+          {
+            "term": "Tollens’ reagent",
+            "definition_md": "Ammoniacal silver nitrate; reduced by aldehydes to a silver mirror."
+          },
+          {
+            "term": "Fehling’s solution",
+            "definition_md": "Alkaline copper(II) tartrate; reduced by aliphatic aldehydes to red-brown Cu₂O."
+          }
+        ],
+        "formulas": [],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Test",
+              "HCHO",
+              "CH₃CHO",
+              "CH₃COCH₃"
+            ],
+            "rows": [
+              [
+                "Tollens’",
+                "+",
+                "+",
+                "−"
+              ],
+              [
+                "Fehling’s",
+                "+",
+                "+",
+                "−"
+              ],
+              [
+                "Iodoform",
+                "−",
+                "+",
+                "+"
+              ]
+            ]
+          },
+          "alt": "Table of tests"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "isc-12-chemistry-ch16-t06"
+        ]
+      }
+    ],
+    "exam_tips_md": "**Common mistakes**\n- Propyne hydration giving propanal (it gives propanone).\n- Aldol with benzaldehyde or methanal alone (no α-H: Cannizzaro).\n- Methanal giving iodoform (it does not).\n- Confusing Clemmensen (acid) and Wolff–Kishner (base).\n\n**How marks are usually awarded**\n- Mechanisms (2–3 marks): nucleophile formation, attack, protonation.\n- Named preparations (1 mark each): reagent, condition and product.\n- Tests (1–2 marks): reagent and observations for both compounds.",
+    "status": "draft",
+    "provenance": {
+      "origin": "human",
+      "template_version": null,
+      "model": null,
+      "generated_at": "2026-10-30",
+      "author": "claude-opus-5-5 (subject-producer)"
+    }
+  },
+  "flashcards": {
+    "unit": "isc-12-chemistry-ch16",
+    "version": 1,
+    "language": "en",
+    "cards": [
+      {
+        "id": "f01",
+        "front_md": "IUPAC name of (CH₃)₂CHCH₂CHO?",
+        "back_md": "3-Methylbutanal.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch16-t01"
+      },
+      {
+        "id": "f02",
+        "front_md": "Hybridisation of carbonyl carbon?",
+        "back_md": "sp², planar.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch16-t01"
+      },
+      {
+        "id": "f03",
+        "front_md": "Why do carbonyl compounds boil below alcohols?",
+        "back_md": "No H-bonding between molecules.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch16-t01"
+      },
+      {
+        "id": "f04",
+        "front_md": "Rosenmund reagent?",
+        "back_md": "H₂, Pd/BaSO₄.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch16-t02"
+      },
+      {
+        "id": "f05",
+        "front_md": "Why poison Pd with BaSO₄?",
+        "back_md": "Stops reduction at aldehyde.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch16-t02"
+      },
+      {
+        "id": "f06",
+        "front_md": "RCOCl + R′₂Cd?",
+        "back_md": "Ketone RCOR′.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch16-t02"
+      },
+      {
+        "id": "f07",
+        "front_md": "Heating calcium ethanoate?",
+        "back_md": "Propanone + CaCO₃.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch16-t02"
+      },
+      {
+        "id": "f08",
+        "front_md": "Stephen reaction product?",
+        "back_md": "Aldehyde.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch16-t02"
+      },
+      {
+        "id": "f09",
+        "front_md": "Nitrile + Grignard, then H₃O⁺?",
+        "back_md": "Ketone.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch16-t02"
+      },
+      {
+        "id": "f10",
+        "front_md": "Ethyne + H₂O/HgSO₄?",
+        "back_md": "Ethanal.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch16-t02"
+      },
+      {
+        "id": "f11",
+        "front_md": "Reactivity to nucleophiles?",
+        "back_md": "HCHO > RCHO > R₂CO.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch16-t03"
+      },
+      {
+        "id": "f12",
+        "front_md": "Role of base in HCN addition?",
+        "back_md": "Generates CN⁻.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch16-t03"
+      },
+      {
+        "id": "f13",
+        "front_md": "Use of NaHSO₃ adducts?",
+        "back_md": "Purifying aldehydes.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch16-t03"
+      },
+      {
+        "id": "f14",
+        "front_md": "Carbonyl + NH₂OH?",
+        "back_md": "Oxime.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch16-t03"
+      },
+      {
+        "id": "f15",
+        "front_md": "Carbonyl + semicarbazide?",
+        "back_md": "Semicarbazone.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch16-t03"
+      },
+      {
+        "id": "f16",
+        "front_md": "Iodoform positive structure?",
+        "back_md": "CH₃CO– or CH₃CH(OH)–.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch16-t04"
+      },
+      {
+        "id": "f17",
+        "front_md": "Clemmensen reagents?",
+        "back_md": "Zn–Hg, conc. HCl.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch16-t04"
+      },
+      {
+        "id": "f18",
+        "front_md": "Wolff–Kishner reagents?",
+        "back_md": "NH₂NH₂, then KOH/ethylene glycol.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch16-t04"
+      },
+      {
+        "id": "f19",
+        "front_md": "Ketone + NaBH₄?",
+        "back_md": "2° alcohol.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch16-t04"
+      },
+      {
+        "id": "f20",
+        "front_md": "Why are α-H acidic?",
+        "back_md": "Enolate stabilised by resonance.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch16-t05"
+      },
+      {
+        "id": "f21",
+        "front_md": "Aldol of ethanal?",
+        "back_md": "3-Hydroxybutanal → but-2-enal.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch16-t05"
+      },
+      {
+        "id": "f22",
+        "front_md": "HCHO + CH₃CHO (dil. OH⁻)?",
+        "back_md": "3-Hydroxypropanal.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch16-t05"
+      },
+      {
+        "id": "f23",
+        "front_md": "Cannizzaro condition?",
+        "back_md": "No α-H, conc. alkali.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch16-t05"
+      },
+      {
+        "id": "f24",
+        "front_md": "HCHO + conc. NaOH?",
+        "back_md": "HCOONa + CH₃OH.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch16-t05"
+      },
+      {
+        "id": "f25",
+        "front_md": "Crossed Cannizzaro: which is oxidised?",
+        "back_md": "Methanal.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch16-t05"
+      },
+      {
+        "id": "f26",
+        "front_md": "Tollens’ positive result?",
+        "back_md": "Silver mirror.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch16-t06"
+      },
+      {
+        "id": "f27",
+        "front_md": "Fehling’s positive result?",
+        "back_md": "Red-brown Cu₂O.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch16-t06"
+      },
+      {
+        "id": "f28",
+        "front_md": "Distinguish HCHO from CH₃CHO?",
+        "back_md": "Iodoform (CH₃CHO +).",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch16-t06"
+      },
+      {
+        "id": "f29",
+        "front_md": "Formalin?",
+        "back_md": "40% aqueous methanal.",
+        "tag": "definition",
+        "topic_id": "isc-12-chemistry-ch16-t06"
+      },
+      {
+        "id": "f30",
+        "front_md": "Urotropine formula?",
+        "back_md": "(CH₂)₆N₄.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch16-t06"
+      },
+      {
+        "id": "f31",
+        "front_md": "Exam tip: aldol vs Cannizzaro",
+        "back_md": "Check α-H and alkali strength first.",
+        "tag": "exam-tip",
+        "topic_id": "isc-12-chemistry-ch16-t05"
+      }
+    ],
+    "status": "draft",
+    "provenance": {
+      "origin": "human",
+      "template_version": null,
+      "model": null,
+      "generated_at": "2026-10-30",
+      "author": "claude-opus-5-5 (subject-producer)"
+    }
+  },
+  "questions": [
+    {
+      "id": "q_isc12chem_ch16_001",
+      "unit": "isc-12-chemistry-ch16",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "The IUPAC name of isovaleraldehyde, (CH₃)₂CHCH₂CHO, is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "3-methylbutanal"
+        },
+        {
+          "id": "b",
+          "text_md": "2-methylbutanal"
+        },
+        {
+          "id": "c",
+          "text_md": "3-methylbutan-1-one"
+        },
+        {
+          "id": "d",
+          "text_md": "2-methylbutan-4-al"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "The CHO carbon is C-1; methyl on C-3 — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch16-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch16_002",
+      "unit": "isc-12-chemistry-ch16",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Diethyl ketone, CH₃CH₂COCH₂CH₃, has the IUPAC name:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "pentan-2-one"
+        },
+        {
+          "id": "b",
+          "text_md": "diethylmethanone"
+        },
+        {
+          "id": "c",
+          "text_md": "3-pentanal"
+        },
+        {
+          "id": "d",
+          "text_md": "pentan-3-one"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Five-carbon chain, C=O at C-3 — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch16-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch16_003",
+      "unit": "isc-12-chemistry-ch16",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "In propanal, the hybridisation of the carbonyl carbon and the approximate bond angle around it are:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "sp³, about 109°"
+        },
+        {
+          "id": "b",
+          "text_md": "sp, 180°"
+        },
+        {
+          "id": "c",
+          "text_md": "sp², about 90°"
+        },
+        {
+          "id": "d",
+          "text_md": "sp², about 120°"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Trigonal planar carbonyl carbon — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch16-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch16_004",
+      "unit": "isc-12-chemistry-ch16",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Propanone (b.p. 329 K) boils higher than butane (b.p. 273 K) but lower than propan-1-ol (b.p. 370 K). The best explanation is that propanone molecules:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "hydrogen-bond strongly with one another"
+        },
+        {
+          "id": "b",
+          "text_md": "attract each other by dipole–dipole forces but cannot hydrogen-bond with one another"
+        },
+        {
+          "id": "c",
+          "text_md": "are non-polar"
+        },
+        {
+          "id": "d",
+          "text_md": "have a much larger molar mass than propan-1-ol"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Polar C=O, but no O–H — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch16-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch16_005",
+      "unit": "isc-12-chemistry-ch16",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? Lower aldehydes and ketones dissolve in water because water molecules form hydrogen bonds with the carbonyl oxygen.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "t"
+        ]
+      },
+      "solution_md": "True. The carbonyl oxygen accepts hydrogen bonds from water.",
+      "marking_scheme": [
+        {
+          "step": "True",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch16-t01"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch16_006",
+      "unit": "isc-12-chemistry-ch16",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "The IUPAC name of OHC–CH₂–CH₂–CHO is butane___.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "dial"
+            ]
+          }
+        ]
+      },
+      "solution_md": "Butane**dial**.",
+      "marking_scheme": [
+        {
+          "step": "Writes \"dial\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch16-t01"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch16_007",
+      "unit": "isc-12-chemistry-ch16",
+      "language": "en",
+      "type": "match",
+      "stem_md": "Match each carbonyl compound with its IUPAC name.",
+      "options": [
+        {
+          "id": "1",
+          "text_md": "Propionaldehyde"
+        },
+        {
+          "id": "2",
+          "text_md": "Ethyl methyl ketone"
+        },
+        {
+          "id": "3",
+          "text_md": "Crotonaldehyde"
+        },
+        {
+          "id": "4",
+          "text_md": "Isobutyraldehyde"
+        }
+      ],
+      "match_right": [
+        {
+          "id": "p",
+          "text_md": "But-2-enal"
+        },
+        {
+          "id": "q",
+          "text_md": "Propanal"
+        },
+        {
+          "id": "r",
+          "text_md": "2-Methylpropanal"
+        },
+        {
+          "id": "s",
+          "text_md": "Butan-2-one"
+        }
+      ],
+      "answer": {
+        "pairs": [
+          {
+            "left_id": "1",
+            "right_id": "q"
+          },
+          {
+            "left_id": "2",
+            "right_id": "s"
+          },
+          {
+            "left_id": "3",
+            "right_id": "p"
+          },
+          {
+            "left_id": "4",
+            "right_id": "r"
+          }
+        ]
+      },
+      "solution_md": "Propionaldehyde = propanal; ethyl methyl ketone = butan-2-one; crotonaldehyde = but-2-enal; isobutyraldehyde = 2-methylpropanal.",
+      "marking_scheme": [
+        {
+          "step": "1 → q",
+          "marks": 0.5
+        },
+        {
+          "step": "2 → s",
+          "marks": 0.5
+        },
+        {
+          "step": "3 → p",
+          "marks": 0.5
+        },
+        {
+          "step": "4 → r",
+          "marks": 0.5
+        }
+      ],
+      "marks": 2,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch16-t01"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch16_008",
+      "unit": "isc-12-chemistry-ch16",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Give the IUPAC names of (a) CH₃COCH(CH₃)₂ and (b) CH₃CH₂CH(CH₃)CH₂CHO.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) 3-Methylbutan-2-one. (b) 3-Methylpentanal."
+      },
+      "solution_md": "Two names.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch16-t01"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch16_009",
+      "unit": "isc-12-chemistry-ch16",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Arrange butane, propanal and propan-1-ol (similar molar masses) in order of increasing boiling point, and explain.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Butane < propanal < propan-1-ol. Butane has only weak dispersion forces; propanal has a polar C=O group and dipole–dipole attractions; propan-1-ol forms intermolecular hydrogen bonds, which are strongest."
+      },
+      "solution_md": "Dispersion < dipole–dipole < H-bonding.",
+      "marking_scheme": [
+        {
+          "step": "Order",
+          "marks": 1
+        },
+        {
+          "step": "Reasons",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch16-t01"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch16_010",
+      "unit": "isc-12-chemistry-ch16",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Propanoyl chloride is reduced with hydrogen over palladium poisoned with barium sulphate. The product is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "propan-1-ol"
+        },
+        {
+          "id": "b",
+          "text_md": "propanone"
+        },
+        {
+          "id": "c",
+          "text_md": "propane"
+        },
+        {
+          "id": "d",
+          "text_md": "propanal"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Rosenmund reduction stops at the aldehyde — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch16-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch16_011",
+      "unit": "isc-12-chemistry-ch16",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "2-Methylbut-2-ene, (CH₃)₂C=CHCH₃, is treated with ozone and then zinc and water. The products are:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "butanone and methanal"
+        },
+        {
+          "id": "b",
+          "text_md": "propanone and ethanal"
+        },
+        {
+          "id": "c",
+          "text_md": "two molecules of propanal"
+        },
+        {
+          "id": "d",
+          "text_md": "propanoic acid and ethanoic acid"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Cleaving the C=C gives (CH₃)₂C=O and O=CHCH₃ — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch16-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch16_012",
+      "unit": "isc-12-chemistry-ch16",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Ethanoyl chloride reacts with dimethylcadmium. The product is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "ethanal"
+        },
+        {
+          "id": "b",
+          "text_md": "propanone"
+        },
+        {
+          "id": "c",
+          "text_md": "butanone"
+        },
+        {
+          "id": "d",
+          "text_md": "ethane"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "2CH₃COCl + (CH₃)₂Cd → 2CH₃COCH₃ + CdCl₂ — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch16-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch16_013",
+      "unit": "isc-12-chemistry-ch16",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A mixture of calcium ethanoate and calcium methanoate is heated strongly. The main carbonyl product is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "propanone"
+        },
+        {
+          "id": "b",
+          "text_md": "ethanal"
+        },
+        {
+          "id": "c",
+          "text_md": "methanal only"
+        },
+        {
+          "id": "d",
+          "text_md": "ethanoic acid"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "(CH₃COO)₂Ca + (HCOO)₂Ca → 2CH₃CHO + 2CaCO₃ — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch16-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch16_014",
+      "unit": "isc-12-chemistry-ch16",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Benzonitrile, C₆H₅CN, is treated with methylmagnesium iodide and the product is hydrolysed with dilute acid. The compound formed is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "acetophenone, C₆H₅COCH₃"
+        },
+        {
+          "id": "b",
+          "text_md": "benzaldehyde"
+        },
+        {
+          "id": "c",
+          "text_md": "toluene"
+        },
+        {
+          "id": "d",
+          "text_md": "1-phenylethanol"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "RCN + R′MgX → imine salt → ketone — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch16-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch16_015",
+      "unit": "isc-12-chemistry-ch16",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Ethyl ethanoate is treated with diisobutylaluminium hydride (DIBAL-H) at low temperature and then water. The carbonyl product is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "ethanal"
+        },
+        {
+          "id": "b",
+          "text_md": "ethanol"
+        },
+        {
+          "id": "c",
+          "text_md": "ethanoic acid"
+        },
+        {
+          "id": "d",
+          "text_md": "propanone"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "DIBAL-H reduces esters to aldehydes — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch16-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch16_016",
+      "unit": "isc-12-chemistry-ch16",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** In the Rosenmund reduction the palladium catalyst is poisoned with barium sulphate.\n\n**Reason (R):** A poisoned catalyst stops the reduction at the aldehyde stage, so the aldehyde is not reduced to an alcohol.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Both are true, and R explains A — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch16-t02"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch16_017",
+      "unit": "isc-12-chemistry-ch16",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? Hydration of propyne with dilute H₂SO₄ and HgSO₄ gives propanal.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "f"
+        ]
+      },
+      "solution_md": "False. Markovnikov hydration gives propanone; only ethyne gives an aldehyde.",
+      "marking_scheme": [
+        {
+          "step": "False, with the correction",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch16-t02"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch16_018",
+      "unit": "isc-12-chemistry-ch16",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "$15.8\\ \\text{g}$ of calcium ethanoate ($M = 158$) is heated: $\\ce{(CH3COO)2Ca -> CH3COCH3 + CaCO3}$. What mass of propanone ($M = 58$) can be obtained at most?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 5.8,
+        "tolerance": 0.02,
+        "unit": "g"
+      },
+      "solution_md": "$n = 15.8 \\div 158 = 0.100\\ \\text{mol}$; mass $= 0.100 \\times 58 = 5.8\\ \\text{g}$.",
+      "marking_scheme": [
+        {
+          "step": "0.100 mol",
+          "marks": 1
+        },
+        {
+          "step": "5.8 g",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch16-t02"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch16_019",
+      "unit": "isc-12-chemistry-ch16",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write equations for preparing (a) ethanal from ethyne and (b) butanone from ethanoyl chloride using a dialkylcadmium.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) $\\ce{HC#CH + H2O ->[HgSO4][dil. H2SO4] CH3CHO}$. (b) $\\ce{2CH3COCl + (CH3CH2)2Cd -> 2CH3COCH2CH3 + CdCl2}$."
+      },
+      "solution_md": "Two equations.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch16-t02"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch16_020",
+      "unit": "isc-12-chemistry-ch16",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Describe the Stephen reaction, using propanenitrile as the example and naming the product.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Propanenitrile is reduced with tin(II) chloride and hydrochloric acid to the imine (as its hydrochloride), CH₃CH₂CH=NH·HCl; hydrolysis with water then gives propanal, CH₃CH₂CHO, and ammonium chloride."
+      },
+      "solution_md": "SnCl₂/HCl, then H₂O → propanal.",
+      "marking_scheme": [
+        {
+          "step": "Reagents and imine",
+          "marks": 1
+        },
+        {
+          "step": "Hydrolysis to propanal",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch16-t02"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch16_021",
+      "unit": "isc-12-chemistry-ch16",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Suggest a reagent or method for each conversion and name the product: (a) butan-2-ol → a ketone; (b) calcium propanoate → a ketone; (c) ethanenitrile → a ketone using a Grignard reagent.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Acidified K₂Cr₂O₇ (or Cu at 573 K): butanone. (b) Heat (dry distillation): pentan-3-one, (CH₃CH₂COO)₂Ca → CH₃CH₂COCH₂CH₃ + CaCO₃. (c) CH₃CH₂MgBr, then H₃O⁺: butanone (or C₆H₅MgBr → acetophenone)."
+      },
+      "solution_md": "Butanone; pentan-3-one; butanone.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch16-t02"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch16_022",
+      "unit": "isc-12-chemistry-ch16",
+      "language": "en",
+      "type": "short",
+      "stem_md": "An alkene C₅H₁₀ on ozonolysis gives propanone and ethanal. (a) Identify the alkene. (b) Name the two products by IUPAC rules. (c) What would but-1-ene give on ozonolysis?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) 2-Methylbut-2-ene, (CH₃)₂C=CHCH₃. (b) Propanone (propan-2-one) and ethanal. (c) Propanal and methanal."
+      },
+      "solution_md": "2-Methylbut-2-ene; propanal + methanal.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch16-t02"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch16_023",
+      "unit": "isc-12-chemistry-ch16",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Arrange methanal, ethanal and butanone in order of decreasing reactivity towards hydrogen cyanide.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "butanone > ethanal > methanal"
+        },
+        {
+          "id": "b",
+          "text_md": "methanal > ethanal > butanone"
+        },
+        {
+          "id": "c",
+          "text_md": "ethanal > methanal > butanone"
+        },
+        {
+          "id": "d",
+          "text_md": "all react at the same rate"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "More alkyl groups: less δ+ on carbon and more steric hindrance — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch16-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch16_024",
+      "unit": "isc-12-chemistry-ch16",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A trace of base speeds up the addition of HCN to propanone because:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "it converts HCN into CN⁻, the actual nucleophile"
+        },
+        {
+          "id": "b",
+          "text_md": "it protonates the carbonyl oxygen"
+        },
+        {
+          "id": "c",
+          "text_md": "it removes the cyanohydrin as it forms"
+        },
+        {
+          "id": "d",
+          "text_md": "it reduces the carbonyl group"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "HCN + OH⁻ → CN⁻ + H₂O; CN⁻ attacks the carbonyl carbon — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch16-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch16_025",
+      "unit": "isc-12-chemistry-ch16",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Ethanal is shaken with saturated sodium hydrogensulphite solution. A crystalline solid separates. This reaction is used to:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "convert aldehydes into ketones"
+        },
+        {
+          "id": "b",
+          "text_md": "separate and purify aldehydes from mixtures"
+        },
+        {
+          "id": "c",
+          "text_md": "test for alcohols"
+        },
+        {
+          "id": "d",
+          "text_md": "make carboxylic acids"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "The bisulphite adduct is filtered and decomposed by acid or alkali to recover the aldehyde — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch16-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch16_026",
+      "unit": "isc-12-chemistry-ch16",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Propanal reacts with hydroxylamine, NH₂OH. The product is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "propanamide"
+        },
+        {
+          "id": "b",
+          "text_md": "propanal oxime, CH₃CH₂CH=NOH"
+        },
+        {
+          "id": "c",
+          "text_md": "propan-1-amine"
+        },
+        {
+          "id": "d",
+          "text_md": "propanal cyanohydrin"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Addition then loss of water gives C=N–OH — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch16-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch16_027",
+      "unit": "isc-12-chemistry-ch16",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Ethylmagnesium bromide is added to ethanal and the product is hydrolysed. The alcohol obtained is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "butan-1-ol"
+        },
+        {
+          "id": "b",
+          "text_md": "2-methylpropan-2-ol"
+        },
+        {
+          "id": "c",
+          "text_md": "butan-2-ol"
+        },
+        {
+          "id": "d",
+          "text_md": "propan-2-ol"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "RMgX + R′CHO → secondary alcohol, CH₃CH(OH)CH₂CH₃ — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch16-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch16_028",
+      "unit": "isc-12-chemistry-ch16",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Propanone is less reactive than propanal towards nucleophilic addition.\n\n**Reason (R):** Propanone has two electron-releasing methyl groups, whereas propanal has a carbonyl hydrogen.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Both are true; the two alkyl groups reduce δ+ on carbon and hinder attack — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch16-t03"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch16_029",
+      "unit": "isc-12-chemistry-ch16",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? Hydrolysis of ethanal cyanohydrin gives 2-hydroxypropanoic acid (lactic acid).",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "t"
+        ]
+      },
+      "solution_md": "True. CH₃CH(OH)CN → CH₃CH(OH)COOH.",
+      "marking_scheme": [
+        {
+          "step": "True",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch16-t03"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch16_030",
+      "unit": "isc-12-chemistry-ch16",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "The derivative formed when propanone reacts with semicarbazide, NH₂NHCONH₂, is called propanone ___.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "semicarbazone"
+            ]
+          }
+        ]
+      },
+      "solution_md": "Propanone **semicarbazone**.",
+      "marking_scheme": [
+        {
+          "step": "Writes \"semicarbazone\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch16-t03"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch16_031",
+      "unit": "isc-12-chemistry-ch16",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Explain why aldehydes are generally more reactive than ketones towards nucleophilic addition, using ethanal and propanone as examples.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Electronic: propanone has two methyl groups (+I) that reduce the positive charge on the carbonyl carbon; ethanal has only one. Steric: two alkyl groups crowd the carbonyl carbon in propanone more than one methyl and a hydrogen in ethanal, hindering the approach of the nucleophile."
+      },
+      "solution_md": "+I effect and steric hindrance.",
+      "marking_scheme": [
+        {
+          "step": "Electronic reason",
+          "marks": 1
+        },
+        {
+          "step": "Steric reason",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch16-t03"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch16_032",
+      "unit": "isc-12-chemistry-ch16",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write the products of ethanal with (a) phenylhydrazine and (b) 2,4-dinitrophenylhydrazine, and state why such derivatives are useful.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Ethanal phenylhydrazone, CH₃CH=NNHC₆H₅ (+ H₂O). (b) Ethanal 2,4-dinitrophenylhydrazone, an orange/yellow solid (+ H₂O). These are crystalline solids with sharp, characteristic melting points, used to identify the parent carbonyl compound; the 2,4-DNP precipitate also tests for C=O."
+      },
+      "solution_md": "Phenylhydrazone; 2,4-DNP derivative; identification.",
+      "marking_scheme": [
+        {
+          "step": "Two products",
+          "marks": 1
+        },
+        {
+          "step": "Use",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch16-t03"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch16_033",
+      "unit": "isc-12-chemistry-ch16",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Give the mechanism of the base-catalysed addition of hydrogen cyanide to propanal.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(1) $\\ce{HCN + OH- -> CN- + H2O}$ (CN⁻ generated). (2) CN⁻ attacks the carbonyl carbon of propanal (slow), the π electrons move to oxygen, giving the tetrahedral alkoxide $\\ce{CH3CH2CH(O-)CN}$. (3) The alkoxide takes H⁺ from HCN (or water), giving the cyanohydrin $\\ce{CH3CH2CH(OH)CN}$ and regenerating CN⁻."
+      },
+      "solution_md": "CN⁻; attack; protonation.",
+      "marking_scheme": [
+        {
+          "step": "CN⁻ formation",
+          "marks": 1
+        },
+        {
+          "step": "Nucleophilic attack",
+          "marks": 1
+        },
+        {
+          "step": "Protonation; product",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 3,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch16-t03"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch16_034",
+      "unit": "isc-12-chemistry-ch16",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Give the product of propanone with (a) sodium hydrogensulphite, (b) hydrazine and (c) phenylmagnesium bromide followed by hydrolysis.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) (CH₃)₂C(OH)SO₃Na, the bisulphite adduct. (b) (CH₃)₂C=NNH₂, propanone hydrazone (+ H₂O). (c) 2-Phenylpropan-2-ol, (CH₃)₂C(OH)C₆H₅."
+      },
+      "solution_md": "Adduct; hydrazone; 3° alcohol.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch16-t03"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch16_035",
+      "unit": "isc-12-chemistry-ch16",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Butanone is heated with hydrazine and then with KOH in ethylene glycol. The organic product is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "butane"
+        },
+        {
+          "id": "b",
+          "text_md": "butan-2-ol"
+        },
+        {
+          "id": "c",
+          "text_md": "butanoic acid"
+        },
+        {
+          "id": "d",
+          "text_md": "but-2-ene"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Wolff–Kishner reduction: C=O → CH₂ — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch16-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch16_036",
+      "unit": "isc-12-chemistry-ch16",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which of these gives a yellow precipitate with iodine and NaOH: pentan-3-one, pentan-2-one, propanal or methanal?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Pentan-3-one"
+        },
+        {
+          "id": "b",
+          "text_md": "Propanal"
+        },
+        {
+          "id": "c",
+          "text_md": "Pentan-2-one"
+        },
+        {
+          "id": "d",
+          "text_md": "Methanal"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Only pentan-2-one has a CH₃CO– group — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch16-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch16_037",
+      "unit": "isc-12-chemistry-ch16",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "The Clemmensen reduction is unsuitable for a carbonyl compound that also contains an acid-sensitive group because it uses:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "hydrazine and potassium hydroxide"
+        },
+        {
+          "id": "b",
+          "text_md": "sodium borohydride in water"
+        },
+        {
+          "id": "c",
+          "text_md": "zinc amalgam and concentrated hydrochloric acid"
+        },
+        {
+          "id": "d",
+          "text_md": "hydrogen over nickel"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Clemmensen is strongly acidic; Wolff–Kishner (basic) is used instead — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch16-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch16_038",
+      "unit": "isc-12-chemistry-ch16",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Pentan-3-one is reduced with sodium borohydride. The product is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "pentane"
+        },
+        {
+          "id": "b",
+          "text_md": "pentan-1-ol"
+        },
+        {
+          "id": "c",
+          "text_md": "pentanoic acid"
+        },
+        {
+          "id": "d",
+          "text_md": "pentan-3-ol"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Ketone → secondary alcohol — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch16-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch16_039",
+      "unit": "isc-12-chemistry-ch16",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Aldehydes are oxidised by Tollens’ reagent but ketones are not.\n\n**Reason (R):** Ketones contain no carbonyl group.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "A is true (aldehydes have an oxidisable C–H on the carbonyl carbon). R is false — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch16-t04"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch16_040",
+      "unit": "isc-12-chemistry-ch16",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? Heating propanone with hydrogen iodide and red phosphorus gives propane.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "t"
+        ]
+      },
+      "solution_md": "True. CH₃COCH₃ + 4HI → CH₃CH₂CH₃ + H₂O + 2I₂.",
+      "marking_scheme": [
+        {
+          "step": "True",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch16-t04"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch16_041",
+      "unit": "isc-12-chemistry-ch16",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "$1.44\\ \\text{g}$ of butanone ($M = 72$) reacts completely with iodine and NaOH: $\\ce{CH3COCH2CH3 + 3I2 + 4NaOH -> CHI3 + CH3CH2COONa + 3NaI + 3H2O}$. What mass of iodoform ($M = 394$) forms?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 7.88,
+        "tolerance": 0.03,
+        "unit": "g"
+      },
+      "solution_md": "$n = 1.44 \\div 72 = 0.0200\\ \\text{mol}$; mass $= 0.0200 \\times 394 = 7.88\\ \\text{g}$.",
+      "marking_scheme": [
+        {
+          "step": "0.0200 mol",
+          "marks": 1
+        },
+        {
+          "step": "7.88 g",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch16-t04"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch16_042",
+      "unit": "isc-12-chemistry-ch16",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Compare the Clemmensen and Wolff–Kishner reductions: give the reagents for each and the product from propanone.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Clemmensen: zinc amalgam and concentrated HCl (acidic). Wolff–Kishner: hydrazine, then KOH (or C₂H₅ONa) in ethylene glycol on heating (basic). Both convert propanone to propane, CH₃CH₂CH₃."
+      },
+      "solution_md": "Acidic vs basic; propane.",
+      "marking_scheme": [
+        {
+          "step": "Reagents",
+          "marks": 1
+        },
+        {
+          "step": "Product",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch16-t04"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch16_043",
+      "unit": "isc-12-chemistry-ch16",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Name the product when butanal is treated with (a) LiAlH₄, (b) Zn–Hg and conc. HCl and (c) Tollens’ reagent.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Butan-1-ol. (b) Butane (Clemmensen). (c) Butanoate ion (butanoic acid on acidification), with a silver mirror."
+      },
+      "solution_md": "Butan-1-ol; butane; butanoate.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch16-t04"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch16_044",
+      "unit": "isc-12-chemistry-ch16",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "2,2-Dimethylpropanal, (CH₃)₃CCHO, is warmed with concentrated NaOH. It undergoes:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "aldol condensation"
+        },
+        {
+          "id": "b",
+          "text_md": "the iodoform reaction"
+        },
+        {
+          "id": "c",
+          "text_md": "the Cannizzaro reaction, because it has no α-hydrogen"
+        },
+        {
+          "id": "d",
+          "text_md": "no reaction at all"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "No α-H, concentrated alkali → disproportionation — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch16-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch16_045",
+      "unit": "isc-12-chemistry-ch16",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "The α-hydrogens of propanal are acidic because:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "the C–H bond is very long"
+        },
+        {
+          "id": "b",
+          "text_md": "they are bonded to the carbonyl oxygen"
+        },
+        {
+          "id": "c",
+          "text_md": "propanal is a strong acid"
+        },
+        {
+          "id": "d",
+          "text_md": "the enolate ion formed is stabilised by resonance with the carbonyl oxygen"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Negative charge delocalised onto O — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch16-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch16_046",
+      "unit": "isc-12-chemistry-ch16",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Methanal and ethanal are treated together with dilute NaOH. The main cross-aldol product is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "3-hydroxypropanal"
+        },
+        {
+          "id": "b",
+          "text_md": "3-hydroxybutanal"
+        },
+        {
+          "id": "c",
+          "text_md": "methanol and sodium ethanoate"
+        },
+        {
+          "id": "d",
+          "text_md": "propanal"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Ethanal enolate attacks methanal (no α-H) — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch16-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch16_047",
+      "unit": "isc-12-chemistry-ch16",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Butanal undergoes aldol condensation with dilute NaOH, and the aldol is heated. The final product is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "2-ethylhex-2-enal"
+        },
+        {
+          "id": "b",
+          "text_md": "oct-2-enal"
+        },
+        {
+          "id": "c",
+          "text_md": "3-hydroxyoctanal"
+        },
+        {
+          "id": "d",
+          "text_md": "2-ethylhexanoic acid"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Aldol: 2-ethyl-3-hydroxyhexanal → dehydration → 2-ethylhex-2-enal — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 4,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch16-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch16_048",
+      "unit": "isc-12-chemistry-ch16",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Benzaldehyde undergoes the Cannizzaro reaction with concentrated NaOH.\n\n**Reason (R):** Benzaldehyde has two α-hydrogens.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "A is true. R is false: benzaldehyde has no α-hydrogen, which is why it gives Cannizzaro — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch16-t05"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch16_049",
+      "unit": "isc-12-chemistry-ch16",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** In aldol condensation the enolate ion acts as a nucleophile.\n\n**Reason (R):** The enolate ion attacks the carbonyl carbon of a second carbonyl molecule.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Both true; R explains A — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch16-t05"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch16_050",
+      "unit": "isc-12-chemistry-ch16",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? In the crossed Cannizzaro reaction of benzaldehyde with methanal, benzaldehyde is oxidised and methanal is reduced.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "f"
+        ]
+      },
+      "solution_md": "False. Methanal is oxidised to methanoate; benzaldehyde is reduced to phenylmethanol.",
+      "marking_scheme": [
+        {
+          "step": "False, with the correction",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch16-t05"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch16_051",
+      "unit": "isc-12-chemistry-ch16",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "$0.20\\ \\text{mol}$ of methanal undergoes complete Cannizzaro reaction with concentrated NaOH: $\\ce{2HCHO + NaOH -> HCOONa + CH3OH}$. What mass of methanol ($M = 32$) forms?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 3.2,
+        "tolerance": 0.01,
+        "unit": "g"
+      },
+      "solution_md": "$n(\\ce{CH3OH}) = 0.20 \\div 2 = 0.10\\ \\text{mol}$; mass $= 0.10 \\times 32 = 3.2\\ \\text{g}$.",
+      "marking_scheme": [
+        {
+          "step": "2 : 1 ratio",
+          "marks": 1
+        },
+        {
+          "step": "3.2 g",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch16-t05"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch16_052",
+      "unit": "isc-12-chemistry-ch16",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write the aldol and the dehydration product formed from propanal with dilute NaOH.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "$\\ce{2CH3CH2CHO ->[dil. NaOH] CH3CH2CH(OH)CH(CH3)CHO}$ (3-hydroxy-2-methylpentanal); on heating it loses water: $\\ce{CH3CH2CH=C(CH3)CHO}$, 2-methylpent-2-enal."
+      },
+      "solution_md": "Aldol; enal.",
+      "marking_scheme": [
+        {
+          "step": "Aldol",
+          "marks": 1
+        },
+        {
+          "step": "Dehydration product",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch16-t05"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch16_053",
+      "unit": "isc-12-chemistry-ch16",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write the equation for the crossed Cannizzaro reaction of benzaldehyde with methanal in concentrated NaOH, and explain which aldehyde is oxidised.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "$\\ce{C6H5CHO + HCHO + NaOH -> C6H5CH2OH + HCOONa}$. Methanal is oxidised (to methanoate) because its carbonyl carbon is the most reactive towards OH⁻, so it forms the intermediate that transfers hydride; benzaldehyde accepts the hydride and is reduced."
+      },
+      "solution_md": "Equation; methanal oxidised.",
+      "marking_scheme": [
+        {
+          "step": "Equation",
+          "marks": 1
+        },
+        {
+          "step": "Explanation",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch16-t05"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch16_054",
+      "unit": "isc-12-chemistry-ch16",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Give the mechanism of the aldol reaction of ethanal with dilute NaOH.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(1) $\\ce{OH-}$ removes an α-H: $\\ce{CH3CHO + OH- -> CH2CHO- + H2O}$; the enolate is resonance-stabilised. (2) The enolate carbon attacks the carbonyl carbon of a second ethanal molecule, giving the alkoxide $\\ce{CH3CH(O-)CH2CHO}$. (3) The alkoxide takes H⁺ from water: $\\ce{CH3CH(OH)CH2CHO}$ (3-hydroxybutanal) and OH⁻ is regenerated."
+      },
+      "solution_md": "Enolate; attack; protonation.",
+      "marking_scheme": [
+        {
+          "step": "Enolate formation",
+          "marks": 1
+        },
+        {
+          "step": "Nucleophilic attack",
+          "marks": 1
+        },
+        {
+          "step": "Protonation; aldol",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 3,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch16-t05"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch16_055",
+      "unit": "isc-12-chemistry-ch16",
+      "language": "en",
+      "type": "short",
+      "stem_md": "State, with reasons, whether each compound undergoes aldol condensation or the Cannizzaro reaction with alkali: (a) propanone, (b) methanal, (c) 2-methylpropanal.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Aldol (dilute alkali): it has α-hydrogens (six). (b) Cannizzaro (concentrated alkali): no α-hydrogen. (c) Aldol: it has one α-hydrogen on C-2."
+      },
+      "solution_md": "Aldol; Cannizzaro; aldol.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch16-t05"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch16_056",
+      "unit": "isc-12-chemistry-ch16",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which of these does NOT reduce Fehling’s solution: methanal, ethanal, propanal or propanone?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Methanal"
+        },
+        {
+          "id": "b",
+          "text_md": "Ethanal"
+        },
+        {
+          "id": "c",
+          "text_md": "Propanal"
+        },
+        {
+          "id": "d",
+          "text_md": "Propanone"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Ketones are not oxidised by Fehling’s solution — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch16-t06"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch16_057",
+      "unit": "isc-12-chemistry-ch16",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which test distinguishes ethanal from methanal?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Tollens’ reagent"
+        },
+        {
+          "id": "b",
+          "text_md": "Fehling’s solution"
+        },
+        {
+          "id": "c",
+          "text_md": "Iodoform test (warm with I₂ and NaOH)"
+        },
+        {
+          "id": "d",
+          "text_md": "2,4-DNP"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Only ethanal has CH₃CO–; both reduce Tollens’ and Fehling’s, both give 2,4-DNP — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch16-t06"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch16_058",
+      "unit": "isc-12-chemistry-ch16",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Methanal reacts with ammonia to give urotropine (hexamine), used as a urinary antiseptic. Its formula is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "CH₂=NH"
+        },
+        {
+          "id": "b",
+          "text_md": "HCONH₂"
+        },
+        {
+          "id": "c",
+          "text_md": "(CH₂)₆N₄"
+        },
+        {
+          "id": "d",
+          "text_md": "(CH₃)₃N"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "6HCHO + 4NH₃ → (CH₂)₆N₄ + 6H₂O — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch16-t06"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch16_059",
+      "unit": "isc-12-chemistry-ch16",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "A 40% aqueous solution of methanal, used to preserve biological specimens, is called ___.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "formalin"
+            ]
+          }
+        ]
+      },
+      "solution_md": "**Formalin**.",
+      "marking_scheme": [
+        {
+          "step": "Writes \"formalin\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch16-t06"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch16_060",
+      "unit": "isc-12-chemistry-ch16",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "$0.58\\ \\text{g}$ of propanal ($M = 58$) is oxidised completely by Fehling’s solution: $\\ce{RCHO + 2Cu^2+ + 5OH- -> RCOO- + Cu2O + 3H2O}$. What mass of copper(I) oxide ($M = 143$) precipitates?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 1.43,
+        "tolerance": 0.01,
+        "unit": "g"
+      },
+      "solution_md": "$n = 0.58 \\div 58 = 0.010\\ \\text{mol}$; 1 : 1, so mass $= 0.010 \\times 143 = 1.43\\ \\text{g}$.",
+      "marking_scheme": [
+        {
+          "step": "0.010 mol",
+          "marks": 1
+        },
+        {
+          "step": "1.43 g",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch16-t06"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch16_061",
+      "unit": "isc-12-chemistry-ch16",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Give one chemical test, with observations, to distinguish (a) propanal from propanone and (b) pentan-2-one from pentan-3-one.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Tollens’ reagent: propanal gives a silver mirror; propanone does not (or Fehling’s: red-brown precipitate with propanal only). (b) Iodoform test (I₂/NaOH, warm): pentan-2-one gives a yellow precipitate of CHI₃; pentan-3-one does not."
+      },
+      "solution_md": "Tollens’; iodoform.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch16-t06"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch16_062",
+      "unit": "isc-12-chemistry-ch16",
+      "language": "en",
+      "type": "short",
+      "stem_md": "A compound X, C₄H₈O, gives an orange precipitate with 2,4-DNP and a yellow precipitate with iodine and NaOH, but does not reduce Tollens’ reagent. (a) Identify X. (b) Write the equation for its iodoform reaction. (c) What would X give with NaBH₄?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) X is a methyl ketone (C=O present; not an aldehyde; CH₃CO–): butanone, CH₃COCH₂CH₃. (b) $\\ce{CH3COCH2CH3 + 3I2 + 4NaOH -> CHI3 + CH3CH2COONa + 3NaI + 3H2O}$. (c) Butan-2-ol."
+      },
+      "solution_md": "Butanone; iodoform equation; butan-2-ol.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 4,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch16-t04",
+        "isc-12-chemistry-ch16-t06"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch16_063",
+      "unit": "isc-12-chemistry-ch16",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Write equations for preparing (i) propanal by the Rosenmund reduction and (ii) propanone from calcium ethanoate. [2]\n\n(b) How is butanone obtained from ethanenitrile using a Grignard reagent? [1½]\n\n(c) Explain why propanone boils higher than butane but lower than propan-1-ol. [1½]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) (i) $\\ce{CH3CH2COCl + H2 ->[Pd/BaSO4] CH3CH2CHO + HCl}$. (ii) $\\ce{(CH3COO)2Ca ->[\\Delta] CH3COCH3 + CaCO3}$.\n\n(b) Ethylmagnesium bromide adds to the nitrile carbon to give an imine salt, CH₃C(=NMgBr)CH₂CH₃, which dilute acid hydrolyses to butanone, CH₃COCH₂CH₃.\n\n(c) Propanone is polar (dipole–dipole forces), so it boils above non-polar butane, but it has no O–H and cannot hydrogen-bond with itself, unlike propan-1-ol."
+      },
+      "solution_md": "Rosenmund; calcium salt; Grignard + nitrile; b.p.",
+      "marking_scheme": [
+        {
+          "step": "(a)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(a)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1.5
+        },
+        {
+          "step": "(c)",
+          "marks": 1.5
+        }
+      ],
+      "marks": 5,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch16-t01",
+        "isc-12-chemistry-ch16-t02"
+      ],
+      "expected_time_sec": 570,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch16_064",
+      "unit": "isc-12-chemistry-ch16",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Give the mechanism of the addition of HCN to ethanal, including the role of the base. [2]\n\n(b) Why is methanal more reactive than propanone towards nucleophiles? [1]\n\n(c) Give the products of propanone with (i) NaHSO₃, (ii) hydroxylamine and (iii) CH₃MgI followed by hydrolysis. [2]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) $\\ce{HCN + OH- -> CN- + H2O}$; CN⁻ attacks the carbonyl carbon (slow) giving $\\ce{CH3CH(O-)CN}$; protonation by HCN gives the cyanohydrin $\\ce{CH3CH(OH)CN}$ and regenerates CN⁻. The base generates the nucleophile.\n\n(b) Methanal has no alkyl groups: its carbonyl carbon is more positive and less hindered.\n\n(c) (i) $\\ce{(CH3)2C(OH)SO3Na}$. (ii) Propanone oxime, $\\ce{(CH3)2C=NOH}$. (iii) 2-Methylpropan-2-ol."
+      },
+      "solution_md": "HCN mechanism; reactivity; three products.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 2
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 2
+        }
+      ],
+      "marks": 5,
+      "difficulty": 3,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch16-t03"
+      ],
+      "expected_time_sec": 570,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch16_065",
+      "unit": "isc-12-chemistry-ch16",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) What are α-hydrogens, and why are they acidic? [1]\n\n(b) Give the mechanism of the aldol condensation of ethanal and name the product formed on heating. [2½]\n\n(c) Write the equation for the Cannizzaro reaction of methanal and explain why ethanal does not undergo this reaction. [1½]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Hydrogens on the carbon next to C=O; removing one gives an enolate stabilised by resonance (charge on O).\n\n(b) $\\ce{OH-}$ removes an α-H to give the enolate $\\ce{CH2CHO-}$; this attacks the C=O of another ethanal; the alkoxide is protonated by water to give 3-hydroxybutanal (aldol). On heating it loses water to give but-2-enal, $\\ce{CH3CH=CHCHO}$.\n\n(c) $\\ce{2HCHO + NaOH -> HCOONa + CH3OH}$. Ethanal has α-hydrogens, so with alkali it forms an enolate and undergoes aldol condensation instead."
+      },
+      "solution_md": "α-H; aldol mechanism; Cannizzaro.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b) Mechanism",
+          "marks": 2
+        },
+        {
+          "step": "(b) But-2-enal",
+          "marks": 0.5
+        },
+        {
+          "step": "(c)",
+          "marks": 1.5
+        }
+      ],
+      "marks": 5,
+      "difficulty": 3,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch16-t05"
+      ],
+      "expected_time_sec": 570,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch16_066",
+      "unit": "isc-12-chemistry-ch16",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Write equations for the oxidation of ethanal by Tollens’ reagent and by Fehling’s solution, and state the observations. [2]\n\n(b) Give the reagents and conditions for reducing butanone to (i) butan-2-ol and (ii) butane by two different methods. [2]\n\n(c) Which of propanal, butanone and pentan-3-one give the iodoform test? [1]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) $\\ce{CH3CHO + 2[Ag(NH3)2]+ + 3OH- -> CH3COO- + 2Ag + 2H2O + 4NH3}$: silver mirror. $\\ce{CH3CHO + 2Cu^2+ + 5OH- -> CH3COO- + Cu2O + 3H2O}$: red-brown precipitate.\n\n(b) (i) NaBH₄ (or LiAlH₄, or H₂/Ni). (ii) Clemmensen: Zn–Hg, conc. HCl; Wolff–Kishner: NH₂NH₂, then KOH in ethylene glycol, heat (or red P + HI).\n\n(c) Only butanone (CH₃CO–)."
+      },
+      "solution_md": "Tollens’ and Fehling’s; reductions; butanone.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 2
+        },
+        {
+          "step": "(b)(i)",
+          "marks": 0.5
+        },
+        {
+          "step": "(b)(ii)",
+          "marks": 1.5
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 5,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch16-t04",
+        "isc-12-chemistry-ch16-t06"
+      ],
+      "expected_time_sec": 570,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch16_067",
+      "unit": "isc-12-chemistry-ch16",
+      "language": "en",
+      "type": "long",
+      "stem_md": "Three compounds A, B and C have the formula C₃H₆O. A gives a silver mirror with Tollens’ reagent; B gives a yellow precipitate with I₂/NaOH but no silver mirror; C decolourises bromine water and reacts with sodium, liberating hydrogen.\n\n(a) Identify A, B and C. [3]\n\n(b) Write the equation for the reaction of B with HCN. [1]\n\n(c) What does A give with dilute NaOH? [1]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) A: propanal, CH₃CH₂CHO (aldehyde). B: propanone, CH₃COCH₃ (methyl ketone). C: prop-2-en-1-ol, CH₂=CHCH₂OH (C=C and –OH).\n\n(b) CH₃COCH₃ + HCN → (CH₃)₂C(OH)CN.\n\n(c) Aldol condensation: 3-hydroxy-2-methylpentanal (and 2-methylpent-2-enal on heating)."
+      },
+      "solution_md": "Propanal; propanone; prop-2-en-1-ol.",
+      "marking_scheme": [
+        {
+          "step": "A",
+          "marks": 1
+        },
+        {
+          "step": "B",
+          "marks": 1
+        },
+        {
+          "step": "C",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 5,
+      "difficulty": 4,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch16-t03",
+        "isc-12-chemistry-ch16-t05",
+        "isc-12-chemistry-ch16-t06"
+      ],
+      "expected_time_sec": 570,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    }
+  ],
+  "build": {
+    "run_id": null,
+    "checks": {
+      "katex_mhchem": "91 math strings parsed with KaTeX 0.19.0 + mhchem (throwOnError, strict \"error\"), 0 failures",
+      "svg_allowlist": "4 SVG visuals (2 distinct diagrams) checked with saxes against svg-allowlist.ts: elements, attributes, class pattern, fragment-only refs, no style, palette incl. named hues, viewBox, title, per-page unique ids — 0 failures",
+      "narration": "31 slides, 14–70 words (mean 49), no symbols, formulae or unit abbreviations",
+      "resolve": "4/4 scripted re-solve checks pass",
+      "chemistry_facts": "Names, preparations (Rosenmund, dialkylcadmium, calcium salts, Stephen, Grignard + nitrile, DIBAL-H, ozonolysis, alkyne hydration), nucleophilic addition with the HCN mechanism, oxidation, iodoform, Clemmensen, Wolff–Kishner and red P/HI reductions, aldol, cross aldol and Cannizzaro reactions, tests and every numerical checked against the ISC 2027 syllabus (Unit 8)",
+      "content_gate": "npm test -w @soyl/content-templates: all checks pass for this chapter",
+      "verifier_pass": "2026-10-30: every question and every internal-choice alternative re-solved from its stem by the author; every numerical re-computed by the build script — see README \"Verifier pass\"",
+      "pipeline_lint": "npm run content -- lint --exemplars: 0 errors, 0 warnings"
+    }
+  }
+}

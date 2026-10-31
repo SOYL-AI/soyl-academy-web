@@ -1,0 +1,5082 @@
+{
+  "unit": "isc-12-chemistry-ch13",
+  "version": 1,
+  "academic_year": "2026-27",
+  "created_at": "2026-10-30T00:00:00+05:30",
+  "decks": [
+    {
+      "unit": "isc-12-chemistry-ch13",
+      "part": 1,
+      "version": 1,
+      "title": "Haloarenes — Part 1: The C–X bond, preparation and physical properties",
+      "language": "en",
+      "goals": [
+        "Explain why the C–Cl bond in chlorobenzene is shorter and stronger than in chloroalkanes",
+        "Write equations for preparing haloarenes by electrophilic substitution and from benzenediazonium chloride",
+        "Explain the physical properties of haloarenes, including the high melting point of the para-dichloro isomer"
+      ],
+      "slides": [
+        {
+          "id": "s01",
+          "layout": "title",
+          "heading": "Halogens on a benzene ring",
+          "body_md": "Part 1 — how a halogen bonded directly to a benzene ring differs from one in a haloalkane.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Haloarene",
+                "Use"
+              ],
+              "rows": [
+                [
+                  "Chlorobenzene",
+                  "Solvent; intermediate for phenol, aniline, DDT"
+                ],
+                [
+                  "1,4-Dichlorobenzene",
+                  "Moth balls, toilet deodoriser blocks"
+                ],
+                [
+                  "Bromobenzene",
+                  "Making phenylmagnesium bromide"
+                ],
+                [
+                  "DDT",
+                  "Insecticide (now restricted)"
+                ]
+              ]
+            },
+            "alt": "Table of haloarenes and their uses"
+          },
+          "math": [],
+          "narration": "Namaste! Moth balls, the insecticide DDT and the starting material for many dyes and drugs all contain a halogen bonded directly to a benzene ring. These are haloarenes, or aryl halides. Though they look like haloalkanes, they behave very differently. In this part we see why, how they are made, and what their physical properties are.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s02",
+          "layout": "concept",
+          "heading": "Haloarenes",
+          "body_md": "In a **haloarene** (aryl halide), X is bonded to an **sp² carbon of an aromatic ring**: C₆H₅X. In a **benzylic halide** (C₆H₅CH₂X), X is on an sp³ carbon next to the ring and behaves like a reactive haloalkane.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Compound",
+                "IUPAC name",
+                "Type"
+              ],
+              "rows": [
+                [
+                  "C₆H₅Cl",
+                  "Chlorobenzene",
+                  "Aryl halide"
+                ],
+                [
+                  "C₆H₄Cl₂ (1,4)",
+                  "1,4-Dichlorobenzene",
+                  "Aryl dihalide"
+                ],
+                [
+                  "CH₃C₆H₄Br (para)",
+                  "1-Bromo-4-methylbenzene",
+                  "Aryl halide"
+                ],
+                [
+                  "C₆H₅CH₂Cl",
+                  "(Chloromethyl)benzene",
+                  "Benzylic halide (not aryl)"
+                ]
+              ]
+            },
+            "alt": "Table distinguishing aryl and benzylic halides"
+          },
+          "math": [],
+          "narration": "An aryl halide has the halogen joined straight to a carbon of the benzene ring, which is sp two hybridised. Do not confuse it with a benzylic halide such as benzyl chloride, where the halogen is on a carbon attached to the ring. Benzyl chloride is very reactive, like a haloalkane; chlorobenzene is remarkably unreactive towards nucleophiles.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s03",
+          "layout": "diagram",
+          "heading": "Nature of the C–X bond",
+          "body_md": "In chlorobenzene a lone pair on Cl is **delocalised into the ring** (+R effect), so the C–Cl bond has **partial double-bond character**. In addition, the carbon is **sp²** (more s character, more electronegative). Both make the C–Cl bond **shorter and stronger** than in chloroalkanes.",
+          "bullets": [],
+          "visual": {
+            "kind": "svg",
+            "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 360 170\" role=\"img\" aria-label=\"Two resonance structures of chlorobenzene. Left: the normal Kekulé ring with a single C–Cl bond. Right: a lone pair from chlorine has moved into the ring, giving a double bond between carbon and chlorine, a positive charge on chlorine and a negative charge on a ring carbon ortho to it. The real molecule is a hybrid, so the C–Cl bond has partial double-bond character.\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>Two resonance structures of chlorobenzene. Left: the normal Kekulé ring with a single C–Cl bond. Right: a lone pair from chlorine has moved into the ring, giving a double bond between carbon and chlorine, a positive charge on chlorine and a negative charge on a ring carbon ortho to it. The real molecule is a hybrid, so the C–Cl bond has partial double-bond character.</title><line x1=\"80\" y1=\"70\" x2=\"106\" y2=\"85\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"106\" y1=\"85\" x2=\"106\" y2=\"115\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"101.3\" y1=\"90.4\" x2=\"101.3\" y2=\"109.6\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"106\" y1=\"115\" x2=\"80\" y2=\"130\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"80\" y1=\"130\" x2=\"54\" y2=\"115\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"77.7\" y1=\"123.3\" x2=\"61\" y2=\"113.7\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"54\" y1=\"115\" x2=\"54\" y2=\"85\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"54\" y1=\"85\" x2=\"80\" y2=\"70\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"61\" y1=\"86.4\" x2=\"77.7\" y2=\"76.8\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"80\" y1=\"70\" x2=\"80\" y2=\"44\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"80\" y=\"38\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">Cl</text><text x=\"94\" y=\"30\" fill=\"currentColor\" stroke=\"none\" font-size=\"12\">··</text><line x1=\"140\" y1=\"100\" x2=\"185.2\" y2=\"100\" stroke=\"currentColor\" stroke-width=\"1.5\"/><polygon points=\"190,100 184.5,102.4 184.5,97.6\" fill=\"currentColor\" stroke=\"none\"/><line x1=\"190\" y1=\"100\" x2=\"144.8\" y2=\"100\" stroke=\"currentColor\" stroke-width=\"1.5\"/><polygon points=\"140,100 145.5,97.6 145.5,102.4\" fill=\"currentColor\" stroke=\"none\"/><line x1=\"260\" y1=\"70\" x2=\"286\" y2=\"85\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"286\" y1=\"85\" x2=\"286\" y2=\"115\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"286\" y1=\"115\" x2=\"260\" y2=\"130\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"279\" y1=\"113.7\" x2=\"262.3\" y2=\"123.3\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"260\" y1=\"130\" x2=\"234\" y2=\"115\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"234\" y1=\"115\" x2=\"234\" y2=\"85\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"238.7\" y1=\"109.6\" x2=\"238.7\" y2=\"90.4\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"234\" y1=\"85\" x2=\"260\" y2=\"70\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"257.5\" y1=\"70\" x2=\"257.5\" y2=\"44\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"262.5\" y1=\"70\" x2=\"262.5\" y2=\"44\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"260\" y=\"38\" fill=\"var(--diagram-red)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">Cl⁺</text><text x=\"294\" y=\"89\" fill=\"var(--diagram-blue)\" stroke=\"none\" font-size=\"14\" font-weight=\"bold\">−</text><text x=\"80\" y=\"160\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">C–Cl single bond</text><text x=\"260\" y=\"160\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">C=Cl⁺, negative charge at ortho C</text></svg>",
+            "alt": "Two resonance structures of chlorobenzene, one with a single carbon–chlorine bond and one with a carbon–chlorine double bond, a positive charge on chlorine and a negative charge at the ortho carbon"
+          },
+          "math": [],
+          "narration": "Look at the resonance structures. One lone pair of chlorine can spread into the benzene ring, giving the carbon to chlorine bond some double-bond character. Also, the ring carbon is sp two hybridised, with more s character than the sp three carbon of a haloalkane, so it holds the bonding pair more tightly. Both effects shorten and strengthen the bond.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s04",
+          "layout": "concept",
+          "heading": "Comparing bond lengths and dipole moments",
+          "body_md": "The C–Cl bond in chlorobenzene is shorter and less polar than in chloromethane: the +R effect of Cl partly opposes its −I effect.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Property",
+                "CH₃Cl",
+                "C₆H₅Cl"
+              ],
+              "rows": [
+                [
+                  "C hybridisation",
+                  "sp³",
+                  "sp²"
+                ],
+                [
+                  "C–Cl bond length",
+                  "177 pm",
+                  "169 pm"
+                ],
+                [
+                  "Dipole moment",
+                  "1.86 D",
+                  "1.69 D"
+                ],
+                [
+                  "Partial double-bond character",
+                  "No",
+                  "Yes"
+                ]
+              ]
+            },
+            "alt": "Table comparing chloromethane and chlorobenzene"
+          },
+          "math": [],
+          "narration": "Experiments support the picture. The carbon–chlorine bond is one hundred and sixty nine picometres in chlorobenzene but one hundred and seventy seven in chloromethane. The dipole moment of chlorobenzene is also smaller, because electrons pushed back into the ring by resonance partly cancel the pull of chlorine’s electronegativity.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s05",
+          "layout": "example",
+          "heading": "Worked example: explaining the data",
+          "body_md": "**Problem.** Explain why (a) the C–Cl bond is shorter in chlorobenzene than in chloroethane, and (b) chlorobenzene (1.69 D) has a smaller dipole moment than chloroethane (2.05 D).\n\n**(a)** Resonance gives C–Cl partial double-bond character, and the sp² carbon is more electronegative than sp³: shorter, stronger bond.\n\n**(b)** In chloroethane only the −I effect of Cl operates. In chlorobenzene the +R effect (Cl lone pair into the ring) acts in the opposite direction, reducing the net polarity.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Effect",
+                "Chloroethane",
+                "Chlorobenzene"
+              ],
+              "rows": [
+                [
+                  "−I of Cl",
+                  "Yes",
+                  "Yes"
+                ],
+                [
+                  "+R of Cl",
+                  "No",
+                  "Yes"
+                ],
+                [
+                  "Net dipole",
+                  "2.05 D",
+                  "1.69 D"
+                ]
+              ]
+            },
+            "alt": "Table of electronic effects in chloroethane and chlorobenzene"
+          },
+          "math": [],
+          "narration": "Both answers come from resonance. In chlorobenzene, partial double-bond character and the sp two carbon make the bond shorter. As for polarity, chlorine pulls electrons through the sigma bond in both compounds, but in chlorobenzene it also pushes a lone pair back into the ring, which works against that pull and reduces the dipole moment.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s06",
+          "layout": "check",
+          "heading": "Quick check: the C–X bond",
+          "body_md": "Explain a property of the C–Cl bond in chlorobenzene.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Think about resonance and the hybridisation of the ring carbon.",
+          "check_question_id": "q_isc12chem_ch13_001",
+          "audio": null
+        },
+        {
+          "id": "s07",
+          "layout": "concept",
+          "heading": "Preparation by electrophilic substitution",
+          "body_md": "Benzene reacts with Cl₂ or Br₂ in the presence of a **Lewis acid** (FeCl₃, FeBr₃, AlCl₃) in the dark. The catalyst polarises X₂ to give the electrophile X⁺. Iodination is reversible and needs an oxidising agent (HNO₃ or HIO₃) to remove HI; fluorination is too violent.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Halogen",
+                "Conditions",
+                "Note"
+              ],
+              "rows": [
+                [
+                  "Cl₂",
+                  "FeCl₃ or AlCl₃, dark",
+                  "Good yield"
+                ],
+                [
+                  "Br₂",
+                  "FeBr₃",
+                  "Good yield"
+                ],
+                [
+                  "I₂",
+                  "With HNO₃ (oxidises HI)",
+                  "Reversible otherwise"
+                ],
+                [
+                  "F₂",
+                  "—",
+                  "Too violent; not used"
+                ]
+              ]
+            },
+            "alt": "Table of conditions for halogenating benzene"
+          },
+          "math": [
+            "\\ce{C6H6 + Cl2 ->[FeCl3][dark] C6H5Cl + HCl}",
+            "\\ce{C6H5CH3 + Br2 ->[FeBr3] BrC6H4CH3 + HBr}"
+          ],
+          "narration": "Benzene does not react with chlorine on its own, but a Lewis acid such as iron three chloride polarises the chlorine molecule, producing an electrophile that attacks the ring. The reaction is done in the dark to avoid free-radical addition. With toluene, the methyl group directs bromine to the ortho and para positions. Direct iodination needs an oxidising agent, and fluorination is too violent.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s08",
+          "layout": "concept",
+          "heading": "Preparation from benzenediazonium chloride",
+          "body_md": "Aniline is diazotised (NaNO₂ + HCl, 273–278 K) to benzenediazonium chloride. **Sandmeyer:** CuCl/HCl or CuBr/HBr. **Gattermann:** copper powder with HCl or HBr. With **KI**, iodobenzene forms directly.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Reaction",
+                "Reagent",
+                "Product"
+              ],
+              "rows": [
+                [
+                  "Sandmeyer",
+                  "CuCl/HCl",
+                  "Chlorobenzene"
+                ],
+                [
+                  "Sandmeyer",
+                  "CuBr/HBr",
+                  "Bromobenzene"
+                ],
+                [
+                  "Gattermann",
+                  "Cu powder + HCl",
+                  "Chlorobenzene"
+                ],
+                [
+                  "—",
+                  "KI (warm)",
+                  "Iodobenzene"
+                ]
+              ]
+            },
+            "alt": "Table of preparations from benzenediazonium chloride"
+          },
+          "math": [
+            "\\ce{C6H5NH2 + NaNO2 + 2HCl ->[273-278 K] C6H5N2Cl + NaCl + 2H2O}",
+            "\\ce{C6H5N2Cl ->[CuCl/HCl] C6H5Cl + N2}",
+            "\\ce{C6H5N2Cl + KI -> C6H5I + KCl + N2}"
+          ],
+          "narration": "A cleaner route uses diazonium salts. Aniline is treated with sodium nitrite and hydrochloric acid in ice to give benzenediazonium chloride. In the Sandmeyer reaction, copper one chloride or bromide replaces the diazonium group by chlorine or bromine; in the Gattermann reaction, copper powder and the acid are used instead. Iodobenzene forms simply by warming with potassium iodide.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s09",
+          "layout": "example",
+          "heading": "Worked example: choosing a route",
+          "body_md": "**Problem.** Suggest a method, with reagents, to prepare (a) pure 4-bromotoluene from 4-methylaniline, (b) iodobenzene from aniline, (c) chlorobenzene from benzene.\n\n**(a)** Diazotise ($\\ce{NaNO2/HCl}$, 273–278 K), then CuBr/HBr (Sandmeyer) — avoids the o/p mixture from direct bromination of toluene.\n\n**(b)** Diazotise, then warm with KI.\n\n**(c)** $\\ce{Cl2}$ with anhydrous FeCl₃ in the dark.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Target",
+                "Route"
+              ],
+              "rows": [
+                [
+                  "4-Bromotoluene (pure)",
+                  "Diazotise 4-methylaniline, CuBr/HBr"
+                ],
+                [
+                  "Iodobenzene",
+                  "Diazotise aniline, KI"
+                ],
+                [
+                  "Chlorobenzene",
+                  "Cl₂, FeCl₃, dark"
+                ]
+              ]
+            },
+            "alt": "Table of routes"
+          },
+          "math": [],
+          "narration": "Direct bromination of toluene gives a mixture of ortho and para products, so for pure four-bromotoluene it is better to start from four-methylaniline: the diazonium group is replaced by bromine exactly where the amino group was. Iodobenzene comes from the diazonium salt and potassium iodide. And chlorobenzene is made directly from benzene with chlorine and iron three chloride.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s10",
+          "layout": "check",
+          "heading": "Quick check: preparation",
+          "body_md": "Choose the reagent for preparing a haloarene.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Recall which reactions use copper salts, copper powder or a Lewis acid.",
+          "check_question_id": "q_isc12chem_ch13_002",
+          "audio": null
+        },
+        {
+          "id": "s11",
+          "layout": "concept",
+          "heading": "Physical properties",
+          "body_md": "Haloarenes are colourless liquids or solids, **insoluble in water**, soluble in organic solvents, and denser than water (bromo-, iodo-). B.p. rises with molar mass (C₆H₅F < C₆H₅Cl < C₆H₅Br < C₆H₅I). The **para** isomer of a dihalobenzene has a much **higher melting point** than ortho and meta, because its symmetrical molecules pack better in the crystal.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Compound",
+                "m.p. / K",
+                "b.p. / K"
+              ],
+              "rows": [
+                [
+                  "1,2-Dichlorobenzene",
+                  "256",
+                  "453"
+                ],
+                [
+                  "1,3-Dichlorobenzene",
+                  "249",
+                  "446"
+                ],
+                [
+                  "1,4-Dichlorobenzene",
+                  "323",
+                  "447"
+                ],
+                [
+                  "Chlorobenzene",
+                  "228",
+                  "405"
+                ],
+                [
+                  "Bromobenzene",
+                  "242",
+                  "429"
+                ]
+              ]
+            },
+            "alt": "Table of melting and boiling points of haloarenes"
+          },
+          "math": [],
+          "narration": "Haloarenes do not dissolve in water but mix with organic solvents. Their boiling points rise with molar mass. The three dichlorobenzenes boil at similar temperatures, because boiling depends mainly on molecular size, but the para isomer melts about seventy degrees higher. Its symmetrical molecules fit neatly into a crystal lattice, so more energy is needed to melt it.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s12",
+          "layout": "example",
+          "heading": "Worked example: melting and boiling points",
+          "body_md": "**Problem.** (a) Why does 1,4-dibromobenzene (m.p. 360 K) melt so much higher than 1,2-dibromobenzene (m.p. 280 K), although both boil near 492 K? (b) Arrange chlorobenzene, bromobenzene and iodobenzene by boiling point.\n\n**(a)** Boiling depends on intermolecular forces in the liquid, which are similar for isomers of equal mass. Melting also depends on **packing** in the crystal: the symmetrical para isomer packs more closely, giving a stronger lattice.\n\n**(b)** C₆H₅Cl < C₆H₅Br < C₆H₅I (increasing mass and polarisability).",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Compound",
+                "m.p. / K"
+              ],
+              "rows": [
+                [
+                  "1,2-Dibromobenzene",
+                  "≈ 280"
+                ],
+                [
+                  "1,4-Dibromobenzene",
+                  "≈ 360"
+                ]
+              ]
+            },
+            "alt": "Table of melting points of dibromobenzene isomers"
+          },
+          "math": [],
+          "narration": "Isomers of the same mass have similar forces in the liquid, so they boil at similar temperatures. But melting means breaking up a crystal, and the symmetrical para molecules stack much more efficiently, so the para isomer melts far higher. Boiling points of the monohalobenzenes rise from chloro to iodo, as the molecules get heavier and more polarisable.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s13",
+          "layout": "check",
+          "heading": "Quick check: physical properties",
+          "body_md": "Explain a melting or boiling point trend in haloarenes.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Separate the effect of molar mass on boiling from the effect of symmetry on melting.",
+          "check_question_id": "q_isc12chem_ch13_018",
+          "audio": null
+        },
+        {
+          "id": "s14",
+          "layout": "summary",
+          "heading": "Summary: Part 1",
+          "body_md": "",
+          "bullets": [
+            "Aryl halides: X on sp² ring carbon; benzylic halides are different.",
+            "C–X in haloarenes shorter and stronger (resonance, sp² carbon); smaller dipole moment.",
+            "Preparation: X₂ + Lewis acid (dark); Sandmeyer (CuX/HX); Gattermann (Cu/HX); KI for iodobenzene.",
+            "Insoluble in water; para-dihalobenzenes have the highest melting points."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Method",
+                "Reagent"
+              ],
+              "rows": [
+                [
+                  "Halogenation",
+                  "Cl₂/FeCl₃"
+                ],
+                [
+                  "Sandmeyer",
+                  "CuCl/HCl"
+                ],
+                [
+                  "Gattermann",
+                  "Cu/HCl"
+                ],
+                [
+                  "Iodobenzene",
+                  "KI"
+                ]
+              ]
+            },
+            "alt": "Summary table of preparations"
+          },
+          "math": [],
+          "narration": "Let us sum up Part 1. In haloarenes the halogen is joined to an sp two ring carbon, and resonance gives the bond partial double-bond character, making it short, strong and less polar. Haloarenes are made by halogenating benzene with a Lewis acid, or from diazonium salts by the Sandmeyer and Gattermann reactions. The para isomers of dihalobenzenes melt highest because they pack best.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s15",
+          "layout": "exam-tips",
+          "heading": "Exam tips: Part 1",
+          "body_md": "",
+          "bullets": [
+            "Mention both reasons for the strong C–X bond: resonance and sp² hybridisation.",
+            "Give conditions: Lewis acid, dark; diazotisation at 273–278 K.",
+            "Distinguish Sandmeyer (CuCl/HCl) from Gattermann (Cu/HCl).",
+            "Explain m.p. by packing (symmetry), not by molar mass."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Slip",
+                "Fix"
+              ],
+              "rows": [
+                [
+                  "Benzyl chloride is an aryl halide",
+                  "It is benzylic"
+                ],
+                [
+                  "Gattermann uses CuCl",
+                  "Uses Cu powder + HX"
+                ],
+                [
+                  "p-isomer boils highest",
+                  "It melts highest"
+                ]
+              ]
+            },
+            "alt": "Table of three common slips in Part 1 and fixes"
+          },
+          "math": [],
+          "narration": "Some tips. Give both reasons for the short, strong carbon to halogen bond. Write the conditions, especially the Lewis acid and the low temperature for diazotisation. Keep the Sandmeyer and Gattermann reagents apart. And explain the high melting point of the para isomer by packing, not by mass.",
+          "check_question_id": null,
+          "audio": null
+        }
+      ],
+      "status": "draft",
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "unit": "isc-12-chemistry-ch13",
+      "part": 2,
+      "version": 1,
+      "title": "Haloarenes — Part 2: Electrophilic and nucleophilic substitution, metals and DDT",
+      "language": "en",
+      "goals": [
+        "Draw the mechanism of nitration of chlorobenzene and explain the ortho/para directing but deactivating effect of halogen",
+        "Explain why haloarenes resist nucleophilic substitution and how ortho/para nitro groups assist it",
+        "Write equations for reduction, Wurtz–Fittig, Fittig and Grignard reactions",
+        "Draw the structure of DDT and explain why its use is restricted"
+      ],
+      "slides": [
+        {
+          "id": "s01",
+          "layout": "title",
+          "heading": "Reactions of haloarenes",
+          "body_md": "Part 2 — substitution on the ring, replacement of the halogen, reactions with metals, and DDT.",
+          "bullets": [],
+          "visual": {
+            "kind": "flow",
+            "spec": {
+              "direction": "LR",
+              "nodes": [
+                {
+                  "id": "a",
+                  "label": "Haloarene"
+                },
+                {
+                  "id": "b",
+                  "label": "Electrophilic substitution (o/p)"
+                },
+                {
+                  "id": "c",
+                  "label": "Nucleophilic substitution (hard)"
+                },
+                {
+                  "id": "d",
+                  "label": "Reduction; Na and Mg reactions"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "a",
+                  "to": "b"
+                },
+                {
+                  "from": "a",
+                  "to": "c"
+                },
+                {
+                  "from": "a",
+                  "to": "d"
+                }
+              ]
+            },
+            "alt": "Flow of the reactions of haloarenes"
+          },
+          "math": [],
+          "narration": "Haloarenes react in two very different ways. The ring can be attacked by electrophiles, and the halogen directs them to ortho and para positions while slowing the reaction. The halogen itself can be replaced by nucleophiles only under harsh conditions, unless nitro groups help. Finally we meet reactions with sodium and magnesium, and the story of DDT.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s02",
+          "layout": "concept",
+          "heading": "Halogen: deactivating but ortho/para directing",
+          "body_md": "Halogen has a strong **−I effect** (withdraws electrons through the σ bond) that makes the ring **less reactive** than benzene, and a **+R effect** (lone pair into the ring) that increases electron density at **ortho and para** positions. −I outweighs +R for reactivity; +R decides orientation.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Effect",
+                "Direction",
+                "Result"
+              ],
+              "rows": [
+                [
+                  "−I",
+                  "Electrons withdrawn from ring",
+                  "Deactivation: slower than benzene"
+                ],
+                [
+                  "+R",
+                  "Lone pair donated to o, p",
+                  "o/p directing"
+                ]
+              ]
+            },
+            "alt": "Table of the inductive and resonance effects of halogen"
+          },
+          "math": [],
+          "narration": "A halogen on a benzene ring pulls electrons away through the sigma bond, so the ring is less reactive towards electrophiles than benzene itself. But its lone pairs also feed electrons into the ring by resonance, specifically to the ortho and para positions. The inductive effect wins when it comes to overall speed, but the resonance effect decides where the new group goes.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s03",
+          "layout": "concept",
+          "heading": "Mechanism: nitration of chlorobenzene",
+          "body_md": "**Step 1** (electrophile): $\\ce{HNO3 + 2H2SO4 -> NO2+ + H3O+ + 2HSO4-}$.\n\n**Step 2** (slow): NO₂⁺ attacks the ring at o or p, forming a **σ-complex** (arenium ion). For o/p attack, one resonance form puts + on the carbon bearing Cl, where Cl’s lone pair stabilises it (a chloronium form); meta attack has no such form.\n\n**Step 3** (fast): HSO₄⁻ removes H⁺, restoring aromaticity. Products: 1-chloro-4-nitrobenzene (major) and 1-chloro-2-nitrobenzene.",
+          "bullets": [],
+          "visual": {
+            "kind": "flow",
+            "spec": {
+              "direction": "LR",
+              "nodes": [
+                {
+                  "id": "a",
+                  "label": "HNO₃ + H₂SO₄ → NO₂⁺"
+                },
+                {
+                  "id": "b",
+                  "label": "NO₂⁺ attacks o/p (slow)"
+                },
+                {
+                  "id": "c",
+                  "label": "σ-complex stabilised by Cl lone pair"
+                },
+                {
+                  "id": "d",
+                  "label": "Loss of H⁺ (fast)"
+                },
+                {
+                  "id": "e",
+                  "label": "o- and p-chloronitrobenzene"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "a",
+                  "to": "b"
+                },
+                {
+                  "from": "b",
+                  "to": "c"
+                },
+                {
+                  "from": "c",
+                  "to": "d"
+                },
+                {
+                  "from": "d",
+                  "to": "e"
+                }
+              ]
+            },
+            "alt": "Flow of the nitration mechanism of chlorobenzene"
+          },
+          "math": [
+            "\\ce{C6H5Cl + HNO3 ->[conc. H2SO4] ClC6H4NO2 + H2O}"
+          ],
+          "narration": "Sulphuric acid protonates nitric acid, which loses water to give the nitronium ion, the electrophile. In the slow step, the nitronium ion attacks the ring at the ortho or para position, forming a positively charged intermediate. For these positions, one resonance form puts the positive charge next to chlorine, whose lone pair can share it. Finally the ring loses a proton and becomes aromatic again.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s04",
+          "layout": "concept",
+          "heading": "Other electrophilic substitutions",
+          "body_md": "All give **ortho and para** products; para usually predominates (less steric hindrance).",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Reaction",
+                "Reagent",
+                "Products from chlorobenzene"
+              ],
+              "rows": [
+                [
+                  "Chlorination",
+                  "Cl₂, anhydrous FeCl₃",
+                  "1,2- and 1,4-dichlorobenzene"
+                ],
+                [
+                  "Nitration",
+                  "conc. HNO₃ + conc. H₂SO₄",
+                  "1-chloro-2-nitro- and 1-chloro-4-nitrobenzene"
+                ],
+                [
+                  "Sulphonation",
+                  "conc. H₂SO₄, heat",
+                  "2- and 4-chlorobenzenesulphonic acid"
+                ],
+                [
+                  "Friedel–Crafts alkylation",
+                  "CH₃Cl, AlCl₃",
+                  "2- and 4-chlorotoluene"
+                ],
+                [
+                  "Friedel–Crafts acylation",
+                  "CH₃COCl, AlCl₃",
+                  "2- and 4-chloroacetophenone"
+                ]
+              ]
+            },
+            "alt": "Table of electrophilic substitution reactions of chlorobenzene"
+          },
+          "math": [
+            "\\ce{C6H5Cl + Cl2 ->[FeCl3] ClC6H4Cl + HCl}",
+            "\\ce{C6H5Cl + H2SO4 -> ClC6H4SO3H + H2O}"
+          ],
+          "narration": "Chlorination, nitration, sulphonation and Friedel–Crafts reactions all put the new group ortho or para to the halogen. The para product is usually the major one, because the bulky halogen hinders attack at the neighbouring ortho positions. All of these reactions are slower than the corresponding reactions of benzene, because the ring is deactivated.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s05",
+          "layout": "example",
+          "heading": "Worked example: products of electrophilic substitution",
+          "body_md": "**Problem.** Give the major products: (a) bromobenzene + Br₂/FeBr₃; (b) chlorobenzene + CH₃COCl/AlCl₃; (c) chlorobenzene heated with conc. H₂SO₄. Why is the para product major?\n\n**(a)** 1,4-Dibromobenzene (major) with 1,2-dibromobenzene.\n\n**(b)** 1-(4-Chlorophenyl)ethan-1-one, 4-chloroacetophenone (major), with the 2-isomer.\n\n**(c)** 4-Chlorobenzenesulphonic acid (major).\n\nPara is favoured because the large halogen hinders the adjacent ortho positions.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Reagent",
+                "Major product"
+              ],
+              "rows": [
+                [
+                  "Br₂/FeBr₃",
+                  "1,4-Dibromobenzene"
+                ],
+                [
+                  "CH₃COCl/AlCl₃",
+                  "4-Chloroacetophenone"
+                ],
+                [
+                  "conc. H₂SO₄",
+                  "4-Chlorobenzenesulphonic acid"
+                ]
+              ]
+            },
+            "alt": "Table of major products"
+          },
+          "math": [],
+          "narration": "In each case the halogen sends the new group to ortho and para positions, and the para product dominates because the halogen crowds the ortho positions next to it. So bromination gives mainly one-four-dibromobenzene, acylation gives mainly four-chloroacetophenone, and sulphonation gives mainly four-chlorobenzenesulphonic acid.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s06",
+          "layout": "check",
+          "heading": "Quick check: electrophilic substitution",
+          "body_md": "Predict the effect of halogen on the rate and orientation of electrophilic substitution.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Inductive effect for the rate; resonance for the positions.",
+          "check_question_id": "q_isc12chem_ch13_024",
+          "audio": null
+        },
+        {
+          "id": "s07",
+          "layout": "concept",
+          "heading": "Nucleophilic substitution: why it is difficult",
+          "body_md": "Haloarenes resist replacement of X because: (1) **partial double-bond character** of C–X (resonance); (2) **sp² carbon** holds the electrons more tightly; (3) the **phenyl cation** is very unstable (no SN1); (4) the electron-rich ring **repels** nucleophiles and blocks backside attack (no SN2). **Dow process:** chlorobenzene + NaOH at 623 K and 300 atm gives sodium phenoxide.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Compound",
+                "Conditions for Cl → OH"
+              ],
+              "rows": [
+                [
+                  "Chlorobenzene",
+                  "623 K, 300 atm, NaOH"
+                ],
+                [
+                  "1-Chloro-4-nitrobenzene",
+                  "443 K, aqueous NaOH"
+                ],
+                [
+                  "1-Chloro-2,4-dinitrobenzene",
+                  "368 K, warm NaOH"
+                ],
+                [
+                  "2,4,6-Trinitrochlorobenzene",
+                  "Warm water"
+                ]
+              ]
+            },
+            "alt": "Table of conditions for hydrolysis of chloro-nitrobenzenes"
+          },
+          "math": [
+            "\\ce{C6H5Cl + 2NaOH ->[623 K, 300 atm] C6H5ONa + NaCl + H2O}",
+            "\\ce{C6H5ONa + HCl -> C6H5OH + NaCl}"
+          ],
+          "narration": "Replacing the chlorine of chlorobenzene with hydroxide needs six hundred and twenty three kelvin and three hundred atmospheres, the old Dow process. The bond is strong, the phenyl cation is too unstable for an S N one route, and the ring blocks backside attack. But look at the table: each nitro group at an ortho or para position makes the reaction much easier, until with three nitro groups warm water is enough.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s08",
+          "layout": "concept",
+          "heading": "Mechanism: addition–elimination with nitro groups",
+          "body_md": "With **–NO₂ at ortho or para**, OH⁻ **adds** to the carbon bearing Cl, forming a **negatively charged σ-complex** (Meisenheimer complex) whose charge is **delocalised onto the nitro group**; Cl⁻ is then **eliminated**. A meta-nitro group cannot delocalise the charge, so it helps much less.",
+          "bullets": [],
+          "visual": {
+            "kind": "flow",
+            "spec": {
+              "direction": "LR",
+              "nodes": [
+                {
+                  "id": "a",
+                  "label": "4-Nitrochlorobenzene + OH⁻"
+                },
+                {
+                  "id": "b",
+                  "label": "Addition: carbanion σ-complex"
+                },
+                {
+                  "id": "c",
+                  "label": "Negative charge on NO₂ oxygen (o/p only)"
+                },
+                {
+                  "id": "d",
+                  "label": "Elimination of Cl⁻"
+                },
+                {
+                  "id": "e",
+                  "label": "4-Nitrophenoxide → 4-nitrophenol"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "a",
+                  "to": "b"
+                },
+                {
+                  "from": "b",
+                  "to": "c"
+                },
+                {
+                  "from": "c",
+                  "to": "d"
+                },
+                {
+                  "from": "d",
+                  "to": "e"
+                }
+              ]
+            },
+            "alt": "Flow of the addition–elimination mechanism"
+          },
+          "math": [],
+          "narration": "With a nitro group at the ortho or para position, the mechanism changes. Hydroxide adds to the carbon carrying chlorine, giving a negatively charged intermediate. Resonance carries that negative charge right onto the oxygen atoms of the nitro group, which stabilises it greatly. Then chloride leaves and the ring becomes aromatic again. A nitro group at the meta position cannot take the charge, so it helps far less.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s09",
+          "layout": "example",
+          "heading": "Worked example: replacing chlorine by –NH₂ and –H",
+          "body_md": "**Problem.** Write equations for (a) the conversion of chlorobenzene into aniline, and (b) the reduction of chlorobenzene to benzene. (c) Which hydrolyses faster with aqueous NaOH: 1-chloro-3-nitrobenzene or 1-chloro-4-nitrobenzene?\n\n**(a)** $\\ce{2C6H5Cl + 2NH3 + Cu2O ->[475 K, 60 atm] 2C6H5NH2 + 2CuCl + H2O}$.\n\n**(b)** $\\ce{C6H5Cl + H2 ->[Pd] C6H6 + HCl}$ (or Ni–Al alloy with NaOH).\n\n**(c)** 1-Chloro-4-nitrobenzene: the para-NO₂ delocalises the negative charge of the intermediate.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Change",
+                "Conditions"
+              ],
+              "rows": [
+                [
+                  "Cl → NH₂",
+                  "NH₃, Cu₂O, 475 K, 60 atm"
+                ],
+                [
+                  "Cl → H",
+                  "H₂/Pd or Ni–Al/NaOH"
+                ],
+                [
+                  "Cl → OH (with p-NO₂)",
+                  "NaOH, 443 K"
+                ]
+              ]
+            },
+            "alt": "Table of nucleophilic replacements and reduction"
+          },
+          "math": [],
+          "narration": "Chlorine can be replaced by an amino group with ammonia and copper one oxide under heat and pressure, giving aniline. It can be replaced by hydrogen, reducing chlorobenzene to benzene, with hydrogen and palladium or with nickel aluminium alloy in alkali. And of the two chloronitrobenzenes, the para isomer hydrolyses faster, because only an ortho or para nitro group can take the negative charge.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s10",
+          "layout": "check",
+          "heading": "Quick check: nucleophilic substitution",
+          "body_md": "Decide which haloarene undergoes nucleophilic substitution most easily, or explain why it is difficult.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Look for nitro groups at ortho or para positions.",
+          "check_question_id": "q_isc12chem_ch13_036",
+          "audio": null
+        },
+        {
+          "id": "s11",
+          "layout": "concept",
+          "heading": "Wurtz–Fittig, Fittig and Grignard reactions",
+          "body_md": "**Wurtz–Fittig:** aryl halide + alkyl halide + Na in dry ether → alkylbenzene. **Fittig:** two aryl halides + Na → biaryl. **Grignard:** bromobenzene + Mg in dry ether → phenylmagnesium bromide (chlorobenzene needs tetrahydrofuran).",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Reaction",
+                "Reactants",
+                "Product"
+              ],
+              "rows": [
+                [
+                  "Wurtz–Fittig",
+                  "ArX + RX + 2Na",
+                  "Ar–R"
+                ],
+                [
+                  "Fittig",
+                  "2ArX + 2Na",
+                  "Ar–Ar"
+                ],
+                [
+                  "Grignard",
+                  "ArBr + Mg",
+                  "ArMgBr"
+                ]
+              ]
+            },
+            "alt": "Table of reactions of haloarenes with sodium and magnesium"
+          },
+          "math": [
+            "\\ce{C6H5Br + C2H5Br + 2Na ->[dry ether] C6H5C2H5 + 2NaBr}",
+            "\\ce{2C6H5Cl + 2Na ->[dry ether] C6H5C6H5 + 2NaCl}",
+            "\\ce{C6H5Br + Mg ->[dry ether] C6H5MgBr}"
+          ],
+          "narration": "Sodium in dry ether couples halides. With an aryl halide and an alkyl halide we get an alkylbenzene in the Wurtz–Fittig reaction; bromobenzene and bromoethane give ethylbenzene. With two aryl halides we get biphenyl in the Fittig reaction. Magnesium converts bromobenzene into phenylmagnesium bromide, a useful Grignard reagent.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s12",
+          "layout": "check",
+          "heading": "Quick check: reactions with metals",
+          "body_md": "Predict the product of a Wurtz–Fittig, Fittig or Grignard reaction.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Wurtz–Fittig joins aryl to alkyl; Fittig joins aryl to aryl.",
+          "check_question_id": "q_isc12chem_ch13_050",
+          "audio": null
+        },
+        {
+          "id": "s13",
+          "layout": "concept",
+          "heading": "DDT",
+          "body_md": "**DDT** (p,p′-dichlorodiphenyltrichloroethane): 1,1,1-trichloro-2,2-bis(4-chlorophenyl)ethane, (ClC₆H₄)₂CH–CCl₃. Made from chlorobenzene and chloral with conc. H₂SO₄. A powerful insecticide that helped control malaria and typhus, but it is **not biodegradable**, is **fat-soluble** and **accumulates** along food chains (biomagnification), harming birds (thin eggshells) and fish; many insects became resistant. Its use is banned or restricted.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Property",
+                "Consequence"
+              ],
+              "rows": [
+                [
+                  "Very stable, not biodegradable",
+                  "Persists for years in soil and water"
+                ],
+                [
+                  "Fat-soluble",
+                  "Stored in fatty tissue"
+                ],
+                [
+                  "Biomagnification",
+                  "Top predators receive the largest doses"
+                ],
+                [
+                  "Insect resistance",
+                  "Less effective over time"
+                ]
+              ]
+            },
+            "alt": "Table of properties of DDT and their consequences"
+          },
+          "math": [
+            "\\ce{2C6H5Cl + CCl3CHO ->[conc. H2SO4] (ClC6H4)2CHCCl3 + H2O}"
+          ],
+          "narration": "DDT is made by condensing two molecules of chlorobenzene with chloral in concentrated sulphuric acid. It saved millions of lives by killing malaria mosquitoes. But DDT is very stable and dissolves in fat, so it is stored in animals and concentrated at each step of a food chain. Birds of prey laid eggs with thin shells, and many insects became resistant. Its use is now banned or tightly restricted.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s14",
+          "layout": "summary",
+          "heading": "Summary: Part 2",
+          "body_md": "",
+          "bullets": [
+            "Halogen: −I deactivates; +R directs o/p (para major).",
+            "Nitration via NO₂⁺; σ-complex stabilised by Cl lone pair for o/p attack.",
+            "Nucleophilic substitution difficult (resonance, sp², unstable Ph⁺, repulsion); Dow 623 K, 300 atm.",
+            "o/p-NO₂ groups help via addition–elimination (charge on NO₂).",
+            "Cl → NH₂ (NH₃, Cu₂O); Cl → H (H₂/Pd); Wurtz–Fittig, Fittig; PhMgBr.",
+            "DDT: from chlorobenzene + chloral; persistent, biomagnifies."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Reaction",
+                "Key condition"
+              ],
+              "rows": [
+                [
+                  "Nitration",
+                  "conc. HNO₃ + H₂SO₄"
+                ],
+                [
+                  "Dow process",
+                  "623 K, 300 atm"
+                ],
+                [
+                  "Amination",
+                  "NH₃, Cu₂O, 475 K"
+                ],
+                [
+                  "Fittig",
+                  "Na, dry ether"
+                ]
+              ]
+            },
+            "alt": "Summary table of Part 2 reactions"
+          },
+          "math": [],
+          "narration": "Let us sum up Part 2. A halogen slows electrophilic substitution but directs it to ortho and para positions. Replacing the halogen itself is hard, needing harsh conditions, unless nitro groups at ortho or para positions stabilise the intermediate. Haloarenes can be reduced, coupled with sodium, or turned into Grignard reagents. DDT shows how a useful chlorine compound can become an environmental problem.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s15",
+          "layout": "exam-tips",
+          "heading": "Exam tips: Part 2",
+          "body_md": "",
+          "bullets": [
+            "For “deactivating but o/p directing”, mention both −I and +R.",
+            "In the nitration mechanism, show NO₂⁺ formation and the σ-complex.",
+            "For nitro-assisted substitution, say ortho/para, not meta.",
+            "Write the DDT structure with both 4-chlorophenyl groups."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Slip",
+                "Fix"
+              ],
+              "rows": [
+                [
+                  "Halogen is meta directing",
+                  "o/p directing"
+                ],
+                [
+                  "m-NO₂ helps hydrolysis most",
+                  "o/p-NO₂ help"
+                ],
+                [
+                  "Fittig gives alkylbenzene",
+                  "Fittig gives biaryl"
+                ]
+              ]
+            },
+            "alt": "Table of three common slips in Part 2 and fixes"
+          },
+          "math": [],
+          "narration": "Final tips. Explain the halogen’s effect with both the inductive and the resonance effect. Show the nitronium ion and the intermediate in the nitration mechanism. Remember that nitro groups help nucleophilic substitution only at ortho and para positions. And draw DDT carefully, with two four-chlorophenyl groups on one carbon and three chlorines on the other.",
+          "check_question_id": null,
+          "audio": null
+        }
+      ],
+      "status": "draft",
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    }
+  ],
+  "notes": {
+    "unit": "isc-12-chemistry-ch13",
+    "version": 1,
+    "title": "Haloarenes — Notes",
+    "language": "en",
+    "sections": [
+      {
+        "heading": "1. The C–X bond and preparation",
+        "body_md": "X on an **sp² ring carbon** (aryl halide); benzylic halides (C₆H₅CH₂X) are different. C–Cl in chlorobenzene is **shorter (169 pm vs 177 pm) and stronger** (resonance gives partial double-bond character; sp² carbon) and **less polar** (1.69 D; +R opposes −I).\n\n**Preparation:** benzene + Cl₂/Br₂ with FeCl₃/FeBr₃/AlCl₃ in the dark (iodination needs HNO₃ to remove HI); from benzenediazonium chloride (aniline + NaNO₂ + HCl at 273–278 K): **Sandmeyer** CuCl/HCl or CuBr/HBr; **Gattermann** Cu powder + HX; KI → iodobenzene.",
+        "key_terms": [
+          {
+            "term": "Aryl halide",
+            "definition_md": "A compound with a halogen bonded directly to an sp² carbon of an aromatic ring."
+          },
+          {
+            "term": "Sandmeyer reaction",
+            "definition_md": "Replacement of the diazonium group by Cl or Br using CuCl/HCl or CuBr/HBr."
+          },
+          {
+            "term": "Gattermann reaction",
+            "definition_md": "Replacement of the diazonium group by Cl or Br using copper powder and HX."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\ce{C6H5N2Cl ->[CuCl/HCl] C6H5Cl + N2}",
+            "label": "Sandmeyer"
+          }
+        ],
+        "visual": {
+          "kind": "svg",
+          "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 360 170\" role=\"img\" aria-label=\"Two resonance structures of chlorobenzene. Left: the normal Kekulé ring with a single C–Cl bond. Right: a lone pair from chlorine has moved into the ring, giving a double bond between carbon and chlorine, a positive charge on chlorine and a negative charge on a ring carbon ortho to it. The real molecule is a hybrid, so the C–Cl bond has partial double-bond character.\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>Two resonance structures of chlorobenzene. Left: the normal Kekulé ring with a single C–Cl bond. Right: a lone pair from chlorine has moved into the ring, giving a double bond between carbon and chlorine, a positive charge on chlorine and a negative charge on a ring carbon ortho to it. The real molecule is a hybrid, so the C–Cl bond has partial double-bond character.</title><line x1=\"80\" y1=\"70\" x2=\"106\" y2=\"85\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"106\" y1=\"85\" x2=\"106\" y2=\"115\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"101.3\" y1=\"90.4\" x2=\"101.3\" y2=\"109.6\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"106\" y1=\"115\" x2=\"80\" y2=\"130\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"80\" y1=\"130\" x2=\"54\" y2=\"115\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"77.7\" y1=\"123.3\" x2=\"61\" y2=\"113.7\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"54\" y1=\"115\" x2=\"54\" y2=\"85\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"54\" y1=\"85\" x2=\"80\" y2=\"70\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"61\" y1=\"86.4\" x2=\"77.7\" y2=\"76.8\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"80\" y1=\"70\" x2=\"80\" y2=\"44\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"80\" y=\"38\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">Cl</text><text x=\"94\" y=\"30\" fill=\"currentColor\" stroke=\"none\" font-size=\"12\">··</text><line x1=\"140\" y1=\"100\" x2=\"185.2\" y2=\"100\" stroke=\"currentColor\" stroke-width=\"1.5\"/><polygon points=\"190,100 184.5,102.4 184.5,97.6\" fill=\"currentColor\" stroke=\"none\"/><line x1=\"190\" y1=\"100\" x2=\"144.8\" y2=\"100\" stroke=\"currentColor\" stroke-width=\"1.5\"/><polygon points=\"140,100 145.5,97.6 145.5,102.4\" fill=\"currentColor\" stroke=\"none\"/><line x1=\"260\" y1=\"70\" x2=\"286\" y2=\"85\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"286\" y1=\"85\" x2=\"286\" y2=\"115\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"286\" y1=\"115\" x2=\"260\" y2=\"130\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"279\" y1=\"113.7\" x2=\"262.3\" y2=\"123.3\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"260\" y1=\"130\" x2=\"234\" y2=\"115\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"234\" y1=\"115\" x2=\"234\" y2=\"85\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"238.7\" y1=\"109.6\" x2=\"238.7\" y2=\"90.4\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"234\" y1=\"85\" x2=\"260\" y2=\"70\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"257.5\" y1=\"70\" x2=\"257.5\" y2=\"44\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"262.5\" y1=\"70\" x2=\"262.5\" y2=\"44\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"260\" y=\"38\" fill=\"var(--diagram-red)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">Cl⁺</text><text x=\"294\" y=\"89\" fill=\"var(--diagram-blue)\" stroke=\"none\" font-size=\"14\" font-weight=\"bold\">−</text><text x=\"80\" y=\"160\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">C–Cl single bond</text><text x=\"260\" y=\"160\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">C=Cl⁺, negative charge at ortho C</text></svg>",
+          "alt": "Two resonance structures of chlorobenzene, one with a single carbon–chlorine bond and one with a carbon–chlorine double bond, a positive charge on chlorine and a negative charge at the ortho carbon"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "isc-12-chemistry-ch13-t01"
+        ]
+      },
+      {
+        "heading": "2. Physical properties",
+        "body_md": "Colourless liquids or solids; insoluble in water (no H-bonding), soluble in organic solvents; bromo- and iodo-arenes denser than water. B.p. rises C₆H₅F < C₆H₅Cl < C₆H₅Br < C₆H₅I. Isomeric dihalobenzenes boil at similar temperatures, but the **para isomer melts much higher** (symmetry, better packing): 1,4-dichlorobenzene 323 K vs 1,2- 256 K and 1,3- 249 K.",
+        "key_terms": [
+          {
+            "term": "Crystal packing",
+            "definition_md": "How closely molecules fit together in a solid; better packing gives a higher melting point."
+          }
+        ],
+        "formulas": [],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Isomer",
+              "m.p. / K"
+            ],
+            "rows": [
+              [
+                "1,2-Dichlorobenzene",
+                "256"
+              ],
+              [
+                "1,3-Dichlorobenzene",
+                "249"
+              ],
+              [
+                "1,4-Dichlorobenzene",
+                "323"
+              ]
+            ]
+          },
+          "alt": "Table of dichlorobenzene melting points"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "isc-12-chemistry-ch13-t02"
+        ]
+      },
+      {
+        "heading": "3. Electrophilic substitution",
+        "body_md": "Halogen: **−I** deactivates the ring (slower than benzene); **+R** directs to **ortho/para**; para usually major (steric).\n\n**Nitration mechanism:** $\\ce{HNO3 + 2H2SO4 -> NO2+ + H3O+ + 2HSO4-}$; NO₂⁺ attacks o/p (slow) giving a σ-complex stabilised by the Cl lone pair; loss of H⁺ (fast).\n\nProducts from chlorobenzene: Cl₂/FeCl₃ → 1,2- and 1,4-dichlorobenzene; HNO₃/H₂SO₄ → 1-chloro-2- and 1-chloro-4-nitrobenzene; conc. H₂SO₄ → 2- and 4-chlorobenzenesulphonic acid; CH₃Cl/AlCl₃ → 2- and 4-chlorotoluene.",
+        "key_terms": [
+          {
+            "term": "σ-complex",
+            "definition_md": "The positively charged, non-aromatic intermediate (arenium ion) formed when an electrophile adds to a benzene ring."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\ce{C6H5Cl + HNO3 ->[H2SO4] ClC6H4NO2 + H2O}",
+            "label": "Nitration of chlorobenzene"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Effect of Cl",
+              "Consequence"
+            ],
+            "rows": [
+              [
+                "−I",
+                "Deactivating"
+              ],
+              [
+                "+R",
+                "o/p directing"
+              ]
+            ]
+          },
+          "alt": "Table of effects of chlorine"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "isc-12-chemistry-ch13-t03"
+        ]
+      },
+      {
+        "heading": "4. Nucleophilic substitution and reduction",
+        "body_md": "Difficult because of partial double-bond character, sp² carbon, unstable phenyl cation (no SN1), and repulsion/blocked backside (no SN2). **Dow:** C₆H₅Cl + NaOH, 623 K, 300 atm → C₆H₅ONa → phenol.\n\n**o/p-NO₂ groups help** (addition–elimination via a Meisenheimer complex; charge delocalised onto NO₂): 4-nitro 443 K; 2,4-dinitro 368 K; 2,4,6-trinitro warm water. m-NO₂ helps little.\n\n**Cl → NH₂:** NH₃ + Cu₂O, 475 K, 60 atm. **Reduction:** H₂/Pd or Ni–Al alloy/NaOH → benzene.",
+        "key_terms": [
+          {
+            "term": "Meisenheimer complex",
+            "definition_md": "The negatively charged σ-complex formed when a nucleophile adds to an activated aryl halide."
+          },
+          {
+            "term": "Dow process",
+            "definition_md": "Industrial hydrolysis of chlorobenzene with NaOH at 623 K and 300 atm."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\ce{C6H5Cl + 2NaOH ->[623 K, 300 atm] C6H5ONa + NaCl + H2O}",
+            "label": "Dow process"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Substrate",
+              "Conditions"
+            ],
+            "rows": [
+              [
+                "C₆H₅Cl",
+                "623 K, 300 atm"
+              ],
+              [
+                "4-NO₂",
+                "443 K"
+              ],
+              [
+                "2,4-(NO₂)₂",
+                "368 K"
+              ],
+              [
+                "2,4,6-(NO₂)₃",
+                "Warm water"
+              ]
+            ]
+          },
+          "alt": "Table of hydrolysis conditions"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "isc-12-chemistry-ch13-t04"
+        ]
+      },
+      {
+        "heading": "5. Reactions with metals; DDT",
+        "body_md": "**Wurtz–Fittig:** ArX + RX + 2Na (dry ether) → Ar–R. **Fittig:** 2ArX + 2Na → Ar–Ar. **Grignard:** C₆H₅Br + Mg (dry ether) → C₆H₅MgBr; + H₂O → benzene.\n\n**DDT** = 1,1,1-trichloro-2,2-bis(4-chlorophenyl)ethane, from chlorobenzene + chloral (conc. H₂SO₄). Effective insecticide (malaria), but not biodegradable, fat-soluble, biomagnifies in food chains (thin eggshells in birds); insect resistance; banned or restricted.",
+        "key_terms": [
+          {
+            "term": "Biomagnification",
+            "definition_md": "Increase in concentration of a persistent substance at each higher level of a food chain."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\ce{2C6H5Cl + CCl3CHO -> (ClC6H4)2CHCCl3 + H2O}",
+            "label": "Manufacture of DDT"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Reaction",
+              "Product"
+            ],
+            "rows": [
+              [
+                "Wurtz–Fittig",
+                "Alkylbenzene"
+              ],
+              [
+                "Fittig",
+                "Biphenyl"
+              ],
+              [
+                "PhMgBr + H₂O",
+                "Benzene"
+              ]
+            ]
+          },
+          "alt": "Table of metal reactions"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "isc-12-chemistry-ch13-t05"
+        ]
+      }
+    ],
+    "exam_tips_md": "**Common mistakes**\n- Calling halogen meta-directing (it is o/p-directing but deactivating).\n- Saying m-NO₂ activates nucleophilic substitution as much as p-NO₂.\n- Confusing Sandmeyer (CuX/HX) with Gattermann (Cu/HX), or Fittig with Wurtz–Fittig.\n- Explaining the p-dichlorobenzene melting point by molar mass.\n\n**How marks are usually awarded**\n- Mechanisms (2–3 marks): electrophile formation, σ-complex, loss of H⁺; or addition then elimination with the role of NO₂.\n- Reasons for low reactivity (2 marks): resonance, sp² carbon, unstable phenyl cation, repulsion.\n- DDT (2 marks): structure/equation and an environmental effect.",
+    "status": "draft",
+    "provenance": {
+      "origin": "human",
+      "template_version": null,
+      "model": null,
+      "generated_at": "2026-10-30",
+      "author": "claude-opus-5-5 (subject-producer)"
+    }
+  },
+  "flashcards": {
+    "unit": "isc-12-chemistry-ch13",
+    "version": 1,
+    "language": "en",
+    "cards": [
+      {
+        "id": "f01",
+        "front_md": "Aryl halide?",
+        "back_md": "X on an sp² carbon of an aromatic ring.",
+        "tag": "definition",
+        "topic_id": "isc-12-chemistry-ch13-t01"
+      },
+      {
+        "id": "f02",
+        "front_md": "C–Cl length in C₆H₅Cl vs CH₃Cl?",
+        "back_md": "169 pm vs 177 pm.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch13-t01"
+      },
+      {
+        "id": "f03",
+        "front_md": "Two reasons for short C–Cl in chlorobenzene?",
+        "back_md": "Resonance (partial double bond); sp² carbon.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch13-t01"
+      },
+      {
+        "id": "f04",
+        "front_md": "Why is chlorobenzene less polar than chloroethane?",
+        "back_md": "+R opposes −I.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch13-t01"
+      },
+      {
+        "id": "f05",
+        "front_md": "Chlorination of benzene conditions?",
+        "back_md": "Cl₂, FeCl₃, dark.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch13-t01"
+      },
+      {
+        "id": "f06",
+        "front_md": "Diazotisation conditions?",
+        "back_md": "NaNO₂ + HCl, 273–278 K.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch13-t01"
+      },
+      {
+        "id": "f07",
+        "front_md": "Sandmeyer reagent for PhCl?",
+        "back_md": "CuCl/HCl.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch13-t01"
+      },
+      {
+        "id": "f08",
+        "front_md": "Gattermann reagent for PhCl?",
+        "back_md": "Cu powder + HCl.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch13-t01"
+      },
+      {
+        "id": "f09",
+        "front_md": "Iodobenzene from diazonium salt?",
+        "back_md": "Warm with KI.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch13-t01"
+      },
+      {
+        "id": "f10",
+        "front_md": "Why is iodination done with HNO₃?",
+        "back_md": "Oxidises HI, which would reverse the reaction.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch13-t01"
+      },
+      {
+        "id": "f11",
+        "front_md": "Highest-melting dichlorobenzene?",
+        "back_md": "1,4- (para), 323 K.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch13-t02"
+      },
+      {
+        "id": "f12",
+        "front_md": "Why does the para isomer melt highest?",
+        "back_md": "Symmetry; better packing.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch13-t02"
+      },
+      {
+        "id": "f13",
+        "front_md": "Effect of Cl on EAS rate?",
+        "back_md": "Deactivating (−I).",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch13-t03"
+      },
+      {
+        "id": "f14",
+        "front_md": "Orientation by Cl?",
+        "back_md": "Ortho/para (+R).",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch13-t03"
+      },
+      {
+        "id": "f15",
+        "front_md": "Electrophile in nitration?",
+        "back_md": "NO₂⁺.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch13-t03"
+      },
+      {
+        "id": "f16",
+        "front_md": "Major product of nitrating PhCl?",
+        "back_md": "1-Chloro-4-nitrobenzene.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch13-t03"
+      },
+      {
+        "id": "f17",
+        "front_md": "Why is para favoured over ortho?",
+        "back_md": "Steric hindrance by halogen.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch13-t03"
+      },
+      {
+        "id": "f18",
+        "front_md": "Major product PhCl + CH₃Cl/AlCl₃?",
+        "back_md": "4-Chlorotoluene.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch13-t03"
+      },
+      {
+        "id": "f19",
+        "front_md": "Dow process conditions?",
+        "back_md": "623 K, 300 atm, NaOH.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch13-t04"
+      },
+      {
+        "id": "f20",
+        "front_md": "Why no SN1 for PhCl?",
+        "back_md": "Phenyl cation very unstable.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch13-t04"
+      },
+      {
+        "id": "f21",
+        "front_md": "Why no SN2 for PhCl?",
+        "back_md": "Ring blocks backside; electron-rich ring repels Nu⁻.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch13-t04"
+      },
+      {
+        "id": "f22",
+        "front_md": "Groups that assist nucleophilic substitution?",
+        "back_md": "NO₂ at ortho/para.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch13-t04"
+      },
+      {
+        "id": "f23",
+        "front_md": "Meisenheimer complex?",
+        "back_md": "Anionic σ-complex in addition–elimination.",
+        "tag": "definition",
+        "topic_id": "isc-12-chemistry-ch13-t04"
+      },
+      {
+        "id": "f24",
+        "front_md": "PhCl → aniline?",
+        "back_md": "NH₃, Cu₂O, 475 K, 60 atm.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch13-t04"
+      },
+      {
+        "id": "f25",
+        "front_md": "PhCl → benzene?",
+        "back_md": "H₂/Pd or Ni–Al alloy/NaOH.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch13-t04"
+      },
+      {
+        "id": "f26",
+        "front_md": "Wurtz–Fittig product?",
+        "back_md": "Alkylbenzene (Ar–R).",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch13-t05"
+      },
+      {
+        "id": "f27",
+        "front_md": "Fittig product?",
+        "back_md": "Biaryl, e.g. biphenyl.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch13-t05"
+      },
+      {
+        "id": "f28",
+        "front_md": "PhMgBr + water?",
+        "back_md": "Benzene.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch13-t05"
+      },
+      {
+        "id": "f29",
+        "front_md": "DDT made from?",
+        "back_md": "Chlorobenzene + chloral, conc. H₂SO₄.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch13-t05"
+      },
+      {
+        "id": "f30",
+        "front_md": "Why is DDT restricted?",
+        "back_md": "Persistent, fat-soluble, biomagnifies; resistance.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch13-t05"
+      },
+      {
+        "id": "f31",
+        "front_md": "Exam tip: halogen in EAS",
+        "back_md": "Say “deactivating (−I) but o/p directing (+R)”.",
+        "tag": "exam-tip",
+        "topic_id": "isc-12-chemistry-ch13-t03"
+      }
+    ],
+    "status": "draft",
+    "provenance": {
+      "origin": "human",
+      "template_version": null,
+      "model": null,
+      "generated_at": "2026-10-30",
+      "author": "claude-opus-5-5 (subject-producer)"
+    }
+  },
+  "questions": [
+    {
+      "id": "q_isc12chem_ch13_001",
+      "unit": "isc-12-chemistry-ch13",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "The C–Cl bond length in chlorobenzene (169 pm) is less than in chloromethane (177 pm) because, in chlorobenzene:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "chlorine is more electronegative than in chloromethane"
+        },
+        {
+          "id": "b",
+          "text_md": "the carbon is sp³ hybridised"
+        },
+        {
+          "id": "c",
+          "text_md": "there are more hydrogen atoms on the carbon"
+        },
+        {
+          "id": "d",
+          "text_md": "resonance gives the C–Cl bond partial double-bond character and the carbon is sp² hybridised"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Both resonance and the greater s character of sp² carbon shorten the bond — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch13-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch13_002",
+      "unit": "isc-12-chemistry-ch13",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Benzenediazonium chloride is warmed with copper powder and hydrochloric acid to give chlorobenzene. This is the:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Sandmeyer reaction"
+        },
+        {
+          "id": "b",
+          "text_md": "Wurtz–Fittig reaction"
+        },
+        {
+          "id": "c",
+          "text_md": "Swarts reaction"
+        },
+        {
+          "id": "d",
+          "text_md": "Gattermann reaction"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Copper powder with HX is Gattermann; CuX with HX is Sandmeyer — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch13-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch13_003",
+      "unit": "isc-12-chemistry-ch13",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A cold solution of benzenediazonium chloride is warmed with aqueous potassium iodide. The organic product is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "4-iodoaniline"
+        },
+        {
+          "id": "b",
+          "text_md": "phenol"
+        },
+        {
+          "id": "c",
+          "text_md": "benzene"
+        },
+        {
+          "id": "d",
+          "text_md": "iodobenzene"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "C₆H₅N₂Cl + KI → C₆H₅I + KCl + N₂ — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch13-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch13_004",
+      "unit": "isc-12-chemistry-ch13",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Benzene is chlorinated to chlorobenzene with Cl₂ and anhydrous FeCl₃ in the dark. Sunlight is avoided because it would:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "decompose the FeCl₃ catalyst to iron"
+        },
+        {
+          "id": "b",
+          "text_md": "cause free-radical addition of chlorine, giving hexachlorocyclohexane"
+        },
+        {
+          "id": "c",
+          "text_md": "convert chlorobenzene into phenol"
+        },
+        {
+          "id": "d",
+          "text_md": "stop chlorine from dissolving"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "In UV light Cl₂ adds across the ring (C₆H₆Cl₆, BHC) — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch13-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch13_005",
+      "unit": "isc-12-chemistry-ch13",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Direct iodination of benzene is carried out with iodine in the presence of nitric acid because:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "nitric acid is the source of iodine"
+        },
+        {
+          "id": "b",
+          "text_md": "the HI formed would reduce iodobenzene back to benzene; HNO₃ oxidises the HI"
+        },
+        {
+          "id": "c",
+          "text_md": "iodine reacts only with nitrobenzene"
+        },
+        {
+          "id": "d",
+          "text_md": "nitric acid acts as a Lewis acid catalyst"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Iodination is reversible; removing HI drives it forward — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch13-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch13_006",
+      "unit": "isc-12-chemistry-ch13",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Chlorobenzene (1.69 D) has a smaller dipole moment than chloroethane (2.05 D). The best explanation is that in chlorobenzene:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "chlorine has a lower electronegativity"
+        },
+        {
+          "id": "b",
+          "text_md": "the molecule is perfectly symmetrical"
+        },
+        {
+          "id": "c",
+          "text_md": "the +R effect of chlorine acts opposite to its −I effect"
+        },
+        {
+          "id": "d",
+          "text_md": "the C–Cl bond is longer"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Electron release into the ring partly cancels electron withdrawal — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch13-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch13_007",
+      "unit": "isc-12-chemistry-ch13",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which of C₆H₅CH₂Cl, C₆H₅Cl, CH₂=CHCl and C₆H₅CH₂CH₂Br is an aryl halide?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "C₆H₅Cl"
+        },
+        {
+          "id": "b",
+          "text_md": "C₆H₅CH₂Cl"
+        },
+        {
+          "id": "c",
+          "text_md": "CH₂=CHCl"
+        },
+        {
+          "id": "d",
+          "text_md": "C₆H₅CH₂CH₂Br"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Only in C₆H₅Cl is X bonded to an sp² carbon of the ring — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch13-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch13_008",
+      "unit": "isc-12-chemistry-ch13",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** The C–Cl bond in chlorobenzene is stronger than that in chloroethane.\n\n**Reason (R):** The carbon bonded to chlorine in chlorobenzene is sp² hybridised, with greater s character.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Both are true; greater s character (with resonance) strengthens the bond — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch13-t01"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch13_009",
+      "unit": "isc-12-chemistry-ch13",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? Benzyl chloride, C₆H₅CH₂Cl, is an aryl halide.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "f"
+        ]
+      },
+      "solution_md": "False. Cl is on an sp³ carbon attached to the ring: a benzylic halide.",
+      "marking_scheme": [
+        {
+          "step": "False, with the correction",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch13-t01"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch13_010",
+      "unit": "isc-12-chemistry-ch13",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "Aniline is converted to benzenediazonium chloride with NaNO₂ and HCl at a temperature of ___–278 K.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "273"
+            ]
+          }
+        ]
+      },
+      "solution_md": "**273**–278 K (0–5 °C).",
+      "marking_scheme": [
+        {
+          "step": "Writes \"273\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch13-t01"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch13_011",
+      "unit": "isc-12-chemistry-ch13",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "$15.6\\ \\text{g}$ of benzene ($M = 78$) is chlorinated with Cl₂/FeCl₃. If the yield of chlorobenzene ($M = 112.5$) is 75%, what mass is obtained?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 16.9,
+        "tolerance": 0.05,
+        "unit": "g"
+      },
+      "solution_md": "$n = 15.6 \\div 78 = 0.200\\ \\text{mol}$; mass $= 0.200 \\times 112.5 \\times 0.75 \\approx 16.9\\ \\text{g}$.",
+      "marking_scheme": [
+        {
+          "step": "0.200 mol",
+          "marks": 1
+        },
+        {
+          "step": "≈ 16.9 g",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch13-t01"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch13_012",
+      "unit": "isc-12-chemistry-ch13",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "$0.050\\ \\text{mol}$ of benzenediazonium chloride is converted into chlorobenzene by the Sandmeyer reaction. Calculate the volume of nitrogen released at STP, in litres. (Molar volume $22.4\\ \\text{L}$)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 1.12,
+        "tolerance": 0.01,
+        "unit": "L"
+      },
+      "solution_md": "$\\ce{C6H5N2Cl -> C6H5Cl + N2}$: $V = 0.050 \\times 22.4 = 1.12\\ \\text{L}$.",
+      "marking_scheme": [
+        {
+          "step": "1 : 1 ratio",
+          "marks": 1
+        },
+        {
+          "step": "1.12 L",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch13-t01"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch13_013",
+      "unit": "isc-12-chemistry-ch13",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Give two reasons why the C–Cl bond in chlorobenzene is shorter than the C–Cl bond in 1-chloropropane.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(i) Resonance: a lone pair on Cl is delocalised into the ring, giving the C–Cl bond partial double-bond character. (ii) In chlorobenzene the carbon is sp² (33% s character), more electronegative than the sp³ carbon (25% s) of 1-chloropropane, so it holds the bonding pair closer."
+      },
+      "solution_md": "Resonance; sp² carbon.",
+      "marking_scheme": [
+        {
+          "step": "Resonance",
+          "marks": 1
+        },
+        {
+          "step": "sp² hybridisation",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch13-t01"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch13_014",
+      "unit": "isc-12-chemistry-ch13",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write equations for converting aniline into chlorobenzene by way of the diazonium salt, giving the conditions for each step.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "$\\ce{C6H5NH2 + NaNO2 + 2HCl ->[273-278 K] C6H5N2Cl + NaCl + 2H2O}$ (diazotisation). $\\ce{C6H5N2Cl ->[CuCl/HCl] C6H5Cl + N2}$ (Sandmeyer)."
+      },
+      "solution_md": "Diazotisation; Sandmeyer.",
+      "marking_scheme": [
+        {
+          "step": "Diazotisation with conditions",
+          "marks": 1
+        },
+        {
+          "step": "Sandmeyer step",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch13-t01"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch13_015",
+      "unit": "isc-12-chemistry-ch13",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Distinguish between the Sandmeyer and Gattermann reactions, using the preparation of bromobenzene from benzenediazonium chloride as the example.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Sandmeyer: $\\ce{C6H5N2Cl + HBr ->[CuBr] C6H5Br + N2 + HCl}$ (copper(I) bromide in HBr). Gattermann: $\\ce{C6H5N2Cl + HBr ->[Cu] C6H5Br + N2 + HCl}$ (copper powder with HBr). The Sandmeyer method usually gives better yields."
+      },
+      "solution_md": "CuBr/HBr vs Cu/HBr.",
+      "marking_scheme": [
+        {
+          "step": "Sandmeyer reagent and equation",
+          "marks": 1
+        },
+        {
+          "step": "Gattermann reagent and equation",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch13-t01"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch13_016",
+      "unit": "isc-12-chemistry-ch13",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Give reagents and conditions to prepare (a) bromobenzene from benzene, (b) iodobenzene from aniline and (c) pure 2-chlorotoluene from 2-methylaniline.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Br₂ with anhydrous FeBr₃ (Lewis acid), dark. (b) Diazotise (NaNO₂/HCl, 273–278 K), then warm with KI. (c) Diazotise 2-methylaniline, then CuCl/HCl (Sandmeyer); this gives only the 2-isomer, unlike direct chlorination of toluene."
+      },
+      "solution_md": "Br₂/FeBr₃; diazotise + KI; diazotise + CuCl.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch13-t01"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch13_017",
+      "unit": "isc-12-chemistry-ch13",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Using the data CH₃Cl: C–Cl 177 pm, 1.86 D and C₆H₅Cl: C–Cl 169 pm, 1.69 D, explain (a) the shorter bond in chlorobenzene, (b) its smaller dipole moment and (c) why benzyl chloride behaves more like chloromethane than like chlorobenzene.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Resonance gives the C–Cl bond partial double-bond character, and the sp² carbon is more electronegative. (b) In chlorobenzene the +R effect (Cl lone pair into the ring) opposes the −I effect, reducing the net dipole. (c) In benzyl chloride Cl is on an sp³ CH₂ carbon, not conjugated with the ring, so there is no partial double-bond character; it reacts readily like a haloalkane."
+      },
+      "solution_md": "Resonance + sp²; +R opposes −I; benzylic sp³.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch13-t01"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch13_018",
+      "unit": "isc-12-chemistry-ch13",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Of the three dibromobenzenes, which has the highest melting point, and why?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "The 1,2-isomer, because it is the most polar"
+        },
+        {
+          "id": "b",
+          "text_md": "The 1,3-isomer, because it has the largest mass"
+        },
+        {
+          "id": "c",
+          "text_md": "The 1,4-isomer, because its symmetrical molecules pack most closely in the crystal"
+        },
+        {
+          "id": "d",
+          "text_md": "All are equal, because they have the same molar mass"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Symmetry → better packing → stronger lattice — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch13-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch13_019",
+      "unit": "isc-12-chemistry-ch13",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which of fluorobenzene, chlorobenzene, bromobenzene and iodobenzene has the highest boiling point?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Iodobenzene"
+        },
+        {
+          "id": "b",
+          "text_md": "Fluorobenzene"
+        },
+        {
+          "id": "c",
+          "text_md": "Chlorobenzene"
+        },
+        {
+          "id": "d",
+          "text_md": "Bromobenzene"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Largest mass and polarisability — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch13-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch13_020",
+      "unit": "isc-12-chemistry-ch13",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Chlorobenzene does not dissolve in water but mixes with benzene. The main reason is that chlorobenzene:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "cannot form hydrogen bonds with water, but has similar intermolecular forces to benzene"
+        },
+        {
+          "id": "b",
+          "text_md": "reacts with water"
+        },
+        {
+          "id": "c",
+          "text_md": "is an ionic compound"
+        },
+        {
+          "id": "d",
+          "text_md": "is a gas at room temperature"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Like dissolves like — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch13-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch13_021",
+      "unit": "isc-12-chemistry-ch13",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? The three isomeric dichlorobenzenes have very different boiling points.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "f"
+        ]
+      },
+      "solution_md": "False. Their boiling points are similar (about 446–453 K); it is their melting points that differ widely.",
+      "marking_scheme": [
+        {
+          "step": "False, with the correction",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch13-t02"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch13_022",
+      "unit": "isc-12-chemistry-ch13",
+      "language": "en",
+      "type": "short",
+      "stem_md": "1,4-Dichlorobenzene is a solid used in moth balls, while 1,2-dichlorobenzene is a liquid at room temperature. Explain.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Both have the same molar mass and similar intermolecular forces, so their boiling points are similar. 1,4-Dichlorobenzene is symmetrical and packs much more closely in the crystal lattice, so more energy is needed to melt it: m.p. 323 K, above room temperature. The less symmetrical 1,2-isomer melts at 256 K."
+      },
+      "solution_md": "Symmetry and packing.",
+      "marking_scheme": [
+        {
+          "step": "Same mass, similar forces",
+          "marks": 1
+        },
+        {
+          "step": "Packing of para isomer",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch13-t02"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch13_023",
+      "unit": "isc-12-chemistry-ch13",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Explain (a) the boiling point order C₆H₅F < C₆H₅Cl < C₆H₅Br < C₆H₅I, (b) why chlorobenzene is insoluble in water, and (c) why bromobenzene forms the lower layer when shaken with water.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Molar mass and polarisability increase from F to I, so van der Waals forces and boiling points increase. (b) Chlorobenzene cannot form hydrogen bonds with water; the energy needed to break water’s hydrogen bonds is not repaid. (c) Bromobenzene (density about 1.5 g cm⁻³) is denser than water and immiscible with it."
+      },
+      "solution_md": "Mass/polarisability; no H-bonding; density.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch13-t02"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch13_024",
+      "unit": "isc-12-chemistry-ch13",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Compared with benzene, the chlorine atom in chlorobenzene makes electrophilic substitution:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "faster, and directed to the meta position"
+        },
+        {
+          "id": "b",
+          "text_md": "slower, and directed to the meta position"
+        },
+        {
+          "id": "c",
+          "text_md": "slower, and directed to the ortho and para positions"
+        },
+        {
+          "id": "d",
+          "text_md": "faster, and directed to the ortho and para positions"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "−I deactivates; +R directs o/p — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch13-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch13_025",
+      "unit": "isc-12-chemistry-ch13",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "In the nitration of chlorobenzene with concentrated nitric and sulphuric acids, the electrophile that attacks the ring is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "the nitronium ion, NO₂⁺"
+        },
+        {
+          "id": "b",
+          "text_md": "the nitrate ion, NO₃⁻"
+        },
+        {
+          "id": "c",
+          "text_md": "the nitrite ion, NO₂⁻"
+        },
+        {
+          "id": "d",
+          "text_md": "nitric oxide, NO"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "HNO₃ + 2H₂SO₄ → NO₂⁺ + H₃O⁺ + 2HSO₄⁻ — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch13-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch13_026",
+      "unit": "isc-12-chemistry-ch13",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Ortho and para attack are favoured in the nitration of chlorobenzene because the σ-complex formed by o/p attack:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "carries a negative charge on chlorine"
+        },
+        {
+          "id": "b",
+          "text_md": "is formed without breaking the aromatic π system"
+        },
+        {
+          "id": "c",
+          "text_md": "has the positive charge on a carbon far from chlorine in all its forms"
+        },
+        {
+          "id": "d",
+          "text_md": "has a resonance form in which the lone pair on chlorine stabilises the positive charge"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Only o/p attack places the + charge on the C bearing Cl, allowing a chloronium form — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch13-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch13_027",
+      "unit": "isc-12-chemistry-ch13",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Chlorobenzene is treated with chloromethane and anhydrous AlCl₃. The major product is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "3-chlorotoluene"
+        },
+        {
+          "id": "b",
+          "text_md": "4-chlorotoluene (1-chloro-4-methylbenzene)"
+        },
+        {
+          "id": "c",
+          "text_md": "toluene"
+        },
+        {
+          "id": "d",
+          "text_md": "diphenylmethane"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Friedel–Crafts alkylation at o/p; para predominates — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch13-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch13_028",
+      "unit": "isc-12-chemistry-ch13",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Chlorobenzene is heated with concentrated sulphuric acid. The major product is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "3-chlorobenzenesulphonic acid"
+        },
+        {
+          "id": "b",
+          "text_md": "benzenesulphonic acid"
+        },
+        {
+          "id": "c",
+          "text_md": "chlorobenzene sulphate ester"
+        },
+        {
+          "id": "d",
+          "text_md": "4-chlorobenzenesulphonic acid"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Para product predominates — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch13-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch13_029",
+      "unit": "isc-12-chemistry-ch13",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Chlorobenzene undergoes nitration more slowly than benzene.\n\n**Reason (R):** The +R effect of chlorine increases electron density at the ortho and para positions.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Both are true, but the slower rate is due to the stronger −I effect; the +R effect explains orientation, not the rate — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch13-t03"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch13_030",
+      "unit": "isc-12-chemistry-ch13",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? In electrophilic substitution of chlorobenzene, the para product generally predominates over the ortho product.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "t"
+        ]
+      },
+      "solution_md": "True. The halogen sterically hinders the adjacent ortho positions.",
+      "marking_scheme": [
+        {
+          "step": "True",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch13-t03"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch13_031",
+      "unit": "isc-12-chemistry-ch13",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "In the nitration of chlorobenzene, concentrated H₂SO₄ protonates nitric acid to generate the ___ ion, NO₂⁺.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "nitronium"
+            ]
+          }
+        ]
+      },
+      "solution_md": "**Nitronium** ion.",
+      "marking_scheme": [
+        {
+          "step": "Writes \"nitronium\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch13-t03"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch13_032",
+      "unit": "isc-12-chemistry-ch13",
+      "language": "en",
+      "type": "match",
+      "stem_md": "Match each reagent used on chlorobenzene with the major product.",
+      "options": [
+        {
+          "id": "1",
+          "text_md": "Cl₂, anhydrous FeCl₃"
+        },
+        {
+          "id": "2",
+          "text_md": "conc. HNO₃ + conc. H₂SO₄"
+        },
+        {
+          "id": "3",
+          "text_md": "CH₃COCl, anhydrous AlCl₃"
+        },
+        {
+          "id": "4",
+          "text_md": "conc. H₂SO₄, heat"
+        }
+      ],
+      "match_right": [
+        {
+          "id": "p",
+          "text_md": "1-Chloro-4-nitrobenzene"
+        },
+        {
+          "id": "q",
+          "text_md": "4-Chlorobenzenesulphonic acid"
+        },
+        {
+          "id": "r",
+          "text_md": "1,4-Dichlorobenzene"
+        },
+        {
+          "id": "s",
+          "text_md": "4-Chloroacetophenone"
+        }
+      ],
+      "answer": {
+        "pairs": [
+          {
+            "left_id": "1",
+            "right_id": "r"
+          },
+          {
+            "left_id": "2",
+            "right_id": "p"
+          },
+          {
+            "left_id": "3",
+            "right_id": "s"
+          },
+          {
+            "left_id": "4",
+            "right_id": "q"
+          }
+        ]
+      },
+      "solution_md": "Each reagent gives the para product as the major isomer.",
+      "marking_scheme": [
+        {
+          "step": "1 → r",
+          "marks": 0.5
+        },
+        {
+          "step": "2 → p",
+          "marks": 0.5
+        },
+        {
+          "step": "3 → s",
+          "marks": 0.5
+        },
+        {
+          "step": "4 → q",
+          "marks": 0.5
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch13-t03"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch13_033",
+      "unit": "isc-12-chemistry-ch13",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Explain why chlorine on a benzene ring is deactivating yet ortho/para directing in electrophilic substitution.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Chlorine is more electronegative than carbon and withdraws electrons through the σ bond (−I), lowering the electron density of the whole ring, so the ring reacts more slowly than benzene. Its lone pairs are delocalised into the ring (+R), increasing electron density at the ortho and para positions (and stabilising the σ-complex for o/p attack), so substitution occurs there. −I outweighs +R for reactivity; +R controls orientation."
+      },
+      "solution_md": "−I deactivates; +R directs o/p.",
+      "marking_scheme": [
+        {
+          "step": "−I deactivation",
+          "marks": 1
+        },
+        {
+          "step": "+R o/p direction",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch13-t03"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch13_034",
+      "unit": "isc-12-chemistry-ch13",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Give the three steps of the mechanism for the nitration of chlorobenzene with a mixture of concentrated nitric and sulphuric acids, and name the major product.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(1) Formation of electrophile: $\\ce{HNO3 + 2H2SO4 -> NO2+ + H3O+ + 2HSO4-}$. (2) Slow attack of NO₂⁺ at the para (or ortho) carbon, giving a resonance-stabilised σ-complex (arenium ion); one form puts the + charge on the C–Cl carbon, stabilised by the Cl lone pair. (3) Fast loss of H⁺ (to HSO₄⁻), restoring aromaticity. Major product: 1-chloro-4-nitrobenzene (with some 1-chloro-2-nitrobenzene)."
+      },
+      "solution_md": "NO₂⁺; σ-complex; loss of H⁺; para product.",
+      "marking_scheme": [
+        {
+          "step": "Electrophile",
+          "marks": 1
+        },
+        {
+          "step": "σ-complex",
+          "marks": 1
+        },
+        {
+          "step": "Loss of H⁺ and product",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 3,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch13-t03"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch13_035",
+      "unit": "isc-12-chemistry-ch13",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write equations for (a) the chlorination, (b) the sulphonation and (c) the Friedel–Crafts methylation of chlorobenzene, naming the major product in each.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) $\\ce{C6H5Cl + Cl2 ->[FeCl3] ClC6H4Cl + HCl}$: 1,4-dichlorobenzene (major). (b) $\\ce{C6H5Cl + H2SO4 -> ClC6H4SO3H + H2O}$: 4-chlorobenzenesulphonic acid. (c) $\\ce{C6H5Cl + CH3Cl ->[AlCl3] ClC6H4CH3 + HCl}$: 4-chlorotoluene."
+      },
+      "solution_md": "Three equations; para products.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch13-t03"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch13_036",
+      "unit": "isc-12-chemistry-ch13",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which of chlorobenzene, 1-chloro-3-nitrobenzene, 1-chloro-4-methylbenzene and 1-chloro-2,4-dinitrobenzene needs the mildest conditions for replacing Cl by OH?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Chlorobenzene"
+        },
+        {
+          "id": "b",
+          "text_md": "1-Chloro-3-nitrobenzene"
+        },
+        {
+          "id": "c",
+          "text_md": "1-Chloro-2,4-dinitrobenzene"
+        },
+        {
+          "id": "d",
+          "text_md": "1-Chloro-4-methylbenzene"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Two nitro groups at o and p delocalise the negative charge of the intermediate — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch13-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch13_037",
+      "unit": "isc-12-chemistry-ch13",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "In the Dow process, chlorobenzene is converted into sodium phenoxide by aqueous NaOH at:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "about 623 K and 300 atm"
+        },
+        {
+          "id": "b",
+          "text_md": "room temperature and 1 atm"
+        },
+        {
+          "id": "c",
+          "text_md": "about 373 K and 1 atm"
+        },
+        {
+          "id": "d",
+          "text_md": "about 273 K and 300 atm"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Harsh conditions reflect the strength of the C–Cl bond — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch13-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch13_038",
+      "unit": "isc-12-chemistry-ch13",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Chlorobenzene does not undergo nucleophilic substitution by the SN1 mechanism mainly because:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "chlorine is a very good leaving group"
+        },
+        {
+          "id": "b",
+          "text_md": "the phenyl cation that would form is very unstable"
+        },
+        {
+          "id": "c",
+          "text_md": "the ring carbon is sp³ hybridised"
+        },
+        {
+          "id": "d",
+          "text_md": "hydroxide is a weak nucleophile"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "The sp² phenyl cation cannot be stabilised by resonance — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch13-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch13_039",
+      "unit": "isc-12-chemistry-ch13",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A nitro group meta to chlorine has little effect on the rate of hydrolysis of chlorobenzene because:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "a meta nitro group is electron-donating"
+        },
+        {
+          "id": "b",
+          "text_md": "meta positions are sterically blocked"
+        },
+        {
+          "id": "c",
+          "text_md": "nitro groups react with hydroxide first"
+        },
+        {
+          "id": "d",
+          "text_md": "from the meta position the nitro group cannot accept the negative charge of the intermediate by resonance"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Only o/p-NO₂ can delocalise the charge onto oxygen — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch13-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch13_040",
+      "unit": "isc-12-chemistry-ch13",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Chlorobenzene is converted into aniline by heating with:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "aqueous ammonia and copper(I) oxide at about 475 K and 60 atm"
+        },
+        {
+          "id": "b",
+          "text_md": "NaNO₂ and HCl at 273 K"
+        },
+        {
+          "id": "c",
+          "text_md": "Sn and HCl at room temperature"
+        },
+        {
+          "id": "d",
+          "text_md": "NaOH at 623 K"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "2C₆H₅Cl + 2NH₃ + Cu₂O → 2C₆H₅NH₂ + 2CuCl + H₂O — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch13-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch13_041",
+      "unit": "isc-12-chemistry-ch13",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Chlorobenzene is treated with hydrogen in the presence of palladium. The organic product is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "cyclohexane"
+        },
+        {
+          "id": "b",
+          "text_md": "benzene"
+        },
+        {
+          "id": "c",
+          "text_md": "phenol"
+        },
+        {
+          "id": "d",
+          "text_md": "biphenyl"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Hydrogenolysis: C₆H₅Cl + H₂ → C₆H₆ + HCl — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch13-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch13_042",
+      "unit": "isc-12-chemistry-ch13",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** 2,4,6-Trinitrochlorobenzene is hydrolysed to picric acid simply by warm water.\n\n**Reason (R):** Three nitro groups at the ortho and para positions delocalise the negative charge of the intermediate formed by addition of the nucleophile.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Both are true, and R explains A — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch13-t04"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch13_043",
+      "unit": "isc-12-chemistry-ch13",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Chlorobenzene readily undergoes SN2 substitution with hydroxide ions.\n\n**Reason (R):** The benzene ring blocks backside attack on the carbon bonded to chlorine.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "A is false; R is true and is one reason why SN2 does not occur — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch13-t04"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch13_044",
+      "unit": "isc-12-chemistry-ch13",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? A nitro group meta to chlorine activates chlorobenzene towards nucleophilic substitution as strongly as a para nitro group.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "f"
+        ]
+      },
+      "solution_md": "False. Only ortho/para nitro groups can delocalise the negative charge onto oxygen.",
+      "marking_scheme": [
+        {
+          "step": "False, with the correction",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch13-t04"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch13_045",
+      "unit": "isc-12-chemistry-ch13",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "$11.25\\ \\text{g}$ of chlorobenzene ($M = 112.5$) is converted into phenol ($M = 94$) by the Dow process with a 90% overall yield. What mass of phenol is obtained?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 8.46,
+        "tolerance": 0.03,
+        "unit": "g"
+      },
+      "solution_md": "$n = 11.25 \\div 112.5 = 0.100\\ \\text{mol}$; mass $= 0.100 \\times 94 \\times 0.90 = 8.46\\ \\text{g}$.",
+      "marking_scheme": [
+        {
+          "step": "0.100 mol",
+          "marks": 1
+        },
+        {
+          "step": "8.46 g",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch13-t04"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch13_046",
+      "unit": "isc-12-chemistry-ch13",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write equations for the conversion of chlorobenzene into phenol by the Dow process, giving the conditions.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "$\\ce{C6H5Cl + 2NaOH ->[623 K, 300 atm] C6H5ONa + NaCl + H2O}$; then acidification: $\\ce{C6H5ONa + HCl -> C6H5OH + NaCl}$."
+      },
+      "solution_md": "Two equations with conditions.",
+      "marking_scheme": [
+        {
+          "step": "Hydrolysis with conditions",
+          "marks": 1
+        },
+        {
+          "step": "Acidification",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch13-t04"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch13_047",
+      "unit": "isc-12-chemistry-ch13",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Explain why 1-chloro-4-nitrobenzene is hydrolysed by aqueous NaOH at about 443 K, whereas chlorobenzene needs about 623 K and high pressure.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "OH⁻ adds to the carbon bearing Cl, forming a negatively charged σ-complex. In 1-chloro-4-nitrobenzene the para nitro group delocalises this negative charge onto its oxygen atoms by resonance, stabilising the intermediate and lowering the activation energy; Cl⁻ is then eliminated. Chlorobenzene has no such group, so the intermediate is not stabilised."
+      },
+      "solution_md": "p-NO₂ stabilises the anionic intermediate.",
+      "marking_scheme": [
+        {
+          "step": "Addition–elimination via anion",
+          "marks": 1
+        },
+        {
+          "step": "p-NO₂ delocalises the charge",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch13-t04"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch13_048",
+      "unit": "isc-12-chemistry-ch13",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write equations, with conditions, to convert chlorobenzene into (a) aniline, (b) benzene and (c) phenol.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) $\\ce{2C6H5Cl + 2NH3 + Cu2O ->[475 K, 60 atm] 2C6H5NH2 + 2CuCl + H2O}$. (b) $\\ce{C6H5Cl + H2 ->[Pd] C6H6 + HCl}$. (c) $\\ce{C6H5Cl + 2NaOH ->[623 K, 300 atm] C6H5ONa + NaCl + H2O}$, then acidify with HCl."
+      },
+      "solution_md": "Amination; reduction; Dow process.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch13-t04"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch13_049",
+      "unit": "isc-12-chemistry-ch13",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Describe the mechanism by which hydroxide ions replace chlorine in 1-chloro-2,4-dinitrobenzene, and explain the role of the nitro groups.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Step 1 (addition, slow): OH⁻ attacks the ring carbon bonded to Cl, forming a negatively charged, non-aromatic σ-complex (Meisenheimer complex). Step 2 (elimination, fast): Cl⁻ leaves and aromaticity is restored, giving 2,4-dinitrophenoxide (then 2,4-dinitrophenol on acidification). The nitro groups at the ortho and para positions withdraw electrons and delocalise the negative charge of the σ-complex onto their oxygen atoms, stabilising it and making the reaction occur under mild conditions."
+      },
+      "solution_md": "Addition–elimination; o/p-NO₂ stabilise the anion.",
+      "marking_scheme": [
+        {
+          "step": "Addition step",
+          "marks": 1
+        },
+        {
+          "step": "Elimination step",
+          "marks": 1
+        },
+        {
+          "step": "Role of o/p NO₂",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 4,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch13-t04"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch13_050",
+      "unit": "isc-12-chemistry-ch13",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Iodobenzene and iodomethane are heated together with sodium in dry ether. The main aromatic product is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "biphenyl"
+        },
+        {
+          "id": "b",
+          "text_md": "ethylbenzene"
+        },
+        {
+          "id": "c",
+          "text_md": "toluene (methylbenzene)"
+        },
+        {
+          "id": "d",
+          "text_md": "benzene"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Wurtz–Fittig: ArX + RX + 2Na → Ar–R — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch13-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch13_051",
+      "unit": "isc-12-chemistry-ch13",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Heating chlorobenzene with sodium in dry ether to give biphenyl is called the:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Wurtz–Fittig reaction"
+        },
+        {
+          "id": "b",
+          "text_md": "Fittig reaction"
+        },
+        {
+          "id": "c",
+          "text_md": "Sandmeyer reaction"
+        },
+        {
+          "id": "d",
+          "text_md": "Friedel–Crafts reaction"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Fittig: 2ArX + 2Na → Ar–Ar — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch13-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch13_052",
+      "unit": "isc-12-chemistry-ch13",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Phenylmagnesium bromide is added to water. The organic product is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "phenol"
+        },
+        {
+          "id": "b",
+          "text_md": "benzene"
+        },
+        {
+          "id": "c",
+          "text_md": "bromobenzene"
+        },
+        {
+          "id": "d",
+          "text_md": "biphenyl"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "C₆H₅MgBr + H₂O → C₆H₆ + Mg(OH)Br — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch13-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch13_053",
+      "unit": "isc-12-chemistry-ch13",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "DDT is manufactured by heating chlorobenzene with concentrated sulphuric acid and:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "chloral (trichloroethanal), CCl₃CHO"
+        },
+        {
+          "id": "b",
+          "text_md": "chloroform, CHCl₃"
+        },
+        {
+          "id": "c",
+          "text_md": "ethanal, CH₃CHO"
+        },
+        {
+          "id": "d",
+          "text_md": "phosgene, COCl₂"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "2C₆H₅Cl + CCl₃CHO → (ClC₆H₄)₂CHCCl₃ + H₂O — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch13-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch13_054",
+      "unit": "isc-12-chemistry-ch13",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Concentrations of DDT in fish-eating birds can be millions of times higher than in lake water. The main reason is that DDT:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "is highly soluble in water"
+        },
+        {
+          "id": "b",
+          "text_md": "breaks down quickly into harmless products"
+        },
+        {
+          "id": "c",
+          "text_md": "is fat-soluble and not biodegradable, so it accumulates along the food chain"
+        },
+        {
+          "id": "d",
+          "text_md": "is excreted rapidly by animals"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Biomagnification of a persistent, lipid-soluble compound — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch13-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch13_055",
+      "unit": "isc-12-chemistry-ch13",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** The use of DDT is banned or restricted in many countries.\n\n**Reason (R):** DDT is highly soluble in water and is quickly washed out of soil.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "A is true. R is false: DDT is almost insoluble in water and persists in soil — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch13-t05"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch13_056",
+      "unit": "isc-12-chemistry-ch13",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? In the Wurtz–Fittig reaction an aryl halide and an alkyl halide react with sodium in dry ether to give an alkylbenzene.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "t"
+        ]
+      },
+      "solution_md": "True. E.g. C₆H₅Br + C₂H₅Br + 2Na → C₆H₅C₂H₅ + 2NaBr.",
+      "marking_scheme": [
+        {
+          "step": "True",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch13-t05"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch13_057",
+      "unit": "isc-12-chemistry-ch13",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "DDT stands for p,p′-dichlorodiphenyl___ethane.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "trichloro"
+            ]
+          }
+        ]
+      },
+      "solution_md": "Dichlorodiphenyl**trichloro**ethane.",
+      "marking_scheme": [
+        {
+          "step": "Writes \"trichloro\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch13-t05"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch13_058",
+      "unit": "isc-12-chemistry-ch13",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "What mass of DDT ($M = 354.5$) can be made from $22.5\\ \\text{g}$ of chlorobenzene ($M = 112.5$) with excess chloral, assuming complete conversion? ($\\ce{2C6H5Cl + CCl3CHO -> (ClC6H4)2CHCCl3 + H2O}$)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 35.45,
+        "tolerance": 0.1,
+        "unit": "g"
+      },
+      "solution_md": "$n(\\ce{C6H5Cl}) = 22.5 \\div 112.5 = 0.200\\ \\text{mol}$; $n(\\text{DDT}) = 0.100\\ \\text{mol}$; mass $= 0.100 \\times 354.5 = 35.45\\ \\text{g}$.",
+      "marking_scheme": [
+        {
+          "step": "2 : 1 ratio",
+          "marks": 1
+        },
+        {
+          "step": "35.45 g",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch13-t05"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch13_059",
+      "unit": "isc-12-chemistry-ch13",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "$0.10\\ \\text{mol}$ of bromobenzene reacts with excess bromomethane and sodium in dry ether. If the yield of toluene ($M = 92$) is 60%, what mass is obtained?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 5.52,
+        "tolerance": 0.02,
+        "unit": "g"
+      },
+      "solution_md": "Mass $= 0.10 \\times 92 \\times 0.60 = 5.52\\ \\text{g}$.",
+      "marking_scheme": [
+        {
+          "step": "1 : 1 ratio",
+          "marks": 1
+        },
+        {
+          "step": "5.52 g",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch13-t05"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch13_060",
+      "unit": "isc-12-chemistry-ch13",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write equations for (a) the Wurtz–Fittig preparation of ethylbenzene and (b) the Fittig preparation of biphenyl.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) $\\ce{C6H5Br + C2H5Br + 2Na ->[dry ether] C6H5C2H5 + 2NaBr}$. (b) $\\ce{2C6H5Br + 2Na ->[dry ether] C6H5C6H5 + 2NaBr}$."
+      },
+      "solution_md": "Two equations.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch13-t05"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch13_061",
+      "unit": "isc-12-chemistry-ch13",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write the structural formula and IUPAC name of DDT, and give one reason why its use is restricted.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(ClC₆H₄)₂CH–CCl₃, with both Cl atoms para on the rings: 1,1,1-trichloro-2,2-bis(4-chlorophenyl)ethane. Reason (any one): not biodegradable, so it persists; fat-soluble, so it accumulates in food chains (biomagnification), harming birds and fish; many insects have become resistant."
+      },
+      "solution_md": "Structure, name, one reason.",
+      "marking_scheme": [
+        {
+          "step": "Structure and name",
+          "marks": 1
+        },
+        {
+          "step": "Reason",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch13-t05"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch13_062",
+      "unit": "isc-12-chemistry-ch13",
+      "language": "en",
+      "type": "short",
+      "stem_md": "(a) Write the equation for the manufacture of DDT. (b) State two properties of DDT that make it an environmental problem. (c) What is meant by biomagnification?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) $\\ce{2C6H5Cl + CCl3CHO ->[conc. H2SO4] (ClC6H4)2CHCCl3 + H2O}$. (b) It is chemically very stable (not biodegradable) and fat-soluble (stored in fatty tissue rather than excreted). (c) The increase in concentration of a persistent substance at each higher level of a food chain, so that top predators receive the largest doses."
+      },
+      "solution_md": "Equation; stable and fat-soluble; biomagnification.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch13-t05"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch13_063",
+      "unit": "isc-12-chemistry-ch13",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Using resonance and hybridisation, explain why the C–Cl bond in chlorobenzene is shorter, stronger and less polar than in chloroethane. [2]\n\n(b) Write equations to prepare chlorobenzene (i) from benzene and (ii) from aniline by the Gattermann reaction. [2]\n\n(c) Why does 1,4-dichlorobenzene melt at a higher temperature than 1,2-dichlorobenzene? [1]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) A lone pair on Cl is delocalised into the ring, giving the C–Cl bond partial double-bond character; and the ring carbon is sp² (more s character, more electronegative). Both make the bond shorter and stronger. The +R effect opposes the −I effect, so the bond is less polar (1.69 D vs 2.05 D).\n\n(b) (i) $\\ce{C6H6 + Cl2 ->[FeCl3][dark] C6H5Cl + HCl}$. (ii) $\\ce{C6H5NH2 + NaNO2 + 2HCl ->[273-278 K] C6H5N2Cl + NaCl + 2H2O}$; $\\ce{C6H5N2Cl ->[Cu/HCl] C6H5Cl + N2}$.\n\n(c) The symmetrical para isomer packs more closely in the crystal lattice, so more energy is needed to melt it."
+      },
+      "solution_md": "Resonance + sp²; two preparations; packing.",
+      "marking_scheme": [
+        {
+          "step": "(a) Bond length/strength",
+          "marks": 1
+        },
+        {
+          "step": "(a) Polarity",
+          "marks": 1
+        },
+        {
+          "step": "(b)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(b)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 5,
+      "difficulty": 3,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch13-t01",
+        "isc-12-chemistry-ch13-t02"
+      ],
+      "expected_time_sec": 570,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch13_064",
+      "unit": "isc-12-chemistry-ch13",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Explain why chlorine is deactivating but ortho/para directing in electrophilic substitution. [1½]\n\n(b) Give the mechanism of nitration of chlorobenzene. [2]\n\n(c) Name the major products of (i) chlorination and (ii) Friedel–Crafts acylation with ethanoyl chloride of chlorobenzene. [1½]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) −I effect withdraws electron density from the whole ring (slower than benzene); +R effect (Cl lone pair) increases electron density at o and p and stabilises the σ-complex for o/p attack.\n\n(b) $\\ce{HNO3 + 2H2SO4 -> NO2+ + H3O+ + 2HSO4-}$; NO₂⁺ attacks the para (or ortho) carbon to form a resonance-stabilised σ-complex (slow); HSO₄⁻ removes H⁺ (fast), giving 1-chloro-4-nitrobenzene (major) and 1-chloro-2-nitrobenzene.\n\n(c) (i) 1,4-Dichlorobenzene (major) and 1,2-dichlorobenzene. (ii) 4-Chloroacetophenone (1-(4-chlorophenyl)ethan-1-one), major, with the 2-isomer."
+      },
+      "solution_md": "−I vs +R; three-step mechanism; para products.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1.5
+        },
+        {
+          "step": "(b) Electrophile",
+          "marks": 0.5
+        },
+        {
+          "step": "(b) σ-complex and loss of H⁺",
+          "marks": 1.5
+        },
+        {
+          "step": "(c) Two products",
+          "marks": 1.5
+        }
+      ],
+      "marks": 5,
+      "difficulty": 3,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch13-t03"
+      ],
+      "expected_time_sec": 570,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch13_065",
+      "unit": "isc-12-chemistry-ch13",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) The conditions for replacing Cl by OH are: chlorobenzene 623 K and 300 atm; 1-chloro-4-nitrobenzene 443 K; 1-chloro-2,4-dinitrobenzene 368 K; 2,4,6-trinitrochlorobenzene warm water. Explain this trend. [2]\n\n(b) Describe the addition–elimination mechanism for the reaction of 1-chloro-4-nitrobenzene with hydroxide ions. [2]\n\n(c) Write the equation for converting chlorobenzene into aniline. [1]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) The reaction goes through an anionic σ-complex formed by addition of OH⁻. Nitro groups at ortho and para positions withdraw electrons and delocalise the negative charge onto their oxygen atoms, stabilising the intermediate and lowering the activation energy. Each additional o/p nitro group makes the reaction easier, so milder conditions suffice.\n\n(b) OH⁻ adds to the C–Cl carbon, forming a non-aromatic carbanion (Meisenheimer complex) whose negative charge is delocalised onto the para nitro group (slow); Cl⁻ is then expelled and aromaticity restored, giving 4-nitrophenoxide, which is acidified to 4-nitrophenol.\n\n(c) $\\ce{2C6H5Cl + 2NH3 + Cu2O ->[475 K, 60 atm] 2C6H5NH2 + 2CuCl + H2O}$."
+      },
+      "solution_md": "o/p-NO₂ stabilise the anion; addition–elimination; amination.",
+      "marking_scheme": [
+        {
+          "step": "(a) Trend explained",
+          "marks": 2
+        },
+        {
+          "step": "(b) Mechanism",
+          "marks": 2
+        },
+        {
+          "step": "(c) Equation",
+          "marks": 1
+        }
+      ],
+      "marks": 5,
+      "difficulty": 4,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch13-t04"
+      ],
+      "expected_time_sec": 570,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch13_066",
+      "unit": "isc-12-chemistry-ch13",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Write equations for (i) the Wurtz–Fittig reaction of bromobenzene with 1-bromopropane and (ii) the Fittig reaction of iodobenzene. Name the products. [2]\n\n(b) How is phenylmagnesium bromide prepared, and what does it give with water? [1]\n\n(c) Write the equation for the preparation of DDT and explain two of its environmental effects. [2]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) (i) $\\ce{C6H5Br + CH3CH2CH2Br + 2Na ->[dry ether] C6H5CH2CH2CH3 + 2NaBr}$: propylbenzene. (ii) $\\ce{2C6H5I + 2Na ->[dry ether] C6H5C6H5 + 2NaI}$: biphenyl.\n\n(b) $\\ce{C6H5Br + Mg ->[dry ether] C6H5MgBr}$; with water it gives benzene: $\\ce{C6H5MgBr + H2O -> C6H6 + Mg(OH)Br}$.\n\n(c) $\\ce{2C6H5Cl + CCl3CHO ->[conc. H2SO4] (ClC6H4)2CHCCl3 + H2O}$. Effects: persists in the environment (not biodegradable); accumulates in fatty tissue and increases up food chains, causing thin eggshells in birds of prey and harming fish; insects develop resistance."
+      },
+      "solution_md": "Propylbenzene; biphenyl; PhMgBr → benzene; DDT effects.",
+      "marking_scheme": [
+        {
+          "step": "(a)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(a)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c) Equation",
+          "marks": 1
+        },
+        {
+          "step": "(c) Two effects",
+          "marks": 1
+        }
+      ],
+      "marks": 5,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch13-t05"
+      ],
+      "expected_time_sec": 570,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch13_067",
+      "unit": "isc-12-chemistry-ch13",
+      "language": "en",
+      "type": "long",
+      "stem_md": "How would you carry out the following conversions? Give reagents and conditions. [1 each]\n\n(a) Benzene to 1-chloro-4-nitrobenzene\n\n(b) Chlorobenzene to biphenyl\n\n(c) Aniline to iodobenzene\n\n(d) Chlorobenzene to 4-nitrophenol\n\n(e) Bromobenzene to benzene by way of a Grignard reagent",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Cl₂/FeCl₃ (dark) to chlorobenzene, then conc. HNO₃ + conc. H₂SO₄; separate the para isomer. (b) Na in dry ether (Fittig). (c) NaNO₂/HCl at 273–278 K, then warm with KI. (d) Nitrate (conc. HNO₃/H₂SO₄) to 1-chloro-4-nitrobenzene, then aqueous NaOH at about 443 K and acidify. (e) Mg in dry ether to C₆H₅MgBr, then add water."
+      },
+      "solution_md": "Five conversions.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        },
+        {
+          "step": "(d)",
+          "marks": 1
+        },
+        {
+          "step": "(e)",
+          "marks": 1
+        }
+      ],
+      "marks": 5,
+      "difficulty": 4,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch13-t01",
+        "isc-12-chemistry-ch13-t03",
+        "isc-12-chemistry-ch13-t04",
+        "isc-12-chemistry-ch13-t05"
+      ],
+      "expected_time_sec": 570,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    }
+  ],
+  "build": {
+    "run_id": null,
+    "checks": {
+      "katex_mhchem": "74 math strings parsed with KaTeX 0.19.0 + mhchem (throwOnError, strict \"error\"), 0 failures",
+      "svg_allowlist": "2 SVG visuals (1 distinct diagrams) checked with saxes against svg-allowlist.ts: elements, attributes, class pattern, fragment-only refs, no style, palette incl. named hues, viewBox, title, per-page unique ids — 0 failures",
+      "narration": "30 slides, 11–72 words (mean 49), no symbols, formulae or unit abbreviations",
+      "resolve": "5/5 scripted re-solve checks pass",
+      "chemistry_facts": "The nature of the aryl C–X bond, Sandmeyer and Gattermann preparations, electrophilic and nucleophilic substitution mechanisms, Wurtz–Fittig, Fittig and Grignard reactions, DDT and every numerical checked against the ISC 2027 syllabus (Unit 6)",
+      "content_gate": "npm test -w @soyl/content-templates: all checks pass for this chapter",
+      "verifier_pass": "2026-10-30: every question and every internal-choice alternative re-solved from its stem by the author; every numerical re-computed by the build script — see README \"Verifier pass\"",
+      "pipeline_lint": "npm run content -- lint --exemplars: 0 errors, 0 warnings"
+    }
+  }
+}

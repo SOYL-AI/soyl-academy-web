@@ -1,0 +1,4862 @@
+{
+  "unit": "isc-12-chemistry-ch11",
+  "version": 1,
+  "academic_year": "2026-27",
+  "created_at": "2026-10-30T00:00:00+05:30",
+  "decks": [
+    {
+      "unit": "isc-12-chemistry-ch11",
+      "part": 1,
+      "version": 1,
+      "title": "Bonding in Coordination Compounds — Part 1: Valence bond theory",
+      "language": "en",
+      "goals": [
+        "State the main ideas of valence bond theory for complexes",
+        "Predict the hybridisation, shape and magnetic behaviour of a complex",
+        "Distinguish inner and outer orbital (low and high spin) complexes",
+        "State the limitations of valence bond theory"
+      ],
+      "slides": [
+        {
+          "id": "s01",
+          "layout": "title",
+          "heading": "How do ligands bond to metals?",
+          "body_md": "Part 1 — valence bond theory: hybrid orbitals, shapes and magnetism of complexes.",
+          "bullets": [],
+          "visual": {
+            "kind": "flow",
+            "spec": {
+              "direction": "LR",
+              "nodes": [
+                {
+                  "id": "a",
+                  "label": "Metal ion: count d electrons"
+                },
+                {
+                  "id": "b",
+                  "label": "Ligand strong or weak?"
+                },
+                {
+                  "id": "c",
+                  "label": "Pairing and empty orbitals"
+                },
+                {
+                  "id": "d",
+                  "label": "Hybridisation → shape"
+                },
+                {
+                  "id": "e",
+                  "label": "Unpaired electrons → magnetism"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "a",
+                  "to": "b"
+                },
+                {
+                  "from": "b",
+                  "to": "c"
+                },
+                {
+                  "from": "c",
+                  "to": "d"
+                },
+                {
+                  "from": "d",
+                  "to": "e"
+                }
+              ]
+            },
+            "alt": "Flow of the valence bond approach to a complex"
+          },
+          "math": [],
+          "narration": "Namaste! Two iron two plus complexes, one with water and one with cyanide, behave completely differently in a magnetic field: one is strongly attracted, the other not at all. In this part we use valence bond theory, built on the hybrid orbitals you met in Class 11, to predict the shape and magnetic behaviour of complexes, and we see where this simple theory runs out.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s02",
+          "layout": "concept",
+          "heading": "Main ideas of valence bond theory",
+          "body_md": "(1) The central metal ion provides a number of **empty orbitals** equal to its coordination number. (2) These orbitals **hybridise** to give equivalent orbitals of definite direction. (3) Each ligand donates a **lone pair** into one hybrid orbital, forming a coordinate (σ) bond. (4) **Strong-field** ligands (CN⁻, CO, NH₃ with Co³⁺) can force d electrons to **pair**, freeing inner (n−1)d orbitals; **weak-field** ligands (F⁻, Cl⁻, H₂O) cannot.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "CN",
+                "Hybridisation",
+                "Shape"
+              ],
+              "rows": [
+                [
+                  "2",
+                  "sp",
+                  "Linear"
+                ],
+                [
+                  "4",
+                  "sp³",
+                  "Tetrahedral"
+                ],
+                [
+                  "4",
+                  "dsp²",
+                  "Square planar"
+                ],
+                [
+                  "6",
+                  "d²sp³ (inner orbital)",
+                  "Octahedral"
+                ],
+                [
+                  "6",
+                  "sp³d² (outer orbital)",
+                  "Octahedral"
+                ]
+              ]
+            },
+            "alt": "Table of hybridisations and shapes for coordination numbers two, four and six"
+          },
+          "math": [],
+          "narration": "In valence bond theory the metal ion offers as many empty orbitals as there are ligands. These mix to form hybrid orbitals pointing in definite directions, and each ligand pushes a lone pair into one of them. Two hybrid orbitals give a linear complex, four give a tetrahedron or a square, and six give an octahedron. Strong ligands can make the metal’s d electrons pair up, freeing inner d orbitals.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s03",
+          "layout": "concept",
+          "heading": "Inner and outer orbital complexes",
+          "body_md": "For CN 6, if two **inner 3d** orbitals are used ($d^2sp^3$), the complex is **inner orbital** (low spin, fewer unpaired electrons). If two **outer 4d** orbitals are used ($sp^3d^2$), it is **outer orbital** (high spin). Magnetic moment ($\\mu = \\sqrt{n(n+2)}$ BM) tells us which.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Feature",
+                "Inner orbital",
+                "Outer orbital"
+              ],
+              "rows": [
+                [
+                  "Hybridisation",
+                  "d²sp³",
+                  "sp³d²"
+                ],
+                [
+                  "d orbitals used",
+                  "(n−1)d",
+                  "nd"
+                ],
+                [
+                  "Ligands",
+                  "Strong field",
+                  "Weak field"
+                ],
+                [
+                  "Unpaired electrons",
+                  "Fewer (low spin)",
+                  "More (high spin)"
+                ],
+                [
+                  "Example",
+                  "[Fe(CN)₆]⁴⁻",
+                  "[Fe(H₂O)₆]²⁺"
+                ]
+              ]
+            },
+            "alt": "Table comparing inner and outer orbital octahedral complexes"
+          },
+          "math": [
+            "\\mu = \\sqrt{n(n+2)}\\ \\text{BM}"
+          ],
+          "narration": "An octahedral complex can use two inner three d orbitals, making it an inner-orbital complex, or two outer four d orbitals, making it an outer-orbital complex. Inner-orbital complexes form with strong ligands that pair electrons, so they have fewer unpaired electrons and are low spin. Measuring the magnetic moment tells us how many unpaired electrons there are, and hence which kind we have.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s04",
+          "layout": "example",
+          "heading": "Worked example: two iron(II) complexes",
+          "body_md": "**Problem.** Explain why $\\ce{[Fe(CN)6]^4-}$ is diamagnetic but $\\ce{[Fe(H2O)6]^2+}$ has a moment of about 4.9 BM.\n\n**Step 1.** $\\ce{Fe^2+}$: [Ar]3d⁶, four unpaired electrons in the free ion.\n\n**Step 2.** CN⁻ is strong field: the six 3d electrons pair into three orbitals, leaving two 3d orbitals empty → $d^2sp^3$, inner orbital, octahedral, **0 unpaired**: diamagnetic.\n\n**Step 3.** H₂O is weak field: no pairing; 4s, 4p and two 4d orbitals used → $sp^3d^2$, outer orbital, **4 unpaired**: $\\mu = \\sqrt{24} \\approx 4.90$ BM.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Complex",
+                "Hybridisation",
+                "Unpaired e⁻",
+                "μ / BM"
+              ],
+              "rows": [
+                [
+                  "[Fe(CN)₆]⁴⁻",
+                  "d²sp³",
+                  "0",
+                  "0"
+                ],
+                [
+                  "[Fe(H₂O)₆]²⁺",
+                  "sp³d²",
+                  "4",
+                  "4.90"
+                ]
+              ]
+            },
+            "alt": "Table comparing the two iron two plus complexes"
+          },
+          "math": [],
+          "narration": "Iron two plus has six d electrons, four of them unpaired. Cyanide is a strong ligand and forces all six to pair in three d orbitals, leaving two inner d orbitals for d two s p three hybridisation: an inner-orbital, diamagnetic complex. Water is weak, so no pairing occurs, the outer four d orbitals are used, and four unpaired electrons give a moment of about four point nine.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s05",
+          "layout": "example",
+          "heading": "Worked example: Ni(0) and Ni(II) four-coordinate complexes",
+          "body_md": "**Problem.** Predict the hybridisation, shape and magnetism of $\\ce{[Ni(CO)4]}$ and $\\ce{[Ni(CN)4]^2-}$. (Ni, Z = 28)\n\n**(a)** $\\ce{[Ni(CO)4]}$: Ni(0) is 3d⁸4s². CO (strong) pushes the 4s electrons into 3d → 3d¹⁰, 4s and 4p empty → $sp^3$, **tetrahedral, diamagnetic**.\n\n**(b)** $\\ce{[Ni(CN)4]^2-}$: Ni²⁺ is 3d⁸. CN⁻ pairs the two unpaired electrons, freeing one 3d orbital → $dsp^2$, **square planar, diamagnetic**.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Complex",
+                "Ni configuration used",
+                "Hybridisation",
+                "Shape"
+              ],
+              "rows": [
+                [
+                  "[Ni(CO)₄]",
+                  "3d¹⁰",
+                  "sp³",
+                  "Tetrahedral"
+                ],
+                [
+                  "[Ni(CN)₄]²⁻",
+                  "3d⁸ (paired)",
+                  "dsp²",
+                  "Square planar"
+                ]
+              ]
+            },
+            "alt": "Table comparing two four-coordinate nickel complexes"
+          },
+          "math": [],
+          "narration": "Both complexes have four ligands, yet they have different shapes. In nickel tetracarbonyl, nickel is in the zero state; carbon monoxide pushes its two four s electrons into three d, giving a full three d ten, so four s and four p hybridise to a tetrahedron. In the cyanide complex, nickel two plus pairs its eight d electrons, leaving one three d orbital free for d s p two hybridisation and a square planar shape.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s06",
+          "layout": "check",
+          "heading": "Quick check: hybridisation and shape",
+          "body_md": "Predict the hybridisation and shape of a complex.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Find the oxidation state and d count, decide whether the ligand pairs electrons, then count the empty orbitals.",
+          "check_question_id": "q_isc12chem_ch11_001",
+          "audio": null
+        },
+        {
+          "id": "s07",
+          "layout": "example",
+          "heading": "Worked example: from magnetic moment to bonding",
+          "body_md": "**Problem.** $\\ce{[MnBr4]^2-}$ has a measured moment of 5.9 BM. Deduce the number of unpaired electrons, the hybridisation and the shape. (Mn, Z = 25)\n\n**Step 1.** $\\sqrt{n(n+2)} = 5.9$ gives $n(n+2) \\approx 35$, so $n = 5$.\n\n**Step 2.** Mn²⁺ is 3d⁵ with 5 unpaired electrons: no pairing, so the 3d orbitals are not available.\n\n**Step 3.** 4s and three 4p orbitals are used → $sp^3$, **tetrahedral**, high spin.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Data",
+                "Deduction"
+              ],
+              "rows": [
+                [
+                  "μ = 5.9 BM",
+                  "n = 5"
+                ],
+                [
+                  "Mn²⁺ = 3d⁵",
+                  "No pairing; all 3d occupied"
+                ],
+                [
+                  "CN = 4",
+                  "sp³, tetrahedral"
+                ]
+              ]
+            },
+            "alt": "Table of deductions from the magnetic moment of tetrabromidomanganate two"
+          },
+          "math": [],
+          "narration": "Work backwards from the measured moment. Five point nine Bohr magnetons means five unpaired electrons, exactly the number in free manganese two plus. So bromide has not paired any electrons, and every three d orbital holds one electron. For four ligands the metal must use the four s and three four p orbitals: sp three hybridisation and a tetrahedral, high-spin complex.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s08",
+          "layout": "concept",
+          "heading": "Magnetic behaviour summarised",
+          "body_md": "The same metal ion can give paramagnetic or diamagnetic complexes depending on the ligand. Strong-field ligands lower the number of unpaired electrons.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Complex",
+                "d count",
+                "Hybridisation",
+                "Unpaired e⁻",
+                "Magnetism"
+              ],
+              "rows": [
+                [
+                  "[Cr(NH₃)₆]³⁺",
+                  "3",
+                  "d²sp³",
+                  "3",
+                  "Paramagnetic"
+                ],
+                [
+                  "[Co(NH₃)₆]³⁺",
+                  "6",
+                  "d²sp³",
+                  "0",
+                  "Diamagnetic"
+                ],
+                [
+                  "[CoF₆]³⁻",
+                  "6",
+                  "sp³d²",
+                  "4",
+                  "Paramagnetic"
+                ],
+                [
+                  "[NiCl₄]²⁻",
+                  "8",
+                  "sp³",
+                  "2",
+                  "Paramagnetic"
+                ],
+                [
+                  "[Zn(NH₃)₄]²⁺",
+                  "10",
+                  "sp³",
+                  "0",
+                  "Diamagnetic"
+                ]
+              ]
+            },
+            "alt": "Table of complexes with d count, hybridisation, unpaired electrons and magnetism"
+          },
+          "math": [],
+          "narration": "Here is a summary table. Chromium three plus, with three d electrons, uses two empty inner d orbitals whatever the ligand and stays paramagnetic. Cobalt three plus is diamagnetic with ammonia but paramagnetic with fluoride. Nickel two plus with chloride is tetrahedral and paramagnetic. Zinc two plus, with a full d subshell, uses s and p orbitals and is always diamagnetic.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s09",
+          "layout": "check",
+          "heading": "Quick check: magnetism",
+          "body_md": "Decide whether a complex is paramagnetic or diamagnetic.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Count unpaired electrons after deciding whether the ligand pairs them.",
+          "check_question_id": "q_isc12chem_ch11_002",
+          "audio": null
+        },
+        {
+          "id": "s10",
+          "layout": "concept",
+          "heading": "Limitations of valence bond theory",
+          "body_md": "VBT explains shapes and magnetism, but: (1) it cannot explain the **colour** of complexes; (2) it does not explain **why** some ligands are strong field and others weak; (3) it cannot predict whether a 4-coordinate complex is tetrahedral or square planar without magnetic data; (4) it gives no quantitative interpretation of magnetic or thermodynamic data; (5) it does not explain the temperature dependence of magnetism.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "VBT explains",
+                "VBT cannot explain"
+              ],
+              "rows": [
+                [
+                  "Shape from hybridisation",
+                  "Colour"
+                ],
+                [
+                  "Paramagnetic vs diamagnetic",
+                  "Strong vs weak ligands"
+                ],
+                [
+                  "Inner vs outer orbital",
+                  "Tetrahedral vs square planar in advance"
+                ]
+              ]
+            },
+            "alt": "Table of what valence bond theory can and cannot explain"
+          },
+          "math": [],
+          "narration": "Valence bond theory gives a simple picture of shapes and magnetism, but it has gaps. It cannot explain why complexes are coloured. It treats strong and weak ligands as given facts without explaining them. It cannot tell in advance whether a four-coordinate complex will be tetrahedral or square planar. These gaps are filled by crystal field theory, the subject of Part 2.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s11",
+          "layout": "check",
+          "heading": "Quick check: VBT limitations",
+          "body_md": "Identify something valence bond theory cannot explain.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Think about colour and the strength of ligands.",
+          "check_question_id": "q_isc12chem_ch11_003",
+          "audio": null
+        },
+        {
+          "id": "s12",
+          "layout": "summary",
+          "heading": "Summary: Part 1",
+          "body_md": "",
+          "bullets": [
+            "VBT: empty metal orbitals hybridise and accept ligand lone pairs.",
+            "sp³ tetrahedral; dsp² square planar; d²sp³ inner orbital (low spin) and sp³d² outer orbital (high spin) octahedral.",
+            "Strong-field ligands (CN⁻, CO) pair electrons; weak-field (F⁻, Cl⁻, H₂O) do not.",
+            "μ = √(n(n+2)) BM tells the number of unpaired electrons.",
+            "Limitations: no colour, no reason for ligand strength, no quantitative data."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Complex",
+                "Hybridisation",
+                "Magnetism"
+              ],
+              "rows": [
+                [
+                  "[Fe(CN)₆]⁴⁻",
+                  "d²sp³",
+                  "Diamagnetic"
+                ],
+                [
+                  "[Fe(H₂O)₆]²⁺",
+                  "sp³d²",
+                  "4 unpaired"
+                ],
+                [
+                  "[Ni(CN)₄]²⁻",
+                  "dsp²",
+                  "Diamagnetic"
+                ],
+                [
+                  "[MnBr₄]²⁻",
+                  "sp³",
+                  "5 unpaired"
+                ]
+              ]
+            },
+            "alt": "Summary table of key complexes"
+          },
+          "math": [],
+          "narration": "Let us sum up Part 1. In valence bond theory the metal’s empty orbitals hybridise to accept lone pairs from the ligands, and the hybridisation fixes the shape. Strong ligands pair electrons and give inner-orbital, low-spin complexes; weak ligands give outer-orbital, high-spin ones. The magnetic moment tells us the number of unpaired electrons. But the theory cannot explain colour.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s13",
+          "layout": "exam-tips",
+          "heading": "Exam tips: Part 1",
+          "body_md": "",
+          "bullets": [
+            "Start from the oxidation state and d count of the metal ion.",
+            "Show the orbital (box) diagram: d electrons, then ligand pairs in hybrid orbitals.",
+            "State hybridisation, shape, inner/outer orbital and magnetism — each earns a mark.",
+            "For Ni(0) in carbonyls, remember the 4s electrons move into 3d."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Slip",
+                "Fix"
+              ],
+              "rows": [
+                [
+                  "Using the atom’s configuration",
+                  "Use the ion’s"
+                ],
+                [
+                  "[Fe(H₂O)₆]²⁺ called d²sp³",
+                  "Water is weak: sp³d²"
+                ],
+                [
+                  "[Ni(CO)₄] square planar",
+                  "Tetrahedral (sp³)"
+                ]
+              ]
+            },
+            "alt": "Table of three common slips in Part 1 and fixes"
+          },
+          "math": [],
+          "narration": "Some tips. Begin from the metal ion’s oxidation state and d count. Draw the orbital boxes, showing which orbitals receive ligand lone pairs. State the hybridisation, shape, type of complex and magnetic behaviour, because each usually carries a mark. And remember that in nickel tetracarbonyl the four s electrons move into the three d subshell.",
+          "check_question_id": null,
+          "audio": null
+        }
+      ],
+      "status": "draft",
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "unit": "isc-12-chemistry-ch11",
+      "part": 2,
+      "version": 1,
+      "title": "Bonding in Coordination Compounds — Part 2: Crystal field theory, stability and importance",
+      "language": "en",
+      "goals": [
+        "Draw d-orbital splitting diagrams for octahedral and tetrahedral complexes",
+        "Explain colour and magnetism of complexes using crystal field splitting and ligand strength",
+        "Compare the stabilities of complexes from their stability constants",
+        "Give examples of complexes in qualitative analysis, metal extraction and living systems"
+      ],
+      "slides": [
+        {
+          "id": "s01",
+          "layout": "title",
+          "heading": "Splitting the d orbitals",
+          "body_md": "Part 2 — crystal field theory, colour, stability constants and why complexes matter.",
+          "bullets": [],
+          "visual": {
+            "kind": "flow",
+            "spec": {
+              "direction": "LR",
+              "nodes": [
+                {
+                  "id": "a",
+                  "label": "Ligands as point charges"
+                },
+                {
+                  "id": "b",
+                  "label": "d orbitals split"
+                },
+                {
+                  "id": "c",
+                  "label": "High or low spin"
+                },
+                {
+                  "id": "d",
+                  "label": "Colour"
+                },
+                {
+                  "id": "e",
+                  "label": "Stability and uses"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "a",
+                  "to": "b"
+                },
+                {
+                  "from": "b",
+                  "to": "c"
+                },
+                {
+                  "from": "c",
+                  "to": "d"
+                },
+                {
+                  "from": "d",
+                  "to": "e"
+                }
+              ]
+            },
+            "alt": "Flow of Part 2 topics"
+          },
+          "math": [],
+          "narration": "Crystal field theory takes a different view. Instead of hybrid orbitals, it treats the ligands as point charges that repel the metal’s d electrons, so the five d orbitals no longer have the same energy. This simple idea explains colour as well as magnetism. We then see how stable complexes are, and how they are used in the laboratory, in industry and in our bodies.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s02",
+          "layout": "diagram",
+          "heading": "Octahedral and tetrahedral splitting",
+          "body_md": "Ligands are **point charges** (anions) or **point dipoles** (neutral molecules); bonding is treated as **purely electrostatic**. In an **octahedral** field, $d_{x^2-y^2}$ and $d_{z^2}$ point at the ligands and are raised ($e_g$); $d_{xy}$, $d_{yz}$, $d_{xz}$ lie between the axes and are lowered ($t_{2g}$). The gap is $\\Delta_o$: $t_{2g}$ lies $0.4\\Delta_o$ below and $e_g$ $0.6\\Delta_o$ above the average. In a **tetrahedral** field the order reverses ($e$ below $t_2$) and $\\Delta_t \\approx \\tfrac{4}{9}\\Delta_o$.",
+          "bullets": [],
+          "visual": {
+            "kind": "svg",
+            "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 360 230\" role=\"img\" aria-label=\"Energy-level diagram. In the centre, five d orbitals of equal energy in the free ion. On the left, in an octahedral field, they split into a lower set of three, t2g, at minus 0.4 delta-o and an upper set of two, eg, at plus 0.6 delta-o; the gap is delta-o. On the right, in a tetrahedral field, the order is reversed and the splitting is smaller: a lower set of two, e, and an upper set of three, t2; the gap delta-t is about four-ninths of delta-o.\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>Energy-level diagram. In the centre, five d orbitals of equal energy in the free ion. On the left, in an octahedral field, they split into a lower set of three, t2g, at minus 0.4 delta-o and an upper set of two, eg, at plus 0.6 delta-o; the gap is delta-o. On the right, in a tetrahedral field, the order is reversed and the splitting is smaller: a lower set of two, e, and an upper set of three, t2; the gap delta-t is about four-ninths of delta-o.</title><line x1=\"130\" y1=\"110\" x2=\"144\" y2=\"110\" stroke=\"currentColor\" stroke-width=\"2.5\"/><line x1=\"150\" y1=\"110\" x2=\"164\" y2=\"110\" stroke=\"currentColor\" stroke-width=\"2.5\"/><line x1=\"170\" y1=\"110\" x2=\"184\" y2=\"110\" stroke=\"currentColor\" stroke-width=\"2.5\"/><line x1=\"190\" y1=\"110\" x2=\"204\" y2=\"110\" stroke=\"currentColor\" stroke-width=\"2.5\"/><line x1=\"210\" y1=\"110\" x2=\"224\" y2=\"110\" stroke=\"currentColor\" stroke-width=\"2.5\"/><text x=\"178\" y=\"132\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">free ion: five d orbitals</text><line x1=\"20\" y1=\"50\" x2=\"34\" y2=\"50\" stroke=\"currentColor\" stroke-width=\"2.5\"/><line x1=\"40\" y1=\"50\" x2=\"54\" y2=\"50\" stroke=\"currentColor\" stroke-width=\"2.5\"/><line x1=\"10\" y1=\"150\" x2=\"24\" y2=\"150\" stroke=\"currentColor\" stroke-width=\"2.5\"/><line x1=\"30\" y1=\"150\" x2=\"44\" y2=\"150\" stroke=\"currentColor\" stroke-width=\"2.5\"/><line x1=\"50\" y1=\"150\" x2=\"64\" y2=\"150\" stroke=\"currentColor\" stroke-width=\"2.5\"/><text x=\"70\" y=\"46\" fill=\"currentColor\" stroke=\"none\" font-size=\"11\" font-weight=\"bold\">eg</text><text x=\"70\" y=\"154\" fill=\"currentColor\" stroke=\"none\" font-size=\"11\" font-weight=\"bold\">t2g</text><line x1=\"100\" y1=\"148\" x2=\"100\" y2=\"58.8\" stroke=\"var(--diagram-accent)\" stroke-width=\"1.5\"/><polygon points=\"100,54 102.4,59.5 97.6,59.5\" fill=\"var(--diagram-accent)\" stroke=\"none\"/><line x1=\"100\" y1=\"54\" x2=\"100\" y2=\"141.2\" stroke=\"var(--diagram-accent)\" stroke-width=\"1.5\"/><polygon points=\"100,146 97.6,140.5 102.4,140.5\" fill=\"var(--diagram-accent)\" stroke=\"none\"/><text x=\"104\" y=\"100\" fill=\"var(--diagram-accent)\" stroke=\"none\" font-size=\"11\" font-weight=\"bold\">Δo</text><text x=\"40\" y=\"30\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">+0.6 Δo</text><text x=\"30\" y=\"172\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">−0.4 Δo</text><text x=\"55\" y=\"214\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">Octahedral field</text><line x1=\"270\" y1=\"136\" x2=\"284\" y2=\"136\" stroke=\"currentColor\" stroke-width=\"2.5\"/><line x1=\"290\" y1=\"136\" x2=\"304\" y2=\"136\" stroke=\"currentColor\" stroke-width=\"2.5\"/><line x1=\"260\" y1=\"92\" x2=\"274\" y2=\"92\" stroke=\"currentColor\" stroke-width=\"2.5\"/><line x1=\"280\" y1=\"92\" x2=\"294\" y2=\"92\" stroke=\"currentColor\" stroke-width=\"2.5\"/><line x1=\"300\" y1=\"92\" x2=\"314\" y2=\"92\" stroke=\"currentColor\" stroke-width=\"2.5\"/><text x=\"312\" y=\"140\" fill=\"currentColor\" stroke=\"none\" font-size=\"11\" font-weight=\"bold\">e</text><text x=\"322\" y=\"96\" fill=\"currentColor\" stroke=\"none\" font-size=\"11\" font-weight=\"bold\">t2</text><line x1=\"252\" y1=\"134\" x2=\"252\" y2=\"98\" stroke=\"var(--diagram-accent)\" stroke-width=\"1.5\"/><polygon points=\"252,94 254,98.6 250,98.6\" fill=\"var(--diagram-accent)\" stroke=\"none\"/><line x1=\"252\" y1=\"94\" x2=\"252\" y2=\"128\" stroke=\"var(--diagram-accent)\" stroke-width=\"1.5\"/><polygon points=\"252,132 250,127.4 254,127.4\" fill=\"var(--diagram-accent)\" stroke=\"none\"/><text x=\"248\" y=\"114\" fill=\"var(--diagram-accent)\" stroke=\"none\" text-anchor=\"end\" font-size=\"11\" font-weight=\"bold\">Δt</text><text x=\"300\" y=\"214\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">Tetrahedral field</text><text x=\"300\" y=\"196\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">Δt ≈ (4/9) Δo</text><line x1=\"122\" y1=\"110\" x2=\"76\" y2=\"56\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><line x1=\"122\" y1=\"110\" x2=\"72\" y2=\"150\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><line x1=\"232\" y1=\"110\" x2=\"258\" y2=\"94\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><line x1=\"232\" y1=\"110\" x2=\"268\" y2=\"136\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><text x=\"10\" y=\"225\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">Energy increases upwards</text></svg>",
+            "alt": "Splitting of the five d orbitals: in an octahedral field into a lower t2g set and an upper eg set separated by delta-o; in a tetrahedral field into a lower e set and an upper t2 set separated by a smaller delta-t",
+            "caption": "Schematic energy levels; delta-t is about four-ninths of delta-o."
+          },
+          "math": [],
+          "narration": "In an octahedral complex, the six ligands sit on the x, y and z axes. The two d orbitals pointing along the axes feel the most repulsion and rise in energy; the three pointing between the axes fall. The energy gap is delta o. In a tetrahedral complex none of the orbitals points directly at a ligand, the order is reversed, and the gap is only about four ninths as large.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s03",
+          "layout": "concept",
+          "heading": "Spectrochemical series; high and low spin",
+          "body_md": "Ligands ranked by the splitting they produce (weak → strong):",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Case",
+                "Filling for d⁴–d⁷",
+                "Result"
+              ],
+              "rows": [
+                [
+                  "Δo < P (weak field)",
+                  "e_g filled before pairing in t₂g",
+                  "High spin"
+                ],
+                [
+                  "Δo > P (strong field)",
+                  "t₂g filled and paired first",
+                  "Low spin"
+                ],
+                [
+                  "d⁵ weak field",
+                  "t₂g³e_g²",
+                  "5 unpaired"
+                ],
+                [
+                  "d⁵ strong field",
+                  "t₂g⁵e_g⁰",
+                  "1 unpaired"
+                ]
+              ]
+            },
+            "alt": "Table of high-spin and low-spin filling"
+          },
+          "math": [
+            "\\ce{I-} < \\ce{Br-} < \\ce{SCN-} < \\ce{Cl-} < \\ce{F-} < \\ce{OH-} < \\ce{C2O4^2-} < \\ce{H2O} < \\ce{NCS-} < \\ce{NH3} < \\text{en} < \\ce{CN-} < \\ce{CO}"
+          ],
+          "narration": "The order of ligands by splitting power is called the spectrochemical series: iodide and bromide are weak, water is in the middle, and cyanide and carbon monoxide are strong. For four to seven d electrons, an electron must choose between pairing in the lower set, costing the pairing energy P, or entering the upper set, costing delta o. If delta o is smaller, we get high spin; if larger, low spin.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s04",
+          "layout": "example",
+          "heading": "Worked example: Mn(II) in weak and strong fields",
+          "body_md": "**Problem.** Write the $t_{2g}/e_g$ configuration and the number of unpaired electrons for $\\ce{[Mn(H2O)6]^2+}$ and $\\ce{[Mn(CN)6]^4-}$, and calculate their spin-only moments. (Mn, Z = 25)\n\n**Step 1.** Mn²⁺ is d⁵.\n\n**Step 2.** H₂O (weak, $\\Delta_o < P$): $t_{2g}^3e_g^2$, 5 unpaired, $\\mu = \\sqrt{35} \\approx 5.92$ BM.\n\n**Step 3.** CN⁻ (strong, $\\Delta_o > P$): $t_{2g}^5e_g^0$, 1 unpaired, $\\mu = \\sqrt{3} \\approx 1.73$ BM.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Complex",
+                "Configuration",
+                "Unpaired e⁻",
+                "μ / BM"
+              ],
+              "rows": [
+                [
+                  "[Mn(H₂O)₆]²⁺",
+                  "t₂g³e_g²",
+                  "5",
+                  "5.92"
+                ],
+                [
+                  "[Mn(CN)₆]⁴⁻",
+                  "t₂g⁵e_g⁰",
+                  "1",
+                  "1.73"
+                ]
+              ]
+            },
+            "alt": "Table of the two manganese two plus complexes"
+          },
+          "math": [],
+          "narration": "Manganese two plus has five d electrons. With water, a weak ligand, the splitting is small, so one electron goes into each of the five orbitals: five unpaired electrons and a moment of about five point nine. With cyanide, a strong ligand, the splitting is large, so all five crowd into the lower set, pairing up and leaving only one unpaired electron.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s05",
+          "layout": "concept",
+          "heading": "Tetrahedral complexes and magnetism",
+          "body_md": "Since $\\Delta_t \\approx \\tfrac{4}{9}\\Delta_o$ is small, it is almost always **less than the pairing energy**: tetrahedral complexes are practically always **high spin**. Crystal field theory therefore explains magnetism by the number of electrons in $e_g$ (or $t_2$) versus paired in the lower set.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Feature",
+                "Octahedral",
+                "Tetrahedral"
+              ],
+              "rows": [
+                [
+                  "Lower set",
+                  "t₂g (3)",
+                  "e (2)"
+                ],
+                [
+                  "Upper set",
+                  "e_g (2)",
+                  "t₂ (3)"
+                ],
+                [
+                  "Splitting",
+                  "Δo",
+                  "Δt ≈ (4/9)Δo"
+                ],
+                [
+                  "Spin",
+                  "High or low",
+                  "Almost always high"
+                ]
+              ]
+            },
+            "alt": "Table comparing octahedral and tetrahedral splitting"
+          },
+          "math": [],
+          "narration": "Because the tetrahedral splitting is only about four ninths of the octahedral splitting for the same metal and ligand, it is almost never large enough to beat the pairing energy. So tetrahedral complexes are practically always high spin. Crystal field theory explains magnetism simply by asking whether the splitting or the pairing energy is larger.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s06",
+          "layout": "check",
+          "heading": "Quick check: high or low spin",
+          "body_md": "Predict whether a complex is high spin or low spin.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Place the ligand in the spectrochemical series and compare the splitting with the pairing energy.",
+          "check_question_id": "q_isc12chem_ch11_019",
+          "audio": null
+        },
+        {
+          "id": "s07",
+          "layout": "concept",
+          "heading": "Colour of complexes",
+          "body_md": "A complex absorbs visible light whose energy equals the splitting, promoting an electron from $t_{2g}$ to $e_g$ (a **d–d transition**); we see the **complementary colour**. Stronger ligands give a larger $\\Delta_o$, so higher-energy (shorter-wavelength) light is absorbed. With no ligands, or with d⁰/d¹⁰ ions, there is no d–d transition.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Complex",
+                "Light absorbed",
+                "Colour seen"
+              ],
+              "rows": [
+                [
+                  "[Ti(H₂O)₆]³⁺",
+                  "Blue-green (≈ 498 nm)",
+                  "Violet"
+                ],
+                [
+                  "[Cu(H₂O)₄]²⁺",
+                  "Orange-red",
+                  "Blue"
+                ],
+                [
+                  "[Cu(NH₃)₄]²⁺",
+                  "Yellow-orange",
+                  "Deep blue-violet"
+                ],
+                [
+                  "[Co(NH₃)₆]³⁺",
+                  "Blue-violet",
+                  "Yellow-orange"
+                ],
+                [
+                  "[Zn(H₂O)₆]²⁺",
+                  "None (d¹⁰)",
+                  "Colourless"
+                ]
+              ]
+            },
+            "alt": "Table of light absorbed and colour seen for complexes"
+          },
+          "math": [
+            "\\Delta_o = \\dfrac{N_A h c}{\\lambda}"
+          ],
+          "narration": "Colour comes from d to d transitions. When white light passes through a complex, light of the energy matching delta o is absorbed, an electron jumps from the lower to the upper set, and we see the complementary colour. Replacing water by ammonia around copper increases delta o, so the colour deepens. Zinc two plus, with a full d subshell, has no such transition and is colourless.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s08",
+          "layout": "example",
+          "heading": "Worked example: Δo from the colour of [Ti(H₂O)₆]³⁺",
+          "body_md": "**Problem.** $\\ce{[Ti(H2O)6]^3+}$ absorbs most strongly at 498 nm. Calculate $\\Delta_o$ in kJ mol⁻¹. ($N_A = 6.022 \\times 10^{23}$, $h = 6.626 \\times 10^{-34}$ J s, $c = 3.0 \\times 10^{8}$ m s⁻¹)\n\n**Step 1.** Ti³⁺ is d¹: the single electron is promoted $t_{2g} \\to e_g$, so the photon energy equals $\\Delta_o$.\n\n**Step 2.** $\\Delta_o = \\dfrac{6.022 \\times 10^{23} \\times 6.626 \\times 10^{-34} \\times 3.0 \\times 10^{8}}{498 \\times 10^{-9}} \\approx 2.40 \\times 10^{5}\\ \\text{J mol}^{-1}$, about **240 kJ mol⁻¹**.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Quantity",
+                "Value"
+              ],
+              "rows": [
+                [
+                  "λ absorbed",
+                  "498 nm (blue-green)"
+                ],
+                [
+                  "Colour seen",
+                  "Violet"
+                ],
+                [
+                  "Δo",
+                  "≈ 240 kJ mol⁻¹"
+                ]
+              ]
+            },
+            "alt": "Table of the titanium aqua ion calculation"
+          },
+          "math": [],
+          "narration": "Titanium three plus has a single d electron, so its absorption corresponds exactly to the jump across delta o. Multiply Avogadro’s constant, Planck’s constant and the speed of light, and divide by the wavelength in metres. The answer, about two hundred and forty kilojoules per mole, is the crystal field splitting. The violet colour we see is complementary to the blue-green light absorbed.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s09",
+          "layout": "check",
+          "heading": "Quick check: colour",
+          "body_md": "Relate ligand strength to the light absorbed and the colour seen.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. A stronger ligand gives a larger splitting, so shorter-wavelength light is absorbed.",
+          "check_question_id": "q_isc12chem_ch11_020",
+          "audio": null
+        },
+        {
+          "id": "s10",
+          "layout": "concept",
+          "heading": "Stability constants",
+          "body_md": "Complex formation occurs stepwise: $\\ce{M + L <=> ML}$ ($K_1$), $\\ce{ML + L <=> ML2}$ ($K_2$), … The **overall stability constant** $\\beta_n = K_1 K_2 \\cdots K_n$. **Larger β → more stable complex.** The reciprocal, $1/\\beta$, is the **instability constant**. Stability increases with charge on the metal, with chelation, and with the basicity or π-acceptor strength of the ligand.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Complex",
+                "log β (approx.)"
+              ],
+              "rows": [
+                [
+                  "[Ag(NH₃)₂]⁺",
+                  "7.2"
+                ],
+                [
+                  "[Ni(NH₃)₆]²⁺",
+                  "8.6"
+                ],
+                [
+                  "[Cu(NH₃)₄]²⁺",
+                  "13.1"
+                ],
+                [
+                  "[Ni(en)₃]²⁺",
+                  "18.3"
+                ],
+                [
+                  "[Ag(CN)₂]⁻",
+                  "21.1"
+                ],
+                [
+                  "[Fe(CN)₆]³⁻",
+                  "43.6"
+                ]
+              ]
+            },
+            "alt": "Table of approximate overall stability constants"
+          },
+          "math": [
+            "\\ce{M + 4L <=> ML4}\\qquad \\beta_4 = \\dfrac{[\\ce{ML4}]}{[\\ce{M}][\\ce{L}]^4} = K_1K_2K_3K_4"
+          ],
+          "narration": "Complexes form step by step, each step with its own equilibrium constant. Multiplying the stepwise constants gives the overall stability constant, beta. The larger beta is, the more stable the complex. Notice that the ethane-1,2-diamine complex of nickel is ten billion times more stable than the ammonia complex: the chelate effect in numbers. Cyanide complexes are among the most stable known.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s11",
+          "layout": "example",
+          "heading": "Worked example: comparing and calculating β",
+          "body_md": "**Problem.** (a) For silver ammine, $K_1 = 2.0 \\times 10^3$ and $K_2 = 8.0 \\times 10^3$. Calculate $\\beta_2$. (b) Explain why AgCl dissolves in aqueous ammonia, and why [Ag(NH₃)₂]⁺ is converted into [Ag(CN)₂]⁻ by cyanide ions.\n\n**(a)** $\\beta_2 = K_1 K_2 = 2.0 \\times 10^3 \\times 8.0 \\times 10^3 = 1.6 \\times 10^7$.\n\n**(b)** Ag⁺ forms a stable ammine complex, lowering [Ag⁺] below the solubility product of AgCl. $\\beta$ for [Ag(CN)₂]⁻ (about $10^{21}$) is far larger than for [Ag(NH₃)₂]⁺ (about $10^{7}$), so cyanide displaces ammonia.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Complex",
+                "β",
+                "Relative stability"
+              ],
+              "rows": [
+                [
+                  "[Ag(NH₃)₂]⁺",
+                  "≈ 1.6 × 10⁷",
+                  "Less stable"
+                ],
+                [
+                  "[Ag(CN)₂]⁻",
+                  "≈ 10²¹",
+                  "Much more stable"
+                ]
+              ]
+            },
+            "alt": "Table comparing silver complexes"
+          },
+          "math": [],
+          "narration": "The overall constant is the product of the stepwise constants: two thousand times eight thousand gives one point six times ten to the seven. Silver chloride dissolves in ammonia because the ammine complex holds the silver ions, keeping their concentration very low. Cyanide forms a far more stable complex, with a beta about ten to the twenty one, so it readily displaces ammonia.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s12",
+          "layout": "check",
+          "heading": "Quick check: stability",
+          "body_md": "Use stability constants to compare complexes.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. The larger the overall stability constant, the more stable the complex.",
+          "check_question_id": "q_isc12chem_ch11_036",
+          "audio": null
+        },
+        {
+          "id": "s13",
+          "layout": "concept",
+          "heading": "Importance of coordination compounds",
+          "body_md": "Complexes are used in **qualitative and quantitative analysis**, **extraction of metals** and are essential in **living systems**.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Area",
+                "Example"
+              ],
+              "rows": [
+                [
+                  "Test for Ni²⁺",
+                  "Red precipitate with dimethylglyoxime, [Ni(dmg)₂]"
+                ],
+                [
+                  "Test for Cu²⁺",
+                  "Deep blue [Cu(NH₃)₄]²⁺ with excess ammonia"
+                ],
+                [
+                  "Test for Fe³⁺",
+                  "Blood-red [Fe(SCN)(H₂O)₅]²⁺ with thiocyanate; Prussian blue with K₄[Fe(CN)₆]"
+                ],
+                [
+                  "Hardness of water",
+                  "EDTA titration of Ca²⁺ and Mg²⁺"
+                ],
+                [
+                  "Extraction of Ag and Au",
+                  "Leaching as [Ag(CN)₂]⁻ and [Au(CN)₂]⁻, then displacement by Zn"
+                ],
+                [
+                  "Purification of Ni",
+                  "Mond process via volatile [Ni(CO)₄]"
+                ],
+                [
+                  "Biology",
+                  "Haemoglobin (Fe), chlorophyll (Mg), vitamin B12 (Co)"
+                ],
+                [
+                  "Medicine",
+                  "Cisplatin (anticancer); EDTA for lead poisoning"
+                ]
+              ]
+            },
+            "alt": "Table of uses of coordination compounds in analysis, metallurgy and biology"
+          },
+          "math": [],
+          "narration": "Coordination compounds are vital. In qualitative analysis, nickel gives a red precipitate with dimethylglyoxime, copper a deep blue colour with ammonia, and iron three a blood-red colour with thiocyanate. Gold and silver are leached from their ores as cyanide complexes, and nickel is purified as its volatile carbonyl. In living things, haemoglobin, chlorophyll and vitamin B twelve are all complexes of metal ions.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s14",
+          "layout": "summary",
+          "heading": "Summary: Part 2",
+          "body_md": "",
+          "bullets": [
+            "CFT: octahedral t₂g (−0.4Δo) below e_g (+0.6Δo); tetrahedral e below t₂, Δt ≈ (4/9)Δo.",
+            "Spectrochemical series: I⁻ < Br⁻ < Cl⁻ < F⁻ < H₂O < NH₃ < en < CN⁻ < CO.",
+            "Δo > P → low spin; Δo < P → high spin; tetrahedral complexes high spin.",
+            "Colour from d–d transitions; complementary colour seen; Δo = N_A hc/λ.",
+            "β = K₁K₂…Kn; larger β, more stable; chelates and cyanides very stable.",
+            "Uses: analysis (dmg, NH₃, SCN⁻, EDTA), metallurgy (CN⁻, Mond), biology (Hb, chlorophyll, B12)."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Idea",
+                "Key point"
+              ],
+              "rows": [
+                [
+                  "Low spin",
+                  "Strong-field ligand, Δo > P"
+                ],
+                [
+                  "Colour",
+                  "d–d transition"
+                ],
+                [
+                  "Stability",
+                  "Larger β"
+                ]
+              ]
+            },
+            "alt": "Summary table of Part 2"
+          },
+          "math": [],
+          "narration": "Let us sum up Part 2. Crystal field theory splits the d orbitals into two sets, and the spectrochemical series ranks ligands by how much they split them. Comparing the splitting with the pairing energy decides high or low spin. The light absorbed in a d to d transition gives complexes their colours. Stability constants measure how stable complexes are, and complexes are used widely in analysis, metallurgy and living systems.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s15",
+          "layout": "exam-tips",
+          "heading": "Exam tips: Part 2",
+          "body_md": "",
+          "bullets": [
+            "Label t₂g, e_g and Δo (and the 0.4/0.6 positions) on splitting diagrams.",
+            "Write configurations as t₂gˣe_gʸ and count unpaired electrons.",
+            "Colour seen is complementary to the colour absorbed.",
+            "β is the product of stepwise constants; compare β, not individual K values."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Slip",
+                "Fix"
+              ],
+              "rows": [
+                [
+                  "t₂g above e_g in octahedral",
+                  "t₂g lower"
+                ],
+                [
+                  "Low-spin tetrahedral complexes",
+                  "Almost always high spin"
+                ],
+                [
+                  "β = K₁ + K₂",
+                  "β = K₁ × K₂"
+                ]
+              ]
+            },
+            "alt": "Table of three common slips in Part 2 and fixes"
+          },
+          "math": [],
+          "narration": "Final tips. Label every splitting diagram fully, with delta o. Write configurations in the t two g, e g form and count the unpaired electrons. Remember that the colour seen is complementary to the colour absorbed. And the overall stability constant is the product, not the sum, of the stepwise constants.",
+          "check_question_id": null,
+          "audio": null
+        }
+      ],
+      "status": "draft",
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    }
+  ],
+  "notes": {
+    "unit": "isc-12-chemistry-ch11",
+    "version": 1,
+    "title": "Bonding in Coordination Compounds — Notes",
+    "language": "en",
+    "sections": [
+      {
+        "heading": "1. Valence bond theory",
+        "body_md": "The metal ion provides empty orbitals (number = coordination number) that **hybridise**; each ligand donates a lone pair into one hybrid orbital. Strong-field ligands (CN⁻, CO; NH₃ with Co³⁺) can pair d electrons; weak-field ligands (F⁻, Cl⁻, H₂O) cannot.\n\n| CN | Hybridisation | Shape | Example |\n|---|---|---|---|\n| 2 | sp | linear | [Ag(NH₃)₂]⁺ |\n| 4 | sp³ | tetrahedral | [NiCl₄]²⁻, [Ni(CO)₄], [Zn(NH₃)₄]²⁺ |\n| 4 | dsp² | square planar | [Ni(CN)₄]²⁻, [Ni(dmg)₂] |\n| 6 | d²sp³ (inner, low spin) | octahedral | [Fe(CN)₆]⁴⁻, [Co(NH₃)₆]³⁺, [Cr(NH₃)₆]³⁺ |\n| 6 | sp³d² (outer, high spin) | octahedral | [Fe(H₂O)₆]²⁺, [CoF₆]³⁻, [FeF₆]³⁻ |\n\nMagnetism: μ = √(n(n+2)) BM. **Limitations:** no explanation of colour or ligand strength; cannot predict tetrahedral vs square planar; not quantitative.",
+        "key_terms": [
+          {
+            "term": "Inner orbital complex",
+            "definition_md": "An octahedral complex using (n−1)d orbitals in d²sp³ hybridisation; usually low spin."
+          },
+          {
+            "term": "Outer orbital complex",
+            "definition_md": "An octahedral complex using nd orbitals in sp³d² hybridisation; high spin."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\mu = \\sqrt{n(n+2)}\\ \\text{BM}",
+            "label": "Spin-only magnetic moment"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Complex",
+              "Unpaired e⁻",
+              "μ / BM"
+            ],
+            "rows": [
+              [
+                "[Fe(CN)₆]⁴⁻",
+                "0",
+                "0"
+              ],
+              [
+                "[Fe(H₂O)₆]²⁺",
+                "4",
+                "4.90"
+              ],
+              [
+                "[Cr(NH₃)₆]³⁺",
+                "3",
+                "3.87"
+              ],
+              [
+                "[MnBr₄]²⁻",
+                "5",
+                "5.92"
+              ]
+            ]
+          },
+          "alt": "Table of magnetic data"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "isc-12-chemistry-ch11-t01"
+        ]
+      },
+      {
+        "heading": "2. Crystal field theory: splitting, magnetism and colour",
+        "body_md": "Ligands are point charges/dipoles; bonding purely electrostatic. **Octahedral:** $e_g$ ($d_{x^2-y^2}$, $d_{z^2}$) raised by $0.6\\Delta_o$; $t_{2g}$ ($d_{xy}$, $d_{yz}$, $d_{xz}$) lowered by $0.4\\Delta_o$. **Tetrahedral:** $e$ below $t_2$; $\\Delta_t \\approx \\tfrac{4}{9}\\Delta_o$ → always high spin.\n\n**Spectrochemical series:** I⁻ < Br⁻ < SCN⁻ < Cl⁻ < F⁻ < OH⁻ < C₂O₄²⁻ < H₂O < NCS⁻ < NH₃ < en < CN⁻ < CO. $\\Delta_o < P$ → high spin; $\\Delta_o > P$ → low spin (d⁴–d⁷).\n\n**Colour:** d–d transition absorbs light of energy $\\Delta_o$; complementary colour seen; $\\Delta_o = N_A hc/\\lambda$. d⁰ and d¹⁰ ions colourless. **Limitation:** cannot explain why neutral CO is the strongest ligand (covalent/π bonding ignored).",
+        "key_terms": [
+          {
+            "term": "Crystal field splitting energy",
+            "definition_md": "The energy gap Δo between the t₂g and e_g sets in an octahedral field."
+          },
+          {
+            "term": "Pairing energy",
+            "definition_md": "The energy needed to put two electrons into the same orbital."
+          },
+          {
+            "term": "Spectrochemical series",
+            "definition_md": "The order of ligands by the size of the splitting they produce."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\Delta_o = \\dfrac{N_A h c}{\\lambda}",
+            "label": "Splitting from absorption wavelength"
+          }
+        ],
+        "visual": {
+          "kind": "svg",
+          "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 360 230\" role=\"img\" aria-label=\"Energy-level diagram. In the centre, five d orbitals of equal energy in the free ion. On the left, in an octahedral field, they split into a lower set of three, t2g, at minus 0.4 delta-o and an upper set of two, eg, at plus 0.6 delta-o; the gap is delta-o. On the right, in a tetrahedral field, the order is reversed and the splitting is smaller: a lower set of two, e, and an upper set of three, t2; the gap delta-t is about four-ninths of delta-o.\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>Energy-level diagram. In the centre, five d orbitals of equal energy in the free ion. On the left, in an octahedral field, they split into a lower set of three, t2g, at minus 0.4 delta-o and an upper set of two, eg, at plus 0.6 delta-o; the gap is delta-o. On the right, in a tetrahedral field, the order is reversed and the splitting is smaller: a lower set of two, e, and an upper set of three, t2; the gap delta-t is about four-ninths of delta-o.</title><line x1=\"130\" y1=\"110\" x2=\"144\" y2=\"110\" stroke=\"currentColor\" stroke-width=\"2.5\"/><line x1=\"150\" y1=\"110\" x2=\"164\" y2=\"110\" stroke=\"currentColor\" stroke-width=\"2.5\"/><line x1=\"170\" y1=\"110\" x2=\"184\" y2=\"110\" stroke=\"currentColor\" stroke-width=\"2.5\"/><line x1=\"190\" y1=\"110\" x2=\"204\" y2=\"110\" stroke=\"currentColor\" stroke-width=\"2.5\"/><line x1=\"210\" y1=\"110\" x2=\"224\" y2=\"110\" stroke=\"currentColor\" stroke-width=\"2.5\"/><text x=\"178\" y=\"132\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">free ion: five d orbitals</text><line x1=\"20\" y1=\"50\" x2=\"34\" y2=\"50\" stroke=\"currentColor\" stroke-width=\"2.5\"/><line x1=\"40\" y1=\"50\" x2=\"54\" y2=\"50\" stroke=\"currentColor\" stroke-width=\"2.5\"/><line x1=\"10\" y1=\"150\" x2=\"24\" y2=\"150\" stroke=\"currentColor\" stroke-width=\"2.5\"/><line x1=\"30\" y1=\"150\" x2=\"44\" y2=\"150\" stroke=\"currentColor\" stroke-width=\"2.5\"/><line x1=\"50\" y1=\"150\" x2=\"64\" y2=\"150\" stroke=\"currentColor\" stroke-width=\"2.5\"/><text x=\"70\" y=\"46\" fill=\"currentColor\" stroke=\"none\" font-size=\"11\" font-weight=\"bold\">eg</text><text x=\"70\" y=\"154\" fill=\"currentColor\" stroke=\"none\" font-size=\"11\" font-weight=\"bold\">t2g</text><line x1=\"100\" y1=\"148\" x2=\"100\" y2=\"58.8\" stroke=\"var(--diagram-accent)\" stroke-width=\"1.5\"/><polygon points=\"100,54 102.4,59.5 97.6,59.5\" fill=\"var(--diagram-accent)\" stroke=\"none\"/><line x1=\"100\" y1=\"54\" x2=\"100\" y2=\"141.2\" stroke=\"var(--diagram-accent)\" stroke-width=\"1.5\"/><polygon points=\"100,146 97.6,140.5 102.4,140.5\" fill=\"var(--diagram-accent)\" stroke=\"none\"/><text x=\"104\" y=\"100\" fill=\"var(--diagram-accent)\" stroke=\"none\" font-size=\"11\" font-weight=\"bold\">Δo</text><text x=\"40\" y=\"30\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">+0.6 Δo</text><text x=\"30\" y=\"172\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">−0.4 Δo</text><text x=\"55\" y=\"214\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">Octahedral field</text><line x1=\"270\" y1=\"136\" x2=\"284\" y2=\"136\" stroke=\"currentColor\" stroke-width=\"2.5\"/><line x1=\"290\" y1=\"136\" x2=\"304\" y2=\"136\" stroke=\"currentColor\" stroke-width=\"2.5\"/><line x1=\"260\" y1=\"92\" x2=\"274\" y2=\"92\" stroke=\"currentColor\" stroke-width=\"2.5\"/><line x1=\"280\" y1=\"92\" x2=\"294\" y2=\"92\" stroke=\"currentColor\" stroke-width=\"2.5\"/><line x1=\"300\" y1=\"92\" x2=\"314\" y2=\"92\" stroke=\"currentColor\" stroke-width=\"2.5\"/><text x=\"312\" y=\"140\" fill=\"currentColor\" stroke=\"none\" font-size=\"11\" font-weight=\"bold\">e</text><text x=\"322\" y=\"96\" fill=\"currentColor\" stroke=\"none\" font-size=\"11\" font-weight=\"bold\">t2</text><line x1=\"252\" y1=\"134\" x2=\"252\" y2=\"98\" stroke=\"var(--diagram-accent)\" stroke-width=\"1.5\"/><polygon points=\"252,94 254,98.6 250,98.6\" fill=\"var(--diagram-accent)\" stroke=\"none\"/><line x1=\"252\" y1=\"94\" x2=\"252\" y2=\"128\" stroke=\"var(--diagram-accent)\" stroke-width=\"1.5\"/><polygon points=\"252,132 250,127.4 254,127.4\" fill=\"var(--diagram-accent)\" stroke=\"none\"/><text x=\"248\" y=\"114\" fill=\"var(--diagram-accent)\" stroke=\"none\" text-anchor=\"end\" font-size=\"11\" font-weight=\"bold\">Δt</text><text x=\"300\" y=\"214\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">Tetrahedral field</text><text x=\"300\" y=\"196\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">Δt ≈ (4/9) Δo</text><line x1=\"122\" y1=\"110\" x2=\"76\" y2=\"56\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><line x1=\"122\" y1=\"110\" x2=\"72\" y2=\"150\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><line x1=\"232\" y1=\"110\" x2=\"258\" y2=\"94\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><line x1=\"232\" y1=\"110\" x2=\"268\" y2=\"136\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><text x=\"10\" y=\"225\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">Energy increases upwards</text></svg>",
+          "alt": "Splitting of the five d orbitals: in an octahedral field into a lower t2g set and an upper eg set separated by delta-o; in a tetrahedral field into a lower e set and an upper t2 set separated by a smaller delta-t",
+          "caption": "Schematic energy levels; delta-t is about four-ninths of delta-o."
+        },
+        "visuals": [],
+        "topic_ids": [
+          "isc-12-chemistry-ch11-t02"
+        ]
+      },
+      {
+        "heading": "3. Stability of complexes",
+        "body_md": "Stepwise: $\\ce{M + L <=> ML}$ ($K_1$), $\\ce{ML + L <=> ML2}$ ($K_2$), … Overall $\\beta_n = K_1K_2\\cdots K_n$; **larger β → more stable**; instability constant $= 1/\\beta$.\n\nStability increases with higher charge/smaller size of metal ion, **chelation** (log β: [Ni(en)₃]²⁺ 18.3 vs [Ni(NH₃)₆]²⁺ 8.6), basicity and π-acceptor strength of ligand (cyanide complexes very stable). A ligand forming a more stable complex displaces one forming a less stable complex: [Ag(NH₃)₂]⁺ (log β 7.2) → [Ag(S₂O₃)₂]³⁻ (13.5) → [Ag(CN)₂]⁻ (21.1).",
+        "key_terms": [
+          {
+            "term": "Overall stability constant",
+            "definition_md": "β = K₁K₂…Kn, the equilibrium constant for forming the complex from the metal ion and all its ligands."
+          },
+          {
+            "term": "Instability constant",
+            "definition_md": "The reciprocal of the stability constant."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\beta_n = K_1 K_2 \\cdots K_n",
+            "label": "Overall stability constant"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Complex",
+              "log β"
+            ],
+            "rows": [
+              [
+                "[Ag(NH₃)₂]⁺",
+                "7.2"
+              ],
+              [
+                "[Ni(NH₃)₆]²⁺",
+                "8.6"
+              ],
+              [
+                "[Ni(en)₃]²⁺",
+                "18.3"
+              ],
+              [
+                "[Ag(CN)₂]⁻",
+                "21.1"
+              ]
+            ]
+          },
+          "alt": "Table of stability constants"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "isc-12-chemistry-ch11-t03"
+        ]
+      },
+      {
+        "heading": "4. Importance of coordination compounds",
+        "body_md": "**Qualitative analysis:** Ni²⁺ + dimethylglyoxime → red [Ni(dmg)₂]; Cu²⁺ + excess NH₃ → deep blue [Cu(NH₃)₄]²⁺; Fe³⁺ + SCN⁻ → blood-red [Fe(SCN)(H₂O)₅]²⁺; Fe³⁺ + K₄[Fe(CN)₆] → Prussian blue; EDTA titration for hardness of water.\n\n**Metallurgy:** Ag and Au leached as [Ag(CN)₂]⁻, [Au(CN)₂]⁻ and displaced by Zn; Mond process: Ni + 4CO → Ni(CO)₄ (330–350 K), decomposed at 450–470 K.\n\n**Biology and medicine:** haemoglobin (Fe, O₂ transport), chlorophyll (Mg, photosynthesis), vitamin B12 (Co); cisplatin (anticancer), EDTA for lead poisoning; hypo dissolves AgBr as [Ag(S₂O₃)₂]³⁻ in photography.",
+        "key_terms": [
+          {
+            "term": "Mond process",
+            "definition_md": "Purification of nickel through formation and decomposition of volatile Ni(CO)₄."
+          }
+        ],
+        "formulas": [],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Use",
+              "Complex"
+            ],
+            "rows": [
+              [
+                "Ni²⁺ test",
+                "[Ni(dmg)₂]"
+              ],
+              [
+                "Gold extraction",
+                "[Au(CN)₂]⁻"
+              ],
+              [
+                "Ni purification",
+                "Ni(CO)₄"
+              ],
+              [
+                "Oxygen transport",
+                "Haemoglobin (Fe)"
+              ]
+            ]
+          },
+          "alt": "Table of uses of complexes"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "isc-12-chemistry-ch11-t04"
+        ]
+      }
+    ],
+    "exam_tips_md": "**Common mistakes**\n- Using the atom's configuration instead of the ion's.\n- Calling [Fe(H₂O)₆]²⁺ inner orbital (water is weak field: sp³d²).\n- Putting t₂g above e_g in an octahedral diagram.\n- Adding stepwise constants instead of multiplying them.\n\n**How marks are usually awarded**\n- VBT (3 marks): d count, hybridisation and shape, magnetism.\n- CFT (2–3 marks): labelled splitting, configuration, high/low spin reason.\n- Stability (2 marks): β expression and comparison.",
+    "status": "draft",
+    "provenance": {
+      "origin": "human",
+      "template_version": null,
+      "model": null,
+      "generated_at": "2026-10-30",
+      "author": "claude-opus-5-5 (subject-producer)"
+    }
+  },
+  "flashcards": {
+    "unit": "isc-12-chemistry-ch11",
+    "version": 1,
+    "language": "en",
+    "cards": [
+      {
+        "id": "f01",
+        "front_md": "Hybridisation for square planar?",
+        "back_md": "dsp².",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch11-t01"
+      },
+      {
+        "id": "f02",
+        "front_md": "Hybridisation for inner orbital octahedral?",
+        "back_md": "d²sp³.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch11-t01"
+      },
+      {
+        "id": "f03",
+        "front_md": "Hybridisation for outer orbital octahedral?",
+        "back_md": "sp³d².",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch11-t01"
+      },
+      {
+        "id": "f04",
+        "front_md": "Shape and hybridisation of [Ni(CO)₄]?",
+        "back_md": "Tetrahedral, sp³.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch11-t01"
+      },
+      {
+        "id": "f05",
+        "front_md": "Shape of [Ni(CN)₄]²⁻?",
+        "back_md": "Square planar (dsp²), diamagnetic.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch11-t01"
+      },
+      {
+        "id": "f06",
+        "front_md": "Magnetism of [Fe(CN)₆]⁴⁻?",
+        "back_md": "Diamagnetic (d²sp³).",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch11-t01"
+      },
+      {
+        "id": "f07",
+        "front_md": "Unpaired electrons in [Fe(H₂O)₆]²⁺?",
+        "back_md": "4 (sp³d²).",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch11-t01"
+      },
+      {
+        "id": "f08",
+        "front_md": "Spin-only formula?",
+        "back_md": "μ = √(n(n+2)) BM.",
+        "tag": "formula",
+        "topic_id": "isc-12-chemistry-ch11-t01"
+      },
+      {
+        "id": "f09",
+        "front_md": "Main limitation of VBT?",
+        "back_md": "Cannot explain colour.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch11-t01"
+      },
+      {
+        "id": "f10",
+        "front_md": "Why is [Zn(NH₃)₄]²⁺ colourless?",
+        "back_md": "Zn²⁺ is d¹⁰: no d–d transition.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch11-t01"
+      },
+      {
+        "id": "f11",
+        "front_md": "e_g orbitals?",
+        "back_md": "d(x²−y²) and d(z²).",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch11-t02"
+      },
+      {
+        "id": "f12",
+        "front_md": "t₂g energy relative to barycentre?",
+        "back_md": "−0.4Δo.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch11-t02"
+      },
+      {
+        "id": "f13",
+        "front_md": "Δt compared with Δo?",
+        "back_md": "Δt ≈ (4/9)Δo.",
+        "tag": "formula",
+        "topic_id": "isc-12-chemistry-ch11-t02"
+      },
+      {
+        "id": "f14",
+        "front_md": "Low spin condition?",
+        "back_md": "Δo > P.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch11-t02"
+      },
+      {
+        "id": "f15",
+        "front_md": "Weakest and strongest common ligands?",
+        "back_md": "I⁻ weakest; CO strongest.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch11-t02"
+      },
+      {
+        "id": "f16",
+        "front_md": "Configuration of [CoF₆]³⁻?",
+        "back_md": "t₂g⁴e_g², 4 unpaired.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch11-t02"
+      },
+      {
+        "id": "f17",
+        "front_md": "Configuration of [Mn(CN)₆]⁴⁻?",
+        "back_md": "t₂g⁵, 1 unpaired.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch11-t02"
+      },
+      {
+        "id": "f18",
+        "front_md": "Origin of colour (CFT)?",
+        "back_md": "d–d transition; complementary colour seen.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch11-t02"
+      },
+      {
+        "id": "f19",
+        "front_md": "Δo from wavelength?",
+        "back_md": "Δo = N_A hc/λ.",
+        "tag": "formula",
+        "topic_id": "isc-12-chemistry-ch11-t02"
+      },
+      {
+        "id": "f20",
+        "front_md": "Why are tetrahedral complexes high spin?",
+        "back_md": "Δt is smaller than the pairing energy.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch11-t02"
+      },
+      {
+        "id": "f21",
+        "front_md": "Limitation of CFT?",
+        "back_md": "Treats bonding as ionic; cannot explain why CO is strongest.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch11-t02"
+      },
+      {
+        "id": "f22",
+        "front_md": "Overall stability constant?",
+        "back_md": "β = K₁K₂…Kn.",
+        "tag": "formula",
+        "topic_id": "isc-12-chemistry-ch11-t03"
+      },
+      {
+        "id": "f23",
+        "front_md": "Instability constant?",
+        "back_md": "1/β.",
+        "tag": "definition",
+        "topic_id": "isc-12-chemistry-ch11-t03"
+      },
+      {
+        "id": "f24",
+        "front_md": "Larger β means?",
+        "back_md": "More stable complex.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch11-t03"
+      },
+      {
+        "id": "f25",
+        "front_md": "Why does AgCl dissolve in NH₃?",
+        "back_md": "[Ag(NH₃)₂]⁺ forms, lowering [Ag⁺].",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch11-t03"
+      },
+      {
+        "id": "f26",
+        "front_md": "Test for Ni²⁺?",
+        "back_md": "Red precipitate with dimethylglyoxime.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch11-t04"
+      },
+      {
+        "id": "f27",
+        "front_md": "Test for Fe³⁺ with SCN⁻?",
+        "back_md": "Blood-red [Fe(SCN)(H₂O)₅]²⁺.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch11-t04"
+      },
+      {
+        "id": "f28",
+        "front_md": "Complex in gold extraction?",
+        "back_md": "[Au(CN)₂]⁻.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch11-t04"
+      },
+      {
+        "id": "f29",
+        "front_md": "Mond process?",
+        "back_md": "Ni + 4CO → Ni(CO)₄, then decomposed to pure Ni.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch11-t04"
+      },
+      {
+        "id": "f30",
+        "front_md": "Metals in haemoglobin, chlorophyll, B12?",
+        "back_md": "Fe, Mg, Co.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch11-t04"
+      },
+      {
+        "id": "f31",
+        "front_md": "Exam tip: VBT answers",
+        "back_md": "Give d count, hybridisation, shape, inner/outer and magnetism.",
+        "tag": "exam-tip",
+        "topic_id": "isc-12-chemistry-ch11-t01"
+      }
+    ],
+    "status": "draft",
+    "provenance": {
+      "origin": "human",
+      "template_version": null,
+      "model": null,
+      "generated_at": "2026-10-30",
+      "author": "claude-opus-5-5 (subject-producer)"
+    }
+  },
+  "questions": [
+    {
+      "id": "q_isc12chem_ch11_001",
+      "unit": "isc-12-chemistry-ch11",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Using valence bond theory, the hexaamminechromium(III) ion, [Cr(NH₃)₆]³⁺, is best described as (Cr, Z = 24):",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "d²sp³ hybridised, octahedral and paramagnetic with three unpaired electrons"
+        },
+        {
+          "id": "b",
+          "text_md": "sp³d² hybridised, octahedral and diamagnetic"
+        },
+        {
+          "id": "c",
+          "text_md": "dsp² hybridised, square planar, with three unpaired electrons"
+        },
+        {
+          "id": "d",
+          "text_md": "sp³ hybridised, tetrahedral and diamagnetic"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Cr³⁺ is 3d³: two 3d orbitals stay empty for d²sp³; the three electrons remain unpaired — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch11-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch11_002",
+      "unit": "isc-12-chemistry-ch11",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which of the complexes [Co(NH₃)₆]³⁺, [CoF₆]³⁻, [Fe(H₂O)₆]²⁺ and [NiCl₄]²⁻ is diamagnetic?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "[CoF₆]³⁻"
+        },
+        {
+          "id": "b",
+          "text_md": "[Fe(H₂O)₆]²⁺"
+        },
+        {
+          "id": "c",
+          "text_md": "[NiCl₄]²⁻"
+        },
+        {
+          "id": "d",
+          "text_md": "[Co(NH₃)₆]³⁺"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "NH₃ pairs the six 3d electrons of Co³⁺ (d²sp³, no unpaired electrons) — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch11-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch11_003",
+      "unit": "isc-12-chemistry-ch11",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which observation about nickel complexes can NOT be explained by valence bond theory?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "The green colour of [Ni(H₂O)₆]²⁺"
+        },
+        {
+          "id": "b",
+          "text_md": "The diamagnetism of [Ni(CN)₄]²⁻"
+        },
+        {
+          "id": "c",
+          "text_md": "The octahedral shape of [Ni(NH₃)₆]²⁺"
+        },
+        {
+          "id": "d",
+          "text_md": "The two unpaired electrons in [NiCl₄]²⁻"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "VBT says nothing about electronic transitions, so it cannot explain colour — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch11-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch11_004",
+      "unit": "isc-12-chemistry-ch11",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "The hexaaquavanadium(III) ion, [V(H₂O)₆]³⁺ (V, Z = 23), is an inner orbital complex. The hybridisation of vanadium is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "sp³d²"
+        },
+        {
+          "id": "b",
+          "text_md": "d²sp³"
+        },
+        {
+          "id": "c",
+          "text_md": "dsp²"
+        },
+        {
+          "id": "d",
+          "text_md": "sp³"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "V³⁺ is 3d², so two 3d orbitals are empty without any pairing: d²sp³ — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch11-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch11_005",
+      "unit": "isc-12-chemistry-ch11",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "The tetraamminezinc(II) ion, [Zn(NH₃)₄]²⁺, is tetrahedral. The hybridisation of zinc in it is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "dsp²"
+        },
+        {
+          "id": "b",
+          "text_md": "d²sp³"
+        },
+        {
+          "id": "c",
+          "text_md": "sp³"
+        },
+        {
+          "id": "d",
+          "text_md": "sp³d²"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Zn²⁺ is 3d¹⁰: no 3d orbital is free, so 4s and 4p are used — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch11-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch11_006",
+      "unit": "isc-12-chemistry-ch11",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "The diamminesilver(I) ion, [Ag(NH₃)₂]⁺, is linear. According to valence bond theory, silver uses:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "sp³ hybrid orbitals"
+        },
+        {
+          "id": "b",
+          "text_md": "sp hybrid orbitals (one 5s and one 5p)"
+        },
+        {
+          "id": "c",
+          "text_md": "dsp² hybrid orbitals"
+        },
+        {
+          "id": "d",
+          "text_md": "two 4d orbitals"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Two ligands, linear shape: sp — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch11-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch11_007",
+      "unit": "isc-12-chemistry-ch11",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** [Co(NH₃)₆]³⁺ is an inner orbital complex.\n\n**Reason (R):** In it Co³⁺ uses two 3d, one 4s and three 4p orbitals for bonding.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Both are true; using inner (n−1)d orbitals is what makes it an inner orbital complex — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch11-t01"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch11_008",
+      "unit": "isc-12-chemistry-ch11",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** The [NiCl₄]²⁻ ion is tetrahedral and paramagnetic.\n\n**Reason (R):** Chloride is a strong-field ligand that pairs the 3d electrons of Ni²⁺.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "A is true. R is false: Cl⁻ is weak-field; because it does not pair the electrons, no 3d orbital is free and sp³ is used — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch11-t01"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch11_009",
+      "unit": "isc-12-chemistry-ch11",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? Outer orbital octahedral complexes such as [CoF₆]³⁻ use 4d orbitals in sp³d² hybridisation and are usually high spin.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "t"
+        ]
+      },
+      "solution_md": "True.",
+      "marking_scheme": [
+        {
+          "step": "True",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch11-t01"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch11_010",
+      "unit": "isc-12-chemistry-ch11",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "The hybridisation of iron in the outer orbital complex [FeF₆]³⁻ is ___.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "sp3d2",
+              "sp³d²",
+              "sp^3d^2"
+            ]
+          }
+        ]
+      },
+      "solution_md": "**sp³d²**.",
+      "marking_scheme": [
+        {
+          "step": "Writes \"sp3d2\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch11-t01"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch11_011",
+      "unit": "isc-12-chemistry-ch11",
+      "language": "en",
+      "type": "match",
+      "stem_md": "Match each complex ion with its hybridisation and shape.",
+      "options": [
+        {
+          "id": "1",
+          "text_md": "[Ag(NH₃)₂]⁺"
+        },
+        {
+          "id": "2",
+          "text_md": "[Zn(NH₃)₄]²⁺"
+        },
+        {
+          "id": "3",
+          "text_md": "[Pt(NH₃)₄]²⁺"
+        },
+        {
+          "id": "4",
+          "text_md": "[Cr(H₂O)₆]³⁺"
+        }
+      ],
+      "match_right": [
+        {
+          "id": "p",
+          "text_md": "dsp², square planar"
+        },
+        {
+          "id": "q",
+          "text_md": "sp³, tetrahedral"
+        },
+        {
+          "id": "r",
+          "text_md": "d²sp³, octahedral"
+        },
+        {
+          "id": "s",
+          "text_md": "sp, linear"
+        }
+      ],
+      "answer": {
+        "pairs": [
+          {
+            "left_id": "1",
+            "right_id": "s"
+          },
+          {
+            "left_id": "2",
+            "right_id": "q"
+          },
+          {
+            "left_id": "3",
+            "right_id": "p"
+          },
+          {
+            "left_id": "4",
+            "right_id": "r"
+          }
+        ]
+      },
+      "solution_md": "Ag: sp linear; Zn: sp³ tetrahedral; Pt: dsp² square planar; Cr: d²sp³ octahedral.",
+      "marking_scheme": [
+        {
+          "step": "1 → s",
+          "marks": 0.5
+        },
+        {
+          "step": "2 → q",
+          "marks": 0.5
+        },
+        {
+          "step": "3 → p",
+          "marks": 0.5
+        },
+        {
+          "step": "4 → r",
+          "marks": 0.5
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch11-t01"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch11_012",
+      "unit": "isc-12-chemistry-ch11",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "Calculate the spin-only magnetic moment, in BM, of the outer orbital complex [FeF₆]³⁻. (Fe, Z = 26)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 5.92,
+        "tolerance": 0.02,
+        "unit": "BM"
+      },
+      "solution_md": "Fe³⁺ is 3d⁵ with no pairing by F⁻: $n = 5$. $\\mu = \\sqrt{5 \\times 7} = \\sqrt{35} \\approx 5.92\\ \\text{BM}$.",
+      "marking_scheme": [
+        {
+          "step": "n = 5",
+          "marks": 1
+        },
+        {
+          "step": "5.92 BM",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch11-t01"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch11_013",
+      "unit": "isc-12-chemistry-ch11",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "Potassium ferricyanide, K₃[Fe(CN)₆], has a measured magnetic moment of about $1.73\\ \\text{BM}$. Find the number of unpaired electrons using the spin-only formula.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 1,
+        "tolerance": 0,
+        "unit": null
+      },
+      "solution_md": "$n(n+2) = 1.73^2 \\approx 3$, so $n^2 + 2n - 3 = 0$ and $n = \\dfrac{-2 + \\sqrt{4 + 12}}{2} = \\dfrac{-2 + 4}{2} = 1$.",
+      "marking_scheme": [
+        {
+          "step": "n(n+2) = 3",
+          "marks": 1
+        },
+        {
+          "step": "n = 1",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch11-t01"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch11_014",
+      "unit": "isc-12-chemistry-ch11",
+      "language": "en",
+      "type": "short",
+      "stem_md": "The trioxalatocobaltate(III) ion, [Co(C₂O₄)₃]³⁻, is diamagnetic, while [CoF₆]³⁻ is paramagnetic. Explain using valence bond theory. (Co, Z = 27)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Co³⁺ is 3d⁶. In [Co(C₂O₄)₃]³⁻ the six d electrons pair into three 3d orbitals, leaving two 3d orbitals for d²sp³ hybridisation: inner orbital, no unpaired electrons, diamagnetic. F⁻ is weak-field: no pairing, four unpaired electrons remain, and 4s, 4p and two 4d orbitals give sp³d²: outer orbital, paramagnetic."
+      },
+      "solution_md": "d²sp³ paired vs sp³d² with 4 unpaired.",
+      "marking_scheme": [
+        {
+          "step": "Oxalate: pairing, d²sp³, diamagnetic",
+          "marks": 1
+        },
+        {
+          "step": "Fluoride: no pairing, sp³d², paramagnetic",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch11-t01"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch11_015",
+      "unit": "isc-12-chemistry-ch11",
+      "language": "en",
+      "type": "short",
+      "stem_md": "The red precipitate of bis(dimethylglyoximato)nickel(II), formed in the test for nickel, is square planar and diamagnetic. Explain using valence bond theory. (Ni, Z = 28)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Ni²⁺ is 3d⁸ with two unpaired electrons. The strong-field dimethylglyoximate ligands pair these electrons, so one 3d orbital becomes empty. One 3d, one 4s and two 4p orbitals form dsp² hybrid orbitals directed to the corners of a square: square planar, with no unpaired electrons — diamagnetic."
+      },
+      "solution_md": "Pairing; dsp²; square planar; diamagnetic.",
+      "marking_scheme": [
+        {
+          "step": "Pairing frees one 3d orbital",
+          "marks": 1
+        },
+        {
+          "step": "dsp², square planar, diamagnetic",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch11-t01",
+        "isc-12-chemistry-ch11-t04"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch11_016",
+      "unit": "isc-12-chemistry-ch11",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Explain why [Zn(NH₃)₄]²⁺ is tetrahedral and diamagnetic, and why its solution is colourless.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Zn²⁺ is 3d¹⁰: all 3d orbitals are full, so the four NH₃ lone pairs enter sp³ hybrid orbitals (4s + three 4p): tetrahedral. All electrons are paired, so it is diamagnetic. With a full d subshell no d–d transition is possible, so no visible light is absorbed: colourless."
+      },
+      "solution_md": "d¹⁰; sp³; no d–d transition.",
+      "marking_scheme": [
+        {
+          "step": "sp³ tetrahedral, diamagnetic",
+          "marks": 1
+        },
+        {
+          "step": "d¹⁰: no d–d transition",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch11-t01",
+        "isc-12-chemistry-ch11-t02"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch11_017",
+      "unit": "isc-12-chemistry-ch11",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Using valence bond theory, predict the hybridisation, shape and spin-only magnetic moment of (a) [Mn(CN)₆]⁴⁻, (b) [CoCl₄]²⁻ and (c) [Ni(NH₃)₆]²⁺. (Z: Mn 25, Co 27, Ni 28)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Mn²⁺, 3d⁵; CN⁻ pairs electrons, leaving one unpaired and two 3d free: d²sp³, octahedral, μ = √3 ≈ 1.73 BM. (b) Co²⁺, 3d⁷; Cl⁻ is weak: sp³, tetrahedral, 3 unpaired, μ = √15 ≈ 3.87 BM. (c) Ni²⁺, 3d⁸; even with pairing only one 3d orbital could be freed, so outer 4d orbitals are used: sp³d², octahedral, 2 unpaired, μ = √8 ≈ 2.83 BM."
+      },
+      "solution_md": "d²sp³ 1.73; sp³ 3.87; sp³d² 2.83.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch11-t01"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch11_018",
+      "unit": "isc-12-chemistry-ch11",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Compare K₃[Fe(CN)₆] and K₄[Fe(CN)₆] using valence bond theory: give the oxidation state and d count of iron, the hybridisation and the number of unpaired electrons in each, and say which is attracted by a magnet.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "In K₃[Fe(CN)₆], iron is Fe³⁺, 3d⁵; CN⁻ pairs four electrons, one remains unpaired; d²sp³, octahedral; 1 unpaired electron (≈ 1.73 BM) — paramagnetic, attracted. In K₄[Fe(CN)₆], iron is Fe²⁺, 3d⁶; all paired; d²sp³; 0 unpaired — diamagnetic."
+      },
+      "solution_md": "Fe³⁺ d⁵ 1 unpaired; Fe²⁺ d⁶ 0 unpaired; both d²sp³.",
+      "marking_scheme": [
+        {
+          "step": "Oxidation states and d counts",
+          "marks": 1
+        },
+        {
+          "step": "Both d²sp³",
+          "marks": 1
+        },
+        {
+          "step": "1 vs 0 unpaired; ferricyanide paramagnetic",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch11-t01"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch11_019",
+      "unit": "isc-12-chemistry-ch11",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which of the cobalt(III) and iron(II) complexes [CoF₆]³⁻, [Co(NH₃)₆]³⁺, [Fe(CN)₆]⁴⁻ and [Co(CN)₆]³⁻ is high spin?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "[CoF₆]³⁻"
+        },
+        {
+          "id": "b",
+          "text_md": "[Co(NH₃)₆]³⁺"
+        },
+        {
+          "id": "c",
+          "text_md": "[Fe(CN)₆]⁴⁻"
+        },
+        {
+          "id": "d",
+          "text_md": "[Co(CN)₆]³⁻"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "F⁻ is weak field (Δo < P): t₂g⁴e_g² — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch11-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch11_020",
+      "unit": "isc-12-chemistry-ch11",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "When excess ammonia is added to pale blue aqueous copper(II) sulphate, the solution turns deep blue-violet. In crystal field terms:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "NH₃ is weaker than H₂O, so Δo decreases"
+        },
+        {
+          "id": "b",
+          "text_md": "copper is oxidised to copper(III)"
+        },
+        {
+          "id": "c",
+          "text_md": "NH₃ is a stronger-field ligand than H₂O, so Δo increases and shorter-wavelength light is absorbed"
+        },
+        {
+          "id": "d",
+          "text_md": "the d electrons of Cu²⁺ become paired"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Larger splitting shifts the absorption to higher energy, changing the complementary colour — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch11-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch11_021",
+      "unit": "isc-12-chemistry-ch11",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "In an octahedral crystal field, which d orbitals make up the higher-energy e_g set?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "d(x²−y²) and d(z²)"
+        },
+        {
+          "id": "b",
+          "text_md": "d(xy) and d(z²)"
+        },
+        {
+          "id": "c",
+          "text_md": "d(xy), d(yz) and d(xz)"
+        },
+        {
+          "id": "d",
+          "text_md": "d(x²−y²) and d(xy)"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "These two point directly at the ligands on the axes — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch11-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch11_022",
+      "unit": "isc-12-chemistry-ch11",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Relative to the average energy (barycentre) of the d orbitals, the t₂g orbitals in an octahedral field lie at:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "−0.4Δo"
+        },
+        {
+          "id": "b",
+          "text_md": "+0.6Δo"
+        },
+        {
+          "id": "c",
+          "text_md": "−0.6Δo"
+        },
+        {
+          "id": "d",
+          "text_md": "+0.4Δo"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "t₂g is lowered by 0.4Δo and e_g raised by 0.6Δo, keeping the average unchanged — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch11-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch11_023",
+      "unit": "isc-12-chemistry-ch11",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "The crystal field configuration of Ni²⁺ in green hexaaquanickel(II), [Ni(H₂O)₆]²⁺, is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "t₂g⁴e_g⁴"
+        },
+        {
+          "id": "b",
+          "text_md": "t₂g⁸"
+        },
+        {
+          "id": "c",
+          "text_md": "t₂g⁶e_g²"
+        },
+        {
+          "id": "d",
+          "text_md": "t₂g⁵e_g³"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "d⁸: six electrons fill t₂g, two go into e_g (unpaired) — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch11-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch11_024",
+      "unit": "isc-12-chemistry-ch11",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Arrange F⁻, CN⁻, H₂O and NH₃ in order of increasing crystal field splitting for a given metal ion.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "CN⁻ < NH₃ < H₂O < F⁻"
+        },
+        {
+          "id": "b",
+          "text_md": "H₂O < F⁻ < NH₃ < CN⁻"
+        },
+        {
+          "id": "c",
+          "text_md": "F⁻ < NH₃ < H₂O < CN⁻"
+        },
+        {
+          "id": "d",
+          "text_md": "F⁻ < H₂O < NH₃ < CN⁻"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "From the spectrochemical series — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch11-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch11_025",
+      "unit": "isc-12-chemistry-ch11",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Tetrahedral complexes such as [CoCl₄]²⁻ are almost always high spin because:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Δt is larger than Δo"
+        },
+        {
+          "id": "b",
+          "text_md": "tetrahedral complexes have no d electrons"
+        },
+        {
+          "id": "c",
+          "text_md": "chloride is a strong-field ligand"
+        },
+        {
+          "id": "d",
+          "text_md": "Δt is only about four-ninths of Δo and is smaller than the pairing energy"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "A small splitting cannot overcome the pairing energy — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch11-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch11_026",
+      "unit": "isc-12-chemistry-ch11",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Neutral carbon monoxide is a stronger-field ligand than the fluoride ion.\n\n**Reason (R):** Crystal field theory treats ligands as point charges, so it would predict anions to cause the largest splitting.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Both statements are true, but R does not explain A — it shows a limitation of CFT, which ignores the covalent (π) character that makes CO strong — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 4,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch11-t02"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch11_027",
+      "unit": "isc-12-chemistry-ch11",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? For a d³ ion such as Cr³⁺, the octahedral configuration is t₂g³ whether the ligand field is weak or strong.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "t"
+        ]
+      },
+      "solution_md": "True. Three electrons occupy the three t₂g orbitals singly; no choice arises until d⁴.",
+      "marking_scheme": [
+        {
+          "step": "True",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch11-t02"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch11_028",
+      "unit": "isc-12-chemistry-ch11",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "The energy difference between the t₂g and e_g sets in an octahedral complex is called the crystal field ___ energy.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "splitting"
+            ]
+          }
+        ]
+      },
+      "solution_md": "Crystal field **splitting** energy, Δo.",
+      "marking_scheme": [
+        {
+          "step": "Writes \"splitting\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch11-t02"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch11_029",
+      "unit": "isc-12-chemistry-ch11",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "The hexaamminechromium(III) ion absorbs most strongly at $460\\ \\text{nm}$. Taking this absorption as $\\Delta_o$, calculate $\\Delta_o$ in kJ mol⁻¹. ($N_A = 6.022 \\times 10^{23}$, $h = 6.626 \\times 10^{-34}\\ \\text{J s}$, $c = 3.0 \\times 10^8\\ \\text{m s}^{-1}$)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 260.2,
+        "tolerance": 1,
+        "unit": "kJ/mol"
+      },
+      "solution_md": "$\\Delta_o = \\dfrac{N_A h c}{\\lambda} = \\dfrac{6.022 \\times 10^{23} \\times 6.626 \\times 10^{-34} \\times 3.0 \\times 10^{8}}{460 \\times 10^{-9}} \\approx 2.602 \\times 10^{5}\\ \\text{J mol}^{-1}$; in kJ: $\\Delta_o \\approx 260.2\\ \\text{kJ mol}^{-1}$.",
+      "marking_scheme": [
+        {
+          "step": "Substitution",
+          "marks": 1
+        },
+        {
+          "step": "≈ 260 kJ/mol",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch11-t02"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch11_030",
+      "unit": "isc-12-chemistry-ch11",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "How many unpaired electrons are present in the low-spin octahedral ion [Co(NO₂)₆]⁴⁻? (Co, Z = 27)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 1,
+        "tolerance": 0,
+        "unit": null
+      },
+      "solution_md": "Co²⁺ is d⁷. Low spin: $t_{2g}^6e_g^1$, so the unpaired electrons $= 7 - 6 = 1$.",
+      "marking_scheme": [
+        {
+          "step": "t₂g⁶e_g¹",
+          "marks": 1
+        },
+        {
+          "step": "1",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch11-t02"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch11_031",
+      "unit": "isc-12-chemistry-ch11",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Describe how the five d orbitals split in a tetrahedral crystal field, and state how Δt compares with Δo for the same metal and ligands.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "In a tetrahedral field the ligands lie between the axes. d(xy), d(yz) and d(xz) point closer to the ligands and are raised (t₂ set); d(x²−y²) and d(z²) are lowered (e set) — the reverse of the octahedral pattern. Δt ≈ (4/9)Δo, because there are only four ligands and none points directly at any d orbital."
+      },
+      "solution_md": "e below t₂; Δt ≈ 4/9 Δo.",
+      "marking_scheme": [
+        {
+          "step": "e lower, t₂ higher",
+          "marks": 1
+        },
+        {
+          "step": "Δt ≈ (4/9)Δo with reason",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch11-t02"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch11_032",
+      "unit": "isc-12-chemistry-ch11",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Using Δo and the pairing energy P, explain why Co³⁺ has the configuration t₂g⁴e_g² in [CoF₆]³⁻ but t₂g⁶ in [Co(CN)₆]³⁻.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Co³⁺ is d⁶. F⁻ is weak field, so Δo < P: it costs less to put electrons into e_g than to pair them, giving t₂g⁴e_g² (high spin, 4 unpaired). CN⁻ is strong field, so Δo > P: electrons pair in t₂g first, giving t₂g⁶ (low spin, 0 unpaired)."
+      },
+      "solution_md": "Δo < P high spin; Δo > P low spin.",
+      "marking_scheme": [
+        {
+          "step": "F⁻: Δo < P, t₂g⁴e_g²",
+          "marks": 1
+        },
+        {
+          "step": "CN⁻: Δo > P, t₂g⁶",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch11-t02"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch11_033",
+      "unit": "isc-12-chemistry-ch11",
+      "language": "en",
+      "type": "short",
+      "stem_md": "(a) Why is [Sc(H₂O)₆]³⁺ colourless while [Ti(H₂O)₆]³⁺ is violet? (b) Why does the colour of a complex change when one ligand is replaced by another? (c) Predict which of [Co(H₂O)₆]³⁺ and [Co(NH₃)₆]³⁺ absorbs light of shorter wavelength, giving a reason.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Sc³⁺ is d⁰: no d electron, no d–d transition, so no visible light is absorbed. Ti³⁺ is d¹: the electron is promoted t₂g → e_g by absorbing blue-green light, and the complementary violet colour is seen. (b) Different ligands produce different Δo, so the energy (wavelength) of light absorbed changes, changing the colour seen. (c) [Co(NH₃)₆]³⁺: NH₃ is a stronger-field ligand than H₂O, so Δo is larger and higher-energy, shorter-wavelength light is absorbed."
+      },
+      "solution_md": "d⁰ vs d¹; Δo changes; ammine complex.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch11-t02"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch11_034",
+      "unit": "isc-12-chemistry-ch11",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Using crystal field theory, write the t₂g/e_g configuration and number of unpaired electrons for (a) [Cr(H₂O)₆]³⁺, (b) [Fe(CN)₆]³⁻ and (c) [CoF₆]³⁻. (Z: Cr 24, Fe 26, Co 27)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Cr³⁺ d³: t₂g³e_g⁰, 3 unpaired. (b) Fe³⁺ d⁵, strong field: t₂g⁵e_g⁰, 1 unpaired. (c) Co³⁺ d⁶, weak field: t₂g⁴e_g², 4 unpaired."
+      },
+      "solution_md": "t₂g³ 3; t₂g⁵ 1; t₂g⁴e_g² 4.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch11-t02"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch11_035",
+      "unit": "isc-12-chemistry-ch11",
+      "language": "en",
+      "type": "short",
+      "stem_md": "State two assumptions of crystal field theory, and describe one observation that shows these assumptions are an over-simplification.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Assumptions (any two): ligands are point charges (anions) or point dipoles (neutral molecules); metal–ligand bonding is purely electrostatic (ionic); the d orbitals are affected only by repulsion from the ligands. Observation: neutral CO and CN⁻ produce larger splitting than F⁻ or Cl⁻, although point-charge anions should split most; this needs covalent (π) bonding to explain."
+      },
+      "solution_md": "Point charges; ionic bonding; CO strongest.",
+      "marking_scheme": [
+        {
+          "step": "Two assumptions",
+          "marks": 2
+        },
+        {
+          "step": "Observation showing limitation",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 3,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch11-t02"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch11_036",
+      "unit": "isc-12-chemistry-ch11",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Overall stability constants (log β) are: [Ni(NH₃)₆]²⁺ 8.6, [Ni(en)₃]²⁺ 18.3, [Ni(CN)₄]²⁻ 31.0 and [Ni(C₂O₄)₃]⁴⁻ about 14. Which is the most stable complex?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "[Ni(NH₃)₆]²⁺"
+        },
+        {
+          "id": "b",
+          "text_md": "[Ni(en)₃]²⁺"
+        },
+        {
+          "id": "c",
+          "text_md": "[Ni(C₂O₄)₃]⁴⁻"
+        },
+        {
+          "id": "d",
+          "text_md": "[Ni(CN)₄]²⁻"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Largest β → most stable — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch11-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch11_037",
+      "unit": "isc-12-chemistry-ch11",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "The instability (dissociation) constant of a complex such as [Cu(NH₃)₄]²⁺ is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "equal to its overall stability constant"
+        },
+        {
+          "id": "b",
+          "text_md": "the sum of its stepwise stability constants"
+        },
+        {
+          "id": "c",
+          "text_md": "the logarithm of its stability constant"
+        },
+        {
+          "id": "d",
+          "text_md": "the reciprocal of its overall stability constant"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "K(instability) = 1/β — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch11-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch11_038",
+      "unit": "isc-12-chemistry-ch11",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "For the formation of [Zn(NH₃)₄]²⁺, the stepwise constants are K₁, K₂, K₃ and K₄. The overall stability constant β₄ equals:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "K₁ + K₂ + K₃ + K₄"
+        },
+        {
+          "id": "b",
+          "text_md": "K₁ × K₂ × K₃ × K₄"
+        },
+        {
+          "id": "c",
+          "text_md": "K₄ only"
+        },
+        {
+          "id": "d",
+          "text_md": "K₁ ÷ K₄"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "β is the product of the stepwise constants — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch11-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch11_039",
+      "unit": "isc-12-chemistry-ch11",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "log β for [Ni(en)₃]²⁺ (18.3) is about ten units larger than for [Ni(NH₃)₆]²⁺ (8.6), although both have six N donor atoms. The main reason is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "en is a negatively charged ligand"
+        },
+        {
+          "id": "b",
+          "text_md": "the chelate effect: three five-membered rings make the en complex far more stable"
+        },
+        {
+          "id": "c",
+          "text_md": "nickel has a higher oxidation state in the en complex"
+        },
+        {
+          "id": "d",
+          "text_md": "NH₃ cannot donate a lone pair"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Chelation greatly increases stability — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch11-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch11_040",
+      "unit": "isc-12-chemistry-ch11",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Silver chloride dissolves in aqueous ammonia.\n\n**Reason (R):** Ag⁺ forms the stable complex [Ag(NH₃)₂]⁺, which lowers [Ag⁺] so that the ionic product falls below Ksp of AgCl.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Both are true, and R explains A — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch11-t03"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch11_041",
+      "unit": "isc-12-chemistry-ch11",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? A complex with a larger instability constant is more stable.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "f"
+        ]
+      },
+      "solution_md": "False. The instability constant is 1/β; a larger value means a less stable complex.",
+      "marking_scheme": [
+        {
+          "step": "False, with the correction",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch11-t03"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch11_042",
+      "unit": "isc-12-chemistry-ch11",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "For the silver–ethane-1,2-diamine system, the overall stability constant is $\\beta_2 = 4.5 \\times 10^7$ and the first stepwise constant is $K_1 = 1.5 \\times 10^4$. Calculate the second stepwise constant $K_2$.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 3000,
+        "tolerance": 10,
+        "unit": null
+      },
+      "solution_md": "$\\beta_2 = K_1 K_2$, so $K_2 = 4.5 \\times 10^7 \\div (1.5 \\times 10^4) = 3000$.",
+      "marking_scheme": [
+        {
+          "step": "K₂ = 3.0 × 10³",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch11-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch11_043",
+      "unit": "isc-12-chemistry-ch11",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "For tetraamminecopper(II), $\\beta_4 = 1.6 \\times 10^{13}$ and the first three stepwise constants are $K_1 = 2.0 \\times 10^4$, $K_2 = 4.0 \\times 10^3$ and $K_3 = 1.0 \\times 10^3$. Calculate the fourth stepwise constant $K_4$.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 200,
+        "tolerance": 1,
+        "unit": null
+      },
+      "solution_md": "$K_1K_2K_3 = 2.0 \\times 10^4 \\times 4.0 \\times 10^3 \\times 1.0 \\times 10^3 = 8.0 \\times 10^{10}$; $K_4 = 1.6 \\times 10^{13} \\div (8.0 \\times 10^{10}) = 200$.",
+      "marking_scheme": [
+        {
+          "step": "Product K₁K₂K₃ = 8.0 × 10¹⁰",
+          "marks": 1
+        },
+        {
+          "step": "K₄ = 200",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch11-t03"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch11_044",
+      "unit": "isc-12-chemistry-ch11",
+      "language": "en",
+      "type": "short",
+      "stem_md": "What is meant by the overall stability constant of a complex such as [Ni(NH₃)₆]²⁺? How is it related to the stepwise stability constants?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "It is the equilibrium constant for the formation of the complex from the hydrated metal ion and ligands: Ni²⁺ + 6NH₃ ⇌ [Ni(NH₃)₆]²⁺, β₆ = [Ni(NH₃)₆²⁺]/([Ni²⁺][NH₃]⁶). It equals the product of the six stepwise constants: β₆ = K₁K₂K₃K₄K₅K₆. A larger β means a more stable complex."
+      },
+      "solution_md": "Formation constant; β = product of K.",
+      "marking_scheme": [
+        {
+          "step": "Definition with expression",
+          "marks": 1
+        },
+        {
+          "step": "β = K₁K₂…K₆",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch11-t03"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch11_045",
+      "unit": "isc-12-chemistry-ch11",
+      "language": "en",
+      "type": "short",
+      "stem_md": "log β values are: [Ag(NH₃)₂]⁺ 7.2, [Ag(S₂O₃)₂]³⁻ 13.5 and [Ag(CN)₂]⁻ 21.1. (a) Arrange the complexes in order of increasing stability. (b) Predict what happens when sodium thiosulphate is added to a solution of [Ag(NH₃)₂]⁺. (c) Explain why hypo (sodium thiosulphate) can remove unexposed AgBr from photographic film, whereas ammonia does so only poorly.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) [Ag(NH₃)₂]⁺ < [Ag(S₂O₃)₂]³⁻ < [Ag(CN)₂]⁻. (b) Thiosulphate displaces ammonia, forming the more stable [Ag(S₂O₃)₂]³⁻ (larger β). (c) AgBr has a very small Ksp; only a very stable complex (large β) lowers [Ag⁺] enough to dissolve it. [Ag(S₂O₃)₂]³⁻ is about 10⁶ times more stable than the ammine complex, so hypo dissolves AgBr, but ammonia does not hold Ag⁺ tightly enough."
+      },
+      "solution_md": "Order; displacement; larger β dissolves AgBr.",
+      "marking_scheme": [
+        {
+          "step": "(a) Order",
+          "marks": 1
+        },
+        {
+          "step": "(b) Displacement",
+          "marks": 1
+        },
+        {
+          "step": "(c) β vs Ksp",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 4,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch11-t03",
+        "isc-12-chemistry-ch11-t04"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch11_046",
+      "unit": "isc-12-chemistry-ch11",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Explain, with one example each, how the stability of a complex depends on (a) the charge on the metal ion, (b) chelation and (c) the nature of the ligand.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Higher charge (and smaller size) on the metal ion attracts ligands more strongly: [Co(NH₃)₆]³⁺ is far more stable than [Co(NH₃)₆]²⁺. (b) Chelating ligands form rings and give more stable complexes: [Ni(en)₃]²⁺ (log β 18.3) vs [Ni(NH₃)₆]²⁺ (8.6). (c) More basic or strong π-accepting ligands form more stable complexes: CN⁻ complexes such as [Fe(CN)₆]³⁻ are very stable."
+      },
+      "solution_md": "Charge; chelate effect; ligand nature.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch11-t03"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch11_047",
+      "unit": "isc-12-chemistry-ch11",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "In qualitative analysis, nickel(II) ions are confirmed by:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "a red precipitate with dimethylglyoxime in ammoniacal solution"
+        },
+        {
+          "id": "b",
+          "text_md": "a blood-red colour with potassium thiocyanate"
+        },
+        {
+          "id": "c",
+          "text_md": "a deep blue colour with excess ammonia"
+        },
+        {
+          "id": "d",
+          "text_md": "a Prussian blue precipitate with potassium ferrocyanide"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Bis(dimethylglyoximato)nickel(II) is a red chelate — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch11-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch11_048",
+      "unit": "isc-12-chemistry-ch11",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A few drops of potassium thiocyanate added to a salt solution give a blood-red colour. This shows the presence of:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Fe²⁺, forming Prussian blue"
+        },
+        {
+          "id": "b",
+          "text_md": "Fe³⁺, forming [Fe(SCN)(H₂O)₅]²⁺"
+        },
+        {
+          "id": "c",
+          "text_md": "Cu²⁺, forming [Cu(NH₃)₄]²⁺"
+        },
+        {
+          "id": "d",
+          "text_md": "Ni²⁺, forming [Ni(dmg)₂]"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Thiocyanato complex of iron(III) — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch11-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch11_049",
+      "unit": "isc-12-chemistry-ch11",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "In the cyanide process for extracting gold, the metal is first leached from the crushed ore as:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "insoluble gold(III) cyanide, which is filtered off"
+        },
+        {
+          "id": "b",
+          "text_md": "volatile Au(CO)₄, which is decomposed by heat"
+        },
+        {
+          "id": "c",
+          "text_md": "the soluble complex [Au(CN)₂]⁻, from which gold is then displaced by zinc"
+        },
+        {
+          "id": "d",
+          "text_md": "gold(I) chloride, which is reduced by hydrogen"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Au dissolves in aerated NaCN as [Au(CN)₂]⁻ — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch11-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch11_050",
+      "unit": "isc-12-chemistry-ch11",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "The central metal ions in haemoglobin, chlorophyll and vitamin B12 are, respectively:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "magnesium, iron and cobalt"
+        },
+        {
+          "id": "b",
+          "text_md": "iron, magnesium and cobalt"
+        },
+        {
+          "id": "c",
+          "text_md": "iron, cobalt and magnesium"
+        },
+        {
+          "id": "d",
+          "text_md": "cobalt, magnesium and iron"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Fe in haem, Mg in chlorophyll, Co in cobalamin — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch11-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch11_051",
+      "unit": "isc-12-chemistry-ch11",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "In the Mond process, impure nickel is purified by:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "dissolving it as [Ni(NH₃)₆]²⁺ and electrolysing the solution"
+        },
+        {
+          "id": "b",
+          "text_md": "precipitating it with dimethylglyoxime"
+        },
+        {
+          "id": "c",
+          "text_md": "forming volatile Ni(CO)₄ with carbon monoxide at about 330–350 K and decomposing it at about 450–470 K"
+        },
+        {
+          "id": "d",
+          "text_md": "leaching it as [Ni(CN)₄]²⁻ and adding zinc"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "The volatile carbonyl separates nickel from impurities — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch11-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch11_052",
+      "unit": "isc-12-chemistry-ch11",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Chlorophyll is a coordination compound of iron.\n\n**Reason (R):** Haemoglobin contains iron(II) at the centre of a porphyrin ring.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "A is false: chlorophyll contains magnesium. R is true — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch11-t04"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch11_053",
+      "unit": "isc-12-chemistry-ch11",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? The anticancer drug cisplatin is the trans isomer of [PtCl₂(NH₃)₂].",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "f"
+        ]
+      },
+      "solution_md": "False. Cisplatin is the cis isomer; the trans isomer is inactive.",
+      "marking_scheme": [
+        {
+          "step": "False, with the correction",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch11-t04"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch11_054",
+      "unit": "isc-12-chemistry-ch11",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "Vitamin B12 (cyanocobalamin) is a coordination compound of the metal ___.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "cobalt",
+              "Co"
+            ]
+          }
+        ]
+      },
+      "solution_md": "**Cobalt**.",
+      "marking_scheme": [
+        {
+          "step": "Writes \"cobalt\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch11-t04"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch11_055",
+      "unit": "isc-12-chemistry-ch11",
+      "language": "en",
+      "type": "match",
+      "stem_md": "Match each test reagent with the metal ion it detects in qualitative analysis.",
+      "options": [
+        {
+          "id": "1",
+          "text_md": "Dimethylglyoxime (red precipitate)"
+        },
+        {
+          "id": "2",
+          "text_md": "Potassium thiocyanate (blood-red colour)"
+        },
+        {
+          "id": "3",
+          "text_md": "Excess aqueous ammonia (deep blue colour)"
+        },
+        {
+          "id": "4",
+          "text_md": "Potassium ferricyanide (Turnbull’s blue)"
+        }
+      ],
+      "match_right": [
+        {
+          "id": "p",
+          "text_md": "Cu²⁺"
+        },
+        {
+          "id": "q",
+          "text_md": "Ni²⁺"
+        },
+        {
+          "id": "r",
+          "text_md": "Fe²⁺"
+        },
+        {
+          "id": "s",
+          "text_md": "Fe³⁺"
+        }
+      ],
+      "answer": {
+        "pairs": [
+          {
+            "left_id": "1",
+            "right_id": "q"
+          },
+          {
+            "left_id": "2",
+            "right_id": "s"
+          },
+          {
+            "left_id": "3",
+            "right_id": "p"
+          },
+          {
+            "left_id": "4",
+            "right_id": "r"
+          }
+        ]
+      },
+      "solution_md": "dmg → Ni²⁺; SCN⁻ → Fe³⁺; NH₃ → Cu²⁺; K₃[Fe(CN)₆] → Fe²⁺.",
+      "marking_scheme": [
+        {
+          "step": "1 → q",
+          "marks": 0.5
+        },
+        {
+          "step": "2 → s",
+          "marks": 0.5
+        },
+        {
+          "step": "3 → p",
+          "marks": 0.5
+        },
+        {
+          "step": "4 → r",
+          "marks": 0.5
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch11-t04"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch11_056",
+      "unit": "isc-12-chemistry-ch11",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "Gold is leached by aerated sodium cyanide: $\\ce{4Au + 8CN- + 2H2O + O2 -> 4Au(CN)2^- + 4OH-}$. What mass of NaCN ($M = 49$) is needed to dissolve $0.394\\ \\text{g}$ of gold (Au = 197)?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 0.196,
+        "tolerance": 0.002,
+        "unit": "g"
+      },
+      "solution_md": "$n(\\text{Au}) = 0.394 \\div 197 = 0.0020\\ \\text{mol}$; $n(\\ce{CN-}) = 2 \\times 0.0020 = 0.0040\\ \\text{mol}$; mass $= 0.0040 \\times 49 = 0.196\\ \\text{g}$.",
+      "marking_scheme": [
+        {
+          "step": "Moles and 1 : 2 ratio",
+          "marks": 1
+        },
+        {
+          "step": "0.196 g",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch11-t04"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch11_057",
+      "unit": "isc-12-chemistry-ch11",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Give two examples of the use of complex formation in qualitative analysis, naming the ion detected and the complex formed.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Any two: Ni²⁺ gives a red precipitate of bis(dimethylglyoximato)nickel(II) with dimethylglyoxime; Cu²⁺ gives deep blue [Cu(NH₃)₄]²⁺ with excess ammonia; Fe³⁺ gives blood-red [Fe(SCN)(H₂O)₅]²⁺ with thiocyanate; Fe³⁺ gives Prussian blue, Fe₄[Fe(CN)₆]₃, with potassium ferrocyanide."
+      },
+      "solution_md": "Two examples.",
+      "marking_scheme": [
+        {
+          "step": "Example 1",
+          "marks": 1
+        },
+        {
+          "step": "Example 2",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch11-t04"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch11_058",
+      "unit": "isc-12-chemistry-ch11",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Name the metal and state the biological role of (a) haemoglobin and (b) chlorophyll.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Haemoglobin: iron(II) in a porphyrin (haem) ring; it binds and carries oxygen in the blood. (b) Chlorophyll: magnesium in a porphyrin-type ring; it absorbs light for photosynthesis in green plants."
+      },
+      "solution_md": "Fe, oxygen transport; Mg, photosynthesis.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch11-t04"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch11_059",
+      "unit": "isc-12-chemistry-ch11",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Explain, with equations, how complex formation is used (a) in the extraction of silver from its ore by the cyanide process and (b) in the purification of nickel by the Mond process.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Silver is leached with aerated NaCN: $\\ce{4Ag + 8CN- + 2H2O + O2 -> 4Ag(CN)2^- + 4OH-}$; silver is then displaced by zinc: $\\ce{2Ag(CN)2^- + Zn -> Zn(CN)4^2- + 2Ag}$. (b) Impure nickel is heated in CO at about 330–350 K: $\\ce{Ni + 4CO -> Ni(CO)4}$; the volatile carbonyl is decomposed at about 450–470 K: $\\ce{Ni(CO)4 -> Ni + 4CO}$, giving pure nickel."
+      },
+      "solution_md": "Leach and displace; form and decompose carbonyl.",
+      "marking_scheme": [
+        {
+          "step": "(a) Leaching equation",
+          "marks": 1
+        },
+        {
+          "step": "(a) Displacement by Zn",
+          "marks": 1
+        },
+        {
+          "step": "(b) Mond equations",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch11-t04"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch11_060",
+      "unit": "isc-12-chemistry-ch11",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) State the main ideas of valence bond theory as applied to complexes. [1]\n\n(b) Using valence bond theory, give the hybridisation, shape, type (inner or outer orbital) and spin-only magnetic moment of (i) [Cr(NH₃)₆]³⁺ and (ii) [Fe(H₂O)₆]²⁺. (Z: Cr 24, Fe 26) [3]\n\n(c) State two limitations of valence bond theory. [1]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) The metal ion provides empty orbitals equal to its coordination number; these hybridise into equivalent directed orbitals; each ligand donates a lone pair into one hybrid orbital; strong-field ligands may pair d electrons.\n\n(b) (i) Cr³⁺ 3d³: two 3d orbitals empty; d²sp³, octahedral, inner orbital; n = 3, μ = √15 ≈ 3.87 BM. (ii) Fe²⁺ 3d⁶ with weak-field H₂O: no pairing; sp³d², octahedral, outer orbital; n = 4, μ = √24 ≈ 4.90 BM.\n\n(c) Any two: cannot explain colour; does not explain why some ligands are strong and others weak; cannot predict tetrahedral vs square planar for CN 4; gives no quantitative interpretation of magnetic data."
+      },
+      "solution_md": "Postulates; d²sp³ 3.87 BM; sp³d² 4.90 BM; limitations.",
+      "marking_scheme": [
+        {
+          "step": "(a) Main ideas",
+          "marks": 1
+        },
+        {
+          "step": "(b)(i) Cr complex",
+          "marks": 1.5
+        },
+        {
+          "step": "(b)(ii) Fe complex",
+          "marks": 1.5
+        },
+        {
+          "step": "(c) Two limitations",
+          "marks": 1
+        }
+      ],
+      "marks": 5,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch11-t01"
+      ],
+      "expected_time_sec": 570,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch11_061",
+      "unit": "isc-12-chemistry-ch11",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) On the basis of crystal field theory, explain why the five d orbitals of a metal ion no longer have equal energy when six ligands approach along the x, y and z axes. Name the two sets formed and give their energies relative to the barycentre. [2]\n\n(b) Co³⁺ is d⁶. Write its configuration in [CoF₆]³⁻ and in [Co(NH₃)₆]³⁺, and state the magnetic behaviour of each. [2]\n\n(c) Why are low-spin tetrahedral complexes rarely observed? [1]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) The ligands, treated as point charges, repel the d electrons. d(x²−y²) and d(z²) point directly at the ligands and are raised in energy (e_g, +0.6Δo); d(xy), d(yz) and d(xz) point between the axes and are lowered (t₂g, −0.4Δo). The gap is Δo.\n\n(b) [CoF₆]³⁻: F⁻ weak field, Δo < P: t₂g⁴e_g², 4 unpaired, paramagnetic. [Co(NH₃)₆]³⁺: NH₃ strong field for Co³⁺, Δo > P: t₂g⁶e_g⁰, diamagnetic.\n\n(c) Δt ≈ (4/9)Δo is almost always smaller than the pairing energy, so electrons occupy the upper set rather than pair."
+      },
+      "solution_md": "e_g up, t₂g down; t₂g⁴e_g² vs t₂g⁶; Δt small.",
+      "marking_scheme": [
+        {
+          "step": "(a) Reason and two sets",
+          "marks": 2
+        },
+        {
+          "step": "(b) Two configurations",
+          "marks": 1
+        },
+        {
+          "step": "(b) Magnetism",
+          "marks": 1
+        },
+        {
+          "step": "(c) Δt < P",
+          "marks": 1
+        }
+      ],
+      "marks": 5,
+      "difficulty": 3,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch11-t02"
+      ],
+      "expected_time_sec": 570,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch11_062",
+      "unit": "isc-12-chemistry-ch11",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Explain how crystal field theory accounts for the colour of transition-metal complexes. [1½]\n\n(b) Hexaaquacopper(II) absorbs most strongly at about 800 nm. Calculate Δo in kJ mol⁻¹. (N_A = 6.022 × 10²³, h = 6.626 × 10⁻³⁴ J s, c = 3.0 × 10⁸ m s⁻¹) [2]\n\n(c) Explain why [Cu(NH₃)₄]²⁺ is a deeper blue-violet than [Cu(H₂O)₆]²⁺. [1½]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Ligands split the d orbitals by Δo. A d electron absorbs visible light whose energy equals Δo and is promoted from t₂g to e_g (d–d transition). The light not absorbed is transmitted, so the complex shows the complementary colour.\n\n(b) $\\Delta_o = \\dfrac{N_A h c}{\\lambda} = \\dfrac{6.022 \\times 10^{23} \\times 6.626 \\times 10^{-34} \\times 3.0 \\times 10^{8}}{800 \\times 10^{-9}} \\approx 1.50 \\times 10^{5}\\ \\text{J mol}^{-1}$, about 150 kJ mol⁻¹.\n\n(c) NH₃ is a stronger-field ligand than H₂O, so Δo is larger; the absorption moves to higher energy (shorter wavelength, yellow-orange), and the complementary colour seen is a deeper blue-violet."
+      },
+      "solution_md": "d–d transition; ≈ 150 kJ/mol; larger Δo with NH₃.",
+      "marking_scheme": [
+        {
+          "step": "(a) d–d transition and complementary colour",
+          "marks": 1.5
+        },
+        {
+          "step": "(b) Substitution",
+          "marks": 1
+        },
+        {
+          "step": "(b) ≈ 150 kJ/mol",
+          "marks": 1
+        },
+        {
+          "step": "(c) Stronger field, larger Δo",
+          "marks": 1.5
+        }
+      ],
+      "marks": 5,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch11-t02"
+      ],
+      "expected_time_sec": 570,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch11_063",
+      "unit": "isc-12-chemistry-ch11",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Define stepwise and overall stability constants for the formation of [Ni(en)₃]²⁺ from Ni²⁺(aq) and en. [1½]\n\n(b) The stepwise constants are K₁ = 3.3 × 10⁷, K₂ = 1.9 × 10⁶ and K₃ = 3.2 × 10⁴. Calculate β₃ and log β₃, and compare with log β = 8.6 for [Ni(NH₃)₆]²⁺. [2]\n\n(c) State two factors, other than chelation, that increase the stability of a complex. [1½]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Stepwise: $\\ce{Ni^2+ + en <=> [Ni(en)]^2+}$, $K_1 = [\\ce{Ni(en)^2+}]/([\\ce{Ni^2+}][\\text{en}])$, and similarly $K_2$, $K_3$ for adding the second and third en. Overall: $\\ce{Ni^2+ + 3en <=> [Ni(en)3]^2+}$, $\\beta_3 = K_1K_2K_3$.\n\n(b) $\\beta_3 = 3.3 \\times 10^7 \\times 1.9 \\times 10^6 \\times 3.2 \\times 10^4 \\approx 2.0 \\times 10^{18}$; $\\log \\beta_3 \\approx 18.3$. This is about $10^{10}$ times larger than for the ammine complex: the chelate effect.\n\n(c) Any two: higher charge and smaller size of the metal ion; greater basicity (donor strength) of the ligand; π-acceptor ability of the ligand (CN⁻, CO); a larger crystal field stabilisation."
+      },
+      "solution_md": "Definitions; β₃ ≈ 2.0 × 10¹⁸, log 18.3; factors.",
+      "marking_scheme": [
+        {
+          "step": "(a) Definitions",
+          "marks": 1.5
+        },
+        {
+          "step": "(b) β₃",
+          "marks": 1
+        },
+        {
+          "step": "(b) log β₃ and comparison",
+          "marks": 1
+        },
+        {
+          "step": "(c) Two factors",
+          "marks": 1.5
+        }
+      ],
+      "marks": 5,
+      "difficulty": 4,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch11-t03"
+      ],
+      "expected_time_sec": 570,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch11_064",
+      "unit": "isc-12-chemistry-ch11",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Give three examples of the use of complex formation in qualitative analysis. [1½]\n\n(b) Describe, with equations, the extraction of gold by the cyanide process. [2]\n\n(c) Name the metal present in, and the function of, haemoglobin, chlorophyll and vitamin B12. [1½]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Ni²⁺: red precipitate with dimethylglyoxime; Cu²⁺: deep blue [Cu(NH₃)₄]²⁺ with excess NH₃; Fe³⁺: blood-red [Fe(SCN)(H₂O)₅]²⁺ with SCN⁻ (or Prussian blue with K₄[Fe(CN)₆]).\n\n(b) Crushed ore is leached with dilute aerated NaCN: $\\ce{4Au + 8CN- + 2H2O + O2 -> 4Au(CN)2^- + 4OH-}$. Gold is then displaced by zinc dust: $\\ce{2Au(CN)2^- + Zn -> Zn(CN)4^2- + 2Au}$.\n\n(c) Haemoglobin: iron, carries oxygen in blood. Chlorophyll: magnesium, absorbs light for photosynthesis. Vitamin B12: cobalt, needed for formation of red blood cells (prevents pernicious anaemia)."
+      },
+      "solution_md": "Three tests; leaching and displacement; Fe, Mg, Co.",
+      "marking_scheme": [
+        {
+          "step": "(a) Three examples",
+          "marks": 1.5
+        },
+        {
+          "step": "(b) Two equations",
+          "marks": 2
+        },
+        {
+          "step": "(c) Three metals and functions",
+          "marks": 1.5
+        }
+      ],
+      "marks": 5,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch11-t04"
+      ],
+      "expected_time_sec": 570,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    }
+  ],
+  "build": {
+    "run_id": null,
+    "checks": {
+      "katex_mhchem": "150 math strings parsed with KaTeX 0.19.0 + mhchem (throwOnError, strict \"error\"), 0 failures",
+      "svg_allowlist": "2 SVG visuals (1 distinct diagrams) checked with saxes against svg-allowlist.ts: elements, attributes, class pattern, fragment-only refs, no style, palette incl. named hues, viewBox, title, per-page unique ids — 0 failures",
+      "narration": "28 slides, 10–75 words (mean 53), no symbols, formulae or unit abbreviations",
+      "resolve": "7/7 scripted re-solve checks pass",
+      "chemistry_facts": "Valence bond descriptions, crystal-field configurations, the spectrochemical series, stability constants, uses of complexes and every numerical checked against the ISC 2027 syllabus (Unit 5)",
+      "content_gate": "npm test -w @soyl/content-templates: all checks pass for this chapter",
+      "verifier_pass": "2026-10-30: every question and every internal-choice alternative re-solved from its stem by the author; every numerical re-computed by the build script — see README \"Verifier pass\"",
+      "pipeline_lint": "npm run content -- lint --exemplars: 0 errors, 0 warnings"
+    }
+  }
+}

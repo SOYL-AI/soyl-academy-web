@@ -1,0 +1,5364 @@
+{
+  "unit": "isc-12-chemistry-ch18",
+  "version": 1,
+  "academic_year": "2026-27",
+  "created_at": "2026-10-30T00:00:00+05:30",
+  "decks": [
+    {
+      "unit": "isc-12-chemistry-ch18",
+      "part": 1,
+      "version": 1,
+      "title": "Carboxylic Acids — Part 1: Structure, preparation and acidity",
+      "language": "en",
+      "goals": [
+        "Classify and name mono- and dicarboxylic acids and describe the carboxyl group",
+        "Explain high boiling points using hydrogen-bonded dimers",
+        "Write equations to prepare aliphatic and aromatic acids from alcohols, aldehydes, nitriles and Grignard reagents",
+        "Arrange acids in order of strength using inductive and resonance effects"
+      ],
+      "slides": [
+        {
+          "id": "s01",
+          "layout": "title",
+          "heading": "Carboxylic acids",
+          "body_md": "Part 1 — compounds with the –COOH group: names, structure, preparation and acid strength.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Acid",
+                "Where you meet it"
+              ],
+              "rows": [
+                [
+                  "Methanoic (formic) acid",
+                  "Ant and nettle stings"
+                ],
+                [
+                  "Ethanoic (acetic) acid",
+                  "Vinegar (about 5%)"
+                ],
+                [
+                  "Butanoic (butyric) acid",
+                  "Smell of rancid butter"
+                ],
+                [
+                  "Ethanedioic (oxalic) acid",
+                  "Spinach, rhubarb; rust remover"
+                ],
+                [
+                  "Benzoic acid",
+                  "Food preservative (as sodium benzoate)"
+                ]
+              ]
+            },
+            "alt": "Table of familiar carboxylic acids"
+          },
+          "math": [],
+          "narration": "Namaste! The sting of an ant, the sourness of vinegar and the smell of rancid butter all come from carboxylic acids, compounds containing the carboxyl group, COOH. In this part we classify and name them, see why they boil so high, learn how to make them, and find out what makes some acids much stronger than others.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s02",
+          "layout": "concept",
+          "heading": "Classification and nomenclature",
+          "body_md": "**Monocarboxylic** (CₙH₂ₙ₊₁COOH) and **dicarboxylic** acids; aliphatic and aromatic. IUPAC: replace -e by **-oic acid** (C of COOH = C-1); diacids: **-dioic acid**.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Formula",
+                "Common name",
+                "IUPAC name"
+              ],
+              "rows": [
+                [
+                  "HCOOH",
+                  "Formic acid",
+                  "Methanoic acid"
+                ],
+                [
+                  "CH₃CH₂CH₂COOH",
+                  "Butyric acid",
+                  "Butanoic acid"
+                ],
+                [
+                  "(CH₃)₂CHCOOH",
+                  "Isobutyric acid",
+                  "2-Methylpropanoic acid"
+                ],
+                [
+                  "HOOC–COOH",
+                  "Oxalic acid",
+                  "Ethanedioic acid"
+                ],
+                [
+                  "HOOC(CH₂)₂COOH",
+                  "Succinic acid",
+                  "Butanedioic acid"
+                ],
+                [
+                  "HOOC(CH₂)₄COOH",
+                  "Adipic acid",
+                  "Hexanedioic acid"
+                ],
+                [
+                  "C₆H₄(COOH)₂ (1,2)",
+                  "Phthalic acid",
+                  "Benzene-1,2-dicarboxylic acid"
+                ]
+              ]
+            },
+            "alt": "Table of names of carboxylic acids"
+          },
+          "math": [],
+          "narration": "Monocarboxylic acids have one carboxyl group; dicarboxylic acids have two. The IUPAC name replaces the final e of the alkane with oic acid, numbering from the carboxyl carbon: two-methylpropanoic acid. Diacids end in dioic acid: oxalic acid is ethanedioic acid and adipic acid, used for nylon, is hexanedioic acid. Many common names come from natural sources: formic from ants, butyric from butter.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s03",
+          "layout": "concept",
+          "heading": "Structure and physical properties",
+          "body_md": "The carboxyl carbon is **sp²**; the –OH lone pair is delocalised into C=O, so the C=O is less reactive than in aldehydes. Acids form **hydrogen-bonded dimers** (even in the vapour), so they boil higher than alcohols of similar mass. C1–C4 acids are miscible with water; solubility falls with chain length. Lower acids have sharp smells; higher ones are waxy solids.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Compound (M ≈ 60)",
+                "b.p. / K",
+                "Reason"
+              ],
+              "rows": [
+                [
+                  "Propanal",
+                  "322",
+                  "Dipole–dipole"
+                ],
+                [
+                  "Propan-1-ol",
+                  "370",
+                  "H-bonding (chains)"
+                ],
+                [
+                  "Ethanoic acid",
+                  "391",
+                  "H-bonded dimers"
+                ]
+              ]
+            },
+            "alt": "Table of boiling points of compounds of similar mass"
+          },
+          "math": [],
+          "narration": "In the carboxyl group, the carbon is sp two hybridised and the hydroxyl lone pair is shared with the carbonyl group, which makes the carbonyl less reactive than in aldehydes. Two acid molecules link through two hydrogen bonds to form a dimer, which behaves like a much larger molecule. That is why ethanoic acid boils higher than propan-one-ol of the same mass.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s04",
+          "layout": "check",
+          "heading": "Quick check: names and properties",
+          "body_md": "Name an acid or explain its boiling point.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Diacids end in dioic acid; dimers explain high boiling points.",
+          "check_question_id": "q_isc12chem_ch18_001",
+          "audio": null
+        },
+        {
+          "id": "s05",
+          "layout": "concept",
+          "heading": "Preparation of aliphatic acids",
+          "body_md": "**Oxidation** of 1° alcohols and aldehydes (KMnO₄ or K₂Cr₂O₇ in acid). **Hydrolysis of nitriles** (H₃O⁺ or OH⁻, heat) — one carbon more than the alkyl halide. **Grignard reagent + CO₂** (dry ice), then H₃O⁺ — one carbon more. Also hydrolysis of esters, amides and acid chlorides.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "From",
+                "Reagent",
+                "Product"
+              ],
+              "rows": [
+                [
+                  "Butan-1-ol",
+                  "K₂Cr₂O₇/H⁺, reflux",
+                  "Butanoic acid"
+                ],
+                [
+                  "Propanal",
+                  "KMnO₄/H⁺",
+                  "Propanoic acid"
+                ],
+                [
+                  "Propanenitrile",
+                  "H₃O⁺, heat",
+                  "Propanoic acid"
+                ],
+                [
+                  "CH₃CH₂CH₂MgBr",
+                  "CO₂; H₃O⁺",
+                  "Butanoic acid"
+                ]
+              ]
+            },
+            "alt": "Table of preparations of aliphatic acids"
+          },
+          "math": [
+            "\\ce{CH3CH2CH2CN + 2H2O + HCl -> CH3CH2CH2COOH + NH4Cl}",
+            "\\ce{CH3CH2CH2MgBr + CO2 -> CH3CH2CH2COOMgBr}"
+          ],
+          "narration": "Strong oxidation of primary alcohols and aldehydes gives carboxylic acids. Hydrolysing a nitrile with acid or alkali converts the CN group into COOH; since the nitrile was made from an alkyl halide and cyanide, the acid has one more carbon than the halide. Grignard reagents add to carbon dioxide, and acid work-up gives an acid, again with one extra carbon.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s06",
+          "layout": "concept",
+          "heading": "Preparation of aromatic acids",
+          "body_md": "**Oxidation of alkylbenzenes** with hot alkaline KMnO₄ (then acid): any alkyl side chain with a benzylic H → –COOH. Also from **benzonitrile** (hydrolysis), **phenylmagnesium bromide + CO₂**, and oxidation of benzaldehyde or benzyl alcohol.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Starting compound",
+                "Reagent",
+                "Product"
+              ],
+              "rows": [
+                [
+                  "Ethylbenzene",
+                  "KMnO₄/KOH, heat; H⁺",
+                  "Benzoic acid"
+                ],
+                [
+                  "Toluene",
+                  "KMnO₄/KOH, heat; H⁺",
+                  "Benzoic acid"
+                ],
+                [
+                  "Benzonitrile",
+                  "H₃O⁺, heat",
+                  "Benzoic acid"
+                ],
+                [
+                  "C₆H₅MgBr",
+                  "Dry ice; H₃O⁺",
+                  "Benzoic acid"
+                ],
+                [
+                  "4-Methyltoluene (p-xylene)",
+                  "KMnO₄",
+                  "Benzene-1,4-dicarboxylic acid"
+                ]
+              ]
+            },
+            "alt": "Table of preparations of aromatic acids"
+          },
+          "math": [
+            "\\ce{C6H5MgBr + CO2 -> C6H5COOMgBr}",
+            "\\ce{C6H5CN + 2H2O + HCl -> C6H5COOH + NH4Cl}"
+          ],
+          "narration": "For aromatic acids, hot alkaline potassium permanganate oxidises any alkyl side chain, whatever its length, down to a single carboxyl group on the ring, so toluene and ethylbenzene both give benzoic acid. Benzoic acid can also be made by hydrolysing benzonitrile or by adding carbon dioxide to phenylmagnesium bromide. Para-xylene gives terephthalic acid, used to make polyester.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s07",
+          "layout": "example",
+          "heading": "Worked example: planning a synthesis",
+          "body_md": "**Problem.** (a) Prepare butanoic acid from 1-bromopropane by two routes. (b) Prepare 4-methylbenzoic acid from 4-bromotoluene.\n\n**(a)** Route 1: KCN (ethanol) → butanenitrile; H₃O⁺, heat → butanoic acid. Route 2: Mg, dry ether → $\\ce{CH3CH2CH2MgBr}$; CO₂, then H₃O⁺ → butanoic acid.\n\n**(b)** Mg, dry ether → 4-methylphenylmagnesium bromide; CO₂, then H₃O⁺ → 4-methylbenzoic acid. (KMnO₄ is not used: it would oxidise the methyl group too.)",
+          "bullets": [],
+          "visual": {
+            "kind": "flow",
+            "spec": {
+              "direction": "LR",
+              "nodes": [
+                {
+                  "id": "a",
+                  "label": "1-Bromopropane (C₃)"
+                },
+                {
+                  "id": "b",
+                  "label": "Butanenitrile"
+                },
+                {
+                  "id": "c",
+                  "label": "Propylmagnesium bromide"
+                },
+                {
+                  "id": "d",
+                  "label": "Butanoic acid (C₄)"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "a",
+                  "to": "b",
+                  "label": "KCN"
+                },
+                {
+                  "from": "b",
+                  "to": "d",
+                  "label": "H₃O⁺"
+                },
+                {
+                  "from": "a",
+                  "to": "c",
+                  "label": "Mg"
+                },
+                {
+                  "from": "c",
+                  "to": "d",
+                  "label": "CO₂, H₃O⁺"
+                }
+              ]
+            },
+            "alt": "Flow of two routes from 1-bromopropane to butanoic acid"
+          },
+          "math": [],
+          "narration": "Both the nitrile and the Grignard routes add one carbon, so the three-carbon bromide gives the four-carbon acid. For four-methylbenzoic acid, the Grignard route converts only the bromine position into a carboxyl group and leaves the methyl group alone; permanganate would oxidise the methyl group as well, giving a diacid.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s08",
+          "layout": "check",
+          "heading": "Quick check: preparation",
+          "body_md": "Choose a route to a given carboxylic acid.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Nitrile and Grignard routes add one carbon; permanganate cuts any side chain down to COOH.",
+          "check_question_id": "q_isc12chem_ch18_009",
+          "audio": null
+        },
+        {
+          "id": "s09",
+          "layout": "diagram",
+          "heading": "Why carboxylic acids are acidic",
+          "body_md": "$\\ce{RCOOH + H2O <=> RCOO- + H3O+}$. The **carboxylate ion** is stabilised by **two equivalent resonance structures**: the charge is shared equally by two **oxygen** atoms (both C–O bonds 127 pm). Carboxylic acids (pKa ≈ 4–5) are stronger than phenols (≈ 10) and alcohols (≈ 16), and decompose NaHCO₃.",
+          "bullets": [],
+          "visual": {
+            "kind": "svg",
+            "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 340 150\" role=\"img\" aria-label=\"Two equivalent resonance structures of the carboxylate ion, R–COO⁻. In one, the negative charge is on the lower oxygen and the upper oxygen is double bonded; in the other, the roles are swapped. The real ion has the charge spread equally over both oxygen atoms and two equal C–O bonds.\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>Two equivalent resonance structures of the carboxylate ion, R–COO⁻. In one, the negative charge is on the lower oxygen and the upper oxygen is double bonded; in the other, the roles are swapped. The real ion has the charge spread equally over both oxygen atoms and two equal C–O bonds.</title><circle cx=\"70\" cy=\"75\" r=\"12\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"70\" y=\"79\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">C</text><line x1=\"58\" y1=\"75\" x2=\"28\" y2=\"75\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"18\" y=\"79\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">R</text><line x1=\"79.9\" y1=\"67.6\" x2=\"99.9\" y2=\"43.6\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"76.1\" y1=\"64.4\" x2=\"96.1\" y2=\"40.4\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"105\" cy=\"34\" r=\"12\" fill=\"var(--diagram-red)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"105\" y=\"38\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">O</text><line x1=\"78\" y1=\"84\" x2=\"98\" y2=\"108\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"105\" cy=\"116\" r=\"12\" fill=\"var(--diagram-red)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"105\" y=\"120\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">O⁻</text><line x1=\"140\" y1=\"75\" x2=\"185.2\" y2=\"75\" stroke=\"currentColor\" stroke-width=\"1.5\"/><polygon points=\"190,75 184.5,77.4 184.5,72.6\" fill=\"currentColor\" stroke=\"none\"/><line x1=\"190\" y1=\"75\" x2=\"144.8\" y2=\"75\" stroke=\"currentColor\" stroke-width=\"1.5\"/><polygon points=\"140,75 145.5,72.6 145.5,77.4\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"250\" cy=\"75\" r=\"12\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"250\" y=\"79\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">C</text><line x1=\"238\" y1=\"75\" x2=\"208\" y2=\"75\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"198\" y=\"79\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">R</text><line x1=\"258\" y1=\"66\" x2=\"278\" y2=\"42\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"285\" cy=\"34\" r=\"12\" fill=\"var(--diagram-red)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"285\" y=\"38\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">O⁻</text><line x1=\"256.1\" y1=\"85.6\" x2=\"276.1\" y2=\"109.6\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"259.9\" y1=\"82.4\" x2=\"279.9\" y2=\"106.4\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"285\" cy=\"116\" r=\"12\" fill=\"var(--diagram-red)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"285\" y=\"120\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">O</text><text x=\"170\" y=\"145\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">equivalent structures: charge shared by two O atoms</text></svg>",
+            "alt": "Two equivalent resonance structures of the carboxylate ion with the negative charge on either oxygen atom"
+          },
+          "math": [],
+          "narration": "When a carboxylic acid loses a proton, the negative charge on the carboxylate ion is shared equally between two electronegative oxygen atoms, through two identical resonance structures; both carbon to oxygen bonds become the same length. This stabilisation is greater than in the phenoxide ion, where the charge spreads onto less electronegative carbon atoms. So carboxylic acids are stronger than phenols and release carbon dioxide from hydrogencarbonates.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s10",
+          "layout": "concept",
+          "heading": "Substituent effects in aliphatic acids",
+          "body_md": "**Electron-withdrawing** groups (−I: –F, –Cl, –NO₂, –CN) stabilise the carboxylate → **stronger acid**. Effect grows with the **number** and **electronegativity** of the groups and falls with **distance** from –COOH. **Electron-releasing** alkyl groups (+I) → weaker acid.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Acid",
+                "pKa"
+              ],
+              "rows": [
+                [
+                  "CCl₃COOH",
+                  "0.65"
+                ],
+                [
+                  "CHCl₂COOH",
+                  "1.26"
+                ],
+                [
+                  "FCH₂COOH",
+                  "2.66"
+                ],
+                [
+                  "ClCH₂COOH",
+                  "2.86"
+                ],
+                [
+                  "HCOOH",
+                  "3.75"
+                ],
+                [
+                  "CH₃COOH",
+                  "4.76"
+                ],
+                [
+                  "CH₃CH₂COOH",
+                  "4.88"
+                ],
+                [
+                  "(CH₃)₃CCOOH",
+                  "5.05"
+                ]
+              ]
+            },
+            "alt": "Table of pKa values of aliphatic acids"
+          },
+          "math": [],
+          "narration": "Electron-withdrawing groups pull electron density away from the carboxylate and stabilise it, so the acid is stronger. Three chlorines make trichloroethanoic acid almost as strong as a mineral acid. Fluorine, being more electronegative, has a larger effect than chlorine. Alkyl groups push electrons in and make acids weaker, which is why methanoic acid, with none, is stronger than ethanoic acid.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s11",
+          "layout": "concept",
+          "heading": "Substituent effects in aromatic acids",
+          "body_md": "Benzoic acid (pKa 4.19) is stronger than ethanoic acid. Electron-withdrawing groups (–NO₂, –Cl) **increase** acidity; electron-donating groups (–CH₃, –OCH₃, –OH at para by +R) **decrease** it. Most **ortho**-substituted benzoic acids are stronger than benzoic acid whatever the group (**ortho effect**).",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Acid",
+                "pKa"
+              ],
+              "rows": [
+                [
+                  "4-Nitrobenzoic",
+                  "3.41"
+                ],
+                [
+                  "3-Nitrobenzoic",
+                  "3.45"
+                ],
+                [
+                  "4-Chlorobenzoic",
+                  "3.98"
+                ],
+                [
+                  "Benzoic",
+                  "4.19"
+                ],
+                [
+                  "4-Methylbenzoic",
+                  "4.37"
+                ],
+                [
+                  "4-Methoxybenzoic",
+                  "4.47"
+                ],
+                [
+                  "2-Methylbenzoic",
+                  "3.91 (ortho effect)"
+                ]
+              ]
+            },
+            "alt": "Table of pKa values of substituted benzoic acids"
+          },
+          "math": [],
+          "narration": "The same ideas apply to benzoic acids. A nitro group withdraws electrons and makes four-nitrobenzoic acid stronger. Methyl and methoxy groups release electrons, especially at the para position, and make the acid weaker. Groups at the ortho position usually make the acid stronger, whatever their electronic nature; this is called the ortho effect and is partly due to the group twisting the carboxyl group out of the plane of the ring.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s12",
+          "layout": "example",
+          "heading": "Worked example: effect of distance",
+          "body_md": "**Problem.** Arrange in decreasing acid strength and explain: butanoic acid, 2-chlorobutanoic acid, 3-chlorobutanoic acid, 4-chlorobutanoic acid. (pKa: 4.82, 2.86, 4.05, 4.52)\n\n**Step 1.** Cl withdraws electrons (−I), stabilising the carboxylate.\n\n**Step 2.** The −I effect weakens rapidly with the number of bonds between Cl and –COOH.\n\n**Order:** 2-chloro (2.86) > 3-chloro (4.05) > 4-chloro (4.52) > butanoic acid (4.82).",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Acid",
+                "Position of Cl",
+                "pKa"
+              ],
+              "rows": [
+                [
+                  "2-Chlorobutanoic",
+                  "α (nearest)",
+                  "2.86"
+                ],
+                [
+                  "3-Chlorobutanoic",
+                  "β",
+                  "4.05"
+                ],
+                [
+                  "4-Chlorobutanoic",
+                  "γ",
+                  "4.52"
+                ],
+                [
+                  "Butanoic",
+                  "None",
+                  "4.82"
+                ]
+              ]
+            },
+            "alt": "Table showing the effect of distance on acid strength"
+          },
+          "math": [],
+          "narration": "All three chloro acids are stronger than butanoic acid, because chlorine withdraws electrons and stabilises the carboxylate. But the inductive effect fades quickly with distance. With chlorine on the carbon next to the carboxyl group, the effect is large; one carbon further away, much smaller; two carbons away, only slight.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s13",
+          "layout": "check",
+          "heading": "Quick check: acid strength",
+          "body_md": "Pick the strongest or weakest acid from a set.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Count and locate the electron-withdrawing groups; alkyl groups weaken acids.",
+          "check_question_id": "q_isc12chem_ch18_019",
+          "audio": null
+        },
+        {
+          "id": "s14",
+          "layout": "summary",
+          "heading": "Summary: Part 1",
+          "body_md": "",
+          "bullets": [
+            "Names: -oic acid; diacids -dioic acid (oxalic, succinic, adipic, phthalic).",
+            "H-bonded dimers → high b.p.; C1–C4 miscible with water.",
+            "Preparation: oxidation of 1° alcohols/aldehydes; nitrile hydrolysis; RMgX + CO₂; alkylbenzene + KMnO₄ → benzoic acid.",
+            "Acidity from carboxylate resonance (two equivalent O); stronger than phenols; decompose NaHCO₃.",
+            "−I groups increase acidity (more, closer, more electronegative); +I/+R groups decrease it; ortho effect."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Acid",
+                "pKa"
+              ],
+              "rows": [
+                [
+                  "CCl₃COOH",
+                  "0.65"
+                ],
+                [
+                  "HCOOH",
+                  "3.75"
+                ],
+                [
+                  "C₆H₅COOH",
+                  "4.19"
+                ],
+                [
+                  "CH₃COOH",
+                  "4.76"
+                ]
+              ]
+            },
+            "alt": "Summary table of pKa values"
+          },
+          "math": [],
+          "narration": "Let us sum up Part 1. Carboxylic acids are named with the ending oic acid. Hydrogen-bonded dimers give them high boiling points. They are made by oxidation, by hydrolysing nitriles and from Grignard reagents and carbon dioxide; side chains on benzene rings are oxidised to carboxyl groups. Resonance in the carboxylate ion makes them acidic, and substituents raise or lower their strength.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s15",
+          "layout": "exam-tips",
+          "heading": "Exam tips: Part 1",
+          "body_md": "",
+          "bullets": [
+            "In acidity questions, name the effect (−I, +I, −R, +R) and its direction.",
+            "State that −I weakens with distance.",
+            "Nitrile and Grignard routes add one carbon; say so in synthesis answers.",
+            "Draw both resonance structures of the carboxylate ion."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Slip",
+                "Fix"
+              ],
+              "rows": [
+                [
+                  "CH₃COOH stronger than HCOOH",
+                  "HCOOH stronger"
+                ],
+                [
+                  "4-Chlorobutanoic stronger than 2-chloro",
+                  "Closer Cl is stronger"
+                ],
+                [
+                  "KMnO₄ on propylbenzene gives propanoic acid",
+                  "Gives benzoic acid"
+                ]
+              ]
+            },
+            "alt": "Table of three common slips in Part 1 and fixes"
+          },
+          "math": [],
+          "narration": "Some tips. In acid-strength questions, name each electronic effect and say whether it increases or decreases acidity. Remember that the inductive effect weakens with distance. Point out that nitrile and Grignard routes add a carbon. And draw both resonance structures of the carboxylate ion when explaining acidity.",
+          "check_question_id": null,
+          "audio": null
+        }
+      ],
+      "status": "draft",
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "unit": "isc-12-chemistry-ch18",
+      "part": 2,
+      "version": 1,
+      "title": "Carboxylic Acids — Part 2: Reactions, tests and uses",
+      "language": "en",
+      "goals": [
+        "Write reactions with active metals, alkalis, carbonates and hydrogencarbonates",
+        "Write equations for forming acid chlorides, anhydrides, esters and amides",
+        "Write decarboxylation, Kolbe electrolysis and HVZ reactions; predict ring substitution of benzoic acid",
+        "Describe tests for and uses of formic, acetic and benzoic acids"
+      ],
+      "slides": [
+        {
+          "id": "s01",
+          "layout": "title",
+          "heading": "Reactions of carboxylic acids",
+          "body_md": "Part 2 — acidic reactions, acid derivatives, losing CO₂, α-halogenation, ring substitution, tests and uses.",
+          "bullets": [],
+          "visual": {
+            "kind": "flow",
+            "spec": {
+              "direction": "LR",
+              "nodes": [
+                {
+                  "id": "a",
+                  "label": "RCOOH"
+                },
+                {
+                  "id": "b",
+                  "label": "Acid reactions: Na, NaOH, Na₂CO₃, NaHCO₃"
+                },
+                {
+                  "id": "c",
+                  "label": "Derivatives: RCOCl, (RCO)₂O, RCOOR′, RCONH₂"
+                },
+                {
+                  "id": "d",
+                  "label": "Decarboxylation; Kolbe; HVZ"
+                },
+                {
+                  "id": "e",
+                  "label": "Tests and uses"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "a",
+                  "to": "b"
+                },
+                {
+                  "from": "a",
+                  "to": "c"
+                },
+                {
+                  "from": "a",
+                  "to": "d"
+                },
+                {
+                  "from": "d",
+                  "to": "e"
+                }
+              ]
+            },
+            "alt": "Flow of the reactions in Part 2"
+          },
+          "math": [],
+          "narration": "Carboxylic acids show typical acid reactions with metals, alkalis and carbonates. Replacing their hydroxyl group gives a family of derivatives: acid chlorides, anhydrides, esters and amides. Their salts can lose carbon dioxide, and their alpha hydrogens can be replaced by halogens. Finally we meet simple tests for formic, acetic and benzoic acids, and their uses.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s02",
+          "layout": "concept",
+          "heading": "Reactions as acids",
+          "body_md": "Carboxylic acids react with **active metals** (H₂), **alkalis** (salt + water), **carbonates** and **hydrogencarbonates** (CO₂ effervescence — a test that distinguishes them from phenols).",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Reagent",
+                "Products",
+                "Phenol reacts?"
+              ],
+              "rows": [
+                [
+                  "Na",
+                  "Salt + H₂",
+                  "Yes"
+                ],
+                [
+                  "NaOH",
+                  "Salt + H₂O",
+                  "Yes"
+                ],
+                [
+                  "Na₂CO₃",
+                  "Salt + H₂O + CO₂",
+                  "No CO₂"
+                ],
+                [
+                  "NaHCO₃",
+                  "Salt + H₂O + CO₂",
+                  "No"
+                ]
+              ]
+            },
+            "alt": "Table of acidic reactions"
+          },
+          "math": [
+            "\\ce{2CH3COOH + 2Na -> 2CH3COONa + H2}",
+            "\\ce{2CH3COOH + Na2CO3 -> 2CH3COONa + H2O + CO2}",
+            "\\ce{C6H5COOH + NaHCO3 -> C6H5COONa + H2O + CO2}"
+          ],
+          "narration": "Carboxylic acids react with sodium to give hydrogen, and with alkalis to give salts and water. Unlike phenols, they are strong enough to decompose carbonates and hydrogencarbonates, releasing carbon dioxide with brisk effervescence. That makes sodium hydrogencarbonate a quick test to tell a carboxylic acid from a phenol.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s03",
+          "layout": "concept",
+          "heading": "Acid derivatives",
+          "body_md": "Replacing –OH gives derivatives. **Acid chlorides:** PCl₅, PCl₃ or SOCl₂. **Anhydrides:** heat with P₂O₅ (dehydration of two molecules). **Esters:** alcohol + conc. H₂SO₄ (reversible). **Amides:** NH₃ gives the ammonium salt, which loses water on heating.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Derivative",
+                "Reagent",
+                "Example"
+              ],
+              "rows": [
+                [
+                  "Acid chloride",
+                  "PCl₅, PCl₃, SOCl₂",
+                  "Ethanoyl chloride"
+                ],
+                [
+                  "Anhydride",
+                  "P₂O₅, heat",
+                  "Ethanoic anhydride"
+                ],
+                [
+                  "Ester",
+                  "R′OH, H⁺",
+                  "Ethyl ethanoate"
+                ],
+                [
+                  "Amide",
+                  "NH₃, then heat",
+                  "Ethanamide"
+                ]
+              ]
+            },
+            "alt": "Table of acid derivatives"
+          },
+          "math": [
+            "\\ce{CH3COOH + SOCl2 -> CH3COCl + SO2 + HCl}",
+            "\\ce{3CH3COOH + PCl3 -> 3CH3COCl + H3PO3}",
+            "\\ce{2CH3COOH ->[P2O5][\\Delta] (CH3CO)2O + H2O}",
+            "\\ce{CH3COONH4 ->[\\Delta] CH3CONH2 + H2O}"
+          ],
+          "narration": "Phosphorus chlorides and thionyl chloride convert carboxylic acids into acid chlorides, which are very reactive. Heating with phosphorus pentoxide removes water from two molecules to form an anhydride. Alcohols with concentrated sulphuric acid give esters. With ammonia, an ammonium salt forms first, which loses water on strong heating to give an amide.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s04",
+          "layout": "example",
+          "heading": "Worked example: derivatives of benzoic acid",
+          "body_md": "**Problem.** Give the product of benzoic acid with (a) SOCl₂; (b) ethanol + conc. H₂SO₄; (c) NH₃, then strong heating; (d) PCl₅.\n\n**(a)** Benzoyl chloride, $\\ce{C6H5COCl}$ (+ SO₂ + HCl).\n\n**(b)** Ethyl benzoate, $\\ce{C6H5COOC2H5}$.\n\n**(c)** Benzamide, $\\ce{C6H5CONH2}$ (via ammonium benzoate).\n\n**(d)** Benzoyl chloride (+ POCl₃ + HCl).",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Reagent",
+                "Product"
+              ],
+              "rows": [
+                [
+                  "SOCl₂",
+                  "Benzoyl chloride"
+                ],
+                [
+                  "C₂H₅OH/H⁺",
+                  "Ethyl benzoate"
+                ],
+                [
+                  "NH₃; heat",
+                  "Benzamide"
+                ],
+                [
+                  "PCl₅",
+                  "Benzoyl chloride"
+                ]
+              ]
+            },
+            "alt": "Table of benzoic acid derivatives"
+          },
+          "math": [],
+          "narration": "Benzoic acid forms the same derivatives as aliphatic acids. Thionyl chloride or phosphorus pentachloride gives benzoyl chloride. Ethanol with a little concentrated sulphuric acid gives ethyl benzoate, a pleasant-smelling ester. Ammonia gives ammonium benzoate, which on strong heating loses water to form benzamide.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s05",
+          "layout": "check",
+          "heading": "Quick check: acid and derivative reactions",
+          "body_md": "Predict the product of a carboxylic acid with a given reagent.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Sodium hydrogencarbonate gives carbon dioxide; chlorinating agents give acid chlorides.",
+          "check_question_id": "q_isc12chem_ch18_032",
+          "audio": null
+        },
+        {
+          "id": "s06",
+          "layout": "concept",
+          "heading": "Decarboxylation and Kolbe electrolysis",
+          "body_md": "**Chemical decarboxylation:** sodium salt + **soda lime** (NaOH + CaO), heat → alkane with **one carbon fewer**. **Kolbe electrolysis:** electrolysis of an aqueous sodium/potassium salt; at the anode, carboxylate radicals lose CO₂ and **couple**: alkane with **2(n − 1)** carbons.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Salt",
+                "Soda lime gives",
+                "Kolbe electrolysis gives"
+              ],
+              "rows": [
+                [
+                  "Sodium ethanoate",
+                  "Methane",
+                  "Ethane"
+                ],
+                [
+                  "Sodium propanoate",
+                  "Ethane",
+                  "Butane"
+                ],
+                [
+                  "Sodium benzoate",
+                  "Benzene",
+                  "—"
+                ]
+              ]
+            },
+            "alt": "Table of decarboxylation products"
+          },
+          "math": [
+            "\\ce{CH3CH2COONa + NaOH ->[CaO][\\Delta] CH3CH3 + Na2CO3}",
+            "\\ce{2CH3COONa + 2H2O ->[electrolysis] CH3CH3 + 2CO2 + 2NaOH + H2}"
+          ],
+          "narration": "Heating the sodium salt of an acid with soda lime removes the carboxyl group as carbonate, leaving an alkane with one carbon fewer: sodium propanoate gives ethane. In Kolbe electrolysis, carboxylate ions lose an electron and carbon dioxide at the anode, and the alkyl radicals join in pairs, so sodium ethanoate gives ethane and sodium propanoate gives butane. Hydrogen is released at the cathode.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s07",
+          "layout": "concept",
+          "heading": "Hell–Volhard–Zelinsky reaction",
+          "body_md": "Acids with **α-hydrogen** react with Cl₂ or Br₂ in the presence of a little **red phosphorus**: α-H is replaced by halogen, giving **α-halo acids**; further halogenation gives di- and tri-halo acids.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Acid",
+                "Reagent",
+                "Product"
+              ],
+              "rows": [
+                [
+                  "Ethanoic",
+                  "Cl₂, red P",
+                  "Chloroethanoic acid"
+                ],
+                [
+                  "Propanoic",
+                  "Br₂, red P",
+                  "2-Bromopropanoic acid"
+                ],
+                [
+                  "Ethanoic",
+                  "excess Cl₂, red P",
+                  "Trichloroethanoic acid"
+                ],
+                [
+                  "Benzoic",
+                  "Cl₂, red P",
+                  "No α-H: no HVZ"
+                ]
+              ]
+            },
+            "alt": "Table of HVZ reactions"
+          },
+          "math": [
+            "\\ce{CH3CH2COOH + Br2 ->[red P] CH3CHBrCOOH + HBr}",
+            "\\ce{CH3COOH + 3Cl2 ->[red P] CCl3COOH + 3HCl}"
+          ],
+          "narration": "In the Hell–Volhard–Zelinsky reaction, chlorine or bromine with a little red phosphorus replaces a hydrogen on the carbon next to the carboxyl group. Propanoic acid gives two-bromopropanoic acid, and with excess chlorine ethanoic acid can be converted all the way to trichloroethanoic acid. Benzoic acid has no alpha hydrogen, so it does not react this way.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s08",
+          "layout": "concept",
+          "heading": "Ring substitution in benzoic acid",
+          "body_md": "–COOH withdraws electrons (−I, −R): **deactivating** and **meta directing**. Nitration → 3-nitrobenzoic acid; bromination (Br₂/FeBr₃) → 3-bromobenzoic acid. Benzoic acid does **not** undergo Friedel–Crafts reactions (deactivated ring; –COOH complexes AlCl₃).",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Reaction",
+                "Major product"
+              ],
+              "rows": [
+                [
+                  "Nitration",
+                  "3-Nitrobenzoic acid"
+                ],
+                [
+                  "Bromination",
+                  "3-Bromobenzoic acid"
+                ],
+                [
+                  "Sulphonation",
+                  "3-Sulphobenzoic acid"
+                ],
+                [
+                  "Friedel–Crafts",
+                  "No reaction"
+                ]
+              ]
+            },
+            "alt": "Table of ring substitution of benzoic acid"
+          },
+          "math": [
+            "\\ce{C6H5COOH + HNO3 ->[conc. H2SO4] O2NC6H4COOH + H2O}",
+            "\\ce{C6H5COOH + Br2 ->[FeBr3] BrC6H4COOH + HBr}"
+          ],
+          "narration": "The carboxyl group pulls electrons out of the ring, so benzoic acid reacts more slowly than benzene in electrophilic substitution, and the new group goes to the meta position. Nitration gives three-nitrobenzoic acid and bromination three-bromobenzoic acid. Friedel–Crafts reactions fail, because the ring is deactivated and the carboxyl group ties up the aluminium chloride catalyst.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s09",
+          "layout": "example",
+          "heading": "Worked example: losing and gaining groups",
+          "body_md": "**Problem.** Name the product: (a) sodium butanoate + soda lime, heat; (b) Kolbe electrolysis of potassium propanoate; (c) butanoic acid + Br₂/red P; (d) benzoic acid + conc. HNO₃/H₂SO₄.\n\n**(a)** Propane. **(b)** Butane (2 × ethyl).\n\n**(c)** 2-Bromobutanoic acid. **(d)** 3-Nitrobenzoic acid.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Reaction",
+                "Product"
+              ],
+              "rows": [
+                [
+                  "Soda lime",
+                  "Propane (one C fewer)"
+                ],
+                [
+                  "Kolbe electrolysis",
+                  "Butane"
+                ],
+                [
+                  "HVZ",
+                  "2-Bromobutanoic acid"
+                ],
+                [
+                  "Nitration",
+                  "3-Nitrobenzoic acid"
+                ]
+              ]
+            },
+            "alt": "Table of products"
+          },
+          "math": [],
+          "narration": "Soda lime removes the carboxyl carbon, so sodium butanoate gives propane. In Kolbe electrolysis of propanoate, each ion loses carbon dioxide to give an ethyl radical, and two ethyl radicals join to form butane. Bromine with red phosphorus substitutes the alpha position, giving two-bromobutanoic acid. Nitration of benzoic acid goes meta.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s10",
+          "layout": "check",
+          "heading": "Quick check: decarboxylation and HVZ",
+          "body_md": "Predict the product of soda-lime heating, Kolbe electrolysis or the HVZ reaction.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Soda lime: one carbon fewer. Kolbe: two alkyl groups joined. HVZ: halogen at the alpha carbon.",
+          "check_question_id": "q_isc12chem_ch18_043",
+          "audio": null
+        },
+        {
+          "id": "s11",
+          "layout": "concept",
+          "heading": "Tests for formic, acetic and benzoic acids",
+          "body_md": "All three effervesce with NaHCO₃. **Formic acid** (H–COOH has an aldehyde-like H): reduces **Tollens’** reagent (silver mirror), **Fehling’s** (red ppt) and HgCl₂ (white ppt → grey). **Acetic acid:** neutral FeCl₃ → **deep red** colour (brown-red ppt on boiling); ester smell with ethanol/H₂SO₄. **Benzoic acid:** neutral FeCl₃ → **buff (pale brown) precipitate**; sublimes on heating.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Test",
+                "Formic",
+                "Acetic",
+                "Benzoic"
+              ],
+              "rows": [
+                [
+                  "NaHCO₃",
+                  "CO₂",
+                  "CO₂",
+                  "CO₂"
+                ],
+                [
+                  "Tollens’",
+                  "Silver mirror",
+                  "—",
+                  "—"
+                ],
+                [
+                  "Fehling’s",
+                  "Red ppt",
+                  "—",
+                  "—"
+                ],
+                [
+                  "Neutral FeCl₃",
+                  "—",
+                  "Deep red colour",
+                  "Buff ppt"
+                ]
+              ]
+            },
+            "alt": "Table of tests for formic, acetic and benzoic acids"
+          },
+          "math": [
+            "\\ce{HCOOH + 2HgCl2 -> Hg2Cl2 + CO2 + 2HCl}"
+          ],
+          "narration": "All carboxylic acids fizz with sodium hydrogencarbonate. Formic acid is special: its hydrogen on the carboxyl carbon behaves like that of an aldehyde, so it reduces Tollens’ reagent, Fehling’s solution and mercury two chloride. With neutral iron three chloride, acetate gives a deep red colour, while benzoate gives a buff precipitate. These tests identify the three acids.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s12",
+          "layout": "concept",
+          "heading": "Uses",
+          "body_md": "Important uses of the three acids and related compounds.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Acid",
+                "Uses"
+              ],
+              "rows": [
+                [
+                  "Formic acid",
+                  "Coagulating rubber latex; dyeing and tanning; antiseptic; preserving fruit juice"
+                ],
+                [
+                  "Acetic acid",
+                  "Vinegar; solvent; making cellulose acetate, acetic anhydride, esters"
+                ],
+                [
+                  "Benzoic acid",
+                  "Sodium benzoate food preservative; medicines (urinary antiseptic); making dyes"
+                ],
+                [
+                  "Hexanedioic acid",
+                  "Nylon-6,6"
+                ],
+                [
+                  "Benzene-1,4-dicarboxylic acid",
+                  "Polyester (terylene)"
+                ]
+              ]
+            },
+            "alt": "Table of uses of carboxylic acids"
+          },
+          "math": [],
+          "narration": "Formic acid is used to coagulate rubber latex and in dyeing and tanning. Acetic acid is vinegar, and is used to make cellulose acetate, acetic anhydride and esters. Benzoic acid, as sodium benzoate, preserves pickles and sauces. Hexanedioic acid is used to make nylon, and terephthalic acid to make polyester fibres.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s13",
+          "layout": "check",
+          "heading": "Quick check: tests",
+          "body_md": "Choose the test that distinguishes formic, acetic or benzoic acid.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Formic acid reduces Tollens’ reagent; neutral iron three chloride gives different results with acetate and benzoate.",
+          "check_question_id": "q_isc12chem_ch18_056",
+          "audio": null
+        },
+        {
+          "id": "s14",
+          "layout": "summary",
+          "heading": "Summary: Part 2",
+          "body_md": "",
+          "bullets": [
+            "Na → H₂; NaOH → salt; Na₂CO₃/NaHCO₃ → CO₂ (not phenols).",
+            "Derivatives: RCOCl (PCl₅, PCl₃, SOCl₂); (RCO)₂O (P₂O₅); RCOOR′ (R′OH, H⁺); RCONH₂ (NH₃, heat).",
+            "Soda lime: alkane with one C fewer; Kolbe electrolysis: R–R; HVZ: α-halo acid (X₂, red P).",
+            "Benzoic acid: meta substitution; no Friedel–Crafts.",
+            "Formic acid reduces Tollens’/Fehling’s/HgCl₂; acetate + FeCl₃ red; benzoate + FeCl₃ buff ppt."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Reaction",
+                "Ethanoic acid / salt gives"
+              ],
+              "rows": [
+                [
+                  "Soda lime",
+                  "Methane"
+                ],
+                [
+                  "Kolbe electrolysis",
+                  "Ethane"
+                ],
+                [
+                  "Cl₂, red P",
+                  "Chloroethanoic acid"
+                ]
+              ]
+            },
+            "alt": "Summary table of reactions"
+          },
+          "math": [],
+          "narration": "Let us sum up Part 2. Carboxylic acids react as acids with metals, alkalis and carbonates. Their hydroxyl group can be replaced to give acid chlorides, anhydrides, esters and amides. Their salts lose carbon dioxide with soda lime or on electrolysis, and their alpha hydrogens can be halogenated. Benzoic acid is substituted at the meta position, and simple tests distinguish formic, acetic and benzoic acids.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s15",
+          "layout": "exam-tips",
+          "heading": "Exam tips: Part 2",
+          "body_md": "",
+          "bullets": [
+            "For Kolbe electrolysis, double the alkyl group after removing CO₂.",
+            "HVZ needs α-H and red phosphorus.",
+            "Formic acid is the only common acid that reduces Tollens’ reagent.",
+            "Use NaHCO₃ to distinguish acids from phenols."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Slip",
+                "Fix"
+              ],
+              "rows": [
+                [
+                  "Kolbe of ethanoate gives methane",
+                  "Gives ethane"
+                ],
+                [
+                  "HVZ on benzoic acid",
+                  "No α-H: no reaction"
+                ],
+                [
+                  "Benzoic acid nitrates para",
+                  "Meta"
+                ]
+              ]
+            },
+            "alt": "Table of three common slips in Part 2 and fixes"
+          },
+          "math": [],
+          "narration": "Final tips. In Kolbe electrolysis, remove carbon dioxide and join two alkyl groups. Remember that the HVZ reaction needs an alpha hydrogen and red phosphorus. Formic acid is unique in reducing Tollens’ reagent. And sodium hydrogencarbonate distinguishes carboxylic acids from phenols.",
+          "check_question_id": null,
+          "audio": null
+        }
+      ],
+      "status": "draft",
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    }
+  ],
+  "notes": {
+    "unit": "isc-12-chemistry-ch18",
+    "version": 1,
+    "title": "Carboxylic Acids — Notes",
+    "language": "en",
+    "sections": [
+      {
+        "heading": "1. Classification, names and physical properties",
+        "body_md": "Mono- (CₙH₂ₙ₊₁COOH) and dicarboxylic acids. IUPAC **-oic acid**: 2-methylpropanoic acid; diacids **-dioic acid**: ethanedioic (oxalic), propanedioic (malonic), butanedioic (succinic), hexanedioic (adipic); benzene-1,2-dicarboxylic (phthalic).\n\nCarboxyl C sp²; **H-bonded cyclic dimers** → b.p. higher than alcohols of similar mass (ethanoic 391 K vs propan-1-ol 370 K). C1–C4 miscible with water.",
+        "key_terms": [
+          {
+            "term": "Dimer",
+            "definition_md": "Two acid molecules held by two hydrogen bonds."
+          }
+        ],
+        "formulas": [],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Common",
+              "IUPAC"
+            ],
+            "rows": [
+              [
+                "Formic",
+                "Methanoic"
+              ],
+              [
+                "Oxalic",
+                "Ethanedioic"
+              ],
+              [
+                "Succinic",
+                "Butanedioic"
+              ],
+              [
+                "Adipic",
+                "Hexanedioic"
+              ]
+            ]
+          },
+          "alt": "Table of names"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "isc-12-chemistry-ch18-t01"
+        ]
+      },
+      {
+        "heading": "2. Preparation",
+        "body_md": "- Oxidation of 1° alcohols and aldehydes (K₂Cr₂O₇/H⁺, KMnO₄).\n- Alkylbenzenes + hot alkaline KMnO₄, then H⁺ → benzoic acid (any side chain).\n- Nitrile hydrolysis: $\\ce{RCN + 2H2O + HCl -> RCOOH + NH4Cl}$ (one C more than RX).\n- Grignard: $\\ce{RMgX + CO2 -> RCOOMgX}$, then H₃O⁺ (one C more).",
+        "key_terms": [
+          {
+            "term": "Dry ice",
+            "definition_md": "Solid CO₂, used with Grignard reagents to make carboxylic acids."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\ce{C6H5MgBr + CO2 -> C6H5COOMgBr}",
+            "label": "Grignard carboxylation"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "From",
+              "Product"
+            ],
+            "rows": [
+              [
+                "Propylbenzene + KMnO₄",
+                "Benzoic acid"
+              ],
+              [
+                "C₃H₇MgBr + CO₂",
+                "Butanoic acid"
+              ],
+              [
+                "C₃H₇CN + H₃O⁺",
+                "Butanoic acid"
+              ]
+            ]
+          },
+          "alt": "Table of preparations"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "isc-12-chemistry-ch18-t02"
+        ]
+      },
+      {
+        "heading": "3. Acidity",
+        "body_md": "Carboxylate stabilised by **two equivalent resonance structures** (charge on two O; C–O both 127 pm) → pKa 4–5; stronger than phenols (10) and alcohols (16); decompose NaHCO₃.\n\n**Substituents:** −I groups (F > Cl > Br; more groups; nearer –COOH) increase acidity: CCl₃COOH 0.65, CHCl₂COOH 1.26, FCH₂COOH 2.66, ClCH₂COOH 2.86; 2-, 3-, 4-chlorobutanoic 2.86, 4.05, 4.52. +I alkyl groups decrease: HCOOH 3.75 > CH₃COOH 4.76 > CH₃CH₂COOH 4.88.\n\n**Benzoic acids:** 4-NO₂ 3.41, 4-Cl 3.98, H 4.19, 4-CH₃ 4.37, 4-OCH₃ 4.47; ortho-substituted acids usually stronger (ortho effect).",
+        "key_terms": [
+          {
+            "term": "Inductive effect",
+            "definition_md": "Electron withdrawal (−I) or release (+I) through σ bonds; weakens with distance."
+          },
+          {
+            "term": "Ortho effect",
+            "definition_md": "Most ortho-substituted benzoic acids are stronger than benzoic acid regardless of the substituent."
+          }
+        ],
+        "formulas": [],
+        "visual": {
+          "kind": "svg",
+          "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 340 150\" role=\"img\" aria-label=\"Two equivalent resonance structures of the carboxylate ion, R–COO⁻. In one, the negative charge is on the lower oxygen and the upper oxygen is double bonded; in the other, the roles are swapped. The real ion has the charge spread equally over both oxygen atoms and two equal C–O bonds.\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>Two equivalent resonance structures of the carboxylate ion, R–COO⁻. In one, the negative charge is on the lower oxygen and the upper oxygen is double bonded; in the other, the roles are swapped. The real ion has the charge spread equally over both oxygen atoms and two equal C–O bonds.</title><circle cx=\"70\" cy=\"75\" r=\"12\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"70\" y=\"79\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">C</text><line x1=\"58\" y1=\"75\" x2=\"28\" y2=\"75\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"18\" y=\"79\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">R</text><line x1=\"79.9\" y1=\"67.6\" x2=\"99.9\" y2=\"43.6\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"76.1\" y1=\"64.4\" x2=\"96.1\" y2=\"40.4\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"105\" cy=\"34\" r=\"12\" fill=\"var(--diagram-red)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"105\" y=\"38\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">O</text><line x1=\"78\" y1=\"84\" x2=\"98\" y2=\"108\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"105\" cy=\"116\" r=\"12\" fill=\"var(--diagram-red)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"105\" y=\"120\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">O⁻</text><line x1=\"140\" y1=\"75\" x2=\"185.2\" y2=\"75\" stroke=\"currentColor\" stroke-width=\"1.5\"/><polygon points=\"190,75 184.5,77.4 184.5,72.6\" fill=\"currentColor\" stroke=\"none\"/><line x1=\"190\" y1=\"75\" x2=\"144.8\" y2=\"75\" stroke=\"currentColor\" stroke-width=\"1.5\"/><polygon points=\"140,75 145.5,72.6 145.5,77.4\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"250\" cy=\"75\" r=\"12\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"250\" y=\"79\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">C</text><line x1=\"238\" y1=\"75\" x2=\"208\" y2=\"75\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"198\" y=\"79\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">R</text><line x1=\"258\" y1=\"66\" x2=\"278\" y2=\"42\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"285\" cy=\"34\" r=\"12\" fill=\"var(--diagram-red)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"285\" y=\"38\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">O⁻</text><line x1=\"256.1\" y1=\"85.6\" x2=\"276.1\" y2=\"109.6\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"259.9\" y1=\"82.4\" x2=\"279.9\" y2=\"106.4\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"285\" cy=\"116\" r=\"12\" fill=\"var(--diagram-red)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"285\" y=\"120\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">O</text><text x=\"170\" y=\"145\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">equivalent structures: charge shared by two O atoms</text></svg>",
+          "alt": "Two equivalent resonance structures of the carboxylate ion with the negative charge on either oxygen atom"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "isc-12-chemistry-ch18-t03"
+        ]
+      },
+      {
+        "heading": "4. Acid reactions and derivatives",
+        "body_md": "Na → H₂; NaOH → salt + H₂O; Na₂CO₃/NaHCO₃ → CO₂ (phenols do not).\n\n**Derivatives:** PCl₅ ($\\ce{RCOOH + PCl5 -> RCOCl + POCl3 + HCl}$), PCl₃ (+ H₃PO₃), SOCl₂ (+ SO₂ + HCl) → acid chlorides; P₂O₅/heat → anhydrides; R′OH + conc. H₂SO₄ → esters (reversible); NH₃ → RCOONH₄ → (heat) RCONH₂.",
+        "key_terms": [
+          {
+            "term": "Acid derivative",
+            "definition_md": "A compound in which the –OH of –COOH is replaced: acid chloride, anhydride, ester, amide."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\ce{CH3COOH + NaHCO3 -> CH3COONa + H2O + CO2}",
+            "label": "Test with NaHCO₃"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Reagent",
+              "Derivative"
+            ],
+            "rows": [
+              [
+                "SOCl₂, PCl₅, PCl₃",
+                "RCOCl"
+              ],
+              [
+                "P₂O₅",
+                "(RCO)₂O"
+              ],
+              [
+                "R′OH/H⁺",
+                "RCOOR′"
+              ],
+              [
+                "NH₃, heat",
+                "RCONH₂"
+              ]
+            ]
+          },
+          "alt": "Table of derivatives"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "isc-12-chemistry-ch18-t04"
+        ]
+      },
+      {
+        "heading": "5. Decarboxylation, Kolbe electrolysis, HVZ and ring substitution",
+        "body_md": "**Soda lime** (NaOH + CaO): $\\ce{RCOONa + NaOH -> RH + Na2CO3}$ (one C fewer). **Kolbe electrolysis:** $\\ce{2RCOO- -> R-R + 2CO2 + 2e-}$ at the anode (R–R). **HVZ:** α-H + X₂ (red P) → α-halo acid; excess Cl₂ → CCl₃COOH. **Benzoic acid:** –COOH deactivating, meta directing (3-nitro-, 3-bromobenzoic acid); no Friedel–Crafts.",
+        "key_terms": [
+          {
+            "term": "Decarboxylation",
+            "definition_md": "Removal of CO₂ from a carboxylic acid or its salt."
+          },
+          {
+            "term": "HVZ reaction",
+            "definition_md": "α-Halogenation of carboxylic acids with X₂ and red phosphorus."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\ce{2CH3COONa + 2H2O -> CH3CH3 + 2CO2 + 2NaOH + H2}",
+            "label": "Kolbe electrolysis"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Salt",
+              "Soda lime",
+              "Kolbe"
+            ],
+            "rows": [
+              [
+                "CH₃COONa",
+                "CH₄",
+                "C₂H₆"
+              ],
+              [
+                "C₂H₅COONa",
+                "C₂H₆",
+                "C₄H₁₀"
+              ]
+            ]
+          },
+          "alt": "Table of decarboxylation products"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "isc-12-chemistry-ch18-t05"
+        ]
+      },
+      {
+        "heading": "6. Tests and uses",
+        "body_md": "All three effervesce with NaHCO₃. **Formic acid:** reduces Tollens’ (silver mirror), Fehling’s (red ppt), HgCl₂ (white Hg₂Cl₂ → grey). **Acetic acid:** neutral FeCl₃ → deep red colour (brown-red ppt on boiling); fruity ester with ethanol/H₂SO₄. **Benzoic acid:** neutral FeCl₃ → buff precipitate; sublimes.\n\n**Uses:** formic — rubber coagulation, dyeing, tanning; acetic — vinegar, cellulose acetate, esters, solvent; benzoic — sodium benzoate preservative, medicines, dyes; adipic — nylon-6,6; terephthalic — polyester.",
+        "key_terms": [
+          {
+            "term": "Neutral FeCl₃ test",
+            "definition_md": "Distinguishes ethanoate (red colour) from benzoate (buff precipitate)."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\ce{HCOOH + 2HgCl2 -> Hg2Cl2 + CO2 + 2HCl}",
+            "label": "Formic acid with HgCl₂"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Test",
+              "Formic",
+              "Acetic",
+              "Benzoic"
+            ],
+            "rows": [
+              [
+                "Tollens’",
+                "+",
+                "−",
+                "−"
+              ],
+              [
+                "Neutral FeCl₃",
+                "−",
+                "Red",
+                "Buff ppt"
+              ]
+            ]
+          },
+          "alt": "Table of tests"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "isc-12-chemistry-ch18-t06"
+        ]
+      }
+    ],
+    "exam_tips_md": "**Common mistakes**\n- Ranking CH₃COOH above HCOOH in acid strength.\n- Forgetting that −I effects fade with distance.\n- Kolbe electrolysis of ethanoate giving methane (it gives ethane).\n- Applying HVZ to benzoic acid (no α-H).\n\n**How marks are usually awarded**\n- Acid strength (2–3 marks): correct order plus named electronic effects.\n- Preparations (1 mark each): reagent, condition and product; mention carbon count.\n- Tests (1–2 marks): reagent and result for each acid.",
+    "status": "draft",
+    "provenance": {
+      "origin": "human",
+      "template_version": null,
+      "model": null,
+      "generated_at": "2026-10-30",
+      "author": "claude-opus-5-5 (subject-producer)"
+    }
+  },
+  "flashcards": {
+    "unit": "isc-12-chemistry-ch18",
+    "version": 1,
+    "language": "en",
+    "cards": [
+      {
+        "id": "f01",
+        "front_md": "IUPAC name of adipic acid?",
+        "back_md": "Hexanedioic acid.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch18-t01"
+      },
+      {
+        "id": "f02",
+        "front_md": "IUPAC name of oxalic acid?",
+        "back_md": "Ethanedioic acid.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch18-t01"
+      },
+      {
+        "id": "f03",
+        "front_md": "Why do acids boil high?",
+        "back_md": "H-bonded dimers.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch18-t01"
+      },
+      {
+        "id": "f04",
+        "front_md": "Alkylbenzene + hot KMnO₄?",
+        "back_md": "Benzoic acid (any side chain).",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch18-t02"
+      },
+      {
+        "id": "f05",
+        "front_md": "Nitrile hydrolysis gives?",
+        "back_md": "Carboxylic acid (+ NH₄⁺).",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch18-t02"
+      },
+      {
+        "id": "f06",
+        "front_md": "RMgX + CO₂, then H₃O⁺?",
+        "back_md": "RCOOH (one more C).",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch18-t02"
+      },
+      {
+        "id": "f07",
+        "front_md": "Why is RCOOH acidic?",
+        "back_md": "Carboxylate has two equivalent resonance structures.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch18-t03"
+      },
+      {
+        "id": "f08",
+        "front_md": "pKa of ethanoic acid?",
+        "back_md": "4.76.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch18-t03"
+      },
+      {
+        "id": "f09",
+        "front_md": "Strongest: ClCH₂COOH or FCH₂COOH?",
+        "back_md": "FCH₂COOH.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch18-t03"
+      },
+      {
+        "id": "f10",
+        "front_md": "Effect of distance on −I?",
+        "back_md": "Weakens quickly.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch18-t03"
+      },
+      {
+        "id": "f11",
+        "front_md": "HCOOH vs CH₃COOH?",
+        "back_md": "HCOOH stronger (no +I methyl).",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch18-t03"
+      },
+      {
+        "id": "f12",
+        "front_md": "4-Nitrobenzoic vs benzoic acid?",
+        "back_md": "4-Nitro stronger.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch18-t03"
+      },
+      {
+        "id": "f13",
+        "front_md": "Ortho effect?",
+        "back_md": "Ortho-substituted benzoic acids usually stronger.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch18-t03"
+      },
+      {
+        "id": "f14",
+        "front_md": "Acid + NaHCO₃?",
+        "back_md": "Salt + H₂O + CO₂.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch18-t04"
+      },
+      {
+        "id": "f15",
+        "front_md": "Do phenols react with NaHCO₃?",
+        "back_md": "No.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch18-t04"
+      },
+      {
+        "id": "f16",
+        "front_md": "Acid chloride reagents?",
+        "back_md": "PCl₅, PCl₃, SOCl₂.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch18-t04"
+      },
+      {
+        "id": "f17",
+        "front_md": "Anhydride reagent?",
+        "back_md": "P₂O₅, heat.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch18-t04"
+      },
+      {
+        "id": "f18",
+        "front_md": "Amide from acid?",
+        "back_md": "NH₃, then heat ammonium salt.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch18-t04"
+      },
+      {
+        "id": "f19",
+        "front_md": "By-product with PCl₃?",
+        "back_md": "H₃PO₃.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch18-t04"
+      },
+      {
+        "id": "f20",
+        "front_md": "Soda lime composition?",
+        "back_md": "NaOH + CaO.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch18-t05"
+      },
+      {
+        "id": "f21",
+        "front_md": "Sodium propanoate + soda lime?",
+        "back_md": "Ethane.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch18-t05"
+      },
+      {
+        "id": "f22",
+        "front_md": "Kolbe electrolysis of ethanoate?",
+        "back_md": "Ethane (+ CO₂ at anode).",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch18-t05"
+      },
+      {
+        "id": "f23",
+        "front_md": "HVZ reagents?",
+        "back_md": "X₂ + red P.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch18-t05"
+      },
+      {
+        "id": "f24",
+        "front_md": "HVZ on propanoic acid with Br₂?",
+        "back_md": "2-Bromopropanoic acid.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch18-t05"
+      },
+      {
+        "id": "f25",
+        "front_md": "Benzoic acid nitration?",
+        "back_md": "3-Nitrobenzoic acid.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch18-t05"
+      },
+      {
+        "id": "f26",
+        "front_md": "Why no Friedel–Crafts on benzoic acid?",
+        "back_md": "Deactivated ring; –COOH binds AlCl₃.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch18-t05"
+      },
+      {
+        "id": "f27",
+        "front_md": "Which acid reduces Tollens’?",
+        "back_md": "Methanoic acid.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch18-t06"
+      },
+      {
+        "id": "f28",
+        "front_md": "Neutral FeCl₃ with ethanoate?",
+        "back_md": "Deep red colour.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch18-t06"
+      },
+      {
+        "id": "f29",
+        "front_md": "Neutral FeCl₃ with benzoate?",
+        "back_md": "Buff precipitate.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch18-t06"
+      },
+      {
+        "id": "f30",
+        "front_md": "Use of methanoic acid?",
+        "back_md": "Coagulating rubber latex.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch18-t06"
+      },
+      {
+        "id": "f31",
+        "front_md": "Exam tip: acid strength",
+        "back_md": "Name the effect (−I/+I/−R/+R) and its distance.",
+        "tag": "exam-tip",
+        "topic_id": "isc-12-chemistry-ch18-t03"
+      }
+    ],
+    "status": "draft",
+    "provenance": {
+      "origin": "human",
+      "template_version": null,
+      "model": null,
+      "generated_at": "2026-10-30",
+      "author": "claude-opus-5-5 (subject-producer)"
+    }
+  },
+  "questions": [
+    {
+      "id": "q_isc12chem_ch18_001",
+      "unit": "isc-12-chemistry-ch18",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Adipic acid, HOOC(CH₂)₄COOH, used to make nylon-6,6, has the IUPAC name:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "butanedioic acid"
+        },
+        {
+          "id": "b",
+          "text_md": "hexanoic acid"
+        },
+        {
+          "id": "c",
+          "text_md": "hexanedioic acid"
+        },
+        {
+          "id": "d",
+          "text_md": "pentanedioic acid"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Six carbons including both COOH carbons — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch18-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch18_002",
+      "unit": "isc-12-chemistry-ch18",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "The IUPAC name of isobutyric acid, (CH₃)₂CHCOOH, is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "2-methylbutanoic acid"
+        },
+        {
+          "id": "b",
+          "text_md": "2-methylpropanoic acid"
+        },
+        {
+          "id": "c",
+          "text_md": "butanoic acid"
+        },
+        {
+          "id": "d",
+          "text_md": "1-methylpropanoic acid"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "COOH carbon is C-1; methyl on C-2 — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch18-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch18_003",
+      "unit": "isc-12-chemistry-ch18",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Ethanoic acid (M = 60) boils at 391 K, higher than propan-1-ol (M = 60, b.p. 370 K). The main reason is that ethanoic acid:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "has more hydrogen atoms"
+        },
+        {
+          "id": "b",
+          "text_md": "forms hydrogen-bonded dimers that persist even in the vapour"
+        },
+        {
+          "id": "c",
+          "text_md": "is non-polar"
+        },
+        {
+          "id": "d",
+          "text_md": "cannot form hydrogen bonds"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Two hydrogen bonds per pair of molecules — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch18-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch18_004",
+      "unit": "isc-12-chemistry-ch18",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Oxalic acid, found in spinach and used to remove rust stains, is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "methanoic acid"
+        },
+        {
+          "id": "b",
+          "text_md": "ethanedioic acid, HOOC–COOH"
+        },
+        {
+          "id": "c",
+          "text_md": "propanedioic acid"
+        },
+        {
+          "id": "d",
+          "text_md": "ethanoic acid"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch18-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch18_005",
+      "unit": "isc-12-chemistry-ch18",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? Hexanoic acid is much less soluble in water than ethanoic acid.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "t"
+        ]
+      },
+      "solution_md": "True. The longer hydrocarbon chain is hydrophobic.",
+      "marking_scheme": [
+        {
+          "step": "True",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch18-t01"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch18_006",
+      "unit": "isc-12-chemistry-ch18",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "Succinic acid, HOOC–CH₂–CH₂–COOH, has the IUPAC name butane___ acid.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "dioic"
+            ]
+          }
+        ]
+      },
+      "solution_md": "Butane**dioic** acid.",
+      "marking_scheme": [
+        {
+          "step": "Writes \"dioic\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch18-t01"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch18_007",
+      "unit": "isc-12-chemistry-ch18",
+      "language": "en",
+      "type": "match",
+      "stem_md": "Match each common name of a carboxylic acid with its IUPAC name.",
+      "options": [
+        {
+          "id": "1",
+          "text_md": "Formic acid"
+        },
+        {
+          "id": "2",
+          "text_md": "Butyric acid"
+        },
+        {
+          "id": "3",
+          "text_md": "Malonic acid"
+        },
+        {
+          "id": "4",
+          "text_md": "Phthalic acid"
+        }
+      ],
+      "match_right": [
+        {
+          "id": "p",
+          "text_md": "Butanoic acid"
+        },
+        {
+          "id": "q",
+          "text_md": "Benzene-1,2-dicarboxylic acid"
+        },
+        {
+          "id": "r",
+          "text_md": "Methanoic acid"
+        },
+        {
+          "id": "s",
+          "text_md": "Propanedioic acid"
+        }
+      ],
+      "answer": {
+        "pairs": [
+          {
+            "left_id": "1",
+            "right_id": "r"
+          },
+          {
+            "left_id": "2",
+            "right_id": "p"
+          },
+          {
+            "left_id": "3",
+            "right_id": "s"
+          },
+          {
+            "left_id": "4",
+            "right_id": "q"
+          }
+        ]
+      },
+      "solution_md": "Formic = methanoic; butyric = butanoic; malonic = propanedioic; phthalic = benzene-1,2-dicarboxylic acid.",
+      "marking_scheme": [
+        {
+          "step": "1 → r",
+          "marks": 0.5
+        },
+        {
+          "step": "2 → p",
+          "marks": 0.5
+        },
+        {
+          "step": "3 → s",
+          "marks": 0.5
+        },
+        {
+          "step": "4 → q",
+          "marks": 0.5
+        }
+      ],
+      "marks": 2,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch18-t01"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch18_008",
+      "unit": "isc-12-chemistry-ch18",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Draw (describe) the hydrogen-bonded dimer of ethanoic acid and use it to explain why ethanoic acid boils higher than propan-1-ol.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Two CH₃COOH molecules are joined by two O–H···O=C hydrogen bonds into an eight-membered ring (dimer), effectively doubling the molar mass. The dimer persists even in the vapour, so more energy is needed to boil the acid than propan-1-ol, whose molecules form single, chain-like hydrogen bonds."
+      },
+      "solution_md": "Cyclic dimer with two H-bonds.",
+      "marking_scheme": [
+        {
+          "step": "Dimer description",
+          "marks": 1
+        },
+        {
+          "step": "Explanation",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch18-t01"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch18_009",
+      "unit": "isc-12-chemistry-ch18",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Propylbenzene is heated with alkaline KMnO₄ and the mixture is then acidified. The acid obtained is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "3-phenylpropanoic acid"
+        },
+        {
+          "id": "b",
+          "text_md": "propanoic acid"
+        },
+        {
+          "id": "c",
+          "text_md": "phenylethanoic acid"
+        },
+        {
+          "id": "d",
+          "text_md": "benzoic acid"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "The whole side chain is oxidised to –COOH — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch18-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch18_010",
+      "unit": "isc-12-chemistry-ch18",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Isopropylmagnesium bromide, (CH₃)₂CHMgBr, is added to solid CO₂ and the product is acidified. The acid formed is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "2-methylpropanoic acid"
+        },
+        {
+          "id": "b",
+          "text_md": "butanoic acid"
+        },
+        {
+          "id": "c",
+          "text_md": "propanoic acid"
+        },
+        {
+          "id": "d",
+          "text_md": "2-methylbutanoic acid"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "RMgX + CO₂ → RCOOH (one carbon more) — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch18-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch18_011",
+      "unit": "isc-12-chemistry-ch18",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which compound gives pentanoic acid on hydrolysis with hot dilute acid?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Pentanenitrile, CH₃(CH₂)₃CN"
+        },
+        {
+          "id": "b",
+          "text_md": "Butanenitrile, CH₃(CH₂)₂CN"
+        },
+        {
+          "id": "c",
+          "text_md": "1-Bromopentane"
+        },
+        {
+          "id": "d",
+          "text_md": "Pentan-2-one"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "The CN carbon becomes the COOH carbon — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch18-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch18_012",
+      "unit": "isc-12-chemistry-ch18",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Butan-1-ol is refluxed with excess acidified potassium dichromate. The main organic product is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "butanal"
+        },
+        {
+          "id": "b",
+          "text_md": "butanone"
+        },
+        {
+          "id": "c",
+          "text_md": "but-1-ene"
+        },
+        {
+          "id": "d",
+          "text_md": "butanoic acid"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Primary alcohol → aldehyde → acid under reflux — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch18-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch18_013",
+      "unit": "isc-12-chemistry-ch18",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Bromoethane can be converted into propanoic acid by way of a Grignard reagent.\n\n**Reason (R):** Ethylmagnesium bromide adds to carbon dioxide, introducing one extra carbon atom.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Both are true, and R explains A — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch18-t02"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch18_014",
+      "unit": "isc-12-chemistry-ch18",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? Oxidation of 1,4-dimethylbenzene (p-xylene) with KMnO₄ gives benzene-1,4-dicarboxylic acid.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "t"
+        ]
+      },
+      "solution_md": "True. Both methyl groups are oxidised: terephthalic acid.",
+      "marking_scheme": [
+        {
+          "step": "True",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch18-t02"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch18_015",
+      "unit": "isc-12-chemistry-ch18",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "$0.25\\ \\text{mol}$ of phenylmagnesium bromide reacts completely with excess dry ice, and the product is acidified. What mass of benzoic acid ($M = 122$) is formed?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 30.5,
+        "tolerance": 0.1,
+        "unit": "g"
+      },
+      "solution_md": "1 : 1 ratio: mass $= 0.25 \\times 122 = 30.5\\ \\text{g}$.",
+      "marking_scheme": [
+        {
+          "step": "1 : 1",
+          "marks": 1
+        },
+        {
+          "step": "30.5 g",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch18-t02"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch18_016",
+      "unit": "isc-12-chemistry-ch18",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write equations for preparing benzoic acid from (a) benzonitrile and (b) phenylmagnesium bromide.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) $\\ce{C6H5CN + 2H2O + HCl -> C6H5COOH + NH4Cl}$. (b) $\\ce{C6H5MgBr + CO2 -> C6H5COOMgBr}$; then $\\ce{C6H5COOMgBr + H2O ->[H+] C6H5COOH + Mg(OH)Br}$."
+      },
+      "solution_md": "Hydrolysis; Grignard + CO₂.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch18-t02"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch18_017",
+      "unit": "isc-12-chemistry-ch18",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Show how butanoic acid can be obtained from (a) butan-1-ol, (b) 1-bromopropane via a nitrile and (c) 1-bromopropane via a Grignard reagent.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) K₂Cr₂O₇/H₂SO₄, reflux (oxidation). (b) KCN in ethanol → butanenitrile; then hot dilute acid (hydrolysis). (c) Mg in dry ether → propylmagnesium bromide; dry ice, then dilute acid."
+      },
+      "solution_md": "Oxidation; nitrile route; Grignard route.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch18-t02"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch18_018",
+      "unit": "isc-12-chemistry-ch18",
+      "language": "en",
+      "type": "short",
+      "stem_md": "(a) Why is KMnO₄ unsuitable for converting 4-bromotoluene into 4-methylbenzoic acid? (b) Suggest a suitable route. (c) What would KMnO₄ give?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) KMnO₄ oxidises the methyl side chain to –COOH. (b) Mg in dry ether to form the Grignard reagent at the C–Br position, then CO₂ and dilute acid: 4-methylbenzoic acid. (c) 4-Bromobenzoic acid."
+      },
+      "solution_md": "Side chain oxidised; Grignard route; 4-bromobenzoic acid.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch18-t02"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch18_019",
+      "unit": "isc-12-chemistry-ch18",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which is the strongest acid: CH₃COOH, ClCH₂COOH, Cl₂CHCOOH or Cl₃CCOOH?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Cl₃CCOOH"
+        },
+        {
+          "id": "b",
+          "text_md": "CH₃COOH"
+        },
+        {
+          "id": "c",
+          "text_md": "ClCH₂COOH"
+        },
+        {
+          "id": "d",
+          "text_md": "Cl₂CHCOOH"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Three −I chlorines stabilise the carboxylate most (pKa 0.65) — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch18-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch18_020",
+      "unit": "isc-12-chemistry-ch18",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which chlorobutanoic acid is the strongest acid?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "3-Chlorobutanoic acid"
+        },
+        {
+          "id": "b",
+          "text_md": "4-Chlorobutanoic acid"
+        },
+        {
+          "id": "c",
+          "text_md": "All are equally strong"
+        },
+        {
+          "id": "d",
+          "text_md": "2-Chlorobutanoic acid"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "The −I effect is greatest when Cl is nearest to –COOH — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch18-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch18_021",
+      "unit": "isc-12-chemistry-ch18",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which substituted benzoic acid is the weakest acid?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "4-Nitrobenzoic acid"
+        },
+        {
+          "id": "b",
+          "text_md": "4-Chlorobenzoic acid"
+        },
+        {
+          "id": "c",
+          "text_md": "4-Methoxybenzoic acid"
+        },
+        {
+          "id": "d",
+          "text_md": "Benzoic acid"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "–OCH₃ at para releases electrons by +R, destabilising the anion (pKa 4.47) — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch18-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch18_022",
+      "unit": "isc-12-chemistry-ch18",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Methanoic acid (pKa 3.75) is stronger than ethanoic acid (pKa 4.76) because:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "methanoic acid has two oxygen atoms"
+        },
+        {
+          "id": "b",
+          "text_md": "ethanoic acid forms dimers"
+        },
+        {
+          "id": "c",
+          "text_md": "methanoate is not resonance-stabilised"
+        },
+        {
+          "id": "d",
+          "text_md": "the methyl group in ethanoic acid releases electrons (+I) and destabilises the ethanoate ion"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch18-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch18_023",
+      "unit": "isc-12-chemistry-ch18",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "In the ethanoate ion, the two carbon–oxygen bonds are:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "one 121 pm and one 136 pm"
+        },
+        {
+          "id": "b",
+          "text_md": "equal in length (about 127 pm), intermediate between C=O and C–O"
+        },
+        {
+          "id": "c",
+          "text_md": "both 143 pm"
+        },
+        {
+          "id": "d",
+          "text_md": "both 121 pm"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Two equivalent resonance structures — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch18-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch18_024",
+      "unit": "isc-12-chemistry-ch18",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Fluoroethanoic acid is a stronger acid than chloroethanoic acid.\n\n**Reason (R):** Fluorine is more electronegative than chlorine and has a stronger −I effect.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Both true; R explains A — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch18-t03"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch18_025",
+      "unit": "isc-12-chemistry-ch18",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Benzoic acid releases CO₂ from aqueous NaHCO₃, but phenol does not.\n\n**Reason (R):** Benzoic acid contains a benzene ring.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Both are true, but A is due to the greater stability of the carboxylate (charge on two O atoms), not to the ring, which phenol also has — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch18-t03"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch18_026",
+      "unit": "isc-12-chemistry-ch18",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? 2-Methylbenzoic acid is a stronger acid than benzoic acid, although methyl is an electron-releasing group.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "t"
+        ]
+      },
+      "solution_md": "True: the ortho effect (pKa 3.91 vs 4.19).",
+      "marking_scheme": [
+        {
+          "step": "True",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch18-t03"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch18_027",
+      "unit": "isc-12-chemistry-ch18",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "The pKa of chloroethanoic acid is 2.86 and that of ethanoic acid is 4.76. By what factor is the $K_\\text{a}$ of chloroethanoic acid larger? Give your answer to the nearest whole number.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 79,
+        "tolerance": 1,
+        "unit": null
+      },
+      "solution_md": "Ratio $= 10^{(4.76 - 2.86)} = 10^{1.90}$; factor $= 10^{1.90} \\approx 79$.",
+      "marking_scheme": [
+        {
+          "step": "ΔpKa = 1.90",
+          "marks": 1
+        },
+        {
+          "step": "≈ 79",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch18-t03"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch18_028",
+      "unit": "isc-12-chemistry-ch18",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Using resonance, explain why ethanoic acid (pKa 4.76) is a much stronger acid than ethanol (pKa about 16).",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "In the ethanoate ion the negative charge is delocalised equally over two oxygen atoms (two equivalent resonance structures), stabilising the ion. In the ethoxide ion the charge is localised on one oxygen and is further destabilised by the +I effect of the ethyl group. The more stable the anion, the stronger the acid."
+      },
+      "solution_md": "Carboxylate delocalisation vs localised alkoxide.",
+      "marking_scheme": [
+        {
+          "step": "Carboxylate resonance",
+          "marks": 1
+        },
+        {
+          "step": "Ethoxide localised/+I",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch18-t03"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch18_029",
+      "unit": "isc-12-chemistry-ch18",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Arrange benzoic acid, 4-nitrobenzoic acid and 4-methylbenzoic acid in increasing acid strength and explain.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "4-Methylbenzoic < benzoic < 4-nitrobenzoic. –CH₃ releases electrons (+I, hyperconjugation), destabilising the carboxylate; –NO₂ withdraws electrons (−I, −R), stabilising it."
+      },
+      "solution_md": "Order; electronic effects.",
+      "marking_scheme": [
+        {
+          "step": "Order",
+          "marks": 1
+        },
+        {
+          "step": "Explanation",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch18-t03"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch18_030",
+      "unit": "isc-12-chemistry-ch18",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Arrange the following in order of increasing acid strength and explain: CH₃CH₂COOH, CH₃CHClCOOH, ClCH₂CH₂COOH, CH₃CCl₂COOH.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "CH₃CH₂COOH < ClCH₂CH₂COOH < CH₃CHClCOOH < CH₃CCl₂COOH. Chlorine’s −I effect stabilises the carboxylate; it is weaker when Cl is on the β-carbon (farther) than on the α-carbon, and two α-chlorines have a greater effect than one. Propanoic acid has no electron-withdrawing group."
+      },
+      "solution_md": "Order with number and distance reasoning.",
+      "marking_scheme": [
+        {
+          "step": "Order",
+          "marks": 1
+        },
+        {
+          "step": "Distance effect",
+          "marks": 1
+        },
+        {
+          "step": "Number of Cl",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 4,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch18-t03"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch18_031",
+      "unit": "isc-12-chemistry-ch18",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Explain the effect on the acid strength of benzoic acid of (a) a nitro group at the para position, (b) a methoxy group at the para position and (c) a methyl group at the ortho position.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Increases acidity: –NO₂ withdraws electrons by −I and −R, stabilising the carboxylate. (b) Decreases acidity: –OCH₃ releases electrons by +R (outweighing −I) at the para position. (c) Increases acidity (ortho effect): the ortho group forces –COOH out of the ring plane, reducing the ring’s electron donation to it, so the acid is stronger."
+      },
+      "solution_md": "−I/−R; +R; ortho effect.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 3,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch18-t03"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch18_032",
+      "unit": "isc-12-chemistry-ch18",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Propanoic acid is treated with thionyl chloride. The organic product is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "1-chloropropane"
+        },
+        {
+          "id": "b",
+          "text_md": "propanoyl chloride, CH₃CH₂COCl"
+        },
+        {
+          "id": "c",
+          "text_md": "2-chloropropanoic acid"
+        },
+        {
+          "id": "d",
+          "text_md": "propanoic anhydride"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "SOCl₂ replaces –OH by –Cl — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch18-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch18_033",
+      "unit": "isc-12-chemistry-ch18",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which of these releases carbon dioxide from aqueous sodium hydrogencarbonate: phenol, ethanol, benzoic acid or ethanal?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Benzoic acid"
+        },
+        {
+          "id": "b",
+          "text_md": "Phenol"
+        },
+        {
+          "id": "c",
+          "text_md": "Ethanol"
+        },
+        {
+          "id": "d",
+          "text_md": "Ethanal"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Only the carboxylic acid is stronger than carbonic acid — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch18-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch18_034",
+      "unit": "isc-12-chemistry-ch18",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Ethanoic acid is heated with phosphorus pentoxide. The product is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "ethanoyl chloride"
+        },
+        {
+          "id": "b",
+          "text_md": "ethanamide"
+        },
+        {
+          "id": "c",
+          "text_md": "ethanoic anhydride"
+        },
+        {
+          "id": "d",
+          "text_md": "ethyl ethanoate"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "P₂O₅ removes water from two acid molecules — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch18-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch18_035",
+      "unit": "isc-12-chemistry-ch18",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Ammonium propanoate is heated strongly. The organic product is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "propanenitrile"
+        },
+        {
+          "id": "b",
+          "text_md": "propan-1-amine"
+        },
+        {
+          "id": "c",
+          "text_md": "propanamide"
+        },
+        {
+          "id": "d",
+          "text_md": "propanoic anhydride"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "CH₃CH₂COONH₄ → CH₃CH₂CONH₂ + H₂O — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch18-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch18_036",
+      "unit": "isc-12-chemistry-ch18",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Three moles of ethanoic acid react with one mole of PCl₃. The inorganic by-product is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "POCl₃"
+        },
+        {
+          "id": "b",
+          "text_md": "phosphorous acid, H₃PO₃"
+        },
+        {
+          "id": "c",
+          "text_md": "HCl only"
+        },
+        {
+          "id": "d",
+          "text_md": "P₂O₅"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "3CH₃COOH + PCl₃ → 3CH₃COCl + H₃PO₃ — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch18-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch18_037",
+      "unit": "isc-12-chemistry-ch18",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Esterification of ethanoic acid with ethanol is carried out with concentrated H₂SO₄.\n\n**Reason (R):** Concentrated H₂SO₄ oxidises ethanol to ethanoic acid.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "A is true. R is false: H₂SO₄ acts as catalyst and dehydrating agent — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch18-t04"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch18_038",
+      "unit": "isc-12-chemistry-ch18",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? Carboxylic acids and alcohols both liberate hydrogen with sodium metal.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "t"
+        ]
+      },
+      "solution_md": "True. Both have an O–H group; only acids also react with NaHCO₃.",
+      "marking_scheme": [
+        {
+          "step": "True",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch18-t04"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch18_039",
+      "unit": "isc-12-chemistry-ch18",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "$12.2\\ \\text{g}$ of benzoic acid ($M = 122$) reacts completely with excess sodium hydrogencarbonate solution. What volume of CO₂ is released at STP? (Molar volume $22.4\\ \\text{L}$)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 2.24,
+        "tolerance": 0.01,
+        "unit": "L"
+      },
+      "solution_md": "$n = 12.2 \\div 122 = 0.100\\ \\text{mol}$; $V = 0.100 \\times 22.4 = 2.24\\ \\text{L}$.",
+      "marking_scheme": [
+        {
+          "step": "0.100 mol",
+          "marks": 1
+        },
+        {
+          "step": "2.24 L",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch18-t04"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch18_040",
+      "unit": "isc-12-chemistry-ch18",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write equations for the conversion of ethanoic acid into (a) ethanoyl chloride using PCl₅ and (b) ethanamide.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) $\\ce{CH3COOH + PCl5 -> CH3COCl + POCl3 + HCl}$. (b) $\\ce{CH3COOH + NH3 -> CH3COONH4}$; $\\ce{CH3COONH4 ->[\\Delta] CH3CONH2 + H2O}$."
+      },
+      "solution_md": "Acid chloride; amide.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch18-t04"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch18_041",
+      "unit": "isc-12-chemistry-ch18",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write equations for the reaction of propanoic acid with (a) magnesium, (b) sodium carbonate and (c) sodium hydroxide.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) $\\ce{2CH3CH2COOH + Mg -> (CH3CH2COO)2Mg + H2}$. (b) $\\ce{2CH3CH2COOH + Na2CO3 -> 2CH3CH2COONa + H2O + CO2}$. (c) $\\ce{CH3CH2COOH + NaOH -> CH3CH2COONa + H2O}$."
+      },
+      "solution_md": "Three equations.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch18-t04"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch18_042",
+      "unit": "isc-12-chemistry-ch18",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Give the product of benzoic acid with (a) phosphorus pentachloride, (b) methanol and a little conc. H₂SO₄ and (c) ammonia followed by strong heating.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Benzoyl chloride, C₆H₅COCl (+ POCl₃ + HCl). (b) Methyl benzoate, C₆H₅COOCH₃. (c) Benzamide, C₆H₅CONH₂."
+      },
+      "solution_md": "Benzoyl chloride; methyl benzoate; benzamide.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch18-t04"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch18_043",
+      "unit": "isc-12-chemistry-ch18",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Sodium butanoate is heated with soda lime. The gas evolved is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "butane"
+        },
+        {
+          "id": "b",
+          "text_md": "hexane"
+        },
+        {
+          "id": "c",
+          "text_md": "ethane"
+        },
+        {
+          "id": "d",
+          "text_md": "propane"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Loss of CO₂ gives an alkane with one carbon fewer — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch18-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch18_044",
+      "unit": "isc-12-chemistry-ch18",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "An aqueous solution of potassium propanoate is electrolysed (Kolbe electrolysis). The hydrocarbon formed at the anode is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "ethane"
+        },
+        {
+          "id": "b",
+          "text_md": "propane"
+        },
+        {
+          "id": "c",
+          "text_md": "butane"
+        },
+        {
+          "id": "d",
+          "text_md": "hexane"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Two ethyl radicals couple after loss of CO₂ — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch18-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch18_045",
+      "unit": "isc-12-chemistry-ch18",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Butanoic acid is treated with bromine and a little red phosphorus. The product is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "2-bromobutanoic acid"
+        },
+        {
+          "id": "b",
+          "text_md": "4-bromobutanoic acid"
+        },
+        {
+          "id": "c",
+          "text_md": "butanoyl bromide only"
+        },
+        {
+          "id": "d",
+          "text_md": "1-bromopropane"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "HVZ: α-substitution — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch18-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch18_046",
+      "unit": "isc-12-chemistry-ch18",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Benzoic acid is brominated with Br₂ and FeBr₃. The major product is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "3-bromobenzoic acid"
+        },
+        {
+          "id": "b",
+          "text_md": "4-bromobenzoic acid"
+        },
+        {
+          "id": "c",
+          "text_md": "2-bromobenzoic acid"
+        },
+        {
+          "id": "d",
+          "text_md": "bromobenzene"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "–COOH is meta directing — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch18-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch18_047",
+      "unit": "isc-12-chemistry-ch18",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Benzoic acid does not undergo Friedel–Crafts alkylation because:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "benzoic acid has no hydrogen on the ring"
+        },
+        {
+          "id": "b",
+          "text_md": "the ring is deactivated and the –COOH group complexes with AlCl₃"
+        },
+        {
+          "id": "c",
+          "text_md": "it is too volatile"
+        },
+        {
+          "id": "d",
+          "text_md": "–COOH is ortho/para directing"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch18-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch18_048",
+      "unit": "isc-12-chemistry-ch18",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Benzoic acid does not undergo the Hell–Volhard–Zelinsky reaction.\n\n**Reason (R):** Benzoic acid has no α-hydrogen.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Both true; R explains A — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch18-t05"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch18_049",
+      "unit": "isc-12-chemistry-ch18",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Kolbe electrolysis of sodium ethanoate gives methane.\n\n**Reason (R):** In Kolbe electrolysis, carboxylate ions lose CO₂ at the anode.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "A is false: the methyl radicals couple to give ethane. R is true — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch18-t05"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch18_050",
+      "unit": "isc-12-chemistry-ch18",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "Soda lime, used for decarboxylating sodium salts of acids, is a mixture of sodium hydroxide and ___.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "calcium oxide",
+              "CaO",
+              "quicklime"
+            ]
+          }
+        ]
+      },
+      "solution_md": "**Calcium oxide** (CaO).",
+      "marking_scheme": [
+        {
+          "step": "Writes \"calcium oxide\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch18-t05"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch18_051",
+      "unit": "isc-12-chemistry-ch18",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "$9.6\\ \\text{g}$ of sodium propanoate ($M = 96$) is heated with excess soda lime. What volume of ethane is produced at STP? (Molar volume $22.4\\ \\text{L}$)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 2.24,
+        "tolerance": 0.01,
+        "unit": "L"
+      },
+      "solution_md": "$\\ce{CH3CH2COONa + NaOH -> CH3CH3 + Na2CO3}$: $n = 9.6 \\div 96 = 0.100\\ \\text{mol}$; $V = 0.100 \\times 22.4 = 2.24\\ \\text{L}$.",
+      "marking_scheme": [
+        {
+          "step": "0.100 mol",
+          "marks": 1
+        },
+        {
+          "step": "2.24 L",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch18-t05"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch18_052",
+      "unit": "isc-12-chemistry-ch18",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "In the Kolbe electrolysis of sodium ethanoate, $\\ce{2CH3COONa + 2H2O -> CH3CH3 + 2CO2 + 2NaOH + H2}$. What mass of ethane ($M = 30$) can be formed from $16.4\\ \\text{g}$ of sodium ethanoate ($M = 82$)?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 3,
+        "tolerance": 0.02,
+        "unit": "g"
+      },
+      "solution_md": "$n(\\text{salt}) = 16.4 \\div 82 = 0.200\\ \\text{mol}$; $n(\\text{ethane}) = 0.100\\ \\text{mol}$; mass $= 0.100 \\times 30 = 3.0\\ \\text{g}$.",
+      "marking_scheme": [
+        {
+          "step": "2 : 1 ratio",
+          "marks": 1
+        },
+        {
+          "step": "3.0 g",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch18-t05"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch18_053",
+      "unit": "isc-12-chemistry-ch18",
+      "language": "en",
+      "type": "short",
+      "stem_md": "What is the Hell–Volhard–Zelinsky reaction? Write the equation for propanoic acid with bromine.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Carboxylic acids with α-hydrogen react with Cl₂ or Br₂ in the presence of a little red phosphorus to give α-halo acids. $\\ce{CH3CH2COOH + Br2 ->[red P] CH3CHBrCOOH + HBr}$ (2-bromopropanoic acid)."
+      },
+      "solution_md": "Definition; equation.",
+      "marking_scheme": [
+        {
+          "step": "Definition",
+          "marks": 1
+        },
+        {
+          "step": "Equation",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch18-t05"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch18_054",
+      "unit": "isc-12-chemistry-ch18",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Explain what happens at the anode during Kolbe electrolysis of aqueous sodium propanoate, and name the hydrocarbon formed.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Propanoate ions lose an electron at the anode to give carboxyl radicals CH₃CH₂COO•, which lose CO₂ to give ethyl radicals; two ethyl radicals combine to form butane, CH₃CH₂CH₂CH₃. (H₂ and NaOH form at the cathode.)"
+      },
+      "solution_md": "Oxidation, loss of CO₂, coupling: butane.",
+      "marking_scheme": [
+        {
+          "step": "Anode steps",
+          "marks": 1
+        },
+        {
+          "step": "Butane",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 3,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch18-t05"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch18_055",
+      "unit": "isc-12-chemistry-ch18",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Name the product when (a) sodium benzoate is heated with soda lime, (b) ethanoic acid is treated with excess chlorine and red phosphorus and (c) benzoic acid is nitrated.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Benzene. (b) Trichloroethanoic acid, CCl₃COOH (HVZ, repeated). (c) 3-Nitrobenzoic acid."
+      },
+      "solution_md": "Benzene; CCl₃COOH; 3-nitrobenzoic acid.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch18-t05"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch18_056",
+      "unit": "isc-12-chemistry-ch18",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which of methanoic, ethanoic and benzoic acid gives a silver mirror with Tollens’ reagent?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Ethanoic acid only"
+        },
+        {
+          "id": "b",
+          "text_md": "Benzoic acid only"
+        },
+        {
+          "id": "c",
+          "text_md": "Methanoic acid only"
+        },
+        {
+          "id": "d",
+          "text_md": "All three"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "H–COOH contains an aldehyde-like H — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch18-t06"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch18_057",
+      "unit": "isc-12-chemistry-ch18",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A neutral solution of a sodium salt gives a buff (pale brown) precipitate with neutral iron(III) chloride. The salt is most likely:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "sodium benzoate"
+        },
+        {
+          "id": "b",
+          "text_md": "sodium ethanoate"
+        },
+        {
+          "id": "c",
+          "text_md": "sodium methanoate"
+        },
+        {
+          "id": "d",
+          "text_md": "sodium chloride"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Benzoate gives buff iron(III) benzoate; ethanoate gives a deep red colour — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch18-t06"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch18_058",
+      "unit": "isc-12-chemistry-ch18",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Methanoic acid is warmed with mercury(II) chloride solution. The observation is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "a yellow precipitate of HgO"
+        },
+        {
+          "id": "b",
+          "text_md": "a deep red colour"
+        },
+        {
+          "id": "c",
+          "text_md": "no change"
+        },
+        {
+          "id": "d",
+          "text_md": "a white precipitate of Hg₂Cl₂ that may turn grey (Hg)"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Methanoic acid reduces HgCl₂ — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch18-t06"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch18_059",
+      "unit": "isc-12-chemistry-ch18",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which acid is used to coagulate natural rubber latex?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Benzoic acid"
+        },
+        {
+          "id": "b",
+          "text_md": "Hexanedioic acid"
+        },
+        {
+          "id": "c",
+          "text_md": "Methanoic acid"
+        },
+        {
+          "id": "d",
+          "text_md": "Ethanedioic acid"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch18-t06"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch18_060",
+      "unit": "isc-12-chemistry-ch18",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "The sodium salt of benzoic acid, used as a food preservative, is sodium ___.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "benzoate"
+            ]
+          }
+        ]
+      },
+      "solution_md": "Sodium **benzoate**.",
+      "marking_scheme": [
+        {
+          "step": "Writes \"benzoate\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch18-t06"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch18_061",
+      "unit": "isc-12-chemistry-ch18",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? A neutral solution of sodium ethanoate gives a deep red colour with neutral iron(III) chloride.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "t"
+        ]
+      },
+      "solution_md": "True; on boiling a brown-red precipitate forms.",
+      "marking_scheme": [
+        {
+          "step": "True",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch18-t06"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch18_062",
+      "unit": "isc-12-chemistry-ch18",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "$0.46\\ \\text{g}$ of methanoic acid ($M = 46$) reduces excess Tollens’ reagent: $\\ce{HCOOH + 2[Ag(NH3)2]+ + 2OH- -> 2Ag + CO2 + 2H2O + 4NH3}$. What mass of silver ($M = 108$) is deposited?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 2.16,
+        "tolerance": 0.01,
+        "unit": "g"
+      },
+      "solution_md": "$n = 0.46 \\div 46 = 0.010\\ \\text{mol}$; $n(\\text{Ag}) = 0.020\\ \\text{mol}$; mass $= 0.020 \\times 108 = 2.16\\ \\text{g}$.",
+      "marking_scheme": [
+        {
+          "step": "1 : 2",
+          "marks": 1
+        },
+        {
+          "step": "2.16 g",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch18-t06"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch18_063",
+      "unit": "isc-12-chemistry-ch18",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Give one chemical test, with observations, to distinguish (a) methanoic acid from ethanoic acid and (b) ethanoic acid from benzoic acid.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Tollens’ reagent (or Fehling’s): methanoic acid gives a silver mirror (or red precipitate); ethanoic acid does not. (b) Neutralise and add neutral FeCl₃: ethanoate gives a deep red colour; benzoate gives a buff precipitate."
+      },
+      "solution_md": "Tollens’; neutral FeCl₃.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch18-t06"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch18_064",
+      "unit": "isc-12-chemistry-ch18",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Give one important use each of (a) methanoic acid, (b) ethanoic acid and (c) benzoic acid or its sodium salt.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Coagulating rubber latex (or dyeing, tanning, preserving fruit). (b) Vinegar; making cellulose acetate, acetic anhydride or esters; solvent. (c) Sodium benzoate as a food preservative (or medicines, dyes)."
+      },
+      "solution_md": "Three uses.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch18-t06"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch18_065",
+      "unit": "isc-12-chemistry-ch18",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Methanoic acid shows some reactions of aldehydes. (a) Explain why, using its structure. (b) Write the equation for its reaction with HgCl₂. (c) Name one other reagent it reduces.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) H–COOH: the carboxyl carbon carries a hydrogen, as in an aldehyde (H–C=O), so it is easily oxidised to CO₂. (b) $\\ce{HCOOH + 2HgCl2 -> Hg2Cl2 + CO2 + 2HCl}$. (c) Tollens’ reagent (silver mirror) or Fehling’s solution (red Cu₂O)."
+      },
+      "solution_md": "Aldehyde-like H; HgCl₂ equation; Tollens’.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 3,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch18-t06"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch18_066",
+      "unit": "isc-12-chemistry-ch18",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Write equations to prepare propanoic acid from (i) propan-1-ol, (ii) propanenitrile and (iii) ethylmagnesium bromide. [3]\n\n(b) Explain, using hydrogen-bonded dimers, why propanoic acid boils higher than butan-1-ol of similar mass. [2]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) (i) $\\ce{CH3CH2CH2OH ->[K2Cr2O7/H2SO4][reflux] CH3CH2COOH}$ (skeletal; oxidation). (ii) $\\ce{CH3CH2CN + 2H2O + HCl -> CH3CH2COOH + NH4Cl}$. (iii) $\\ce{CH3CH2MgBr + CO2 -> CH3CH2COOMgBr}$, then dilute acid gives $\\ce{CH3CH2COOH}$.\n\n(b) Two propanoic acid molecules are held together by two hydrogen bonds in a cyclic dimer, which behaves as a larger molecule and persists in the vapour; butan-1-ol forms only single chain hydrogen bonds, so less energy is needed to boil it."
+      },
+      "solution_md": "Three preparations; dimers.",
+      "marking_scheme": [
+        {
+          "step": "(a)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(a)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(a)(iii)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 2
+        }
+      ],
+      "marks": 5,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch18-t01",
+        "isc-12-chemistry-ch18-t02"
+      ],
+      "expected_time_sec": 570,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch18_067",
+      "unit": "isc-12-chemistry-ch18",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Explain why carboxylic acids are stronger acids than phenols. [1½]\n\n(b) Arrange in increasing acid strength and explain: CH₃COOH, ClCH₂COOH, FCH₂COOH, Cl₂CHCOOH. [2]\n\n(c) Explain why 4-nitrobenzoic acid is stronger, and 4-methylbenzoic acid weaker, than benzoic acid. [1½]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) In the carboxylate ion the negative charge is shared equally by two electronegative oxygen atoms (equivalent resonance structures); in the phenoxide ion it is delocalised onto less electronegative ring carbons, and the structures are not equivalent. So the carboxylate is more stable.\n\n(b) CH₃COOH < ClCH₂COOH < FCH₂COOH < Cl₂CHCOOH. −I groups stabilise the carboxylate; F is more electronegative than Cl; two Cl atoms exert a greater −I effect than one.\n\n(c) –NO₂ withdraws electrons (−I, −R), stabilising the anion; –CH₃ releases electrons (+I, hyperconjugation), destabilising it."
+      },
+      "solution_md": "Carboxylate vs phenoxide; −I order; benzoic substituents.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1.5
+        },
+        {
+          "step": "(b) Order",
+          "marks": 1
+        },
+        {
+          "step": "(b) Reasons",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1.5
+        }
+      ],
+      "marks": 5,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch18-t03"
+      ],
+      "expected_time_sec": 570,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch18_068",
+      "unit": "isc-12-chemistry-ch18",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Write equations for the formation of (i) ethanoyl chloride with SOCl₂, (ii) ethanoic anhydride and (iii) ethanamide from ethanoic acid. [3]\n\n(b) Write equations for (i) decarboxylation of sodium ethanoate with soda lime and (ii) Kolbe electrolysis of sodium ethanoate. [2]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) (i) $\\ce{CH3COOH + SOCl2 -> CH3COCl + SO2 + HCl}$. (ii) $\\ce{2CH3COOH ->[P2O5][\\Delta] (CH3CO)2O + H2O}$. (iii) $\\ce{CH3COOH + NH3 -> CH3COONH4}$; $\\ce{CH3COONH4 ->[\\Delta] CH3CONH2 + H2O}$.\n\n(b) (i) $\\ce{CH3COONa + NaOH ->[CaO][\\Delta] CH4 + Na2CO3}$. (ii) $\\ce{2CH3COONa + 2H2O -> CH3CH3 + 2CO2 + 2NaOH + H2}$."
+      },
+      "solution_md": "Three derivatives; two decarboxylations.",
+      "marking_scheme": [
+        {
+          "step": "(a)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(a)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(a)(iii)",
+          "marks": 1
+        },
+        {
+          "step": "(b)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(b)(ii)",
+          "marks": 1
+        }
+      ],
+      "marks": 5,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch18-t04",
+        "isc-12-chemistry-ch18-t05"
+      ],
+      "expected_time_sec": 570,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch18_069",
+      "unit": "isc-12-chemistry-ch18",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Describe the HVZ reaction with an equation for propanoic acid. [1½]\n\n(b) Explain why the –COOH group is meta directing, and give the product of nitrating benzoic acid. [2]\n\n(c) How would you distinguish methanoic, ethanoic and benzoic acids by chemical tests? [1½]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Acids with α-H react with Cl₂/Br₂ and a little red P, replacing α-H by halogen: $\\ce{CH3CH2COOH + Br2 ->[red P] CH3CHBrCOOH + HBr}$.\n\n(b) –COOH withdraws electrons (−I, −R); for ortho/para attack one resonance form of the σ-complex puts + on the carbon bearing –COOH (destabilised), so meta attack is favoured. Product: 3-nitrobenzoic acid.\n\n(c) Methanoic acid gives a silver mirror with Tollens’ reagent (others do not). Neutral FeCl₃ with the neutralised acids: ethanoate deep red colour; benzoate buff precipitate."
+      },
+      "solution_md": "HVZ; meta direction; tests.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1.5
+        },
+        {
+          "step": "(b)",
+          "marks": 2
+        },
+        {
+          "step": "(c)",
+          "marks": 1.5
+        }
+      ],
+      "marks": 5,
+      "difficulty": 3,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch18-t05",
+        "isc-12-chemistry-ch18-t06"
+      ],
+      "expected_time_sec": 570,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch18_070",
+      "unit": "isc-12-chemistry-ch18",
+      "language": "en",
+      "type": "long",
+      "stem_md": "Compound A, C₂H₄O₂, dissolves in NaHCO₃ with effervescence and gives a deep red colour with neutral FeCl₃ after neutralisation. A reacts with Cl₂/red P to give B, and with ethanol/H₂SO₄ to give a fruity-smelling C. The sodium salt of A, heated with soda lime, gives a gas D.\n\n(a) Identify A, B, C and D. [4]\n\n(b) Write the equation for the formation of C. [1]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) A: ethanoic acid, CH₃COOH. B: chloroethanoic acid, ClCH₂COOH. C: ethyl ethanoate, CH₃COOC₂H₅. D: methane, CH₄.\n\n(b) $\\ce{CH3COOH + C2H5OH <=>[H+] CH3COOC2H5 + H2O}$."
+      },
+      "solution_md": "Ethanoic acid; chloroethanoic acid; ethyl ethanoate; methane.",
+      "marking_scheme": [
+        {
+          "step": "A",
+          "marks": 1
+        },
+        {
+          "step": "B",
+          "marks": 1
+        },
+        {
+          "step": "C",
+          "marks": 1
+        },
+        {
+          "step": "D",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        }
+      ],
+      "marks": 5,
+      "difficulty": 4,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch18-t04",
+        "isc-12-chemistry-ch18-t05",
+        "isc-12-chemistry-ch18-t06"
+      ],
+      "expected_time_sec": 570,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    }
+  ],
+  "build": {
+    "run_id": null,
+    "checks": {
+      "katex_mhchem": "86 math strings parsed with KaTeX 0.19.0 + mhchem (throwOnError, strict \"error\"), 0 failures",
+      "svg_allowlist": "2 SVG visuals (1 distinct diagrams) checked with saxes against svg-allowlist.ts: elements, attributes, class pattern, fragment-only refs, no style, palette incl. named hues, viewBox, title, per-page unique ids — 0 failures",
+      "narration": "30 slides, 12–71 words (mean 48), no symbols, formulae or unit abbreviations",
+      "resolve": "6/6 scripted re-solve checks pass",
+      "chemistry_facts": "Names, preparations (oxidation, nitrile hydrolysis, Grignard + CO₂, alkylbenzene oxidation), acidity with inductive, resonance and ortho effects, acid reactions and derivatives, soda-lime decarboxylation, Kolbe electrolysis, the HVZ reaction, meta substitution of benzoic acid, tests for formic, acetic and benzoic acids and every numerical checked against the ISC 2027 syllabus (Unit 8)",
+      "content_gate": "npm test -w @soyl/content-templates: all checks pass for this chapter",
+      "verifier_pass": "2026-10-30: every question and every internal-choice alternative re-solved from its stem by the author; every numerical re-computed by the build script — see README \"Verifier pass\"",
+      "pipeline_lint": "npm run content -- lint --exemplars: 0 errors, 0 warnings"
+    }
+  }
+}

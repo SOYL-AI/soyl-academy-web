@@ -1,0 +1,4752 @@
+{
+  "unit": "isc-12-chemistry-ch17",
+  "version": 1,
+  "academic_year": "2026-27",
+  "created_at": "2026-10-30T00:00:00+05:30",
+  "decks": [
+    {
+      "unit": "isc-12-chemistry-ch17",
+      "part": 1,
+      "version": 1,
+      "title": "Benzaldehyde — Part 1: Preparation, properties and addition reactions",
+      "language": "en",
+      "goals": [
+        "Write the Etard reaction and other preparations of benzaldehyde",
+        "Describe the physical properties of benzaldehyde",
+        "Write oxidation, reduction and nucleophilic addition reactions of benzaldehyde",
+        "Write the products with hydroxylamine, hydrazine, phenylhydrazine and PCl₅"
+      ],
+      "slides": [
+        {
+          "id": "s01",
+          "layout": "title",
+          "heading": "Benzaldehyde",
+          "body_md": "Part 1 — C₆H₅CHO: the simplest aromatic aldehyde, its preparation and its addition reactions.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Use or occurrence",
+                "Detail"
+              ],
+              "rows": [
+                [
+                  "Bitter almond oil",
+                  "Natural source (as a glycoside, amygdalin)"
+                ],
+                [
+                  "Flavouring",
+                  "Almond and cherry flavours"
+                ],
+                [
+                  "Perfumery",
+                  "Soaps and cosmetics"
+                ],
+                [
+                  "Dyes",
+                  "Malachite green"
+                ],
+                [
+                  "Synthesis",
+                  "Cinnamic acid, mandelic acid, benzoin"
+                ]
+              ]
+            },
+            "alt": "Table of uses and occurrence of benzaldehyde"
+          },
+          "math": [],
+          "narration": "Namaste! The smell of bitter almonds comes from benzaldehyde, the simplest aromatic aldehyde, with an aldehyde group attached directly to a benzene ring. It flavours foods, scents soaps and is a starting material for dyes and drugs. In this part we see how it is prepared, what it looks like, and how its aldehyde group reacts.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s02",
+          "layout": "concept",
+          "heading": "Structure",
+          "body_md": "In C₆H₅CHO the –CHO carbon is **sp²** and **conjugated** with the ring. Benzaldehyde has **no α-hydrogen** (the carbon next to C=O is a ring carbon with no H to lose as an enolate), so it cannot undergo aldol self-condensation. Conjugation slightly reduces the δ+ on the carbonyl carbon, so it is a little less reactive than aliphatic aldehydes.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Feature",
+                "Benzaldehyde",
+                "Ethanal"
+              ],
+              "rows": [
+                [
+                  "Carbonyl carbon",
+                  "sp², conjugated with ring",
+                  "sp²"
+                ],
+                [
+                  "α-Hydrogen",
+                  "None",
+                  "Three"
+                ],
+                [
+                  "Aldol with itself",
+                  "No",
+                  "Yes"
+                ],
+                [
+                  "Cannizzaro",
+                  "Yes",
+                  "No"
+                ],
+                [
+                  "Fehling’s test",
+                  "Negative",
+                  "Positive"
+                ]
+              ]
+            },
+            "alt": "Table comparing benzaldehyde and ethanal"
+          },
+          "math": [],
+          "narration": "The aldehyde group in benzaldehyde sits directly on the ring, and its double bond is conjugated with the ring’s pi electrons, which slightly reduces the positive charge on the carbonyl carbon. Importantly, the carbon next to the carbonyl group is part of the ring and carries no hydrogen that can be removed, so benzaldehyde has no alpha hydrogen. This decides much of its chemistry.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s03",
+          "layout": "concept",
+          "heading": "Laboratory preparation: the Etard reaction",
+          "body_md": "Toluene is oxidised by **chromyl chloride** (CrO₂Cl₂) in CS₂ or CCl₄; a brown chromium complex (Etard complex) separates, which is hydrolysed by water to benzaldehyde. Mild oxidation stops at the aldehyde. Other routes: side-chain chlorination of toluene to benzal chloride and hydrolysis; Gattermann–Koch (benzene + CO + HCl, AlCl₃/CuCl).",
+          "bullets": [],
+          "visual": {
+            "kind": "flow",
+            "spec": {
+              "direction": "LR",
+              "nodes": [
+                {
+                  "id": "a",
+                  "label": "Toluene"
+                },
+                {
+                  "id": "b",
+                  "label": "CrO₂Cl₂ in CS₂"
+                },
+                {
+                  "id": "c",
+                  "label": "Brown Etard complex"
+                },
+                {
+                  "id": "d",
+                  "label": "H₃O⁺ → benzaldehyde"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "a",
+                  "to": "b"
+                },
+                {
+                  "from": "b",
+                  "to": "c"
+                },
+                {
+                  "from": "c",
+                  "to": "d"
+                }
+              ]
+            },
+            "alt": "Flow of the Etard reaction"
+          },
+          "math": [
+            "\\ce{C6H5CH3 + 2Cl2 ->[h\\nu] C6H5CHCl2 + 2HCl}",
+            "\\ce{C6H5CHCl2 + H2O ->[373 K] C6H5CHO + 2HCl}",
+            "\\ce{C6H6 + CO ->[HCl][AlCl3/CuCl] C6H5CHO}"
+          ],
+          "narration": "In the laboratory, benzaldehyde is made by the Etard reaction. Chromyl chloride in carbon disulphide gently oxidises the methyl group of toluene, forming a brown complex. Water breaks down the complex to give benzaldehyde, without further oxidation to benzoic acid. Benzaldehyde can also be made by chlorinating the side chain of toluene to benzal chloride and hydrolysing it, or from benzene, carbon monoxide and hydrogen chloride.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s04",
+          "layout": "example",
+          "heading": "Worked example: routes from toluene",
+          "body_md": "**Problem.** Give two ways of converting toluene into benzaldehyde, and explain why acidified KMnO₄ is not used.\n\n**Route 1 (Etard).** CrO₂Cl₂ in CS₂, then hydrolysis with water.\n\n**Route 2.** Cl₂ in sunlight (boiling toluene) gives benzal chloride; heating with water at 373 K gives benzaldehyde.\n\n**KMnO₄** is too strong: it oxidises the side chain all the way to **benzoic acid**.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Reagent",
+                "Product from toluene"
+              ],
+              "rows": [
+                [
+                  "CrO₂Cl₂, then H₂O",
+                  "Benzaldehyde"
+                ],
+                [
+                  "Cl₂/hν, then H₂O",
+                  "Benzaldehyde (via C₆H₅CHCl₂)"
+                ],
+                [
+                  "Hot KMnO₄",
+                  "Benzoic acid"
+                ]
+              ]
+            },
+            "alt": "Table of products from toluene"
+          },
+          "math": [],
+          "narration": "Both routes stop at the aldehyde. In the Etard reaction, the chromium complex protects the aldehyde from further oxidation until water is added. In the second route, two chlorines are put on the methyl carbon and then replaced by an oxygen on hydrolysis. Potassium permanganate is too strong an oxidant: it converts the methyl group all the way to a carboxylic acid group.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s05",
+          "layout": "concept",
+          "heading": "Physical properties",
+          "body_md": "Colourless oily liquid with a smell of **bitter almonds**; b.p. 452 K; slightly soluble in water, miscible with organic solvents; denser than water (1.04 g cm⁻³). On standing in air it slowly **oxidises to benzoic acid** (white crystals appear around the stopper).",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Property",
+                "Value"
+              ],
+              "rows": [
+                [
+                  "Appearance",
+                  "Colourless oily liquid"
+                ],
+                [
+                  "Odour",
+                  "Bitter almonds"
+                ],
+                [
+                  "Boiling point",
+                  "452 K"
+                ],
+                [
+                  "Density",
+                  "1.04 g cm⁻³"
+                ],
+                [
+                  "In air",
+                  "Oxidised to benzoic acid"
+                ]
+              ]
+            },
+            "alt": "Table of physical properties of benzaldehyde"
+          },
+          "math": [],
+          "narration": "Benzaldehyde is a colourless oily liquid that smells of bitter almonds. It boils at four hundred and fifty two kelvin, is only slightly soluble in water and mixes with organic solvents. Old bottles often show white crystals around the neck: air has slowly oxidised some of the benzaldehyde to benzoic acid.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s06",
+          "layout": "check",
+          "heading": "Quick check: preparation and properties",
+          "body_md": "Identify the Etard reagent or a property of benzaldehyde.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Chromyl chloride stops at the aldehyde; air slowly turns benzaldehyde into benzoic acid.",
+          "check_question_id": "q_isc12chem_ch17_001",
+          "audio": null
+        },
+        {
+          "id": "s07",
+          "layout": "concept",
+          "heading": "Oxidation and reduction",
+          "body_md": "**Oxidation:** air, acidified K₂Cr₂O₇ or alkaline KMnO₄ → benzoic acid; **Tollens’ reagent → silver mirror**; but **Fehling’s solution is not reduced** (aromatic aldehyde). **Reduction:** H₂/Ni, NaBH₄ or LiAlH₄ → **benzyl alcohol** (phenylmethanol); Zn–Hg/HCl (Clemmensen) or Wolff–Kishner → **toluene**.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Reagent",
+                "Product"
+              ],
+              "rows": [
+                [
+                  "Air / K₂Cr₂O₇, H⁺",
+                  "Benzoic acid"
+                ],
+                [
+                  "Tollens’ reagent",
+                  "Benzoate + silver mirror"
+                ],
+                [
+                  "Fehling’s solution",
+                  "No reaction"
+                ],
+                [
+                  "H₂/Ni or NaBH₄",
+                  "Benzyl alcohol"
+                ],
+                [
+                  "Zn–Hg, HCl",
+                  "Toluene"
+                ]
+              ]
+            },
+            "alt": "Table of oxidation and reduction of benzaldehyde"
+          },
+          "math": [
+            "\\ce{2C6H5CHO + O2 -> 2C6H5COOH}",
+            "\\ce{C6H5CHO + H2 ->[Ni] C6H5CH2OH}"
+          ],
+          "narration": "Benzaldehyde is easily oxidised to benzoic acid, even by air, and it gives a silver mirror with Tollens’ reagent. Unlike aliphatic aldehydes, however, it does not reduce Fehling’s solution. Reduction with hydrogen and nickel or with sodium borohydride gives benzyl alcohol, while the Clemmensen or Wolff–Kishner method removes the oxygen completely to give toluene.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s08",
+          "layout": "diagram",
+          "heading": "Nucleophilic addition: HCN and NaHSO₃",
+          "body_md": "Benzaldehyde adds nucleophiles at the carbonyl carbon. **HCN** gives **mandelonitrile** (benzaldehyde cyanohydrin), hydrolysed to **mandelic acid**. **NaHSO₃** gives a crystalline bisulphite adduct (used to separate benzaldehyde).",
+          "bullets": [],
+          "visual": {
+            "kind": "svg",
+            "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 360 150\" role=\"img\" aria-label=\"Nucleophilic addition to a carbonyl group in two steps. Step 1: the nucleophile attacks the carbonyl carbon, and the pi electrons move onto oxygen, giving a tetrahedral alkoxide intermediate. Step 2: the alkoxide oxygen takes a proton from the medium to give the addition product with an O–H group.\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>Nucleophilic addition to a carbonyl group in two steps. Step 1: the nucleophile attacks the carbonyl carbon, and the pi electrons move onto oxygen, giving a tetrahedral alkoxide intermediate. Step 2: the alkoxide oxygen takes a proton from the medium to give the addition product with an O–H group.</title><circle cx=\"40\" cy=\"70\" r=\"12\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"40\" y=\"74\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">C</text><line x1=\"52\" y1=\"72.5\" x2=\"80\" y2=\"72.5\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"52\" y1=\"67.5\" x2=\"80\" y2=\"67.5\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"92\" cy=\"70\" r=\"12\" fill=\"var(--diagram-red)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"92\" y=\"74\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">O</text><text x=\"40\" y=\"30\" fill=\"var(--diagram-blue)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">Nu⁻</text><line x1=\"40\" y1=\"36\" x2=\"40\" y2=\"52\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.5\"/><polygon points=\"40,56 38,51.4 42,51.4\" fill=\"var(--diagram-blue)\" stroke=\"none\"/><line x1=\"112\" y1=\"70\" x2=\"135.2\" y2=\"70\" stroke=\"currentColor\" stroke-width=\"1.5\"/><polygon points=\"140,70 134.5,72.4 134.5,67.6\" fill=\"currentColor\" stroke=\"none\"/><text x=\"126\" y=\"60\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">step 1</text><circle cx=\"180\" cy=\"75\" r=\"12\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"180\" y=\"79\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">C</text><line x1=\"180\" y1=\"63\" x2=\"180\" y2=\"42\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"180\" y=\"36\" fill=\"var(--diagram-blue)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">Nu</text><line x1=\"192\" y1=\"75\" x2=\"212\" y2=\"75\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"224\" cy=\"75\" r=\"12\" fill=\"var(--diagram-red)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"224\" y=\"79\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">O⁻</text><text x=\"200\" y=\"110\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">tetrahedral</text><text x=\"200\" y=\"123\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">intermediate</text><line x1=\"244\" y1=\"75\" x2=\"267.2\" y2=\"75\" stroke=\"currentColor\" stroke-width=\"1.5\"/><polygon points=\"272,75 266.5,77.4 266.5,72.6\" fill=\"currentColor\" stroke=\"none\"/><text x=\"258\" y=\"64\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">H⁺</text><circle cx=\"300\" cy=\"75\" r=\"12\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"300\" y=\"79\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">C</text><line x1=\"300\" y1=\"63\" x2=\"300\" y2=\"42\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"300\" y=\"36\" fill=\"var(--diagram-blue)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">Nu</text><line x1=\"312\" y1=\"75\" x2=\"326\" y2=\"75\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"340\" cy=\"75\" r=\"13\" fill=\"var(--diagram-red)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"340\" y=\"79\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">OH</text><text x=\"320\" y=\"123\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">addition product</text><text x=\"180\" y=\"145\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">sp² (planar) → sp³ (tetrahedral)</text></svg>",
+            "alt": "Two-step nucleophilic addition: the nucleophile attacks the carbonyl carbon to give a tetrahedral alkoxide intermediate, which takes a proton to give the product"
+          },
+          "math": [
+            "\\ce{C6H5CHO + HCN -> C6H5CH(OH)CN}",
+            "\\ce{C6H5CHO + NaHSO3 -> C6H5CH(OH)SO3Na}"
+          ],
+          "narration": "Like other aldehydes, benzaldehyde adds nucleophiles. Cyanide ions attack the carbonyl carbon, and protonation gives mandelonitrile, which acid hydrolysis converts into mandelic acid, two-hydroxy-two-phenylethanoic acid. Sodium hydrogensulphite forms a crystalline adduct, which can be filtered off and decomposed again: a convenient way to separate benzaldehyde from other substances.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s09",
+          "layout": "concept",
+          "heading": "Ammonia derivatives and PCl₅",
+          "body_md": "Ammonia derivatives add and eliminate water (C=O → C=N). **PCl₅** replaces the carbonyl oxygen by two chlorines, giving **benzal chloride**.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Reagent",
+                "Product"
+              ],
+              "rows": [
+                [
+                  "NH₂OH",
+                  "Benzaldoxime, C₆H₅CH=NOH"
+                ],
+                [
+                  "NH₂NH₂",
+                  "Benzaldehyde hydrazone, C₆H₅CH=NNH₂"
+                ],
+                [
+                  "C₆H₅NHNH₂",
+                  "Benzaldehyde phenylhydrazone"
+                ],
+                [
+                  "PCl₅",
+                  "Benzal chloride, C₆H₅CHCl₂"
+                ]
+              ]
+            },
+            "alt": "Table of reactions with ammonia derivatives and PCl₅"
+          },
+          "math": [
+            "\\ce{C6H5CHO + NH2OH -> C6H5CH=NOH + H2O}",
+            "\\ce{C6H5CHO + C6H5NHNH2 -> C6H5CH=NNHC6H5 + H2O}",
+            "\\ce{C6H5CHO + PCl5 -> C6H5CHCl2 + POCl3}"
+          ],
+          "narration": "Hydroxylamine, hydrazine and phenylhydrazine react with benzaldehyde by addition followed by loss of water, giving benzaldoxime, the hydrazone and the phenylhydrazone, all crystalline solids useful for identification. Phosphorus pentachloride swaps the carbonyl oxygen for two chlorine atoms, giving benzal chloride, the same compound obtained by chlorinating the side chain of toluene.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s10",
+          "layout": "example",
+          "heading": "Worked example: products of benzaldehyde",
+          "body_md": "**Problem.** Give the product of benzaldehyde with (a) LiAlH₄; (b) HCN, then H₃O⁺ and heat; (c) phenylhydrazine; (d) PCl₅; (e) Zn–Hg/HCl.\n\n**(a)** Benzyl alcohol, $\\ce{C6H5CH2OH}$.\n\n**(b)** Mandelic acid, $\\ce{C6H5CH(OH)COOH}$ (via mandelonitrile).\n\n**(c)** Benzaldehyde phenylhydrazone, $\\ce{C6H5CH=NNHC6H5}$.\n\n**(d)** Benzal chloride, $\\ce{C6H5CHCl2}$.\n\n**(e)** Toluene, $\\ce{C6H5CH3}$.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Reagent",
+                "Product"
+              ],
+              "rows": [
+                [
+                  "LiAlH₄",
+                  "Benzyl alcohol"
+                ],
+                [
+                  "HCN; H₃O⁺",
+                  "Mandelic acid"
+                ],
+                [
+                  "C₆H₅NHNH₂",
+                  "Phenylhydrazone"
+                ],
+                [
+                  "PCl₅",
+                  "Benzal chloride"
+                ],
+                [
+                  "Zn–Hg/HCl",
+                  "Toluene"
+                ]
+              ]
+            },
+            "alt": "Table of products"
+          },
+          "math": [],
+          "narration": "Work through each reagent. Lithium aluminium hydride reduces the aldehyde to benzyl alcohol. Hydrogen cyanide gives the cyanohydrin, and hydrolysing its nitrile group gives mandelic acid. Phenylhydrazine gives the phenylhydrazone. Phosphorus pentachloride gives benzal chloride. And the Clemmensen reagents reduce the CHO group right down to a methyl group.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s11",
+          "layout": "check",
+          "heading": "Quick check: addition reactions",
+          "body_md": "Predict the product of benzaldehyde with an addition or ammonia-derivative reagent.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Addition across the carbonyl group, or addition followed by loss of water.",
+          "check_question_id": "q_isc12chem_ch17_013",
+          "audio": null
+        },
+        {
+          "id": "s12",
+          "layout": "check",
+          "heading": "Quick check: oxidation and reduction",
+          "body_md": "Decide whether benzaldehyde reduces a given reagent, or what it is reduced to.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Tollens’ yes, Fehling’s no; hydride gives benzyl alcohol, Clemmensen gives toluene.",
+          "check_question_id": "q_isc12chem_ch17_012",
+          "audio": null
+        },
+        {
+          "id": "s13",
+          "layout": "summary",
+          "heading": "Summary: Part 1",
+          "body_md": "",
+          "bullets": [
+            "No α-H; CHO conjugated with ring.",
+            "Etard: toluene + CrO₂Cl₂ (CS₂), then H₂O; also benzal chloride hydrolysis and Gattermann–Koch.",
+            "Colourless oil, bitter almond smell, b.p. 452 K; air-oxidised to benzoic acid.",
+            "Tollens’ positive, Fehling’s negative; reduction → benzyl alcohol or toluene.",
+            "HCN → mandelonitrile; NaHSO₃ adduct; oxime, hydrazone, phenylhydrazone; PCl₅ → benzal chloride."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Reagent",
+                "Product"
+              ],
+              "rows": [
+                [
+                  "CrO₂Cl₂ (toluene)",
+                  "Benzaldehyde"
+                ],
+                [
+                  "HCN",
+                  "Mandelonitrile"
+                ],
+                [
+                  "PCl₅",
+                  "Benzal chloride"
+                ]
+              ]
+            },
+            "alt": "Summary table"
+          },
+          "math": [],
+          "narration": "Let us sum up Part 1. Benzaldehyde has no alpha hydrogen and its aldehyde group is conjugated with the ring. It is made in the laboratory by the Etard reaction. It is easily oxidised to benzoic acid and reduces Tollens’ reagent but not Fehling’s solution. It adds hydrogen cyanide and sodium hydrogensulphite, forms derivatives with ammonia derivatives, and gives benzal chloride with phosphorus pentachloride.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s14",
+          "layout": "exam-tips",
+          "heading": "Exam tips: Part 1",
+          "body_md": "",
+          "bullets": [
+            "Name chromyl chloride and the solvent (CS₂) for the Etard reaction.",
+            "Benzaldehyde reduces Tollens’ but not Fehling’s.",
+            "Mandelonitrile → mandelic acid on hydrolysis.",
+            "PCl₅ gives benzal chloride, not benzoyl chloride."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Slip",
+                "Fix"
+              ],
+              "rows": [
+                [
+                  "KMnO₄ for toluene → benzaldehyde",
+                  "Use CrO₂Cl₂ (Etard)"
+                ],
+                [
+                  "Benzaldehyde gives red ppt with Fehling’s",
+                  "No reaction"
+                ],
+                [
+                  "PCl₅ gives C₆H₅COCl",
+                  "Gives C₆H₅CHCl₂"
+                ]
+              ]
+            },
+            "alt": "Table of three common slips in Part 1 and fixes"
+          },
+          "math": [],
+          "narration": "Some tips. For the Etard reaction, name chromyl chloride and carbon disulphide. Remember that benzaldehyde gives the Tollens’ test but not the Fehling’s test. The cyanohydrin is mandelonitrile. And phosphorus pentachloride gives benzal chloride, not benzoyl chloride, which comes from benzoic acid.",
+          "check_question_id": null,
+          "audio": null
+        }
+      ],
+      "status": "draft",
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "unit": "isc-12-chemistry-ch17",
+      "part": 2,
+      "version": 1,
+      "title": "Benzaldehyde — Part 2: Named reactions, ring substitution and tests",
+      "language": "en",
+      "goals": [
+        "Write equations for the Cannizzaro, benzoin and Perkin reactions of benzaldehyde",
+        "Explain why the –CHO group is meta directing and write ring substitution reactions",
+        "Distinguish benzaldehyde from aliphatic aldehydes and state its uses"
+      ],
+      "slides": [
+        {
+          "id": "s01",
+          "layout": "title",
+          "heading": "Benzaldehyde’s special reactions",
+          "body_md": "Part 2 — reactions that depend on having no α-hydrogen, and substitution on the ring.",
+          "bullets": [],
+          "visual": {
+            "kind": "flow",
+            "spec": {
+              "direction": "LR",
+              "nodes": [
+                {
+                  "id": "a",
+                  "label": "C₆H₅CHO (no α-H)"
+                },
+                {
+                  "id": "b",
+                  "label": "Conc. NaOH: Cannizzaro"
+                },
+                {
+                  "id": "c",
+                  "label": "KCN (ethanolic): benzoin"
+                },
+                {
+                  "id": "d",
+                  "label": "(CH₃CO)₂O/CH₃COONa: Perkin"
+                },
+                {
+                  "id": "e",
+                  "label": "Ring: meta substitution"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "a",
+                  "to": "b"
+                },
+                {
+                  "from": "a",
+                  "to": "c"
+                },
+                {
+                  "from": "a",
+                  "to": "d"
+                },
+                {
+                  "from": "a",
+                  "to": "e"
+                }
+              ]
+            },
+            "alt": "Flow of the reactions in Part 2"
+          },
+          "math": [],
+          "narration": "Because benzaldehyde has no alpha hydrogen, it shows reactions that aliphatic aldehydes like ethanal do not: the Cannizzaro reaction, the benzoin condensation and, with acetic anhydride, the Perkin reaction. Its ring also undergoes substitution, but the aldehyde group sends new groups to the meta position. We end with tests and uses.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s02",
+          "layout": "concept",
+          "heading": "Cannizzaro reaction",
+          "body_md": "With **concentrated** NaOH or KOH, benzaldehyde **disproportionates**: one molecule is reduced to **benzyl alcohol**, the other oxidised to **sodium benzoate** (acidify → benzoic acid). OH⁻ adds to one C=O; the intermediate transfers a **hydride ion** to a second molecule.",
+          "bullets": [],
+          "visual": {
+            "kind": "flow",
+            "spec": {
+              "direction": "LR",
+              "nodes": [
+                {
+                  "id": "a",
+                  "label": "OH⁻ adds to C=O"
+                },
+                {
+                  "id": "b",
+                  "label": "Tetrahedral anion"
+                },
+                {
+                  "id": "c",
+                  "label": "Hydride (H⁻) transferred to 2nd C₆H₅CHO"
+                },
+                {
+                  "id": "d",
+                  "label": "C₆H₅COO⁻ + C₆H₅CH₂OH"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "a",
+                  "to": "b"
+                },
+                {
+                  "from": "b",
+                  "to": "c"
+                },
+                {
+                  "from": "c",
+                  "to": "d"
+                }
+              ]
+            },
+            "alt": "Flow of the Cannizzaro mechanism"
+          },
+          "math": [
+            "\\ce{2C6H5CHO + NaOH -> C6H5CH2OH + C6H5COONa}"
+          ],
+          "narration": "With concentrated sodium hydroxide, half the benzaldehyde is oxidised and half reduced. Hydroxide adds to one molecule, and the tetrahedral anion pushes a hydride ion onto the carbonyl carbon of a second molecule. The first becomes benzoic acid, as its sodium salt, and the second becomes benzyl alcohol. The products are separated by extraction, and acidification releases benzoic acid.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s03",
+          "layout": "concept",
+          "heading": "Benzoin condensation",
+          "body_md": "Benzaldehyde heated with **ethanolic KCN** (CN⁻ catalyst) dimerises to **benzoin**, an α-hydroxy ketone: 2-hydroxy-1,2-diphenylethan-1-one.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Feature",
+                "Benzoin condensation"
+              ],
+              "rows": [
+                [
+                  "Reagent",
+                  "Ethanolic KCN (catalytic CN⁻)"
+                ],
+                [
+                  "Product",
+                  "Benzoin, C₆H₅CH(OH)COC₆H₅"
+                ],
+                [
+                  "Type",
+                  "Self-condensation of aromatic aldehyde"
+                ],
+                [
+                  "Functional groups in product",
+                  "Secondary alcohol and ketone"
+                ]
+              ]
+            },
+            "alt": "Table of the benzoin condensation"
+          },
+          "math": [
+            "\\ce{2C6H5CHO ->[KCN][ethanol, \\Delta] C6H5CH(OH)COC6H5}"
+          ],
+          "narration": "When benzaldehyde is warmed with potassium cyanide in ethanol, two molecules join to give benzoin, which has a hydroxyl group on one carbon and a ketone group on the next. Cyanide acts only as a catalyst: it adds to one molecule, makes its former carbonyl carbon able to attack a second molecule, and is released again at the end.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s04",
+          "layout": "concept",
+          "heading": "Perkin reaction",
+          "body_md": "Benzaldehyde is heated (about 453 K) with **acetic anhydride** and **sodium acetate**; the product is **cinnamic acid** (3-phenylprop-2-enoic acid), an α,β-unsaturated acid.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Reagents",
+                "Role"
+              ],
+              "rows": [
+                [
+                  "Benzaldehyde",
+                  "Electrophile (no α-H)"
+                ],
+                [
+                  "Acetic anhydride",
+                  "Provides the α-carbon (enolate)"
+                ],
+                [
+                  "Sodium acetate",
+                  "Base catalyst"
+                ],
+                [
+                  "Product",
+                  "Cinnamic acid (trans)"
+                ]
+              ]
+            },
+            "alt": "Table of the Perkin reaction"
+          },
+          "math": [
+            "\\ce{C6H5CHO + (CH3CO)2O ->[CH3COONa][453 K] C6H5CH=CHCOOH + CH3COOH}"
+          ],
+          "narration": "In the Perkin reaction, benzaldehyde is heated with acetic anhydride and sodium acetate. The acetate ion removes a hydrogen from the anhydride, and the resulting anion attacks the benzaldehyde carbonyl. After loss of water and hydrolysis, cinnamic acid is formed, with a carbon–carbon double bond between the ring and the acid group. Cinnamic acid and its esters are used in perfumes and flavours.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s05",
+          "layout": "example",
+          "heading": "Worked example: three named reactions",
+          "body_md": "**Problem.** Identify the reaction and product: (a) benzaldehyde + 50% KOH; (b) benzaldehyde + KCN in ethanol, warm; (c) benzaldehyde + (CH₃CO)₂O + CH₃COONa, 453 K; (d) benzaldehyde + methanal + conc. NaOH.\n\n**(a)** Cannizzaro: benzyl alcohol + potassium benzoate.\n\n**(b)** Benzoin condensation: benzoin.\n\n**(c)** Perkin: cinnamic acid.\n\n**(d)** Crossed Cannizzaro: benzyl alcohol + sodium methanoate.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Reagent",
+                "Reaction",
+                "Product"
+              ],
+              "rows": [
+                [
+                  "Conc. KOH",
+                  "Cannizzaro",
+                  "C₆H₅CH₂OH + C₆H₅COOK"
+                ],
+                [
+                  "KCN/ethanol",
+                  "Benzoin",
+                  "C₆H₅CH(OH)COC₆H₅"
+                ],
+                [
+                  "(CH₃CO)₂O/CH₃COONa",
+                  "Perkin",
+                  "C₆H₅CH=CHCOOH"
+                ],
+                [
+                  "HCHO + conc. NaOH",
+                  "Crossed Cannizzaro",
+                  "C₆H₅CH₂OH + HCOONa"
+                ]
+              ]
+            },
+            "alt": "Table of named reactions of benzaldehyde"
+          },
+          "math": [],
+          "narration": "Recognise each reaction by its reagent. Concentrated alkali alone: Cannizzaro. Cyanide in ethanol: benzoin condensation. Acetic anhydride with sodium acetate on heating: Perkin. With methanal and concentrated alkali, methanal is the one oxidised, so all the benzaldehyde becomes benzyl alcohol, which is a useful way to make it.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s06",
+          "layout": "check",
+          "heading": "Quick check: named reactions",
+          "body_md": "Match a reagent to the named reaction and product.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Concentrated alkali, ethanolic cyanide, or anhydride with acetate.",
+          "check_question_id": "q_isc12chem_ch17_028",
+          "audio": null
+        },
+        {
+          "id": "s07",
+          "layout": "concept",
+          "heading": "Electrophilic substitution: meta direction",
+          "body_md": "The –CHO group withdraws electrons (−I and −R), **deactivating** the ring; positive charge in the σ-complex is placed on the carbon bearing CHO for o/p attack (destabilised), but not for meta attack. So substitution is **meta** and slower than in benzene.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Reaction",
+                "Reagent",
+                "Product"
+              ],
+              "rows": [
+                [
+                  "Nitration",
+                  "conc. HNO₃ + H₂SO₄ (cold)",
+                  "3-Nitrobenzaldehyde"
+                ],
+                [
+                  "Chlorination",
+                  "Cl₂, anhydrous FeCl₃",
+                  "3-Chlorobenzaldehyde"
+                ],
+                [
+                  "Sulphonation",
+                  "Fuming H₂SO₄",
+                  "3-Formylbenzenesulphonic acid"
+                ]
+              ]
+            },
+            "alt": "Table of electrophilic substitution of benzaldehyde"
+          },
+          "math": [
+            "\\ce{C6H5CHO + HNO3 ->[conc. H2SO4][273-283 K] O2NC6H4CHO + H2O}",
+            "\\ce{C6H5CHO + Cl2 ->[FeCl3] ClC6H4CHO + HCl}"
+          ],
+          "narration": "The aldehyde group pulls electrons out of the ring, both through the sigma bond and by resonance, so the ring reacts more slowly than benzene. Resonance structures show that attack at ortho or para positions would place positive charge right next to the electron-withdrawing group, which is unfavourable, while meta attack avoids this. So nitration, chlorination and sulphonation all give meta products.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s08",
+          "layout": "example",
+          "heading": "Worked example: meta products",
+          "body_md": "**Problem.** Give the major product of benzaldehyde with (a) conc. HNO₃/H₂SO₄ in the cold, (b) Br₂/FeBr₃. Why is the nitration done in the cold?\n\n**(a)** 3-Nitrobenzaldehyde. **(b)** 3-Bromobenzaldehyde.\n\n**Cold:** the –CHO group is easily oxidised by hot nitric acid (to –COOH), so a low temperature keeps the aldehyde intact.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Reagent",
+                "Major product"
+              ],
+              "rows": [
+                [
+                  "HNO₃/H₂SO₄, cold",
+                  "3-Nitrobenzaldehyde"
+                ],
+                [
+                  "Br₂/FeBr₃",
+                  "3-Bromobenzaldehyde"
+                ]
+              ]
+            },
+            "alt": "Table of meta products"
+          },
+          "math": [],
+          "narration": "Both electrophilic substitutions go meta to the aldehyde group, giving three-nitrobenzaldehyde and three-bromobenzaldehyde. Nitration is carried out at low temperature because hot concentrated nitric acid would also oxidise the aldehyde group to a carboxylic acid group.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s09",
+          "layout": "check",
+          "heading": "Quick check: ring substitution",
+          "body_md": "Predict the position of electrophilic substitution in benzaldehyde.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. The aldehyde group is electron-withdrawing and meta directing.",
+          "check_question_id": "q_isc12chem_ch17_043",
+          "audio": null
+        },
+        {
+          "id": "s10",
+          "layout": "concept",
+          "heading": "Aromatic versus aliphatic aldehydes",
+          "body_md": "Tests that distinguish **benzaldehyde** from **ethanal** (or other aliphatic aldehydes):",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Test",
+                "Benzaldehyde",
+                "Ethanal"
+              ],
+              "rows": [
+                [
+                  "Fehling’s / Benedict’s solution",
+                  "No reaction",
+                  "Red-brown Cu₂O"
+                ],
+                [
+                  "Iodoform (I₂/NaOH)",
+                  "No yellow ppt",
+                  "Yellow CHI₃"
+                ],
+                [
+                  "Dilute NaOH",
+                  "No aldol",
+                  "Aldol (resinous on heating)"
+                ],
+                [
+                  "Conc. NaOH",
+                  "Cannizzaro",
+                  "Aldol / resin"
+                ],
+                [
+                  "Tollens’ reagent",
+                  "Silver mirror",
+                  "Silver mirror"
+                ]
+              ]
+            },
+            "alt": "Table of tests distinguishing benzaldehyde from ethanal"
+          },
+          "math": [],
+          "narration": "Several tests tell benzaldehyde from aliphatic aldehydes such as ethanal. Fehling’s solution is reduced by ethanal but not by benzaldehyde. Ethanal gives iodoform; benzaldehyde does not. Ethanal undergoes aldol reactions with alkali, while benzaldehyde, with no alpha hydrogen, gives the Cannizzaro reaction. Tollens’ reagent, however, is reduced by both.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s11",
+          "layout": "concept",
+          "heading": "Uses of benzaldehyde",
+          "body_md": "Flavouring (almond, cherry); perfumes and soaps; manufacture of **dyes** (malachite green), **cinnamic acid** (Perkin), **mandelic acid** (via HCN) and **benzoin**; as a solvent for some resins.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Product made from benzaldehyde",
+                "Reaction"
+              ],
+              "rows": [
+                [
+                  "Cinnamic acid",
+                  "Perkin"
+                ],
+                [
+                  "Mandelic acid",
+                  "HCN, then hydrolysis"
+                ],
+                [
+                  "Benzoin",
+                  "Benzoin condensation"
+                ],
+                [
+                  "Cinnamaldehyde",
+                  "Cross aldol with ethanal"
+                ],
+                [
+                  "Malachite green",
+                  "Condensation with N,N-dimethylaniline"
+                ]
+              ]
+            },
+            "alt": "Table of products made from benzaldehyde"
+          },
+          "math": [],
+          "narration": "Benzaldehyde is used directly as an almond flavouring and in perfumes and soaps. It is also a starting material: the Perkin reaction gives cinnamic acid, hydrogen cyanide leads to mandelic acid, the benzoin condensation gives benzoin, a cross aldol with ethanal gives cinnamaldehyde, the flavour of cinnamon, and condensation with dimethylaniline leads to the dye malachite green.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s12",
+          "layout": "check",
+          "heading": "Quick check: distinguishing tests",
+          "body_md": "Choose a test that distinguishes benzaldehyde from an aliphatic aldehyde.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Fehling’s solution and the iodoform test both work for ethanal but not for benzaldehyde.",
+          "check_question_id": "q_isc12chem_ch17_045",
+          "audio": null
+        },
+        {
+          "id": "s13",
+          "layout": "summary",
+          "heading": "Summary: Part 2",
+          "body_md": "",
+          "bullets": [
+            "Cannizzaro: 2C₆H₅CHO + NaOH → C₆H₅CH₂OH + C₆H₅COONa (hydride transfer).",
+            "Benzoin: 2C₆H₅CHO (KCN, ethanol) → C₆H₅CH(OH)COC₆H₅.",
+            "Perkin: C₆H₅CHO + (CH₃CO)₂O (CH₃COONa, 453 K) → cinnamic acid.",
+            "–CHO: deactivating, meta directing (3-nitro-, 3-chlorobenzaldehyde).",
+            "Benzaldehyde vs ethanal: Fehling’s and iodoform negative for benzaldehyde; both reduce Tollens’."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Named reaction",
+                "Product"
+              ],
+              "rows": [
+                [
+                  "Cannizzaro",
+                  "Benzyl alcohol + benzoate"
+                ],
+                [
+                  "Benzoin",
+                  "Benzoin"
+                ],
+                [
+                  "Perkin",
+                  "Cinnamic acid"
+                ]
+              ]
+            },
+            "alt": "Summary table of named reactions"
+          },
+          "math": [],
+          "narration": "Let us sum up Part 2. Having no alpha hydrogen, benzaldehyde undergoes the Cannizzaro reaction with concentrated alkali, the benzoin condensation with cyanide, and the Perkin reaction with acetic anhydride. Its aldehyde group deactivates the ring and directs substitution to the meta position. It is distinguished from aliphatic aldehydes by the Fehling’s and iodoform tests.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s14",
+          "layout": "exam-tips",
+          "heading": "Exam tips: Part 2",
+          "body_md": "",
+          "bullets": [
+            "Give the catalyst/conditions for each named reaction (conc. alkali; KCN in ethanol; CH₃COONa at 453 K).",
+            "Name cinnamic acid as 3-phenylprop-2-enoic acid.",
+            "Explain meta direction with the σ-complex argument.",
+            "For tests, describe results with both compounds."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Slip",
+                "Fix"
+              ],
+              "rows": [
+                [
+                  "–CHO is o/p directing",
+                  "Meta directing"
+                ],
+                [
+                  "Perkin gives cinnamaldehyde",
+                  "Gives cinnamic acid"
+                ],
+                [
+                  "Benzoin uses NaOH",
+                  "Uses KCN in ethanol"
+                ]
+              ]
+            },
+            "alt": "Table of three common slips in Part 2 and fixes"
+          },
+          "math": [],
+          "narration": "Final tips. Always give the reagents and conditions that identify each named reaction. Remember that the Perkin reaction gives cinnamic acid. Explain meta direction using the intermediate. And when distinguishing compounds, describe what happens with each one.",
+          "check_question_id": null,
+          "audio": null
+        }
+      ],
+      "status": "draft",
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    }
+  ],
+  "notes": {
+    "unit": "isc-12-chemistry-ch17",
+    "version": 1,
+    "title": "Benzaldehyde — Notes",
+    "language": "en",
+    "sections": [
+      {
+        "heading": "1. Preparation and physical properties",
+        "body_md": "C₆H₅CHO: –CHO conjugated with the ring; **no α-H**.\n\n**Etard reaction:** toluene + CrO₂Cl₂ (CS₂/CCl₄) → brown complex → H₂O → benzaldehyde (oxidation stops at CHO). Also: toluene + 2Cl₂ (hν) → C₆H₅CHCl₂ → (H₂O, 373 K) C₆H₅CHO; Gattermann–Koch: C₆H₆ + CO (HCl, AlCl₃/CuCl).\n\n**Properties:** colourless oily liquid, bitter-almond smell, b.p. 452 K, density 1.04 g cm⁻³, slightly soluble in water; air-oxidised to benzoic acid.",
+        "key_terms": [
+          {
+            "term": "Etard reaction",
+            "definition_md": "Oxidation of toluene to benzaldehyde by chromyl chloride."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\ce{C6H5CHCl2 + H2O -> C6H5CHO + 2HCl}",
+            "label": "Hydrolysis of benzal chloride"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Route",
+              "Reagent"
+            ],
+            "rows": [
+              [
+                "Etard",
+                "CrO₂Cl₂, then H₂O"
+              ],
+              [
+                "Benzal chloride",
+                "Cl₂/hν, then H₂O"
+              ],
+              [
+                "Gattermann–Koch",
+                "CO + HCl, AlCl₃/CuCl"
+              ]
+            ]
+          },
+          "alt": "Table of preparations"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "isc-12-chemistry-ch17-t01"
+        ]
+      },
+      {
+        "heading": "2. Oxidation, reduction and addition reactions",
+        "body_md": "**Oxidation:** air, K₂Cr₂O₇/H⁺, KMnO₄ → benzoic acid; Tollens’ → silver mirror; **Fehling’s: no reaction**.\n**Reduction:** H₂/Ni, NaBH₄, LiAlH₄ → benzyl alcohol; Clemmensen or Wolff–Kishner → toluene.\n**Addition:** HCN → mandelonitrile C₆H₅CH(OH)CN → (H₃O⁺) mandelic acid; NaHSO₃ → crystalline adduct.\n**Ammonia derivatives:** NH₂OH → benzaldoxime; NH₂NH₂ → hydrazone; C₆H₅NHNH₂ → phenylhydrazone. **PCl₅** → benzal chloride C₆H₅CHCl₂.",
+        "key_terms": [
+          {
+            "term": "Mandelonitrile",
+            "definition_md": "The cyanohydrin of benzaldehyde, C₆H₅CH(OH)CN."
+          },
+          {
+            "term": "Benzal chloride",
+            "definition_md": "C₆H₅CHCl₂, (dichloromethyl)benzene."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\ce{C6H5CHO + PCl5 -> C6H5CHCl2 + POCl3}",
+            "label": "With PCl₅"
+          }
+        ],
+        "visual": {
+          "kind": "svg",
+          "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 360 150\" role=\"img\" aria-label=\"Nucleophilic addition to a carbonyl group in two steps. Step 1: the nucleophile attacks the carbonyl carbon, and the pi electrons move onto oxygen, giving a tetrahedral alkoxide intermediate. Step 2: the alkoxide oxygen takes a proton from the medium to give the addition product with an O–H group.\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>Nucleophilic addition to a carbonyl group in two steps. Step 1: the nucleophile attacks the carbonyl carbon, and the pi electrons move onto oxygen, giving a tetrahedral alkoxide intermediate. Step 2: the alkoxide oxygen takes a proton from the medium to give the addition product with an O–H group.</title><circle cx=\"40\" cy=\"70\" r=\"12\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"40\" y=\"74\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">C</text><line x1=\"52\" y1=\"72.5\" x2=\"80\" y2=\"72.5\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"52\" y1=\"67.5\" x2=\"80\" y2=\"67.5\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"92\" cy=\"70\" r=\"12\" fill=\"var(--diagram-red)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"92\" y=\"74\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">O</text><text x=\"40\" y=\"30\" fill=\"var(--diagram-blue)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">Nu⁻</text><line x1=\"40\" y1=\"36\" x2=\"40\" y2=\"52\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.5\"/><polygon points=\"40,56 38,51.4 42,51.4\" fill=\"var(--diagram-blue)\" stroke=\"none\"/><line x1=\"112\" y1=\"70\" x2=\"135.2\" y2=\"70\" stroke=\"currentColor\" stroke-width=\"1.5\"/><polygon points=\"140,70 134.5,72.4 134.5,67.6\" fill=\"currentColor\" stroke=\"none\"/><text x=\"126\" y=\"60\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">step 1</text><circle cx=\"180\" cy=\"75\" r=\"12\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"180\" y=\"79\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">C</text><line x1=\"180\" y1=\"63\" x2=\"180\" y2=\"42\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"180\" y=\"36\" fill=\"var(--diagram-blue)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">Nu</text><line x1=\"192\" y1=\"75\" x2=\"212\" y2=\"75\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"224\" cy=\"75\" r=\"12\" fill=\"var(--diagram-red)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"224\" y=\"79\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">O⁻</text><text x=\"200\" y=\"110\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">tetrahedral</text><text x=\"200\" y=\"123\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">intermediate</text><line x1=\"244\" y1=\"75\" x2=\"267.2\" y2=\"75\" stroke=\"currentColor\" stroke-width=\"1.5\"/><polygon points=\"272,75 266.5,77.4 266.5,72.6\" fill=\"currentColor\" stroke=\"none\"/><text x=\"258\" y=\"64\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">H⁺</text><circle cx=\"300\" cy=\"75\" r=\"12\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"300\" y=\"79\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">C</text><line x1=\"300\" y1=\"63\" x2=\"300\" y2=\"42\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"300\" y=\"36\" fill=\"var(--diagram-blue)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">Nu</text><line x1=\"312\" y1=\"75\" x2=\"326\" y2=\"75\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"340\" cy=\"75\" r=\"13\" fill=\"var(--diagram-red)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"340\" y=\"79\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">OH</text><text x=\"320\" y=\"123\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">addition product</text><text x=\"180\" y=\"145\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">sp² (planar) → sp³ (tetrahedral)</text></svg>",
+          "alt": "Two-step nucleophilic addition: the nucleophile attacks the carbonyl carbon to give a tetrahedral alkoxide intermediate, which takes a proton to give the product"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "isc-12-chemistry-ch17-t02"
+        ]
+      },
+      {
+        "heading": "3. Cannizzaro, benzoin and Perkin reactions",
+        "body_md": "**Cannizzaro** (conc. NaOH): $\\ce{2C6H5CHO + NaOH -> C6H5CH2OH + C6H5COONa}$ (hydride transfer). Crossed with HCHO: benzaldehyde → benzyl alcohol, HCHO → HCOONa.\n**Benzoin condensation** (KCN in ethanol, catalytic CN⁻): $\\ce{2C6H5CHO -> C6H5CH(OH)COC6H5}$.\n**Perkin** ((CH₃CO)₂O + CH₃COONa, 453 K): $\\ce{C6H5CHO + (CH3CO)2O -> C6H5CH=CHCOOH + CH3COOH}$ (cinnamic acid).",
+        "key_terms": [
+          {
+            "term": "Benzoin",
+            "definition_md": "2-Hydroxy-1,2-diphenylethan-1-one, C₆H₅CH(OH)COC₆H₅."
+          },
+          {
+            "term": "Cinnamic acid",
+            "definition_md": "3-Phenylprop-2-enoic acid, product of the Perkin reaction."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\ce{2C6H5CHO + NaOH -> C6H5CH2OH + C6H5COONa}",
+            "label": "Cannizzaro"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Reaction",
+              "Reagent",
+              "Product"
+            ],
+            "rows": [
+              [
+                "Cannizzaro",
+                "Conc. NaOH",
+                "Benzyl alcohol + benzoate"
+              ],
+              [
+                "Benzoin",
+                "KCN/ethanol",
+                "Benzoin"
+              ],
+              [
+                "Perkin",
+                "(CH₃CO)₂O, CH₃COONa",
+                "Cinnamic acid"
+              ]
+            ]
+          },
+          "alt": "Table of named reactions"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "isc-12-chemistry-ch17-t03"
+        ]
+      },
+      {
+        "heading": "4. Ring substitution, tests and uses",
+        "body_md": "–CHO: −I, −R → **deactivating, meta directing**. Nitration (cold) → 3-nitrobenzaldehyde; Cl₂/FeCl₃ → 3-chlorobenzaldehyde; fuming H₂SO₄ → 3-formylbenzenesulphonic acid.\n\n**Benzaldehyde vs ethanal:** Fehling’s (ethanal +, benzaldehyde −); iodoform (ethanal +); dilute alkali (ethanal aldol); conc. alkali (benzaldehyde Cannizzaro); both give Tollens’.\n\n**Uses:** flavouring (almond), perfumes, dyes (malachite green), cinnamic acid, cinnamaldehyde (cross aldol with ethanal), mandelic acid, benzoin.",
+        "key_terms": [
+          {
+            "term": "Meta director",
+            "definition_md": "An electron-withdrawing substituent that directs incoming electrophiles to the meta position."
+          }
+        ],
+        "formulas": [],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Test",
+              "Benzaldehyde",
+              "Ethanal"
+            ],
+            "rows": [
+              [
+                "Fehling’s",
+                "−",
+                "+"
+              ],
+              [
+                "Iodoform",
+                "−",
+                "+"
+              ],
+              [
+                "Tollens’",
+                "+",
+                "+"
+              ]
+            ]
+          },
+          "alt": "Table of distinguishing tests"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "isc-12-chemistry-ch17-t04"
+        ]
+      }
+    ],
+    "exam_tips_md": "**Common mistakes**\n- Using KMnO₄ to convert toluene to benzaldehyde (gives benzoic acid).\n- Saying benzaldehyde reduces Fehling’s solution.\n- Giving o/p products for ring substitution (–CHO is meta directing).\n- Confusing benzal chloride (C₆H₅CHCl₂) with benzoyl chloride (C₆H₅COCl).\n\n**How marks are usually awarded**\n- Named reactions (1–2 marks): reagents, conditions, balanced equation and product name.\n- Meta direction (2 marks): electron withdrawal and σ-complex argument.\n- Distinguishing tests (1–2 marks): reagent and results for both compounds.",
+    "status": "draft",
+    "provenance": {
+      "origin": "human",
+      "template_version": null,
+      "model": null,
+      "generated_at": "2026-10-30",
+      "author": "claude-opus-5-5 (subject-producer)"
+    }
+  },
+  "flashcards": {
+    "unit": "isc-12-chemistry-ch17",
+    "version": 1,
+    "language": "en",
+    "cards": [
+      {
+        "id": "f01",
+        "front_md": "Etard reagent?",
+        "back_md": "Chromyl chloride, CrO₂Cl₂ (in CS₂).",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch17-t01"
+      },
+      {
+        "id": "f02",
+        "front_md": "Why not KMnO₄ on toluene?",
+        "back_md": "Gives benzoic acid.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch17-t01"
+      },
+      {
+        "id": "f03",
+        "front_md": "Benzal chloride + water?",
+        "back_md": "Benzaldehyde.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch17-t01"
+      },
+      {
+        "id": "f04",
+        "front_md": "Gattermann–Koch reagents?",
+        "back_md": "CO + HCl, AlCl₃/CuCl.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch17-t01"
+      },
+      {
+        "id": "f05",
+        "front_md": "Smell of benzaldehyde?",
+        "back_md": "Bitter almonds.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch17-t01"
+      },
+      {
+        "id": "f06",
+        "front_md": "B.p. of benzaldehyde?",
+        "back_md": "452 K.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch17-t01"
+      },
+      {
+        "id": "f07",
+        "front_md": "White crystals in old benzaldehyde?",
+        "back_md": "Benzoic acid.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch17-t01"
+      },
+      {
+        "id": "f08",
+        "front_md": "Does benzaldehyde have α-H?",
+        "back_md": "No.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch17-t01"
+      },
+      {
+        "id": "f09",
+        "front_md": "Tollens’ test?",
+        "back_md": "Positive: silver mirror.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch17-t02"
+      },
+      {
+        "id": "f10",
+        "front_md": "Fehling’s test?",
+        "back_md": "Negative.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch17-t02"
+      },
+      {
+        "id": "f11",
+        "front_md": "Benzaldehyde + NaBH₄?",
+        "back_md": "Benzyl alcohol.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch17-t02"
+      },
+      {
+        "id": "f12",
+        "front_md": "Benzaldehyde + Zn–Hg/HCl?",
+        "back_md": "Toluene.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch17-t02"
+      },
+      {
+        "id": "f13",
+        "front_md": "Benzaldehyde + HCN?",
+        "back_md": "Mandelonitrile.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch17-t02"
+      },
+      {
+        "id": "f14",
+        "front_md": "Mandelonitrile hydrolysis?",
+        "back_md": "Mandelic acid.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch17-t02"
+      },
+      {
+        "id": "f15",
+        "front_md": "Benzaldehyde + NH₂OH?",
+        "back_md": "Benzaldoxime.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch17-t02"
+      },
+      {
+        "id": "f16",
+        "front_md": "Benzaldehyde + PCl₅?",
+        "back_md": "Benzal chloride.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch17-t02"
+      },
+      {
+        "id": "f17",
+        "front_md": "Benzaldehyde + conc. NaOH?",
+        "back_md": "Benzyl alcohol + sodium benzoate.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch17-t03"
+      },
+      {
+        "id": "f18",
+        "front_md": "Key step in Cannizzaro?",
+        "back_md": "Hydride transfer.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch17-t03"
+      },
+      {
+        "id": "f19",
+        "front_md": "Benzoin condensation catalyst?",
+        "back_md": "CN⁻ (KCN in ethanol).",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch17-t03"
+      },
+      {
+        "id": "f20",
+        "front_md": "Benzoin formula?",
+        "back_md": "C₆H₅CH(OH)COC₆H₅.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch17-t03"
+      },
+      {
+        "id": "f21",
+        "front_md": "Perkin reagents?",
+        "back_md": "Acetic anhydride + sodium acetate, 453 K.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch17-t03"
+      },
+      {
+        "id": "f22",
+        "front_md": "Perkin product?",
+        "back_md": "Cinnamic acid.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch17-t03"
+      },
+      {
+        "id": "f23",
+        "front_md": "Benzaldehyde + HCHO + conc. NaOH?",
+        "back_md": "Benzyl alcohol + HCOONa.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch17-t03"
+      },
+      {
+        "id": "f24",
+        "front_md": "Directing effect of –CHO?",
+        "back_md": "Meta, deactivating.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch17-t04"
+      },
+      {
+        "id": "f25",
+        "front_md": "Nitration product?",
+        "back_md": "3-Nitrobenzaldehyde.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch17-t04"
+      },
+      {
+        "id": "f26",
+        "front_md": "Why nitrate in the cold?",
+        "back_md": "Avoid oxidising CHO.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch17-t04"
+      },
+      {
+        "id": "f27",
+        "front_md": "Distinguish from ethanal?",
+        "back_md": "Fehling’s or iodoform.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch17-t04"
+      },
+      {
+        "id": "f28",
+        "front_md": "Cinnamaldehyde from?",
+        "back_md": "Benzaldehyde + ethanal, dilute NaOH.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch17-t04"
+      },
+      {
+        "id": "f29",
+        "front_md": "Dye made from benzaldehyde?",
+        "back_md": "Malachite green.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch17-t04"
+      },
+      {
+        "id": "f30",
+        "front_md": "Chlorination with FeCl₃?",
+        "back_md": "3-Chlorobenzaldehyde.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch17-t04"
+      },
+      {
+        "id": "f31",
+        "front_md": "Exam tip: benzal vs benzoyl chloride",
+        "back_md": "PCl₅ on C₆H₅CHO → C₆H₅CHCl₂; on C₆H₅COOH → C₆H₅COCl.",
+        "tag": "exam-tip",
+        "topic_id": "isc-12-chemistry-ch17-t02"
+      }
+    ],
+    "status": "draft",
+    "provenance": {
+      "origin": "human",
+      "template_version": null,
+      "model": null,
+      "generated_at": "2026-10-30",
+      "author": "claude-opus-5-5 (subject-producer)"
+    }
+  },
+  "questions": [
+    {
+      "id": "q_isc12chem_ch17_001",
+      "unit": "isc-12-chemistry-ch17",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "In the Etard reaction, toluene is converted into benzaldehyde by:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "hot alkaline KMnO₄, followed by acidification"
+        },
+        {
+          "id": "b",
+          "text_md": "chlorine in the dark with FeCl₃"
+        },
+        {
+          "id": "c",
+          "text_md": "chromyl chloride in CS₂, followed by hydrolysis of the brown complex"
+        },
+        {
+          "id": "d",
+          "text_md": "hydrogen over Pd/BaSO₄"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "CrO₂Cl₂ oxidises the CH₃ group only as far as CHO — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch17-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch17_002",
+      "unit": "isc-12-chemistry-ch17",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Boiling toluene is treated with chlorine in sunlight until two chlorine atoms have entered, and the product is heated with water at 373 K. The final product is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "benzyl alcohol"
+        },
+        {
+          "id": "b",
+          "text_md": "benzaldehyde"
+        },
+        {
+          "id": "c",
+          "text_md": "benzoic acid"
+        },
+        {
+          "id": "d",
+          "text_md": "2-chlorotoluene"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "C₆H₅CHCl₂ (benzal chloride) is hydrolysed to C₆H₅CHO — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch17-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch17_003",
+      "unit": "isc-12-chemistry-ch17",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "In the Gattermann–Koch reaction, benzene is converted into benzaldehyde using:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "CrO₂Cl₂ in CS₂"
+        },
+        {
+          "id": "b",
+          "text_md": "CO and HCl with anhydrous AlCl₃ and CuCl"
+        },
+        {
+          "id": "c",
+          "text_md": "CH₃COCl and AlCl₃"
+        },
+        {
+          "id": "d",
+          "text_md": "HCN and HCl"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "C₆H₆ + CO → C₆H₅CHO (HCl, AlCl₃/CuCl) — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch17-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch17_004",
+      "unit": "isc-12-chemistry-ch17",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "White crystals form around the stopper of an old bottle of benzaldehyde. They are most probably:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "benzyl alcohol"
+        },
+        {
+          "id": "b",
+          "text_md": "benzoin"
+        },
+        {
+          "id": "c",
+          "text_md": "benzoic acid, formed by air oxidation"
+        },
+        {
+          "id": "d",
+          "text_md": "sodium benzoate"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "2C₆H₅CHO + O₂ → 2C₆H₅COOH — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch17-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch17_005",
+      "unit": "isc-12-chemistry-ch17",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "Benzaldehyde is a colourless oily liquid with the smell of bitter ___.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "almonds",
+              "almond"
+            ]
+          }
+        ]
+      },
+      "solution_md": "Bitter **almonds**.",
+      "marking_scheme": [
+        {
+          "step": "Writes \"almonds\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch17-t01"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch17_006",
+      "unit": "isc-12-chemistry-ch17",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? Benzaldehyde has no α-hydrogen atom.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "t"
+        ]
+      },
+      "solution_md": "True. The carbon next to C=O is a ring carbon bearing no hydrogen.",
+      "marking_scheme": [
+        {
+          "step": "True",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch17-t01"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch17_007",
+      "unit": "isc-12-chemistry-ch17",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Hot alkaline KMnO₄ is not used to convert toluene into benzaldehyde.\n\n**Reason (R):** KMnO₄ oxidises the side chain of toluene all the way to the –COOH group.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Both are true, and R explains A — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch17-t01"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch17_008",
+      "unit": "isc-12-chemistry-ch17",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "$9.2\\ \\text{g}$ of toluene ($M = 92$) is converted into benzaldehyde ($M = 106$) by the Etard reaction with a 60% yield. What mass of benzaldehyde is obtained?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 6.36,
+        "tolerance": 0.03,
+        "unit": "g"
+      },
+      "solution_md": "$n = 9.2 \\div 92 = 0.100\\ \\text{mol}$; mass $= 0.100 \\times 106 \\times 0.60 = 6.36\\ \\text{g}$.",
+      "marking_scheme": [
+        {
+          "step": "0.100 mol",
+          "marks": 1
+        },
+        {
+          "step": "6.36 g",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch17-t01"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch17_009",
+      "unit": "isc-12-chemistry-ch17",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write equations for preparing benzaldehyde from toluene via benzal chloride, giving the conditions.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "$\\ce{C6H5CH3 + 2Cl2 ->[h\\nu][boiling toluene] C6H5CHCl2 + 2HCl}$; $\\ce{C6H5CHCl2 + H2O ->[373 K] C6H5CHO + 2HCl}$."
+      },
+      "solution_md": "Side-chain chlorination; hydrolysis.",
+      "marking_scheme": [
+        {
+          "step": "Chlorination",
+          "marks": 1
+        },
+        {
+          "step": "Hydrolysis",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch17-t01"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch17_010",
+      "unit": "isc-12-chemistry-ch17",
+      "language": "en",
+      "type": "short",
+      "stem_md": "State two physical properties of benzaldehyde and explain why it should be stored in a tightly closed bottle.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Colourless oily liquid with a smell of bitter almonds; b.p. 452 K; slightly soluble in water, miscible with organic solvents (any two). It is slowly oxidised by air to benzoic acid, so air must be excluded."
+      },
+      "solution_md": "Two properties; air oxidation.",
+      "marking_scheme": [
+        {
+          "step": "Two properties",
+          "marks": 1
+        },
+        {
+          "step": "Air oxidation",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch17-t01"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch17_011",
+      "unit": "isc-12-chemistry-ch17",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Describe the Etard reaction for preparing benzaldehyde from toluene, explaining why the oxidation stops at the aldehyde, and give one other method of making benzaldehyde from benzene.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Toluene is treated with chromyl chloride (CrO₂Cl₂) in CS₂ or CCl₄; a brown chromium complex (Etard complex) precipitates. Hydrolysis with water gives benzaldehyde. The aldehyde is bound in the complex, so it is not oxidised further until it is released by hydrolysis. From benzene: Gattermann–Koch reaction — CO and HCl with anhydrous AlCl₃/CuCl."
+      },
+      "solution_md": "CrO₂Cl₂/CS₂; complex; Gattermann–Koch.",
+      "marking_scheme": [
+        {
+          "step": "Reagents and complex",
+          "marks": 1
+        },
+        {
+          "step": "Why it stops at CHO",
+          "marks": 1
+        },
+        {
+          "step": "Second method",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch17-t01"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch17_012",
+      "unit": "isc-12-chemistry-ch17",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Benzaldehyde is warmed separately with Tollens’ reagent and with Fehling’s solution. The results are:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "no change with either"
+        },
+        {
+          "id": "b",
+          "text_md": "a silver mirror and a red-brown precipitate"
+        },
+        {
+          "id": "c",
+          "text_md": "a silver mirror with Tollens’ reagent; no change with Fehling’s solution"
+        },
+        {
+          "id": "d",
+          "text_md": "a red-brown precipitate only"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Aromatic aldehydes reduce Tollens’ but not Fehling’s — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch17-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch17_013",
+      "unit": "isc-12-chemistry-ch17",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Benzaldehyde reacts with HCN in the presence of a little base. The product, hydrolysed with dilute acid, gives:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "mandelic acid, C₆H₅CH(OH)COOH"
+        },
+        {
+          "id": "b",
+          "text_md": "benzoic acid"
+        },
+        {
+          "id": "c",
+          "text_md": "cinnamic acid"
+        },
+        {
+          "id": "d",
+          "text_md": "phenylethanoic acid"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Mandelonitrile, C₆H₅CH(OH)CN, hydrolyses to mandelic acid — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch17-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch17_014",
+      "unit": "isc-12-chemistry-ch17",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Benzaldehyde is treated with phosphorus pentachloride. The organic product is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "benzoyl chloride, C₆H₅COCl"
+        },
+        {
+          "id": "b",
+          "text_md": "benzal chloride, C₆H₅CHCl₂"
+        },
+        {
+          "id": "c",
+          "text_md": "chlorobenzene"
+        },
+        {
+          "id": "d",
+          "text_md": "benzyl chloride, C₆H₅CH₂Cl"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "PCl₅ replaces the carbonyl O by two Cl — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch17-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch17_015",
+      "unit": "isc-12-chemistry-ch17",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Benzaldehyde reacts with hydroxylamine. The product is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "benzamide"
+        },
+        {
+          "id": "b",
+          "text_md": "benzaldoxime, C₆H₅CH=NOH"
+        },
+        {
+          "id": "c",
+          "text_md": "benzylamine"
+        },
+        {
+          "id": "d",
+          "text_md": "benzaldehyde hydrazone"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Addition then loss of water — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch17-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch17_016",
+      "unit": "isc-12-chemistry-ch17",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Benzaldehyde is reduced with sodium borohydride. The product is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "phenylmethanol (benzyl alcohol)"
+        },
+        {
+          "id": "b",
+          "text_md": "toluene"
+        },
+        {
+          "id": "c",
+          "text_md": "benzoic acid"
+        },
+        {
+          "id": "d",
+          "text_md": "cyclohexanecarbaldehyde"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Aldehyde → primary alcohol — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch17-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch17_017",
+      "unit": "isc-12-chemistry-ch17",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Benzaldehyde is heated with zinc amalgam and concentrated hydrochloric acid. The product is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "benzyl alcohol"
+        },
+        {
+          "id": "b",
+          "text_md": "benzene"
+        },
+        {
+          "id": "c",
+          "text_md": "benzoic acid"
+        },
+        {
+          "id": "d",
+          "text_md": "toluene"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Clemmensen reduction: CHO → CH₃ — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch17-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch17_018",
+      "unit": "isc-12-chemistry-ch17",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Benzaldehyde is slightly less reactive than ethanal towards nucleophilic addition. The main reason is that:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "benzaldehyde has more α-hydrogens"
+        },
+        {
+          "id": "b",
+          "text_md": "the ring makes the carbonyl carbon sp³"
+        },
+        {
+          "id": "c",
+          "text_md": "conjugation with the ring reduces the positive charge on the carbonyl carbon"
+        },
+        {
+          "id": "d",
+          "text_md": "benzaldehyde is a ketone"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Electron donation from the ring by resonance lowers δ+ on C — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch17-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch17_019",
+      "unit": "isc-12-chemistry-ch17",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Benzaldehyde does not reduce Fehling’s solution.\n\n**Reason (R):** Benzaldehyde is not oxidised by any reagent.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "A is true. R is false: benzaldehyde is oxidised by air, Tollens’ reagent and KMnO₄ — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch17-t02"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch17_020",
+      "unit": "isc-12-chemistry-ch17",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? Benzaldehyde can be separated from a mixture with toluene by shaking with saturated sodium hydrogensulphite solution.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "t"
+        ]
+      },
+      "solution_md": "True. Benzaldehyde forms a crystalline bisulphite adduct; toluene does not.",
+      "marking_scheme": [
+        {
+          "step": "True",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch17-t02"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch17_021",
+      "unit": "isc-12-chemistry-ch17",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "The cyanohydrin formed when HCN adds to benzaldehyde is called ___.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "mandelonitrile"
+            ]
+          }
+        ]
+      },
+      "solution_md": "**Mandelonitrile**.",
+      "marking_scheme": [
+        {
+          "step": "Writes \"mandelonitrile\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch17-t02"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch17_022",
+      "unit": "isc-12-chemistry-ch17",
+      "language": "en",
+      "type": "match",
+      "stem_md": "Match each reagent used on benzaldehyde with the product.",
+      "options": [
+        {
+          "id": "1",
+          "text_md": "Phenylhydrazine"
+        },
+        {
+          "id": "2",
+          "text_md": "PCl₅"
+        },
+        {
+          "id": "3",
+          "text_md": "H₂/Ni"
+        },
+        {
+          "id": "4",
+          "text_md": "NaHSO₃"
+        }
+      ],
+      "match_right": [
+        {
+          "id": "p",
+          "text_md": "Benzyl alcohol"
+        },
+        {
+          "id": "q",
+          "text_md": "Benzal chloride"
+        },
+        {
+          "id": "r",
+          "text_md": "Crystalline bisulphite adduct"
+        },
+        {
+          "id": "s",
+          "text_md": "Benzaldehyde phenylhydrazone"
+        }
+      ],
+      "answer": {
+        "pairs": [
+          {
+            "left_id": "1",
+            "right_id": "s"
+          },
+          {
+            "left_id": "2",
+            "right_id": "q"
+          },
+          {
+            "left_id": "3",
+            "right_id": "p"
+          },
+          {
+            "left_id": "4",
+            "right_id": "r"
+          }
+        ]
+      },
+      "solution_md": "Phenylhydrazine → phenylhydrazone; PCl₅ → C₆H₅CHCl₂; H₂/Ni → C₆H₅CH₂OH; NaHSO₃ → adduct.",
+      "marking_scheme": [
+        {
+          "step": "1 → s",
+          "marks": 0.5
+        },
+        {
+          "step": "2 → q",
+          "marks": 0.5
+        },
+        {
+          "step": "3 → p",
+          "marks": 0.5
+        },
+        {
+          "step": "4 → r",
+          "marks": 0.5
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch17-t02"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch17_023",
+      "unit": "isc-12-chemistry-ch17",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "$1.06\\ \\text{g}$ of benzaldehyde ($M = 106$) is warmed with excess Tollens’ reagent: $\\ce{C6H5CHO + 2[Ag(NH3)2]+ + 3OH- -> C6H5COO- + 2Ag + 2H2O + 4NH3}$. What mass of silver ($M = 108$) is deposited?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 2.16,
+        "tolerance": 0.01,
+        "unit": "g"
+      },
+      "solution_md": "$n(\\text{aldehyde}) = 1.06 \\div 106 = 0.0100\\ \\text{mol}$; $n(\\text{Ag}) = 0.0200\\ \\text{mol}$; mass $= 0.0200 \\times 108 = 2.16\\ \\text{g}$.",
+      "marking_scheme": [
+        {
+          "step": "1 : 2 ratio",
+          "marks": 1
+        },
+        {
+          "step": "2.16 g",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch17-t02"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch17_024",
+      "unit": "isc-12-chemistry-ch17",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write the equation for the air oxidation of benzaldehyde and name one reagent that oxidises benzaldehyde in the laboratory.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "$\\ce{2C6H5CHO + O2 -> 2C6H5COOH}$ (benzoic acid). Laboratory oxidants: acidified K₂Cr₂O₇, alkaline KMnO₄ (then acid), or Tollens’ reagent."
+      },
+      "solution_md": "Equation; an oxidant.",
+      "marking_scheme": [
+        {
+          "step": "Equation",
+          "marks": 1
+        },
+        {
+          "step": "Reagent",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch17-t02"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch17_025",
+      "unit": "isc-12-chemistry-ch17",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write equations for the reaction of benzaldehyde with (a) hydrazine and (b) phenylhydrazine, naming the products.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) $\\ce{C6H5CHO + NH2NH2 -> C6H5CH=NNH2 + H2O}$: benzaldehyde hydrazone. (b) $\\ce{C6H5CHO + C6H5NHNH2 -> C6H5CH=NNHC6H5 + H2O}$: benzaldehyde phenylhydrazone."
+      },
+      "solution_md": "Hydrazone; phenylhydrazone.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch17-t02"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch17_026",
+      "unit": "isc-12-chemistry-ch17",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Give the product when benzaldehyde is treated with (a) LiAlH₄, (b) hydrazine followed by KOH in ethylene glycol on heating and (c) HCN followed by acid hydrolysis.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Benzyl alcohol, C₆H₅CH₂OH. (b) Toluene, C₆H₅CH₃ (Wolff–Kishner). (c) Mandelic acid, C₆H₅CH(OH)COOH."
+      },
+      "solution_md": "Benzyl alcohol; toluene; mandelic acid.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch17-t02"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch17_027",
+      "unit": "isc-12-chemistry-ch17",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write equations for benzaldehyde with (a) sodium hydrogensulphite, (b) hydroxylamine and (c) phosphorus pentachloride.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) $\\ce{C6H5CHO + NaHSO3 -> C6H5CH(OH)SO3Na}$. (b) $\\ce{C6H5CHO + NH2OH -> C6H5CH=NOH + H2O}$. (c) $\\ce{C6H5CHO + PCl5 -> C6H5CHCl2 + POCl3}$."
+      },
+      "solution_md": "Three equations.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch17-t02"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch17_028",
+      "unit": "isc-12-chemistry-ch17",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Benzaldehyde is heated with acetic anhydride and anhydrous sodium acetate at about 453 K. The organic acid formed is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "cinnamic acid, C₆H₅CH=CHCOOH"
+        },
+        {
+          "id": "b",
+          "text_md": "benzoic acid"
+        },
+        {
+          "id": "c",
+          "text_md": "mandelic acid"
+        },
+        {
+          "id": "d",
+          "text_md": "phenylethanoic acid"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Perkin reaction — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch17-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch17_029",
+      "unit": "isc-12-chemistry-ch17",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Benzaldehyde is warmed with potassium cyanide in aqueous ethanol. The product is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "benzoin, C₆H₅CH(OH)COC₆H₅"
+        },
+        {
+          "id": "b",
+          "text_md": "mandelonitrile"
+        },
+        {
+          "id": "c",
+          "text_md": "benzyl cyanide"
+        },
+        {
+          "id": "d",
+          "text_md": "benzoic acid"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Benzoin condensation; CN⁻ is only a catalyst — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch17-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch17_030",
+      "unit": "isc-12-chemistry-ch17",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Benzaldehyde is shaken with 50% aqueous KOH. The products are:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "benzyl alcohol and potassium benzoate"
+        },
+        {
+          "id": "b",
+          "text_md": "benzoin only"
+        },
+        {
+          "id": "c",
+          "text_md": "cinnamic acid and potassium acetate"
+        },
+        {
+          "id": "d",
+          "text_md": "toluene and potassium benzoate"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Cannizzaro disproportionation — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch17-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch17_031",
+      "unit": "isc-12-chemistry-ch17",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "The key step in the Cannizzaro reaction of benzaldehyde is the transfer of:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "a proton from an α-carbon"
+        },
+        {
+          "id": "b",
+          "text_md": "a hydroxyl radical"
+        },
+        {
+          "id": "c",
+          "text_md": "a benzoyl cation"
+        },
+        {
+          "id": "d",
+          "text_md": "a hydride ion from one aldehyde-derived anion to a second benzaldehyde molecule"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "H⁻ transfer reduces one molecule and oxidises the other — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch17-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch17_032",
+      "unit": "isc-12-chemistry-ch17",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A mixture of benzaldehyde and methanal is treated with concentrated NaOH. Benzaldehyde is converted mainly into:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "sodium benzoate"
+        },
+        {
+          "id": "b",
+          "text_md": "benzoin"
+        },
+        {
+          "id": "c",
+          "text_md": "cinnamic acid"
+        },
+        {
+          "id": "d",
+          "text_md": "benzyl alcohol"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Crossed Cannizzaro: methanal is oxidised, benzaldehyde reduced — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch17-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch17_033",
+      "unit": "isc-12-chemistry-ch17",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Benzaldehyde gives the Cannizzaro reaction but not aldol condensation.\n\n**Reason (R):** Benzaldehyde has no α-hydrogen, so it cannot form an enolate ion.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Both are true; R explains A — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch17-t03"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch17_034",
+      "unit": "isc-12-chemistry-ch17",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** In the benzoin condensation, cyanide ion acts as a catalyst.\n\n**Reason (R):** Cyanide ion is a strong oxidising agent.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "A is true (CN⁻ is regenerated). R is false — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch17-t03"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch17_035",
+      "unit": "isc-12-chemistry-ch17",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? In the Perkin reaction, sodium acetate acts as a base that removes an α-hydrogen from acetic anhydride.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "t"
+        ]
+      },
+      "solution_md": "True. The resulting anion attacks the benzaldehyde carbonyl.",
+      "marking_scheme": [
+        {
+          "step": "True",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch17-t03"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch17_036",
+      "unit": "isc-12-chemistry-ch17",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "$21.2\\ \\text{g}$ of benzaldehyde ($M = 106$) undergoes complete Cannizzaro reaction with concentrated NaOH. What mass of benzyl alcohol ($M = 108$) forms?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 10.8,
+        "tolerance": 0.05,
+        "unit": "g"
+      },
+      "solution_md": "$n(\\text{aldehyde}) = 21.2 \\div 106 = 0.200\\ \\text{mol}$; $n(\\text{alcohol}) = 0.200 \\div 2 = 0.100\\ \\text{mol}$; mass $= 0.100 \\times 108 = 10.8\\ \\text{g}$.",
+      "marking_scheme": [
+        {
+          "step": "2 : 1 ratio",
+          "marks": 1
+        },
+        {
+          "step": "10.8 g",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch17-t03"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch17_037",
+      "unit": "isc-12-chemistry-ch17",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "$10.6\\ \\text{g}$ of benzaldehyde ($M = 106$) is converted by the Perkin reaction into cinnamic acid ($M = 148$) with a 70% yield. What mass of cinnamic acid is obtained?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 10.36,
+        "tolerance": 0.05,
+        "unit": "g"
+      },
+      "solution_md": "$n = 10.6 \\div 106 = 0.100\\ \\text{mol}$; mass $= 0.100 \\times 148 \\times 0.70 = 10.36\\ \\text{g}$.",
+      "marking_scheme": [
+        {
+          "step": "0.100 mol",
+          "marks": 1
+        },
+        {
+          "step": "10.36 g",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch17-t03"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch17_038",
+      "unit": "isc-12-chemistry-ch17",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write the equation for the Cannizzaro reaction of benzaldehyde, and explain how the two products are separated and the acid obtained.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "$\\ce{2C6H5CHO + NaOH -> C6H5CH2OH + C6H5COONa}$. Benzyl alcohol is extracted with ether (sodium benzoate stays in water); acidifying the aqueous layer with HCl precipitates benzoic acid."
+      },
+      "solution_md": "Equation; extraction and acidification.",
+      "marking_scheme": [
+        {
+          "step": "Equation",
+          "marks": 1
+        },
+        {
+          "step": "Separation",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch17-t03"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch17_039",
+      "unit": "isc-12-chemistry-ch17",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write the equation for the benzoin condensation and name the functional groups present in benzoin.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "$\\ce{2C6H5CHO ->[KCN][ethanol] C6H5CH(OH)COC6H5}$. Benzoin contains a secondary alcohol (–CH(OH)–) and a ketone (–CO–) group: it is an α-hydroxy ketone."
+      },
+      "solution_md": "Equation; alcohol and ketone.",
+      "marking_scheme": [
+        {
+          "step": "Equation with catalyst",
+          "marks": 1
+        },
+        {
+          "step": "Functional groups",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch17-t03"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch17_040",
+      "unit": "isc-12-chemistry-ch17",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write the equation for the Perkin reaction of benzaldehyde, naming the reagents’ roles and the product.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "$\\ce{C6H5CHO + (CH3CO)2O ->[CH3COONa][453 K] C6H5CH=CHCOOH + CH3COOH}$. Acetic anhydride supplies the α-carbon; sodium acetate is the base catalyst; product: cinnamic acid (3-phenylprop-2-enoic acid)."
+      },
+      "solution_md": "Equation; roles; cinnamic acid.",
+      "marking_scheme": [
+        {
+          "step": "Equation",
+          "marks": 1
+        },
+        {
+          "step": "Roles and product",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch17-t03"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch17_041",
+      "unit": "isc-12-chemistry-ch17",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Identify the reaction and give the product for benzaldehyde with (a) conc. NaOH, (b) KCN in ethanol and (c) acetic anhydride with sodium acetate at 453 K.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Cannizzaro: benzyl alcohol + sodium benzoate. (b) Benzoin condensation: benzoin. (c) Perkin reaction: cinnamic acid."
+      },
+      "solution_md": "Cannizzaro; benzoin; Perkin.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch17-t03"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch17_042",
+      "unit": "isc-12-chemistry-ch17",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Outline the mechanism of the Cannizzaro reaction of benzaldehyde and explain why ethanal does not give this reaction.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "OH⁻ adds to the carbonyl carbon of one benzaldehyde molecule, giving a tetrahedral anion. This anion transfers a hydride ion (H⁻) to the carbonyl carbon of a second molecule, becoming benzoic acid while the second becomes the benzyloxide ion. Proton exchange gives benzoate and benzyl alcohol. Ethanal has α-hydrogens; with alkali it forms an enolate and undergoes aldol reactions instead."
+      },
+      "solution_md": "OH⁻ addition; hydride transfer; ethanal aldol.",
+      "marking_scheme": [
+        {
+          "step": "OH⁻ addition",
+          "marks": 1
+        },
+        {
+          "step": "Hydride transfer and products",
+          "marks": 1
+        },
+        {
+          "step": "Ethanal: α-H, aldol",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 4,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch17-t03"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch17_043",
+      "unit": "isc-12-chemistry-ch17",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Benzaldehyde is nitrated with a mixture of concentrated nitric and sulphuric acids in the cold. The major product is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "4-nitrobenzaldehyde"
+        },
+        {
+          "id": "b",
+          "text_md": "3-nitrobenzaldehyde"
+        },
+        {
+          "id": "c",
+          "text_md": "2-nitrobenzaldehyde"
+        },
+        {
+          "id": "d",
+          "text_md": "nitrobenzene"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "–CHO is meta directing — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch17-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch17_044",
+      "unit": "isc-12-chemistry-ch17",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "The –CHO group directs electrophiles to the meta position because:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "it donates electrons by resonance to o and p positions"
+        },
+        {
+          "id": "b",
+          "text_md": "it is too large to allow o/p attack"
+        },
+        {
+          "id": "c",
+          "text_md": "it has an α-hydrogen"
+        },
+        {
+          "id": "d",
+          "text_md": "it withdraws electrons, and o/p attack would place positive charge next to it in the σ-complex"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Meta attack avoids the destabilised resonance form — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch17-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch17_045",
+      "unit": "isc-12-chemistry-ch17",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which test gives a positive result with ethanal but not with benzaldehyde?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Tollens’ test (silver mirror)"
+        },
+        {
+          "id": "b",
+          "text_md": "Fehling’s test (red-brown precipitate)"
+        },
+        {
+          "id": "c",
+          "text_md": "2,4-DNP test (orange precipitate)"
+        },
+        {
+          "id": "d",
+          "text_md": "Reaction with NaHSO₃"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Benzaldehyde does not reduce Fehling’s solution — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch17-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch17_046",
+      "unit": "isc-12-chemistry-ch17",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Benzaldehyde and ethanal are each warmed with iodine and NaOH. The observation is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "ethanal gives a yellow precipitate; benzaldehyde does not"
+        },
+        {
+          "id": "b",
+          "text_md": "both give yellow precipitates"
+        },
+        {
+          "id": "c",
+          "text_md": "benzaldehyde gives a yellow precipitate; ethanal does not"
+        },
+        {
+          "id": "d",
+          "text_md": "neither reacts"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Only ethanal has CH₃CO– — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch17-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch17_047",
+      "unit": "isc-12-chemistry-ch17",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Benzaldehyde reacts with chlorine in the presence of anhydrous FeCl₃. The major product is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "4-chlorobenzaldehyde"
+        },
+        {
+          "id": "b",
+          "text_md": "benzoyl chloride"
+        },
+        {
+          "id": "c",
+          "text_md": "benzal chloride"
+        },
+        {
+          "id": "d",
+          "text_md": "3-chlorobenzaldehyde"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Ring substitution, meta to CHO — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch17-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch17_048",
+      "unit": "isc-12-chemistry-ch17",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Cinnamaldehyde, the flavour of cinnamon, is made from benzaldehyde by:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "the Perkin reaction"
+        },
+        {
+          "id": "b",
+          "text_md": "the Cannizzaro reaction"
+        },
+        {
+          "id": "c",
+          "text_md": "cross aldol condensation with ethanal in dilute alkali"
+        },
+        {
+          "id": "d",
+          "text_md": "oxidation with KMnO₄"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "C₆H₅CHO + CH₃CHO → C₆H₅CH=CHCHO + H₂O — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch17-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch17_049",
+      "unit": "isc-12-chemistry-ch17",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Nitration of benzaldehyde is slower than nitration of benzene.\n\n**Reason (R):** The –CHO group donates electrons to the ring by resonance.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "A is true (–CHO deactivates). R is false: –CHO withdraws electrons — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch17-t04"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch17_050",
+      "unit": "isc-12-chemistry-ch17",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Nitration of benzaldehyde is carried out at low temperature.\n\n**Reason (R):** Hot concentrated nitric acid would oxidise the –CHO group to –COOH.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Both are true and R explains A — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch17-t04"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch17_051",
+      "unit": "isc-12-chemistry-ch17",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? Both benzaldehyde and ethanal give a silver mirror with Tollens’ reagent.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "t"
+        ]
+      },
+      "solution_md": "True. Tollens’ reagent cannot distinguish them; Fehling’s or iodoform can.",
+      "marking_scheme": [
+        {
+          "step": "True",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch17-t04"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch17_052",
+      "unit": "isc-12-chemistry-ch17",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? Bromination of benzaldehyde with Br₂/FeBr₃ gives mainly 4-bromobenzaldehyde.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "f"
+        ]
+      },
+      "solution_md": "False. –CHO directs meta: 3-bromobenzaldehyde.",
+      "marking_scheme": [
+        {
+          "step": "False, with the correction",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch17-t04"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch17_053",
+      "unit": "isc-12-chemistry-ch17",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "Benzaldehyde condenses with N,N-dimethylaniline in the manufacture of the dye malachite ___.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "green"
+            ]
+          }
+        ]
+      },
+      "solution_md": "Malachite **green**.",
+      "marking_scheme": [
+        {
+          "step": "Writes \"green\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch17-t04"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch17_054",
+      "unit": "isc-12-chemistry-ch17",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Explain why the –CHO group is meta directing and deactivating in electrophilic substitution of benzaldehyde.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "The –CHO group withdraws electrons from the ring by −I and −R effects, lowering electron density (deactivation). In the σ-complexes for ortho and para attack, one resonance form places the positive charge on the carbon bearing the electron-withdrawing –CHO group, which is very unfavourable; meta attack avoids this, so meta substitution is preferred."
+      },
+      "solution_md": "−I/−R; σ-complex argument.",
+      "marking_scheme": [
+        {
+          "step": "Deactivation",
+          "marks": 1
+        },
+        {
+          "step": "Meta direction",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 3,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch17-t04"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch17_055",
+      "unit": "isc-12-chemistry-ch17",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Give two chemical tests, with observations, that distinguish benzaldehyde from ethanal.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(i) Fehling’s solution, warm: ethanal gives a red-brown precipitate of Cu₂O; benzaldehyde does not react. (ii) I₂ + NaOH, warm: ethanal gives a yellow precipitate of iodoform; benzaldehyde does not."
+      },
+      "solution_md": "Fehling’s; iodoform.",
+      "marking_scheme": [
+        {
+          "step": "Test 1",
+          "marks": 1
+        },
+        {
+          "step": "Test 2",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch17-t04"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch17_056",
+      "unit": "isc-12-chemistry-ch17",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write equations for (a) the nitration and (b) the chlorination of benzaldehyde, naming the major products, and (c) explain why the nitration is done in the cold.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) $\\ce{C6H5CHO + HNO3 ->[conc. H2SO4][273-283 K] O2NC6H4CHO + H2O}$: 3-nitrobenzaldehyde. (b) $\\ce{C6H5CHO + Cl2 ->[FeCl3] ClC6H4CHO + HCl}$: 3-chlorobenzaldehyde. (c) At higher temperature nitric acid would oxidise –CHO to –COOH."
+      },
+      "solution_md": "Meta products; avoid oxidation.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch17-t04"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch17_057",
+      "unit": "isc-12-chemistry-ch17",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Name the compound made from benzaldehyde in each case and give one use: (a) by the Perkin reaction, (b) by cross aldol condensation with ethanal and (c) by addition of HCN followed by hydrolysis.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Cinnamic acid — perfumes and flavourings (esters). (b) Cinnamaldehyde — cinnamon flavour. (c) Mandelic acid — in skin-care products and as a urinary antiseptic (any reasonable use)."
+      },
+      "solution_md": "Cinnamic acid; cinnamaldehyde; mandelic acid.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch17-t04"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch17_058",
+      "unit": "isc-12-chemistry-ch17",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Describe the Etard reaction for converting toluene into benzaldehyde. [1½]\n\n(b) Write equations for the reaction of benzaldehyde with (i) HCN, (ii) NaHSO₃ and (iii) PCl₅. [2]\n\n(c) Explain why benzaldehyde reduces Tollens’ reagent but not Fehling’s solution, and give the product of its reduction with NaBH₄. [1½]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Toluene + CrO₂Cl₂ in CS₂ gives a brown chromium complex; hydrolysis with water gives benzaldehyde; oxidation stops at the aldehyde.\n\n(b) (i) $\\ce{C6H5CHO + HCN -> C6H5CH(OH)CN}$. (ii) $\\ce{C6H5CHO + NaHSO3 -> C6H5CH(OH)SO3Na}$. (iii) $\\ce{C6H5CHO + PCl5 -> C6H5CHCl2 + POCl3}$.\n\n(c) The –CHO group of benzaldehyde is conjugated with the ring, which makes it harder to oxidise than an aliphatic –CHO. Ammoniacal Ag⁺ (Tollens’) is able to oxidise it, but the weaker Cu²⁺ tartrate complex in Fehling’s solution is not, so no Cu₂O forms. NaBH₄ gives benzyl alcohol."
+      },
+      "solution_md": "Etard; three equations; Tollens’ vs Fehling’s.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1.5
+        },
+        {
+          "step": "(b)",
+          "marks": 2
+        },
+        {
+          "step": "(c)",
+          "marks": 1.5
+        }
+      ],
+      "marks": 5,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch17-t01",
+        "isc-12-chemistry-ch17-t02"
+      ],
+      "expected_time_sec": 570,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch17_059",
+      "unit": "isc-12-chemistry-ch17",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Write equations for the Cannizzaro, benzoin and Perkin reactions of benzaldehyde, giving the reagents and conditions. [3]\n\n(b) Why does benzaldehyde undergo the Cannizzaro reaction rather than aldol condensation? [1]\n\n(c) What happens when benzaldehyde and methanal are treated together with concentrated NaOH? [1]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Cannizzaro: $\\ce{2C6H5CHO + NaOH -> C6H5CH2OH + C6H5COONa}$ (conc. alkali). Benzoin: $\\ce{2C6H5CHO ->[KCN][ethanol] C6H5CH(OH)COC6H5}$. Perkin: $\\ce{C6H5CHO + (CH3CO)2O ->[CH3COONa][453 K] C6H5CH=CHCOOH + CH3COOH}$.\n\n(b) It has no α-hydrogen, so no enolate can form.\n\n(c) Crossed Cannizzaro: $\\ce{C6H5CHO + HCHO + NaOH -> C6H5CH2OH + HCOONa}$ — benzaldehyde is reduced, methanal oxidised."
+      },
+      "solution_md": "Three named reactions; no α-H; crossed Cannizzaro.",
+      "marking_scheme": [
+        {
+          "step": "(a) Cannizzaro",
+          "marks": 1
+        },
+        {
+          "step": "(a) Benzoin",
+          "marks": 1
+        },
+        {
+          "step": "(a) Perkin",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 5,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch17-t03"
+      ],
+      "expected_time_sec": 570,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch17_060",
+      "unit": "isc-12-chemistry-ch17",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Explain, with reference to the intermediate, why the –CHO group is meta directing. [2]\n\n(b) Write equations for the nitration and chlorination of benzaldehyde. [2]\n\n(c) Give two uses of benzaldehyde. [1]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) –CHO withdraws electrons (−I, −R). In the σ-complex for ortho or para attack, one resonance structure places + on the ring carbon bonded to the electron-withdrawing –CHO group, which is strongly destabilised; for meta attack no such structure exists. So the meta σ-complex is the least unstable, and meta substitution predominates (though slower than in benzene).\n\n(b) $\\ce{C6H5CHO + HNO3 ->[H2SO4][cold] O2NC6H4CHO + H2O}$ (3-nitrobenzaldehyde); $\\ce{C6H5CHO + Cl2 ->[FeCl3] ClC6H4CHO + HCl}$ (3-chlorobenzaldehyde).\n\n(c) Flavouring (almond); perfumery; manufacture of dyes (malachite green), cinnamic acid, mandelic acid."
+      },
+      "solution_md": "σ-complex argument; meta products; uses.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 2
+        },
+        {
+          "step": "(b)",
+          "marks": 2
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 5,
+      "difficulty": 3,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch17-t04"
+      ],
+      "expected_time_sec": 570,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch17_061",
+      "unit": "isc-12-chemistry-ch17",
+      "language": "en",
+      "type": "long",
+      "stem_md": "An aromatic compound A, C₇H₆O, gives a silver mirror with Tollens’ reagent but no precipitate with Fehling’s solution. With concentrated NaOH, A gives B and C; C on acidification gives D, C₇H₆O₂. A with KCN in ethanol gives E, C₁₄H₁₂O₂.\n\n(a) Identify A to E. [4]\n\n(b) Write the equation for the formation of E. [1]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) A: benzaldehyde, C₆H₅CHO. B: benzyl alcohol, C₆H₅CH₂OH. C: sodium benzoate, C₆H₅COONa. D: benzoic acid, C₆H₅COOH. E: benzoin, C₆H₅CH(OH)COC₆H₅.\n\n(b) $\\ce{2C6H5CHO ->[KCN][ethanol] C6H5CH(OH)COC6H5}$."
+      },
+      "solution_md": "Benzaldehyde, benzyl alcohol, sodium benzoate, benzoic acid, benzoin.",
+      "marking_scheme": [
+        {
+          "step": "A",
+          "marks": 1
+        },
+        {
+          "step": "B and C",
+          "marks": 1
+        },
+        {
+          "step": "D",
+          "marks": 1
+        },
+        {
+          "step": "E",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        }
+      ],
+      "marks": 5,
+      "difficulty": 4,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch17-t02",
+        "isc-12-chemistry-ch17-t03"
+      ],
+      "expected_time_sec": 570,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch17_062",
+      "unit": "isc-12-chemistry-ch17",
+      "language": "en",
+      "type": "long",
+      "stem_md": "How would you carry out the following conversions? Give reagents and conditions. [1 each]\n\n(a) Toluene to benzaldehyde\n\n(b) Benzaldehyde to cinnamic acid\n\n(c) Benzaldehyde to benzoin\n\n(d) Benzaldehyde to 3-nitrobenzaldehyde\n\n(e) Benzaldehyde to toluene",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) CrO₂Cl₂ in CS₂, then H₂O (Etard). (b) (CH₃CO)₂O + CH₃COONa, 453 K (Perkin). (c) KCN in aqueous ethanol, warm (benzoin condensation). (d) Conc. HNO₃ + conc. H₂SO₄, cold. (e) Zn–Hg + conc. HCl (Clemmensen) or NH₂NH₂ then KOH/ethylene glycol."
+      },
+      "solution_md": "Five conversions.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        },
+        {
+          "step": "(d)",
+          "marks": 1
+        },
+        {
+          "step": "(e)",
+          "marks": 1
+        }
+      ],
+      "marks": 5,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch17-t01",
+        "isc-12-chemistry-ch17-t02",
+        "isc-12-chemistry-ch17-t03",
+        "isc-12-chemistry-ch17-t04"
+      ],
+      "expected_time_sec": 570,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch17_063",
+      "unit": "isc-12-chemistry-ch17",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Compare benzaldehyde and ethanal in their behaviour with (a) Fehling’s solution, (b) dilute NaOH and (c) concentrated NaOH, giving reasons.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Ethanal reduces Fehling’s solution (red-brown Cu₂O); benzaldehyde does not, because its conjugated –CHO is harder to oxidise. (b) Ethanal, which has α-hydrogens, undergoes aldol condensation; benzaldehyde has no α-H and does not. (c) Benzaldehyde undergoes the Cannizzaro reaction (benzyl alcohol + sodium benzoate); ethanal gives aldol products and resins instead."
+      },
+      "solution_md": "Fehling’s; aldol; Cannizzaro.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch17-t03",
+        "isc-12-chemistry-ch17-t04"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    }
+  ],
+  "build": {
+    "run_id": null,
+    "checks": {
+      "katex_mhchem": "72 math strings parsed with KaTeX 0.19.0 + mhchem (throwOnError, strict \"error\"), 0 failures",
+      "svg_allowlist": "2 SVG visuals (1 distinct diagrams) checked with saxes against svg-allowlist.ts: elements, attributes, class pattern, fragment-only refs, no style, palette incl. named hues, viewBox, title, per-page unique ids — 0 failures",
+      "narration": "28 slides, 10–66 words (mean 45), no symbols, formulae or unit abbreviations",
+      "resolve": "4/4 scripted re-solve checks pass",
+      "chemistry_facts": "The Etard and other preparations, oxidation (Tollens’ but not Fehling’s), reduction, HCN, NaHSO₃, ammonia-derivative and PCl₅ reactions, the Cannizzaro, benzoin and Perkin reactions, meta substitution, distinguishing tests and every numerical checked against the ISC 2027 syllabus (Unit 8)",
+      "content_gate": "npm test -w @soyl/content-templates: all checks pass for this chapter",
+      "verifier_pass": "2026-10-30: every question and every internal-choice alternative re-solved from its stem by the author; every numerical re-computed by the build script — see README \"Verifier pass\"",
+      "pipeline_lint": "npm run content -- lint --exemplars: 0 errors, 0 warnings"
+    }
+  }
+}
