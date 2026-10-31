@@ -1,6 +1,6 @@
 # subject-producer — ISC Class 12 Chemistry, hand-authored chapters — 2026-10-30
 
-Status: partial — ch01–ch20 committed; ch21–ch22 being authored
+Status: done — all 22 syllabus chapters (ch01–ch22) committed and gated
 
 Branch: `platform/subject-producer/isc-12-chemistry` (worktree `C:/Users/Prabhu/soyl-wt/content-isc12-chemistry`, from d70438f, with `platform/main` merged at 4c30f89 (content fixture fix 81973c7) and again at 4b86da3). Not pushed, not merged.
 
@@ -29,6 +29,8 @@ New chapters under `platform/content/authored/chemistry/isc-12-chemistry-chNN/`,
 | ch18 Carboxylic Acids | 4d1ab47 | 2 (15 + 15) | 6 | 31 | 70 | 63% |
 | ch19 Amines | 579f524 | 2 (17 + 16) | 6 | 31 | 69 | 64% |
 | ch20 Cyanides, Isocyanides and Diazonium Salts | 83df0ac | 2 (14 + 14) | 4 | 31 | 60 | 65% |
+| ch21 Carbohydrates | 5abd5ca | 2 (15 + 15) | 5 | 31 | 69 | 51% |
+| ch22 Proteins, Vitamins and Nucleic Acids | d95c637 | 2 (15 + 14) | 5 | 31 | 68 | 47% |
 
 - Topics follow the ISC 2027 syllabus (`catalog/cisce/isc-12/chemistry/syllabus.yaml`, 22 SOYL chapters), not NCERT: ISC-only content (normality, azeotrope distillation, derivations of ΔTb and ΔTf, van’t Hoff laws, SHE limitations, factors affecting electrode potential, equivalent conductance, F = N_A e, law of mass action, radiation as a rate factor, …) has its own slides and items. Removed topics are respected.
 - Tests: `t_isc12chem_chNN_short` (20 marks, 50 min, `isc-12-default-chapter-test-short`) and `t_isc12chem_chNN_long` (40 marks, 100 min, `isc-12-default-chapter-test-long`): Section A 1-mark MCQ + assertion-reason, B 2-mark, C 3-mark, D 5-mark questions set in parts, internal choice in B, C and D exactly per the blueprints (the builder throws on any mismatch); short and long disjoint.
@@ -49,7 +51,7 @@ npx vitest run --root db test/db6-split.test.ts
 npx vitest run --root api test/content.test.ts
 ```
 Results of the last full run (under the shared `heavy.sh` lock):
-Last gate run 2026-10-31 23:03 IST (ch01–ch20 in place): content-templates 1786/1786; lint --exemplars 0 errors; verify cisce 12 chemistry 20 units 1317 q 0 flags; verify cbse 115 units 0 flags; originality --authored 255 units 0 errors; catalog valid; db6-split 8/8; api content.test 13/13.
+Last gate run 2026-10-31 23:37 IST (ch01–ch22 in place): content-templates 1800/1800; lint --exemplars 0 errors; verify cisce 12 chemistry 22 units 1454 q 0 flags; verify cbse 115 units 0 flags; originality --authored 257 units 0 errors; catalog valid; db6-split 8/8; api content.test 13/13.
 
 ## Tests added
 None (content only).
@@ -61,6 +63,7 @@ None (content only).
 
 ## Known gaps / follow-ups
 - Narration audio not generated (TTS stage); SVGs checked by coordinates only.
+- ch22 respects the removed topics: protein structures as definitions only, no vitamin chemical names or structures, no DNA/RNA chemical structures (the DNA visual is a schematic base-pair ladder).
 
 ## Decisions made
 No ADRs. No shared files, schemas, catalog, templates, tests or marketing files were touched.
