@@ -1,0 +1,5397 @@
+{
+  "unit": "isc-12-chemistry-ch19",
+  "version": 1,
+  "academic_year": "2026-27",
+  "created_at": "2026-10-30T00:00:00+05:30",
+  "decks": [
+    {
+      "unit": "isc-12-chemistry-ch19",
+      "part": 1,
+      "version": 1,
+      "title": "Amines — Part 1: Structure, preparation, properties and basicity",
+      "language": "en",
+      "goals": [
+        "Classify and name primary, secondary and tertiary amines and describe the amino group",
+        "Write equations for preparing amines from alcohols, alkyl halides, cyanides, amides, nitro compounds and by Gabriel synthesis",
+        "Compare boiling points of amines with each other and with alcohols",
+        "Arrange amines in order of basic strength and explain why aniline is a weak base"
+      ],
+      "slides": [
+        {
+          "id": "s01",
+          "layout": "title",
+          "heading": "Amines",
+          "body_md": "Part 1 — derivatives of ammonia in which alkyl or aryl groups replace hydrogen.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Amine",
+                "Where you meet it"
+              ],
+              "rows": [
+                [
+                  "Trimethylamine",
+                  "Smell of fish"
+                ],
+                [
+                  "Putrescine, cadaverine",
+                  "Smell of decaying flesh"
+                ],
+                [
+                  "Aniline",
+                  "Dyes, drugs, rubber chemicals"
+                ],
+                [
+                  "Adrenaline (an amine)",
+                  "Hormone of “fight or flight”"
+                ],
+                [
+                  "Histamine",
+                  "Allergic reactions"
+                ]
+              ]
+            },
+            "alt": "Table of familiar amines"
+          },
+          "math": [],
+          "narration": "Namaste! The smell of fish, many dyes and drugs, and the hormone adrenaline all contain nitrogen joined to carbon groups: they are amines, organic relatives of ammonia. In this part we classify and name amines, see how they are made, compare their physical properties with alcohols, and find out what makes some amines stronger bases than others.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s02",
+          "layout": "concept",
+          "heading": "Classification and general formula",
+          "body_md": "Replacing one, two or three H of NH₃ gives **primary (1°) RNH₂**, **secondary (2°) R₂NH** and **tertiary (3°) R₃N** amines; R₄N⁺X⁻ are **quaternary ammonium salts**. Saturated aliphatic amines: CₙH₂ₙ₊₃N. **Aliphatic** (N on alkyl C) and **aromatic** (N on ring C: aryl amines).",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Class",
+                "Example",
+                "Formula"
+              ],
+              "rows": [
+                [
+                  "Primary",
+                  "Propan-1-amine",
+                  "CH₃CH₂CH₂NH₂"
+                ],
+                [
+                  "Secondary",
+                  "N-Methylethanamine",
+                  "CH₃CH₂NHCH₃"
+                ],
+                [
+                  "Tertiary",
+                  "N,N-Dimethylethanamine",
+                  "CH₃CH₂N(CH₃)₂"
+                ],
+                [
+                  "Quaternary salt",
+                  "Tetramethylammonium chloride",
+                  "(CH₃)₄N⁺Cl⁻"
+                ],
+                [
+                  "Aryl amine",
+                  "Aniline (benzenamine)",
+                  "C₆H₅NH₂"
+                ]
+              ]
+            },
+            "alt": "Table classifying amines"
+          },
+          "math": [],
+          "narration": "Amines are classified by how many hydrogens of ammonia have been replaced by carbon groups: one for primary, two for secondary, three for tertiary. Note the difference from alcohols: here we count the groups on nitrogen, not on the carbon. If nitrogen carries four groups and a positive charge, we have a quaternary ammonium salt. When nitrogen is bonded to a benzene ring, the amine is aromatic.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s03",
+          "layout": "diagram",
+          "heading": "Structure of the amino group",
+          "body_md": "Nitrogen is **sp³** with a **lone pair** in one hybrid orbital: amines are **pyramidal**, with C–N–C angles of about 108°. The lone pair makes amines **bases** and **nucleophiles**. In aniline the lone pair is partly delocalised into the ring.",
+          "bullets": [],
+          "visual": {
+            "kind": "svg",
+            "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 170\" role=\"img\" aria-label=\"The nitrogen atom of an amine is sp³ hybridised and pyramidal. Three groups (here three methyl groups) are bonded to nitrogen and a lone pair occupies the fourth position, at the top. The C–N–C angle is about 108 degrees, a little less than the tetrahedral angle because the lone pair repels the bonds.\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>The nitrogen atom of an amine is sp³ hybridised and pyramidal. Three groups (here three methyl groups) are bonded to nitrogen and a lone pair occupies the fourth position, at the top. The C–N–C angle is about 108 degrees, a little less than the tetrahedral angle because the lone pair repels the bonds.</title><circle cx=\"160\" cy=\"80\" r=\"15\" fill=\"var(--diagram-blue)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"160\" y=\"84\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\">N</text><ellipse cx=\"160\" cy=\"40\" rx=\"10\" ry=\"18\" fill=\"var(--diagram-accent)\" stroke=\"var(--diagram-accent)\" stroke-width=\"1\" fill-opacity=\"0.35\"/><text x=\"160\" y=\"44\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"13\">··</text><text x=\"184\" y=\"30\" fill=\"var(--diagram-accent)\" stroke=\"none\" font-size=\"10\">lone pair</text><line x1=\"150\" y1=\"92\" x2=\"100\" y2=\"128\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"170\" y1=\"92\" x2=\"220\" y2=\"128\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"160\" y1=\"95\" x2=\"160\" y2=\"140\" stroke=\"currentColor\" stroke-width=\"2\" stroke-dasharray=\"4 3\"/><circle cx=\"92\" cy=\"134\" r=\"16\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"92\" y=\"138\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">CH₃</text><circle cx=\"228\" cy=\"134\" r=\"16\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"228\" y=\"138\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">CH₃</text><circle cx=\"160\" cy=\"148\" r=\"16\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"160\" y=\"152\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">CH₃</text><path d=\"M128 112 Q160 124 192 112\" fill=\"none\" stroke=\"var(--diagram-accent)\" stroke-width=\"1\"/><text x=\"160\" y=\"116\" fill=\"var(--diagram-accent)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">108°</text><text x=\"40\" y=\"70\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">pyramidal</text><text x=\"40\" y=\"84\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">sp³ nitrogen</text></svg>",
+            "alt": "Pyramidal trimethylamine with an sp³ nitrogen, a lone pair at the top and a C–N–C angle of about 108 degrees"
+          },
+          "math": [],
+          "narration": "In an amine the nitrogen atom is sp three hybridised. Three of its hybrid orbitals form bonds and the fourth holds a lone pair, so the molecule is pyramidal, like ammonia, with angles of about one hundred and eight degrees. That lone pair is the key to amine chemistry: it accepts protons, making amines bases, and attacks electron-poor carbons, making them nucleophiles.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s04",
+          "layout": "concept",
+          "heading": "Nomenclature",
+          "body_md": "IUPAC: replace -e of the alkane by **-amine** (propan-2-amine); extra groups on N use the prefix **N-** (N-methylpropan-1-amine). Common names: alkyl groups + amine. Aniline is **benzenamine**.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Structure",
+                "Common name",
+                "IUPAC name"
+              ],
+              "rows": [
+                [
+                  "CH₃CH(NH₂)CH₃",
+                  "Isopropylamine",
+                  "Propan-2-amine"
+                ],
+                [
+                  "(CH₃)₂NH",
+                  "Dimethylamine",
+                  "N-Methylmethanamine"
+                ],
+                [
+                  "CH₃CH₂CH₂NHCH₃",
+                  "Methylpropylamine",
+                  "N-Methylpropan-1-amine"
+                ],
+                [
+                  "(C₂H₅)₃N",
+                  "Triethylamine",
+                  "N,N-Diethylethanamine"
+                ],
+                [
+                  "H₂N(CH₂)₆NH₂",
+                  "Hexamethylenediamine",
+                  "Hexane-1,6-diamine"
+                ],
+                [
+                  "C₆H₅N(CH₃)₂",
+                  "N,N-Dimethylaniline",
+                  "N,N-Dimethylbenzenamine"
+                ]
+              ]
+            },
+            "alt": "Table of amine names"
+          },
+          "math": [],
+          "narration": "For IUPAC names, take the longest carbon chain attached to nitrogen, replace the final e by amine, and show other groups on nitrogen with the prefix N. So dimethylamine is N-methylmethanamine and triethylamine is N,N-diethylethanamine. Hexamethylenediamine, used to make nylon, is hexane-one-six-diamine, and aniline is benzenamine.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s05",
+          "layout": "example",
+          "heading": "Worked example: naming and classifying",
+          "body_md": "**Problem.** Name and classify: (a) $\\ce{CH3CH2CH(NH2)CH3}$; (b) $\\ce{(CH3)2CHNHCH3}$; (c) $\\ce{CH3CH2N(CH3)CH2CH3}$; (d) $\\ce{CH3C6H4NH2}$ (para).\n\n**(a)** Butan-2-amine — primary.\n\n**(b)** N-Methylpropan-2-amine — secondary.\n\n**(c)** N-Ethyl-N-methylethanamine — tertiary.\n\n**(d)** 4-Methylaniline (4-methylbenzenamine, p-toluidine) — primary aryl amine.",
+          "bullets": [],
+          "visual": {
+            "kind": "flow",
+            "spec": {
+              "direction": "LR",
+              "nodes": [
+                {
+                  "id": "a",
+                  "label": "Count C groups on N"
+                },
+                {
+                  "id": "b",
+                  "label": "1 → 1°, 2 → 2°, 3 → 3°"
+                },
+                {
+                  "id": "c",
+                  "label": "Longest chain on N → alkanamine"
+                },
+                {
+                  "id": "d",
+                  "label": "Other groups: N-prefix"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "a",
+                  "to": "b"
+                },
+                {
+                  "from": "b",
+                  "to": "c"
+                },
+                {
+                  "from": "c",
+                  "to": "d"
+                }
+              ]
+            },
+            "alt": "Flow for naming and classifying amines"
+          },
+          "math": [],
+          "narration": "First count the carbon groups attached to nitrogen to classify the amine. Then name it from the longest chain on nitrogen, adding N prefixes for the other groups. Butan-two-amine has one group, so it is primary, even though the carbon carrying nitrogen is secondary. The last example is a primary aromatic amine, four-methylaniline.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s06",
+          "layout": "check",
+          "heading": "Quick check: classification and names",
+          "body_md": "Classify or name an amine.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Count the carbon groups attached to nitrogen, not to the carbon.",
+          "check_question_id": "q_isc12chem_ch19_001",
+          "audio": null
+        },
+        {
+          "id": "s07",
+          "layout": "concept",
+          "heading": "Preparation from alcohols, alkyl halides, cyanides and nitro compounds",
+          "body_md": "**Alcohols:** vapour + NH₃ over Al₂O₃ at 633 K (mixture). **Alkyl halides:** heat with alcoholic NH₃ in a sealed tube (ammonolysis); gives 1°, 2°, 3° and quaternary products — excess NH₃ favours 1°. **Cyanides:** reduction (H₂/Ni, LiAlH₄, Na/ethanol) → **RCH₂NH₂** (one C more). **Nitro compounds:** Sn/HCl, Fe/HCl or H₂/Ni → amines.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Starting compound",
+                "Reagent",
+                "Product"
+              ],
+              "rows": [
+                [
+                  "Propan-1-ol",
+                  "NH₃, Al₂O₃, 633 K",
+                  "Propan-1-amine (+ 2°, 3°)"
+                ],
+                [
+                  "1-Bromobutane",
+                  "Excess alcoholic NH₃, sealed tube",
+                  "Butan-1-amine"
+                ],
+                [
+                  "Propanenitrile",
+                  "LiAlH₄ or H₂/Ni",
+                  "Propan-1-amine"
+                ],
+                [
+                  "Nitrobenzene",
+                  "Sn/HCl, then NaOH",
+                  "Aniline"
+                ]
+              ]
+            },
+            "alt": "Table of preparations"
+          },
+          "math": [
+            "\\ce{CH3CH2OH + NH3 ->[Al2O3][633 K] CH3CH2NH2 + H2O}",
+            "\\ce{CH3CH2CN + 2H2 ->[Ni] CH3CH2CH2NH2}",
+            "\\ce{C6H5NO2 + 3H2 ->[Ni] C6H5NH2 + 2H2O}"
+          ],
+          "narration": "Amines can be made from alcohols by passing their vapour with ammonia over hot alumina, and from alkyl halides by heating with ammonia in a sealed tube, though both give mixtures because the amine formed can react again. Reducing a nitrile gives a primary amine with one more carbon than the alkyl halide used. Reducing nitro compounds, especially nitrobenzene, gives aromatic amines such as aniline.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s08",
+          "layout": "concept",
+          "heading": "Hofmann degradation and Gabriel synthesis",
+          "body_md": "**Hofmann bromamide degradation:** amide + Br₂ + KOH → **1° amine with one carbon fewer**. **Gabriel phthalimide synthesis:** phthalimide + KOH → potassium phthalimide; + RX (SN2) → N-alkylphthalimide; hydrolysis (or hydrazine) → **pure 1° amine**. Gabriel cannot make aryl amines (aryl halides do not undergo SN2).",
+          "bullets": [],
+          "visual": {
+            "kind": "flow",
+            "spec": {
+              "direction": "LR",
+              "nodes": [
+                {
+                  "id": "a",
+                  "label": "Phthalimide"
+                },
+                {
+                  "id": "b",
+                  "label": "Potassium phthalimide (KOH)"
+                },
+                {
+                  "id": "c",
+                  "label": "N-Alkylphthalimide (+ RX)"
+                },
+                {
+                  "id": "d",
+                  "label": "RNH₂ + phthalic acid (hydrolysis)"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "a",
+                  "to": "b"
+                },
+                {
+                  "from": "b",
+                  "to": "c"
+                },
+                {
+                  "from": "c",
+                  "to": "d"
+                }
+              ]
+            },
+            "alt": "Flow of the Gabriel synthesis"
+          },
+          "math": [
+            "\\ce{CH3CH2CONH2 + Br2 + 4KOH -> CH3CH2NH2 + K2CO3 + 2KBr + 2H2O}"
+          ],
+          "narration": "In the Hofmann bromamide degradation, an amide is warmed with bromine and potassium hydroxide; the carbonyl carbon is lost as carbonate, giving a primary amine with one carbon fewer. In the Gabriel synthesis, the potassium salt of phthalimide is alkylated by an alkyl halide, and hydrolysis releases a pure primary amine; only one alkyl group can be attached, so no secondary or tertiary amines form.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s09",
+          "layout": "example",
+          "heading": "Worked example: choosing a preparation",
+          "body_md": "**Problem.** Prepare (a) pure ethanamine from bromoethane; (b) propan-1-amine from bromoethane (one carbon more); (c) ethanamine from propanamide; (d) 4-methylaniline from 4-nitrotoluene.\n\n**(a)** Gabriel synthesis: potassium phthalimide + C₂H₅Br, then hydrolysis.\n\n**(b)** KCN → propanenitrile; then LiAlH₄ (or H₂/Ni).\n\n**(c)** Br₂ + KOH (Hofmann).\n\n**(d)** Sn/HCl (or H₂/Ni), then NaOH.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Change",
+                "Method",
+                "Carbon count"
+              ],
+              "rows": [
+                [
+                  "RX → RNH₂ (pure)",
+                  "Gabriel",
+                  "Same"
+                ],
+                [
+                  "RX → RCH₂NH₂",
+                  "KCN, then reduction",
+                  "+1"
+                ],
+                [
+                  "RCONH₂ → RNH₂",
+                  "Hofmann",
+                  "−1"
+                ],
+                [
+                  "ArNO₂ → ArNH₂",
+                  "Reduction",
+                  "Same"
+                ]
+              ]
+            },
+            "alt": "Table of preparation choices"
+          },
+          "math": [],
+          "narration": "Pick the method by the change in carbon count and the purity needed. For a pure primary amine with the same number of carbons, use Gabriel. To add a carbon, go through the nitrile and reduce it. To remove a carbon, use the Hofmann degradation of the amide. And to make an aromatic amine, reduce the nitro compound.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s10",
+          "layout": "check",
+          "heading": "Quick check: preparation",
+          "body_md": "Choose a method that gives a particular amine.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Hofmann removes a carbon; nitrile reduction adds one; Gabriel gives only primary amines.",
+          "check_question_id": "q_isc12chem_ch19_010",
+          "audio": null
+        },
+        {
+          "id": "s11",
+          "layout": "concept",
+          "heading": "Physical properties",
+          "body_md": "Lower aliphatic amines are gases or volatile liquids with a fishy smell; aniline is a liquid that darkens in air. 1° and 2° amines form **N–H···N hydrogen bonds** (weaker than O–H···O, since N is less electronegative), so they boil **lower than alcohols** of similar mass; 3° amines cannot hydrogen-bond with each other. B.p. of isomers: **1° > 2° > 3°**. Lower amines are water-soluble (H-bonding with water).",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Compound (M ≈ 59–60)",
+                "b.p. / K"
+              ],
+              "rows": [
+                [
+                  "Trimethylamine (3°)",
+                  "276"
+                ],
+                [
+                  "N-Methylethanamine (2°)",
+                  "310"
+                ],
+                [
+                  "Propan-1-amine (1°)",
+                  "321"
+                ],
+                [
+                  "Propan-1-ol",
+                  "370"
+                ]
+              ]
+            },
+            "alt": "Table of boiling points"
+          },
+          "math": [],
+          "narration": "Primary and secondary amines form hydrogen bonds between their molecules, but nitrogen is less electronegative than oxygen, so these bonds are weaker than in alcohols, and amines boil lower than alcohols of similar mass. Tertiary amines have no hydrogen on nitrogen and cannot hydrogen-bond with each other, so among isomers they boil lowest. Small amines dissolve in water because water hydrogen-bonds to them.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s12",
+          "layout": "concept",
+          "heading": "Basic character",
+          "body_md": "$\\ce{RNH2 + H2O <=> RNH3+ + OH-}$; larger $K_b$ (smaller pKb) → stronger base. **Gas phase:** 3° > 2° > 1° > NH₃ (+I effect). **Water:** (CH₃)₂NH > CH₃NH₂ > (CH₃)₃N > NH₃ and (C₂H₅)₂NH > (C₂H₅)₃N > C₂H₅NH₂ > NH₃: a balance of **+I effect**, **solvation (H-bonding) of the cation** and **steric hindrance**.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Base",
+                "pKb"
+              ],
+              "rows": [
+                [
+                  "(C₂H₅)₂NH",
+                  "3.00"
+                ],
+                [
+                  "(C₂H₅)₃N",
+                  "3.25"
+                ],
+                [
+                  "(CH₃)₂NH",
+                  "3.27"
+                ],
+                [
+                  "C₂H₅NH₂",
+                  "3.29"
+                ],
+                [
+                  "CH₃NH₂",
+                  "3.38"
+                ],
+                [
+                  "(CH₃)₃N",
+                  "4.22"
+                ],
+                [
+                  "NH₃",
+                  "4.75"
+                ],
+                [
+                  "C₆H₅NH₂",
+                  "9.38"
+                ]
+              ]
+            },
+            "alt": "Table of pKb values of amines"
+          },
+          "math": [],
+          "narration": "Amines are bases because the nitrogen lone pair accepts a proton. Alkyl groups push electrons towards nitrogen, so in the gas phase basicity simply increases with the number of alkyl groups. In water, the ammonium ion formed is also stabilised by hydrogen bonding to water, which is best with more N–H bonds; bulky groups also hinder solvation. The balance gives the orders shown, with secondary amines usually strongest.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s13",
+          "layout": "diagram",
+          "heading": "Why aniline is a weak base",
+          "body_md": "In aniline the N lone pair is **delocalised into the ring** (resonance), so it is less available for protonation; the anilinium ion has no such resonance. Also the sp² ring carbon withdraws electrons. Aniline (pKb 9.38) is far weaker than NH₃ (4.75). **Substituents:** electron-donating groups (–CH₃, –OCH₃) at para **increase** basicity; electron-withdrawing groups (–NO₂, –Cl) **decrease** it.",
+          "bullets": [],
+          "visual": {
+            "kind": "svg",
+            "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 360 170\" role=\"img\" aria-label=\"Resonance in aniline. Left: the normal structure with a lone pair on the nitrogen of the NH2 group. Centre: the lone pair has formed a C=N double bond, giving nitrogen a positive charge and an ortho carbon a negative charge. Right: the same with the negative charge on the para carbon. Because the lone pair is partly shared with the ring, it is less available to accept a proton, so aniline is a weaker base than ammonia, and the ortho and para positions are rich in electrons.\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>Resonance in aniline. Left: the normal structure with a lone pair on the nitrogen of the NH2 group. Centre: the lone pair has formed a C=N double bond, giving nitrogen a positive charge and an ortho carbon a negative charge. Right: the same with the negative charge on the para carbon. Because the lone pair is partly shared with the ring, it is less available to accept a proton, so aniline is a weaker base than ammonia, and the ortho and para positions are rich in electrons.</title><line x1=\"60\" y1=\"72\" x2=\"84.2\" y2=\"86\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"84.2\" y1=\"86\" x2=\"84.2\" y2=\"114\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"79.9\" y1=\"91\" x2=\"79.9\" y2=\"109\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"84.2\" y1=\"114\" x2=\"60\" y2=\"128\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"60\" y1=\"128\" x2=\"35.8\" y2=\"114\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"57.8\" y1=\"121.7\" x2=\"42.3\" y2=\"112.7\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"35.8\" y1=\"114\" x2=\"35.8\" y2=\"86\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"35.8\" y1=\"86\" x2=\"60\" y2=\"72\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"42.3\" y1=\"87.3\" x2=\"57.8\" y2=\"78.3\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"60\" y1=\"72\" x2=\"60\" y2=\"48\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"60\" y=\"42\" fill=\"var(--diagram-blue)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">NH₂</text><text x=\"51\" y=\"30\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"13\">··</text><line x1=\"98\" y1=\"100\" x2=\"128\" y2=\"100\" stroke=\"currentColor\" stroke-width=\"1.5\"/><polygon points=\"132,100 127.4,102 127.4,98\" fill=\"currentColor\" stroke=\"none\"/><line x1=\"132\" y1=\"100\" x2=\"102\" y2=\"100\" stroke=\"currentColor\" stroke-width=\"1.5\"/><polygon points=\"98,100 102.6,98 102.6,102\" fill=\"currentColor\" stroke=\"none\"/><line x1=\"180\" y1=\"72\" x2=\"204.2\" y2=\"86\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"204.2\" y1=\"86\" x2=\"204.2\" y2=\"114\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"204.2\" y1=\"114\" x2=\"180\" y2=\"128\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"197.7\" y1=\"112.7\" x2=\"182.2\" y2=\"121.7\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"180\" y1=\"128\" x2=\"155.8\" y2=\"114\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"155.8\" y1=\"114\" x2=\"155.8\" y2=\"86\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"160.1\" y1=\"109\" x2=\"160.1\" y2=\"91\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"155.8\" y1=\"86\" x2=\"180\" y2=\"72\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"177.5\" y1=\"72\" x2=\"177.5\" y2=\"48\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"182.5\" y1=\"72\" x2=\"182.5\" y2=\"48\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"180\" y=\"42\" fill=\"var(--diagram-blue)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">NH₂⁺</text><text x=\"210.2\" y=\"88\" fill=\"var(--diagram-red)\" stroke=\"none\" font-size=\"14\" font-weight=\"bold\">−</text><line x1=\"218\" y1=\"100\" x2=\"248\" y2=\"100\" stroke=\"currentColor\" stroke-width=\"1.5\"/><polygon points=\"252,100 247.4,102 247.4,98\" fill=\"currentColor\" stroke=\"none\"/><line x1=\"252\" y1=\"100\" x2=\"222\" y2=\"100\" stroke=\"currentColor\" stroke-width=\"1.5\"/><polygon points=\"218,100 222.6,98 222.6,102\" fill=\"currentColor\" stroke=\"none\"/><line x1=\"300\" y1=\"72\" x2=\"324.2\" y2=\"86\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"324.2\" y1=\"86\" x2=\"324.2\" y2=\"114\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"319.9\" y1=\"91\" x2=\"319.9\" y2=\"109\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"324.2\" y1=\"114\" x2=\"300\" y2=\"128\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"300\" y1=\"128\" x2=\"275.8\" y2=\"114\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"275.8\" y1=\"114\" x2=\"275.8\" y2=\"86\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"280.1\" y1=\"109\" x2=\"280.1\" y2=\"91\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"275.8\" y1=\"86\" x2=\"300\" y2=\"72\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"297.5\" y1=\"72\" x2=\"297.5\" y2=\"48\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"302.5\" y1=\"72\" x2=\"302.5\" y2=\"48\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"300\" y=\"42\" fill=\"var(--diagram-blue)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">NH₂⁺</text><text x=\"300\" y=\"146\" fill=\"var(--diagram-red)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"bold\">−</text><text x=\"60\" y=\"160\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">lone pair on N</text><text x=\"180\" y=\"160\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">charge at ortho C</text><text x=\"300\" y=\"160\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">charge at para C</text></svg>",
+            "alt": "Three resonance structures of aniline showing the nitrogen lone pair delocalised into the ring, with negative charge at the ortho and para carbons"
+          },
+          "math": [],
+          "narration": "In aniline the nitrogen lone pair spreads into the benzene ring, as these resonance structures show, so it is much less available to accept a proton. Protonating aniline destroys this extra stability, so aniline is a much weaker base than ammonia or alkyl amines. Groups that push electrons into the ring, like methyl, make it slightly stronger; groups that pull electrons, like nitro, make it weaker still.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s14",
+          "layout": "example",
+          "heading": "Worked example: ranking basicity",
+          "body_md": "**Problem.** Arrange in increasing basic strength: aniline, 4-nitroaniline, 4-methylaniline, benzylamine (C₆H₅CH₂NH₂), ammonia. (pKb: 9.38, 13.0, 8.92, 4.70, 4.75)\n\n**Step 1.** 4-Nitroaniline: –NO₂ withdraws electrons and extends delocalisation — weakest.\n\n**Step 2.** Aniline < 4-methylaniline (+I of CH₃).\n\n**Step 3.** Benzylamine: N on an sp³ CH₂, no delocalisation — about as strong as NH₃ (slightly stronger).\n\n**Order:** 4-nitroaniline < aniline < 4-methylaniline < ammonia < benzylamine.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Base",
+                "pKb",
+                "Reason"
+              ],
+              "rows": [
+                [
+                  "4-Nitroaniline",
+                  "13.0",
+                  "−R, −I of NO₂"
+                ],
+                [
+                  "Aniline",
+                  "9.38",
+                  "Lone pair delocalised"
+                ],
+                [
+                  "4-Methylaniline",
+                  "8.92",
+                  "+I of CH₃"
+                ],
+                [
+                  "Ammonia",
+                  "4.75",
+                  "Reference"
+                ],
+                [
+                  "Benzylamine",
+                  "4.70",
+                  "No delocalisation"
+                ]
+              ]
+            },
+            "alt": "Table ranking five bases"
+          },
+          "math": [],
+          "narration": "Rank by how available the nitrogen lone pair is. In four-nitroaniline the nitro group pulls the lone pair even further into the ring, so it is the weakest base. A methyl group pushes electrons in and makes four-methylaniline slightly stronger than aniline. In benzylamine the nitrogen is attached to a CH two group, not to the ring, so its lone pair is not delocalised and it behaves like an alkyl amine.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s15",
+          "layout": "check",
+          "heading": "Quick check: basicity",
+          "body_md": "Choose the stronger or weaker base.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Consider the inductive effect, solvation, steric hindrance and delocalisation into a ring.",
+          "check_question_id": "q_isc12chem_ch19_025",
+          "audio": null
+        },
+        {
+          "id": "s16",
+          "layout": "summary",
+          "heading": "Summary: Part 1",
+          "body_md": "",
+          "bullets": [
+            "1° RNH₂, 2° R₂NH, 3° R₃N; IUPAC -amine with N-prefixes; N sp³, pyramidal, lone pair.",
+            "Preparation: ROH + NH₃ (Al₂O₃); RX + NH₃; RCN reduction (+1 C); Hofmann (−1 C); nitro reduction; Gabriel (pure 1°).",
+            "B.p.: 1° > 2° > 3°; amines < alcohols (weaker N–H···N).",
+            "Basicity in water: 2° > 1° ≈ 3° > NH₃ (inductive, solvation, steric); aniline ≪ NH₃ (delocalisation).",
+            "EDG increase, EWG decrease basicity of aniline."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Method",
+                "Carbon change"
+              ],
+              "rows": [
+                [
+                  "Nitrile reduction",
+                  "+1"
+                ],
+                [
+                  "Hofmann",
+                  "−1"
+                ],
+                [
+                  "Gabriel",
+                  "0 (pure 1°)"
+                ]
+              ]
+            },
+            "alt": "Summary table of preparations"
+          },
+          "math": [],
+          "narration": "Let us sum up Part 1. Amines are primary, secondary or tertiary according to the groups on nitrogen, which carries a lone pair. They are made from alcohols, alkyl halides, nitriles, amides and nitro compounds, and by the Gabriel synthesis. Their hydrogen bonds are weaker than those of alcohols. Alkyl amines are stronger bases than ammonia, while aniline is much weaker because its lone pair is delocalised.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s17",
+          "layout": "exam-tips",
+          "heading": "Exam tips: Part 1",
+          "body_md": "",
+          "bullets": [
+            "Classify amines by groups on N (butan-2-amine is 1°).",
+            "State the carbon change for Hofmann and nitrile reduction.",
+            "In basicity answers, mention +I effect, solvation and steric hindrance.",
+            "Explain aniline’s weak basicity with resonance."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Slip",
+                "Fix"
+              ],
+              "rows": [
+                [
+                  "(CH₃)₃N strongest base in water",
+                  "(CH₃)₂NH strongest"
+                ],
+                [
+                  "Gabriel makes aniline",
+                  "Cannot (aryl halides inert)"
+                ],
+                [
+                  "Amines boil higher than alcohols",
+                  "Lower"
+                ]
+              ]
+            },
+            "alt": "Table of three common slips in Part 1 and fixes"
+          },
+          "math": [],
+          "narration": "Some tips. Classify amines by counting groups on nitrogen. Say whether a preparation adds or removes a carbon. In basicity questions, discuss the inductive effect, solvation and steric hindrance together. And explain the weakness of aniline as a base by resonance.",
+          "check_question_id": null,
+          "audio": null
+        }
+      ],
+      "status": "draft",
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "unit": "isc-12-chemistry-ch19",
+      "part": 2,
+      "version": 1,
+      "title": "Amines — Part 2: Reactions, tests and aniline",
+      "language": "en",
+      "goals": [
+        "Write alkylation and acylation reactions with mechanisms",
+        "Use nitrous acid, the carbylamine reaction and Hinsberg’s test to distinguish 1°, 2° and 3° amines",
+        "Write the preparation and reactions of aniline, including electrophilic substitution, and explain why it is acetylated before nitration"
+      ],
+      "slides": [
+        {
+          "id": "s01",
+          "layout": "title",
+          "heading": "Reactions of amines",
+          "body_md": "Part 2 — the lone pair at work: nucleophilic reactions, tests and the chemistry of aniline.",
+          "bullets": [],
+          "visual": {
+            "kind": "flow",
+            "spec": {
+              "direction": "LR",
+              "nodes": [
+                {
+                  "id": "a",
+                  "label": "N lone pair"
+                },
+                {
+                  "id": "b",
+                  "label": "Nucleophile: alkylation, acylation, sulphonylation"
+                },
+                {
+                  "id": "c",
+                  "label": "Tests: HNO₂, carbylamine, Hinsberg"
+                },
+                {
+                  "id": "d",
+                  "label": "Aniline: ring substitution"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "a",
+                  "to": "b"
+                },
+                {
+                  "from": "b",
+                  "to": "c"
+                },
+                {
+                  "from": "c",
+                  "to": "d"
+                }
+              ]
+            },
+            "alt": "Flow of the topics in Part 2"
+          },
+          "math": [],
+          "narration": "The lone pair on nitrogen makes amines nucleophiles as well as bases. They attack alkyl halides, acid chlorides and sulphonyl chlorides. Differences in how primary, secondary and tertiary amines react give us useful tests. Finally, in aniline, the amino group powerfully activates the benzene ring, which explains its distinctive chemistry.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s02",
+          "layout": "concept",
+          "heading": "Alkylation with mechanism",
+          "body_md": "The N lone pair attacks the carbon of an alkyl halide (**SN2**), displacing X⁻; loss of H⁺ gives the next amine. Repeated alkylation leads to 2°, 3° amines and finally a **quaternary ammonium salt**.",
+          "bullets": [],
+          "visual": {
+            "kind": "flow",
+            "spec": {
+              "direction": "LR",
+              "nodes": [
+                {
+                  "id": "a",
+                  "label": "RNH₂ (lone pair)"
+                },
+                {
+                  "id": "b",
+                  "label": "Attacks R′–X (SN2)"
+                },
+                {
+                  "id": "c",
+                  "label": "RNH₂R′⁺ X⁻"
+                },
+                {
+                  "id": "d",
+                  "label": "Lose H⁺ → RNHR′"
+                },
+                {
+                  "id": "e",
+                  "label": "… → R₄N⁺X⁻"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "a",
+                  "to": "b"
+                },
+                {
+                  "from": "b",
+                  "to": "c"
+                },
+                {
+                  "from": "c",
+                  "to": "d"
+                },
+                {
+                  "from": "d",
+                  "to": "e"
+                }
+              ]
+            },
+            "alt": "Flow of the alkylation mechanism"
+          },
+          "math": [
+            "\\ce{CH3CH2NH2 + CH3I -> CH3CH2NHCH3 + HI}",
+            "\\ce{(CH3)3N + CH3I -> (CH3)4N+I-}"
+          ],
+          "narration": "In alkylation the nitrogen lone pair attacks the carbon of an alkyl halide from the back, pushing out the halide ion. The ammonium ion formed loses a proton to give an amine with one more alkyl group, which can react again. With excess alkyl halide the reaction continues until a quaternary ammonium salt forms, with four groups on a positively charged nitrogen.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s03",
+          "layout": "concept",
+          "heading": "Acylation with mechanism",
+          "body_md": "1° and 2° amines react with **acid chlorides**, **anhydrides** or esters to give **amides** (nucleophilic acyl substitution): the N lone pair adds to the C=O carbon, then Cl⁻ is lost and H⁺ removed (pyridine takes up HCl). 3° amines (no N–H) are not acylated. **Benzoylation** with C₆H₅COCl (Schotten–Baumann, in NaOH) gives benzamides.",
+          "bullets": [],
+          "visual": {
+            "kind": "flow",
+            "spec": {
+              "direction": "LR",
+              "nodes": [
+                {
+                  "id": "a",
+                  "label": "RNH₂ attacks C=O of CH₃COCl"
+                },
+                {
+                  "id": "b",
+                  "label": "Tetrahedral intermediate"
+                },
+                {
+                  "id": "c",
+                  "label": "Cl⁻ leaves"
+                },
+                {
+                  "id": "d",
+                  "label": "Lose H⁺ → amide"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "a",
+                  "to": "b"
+                },
+                {
+                  "from": "b",
+                  "to": "c"
+                },
+                {
+                  "from": "c",
+                  "to": "d"
+                }
+              ]
+            },
+            "alt": "Flow of the acylation mechanism"
+          },
+          "math": [
+            "\\ce{CH3CH2NH2 + CH3COCl -> CH3CH2NHCOCH3 + HCl}",
+            "\\ce{C6H5NH2 + C6H5COCl -> C6H5NHCOC6H5 + HCl}"
+          ],
+          "narration": "In acylation the amine attacks the carbonyl carbon of an acid chloride, forming a tetrahedral intermediate. The chloride ion leaves, re-forming the carbonyl group, and a proton is lost from nitrogen, giving an amide. A base such as pyridine removes the hydrogen chloride. Tertiary amines have no hydrogen on nitrogen to lose, so they do not form amides.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s04",
+          "layout": "example",
+          "heading": "Worked example: alkylation and acylation products",
+          "body_md": "**Problem.** Give the products: (a) N-methylethanamine + excess CH₃I; (b) propan-1-amine + ethanoyl chloride; (c) aniline + ethanoic anhydride; (d) triethylamine + ethanoyl chloride.\n\n**(a)** Ethyltrimethylammonium iodide, $\\ce{C2H5N(CH3)3+I-}$.\n\n**(b)** N-Propylethanamide, $\\ce{CH3CONHCH2CH2CH3}$.\n\n**(c)** Acetanilide (N-phenylethanamide).\n\n**(d)** No amide (3° amine has no N–H).",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Reactants",
+                "Product"
+              ],
+              "rows": [
+                [
+                  "2° amine + excess CH₃I",
+                  "Quaternary salt"
+                ],
+                [
+                  "1° amine + CH₃COCl",
+                  "N-Alkylethanamide"
+                ],
+                [
+                  "Aniline + (CH₃CO)₂O",
+                  "Acetanilide"
+                ],
+                [
+                  "3° amine + CH₃COCl",
+                  "No amide"
+                ]
+              ]
+            },
+            "alt": "Table of products"
+          },
+          "math": [],
+          "narration": "With excess iodomethane, the secondary amine is alkylated twice, giving a quaternary ammonium iodide. Primary amines and aniline are acylated to amides, propan-one-amine giving N-propylethanamide and aniline giving acetanilide. Triethylamine has no hydrogen on nitrogen, so it cannot form an amide.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s05",
+          "layout": "check",
+          "heading": "Quick check: alkylation and acylation",
+          "body_md": "Predict the product of an amine with an alkyl halide or acid chloride.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Excess alkyl halide gives a quaternary salt; only amines with an N–H form amides.",
+          "check_question_id": "q_isc12chem_ch19_036",
+          "audio": null
+        },
+        {
+          "id": "s06",
+          "layout": "concept",
+          "heading": "Nitrous acid and the carbylamine reaction",
+          "body_md": "HNO₂ (NaNO₂ + HCl): **1° aliphatic** → alcohol + **N₂ gas**; **1° aromatic** (273–278 K) → **diazonium salt**; **2°** → yellow oily **N-nitrosamine**; **3° aliphatic** → soluble salt (no visible change). **Carbylamine test:** only **1° amines** (aliphatic and aromatic) + CHCl₃ + alcoholic KOH → foul-smelling **isocyanide**.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Amine",
+                "HNO₂",
+                "Carbylamine"
+              ],
+              "rows": [
+                [
+                  "1° aliphatic",
+                  "N₂ bubbles; alcohol",
+                  "Foul smell"
+                ],
+                [
+                  "1° aromatic (cold)",
+                  "Diazonium salt",
+                  "Foul smell"
+                ],
+                [
+                  "2°",
+                  "Yellow oil (nitrosamine)",
+                  "No"
+                ],
+                [
+                  "3°",
+                  "No visible change",
+                  "No"
+                ]
+              ]
+            },
+            "alt": "Table of nitrous acid and carbylamine results"
+          },
+          "math": [
+            "\\ce{CH3CH2NH2 + HNO2 -> CH3CH2OH + N2 + H2O}",
+            "\\ce{(CH3)2NH + HNO2 -> (CH3)2NN=O + H2O}",
+            "\\ce{C6H5NH2 + CHCl3 + 3KOH -> C6H5NC + 3KCl + 3H2O}"
+          ],
+          "narration": "Nitrous acid, made in the cold from sodium nitrite and hydrochloric acid, reacts differently with each class. Primary aliphatic amines release nitrogen gas and give alcohols; aniline gives a diazonium salt in the cold. Secondary amines give yellow oily nitrosamines. Tertiary aliphatic amines simply form salts. The carbylamine test, with chloroform and alcoholic potassium hydroxide, gives a foul smell only with primary amines.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s07",
+          "layout": "concept",
+          "heading": "Hinsberg’s test",
+          "body_md": "Shake the amine with **benzenesulphonyl chloride** (C₆H₅SO₂Cl, Hinsberg’s reagent) and aqueous KOH. **1°:** sulphonamide C₆H₅SO₂NHR has an **acidic N–H** → **dissolves in KOH** (reprecipitates with acid). **2°:** C₆H₅SO₂NR₂ (no N–H) → **insoluble** in KOH. **3°:** **no reaction**.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Amine",
+                "Product with C₆H₅SO₂Cl",
+                "In KOH"
+              ],
+              "rows": [
+                [
+                  "1°",
+                  "N-Alkylsulphonamide",
+                  "Dissolves"
+                ],
+                [
+                  "2°",
+                  "N,N-Dialkylsulphonamide",
+                  "Insoluble"
+                ],
+                [
+                  "3°",
+                  "No reaction",
+                  "—"
+                ]
+              ]
+            },
+            "alt": "Table of Hinsberg results"
+          },
+          "math": [
+            "\\ce{C6H5SO2Cl + CH3CH2NH2 -> C6H5SO2NHCH2CH3 + HCl}",
+            "\\ce{C6H5SO2Cl + (CH3CH2)2NH -> C6H5SO2N(CH2CH3)2 + HCl}"
+          ],
+          "narration": "In Hinsberg’s test, benzenesulphonyl chloride reacts with primary and secondary amines to form sulphonamides. The product from a primary amine still has a hydrogen on nitrogen, made acidic by the sulphonyl group, so it dissolves in potassium hydroxide. The product from a secondary amine has no such hydrogen and stays insoluble. Tertiary amines do not react at all.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s08",
+          "layout": "example",
+          "heading": "Worked example: identifying amines",
+          "body_md": "**Problem.** Three isomers C₄H₁₁N: P gives N₂ with HNO₂; Q gives a yellow oil with HNO₂ and an alkali-insoluble Hinsberg product; R does not react with C₆H₅SO₂Cl. Suggest structures.\n\n**P:** a 1° aliphatic amine, e.g. butan-1-amine.\n\n**Q:** a 2° amine, e.g. N-ethylethanamine (diethylamine).\n\n**R:** a 3° amine, e.g. N,N-dimethylethanamine.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Compound",
+                "Evidence",
+                "Class"
+              ],
+              "rows": [
+                [
+                  "P",
+                  "N₂ with HNO₂",
+                  "1°"
+                ],
+                [
+                  "Q",
+                  "Yellow oil; Hinsberg product insoluble in KOH",
+                  "2°"
+                ],
+                [
+                  "R",
+                  "No Hinsberg reaction",
+                  "3°"
+                ]
+              ]
+            },
+            "alt": "Table of deductions"
+          },
+          "math": [],
+          "narration": "Use the tests in turn. Nitrogen gas with nitrous acid shows a primary aliphatic amine, so P could be butan-one-amine. A yellow oil and an alkali-insoluble sulphonamide show a secondary amine, such as diethylamine. No reaction with benzenesulphonyl chloride shows a tertiary amine, such as N,N-dimethylethanamine. All three have the formula C four H eleven N.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s09",
+          "layout": "check",
+          "heading": "Quick check: tests",
+          "body_md": "Use nitrous acid, the carbylamine test or Hinsberg’s test to classify an amine.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Only primary amines give the carbylamine smell; secondary amines give alkali-insoluble Hinsberg products.",
+          "check_question_id": "q_isc12chem_ch19_038",
+          "audio": null
+        },
+        {
+          "id": "s10",
+          "layout": "concept",
+          "heading": "Aniline: preparation and reactions of –NH₂",
+          "body_md": "**Preparation:** nitrobenzene + **Sn (or Fe) and conc. HCl** → anilinium chloride; NaOH liberates aniline (steam distilled). Industrially Fe/HCl or H₂/Ni. **–NH₂ reactions:** salts with acids (C₆H₅NH₃⁺Cl⁻); acetylation → acetanilide; benzoylation → benzanilide; alkylation → N-methylaniline etc.; carbylamine → phenyl isocyanide; **diazotisation** (NaNO₂/HCl, 273–278 K) → benzenediazonium chloride.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Reagent",
+                "Product"
+              ],
+              "rows": [
+                [
+                  "HCl",
+                  "Anilinium chloride"
+                ],
+                [
+                  "(CH₃CO)₂O",
+                  "Acetanilide"
+                ],
+                [
+                  "C₆H₅COCl/NaOH",
+                  "Benzanilide"
+                ],
+                [
+                  "CH₃I",
+                  "N-Methylaniline (→ further)"
+                ],
+                [
+                  "NaNO₂/HCl, cold",
+                  "Benzenediazonium chloride"
+                ]
+              ]
+            },
+            "alt": "Table of reactions of the amino group of aniline"
+          },
+          "math": [
+            "\\ce{C6H5NO2 + 3Sn + 7HCl -> C6H5NH3Cl + 3SnCl2 + 2H2O}",
+            "\\ce{C6H5NH3Cl + NaOH -> C6H5NH2 + NaCl + H2O}",
+            "\\ce{C6H5NH2 + NaNO2 + 2HCl ->[273-278 K] C6H5N2Cl + NaCl + 2H2O}"
+          ],
+          "narration": "Aniline is made by reducing nitrobenzene with tin or iron and hydrochloric acid, which gives anilinium chloride; adding sodium hydroxide releases aniline, which is separated by steam distillation. Its amino group forms salts with acids, is acetylated and benzoylated to amides, is alkylated, gives the carbylamine test, and in the cold with nitrous acid forms benzenediazonium chloride.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s11",
+          "layout": "concept",
+          "heading": "Electrophilic substitution in aniline",
+          "body_md": "–NH₂ strongly **activates** the ring (o/p). **Bromine water** → white ppt of **2,4,6-tribromoaniline** at once. **Nitration:** direct nitration oxidises aniline and, in acid, the **anilinium ion** (meta director) forms, giving much meta product; so –NH₂ is first **acetylated** (moderates activation, protects from oxidation) → nitrate → **4-nitroacetanilide** → hydrolyse → **4-nitroaniline**. **Sulphonation** → **sulphanilic acid** (zwitter ion). No Friedel–Crafts (–NH₂ binds AlCl₃).",
+          "bullets": [],
+          "visual": {
+            "kind": "flow",
+            "spec": {
+              "direction": "LR",
+              "nodes": [
+                {
+                  "id": "a",
+                  "label": "Aniline"
+                },
+                {
+                  "id": "b",
+                  "label": "Acetanilide ((CH₃CO)₂O)"
+                },
+                {
+                  "id": "c",
+                  "label": "4-Nitroacetanilide (HNO₃/H₂SO₄)"
+                },
+                {
+                  "id": "d",
+                  "label": "4-Nitroaniline (hydrolysis)"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "a",
+                  "to": "b"
+                },
+                {
+                  "from": "b",
+                  "to": "c"
+                },
+                {
+                  "from": "c",
+                  "to": "d"
+                }
+              ]
+            },
+            "alt": "Flow of controlled nitration of aniline"
+          },
+          "math": [
+            "\\ce{C6H5NH2 + 3Br2 -> C6H2Br3NH2 + 3HBr}",
+            "\\ce{C6H5NH2 + (CH3CO)2O -> C6H5NHCOCH3 + CH3COOH}"
+          ],
+          "narration": "The amino group makes the ring so reactive that bromine water gives tribromoaniline immediately. For controlled substitution, the amino group is first acetylated: the acetyl group draws the nitrogen lone pair partly away from the ring, so only one group goes in, mainly para, and the ring is protected from oxidation. Hydrolysis then restores the amino group. Sulphonation gives sulphanilic acid, which exists as a zwitter ion.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s12",
+          "layout": "example",
+          "heading": "Worked example: making 4-bromoaniline",
+          "body_md": "**Problem.** Show how aniline can be converted into 4-bromoaniline, and explain why aniline is not simply treated with bromine water.\n\n**Step 1.** Acetylate: aniline + (CH₃CO)₂O → acetanilide.\n\n**Step 2.** Brominate: Br₂ in ethanoic acid → 4-bromoacetanilide (mainly para).\n\n**Step 3.** Hydrolyse (H⁺ or OH⁻, heat) → 4-bromoaniline.\n\n**Reason:** with bromine water the strongly activated ring gives 2,4,6-tribromoaniline immediately.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Step",
+                "Product"
+              ],
+              "rows": [
+                [
+                  "Acetylation",
+                  "Acetanilide"
+                ],
+                [
+                  "Bromination",
+                  "4-Bromoacetanilide"
+                ],
+                [
+                  "Hydrolysis",
+                  "4-Bromoaniline"
+                ]
+              ]
+            },
+            "alt": "Table of the three steps"
+          },
+          "math": [],
+          "narration": "Bromine water would substitute all three activated positions at once. Acetylating the amino group reduces its activating power, so bromination stops at a single bromine, mainly at the para position because the acetamido group is bulky. Hydrolysing the amide then gives back the free amino group in four-bromoaniline.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s13",
+          "layout": "concept",
+          "heading": "Tests for aniline and uses",
+          "body_md": "**Tests:** carbylamine (foul smell); **azo dye test** — diazotise in the cold, add alkaline 2-naphthol: **orange-red dye**; bleaching powder solution → violet colour; bromine water → white ppt. **Uses:** dyes (azo dyes), drugs (sulpha drugs, paracetamol intermediates), rubber accelerators, polyurethanes.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Test",
+                "Aniline",
+                "Ethanamine"
+              ],
+              "rows": [
+                [
+                  "Diazotise (cold) + alkaline 2-naphthol",
+                  "Orange-red dye",
+                  "No dye (N₂ evolved)"
+                ],
+                [
+                  "Bromine water",
+                  "White ppt",
+                  "No ppt"
+                ],
+                [
+                  "Carbylamine",
+                  "Foul smell",
+                  "Foul smell"
+                ],
+                [
+                  "Bleaching powder",
+                  "Violet colour",
+                  "No colour"
+                ]
+              ]
+            },
+            "alt": "Table of tests distinguishing aniline from ethanamine"
+          },
+          "math": [],
+          "narration": "Aniline and ethanamine are both primary amines, so both give the carbylamine test. To tell them apart, diazotise in the cold and add alkaline two-naphthol: aniline gives an orange-red azo dye, while ethanamine just releases nitrogen. Aniline also gives a white precipitate with bromine water and a violet colour with bleaching powder. Aniline is used to make dyes, drugs and rubber chemicals.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s14",
+          "layout": "check",
+          "heading": "Quick check: aniline",
+          "body_md": "Predict a product or test result for aniline.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Bromine water gives the tribromo product; acetylation controls substitution; aromatic diazonium salts form in the cold.",
+          "check_question_id": "q_isc12chem_ch19_050",
+          "audio": null
+        },
+        {
+          "id": "s15",
+          "layout": "summary",
+          "heading": "Summary: Part 2",
+          "body_md": "",
+          "bullets": [
+            "Alkylation (SN2) → 2°, 3°, quaternary salts; acylation (addition–elimination) → amides (1°, 2° only).",
+            "HNO₂: 1° aliphatic → ROH + N₂; aniline → diazonium (cold); 2° → yellow nitrosamine; 3° → salt.",
+            "Carbylamine: 1° only; Hinsberg: 1° product soluble in KOH, 2° insoluble, 3° no reaction.",
+            "Aniline: from C₆H₅NO₂ (Sn/HCl, then NaOH); Br₂(aq) → tribromoaniline; acetylate before nitration; sulphanilic acid.",
+            "Azo dye test (2-naphthol) distinguishes aniline from aliphatic amines."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Test",
+                "1°",
+                "2°",
+                "3°"
+              ],
+              "rows": [
+                [
+                  "Carbylamine",
+                  "+",
+                  "−",
+                  "−"
+                ],
+                [
+                  "Hinsberg product in KOH",
+                  "Soluble",
+                  "Insoluble",
+                  "No reaction"
+                ],
+                [
+                  "HNO₂ (aliphatic)",
+                  "N₂",
+                  "Yellow oil",
+                  "Salt"
+                ]
+              ]
+            },
+            "alt": "Summary table of amine tests"
+          },
+          "math": [],
+          "narration": "Let us sum up Part 2. Amines are alkylated to higher amines and quaternary salts, and primary and secondary amines are acylated to amides. Nitrous acid, the carbylamine reaction and Hinsberg’s test distinguish primary, secondary and tertiary amines. Aniline is made from nitrobenzene; its strongly activated ring is brominated at once, so it is acetylated before controlled substitution.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s16",
+          "layout": "exam-tips",
+          "heading": "Exam tips: Part 2",
+          "body_md": "",
+          "bullets": [
+            "For Hinsberg, explain why the 1° sulphonamide dissolves in KOH (acidic N–H).",
+            "State temperature 273–278 K for diazotising aniline.",
+            "Give two reasons for acetylating aniline before nitration.",
+            "Carbylamine works for 1° aromatic and aliphatic amines."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Slip",
+                "Fix"
+              ],
+              "rows": [
+                [
+                  "2° amines give carbylamine",
+                  "Only 1°"
+                ],
+                [
+                  "Nitration of aniline gives only para",
+                  "Much meta (anilinium) unless protected"
+                ],
+                [
+                  "3° amines form amides",
+                  "No N–H: no amide"
+                ]
+              ]
+            },
+            "alt": "Table of three common slips in Part 2 and fixes"
+          },
+          "math": [],
+          "narration": "Final tips. In the Hinsberg test, explain the solubility using the acidic hydrogen on nitrogen. Give the temperature for diazotisation. When asked why aniline is acetylated before nitration, mention both protection from oxidation and control of the substitution. And remember the carbylamine test is given only by primary amines.",
+          "check_question_id": null,
+          "audio": null
+        }
+      ],
+      "status": "draft",
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    }
+  ],
+  "notes": {
+    "unit": "isc-12-chemistry-ch19",
+    "version": 1,
+    "title": "Amines — Notes",
+    "language": "en",
+    "sections": [
+      {
+        "heading": "1. Classification, structure and nomenclature",
+        "body_md": "1° RNH₂, 2° R₂NH, 3° R₃N (count groups on **N**); R₄N⁺X⁻ quaternary salts; general formula CₙH₂ₙ₊₃N. N **sp³**, pyramidal (C–N–C ≈ 108°), **lone pair** → basic and nucleophilic. IUPAC: alkanamine with N-prefixes (N,N-diethylethanamine; hexane-1,6-diamine); aniline = benzenamine.",
+        "key_terms": [
+          {
+            "term": "Primary amine",
+            "definition_md": "An amine with one carbon group on nitrogen, RNH₂."
+          },
+          {
+            "term": "Quaternary ammonium salt",
+            "definition_md": "R₄N⁺X⁻, nitrogen bonded to four carbon groups."
+          }
+        ],
+        "formulas": [],
+        "visual": {
+          "kind": "svg",
+          "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 170\" role=\"img\" aria-label=\"The nitrogen atom of an amine is sp³ hybridised and pyramidal. Three groups (here three methyl groups) are bonded to nitrogen and a lone pair occupies the fourth position, at the top. The C–N–C angle is about 108 degrees, a little less than the tetrahedral angle because the lone pair repels the bonds.\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>The nitrogen atom of an amine is sp³ hybridised and pyramidal. Three groups (here three methyl groups) are bonded to nitrogen and a lone pair occupies the fourth position, at the top. The C–N–C angle is about 108 degrees, a little less than the tetrahedral angle because the lone pair repels the bonds.</title><circle cx=\"160\" cy=\"80\" r=\"15\" fill=\"var(--diagram-blue)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"160\" y=\"84\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\">N</text><ellipse cx=\"160\" cy=\"40\" rx=\"10\" ry=\"18\" fill=\"var(--diagram-accent)\" stroke=\"var(--diagram-accent)\" stroke-width=\"1\" fill-opacity=\"0.35\"/><text x=\"160\" y=\"44\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"13\">··</text><text x=\"184\" y=\"30\" fill=\"var(--diagram-accent)\" stroke=\"none\" font-size=\"10\">lone pair</text><line x1=\"150\" y1=\"92\" x2=\"100\" y2=\"128\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"170\" y1=\"92\" x2=\"220\" y2=\"128\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"160\" y1=\"95\" x2=\"160\" y2=\"140\" stroke=\"currentColor\" stroke-width=\"2\" stroke-dasharray=\"4 3\"/><circle cx=\"92\" cy=\"134\" r=\"16\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"92\" y=\"138\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">CH₃</text><circle cx=\"228\" cy=\"134\" r=\"16\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"228\" y=\"138\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">CH₃</text><circle cx=\"160\" cy=\"148\" r=\"16\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"160\" y=\"152\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">CH₃</text><path d=\"M128 112 Q160 124 192 112\" fill=\"none\" stroke=\"var(--diagram-accent)\" stroke-width=\"1\"/><text x=\"160\" y=\"116\" fill=\"var(--diagram-accent)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">108°</text><text x=\"40\" y=\"70\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">pyramidal</text><text x=\"40\" y=\"84\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">sp³ nitrogen</text></svg>",
+          "alt": "Pyramidal trimethylamine with an sp³ nitrogen, a lone pair at the top and a C–N–C angle of about 108 degrees"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "isc-12-chemistry-ch19-t01"
+        ]
+      },
+      {
+        "heading": "2. Preparation",
+        "body_md": "- ROH + NH₃ (Al₂O₃, 633 K) → mixture of amines.\n- RX + alcoholic NH₃ (sealed tube) → mixture; excess NH₃ favours 1°.\n- **Nitriles:** H₂/Ni, LiAlH₄ or Na/ethanol → RCH₂NH₂ (+1 C).\n- **Hofmann:** $\\ce{RCONH2 + Br2 + 4KOH -> RNH2 + K2CO3 + 2KBr + 2H2O}$ (−1 C).\n- **Nitro compounds:** Sn/HCl or Fe/HCl, then NaOH; H₂/Ni.\n- **Gabriel:** potassium phthalimide + RX → hydrolysis → pure RNH₂ (not aryl amines).",
+        "key_terms": [
+          {
+            "term": "Gabriel synthesis",
+            "definition_md": "Preparation of pure primary amines from potassium phthalimide and an alkyl halide."
+          },
+          {
+            "term": "Hofmann degradation",
+            "definition_md": "Conversion of an amide into a primary amine with one carbon fewer using Br₂ and KOH."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\ce{C6H5NO2 + 3H2 ->[Ni] C6H5NH2 + 2H2O}",
+            "label": "Reduction of nitrobenzene"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Method",
+              "Carbon change"
+            ],
+            "rows": [
+              [
+                "Nitrile reduction",
+                "+1"
+              ],
+              [
+                "Hofmann",
+                "−1"
+              ],
+              [
+                "Gabriel",
+                "0"
+              ]
+            ]
+          },
+          "alt": "Table of preparations"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "isc-12-chemistry-ch19-t02"
+        ]
+      },
+      {
+        "heading": "3. Physical properties",
+        "body_md": "Lower amines: gases/volatile liquids, fishy smell; aniline darkens in air. 1° and 2° amines form N–H···N hydrogen bonds — **weaker than O–H···O**, so amines boil lower than alcohols of similar mass. Isomers: **1° > 2° > 3°** (3° has no N–H). Lower amines water-soluble.",
+        "key_terms": [
+          {
+            "term": "N–H···N hydrogen bond",
+            "definition_md": "Hydrogen bond between amine molecules; weaker than O–H···O."
+          }
+        ],
+        "formulas": [],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "C₃H₉N isomer",
+              "b.p. / K"
+            ],
+            "rows": [
+              [
+                "(CH₃)₃N",
+                "276"
+              ],
+              [
+                "CH₃NHC₂H₅",
+                "310"
+              ],
+              [
+                "CH₃CH₂CH₂NH₂",
+                "321"
+              ]
+            ]
+          },
+          "alt": "Table of boiling points of amine isomers"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "isc-12-chemistry-ch19-t03"
+        ]
+      },
+      {
+        "heading": "4. Basicity",
+        "body_md": "$\\ce{RNH2 + H2O <=> RNH3+ + OH-}$; smaller pKb → stronger base. **Gas:** 3° > 2° > 1° > NH₃ (+I). **Water:** (CH₃)₂NH > CH₃NH₂ > (CH₃)₃N > NH₃; (C₂H₅)₂NH > (C₂H₅)₃N > C₂H₅NH₂ > NH₃ — +I effect, **solvation** of the cation (more N–H better) and **steric** hindrance.\n\n**Aniline** (pKb 9.38) ≪ NH₃ (4.75): lone pair delocalised into the ring. EDG (–CH₃, –OCH₃) increase, EWG (–NO₂, –Cl) decrease basicity. Benzylamine (N on CH₂) ≈ alkyl amines.",
+        "key_terms": [
+          {
+            "term": "pKb",
+            "definition_md": "−log Kb; a smaller pKb means a stronger base."
+          }
+        ],
+        "formulas": [],
+        "visual": {
+          "kind": "svg",
+          "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 360 170\" role=\"img\" aria-label=\"Resonance in aniline. Left: the normal structure with a lone pair on the nitrogen of the NH2 group. Centre: the lone pair has formed a C=N double bond, giving nitrogen a positive charge and an ortho carbon a negative charge. Right: the same with the negative charge on the para carbon. Because the lone pair is partly shared with the ring, it is less available to accept a proton, so aniline is a weaker base than ammonia, and the ortho and para positions are rich in electrons.\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>Resonance in aniline. Left: the normal structure with a lone pair on the nitrogen of the NH2 group. Centre: the lone pair has formed a C=N double bond, giving nitrogen a positive charge and an ortho carbon a negative charge. Right: the same with the negative charge on the para carbon. Because the lone pair is partly shared with the ring, it is less available to accept a proton, so aniline is a weaker base than ammonia, and the ortho and para positions are rich in electrons.</title><line x1=\"60\" y1=\"72\" x2=\"84.2\" y2=\"86\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"84.2\" y1=\"86\" x2=\"84.2\" y2=\"114\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"79.9\" y1=\"91\" x2=\"79.9\" y2=\"109\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"84.2\" y1=\"114\" x2=\"60\" y2=\"128\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"60\" y1=\"128\" x2=\"35.8\" y2=\"114\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"57.8\" y1=\"121.7\" x2=\"42.3\" y2=\"112.7\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"35.8\" y1=\"114\" x2=\"35.8\" y2=\"86\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"35.8\" y1=\"86\" x2=\"60\" y2=\"72\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"42.3\" y1=\"87.3\" x2=\"57.8\" y2=\"78.3\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"60\" y1=\"72\" x2=\"60\" y2=\"48\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"60\" y=\"42\" fill=\"var(--diagram-blue)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">NH₂</text><text x=\"51\" y=\"30\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"13\">··</text><line x1=\"98\" y1=\"100\" x2=\"128\" y2=\"100\" stroke=\"currentColor\" stroke-width=\"1.5\"/><polygon points=\"132,100 127.4,102 127.4,98\" fill=\"currentColor\" stroke=\"none\"/><line x1=\"132\" y1=\"100\" x2=\"102\" y2=\"100\" stroke=\"currentColor\" stroke-width=\"1.5\"/><polygon points=\"98,100 102.6,98 102.6,102\" fill=\"currentColor\" stroke=\"none\"/><line x1=\"180\" y1=\"72\" x2=\"204.2\" y2=\"86\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"204.2\" y1=\"86\" x2=\"204.2\" y2=\"114\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"204.2\" y1=\"114\" x2=\"180\" y2=\"128\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"197.7\" y1=\"112.7\" x2=\"182.2\" y2=\"121.7\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"180\" y1=\"128\" x2=\"155.8\" y2=\"114\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"155.8\" y1=\"114\" x2=\"155.8\" y2=\"86\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"160.1\" y1=\"109\" x2=\"160.1\" y2=\"91\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"155.8\" y1=\"86\" x2=\"180\" y2=\"72\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"177.5\" y1=\"72\" x2=\"177.5\" y2=\"48\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"182.5\" y1=\"72\" x2=\"182.5\" y2=\"48\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"180\" y=\"42\" fill=\"var(--diagram-blue)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">NH₂⁺</text><text x=\"210.2\" y=\"88\" fill=\"var(--diagram-red)\" stroke=\"none\" font-size=\"14\" font-weight=\"bold\">−</text><line x1=\"218\" y1=\"100\" x2=\"248\" y2=\"100\" stroke=\"currentColor\" stroke-width=\"1.5\"/><polygon points=\"252,100 247.4,102 247.4,98\" fill=\"currentColor\" stroke=\"none\"/><line x1=\"252\" y1=\"100\" x2=\"222\" y2=\"100\" stroke=\"currentColor\" stroke-width=\"1.5\"/><polygon points=\"218,100 222.6,98 222.6,102\" fill=\"currentColor\" stroke=\"none\"/><line x1=\"300\" y1=\"72\" x2=\"324.2\" y2=\"86\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"324.2\" y1=\"86\" x2=\"324.2\" y2=\"114\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"319.9\" y1=\"91\" x2=\"319.9\" y2=\"109\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"324.2\" y1=\"114\" x2=\"300\" y2=\"128\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"300\" y1=\"128\" x2=\"275.8\" y2=\"114\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"275.8\" y1=\"114\" x2=\"275.8\" y2=\"86\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"280.1\" y1=\"109\" x2=\"280.1\" y2=\"91\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"275.8\" y1=\"86\" x2=\"300\" y2=\"72\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"297.5\" y1=\"72\" x2=\"297.5\" y2=\"48\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"302.5\" y1=\"72\" x2=\"302.5\" y2=\"48\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"300\" y=\"42\" fill=\"var(--diagram-blue)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">NH₂⁺</text><text x=\"300\" y=\"146\" fill=\"var(--diagram-red)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"bold\">−</text><text x=\"60\" y=\"160\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">lone pair on N</text><text x=\"180\" y=\"160\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">charge at ortho C</text><text x=\"300\" y=\"160\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">charge at para C</text></svg>",
+          "alt": "Three resonance structures of aniline showing the nitrogen lone pair delocalised into the ring, with negative charge at the ortho and para carbons"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "isc-12-chemistry-ch19-t04"
+        ]
+      },
+      {
+        "heading": "5. Alkylation, acylation and tests",
+        "body_md": "**Alkylation** (SN2 by N lone pair): 1° → 2° → 3° → R₄N⁺X⁻. **Acylation** (addition–elimination at C=O of RCOCl/(RCO)₂O; pyridine removes HCl): 1° and 2° → amides; 3° no reaction; benzoylation (Schotten–Baumann).\n\n**HNO₂:** 1° aliphatic → ROH + N₂; 1° aromatic (273–278 K) → ArN₂⁺; 2° → yellow N-nitrosamine; 3° aliphatic → salt. **Carbylamine** (CHCl₃ + alc. KOH): 1° only → foul isocyanide. **Hinsberg** (C₆H₅SO₂Cl + KOH): 1° product soluble in KOH; 2° insoluble; 3° no reaction.",
+        "key_terms": [
+          {
+            "term": "Carbylamine test",
+            "definition_md": "Primary amines + CHCl₃ + alcoholic KOH → foul-smelling isocyanide."
+          },
+          {
+            "term": "Hinsberg’s reagent",
+            "definition_md": "Benzenesulphonyl chloride, C₆H₅SO₂Cl."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\ce{C6H5NH2 + CHCl3 + 3KOH -> C6H5NC + 3KCl + 3H2O}",
+            "label": "Carbylamine reaction"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Test",
+              "1°",
+              "2°",
+              "3°"
+            ],
+            "rows": [
+              [
+                "Carbylamine",
+                "+",
+                "−",
+                "−"
+              ],
+              [
+                "Hinsberg (KOH)",
+                "Soluble",
+                "Insoluble",
+                "No reaction"
+              ],
+              [
+                "HNO₂",
+                "N₂ (aliphatic)",
+                "Yellow oil",
+                "Salt"
+              ]
+            ]
+          },
+          "alt": "Table of tests"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "isc-12-chemistry-ch19-t05"
+        ]
+      },
+      {
+        "heading": "6. Aniline",
+        "body_md": "**Preparation:** C₆H₅NO₂ + Sn/HCl → C₆H₅NH₃Cl → (NaOH) C₆H₅NH₂; steam distil. **–NH₂ reactions:** salts with acids; acetylation (acetanilide), benzoylation (benzanilide), alkylation, carbylamine, diazotisation.\n\n**Ring:** –NH₂ strongly activating (o/p): Br₂(aq) → 2,4,6-tribromoaniline; for monosubstitution acetylate first (protects from oxidation, moderates activation, avoids anilinium meta direction) → 4-nitro/4-bromoacetanilide → hydrolyse; sulphonation → sulphanilic acid (zwitter ion); no Friedel–Crafts.\n\n**Tests:** azo dye (diazotise cold + alkaline 2-naphthol → orange-red); bromine water (white ppt); bleaching powder (violet). **Uses:** dyes, drugs, rubber chemicals, polyurethanes.",
+        "key_terms": [
+          {
+            "term": "Acetanilide",
+            "definition_md": "N-Phenylethanamide, C₆H₅NHCOCH₃."
+          },
+          {
+            "term": "Sulphanilic acid",
+            "definition_md": "4-Aminobenzenesulphonic acid, a zwitter ion."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\ce{C6H5NH2 + 3Br2 -> C6H2Br3NH2 + 3HBr}",
+            "label": "Bromination of aniline"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Reagent",
+              "Product"
+            ],
+            "rows": [
+              [
+                "Br₂(aq)",
+                "2,4,6-Tribromoaniline"
+              ],
+              [
+                "(CH₃CO)₂O",
+                "Acetanilide"
+              ],
+              [
+                "NaNO₂/HCl, cold",
+                "C₆H₅N₂Cl"
+              ],
+              [
+                "Conc. H₂SO₄, 453 K",
+                "Sulphanilic acid"
+              ]
+            ]
+          },
+          "alt": "Table of aniline reactions"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "isc-12-chemistry-ch19-t06"
+        ]
+      }
+    ],
+    "exam_tips_md": "**Common mistakes**\n- Classifying butan-2-amine as secondary (it is primary).\n- Saying trimethylamine is the strongest base in water.\n- Giving the carbylamine test for 2° amines.\n- Nitrating aniline directly and expecting only the para product.\n\n**How marks are usually awarded**\n- Basicity (2–3 marks): order with +I, solvation, steric and resonance arguments.\n- Tests (2–3 marks): reagent, observation for each class, reason.\n- Aniline conversions (1 mark per step): protection, substitution, deprotection.",
+    "status": "draft",
+    "provenance": {
+      "origin": "human",
+      "template_version": null,
+      "model": null,
+      "generated_at": "2026-10-30",
+      "author": "claude-opus-5-5 (subject-producer)"
+    }
+  },
+  "flashcards": {
+    "unit": "isc-12-chemistry-ch19",
+    "version": 1,
+    "language": "en",
+    "cards": [
+      {
+        "id": "f01",
+        "front_md": "How are amines classified?",
+        "back_md": "By number of C groups on N.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch19-t01"
+      },
+      {
+        "id": "f02",
+        "front_md": "IUPAC name of (C₂H₅)₃N?",
+        "back_md": "N,N-Diethylethanamine.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch19-t01"
+      },
+      {
+        "id": "f03",
+        "front_md": "Shape of amines?",
+        "back_md": "Pyramidal (sp³ N with lone pair).",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch19-t01"
+      },
+      {
+        "id": "f04",
+        "front_md": "Nitrile + LiAlH₄?",
+        "back_md": "RCH₂NH₂ (one more C).",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch19-t02"
+      },
+      {
+        "id": "f05",
+        "front_md": "Hofmann degradation?",
+        "back_md": "Amide + Br₂ + KOH → amine (one fewer C).",
+        "tag": "definition",
+        "topic_id": "isc-12-chemistry-ch19-t02"
+      },
+      {
+        "id": "f06",
+        "front_md": "Why Gabriel gives pure 1° amines?",
+        "back_md": "Phthalimide N has one H; only one alkylation.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch19-t02"
+      },
+      {
+        "id": "f07",
+        "front_md": "Why no aniline by Gabriel?",
+        "back_md": "Aryl halides do not undergo SN2.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch19-t02"
+      },
+      {
+        "id": "f08",
+        "front_md": "Nitrobenzene → aniline?",
+        "back_md": "Sn/HCl then NaOH, or H₂/Ni.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch19-t02"
+      },
+      {
+        "id": "f09",
+        "front_md": "Why amines boil below alcohols?",
+        "back_md": "Weaker N–H···N hydrogen bonds.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch19-t03"
+      },
+      {
+        "id": "f10",
+        "front_md": "B.p. order of isomeric amines?",
+        "back_md": "1° > 2° > 3°.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch19-t03"
+      },
+      {
+        "id": "f11",
+        "front_md": "Strongest methylamine base in water?",
+        "back_md": "(CH₃)₂NH.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch19-t04"
+      },
+      {
+        "id": "f12",
+        "front_md": "Basicity order in gas phase?",
+        "back_md": "3° > 2° > 1° > NH₃.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch19-t04"
+      },
+      {
+        "id": "f13",
+        "front_md": "Three factors for basicity in water?",
+        "back_md": "+I, solvation, steric hindrance.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch19-t04"
+      },
+      {
+        "id": "f14",
+        "front_md": "Why is aniline weakly basic?",
+        "back_md": "Lone pair delocalised into ring.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch19-t04"
+      },
+      {
+        "id": "f15",
+        "front_md": "Effect of 4-NO₂ on aniline basicity?",
+        "back_md": "Decreases it.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch19-t04"
+      },
+      {
+        "id": "f16",
+        "front_md": "Benzylamine vs aniline?",
+        "back_md": "Benzylamine stronger (no delocalisation).",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch19-t04"
+      },
+      {
+        "id": "f17",
+        "front_md": "Excess CH₃I with an amine?",
+        "back_md": "Quaternary ammonium salt.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch19-t05"
+      },
+      {
+        "id": "f18",
+        "front_md": "Which amines form amides?",
+        "back_md": "1° and 2°.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch19-t05"
+      },
+      {
+        "id": "f19",
+        "front_md": "1° aliphatic amine + HNO₂?",
+        "back_md": "ROH + N₂.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch19-t05"
+      },
+      {
+        "id": "f20",
+        "front_md": "2° amine + HNO₂?",
+        "back_md": "Yellow N-nitrosamine.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch19-t05"
+      },
+      {
+        "id": "f21",
+        "front_md": "Carbylamine test given by?",
+        "back_md": "1° amines only.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch19-t05"
+      },
+      {
+        "id": "f22",
+        "front_md": "Hinsberg: 1° product?",
+        "back_md": "Soluble in KOH.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch19-t05"
+      },
+      {
+        "id": "f23",
+        "front_md": "Hinsberg: 2° product?",
+        "back_md": "Insoluble in KOH.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch19-t05"
+      },
+      {
+        "id": "f24",
+        "front_md": "Aniline + bromine water?",
+        "back_md": "2,4,6-Tribromoaniline.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch19-t06"
+      },
+      {
+        "id": "f25",
+        "front_md": "Why acetylate before nitration?",
+        "back_md": "Protect from oxidation; control substitution.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch19-t06"
+      },
+      {
+        "id": "f26",
+        "front_md": "Why direct nitration gives meta product?",
+        "back_md": "Anilinium ion is a meta director.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch19-t06"
+      },
+      {
+        "id": "f27",
+        "front_md": "Sulphanilic acid?",
+        "back_md": "4-Aminobenzenesulphonic acid (zwitter ion).",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch19-t06"
+      },
+      {
+        "id": "f28",
+        "front_md": "Why no Friedel–Crafts on aniline?",
+        "back_md": "–NH₂ binds AlCl₃.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch19-t06"
+      },
+      {
+        "id": "f29",
+        "front_md": "Test distinguishing aniline from ethanamine?",
+        "back_md": "Azo dye with 2-naphthol.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch19-t06"
+      },
+      {
+        "id": "f30",
+        "front_md": "Diazotisation temperature?",
+        "back_md": "273–278 K.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch19-t06"
+      },
+      {
+        "id": "f31",
+        "front_md": "Exam tip: amine tests",
+        "back_md": "Give reagent, observation and class for each test.",
+        "tag": "exam-tip",
+        "topic_id": "isc-12-chemistry-ch19-t05"
+      }
+    ],
+    "status": "draft",
+    "provenance": {
+      "origin": "human",
+      "template_version": null,
+      "model": null,
+      "generated_at": "2026-10-30",
+      "author": "claude-opus-5-5 (subject-producer)"
+    }
+  },
+  "questions": [
+    {
+      "id": "q_isc12chem_ch19_001",
+      "unit": "isc-12-chemistry-ch19",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Butan-2-amine, CH₃CH₂CH(NH₂)CH₃, is classified as a:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "secondary amine"
+        },
+        {
+          "id": "b",
+          "text_md": "tertiary amine"
+        },
+        {
+          "id": "c",
+          "text_md": "quaternary ammonium salt"
+        },
+        {
+          "id": "d",
+          "text_md": "primary amine"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Only one carbon group is attached to nitrogen — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch19-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch19_002",
+      "unit": "isc-12-chemistry-ch19",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "The IUPAC name of triethylamine, (C₂H₅)₃N, is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "N,N-diethylethanamine"
+        },
+        {
+          "id": "b",
+          "text_md": "triethanamine"
+        },
+        {
+          "id": "c",
+          "text_md": "N-ethyldiethanamine"
+        },
+        {
+          "id": "d",
+          "text_md": "hexan-3-amine"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Parent ethanamine with two N-ethyl groups — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch19-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch19_003",
+      "unit": "isc-12-chemistry-ch19",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "The general formula of saturated open-chain aliphatic amines is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "CₙH₂ₙ₊₁N"
+        },
+        {
+          "id": "b",
+          "text_md": "CₙH₂ₙN"
+        },
+        {
+          "id": "c",
+          "text_md": "CₙH₂ₙ₊₂N"
+        },
+        {
+          "id": "d",
+          "text_md": "CₙH₂ₙ₊₃N"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "CₙH₂ₙ₊₁NH₂ = CₙH₂ₙ₊₃N — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch19-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch19_004",
+      "unit": "isc-12-chemistry-ch19",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "In methanamine, the nitrogen atom is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "sp² hybridised and planar"
+        },
+        {
+          "id": "b",
+          "text_md": "sp hybridised and linear"
+        },
+        {
+          "id": "c",
+          "text_md": "sp³ hybridised with no lone pair"
+        },
+        {
+          "id": "d",
+          "text_md": "sp³ hybridised with a lone pair, giving a pyramidal arrangement"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch19-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch19_005",
+      "unit": "isc-12-chemistry-ch19",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? Tetramethylammonium iodide, (CH₃)₄N⁺I⁻, is a tertiary amine.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "f"
+        ]
+      },
+      "solution_md": "False. It is a quaternary ammonium salt.",
+      "marking_scheme": [
+        {
+          "step": "False, with the correction",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch19-t01"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch19_006",
+      "unit": "isc-12-chemistry-ch19",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "The number of structural isomers of C₃H₉N that are amines is ___.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "4",
+              "four"
+            ]
+          }
+        ]
+      },
+      "solution_md": "**4**: propan-1-amine, propan-2-amine, N-methylethanamine and N,N-dimethylmethanamine.",
+      "marking_scheme": [
+        {
+          "step": "Writes \"4\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch19-t01"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch19_007",
+      "unit": "isc-12-chemistry-ch19",
+      "language": "en",
+      "type": "match",
+      "stem_md": "Match each compound with its class.",
+      "options": [
+        {
+          "id": "1",
+          "text_md": "Propan-2-amine"
+        },
+        {
+          "id": "2",
+          "text_md": "N-Methylpropan-1-amine"
+        },
+        {
+          "id": "3",
+          "text_md": "N,N-Dimethylethanamine"
+        },
+        {
+          "id": "4",
+          "text_md": "(C₂H₅)₄N⁺Br⁻"
+        }
+      ],
+      "match_right": [
+        {
+          "id": "p",
+          "text_md": "Tertiary amine"
+        },
+        {
+          "id": "q",
+          "text_md": "Primary amine"
+        },
+        {
+          "id": "r",
+          "text_md": "Quaternary ammonium salt"
+        },
+        {
+          "id": "s",
+          "text_md": "Secondary amine"
+        }
+      ],
+      "answer": {
+        "pairs": [
+          {
+            "left_id": "1",
+            "right_id": "q"
+          },
+          {
+            "left_id": "2",
+            "right_id": "s"
+          },
+          {
+            "left_id": "3",
+            "right_id": "p"
+          },
+          {
+            "left_id": "4",
+            "right_id": "r"
+          }
+        ]
+      },
+      "solution_md": "Propan-2-amine 1°; N-methylpropan-1-amine 2°; N,N-dimethylethanamine 3°; (C₂H₅)₄N⁺Br⁻ quaternary.",
+      "marking_scheme": [
+        {
+          "step": "1 → q",
+          "marks": 0.5
+        },
+        {
+          "step": "2 → s",
+          "marks": 0.5
+        },
+        {
+          "step": "3 → p",
+          "marks": 0.5
+        },
+        {
+          "step": "4 → r",
+          "marks": 0.5
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch19-t01"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch19_008",
+      "unit": "isc-12-chemistry-ch19",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Give the IUPAC names and classes of (a) (CH₃)₂CHNHCH₂CH₃ and (b) H₂N(CH₂)₆NH₂.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) N-Ethylpropan-2-amine — secondary. (b) Hexane-1,6-diamine — a primary diamine."
+      },
+      "solution_md": "Two names and classes.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch19-t01"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch19_009",
+      "unit": "isc-12-chemistry-ch19",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write the structures and IUPAC names of the four amines with formula C₃H₉N, and classify each.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "CH₃CH₂CH₂NH₂, propan-1-amine (1°); CH₃CH(NH₂)CH₃, propan-2-amine (1°); CH₃CH₂NHCH₃, N-methylethanamine (2°); (CH₃)₃N, N,N-dimethylmethanamine (3°)."
+      },
+      "solution_md": "Four amines.",
+      "marking_scheme": [
+        {
+          "step": "Structures",
+          "marks": 1
+        },
+        {
+          "step": "Names",
+          "marks": 1
+        },
+        {
+          "step": "Classes",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch19-t01"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch19_010",
+      "unit": "isc-12-chemistry-ch19",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Butanamide is warmed with bromine and aqueous KOH. The amine formed is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "butan-1-amine"
+        },
+        {
+          "id": "b",
+          "text_md": "propan-1-amine"
+        },
+        {
+          "id": "c",
+          "text_md": "pentan-1-amine"
+        },
+        {
+          "id": "d",
+          "text_md": "butanenitrile"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Hofmann degradation removes one carbon — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch19-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch19_011",
+      "unit": "isc-12-chemistry-ch19",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Propanenitrile is reduced with sodium and ethanol (Mendius reduction). The product is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "ethanamine"
+        },
+        {
+          "id": "b",
+          "text_md": "propanal"
+        },
+        {
+          "id": "c",
+          "text_md": "propan-1-amine"
+        },
+        {
+          "id": "d",
+          "text_md": "propanamide"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "RCN → RCH₂NH₂ — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch19-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch19_012",
+      "unit": "isc-12-chemistry-ch19",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Potassium phthalimide is heated with 1-bromobutane and the product is hydrolysed. The amine obtained is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "a mixture of 1°, 2° and 3° butylamines"
+        },
+        {
+          "id": "b",
+          "text_md": "butan-1-amine only"
+        },
+        {
+          "id": "c",
+          "text_md": "dibutylamine"
+        },
+        {
+          "id": "d",
+          "text_md": "aniline"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Gabriel synthesis gives a pure primary amine — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch19-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch19_013",
+      "unit": "isc-12-chemistry-ch19",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Ethanol vapour and ammonia are passed over heated alumina at about 633 K. The products include:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "only ethanamine"
+        },
+        {
+          "id": "b",
+          "text_md": "ethanenitrile"
+        },
+        {
+          "id": "c",
+          "text_md": "ethanamine, together with diethylamine and triethylamine"
+        },
+        {
+          "id": "d",
+          "text_md": "ethanamide"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "The amine formed can react further — a mixture results — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch19-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch19_014",
+      "unit": "isc-12-chemistry-ch19",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Nitrobenzene is reduced with tin and concentrated hydrochloric acid. Before aniline can be steam distilled, the mixture must be:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "made alkaline with NaOH to liberate aniline from anilinium chloride"
+        },
+        {
+          "id": "b",
+          "text_md": "acidified further with HCl"
+        },
+        {
+          "id": "c",
+          "text_md": "cooled to 273 K"
+        },
+        {
+          "id": "d",
+          "text_md": "treated with nitrous acid"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "C₆H₅NH₃Cl + NaOH → C₆H₅NH₂ + NaCl + H₂O — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch19-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch19_015",
+      "unit": "isc-12-chemistry-ch19",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Aniline cannot be prepared by the Gabriel phthalimide synthesis.\n\n**Reason (R):** Aryl halides do not undergo SN2 substitution with the phthalimide anion.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Both are true, and R explains A — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch19-t02"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch19_016",
+      "unit": "isc-12-chemistry-ch19",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? In the Hofmann bromamide degradation, the amine formed has one carbon atom fewer than the amide.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "t"
+        ]
+      },
+      "solution_md": "True. The carbonyl carbon is lost as carbonate.",
+      "marking_scheme": [
+        {
+          "step": "True",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch19-t02"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch19_017",
+      "unit": "isc-12-chemistry-ch19",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "$7.3\\ \\text{g}$ of propanamide ($M = 73$) undergoes complete Hofmann degradation. What mass of ethanamine ($M = 45$) is formed?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 4.5,
+        "tolerance": 0.02,
+        "unit": "g"
+      },
+      "solution_md": "$n = 7.3 \\div 73 = 0.100\\ \\text{mol}$; 1 : 1; mass $= 0.100 \\times 45 = 4.5\\ \\text{g}$.",
+      "marking_scheme": [
+        {
+          "step": "0.100 mol",
+          "marks": 1
+        },
+        {
+          "step": "4.5 g",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch19-t02"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch19_018",
+      "unit": "isc-12-chemistry-ch19",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write the equation for the Hofmann bromamide degradation of propanamide and name the amine formed.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "$\\ce{CH3CH2CONH2 + Br2 + 4KOH -> CH3CH2NH2 + K2CO3 + 2KBr + 2H2O}$: ethanamine."
+      },
+      "solution_md": "Equation; ethanamine.",
+      "marking_scheme": [
+        {
+          "step": "Balanced equation",
+          "marks": 1
+        },
+        {
+          "step": "Ethanamine",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch19-t02"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch19_019",
+      "unit": "isc-12-chemistry-ch19",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Outline the Gabriel phthalimide synthesis of propan-1-amine and state why it gives no secondary or tertiary amine.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Phthalimide + KOH → potassium phthalimide; + 1-bromopropane (SN2) → N-propylphthalimide; hydrolysis (aqueous NaOH or hydrazine) → propan-1-amine + phthalate. Only one alkyl group can attach to the phthalimide nitrogen (it has only one N–H), so no further alkylation occurs."
+      },
+      "solution_md": "Three steps; one N–H.",
+      "marking_scheme": [
+        {
+          "step": "Steps",
+          "marks": 1
+        },
+        {
+          "step": "Reason",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch19-t02"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch19_020",
+      "unit": "isc-12-chemistry-ch19",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Suggest a method, with reagents, to prepare (a) butan-1-amine from 1-bromopropane, (b) propan-1-amine from butanamide and (c) 4-methylaniline from 4-nitrotoluene.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) KCN in ethanol → butanenitrile; then LiAlH₄ (or H₂/Ni, or Na/ethanol). (b) Br₂ + KOH (Hofmann degradation). (c) Sn (or Fe) + conc. HCl, then NaOH (or H₂/Ni)."
+      },
+      "solution_md": "Nitrile reduction; Hofmann; nitro reduction.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch19-t02"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch19_021",
+      "unit": "isc-12-chemistry-ch19",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Propan-1-amine (b.p. 321 K) boils lower than propan-1-ol (b.p. 370 K). The main reason is that:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "amines cannot form hydrogen bonds"
+        },
+        {
+          "id": "b",
+          "text_md": "propan-1-amine has a much smaller molar mass"
+        },
+        {
+          "id": "c",
+          "text_md": "N–H···N hydrogen bonds are weaker than O–H···O hydrogen bonds"
+        },
+        {
+          "id": "d",
+          "text_md": "amines are non-polar"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "N is less electronegative than O — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch19-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch19_022",
+      "unit": "isc-12-chemistry-ch19",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Among the isomers butan-1-amine, N-methylpropan-1-amine and N,N-dimethylethanamine, which has the lowest boiling point?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "N,N-Dimethylethanamine"
+        },
+        {
+          "id": "b",
+          "text_md": "Butan-1-amine"
+        },
+        {
+          "id": "c",
+          "text_md": "N-Methylpropan-1-amine"
+        },
+        {
+          "id": "d",
+          "text_md": "All boil at the same temperature"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "The tertiary amine has no N–H for intermolecular hydrogen bonding — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch19-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch19_023",
+      "unit": "isc-12-chemistry-ch19",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? Lower aliphatic amines are soluble in water because they form hydrogen bonds with water molecules.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "t"
+        ]
+      },
+      "solution_md": "True.",
+      "marking_scheme": [
+        {
+          "step": "True",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch19-t03"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch19_024",
+      "unit": "isc-12-chemistry-ch19",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Arrange the isomers butan-1-amine, N-ethylethanamine and N,N-dimethylethanamine in order of increasing boiling point and explain.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "N,N-Dimethylethanamine (3°) < N-ethylethanamine (2°) < butan-1-amine (1°). The 1° amine has two N–H bonds and forms the most hydrogen bonds; the 2° has one; the 3° has none and has only dipole/dispersion forces."
+      },
+      "solution_md": "3° < 2° < 1°; number of N–H.",
+      "marking_scheme": [
+        {
+          "step": "Order",
+          "marks": 1
+        },
+        {
+          "step": "Reason",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch19-t03"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch19_025",
+      "unit": "isc-12-chemistry-ch19",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "In aqueous solution, which of the ethylamines is the strongest base?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Ethanamine, C₂H₅NH₂"
+        },
+        {
+          "id": "b",
+          "text_md": "Triethylamine, (C₂H₅)₃N"
+        },
+        {
+          "id": "c",
+          "text_md": "Ammonia"
+        },
+        {
+          "id": "d",
+          "text_md": "Diethylamine, (C₂H₅)₂NH"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "pKb: (C₂H₅)₂NH 3.00 < (C₂H₅)₃N 3.25 < C₂H₅NH₂ 3.29 — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch19-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch19_026",
+      "unit": "isc-12-chemistry-ch19",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "In the gas phase, where solvation is absent, the order of basicity of the methylamines is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "(CH₃)₃N > (CH₃)₂NH > CH₃NH₂ > NH₃"
+        },
+        {
+          "id": "b",
+          "text_md": "(CH₃)₂NH > CH₃NH₂ > (CH₃)₃N > NH₃"
+        },
+        {
+          "id": "c",
+          "text_md": "NH₃ > CH₃NH₂ > (CH₃)₂NH > (CH₃)₃N"
+        },
+        {
+          "id": "d",
+          "text_md": "CH₃NH₂ > (CH₃)₂NH > (CH₃)₃N > NH₃"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Only the +I effect operates — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch19-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch19_027",
+      "unit": "isc-12-chemistry-ch19",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Aniline (pKb 9.38) is a much weaker base than ammonia (pKb 4.75) because:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "aniline has no lone pair on nitrogen"
+        },
+        {
+          "id": "b",
+          "text_md": "the phenyl group releases electrons"
+        },
+        {
+          "id": "c",
+          "text_md": "aniline is insoluble in acids"
+        },
+        {
+          "id": "d",
+          "text_md": "the nitrogen lone pair is delocalised into the benzene ring"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch19-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch19_028",
+      "unit": "isc-12-chemistry-ch19",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which substituted aniline is the strongest base: 4-nitroaniline, 4-chloroaniline, aniline or 4-methoxyaniline?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "4-Nitroaniline"
+        },
+        {
+          "id": "b",
+          "text_md": "4-Methoxyaniline"
+        },
+        {
+          "id": "c",
+          "text_md": "4-Chloroaniline"
+        },
+        {
+          "id": "d",
+          "text_md": "Aniline"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "–OCH₃ releases electrons by +R at para, increasing electron density on N — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch19-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch19_029",
+      "unit": "isc-12-chemistry-ch19",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "N-Methylaniline, C₆H₅NHCH₃, and N-methylbenzylamine, C₆H₅CH₂NHCH₃, are both secondary amines. Which is the stronger base, and why?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "N-Methylaniline, because it has a phenyl group on nitrogen"
+        },
+        {
+          "id": "b",
+          "text_md": "N-Methylbenzylamine, because its nitrogen lone pair is not delocalised into the ring"
+        },
+        {
+          "id": "c",
+          "text_md": "Both are equally basic"
+        },
+        {
+          "id": "d",
+          "text_md": "N-Methylaniline, because the ring releases electrons to nitrogen"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "The CH₂ group insulates N from the ring — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch19-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch19_030",
+      "unit": "isc-12-chemistry-ch19",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** In water, trimethylamine is a weaker base than dimethylamine.\n\n**Reason (R):** The trimethylammonium ion has only one N–H to hydrogen-bond with water, and bulky methyl groups hinder its solvation.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Both are true, and R explains A — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch19-t04"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch19_031",
+      "unit": "isc-12-chemistry-ch19",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Aniline dissolves in dilute hydrochloric acid.\n\n**Reason (R):** Aniline is a stronger base than ammonia.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "A is true (anilinium chloride forms). R is false: aniline is weaker than ammonia — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch19-t04"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch19_032",
+      "unit": "isc-12-chemistry-ch19",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "The pKb values of ammonia and aniline are 4.75 and 9.38. By what factor is $K_b$ of ammonia larger than that of aniline? Give your answer to three significant figures.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 42700,
+        "tolerance": 150,
+        "unit": null
+      },
+      "solution_md": "Ratio $= 10^{(9.38 - 4.75)} = 10^{4.63} \\approx 42700$.",
+      "marking_scheme": [
+        {
+          "step": "ΔpKb = 4.63",
+          "marks": 1
+        },
+        {
+          "step": "≈ 4.27 × 10⁴",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch19-t04"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch19_033",
+      "unit": "isc-12-chemistry-ch19",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Explain why ethanamine is a stronger base than ammonia, but aniline is a weaker base than ammonia.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Ethanamine: the ethyl group releases electrons (+I), increasing electron density on nitrogen and stabilising the conjugate acid. Aniline: the nitrogen lone pair is delocalised into the benzene ring (resonance), making it less available for protonation; protonation would destroy this resonance stabilisation."
+      },
+      "solution_md": "+I vs delocalisation.",
+      "marking_scheme": [
+        {
+          "step": "Ethanamine +I",
+          "marks": 1
+        },
+        {
+          "step": "Aniline resonance",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch19-t04"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch19_034",
+      "unit": "isc-12-chemistry-ch19",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Arrange in increasing basic strength in water and explain: ammonia, methanamine, N-methylmethanamine, N,N-dimethylmethanamine.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "NH₃ < (CH₃)₃N < CH₃NH₂ < (CH₃)₂NH. Methyl groups increase electron density on N (+I). In water, the protonated amine is stabilised by hydrogen bonding with water: more N–H bonds give better solvation, and bulky groups hinder it. The tertiary amine’s cation is least solvated, so despite three methyl groups it is weaker than the 1° and 2° amines; the 2° amine has the best balance."
+      },
+      "solution_md": "Order; +I, solvation, steric.",
+      "marking_scheme": [
+        {
+          "step": "Order",
+          "marks": 1
+        },
+        {
+          "step": "+I effect",
+          "marks": 1
+        },
+        {
+          "step": "Solvation and steric effects",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 4,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch19-t04"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch19_035",
+      "unit": "isc-12-chemistry-ch19",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Arrange 4-nitroaniline, aniline and 4-methylaniline in increasing basic strength, and explain the effect of each substituent.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "4-Nitroaniline < aniline < 4-methylaniline. –NO₂ withdraws electrons (−I, −R) and extends delocalisation of the N lone pair, lowering basicity. –CH₃ releases electrons (+I, hyperconjugation), increasing electron density on N."
+      },
+      "solution_md": "Order; −R of NO₂; +I of CH₃.",
+      "marking_scheme": [
+        {
+          "step": "Order",
+          "marks": 1
+        },
+        {
+          "step": "NO₂ effect",
+          "marks": 1
+        },
+        {
+          "step": "CH₃ effect",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch19-t04"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch19_036",
+      "unit": "isc-12-chemistry-ch19",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which amine is NOT converted into an amide by ethanoyl chloride?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Ethanamine"
+        },
+        {
+          "id": "b",
+          "text_md": "N,N-Diethylethanamine"
+        },
+        {
+          "id": "c",
+          "text_md": "N-Ethylethanamine"
+        },
+        {
+          "id": "d",
+          "text_md": "Aniline"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "A tertiary amine has no N–H — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch19-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch19_037",
+      "unit": "isc-12-chemistry-ch19",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Methanamine is treated with excess iodomethane. The final product is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "N-methylmethanamine only"
+        },
+        {
+          "id": "b",
+          "text_md": "methanol"
+        },
+        {
+          "id": "c",
+          "text_md": "tetramethylammonium iodide"
+        },
+        {
+          "id": "d",
+          "text_md": "iodoform"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Successive SN2 alkylations lead to the quaternary salt — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch19-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch19_038",
+      "unit": "isc-12-chemistry-ch19",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "An amine C₄H₁₁N reacts with benzenesulphonyl chloride to give a product that dissolves in aqueous KOH. The amine could be:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "N-ethylethanamine"
+        },
+        {
+          "id": "b",
+          "text_md": "N,N-dimethylethanamine"
+        },
+        {
+          "id": "c",
+          "text_md": "N-methylpropan-1-amine"
+        },
+        {
+          "id": "d",
+          "text_md": "butan-1-amine"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Only a 1° amine gives a KOH-soluble sulphonamide — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch19-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch19_039",
+      "unit": "isc-12-chemistry-ch19",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "N-Methylpropan-1-amine is treated with NaNO₂ and dilute HCl in the cold. The observation is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "a yellow oily N-nitrosamine separates"
+        },
+        {
+          "id": "b",
+          "text_md": "nitrogen gas is evolved"
+        },
+        {
+          "id": "c",
+          "text_md": "an orange dye forms"
+        },
+        {
+          "id": "d",
+          "text_md": "no change occurs"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Secondary amines give N-nitrosamines — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch19-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch19_040",
+      "unit": "isc-12-chemistry-ch19",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which compound gives the carbylamine test?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "2-Methylpropan-2-amine, (CH₃)₃CNH₂"
+        },
+        {
+          "id": "b",
+          "text_md": "N-Methylethanamine"
+        },
+        {
+          "id": "c",
+          "text_md": "N,N-Dimethylmethanamine"
+        },
+        {
+          "id": "d",
+          "text_md": "Tetramethylammonium chloride"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Any primary amine, even with a tertiary alkyl group — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch19-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch19_041",
+      "unit": "isc-12-chemistry-ch19",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** In the reaction of ethanamine with ethanoyl chloride, the nitrogen lone pair attacks the carbonyl carbon.\n\n**Reason (R):** The carbonyl carbon of an acid chloride carries a partial positive charge.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Both are true; R explains why the lone pair attacks there — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch19-t05"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch19_042",
+      "unit": "isc-12-chemistry-ch19",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** The Hinsberg product of a secondary amine is insoluble in aqueous KOH.\n\n**Reason (R):** Secondary amines do not react with benzenesulphonyl chloride.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "A is true. R is false: they react, but the product has no acidic N–H — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch19-t05"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch19_043",
+      "unit": "isc-12-chemistry-ch19",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? Aniline gives a foul-smelling isocyanide when warmed with chloroform and alcoholic KOH.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "t"
+        ]
+      },
+      "solution_md": "True. Aniline is a primary amine.",
+      "marking_scheme": [
+        {
+          "step": "True",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch19-t05"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch19_044",
+      "unit": "isc-12-chemistry-ch19",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "Hinsberg’s reagent, used to distinguish 1°, 2° and 3° amines, is benzene___ chloride.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "sulphonyl",
+              "sulfonyl"
+            ]
+          }
+        ]
+      },
+      "solution_md": "Benzene**sulphonyl** chloride, C₆H₅SO₂Cl.",
+      "marking_scheme": [
+        {
+          "step": "Writes \"sulphonyl\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch19-t05"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch19_045",
+      "unit": "isc-12-chemistry-ch19",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "$0.59\\ \\text{g}$ of propan-1-amine ($M = 59$) reacts completely with nitrous acid: $\\ce{CH3CH2CH2NH2 + HNO2 -> CH3CH2CH2OH + N2 + H2O}$. What volume of nitrogen is evolved at STP, in mL? (Molar volume $22400\\ \\text{mL}$)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 224,
+        "tolerance": 1,
+        "unit": "mL"
+      },
+      "solution_md": "$n = 0.59 \\div 59 = 0.010\\ \\text{mol}$; $V = 0.010 \\times 22400 = 224\\ \\text{mL}$.",
+      "marking_scheme": [
+        {
+          "step": "0.010 mol",
+          "marks": 1
+        },
+        {
+          "step": "224 mL",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch19-t05"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch19_046",
+      "unit": "isc-12-chemistry-ch19",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Outline the mechanism of the reaction of ethanamine with ethanoyl chloride, naming the product.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "The lone pair on N of CH₃CH₂NH₂ attacks the δ+ carbonyl carbon of CH₃COCl, forming a tetrahedral intermediate; the C=O re-forms as Cl⁻ is expelled; loss of H⁺ from nitrogen (taken up by base) gives N-ethylethanamide, CH₃CONHCH₂CH₃."
+      },
+      "solution_md": "Addition–elimination; N-ethylethanamide.",
+      "marking_scheme": [
+        {
+          "step": "Mechanism steps",
+          "marks": 1
+        },
+        {
+          "step": "Product",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 3,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch19-t05"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch19_047",
+      "unit": "isc-12-chemistry-ch19",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write the equation for the carbylamine reaction of ethanamine and state which classes of amine give this test.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "$\\ce{CH3CH2NH2 + CHCl3 + 3KOH -> CH3CH2NC + 3KCl + 3H2O}$ (foul-smelling ethyl isocyanide). Only primary amines (aliphatic and aromatic) give it."
+      },
+      "solution_md": "Equation; 1° only.",
+      "marking_scheme": [
+        {
+          "step": "Equation",
+          "marks": 1
+        },
+        {
+          "step": "1° amines only",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch19-t05"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch19_048",
+      "unit": "isc-12-chemistry-ch19",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Describe how Hinsberg’s test distinguishes propan-1-amine, N-methylethanamine and N,N-dimethylmethanamine.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Shake each with benzenesulphonyl chloride and aqueous KOH. Propan-1-amine (1°) gives C₆H₅SO₂NHCH₂CH₂CH₃, whose N–H is acidic, so it dissolves in KOH (precipitates on acidifying). N-Methylethanamine (2°) gives C₆H₅SO₂N(CH₃)C₂H₅, with no N–H: insoluble in KOH. N,N-Dimethylmethanamine (3°) does not react."
+      },
+      "solution_md": "Soluble; insoluble; no reaction.",
+      "marking_scheme": [
+        {
+          "step": "1°",
+          "marks": 1
+        },
+        {
+          "step": "2°",
+          "marks": 1
+        },
+        {
+          "step": "3°",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch19-t05"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch19_049",
+      "unit": "isc-12-chemistry-ch19",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Describe and explain the reactions of nitrous acid (NaNO₂ + HCl) with (a) ethanamine, (b) N-ethylethanamine and (c) aniline at 273–278 K.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Effervescence of N₂: $\\ce{C2H5NH2 + HNO2 -> C2H5OH + N2 + H2O}$ (the aliphatic diazonium ion is unstable). (b) Yellow oily N-nitrosamine: $\\ce{(C2H5)2NH + HNO2 -> (C2H5)2NN=O + H2O}$. (c) Benzenediazonium chloride, stable in the cold: $\\ce{C6H5NH2 + NaNO2 + 2HCl -> C6H5N2Cl + NaCl + 2H2O}$."
+      },
+      "solution_md": "N₂; nitrosamine; diazonium salt.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 3,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch19-t05",
+        "isc-12-chemistry-ch19-t06"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch19_050",
+      "unit": "isc-12-chemistry-ch19",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Aniline reacts with bromine water at room temperature. The product is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "4-bromoaniline only"
+        },
+        {
+          "id": "b",
+          "text_md": "2,4,6-tribromoaniline, a white precipitate"
+        },
+        {
+          "id": "c",
+          "text_md": "3-bromoaniline"
+        },
+        {
+          "id": "d",
+          "text_md": "bromobenzene"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "–NH₂ strongly activates all o/p positions — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch19-t06"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch19_051",
+      "unit": "isc-12-chemistry-ch19",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Aniline is converted into acetanilide before nitration mainly because the acetyl group:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "makes the ring more reactive"
+        },
+        {
+          "id": "b",
+          "text_md": "converts –NH₂ into a meta director"
+        },
+        {
+          "id": "c",
+          "text_md": "protects the ring from oxidation and reduces activation so that mainly the para product forms"
+        },
+        {
+          "id": "d",
+          "text_md": "increases the basicity of nitrogen"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch19-t06"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch19_052",
+      "unit": "isc-12-chemistry-ch19",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Direct nitration of aniline with concentrated HNO₃/H₂SO₄ gives a large amount of 3-nitroaniline because:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "in strong acid aniline is protonated to the anilinium ion, a meta director"
+        },
+        {
+          "id": "b",
+          "text_md": "–NH₂ is a meta director"
+        },
+        {
+          "id": "c",
+          "text_md": "the para position is blocked"
+        },
+        {
+          "id": "d",
+          "text_md": "nitric acid reduces aniline"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "C₆H₅NH₃⁺ is deactivating and meta directing — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch19-t06"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch19_053",
+      "unit": "isc-12-chemistry-ch19",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Aniline is heated with concentrated sulphuric acid at about 453–473 K. The product, which exists as a zwitter ion, is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "3-aminobenzenesulphonic acid"
+        },
+        {
+          "id": "b",
+          "text_md": "sulphanilic acid (4-aminobenzenesulphonic acid)"
+        },
+        {
+          "id": "c",
+          "text_md": "anilinium hydrogensulphate only"
+        },
+        {
+          "id": "d",
+          "text_md": "benzenesulphonic acid"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch19-t06"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch19_054",
+      "unit": "isc-12-chemistry-ch19",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which test distinguishes aniline from ethanamine?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Carbylamine test"
+        },
+        {
+          "id": "b",
+          "text_md": "Reaction with dilute HCl"
+        },
+        {
+          "id": "c",
+          "text_md": "Diazotise in the cold and add alkaline 2-naphthol: an orange-red dye forms with aniline only"
+        },
+        {
+          "id": "d",
+          "text_md": "Reaction with ethanoyl chloride"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Aliphatic diazonium ions decompose, giving no dye — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch19-t06"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch19_055",
+      "unit": "isc-12-chemistry-ch19",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? Aniline readily undergoes Friedel–Crafts alkylation with CH₃Cl and AlCl₃.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "f"
+        ]
+      },
+      "solution_md": "False. The –NH₂ group forms a complex with the Lewis acid AlCl₃, deactivating the ring.",
+      "marking_scheme": [
+        {
+          "step": "False, with the correction",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch19-t06"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch19_056",
+      "unit": "isc-12-chemistry-ch19",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "Benzoylation of aniline with benzoyl chloride in aqueous NaOH (Schotten–Baumann reaction) gives ___ (N-phenylbenzamide).",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "benzanilide"
+            ]
+          }
+        ]
+      },
+      "solution_md": "**Benzanilide**.",
+      "marking_scheme": [
+        {
+          "step": "Writes \"benzanilide\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch19-t06"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch19_057",
+      "unit": "isc-12-chemistry-ch19",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** After reduction of nitrobenzene with tin and HCl, the mixture is made alkaline before aniline is distilled.\n\n**Reason (R):** Aniline is present as anilinium chloride, which is not volatile.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Both true; R explains A — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch19-t06"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch19_058",
+      "unit": "isc-12-chemistry-ch19",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Bromine water converts acetanilide into 2,4,6-tribromoacetanilide.\n\n**Reason (R):** The acetamido group is a weaker activator than the amino group.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "A is false: acetanilide gives mainly 4-bromoacetanilide. R is true — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch19-t06"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch19_059",
+      "unit": "isc-12-chemistry-ch19",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "$24.6\\ \\text{g}$ of nitrobenzene ($M = 123$) is reduced to aniline ($M = 93$) with a 75% yield. What mass of aniline is obtained?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 13.95,
+        "tolerance": 0.05,
+        "unit": "g"
+      },
+      "solution_md": "$n = 24.6 \\div 123 = 0.200\\ \\text{mol}$; mass $= 0.200 \\times 93 \\times 0.75 = 13.95\\ \\text{g}$.",
+      "marking_scheme": [
+        {
+          "step": "0.200 mol",
+          "marks": 1
+        },
+        {
+          "step": "13.95 g",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch19-t06"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch19_060",
+      "unit": "isc-12-chemistry-ch19",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "$9.3\\ \\text{g}$ of aniline ($M = 93$) is acetylated completely with ethanoic anhydride. What mass of acetanilide ($M = 135$) is formed?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 13.5,
+        "tolerance": 0.05,
+        "unit": "g"
+      },
+      "solution_md": "$n = 9.3 \\div 93 = 0.100\\ \\text{mol}$; mass $= 0.100 \\times 135 = 13.5\\ \\text{g}$.",
+      "marking_scheme": [
+        {
+          "step": "0.100 mol",
+          "marks": 1
+        },
+        {
+          "step": "13.5 g",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch19-t06"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch19_061",
+      "unit": "isc-12-chemistry-ch19",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write equations for the preparation of aniline from nitrobenzene with tin and hydrochloric acid, and its liberation from the salt.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "$\\ce{C6H5NO2 + 3Sn + 7HCl -> C6H5NH3Cl + 3SnCl2 + 2H2O}$; $\\ce{C6H5NH3Cl + NaOH -> C6H5NH2 + NaCl + H2O}$ (then steam distil)."
+      },
+      "solution_md": "Reduction; liberation.",
+      "marking_scheme": [
+        {
+          "step": "Reduction equation",
+          "marks": 1
+        },
+        {
+          "step": "Liberation",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch19-t06"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch19_062",
+      "unit": "isc-12-chemistry-ch19",
+      "language": "en",
+      "type": "short",
+      "stem_md": "How would you convert aniline into 4-bromoaniline? Why is bromine water not used directly?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Acetylate with (CH₃CO)₂O → acetanilide; brominate with Br₂ in ethanoic acid → 4-bromoacetanilide; hydrolyse (acid or alkali) → 4-bromoaniline. Bromine water would give 2,4,6-tribromoaniline because –NH₂ strongly activates all o/p positions."
+      },
+      "solution_md": "Protect, brominate, deprotect.",
+      "marking_scheme": [
+        {
+          "step": "Sequence",
+          "marks": 1
+        },
+        {
+          "step": "Reason",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch19-t06"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch19_063",
+      "unit": "isc-12-chemistry-ch19",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Show how 4-nitroaniline is prepared from aniline, and give two reasons why direct nitration is avoided.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Aniline + (CH₃CO)₂O → acetanilide; conc. HNO₃/H₂SO₄ (cold) → 4-nitroacetanilide (mainly para); hydrolysis (H⁺ or OH⁻, heat) → 4-nitroaniline. Reasons: (i) HNO₃ oxidises the strongly activated aniline ring (tarry products); (ii) in strong acid aniline becomes the anilinium ion, a meta director, giving much 3-nitroaniline."
+      },
+      "solution_md": "Protect, nitrate, hydrolyse; oxidation and anilinium.",
+      "marking_scheme": [
+        {
+          "step": "Sequence",
+          "marks": 1
+        },
+        {
+          "step": "Reason 1",
+          "marks": 1
+        },
+        {
+          "step": "Reason 2",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch19-t06"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch19_064",
+      "unit": "isc-12-chemistry-ch19",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Give the product of aniline with (a) dilute HCl, (b) benzoyl chloride in NaOH and (c) excess iodomethane.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Anilinium chloride, C₆H₅NH₃⁺Cl⁻. (b) Benzanilide, C₆H₅NHCOC₆H₅. (c) N,N,N-Trimethylanilinium iodide, C₆H₅N(CH₃)₃⁺I⁻ (via N-methyl- and N,N-dimethylaniline)."
+      },
+      "solution_md": "Salt; benzanilide; quaternary salt.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch19-t06"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch19_065",
+      "unit": "isc-12-chemistry-ch19",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Write equations for preparing (i) ethanamine from propanamide and (ii) propan-1-amine from propanenitrile. [2]\n\n(b) Describe the Gabriel phthalimide synthesis of butan-1-amine and explain why it is useful. [2]\n\n(c) Explain why amines boil lower than alcohols of similar molar mass. [1]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) (i) $\\ce{CH3CH2CONH2 + Br2 + 4KOH -> CH3CH2NH2 + K2CO3 + 2KBr + 2H2O}$. (ii) $\\ce{CH3CH2CN + 2H2 ->[Ni] CH3CH2CH2NH2}$.\n\n(b) Phthalimide + KOH → potassium phthalimide; + 1-bromobutane (SN2) → N-butylphthalimide; hydrolysis → butan-1-amine + phthalate. Gives a pure primary amine, free of 2° and 3° amines.\n\n(c) N–H···N hydrogen bonds are weaker than O–H···O because N is less electronegative than O."
+      },
+      "solution_md": "Hofmann; nitrile reduction; Gabriel; H-bond strength.",
+      "marking_scheme": [
+        {
+          "step": "(a)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(a)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 2
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 5,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch19-t02",
+        "isc-12-chemistry-ch19-t03"
+      ],
+      "expected_time_sec": 570,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch19_066",
+      "unit": "isc-12-chemistry-ch19",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Explain why the order of basic strength of the methylamines in water differs from that in the gas phase. [2½]\n\n(b) Explain why aniline is a weaker base than ammonia, and how a 4-nitro and a 4-methyl group affect its basicity. [2½]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Gas phase: only the +I effect operates, so (CH₃)₃N > (CH₃)₂NH > CH₃NH₂ > NH₃. In water, the protonated amines are also stabilised by hydrogen bonding with water — more N–H bonds give better solvation, and bulky methyl groups hinder it. The tertiary ammonium ion is poorly solvated, so in water (CH₃)₂NH > CH₃NH₂ > (CH₃)₃N > NH₃.\n\n(b) The lone pair of aniline is delocalised into the ring and is less available for protonation; protonation also destroys this resonance stabilisation. 4-NO₂ withdraws electrons (−R, −I), further reducing basicity; 4-CH₃ releases electrons (+I, hyperconjugation), slightly increasing it."
+      },
+      "solution_md": "Inductive vs solvation; resonance; substituents.",
+      "marking_scheme": [
+        {
+          "step": "(a) Gas phase",
+          "marks": 1
+        },
+        {
+          "step": "(a) Water: solvation and steric",
+          "marks": 1.5
+        },
+        {
+          "step": "(b) Aniline",
+          "marks": 1.5
+        },
+        {
+          "step": "(b) Substituents",
+          "marks": 1
+        }
+      ],
+      "marks": 5,
+      "difficulty": 4,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch19-t04"
+      ],
+      "expected_time_sec": 570,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch19_067",
+      "unit": "isc-12-chemistry-ch19",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Describe Hinsberg’s test and explain how it distinguishes 1°, 2° and 3° amines. [2]\n\n(b) What happens when (i) a primary aliphatic amine, (ii) a secondary amine and (iii) aniline (at 273 K) react with nitrous acid? [2]\n\n(c) Which amines give the carbylamine reaction? Write the equation for aniline. [1]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Shake with C₆H₅SO₂Cl and aqueous KOH: 1° amines give N-alkylsulphonamides with an acidic N–H, soluble in KOH; 2° amines give N,N-dialkylsulphonamides, insoluble in KOH; 3° amines do not react.\n\n(b) (i) Alcohol + N₂ gas (effervescence). (ii) Yellow oily N-nitrosamine. (iii) Benzenediazonium chloride.\n\n(c) Only primary amines: $\\ce{C6H5NH2 + CHCl3 + 3KOH -> C6H5NC + 3KCl + 3H2O}$."
+      },
+      "solution_md": "Hinsberg; HNO₂ reactions; carbylamine.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 2
+        },
+        {
+          "step": "(b)",
+          "marks": 2
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 5,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch19-t05"
+      ],
+      "expected_time_sec": 570,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch19_068",
+      "unit": "isc-12-chemistry-ch19",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) How is aniline prepared from nitrobenzene in the laboratory? [1]\n\n(b) Write equations for the reaction of aniline with (i) bromine water, (ii) ethanoic anhydride and (iii) NaNO₂/HCl at 273–278 K. [3]\n\n(c) Why is aniline acetylated before nitration? [1]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Reduce with Sn (or Fe) and conc. HCl; add NaOH to liberate aniline from anilinium chloride; steam distil.\n\n(b) (i) $\\ce{C6H5NH2 + 3Br2 -> C6H2Br3NH2 + 3HBr}$. (ii) $\\ce{C6H5NH2 + (CH3CO)2O -> C6H5NHCOCH3 + CH3COOH}$. (iii) $\\ce{C6H5NH2 + NaNO2 + 2HCl -> C6H5N2Cl + NaCl + 2H2O}$.\n\n(c) To protect the ring from oxidation by HNO₃ and to moderate activation (and prevent anilinium formation), so that mainly the para mononitro product forms."
+      },
+      "solution_md": "Reduction; three equations; protection.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b) Three equations",
+          "marks": 3
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 5,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch19-t06"
+      ],
+      "expected_time_sec": 570,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch19_069",
+      "unit": "isc-12-chemistry-ch19",
+      "language": "en",
+      "type": "long",
+      "stem_md": "An aromatic amine A, C₇H₉N, does not give the carbylamine test, reacts with benzenesulphonyl chloride to give a product insoluble in KOH, and gives a yellow oil with nitrous acid. Its isomer B gives the carbylamine test and, after diazotisation in the cold and coupling with 2-naphthol, an orange-red dye; B is the para isomer with a methyl group on the ring.\n\n(a) Identify A and B. [2]\n\n(b) Write the equation for the reaction of A with nitrous acid. [1]\n\n(c) Arrange A, B and aniline in order of basic strength, with a reason. [2]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) A: N-methylaniline, C₆H₅NHCH₃ (secondary aryl amine). B: 4-methylaniline (p-toluidine), CH₃C₆H₄NH₂.\n\n(b) $\\ce{C6H5NHCH3 + HNO2 -> C6H5N(CH3)N=O + H2O}$ (N-nitroso-N-methylaniline, yellow oil).\n\n(c) Aniline < N-methylaniline < 4-methylaniline (conjugate-acid pKa about 4.6, 4.85 and 5.1). In each the lone pair is partly delocalised into the ring; a methyl group releases electrons (+I, hyperconjugation) and raises basicity, but on nitrogen its effect is partly offset by poorer solvation of the protonated secondary amine."
+      },
+      "solution_md": "N-methylaniline; p-toluidine; basicity.",
+      "marking_scheme": [
+        {
+          "step": "A",
+          "marks": 1
+        },
+        {
+          "step": "B",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 2
+        }
+      ],
+      "marks": 5,
+      "difficulty": 4,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch19-t04",
+        "isc-12-chemistry-ch19-t05",
+        "isc-12-chemistry-ch19-t06"
+      ],
+      "expected_time_sec": 570,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    }
+  ],
+  "build": {
+    "run_id": null,
+    "checks": {
+      "katex_mhchem": "68 math strings parsed with KaTeX 0.19.0 + mhchem (throwOnError, strict \"error\"), 0 failures",
+      "svg_allowlist": "4 SVG visuals (2 distinct diagrams) checked with saxes against svg-allowlist.ts: elements, attributes, class pattern, fragment-only refs, no style, palette incl. named hues, viewBox, title, per-page unique ids — 0 failures",
+      "narration": "33 slides, 13–71 words (mean 51), no symbols, formulae or unit abbreviations",
+      "resolve": "5/5 scripted re-solve checks pass",
+      "chemistry_facts": "Names, preparations (alcohols, alkyl halides, nitrile reduction, Hofmann, nitro reduction, Gabriel), boiling points, basicity in gas and water and of substituted anilines, alkylation and acylation mechanisms, nitrous acid, carbylamine and Hinsberg tests, aniline chemistry and every numerical checked against the ISC 2027 syllabus (Unit 9)",
+      "content_gate": "npm test -w @soyl/content-templates: all checks pass for this chapter",
+      "verifier_pass": "2026-10-30: every question and every internal-choice alternative re-solved from its stem by the author; every numerical re-computed by the build script — see README \"Verifier pass\"",
+      "pipeline_lint": "npm run content -- lint --exemplars: 0 errors, 0 warnings"
+    }
+  }
+}
