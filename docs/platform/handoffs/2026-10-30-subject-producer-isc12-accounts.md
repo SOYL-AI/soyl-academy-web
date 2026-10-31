@@ -1,6 +1,6 @@
 # subject-producer — ISC Class 12 Accounts (hand-authored) — 2026-10-30/31
 
-Status: partial — ch01–ch05 gated and committed; ch06–ch14 in progress (this note is updated as each chapter lands)
+Status: partial — ch01–ch09 gated and committed; ch10–ch14 in progress (this note is updated as each chapter lands)
 
 Branch: `platform/subject-producer/isc-12-accounts` (from local `platform/main` 4c30f89). Author `claude-opus-5-5 (subject-producer)`, D-025/D-026, provenance `origin: "human"`, all items `status: "draft"`. Session-limit cut-offs (2026-10-30 ~11:00 IST) interrupted the work; nothing partial was committed.
 
@@ -20,6 +20,10 @@ Tests use the ISC defaults `isc-12-default-chapter-test-short` (50 min, 20 marks
 | 03 | Reconstitution: Admission of a Partner | 19 + 20 | 29 | 8 | 31 | 77 (155) | 60% | b67d8b2 |
 | 04 | Reconstitution: Retirement and Death of a Partner | 23 + 22 | 35 | 8 | 30 | 75 (150) | 60% | 03902e4 |
 | 05 | Dissolution of a Partnership Firm | 20 + 18 | 28 | 7 | 31 | 71 (136) | 55% | 4dfb2cf |
+| 06 | Issue and Forfeiture of Shares | 22 + 22 | 34 | 8 | 31 | 76 (150) | 58% | db58ad6 |
+| 07 | Issue of Debentures | 20 + 21 | 31 | 8 | 31 | 71 (141) | 59% | 1cacda2 |
+| 08 | Redemption of Debentures | 20 + 20 | 30 | 8 | 31 | 70 (141) | 56% | 33d106f |
+| 09 | Final Accounts of Companies | 20 + 23 | 33 | 8 | 31 | 73 (146) | 59% | 4ef4017 |
 
 ## How to verify
 
@@ -37,6 +41,8 @@ From `platform/` in the worktree, wrapped in `_tools/heavy.sh` (script `isc-acc-
 | Catalog | `npm run content -- catalog` | catalog valid: 0 errors, 0 warnings |
 
 Every chapter build prints NO ERRORS and rebuilds byte-identically.
+
+Gate run for ch06–ch09 (2026-10-31 22:39 IST, ch01–ch09 in the tree): content gate 1289/1289; lint 0/0 for every ISC unit; verify 9 units, 680 questions, 0 flags; originality 184 units, 0 errors; cross-bank 1,518 questions, 0 ISC flags; DB-6 8/8; API 13/13; catalog valid. Log `C:/Users/Prabhu/soyl-wt/isc12-accounts-gates3.log`.
 
 ## Blueprint fit (no catalog edit)
 
