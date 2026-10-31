@@ -1,0 +1,5179 @@
+{
+  "unit": "isc-12-chemistry-ch10",
+  "version": 1,
+  "academic_year": "2026-27",
+  "created_at": "2026-10-30T00:00:00+05:30",
+  "decks": [
+    {
+      "unit": "isc-12-chemistry-ch10",
+      "part": 1,
+      "version": 1,
+      "title": "Coordination Compounds: Terms, Nomenclature and Isomerism — Part 1: Werner’s theory and ligands",
+      "language": "en",
+      "goals": [
+        "Distinguish a coordination compound from a double salt using ionisation in water",
+        "Explain primary and secondary valencies according to Werner’s theory",
+        "Classify ligands by denticity and identify chelating and ambidentate ligands",
+        "Calculate the coordination number and oxidation state of the metal in a complex"
+      ],
+      "slides": [
+        {
+          "id": "s01",
+          "layout": "title",
+          "heading": "Metal ions with company",
+          "body_md": "Part 1 — compounds in which a central metal is bonded to a set of ions or molecules by coordinate bonds.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Coordination compound",
+                "Where it matters"
+              ],
+              "rows": [
+                [
+                  "Haemoglobin (Fe)",
+                  "Oxygen transport in blood"
+                ],
+                [
+                  "Chlorophyll (Mg)",
+                  "Photosynthesis"
+                ],
+                [
+                  "Na₃[Ag(S₂O₃)₂]",
+                  "Fixing in black-and-white photography"
+                ],
+                [
+                  "[Ag(CN)₂]⁻, [Au(CN)₂]⁻",
+                  "Extraction of silver and gold"
+                ],
+                [
+                  "Ca–EDTA",
+                  "Estimating hardness of water"
+                ]
+              ]
+            },
+            "alt": "Table of coordination compounds and where they matter"
+          },
+          "math": [],
+          "narration": "Namaste! When you add ammonia to pale blue copper sulphate solution and it turns deep blue, a coordination compound has formed. Such compounds are in our blood, in leaves, in photographic film and in gold extraction. In this part we see how they differ from double salts, how Werner explained them, and the vocabulary chemists use to describe them.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s02",
+          "layout": "concept",
+          "heading": "Double salts and coordination compounds",
+          "body_md": "Both are made by combining stoichiometric amounts of two or more salts. A **double salt** exists only in the solid and **dissociates completely** into simple ions in water. A **coordination compound** keeps its **complex ion** intact in water, so its constituents do not all give their usual tests.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Compound",
+                "Type",
+                "Ions in water"
+              ],
+              "rows": [
+                [
+                  "Potash alum, K₂SO₄·Al₂(SO₄)₃·24H₂O",
+                  "Double salt",
+                  "K⁺, Al³⁺, SO₄²⁻"
+                ],
+                [
+                  "Carnallite, KCl·MgCl₂·6H₂O",
+                  "Double salt",
+                  "K⁺, Mg²⁺, Cl⁻"
+                ],
+                [
+                  "K₃[Fe(CN)₆]",
+                  "Coordination compound",
+                  "K⁺ and [Fe(CN)₆]³⁻ only"
+                ],
+                [
+                  "[Ag(NH₃)₂]Cl",
+                  "Coordination compound",
+                  "[Ag(NH₃)₂]⁺ and Cl⁻"
+                ]
+              ]
+            },
+            "alt": "Table contrasting double salts with coordination compounds"
+          },
+          "math": [],
+          "narration": "Potash alum dissolves to give potassium, aluminium and sulphate ions, each of which gives its usual test, so it is a double salt. Potassium ferricyanide gives only potassium ions and the ferricyanide ion; the solution gives no test for free iron three plus or cyanide ions. The complex ion survives in water, and that is what makes it a coordination compound.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s03",
+          "layout": "concept",
+          "heading": "Werner’s theory",
+          "body_md": "Werner (1898): (1) a metal shows **primary valency** (ionisable, satisfied by anions, equal to the oxidation state) and **secondary valency** (non-ionisable, satisfied by ligands, equal to the **coordination number**). (2) Every metal has a fixed secondary valency. (3) Secondary valencies are **directed in space**, giving a definite geometry: 6 → octahedral; 4 → tetrahedral or square planar.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Werner formula",
+                "Ions per formula unit",
+                "Moles AgCl per mole"
+              ],
+              "rows": [
+                [
+                  "[Co(NH₃)₆]Cl₃",
+                  "4",
+                  "3"
+                ],
+                [
+                  "[CoCl(NH₃)₅]Cl₂",
+                  "3",
+                  "2"
+                ],
+                [
+                  "[CoCl₂(NH₃)₄]Cl",
+                  "2",
+                  "1"
+                ],
+                [
+                  "[CoCl₃(NH₃)₃]",
+                  "0 (non-electrolyte)",
+                  "0"
+                ]
+              ]
+            },
+            "alt": "Table of cobalt ammine chlorides with ions per formula unit and moles of silver chloride precipitated"
+          },
+          "math": [],
+          "narration": "Werner measured how much silver chloride each cobalt ammine chloride precipitated and how well its solution conducted electricity. He concluded that chloride ions outside the coordination sphere are free and ionisable, while ligands inside are held firmly in fixed directions. As ammonia molecules are replaced by chlorides inside the sphere, fewer ions form, and the triammine is a non-electrolyte.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s04",
+          "layout": "example",
+          "heading": "Worked example: hydrated chromium(III) chloride",
+          "body_md": "**Problem.** A grey-green form of $\\ce{CrCl3.6H2O}$ is dissolved; $0.020\\ \\text{mol}$ of it gives $0.040\\ \\text{mol}$ of AgCl with excess silver nitrate. Chromium(III) has coordination number 6. Write its Werner formula and the number of ions it gives in water.\n\n**Step 1.** Free $\\ce{Cl-}$ per formula unit $= 0.040 \\div 0.020 = 2$.\n\n**Step 2.** One Cl⁻ is a ligand; with CN = 6, five water molecules are also ligands; the sixth water is water of crystallisation.\n\n**Step 3.** $\\ce{[CrCl(H2O)5]Cl2.H2O}$: 3 ions in water (one complex cation and two Cl⁻).",
+          "bullets": [],
+          "visual": {
+            "kind": "flow",
+            "spec": {
+              "direction": "LR",
+              "nodes": [
+                {
+                  "id": "a",
+                  "label": "Moles AgCl ÷ moles compound"
+                },
+                {
+                  "id": "b",
+                  "label": "= Cl⁻ outside the sphere"
+                },
+                {
+                  "id": "c",
+                  "label": "Fill sphere to CN 6"
+                },
+                {
+                  "id": "d",
+                  "label": "Rest = water of crystallisation"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "a",
+                  "to": "b"
+                },
+                {
+                  "from": "b",
+                  "to": "c"
+                },
+                {
+                  "from": "c",
+                  "to": "d"
+                }
+              ]
+            },
+            "alt": "Flow for deducing the Werner formula of a hydrated chloride"
+          },
+          "math": [],
+          "narration": "Two moles of silver chloride form per mole of compound, so two chlorides are outside the sphere and one is a ligand. Chromium three plus needs six ligands, so five water molecules join that chloride inside the sphere. The sixth water is not bonded to chromium; it is water of crystallisation. The compound gives three ions in water.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s05",
+          "layout": "check",
+          "heading": "Quick check: Werner formula",
+          "body_md": "Use precipitation or conductivity data to choose the Werner formula.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Only the chloride outside the square brackets reacts with silver nitrate.",
+          "check_question_id": "q_isc12chem_ch10_001",
+          "audio": null
+        },
+        {
+          "id": "s06",
+          "layout": "concept",
+          "heading": "The language of complexes",
+          "body_md": "In $\\ce{[Co(NH3)5Cl]SO4}$: **central atom** Co; **ligands** five $\\ce{NH3}$ and one $\\ce{Cl-}$; **coordination number** 6; **coordination sphere** the bracketed cation; **counter ion** $\\ce{SO4^2-}$; **coordination polyhedron** octahedron; **oxidation state** of Co $+3$. A ligand is a **Lewis base** (electron-pair donor); the metal is a **Lewis acid**.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Term",
+                "Meaning"
+              ],
+              "rows": [
+                [
+                  "Ligand",
+                  "Ion or molecule donating an electron pair to the central atom"
+                ],
+                [
+                  "Coordination number",
+                  "Number of donor atoms bonded to the central atom"
+                ],
+                [
+                  "Coordination sphere",
+                  "Central atom with its ligands, written in square brackets"
+                ],
+                [
+                  "Coordination polyhedron",
+                  "Spatial arrangement of the donor atoms"
+                ],
+                [
+                  "Homoleptic / heteroleptic",
+                  "One kind / more than one kind of ligand"
+                ]
+              ]
+            },
+            "alt": "Table of key terms for coordination compounds"
+          },
+          "math": [],
+          "narration": "In pentaamminechloridocobalt three sulphate, cobalt is the central atom. Five ammonia molecules and one chloride ion are ligands, each donating a lone pair, so cobalt acts as a Lewis acid and the ligands as Lewis bases. Six donor atoms means coordination number six and an octahedral shape. Sulphate, outside the brackets, is the counter ion.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s07",
+          "layout": "concept",
+          "heading": "Ligands by denticity",
+          "body_md": "Ligands are classified by the number of donor atoms they use: **unidentate**, **didentate**, **tridentate**, **tetradentate**, **pentadentate**, **hexadentate**. Ligands with two or more donor atoms are **polydentate**; when they bind one metal through several atoms they form rings and are called **chelating** ligands. An **ambidentate** ligand can bind through either of two different atoms (NO₂⁻/ONO⁻, SCN⁻/NCS⁻).",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Denticity",
+                "Example",
+                "Donor atoms"
+              ],
+              "rows": [
+                [
+                  "Unidentate",
+                  "NH₃, H₂O, Cl⁻, CN⁻",
+                  "1"
+                ],
+                [
+                  "Didentate",
+                  "en (ethane-1,2-diamine), C₂O₄²⁻",
+                  "2 (N,N or O,O)"
+                ],
+                [
+                  "Tridentate",
+                  "dien (diethylenetriamine)",
+                  "3 N"
+                ],
+                [
+                  "Tetradentate",
+                  "trien (triethylenetetramine)",
+                  "4 N"
+                ],
+                [
+                  "Pentadentate",
+                  "EDTA³⁻ (one arm free)",
+                  "2 N, 3 O"
+                ],
+                [
+                  "Hexadentate",
+                  "EDTA⁴⁻",
+                  "2 N, 4 O"
+                ]
+              ]
+            },
+            "alt": "Table of ligands classified by denticity from unidentate to hexadentate"
+          },
+          "math": [],
+          "narration": "Ligands can have one arm or many. Ammonia and chloride are unidentate. Ethane-1,2-diamine and oxalate are didentate. Diethylenetriamine has three nitrogen donors, and triethylenetetramine four. EDTA can grip a metal with six donor atoms, two nitrogens and four oxygens. Nitrite and thiocyanate are ambidentate: each can attach through either of two different atoms.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s08",
+          "layout": "diagram",
+          "heading": "Chelating ligands and the chelate effect",
+          "body_md": "When ethane-1,2-diamine binds through both N atoms it closes a **five-membered ring** with the metal. Chelate complexes are **more stable** than similar complexes of unidentate ligands (the **chelate effect**): breaking one bond does not release the ligand.",
+          "bullets": [],
+          "visual": {
+            "kind": "svg",
+            "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 340 190\" role=\"img\" aria-label=\"Left: a metal ion bonded to two separate ammonia molecules, each through one nitrogen atom. Right: the same metal ion bonded to one ethane-1,2-diamine molecule through both of its nitrogen atoms, closing a five-membered ring of metal, nitrogen, carbon, carbon and nitrogen; this ring is a chelate.\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>Left: a metal ion bonded to two separate ammonia molecules, each through one nitrogen atom. Right: the same metal ion bonded to one ethane-1,2-diamine molecule through both of its nitrogen atoms, closing a five-membered ring of metal, nitrogen, carbon, carbon and nitrogen; this ring is a chelate.</title><circle cx=\"80\" cy=\"95\" r=\"15\" fill=\"var(--diagram-accent)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"80\" y=\"99\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\">M</text><line x1=\"93\" y1=\"87\" x2=\"128\" y2=\"62\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"93\" y1=\"103\" x2=\"128\" y2=\"128\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"140\" cy=\"55\" r=\"16\" fill=\"var(--diagram-blue)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"140\" y=\"59\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">NH₃</text><circle cx=\"140\" cy=\"135\" r=\"16\" fill=\"var(--diagram-blue)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"140\" y=\"139\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">NH₃</text><text x=\"95\" y=\"178\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\">two unidentate ligands</text><circle cx=\"220\" cy=\"95\" r=\"15\" fill=\"var(--diagram-accent)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"220\" y=\"99\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\">M</text><line x1=\"233\" y1=\"86\" x2=\"260\" y2=\"64\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"233\" y1=\"104\" x2=\"260\" y2=\"126\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"270\" cy=\"56\" r=\"12\" fill=\"var(--diagram-blue)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"270\" y=\"60\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">N</text><circle cx=\"270\" cy=\"134\" r=\"12\" fill=\"var(--diagram-blue)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"270\" y=\"138\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">N</text><line x1=\"280\" y1=\"63\" x2=\"300\" y2=\"74\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"280\" y1=\"127\" x2=\"300\" y2=\"116\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"310\" y1=\"92\" x2=\"310\" y2=\"98\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"310\" cy=\"80\" r=\"12\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"310\" y=\"84\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">C</text><circle cx=\"310\" cy=\"110\" r=\"12\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"310\" y=\"114\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">C</text><text x=\"272\" y=\"99\" fill=\"var(--diagram-accent)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">ring</text><text x=\"265\" y=\"178\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\">one didentate ligand (en): chelate</text></svg>",
+            "alt": "A metal ion with two separate ammonia ligands compared with the same ion bound by both nitrogen atoms of one ethane-1,2-diamine molecule, closing a five-membered chelate ring"
+          },
+          "math": [],
+          "narration": "On the left, two ammonia molecules each hold the metal with a single bond. On the right, one ethane-1,2-diamine molecule holds it with two bonds and closes a five-membered ring. To remove it, both bonds must break, so chelate complexes are much more stable. That is why EDTA can pull calcium and magnesium ions out of hard water so effectively.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s09",
+          "layout": "check",
+          "heading": "Quick check: denticity",
+          "body_md": "Classify a ligand by its denticity.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Count the donor atoms a ligand can use at the same time.",
+          "check_question_id": "q_isc12chem_ch10_015",
+          "audio": null
+        },
+        {
+          "id": "s10",
+          "layout": "concept",
+          "heading": "Coordination number and oxidation state",
+          "body_md": "**Coordination number** = total number of **donor atoms** (a didentate ligand counts 2). **Oxidation state** of the metal: charge on the complex ion $=$ oxidation state $+$ sum of ligand charges. Neutral ligands (NH₃, H₂O, CO, en) contribute 0; Cl⁻, CN⁻, OH⁻, NO₂⁻ contribute −1; C₂O₄²⁻ and SO₄²⁻ −2; EDTA⁴⁻ −4.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Ligand",
+                "Charge",
+                "Donor atoms"
+              ],
+              "rows": [
+                [
+                  "NH₃, H₂O, CO",
+                  "0",
+                  "1"
+                ],
+                [
+                  "en",
+                  "0",
+                  "2"
+                ],
+                [
+                  "Cl⁻, CN⁻, NO₂⁻",
+                  "−1",
+                  "1"
+                ],
+                [
+                  "C₂O₄²⁻",
+                  "−2",
+                  "2"
+                ],
+                [
+                  "EDTA⁴⁻",
+                  "−4",
+                  "6"
+                ]
+              ]
+            },
+            "alt": "Table of ligand charges and donor atoms"
+          },
+          "math": [],
+          "narration": "Two numbers describe the metal in any complex. The coordination number counts donor atoms, so each ethane-1,2-diamine or oxalate counts as two and EDTA as six. The oxidation state comes from charge balance: the charge on the complex equals the metal’s oxidation state plus the charges of all the ligands. Neutral ligands such as ammonia and carbon monoxide add nothing.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s11",
+          "layout": "example",
+          "heading": "Worked example: oxidation state and coordination number",
+          "body_md": "**Problem.** Find the oxidation state (OS) and coordination number (CN) of the metal in (a) $\\ce{[Pt(en)2Cl2]Cl2}$, (b) $\\ce{Na3[Co(NO2)6]}$ and (c) $\\ce{[Cu(EDTA)]^2-}$.\n\n**(a)** $x + 0 + 2(-1) = +2$, so $x = +4$; CN $= 2 \\times 2 + 2 = 6$.\n\n**(b)** $3(+1) + x + 6(-1) = 0$, so $x = +3$; CN $= 6$.\n\n**(c)** $x + (-4) = -2$, so $x = +2$; CN $= 6$ (EDTA hexadentate).",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Complex",
+                "OS",
+                "CN"
+              ],
+              "rows": [
+                [
+                  "[Pt(en)₂Cl₂]Cl₂",
+                  "+4",
+                  "6"
+                ],
+                [
+                  "Na₃[Co(NO₂)₆]",
+                  "+3",
+                  "6"
+                ],
+                [
+                  "[Cu(EDTA)]²⁻",
+                  "+2",
+                  "6"
+                ]
+              ]
+            },
+            "alt": "Table of oxidation states and coordination numbers for the worked example"
+          },
+          "math": [],
+          "narration": "For the platinum complex, the bracketed ion carries plus two because two chlorides lie outside; two chlorides inside give minus two, so platinum is plus four; two ethane-1,2-diamines give four donor atoms and two chlorides two more. In sodium hexanitritocobaltate, cobalt is plus three. In the copper EDTA complex, copper is plus two and EDTA alone supplies six donor atoms.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s12",
+          "layout": "check",
+          "heading": "Quick check: oxidation state and coordination number",
+          "body_md": "Find the oxidation state and coordination number of a metal.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Balance the charges for the oxidation state; count donor atoms for the coordination number.",
+          "check_question_id": "q_isc12chem_ch10_016",
+          "audio": null
+        },
+        {
+          "id": "s13",
+          "layout": "summary",
+          "heading": "Summary: Part 1",
+          "body_md": "",
+          "bullets": [
+            "Double salts give all their simple ions in water; complexes keep the complex ion intact.",
+            "Werner: primary valency = oxidation state (ionisable); secondary valency = coordination number (directional).",
+            "AgNO₃ precipitates only Cl⁻ outside the sphere; number of ions shows in conductivity.",
+            "Ligands: uni- to hexadentate; chelates are extra stable; ambidentate ligands bind through either of two atoms.",
+            "CN = number of donor atoms; OS from charge balance."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Quantity",
+                "How to find it"
+              ],
+              "rows": [
+                [
+                  "Ionisable Cl⁻",
+                  "Moles AgCl ÷ moles complex"
+                ],
+                [
+                  "CN",
+                  "Count donor atoms"
+                ],
+                [
+                  "OS",
+                  "Charge balance"
+                ]
+              ]
+            },
+            "alt": "Summary table of how to find key quantities"
+          },
+          "math": [],
+          "narration": "Let us sum up Part 1. Coordination compounds keep their complex ions in water, unlike double salts. Werner’s primary valency is the ionisable oxidation state and his secondary valency is the directional coordination number. Silver nitrate counts only the chloride outside the brackets. Ligands range from unidentate to hexadentate, and chelates are especially stable.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s14",
+          "layout": "exam-tips",
+          "heading": "Exam tips: Part 1",
+          "body_md": "",
+          "bullets": [
+            "Show the division moles AgCl ÷ moles complex before writing a Werner formula.",
+            "Count donor atoms, not ligand molecules, for the coordination number.",
+            "Include the charges of anionic ligands when finding the oxidation state.",
+            "Give one example for each term you define (chelate, ambidentate, homoleptic)."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Slip",
+                "Fix"
+              ],
+              "rows": [
+                [
+                  "CN of [Pt(en)₂Cl₂]²⁺ = 4",
+                  "CN = 6"
+                ],
+                [
+                  "Calling alum a complex",
+                  "Alum is a double salt"
+                ],
+                [
+                  "Secondary valency is ionisable",
+                  "Primary valency is ionisable"
+                ]
+              ]
+            },
+            "alt": "Table of three common slips in Part 1 and fixes"
+          },
+          "math": [],
+          "narration": "Some tips. When working out a Werner formula, write the division of moles of silver chloride by moles of complex. Count donor atoms for the coordination number. Remember to include the charges of anionic ligands when finding the oxidation state, and support every definition with an example.",
+          "check_question_id": null,
+          "audio": null
+        }
+      ],
+      "status": "draft",
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "unit": "isc-12-chemistry-ch10",
+      "part": 2,
+      "version": 1,
+      "title": "Coordination Compounds: Terms, Nomenclature and Isomerism — Part 2: Naming and isomerism",
+      "language": "en",
+      "goals": [
+        "Write IUPAC names of mononuclear coordination compounds and formulae from names",
+        "Identify ionisation, linkage, coordination and hydrate isomers",
+        "Draw geometrical (cis/trans, fac/mer) and optical isomers of simple octahedral and square planar complexes"
+      ],
+      "slides": [
+        {
+          "id": "s01",
+          "layout": "title",
+          "heading": "Names and shapes",
+          "body_md": "Part 2 — how to name complexes by IUPAC rules and how the same formula can give different compounds.",
+          "bullets": [],
+          "visual": {
+            "kind": "flow",
+            "spec": {
+              "direction": "LR",
+              "nodes": [
+                {
+                  "id": "a",
+                  "label": "Formula"
+                },
+                {
+                  "id": "b",
+                  "label": "IUPAC name"
+                },
+                {
+                  "id": "c",
+                  "label": "Structural isomers"
+                },
+                {
+                  "id": "d",
+                  "label": "Stereoisomers"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "a",
+                  "to": "b"
+                },
+                {
+                  "from": "b",
+                  "to": "c"
+                },
+                {
+                  "from": "c",
+                  "to": "d"
+                }
+              ]
+            },
+            "alt": "Flow of Part 2 topics: formula to name, then structural isomers and stereoisomers"
+          },
+          "math": [],
+          "narration": "Coordination chemists needed a precise way to name thousands of complexes, so IUPAC laid down a set of rules. In this part we learn those rules, both from formula to name and from name to formula. Then we see how a single formula can correspond to several different compounds, the isomers, which can differ in bonding, in colour, and even in how they act as medicines.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s02",
+          "layout": "concept",
+          "heading": "IUPAC rules for naming",
+          "body_md": "(1) **Cation first, then anion**, as in simple salts. (2) Within the complex: **ligands first, in alphabetical order**, then the metal. (3) Prefixes **di-, tri-, tetra-** for simple ligands; **bis-, tris-, tetrakis-** (with brackets) for ligands whose names contain numbers or prefixes. (4) Metal **oxidation state** in Roman numerals in brackets. (5) An **anionic complex** ends in **-ate**, with Latin roots for some metals. (6) Neutral complexes are one word.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Metal",
+                "In an anionic complex"
+              ],
+              "rows": [
+                [
+                  "Iron",
+                  "ferrate"
+                ],
+                [
+                  "Copper",
+                  "cuprate"
+                ],
+                [
+                  "Silver",
+                  "argentate"
+                ],
+                [
+                  "Gold",
+                  "aurate"
+                ],
+                [
+                  "Lead",
+                  "plumbate"
+                ],
+                [
+                  "Tin",
+                  "stannate"
+                ],
+                [
+                  "Zinc, aluminium, cobalt",
+                  "zincate, aluminate, cobaltate"
+                ]
+              ]
+            },
+            "alt": "Table of metal names used in anionic complexes"
+          },
+          "math": [],
+          "narration": "Name the cation first and the anion second. Inside a complex, list the ligands alphabetically, ignoring multiplying prefixes, and then name the metal with its oxidation state in Roman numerals. If the complex is an anion, the metal name ends in ate, and iron, copper, silver, gold, lead and tin use their Latin roots. Ligands with numbers already in their names take bis and tris.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s03",
+          "layout": "concept",
+          "heading": "Names of ligands",
+          "body_md": "Anionic ligands end in **-o** (chlorido, cyanido, hydroxido, oxalato, sulfato). Neutral ligands keep their names except **aqua** (H₂O), **ammine** (NH₃), **carbonyl** (CO) and **nitrosyl** (NO). For ambidentate ligands, the donor atom is shown: nitrito-N, nitrito-O, thiocyanato-S, thiocyanato-N.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Ligand",
+                "Name",
+                "Ligand",
+                "Name"
+              ],
+              "rows": [
+                [
+                  "F⁻",
+                  "fluorido",
+                  "H₂O",
+                  "aqua"
+                ],
+                [
+                  "Br⁻",
+                  "bromido",
+                  "NH₃",
+                  "ammine"
+                ],
+                [
+                  "OH⁻",
+                  "hydroxido",
+                  "CO",
+                  "carbonyl"
+                ],
+                [
+                  "CN⁻",
+                  "cyanido",
+                  "NO",
+                  "nitrosyl"
+                ],
+                [
+                  "C₂O₄²⁻",
+                  "oxalato",
+                  "en",
+                  "ethane-1,2-diamine"
+                ],
+                [
+                  "NO₂⁻ (N)",
+                  "nitrito-N",
+                  "SCN⁻ (S)",
+                  "thiocyanato-S"
+                ]
+              ]
+            },
+            "alt": "Table of IUPAC ligand names"
+          },
+          "math": [],
+          "narration": "Learn the ligand names well. Negative ligands end in o: fluorido, bromido, hydroxido, cyanido and oxalato. Water is aqua, ammonia is ammine with two m’s, carbon monoxide is carbonyl and nitrogen monoxide is nitrosyl. For ambidentate ligands, add the symbol of the donor atom, as in nitrito N for nitrite bonded through nitrogen.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s04",
+          "layout": "example",
+          "heading": "Worked example: formula to name",
+          "body_md": "**Name these.**\n\n(a) $\\ce{[CrCl2(H2O)4]Cl}$ → tetraaquadichloridochromium(III) chloride\n\n(b) $\\ce{Na2[Zn(OH)4]}$ → sodium tetrahydroxidozincate(II)\n\n(c) $\\ce{[Fe(CO)5]}$ → pentacarbonyliron(0)\n\n(d) $\\ce{[Co(NH3)5(ONO)]SO4}$ → pentaamminenitrito-O-cobalt(III) sulfate\n\n(e) $\\ce{K3[Al(C2O4)3]}$ → potassium trioxalatoaluminate(III)",
+          "bullets": [],
+          "visual": {
+            "kind": "flow",
+            "spec": {
+              "direction": "LR",
+              "nodes": [
+                {
+                  "id": "a",
+                  "label": "Charge on complex"
+                },
+                {
+                  "id": "b",
+                  "label": "Metal oxidation state"
+                },
+                {
+                  "id": "c",
+                  "label": "Ligands A→Z with prefixes"
+                },
+                {
+                  "id": "d",
+                  "label": "Metal (-ate if anionic)"
+                },
+                {
+                  "id": "e",
+                  "label": "Counter ion"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "a",
+                  "to": "b"
+                },
+                {
+                  "from": "b",
+                  "to": "c"
+                },
+                {
+                  "from": "c",
+                  "to": "d"
+                },
+                {
+                  "from": "d",
+                  "to": "e"
+                }
+              ]
+            },
+            "alt": "Flow for naming a complex from its formula"
+          },
+          "math": [],
+          "narration": "Start each name by finding the charge on the complex and the metal’s oxidation state. In the chromium complex, aqua comes before chlorido alphabetically. The zinc complex is an anion, so zinc becomes zincate. In iron pentacarbonyl the metal is in the zero state. The nitrite bonded through oxygen is nitrito O. And three oxalates around aluminium in an anion give trioxalatoaluminate.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s05",
+          "layout": "example",
+          "heading": "Worked example: name to formula",
+          "body_md": "**Write formulas.**\n\n(a) Hexaaquairon(II) sulfate: $\\ce{[Fe(H2O)6]^2+}$ with $\\ce{SO4^2-}$ → $\\ce{[Fe(H2O)6]SO4}$.\n\n(b) Potassium hexacyanidomanganate(III): charge $= +3 - 6 = -3$ → $\\ce{K3[Mn(CN)6]}$.\n\n(c) Tetraamminecopper(II) tetrachloridoplatinate(II): $\\ce{[Cu(NH3)4]^2+}$ and $\\ce{[PtCl4]^2-}$ → $\\ce{[Cu(NH3)4][PtCl4]}$.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Name",
+                "Charge on complex",
+                "Formula"
+              ],
+              "rows": [
+                [
+                  "Hexaaquairon(II) sulfate",
+                  "+2",
+                  "[Fe(H₂O)₆]SO₄"
+                ],
+                [
+                  "Potassium hexacyanidomanganate(III)",
+                  "−3",
+                  "K₃[Mn(CN)₆]"
+                ],
+                [
+                  "Tetraamminecopper(II) tetrachloridoplatinate(II)",
+                  "+2 and −2",
+                  "[Cu(NH₃)₄][PtCl₄]"
+                ]
+              ]
+            },
+            "alt": "Table of names, charges and formulas"
+          },
+          "math": [],
+          "narration": "To write a formula, build the complex ion and find its charge from the oxidation state and ligand charges. Hexaaquairon two is a plus two cation, balanced by one sulphate. Hexacyanidomanganate three carries minus three, so three potassium ions are needed. When both ions are complexes, write the cation first: tetraamminecopper two with tetrachloridoplatinate two.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s06",
+          "layout": "check",
+          "heading": "Quick check: naming",
+          "body_md": "Choose the correct IUPAC name or formula.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Look at alphabetical order, the ate ending and the oxidation state.",
+          "check_question_id": "q_isc12chem_ch10_034",
+          "audio": null
+        },
+        {
+          "id": "s07",
+          "layout": "concept",
+          "heading": "Types of isomerism",
+          "body_md": "**Isomers** have the same molecular formula but different arrangements of atoms. **Structural isomers** differ in which atoms are bonded to the metal; **stereoisomers** have the same bonds but different spatial arrangements.",
+          "bullets": [],
+          "visual": {
+            "kind": "flow",
+            "spec": {
+              "direction": "TB",
+              "nodes": [
+                {
+                  "id": "i",
+                  "label": "Isomerism"
+                },
+                {
+                  "id": "s",
+                  "label": "Structural"
+                },
+                {
+                  "id": "t",
+                  "label": "Stereoisomerism"
+                },
+                {
+                  "id": "a",
+                  "label": "Ionisation"
+                },
+                {
+                  "id": "b",
+                  "label": "Linkage"
+                },
+                {
+                  "id": "c",
+                  "label": "Coordination"
+                },
+                {
+                  "id": "d",
+                  "label": "Hydrate"
+                },
+                {
+                  "id": "g",
+                  "label": "Geometrical"
+                },
+                {
+                  "id": "o",
+                  "label": "Optical"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "i",
+                  "to": "s"
+                },
+                {
+                  "from": "i",
+                  "to": "t"
+                },
+                {
+                  "from": "s",
+                  "to": "a"
+                },
+                {
+                  "from": "s",
+                  "to": "b"
+                },
+                {
+                  "from": "s",
+                  "to": "c"
+                },
+                {
+                  "from": "s",
+                  "to": "d"
+                },
+                {
+                  "from": "t",
+                  "to": "g"
+                },
+                {
+                  "from": "t",
+                  "to": "o"
+                }
+              ]
+            },
+            "alt": "Tree of isomerism in coordination compounds"
+          },
+          "math": [],
+          "narration": "Coordination compounds show two broad kinds of isomerism. In structural isomers, the set of ligands bonded to the metal is different, or a ligand is bonded through a different atom. In stereoisomers, exactly the same atoms are bonded to the metal, but they are arranged differently in space. Each kind has its own sub-types, which we now meet.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s08",
+          "layout": "concept",
+          "heading": "Structural isomerism",
+          "body_md": "Four kinds are in the syllabus.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Type",
+                "Cause",
+                "Example pair"
+              ],
+              "rows": [
+                [
+                  "Ionisation",
+                  "Ligand and counter ion exchange places",
+                  "[Pt(NH₃)₄Cl₂]Br₂ and [Pt(NH₃)₄Br₂]Cl₂"
+                ],
+                [
+                  "Linkage",
+                  "Ambidentate ligand binds through a different atom",
+                  "[Mn(CO)₅(SCN)] and [Mn(CO)₅(NCS)]"
+                ],
+                [
+                  "Coordination",
+                  "Ligands exchanged between complex cation and anion",
+                  "[Cu(NH₃)₄][PtCl₄] and [Pt(NH₃)₄][CuCl₄]"
+                ],
+                [
+                  "Hydrate",
+                  "Water inside or outside the sphere",
+                  "[Cr(H₂O)₆]Cl₃ (violet) and [CrCl(H₂O)₅]Cl₂·H₂O (grey-green)"
+                ]
+              ]
+            },
+            "alt": "Table of structural isomerism with causes and example pairs"
+          },
+          "math": [],
+          "narration": "Ionisation isomers give different ions in solution: one gives bromide ions, the other chloride ions. Linkage isomers differ in the donor atom of an ambidentate ligand, such as thiocyanate bonded through sulphur or nitrogen. Coordination isomers swap ligands between a complex cation and a complex anion. Hydrate isomers differ in whether water is a ligand or water of crystallisation, and often differ in colour.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s09",
+          "layout": "example",
+          "heading": "Worked example: naming the isomerism",
+          "body_md": "**Problem.** Identify the type of isomerism in each pair.\n\n(a) $\\ce{[Co(NH3)5(NO3)]SO4}$ and $\\ce{[Co(NH3)5(SO4)]NO3}$ → **ionisation** (NO₃⁻ and SO₄²⁻ swap).\n\n(b) $\\ce{[Pd(NH3)2(NO2)2]}$ and $\\ce{[Pd(NH3)2(ONO)2]}$ → **linkage** (N- vs O-bonded nitrite).\n\n(c) $\\ce{[Co(en)3][Cr(CN)6]}$ and $\\ce{[Cr(en)3][Co(CN)6]}$ → **coordination**.\n\n(d) $\\ce{[CrCl2(H2O)4]Cl.2H2O}$ and $\\ce{[CrCl(H2O)5]Cl2.H2O}$ → **hydrate**.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Pair",
+                "What differs",
+                "Isomerism"
+              ],
+              "rows": [
+                [
+                  "(a)",
+                  "Ion outside the sphere",
+                  "Ionisation"
+                ],
+                [
+                  "(b)",
+                  "Donor atom of NO₂⁻",
+                  "Linkage"
+                ],
+                [
+                  "(c)",
+                  "Which metal has which ligands",
+                  "Coordination"
+                ],
+                [
+                  "(d)",
+                  "Number of H₂O ligands",
+                  "Hydrate"
+                ]
+              ]
+            },
+            "alt": "Table identifying the isomerism in four pairs"
+          },
+          "math": [],
+          "narration": "Ask what has changed. In the first pair, nitrate and sulphate swap between ligand and counter ion: ionisation isomers. In the second, nitrite binds through nitrogen in one and oxygen in the other: linkage. In the third, the two metals exchange their ligand sets: coordination. In the fourth, one water molecule moves from inside to outside the sphere: hydrate isomers.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s10",
+          "layout": "check",
+          "heading": "Quick check: structural isomers",
+          "body_md": "Identify the type of structural isomerism.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Decide what has moved: a counter ion, a donor atom, a ligand set or a water molecule.",
+          "check_question_id": "q_isc12chem_ch10_047",
+          "audio": null
+        },
+        {
+          "id": "s11",
+          "layout": "diagram",
+          "heading": "Geometrical isomerism",
+          "body_md": "**cis–trans** isomers occur in square planar **[MA₂B₂]** and octahedral **[MA₂B₄]** complexes: identical ligands are **adjacent (cis)** or **opposite (trans)**. Octahedral **[MA₃B₃]** shows **fac** (three A on one face) and **mer** (three A around a meridian) isomers. Tetrahedral complexes cannot show geometrical isomerism.",
+          "bullets": [],
+          "visual": {
+            "kind": "svg",
+            "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 360 330\" role=\"img\" aria-label=\"Top row: square planar diamminedichloridoplatinum(II). In the cis isomer the two chlorine atoms are next to each other; in the trans isomer they are opposite. Bottom row: octahedral tetraamminedichloridocobalt(III) ion. In the cis isomer the two chlorine atoms are on adjacent corners; in the trans isomer they are at opposite corners, one at the top and one at the bottom.\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>Top row: square planar diamminedichloridoplatinum(II). In the cis isomer the two chlorine atoms are next to each other; in the trans isomer they are opposite. Bottom row: octahedral tetraamminedichloridocobalt(III) ion. In the cis isomer the two chlorine atoms are on adjacent corners; in the trans isomer they are at opposite corners, one at the top and one at the bottom.</title><rect x=\"56\" y=\"36\" width=\"68\" height=\"68\" fill=\"none\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><line x1=\"90\" y1=\"70\" x2=\"90\" y2=\"48.9\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"90\" cy=\"36\" r=\"12\" fill=\"var(--diagram-green)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"90\" y=\"40\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">Cl</text><line x1=\"90\" y1=\"70\" x2=\"111.1\" y2=\"70\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"124\" cy=\"70\" r=\"12\" fill=\"var(--diagram-green)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"124\" y=\"74\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">Cl</text><line x1=\"90\" y1=\"70\" x2=\"90\" y2=\"91.1\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"90\" cy=\"104\" r=\"12\" fill=\"var(--diagram-blue)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"90\" y=\"108\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">NH₃</text><line x1=\"90\" y1=\"70\" x2=\"68.9\" y2=\"70\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"56\" cy=\"70\" r=\"12\" fill=\"var(--diagram-blue)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"56\" y=\"74\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">NH₃</text><circle cx=\"90\" cy=\"70\" r=\"12\" fill=\"var(--diagram-accent)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"90\" y=\"74\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">Pt</text><text x=\"90\" y=\"132\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">cis</text><rect x=\"236\" y=\"36\" width=\"68\" height=\"68\" fill=\"none\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><line x1=\"270\" y1=\"70\" x2=\"270\" y2=\"48.9\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"270\" cy=\"36\" r=\"12\" fill=\"var(--diagram-green)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"270\" y=\"40\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">Cl</text><line x1=\"270\" y1=\"70\" x2=\"291.1\" y2=\"70\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"304\" cy=\"70\" r=\"12\" fill=\"var(--diagram-blue)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"304\" y=\"74\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">NH₃</text><line x1=\"270\" y1=\"70\" x2=\"270\" y2=\"91.1\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"270\" cy=\"104\" r=\"12\" fill=\"var(--diagram-green)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"270\" y=\"108\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">Cl</text><line x1=\"270\" y1=\"70\" x2=\"248.9\" y2=\"70\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"236\" cy=\"70\" r=\"12\" fill=\"var(--diagram-blue)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"236\" y=\"74\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">NH₃</text><circle cx=\"270\" cy=\"70\" r=\"12\" fill=\"var(--diagram-accent)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"270\" y=\"74\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">Pt</text><text x=\"270\" y=\"132\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">trans</text><line x1=\"90\" y1=\"230\" x2=\"90\" y2=\"200.6\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"90\" y1=\"230\" x2=\"90\" y2=\"259.4\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"90\" y1=\"230\" x2=\"62\" y2=\"230\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"90\" y1=\"230\" x2=\"118\" y2=\"230\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"90\" y1=\"230\" x2=\"74.6\" y2=\"242.6\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"90\" y1=\"230\" x2=\"105.4\" y2=\"217.4\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-dasharray=\"3 2\"/><circle cx=\"90\" cy=\"188\" r=\"12\" fill=\"var(--diagram-green)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"90\" y=\"192\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">Cl</text><circle cx=\"90\" cy=\"272\" r=\"12\" fill=\"var(--diagram-blue)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"90\" y=\"276\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">NH₃</text><circle cx=\"50\" cy=\"230\" r=\"12\" fill=\"var(--diagram-blue)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"50\" y=\"234\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">NH₃</text><circle cx=\"130\" cy=\"230\" r=\"12\" fill=\"var(--diagram-green)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"130\" y=\"234\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">Cl</text><circle cx=\"68\" cy=\"248\" r=\"12\" fill=\"var(--diagram-blue)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"68\" y=\"252\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">NH₃</text><circle cx=\"112\" cy=\"212\" r=\"12\" fill=\"var(--diagram-blue)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"112\" y=\"216\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">NH₃</text><circle cx=\"90\" cy=\"230\" r=\"12\" fill=\"var(--diagram-accent)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"90\" y=\"234\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">Co</text><text x=\"90\" y=\"298\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">cis</text><line x1=\"270\" y1=\"230\" x2=\"270\" y2=\"200.6\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"270\" y1=\"230\" x2=\"270\" y2=\"259.4\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"270\" y1=\"230\" x2=\"242\" y2=\"230\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"270\" y1=\"230\" x2=\"298\" y2=\"230\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"270\" y1=\"230\" x2=\"254.6\" y2=\"242.6\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"270\" y1=\"230\" x2=\"285.4\" y2=\"217.4\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-dasharray=\"3 2\"/><circle cx=\"270\" cy=\"188\" r=\"12\" fill=\"var(--diagram-green)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"270\" y=\"192\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">Cl</text><circle cx=\"270\" cy=\"272\" r=\"12\" fill=\"var(--diagram-green)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"270\" y=\"276\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">Cl</text><circle cx=\"230\" cy=\"230\" r=\"12\" fill=\"var(--diagram-blue)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"230\" y=\"234\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">NH₃</text><circle cx=\"310\" cy=\"230\" r=\"12\" fill=\"var(--diagram-blue)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"310\" y=\"234\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">NH₃</text><circle cx=\"248\" cy=\"248\" r=\"12\" fill=\"var(--diagram-blue)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"248\" y=\"252\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">NH₃</text><circle cx=\"292\" cy=\"212\" r=\"12\" fill=\"var(--diagram-blue)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"292\" y=\"216\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">NH₃</text><circle cx=\"270\" cy=\"230\" r=\"12\" fill=\"var(--diagram-accent)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"270\" y=\"234\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">Co</text><text x=\"270\" y=\"298\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">trans</text><text x=\"180\" y=\"160\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">square planar [PtCl₂(NH₃)₂]</text><text x=\"180\" y=\"324\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">octahedral [CoCl₂(NH₃)₄]⁺</text></svg>",
+            "alt": "Cis and trans isomers of square planar diamminedichloridoplatinum(II) and of the octahedral tetraamminedichloridocobalt(III) ion",
+            "caption": "Chlorine atoms are drawn green and nitrogen-bonded ligands blue; the dashed bond points away from the viewer."
+          },
+          "math": [],
+          "narration": "In square planar diamminedichloridoplatinum, the two chlorides can be neighbours, the cis isomer, or opposite each other, the trans isomer; the cis form is the anticancer drug cisplatin. Octahedral complexes with two identical ligands among four others also have cis and trans forms. With three of one ligand and three of another, we get fac and mer isomers. In a tetrahedron every position is next to every other, so there are none.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s12",
+          "layout": "concept",
+          "heading": "Optical isomerism",
+          "body_md": "**Optical isomers** (enantiomers) are **non-superimposable mirror images**; they rotate plane-polarised light equally in opposite directions (**d** and **l**). Common in octahedral complexes with didentate ligands: **[M(AA)₃]** and **cis-[MA₂(AA)₂]**. Trans isomers have a mirror plane and are optically inactive.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Complex",
+                "Geometrical isomers",
+                "Optical isomers"
+              ],
+              "rows": [
+                [
+                  "[Cr(C₂O₄)₃]³⁻",
+                  "None",
+                  "d and l"
+                ],
+                [
+                  "[CoCl₂(en)₂]⁺",
+                  "cis and trans",
+                  "cis only: d and l"
+                ],
+                [
+                  "[Pt(en)Cl₂]",
+                  "None (en spans cis positions)",
+                  "None"
+                ],
+                [
+                  "[Co(NH₃)₃(NO₂)₃]",
+                  "fac and mer",
+                  "None"
+                ]
+              ]
+            },
+            "alt": "Table of complexes with their geometrical and optical isomers"
+          },
+          "math": [],
+          "narration": "Three oxalate rings around chromium can twist like a left-handed or a right-handed propeller, giving two mirror-image forms that rotate polarised light in opposite directions. The cis form of a bis ethane-1,2-diamine complex with two chlorides is also chiral, but the trans form has a mirror plane. A single ethane-1,2-diamine on square planar platinum must span neighbouring positions, so there is no isomer.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s13",
+          "layout": "example",
+          "heading": "Worked example: counting stereoisomers",
+          "body_md": "**Problem.** How many stereoisomers does each have? (a) $\\ce{[Co(en)2(NH3)2]^3+}$; (b) $\\ce{[Pt(NH3)2(Br)(Cl)]}$ (square planar); (c) $\\ce{[Zn(NH3)2Cl2]}$ (tetrahedral).\n\n**(a)** trans (1, optically inactive) + cis (d and l) = **3**.\n\n**(b)** NH₃ groups adjacent (cis) or opposite (trans) = **2**; no optical isomers (planar).\n\n**(c)** Tetrahedral: **none** (only one arrangement).",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Complex",
+                "Geometry",
+                "Stereoisomers"
+              ],
+              "rows": [
+                [
+                  "[Co(en)₂(NH₃)₂]³⁺",
+                  "Octahedral",
+                  "3 (trans, d-cis, l-cis)"
+                ],
+                [
+                  "[Pt(NH₃)₂BrCl]",
+                  "Square planar",
+                  "2 (cis, trans)"
+                ],
+                [
+                  "[Zn(NH₃)₂Cl₂]",
+                  "Tetrahedral",
+                  "1 (no isomers)"
+                ]
+              ]
+            },
+            "alt": "Table counting stereoisomers"
+          },
+          "math": [],
+          "narration": "For the cobalt complex, the two ammonias can be opposite, which gives one trans isomer with a mirror plane, or adjacent, which gives a chiral cis form existing as a mirror-image pair: three in all. The square planar platinum complex has cis and trans forms but no optical isomers. The tetrahedral zinc complex has only one arrangement, because all four corners of a tetrahedron are equivalent.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s14",
+          "layout": "check",
+          "heading": "Quick check: stereoisomers",
+          "body_md": "Decide which complex shows geometrical or optical isomerism.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Look at the geometry first, then at whether a mirror plane is possible.",
+          "check_question_id": "q_isc12chem_ch10_048",
+          "audio": null
+        },
+        {
+          "id": "s15",
+          "layout": "summary",
+          "heading": "Summary: Part 2",
+          "body_md": "",
+          "bullets": [
+            "Name: cation then anion; ligands alphabetical; -o for anionic ligands; aqua, ammine, carbonyl; Roman numeral OS; -ate for anionic complexes.",
+            "bis/tris/tetrakis for ligands like en.",
+            "Structural isomers: ionisation, linkage, coordination, hydrate.",
+            "Geometrical: cis/trans (MA₂B₂ planar, MA₂B₄ octahedral), fac/mer (MA₃B₃).",
+            "Optical: [M(AA)₃] and cis-[MA₂(AA)₂]; tetrahedral and planar complexes of simple ligands are inactive."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Pair",
+                "Isomerism"
+              ],
+              "rows": [
+                [
+                  "NO₂⁻ / ONO⁻",
+                  "Linkage"
+                ],
+                [
+                  "Cl⁻ inside / outside",
+                  "Ionisation"
+                ],
+                [
+                  "cis / trans",
+                  "Geometrical"
+                ],
+                [
+                  "d / l",
+                  "Optical"
+                ]
+              ]
+            },
+            "alt": "Summary table of isomer pairs"
+          },
+          "math": [],
+          "narration": "Let us sum up Part 2. IUPAC names list the cation first, the ligands alphabetically, then the metal with its oxidation state, using ate for complex anions. Structural isomers differ in what is bonded to the metal; stereoisomers differ in arrangement. Geometrical isomers need square planar or octahedral complexes, and optical isomers are common with chelating ligands.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s16",
+          "layout": "exam-tips",
+          "heading": "Exam tips: Part 2",
+          "body_md": "",
+          "bullets": [
+            "Alphabetise by ligand name, not prefix: \"tetraaqua\" files under a, \"dichlorido\" under c.",
+            "Write \"ammine\" for NH₃ (not \"amine\").",
+            "Use -ate only when the complex ion is negative.",
+            "For stereoisomer counts, check for a mirror plane before calling a complex optically active."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Slip",
+                "Fix"
+              ],
+              "rows": [
+                [
+                  "potassium hexacyanidoiron(III)",
+                  "hexacyanidoferrate(III)"
+                ],
+                [
+                  "Tetrahedral MA₂B₂ has cis/trans",
+                  "No geometrical isomers"
+                ],
+                [
+                  "trans-[CoCl₂(en)₂]⁺ optically active",
+                  "Inactive (mirror plane)"
+                ]
+              ]
+            },
+            "alt": "Table of three common slips in Part 2 and fixes"
+          },
+          "math": [],
+          "narration": "Final tips. Arrange ligands by their names, ignoring prefixes. Spell ammine with two m’s. Use the ate ending only for anionic complexes. And before calling a complex optically active, look for a mirror plane; trans isomers usually have one.",
+          "check_question_id": null,
+          "audio": null
+        }
+      ],
+      "status": "draft",
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    }
+  ],
+  "notes": {
+    "unit": "isc-12-chemistry-ch10",
+    "version": 1,
+    "title": "Coordination Compounds: Terms, Nomenclature and Isomerism — Notes",
+    "language": "en",
+    "sections": [
+      {
+        "heading": "1. Double salts, coordination compounds and Werner’s theory",
+        "body_md": "**Double salt** (potash alum, carnallite, Mohr’s salt): exists only as a solid; dissociates completely into simple ions in water. **Coordination compound** (K₄[Fe(CN)₆], [Cu(NH₃)₄]SO₄): the complex ion stays intact in water.\n\n**Werner (1898):** primary valency — ionisable, satisfied by anions, = oxidation state; secondary valency — non-ionisable, satisfied by ligands, = coordination number, fixed for a metal and directed in space (6 → octahedral; 4 → tetrahedral or square planar).\n\n**Evidence:** AgNO₃ precipitates only Cl⁻ outside the sphere; conductivity depends on number of ions: [Co(NH₃)₆]Cl₃ (4 ions, 3 AgCl), [CoCl(NH₃)₅]Cl₂ (3, 2), [CoCl₂(NH₃)₄]Cl (2, 1), [CoCl₃(NH₃)₃] (0, 0).",
+        "key_terms": [
+          {
+            "term": "Double salt",
+            "definition_md": "A compound of two salts that exists only in the solid and gives all its simple ions in water."
+          },
+          {
+            "term": "Primary valency",
+            "definition_md": "Ionisable valency of the metal, equal to its oxidation state."
+          },
+          {
+            "term": "Secondary valency",
+            "definition_md": "Non-ionisable valency, equal to the coordination number and directed in space."
+          }
+        ],
+        "formulas": [],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Formula",
+              "Ions",
+              "mol AgCl"
+            ],
+            "rows": [
+              [
+                "[Co(NH₃)₆]Cl₃",
+                "4",
+                "3"
+              ],
+              [
+                "[CoCl(NH₃)₅]Cl₂",
+                "3",
+                "2"
+              ],
+              [
+                "[CoCl₂(NH₃)₄]Cl",
+                "2",
+                "1"
+              ],
+              [
+                "[CoCl₃(NH₃)₃]",
+                "0",
+                "0"
+              ]
+            ]
+          },
+          "alt": "Table of cobalt ammine chlorides"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "isc-12-chemistry-ch10-t01"
+        ]
+      },
+      {
+        "heading": "2. Ligands, coordination number and oxidation state",
+        "body_md": "**Ligand:** Lewis base donating an electron pair to the central atom (Lewis acid). **Denticity:** unidentate (NH₃, Cl⁻), didentate (en, C₂O₄²⁻), tridentate (dien), tetradentate (trien), pentadentate (EDTA³⁻), hexadentate (EDTA⁴⁻). **Chelating ligand:** polydentate ligand forming a ring; chelates are extra stable (chelate effect). **Ambidentate:** NO₂⁻/ONO⁻, SCN⁻/NCS⁻, CN⁻/NC⁻.\n\n**Coordination number** = number of donor atoms. **Oxidation state:** charge on complex = OS + sum of ligand charges. **Homoleptic** (one kind of ligand) vs **heteroleptic**.",
+        "key_terms": [
+          {
+            "term": "Chelate effect",
+            "definition_md": "Greater stability of complexes with chelating ligands than of similar complexes with unidentate ligands."
+          },
+          {
+            "term": "Ambidentate ligand",
+            "definition_md": "A ligand that can bind through either of two different donor atoms."
+          },
+          {
+            "term": "Coordination number",
+            "definition_md": "The number of donor atoms bonded to the central metal."
+          }
+        ],
+        "formulas": [],
+        "visual": {
+          "kind": "svg",
+          "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 340 190\" role=\"img\" aria-label=\"Left: a metal ion bonded to two separate ammonia molecules, each through one nitrogen atom. Right: the same metal ion bonded to one ethane-1,2-diamine molecule through both of its nitrogen atoms, closing a five-membered ring of metal, nitrogen, carbon, carbon and nitrogen; this ring is a chelate.\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>Left: a metal ion bonded to two separate ammonia molecules, each through one nitrogen atom. Right: the same metal ion bonded to one ethane-1,2-diamine molecule through both of its nitrogen atoms, closing a five-membered ring of metal, nitrogen, carbon, carbon and nitrogen; this ring is a chelate.</title><circle cx=\"80\" cy=\"95\" r=\"15\" fill=\"var(--diagram-accent)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"80\" y=\"99\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\">M</text><line x1=\"93\" y1=\"87\" x2=\"128\" y2=\"62\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"93\" y1=\"103\" x2=\"128\" y2=\"128\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"140\" cy=\"55\" r=\"16\" fill=\"var(--diagram-blue)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"140\" y=\"59\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">NH₃</text><circle cx=\"140\" cy=\"135\" r=\"16\" fill=\"var(--diagram-blue)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"140\" y=\"139\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">NH₃</text><text x=\"95\" y=\"178\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\">two unidentate ligands</text><circle cx=\"220\" cy=\"95\" r=\"15\" fill=\"var(--diagram-accent)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"220\" y=\"99\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\">M</text><line x1=\"233\" y1=\"86\" x2=\"260\" y2=\"64\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"233\" y1=\"104\" x2=\"260\" y2=\"126\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"270\" cy=\"56\" r=\"12\" fill=\"var(--diagram-blue)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"270\" y=\"60\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">N</text><circle cx=\"270\" cy=\"134\" r=\"12\" fill=\"var(--diagram-blue)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"270\" y=\"138\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">N</text><line x1=\"280\" y1=\"63\" x2=\"300\" y2=\"74\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"280\" y1=\"127\" x2=\"300\" y2=\"116\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"310\" y1=\"92\" x2=\"310\" y2=\"98\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"310\" cy=\"80\" r=\"12\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"310\" y=\"84\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">C</text><circle cx=\"310\" cy=\"110\" r=\"12\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"310\" y=\"114\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">C</text><text x=\"272\" y=\"99\" fill=\"var(--diagram-accent)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">ring</text><text x=\"265\" y=\"178\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\">one didentate ligand (en): chelate</text></svg>",
+          "alt": "A metal ion with two separate ammonia ligands compared with the same ion bound by both nitrogen atoms of one ethane-1,2-diamine molecule, closing a five-membered chelate ring"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "isc-12-chemistry-ch10-t02"
+        ]
+      },
+      {
+        "heading": "3. IUPAC nomenclature",
+        "body_md": "1. Cation first, then anion. 2. Ligands in **alphabetical order** (ignore di-, tri-), then metal. 3. di/tri/tetra; **bis/tris/tetrakis** for ligands with numbers in their names (en). 4. Anionic ligands end in **-o** (chlorido, cyanido, hydroxido, oxalato); neutral: **aqua, ammine, carbonyl, nitrosyl**. 5. Metal OS in Roman numerals. 6. **Anionic complex:** metal ends in **-ate** (ferrate, cuprate, argentate, aurate, plumbate, stannate, zincate, cobaltate).\n\nExamples: [CrCl₂(H₂O)₄]Cl — tetraaquadichloridochromium(III) chloride; Na₂[Zn(OH)₄] — sodium tetrahydroxidozincate(II); [Fe(CO)₅] — pentacarbonyliron(0); K₃[Al(C₂O₄)₃] — potassium trioxalatoaluminate(III).",
+        "key_terms": [
+          {
+            "term": "Ammine",
+            "definition_md": "The name for NH₃ as a ligand."
+          },
+          {
+            "term": "-ate ending",
+            "definition_md": "Used for the metal when the complex ion is an anion."
+          }
+        ],
+        "formulas": [],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Ligand",
+              "Name"
+            ],
+            "rows": [
+              [
+                "H₂O",
+                "aqua"
+              ],
+              [
+                "NH₃",
+                "ammine"
+              ],
+              [
+                "CO",
+                "carbonyl"
+              ],
+              [
+                "Cl⁻",
+                "chlorido"
+              ],
+              [
+                "CN⁻",
+                "cyanido"
+              ],
+              [
+                "NO₂⁻ (N)",
+                "nitrito-N"
+              ]
+            ]
+          },
+          "alt": "Table of ligand names"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "isc-12-chemistry-ch10-t03"
+        ]
+      },
+      {
+        "heading": "4. Isomerism",
+        "body_md": "**Structural:** ionisation ([Pt(NH₃)₄Cl₂]Br₂ / [Pt(NH₃)₄Br₂]Cl₂); linkage ([Mn(CO)₅(SCN)] / [Mn(CO)₅(NCS)]); coordination ([Cu(NH₃)₄][PtCl₄] / [Pt(NH₃)₄][CuCl₄]); hydrate (three forms of CrCl₃·6H₂O).\n\n**Geometrical:** cis/trans in square planar MA₂B₂ and octahedral MA₂B₄; fac/mer in MA₃B₃; none in tetrahedral complexes.\n\n**Optical:** non-superimposable mirror images (d, l): [M(AA)₃] and cis-[MA₂(AA)₂]; trans forms have a mirror plane. [CoCl₂(en)₂]⁺ and [Cr(C₂O₄)₂(H₂O)₂]⁻ each have 3 stereoisomers.",
+        "key_terms": [
+          {
+            "term": "Linkage isomerism",
+            "definition_md": "Isomerism due to an ambidentate ligand binding through different donor atoms."
+          },
+          {
+            "term": "Enantiomers",
+            "definition_md": "Non-superimposable mirror-image isomers that rotate plane-polarised light in opposite directions."
+          }
+        ],
+        "formulas": [],
+        "visual": {
+          "kind": "svg",
+          "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 360 330\" role=\"img\" aria-label=\"Top row: square planar diamminedichloridoplatinum(II). In the cis isomer the two chlorine atoms are next to each other; in the trans isomer they are opposite. Bottom row: octahedral tetraamminedichloridocobalt(III) ion. In the cis isomer the two chlorine atoms are on adjacent corners; in the trans isomer they are at opposite corners, one at the top and one at the bottom.\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>Top row: square planar diamminedichloridoplatinum(II). In the cis isomer the two chlorine atoms are next to each other; in the trans isomer they are opposite. Bottom row: octahedral tetraamminedichloridocobalt(III) ion. In the cis isomer the two chlorine atoms are on adjacent corners; in the trans isomer they are at opposite corners, one at the top and one at the bottom.</title><rect x=\"56\" y=\"36\" width=\"68\" height=\"68\" fill=\"none\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><line x1=\"90\" y1=\"70\" x2=\"90\" y2=\"48.9\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"90\" cy=\"36\" r=\"12\" fill=\"var(--diagram-green)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"90\" y=\"40\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">Cl</text><line x1=\"90\" y1=\"70\" x2=\"111.1\" y2=\"70\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"124\" cy=\"70\" r=\"12\" fill=\"var(--diagram-green)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"124\" y=\"74\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">Cl</text><line x1=\"90\" y1=\"70\" x2=\"90\" y2=\"91.1\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"90\" cy=\"104\" r=\"12\" fill=\"var(--diagram-blue)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"90\" y=\"108\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">NH₃</text><line x1=\"90\" y1=\"70\" x2=\"68.9\" y2=\"70\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"56\" cy=\"70\" r=\"12\" fill=\"var(--diagram-blue)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"56\" y=\"74\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">NH₃</text><circle cx=\"90\" cy=\"70\" r=\"12\" fill=\"var(--diagram-accent)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"90\" y=\"74\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">Pt</text><text x=\"90\" y=\"132\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">cis</text><rect x=\"236\" y=\"36\" width=\"68\" height=\"68\" fill=\"none\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><line x1=\"270\" y1=\"70\" x2=\"270\" y2=\"48.9\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"270\" cy=\"36\" r=\"12\" fill=\"var(--diagram-green)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"270\" y=\"40\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">Cl</text><line x1=\"270\" y1=\"70\" x2=\"291.1\" y2=\"70\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"304\" cy=\"70\" r=\"12\" fill=\"var(--diagram-blue)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"304\" y=\"74\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">NH₃</text><line x1=\"270\" y1=\"70\" x2=\"270\" y2=\"91.1\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"270\" cy=\"104\" r=\"12\" fill=\"var(--diagram-green)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"270\" y=\"108\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">Cl</text><line x1=\"270\" y1=\"70\" x2=\"248.9\" y2=\"70\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"236\" cy=\"70\" r=\"12\" fill=\"var(--diagram-blue)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"236\" y=\"74\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">NH₃</text><circle cx=\"270\" cy=\"70\" r=\"12\" fill=\"var(--diagram-accent)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"270\" y=\"74\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">Pt</text><text x=\"270\" y=\"132\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">trans</text><line x1=\"90\" y1=\"230\" x2=\"90\" y2=\"200.6\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"90\" y1=\"230\" x2=\"90\" y2=\"259.4\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"90\" y1=\"230\" x2=\"62\" y2=\"230\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"90\" y1=\"230\" x2=\"118\" y2=\"230\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"90\" y1=\"230\" x2=\"74.6\" y2=\"242.6\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"90\" y1=\"230\" x2=\"105.4\" y2=\"217.4\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-dasharray=\"3 2\"/><circle cx=\"90\" cy=\"188\" r=\"12\" fill=\"var(--diagram-green)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"90\" y=\"192\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">Cl</text><circle cx=\"90\" cy=\"272\" r=\"12\" fill=\"var(--diagram-blue)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"90\" y=\"276\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">NH₃</text><circle cx=\"50\" cy=\"230\" r=\"12\" fill=\"var(--diagram-blue)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"50\" y=\"234\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">NH₃</text><circle cx=\"130\" cy=\"230\" r=\"12\" fill=\"var(--diagram-green)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"130\" y=\"234\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">Cl</text><circle cx=\"68\" cy=\"248\" r=\"12\" fill=\"var(--diagram-blue)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"68\" y=\"252\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">NH₃</text><circle cx=\"112\" cy=\"212\" r=\"12\" fill=\"var(--diagram-blue)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"112\" y=\"216\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">NH₃</text><circle cx=\"90\" cy=\"230\" r=\"12\" fill=\"var(--diagram-accent)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"90\" y=\"234\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">Co</text><text x=\"90\" y=\"298\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">cis</text><line x1=\"270\" y1=\"230\" x2=\"270\" y2=\"200.6\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"270\" y1=\"230\" x2=\"270\" y2=\"259.4\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"270\" y1=\"230\" x2=\"242\" y2=\"230\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"270\" y1=\"230\" x2=\"298\" y2=\"230\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"270\" y1=\"230\" x2=\"254.6\" y2=\"242.6\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"270\" y1=\"230\" x2=\"285.4\" y2=\"217.4\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-dasharray=\"3 2\"/><circle cx=\"270\" cy=\"188\" r=\"12\" fill=\"var(--diagram-green)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"270\" y=\"192\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">Cl</text><circle cx=\"270\" cy=\"272\" r=\"12\" fill=\"var(--diagram-green)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"270\" y=\"276\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">Cl</text><circle cx=\"230\" cy=\"230\" r=\"12\" fill=\"var(--diagram-blue)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"230\" y=\"234\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">NH₃</text><circle cx=\"310\" cy=\"230\" r=\"12\" fill=\"var(--diagram-blue)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"310\" y=\"234\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">NH₃</text><circle cx=\"248\" cy=\"248\" r=\"12\" fill=\"var(--diagram-blue)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"248\" y=\"252\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">NH₃</text><circle cx=\"292\" cy=\"212\" r=\"12\" fill=\"var(--diagram-blue)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"292\" y=\"216\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">NH₃</text><circle cx=\"270\" cy=\"230\" r=\"12\" fill=\"var(--diagram-accent)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"270\" y=\"234\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">Co</text><text x=\"270\" y=\"298\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">trans</text><text x=\"180\" y=\"160\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">square planar [PtCl₂(NH₃)₂]</text><text x=\"180\" y=\"324\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">octahedral [CoCl₂(NH₃)₄]⁺</text></svg>",
+          "alt": "Cis and trans isomers of square planar diamminedichloridoplatinum(II) and of the octahedral tetraamminedichloridocobalt(III) ion",
+          "caption": "Chlorine atoms are drawn green and nitrogen-bonded ligands blue; the dashed bond points away from the viewer."
+        },
+        "visuals": [],
+        "topic_ids": [
+          "isc-12-chemistry-ch10-t04"
+        ]
+      }
+    ],
+    "exam_tips_md": "**Common mistakes**\n- Counting ligands instead of donor atoms for the coordination number.\n- Writing \"amine\" for NH₃ or using -ate for cationic complexes.\n- Alphabetising by prefixes (di-, tetra-).\n- Claiming geometrical isomers for tetrahedral complexes, or optical activity for trans isomers.\n\n**How marks are usually awarded**\n- Werner formula (2 marks): ionisable Cl⁻ from AgCl data; formula with correct CN.\n- Names/formulas (1 mark each): order, oxidation state and -ate ending all correct.\n- Isomerism (2–3 marks): type named and illustrated with formulas or diagrams.",
+    "status": "draft",
+    "provenance": {
+      "origin": "human",
+      "template_version": null,
+      "model": null,
+      "generated_at": "2026-10-30",
+      "author": "claude-opus-5-5 (subject-producer)"
+    }
+  },
+  "flashcards": {
+    "unit": "isc-12-chemistry-ch10",
+    "version": 1,
+    "language": "en",
+    "cards": [
+      {
+        "id": "f01",
+        "front_md": "Double salt?",
+        "back_md": "Solid compound of two salts; gives all its simple ions in water.",
+        "tag": "definition",
+        "topic_id": "isc-12-chemistry-ch10-t01"
+      },
+      {
+        "id": "f02",
+        "front_md": "Example of a double salt?",
+        "back_md": "Potash alum, K₂SO₄·Al₂(SO₄)₃·24H₂O.",
+        "tag": "example",
+        "topic_id": "isc-12-chemistry-ch10-t01"
+      },
+      {
+        "id": "f03",
+        "front_md": "Primary valency?",
+        "back_md": "Ionisable; = oxidation state; satisfied by anions.",
+        "tag": "definition",
+        "topic_id": "isc-12-chemistry-ch10-t01"
+      },
+      {
+        "id": "f04",
+        "front_md": "Secondary valency?",
+        "back_md": "Non-ionisable; = coordination number; directional.",
+        "tag": "definition",
+        "topic_id": "isc-12-chemistry-ch10-t01"
+      },
+      {
+        "id": "f05",
+        "front_md": "Ions from [CoCl(NH₃)₅]Cl₂?",
+        "back_md": "3.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch10-t01"
+      },
+      {
+        "id": "f06",
+        "front_md": "Which Cl⁻ does AgNO₃ precipitate?",
+        "back_md": "Only those outside the coordination sphere.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch10-t01"
+      },
+      {
+        "id": "f07",
+        "front_md": "Ligand?",
+        "back_md": "Ion or molecule donating an electron pair to the metal (Lewis base).",
+        "tag": "definition",
+        "topic_id": "isc-12-chemistry-ch10-t02"
+      },
+      {
+        "id": "f08",
+        "front_md": "Coordination number?",
+        "back_md": "Number of donor atoms bonded to the metal.",
+        "tag": "definition",
+        "topic_id": "isc-12-chemistry-ch10-t02"
+      },
+      {
+        "id": "f09",
+        "front_md": "Denticity of dien?",
+        "back_md": "Tridentate (3 N).",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch10-t02"
+      },
+      {
+        "id": "f10",
+        "front_md": "Denticity of EDTA⁴⁻?",
+        "back_md": "Hexadentate (2 N, 4 O).",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch10-t02"
+      },
+      {
+        "id": "f11",
+        "front_md": "Chelate effect?",
+        "back_md": "Chelate complexes are more stable than similar unidentate ones.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch10-t02"
+      },
+      {
+        "id": "f12",
+        "front_md": "Ambidentate ligands?",
+        "back_md": "NO₂⁻ (N or O), SCN⁻ (S or N).",
+        "tag": "example",
+        "topic_id": "isc-12-chemistry-ch10-t02"
+      },
+      {
+        "id": "f13",
+        "front_md": "OS of Fe in [Fe(H₂O)₅(NO)]²⁺ (NO⁺)?",
+        "back_md": "+1.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch10-t02"
+      },
+      {
+        "id": "f14",
+        "front_md": "Homoleptic?",
+        "back_md": "Only one kind of ligand, e.g. [Co(NH₃)₆]³⁺.",
+        "tag": "definition",
+        "topic_id": "isc-12-chemistry-ch10-t02"
+      },
+      {
+        "id": "f15",
+        "front_md": "Naming order?",
+        "back_md": "Ligands A→Z, then metal with OS; cation before anion.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch10-t03"
+      },
+      {
+        "id": "f16",
+        "front_md": "Name of NH₃ as ligand?",
+        "back_md": "Ammine.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch10-t03"
+      },
+      {
+        "id": "f17",
+        "front_md": "Name of H₂O as ligand?",
+        "back_md": "Aqua.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch10-t03"
+      },
+      {
+        "id": "f18",
+        "front_md": "When is -ate used?",
+        "back_md": "When the complex is an anion.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch10-t03"
+      },
+      {
+        "id": "f19",
+        "front_md": "Iron in an anionic complex?",
+        "back_md": "Ferrate.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch10-t03"
+      },
+      {
+        "id": "f20",
+        "front_md": "Prefix for two en ligands?",
+        "back_md": "bis(ethane-1,2-diamine).",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch10-t03"
+      },
+      {
+        "id": "f21",
+        "front_md": "Name of K₃[Al(C₂O₄)₃]?",
+        "back_md": "Potassium trioxalatoaluminate(III).",
+        "tag": "example",
+        "topic_id": "isc-12-chemistry-ch10-t03"
+      },
+      {
+        "id": "f22",
+        "front_md": "Ionisation isomers?",
+        "back_md": "Ligand and counter ion exchange places.",
+        "tag": "definition",
+        "topic_id": "isc-12-chemistry-ch10-t04"
+      },
+      {
+        "id": "f23",
+        "front_md": "Linkage isomers?",
+        "back_md": "Ambidentate ligand bonded through different atoms.",
+        "tag": "definition",
+        "topic_id": "isc-12-chemistry-ch10-t04"
+      },
+      {
+        "id": "f24",
+        "front_md": "Coordination isomers?",
+        "back_md": "Ligands exchanged between cationic and anionic complexes.",
+        "tag": "definition",
+        "topic_id": "isc-12-chemistry-ch10-t04"
+      },
+      {
+        "id": "f25",
+        "front_md": "Hydrate isomers?",
+        "back_md": "Water inside vs outside the sphere, e.g. CrCl₃·6H₂O forms.",
+        "tag": "definition",
+        "topic_id": "isc-12-chemistry-ch10-t04"
+      },
+      {
+        "id": "f26",
+        "front_md": "fac and mer occur in?",
+        "back_md": "Octahedral MA₃B₃.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch10-t04"
+      },
+      {
+        "id": "f27",
+        "front_md": "Why no cis/trans in tetrahedral complexes?",
+        "back_md": "All positions are adjacent.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch10-t04"
+      },
+      {
+        "id": "f28",
+        "front_md": "Optically active types?",
+        "back_md": "[M(AA)₃] and cis-[MA₂(AA)₂].",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch10-t04"
+      },
+      {
+        "id": "f29",
+        "front_md": "Stereoisomers of [CoCl₂(en)₂]⁺?",
+        "back_md": "3 (trans, d-cis, l-cis).",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch10-t04"
+      },
+      {
+        "id": "f30",
+        "front_md": "Why no isomers for [Pt(en)Cl₂]?",
+        "back_md": "en must span cis positions.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch10-t04"
+      },
+      {
+        "id": "f31",
+        "front_md": "Exam tip: CN",
+        "back_md": "Count donor atoms; en and oxalate count 2 each.",
+        "tag": "exam-tip",
+        "topic_id": "isc-12-chemistry-ch10-t02"
+      }
+    ],
+    "status": "draft",
+    "provenance": {
+      "origin": "human",
+      "template_version": null,
+      "model": null,
+      "generated_at": "2026-10-30",
+      "author": "claude-opus-5-5 (subject-producer)"
+    }
+  },
+  "questions": [
+    {
+      "id": "q_isc12chem_ch10_001",
+      "unit": "isc-12-chemistry-ch10",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "PdCl₂·4NH₃ (palladium(II), coordination number 4) gives 2 mol of AgCl per mole with excess silver nitrate. Its Werner formula is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "[PdCl₂(NH₃)₂]·2NH₃"
+        },
+        {
+          "id": "b",
+          "text_md": "[Pd(NH₃)₄]Cl₂"
+        },
+        {
+          "id": "c",
+          "text_md": "[PdCl(NH₃)₃]Cl·NH₃"
+        },
+        {
+          "id": "d",
+          "text_md": "[PdCl₂(NH₃)₄]"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Both Cl⁻ are ionisable, so the four NH₃ fill the four coordination positions — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch10-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch10_002",
+      "unit": "isc-12-chemistry-ch10",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which observation shows that potash alum, K₂SO₄·Al₂(SO₄)₃·24H₂O, is a double salt and not a coordination compound?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "It forms well-shaped crystals"
+        },
+        {
+          "id": "b",
+          "text_md": "It contains water of crystallisation"
+        },
+        {
+          "id": "c",
+          "text_md": "Its aqueous solution gives the usual tests for K⁺, Al³⁺ and SO₄²⁻ ions"
+        },
+        {
+          "id": "d",
+          "text_md": "It contains two different metals"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "A double salt dissociates completely into its simple ions in water — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch10-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch10_003",
+      "unit": "isc-12-chemistry-ch10",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which of these cobalt(III) ammine chlorides has the highest molar conductivity in dilute aqueous solution?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "[CoCl(NH₃)₅]Cl₂"
+        },
+        {
+          "id": "b",
+          "text_md": "[CoCl₂(NH₃)₄]Cl"
+        },
+        {
+          "id": "c",
+          "text_md": "[Co(NH₃)₆]Cl₃"
+        },
+        {
+          "id": "d",
+          "text_md": "[CoCl₃(NH₃)₃]"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "[Co(NH₃)₆]Cl₃ gives 4 ions (most), the others 3, 2 and 0 — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch10-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch10_004",
+      "unit": "isc-12-chemistry-ch10",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "An aqueous solution of potassium ferrocyanide, K₄[Fe(CN)₆], gives no test for Fe²⁺ ions. This is because:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "the iron is present as Fe³⁺"
+        },
+        {
+          "id": "b",
+          "text_md": "potassium ions mask the test for iron"
+        },
+        {
+          "id": "c",
+          "text_md": "the compound is insoluble in water"
+        },
+        {
+          "id": "d",
+          "text_md": "the iron is held in the complex ion [Fe(CN)₆]⁴⁻, which does not dissociate in water"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "The complex ion stays intact, so free Fe²⁺ is absent — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch10-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch10_005",
+      "unit": "isc-12-chemistry-ch10",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "According to Werner’s theory, the secondary valency of cobalt in [Co(NH₃)₆]Cl₃:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "equals its oxidation state, 3, and is ionisable"
+        },
+        {
+          "id": "b",
+          "text_md": "is satisfied only by the chloride ions outside the brackets"
+        },
+        {
+          "id": "c",
+          "text_md": "can change from one solution to another"
+        },
+        {
+          "id": "d",
+          "text_md": "equals its coordination number, 6, and is directed in space"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Secondary valency = coordination number, non-ionisable and directional — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch10-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch10_006",
+      "unit": "isc-12-chemistry-ch10",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** An aqueous solution of [CoCl₃(NH₃)₃] does not conduct electricity appreciably.\n\n**Reason (R):** All three chloride ions are inside the coordination sphere, so no ions are released.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Both are true, and R explains A — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch10-t01"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch10_007",
+      "unit": "isc-12-chemistry-ch10",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? Carnallite, KCl·MgCl₂·6H₂O, keeps a complex ion intact when dissolved in water.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "f"
+        ]
+      },
+      "solution_md": "False. Carnallite is a double salt; it gives K⁺, Mg²⁺ and Cl⁻ ions in water.",
+      "marking_scheme": [
+        {
+          "step": "False, with the correction",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch10-t01"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch10_008",
+      "unit": "isc-12-chemistry-ch10",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "According to Werner, the primary (ionisable) valency of a metal in a complex corresponds to its ___ state.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "oxidation"
+            ]
+          }
+        ]
+      },
+      "solution_md": "Its **oxidation** state.",
+      "marking_scheme": [
+        {
+          "step": "Writes \"oxidation\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch10-t01"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch10_009",
+      "unit": "isc-12-chemistry-ch10",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "Calculate the mass of AgCl precipitated when excess silver nitrate is added to a solution containing $0.010\\ \\text{mol}$ of [CrCl(H₂O)₅]Cl₂. (AgCl = 143.5)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 2.87,
+        "tolerance": 0.01,
+        "unit": "g"
+      },
+      "solution_md": "Two ionisable Cl⁻ per formula unit: $n(\\text{AgCl}) = 2 \\times 0.010 = 0.020\\ \\text{mol}$; mass $= 0.020 \\times 143.5 = 2.87\\ \\text{g}$.",
+      "marking_scheme": [
+        {
+          "step": "0.020 mol AgCl",
+          "marks": 1
+        },
+        {
+          "step": "2.87 g",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch10-t01"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch10_010",
+      "unit": "isc-12-chemistry-ch10",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "How many ions are produced in water by one formula unit of potassium ferrocyanide, K₄[Fe(CN)₆]?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 5,
+        "tolerance": 0,
+        "unit": null
+      },
+      "solution_md": "Four K⁺ ions and one [Fe(CN)₆]⁴⁻ ion: $n = 4 + 1 = 5$.",
+      "marking_scheme": [
+        {
+          "step": "5",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch10-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch10_011",
+      "unit": "isc-12-chemistry-ch10",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Distinguish between a double salt and a coordination compound by their behaviour in water, giving one example of each.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "A double salt dissociates completely into its simple ions in water, each giving its usual test; e.g. potash alum gives K⁺, Al³⁺ and SO₄²⁻. A coordination compound keeps its complex ion intact, so the metal and ligands inside the brackets do not give their usual tests; e.g. K₃[Fe(CN)₆] gives only K⁺ and [Fe(CN)₆]³⁻."
+      },
+      "solution_md": "Complete dissociation vs intact complex ion.",
+      "marking_scheme": [
+        {
+          "step": "Double salt with example",
+          "marks": 1
+        },
+        {
+          "step": "Complex with example",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch10-t01"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch10_012",
+      "unit": "isc-12-chemistry-ch10",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Explain what Werner meant by primary and secondary valency, and give their values for platinum in [Pt(NH₃)₄Cl₂]Cl₂.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Primary valency: ionisable valency, satisfied by anions, equal to the oxidation state of the metal. Secondary valency: non-ionisable valency, satisfied by ligands (neutral or anionic), equal to the coordination number and directed in space. In [Pt(NH₃)₄Cl₂]Cl₂: primary valency 4 (Pt is +4); secondary valency 6 (four NH₃ and two Cl⁻)."
+      },
+      "solution_md": "Primary 4, secondary 6.",
+      "marking_scheme": [
+        {
+          "step": "Definitions",
+          "marks": 1
+        },
+        {
+          "step": "Primary 4, secondary 6",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch10-t01"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch10_013",
+      "unit": "isc-12-chemistry-ch10",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Three forms of CrCl₃·6H₂O — violet, grey-green and dark green — give 3, 2 and 1 mol of AgCl per mole respectively with excess silver nitrate. Chromium(III) has coordination number 6. Write the Werner formula of each and name the type of isomerism they show.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Violet: [Cr(H₂O)₆]Cl₃ (three free Cl⁻). Grey-green: [CrCl(H₂O)₅]Cl₂·H₂O (two free Cl⁻, one H₂O of crystallisation). Dark green: [CrCl₂(H₂O)₄]Cl·2H₂O (one free Cl⁻, two H₂O of crystallisation). They are hydrate (solvate) isomers."
+      },
+      "solution_md": "Three formulas; hydrate isomerism.",
+      "marking_scheme": [
+        {
+          "step": "Violet formula",
+          "marks": 1
+        },
+        {
+          "step": "Grey-green and dark green formulas",
+          "marks": 1
+        },
+        {
+          "step": "Hydrate isomerism",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch10-t01",
+        "isc-12-chemistry-ch10-t04"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch10_014",
+      "unit": "isc-12-chemistry-ch10",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Arrange the following platinum(IV) complexes in order of increasing molar conductivity in water and explain: [Pt(NH₃)₆]Cl₄, [PtCl(NH₃)₅]Cl₃, [PtCl₃(NH₃)₃]Cl, [PtCl₄(NH₃)₂].",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Ions per formula unit: [PtCl₄(NH₃)₂] 0; [PtCl₃(NH₃)₃]Cl 2; [PtCl(NH₃)₅]Cl₃ 4; [Pt(NH₃)₆]Cl₄ 5. Molar conductivity increases with the number of ions: [PtCl₄(NH₃)₂] < [PtCl₃(NH₃)₃]Cl < [PtCl(NH₃)₅]Cl₃ < [Pt(NH₃)₆]Cl₄. Chlorides inside the coordination sphere do not ionise."
+      },
+      "solution_md": "0 < 2 < 4 < 5 ions.",
+      "marking_scheme": [
+        {
+          "step": "Ions per formula unit",
+          "marks": 1
+        },
+        {
+          "step": "Correct order",
+          "marks": 1
+        },
+        {
+          "step": "Reason",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch10-t01"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch10_015",
+      "unit": "isc-12-chemistry-ch10",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Triethylenetetramine (trien), H₂NCH₂CH₂NHCH₂CH₂NHCH₂CH₂NH₂, binding a metal through all its nitrogen atoms, is a:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "tridentate ligand"
+        },
+        {
+          "id": "b",
+          "text_md": "tetradentate ligand"
+        },
+        {
+          "id": "c",
+          "text_md": "didentate ligand"
+        },
+        {
+          "id": "d",
+          "text_md": "hexadentate ligand"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Four N donor atoms — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch10-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch10_016",
+      "unit": "isc-12-chemistry-ch10",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "In potassium bis(oxalato)nickelate(II), K₂[Ni(C₂O₄)₂], the oxidation state and coordination number of nickel are:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "+2 and 4"
+        },
+        {
+          "id": "b",
+          "text_md": "+2 and 2"
+        },
+        {
+          "id": "c",
+          "text_md": "+4 and 4"
+        },
+        {
+          "id": "d",
+          "text_md": "+2 and 6"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "2(+1) + x + 2(−2) = 0 gives +2; two didentate oxalates give CN 4 — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch10-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch10_017",
+      "unit": "isc-12-chemistry-ch10",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "The thiocyanate ion is an ambidentate ligand. Through which atoms can it bind to a metal?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Carbon or nitrogen"
+        },
+        {
+          "id": "b",
+          "text_md": "Sulphur or oxygen"
+        },
+        {
+          "id": "c",
+          "text_md": "Sulphur or nitrogen"
+        },
+        {
+          "id": "d",
+          "text_md": "Sulphur only"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "SCN⁻ binds as thiocyanato-S or thiocyanato-N — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch10-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch10_018",
+      "unit": "isc-12-chemistry-ch10",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "The complex [Ni(en)₃]²⁺ is much more stable than [Ni(NH₃)₆]²⁺. The main reason is that:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "ethane-1,2-diamine carries a negative charge"
+        },
+        {
+          "id": "b",
+          "text_md": "nickel is in a higher oxidation state in the en complex"
+        },
+        {
+          "id": "c",
+          "text_md": "ammonia cannot donate a lone pair to nickel"
+        },
+        {
+          "id": "d",
+          "text_md": "each ethane-1,2-diamine forms a five-membered chelate ring with nickel"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "The chelate effect — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch10-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch10_019",
+      "unit": "isc-12-chemistry-ch10",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "In [Ca(EDTA)]²⁻, the complex formed when EDTA removes calcium ions from hard water, the coordination number of calcium is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "1"
+        },
+        {
+          "id": "b",
+          "text_md": "2"
+        },
+        {
+          "id": "c",
+          "text_md": "6"
+        },
+        {
+          "id": "d",
+          "text_md": "4"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "EDTA⁴⁻ is hexadentate (2 N, 4 O) — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch10-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch10_020",
+      "unit": "isc-12-chemistry-ch10",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "When silver chloride dissolves in aqueous ammonia, [Ag(NH₃)₂]⁺ forms. In this complex the ammonia molecules act as:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Lewis bases, donating lone pairs to Ag⁺"
+        },
+        {
+          "id": "b",
+          "text_md": "Lewis acids, accepting electron pairs from Ag⁺"
+        },
+        {
+          "id": "c",
+          "text_md": "reducing agents"
+        },
+        {
+          "id": "d",
+          "text_md": "counter ions"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Ligands are electron-pair donors (Lewis bases); Ag⁺ is the Lewis acid — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch10-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch10_021",
+      "unit": "isc-12-chemistry-ch10",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "What is the coordination number of chromium in [Cr(en)(C₂O₄)Cl₂]⁻?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "4"
+        },
+        {
+          "id": "b",
+          "text_md": "6"
+        },
+        {
+          "id": "c",
+          "text_md": "3"
+        },
+        {
+          "id": "d",
+          "text_md": "5"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "en (2) + oxalate (2) + two Cl⁻ (2) = 6 — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch10-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch10_022",
+      "unit": "isc-12-chemistry-ch10",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Ethane-1,2-diamine is a chelating ligand.\n\n**Reason (R):** Its two nitrogen donor atoms can bind the same metal ion, closing a five-membered ring.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Both are true, and R explains A — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch10-t02"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch10_023",
+      "unit": "isc-12-chemistry-ch10",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** The nitrite ion is an ambidentate ligand.\n\n**Reason (R):** The nitrite ion has only one atom that carries a lone pair.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "A is true. R is false: both N and O carry lone pairs, which is why nitrite can bind through either — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch10-t02"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch10_024",
+      "unit": "isc-12-chemistry-ch10",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? The ion [CoCl₂(NH₃)₄]⁺ is a homoleptic complex.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "f"
+        ]
+      },
+      "solution_md": "False. It has two kinds of ligand (Cl⁻ and NH₃), so it is heteroleptic.",
+      "marking_scheme": [
+        {
+          "step": "False, with the correction",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch10-t02"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch10_025",
+      "unit": "isc-12-chemistry-ch10",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "In [Co(dien)₂]³⁺, where diethylenetriamine (dien) is tridentate, the coordination number of cobalt is ___.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "6",
+              "six"
+            ]
+          }
+        ]
+      },
+      "solution_md": "2 × 3 = **6**.",
+      "marking_scheme": [
+        {
+          "step": "Writes \"6\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch10-t02"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch10_026",
+      "unit": "isc-12-chemistry-ch10",
+      "language": "en",
+      "type": "match",
+      "stem_md": "Match each ligand with its denticity.",
+      "options": [
+        {
+          "id": "1",
+          "text_md": "NH₃"
+        },
+        {
+          "id": "2",
+          "text_md": "C₂O₄²⁻"
+        },
+        {
+          "id": "3",
+          "text_md": "Diethylenetriamine"
+        },
+        {
+          "id": "4",
+          "text_md": "EDTA⁴⁻"
+        }
+      ],
+      "match_right": [
+        {
+          "id": "p",
+          "text_md": "Didentate"
+        },
+        {
+          "id": "q",
+          "text_md": "Hexadentate"
+        },
+        {
+          "id": "r",
+          "text_md": "Unidentate"
+        },
+        {
+          "id": "s",
+          "text_md": "Tridentate"
+        }
+      ],
+      "answer": {
+        "pairs": [
+          {
+            "left_id": "1",
+            "right_id": "r"
+          },
+          {
+            "left_id": "2",
+            "right_id": "p"
+          },
+          {
+            "left_id": "3",
+            "right_id": "s"
+          },
+          {
+            "left_id": "4",
+            "right_id": "q"
+          }
+        ]
+      },
+      "solution_md": "NH₃ unidentate; oxalate didentate; dien tridentate; EDTA⁴⁻ hexadentate.",
+      "marking_scheme": [
+        {
+          "step": "1 → r",
+          "marks": 0.5
+        },
+        {
+          "step": "2 → p",
+          "marks": 0.5
+        },
+        {
+          "step": "3 → s",
+          "marks": 0.5
+        },
+        {
+          "step": "4 → q",
+          "marks": 0.5
+        }
+      ],
+      "marks": 2,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch10-t02"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch10_027",
+      "unit": "isc-12-chemistry-ch10",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "In the brown-ring test for nitrate, the complex [Fe(H₂O)₅(NO)]SO₄ forms, in which nitric oxide is bonded as NO⁺. Calculate the oxidation state of iron.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 1,
+        "tolerance": 0,
+        "unit": null
+      },
+      "solution_md": "The complex cation carries $+2$ (one SO₄²⁻). With five neutral H₂O and NO⁺: $x + 0 + 1 = 2$, so $x = 2 - 1 = 1$. Iron is +1.",
+      "marking_scheme": [
+        {
+          "step": "Charge on cation +2",
+          "marks": 1
+        },
+        {
+          "step": "Fe = +1",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 4,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch10-t02"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch10_028",
+      "unit": "isc-12-chemistry-ch10",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "Calculate the oxidation state of platinum in potassium hexachloridoplatinate, K₂[PtCl₆].",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 4,
+        "tolerance": 0,
+        "unit": null
+      },
+      "solution_md": "$2(+1) + x + 6(-1) = 0$, so $x = 6 - 2 = 4$.",
+      "marking_scheme": [
+        {
+          "step": "+4",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch10-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch10_029",
+      "unit": "isc-12-chemistry-ch10",
+      "language": "en",
+      "type": "short",
+      "stem_md": "What is a chelating ligand? Explain why [Ni(en)₃]²⁺ is more stable than [Ni(NH₃)₆]²⁺.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "A chelating ligand is a di- or polydentate ligand that binds the same metal through two or more donor atoms, forming a ring. In [Ni(en)₃]²⁺ each en forms a five-membered ring with Ni²⁺; removing it requires breaking two bonds, so the complex is more stable than the ammine complex with six separate unidentate ligands (chelate effect)."
+      },
+      "solution_md": "Definition; chelate effect.",
+      "marking_scheme": [
+        {
+          "step": "Definition",
+          "marks": 1
+        },
+        {
+          "step": "Chelate effect explained",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch10-t02"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch10_030",
+      "unit": "isc-12-chemistry-ch10",
+      "language": "en",
+      "type": "short",
+      "stem_md": "What is an ambidentate ligand? Give two examples, naming the possible donor atoms of each.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "A unidentate ligand that can bind to a metal through either of two different donor atoms. Examples: NO₂⁻ — through N (nitrito-N) or O (nitrito-O); SCN⁻ — through S (thiocyanato-S) or N (thiocyanato-N). (Also CN⁻ through C or N.)"
+      },
+      "solution_md": "Definition; NO₂⁻ and SCN⁻.",
+      "marking_scheme": [
+        {
+          "step": "Definition",
+          "marks": 1
+        },
+        {
+          "step": "Two examples with donor atoms",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch10-t02"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch10_031",
+      "unit": "isc-12-chemistry-ch10",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Find the oxidation state and coordination number of the metal in (a) sodium nitroprusside, Na₂[Fe(CN)₅(NO)], taking NO as NO⁺, and (b) [Mn(CO)₅Br].",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) 2(+1) + x + 5(−1) + (+1) = 0, so x = +2; CN = 6. (b) x + 0 + (−1) = 0, so x = +1; CN = 6."
+      },
+      "solution_md": "Fe +2, CN 6; Mn +1, CN 6.",
+      "marking_scheme": [
+        {
+          "step": "(a) +2, 6",
+          "marks": 1
+        },
+        {
+          "step": "(b) +1, 6",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch10-t02"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch10_032",
+      "unit": "isc-12-chemistry-ch10",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Classify each ligand by denticity and name its donor atoms: (a) oxalate ion, (b) diethylenetriamine, (c) ethylenediaminetetraacetate ion (EDTA⁴⁻).",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Oxalate: didentate; two O atoms. (b) Diethylenetriamine: tridentate; three N atoms. (c) EDTA⁴⁻: hexadentate; two N atoms and four O atoms (of the carboxylate groups)."
+      },
+      "solution_md": "Di-, tri- and hexadentate.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch10-t02"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch10_033",
+      "unit": "isc-12-chemistry-ch10",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Calculate the oxidation state and coordination number of the metal in (a) [Co(en)₂(ONO)Cl]⁺, (b) K[Ag(CN)₂] and (c) [Fe(EDTA)]⁻.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) x + 0 + (−1) + (−1) = +1, so x = +3; CN = 2 × 2 + 1 + 1 = 6. (b) +1 + x + 2(−1) = 0, so x = +1; CN = 2. (c) x + (−4) = −1, so x = +3; CN = 6."
+      },
+      "solution_md": "Co +3, 6; Ag +1, 2; Fe +3, 6.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch10-t02"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch10_034",
+      "unit": "isc-12-chemistry-ch10",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "The IUPAC name of [Cr(NH₃)₅(NCS)]Cl₂, in which thiocyanate is bonded through nitrogen, is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "pentaamminethiocyanato-S-chromium(III) chloride"
+        },
+        {
+          "id": "b",
+          "text_md": "pentaamminethiocyanato-N-chromate(III) chloride"
+        },
+        {
+          "id": "c",
+          "text_md": "thiocyanato-N-pentaamminechromium(II) chloride"
+        },
+        {
+          "id": "d",
+          "text_md": "pentaamminethiocyanato-N-chromium(III) chloride"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Ammine before thiocyanato; cationic complex, so \"chromium\"; Cr is +3 — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch10-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch10_035",
+      "unit": "isc-12-chemistry-ch10",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "The IUPAC name of K₃[Co(C₂O₄)₃] is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "potassium trioxalatocobalt(III)"
+        },
+        {
+          "id": "b",
+          "text_md": "potassium trioxalatocobaltate(II)"
+        },
+        {
+          "id": "c",
+          "text_md": "tripotassium oxalatocobalt(III)"
+        },
+        {
+          "id": "d",
+          "text_md": "potassium trioxalatocobaltate(III)"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Anionic complex → cobaltate; 3(+1) + x + 3(−2) = 0 gives +3 — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch10-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch10_036",
+      "unit": "isc-12-chemistry-ch10",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "The formula of diamminesilver(I) chloride, formed when silver chloride dissolves in ammonia, is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "[Ag(NH₃)₂]Cl"
+        },
+        {
+          "id": "b",
+          "text_md": "[AgCl(NH₃)₂]"
+        },
+        {
+          "id": "c",
+          "text_md": "[AgCl(NH₃)₂]Cl"
+        },
+        {
+          "id": "d",
+          "text_md": "[Ag(NH₃)₂]Cl₂"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Ag(I) with two neutral NH₃ gives a +1 cation, balanced by one Cl⁻ — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch10-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch10_037",
+      "unit": "isc-12-chemistry-ch10",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "In the IUPAC name of [CoBr(NH₃)₅]SO₄, the ligands are cited in the order:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "ammine before bromido, because ligands are listed alphabetically ignoring prefixes"
+        },
+        {
+          "id": "b",
+          "text_md": "bromido before ammine, because anionic ligands come first"
+        },
+        {
+          "id": "c",
+          "text_md": "bromido before ammine, because Br has a higher atomic number"
+        },
+        {
+          "id": "d",
+          "text_md": "ammine before bromido, because there are more ammine ligands"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Alphabetical: a (ammine) before b (bromido): pentaamminebromidocobalt(III) sulfate — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch10-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch10_038",
+      "unit": "isc-12-chemistry-ch10",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "In the name dichloridobis(ethane-1,2-diamine)cobalt(III) chloride, why is “bis” used instead of “di” for ethane-1,2-diamine?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Because the ligand is anionic"
+        },
+        {
+          "id": "b",
+          "text_md": "Because the ligand is ambidentate"
+        },
+        {
+          "id": "c",
+          "text_md": "Because cobalt is in the +3 state"
+        },
+        {
+          "id": "d",
+          "text_md": "Because the ligand name already contains a numerical locant"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "bis, tris, tetrakis are used for ligands whose names contain numbers or prefixes — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch10-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch10_039",
+      "unit": "isc-12-chemistry-ch10",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** [Ni(CO)₄] is named tetracarbonylnickelate(0).\n\n**Reason (R):** The suffix -ate is used for the metal when the complex is an anion.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "A is false: [Ni(CO)₄] is neutral, so it is tetracarbonylnickel(0). R is true — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch10-t03"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch10_040",
+      "unit": "isc-12-chemistry-ch10",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? In the IUPAC name of [Cu(H₂O)₄]SO₄, water as a ligand is called “aqua”.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "t"
+        ]
+      },
+      "solution_md": "True. The name is tetraaquacopper(II) sulfate.",
+      "marking_scheme": [
+        {
+          "step": "True",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch10-t03"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch10_041",
+      "unit": "isc-12-chemistry-ch10",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "The IUPAC name of the complex anion [CuCl₄]²⁻ is tetrachlorido___(II).",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "cuprate"
+            ]
+          }
+        ]
+      },
+      "solution_md": "Tetrachlorido**cuprate**(II).",
+      "marking_scheme": [
+        {
+          "step": "Writes \"cuprate\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch10-t03"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch10_042",
+      "unit": "isc-12-chemistry-ch10",
+      "language": "en",
+      "type": "match",
+      "stem_md": "Match each formula with its IUPAC name.",
+      "options": [
+        {
+          "id": "1",
+          "text_md": "[Fe(CO)₅]"
+        },
+        {
+          "id": "2",
+          "text_md": "[Ag(CN)₂]⁻"
+        },
+        {
+          "id": "3",
+          "text_md": "[Zn(NH₃)₄]²⁺"
+        },
+        {
+          "id": "4",
+          "text_md": "[PtCl₆]²⁻"
+        }
+      ],
+      "match_right": [
+        {
+          "id": "p",
+          "text_md": "Tetraamminezinc(II)"
+        },
+        {
+          "id": "q",
+          "text_md": "Pentacarbonyliron(0)"
+        },
+        {
+          "id": "r",
+          "text_md": "Hexachloridoplatinate(IV)"
+        },
+        {
+          "id": "s",
+          "text_md": "Dicyanidoargentate(I)"
+        }
+      ],
+      "answer": {
+        "pairs": [
+          {
+            "left_id": "1",
+            "right_id": "q"
+          },
+          {
+            "left_id": "2",
+            "right_id": "s"
+          },
+          {
+            "left_id": "3",
+            "right_id": "p"
+          },
+          {
+            "left_id": "4",
+            "right_id": "r"
+          }
+        ]
+      },
+      "solution_md": "[Fe(CO)₅] pentacarbonyliron(0); [Ag(CN)₂]⁻ dicyanidoargentate(I); [Zn(NH₃)₄]²⁺ tetraamminezinc(II); [PtCl₆]²⁻ hexachloridoplatinate(IV).",
+      "marking_scheme": [
+        {
+          "step": "1 → q",
+          "marks": 0.5
+        },
+        {
+          "step": "2 → s",
+          "marks": 0.5
+        },
+        {
+          "step": "3 → p",
+          "marks": 0.5
+        },
+        {
+          "step": "4 → r",
+          "marks": 0.5
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch10-t03"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch10_043",
+      "unit": "isc-12-chemistry-ch10",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write the IUPAC names of (a) [Cr(en)₃]Cl₃ and (b) K₂[HgI₄] (Nessler’s reagent).",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Tris(ethane-1,2-diamine)chromium(III) chloride. (b) Potassium tetraiodidomercurate(II)."
+      },
+      "solution_md": "Two names.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch10-t03"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch10_044",
+      "unit": "isc-12-chemistry-ch10",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write the formulas of (a) tetraamminedichloridoplatinum(IV) bromide and (b) sodium hexanitrito-N-cobaltate(III).",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Pt(IV) with two Cl⁻ gives a +2 cation: [PtCl₂(NH₃)₄]Br₂. (b) Co(III) with six NO₂⁻ gives a −3 anion: Na₃[Co(NO₂)₆]."
+      },
+      "solution_md": "[PtCl₂(NH₃)₄]Br₂; Na₃[Co(NO₂)₆].",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch10-t03"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch10_045",
+      "unit": "isc-12-chemistry-ch10",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write the IUPAC names of (a) [Co(NH₃)₅(CO₃)]Cl, (b) Li[AlH₄] and (c) [PtCl(NH₂CH₃)(NH₃)₂]Cl.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Pentaamminecarbonatocobalt(III) chloride. (b) Lithium tetrahydridoaluminate(III). (c) Diamminechlorido(methanamine)platinum(II) chloride."
+      },
+      "solution_md": "Three names.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch10-t03"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch10_046",
+      "unit": "isc-12-chemistry-ch10",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write the formulas of (a) tris(ethane-1,2-diamine)cobalt(III) sulfate, (b) potassium tetrahydroxidozincate(II) and (c) dichloridobis(ethane-1,2-diamine)platinum(IV) nitrate.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Two [Co(en)₃]³⁺ ions balance three SO₄²⁻ ions, giving [Co(en)₃]₂(SO₄)₃. (b) The anion [Zn(OH)₄]²⁻ needs two K⁺, giving K₂[Zn(OH)₄]. (c) Pt(IV) with two Cl⁻ gives a +2 cation, balanced by two nitrate ions: $\\ce{[PtCl2(en)2](NO3)2}$."
+      },
+      "solution_md": "Three formulas.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch10-t03"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch10_047",
+      "unit": "isc-12-chemistry-ch10",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "The carbonyl complexes [Mn(CO)₅(SCN)] and [Mn(CO)₅(NCS)] are:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "ionisation isomers"
+        },
+        {
+          "id": "b",
+          "text_md": "coordination isomers"
+        },
+        {
+          "id": "c",
+          "text_md": "linkage isomers"
+        },
+        {
+          "id": "d",
+          "text_md": "optical isomers"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Thiocyanate binds through S in one and N in the other — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch10-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch10_048",
+      "unit": "isc-12-chemistry-ch10",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which of the following has a non-superimposable mirror image: [Cr(C₂O₄)₃]³⁻, trans-[CoCl₂(en)₂]⁺, square planar [PtCl₂(NH₃)₂] or tetrahedral [Zn(NH₃)₄]²⁺?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "trans-[CoCl₂(en)₂]⁺"
+        },
+        {
+          "id": "b",
+          "text_md": "[Cr(C₂O₄)₃]³⁻"
+        },
+        {
+          "id": "c",
+          "text_md": "[PtCl₂(NH₃)₂]"
+        },
+        {
+          "id": "d",
+          "text_md": "[Zn(NH₃)₄]²⁺"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Three chelate rings form a chiral propeller; the others have a mirror plane — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch10-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch10_049",
+      "unit": "isc-12-chemistry-ch10",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Square planar [Pd(NH₃)₂(SCN)₂], with thiocyanate S-bonded, can exist in how many geometrical forms?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "1"
+        },
+        {
+          "id": "b",
+          "text_md": "2"
+        },
+        {
+          "id": "c",
+          "text_md": "3"
+        },
+        {
+          "id": "d",
+          "text_md": "4"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "cis and trans — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch10-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch10_050",
+      "unit": "isc-12-chemistry-ch10",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Octahedral [RuCl₃(NH₃)₃] exists as two isomers: in one the three chloride ions occupy one face of the octahedron, in the other they lie around a meridian. These are:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "d and l optical isomers"
+        },
+        {
+          "id": "b",
+          "text_md": "fac and mer geometrical isomers"
+        },
+        {
+          "id": "c",
+          "text_md": "ionisation isomers"
+        },
+        {
+          "id": "d",
+          "text_md": "linkage isomers"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "MA₃B₃ octahedral complexes show fac/mer isomerism — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch10-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch10_051",
+      "unit": "isc-12-chemistry-ch10",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "[Co(NH₃)₆][Cr(C₂O₄)₃] and [Cr(NH₃)₆][Co(C₂O₄)₃] are examples of:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "coordination isomerism"
+        },
+        {
+          "id": "b",
+          "text_md": "linkage isomerism"
+        },
+        {
+          "id": "c",
+          "text_md": "hydrate isomerism"
+        },
+        {
+          "id": "d",
+          "text_md": "geometrical isomerism"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Ligands are exchanged between the cationic and anionic complexes — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch10-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch10_052",
+      "unit": "isc-12-chemistry-ch10",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Hydrated chromium(III) chloride, CrCl₃·6H₂O, exists in violet, grey-green and dark green forms. These forms differ in:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "the number of water molecules bonded directly to chromium"
+        },
+        {
+          "id": "b",
+          "text_md": "the oxidation state of chromium"
+        },
+        {
+          "id": "c",
+          "text_md": "the total number of water molecules in the formula"
+        },
+        {
+          "id": "d",
+          "text_md": "the coordination number of chromium"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Hydrate isomers: [Cr(H₂O)₆]Cl₃, [CrCl(H₂O)₅]Cl₂·H₂O, [CrCl₂(H₂O)₄]Cl·2H₂O — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch10-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch10_053",
+      "unit": "isc-12-chemistry-ch10",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Tetrahedral [Zn(NH₃)₂Cl₂] does not show geometrical isomerism because:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "zinc has a full d subshell"
+        },
+        {
+          "id": "b",
+          "text_md": "chloride is a weak-field ligand"
+        },
+        {
+          "id": "c",
+          "text_md": "all four positions of a tetrahedron are adjacent to one another"
+        },
+        {
+          "id": "d",
+          "text_md": "the complex is neutral"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "No pair of positions is \"opposite\", so cis and trans cannot exist — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch10-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch10_054",
+      "unit": "isc-12-chemistry-ch10",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** cis-[CoCl₂(en)₂]⁺ is optically active.\n\n**Reason (R):** cis-[CoCl₂(en)₂]⁺ has no plane of symmetry.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Both are true; lacking a mirror plane makes the ion chiral — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch10-t04"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch10_055",
+      "unit": "isc-12-chemistry-ch10",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** [Pt(NH₃)₄Cl₂]Br₂ and [Pt(NH₃)₄Br₂]Cl₂ give different precipitates with silver nitrate.\n\n**Reason (R):** Silver chloride and silver bromide are both insoluble in water.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Both are true, but A is due to different ions being outside the coordination sphere (Br⁻ in one, Cl⁻ in the other), not to the insolubility of both silver halides — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch10-t04"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch10_056",
+      "unit": "isc-12-chemistry-ch10",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? trans-[CrCl₂(en)₂]⁺ is optically active.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "f"
+        ]
+      },
+      "solution_md": "False. The trans isomer has a mirror plane, so it is optically inactive.",
+      "marking_scheme": [
+        {
+          "step": "False, with the correction",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch10-t04"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch10_057",
+      "unit": "isc-12-chemistry-ch10",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "[Co(NH₃)₅(NO₂)]²⁺ and [Co(NH₃)₅(ONO)]²⁺, which differ only in the donor atom of the nitrite ligand, are ___ isomers.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "linkage"
+            ]
+          }
+        ]
+      },
+      "solution_md": "**Linkage** isomers.",
+      "marking_scheme": [
+        {
+          "step": "Writes \"linkage\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch10-t04"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch10_058",
+      "unit": "isc-12-chemistry-ch10",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "Count the geometrical and optical isomers of the octahedral ion [Cr(C₂O₄)₂(H₂O)₂]⁻ and give the total number of stereoisomers.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 3,
+        "tolerance": 0,
+        "unit": null
+      },
+      "solution_md": "trans isomer: 1 (has a mirror plane). cis isomer: chiral, exists as d and l: 2. Total $= 1 + 2 = 3$.",
+      "marking_scheme": [
+        {
+          "step": "trans 1; cis as d and l",
+          "marks": 1
+        },
+        {
+          "step": "Total 3",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch10-t04"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch10_059",
+      "unit": "isc-12-chemistry-ch10",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write the formula of the ionisation isomer of [Pt(NH₃)₄Cl₂]Br₂ and describe a test with silver nitrate that distinguishes the two compounds.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Ionisation isomer: [Pt(NH₃)₄Br₂]Cl₂. With AgNO₃, [Pt(NH₃)₄Cl₂]Br₂ gives a pale yellow precipitate of AgBr (free Br⁻), whereas [Pt(NH₃)₄Br₂]Cl₂ gives a white precipitate of AgCl (free Cl⁻), soluble in dilute ammonia."
+      },
+      "solution_md": "[Pt(NH₃)₄Br₂]Cl₂; AgBr vs AgCl.",
+      "marking_scheme": [
+        {
+          "step": "Formula",
+          "marks": 1
+        },
+        {
+          "step": "Distinguishing test",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch10-t04"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch10_060",
+      "unit": "isc-12-chemistry-ch10",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Describe the fac and mer isomers of octahedral [Co(NH₃)₃(NO₂)₃]. Are either of them optically active?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "fac (facial): the three NO₂⁻ ligands occupy one triangular face of the octahedron (each at 90° to the others). mer (meridional): the three NO₂⁻ lie in a plane around a meridian (two of them trans). Neither is optically active; both have a mirror plane."
+      },
+      "solution_md": "Face vs meridian; neither optically active.",
+      "marking_scheme": [
+        {
+          "step": "fac and mer described",
+          "marks": 1
+        },
+        {
+          "step": "Neither optically active",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch10-t04"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch10_061",
+      "unit": "isc-12-chemistry-ch10",
+      "language": "en",
+      "type": "short",
+      "stem_md": "The ions [Cr(H₂O)₅(SCN)]²⁺ and [Cr(H₂O)₅(NCS)]²⁺ are isomers. (a) Name the type of isomerism. (b) Give the IUPAC name of each ion. (c) What feature of the thiocyanate ion makes this isomerism possible?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Linkage isomerism. (b) Pentaaquathiocyanato-S-chromium(III) ion and pentaaquathiocyanato-N-chromium(III) ion. (c) Thiocyanate is ambidentate: both its S and N atoms have lone pairs and can bind to the metal."
+      },
+      "solution_md": "Linkage; two names; ambidentate SCN⁻.",
+      "marking_scheme": [
+        {
+          "step": "(a) Linkage",
+          "marks": 1
+        },
+        {
+          "step": "(b) Two names",
+          "marks": 1
+        },
+        {
+          "step": "(c) Ambidentate",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch10-t03",
+        "isc-12-chemistry-ch10-t04"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch10_062",
+      "unit": "isc-12-chemistry-ch10",
+      "language": "en",
+      "type": "short",
+      "stem_md": "(a) Describe the cis and trans isomers of [CrBr₂(NH₃)₄]⁺. (b) Can either be optically active? Explain. (c) Why does tetrahedral [Zn(NH₃)₂Br₂] have no such isomers?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) cis: the two Br⁻ ligands occupy adjacent positions (90° apart); trans: they are opposite (180°). (b) Neither: with only unidentate ligands both have a mirror plane. (c) In a tetrahedron all positions are adjacent to each other, so only one arrangement is possible."
+      },
+      "solution_md": "cis/trans; no optical isomers; tetrahedral has one arrangement.",
+      "marking_scheme": [
+        {
+          "step": "(a) cis and trans",
+          "marks": 1
+        },
+        {
+          "step": "(b) Mirror plane, inactive",
+          "marks": 1
+        },
+        {
+          "step": "(c) Tetrahedral",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch10-t04"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch10_063",
+      "unit": "isc-12-chemistry-ch10",
+      "language": "en",
+      "type": "short",
+      "stem_md": "State the number and type of stereoisomers of (a) square planar [Pt(en)Cl₂], (b) [Co(C₂O₄)₃]³⁻ and (c) [RhCl₃(NH₃)₃].",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) None: the didentate en must span two adjacent (cis) positions, so only one form exists. (b) Two optical isomers (d and l); no geometrical isomers. (c) Two geometrical isomers (fac and mer); neither is optically active."
+      },
+      "solution_md": "0; 2 optical; 2 geometrical.",
+      "marking_scheme": [
+        {
+          "step": "(a) None",
+          "marks": 1
+        },
+        {
+          "step": "(b) d and l",
+          "marks": 1
+        },
+        {
+          "step": "(c) fac and mer",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch10-t04"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch10_064",
+      "unit": "isc-12-chemistry-ch10",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) State the main postulates of Werner’s theory, using the terms primary and secondary valency. [1½]\n\n(b) 0.0050 mol of PtCl₄·3NH₃ gives 0.0050 mol of AgCl with excess silver nitrate. Platinum(IV) has coordination number 6. Write the Werner formula, give its IUPAC name and state how many ions it gives in water. [2]\n\n(c) How would you show by a simple test that Mohr’s salt is a double salt but K₄[Fe(CN)₆] is a complex? [1½]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) The metal has primary (ionisable) valency equal to its oxidation state, satisfied by anions, and secondary (non-ionisable) valency equal to its coordination number, satisfied by ligands; each metal has a fixed coordination number; secondary valencies are directed in space and give a definite shape.\n\n(b) One Cl⁻ is free: [PtCl₃(NH₃)₃]Cl, triamminetrichloridoplatinum(IV) chloride; 2 ions in water.\n\n(c) Add a reagent for Fe²⁺ (e.g. potassium ferricyanide or NaOH) to each solution: Mohr’s salt gives the test for Fe²⁺ (it dissociates completely), K₄[Fe(CN)₆] does not (iron stays in the complex ion)."
+      },
+      "solution_md": "Postulates; [PtCl₃(NH₃)₃]Cl, 2 ions; Fe²⁺ test.",
+      "marking_scheme": [
+        {
+          "step": "(a) Postulates",
+          "marks": 1.5
+        },
+        {
+          "step": "(b) Formula",
+          "marks": 1
+        },
+        {
+          "step": "(b) Name and ions",
+          "marks": 1
+        },
+        {
+          "step": "(c) Test",
+          "marks": 1.5
+        }
+      ],
+      "marks": 5,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch10-t01"
+      ],
+      "expected_time_sec": 570,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch10_065",
+      "unit": "isc-12-chemistry-ch10",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Define, with one example each: ligand, coordination number, chelating ligand and ambidentate ligand. [2]\n\n(b) Find the oxidation state and coordination number of the metal in [Cr(en)(C₂O₄)₂]⁻ and in [Co(NH₃)₄(H₂O)Br]SO₄. [1½]\n\n(c) What is the chelate effect? Illustrate with an example. [1½]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Ligand: an ion or molecule that donates an electron pair to the central atom (NH₃). Coordination number: number of donor atoms bonded to the central atom (6 in [Fe(CN)₆]³⁻). Chelating ligand: a polydentate ligand binding one metal through two or more donor atoms to form a ring (en). Ambidentate ligand: can bind through either of two different atoms (NO₂⁻).\n\n(b) For [Cr(en)(C₂O₄)₂]⁻, x + 0 + 2(−2) = −1, x = +3; CN = 2 + 4 = 6. For the cation [Co(NH₃)₄(H₂O)Br]²⁺, x + 0 + 0 − 1 = +2, x = +3; CN = 6.\n\n(c) Complexes of chelating ligands are more stable than similar complexes of unidentate ligands: [Ni(en)₃]²⁺ is much more stable than [Ni(NH₃)₆]²⁺, because removing en needs two bonds to break."
+      },
+      "solution_md": "Definitions; Cr +3 CN 6, Co +3 CN 6; chelate effect.",
+      "marking_scheme": [
+        {
+          "step": "(a) Four definitions with examples",
+          "marks": 2
+        },
+        {
+          "step": "(b) Two OS and CN",
+          "marks": 1.5
+        },
+        {
+          "step": "(c) Chelate effect",
+          "marks": 1.5
+        }
+      ],
+      "marks": 5,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch10-t02"
+      ],
+      "expected_time_sec": 570,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch10_066",
+      "unit": "isc-12-chemistry-ch10",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Write the IUPAC names of (i) [Co(NH₃)₆][Cr(CN)₆], (ii) [PtCl₂(NH₃)₄]SO₄ and (iii) Na[Au(CN)₂]. [3]\n\n(b) Write the formulas of (i) tetraaquadichloridochromium(III) nitrate and (ii) ammonium tetrathiocyanato-S-cobaltate(II). [2]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) (i) Hexaamminecobalt(III) hexacyanidochromate(III). (ii) Tetraamminedichloridoplatinum(IV) sulfate. (iii) Sodium dicyanidoaurate(I).\n\n(b) (i) [CrCl₂(H₂O)₄]NO₃. (ii) (NH₄)₂[Co(SCN)₄]."
+      },
+      "solution_md": "Three names; two formulas.",
+      "marking_scheme": [
+        {
+          "step": "(a)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(a)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(a)(iii)",
+          "marks": 1
+        },
+        {
+          "step": "(b)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(b)(ii)",
+          "marks": 1
+        }
+      ],
+      "marks": 5,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch10-t03"
+      ],
+      "expected_time_sec": 570,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch10_067",
+      "unit": "isc-12-chemistry-ch10",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Identify the type of structural isomerism shown by each pair: (i) [Co(NH₃)₅Cl]SO₄ and [Co(NH₃)₅(SO₄)]Cl; (ii) [Co(NH₃)₅(NO₂)]Cl₂ and [Co(NH₃)₅(ONO)]Cl₂; (iii) [Cu(NH₃)₄][PtCl₄] and [Pt(NH₃)₄][CuCl₄]; (iv) [Cr(H₂O)₆]Cl₃ and [CrCl(H₂O)₅]Cl₂·H₂O. [2]\n\n(b) Describe a chemical test to distinguish the two compounds in pair (i). [1]\n\n(c) [Cr(C₂O₄)₃]³⁻ shows optical isomerism. Explain why, and state how the two isomers differ in their effect on plane-polarised light. [2]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) (i) ionisation; (ii) linkage; (iii) coordination; (iv) hydrate.\n\n(b) BaCl₂ solution gives a white precipitate (BaSO₄) with [Co(NH₃)₅Cl]SO₄ but not with the other; AgNO₃ gives white AgCl with [Co(NH₃)₅(SO₄)]Cl only.\n\n(c) The three didentate oxalate rings form a propeller-like arrangement with no plane or centre of symmetry, so the ion and its mirror image are non-superimposable. The d and l forms rotate plane-polarised light by equal angles in opposite directions."
+      },
+      "solution_md": "Four types; BaCl₂/AgNO₃ test; chiral propeller.",
+      "marking_scheme": [
+        {
+          "step": "(a) Four types",
+          "marks": 2
+        },
+        {
+          "step": "(b) Test",
+          "marks": 1
+        },
+        {
+          "step": "(c) Reason for chirality",
+          "marks": 1
+        },
+        {
+          "step": "(c) Opposite rotation",
+          "marks": 1
+        }
+      ],
+      "marks": 5,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch10-t04"
+      ],
+      "expected_time_sec": 570,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch10_068",
+      "unit": "isc-12-chemistry-ch10",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Show that the octahedral ion [CrCl₂(C₂O₄)₂]³⁻ has three stereoisomers, and state which of them are optically active. [2½]\n\n(b) Why does square planar [Pt(en)Cl₂] show no geometrical isomerism, whereas [PtCl₂(NH₃)₂] does? [1½]\n\n(c) State one important use that depends on the difference between the cis and trans forms of [PtCl₂(NH₃)₂]. [1]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) The two Cl⁻ ligands can be trans (opposite) or cis (adjacent). The trans isomer has a mirror plane, so it is optically inactive: one isomer. The cis isomer has no mirror plane; it exists as a pair of non-superimposable mirror images (d and l). Total 3 stereoisomers; only the two cis forms are optically active.\n\n(b) In [Pt(en)Cl₂] the short en chain can only span two adjacent positions, so the two Cl⁻ must also be cis — only one arrangement. In [PtCl₂(NH₃)₂] the four unidentate ligands can be arranged with like ligands adjacent (cis) or opposite (trans).\n\n(c) cis-[PtCl₂(NH₃)₂] (cisplatin) is an anticancer drug; the trans isomer is inactive."
+      },
+      "solution_md": "trans + d-cis + l-cis; en spans cis positions; cisplatin.",
+      "marking_scheme": [
+        {
+          "step": "(a) trans inactive",
+          "marks": 1
+        },
+        {
+          "step": "(a) cis as d and l; total 3",
+          "marks": 1.5
+        },
+        {
+          "step": "(b) Explanation",
+          "marks": 1.5
+        },
+        {
+          "step": "(c) Cisplatin",
+          "marks": 1
+        }
+      ],
+      "marks": 5,
+      "difficulty": 4,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch10-t04"
+      ],
+      "expected_time_sec": 570,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    }
+  ],
+  "build": {
+    "run_id": null,
+    "checks": {
+      "katex_mhchem": "60 math strings parsed with KaTeX 0.19.0 + mhchem (throwOnError, strict \"error\"), 0 failures",
+      "svg_allowlist": "4 SVG visuals (2 distinct diagrams) checked with saxes against svg-allowlist.ts: elements, attributes, class pattern, fragment-only refs, no style, palette incl. named hues, viewBox, title, per-page unique ids — 0 failures",
+      "narration": "30 slides, 13–72 words (mean 50), no symbols, formulae or unit abbreviations",
+      "resolve": "5/5 scripted re-solve checks pass",
+      "chemistry_facts": "Werner formulas, ligand denticities, oxidation states and coordination numbers, every IUPAC name and formula (2005 recommendations) and every isomer count checked against the ISC 2027 syllabus (Unit 5)",
+      "content_gate": "npm test -w @soyl/content-templates: all checks pass for this chapter",
+      "verifier_pass": "2026-10-30: every question and every internal-choice alternative re-solved from its stem by the author; every numerical re-computed by the build script — see README \"Verifier pass\"",
+      "pipeline_lint": "npm run content -- lint --exemplars: 0 errors, 0 warnings"
+    }
+  }
+}
