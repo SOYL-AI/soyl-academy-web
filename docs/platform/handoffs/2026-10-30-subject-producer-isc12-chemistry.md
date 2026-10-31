@@ -1,6 +1,6 @@
 # subject-producer — ISC Class 12 Chemistry, hand-authored chapters — 2026-10-30
 
-Status: partial — ch01–ch11 committed; ch12–ch20 built clean and staged outside the gate tree, awaiting one gate run; ch21–ch22 to do
+Status: partial — ch01–ch20 committed; ch21–ch22 being authored
 
 Branch: `platform/subject-producer/isc-12-chemistry` (worktree `C:/Users/Prabhu/soyl-wt/content-isc12-chemistry`, from d70438f, with `platform/main` merged at 4c30f89 (content fixture fix 81973c7) and again at 4b86da3). Not pushed, not merged.
 
@@ -20,6 +20,15 @@ New chapters under `platform/content/authored/chemistry/isc-12-chemistry-chNN/`,
 | ch09 Potassium Permanganate and Potassium Dichromate | 26ab09f | 2 (15 + 14) | 4 | 31 | 66 | 61% |
 | ch10 Coordination Compounds: Terms, Nomenclature and Isomerism | aaf249b | 2 (14 + 16) | 4 | 31 | 68 | 57% |
 | ch11 Bonding in Coordination Compounds | 0c51077 | 2 (13 + 15) | 4 | 31 | 64 | 55% |
+| ch12 Haloalkanes | fd0519a | 2 (17 + 19) | 7 | 31 | 72 | 61% |
+| ch13 Haloarenes | bcaee68 | 2 (15 + 15) | 5 | 31 | 67 | 49% |
+| ch14 Alcohols | b77bf33 | 2 (16 + 16) | 6 | 31 | 71 | 58% |
+| ch15 Phenols and Ethers | b485c26 | 2 (18 + 16) | 5 | 31 | 66 | 61% |
+| ch16 Aldehydes and Ketones | 9895a7e | 2 (15 + 16) | 6 | 31 | 67 | 60% |
+| ch17 Benzaldehyde | 6e318fb | 2 (14 + 14) | 4 | 31 | 63 | 62% |
+| ch18 Carboxylic Acids | 4d1ab47 | 2 (15 + 15) | 6 | 31 | 70 | 63% |
+| ch19 Amines | 579f524 | 2 (17 + 16) | 6 | 31 | 69 | 64% |
+| ch20 Cyanides, Isocyanides and Diazonium Salts | 83df0ac | 2 (14 + 14) | 4 | 31 | 60 | 65% |
 
 - Topics follow the ISC 2027 syllabus (`catalog/cisce/isc-12/chemistry/syllabus.yaml`, 22 SOYL chapters), not NCERT: ISC-only content (normality, azeotrope distillation, derivations of ΔTb and ΔTf, van’t Hoff laws, SHE limitations, factors affecting electrode potential, equivalent conductance, F = N_A e, law of mass action, radiation as a rate factor, …) has its own slides and items. Removed topics are respected.
 - Tests: `t_isc12chem_chNN_short` (20 marks, 50 min, `isc-12-default-chapter-test-short`) and `t_isc12chem_chNN_long` (40 marks, 100 min, `isc-12-default-chapter-test-long`): Section A 1-mark MCQ + assertion-reason, B 2-mark, C 3-mark, D 5-mark questions set in parts, internal choice in B, C and D exactly per the blueprints (the builder throws on any mismatch); short and long disjoint.
@@ -40,7 +49,7 @@ npx vitest run --root db test/db6-split.test.ts
 npx vitest run --root api test/content.test.ts
 ```
 Results of the last full run (under the shared `heavy.sh` lock):
-Last gate run 2026-10-31 22:55 IST (ch01–ch11 in place): content-templates 1723/1723; lint --exemplars 0 errors; verify cisce 12 chemistry 11 units 712 q 0 flags; verify cbse 115 units 0 flags; originality --authored 246 units 0 errors; catalog valid; db6-split 8/8; api content.test 13/13.
+Last gate run 2026-10-31 23:03 IST (ch01–ch20 in place): content-templates 1786/1786; lint --exemplars 0 errors; verify cisce 12 chemistry 20 units 1317 q 0 flags; verify cbse 115 units 0 flags; originality --authored 255 units 0 errors; catalog valid; db6-split 8/8; api content.test 13/13.
 
 ## Tests added
 None (content only).
