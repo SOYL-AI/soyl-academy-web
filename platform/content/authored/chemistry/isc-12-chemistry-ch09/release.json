@@ -1,0 +1,4811 @@
+{
+  "unit": "isc-12-chemistry-ch09",
+  "version": 1,
+  "academic_year": "2026-27",
+  "created_at": "2026-10-30T00:00:00+05:30",
+  "decks": [
+    {
+      "unit": "isc-12-chemistry-ch09",
+      "part": 1,
+      "version": 1,
+      "title": "Potassium Permanganate and Potassium Dichromate — Part 1: Potassium permanganate",
+      "language": "en",
+      "goals": [
+        "Describe the structure and shape of the permanganate ion",
+        "Write the equations for the preparation of KMnO₄ from pyrolusite",
+        "Write balanced ionic equations for permanganate oxidations in acidic, basic and neutral media",
+        "Explain why KMnO₄ acts as a self-indicator and solve titration problems"
+      ],
+      "slides": [
+        {
+          "id": "s01",
+          "layout": "title",
+          "heading": "Purple power: potassium permanganate",
+          "body_md": "Part 1 — how KMnO₄ is made, why it is purple, and how it oxidises in different media.",
+          "bullets": [],
+          "visual": {
+            "kind": "flow",
+            "spec": {
+              "direction": "LR",
+              "nodes": [
+                {
+                  "id": "a",
+                  "label": "Pyrolusite MnO₂"
+                },
+                {
+                  "id": "b",
+                  "label": "K₂MnO₄ (green)"
+                },
+                {
+                  "id": "c",
+                  "label": "KMnO₄ (purple)"
+                },
+                {
+                  "id": "d",
+                  "label": "Oxidations and titrations"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "a",
+                  "to": "b"
+                },
+                {
+                  "from": "b",
+                  "to": "c"
+                },
+                {
+                  "from": "c",
+                  "to": "d"
+                }
+              ]
+            },
+            "alt": "Flow from pyrolusite through green potassium manganate to purple potassium permanganate and its use in oxidations and titrations"
+          },
+          "math": [],
+          "narration": "Namaste! Potassium permanganate is the deep purple crystal used to disinfect water and wash vegetables, and the reagent you use in volumetric titrations. In this part we see how it is made from the ore pyrolusite, why its ion is tetrahedral and purple, and how its oxidising power changes in acidic, basic and neutral solution.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s02",
+          "layout": "concept",
+          "heading": "Properties of KMnO₄",
+          "body_md": "Dark purple, almost black, crystals; moderately soluble in water giving an intense purple solution; manganese is in the **+7** state (3d⁰). On heating to about 513 K it decomposes, releasing oxygen.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Property",
+                "KMnO₄"
+              ],
+              "rows": [
+                [
+                  "Appearance",
+                  "Dark purple crystals"
+                ],
+                [
+                  "Oxidation state of Mn",
+                  "+7 (3d⁰)"
+                ],
+                [
+                  "Magnetism",
+                  "Diamagnetic"
+                ],
+                [
+                  "On heating (513 K)",
+                  "K₂MnO₄ + MnO₂ + O₂"
+                ],
+                [
+                  "Uses",
+                  "Oxidant, disinfectant, titrant"
+                ]
+              ]
+            },
+            "alt": "Table of properties of potassium permanganate"
+          },
+          "math": [
+            "\\ce{2KMnO4 ->[513 K] K2MnO4 + MnO2 + O2}"
+          ],
+          "narration": "Potassium permanganate forms dark purple, nearly black crystals that dissolve to give an intense purple solution, even at very low concentration. Manganese is in its highest state, plus seven, with no d electrons, so the salt is diamagnetic. When heated, it decomposes into potassium manganate, manganese dioxide and oxygen, which is a simple laboratory source of oxygen.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s03",
+          "layout": "diagram",
+          "heading": "Structure and shape of the permanganate ion",
+          "body_md": "$\\ce{MnO4-}$ is **tetrahedral**: Mn at the centre, four O at the corners, with three Mn=O bonds and one Mn–O⁻ bond drawn (all four are equivalent by resonance). The green **manganate** ion $\\ce{MnO4^2-}$ is also tetrahedral but has Mn +6 (3d¹, paramagnetic). The purple colour of permanganate comes from **charge transfer** (O → Mn), not a d–d transition.",
+          "bullets": [],
+          "visual": {
+            "kind": "svg",
+            "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 340 170\" role=\"img\" aria-label=\"Left: the manganate ion, manganese joined tetrahedrally to four oxygen atoms, two by double bonds and two as O minus; it is green and paramagnetic because it has one unpaired electron. Right: the permanganate ion, manganese joined to three oxygens by double bonds and one O minus; it is purple and diamagnetic.\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>Left: the manganate ion, manganese joined tetrahedrally to four oxygen atoms, two by double bonds and two as O minus; it is green and paramagnetic because it has one unpaired electron. Right: the permanganate ion, manganese joined to three oxygens by double bonds and one O minus; it is purple and diamagnetic.</title><line x1=\"87.5\" y1=\"66\" x2=\"87.5\" y2=\"54\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"82.5\" y1=\"66\" x2=\"82.5\" y2=\"54\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"85\" cy=\"42\" r=\"12\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"85\" y=\"46\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">O</text><line x1=\"97\" y1=\"80.5\" x2=\"109\" y2=\"80.5\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"97\" y1=\"75.5\" x2=\"109\" y2=\"75.5\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"121\" cy=\"78\" r=\"12\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"121\" y=\"82\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">O</text><line x1=\"85\" y1=\"90\" x2=\"85\" y2=\"102\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"85\" cy=\"114\" r=\"12\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"85\" y=\"118\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">O⁻</text><line x1=\"73\" y1=\"78\" x2=\"61\" y2=\"78\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"49\" cy=\"78\" r=\"12\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"49\" y=\"82\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">O⁻</text><circle cx=\"85\" cy=\"78\" r=\"13\" fill=\"var(--diagram-green)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"85\" y=\"82\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">Mn</text><text x=\"85\" y=\"146\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\">Manganate (green)</text><text x=\"85\" y=\"160\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">one unpaired electron: paramagnetic</text><line x1=\"257.5\" y1=\"66\" x2=\"257.5\" y2=\"54\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"252.5\" y1=\"66\" x2=\"252.5\" y2=\"54\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"255\" cy=\"42\" r=\"12\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"255\" y=\"46\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">O</text><line x1=\"267\" y1=\"80.5\" x2=\"279\" y2=\"80.5\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"267\" y1=\"75.5\" x2=\"279\" y2=\"75.5\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"291\" cy=\"78\" r=\"12\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"291\" y=\"82\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">O</text><line x1=\"255\" y1=\"90\" x2=\"255\" y2=\"102\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"255\" cy=\"114\" r=\"12\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"255\" y=\"118\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">O⁻</text><line x1=\"243\" y1=\"75.5\" x2=\"231\" y2=\"75.5\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"243\" y1=\"80.5\" x2=\"231\" y2=\"80.5\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"219\" cy=\"78\" r=\"12\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"219\" y=\"82\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">O</text><circle cx=\"255\" cy=\"78\" r=\"13\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"255\" y=\"82\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">Mn</text><text x=\"255\" y=\"146\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\">Permanganate (purple)</text><text x=\"255\" y=\"160\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">no unpaired electron: diamagnetic</text></svg>",
+            "alt": "Tetrahedral structures of the green, paramagnetic manganate ion and the purple, diamagnetic permanganate ion"
+          },
+          "math": [],
+          "narration": "The permanganate ion is a tetrahedron, with manganese at the centre and four oxygen atoms at the corners; resonance makes all four bonds the same. The manganate ion has the same shape but one extra electron, giving manganese plus six with a single d electron, so it is green and paramagnetic. Permanganate has no d electrons, so its colour comes from charge transfer from oxygen to manganese.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s04",
+          "layout": "concept",
+          "heading": "Preparation from pyrolusite",
+          "body_md": "**Step 1.** Fuse **pyrolusite** ($\\ce{MnO2}$) with KOH in the presence of air or an oxidant ($\\ce{KNO3}$ or $\\ce{KClO3}$): green potassium manganate forms.\n\n**Step 2.** Convert manganate (Mn +6) to permanganate (Mn +7): **electrolytic oxidation** in alkaline solution (industrial), or oxidation by $\\ce{Cl2}$ or $\\ce{O3}$, or **disproportionation** in neutral or acidic solution.",
+          "bullets": [],
+          "visual": {
+            "kind": "flow",
+            "spec": {
+              "direction": "LR",
+              "nodes": [
+                {
+                  "id": "a",
+                  "label": "MnO₂ + KOH + O₂, fuse"
+                },
+                {
+                  "id": "b",
+                  "label": "K₂MnO₄ (green, Mn +6)"
+                },
+                {
+                  "id": "c",
+                  "label": "Electrolytic oxidation, or Cl₂, or acid"
+                },
+                {
+                  "id": "d",
+                  "label": "KMnO₄ (purple, Mn +7)"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "a",
+                  "to": "b"
+                },
+                {
+                  "from": "b",
+                  "to": "c"
+                },
+                {
+                  "from": "c",
+                  "to": "d"
+                }
+              ]
+            },
+            "alt": "Flow of the two-step preparation of potassium permanganate from pyrolusite"
+          },
+          "math": [
+            "\\ce{2MnO2 + 4KOH + O2 -> 2K2MnO4 + 2H2O}",
+            "\\ce{MnO4^2- -> MnO4- + e-}\\ \\text{(at the anode)}",
+            "\\ce{3MnO4^2- + 4H+ -> 2MnO4- + MnO2 + 2H2O}"
+          ],
+          "narration": "Potassium permanganate is made from pyrolusite, manganese dioxide. First the ore is fused with potassium hydroxide in air, which oxidises manganese to the plus six state as green potassium manganate. Then manganate is oxidised to permanganate. Industry does this electrolytically at the anode; in the laboratory, chlorine can be used, or the manganate can be allowed to disproportionate in acid.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s05",
+          "layout": "example",
+          "heading": "Worked example: oxidation states in the preparation",
+          "body_md": "**Problem.** For $\\ce{3MnO4^2- + 4H+ -> 2MnO4- + MnO2 + 2H2O}$, (a) find the oxidation state of Mn in each species, (b) explain why this is a disproportionation, and (c) state what fraction of the manganese ends up as permanganate.\n\n**(a)** $\\ce{MnO4^2-}$: $x - 8 = -2$, $x = +6$. $\\ce{MnO4-}$: $x - 8 = -1$, $x = +7$. $\\ce{MnO2}$: $x - 4 = 0$, $x = +4$.\n\n**(b)** The same species (Mn +6) is both oxidised (to +7) and reduced (to +4).\n\n**(c)** Two of every three Mn atoms: $\\tfrac{2}{3}$.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Species",
+                "Mn oxidation state",
+                "Change"
+              ],
+              "rows": [
+                [
+                  "MnO₄²⁻",
+                  "+6",
+                  "Start"
+                ],
+                [
+                  "MnO₄⁻",
+                  "+7",
+                  "Oxidised"
+                ],
+                [
+                  "MnO₂",
+                  "+4",
+                  "Reduced"
+                ]
+              ]
+            },
+            "alt": "Table of oxidation states in the disproportionation of manganate"
+          },
+          "math": [],
+          "narration": "Use oxygen as minus two. In manganate, manganese is plus six; in permanganate, plus seven; in manganese dioxide, plus four. One species is both oxidised and reduced, so this is disproportionation. Two of every three manganese atoms become permanganate, so only two thirds is converted, which is why industry prefers electrolytic oxidation.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s06",
+          "layout": "check",
+          "heading": "Quick check: preparation",
+          "body_md": "Identify a step or product in the preparation of KMnO₄.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Follow manganese from plus four in the ore, to plus six in manganate, to plus seven in permanganate.",
+          "check_question_id": "q_isc12chem_ch09_001",
+          "audio": null
+        },
+        {
+          "id": "s07",
+          "layout": "concept",
+          "heading": "Oxidising action in acidic medium",
+          "body_md": "In **acid** (dilute $\\ce{H2SO4}$), $\\ce{MnO4-}$ gains **5 electrons** and is reduced to almost colourless $\\ce{Mn^2+}$ ($E^\\circ = +1.52\\ \\text{V}$). HCl is not used (Cl⁻ would be oxidised to Cl₂) and HNO₃ is not used (it is itself an oxidant).",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Reductant",
+                "Balanced ionic equation (acid)"
+              ],
+              "rows": [
+                [
+                  "Iron(II) (FeSO₄)",
+                  "$\\ce{MnO4- + 5Fe^2+ + 8H+ -> Mn^2+ + 5Fe^3+ + 4H2O}$"
+                ],
+                [
+                  "Oxalic acid",
+                  "$\\ce{2MnO4- + 5H2C2O4 + 6H+ -> 2Mn^2+ + 10CO2 + 8H2O}$"
+                ],
+                [
+                  "Iodide (KI)",
+                  "$\\ce{2MnO4- + 10I- + 16H+ -> 2Mn^2+ + 5I2 + 8H2O}$"
+                ]
+              ]
+            },
+            "alt": "Table of permanganate reactions in acidic medium with iron two, oxalic acid and iodide"
+          },
+          "math": [
+            "\\ce{MnO4- + 8H+ + 5e- -> Mn^2+ + 4H2O}"
+          ],
+          "narration": "In dilute sulphuric acid, each permanganate ion accepts five electrons and becomes the nearly colourless manganese two plus ion. It oxidises iron two plus to iron three plus, oxalic acid to carbon dioxide, and iodide to iodine. Hydrochloric acid is avoided because permanganate would oxidise chloride to chlorine, and nitric acid because it is an oxidising agent itself.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s08",
+          "layout": "concept",
+          "heading": "Oxidising action in basic and neutral media",
+          "body_md": "In **neutral or faintly alkaline** solution, $\\ce{MnO4-}$ gains **3 electrons** and gives brown $\\ce{MnO2}$.\n\n- **Basic, with KI:** iodide is oxidised to **iodate**.\n- **Neutral, with H₂S:** hydrogen sulphide is oxidised to **sulphur**.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Medium",
+                "Electrons gained",
+                "Mn product"
+              ],
+              "rows": [
+                [
+                  "Acidic",
+                  "5",
+                  "Mn²⁺ (colourless)"
+                ],
+                [
+                  "Neutral / faintly alkaline",
+                  "3",
+                  "MnO₂ (brown)"
+                ],
+                [
+                  "Strongly alkaline",
+                  "1",
+                  "MnO₄²⁻ (green)"
+                ]
+              ]
+            },
+            "alt": "Table of permanganate reduction in different media"
+          },
+          "math": [
+            "\\ce{MnO4- + 2H2O + 3e- -> MnO2 + 4OH-}",
+            "\\ce{2MnO4- + I- + H2O -> 2MnO2 + IO3- + 2OH-}",
+            "\\ce{2MnO4- + 3H2S -> 2MnO2 + 3S + 2OH- + 2H2O}"
+          ],
+          "narration": "In neutral or faintly alkaline solution, permanganate accepts only three electrons and gives a brown precipitate of manganese dioxide. With potassium iodide in alkaline solution, iodide is oxidised all the way to iodate; with hydrogen sulphide in neutral solution, the product is sulphur. In strongly alkaline solution, permanganate gains just one electron to give green manganate.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s09",
+          "layout": "example",
+          "heading": "Worked example: balancing a permanganate equation",
+          "body_md": "**Problem.** Balance the reaction of permanganate with hydrogen peroxide in acid, given that $\\ce{H2O2}$ is oxidised to $\\ce{O2}$.\n\n**Step 1.** Half-equations: $\\ce{MnO4- + 8H+ + 5e- -> Mn^2+ + 4H2O}$ and $\\ce{H2O2 -> O2 + 2H+ + 2e-}$.\n\n**Step 2.** Equalise electrons: multiply by 2 and 5 (10 e⁻ each).\n\n**Step 3.** Add and cancel H⁺: $\\ce{2MnO4- + 5H2O2 + 6H+ -> 2Mn^2+ + 5O2 + 8H2O}$. Check: charge $-2 + 6 = +4$ on each side.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Half-reaction",
+                "Multiplier",
+                "Electrons"
+              ],
+              "rows": [
+                [
+                  "MnO₄⁻ → Mn²⁺",
+                  "× 2",
+                  "10 gained"
+                ],
+                [
+                  "H₂O₂ → O₂",
+                  "× 5",
+                  "10 lost"
+                ]
+              ]
+            },
+            "alt": "Table of half-reactions and multipliers in the worked example"
+          },
+          "math": [],
+          "narration": "Write the two half-equations: permanganate gains five electrons, and hydrogen peroxide loses two electrons as it becomes oxygen. To match electrons, double the first and multiply the second by five, so ten electrons are transferred. Adding and cancelling the hydrogen ions on both sides gives the balanced equation. Always check that atoms and total charge balance.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s10",
+          "layout": "check",
+          "heading": "Quick check: media",
+          "body_md": "Predict the manganese product formed in a given medium.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Acid gives manganese two plus; neutral or faintly alkaline gives manganese dioxide.",
+          "check_question_id": "q_isc12chem_ch09_013",
+          "audio": null
+        },
+        {
+          "id": "s11",
+          "layout": "concept",
+          "heading": "KMnO₄ in redox titrations",
+          "body_md": "In titrations with Fe²⁺ or oxalic acid in dilute H₂SO₄, KMnO₄ is a **self-indicator**: the reduced form Mn²⁺ is almost colourless, so the first drop in excess gives a **permanent pale pink**. Oxalic acid titrations are done **warm (about 333 K)**; Mn²⁺ formed catalyses the reaction (autocatalysis). KMnO₄ is **not a primary standard** and is standardised against oxalic acid or Mohr’s salt.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Feature",
+                "Detail"
+              ],
+              "rows": [
+                [
+                  "Indicator",
+                  "None needed (self-indicator)"
+                ],
+                [
+                  "End point",
+                  "First permanent pale pink"
+                ],
+                [
+                  "Acid used",
+                  "Dilute H₂SO₄"
+                ],
+                [
+                  "Oxalic acid titration",
+                  "Warm; Mn²⁺ autocatalyses"
+                ],
+                [
+                  "Standardisation",
+                  "Against oxalic acid or Mohr’s salt"
+                ]
+              ]
+            },
+            "alt": "Table of features of permanganate titrations"
+          },
+          "math": [],
+          "narration": "In a permanganate titration you need no indicator. As long as there is reducing agent in the flask, each purple drop is decolourised; the first extra drop leaves a permanent pale pink. Oxalic acid titrations are carried out warm, and the reaction speeds up once some manganese two plus has formed, because it acts as a catalyst. Permanganate solutions are standardised against oxalic acid or Mohr’s salt.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s12",
+          "layout": "example",
+          "heading": "Worked example: an oxalic acid titration",
+          "body_md": "**Problem.** $20.0\\ \\text{mL}$ of $0.050\\ \\text{M}$ oxalic acid is titrated, warm, with $0.020\\ \\text{M}$ $\\ce{KMnO4}$ in dilute $\\ce{H2SO4}$. Find the volume of $\\ce{KMnO4}$ at the end point.\n\n**Step 1.** $n(\\ce{H2C2O4}) = 0.050 \\times 0.0200 = 1.0 \\times 10^{-3}\\ \\text{mol}$.\n\n**Step 2.** Ratio $\\ce{MnO4-} : \\ce{H2C2O4} = 2 : 5$, so $n(\\ce{MnO4-}) = 1.0 \\times 10^{-3} \\times 2 \\div 5 = 4.0 \\times 10^{-4}\\ \\text{mol}$.\n\n**Step 3.** $V = 4.0 \\times 10^{-4} \\div 0.020 = 0.020\\ \\text{L} = 20.0\\ \\text{mL}$.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Quantity",
+                "Value"
+              ],
+              "rows": [
+                [
+                  "Oxalic acid",
+                  "1.0 × 10⁻³ mol"
+                ],
+                [
+                  "Ratio MnO₄⁻ : H₂C₂O₄",
+                  "2 : 5"
+                ],
+                [
+                  "Permanganate",
+                  "4.0 × 10⁻⁴ mol"
+                ],
+                [
+                  "Volume",
+                  "20.0 mL"
+                ]
+              ]
+            },
+            "alt": "Table of the oxalic acid titration results"
+          },
+          "math": [],
+          "narration": "First, moles of oxalic acid: twenty millilitres of zero point zero five molar gives one thousandth of a mole. The balanced equation shows two permanganate ions for every five oxalic acid molecules, so we need two fifths as much permanganate. Dividing by its concentration gives twenty millilitres. At the end point, the solution in the flask turns permanently pale pink.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s13",
+          "layout": "check",
+          "heading": "Quick check: self-indicator",
+          "body_md": "Explain the end point of a permanganate titration.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Compare the colours of permanganate and of manganese two plus.",
+          "check_question_id": "q_isc12chem_ch09_014",
+          "audio": null
+        },
+        {
+          "id": "s14",
+          "layout": "summary",
+          "heading": "Summary: Part 1",
+          "body_md": "",
+          "bullets": [
+            "KMnO₄: purple, Mn +7 (d⁰), diamagnetic; MnO₄⁻ tetrahedral; colour by charge transfer.",
+            "Preparation: MnO₂ + KOH + O₂ → K₂MnO₄ (green); then electrolytic oxidation or disproportionation → KMnO₄.",
+            "Acid: MnO₄⁻ + 8H⁺ + 5e⁻ → Mn²⁺ + 4H₂O (Fe²⁺, oxalic acid, I⁻).",
+            "Neutral/alkaline: MnO₄⁻ → MnO₂ (3 e⁻); I⁻ → IO₃⁻, H₂S → S.",
+            "Self-indicator; titrate in dilute H₂SO₄; mole ratios 1 : 5 (Fe²⁺), 2 : 5 (oxalic acid)."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Medium",
+                "Electrons",
+                "Product"
+              ],
+              "rows": [
+                [
+                  "Acid",
+                  "5",
+                  "Mn²⁺"
+                ],
+                [
+                  "Neutral",
+                  "3",
+                  "MnO₂"
+                ],
+                [
+                  "Strongly alkaline",
+                  "1",
+                  "MnO₄²⁻"
+                ]
+              ]
+            },
+            "alt": "Summary table of permanganate in different media"
+          },
+          "math": [],
+          "narration": "Let us sum up Part 1. Potassium permanganate contains manganese plus seven in a tetrahedral ion. It is made from pyrolusite through green manganate. In acid it gains five electrons to give colourless manganese two plus; in neutral solution three, giving brown manganese dioxide. It is its own indicator in titrations, and the balanced equation gives the mole ratio for every calculation.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s15",
+          "layout": "exam-tips",
+          "heading": "Exam tips: Part 1",
+          "body_md": "",
+          "bullets": [
+            "Always state the medium; the product and electron count depend on it.",
+            "Balance ionic equations for both atoms and charge.",
+            "Give the reason HCl is not used: Cl⁻ is oxidised to Cl₂.",
+            "In calculations, write the mole ratio from the balanced equation."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Slip",
+                "Fix"
+              ],
+              "rows": [
+                [
+                  "MnO₄⁻ → Mn²⁺ in neutral medium",
+                  "Neutral gives MnO₂"
+                ],
+                [
+                  "Using HCl to acidify",
+                  "Use dilute H₂SO₄"
+                ],
+                [
+                  "Ratio 1 : 1 with oxalic acid",
+                  "Ratio 2 : 5"
+                ]
+              ]
+            },
+            "alt": "Table of three common slips in Part 1 and fixes"
+          },
+          "math": [],
+          "narration": "Some tips. Always say which medium you mean, because the product changes. Balance every ionic equation for atoms and for charge. Remember why sulphuric acid, not hydrochloric acid, is used. And in calculations, write the mole ratio from the balanced equation before you do any arithmetic.",
+          "check_question_id": null,
+          "audio": null
+        }
+      ],
+      "status": "draft",
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "unit": "isc-12-chemistry-ch09",
+      "part": 2,
+      "version": 1,
+      "title": "Potassium Permanganate and Potassium Dichromate — Part 2: Potassium dichromate",
+      "language": "en",
+      "goals": [
+        "Draw the structure of the dichromate ion",
+        "Write the equations for the preparation of K₂Cr₂O₇ from chromite ore",
+        "Write balanced equations for dichromate oxidations in acidic medium and use them in titrations",
+        "Explain the colour change when the pH of a chromate or dichromate solution is changed"
+      ],
+      "slides": [
+        {
+          "id": "s01",
+          "layout": "title",
+          "heading": "Orange to green: potassium dichromate",
+          "body_md": "Part 2 — making K₂Cr₂O₇ from chromite, its structure, and its use as an oxidising agent.",
+          "bullets": [],
+          "visual": {
+            "kind": "flow",
+            "spec": {
+              "direction": "LR",
+              "nodes": [
+                {
+                  "id": "a",
+                  "label": "Chromite FeCr₂O₄"
+                },
+                {
+                  "id": "b",
+                  "label": "Na₂CrO₄ (yellow)"
+                },
+                {
+                  "id": "c",
+                  "label": "Na₂Cr₂O₇ (orange)"
+                },
+                {
+                  "id": "d",
+                  "label": "K₂Cr₂O₇ crystals"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "a",
+                  "to": "b"
+                },
+                {
+                  "from": "b",
+                  "to": "c"
+                },
+                {
+                  "from": "c",
+                  "to": "d"
+                }
+              ]
+            },
+            "alt": "Flow from chromite ore through sodium chromate and sodium dichromate to potassium dichromate"
+          },
+          "math": [],
+          "narration": "Potassium dichromate forms bright orange crystals and is used in leather tanning, in the laboratory as an oxidising agent, and as a standard in titrations. In this part we follow it from its ore, chromite, look at the shape of the dichromate ion, and see how it oxidises other substances and changes to chromate when the pH changes.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s02",
+          "layout": "concept",
+          "heading": "Preparation from chromite ore",
+          "body_md": "**Step 1.** Fuse chromite with sodium carbonate in air: chromium is oxidised to +6 as yellow sodium chromate.\n\n**Step 2.** Filter and acidify with $\\ce{H2SO4}$: orange sodium dichromate forms.\n\n**Step 3.** Add KCl to the hot concentrated solution: less soluble $\\ce{K2Cr2O7}$ crystallises on cooling.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Step",
+                "Product",
+                "Colour",
+                "Cr state"
+              ],
+              "rows": [
+                [
+                  "Roasting with Na₂CO₃ in air",
+                  "Na₂CrO₄",
+                  "Yellow",
+                  "+6"
+                ],
+                [
+                  "Acidification",
+                  "Na₂Cr₂O₇",
+                  "Orange",
+                  "+6"
+                ],
+                [
+                  "Adding KCl",
+                  "K₂Cr₂O₇",
+                  "Orange crystals",
+                  "+6"
+                ]
+              ]
+            },
+            "alt": "Table of the three steps in the preparation of potassium dichromate"
+          },
+          "math": [
+            "\\ce{4FeCr2O4 + 8Na2CO3 + 7O2 -> 8Na2CrO4 + 2Fe2O3 + 8CO2}",
+            "\\ce{2Na2CrO4 + H2SO4 -> Na2Cr2O7 + Na2SO4 + H2O}",
+            "\\ce{Na2Cr2O7 + 2KCl -> K2Cr2O7 + 2NaCl}"
+          ],
+          "narration": "Chromite is roasted with sodium carbonate in a current of air, which oxidises chromium from plus three to plus six and gives yellow sodium chromate. Iron ends up as insoluble iron three oxide, which is filtered off. Acidifying the solution turns chromate into orange sodium dichromate. Finally, potassium chloride is added; potassium dichromate is less soluble and crystallises on cooling.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s03",
+          "layout": "example",
+          "heading": "Worked example: chromium through the process",
+          "body_md": "**Problem.** Find the oxidation state of chromium in $\\ce{FeCr2O4}$, $\\ce{Na2CrO4}$ and $\\ce{Na2Cr2O7}$. In which step is chromium oxidised, and which reagent oxidises it?\n\n**Step 1.** $\\ce{FeCr2O4}$ (Fe +2): $2 + 2x - 8 = 0$, so $x = +3$.\n\n**Step 2.** $\\ce{Na2CrO4}$: $2 + x - 8 = 0$, so $x = +6$. $\\ce{Na2Cr2O7}$: $2 + 2x - 14 = 0$, so $x = +6$.\n\n**Step 3.** Chromium is oxidised (+3 → +6) only in the roasting step, by **atmospheric oxygen**; acidification is not a redox change.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Compound",
+                "Cr oxidation state"
+              ],
+              "rows": [
+                [
+                  "FeCr₂O₄",
+                  "+3"
+                ],
+                [
+                  "Na₂CrO₄",
+                  "+6"
+                ],
+                [
+                  "Na₂Cr₂O₇",
+                  "+6"
+                ],
+                [
+                  "K₂Cr₂O₇",
+                  "+6"
+                ]
+              ]
+            },
+            "alt": "Table of chromium oxidation states during the preparation"
+          },
+          "math": [],
+          "narration": "In chromite, iron is plus two, so each chromium is plus three. In sodium chromate and in sodium dichromate, chromium is plus six. So the only oxidation happens during roasting, when oxygen from the air raises chromium from plus three to plus six. Turning chromate into dichromate with acid does not change the oxidation state at all.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s04",
+          "layout": "diagram",
+          "heading": "Structures of chromate and dichromate",
+          "body_md": "$\\ce{CrO4^2-}$ is **tetrahedral**. $\\ce{Cr2O7^2-}$ consists of **two tetrahedra sharing one corner oxygen**; the Cr–O–Cr angle is about 126°. Six terminal Cr–O bonds are equivalent (about 163 pm); the two bridging Cr–O bonds are longer (about 179 pm).",
+          "bullets": [],
+          "visual": {
+            "kind": "svg",
+            "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 360 170\" role=\"img\" aria-label=\"Left: the chromate ion, a chromium atom joined to four oxygen atoms arranged tetrahedrally, two by double bonds and two as O minus; it is yellow. Right: the dichromate ion, two such tetrahedra sharing one bridging oxygen atom; it is orange. The Cr–O–Cr bond angle at the shared oxygen is about 126 degrees.\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>Left: the chromate ion, a chromium atom joined to four oxygen atoms arranged tetrahedrally, two by double bonds and two as O minus; it is yellow. Right: the dichromate ion, two such tetrahedra sharing one bridging oxygen atom; it is orange. The Cr–O–Cr bond angle at the shared oxygen is about 126 degrees.</title><line x1=\"72.5\" y1=\"66\" x2=\"72.5\" y2=\"54\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"67.5\" y1=\"66\" x2=\"67.5\" y2=\"54\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"70\" cy=\"42\" r=\"12\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"70\" y=\"46\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">O</text><line x1=\"82\" y1=\"80.5\" x2=\"94\" y2=\"80.5\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"82\" y1=\"75.5\" x2=\"94\" y2=\"75.5\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"106\" cy=\"78\" r=\"12\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"106\" y=\"82\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">O</text><line x1=\"70\" y1=\"90\" x2=\"70\" y2=\"102\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"70\" cy=\"114\" r=\"12\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"70\" y=\"118\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">O⁻</text><line x1=\"58\" y1=\"78\" x2=\"46\" y2=\"78\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"34\" cy=\"78\" r=\"12\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"34\" y=\"82\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">O⁻</text><circle cx=\"70\" cy=\"78\" r=\"13\" fill=\"var(--diagram-yellow)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"70\" y=\"82\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">Cr</text><text x=\"70\" y=\"150\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\">Chromate ion (yellow)</text><line x1=\"197.5\" y1=\"80\" x2=\"197.5\" y2=\"68\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"192.5\" y1=\"80\" x2=\"192.5\" y2=\"68\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"195\" cy=\"56\" r=\"12\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"195\" y=\"60\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">O</text><line x1=\"192.5\" y1=\"104\" x2=\"192.5\" y2=\"116\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"197.5\" y1=\"104\" x2=\"197.5\" y2=\"116\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"195\" cy=\"128\" r=\"12\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"195\" y=\"132\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">O</text><line x1=\"183\" y1=\"92\" x2=\"171\" y2=\"92\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"159\" cy=\"92\" r=\"12\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"159\" y=\"96\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">O⁻</text><circle cx=\"195\" cy=\"92\" r=\"13\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"195\" y=\"96\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">Cr</text><line x1=\"307.5\" y1=\"80\" x2=\"307.5\" y2=\"68\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"302.5\" y1=\"80\" x2=\"302.5\" y2=\"68\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"305\" cy=\"56\" r=\"12\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"305\" y=\"60\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">O</text><line x1=\"317\" y1=\"92\" x2=\"329\" y2=\"92\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"341\" cy=\"92\" r=\"12\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"341\" y=\"96\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">O⁻</text><line x1=\"302.5\" y1=\"104\" x2=\"302.5\" y2=\"116\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"307.5\" y1=\"104\" x2=\"307.5\" y2=\"116\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"305\" cy=\"128\" r=\"12\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"305\" y=\"132\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">O</text><circle cx=\"305\" cy=\"92\" r=\"13\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"305\" y=\"96\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">Cr</text><line x1=\"208\" y1=\"86\" x2=\"238\" y2=\"64\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"262\" y1=\"64\" x2=\"292\" y2=\"86\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"250\" cy=\"58\" r=\"12\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"250\" y=\"62\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">O</text><text x=\"250\" y=\"38\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">126°</text><text x=\"250\" y=\"150\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\">Dichromate ion (orange)</text></svg>",
+            "alt": "Structures of the tetrahedral chromate ion and of the dichromate ion, two tetrahedra sharing one oxygen atom with a Cr–O–Cr angle of about 126 degrees"
+          },
+          "math": [],
+          "narration": "The chromate ion is a tetrahedron with chromium at the centre. The dichromate ion is made of two such tetrahedra that share one corner oxygen atom, with an angle of about one hundred and twenty six degrees at the bridging oxygen. The six outer chromium to oxygen bonds are equal, and the two bonds to the bridging oxygen are longer.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s05",
+          "layout": "concept",
+          "heading": "Chromate ⇌ dichromate with pH",
+          "body_md": "Chromate and dichromate are in **equilibrium**; the position depends on pH. **Acid** turns yellow chromate into orange dichromate; **alkali** turns orange dichromate into yellow chromate. Chromium stays **+6**: this is **not** a redox reaction.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Condition",
+                "Main ion",
+                "Colour"
+              ],
+              "rows": [
+                [
+                  "Acidic (low pH)",
+                  "Cr₂O₇²⁻",
+                  "Orange"
+                ],
+                [
+                  "Alkaline (high pH)",
+                  "CrO₄²⁻",
+                  "Yellow"
+                ]
+              ]
+            },
+            "alt": "Table of the main chromium(VI) ion at low and high pH"
+          },
+          "math": [
+            "\\ce{2CrO4^2- + 2H+ <=> Cr2O7^2- + H2O}",
+            "\\ce{Cr2O7^2- + 2OH- -> 2CrO4^2- + H2O}"
+          ],
+          "narration": "The chromate and dichromate ions are linked by an equilibrium. Adding hydrogen ions pushes it towards dichromate, so a yellow solution turns orange; adding hydroxide removes hydrogen ions and pulls it back, so orange turns yellow. Chromium is plus six throughout, so this is an acid–base change, not a redox change.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s06",
+          "layout": "check",
+          "heading": "Quick check: pH and colour",
+          "body_md": "Predict the colour change when the pH of a chromium(VI) solution changes.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Low pH favours dichromate; high pH favours chromate.",
+          "check_question_id": "q_isc12chem_ch09_044",
+          "audio": null
+        },
+        {
+          "id": "s07",
+          "layout": "concept",
+          "heading": "Oxidising action in acidic medium",
+          "body_md": "Acidified dichromate is a strong oxidant ($E^\\circ = +1.33\\ \\text{V}$): each $\\ce{Cr2O7^2-}$ gains **6 electrons**, and orange becomes **green Cr³⁺**.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Reductant",
+                "Balanced ionic equation (acid)"
+              ],
+              "rows": [
+                [
+                  "Iron(II)",
+                  "$\\ce{Cr2O7^2- + 6Fe^2+ + 14H+ -> 2Cr^3+ + 6Fe^3+ + 7H2O}$"
+                ],
+                [
+                  "Iodide",
+                  "$\\ce{Cr2O7^2- + 6I- + 14H+ -> 2Cr^3+ + 3I2 + 7H2O}$"
+                ],
+                [
+                  "Sulphur dioxide",
+                  "$\\ce{Cr2O7^2- + 3SO2 + 2H+ -> 2Cr^3+ + 3SO4^2- + H2O}$"
+                ],
+                [
+                  "Hydrogen sulphide",
+                  "$\\ce{Cr2O7^2- + 3H2S + 8H+ -> 2Cr^3+ + 3S + 7H2O}$"
+                ]
+              ]
+            },
+            "alt": "Table of dichromate reactions in acidic medium"
+          },
+          "math": [
+            "\\ce{Cr2O7^2- + 14H+ + 6e- -> 2Cr^3+ + 7H2O}"
+          ],
+          "narration": "In acid, each dichromate ion takes six electrons, and both chromium atoms fall from plus six to plus three, so the colour changes from orange to green. Acidified dichromate oxidises iron two plus to iron three plus, iodide to iodine, sulphur dioxide to sulphate and hydrogen sulphide to sulphur. Turning green is also the test for sulphur dioxide using dichromate paper.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s08",
+          "layout": "example",
+          "heading": "Worked example: an ethanol oxidation",
+          "body_md": "**Problem.** Acidified dichromate oxidises ethanol to ethanal. Write the balanced ionic equation and state the colour change.\n\n**Step 1.** Half-equations: $\\ce{Cr2O7^2- + 14H+ + 6e- -> 2Cr^3+ + 7H2O}$; $\\ce{C2H5OH -> CH3CHO + 2H+ + 2e-}$.\n\n**Step 2.** Multiply the second by 3 (6 e⁻), add and cancel H⁺:\n\n$\\ce{Cr2O7^2- + 3C2H5OH + 8H+ -> 2Cr^3+ + 3CH3CHO + 7H2O}$.\n\n**Step 3.** Orange → green.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Half-reaction",
+                "Multiplier",
+                "Electrons"
+              ],
+              "rows": [
+                [
+                  "Cr₂O₇²⁻ → 2Cr³⁺",
+                  "× 1",
+                  "6 gained"
+                ],
+                [
+                  "C₂H₅OH → CH₃CHO",
+                  "× 3",
+                  "6 lost"
+                ]
+              ]
+            },
+            "alt": "Table of half-reactions for the ethanol oxidation"
+          },
+          "math": [],
+          "narration": "Dichromate gains six electrons, while each ethanol molecule loses two as it becomes ethanal. So three ethanol molecules react with one dichromate ion. Adding the half-equations and cancelling hydrogen ions gives eight hydrogen ions on the left and seven water molecules on the right. The orange solution turns green as chromium three plus forms.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s09",
+          "layout": "concept",
+          "heading": "K₂Cr₂O₇ in titrations",
+          "body_md": "K₂Cr₂O₇ is a **primary standard**: it is obtained very pure, is not hygroscopic and its solutions are stable, so a standard solution is made by direct weighing. It is used to estimate **Fe²⁺** (and I⁻ via iodine). The green Cr³⁺ masks the end point, so an **internal indicator** such as **diphenylamine** (or N-phenylanthranilic acid) is used; HCl may be used to acidify, because dichromate does not oxidise chloride under these conditions.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Feature",
+                "KMnO₄",
+                "K₂Cr₂O₇"
+              ],
+              "rows": [
+                [
+                  "Primary standard?",
+                  "No",
+                  "Yes"
+                ],
+                [
+                  "Indicator",
+                  "Self",
+                  "Diphenylamine"
+                ],
+                [
+                  "Electrons per ion (acid)",
+                  "5",
+                  "6"
+                ],
+                [
+                  "Can HCl be used?",
+                  "No",
+                  "Yes"
+                ],
+                [
+                  "Colour change",
+                  "Purple → colourless",
+                  "Orange → green"
+                ]
+              ]
+            },
+            "alt": "Table comparing permanganate and dichromate as titrants"
+          },
+          "math": [],
+          "narration": "Potassium dichromate is a primary standard: it is very pure, does not absorb moisture and its solutions keep, so you can weigh it directly. It is used mainly to estimate iron two plus. Because the green chromium three plus colour hides the end point, an indicator such as diphenylamine is added. Unlike permanganate, it does not oxidise chloride in these titrations.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s10",
+          "layout": "example",
+          "heading": "Worked example: iron by dichromate",
+          "body_md": "**Problem.** $0.294\\ \\text{g}$ of $\\ce{K2Cr2O7}$ ($M = 294$) is dissolved and used to oxidise iron(II) completely in acid. What mass of iron (Fe = 56) was present as Fe²⁺?\n\n**Step 1.** $n(\\ce{Cr2O7^2-}) = 0.294 \\div 294 = 1.0 \\times 10^{-3}\\ \\text{mol}$.\n\n**Step 2.** Ratio 1 : 6, so $n(\\ce{Fe^2+}) = 6 \\times 1.0 \\times 10^{-3} = 6.0 \\times 10^{-3}\\ \\text{mol}$.\n\n**Step 3.** Mass $= 6.0 \\times 10^{-3} \\times 56 = 0.336\\ \\text{g}$.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Quantity",
+                "Value"
+              ],
+              "rows": [
+                [
+                  "K₂Cr₂O₇",
+                  "1.0 × 10⁻³ mol"
+                ],
+                [
+                  "Ratio Cr₂O₇²⁻ : Fe²⁺",
+                  "1 : 6"
+                ],
+                [
+                  "Fe²⁺",
+                  "6.0 × 10⁻³ mol"
+                ],
+                [
+                  "Mass of iron",
+                  "0.336 g"
+                ]
+              ]
+            },
+            "alt": "Table of the dichromate titration calculation"
+          },
+          "math": [],
+          "narration": "First convert the mass of potassium dichromate to moles: one thousandth of a mole. The ionic equation shows that one dichromate oxidises six iron two plus ions, so six thousandths of a mole of iron reacted. Multiplying by fifty six gives about a third of a gram of iron. Notice how the mole ratio from the equation does most of the work.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s11",
+          "layout": "check",
+          "heading": "Quick check: dichromate as oxidant",
+          "body_md": "Identify the products or electron count when dichromate acts as an oxidant.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Each dichromate ion gains six electrons and gives two chromium three plus ions.",
+          "check_question_id": "q_isc12chem_ch09_045",
+          "audio": null
+        },
+        {
+          "id": "s12",
+          "layout": "check",
+          "heading": "Quick check: titrants compared",
+          "body_md": "Compare KMnO₄ and K₂Cr₂O₇ as titrants.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Think about which one can be weighed directly as a primary standard and which one is its own indicator.",
+          "check_question_id": "q_isc12chem_ch09_046",
+          "audio": null
+        },
+        {
+          "id": "s13",
+          "layout": "summary",
+          "heading": "Summary: Part 2",
+          "body_md": "",
+          "bullets": [
+            "Chromite → Na₂CrO₄ (roast with Na₂CO₃ in air) → Na₂Cr₂O₇ (acid) → K₂Cr₂O₇ (KCl).",
+            "CrO₄²⁻ tetrahedral; Cr₂O₇²⁻ two tetrahedra sharing an O (Cr–O–Cr about 126°).",
+            "2CrO₄²⁻ + 2H⁺ ⇌ Cr₂O₇²⁻ + H₂O: yellow ⇌ orange, not redox.",
+            "Cr₂O₇²⁻ + 14H⁺ + 6e⁻ → 2Cr³⁺ + 7H₂O: orange → green; oxidises Fe²⁺, I⁻, SO₂, H₂S, ethanol.",
+            "Primary standard; diphenylamine indicator; ratio 1 : 6 with Fe²⁺."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Oxidant",
+                "Electrons (acid)",
+                "Ratio with Fe²⁺"
+              ],
+              "rows": [
+                [
+                  "MnO₄⁻",
+                  "5",
+                  "1 : 5"
+                ],
+                [
+                  "Cr₂O₇²⁻",
+                  "6",
+                  "1 : 6"
+                ]
+              ]
+            },
+            "alt": "Summary table of the two oxidants"
+          },
+          "math": [],
+          "narration": "Let us sum up Part 2. Potassium dichromate is made from chromite by roasting with sodium carbonate in air, acidifying, and adding potassium chloride. The dichromate ion is two tetrahedra sharing an oxygen. It changes to chromate in alkali without any redox change. In acid it gains six electrons and turns green, and as a primary standard it is ideal for estimating iron two plus.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s14",
+          "layout": "exam-tips",
+          "heading": "Exam tips: Part 2",
+          "body_md": "",
+          "bullets": [
+            "In the chromite equation, check that oxygen balances: 7O₂ for 4FeCr₂O₄.",
+            "State clearly that chromate ⇌ dichromate is not a redox change.",
+            "Use the ratio 1 : 6 for dichromate and Fe²⁺.",
+            "Name an indicator for dichromate titrations (diphenylamine)."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Slip",
+                "Fix"
+              ],
+              "rows": [
+                [
+                  "Cr changes oxidation state with pH",
+                  "Cr stays +6"
+                ],
+                [
+                  "Dichromate is its own indicator",
+                  "Use diphenylamine"
+                ],
+                [
+                  "Ratio 1 : 3 with Fe²⁺",
+                  "Ratio 1 : 6"
+                ]
+              ]
+            },
+            "alt": "Table of three common slips in Part 2 and fixes"
+          },
+          "math": [],
+          "narration": "Final tips. Check the oxygen balance in the chromite roasting equation carefully. Say clearly that the chromate to dichromate change is not redox. Use the one to six ratio with iron two plus, and remember that dichromate needs an indicator such as diphenylamine. A neat table comparing the two oxidants often earns full marks.",
+          "check_question_id": null,
+          "audio": null
+        }
+      ],
+      "status": "draft",
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    }
+  ],
+  "notes": {
+    "unit": "isc-12-chemistry-ch09",
+    "version": 1,
+    "title": "Potassium Permanganate and Potassium Dichromate — Notes",
+    "language": "en",
+    "sections": [
+      {
+        "heading": "1. Potassium permanganate: structure and preparation",
+        "body_md": "Dark purple crystals; Mn **+7** (3d⁰), diamagnetic; colour by **charge transfer**. $\\ce{MnO4-}$ is **tetrahedral**; manganate $\\ce{MnO4^2-}$ (Mn +6, d¹, green, paramagnetic) is also tetrahedral. Decomposes at 513 K: $\\ce{2KMnO4 -> K2MnO4 + MnO2 + O2}$.\n\n**Preparation from pyrolusite:** (1) fuse $\\ce{MnO2}$ with KOH and air (or KNO₃) → green $\\ce{K2MnO4}$; (2) oxidise manganate electrolytically (industry), or with Cl₂/O₃, or let it disproportionate in neutral/acid solution: $\\ce{3MnO4^2- + 4H+ -> 2MnO4- + MnO2 + 2H2O}$.",
+        "key_terms": [
+          {
+            "term": "Charge transfer",
+            "definition_md": "Movement of an electron from ligand (oxygen) to metal on absorbing light; causes the colour of d⁰ ions such as MnO₄⁻."
+          },
+          {
+            "term": "Disproportionation",
+            "definition_md": "A reaction in which the same species is both oxidised and reduced."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\ce{2MnO2 + 4KOH + O2 -> 2K2MnO4 + 2H2O}",
+            "label": "Fusion of pyrolusite"
+          }
+        ],
+        "visual": {
+          "kind": "svg",
+          "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 340 170\" role=\"img\" aria-label=\"Left: the manganate ion, manganese joined tetrahedrally to four oxygen atoms, two by double bonds and two as O minus; it is green and paramagnetic because it has one unpaired electron. Right: the permanganate ion, manganese joined to three oxygens by double bonds and one O minus; it is purple and diamagnetic.\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>Left: the manganate ion, manganese joined tetrahedrally to four oxygen atoms, two by double bonds and two as O minus; it is green and paramagnetic because it has one unpaired electron. Right: the permanganate ion, manganese joined to three oxygens by double bonds and one O minus; it is purple and diamagnetic.</title><line x1=\"87.5\" y1=\"66\" x2=\"87.5\" y2=\"54\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"82.5\" y1=\"66\" x2=\"82.5\" y2=\"54\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"85\" cy=\"42\" r=\"12\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"85\" y=\"46\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">O</text><line x1=\"97\" y1=\"80.5\" x2=\"109\" y2=\"80.5\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"97\" y1=\"75.5\" x2=\"109\" y2=\"75.5\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"121\" cy=\"78\" r=\"12\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"121\" y=\"82\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">O</text><line x1=\"85\" y1=\"90\" x2=\"85\" y2=\"102\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"85\" cy=\"114\" r=\"12\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"85\" y=\"118\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">O⁻</text><line x1=\"73\" y1=\"78\" x2=\"61\" y2=\"78\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"49\" cy=\"78\" r=\"12\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"49\" y=\"82\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">O⁻</text><circle cx=\"85\" cy=\"78\" r=\"13\" fill=\"var(--diagram-green)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"85\" y=\"82\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">Mn</text><text x=\"85\" y=\"146\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\">Manganate (green)</text><text x=\"85\" y=\"160\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">one unpaired electron: paramagnetic</text><line x1=\"257.5\" y1=\"66\" x2=\"257.5\" y2=\"54\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"252.5\" y1=\"66\" x2=\"252.5\" y2=\"54\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"255\" cy=\"42\" r=\"12\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"255\" y=\"46\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">O</text><line x1=\"267\" y1=\"80.5\" x2=\"279\" y2=\"80.5\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"267\" y1=\"75.5\" x2=\"279\" y2=\"75.5\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"291\" cy=\"78\" r=\"12\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"291\" y=\"82\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">O</text><line x1=\"255\" y1=\"90\" x2=\"255\" y2=\"102\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"255\" cy=\"114\" r=\"12\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"255\" y=\"118\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">O⁻</text><line x1=\"243\" y1=\"75.5\" x2=\"231\" y2=\"75.5\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"243\" y1=\"80.5\" x2=\"231\" y2=\"80.5\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"219\" cy=\"78\" r=\"12\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"219\" y=\"82\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">O</text><circle cx=\"255\" cy=\"78\" r=\"13\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"255\" y=\"82\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">Mn</text><text x=\"255\" y=\"146\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\">Permanganate (purple)</text><text x=\"255\" y=\"160\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">no unpaired electron: diamagnetic</text></svg>",
+          "alt": "Tetrahedral structures of the green, paramagnetic manganate ion and the purple, diamagnetic permanganate ion"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "isc-12-chemistry-ch09-t01"
+        ]
+      },
+      {
+        "heading": "2. Oxidising action of KMnO₄ and titrations",
+        "body_md": "**Acid (dil. H₂SO₄):** $\\ce{MnO4- + 8H+ + 5e- -> Mn^2+ + 4H2O}$ — oxidises Fe²⁺ (1 : 5), oxalic acid (2 : 5, warm), I⁻ → I₂.\n**Basic, with KI:** $\\ce{2MnO4- + I- + H2O -> 2MnO2 + IO3- + 2OH-}$.\n**Neutral, with H₂S:** $\\ce{2MnO4- + 3H2S -> 2MnO2 + 3S + 2OH- + 2H2O}$.\n\n**Titrations:** self-indicator (end point = first permanent pale pink); dilute H₂SO₄ only (HCl is oxidised to Cl₂; HNO₃ is an oxidant); oxalic acid titrations warm, Mn²⁺ autocatalyses; KMnO₄ is not a primary standard. Equivalent mass in acid = M/5 = 31.6.",
+        "key_terms": [
+          {
+            "term": "Self-indicator",
+            "definition_md": "A titrant whose own colour change shows the end point, so no separate indicator is needed."
+          },
+          {
+            "term": "Autocatalysis",
+            "definition_md": "Catalysis of a reaction by one of its own products (Mn²⁺ in the permanganate–oxalate reaction)."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\ce{MnO4- + 8H+ + 5e- -> Mn^2+ + 4H2O}",
+            "label": "Acidic medium"
+          },
+          {
+            "latex": "\\ce{MnO4- + 2H2O + 3e- -> MnO2 + 4OH-}",
+            "label": "Neutral/alkaline medium"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Medium",
+              "e⁻ gained",
+              "Product"
+            ],
+            "rows": [
+              [
+                "Acidic",
+                "5",
+                "Mn²⁺"
+              ],
+              [
+                "Neutral/faintly alkaline",
+                "3",
+                "MnO₂"
+              ],
+              [
+                "Strongly alkaline",
+                "1",
+                "MnO₄²⁻"
+              ]
+            ]
+          },
+          "alt": "Table of permanganate in different media"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "isc-12-chemistry-ch09-t02"
+        ]
+      },
+      {
+        "heading": "3. Potassium dichromate: structure and preparation",
+        "body_md": "Orange crystals; Cr **+6**. $\\ce{CrO4^2-}$ tetrahedral; $\\ce{Cr2O7^2-}$ = two tetrahedra sharing one O (Cr–O–Cr ≈ 126°).\n\n**From chromite** ($\\ce{FeCr2O4}$, Cr +3):\n1. Roast with Na₂CO₃ in air: $\\ce{4FeCr2O4 + 8Na2CO3 + 7O2 -> 8Na2CrO4 + 2Fe2O3 + 8CO2}$ (Cr oxidised to +6).\n2. Acidify: $\\ce{2Na2CrO4 + H2SO4 -> Na2Cr2O7 + Na2SO4 + H2O}$.\n3. Add KCl: $\\ce{Na2Cr2O7 + 2KCl -> K2Cr2O7 + 2NaCl}$ (K salt less soluble).",
+        "key_terms": [
+          {
+            "term": "Chromite",
+            "definition_md": "The ore FeCr₂O₄, in which chromium is +3."
+          }
+        ],
+        "formulas": [],
+        "visual": {
+          "kind": "svg",
+          "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 360 170\" role=\"img\" aria-label=\"Left: the chromate ion, a chromium atom joined to four oxygen atoms arranged tetrahedrally, two by double bonds and two as O minus; it is yellow. Right: the dichromate ion, two such tetrahedra sharing one bridging oxygen atom; it is orange. The Cr–O–Cr bond angle at the shared oxygen is about 126 degrees.\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>Left: the chromate ion, a chromium atom joined to four oxygen atoms arranged tetrahedrally, two by double bonds and two as O minus; it is yellow. Right: the dichromate ion, two such tetrahedra sharing one bridging oxygen atom; it is orange. The Cr–O–Cr bond angle at the shared oxygen is about 126 degrees.</title><line x1=\"72.5\" y1=\"66\" x2=\"72.5\" y2=\"54\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"67.5\" y1=\"66\" x2=\"67.5\" y2=\"54\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"70\" cy=\"42\" r=\"12\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"70\" y=\"46\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">O</text><line x1=\"82\" y1=\"80.5\" x2=\"94\" y2=\"80.5\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"82\" y1=\"75.5\" x2=\"94\" y2=\"75.5\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"106\" cy=\"78\" r=\"12\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"106\" y=\"82\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">O</text><line x1=\"70\" y1=\"90\" x2=\"70\" y2=\"102\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"70\" cy=\"114\" r=\"12\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"70\" y=\"118\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">O⁻</text><line x1=\"58\" y1=\"78\" x2=\"46\" y2=\"78\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"34\" cy=\"78\" r=\"12\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"34\" y=\"82\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">O⁻</text><circle cx=\"70\" cy=\"78\" r=\"13\" fill=\"var(--diagram-yellow)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"70\" y=\"82\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">Cr</text><text x=\"70\" y=\"150\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\">Chromate ion (yellow)</text><line x1=\"197.5\" y1=\"80\" x2=\"197.5\" y2=\"68\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"192.5\" y1=\"80\" x2=\"192.5\" y2=\"68\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"195\" cy=\"56\" r=\"12\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"195\" y=\"60\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">O</text><line x1=\"192.5\" y1=\"104\" x2=\"192.5\" y2=\"116\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"197.5\" y1=\"104\" x2=\"197.5\" y2=\"116\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"195\" cy=\"128\" r=\"12\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"195\" y=\"132\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">O</text><line x1=\"183\" y1=\"92\" x2=\"171\" y2=\"92\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"159\" cy=\"92\" r=\"12\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"159\" y=\"96\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">O⁻</text><circle cx=\"195\" cy=\"92\" r=\"13\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"195\" y=\"96\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">Cr</text><line x1=\"307.5\" y1=\"80\" x2=\"307.5\" y2=\"68\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"302.5\" y1=\"80\" x2=\"302.5\" y2=\"68\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"305\" cy=\"56\" r=\"12\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"305\" y=\"60\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">O</text><line x1=\"317\" y1=\"92\" x2=\"329\" y2=\"92\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"341\" cy=\"92\" r=\"12\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"341\" y=\"96\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">O⁻</text><line x1=\"302.5\" y1=\"104\" x2=\"302.5\" y2=\"116\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"307.5\" y1=\"104\" x2=\"307.5\" y2=\"116\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"305\" cy=\"128\" r=\"12\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"305\" y=\"132\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">O</text><circle cx=\"305\" cy=\"92\" r=\"13\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"305\" y=\"96\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">Cr</text><line x1=\"208\" y1=\"86\" x2=\"238\" y2=\"64\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"262\" y1=\"64\" x2=\"292\" y2=\"86\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"250\" cy=\"58\" r=\"12\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"250\" y=\"62\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">O</text><text x=\"250\" y=\"38\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">126°</text><text x=\"250\" y=\"150\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\">Dichromate ion (orange)</text></svg>",
+          "alt": "Structures of the tetrahedral chromate ion and of the dichromate ion, two tetrahedra sharing one oxygen atom with a Cr–O–Cr angle of about 126 degrees"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "isc-12-chemistry-ch09-t03"
+        ]
+      },
+      {
+        "heading": "4. Oxidising action of K₂Cr₂O₇; chromate ⇌ dichromate",
+        "body_md": "**Acid:** $\\ce{Cr2O7^2- + 14H+ + 6e- -> 2Cr^3+ + 7H2O}$ (orange → green; $E^\\circ = +1.33$ V). Oxidises Fe²⁺ (1 : 6), I⁻ → I₂, SO₂ → SO₄²⁻, H₂S → S, ethanol → ethanal.\n\n**pH:** $\\ce{2CrO4^2- + 2H+ <=> Cr2O7^2- + H2O}$ — acid gives orange dichromate, alkali gives yellow chromate; Cr stays +6 (not redox).\n\n**Titrations:** primary standard (pure, non-hygroscopic, stable solutions); internal indicator diphenylamine; HCl may be used. Equivalent mass = M/6 = 49.",
+        "key_terms": [
+          {
+            "term": "Primary standard",
+            "definition_md": "A substance pure and stable enough for a standard solution to be made by direct weighing."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\ce{Cr2O7^2- + 14H+ + 6e- -> 2Cr^3+ + 7H2O}",
+            "label": "Dichromate in acid"
+          },
+          {
+            "latex": "\\ce{2CrO4^2- + 2H+ <=> Cr2O7^2- + H2O}",
+            "label": "Chromate–dichromate equilibrium"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Feature",
+              "KMnO₄",
+              "K₂Cr₂O₇"
+            ],
+            "rows": [
+              [
+                "Primary standard",
+                "No",
+                "Yes"
+              ],
+              [
+                "Indicator",
+                "Self",
+                "Diphenylamine"
+              ],
+              [
+                "e⁻ per ion (acid)",
+                "5",
+                "6"
+              ]
+            ]
+          },
+          "alt": "Table comparing the two titrants"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "isc-12-chemistry-ch09-t04"
+        ]
+      }
+    ],
+    "exam_tips_md": "**Common mistakes**\n- Using HCl to acidify permanganate titrations.\n- Giving Mn²⁺ as the product in neutral medium (it is MnO₂).\n- Treating chromate ⇌ dichromate as a redox change.\n- Wrong mole ratios: use 1 : 5 (MnO₄⁻ : Fe²⁺), 2 : 5 (MnO₄⁻ : H₂C₂O₄), 1 : 6 (Cr₂O₇²⁻ : Fe²⁺).\n\n**How marks are usually awarded**\n- Preparation (3 marks): one balanced equation per step with conditions.\n- Ionic equations (1 mark each): atoms and charge balanced.\n- Titration numericals (2–3 marks): moles, ratio, answer with unit.",
+    "status": "draft",
+    "provenance": {
+      "origin": "human",
+      "template_version": null,
+      "model": null,
+      "generated_at": "2026-10-30",
+      "author": "claude-opus-5-5 (subject-producer)"
+    }
+  },
+  "flashcards": {
+    "unit": "isc-12-chemistry-ch09",
+    "version": 1,
+    "language": "en",
+    "cards": [
+      {
+        "id": "f01",
+        "front_md": "Ore used to make KMnO₄?",
+        "back_md": "Pyrolusite, MnO₂.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch09-t01"
+      },
+      {
+        "id": "f02",
+        "front_md": "Shape of MnO₄⁻?",
+        "back_md": "Tetrahedral.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch09-t01"
+      },
+      {
+        "id": "f03",
+        "front_md": "Oxidation state of Mn in K₂MnO₄?",
+        "back_md": "+6.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch09-t01"
+      },
+      {
+        "id": "f04",
+        "front_md": "Colour of K₂MnO₄?",
+        "back_md": "Dark green.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch09-t01"
+      },
+      {
+        "id": "f05",
+        "front_md": "Why is MnO₄⁻ purple though d⁰?",
+        "back_md": "Charge transfer from O to Mn.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch09-t01"
+      },
+      {
+        "id": "f06",
+        "front_md": "Industrial conversion of manganate to permanganate?",
+        "back_md": "Electrolytic oxidation in alkaline solution.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch09-t01"
+      },
+      {
+        "id": "f07",
+        "front_md": "KMnO₄ on heating at 513 K?",
+        "back_md": "K₂MnO₄ + MnO₂ + O₂.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch09-t01"
+      },
+      {
+        "id": "f08",
+        "front_md": "Permanganate half-equation in acid?",
+        "back_md": "MnO₄⁻ + 8H⁺ + 5e⁻ → Mn²⁺ + 4H₂O.",
+        "tag": "formula",
+        "topic_id": "isc-12-chemistry-ch09-t02"
+      },
+      {
+        "id": "f09",
+        "front_md": "Product of MnO₄⁻ in neutral medium?",
+        "back_md": "MnO₂ (3 e⁻ gained).",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch09-t02"
+      },
+      {
+        "id": "f10",
+        "front_md": "KI with alkaline KMnO₄ gives?",
+        "back_md": "Iodate, IO₃⁻.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch09-t02"
+      },
+      {
+        "id": "f11",
+        "front_md": "H₂S with neutral KMnO₄ gives?",
+        "back_md": "Sulphur (and MnO₂).",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch09-t02"
+      },
+      {
+        "id": "f12",
+        "front_md": "Why is HCl not used with KMnO₄?",
+        "back_md": "Cl⁻ is oxidised to Cl₂.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch09-t02"
+      },
+      {
+        "id": "f13",
+        "front_md": "End point in a permanganate titration?",
+        "back_md": "First permanent pale pink.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch09-t02"
+      },
+      {
+        "id": "f14",
+        "front_md": "Ratio MnO₄⁻ : Fe²⁺?",
+        "back_md": "1 : 5.",
+        "tag": "formula",
+        "topic_id": "isc-12-chemistry-ch09-t02"
+      },
+      {
+        "id": "f15",
+        "front_md": "Ratio MnO₄⁻ : oxalic acid?",
+        "back_md": "2 : 5.",
+        "tag": "formula",
+        "topic_id": "isc-12-chemistry-ch09-t02"
+      },
+      {
+        "id": "f16",
+        "front_md": "Why warm oxalic acid titrations?",
+        "back_md": "Reaction is slow at first; Mn²⁺ then autocatalyses.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch09-t02"
+      },
+      {
+        "id": "f17",
+        "front_md": "Equivalent mass of KMnO₄ in acid?",
+        "back_md": "158 ÷ 5 = 31.6.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch09-t02"
+      },
+      {
+        "id": "f18",
+        "front_md": "Ore used to make K₂Cr₂O₇?",
+        "back_md": "Chromite, FeCr₂O₄.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch09-t03"
+      },
+      {
+        "id": "f19",
+        "front_md": "Oxidation state of Cr in chromite?",
+        "back_md": "+3.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch09-t03"
+      },
+      {
+        "id": "f20",
+        "front_md": "Product of roasting chromite with Na₂CO₃ in air?",
+        "back_md": "Na₂CrO₄ (and Fe₂O₃, CO₂).",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch09-t03"
+      },
+      {
+        "id": "f21",
+        "front_md": "Why add KCl to Na₂Cr₂O₇?",
+        "back_md": "K₂Cr₂O₇ is less soluble and crystallises.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch09-t03"
+      },
+      {
+        "id": "f22",
+        "front_md": "Structure of Cr₂O₇²⁻?",
+        "back_md": "Two tetrahedra sharing one O; Cr–O–Cr about 126°.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch09-t03"
+      },
+      {
+        "id": "f23",
+        "front_md": "Dichromate half-equation in acid?",
+        "back_md": "Cr₂O₇²⁻ + 14H⁺ + 6e⁻ → 2Cr³⁺ + 7H₂O.",
+        "tag": "formula",
+        "topic_id": "isc-12-chemistry-ch09-t04"
+      },
+      {
+        "id": "f24",
+        "front_md": "Colour change of acidified dichromate on reduction?",
+        "back_md": "Orange → green.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch09-t04"
+      },
+      {
+        "id": "f25",
+        "front_md": "Effect of alkali on dichromate?",
+        "back_md": "Orange → yellow chromate.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch09-t04"
+      },
+      {
+        "id": "f26",
+        "front_md": "Is chromate ⇌ dichromate redox?",
+        "back_md": "No; Cr stays +6.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch09-t04"
+      },
+      {
+        "id": "f27",
+        "front_md": "Ratio Cr₂O₇²⁻ : Fe²⁺?",
+        "back_md": "1 : 6.",
+        "tag": "formula",
+        "topic_id": "isc-12-chemistry-ch09-t04"
+      },
+      {
+        "id": "f28",
+        "front_md": "Indicator for dichromate titration?",
+        "back_md": "Diphenylamine.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch09-t04"
+      },
+      {
+        "id": "f29",
+        "front_md": "Why is K₂Cr₂O₇ a primary standard?",
+        "back_md": "Very pure, not hygroscopic, stable solutions.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch09-t04"
+      },
+      {
+        "id": "f30",
+        "front_md": "Equivalent mass of K₂Cr₂O₇ in acid?",
+        "back_md": "294 ÷ 6 = 49.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch09-t04"
+      },
+      {
+        "id": "f31",
+        "front_md": "Exam tip: oxidant ionic equations",
+        "back_md": "Balance atoms first, then charge with H⁺ and electrons.",
+        "tag": "exam-tip",
+        "topic_id": "isc-12-chemistry-ch09-t04"
+      }
+    ],
+    "status": "draft",
+    "provenance": {
+      "origin": "human",
+      "template_version": null,
+      "model": null,
+      "generated_at": "2026-10-30",
+      "author": "claude-opus-5-5 (subject-producer)"
+    }
+  },
+  "questions": [
+    {
+      "id": "q_isc12chem_ch09_001",
+      "unit": "isc-12-chemistry-ch09",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "In the first stage of making KMnO₄, pyrolusite is fused with potassium hydroxide in air. The manganese-containing product is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "green K₂MnO₄, with manganese in the +6 state"
+        },
+        {
+          "id": "b",
+          "text_md": "purple KMnO₄, with manganese in the +7 state"
+        },
+        {
+          "id": "c",
+          "text_md": "brown Mn₂O₃, with manganese in the +3 state"
+        },
+        {
+          "id": "d",
+          "text_md": "colourless MnSO₄, with manganese in the +2 state"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "2MnO₂ + 4KOH + O₂ → 2K₂MnO₄ + 2H₂O: green manganate, Mn +6 — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch09-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch09_002",
+      "unit": "isc-12-chemistry-ch09",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "The permanganate ion, MnO₄⁻, in a crystal of potassium permanganate has which shape?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Tetrahedral"
+        },
+        {
+          "id": "b",
+          "text_md": "Square planar"
+        },
+        {
+          "id": "c",
+          "text_md": "Octahedral"
+        },
+        {
+          "id": "d",
+          "text_md": "Trigonal pyramidal"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Four oxygen atoms surround Mn tetrahedrally — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch09-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch09_003",
+      "unit": "isc-12-chemistry-ch09",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A dilute solution of potassium permanganate is intensely purple, although Mn(VII) has no d electrons. The colour arises from:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "a d–d transition of a manganese 3d electron"
+        },
+        {
+          "id": "b",
+          "text_md": "an f–f transition"
+        },
+        {
+          "id": "c",
+          "text_md": "charge transfer, in which an electron moves from oxygen to manganese on absorbing light"
+        },
+        {
+          "id": "d",
+          "text_md": "emission of light by excited potassium ions"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "With d⁰ there can be no d–d transition; the colour is due to ligand-to-metal charge transfer — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch09-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch09_004",
+      "unit": "isc-12-chemistry-ch09",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Crystals of KMnO₄ are heated to about 513 K in a dry test tube; the gas evolved rekindles a glowing splint. The gas and the solid residue are:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "chlorine; MnCl₂"
+        },
+        {
+          "id": "b",
+          "text_md": "oxygen; pure manganese metal"
+        },
+        {
+          "id": "c",
+          "text_md": "oxygen; a mixture of K₂MnO₄ and MnO₂"
+        },
+        {
+          "id": "d",
+          "text_md": "hydrogen; K₂O and MnO"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "2KMnO₄ → K₂MnO₄ + MnO₂ + O₂ — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch09-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch09_005",
+      "unit": "isc-12-chemistry-ch09",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "On an industrial scale, the green potassium manganate obtained from pyrolusite is converted into potassium permanganate by:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "reduction with hydrogen gas"
+        },
+        {
+          "id": "b",
+          "text_md": "heating with carbon"
+        },
+        {
+          "id": "c",
+          "text_md": "treatment with dilute hydrochloric acid"
+        },
+        {
+          "id": "d",
+          "text_md": "electrolytic oxidation in alkaline solution"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "At the anode MnO₄²⁻ → MnO₄⁻ + e⁻; no manganese is wasted as MnO₂ — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch09-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch09_006",
+      "unit": "isc-12-chemistry-ch09",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Potassium manganate is paramagnetic, whereas potassium permanganate is diamagnetic.\n\n**Reason (R):** Manganese in manganate has one 3d electron, while manganese in permanganate has none.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Both are true; one unpaired d electron (Mn +6, d¹) gives paramagnetism, d⁰ (Mn +7) gives diamagnetism — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch09-t01"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch09_007",
+      "unit": "isc-12-chemistry-ch09",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? When green potassium manganate solution is acidified, one-third of the manganese is converted into manganese dioxide.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "t"
+        ]
+      },
+      "solution_md": "True. 3MnO₄²⁻ + 4H⁺ → 2MnO₄⁻ + MnO₂ + 2H₂O: one of every three Mn becomes MnO₂.",
+      "marking_scheme": [
+        {
+          "step": "True",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch09-t01"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch09_008",
+      "unit": "isc-12-chemistry-ch09",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "When pyrolusite is fused with potassium hydroxide in air, the oxidation state of manganese rises from +4 to +___.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "6",
+              "six"
+            ]
+          }
+        ]
+      },
+      "solution_md": "MnO₂ (+4) → K₂MnO₄ (**+6**).",
+      "marking_scheme": [
+        {
+          "step": "Writes \"6\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch09-t01"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch09_009",
+      "unit": "isc-12-chemistry-ch09",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "Acidified potassium manganate disproportionates: $\\ce{3MnO4^2- + 4H+ -> 2MnO4- + MnO2 + 2H2O}$. What mass of KMnO₄ ($M = 158$) can be obtained from $0.45\\ \\text{mol}$ of K₂MnO₄ by this method?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 47.4,
+        "tolerance": 0.2,
+        "unit": "g"
+      },
+      "solution_md": "$n(\\ce{MnO4-}) = 0.45 \\times 2 \\div 3 = 0.30\\ \\text{mol}$; mass $= 0.30 \\times 158 = 47.4\\ \\text{g}$.",
+      "marking_scheme": [
+        {
+          "step": "0.30 mol",
+          "marks": 1
+        },
+        {
+          "step": "47.4 g",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch09-t01"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch09_010",
+      "unit": "isc-12-chemistry-ch09",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write balanced equations for the two stages in converting pyrolusite into potassium permanganate, using electrolytic oxidation in the second stage.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Stage 1 (fusion with KOH in air): $\\ce{2MnO2 + 4KOH + O2 -> 2K2MnO4 + 2H2O}$. Stage 2 (electrolytic oxidation at the anode): $\\ce{MnO4^2- -> MnO4- + e-}$ (hydrogen is evolved at the cathode: $\\ce{2H2O + 2e- -> H2 + 2OH-}$)."
+      },
+      "solution_md": "Fusion; anodic oxidation.",
+      "marking_scheme": [
+        {
+          "step": "Stage 1 equation",
+          "marks": 1
+        },
+        {
+          "step": "Stage 2 equation",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch09-t01"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch09_011",
+      "unit": "isc-12-chemistry-ch09",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Compare the manganate and permanganate ions with respect to (a) the oxidation state and number of d electrons of manganese, and (b) their colours and the origin of the permanganate colour.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Manganate MnO₄²⁻: Mn +6, 3d¹. Permanganate MnO₄⁻: Mn +7, 3d⁰. (b) Manganate is dark green; permanganate is purple. The permanganate colour is due to charge transfer from oxygen to manganese, as there is no d electron for a d–d transition."
+      },
+      "solution_md": "+6 d¹ green; +7 d⁰ purple by charge transfer.",
+      "marking_scheme": [
+        {
+          "step": "(a) States and d counts",
+          "marks": 1
+        },
+        {
+          "step": "(b) Colours and charge transfer",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch09-t01"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch09_012",
+      "unit": "isc-12-chemistry-ch09",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Potassium manganate solution is acidified with dilute sulphuric acid. (a) Write the balanced ionic equation. (b) Using oxidation states, explain why the reaction is a disproportionation. (c) Why does industry prefer electrolytic oxidation for this conversion?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) $\\ce{3MnO4^2- + 4H+ -> 2MnO4- + MnO2 + 2H2O}$. (b) Mn in MnO₄²⁻ is +6; it becomes +7 in MnO₄⁻ (oxidised) and +4 in MnO₂ (reduced): the same species is both oxidised and reduced. (c) In disproportionation one-third of the manganese is lost as MnO₂; electrolytic oxidation converts all the manganate to permanganate."
+      },
+      "solution_md": "Equation; +6 → +7 and +4; no waste in electrolysis.",
+      "marking_scheme": [
+        {
+          "step": "(a) Balanced equation",
+          "marks": 1
+        },
+        {
+          "step": "(b) Oxidation states",
+          "marks": 1
+        },
+        {
+          "step": "(c) One-third wasted",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch09-t01"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch09_013",
+      "unit": "isc-12-chemistry-ch09",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Acidified KMnO₄ and neutral KMnO₄ are each added to an excess of a reducing agent. The manganese products are respectively:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Mn²⁺ and MnO₂"
+        },
+        {
+          "id": "b",
+          "text_md": "MnO₂ and Mn²⁺"
+        },
+        {
+          "id": "c",
+          "text_md": "MnO₄²⁻ and Mn²⁺"
+        },
+        {
+          "id": "d",
+          "text_md": "Mn²⁺ and MnO₄²⁻"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Acid: 5 e⁻ → Mn²⁺; neutral: 3 e⁻ → MnO₂ — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch09-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch09_014",
+      "unit": "isc-12-chemistry-ch09",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "In the titration of Mohr’s salt with KMnO₄ in dilute sulphuric acid, the end point is marked by:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "a blue colour with starch"
+        },
+        {
+          "id": "b",
+          "text_md": "the disappearance of a green colour"
+        },
+        {
+          "id": "c",
+          "text_md": "the first permanent pale pink colour, as excess MnO₄⁻ is no longer reduced"
+        },
+        {
+          "id": "d",
+          "text_md": "the appearance of a yellow precipitate"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Mn²⁺ is almost colourless, so the first excess drop of purple MnO₄⁻ gives a pale pink — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch09-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch09_015",
+      "unit": "isc-12-chemistry-ch09",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A student acidifies a KMnO₄ titration of iron(II) with hydrochloric acid instead of sulphuric acid. The titre obtained will be:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "too low, because chloride ions reduce iron(III) back to iron(II)"
+        },
+        {
+          "id": "b",
+          "text_md": "unchanged, because HCl is a strong acid"
+        },
+        {
+          "id": "c",
+          "text_md": "zero, because no reaction occurs"
+        },
+        {
+          "id": "d",
+          "text_md": "too high, because some permanganate oxidises chloride ions to chlorine"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Part of the KMnO₄ is used up oxidising Cl⁻, so more is needed — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch09-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch09_016",
+      "unit": "isc-12-chemistry-ch09",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "In the titration of warm oxalic acid with KMnO₄, the first few drops are decolourised slowly but later drops are decolourised almost instantly. This is because:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "the solution cools as the titration proceeds"
+        },
+        {
+          "id": "b",
+          "text_md": "Mn²⁺ ions formed in the reaction catalyse it (autocatalysis)"
+        },
+        {
+          "id": "c",
+          "text_md": "oxalic acid is used up"
+        },
+        {
+          "id": "d",
+          "text_md": "sulphuric acid catalyses the reaction only after some time"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "A product, Mn²⁺, acts as catalyst — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch09-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch09_017",
+      "unit": "isc-12-chemistry-ch09",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Hot alkaline potassium permanganate converts potassium iodide into a salt containing iodine in the +5 state. That salt is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "KIO₃"
+        },
+        {
+          "id": "b",
+          "text_md": "KIO₄"
+        },
+        {
+          "id": "c",
+          "text_md": "KI₃"
+        },
+        {
+          "id": "d",
+          "text_md": "KIO"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "2MnO₄⁻ + I⁻ + H₂O → 2MnO₂ + IO₃⁻ + 2OH⁻: iodate, I +5 — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch09-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch09_018",
+      "unit": "isc-12-chemistry-ch09",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Hydrogen sulphide gas is bubbled through neutral KMnO₄ solution. A pale yellow solid and a brown precipitate form. These are:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "sulphur and manganese dioxide"
+        },
+        {
+          "id": "b",
+          "text_md": "sulphur and manganese(II) sulphide"
+        },
+        {
+          "id": "c",
+          "text_md": "potassium sulphate and Mn²⁺"
+        },
+        {
+          "id": "d",
+          "text_md": "sulphur dioxide and manganate"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "2MnO₄⁻ + 3H₂S → 2MnO₂ + 3S + 2OH⁻ + 2H₂O — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch09-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch09_019",
+      "unit": "isc-12-chemistry-ch09",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Permanganate titrations are carried out in dilute sulphuric acid.\n\n**Reason (R):** Sulphuric acid is a dibasic acid.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Both are true, but H₂SO₄ is chosen because it is neither oxidised (unlike HCl) nor an oxidant (unlike HNO₃), not because it is dibasic — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch09-t02"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch09_020",
+      "unit": "isc-12-chemistry-ch09",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? A standard solution of potassium permanganate can be made by direct weighing, because the solid is available in a very pure state.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "f"
+        ]
+      },
+      "solution_md": "False. KMnO₄ usually contains some MnO₂ and its solutions slowly decompose; it is standardised against oxalic acid or Mohr’s salt.",
+      "marking_scheme": [
+        {
+          "step": "False, with the correction",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch09-t02"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch09_021",
+      "unit": "isc-12-chemistry-ch09",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "In neutral or faintly alkaline solution, each permanganate ion that oxidises hydrogen sulphide gains ___ electrons.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "3",
+              "three"
+            ]
+          }
+        ]
+      },
+      "solution_md": "MnO₄⁻ (+7) → MnO₂ (+4): **3** electrons.",
+      "marking_scheme": [
+        {
+          "step": "Writes \"3\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch09-t02"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch09_022",
+      "unit": "isc-12-chemistry-ch09",
+      "language": "en",
+      "type": "match",
+      "stem_md": "Match each reaction of potassium permanganate with its main products.",
+      "options": [
+        {
+          "id": "1",
+          "text_md": "Acidified, with ferrous sulphate"
+        },
+        {
+          "id": "2",
+          "text_md": "Acidified, with oxalic acid"
+        },
+        {
+          "id": "3",
+          "text_md": "Alkaline, with potassium iodide"
+        },
+        {
+          "id": "4",
+          "text_md": "Neutral, with hydrogen sulphide"
+        }
+      ],
+      "match_right": [
+        {
+          "id": "p",
+          "text_md": "CO₂ and Mn²⁺"
+        },
+        {
+          "id": "q",
+          "text_md": "S and MnO₂"
+        },
+        {
+          "id": "r",
+          "text_md": "Fe³⁺ and Mn²⁺"
+        },
+        {
+          "id": "s",
+          "text_md": "IO₃⁻ and MnO₂"
+        }
+      ],
+      "answer": {
+        "pairs": [
+          {
+            "left_id": "1",
+            "right_id": "r"
+          },
+          {
+            "left_id": "2",
+            "right_id": "p"
+          },
+          {
+            "left_id": "3",
+            "right_id": "s"
+          },
+          {
+            "left_id": "4",
+            "right_id": "q"
+          }
+        ]
+      },
+      "solution_md": "FeSO₄ → Fe³⁺ + Mn²⁺; oxalic acid → CO₂ + Mn²⁺; alkaline KI → IO₃⁻ + MnO₂; H₂S → S + MnO₂.",
+      "marking_scheme": [
+        {
+          "step": "1 → r",
+          "marks": 0.5
+        },
+        {
+          "step": "2 → p",
+          "marks": 0.5
+        },
+        {
+          "step": "3 → s",
+          "marks": 0.5
+        },
+        {
+          "step": "4 → q",
+          "marks": 0.5
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch09-t02"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch09_023",
+      "unit": "isc-12-chemistry-ch09",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "$15.0\\ \\text{mL}$ of $0.050\\ \\text{M}$ oxalic acid is titrated, warm and in dilute H₂SO₄, with $0.020\\ \\text{M}$ KMnO₄. Calculate the volume of KMnO₄ needed, in mL.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 15,
+        "tolerance": 0.1,
+        "unit": "mL"
+      },
+      "solution_md": "$n(\\ce{H2C2O4}) = 0.050 \\times 0.0150 = 7.5 \\times 10^{-4}$; $n(\\ce{MnO4-}) = 7.5 \\times 10^{-4} \\times 2 \\div 5 = 3.0 \\times 10^{-4}$; $V = 3.0 \\times 10^{-4} \\div 0.020 \\times 1000 = 15.0\\ \\text{mL}$.",
+      "marking_scheme": [
+        {
+          "step": "Moles and 2 : 5 ratio",
+          "marks": 1
+        },
+        {
+          "step": "15.0 mL",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch09-t02"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch09_024",
+      "unit": "isc-12-chemistry-ch09",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "What mass of Mohr’s salt, $\\ce{FeSO4.(NH4)2SO4.6H2O}$ ($M = 392$), is oxidised by $15.0\\ \\text{mL}$ of $0.020\\ \\text{M}$ KMnO₄ in acid?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 0.588,
+        "tolerance": 0.003,
+        "unit": "g"
+      },
+      "solution_md": "$n(\\ce{MnO4-}) = 0.020 \\times 0.0150 = 3.0 \\times 10^{-4}$; $n(\\ce{Fe^2+}) = 5 \\times 3.0 \\times 10^{-4} = 1.5 \\times 10^{-3}$; mass $= 1.5 \\times 10^{-3} \\times 392 = 0.588\\ \\text{g}$.",
+      "marking_scheme": [
+        {
+          "step": "1 : 5 ratio and moles",
+          "marks": 1
+        },
+        {
+          "step": "0.588 g",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch09-t02"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch09_025",
+      "unit": "isc-12-chemistry-ch09",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "Calculate the equivalent mass of KMnO₄ ($M = 158$) when it acts as an oxidising agent in acidic medium.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 31.6,
+        "tolerance": 0.1,
+        "unit": null
+      },
+      "solution_md": "In acid each MnO₄⁻ gains 5 electrons: equivalent mass $= 158 \\div 5 = 31.6$.",
+      "marking_scheme": [
+        {
+          "step": "31.6",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch09-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch09_026",
+      "unit": "isc-12-chemistry-ch09",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "$10.0\\ \\text{mL}$ of $0.020\\ \\text{M}$ KMnO₄ is added to excess potassium iodide in dilute sulphuric acid. Calculate the mass of iodine liberated. (I₂ = 254)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 0.127,
+        "tolerance": 0.001,
+        "unit": "g"
+      },
+      "solution_md": "$\\ce{2MnO4- + 10I- + 16H+ -> 2Mn^2+ + 5I2 + 8H2O}$. $n(\\ce{MnO4-}) = 2.0 \\times 10^{-4}$; $n(\\ce{I2}) = 2.0 \\times 10^{-4} \\times 5 \\div 2 = 5.0 \\times 10^{-4}$; mass $= 5.0 \\times 10^{-4} \\times 254 = 0.127\\ \\text{g}$.",
+      "marking_scheme": [
+        {
+          "step": "2 : 5 ratio",
+          "marks": 1
+        },
+        {
+          "step": "0.127 g",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch09-t02"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch09_027",
+      "unit": "isc-12-chemistry-ch09",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Explain why titrations with KMnO₄ are carried out in dilute sulphuric acid rather than in hydrochloric acid or nitric acid.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Hydrochloric acid: KMnO₄ oxidises Cl⁻ to Cl₂, so part of the permanganate is consumed and the titre is too high. Nitric acid: it is itself an oxidising agent and may oxidise the reducing agent, giving a low titre. Dilute H₂SO₄ is neither oxidised nor an oxidant under these conditions."
+      },
+      "solution_md": "HCl oxidised; HNO₃ oxidant.",
+      "marking_scheme": [
+        {
+          "step": "HCl: Cl⁻ oxidised to Cl₂",
+          "marks": 1
+        },
+        {
+          "step": "HNO₃ is an oxidant",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch09-t02"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch09_028",
+      "unit": "isc-12-chemistry-ch09",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write balanced ionic equations for the oxidation of (a) potassium iodide by alkaline KMnO₄ and (b) hydrogen sulphide by neutral KMnO₄.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) $\\ce{2MnO4- + I- + H2O -> 2MnO2 + IO3- + 2OH-}$. (b) $\\ce{2MnO4- + 3H2S -> 2MnO2 + 3S + 2OH- + 2H2O}$."
+      },
+      "solution_md": "Two balanced equations.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch09-t02"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch09_029",
+      "unit": "isc-12-chemistry-ch09",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Explain why the titration of oxalic acid with KMnO₄ is carried out at about 333 K, and why the decolourisation becomes faster as the titration proceeds.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "At room temperature the reaction between MnO₄⁻ and oxalic acid is very slow, so the solution is warmed to about 333 K to increase the rate. Once some Mn²⁺ has formed, it catalyses the reaction (autocatalysis), so later drops are decolourised almost instantly."
+      },
+      "solution_md": "Slow at room temperature; Mn²⁺ autocatalysis.",
+      "marking_scheme": [
+        {
+          "step": "Warm: slow reaction otherwise",
+          "marks": 1
+        },
+        {
+          "step": "Mn²⁺ autocatalysis",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch09-t02"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch09_030",
+      "unit": "isc-12-chemistry-ch09",
+      "language": "en",
+      "type": "short",
+      "stem_md": "A 0.50 g sample of impure green vitriol, FeSO₄·7H₂O (M = 278), dissolved in dilute sulphuric acid, required 15.0 mL of 0.020 M KMnO₄. Calculate the percentage purity of the sample.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "$n(\\ce{MnO4-}) = 0.020 \\times 0.0150 = 3.0 \\times 10^{-4}$ mol. $n(\\ce{Fe^2+}) = 5 \\times 3.0 \\times 10^{-4} = 1.5 \\times 10^{-3}$ mol. Mass of FeSO₄·7H₂O $= 1.5 \\times 10^{-3} \\times 278 = 0.417$ g. Purity $= 0.417 \\div 0.50 \\times 100 \\approx 83.4\\%$."
+      },
+      "solution_md": "About 83.4%.",
+      "marking_scheme": [
+        {
+          "step": "Moles of MnO₄⁻ and Fe²⁺",
+          "marks": 1
+        },
+        {
+          "step": "Mass 0.417 g",
+          "marks": 1
+        },
+        {
+          "step": "83.4%",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 4,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch09-t02"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch09_031",
+      "unit": "isc-12-chemistry-ch09",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Compare the action of KMnO₄ as an oxidising agent in acidic, neutral and strongly alkaline media. For each, give the reduction half-equation and the number of electrons gained.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Acidic: $\\ce{MnO4- + 8H+ + 5e- -> Mn^2+ + 4H2O}$ — 5 electrons. Neutral or faintly alkaline: $\\ce{MnO4- + 2H2O + 3e- -> MnO2 + 4OH-}$ — 3 electrons. Strongly alkaline: $\\ce{MnO4- + e- -> MnO4^2-}$ — 1 electron."
+      },
+      "solution_md": "5, 3 and 1 electrons.",
+      "marking_scheme": [
+        {
+          "step": "Acidic",
+          "marks": 1
+        },
+        {
+          "step": "Neutral",
+          "marks": 1
+        },
+        {
+          "step": "Strongly alkaline",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch09-t02"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch09_032",
+      "unit": "isc-12-chemistry-ch09",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write balanced ionic equations for the oxidation by acidified KMnO₄ of (a) iodide ions to iodine, (b) sulphur dioxide to sulphate ions, and (c) nitrite ions to nitrate ions.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) $\\ce{2MnO4- + 10I- + 16H+ -> 2Mn^2+ + 5I2 + 8H2O}$. (b) $\\ce{2MnO4- + 5SO2 + 2H2O -> 2Mn^2+ + 5SO4^2- + 4H+}$. (c) $\\ce{2MnO4- + 5NO2- + 6H+ -> 2Mn^2+ + 5NO3- + 3H2O}$."
+      },
+      "solution_md": "Three balanced equations.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch09-t02"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch09_033",
+      "unit": "isc-12-chemistry-ch09",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "When chromite, FeCr₂O₄, is roasted with sodium carbonate in a current of air, the oxidation state of chromium changes from:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "+2 to +6"
+        },
+        {
+          "id": "b",
+          "text_md": "+3 to +6"
+        },
+        {
+          "id": "c",
+          "text_md": "+3 to +7"
+        },
+        {
+          "id": "d",
+          "text_md": "+6 to +3"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "In FeCr₂O₄ (Fe +2) Cr is +3; in Na₂CrO₄ it is +6 — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch09-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch09_034",
+      "unit": "isc-12-chemistry-ch09",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Potassium chloride is added to sodium dichromate solution in the last step of making K₂Cr₂O₇ because:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "KCl oxidises chromium to the +6 state"
+        },
+        {
+          "id": "b",
+          "text_md": "KCl removes iron impurities as FeCl₃"
+        },
+        {
+          "id": "c",
+          "text_md": "sodium dichromate decomposes on heating"
+        },
+        {
+          "id": "d",
+          "text_md": "K₂Cr₂O₇ is less soluble than Na₂Cr₂O₇ and crystallises out"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Double decomposition; the less soluble potassium salt crystallises on cooling — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch09-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch09_035",
+      "unit": "isc-12-chemistry-ch09",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "In the dichromate ion, Cr₂O₇²⁻, how many oxygen atoms bridge the two chromium atoms?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "2"
+        },
+        {
+          "id": "b",
+          "text_md": "0"
+        },
+        {
+          "id": "c",
+          "text_md": "3"
+        },
+        {
+          "id": "d",
+          "text_md": "1"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Two CrO₄ tetrahedra share one corner oxygen — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch09-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch09_036",
+      "unit": "isc-12-chemistry-ch09",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "During the roasting of chromite with sodium carbonate in air, the iron of the ore ends up as:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "soluble sodium ferrate"
+        },
+        {
+          "id": "b",
+          "text_md": "insoluble iron(III) oxide, Fe₂O₃"
+        },
+        {
+          "id": "c",
+          "text_md": "iron metal"
+        },
+        {
+          "id": "d",
+          "text_md": "iron(II) carbonate"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "4FeCr₂O₄ + 8Na₂CO₃ + 7O₂ → 8Na₂CrO₄ + 2Fe₂O₃ + 8CO₂; Fe₂O₃ is filtered off — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch09-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch09_037",
+      "unit": "isc-12-chemistry-ch09",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Potassium dichromate, rather than sodium dichromate, is used as a primary standard.\n\n**Reason (R):** Potassium dichromate is more soluble in water than sodium dichromate.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "A is true (the sodium salt is hygroscopic). R is false: the potassium salt is less soluble, which is why it crystallises — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch09-t03"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch09_038",
+      "unit": "isc-12-chemistry-ch09",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? In the dichromate ion, all seven chromium–oxygen bonds have the same length.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "f"
+        ]
+      },
+      "solution_md": "False. The six terminal Cr–O bonds are equal (about 163 pm); the two bonds to the bridging oxygen are longer (about 179 pm).",
+      "marking_scheme": [
+        {
+          "step": "False, with the correction",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch09-t03"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch09_039",
+      "unit": "isc-12-chemistry-ch09",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "The Cr–O–Cr bond angle at the bridging oxygen in the dichromate ion is about ___ degrees.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "126"
+            ]
+          }
+        ]
+      },
+      "solution_md": "About **126°**.",
+      "marking_scheme": [
+        {
+          "step": "Writes \"126\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch09-t03"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch09_040",
+      "unit": "isc-12-chemistry-ch09",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "In the roasting $\\ce{4FeCr2O4 + 8Na2CO3 + 7O2 -> 8Na2CrO4 + 2Fe2O3 + 8CO2}$, how many moles of oxygen are needed to roast $2.0\\ \\text{mol}$ of chromite?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 3.5,
+        "tolerance": 0.01,
+        "unit": "mol"
+      },
+      "solution_md": "$n(\\ce{O2}) = 2.0 \\times 7 \\div 4 = 3.5\\ \\text{mol}$.",
+      "marking_scheme": [
+        {
+          "step": "3.5 mol",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch09-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch09_041",
+      "unit": "isc-12-chemistry-ch09",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write balanced equations for converting sodium chromate into potassium dichromate, naming the reagent in each step.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Step 1 (dilute sulphuric acid): $\\ce{2Na2CrO4 + H2SO4 -> Na2Cr2O7 + Na2SO4 + H2O}$. Step 2 (potassium chloride): $\\ce{Na2Cr2O7 + 2KCl -> K2Cr2O7 + 2NaCl}$."
+      },
+      "solution_md": "Acidify; add KCl.",
+      "marking_scheme": [
+        {
+          "step": "Acidification equation",
+          "marks": 1
+        },
+        {
+          "step": "KCl equation",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch09-t03"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch09_042",
+      "unit": "isc-12-chemistry-ch09",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Describe the shapes of the chromate and dichromate ions and state the oxidation state of chromium in each.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Chromate CrO₄²⁻: tetrahedral, Cr at the centre of four O. Dichromate Cr₂O₇²⁻: two CrO₄ tetrahedra sharing one corner (bridging) oxygen, Cr–O–Cr about 126°. Chromium is +6 in both."
+      },
+      "solution_md": "Tetrahedral; two tetrahedra sharing O; +6.",
+      "marking_scheme": [
+        {
+          "step": "Shapes",
+          "marks": 1
+        },
+        {
+          "step": "+6 in both",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch09-t03"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch09_043",
+      "unit": "isc-12-chemistry-ch09",
+      "language": "en",
+      "type": "short",
+      "stem_md": "The roasting of chromite is represented by: FeCr₂O₄ + Na₂CO₃ + O₂ → Na₂CrO₄ + Fe₂O₃ + CO₂. (a) Balance the equation. (b) How is the iron(III) oxide separated from the sodium chromate? (c) Which elements are oxidised and which is reduced?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) $\\ce{4FeCr2O4 + 8Na2CO3 + 7O2 -> 8Na2CrO4 + 2Fe2O3 + 8CO2}$. (b) The roasted mass is extracted with water: sodium chromate dissolves and the insoluble Fe₂O₃ is filtered off. (c) Iron (+2 → +3) and chromium (+3 → +6) are oxidised; oxygen (0 → −2) is reduced."
+      },
+      "solution_md": "Balanced; water extraction and filtration; Fe and Cr oxidised, O₂ reduced.",
+      "marking_scheme": [
+        {
+          "step": "(a) Balanced",
+          "marks": 1
+        },
+        {
+          "step": "(b) Leach with water, filter",
+          "marks": 1
+        },
+        {
+          "step": "(c) Fe, Cr oxidised; O reduced",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch09-t03"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch09_044",
+      "unit": "isc-12-chemistry-ch09",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A few drops of sodium hydroxide solution are added to orange potassium dichromate solution. The solution turns:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "green, as Cr³⁺ ions form"
+        },
+        {
+          "id": "b",
+          "text_md": "yellow, as chromate ions form; chromium stays +6"
+        },
+        {
+          "id": "c",
+          "text_md": "colourless, as Cr²⁺ ions form"
+        },
+        {
+          "id": "d",
+          "text_md": "purple, as permanganate-like ions form"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Cr₂O₇²⁻ + 2OH⁻ → 2CrO₄²⁻ + H₂O: an acid–base change, not redox — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch09-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch09_045",
+      "unit": "isc-12-chemistry-ch09",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "When acidified K₂Cr₂O₇ oxidises sulphur dioxide to sulphate, each dichromate ion:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "gains three electrons and forms one Cr³⁺ ion"
+        },
+        {
+          "id": "b",
+          "text_md": "loses six electrons and forms CrO₄²⁻"
+        },
+        {
+          "id": "c",
+          "text_md": "gains six electrons and forms two Cr³⁺ ions"
+        },
+        {
+          "id": "d",
+          "text_md": "gains five electrons and forms Cr²⁺"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Cr₂O₇²⁻ + 14H⁺ + 6e⁻ → 2Cr³⁺ + 7H₂O — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch09-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch09_046",
+      "unit": "isc-12-chemistry-ch09",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which statement correctly compares K₂Cr₂O₇ with KMnO₄ as a volumetric reagent?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both are primary standards and both are self-indicators"
+        },
+        {
+          "id": "b",
+          "text_md": "KMnO₄ is a primary standard; K₂Cr₂O₇ is its own indicator"
+        },
+        {
+          "id": "c",
+          "text_md": "Neither can be used in acidic solution"
+        },
+        {
+          "id": "d",
+          "text_md": "K₂Cr₂O₇ is a primary standard but needs an indicator; KMnO₄ is its own indicator but is not a primary standard"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch09-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch09_047",
+      "unit": "isc-12-chemistry-ch09",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Filter paper soaked in acidified potassium dichromate turns from orange to green when held in a gas. The gas is most likely:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "carbon dioxide"
+        },
+        {
+          "id": "b",
+          "text_md": "oxygen"
+        },
+        {
+          "id": "c",
+          "text_md": "sulphur dioxide"
+        },
+        {
+          "id": "d",
+          "text_md": "nitrogen"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "SO₂ reduces Cr₂O₇²⁻ to green Cr³⁺ and is oxidised to sulphate — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch09-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch09_048",
+      "unit": "isc-12-chemistry-ch09",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "How many moles of Fe²⁺ ions are oxidised by 0.50 mol of Cr₂O₇²⁻ ions in acidic solution?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "3.0 mol"
+        },
+        {
+          "id": "b",
+          "text_md": "0.50 mol"
+        },
+        {
+          "id": "c",
+          "text_md": "1.5 mol"
+        },
+        {
+          "id": "d",
+          "text_md": "6.0 mol"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Ratio 1 : 6, so 0.50 × 6 = 3.0 mol — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch09-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch09_049",
+      "unit": "isc-12-chemistry-ch09",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "In the estimation of Fe²⁺ with standard K₂Cr₂O₇, diphenylamine is added because:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "it catalyses the reaction between Fe²⁺ and dichromate"
+        },
+        {
+          "id": "b",
+          "text_md": "the green colour of the Cr³⁺ formed hides the colour change, so an internal indicator is needed"
+        },
+        {
+          "id": "c",
+          "text_md": "it prevents the oxidation of chloride ions"
+        },
+        {
+          "id": "d",
+          "text_md": "it converts Fe³⁺ back to Fe²⁺"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Dichromate is not a self-indicator; diphenylamine gives a sharp violet colour at the end point — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch09-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch09_050",
+      "unit": "isc-12-chemistry-ch09",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** The conversion of yellow chromate into orange dichromate on adding acid is not a redox reaction.\n\n**Reason (R):** Chromium has the oxidation state +6 in both the chromate and the dichromate ion.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Both are true, and R explains A — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch09-t04"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch09_051",
+      "unit": "isc-12-chemistry-ch09",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Acidified potassium dichromate is a stronger oxidising agent than acidified potassium permanganate.\n\n**Reason (R):** The standard potential of Cr₂O₇²⁻/Cr³⁺ (+1.33 V) is lower than that of MnO₄⁻/Mn²⁺ (+1.52 V).\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "A is false: the lower potential means dichromate is the weaker oxidant. R is true — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch09-t04"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch09_052",
+      "unit": "isc-12-chemistry-ch09",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? Hydrochloric acid may be used to acidify a potassium dichromate titration of iron(II).",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "t"
+        ]
+      },
+      "solution_md": "True. Under titration conditions dichromate does not oxidise chloride ions.",
+      "marking_scheme": [
+        {
+          "step": "True",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch09-t04"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch09_053",
+      "unit": "isc-12-chemistry-ch09",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "When acidified potassium dichromate oxidises iron(II), the orange colour changes to green because ___ ions are formed.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "Cr³⁺",
+              "Cr3+",
+              "chromium(III)",
+              "chromium (III)",
+              "chromium"
+            ]
+          }
+        ]
+      },
+      "solution_md": "Green **Cr³⁺** (chromium(III)) ions.",
+      "marking_scheme": [
+        {
+          "step": "Writes \"Cr³⁺\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch09-t04"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch09_054",
+      "unit": "isc-12-chemistry-ch09",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "$4.90\\ \\text{g}$ of potassium dichromate ($M = 294$) is dissolved in water and made up to $500\\ \\text{mL}$. Calculate the molarity of the solution.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 0.0333,
+        "tolerance": 0.0002,
+        "unit": "M"
+      },
+      "solution_md": "$n = 4.90 \\div 294 \\approx 0.01667\\ \\text{mol}$; molarity $= 4.90 \\div 294 \\div 0.500 \\approx 0.0333\\ \\text{M}$.",
+      "marking_scheme": [
+        {
+          "step": "Moles",
+          "marks": 1
+        },
+        {
+          "step": "0.0333 M",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch09-t04"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch09_055",
+      "unit": "isc-12-chemistry-ch09",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "Calculate the equivalent mass of potassium dichromate ($M = 294$) when it acts as an oxidising agent in acidic solution.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 49,
+        "tolerance": 0.1,
+        "unit": null
+      },
+      "solution_md": "Each Cr₂O₇²⁻ gains 6 electrons: equivalent mass $= 294 \\div 6 = 49$.",
+      "marking_scheme": [
+        {
+          "step": "49",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch09-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch09_056",
+      "unit": "isc-12-chemistry-ch09",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "What volume of $0.0200\\ \\text{M}$ K₂Cr₂O₇ is needed to oxidise $30.0\\ \\text{mL}$ of $0.100\\ \\text{M}$ FeSO₄ in acid? Give your answer in mL.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 25,
+        "tolerance": 0.1,
+        "unit": "mL"
+      },
+      "solution_md": "$n(\\ce{Fe^2+}) = 0.100 \\times 0.0300 = 3.0 \\times 10^{-3}$; $n(\\ce{Cr2O7^2-}) = 3.0 \\times 10^{-3} \\div 6 = 5.0 \\times 10^{-4}$; $V = 5.0 \\times 10^{-4} \\div 0.0200 \\times 1000 = 25.0\\ \\text{mL}$.",
+      "marking_scheme": [
+        {
+          "step": "1 : 6 ratio and moles",
+          "marks": 1
+        },
+        {
+          "step": "25.0 mL",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch09-t04"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch09_057",
+      "unit": "isc-12-chemistry-ch09",
+      "language": "en",
+      "type": "short",
+      "stem_md": "A solution of chromium(VI) is yellow at pH 10 but orange at pH 3. Write the equilibrium involved and use Le Chatelier’s principle to explain the colour change.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "$\\ce{2CrO4^2- + 2H+ <=> Cr2O7^2- + H2O}$ (yellow ⇌ orange). At pH 3 the high [H⁺] shifts the equilibrium to the right, giving orange dichromate. At pH 10, OH⁻ removes H⁺, shifting it to the left, so yellow chromate predominates. Chromium stays +6."
+      },
+      "solution_md": "Equilibrium; H⁺ shifts right, OH⁻ shifts left.",
+      "marking_scheme": [
+        {
+          "step": "Equilibrium equation",
+          "marks": 1
+        },
+        {
+          "step": "Le Chatelier explanation",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch09-t04"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch09_058",
+      "unit": "isc-12-chemistry-ch09",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write the balanced ionic equation for the reaction of acidified potassium dichromate with sulphur dioxide, and state the colour change seen.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "$\\ce{Cr2O7^2- + 3SO2 + 2H+ -> 2Cr^3+ + 3SO4^2- + H2O}$. Orange changes to green."
+      },
+      "solution_md": "Equation; orange → green.",
+      "marking_scheme": [
+        {
+          "step": "Balanced equation",
+          "marks": 1
+        },
+        {
+          "step": "Orange to green",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch09-t04"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch09_059",
+      "unit": "isc-12-chemistry-ch09",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write balanced ionic equations for the oxidation by acidified K₂Cr₂O₇ of (a) hydrogen sulphide, (b) tin(II) ions and (c) nitrite ions.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) $\\ce{Cr2O7^2- + 3H2S + 8H+ -> 2Cr^3+ + 3S + 7H2O}$. (b) $\\ce{Cr2O7^2- + 3Sn^2+ + 14H+ -> 2Cr^3+ + 3Sn^4+ + 7H2O}$. (c) $\\ce{Cr2O7^2- + 3NO2- + 8H+ -> 2Cr^3+ + 3NO3- + 4H2O}$."
+      },
+      "solution_md": "Three balanced equations.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch09-t04"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch09_060",
+      "unit": "isc-12-chemistry-ch09",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Give three differences between potassium permanganate and potassium dichromate as volumetric reagents in acidic solution.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(i) KMnO₄ gains 5 e⁻ per ion (→ Mn²⁺); K₂Cr₂O₇ gains 6 e⁻ per ion (→ 2Cr³⁺). (ii) KMnO₄ is a self-indicator; K₂Cr₂O₇ needs an indicator such as diphenylamine. (iii) K₂Cr₂O₇ is a primary standard; KMnO₄ must be standardised. (Also: HCl cannot be used with KMnO₄ but can with K₂Cr₂O₇; KMnO₄ is the stronger oxidant.)"
+      },
+      "solution_md": "Electrons, indicator, primary standard.",
+      "marking_scheme": [
+        {
+          "step": "Difference 1",
+          "marks": 1
+        },
+        {
+          "step": "Difference 2",
+          "marks": 1
+        },
+        {
+          "step": "Difference 3",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch09-t04"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch09_061",
+      "unit": "isc-12-chemistry-ch09",
+      "language": "en",
+      "type": "short",
+      "stem_md": "2.00 g of an iron alloy was dissolved in dilute acid (all iron as Fe²⁺) and made up to 250 mL. 25.0 mL of this solution required 18.0 mL of 0.0200 M K₂Cr₂O₇. Calculate the percentage of iron in the alloy. (Fe = 56)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "$n(\\ce{Cr2O7^2-}) = 0.0200 \\times 0.0180 = 3.6 \\times 10^{-4}$ mol. $n(\\ce{Fe^2+})$ in 25.0 mL $= 6 \\times 3.6 \\times 10^{-4} = 2.16 \\times 10^{-3}$ mol; in 250 mL $= 2.16 \\times 10^{-2}$ mol. Mass $= 2.16 \\times 10^{-2} \\times 56 \\approx 1.21$ g. Percentage $= 1.21 \\div 2.00 \\times 100 \\approx 60.5\\%$."
+      },
+      "solution_md": "About 60.5%.",
+      "marking_scheme": [
+        {
+          "step": "Moles of dichromate and Fe²⁺",
+          "marks": 1
+        },
+        {
+          "step": "Scale to 250 mL; mass",
+          "marks": 1
+        },
+        {
+          "step": "≈ 60.5%",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 4,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch09-t04"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch09_062",
+      "unit": "isc-12-chemistry-ch09",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Name the ore from which potassium permanganate is made and write equations for its preparation, showing the conversion of manganate to permanganate by disproportionation. [2]\n\n(b) State the shape of the permanganate ion and explain its colour. [1]\n\n(c) Write the reduction half-equations of permanganate in acidic and in neutral solution, and calculate the equivalent mass of KMnO₄ (M = 158) in each medium. [2]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Pyrolusite, MnO₂. $\\ce{2MnO2 + 4KOH + O2 -> 2K2MnO4 + 2H2O}$; then $\\ce{3MnO4^2- + 4H+ -> 2MnO4- + MnO2 + 2H2O}$.\n\n(b) Tetrahedral. Mn(VII) is d⁰, so the intense purple colour is due to charge transfer from oxygen to manganese.\n\n(c) Acid: $\\ce{MnO4- + 8H+ + 5e- -> Mn^2+ + 4H2O}$; equivalent mass $= 158 \\div 5 = 31.6$. Neutral: $\\ce{MnO4- + 2H2O + 3e- -> MnO2 + 4OH-}$; equivalent mass $= 158 \\div 3 \\approx 52.7$."
+      },
+      "solution_md": "Pyrolusite; tetrahedral, charge transfer; 31.6 and 52.7.",
+      "marking_scheme": [
+        {
+          "step": "(a) Ore and two equations",
+          "marks": 2
+        },
+        {
+          "step": "(b) Shape and charge transfer",
+          "marks": 1
+        },
+        {
+          "step": "(c) Half-equations",
+          "marks": 1
+        },
+        {
+          "step": "(c) 31.6 and 52.7",
+          "marks": 1
+        }
+      ],
+      "marks": 5,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch09-t01",
+        "isc-12-chemistry-ch09-t02"
+      ],
+      "expected_time_sec": 570,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch09_063",
+      "unit": "isc-12-chemistry-ch09",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Explain why KMnO₄ needs no indicator and why dilute sulphuric acid is used to acidify the titration. [1½]\n\n(b) 1.26 g of oxalic acid dihydrate, H₂C₂O₄·2H₂O (M = 126), is dissolved and made up to 250 mL. 25.0 mL of this solution, warmed and acidified, required 20.0 mL of a KMnO₄ solution. Calculate the molarity of the KMnO₄ solution. [2½]\n\n(c) What is autocatalysis? Illustrate with this titration. [1]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Mn²⁺ is almost colourless, so the first excess drop of purple MnO₄⁻ gives a permanent pink at the end point. Dilute H₂SO₄ is used because HCl would be oxidised to Cl₂ and HNO₃ is itself an oxidant.\n\n(b) $n$(oxalic acid) $= 1.26 \\div 126 = 0.0100$ mol in 250 mL, i.e. 0.0400 M. In 25.0 mL: $1.00 \\times 10^{-3}$ mol. $n(\\ce{MnO4-}) = 1.00 \\times 10^{-3} \\times 2 \\div 5 = 4.0 \\times 10^{-4}$ mol. Molarity $= 4.0 \\times 10^{-4} \\div 0.0200 = 0.020$ M.\n\n(c) Catalysis of a reaction by one of its own products: Mn²⁺ formed from MnO₄⁻ speeds up the reaction with oxalic acid, so decolourisation becomes faster as the titration proceeds."
+      },
+      "solution_md": "Self-indicator; H₂SO₄; 0.020 M; Mn²⁺ autocatalysis.",
+      "marking_scheme": [
+        {
+          "step": "(a) Self-indicator and acid choice",
+          "marks": 1.5
+        },
+        {
+          "step": "(b) Moles of oxalic acid",
+          "marks": 1
+        },
+        {
+          "step": "(b) Ratio 2 : 5",
+          "marks": 0.5
+        },
+        {
+          "step": "(b) 0.020 M",
+          "marks": 1
+        },
+        {
+          "step": "(c) Autocatalysis",
+          "marks": 1
+        }
+      ],
+      "marks": 5,
+      "difficulty": 4,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch09-t02"
+      ],
+      "expected_time_sec": 570,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch09_064",
+      "unit": "isc-12-chemistry-ch09",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Write balanced equations for the three stages by which potassium dichromate is obtained from chromite, naming the condition or reagent of each stage. [3]\n\n(b) Why is potassium dichromate, and not sodium dichromate, used as a primary standard? [1]\n\n(c) State the shape around each chromium atom and the Cr–O–Cr angle in the dichromate ion. [1]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Roasting with sodium carbonate in air: $\\ce{4FeCr2O4 + 8Na2CO3 + 7O2 -> 8Na2CrO4 + 2Fe2O3 + 8CO2}$. Acidification with dilute H₂SO₄: $\\ce{2Na2CrO4 + H2SO4 -> Na2Cr2O7 + Na2SO4 + H2O}$. Adding KCl: $\\ce{Na2Cr2O7 + 2KCl -> K2Cr2O7 + 2NaCl}$.\n\n(b) Sodium dichromate is hygroscopic, so it cannot be weighed accurately; potassium dichromate is pure, non-hygroscopic and gives stable solutions.\n\n(c) Each Cr is tetrahedrally surrounded by four O atoms; the two tetrahedra share one O, with a Cr–O–Cr angle of about 126°."
+      },
+      "solution_md": "Three equations; Na salt hygroscopic; tetrahedral, 126°.",
+      "marking_scheme": [
+        {
+          "step": "(a) Roasting",
+          "marks": 1
+        },
+        {
+          "step": "(a) Acidification",
+          "marks": 1
+        },
+        {
+          "step": "(a) KCl",
+          "marks": 1
+        },
+        {
+          "step": "(b) Hygroscopic sodium salt",
+          "marks": 1
+        },
+        {
+          "step": "(c) Tetrahedral, 126°",
+          "marks": 1
+        }
+      ],
+      "marks": 5,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch09-t03"
+      ],
+      "expected_time_sec": 570,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch09_065",
+      "unit": "isc-12-chemistry-ch09",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Write the equilibrium between chromate and dichromate ions and explain the effect of adding acid and alkali. [1½]\n\n(b) Write the two half-equations and the overall ionic equation for the oxidation of iron(II) by acidified dichromate. [1½]\n\n(c) 0.392 g of Mohr’s salt, FeSO₄·(NH₄)₂SO₄·6H₂O (M = 392), is dissolved in dilute acid. What volume of 0.0100 M K₂Cr₂O₇ is required to oxidise it completely? [2]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) $\\ce{2CrO4^2- + 2H+ <=> Cr2O7^2- + H2O}$. Acid shifts the equilibrium right (yellow → orange); alkali removes H⁺ and shifts it left (orange → yellow). Cr remains +6.\n\n(b) $\\ce{Cr2O7^2- + 14H+ + 6e- -> 2Cr^3+ + 7H2O}$; $\\ce{Fe^2+ -> Fe^3+ + e-}$ (× 6). Overall: $\\ce{Cr2O7^2- + 6Fe^2+ + 14H+ -> 2Cr^3+ + 6Fe^3+ + 7H2O}$.\n\n(c) $n(\\ce{Fe^2+}) = 0.392 \\div 392 = 1.00 \\times 10^{-3}$ mol. $n(\\ce{Cr2O7^2-}) = 1.00 \\times 10^{-3} \\div 6 \\approx 1.67 \\times 10^{-4}$ mol. $V = 1.67 \\times 10^{-4} \\div 0.0100 \\approx 0.0167$ L, about 16.7 mL."
+      },
+      "solution_md": "Equilibrium; half-equations; about 16.7 mL.",
+      "marking_scheme": [
+        {
+          "step": "(a) Equilibrium and effect of pH",
+          "marks": 1.5
+        },
+        {
+          "step": "(b) Half-equations and overall",
+          "marks": 1.5
+        },
+        {
+          "step": "(c) Moles",
+          "marks": 1
+        },
+        {
+          "step": "(c) ≈ 16.7 mL",
+          "marks": 1
+        }
+      ],
+      "marks": 5,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch09-t04"
+      ],
+      "expected_time_sec": 570,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch09_066",
+      "unit": "isc-12-chemistry-ch09",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Tabulate five differences between KMnO₄ and K₂Cr₂O₇: colour, oxidation state of the metal, electrons gained per ion in acid, indicator needed, and whether a primary standard. [2½]\n\n(b) Calculate the equivalent mass of each in acidic medium (KMnO₄ = 158, K₂Cr₂O₇ = 294). [1]\n\n(c) Why must a KMnO₄ solution be standardised before use, and against what? [1½]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) KMnO₄: purple; Mn +7; 5 e⁻ (→ Mn²⁺); self-indicator; not a primary standard. K₂Cr₂O₇: orange; Cr +6; 6 e⁻ (→ 2Cr³⁺); diphenylamine indicator; primary standard.\n\n(b) KMnO₄: 158 ÷ 5 = 31.6. K₂Cr₂O₇: 294 ÷ 6 = 49.\n\n(c) Solid KMnO₄ usually contains some MnO₂, and its solutions slowly decompose (in light and on contact with organic matter), so the exact concentration is not known from the mass weighed. It is standardised against a primary standard such as oxalic acid or Mohr’s salt."
+      },
+      "solution_md": "Table; 31.6 and 49; MnO₂ impurity, decomposition; oxalic acid.",
+      "marking_scheme": [
+        {
+          "step": "(a) Five differences",
+          "marks": 2.5
+        },
+        {
+          "step": "(b) 31.6 and 49",
+          "marks": 1
+        },
+        {
+          "step": "(c) Reason and standard",
+          "marks": 1.5
+        }
+      ],
+      "marks": 5,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch09-t02",
+        "isc-12-chemistry-ch09-t04"
+      ],
+      "expected_time_sec": 570,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    }
+  ],
+  "build": {
+    "run_id": null,
+    "checks": {
+      "katex_mhchem": "204 math strings parsed with KaTeX 0.19.0 + mhchem (throwOnError, strict \"error\"), 0 failures",
+      "svg_allowlist": "4 SVG visuals (2 distinct diagrams) checked with saxes against svg-allowlist.ts: elements, attributes, class pattern, fragment-only refs, no style, palette incl. named hues, viewBox, title, per-page unique ids — 0 failures",
+      "narration": "29 slides, 10–67 words (mean 49), no symbols, formulae or unit abbreviations",
+      "resolve": "9/9 scripted re-solve checks pass",
+      "chemistry_facts": "Preparations of KMnO₄ and K₂Cr₂O₇, structures of their anions, every ionic equation (balanced for atoms and charge) and every titration numerical checked against the ISC 2027 syllabus (Unit 4)",
+      "content_gate": "npm test -w @soyl/content-templates: all checks pass for this chapter",
+      "verifier_pass": "2026-10-30: every question and every internal-choice alternative re-solved from its stem by the author; every numerical re-computed by the build script — see README \"Verifier pass\"",
+      "pipeline_lint": "npm run content -- lint --exemplars: 0 errors, 0 warnings"
+    }
+  }
+}
