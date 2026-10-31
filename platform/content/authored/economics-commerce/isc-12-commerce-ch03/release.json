@@ -1,0 +1,5740 @@
+{
+ "unit": "isc-12-commerce-ch03",
+ "version": 1,
+ "academic_year": "2026-27",
+ "created_at": "2026-10-31",
+ "decks": [
+  {
+   "unit": "isc-12-commerce-ch03",
+   "part": 1,
+   "version": 1,
+   "title": "Long-term Sources — Part 1: Equity, Preference Shares and Special Issues",
+   "language": "en",
+   "goals": [
+    "Explain the features, advantages and disadvantages of equity shares",
+    "Describe the types of preference shares and distinguish them from equity shares",
+    "Explain bonus shares, rights issue, ESOP, sweat equity and QIP, and distinguish bonus from rights"
+   ],
+   "slides": [
+    {
+     "id": "s01",
+     "layout": "title",
+     "heading": "Long-term Sources of Funds for a Company",
+     "body_md": "Part 1: **equity** shares, **preference** shares, and five special ways of issuing shares.",
+     "bullets": [],
+     "visual": {
+      "kind": "flow",
+      "spec": {
+       "direction": "LR",
+       "nodes": [
+        {
+         "id": "n1",
+         "label": "Equity shares"
+        },
+        {
+         "id": "n2",
+         "label": "Preference shares"
+        },
+        {
+         "id": "n3",
+         "label": "Bonus, rights, ESOP, sweat equity, QIP"
+        }
+       ],
+       "edges": [
+        {
+         "from": "n1",
+         "to": "n2"
+        },
+        {
+         "from": "n2",
+         "to": "n3"
+        }
+       ]
+      },
+      "alt": "Route map of Part 1: equity shares, preference shares, and the special ways of issuing shares",
+      "caption": "Part 1 at a glance"
+     },
+     "math": [],
+     "narration": "A company building a plant or a network needs money for many years. In this chapter we meet the long term sources open to it. Part one covers shares: equity, preference, and five special issues that every commerce student must be able to tell apart.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s02",
+     "layout": "diagram",
+     "heading": "Owners' funds and borrowed funds",
+     "body_md": "",
+     "bullets": [],
+     "visual": {
+      "kind": "svg",
+      "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 560 270\" role=\"img\" aria-label=\"Tree diagram: long-term funds split into owners' funds (equity shares, preference shares, retained earnings; bonus, rights, ESOP, sweat equity and QIP are ways of issuing shares) and borrowed funds (debentures, term loans from banks, loans from financial institutions)\" font-family=\"sans-serif\" font-size=\"14\" fill=\"none\"><title>Tree diagram: long-term funds split into owners' funds (equity shares, preference shares, retained earnings; bonus, rights, ESOP, sweat equity and QIP are ways of issuing shares) and borrowed funds (debentures, term loans from banks, loans from financial institutions)</title><rect x=\"200\" y=\"15\" width=\"160\" height=\"44\" rx=\"8\" fill=\"var(--diagram-accent)\" fill-opacity=\"0.16\" stroke=\"var(--diagram-accent)\" stroke-width=\"1.5\"/><text x=\"280\" y=\"37\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"14\" font-weight=\"bold\">Long-term funds</text><rect x=\"30\" y=\"95\" width=\"220\" height=\"44\" rx=\"8\" fill=\"var(--diagram-green)\" fill-opacity=\"0.14\" stroke=\"var(--diagram-green)\" stroke-width=\"1.5\"/><text x=\"140\" y=\"117\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"14\" font-weight=\"bold\">Owners' funds</text><rect x=\"310\" y=\"95\" width=\"220\" height=\"44\" rx=\"8\" fill=\"var(--diagram-blue)\" fill-opacity=\"0.12\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.5\"/><text x=\"420\" y=\"117\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"14\" font-weight=\"bold\">Borrowed funds</text><line x1=\"250\" y1=\"59\" x2=\"160\" y2=\"93\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"/><polygon points=\"160,93 166.83,85.61 170.01,94.03\" fill=\"currentColor\" stroke=\"none\"/><line x1=\"310\" y1=\"59\" x2=\"400\" y2=\"93\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"/><polygon points=\"400,93 389.99,94.03 393.17,85.61\" fill=\"currentColor\" stroke=\"none\"/><text x=\"140\" y=\"165\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"13\">Equity shares</text><text x=\"140\" y=\"187\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"13\">Preference shares</text><text x=\"140\" y=\"209\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"13\">Retained earnings</text><text x=\"140\" y=\"231\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">(bonus, rights, ESOP, sweat, QIP</text><text x=\"140\" y=\"249\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">are ways of issuing shares)</text><text x=\"420\" y=\"165\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"13\">Debentures</text><text x=\"420\" y=\"187\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"13\">Term loans from banks</text><text x=\"420\" y=\"209\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"13\">Loans from financial institutions</text></svg>",
+      "alt": "Tree diagram: long-term funds split into owners' funds (equity shares, preference shares, retained earnings; bonus, rights, ESOP, sweat equity and QIP are ways of issuing shares) and borrowed funds (debentures, term loans from banks, loans from financial institutions)",
+      "caption": "Every long-term source is either owners' money or borrowed money."
+     },
+     "math": [],
+     "narration": "Every long term source is either owners' money or borrowed money. Owners' funds include equity shares, preference shares and retained earnings. Borrowed funds include debentures and long term loans. Bonus, rights, employee options, sweat equity and placements are simply ways of issuing shares.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s03",
+     "layout": "concept",
+     "heading": "Equity shares: features",
+     "body_md": "",
+     "bullets": [],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Feature of equity shares",
+        "What it means"
+       ],
+       "rows": [
+        [
+         "Ownership and voting",
+         "Holders own the company and elect its directors"
+        ],
+        [
+         "Residual claim",
+         "Paid last, from what is left"
+        ],
+        [
+         "Variable dividend",
+         "Depends on profit and the board"
+        ],
+        [
+         "Permanent capital",
+         "Repaid only on winding up (or a buy-back)"
+        ],
+        [
+         "Highest risk, highest possible reward",
+         "Gains most in good years, loses most in bad"
+        ]
+       ]
+      },
+      "alt": "Table of five features of equity shares with their meanings"
+     },
+     "math": [],
+     "narration": "Equity shareholders are the real owners. They vote and elect directors. They are paid last, so their claim is residual. Their dividend rises and falls with profit. Their capital stays with the company until it is wound up. They bear the highest risk, and can enjoy the highest reward.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s04",
+     "layout": "two-column",
+     "heading": "Equity: for and against",
+     "body_md": "",
+     "bullets": [],
+     "columns": [
+      "**For the company**\n\nNo fixed burden; permanent; assets stay free; a strong base for borrowing.",
+      "**Against**\n\nDilutes control; expensive; costly to issue; risk of raising too much."
+     ],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Advantages to the company",
+        "Disadvantages to the company"
+       ],
+       "rows": [
+        [
+         "No fixed dividend burden",
+         "Dilutes control of existing owners"
+        ],
+        [
+         "Permanent capital",
+         "Costlier: investors expect more; no tax shield"
+        ],
+        [
+         "No charge on assets",
+         "High floatation cost and long formalities"
+        ],
+        [
+         "Strengthens borrowing power",
+         "Risk of over-capitalisation"
+        ]
+       ]
+      },
+      "alt": "Table of four advantages and four disadvantages of equity shares to the issuing company"
+     },
+     "math": [],
+     "narration": "For the company, equity is comfortable: no fixed dividend, no repayment and no charge on assets. But it has costs. New shareholders share control. Investors expect a high return, and dividends save no tax. A public issue is costly and slow.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s05",
+     "layout": "check",
+     "heading": "Quick check: equity and borrowing",
+     "body_md": "True or false: a large equity base makes it easier for a company to borrow.",
+     "bullets": [],
+     "visual": null,
+     "math": [],
+     "narration": "Think about how lenders feel when owners have a lot at stake.",
+     "check_question_id": "q_isc12commerce_ch03_006",
+     "audio": null
+    },
+    {
+     "id": "s06",
+     "layout": "concept",
+     "heading": "Preference shares and their types",
+     "body_md": "Preference shares get a **fixed dividend** and **return of capital before** equity; their **vote is restricted**.",
+     "bullets": [],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Pair of types",
+        "Difference"
+       ],
+       "rows": [
+        [
+         "Cumulative / non-cumulative",
+         "Unpaid dividend carries forward / lapses"
+        ],
+        [
+         "Participating / non-participating",
+         "Shares surplus profit / fixed dividend only"
+        ],
+        [
+         "Convertible / non-convertible",
+         "Can become equity / cannot"
+        ],
+        [
+         "Redeemable",
+         "Repaid after a period; Indian companies may issue only redeemable preference shares"
+        ]
+       ]
+      },
+      "alt": "Table of the types of preference shares in pairs with the difference between each pair; Indian companies may now issue only redeemable preference shares"
+     },
+     "math": [],
+     "narration": "Preference shareholders come first for a fixed dividend and for repayment of capital. In return, they vote only on matters affecting them, unless their dividend has been unpaid for two years or more. Their types come in pairs: cumulative or not, participating or not, convertible or not. Indian companies may now issue only redeemable ones.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s07",
+     "layout": "example",
+     "heading": "Worked example 1: cumulative arrears",
+     "body_md": "An imagined battery maker missed its preference dividend for two years.",
+     "bullets": [
+      "Step 1: annual dividend = number × face value × rate.",
+      "Step 2: add each unpaid year to **arrears**.",
+      "Step 3: in the paying year, clear arrears **plus** the current year before any equity dividend."
+     ],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Year (imagined)",
+        "Dividend due (₹)",
+        "Paid (₹)",
+        "Arrears carried (₹)"
+       ],
+       "rows": [
+        [
+         "Year 1",
+         "80,000",
+         "0",
+         "80,000"
+        ],
+        [
+         "Year 2",
+         "80,000",
+         "0",
+         "1,60,000"
+        ],
+        [
+         "Year 3",
+         "80,000",
+         "2,40,000",
+         "0"
+        ]
+       ]
+      },
+      "alt": "Worked table for imagined cumulative preference shares: eighty thousand rupees due each year; nothing paid in years one and two, so arrears build to one lakh sixty thousand; in year three two lakh forty thousand must be paid before any equity dividend",
+      "caption": "Imagined: Bhadra Batteries Ltd, 10,000 cumulative 8 per cent preference shares of ₹100."
+     },
+     "math": [],
+     "narration": "Ten thousand shares of one hundred rupees at eight per cent need eighty thousand rupees a year. Nothing was paid in years one and two, so arrears build up. In year three the company must pay all three years, two lakh forty thousand rupees, before equity holders get a single rupee.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s08",
+     "layout": "check",
+     "heading": "Quick check: shares that change",
+     "body_md": "Preference shares that become equity shares after five years are…",
+     "bullets": [],
+     "visual": null,
+     "math": [],
+     "narration": "What does the share turn into, and what is that called?",
+     "check_question_id": "q_isc12commerce_ch03_014",
+     "audio": null
+    },
+    {
+     "id": "s09",
+     "layout": "concept",
+     "heading": "Equity versus preference",
+     "body_md": "",
+     "bullets": [],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Basis",
+        "Equity shares",
+        "Preference shares"
+       ],
+       "rows": [
+        [
+         "Dividend",
+         "Varies with profit",
+         "Fixed rate"
+        ],
+        [
+         "Priority",
+         "Last",
+         "Before equity"
+        ],
+        [
+         "Voting",
+         "Full",
+         "Restricted"
+        ],
+        [
+         "Risk",
+         "High",
+         "Lower"
+        ],
+        [
+         "Repayment",
+         "Only on winding up (or buy-back)",
+         "Redeemable"
+        ],
+        [
+         "Arrears",
+         "None",
+         "Possible if cumulative"
+        ]
+       ]
+      },
+      "alt": "Table distinguishing equity and preference shares on dividend, priority, voting, risk, repayment and arrears"
+     },
+     "math": [],
+     "narration": "Compare the two on six bases. Equity dividend varies; preference dividend is fixed. Preference comes first; equity comes last. Equity votes fully; preference votes only in limited cases. Equity is riskier. Preference shares are redeemable, and cumulative ones can build arrears.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s10",
+     "layout": "concept",
+     "heading": "Five special ways of issuing shares",
+     "body_md": "",
+     "bullets": [],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Method",
+        "Who gets the shares",
+        "Fresh funds?"
+       ],
+       "rows": [
+        [
+         "Bonus issue",
+         "Existing shareholders, free, from reserves",
+         "No"
+        ],
+        [
+         "Rights issue",
+         "Existing shareholders, in proportion, usually below market price; can be renounced",
+         "Yes"
+        ],
+        [
+         "ESOP",
+         "Employees, as an option at a pre-set price after a vesting period",
+         "Yes, when exercised"
+        ],
+        [
+         "Sweat equity",
+         "Directors or employees, for know-how or intellectual property",
+         "Usually no cash"
+        ],
+        [
+         "QIP",
+         "Qualified institutional buyers, by a listed company",
+         "Yes, quickly"
+        ]
+       ]
+      },
+      "alt": "Table of five methods of issuing shares, who receives the shares and whether fresh funds come in"
+     },
+     "math": [],
+     "narration": "Bonus shares are free shares made out of reserves. A rights issue offers new shares to existing holders, usually below market price, and the right can be sold. An employee stock option lets staff buy later at a set price. Sweat equity rewards know how. A qualified institutional placement lets a listed company raise money quickly from big institutions.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s11",
+     "layout": "diagram",
+     "heading": "Bonus versus rights",
+     "body_md": "",
+     "bullets": [],
+     "visual": {
+      "kind": "svg",
+      "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 560 230\" role=\"img\" aria-label=\"Two flows: in a bonus issue, reserves already owned by the company are capitalised into share capital with no cash; in a rights issue, shareholders' cash flows into the company's bank as fresh funds\" font-family=\"sans-serif\" font-size=\"14\" fill=\"none\"><title>Two flows: in a bonus issue, reserves already owned by the company are capitalised into share capital with no cash; in a rights issue, shareholders' cash flows into the company's bank as fresh funds</title><rect x=\"20\" y=\"30\" width=\"150\" height=\"60\" rx=\"8\" fill=\"var(--diagram-green)\" fill-opacity=\"0.14\" stroke=\"var(--diagram-green)\" stroke-width=\"1.5\"/><text x=\"95\" y=\"52\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"14\" font-weight=\"bold\">Reserves</text><text x=\"95\" y=\"72\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">(already owned)</text><rect x=\"390\" y=\"30\" width=\"150\" height=\"60\" rx=\"8\" fill=\"var(--diagram-accent)\" fill-opacity=\"0.16\" stroke=\"var(--diagram-accent)\" stroke-width=\"1.5\"/><text x=\"465\" y=\"60\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"14\" font-weight=\"bold\">Share capital</text><line x1=\"172\" y1=\"60\" x2=\"386\" y2=\"60\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><polygon points=\"386,60 377,64.5 377,55.5\" fill=\"currentColor\" stroke=\"none\"/><text x=\"280\" y=\"45\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"13\">Bonus: capitalised, no cash</text><rect x=\"20\" y=\"140\" width=\"150\" height=\"60\" rx=\"8\" fill=\"var(--diagram-blue)\" fill-opacity=\"0.12\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.5\"/><text x=\"95\" y=\"162\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"13\" font-weight=\"bold\">Shareholders' cash</text><text x=\"95\" y=\"182\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">(new money)</text><rect x=\"390\" y=\"140\" width=\"150\" height=\"60\" rx=\"8\" fill=\"var(--diagram-accent)\" fill-opacity=\"0.16\" stroke=\"var(--diagram-accent)\" stroke-width=\"1.5\"/><text x=\"465\" y=\"170\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"14\" font-weight=\"bold\">Company's bank</text><line x1=\"172\" y1=\"170\" x2=\"386\" y2=\"170\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><polygon points=\"386,170 377,174.5 377,165.5\" fill=\"currentColor\" stroke=\"none\"/><text x=\"280\" y=\"155\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"13\">Rights: paid, fresh funds</text></svg>",
+      "alt": "Two flows: in a bonus issue, reserves already owned by the company are capitalised into share capital with no cash; in a rights issue, shareholders' cash flows into the company's bank as fresh funds",
+      "caption": "A bonus issue moves reserves; a rights issue brings in money."
+     },
+     "math": [],
+     "narration": "Here is the key difference. In a bonus issue, money already held as reserves is relabelled as share capital, so no cash comes in. In a rights issue, shareholders pay cash, so the company receives fresh funds. Rights can be renounced; bonus shares cannot.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s12",
+     "layout": "example",
+     "heading": "Worked example 2: counting bonus and rights shares",
+     "body_md": "Two imagined shareholders, two offers.",
+     "bullets": [
+      "Step 1: shares held × ratio.",
+      "Step 2: for rights, multiply by the **issue price**."
+     ],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Imagined holder",
+        "Offer",
+        "Working",
+        "Result"
+       ],
+       "rows": [
+        [
+         "Asha: 500 shares of Pushkar Prints Ltd",
+         "Bonus 2:5",
+         "500 × 2 ÷ 5",
+         "200 free shares"
+        ],
+        [
+         "Farhan: 400 shares of Indravati Infra Ltd",
+         "Rights 1:4 at ₹60",
+         "400 ÷ 4 = 100; 100 × ₹60",
+         "Pays ₹6,000"
+        ]
+       ]
+      },
+      "alt": "Worked table: a holder of five hundred shares receives two hundred free bonus shares in the ratio two to five; a holder of four hundred shares in a one-for-four rights issue at sixty rupees gets one hundred shares and pays six thousand rupees",
+      "caption": "Bonus: free, no cash to the company. Rights: paid, fresh cash to the company."
+     },
+     "math": [],
+     "narration": "Asha holds five hundred shares and gets bonus shares at two for every five, so she receives two hundred free shares. Farhan holds four hundred shares and is offered one for every four at sixty rupees. He gets one hundred shares and pays six thousand rupees.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s13",
+     "layout": "check",
+     "heading": "Quick check: rewarding know-how",
+     "body_md": "Shares given without cash to a director who developed a patented process are…",
+     "bullets": [],
+     "visual": null,
+     "math": [],
+     "narration": "The reward is for effort and know-how, not money.",
+     "check_question_id": "q_isc12commerce_ch03_027",
+     "audio": null
+    },
+    {
+     "id": "s14",
+     "layout": "summary",
+     "heading": "Summary of Part 1",
+     "body_md": "",
+     "bullets": [],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Idea",
+        "Key point"
+       ],
+       "rows": [
+        [
+         "Equity shares",
+         "Owners; votes; residual claim; permanent; no fixed burden"
+        ],
+        [
+         "Preference shares",
+         "Fixed dividend and capital first; restricted vote; redeemable"
+        ],
+        [
+         "Types",
+         "Cumulative, participating, convertible, redeemable"
+        ],
+        [
+         "Special issues",
+         "Bonus (free), rights (paid), ESOP, sweat equity, QIP"
+        ]
+       ]
+      },
+      "alt": "Summary table of Part 1: equity shares, preference shares, their types and the special methods of issuing shares"
+     },
+     "math": [],
+     "narration": "To sum up. Equity shareholders own the company, vote and take the residual profit. Preference shareholders get a fixed dividend and capital first, with a restricted vote. Preference shares may be cumulative, participating, convertible and redeemable. Bonus, rights, ESOP, sweat equity and QIP are five special ways of issuing shares.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s15",
+     "layout": "exam-tips",
+     "heading": "Exam tips",
+     "body_md": "",
+     "bullets": [
+      "In case questions, look for **free** (bonus), **existing holders, paid** (rights), **employees, option** (ESOP), **know-how** (sweat equity), **institutions, listed** (QIP).",
+      "For distinctions, write **basis by basis**, not two separate paragraphs.",
+      "Show working for **ratios** step by step."
+     ],
+     "visual": {
+      "kind": "flow",
+      "spec": {
+       "direction": "LR",
+       "nodes": [
+        {
+         "id": "n1",
+         "label": "Spot the clue"
+        },
+        {
+         "id": "n2",
+         "label": "Name the source or type"
+        },
+        {
+         "id": "n3",
+         "label": "Explain why"
+        }
+       ],
+       "edges": [
+        {
+         "from": "n1",
+         "to": "n2"
+        },
+        {
+         "from": "n2",
+         "to": "n3"
+        }
+       ]
+      },
+      "alt": "Three steps for case questions: spot the clue, name the source or type, and explain why"
+     },
+     "math": [],
+     "narration": "Some tips. Learn the clue words that reveal each type of issue. When asked to distinguish, set your answer out basis by basis, so the examiner sees each contrast. And show the working for every ratio question.",
+     "check_question_id": null,
+     "audio": null
+    }
+   ],
+   "status": "draft",
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "unit": "isc-12-commerce-ch03",
+   "part": 2,
+   "version": 1,
+   "title": "Long-term Sources — Part 2: Retained Earnings, Debentures and Term Loans",
+   "language": "en",
+   "goals": [
+    "Evaluate retained earnings as a source of finance",
+    "Describe kinds of debentures and distinguish shares from debentures",
+    "State the advantages and disadvantages of loans from banks and financial institutions"
+   ],
+   "slides": [
+    {
+     "id": "s01",
+     "layout": "title",
+     "heading": "Retained Earnings, Debentures and Loans",
+     "body_md": "Part 2: **ploughing back** profit, borrowing through **debentures**, and **term loans** from banks and institutions.",
+     "bullets": [],
+     "visual": {
+      "kind": "flow",
+      "spec": {
+       "direction": "LR",
+       "nodes": [
+        {
+         "id": "n1",
+         "label": "Retained earnings"
+        },
+        {
+         "id": "n2",
+         "label": "Debentures"
+        },
+        {
+         "id": "n3",
+         "label": "Loans from banks and institutions"
+        }
+       ],
+       "edges": [
+        {
+         "from": "n1",
+         "to": "n2"
+        },
+        {
+         "from": "n2",
+         "to": "n3"
+        }
+       ]
+      },
+      "alt": "Route map of Part 2: retained earnings, debentures, and loans from banks and financial institutions",
+      "caption": "Part 2 at a glance"
+     },
+     "math": [],
+     "narration": "In part two we look at money the company keeps from its own profits, and at money it borrows: debentures sold to investors, and loans from banks and financial institutions.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s02",
+     "layout": "concept",
+     "heading": "Retained earnings",
+     "body_md": "**Retained earnings** (ploughing back) is the part of profit kept in the business instead of being paid as dividend.",
+     "bullets": [],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Merits",
+        "Demerits"
+       ],
+       "rows": [
+        [
+         "Permanent; no repayment",
+         "Lower dividends may upset shareholders"
+        ],
+        [
+         "No floatation cost",
+         "Amount uncertain; depends on profit"
+        ],
+        [
+         "No dilution of control",
+         "Opportunity cost often ignored"
+        ],
+        [
+         "Builds creditworthiness and a cushion",
+         "May be misused by management"
+        ]
+       ]
+      },
+      "alt": "Table of four merits and four demerits of retained earnings"
+     },
+     "math": [],
+     "narration": "Retained earnings are an internal source of owners' funds. They are permanent, cost nothing to raise and bring in no new owners. They also build credit and a cushion for bad years. But shareholders may resent low dividends, the amount depends on profit, and managers may treat the money as free.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s03",
+     "layout": "example",
+     "heading": "Worked example 1: how much is ploughed back?",
+     "body_md": "An imagined hosiery company decides its dividend.",
+     "bullets": [
+      "Step 1: find the **dividend** = payout ratio × profit after tax.",
+      "Step 2: **retained** = profit after tax − dividend."
+     ],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Item (imagined: Hooghly Hosiery Ltd)",
+        "₹"
+       ],
+       "rows": [
+        [
+         "Profit after tax",
+         "50,00,000"
+        ],
+        [
+         "Dividend at 40 per cent payout",
+         "20,00,000"
+        ],
+        [
+         "Ploughed back (retained)",
+         "30,00,000"
+        ]
+       ]
+      },
+      "alt": "Worked table: an imagined company with profit after tax of fifty lakh rupees pays forty per cent as dividend, twenty lakh rupees, and ploughs back thirty lakh rupees",
+      "caption": "Retained = profit after tax − dividend."
+     },
+     "math": [],
+     "narration": "The company earns fifty lakh rupees after tax and pays forty per cent as dividend, which is twenty lakh rupees. The remaining thirty lakh rupees are ploughed back to buy knitting machines.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s04",
+     "layout": "check",
+     "heading": "Quick check: ploughing back",
+     "body_md": "Retained earnings as a source of finance means…",
+     "bullets": [],
+     "visual": null,
+     "math": [],
+     "narration": "Where does the money come from?",
+     "check_question_id": "q_isc12commerce_ch03_037",
+     "audio": null
+    },
+    {
+     "id": "s05",
+     "layout": "concept",
+     "heading": "Debentures and their kinds",
+     "body_md": "A **debenture** is an acknowledgement of **debt** with a **fixed rate of interest**; its holder is a **creditor**.",
+     "bullets": [],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Basis",
+        "Kinds"
+       ],
+       "rows": [
+        [
+         "Security",
+         "Secured (charge on assets) / unsecured (naked)"
+        ],
+        [
+         "Repayment",
+         "Redeemable (on a fixed date) / irredeemable"
+        ],
+        [
+         "Conversion",
+         "Fully convertible / partly convertible / non-convertible"
+        ],
+        [
+         "Registration",
+         "Registered (names recorded) / bearer (pass by delivery)"
+        ]
+       ]
+      },
+      "alt": "Table of kinds of debentures by security, repayment, conversion and registration"
+     },
+     "math": [],
+     "narration": "A debenture is a loan to the company, split into small units sold to investors. Debentures are classified by security, repayment, conversion and registration. They may be secured or not, redeemable or not, convertible in full, in part or not at all, and registered or payable to bearer.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s06",
+     "layout": "two-column",
+     "heading": "Debentures: for and against",
+     "body_md": "",
+     "bullets": [],
+     "columns": [
+      "**For the company**\n\nNo dilution of control; interest saves tax; fixed cost allows trading on equity; redeemable when not needed.",
+      "**Against**\n\nFixed interest even in bad years; charge on assets limits further borrowing; repayment burden."
+     ],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "For",
+        "Against"
+       ],
+       "rows": [
+        [
+         "No dilution of control",
+         "Fixed interest even in losses"
+        ],
+        [
+         "Interest is tax-deductible",
+         "Assets are pledged"
+        ],
+        [
+         "Trading on equity",
+         "Repayment must be planned"
+        ]
+       ]
+      },
+      "alt": "Table of three advantages and three disadvantages of debentures to the company"
+     },
+     "math": [],
+     "narration": "Debentures keep control with the owners, and interest saves tax. When the business earns more than the interest rate, they raise returns to shareholders. But interest must be paid even in a loss year, pledged assets cannot back other loans, and the money must be repaid.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s07",
+     "layout": "example",
+     "heading": "Worked example 2: after-tax cost of debentures",
+     "body_md": "An imagined wire company issues 9 per cent debentures; tax is 25 per cent.",
+     "bullets": [
+      "Step 1: interest = amount × rate.",
+      "Step 2: tax saved = interest × tax rate.",
+      "Step 3: after-tax cost = net interest ÷ amount × 100."
+     ],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Step (imagined: Wardha Wires Ltd)",
+        "Working",
+        "Result"
+       ],
+       "rows": [
+        [
+         "Interest",
+         "20,00,000 × 0.09",
+         "₹1,80,000"
+        ],
+        [
+         "Tax saved at 25 per cent",
+         "1,80,000 × 0.25",
+         "₹45,000"
+        ],
+        [
+         "Net interest cost",
+         "1,80,000 − 45,000",
+         "₹1,35,000"
+        ],
+        [
+         "After-tax cost",
+         "1,35,000 ÷ 20,00,000 × 100",
+         "6.75 per cent"
+        ]
+       ]
+      },
+      "alt": "Worked table: twenty lakh rupees of nine per cent debentures cost one lakh eighty thousand rupees of interest; with tax at twenty-five per cent the net cost is one lakh thirty-five thousand rupees, an after-tax cost of six point seven five per cent",
+      "caption": "The tax saving on interest is why debt is cheaper than preference or equity capital."
+     },
+     "math": [],
+     "narration": "Twenty lakh rupees at nine per cent means one lakh eighty thousand rupees of interest. Because interest is deducted before tax, a quarter of it comes back as tax saved. The net cost is one lakh thirty five thousand rupees, or six point seven five per cent.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s08",
+     "layout": "check",
+     "heading": "Quick check: do lenders vote?",
+     "body_md": "True or false: debenture holders vote at general meetings.",
+     "bullets": [],
+     "visual": null,
+     "math": [],
+     "narration": "Are debenture holders owners or creditors?",
+     "check_question_id": "q_isc12commerce_ch03_049",
+     "audio": null
+    },
+    {
+     "id": "s09",
+     "layout": "concept",
+     "heading": "Shares versus debentures",
+     "body_md": "",
+     "bullets": [],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Basis",
+        "Shares",
+        "Debentures"
+       ],
+       "rows": [
+        [
+         "Status of holder",
+         "Owner",
+         "Creditor"
+        ],
+        [
+         "Return",
+         "Dividend; varies (fixed for preference)",
+         "Interest; fixed"
+        ],
+        [
+         "Payable in a loss year?",
+         "No",
+         "Yes"
+        ],
+        [
+         "Tax treatment",
+         "Dividend not deductible",
+         "Interest deductible"
+        ],
+        [
+         "Voting",
+         "Yes (restricted for preference)",
+         "No"
+        ],
+        [
+         "Security",
+         "None",
+         "Usually secured"
+        ],
+        [
+         "Repayment on winding up",
+         "After creditors",
+         "Before shareholders"
+        ]
+       ]
+      },
+      "alt": "Table distinguishing shares and debentures on status, return, loss-year payment, tax, voting, security and priority on winding up"
+     },
+     "math": [],
+     "narration": "Shareholders are owners; debenture holders are creditors. Shareholders get dividends, which may vary; debenture holders get fixed interest, even in a loss year. Interest saves tax, dividends do not. Shareholders vote; debenture holders do not. Debentures are usually secured and are repaid first on winding up.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s10",
+     "layout": "concept",
+     "heading": "Loans from banks and financial institutions",
+     "body_md": "**Term loans** run for more than a year, are repaid in **instalments** and are usually **secured**. Financial institutions also offer **advice**.",
+     "bullets": [],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Advantages",
+        "Disadvantages"
+       ],
+       "rows": [
+        [
+         "Long-term funds without public issue",
+         "Security (mortgage) usually required"
+        ],
+        [
+         "Confidential: no prospectus",
+         "Lengthy appraisal and paperwork"
+        ],
+        [
+         "No dilution of control",
+         "Restrictive conditions (nominee director, dividend limits)"
+        ],
+        [
+         "Repayment spread in instalments",
+         "Fixed interest and instalments even in bad years"
+        ],
+        [
+         "Institutions add technical advice; available in depressed markets",
+         ""
+        ]
+       ]
+      },
+      "alt": "Table of advantages and disadvantages of term loans from commercial banks and financial institutions"
+     },
+     "math": [],
+     "narration": "Banks and specialised financial institutions give term loans for projects. Loans are private, so plans stay confidential, and they bring no new owners. Institutions often add technical advice and lend even when share markets are weak. But they want security, careful appraisal and sometimes a director on the board.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s11",
+     "layout": "check",
+     "heading": "Quick check: keeping plans private",
+     "body_md": "A company wants long-term funds without publishing a prospectus. Why does a term loan suit it?",
+     "bullets": [],
+     "visual": null,
+     "math": [],
+     "narration": "Who learns about the company's plans in a loan?",
+     "check_question_id": "q_isc12commerce_ch03_056",
+     "audio": null
+    },
+    {
+     "id": "s12",
+     "layout": "diagram",
+     "heading": "Choosing a long-term source",
+     "body_md": "",
+     "bullets": [],
+     "visual": {
+      "kind": "flow",
+      "spec": {
+       "direction": "TB",
+       "nodes": [
+        {
+         "id": "n1",
+         "label": "Need long-term funds"
+        },
+        {
+         "id": "n2",
+         "label": "Keep control?"
+        },
+        {
+         "id": "n3",
+         "label": "Steady cash flow and assets to pledge?"
+        },
+        {
+         "id": "n4",
+         "label": "Debentures or term loan"
+        },
+        {
+         "id": "n5",
+         "label": "Equity, or retained earnings if available"
+        }
+       ],
+       "edges": [
+        {
+         "from": "n1",
+         "to": "n2"
+        },
+        {
+         "from": "n2",
+         "to": "n3",
+         "label": "yes"
+        },
+        {
+         "from": "n3",
+         "to": "n4",
+         "label": "yes"
+        },
+        {
+         "from": "n2",
+         "to": "n5",
+         "label": "no"
+        },
+        {
+         "from": "n3",
+         "to": "n5",
+         "label": "no"
+        }
+       ]
+      },
+      "alt": "Decision flow: a company needing long-term funds asks whether it must keep control; if yes, and it has steady cash flow and assets to pledge, debentures or a term loan suit it; otherwise equity, or retained earnings if available",
+      "caption": "A simple way to reason about the choice; real decisions weigh several factors together."
+     },
+     "math": [],
+     "narration": "Here is one way to reason. If owners must keep control, and the company has steady cash flow and assets to pledge, debentures or a term loan suit it. If not, equity is safer, and retained earnings are best of all when profits allow. Real decisions weigh cost, risk and control together.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s13",
+     "layout": "summary",
+     "heading": "Summary of Part 2",
+     "body_md": "",
+     "bullets": [],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Idea",
+        "Key point"
+       ],
+       "rows": [
+        [
+         "Retained earnings",
+         "Ploughed-back profit; cheap and permanent, but uncertain"
+        ],
+        [
+         "Debentures",
+         "Debt; fixed interest; secured, convertible, redeemable, registered kinds"
+        ],
+        [
+         "Shares vs debentures",
+         "Owner vs creditor; dividend vs interest"
+        ],
+        [
+         "Term loans",
+         "Private, long-term; security and conditions"
+        ]
+       ]
+      },
+      "alt": "Summary table of Part 2: retained earnings, debentures, shares versus debentures and term loans"
+     },
+     "math": [],
+     "narration": "To sum up. Retained earnings are cheap and permanent but uncertain. Debentures are debt with fixed interest, in several kinds. Shareholders own; debenture holders lend. Term loans are private and long term, but need security and come with conditions.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s14",
+     "layout": "exam-tips",
+     "heading": "Exam tips",
+     "body_md": "",
+     "bullets": [
+      "Say **owner** or **creditor** in every shares-versus-debentures answer.",
+      "Name debenture kinds **by basis**: security, repayment, conversion, registration.",
+      "For loans, mention **security** and **restrictive conditions** as drawbacks.",
+      "In numericals, remember that interest saves **tax**; dividends do not."
+     ],
+     "visual": {
+      "kind": "flow",
+      "spec": {
+       "direction": "LR",
+       "nodes": [
+        {
+         "id": "n1",
+         "label": "Spot the clue"
+        },
+        {
+         "id": "n2",
+         "label": "Name the source or type"
+        },
+        {
+         "id": "n3",
+         "label": "Explain why"
+        }
+       ],
+       "edges": [
+        {
+         "from": "n1",
+         "to": "n2"
+        },
+        {
+         "from": "n2",
+         "to": "n3"
+        }
+       ]
+      },
+      "alt": "Three steps for case questions: spot the clue, name the source or type, and explain why"
+     },
+     "math": [],
+     "narration": "Final tips. Always state who is an owner and who is a creditor. Classify debentures basis by basis. Remember security and conditions as the price of a loan. And in any cost calculation, let interest, but not dividends, reduce tax.",
+     "check_question_id": null,
+     "audio": null
+    }
+   ],
+   "status": "draft",
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  }
+ ],
+ "notes": {
+  "unit": "isc-12-commerce-ch03",
+  "version": 1,
+  "title": "Long-term Sources of Funds for a Joint Stock Company — notes",
+  "language": "en",
+  "sections": [
+   {
+    "heading": "1. Equity shares",
+    "body_md": "**Equity shares** represent ownership of a company. **Features:** ownership and voting rights; residual claim on income and assets; dividend not fixed; permanent capital (repaid only on winding up, apart from a buy-back); limited liability; highest risk.\n\n**Advantages to the company:** no fixed burden of dividend; permanent capital; no charge on assets; a strong equity base improves creditworthiness; suits investors willing to take risk.\n\n**Disadvantages:** dilution of control; costlier than debt (higher expected return, dividend not tax-deductible); high floatation cost and formalities; risk of over-capitalisation; may encourage speculation in the shares.",
+    "key_terms": [
+     {
+      "term": "Equity share",
+      "definition_md": "A share giving ownership, votes and a residual claim."
+     },
+     {
+      "term": "Residual claim",
+      "definition_md": "The right to what remains after all prior claims are met."
+     },
+     {
+      "term": "Floatation cost",
+      "definition_md": "Cost of issuing securities: fees, printing, advertising, underwriting."
+     }
+    ],
+    "formulas": [],
+    "visual": {
+     "kind": "svg",
+     "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 560 270\" role=\"img\" aria-label=\"Tree diagram: long-term funds split into owners' funds (equity shares, preference shares, retained earnings; bonus, rights, ESOP, sweat equity and QIP are ways of issuing shares) and borrowed funds (debentures, term loans from banks, loans from financial institutions)\" font-family=\"sans-serif\" font-size=\"14\" fill=\"none\"><title>Tree diagram: long-term funds split into owners' funds (equity shares, preference shares, retained earnings; bonus, rights, ESOP, sweat equity and QIP are ways of issuing shares) and borrowed funds (debentures, term loans from banks, loans from financial institutions)</title><rect x=\"200\" y=\"15\" width=\"160\" height=\"44\" rx=\"8\" fill=\"var(--diagram-accent)\" fill-opacity=\"0.16\" stroke=\"var(--diagram-accent)\" stroke-width=\"1.5\"/><text x=\"280\" y=\"37\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"14\" font-weight=\"bold\">Long-term funds</text><rect x=\"30\" y=\"95\" width=\"220\" height=\"44\" rx=\"8\" fill=\"var(--diagram-green)\" fill-opacity=\"0.14\" stroke=\"var(--diagram-green)\" stroke-width=\"1.5\"/><text x=\"140\" y=\"117\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"14\" font-weight=\"bold\">Owners' funds</text><rect x=\"310\" y=\"95\" width=\"220\" height=\"44\" rx=\"8\" fill=\"var(--diagram-blue)\" fill-opacity=\"0.12\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.5\"/><text x=\"420\" y=\"117\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"14\" font-weight=\"bold\">Borrowed funds</text><line x1=\"250\" y1=\"59\" x2=\"160\" y2=\"93\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"/><polygon points=\"160,93 166.83,85.61 170.01,94.03\" fill=\"currentColor\" stroke=\"none\"/><line x1=\"310\" y1=\"59\" x2=\"400\" y2=\"93\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"/><polygon points=\"400,93 389.99,94.03 393.17,85.61\" fill=\"currentColor\" stroke=\"none\"/><text x=\"140\" y=\"165\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"13\">Equity shares</text><text x=\"140\" y=\"187\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"13\">Preference shares</text><text x=\"140\" y=\"209\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"13\">Retained earnings</text><text x=\"140\" y=\"231\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">(bonus, rights, ESOP, sweat, QIP</text><text x=\"140\" y=\"249\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">are ways of issuing shares)</text><text x=\"420\" y=\"165\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"13\">Debentures</text><text x=\"420\" y=\"187\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"13\">Term loans from banks</text><text x=\"420\" y=\"209\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"13\">Loans from financial institutions</text></svg>",
+     "alt": "Tree diagram: long-term funds split into owners' funds (equity shares, preference shares, retained earnings; bonus, rights, ESOP, sweat equity and QIP are ways of issuing shares) and borrowed funds (debentures, term loans from banks, loans from financial institutions)",
+     "caption": "Every long-term source is either owners' money or borrowed money."
+    },
+    "visuals": [
+     {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Feature of equity shares",
+        "What it means"
+       ],
+       "rows": [
+        [
+         "Ownership and voting",
+         "Holders own the company and elect its directors"
+        ],
+        [
+         "Residual claim",
+         "Paid last, from what is left"
+        ],
+        [
+         "Variable dividend",
+         "Depends on profit and the board"
+        ],
+        [
+         "Permanent capital",
+         "Repaid only on winding up (or a buy-back)"
+        ],
+        [
+         "Highest risk, highest possible reward",
+         "Gains most in good years, loses most in bad"
+        ]
+       ]
+      },
+      "alt": "Table of five features of equity shares with their meanings"
+     },
+     {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Advantages to the company",
+        "Disadvantages to the company"
+       ],
+       "rows": [
+        [
+         "No fixed dividend burden",
+         "Dilutes control of existing owners"
+        ],
+        [
+         "Permanent capital",
+         "Costlier: investors expect more; no tax shield"
+        ],
+        [
+         "No charge on assets",
+         "High floatation cost and long formalities"
+        ],
+        [
+         "Strengthens borrowing power",
+         "Risk of over-capitalisation"
+        ]
+       ]
+      },
+      "alt": "Table of four advantages and four disadvantages of equity shares to the issuing company"
+     }
+    ],
+    "topic_ids": [
+     "isc-12-commerce-ch03-t01"
+    ]
+   },
+   {
+    "heading": "2. Preference shares",
+    "body_md": "**Preference shares** carry a preferential right to a **fixed dividend** and to **return of capital** on winding up, before equity. Their **voting rights are restricted** to matters directly affecting them, but extend to all resolutions if their dividend is unpaid for two years or more (Companies Act, 2013).\n\n**Types:** cumulative / non-cumulative; participating / non-participating; convertible / non-convertible; redeemable. Under the Companies Act, 2013 a company may **not** issue irredeemable preference shares; they must be redeemed, normally within twenty years.\n\n**Advantages to the company:** no dilution of control; fixed dividend allows trading on equity; no charge on assets; attracts cautious investors.\n**Disadvantages:** dividend is not tax-deductible, so costlier than debt; arrears burden on cumulative shares; fixed dividend reduces what is left for equity.\n\n**Equity versus preference:** dividend (variable / fixed); priority (last / first); voting (full / restricted); risk (high / lower); redemption (no / yes); arrears (none / possible).",
+    "key_terms": [
+     {
+      "term": "Cumulative preference share",
+      "definition_md": "Unpaid dividends accumulate as arrears."
+     },
+     {
+      "term": "Participating preference share",
+      "definition_md": "Shares surplus profit beyond its fixed dividend."
+     },
+     {
+      "term": "Convertible preference share",
+      "definition_md": "Can be converted into equity after a stated period."
+     }
+    ],
+    "formulas": [],
+    "visual": {
+     "kind": "table",
+     "spec": {
+      "headers": [
+       "Pair of types",
+       "Difference"
+      ],
+      "rows": [
+       [
+        "Cumulative / non-cumulative",
+        "Unpaid dividend carries forward / lapses"
+       ],
+       [
+        "Participating / non-participating",
+        "Shares surplus profit / fixed dividend only"
+       ],
+       [
+        "Convertible / non-convertible",
+        "Can become equity / cannot"
+       ],
+       [
+        "Redeemable",
+        "Repaid after a period; Indian companies may issue only redeemable preference shares"
+       ]
+      ]
+     },
+     "alt": "Table of the types of preference shares in pairs with the difference between each pair; Indian companies may now issue only redeemable preference shares"
+    },
+    "visuals": [
+     {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Basis",
+        "Equity shares",
+        "Preference shares"
+       ],
+       "rows": [
+        [
+         "Dividend",
+         "Varies with profit",
+         "Fixed rate"
+        ],
+        [
+         "Priority",
+         "Last",
+         "Before equity"
+        ],
+        [
+         "Voting",
+         "Full",
+         "Restricted"
+        ],
+        [
+         "Risk",
+         "High",
+         "Lower"
+        ],
+        [
+         "Repayment",
+         "Only on winding up (or buy-back)",
+         "Redeemable"
+        ],
+        [
+         "Arrears",
+         "None",
+         "Possible if cumulative"
+        ]
+       ]
+      },
+      "alt": "Table distinguishing equity and preference shares on dividend, priority, voting, risk, repayment and arrears"
+     },
+     {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Year (imagined)",
+        "Dividend due (₹)",
+        "Paid (₹)",
+        "Arrears carried (₹)"
+       ],
+       "rows": [
+        [
+         "Year 1",
+         "80,000",
+         "0",
+         "80,000"
+        ],
+        [
+         "Year 2",
+         "80,000",
+         "0",
+         "1,60,000"
+        ],
+        [
+         "Year 3",
+         "80,000",
+         "2,40,000",
+         "0"
+        ]
+       ]
+      },
+      "alt": "Worked table for imagined cumulative preference shares: eighty thousand rupees due each year; nothing paid in years one and two, so arrears build to one lakh sixty thousand; in year three two lakh forty thousand must be paid before any equity dividend",
+      "caption": "Imagined: Bhadra Batteries Ltd, 10,000 cumulative 8 per cent preference shares of ₹100."
+     }
+    ],
+    "topic_ids": [
+     "isc-12-commerce-ch03-t02"
+    ]
+   },
+   {
+    "heading": "3. Bonus shares, rights issue, ESOP, sweat equity and QIP",
+    "body_md": "- **Bonus shares:** free shares to existing shareholders by **capitalising reserves** (free reserves or securities premium). No fresh funds.\n- **Rights issue:** new shares offered to **existing shareholders in proportion** to their holdings, usually below market price; the right can be **renounced**.\n- **ESOP (employee stock option plan):** an option to employees to buy shares at a **pre-determined price** after a vesting period.\n- **Sweat equity shares:** shares issued to directors or employees at a discount or **for non-cash consideration** such as know-how, intellectual property or value addition.\n- **QIP (qualified institutional placement):** a **listed** company issues shares or convertible securities to **qualified institutional buyers** (mutual funds, banks, insurers and similar), quickly and without a full public issue.\n\n**Bonus versus rights:** funds (none / fresh cash); payment (free / paid); renunciation (not possible / possible); source (reserves / shareholders' cash).",
+    "key_terms": [
+     {
+      "term": "Bonus issue",
+      "definition_md": "Free shares from reserves to existing shareholders."
+     },
+     {
+      "term": "Rights issue",
+      "definition_md": "Paid offer of new shares to existing shareholders in proportion."
+     },
+     {
+      "term": "QIP",
+      "definition_md": "Placement of securities by a listed company with institutional buyers."
+     }
+    ],
+    "formulas": [],
+    "visual": {
+     "kind": "table",
+     "spec": {
+      "headers": [
+       "Method",
+       "Who gets the shares",
+       "Fresh funds?"
+      ],
+      "rows": [
+       [
+        "Bonus issue",
+        "Existing shareholders, free, from reserves",
+        "No"
+       ],
+       [
+        "Rights issue",
+        "Existing shareholders, in proportion, usually below market price; can be renounced",
+        "Yes"
+       ],
+       [
+        "ESOP",
+        "Employees, as an option at a pre-set price after a vesting period",
+        "Yes, when exercised"
+       ],
+       [
+        "Sweat equity",
+        "Directors or employees, for know-how or intellectual property",
+        "Usually no cash"
+       ],
+       [
+        "QIP",
+        "Qualified institutional buyers, by a listed company",
+        "Yes, quickly"
+       ]
+      ]
+     },
+     "alt": "Table of five methods of issuing shares, who receives the shares and whether fresh funds come in"
+    },
+    "visuals": [
+     {
+      "kind": "svg",
+      "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 560 230\" role=\"img\" aria-label=\"Two flows: in a bonus issue, reserves already owned by the company are capitalised into share capital with no cash; in a rights issue, shareholders' cash flows into the company's bank as fresh funds\" font-family=\"sans-serif\" font-size=\"14\" fill=\"none\"><title>Two flows: in a bonus issue, reserves already owned by the company are capitalised into share capital with no cash; in a rights issue, shareholders' cash flows into the company's bank as fresh funds</title><rect x=\"20\" y=\"30\" width=\"150\" height=\"60\" rx=\"8\" fill=\"var(--diagram-green)\" fill-opacity=\"0.14\" stroke=\"var(--diagram-green)\" stroke-width=\"1.5\"/><text x=\"95\" y=\"52\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"14\" font-weight=\"bold\">Reserves</text><text x=\"95\" y=\"72\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">(already owned)</text><rect x=\"390\" y=\"30\" width=\"150\" height=\"60\" rx=\"8\" fill=\"var(--diagram-accent)\" fill-opacity=\"0.16\" stroke=\"var(--diagram-accent)\" stroke-width=\"1.5\"/><text x=\"465\" y=\"60\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"14\" font-weight=\"bold\">Share capital</text><line x1=\"172\" y1=\"60\" x2=\"386\" y2=\"60\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><polygon points=\"386,60 377,64.5 377,55.5\" fill=\"currentColor\" stroke=\"none\"/><text x=\"280\" y=\"45\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"13\">Bonus: capitalised, no cash</text><rect x=\"20\" y=\"140\" width=\"150\" height=\"60\" rx=\"8\" fill=\"var(--diagram-blue)\" fill-opacity=\"0.12\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.5\"/><text x=\"95\" y=\"162\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"13\" font-weight=\"bold\">Shareholders' cash</text><text x=\"95\" y=\"182\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">(new money)</text><rect x=\"390\" y=\"140\" width=\"150\" height=\"60\" rx=\"8\" fill=\"var(--diagram-accent)\" fill-opacity=\"0.16\" stroke=\"var(--diagram-accent)\" stroke-width=\"1.5\"/><text x=\"465\" y=\"170\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"14\" font-weight=\"bold\">Company's bank</text><line x1=\"172\" y1=\"170\" x2=\"386\" y2=\"170\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><polygon points=\"386,170 377,174.5 377,165.5\" fill=\"currentColor\" stroke=\"none\"/><text x=\"280\" y=\"155\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"13\">Rights: paid, fresh funds</text></svg>",
+      "alt": "Two flows: in a bonus issue, reserves already owned by the company are capitalised into share capital with no cash; in a rights issue, shareholders' cash flows into the company's bank as fresh funds",
+      "caption": "A bonus issue moves reserves; a rights issue brings in money."
+     },
+     {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Imagined holder",
+        "Offer",
+        "Working",
+        "Result"
+       ],
+       "rows": [
+        [
+         "Asha: 500 shares of Pushkar Prints Ltd",
+         "Bonus 2:5",
+         "500 × 2 ÷ 5",
+         "200 free shares"
+        ],
+        [
+         "Farhan: 400 shares of Indravati Infra Ltd",
+         "Rights 1:4 at ₹60",
+         "400 ÷ 4 = 100; 100 × ₹60",
+         "Pays ₹6,000"
+        ]
+       ]
+      },
+      "alt": "Worked table: a holder of five hundred shares receives two hundred free bonus shares in the ratio two to five; a holder of four hundred shares in a one-for-four rights issue at sixty rupees gets one hundred shares and pays six thousand rupees",
+      "caption": "Bonus: free, no cash to the company. Rights: paid, fresh cash to the company."
+     }
+    ],
+    "topic_ids": [
+     "isc-12-commerce-ch03-t03"
+    ]
+   },
+   {
+    "heading": "4. Retained earnings",
+    "body_md": "**Retained earnings** (ploughing back of profits) are the part of net profit kept in the business. It is an **internal** source of owners' funds.\n\n**Merits:** permanent; no floatation cost; no dilution of control; improves credit standing; provides a cushion that helps keep dividends steady.\n**Demerits:** low dividends may cause dissatisfaction; uncertain, because it depends on profit; opportunity cost may be ignored, leading to careless use; possible misuse by management.",
+    "key_terms": [
+     {
+      "term": "Ploughing back",
+      "definition_md": "Reinvesting profit in the business instead of distributing it."
+     }
+    ],
+    "formulas": [],
+    "visual": {
+     "kind": "table",
+     "spec": {
+      "headers": [
+       "Merits",
+       "Demerits"
+      ],
+      "rows": [
+       [
+        "Permanent; no repayment",
+        "Lower dividends may upset shareholders"
+       ],
+       [
+        "No floatation cost",
+        "Amount uncertain; depends on profit"
+       ],
+       [
+        "No dilution of control",
+        "Opportunity cost often ignored"
+       ],
+       [
+        "Builds creditworthiness and a cushion",
+        "May be misused by management"
+       ]
+      ]
+     },
+     "alt": "Table of four merits and four demerits of retained earnings"
+    },
+    "visuals": [
+     {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Item (imagined: Hooghly Hosiery Ltd)",
+        "₹"
+       ],
+       "rows": [
+        [
+         "Profit after tax",
+         "50,00,000"
+        ],
+        [
+         "Dividend at 40 per cent payout",
+         "20,00,000"
+        ],
+        [
+         "Ploughed back (retained)",
+         "30,00,000"
+        ]
+       ]
+      },
+      "alt": "Worked table: an imagined company with profit after tax of fifty lakh rupees pays forty per cent as dividend, twenty lakh rupees, and ploughs back thirty lakh rupees",
+      "caption": "Retained = profit after tax − dividend."
+     }
+    ],
+    "topic_ids": [
+     "isc-12-commerce-ch03-t04"
+    ]
+   },
+   {
+    "heading": "5. Debentures",
+    "body_md": "A **debenture** is a written acknowledgement of **debt** by a company, carrying a **fixed rate of interest**. Holders are **creditors** with no vote.\n\n**Kinds:** secured / unsecured; redeemable / irredeemable; fully convertible / partly convertible / non-convertible; registered / bearer.\n\n**Advantages to the company:** no dilution of control; interest is tax-deductible, so cheaper; fixed cost permits trading on equity; can be redeemed when funds are no longer needed; suits cautious investors.\n**Disadvantages:** fixed interest burden even in a loss year; charge on assets reduces further borrowing capacity; redemption must be provided for; risky when earnings are unstable.\n\n**Shares versus debentures:** status (owner / creditor); return (dividend / interest); loss-year payment (no / yes); tax (not deductible / deductible); voting (yes / no); security (none / usually secured); priority on winding up (after creditors / before shareholders).",
+    "key_terms": [
+     {
+      "term": "Debenture",
+      "definition_md": "An acknowledgement of debt with fixed interest."
+     },
+     {
+      "term": "Secured debenture",
+      "definition_md": "Backed by a charge on the company's assets."
+     },
+     {
+      "term": "Convertible debenture",
+      "definition_md": "Can be converted into equity, wholly or partly."
+     }
+    ],
+    "formulas": [],
+    "visual": {
+     "kind": "table",
+     "spec": {
+      "headers": [
+       "Basis",
+       "Kinds"
+      ],
+      "rows": [
+       [
+        "Security",
+        "Secured (charge on assets) / unsecured (naked)"
+       ],
+       [
+        "Repayment",
+        "Redeemable (on a fixed date) / irredeemable"
+       ],
+       [
+        "Conversion",
+        "Fully convertible / partly convertible / non-convertible"
+       ],
+       [
+        "Registration",
+        "Registered (names recorded) / bearer (pass by delivery)"
+       ]
+      ]
+     },
+     "alt": "Table of kinds of debentures by security, repayment, conversion and registration"
+    },
+    "visuals": [
+     {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Basis",
+        "Shares",
+        "Debentures"
+       ],
+       "rows": [
+        [
+         "Status of holder",
+         "Owner",
+         "Creditor"
+        ],
+        [
+         "Return",
+         "Dividend; varies (fixed for preference)",
+         "Interest; fixed"
+        ],
+        [
+         "Payable in a loss year?",
+         "No",
+         "Yes"
+        ],
+        [
+         "Tax treatment",
+         "Dividend not deductible",
+         "Interest deductible"
+        ],
+        [
+         "Voting",
+         "Yes (restricted for preference)",
+         "No"
+        ],
+        [
+         "Security",
+         "None",
+         "Usually secured"
+        ],
+        [
+         "Repayment on winding up",
+         "After creditors",
+         "Before shareholders"
+        ]
+       ]
+      },
+      "alt": "Table distinguishing shares and debentures on status, return, loss-year payment, tax, voting, security and priority on winding up"
+     },
+     {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Step (imagined: Wardha Wires Ltd)",
+        "Working",
+        "Result"
+       ],
+       "rows": [
+        [
+         "Interest",
+         "20,00,000 × 0.09",
+         "₹1,80,000"
+        ],
+        [
+         "Tax saved at 25 per cent",
+         "1,80,000 × 0.25",
+         "₹45,000"
+        ],
+        [
+         "Net interest cost",
+         "1,80,000 − 45,000",
+         "₹1,35,000"
+        ],
+        [
+         "After-tax cost",
+         "1,35,000 ÷ 20,00,000 × 100",
+         "6.75 per cent"
+        ]
+       ]
+      },
+      "alt": "Worked table: twenty lakh rupees of nine per cent debentures cost one lakh eighty thousand rupees of interest; with tax at twenty-five per cent the net cost is one lakh thirty-five thousand rupees, an after-tax cost of six point seven five per cent",
+      "caption": "The tax saving on interest is why debt is cheaper than preference or equity capital."
+     }
+    ],
+    "topic_ids": [
+     "isc-12-commerce-ch03-t05"
+    ]
+   },
+   {
+    "heading": "6. Loans from commercial banks and financial institutions",
+    "body_md": "**Term loans** from commercial banks are given for more than a year, usually against security, and repaid in instalments. **Financial institutions** (development banks and state-level corporations) provide medium- and long-term project finance, often with technical and managerial advice.\n\n**Advantages:** long-term funds without a public issue; confidentiality; no dilution of control; flexible repayment in instalments; advice from institutions; available when markets are depressed.\n**Disadvantages:** security required; lengthy appraisal and documentation; restrictive conditions such as a nominee director or limits on dividends and further borrowing; fixed repayment burden.",
+    "key_terms": [
+     {
+      "term": "Term loan",
+      "definition_md": "A loan for more than a year, repaid in instalments."
+     },
+     {
+      "term": "Nominee director",
+      "definition_md": "A director appointed to a company's board by its lender."
+     }
+    ],
+    "formulas": [],
+    "visual": {
+     "kind": "table",
+     "spec": {
+      "headers": [
+       "Advantages",
+       "Disadvantages"
+      ],
+      "rows": [
+       [
+        "Long-term funds without public issue",
+        "Security (mortgage) usually required"
+       ],
+       [
+        "Confidential: no prospectus",
+        "Lengthy appraisal and paperwork"
+       ],
+       [
+        "No dilution of control",
+        "Restrictive conditions (nominee director, dividend limits)"
+       ],
+       [
+        "Repayment spread in instalments",
+        "Fixed interest and instalments even in bad years"
+       ],
+       [
+        "Institutions add technical advice; available in depressed markets",
+        ""
+       ]
+      ]
+     },
+     "alt": "Table of advantages and disadvantages of term loans from commercial banks and financial institutions"
+    },
+    "visuals": [
+     {
+      "kind": "flow",
+      "spec": {
+       "direction": "TB",
+       "nodes": [
+        {
+         "id": "n1",
+         "label": "Need long-term funds"
+        },
+        {
+         "id": "n2",
+         "label": "Keep control?"
+        },
+        {
+         "id": "n3",
+         "label": "Steady cash flow and assets to pledge?"
+        },
+        {
+         "id": "n4",
+         "label": "Debentures or term loan"
+        },
+        {
+         "id": "n5",
+         "label": "Equity, or retained earnings if available"
+        }
+       ],
+       "edges": [
+        {
+         "from": "n1",
+         "to": "n2"
+        },
+        {
+         "from": "n2",
+         "to": "n3",
+         "label": "yes"
+        },
+        {
+         "from": "n3",
+         "to": "n4",
+         "label": "yes"
+        },
+        {
+         "from": "n2",
+         "to": "n5",
+         "label": "no"
+        },
+        {
+         "from": "n3",
+         "to": "n5",
+         "label": "no"
+        }
+       ]
+      },
+      "alt": "Decision flow: a company needing long-term funds asks whether it must keep control; if yes, and it has steady cash flow and assets to pledge, debentures or a term loan suit it; otherwise equity, or retained earnings if available",
+      "caption": "A simple way to reason about the choice; real decisions weigh several factors together."
+     }
+    ],
+    "topic_ids": [
+     "isc-12-commerce-ch03-t06"
+    ]
+   }
+  ],
+  "exam_tips_md": "**Common mistakes**\n- Saying a bonus issue raises funds (it does not).\n- Giving preference shareholders full voting rights.\n- Calling debenture holders owners, or saying their interest depends on profit.\n- Forgetting that interest, unlike dividend, is tax-deductible.\n- Calling retained earnings an external source.\n\n**How marks are usually awarded**\n- 1 mark: correct option, term or figure.\n- 2–3 marks: each point named and explained, or each basis of distinction stated for both sides.\n- 5 marks: parts answered separately; distinctions set out basis by basis; reasons tied to facts in the case.",
+  "status": "draft",
+  "provenance": {
+   "origin": "human",
+   "template_version": null,
+   "model": null,
+   "generated_at": "2026-10-31",
+   "author": "claude-opus-5-5 (subject-producer)"
+  }
+ },
+ "flashcards": {
+  "unit": "isc-12-commerce-ch03",
+  "version": 1,
+  "language": "en",
+  "cards": [
+   {
+    "id": "f01",
+    "front_md": "**Equity shareholders** are…",
+    "back_md": "Owners: voting rights, residual claim, variable dividend.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch03-t01"
+   },
+   {
+    "id": "f02",
+    "front_md": "Why is equity \"permanent capital\"?",
+    "back_md": "It is repaid only on winding up (apart from a buy-back).",
+    "tag": "concept",
+    "topic_id": "isc-12-commerce-ch03-t01"
+   },
+   {
+    "id": "f03",
+    "front_md": "Two drawbacks of equity for a company",
+    "back_md": "Dilutes control; costly (no tax shield, high floatation cost).",
+    "tag": "exam-tip",
+    "topic_id": "isc-12-commerce-ch03-t01"
+   },
+   {
+    "id": "f04",
+    "front_md": "**Floatation cost**",
+    "back_md": "Cost of issuing securities: fees, printing, advertising, underwriting.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch03-t01"
+   },
+   {
+    "id": "f05",
+    "front_md": "Two preferences of **preference shares**",
+    "back_md": "Fixed dividend first; capital repaid first on winding up.",
+    "tag": "fact",
+    "topic_id": "isc-12-commerce-ch03-t02"
+   },
+   {
+    "id": "f06",
+    "front_md": "When do preference shareholders vote on all matters?",
+    "back_md": "When their dividend is unpaid for two years or more.",
+    "tag": "fact",
+    "topic_id": "isc-12-commerce-ch03-t02"
+   },
+   {
+    "id": "f07",
+    "front_md": "**Cumulative** preference shares",
+    "back_md": "Unpaid dividends become arrears, paid before equity.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch03-t02"
+   },
+   {
+    "id": "f08",
+    "front_md": "**Participating** preference shares",
+    "back_md": "Share surplus profit beyond the fixed rate.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch03-t02"
+   },
+   {
+    "id": "f09",
+    "front_md": "Can an Indian company issue irredeemable preference shares?",
+    "back_md": "No — under the Companies Act, 2013 they must be redeemable.",
+    "tag": "fact",
+    "topic_id": "isc-12-commerce-ch03-t02"
+   },
+   {
+    "id": "f10",
+    "front_md": "Equity vs preference: dividend",
+    "back_md": "Variable vs fixed rate.",
+    "tag": "exam-tip",
+    "topic_id": "isc-12-commerce-ch03-t02"
+   },
+   {
+    "id": "f11",
+    "front_md": "**Bonus shares**",
+    "back_md": "Free shares to existing holders from reserves; no fresh funds.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch03-t03"
+   },
+   {
+    "id": "f12",
+    "front_md": "**Rights issue**",
+    "back_md": "Paid offer to existing holders in proportion; can be renounced.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch03-t03"
+   },
+   {
+    "id": "f13",
+    "front_md": "**ESOP**",
+    "back_md": "Option for employees to buy shares at a set price after vesting.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch03-t03"
+   },
+   {
+    "id": "f14",
+    "front_md": "**Sweat equity**",
+    "back_md": "Shares for know-how or intellectual property, at a discount or without cash.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch03-t03"
+   },
+   {
+    "id": "f15",
+    "front_md": "**QIP**",
+    "back_md": "Listed company places securities with qualified institutional buyers quickly.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch03-t03"
+   },
+   {
+    "id": "f16",
+    "front_md": "Bonus vs rights: funds",
+    "back_md": "Bonus raises none; rights raises fresh cash.",
+    "tag": "exam-tip",
+    "topic_id": "isc-12-commerce-ch03-t03"
+   },
+   {
+    "id": "f17",
+    "front_md": "Bonus 2:5 on 500 shares",
+    "back_md": "200 free shares.",
+    "tag": "formula",
+    "topic_id": "isc-12-commerce-ch03-t03"
+   },
+   {
+    "id": "f18",
+    "front_md": "**Retained earnings**",
+    "back_md": "Profit ploughed back; internal owners' funds.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch03-t04"
+   },
+   {
+    "id": "f19",
+    "front_md": "Merits of retained earnings",
+    "back_md": "Permanent, no floatation cost, no dilution, builds credit.",
+    "tag": "fact",
+    "topic_id": "isc-12-commerce-ch03-t04"
+   },
+   {
+    "id": "f20",
+    "front_md": "Demerits of retained earnings",
+    "back_md": "Unhappy shareholders, uncertain amount, opportunity cost ignored.",
+    "tag": "fact",
+    "topic_id": "isc-12-commerce-ch03-t04"
+   },
+   {
+    "id": "f21",
+    "front_md": "**Debenture**",
+    "back_md": "Acknowledgement of debt with fixed interest; holder is a creditor.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch03-t05"
+   },
+   {
+    "id": "f22",
+    "front_md": "Four bases for kinds of debentures",
+    "back_md": "Security, repayment, conversion, registration.",
+    "tag": "exam-tip",
+    "topic_id": "isc-12-commerce-ch03-t05"
+   },
+   {
+    "id": "f23",
+    "front_md": "**Partly convertible** debenture",
+    "back_md": "Part becomes equity; the rest is repaid in cash.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch03-t05"
+   },
+   {
+    "id": "f24",
+    "front_md": "**Bearer** debenture",
+    "back_md": "Transferable by mere delivery.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch03-t05"
+   },
+   {
+    "id": "f25",
+    "front_md": "Shares vs debentures: status",
+    "back_md": "Owner vs creditor.",
+    "tag": "exam-tip",
+    "topic_id": "isc-12-commerce-ch03-t05"
+   },
+   {
+    "id": "f26",
+    "front_md": "Why is debt cheaper than preference capital?",
+    "back_md": "Interest is tax-deductible; preference dividend is not.",
+    "tag": "concept",
+    "topic_id": "isc-12-commerce-ch03-t05"
+   },
+   {
+    "id": "f27",
+    "front_md": "After-tax cost of 9% debt at 25% tax",
+    "back_md": "9 × 0.75 = 6.75 per cent.",
+    "tag": "formula",
+    "topic_id": "isc-12-commerce-ch03-t05"
+   },
+   {
+    "id": "f28",
+    "front_md": "**Term loan**",
+    "back_md": "Loan for over a year, repaid in instalments, usually secured.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch03-t06"
+   },
+   {
+    "id": "f29",
+    "front_md": "Extra benefit of loans from financial institutions",
+    "back_md": "Technical and managerial advice.",
+    "tag": "fact",
+    "topic_id": "isc-12-commerce-ch03-t06"
+   },
+   {
+    "id": "f30",
+    "front_md": "Drawbacks of institutional loans",
+    "back_md": "Security, long procedure, restrictive conditions, fixed repayments.",
+    "tag": "exam-tip",
+    "topic_id": "isc-12-commerce-ch03-t06"
+   }
+  ],
+  "status": "draft",
+  "provenance": {
+   "origin": "human",
+   "template_version": null,
+   "model": null,
+   "generated_at": "2026-10-31",
+   "author": "claude-opus-5-5 (subject-producer)"
+  }
+ },
+ "questions": [
+  {
+   "id": "q_isc12commerce_ch03_001",
+   "unit": "isc-12-commerce-ch03",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Equity shareholders of a company are best described as its",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "creditors, who receive fixed interest"
+    },
+    {
+     "id": "b",
+     "text_md": "owners, who bear the greatest risk and enjoy voting rights"
+    },
+    {
+     "id": "c",
+     "text_md": "customers, who buy its products on credit"
+    },
+    {
+     "id": "d",
+     "text_md": "employees, who receive a fixed salary"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (b)** owners, who bear the greatest risk and enjoy voting rights. Equity shareholders own the company, vote on its affairs and take whatever is left after all others are paid.",
+   "marks": 1,
+   "difficulty": 1,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch03-t01"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "b"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (b)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch03_002",
+   "unit": "isc-12-commerce-ch03",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Periyar Polymers Ltd, an imagined company in Kochi, is wound up. After paying its lenders, creditors and preference shareholders, ₹40 lakh remains. This ₹40 lakh goes to the",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "debenture holders, as extra interest"
+    },
+    {
+     "id": "b",
+     "text_md": "preference shareholders, as a bonus"
+    },
+    {
+     "id": "c",
+     "text_md": "government, as tax"
+    },
+    {
+     "id": "d",
+     "text_md": "equity shareholders, who have a residual claim"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (d)** equity shareholders, who have a residual claim. Equity shareholders are paid last, from whatever is left: their claim on income and assets is residual.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch03-t01"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "d"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (d)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch03_003",
+   "unit": "isc-12-commerce-ch03",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "In a drought year, Sutlej Seeds Ltd (imagined) earns very little profit and pays no dividend to its equity shareholders. Which feature of equity shares allows this?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "There is no fixed obligation to pay a dividend"
+    },
+    {
+     "id": "b",
+     "text_md": "Equity capital is refunded every year"
+    },
+    {
+     "id": "c",
+     "text_md": "Equity shareholders have no voting rights"
+    },
+    {
+     "id": "d",
+     "text_md": "Dividend on equity is tax-deductible"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (a)** There is no fixed obligation to pay a dividend. Equity dividend depends on profit and the board's decision; there is no fixed charge, which is an advantage to the company in bad years.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch03-t01"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (a)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch03_004",
+   "unit": "isc-12-commerce-ch03",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Which of these is a **disadvantage** of raising funds through a fresh issue of equity shares?\nP. It dilutes the control of existing shareholders.\nQ. It creates a charge on the company's assets.\nR. Equity dividend is not a tax-deductible expense.\nS. It must be repaid on a fixed date.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Q and S"
+    },
+    {
+     "id": "b",
+     "text_md": "P, Q and R"
+    },
+    {
+     "id": "c",
+     "text_md": "P and R"
+    },
+    {
+     "id": "d",
+     "text_md": "R and S"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (c)** P and R. New equity spreads votes over more owners, and dividend gives no tax saving. Equity creates no charge on assets and is never repaid on a fixed date.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch03-t01"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "c"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (c)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch03_005",
+   "unit": "isc-12-commerce-ch03",
+   "language": "en",
+   "type": "assertion-reason",
+   "stem_md": "**Assertion (A):** Equity share capital is a source of permanent capital.\n\n**Reason (R):** Equity capital is returned to shareholders only when the company is wound up.\n\nChoose the correct option.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Both Assertion and Reason are true and Reason is the correct explanation for Assertion."
+    },
+    {
+     "id": "b",
+     "text_md": "Both Assertion and Reason are true but Reason is not the correct explanation for Assertion."
+    },
+    {
+     "id": "c",
+     "text_md": "Assertion is true and Reason is false."
+    },
+    {
+     "id": "d",
+     "text_md": "Both Assertion and Reason are false."
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (a)** Both are true, and because equity is repaid only on winding up (apart from a buy-back), it stays with the company permanently.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch03-t01"
+   ],
+   "expected_time_sec": 75,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (a)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch03_006",
+   "unit": "isc-12-commerce-ch03",
+   "language": "en",
+   "type": "true-false",
+   "stem_md": "A large equity base makes it easier for a company to borrow, because lenders feel safer when owners have put in substantial funds.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "True"
+    },
+    {
+     "id": "b",
+     "text_md": "False"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**True.** True. Equity acts as a cushion for lenders, improving the company's creditworthiness.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch03-t01"
+   ],
+   "expected_time_sec": 40,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct choice (True)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch03_007",
+   "unit": "isc-12-commerce-ch03",
+   "language": "en",
+   "type": "fill-blank",
+   "stem_md": "Because they are paid only after all other claims are met, equity shareholders are said to have a ___ claim on the income and assets of the company.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Their claim is residual: it comes last, after lenders and preference shareholders.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch03-t01"
+   ],
+   "expected_time_sec": 45,
+   "assets": [],
+   "answer": {
+    "blanks": [
+     {
+      "accepted": [
+       "residual",
+       "residuary",
+       "last"
+      ]
+     }
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Blank 1: residual",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch03_008",
+   "unit": "isc-12-commerce-ch03",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Mahi Motorcycles Ltd (imagined) has 3 lakh equity shareholders. Explain two features of the shares they hold that set them apart from lenders.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Two features (ownership and voting, residual claim, variable dividend, permanent capital, high risk), each contrasted with lenders.",
+   "marks": 2,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch03-t01"
+   ],
+   "expected_time_sec": 150,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Voting rights:** equity shareholders **elect directors** and vote on major decisions, which lenders cannot do.\n2. **Variable return:** their dividend **depends on profit**; lenders receive a **fixed interest** whatever the profit."
+   },
+   "word_limit": {
+    "min": 30,
+    "max": 50
+   },
+   "marking_scheme": [
+    {
+     "step": "First feature",
+     "marks": 1
+    },
+    {
+     "step": "Second feature",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch03_009",
+   "unit": "isc-12-commerce-ch03",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Netravati Networks Ltd, an imagined Mangaluru software company with uncertain early profits, plans to raise ₹50 crore by issuing equity shares. Explain three advantages of this choice for the company.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Three advantages (no fixed burden, permanent, no charge, creditworthiness, appeal to risk-takers) applied to the software firm.",
+   "marks": 3,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch03-t01"
+   ],
+   "expected_time_sec": 210,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **No fixed burden:** with **uncertain profits**, it need not pay dividends in lean years, unlike interest.\n2. **Permanent capital:** the ₹50 crore need **not be repaid**, so long projects can be funded safely.\n3. **No charge on assets:** its assets stay **free**, so it can later pledge them to raise loans."
+   },
+   "word_limit": {
+    "min": 50,
+    "max": 75
+   },
+   "marking_scheme": [
+    {
+     "step": "First advantage applied",
+     "marks": 1
+    },
+    {
+     "step": "Second advantage applied",
+     "marks": 1
+    },
+    {
+     "step": "Third advantage applied",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch03_010",
+   "unit": "isc-12-commerce-ch03",
+   "language": "en",
+   "type": "short",
+   "stem_md": "The promoters of Krishna Kitchenware Ltd (imagined) hold 55 per cent of its shares. They are told that a new equity issue of ₹30 crore will cost about 6 per cent in fees and advertising. Explain three drawbacks of equity they should weigh.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Three drawbacks (dilution, floatation cost, high cost and no tax shield, delay and formalities) linked to the case.",
+   "marks": 3,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch03-t01"
+   ],
+   "expected_time_sec": 210,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Dilution of control:** new shares may push the promoters' **55 per cent stake** below majority.\n2. **High floatation cost:** about **6 per cent** of the issue goes in fees and advertising.\n3. **Costlier than debt:** equity holders expect a **higher return**, and dividend gives **no tax saving**."
+   },
+   "word_limit": {
+    "min": 50,
+    "max": 75
+   },
+   "marking_scheme": [
+    {
+     "step": "Dilution",
+     "marks": 1
+    },
+    {
+     "step": "Floatation cost",
+     "marks": 1
+    },
+    {
+     "step": "Cost and tax",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch03_011",
+   "unit": "isc-12-commerce-ch03",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Preference shares get \"preference\" over equity shares in respect of",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "voting on every resolution"
+    },
+    {
+     "id": "b",
+     "text_md": "appointment of the managing director"
+    },
+    {
+     "id": "c",
+     "text_md": "payment of a fixed dividend and return of capital on winding up"
+    },
+    {
+     "id": "d",
+     "text_md": "bonus shares issued by the company"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (c)** payment of a fixed dividend and return of capital on winding up. The two preferences are a fixed-rate dividend before any equity dividend, and repayment of capital before equity on winding up.",
+   "marks": 1,
+   "difficulty": 1,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch03-t02"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "c"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (c)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch03_012",
+   "unit": "isc-12-commerce-ch03",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Bhadra Batteries Ltd (imagined) could not pay the dividend on its preference shares for two years. In the third year the unpaid dividends must be paid in full before any equity dividend. Its preference shares are",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "cumulative"
+    },
+    {
+     "id": "b",
+     "text_md": "non-cumulative"
+    },
+    {
+     "id": "c",
+     "text_md": "participating"
+    },
+    {
+     "id": "d",
+     "text_md": "convertible"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (a)** cumulative. On cumulative preference shares, unpaid dividends accumulate as arrears and must be cleared before equity gets anything.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch03-t02"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (a)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch03_013",
+   "unit": "isc-12-commerce-ch03",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "In a very good year, Hooghly Hosiery Ltd (imagined) pays its preference holders their fixed 9 per cent and then an extra share of the surplus profit along with equity holders. These preference shares are",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "cumulative"
+    },
+    {
+     "id": "b",
+     "text_md": "redeemable"
+    },
+    {
+     "id": "c",
+     "text_md": "non-convertible"
+    },
+    {
+     "id": "d",
+     "text_md": "participating"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (d)** participating. Participating preference shares share in surplus profit (and sometimes surplus assets) beyond their fixed dividend.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch03-t02"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "d"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (d)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch03_014",
+   "unit": "isc-12-commerce-ch03",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Investors in Rann Renewables Ltd (imagined) hold preference shares that will turn into equity shares after five years. These are",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "redeemable preference shares"
+    },
+    {
+     "id": "b",
+     "text_md": "convertible preference shares"
+    },
+    {
+     "id": "c",
+     "text_md": "participating preference shares"
+    },
+    {
+     "id": "d",
+     "text_md": "cumulative preference shares"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (b)** convertible preference shares. Shares that can be changed into equity shares after a stated period are convertible.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch03-t02"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "b"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (b)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch03_015",
+   "unit": "isc-12-commerce-ch03",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Under the Companies Act, 2013, preference shareholders normally vote",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "only on matters directly affecting their rights, and on all matters if their dividend is unpaid for two years or more"
+    },
+    {
+     "id": "b",
+     "text_md": "on every resolution, exactly like equity shareholders"
+    },
+    {
+     "id": "c",
+     "text_md": "never, under any circumstances"
+    },
+    {
+     "id": "d",
+     "text_md": "only on the appointment of auditors"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (a)** only on matters directly affecting their rights, and on all matters if their dividend is unpaid for two years or more. Their voting right is restricted to matters affecting them, but widens to all resolutions when their dividend remains unpaid for two years or more.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch03-t02"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (a)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch03_016",
+   "unit": "isc-12-commerce-ch03",
+   "language": "en",
+   "type": "assertion-reason",
+   "stem_md": "**Assertion (A):** An Indian company today cannot issue irredeemable preference shares.\n\n**Reason (R):** Preference shareholders always have full voting rights on every resolution.\n\nChoose the correct option.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Both Assertion and Reason are true and Reason is the correct explanation for Assertion."
+    },
+    {
+     "id": "b",
+     "text_md": "Both Assertion and Reason are true but Reason is not the correct explanation for Assertion."
+    },
+    {
+     "id": "c",
+     "text_md": "Assertion is true and Reason is false."
+    },
+    {
+     "id": "d",
+     "text_md": "Both Assertion and Reason are false."
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (c)** The assertion is true: the Companies Act, 2013 requires preference shares to be redeemable (normally within twenty years). The reason is false: their voting rights are restricted.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch03-t02"
+   ],
+   "expected_time_sec": 75,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "c"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (c)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch03_017",
+   "unit": "isc-12-commerce-ch03",
+   "language": "en",
+   "type": "assertion-reason",
+   "stem_md": "**Assertion (A):** Preference shares are usually a costlier source of funds than debentures for a company.\n\n**Reason (R):** Preference dividend is paid out of profit after tax, while debenture interest is deducted before tax.\n\nChoose the correct option.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Both Assertion and Reason are true and Reason is the correct explanation for Assertion."
+    },
+    {
+     "id": "b",
+     "text_md": "Both Assertion and Reason are true but Reason is not the correct explanation for Assertion."
+    },
+    {
+     "id": "c",
+     "text_md": "Assertion is true and Reason is false."
+    },
+    {
+     "id": "d",
+     "text_md": "Both Assertion and Reason are false."
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (a)** Both are true. Because preference dividend gets no tax saving while interest does, preference capital ends up costlier.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch03-t02"
+   ],
+   "expected_time_sec": 75,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (a)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch03_018",
+   "unit": "isc-12-commerce-ch03",
+   "language": "en",
+   "type": "true-false",
+   "stem_md": "The founders of Pushkar Prints Ltd (imagined) want funds without giving outsiders a normal vote. Issuing preference shares can help them do this.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "True"
+    },
+    {
+     "id": "b",
+     "text_md": "False"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**True.** True. Preference shareholders have only restricted voting rights, so control stays with the equity holders.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch03-t02"
+   ],
+   "expected_time_sec": 40,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct choice (True)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch03_019",
+   "unit": "isc-12-commerce-ch03",
+   "language": "en",
+   "type": "numerical",
+   "stem_md": "Bhadra Batteries Ltd (imagined) has 10,000 cumulative preference shares of ₹100 each carrying an 8 per cent dividend. No preference dividend was paid for two years. How much preference dividend must it pay in the third year before any equity dividend (in ₹)?",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Step 1: Annual preference dividend = 10,000 × ₹100 × 0.08 = ₹80,000.\nStep 2: Two years of arrears plus the current year = 3 × 80,000 = ₹2,40,000.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch03-t02"
+   ],
+   "expected_time_sec": 90,
+   "assets": [],
+   "answer": {
+    "value": 240000,
+    "tolerance": 0,
+    "unit": "₹"
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct answer: 240000 ₹",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch03_020",
+   "unit": "isc-12-commerce-ch03",
+   "language": "en",
+   "type": "match",
+   "stem_md": "Match each feature with the type of preference share it describes.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Unpaid dividends carry forward as arrears"
+    },
+    {
+     "id": "b",
+     "text_md": "Shares in surplus profit beyond the fixed rate"
+    },
+    {
+     "id": "c",
+     "text_md": "Can be changed into equity shares later"
+    },
+    {
+     "id": "d",
+     "text_md": "Capital is paid back after a fixed period"
+    }
+   ],
+   "match_right": [
+    {
+     "id": "p",
+     "text_md": "Participating"
+    },
+    {
+     "id": "q",
+     "text_md": "Redeemable"
+    },
+    {
+     "id": "r",
+     "text_md": "Cumulative"
+    },
+    {
+     "id": "s",
+     "text_md": "Convertible"
+    }
+   ],
+   "solution_md": "**Key:** (a)–(r), (b)–(p), (c)–(s), (d)–(q). Arrears go with cumulative shares, extra profit with participating shares, a change to equity with convertible shares, and repayment after a period with redeemable shares.",
+   "marks": 2,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch03-t02"
+   ],
+   "expected_time_sec": 120,
+   "assets": [],
+   "answer": {
+    "pairs": [
+     {
+      "left_id": "a",
+      "right_id": "r"
+     },
+     {
+      "left_id": "b",
+      "right_id": "p"
+     },
+     {
+      "left_id": "c",
+      "right_id": "s"
+     },
+     {
+      "left_id": "d",
+      "right_id": "q"
+     }
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Each correct pair 0.5 mark (4 pairs)",
+     "marks": 2
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch03_021",
+   "unit": "isc-12-commerce-ch03",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Sutlej Seeds Ltd (imagined) has issued both equity and 8 per cent preference shares. Distinguish between the two on the basis of dividend and voting rights.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Dividend and voting rights distinguished.",
+   "marks": 2,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch03-t02"
+   ],
+   "expected_time_sec": 150,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Dividend:** preference holders get a **fixed 8 per cent** before equity; equity dividend **varies** with profit.\n2. **Voting:** equity holders have **full voting rights**; preference holders vote only on matters **affecting their rights**."
+   },
+   "word_limit": {
+    "min": 30,
+    "max": 50
+   },
+   "marking_scheme": [
+    {
+     "step": "Dividend",
+     "marks": 1
+    },
+    {
+     "step": "Voting",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch03_022",
+   "unit": "isc-12-commerce-ch03",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Rann Renewables Ltd (imagined) issues preference shares that are cumulative, redeemable after eight years and convertible into equity. Explain what each of these three terms means for an investor.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Each term explained from the investor's point of view.",
+   "marks": 3,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch03-t02"
+   ],
+   "expected_time_sec": 210,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Cumulative:** if a year's dividend is missed, it **accumulates** and must be paid before equity gets anything.\n2. **Redeemable:** the company will **pay back the capital** after eight years.\n3. **Convertible:** the investor may **change the shares into equity**, sharing in growth."
+   },
+   "word_limit": {
+    "min": 50,
+    "max": 75
+   },
+   "marking_scheme": [
+    {
+     "step": "Cumulative",
+     "marks": 1
+    },
+    {
+     "step": "Redeemable",
+     "marks": 1
+    },
+    {
+     "step": "Convertible",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch03_023",
+   "unit": "isc-12-commerce-ch03",
+   "language": "en",
+   "type": "long",
+   "stem_md": "Wardha Wires Ltd (imagined) needs ₹40 crore. Its family promoters want to keep control but do not want a fixed charge on the company's assets.\n(a) Distinguish between equity and preference shares on three bases. [3]\n(b) Explain why preference shares might suit Wardha Wires. [2]",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Three bases of distinction; two reasons linked to control and the absence of a charge.",
+   "marks": 5,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch03-t01",
+    "isc-12-commerce-ch03-t02"
+   ],
+   "expected_time_sec": 600,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "(a) **Rate of dividend:** preference shares carry a **fixed rate**; equity dividend **varies** with profit.\n**Priority:** preference holders are paid dividend and capital **before** equity holders; equity comes **last**.\n**Voting rights:** equity holders have **full** voting rights; preference holders vote only on matters **affecting their rights**.\n\n(b) **Control:** with restricted voting, preference shares let the family **raise ₹40 crore without losing control**. **No charge on assets:** unlike secured debentures, preference shares are **not secured** on the company's property, so its assets stay free; and the dividend, though fixed, is paid only when there is profit."
+   },
+   "word_limit": {
+    "min": 100,
+    "max": 150
+   },
+   "marking_scheme": [
+    {
+     "step": "(a) Three bases",
+     "marks": 3
+    },
+    {
+     "step": "(b) Two reasons linked to the case",
+     "marks": 2
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch03_024",
+   "unit": "isc-12-commerce-ch03",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "When a company issues bonus shares,",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "new investors buy shares at a discount"
+    },
+    {
+     "id": "b",
+     "text_md": "existing shareholders receive free shares by capitalising reserves, and no fresh cash comes in"
+    },
+    {
+     "id": "c",
+     "text_md": "employees receive shares for their know-how"
+    },
+    {
+     "id": "d",
+     "text_md": "institutional buyers subscribe to shares privately"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (b)** existing shareholders receive free shares by capitalising reserves, and no fresh cash comes in. Bonus shares are free shares made out of accumulated reserves; they raise no new funds.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch03-t03"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "b"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (b)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch03_025",
+   "unit": "isc-12-commerce-ch03",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Indravati Infra Ltd (imagined) offers its shareholders one new share for every four held, at ₹60 when the market price is ₹90. Shareholders who do not want the shares may sell this right to others. This is a",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "bonus issue"
+    },
+    {
+     "id": "b",
+     "text_md": "sweat equity issue"
+    },
+    {
+     "id": "c",
+     "text_md": "rights issue"
+    },
+    {
+     "id": "d",
+     "text_md": "qualified institutional placement"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (c)** rights issue. An offer of new shares to existing shareholders in proportion to their holdings, which they may renounce, is a rights issue.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch03-t03"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "c"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (c)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch03_026",
+   "unit": "isc-12-commerce-ch03",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Netravati Networks Ltd (imagined) tells its engineers that after a year's service they may buy its shares at ₹120 each, whatever the market price then. This is an example of",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "sweat equity shares"
+    },
+    {
+     "id": "b",
+     "text_md": "a bonus issue"
+    },
+    {
+     "id": "c",
+     "text_md": "a rights issue"
+    },
+    {
+     "id": "d",
+     "text_md": "an employee stock option plan (ESOP)"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (d)** an employee stock option plan (ESOP). An option given to employees to buy shares at a pre-set price after a waiting (vesting) period is an ESOP.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch03-t03"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "d"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (d)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch03_027",
+   "unit": "isc-12-commerce-ch03",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Satpura Ceramics Ltd (imagined) gives shares, without cash payment, to a director who developed a patented glaze for its tiles. These are best described as",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "bonus shares"
+    },
+    {
+     "id": "b",
+     "text_md": "rights shares"
+    },
+    {
+     "id": "c",
+     "text_md": "preference shares"
+    },
+    {
+     "id": "d",
+     "text_md": "sweat equity shares"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (d)** sweat equity shares. Shares issued to directors or employees at a discount or for non-cash consideration, such as know-how or intellectual property, are sweat equity shares.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch03-t03"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "d"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (d)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch03_028",
+   "unit": "isc-12-commerce-ch03",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Mahi Motorcycles Ltd (imagined), a listed company, raises ₹400 crore in a few weeks by selling shares only to mutual funds, insurance companies and banks, without a full public issue. This method is",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "a rights issue"
+    },
+    {
+     "id": "b",
+     "text_md": "an ESOP"
+    },
+    {
+     "id": "c",
+     "text_md": "qualified institutional placement (QIP)"
+    },
+    {
+     "id": "d",
+     "text_md": "a bonus issue"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (c)** qualified institutional placement (QIP). QIP lets a listed company place shares or convertible securities with qualified institutional buyers quickly, avoiding the long process of a public issue.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch03-t03"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "c"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (c)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch03_029",
+   "unit": "isc-12-commerce-ch03",
+   "language": "en",
+   "type": "assertion-reason",
+   "stem_md": "**Assertion (A):** A bonus issue increases the cash available to a company.\n\n**Reason (R):** Shareholders must pay the full market price in cash for bonus shares.\n\nChoose the correct option.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Both Assertion and Reason are true and Reason is the correct explanation for Assertion."
+    },
+    {
+     "id": "b",
+     "text_md": "Both Assertion and Reason are true but Reason is not the correct explanation for Assertion."
+    },
+    {
+     "id": "c",
+     "text_md": "Assertion is true and Reason is false."
+    },
+    {
+     "id": "d",
+     "text_md": "Both Assertion and Reason are false."
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (d)** Both are false. A bonus issue only converts reserves into share capital, so no cash comes in, and bonus shares are given free to existing shareholders.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch03-t03"
+   ],
+   "expected_time_sec": 75,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "d"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (d)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch03_030",
+   "unit": "isc-12-commerce-ch03",
+   "language": "en",
+   "type": "true-false",
+   "stem_md": "A shareholder who does not wish to subscribe to a rights issue may renounce the offer in favour of another person.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "True"
+    },
+    {
+     "id": "b",
+     "text_md": "False"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**True.** True. The right can be renounced (sold) to someone else; bonus shares, being free, involve no such choice.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch03-t03"
+   ],
+   "expected_time_sec": 40,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct choice (True)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch03_031",
+   "unit": "isc-12-commerce-ch03",
+   "language": "en",
+   "type": "fill-blank",
+   "stem_md": "Complete the analogy. Rights shares : Fresh funds raised :: Bonus shares : ___",
+   "options": [],
+   "match_right": [],
+   "solution_md": "A rights issue brings in fresh money; a bonus issue only capitalises reserves and raises no fresh funds.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch03-t03"
+   ],
+   "expected_time_sec": 45,
+   "assets": [],
+   "answer": {
+    "blanks": [
+     {
+      "accepted": [
+       "No fresh funds",
+       "no funds",
+       "capitalisation of reserves",
+       "reserves capitalised"
+      ]
+     }
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Blank 1: No fresh funds",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch03_032",
+   "unit": "isc-12-commerce-ch03",
+   "language": "en",
+   "type": "numerical",
+   "stem_md": "Pushkar Prints Ltd (imagined) declares bonus shares in the ratio 2:5 (two new shares for every five held). Asha holds 500 shares. How many bonus shares will she receive?",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Bonus shares = 500 × 2 ÷ 5 = 200.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch03-t03"
+   ],
+   "expected_time_sec": 90,
+   "assets": [],
+   "answer": {
+    "value": 200,
+    "tolerance": 0,
+    "unit": "shares"
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct answer: 200 shares",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch03_033",
+   "unit": "isc-12-commerce-ch03",
+   "language": "en",
+   "type": "numerical",
+   "stem_md": "Indravati Infra Ltd (imagined) makes a rights issue of 1 share for every 4 held, at ₹60 per share. Farhan holds 400 shares. How much must he pay to take up all his rights shares (in ₹)?",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Step 1: Rights shares = 400 × 1 ÷ 4 = 100.\nStep 2: Amount = 100 × ₹60 = ₹6,000.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch03-t03"
+   ],
+   "expected_time_sec": 90,
+   "assets": [],
+   "answer": {
+    "value": 6000,
+    "tolerance": 0,
+    "unit": "₹"
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct answer: 6000 ₹",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch03_034",
+   "unit": "isc-12-commerce-ch03",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Pushkar Prints Ltd (imagined) made a bonus issue last year and Indravati Infra Ltd (imagined) is making a rights issue now. Distinguish the two issues on funds raised and payment by shareholders.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Funds raised and payment distinguished.",
+   "marks": 2,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch03-t03"
+   ],
+   "expected_time_sec": 150,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Funds raised:** the bonus issue brought **no fresh funds** (reserves were capitalised); the rights issue **raises new cash**.\n2. **Payment:** bonus shares are **free**; rights shares must be **paid for**, usually below market price."
+   },
+   "word_limit": {
+    "min": 30,
+    "max": 50
+   },
+   "marking_scheme": [
+    {
+     "step": "Funds raised",
+     "marks": 1
+    },
+    {
+     "step": "Payment",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch03_035",
+   "unit": "isc-12-commerce-ch03",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Netravati Networks Ltd (imagined) wants to keep its best engineers and reward a co-founder who wrote its core software code. Explain ESOP and sweat equity, and say which suits each purpose.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Both terms explained and each matched to its purpose.",
+   "marks": 3,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch03-t03"
+   ],
+   "expected_time_sec": 210,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **ESOP:** an **option** for employees to buy shares at a **pre-set price** after a waiting period.\n2. **Sweat equity:** shares given at a discount or **for know-how or intellectual property**, not cash.\n3. **Fit:** ESOP suits **retaining engineers**, who gain if the share price rises; sweat equity suits **rewarding the co-founder's code**."
+   },
+   "word_limit": {
+    "min": 50,
+    "max": 75
+   },
+   "marking_scheme": [
+    {
+     "step": "ESOP",
+     "marks": 1
+    },
+    {
+     "step": "Sweat equity",
+     "marks": 1
+    },
+    {
+     "step": "Matching",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch03_036",
+   "unit": "isc-12-commerce-ch03",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Mahi Motorcycles Ltd (imagined) needs ₹400 crore within a month for a new electric-bike plant. Compare a QIP with a rights issue for this need on three points.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Three points (subscribers, speed, control, pricing) compared, with a link to the deadline.",
+   "marks": 3,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch03-t03"
+   ],
+   "expected_time_sec": 210,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Who subscribes:** a QIP is placed with **institutional buyers**; a rights issue goes to **existing shareholders**.\n2. **Speed:** a QIP can be completed in **weeks**, suiting the one-month deadline; a rights issue takes longer.\n3. **Control:** a rights issue keeps **existing holdings in proportion**; a QIP brings in new institutional owners."
+   },
+   "word_limit": {
+    "min": 50,
+    "max": 75
+   },
+   "marking_scheme": [
+    {
+     "step": "Subscribers",
+     "marks": 1
+    },
+    {
+     "step": "Speed",
+     "marks": 1
+    },
+    {
+     "step": "Control",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch03_037",
+   "unit": "isc-12-commerce-ch03",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Retained earnings as a source of finance means",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "borrowing from shareholders"
+    },
+    {
+     "id": "b",
+     "text_md": "ploughing back part of profit into the business instead of paying it all as dividend"
+    },
+    {
+     "id": "c",
+     "text_md": "selling old machinery"
+    },
+    {
+     "id": "d",
+     "text_md": "issuing shares at a premium"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (b)** ploughing back part of profit into the business instead of paying it all as dividend. Retaining profit, called ploughing back, is an internal source of owners' funds.",
+   "marks": 1,
+   "difficulty": 1,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch03-t04"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "b"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (b)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch03_038",
+   "unit": "isc-12-commerce-ch03",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Wardha Wires Ltd (imagined) financed a new drawing machine entirely from last year's retained profit. Which benefit did it gain compared with a public issue?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "No floatation cost and no dilution of control"
+    },
+    {
+     "id": "b",
+     "text_md": "A tax deduction on the amount retained"
+    },
+    {
+     "id": "c",
+     "text_md": "A fixed return to shareholders"
+    },
+    {
+     "id": "d",
+     "text_md": "A guaranteed rise in share price"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (a)** No floatation cost and no dilution of control. Internal funds need no prospectus, fees or new shareholders: no floatation cost and no dilution of control.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch03-t04"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (a)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch03_039",
+   "unit": "isc-12-commerce-ch03",
+   "language": "en",
+   "type": "assertion-reason",
+   "stem_md": "**Assertion (A):** Excessive ploughing back of profits may make shareholders unhappy.\n\n**Reason (R):** Retained earnings are an external source of finance.\n\nChoose the correct option.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Both Assertion and Reason are true and Reason is the correct explanation for Assertion."
+    },
+    {
+     "id": "b",
+     "text_md": "Both Assertion and Reason are true but Reason is not the correct explanation for Assertion."
+    },
+    {
+     "id": "c",
+     "text_md": "Assertion is true and Reason is false."
+    },
+    {
+     "id": "d",
+     "text_md": "Both Assertion and Reason are false."
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (c)** The assertion is true: heavy retention means lower dividends. The reason is false: retained earnings are an internal source.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch03-t04"
+   ],
+   "expected_time_sec": 75,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "c"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (c)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch03_040",
+   "unit": "isc-12-commerce-ch03",
+   "language": "en",
+   "type": "numerical",
+   "stem_md": "Hooghly Hosiery Ltd (imagined) earns a profit after tax of ₹50,00,000 and pays 40 per cent of it as dividend. How much does it plough back into the business (in ₹)?",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Step 1: Dividend = 0.4 × 50,00,000 = ₹20,00,000.\nStep 2: Retained = 50,00,000 − 20,00,000 = ₹30,00,000.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch03-t04"
+   ],
+   "expected_time_sec": 90,
+   "assets": [],
+   "answer": {
+    "value": 3000000,
+    "tolerance": 0,
+    "unit": "₹"
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct answer: 3000000 ₹",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch03_041",
+   "unit": "isc-12-commerce-ch03",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Hooghly Hosiery Ltd (imagined) ploughed back ₹30 lakh of profit to buy knitting machines. State two merits of this source for the company.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Two merits (permanent, no cost of raising, no dilution, credit standing, cushion for bad years) linked to the case.",
+   "marks": 2,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch03-t04"
+   ],
+   "expected_time_sec": 150,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Permanent and cheap:** the ₹30 lakh needs **no repayment** and involves **no floatation cost**.\n2. **No loss of control:** no new shares are issued, so **ownership stays the same**."
+   },
+   "word_limit": {
+    "min": 30,
+    "max": 50
+   },
+   "marking_scheme": [
+    {
+     "step": "First merit",
+     "marks": 1
+    },
+    {
+     "step": "Second merit",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch03_042",
+   "unit": "isc-12-commerce-ch03",
+   "language": "en",
+   "type": "short",
+   "stem_md": "For three years Krishna Kitchenware Ltd (imagined) has kept almost all its profit and paid a tiny dividend; this year its profit fell sharply. Explain three demerits of relying on retained earnings that this case shows.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Three demerits (dissatisfaction, uncertainty, opportunity cost, possible misuse) linked to the case.",
+   "marks": 3,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch03-t04"
+   ],
+   "expected_time_sec": 210,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Shareholder dissatisfaction:** a **tiny dividend** for three years may anger shareholders and depress the share price.\n2. **Uncertain source:** when **profit fell sharply**, little could be retained, so funds dried up.\n3. **Opportunity cost ignored:** managers may treat retained funds as **free** and use them carelessly."
+   },
+   "word_limit": {
+    "min": 50,
+    "max": 75
+   },
+   "marking_scheme": [
+    {
+     "step": "First demerit",
+     "marks": 1
+    },
+    {
+     "step": "Second demerit",
+     "marks": 1
+    },
+    {
+     "step": "Third demerit",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch03_043",
+   "unit": "isc-12-commerce-ch03",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "A debenture is",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "a certificate of part-ownership of a company"
+    },
+    {
+     "id": "b",
+     "text_md": "an acknowledgement of debt by a company, carrying a fixed rate of interest"
+    },
+    {
+     "id": "c",
+     "text_md": "a free share given out of reserves"
+    },
+    {
+     "id": "d",
+     "text_md": "a short-term advance from a customer"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (b)** an acknowledgement of debt by a company, carrying a fixed rate of interest. A debenture holder is a creditor of the company and receives a fixed interest, not a dividend.",
+   "marks": 1,
+   "difficulty": 1,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch03-t05"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "b"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (b)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch03_044",
+   "unit": "isc-12-commerce-ch03",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Periyar Polymers Ltd (imagined) issues debentures backed by a charge on its factory, so holders can sell the factory to recover their money if it defaults. These debentures are",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "unsecured (naked) debentures"
+    },
+    {
+     "id": "b",
+     "text_md": "convertible debentures"
+    },
+    {
+     "id": "c",
+     "text_md": "bearer debentures"
+    },
+    {
+     "id": "d",
+     "text_md": "secured debentures"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (d)** secured debentures. Debentures backed by a charge on specific assets are secured.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch03-t05"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "d"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (d)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch03_045",
+   "unit": "isc-12-commerce-ch03",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Rann Renewables Ltd (imagined) issues debentures of which ₹600 of each ₹1,000 will be turned into equity shares after three years and ₹400 will be repaid in cash. These are",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "partly convertible debentures"
+    },
+    {
+     "id": "b",
+     "text_md": "fully convertible debentures"
+    },
+    {
+     "id": "c",
+     "text_md": "non-convertible debentures"
+    },
+    {
+     "id": "d",
+     "text_md": "irredeemable debentures"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (a)** partly convertible debentures. Only part of each debenture converts into equity; the rest is redeemed in cash: partly convertible.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch03-t05"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (a)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch03_046",
+   "unit": "isc-12-commerce-ch03",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "How do registered debentures differ from bearer debentures?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Registered debentures carry no interest"
+    },
+    {
+     "id": "b",
+     "text_md": "Bearer debentures are always secured"
+    },
+    {
+     "id": "c",
+     "text_md": "Holders' names are recorded by the company and transfer needs a transfer deed; bearer debentures pass by mere delivery"
+    },
+    {
+     "id": "d",
+     "text_md": "Registered debentures are always convertible"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (c)** Holders' names are recorded by the company and transfer needs a transfer deed; bearer debentures pass by mere delivery. Registered debentures are recorded in the company's register and transferred formally; bearer debentures are transferable by delivery.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch03-t05"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "c"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (c)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch03_047",
+   "unit": "isc-12-commerce-ch03",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Satpura Ceramics Ltd (imagined) earns 16 per cent on its capital and has steady sales. Which reason **best** explains why it may prefer 9 per cent debentures to new equity?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Debentures give holders a vote, which shareholders like"
+    },
+    {
+     "id": "b",
+     "text_md": "Debentures never have to be repaid"
+    },
+    {
+     "id": "c",
+     "text_md": "Fixed-cost debt lets it trade on equity, and interest is tax-deductible"
+    },
+    {
+     "id": "d",
+     "text_md": "Debenture interest is paid only in profitable years"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (c)** Fixed-cost debt lets it trade on equity, and interest is tax-deductible. With a 16 per cent return against 9 per cent interest and steady sales, debt raises earnings per share, and interest saves tax.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch03-t05"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "c"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (c)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch03_048",
+   "unit": "isc-12-commerce-ch03",
+   "language": "en",
+   "type": "assertion-reason",
+   "stem_md": "**Assertion (A):** Debentures can be a heavy burden on a company in a bad year.\n\n**Reason (R):** Interest on debentures must be paid whether or not the company earns a profit.\n\nChoose the correct option.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Both Assertion and Reason are true and Reason is the correct explanation for Assertion."
+    },
+    {
+     "id": "b",
+     "text_md": "Both Assertion and Reason are true but Reason is not the correct explanation for Assertion."
+    },
+    {
+     "id": "c",
+     "text_md": "Assertion is true and Reason is false."
+    },
+    {
+     "id": "d",
+     "text_md": "Both Assertion and Reason are false."
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (a)** Both are true, and the fixed, compulsory interest is exactly why debentures weigh heavily when profits fall.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch03-t05"
+   ],
+   "expected_time_sec": 75,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (a)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch03_049",
+   "unit": "isc-12-commerce-ch03",
+   "language": "en",
+   "type": "true-false",
+   "stem_md": "Debenture holders have the right to vote at the general meetings of the company.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "True"
+    },
+    {
+     "id": "b",
+     "text_md": "False"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**False.** False. Debenture holders are creditors, not owners, and have no voting rights.",
+   "marks": 1,
+   "difficulty": 1,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch03-t05"
+   ],
+   "expected_time_sec": 40,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "b"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct choice (False)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch03_050",
+   "unit": "isc-12-commerce-ch03",
+   "language": "en",
+   "type": "numerical",
+   "stem_md": "Wardha Wires Ltd (imagined) issues ₹20,00,000 of 9 per cent debentures. Its tax rate is 25 per cent. Calculate the after-tax cost of these debentures as a percentage of the amount raised (ignore issue expenses).",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Step 1: Interest = 20,00,000 × 0.09 = ₹1,80,000.\nStep 2: Tax saved = 25 per cent, so net cost = 1,80,000 × 0.75 = ₹1,35,000.\nStep 3: After-tax cost = 1,35,000 ÷ 20,00,000 × 100 = 6.75 per cent.",
+   "marks": 2,
+   "difficulty": 4,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch03-t05"
+   ],
+   "expected_time_sec": 90,
+   "assets": [],
+   "answer": {
+    "value": 6.75,
+    "tolerance": 0,
+    "unit": "%"
+   },
+   "marking_scheme": [
+    {
+     "step": "Interest and tax saving",
+     "marks": 1
+    },
+    {
+     "step": "After-tax cost = 6.75 per cent",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch03_051",
+   "unit": "isc-12-commerce-ch03",
+   "language": "en",
+   "type": "match",
+   "stem_md": "Match each kind of debenture with its description.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Secured debentures"
+    },
+    {
+     "id": "b",
+     "text_md": "Unsecured debentures"
+    },
+    {
+     "id": "c",
+     "text_md": "Non-convertible debentures"
+    },
+    {
+     "id": "d",
+     "text_md": "Bearer debentures"
+    }
+   ],
+   "match_right": [
+    {
+     "id": "p",
+     "text_md": "Transferable by mere delivery"
+    },
+    {
+     "id": "q",
+     "text_md": "Backed by a charge on assets"
+    },
+    {
+     "id": "r",
+     "text_md": "Repaid in cash; never become equity"
+    },
+    {
+     "id": "s",
+     "text_md": "No charge on any asset"
+    }
+   ],
+   "solution_md": "**Key:** (a)–(q), (b)–(s), (c)–(r), (d)–(p). Secured: charge on assets; unsecured: no charge; non-convertible: cash repayment only; bearer: pass by delivery.",
+   "marks": 2,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch03-t05"
+   ],
+   "expected_time_sec": 120,
+   "assets": [],
+   "answer": {
+    "pairs": [
+     {
+      "left_id": "a",
+      "right_id": "q"
+     },
+     {
+      "left_id": "b",
+      "right_id": "s"
+     },
+     {
+      "left_id": "c",
+      "right_id": "r"
+     },
+     {
+      "left_id": "d",
+      "right_id": "p"
+     }
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Each correct pair 0.5 mark (4 pairs)",
+     "marks": 2
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch03_052",
+   "unit": "isc-12-commerce-ch03",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Asha holds equity shares and Farhan holds debentures of Mahi Motorcycles Ltd (imagined). Distinguish their positions on status and return.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Status and return distinguished for the two holders.",
+   "marks": 2,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch03-t05"
+   ],
+   "expected_time_sec": 150,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Status:** Asha is an **owner** of the company; Farhan is a **creditor** who has lent it money.\n2. **Return:** Asha gets a **dividend** that varies with profit; Farhan gets **fixed interest** even in a loss year."
+   },
+   "word_limit": {
+    "min": 30,
+    "max": 50
+   },
+   "marking_scheme": [
+    {
+     "step": "Status",
+     "marks": 1
+    },
+    {
+     "step": "Return",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch03_053",
+   "unit": "isc-12-commerce-ch03",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Indravati Infra Ltd (imagined) offers investors three choices: debentures secured on its toll road, debentures that turn into shares after four years, and debentures repayable in year seven. Name and explain each kind.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Secured, convertible and redeemable debentures named and explained from the case.",
+   "marks": 3,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch03-t05"
+   ],
+   "expected_time_sec": 210,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Secured debentures:** backed by a **charge on the toll road**, which holders can sell if the company defaults.\n2. **Convertible debentures:** they **turn into equity shares** after four years.\n3. **Redeemable debentures:** the company **repays them** on a fixed date, in year seven."
+   },
+   "word_limit": {
+    "min": 50,
+    "max": 75
+   },
+   "marking_scheme": [
+    {
+     "step": "Secured",
+     "marks": 1
+    },
+    {
+     "step": "Convertible",
+     "marks": 1
+    },
+    {
+     "step": "Redeemable",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch03_054",
+   "unit": "isc-12-commerce-ch03",
+   "language": "en",
+   "type": "long",
+   "stem_md": "Satpura Ceramics Ltd (imagined) has steady sales, earns well above the interest rate and owns a large, unpledged factory. It is choosing between equity and secured debentures for ₹25 crore.\n(a) Distinguish between shares and debentures on three bases. [3]\n(b) Explain two reasons why debentures could suit Satpura Ceramics. [2]",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Three bases; two reasons linked to the case.",
+   "marks": 5,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch03-t05"
+   ],
+   "expected_time_sec": 600,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "(a) **Status:** a shareholder is an **owner**; a debenture holder is a **creditor**.\n**Return:** shareholders receive a **dividend** out of profit, which may vary; debenture holders receive **fixed interest**, payable even in a loss year.\n**Security and priority:** debentures are usually **secured** on assets and repaid **before** shareholders on winding up; shares carry no security.\n\n(b) **Trading on equity and tax:** since it **earns well above the interest rate**, debt raises earnings per share, and interest is **tax-deductible**. **Security available:** its large **unpledged factory** can back secured debentures, so investors will accept a lower rate, and its steady sales make the fixed interest safe to pay."
+   },
+   "word_limit": {
+    "min": 100,
+    "max": 150
+   },
+   "marking_scheme": [
+    {
+     "step": "(a) Three bases",
+     "marks": 3
+    },
+    {
+     "step": "(b) Two reasons linked to the case",
+     "marks": 2
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch03_055",
+   "unit": "isc-12-commerce-ch03",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Specialised financial institutions (such as development banks and state financial corporations) differ from ordinary lenders mainly because they",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "provide long-term finance for projects and often give technical and managerial advice too"
+    },
+    {
+     "id": "b",
+     "text_md": "accept deposits only from children"
+    },
+    {
+     "id": "c",
+     "text_md": "lend only for less than a week"
+    },
+    {
+     "id": "d",
+     "text_md": "buy and sell shares on behalf of the public"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (a)** provide long-term finance for projects and often give technical and managerial advice too. Financial institutions were set up to provide medium- and long-term project finance, often with advice, where ordinary sources fall short.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch03-t06"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (a)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch03_056",
+   "unit": "isc-12-commerce-ch03",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Sutlej Seeds Ltd (imagined) needs ₹8 crore for a cold store but does not want to publish a prospectus or disclose its plans to rivals. A term loan from a bank suits it mainly because a loan",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "carries no interest"
+    },
+    {
+     "id": "b",
+     "text_md": "gives the bank voting rights"
+    },
+    {
+     "id": "c",
+     "text_md": "never needs security"
+    },
+    {
+     "id": "d",
+     "text_md": "is raised privately, without public disclosure"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (d)** is raised privately, without public disclosure. A loan is a private arrangement between borrower and lender, so the company's plans stay confidential.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch03-t06"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "d"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (d)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch03_057",
+   "unit": "isc-12-commerce-ch03",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "A financial institution lends ₹50 crore to Indravati Infra Ltd (imagined) on condition that it appoints a nominee director to the board and pays no dividend above 10 per cent until the loan is repaid. These conditions show a **disadvantage** of institutional loans:",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "a dilution of equity ownership"
+    },
+    {
+     "id": "b",
+     "text_md": "restrictive terms that limit management's freedom"
+    },
+    {
+     "id": "c",
+     "text_md": "a high floatation cost"
+    },
+    {
+     "id": "d",
+     "text_md": "no repayment date"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (b)** restrictive terms that limit management's freedom. Institutions often impose covenants such as nominee directors and dividend limits, which restrict the company's freedom.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch03-t06"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "b"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (b)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch03_058",
+   "unit": "isc-12-commerce-ch03",
+   "language": "en",
+   "type": "true-false",
+   "stem_md": "When the share market is depressed and a public issue would fail, Pushkar Prints Ltd (imagined) can still raise long-term funds through a term loan from a financial institution.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "True"
+    },
+    {
+     "id": "b",
+     "text_md": "False"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**True.** True. Loans do not depend on investors' mood in the share market, so they remain available when public issues are difficult.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch03-t06"
+   ],
+   "expected_time_sec": 40,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct choice (True)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch03_059",
+   "unit": "isc-12-commerce-ch03",
+   "language": "en",
+   "type": "fill-blank",
+   "stem_md": "A bank loan for a period of more than a year, repaid in instalments and usually secured on the asset bought, is called a ___ loan.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "It is a term loan: a loan for a fixed period, repaid in instalments.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch03-t06"
+   ],
+   "expected_time_sec": 45,
+   "assets": [],
+   "answer": {
+    "blanks": [
+     {
+      "accepted": [
+       "term",
+       "term loan",
+       "long-term",
+       "medium-term"
+      ]
+     }
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Blank 1: term",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch03_060",
+   "unit": "isc-12-commerce-ch03",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Krishna Kitchenware Ltd (imagined) is choosing a seven-year term loan from a financial institution for its new plant. Explain two advantages of this source for the company.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Two advantages (long-term funds, advice, confidentiality, no dilution, flexible repayment, availability in depressed markets) applied.",
+   "marks": 2,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch03-t06"
+   ],
+   "expected_time_sec": 150,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Advice and support:** the institution often gives **technical and managerial guidance** on the new plant.\n2. **No dilution:** a loan brings **no new shareholders**, so control stays with existing owners; repayment can be **spread over seven years**."
+   },
+   "word_limit": {
+    "min": 30,
+    "max": 50
+   },
+   "marking_scheme": [
+    {
+     "step": "First advantage",
+     "marks": 1
+    },
+    {
+     "step": "Second advantage",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch03_061",
+   "unit": "isc-12-commerce-ch03",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Before lending ₹12 crore to Bhadra Batteries Ltd (imagined), a bank asks for a mortgage on its plant, detailed project reports and a ban on further borrowing. Explain three disadvantages of bank and institutional loans shown here.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Three disadvantages (security, procedure, restrictive covenants, fixed repayment burden) linked to the case.",
+   "marks": 3,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch03-t06"
+   ],
+   "expected_time_sec": 210,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Security required:** the bank wants a **mortgage on the plant**, so these assets cannot be offered to back any other loan later.\n2. **Lengthy procedure:** preparing **detailed project reports** for appraisal takes weeks and adds cost.\n3. **Restrictive conditions:** the **ban on further borrowing** limits management's freedom to raise funds when a new need arises."
+   },
+   "word_limit": {
+    "min": 50,
+    "max": 75
+   },
+   "marking_scheme": [
+    {
+     "step": "Security",
+     "marks": 1
+    },
+    {
+     "step": "Procedure",
+     "marks": 1
+    },
+    {
+     "step": "Restrictions",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch03_062",
+   "unit": "isc-12-commerce-ch03",
+   "language": "en",
+   "type": "case-based",
+   "stem_md": "Read the passage and answer the questions that follow. *(Imagined company and people, written by SOYL for practice.)*",
+   "options": [],
+   "match_right": [],
+   "solution_md": "**(a)** **Correct option: (a)** bonus issue. Free shares from reserves to existing shareholders: a bonus issue.\n\n**(b)** An option to employees at a pre-set price after a vesting period is an ESOP.\n\n**(c) (i)** Rights issue identified; bonus and ESOP explained.\n\n**OR (c) (ii)** Two merits of retained earnings.",
+   "marks": 4,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch03-t03",
+    "isc-12-commerce-ch03-t04"
+   ],
+   "expected_time_sec": 420,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "**(a)** (a) bonus issue\n\n**(b)** **Employee stock option plan (ESOP).**\n\n**(c) (i)** Only the **rights issue** at ₹200 brings **fresh cash**. The **bonus issue** merely capitalises reserves, and the **ESOP** brings money only later, if engineers choose to buy.\n\n**OR (c) (ii)** 1. **No floatation cost** and no **dilution of control**.\n2. **Stronger financial standing:** large reserves **improve creditworthiness** and support bonus issues."
+   },
+   "marking_scheme": [
+    {
+     "step": "Part (a)",
+     "marks": 1
+    },
+    {
+     "step": "Part (b)",
+     "marks": 1
+    },
+    {
+     "step": "Part (c): either (i) or (ii)",
+     "marks": 2
+    }
+   ],
+   "passage_md": "**Netravati Networks Ltd (imagined), Mangaluru**\n\nNetravati Networks has built up ₹90 crore of reserves by ploughing back profits for six years. This year its board decides three things. First, every shareholder will receive one free share for every three held. Second, its engineers may buy shares at ₹150 each after one year of service. Third, it will offer existing shareholders one new share for every five held at ₹200, below the market price of ₹320, to fund a data centre.",
+   "passage_origin": "soyl-original",
+   "children": [
+    {
+     "id": "a",
+     "type": "mcq",
+     "stem_md": "The offer of one free share for every three held is a",
+     "options": [
+      {
+       "id": "a",
+       "text_md": "bonus issue"
+      },
+      {
+       "id": "b",
+       "text_md": "rights issue"
+      },
+      {
+       "id": "c",
+       "text_md": "sweat equity issue"
+      },
+      {
+       "id": "d",
+       "text_md": "QIP"
+      }
+     ],
+     "match_right": [],
+     "solution_md": "**Correct option: (a)** bonus issue. Free shares from reserves to existing shareholders: a bonus issue.",
+     "marks": 1,
+     "difficulty": 2,
+     "competency": "application",
+     "bloom": "apply",
+     "topic_ids": [
+      "isc-12-commerce-ch03-t03"
+     ],
+     "expected_time_sec": 60,
+     "assets": [],
+     "answer": {
+      "option_ids": [
+       "a"
+      ]
+     },
+     "marking_scheme": [
+      {
+       "step": "Correct option (a)",
+       "marks": 1
+      }
+     ],
+     "alternatives": []
+    },
+    {
+     "id": "b",
+     "type": "short",
+     "stem_md": "Name the scheme under which engineers may buy shares at ₹150.",
+     "options": [],
+     "match_right": [],
+     "solution_md": "An option to employees at a pre-set price after a vesting period is an ESOP.",
+     "marks": 1,
+     "difficulty": 2,
+     "competency": "application",
+     "bloom": "apply",
+     "topic_ids": [
+      "isc-12-commerce-ch03-t03"
+     ],
+     "expected_time_sec": 90,
+     "assets": [],
+     "answer": {
+      "model_answer_md": "**Employee stock option plan (ESOP).**"
+     },
+     "marking_scheme": [
+      {
+       "step": "ESOP",
+       "marks": 1
+      }
+     ],
+     "alternatives": []
+    },
+    {
+     "id": "c",
+     "type": "short",
+     "stem_md": "**Either** (i): Which of the three decisions will bring fresh funds for the data centre? Explain why the other two will not.",
+     "options": [],
+     "match_right": [],
+     "solution_md": "Rights issue identified; bonus and ESOP explained.",
+     "marks": 2,
+     "difficulty": 3,
+     "competency": "analysis",
+     "bloom": "analyze",
+     "topic_ids": [
+      "isc-12-commerce-ch03-t03"
+     ],
+     "expected_time_sec": 150,
+     "assets": [],
+     "answer": {
+      "model_answer_md": "Only the **rights issue** at ₹200 brings **fresh cash**. The **bonus issue** merely capitalises reserves, and the **ESOP** brings money only later, if engineers choose to buy."
+     },
+     "marking_scheme": [
+      {
+       "step": "Rights issue identified",
+       "marks": 1
+      },
+      {
+       "step": "Other two explained",
+       "marks": 1
+      }
+     ],
+     "alternatives": [
+      {
+       "id": "c-ii",
+       "type": "short",
+       "stem_md": "**Or** (ii): State two merits of the six years of ploughing back that made the ₹90 crore of reserves possible.",
+       "options": [],
+       "match_right": [],
+       "solution_md": "Two merits of retained earnings.",
+       "marks": 2,
+       "difficulty": 3,
+       "competency": "analysis",
+       "bloom": "analyze",
+       "topic_ids": [
+        "isc-12-commerce-ch03-t04"
+       ],
+       "expected_time_sec": 150,
+       "assets": [],
+       "answer": {
+        "model_answer_md": "1. **No floatation cost** and no **dilution of control**.\n2. **Stronger financial standing:** large reserves **improve creditworthiness** and support bonus issues."
+       },
+       "marking_scheme": [
+        {
+         "step": "First merit",
+         "marks": 1
+        },
+        {
+         "step": "Second merit",
+         "marks": 1
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch03_063",
+   "unit": "isc-12-commerce-ch03",
+   "language": "en",
+   "type": "case-based",
+   "stem_md": "Read the passage and answer the questions that follow. *(Imagined company and figures, written by SOYL for practice.)*",
+   "options": [],
+   "match_right": [],
+   "solution_md": "**(a)** **Correct option: (b)** secured and partly convertible. They are secured on the new unit, and only half converts into equity: secured, partly convertible.\n\n**(b)** The engineer's review shows the advice institutions give.\n\n**(c) (i)** One drawback of debentures and one of the institutional loan.\n\n**OR (c) (ii)** Dilution of control and EPS, with lower debt.",
+   "marks": 4,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch03-t05",
+    "isc-12-commerce-ch03-t06"
+   ],
+   "expected_time_sec": 420,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "**(a)** (b) secured and partly convertible\n\n**(b)** \"**will also send an engineer to review the plant design**\" (technical advice).\n\n**(c) (i)** **Route 1:** **fixed interest** must be paid every year, even in a loss year. **Route 2:** the lender's **director on the board** restricts management's freedom.\n\n**OR (c) (ii)** When half of each debenture becomes equity, **more shares** are issued, so present shareholders' **control and earnings per share are diluted**; but the company's **debt and interest fall**."
+   },
+   "marking_scheme": [
+    {
+     "step": "Part (a)",
+     "marks": 1
+    },
+    {
+     "step": "Part (b)",
+     "marks": 1
+    },
+    {
+     "step": "Part (c): either (i) or (ii)",
+     "marks": 2
+    }
+   ],
+   "passage_md": "**Periyar Polymers Ltd (imagined), Kochi**\n\nPeriyar Polymers needs ₹30 crore to build a recycling unit. Its finance head, Mr Thomas, compares two routes. Route 1 is an issue of 9 per cent debentures secured on the new unit, half of each to be turned into equity shares after five years. Route 2 is a ten-year loan from a financial institution, which will also send an engineer to review the plant design but wants a director on the board.",
+   "passage_origin": "soyl-original",
+   "children": [
+    {
+     "id": "a",
+     "type": "mcq",
+     "stem_md": "The debentures in Route 1 are best described as",
+     "options": [
+      {
+       "id": "a",
+       "text_md": "unsecured and non-convertible"
+      },
+      {
+       "id": "b",
+       "text_md": "secured and partly convertible"
+      },
+      {
+       "id": "c",
+       "text_md": "bearer and irredeemable"
+      },
+      {
+       "id": "d",
+       "text_md": "secured and fully convertible"
+      }
+     ],
+     "match_right": [],
+     "solution_md": "**Correct option: (b)** secured and partly convertible. They are secured on the new unit, and only half converts into equity: secured, partly convertible.",
+     "marks": 1,
+     "difficulty": 2,
+     "competency": "application",
+     "bloom": "apply",
+     "topic_ids": [
+      "isc-12-commerce-ch03-t05"
+     ],
+     "expected_time_sec": 60,
+     "assets": [],
+     "answer": {
+      "option_ids": [
+       "b"
+      ]
+     },
+     "marking_scheme": [
+      {
+       "step": "Correct option (b)",
+       "marks": 1
+      }
+     ],
+     "alternatives": []
+    },
+    {
+     "id": "b",
+     "type": "short",
+     "stem_md": "Quote one benefit of Route 2 from the passage.",
+     "options": [],
+     "match_right": [],
+     "solution_md": "The engineer's review shows the advice institutions give.",
+     "marks": 1,
+     "difficulty": 2,
+     "competency": "application",
+     "bloom": "apply",
+     "topic_ids": [
+      "isc-12-commerce-ch03-t06"
+     ],
+     "expected_time_sec": 90,
+     "assets": [],
+     "answer": {
+      "model_answer_md": "\"**will also send an engineer to review the plant design**\" (technical advice)."
+     },
+     "marking_scheme": [
+      {
+       "step": "Benefit quoted",
+       "marks": 1
+      }
+     ],
+     "alternatives": []
+    },
+    {
+     "id": "c",
+     "type": "short",
+     "stem_md": "**Either** (i): Give one drawback of each route.",
+     "options": [],
+     "match_right": [],
+     "solution_md": "One drawback of debentures and one of the institutional loan.",
+     "marks": 2,
+     "difficulty": 3,
+     "competency": "analysis",
+     "bloom": "analyze",
+     "topic_ids": [
+      "isc-12-commerce-ch03-t05",
+      "isc-12-commerce-ch03-t06"
+     ],
+     "expected_time_sec": 150,
+     "assets": [],
+     "answer": {
+      "model_answer_md": "**Route 1:** **fixed interest** must be paid every year, even in a loss year. **Route 2:** the lender's **director on the board** restricts management's freedom."
+     },
+     "marking_scheme": [
+      {
+       "step": "Route 1 drawback",
+       "marks": 1
+      },
+      {
+       "step": "Route 2 drawback",
+       "marks": 1
+      }
+     ],
+     "alternatives": [
+      {
+       "id": "c-ii",
+       "type": "short",
+       "stem_md": "**Or** (ii): Explain how the conversion feature of Route 1 may affect the present shareholders after five years.",
+       "options": [],
+       "match_right": [],
+       "solution_md": "Dilution of control and EPS, with lower debt.",
+       "marks": 2,
+       "difficulty": 3,
+       "competency": "analysis",
+       "bloom": "analyze",
+       "topic_ids": [
+        "isc-12-commerce-ch03-t05"
+       ],
+       "expected_time_sec": 150,
+       "assets": [],
+       "answer": {
+        "model_answer_md": "When half of each debenture becomes equity, **more shares** are issued, so present shareholders' **control and earnings per share are diluted**; but the company's **debt and interest fall**."
+       },
+       "marking_scheme": [
+        {
+         "step": "Dilution",
+         "marks": 1
+        },
+        {
+         "step": "Lower debt",
+         "marks": 1
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch03_064",
+   "unit": "isc-12-commerce-ch03",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Pushkar Prints Ltd (imagined) earns steadily more than the 8 per cent it would pay on new preference shares. State two advantages to the company of issuing these shares.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Two advantages (control, trading on equity, no charge on assets, appeal to cautious investors, flexibility if redeemable) applied.",
+   "marks": 2,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch03-t02"
+   ],
+   "expected_time_sec": 150,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Control retained:** preference holders have **restricted votes**, so existing owners keep control.\n2. **Trading on equity:** the **fixed 8 per cent** is below what the money earns, so the surplus raises returns to **equity holders**."
+   },
+   "word_limit": {
+    "min": 30,
+    "max": 50
+   },
+   "marking_scheme": [
+    {
+     "step": "First advantage",
+     "marks": 1
+    },
+    {
+     "step": "Second advantage",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch03_065",
+   "unit": "isc-12-commerce-ch03",
+   "language": "en",
+   "type": "long",
+   "stem_md": "Satpura Ceramics Ltd (imagined) is listed and has large free reserves. Its board is considering a bonus issue, a rights issue and a QIP, and wants to reward a director who developed a new glaze.\n(a) Distinguish between a bonus issue and a rights issue on two bases. [2]\n(b) Explain the meaning of sweat equity and QIP, and say which purpose each serves for this company. [3]",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Two bases; sweat equity and QIP explained and matched to purposes.",
+   "marks": 5,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch03-t03"
+   ],
+   "expected_time_sec": 600,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "(a) **Fresh funds:** a bonus issue brings in **no new money**, as reserves are capitalised; a rights issue **raises cash** from existing shareholders.\n**Renunciation:** bonus shares are free and **cannot be renounced**; rights can be **renounced** in favour of others.\n\n(b) **Sweat equity** means shares issued to directors or employees at a discount or **for non-cash consideration** such as know-how or intellectual property. It suits **rewarding the director** for the new glaze without paying cash.\n**QIP** means a **listed** company placing shares or convertible securities with **qualified institutional buyers** such as mutual funds and insurers, without a full public issue. It suits Satpura if it needs a **large sum quickly**, for example to build a new kiln line."
+   },
+   "word_limit": {
+    "min": 100,
+    "max": 150
+   },
+   "marking_scheme": [
+    {
+     "step": "(a) Two bases",
+     "marks": 2
+    },
+    {
+     "step": "(b) Sweat equity and QIP explained, each with its purpose",
+     "marks": 3
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch03_066",
+   "unit": "isc-12-commerce-ch03",
+   "language": "en",
+   "type": "long",
+   "stem_md": "Hooghly Hosiery Ltd (imagined) can fund a ₹6 crore dyeing unit either from retained profit or with a term loan from a bank.\n(a) Explain two merits and one demerit of using retained earnings. [3]\n(b) Explain two disadvantages of the term loan for the company. [2]",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Two merits and one demerit of retained earnings; two disadvantages of a term loan.",
+   "marks": 5,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch03-t04",
+    "isc-12-commerce-ch03-t06"
+   ],
+   "expected_time_sec": 600,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "(a) **Merits:** retained profit involves **no floatation cost**, since there is no prospectus or underwriting, and it brings **no new shareholders**, so control is not diluted. **Demerit:** using ₹6 crore of profit for the unit means **lower dividends**, which may make shareholders unhappy and weaken the share price.\n\n(b) **Fixed repayment burden:** the bank must be paid **interest and instalments** on schedule, even if hosiery sales fall in a bad year. **Security and conditions:** the bank will want a **mortgage** on the dyeing unit and may impose **restrictive conditions**, such as limits on further borrowing or on dividends, which reduce management's freedom."
+   },
+   "word_limit": {
+    "min": 100,
+    "max": 150
+   },
+   "marking_scheme": [
+    {
+     "step": "(a) Two merits and one demerit",
+     "marks": 3
+    },
+    {
+     "step": "(b) Two disadvantages",
+     "marks": 2
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  }
+ ],
+ "build": {
+  "run_id": null,
+  "checks": {
+   "syllabus": "topics t01–t06 of isc-12-commerce-ch03 (equity shares; preference shares and types, equity versus preference; bonus, rights, ESOP, sweat equity, QIP; retained earnings; debentures and kinds, shares versus debentures; loans from banks and financial institutions)",
+   "originality": "every firm, person, figure and case is imagined and written by SOYL and labelled; no ISC or CBSE textbook text, illustration or exercise and no CISCE specimen or board item reused (D-036)",
+   "data": "figures computed in the build and asserted: bonus 200 shares, rights payment ₹6,000, cumulative arrears ₹2,40,000, after-tax debenture cost 6.75 per cent, retained earnings ₹30,00,000",
+   "facts": "stable rules of the Companies Act, 2013 (only redeemable preference shares, normally within twenty years; preference voting widens after two years of unpaid dividend; sweat equity for know-how or intellectual property) stated without section numbers; listed in the README for review",
+   "gate": "schema, pipeline lint, deterministic verify, word limits, narration and answer-leak checks run clean in this build"
+  }
+ }
+}
