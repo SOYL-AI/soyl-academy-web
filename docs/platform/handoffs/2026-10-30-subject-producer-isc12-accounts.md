@@ -1,8 +1,8 @@
 # subject-producer — ISC Class 12 Accounts (hand-authored) — 2026-10-30/31
 
-Status: partial — ch01–ch12 gated and committed; ch13–ch14 in progress (this note is updated as each chapter lands)
+Status: done — all 14 chapters of `isc-12-accounts` gated and committed (one commit each)
 
-Branch: `platform/subject-producer/isc-12-accounts` (from local `platform/main` 4c30f89). Author `claude-opus-5-5 (subject-producer)`, D-025/D-026, provenance `origin: "human"`, all items `status: "draft"`. Session-limit cut-offs (2026-10-30 ~11:00 IST) interrupted the work; nothing partial was committed.
+Branch: `platform/subject-producer/isc-12-accounts` (from local `platform/main` 4c30f89). Author `claude-opus-5-5 (subject-producer)`, D-025/D-026, provenance `origin: "human"`, all items `status: "draft"`. Several session-limit cut-offs (2026-10-30 ~11:00, ~05:00 and 2026-11-01 ~00:00 IST) interrupted the work; chapter agents were resumed and nothing partial was committed.
 
 ## What changed
 
@@ -27,6 +27,9 @@ Tests use the ISC defaults `isc-12-default-chapter-test-short` (50 min, 20 marks
 | 10 | Financial Statement Analysis: Comparative and Common Size Statements | 21 + 20 | 31 | 8 | 30 | 77 (155) | 60% | dd10049 |
 | 11 | Cash Flow Statement | 20 + 24 | 34 | 8 | 34 | 76 (160) | 58% | b26ca94 |
 | 12 | Ratio Analysis | 19 + 20 | 29 | 8 | 32 | 84 (164) | 57% | 8fa32e6 |
+| 13 | Accounting Application of Electronic Spreadsheet | 23 + 22 | 35 | 8 | 32 | 79 (136) | 57% | fbca58f |
+| 14 | Database Management System (DBMS) | 21 + 20 | 31 | 8 | 30 | 86 (155) | 58% | 8d22fd1 |
+| | **Total** | **28 decks, 585 slides** | | | **437** | **1082 (2,101)** | | |
 
 ## How to verify
 
@@ -49,6 +52,8 @@ Gate run for ch06–ch09 (2026-10-31 22:39 IST, ch01–ch09 in the tree): conten
 
 Gate runs for ch11 (2026-10-31 23:06 IST) and ch10 + ch12 (23:57 IST, ch01–ch12 in the tree): content gate 1296/1296 and 1310/1310; lint 0/0 for every ISC unit; verify 12 units, 917 questions, 0 flags; originality 187 units, 0 errors; cross-bank 1,755 questions, 0 ISC flags; DB-6 8/8; API 13/13; catalog valid. Logs `isc12-accounts-gates4.log`, `isc12-accounts-gates5.log`.
 
+Final gate run for ch13 + ch14 (2026-11-01 04:06 IST, all 14 chapters in the tree): content gate 1324/1324; lint 0/0 for every ISC unit; verify 14 units, 1,082 questions, 0 blocking and 0 minor flags; originality 189 units, 0 errors; cross-bank 1,920 questions, 0 ISC flags; DB-6 8/8; API 13/13; catalog valid. Log `isc12-accounts-gates6.log`.
+
 ## Blueprint fit (no catalog edit)
 
 Accounts has no ISC subject blueprint, so the chapters use the ISC 12 defaults (1/2/3/5 marks). They fit only by splitting problems: 2-mark items are a ratio working, an entry or a short computation; 3-mark items are one account or a set of entries; 5-mark items come in parts (2 + 3). Real ISC Accounts practicals (appropriation plus capital accounts, revaluation plus capitals plus balance sheet, a full dissolution) are 6–8 marks, so each chapter also carries 2–3 full 6- or 8-mark practicals as practice-only items kept out of the tests. Recommendation (for curriculum-architect / assessment-designer): an ISC Accounts chapter-test blueprint with 6- and 8-mark practical slots. The catalog was not edited.
@@ -61,12 +66,13 @@ The ISC 2027 Accountancy specimen paper was not fetched and `catalog/sources/cis
 
 - Removed ISC 2027 topics appear at most as one "not in the ISC 2027 syllabus" line: admission of a manager as a partner (ch01); memorandum revaluation account, joint life and individual policies, admission during a year (ch03, ch04); admission-cum-retirement, amalgamation, sale to a company, piecemeal distribution and insolvency (ch05).
 - Goodwill valuation is its own chapter (ch02); ch01 leaves it out and ch03/ch04 apply it.
-- Reviewer points (also in chapter READMEs): ch01 treats a guarantee as absolute in a loss year; ch01's A-R option (d) is the lib's "A false, R true" (ISC Biology uses "both false") — the (d)-keyed items have A false and R true, so the keys hold; ch05 leaves out the workmen compensation reserve on dissolution and Sections 40–44 (not in the ISC topic); ch04 loans use equal principal instalments.
+- Reviewer points (also in chapter READMEs): ch01 treats a guarantee as absolute in a loss year; ch01's A-R option (d) is the lib's "A false, R true" (ISC Biology uses "both false") — the (d)-keyed items have A false and R true, so the keys hold; ch05 leaves out the workmen compensation reserve on dissolution and Sections 40–44 (not in the ISC topic); ch04 loans use equal principal instalments; ch06 debits shares to promoters to Incorporation Costs (Goodwill named as the alternative) and uses Table F interest (10 % on arrears, 12 % on advance); ch07 caps the Statement of Profit and Loss share of a write-off so Capital Reserve is used last (one reading of the ISC note) and puts current maturities under short-term borrowings; ch08 reads the 2019 Rule 18(7) classes for the Debenture Redemption Reserve and investment (listed NBFCs/HFCs avoided) and shows the investment under current investments; ch09 gives "profit before the adjustments below" in trial balances (Part II Statement of Profit and Loss removed) — confirm the convention; ch10 nudges one common-size line by 0.01 (marked †) so a part totals 100.00; ch11 treats the previous year's proposed dividend as paid in the current year and a capital redemption reserve as distinct from the removed "capital reserve"; ch12 defines debt in debt-to-total-assets as long-term debt; ch13 uses a simplified flat-rate income tax labelled "for this exercise only"; ch14 teaches SELECT/UPDATE/DELETE with WHERE and aggregates only (ORDER BY, GROUP BY, joins, INSERT, CREATE TABLE are not in the ISC topics) — confirm the SQL conventions (single quotes, YYYY-MM-DD dates, <> for not equal).
 - Originality (D-036): fresh firms, people and places checked against ISC siblings and all 12 CBSE 12 Accountancy chapters (other worktree); every stem names its own content (including match/T-F/fill/A-R lead-ins).
 
 ## Known gaps / follow-ups
 
 - No narration audio (TTS). No case-based items (the ISC default has no case slot).
+- ch13: absolute cell references cannot be written because the shared lib rejects any dollar sign outside maths; they are described in words and shown with named cells (the same pipeline backlog item as CBSE 12 Accountancy ch12). Hands-on practice in real spreadsheet or database software (the ISC practical) cannot be graded here.
 - Renderer checks at 360 px: 8-column capital-account tables scroll sideways; SVG labels are placed by pixel position.
 - Unit tests and mocks for ISC 12 Accounts are for assessment-designer.
 
