@@ -1,0 +1,5562 @@
+{
+ "unit": "isc-12-commerce-ch01",
+ "version": 1,
+ "academic_year": "2026-27",
+ "created_at": "2026-10-31",
+ "decks": [
+  {
+   "unit": "isc-12-commerce-ch01",
+   "part": 1,
+   "version": 1,
+   "title": "Business Environment — Part 1: Meaning, Features, Importance and Scanning",
+   "language": "en",
+   "goals": [
+    "Explain the meaning and features of business environment",
+    "Discuss how understanding the environment helps a firm spot opportunities and threats early",
+    "Define environmental scanning and explain why firms monitor their environment continuously"
+   ],
+   "slides": [
+    {
+     "id": "s01",
+     "layout": "title",
+     "heading": "Business Environment",
+     "body_md": "Part 1: what the **business environment** is, its **features**, why it **matters**, and how firms **scan** it.",
+     "bullets": [],
+     "visual": {
+      "kind": "flow",
+      "spec": {
+       "direction": "LR",
+       "nodes": [
+        {
+         "id": "n1",
+         "label": "What business environment is"
+        },
+        {
+         "id": "n2",
+         "label": "Its features"
+        },
+        {
+         "id": "n3",
+         "label": "Why it matters"
+        },
+        {
+         "id": "n4",
+         "label": "Environmental scanning"
+        }
+       ],
+       "edges": [
+        {
+         "from": "n1",
+         "to": "n2"
+        },
+        {
+         "from": "n2",
+         "to": "n3"
+        },
+        {
+         "from": "n3",
+         "to": "n4"
+        }
+       ]
+      },
+      "alt": "Route map of Part 1: the meaning of business environment, its features, its importance and environmental scanning",
+      "caption": "Part 1 at a glance"
+     },
+     "math": [],
+     "narration": "No business works in a vacuum. Suppliers raise prices, customers change their minds, rivals cut rates, and governments pass new laws. All these forces together make up the business environment. In this part we see what it is, what it is like, why a firm must understand it, and how firms keep watch on it.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s02",
+     "layout": "diagram",
+     "heading": "What is business environment?",
+     "body_md": "**Business environment** is the sum total of all **individuals, institutions and forces**, internal and external, that affect the working and performance of a firm.",
+     "bullets": [],
+     "visual": {
+      "kind": "svg",
+      "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 560 340\" role=\"img\" aria-label=\"Three nested boxes: at the centre the firm's internal factors (mission, values, people, money, technology); around them the external micro environment (suppliers, customers, competitors, intermediaries, financiers, public); outermost the macro environment (economic, social, technological, political and legal). The firm's control falls as we move outwards\" font-family=\"sans-serif\" font-size=\"14\" fill=\"none\"><title>Three nested boxes: at the centre the firm's internal factors (mission, values, people, money, technology); around them the external micro environment (suppliers, customers, competitors, intermediaries, financiers, public); outermost the macro environment (economic, social, technological, political and legal). The firm's control falls as we move outwards</title><rect x=\"20\" y=\"20\" width=\"520\" height=\"300\" rx=\"18\" fill=\"var(--diagram-blue)\" fill-opacity=\"0.08\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.5\"/><rect x=\"90\" y=\"70\" width=\"380\" height=\"200\" rx=\"16\" fill=\"var(--diagram-green)\" fill-opacity=\"0.12\" stroke=\"var(--diagram-green)\" stroke-width=\"1.5\"/><rect x=\"190\" y=\"125\" width=\"180\" height=\"90\" rx=\"12\" fill=\"var(--diagram-accent)\" fill-opacity=\"0.18\" stroke=\"var(--diagram-accent)\" stroke-width=\"2\"/><text x=\"280\" y=\"150\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"14\" font-weight=\"bold\">Internal factors</text><text x=\"280\" y=\"172\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">mission, values, people,</text><text x=\"280\" y=\"190\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">money, technology</text><text x=\"280\" y=\"90\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">External micro: suppliers, customers, competitors,</text><text x=\"280\" y=\"250\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">intermediaries, financiers, public</text><text x=\"280\" y=\"40\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"13\" font-weight=\"bold\">Macro: economic, social, technological, political, legal</text><text x=\"280\" y=\"300\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">Control falls as we move outwards</text></svg>",
+      "alt": "Three nested boxes: at the centre the firm's internal factors (mission, values, people, money, technology); around them the external micro environment (suppliers, customers, competitors, intermediaries, financiers, public); outermost the macro environment (economic, social, technological, political and legal). The firm's control falls as we move outwards",
+      "caption": "The firm sits inside its micro environment, which sits inside the macro environment."
+     },
+     "math": [],
+     "narration": "Picture the firm at the centre. Close to it are its own internal factors, such as its mission, people and money. Around these are suppliers, customers, competitors and others it deals with directly. Outermost are the big economic, social, technological, political and legal forces. The further out a force is, the less the firm can control it.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s03",
+     "layout": "concept",
+     "heading": "Features of business environment",
+     "body_md": "",
+     "bullets": [],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Feature",
+        "What it means"
+       ],
+       "rows": [
+        [
+         "Totality of forces",
+         "All forces, taken together, form the environment"
+        ],
+        [
+         "Specific and general forces",
+         "Some affect one firm (a rival next door); some affect all (a tax change)"
+        ],
+        [
+         "Inter-relatedness",
+         "A change in one factor sets off changes in others"
+        ],
+        [
+         "Dynamic",
+         "It keeps changing"
+        ],
+        [
+         "Uncertainty",
+         "Future changes are hard to predict"
+        ],
+        [
+         "Complexity",
+         "Many factors act together, so effects are hard to judge"
+        ],
+        [
+         "Relativity",
+         "Its impact differs by place and firm"
+        ]
+       ]
+      },
+      "alt": "Table of seven features of business environment with their meanings"
+     },
+     "math": [],
+     "narration": "The environment has seven features. It is a totality of forces. Some forces are specific, touching one firm, and some are general, touching all. The forces are inter-related. The environment is dynamic, always changing, and therefore uncertain. Because many forces act together it is complex, and because its effect differs from place to place it is relative.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s04",
+     "layout": "example",
+     "heading": "Worked example 1: which feature?",
+     "body_md": "Match each imagined situation with the feature it shows.",
+     "bullets": [
+      "Step 1: look for the **clue**: place, a chain of changes, prediction, or one firm versus all.",
+      "Step 2: name the feature.",
+      "Step 3: explain in one line."
+     ],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Imagined situation",
+        "Feature shown"
+       ],
+       "rows": [
+        [
+         "Woollen jackets sell in Shimla, not in Chennai",
+         "Relativity"
+        ],
+        [
+         "Fuel prices rise, buyers want e-scooters, mechanics retrain",
+         "Inter-relatedness"
+        ],
+        [
+         "Festival colours for next year cannot be predicted",
+         "Uncertainty"
+        ],
+        [
+         "A rival opens next door; the government changes a tax",
+         "Specific and general forces"
+        ]
+       ]
+      },
+      "alt": "Worked table matching four imagined situations with the feature of business environment each shows",
+      "caption": "Find the clue word: place, chain of changes, prediction, or one firm versus all firms."
+     },
+     "math": [],
+     "narration": "Let us practise. Jackets selling in Shimla but not in Chennai show relativity, because the effect depends on the place. Fuel prices leading to electric scooters and then to retrained mechanics show inter-relatedness. Not knowing next year's colours shows uncertainty. A rival next door is a specific force, while a tax change is a general one.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s05",
+     "layout": "check",
+     "heading": "Quick check: complexity",
+     "body_md": "True or false: the environment is simple because each factor acts on its own.",
+     "bullets": [],
+     "visual": null,
+     "math": [],
+     "narration": "Think about whether factors act alone or together.",
+     "check_question_id": "q_isc12commerce_ch01_010",
+     "audio": null
+    },
+    {
+     "id": "s06",
+     "layout": "concept",
+     "heading": "Why the environment matters",
+     "body_md": "",
+     "bullets": [],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Benefit",
+        "Imagined example"
+       ],
+       "rows": [
+        [
+         "Identifying opportunities (first-mover advantage)",
+         "Pahadi Organics launches millet snacks a year before rivals"
+        ],
+        [
+         "Early warning of threats",
+         "Tamarind Tiffins starts phone ordering when cloud kitchens open"
+        ],
+        [
+         "Tapping useful resources",
+         "A firm learns of a cheaper input supplier or a bank scheme"
+        ],
+        [
+         "Coping with rapid change",
+         "A workshop retrains mechanics for electric scooters"
+        ],
+        [
+         "Planning and policy making",
+         "A tea estate times its exports with demand forecasts"
+        ],
+        [
+         "Improving performance",
+         "Firms that read change early keep customers and margins"
+        ]
+       ]
+      },
+      "alt": "Table of six benefits of understanding the business environment, each with an imagined example"
+     },
+     "math": [],
+     "narration": "Understanding the environment helps a firm in six ways. It spots opportunities early and gains a first-mover advantage. It gets early warning of threats. It finds useful resources such as finance and inputs. It copes with rapid change. It plans better. And all of this improves its performance.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s07",
+     "layout": "two-column",
+     "heading": "Opportunity or threat?",
+     "body_md": "",
+     "bullets": [],
+     "columns": [
+      "**Opportunity**\n\nA favourable change the firm can use, such as rising demand for millet snacks.",
+      "**Threat**\n\nA change that can harm the firm, such as new rivals with app ordering."
+     ],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Change",
+        "For whom it is…"
+       ],
+       "rows": [
+        [
+         "Millet snacks in demand",
+         "An opportunity for a health-food firm"
+        ],
+        [
+         "Cloud kitchens open nearby",
+         "A threat to a lunch-box service"
+        ]
+       ]
+      },
+      "alt": "Table of two imagined changes, one an opportunity and one a threat"
+     },
+     "math": [],
+     "narration": "The same change can be an opportunity for one firm and a threat for another. A craze for millet snacks helps a health-food maker but may hurt a fried-snack seller. That is why each firm must read the environment in the light of its own business.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s08",
+     "layout": "check",
+     "heading": "Quick check: uncertainty",
+     "body_md": "A garment exporter cannot be sure which festival colours will sell next year. Which feature is this?",
+     "bullets": [],
+     "visual": null,
+     "math": [],
+     "narration": "Ask whether the future can be predicted with confidence.",
+     "check_question_id": "q_isc12commerce_ch01_004",
+     "audio": null
+    },
+    {
+     "id": "s09",
+     "layout": "concept",
+     "heading": "Environmental scanning",
+     "body_md": "**Environmental scanning** is the continuous gathering and analysis of information about the environment to detect **early signals** of opportunities and threats.",
+     "bullets": [],
+     "visual": {
+      "kind": "flow",
+      "spec": {
+       "direction": "LR",
+       "nodes": [
+        {
+         "id": "n1",
+         "label": "Gather information"
+        },
+        {
+         "id": "n2",
+         "label": "Analyse signals"
+        },
+        {
+         "id": "n3",
+         "label": "Share with managers"
+        },
+        {
+         "id": "n4",
+         "label": "Plan a response"
+        },
+        {
+         "id": "n5",
+         "label": "Keep watching"
+        }
+       ],
+       "edges": [
+        {
+         "from": "n1",
+         "to": "n2"
+        },
+        {
+         "from": "n2",
+         "to": "n3"
+        },
+        {
+         "from": "n3",
+         "to": "n4"
+        },
+        {
+         "from": "n4",
+         "to": "n5"
+        }
+       ]
+      },
+      "alt": "Flow of environmental scanning: gather information, analyse the signals, share them with managers, plan a response, and keep watching",
+      "caption": "Scanning is a continuous cycle."
+     },
+     "math": [],
+     "narration": "Scanning is how a firm keeps its eyes open. It gathers information from news, trade fairs, customers and rivals. It analyses the signals, shares them with managers, and plans a response. Then it keeps watching, because the environment never stops changing. Scanning is a cycle, not a one-time task.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s10",
+     "layout": "example",
+     "heading": "Worked example 2: a scanning log",
+     "body_md": "An imagined marble-craft firm in Jodhpur keeps a monthly log of signals.",
+     "bullets": [
+      "Step 1: note the signal.",
+      "Step 2: decide whether it is an **opportunity** or a **threat**.",
+      "Step 3: plan a response."
+     ],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Signal noticed",
+        "Opportunity or threat?",
+        "Planned response"
+       ],
+       "rows": [
+        [
+         "Hotels ask for eco-friendly décor",
+         "Opportunity",
+         "Design a light marble range"
+        ],
+        [
+         "Cheap resin copies appear online",
+         "Threat",
+         "Stress hand-carving and certificates"
+        ],
+        [
+         "Export portal waives fees for artisans",
+         "Opportunity",
+         "List products on the portal"
+        ]
+       ]
+      },
+      "alt": "Worked scanning log of an imagined marble-craft firm: three signals classified as opportunity or threat with a planned response",
+      "caption": "Imagined scanning log of Aravalli Stone Crafts, Jodhpur."
+     },
+     "math": [],
+     "narration": "Here is an imagined scanning log. Hotels asking for eco-friendly décor is an opportunity, so the firm designs a light range. Cheap resin copies online are a threat, so it stresses hand carving. An export portal waiving fees is an opportunity, so it lists its products there. Each signal leads to an action.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s11",
+     "layout": "check",
+     "heading": "Quick check: scanning",
+     "body_md": "Fill in the blank: careful monitoring of the environment for early signals is environmental ___.",
+     "bullets": [],
+     "visual": null,
+     "math": [],
+     "narration": "One word completes the name of this process.",
+     "check_question_id": "q_isc12commerce_ch01_021",
+     "audio": null
+    },
+    {
+     "id": "s12",
+     "layout": "concept",
+     "heading": "Who scans, and how often?",
+     "body_md": "",
+     "bullets": [],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Question",
+        "Answer"
+       ],
+       "rows": [
+        [
+         "Who?",
+         "Top managers lead; every manager contributes"
+        ],
+        [
+         "Sources?",
+         "News, trade fairs, customers, suppliers, rivals, government notices"
+        ],
+        [
+         "How often?",
+         "Continuously, with regular reviews"
+        ],
+        [
+         "Why?",
+         "To act before rivals and avoid surprises"
+        ]
+       ]
+      },
+      "alt": "Table answering who scans the environment, from which sources, how often and why"
+     },
+     "math": [],
+     "narration": "Scanning is led by top managers, but every manager notices something useful, from a salesperson's talk with a customer to a buyer's chat with a supplier. Firms review these signals regularly, so that they can act before their rivals and are not caught by surprise.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s13",
+     "layout": "summary",
+     "heading": "Summary of Part 1",
+     "body_md": "",
+     "bullets": [],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Idea",
+        "Key point"
+       ],
+       "rows": [
+        [
+         "Business environment",
+         "All forces, inside and outside, that affect a firm"
+        ],
+        [
+         "Features",
+         "Totality, specific and general, inter-related, dynamic, uncertain, complex, relative"
+        ],
+        [
+         "Importance",
+         "Opportunities, threats, resources, change, planning, performance"
+        ],
+        [
+         "Environmental scanning",
+         "Continuous monitoring to catch early signals"
+        ]
+       ]
+      },
+      "alt": "Summary table of Part 1: meaning, features, importance and environmental scanning"
+     },
+     "math": [],
+     "narration": "To sum up Part 1. The business environment is the total of all forces, inside and outside, that affect a firm. It is complex, dynamic, uncertain, inter-related and relative. Understanding it helps a firm seize opportunities, prepare for threats and plan better. Firms keep track of it through continuous environmental scanning.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s14",
+     "layout": "exam-tips",
+     "heading": "Exam tips",
+     "body_md": "",
+     "bullets": [
+      "Learn the **definition** word for word: individuals, institutions and forces.",
+      "For features, find the **clue** in the case.",
+      "For importance, link each point to the **firm in the question**.",
+      "Scanning is **continuous**: never say it is done once."
+     ],
+     "visual": {
+      "kind": "flow",
+      "spec": {
+       "direction": "LR",
+       "nodes": [
+        {
+         "id": "n1",
+         "label": "Quote the line"
+        },
+        {
+         "id": "n2",
+         "label": "Name the factor or dimension"
+        },
+        {
+         "id": "n3",
+         "label": "Explain its effect"
+        }
+       ],
+       "edges": [
+        {
+         "from": "n1",
+         "to": "n2"
+        },
+        {
+         "from": "n2",
+         "to": "n3"
+        }
+       ]
+      },
+      "alt": "Three steps for case questions: quote the line, name the factor or dimension, and explain its effect"
+     },
+     "math": [],
+     "narration": "A few tips. Use the full definition with individuals, institutions and forces. In feature questions, spot the clue in the case. In importance questions, tie each point to the firm you are given. And remember that scanning is continuous. In every case question, quote the line, name the idea and explain it.",
+     "check_question_id": null,
+     "audio": null
+    }
+   ],
+   "status": "draft",
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "unit": "isc-12-commerce-ch01",
+   "part": 2,
+   "version": 1,
+   "title": "Business Environment — Part 2: Micro and Macro Environment and SWOT",
+   "language": "en",
+   "goals": [
+    "Identify internal factors and external micro factors of a firm's environment",
+    "Classify changes into economic, social, technological, political and legal dimensions and explain their effects",
+    "Prepare a simple SWOT analysis for a small Indian business"
+   ],
+   "slides": [
+    {
+     "id": "s01",
+     "layout": "title",
+     "heading": "Micro, Macro and SWOT",
+     "body_md": "Part 2: the **internal** factors, the **external micro** factors, the five **macro** dimensions, and **SWOT** analysis.",
+     "bullets": [],
+     "visual": {
+      "kind": "flow",
+      "spec": {
+       "direction": "LR",
+       "nodes": [
+        {
+         "id": "n1",
+         "label": "Internal factors"
+        },
+        {
+         "id": "n2",
+         "label": "External micro factors"
+        },
+        {
+         "id": "n3",
+         "label": "Macro environment"
+        },
+        {
+         "id": "n4",
+         "label": "SWOT analysis"
+        }
+       ],
+       "edges": [
+        {
+         "from": "n1",
+         "to": "n2"
+        },
+        {
+         "from": "n2",
+         "to": "n3"
+        },
+        {
+         "from": "n3",
+         "to": "n4"
+        }
+       ]
+      },
+      "alt": "Route map of Part 2: internal factors, external micro factors, the five macro dimensions and SWOT analysis",
+      "caption": "Part 2 at a glance"
+     },
+     "math": [],
+     "narration": "In Part 2 we open up the layers of the environment. First, the factors inside the firm. Then the people and firms it deals with directly. Then the big forces that shape every business. Finally, we bring them together in a simple tool called SWOT analysis.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s02",
+     "layout": "concept",
+     "heading": "Internal factors",
+     "body_md": "Internal factors lie **inside** the firm and are largely **within its control**.",
+     "bullets": [],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Internal factor",
+        "Example"
+       ],
+       "rows": [
+        [
+         "Value system, mission and objectives",
+         "A firm that refuses to use child labour"
+        ],
+        [
+         "Structure and corporate culture",
+         "Open communication and teamwork"
+        ],
+        [
+         "Human resources",
+         "Skilled carpenters, trained sales staff"
+        ],
+        [
+         "Physical and technological resources",
+         "Machines, buildings, research"
+        ],
+        [
+         "Financial resources",
+         "Owners' funds, ability to borrow"
+        ],
+        [
+         "Marketing resources and image",
+         "A trusted brand, a dealer network"
+        ]
+       ]
+      },
+      "alt": "Table of internal factors of the environment with examples"
+     },
+     "math": [],
+     "narration": "Internal factors include the firm's values, mission and objectives, its structure and culture, its people, its machines and technology, its money, and its brand and marketing strength. Because they are inside the firm, managers can change them, though not overnight.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s03",
+     "layout": "concept",
+     "heading": "External micro factors",
+     "body_md": "External micro factors are the people and firms the business deals with **directly**.",
+     "bullets": [],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "External micro factor",
+        "Who they are",
+        "Effect on the firm"
+       ],
+       "rows": [
+        [
+         "Suppliers",
+         "Sellers of inputs",
+         "Cost and timely supply"
+        ],
+        [
+         "Customers",
+         "Buyers of the product",
+         "Demand and sales"
+        ],
+        [
+         "Competitors",
+         "Firms selling similar products",
+         "Prices and market share"
+        ],
+        [
+         "Marketing intermediaries",
+         "Dealers, wholesalers, couriers, platforms",
+         "Reach and delivery"
+        ],
+        [
+         "Financiers",
+         "Banks and lenders",
+         "Cost and availability of funds"
+        ],
+        [
+         "Public",
+         "Media, local residents, citizens' groups",
+         "Image and goodwill"
+        ]
+       ]
+      },
+      "alt": "Table of six external micro factors, who they are and how each affects a firm"
+     },
+     "math": [],
+     "narration": "Outside the firm but close to it are six groups. Suppliers sell it inputs. Customers buy its products. Competitors sell similar products. Marketing intermediaries, such as dealers and couriers, help its goods reach buyers. Financiers lend it money. And the public, including media and local residents, shapes its image.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s04",
+     "layout": "check",
+     "heading": "Quick check: inside or outside?",
+     "body_md": "Which of these is an internal factor of the micro environment?",
+     "bullets": [],
+     "visual": null,
+     "math": [],
+     "narration": "Look for the factor that the firm itself decides.",
+     "check_question_id": "q_isc12commerce_ch01_025",
+     "audio": null
+    },
+    {
+     "id": "s05",
+     "layout": "two-column",
+     "heading": "Micro versus macro",
+     "body_md": "",
+     "bullets": [],
+     "columns": [
+      "**Micro environment**\n\nImmediate surroundings; affects one firm directly; some factors can be influenced.",
+      "**Macro environment**\n\nWider forces; affect all firms; beyond the firm's control."
+     ],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Basis",
+        "Micro",
+        "Macro"
+       ],
+       "rows": [
+        [
+         "Nearness",
+         "Immediate",
+         "Wider"
+        ],
+        [
+         "Effect",
+         "One firm directly",
+         "All firms"
+        ],
+        [
+         "Control",
+         "Partly influenced",
+         "Beyond control"
+        ]
+       ]
+      },
+      "alt": "Table comparing micro and macro environment on nearness, effect and control"
+     },
+     "math": [],
+     "narration": "The micro environment is close to the firm and affects it directly; a firm can bargain with suppliers or win over customers. The macro environment is wider. It shapes every firm in the economy, and no single firm can control it.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s06",
+     "layout": "concept",
+     "heading": "The macro environment",
+     "body_md": "",
+     "bullets": [],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Dimension",
+        "Includes",
+        "Imagined change"
+       ],
+       "rows": [
+        [
+         "Economic",
+         "Interest rates, inflation, incomes, economic policy",
+         "Loan rates rise"
+        ],
+        [
+         "Social",
+         "Values, habits, lifestyles, population",
+         "More working couples buy meal kits"
+        ],
+        [
+         "Technological",
+         "New methods, machines, innovations",
+         "Drones spray crops"
+        ],
+        [
+         "Political",
+         "Stability, government attitude to business",
+         "A stable state welcomes investment"
+        ],
+        [
+         "Legal",
+         "Laws, rules, regulations",
+         "Salt and sugar must be shown on packs"
+        ]
+       ]
+      },
+      "alt": "Table of the five macro dimensions, what each includes and an imagined change for each"
+     },
+     "math": [],
+     "narration": "The macro environment has five dimensions. Economic covers interest rates, inflation, incomes and economic policy. Social covers values, habits and lifestyles. Technological covers new methods and machines. Political covers stability and the government's attitude to business. Legal covers the laws and rules a firm must follow.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s07",
+     "layout": "concept",
+     "heading": "Economic policy changes since 1991",
+     "body_md": "",
+     "bullets": [],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Change",
+        "Meaning"
+       ],
+       "rows": [
+        [
+         "Liberalisation",
+         "Fewer licences and controls; freer business decisions"
+        ],
+        [
+         "Privatisation",
+         "Smaller role for the public sector"
+        ],
+        [
+         "Globalisation",
+         "Closer links with the world economy through trade, investment and technology"
+        ]
+       ]
+      },
+      "alt": "Table of liberalisation, privatisation and globalisation with their meanings"
+     },
+     "math": [],
+     "narration": "Since nineteen ninety one, Indian business has worked in a very different economic environment. Liberalisation removed many licences and controls. Privatisation reduced the role of the public sector. Globalisation linked India more closely with the world through trade, investment and technology.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s08",
+     "layout": "example",
+     "heading": "Worked example 1: classifying changes",
+     "body_md": "An imagined bakery in Indore faces four changes.",
+     "bullets": [
+      "Step 1: ask whether the change is about **money, people, machines, government or law**.",
+      "Step 2: name the dimension.",
+      "Step 3: state one effect."
+     ],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Change faced by Malwa Bakes (imagined)",
+        "Dimension",
+        "Effect"
+       ],
+       "rows": [
+        [
+         "New labelling law",
+         "Legal",
+         "Redesign packs"
+        ],
+        [
+         "Wheat prices rise",
+         "Economic",
+         "Costs rise; review prices"
+        ],
+        [
+         "Buyers want whole-grain bread",
+         "Social",
+         "Add whole-grain lines"
+        ],
+        [
+         "A new oven controls baking by app",
+         "Technological",
+         "Less waste, steadier quality"
+        ]
+       ]
+      },
+      "alt": "Worked table classifying four changes faced by an imagined bakery into macro dimensions with their effects",
+      "caption": "Ask: is it about money, people, machines, government or law?"
+     },
+     "math": [],
+     "narration": "Let us classify four changes for an imagined bakery. A labelling law is legal, so packs must be redesigned. Rising wheat prices are economic, so costs go up. Buyers wanting whole-grain bread is social, so new lines are needed. An oven controlled by an app is technological, giving steadier quality.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s09",
+     "layout": "check",
+     "heading": "Quick check: odd one out",
+     "body_md": "Which one is **not** part of the macro environment?",
+     "bullets": [],
+     "visual": null,
+     "math": [],
+     "narration": "One option affects only firms in the same market. Which one?",
+     "check_question_id": "q_isc12commerce_ch01_045",
+     "audio": null
+    },
+    {
+     "id": "s10",
+     "layout": "diagram",
+     "heading": "SWOT analysis",
+     "body_md": "**SWOT** studies a firm's internal **Strengths** and **Weaknesses**, and the external **Opportunities** and **Threats** it faces.",
+     "bullets": [],
+     "visual": {
+      "kind": "svg",
+      "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 540 320\" role=\"img\" aria-label=\"SWOT grid: top row internal (strengths, what we do well; weaknesses, what holds us back); bottom row external (opportunities, favourable changes outside; threats, harmful changes outside); left column helpful, right column harmful\" font-family=\"sans-serif\" font-size=\"14\" fill=\"none\"><title>SWOT grid: top row internal (strengths, what we do well; weaknesses, what holds us back); bottom row external (opportunities, favourable changes outside; threats, harmful changes outside); left column helpful, right column harmful</title><rect x=\"70\" y=\"40\" width=\"220\" height=\"120\" rx=\"6\" fill=\"var(--diagram-green)\" fill-opacity=\"0.15\" stroke=\"var(--diagram-green)\" stroke-width=\"1.5\"/><rect x=\"290\" y=\"40\" width=\"220\" height=\"120\" rx=\"6\" fill=\"var(--diagram-red)\" fill-opacity=\"0.12\" stroke=\"var(--diagram-red)\" stroke-width=\"1.5\"/><rect x=\"70\" y=\"160\" width=\"220\" height=\"120\" rx=\"6\" fill=\"var(--diagram-blue)\" fill-opacity=\"0.12\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.5\"/><rect x=\"290\" y=\"160\" width=\"220\" height=\"120\" rx=\"6\" fill=\"var(--diagram-yellow)\" fill-opacity=\"0.18\" stroke=\"var(--diagram-yellow)\" stroke-width=\"1.5\"/><text x=\"180\" y=\"80\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"14\" font-weight=\"bold\">Strengths</text><text x=\"180\" y=\"106\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">what we do well</text><text x=\"400\" y=\"80\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"14\" font-weight=\"bold\">Weaknesses</text><text x=\"400\" y=\"106\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">what holds us back</text><text x=\"180\" y=\"200\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"14\" font-weight=\"bold\">Opportunities</text><text x=\"180\" y=\"226\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">favourable changes outside</text><text x=\"400\" y=\"200\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"14\" font-weight=\"bold\">Threats</text><text x=\"400\" y=\"226\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">harmful changes outside</text><text x=\"60\" y=\"100\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"end\" dominant-baseline=\"middle\" font-size=\"12\">Internal</text><text x=\"60\" y=\"220\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"end\" dominant-baseline=\"middle\" font-size=\"12\">External</text><text x=\"180\" y=\"26\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">Helpful</text><text x=\"400\" y=\"26\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">Harmful</text></svg>",
+      "alt": "SWOT grid: top row internal (strengths, what we do well; weaknesses, what holds us back); bottom row external (opportunities, favourable changes outside; threats, harmful changes outside); left column helpful, right column harmful",
+      "caption": "Strengths and weaknesses are internal; opportunities and threats are external."
+     },
+     "math": [],
+     "narration": "SWOT brings everything together. The top row looks inside the firm: strengths, what it does well, and weaknesses, what holds it back. The bottom row looks outside: opportunities, favourable changes it can use, and threats, harmful changes it must guard against.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s11",
+     "layout": "example",
+     "heading": "Worked example 2: a simple SWOT",
+     "body_md": "Facts about an imagined lunch-box service in Madurai: loyal office customers; only two delivery staff; offices back to full attendance; cloud kitchens nearby.",
+     "bullets": [
+      "Step 1: sort facts into **inside** and **outside**.",
+      "Step 2: mark each as **helpful** or **harmful**.",
+      "Step 3: fill the four boxes."
+     ],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Strengths",
+        "Weaknesses",
+        "Opportunities",
+        "Threats"
+       ],
+       "rows": [
+        [
+         "Loyal office customers; home-style taste",
+         "Only two delivery staff",
+         "Offices back to full attendance",
+         "Cloud kitchens with app ordering"
+        ]
+       ]
+      },
+      "alt": "Worked SWOT table for an imagined lunch-box service: loyal customers as a strength, few delivery staff as a weakness, offices returning as an opportunity, cloud kitchens as a threat",
+      "caption": "Imagined SWOT of Tamarind Tiffins, Madurai."
+     },
+     "math": [],
+     "narration": "Sort the facts. Loyal customers are inside and helpful, a strength. Only two delivery staff are inside and harmful, a weakness. Offices returning to full attendance are outside and helpful, an opportunity. Cloud kitchens nearby are outside and harmful, a threat. A good plan uses strengths to grab opportunities.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s12",
+     "layout": "check",
+     "heading": "Quick check: a threat",
+     "body_md": "A supermarket chain plans a bakery section in the same market as a small bakery. In the small bakery's SWOT, this is…",
+     "bullets": [],
+     "visual": null,
+     "math": [],
+     "narration": "Is it inside or outside the bakery, and does it help or harm?",
+     "check_question_id": "q_isc12commerce_ch01_057",
+     "audio": null
+    },
+    {
+     "id": "s13",
+     "layout": "summary",
+     "heading": "Summary of Part 2",
+     "body_md": "",
+     "bullets": [],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Layer",
+        "Contents"
+       ],
+       "rows": [
+        [
+         "Internal",
+         "Mission, values, structure, culture, people, money, technology, image"
+        ],
+        [
+         "External micro",
+         "Suppliers, customers, competitors, intermediaries, financiers, public"
+        ],
+        [
+         "Macro",
+         "Economic, social, technological, political, legal"
+        ],
+        [
+         "SWOT",
+         "Strengths and weaknesses inside; opportunities and threats outside"
+        ]
+       ]
+      },
+      "alt": "Summary table of Part 2: internal factors, external micro factors, macro dimensions and SWOT"
+     },
+     "math": [],
+     "narration": "To sum up Part 2. Internal factors such as mission, people and money are largely controllable. External micro factors are suppliers, customers, competitors, intermediaries, financiers and the public. The macro environment has economic, social, technological, political and legal dimensions. SWOT sorts strengths and weaknesses inside the firm from opportunities and threats outside.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s14",
+     "layout": "exam-tips",
+     "heading": "Exam tips",
+     "body_md": "",
+     "bullets": [
+      "Name the **exact** micro factor: supplier, intermediary, financier or public.",
+      "Classify macro changes by asking **money, people, machines, government or law**.",
+      "In SWOT, **S and W are internal**, **O and T are external**.",
+      "Link each SWOT point to a **fact in the case**."
+     ],
+     "visual": {
+      "kind": "flow",
+      "spec": {
+       "direction": "LR",
+       "nodes": [
+        {
+         "id": "n1",
+         "label": "Quote the line"
+        },
+        {
+         "id": "n2",
+         "label": "Name the factor or dimension"
+        },
+        {
+         "id": "n3",
+         "label": "Explain its effect"
+        }
+       ],
+       "edges": [
+        {
+         "from": "n1",
+         "to": "n2"
+        },
+        {
+         "from": "n2",
+         "to": "n3"
+        }
+       ]
+      },
+      "alt": "Three steps for case questions: quote the line, name the factor or dimension, and explain its effect"
+     },
+     "math": [],
+     "narration": "Final tips. Name micro factors precisely; a courier is an intermediary, a bank is a financier. Classify macro changes with the simple question: money, people, machines, government or law. In SWOT, keep strengths and weaknesses inside and opportunities and threats outside. And always tie your points to the facts given.",
+     "check_question_id": null,
+     "audio": null
+    }
+   ],
+   "status": "draft",
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  }
+ ],
+ "notes": {
+  "unit": "isc-12-commerce-ch01",
+  "version": 1,
+  "title": "Business Environment — notes",
+  "language": "en",
+  "sections": [
+   {
+    "heading": "1. Meaning and features of business environment",
+    "body_md": "**Business environment** is the sum total of all **individuals, institutions and forces**, internal and external, that affect the working and performance of a business.\n\n**Features:**\n- **Totality of forces:** the environment is the sum of all forces, taken together.\n- **Specific and general forces:** specific forces (suppliers, customers, competitors) affect a particular firm directly; general forces (economic, social, political, legal, technological) affect all firms.\n- **Inter-relatedness:** factors are linked, so a change in one leads to changes in others.\n- **Dynamic:** the environment keeps changing.\n- **Uncertainty:** future changes are difficult to predict.\n- **Complexity:** many factors act together, so their combined effect is hard to judge.\n- **Relativity:** its impact differs from country to country, region to region and firm to firm.",
+    "key_terms": [
+     {
+      "term": "Business environment",
+      "definition_md": "All individuals, institutions and forces, internal and external, that affect a business."
+     },
+     {
+      "term": "Specific forces",
+      "definition_md": "Forces such as suppliers and competitors that affect a particular firm directly."
+     },
+     {
+      "term": "General forces",
+      "definition_md": "Forces such as economic policy and laws that affect all firms."
+     }
+    ],
+    "formulas": [],
+    "visual": {
+     "kind": "svg",
+     "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 560 340\" role=\"img\" aria-label=\"Three nested boxes: at the centre the firm's internal factors (mission, values, people, money, technology); around them the external micro environment (suppliers, customers, competitors, intermediaries, financiers, public); outermost the macro environment (economic, social, technological, political and legal). The firm's control falls as we move outwards\" font-family=\"sans-serif\" font-size=\"14\" fill=\"none\"><title>Three nested boxes: at the centre the firm's internal factors (mission, values, people, money, technology); around them the external micro environment (suppliers, customers, competitors, intermediaries, financiers, public); outermost the macro environment (economic, social, technological, political and legal). The firm's control falls as we move outwards</title><rect x=\"20\" y=\"20\" width=\"520\" height=\"300\" rx=\"18\" fill=\"var(--diagram-blue)\" fill-opacity=\"0.08\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.5\"/><rect x=\"90\" y=\"70\" width=\"380\" height=\"200\" rx=\"16\" fill=\"var(--diagram-green)\" fill-opacity=\"0.12\" stroke=\"var(--diagram-green)\" stroke-width=\"1.5\"/><rect x=\"190\" y=\"125\" width=\"180\" height=\"90\" rx=\"12\" fill=\"var(--diagram-accent)\" fill-opacity=\"0.18\" stroke=\"var(--diagram-accent)\" stroke-width=\"2\"/><text x=\"280\" y=\"150\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"14\" font-weight=\"bold\">Internal factors</text><text x=\"280\" y=\"172\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">mission, values, people,</text><text x=\"280\" y=\"190\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">money, technology</text><text x=\"280\" y=\"90\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">External micro: suppliers, customers, competitors,</text><text x=\"280\" y=\"250\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">intermediaries, financiers, public</text><text x=\"280\" y=\"40\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"13\" font-weight=\"bold\">Macro: economic, social, technological, political, legal</text><text x=\"280\" y=\"300\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">Control falls as we move outwards</text></svg>",
+     "alt": "Three nested boxes: at the centre the firm's internal factors (mission, values, people, money, technology); around them the external micro environment (suppliers, customers, competitors, intermediaries, financiers, public); outermost the macro environment (economic, social, technological, political and legal). The firm's control falls as we move outwards",
+     "caption": "The firm sits inside its micro environment, which sits inside the macro environment."
+    },
+    "visuals": [
+     {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Feature",
+        "What it means"
+       ],
+       "rows": [
+        [
+         "Totality of forces",
+         "All forces, taken together, form the environment"
+        ],
+        [
+         "Specific and general forces",
+         "Some affect one firm (a rival next door); some affect all (a tax change)"
+        ],
+        [
+         "Inter-relatedness",
+         "A change in one factor sets off changes in others"
+        ],
+        [
+         "Dynamic",
+         "It keeps changing"
+        ],
+        [
+         "Uncertainty",
+         "Future changes are hard to predict"
+        ],
+        [
+         "Complexity",
+         "Many factors act together, so effects are hard to judge"
+        ],
+        [
+         "Relativity",
+         "Its impact differs by place and firm"
+        ]
+       ]
+      },
+      "alt": "Table of seven features of business environment with their meanings"
+     }
+    ],
+    "topic_ids": [
+     "isc-12-commerce-ch01-t01"
+    ]
+   },
+   {
+    "heading": "2. Importance of understanding the environment",
+    "body_md": "- **Identifying opportunities and getting the first-mover advantage:** firms that spot a favourable trend early can enter before rivals.\n- **Early warning signals of threats:** knowing about possible dangers in time lets a firm prepare.\n- **Tapping useful resources:** the environment is a source of inputs, finance and skills.\n- **Coping with rapid changes:** firms that watch the environment adapt faster.\n- **Assisting in planning and policy formulation:** knowledge of the environment is the basis of plans.\n- **Improving performance:** firms that read the environment well tend to do better over time.\n\nThe same change can be an **opportunity** for one firm and a **threat** for another.",
+    "key_terms": [
+     {
+      "term": "First-mover advantage",
+      "definition_md": "The benefit of being first to use an opportunity, before rivals."
+     }
+    ],
+    "formulas": [],
+    "visual": {
+     "kind": "table",
+     "spec": {
+      "headers": [
+       "Benefit",
+       "Imagined example"
+      ],
+      "rows": [
+       [
+        "Identifying opportunities (first-mover advantage)",
+        "Pahadi Organics launches millet snacks a year before rivals"
+       ],
+       [
+        "Early warning of threats",
+        "Tamarind Tiffins starts phone ordering when cloud kitchens open"
+       ],
+       [
+        "Tapping useful resources",
+        "A firm learns of a cheaper input supplier or a bank scheme"
+       ],
+       [
+        "Coping with rapid change",
+        "A workshop retrains mechanics for electric scooters"
+       ],
+       [
+        "Planning and policy making",
+        "A tea estate times its exports with demand forecasts"
+       ],
+       [
+        "Improving performance",
+        "Firms that read change early keep customers and margins"
+       ]
+      ]
+     },
+     "alt": "Table of six benefits of understanding the business environment, each with an imagined example"
+    },
+    "visuals": [],
+    "topic_ids": [
+     "isc-12-commerce-ch01-t01"
+    ]
+   },
+   {
+    "heading": "3. Environmental scanning",
+    "body_md": "**Environmental scanning** is the careful, **continuous** monitoring of the internal and external environment — gathering, analysing and passing on information about events, trends and relationships — to detect **early signals** of opportunities and threats.\n\n**Why firms scan:** the environment is dynamic and uncertain; early information lets a firm plan, avoid surprises and act before rivals.\n\n**How:** gather information (news, trade fairs, customers, suppliers, rivals, government notices) → analyse it into opportunities and threats → share it with managers → plan a response → keep watching.",
+    "key_terms": [
+     {
+      "term": "Environmental scanning",
+      "definition_md": "Continuous monitoring of the environment to detect early signals of change."
+     }
+    ],
+    "formulas": [],
+    "visual": {
+     "kind": "flow",
+     "spec": {
+      "direction": "LR",
+      "nodes": [
+       {
+        "id": "n1",
+        "label": "Gather information"
+       },
+       {
+        "id": "n2",
+        "label": "Analyse signals"
+       },
+       {
+        "id": "n3",
+        "label": "Share with managers"
+       },
+       {
+        "id": "n4",
+        "label": "Plan a response"
+       },
+       {
+        "id": "n5",
+        "label": "Keep watching"
+       }
+      ],
+      "edges": [
+       {
+        "from": "n1",
+        "to": "n2"
+       },
+       {
+        "from": "n2",
+        "to": "n3"
+       },
+       {
+        "from": "n3",
+        "to": "n4"
+       },
+       {
+        "from": "n4",
+        "to": "n5"
+       }
+      ]
+     },
+     "alt": "Flow of environmental scanning: gather information, analyse the signals, share them with managers, plan a response, and keep watching",
+     "caption": "Scanning is a continuous cycle."
+    },
+    "visuals": [
+     {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Signal noticed",
+        "Opportunity or threat?",
+        "Planned response"
+       ],
+       "rows": [
+        [
+         "Hotels ask for eco-friendly décor",
+         "Opportunity",
+         "Design a light marble range"
+        ],
+        [
+         "Cheap resin copies appear online",
+         "Threat",
+         "Stress hand-carving and certificates"
+        ],
+        [
+         "Export portal waives fees for artisans",
+         "Opportunity",
+         "List products on the portal"
+        ]
+       ]
+      },
+      "alt": "Worked scanning log of an imagined marble-craft firm: three signals classified as opportunity or threat with a planned response",
+      "caption": "Imagined scanning log of Aravalli Stone Crafts, Jodhpur."
+     }
+    ],
+    "topic_ids": [
+     "isc-12-commerce-ch01-t02"
+    ]
+   },
+   {
+    "heading": "4. The micro environment",
+    "body_md": "**Internal factors** (largely controllable): value system; vision, mission and objectives; management structure and internal relationships; corporate culture; human resources; physical resources and technological capability; financial resources; marketing resources; company image and brand equity.\n\n**External micro factors** (the firm's immediate surroundings):\n- **Suppliers** — sellers of raw materials and components.\n- **Customers** — individuals, businesses, government, exporters who buy the product.\n- **Competitors** — firms offering similar or substitute products.\n- **Marketing intermediaries** — dealers, wholesalers, retailers, couriers, online platforms, advertising agencies.\n- **Financiers** — banks and other lenders and investors.\n- **Public** — media, local residents, citizens' groups and others with an interest in the firm.",
+    "key_terms": [
+     {
+      "term": "Internal factors",
+      "definition_md": "Factors inside the firm, largely within its control."
+     },
+     {
+      "term": "Marketing intermediaries",
+      "definition_md": "Firms that help a business promote, sell and distribute its goods."
+     },
+     {
+      "term": "Public",
+      "definition_md": "Any group with an actual or potential interest in, or effect on, the firm."
+     }
+    ],
+    "formulas": [],
+    "visual": {
+     "kind": "table",
+     "spec": {
+      "headers": [
+       "Internal factor",
+       "Example"
+      ],
+      "rows": [
+       [
+        "Value system, mission and objectives",
+        "A firm that refuses to use child labour"
+       ],
+       [
+        "Structure and corporate culture",
+        "Open communication and teamwork"
+       ],
+       [
+        "Human resources",
+        "Skilled carpenters, trained sales staff"
+       ],
+       [
+        "Physical and technological resources",
+        "Machines, buildings, research"
+       ],
+       [
+        "Financial resources",
+        "Owners' funds, ability to borrow"
+       ],
+       [
+        "Marketing resources and image",
+        "A trusted brand, a dealer network"
+       ]
+      ]
+     },
+     "alt": "Table of internal factors of the environment with examples"
+    },
+    "visuals": [
+     {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "External micro factor",
+        "Who they are",
+        "Effect on the firm"
+       ],
+       "rows": [
+        [
+         "Suppliers",
+         "Sellers of inputs",
+         "Cost and timely supply"
+        ],
+        [
+         "Customers",
+         "Buyers of the product",
+         "Demand and sales"
+        ],
+        [
+         "Competitors",
+         "Firms selling similar products",
+         "Prices and market share"
+        ],
+        [
+         "Marketing intermediaries",
+         "Dealers, wholesalers, couriers, platforms",
+         "Reach and delivery"
+        ],
+        [
+         "Financiers",
+         "Banks and lenders",
+         "Cost and availability of funds"
+        ],
+        [
+         "Public",
+         "Media, local residents, citizens' groups",
+         "Image and goodwill"
+        ]
+       ]
+      },
+      "alt": "Table of six external micro factors, who they are and how each affects a firm"
+     }
+    ],
+    "topic_ids": [
+     "isc-12-commerce-ch01-t03"
+    ]
+   },
+   {
+    "heading": "5. The macro environment",
+    "body_md": "- **Economic:** interest rates, inflation, incomes, savings, stock-market conditions, economic policies (since 1991: **liberalisation**, **privatisation**, **globalisation**).\n- **Social:** customs, traditions, values, habits, lifestyles, education, population trends.\n- **Technological:** new methods, machines, products and innovations (digital payments, e-commerce, automation).\n- **Political:** political stability, the government's attitude to business, relations with other countries.\n- **Legal:** laws and rules — for example on companies, competition, consumer protection, taxes and labelling.\n\nMacro forces affect **all** firms and are **beyond** the control of any single firm.",
+    "key_terms": [
+     {
+      "term": "Liberalisation",
+      "definition_md": "Removing unnecessary controls and licences on business."
+     },
+     {
+      "term": "Privatisation",
+      "definition_md": "Reducing the role of the public sector."
+     },
+     {
+      "term": "Globalisation",
+      "definition_md": "Integrating the economy with the world economy."
+     }
+    ],
+    "formulas": [],
+    "visual": {
+     "kind": "table",
+     "spec": {
+      "headers": [
+       "Dimension",
+       "Includes",
+       "Imagined change"
+      ],
+      "rows": [
+       [
+        "Economic",
+        "Interest rates, inflation, incomes, economic policy",
+        "Loan rates rise"
+       ],
+       [
+        "Social",
+        "Values, habits, lifestyles, population",
+        "More working couples buy meal kits"
+       ],
+       [
+        "Technological",
+        "New methods, machines, innovations",
+        "Drones spray crops"
+       ],
+       [
+        "Political",
+        "Stability, government attitude to business",
+        "A stable state welcomes investment"
+       ],
+       [
+        "Legal",
+        "Laws, rules, regulations",
+        "Salt and sugar must be shown on packs"
+       ]
+      ]
+     },
+     "alt": "Table of the five macro dimensions, what each includes and an imagined change for each"
+    },
+    "visuals": [
+     {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Change faced by Malwa Bakes (imagined)",
+        "Dimension",
+        "Effect"
+       ],
+       "rows": [
+        [
+         "New labelling law",
+         "Legal",
+         "Redesign packs"
+        ],
+        [
+         "Wheat prices rise",
+         "Economic",
+         "Costs rise; review prices"
+        ],
+        [
+         "Buyers want whole-grain bread",
+         "Social",
+         "Add whole-grain lines"
+        ],
+        [
+         "A new oven controls baking by app",
+         "Technological",
+         "Less waste, steadier quality"
+        ]
+       ]
+      },
+      "alt": "Worked table classifying four changes faced by an imagined bakery into macro dimensions with their effects",
+      "caption": "Ask: is it about money, people, machines, government or law?"
+     }
+    ],
+    "topic_ids": [
+     "isc-12-commerce-ch01-t04"
+    ]
+   },
+   {
+    "heading": "6. SWOT analysis",
+    "body_md": "**SWOT analysis** examines a firm's **Strengths** and **Weaknesses** (internal) and the **Opportunities** and **Threats** (external) it faces.\n\n**Preparing a simple SWOT:** list the facts; sort them into inside and outside; mark each as helpful or harmful; fill the four boxes.\n\n**Using it:** build on strengths, correct weaknesses, grab opportunities, and guard against threats — ideally using a strength to seize an opportunity.",
+    "key_terms": [
+     {
+      "term": "SWOT",
+      "definition_md": "Strengths, Weaknesses (internal), Opportunities, Threats (external)."
+     }
+    ],
+    "formulas": [],
+    "visual": {
+     "kind": "svg",
+     "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 540 320\" role=\"img\" aria-label=\"SWOT grid: top row internal (strengths, what we do well; weaknesses, what holds us back); bottom row external (opportunities, favourable changes outside; threats, harmful changes outside); left column helpful, right column harmful\" font-family=\"sans-serif\" font-size=\"14\" fill=\"none\"><title>SWOT grid: top row internal (strengths, what we do well; weaknesses, what holds us back); bottom row external (opportunities, favourable changes outside; threats, harmful changes outside); left column helpful, right column harmful</title><rect x=\"70\" y=\"40\" width=\"220\" height=\"120\" rx=\"6\" fill=\"var(--diagram-green)\" fill-opacity=\"0.15\" stroke=\"var(--diagram-green)\" stroke-width=\"1.5\"/><rect x=\"290\" y=\"40\" width=\"220\" height=\"120\" rx=\"6\" fill=\"var(--diagram-red)\" fill-opacity=\"0.12\" stroke=\"var(--diagram-red)\" stroke-width=\"1.5\"/><rect x=\"70\" y=\"160\" width=\"220\" height=\"120\" rx=\"6\" fill=\"var(--diagram-blue)\" fill-opacity=\"0.12\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.5\"/><rect x=\"290\" y=\"160\" width=\"220\" height=\"120\" rx=\"6\" fill=\"var(--diagram-yellow)\" fill-opacity=\"0.18\" stroke=\"var(--diagram-yellow)\" stroke-width=\"1.5\"/><text x=\"180\" y=\"80\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"14\" font-weight=\"bold\">Strengths</text><text x=\"180\" y=\"106\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">what we do well</text><text x=\"400\" y=\"80\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"14\" font-weight=\"bold\">Weaknesses</text><text x=\"400\" y=\"106\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">what holds us back</text><text x=\"180\" y=\"200\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"14\" font-weight=\"bold\">Opportunities</text><text x=\"180\" y=\"226\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">favourable changes outside</text><text x=\"400\" y=\"200\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"14\" font-weight=\"bold\">Threats</text><text x=\"400\" y=\"226\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">harmful changes outside</text><text x=\"60\" y=\"100\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"end\" dominant-baseline=\"middle\" font-size=\"12\">Internal</text><text x=\"60\" y=\"220\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"end\" dominant-baseline=\"middle\" font-size=\"12\">External</text><text x=\"180\" y=\"26\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">Helpful</text><text x=\"400\" y=\"26\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">Harmful</text></svg>",
+     "alt": "SWOT grid: top row internal (strengths, what we do well; weaknesses, what holds us back); bottom row external (opportunities, favourable changes outside; threats, harmful changes outside); left column helpful, right column harmful",
+     "caption": "Strengths and weaknesses are internal; opportunities and threats are external."
+    },
+    "visuals": [
+     {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Strengths",
+        "Weaknesses",
+        "Opportunities",
+        "Threats"
+       ],
+       "rows": [
+        [
+         "Loyal office customers; home-style taste",
+         "Only two delivery staff",
+         "Offices back to full attendance",
+         "Cloud kitchens with app ordering"
+        ]
+       ]
+      },
+      "alt": "Worked SWOT table for an imagined lunch-box service: loyal customers as a strength, few delivery staff as a weakness, offices returning as an opportunity, cloud kitchens as a threat",
+      "caption": "Imagined SWOT of Tamarind Tiffins, Madurai."
+     }
+    ],
+    "topic_ids": [
+     "isc-12-commerce-ch01-t05"
+    ]
+   }
+  ],
+  "exam_tips_md": "**Common mistakes**\n- Calling customers or suppliers internal factors (they are external micro factors).\n- Mixing up a firm's own weakness with an outside threat in SWOT.\n- Saying environmental scanning is done once.\n- Classifying consumer tastes as technological (they are social).\n\n**How marks are usually awarded**\n- 1 mark: one correct option, factor or dimension.\n- 2–3 marks: each point named and explained, linked to the case.\n- 5 marks: parts answered separately; SWOT with all four boxes; macro answers with an example for each dimension.\n- Case questions: quote the line, name the factor, explain its effect.",
+  "status": "draft",
+  "provenance": {
+   "origin": "human",
+   "template_version": null,
+   "model": null,
+   "generated_at": "2026-10-31",
+   "author": "claude-opus-5-5 (subject-producer)"
+  }
+ },
+ "flashcards": {
+  "unit": "isc-12-commerce-ch01",
+  "version": 1,
+  "language": "en",
+  "cards": [
+   {
+    "id": "f01",
+    "front_md": "**Business environment**",
+    "back_md": "All individuals, institutions and forces, internal and external, that affect a business.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch01-t01"
+   },
+   {
+    "id": "f02",
+    "front_md": "**Specific vs general forces**",
+    "back_md": "Specific: affect one firm (rivals, suppliers). General: affect all firms (economy, laws).",
+    "tag": "concept",
+    "topic_id": "isc-12-commerce-ch01-t01"
+   },
+   {
+    "id": "f03",
+    "front_md": "**Inter-relatedness**",
+    "back_md": "A change in one factor sets off changes in others.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch01-t01"
+   },
+   {
+    "id": "f04",
+    "front_md": "**Relativity**",
+    "back_md": "The environment's impact differs by place and firm.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch01-t01"
+   },
+   {
+    "id": "f05",
+    "front_md": "**Uncertainty**",
+    "back_md": "Future changes are hard to predict.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch01-t01"
+   },
+   {
+    "id": "f06",
+    "front_md": "**First-mover advantage**",
+    "back_md": "Gain from spotting an opportunity and acting before rivals.",
+    "tag": "concept",
+    "topic_id": "isc-12-commerce-ch01-t01"
+   },
+   {
+    "id": "f07",
+    "front_md": "Six benefits of understanding the environment",
+    "back_md": "Opportunities, threats, resources, coping with change, planning, performance.",
+    "tag": "exam-tip",
+    "topic_id": "isc-12-commerce-ch01-t01"
+   },
+   {
+    "id": "f08",
+    "front_md": "**Environmental scanning**",
+    "back_md": "Continuous monitoring of the environment to detect early signals.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch01-t02"
+   },
+   {
+    "id": "f09",
+    "front_md": "Steps of scanning",
+    "back_md": "Gather → analyse → share → plan → keep watching.",
+    "tag": "fact",
+    "topic_id": "isc-12-commerce-ch01-t02"
+   },
+   {
+    "id": "f10",
+    "front_md": "Why must scanning be continuous?",
+    "back_md": "Because the environment is dynamic.",
+    "tag": "concept",
+    "topic_id": "isc-12-commerce-ch01-t02"
+   },
+   {
+    "id": "f11",
+    "front_md": "**Internal factors**",
+    "back_md": "Mission, values, structure, culture, people, money, technology, image; largely controllable.",
+    "tag": "fact",
+    "topic_id": "isc-12-commerce-ch01-t03"
+   },
+   {
+    "id": "f12",
+    "front_md": "Six external micro factors",
+    "back_md": "Suppliers, customers, competitors, intermediaries, financiers, public.",
+    "tag": "exam-tip",
+    "topic_id": "isc-12-commerce-ch01-t03"
+   },
+   {
+    "id": "f13",
+    "front_md": "**Marketing intermediaries**",
+    "back_md": "Dealers, wholesalers, couriers, platforms that help goods reach buyers.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch01-t03"
+   },
+   {
+    "id": "f14",
+    "front_md": "**Public** (micro environment)",
+    "back_md": "Media, local residents, citizens' groups with an interest in the firm.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch01-t03"
+   },
+   {
+    "id": "f15",
+    "front_md": "A bank lending to the firm is a…",
+    "back_md": "Financier (external micro factor).",
+    "tag": "fact",
+    "topic_id": "isc-12-commerce-ch01-t03"
+   },
+   {
+    "id": "f16",
+    "front_md": "Micro vs macro environment",
+    "back_md": "Micro: immediate, one firm, partly influenced. Macro: wide, all firms, beyond control.",
+    "tag": "concept",
+    "topic_id": "isc-12-commerce-ch01-t03"
+   },
+   {
+    "id": "f17",
+    "front_md": "Five macro dimensions",
+    "back_md": "Economic, social, technological, political, legal.",
+    "tag": "exam-tip",
+    "topic_id": "isc-12-commerce-ch01-t04"
+   },
+   {
+    "id": "f18",
+    "front_md": "Interest rates and inflation belong to…",
+    "back_md": "The economic environment.",
+    "tag": "fact",
+    "topic_id": "isc-12-commerce-ch01-t04"
+   },
+   {
+    "id": "f19",
+    "front_md": "Changing lifestyles belong to…",
+    "back_md": "The social environment.",
+    "tag": "fact",
+    "topic_id": "isc-12-commerce-ch01-t04"
+   },
+   {
+    "id": "f20",
+    "front_md": "Government stability belongs to…",
+    "back_md": "The political environment.",
+    "tag": "fact",
+    "topic_id": "isc-12-commerce-ch01-t04"
+   },
+   {
+    "id": "f21",
+    "front_md": "A new labelling rule belongs to…",
+    "back_md": "The legal environment.",
+    "tag": "fact",
+    "topic_id": "isc-12-commerce-ch01-t04"
+   },
+   {
+    "id": "f22",
+    "front_md": "**Liberalisation**",
+    "back_md": "Removing unnecessary licences and controls (since 1991).",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch01-t04"
+   },
+   {
+    "id": "f23",
+    "front_md": "**Privatisation**",
+    "back_md": "Reducing the role of the public sector.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch01-t04"
+   },
+   {
+    "id": "f24",
+    "front_md": "**Globalisation**",
+    "back_md": "Integrating the economy with the world economy.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch01-t04"
+   },
+   {
+    "id": "f25",
+    "front_md": "**SWOT**",
+    "back_md": "Strengths, Weaknesses (internal); Opportunities, Threats (external).",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch01-t05"
+   },
+   {
+    "id": "f26",
+    "front_md": "A rival opening nearby is a…",
+    "back_md": "Threat (external, harmful).",
+    "tag": "exam-tip",
+    "topic_id": "isc-12-commerce-ch01-t05"
+   },
+   {
+    "id": "f27",
+    "front_md": "Outdated machines are a…",
+    "back_md": "Weakness (internal, harmful).",
+    "tag": "exam-tip",
+    "topic_id": "isc-12-commerce-ch01-t05"
+   },
+   {
+    "id": "f28",
+    "front_md": "A new government subsidy is a…",
+    "back_md": "Opportunity (external, helpful).",
+    "tag": "exam-tip",
+    "topic_id": "isc-12-commerce-ch01-t05"
+   },
+   {
+    "id": "f29",
+    "front_md": "Best use of SWOT",
+    "back_md": "Use strengths to seize opportunities; fix weaknesses; guard against threats.",
+    "tag": "concept",
+    "topic_id": "isc-12-commerce-ch01-t05"
+   },
+   {
+    "id": "f30",
+    "front_md": "Case routine",
+    "back_md": "Quote the line, name the factor or dimension, explain its effect.",
+    "tag": "exam-tip",
+    "topic_id": "isc-12-commerce-ch01-t04"
+   }
+  ],
+  "status": "draft",
+  "provenance": {
+   "origin": "human",
+   "template_version": null,
+   "model": null,
+   "generated_at": "2026-10-31",
+   "author": "claude-opus-5-5 (subject-producer)"
+  }
+ },
+ "questions": [
+  {
+   "id": "q_isc12commerce_ch01_001",
+   "unit": "isc-12-commerce-ch01",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Which statement best describes the **business environment** of a firm?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Only the government rules that a firm must obey"
+    },
+    {
+     "id": "b",
+     "text_md": "The sum total of all individuals, institutions and forces, inside and outside the firm, that affect its working and performance"
+    },
+    {
+     "id": "c",
+     "text_md": "The physical surroundings of a factory, such as air and water"
+    },
+    {
+     "id": "d",
+     "text_md": "The list of customers who buy from the firm"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (b)** The sum total of all individuals, institutions and forces, inside and outside the firm, that affect its working and performance. Business environment is the totality of forces and institutions, internal and external, that influence a business. Laws, natural surroundings or customers are only parts of it.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch01-t01"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "b"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (b)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch01_002",
+   "unit": "isc-12-commerce-ch01",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Chinar Woollens, an imagined shawl maker in Srinagar, faces two changes: a rival opens a showroom on the same street, and the government changes the tax rate on all textiles. These two changes are examples of, respectively,",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "a general force and a specific force"
+    },
+    {
+     "id": "b",
+     "text_md": "two general forces"
+    },
+    {
+     "id": "c",
+     "text_md": "two internal forces"
+    },
+    {
+     "id": "d",
+     "text_md": "a specific force and a general force"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (d)** a specific force and a general force. A rival on the same street affects this firm directly (specific force); a tax change for all textiles affects every firm in the industry (general force).",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch01-t01"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "d"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (d)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch01_003",
+   "unit": "isc-12-commerce-ch01",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Rising petrol prices made commuters in an imagined town prefer electric scooters, which in turn led a local workshop to train its mechanics in battery repair. Which feature of business environment does this chain of changes show best?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Inter-relatedness"
+    },
+    {
+     "id": "b",
+     "text_md": "Relativity"
+    },
+    {
+     "id": "c",
+     "text_md": "Totality of external forces"
+    },
+    {
+     "id": "d",
+     "text_md": "Uncertainty"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (a)** Inter-relatedness. A change in one factor (economic: fuel prices) set off changes in others (social: commuter preference; technological: new repair skills). The factors are inter-related.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch01-t01"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (a)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch01_004",
+   "unit": "isc-12-commerce-ch01",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Fashion trends for festival wear can change within a single season, so a garment exporter cannot be sure which colours will sell next year. This illustrates that the business environment is",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "static"
+    },
+    {
+     "id": "b",
+     "text_md": "fully controllable"
+    },
+    {
+     "id": "c",
+     "text_md": "uncertain"
+    },
+    {
+     "id": "d",
+     "text_md": "the same for every firm"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (c)** uncertain. Future changes in the environment are difficult to predict, especially in fast-moving areas such as fashion and technology: uncertainty.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch01-t01"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "c"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (c)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch01_005",
+   "unit": "isc-12-commerce-ch01",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Thick woollen jackets sell briskly in Shimla but hardly at all in Chennai, although they are made by the same imagined firm. Which feature of business environment explains this?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Inter-relatedness of factors"
+    },
+    {
+     "id": "b",
+     "text_md": "Specific and general forces"
+    },
+    {
+     "id": "c",
+     "text_md": "Relativity: the environment differs from place to place"
+    },
+    {
+     "id": "d",
+     "text_md": "Complexity"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (c)** Relativity: the environment differs from place to place. The impact of environmental factors differs from country to country and region to region (here, climate and local needs): relativity.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch01-t01"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "c"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (c)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch01_006",
+   "unit": "isc-12-commerce-ch01",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Pahadi Organics, an imagined food firm in Almora, noticed early that health-conscious buyers were asking for millet snacks and launched a range a year before its rivals, capturing most of the shelf space. Which benefit of understanding the environment does this show?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "It helps the firm identify opportunities and gain a first-mover advantage"
+    },
+    {
+     "id": "b",
+     "text_md": "It helps the firm identify threats and give early warning"
+    },
+    {
+     "id": "c",
+     "text_md": "It helps the firm tap useful resources"
+    },
+    {
+     "id": "d",
+     "text_md": "It helps the firm improve its internal culture"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (a)** It helps the firm identify opportunities and gain a first-mover advantage. By spotting a positive trend early, the firm got there first. Identifying opportunities brings a first-mover advantage.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch01-t01"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (a)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch01_007",
+   "unit": "isc-12-commerce-ch01",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Tamarind Tiffins, an imagined lunch-box service in Madurai, saw three cloud kitchens open nearby with app-based ordering. It quickly started its own phone ordering and loyalty card. Understanding the environment helped it mainly by",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "gaining a first-mover advantage in a new market"
+    },
+    {
+     "id": "b",
+     "text_md": "raising capital from the public"
+    },
+    {
+     "id": "c",
+     "text_md": "reducing the number of competitors"
+    },
+    {
+     "id": "d",
+     "text_md": "identifying a threat and acting on the early warning"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (d)** identifying a threat and acting on the early warning. The cloud kitchens were a threat; noticing them early let the firm respond before losing customers.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch01-t01"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "d"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (d)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch01_008",
+   "unit": "isc-12-commerce-ch01",
+   "language": "en",
+   "type": "assertion-reason",
+   "stem_md": "**Assertion (A):** The business environment is dynamic.\n\n**Reason (R):** Technology, consumer tastes, laws and economic conditions keep changing over time.\n\nChoose the correct option.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Both Assertion and Reason are true and Reason is the correct explanation for Assertion."
+    },
+    {
+     "id": "b",
+     "text_md": "Both Assertion and Reason are true but Reason is not the correct explanation for Assertion."
+    },
+    {
+     "id": "c",
+     "text_md": "Assertion is true and Reason is false."
+    },
+    {
+     "id": "d",
+     "text_md": "Both Assertion and Reason are false."
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (a)** Both are true, and continuous change in its factors is exactly why the environment is called dynamic.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch01-t01"
+   ],
+   "expected_time_sec": 75,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (a)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch01_009",
+   "unit": "isc-12-commerce-ch01",
+   "language": "en",
+   "type": "assertion-reason",
+   "stem_md": "**Assertion (A):** A firm can study and respond to its external environment.\n\n**Reason (R):** A firm can fully control the factors of its external environment.\n\nChoose the correct option.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Both Assertion and Reason are true and Reason is the correct explanation for Assertion."
+    },
+    {
+     "id": "b",
+     "text_md": "Both Assertion and Reason are true but Reason is not the correct explanation for Assertion."
+    },
+    {
+     "id": "c",
+     "text_md": "Assertion is true and Reason is false."
+    },
+    {
+     "id": "d",
+     "text_md": "Both Assertion and Reason are false."
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (c)** The assertion is true: firms monitor the environment and adapt. The reason is false: external factors such as government policy or competitors are largely beyond the firm's control.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch01-t01"
+   ],
+   "expected_time_sec": 75,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "c"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (c)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch01_010",
+   "unit": "isc-12-commerce-ch01",
+   "language": "en",
+   "type": "true-false",
+   "stem_md": "The business environment is simple to understand because each of its factors acts on its own.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "True"
+    },
+    {
+     "id": "b",
+     "text_md": "False"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**False.** False. Many factors act together and affect one another, so the environment is complex and its combined effect is hard to judge.",
+   "marks": 1,
+   "difficulty": 1,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch01-t01"
+   ],
+   "expected_time_sec": 40,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "b"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct choice (False)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch01_011",
+   "unit": "isc-12-commerce-ch01",
+   "language": "en",
+   "type": "fill-blank",
+   "stem_md": "Complete the analogy. A rival opening a shop next door : Specific force :: A change in interest rates by the Reserve Bank of India : ___",
+   "options": [],
+   "match_right": [],
+   "solution_md": "A rival next door affects one firm directly (specific force); an interest-rate change affects all firms alike, so it is a general force.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch01-t01"
+   ],
+   "expected_time_sec": 45,
+   "assets": [],
+   "answer": {
+    "blanks": [
+     {
+      "accepted": [
+       "General force",
+       "general forces",
+       "General"
+      ]
+     }
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Blank 1: General force",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch01_012",
+   "unit": "isc-12-commerce-ch01",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Explain any two features of business environment.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Any two features (totality, specific and general forces, inter-relatedness, dynamic, uncertainty, complexity, relativity), each explained.",
+   "marks": 2,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch01-t01"
+   ],
+   "expected_time_sec": 150,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Dynamic:** the environment keeps **changing** — technology, tastes and laws do not stay the same.\n2. **Inter-related:** its factors **affect one another**; a change in fuel prices can alter buying habits and spur new technology."
+   },
+   "word_limit": {
+    "min": 30,
+    "max": 50
+   },
+   "marking_scheme": [
+    {
+     "step": "First feature explained",
+     "marks": 1
+    },
+    {
+     "step": "Second feature explained",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch01_013",
+   "unit": "isc-12-commerce-ch01",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Lohit Tea Estate, an imagined tea grower in Dibrugarh, tracks rainfall forecasts, export demand and new government schemes every month. State two ways in which this understanding helps the estate.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Two benefits (planning, opportunities, threats, resources, coping with change, performance) linked to the estate.",
+   "marks": 2,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch01-t01"
+   ],
+   "expected_time_sec": 150,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. It helps **plan and formulate policies**, for example timing plucking and exports with forecasts.\n2. It helps **identify opportunities** such as new **government schemes** or rising export demand, and **threats** such as poor rainfall, before rivals do."
+   },
+   "word_limit": {
+    "min": 30,
+    "max": 50
+   },
+   "marking_scheme": [
+    {
+     "step": "First benefit linked to the case",
+     "marks": 1
+    },
+    {
+     "step": "Second benefit linked to the case",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch01_014",
+   "unit": "isc-12-commerce-ch01",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Coromandel Cocoa, an imagined chocolate maker in Kochi, studies its environment closely. Explain three ways in which this helps the firm, with an example of each from a chocolate business.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Any three benefits (opportunities, threats, resources, coping with change, planning, performance), each with a chocolate example.",
+   "marks": 3,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch01-t01"
+   ],
+   "expected_time_sec": 210,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Identifying opportunities:** noticing demand for **sugar-free chocolate** lets it launch early and gain a first-mover advantage.\n2. **Early warning of threats:** seeing an imported brand cut prices lets it plan a **response** in time.\n3. **Tapping resources:** knowing **cocoa growers' cooperatives** and banks helps it secure inputs and finance on good terms."
+   },
+   "word_limit": {
+    "min": 50,
+    "max": 75
+   },
+   "marking_scheme": [
+    {
+     "step": "First benefit with example",
+     "marks": 1
+    },
+    {
+     "step": "Second benefit with example",
+     "marks": 1
+    },
+    {
+     "step": "Third benefit with example",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch01_015",
+   "unit": "isc-12-commerce-ch01",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Explain the features of business environment that make it difficult for managers to predict its effects: uncertainty, complexity and relativity.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Each of the three features explained.",
+   "marks": 3,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch01-t01"
+   ],
+   "expected_time_sec": 210,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Uncertainty:** future changes are **hard to predict**, especially in fast-moving fields such as technology and fashion.\n2. **Complexity:** many factors act **together** and affect one another, so their **combined** effect is hard to judge.\n3. **Relativity:** the impact differs from **place to place** and firm to firm, so one firm's experience cannot simply be copied."
+   },
+   "word_limit": {
+    "min": 50,
+    "max": 75
+   },
+   "marking_scheme": [
+    {
+     "step": "Uncertainty",
+     "marks": 1
+    },
+    {
+     "step": "Complexity",
+     "marks": 1
+    },
+    {
+     "step": "Relativity",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch01_016",
+   "unit": "isc-12-commerce-ch01",
+   "language": "en",
+   "type": "long",
+   "stem_md": "(a) What is meant by business environment? [1]\n(b) Explain any two features of business environment. [2]\n(c) Zari Threads, an imagined maker of silk yarn in Varanasi, ignored reports that power looms were replacing handlooms and lost half its buyers in two years. Explain two ways in which studying the environment could have helped it. [2]",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Meaning; two features; two benefits applied to Zari Threads.",
+   "marks": 5,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch01-t01",
+    "isc-12-commerce-ch01-t02"
+   ],
+   "expected_time_sec": 600,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "(a) **Business environment** is the **sum total of all individuals, institutions and forces**, internal and external, that **affect the working and performance** of a firm.\n\n(b) **Dynamic** — it keeps **changing** with technology, tastes and laws. **Uncertain** — future changes are **hard to predict**, so firms must keep watching it.\n\n(c) **Early warning of threats:** regular study would have shown the **shift to power looms**, giving time to **adapt** its yarn for them. **Coping with rapid change:** knowing the trend early, the firm could have **retrained** staff and **found new buyers** instead of losing half its customers."
+   },
+   "word_limit": {
+    "min": 100,
+    "max": 150
+   },
+   "marking_scheme": [
+    {
+     "step": "(a) Meaning",
+     "marks": 1
+    },
+    {
+     "step": "(b) Two features",
+     "marks": 2
+    },
+    {
+     "step": "(c) Two benefits applied to the case",
+     "marks": 2
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch01_017",
+   "unit": "isc-12-commerce-ch01",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Environmental scanning means",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "cleaning the surroundings of a factory to reduce pollution"
+    },
+    {
+     "id": "b",
+     "text_md": "continuously gathering and analysing information about the environment to detect early signs of opportunities and threats"
+    },
+    {
+     "id": "c",
+     "text_md": "checking the accounts of a firm at the end of the year"
+    },
+    {
+     "id": "d",
+     "text_md": "scanning products with bar codes at the billing counter"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (b)** continuously gathering and analysing information about the environment to detect early signs of opportunities and threats. Environmental scanning is the careful monitoring of the environment, both internal and external, to spot early signals of change.",
+   "marks": 1,
+   "difficulty": 1,
+   "competency": "recall",
+   "bloom": "remember",
+   "topic_ids": [
+    "isc-12-commerce-ch01-t02"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "b"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (b)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch01_018",
+   "unit": "isc-12-commerce-ch01",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Officers of the imagined Narmada Dairy Cooperative in Jabalpur read trade magazines, visit food fairs, note the prices of rival brands and collect farmers' feedback every month, and then discuss what they found. This activity is",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "environmental scanning"
+    },
+    {
+     "id": "b",
+     "text_md": "SWOT analysis"
+    },
+    {
+     "id": "c",
+     "text_md": "recruitment"
+    },
+    {
+     "id": "d",
+     "text_md": "quality control"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (a)** environmental scanning. Regularly collecting and analysing information about the environment to spot signals of change is environmental scanning. SWOT may use these findings, but the activity described is scanning.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch01-t02"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (a)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch01_019",
+   "unit": "isc-12-commerce-ch01",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Why should environmental scanning be a continuous activity rather than a one-time exercise?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Because laws require firms to scan every day"
+    },
+    {
+     "id": "b",
+     "text_md": "Because the environment keeps changing"
+    },
+    {
+     "id": "c",
+     "text_md": "Because scanning replaces planning"
+    },
+    {
+     "id": "d",
+     "text_md": "Because internal factors never change"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (b)** Because the environment keeps changing. The environment is dynamic, so information gathered once soon becomes out of date.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch01-t02"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "b"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (b)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch01_020",
+   "unit": "isc-12-commerce-ch01",
+   "language": "en",
+   "type": "true-false",
+   "stem_md": "Environmental scanning needs to be done only once, when a business is first set up.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "True"
+    },
+    {
+     "id": "b",
+     "text_md": "False"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**False.** False. Because the environment is dynamic, scanning has to be continuous.",
+   "marks": 1,
+   "difficulty": 1,
+   "competency": "recall",
+   "bloom": "remember",
+   "topic_ids": [
+    "isc-12-commerce-ch01-t02"
+   ],
+   "expected_time_sec": 40,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "b"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct choice (False)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch01_021",
+   "unit": "isc-12-commerce-ch01",
+   "language": "en",
+   "type": "fill-blank",
+   "stem_md": "The careful monitoring of the environment to detect early signals of change is called environmental ___.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Environmental scanning.",
+   "marks": 1,
+   "difficulty": 1,
+   "competency": "recall",
+   "bloom": "remember",
+   "topic_ids": [
+    "isc-12-commerce-ch01-t02"
+   ],
+   "expected_time_sec": 45,
+   "assets": [],
+   "answer": {
+    "blanks": [
+     {
+      "accepted": [
+       "scanning"
+      ]
+     }
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Blank 1: scanning",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch01_022",
+   "unit": "isc-12-commerce-ch01",
+   "language": "en",
+   "type": "assertion-reason",
+   "stem_md": "**Assertion (A):** Environmental scanning helps a firm spot opportunities and threats early.\n\n**Reason (R):** The micro environment includes suppliers, customers and competitors.\n\nChoose the correct option.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Both Assertion and Reason are true and Reason is the correct explanation for Assertion."
+    },
+    {
+     "id": "b",
+     "text_md": "Both Assertion and Reason are true but Reason is not the correct explanation for Assertion."
+    },
+    {
+     "id": "c",
+     "text_md": "Assertion is true and Reason is false."
+    },
+    {
+     "id": "d",
+     "text_md": "Both Assertion and Reason are false."
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (b)** Both statements are true, but the make-up of the micro environment does not explain why scanning gives early signals; that comes from continuous monitoring of change.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch01-t02"
+   ],
+   "expected_time_sec": 75,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "b"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (b)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch01_023",
+   "unit": "isc-12-commerce-ch01",
+   "language": "en",
+   "type": "short",
+   "stem_md": "What is environmental scanning? Give one reason why firms carry it out.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Meaning plus one reason.",
+   "marks": 2,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch01-t02"
+   ],
+   "expected_time_sec": 150,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "**Environmental scanning** is the **continuous gathering and analysis of information** about the internal and external environment to **detect early signals** of change. Firms do it to **spot opportunities and threats in time** and plan their response."
+   },
+   "word_limit": {
+    "min": 30,
+    "max": 50
+   },
+   "marking_scheme": [
+    {
+     "step": "Meaning",
+     "marks": 1
+    },
+    {
+     "step": "Reason",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch01_024",
+   "unit": "isc-12-commerce-ch01",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Explain how Aravalli Stone Crafts, an imagined small firm making marble handicrafts in Jodhpur, could carry out environmental scanning, giving one example for each step: gathering, analysing and using the information.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Three steps of scanning, each with a suitable example.",
+   "marks": 3,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch01-t02"
+   ],
+   "expected_time_sec": 210,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Gathering:** the owner collects information from **trade fairs, export portals, newspapers and buyers' feedback**, for example on demand for light-weight décor.\n2. **Analysing:** the team **sorts** the signals into **opportunities and threats**, for example rising online orders and cheaper resin copies.\n3. **Using it:** the findings are **shared** with managers and used to **plan**, for example opening an online store."
+   },
+   "word_limit": {
+    "min": 50,
+    "max": 75
+   },
+   "marking_scheme": [
+    {
+     "step": "Gathering with example",
+     "marks": 1
+    },
+    {
+     "step": "Analysing with example",
+     "marks": 1
+    },
+    {
+     "step": "Using with example",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch01_025",
+   "unit": "isc-12-commerce-ch01",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Which of the following is an **internal** factor in the micro environment of a firm?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "The suppliers of its raw material"
+    },
+    {
+     "id": "b",
+     "text_md": "The customers who buy its products"
+    },
+    {
+     "id": "c",
+     "text_md": "The firm's own mission, objectives and value system"
+    },
+    {
+     "id": "d",
+     "text_md": "The banks that lend to it"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (c)** The firm's own mission, objectives and value system. Mission, objectives and values are inside the firm and largely under its control. Suppliers, customers and financiers are external micro factors.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch01-t03"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "c"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (c)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch01_026",
+   "unit": "isc-12-commerce-ch01",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Coromandel Cocoa (imagined) has to raise its chocolate prices because the cooperative that sells it cocoa beans has raised its rates by a fifth. Which factor of its environment caused the change?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Customers, an external micro factor"
+    },
+    {
+     "id": "b",
+     "text_md": "The technological environment"
+    },
+    {
+     "id": "c",
+     "text_md": "Its own corporate culture"
+    },
+    {
+     "id": "d",
+     "text_md": "Suppliers, an external micro factor"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (d)** Suppliers, an external micro factor. The cocoa cooperative supplies raw material; suppliers belong to the external micro environment.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch01-t03"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "d"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (d)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch01_027",
+   "unit": "isc-12-commerce-ch01",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Sundarban Honey, an imagined firm in Kolkata, sells through a network of distributors, a courier company and two online marketplaces. In its micro environment, these are",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "competitors"
+    },
+    {
+     "id": "b",
+     "text_md": "financiers"
+    },
+    {
+     "id": "c",
+     "text_md": "internal factors"
+    },
+    {
+     "id": "d",
+     "text_md": "marketing intermediaries"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (d)** marketing intermediaries. Firms that help a business distribute, deliver and sell its goods are marketing intermediaries.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch01-t03"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "d"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (d)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch01_028",
+   "unit": "isc-12-commerce-ch01",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Residents of a colony near the imagined Malwa Bakes factory in Indore complain to the media about smoke from its ovens, and a local newspaper carries the story. Which part of the micro environment does this group represent?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Suppliers"
+    },
+    {
+     "id": "b",
+     "text_md": "Marketing intermediaries"
+    },
+    {
+     "id": "c",
+     "text_md": "Public (local public and media)"
+    },
+    {
+     "id": "d",
+     "text_md": "Internal human resources"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (c)** Public (local public and media). Any group with an actual or potential interest in, or effect on, the firm — local residents, media, citizens' groups — is part of the public in the micro environment.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch01-t03"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "c"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (c)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch01_029",
+   "unit": "isc-12-commerce-ch01",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Half of the skilled carpenters of Shillong Bamboo Furniture, an imagined firm, left for better-paying jobs, and orders were delayed. The factor affected is",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "competitors, an external micro factor"
+    },
+    {
+     "id": "b",
+     "text_md": "human resources, an internal factor"
+    },
+    {
+     "id": "c",
+     "text_md": "the political environment"
+    },
+    {
+     "id": "d",
+     "text_md": "the legal environment"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (b)** human resources, an internal factor. The skills and number of a firm's own employees are an internal factor (human resources).",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch01-t03"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "b"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (b)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch01_030",
+   "unit": "isc-12-commerce-ch01",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Two new brands of packaged idli batter started offering free delivery in the city where an imagined batter maker sells. Which external micro factor is the maker facing?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Competitors"
+    },
+    {
+     "id": "b",
+     "text_md": "Suppliers"
+    },
+    {
+     "id": "c",
+     "text_md": "Financiers"
+    },
+    {
+     "id": "d",
+     "text_md": "Marketing intermediaries"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (a)** Competitors. Other firms selling similar products to the same buyers are competitors.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch01-t03"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (a)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch01_031",
+   "unit": "isc-12-commerce-ch01",
+   "language": "en",
+   "type": "assertion-reason",
+   "stem_md": "**Assertion (A):** Customers are an internal factor of a firm's micro environment.\n\n**Reason (R):** A firm can fully decide what its customers will buy.\n\nChoose the correct option.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Both Assertion and Reason are true and Reason is the correct explanation for Assertion."
+    },
+    {
+     "id": "b",
+     "text_md": "Both Assertion and Reason are true but Reason is not the correct explanation for Assertion."
+    },
+    {
+     "id": "c",
+     "text_md": "Assertion is true and Reason is false."
+    },
+    {
+     "id": "d",
+     "text_md": "Both Assertion and Reason are false."
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (d)** Both statements are false. Customers are an external micro factor, and a firm can influence but not control their choices.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch01-t03"
+   ],
+   "expected_time_sec": 75,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "d"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (d)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch01_032",
+   "unit": "isc-12-commerce-ch01",
+   "language": "en",
+   "type": "true-false",
+   "stem_md": "Internal factors of the environment, such as a firm's policies and resources, are generally within its control.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "True"
+    },
+    {
+     "id": "b",
+     "text_md": "False"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**True.** True. A firm can change its own policies, structure and resources, though not overnight; external factors are largely beyond its control.",
+   "marks": 1,
+   "difficulty": 1,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch01-t03"
+   ],
+   "expected_time_sec": 40,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct choice (True)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch01_033",
+   "unit": "isc-12-commerce-ch01",
+   "language": "en",
+   "type": "fill-blank",
+   "stem_md": "Complete the analogy. A bank that lends money to the firm : Financier :: A wholesaler who stocks and resells the firm's goods : ___",
+   "options": [],
+   "match_right": [],
+   "solution_md": "A lending bank is a financier; a wholesaler who helps the goods reach buyers is a marketing intermediary.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch01-t03"
+   ],
+   "expected_time_sec": 45,
+   "assets": [],
+   "answer": {
+    "blanks": [
+     {
+      "accepted": [
+       "Marketing intermediary",
+       "marketing intermediaries",
+       "Intermediary",
+       "Middleman"
+      ]
+     }
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Blank 1: Marketing intermediary",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch01_034",
+   "unit": "isc-12-commerce-ch01",
+   "language": "en",
+   "type": "match",
+   "stem_md": "Match each factor in the micro environment of an imagined spice exporter with its category.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Pepper growers who sell to the exporter"
+    },
+    {
+     "id": "b",
+     "text_md": "Foreign importers who buy its spices"
+    },
+    {
+     "id": "c",
+     "text_md": "The exporter's quality-first value system"
+    },
+    {
+     "id": "d",
+     "text_md": "A shipping agent who books containers"
+    }
+   ],
+   "match_right": [
+    {
+     "id": "p",
+     "text_md": "Customers"
+    },
+    {
+     "id": "q",
+     "text_md": "Marketing intermediary"
+    },
+    {
+     "id": "r",
+     "text_md": "Suppliers"
+    },
+    {
+     "id": "s",
+     "text_md": "Internal factor"
+    }
+   ],
+   "solution_md": "**Key:** (a)–(r), (b)–(p), (c)–(s), (d)–(q). Growers supply inputs; importers are customers; the value system is internal; the shipping agent helps deliver the goods, so it is an intermediary.",
+   "marks": 2,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch01-t03"
+   ],
+   "expected_time_sec": 120,
+   "assets": [],
+   "answer": {
+    "pairs": [
+     {
+      "left_id": "a",
+      "right_id": "r"
+     },
+     {
+      "left_id": "b",
+      "right_id": "p"
+     },
+     {
+      "left_id": "c",
+      "right_id": "s"
+     },
+     {
+      "left_id": "d",
+      "right_id": "q"
+     }
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Each correct pair 0.5 mark (4 pairs)",
+     "marks": 2
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch01_035",
+   "unit": "isc-12-commerce-ch01",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Explain any two internal factors of a firm's environment.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Any two internal factors (value system, mission and objectives, structure, culture, human, physical, technological, financial or marketing resources, image) explained.",
+   "marks": 2,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch01-t03"
+   ],
+   "expected_time_sec": 150,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Value system and mission:** the beliefs and goals of the owners shape **policies and choices**, such as a firm refusing to use child labour.\n2. **Financial resources:** the **funds** available decide whether the firm can expand, buy technology or survive a bad year."
+   },
+   "word_limit": {
+    "min": 30,
+    "max": 50
+   },
+   "marking_scheme": [
+    {
+     "step": "First factor explained",
+     "marks": 1
+    },
+    {
+     "step": "Second factor explained",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch01_036",
+   "unit": "isc-12-commerce-ch01",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Kutch Salt Works, an imagined salt producer, sells through local wholesalers and depends on a transport firm for trucks. A rival has just cut prices. Identify two external micro factors in this situation and say how each affects the firm.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Two external micro factors identified from the case, each with its effect.",
+   "marks": 2,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch01-t03"
+   ],
+   "expected_time_sec": 150,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Marketing intermediaries** — the **wholesalers** and **transport firm** decide how fast and widely its salt reaches buyers.\n2. **Competitors** — the **rival's price cut** may take away its customers, forcing it to respond."
+   },
+   "word_limit": {
+    "min": 30,
+    "max": 50
+   },
+   "marking_scheme": [
+    {
+     "step": "First factor with effect",
+     "marks": 1
+    },
+    {
+     "step": "Second factor with effect",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch01_037",
+   "unit": "isc-12-commerce-ch01",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Distinguish between the micro environment and the macro environment of a business on any three bases.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Three valid bases of difference.",
+   "marks": 3,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch01-t03"
+   ],
+   "expected_time_sec": 210,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Nearness:** the micro environment is the firm's **immediate** surroundings; the macro environment is the **wider** setting.\n2. **Components:** micro covers **internal factors, suppliers, customers, competitors, intermediaries, financiers and the public**; macro covers **economic, social, technological, political and legal** forces.\n3. **Control and effect:** micro factors affect **one firm directly** and some can be influenced; macro forces affect **all firms** and are beyond the firm's control."
+   },
+   "word_limit": {
+    "min": 50,
+    "max": 75
+   },
+   "marking_scheme": [
+    {
+     "step": "First basis",
+     "marks": 1
+    },
+    {
+     "step": "Second basis",
+     "marks": 1
+    },
+    {
+     "step": "Third basis",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch01_038",
+   "unit": "isc-12-commerce-ch01",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Shillong Bamboo Furniture (imagined) has a strong brand among hotels, an old machine shop, and owners who insist on using only certified bamboo. Identify three internal factors from these details and explain how each affects the firm.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Three internal factors drawn from the details, each with its effect.",
+   "marks": 3,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch01-t03"
+   ],
+   "expected_time_sec": 210,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Company image and brand:** the **strong brand among hotels** brings repeat orders and lets it charge a fair price.\n2. **Physical assets and technology:** the **old machine shop** limits speed and finish, and may raise costs.\n3. **Value system:** insisting on **certified bamboo** builds trust with eco-conscious buyers but may raise raw-material cost."
+   },
+   "word_limit": {
+    "min": 50,
+    "max": 75
+   },
+   "marking_scheme": [
+    {
+     "step": "Brand or image",
+     "marks": 1
+    },
+    {
+     "step": "Physical assets or technology",
+     "marks": 1
+    },
+    {
+     "step": "Value system",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch01_039",
+   "unit": "isc-12-commerce-ch01",
+   "language": "en",
+   "type": "long",
+   "stem_md": "(a) Distinguish between internal and external factors of a firm's environment. [1]\n(b) Sahyadri EV Scooters, an imagined maker in Nashik, buys batteries from one supplier, sells through 40 dealers, borrows from a cooperative bank, and faces two bigger rival brands. Identify four external micro factors and explain how each could affect the firm. [4]",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Distinction; four external micro factors with effects.",
+   "marks": 5,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch01-t03",
+    "isc-12-commerce-ch01-t04"
+   ],
+   "expected_time_sec": 600,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "(a) **Internal factors** (such as policies, structure and resources) are **within the firm** and largely controllable; **external factors** (such as suppliers, customers, competitors, the economy and laws) are **outside** it and largely beyond its control.\n\n(b) 1. **Supplier** — depending on **one battery supplier** means any delay or price rise stops production.\n2. **Marketing intermediaries** — the **40 dealers** decide how widely and quickly scooters reach buyers.\n3. **Financier** — the **cooperative bank's** terms decide how cheaply the firm can expand.\n4. **Competitors** — the **two bigger rivals** may cut prices or launch new models, forcing Sahyadri to respond."
+   },
+   "word_limit": {
+    "min": 100,
+    "max": 150
+   },
+   "marking_scheme": [
+    {
+     "step": "(a) Distinction",
+     "marks": 1
+    },
+    {
+     "step": "(b) Four factors with effects",
+     "marks": 4
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch01_040",
+   "unit": "isc-12-commerce-ch01",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "The Reserve Bank of India raises its policy rate, and banks increase interest on business loans. For an imagined furniture maker planning a new factory, this change belongs to the",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "social environment"
+    },
+    {
+     "id": "b",
+     "text_md": "economic environment"
+    },
+    {
+     "id": "c",
+     "text_md": "technological environment"
+    },
+    {
+     "id": "d",
+     "text_md": "political environment"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (b)** economic environment. Interest rates, inflation, income and economic policies form the economic environment.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch01-t04"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "b"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (b)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch01_041",
+   "unit": "isc-12-commerce-ch01",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "More working couples in an imagined city now prefer ready-to-cook meal kits to cooking from scratch. An imagined food firm sees this as a change in its",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "legal environment"
+    },
+    {
+     "id": "b",
+     "text_md": "economic environment"
+    },
+    {
+     "id": "c",
+     "text_md": "political environment"
+    },
+    {
+     "id": "d",
+     "text_md": "social environment"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (d)** social environment. Changes in lifestyles, habits, values and family patterns are part of the social environment.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch01-t04"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "d"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (d)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch01_042",
+   "unit": "isc-12-commerce-ch01",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Farmers near an imagined pesticide dealer start hiring drones to spray crops, cutting spraying time by more than half. This is a change in the",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "technological environment"
+    },
+    {
+     "id": "b",
+     "text_md": "social environment"
+    },
+    {
+     "id": "c",
+     "text_md": "legal environment"
+    },
+    {
+     "id": "d",
+     "text_md": "political environment"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (a)** technological environment. New methods, machines and innovations make up the technological environment.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch01-t04"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (a)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch01_043",
+   "unit": "isc-12-commerce-ch01",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "An imagined foreign electronics company decides to build a plant in a state because the government there has been stable for years and welcomes investment. Which macro dimension most influenced its decision?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Technological environment"
+    },
+    {
+     "id": "b",
+     "text_md": "Social environment"
+    },
+    {
+     "id": "c",
+     "text_md": "Political environment"
+    },
+    {
+     "id": "d",
+     "text_md": "Micro environment"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (c)** Political environment. Political stability and the government's attitude to business form the political environment.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch01-t04"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "c"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (c)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch01_044",
+   "unit": "isc-12-commerce-ch01",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "A new rule requires all packaged snacks to show the amount of salt and sugar on the front of the pack, and an imagined snack maker redesigns its packets. This change comes from the",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "technological environment"
+    },
+    {
+     "id": "b",
+     "text_md": "economic environment"
+    },
+    {
+     "id": "c",
+     "text_md": "legal environment"
+    },
+    {
+     "id": "d",
+     "text_md": "micro environment"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (c)** legal environment. Laws, rules and regulations that a business must follow make up the legal environment.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch01-t04"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "c"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (c)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch01_045",
+   "unit": "isc-12-commerce-ch01",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Which one of the following is **not** a part of the macro environment of a business?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "The prices charged by a rival in the same market"
+    },
+    {
+     "id": "b",
+     "text_md": "The rate of inflation in the economy"
+    },
+    {
+     "id": "c",
+     "text_md": "The literacy rate of the population"
+    },
+    {
+     "id": "d",
+     "text_md": "A new law on the privacy of customer data"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (a)** The prices charged by a rival in the same market. A rival's prices belong to the micro environment (competitors). Inflation (economic), literacy (social) and a privacy law (legal) are macro forces.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch01-t04"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (a)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch01_046",
+   "unit": "isc-12-commerce-ch01",
+   "language": "en",
+   "type": "assertion-reason",
+   "stem_md": "**Assertion (A):** Growing health awareness has increased the demand for millet-based foods.\n\n**Reason (R):** The social environment includes changes in people's values, habits and lifestyles.\n\nChoose the correct option.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Both Assertion and Reason are true and Reason is the correct explanation for Assertion."
+    },
+    {
+     "id": "b",
+     "text_md": "Both Assertion and Reason are true but Reason is not the correct explanation for Assertion."
+    },
+    {
+     "id": "c",
+     "text_md": "Assertion is true and Reason is false."
+    },
+    {
+     "id": "d",
+     "text_md": "Both Assertion and Reason are false."
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (a)** Both are true, and the reason explains the assertion: health awareness is a social change that alters what people buy.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch01-t04"
+   ],
+   "expected_time_sec": 75,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (a)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch01_047",
+   "unit": "isc-12-commerce-ch01",
+   "language": "en",
+   "type": "assertion-reason",
+   "stem_md": "**Assertion (A):** Online shopping apps have changed the way many small retailers sell.\n\n**Reason (R):** The political environment includes the stability of the government.\n\nChoose the correct option.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Both Assertion and Reason are true and Reason is the correct explanation for Assertion."
+    },
+    {
+     "id": "b",
+     "text_md": "Both Assertion and Reason are true but Reason is not the correct explanation for Assertion."
+    },
+    {
+     "id": "c",
+     "text_md": "Assertion is true and Reason is false."
+    },
+    {
+     "id": "d",
+     "text_md": "Both Assertion and Reason are false."
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (b)** Both are true, but government stability (political) does not explain the change in retailing, which is technological.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch01-t04"
+   ],
+   "expected_time_sec": 75,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "b"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (b)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch01_048",
+   "unit": "isc-12-commerce-ch01",
+   "language": "en",
+   "type": "true-false",
+   "stem_md": "A change in the tastes and preferences of consumers is part of the technological environment.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "True"
+    },
+    {
+     "id": "b",
+     "text_md": "False"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**False.** False. Tastes and preferences belong to the social environment.",
+   "marks": 1,
+   "difficulty": 1,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch01-t04"
+   ],
+   "expected_time_sec": 40,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "b"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct choice (False)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch01_049",
+   "unit": "isc-12-commerce-ch01",
+   "language": "en",
+   "type": "fill-blank",
+   "stem_md": "Interest rates, inflation and per capita income are factors of the ___ environment.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "They are economic factors.",
+   "marks": 1,
+   "difficulty": 1,
+   "competency": "recall",
+   "bloom": "remember",
+   "topic_ids": [
+    "isc-12-commerce-ch01-t04"
+   ],
+   "expected_time_sec": 45,
+   "assets": [],
+   "answer": {
+    "blanks": [
+     {
+      "accepted": [
+       "economic"
+      ]
+     }
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Blank 1: economic",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch01_050",
+   "unit": "isc-12-commerce-ch01",
+   "language": "en",
+   "type": "match",
+   "stem_md": "Match each change faced by an imagined travel agency with the macro dimension it belongs to.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "More families now take short weekend trips"
+    },
+    {
+     "id": "b",
+     "text_md": "Customers book tickets through a new AI travel app"
+    },
+    {
+     "id": "c",
+     "text_md": "A new rule caps cancellation fees on air tickets"
+    },
+    {
+     "id": "d",
+     "text_md": "Rising fuel prices push up air fares"
+    }
+   ],
+   "match_right": [
+    {
+     "id": "p",
+     "text_md": "Economic"
+    },
+    {
+     "id": "q",
+     "text_md": "Social"
+    },
+    {
+     "id": "r",
+     "text_md": "Legal"
+    },
+    {
+     "id": "s",
+     "text_md": "Technological"
+    }
+   ],
+   "solution_md": "**Key:** (a)–(q), (b)–(s), (c)–(r), (d)–(p). Travel habits are social; apps are technological; a rule on fees is legal; fuel prices and fares are economic.",
+   "marks": 2,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch01-t04"
+   ],
+   "expected_time_sec": 120,
+   "assets": [],
+   "answer": {
+    "pairs": [
+     {
+      "left_id": "a",
+      "right_id": "q"
+     },
+     {
+      "left_id": "b",
+      "right_id": "s"
+     },
+     {
+      "left_id": "c",
+      "right_id": "r"
+     },
+     {
+      "left_id": "d",
+      "right_id": "p"
+     }
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Each correct pair 0.5 mark (4 pairs)",
+     "marks": 2
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch01_051",
+   "unit": "isc-12-commerce-ch01",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Explain how each of the following changes could affect an imagined two-wheeler showroom: (i) banks raise interest rates on vehicle loans; (ii) more young buyers prefer electric scooters.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Each change linked to its dimension and its effect.",
+   "marks": 2,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch01-t04"
+   ],
+   "expected_time_sec": 150,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "(i) **Economic environment:** costlier loans **reduce demand**, since many buyers purchase on credit.\n(ii) **Social environment:** the showroom must **stock electric models** and train staff, or lose young buyers."
+   },
+   "word_limit": {
+    "min": 30,
+    "max": 50
+   },
+   "marking_scheme": [
+    {
+     "step": "(i) Economic effect",
+     "marks": 1
+    },
+    {
+     "step": "(ii) Social effect",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch01_052",
+   "unit": "isc-12-commerce-ch01",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Malwa Bakes (imagined), Indore, faces three changes: a new labelling law, a rise in wheat prices, and customers choosing whole-grain bread. Identify the macro dimension of each change and explain one effect on the bakery.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Each change classified and its effect explained.",
+   "marks": 3,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch01-t04"
+   ],
+   "expected_time_sec": 210,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Labelling law — legal:** packs must be **redesigned** to show the required details, adding cost.\n2. **Rising wheat prices — economic:** **raw-material cost** rises, squeezing margins or forcing a price increase.\n3. **Whole-grain preference — social:** the bakery should **add whole-grain lines** to keep customers."
+   },
+   "word_limit": {
+    "min": 50,
+    "max": 75
+   },
+   "marking_scheme": [
+    {
+     "step": "Legal with effect",
+     "marks": 1
+    },
+    {
+     "step": "Economic with effect",
+     "marks": 1
+    },
+    {
+     "step": "Social with effect",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch01_053",
+   "unit": "isc-12-commerce-ch01",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Explain liberalisation, privatisation and globalisation as changes in the economic environment of Indian business since 1991.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Each of the three changes explained.",
+   "marks": 3,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch01-t04"
+   ],
+   "expected_time_sec": 210,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Liberalisation:** removal of unnecessary **controls and licences**, freeing firms to decide on production, prices and expansion.\n2. **Privatisation:** a **reduced role of the public sector**, with government sharing or selling ownership of public enterprises.\n3. **Globalisation:** **integration** of the Indian economy with the world economy through freer **trade, investment and technology** flows."
+   },
+   "word_limit": {
+    "min": 50,
+    "max": 75
+   },
+   "marking_scheme": [
+    {
+     "step": "Liberalisation",
+     "marks": 1
+    },
+    {
+     "step": "Privatisation",
+     "marks": 1
+    },
+    {
+     "step": "Globalisation",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch01_054",
+   "unit": "isc-12-commerce-ch01",
+   "language": "en",
+   "type": "long",
+   "stem_md": "Explain the five components of the macro environment, giving for each an example of a change that could affect an imagined mobile-accessories shop.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "One mark for each component with a suitable example.",
+   "marks": 5,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch01-t04"
+   ],
+   "expected_time_sec": 600,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Economic:** interest rates, inflation, incomes and policies — a **fall in incomes** reduces spending on accessories.\n2. **Social:** values, habits, demographics — more **students using phones for study** raises demand for chargers.\n3. **Technological:** new methods and products — a new **charging standard** makes old cables obsolete.\n4. **Political:** stability and government attitude — **stable policies** encourage the shop to invest in a second outlet.\n5. **Legal:** laws and rules — a rule on **safety certification** of chargers forces it to stock certified items."
+   },
+   "word_limit": {
+    "min": 100,
+    "max": 150
+   },
+   "marking_scheme": [
+    {
+     "step": "Economic",
+     "marks": 1
+    },
+    {
+     "step": "Social",
+     "marks": 1
+    },
+    {
+     "step": "Technological",
+     "marks": 1
+    },
+    {
+     "step": "Political",
+     "marks": 1
+    },
+    {
+     "step": "Legal",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch01_055",
+   "unit": "isc-12-commerce-ch01",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "In a SWOT analysis, which two elements come from the firm's **internal** environment?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Opportunities and threats"
+    },
+    {
+     "id": "b",
+     "text_md": "Strengths and opportunities"
+    },
+    {
+     "id": "c",
+     "text_md": "Weaknesses and threats"
+    },
+    {
+     "id": "d",
+     "text_md": "Strengths and weaknesses"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (d)** Strengths and weaknesses. Strengths and weaknesses are inside the firm; opportunities and threats come from the external environment.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch01-t05"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "d"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (d)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch01_056",
+   "unit": "isc-12-commerce-ch01",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "An imagined bakery has three master bakers trained in France and a cake recipe that customers cannot find elsewhere. In its SWOT analysis, these are",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "opportunities"
+    },
+    {
+     "id": "b",
+     "text_md": "strengths"
+    },
+    {
+     "id": "c",
+     "text_md": "weaknesses"
+    },
+    {
+     "id": "d",
+     "text_md": "threats"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (b)** strengths. Skilled staff and a unique recipe are internal advantages: strengths.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch01-t05"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "b"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (b)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch01_057",
+   "unit": "isc-12-commerce-ch01",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "A large supermarket chain plans to open a store with a bakery section in the same market as the imagined bakery. In the bakery's SWOT analysis, this is",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "a threat"
+    },
+    {
+     "id": "b",
+     "text_md": "an opportunity"
+    },
+    {
+     "id": "c",
+     "text_md": "a weakness"
+    },
+    {
+     "id": "d",
+     "text_md": "a strength"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (a)** a threat. An external development that could hurt the bakery is a threat.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch01-t05"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (a)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch01_058",
+   "unit": "isc-12-commerce-ch01",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "A state government announces subsidies for small food-processing units that buy energy-efficient ovens. For a small imagined bakery, this is",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "a strength"
+    },
+    {
+     "id": "b",
+     "text_md": "an opportunity"
+    },
+    {
+     "id": "c",
+     "text_md": "a threat"
+    },
+    {
+     "id": "d",
+     "text_md": "a weakness"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (b)** an opportunity. A favourable external development the firm can use is an opportunity.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch01-t05"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "b"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (b)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch01_059",
+   "unit": "isc-12-commerce-ch01",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Zari Threads (imagined) has outdated machines, no website and depends on a single buyer for most of its sales. In SWOT terms these are",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "threats"
+    },
+    {
+     "id": "b",
+     "text_md": "opportunities"
+    },
+    {
+     "id": "c",
+     "text_md": "weaknesses"
+    },
+    {
+     "id": "d",
+     "text_md": "strengths"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (c)** weaknesses. Internal limitations of the firm are weaknesses. (Dependence on one buyer is an internal weakness of its sales base, even though the buyer is outside.)",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch01-t05"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "c"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (c)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch01_060",
+   "unit": "isc-12-commerce-ch01",
+   "language": "en",
+   "type": "true-false",
+   "stem_md": "In a SWOT analysis, opportunities and threats arise from the external environment of the firm.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "True"
+    },
+    {
+     "id": "b",
+     "text_md": "False"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**True.** True. Opportunities and threats come from changes outside the firm, such as new rivals or new government schemes; strengths and weaknesses lie inside it.",
+   "marks": 1,
+   "difficulty": 1,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch01-t05"
+   ],
+   "expected_time_sec": 40,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct choice (True)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch01_061",
+   "unit": "isc-12-commerce-ch01",
+   "language": "en",
+   "type": "short",
+   "stem_md": "What is SWOT analysis? Why is it useful to a small business?",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Meaning with all four elements, plus usefulness.",
+   "marks": 2,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch01-t05"
+   ],
+   "expected_time_sec": 150,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "**SWOT analysis** is a study of a firm's internal **Strengths** and **Weaknesses** and the external **Opportunities** and **Threats** it faces. It helps a small business **build on strengths, correct weaknesses, use opportunities and guard against threats** when planning."
+   },
+   "word_limit": {
+    "min": 30,
+    "max": 50
+   },
+   "marking_scheme": [
+    {
+     "step": "Meaning with four elements",
+     "marks": 1
+    },
+    {
+     "step": "Usefulness",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch01_062",
+   "unit": "isc-12-commerce-ch01",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Prepare a simple SWOT analysis for Tamarind Tiffins (imagined), a home-food lunch service in Madurai, using these facts: loyal office customers; only two delivery staff; offices returning to full attendance; cloud kitchens opening nearby.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Each fact placed correctly in S, W, O or T with a short reason.",
+   "marks": 3,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch01-t05"
+   ],
+   "expected_time_sec": 210,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "| | |\n|---|---|\n| **Strength:** loyal office customers who trust home-style food | **Weakness:** only two delivery staff limit growth and speed |\n| **Opportunity:** offices returning to **full attendance** mean more lunch orders | **Threat:** **cloud kitchens** nearby compete on variety and app ordering |"
+   },
+   "word_limit": {
+    "min": 50,
+    "max": 75
+   },
+   "marking_scheme": [
+    {
+     "step": "Strength and weakness correct",
+     "marks": 1
+    },
+    {
+     "step": "Opportunity correct",
+     "marks": 1
+    },
+    {
+     "step": "Threat correct",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch01_063",
+   "unit": "isc-12-commerce-ch01",
+   "language": "en",
+   "type": "long",
+   "stem_md": "Kosi Cane Crafts is an imagined cane-furniture unit in Purnea run by eight artisans. It has a strong local reputation and low costs, but no website and little working capital. Hotel chains are looking for eco-friendly furniture, while cheap plastic furniture is flooding the market and a new rule requires fire-safety labels on furniture for hotels.\n(a) Prepare a SWOT analysis for the unit. [4]\n(b) Suggest one strategy that uses a strength to grab an opportunity. [1]",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Each element correctly classified (the labelling rule is an external threat or, if met, an advantage); a strategy matching a strength to an opportunity.",
+   "marks": 5,
+   "difficulty": 4,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch01-t05",
+    "isc-12-commerce-ch01-t03",
+    "isc-12-commerce-ch01-t04"
+   ],
+   "expected_time_sec": 600,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "(a) **Strengths** (internal, helpful): a strong **local reputation** built over years, and **low costs**, because eight skilled artisans work with locally grown cane.\n**Weaknesses** (internal, harmful): **no website**, so distant buyers cannot find the unit; and **little working capital**, so it cannot buy material in advance for large orders.\n**Opportunities** (external, helpful): **hotel chains** looking for **eco-friendly** furniture, a growing and well-paying market.\n**Threats** (external, harmful): **cheap plastic furniture** flooding the market; and the new **fire-safety labelling rule**, which adds cost and paperwork if the unit cannot comply.\n\n(b) Use its **low costs and reputation** to offer **certified, eco-friendly cane sets** to hotel chains. By meeting the labelling rule, it turns the rule into a selling point rather than a barrier."
+   },
+   "word_limit": {
+    "min": 100,
+    "max": 150
+   },
+   "marking_scheme": [
+    {
+     "step": "(a) Strengths and weaknesses",
+     "marks": 2
+    },
+    {
+     "step": "(a) Opportunities and threats",
+     "marks": 2
+    },
+    {
+     "step": "(b) S–O strategy",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch01_064",
+   "unit": "isc-12-commerce-ch01",
+   "language": "en",
+   "type": "case-based",
+   "stem_md": "Read the passage and answer the questions that follow. *(Imagined firm and people, written by SOYL for practice.)*",
+   "options": [],
+   "match_right": [],
+   "solution_md": "**(a)** **Correct option: (d)** environmental scanning. Regularly gathering and analysing information about the environment is environmental scanning.\n\n**(b)** The resin supplier provides raw material: a supplier.\n\n**(c) (i)** Two factors from the passage with their importance.\n\n**OR (c) (ii)** Correct classification with reasons.",
+   "marks": 4,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch01-t02",
+    "isc-12-commerce-ch01-t03"
+   ],
+   "expected_time_sec": 420,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "**(a)** (d) environmental scanning\n\n**(b)** **Suppliers.**\n\n**(c) (i)** 1. **Financier:** the **cooperative bank** provides working capital; its terms affect how many boats can be built.\n2. **Marketing intermediary / competitors:** the **trucking firm** decides timely delivery; the **two rival yards** set price limits.\n\n**OR (c) (ii)** **New ferry routes — opportunity:** more routes mean **more orders** for ferries.\n**Resin price rise — threat:** higher **raw-material cost** may cut margins or force price increases."
+   },
+   "marking_scheme": [
+    {
+     "step": "Part (a)",
+     "marks": 1
+    },
+    {
+     "step": "Part (b)",
+     "marks": 1
+    },
+    {
+     "step": "Part (c): either (i) or (ii)",
+     "marks": 2
+    }
+   ],
+   "passage_md": "**Brahmaputra Boatworks (imagined), Guwahati**\n\nBrahmaputra Boatworks builds fibreglass ferries. Every Friday its manager, Rituparna, spends an hour reading river-transport news, talking to boat operators and checking the rates of two rival yards. Last month she learnt that the state plans to add twenty new ferry routes, and that the resin supplier in Kolkata may raise prices. The boatworks also depends on a cooperative bank for working capital and on a trucking firm to carry boats to the river.",
+   "passage_origin": "soyl-original",
+   "children": [
+    {
+     "id": "a",
+     "type": "mcq",
+     "stem_md": "Rituparna's Friday routine is an example of",
+     "options": [
+      {
+       "id": "a",
+       "text_md": "SWOT analysis"
+      },
+      {
+       "id": "b",
+       "text_md": "staffing"
+      },
+      {
+       "id": "c",
+       "text_md": "quality control"
+      },
+      {
+       "id": "d",
+       "text_md": "environmental scanning"
+      }
+     ],
+     "match_right": [],
+     "solution_md": "**Correct option: (d)** environmental scanning. Regularly gathering and analysing information about the environment is environmental scanning.",
+     "marks": 1,
+     "difficulty": 2,
+     "competency": "application",
+     "bloom": "apply",
+     "topic_ids": [
+      "isc-12-commerce-ch01-t02"
+     ],
+     "expected_time_sec": 60,
+     "assets": [],
+     "answer": {
+      "option_ids": [
+       "d"
+      ]
+     },
+     "marking_scheme": [
+      {
+       "step": "Correct option (d)",
+       "marks": 1
+      }
+     ],
+     "alternatives": []
+    },
+    {
+     "id": "b",
+     "type": "short",
+     "stem_md": "Name the external micro factor represented by the resin supplier.",
+     "options": [],
+     "match_right": [],
+     "solution_md": "The resin supplier provides raw material: a supplier.",
+     "marks": 1,
+     "difficulty": 2,
+     "competency": "application",
+     "bloom": "apply",
+     "topic_ids": [
+      "isc-12-commerce-ch01-t03"
+     ],
+     "expected_time_sec": 90,
+     "assets": [],
+     "answer": {
+      "model_answer_md": "**Suppliers.**"
+     },
+     "marking_scheme": [
+      {
+       "step": "Suppliers",
+       "marks": 1
+      }
+     ],
+     "alternatives": []
+    },
+    {
+     "id": "c",
+     "type": "short",
+     "stem_md": "**Either** (i): Identify two other external micro factors in the passage and explain how each matters to the boatworks.",
+     "options": [],
+     "match_right": [],
+     "solution_md": "Two factors from the passage with their importance.",
+     "marks": 2,
+     "difficulty": 3,
+     "competency": "analysis",
+     "bloom": "analyze",
+     "topic_ids": [
+      "isc-12-commerce-ch01-t03"
+     ],
+     "expected_time_sec": 150,
+     "assets": [],
+     "answer": {
+      "model_answer_md": "1. **Financier:** the **cooperative bank** provides working capital; its terms affect how many boats can be built.\n2. **Marketing intermediary / competitors:** the **trucking firm** decides timely delivery; the **two rival yards** set price limits."
+     },
+     "marking_scheme": [
+      {
+       "step": "First factor with importance",
+       "marks": 1
+      },
+      {
+       "step": "Second factor with importance",
+       "marks": 1
+      }
+     ],
+     "alternatives": [
+      {
+       "id": "c-ii",
+       "type": "short",
+       "stem_md": "**Or** (ii): Classify the twenty new ferry routes and the possible resin price rise as opportunities or threats, with reasons.",
+       "options": [],
+       "match_right": [],
+       "solution_md": "Correct classification with reasons.",
+       "marks": 2,
+       "difficulty": 3,
+       "competency": "analysis",
+       "bloom": "analyze",
+       "topic_ids": [
+        "isc-12-commerce-ch01-t02",
+        "isc-12-commerce-ch01-t05"
+       ],
+       "expected_time_sec": 150,
+       "assets": [],
+       "answer": {
+        "model_answer_md": "**New ferry routes — opportunity:** more routes mean **more orders** for ferries.\n**Resin price rise — threat:** higher **raw-material cost** may cut margins or force price increases."
+       },
+       "marking_scheme": [
+        {
+         "step": "Routes as opportunity",
+         "marks": 1
+        },
+        {
+         "step": "Resin rise as threat",
+         "marks": 1
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch01_065",
+   "unit": "isc-12-commerce-ch01",
+   "language": "en",
+   "type": "case-based",
+   "stem_md": "Read the passage and answer the questions that follow. *(Imagined firm, written by SOYL for practice.)*",
+   "options": [],
+   "match_right": [],
+   "solution_md": "**(a)** **Correct option: (d)** Legal. Rules a business must follow form the legal environment.\n\n**(b)** The line about the delivery app.\n\n**(c) (i)** One internal strength and one internal weakness.\n\n**OR (c) (ii)** Links the economic change to fixing the weakness.",
+   "marks": 4,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch01-t04",
+    "isc-12-commerce-ch01-t05"
+   ],
+   "expected_time_sec": 420,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "**(a)** (d) Legal\n\n**(b)** \"**a delivery app has made it easy for cafés to order supplies online**\".\n\n**(c) (i)** **Strength:** **highly skilled chefs**. **Weakness:** a **small cold-storage unit**, which limits how much it can stock.\n\n**OR (c) (ii)** Cheaper **loans (economic opportunity)** let the firm **borrow to enlarge its cold storage**, removing the weakness that limits its stock and sales."
+   },
+   "marking_scheme": [
+    {
+     "step": "Part (a)",
+     "marks": 1
+    },
+    {
+     "step": "Part (b)",
+     "marks": 1
+    },
+    {
+     "step": "Part (c): either (i) or (ii)",
+     "marks": 2
+    }
+   ],
+   "passage_md": "**Kalimpong Kitchens (imagined)**\n\nKalimpong Kitchens makes ready-to-eat momos and sells them through cafés. Its chefs are highly skilled, but its cold-storage unit is small. Recently, more young people have started eating packaged snacks at work, a new food-safety rule requires a licence number on every pack, banks have cut interest rates on small business loans, and a delivery app has made it easy for cafés to order supplies online.",
+   "passage_origin": "soyl-original",
+   "children": [
+    {
+     "id": "a",
+     "type": "mcq",
+     "stem_md": "The new food-safety rule belongs to which dimension of the macro environment?",
+     "options": [
+      {
+       "id": "a",
+       "text_md": "Social"
+      },
+      {
+       "id": "b",
+       "text_md": "Technological"
+      },
+      {
+       "id": "c",
+       "text_md": "Economic"
+      },
+      {
+       "id": "d",
+       "text_md": "Legal"
+      }
+     ],
+     "match_right": [],
+     "solution_md": "**Correct option: (d)** Legal. Rules a business must follow form the legal environment.",
+     "marks": 1,
+     "difficulty": 2,
+     "competency": "application",
+     "bloom": "apply",
+     "topic_ids": [
+      "isc-12-commerce-ch01-t04"
+     ],
+     "expected_time_sec": 60,
+     "assets": [],
+     "answer": {
+      "option_ids": [
+       "d"
+      ]
+     },
+     "marking_scheme": [
+      {
+       "step": "Correct option (d)",
+       "marks": 1
+      }
+     ],
+     "alternatives": []
+    },
+    {
+     "id": "b",
+     "type": "short",
+     "stem_md": "Quote the line that shows a change in the technological environment.",
+     "options": [],
+     "match_right": [],
+     "solution_md": "The line about the delivery app.",
+     "marks": 1,
+     "difficulty": 2,
+     "competency": "application",
+     "bloom": "apply",
+     "topic_ids": [
+      "isc-12-commerce-ch01-t04"
+     ],
+     "expected_time_sec": 90,
+     "assets": [],
+     "answer": {
+      "model_answer_md": "\"**a delivery app has made it easy for cafés to order supplies online**\"."
+     },
+     "marking_scheme": [
+      {
+       "step": "Correct line quoted",
+       "marks": 1
+      }
+     ],
+     "alternatives": []
+    },
+    {
+     "id": "c",
+     "type": "short",
+     "stem_md": "**Either** (i): Identify one strength and one weakness of the firm from the passage.",
+     "options": [],
+     "match_right": [],
+     "solution_md": "One internal strength and one internal weakness.",
+     "marks": 2,
+     "difficulty": 3,
+     "competency": "analysis",
+     "bloom": "analyze",
+     "topic_ids": [
+      "isc-12-commerce-ch01-t05",
+      "isc-12-commerce-ch01-t04"
+     ],
+     "expected_time_sec": 150,
+     "assets": [],
+     "answer": {
+      "model_answer_md": "**Strength:** **highly skilled chefs**. **Weakness:** a **small cold-storage unit**, which limits how much it can stock."
+     },
+     "marking_scheme": [
+      {
+       "step": "Strength",
+       "marks": 1
+      },
+      {
+       "step": "Weakness",
+       "marks": 1
+      }
+     ],
+     "alternatives": [
+      {
+       "id": "c-ii",
+       "type": "short",
+       "stem_md": "**Or** (ii): Explain how the cut in interest rates could help the firm deal with its weakness.",
+       "options": [],
+       "match_right": [],
+       "solution_md": "Links the economic change to fixing the weakness.",
+       "marks": 2,
+       "difficulty": 3,
+       "competency": "analysis",
+       "bloom": "analyze",
+       "topic_ids": [
+        "isc-12-commerce-ch01-t04",
+        "isc-12-commerce-ch01-t05"
+       ],
+       "expected_time_sec": 150,
+       "assets": [],
+       "answer": {
+        "model_answer_md": "Cheaper **loans (economic opportunity)** let the firm **borrow to enlarge its cold storage**, removing the weakness that limits its stock and sales."
+       },
+       "marking_scheme": [
+        {
+         "step": "Interest cut as economic opportunity",
+         "marks": 1
+        },
+        {
+         "step": "Linked to enlarging cold storage",
+         "marks": 1
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  }
+ ],
+ "build": {
+  "run_id": null,
+  "checks": {
+   "syllabus": "topics t01–t05 of isc-12-commerce-ch01 (meaning, features and importance; environmental scanning; internal and external micro environment; economic, social, technological, political and legal macro environment; SWOT)",
+   "originality": "every firm, person and case is imagined and written by SOYL and labelled; no ISC or CBSE textbook text, illustration or exercise and no CISCE specimen or board item reused (D-036); firms and places differ from the CBSE 12 Business Studies chapters",
+   "data": "no computed figures; all examples are imagined and labelled",
+   "facts": "stable textbook concepts only; the 1991 economic reforms (liberalisation, privatisation, globalisation) are stated without dated figures",
+   "gate": "schema, pipeline lint, deterministic verify, word limits, narration and answer-leak checks run clean in this build"
+  }
+ }
+}
