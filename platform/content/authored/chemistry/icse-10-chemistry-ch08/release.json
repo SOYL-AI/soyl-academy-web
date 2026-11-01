@@ -1,0 +1,5117 @@
+{
+  "unit": "icse-10-chemistry-ch08",
+  "version": 1,
+  "academic_year": "2026-27",
+  "created_at": "2026-11-01T00:00:00+05:30",
+  "decks": [
+    {
+      "unit": "icse-10-chemistry-ch08",
+      "part": 1,
+      "version": 1,
+      "title": "Metallurgy — Part 1: From ore to metal",
+      "language": "en",
+      "goals": [
+        "Distinguish between a mineral and an ore and name the ores of iron, aluminium and zinc",
+        "Choose a concentration method for a given ore and justify it",
+        "Distinguish roasting from calcination with an equation for each",
+        "Write equations for reducing metal oxides and link the method to the activity series"
+      ],
+      "slides": [
+        {
+          "id": "s01",
+          "layout": "title",
+          "heading": "From rock to metal",
+          "body_md": "Part 1 — Most metals are found in the earth as compounds mixed with rock. **Metallurgy** is the set of steps that turns such a rock into a pure metal.",
+          "bullets": [],
+          "visual": {
+            "kind": "flow",
+            "spec": {
+              "direction": "LR",
+              "nodes": [
+                {
+                  "id": "a",
+                  "label": "Ore mined"
+                },
+                {
+                  "id": "b",
+                  "label": "Concentration (remove gangue)"
+                },
+                {
+                  "id": "c",
+                  "label": "Roasting or calcination (to oxide)"
+                },
+                {
+                  "id": "d",
+                  "label": "Reduction (to metal)"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "a",
+                  "to": "b"
+                },
+                {
+                  "from": "b",
+                  "to": "c"
+                },
+                {
+                  "from": "c",
+                  "to": "d"
+                }
+              ]
+            },
+            "alt": "Flow of the main steps of metallurgy from ore to metal"
+          },
+          "math": [],
+          "narration": "Namaste! Very few metals lie in the ground as shiny lumps. Most are locked up as oxides, sulphides or carbonates mixed with sand and rock. Metallurgy is the chain of steps that gets the metal out: first we remove the unwanted rock, then we change the ore into an oxide, and finally we take the oxygen away to leave the metal.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s02",
+          "layout": "concept",
+          "heading": "Minerals and ores",
+          "body_md": "A **mineral** is a naturally occurring compound of a metal in the earth’s crust. An **ore** is a mineral from which the metal can be extracted **conveniently and profitably**. So **every ore is a mineral, but every mineral is not an ore**. The earthy impurities (sand, clay, rock) in an ore are called **gangue** or **matrix**.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Term",
+                "Meaning",
+                "Aluminium example"
+              ],
+              "rows": [
+                [
+                  "Mineral",
+                  "Natural compound of a metal",
+                  "Clay and bauxite"
+                ],
+                [
+                  "Ore",
+                  "Mineral that gives the metal at a profit",
+                  "Bauxite only"
+                ],
+                [
+                  "Gangue",
+                  "Unwanted rock mixed with the ore",
+                  "Sand, silica, iron(III) oxide"
+                ]
+              ]
+            },
+            "alt": "Table comparing a mineral, an ore and gangue with aluminium examples"
+          },
+          "math": [],
+          "narration": "A mineral is any natural compound of a metal found in the earth. An ore is a special mineral: one from which the metal can be extracted easily and at a profit. Clay contains aluminium, but getting the metal out of it costs too much, so clay is only a mineral. Bauxite is both a mineral and an ore. The rock mixed with an ore is called gangue.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s03",
+          "layout": "concept",
+          "heading": "Ores of iron, aluminium and zinc",
+          "body_md": "Learn the name **and** the formula of each ore. Notice the type of compound — it decides how the ore is treated later.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Metal",
+                "Ore",
+                "Formula",
+                "Type"
+              ],
+              "rows": [
+                [
+                  "Iron",
+                  "Haematite",
+                  "Fe₂O₃",
+                  "Oxide"
+                ],
+                [
+                  "Iron",
+                  "Magnetite",
+                  "Fe₃O₄",
+                  "Oxide (magnetic)"
+                ],
+                [
+                  "Aluminium",
+                  "Bauxite",
+                  "Al₂O₃·2H₂O",
+                  "Hydrated oxide"
+                ],
+                [
+                  "Aluminium",
+                  "Cryolite",
+                  "Na₃AlF₆",
+                  "Fluoride"
+                ],
+                [
+                  "Zinc",
+                  "Zinc blende",
+                  "ZnS",
+                  "Sulphide"
+                ],
+                [
+                  "Zinc",
+                  "Calamine",
+                  "ZnCO₃",
+                  "Carbonate"
+                ]
+              ]
+            },
+            "alt": "Table of the ores of iron, aluminium and zinc with formulae and type of compound"
+          },
+          "math": [],
+          "narration": "Iron comes mainly from haematite and magnetite, which are both oxides; magnetite is attracted by a magnet. Aluminium comes from bauxite, a hydrated oxide, and cryolite is a fluoride of aluminium and sodium. Zinc comes from zinc blende, which is a sulphide, and calamine, which is a carbonate. The type of compound tells us which steps the ore will need.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s04",
+          "layout": "check",
+          "heading": "Quick check: ore or mineral?",
+          "body_md": "Decide what makes a mineral an ore.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Think about cost and convenience, not just whether the metal is present.",
+          "check_question_id": "q_icse10chem_ch08_001",
+          "audio": null
+        },
+        {
+          "id": "s05",
+          "layout": "concept",
+          "heading": "Concentration (dressing) of the ore",
+          "body_md": "**Concentration** removes the gangue. The method depends on a **difference in property** between the ore and the gangue.\n\n- **Hydraulic washing** (gravity separation): heavy ore particles stay, light gangue is washed away — e.g. haematite.\n- **Magnetic separation**: one part is magnetic — e.g. magnetite.\n- **Froth flotation**: sulphide ores — e.g. zinc blende, galena.\n- **Chemical method**: bauxite is purified by Baeyer’s process (Part 2).",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Method",
+                "Property used",
+                "Example"
+              ],
+              "rows": [
+                [
+                  "Hydraulic washing",
+                  "Ore much heavier than gangue",
+                  "Haematite"
+                ],
+                [
+                  "Magnetic separation",
+                  "Ore (or gangue) is magnetic",
+                  "Magnetite"
+                ],
+                [
+                  "Froth flotation",
+                  "Ore wetted by oil, gangue by water",
+                  "Zinc blende, galena"
+                ],
+                [
+                  "Chemical (leaching)",
+                  "Ore dissolves in a reagent, gangue does not",
+                  "Bauxite"
+                ]
+              ]
+            },
+            "alt": "Table of four concentration methods with the property used and an example ore"
+          },
+          "math": [],
+          "narration": "To remove the gangue we use a property in which the ore and the rock differ. If the ore is much heavier, a stream of water washes the light rock away. If the ore is magnetic, a magnet pulls it out. Sulphide ores are concentrated by froth flotation, and bauxite is purified by a chemical method that dissolves only the alumina.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s06",
+          "layout": "diagram",
+          "heading": "Froth flotation",
+          "body_md": "Powdered sulphide ore is mixed with water and a little **pine oil** and air is blown through. Ore particles are **wetted by oil**, cling to air bubbles and rise into the **froth**, which is skimmed off. Gangue particles are **wetted by water** and **sink**.",
+          "bullets": [],
+          "visual": {
+            "kind": "svg",
+            "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 430 270\" role=\"img\" aria-label=\"Schematic of froth flotation. A tank holds finely powdered sulphide ore mixed with water and a little pine oil. Air is blown in through a pipe at the bottom and the mixture is stirred. The ore particles, wetted by the oil, stick to the air bubbles and rise into a froth at the top, which is skimmed off. The gangue particles, wetted by water, sink to the bottom of the tank.\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>Schematic of froth flotation. A tank holds finely powdered sulphide ore mixed with water and a little pine oil. Air is blown in through a pipe at the bottom and the mixture is stirred. The ore particles, wetted by the oil, stick to the air bubbles and rise into a froth at the top, which is skimmed off. The gangue particles, wetted by water, sink to the bottom of the tank.</title><path d=\"M 110 60 L 110 230 L 300 230 L 300 60\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><rect x=\"112\" y=\"70\" width=\"186\" height=\"30\" fill=\"var(--diagram-muted)\" stroke=\"none\" stroke-width=\"0\" fill-opacity=\"0.18\"/><circle cx=\"130\" cy=\"84\" r=\"7\" fill=\"none\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\"/><circle cx=\"152\" cy=\"90\" r=\"7\" fill=\"none\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\"/><circle cx=\"174\" cy=\"84\" r=\"7\" fill=\"none\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\"/><circle cx=\"196\" cy=\"90\" r=\"7\" fill=\"none\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\"/><circle cx=\"218\" cy=\"84\" r=\"7\" fill=\"none\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\"/><circle cx=\"240\" cy=\"90\" r=\"7\" fill=\"none\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\"/><circle cx=\"262\" cy=\"84\" r=\"7\" fill=\"none\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\"/><circle cx=\"284\" cy=\"90\" r=\"7\" fill=\"none\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\"/><circle cx=\"136\" cy=\"86\" r=\"2.5\" fill=\"currentColor\" stroke=\"currentColor\" stroke-width=\"0.5\"/><circle cx=\"180\" cy=\"82\" r=\"2.5\" fill=\"currentColor\" stroke=\"currentColor\" stroke-width=\"0.5\"/><circle cx=\"222\" cy=\"90\" r=\"2.5\" fill=\"currentColor\" stroke=\"currentColor\" stroke-width=\"0.5\"/><circle cx=\"268\" cy=\"84\" r=\"2.5\" fill=\"currentColor\" stroke=\"currentColor\" stroke-width=\"0.5\"/><rect x=\"112\" y=\"100\" width=\"186\" height=\"128\" fill=\"var(--diagram-blue)\" stroke=\"none\" stroke-width=\"0\" fill-opacity=\"0.12\"/><path d=\"M 70 250 L 205 250 L 205 220\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\"/><text x=\"40\" y=\"266\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">air blown in</text><circle cx=\"200\" cy=\"196\" r=\"4\" fill=\"none\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\"/><circle cx=\"212\" cy=\"172\" r=\"4\" fill=\"none\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\"/><circle cx=\"198\" cy=\"148\" r=\"4\" fill=\"none\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\"/><circle cx=\"214\" cy=\"124\" r=\"4\" fill=\"none\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\"/><line x1=\"255\" y1=\"30\" x2=\"255\" y2=\"180\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"240\" y1=\"180\" x2=\"270\" y2=\"180\" stroke=\"currentColor\" stroke-width=\"3\"/><text x=\"262\" y=\"28\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">stirrer</text><rect x=\"130\" y=\"222\" width=\"6\" height=\"5\" fill=\"var(--diagram-brown)\" stroke=\"none\" stroke-width=\"0\" fill-opacity=\"0.6\"/><rect x=\"150\" y=\"224\" width=\"6\" height=\"5\" fill=\"var(--diagram-brown)\" stroke=\"none\" stroke-width=\"0\" fill-opacity=\"0.6\"/><rect x=\"170\" y=\"221\" width=\"6\" height=\"5\" fill=\"var(--diagram-brown)\" stroke=\"none\" stroke-width=\"0\" fill-opacity=\"0.6\"/><rect x=\"235\" y=\"223\" width=\"6\" height=\"5\" fill=\"var(--diagram-brown)\" stroke=\"none\" stroke-width=\"0\" fill-opacity=\"0.6\"/><rect x=\"270\" y=\"222\" width=\"6\" height=\"5\" fill=\"var(--diagram-brown)\" stroke=\"none\" stroke-width=\"0\" fill-opacity=\"0.6\"/><rect x=\"288\" y=\"224\" width=\"6\" height=\"5\" fill=\"var(--diagram-brown)\" stroke=\"none\" stroke-width=\"0\" fill-opacity=\"0.6\"/><line x1=\"300\" y1=\"80\" x2=\"344.4\" y2=\"80\" stroke=\"var(--diagram-green)\" stroke-width=\"1.5\"/><polygon points=\"350,80 343.6,82.9 343.6,77.1\" fill=\"var(--diagram-green)\" stroke=\"none\"/><text x=\"354\" y=\"76\" fill=\"var(--diagram-green)\" stroke=\"none\" font-size=\"10\">froth with</text><text x=\"354\" y=\"88\" fill=\"var(--diagram-green)\" stroke=\"none\" font-size=\"10\">ore particles</text><text x=\"354\" y=\"100\" fill=\"var(--diagram-green)\" stroke=\"none\" font-size=\"10\">skimmed off</text><line x1=\"112\" y1=\"150\" x2=\"80\" y2=\"150\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\"/><text x=\"8\" y=\"140\" fill=\"var(--diagram-blue)\" stroke=\"none\" font-size=\"10\">powdered ore,</text><text x=\"8\" y=\"152\" fill=\"var(--diagram-blue)\" stroke=\"none\" font-size=\"10\">water and</text><text x=\"8\" y=\"164\" fill=\"var(--diagram-blue)\" stroke=\"none\" font-size=\"10\">pine oil</text><line x1=\"300\" y1=\"222\" x2=\"330\" y2=\"222\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\"/><text x=\"334\" y=\"214\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">gangue</text><text x=\"334\" y=\"226\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">sinks</text></svg>",
+            "alt": "A froth flotation tank: powdered sulphide ore, water and pine oil are stirred while air is blown in; ore particles rise in the froth and gangue sinks"
+          },
+          "math": [],
+          "narration": "In froth flotation, the powdered sulphide ore is stirred with water and a little pine oil while air is bubbled through. The oil coats the ore particles, so they stick to the air bubbles and float up in the froth, which is skimmed off. The sandy gangue is wetted by water and sinks to the bottom of the tank.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s07",
+          "layout": "check",
+          "heading": "Quick check: concentration",
+          "body_md": "Choose a concentration method for an ore.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Ask which property differs between the ore and the gangue.",
+          "check_question_id": "q_icse10chem_ch08_008",
+          "audio": null
+        },
+        {
+          "id": "s08",
+          "layout": "concept",
+          "heading": "Roasting and calcination",
+          "body_md": "Metals are easiest to extract from **oxides**, so the concentrated ore is first changed into an oxide.\n\n**Roasting:** heating strongly in **excess air**, below the melting point — for **sulphide** ores; sulphur dioxide is given off.\n\n**Calcination:** heating strongly in a **limited supply of air or none** — for **carbonate** and **hydrated** ores; carbon dioxide or water vapour is given off.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Feature",
+                "Roasting",
+                "Calcination"
+              ],
+              "rows": [
+                [
+                  "Air",
+                  "Excess",
+                  "Limited or none"
+                ],
+                [
+                  "Ores",
+                  "Sulphides (ZnS, PbS)",
+                  "Carbonates (ZnCO₃), hydrated oxides (Al₂O₃·2H₂O)"
+                ],
+                [
+                  "Gas given off",
+                  "SO₂",
+                  "CO₂ or H₂O"
+                ],
+                [
+                  "Example",
+                  "2ZnS + 3O₂ → 2ZnO + 2SO₂",
+                  "ZnCO₃ → ZnO + CO₂"
+                ]
+              ]
+            },
+            "alt": "Table comparing roasting and calcination by air supply, type of ore, gas given off and an example"
+          },
+          "math": [],
+          "narration": "Metals are easiest to obtain from their oxides, so the ore is first turned into an oxide. A sulphide ore is roasted: it is heated strongly in plenty of air, and sulphur dioxide is given off. A carbonate or hydrated ore is calcined: it is heated with little or no air, and carbon dioxide or water vapour is driven off.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s09",
+          "layout": "example",
+          "heading": "Worked example: roasting or calcination?",
+          "body_md": "**Problem.** Name the process and write the equation for converting (a) galena, PbS, and (b) calamine, ZnCO₃, into oxides.\n\n**(a)** Galena is a **sulphide** → **roasting** in excess air: 2PbS + 3O₂ → 2PbO + 2SO₂.\n\n**(b)** Calamine is a **carbonate** → **calcination**: ZnCO₃ → ZnO + CO₂.",
+          "bullets": [],
+          "visual": {
+            "kind": "chem",
+            "spec": {
+              "equation": "2PbS + 3O2 -> 2PbO + 2SO2"
+            },
+            "alt": "Equation for roasting galena: two lead sulphide plus three oxygen gives two lead oxide plus two sulphur dioxide",
+            "caption": "Roasting of galena"
+          },
+          "math": [],
+          "narration": "First look at the type of ore. Galena is lead sulphide, so it is roasted in excess air; oxygen converts it to lead oxide and sulphur dioxide. Calamine is zinc carbonate, so it is calcined; heat alone splits it into zinc oxide and carbon dioxide. The type of ore decides the process every time.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s10",
+          "layout": "concept",
+          "heading": "The activity series decides the method of reduction",
+          "body_md": "The more reactive a metal, the **more strongly it holds oxygen**, and the harder its oxide is to reduce.\n\n- **K, Na, Ca, Mg, Al:** electrolysis of the **fused** compound (electrolytic reduction).\n- **Zn, Fe, Pb, Cu:** reduction of the oxide by **carbon, carbon monoxide or hydrogen**.\n- **Hg, Ag:** heating the oxide **alone** (2HgO → 2Hg + O₂).",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Metals",
+                "Position",
+                "Method of extraction"
+              ],
+              "rows": [
+                [
+                  "K, Na, Ca, Mg, Al",
+                  "Top",
+                  "Electrolysis of fused compounds"
+                ],
+                [
+                  "Zn, Fe, Pb, Cu",
+                  "Middle",
+                  "Reduction by C, CO or H₂"
+                ],
+                [
+                  "Hg, Ag",
+                  "Bottom",
+                  "Heating the oxide alone"
+                ]
+              ]
+            },
+            "alt": "Table linking the position of metals in the activity series to the method of extraction"
+          },
+          "math": [],
+          "narration": "The activity series tells us how to get each metal. Very reactive metals such as potassium, sodium, calcium, magnesium and aluminium hold oxygen so tightly that no chemical can take it away, so we use electrolysis of their molten compounds. Metals in the middle are reduced by carbon, carbon monoxide or hydrogen. Mercury and silver oxides give up oxygen on heating alone.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s11",
+          "layout": "concept",
+          "heading": "Reducing the oxide",
+          "body_md": "A **reducing agent** removes oxygen from the metal oxide.\n\n- **Hydrogen:** CuO + H₂ → Cu + H₂O (black → reddish-brown).\n- **Carbon (coke):** ZnO + C → Zn + CO; PbO + C → Pb + CO.\n- **Carbon monoxide:** Fe₂O₃ + 3CO → 2Fe + 3CO₂; PbO + CO → Pb + CO₂.\n\nAl₂O₃ and MgO are **not** reduced by carbon: aluminium and magnesium have a greater affinity for oxygen than carbon has.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Oxide",
+                "Reducing agent",
+                "Equation"
+              ],
+              "rows": [
+                [
+                  "Copper(II) oxide",
+                  "Hydrogen",
+                  "CuO + H₂ → Cu + H₂O"
+                ],
+                [
+                  "Zinc oxide",
+                  "Coke",
+                  "ZnO + C → Zn + CO"
+                ],
+                [
+                  "Lead(II) oxide",
+                  "Coke",
+                  "PbO + C → Pb + CO"
+                ],
+                [
+                  "Iron(III) oxide",
+                  "Carbon monoxide",
+                  "Fe₂O₃ + 3CO → 2Fe + 3CO₂"
+                ]
+              ]
+            },
+            "alt": "Table of four metal oxides with their reducing agents and balanced equations"
+          },
+          "math": [],
+          "narration": "A reducing agent pulls oxygen away from the metal. Hydrogen passed over hot black copper oxide leaves reddish brown copper and droplets of water. Coke reduces zinc oxide and lead oxide, and carbon monoxide reduces iron oxide. Aluminium oxide and magnesium oxide are not reduced by carbon, because these metals hold oxygen more strongly than carbon does.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s12",
+          "layout": "check",
+          "heading": "Quick check: method of extraction",
+          "body_md": "Link a metal to the way it is extracted.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. The higher a metal is in the activity series, the stronger the method needed.",
+          "check_question_id": "q_icse10chem_ch08_020",
+          "audio": null
+        },
+        {
+          "id": "s13",
+          "layout": "example",
+          "heading": "Worked example: choosing the method",
+          "body_md": "**Problem.** How would you obtain (a) lead from lead(II) oxide, (b) sodium from sodium chloride, (c) mercury from mercury(II) oxide? Give a reason each time.\n\n**(a)** Heat with **coke**: PbO + C → Pb + CO — lead is in the middle of the series.\n\n**(b)** **Electrolysis of fused NaCl** — sodium is too reactive for any chemical reducing agent.\n\n**(c)** **Heat alone**: 2HgO → 2Hg + O₂ — mercury is at the bottom of the series.",
+          "bullets": [],
+          "visual": {
+            "kind": "flow",
+            "spec": {
+              "direction": "TB",
+              "nodes": [
+                {
+                  "id": "a",
+                  "label": "Where is the metal in the activity series?"
+                },
+                {
+                  "id": "b",
+                  "label": "Top: electrolysis of the fused compound"
+                },
+                {
+                  "id": "c",
+                  "label": "Middle: heat oxide with C, CO or H₂"
+                },
+                {
+                  "id": "d",
+                  "label": "Bottom: heat the oxide alone"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "a",
+                  "to": "b",
+                  "label": "K to Al"
+                },
+                {
+                  "from": "a",
+                  "to": "c",
+                  "label": "Zn to Cu"
+                },
+                {
+                  "from": "a",
+                  "to": "d",
+                  "label": "Hg, Ag"
+                }
+              ]
+            },
+            "alt": "Decision flow for choosing the method of extraction from the position of the metal in the activity series"
+          },
+          "math": [],
+          "narration": "Always begin with the position of the metal in the activity series. Lead is in the middle, so heating its oxide with coke is enough. Sodium is near the top, so only electrolysis of molten sodium chloride will work. Mercury is near the bottom, so its oxide simply breaks down on heating, giving mercury and oxygen.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s14",
+          "layout": "summary",
+          "heading": "Summary: Part 1",
+          "body_md": "",
+          "bullets": [
+            "Every ore is a mineral; a mineral is an ore only if the metal can be extracted profitably.",
+            "Concentration removes gangue: hydraulic washing, magnetic separation, froth flotation or a chemical method.",
+            "Roasting (excess air) for sulphides; calcination (little or no air) for carbonates and hydrated ores.",
+            "Reactive metals: electrolysis of fused compounds; middle metals: C, CO or H₂; least reactive: heat alone."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Step",
+                "Purpose",
+                "Example"
+              ],
+              "rows": [
+                [
+                  "Concentration",
+                  "Remove gangue",
+                  "Froth flotation of ZnS"
+                ],
+                [
+                  "Roasting",
+                  "Sulphide → oxide",
+                  "2ZnS + 3O₂ → 2ZnO + 2SO₂"
+                ],
+                [
+                  "Calcination",
+                  "Carbonate → oxide",
+                  "ZnCO₃ → ZnO + CO₂"
+                ],
+                [
+                  "Reduction",
+                  "Oxide → metal",
+                  "ZnO + C → Zn + CO"
+                ]
+              ]
+            },
+            "alt": "Summary table of the steps of metallurgy with their purpose and an example for zinc"
+          },
+          "math": [],
+          "narration": "Let us sum up Part 1. Every ore is a mineral, but only some minerals are ores. The gangue is removed by a method that uses a difference in property. Sulphide ores are roasted and carbonate ores are calcined, giving oxides. The oxide is then reduced by carbon, carbon monoxide or hydrogen, unless the metal is very reactive and needs electrolysis.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s15",
+          "layout": "exam-tips",
+          "heading": "Exam tips: Part 1",
+          "body_md": "",
+          "bullets": [
+            "Always write the formula with the name of an ore: zinc blende ZnS, calamine ZnCO₃.",
+            "Say “excess air” for roasting and “limited air or absence of air” for calcination.",
+            "For “give a reason”, link the method to the position of the metal in the activity series.",
+            "State the observation too: black CuO turns reddish-brown when reduced by hydrogen."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Slip",
+                "Fix"
+              ],
+              "rows": [
+                [
+                  "Calamine is ZnS",
+                  "Calamine is ZnCO₃; zinc blende is ZnS"
+                ],
+                [
+                  "Calcination in excess air",
+                  "Calcination in limited air or none"
+                ],
+                [
+                  "Al₂O₃ reduced by coke",
+                  "Al is extracted by electrolysis"
+                ]
+              ]
+            },
+            "alt": "Table of three common slips in Part 1 and their fixes"
+          },
+          "math": [],
+          "narration": "Some tips. Always pair the name of an ore with its formula. Remember that roasting needs plenty of air while calcination needs little or none. When asked for a reason, talk about the position of the metal in the activity series. And in observation questions, mention colour changes, such as black copper oxide turning reddish brown.",
+          "check_question_id": null,
+          "audio": null
+        }
+      ],
+      "status": "draft",
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "unit": "icse-10-chemistry-ch08",
+      "part": 2,
+      "version": 1,
+      "title": "Metallurgy — Part 2: Aluminium and alloys",
+      "language": "en",
+      "goals": [
+        "Write the equations of Baeyer’s process for purifying bauxite",
+        "Describe the Hall–Héroult cell and state the purpose of cryolite, fluorspar and coke",
+        "Write the electrode reactions and explain why the anodes are replaced",
+        "State the composition and a use of six alloys and explain why alloys are preferred"
+      ],
+      "slides": [
+        {
+          "id": "s01",
+          "layout": "title",
+          "heading": "Aluminium: from bauxite to metal",
+          "body_md": "Part 2 — Aluminium is the most abundant metal in the earth’s crust, yet it was once dearer than gold. Two processes made it cheap: **Baeyer’s process** to purify bauxite and the **Hall–Héroult process** to electrolyse alumina.",
+          "bullets": [],
+          "visual": {
+            "kind": "flow",
+            "spec": {
+              "direction": "LR",
+              "nodes": [
+                {
+                  "id": "a",
+                  "label": "Bauxite (impure)"
+                },
+                {
+                  "id": "b",
+                  "label": "Baeyer’s process"
+                },
+                {
+                  "id": "c",
+                  "label": "Pure alumina"
+                },
+                {
+                  "id": "d",
+                  "label": "Hall–Héroult electrolysis"
+                },
+                {
+                  "id": "e",
+                  "label": "Aluminium"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "a",
+                  "to": "b"
+                },
+                {
+                  "from": "b",
+                  "to": "c"
+                },
+                {
+                  "from": "c",
+                  "to": "d"
+                },
+                {
+                  "from": "d",
+                  "to": "e"
+                }
+              ]
+            },
+            "alt": "Flow from impure bauxite through Baeyer’s process to pure alumina and through Hall–Héroult electrolysis to aluminium"
+          },
+          "math": [],
+          "narration": "Aluminium is the most common metal in the earth’s crust, but it was once more costly than gold, because it was so hard to extract. Two inventions changed that. Baeyer’s process turns impure bauxite into pure alumina, and the Hall–Héroult process passes electricity through molten alumina to give the metal.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s02",
+          "layout": "concept",
+          "heading": "Why aluminium needs electrolysis",
+          "body_md": "Aluminium is **high in the activity series**: it holds oxygen more strongly than carbon, so coke cannot reduce alumina. Alumina must therefore be reduced by **electrolysis**. Because impurities in the ore would also be reduced and spoil the metal, the bauxite is **purified first**.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Property of alumina",
+                "Consequence"
+              ],
+              "rows": [
+                [
+                  "Very stable oxide",
+                  "Not reduced by carbon; electrolysis needed"
+                ],
+                [
+                  "Melting point about 2050 °C",
+                  "Solvent (cryolite) needed to work at about 950 °C"
+                ],
+                [
+                  "Bauxite contains Fe₂O₃ and other impurities",
+                  "Purified by Baeyer’s process before electrolysis"
+                ]
+              ]
+            },
+            "alt": "Table of properties of alumina and their consequences for the extraction of aluminium"
+          },
+          "math": [],
+          "narration": "Aluminium sits high in the activity series and grips oxygen more strongly than carbon does, so heating alumina with coke does not work. Instead the oxide is decomposed by electricity. Because any impurities would be reduced along with it and spoil the aluminium, the bauxite is first purified, and because alumina melts at a very high temperature, a solvent is used.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s03",
+          "layout": "concept",
+          "heading": "Baeyer’s process: step 1, digestion",
+          "body_md": "Finely ground bauxite is heated with **concentrated sodium hydroxide** solution under pressure (about 150–200 °C). **Alumina dissolves** as soluble **sodium aluminate**; the main impurity, **iron(III) oxide, does not dissolve** and is **filtered off**.",
+          "bullets": [],
+          "visual": {
+            "kind": "chem",
+            "spec": {
+              "equation": "Al2O3.2H2O + 2NaOH -> 2NaAlO2 + 3H2O"
+            },
+            "alt": "Equation for digestion of bauxite: hydrated alumina plus two sodium hydroxide gives two sodium aluminate plus three water",
+            "caption": "Digestion of bauxite with sodium hydroxide"
+          },
+          "math": [],
+          "narration": "In the first step, finely ground bauxite is heated under pressure with concentrated sodium hydroxide solution. Alumina is amphoteric, so it reacts with the alkali and dissolves as sodium aluminate. Iron oxide, the main impurity, is basic and does not dissolve, so it is removed by filtering the hot solution.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s04",
+          "layout": "concept",
+          "heading": "Baeyer’s process: steps 2 and 3",
+          "body_md": "**Step 2 — precipitation.** The sodium aluminate solution is **diluted** with water and **seeded** with a little freshly made aluminium hydroxide, then stirred. Aluminium hydroxide precipitates.\n\n**Step 3 — ignition.** The aluminium hydroxide is filtered, washed, dried and heated to about **1000 °C**, giving **pure alumina**.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Step",
+                "Equation",
+                "Result"
+              ],
+              "rows": [
+                [
+                  "Precipitation (diluted, seeded)",
+                  "NaAlO₂ + 2H₂O → NaOH + Al(OH)₃",
+                  "White precipitate of Al(OH)₃"
+                ],
+                [
+                  "Ignition at about 1000 °C",
+                  "2Al(OH)₃ → Al₂O₃ + 3H₂O",
+                  "Pure alumina"
+                ]
+              ]
+            },
+            "alt": "Table of the precipitation and ignition steps of Baeyer’s process with equations"
+          },
+          "math": [],
+          "narration": "Next, the clear sodium aluminate solution is diluted with water and stirred with a few crystals of fresh aluminium hydroxide. These act as seeds, and white aluminium hydroxide settles out. Finally the precipitate is washed, dried and heated to about one thousand degrees Celsius, which drives out water and leaves pure alumina.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s05",
+          "layout": "check",
+          "heading": "Quick check: Baeyer’s process",
+          "body_md": "Decide what happens to the impurity in bauxite.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Alumina is amphoteric, but iron oxide is basic.",
+          "check_question_id": "q_icse10chem_ch08_032",
+          "audio": null
+        },
+        {
+          "id": "s06",
+          "layout": "example",
+          "heading": "Worked example: alumina from aluminium hydroxide",
+          "body_md": "**Problem.** How much alumina is formed when 780 kg of aluminium hydroxide is ignited? (Al = 27, O = 16, H = 1)\n\n**Step 1.** 2Al(OH)₃ → Al₂O₃ + 3H₂O.\n\n**Step 2.** Molar masses: Al(OH)₃ = 27 + 3 × 17 = 78; Al₂O₃ = 2 × 27 + 3 × 16 = 102.\n\n**Step 3.** 156 kg of hydroxide gives 102 kg of alumina, so 780 kg gives 102 × 780 ÷ 156 = **510 kg**.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Quantity",
+                "From the equation",
+                "In the problem"
+              ],
+              "rows": [
+                [
+                  "Al(OH)₃",
+                  "2 × 78 = 156 kg",
+                  "780 kg"
+                ],
+                [
+                  "Al₂O₃",
+                  "102 kg",
+                  "510 kg"
+                ]
+              ]
+            },
+            "alt": "Table showing that 156 kilograms of aluminium hydroxide gives 102 kilograms of alumina, so 780 kilograms gives 510 kilograms"
+          },
+          "math": [],
+          "narration": "Write the balanced equation first: two units of aluminium hydroxide give one unit of alumina. The molar mass of the hydroxide is seventy eight and of alumina is one hundred and two. So one hundred and fifty six kilograms of hydroxide gives one hundred and two kilograms of alumina, and five times as much hydroxide gives five hundred and ten kilograms.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s07",
+          "layout": "diagram",
+          "heading": "The Hall–Héroult cell",
+          "body_md": "- **Electrolyte:** pure alumina dissolved in **fused cryolite** (Na₃AlF₆) with a little **fluorspar** (CaF₂), at about **950 °C**.\n- **Cathode:** the **carbon lining** of a steel tank.\n- **Anodes:** thick **carbon rods** dipping into the electrolyte.\n- **Molten aluminium** sinks to the bottom and is tapped off.",
+          "bullets": [],
+          "visual": {
+            "kind": "svg",
+            "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 470 300\" role=\"img\" aria-label=\"Schematic of the Hall–Héroult cell. A steel tank is lined inside with carbon, which is the cathode. Thick carbon rods dip into the molten electrolyte from above and are the anodes. The electrolyte is alumina dissolved in fused cryolite with a little fluorspar, kept at about 950 degrees Celsius, and it is covered by a crust of powdered coke. Molten aluminium collects at the bottom of the tank and is drawn off through a tapping hole. Oxygen bubbles form at the anodes and burn the carbon to carbon monoxide and carbon dioxide.\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>Schematic of the Hall–Héroult cell. A steel tank is lined inside with carbon, which is the cathode. Thick carbon rods dip into the molten electrolyte from above and are the anodes. The electrolyte is alumina dissolved in fused cryolite with a little fluorspar, kept at about 950 degrees Celsius, and it is covered by a crust of powdered coke. Molten aluminium collects at the bottom of the tank and is drawn off through a tapping hole. Oxygen bubbles form at the anodes and burn the carbon to carbon monoxide and carbon dioxide.</title><rect x=\"110\" y=\"110\" width=\"250\" height=\"150\" fill=\"none\" stroke=\"var(--diagram-muted)\" stroke-width=\"3\"/><rect x=\"120\" y=\"118\" width=\"230\" height=\"134\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"4\"/><rect x=\"124\" y=\"136\" width=\"222\" height=\"76\" fill=\"var(--diagram-blue)\" stroke=\"none\" stroke-width=\"0\" fill-opacity=\"0.15\"/><rect x=\"124\" y=\"212\" width=\"222\" height=\"36\" fill=\"var(--diagram-muted)\" stroke=\"none\" stroke-width=\"0\" fill-opacity=\"0.35\"/><line x1=\"124\" y1=\"212\" x2=\"346\" y2=\"212\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\" stroke-dasharray=\"4 3\"/><rect x=\"124\" y=\"124\" width=\"222\" height=\"12\" fill=\"var(--diagram-brown)\" stroke=\"none\" stroke-width=\"0\" fill-opacity=\"0.35\"/><rect x=\"150\" y=\"50\" width=\"30\" height=\"132\" fill=\"currentColor\" stroke=\"currentColor\" stroke-width=\"1.5\" fill-opacity=\"0.12\"/><rect x=\"220\" y=\"50\" width=\"30\" height=\"132\" fill=\"currentColor\" stroke=\"currentColor\" stroke-width=\"1.5\" fill-opacity=\"0.12\"/><rect x=\"290\" y=\"50\" width=\"30\" height=\"132\" fill=\"currentColor\" stroke=\"currentColor\" stroke-width=\"1.5\" fill-opacity=\"0.12\"/><line x1=\"150\" y1=\"50\" x2=\"320\" y2=\"50\" stroke=\"currentColor\" stroke-width=\"3\"/><line x1=\"235\" y1=\"50\" x2=\"235\" y2=\"28\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"242\" y=\"26\" fill=\"currentColor\" stroke=\"none\" font-size=\"11\" font-weight=\"bold\">+ (to supply)</text><circle cx=\"160\" cy=\"192\" r=\"3\" fill=\"none\" stroke=\"var(--diagram-red)\" stroke-width=\"1\"/><circle cx=\"174\" cy=\"198\" r=\"3\" fill=\"none\" stroke=\"var(--diagram-red)\" stroke-width=\"1\"/><circle cx=\"232\" cy=\"194\" r=\"3\" fill=\"none\" stroke=\"var(--diagram-red)\" stroke-width=\"1\"/><circle cx=\"246\" cy=\"189\" r=\"3\" fill=\"none\" stroke=\"var(--diagram-red)\" stroke-width=\"1\"/><circle cx=\"302\" cy=\"196\" r=\"3\" fill=\"none\" stroke=\"var(--diagram-red)\" stroke-width=\"1\"/><circle cx=\"314\" cy=\"190\" r=\"3\" fill=\"none\" stroke=\"var(--diagram-red)\" stroke-width=\"1\"/><line x1=\"110\" y1=\"250\" x2=\"80\" y2=\"250\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"30\" y=\"254\" fill=\"currentColor\" stroke=\"none\" font-size=\"11\" font-weight=\"bold\">− (to supply)</text><line x1=\"360\" y1=\"238\" x2=\"404.4\" y2=\"238\" stroke=\"var(--diagram-muted)\" stroke-width=\"1.5\"/><polygon points=\"410,238 403.6,240.9 403.6,235.1\" fill=\"var(--diagram-muted)\" stroke=\"none\"/><text x=\"372\" y=\"256\" fill=\"var(--diagram-muted)\" stroke=\"none\" font-size=\"10\">tapping hole</text><line x1=\"150\" y1=\"70\" x2=\"96\" y2=\"70\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\"/><text x=\"8\" y=\"66\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">carbon anodes</text><text x=\"8\" y=\"78\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">(+): burn away</text><line x1=\"124\" y1=\"130\" x2=\"96\" y2=\"110\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\"/><text x=\"8\" y=\"106\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">powdered coke</text><text x=\"8\" y=\"118\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">crust</text><line x1=\"124\" y1=\"175\" x2=\"96\" y2=\"165\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\"/><text x=\"8\" y=\"160\" fill=\"var(--diagram-blue)\" stroke=\"none\" font-size=\"10\">alumina in fused</text><text x=\"8\" y=\"172\" fill=\"var(--diagram-blue)\" stroke=\"none\" font-size=\"10\">cryolite and</text><text x=\"8\" y=\"184\" fill=\"var(--diagram-blue)\" stroke=\"none\" font-size=\"10\">fluorspar, 950 °C</text><line x1=\"124\" y1=\"226\" x2=\"96\" y2=\"222\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\"/><text x=\"8\" y=\"218\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">molten</text><text x=\"8\" y=\"230\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">aluminium</text><line x1=\"350\" y1=\"150\" x2=\"372\" y2=\"150\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\"/><text x=\"376\" y=\"140\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">carbon lining</text><text x=\"376\" y=\"152\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">(cathode −)</text><line x1=\"360\" y1=\"186\" x2=\"372\" y2=\"192\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\"/><text x=\"376\" y=\"190\" fill=\"var(--diagram-muted)\" stroke=\"none\" font-size=\"10\">steel tank</text><line x1=\"320\" y1=\"192\" x2=\"372\" y2=\"214\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\"/><text x=\"376\" y=\"214\" fill=\"var(--diagram-red)\" stroke=\"none\" font-size=\"10\">oxygen bubbles</text><text x=\"235\" y=\"290\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">schematic, not to scale</text></svg>",
+            "alt": "The Hall–Héroult cell: carbon anodes dipping into alumina dissolved in fused cryolite, a carbon-lined steel tank as cathode, molten aluminium collecting at the bottom"
+          },
+          "math": [],
+          "narration": "Here is the cell. A steel tank lined with carbon acts as the cathode. Thick carbon rods dip into the melt from above and act as the anodes. The electrolyte is pure alumina dissolved in molten cryolite with a little fluorspar, at about nine hundred and fifty degrees Celsius. Molten aluminium collects at the bottom and is drawn off.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s08",
+          "layout": "concept",
+          "heading": "Cryolite, fluorspar and coke",
+          "body_md": "**Cryolite** lowers the fusion temperature from about 2050 °C to about 950 °C (saving energy) and **increases the conductivity** of the melt. **Fluorspar** **increases fluidity** (and helps lower the fusion temperature). A layer of **powdered coke** on top **reduces heat loss** and **stops the anodes burning** in air.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Substance added",
+                "Purpose"
+              ],
+              "rows": [
+                [
+                  "Cryolite, Na₃AlF₆",
+                  "Solvent: lowers fusion temperature, raises conductivity"
+                ],
+                [
+                  "Fluorspar, CaF₂",
+                  "Increases fluidity of the electrolyte"
+                ],
+                [
+                  "Powdered coke (on top)",
+                  "Reduces heat loss; protects anodes from air"
+                ]
+              ]
+            },
+            "alt": "Table of cryolite, fluorspar and powdered coke and the purpose of each in the cell"
+          },
+          "math": [],
+          "narration": "Each addition has a job. Cryolite dissolves the alumina, so the melt works at about nine hundred and fifty degrees instead of over two thousand, and it also conducts electricity better. Fluorspar makes the melt flow more easily. A layer of powdered coke on top keeps the heat in and stops the hot anodes from burning in the air.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s09",
+          "layout": "check",
+          "heading": "Quick check: the electrolytic cell",
+          "body_md": "Explain a feature of the Hall–Héroult cell.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Think about what is produced at each electrode and what it can react with.",
+          "check_question_id": "q_icse10chem_ch08_039",
+          "audio": null
+        },
+        {
+          "id": "s10",
+          "layout": "concept",
+          "heading": "Electrode reactions",
+          "body_md": "In the melt, alumina gives **Al³⁺** and **O²⁻** ions.\n\n- **Cathode (reduction):** Al³⁺ + 3e⁻ → Al\n- **Anode (oxidation):** 2O²⁻ → O₂ + 4e⁻\n- **Anodes burn:** C + O₂ → CO₂ and 2C + O₂ → 2CO, so they are **replaced periodically**.\n\nFresh alumina is added from time to time, so the process runs **continuously**.",
+          "bullets": [],
+          "visual": {
+            "kind": "chem",
+            "spec": {
+              "equation": "2Al2O3 -> 4Al + 3O2"
+            },
+            "alt": "Overall equation for the electrolysis of alumina: two alumina give four aluminium and three oxygen",
+            "caption": "Overall change in the cell"
+          },
+          "math": [],
+          "narration": "In the melt, alumina provides aluminium ions and oxide ions. At the cathode, each aluminium ion gains three electrons and becomes aluminium metal. At the anode, oxide ions lose electrons and form oxygen. The hot oxygen attacks the carbon anodes, turning them into carbon monoxide and carbon dioxide, so the anodes wear away and must be replaced.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s11",
+          "layout": "example",
+          "heading": "Worked example: aluminium from alumina",
+          "body_md": "**Problem.** What mass of aluminium is obtained from 51 tonnes of pure alumina, and what mass of oxygen is released at the anodes? (Al = 27, O = 16)\n\n**Step 1.** Al₂O₃ = 2 × 27 + 3 × 16 = 102; it contains 54 parts aluminium and 48 parts oxygen.\n\n**Step 2.** Aluminium = 54 × 51 ÷ 102 = **27 tonnes**.\n\n**Step 3.** Oxygen = 48 × 51 ÷ 102 = **24 tonnes** — all of it attacks the anodes.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Part of Al₂O₃",
+                "Share of 102",
+                "From 51 tonnes"
+              ],
+              "rows": [
+                [
+                  "Aluminium",
+                  "54",
+                  "27 tonnes"
+                ],
+                [
+                  "Oxygen",
+                  "48",
+                  "24 tonnes"
+                ]
+              ]
+            },
+            "alt": "Table splitting 51 tonnes of alumina into 27 tonnes of aluminium and 24 tonnes of oxygen"
+          },
+          "math": [],
+          "narration": "The molar mass of alumina is one hundred and two, made up of fifty four parts aluminium and forty eight parts oxygen. Fifty one tonnes is exactly half of one hundred and two, so it gives half of fifty four, which is twenty seven tonnes of aluminium, and twenty four tonnes of oxygen. That oxygen is what burns away the carbon anodes.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s12",
+          "layout": "concept",
+          "heading": "Alloys and amalgams",
+          "body_md": "An **alloy** is a homogeneous mixture of two or more metals (or a metal and a non-metal). An **amalgam** is an alloy of **mercury** with another metal.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Alloy",
+                "Main constituents",
+                "One use"
+              ],
+              "rows": [
+                [
+                  "Stainless steel",
+                  "Fe, Cr, Ni, a little C",
+                  "Cutlery, surgical instruments"
+                ],
+                [
+                  "Magnalium",
+                  "Al, Mg",
+                  "Light instruments, balance beams"
+                ],
+                [
+                  "Duralumin",
+                  "Al, Cu, Mg, Mn",
+                  "Aircraft bodies, pressure cookers"
+                ],
+                [
+                  "Brass",
+                  "Cu, Zn",
+                  "Utensils, door fittings"
+                ],
+                [
+                  "Bronze",
+                  "Cu, Sn",
+                  "Statues, medals, bells"
+                ],
+                [
+                  "Solder",
+                  "Pb, Sn",
+                  "Joining electrical wires"
+                ]
+              ]
+            },
+            "alt": "Table of six alloys with their main constituents and one use of each"
+          },
+          "math": [],
+          "narration": "An alloy is a uniform mixture of metals, or of a metal with a non-metal such as carbon. Stainless steel is iron with chromium, nickel and a little carbon. Magnalium and duralumin are light aluminium alloys. Brass is copper with zinc, bronze is copper with tin, and solder is lead with tin. When mercury is one of the metals, the alloy is called an amalgam.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s13",
+          "layout": "check",
+          "heading": "Quick check: alloys",
+          "body_md": "Identify an alloy from its constituents.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Recall which aluminium alloy also contains copper and manganese.",
+          "check_question_id": "q_icse10chem_ch08_050",
+          "audio": null
+        },
+        {
+          "id": "s14",
+          "layout": "concept",
+          "heading": "Why alloys?",
+          "body_md": "Alloying changes the properties of a metal to suit a job:\n\n- **harder and stronger** (duralumin vs aluminium);\n- **resists corrosion** (stainless steel vs iron);\n- **lower melting point** (solder);\n- **better appearance or colour** (brass, bronze).",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Change",
+                "Example",
+                "Why it helps"
+              ],
+              "rows": [
+                [
+                  "Harder, stronger",
+                  "Duralumin",
+                  "Light yet strong aircraft parts"
+                ],
+                [
+                  "Resists corrosion",
+                  "Stainless steel",
+                  "No rust on knives and sinks"
+                ],
+                [
+                  "Lower melting point",
+                  "Solder",
+                  "Melts easily to join wires"
+                ],
+                [
+                  "Attractive colour",
+                  "Brass",
+                  "Decorative fittings"
+                ]
+              ]
+            },
+            "alt": "Table of four ways alloying improves a metal with an example of each"
+          },
+          "math": [],
+          "narration": "Why mix metals at all? Pure metals are often too soft, they may corrode, or they may melt at an awkward temperature. Duralumin is much stronger than pure aluminium yet still light. Stainless steel does not rust like iron. Solder melts at a low temperature, which makes it ideal for joining wires, and brass has a pleasing golden colour.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s15",
+          "layout": "summary",
+          "heading": "Summary: Part 2",
+          "body_md": "",
+          "bullets": [
+            "Baeyer’s process: bauxite + NaOH → sodium aluminate; Fe₂O₃ filtered off; dilute and seed → Al(OH)₃; ignite → pure Al₂O₃.",
+            "Hall–Héroult: alumina in fused cryolite with fluorspar at about 950 °C; carbon cathode lining, carbon anodes.",
+            "Cathode: Al³⁺ + 3e⁻ → Al; anode: oxygen, which burns the anodes away.",
+            "Alloys are harder, resist corrosion or melt lower; an amalgam contains mercury."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Process or alloy",
+                "Key fact"
+              ],
+              "rows": [
+                [
+                  "Baeyer’s process",
+                  "Purifies bauxite to alumina"
+                ],
+                [
+                  "Hall–Héroult process",
+                  "Electrolysis of alumina in cryolite"
+                ],
+                [
+                  "Duralumin",
+                  "Al, Cu, Mg, Mn"
+                ],
+                [
+                  "Solder",
+                  "Pb, Sn"
+                ]
+              ]
+            },
+            "alt": "Summary table of the key facts of Part 2"
+          },
+          "math": [],
+          "narration": "Let us sum up Part 2. Baeyer’s process dissolves alumina from bauxite in sodium hydroxide, filters off the iron oxide, and turns the solution back into pure alumina. The Hall–Héroult cell electrolyses that alumina dissolved in molten cryolite, giving aluminium at the cathode and oxygen at the anodes, which burn away. Alloys improve metals for particular uses.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s16",
+          "layout": "exam-tips",
+          "heading": "Exam tips: Part 2",
+          "body_md": "",
+          "bullets": [
+            "Write the bauxite formula with its water: Al₂O₃·2H₂O.",
+            "Give two roles of cryolite: lowers fusion temperature and increases conductivity.",
+            "Anodes are replaced because oxygen burns them — not because aluminium coats them.",
+            "Bronze is copper and tin; brass is copper and zinc — do not swap them."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Slip",
+                "Fix"
+              ],
+              "rows": [
+                [
+                  "Cryolite is the anode",
+                  "Cryolite is the solvent; anodes are carbon"
+                ],
+                [
+                  "Aluminium forms at the anode",
+                  "Aluminium forms at the cathode"
+                ],
+                [
+                  "Bronze is Cu and Zn",
+                  "Bronze is Cu and Sn"
+                ]
+              ]
+            },
+            "alt": "Table of three common slips in Part 2 and their fixes"
+          },
+          "math": [],
+          "narration": "Final tips. Write the formula of bauxite with its two water molecules. Learn two separate reasons for adding cryolite. Remember that the anodes wear away because oxygen burns them, and that aluminium collects at the cathode. And keep bronze and brass apart: bronze has tin, brass has zinc.",
+          "check_question_id": null,
+          "audio": null
+        }
+      ],
+      "status": "draft",
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    }
+  ],
+  "notes": {
+    "unit": "icse-10-chemistry-ch08",
+    "version": 1,
+    "title": "Metallurgy — Notes",
+    "language": "en",
+    "sections": [
+      {
+        "heading": "1. Occurrence of metals: minerals and ores",
+        "body_md": "Metals occur **native** (free: gold, platinum) or **combined** as oxides, sulphides, carbonates and other compounds.\n\n- **Mineral:** a naturally occurring compound of a metal in the earth’s crust.\n- **Ore:** a mineral from which the metal can be extracted **conveniently and profitably**. Every ore is a mineral; every mineral is not an ore (clay is a mineral of aluminium, not an ore).\n- **Gangue (matrix):** the earthy impurities mixed with the ore.",
+        "key_terms": [
+          {
+            "term": "Ore",
+            "definition_md": "A mineral from which a metal can be extracted conveniently and profitably."
+          },
+          {
+            "term": "Gangue",
+            "definition_md": "The unwanted earthy or rocky material mixed with an ore."
+          }
+        ],
+        "formulas": [],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Metal",
+              "Ores (formula)"
+            ],
+            "rows": [
+              [
+                "Iron",
+                "Haematite Fe₂O₃; magnetite Fe₃O₄"
+              ],
+              [
+                "Aluminium",
+                "Bauxite Al₂O₃·2H₂O; cryolite Na₃AlF₆; corundum Al₂O₃"
+              ],
+              [
+                "Zinc",
+                "Zinc blende ZnS; calamine ZnCO₃"
+              ]
+            ]
+          },
+          "alt": "Table of the ores of iron, aluminium and zinc with formulae"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-chemistry-ch08-t01"
+        ]
+      },
+      {
+        "heading": "2. Concentration (dressing) of the ore",
+        "body_md": "Concentration removes the gangue, using a property in which ore and gangue differ.\n\n- **Hydraulic washing (gravity separation):** a stream of water washes away the light gangue; heavy ore particles remain (haematite).\n- **Magnetic separation:** a magnetic roller separates magnetic ore from non-magnetic gangue (magnetite).\n- **Froth flotation:** for **sulphide ores** (zinc blende, galena). Powdered ore + water + **pine oil**; air is blown in. Ore particles are wetted by oil and rise in the froth; gangue is wetted by water and sinks.\n- **Chemical method:** bauxite is purified by **Baeyer’s process** (section 5).",
+        "key_terms": [
+          {
+            "term": "Froth flotation",
+            "definition_md": "Concentration of a sulphide ore in which oil-wetted ore particles are carried up in a froth while water-wetted gangue sinks."
+          },
+          {
+            "term": "Magnetic separation",
+            "definition_md": "Concentration that uses a magnet to separate a magnetic ore from non-magnetic gangue, or the reverse."
+          }
+        ],
+        "formulas": [],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Ore",
+              "Method",
+              "Reason"
+            ],
+            "rows": [
+              [
+                "Magnetite",
+                "Magnetic separation",
+                "Ore is magnetic"
+              ],
+              [
+                "Zinc blende",
+                "Froth flotation",
+                "Sulphide, wetted by oil"
+              ],
+              [
+                "Haematite",
+                "Hydraulic washing",
+                "Ore heavier than gangue"
+              ]
+            ]
+          },
+          "alt": "Table of three ores with their concentration method and the reason"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-chemistry-ch08-t02"
+        ]
+      },
+      {
+        "heading": "3. Roasting and calcination",
+        "body_md": "The concentrated ore is changed into an **oxide**, which is easier to reduce.\n\n| Roasting | Calcination |\n|---|---|\n| Strong heating in **excess air**, below the melting point | Strong heating in **limited air or none** |\n| For **sulphide** ores | For **carbonate** and **hydrated** ores |\n| Gives SO₂ | Gives CO₂ or H₂O |\n\nBoth also remove volatile impurities and leave the ore porous.",
+        "key_terms": [
+          {
+            "term": "Roasting",
+            "definition_md": "Heating a sulphide ore strongly in excess air, below its melting point, to convert it into the oxide."
+          },
+          {
+            "term": "Calcination",
+            "definition_md": "Heating a carbonate or hydrated ore strongly in a limited supply of air or in its absence to convert it into the oxide."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\ce{2ZnS + 3O2 -> 2ZnO + 2SO2}",
+            "label": "Roasting of zinc blende"
+          },
+          {
+            "latex": "\\ce{2PbS + 3O2 -> 2PbO + 2SO2}",
+            "label": "Roasting of galena"
+          },
+          {
+            "latex": "\\ce{ZnCO3 -> ZnO + CO2}",
+            "label": "Calcination of calamine"
+          },
+          {
+            "latex": "\\ce{Al2O3.2H2O -> Al2O3 + 2H2O}",
+            "label": "Calcination of bauxite"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Ore",
+              "Process",
+              "Gas given off"
+            ],
+            "rows": [
+              [
+                "Zinc blende",
+                "Roasting",
+                "Sulphur dioxide"
+              ],
+              [
+                "Calamine",
+                "Calcination",
+                "Carbon dioxide"
+              ],
+              [
+                "Bauxite",
+                "Calcination",
+                "Water vapour"
+              ]
+            ]
+          },
+          "alt": "Table of three ores with the process used and the gas given off"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-chemistry-ch08-t03"
+        ]
+      },
+      {
+        "heading": "4. Reduction and the activity series",
+        "body_md": "The method of reduction depends on the position of the metal in the **activity series**.\n\n- **K, Na, Ca, Mg, Al** (most reactive): **electrolysis of fused compounds**. Their oxides are too stable for carbon, and in aqueous solution hydrogen would be discharged instead.\n- **Zn, Fe, Pb, Cu**: oxide reduced by **carbon (coke), carbon monoxide or hydrogen** on heating.\n- **Hg, Ag** (least reactive): heating the oxide alone, e.g. 2HgO → 2Hg + O₂.\n\nAl₂O₃ and MgO are not reduced by carbon because aluminium and magnesium have a greater affinity for oxygen than carbon has.",
+        "key_terms": [
+          {
+            "term": "Reducing agent",
+            "definition_md": "A substance that removes oxygen from (or adds electrons to) another substance, itself being oxidised."
+          },
+          {
+            "term": "Electrolytic reduction",
+            "definition_md": "Extraction of a reactive metal by electrolysing its fused compound; the metal ions gain electrons at the cathode."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\ce{CuO + H2 -> Cu + H2O}",
+            "label": "Reduction by hydrogen (black to reddish-brown)"
+          },
+          {
+            "latex": "\\ce{ZnO + C -> Zn + CO}",
+            "label": "Reduction by coke"
+          },
+          {
+            "latex": "\\ce{PbO + C -> Pb + CO}",
+            "label": "Reduction by coke"
+          },
+          {
+            "latex": "\\ce{Fe2O3 + 3CO -> 2Fe + 3CO2}",
+            "label": "Reduction by carbon monoxide"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Metals",
+              "Method"
+            ],
+            "rows": [
+              [
+                "K, Na, Ca, Mg, Al",
+                "Electrolysis of fused compound"
+              ],
+              [
+                "Zn, Fe, Pb, Cu",
+                "Reduction by C, CO or H₂"
+              ],
+              [
+                "Hg, Ag",
+                "Heat alone"
+              ]
+            ]
+          },
+          "alt": "Table of groups of metals and their method of extraction"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-chemistry-ch08-t04"
+        ]
+      },
+      {
+        "heading": "5. Purification of bauxite: Baeyer’s process",
+        "body_md": "Bauxite contains iron(III) oxide (and other impurities) that would spoil the aluminium, so it is purified first.\n\n1. **Digestion:** finely ground bauxite is heated with **concentrated NaOH** under pressure (about 150–200 °C). Alumina dissolves as sodium aluminate; **Fe₂O₃ does not dissolve** and is filtered off.\n2. **Precipitation:** the solution is **diluted** and **seeded** with fresh Al(OH)₃ and stirred; Al(OH)₃ precipitates.\n3. **Ignition:** Al(OH)₃ is washed, dried and heated to about **1000 °C** to give **pure alumina**.",
+        "key_terms": [
+          {
+            "term": "Baeyer’s process",
+            "definition_md": "Purification of bauxite by dissolving alumina in hot concentrated sodium hydroxide, filtering off impurities, precipitating aluminium hydroxide and igniting it to alumina."
+          },
+          {
+            "term": "Seeding",
+            "definition_md": "Adding a few crystals of a substance to a solution to start its precipitation."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\ce{Al2O3.2H2O + 2NaOH -> 2NaAlO2 + 3H2O}",
+            "label": "Digestion"
+          },
+          {
+            "latex": "\\ce{NaAlO2 + 2H2O -> NaOH + Al(OH)3}",
+            "label": "Precipitation"
+          },
+          {
+            "latex": "\\ce{2Al(OH)3 -> Al2O3 + 3H2O}",
+            "label": "Ignition at about 1000 °C"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Stage",
+              "Aluminium is present as",
+              "Impurity"
+            ],
+            "rows": [
+              [
+                "Digestion",
+                "Sodium aluminate (in solution)",
+                "Fe₂O₃ filtered off"
+              ],
+              [
+                "Precipitation",
+                "Aluminium hydroxide (solid)",
+                "—"
+              ],
+              [
+                "Ignition",
+                "Pure alumina",
+                "—"
+              ]
+            ]
+          },
+          "alt": "Table of the stages of Baeyer’s process and the form of aluminium at each"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-chemistry-ch08-t05"
+        ]
+      },
+      {
+        "heading": "6. Extraction of aluminium: Hall–Héroult process",
+        "body_md": "- **Electrolyte:** pure alumina dissolved in fused **cryolite** (Na₃AlF₆) with a little **fluorspar** (CaF₂); about **950 °C**.\n- **Cathode:** carbon lining of the steel tank. **Anodes:** thick carbon rods dipping into the electrolyte.\n- **Cryolite:** lowers the fusion temperature (from about 2050 °C) and increases conductivity. **Fluorspar:** increases fluidity. **Powdered coke** on top: reduces heat loss and protects the anodes from air.\n- Molten aluminium collects at the bottom and is tapped off; fresh alumina is added, so the process is continuous.\n- Oxygen formed at the anodes burns them (C + O₂ → CO₂; 2C + O₂ → 2CO), so the **anodes are replaced periodically**.\n\nCathode: Al³⁺ + 3e⁻ → Al. Anode: 2O²⁻ → O₂ + 4e⁻.",
+        "key_terms": [
+          {
+            "term": "Cryolite",
+            "definition_md": "Na₃AlF₆; the solvent for alumina in the Hall–Héroult cell, which lowers the fusion temperature and raises conductivity."
+          },
+          {
+            "term": "Fluorspar",
+            "definition_md": "CaF₂; added to the electrolyte to increase its fluidity."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\ce{2Al2O3 -> 4Al + 3O2}",
+            "label": "Overall change"
+          },
+          {
+            "latex": "\\ce{C + O2 -> CO2}",
+            "label": "Anodes burnt by oxygen"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Part of cell",
+              "Material or substance"
+            ],
+            "rows": [
+              [
+                "Cathode",
+                "Carbon lining of steel tank"
+              ],
+              [
+                "Anode",
+                "Thick carbon rods"
+              ],
+              [
+                "Electrolyte",
+                "Alumina + cryolite + fluorspar"
+              ],
+              [
+                "Product at cathode",
+                "Molten aluminium"
+              ],
+              [
+                "Product at anode",
+                "Oxygen (burns anodes to CO, CO₂)"
+              ]
+            ]
+          },
+          "alt": "Table of the parts of the Hall–Héroult cell"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-chemistry-ch08-t06"
+        ]
+      },
+      {
+        "heading": "7. Alloys and amalgams",
+        "body_md": "An **alloy** is a homogeneous mixture of two or more metals, or of a metal and a non-metal. An **amalgam** is an alloy containing **mercury**.\n\nAlloys are preferred because they can be **harder and stronger**, **resist corrosion**, have a **lower melting point**, or look better than the pure metal.",
+        "key_terms": [
+          {
+            "term": "Alloy",
+            "definition_md": "A homogeneous mixture of two or more metals, or of a metal and a non-metal."
+          },
+          {
+            "term": "Amalgam",
+            "definition_md": "An alloy in which one of the metals is mercury."
+          }
+        ],
+        "formulas": [],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Alloy",
+              "Constituents",
+              "Use"
+            ],
+            "rows": [
+              [
+                "Stainless steel",
+                "Fe, Cr, Ni, C",
+                "Cutlery, surgical instruments"
+              ],
+              [
+                "Magnalium",
+                "Al, Mg",
+                "Balance beams, light instruments"
+              ],
+              [
+                "Duralumin",
+                "Al, Cu, Mg, Mn",
+                "Aircraft bodies, pressure cookers"
+              ],
+              [
+                "Brass",
+                "Cu, Zn",
+                "Utensils, door fittings"
+              ],
+              [
+                "Bronze",
+                "Cu, Sn",
+                "Statues, medals, bells"
+              ],
+              [
+                "Solder",
+                "Pb, Sn",
+                "Joining electrical wires"
+              ]
+            ]
+          },
+          "alt": "Table of six alloys with constituents and uses"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-chemistry-ch08-t07"
+        ]
+      }
+    ],
+    "exam_tips_md": "**Common mistakes**\n- Writing calamine as ZnS (it is ZnCO₃; zinc blende is ZnS).\n- Saying calcination is done in excess air.\n- Saying aluminium forms at the anode, or that cryolite is an electrode.\n- Forgetting that the anodes are burnt away by oxygen.\n- Swapping brass (Cu, Zn) and bronze (Cu, Sn).\n\n**How marks are usually awarded**\n- Equations (1 mark): correct formulae and balancing; add the condition (heat, excess air) where asked.\n- Reasons (1 mark each): link to the activity series, affinity for oxygen or a property difference.\n- Hall–Héroult questions: electrolyte, electrodes, electrode reactions and the roles of cryolite, fluorspar and coke.",
+    "status": "draft",
+    "provenance": {
+      "origin": "human",
+      "template_version": null,
+      "model": null,
+      "generated_at": "2026-11-01",
+      "author": "claude-opus-5-5 (subject-producer)"
+    }
+  },
+  "flashcards": {
+    "unit": "icse-10-chemistry-ch08",
+    "version": 1,
+    "language": "en",
+    "cards": [
+      {
+        "id": "f01",
+        "front_md": "Ore?",
+        "back_md": "A mineral from which a metal can be extracted conveniently and profitably.",
+        "tag": "definition",
+        "topic_id": "icse-10-chemistry-ch08-t01"
+      },
+      {
+        "id": "f02",
+        "front_md": "Gangue?",
+        "back_md": "Earthy impurities mixed with an ore.",
+        "tag": "definition",
+        "topic_id": "icse-10-chemistry-ch08-t01"
+      },
+      {
+        "id": "f03",
+        "front_md": "Formula of haematite?",
+        "back_md": "Fe₂O₃.",
+        "tag": "formula",
+        "topic_id": "icse-10-chemistry-ch08-t01"
+      },
+      {
+        "id": "f04",
+        "front_md": "Formula of magnetite?",
+        "back_md": "Fe₃O₄.",
+        "tag": "formula",
+        "topic_id": "icse-10-chemistry-ch08-t01"
+      },
+      {
+        "id": "f05",
+        "front_md": "Formula of bauxite?",
+        "back_md": "Al₂O₃·2H₂O.",
+        "tag": "formula",
+        "topic_id": "icse-10-chemistry-ch08-t01"
+      },
+      {
+        "id": "f06",
+        "front_md": "Zinc blende and calamine?",
+        "back_md": "ZnS and ZnCO₃.",
+        "tag": "formula",
+        "topic_id": "icse-10-chemistry-ch08-t01"
+      },
+      {
+        "id": "f07",
+        "front_md": "Is clay an ore of aluminium?",
+        "back_md": "No: a mineral only; extraction is not profitable.",
+        "tag": "concept",
+        "topic_id": "icse-10-chemistry-ch08-t01"
+      },
+      {
+        "id": "f08",
+        "front_md": "Concentration method for sulphide ores?",
+        "back_md": "Froth flotation.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch08-t02"
+      },
+      {
+        "id": "f09",
+        "front_md": "Role of pine oil in froth flotation?",
+        "back_md": "Wets the ore particles so they rise with air bubbles in the froth.",
+        "tag": "concept",
+        "topic_id": "icse-10-chemistry-ch08-t02"
+      },
+      {
+        "id": "f10",
+        "front_md": "Concentration method for magnetite?",
+        "back_md": "Magnetic separation.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch08-t02"
+      },
+      {
+        "id": "f11",
+        "front_md": "Hydraulic washing works when…?",
+        "back_md": "The ore is much heavier than the gangue.",
+        "tag": "concept",
+        "topic_id": "icse-10-chemistry-ch08-t02"
+      },
+      {
+        "id": "f12",
+        "front_md": "Roasting?",
+        "back_md": "Strong heating of a sulphide ore in excess air below its melting point.",
+        "tag": "definition",
+        "topic_id": "icse-10-chemistry-ch08-t03"
+      },
+      {
+        "id": "f13",
+        "front_md": "Calcination?",
+        "back_md": "Strong heating of a carbonate or hydrated ore in limited air or none.",
+        "tag": "definition",
+        "topic_id": "icse-10-chemistry-ch08-t03"
+      },
+      {
+        "id": "f14",
+        "front_md": "Roasting of zinc blende?",
+        "back_md": "2ZnS + 3O₂ → 2ZnO + 2SO₂.",
+        "tag": "formula",
+        "topic_id": "icse-10-chemistry-ch08-t03"
+      },
+      {
+        "id": "f15",
+        "front_md": "Calcination of calamine?",
+        "back_md": "ZnCO₃ → ZnO + CO₂.",
+        "tag": "formula",
+        "topic_id": "icse-10-chemistry-ch08-t03"
+      },
+      {
+        "id": "f16",
+        "front_md": "How are K, Na, Ca, Mg, Al extracted?",
+        "back_md": "Electrolysis of fused compounds.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch08-t04"
+      },
+      {
+        "id": "f17",
+        "front_md": "CuO heated in hydrogen: observation?",
+        "back_md": "Black solid turns reddish-brown; water droplets form.",
+        "tag": "example",
+        "topic_id": "icse-10-chemistry-ch08-t04"
+      },
+      {
+        "id": "f18",
+        "front_md": "Why is Al₂O₃ not reduced by coke?",
+        "back_md": "Aluminium has a greater affinity for oxygen than carbon.",
+        "tag": "concept",
+        "topic_id": "icse-10-chemistry-ch08-t04"
+      },
+      {
+        "id": "f19",
+        "front_md": "Fe₂O₃ + 3CO →?",
+        "back_md": "2Fe + 3CO₂.",
+        "tag": "formula",
+        "topic_id": "icse-10-chemistry-ch08-t04"
+      },
+      {
+        "id": "f20",
+        "front_md": "Main impurity removed in Baeyer’s process?",
+        "back_md": "Iron(III) oxide, Fe₂O₃.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch08-t05"
+      },
+      {
+        "id": "f21",
+        "front_md": "Bauxite + NaOH →?",
+        "back_md": "Al₂O₃·2H₂O + 2NaOH → 2NaAlO₂ + 3H₂O.",
+        "tag": "formula",
+        "topic_id": "icse-10-chemistry-ch08-t05"
+      },
+      {
+        "id": "f22",
+        "front_md": "Why seed sodium aluminate solution?",
+        "back_md": "Fresh Al(OH)₃ crystals start the precipitation.",
+        "tag": "concept",
+        "topic_id": "icse-10-chemistry-ch08-t05"
+      },
+      {
+        "id": "f23",
+        "front_md": "Ignition of Al(OH)₃?",
+        "back_md": "2Al(OH)₃ → Al₂O₃ + 3H₂O at about 1000 °C.",
+        "tag": "formula",
+        "topic_id": "icse-10-chemistry-ch08-t05"
+      },
+      {
+        "id": "f24",
+        "front_md": "Electrolyte in the Hall–Héroult cell?",
+        "back_md": "Alumina in fused cryolite with fluorspar, about 950 °C.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch08-t06"
+      },
+      {
+        "id": "f25",
+        "front_md": "Two roles of cryolite?",
+        "back_md": "Lowers fusion temperature; increases conductivity.",
+        "tag": "concept",
+        "topic_id": "icse-10-chemistry-ch08-t06"
+      },
+      {
+        "id": "f26",
+        "front_md": "Role of fluorspar?",
+        "back_md": "Increases fluidity of the electrolyte.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch08-t06"
+      },
+      {
+        "id": "f27",
+        "front_md": "Why are the anodes replaced?",
+        "back_md": "Oxygen burns them to CO and CO₂.",
+        "tag": "diagram",
+        "topic_id": "icse-10-chemistry-ch08-t06"
+      },
+      {
+        "id": "f28",
+        "front_md": "Cathode reaction?",
+        "back_md": "Al³⁺ + 3e⁻ → Al.",
+        "tag": "formula",
+        "topic_id": "icse-10-chemistry-ch08-t06"
+      },
+      {
+        "id": "f29",
+        "front_md": "Duralumin?",
+        "back_md": "Al, Cu, Mg, Mn; aircraft bodies.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch08-t07"
+      },
+      {
+        "id": "f30",
+        "front_md": "Amalgam?",
+        "back_md": "An alloy of mercury with another metal.",
+        "tag": "definition",
+        "topic_id": "icse-10-chemistry-ch08-t07"
+      },
+      {
+        "id": "f31",
+        "front_md": "Exam tip: bronze vs brass",
+        "back_md": "Bronze = Cu + Sn; brass = Cu + Zn.",
+        "tag": "exam-tip",
+        "topic_id": "icse-10-chemistry-ch08-t07"
+      }
+    ],
+    "status": "draft",
+    "provenance": {
+      "origin": "human",
+      "template_version": null,
+      "model": null,
+      "generated_at": "2026-11-01",
+      "author": "claude-opus-5-5 (subject-producer)"
+    }
+  },
+  "questions": [
+    {
+      "id": "q_icse10chem_ch08_001",
+      "unit": "icse-10-chemistry-ch08",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Haematite (Fe₂O₃) and iron pyrites (FeS₂) both contain iron, but only haematite is treated as an ore of iron. The reason is that from haematite iron can be:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "seen with the naked eye"
+        },
+        {
+          "id": "b",
+          "text_md": "separated by dissolving the rock in water"
+        },
+        {
+          "id": "c",
+          "text_md": "extracted conveniently and at a profit"
+        },
+        {
+          "id": "d",
+          "text_md": "obtained without any reducing agent"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "An ore is a mineral from which the metal can be extracted conveniently and profitably; pyrites is mainly used for its sulphur — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch08-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch08_002",
+      "unit": "icse-10-chemistry-ch08",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Calamine is an ore of zinc. Its chemical formula is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "ZnS"
+        },
+        {
+          "id": "b",
+          "text_md": "ZnCO₃"
+        },
+        {
+          "id": "c",
+          "text_md": "ZnO"
+        },
+        {
+          "id": "d",
+          "text_md": "ZnSO₄"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Calamine is zinc carbonate; ZnS is zinc blende — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch08-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch08_003",
+      "unit": "icse-10-chemistry-ch08",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? Every mineral of a metal is also an ore of that metal.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "f"
+        ]
+      },
+      "solution_md": "False: every ore is a mineral, but a mineral is an ore only if the metal can be extracted from it conveniently and profitably (clay is a mineral of aluminium, not an ore).",
+      "marking_scheme": [
+        {
+          "step": "False, with the correction",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch08-t01"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch08_004",
+      "unit": "icse-10-chemistry-ch08",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Name the sulphide ore of zinc and write its formula.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Zinc blende, ZnS."
+      },
+      "solution_md": "Zinc blende.",
+      "marking_scheme": [
+        {
+          "step": "Zinc blende and ZnS",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch08-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch08_005",
+      "unit": "icse-10-chemistry-ch08",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Name the ore of iron whose particles are attracted by a magnet, and write its formula.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Magnetite, Fe₃O₄."
+      },
+      "solution_md": "Magnetite.",
+      "marking_scheme": [
+        {
+          "step": "Magnetite and Fe₃O₄",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch08-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch08_006",
+      "unit": "icse-10-chemistry-ch08",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Both bauxite and clay contain aluminium. Explain why bauxite is called an ore of aluminium but clay is only a mineral of aluminium.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "A mineral is a naturally occurring compound of a metal; an ore is a mineral from which the metal can be extracted conveniently and profitably. Bauxite (Al₂O₃·2H₂O) is rich in alumina and is purified easily, so aluminium is extracted from it at a profit. Clay also contains aluminium but mixed with much silica, so extraction from it is difficult and costly."
+      },
+      "solution_md": "Definitions; profitable extraction.",
+      "marking_scheme": [
+        {
+          "step": "Mineral and ore defined",
+          "marks": 1
+        },
+        {
+          "step": "Bauxite profitable, clay not",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch08-t01"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch08_007",
+      "unit": "icse-10-chemistry-ch08",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "Calculate the percentage by mass of iron in pure haematite, Fe₂O₃. (Fe = 56, O = 16)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 70,
+        "tolerance": 0.1,
+        "unit": "%"
+      },
+      "solution_md": "Molar mass of $\\ce{Fe2O3} = 2 \\times 56 + 3 \\times 16 = 160$. Mass of iron in it $= 2 \\times 56 = 112$. Percentage of iron $= \\dfrac{112}{160} \\times 100 = 70$, so 70%.",
+      "marking_scheme": [
+        {
+          "step": "Molar mass 160",
+          "marks": 1
+        },
+        {
+          "step": "70%",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch08-t01"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch08_008",
+      "unit": "icse-10-chemistry-ch08",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A powdered iron ore is attracted by a magnet, but the rocky gangue mixed with it is not. The best method to concentrate this ore is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "froth flotation"
+        },
+        {
+          "id": "b",
+          "text_md": "magnetic separation"
+        },
+        {
+          "id": "c",
+          "text_md": "hydraulic washing"
+        },
+        {
+          "id": "d",
+          "text_md": "calcination"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "One component is magnetic and the other is not — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch08-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch08_009",
+      "unit": "icse-10-chemistry-ch08",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Finely powdered galena (PbS) is stirred with water and a little pine oil while air is blown through it. The pine oil is added because it:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "dissolves the sandy gangue completely"
+        },
+        {
+          "id": "b",
+          "text_md": "wets the sulphide particles so that they cling to air bubbles and rise into the froth"
+        },
+        {
+          "id": "c",
+          "text_md": "makes the ore particles heavier so that they sink"
+        },
+        {
+          "id": "d",
+          "text_md": "converts lead sulphide into lead oxide"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Sulphide particles are wetted by oil, gangue by water; the oiled particles are carried up by air bubbles — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch08-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch08_010",
+      "unit": "icse-10-chemistry-ch08",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "In hydraulic washing, a stream of water is run over a crushed ore on a sloping, shaking table. The method separates the ore from the gangue only when:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "the ore is attracted by a magnet"
+        },
+        {
+          "id": "b",
+          "text_md": "the ore is a sulphide that is wetted by oil"
+        },
+        {
+          "id": "c",
+          "text_md": "the ore dissolves in water"
+        },
+        {
+          "id": "d",
+          "text_md": "the ore particles are much heavier than the gangue particles"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "The light gangue is washed away and the heavy ore particles stay behind — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch08-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch08_011",
+      "unit": "icse-10-chemistry-ch08",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Froth flotation is a suitable method for concentrating zinc blende.\n\n**Reason (R):** Sulphide ore particles are wetted by oil, while the gangue particles are wetted by water.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Both are true, and R is the principle on which the method works — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch08-t02"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch08_012",
+      "unit": "icse-10-chemistry-ch08",
+      "language": "en",
+      "type": "match",
+      "stem_md": "Match each ore in Column A with the most suitable method of concentration in Column B.",
+      "options": [
+        {
+          "id": "1",
+          "text_md": "Magnetite"
+        },
+        {
+          "id": "2",
+          "text_md": "Zinc blende"
+        },
+        {
+          "id": "3",
+          "text_md": "Haematite with light sandy gangue"
+        },
+        {
+          "id": "4",
+          "text_md": "Bauxite with iron(III) oxide impurity"
+        }
+      ],
+      "match_right": [
+        {
+          "id": "p",
+          "text_md": "Hydraulic washing"
+        },
+        {
+          "id": "q",
+          "text_md": "Magnetic separation"
+        },
+        {
+          "id": "r",
+          "text_md": "Chemical method (Baeyer's process)"
+        },
+        {
+          "id": "s",
+          "text_md": "Froth flotation"
+        }
+      ],
+      "answer": {
+        "pairs": [
+          {
+            "left_id": "1",
+            "right_id": "q"
+          },
+          {
+            "left_id": "2",
+            "right_id": "s"
+          },
+          {
+            "left_id": "3",
+            "right_id": "p"
+          },
+          {
+            "left_id": "4",
+            "right_id": "r"
+          }
+        ]
+      },
+      "solution_md": "Magnetite → magnetic separation (magnetic ore); zinc blende → froth flotation (sulphide); heavy haematite → hydraulic washing; bauxite → chemical method (Baeyer’s process).",
+      "marking_scheme": [
+        {
+          "step": "1 → q",
+          "marks": 1
+        },
+        {
+          "step": "2 → s",
+          "marks": 1
+        },
+        {
+          "step": "3 → p",
+          "marks": 1
+        },
+        {
+          "step": "4 → r",
+          "marks": 1
+        }
+      ],
+      "marks": 4,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch08-t02",
+        "icse-10-chemistry-ch08-t05"
+      ],
+      "expected_time_sec": 160,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch08_013",
+      "unit": "icse-10-chemistry-ch08",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Suggest, with a reason in each case, how you would concentrate: (a) magnetite mixed with non-magnetic rock; (b) zinc blende; (c) haematite mixed with light sandy gangue.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Magnetic separation: magnetite is attracted by the magnet and the rock is not. (b) Froth flotation: the sulphide particles are wetted by pine oil and rise with the froth while the gangue sinks. (c) Hydraulic washing (gravity separation): the heavy haematite particles stay behind while the light sand is washed away."
+      },
+      "solution_md": "Magnetic; froth flotation; gravity.",
+      "marking_scheme": [
+        {
+          "step": "(a) method and reason",
+          "marks": 1
+        },
+        {
+          "step": "(b) method and reason",
+          "marks": 1
+        },
+        {
+          "step": "(c) method and reason",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch08-t02"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch08_014",
+      "unit": "icse-10-chemistry-ch08",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Concentrated zinc blende is heated strongly in a current of excess air, below its melting point. The gas given off is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "sulphur dioxide"
+        },
+        {
+          "id": "b",
+          "text_md": "carbon dioxide"
+        },
+        {
+          "id": "c",
+          "text_md": "hydrogen sulphide"
+        },
+        {
+          "id": "d",
+          "text_md": "water vapour"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "2ZnS + 3O₂ → 2ZnO + 2SO₂ — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch08-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch08_015",
+      "unit": "icse-10-chemistry-ch08",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which of these is an example of calcination?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Heating galena in excess air to give lead(II) oxide"
+        },
+        {
+          "id": "b",
+          "text_md": "Heating copper(II) oxide in a stream of hydrogen"
+        },
+        {
+          "id": "c",
+          "text_md": "Heating calamine to give zinc oxide and carbon dioxide"
+        },
+        {
+          "id": "d",
+          "text_md": "Passing an electric current through fused alumina"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Calcination is heating a carbonate or hydrated ore in a limited supply of air or none: ZnCO₃ → ZnO + CO₂ — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch08-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch08_016",
+      "unit": "icse-10-chemistry-ch08",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? Roasting is carried out in excess air and is used mainly for sulphide ores.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "t"
+        ]
+      },
+      "solution_md": "True: the sulphide is oxidised to the metal oxide and sulphur dioxide.",
+      "marking_scheme": [
+        {
+          "step": "True",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch08-t03"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch08_017",
+      "unit": "icse-10-chemistry-ch08",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write a balanced equation for the roasting of galena, PbS.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "2PbS + 3O₂ → 2PbO + 2SO₂ (heated in excess air)."
+      },
+      "solution_md": "Equation.",
+      "marking_scheme": [
+        {
+          "step": "Balanced equation",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch08-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch08_018",
+      "unit": "icse-10-chemistry-ch08",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write a balanced equation for the calcination of calamine.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "ZnCO₃ → ZnO + CO₂ (on heating)."
+      },
+      "solution_md": "Equation.",
+      "marking_scheme": [
+        {
+          "step": "Balanced equation",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch08-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch08_019",
+      "unit": "icse-10-chemistry-ch08",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Give two differences between roasting and calcination.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(1) Roasting is done in excess air; calcination is done in a limited supply of air or in its absence. (2) Roasting is used for sulphide ores and gives sulphur dioxide; calcination is used for carbonate and hydrated ores and gives carbon dioxide or water vapour."
+      },
+      "solution_md": "Air supply; type of ore and gas given off.",
+      "marking_scheme": [
+        {
+          "step": "Air supply",
+          "marks": 1
+        },
+        {
+          "step": "Type of ore or product",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch08-t03"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch08_020",
+      "unit": "icse-10-chemistry-ch08",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which of these metals is obtained by electrolysis of its fused chloride and not by heating its oxide with coke?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Magnesium"
+        },
+        {
+          "id": "b",
+          "text_md": "Zinc"
+        },
+        {
+          "id": "c",
+          "text_md": "Lead"
+        },
+        {
+          "id": "d",
+          "text_md": "Iron"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Magnesium is high in the activity series; its oxide is too stable for carbon to reduce — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch08-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch08_021",
+      "unit": "icse-10-chemistry-ch08",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Dry hydrogen is passed over heated black copper(II) oxide in a hard-glass tube. The observation is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "the black solid turns white and a brown gas is given off"
+        },
+        {
+          "id": "b",
+          "text_md": "the black solid turns blue and dissolves"
+        },
+        {
+          "id": "c",
+          "text_md": "the black solid turns reddish-brown and droplets of a colourless liquid collect in the cooler part of the tube"
+        },
+        {
+          "id": "d",
+          "text_md": "there is no change, because hydrogen cannot reduce metal oxides"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "CuO + H₂ → Cu + H₂O: copper is reddish-brown and water condenses — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch08-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch08_022",
+      "unit": "icse-10-chemistry-ch08",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "In the reaction Fe₂O₃ + 3CO → 2Fe + 3CO₂, the substance that is oxidised is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "iron(III) oxide"
+        },
+        {
+          "id": "b",
+          "text_md": "carbon monoxide"
+        },
+        {
+          "id": "c",
+          "text_md": "iron"
+        },
+        {
+          "id": "d",
+          "text_md": "carbon dioxide"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "CO gains oxygen to become CO₂, so it is oxidised and acts as the reducing agent — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch08-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch08_023",
+      "unit": "icse-10-chemistry-ch08",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Metal X is obtained by electrolysis of its fused chloride, metal Y by heating its oxide with coke, and metal Z by heating its oxide alone. The order of decreasing reactivity is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Z > Y > X"
+        },
+        {
+          "id": "b",
+          "text_md": "Y > X > Z"
+        },
+        {
+          "id": "c",
+          "text_md": "X > Z > Y"
+        },
+        {
+          "id": "d",
+          "text_md": "X > Y > Z"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "The more reactive the metal, the harder its compounds are to reduce: electrolysis (most reactive), then carbon, then heat alone (least reactive) — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch08-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch08_024",
+      "unit": "icse-10-chemistry-ch08",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Sodium is extracted by electrolysis of fused sodium chloride.\n\n**Reason (R):** Sodium chloride is a covalent compound that does not conduct electricity when molten.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "A is true; R is false: sodium chloride is ionic and conducts when molten — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch08-t04"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch08_025",
+      "unit": "icse-10-chemistry-ch08",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? Mercury(II) oxide gives mercury when it is heated alone, without any reducing agent.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "t"
+        ]
+      },
+      "solution_md": "True: 2HgO → 2Hg + O₂ on heating; mercury is low in the activity series.",
+      "marking_scheme": [
+        {
+          "step": "True",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch08-t04"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch08_026",
+      "unit": "icse-10-chemistry-ch08",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write a balanced equation, with the condition, for the reduction of copper(II) oxide by hydrogen.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "CuO + H₂ → Cu + H₂O (on heating)."
+      },
+      "solution_md": "Equation with heat.",
+      "marking_scheme": [
+        {
+          "step": "Balanced equation with heat",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch08-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch08_027",
+      "unit": "icse-10-chemistry-ch08",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write a balanced equation for the reduction of lead(II) oxide by carbon.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "PbO + C → Pb + CO (on heating)."
+      },
+      "solution_md": "Equation.",
+      "marking_scheme": [
+        {
+          "step": "Balanced equation",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch08-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch08_028",
+      "unit": "icse-10-chemistry-ch08",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Name the method used to extract potassium from its compounds.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Electrolysis of fused (molten) potassium chloride or potassium hydroxide."
+      },
+      "solution_md": "Electrolytic reduction.",
+      "marking_scheme": [
+        {
+          "step": "Electrolysis of a fused compound",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch08-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch08_029",
+      "unit": "icse-10-chemistry-ch08",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Magnesium is extracted by electrolysis of fused magnesium chloride, while lead is obtained by heating lead(II) oxide with coke. Explain this difference.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Magnesium is high in the activity series and has a greater affinity for oxygen than carbon, so carbon cannot remove oxygen from magnesium oxide; the strong reducing action of electrolysis (gain of electrons at the cathode) is needed. Lead is much lower in the series, so carbon readily removes oxygen from lead(II) oxide: PbO + C → Pb + CO."
+      },
+      "solution_md": "Position in the series; affinity for oxygen.",
+      "marking_scheme": [
+        {
+          "step": "Magnesium: reactive, oxide not reduced by carbon",
+          "marks": 1
+        },
+        {
+          "step": "Lead: less reactive, reduced by carbon",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch08-t04"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch08_030",
+      "unit": "icse-10-chemistry-ch08",
+      "language": "en",
+      "type": "short",
+      "stem_md": "A sample of concentrated calamine is to be turned into zinc. (a) Name the process that changes calamine into zinc oxide and write its equation. (b) Write the equation for the reduction of zinc oxide by coke. (c) Why can zinc oxide be reduced by coke while magnesium oxide cannot?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Calcination: ZnCO₃ → ZnO + CO₂. (b) ZnO + C → Zn + CO (on strong heating). (c) On strong heating, carbon has a greater affinity for oxygen than zinc has, so it removes oxygen from zinc oxide; magnesium has a greater affinity for oxygen than carbon, so carbon cannot reduce magnesium oxide."
+      },
+      "solution_md": "Calcination; reduction; affinity for oxygen.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch08-t03",
+        "icse-10-chemistry-ch08-t04"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch08_031",
+      "unit": "icse-10-chemistry-ch08",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Three metal oxides P, Q and R are tested. P gives its metal and oxygen when heated alone. Q gives its metal only when heated strongly with coke. R is not reduced by coke even at very high temperatures. (a) Suggest one oxide that fits each of P, Q and R. (b) Arrange the three metals in increasing order of reactivity. (c) Name the method by which the metal of R is obtained.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) P: mercury(II) oxide; Q: zinc oxide (or lead(II) oxide); R: aluminium oxide (or magnesium oxide). (b) P < Q < R (mercury < zinc < aluminium). (c) Electrolysis of a fused compound of the metal (electrolytic reduction)."
+      },
+      "solution_md": "Identify from reducibility; reactivity order; electrolysis.",
+      "marking_scheme": [
+        {
+          "step": "(a) three oxides",
+          "marks": 1
+        },
+        {
+          "step": "(b) order",
+          "marks": 1
+        },
+        {
+          "step": "(c) electrolysis",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 4,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch08-t04"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch08_032",
+      "unit": "icse-10-chemistry-ch08",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "In Baeyer's process, finely ground bauxite is heated with concentrated sodium hydroxide solution under pressure. The iron(III) oxide present as an impurity:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "dissolves to form sodium ferrate"
+        },
+        {
+          "id": "b",
+          "text_md": "does not dissolve and is removed by filtration"
+        },
+        {
+          "id": "c",
+          "text_md": "is reduced to iron and sinks"
+        },
+        {
+          "id": "d",
+          "text_md": "escapes from the solution as a gas"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Only the amphoteric alumina dissolves (as sodium aluminate); basic iron(III) oxide stays undissolved — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch08-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch08_033",
+      "unit": "icse-10-chemistry-ch08",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "In Baeyer's process, the filtered sodium aluminate solution is diluted with water and a little freshly made aluminium hydroxide is stirred in. The purpose of this added aluminium hydroxide is to:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "neutralise all the sodium hydroxide"
+        },
+        {
+          "id": "b",
+          "text_md": "remove the iron(III) oxide"
+        },
+        {
+          "id": "c",
+          "text_md": "start (seed) the precipitation of aluminium hydroxide"
+        },
+        {
+          "id": "d",
+          "text_md": "lower the melting point of alumina"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "The solid crystals act as seeds on which more aluminium hydroxide precipitates — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch08-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch08_034",
+      "unit": "icse-10-chemistry-ch08",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write the balanced equation for the action of sodium hydroxide solution on bauxite, Al₂O₃·2H₂O, in Baeyer's process.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Al₂O₃·2H₂O + 2NaOH → 2NaAlO₂ + 3H₂O."
+      },
+      "solution_md": "Equation.",
+      "marking_scheme": [
+        {
+          "step": "Balanced equation",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch08-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch08_035",
+      "unit": "icse-10-chemistry-ch08",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write the balanced equation for the action of strong heat (about 1000 °C) on aluminium hydroxide.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "2Al(OH)₃ → Al₂O₃ + 3H₂O."
+      },
+      "solution_md": "Equation.",
+      "marking_scheme": [
+        {
+          "step": "Balanced equation",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch08-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch08_036",
+      "unit": "icse-10-chemistry-ch08",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "In Baeyer's process, aluminium hydroxide is heated strongly to give pure ___, which is then sent for electrolysis.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "alumina",
+              "aluminium oxide",
+              "Al2O3",
+              "Al₂O₃"
+            ]
+          }
+        ]
+      },
+      "solution_md": "Pure **alumina** (aluminium oxide).",
+      "marking_scheme": [
+        {
+          "step": "Blank 1: \"alumina\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch08-t05"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch08_037",
+      "unit": "icse-10-chemistry-ch08",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write the equation for the change of sodium aluminate into aluminium hydroxide in Baeyer's process, and state why the solution is diluted before this step.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "NaAlO₂ + 2H₂O → NaOH + Al(OH)₃↓. Dilution with water shifts the change towards hydrolysis of sodium aluminate, so aluminium hydroxide precipitates (helped by seeding with fresh aluminium hydroxide)."
+      },
+      "solution_md": "Hydrolysis equation; dilution favours hydrolysis.",
+      "marking_scheme": [
+        {
+          "step": "Balanced equation",
+          "marks": 1
+        },
+        {
+          "step": "Reason for dilution",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 3,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch08-t05"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch08_038",
+      "unit": "icse-10-chemistry-ch08",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Pure alumina melts at about 2050 °C, yet the Hall–Héroult cell runs at about 950 °C. This is possible because:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "alumina is dissolved in fused cryolite, which lowers the fusion temperature"
+        },
+        {
+          "id": "b",
+          "text_md": "fluorspar raises the melting point of the electrolyte"
+        },
+        {
+          "id": "c",
+          "text_md": "powdered coke on the surface melts the alumina"
+        },
+        {
+          "id": "d",
+          "text_md": "molten aluminium acts as the solvent for alumina"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Cryolite (Na₃AlF₆) is the solvent; the mixture melts near 950 °C and also conducts better — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch08-t06"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch08_039",
+      "unit": "icse-10-chemistry-ch08",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "In the Hall–Héroult cell, the carbon anodes have to be replaced from time to time because:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "aluminium is deposited on them"
+        },
+        {
+          "id": "b",
+          "text_md": "cryolite dissolves them"
+        },
+        {
+          "id": "c",
+          "text_md": "oxygen set free at the anodes burns them away as oxides of carbon"
+        },
+        {
+          "id": "d",
+          "text_md": "they melt at the temperature of the cell"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "C + O₂ → CO₂ and 2C + O₂ → 2CO — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch08-t06"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch08_040",
+      "unit": "icse-10-chemistry-ch08",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "The reaction at the cathode of the Hall–Héroult cell is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Al → Al³⁺ + 3e⁻"
+        },
+        {
+          "id": "b",
+          "text_md": "2O²⁻ → O₂ + 4e⁻"
+        },
+        {
+          "id": "c",
+          "text_md": "C + O₂ → CO₂"
+        },
+        {
+          "id": "d",
+          "text_md": "Al³⁺ + 3e⁻ → Al"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Reduction (gain of electrons) takes place at the cathode — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch08-t06"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch08_041",
+      "unit": "icse-10-chemistry-ch08",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Cryolite is added to alumina in the Hall–Héroult cell.\n\n**Reason (R):** Cryolite is a mineral of aluminium.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Both are true, but cryolite is added to lower the fusion temperature and raise the conductivity, not because it contains aluminium — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch08-t06"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch08_042",
+      "unit": "icse-10-chemistry-ch08",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** A layer of powdered coke is spread over the surface of the electrolyte in the Hall–Héroult cell.\n\n**Reason (R):** The coke layer reduces heat loss from the surface and stops the anodes burning in air at the surface.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Both are true, and R explains A — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch08-t06"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch08_043",
+      "unit": "icse-10-chemistry-ch08",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "The formula of cryolite, used as a solvent for alumina, is ___.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "Na3AlF6",
+              "Na₃AlF₆"
+            ]
+          }
+        ]
+      },
+      "solution_md": "**Na₃AlF₆** (Na3AlF6), sodium aluminium fluoride.",
+      "marking_scheme": [
+        {
+          "step": "Blank 1: \"Na3AlF6\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch08-t06"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch08_044",
+      "unit": "icse-10-chemistry-ch08",
+      "language": "en",
+      "type": "short",
+      "stem_md": "State the purpose of adding fluorspar to the electrolyte in the Hall–Héroult cell.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Fluorspar (CaF₂) increases the fluidity of the electrolyte (and helps lower its fusion temperature)."
+      },
+      "solution_md": "Fluidity.",
+      "marking_scheme": [
+        {
+          "step": "Increases fluidity",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch08-t06"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch08_045",
+      "unit": "icse-10-chemistry-ch08",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write the equation for the reaction at the anode during the electrolysis of fused alumina.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "2O²⁻ → O₂ + 4e⁻ (or 6O²⁻ → 3O₂ + 12e⁻)."
+      },
+      "solution_md": "Oxide ions lose electrons.",
+      "marking_scheme": [
+        {
+          "step": "Anode equation",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch08-t06"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch08_046",
+      "unit": "icse-10-chemistry-ch08",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Explain, with an equation, why the anodes of the Hall–Héroult cell must be replaced periodically while the cathode lasts much longer.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Oxygen is liberated at the hot carbon anodes and burns them: C + O₂ → CO₂ (and 2C + O₂ → 2CO), so they wear away. At the cathode aluminium is deposited; nothing there reacts with the carbon lining."
+      },
+      "solution_md": "Anode oxidised by oxygen; cathode receives aluminium.",
+      "marking_scheme": [
+        {
+          "step": "Anode burnt by oxygen, with equation",
+          "marks": 1
+        },
+        {
+          "step": "Cathode not attacked",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch08-t06"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch08_047",
+      "unit": "icse-10-chemistry-ch08",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "What mass of aluminium, in kg, can be obtained from 204 kg of pure alumina, Al₂O₃? (Al = 27, O = 16)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 108,
+        "tolerance": 0.5,
+        "unit": "kg"
+      },
+      "solution_md": "Molar mass of $\\ce{Al2O3} = 2 \\times 27 + 3 \\times 16 = 102$, and it contains $2 \\times 27 = 54$ parts of aluminium. Mass of aluminium $= \\dfrac{54}{102} \\times 204 = 108$, so 108 kg.",
+      "marking_scheme": [
+        {
+          "step": "Molar mass 102 and 54 parts Al",
+          "marks": 1
+        },
+        {
+          "step": "108 kg",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch08-t06"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch08_048",
+      "unit": "icse-10-chemistry-ch08",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "During the electrolysis of fused alumina, 54 g of aluminium is deposited at the cathode. What volume of oxygen, measured at STP, is set free at the anodes, in litres? (Al = 27; one mole of a gas occupies 22.4 L at STP)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 33.6,
+        "tolerance": 0.1,
+        "unit": "L"
+      },
+      "solution_md": "Overall: $\\ce{2Al2O3 -> 4Al + 3O2}$. Moles of aluminium $= \\dfrac{54}{27} = 2$. Moles of oxygen $= 2 \\times \\dfrac{3}{4} = 1.5$. Volume $= 1.5 \\times 22.4 = 33.6$, so 33.6 L.",
+      "marking_scheme": [
+        {
+          "step": "Mole ratio 4 Al : 3 O₂",
+          "marks": 1
+        },
+        {
+          "step": "33.6 L",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch08-t06"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch08_049",
+      "unit": "icse-10-chemistry-ch08",
+      "language": "en",
+      "type": "short",
+      "stem_md": "For the Hall–Héroult process: (a) name the material of the cathode and of the anodes; (b) state two reasons for adding cryolite; (c) state why fresh alumina is added from time to time.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Cathode: carbon lining of the steel tank; anodes: thick carbon (graphite) rods. (b) Cryolite lowers the fusion temperature of the electrolyte from about 2050 °C to about 950 °C and increases its electrical conductivity. (c) Alumina is used up as it is decomposed into aluminium and oxygen, so it is added to keep the process running continuously."
+      },
+      "solution_md": "Electrodes; two roles of cryolite; alumina consumed.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch08-t06"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch08_050",
+      "unit": "icse-10-chemistry-ch08",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which alloy contains aluminium together with small amounts of copper, magnesium and manganese?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Duralumin"
+        },
+        {
+          "id": "b",
+          "text_md": "Magnalium"
+        },
+        {
+          "id": "c",
+          "text_md": "Bronze"
+        },
+        {
+          "id": "d",
+          "text_md": "Stainless steel"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Duralumin: about 95% Al, 4% Cu, 0.5% Mg, 0.5% Mn — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch08-t07"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch08_051",
+      "unit": "icse-10-chemistry-ch08",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Stainless steel is chosen for surgical instruments and kitchen sinks mainly because the chromium and nickel in it:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "make it resist rusting and corrosion"
+        },
+        {
+          "id": "b",
+          "text_md": "make it lighter than aluminium"
+        },
+        {
+          "id": "c",
+          "text_md": "lower its melting point below that of tin"
+        },
+        {
+          "id": "d",
+          "text_md": "make it a poor conductor of heat"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Stainless steel does not rust and keeps a bright surface — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch08-t07"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch08_052",
+      "unit": "icse-10-chemistry-ch08",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "An engineer needs a light but strong alloy for the beam of a chemical balance. The most suitable choice is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "solder (lead and tin)"
+        },
+        {
+          "id": "b",
+          "text_md": "bronze (copper and tin)"
+        },
+        {
+          "id": "c",
+          "text_md": "stainless steel (iron, chromium, nickel and carbon)"
+        },
+        {
+          "id": "d",
+          "text_md": "magnalium (aluminium and magnesium)"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Magnalium is light (both metals have low density) and stronger than aluminium — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch08-t07"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch08_053",
+      "unit": "icse-10-chemistry-ch08",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Bronze is an alloy of copper and zinc.\n\n**Reason (R):** Alloys are usually harder than the pure metals from which they are made.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "A is false: bronze is copper and tin (brass is copper and zinc). R is true — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch08-t07"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch08_054",
+      "unit": "icse-10-chemistry-ch08",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? Solder melts at a lower temperature than either of the metals, lead and tin, from which it is made.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "t"
+        ]
+      },
+      "solution_md": "True: alloying lowers the melting point, which is why solder is used to join wires and metal parts.",
+      "marking_scheme": [
+        {
+          "step": "True",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch08-t07"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch08_055",
+      "unit": "icse-10-chemistry-ch08",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "An alloy in which one of the metals is mercury is called an ___.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "amalgam"
+            ]
+          }
+        ]
+      },
+      "solution_md": "An **amalgam** (for example, sodium amalgam or the silver–tin amalgam used in tooth fillings).",
+      "marking_scheme": [
+        {
+          "step": "Blank 1: \"amalgam\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch08-t07"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch08_056",
+      "unit": "icse-10-chemistry-ch08",
+      "language": "en",
+      "type": "short",
+      "stem_md": "State the two main metals in bronze and one use of bronze.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Copper and tin; used for statues, medals or bells."
+      },
+      "solution_md": "Cu and Sn; one use.",
+      "marking_scheme": [
+        {
+          "step": "Metals and use",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch08-t07"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch08_057",
+      "unit": "icse-10-chemistry-ch08",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Give two reasons why an alloy is often used instead of a pure metal, with one example for each reason.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(1) An alloy is harder and stronger: duralumin is much stronger than pure aluminium and is used for aircraft bodies. (2) An alloy resists corrosion better: stainless steel does not rust, unlike pure iron. (Also accepted: lower melting point, as in solder.)"
+      },
+      "solution_md": "Two reasons with examples.",
+      "marking_scheme": [
+        {
+          "step": "Reason and example 1",
+          "marks": 1
+        },
+        {
+          "step": "Reason and example 2",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch08-t07"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch08_058",
+      "unit": "icse-10-chemistry-ch08",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "Complete each sentence by choosing the correct word from the bracket.\n\n(a) Removing the gangue from a crushed ore is called ___ (concentration / calcination).\n\n(b) Zinc blende is concentrated by ___ (froth flotation / magnetic separation).\n\n(c) Heating a carbonate ore in a limited supply of air is called ___ (roasting / calcination).",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "concentration"
+            ]
+          },
+          {
+            "accepted": [
+              "froth flotation"
+            ]
+          },
+          {
+            "accepted": [
+              "calcination"
+            ]
+          }
+        ]
+      },
+      "solution_md": "(a) **concentration**; (b) **froth flotation**; (c) **calcination**.",
+      "marking_scheme": [
+        {
+          "step": "Blank 1: \"concentration\"",
+          "marks": 1
+        },
+        {
+          "step": "Blank 2: \"froth flotation\"",
+          "marks": 1
+        },
+        {
+          "step": "Blank 3: \"calcination\"",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch08-t02",
+        "icse-10-chemistry-ch08-t03"
+      ],
+      "expected_time_sec": 135,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch08_059",
+      "unit": "icse-10-chemistry-ch08",
+      "language": "en",
+      "type": "match",
+      "stem_md": "Match each alloy in Column A with its main constituent metals in Column B.",
+      "options": [
+        {
+          "id": "1",
+          "text_md": "Stainless steel"
+        },
+        {
+          "id": "2",
+          "text_md": "Magnalium"
+        },
+        {
+          "id": "3",
+          "text_md": "Duralumin"
+        },
+        {
+          "id": "4",
+          "text_md": "Bronze"
+        },
+        {
+          "id": "5",
+          "text_md": "Solder"
+        }
+      ],
+      "match_right": [
+        {
+          "id": "p",
+          "text_md": "Aluminium, copper, magnesium and manganese"
+        },
+        {
+          "id": "q",
+          "text_md": "Lead and tin"
+        },
+        {
+          "id": "r",
+          "text_md": "Iron, chromium, nickel and a little carbon"
+        },
+        {
+          "id": "s",
+          "text_md": "Copper and tin"
+        },
+        {
+          "id": "t",
+          "text_md": "Aluminium and magnesium"
+        }
+      ],
+      "answer": {
+        "pairs": [
+          {
+            "left_id": "1",
+            "right_id": "r"
+          },
+          {
+            "left_id": "2",
+            "right_id": "t"
+          },
+          {
+            "left_id": "3",
+            "right_id": "p"
+          },
+          {
+            "left_id": "4",
+            "right_id": "s"
+          },
+          {
+            "left_id": "5",
+            "right_id": "q"
+          }
+        ]
+      },
+      "solution_md": "Stainless steel → iron, chromium, nickel, carbon; magnalium → aluminium, magnesium; duralumin → aluminium, copper, magnesium, manganese; bronze → copper, tin; solder → lead, tin.",
+      "marking_scheme": [
+        {
+          "step": "1 → r",
+          "marks": 1
+        },
+        {
+          "step": "2 → t",
+          "marks": 1
+        },
+        {
+          "step": "3 → p",
+          "marks": 1
+        },
+        {
+          "step": "4 → s",
+          "marks": 1
+        },
+        {
+          "step": "5 → q",
+          "marks": 1
+        }
+      ],
+      "marks": 5,
+      "difficulty": 2,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch08-t07"
+      ],
+      "expected_time_sec": 200,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch08_060",
+      "unit": "icse-10-chemistry-ch08",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Define (i) a mineral and (ii) an ore. [2]\n\n(b) Name one ore each of iron and zinc and write their formulae. [2]\n\n(c) Potassium, zinc and mercury are extracted by different methods. Name the method used for each, and give a reason for the method used for potassium. [3]\n\n(d) Write balanced equations for: (i) the reduction of zinc oxide by carbon; (ii) the reduction of iron(III) oxide by carbon monoxide; (iii) the reduction of copper(II) oxide by hydrogen. [3]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) (i) A mineral is a naturally occurring compound of a metal found in the earth’s crust. (ii) An ore is a mineral from which the metal can be extracted conveniently and profitably.\n\n(b) Iron: haematite, Fe₂O₃ (or magnetite, Fe₃O₄). Zinc: zinc blende, ZnS (or calamine, ZnCO₃).\n\n(c) Potassium: electrolysis of its fused chloride; zinc: reduction of its oxide by carbon (coke); mercury: heating its oxide alone. Potassium is very reactive and its compounds are very stable; no chemical reducing agent such as carbon can reduce them.\n\n(d) (i) ZnO + C → Zn + CO. (ii) Fe₂O₃ + 3CO → 2Fe + 3CO₂. (iii) CuO + H₂ → Cu + H₂O."
+      },
+      "solution_md": "Definitions; ores; methods and reason; equations.",
+      "marking_scheme": [
+        {
+          "step": "(a)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(a)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(b) iron ore",
+          "marks": 1
+        },
+        {
+          "step": "(b) zinc ore",
+          "marks": 1
+        },
+        {
+          "step": "(c) three methods",
+          "marks": 2
+        },
+        {
+          "step": "(c) reason",
+          "marks": 1
+        },
+        {
+          "step": "(d)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(d)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(d)(iii)",
+          "marks": 1
+        }
+      ],
+      "marks": 10,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch08-t01",
+        "icse-10-chemistry-ch08-t04"
+      ],
+      "expected_time_sec": 1080,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch08_061",
+      "unit": "icse-10-chemistry-ch08",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) What is meant by the concentration of an ore? Name two physical methods of concentration. [2]\n\n(b) Explain the principle of froth flotation and the role of pine oil. [2]\n\n(c) State one difference between roasting and calcination, and write one balanced equation for each. [3]\n\n(d) A sulphide ore is converted into its oxide before reduction. (i) Why is this done? (ii) Name the gas given off. (iii) Suggest one way of preventing this gas from polluting the air. [3]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Removing the unwanted earthy matter (gangue) from the crushed ore. Physical methods: hydraulic washing and magnetic separation (or froth flotation).\n\n(b) Sulphide ore particles are wetted by oil and gangue particles by water. Pine oil coats the ore particles, which stick to air bubbles and rise in the froth, while the gangue sinks.\n\n(c) Roasting is done in excess air (for sulphide ores); calcination in a limited supply of air or none (for carbonate and hydrated ores). Roasting: 2ZnS + 3O₂ → 2ZnO + 2SO₂. Calcination: ZnCO₃ → ZnO + CO₂.\n\n(d) (i) An oxide is reduced by carbon much more easily than a sulphide. (ii) Sulphur dioxide. (iii) Collect it and use it to make sulphuric acid (the Contact process)."
+      },
+      "solution_md": "Concentration; flotation principle; roasting and calcination; reason, gas, prevention.",
+      "marking_scheme": [
+        {
+          "step": "(a) meaning",
+          "marks": 1
+        },
+        {
+          "step": "(a) two methods",
+          "marks": 1
+        },
+        {
+          "step": "(b) principle",
+          "marks": 1
+        },
+        {
+          "step": "(b) pine oil",
+          "marks": 1
+        },
+        {
+          "step": "(c) difference",
+          "marks": 1
+        },
+        {
+          "step": "(c) two equations",
+          "marks": 2
+        },
+        {
+          "step": "(d)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(d)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(d)(iii)",
+          "marks": 1
+        }
+      ],
+      "marks": 10,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch08-t02",
+        "icse-10-chemistry-ch08-t03"
+      ],
+      "expected_time_sec": 1080,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch08_062",
+      "unit": "icse-10-chemistry-ch08",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Write the formula of bauxite and name the main impurity removed from it in Baeyer's process. [2]\n\n(b) Write the balanced equation for the digestion of bauxite with sodium hydroxide, and state what happens to the impurity. [2]\n\n(c) Write balanced equations for (i) the formation of aluminium hydroxide from sodium aluminate and (ii) the action of heat on aluminium hydroxide, and state why seeding is used in step (i). [3]\n\n(d) A batch of 312 g of pure aluminium hydroxide is heated strongly. Calculate the mass of alumina formed, and explain why the alumina must be pure before electrolysis. (Al = 27, O = 16, H = 1) [3]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) $\\ce{Al2O3.2H2O}$; the main impurity is iron(III) oxide, Fe₂O₃.\n\n(b) $\\ce{Al2O3.2H2O + 2NaOH -> 2NaAlO2 + 3H2O}$. Iron(III) oxide does not dissolve and is filtered off.\n\n(c) (i) $\\ce{NaAlO2 + 2H2O -> NaOH + Al(OH)3}$. (ii) $\\ce{2Al(OH)3 -> Al2O3 + 3H2O}$ at about 1000 °C. Seeding with fresh aluminium hydroxide starts the precipitation.\n\n(d) Molar mass of $\\ce{Al(OH)3} = 27 + 3 \\times 17 = 78$; of $\\ce{Al2O3} = 2 \\times 27 + 3 \\times 16 = 102$. Two moles (156 g) of the hydroxide give 102 g of alumina, so the mass of alumina $= \\dfrac{102}{156} \\times 312 = 204$, that is 204 g. Impurities would be reduced too and would contaminate the aluminium."
+      },
+      "solution_md": "Formula and impurity; digestion; precipitation and ignition; mass of alumina from the 2 : 1 mole ratio.",
+      "marking_scheme": [
+        {
+          "step": "(a) formula",
+          "marks": 1
+        },
+        {
+          "step": "(a) impurity",
+          "marks": 1
+        },
+        {
+          "step": "(b) equation",
+          "marks": 1
+        },
+        {
+          "step": "(b) impurity filtered",
+          "marks": 1
+        },
+        {
+          "step": "(c)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(c) seeding",
+          "marks": 1
+        },
+        {
+          "step": "(d) molar masses and ratio",
+          "marks": 1
+        },
+        {
+          "step": "(d) 204 g",
+          "marks": 1
+        },
+        {
+          "step": "(d) reason",
+          "marks": 1
+        }
+      ],
+      "marks": 10,
+      "difficulty": 4,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch08-t05"
+      ],
+      "expected_time_sec": 1080,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch08_063",
+      "unit": "icse-10-chemistry-ch08",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) State the composition of the electrolyte used in the Hall–Héroult process and the temperature at which the cell works. [2]\n\n(b) Name the cathode and the anode of the cell. [2]\n\n(c) Write the equations for the reactions at the cathode and the anode, and the overall equation for the electrolysis of alumina. [3]\n\n(d) Give one reason each for: (i) adding cryolite; (ii) replacing the anodes from time to time; (iii) spreading powdered coke over the electrolyte. [3]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Pure alumina dissolved in fused cryolite (Na₃AlF₆), with a little fluorspar (CaF₂); about 950 °C.\n\n(b) Cathode: the carbon lining of the steel tank. Anode: thick carbon (graphite) rods dipping into the electrolyte.\n\n(c) Cathode: Al³⁺ + 3e⁻ → Al. Anode: 2O²⁻ → O₂ + 4e⁻. Overall: 2Al₂O₃ → 4Al + 3O₂.\n\n(d) (i) It lowers the fusion temperature of the electrolyte and increases its conductivity. (ii) Oxygen liberated at the anodes burns the carbon to CO and CO₂. (iii) It reduces heat loss and prevents the anodes burning in air."
+      },
+      "solution_md": "Electrolyte; electrodes; equations; reasons.",
+      "marking_scheme": [
+        {
+          "step": "(a) electrolyte",
+          "marks": 1
+        },
+        {
+          "step": "(a) temperature",
+          "marks": 1
+        },
+        {
+          "step": "(b) cathode",
+          "marks": 1
+        },
+        {
+          "step": "(b) anode",
+          "marks": 1
+        },
+        {
+          "step": "(c) cathode",
+          "marks": 1
+        },
+        {
+          "step": "(c) anode",
+          "marks": 1
+        },
+        {
+          "step": "(c) overall",
+          "marks": 1
+        },
+        {
+          "step": "(d)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(d)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(d)(iii)",
+          "marks": 1
+        }
+      ],
+      "marks": 10,
+      "difficulty": 3,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch08-t06"
+      ],
+      "expected_time_sec": 1080,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch08_064",
+      "unit": "icse-10-chemistry-ch08",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Define (i) an alloy and (ii) an amalgam. [2]\n\n(b) Give two ways in which the properties of an alloy differ from those of its main metal. [2]\n\n(c) State the constituent metals of (i) duralumin, (ii) magnalium and (iii) solder. [3]\n\n(d) Choose the most suitable alloy from brass, bronze, duralumin and stainless steel for each use, and give a reason: (i) the body of an aircraft; (ii) a set of surgical knives; (iii) a statue to stand outdoors. [3]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) (i) An alloy is a homogeneous mixture of two or more metals, or of a metal and a non-metal. (ii) An amalgam is an alloy in which one of the metals is mercury.\n\n(b) An alloy is usually harder and stronger, has a lower melting point, and resists corrosion better (any two).\n\n(c) (i) Aluminium, copper, magnesium and manganese. (ii) Aluminium and magnesium. (iii) Lead and tin.\n\n(d) (i) Duralumin: light and strong. (ii) Stainless steel: does not rust and stays sharp and clean. (iii) Bronze: hard and resists corrosion in air and rain."
+      },
+      "solution_md": "Definitions; changes in properties; compositions; choices with reasons.",
+      "marking_scheme": [
+        {
+          "step": "(a)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(a)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 2
+        },
+        {
+          "step": "(c)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(iii)",
+          "marks": 1
+        },
+        {
+          "step": "(d)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(d)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(d)(iii)",
+          "marks": 1
+        }
+      ],
+      "marks": 10,
+      "difficulty": 3,
+      "competency": "evaluation",
+      "bloom": "evaluate",
+      "topic_ids": [
+        "icse-10-chemistry-ch08-t07"
+      ],
+      "expected_time_sec": 1080,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    }
+  ],
+  "build": {
+    "run_id": null,
+    "checks": {
+      "katex_mhchem": "33 math strings parsed with KaTeX 0.19.0 + mhchem (throwOnError, strict \"error\"), 0 failures",
+      "svg_allowlist": "2 SVG visuals (2 distinct diagrams) checked with saxes against svg-allowlist.ts: elements, attributes, class pattern, fragment-only refs, no style, palette incl. named hues, viewBox, title, per-page unique ids — 0 failures",
+      "narration": "31 slides, 10–68 words (mean 49), no symbols, formulae or unit abbreviations",
+      "resolve": "3/3 scripted re-solve checks pass",
+      "chemistry_facts": "Ores of iron, aluminium and zinc with formulae, concentration methods, roasting and calcination equations, reduction by H2, C and CO tied to the activity series, Baeyer’s process (digestion, seeded precipitation, ignition), the Hall–Héroult cell (cryolite, fluorspar, coke, carbon electrodes, electrode reactions) and alloy compositions, checked against the ICSE 2027 syllabus (Class X, section 7); every equation balanced by atom count; no electrorefining and no other bauxite or aluminium processes",
+      "content_gate": "npm test -w @soyl/content-templates: all checks pass for this chapter",
+      "verifier_pass": "2026-11-01: every question re-solved from its stem by the author; every numerical re-computed by the build script",
+      "pipeline_lint": "npm run content -- lint --exemplars: 0 errors, 0 warnings"
+    }
+  }
+}
