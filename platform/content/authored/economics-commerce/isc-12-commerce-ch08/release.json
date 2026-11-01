@@ -1,0 +1,5720 @@
+{
+ "unit": "isc-12-commerce-ch08",
+ "version": 1,
+ "academic_year": "2026-27",
+ "created_at": "2026-10-31",
+ "decks": [
+  {
+   "unit": "isc-12-commerce-ch08",
+   "part": 1,
+   "version": 1,
+   "title": "Planning — Part 1: Functions, Meaning, Importance and Steps",
+   "language": "en",
+   "goals": [
+    "Name the functions of management and explain why planning is the primary function",
+    "Explain the importance of planning with examples",
+    "Arrange the steps in the planning process in order and explain each"
+   ],
+   "slides": [
+    {
+     "id": "s01",
+     "layout": "title",
+     "heading": "Planning",
+     "body_md": "Part 1: the **functions** of management, what **planning** is, why it **matters**, and the **steps** in planning.",
+     "bullets": [],
+     "visual": {
+      "kind": "flow",
+      "spec": {
+       "direction": "LR",
+       "nodes": [
+        {
+         "id": "n1",
+         "label": "Functions of management"
+        },
+        {
+         "id": "n2",
+         "label": "What planning is"
+        },
+        {
+         "id": "n3",
+         "label": "Why it matters"
+        },
+        {
+         "id": "n4",
+         "label": "Steps in planning"
+        }
+       ],
+       "edges": [
+        {
+         "from": "n1",
+         "to": "n2"
+        },
+        {
+         "from": "n2",
+         "to": "n3"
+        },
+        {
+         "from": "n3",
+         "to": "n4"
+        }
+       ]
+      },
+      "alt": "Route map of Part 1: the functions of management, the meaning of planning, its importance and the steps in planning",
+      "caption": "Part 1 at a glance"
+     },
+     "math": [],
+     "narration": "Before a wedding caterer cooks a single dish, someone has decided how many guests, which menu, which cooks and what budget. That deciding in advance is planning. In this part we place planning among the functions of management, see why it matters and learn its seven steps.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s02",
+     "layout": "diagram",
+     "heading": "The five functions of management",
+     "body_md": "Management works through **five functions**, beginning with planning.",
+     "bullets": [],
+     "visual": {
+      "kind": "flow",
+      "spec": {
+       "direction": "LR",
+       "nodes": [
+        {
+         "id": "n1",
+         "label": "Planning"
+        },
+        {
+         "id": "n2",
+         "label": "Organising"
+        },
+        {
+         "id": "n3",
+         "label": "Staffing"
+        },
+        {
+         "id": "n4",
+         "label": "Directing"
+        },
+        {
+         "id": "n5",
+         "label": "Controlling"
+        }
+       ],
+       "edges": [
+        {
+         "from": "n1",
+         "to": "n2"
+        },
+        {
+         "from": "n2",
+         "to": "n3"
+        },
+        {
+         "from": "n3",
+         "to": "n4"
+        },
+        {
+         "from": "n4",
+         "to": "n5"
+        },
+        {
+         "from": "n5",
+         "to": "n1"
+        }
+       ]
+      },
+      "alt": "Flow of the five functions of management: planning, organising, staffing, directing and controlling, with controlling looping back to planning",
+      "caption": "Planning comes first; controlling loops back to it."
+     },
+     "math": [],
+     "narration": "Managers carry out five functions. Planning decides what is to be done. Organising arranges tasks and resources. Staffing fills each post with the right person. Directing guides and motivates people. Controlling checks results against the plan, and what it finds feeds back into the next round of planning.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s03",
+     "layout": "concept",
+     "heading": "What is planning?",
+     "body_md": "**Planning** is deciding in advance **what** to do, **how** to do it, **when** to do it and **who** will do it.",
+     "bullets": [],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Planning decides…",
+        "Imagined example: a tour operator in Munnar"
+       ],
+       "rows": [
+        [
+         "What to do",
+         "Run forty guided tours a month"
+        ],
+        [
+         "How to do it",
+         "Use local guides and hired jeeps"
+        ],
+        [
+         "When",
+         "From September to May"
+        ],
+        [
+         "Who will do it",
+         "Two tour leaders and six guides"
+        ]
+       ]
+      },
+      "alt": "Table showing that planning decides what to do, how, when and by whom, with an imagined tour operator's answers"
+     },
+     "math": [],
+     "narration": "Planning bridges the gap between where we are and where we want to be. It answers four questions in advance: what to do, how, when and by whom. It is called the primary function because organising, staffing, directing and controlling all take place within the framework that plans provide.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s04",
+     "layout": "check",
+     "heading": "Quick check: the order of functions",
+     "body_md": "Which list gives the functions of management in their usual order?",
+     "bullets": [],
+     "visual": null,
+     "math": [],
+     "narration": "Start with deciding in advance and end with checking results.",
+     "check_question_id": "q_isc12commerce_ch08_001",
+     "audio": null
+    },
+    {
+     "id": "s05",
+     "layout": "concept",
+     "heading": "Why planning matters",
+     "body_md": "",
+     "bullets": [],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Importance",
+        "In short"
+       ],
+       "rows": [
+        [
+         "Provides direction",
+         "Everyone knows what to work towards"
+        ],
+        [
+         "Reduces risk of uncertainty",
+         "Looks ahead and prepares for change"
+        ],
+        [
+         "Reduces overlapping and waste",
+         "Coordinates who does what and when"
+        ],
+        [
+         "Promotes innovative ideas",
+         "Thinking ahead brings new ideas"
+        ],
+        [
+         "Facilitates decision making",
+         "Options are compared before choosing"
+        ],
+        [
+         "Establishes standards for controlling",
+         "Targets become yardsticks"
+        ]
+       ]
+      },
+      "alt": "Table of six points of importance of planning with a short explanation of each"
+     },
+     "math": [],
+     "narration": "Planning matters in six ways. It gives direction. It reduces the risk of uncertainty by looking ahead. It cuts overlapping and wasteful work. It brings out new ideas. It helps managers decide, by comparing options. And it sets targets that later become the standards for controlling.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s06",
+     "layout": "example",
+     "heading": "Worked example 1: which benefit?",
+     "body_md": "Match each imagined situation with the importance of planning it shows.",
+     "bullets": [
+      "Step 1: ask **what problem** the plan solved.",
+      "Step 2: name the point of importance.",
+      "Step 3: link it to the fact in one line."
+     ],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Imagined situation",
+        "Importance shown"
+       ],
+       "rows": [
+        [
+         "Rose farm foresees a fall in demand after February and plans wedding orders",
+         "Reduces risk of uncertainty"
+        ],
+        [
+         "Two juice vans no longer visit the same shops",
+         "Reduces overlapping and waste"
+        ],
+        [
+         "Planning a new range leads to paint-at-home dolls",
+         "Promotes innovative ideas"
+        ],
+        [
+         "Weekly packing targets are compared with actual work",
+         "Standards for controlling"
+        ]
+       ]
+      },
+      "alt": "Worked table matching four imagined situations with the importance of planning each shows",
+      "caption": "Ask what problem the plan solved."
+     },
+     "math": [],
+     "narration": "A rose farm that foresees a fall in demand and plans for weddings is reducing uncertainty. Juice vans that no longer visit the same shops show less overlapping. A planning session that produces paint-at-home dolls shows new ideas. Comparing weekly packing with targets shows standards for controlling.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s07",
+     "layout": "check",
+     "heading": "Quick check: do supervisors plan?",
+     "body_md": "True or false: a shift supervisor also plans, for example by deciding the next day's duties for each worker.",
+     "bullets": [],
+     "visual": null,
+     "math": [],
+     "narration": "Is planning only for the top, or for every level?",
+     "check_question_id": "q_isc12commerce_ch08_010",
+     "audio": null
+    },
+    {
+     "id": "s08",
+     "layout": "diagram",
+     "heading": "Steps in planning",
+     "body_md": "Planning follows **seven steps** in a fixed order.",
+     "bullets": [],
+     "visual": {
+      "kind": "flow",
+      "spec": {
+       "direction": "LR",
+       "nodes": [
+        {
+         "id": "n1",
+         "label": "Set objectives"
+        },
+        {
+         "id": "n2",
+         "label": "Develop premises"
+        },
+        {
+         "id": "n3",
+         "label": "Identify alternatives"
+        },
+        {
+         "id": "n4",
+         "label": "Evaluate alternatives"
+        },
+        {
+         "id": "n5",
+         "label": "Select an alternative"
+        },
+        {
+         "id": "n6",
+         "label": "Implement the plan"
+        },
+        {
+         "id": "n7",
+         "label": "Follow up"
+        }
+       ],
+       "edges": [
+        {
+         "from": "n1",
+         "to": "n2"
+        },
+        {
+         "from": "n2",
+         "to": "n3"
+        },
+        {
+         "from": "n3",
+         "to": "n4"
+        },
+        {
+         "from": "n4",
+         "to": "n5"
+        },
+        {
+         "from": "n5",
+         "to": "n6"
+        },
+        {
+         "from": "n6",
+         "to": "n7"
+        }
+       ]
+      },
+      "alt": "Flow of the seven steps in planning: set objectives, develop premises, identify alternatives, evaluate alternatives, select an alternative, implement the plan, and follow up",
+      "caption": "Seven steps, in order."
+     },
+     "math": [],
+     "narration": "Planning moves through seven steps. First, set objectives. Second, develop premises, the assumptions about the future. Third, identify the possible courses of action. Fourth, evaluate them. Fifth, select the best. Sixth, implement the plan. Seventh, follow up, to check progress and revise the plan if conditions change.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s09",
+     "layout": "concept",
+     "heading": "Premises and alternatives",
+     "body_md": "",
+     "bullets": [],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Step",
+        "What happens",
+        "Imagined example"
+       ],
+       "rows": [
+        [
+         "Developing premises",
+         "Make assumptions about the future",
+         "A new highway will bring more weekend visitors"
+        ],
+        [
+         "Identifying alternatives",
+         "List every way to reach the goal",
+         "Monsoon tours, hotel tie-ups, travel apps"
+        ],
+        [
+         "Evaluating alternatives",
+         "Weigh merits and demerits of each",
+         "Score each option on cost, reach and risk"
+        ],
+        [
+         "Selecting an alternative",
+         "Choose the best option or a mix",
+         "Hotel tie-ups plus a travel app"
+        ]
+       ]
+      },
+      "alt": "Table of the middle steps of planning, from developing premises to selecting an alternative, with imagined examples"
+     },
+     "math": [],
+     "narration": "The middle steps need care. Premises are assumptions, such as a new highway bringing more visitors. Next, list every way of reaching the goal. Then weigh each option's merits and demerits, perhaps by scoring cost, reach and risk. Finally, choose the best, or a mix of options.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s10",
+     "layout": "example",
+     "heading": "Worked example 2: a pottery school plans",
+     "body_md": "An imagined pottery school in Khurja wants more weekend students.",
+     "bullets": [
+      "Step 1: read each action.",
+      "Step 2: ask which **question of planning** it answers.",
+      "Step 3: put the steps in order."
+     ],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Action of an imagined pottery school in Khurja",
+        "Step"
+       ],
+       "rows": [
+        [
+         "Aim to enrol 60 weekend students by June",
+         "Set objectives"
+        ],
+        [
+         "Assume college holidays stay the same",
+         "Develop premises"
+        ],
+        [
+         "Options: posters, a website, school visits",
+         "Identify alternatives"
+        ],
+        [
+         "Compare cost and reach of each",
+         "Evaluate alternatives"
+        ],
+        [
+         "Choose school visits plus a website",
+         "Select an alternative"
+        ],
+        [
+         "Book visits and build the website",
+         "Implement the plan"
+        ],
+        [
+         "Count enrolments every fortnight",
+         "Follow up"
+        ]
+       ]
+      },
+      "alt": "Worked table: seven actions of an imagined pottery school matched to the seven steps of planning",
+      "caption": "Each action answers one step in order."
+     },
+     "math": [],
+     "narration": "The school aims to enrol sixty weekend students: that is the objective. It assumes college holidays stay the same: a premise. It lists posters, a website and school visits, compares them, and chooses visits plus a website. Then it books visits, builds the website, and counts enrolments every fortnight as follow-up.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s11",
+     "layout": "check",
+     "heading": "Quick check: the last step",
+     "body_md": "Complete the analogy: setting objectives is to the first step of planning as follow-up action is to the ___ step of planning.",
+     "bullets": [],
+     "visual": null,
+     "math": [],
+     "narration": "Where does follow-up come in the sequence?",
+     "check_question_id": "q_isc12commerce_ch08_032",
+     "audio": null
+    },
+    {
+     "id": "s12",
+     "layout": "summary",
+     "heading": "Summary of Part 1",
+     "body_md": "",
+     "bullets": [],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Idea",
+        "Key point"
+       ],
+       "rows": [
+        [
+         "Functions",
+         "Plan, organise, staff, direct, control"
+        ],
+        [
+         "Planning",
+         "Deciding in advance what, how, when and by whom"
+        ],
+        [
+         "Importance",
+         "Direction, less uncertainty, less waste, new ideas, decisions, standards"
+        ],
+        [
+         "Steps",
+         "Objectives, premises, alternatives, evaluate, select, implement, follow up"
+        ]
+       ]
+      },
+      "alt": "Summary table of Part 1: functions of management, meaning, importance and steps of planning"
+     },
+     "math": [],
+     "narration": "To sum up Part 1. Management has five functions, and planning comes first. Planning decides in advance what, how, when and by whom. It gives direction, reduces uncertainty and waste, encourages new ideas, helps decisions and sets standards. It follows seven steps from objectives to follow-up.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s13",
+     "layout": "exam-tips",
+     "heading": "Exam tips",
+     "body_md": "",
+     "bullets": [
+      "Learn the **seven steps in order**; examiners often ask you to arrange them.",
+      "Say planning **reduces** uncertainty; never that it removes it.",
+      "For importance, link each point to the **firm in the case**.",
+      "Premises are **assumptions**, not facts."
+     ],
+     "visual": {
+      "kind": "flow",
+      "spec": {
+       "direction": "LR",
+       "nodes": [
+        {
+         "id": "n1",
+         "label": "Quote the line"
+        },
+        {
+         "id": "n2",
+         "label": "Name the idea"
+        },
+        {
+         "id": "n3",
+         "label": "Explain the link"
+        }
+       ],
+       "edges": [
+        {
+         "from": "n1",
+         "to": "n2"
+        },
+        {
+         "from": "n2",
+         "to": "n3"
+        }
+       ]
+      },
+      "alt": "Three steps for case questions: quote the line, name the idea, and explain the link"
+     },
+     "math": [],
+     "narration": "A few tips. Learn the seven steps in order. Always say planning reduces uncertainty, never that it removes it. Tie each point of importance to the firm in the question. And remember that premises are assumptions about the future, not certain facts.",
+     "check_question_id": null,
+     "audio": null
+    }
+   ],
+   "status": "draft",
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "unit": "isc-12-commerce-ch08",
+   "part": 2,
+   "version": 1,
+   "title": "Planning — Part 2: Limitations and Types of Plans",
+   "language": "en",
+   "goals": [
+    "Explain the limitations of planning",
+    "Distinguish between types of plans and identify the type from an example"
+   ],
+   "slides": [
+    {
+     "id": "s01",
+     "layout": "title",
+     "heading": "Limitations and Types of Plans",
+     "body_md": "Part 2: the **limitations** of planning and the eight **types of plans**.",
+     "bullets": [],
+     "visual": {
+      "kind": "flow",
+      "spec": {
+       "direction": "LR",
+       "nodes": [
+        {
+         "id": "n1",
+         "label": "Limitations"
+        },
+        {
+         "id": "n2",
+         "label": "Types of plans"
+        },
+        {
+         "id": "n3",
+         "label": "Telling plans apart"
+        }
+       ],
+       "edges": [
+        {
+         "from": "n1",
+         "to": "n2"
+        },
+        {
+         "from": "n2",
+         "to": "n3"
+        }
+       ]
+      },
+      "alt": "Route map of Part 2: the limitations of planning, the eight types of plans and how to tell them apart",
+      "caption": "Part 2 at a glance"
+     },
+     "math": [],
+     "narration": "Planning is powerful, but it has limits. In this part we look at those limitations, then at the many forms a plan can take, from a broad objective to a strict rule. You will learn to spot each type from a single sentence.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s02",
+     "layout": "concept",
+     "heading": "Limitations of planning",
+     "body_md": "",
+     "bullets": [],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Limitation",
+        "Why it happens"
+       ],
+       "rows": [
+        [
+         "Leads to rigidity",
+         "Managers feel bound to the plan"
+        ],
+        [
+         "May not work in a dynamic environment",
+         "Premises can turn out wrong"
+        ],
+        [
+         "Reduces creativity",
+         "Others only carry out plans made at the top"
+        ],
+        [
+         "Involves huge costs",
+         "Surveys, experts and data cost money"
+        ],
+        [
+         "Time-consuming",
+         "Detailed plans can delay action"
+        ],
+        [
+         "Does not guarantee success",
+         "Results depend on implementation and events"
+        ]
+       ]
+      },
+      "alt": "Table of six limitations of planning and why each happens"
+     },
+     "math": [],
+     "narration": "Planning has six limitations. It can make a firm rigid. It may fail when the environment changes suddenly. It can reduce creativity if only the top plans. It costs money and takes time. And it never guarantees success, because results depend on how well plans are carried out.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s03",
+     "layout": "example",
+     "heading": "Worked example 1: spot the limitation",
+     "body_md": "Each imagined situation shows a limitation of planning.",
+     "bullets": [
+      "Step 1: find **what went wrong**.",
+      "Step 2: name the limitation.",
+      "Step 3: suggest how it could be reduced."
+     ],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Imagined situation",
+        "Limitation"
+       ],
+       "rows": [
+        [
+         "A sales officer must ignore a hotel order not in the plan",
+         "Rigidity"
+        ],
+        [
+         "A new rule bans the coating a bag maker planned to use",
+         "Dynamic environment"
+        ],
+        [
+         "Supervisors stop suggesting designs",
+         "Reduces creativity"
+        ],
+        [
+         "A shop spends weeks on surveys and misses Diwali orders",
+         "Time-consuming"
+        ]
+       ]
+      },
+      "alt": "Worked table matching four imagined situations with the limitation of planning each shows",
+      "caption": "Find what went wrong, then name the limitation."
+     },
+     "math": [],
+     "narration": "A sales officer told to ignore an order outside the plan shows rigidity. A new rule that wrecks a bag maker's plan shows the problem of a dynamic environment. Supervisors who stop suggesting designs show reduced creativity. A shop that misses Diwali orders while doing surveys shows that planning takes time.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s04",
+     "layout": "check",
+     "heading": "Quick check: no budget for a good idea",
+     "body_md": "A sales officer spots a chance to supply a hotel chain but must wait, because the year's plan has no budget for it. Which limitation is this?",
+     "bullets": [],
+     "visual": null,
+     "math": [],
+     "narration": "Is the plan helping her adapt, or holding her back?",
+     "check_question_id": "q_isc12commerce_ch08_024",
+     "audio": null
+    },
+    {
+     "id": "s05",
+     "layout": "two-column",
+     "heading": "Plan anyway",
+     "body_md": "",
+     "bullets": [],
+     "columns": [
+      "**The limits are real**\n\nPlans can be rigid, costly and slow.",
+      "**But they can be reduced**\n\nReview often, prepare back-ups and invite ideas."
+     ],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Limitation",
+        "How to reduce it"
+       ],
+       "rows": [
+        [
+         "Rigidity",
+         "Review plans often"
+        ],
+        [
+         "Dynamic environment",
+         "Prepare back-up plans"
+        ],
+        [
+         "Reduced creativity",
+         "Invite ideas from all levels"
+        ],
+        [
+         "Cost and time",
+         "Keep small plans short and simple"
+        ]
+       ]
+      },
+      "alt": "Table of four limitations of planning and a way to reduce each"
+     },
+     "math": [],
+     "narration": "Do these limits mean firms should not plan? No. Most can be reduced. Review plans often to avoid rigidity. Keep back-up plans for sudden change. Invite ideas from every level to protect creativity. And keep small plans short and simple to save time and money.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s06",
+     "layout": "concept",
+     "heading": "Types of plans",
+     "body_md": "",
+     "bullets": [],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Type of plan",
+        "What it is",
+        "Imagined example"
+       ],
+       "rows": [
+        [
+         "Objective",
+         "End result to be achieved",
+         "Sell 8,000 lanterns this year"
+        ],
+        [
+         "Strategy",
+         "Comprehensive plan for long-term direction",
+         "Win small towns through school canteens"
+        ],
+        [
+         "Policy",
+         "General guide to decisions, with judgement",
+         "Prefer artisans' children as apprentices"
+        ],
+        [
+         "Procedure",
+         "Steps of a routine job in fixed order",
+         "Weigh, sample, log, send to drying yard"
+        ],
+        [
+         "Method",
+         "Best way of doing one step",
+         "Spray the base coat, do not brush it"
+        ],
+        [
+         "Rule",
+         "What must or must not be done; no discretion",
+         "No phones on the workbench"
+        ],
+        [
+         "Budget",
+         "Expected results in numbers",
+         "Monthly income and costs in rupees"
+        ],
+        [
+         "Programme",
+         "Detailed plan for one project",
+         "Tasks, people, dates and money for a new café"
+        ]
+       ]
+      },
+      "alt": "Table of eight types of plans with what each is and an imagined example"
+     },
+     "math": [],
+     "narration": "Plans come in eight types. Objectives state end results. Strategies set long-term direction. Policies guide decisions but leave room for judgement. Procedures set the steps of a routine job in order. Methods give the best way of doing one step. Rules say exactly what must be done. Budgets put plans in numbers. Programmes plan one project in detail.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s07",
+     "layout": "two-column",
+     "heading": "Policy or rule?",
+     "body_md": "",
+     "bullets": [],
+     "columns": [
+      "**Policy**\n\nA general guide; managers use judgement.",
+      "**Rule**\n\nAn exact instruction; no discretion; usually a penalty."
+     ],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Basis",
+        "Policy",
+        "Rule"
+       ],
+       "rows": [
+        [
+         "Nature",
+         "General guide",
+         "Exact instruction"
+        ],
+        [
+         "Discretion",
+         "Leaves room for judgement",
+         "No discretion"
+        ],
+        [
+         "Penalty",
+         "None for not following",
+         "Usually a penalty"
+        ]
+       ]
+      },
+      "alt": "Table comparing a policy and a rule on nature, discretion and penalty"
+     },
+     "math": [],
+     "narration": "Policies and rules are often confused. A policy is a general guide, such as preferring local suppliers, and managers decide how to apply it. A rule is exact, such as no phones on the workbench. It leaves no room for judgement and usually carries a penalty.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s08",
+     "layout": "check",
+     "heading": "Quick check: a general guide",
+     "body_md": "True or false: a policy is a general statement that guides decisions while leaving managers some room for judgement.",
+     "bullets": [],
+     "visual": null,
+     "math": [],
+     "narration": "Does a policy fix every decision, or guide it?",
+     "check_question_id": "q_isc12commerce_ch08_051",
+     "audio": null
+    },
+    {
+     "id": "s09",
+     "layout": "two-column",
+     "heading": "Procedure or method?",
+     "body_md": "",
+     "bullets": [],
+     "columns": [
+      "**Procedure**\n\nSteps of a routine job, in order.",
+      "**Method**\n\nThe best way of doing one step."
+     ],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Basis",
+        "Procedure",
+        "Method"
+       ],
+       "rows": [
+        [
+         "Covers",
+         "A series of steps",
+         "One step or task"
+        ],
+        [
+         "Answers",
+         "In what order?",
+         "In what way?"
+        ],
+        [
+         "Example",
+         "Steps for booking a parcel",
+         "Machine-sealing each carton"
+        ]
+       ]
+      },
+      "alt": "Table comparing a procedure and a method on what each covers, the question it answers, and an example"
+     },
+     "math": [],
+     "narration": "A procedure answers the question, in what order? It lists the steps of a routine job, such as booking a parcel. A method answers the question, in what way? It tells you the best way to do one step, such as sealing each carton by machine.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s10",
+     "layout": "example",
+     "heading": "Worked example 2: classify the statements",
+     "body_md": "Four statements appear in the handbook of an imagined museum shop in Hyderabad.",
+     "bullets": [
+      "Step 1: look for the **clue**: a target, a preference, a must, or a sequence.",
+      "Step 2: name the type.",
+      "Step 3: give the reason."
+     ],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Statement at an imagined museum shop in Hyderabad",
+        "Type"
+       ],
+       "rows": [
+        [
+         "\"Raise sales by a fifth in two years\"",
+         "Objective"
+        ],
+        [
+         "\"We prefer crafts made in Telangana\"",
+         "Policy"
+        ],
+        [
+         "\"Bags must be left at the counter\"",
+         "Rule"
+        ],
+        [
+         "\"Ring up, wrap, hand over, file the receipt\"",
+         "Procedure"
+        ]
+       ]
+      },
+      "alt": "Worked table classifying four imagined statements from a museum shop as objective, policy, rule and procedure",
+      "caption": "Look for the clue: a target, a preference, a must, or a sequence."
+     },
+     "math": [],
+     "narration": "Raise sales by a fifth in two years is a target, so it is an objective. We prefer crafts made in Telangana is a preference, a policy. Bags must be left at the counter is a must, a rule. Ring up, wrap, hand over and file the receipt is a sequence, a procedure.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s11",
+     "layout": "check",
+     "heading": "Quick check: spray, not brush",
+     "body_md": "Painters are told to apply the base coat with a spray gun rather than a brush. Which type of plan is this?",
+     "bullets": [],
+     "visual": null,
+     "math": [],
+     "narration": "Is this a series of steps, or the way of doing one step?",
+     "check_question_id": "q_isc12commerce_ch08_045",
+     "audio": null
+    },
+    {
+     "id": "s12",
+     "layout": "concept",
+     "heading": "Budgets, programmes and strategies",
+     "body_md": "",
+     "bullets": [],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Plan",
+        "Clue word in a case"
+       ],
+       "rows": [
+        [
+         "Budget",
+         "Numbers for a future period"
+        ],
+        [
+         "Programme",
+         "One project with tasks, people, time and money"
+        ],
+        [
+         "Strategy",
+         "Rivals, markets, long-term direction"
+        ]
+       ]
+      },
+      "alt": "Table of clue words for budgets, programmes and strategies"
+     },
+     "math": [],
+     "narration": "Three more types have clear clues. If a plan is full of numbers for a future period, it is a budget. If it covers one project with tasks, people, dates and money, it is a programme. If it talks about rivals, markets and long-term direction, it is a strategy.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s13",
+     "layout": "summary",
+     "heading": "Summary of Part 2",
+     "body_md": "",
+     "bullets": [],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Idea",
+        "Key point"
+       ],
+       "rows": [
+        [
+         "Limitations",
+         "Rigid, may fail in change, less creativity, costly, slow, no guarantee"
+        ],
+        [
+         "Broad plans",
+         "Objectives, strategies, policies"
+        ],
+        [
+         "Detailed plans",
+         "Procedures, methods, rules"
+        ],
+        [
+         "Plans in numbers or projects",
+         "Budgets, programmes"
+        ]
+       ]
+      },
+      "alt": "Summary table of Part 2: limitations of planning and the types of plans grouped as broad, detailed, numerical or project plans"
+     },
+     "math": [],
+     "narration": "To sum up Part 2. Planning can be rigid, may fail when things change, can reduce creativity, costs time and money, and guarantees nothing. Yet these limits can be reduced. Plans range from broad objectives, strategies and policies to detailed procedures, methods and rules, with budgets and programmes in between.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s14",
+     "layout": "exam-tips",
+     "heading": "Exam tips",
+     "body_md": "",
+     "bullets": [
+      "Use the **clue words**: target, prefer, must, in order, in what way, numbers, project, rivals.",
+      "Policy has **discretion**; rule has **none**.",
+      "Procedure is a **sequence**; method is **one step**.",
+      "For limitations, also say how to **reduce** them."
+     ],
+     "visual": {
+      "kind": "flow",
+      "spec": {
+       "direction": "LR",
+       "nodes": [
+        {
+         "id": "n1",
+         "label": "Quote the line"
+        },
+        {
+         "id": "n2",
+         "label": "Name the idea"
+        },
+        {
+         "id": "n3",
+         "label": "Explain the link"
+        }
+       ],
+       "edges": [
+        {
+         "from": "n1",
+         "to": "n2"
+        },
+        {
+         "from": "n2",
+         "to": "n3"
+        }
+       ]
+      },
+      "alt": "Three steps for case questions: quote the line, name the idea, and explain the link"
+     },
+     "math": [],
+     "narration": "Final tips. Read each statement for its clue word. A preference is a policy; a must is a rule. A sequence is a procedure; one way of doing a step is a method. Numbers mean a budget, one project means a programme, and rivals mean a strategy.",
+     "check_question_id": null,
+     "audio": null
+    }
+   ],
+   "status": "draft",
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  }
+ ],
+ "notes": {
+  "unit": "isc-12-commerce-ch08",
+  "version": 1,
+  "title": "Planning — notes",
+  "language": "en",
+  "sections": [
+   {
+    "heading": "1. Functions of management",
+    "body_md": "Management works through five functions:\n- **Planning** — deciding in advance what to do and how.\n- **Organising** — identifying and grouping tasks, assigning them and allocating resources.\n- **Staffing** — filling posts with the right people and keeping them filled.\n- **Directing** — guiding, motivating, leading and communicating with people.\n- **Controlling** — comparing actual results with planned standards and correcting deviations.\n\nThe functions form a **cycle**: controlling feeds back into fresh planning.",
+    "key_terms": [
+     {
+      "term": "Functions of management",
+      "definition_md": "Planning, organising, staffing, directing and controlling."
+     }
+    ],
+    "formulas": [],
+    "visual": {
+     "kind": "flow",
+     "spec": {
+      "direction": "LR",
+      "nodes": [
+       {
+        "id": "n1",
+        "label": "Planning"
+       },
+       {
+        "id": "n2",
+        "label": "Organising"
+       },
+       {
+        "id": "n3",
+        "label": "Staffing"
+       },
+       {
+        "id": "n4",
+        "label": "Directing"
+       },
+       {
+        "id": "n5",
+        "label": "Controlling"
+       }
+      ],
+      "edges": [
+       {
+        "from": "n1",
+        "to": "n2"
+       },
+       {
+        "from": "n2",
+        "to": "n3"
+       },
+       {
+        "from": "n3",
+        "to": "n4"
+       },
+       {
+        "from": "n4",
+        "to": "n5"
+       },
+       {
+        "from": "n5",
+        "to": "n1"
+       }
+      ]
+     },
+     "alt": "Flow of the five functions of management: planning, organising, staffing, directing and controlling, with controlling looping back to planning",
+     "caption": "Planning comes first; controlling loops back to it."
+    },
+    "visuals": [
+     {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Function",
+        "Question it answers"
+       ],
+       "rows": [
+        [
+         "Planning",
+         "What is to be done, how, when and by whom?"
+        ],
+        [
+         "Organising",
+         "Who does which task, with what resources?"
+        ],
+        [
+         "Staffing",
+         "Do we have the right people in each post?"
+        ],
+        [
+         "Directing",
+         "Are people guided and motivated?"
+        ],
+        [
+         "Controlling",
+         "Are results matching the plan?"
+        ]
+       ]
+      },
+      "alt": "Table of the five functions of management and the question each answers"
+     }
+    ],
+    "topic_ids": [
+     "isc-12-commerce-ch08-t01"
+    ]
+   },
+   {
+    "heading": "2. Planning: meaning and importance",
+    "body_md": "**Planning** is deciding in advance what to do, how to do it, when to do it and who is to do it. It bridges the gap between where we are and where we want to be. It is the **primary function**: the other functions work within the framework of plans.\n\n**Importance:**\n- **Provides direction** — everyone knows the goal.\n- **Reduces the risk of uncertainty** — it foresees changes and prepares for them.\n- **Reduces overlapping and wasteful activities** — it coordinates work.\n- **Promotes innovative ideas** — thinking ahead brings new ideas.\n- **Facilitates decision making** — alternatives are weighed before choosing.\n- **Establishes standards for controlling** — planned targets become yardsticks.",
+    "key_terms": [
+     {
+      "term": "Planning",
+      "definition_md": "Deciding in advance what, how, when and by whom."
+     },
+     {
+      "term": "Primary function",
+      "definition_md": "The function that comes before and supports all others."
+     }
+    ],
+    "formulas": [],
+    "visual": {
+     "kind": "table",
+     "spec": {
+      "headers": [
+       "Planning decides…",
+       "Imagined example: a tour operator in Munnar"
+      ],
+      "rows": [
+       [
+        "What to do",
+        "Run forty guided tours a month"
+       ],
+       [
+        "How to do it",
+        "Use local guides and hired jeeps"
+       ],
+       [
+        "When",
+        "From September to May"
+       ],
+       [
+        "Who will do it",
+        "Two tour leaders and six guides"
+       ]
+      ]
+     },
+     "alt": "Table showing that planning decides what to do, how, when and by whom, with an imagined tour operator's answers"
+    },
+    "visuals": [
+     {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Importance",
+        "In short"
+       ],
+       "rows": [
+        [
+         "Provides direction",
+         "Everyone knows what to work towards"
+        ],
+        [
+         "Reduces risk of uncertainty",
+         "Looks ahead and prepares for change"
+        ],
+        [
+         "Reduces overlapping and waste",
+         "Coordinates who does what and when"
+        ],
+        [
+         "Promotes innovative ideas",
+         "Thinking ahead brings new ideas"
+        ],
+        [
+         "Facilitates decision making",
+         "Options are compared before choosing"
+        ],
+        [
+         "Establishes standards for controlling",
+         "Targets become yardsticks"
+        ]
+       ]
+      },
+      "alt": "Table of six points of importance of planning with a short explanation of each"
+     },
+     {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Imagined situation",
+        "Importance shown"
+       ],
+       "rows": [
+        [
+         "Rose farm foresees a fall in demand after February and plans wedding orders",
+         "Reduces risk of uncertainty"
+        ],
+        [
+         "Two juice vans no longer visit the same shops",
+         "Reduces overlapping and waste"
+        ],
+        [
+         "Planning a new range leads to paint-at-home dolls",
+         "Promotes innovative ideas"
+        ],
+        [
+         "Weekly packing targets are compared with actual work",
+         "Standards for controlling"
+        ]
+       ]
+      },
+      "alt": "Worked table matching four imagined situations with the importance of planning each shows",
+      "caption": "Ask what problem the plan solved."
+     }
+    ],
+    "topic_ids": [
+     "isc-12-commerce-ch08-t01"
+    ]
+   },
+   {
+    "heading": "3. Steps in planning",
+    "body_md": "1. **Setting objectives** — what is to be achieved.\n2. **Developing premises** — assumptions about future conditions.\n3. **Identifying alternative courses of action** — every way of reaching the objective.\n4. **Evaluating alternative courses** — weighing merits and demerits of each.\n5. **Selecting an alternative** — choosing the best, or a combination.\n6. **Implementing the plan** — putting it into action with people and resources.\n7. **Follow-up action** — monitoring progress and revising the plan if needed.",
+    "key_terms": [
+     {
+      "term": "Premises",
+      "definition_md": "Assumptions about the future on which plans rest."
+     },
+     {
+      "term": "Follow-up action",
+      "definition_md": "Monitoring a plan as it runs and revising it if needed."
+     }
+    ],
+    "formulas": [],
+    "visual": {
+     "kind": "flow",
+     "spec": {
+      "direction": "LR",
+      "nodes": [
+       {
+        "id": "n1",
+        "label": "Set objectives"
+       },
+       {
+        "id": "n2",
+        "label": "Develop premises"
+       },
+       {
+        "id": "n3",
+        "label": "Identify alternatives"
+       },
+       {
+        "id": "n4",
+        "label": "Evaluate alternatives"
+       },
+       {
+        "id": "n5",
+        "label": "Select an alternative"
+       },
+       {
+        "id": "n6",
+        "label": "Implement the plan"
+       },
+       {
+        "id": "n7",
+        "label": "Follow up"
+       }
+      ],
+      "edges": [
+       {
+        "from": "n1",
+        "to": "n2"
+       },
+       {
+        "from": "n2",
+        "to": "n3"
+       },
+       {
+        "from": "n3",
+        "to": "n4"
+       },
+       {
+        "from": "n4",
+        "to": "n5"
+       },
+       {
+        "from": "n5",
+        "to": "n6"
+       },
+       {
+        "from": "n6",
+        "to": "n7"
+       }
+      ]
+     },
+     "alt": "Flow of the seven steps in planning: set objectives, develop premises, identify alternatives, evaluate alternatives, select an alternative, implement the plan, and follow up",
+     "caption": "Seven steps, in order."
+    },
+    "visuals": [
+     {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Step",
+        "What happens",
+        "Imagined example"
+       ],
+       "rows": [
+        [
+         "Developing premises",
+         "Make assumptions about the future",
+         "A new highway will bring more weekend visitors"
+        ],
+        [
+         "Identifying alternatives",
+         "List every way to reach the goal",
+         "Monsoon tours, hotel tie-ups, travel apps"
+        ],
+        [
+         "Evaluating alternatives",
+         "Weigh merits and demerits of each",
+         "Score each option on cost, reach and risk"
+        ],
+        [
+         "Selecting an alternative",
+         "Choose the best option or a mix",
+         "Hotel tie-ups plus a travel app"
+        ]
+       ]
+      },
+      "alt": "Table of the middle steps of planning, from developing premises to selecting an alternative, with imagined examples"
+     },
+     {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Action of an imagined pottery school in Khurja",
+        "Step"
+       ],
+       "rows": [
+        [
+         "Aim to enrol 60 weekend students by June",
+         "Set objectives"
+        ],
+        [
+         "Assume college holidays stay the same",
+         "Develop premises"
+        ],
+        [
+         "Options: posters, a website, school visits",
+         "Identify alternatives"
+        ],
+        [
+         "Compare cost and reach of each",
+         "Evaluate alternatives"
+        ],
+        [
+         "Choose school visits plus a website",
+         "Select an alternative"
+        ],
+        [
+         "Book visits and build the website",
+         "Implement the plan"
+        ],
+        [
+         "Count enrolments every fortnight",
+         "Follow up"
+        ]
+       ]
+      },
+      "alt": "Worked table: seven actions of an imagined pottery school matched to the seven steps of planning",
+      "caption": "Each action answers one step in order."
+     }
+    ],
+    "topic_ids": [
+     "isc-12-commerce-ch08-t02"
+    ]
+   },
+   {
+    "heading": "4. Limitations of planning",
+    "body_md": "- **Leads to rigidity** — managers feel bound to the plan and may miss new chances.\n- **May not work in a dynamic environment** — premises can turn out wrong.\n- **Reduces creativity** — when plans come only from the top, others stop offering ideas.\n- **Involves huge costs** — surveys, experts and data cost money.\n- **Time-consuming** — detailed plans can delay action.\n- **Does not guarantee success** — results depend on implementation and on events.\n\nThese limits can be **reduced** by reviewing plans often, keeping back-up plans, inviting ideas from all levels and keeping small plans simple.",
+    "key_terms": [
+     {
+      "term": "Rigidity",
+      "definition_md": "Inability to change course because of a fixed plan."
+     }
+    ],
+    "formulas": [],
+    "visual": {
+     "kind": "table",
+     "spec": {
+      "headers": [
+       "Limitation",
+       "Why it happens"
+      ],
+      "rows": [
+       [
+        "Leads to rigidity",
+        "Managers feel bound to the plan"
+       ],
+       [
+        "May not work in a dynamic environment",
+        "Premises can turn out wrong"
+       ],
+       [
+        "Reduces creativity",
+        "Others only carry out plans made at the top"
+       ],
+       [
+        "Involves huge costs",
+        "Surveys, experts and data cost money"
+       ],
+       [
+        "Time-consuming",
+        "Detailed plans can delay action"
+       ],
+       [
+        "Does not guarantee success",
+        "Results depend on implementation and events"
+       ]
+      ]
+     },
+     "alt": "Table of six limitations of planning and why each happens"
+    },
+    "visuals": [
+     {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Imagined situation",
+        "Limitation"
+       ],
+       "rows": [
+        [
+         "A sales officer must ignore a hotel order not in the plan",
+         "Rigidity"
+        ],
+        [
+         "A new rule bans the coating a bag maker planned to use",
+         "Dynamic environment"
+        ],
+        [
+         "Supervisors stop suggesting designs",
+         "Reduces creativity"
+        ],
+        [
+         "A shop spends weeks on surveys and misses Diwali orders",
+         "Time-consuming"
+        ]
+       ]
+      },
+      "alt": "Worked table matching four imagined situations with the limitation of planning each shows",
+      "caption": "Find what went wrong, then name the limitation."
+     },
+     {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Limitation",
+        "How to reduce it"
+       ],
+       "rows": [
+        [
+         "Rigidity",
+         "Review plans often"
+        ],
+        [
+         "Dynamic environment",
+         "Prepare back-up plans"
+        ],
+        [
+         "Reduced creativity",
+         "Invite ideas from all levels"
+        ],
+        [
+         "Cost and time",
+         "Keep small plans short and simple"
+        ]
+       ]
+      },
+      "alt": "Table of four limitations of planning and a way to reduce each"
+     }
+    ],
+    "topic_ids": [
+     "isc-12-commerce-ch08-t02"
+    ]
+   },
+   {
+    "heading": "5. Types of plans",
+    "body_md": "- **Objectives** — end results to be achieved, ideally specific, measurable and time-bound.\n- **Strategies** — comprehensive plans setting long-term direction, how to compete and how to use resources.\n- **Policies** — general statements that guide decisions, leaving room for judgement.\n- **Procedures** — the steps of a routine job in a fixed chronological order.\n- **Methods** — the prescribed way of doing one task or step.\n- **Rules** — exact statements of what must or must not be done; no discretion; usually a penalty.\n- **Budgets** — expected results expressed in numbers for a future period.\n- **Programmes** — detailed plans for one project, combining tasks, people, time and money.",
+    "key_terms": [
+     {
+      "term": "Policy",
+      "definition_md": "A general guide to decisions that leaves room for judgement."
+     },
+     {
+      "term": "Rule",
+      "definition_md": "An exact instruction with no discretion."
+     },
+     {
+      "term": "Procedure",
+      "definition_md": "A sequence of steps for a routine job."
+     },
+     {
+      "term": "Method",
+      "definition_md": "The best way of doing one step."
+     }
+    ],
+    "formulas": [],
+    "visual": {
+     "kind": "table",
+     "spec": {
+      "headers": [
+       "Type of plan",
+       "What it is",
+       "Imagined example"
+      ],
+      "rows": [
+       [
+        "Objective",
+        "End result to be achieved",
+        "Sell 8,000 lanterns this year"
+       ],
+       [
+        "Strategy",
+        "Comprehensive plan for long-term direction",
+        "Win small towns through school canteens"
+       ],
+       [
+        "Policy",
+        "General guide to decisions, with judgement",
+        "Prefer artisans' children as apprentices"
+       ],
+       [
+        "Procedure",
+        "Steps of a routine job in fixed order",
+        "Weigh, sample, log, send to drying yard"
+       ],
+       [
+        "Method",
+        "Best way of doing one step",
+        "Spray the base coat, do not brush it"
+       ],
+       [
+        "Rule",
+        "What must or must not be done; no discretion",
+        "No phones on the workbench"
+       ],
+       [
+        "Budget",
+        "Expected results in numbers",
+        "Monthly income and costs in rupees"
+       ],
+       [
+        "Programme",
+        "Detailed plan for one project",
+        "Tasks, people, dates and money for a new café"
+       ]
+      ]
+     },
+     "alt": "Table of eight types of plans with what each is and an imagined example"
+    },
+    "visuals": [
+     {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Basis",
+        "Policy",
+        "Rule"
+       ],
+       "rows": [
+        [
+         "Nature",
+         "General guide",
+         "Exact instruction"
+        ],
+        [
+         "Discretion",
+         "Leaves room for judgement",
+         "No discretion"
+        ],
+        [
+         "Penalty",
+         "None for not following",
+         "Usually a penalty"
+        ]
+       ]
+      },
+      "alt": "Table comparing a policy and a rule on nature, discretion and penalty"
+     },
+     {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Basis",
+        "Procedure",
+        "Method"
+       ],
+       "rows": [
+        [
+         "Covers",
+         "A series of steps",
+         "One step or task"
+        ],
+        [
+         "Answers",
+         "In what order?",
+         "In what way?"
+        ],
+        [
+         "Example",
+         "Steps for booking a parcel",
+         "Machine-sealing each carton"
+        ]
+       ]
+      },
+      "alt": "Table comparing a procedure and a method on what each covers, the question it answers, and an example"
+     },
+     {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Statement at an imagined museum shop in Hyderabad",
+        "Type"
+       ],
+       "rows": [
+        [
+         "\"Raise sales by a fifth in two years\"",
+         "Objective"
+        ],
+        [
+         "\"We prefer crafts made in Telangana\"",
+         "Policy"
+        ],
+        [
+         "\"Bags must be left at the counter\"",
+         "Rule"
+        ],
+        [
+         "\"Ring up, wrap, hand over, file the receipt\"",
+         "Procedure"
+        ]
+       ]
+      },
+      "alt": "Worked table classifying four imagined statements from a museum shop as objective, policy, rule and procedure",
+      "caption": "Look for the clue: a target, a preference, a must, or a sequence."
+     },
+     {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Plan",
+        "Clue word in a case"
+       ],
+       "rows": [
+        [
+         "Budget",
+         "Numbers for a future period"
+        ],
+        [
+         "Programme",
+         "One project with tasks, people, time and money"
+        ],
+        [
+         "Strategy",
+         "Rivals, markets, long-term direction"
+        ]
+       ]
+      },
+      "alt": "Table of clue words for budgets, programmes and strategies"
+     }
+    ],
+    "topic_ids": [
+     "isc-12-commerce-ch08-t03"
+    ]
+   }
+  ],
+  "exam_tips_md": "**Common mistakes**\n- Saying planning removes uncertainty or guarantees success.\n- Putting the steps of planning in the wrong order (premises come before alternatives).\n- Calling a preference (\"we prefer…\") a rule; it is a policy.\n- Mixing up a procedure (a sequence) with a method (one step).\n\n**How marks are usually awarded**\n- 1 mark: the correct step, type or point.\n- 2–3 marks: each point named, explained and linked to the case.\n- 5 marks: all steps in order with examples, or each statement classified with a reason.\n- Case questions: quote the line, name the step or type, explain the link.",
+  "status": "draft",
+  "provenance": {
+   "origin": "human",
+   "template_version": null,
+   "model": null,
+   "generated_at": "2026-10-31",
+   "author": "claude-opus-5-5 (subject-producer)"
+  }
+ },
+ "flashcards": {
+  "unit": "isc-12-commerce-ch08",
+  "version": 1,
+  "language": "en",
+  "cards": [
+   {
+    "id": "f01",
+    "front_md": "Five functions of management",
+    "back_md": "Planning, organising, staffing, directing, controlling.",
+    "tag": "exam-tip",
+    "topic_id": "isc-12-commerce-ch08-t01"
+   },
+   {
+    "id": "f02",
+    "front_md": "**Planning**",
+    "back_md": "Deciding in advance what, how, when and by whom.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch08-t01"
+   },
+   {
+    "id": "f03",
+    "front_md": "Why is planning the primary function?",
+    "back_md": "The other functions work within the framework of plans.",
+    "tag": "concept",
+    "topic_id": "isc-12-commerce-ch08-t01"
+   },
+   {
+    "id": "f04",
+    "front_md": "Six points of importance of planning",
+    "back_md": "Direction, less uncertainty, less waste, new ideas, decisions, standards for control.",
+    "tag": "exam-tip",
+    "topic_id": "isc-12-commerce-ch08-t01"
+   },
+   {
+    "id": "f05",
+    "front_md": "Does planning remove uncertainty?",
+    "back_md": "No: it reduces the risk, never removes it.",
+    "tag": "concept",
+    "topic_id": "isc-12-commerce-ch08-t01"
+   },
+   {
+    "id": "f06",
+    "front_md": "Planning and controlling",
+    "back_md": "Planning looks ahead; controlling looks back at results.",
+    "tag": "concept",
+    "topic_id": "isc-12-commerce-ch08-t01"
+   },
+   {
+    "id": "f07",
+    "front_md": "Seven steps of planning",
+    "back_md": "Objectives → premises → identify → evaluate → select → implement → follow up.",
+    "tag": "exam-tip",
+    "topic_id": "isc-12-commerce-ch08-t02"
+   },
+   {
+    "id": "f08",
+    "front_md": "**Premises**",
+    "back_md": "Assumptions about future conditions on which plans rest.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch08-t02"
+   },
+   {
+    "id": "f09",
+    "front_md": "Identifying vs evaluating alternatives",
+    "back_md": "Listing the options vs weighing their merits and demerits.",
+    "tag": "concept",
+    "topic_id": "isc-12-commerce-ch08-t02"
+   },
+   {
+    "id": "f10",
+    "front_md": "**Follow-up action**",
+    "back_md": "Monitoring the plan and revising it if needed.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch08-t02"
+   },
+   {
+    "id": "f11",
+    "front_md": "Six limitations of planning",
+    "back_md": "Rigidity, dynamic environment, less creativity, cost, time, no guarantee.",
+    "tag": "exam-tip",
+    "topic_id": "isc-12-commerce-ch08-t02"
+   },
+   {
+    "id": "f12",
+    "front_md": "A good chance missed because \"it is not in the plan\"",
+    "back_md": "Rigidity.",
+    "tag": "fact",
+    "topic_id": "isc-12-commerce-ch08-t02"
+   },
+   {
+    "id": "f13",
+    "front_md": "A new law upsets the plan",
+    "back_md": "May not work in a dynamic environment.",
+    "tag": "fact",
+    "topic_id": "isc-12-commerce-ch08-t02"
+   },
+   {
+    "id": "f14",
+    "front_md": "Supervisors stop suggesting ideas",
+    "back_md": "Planning reduces creativity.",
+    "tag": "fact",
+    "topic_id": "isc-12-commerce-ch08-t02"
+   },
+   {
+    "id": "f15",
+    "front_md": "**Objective**",
+    "back_md": "End result to be achieved: specific, measurable, time-bound.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch08-t03"
+   },
+   {
+    "id": "f16",
+    "front_md": "**Strategy**",
+    "back_md": "Comprehensive plan for long-term direction and competing.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch08-t03"
+   },
+   {
+    "id": "f17",
+    "front_md": "**Policy**",
+    "back_md": "General guide to decisions; leaves room for judgement.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch08-t03"
+   },
+   {
+    "id": "f18",
+    "front_md": "**Procedure**",
+    "back_md": "Steps of a routine job in fixed order.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch08-t03"
+   },
+   {
+    "id": "f19",
+    "front_md": "**Method**",
+    "back_md": "The best way of doing one step.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch08-t03"
+   },
+   {
+    "id": "f20",
+    "front_md": "**Rule**",
+    "back_md": "Exact instruction; no discretion; usually a penalty.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch08-t03"
+   },
+   {
+    "id": "f21",
+    "front_md": "**Budget**",
+    "back_md": "Expected results in numbers for a future period.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch08-t03"
+   },
+   {
+    "id": "f22",
+    "front_md": "**Programme**",
+    "back_md": "Detailed plan for one project: tasks, people, time, money.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch08-t03"
+   },
+   {
+    "id": "f23",
+    "front_md": "Clue: \"we prefer…\"",
+    "back_md": "Policy.",
+    "tag": "exam-tip",
+    "topic_id": "isc-12-commerce-ch08-t03"
+   },
+   {
+    "id": "f24",
+    "front_md": "Clue: \"must\" or \"no exceptions\"",
+    "back_md": "Rule.",
+    "tag": "exam-tip",
+    "topic_id": "isc-12-commerce-ch08-t03"
+   },
+   {
+    "id": "f25",
+    "front_md": "Clue: steps in order",
+    "back_md": "Procedure.",
+    "tag": "exam-tip",
+    "topic_id": "isc-12-commerce-ch08-t03"
+   },
+   {
+    "id": "f26",
+    "front_md": "Clue: rivals and markets",
+    "back_md": "Strategy.",
+    "tag": "exam-tip",
+    "topic_id": "isc-12-commerce-ch08-t03"
+   },
+   {
+    "id": "f27",
+    "front_md": "Policy vs rule",
+    "back_md": "Policy guides with discretion; rule commands with none.",
+    "tag": "concept",
+    "topic_id": "isc-12-commerce-ch08-t03"
+   },
+   {
+    "id": "f28",
+    "front_md": "Procedure vs method",
+    "back_md": "Procedure: in what order. Method: in what way.",
+    "tag": "concept",
+    "topic_id": "isc-12-commerce-ch08-t03"
+   },
+   {
+    "id": "f29",
+    "front_md": "Case routine",
+    "back_md": "Quote the line, name the step or type, explain the link.",
+    "tag": "exam-tip",
+    "topic_id": "isc-12-commerce-ch08-t02"
+   }
+  ],
+  "status": "draft",
+  "provenance": {
+   "origin": "human",
+   "template_version": null,
+   "model": null,
+   "generated_at": "2026-10-31",
+   "author": "claude-opus-5-5 (subject-producer)"
+  }
+ },
+ "questions": [
+  {
+   "id": "q_isc12commerce_ch08_001",
+   "unit": "isc-12-commerce-ch08",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "A trainer at the imagined Thanjavur Doll Makers writes the functions of management on the board in their usual order. Which list is correct?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Organising, planning, directing, staffing, controlling"
+    },
+    {
+     "id": "b",
+     "text_md": "Planning, organising, staffing, directing, controlling"
+    },
+    {
+     "id": "c",
+     "text_md": "Staffing, planning, organising, controlling, directing"
+    },
+    {
+     "id": "d",
+     "text_md": "Directing, controlling, planning, organising, staffing"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (b)** Planning, organising, staffing, directing, controlling. Management first plans, then organises, staffs, directs and finally controls; controlling feeds back into planning.",
+   "marks": 1,
+   "difficulty": 1,
+   "competency": "recall",
+   "bloom": "remember",
+   "topic_ids": [
+    "isc-12-commerce-ch08-t01"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "b"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (b)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch08_002",
+   "unit": "isc-12-commerce-ch08",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "The owner of the imagined Cuttack Silver Filigree refuses to hire artisans or buy silver until the year's targets and plans are fixed. This reflects the idea that planning is",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "the last function of management"
+    },
+    {
+     "id": "b",
+     "text_md": "a function done only by supervisors"
+    },
+    {
+     "id": "c",
+     "text_md": "the same as controlling"
+    },
+    {
+     "id": "d",
+     "text_md": "the primary function, which comes before the other functions"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (d)** the primary function, which comes before the other functions. Organising, staffing, directing and controlling are carried out within the framework of plans, so planning comes first: it is the primary function.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch08-t01"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "d"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (d)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch08_003",
+   "unit": "isc-12-commerce-ch08",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Once the imagined Munnar Spice Trails fixed its target of forty guided tours a month, its guides, drivers and booking staff all knew exactly what they were working towards. Which importance of planning does this show?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Planning provides direction"
+    },
+    {
+     "id": "b",
+     "text_md": "Planning reduces the risk of uncertainty"
+    },
+    {
+     "id": "c",
+     "text_md": "Planning promotes innovative ideas"
+    },
+    {
+     "id": "d",
+     "text_md": "Planning reduces overlapping activities"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (a)** Planning provides direction. By stating in advance what is to be achieved, planning tells everyone which way to work: it provides direction.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch08-t01"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (a)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch08_004",
+   "unit": "isc-12-commerce-ch08",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "The imagined Hosur Rose Farms expects demand for red roses to fall sharply after mid-February, so it plans in advance to supply wedding decorators from March. Which importance of planning is shown?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "It establishes standards for controlling"
+    },
+    {
+     "id": "b",
+     "text_md": "It reduces creativity"
+    },
+    {
+     "id": "c",
+     "text_md": "It reduces the risk of uncertainty"
+    },
+    {
+     "id": "d",
+     "text_md": "It guarantees higher prices"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (c)** It reduces the risk of uncertainty. Planning looks ahead, foresees likely changes and prepares a response, so it reduces (but does not remove) the risk of uncertainty.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch08-t01"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "c"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (c)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch08_005",
+   "unit": "isc-12-commerce-ch08",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Before planning delivery routes, two vans of the imagined Nagpur Orange Juices often visited the same shops on the same day while other areas were missed. A route plan ended this. Which importance of planning is this?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "It facilitates decision making"
+    },
+    {
+     "id": "b",
+     "text_md": "It promotes innovative ideas"
+    },
+    {
+     "id": "c",
+     "text_md": "It reduces overlapping and wasteful activities"
+    },
+    {
+     "id": "d",
+     "text_md": "It provides a basis for staffing"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (c)** It reduces overlapping and wasteful activities. A clear plan coordinates activities so that two people do not do the same job while other work is left undone.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch08-t01"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "c"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (c)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch08_006",
+   "unit": "isc-12-commerce-ch08",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "A manager at the imagined Vadodara Solar Lamps lists four claims about planning:\nP. It provides direction.\nQ. It removes every risk from business.\nR. It facilitates decision making.\nS. It establishes standards for controlling.\nWhich of these are true points of importance of planning?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "P, R and S"
+    },
+    {
+     "id": "b",
+     "text_md": "P and Q only"
+    },
+    {
+     "id": "c",
+     "text_md": "Q, R and S"
+    },
+    {
+     "id": "d",
+     "text_md": "P, Q, R and S"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (a)** P, R and S. Planning gives direction (P), helps choose between alternatives (R) and sets targets for control (S). It reduces risk but cannot remove every risk (Q is false).",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch08-t01"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (a)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch08_007",
+   "unit": "isc-12-commerce-ch08",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "While planning next year's range, managers of the imagined Thanjavur Doll Makers came up with the idea of dolls that can be painted at home by children. Which importance of planning does this show?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "It promotes innovative ideas"
+    },
+    {
+     "id": "b",
+     "text_md": "It establishes standards for controlling"
+    },
+    {
+     "id": "c",
+     "text_md": "It reduces overlapping activities"
+    },
+    {
+     "id": "d",
+     "text_md": "It leads to rigidity"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (a)** It promotes innovative ideas. Planning makes managers think ahead about new ways of meeting goals, so it encourages new and creative ideas.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch08-t01"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (a)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch08_008",
+   "unit": "isc-12-commerce-ch08",
+   "language": "en",
+   "type": "assertion-reason",
+   "stem_md": "**Assertion (A):** Planning precedes all other functions of management.\n\n**Reason (R):** Organising, staffing, directing and controlling are carried out within the framework laid down by plans.\n\nChoose the correct option.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Both Assertion and Reason are true and Reason is the correct explanation for Assertion."
+    },
+    {
+     "id": "b",
+     "text_md": "Both Assertion and Reason are true but Reason is not the correct explanation for Assertion."
+    },
+    {
+     "id": "c",
+     "text_md": "Assertion is true and Reason is false."
+    },
+    {
+     "id": "d",
+     "text_md": "Both Assertion and Reason are false."
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (a)** Both are true, and the reason explains the assertion: the other functions need the plan as their base, so planning comes first.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch08-t01"
+   ],
+   "expected_time_sec": 75,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (a)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch08_009",
+   "unit": "isc-12-commerce-ch08",
+   "language": "en",
+   "type": "assertion-reason",
+   "stem_md": "**Assertion (A):** Planning helps reduce overlapping and wasteful activities.\n\n**Reason (R):** A strategy is a comprehensive plan for meeting the objectives of the whole organisation.\n\nChoose the correct option.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Both Assertion and Reason are true and Reason is the correct explanation for Assertion."
+    },
+    {
+     "id": "b",
+     "text_md": "Both Assertion and Reason are true but Reason is not the correct explanation for Assertion."
+    },
+    {
+     "id": "c",
+     "text_md": "Assertion is true and Reason is false."
+    },
+    {
+     "id": "d",
+     "text_md": "Both Assertion and Reason are false."
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (b)** Both statements are true, but the meaning of a strategy does not explain why planning reduces waste; that happens because plans coordinate who does what and when.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch08-t01",
+    "isc-12-commerce-ch08-t03"
+   ],
+   "expected_time_sec": 75,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "b"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (b)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch08_010",
+   "unit": "isc-12-commerce-ch08",
+   "language": "en",
+   "type": "true-false",
+   "stem_md": "In a well-run firm, a shift supervisor also plans, for example by deciding the next day's duties for each worker on the shift.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "True"
+    },
+    {
+     "id": "b",
+     "text_md": "False"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**True.** True. Planning is pervasive: top managers plan for the whole firm, while supervisors plan day-to-day work for their teams.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch08-t01"
+   ],
+   "expected_time_sec": 40,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct choice (True)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch08_011",
+   "unit": "isc-12-commerce-ch08",
+   "language": "en",
+   "type": "fill-blank",
+   "stem_md": "Complete the analogy. Planning : looking ahead :: Controlling : looking ___",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Planning looks ahead to decide what to do; controlling looks back to compare what was done with the plan.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch08-t01"
+   ],
+   "expected_time_sec": 45,
+   "assets": [],
+   "answer": {
+    "blanks": [
+     {
+      "accepted": [
+       "back",
+       "backward",
+       "backwards"
+      ]
+     }
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Blank 1: back",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch08_012",
+   "unit": "isc-12-commerce-ch08",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Define planning and explain why it is described as the primary function of management.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Definition plus the reason it comes first.",
+   "marks": 2,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch08-t01"
+   ],
+   "expected_time_sec": 150,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "**Planning** is **deciding in advance** what to do, how to do it, when and by whom, to reach the goals of the organisation. It is the **primary function** because the other functions are carried out **within the framework of plans**."
+   },
+   "word_limit": {
+    "min": 30,
+    "max": 50
+   },
+   "marking_scheme": [
+    {
+     "step": "Definition",
+     "marks": 1
+    },
+    {
+     "step": "Why primary",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch08_013",
+   "unit": "isc-12-commerce-ch08",
+   "language": "en",
+   "type": "short",
+   "stem_md": "The imagined Ranchi Lac Bangles made a detailed plan for the wedding season for the first time this year. State two benefits it can expect from planning.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Two points of importance linked to the bangle maker.",
+   "marks": 2,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch08-t01"
+   ],
+   "expected_time_sec": 150,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Direction:** every artisan and salesperson knows the **season's target** and works towards it.\n2. **Standards for controlling:** after the season, the owner can **compare actual sales** with the planned figures and find reasons for any gap."
+   },
+   "word_limit": {
+    "min": 30,
+    "max": 50
+   },
+   "marking_scheme": [
+    {
+     "step": "First benefit linked to the case",
+     "marks": 1
+    },
+    {
+     "step": "Second benefit linked to the case",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch08_014",
+   "unit": "isc-12-commerce-ch08",
+   "language": "en",
+   "type": "short",
+   "stem_md": "The imagined Vadodara Solar Lamps plans to supply 8,000 lanterns to villages next year. Explain three ways in which planning will help the firm.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Three points of importance applied to the lantern firm.",
+   "marks": 3,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch08-t01"
+   ],
+   "expected_time_sec": 210,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Reduces risk of uncertainty:** by foreseeing a **monsoon slowdown** in rural sales, it can build stock earlier and plan collections.\n2. **Facilitates decision making:** it can **compare options**, such as selling through village shops or self-help groups, and choose the best.\n3. **Promotes innovative ideas:** planning makes managers think ahead, leading to ideas like a **rent-to-own scheme** for poorer buyers."
+   },
+   "word_limit": {
+    "min": 50,
+    "max": 75
+   },
+   "marking_scheme": [
+    {
+     "step": "First point applied",
+     "marks": 1
+    },
+    {
+     "step": "Second point applied",
+     "marks": 1
+    },
+    {
+     "step": "Third point applied",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch08_015",
+   "unit": "isc-12-commerce-ch08",
+   "language": "en",
+   "type": "short",
+   "stem_md": "An imagined wedding-catering firm in Lucknow has planned to serve twelve weddings in December. Explain how this plan links to its organising, staffing and controlling.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Three links between the plan and the other functions.",
+   "marks": 3,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch08-t01"
+   ],
+   "expected_time_sec": 210,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Organising:** the plan tells the firm **what tasks** are needed, such as cooking, serving and transport, so it can **group them** and assign them.\n2. **Staffing:** it shows **how many cooks and servers** are needed on each date, so the firm can hire in time.\n3. **Controlling:** after each wedding, **actual costs and guest feedback** are compared with the plan's targets, and corrections are made for the next one."
+   },
+   "word_limit": {
+    "min": 50,
+    "max": 75
+   },
+   "marking_scheme": [
+    {
+     "step": "Organising link",
+     "marks": 1
+    },
+    {
+     "step": "Staffing link",
+     "marks": 1
+    },
+    {
+     "step": "Controlling link",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch08_016",
+   "unit": "isc-12-commerce-ch08",
+   "language": "en",
+   "type": "long",
+   "stem_md": "(a) Name the five functions of management in order. [1]\n(b) The imagined Hosur Rose Farms has started planning each season in detail. Explain four points of importance of planning, with an example of each from the farm. [4]",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Functions in order; four points of importance with farm examples.",
+   "marks": 5,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch08-t01"
+   ],
+   "expected_time_sec": 600,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "(a) **Planning, organising, staffing, directing and controlling.**\n\n(b) 1. **Provides direction:** the season's target, for example **two lakh stems for export**, tells pickers, packers and drivers what to aim for.\n2. **Reduces risk of uncertainty:** foreseeing the **fall in demand after February**, the farm plans to supply wedding decorators instead.\n3. **Reduces overlapping and wasteful activities:** a **cold-room schedule** ends the clash between export and local orders for the same space.\n4. **Establishes standards for controlling:** weekly targets for **stems packed** let the manager compare actual work with the plan and act on any shortfall."
+   },
+   "word_limit": {
+    "min": 100,
+    "max": 150
+   },
+   "marking_scheme": [
+    {
+     "step": "(a) Functions in order",
+     "marks": 1
+    },
+    {
+     "step": "(b) Four points with examples",
+     "marks": 4
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch08_017",
+   "unit": "isc-12-commerce-ch08",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "The new manager of the imagined Ranchi Lac Bangles begins planning by writing: \"Sell 30,000 pairs of lac bangles this year, a third of them online.\" Which step of planning is this?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Developing premises"
+    },
+    {
+     "id": "b",
+     "text_md": "Evaluating alternatives"
+    },
+    {
+     "id": "c",
+     "text_md": "Follow-up action"
+    },
+    {
+     "id": "d",
+     "text_md": "Setting objectives"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (d)** Setting objectives. Stating what is to be achieved is setting objectives, the first step in planning.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch08-t02"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "d"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (d)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch08_018",
+   "unit": "isc-12-commerce-ch08",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Before planning next year's tours, the imagined Munnar Spice Trails assumes that a new highway will cut the drive from Kochi by an hour and that hotel rates will stay steady. Which step of planning is this?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Setting objectives"
+    },
+    {
+     "id": "b",
+     "text_md": "Developing premises"
+    },
+    {
+     "id": "c",
+     "text_md": "Implementing the plan"
+    },
+    {
+     "id": "d",
+     "text_md": "Selecting an alternative"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (b)** Developing premises. Assumptions about future conditions on which plans rest are planning premises; making them is developing premises.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch08-t02"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "b"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (b)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch08_019",
+   "unit": "isc-12-commerce-ch08",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "The imagined Jammu Basmati Mills gives scores for cost, risk and time to each of three possible sites for a new warehouse, noting the strengths and weaknesses of each. Which step of planning is the firm at?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Evaluating alternative courses of action"
+    },
+    {
+     "id": "b",
+     "text_md": "Identifying alternative courses of action"
+    },
+    {
+     "id": "c",
+     "text_md": "Selecting an alternative"
+    },
+    {
+     "id": "d",
+     "text_md": "Follow-up action"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (a)** Evaluating alternative courses of action. Weighing the merits and demerits of each option before choosing is evaluating alternatives.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch08-t02"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (a)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch08_020",
+   "unit": "isc-12-commerce-ch08",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "To meet its export target, the planning team of the imagined Jammu Basmati Mills writes down every possible route: an agent in Dubai, an online trade portal, its own sales office, or a partner mill abroad. Which step of planning is this?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Evaluating alternative courses of action"
+    },
+    {
+     "id": "b",
+     "text_md": "Identifying alternative courses of action"
+    },
+    {
+     "id": "c",
+     "text_md": "Developing premises"
+    },
+    {
+     "id": "d",
+     "text_md": "Implementing the plan"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (b)** Identifying alternative courses of action. Listing the different ways in which the objective could be reached, before judging them, is identifying alternatives.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch08-t02"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "b"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (b)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch08_021",
+   "unit": "isc-12-commerce-ch08",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "After comparing three warehouse sites, the directors of the imagined Jammu Basmati Mills choose the one near the railway siding, combined with a small rented store in the city for busy months. Which step of planning is this?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Identifying alternatives"
+    },
+    {
+     "id": "b",
+     "text_md": "Setting objectives"
+    },
+    {
+     "id": "c",
+     "text_md": "Selecting an alternative"
+    },
+    {
+     "id": "d",
+     "text_md": "Follow-up action"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (c)** Selecting an alternative. Choosing the best option, or a mix of options, after evaluation is selecting an alternative.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch08-t02"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "c"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (c)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch08_022",
+   "unit": "isc-12-commerce-ch08",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Having chosen to open a kiosk at Ranchi airport, the manager of the imagined Ranchi Lac Bangles hires two sales assistants, buys display stands and opens the kiosk. Which step of planning is this?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Developing premises"
+    },
+    {
+     "id": "b",
+     "text_md": "Evaluating alternatives"
+    },
+    {
+     "id": "c",
+     "text_md": "Setting objectives"
+    },
+    {
+     "id": "d",
+     "text_md": "Implementing the plan"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (d)** Implementing the plan. Putting the chosen plan into action by arranging people and resources is implementing the plan.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch08-t02"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "d"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (d)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch08_023",
+   "unit": "isc-12-commerce-ch08",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "A Class 12 student at an imagined school in Gaya is arranging the steps of planning. Which step comes immediately after developing premises?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Setting objectives"
+    },
+    {
+     "id": "b",
+     "text_md": "Selecting an alternative"
+    },
+    {
+     "id": "c",
+     "text_md": "Implementing the plan"
+    },
+    {
+     "id": "d",
+     "text_md": "Identifying alternative courses of action"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (d)** Identifying alternative courses of action. The order is: set objectives, develop premises, identify alternatives, evaluate them, select one, implement, and follow up.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch08-t02"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "d"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (d)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch08_024",
+   "unit": "isc-12-commerce-ch08",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "A sales officer at the imagined Gorakhpur Terracotta spots a chance to supply a hotel chain, but she is told that the year's plan has no budget for it and she must wait until next year. Which limitation of planning is shown?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Planning involves huge costs"
+    },
+    {
+     "id": "b",
+     "text_md": "Planning does not guarantee success"
+    },
+    {
+     "id": "c",
+     "text_md": "Planning leads to rigidity"
+    },
+    {
+     "id": "d",
+     "text_md": "Planning reduces overlapping"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (c)** Planning leads to rigidity. Sticking to a fixed plan even when a good new chance appears shows that planning can make an organisation rigid.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch08-t02"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "c"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (c)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch08_025",
+   "unit": "isc-12-commerce-ch08",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "The imagined Kanpur Leather Bags planned a full year of bags with a plastic coating, but two months later a new state rule banned such coatings and the plan had to be dropped. Which limitation of planning does this show?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Planning reduces creativity"
+    },
+    {
+     "id": "b",
+     "text_md": "Planning may not work in a dynamic environment"
+    },
+    {
+     "id": "c",
+     "text_md": "Planning is time-consuming"
+    },
+    {
+     "id": "d",
+     "text_md": "Planning leads to rigidity"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (b)** Planning may not work in a dynamic environment. Plans rest on assumptions; when the environment changes suddenly, as with a new rule, the plan may fail.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch08-t02"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "b"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (b)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch08_026",
+   "unit": "isc-12-commerce-ch08",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Read these statements about planning at the imagined Thanjavur Doll Makers:\nP. Its detailed annual plan stops managers from changing course quickly.\nQ. Painters who only follow the plan rarely suggest new designs.\nR. Its plan guarantees that every festival season will be profitable.\nS. Preparing the plan needed costly market surveys.\nWhich statements describe **limitations** of planning?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "P and R only"
+    },
+    {
+     "id": "b",
+     "text_md": "Q and R only"
+    },
+    {
+     "id": "c",
+     "text_md": "P, Q, R and S"
+    },
+    {
+     "id": "d",
+     "text_md": "P, Q and S"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (d)** P, Q and S. Rigidity (P), reduced creativity (Q) and huge cost (S) are limitations. R is false: planning can never guarantee success.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch08-t02"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "d"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (d)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch08_027",
+   "unit": "isc-12-commerce-ch08",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "At the imagined Gorakhpur Terracotta, the owner and two senior managers draw up every plan. Supervisors say they simply carry out orders and have stopped suggesting new designs. Which limitation of planning does this show?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Planning reduces creativity"
+    },
+    {
+     "id": "b",
+     "text_md": "Planning involves huge costs"
+    },
+    {
+     "id": "c",
+     "text_md": "Planning provides direction"
+    },
+    {
+     "id": "d",
+     "text_md": "Planning is time-consuming"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (a)** Planning reduces creativity. When plans are made only at the top and others just carry them out, people below stop offering ideas: planning reduces creativity.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch08-t02"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (a)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch08_028",
+   "unit": "isc-12-commerce-ch08",
+   "language": "en",
+   "type": "assertion-reason",
+   "stem_md": "**Assertion (A):** Even a careful plan does not ensure the success of a business.\n\n**Reason (R):** Success depends on how well the plan is carried out and on changes in the environment.\n\nChoose the correct option.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Both Assertion and Reason are true and Reason is the correct explanation for Assertion."
+    },
+    {
+     "id": "b",
+     "text_md": "Both Assertion and Reason are true but Reason is not the correct explanation for Assertion."
+    },
+    {
+     "id": "c",
+     "text_md": "Assertion is true and Reason is false."
+    },
+    {
+     "id": "d",
+     "text_md": "Both Assertion and Reason are false."
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (a)** Both are true, and the reason explains the assertion: a plan is only a starting point, and its result depends on implementation and on events the plan could not control.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch08-t02"
+   ],
+   "expected_time_sec": 75,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (a)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch08_029",
+   "unit": "isc-12-commerce-ch08",
+   "language": "en",
+   "type": "assertion-reason",
+   "stem_md": "**Assertion (A):** Planning involves choosing from among alternative courses of action.\n\n**Reason (R):** In planning, a manager usually has only one possible course of action.\n\nChoose the correct option.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Both Assertion and Reason are true and Reason is the correct explanation for Assertion."
+    },
+    {
+     "id": "b",
+     "text_md": "Both Assertion and Reason are true but Reason is not the correct explanation for Assertion."
+    },
+    {
+     "id": "c",
+     "text_md": "Assertion is true and Reason is false."
+    },
+    {
+     "id": "d",
+     "text_md": "Both Assertion and Reason are false."
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (c)** The assertion is true: decision making lies at the heart of planning. The reason is false: if there were only one course of action there would be nothing to choose.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch08-t02"
+   ],
+   "expected_time_sec": 75,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "c"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (c)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch08_030",
+   "unit": "isc-12-commerce-ch08",
+   "language": "en",
+   "type": "assertion-reason",
+   "stem_md": "**Assertion (A):** Planning removes all uncertainty about the future.\n\n**Reason (R):** Planning is done only once, when a business is first set up.\n\nChoose the correct option.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Both Assertion and Reason are true and Reason is the correct explanation for Assertion."
+    },
+    {
+     "id": "b",
+     "text_md": "Both Assertion and Reason are true but Reason is not the correct explanation for Assertion."
+    },
+    {
+     "id": "c",
+     "text_md": "Assertion is true and Reason is false."
+    },
+    {
+     "id": "d",
+     "text_md": "Both Assertion and Reason are false."
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (d)** Both are false. Planning reduces but cannot remove uncertainty, and it is a continuous process repeated for every new period.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch08-t02"
+   ],
+   "expected_time_sec": 75,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "d"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (d)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch08_031",
+   "unit": "isc-12-commerce-ch08",
+   "language": "en",
+   "type": "true-false",
+   "stem_md": "In the planning process, the best alternative is selected before the alternatives are evaluated.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "True"
+    },
+    {
+     "id": "b",
+     "text_md": "False"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**False.** False. Alternatives are first identified and evaluated; only then is the best one selected.",
+   "marks": 1,
+   "difficulty": 1,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch08-t02"
+   ],
+   "expected_time_sec": 40,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "b"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct choice (False)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch08_032",
+   "unit": "isc-12-commerce-ch08",
+   "language": "en",
+   "type": "fill-blank",
+   "stem_md": "Complete the analogy. Setting objectives : first step of planning :: Follow-up action : ___ step of planning",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Setting objectives is the first step and follow-up action is the last step of planning.",
+   "marks": 1,
+   "difficulty": 1,
+   "competency": "recall",
+   "bloom": "remember",
+   "topic_ids": [
+    "isc-12-commerce-ch08-t02"
+   ],
+   "expected_time_sec": 45,
+   "assets": [],
+   "answer": {
+    "blanks": [
+     {
+      "accepted": [
+       "last",
+       "final",
+       "seventh"
+      ]
+     }
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Blank 1: last",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch08_033",
+   "unit": "isc-12-commerce-ch08",
+   "language": "en",
+   "type": "ordering",
+   "stem_md": "The imagined Patna Litti Café plans to start a home-delivery service. Arrange its planning actions in the correct order.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "List options: own riders, a delivery app, or both"
+    },
+    {
+     "id": "b",
+     "text_md": "Sign up with the app and train the kitchen to pack meals"
+    },
+    {
+     "id": "c",
+     "text_md": "Check daily orders each week and adjust the menu"
+    },
+    {
+     "id": "d",
+     "text_md": "Choose to start with a delivery app"
+    },
+    {
+     "id": "e",
+     "text_md": "Assume that fuel prices and rents stay roughly the same"
+    },
+    {
+     "id": "f",
+     "text_md": "Aim to deliver 150 meals a day within six months"
+    },
+    {
+     "id": "g",
+     "text_md": "Compare the cost and reach of each option"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct order:** (f) → (e) → (a) → (g) → (d) → (b) → (c). Objectives, premises, identifying alternatives, evaluating them, selecting one, implementing and follow-up action.",
+   "marks": 2,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch08-t02"
+   ],
+   "expected_time_sec": 175,
+   "assets": [],
+   "answer": {
+    "order": [
+     "f",
+     "e",
+     "a",
+     "g",
+     "d",
+     "b",
+     "c"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Complete correct sequence (all items in place)",
+     "marks": 2
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch08_034",
+   "unit": "isc-12-commerce-ch08",
+   "language": "en",
+   "type": "short",
+   "stem_md": "State two limitations of planning, giving an example of each from an imagined shop that sells festival lights in Kolkata.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Two limitations with suitable examples.",
+   "marks": 2,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch08-t02"
+   ],
+   "expected_time_sec": 150,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **May not work in a dynamic environment:** a sudden **ban on certain imported lights** could make the season's stock plan useless.\n2. **Time-consuming:** spending weeks on surveys may **delay orders**, so rivals reach buyers first before Diwali."
+   },
+   "word_limit": {
+    "min": 30,
+    "max": 50
+   },
+   "marking_scheme": [
+    {
+     "step": "First limitation with example",
+     "marks": 1
+    },
+    {
+     "step": "Second limitation with example",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch08_035",
+   "unit": "isc-12-commerce-ch08",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Explain the last two steps of the planning process: implementing the plan and follow-up action.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Both steps explained.",
+   "marks": 2,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch08-t02"
+   ],
+   "expected_time_sec": 150,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Implementing the plan:** putting the chosen plan **into action** by arranging people, money and materials, for example hiring staff and buying equipment.\n2. **Follow-up action:** **monitoring** the plan as it runs, to check that it works and to **revise** it if conditions change."
+   },
+   "word_limit": {
+    "min": 30,
+    "max": 50
+   },
+   "marking_scheme": [
+    {
+     "step": "Implementing the plan",
+     "marks": 1
+    },
+    {
+     "step": "Follow-up action",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch08_036",
+   "unit": "isc-12-commerce-ch08",
+   "language": "en",
+   "type": "short",
+   "stem_md": "The imagined Hosur Rose Farms has decided to export roses to Europe through an auction agent in the Netherlands. Explain the last three steps of planning it should now follow.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Selecting, implementing and follow-up, each applied to the farm.",
+   "marks": 3,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch08-t02"
+   ],
+   "expected_time_sec": 210,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Selecting an alternative:** having compared options, it **confirms** the auction agent as the chosen route and records why.\n2. **Implementing the plan:** it **signs** with the agent, books **cold-chain transport** and trains packers in export grading.\n3. **Follow-up action:** it **checks** each shipment's prices and quality complaints weekly, and **revises** the plan if results fall short."
+   },
+   "word_limit": {
+    "min": 50,
+    "max": 75
+   },
+   "marking_scheme": [
+    {
+     "step": "Selecting",
+     "marks": 1
+    },
+    {
+     "step": "Implementing",
+     "marks": 1
+    },
+    {
+     "step": "Follow-up",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch08_037",
+   "unit": "isc-12-commerce-ch08",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Munnar Spice Trails (imagined) wants to double its tours next year. Explain the steps of developing premises and identifying alternative courses of action, with an example of each from the firm.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Both steps explained with examples.",
+   "marks": 3,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch08-t02"
+   ],
+   "expected_time_sec": 210,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Developing premises:** premises are **assumptions about the future** on which the plan rests, for example that the **new highway** will bring more weekend visitors and that hotel rates will stay steady.\n2. **Identifying alternatives:** the firm **lists every way** to reach its goal, for example adding **monsoon tours**, tying up with **hotels**, or selling through **travel apps**.\n3. Clear premises make the alternatives realistic."
+   },
+   "word_limit": {
+    "min": 50,
+    "max": 75
+   },
+   "marking_scheme": [
+    {
+     "step": "Developing premises with example",
+     "marks": 1
+    },
+    {
+     "step": "Identifying alternatives with example",
+     "marks": 1
+    },
+    {
+     "step": "Link between them",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch08_038",
+   "unit": "isc-12-commerce-ch08",
+   "language": "en",
+   "type": "short",
+   "stem_md": "The imagined Kanpur Leather Bags spent two months and a large fee on its annual plan. Then a new rule banned its main coating, and managers who suggested switching to jute were told to \"stick to the plan\". Identify and explain three limitations of planning in this case.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Three limitations drawn from the case.",
+   "marks": 3,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch08-t02"
+   ],
+   "expected_time_sec": 210,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Involves huge costs:** the **large fee** paid for the plan raised expenses.\n2. **May not work in a dynamic environment:** the **new rule** on coatings made the plan's assumptions wrong.\n3. **Leads to rigidity / reduces creativity:** managers were told to **\"stick to the plan\"**, so a good new idea, switching to jute, was ignored."
+   },
+   "word_limit": {
+    "min": 50,
+    "max": 75
+   },
+   "marking_scheme": [
+    {
+     "step": "First limitation",
+     "marks": 1
+    },
+    {
+     "step": "Second limitation",
+     "marks": 1
+    },
+    {
+     "step": "Third limitation",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch08_039",
+   "unit": "isc-12-commerce-ch08",
+   "language": "en",
+   "type": "long",
+   "stem_md": "The imagined Nagpur Orange Juices wants to launch a sugar-free orange drink for schools. Explain the steps in the planning process it should follow, with an example of each from the firm.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "All seven steps in order, each applied to the drink launch.",
+   "marks": 5,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch08-t02"
+   ],
+   "expected_time_sec": 600,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Setting objectives:** for example, **sell the drink in 200 school canteens** within a year.\n2. **Developing premises:** assume that **orange prices** stay steady and that schools will welcome **healthier drinks**.\n3. **Identifying alternatives:** list options such as **its own vans**, school-canteen **contractors**, or both.\n4. **Evaluating alternatives:** compare each option on **cost, reach and risk**.\n5. **Selecting an alternative:** choose, say, canteen contractors for **wider reach** at lower cost.\n6. **Implementing the plan:** sign contractors, **start production** and train sales staff.\n7. **Follow-up action:** check **monthly sales** in each school and **revise** the plan if needed."
+   },
+   "word_limit": {
+    "min": 100,
+    "max": 150
+   },
+   "marking_scheme": [
+    {
+     "step": "Objectives and premises",
+     "marks": 1
+    },
+    {
+     "step": "Identifying and evaluating alternatives",
+     "marks": 1
+    },
+    {
+     "step": "Selecting an alternative",
+     "marks": 1
+    },
+    {
+     "step": "Implementing the plan",
+     "marks": 1
+    },
+    {
+     "step": "Follow-up action and correct order",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch08_040",
+   "unit": "isc-12-commerce-ch08",
+   "language": "en",
+   "type": "long",
+   "stem_md": "The owner of the imagined Patna Litti Café says: \"Plans are a waste of time for a small café. I decide everything as I go.\"\n(a) Explain three limitations of planning that support her view. [3]\n(b) Evaluate whether she should still plan. Give reasons. [2]",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Three limitations supporting the owner; a balanced judgement that she should plan simply, with reasons.",
+   "marks": 5,
+   "difficulty": 4,
+   "competency": "evaluation",
+   "bloom": "evaluate",
+   "topic_ids": [
+    "isc-12-commerce-ch08-t02",
+    "isc-12-commerce-ch08-t01"
+   ],
+   "expected_time_sec": 600,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "(a) 1. **Time-consuming:** detailed planning takes time that a busy owner may prefer to spend **serving customers**.\n2. **Leads to rigidity:** a fixed plan may stop her **changing the menu quickly** when a dish suddenly becomes popular.\n3. **May not work in a dynamic environment:** sudden changes, such as a **rise in flour prices** or a new café nearby, can upset any plan.\n\n(b) She should **still plan, but simply and flexibly**. Even a short plan gives **direction**, such as a monthly sales target, and **reduces the risk** of running short of stock on festival days. It also gives a **standard** to check results against. Keeping plans short and reviewing them often avoids the limitations above."
+   },
+   "word_limit": {
+    "min": 100,
+    "max": 150
+   },
+   "marking_scheme": [
+    {
+     "step": "(a) Three limitations",
+     "marks": 3
+    },
+    {
+     "step": "(b) Judgement",
+     "marks": 1
+    },
+    {
+     "step": "(b) Reasons",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch08_041",
+   "unit": "isc-12-commerce-ch08",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "The imagined Vadodara Solar Lamps writes in its plan: \"Sell 8,000 solar lanterns in villages of Gujarat in the year ending 31 March.\" This is an example of",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "a policy"
+    },
+    {
+     "id": "b",
+     "text_md": "an objective"
+    },
+    {
+     "id": "c",
+     "text_md": "a procedure"
+    },
+    {
+     "id": "d",
+     "text_md": "a rule"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (b)** an objective. An objective is the end result the firm wants to achieve, stated clearly and, where possible, in numbers and with a time limit.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch08-t03"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "b"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (b)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch08_042",
+   "unit": "isc-12-commerce-ch08",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "The handbook of the imagined Cuttack Silver Filigree says: \"We give preference to artisans' children when choosing apprentices.\" This statement is a",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "rule"
+    },
+    {
+     "id": "b",
+     "text_md": "method"
+    },
+    {
+     "id": "c",
+     "text_md": "budget"
+    },
+    {
+     "id": "d",
+     "text_md": "policy"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (d)** policy. A policy is a general statement that guides decisions while leaving room for judgement; \"give preference\" guides, but does not fix, the choice.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch08-t03"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "d"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (d)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch08_043",
+   "unit": "isc-12-commerce-ch08",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "A notice at the imagined Cuttack Silver Filigree reads: \"No mobile phones on the workbench. Anyone breaking this will lose a day's bonus.\" This is a",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "rule"
+    },
+    {
+     "id": "b",
+     "text_md": "policy"
+    },
+    {
+     "id": "c",
+     "text_md": "strategy"
+    },
+    {
+     "id": "d",
+     "text_md": "programme"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (a)** rule. A rule states exactly what must or must not be done, allows no discretion and usually carries a penalty.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch08-t03"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (a)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch08_044",
+   "unit": "isc-12-commerce-ch08",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "At the imagined Jammu Basmati Mills, every lorry of paddy is weighed at the gate, sampled for moisture, logged by the clerk and then sent to the drying yard, always in that order. This sequence is a",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "method"
+    },
+    {
+     "id": "b",
+     "text_md": "policy"
+    },
+    {
+     "id": "c",
+     "text_md": "procedure"
+    },
+    {
+     "id": "d",
+     "text_md": "strategy"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (c)** procedure. A procedure lays down the steps of a routine activity in a fixed chronological order.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch08-t03"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "c"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (c)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch08_045",
+   "unit": "isc-12-commerce-ch08",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Painters at the imagined Thanjavur Doll Makers are told to apply the base coat with a spray gun rather than a brush, because it is faster and smoother. This instruction is a",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "procedure"
+    },
+    {
+     "id": "b",
+     "text_md": "rule"
+    },
+    {
+     "id": "c",
+     "text_md": "method"
+    },
+    {
+     "id": "d",
+     "text_md": "programme"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (c)** method. A method prescribes the best way of doing one particular task or step.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch08-t03"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "c"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (c)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch08_046",
+   "unit": "isc-12-commerce-ch08",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "The plan of the imagined Munnar Spice Trails for next year shows its expected income from tours and its expected spending on guides and fuel, month by month, in rupees. This plan is a",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "budget"
+    },
+    {
+     "id": "b",
+     "text_md": "policy"
+    },
+    {
+     "id": "c",
+     "text_md": "method"
+    },
+    {
+     "id": "d",
+     "text_md": "rule"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (a)** budget. A budget states expected results in numerical terms for a future period.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch08-t03"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (a)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch08_047",
+   "unit": "isc-12-commerce-ch08",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "For the opening of its first café in Shillong, the imagined Tezpur Tea Cafés draws up a plan listing the tasks, the person responsible for each, the time each will take and the money needed. This plan is a",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "policy"
+    },
+    {
+     "id": "b",
+     "text_md": "rule"
+    },
+    {
+     "id": "c",
+     "text_md": "method"
+    },
+    {
+     "id": "d",
+     "text_md": "programme"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (d)** programme. A programme is a detailed plan for a particular project, bringing together the tasks, people, timing and resources needed.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch08-t03"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "d"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (d)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch08_048",
+   "unit": "isc-12-commerce-ch08",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Facing a large national rival, the imagined Nagpur Orange Juices decides to focus on small towns, sell through school canteens and stress \"no added sugar\" in all its advertising. This is a",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "procedure"
+    },
+    {
+     "id": "b",
+     "text_md": "strategy"
+    },
+    {
+     "id": "c",
+     "text_md": "rule"
+    },
+    {
+     "id": "d",
+     "text_md": "budget"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (b)** strategy. A strategy is a comprehensive plan that sets the firm's long-term direction, chooses where and how to compete, and allocates resources, often in response to rivals.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch08-t03"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "b"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (b)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch08_049",
+   "unit": "isc-12-commerce-ch08",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Four statements appear in the staff handbook of an imagined museum shop in Hyderabad:\nP. \"Bags must be left at the counter. No exceptions.\"\nQ. \"We prefer to stock crafts made in Telangana.\"\nR. \"Smoking near the textile gallery is prohibited.\"\nS. \"Raise annual sales by a fifth within two years.\"\nWhich of these are **rules**?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "P and Q only"
+    },
+    {
+     "id": "b",
+     "text_md": "P and R only"
+    },
+    {
+     "id": "c",
+     "text_md": "Q and S only"
+    },
+    {
+     "id": "d",
+     "text_md": "P, R and S"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (b)** P and R only. P and R state exactly what must or must not be done, with no discretion: rules. Q is a policy (a preference that guides choice) and S is an objective.",
+   "marks": 1,
+   "difficulty": 4,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch08-t03"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "b"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (b)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch08_050",
+   "unit": "isc-12-commerce-ch08",
+   "language": "en",
+   "type": "assertion-reason",
+   "stem_md": "**Assertion (A):** A rule tells employees exactly what must or must not be done.\n\n**Reason (R):** A rule allows managers to use their own judgement in applying it.\n\nChoose the correct option.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Both Assertion and Reason are true and Reason is the correct explanation for Assertion."
+    },
+    {
+     "id": "b",
+     "text_md": "Both Assertion and Reason are true but Reason is not the correct explanation for Assertion."
+    },
+    {
+     "id": "c",
+     "text_md": "Assertion is true and Reason is false."
+    },
+    {
+     "id": "d",
+     "text_md": "Both Assertion and Reason are false."
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (c)** The assertion is true. The reason is false: rules are rigid and leave no room for discretion; it is a policy that allows judgement.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch08-t03"
+   ],
+   "expected_time_sec": 75,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "c"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (c)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch08_051",
+   "unit": "isc-12-commerce-ch08",
+   "language": "en",
+   "type": "true-false",
+   "stem_md": "A policy is a general statement that guides decision making while leaving managers some room for judgement.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "True"
+    },
+    {
+     "id": "b",
+     "text_md": "False"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**True.** True. A policy sets limits within which decisions are made, but managers still decide how to apply it.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch08-t03"
+   ],
+   "expected_time_sec": 40,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct choice (True)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch08_052",
+   "unit": "isc-12-commerce-ch08",
+   "language": "en",
+   "type": "true-false",
+   "stem_md": "A strategy deals only with the small daily tasks of one department, such as how to stack files.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "True"
+    },
+    {
+     "id": "b",
+     "text_md": "False"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**False.** False. A strategy is a comprehensive plan for the whole organisation: it sets long-term direction and decides how to compete and use resources.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch08-t03"
+   ],
+   "expected_time_sec": 40,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "b"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct choice (False)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch08_053",
+   "unit": "isc-12-commerce-ch08",
+   "language": "en",
+   "type": "fill-blank",
+   "stem_md": "Complete the analogy. Steps of a routine job in a fixed order : procedure :: The prescribed way of carrying out one step : ___",
+   "options": [],
+   "match_right": [],
+   "solution_md": "A sequence of steps is a procedure; the best way of doing one step within it is a method.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch08-t03"
+   ],
+   "expected_time_sec": 45,
+   "assets": [],
+   "answer": {
+    "blanks": [
+     {
+      "accepted": [
+       "method"
+      ]
+     }
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Blank 1: method",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch08_054",
+   "unit": "isc-12-commerce-ch08",
+   "language": "en",
+   "type": "match",
+   "stem_md": "Match each statement from an imagined chain of bookshops in Chennai with the type of plan it represents.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "\"We encourage staff to recommend books by local authors.\""
+    },
+    {
+     "id": "b",
+     "text_md": "\"Wrap gift books in recycled paper, folding the edges inward first.\""
+    },
+    {
+     "id": "c",
+     "text_md": "\"Open the new Madurai branch in six weeks: lease, shelving, staff and stock, with dates and costs.\""
+    },
+    {
+     "id": "d",
+     "text_md": "\"Win readers from online sellers by hosting author readings and same-day delivery in our cities.\""
+    }
+   ],
+   "match_right": [
+    {
+     "id": "p",
+     "text_md": "Strategy"
+    },
+    {
+     "id": "q",
+     "text_md": "Policy"
+    },
+    {
+     "id": "r",
+     "text_md": "Programme"
+    },
+    {
+     "id": "s",
+     "text_md": "Method"
+    }
+   ],
+   "solution_md": "**Key:** (a)–(q), (b)–(s), (c)–(r), (d)–(p). Encouraging local authors guides choices (policy); the wrapping instruction is a method; the branch opening with tasks, dates and costs is a programme; winning readers from online rivals is a strategy.",
+   "marks": 2,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch08-t03"
+   ],
+   "expected_time_sec": 120,
+   "assets": [],
+   "answer": {
+    "pairs": [
+     {
+      "left_id": "a",
+      "right_id": "q"
+     },
+     {
+      "left_id": "b",
+      "right_id": "s"
+     },
+     {
+      "left_id": "c",
+      "right_id": "r"
+     },
+     {
+      "left_id": "d",
+      "right_id": "p"
+     }
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Each correct pair 0.5 mark (4 pairs)",
+     "marks": 2
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch08_055",
+   "unit": "isc-12-commerce-ch08",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Distinguish between a budget and a programme, giving one example of each from an imagined college canteen.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Both explained with canteen examples.",
+   "marks": 2,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch08-t03"
+   ],
+   "expected_time_sec": 150,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Budget:** a plan of **expected results in numbers** for a period, for example **expected income and costs** of the canteen for the term.\n2. **Programme:** a **detailed plan for one project**, listing tasks, people, timing and money, for example **setting up a salad counter** before exams."
+   },
+   "word_limit": {
+    "min": 30,
+    "max": 50
+   },
+   "marking_scheme": [
+    {
+     "step": "Budget with example",
+     "marks": 1
+    },
+    {
+     "step": "Programme with example",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch08_056",
+   "unit": "isc-12-commerce-ch08",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Identify the type of plan in each statement from the imagined Tezpur Tea Cafés, with a reason: (i) \"Staff must wear gloves when handling food.\" (ii) \"We prefer to buy tea directly from small growers.\"",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Both identified with reasons.",
+   "marks": 2,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch08-t03"
+   ],
+   "expected_time_sec": 150,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "(i) **Rule:** it says **exactly what must be done** and leaves no discretion.\n(ii) **Policy:** it is a **general guide** to purchase decisions; managers still use judgement about which growers to buy from."
+   },
+   "word_limit": {
+    "min": 30,
+    "max": 50
+   },
+   "marking_scheme": [
+    {
+     "step": "(i) Rule with reason",
+     "marks": 1
+    },
+    {
+     "step": "(ii) Policy with reason",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch08_057",
+   "unit": "isc-12-commerce-ch08",
+   "language": "en",
+   "type": "short",
+   "stem_md": "The owner of an imagined bicycle-repair chain in Mysuru writes: \"We want to do better next year.\" Rewrite this as a good objective and state why your version is better.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "A specific, measurable, time-bound objective with a reason.",
+   "marks": 2,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch08-t03"
+   ],
+   "expected_time_sec": 150,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "**Objective:** \"Repair 1,200 bicycles a month across our three shops by next March.\" It is better because it is **specific, measurable** and has a **time limit**, so staff know the target and results can be checked."
+   },
+   "word_limit": {
+    "min": 30,
+    "max": 50
+   },
+   "marking_scheme": [
+    {
+     "step": "Rewritten objective",
+     "marks": 1
+    },
+    {
+     "step": "Reason",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch08_058",
+   "unit": "isc-12-commerce-ch08",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Identify and explain the type of plan in each of these statements of the imagined Cuttack Silver Filigree: (i) \"Melt silver only in the fume hood\"; (ii) \"Each order: record, weigh silver, issue to artisan, inspect, pack\"; (iii) \"Win buyers in Europe by offering custom designs and exhibiting at craft fairs.\"",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Each statement correctly classified with a reason.",
+   "marks": 3,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch08-t03"
+   ],
+   "expected_time_sec": 210,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "(i) **Rule:** it states **exactly** what must be done and allows no exception.\n(ii) **Procedure:** it lays down the **steps of a routine job** in a fixed order.\n(iii) **Strategy:** it is a **comprehensive plan** for competing in a new market, deciding how to win buyers and where to put resources."
+   },
+   "word_limit": {
+    "min": 50,
+    "max": 75
+   },
+   "marking_scheme": [
+    {
+     "step": "(i) Rule",
+     "marks": 1
+    },
+    {
+     "step": "(ii) Procedure",
+     "marks": 1
+    },
+    {
+     "step": "(iii) Strategy",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch08_059",
+   "unit": "isc-12-commerce-ch08",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Explain objectives, policies and rules as types of plans, giving one example of each from an imagined college hostel.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Three types explained with hostel examples.",
+   "marks": 3,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch08-t03"
+   ],
+   "expected_time_sec": 210,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Objectives:** the **end results** to be achieved, for example \"serve every resident a balanced breakfast by 8 a.m. each day\".\n2. **Policies:** **general guides** to decision making that leave room for judgement, for example \"preference for local vegetables\".\n3. **Rules:** **exact statements** of what must or must not be done, with **no discretion**, for example \"gates close at 10 p.m.\"."
+   },
+   "word_limit": {
+    "min": 50,
+    "max": 75
+   },
+   "marking_scheme": [
+    {
+     "step": "Objectives",
+     "marks": 1
+    },
+    {
+     "step": "Policies",
+     "marks": 1
+    },
+    {
+     "step": "Rules",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch08_060",
+   "unit": "isc-12-commerce-ch08",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Explain procedures, methods and budgets as types of plans, giving one example of each from an imagined railway parcel office.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Three types explained with parcel-office examples.",
+   "marks": 3,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch08-t03"
+   ],
+   "expected_time_sec": 210,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Procedure:** the **steps of a routine job** in fixed order, for example booking a parcel: weigh, label, issue receipt, load.\n2. **Method:** the **best way of doing one step**, for example sealing cartons with machine-applied tape rather than by hand.\n3. **Budget:** a plan of **expected results in numbers**, for example the parcel office's expected income and costs for the quarter."
+   },
+   "word_limit": {
+    "min": 50,
+    "max": 75
+   },
+   "marking_scheme": [
+    {
+     "step": "Procedure",
+     "marks": 1
+    },
+    {
+     "step": "Method",
+     "marks": 1
+    },
+    {
+     "step": "Budget",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch08_061",
+   "unit": "isc-12-commerce-ch08",
+   "language": "en",
+   "type": "long",
+   "stem_md": "The handbook of the imagined Jammu Basmati Mills contains these statements:\n(i) \"Export 5,000 tonnes of rice this year.\"\n(ii) \"Buy paddy from registered farmer groups wherever possible.\"\n(iii) \"Helmets must be worn in the milling hall.\"\n(iv) \"Expected sales and expenses for each quarter are shown below in rupees.\"\n(v) \"Enter the Gulf market by packing rice under buyers' own labels and pricing below European rivals.\"\nIdentify the type of plan in each statement and explain it briefly.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "One mark for each statement correctly classified and explained.",
+   "marks": 5,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch08-t03"
+   ],
+   "expected_time_sec": 600,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "(i) **Objective:** an **end result** to be achieved, stated in numbers with a time limit.\n(ii) **Policy:** a **general guide** for purchase decisions; \"wherever possible\" leaves room for **judgement**.\n(iii) **Rule:** says **exactly** what must be done in the hall; **no discretion**, and breaking it may bring a penalty.\n(iv) **Budget:** expected results expressed in **numbers** for a future period.\n(v) **Strategy:** a **comprehensive plan** that chooses a market, a way to compete and how to use resources against rivals."
+   },
+   "word_limit": {
+    "min": 100,
+    "max": 150
+   },
+   "marking_scheme": [
+    {
+     "step": "(i) Objective",
+     "marks": 1
+    },
+    {
+     "step": "(ii) Policy",
+     "marks": 1
+    },
+    {
+     "step": "(iii) Rule",
+     "marks": 1
+    },
+    {
+     "step": "(iv) Budget",
+     "marks": 1
+    },
+    {
+     "step": "(v) Strategy",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch08_062",
+   "unit": "isc-12-commerce-ch08",
+   "language": "en",
+   "type": "case-based",
+   "stem_md": "Read the passage and answer the questions that follow. *(Imagined firm and people, written by SOYL for practice.)*",
+   "options": [],
+   "match_right": [],
+   "solution_md": "**(a)** **Correct option: (a)** planning premises. Assumptions about future conditions on which the plan rests are premises.\n\n**(b)** Monitoring the plan and revising it is follow-up action.\n\n**(c) (i)** Two steps with supporting lines.\n\n**OR (c) (ii)** Limitation named; role of follow-up explained.",
+   "marks": 4,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch08-t01",
+    "isc-12-commerce-ch08-t02"
+   ],
+   "expected_time_sec": 420,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "**(a)** (a) planning premises\n\n**(b)** **Follow-up action.**\n\n**(c) (i)** 1. \"**set a target of selling two lakh stems**\": **setting objectives**.\n2. \"**listed three ways to reach buyers ... and compared their costs**\": **identifying and evaluating alternatives**.\n\n**OR (c) (ii)** **Planning may not work in a dynamic environment:** a premise turned out wrong. **Follow-up** let Selvi spot this early and **revise** the delivery schedule, limiting the damage."
+   },
+   "marking_scheme": [
+    {
+     "step": "Part (a)",
+     "marks": 1
+    },
+    {
+     "step": "Part (b)",
+     "marks": 1
+    },
+    {
+     "step": "Part (c): either (i) or (ii)",
+     "marks": 2
+    }
+   ],
+   "passage_md": "**Hosur Rose Farms (imagined), Tamil Nadu**\n\nHosur Rose Farms grows roses in greenhouses. In June, its manager, Selvi, set a target of selling two lakh stems in the wedding season. She assumed that diesel prices would stay steady and that a new cold-storage centre would open nearby in October. She listed three ways to reach buyers in Bengaluru and Chennai and compared their costs. Once the season began, she checked sales every week. When the cold-storage centre opened late, she changed the delivery schedule.",
+   "passage_origin": "soyl-original",
+   "children": [
+    {
+     "id": "a",
+     "type": "mcq",
+     "stem_md": "Selvi's assumptions about diesel prices and the cold-storage centre are examples of",
+     "options": [
+      {
+       "id": "a",
+       "text_md": "planning premises"
+      },
+      {
+       "id": "b",
+       "text_md": "objectives"
+      },
+      {
+       "id": "c",
+       "text_md": "rules"
+      },
+      {
+       "id": "d",
+       "text_md": "budgets"
+      }
+     ],
+     "match_right": [],
+     "solution_md": "**Correct option: (a)** planning premises. Assumptions about future conditions on which the plan rests are premises.",
+     "marks": 1,
+     "difficulty": 2,
+     "competency": "application",
+     "bloom": "apply",
+     "topic_ids": [
+      "isc-12-commerce-ch08-t02"
+     ],
+     "expected_time_sec": 60,
+     "assets": [],
+     "answer": {
+      "option_ids": [
+       "a"
+      ]
+     },
+     "marking_scheme": [
+      {
+       "step": "Correct option (a)",
+       "marks": 1
+      }
+     ],
+     "alternatives": []
+    },
+    {
+     "id": "b",
+     "type": "short",
+     "stem_md": "Name the step of planning shown when Selvi checked sales every week and changed the delivery schedule.",
+     "options": [],
+     "match_right": [],
+     "solution_md": "Monitoring the plan and revising it is follow-up action.",
+     "marks": 1,
+     "difficulty": 2,
+     "competency": "application",
+     "bloom": "apply",
+     "topic_ids": [
+      "isc-12-commerce-ch08-t02"
+     ],
+     "expected_time_sec": 90,
+     "assets": [],
+     "answer": {
+      "model_answer_md": "**Follow-up action.**"
+     },
+     "marking_scheme": [
+      {
+       "step": "Follow-up action",
+       "marks": 1
+      }
+     ],
+     "alternatives": []
+    },
+    {
+     "id": "c",
+     "type": "short",
+     "stem_md": "**Either** (i): Quote the lines that show two other steps of planning and name each step.",
+     "options": [],
+     "match_right": [],
+     "solution_md": "Two steps with supporting lines.",
+     "marks": 2,
+     "difficulty": 3,
+     "competency": "analysis",
+     "bloom": "analyze",
+     "topic_ids": [
+      "isc-12-commerce-ch08-t02"
+     ],
+     "expected_time_sec": 150,
+     "assets": [],
+     "answer": {
+      "model_answer_md": "1. \"**set a target of selling two lakh stems**\": **setting objectives**.\n2. \"**listed three ways to reach buyers ... and compared their costs**\": **identifying and evaluating alternatives**."
+     },
+     "marking_scheme": [
+      {
+       "step": "First step with line",
+       "marks": 1
+      },
+      {
+       "step": "Second step with line",
+       "marks": 1
+      }
+     ],
+     "alternatives": [
+      {
+       "id": "c-ii",
+       "type": "short",
+       "stem_md": "**Or** (ii): Which limitation of planning is shown by the late opening of the cold-storage centre? How did follow-up action help?",
+       "options": [],
+       "match_right": [],
+       "solution_md": "Limitation named; role of follow-up explained.",
+       "marks": 2,
+       "difficulty": 3,
+       "competency": "analysis",
+       "bloom": "analyze",
+       "topic_ids": [
+        "isc-12-commerce-ch08-t01",
+        "isc-12-commerce-ch08-t02"
+       ],
+       "expected_time_sec": 150,
+       "assets": [],
+       "answer": {
+        "model_answer_md": "**Planning may not work in a dynamic environment:** a premise turned out wrong. **Follow-up** let Selvi spot this early and **revise** the delivery schedule, limiting the damage."
+       },
+       "marking_scheme": [
+        {
+         "step": "Limitation",
+         "marks": 1
+        },
+        {
+         "step": "Role of follow-up",
+         "marks": 1
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch08_063",
+   "unit": "isc-12-commerce-ch08",
+   "language": "en",
+   "type": "case-based",
+   "stem_md": "Read the passage and answer the questions that follow. *(Imagined firm, written by SOYL for practice.)*",
+   "options": [],
+   "match_right": [],
+   "solution_md": "**(a)** **Correct option: (b)** a policy. \"As far as possible\" guides decisions but leaves room for judgement: a policy.\n\n**(b)** Expected results in numbers for a future period form a budget.\n\n**(c) (i)** A procedure and a rule with supporting words.\n\n**OR (c) (ii)** An objective and a method with supporting words.",
+   "marks": 4,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch08-t03"
+   ],
+   "expected_time_sec": 420,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "**(a)** (b) a policy\n\n**(b)** **Budget.**\n\n**(c) (i)** **Procedure:** \"**taken, written on a slip, passed to the kitchen and served, in that order**\". **Rule:** \"**no café may sell packaged tea from other brands**\".\n\n**OR (c) (ii)** **Objective:** \"**open four more by the end of next year**\". **Method:** \"**brewed for exactly four minutes**\", the set way of doing one task."
+   },
+   "marking_scheme": [
+    {
+     "step": "Part (a)",
+     "marks": 1
+    },
+    {
+     "step": "Part (b)",
+     "marks": 1
+    },
+    {
+     "step": "Part (c): either (i) or (ii)",
+     "marks": 2
+    }
+   ],
+   "passage_md": "**Tezpur Tea Cafés (imagined), Assam**\n\nTezpur Tea Cafés runs six cafés. Its aim is to open four more by the end of next year. Its plan states: cafés should, as far as possible, hire staff from the local area. Every new order is taken, written on a slip, passed to the kitchen and served, in that order. Tea must be brewed for exactly four minutes, and no café may sell packaged tea from other brands. For next year, the expected income and costs of each café are shown month by month.",
+   "passage_origin": "soyl-original",
+   "children": [
+    {
+     "id": "a",
+     "type": "mcq",
+     "stem_md": "\"Cafés should, as far as possible, hire staff from the local area\" is an example of",
+     "options": [
+      {
+       "id": "a",
+       "text_md": "a rule"
+      },
+      {
+       "id": "b",
+       "text_md": "a policy"
+      },
+      {
+       "id": "c",
+       "text_md": "a procedure"
+      },
+      {
+       "id": "d",
+       "text_md": "a budget"
+      }
+     ],
+     "match_right": [],
+     "solution_md": "**Correct option: (b)** a policy. \"As far as possible\" guides decisions but leaves room for judgement: a policy.",
+     "marks": 1,
+     "difficulty": 2,
+     "competency": "application",
+     "bloom": "apply",
+     "topic_ids": [
+      "isc-12-commerce-ch08-t03"
+     ],
+     "expected_time_sec": 60,
+     "assets": [],
+     "answer": {
+      "option_ids": [
+       "b"
+      ]
+     },
+     "marking_scheme": [
+      {
+       "step": "Correct option (b)",
+       "marks": 1
+      }
+     ],
+     "alternatives": []
+    },
+    {
+     "id": "b",
+     "type": "short",
+     "stem_md": "Name the type of plan shown by the expected income and costs of each café, month by month.",
+     "options": [],
+     "match_right": [],
+     "solution_md": "Expected results in numbers for a future period form a budget.",
+     "marks": 1,
+     "difficulty": 2,
+     "competency": "application",
+     "bloom": "apply",
+     "topic_ids": [
+      "isc-12-commerce-ch08-t03"
+     ],
+     "expected_time_sec": 90,
+     "assets": [],
+     "answer": {
+      "model_answer_md": "**Budget.**"
+     },
+     "marking_scheme": [
+      {
+       "step": "Budget",
+       "marks": 1
+      }
+     ],
+     "alternatives": []
+    },
+    {
+     "id": "c",
+     "type": "short",
+     "stem_md": "**Either** (i): Identify a procedure and a rule from the passage, quoting the words.",
+     "options": [],
+     "match_right": [],
+     "solution_md": "A procedure and a rule with supporting words.",
+     "marks": 2,
+     "difficulty": 3,
+     "competency": "analysis",
+     "bloom": "analyze",
+     "topic_ids": [
+      "isc-12-commerce-ch08-t03"
+     ],
+     "expected_time_sec": 150,
+     "assets": [],
+     "answer": {
+      "model_answer_md": "**Procedure:** \"**taken, written on a slip, passed to the kitchen and served, in that order**\". **Rule:** \"**no café may sell packaged tea from other brands**\"."
+     },
+     "marking_scheme": [
+      {
+       "step": "Procedure",
+       "marks": 1
+      },
+      {
+       "step": "Rule",
+       "marks": 1
+      }
+     ],
+     "alternatives": [
+      {
+       "id": "c-ii",
+       "type": "short",
+       "stem_md": "**Or** (ii): Identify an objective and a method from the passage, quoting the words.",
+       "options": [],
+       "match_right": [],
+       "solution_md": "An objective and a method with supporting words.",
+       "marks": 2,
+       "difficulty": 3,
+       "competency": "analysis",
+       "bloom": "analyze",
+       "topic_ids": [
+        "isc-12-commerce-ch08-t03"
+       ],
+       "expected_time_sec": 150,
+       "assets": [],
+       "answer": {
+        "model_answer_md": "**Objective:** \"**open four more by the end of next year**\". **Method:** \"**brewed for exactly four minutes**\", the set way of doing one task."
+       },
+       "marking_scheme": [
+        {
+         "step": "Objective",
+         "marks": 1
+        },
+        {
+         "step": "Method",
+         "marks": 1
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  }
+ ],
+ "build": {
+  "run_id": null,
+  "checks": {
+   "syllabus": "topics t01–t03 of isc-12-commerce-ch08 (functions of management and the meaning and importance of planning; steps and limitations of planning; types of plans: objectives, policies, procedures, methods, rules, budgets, programmes and strategies)",
+   "originality": "every firm, person and case is imagined and written by SOYL and labelled; no ISC or CBSE textbook text, illustration or exercise and no CISCE specimen or board item reused (D-036); firms, people and set-ups differ from CBSE 12 Business Studies ch04",
+   "data": "no computed figures; all examples are imagined and labelled",
+   "facts": "stable textbook concepts only (five functions, seven steps of planning, six limitations, eight types of plans)",
+   "gate": "schema, pipeline lint, deterministic verify, word limits, narration and answer-leak checks run clean in this build"
+  }
+ }
+}

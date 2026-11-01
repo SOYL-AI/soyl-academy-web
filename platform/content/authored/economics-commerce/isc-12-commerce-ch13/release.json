@@ -1,0 +1,5789 @@
+{
+ "unit": "isc-12-commerce-ch13",
+ "version": 1,
+ "academic_year": "2026-27",
+ "created_at": "2026-10-31",
+ "decks": [
+  {
+   "unit": "isc-12-commerce-ch13",
+   "part": 1,
+   "version": 1,
+   "title": "Marketing — Part 1: Market, Marketing and its Concepts",
+   "language": "en",
+   "goals": [
+    "Classify markets by area, time and nature of goods",
+    "Explain the meaning and features of marketing",
+    "Contrast the traditional and modern concepts of marketing and distinguish marketing from selling"
+   ],
+   "slides": [
+    {
+     "id": "s01",
+     "layout": "title",
+     "heading": "Marketing: Concept and Functions",
+     "body_md": "Part 1: what a **market** is, its **types**, what **marketing** means, and how the **concepts** of marketing changed.",
+     "bullets": [],
+     "visual": {
+      "kind": "flow",
+      "spec": {
+       "direction": "LR",
+       "nodes": [
+        {
+         "id": "n1",
+         "label": "What a market is"
+        },
+        {
+         "id": "n2",
+         "label": "Types of market"
+        },
+        {
+         "id": "n3",
+         "label": "What marketing is"
+        },
+        {
+         "id": "n4",
+         "label": "Concepts of marketing"
+        }
+       ],
+       "edges": [
+        {
+         "from": "n1",
+         "to": "n2"
+        },
+        {
+         "from": "n2",
+         "to": "n3"
+        },
+        {
+         "from": "n3",
+         "to": "n4"
+        }
+       ]
+      },
+      "alt": "Route map of Part 1: the meaning of market, types of market, the meaning and features of marketing, and the traditional and modern concepts of marketing",
+      "caption": "Part 1 at a glance"
+     },
+     "math": [],
+     "narration": "Every firm must find buyers for what it offers. In this part we ask what a market really is and how markets are classified. Then we see what marketing means, and how firms moved from simply making and pushing goods to starting with the customer, and then with society too.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s02",
+     "layout": "concept",
+     "heading": "What is a market?",
+     "body_md": "In marketing, a **market** is the set of **actual and potential buyers** of a product. It need not be a place.",
+     "bullets": [],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Old meaning",
+        "Marketing meaning"
+       ],
+       "rows": [
+        [
+         "A place where buyers and sellers meet",
+         "All the people who buy, or may buy, a product"
+        ],
+        [
+         "A weekly bazaar",
+         "Buyers reached in shops, by phone and online"
+        ]
+       ]
+      },
+      "alt": "Table contrasting the old meaning of market as a place with the marketing meaning as actual and potential buyers"
+     },
+     "math": [],
+     "narration": "In everyday speech, a market is a place, like a weekly bazaar. In marketing, it means people: everyone who buys a product, and everyone who might. A perfume house selling online to buyers abroad has a market even though no buyer ever visits its shop.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s03",
+     "layout": "diagram",
+     "heading": "Types of market",
+     "body_md": "",
+     "bullets": [],
+     "visual": {
+      "kind": "svg",
+      "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 560 330\" role=\"img\" aria-label=\"Tree diagram: markets classified three ways. By area: local, regional, national, international. By time: very short period, short period, long period. By nature of goods: produce, manufactured goods, bullion, stock\" font-family=\"sans-serif\" font-size=\"14\" fill=\"none\"><title>Tree diagram: markets classified three ways. By area: local, regional, national, international. By time: very short period, short period, long period. By nature of goods: produce, manufactured goods, bullion, stock</title><rect x=\"210\" y=\"14\" width=\"140\" height=\"40\" rx=\"8\" fill=\"var(--diagram-accent)\" fill-opacity=\"0.15\" stroke=\"var(--diagram-accent)\" stroke-width=\"1.6\"/><text x=\"280\" y=\"34\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"15\" font-weight=\"bold\">Markets</text><line x1=\"280\" y1=\"54\" x2=\"95\" y2=\"92\" fill=\"none\" stroke=\"var(--diagram-muted)\" stroke-width=\"1.4\"/><rect x=\"13\" y=\"92\" width=\"164\" height=\"36\" rx=\"8\" fill=\"var(--diagram-blue)\" fill-opacity=\"0.16\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.4\"/><text x=\"95\" y=\"110\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"13\" font-weight=\"bold\">By area</text><line x1=\"95\" y1=\"128\" x2=\"95\" y2=\"146\" fill=\"none\" stroke=\"var(--diagram-muted)\" stroke-width=\"1.2\"/><rect x=\"21\" y=\"146\" width=\"148\" height=\"28\" rx=\"6\" fill=\"var(--diagram-blue)\" fill-opacity=\"0.07\" stroke=\"var(--diagram-blue)\" stroke-width=\"1\"/><text x=\"95\" y=\"160\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">Local</text><line x1=\"95\" y1=\"172\" x2=\"95\" y2=\"190\" fill=\"none\" stroke=\"var(--diagram-muted)\" stroke-width=\"1.2\"/><rect x=\"21\" y=\"190\" width=\"148\" height=\"28\" rx=\"6\" fill=\"var(--diagram-blue)\" fill-opacity=\"0.07\" stroke=\"var(--diagram-blue)\" stroke-width=\"1\"/><text x=\"95\" y=\"204\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">Regional</text><line x1=\"95\" y1=\"216\" x2=\"95\" y2=\"234\" fill=\"none\" stroke=\"var(--diagram-muted)\" stroke-width=\"1.2\"/><rect x=\"21\" y=\"234\" width=\"148\" height=\"28\" rx=\"6\" fill=\"var(--diagram-blue)\" fill-opacity=\"0.07\" stroke=\"var(--diagram-blue)\" stroke-width=\"1\"/><text x=\"95\" y=\"248\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">National</text><line x1=\"95\" y1=\"260\" x2=\"95\" y2=\"278\" fill=\"none\" stroke=\"var(--diagram-muted)\" stroke-width=\"1.2\"/><rect x=\"21\" y=\"278\" width=\"148\" height=\"28\" rx=\"6\" fill=\"var(--diagram-blue)\" fill-opacity=\"0.07\" stroke=\"var(--diagram-blue)\" stroke-width=\"1\"/><text x=\"95\" y=\"292\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">International</text><line x1=\"280\" y1=\"54\" x2=\"280\" y2=\"92\" fill=\"none\" stroke=\"var(--diagram-muted)\" stroke-width=\"1.4\"/><rect x=\"198\" y=\"92\" width=\"164\" height=\"36\" rx=\"8\" fill=\"var(--diagram-green)\" fill-opacity=\"0.16\" stroke=\"var(--diagram-green)\" stroke-width=\"1.4\"/><text x=\"280\" y=\"110\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"13\" font-weight=\"bold\">By time</text><line x1=\"280\" y1=\"128\" x2=\"280\" y2=\"146\" fill=\"none\" stroke=\"var(--diagram-muted)\" stroke-width=\"1.2\"/><rect x=\"206\" y=\"146\" width=\"148\" height=\"28\" rx=\"6\" fill=\"var(--diagram-green)\" fill-opacity=\"0.07\" stroke=\"var(--diagram-green)\" stroke-width=\"1\"/><text x=\"280\" y=\"160\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">Very short period</text><line x1=\"280\" y1=\"172\" x2=\"280\" y2=\"190\" fill=\"none\" stroke=\"var(--diagram-muted)\" stroke-width=\"1.2\"/><rect x=\"206\" y=\"190\" width=\"148\" height=\"28\" rx=\"6\" fill=\"var(--diagram-green)\" fill-opacity=\"0.07\" stroke=\"var(--diagram-green)\" stroke-width=\"1\"/><text x=\"280\" y=\"204\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">Short period</text><line x1=\"280\" y1=\"216\" x2=\"280\" y2=\"234\" fill=\"none\" stroke=\"var(--diagram-muted)\" stroke-width=\"1.2\"/><rect x=\"206\" y=\"234\" width=\"148\" height=\"28\" rx=\"6\" fill=\"var(--diagram-green)\" fill-opacity=\"0.07\" stroke=\"var(--diagram-green)\" stroke-width=\"1\"/><text x=\"280\" y=\"248\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">Long period</text><line x1=\"280\" y1=\"54\" x2=\"465\" y2=\"92\" fill=\"none\" stroke=\"var(--diagram-muted)\" stroke-width=\"1.4\"/><rect x=\"383\" y=\"92\" width=\"164\" height=\"36\" rx=\"8\" fill=\"var(--diagram-yellow)\" fill-opacity=\"0.16\" stroke=\"var(--diagram-yellow)\" stroke-width=\"1.4\"/><text x=\"465\" y=\"110\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"13\" font-weight=\"bold\">By nature of goods</text><line x1=\"465\" y1=\"128\" x2=\"465\" y2=\"146\" fill=\"none\" stroke=\"var(--diagram-muted)\" stroke-width=\"1.2\"/><rect x=\"391\" y=\"146\" width=\"148\" height=\"28\" rx=\"6\" fill=\"var(--diagram-yellow)\" fill-opacity=\"0.07\" stroke=\"var(--diagram-yellow)\" stroke-width=\"1\"/><text x=\"465\" y=\"160\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">Produce</text><line x1=\"465\" y1=\"172\" x2=\"465\" y2=\"190\" fill=\"none\" stroke=\"var(--diagram-muted)\" stroke-width=\"1.2\"/><rect x=\"391\" y=\"190\" width=\"148\" height=\"28\" rx=\"6\" fill=\"var(--diagram-yellow)\" fill-opacity=\"0.07\" stroke=\"var(--diagram-yellow)\" stroke-width=\"1\"/><text x=\"465\" y=\"204\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">Manufactured goods</text><line x1=\"465\" y1=\"216\" x2=\"465\" y2=\"234\" fill=\"none\" stroke=\"var(--diagram-muted)\" stroke-width=\"1.2\"/><rect x=\"391\" y=\"234\" width=\"148\" height=\"28\" rx=\"6\" fill=\"var(--diagram-yellow)\" fill-opacity=\"0.07\" stroke=\"var(--diagram-yellow)\" stroke-width=\"1\"/><text x=\"465\" y=\"248\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">Bullion</text><line x1=\"465\" y1=\"260\" x2=\"465\" y2=\"278\" fill=\"none\" stroke=\"var(--diagram-muted)\" stroke-width=\"1.2\"/><rect x=\"391\" y=\"278\" width=\"148\" height=\"28\" rx=\"6\" fill=\"var(--diagram-yellow)\" fill-opacity=\"0.07\" stroke=\"var(--diagram-yellow)\" stroke-width=\"1\"/><text x=\"465\" y=\"292\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">Stock</text></svg>",
+      "alt": "Tree diagram: markets classified three ways. By area: local, regional, national, international. By time: very short period, short period, long period. By nature of goods: produce, manufactured goods, bullion, stock",
+      "caption": "Three ways of classifying markets."
+     },
+     "math": [],
+     "narration": "Markets are classified in three ways. By area, they may be local, regional, national or international. By time, they may be very short period, short period or long period. By the nature of goods, there are produce markets, manufactured goods markets, bullion markets for gold and silver, and stock markets for shares.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s04",
+     "layout": "concept",
+     "heading": "Markets by time",
+     "body_md": "",
+     "bullets": [],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Market by time",
+        "Can supply change?",
+        "Example"
+       ],
+       "rows": [
+        [
+         "Very short period",
+         "No: supply is fixed",
+         "Fresh fish, flowers"
+        ],
+        [
+         "Short period",
+         "Partly, with existing plants",
+         "Extra bakery shifts before a festival"
+        ],
+        [
+         "Long period",
+         "Fully, even with new plants",
+         "New ginning units over years"
+        ]
+       ]
+      },
+      "alt": "Table of markets by time: very short, short and long period, whether supply can change in each, with examples"
+     },
+     "math": [],
+     "narration": "Time is about how far supply can change. In a very short period market, supply is fixed, as with a morning fish catch. In a short period, firms can change supply partly with their existing plant. In a long period, there is time to build new plants and change supply fully.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s05",
+     "layout": "example",
+     "heading": "Worked example 1: classify the market",
+     "body_md": "Five imagined situations.",
+     "bullets": [
+      "Step 1: decide the **basis**: area, time or nature of goods.",
+      "Step 2: name the **type**.",
+      "Step 3: give the clue in one line."
+     ],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Imagined situation",
+        "Basis",
+        "Type"
+       ],
+       "rows": [
+        [
+         "Garlands bought only by nearby shops",
+         "Area",
+         "Local"
+        ],
+        [
+         "Glass bangles sold in Africa and Europe",
+         "Area",
+         "International"
+        ],
+        [
+         "A morning fish catch sold within hours",
+         "Time",
+         "Very short period"
+        ],
+        [
+         "Ginning units built up over years",
+         "Time",
+         "Long period"
+        ],
+        [
+         "Dealers trading gold and silver",
+         "Nature of goods",
+         "Bullion"
+        ]
+       ]
+      },
+      "alt": "Worked table classifying five imagined situations by basis (area, time or nature of goods) and type of market",
+      "caption": "First decide the basis, then the type."
+     },
+     "math": [],
+     "narration": "Garlands bought only nearby are a local market by area. Bangles sold in Africa and Europe are international. A fish catch sold within hours is a very short period market by time. Ginning units built over years point to the long period. Dealers in gold and silver form a bullion market.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s06",
+     "layout": "check",
+     "heading": "Quick check: is a market a place?",
+     "body_md": "True or false: in marketing, a market always means a fixed place where buyers and sellers meet.",
+     "bullets": [],
+     "visual": null,
+     "math": [],
+     "narration": "Think of a firm that sells only online.",
+     "check_question_id": "q_isc12commerce_ch13_010",
+     "audio": null
+    },
+    {
+     "id": "s07",
+     "layout": "concept",
+     "heading": "Marketing and its features",
+     "body_md": "**Marketing** is the process of identifying customer needs and satisfying them through the **exchange** of goods and services, **at a profit**.",
+     "bullets": [],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Feature of marketing",
+        "Meaning"
+       ],
+       "rows": [
+        [
+         "Needs and wants",
+         "It starts by finding what people need"
+        ],
+        [
+         "Market offering",
+         "A product or service designed to meet those needs"
+        ],
+        [
+         "Customer value",
+         "Buyers feel the benefit is worth the price"
+        ],
+        [
+         "Exchange mechanism",
+         "Goods or services change hands for money"
+        ],
+        [
+         "Customer orientation",
+         "Every activity is built around the buyer"
+        ],
+        [
+         "Goods and services",
+         "It applies to both, and to non-business bodies"
+        ]
+       ]
+      },
+      "alt": "Table of six features of marketing with their meanings"
+     },
+     "math": [],
+     "narration": "Marketing begins with people's needs and wants. The firm designs an offering to meet them and tries to give buyers good value. Goods or services are then exchanged for money. Everything is built around the customer, and marketing applies to services and non-business bodies as much as to goods.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s08",
+     "layout": "check",
+     "heading": "Quick check: market by area",
+     "body_md": "Garlands that wilt in a day are bought only by shops a few kilometres away. What kind of market is this?",
+     "bullets": [],
+     "visual": null,
+     "math": [],
+     "narration": "How far can such goods travel?",
+     "check_question_id": "q_isc12commerce_ch13_002",
+     "audio": null
+    },
+    {
+     "id": "s09",
+     "layout": "concept",
+     "heading": "Concepts of marketing",
+     "body_md": "",
+     "bullets": [],
+     "visual": {
+      "kind": "flow",
+      "spec": {
+       "direction": "LR",
+       "nodes": [
+        {
+         "id": "n1",
+         "label": "Production"
+        },
+        {
+         "id": "n2",
+         "label": "Product"
+        },
+        {
+         "id": "n3",
+         "label": "Selling"
+        },
+        {
+         "id": "n4",
+         "label": "Marketing"
+        },
+        {
+         "id": "n5",
+         "label": "Societal marketing"
+        }
+       ],
+       "edges": [
+        {
+         "from": "n1",
+         "to": "n2"
+        },
+        {
+         "from": "n2",
+         "to": "n3"
+        },
+        {
+         "from": "n3",
+         "to": "n4"
+        },
+        {
+         "from": "n4",
+         "to": "n5"
+        }
+       ]
+      },
+      "alt": "Five concepts of marketing in the order they developed: production, product, selling, marketing and societal marketing",
+      "caption": "Traditional concepts on the left, modern on the right."
+     },
+     "math": [],
+     "narration": "The thinking behind marketing has changed over time. The traditional concepts, production, product and selling, start from the factory. The modern concepts, marketing and societal marketing, start from the customer, and the last adds the welfare of society.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s10",
+     "layout": "concept",
+     "heading": "Comparing the concepts",
+     "body_md": "",
+     "bullets": [],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Concept",
+        "Starts from",
+        "Main focus",
+        "Profit through"
+       ],
+       "rows": [
+        [
+         "Production",
+         "Factory",
+         "Low cost, wide availability",
+         "Sales volume"
+        ],
+        [
+         "Product",
+         "Factory",
+         "Product quality and features",
+         "Sales volume"
+        ],
+        [
+         "Selling",
+         "Factory",
+         "Aggressive selling and promotion",
+         "Sales volume"
+        ],
+        [
+         "Marketing",
+         "Market",
+         "Customer needs",
+         "Customer satisfaction"
+        ],
+        [
+         "Societal marketing",
+         "Market and society",
+         "Customer needs and social welfare",
+         "Satisfaction and social welfare"
+        ]
+       ]
+      },
+      "alt": "Table comparing five concepts of marketing by starting point, main focus and route to profit"
+     },
+     "math": [],
+     "narration": "The production concept stresses low cost and wide availability. The product concept stresses quality. The selling concept stresses hard selling. All three seek profit through sales volume. The marketing concept seeks profit through customer satisfaction, and the societal concept adds the long term welfare of society.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s11",
+     "layout": "example",
+     "heading": "Worked example 2: name the concept",
+     "body_md": "Five imagined firms, five ways of thinking.",
+     "bullets": [
+      "Step 1: ask where the firm **starts**: factory or customer.",
+      "Step 2: ask what it cares about **most**.",
+      "Step 3: name the concept."
+     ],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Imagined firm",
+        "What it does",
+        "Concept"
+       ],
+       "rows": [
+        [
+         "Cement-sheet maker",
+         "Cuts cost through huge output; stocks every shop",
+         "Production"
+        ],
+        [
+         "Tile maker",
+         "Perfects a tile nobody now wants",
+         "Product"
+        ],
+        [
+         "Furniture store",
+         "Pushes visitors with today-only offers",
+         "Selling"
+        ],
+        [
+         "Bakery",
+         "Asks customers first, bakes to match",
+         "Marketing"
+        ],
+        [
+         "Coconut-oil maker",
+         "Refillable cans; protects mangroves",
+         "Societal marketing"
+        ]
+       ]
+      },
+      "alt": "Worked table: five imagined firms, what each does and the concept of marketing each follows",
+      "caption": "Ask: where does the firm start, and what does it care about most?"
+     },
+     "math": [],
+     "narration": "A cement-sheet maker cutting cost through huge output follows the production concept. A tile maker perfecting a tile nobody wants follows the product concept. A store pushing today-only offers follows the selling concept. A bakery that asks customers first follows the marketing concept. An oil maker that protects mangroves follows the societal concept.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s12",
+     "layout": "check",
+     "heading": "Quick check: which concept?",
+     "body_md": "A firm keeps costs low through huge output and stocks every shop, sure its goods will sell. Which concept?",
+     "bullets": [],
+     "visual": null,
+     "math": [],
+     "narration": "Think about cost and availability.",
+     "check_question_id": "q_isc12commerce_ch13_019",
+     "audio": null
+    },
+    {
+     "id": "s13",
+     "layout": "diagram",
+     "heading": "Marketing versus selling",
+     "body_md": "",
+     "bullets": [],
+     "visual": {
+      "kind": "svg",
+      "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 560 230\" role=\"img\" aria-label=\"Seven boxes in a row: find needs, design product, fix price, distribute, promote, sell, after-sales. A bracket over all seven is labelled marketing, from needs to after-sales service; a short bracket under the sell box alone is labelled selling, one part\" font-family=\"sans-serif\" font-size=\"14\" fill=\"none\"><title>Seven boxes in a row: find needs, design product, fix price, distribute, promote, sell, after-sales. A bracket over all seven is labelled marketing, from needs to after-sales service; a short bracket under the sell box alone is labelled selling, one part</title><rect x=\"18\" y=\"90\" width=\"72\" height=\"44\" rx=\"6\" fill=\"var(--diagram-blue)\" fill-opacity=\"0.12\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.3\"/><text x=\"54\" y=\"105\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"11\">Find</text><text x=\"54\" y=\"121\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"11\">needs</text><rect x=\"94\" y=\"90\" width=\"72\" height=\"44\" rx=\"6\" fill=\"var(--diagram-blue)\" fill-opacity=\"0.12\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.3\"/><text x=\"130\" y=\"105\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"11\">Design</text><text x=\"130\" y=\"121\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"11\">product</text><rect x=\"170\" y=\"90\" width=\"72\" height=\"44\" rx=\"6\" fill=\"var(--diagram-blue)\" fill-opacity=\"0.12\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.3\"/><text x=\"206\" y=\"105\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"11\">Fix</text><text x=\"206\" y=\"121\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"11\">price</text><rect x=\"246\" y=\"90\" width=\"72\" height=\"44\" rx=\"6\" fill=\"var(--diagram-blue)\" fill-opacity=\"0.12\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.3\"/><text x=\"282\" y=\"112\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"11\">Distribute</text><rect x=\"322\" y=\"90\" width=\"72\" height=\"44\" rx=\"6\" fill=\"var(--diagram-blue)\" fill-opacity=\"0.12\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.3\"/><text x=\"358\" y=\"112\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"11\">Promote</text><rect x=\"398\" y=\"90\" width=\"72\" height=\"44\" rx=\"6\" fill=\"var(--diagram-accent)\" fill-opacity=\"0.25\" stroke=\"var(--diagram-accent)\" stroke-width=\"1.3\"/><text x=\"434\" y=\"112\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"11\">Sell</text><rect x=\"474\" y=\"90\" width=\"72\" height=\"44\" rx=\"6\" fill=\"var(--diagram-blue)\" fill-opacity=\"0.12\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.3\"/><text x=\"510\" y=\"112\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"11\">After-sales</text><line x1=\"18\" y1=\"70\" x2=\"546\" y2=\"70\" fill=\"none\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.6\"/><line x1=\"18\" y1=\"64\" x2=\"18\" y2=\"76\" fill=\"none\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.6\"/><line x1=\"546\" y1=\"64\" x2=\"546\" y2=\"76\" fill=\"none\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.6\"/><text x=\"282\" y=\"50\" fill=\"var(--diagram-blue)\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"13\" font-weight=\"bold\">Marketing: from needs to after-sales service</text><line x1=\"398\" y1=\"154\" x2=\"470\" y2=\"154\" fill=\"none\" stroke=\"var(--diagram-accent)\" stroke-width=\"1.6\"/><line x1=\"398\" y1=\"148\" x2=\"398\" y2=\"160\" fill=\"none\" stroke=\"var(--diagram-accent)\" stroke-width=\"1.6\"/><line x1=\"470\" y1=\"148\" x2=\"470\" y2=\"160\" fill=\"none\" stroke=\"var(--diagram-accent)\" stroke-width=\"1.6\"/><text x=\"434\" y=\"178\" fill=\"var(--diagram-accent)\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"13\" font-weight=\"bold\">Selling</text><text x=\"434\" y=\"196\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"11\">one part</text></svg>",
+      "alt": "Seven boxes in a row: find needs, design product, fix price, distribute, promote, sell, after-sales. A bracket over all seven is labelled marketing, from needs to after-sales service; a short bracket under the sell box alone is labelled selling, one part",
+      "caption": "Marketing spans the whole chain; selling is one link in it."
+     },
+     "math": [],
+     "narration": "Selling and marketing are not the same. Marketing runs from finding needs, through design, pricing, distribution and promotion, to the sale and after-sales service. Selling is only the link where ownership changes hands. Marketing begins before production and continues after the sale.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s14",
+     "layout": "two-column",
+     "heading": "Differences at a glance",
+     "body_md": "",
+     "bullets": [],
+     "columns": [
+      "**Selling**\n\nSeller-centred; transfers ownership; ends with the sale.",
+      "**Marketing**\n\nBuyer-centred; covers the whole chain; continues after the sale."
+     ],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Basis",
+        "Selling",
+        "Marketing"
+       ],
+       "rows": [
+        [
+         "Scope",
+         "Transfer of ownership only",
+         "Research, design, price, distribution, promotion, sale, service"
+        ],
+        [
+         "Focus",
+         "Seller's need to clear stock",
+         "Buyer's needs"
+        ],
+        [
+         "Begins and ends",
+         "After production; ends with the sale",
+         "Before production; continues after the sale"
+        ],
+        [
+         "Profit through",
+         "Sales volume",
+         "Customer satisfaction"
+        ]
+       ]
+      },
+      "alt": "Table distinguishing selling from marketing on scope, focus, when it begins and ends, and the route to profit"
+     },
+     "math": [],
+     "narration": "In short, selling looks at the seller's need to turn stock into cash, and it ends with the sale. Marketing looks at the buyer's needs, starts before the product is made, and continues after the sale, earning profit through satisfaction.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s15",
+     "layout": "summary",
+     "heading": "Summary of Part 1",
+     "body_md": "",
+     "bullets": [],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Idea",
+        "Key point"
+       ],
+       "rows": [
+        [
+         "Market",
+         "Actual and potential buyers of a product"
+        ],
+        [
+         "Types",
+         "By area, by time, by nature of goods"
+        ],
+        [
+         "Marketing",
+         "Finding and satisfying needs through exchange, at a profit"
+        ],
+        [
+         "Concepts",
+         "Production, product, selling (traditional); marketing, societal (modern)"
+        ]
+       ]
+      },
+      "alt": "Summary table of Part 1: market, types of market, marketing and its concepts"
+     },
+     "math": [],
+     "narration": "To sum up Part 1. A market is the actual and potential buyers of a product, classified by area, time and nature of goods. Marketing identifies and satisfies needs through exchange, at a profit. The production, product and selling concepts are traditional; the marketing and societal marketing concepts are modern. Marketing is wider than selling.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s16",
+     "layout": "exam-tips",
+     "heading": "Exam tips",
+     "body_md": "",
+     "bullets": [
+      "Define a market as **buyers**, not a place.",
+      "For market types, state the **basis** before the type.",
+      "For concepts, ask where the firm **starts** and what it **focuses** on.",
+      "Show marketing as **wider** than selling, with bases."
+     ],
+     "visual": {
+      "kind": "flow",
+      "spec": {
+       "direction": "LR",
+       "nodes": [
+        {
+         "id": "n1",
+         "label": "Quote the clue"
+        },
+        {
+         "id": "n2",
+         "label": "Name the type, concept or function"
+        },
+        {
+         "id": "n3",
+         "label": "Explain it"
+        }
+       ],
+       "edges": [
+        {
+         "from": "n1",
+         "to": "n2"
+        },
+        {
+         "from": "n2",
+         "to": "n3"
+        }
+       ]
+      },
+      "alt": "Three steps for case questions: quote the clue, name the type, concept or function, and explain it"
+     },
+     "math": [],
+     "narration": "Some tips. Define a market as people, not a place. When classifying, say whether it is by area, time or nature of goods. To identify a concept, ask where the firm starts and what it cares about most. And when comparing marketing with selling, give clear bases.",
+     "check_question_id": null,
+     "audio": null
+    }
+   ],
+   "status": "draft",
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "unit": "isc-12-commerce-ch13",
+   "part": 2,
+   "version": 1,
+   "title": "Marketing — Part 2: Objectives, Importance and Functions",
+   "language": "en",
+   "goals": [
+    "Explain the objectives of marketing and its importance to firms, consumers and society",
+    "Describe the functions of marketing, such as market research, buying, assembling, standardisation, grading, storage, transport, financing, risk bearing and selling"
+   ],
+   "slides": [
+    {
+     "id": "s01",
+     "layout": "title",
+     "heading": "Objectives, Importance and Functions",
+     "body_md": "Part 2: what marketing **aims** at, why it **matters**, and the **functions** it performs.",
+     "bullets": [],
+     "visual": {
+      "kind": "flow",
+      "spec": {
+       "direction": "LR",
+       "nodes": [
+        {
+         "id": "n1",
+         "label": "Objectives"
+        },
+        {
+         "id": "n2",
+         "label": "Importance"
+        },
+        {
+         "id": "n3",
+         "label": "Functions of exchange"
+        },
+        {
+         "id": "n4",
+         "label": "Physical supply and facilitating functions"
+        }
+       ],
+       "edges": [
+        {
+         "from": "n1",
+         "to": "n2"
+        },
+        {
+         "from": "n2",
+         "to": "n3"
+        },
+        {
+         "from": "n3",
+         "to": "n4"
+        }
+       ]
+      },
+      "alt": "Route map of Part 2: objectives and importance of marketing, then the functions of marketing grouped as exchange, physical supply and facilitating functions",
+      "caption": "Part 2 at a glance"
+     },
+     "math": [],
+     "narration": "In Part 2 we look at what marketing tries to achieve and why it matters to firms, consumers and society. Then we follow goods from the producer to the buyer and name each function marketing performs on the way.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s02",
+     "layout": "concept",
+     "heading": "Objectives of marketing",
+     "body_md": "",
+     "bullets": [],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Objective",
+        "Imagined example"
+       ],
+       "rows": [
+        [
+         "Creating demand",
+         "Cooking demos for a new fox-nut snack"
+        ],
+        [
+         "Customer satisfaction",
+         "Free replacement of a spoiled mango box"
+        ],
+        [
+         "Increasing market share",
+         "Aiming to double share of bangle sales"
+        ],
+        [
+         "Profitable sales volume",
+         "Selling more at a fair margin"
+        ],
+        [
+         "Goodwill and image",
+         "A name that importers trust"
+        ]
+       ]
+      },
+      "alt": "Table of five objectives of marketing with an imagined example of each"
+     },
+     "math": [],
+     "narration": "Marketing aims to create demand, so that people want the product. It aims to satisfy customers, so that they come back. It tries to raise the firm's share of the market and to earn profit on a growing volume of sales. And it builds goodwill, a name that buyers trust.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s03",
+     "layout": "concept",
+     "heading": "Importance of marketing",
+     "body_md": "",
+     "bullets": [],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Marketing helps…",
+        "How"
+       ],
+       "rows": [
+        [
+         "The firm",
+         "More sales and profit; information for decisions; new products"
+        ],
+        [
+         "Consumers",
+         "Wider choice, better quality, information, value for money"
+        ],
+        [
+         "Society",
+         "Jobs, economic growth, goods reaching every region, higher living standards"
+        ]
+       ]
+      },
+      "alt": "Table of the importance of marketing to the firm, to consumers and to society"
+     },
+     "math": [],
+     "narration": "Marketing matters to three groups. For the firm, it brings sales, profit and information for decisions. For consumers, it brings choice, quality and value. For society, it creates jobs, spreads goods to every region and supports economic growth and better living standards.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s04",
+     "layout": "example",
+     "heading": "Worked example 1: who gains?",
+     "body_md": "An imagined firm markets fox-nut snacks from Mithila across India.",
+     "bullets": [
+      "Step 1: list the **effects**.",
+      "Step 2: decide **who gains**: firm, consumers or society.",
+      "Step 3: name the point of importance."
+     ],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Effect of marketing fox-nut snacks (imagined)",
+        "Who gains"
+       ],
+       "rows": [
+        [
+         "Sales spread to new cities; profit rises",
+         "The firm"
+        ],
+        [
+         "City buyers get a healthy new snack",
+         "Consumers"
+        ],
+        [
+         "Pond workers, roasters and drivers find work",
+         "Society"
+        ]
+       ]
+      },
+      "alt": "Worked table: three effects of marketing an imagined fox-nut snack and who gains from each",
+      "caption": "Sort each effect by who gains: the firm, consumers or society."
+     },
+     "math": [],
+     "narration": "When the imagined firm spreads its snacks to new cities, its sales and profit rise, which is importance to the firm. City buyers get a healthy new snack, which is importance to consumers. Pond workers, roasters and drivers find work, which is importance to society.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s05",
+     "layout": "check",
+     "heading": "Quick check: who benefits?",
+     "body_md": "True or false: marketing benefits only the firm, not consumers or society.",
+     "bullets": [],
+     "visual": null,
+     "math": [],
+     "narration": "Think of the shopper and the truck driver.",
+     "check_question_id": "q_isc12commerce_ch13_039",
+     "audio": null
+    },
+    {
+     "id": "s06",
+     "layout": "diagram",
+     "heading": "Following the goods",
+     "body_md": "",
+     "bullets": [],
+     "visual": {
+      "kind": "flow",
+      "spec": {
+       "direction": "LR",
+       "nodes": [
+        {
+         "id": "n1",
+         "label": "Research"
+        },
+        {
+         "id": "n2",
+         "label": "Buying and assembling"
+        },
+        {
+         "id": "n3",
+         "label": "Standardisation and grading"
+        },
+        {
+         "id": "n4",
+         "label": "Storage"
+        },
+        {
+         "id": "n5",
+         "label": "Transport"
+        },
+        {
+         "id": "n6",
+         "label": "Selling"
+        }
+       ],
+       "edges": [
+        {
+         "from": "n1",
+         "to": "n2"
+        },
+        {
+         "from": "n2",
+         "to": "n3"
+        },
+        {
+         "from": "n3",
+         "to": "n4"
+        },
+        {
+         "from": "n4",
+         "to": "n5"
+        },
+        {
+         "from": "n5",
+         "to": "n6"
+        }
+       ]
+      },
+      "alt": "Marketing functions in the order goods usually meet them: research, buying and assembling, standardisation and grading, storage, transport and selling",
+      "caption": "Financing and risk bearing support every link."
+     },
+     "math": [],
+     "narration": "Follow goods from the producer. First, research shows what buyers want. Goods are bought and assembled from many producers. They are standardised and graded. They are stored until wanted and transported to where buyers are. Finally they are sold. Financing and risk bearing support every step.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s07",
+     "layout": "concept",
+     "heading": "Three groups of functions",
+     "body_md": "",
+     "bullets": [],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Group",
+        "Functions",
+        "Purpose"
+       ],
+       "rows": [
+        [
+         "Exchange",
+         "Buying, assembling, selling",
+         "Transfer ownership"
+        ],
+        [
+         "Physical supply",
+         "Transport, storage",
+         "Place and time utility"
+        ],
+        [
+         "Facilitating",
+         "Standardisation, grading, financing, risk bearing, market research",
+         "Help the others run smoothly"
+        ]
+       ]
+      },
+      "alt": "Table grouping marketing functions into exchange, physical supply and facilitating functions, with the purpose of each group"
+     },
+     "math": [],
+     "narration": "The functions fall into three groups. Functions of exchange, buying, assembling and selling, transfer ownership. Functions of physical supply, transport and storage, create place and time utility. Facilitating functions, such as standardisation, grading, financing, risk bearing and market research, help the others run smoothly.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s08",
+     "layout": "two-column",
+     "heading": "Standardisation and grading",
+     "body_md": "",
+     "bullets": [],
+     "columns": [
+      "**Standardisation**\n\nSets specifications in advance that every unit must meet.",
+      "**Grading**\n\nSorts finished goods or produce into classes of similar quality."
+     ],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "",
+        "Standardisation",
+        "Grading"
+       ],
+       "rows": [
+        [
+         "When",
+         "Before or during production",
+         "After production or harvest"
+        ],
+        [
+         "What",
+         "Fixes specifications all units must meet",
+         "Sorts units into classes"
+        ],
+        [
+         "Imagined example",
+         "Size and knot count for each carpet design",
+         "Litchis into export and juice classes"
+        ]
+       ]
+      },
+      "alt": "Table contrasting standardisation and grading by timing, what each does and an imagined example"
+     },
+     "math": [],
+     "narration": "These two are often confused. Standardisation sets specifications in advance, like the size and knot count of each carpet design. Grading sorts goods into classes afterwards, like putting litchis into export and juice classes. Both help buyers trust what they are getting.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s09",
+     "layout": "check",
+     "heading": "Quick check: sorting produce",
+     "body_md": "Fill in the blank: sorting farm produce into classes of similar size and quality after harvest is called ___.",
+     "bullets": [],
+     "visual": null,
+     "math": [],
+     "narration": "One word, a facilitating function.",
+     "check_question_id": "q_isc12commerce_ch13_056",
+     "audio": null
+    },
+    {
+     "id": "s10",
+     "layout": "concept",
+     "heading": "Storage, transport, financing and risk",
+     "body_md": "",
+     "bullets": [
+      "**Storage:** holds goods until wanted, creating **time utility**.",
+      "**Transport:** moves goods to buyers, creating **place utility**.",
+      "**Financing:** funds for buying, holding and credit to buyers.",
+      "**Risk bearing:** covering losses from damage, delay or price falls."
+     ],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Function",
+        "Utility or purpose"
+       ],
+       "rows": [
+        [
+         "Storage",
+         "Time utility"
+        ],
+        [
+         "Transport",
+         "Place utility"
+        ],
+        [
+         "Financing",
+         "Funds for every stage"
+        ],
+        [
+         "Risk bearing",
+         "Protection against loss"
+        ]
+       ]
+      },
+      "alt": "Table of storage, transport, financing and risk bearing with the utility or purpose of each"
+     },
+     "math": [],
+     "narration": "Storage keeps goods until people want them, giving time utility. Transport carries them to where buyers are, giving place utility. Financing provides money at every stage, including credit to buyers. Risk bearing covers losses from damage, delay or a fall in prices, often through insurance.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s11",
+     "layout": "example",
+     "heading": "Worked example 2: functions in a case",
+     "body_md": "An imagined ginger growers' group in the Garo Hills.",
+     "bullets": [
+      "Step 1: underline each **activity**.",
+      "Step 2: name the **function**.",
+      "Step 3: explain how it helps."
+     ],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "What the imagined ginger group does",
+        "Function"
+       ],
+       "rows": [
+        [
+         "Buys ginger from many small farmers",
+         "Buying and assembling"
+        ],
+        [
+         "Sorts it into three sizes",
+         "Grading"
+        ],
+        [
+         "Keeps it in a dry godown",
+         "Storage"
+        ],
+        [
+         "Traders carry it to Guwahati",
+         "Transport"
+        ],
+        [
+         "Insures stock against fire",
+         "Risk bearing"
+        ]
+       ]
+      },
+      "alt": "Worked table: five activities of an imagined ginger growers' group, each matched with a marketing function",
+      "caption": "Look for the verb: buys, sorts, keeps, carries, insures."
+     },
+     "math": [],
+     "narration": "Look for the verbs. Buying from many small farmers is buying and assembling. Sorting into three sizes is grading. Keeping ginger in a dry godown is storage. Traders carrying it to Guwahati is transport. Insuring the stock against fire is risk bearing.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s12",
+     "layout": "check",
+     "heading": "Quick check: which utility?",
+     "body_md": "Trucks carry bananas from Jalgaon to Delhi within two days. What does this function mainly create?",
+     "bullets": [],
+     "visual": null,
+     "math": [],
+     "narration": "Is the value added by time, or by place?",
+     "check_question_id": "q_isc12commerce_ch13_050",
+     "audio": null
+    },
+    {
+     "id": "s13",
+     "layout": "summary",
+     "heading": "Summary of Part 2",
+     "body_md": "",
+     "bullets": [],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Idea",
+        "Key point"
+       ],
+       "rows": [
+        [
+         "Objectives",
+         "Demand, satisfaction, market share, profitable sales, goodwill"
+        ],
+        [
+         "Importance",
+         "To the firm, consumers and society"
+        ],
+        [
+         "Exchange and supply",
+         "Buying, assembling, selling; transport, storage"
+        ],
+        [
+         "Facilitating",
+         "Standardisation, grading, financing, risk bearing, research"
+        ]
+       ]
+      },
+      "alt": "Summary table of Part 2: objectives, importance and the three groups of marketing functions"
+     },
+     "math": [],
+     "narration": "To sum up Part 2. Marketing aims at demand, satisfaction, market share, profitable sales and goodwill. It matters to firms, consumers and society. Its functions are exchange functions, physical supply functions and facilitating functions such as standardisation, grading, financing, risk bearing and research.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s14",
+     "layout": "exam-tips",
+     "heading": "Exam tips",
+     "body_md": "",
+     "bullets": [
+      "For importance, cover **firm, consumers and society**.",
+      "Keep **standardisation** (before) and **grading** (after) apart.",
+      "Link storage to **time** utility and transport to **place** utility.",
+      "In cases, find the **verb** and name the function."
+     ],
+     "visual": {
+      "kind": "flow",
+      "spec": {
+       "direction": "LR",
+       "nodes": [
+        {
+         "id": "n1",
+         "label": "Quote the clue"
+        },
+        {
+         "id": "n2",
+         "label": "Name the type, concept or function"
+        },
+        {
+         "id": "n3",
+         "label": "Explain it"
+        }
+       ],
+       "edges": [
+        {
+         "from": "n1",
+         "to": "n2"
+        },
+        {
+         "from": "n2",
+         "to": "n3"
+        }
+       ]
+      },
+      "alt": "Three steps for case questions: quote the clue, name the type, concept or function, and explain it"
+     },
+     "math": [],
+     "narration": "Final tips. In importance answers, cover the firm, consumers and society. Remember that standardisation comes before and grading after. Tie storage to time utility and transport to place utility. In case questions, find the action word and name the function it shows.",
+     "check_question_id": null,
+     "audio": null
+    }
+   ],
+   "status": "draft",
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  }
+ ],
+ "notes": {
+  "unit": "isc-12-commerce-ch13",
+  "version": 1,
+  "title": "Marketing: Concept and Functions — notes",
+  "language": "en",
+  "sections": [
+   {
+    "heading": "1. Market: meaning and types",
+    "body_md": "In marketing, a **market** means the **actual and potential buyers** of a product, not just a place.\n\n**By area:** local; regional; national; international (global).\n\n**By time:** **very short period** (supply fixed, e.g. perishables); **short period** (supply can change partly with existing plant); **long period** (supply can change fully, including new plant). Some books add a secular or very long period.\n\n**By nature of goods:** produce (commodity) markets for farm goods; manufactured goods markets (consumer and industrial goods); bullion markets for gold and silver; stock markets for securities.",
+    "key_terms": [
+     {
+      "term": "Market",
+      "definition_md": "Actual and potential buyers of a product."
+     },
+     {
+      "term": "Very short period market",
+      "definition_md": "A market in which supply is fixed and cannot be changed."
+     },
+     {
+      "term": "Bullion market",
+      "definition_md": "A market for gold and silver."
+     }
+    ],
+    "formulas": [],
+    "visual": {
+     "kind": "svg",
+     "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 560 330\" role=\"img\" aria-label=\"Tree diagram: markets classified three ways. By area: local, regional, national, international. By time: very short period, short period, long period. By nature of goods: produce, manufactured goods, bullion, stock\" font-family=\"sans-serif\" font-size=\"14\" fill=\"none\"><title>Tree diagram: markets classified three ways. By area: local, regional, national, international. By time: very short period, short period, long period. By nature of goods: produce, manufactured goods, bullion, stock</title><rect x=\"210\" y=\"14\" width=\"140\" height=\"40\" rx=\"8\" fill=\"var(--diagram-accent)\" fill-opacity=\"0.15\" stroke=\"var(--diagram-accent)\" stroke-width=\"1.6\"/><text x=\"280\" y=\"34\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"15\" font-weight=\"bold\">Markets</text><line x1=\"280\" y1=\"54\" x2=\"95\" y2=\"92\" fill=\"none\" stroke=\"var(--diagram-muted)\" stroke-width=\"1.4\"/><rect x=\"13\" y=\"92\" width=\"164\" height=\"36\" rx=\"8\" fill=\"var(--diagram-blue)\" fill-opacity=\"0.16\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.4\"/><text x=\"95\" y=\"110\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"13\" font-weight=\"bold\">By area</text><line x1=\"95\" y1=\"128\" x2=\"95\" y2=\"146\" fill=\"none\" stroke=\"var(--diagram-muted)\" stroke-width=\"1.2\"/><rect x=\"21\" y=\"146\" width=\"148\" height=\"28\" rx=\"6\" fill=\"var(--diagram-blue)\" fill-opacity=\"0.07\" stroke=\"var(--diagram-blue)\" stroke-width=\"1\"/><text x=\"95\" y=\"160\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">Local</text><line x1=\"95\" y1=\"172\" x2=\"95\" y2=\"190\" fill=\"none\" stroke=\"var(--diagram-muted)\" stroke-width=\"1.2\"/><rect x=\"21\" y=\"190\" width=\"148\" height=\"28\" rx=\"6\" fill=\"var(--diagram-blue)\" fill-opacity=\"0.07\" stroke=\"var(--diagram-blue)\" stroke-width=\"1\"/><text x=\"95\" y=\"204\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">Regional</text><line x1=\"95\" y1=\"216\" x2=\"95\" y2=\"234\" fill=\"none\" stroke=\"var(--diagram-muted)\" stroke-width=\"1.2\"/><rect x=\"21\" y=\"234\" width=\"148\" height=\"28\" rx=\"6\" fill=\"var(--diagram-blue)\" fill-opacity=\"0.07\" stroke=\"var(--diagram-blue)\" stroke-width=\"1\"/><text x=\"95\" y=\"248\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">National</text><line x1=\"95\" y1=\"260\" x2=\"95\" y2=\"278\" fill=\"none\" stroke=\"var(--diagram-muted)\" stroke-width=\"1.2\"/><rect x=\"21\" y=\"278\" width=\"148\" height=\"28\" rx=\"6\" fill=\"var(--diagram-blue)\" fill-opacity=\"0.07\" stroke=\"var(--diagram-blue)\" stroke-width=\"1\"/><text x=\"95\" y=\"292\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">International</text><line x1=\"280\" y1=\"54\" x2=\"280\" y2=\"92\" fill=\"none\" stroke=\"var(--diagram-muted)\" stroke-width=\"1.4\"/><rect x=\"198\" y=\"92\" width=\"164\" height=\"36\" rx=\"8\" fill=\"var(--diagram-green)\" fill-opacity=\"0.16\" stroke=\"var(--diagram-green)\" stroke-width=\"1.4\"/><text x=\"280\" y=\"110\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"13\" font-weight=\"bold\">By time</text><line x1=\"280\" y1=\"128\" x2=\"280\" y2=\"146\" fill=\"none\" stroke=\"var(--diagram-muted)\" stroke-width=\"1.2\"/><rect x=\"206\" y=\"146\" width=\"148\" height=\"28\" rx=\"6\" fill=\"var(--diagram-green)\" fill-opacity=\"0.07\" stroke=\"var(--diagram-green)\" stroke-width=\"1\"/><text x=\"280\" y=\"160\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">Very short period</text><line x1=\"280\" y1=\"172\" x2=\"280\" y2=\"190\" fill=\"none\" stroke=\"var(--diagram-muted)\" stroke-width=\"1.2\"/><rect x=\"206\" y=\"190\" width=\"148\" height=\"28\" rx=\"6\" fill=\"var(--diagram-green)\" fill-opacity=\"0.07\" stroke=\"var(--diagram-green)\" stroke-width=\"1\"/><text x=\"280\" y=\"204\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">Short period</text><line x1=\"280\" y1=\"216\" x2=\"280\" y2=\"234\" fill=\"none\" stroke=\"var(--diagram-muted)\" stroke-width=\"1.2\"/><rect x=\"206\" y=\"234\" width=\"148\" height=\"28\" rx=\"6\" fill=\"var(--diagram-green)\" fill-opacity=\"0.07\" stroke=\"var(--diagram-green)\" stroke-width=\"1\"/><text x=\"280\" y=\"248\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">Long period</text><line x1=\"280\" y1=\"54\" x2=\"465\" y2=\"92\" fill=\"none\" stroke=\"var(--diagram-muted)\" stroke-width=\"1.4\"/><rect x=\"383\" y=\"92\" width=\"164\" height=\"36\" rx=\"8\" fill=\"var(--diagram-yellow)\" fill-opacity=\"0.16\" stroke=\"var(--diagram-yellow)\" stroke-width=\"1.4\"/><text x=\"465\" y=\"110\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"13\" font-weight=\"bold\">By nature of goods</text><line x1=\"465\" y1=\"128\" x2=\"465\" y2=\"146\" fill=\"none\" stroke=\"var(--diagram-muted)\" stroke-width=\"1.2\"/><rect x=\"391\" y=\"146\" width=\"148\" height=\"28\" rx=\"6\" fill=\"var(--diagram-yellow)\" fill-opacity=\"0.07\" stroke=\"var(--diagram-yellow)\" stroke-width=\"1\"/><text x=\"465\" y=\"160\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">Produce</text><line x1=\"465\" y1=\"172\" x2=\"465\" y2=\"190\" fill=\"none\" stroke=\"var(--diagram-muted)\" stroke-width=\"1.2\"/><rect x=\"391\" y=\"190\" width=\"148\" height=\"28\" rx=\"6\" fill=\"var(--diagram-yellow)\" fill-opacity=\"0.07\" stroke=\"var(--diagram-yellow)\" stroke-width=\"1\"/><text x=\"465\" y=\"204\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">Manufactured goods</text><line x1=\"465\" y1=\"216\" x2=\"465\" y2=\"234\" fill=\"none\" stroke=\"var(--diagram-muted)\" stroke-width=\"1.2\"/><rect x=\"391\" y=\"234\" width=\"148\" height=\"28\" rx=\"6\" fill=\"var(--diagram-yellow)\" fill-opacity=\"0.07\" stroke=\"var(--diagram-yellow)\" stroke-width=\"1\"/><text x=\"465\" y=\"248\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">Bullion</text><line x1=\"465\" y1=\"260\" x2=\"465\" y2=\"278\" fill=\"none\" stroke=\"var(--diagram-muted)\" stroke-width=\"1.2\"/><rect x=\"391\" y=\"278\" width=\"148\" height=\"28\" rx=\"6\" fill=\"var(--diagram-yellow)\" fill-opacity=\"0.07\" stroke=\"var(--diagram-yellow)\" stroke-width=\"1\"/><text x=\"465\" y=\"292\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">Stock</text></svg>",
+     "alt": "Tree diagram: markets classified three ways. By area: local, regional, national, international. By time: very short period, short period, long period. By nature of goods: produce, manufactured goods, bullion, stock",
+     "caption": "Three ways of classifying markets."
+    },
+    "visuals": [
+     {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Market by time",
+        "Can supply change?",
+        "Example"
+       ],
+       "rows": [
+        [
+         "Very short period",
+         "No: supply is fixed",
+         "Fresh fish, flowers"
+        ],
+        [
+         "Short period",
+         "Partly, with existing plants",
+         "Extra bakery shifts before a festival"
+        ],
+        [
+         "Long period",
+         "Fully, even with new plants",
+         "New ginning units over years"
+        ]
+       ]
+      },
+      "alt": "Table of markets by time: very short, short and long period, whether supply can change in each, with examples"
+     },
+     {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Imagined situation",
+        "Basis",
+        "Type"
+       ],
+       "rows": [
+        [
+         "Garlands bought only by nearby shops",
+         "Area",
+         "Local"
+        ],
+        [
+         "Glass bangles sold in Africa and Europe",
+         "Area",
+         "International"
+        ],
+        [
+         "A morning fish catch sold within hours",
+         "Time",
+         "Very short period"
+        ],
+        [
+         "Ginning units built up over years",
+         "Time",
+         "Long period"
+        ],
+        [
+         "Dealers trading gold and silver",
+         "Nature of goods",
+         "Bullion"
+        ]
+       ]
+      },
+      "alt": "Worked table classifying five imagined situations by basis (area, time or nature of goods) and type of market",
+      "caption": "First decide the basis, then the type."
+     }
+    ],
+    "topic_ids": [
+     "isc-12-commerce-ch13-t01"
+    ]
+   },
+   {
+    "heading": "2. Marketing: meaning and features",
+    "body_md": "**Marketing** is the social and managerial process of finding out what customers need and want, and satisfying those needs through the creation and **exchange** of goods and services, so that the firm earns a **profit**.\n\n**Features:** needs and wants; creating a market offering; customer value; exchange mechanism; customer orientation; it is continuous; it applies to goods, services and non-business bodies alike.",
+    "key_terms": [
+     {
+      "term": "Marketing",
+      "definition_md": "Identifying and satisfying customer needs through exchange, at a profit."
+     },
+     {
+      "term": "Market offering",
+      "definition_md": "The product or service, with its price and service, offered to meet a need."
+     }
+    ],
+    "formulas": [],
+    "visual": {
+     "kind": "table",
+     "spec": {
+      "headers": [
+       "Feature of marketing",
+       "Meaning"
+      ],
+      "rows": [
+       [
+        "Needs and wants",
+        "It starts by finding what people need"
+       ],
+       [
+        "Market offering",
+        "A product or service designed to meet those needs"
+       ],
+       [
+        "Customer value",
+        "Buyers feel the benefit is worth the price"
+       ],
+       [
+        "Exchange mechanism",
+        "Goods or services change hands for money"
+       ],
+       [
+        "Customer orientation",
+        "Every activity is built around the buyer"
+       ],
+       [
+        "Goods and services",
+        "It applies to both, and to non-business bodies"
+       ]
+      ]
+     },
+     "alt": "Table of six features of marketing with their meanings"
+    },
+    "visuals": [],
+    "topic_ids": [
+     "isc-12-commerce-ch13-t01"
+    ]
+   },
+   {
+    "heading": "3. Traditional and modern concepts; marketing versus selling",
+    "body_md": "**Traditional concepts** (start from the factory; profit through sales volume):\n- **Production concept** — buyers want cheap, widely available goods; focus on mass output.\n- **Product concept** — buyers want the best quality; focus on perfecting the product (can ignore changing needs).\n- **Selling concept** — buyers will not buy enough unless persuaded; focus on aggressive selling.\n\n**Modern concepts** (start from the market):\n- **Marketing concept** — find needs first, satisfy them better than rivals; profit through satisfaction.\n- **Societal marketing concept** — satisfy customers while protecting the long-term welfare of society and the environment.\n\n**Marketing vs selling:** selling is one part of marketing; it transfers ownership, focuses on the seller's need and ends with the sale. Marketing focuses on the buyer, begins before production and continues after the sale.",
+    "key_terms": [
+     {
+      "term": "Selling concept",
+      "definition_md": "The view that goods must be pushed through aggressive selling."
+     },
+     {
+      "term": "Societal marketing concept",
+      "definition_md": "Customer satisfaction plus the long-term welfare of society."
+     }
+    ],
+    "formulas": [],
+    "visual": {
+     "kind": "table",
+     "spec": {
+      "headers": [
+       "Concept",
+       "Starts from",
+       "Main focus",
+       "Profit through"
+      ],
+      "rows": [
+       [
+        "Production",
+        "Factory",
+        "Low cost, wide availability",
+        "Sales volume"
+       ],
+       [
+        "Product",
+        "Factory",
+        "Product quality and features",
+        "Sales volume"
+       ],
+       [
+        "Selling",
+        "Factory",
+        "Aggressive selling and promotion",
+        "Sales volume"
+       ],
+       [
+        "Marketing",
+        "Market",
+        "Customer needs",
+        "Customer satisfaction"
+       ],
+       [
+        "Societal marketing",
+        "Market and society",
+        "Customer needs and social welfare",
+        "Satisfaction and social welfare"
+       ]
+      ]
+     },
+     "alt": "Table comparing five concepts of marketing by starting point, main focus and route to profit"
+    },
+    "visuals": [
+     {
+      "kind": "flow",
+      "spec": {
+       "direction": "LR",
+       "nodes": [
+        {
+         "id": "n1",
+         "label": "Production"
+        },
+        {
+         "id": "n2",
+         "label": "Product"
+        },
+        {
+         "id": "n3",
+         "label": "Selling"
+        },
+        {
+         "id": "n4",
+         "label": "Marketing"
+        },
+        {
+         "id": "n5",
+         "label": "Societal marketing"
+        }
+       ],
+       "edges": [
+        {
+         "from": "n1",
+         "to": "n2"
+        },
+        {
+         "from": "n2",
+         "to": "n3"
+        },
+        {
+         "from": "n3",
+         "to": "n4"
+        },
+        {
+         "from": "n4",
+         "to": "n5"
+        }
+       ]
+      },
+      "alt": "Five concepts of marketing in the order they developed: production, product, selling, marketing and societal marketing",
+      "caption": "Traditional concepts on the left, modern on the right."
+     },
+     {
+      "kind": "svg",
+      "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 560 230\" role=\"img\" aria-label=\"Seven boxes in a row: find needs, design product, fix price, distribute, promote, sell, after-sales. A bracket over all seven is labelled marketing, from needs to after-sales service; a short bracket under the sell box alone is labelled selling, one part\" font-family=\"sans-serif\" font-size=\"14\" fill=\"none\"><title>Seven boxes in a row: find needs, design product, fix price, distribute, promote, sell, after-sales. A bracket over all seven is labelled marketing, from needs to after-sales service; a short bracket under the sell box alone is labelled selling, one part</title><rect x=\"18\" y=\"90\" width=\"72\" height=\"44\" rx=\"6\" fill=\"var(--diagram-blue)\" fill-opacity=\"0.12\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.3\"/><text x=\"54\" y=\"105\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"11\">Find</text><text x=\"54\" y=\"121\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"11\">needs</text><rect x=\"94\" y=\"90\" width=\"72\" height=\"44\" rx=\"6\" fill=\"var(--diagram-blue)\" fill-opacity=\"0.12\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.3\"/><text x=\"130\" y=\"105\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"11\">Design</text><text x=\"130\" y=\"121\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"11\">product</text><rect x=\"170\" y=\"90\" width=\"72\" height=\"44\" rx=\"6\" fill=\"var(--diagram-blue)\" fill-opacity=\"0.12\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.3\"/><text x=\"206\" y=\"105\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"11\">Fix</text><text x=\"206\" y=\"121\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"11\">price</text><rect x=\"246\" y=\"90\" width=\"72\" height=\"44\" rx=\"6\" fill=\"var(--diagram-blue)\" fill-opacity=\"0.12\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.3\"/><text x=\"282\" y=\"112\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"11\">Distribute</text><rect x=\"322\" y=\"90\" width=\"72\" height=\"44\" rx=\"6\" fill=\"var(--diagram-blue)\" fill-opacity=\"0.12\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.3\"/><text x=\"358\" y=\"112\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"11\">Promote</text><rect x=\"398\" y=\"90\" width=\"72\" height=\"44\" rx=\"6\" fill=\"var(--diagram-accent)\" fill-opacity=\"0.25\" stroke=\"var(--diagram-accent)\" stroke-width=\"1.3\"/><text x=\"434\" y=\"112\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"11\">Sell</text><rect x=\"474\" y=\"90\" width=\"72\" height=\"44\" rx=\"6\" fill=\"var(--diagram-blue)\" fill-opacity=\"0.12\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.3\"/><text x=\"510\" y=\"112\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"11\">After-sales</text><line x1=\"18\" y1=\"70\" x2=\"546\" y2=\"70\" fill=\"none\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.6\"/><line x1=\"18\" y1=\"64\" x2=\"18\" y2=\"76\" fill=\"none\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.6\"/><line x1=\"546\" y1=\"64\" x2=\"546\" y2=\"76\" fill=\"none\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.6\"/><text x=\"282\" y=\"50\" fill=\"var(--diagram-blue)\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"13\" font-weight=\"bold\">Marketing: from needs to after-sales service</text><line x1=\"398\" y1=\"154\" x2=\"470\" y2=\"154\" fill=\"none\" stroke=\"var(--diagram-accent)\" stroke-width=\"1.6\"/><line x1=\"398\" y1=\"148\" x2=\"398\" y2=\"160\" fill=\"none\" stroke=\"var(--diagram-accent)\" stroke-width=\"1.6\"/><line x1=\"470\" y1=\"148\" x2=\"470\" y2=\"160\" fill=\"none\" stroke=\"var(--diagram-accent)\" stroke-width=\"1.6\"/><text x=\"434\" y=\"178\" fill=\"var(--diagram-accent)\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"13\" font-weight=\"bold\">Selling</text><text x=\"434\" y=\"196\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"11\">one part</text></svg>",
+      "alt": "Seven boxes in a row: find needs, design product, fix price, distribute, promote, sell, after-sales. A bracket over all seven is labelled marketing, from needs to after-sales service; a short bracket under the sell box alone is labelled selling, one part",
+      "caption": "Marketing spans the whole chain; selling is one link in it."
+     },
+     {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Basis",
+        "Selling",
+        "Marketing"
+       ],
+       "rows": [
+        [
+         "Scope",
+         "Transfer of ownership only",
+         "Research, design, price, distribution, promotion, sale, service"
+        ],
+        [
+         "Focus",
+         "Seller's need to clear stock",
+         "Buyer's needs"
+        ],
+        [
+         "Begins and ends",
+         "After production; ends with the sale",
+         "Before production; continues after the sale"
+        ],
+        [
+         "Profit through",
+         "Sales volume",
+         "Customer satisfaction"
+        ]
+       ]
+      },
+      "alt": "Table distinguishing selling from marketing on scope, focus, when it begins and ends, and the route to profit"
+     }
+    ],
+    "topic_ids": [
+     "isc-12-commerce-ch13-t02"
+    ]
+   },
+   {
+    "heading": "4. Objectives and importance of marketing",
+    "body_md": "**Objectives:** creating demand; customer satisfaction; increasing market share; profitable sales volume; building goodwill and image.\n\n**Importance to firms:** higher sales and profit; information for decisions; development of new products.\n\n**Importance to consumers:** wider choice; better quality; information; value for money; higher standard of living.\n\n**Importance to society:** employment in transport, storage, retailing and advertising; economic growth; goods reaching every region; a link between production and consumption.",
+    "key_terms": [
+     {
+      "term": "Market share",
+      "definition_md": "A firm's sales as a part of the total sales of the industry."
+     },
+     {
+      "term": "Goodwill",
+      "definition_md": "The trust and reputation a firm builds with buyers."
+     }
+    ],
+    "formulas": [],
+    "visual": {
+     "kind": "table",
+     "spec": {
+      "headers": [
+       "Marketing helps…",
+       "How"
+      ],
+      "rows": [
+       [
+        "The firm",
+        "More sales and profit; information for decisions; new products"
+       ],
+       [
+        "Consumers",
+        "Wider choice, better quality, information, value for money"
+       ],
+       [
+        "Society",
+        "Jobs, economic growth, goods reaching every region, higher living standards"
+       ]
+      ]
+     },
+     "alt": "Table of the importance of marketing to the firm, to consumers and to society"
+    },
+    "visuals": [
+     {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Objective",
+        "Imagined example"
+       ],
+       "rows": [
+        [
+         "Creating demand",
+         "Cooking demos for a new fox-nut snack"
+        ],
+        [
+         "Customer satisfaction",
+         "Free replacement of a spoiled mango box"
+        ],
+        [
+         "Increasing market share",
+         "Aiming to double share of bangle sales"
+        ],
+        [
+         "Profitable sales volume",
+         "Selling more at a fair margin"
+        ],
+        [
+         "Goodwill and image",
+         "A name that importers trust"
+        ]
+       ]
+      },
+      "alt": "Table of five objectives of marketing with an imagined example of each"
+     },
+     {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Effect of marketing fox-nut snacks (imagined)",
+        "Who gains"
+       ],
+       "rows": [
+        [
+         "Sales spread to new cities; profit rises",
+         "The firm"
+        ],
+        [
+         "City buyers get a healthy new snack",
+         "Consumers"
+        ],
+        [
+         "Pond workers, roasters and drivers find work",
+         "Society"
+        ]
+       ]
+      },
+      "alt": "Worked table: three effects of marketing an imagined fox-nut snack and who gains from each",
+      "caption": "Sort each effect by who gains: the firm, consumers or society."
+     }
+    ],
+    "topic_ids": [
+     "isc-12-commerce-ch13-t03"
+    ]
+   },
+   {
+    "heading": "5. Functions of marketing",
+    "body_md": "**Functions of exchange:**\n- **Buying** — acquiring goods of the right kind, quality and quantity for resale or use.\n- **Assembling** — gathering goods from scattered producers into one place.\n- **Selling** — transferring ownership to the buyer.\n\n**Functions of physical supply:**\n- **Transport** — moving goods to buyers (place utility).\n- **Storage / warehousing** — holding goods until they are wanted (time utility).\n\n**Facilitating functions:**\n- **Standardisation** — setting specifications in advance.\n- **Grading** — sorting goods into classes after production or harvest.\n- **Financing** — providing funds and credit for marketing activities.\n- **Risk bearing** — covering losses from damage, delay, theft or price changes.\n- **Market research / information** — collecting and analysing data on buyers, demand and rivals.",
+    "key_terms": [
+     {
+      "term": "Assembling",
+      "definition_md": "Bringing goods from many producers to one place."
+     },
+     {
+      "term": "Standardisation",
+      "definition_md": "Fixing specifications that every unit must meet."
+     },
+     {
+      "term": "Grading",
+      "definition_md": "Sorting goods into classes of similar quality."
+     },
+     {
+      "term": "Time utility",
+      "definition_md": "Value added by having goods available when wanted."
+     },
+     {
+      "term": "Place utility",
+      "definition_md": "Value added by having goods where buyers are."
+     }
+    ],
+    "formulas": [],
+    "visual": {
+     "kind": "table",
+     "spec": {
+      "headers": [
+       "Group",
+       "Functions",
+       "Purpose"
+      ],
+      "rows": [
+       [
+        "Exchange",
+        "Buying, assembling, selling",
+        "Transfer ownership"
+       ],
+       [
+        "Physical supply",
+        "Transport, storage",
+        "Place and time utility"
+       ],
+       [
+        "Facilitating",
+        "Standardisation, grading, financing, risk bearing, market research",
+        "Help the others run smoothly"
+       ]
+      ]
+     },
+     "alt": "Table grouping marketing functions into exchange, physical supply and facilitating functions, with the purpose of each group"
+    },
+    "visuals": [
+     {
+      "kind": "flow",
+      "spec": {
+       "direction": "LR",
+       "nodes": [
+        {
+         "id": "n1",
+         "label": "Research"
+        },
+        {
+         "id": "n2",
+         "label": "Buying and assembling"
+        },
+        {
+         "id": "n3",
+         "label": "Standardisation and grading"
+        },
+        {
+         "id": "n4",
+         "label": "Storage"
+        },
+        {
+         "id": "n5",
+         "label": "Transport"
+        },
+        {
+         "id": "n6",
+         "label": "Selling"
+        }
+       ],
+       "edges": [
+        {
+         "from": "n1",
+         "to": "n2"
+        },
+        {
+         "from": "n2",
+         "to": "n3"
+        },
+        {
+         "from": "n3",
+         "to": "n4"
+        },
+        {
+         "from": "n4",
+         "to": "n5"
+        },
+        {
+         "from": "n5",
+         "to": "n6"
+        }
+       ]
+      },
+      "alt": "Marketing functions in the order goods usually meet them: research, buying and assembling, standardisation and grading, storage, transport and selling",
+      "caption": "Financing and risk bearing support every link."
+     },
+     {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "",
+        "Standardisation",
+        "Grading"
+       ],
+       "rows": [
+        [
+         "When",
+         "Before or during production",
+         "After production or harvest"
+        ],
+        [
+         "What",
+         "Fixes specifications all units must meet",
+         "Sorts units into classes"
+        ],
+        [
+         "Imagined example",
+         "Size and knot count for each carpet design",
+         "Litchis into export and juice classes"
+        ]
+       ]
+      },
+      "alt": "Table contrasting standardisation and grading by timing, what each does and an imagined example"
+     },
+     {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "What the imagined ginger group does",
+        "Function"
+       ],
+       "rows": [
+        [
+         "Buys ginger from many small farmers",
+         "Buying and assembling"
+        ],
+        [
+         "Sorts it into three sizes",
+         "Grading"
+        ],
+        [
+         "Keeps it in a dry godown",
+         "Storage"
+        ],
+        [
+         "Traders carry it to Guwahati",
+         "Transport"
+        ],
+        [
+         "Insures stock against fire",
+         "Risk bearing"
+        ]
+       ]
+      },
+      "alt": "Worked table: five activities of an imagined ginger growers' group, each matched with a marketing function",
+      "caption": "Look for the verb: buys, sorts, keeps, carries, insures."
+     }
+    ],
+    "topic_ids": [
+     "isc-12-commerce-ch13-t04"
+    ]
+   }
+  ],
+  "exam_tips_md": "**Common mistakes**\n- Defining a market as a place.\n- Confusing the product concept (quality) with the marketing concept (needs).\n- Saying marketing ends with the sale.\n- Mixing up standardisation and grading, or time and place utility.\n\n**How marks are usually awarded**\n- 1 mark: correct type, concept or function.\n- 2–3 marks: each point named and explained, tied to the case.\n- 5 marks: parts answered separately; classifications give the basis and an example; function answers give an example for each.\n- Case questions: quote the clue, name the idea, explain it.",
+  "status": "draft",
+  "provenance": {
+   "origin": "human",
+   "template_version": null,
+   "model": null,
+   "generated_at": "2026-10-31",
+   "author": "claude-opus-5-5 (subject-producer)"
+  }
+ },
+ "flashcards": {
+  "unit": "isc-12-commerce-ch13",
+  "version": 1,
+  "language": "en",
+  "cards": [
+   {
+    "id": "f01",
+    "front_md": "**Market** (in marketing)",
+    "back_md": "Actual and potential buyers of a product.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch13-t01"
+   },
+   {
+    "id": "f02",
+    "front_md": "Markets by area",
+    "back_md": "Local, regional, national, international.",
+    "tag": "exam-tip",
+    "topic_id": "isc-12-commerce-ch13-t01"
+   },
+   {
+    "id": "f03",
+    "front_md": "Markets by time",
+    "back_md": "Very short period, short period, long period.",
+    "tag": "exam-tip",
+    "topic_id": "isc-12-commerce-ch13-t01"
+   },
+   {
+    "id": "f04",
+    "front_md": "Markets by nature of goods",
+    "back_md": "Produce, manufactured goods, bullion, stock.",
+    "tag": "exam-tip",
+    "topic_id": "isc-12-commerce-ch13-t01"
+   },
+   {
+    "id": "f05",
+    "front_md": "**Very short period market**",
+    "back_md": "Supply is fixed; e.g. a morning fish catch.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch13-t01"
+   },
+   {
+    "id": "f06",
+    "front_md": "**Long period market**",
+    "back_md": "Supply can change fully, even with new plants.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch13-t01"
+   },
+   {
+    "id": "f07",
+    "front_md": "**Bullion market**",
+    "back_md": "A market for gold and silver.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch13-t01"
+   },
+   {
+    "id": "f08",
+    "front_md": "**Marketing**",
+    "back_md": "Identifying and satisfying needs through exchange, at a profit.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch13-t01"
+   },
+   {
+    "id": "f09",
+    "front_md": "Features of marketing",
+    "back_md": "Needs and wants, market offering, customer value, exchange, customer orientation.",
+    "tag": "exam-tip",
+    "topic_id": "isc-12-commerce-ch13-t01"
+   },
+   {
+    "id": "f10",
+    "front_md": "Traditional concepts",
+    "back_md": "Production, product, selling: start from the factory; profit through volume.",
+    "tag": "concept",
+    "topic_id": "isc-12-commerce-ch13-t02"
+   },
+   {
+    "id": "f11",
+    "front_md": "Modern concepts",
+    "back_md": "Marketing, societal marketing: start from the customer; profit through satisfaction.",
+    "tag": "concept",
+    "topic_id": "isc-12-commerce-ch13-t02"
+   },
+   {
+    "id": "f12",
+    "front_md": "**Production concept**",
+    "back_md": "Cheap, widely available goods through mass output.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch13-t02"
+   },
+   {
+    "id": "f13",
+    "front_md": "**Product concept**",
+    "back_md": "Focus on perfecting the product, even if needs change.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch13-t02"
+   },
+   {
+    "id": "f14",
+    "front_md": "**Selling concept**",
+    "back_md": "Goods must be pushed by aggressive selling.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch13-t02"
+   },
+   {
+    "id": "f15",
+    "front_md": "**Marketing concept**",
+    "back_md": "Find needs first; profit through customer satisfaction.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch13-t02"
+   },
+   {
+    "id": "f16",
+    "front_md": "**Societal marketing concept**",
+    "back_md": "Satisfaction plus the long-term welfare of society.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch13-t02"
+   },
+   {
+    "id": "f17",
+    "front_md": "Marketing vs selling",
+    "back_md": "Selling is one part; marketing starts before production and continues after the sale.",
+    "tag": "concept",
+    "topic_id": "isc-12-commerce-ch13-t02"
+   },
+   {
+    "id": "f18",
+    "front_md": "Objectives of marketing",
+    "back_md": "Demand, satisfaction, market share, profitable sales, goodwill.",
+    "tag": "exam-tip",
+    "topic_id": "isc-12-commerce-ch13-t03"
+   },
+   {
+    "id": "f19",
+    "front_md": "Marketing helps consumers by…",
+    "back_md": "Wider choice, better quality, information, value for money.",
+    "tag": "fact",
+    "topic_id": "isc-12-commerce-ch13-t03"
+   },
+   {
+    "id": "f20",
+    "front_md": "Marketing helps society by…",
+    "back_md": "Creating jobs and supporting economic growth.",
+    "tag": "fact",
+    "topic_id": "isc-12-commerce-ch13-t03"
+   },
+   {
+    "id": "f21",
+    "front_md": "Functions of exchange",
+    "back_md": "Buying, assembling, selling.",
+    "tag": "exam-tip",
+    "topic_id": "isc-12-commerce-ch13-t04"
+   },
+   {
+    "id": "f22",
+    "front_md": "Functions of physical supply",
+    "back_md": "Transport and storage.",
+    "tag": "exam-tip",
+    "topic_id": "isc-12-commerce-ch13-t04"
+   },
+   {
+    "id": "f23",
+    "front_md": "Facilitating functions",
+    "back_md": "Standardisation, grading, financing, risk bearing, market research.",
+    "tag": "exam-tip",
+    "topic_id": "isc-12-commerce-ch13-t04"
+   },
+   {
+    "id": "f24",
+    "front_md": "**Assembling**",
+    "back_md": "Gathering goods from many producers into one place.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch13-t04"
+   },
+   {
+    "id": "f25",
+    "front_md": "Standardisation vs grading",
+    "back_md": "Standardisation sets specifications first; grading sorts goods into classes after.",
+    "tag": "concept",
+    "topic_id": "isc-12-commerce-ch13-t04"
+   },
+   {
+    "id": "f26",
+    "front_md": "Storage creates…",
+    "back_md": "Time utility.",
+    "tag": "fact",
+    "topic_id": "isc-12-commerce-ch13-t04"
+   },
+   {
+    "id": "f27",
+    "front_md": "Transport creates…",
+    "back_md": "Place utility.",
+    "tag": "fact",
+    "topic_id": "isc-12-commerce-ch13-t04"
+   },
+   {
+    "id": "f28",
+    "front_md": "**Risk bearing**",
+    "back_md": "Covering losses from damage, delay or price falls, e.g. by insurance.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch13-t04"
+   },
+   {
+    "id": "f29",
+    "front_md": "**Financing** (marketing function)",
+    "back_md": "Providing funds and credit for marketing activities.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch13-t04"
+   },
+   {
+    "id": "f30",
+    "front_md": "Case routine",
+    "back_md": "Quote the clue, name the type, concept or function, explain it.",
+    "tag": "exam-tip",
+    "topic_id": "isc-12-commerce-ch13-t04"
+   }
+  ],
+  "status": "draft",
+  "provenance": {
+   "origin": "human",
+   "template_version": null,
+   "model": null,
+   "generated_at": "2026-10-31",
+   "author": "claude-opus-5-5 (subject-producer)"
+  }
+ },
+ "questions": [
+  {
+   "id": "q_isc12commerce_ch13_001",
+   "unit": "isc-12-commerce-ch13",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "When the export manager of Gandhsar Attars, an imagined perfume house in Kannauj, says \"our market in the Gulf is growing\", she is referring to",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "a building in the Gulf where attar is sold"
+    },
+    {
+     "id": "b",
+     "text_md": "the actual and potential buyers of attar in the Gulf region"
+    },
+    {
+     "id": "c",
+     "text_md": "the factory where the attar is distilled"
+    },
+    {
+     "id": "d",
+     "text_md": "the rivals who sell perfume in the Gulf"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (b)** the actual and potential buyers of attar in the Gulf region. In marketing, a market means the set of actual and potential buyers of a product, not a physical place.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch13-t01"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "b"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (b)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch13_002",
+   "unit": "isc-12-commerce-ch13",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Marigold garlands made by growers near an imagined temple town wilt within a day, so they are bought only by shops a few kilometres away. On the basis of area, this is a",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "national market"
+    },
+    {
+     "id": "b",
+     "text_md": "international market"
+    },
+    {
+     "id": "c",
+     "text_md": "regional market covering several states"
+    },
+    {
+     "id": "d",
+     "text_md": "local market"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (d)** local market. Highly perishable goods with buyers close by form a local market.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch13-t01"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "d"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (d)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch13_003",
+   "unit": "isc-12-commerce-ch13",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Kanch Kala Bangles, an imagined glass-bangle maker in Firozabad, sells to buyers in Dubai, Nairobi and London as well as in India. On the basis of area, its market is",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "international (global)"
+    },
+    {
+     "id": "b",
+     "text_md": "local"
+    },
+    {
+     "id": "c",
+     "text_md": "regional"
+    },
+    {
+     "id": "d",
+     "text_md": "very short period"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (a)** international (global). Buyers in several countries make the market international.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch13-t01"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (a)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch13_004",
+   "unit": "isc-12-commerce-ch13",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "At an imagined fish landing centre in Port Blair, the morning's catch must be sold within hours and no more fish can be brought in that day. On the basis of time, this is a",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "short period market"
+    },
+    {
+     "id": "b",
+     "text_md": "long period market"
+    },
+    {
+     "id": "c",
+     "text_md": "very short period market"
+    },
+    {
+     "id": "d",
+     "text_md": "secular market"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (c)** very short period market. When supply is fixed and cannot be changed at all, as with a day's perishable catch, the market is a very short period (market period) one.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch13-t01"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "c"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (c)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch13_005",
+   "unit": "isc-12-commerce-ch13",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Over several years, Purna Cotton Ginners, an imagined firm in Akola, can build new ginning units and fully change its output to match demand. On the basis of time, this is a",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "very short period market"
+    },
+    {
+     "id": "b",
+     "text_md": "short period market"
+    },
+    {
+     "id": "c",
+     "text_md": "long period market"
+    },
+    {
+     "id": "d",
+     "text_md": "local market"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (c)** long period market. When there is enough time for supply to adjust fully, including new plants, the market is a long period market.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch13-t01"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "c"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (c)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch13_006",
+   "unit": "isc-12-commerce-ch13",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "A market in which dealers buy and sell gold and silver is classified, on the basis of the nature of goods, as a",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "bullion market"
+    },
+    {
+     "id": "b",
+     "text_md": "stock market"
+    },
+    {
+     "id": "c",
+     "text_md": "produce market"
+    },
+    {
+     "id": "d",
+     "text_md": "very short period market"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (a)** bullion market. Markets dealing in gold and silver are bullion markets.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "recall",
+   "bloom": "remember",
+   "topic_ids": [
+    "isc-12-commerce-ch13-t01"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (a)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch13_007",
+   "unit": "isc-12-commerce-ch13",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Kasauli Hill Mushrooms, an imagined farm in Solan, first asks hotel chefs what they need, then grows button and oyster mushrooms to their specification and prices them so that chefs feel they get good value. Which feature of marketing is shown most clearly?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "It is concerned only with transferring ownership"
+    },
+    {
+     "id": "b",
+     "text_md": "It ends when the goods are sold"
+    },
+    {
+     "id": "c",
+     "text_md": "It applies only to manufactured goods"
+    },
+    {
+     "id": "d",
+     "text_md": "It starts from customer needs and creates value for the customer"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (d)** It starts from customer needs and creates value for the customer. Beginning with the buyer's needs and building an offering that gives them value is the customer orientation of marketing.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch13-t01"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "d"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (d)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch13_008",
+   "unit": "isc-12-commerce-ch13",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Ekamra Electronics, an imagined firm in Bhubaneswar, uses marketing to sell television sets, and an imagined dance academy in the same city uses it to fill its classes. This shows that marketing",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "is useful only to large firms"
+    },
+    {
+     "id": "b",
+     "text_md": "applies to services as well as goods"
+    },
+    {
+     "id": "c",
+     "text_md": "is the same as advertising"
+    },
+    {
+     "id": "d",
+     "text_md": "is needed only for luxury goods"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (b)** applies to services as well as goods. Marketing applies to both goods and services, and to non-business bodies too.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch13-t01"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "b"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (b)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch13_009",
+   "unit": "isc-12-commerce-ch13",
+   "language": "en",
+   "type": "assertion-reason",
+   "stem_md": "**Assertion (A):** In marketing, the market for a product includes people who do not yet buy it.\n\n**Reason (R):** Marketers treat both actual and potential buyers as the market.\n\nChoose the correct option.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Both Assertion and Reason are true and Reason is the correct explanation for Assertion."
+    },
+    {
+     "id": "b",
+     "text_md": "Both Assertion and Reason are true but Reason is not the correct explanation for Assertion."
+    },
+    {
+     "id": "c",
+     "text_md": "Assertion is true and Reason is false."
+    },
+    {
+     "id": "d",
+     "text_md": "Both Assertion and Reason are false."
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (a)** Both are true, and the reason explains the assertion: potential buyers are part of the market that marketing tries to win.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch13-t01"
+   ],
+   "expected_time_sec": 75,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (a)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch13_010",
+   "unit": "isc-12-commerce-ch13",
+   "language": "en",
+   "type": "true-false",
+   "stem_md": "In marketing, the word market always means a fixed place where buyers and sellers meet.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "True"
+    },
+    {
+     "id": "b",
+     "text_md": "False"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**False.** False. It means the buyers, actual and potential, of a product; trade may happen by phone or online with no meeting place.",
+   "marks": 1,
+   "difficulty": 1,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch13-t01"
+   ],
+   "expected_time_sec": 40,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "b"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct choice (False)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch13_011",
+   "unit": "isc-12-commerce-ch13",
+   "language": "en",
+   "type": "fill-blank",
+   "stem_md": "Complete the analogy. A day's catch sold the same morning : Very short period market :: Ginning capacity built up over several years : ___",
+   "options": [],
+   "match_right": [],
+   "solution_md": "A fixed supply sold at once is a very short period market; supply that can be fully changed over years is a long period market.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch13-t01"
+   ],
+   "expected_time_sec": 45,
+   "assets": [],
+   "answer": {
+    "blanks": [
+     {
+      "accepted": [
+       "Long period market",
+       "long period",
+       "long-period market",
+       "long run market"
+      ]
+     }
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Blank 1: Long period market",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch13_012",
+   "unit": "isc-12-commerce-ch13",
+   "language": "en",
+   "type": "fill-blank",
+   "stem_md": "A market in which shares and other securities of companies are bought and sold is called a ___ market.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "It is a stock (securities) market.",
+   "marks": 1,
+   "difficulty": 1,
+   "competency": "recall",
+   "bloom": "remember",
+   "topic_ids": [
+    "isc-12-commerce-ch13-t01"
+   ],
+   "expected_time_sec": 45,
+   "assets": [],
+   "answer": {
+    "blanks": [
+     {
+      "accepted": [
+       "stock",
+       "capital",
+       "securities",
+       "share"
+      ]
+     }
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Blank 1: stock",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch13_013",
+   "unit": "isc-12-commerce-ch13",
+   "language": "en",
+   "type": "match",
+   "stem_md": "Match each imagined situation with the type of market it shows.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Fresh garlands bought only by nearby shops"
+    },
+    {
+     "id": "b",
+     "text_md": "Packed fox nuts sold in every Indian state, none abroad"
+    },
+    {
+     "id": "c",
+     "text_md": "Glass bangles shipped to Africa and Europe"
+    },
+    {
+     "id": "d",
+     "text_md": "A morning catch that must be sold within hours"
+    }
+   ],
+   "match_right": [
+    {
+     "id": "p",
+     "text_md": "National market"
+    },
+    {
+     "id": "q",
+     "text_md": "Very short period market"
+    },
+    {
+     "id": "r",
+     "text_md": "Local market"
+    },
+    {
+     "id": "s",
+     "text_md": "International market"
+    }
+   ],
+   "solution_md": "**Key:** (a)–(r), (b)–(p), (c)–(s), (d)–(q). Nearby buyers make a local market; all of India, a national one; buyers abroad, an international one; a fixed, perishable supply, a very short period market.",
+   "marks": 2,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch13-t01"
+   ],
+   "expected_time_sec": 120,
+   "assets": [],
+   "answer": {
+    "pairs": [
+     {
+      "left_id": "a",
+      "right_id": "r"
+     },
+     {
+      "left_id": "b",
+      "right_id": "p"
+     },
+     {
+      "left_id": "c",
+      "right_id": "s"
+     },
+     {
+      "left_id": "d",
+      "right_id": "q"
+     }
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Each correct pair 0.5 mark (4 pairs)",
+     "marks": 2
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch13_014",
+   "unit": "isc-12-commerce-ch13",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Distinguish between a local market and an international market, giving an imagined Indian example of each.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Each type explained with a suitable example.",
+   "marks": 2,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch13-t01"
+   ],
+   "expected_time_sec": 150,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "A **local market** has buyers in and around **one place**, usually for perishable or bulky goods, such as fresh paneer sold within a town. An **international market** has buyers in **several countries**, such as hand-knotted carpets exported from an imagined Bhadohi firm."
+   },
+   "word_limit": {
+    "min": 30,
+    "max": 50
+   },
+   "marking_scheme": [
+    {
+     "step": "Local market with example",
+     "marks": 1
+    },
+    {
+     "step": "International market with example",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch13_015",
+   "unit": "isc-12-commerce-ch13",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Tapi Banana Ripeners, an imagined firm in Jalgaon, studies what fruit shops want, ripens bananas to the right stage and delivers them on time at a fair price. Explain the meaning of marketing with reference to the firm.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Meaning of marketing applied to the firm.",
+   "marks": 2,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch13-t01"
+   ],
+   "expected_time_sec": 150,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "**Marketing** is the process of **identifying customers' needs** and **satisfying them** through the exchange of goods or services, **at a profit**. The firm learns what shops need, offers bananas that suit them and earns through their **satisfaction**."
+   },
+   "word_limit": {
+    "min": 30,
+    "max": 50
+   },
+   "marking_scheme": [
+    {
+     "step": "Meaning",
+     "marks": 1
+    },
+    {
+     "step": "Applied to the case",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch13_016",
+   "unit": "isc-12-commerce-ch13",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Explain the classification of markets on the basis of time into very short period, short period and long period markets, with an imagined example of each.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Each type explained with an example.",
+   "marks": 3,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch13-t01"
+   ],
+   "expected_time_sec": 210,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Very short period:** supply is **fixed** and cannot change, as with **fresh fish** landed and sold the same morning.\n2. **Short period:** supply can be changed **partly**, using existing plants, as when a **bakery** runs extra shifts before a festival.\n3. **Long period:** supply can be changed **fully**, including new plants, as when a **cotton ginner** builds new units over years."
+   },
+   "word_limit": {
+    "min": 50,
+    "max": 75
+   },
+   "marking_scheme": [
+    {
+     "step": "Very short period",
+     "marks": 1
+    },
+    {
+     "step": "Short period",
+     "marks": 1
+    },
+    {
+     "step": "Long period",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch13_017",
+   "unit": "isc-12-commerce-ch13",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Explain three features of marketing, with reference to Kasauli Hill Mushrooms (imagined), Solan, which supplies mushrooms to hotels.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Any three features (needs and wants, market offering, customer value, exchange, customer orientation, continuous, goods and services), each applied.",
+   "marks": 3,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch13-t01"
+   ],
+   "expected_time_sec": 210,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Needs and wants:** it begins by finding what **hotel chefs need**, such as fresh mushrooms every morning.\n2. **Creating a market offering and value:** it grows the **right varieties** at prices that give chefs good value.\n3. **Exchange mechanism and continuity:** mushrooms are exchanged for payment, and the firm keeps **checking feedback** to serve chefs better."
+   },
+   "word_limit": {
+    "min": 50,
+    "max": 75
+   },
+   "marking_scheme": [
+    {
+     "step": "First feature",
+     "marks": 1
+    },
+    {
+     "step": "Second feature",
+     "marks": 1
+    },
+    {
+     "step": "Third feature",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch13_018",
+   "unit": "isc-12-commerce-ch13",
+   "language": "en",
+   "type": "long",
+   "stem_md": "(a) What is meant by a market in marketing? [1]\n(b) Classify markets on the basis of area, time and nature of goods, with an example of each type. [4]",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Meaning; classification by area, time and nature of goods with examples.",
+   "marks": 5,
+   "difficulty": 3,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch13-t01"
+   ],
+   "expected_time_sec": 600,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "(a) A **market** is the set of **actual and potential buyers** of a product, wherever they are and however they trade.\n\n(b) **By area:** **local** (fresh flowers sold in one town), **regional** (a snack sold across a few states), **national** (a packed food sold all over India) and **international** (carpets exported to many countries).\n**By time:** **very short period** (a day's fish catch, supply fixed), **short period** (supply partly adjustable, such as extra bakery shifts) and **long period** (supply fully adjustable through new plants).\n**By nature of goods:** **produce markets** (wheat, cotton), **manufactured goods markets** (fans, shoes), **bullion markets** (gold, silver) and **stock markets** (shares)."
+   },
+   "word_limit": {
+    "min": 100,
+    "max": 150
+   },
+   "marking_scheme": [
+    {
+     "step": "(a) Meaning",
+     "marks": 1
+    },
+    {
+     "step": "(b) By area",
+     "marks": 2
+    },
+    {
+     "step": "(b) By time and by nature of goods",
+     "marks": 2
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch13_019",
+   "unit": "isc-12-commerce-ch13",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Hasdeo Roofing, an imagined maker of cement sheets in Korba, believes that if it keeps costs low through huge output and stocks every hardware shop, its sheets will sell themselves. Which concept of marketing does it follow?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Production concept"
+    },
+    {
+     "id": "b",
+     "text_md": "Product concept"
+    },
+    {
+     "id": "c",
+     "text_md": "Selling concept"
+    },
+    {
+     "id": "d",
+     "text_md": "Societal marketing concept"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (a)** Production concept. Focusing on low cost through large-scale output and wide availability is the production concept.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch13-t02"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (a)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch13_020",
+   "unit": "isc-12-commerce-ch13",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Athangudi Tile Works, an imagined firm in Karaikudi, spent three years perfecting a hand-made tile that never fades, but sales fell because buyers now want large, plain tiles that are quick to lay. Which concept had the firm followed?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Marketing concept"
+    },
+    {
+     "id": "b",
+     "text_md": "Product concept"
+    },
+    {
+     "id": "c",
+     "text_md": "Production concept"
+    },
+    {
+     "id": "d",
+     "text_md": "Societal marketing concept"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (b)** Product concept. Concentrating on perfecting the product without checking what buyers want is the product concept; it can blind a firm to changing needs.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch13-t02"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "b"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (b)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch13_021",
+   "unit": "isc-12-commerce-ch13",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Gaula Furniture Mart, an imagined store in Haldwani, has a warehouse full of heavy sofas. Its salespeople follow every visitor around the showroom with \"today only\" offers, believing people will not buy enough unless pushed hard. This is the",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "marketing concept"
+    },
+    {
+     "id": "b",
+     "text_md": "product concept"
+    },
+    {
+     "id": "c",
+     "text_md": "selling concept"
+    },
+    {
+     "id": "d",
+     "text_md": "societal marketing concept"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (c)** selling concept. Relying on aggressive selling and promotion to dispose of what has been made is the selling concept.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch13-t02"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "c"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (c)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch13_022",
+   "unit": "isc-12-commerce-ch13",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Before planning its new range, Mandovi Bakeries, an imagined bakery in Panaji, asks regular customers what breads they want, bakes to match, and trains staff to fix any complaint at once, aiming to earn profit through satisfied customers. This is the",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "selling concept"
+    },
+    {
+     "id": "b",
+     "text_md": "production concept"
+    },
+    {
+     "id": "c",
+     "text_md": "product concept"
+    },
+    {
+     "id": "d",
+     "text_md": "marketing concept"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (d)** marketing concept. Starting from customer needs and earning profit through customer satisfaction is the marketing concept.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch13-t02"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "d"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (d)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch13_023",
+   "unit": "isc-12-commerce-ch13",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Andaman Coconut Products, an imagined firm in Port Blair, sells good coconut oil at fair prices, has moved to refillable steel cans and buys only from farms that protect mangroves. Which concept does it follow?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Selling concept"
+    },
+    {
+     "id": "b",
+     "text_md": "Production concept"
+    },
+    {
+     "id": "c",
+     "text_md": "Product concept"
+    },
+    {
+     "id": "d",
+     "text_md": "Societal marketing concept"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (d)** Societal marketing concept. Satisfying customers while also caring for the long-term welfare of society and the environment is the societal marketing concept.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch13-t02"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "d"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (d)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch13_024",
+   "unit": "isc-12-commerce-ch13",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "The sales head of Ekamra Electronics (imagined) says, \"My job ends when the TV is sold.\" The marketing head replies, \"Mine starts before the TV is made and goes on long after it is sold.\" The difference they describe is that",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "selling is wider than marketing"
+    },
+    {
+     "id": "b",
+     "text_md": "marketing ends with the sale"
+    },
+    {
+     "id": "c",
+     "text_md": "marketing is wider; selling is only one part of it, focused on transferring ownership"
+    },
+    {
+     "id": "d",
+     "text_md": "selling begins before production"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (c)** marketing is wider; selling is only one part of it, focused on transferring ownership. Marketing covers finding needs, designing, pricing, distributing, selling and after-sales service; selling is the part that transfers ownership.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch13-t02"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "c"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (c)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch13_025",
+   "unit": "isc-12-commerce-ch13",
+   "language": "en",
+   "type": "assertion-reason",
+   "stem_md": "**Assertion (A):** The societal marketing concept considers the long-term welfare of society.\n\n**Reason (R):** The production concept assumes that customers prefer products that are cheap and widely available.\n\nChoose the correct option.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Both Assertion and Reason are true and Reason is the correct explanation for Assertion."
+    },
+    {
+     "id": "b",
+     "text_md": "Both Assertion and Reason are true but Reason is not the correct explanation for Assertion."
+    },
+    {
+     "id": "c",
+     "text_md": "Assertion is true and Reason is false."
+    },
+    {
+     "id": "d",
+     "text_md": "Both Assertion and Reason are false."
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (b)** Both statements are true, but the assumption of the production concept has nothing to do with why the societal concept looks after society.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch13-t02"
+   ],
+   "expected_time_sec": 75,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "b"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (b)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch13_026",
+   "unit": "isc-12-commerce-ch13",
+   "language": "en",
+   "type": "assertion-reason",
+   "stem_md": "**Assertion (A):** Marketing activities begin before a product is produced.\n\n**Reason (R):** Marketing ends as soon as the product is sold.\n\nChoose the correct option.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Both Assertion and Reason are true and Reason is the correct explanation for Assertion."
+    },
+    {
+     "id": "b",
+     "text_md": "Both Assertion and Reason are true but Reason is not the correct explanation for Assertion."
+    },
+    {
+     "id": "c",
+     "text_md": "Assertion is true and Reason is false."
+    },
+    {
+     "id": "d",
+     "text_md": "Both Assertion and Reason are false."
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (c)** The assertion is true: needs are studied and products designed first. The reason is false: marketing continues after the sale through service and feedback.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch13-t02"
+   ],
+   "expected_time_sec": 75,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "c"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (c)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch13_027",
+   "unit": "isc-12-commerce-ch13",
+   "language": "en",
+   "type": "true-false",
+   "stem_md": "Under the selling concept, a firm's main focus is on finding out and satisfying customer needs.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "True"
+    },
+    {
+     "id": "b",
+     "text_md": "False"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**False.** False. The selling concept focuses on pushing existing products through aggressive selling; focusing on customer needs is the marketing concept.",
+   "marks": 1,
+   "difficulty": 1,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch13-t02"
+   ],
+   "expected_time_sec": 40,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "b"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct choice (False)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch13_028",
+   "unit": "isc-12-commerce-ch13",
+   "language": "en",
+   "type": "fill-blank",
+   "stem_md": "Complete the analogy. Production concept : Low cost and wide availability :: Societal marketing concept : Customer satisfaction and the long-term welfare of ___",
+   "options": [],
+   "match_right": [],
+   "solution_md": "The production concept stresses cost and availability; the societal marketing concept adds the long-term welfare of society to customer satisfaction.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch13-t02"
+   ],
+   "expected_time_sec": 45,
+   "assets": [],
+   "answer": {
+    "blanks": [
+     {
+      "accepted": [
+       "society",
+       "the society",
+       "the public"
+      ]
+     }
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Blank 1: society",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch13_029",
+   "unit": "isc-12-commerce-ch13",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Using Ekamra Electronics (imagined), Bhubaneswar, as an example, give two differences between marketing and selling.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Two valid differences (scope, focus, start and end, means, aim) with the TV example.",
+   "marks": 2,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch13-t02"
+   ],
+   "expected_time_sec": 150,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Scope:** selling only **transfers the TV** to the buyer; marketing also covers **research, design, pricing, distribution** and after-sales service.\n2. **Focus:** selling stresses the **seller's need** to clear stock; marketing stresses the **buyer's needs** and satisfaction."
+   },
+   "word_limit": {
+    "min": 30,
+    "max": 50
+   },
+   "marking_scheme": [
+    {
+     "step": "First difference",
+     "marks": 1
+    },
+    {
+     "step": "Second difference",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch13_030",
+   "unit": "isc-12-commerce-ch13",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Distinguish between the traditional and the modern concepts of marketing on the basis of (i) starting point and focus, and (ii) the way profit is earned.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Both bases correctly contrasted.",
+   "marks": 2,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch13-t02"
+   ],
+   "expected_time_sec": 150,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "(i) **Traditional** concepts start from the **product or the factory** and focus on output or selling; **modern** concepts start from the **customer's needs**.\n(ii) Traditional concepts earn profit through **sales volume**; modern concepts earn it through **customer satisfaction** (and social welfare)."
+   },
+   "word_limit": {
+    "min": 30,
+    "max": 50
+   },
+   "marking_scheme": [
+    {
+     "step": "(i) Starting point and focus",
+     "marks": 1
+    },
+    {
+     "step": "(ii) Way profit is earned",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch13_031",
+   "unit": "isc-12-commerce-ch13",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Athangudi Tile Works (imagined), Karaikudi, lost sales even though its tiles were the finest in town, because buyers had moved to large, plain tiles. Identify the concept it followed, explain why it failed, and suggest the concept it should adopt.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Concept identified, failure explained, modern concept suggested.",
+   "marks": 3,
+   "difficulty": 4,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch13-t02"
+   ],
+   "expected_time_sec": 210,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Concept followed: product concept**, which assumes buyers always want the **best-made product**.\n2. **Why it failed:** the firm looked only at its tile and **ignored changing needs**; quality alone could not sell a style buyers no longer wanted.\n3. **Suggested: marketing concept** — study buyers first, then make **large, plain tiles** they want while keeping its quality name."
+   },
+   "word_limit": {
+    "min": 50,
+    "max": 75
+   },
+   "marking_scheme": [
+    {
+     "step": "Concept identified",
+     "marks": 1
+    },
+    {
+     "step": "Reason for failure",
+     "marks": 1
+    },
+    {
+     "step": "Concept suggested with reason",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch13_032",
+   "unit": "isc-12-commerce-ch13",
+   "language": "en",
+   "type": "long",
+   "stem_md": "(a) Distinguish between the traditional and modern concepts of marketing on any two bases. [2]\n(b) Explain the marketing concept and the societal marketing concept, with an imagined Indian example of each. [3]",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Two bases; both modern concepts explained with examples.",
+   "marks": 5,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch13-t02"
+   ],
+   "expected_time_sec": 600,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "(a) 1. **Starting point:** traditional concepts begin with the **product or factory**; modern concepts begin with the **customer's needs**.\n2. **Route to profit:** traditional concepts seek profit through **large sales volume**; modern concepts seek it through **customer satisfaction**.\n\n(b) **Marketing concept:** the firm first learns what customers want and builds its products, prices and service around their **satisfaction**. For example, an imagined bakery that asks customers which breads they want and bakes accordingly.\n**Societal marketing concept:** the firm satisfies customers while also protecting the **long-term welfare of society and the environment**. For example, an imagined oil maker that uses refillable cans and buys only from farms that protect mangroves."
+   },
+   "word_limit": {
+    "min": 100,
+    "max": 150
+   },
+   "marking_scheme": [
+    {
+     "step": "(a) Two bases",
+     "marks": 2
+    },
+    {
+     "step": "(b) Marketing concept explained",
+     "marks": 1
+    },
+    {
+     "step": "(b) Societal marketing concept explained",
+     "marks": 1
+    },
+    {
+     "step": "(b) A suitable example of each",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch13_033",
+   "unit": "isc-12-commerce-ch13",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Mahananda Mango Exports, an imagined exporter in Malda, removes bruised fruit, packs each mango in a cushioned tray and replaces any spoiled box free of charge. Which objective of marketing is it mainly pursuing?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Reducing its market share"
+    },
+    {
+     "id": "b",
+     "text_md": "Customer satisfaction"
+    },
+    {
+     "id": "c",
+     "text_md": "Avoiding competition"
+    },
+    {
+     "id": "d",
+     "text_md": "Cutting the number of products"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (b)** Customer satisfaction. Careful quality and free replacement aim at satisfying customers, a central objective of marketing.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch13-t03"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "b"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (b)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch13_034",
+   "unit": "isc-12-commerce-ch13",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Mithila Makhana Co., an imagined firm in Darbhanga, runs cooking demonstrations in cities where few people had heard of roasted fox-nut snacks. Which objective of marketing is this?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Creating demand"
+    },
+    {
+     "id": "b",
+     "text_md": "Customer retention through after-sales service"
+    },
+    {
+     "id": "c",
+     "text_md": "Reducing costs of storage"
+    },
+    {
+     "id": "d",
+     "text_md": "Meeting legal requirements"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (a)** Creating demand. Introducing people to a product and making them want it creates demand.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch13-t03"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (a)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch13_035",
+   "unit": "isc-12-commerce-ch13",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Kanch Kala Bangles (imagined) plans to raise its share of the country's glass-bangle sales from one-tenth to one-fifth within three years. This objective of marketing is",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "creating goodwill only"
+    },
+    {
+     "id": "b",
+     "text_md": "increasing market share"
+    },
+    {
+     "id": "c",
+     "text_md": "reducing output"
+    },
+    {
+     "id": "d",
+     "text_md": "avoiding new markets"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (b)** increasing market share. Aiming at a larger proportion of total industry sales is the objective of increasing market share.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch13-t03"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "b"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (b)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch13_036",
+   "unit": "isc-12-commerce-ch13",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Because many firms market their products in Bhubaneswar, a family there can compare thirty models of ceiling fans at different prices and with different features before buying. This shows the importance of marketing to",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "the government, through taxes"
+    },
+    {
+     "id": "b",
+     "text_md": "the firm only, through higher profit"
+    },
+    {
+     "id": "c",
+     "text_md": "rival firms, through lower costs"
+    },
+    {
+     "id": "d",
+     "text_md": "consumers, through wider choice"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (d)** consumers, through wider choice. Marketing brings a variety of products, information and choice to consumers.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch13-t03"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "d"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (d)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch13_037",
+   "unit": "isc-12-commerce-ch13",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "As fox-nut snacks from Mithila were marketed across India, new jobs arose for pond workers, roasters, packers, truck drivers and shopkeepers. This shows the importance of marketing to",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "society, by creating employment"
+    },
+    {
+     "id": "b",
+     "text_md": "consumers, by lowering quality"
+    },
+    {
+     "id": "c",
+     "text_md": "the firm, by reducing its sales"
+    },
+    {
+     "id": "d",
+     "text_md": "rival firms, by sharing customers"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (a)** society, by creating employment. The many activities that marketing involves create jobs, which benefits society.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch13-t03"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (a)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch13_038",
+   "unit": "isc-12-commerce-ch13",
+   "language": "en",
+   "type": "assertion-reason",
+   "stem_md": "**Assertion (A):** Earning profit through customer satisfaction is a central objective of modern marketing.\n\n**Reason (R):** Satisfied customers buy again and recommend the product to others.\n\nChoose the correct option.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Both Assertion and Reason are true and Reason is the correct explanation for Assertion."
+    },
+    {
+     "id": "b",
+     "text_md": "Both Assertion and Reason are true but Reason is not the correct explanation for Assertion."
+    },
+    {
+     "id": "c",
+     "text_md": "Assertion is true and Reason is false."
+    },
+    {
+     "id": "d",
+     "text_md": "Both Assertion and Reason are false."
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (a)** Both are true, and the reason explains the assertion: repeat buying and recommendations turn satisfaction into lasting profit.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch13-t03"
+   ],
+   "expected_time_sec": 75,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (a)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch13_039",
+   "unit": "isc-12-commerce-ch13",
+   "language": "en",
+   "type": "true-false",
+   "stem_md": "Marketing benefits only the firm; it does nothing for consumers or society.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "True"
+    },
+    {
+     "id": "b",
+     "text_md": "False"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**False.** False. Consumers gain choice, quality and information, and society gains jobs, growth and a better standard of living.",
+   "marks": 1,
+   "difficulty": 1,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch13-t03"
+   ],
+   "expected_time_sec": 40,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "b"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct choice (False)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch13_040",
+   "unit": "isc-12-commerce-ch13",
+   "language": "en",
+   "type": "short",
+   "stem_md": "State two objectives of marketing for Mahananda Mango Exports (imagined), Malda, which wants to sell more mangoes abroad.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Any two objectives (creating demand, satisfaction, market share, profitable sales, goodwill) linked to the exporter.",
+   "marks": 2,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch13-t03"
+   ],
+   "expected_time_sec": 150,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Creating demand:** making buyers in new countries **want Malda mangoes**, for example through tastings at trade fairs.\n2. **Customer satisfaction and goodwill:** delivering **sound, well-packed fruit** so importers reorder and the name earns trust."
+   },
+   "word_limit": {
+    "min": 30,
+    "max": 50
+   },
+   "marking_scheme": [
+    {
+     "step": "First objective",
+     "marks": 1
+    },
+    {
+     "step": "Second objective",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch13_041",
+   "unit": "isc-12-commerce-ch13",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Explain two ways in which marketing benefits consumers.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Any two benefits to consumers (choice, quality, information, availability, standard of living).",
+   "marks": 2,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch13-t03"
+   ],
+   "expected_time_sec": 150,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Wider choice:** many firms offer **varieties at different prices**, so buyers can pick what suits them.\n2. **Information and better quality:** promotion tells buyers **about products and their uses**, and competition pushes firms to **improve quality**."
+   },
+   "word_limit": {
+    "min": 30,
+    "max": 50
+   },
+   "marking_scheme": [
+    {
+     "step": "First benefit",
+     "marks": 1
+    },
+    {
+     "step": "Second benefit",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch13_042",
+   "unit": "isc-12-commerce-ch13",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Using Mithila Makhana Co. (imagined), Darbhanga, explain one point of importance of marketing to (i) the firm, (ii) consumers and (iii) society.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "One correct point for each group, applied to the firm.",
+   "marks": 3,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch13-t03"
+   ],
+   "expected_time_sec": 210,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "(i) **Firm:** marketing **raises sales and profit** as fox-nut snacks reach new cities, and gives information for decisions.\n(ii) **Consumers:** city buyers get a **healthy new snack** and more choice.\n(iii) **Society:** demand creates **jobs** for pond workers, roasters and transporters and helps the regional economy grow."
+   },
+   "word_limit": {
+    "min": 50,
+    "max": 75
+   },
+   "marking_scheme": [
+    {
+     "step": "(i) Firm",
+     "marks": 1
+    },
+    {
+     "step": "(ii) Consumers",
+     "marks": 1
+    },
+    {
+     "step": "(iii) Society",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch13_043",
+   "unit": "isc-12-commerce-ch13",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Explain any three objectives of marketing.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Any three objectives explained.",
+   "marks": 3,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch13-t03"
+   ],
+   "expected_time_sec": 210,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Creating demand:** informing and persuading people so that they **want the product**.\n2. **Customer satisfaction:** offering products and service that **meet needs**, which brings repeat buying.\n3. **Market share and profitable sales:** winning a **larger share** of industry sales and earning **profit** through growing, satisfied demand."
+   },
+   "word_limit": {
+    "min": 50,
+    "max": 75
+   },
+   "marking_scheme": [
+    {
+     "step": "First objective",
+     "marks": 1
+    },
+    {
+     "step": "Second objective",
+     "marks": 1
+    },
+    {
+     "step": "Third objective",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch13_044",
+   "unit": "isc-12-commerce-ch13",
+   "language": "en",
+   "type": "long",
+   "stem_md": "(a) State two objectives of marketing. [2]\n(b) Explain the importance of marketing to firms, to consumers and to society, with one point for each. [3]",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Two objectives; one point of importance for each group.",
+   "marks": 5,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch13-t03"
+   ],
+   "expected_time_sec": 600,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "(a) 1. **Creating demand** for the product by informing and persuading buyers.\n2. **Earning profit through customer satisfaction**, so that buyers return and recommend the product.\n\n(b) **To firms:** marketing **raises sales and profit** and gives information on customers and rivals for better **decisions** on products and prices.\n**To consumers:** it offers **wider choice**, better quality and useful information, so buyers get **value for money**.\n**To society:** marketing activities such as transport, storage, retailing and advertising create **jobs**, and wider demand encourages **production and economic growth**, raising the standard of living."
+   },
+   "word_limit": {
+    "min": 100,
+    "max": 150
+   },
+   "marking_scheme": [
+    {
+     "step": "(a) Two objectives",
+     "marks": 2
+    },
+    {
+     "step": "(b) Firms",
+     "marks": 1
+    },
+    {
+     "step": "(b) Consumers",
+     "marks": 1
+    },
+    {
+     "step": "(b) Society",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch13_045",
+   "unit": "isc-12-commerce-ch13",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Before choosing which cities to enter, Mithila Makhana Co. (imagined) studied snack-shop sales records, rivals' prices and festival-season demand in six cities. Which function of marketing is this?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Grading"
+    },
+    {
+     "id": "b",
+     "text_md": "Risk bearing"
+    },
+    {
+     "id": "c",
+     "text_md": "Market research"
+    },
+    {
+     "id": "d",
+     "text_md": "Assembling"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (c)** Market research. Collecting and analysing information about buyers, demand and competitors is market (marketing) research.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch13-t04"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "c"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (c)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch13_046",
+   "unit": "isc-12-commerce-ch13",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Varuna Carpet Weavers, an imagined export house in Bhadohi, collects finished carpets from three hundred home looms in nearby villages and brings them to one central yard for export. Which function of marketing is this?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Standardisation"
+    },
+    {
+     "id": "b",
+     "text_md": "Financing"
+    },
+    {
+     "id": "c",
+     "text_md": "Assembling"
+    },
+    {
+     "id": "d",
+     "text_md": "Selling"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (c)** Assembling. Bringing together goods from many scattered producers to one place is assembling.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch13-t04"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "c"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (c)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch13_047",
+   "unit": "isc-12-commerce-ch13",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Varuna Carpet Weavers (imagined) fixes the exact size, colour codes and knot count for each carpet design, so that buyers abroad can order from a catalogue without seeing the carpet. This function is",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "standardisation"
+    },
+    {
+     "id": "b",
+     "text_md": "grading"
+    },
+    {
+     "id": "c",
+     "text_md": "assembling"
+    },
+    {
+     "id": "d",
+     "text_md": "storage"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (a)** standardisation. Laying down fixed specifications that every unit must meet is standardisation; grading sorts goods into classes after they are produced.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch13-t04"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (a)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch13_048",
+   "unit": "isc-12-commerce-ch13",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "After picking, Burhi Gandak Litchi Farms, an imagined orchard near Muzaffarpur, places its fruit into an \"export class\" for a Dubai buyer and a \"juice class\" for a juice plant. Placing the fruit in these classes is",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "standardisation"
+    },
+    {
+     "id": "b",
+     "text_md": "financing"
+    },
+    {
+     "id": "c",
+     "text_md": "transport"
+    },
+    {
+     "id": "d",
+     "text_md": "grading"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (d)** grading. Sorting produce into classes of similar quality after harvest is grading.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch13-t04"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "d"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (d)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch13_049",
+   "unit": "isc-12-commerce-ch13",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Kanchenjunga Tea Traders, an imagined firm in Darjeeling, keeps its spring teas in sealed, humidity-controlled godowns until buyers in Europe order them months later. This function creates time utility through",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "transport"
+    },
+    {
+     "id": "b",
+     "text_md": "storage (warehousing)"
+    },
+    {
+     "id": "c",
+     "text_md": "grading"
+    },
+    {
+     "id": "d",
+     "text_md": "risk bearing"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (b)** storage (warehousing). Holding goods from the time they are produced until they are wanted is storage, which creates time utility.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch13-t04"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "b"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (b)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch13_050",
+   "unit": "isc-12-commerce-ch13",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Trucks carry bananas from the orchards of Jalgaon to fruit markets in Delhi within two days. This function of marketing mainly creates",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "place utility"
+    },
+    {
+     "id": "b",
+     "text_md": "time utility"
+    },
+    {
+     "id": "c",
+     "text_md": "form utility"
+    },
+    {
+     "id": "d",
+     "text_md": "no utility"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (a)** place utility. Transport moves goods from where they are produced to where they are wanted, creating place utility.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch13-t04"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (a)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch13_051",
+   "unit": "isc-12-commerce-ch13",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Varuna Carpet Weavers (imagined) allows its foreign importers ninety days to pay and borrows from a bank to pay its weavers meanwhile. Which function of marketing is this?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Grading"
+    },
+    {
+     "id": "b",
+     "text_md": "Financing"
+    },
+    {
+     "id": "c",
+     "text_md": "Assembling"
+    },
+    {
+     "id": "d",
+     "text_md": "Market research"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (b)** Financing. Providing and arranging funds for marketing activities, including credit to buyers, is financing.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch13-t04"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "b"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (b)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch13_052",
+   "unit": "isc-12-commerce-ch13",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Mahananda Mango Exports (imagined) insures every shipment against damage in transit and keeps extra cold-chain capacity in case a cargo flight is cancelled. Which function of marketing is it performing?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Standardisation"
+    },
+    {
+     "id": "b",
+     "text_md": "Selling"
+    },
+    {
+     "id": "c",
+     "text_md": "Risk bearing"
+    },
+    {
+     "id": "d",
+     "text_md": "Assembling"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (c)** Risk bearing. Taking steps to cover possible losses from damage, delay or price falls is risk bearing.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch13-t04"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "c"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (c)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch13_053",
+   "unit": "isc-12-commerce-ch13",
+   "language": "en",
+   "type": "assertion-reason",
+   "stem_md": "**Assertion (A):** Storage creates time utility.\n\n**Reason (R):** Storage allows goods produced at one time to be used later, when they are wanted.\n\nChoose the correct option.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Both Assertion and Reason are true and Reason is the correct explanation for Assertion."
+    },
+    {
+     "id": "b",
+     "text_md": "Both Assertion and Reason are true but Reason is not the correct explanation for Assertion."
+    },
+    {
+     "id": "c",
+     "text_md": "Assertion is true and Reason is false."
+    },
+    {
+     "id": "d",
+     "text_md": "Both Assertion and Reason are false."
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (a)** Both are true, and the reason explains the assertion: holding goods until they are wanted is what gives time utility.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch13-t04"
+   ],
+   "expected_time_sec": 75,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (a)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch13_054",
+   "unit": "isc-12-commerce-ch13",
+   "language": "en",
+   "type": "assertion-reason",
+   "stem_md": "**Assertion (A):** Grading is done before production begins.\n\n**Reason (R):** Standardisation means sorting finished goods into classes after production.\n\nChoose the correct option.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Both Assertion and Reason are true and Reason is the correct explanation for Assertion."
+    },
+    {
+     "id": "b",
+     "text_md": "Both Assertion and Reason are true but Reason is not the correct explanation for Assertion."
+    },
+    {
+     "id": "c",
+     "text_md": "Assertion is true and Reason is false."
+    },
+    {
+     "id": "d",
+     "text_md": "Both Assertion and Reason are false."
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (d)** Both statements are false. Standardisation lays down specifications in advance; grading sorts goods, especially produce, into classes after production or harvest.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch13-t04"
+   ],
+   "expected_time_sec": 75,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "d"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (d)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch13_055",
+   "unit": "isc-12-commerce-ch13",
+   "language": "en",
+   "type": "true-false",
+   "stem_md": "Transportation creates place utility by moving goods to where they are wanted.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "True"
+    },
+    {
+     "id": "b",
+     "text_md": "False"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**True.** True. Goods are worth more where buyers are; moving them there adds place utility.",
+   "marks": 1,
+   "difficulty": 1,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch13-t04"
+   ],
+   "expected_time_sec": 40,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct choice (True)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch13_056",
+   "unit": "isc-12-commerce-ch13",
+   "language": "en",
+   "type": "fill-blank",
+   "stem_md": "Sorting farm produce into classes of similar size and quality after harvest is called ___.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "This is grading.",
+   "marks": 1,
+   "difficulty": 1,
+   "competency": "recall",
+   "bloom": "remember",
+   "topic_ids": [
+    "isc-12-commerce-ch13-t04"
+   ],
+   "expected_time_sec": 45,
+   "assets": [],
+   "answer": {
+    "blanks": [
+     {
+      "accepted": [
+       "grading"
+      ]
+     }
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Blank 1: grading",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch13_057",
+   "unit": "isc-12-commerce-ch13",
+   "language": "en",
+   "type": "match",
+   "stem_md": "Match each activity of an imagined carpet and tea exporter with the marketing function it represents.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Collecting carpets from village looms to one yard"
+    },
+    {
+     "id": "b",
+     "text_md": "Fixing size and knot-count specifications for each design"
+    },
+    {
+     "id": "c",
+     "text_md": "Keeping tea in humidity-controlled godowns"
+    },
+    {
+     "id": "d",
+     "text_md": "Allowing importers ninety days to pay"
+    }
+   ],
+   "match_right": [
+    {
+     "id": "p",
+     "text_md": "Financing"
+    },
+    {
+     "id": "q",
+     "text_md": "Assembling"
+    },
+    {
+     "id": "r",
+     "text_md": "Storage"
+    },
+    {
+     "id": "s",
+     "text_md": "Standardisation"
+    }
+   ],
+   "solution_md": "**Key:** (a)–(q), (b)–(s), (c)–(r), (d)–(p). Bringing goods together is assembling; fixing specifications is standardisation; holding goods is storage; giving credit is financing.",
+   "marks": 2,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch13-t04"
+   ],
+   "expected_time_sec": 120,
+   "assets": [],
+   "answer": {
+    "pairs": [
+     {
+      "left_id": "a",
+      "right_id": "q"
+     },
+     {
+      "left_id": "b",
+      "right_id": "s"
+     },
+     {
+      "left_id": "c",
+      "right_id": "r"
+     },
+     {
+      "left_id": "d",
+      "right_id": "p"
+     }
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Each correct pair 0.5 mark (4 pairs)",
+     "marks": 2
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch13_058",
+   "unit": "isc-12-commerce-ch13",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Distinguish between standardisation and grading, with an example of each from an imagined fruit and carpet business.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Each defined with an example; the before/after difference shown.",
+   "marks": 2,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch13-t04"
+   ],
+   "expected_time_sec": 150,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "**Standardisation** fixes **specifications in advance**, such as the size and knot count every carpet design must meet. **Grading** **sorts goods into classes** after production or harvest, such as placing litchis in export and juice classes."
+   },
+   "word_limit": {
+    "min": 30,
+    "max": 50
+   },
+   "marking_scheme": [
+    {
+     "step": "Standardisation with example",
+     "marks": 1
+    },
+    {
+     "step": "Grading with example",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch13_059",
+   "unit": "isc-12-commerce-ch13",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Explain how storage and transport add value to raisins produced by Krishna Raisin Traders, an imagined firm in Sangli.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Time utility from storage and place utility from transport, applied to raisins.",
+   "marks": 2,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch13-t04"
+   ],
+   "expected_time_sec": 150,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "**Storage** keeps raisins dried in March in **cold stores** until buyers need them later in the year, creating **time utility**. **Transport** moves them from Sangli to **buyers across India**, creating **place utility**."
+   },
+   "word_limit": {
+    "min": 30,
+    "max": 50
+   },
+   "marking_scheme": [
+    {
+     "step": "Storage and time utility",
+     "marks": 1
+    },
+    {
+     "step": "Transport and place utility",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch13_060",
+   "unit": "isc-12-commerce-ch13",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Marketing functions are often grouped as functions of exchange, functions of physical supply and facilitating functions. Explain each group, naming the functions it includes.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Each group explained with its functions.",
+   "marks": 3,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch13-t04"
+   ],
+   "expected_time_sec": 210,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Functions of exchange:** **buying, assembling and selling**, which bring about the transfer of ownership.\n2. **Functions of physical supply:** **transport and storage**, which move goods to buyers and hold them until wanted.\n3. **Facilitating functions:** **standardisation and grading, financing, risk bearing and market research**, which help the other functions run smoothly."
+   },
+   "word_limit": {
+    "min": 50,
+    "max": 75
+   },
+   "marking_scheme": [
+    {
+     "step": "Exchange",
+     "marks": 1
+    },
+    {
+     "step": "Physical supply",
+     "marks": 1
+    },
+    {
+     "step": "Facilitating",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch13_061",
+   "unit": "isc-12-commerce-ch13",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Garo Hills Ginger Growers, an imagined group in Tura, buys ginger from small farmers, cleans and sorts it into three sizes, and keeps it in a dry godown until traders from Guwahati collect it. Identify and explain three marketing functions in this case.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Three functions identified from the case and explained.",
+   "marks": 3,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch13-t04"
+   ],
+   "expected_time_sec": 210,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Buying and assembling:** the group **buys from many small farmers** and gathers the ginger in one place.\n2. **Grading:** ginger is **sorted into three sizes**, so each class can be priced and sold to the right buyer.\n3. **Storage:** the **dry godown** holds ginger until traders collect it, creating time utility."
+   },
+   "word_limit": {
+    "min": 50,
+    "max": 75
+   },
+   "marking_scheme": [
+    {
+     "step": "First function",
+     "marks": 1
+    },
+    {
+     "step": "Second function",
+     "marks": 1
+    },
+    {
+     "step": "Third function",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch13_062",
+   "unit": "isc-12-commerce-ch13",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Explain financing, risk bearing and market research as functions of marketing, with an example of each from an imagined mango exporter.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Each function explained with a mango example.",
+   "marks": 3,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch13-t04"
+   ],
+   "expected_time_sec": 210,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Financing:** arranging **funds** for buying, packing and credit to buyers, such as a **bank loan** to pay growers before importers pay.\n2. **Risk bearing:** covering possible **losses**, such as **insuring shipments** against damage.\n3. **Market research:** gathering information on **demand, prices and rivals**, such as studying which countries pay most for which variety."
+   },
+   "word_limit": {
+    "min": 50,
+    "max": 75
+   },
+   "marking_scheme": [
+    {
+     "step": "Financing",
+     "marks": 1
+    },
+    {
+     "step": "Risk bearing",
+     "marks": 1
+    },
+    {
+     "step": "Market research",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch13_063",
+   "unit": "isc-12-commerce-ch13",
+   "language": "en",
+   "type": "long",
+   "stem_md": "Mahananda Mango Exports (imagined), Malda, buys mangoes from growers, sorts them, packs them, keeps them cool, flies them abroad and sells them to importers on credit. Explain five functions of marketing that the firm performs, with an example of each from its business.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Five functions explained, each with an example from the exporter.",
+   "marks": 5,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch13-t04"
+   ],
+   "expected_time_sec": 600,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Buying and assembling:** it **buys mangoes from many growers** and collects them at its packing house.\n2. **Grading:** fruit is **sorted by size, colour and ripeness**, so each class goes to a suitable buyer at a suitable price.\n3. **Storage:** **cold rooms** keep the fruit fresh until the cargo flight, creating time utility.\n4. **Transport:** trucks and **cargo flights** carry mangoes to importers abroad, creating place utility.\n5. **Financing and risk bearing:** it gives **importers credit** and insures shipments against damage or delay.\nIt also performs **selling**, as ownership passes to importers."
+   },
+   "word_limit": {
+    "min": 100,
+    "max": 150
+   },
+   "marking_scheme": [
+    {
+     "step": "Five functions with examples, one mark each",
+     "marks": 5
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch13_064",
+   "unit": "isc-12-commerce-ch13",
+   "language": "en",
+   "type": "case-based",
+   "stem_md": "Read the passage and answer the questions that follow. *(Imagined firm and people, written by SOYL for practice.)*",
+   "options": [],
+   "match_right": [],
+   "solution_md": "**(a)** **Correct option: (d)** Selling concept. Aggressive persuasion to dispose of existing stock is the selling concept.\n\n**(b)** Care for the environment beyond customer satisfaction marks the societal concept.\n\n**(c) (i)** Starts from needs; product built around them.\n\n**OR (c) (ii)** Two consumer benefits from the passage.",
+   "marks": 4,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch13-t02",
+    "isc-12-commerce-ch13-t03"
+   ],
+   "expected_time_sec": 420,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "**(a)** (d) Selling concept\n\n**(b)** The **societal marketing concept**.\n\n**(c) (i)** She **began with buyers' needs** by meeting them, then **redesigned the product** to suit them, aiming at **sales through satisfaction**.\n\n**OR (c) (ii)** **Wider choice** of light, giftable pieces; **convenience** of buying online and having pieces posted."
+   },
+   "marking_scheme": [
+    {
+     "step": "Part (a)",
+     "marks": 1
+    },
+    {
+     "step": "Part (b)",
+     "marks": 1
+    },
+    {
+     "step": "Part (c): either (i) or (ii)",
+     "marks": 2
+    }
+   ],
+   "passage_md": "**Bidri Art Works (imagined), Bidar**\n\nFor years the firm made heavy silver-inlaid vases and relied on salesmen who pressed tourists hard at the shop door. Sales kept falling. Its new manager, Zoya, met young buyers and learned that they wanted small, light pieces such as pen stands and earrings that could be gifted or posted. The firm redesigned its range, began selling online and now uses only recycled metal for the base.",
+   "passage_origin": "soyl-original",
+   "children": [
+    {
+     "id": "a",
+     "type": "mcq",
+     "stem_md": "Pressing tourists hard at the shop door shows which concept?",
+     "options": [
+      {
+       "id": "a",
+       "text_md": "Marketing concept"
+      },
+      {
+       "id": "b",
+       "text_md": "Production concept"
+      },
+      {
+       "id": "c",
+       "text_md": "Societal marketing concept"
+      },
+      {
+       "id": "d",
+       "text_md": "Selling concept"
+      }
+     ],
+     "match_right": [],
+     "solution_md": "**Correct option: (d)** Selling concept. Aggressive persuasion to dispose of existing stock is the selling concept.",
+     "marks": 1,
+     "difficulty": 2,
+     "competency": "application",
+     "bloom": "apply",
+     "topic_ids": [
+      "isc-12-commerce-ch13-t02"
+     ],
+     "expected_time_sec": 60,
+     "assets": [],
+     "answer": {
+      "option_ids": [
+       "d"
+      ]
+     },
+     "marking_scheme": [
+      {
+       "step": "Correct option (d)",
+       "marks": 1
+      }
+     ],
+     "alternatives": []
+    },
+    {
+     "id": "b",
+     "type": "short",
+     "stem_md": "Which concept does the firm move towards when it uses only recycled metal for the base?",
+     "options": [],
+     "match_right": [],
+     "solution_md": "Care for the environment beyond customer satisfaction marks the societal concept.",
+     "marks": 1,
+     "difficulty": 3,
+     "competency": "analysis",
+     "bloom": "analyze",
+     "topic_ids": [
+      "isc-12-commerce-ch13-t02"
+     ],
+     "expected_time_sec": 90,
+     "assets": [],
+     "answer": {
+      "model_answer_md": "The **societal marketing concept**."
+     },
+     "marking_scheme": [
+      {
+       "step": "Societal marketing concept",
+       "marks": 1
+      }
+     ],
+     "alternatives": []
+    },
+    {
+     "id": "c",
+     "type": "short",
+     "stem_md": "**Either** (i): Explain how Zoya's approach reflects the marketing concept.",
+     "options": [],
+     "match_right": [],
+     "solution_md": "Starts from needs; product built around them.",
+     "marks": 2,
+     "difficulty": 3,
+     "competency": "analysis",
+     "bloom": "analyze",
+     "topic_ids": [
+      "isc-12-commerce-ch13-t02"
+     ],
+     "expected_time_sec": 150,
+     "assets": [],
+     "answer": {
+      "model_answer_md": "She **began with buyers' needs** by meeting them, then **redesigned the product** to suit them, aiming at **sales through satisfaction**."
+     },
+     "marking_scheme": [
+      {
+       "step": "Starts from customer needs",
+       "marks": 1
+      },
+      {
+       "step": "Product and sales built on satisfaction",
+       "marks": 1
+      }
+     ],
+     "alternatives": [
+      {
+       "id": "c-ii",
+       "type": "short",
+       "stem_md": "**Or** (ii): State two benefits the firm's customers gain from its new approach.",
+       "options": [],
+       "match_right": [],
+       "solution_md": "Two consumer benefits from the passage.",
+       "marks": 2,
+       "difficulty": 3,
+       "competency": "analysis",
+       "bloom": "analyze",
+       "topic_ids": [
+        "isc-12-commerce-ch13-t03"
+       ],
+       "expected_time_sec": 150,
+       "assets": [],
+       "answer": {
+        "model_answer_md": "**Wider choice** of light, giftable pieces; **convenience** of buying online and having pieces posted."
+       },
+       "marking_scheme": [
+        {
+         "step": "First benefit",
+         "marks": 1
+        },
+        {
+         "step": "Second benefit",
+         "marks": 1
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch13_065",
+   "unit": "isc-12-commerce-ch13",
+   "language": "en",
+   "type": "case-based",
+   "stem_md": "Read the passage and answer the questions that follow. *(Imagined firm and people, written by SOYL for practice.)*",
+   "options": [],
+   "match_right": [],
+   "solution_md": "**(a)** **Correct option: (d)** assembling. Bringing goods from many producers together is assembling.\n\n**(b)** Buyers in more than one country make it international.\n\n**(c) (i)** Standardisation versus grading.\n\n**OR (c) (ii)** Storage gives time utility; transport gives place utility.",
+   "marks": 4,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch13-t04",
+    "isc-12-commerce-ch13-t01"
+   ],
+   "expected_time_sec": 420,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "**(a)** (d) assembling\n\n**(b)** An **international** market (buyers in India and Singapore).\n\n**(c) (i)** Fixed rules are **standardisation** (specifications set in advance); premium and regular lots are **grading** (sorting finished sarees into classes).\n\n**OR (c) (ii)** **Dry hall (storage): time utility.** **Courier (transport): place utility.**"
+   },
+   "marking_scheme": [
+    {
+     "step": "Part (a)",
+     "marks": 1
+    },
+    {
+     "step": "Part (b)",
+     "marks": 1
+    },
+    {
+     "step": "Part (c): either (i) or (ii)",
+     "marks": 2
+    }
+   ],
+   "passage_md": "**Kirti Durg Weaves (imagined), Chanderi**\n\nThe cooperative collects sarees from two hundred handloom families, checks that each meets fixed rules on length, thread count and border width, and sorts them into premium and regular lots. It stores them in a dry hall, sends parcels by courier to boutiques in Mumbai, Bengaluru and Singapore, and lets boutiques pay within sixty days.",
+   "passage_origin": "soyl-original",
+   "children": [
+    {
+     "id": "a",
+     "type": "mcq",
+     "stem_md": "Collecting sarees from two hundred families is the function of",
+     "options": [
+      {
+       "id": "a",
+       "text_md": "grading"
+      },
+      {
+       "id": "b",
+       "text_md": "financing"
+      },
+      {
+       "id": "c",
+       "text_md": "risk bearing"
+      },
+      {
+       "id": "d",
+       "text_md": "assembling"
+      }
+     ],
+     "match_right": [],
+     "solution_md": "**Correct option: (d)** assembling. Bringing goods from many producers together is assembling.",
+     "marks": 1,
+     "difficulty": 2,
+     "competency": "application",
+     "bloom": "apply",
+     "topic_ids": [
+      "isc-12-commerce-ch13-t04"
+     ],
+     "expected_time_sec": 60,
+     "assets": [],
+     "answer": {
+      "option_ids": [
+       "d"
+      ]
+     },
+     "marking_scheme": [
+      {
+       "step": "Correct option (d)",
+       "marks": 1
+      }
+     ],
+     "alternatives": []
+    },
+    {
+     "id": "b",
+     "type": "short",
+     "stem_md": "On the basis of area, what kind of market does the cooperative serve?",
+     "options": [],
+     "match_right": [],
+     "solution_md": "Buyers in more than one country make it international.",
+     "marks": 1,
+     "difficulty": 2,
+     "competency": "application",
+     "bloom": "apply",
+     "topic_ids": [
+      "isc-12-commerce-ch13-t01"
+     ],
+     "expected_time_sec": 90,
+     "assets": [],
+     "answer": {
+      "model_answer_md": "An **international** market (buyers in India and Singapore)."
+     },
+     "marking_scheme": [
+      {
+       "step": "International market",
+       "marks": 1
+      }
+     ],
+     "alternatives": []
+    },
+    {
+     "id": "c",
+     "type": "short",
+     "stem_md": "**Either** (i): Distinguish the two functions shown by \"fixed rules on length, thread count and border width\" and \"premium and regular lots\".",
+     "options": [],
+     "match_right": [],
+     "solution_md": "Standardisation versus grading.",
+     "marks": 2,
+     "difficulty": 3,
+     "competency": "analysis",
+     "bloom": "analyze",
+     "topic_ids": [
+      "isc-12-commerce-ch13-t04"
+     ],
+     "expected_time_sec": 150,
+     "assets": [],
+     "answer": {
+      "model_answer_md": "Fixed rules are **standardisation** (specifications set in advance); premium and regular lots are **grading** (sorting finished sarees into classes)."
+     },
+     "marking_scheme": [
+      {
+       "step": "Standardisation",
+       "marks": 1
+      },
+      {
+       "step": "Grading",
+       "marks": 1
+      }
+     ],
+     "alternatives": [
+      {
+       "id": "c-ii",
+       "type": "short",
+       "stem_md": "**Or** (ii): Name the utility created by the dry hall and the one created by courier dispatch.",
+       "options": [],
+       "match_right": [],
+       "solution_md": "Storage gives time utility; transport gives place utility.",
+       "marks": 2,
+       "difficulty": 3,
+       "competency": "analysis",
+       "bloom": "analyze",
+       "topic_ids": [
+        "isc-12-commerce-ch13-t04"
+       ],
+       "expected_time_sec": 150,
+       "assets": [],
+       "answer": {
+        "model_answer_md": "**Dry hall (storage): time utility.** **Courier (transport): place utility.**"
+       },
+       "marking_scheme": [
+        {
+         "step": "Time utility",
+         "marks": 1
+        },
+        {
+         "step": "Place utility",
+         "marks": 1
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  }
+ ],
+ "build": {
+  "run_id": null,
+  "checks": {
+   "syllabus": "topics t01–t04 of isc-12-commerce-ch13 (market: meaning and types by area, time and nature of goods; marketing: meaning and features; traditional and modern concepts and marketing versus selling; objectives and importance; functions of marketing)",
+   "originality": "every firm, person and case is imagined and written by SOYL and labelled; no ISC or CBSE textbook text, illustration or exercise and no CISCE specimen or board item reused (D-036); firms, places and set-ups differ from the CBSE 12 Business Studies chapter on marketing",
+   "data": "no computed figures; all examples are imagined and labelled",
+   "facts": "stable textbook concepts only; no dated figures",
+   "gate": "schema, pipeline lint, deterministic verify, word limits, narration and answer-leak checks run clean in this build"
+  }
+ }
+}

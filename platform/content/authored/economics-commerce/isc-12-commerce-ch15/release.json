@@ -1,0 +1,5233 @@
+{
+ "unit": "isc-12-commerce-ch15",
+ "version": 1,
+ "academic_year": "2026-27",
+ "created_at": "2026-10-31",
+ "decks": [
+  {
+   "unit": "isc-12-commerce-ch15",
+   "part": 1,
+   "version": 1,
+   "title": "Place and Promotion — Part 1: Channels and Physical Distribution",
+   "language": "en",
+   "goals": [
+    "Draw zero-, one- and two-level channels of distribution",
+    "Explain the product, market, company and competitive factors affecting the choice of channel",
+    "Name the elements of physical distribution: order processing, transportation, warehousing and inventory control"
+   ],
+   "slides": [
+    {
+     "id": "s01",
+     "layout": "title",
+     "heading": "Marketing Mix: Place and Promotion",
+     "body_md": "Part 1: **channels of distribution**, their **levels**, how to **choose** one, and **physical distribution**.",
+     "bullets": [],
+     "visual": {
+      "kind": "flow",
+      "spec": {
+       "direction": "LR",
+       "nodes": [
+        {
+         "id": "n1",
+         "label": "Channels of distribution"
+        },
+        {
+         "id": "n2",
+         "label": "Zero, one and two levels"
+        },
+        {
+         "id": "n3",
+         "label": "Choosing a channel"
+        },
+        {
+         "id": "n4",
+         "label": "Physical distribution"
+        }
+       ],
+       "edges": [
+        {
+         "from": "n1",
+         "to": "n2"
+        },
+        {
+         "from": "n2",
+         "to": "n3"
+        },
+        {
+         "from": "n3",
+         "to": "n4"
+        }
+       ]
+      },
+      "alt": "Route map of Part 1: channels of distribution, zero-, one- and two-level channels, factors in choosing a channel, and the elements of physical distribution",
+      "caption": "Part 1 at a glance"
+     },
+     "math": [],
+     "narration": "A good product at the right price is of no use if buyers cannot find it. Place, the third P, is about getting goods to buyers. In this part we look at channels of distribution, how to choose one, and the physical tasks of moving goods.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s02",
+     "layout": "concept",
+     "heading": "What is a channel of distribution?",
+     "body_md": "A **channel of distribution** is the route through which goods pass from the **producer to the final buyer**, with the **middlemen** involved.",
+     "bullets": [],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Middleman",
+        "What it does"
+       ],
+       "rows": [
+        [
+         "Wholesaler",
+         "Buys in bulk, stores, sells in smaller lots to retailers"
+        ],
+        [
+         "Retailer",
+         "Sells to final consumers in small quantities"
+        ],
+        [
+         "Agent or stockist",
+         "Holds stock or arranges sales in an area"
+        ]
+       ]
+      },
+      "alt": "Table of three kinds of middlemen and what each does"
+     },
+     "math": [],
+     "narration": "Goods often pass through middlemen on their way to buyers. Wholesalers buy in bulk, store goods and sell smaller lots to retailers. Retailers sell to final consumers. Middlemen break bulk, give credit and spread goods widely, so they perform useful functions, not just add cost.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s03",
+     "layout": "diagram",
+     "heading": "Levels of channels",
+     "body_md": "",
+     "bullets": [],
+     "visual": {
+      "kind": "svg",
+      "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 560 330\" role=\"img\" aria-label=\"Three rows of boxes joined by arrows. Zero-level: manufacturer to consumer, no middleman. One-level: manufacturer to retailer to consumer, one middleman. Two-level: manufacturer to wholesaler to retailer to consumer, two middlemen\" font-family=\"sans-serif\" font-size=\"14\" fill=\"none\"><title>Three rows of boxes joined by arrows. Zero-level: manufacturer to consumer, no middleman. One-level: manufacturer to retailer to consumer, one middleman. Two-level: manufacturer to wholesaler to retailer to consumer, two middlemen</title><text x=\"14\" y=\"58\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"start\" dominant-baseline=\"middle\" font-size=\"13\" font-weight=\"bold\">Zero-level</text><rect x=\"112\" y=\"40\" width=\"92\" height=\"36\" rx=\"8\" fill=\"var(--diagram-blue)\" fill-opacity=\"0.15\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.4\"/><text x=\"158\" y=\"58\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"11\">Manufacturer</text><line x1=\"206\" y1=\"58\" x2=\"444\" y2=\"58\" fill=\"none\" stroke=\"var(--diagram-muted)\" stroke-width=\"1.4\"/><polygon points=\"444,58 435,62.5 435,53.5\" fill=\"var(--diagram-muted)\" stroke=\"none\"/><rect x=\"448\" y=\"40\" width=\"92\" height=\"36\" rx=\"8\" fill=\"var(--diagram-green)\" fill-opacity=\"0.15\" stroke=\"var(--diagram-green)\" stroke-width=\"1.4\"/><text x=\"494\" y=\"58\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"11\">Consumer</text><text x=\"494\" y=\"94\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"11\">no middleman</text><text x=\"14\" y=\"158\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"start\" dominant-baseline=\"middle\" font-size=\"13\" font-weight=\"bold\">One-level</text><rect x=\"112\" y=\"140\" width=\"92\" height=\"36\" rx=\"8\" fill=\"var(--diagram-blue)\" fill-opacity=\"0.15\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.4\"/><text x=\"158\" y=\"158\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"11\">Manufacturer</text><line x1=\"206\" y1=\"158\" x2=\"220\" y2=\"158\" fill=\"none\" stroke=\"var(--diagram-muted)\" stroke-width=\"1.4\"/><polygon points=\"220,158 211,162.5 211,153.5\" fill=\"var(--diagram-muted)\" stroke=\"none\"/><rect x=\"224\" y=\"140\" width=\"92\" height=\"36\" rx=\"8\" fill=\"var(--diagram-yellow)\" fill-opacity=\"0.15\" stroke=\"var(--diagram-yellow)\" stroke-width=\"1.4\"/><text x=\"270\" y=\"158\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"11\">Retailer</text><line x1=\"318\" y1=\"158\" x2=\"444\" y2=\"158\" fill=\"none\" stroke=\"var(--diagram-muted)\" stroke-width=\"1.4\"/><polygon points=\"444,158 435,162.5 435,153.5\" fill=\"var(--diagram-muted)\" stroke=\"none\"/><rect x=\"448\" y=\"140\" width=\"92\" height=\"36\" rx=\"8\" fill=\"var(--diagram-green)\" fill-opacity=\"0.15\" stroke=\"var(--diagram-green)\" stroke-width=\"1.4\"/><text x=\"494\" y=\"158\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"11\">Consumer</text><text x=\"494\" y=\"194\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"11\">one middleman</text><text x=\"14\" y=\"258\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"start\" dominant-baseline=\"middle\" font-size=\"13\" font-weight=\"bold\">Two-level</text><rect x=\"112\" y=\"240\" width=\"92\" height=\"36\" rx=\"8\" fill=\"var(--diagram-blue)\" fill-opacity=\"0.15\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.4\"/><text x=\"158\" y=\"258\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"11\">Manufacturer</text><line x1=\"206\" y1=\"258\" x2=\"220\" y2=\"258\" fill=\"none\" stroke=\"var(--diagram-muted)\" stroke-width=\"1.4\"/><polygon points=\"220,258 211,262.5 211,253.5\" fill=\"var(--diagram-muted)\" stroke=\"none\"/><rect x=\"224\" y=\"240\" width=\"92\" height=\"36\" rx=\"8\" fill=\"var(--diagram-yellow)\" fill-opacity=\"0.15\" stroke=\"var(--diagram-yellow)\" stroke-width=\"1.4\"/><text x=\"270\" y=\"258\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"11\">Wholesaler</text><line x1=\"318\" y1=\"258\" x2=\"332\" y2=\"258\" fill=\"none\" stroke=\"var(--diagram-muted)\" stroke-width=\"1.4\"/><polygon points=\"332,258 323,262.5 323,253.5\" fill=\"var(--diagram-muted)\" stroke=\"none\"/><rect x=\"336\" y=\"240\" width=\"92\" height=\"36\" rx=\"8\" fill=\"var(--diagram-yellow)\" fill-opacity=\"0.15\" stroke=\"var(--diagram-yellow)\" stroke-width=\"1.4\"/><text x=\"382\" y=\"258\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"11\">Retailer</text><line x1=\"430\" y1=\"258\" x2=\"444\" y2=\"258\" fill=\"none\" stroke=\"var(--diagram-muted)\" stroke-width=\"1.4\"/><polygon points=\"444,258 435,262.5 435,253.5\" fill=\"var(--diagram-muted)\" stroke=\"none\"/><rect x=\"448\" y=\"240\" width=\"92\" height=\"36\" rx=\"8\" fill=\"var(--diagram-green)\" fill-opacity=\"0.15\" stroke=\"var(--diagram-green)\" stroke-width=\"1.4\"/><text x=\"494\" y=\"258\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"11\">Consumer</text><text x=\"494\" y=\"294\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"11\">two middlemen</text></svg>",
+      "alt": "Three rows of boxes joined by arrows. Zero-level: manufacturer to consumer, no middleman. One-level: manufacturer to retailer to consumer, one middleman. Two-level: manufacturer to wholesaler to retailer to consumer, two middlemen",
+      "caption": "The level of a channel is the number of middlemen in it."
+     },
+     "math": [],
+     "narration": "The level of a channel is the number of middlemen in it. A zero-level channel has none: the maker sells directly. A one-level channel has a retailer. A two-level channel has a wholesaler and a retailer, and suits goods bought often by many buyers.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s04",
+     "layout": "example",
+     "heading": "Worked example 1: count the middlemen",
+     "body_md": "Three imagined firms.",
+     "bullets": [
+      "Step 1: trace the **route** of the goods.",
+      "Step 2: **count** the middlemen.",
+      "Step 3: name the level."
+     ],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Imagined firm",
+        "Route of goods",
+        "Level"
+       ],
+       "rows": [
+        [
+         "Jaggery maker selling at its farm-gate shop",
+         "Maker → consumer",
+         "Zero"
+        ],
+        [
+         "Saree weaver selling through city boutiques",
+         "Maker → retailer → consumer",
+         "One"
+        ],
+        [
+         "Macaroon bakery using district stockists",
+         "Maker → stockist → sweet shop → consumer",
+         "Two"
+        ]
+       ]
+      },
+      "alt": "Worked table: three imagined firms, the route their goods take, and the level of channel",
+      "caption": "Count the middlemen between the maker and the consumer."
+     },
+     "math": [],
+     "narration": "A jaggery maker selling at its own farm-gate shop has no middleman, so it is zero-level. A saree weaver selling through city boutiques has one, the retailer, so it is one-level. A bakery whose macaroons go to stockists and then sweet shops has two, so it is two-level.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s05",
+     "layout": "check",
+     "heading": "Quick check: zero-level",
+     "body_md": "True or false: in a zero-level channel, goods pass through one retailer.",
+     "bullets": [],
+     "visual": null,
+     "math": [],
+     "narration": "How many middlemen does zero-level mean?",
+     "check_question_id": "q_isc12commerce_ch15_012",
+     "audio": null
+    },
+    {
+     "id": "s06",
+     "layout": "concept",
+     "heading": "Choosing a channel",
+     "body_md": "",
+     "bullets": [],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Factor",
+        "Points towards a short channel when…",
+        "Points towards a long channel when…"
+       ],
+       "rows": [
+        [
+         "Product",
+         "Perishable, costly, technical or made to order",
+         "Durable, cheap, standard"
+        ],
+        [
+         "Market",
+         "Few, large buyers close together",
+         "Many small buyers spread widely"
+        ],
+        [
+         "Company",
+         "Strong finances; wants control",
+         "Limited funds and staff"
+        ],
+        [
+         "Competition",
+         "Rivals sell direct",
+         "Rivals use dealers and shops"
+        ]
+       ]
+      },
+      "alt": "Table of four groups of factors in choosing a channel, showing when each points towards a short channel and when towards a long one"
+     },
+     "math": [],
+     "narration": "Four groups of factors guide the choice. Product: perishable, costly or technical goods need short channels. Market: a few large buyers close together can be served directly. Company: a firm with strong finances can sell directly, while a small firm relies on middlemen. Competition: firms often use the channels their rivals use.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s07",
+     "layout": "example",
+     "heading": "Worked example 2: which factor?",
+     "body_md": "Four imagined situations.",
+     "bullets": [
+      "Step 1: decide which **group** the fact belongs to.",
+      "Step 2: say whether it pushes towards a **short or long** channel.",
+      "Step 3: suggest the channel."
+     ],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Imagined situation",
+        "Factor",
+        "Channel suggested"
+       ],
+       "rows": [
+        [
+         "Coconut water spoils in two days",
+         "Product",
+         "Short"
+        ],
+        [
+         "Twelve buyer mills in one town",
+         "Market",
+         "Direct"
+        ],
+        [
+         "New firm, little capital, no sales staff",
+         "Company",
+         "Through middlemen"
+        ],
+        [
+         "Rivals all sell in hotel gift shops",
+         "Competition",
+         "Hotel gift shops too"
+        ]
+       ]
+      },
+      "alt": "Worked table: four imagined situations, the factor each shows, and the channel suggested",
+      "caption": "Name the factor first, then say which way it pushes the channel."
+     },
+     "math": [],
+     "narration": "Coconut water that spoils in two days is a product factor, calling for a short channel. Twelve buyer mills in one town is a market factor, allowing direct selling. A new firm with little capital is a company factor, so it uses middlemen. Rivals in hotel gift shops is a competitive factor.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s08",
+     "layout": "check",
+     "heading": "Quick check: direct selling",
+     "body_md": "A jaggery maker sells only at its own farm-gate shop and from its own van. Which channel is this?",
+     "bullets": [],
+     "visual": null,
+     "math": [],
+     "narration": "Is there anyone between the maker and the buyer?",
+     "check_question_id": "q_isc12commerce_ch15_002",
+     "audio": null
+    },
+    {
+     "id": "s09",
+     "layout": "diagram",
+     "heading": "Physical distribution",
+     "body_md": "**Physical distribution** covers the activities that move goods physically from the producer to buyers at the **right place and time**.",
+     "bullets": [],
+     "visual": {
+      "kind": "flow",
+      "spec": {
+       "direction": "LR",
+       "nodes": [
+        {
+         "id": "n1",
+         "label": "Order processing"
+        },
+        {
+         "id": "n2",
+         "label": "Warehousing"
+        },
+        {
+         "id": "n3",
+         "label": "Inventory control"
+        },
+        {
+         "id": "n4",
+         "label": "Transportation"
+        }
+       ],
+       "edges": [
+        {
+         "from": "n1",
+         "to": "n2"
+        },
+        {
+         "from": "n2",
+         "to": "n3"
+        },
+        {
+         "from": "n3",
+         "to": "n4"
+        }
+       ]
+      },
+      "alt": "Four elements of physical distribution: order processing, warehousing, inventory control and transportation",
+      "caption": "Physical distribution gets goods to buyers at the right place and time."
+     },
+     "math": [],
+     "narration": "Choosing a channel decides who handles the goods. Physical distribution is about actually moving them. Orders must be processed, goods stored in warehouses near markets, the right stock kept, and goods transported to buyers. We need only the meaning of each element.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s10",
+     "layout": "concept",
+     "heading": "Elements of physical distribution",
+     "body_md": "",
+     "bullets": [],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Element",
+        "Meaning",
+        "Imagined example"
+       ],
+       "rows": [
+        [
+         "Order processing",
+         "Receiving, checking and preparing orders",
+         "Invoice raised and cartons packed the same day"
+        ],
+        [
+         "Transportation",
+         "Moving goods to buyers",
+         "Refrigerated vans for chocolates"
+        ],
+        [
+         "Warehousing",
+         "Storing goods near markets",
+         "Godowns in Delhi and Kolkata"
+        ],
+        [
+         "Inventory control",
+         "Keeping the right level of stock",
+         "Minimum and maximum stock for each size"
+        ]
+       ]
+      },
+      "alt": "Table of the four elements of physical distribution with their meanings and an imagined example of each"
+     },
+     "math": [],
+     "narration": "Order processing means receiving, checking and preparing orders. Transportation means moving goods to buyers. Warehousing means storing them near markets. Inventory control means keeping the right level of stock, neither so little that sales are lost nor so much that money is locked up.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s11",
+     "layout": "check",
+     "heading": "Quick check: storing near markets",
+     "body_md": "Fill in the blank: keeping goods in godowns near markets until needed is called ___.",
+     "bullets": [],
+     "visual": null,
+     "math": [],
+     "narration": "One word, one of the four elements.",
+     "check_question_id": "q_isc12commerce_ch15_027",
+     "audio": null
+    },
+    {
+     "id": "s12",
+     "layout": "summary",
+     "heading": "Summary of Part 1",
+     "body_md": "",
+     "bullets": [],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Idea",
+        "Key point"
+       ],
+       "rows": [
+        [
+         "Channel of distribution",
+         "Route of goods from maker to buyer, with middlemen"
+        ],
+        [
+         "Levels",
+         "Zero (direct), one (retailer), two (wholesaler and retailer)"
+        ],
+        [
+         "Choosing a channel",
+         "Product, market, company and competitive factors"
+        ],
+        [
+         "Physical distribution",
+         "Order processing, transportation, warehousing, inventory control"
+        ]
+       ]
+      },
+      "alt": "Summary table of Part 1: channels, levels, factors in choosing a channel and physical distribution"
+     },
+     "math": [],
+     "narration": "To sum up Part 1. A channel of distribution is the route of goods from maker to buyer. Zero-level has no middleman, one-level has a retailer, and two-level has a wholesaler and a retailer. Product, market, company and competitive factors guide the choice. Physical distribution covers order processing, transportation, warehousing and inventory control.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s13",
+     "layout": "exam-tips",
+     "heading": "Exam tips",
+     "body_md": "",
+     "bullets": [
+      "**Draw** each channel as a flow with arrows.",
+      "The level equals the **number of middlemen**.",
+      "Name the **factor group** before explaining it.",
+      "For physical distribution, the **meaning** of each element is enough."
+     ],
+     "visual": {
+      "kind": "flow",
+      "spec": {
+       "direction": "LR",
+       "nodes": [
+        {
+         "id": "n1",
+         "label": "Quote the clue"
+        },
+        {
+         "id": "n2",
+         "label": "Name the channel, element or tool"
+        },
+        {
+         "id": "n3",
+         "label": "Explain or recommend"
+        }
+       ],
+       "edges": [
+        {
+         "from": "n1",
+         "to": "n2"
+        },
+        {
+         "from": "n2",
+         "to": "n3"
+        }
+       ]
+      },
+      "alt": "Three steps for case questions: quote the clue, name the channel, element or tool, and explain or recommend"
+     },
+     "math": [],
+     "narration": "Some tips. Draw channels as simple flows with arrows. Remember that the level is the number of middlemen. When explaining factors, say whether each is a product, market, company or competitive factor. For physical distribution, a clear meaning of each element is enough.",
+     "check_question_id": null,
+     "audio": null
+    }
+   ],
+   "status": "draft",
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "unit": "isc-12-commerce-ch15",
+   "part": 2,
+   "version": 1,
+   "title": "Place and Promotion — Part 2: The Promotion Mix",
+   "language": "en",
+   "goals": [
+    "Explain the promotion mix and its role in informing and persuading customers",
+    "Compare advertising with personal selling, and sales promotion with publicity",
+    "Recommend a suitable promotion element for a given product and market"
+   ],
+   "slides": [
+    {
+     "id": "s01",
+     "layout": "title",
+     "heading": "The Promotion Mix",
+     "body_md": "Part 2: the **promotion mix**, its **roles**, the four **tools**, how they **differ**, and how to **choose** among them.",
+     "bullets": [],
+     "visual": {
+      "kind": "flow",
+      "spec": {
+       "direction": "LR",
+       "nodes": [
+        {
+         "id": "n1",
+         "label": "Promotion mix"
+        },
+        {
+         "id": "n2",
+         "label": "Advertising"
+        },
+        {
+         "id": "n3",
+         "label": "Sales promotion and personal selling"
+        },
+        {
+         "id": "n4",
+         "label": "Publicity and choosing a tool"
+        }
+       ],
+       "edges": [
+        {
+         "from": "n1",
+         "to": "n2"
+        },
+        {
+         "from": "n2",
+         "to": "n3"
+        },
+        {
+         "from": "n3",
+         "to": "n4"
+        }
+       ]
+      },
+      "alt": "Route map of Part 2: the promotion mix, advertising, sales promotion, personal selling, publicity, and choosing the right tool",
+      "caption": "Part 2 at a glance"
+     },
+     "math": [],
+     "narration": "Promotion is the fourth P. It is how a firm tells buyers about its product and persuades them to buy. In this part we meet the four tools of promotion, see how they differ, and learn how to choose the right one.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s02",
+     "layout": "concept",
+     "heading": "Promotion mix and its roles",
+     "body_md": "The **promotion mix** is the combination of **advertising, sales promotion, personal selling and publicity** a firm uses.",
+     "bullets": [],
+     "visual": {
+      "kind": "flow",
+      "spec": {
+       "direction": "LR",
+       "nodes": [
+        {
+         "id": "n1",
+         "label": "Inform"
+        },
+        {
+         "id": "n2",
+         "label": "Persuade"
+        },
+        {
+         "id": "n3",
+         "label": "Remind"
+        }
+       ],
+       "edges": [
+        {
+         "from": "n1",
+         "to": "n2"
+        },
+        {
+         "from": "n2",
+         "to": "n3"
+        }
+       ]
+      },
+      "alt": "Three roles of promotion: inform, persuade and remind",
+      "caption": "New products need informing; rival products need persuading; familiar products need reminding."
+     },
+     "math": [],
+     "narration": "Promotion has three roles. For a new product, it informs buyers that it exists and what it does. Where rivals compete, it persuades buyers to choose this product. For a familiar product, it reminds buyers so that it stays in their minds.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s03",
+     "layout": "check",
+     "heading": "Quick check: four tools together",
+     "body_md": "A firm uses advertisements, a festival discount, salespeople at exhibitions and a news story. Together these are its…",
+     "bullets": [],
+     "visual": null,
+     "math": [],
+     "narration": "Which mix combines all four tools?",
+     "check_question_id": "q_isc12commerce_ch15_031",
+     "audio": null
+    },
+    {
+     "id": "s04",
+     "layout": "concept",
+     "heading": "The four tools",
+     "body_md": "",
+     "bullets": [],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Tool",
+        "Meaning",
+        "Typical example"
+       ],
+       "rows": [
+        [
+         "Advertising",
+         "Paid, impersonal message by an identified sponsor",
+         "A television film or magazine page"
+        ],
+        [
+         "Sales promotion",
+         "Short-term incentives to buy now",
+         "Coupons, free samples, buy-two-get-one"
+        ],
+        [
+         "Personal selling",
+         "Face-to-face, two-way presentation to buyers",
+         "An engineer demonstrating a machine"
+        ],
+        [
+         "Publicity",
+         "Unpaid, non-personal coverage in the media",
+         "A newspaper feature on the firm"
+        ]
+       ]
+      },
+      "alt": "Table of the four promotion tools with the meaning of each and a typical example"
+     },
+     "math": [],
+     "narration": "Advertising is a paid, impersonal message from an identified sponsor. Sales promotion offers short-term incentives such as coupons and free samples. Personal selling is a face-to-face, two-way presentation to buyers. Publicity is unpaid coverage in the media, which the firm does not control.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s05",
+     "layout": "diagram",
+     "heading": "Sorting the tools",
+     "body_md": "",
+     "bullets": [],
+     "visual": {
+      "kind": "svg",
+      "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 560 320\" role=\"img\" aria-label=\"Two-by-two grid. Columns: impersonal and personal. Rows: paid and unpaid. Paid and impersonal: advertising, and sales promotion with short-term incentives. Paid and personal: personal selling, face to face and two-way. Unpaid and impersonal: publicity, news that the firm does not control. Unpaid and personal: not a firm's tool\" font-family=\"sans-serif\" font-size=\"14\" fill=\"none\"><title>Two-by-two grid. Columns: impersonal and personal. Rows: paid and unpaid. Paid and impersonal: advertising, and sales promotion with short-term incentives. Paid and personal: personal selling, face to face and two-way. Unpaid and impersonal: publicity, news that the firm does not control. Unpaid and personal: not a firm's tool</title><rect x=\"120\" y=\"50\" width=\"210\" height=\"120\" rx=\"6\" fill=\"var(--diagram-blue)\" fill-opacity=\"0.12\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.4\"/><rect x=\"330\" y=\"50\" width=\"210\" height=\"120\" rx=\"6\" fill=\"var(--diagram-green)\" fill-opacity=\"0.14\" stroke=\"var(--diagram-green)\" stroke-width=\"1.4\"/><rect x=\"120\" y=\"170\" width=\"210\" height=\"120\" rx=\"6\" fill=\"var(--diagram-yellow)\" fill-opacity=\"0.16\" stroke=\"var(--diagram-yellow)\" stroke-width=\"1.4\"/><rect x=\"330\" y=\"170\" width=\"210\" height=\"120\" rx=\"6\" fill=\"var(--diagram-fill)\" stroke=\"var(--diagram-muted)\" stroke-width=\"1.2\"/><text x=\"225\" y=\"94\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"14\" font-weight=\"bold\">Advertising</text><text x=\"225\" y=\"120\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"14\" font-weight=\"bold\">Sales promotion</text><text x=\"225\" y=\"144\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"11\">(short-term incentives)</text><text x=\"435\" y=\"102\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"14\" font-weight=\"bold\">Personal selling</text><text x=\"435\" y=\"126\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"11\">face to face, two-way</text><text x=\"225\" y=\"222\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"14\" font-weight=\"bold\">Publicity</text><text x=\"225\" y=\"246\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"11\">news; not controlled</text><text x=\"435\" y=\"230\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"11\">not a firm's tool</text><text x=\"225\" y=\"34\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">Impersonal</text><text x=\"435\" y=\"34\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">Personal</text><text x=\"108\" y=\"110\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"end\" dominant-baseline=\"middle\" font-size=\"12\">Paid</text><text x=\"108\" y=\"230\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"end\" dominant-baseline=\"middle\" font-size=\"12\">Unpaid</text></svg>",
+      "alt": "Two-by-two grid. Columns: impersonal and personal. Rows: paid and unpaid. Paid and impersonal: advertising, and sales promotion with short-term incentives. Paid and personal: personal selling, face to face and two-way. Unpaid and impersonal: publicity, news that the firm does not control. Unpaid and personal: not a firm's tool",
+      "caption": "Sorting the four promotion tools by payment and by personal contact."
+     },
+     "math": [],
+     "narration": "Here is a simple way to sort the tools. Advertising and sales promotion are paid and impersonal. Personal selling is paid and personal. Publicity is unpaid, and the firm cannot control what the media say.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s06",
+     "layout": "two-column",
+     "heading": "Advertising versus personal selling",
+     "body_md": "",
+     "bullets": [],
+     "columns": [
+      "**Advertising**\n\nImpersonal, one-way, reaches many, low cost per person.",
+      "**Personal selling**\n\nFace to face, two-way, reaches few, high cost per person, flexible."
+     ],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Basis",
+        "Advertising",
+        "Personal selling"
+       ],
+       "rows": [
+        [
+         "Contact",
+         "Impersonal",
+         "Face to face"
+        ],
+        [
+         "Communication",
+         "One-way",
+         "Two-way"
+        ],
+        [
+         "Reach",
+         "Very many people",
+         "Few people at a time"
+        ],
+        [
+         "Cost per person",
+         "Low",
+         "High"
+        ],
+        [
+         "Flexibility",
+         "Same message for all",
+         "Adapted to each buyer"
+        ]
+       ]
+      },
+      "alt": "Table distinguishing advertising from personal selling on contact, communication, reach, cost per person and flexibility"
+     },
+     "math": [],
+     "narration": "Advertising sends one message to very many people at a low cost per person, but cannot answer questions. Personal selling talks to a few people at a time, at a high cost per person, but it is two-way and can be adapted to each buyer.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s07",
+     "layout": "check",
+     "heading": "Quick check: an analogy",
+     "body_md": "Face-to-face, two-way : Personal selling :: Paid, impersonal, one-way, identified sponsor : ___",
+     "bullets": [],
+     "visual": null,
+     "math": [],
+     "narration": "Which tool sends one message to many?",
+     "check_question_id": "q_isc12commerce_ch15_051",
+     "audio": null
+    },
+    {
+     "id": "s08",
+     "layout": "two-column",
+     "heading": "Sales promotion versus publicity",
+     "body_md": "",
+     "bullets": [],
+     "columns": [
+      "**Sales promotion**\n\nPaid and controlled by the firm; short-term push to sales.",
+      "**Publicity**\n\nUnpaid; controlled by the media; builds credibility over time."
+     ],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Basis",
+        "Sales promotion",
+        "Publicity"
+       ],
+       "rows": [
+        [
+         "Payment",
+         "Paid by the firm",
+         "Unpaid"
+        ],
+        [
+         "Control",
+         "Firm controls it",
+         "Media control it"
+        ],
+        [
+         "Purpose",
+         "Immediate sales",
+         "Awareness and credibility"
+        ],
+        [
+         "Duration",
+         "Short-term",
+         "Longer-lasting"
+        ]
+       ]
+      },
+      "alt": "Table distinguishing sales promotion from publicity on payment, control, purpose and duration"
+     },
+     "math": [],
+     "narration": "Sales promotion is paid for and controlled by the firm, and it aims at quick sales through offers. Publicity costs nothing, but the media decide what to say. Because it comes from an independent source, buyers often find it more believable.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s09",
+     "layout": "example",
+     "heading": "Worked example 1: name the tool",
+     "body_md": "An imagined jungle lodge uses all four tools.",
+     "bullets": [
+      "Step 1: ask whether it is **paid**.",
+      "Step 2: ask whether it is **personal**.",
+      "Step 3: ask whether it is a **short-term incentive**."
+     ],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "What the imagined lodge did",
+        "Tool"
+       ],
+       "rows": [
+        [
+         "Paid pages in two travel magazines",
+         "Advertising"
+        ],
+        [
+         "Free third night in summer",
+         "Sales promotion"
+        ],
+        [
+         "Manager met travel agents one by one",
+         "Personal selling"
+        ],
+        [
+         "A wildlife channel filmed its solar cottages, unpaid",
+         "Publicity"
+        ]
+       ]
+      },
+      "alt": "Worked table: four promotion activities of an imagined jungle lodge and the tool each represents",
+      "caption": "Paid, personal, short-term: three questions sort the tools."
+     },
+     "math": [],
+     "narration": "Paid pages in travel magazines are advertising. A free third night in summer is a short-term incentive, so sales promotion. The manager meeting agents one by one is personal selling. And a wildlife channel filming the lodge at no cost is publicity.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s10",
+     "layout": "example",
+     "heading": "Worked example 2: recommend a tool",
+     "body_md": "Four imagined cases need different tools.",
+     "bullets": [
+      "Step 1: how **many** buyers, and how **spread out**?",
+      "Step 2: how **technical** or costly is the product?",
+      "Step 3: how **quickly** are sales needed?"
+     ],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Imagined case",
+        "Suitable tool",
+        "Why"
+       ],
+       "rows": [
+        [
+         "Costly custom gears for a few tractor makers",
+         "Personal selling",
+         "Technical; few buyers; needs negotiation"
+        ],
+        [
+         "New macaroon flavour for a whole state",
+         "Advertising",
+         "Large, scattered audience; low cost per person"
+        ],
+        [
+         "Last season's bedsheets to clear quickly",
+         "Sales promotion",
+         "Short-term push to sales"
+        ],
+        [
+         "A lodge with a good green story",
+         "Publicity",
+         "Credible news at no cost"
+        ]
+       ]
+      },
+      "alt": "Worked table: four imagined cases, the most suitable promotion tool for each and the reason",
+      "caption": "Ask: how many buyers, how technical the product, and how quickly sales are needed."
+     },
+     "math": [],
+     "narration": "Costly custom gears for a few tractor makers need personal selling. A new flavour for a whole state needs advertising, to reach many quickly. Old bedsheets that must be cleared need sales promotion, for a quick push. A lodge with a good green story can seek publicity.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s11",
+     "layout": "check",
+     "heading": "Quick check: buy two, get one",
+     "body_md": "True or false: a buy-two-get-one-free offer on doormats is sales promotion.",
+     "bullets": [],
+     "visual": null,
+     "math": [],
+     "narration": "Is it a short-term incentive to buy now?",
+     "check_question_id": "q_isc12commerce_ch15_049",
+     "audio": null
+    },
+    {
+     "id": "s12",
+     "layout": "summary",
+     "heading": "Summary of Part 2",
+     "body_md": "",
+     "bullets": [],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Idea",
+        "Key point"
+       ],
+       "rows": [
+        [
+         "Promotion mix",
+         "Advertising, sales promotion, personal selling, publicity"
+        ],
+        [
+         "Roles",
+         "Inform, persuade, remind"
+        ],
+        [
+         "Key differences",
+         "Paid or unpaid; personal or impersonal; short or long term"
+        ],
+        [
+         "Choosing a tool",
+         "Number of buyers, technical nature, urgency of sales"
+        ]
+       ]
+      },
+      "alt": "Summary table of Part 2: the promotion mix, its roles, key differences between tools and choosing a tool"
+     },
+     "math": [],
+     "narration": "To sum up Part 2. The promotion mix combines advertising, sales promotion, personal selling and publicity to inform, persuade and remind buyers. Advertising is impersonal and wide-reaching; personal selling is face to face; sales promotion gives a short-term push; publicity is unpaid news. The right tool depends on the buyers and the product.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s13",
+     "layout": "exam-tips",
+     "heading": "Exam tips",
+     "body_md": "",
+     "bullets": [
+      "Use three questions: **paid? personal? short-term?**",
+      "Compare tools on clear **bases**.",
+      "When recommending, give a **reason** tied to the case.",
+      "Do not call publicity **paid**."
+     ],
+     "visual": {
+      "kind": "svg",
+      "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 560 320\" role=\"img\" aria-label=\"Two-by-two grid. Columns: impersonal and personal. Rows: paid and unpaid. Paid and impersonal: advertising, and sales promotion with short-term incentives. Paid and personal: personal selling, face to face and two-way. Unpaid and impersonal: publicity, news that the firm does not control. Unpaid and personal: not a firm's tool\" font-family=\"sans-serif\" font-size=\"14\" fill=\"none\"><title>Two-by-two grid. Columns: impersonal and personal. Rows: paid and unpaid. Paid and impersonal: advertising, and sales promotion with short-term incentives. Paid and personal: personal selling, face to face and two-way. Unpaid and impersonal: publicity, news that the firm does not control. Unpaid and personal: not a firm's tool</title><rect x=\"120\" y=\"50\" width=\"210\" height=\"120\" rx=\"6\" fill=\"var(--diagram-blue)\" fill-opacity=\"0.12\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.4\"/><rect x=\"330\" y=\"50\" width=\"210\" height=\"120\" rx=\"6\" fill=\"var(--diagram-green)\" fill-opacity=\"0.14\" stroke=\"var(--diagram-green)\" stroke-width=\"1.4\"/><rect x=\"120\" y=\"170\" width=\"210\" height=\"120\" rx=\"6\" fill=\"var(--diagram-yellow)\" fill-opacity=\"0.16\" stroke=\"var(--diagram-yellow)\" stroke-width=\"1.4\"/><rect x=\"330\" y=\"170\" width=\"210\" height=\"120\" rx=\"6\" fill=\"var(--diagram-fill)\" stroke=\"var(--diagram-muted)\" stroke-width=\"1.2\"/><text x=\"225\" y=\"94\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"14\" font-weight=\"bold\">Advertising</text><text x=\"225\" y=\"120\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"14\" font-weight=\"bold\">Sales promotion</text><text x=\"225\" y=\"144\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"11\">(short-term incentives)</text><text x=\"435\" y=\"102\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"14\" font-weight=\"bold\">Personal selling</text><text x=\"435\" y=\"126\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"11\">face to face, two-way</text><text x=\"225\" y=\"222\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"14\" font-weight=\"bold\">Publicity</text><text x=\"225\" y=\"246\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"11\">news; not controlled</text><text x=\"435\" y=\"230\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"11\">not a firm's tool</text><text x=\"225\" y=\"34\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">Impersonal</text><text x=\"435\" y=\"34\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">Personal</text><text x=\"108\" y=\"110\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"end\" dominant-baseline=\"middle\" font-size=\"12\">Paid</text><text x=\"108\" y=\"230\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"end\" dominant-baseline=\"middle\" font-size=\"12\">Unpaid</text></svg>",
+      "alt": "Two-by-two grid. Columns: impersonal and personal. Rows: paid and unpaid. Paid and impersonal: advertising, and sales promotion with short-term incentives. Paid and personal: personal selling, face to face and two-way. Unpaid and impersonal: publicity, news that the firm does not control. Unpaid and personal: not a firm's tool",
+      "caption": "Sorting the four promotion tools by payment and by personal contact."
+     },
+     "math": [],
+     "narration": "Final tips. To identify a tool, ask whether it is paid, whether it is personal, and whether it is a short-term incentive. Compare tools on clear bases. When recommending a tool, give a reason from the case. And remember that publicity is never paid for.",
+     "check_question_id": null,
+     "audio": null
+    }
+   ],
+   "status": "draft",
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  }
+ ],
+ "notes": {
+  "unit": "isc-12-commerce-ch15",
+  "version": 1,
+  "title": "Marketing Mix: Place and Promotion — notes",
+  "language": "en",
+  "sections": [
+   {
+    "heading": "1. Channels of distribution",
+    "body_md": "A **channel of distribution** is the route, with its **middlemen**, through which goods pass from the producer to the final buyer. Middlemen (wholesalers, retailers, agents) break bulk, store, give credit, assemble assortments and reach scattered buyers.\n\n**Levels:**\n- **Zero-level (direct):** Manufacturer → Consumer (own shops, door-to-door, own website).\n- **One-level:** Manufacturer → Retailer → Consumer.\n- **Two-level:** Manufacturer → Wholesaler → Retailer → Consumer.\n\n**Factors in choosing a channel:**\n- **Product** — perishability, unit value, technical nature, standard or made to order.\n- **Market** — number and size of buyers, their location, size of orders, consumer or industrial buyers.\n- **Company** — financial strength, desire for control, own sales staff.\n- **Competition** — channels used by rivals.",
+    "key_terms": [
+     {
+      "term": "Channel of distribution",
+      "definition_md": "Route of goods from producer to buyer, with middlemen."
+     },
+     {
+      "term": "Zero-level channel",
+      "definition_md": "Direct sale from producer to consumer."
+     },
+     {
+      "term": "Two-level channel",
+      "definition_md": "Producer → wholesaler → retailer → consumer."
+     }
+    ],
+    "formulas": [],
+    "visual": {
+     "kind": "svg",
+     "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 560 330\" role=\"img\" aria-label=\"Three rows of boxes joined by arrows. Zero-level: manufacturer to consumer, no middleman. One-level: manufacturer to retailer to consumer, one middleman. Two-level: manufacturer to wholesaler to retailer to consumer, two middlemen\" font-family=\"sans-serif\" font-size=\"14\" fill=\"none\"><title>Three rows of boxes joined by arrows. Zero-level: manufacturer to consumer, no middleman. One-level: manufacturer to retailer to consumer, one middleman. Two-level: manufacturer to wholesaler to retailer to consumer, two middlemen</title><text x=\"14\" y=\"58\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"start\" dominant-baseline=\"middle\" font-size=\"13\" font-weight=\"bold\">Zero-level</text><rect x=\"112\" y=\"40\" width=\"92\" height=\"36\" rx=\"8\" fill=\"var(--diagram-blue)\" fill-opacity=\"0.15\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.4\"/><text x=\"158\" y=\"58\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"11\">Manufacturer</text><line x1=\"206\" y1=\"58\" x2=\"444\" y2=\"58\" fill=\"none\" stroke=\"var(--diagram-muted)\" stroke-width=\"1.4\"/><polygon points=\"444,58 435,62.5 435,53.5\" fill=\"var(--diagram-muted)\" stroke=\"none\"/><rect x=\"448\" y=\"40\" width=\"92\" height=\"36\" rx=\"8\" fill=\"var(--diagram-green)\" fill-opacity=\"0.15\" stroke=\"var(--diagram-green)\" stroke-width=\"1.4\"/><text x=\"494\" y=\"58\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"11\">Consumer</text><text x=\"494\" y=\"94\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"11\">no middleman</text><text x=\"14\" y=\"158\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"start\" dominant-baseline=\"middle\" font-size=\"13\" font-weight=\"bold\">One-level</text><rect x=\"112\" y=\"140\" width=\"92\" height=\"36\" rx=\"8\" fill=\"var(--diagram-blue)\" fill-opacity=\"0.15\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.4\"/><text x=\"158\" y=\"158\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"11\">Manufacturer</text><line x1=\"206\" y1=\"158\" x2=\"220\" y2=\"158\" fill=\"none\" stroke=\"var(--diagram-muted)\" stroke-width=\"1.4\"/><polygon points=\"220,158 211,162.5 211,153.5\" fill=\"var(--diagram-muted)\" stroke=\"none\"/><rect x=\"224\" y=\"140\" width=\"92\" height=\"36\" rx=\"8\" fill=\"var(--diagram-yellow)\" fill-opacity=\"0.15\" stroke=\"var(--diagram-yellow)\" stroke-width=\"1.4\"/><text x=\"270\" y=\"158\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"11\">Retailer</text><line x1=\"318\" y1=\"158\" x2=\"444\" y2=\"158\" fill=\"none\" stroke=\"var(--diagram-muted)\" stroke-width=\"1.4\"/><polygon points=\"444,158 435,162.5 435,153.5\" fill=\"var(--diagram-muted)\" stroke=\"none\"/><rect x=\"448\" y=\"140\" width=\"92\" height=\"36\" rx=\"8\" fill=\"var(--diagram-green)\" fill-opacity=\"0.15\" stroke=\"var(--diagram-green)\" stroke-width=\"1.4\"/><text x=\"494\" y=\"158\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"11\">Consumer</text><text x=\"494\" y=\"194\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"11\">one middleman</text><text x=\"14\" y=\"258\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"start\" dominant-baseline=\"middle\" font-size=\"13\" font-weight=\"bold\">Two-level</text><rect x=\"112\" y=\"240\" width=\"92\" height=\"36\" rx=\"8\" fill=\"var(--diagram-blue)\" fill-opacity=\"0.15\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.4\"/><text x=\"158\" y=\"258\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"11\">Manufacturer</text><line x1=\"206\" y1=\"258\" x2=\"220\" y2=\"258\" fill=\"none\" stroke=\"var(--diagram-muted)\" stroke-width=\"1.4\"/><polygon points=\"220,258 211,262.5 211,253.5\" fill=\"var(--diagram-muted)\" stroke=\"none\"/><rect x=\"224\" y=\"240\" width=\"92\" height=\"36\" rx=\"8\" fill=\"var(--diagram-yellow)\" fill-opacity=\"0.15\" stroke=\"var(--diagram-yellow)\" stroke-width=\"1.4\"/><text x=\"270\" y=\"258\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"11\">Wholesaler</text><line x1=\"318\" y1=\"258\" x2=\"332\" y2=\"258\" fill=\"none\" stroke=\"var(--diagram-muted)\" stroke-width=\"1.4\"/><polygon points=\"332,258 323,262.5 323,253.5\" fill=\"var(--diagram-muted)\" stroke=\"none\"/><rect x=\"336\" y=\"240\" width=\"92\" height=\"36\" rx=\"8\" fill=\"var(--diagram-yellow)\" fill-opacity=\"0.15\" stroke=\"var(--diagram-yellow)\" stroke-width=\"1.4\"/><text x=\"382\" y=\"258\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"11\">Retailer</text><line x1=\"430\" y1=\"258\" x2=\"444\" y2=\"258\" fill=\"none\" stroke=\"var(--diagram-muted)\" stroke-width=\"1.4\"/><polygon points=\"444,258 435,262.5 435,253.5\" fill=\"var(--diagram-muted)\" stroke=\"none\"/><rect x=\"448\" y=\"240\" width=\"92\" height=\"36\" rx=\"8\" fill=\"var(--diagram-green)\" fill-opacity=\"0.15\" stroke=\"var(--diagram-green)\" stroke-width=\"1.4\"/><text x=\"494\" y=\"258\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"11\">Consumer</text><text x=\"494\" y=\"294\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"11\">two middlemen</text></svg>",
+     "alt": "Three rows of boxes joined by arrows. Zero-level: manufacturer to consumer, no middleman. One-level: manufacturer to retailer to consumer, one middleman. Two-level: manufacturer to wholesaler to retailer to consumer, two middlemen",
+     "caption": "The level of a channel is the number of middlemen in it."
+    },
+    "visuals": [
+     {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Factor",
+        "Points towards a short channel when…",
+        "Points towards a long channel when…"
+       ],
+       "rows": [
+        [
+         "Product",
+         "Perishable, costly, technical or made to order",
+         "Durable, cheap, standard"
+        ],
+        [
+         "Market",
+         "Few, large buyers close together",
+         "Many small buyers spread widely"
+        ],
+        [
+         "Company",
+         "Strong finances; wants control",
+         "Limited funds and staff"
+        ],
+        [
+         "Competition",
+         "Rivals sell direct",
+         "Rivals use dealers and shops"
+        ]
+       ]
+      },
+      "alt": "Table of four groups of factors in choosing a channel, showing when each points towards a short channel and when towards a long one"
+     }
+    ],
+    "topic_ids": [
+     "isc-12-commerce-ch15-t01"
+    ]
+   },
+   {
+    "heading": "2. Physical distribution (meaning only)",
+    "body_md": "**Physical distribution** covers the activities involved in moving goods physically from the producer to buyers at the right place and time.\n\n**Elements:**\n- **Order processing** — receiving, checking and preparing orders for dispatch.\n- **Transportation** — moving goods to where buyers are.\n- **Warehousing** — storing goods, often near markets, until needed.\n- **Inventory control** — maintaining the right level of stock: enough to meet orders without locking up too much money.",
+    "key_terms": [
+     {
+      "term": "Physical distribution",
+      "definition_md": "Moving goods physically to buyers at the right place and time."
+     },
+     {
+      "term": "Inventory control",
+      "definition_md": "Keeping stock at the right level."
+     }
+    ],
+    "formulas": [],
+    "visual": {
+     "kind": "flow",
+     "spec": {
+      "direction": "LR",
+      "nodes": [
+       {
+        "id": "n1",
+        "label": "Order processing"
+       },
+       {
+        "id": "n2",
+        "label": "Warehousing"
+       },
+       {
+        "id": "n3",
+        "label": "Inventory control"
+       },
+       {
+        "id": "n4",
+        "label": "Transportation"
+       }
+      ],
+      "edges": [
+       {
+        "from": "n1",
+        "to": "n2"
+       },
+       {
+        "from": "n2",
+        "to": "n3"
+       },
+       {
+        "from": "n3",
+        "to": "n4"
+       }
+      ]
+     },
+     "alt": "Four elements of physical distribution: order processing, warehousing, inventory control and transportation",
+     "caption": "Physical distribution gets goods to buyers at the right place and time."
+    },
+    "visuals": [
+     {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Element",
+        "Meaning",
+        "Imagined example"
+       ],
+       "rows": [
+        [
+         "Order processing",
+         "Receiving, checking and preparing orders",
+         "Invoice raised and cartons packed the same day"
+        ],
+        [
+         "Transportation",
+         "Moving goods to buyers",
+         "Refrigerated vans for chocolates"
+        ],
+        [
+         "Warehousing",
+         "Storing goods near markets",
+         "Godowns in Delhi and Kolkata"
+        ],
+        [
+         "Inventory control",
+         "Keeping the right level of stock",
+         "Minimum and maximum stock for each size"
+        ]
+       ]
+      },
+      "alt": "Table of the four elements of physical distribution with their meanings and an imagined example of each"
+     }
+    ],
+    "topic_ids": [
+     "isc-12-commerce-ch15-t02"
+    ]
+   },
+   {
+    "heading": "3. Promotion mix",
+    "body_md": "**Promotion** is communication by a firm to inform, persuade and remind buyers about its products. The **promotion mix** is the combination of **advertising, sales promotion, personal selling and publicity** (public relations).\n\n**Roles:** **inform** (new products), **persuade** (choose this over rivals), **remind** (keep a known product in mind).",
+    "key_terms": [
+     {
+      "term": "Promotion mix",
+      "definition_md": "Advertising, sales promotion, personal selling and publicity combined."
+     }
+    ],
+    "formulas": [],
+    "visual": {
+     "kind": "flow",
+     "spec": {
+      "direction": "LR",
+      "nodes": [
+       {
+        "id": "n1",
+        "label": "Inform"
+       },
+       {
+        "id": "n2",
+        "label": "Persuade"
+       },
+       {
+        "id": "n3",
+        "label": "Remind"
+       }
+      ],
+      "edges": [
+       {
+        "from": "n1",
+        "to": "n2"
+       },
+       {
+        "from": "n2",
+        "to": "n3"
+       }
+      ]
+     },
+     "alt": "Three roles of promotion: inform, persuade and remind",
+     "caption": "New products need informing; rival products need persuading; familiar products need reminding."
+    },
+    "visuals": [
+     {
+      "kind": "svg",
+      "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 560 320\" role=\"img\" aria-label=\"Two-by-two grid. Columns: impersonal and personal. Rows: paid and unpaid. Paid and impersonal: advertising, and sales promotion with short-term incentives. Paid and personal: personal selling, face to face and two-way. Unpaid and impersonal: publicity, news that the firm does not control. Unpaid and personal: not a firm's tool\" font-family=\"sans-serif\" font-size=\"14\" fill=\"none\"><title>Two-by-two grid. Columns: impersonal and personal. Rows: paid and unpaid. Paid and impersonal: advertising, and sales promotion with short-term incentives. Paid and personal: personal selling, face to face and two-way. Unpaid and impersonal: publicity, news that the firm does not control. Unpaid and personal: not a firm's tool</title><rect x=\"120\" y=\"50\" width=\"210\" height=\"120\" rx=\"6\" fill=\"var(--diagram-blue)\" fill-opacity=\"0.12\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.4\"/><rect x=\"330\" y=\"50\" width=\"210\" height=\"120\" rx=\"6\" fill=\"var(--diagram-green)\" fill-opacity=\"0.14\" stroke=\"var(--diagram-green)\" stroke-width=\"1.4\"/><rect x=\"120\" y=\"170\" width=\"210\" height=\"120\" rx=\"6\" fill=\"var(--diagram-yellow)\" fill-opacity=\"0.16\" stroke=\"var(--diagram-yellow)\" stroke-width=\"1.4\"/><rect x=\"330\" y=\"170\" width=\"210\" height=\"120\" rx=\"6\" fill=\"var(--diagram-fill)\" stroke=\"var(--diagram-muted)\" stroke-width=\"1.2\"/><text x=\"225\" y=\"94\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"14\" font-weight=\"bold\">Advertising</text><text x=\"225\" y=\"120\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"14\" font-weight=\"bold\">Sales promotion</text><text x=\"225\" y=\"144\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"11\">(short-term incentives)</text><text x=\"435\" y=\"102\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"14\" font-weight=\"bold\">Personal selling</text><text x=\"435\" y=\"126\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"11\">face to face, two-way</text><text x=\"225\" y=\"222\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"14\" font-weight=\"bold\">Publicity</text><text x=\"225\" y=\"246\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"11\">news; not controlled</text><text x=\"435\" y=\"230\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"11\">not a firm's tool</text><text x=\"225\" y=\"34\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">Impersonal</text><text x=\"435\" y=\"34\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">Personal</text><text x=\"108\" y=\"110\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"end\" dominant-baseline=\"middle\" font-size=\"12\">Paid</text><text x=\"108\" y=\"230\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"end\" dominant-baseline=\"middle\" font-size=\"12\">Unpaid</text></svg>",
+      "alt": "Two-by-two grid. Columns: impersonal and personal. Rows: paid and unpaid. Paid and impersonal: advertising, and sales promotion with short-term incentives. Paid and personal: personal selling, face to face and two-way. Unpaid and impersonal: publicity, news that the firm does not control. Unpaid and personal: not a firm's tool",
+      "caption": "Sorting the four promotion tools by payment and by personal contact."
+     }
+    ],
+    "topic_ids": [
+     "isc-12-commerce-ch15-t03"
+    ]
+   },
+   {
+    "heading": "4. The four promotion tools and their differences",
+    "body_md": "**Advertising** — a paid, impersonal form of communication about a product by an **identified sponsor**. Features: paid, impersonal, one-way, wide reach, low cost per person. Objectives: inform, persuade, remind, build image, support salespeople.\n\n**Sales promotion** — **short-term incentives** to encourage immediate buying: discounts, coupons, free samples, contests, quantity offers, gifts. It supplements advertising and personal selling.\n\n**Personal selling** — **face-to-face, two-way** presentation to prospective buyers to make a sale. Features: personal contact, flexibility, relationship building, immediate feedback; high cost per buyer.\n\n**Publicity** — **unpaid, non-personal** coverage of a firm or product in the media; not controlled by the firm but highly credible.\n\n**Choosing a tool:** few buyers or technical, costly products → personal selling; a large, scattered market → advertising; quick sales or clearing stock → sales promotion; a newsworthy story → publicity.",
+    "key_terms": [
+     {
+      "term": "Advertising",
+      "definition_md": "Paid, impersonal communication by an identified sponsor."
+     },
+     {
+      "term": "Sales promotion",
+      "definition_md": "Short-term incentives to buy now."
+     },
+     {
+      "term": "Personal selling",
+      "definition_md": "Face-to-face, two-way selling."
+     },
+     {
+      "term": "Publicity",
+      "definition_md": "Unpaid media coverage the firm does not control."
+     }
+    ],
+    "formulas": [],
+    "visual": {
+     "kind": "table",
+     "spec": {
+      "headers": [
+       "Tool",
+       "Meaning",
+       "Typical example"
+      ],
+      "rows": [
+       [
+        "Advertising",
+        "Paid, impersonal message by an identified sponsor",
+        "A television film or magazine page"
+       ],
+       [
+        "Sales promotion",
+        "Short-term incentives to buy now",
+        "Coupons, free samples, buy-two-get-one"
+       ],
+       [
+        "Personal selling",
+        "Face-to-face, two-way presentation to buyers",
+        "An engineer demonstrating a machine"
+       ],
+       [
+        "Publicity",
+        "Unpaid, non-personal coverage in the media",
+        "A newspaper feature on the firm"
+       ]
+      ]
+     },
+     "alt": "Table of the four promotion tools with the meaning of each and a typical example"
+    },
+    "visuals": [
+     {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Basis",
+        "Advertising",
+        "Personal selling"
+       ],
+       "rows": [
+        [
+         "Contact",
+         "Impersonal",
+         "Face to face"
+        ],
+        [
+         "Communication",
+         "One-way",
+         "Two-way"
+        ],
+        [
+         "Reach",
+         "Very many people",
+         "Few people at a time"
+        ],
+        [
+         "Cost per person",
+         "Low",
+         "High"
+        ],
+        [
+         "Flexibility",
+         "Same message for all",
+         "Adapted to each buyer"
+        ]
+       ]
+      },
+      "alt": "Table distinguishing advertising from personal selling on contact, communication, reach, cost per person and flexibility"
+     },
+     {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Basis",
+        "Sales promotion",
+        "Publicity"
+       ],
+       "rows": [
+        [
+         "Payment",
+         "Paid by the firm",
+         "Unpaid"
+        ],
+        [
+         "Control",
+         "Firm controls it",
+         "Media control it"
+        ],
+        [
+         "Purpose",
+         "Immediate sales",
+         "Awareness and credibility"
+        ],
+        [
+         "Duration",
+         "Short-term",
+         "Longer-lasting"
+        ]
+       ]
+      },
+      "alt": "Table distinguishing sales promotion from publicity on payment, control, purpose and duration"
+     },
+     {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Imagined case",
+        "Suitable tool",
+        "Why"
+       ],
+       "rows": [
+        [
+         "Costly custom gears for a few tractor makers",
+         "Personal selling",
+         "Technical; few buyers; needs negotiation"
+        ],
+        [
+         "New macaroon flavour for a whole state",
+         "Advertising",
+         "Large, scattered audience; low cost per person"
+        ],
+        [
+         "Last season's bedsheets to clear quickly",
+         "Sales promotion",
+         "Short-term push to sales"
+        ],
+        [
+         "A lodge with a good green story",
+         "Publicity",
+         "Credible news at no cost"
+        ]
+       ]
+      },
+      "alt": "Worked table: four imagined cases, the most suitable promotion tool for each and the reason",
+      "caption": "Ask: how many buyers, how technical the product, and how quickly sales are needed."
+     }
+    ],
+    "topic_ids": [
+     "isc-12-commerce-ch15-t04"
+    ]
+   }
+  ],
+  "exam_tips_md": "**Common mistakes**\n- Counting the manufacturer or the consumer as a level of a channel.\n- Calling a channel with only a retailer two-level.\n- Calling publicity paid, or calling a free sample advertising.\n- Recommending a tool without a reason from the case.\n\n**How marks are usually awarded**\n- 1 mark: correct channel, element or tool.\n- 2–3 marks: each point named and explained, or each basis of difference stated for both tools.\n- 5 marks: parts answered separately; factors applied to the firm; tools applied with examples.\n- Case questions: quote the clue, name the idea, explain or recommend.",
+  "status": "draft",
+  "provenance": {
+   "origin": "human",
+   "template_version": null,
+   "model": null,
+   "generated_at": "2026-10-31",
+   "author": "claude-opus-5-5 (subject-producer)"
+  }
+ },
+ "flashcards": {
+  "unit": "isc-12-commerce-ch15",
+  "version": 1,
+  "language": "en",
+  "cards": [
+   {
+    "id": "f01",
+    "front_md": "**Channel of distribution**",
+    "back_md": "Route of goods from producer to buyer, with its middlemen.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch15-t01"
+   },
+   {
+    "id": "f02",
+    "front_md": "**Zero-level channel**",
+    "back_md": "Manufacturer → consumer; no middleman.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch15-t01"
+   },
+   {
+    "id": "f03",
+    "front_md": "**One-level channel**",
+    "back_md": "Manufacturer → retailer → consumer.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch15-t01"
+   },
+   {
+    "id": "f04",
+    "front_md": "**Two-level channel**",
+    "back_md": "Manufacturer → wholesaler → retailer → consumer.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch15-t01"
+   },
+   {
+    "id": "f05",
+    "front_md": "Level of a channel",
+    "back_md": "The number of middlemen in it.",
+    "tag": "fact",
+    "topic_id": "isc-12-commerce-ch15-t01"
+   },
+   {
+    "id": "f06",
+    "front_md": "Functions of middlemen",
+    "back_md": "Break bulk, store, give credit, reach scattered buyers.",
+    "tag": "concept",
+    "topic_id": "isc-12-commerce-ch15-t01"
+   },
+   {
+    "id": "f07",
+    "front_md": "Four groups of channel factors",
+    "back_md": "Product, market, company, competition.",
+    "tag": "exam-tip",
+    "topic_id": "isc-12-commerce-ch15-t01"
+   },
+   {
+    "id": "f08",
+    "front_md": "Perishable goods need…",
+    "back_md": "Short channels.",
+    "tag": "fact",
+    "topic_id": "isc-12-commerce-ch15-t01"
+   },
+   {
+    "id": "f09",
+    "front_md": "A few large buyers in one place suit…",
+    "back_md": "Direct selling.",
+    "tag": "fact",
+    "topic_id": "isc-12-commerce-ch15-t01"
+   },
+   {
+    "id": "f10",
+    "front_md": "A small firm with little capital usually uses…",
+    "back_md": "Middlemen (indirect channels).",
+    "tag": "fact",
+    "topic_id": "isc-12-commerce-ch15-t01"
+   },
+   {
+    "id": "f11",
+    "front_md": "**Physical distribution**",
+    "back_md": "Moving goods physically to buyers at the right place and time.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch15-t02"
+   },
+   {
+    "id": "f12",
+    "front_md": "Four elements of physical distribution",
+    "back_md": "Order processing, transportation, warehousing, inventory control.",
+    "tag": "exam-tip",
+    "topic_id": "isc-12-commerce-ch15-t02"
+   },
+   {
+    "id": "f13",
+    "front_md": "**Order processing**",
+    "back_md": "Receiving, checking and preparing orders for dispatch.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch15-t02"
+   },
+   {
+    "id": "f14",
+    "front_md": "**Inventory control**",
+    "back_md": "Keeping the right level of stock.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch15-t02"
+   },
+   {
+    "id": "f15",
+    "front_md": "**Promotion mix**",
+    "back_md": "Advertising, sales promotion, personal selling, publicity.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch15-t03"
+   },
+   {
+    "id": "f16",
+    "front_md": "Three roles of promotion",
+    "back_md": "Inform, persuade, remind.",
+    "tag": "exam-tip",
+    "topic_id": "isc-12-commerce-ch15-t03"
+   },
+   {
+    "id": "f17",
+    "front_md": "**Advertising**",
+    "back_md": "Paid, impersonal message by an identified sponsor.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch15-t04"
+   },
+   {
+    "id": "f18",
+    "front_md": "**Sales promotion**",
+    "back_md": "Short-term incentives to buy now.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch15-t04"
+   },
+   {
+    "id": "f19",
+    "front_md": "**Personal selling**",
+    "back_md": "Face-to-face, two-way presentation to buyers.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch15-t04"
+   },
+   {
+    "id": "f20",
+    "front_md": "**Publicity**",
+    "back_md": "Unpaid media coverage, not controlled by the firm.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch15-t04"
+   },
+   {
+    "id": "f21",
+    "front_md": "Advertising vs personal selling",
+    "back_md": "Impersonal, one-way, cheap per person vs face to face, two-way, costly per person.",
+    "tag": "concept",
+    "topic_id": "isc-12-commerce-ch15-t04"
+   },
+   {
+    "id": "f22",
+    "front_md": "Sales promotion vs publicity",
+    "back_md": "Paid, controlled, short-term vs unpaid, media-controlled, credible.",
+    "tag": "concept",
+    "topic_id": "isc-12-commerce-ch15-t04"
+   },
+   {
+    "id": "f23",
+    "front_md": "Examples of sales promotion",
+    "back_md": "Coupons, free samples, discounts, contests, quantity offers.",
+    "tag": "fact",
+    "topic_id": "isc-12-commerce-ch15-t04"
+   },
+   {
+    "id": "f24",
+    "front_md": "Best tool for costly technical goods sold to a few buyers",
+    "back_md": "Personal selling.",
+    "tag": "exam-tip",
+    "topic_id": "isc-12-commerce-ch15-t04"
+   },
+   {
+    "id": "f25",
+    "front_md": "Best tool for reaching a large, scattered market fast",
+    "back_md": "Advertising.",
+    "tag": "exam-tip",
+    "topic_id": "isc-12-commerce-ch15-t04"
+   },
+   {
+    "id": "f26",
+    "front_md": "Best tool for clearing old stock quickly",
+    "back_md": "Sales promotion.",
+    "tag": "exam-tip",
+    "topic_id": "isc-12-commerce-ch15-t04"
+   },
+   {
+    "id": "f27",
+    "front_md": "Why is publicity credible?",
+    "back_md": "It comes from independent media, not the firm.",
+    "tag": "concept",
+    "topic_id": "isc-12-commerce-ch15-t04"
+   },
+   {
+    "id": "f28",
+    "front_md": "Three questions to sort promotion tools",
+    "back_md": "Paid? Personal? Short-term incentive?",
+    "tag": "exam-tip",
+    "topic_id": "isc-12-commerce-ch15-t04"
+   },
+   {
+    "id": "f29",
+    "front_md": "Case routine",
+    "back_md": "Quote the clue, name the channel, element or tool, explain or recommend.",
+    "tag": "exam-tip",
+    "topic_id": "isc-12-commerce-ch15-t01"
+   }
+  ],
+  "status": "draft",
+  "provenance": {
+   "origin": "human",
+   "template_version": null,
+   "model": null,
+   "generated_at": "2026-10-31",
+   "author": "claude-opus-5-5 (subject-producer)"
+  }
+ },
+ "questions": [
+  {
+   "id": "q_isc12commerce_ch15_001",
+   "unit": "isc-12-commerce-ch15",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Kolar Silk Reelers, an imagined firm in Kolar, asks which route its silk yarn should take, and through which middlemen, to reach the weavers who use it. It is choosing its",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "promotion mix"
+    },
+    {
+     "id": "b",
+     "text_md": "channel of distribution"
+    },
+    {
+     "id": "c",
+     "text_md": "pricing strategy"
+    },
+    {
+     "id": "d",
+     "text_md": "brand mark"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (b)** channel of distribution. The route, with any middlemen, by which goods pass from producer to user is the channel of distribution.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch15-t01"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "b"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (b)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch15_002",
+   "unit": "isc-12-commerce-ch15",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Shimsha Jaggery Works, an imagined producer in Mandya, sells its jaggery blocks only at its own farm-gate shop and from its own van that goes door to door. Its channel of distribution is",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "one-level"
+    },
+    {
+     "id": "b",
+     "text_md": "two-level"
+    },
+    {
+     "id": "c",
+     "text_md": "three-level"
+    },
+    {
+     "id": "d",
+     "text_md": "zero-level (direct)"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (d)** zero-level (direct). With no middleman between producer and consumer, the channel is zero-level, or direct.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch15-t01"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "d"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (d)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch15_003",
+   "unit": "isc-12-commerce-ch15",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Pratishthan Paithani, an imagined saree weaver in Aurangabad, sells its sarees to boutique owners in Pune and Mumbai, who sell them to their customers. Its channel is",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "one-level"
+    },
+    {
+     "id": "b",
+     "text_md": "zero-level"
+    },
+    {
+     "id": "c",
+     "text_md": "two-level"
+    },
+    {
+     "id": "d",
+     "text_md": "direct marketing"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (a)** one-level. One middleman (the retailer) between producer and consumer makes a one-level channel.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch15-t01"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (a)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch15_004",
+   "unit": "isc-12-commerce-ch15",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Each carton of Pearl City Macaroons, an imagined bakery in Thoothukudi, passes from the bakery to a district stockist, then to a sweet shop, and finally to the customer. This is a",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "one-level channel"
+    },
+    {
+     "id": "b",
+     "text_md": "zero-level channel"
+    },
+    {
+     "id": "c",
+     "text_md": "two-level channel"
+    },
+    {
+     "id": "d",
+     "text_md": "direct channel"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (c)** two-level channel. Two middlemen, a wholesaler (stockist) and a retailer, make a two-level channel.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch15-t01"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "c"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (c)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch15_005",
+   "unit": "isc-12-commerce-ch15",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Aliyar Coconut Water, an imagined firm in Pollachi, bottles tender-coconut water that spoils within two days. Which channel suits it best, and why?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "A long channel, because the product is cheap"
+    },
+    {
+     "id": "b",
+     "text_md": "A long channel, because buyers are few"
+    },
+    {
+     "id": "c",
+     "text_md": "A short channel, because the product is highly perishable"
+    },
+    {
+     "id": "d",
+     "text_md": "Any channel, because the product does not affect the choice"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (c)** A short channel, because the product is highly perishable. Perishable products must reach buyers quickly, so they need short channels with few middlemen.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch15-t01"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "c"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (c)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch15_006",
+   "unit": "isc-12-commerce-ch15",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Kolar Silk Reelers (imagined) sells all its yarn to twelve large weaving mills located in one town. Which factor most supports selling directly to them?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Market factor: a few large buyers concentrated in one place"
+    },
+    {
+     "id": "b",
+     "text_md": "Product factor: the yarn is perishable"
+    },
+    {
+     "id": "c",
+     "text_md": "Company factor: the firm is very small"
+    },
+    {
+     "id": "d",
+     "text_md": "Competitive factor: rivals use long channels"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (a)** Market factor: a few large buyers concentrated in one place. When buyers are few, large and close together, direct selling is cheap and practical; this is a market-related factor.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch15-t01"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (a)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch15_007",
+   "unit": "isc-12-commerce-ch15",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "A new, small imagined snack maker has little capital and no sales staff of its own. Which channel is it most likely to prefer?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Its own chain of retail shops"
+    },
+    {
+     "id": "b",
+     "text_md": "Direct selling through its own sales force across the state"
+    },
+    {
+     "id": "c",
+     "text_md": "No channel at all"
+    },
+    {
+     "id": "d",
+     "text_md": "An indirect channel using wholesalers and retailers"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (d)** An indirect channel using wholesalers and retailers. A firm with limited funds and staff relies on middlemen; financial strength is a company-related factor.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch15-t01"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "d"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (d)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch15_008",
+   "unit": "isc-12-commerce-ch15",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "All the rival chocolate makers in Ooty sell through hotel gift shops, so Doddabetta Chocolates, an imagined chocolatier there, also places its chocolates in those shops. Which factor influenced its choice of channel?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Perishability of the product"
+    },
+    {
+     "id": "b",
+     "text_md": "Competition"
+    },
+    {
+     "id": "c",
+     "text_md": "Government regulation"
+    },
+    {
+     "id": "d",
+     "text_md": "Size of the order"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (b)** Competition. Following the channels that rivals use, so as to be found where buyers look, is a competitive factor.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch15-t01"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "b"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (b)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch15_009",
+   "unit": "isc-12-commerce-ch15",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "A wholesaler buys bedsheets in bulk from Amaravathi Home Linen, an imagined maker in Karur, stores them, sells them in small lots to shops and gives the shops credit. These services show that middlemen",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "perform useful functions in distribution"
+    },
+    {
+     "id": "b",
+     "text_md": "only add to the price"
+    },
+    {
+     "id": "c",
+     "text_md": "are needed only for perishable goods"
+    },
+    {
+     "id": "d",
+     "text_md": "replace the need for promotion"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (a)** perform useful functions in distribution. Middlemen break bulk, store, finance and spread goods widely; they perform useful functions.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch15-t01"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (a)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch15_010",
+   "unit": "isc-12-commerce-ch15",
+   "language": "en",
+   "type": "assertion-reason",
+   "stem_md": "**Assertion (A):** Perishable goods generally need short channels of distribution.\n\n**Reason (R):** Each extra middleman adds time before goods reach the consumer.\n\nChoose the correct option.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Both Assertion and Reason are true and Reason is the correct explanation for Assertion."
+    },
+    {
+     "id": "b",
+     "text_md": "Both Assertion and Reason are true but Reason is not the correct explanation for Assertion."
+    },
+    {
+     "id": "c",
+     "text_md": "Assertion is true and Reason is false."
+    },
+    {
+     "id": "d",
+     "text_md": "Both Assertion and Reason are false."
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (a)** Both are true, and the reason explains the assertion: fewer middlemen mean quicker delivery, which perishables need.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch15-t01"
+   ],
+   "expected_time_sec": 75,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (a)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch15_011",
+   "unit": "isc-12-commerce-ch15",
+   "language": "en",
+   "type": "assertion-reason",
+   "stem_md": "**Assertion (A):** A small firm with limited funds often uses wholesalers and retailers to sell its goods.\n\n**Reason (R):** Middlemen add only cost and perform no useful function.\n\nChoose the correct option.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Both Assertion and Reason are true and Reason is the correct explanation for Assertion."
+    },
+    {
+     "id": "b",
+     "text_md": "Both Assertion and Reason are true but Reason is not the correct explanation for Assertion."
+    },
+    {
+     "id": "c",
+     "text_md": "Assertion is true and Reason is false."
+    },
+    {
+     "id": "d",
+     "text_md": "Both Assertion and Reason are false."
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (c)** The assertion is true. The reason is false: middlemen store goods, break bulk, give credit and reach many buyers.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch15-t01"
+   ],
+   "expected_time_sec": 75,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "c"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (c)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch15_012",
+   "unit": "isc-12-commerce-ch15",
+   "language": "en",
+   "type": "true-false",
+   "stem_md": "In a zero-level channel, goods pass through one retailer before reaching the consumer.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "True"
+    },
+    {
+     "id": "b",
+     "text_md": "False"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**False.** False. A zero-level channel has no middleman; one retailer makes it a one-level channel.",
+   "marks": 1,
+   "difficulty": 1,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch15-t01"
+   ],
+   "expected_time_sec": 40,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "b"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct choice (False)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch15_013",
+   "unit": "isc-12-commerce-ch15",
+   "language": "en",
+   "type": "fill-blank",
+   "stem_md": "Complete the analogy. Manufacturer to consumer directly : Zero-level channel :: Manufacturer to retailer to consumer : ___",
+   "options": [],
+   "match_right": [],
+   "solution_md": "No middleman makes a zero-level channel; one middleman, the retailer, makes a one-level channel.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch15-t01"
+   ],
+   "expected_time_sec": 45,
+   "assets": [],
+   "answer": {
+    "blanks": [
+     {
+      "accepted": [
+       "One-level channel",
+       "one-level",
+       "one level",
+       "one level channel"
+      ]
+     }
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Blank 1: One-level channel",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch15_014",
+   "unit": "isc-12-commerce-ch15",
+   "language": "en",
+   "type": "match",
+   "stem_md": "Match each imagined situation with the factor that most affects the choice of channel.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Coconut water that spoils in two days"
+    },
+    {
+     "id": "b",
+     "text_md": "Twelve buyer mills, all in one town"
+    },
+    {
+     "id": "c",
+     "text_md": "A new firm with little capital and no sales staff"
+    },
+    {
+     "id": "d",
+     "text_md": "Every rival sells through hotel gift shops"
+    }
+   ],
+   "match_right": [
+    {
+     "id": "p",
+     "text_md": "Market factor"
+    },
+    {
+     "id": "q",
+     "text_md": "Competitive factor"
+    },
+    {
+     "id": "r",
+     "text_md": "Product factor"
+    },
+    {
+     "id": "s",
+     "text_md": "Company factor"
+    }
+   ],
+   "solution_md": "**Key:** (a)–(r), (b)–(p), (c)–(s), (d)–(q). Perishability is about the product; few concentrated buyers are a market factor; funds and staff are company factors; rivals' channels are competitive factors.",
+   "marks": 2,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch15-t01"
+   ],
+   "expected_time_sec": 120,
+   "assets": [],
+   "answer": {
+    "pairs": [
+     {
+      "left_id": "a",
+      "right_id": "r"
+     },
+     {
+      "left_id": "b",
+      "right_id": "p"
+     },
+     {
+      "left_id": "c",
+      "right_id": "s"
+     },
+     {
+      "left_id": "d",
+      "right_id": "q"
+     }
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Each correct pair 0.5 mark (4 pairs)",
+     "marks": 2
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch15_015",
+   "unit": "isc-12-commerce-ch15",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Show a zero-level and a two-level channel of distribution as simple flows, with an imagined example of each.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Both flows shown correctly with examples.",
+   "marks": 2,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch15-t01"
+   ],
+   "expected_time_sec": 150,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "**Zero-level:** Manufacturer → Consumer, as when a **jaggery maker** sells from its own farm-gate shop.\n**Two-level:** Manufacturer → Wholesaler → Retailer → Consumer, as when a **macaroon bakery** supplies stockists, who supply sweet shops."
+   },
+   "word_limit": {
+    "min": 30,
+    "max": 50
+   },
+   "marking_scheme": [
+    {
+     "step": "Zero-level with example",
+     "marks": 1
+    },
+    {
+     "step": "Two-level with example",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch15_016",
+   "unit": "isc-12-commerce-ch15",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Explain two product-related factors that Aliyar Coconut Water (imagined), Pollachi, should consider while choosing its channel of distribution.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Two product factors (perishability, unit value, bulk, technical nature, standard or custom) applied.",
+   "marks": 2,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch15-t01"
+   ],
+   "expected_time_sec": 150,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Perishability:** the water **spoils in two days**, so it needs a **short channel** and quick delivery.\n2. **Unit value and bulk:** bottles are **cheap and bulky**, so selling each one directly is costly; nearby **retailers** can carry them."
+   },
+   "word_limit": {
+    "min": 30,
+    "max": 50
+   },
+   "marking_scheme": [
+    {
+     "step": "First factor",
+     "marks": 1
+    },
+    {
+     "step": "Second factor",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch15_017",
+   "unit": "isc-12-commerce-ch15",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Hampi Denim, an imagined jeans maker in Ballari, wants to sell across South India. Explain one product factor, one market factor and one company factor it should consider while choosing its channel.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "One product, one market and one company factor, each applied.",
+   "marks": 3,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch15-t01"
+   ],
+   "expected_time_sec": 210,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Product:** jeans are **durable, standard and low in unit value**, so they can pass through **wholesalers and retailers** without harm.\n2. **Market:** buyers are **many and spread over five states**, so a **longer channel** reaches them more cheaply than direct selling.\n3. **Company:** if the firm has **limited funds** and no sales force, it should rely on **middlemen** rather than open its own shops."
+   },
+   "word_limit": {
+    "min": 50,
+    "max": 75
+   },
+   "marking_scheme": [
+    {
+     "step": "Product factor",
+     "marks": 1
+    },
+    {
+     "step": "Market factor",
+     "marks": 1
+    },
+    {
+     "step": "Company factor",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch15_018",
+   "unit": "isc-12-commerce-ch15",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Describe zero-level, one-level and two-level channels of distribution, showing the flow of goods in each.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Each channel described with its flow.",
+   "marks": 3,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch15-t01"
+   ],
+   "expected_time_sec": 210,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Zero-level (direct):** Manufacturer → Consumer. The producer sells **without any middleman**, through its own shop, agents or website.\n2. **One-level:** Manufacturer → Retailer → Consumer. **One middleman**, the retailer, sells to consumers.\n3. **Two-level:** Manufacturer → Wholesaler → Retailer → Consumer. **Two middlemen**; usual for goods bought often by many buyers."
+   },
+   "word_limit": {
+    "min": 50,
+    "max": 75
+   },
+   "marking_scheme": [
+    {
+     "step": "Zero-level",
+     "marks": 1
+    },
+    {
+     "step": "One-level",
+     "marks": 1
+    },
+    {
+     "step": "Two-level",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch15_019",
+   "unit": "isc-12-commerce-ch15",
+   "language": "en",
+   "type": "long",
+   "stem_md": "(a) What is a channel of distribution? [1]\n(b) Doddabetta Chocolates (imagined), Ooty, makes hand-made chocolates that melt in heat, sells mainly to tourists, is a small family firm and faces rivals who all use hotel gift shops. Explain four factors that should guide its choice of channel. [4]",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Meaning; product, market, company and competitive factors applied.",
+   "marks": 5,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch15-t01"
+   ],
+   "expected_time_sec": 600,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "(a) A **channel of distribution** is the **route through which goods pass** from the producer to the final buyer, together with the **middlemen** involved.\n\n(b) 1. **Product:** the chocolates **melt in heat** and are fragile, so a **short channel** with careful handling is needed.\n2. **Market:** buyers are **tourists in and around Ooty**, a concentrated market that the firm's own shop and nearby outlets can reach.\n3. **Company:** as a **small family firm** with limited funds, it cannot run many shops, so it needs a few **trusted retailers**.\n4. **Competition:** rivals sell in **hotel gift shops**, where tourists look for chocolates, so it should be present there too."
+   },
+   "word_limit": {
+    "min": 100,
+    "max": 150
+   },
+   "marking_scheme": [
+    {
+     "step": "(a) Meaning",
+     "marks": 1
+    },
+    {
+     "step": "(b) Four factors applied",
+     "marks": 4
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch15_020",
+   "unit": "isc-12-commerce-ch15",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Taking an order, storing goods, keeping the right stock and moving goods to buyers at Amaravathi Home Linen (imagined) are together called",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "sales promotion"
+    },
+    {
+     "id": "b",
+     "text_md": "physical distribution"
+    },
+    {
+     "id": "c",
+     "text_md": "channel of distribution"
+    },
+    {
+     "id": "d",
+     "text_md": "market research"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (b)** physical distribution. Activities that physically move goods from producer to buyer make up physical distribution.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch15-t02"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "b"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (b)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch15_021",
+   "unit": "isc-12-commerce-ch15",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "When a sweet shop in Madurai sends an order, staff at Pearl City Macaroons (imagined) check stock, raise the invoice, pack the cartons and confirm the dispatch date. Which element of physical distribution is this?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Warehousing"
+    },
+    {
+     "id": "b",
+     "text_md": "Inventory control"
+    },
+    {
+     "id": "c",
+     "text_md": "Order processing"
+    },
+    {
+     "id": "d",
+     "text_md": "Promotion"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (c)** Order processing. Receiving, checking and preparing an order for dispatch is order processing.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch15-t02"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "c"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (c)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch15_022",
+   "unit": "isc-12-commerce-ch15",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Amaravathi Home Linen (imagined), Karur, keeps finished bedsheets in rented godowns in Delhi and Kolkata so that northern and eastern dealers get supplies quickly. Which element of physical distribution is this?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Order processing"
+    },
+    {
+     "id": "b",
+     "text_md": "Transportation"
+    },
+    {
+     "id": "c",
+     "text_md": "Personal selling"
+    },
+    {
+     "id": "d",
+     "text_md": "Warehousing"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (d)** Warehousing. Holding goods in storage near markets until needed is warehousing.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch15-t02"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "d"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (d)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch15_023",
+   "unit": "isc-12-commerce-ch15",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Hampi Denim (imagined) kept running out of popular sizes while unpopular sizes piled up. It now fixes a minimum and a maximum stock level for each size. Which element of physical distribution has it improved?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Transportation"
+    },
+    {
+     "id": "b",
+     "text_md": "Order processing"
+    },
+    {
+     "id": "c",
+     "text_md": "Advertising"
+    },
+    {
+     "id": "d",
+     "text_md": "Inventory control"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (d)** Inventory control. Deciding and maintaining the right level of stock for each item is inventory control.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch15-t02"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "d"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (d)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch15_024",
+   "unit": "isc-12-commerce-ch15",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Doddabetta Chocolates (imagined) sends its chocolates to Chennai in refrigerated vans instead of ordinary trucks. This decision concerns which element of physical distribution?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Inventory control"
+    },
+    {
+     "id": "b",
+     "text_md": "Warehousing"
+    },
+    {
+     "id": "c",
+     "text_md": "Transportation"
+    },
+    {
+     "id": "d",
+     "text_md": "Order processing"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (c)** Transportation. Choosing how goods are moved, by which means and in what conditions, is transportation.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch15-t02"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "c"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (c)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch15_025",
+   "unit": "isc-12-commerce-ch15",
+   "language": "en",
+   "type": "assertion-reason",
+   "stem_md": "**Assertion (A):** Good inventory control avoids both running out of stock and holding too much stock.\n\n**Reason (R):** Too much stock locks up money, while too little loses sales.\n\nChoose the correct option.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Both Assertion and Reason are true and Reason is the correct explanation for Assertion."
+    },
+    {
+     "id": "b",
+     "text_md": "Both Assertion and Reason are true but Reason is not the correct explanation for Assertion."
+    },
+    {
+     "id": "c",
+     "text_md": "Assertion is true and Reason is false."
+    },
+    {
+     "id": "d",
+     "text_md": "Both Assertion and Reason are false."
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (a)** Both are true, and the reason explains the assertion: inventory control balances the cost of excess stock against the loss from stock-outs.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch15-t02"
+   ],
+   "expected_time_sec": 75,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (a)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch15_026",
+   "unit": "isc-12-commerce-ch15",
+   "language": "en",
+   "type": "true-false",
+   "stem_md": "The elements of physical distribution include order processing, transportation, warehousing and inventory control.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "True"
+    },
+    {
+     "id": "b",
+     "text_md": "False"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**True.** True. These are the four elements of physical distribution.",
+   "marks": 1,
+   "difficulty": 1,
+   "competency": "recall",
+   "bloom": "remember",
+   "topic_ids": [
+    "isc-12-commerce-ch15-t02"
+   ],
+   "expected_time_sec": 40,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct choice (True)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch15_027",
+   "unit": "isc-12-commerce-ch15",
+   "language": "en",
+   "type": "fill-blank",
+   "stem_md": "Keeping goods in godowns near markets until they are needed is the element of physical distribution called ___.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "This is warehousing.",
+   "marks": 1,
+   "difficulty": 1,
+   "competency": "recall",
+   "bloom": "remember",
+   "topic_ids": [
+    "isc-12-commerce-ch15-t02"
+   ],
+   "expected_time_sec": 45,
+   "assets": [],
+   "answer": {
+    "blanks": [
+     {
+      "accepted": [
+       "warehousing",
+       "storage",
+       "warehouse"
+      ]
+     }
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Blank 1: warehousing",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch15_028",
+   "unit": "isc-12-commerce-ch15",
+   "language": "en",
+   "type": "short",
+   "stem_md": "What is meant by physical distribution? Name its four elements.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Meaning plus the four elements.",
+   "marks": 2,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch15-t02"
+   ],
+   "expected_time_sec": 150,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "**Physical distribution** covers all the activities needed to **move goods physically** from the producer to the buyer, at the **right place and time**. Its elements are **order processing, transportation, warehousing and inventory control**."
+   },
+   "word_limit": {
+    "min": 30,
+    "max": 50
+   },
+   "marking_scheme": [
+    {
+     "step": "Meaning",
+     "marks": 1
+    },
+    {
+     "step": "Four elements",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch15_029",
+   "unit": "isc-12-commerce-ch15",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Explain any three elements of physical distribution, with an example of each from Amaravathi Home Linen (imagined), Karur.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Any three elements with examples (meaning-level explanation).",
+   "marks": 3,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch15-t02"
+   ],
+   "expected_time_sec": 210,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Order processing:** dealers' **orders are checked, invoiced and packed** quickly, so supplies leave on time.\n2. **Warehousing:** **godowns in Delhi and Kolkata** hold stock near dealers, cutting delivery time.\n3. **Inventory control:** the firm keeps the **right number of each design** in stock, avoiding both shortages and piles of unsold sheets."
+   },
+   "word_limit": {
+    "min": 50,
+    "max": 75
+   },
+   "marking_scheme": [
+    {
+     "step": "First element",
+     "marks": 1
+    },
+    {
+     "step": "Second element",
+     "marks": 1
+    },
+    {
+     "step": "Third element",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch15_030",
+   "unit": "isc-12-commerce-ch15",
+   "language": "en",
+   "type": "long",
+   "stem_md": "(a) Explain zero-level, one-level and two-level channels of distribution, with an imagined example of each. [3]\n(b) Name the four elements of physical distribution and state the meaning of any two. [2]",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Three channels with examples; four elements named with two meanings.",
+   "marks": 5,
+   "difficulty": 3,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch15-t01",
+    "isc-12-commerce-ch15-t02"
+   ],
+   "expected_time_sec": 600,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "(a) 1. **Zero-level:** the producer sells **directly** to the consumer, as a jaggery maker selling from its **own farm-gate shop**.\n2. **One-level:** one middleman, the **retailer**, as a saree weaver selling through **boutiques** in big cities.\n3. **Two-level:** a **wholesaler and a retailer**, as a bakery whose macaroons go to **district stockists** and then to sweet shops.\n\n(b) The elements are **order processing, transportation, warehousing and inventory control**. **Transportation** means **moving goods** from where they are made to where buyers are. **Inventory control** means keeping the **right level of stock**, neither too much nor too little."
+   },
+   "word_limit": {
+    "min": 100,
+    "max": 150
+   },
+   "marking_scheme": [
+    {
+     "step": "(a) Three channels with examples",
+     "marks": 3
+    },
+    {
+     "step": "(b) Four elements named",
+     "marks": 1
+    },
+    {
+     "step": "(b) Two meanings",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch15_031",
+   "unit": "isc-12-commerce-ch15",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Pedana Kalamkari Prints, an imagined textile firm in Machilipatnam, uses newspaper advertisements, a festival discount, salespeople at craft exhibitions and a news story about its artisans. Together these make up its",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "channel of distribution"
+    },
+    {
+     "id": "b",
+     "text_md": "promotion mix"
+    },
+    {
+     "id": "c",
+     "text_md": "physical distribution"
+    },
+    {
+     "id": "d",
+     "text_md": "product mix"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (b)** promotion mix. The combination of advertising, sales promotion, personal selling and publicity used to inform and persuade buyers is the promotion mix.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch15-t03"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "b"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (b)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch15_032",
+   "unit": "isc-12-commerce-ch15",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Bekal Beach Resort, an imagined resort in Kasaragod, sends every past guest a short message each monsoon with a photo of the beach, so that its name stays in their minds. The main role of this promotion is to",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "remind"
+    },
+    {
+     "id": "b",
+     "text_md": "inform about a new product"
+    },
+    {
+     "id": "c",
+     "text_md": "set the price"
+    },
+    {
+     "id": "d",
+     "text_md": "distribute the service"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (a)** remind. Keeping an existing product in the minds of past buyers is the reminding role of promotion.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch15-t03"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (a)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch15_033",
+   "unit": "isc-12-commerce-ch15",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Eluru Agro Sprayers, an imagined firm in Eluru, launches a battery-powered sprayer that local farmers have never seen. At this stage, the main role of its promotion is to",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "remind farmers of a product they already use"
+    },
+    {
+     "id": "b",
+     "text_md": "inform farmers that the product exists and what it does"
+    },
+    {
+     "id": "c",
+     "text_md": "reduce the price of the sprayer"
+    },
+    {
+     "id": "d",
+     "text_md": "replace the dealers"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (b)** inform farmers that the product exists and what it does. For a new product, promotion first informs buyers about it and its uses.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch15-t03"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "b"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (b)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch15_034",
+   "unit": "isc-12-commerce-ch15",
+   "language": "en",
+   "type": "assertion-reason",
+   "stem_md": "**Assertion (A):** Even a good product at a fair price needs promotion.\n\n**Reason (R):** Buyers cannot buy a product they do not know about.\n\nChoose the correct option.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Both Assertion and Reason are true and Reason is the correct explanation for Assertion."
+    },
+    {
+     "id": "b",
+     "text_md": "Both Assertion and Reason are true but Reason is not the correct explanation for Assertion."
+    },
+    {
+     "id": "c",
+     "text_md": "Assertion is true and Reason is false."
+    },
+    {
+     "id": "d",
+     "text_md": "Both Assertion and Reason are false."
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (a)** Both are true, and the reason explains the assertion: promotion makes buyers aware of the product and persuades them to try it.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch15-t03"
+   ],
+   "expected_time_sec": 75,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (a)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch15_035",
+   "unit": "isc-12-commerce-ch15",
+   "language": "en",
+   "type": "true-false",
+   "stem_md": "Publicity is one of the elements of the promotion mix.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "True"
+    },
+    {
+     "id": "b",
+     "text_md": "False"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**True.** True. The promotion mix comprises advertising, sales promotion, personal selling and publicity (public relations).",
+   "marks": 1,
+   "difficulty": 1,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch15-t03"
+   ],
+   "expected_time_sec": 40,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct choice (True)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch15_036",
+   "unit": "isc-12-commerce-ch15",
+   "language": "en",
+   "type": "fill-blank",
+   "stem_md": "Promotion has three roles: to inform buyers, to persuade them and to ___ them about products they already know.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "The three roles are to inform, persuade and remind.",
+   "marks": 1,
+   "difficulty": 1,
+   "competency": "recall",
+   "bloom": "remember",
+   "topic_ids": [
+    "isc-12-commerce-ch15-t03"
+   ],
+   "expected_time_sec": 45,
+   "assets": [],
+   "answer": {
+    "blanks": [
+     {
+      "accepted": [
+       "remind",
+       "reminding"
+      ]
+     }
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Blank 1: remind",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch15_037",
+   "unit": "isc-12-commerce-ch15",
+   "language": "en",
+   "type": "short",
+   "stem_md": "What is meant by the promotion mix? Name its elements.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Meaning plus the four elements.",
+   "marks": 2,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch15-t03"
+   ],
+   "expected_time_sec": 150,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "The **promotion mix** is the **combination of tools** a firm uses to **inform, persuade and remind** buyers about its products. Its elements are **advertising, sales promotion, personal selling and publicity** (public relations)."
+   },
+   "word_limit": {
+    "min": 30,
+    "max": 50
+   },
+   "marking_scheme": [
+    {
+     "step": "Meaning",
+     "marks": 1
+    },
+    {
+     "step": "Elements",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch15_038",
+   "unit": "isc-12-commerce-ch15",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Explain the three roles of promotion — informing, persuading and reminding — with an example of each from Bekal Beach Resort (imagined), Kasaragod.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Each role explained with a resort example.",
+   "marks": 3,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch15-t03"
+   ],
+   "expected_time_sec": 210,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Informing:** telling people that the resort has **opened a new ayurveda wing** and what it offers.\n2. **Persuading:** showing **guest reviews and a monsoon package** to convince families to book now rather than elsewhere.\n3. **Reminding:** sending **past guests a beach photo** each year so the resort stays in their minds for the next holiday."
+   },
+   "word_limit": {
+    "min": 50,
+    "max": 75
+   },
+   "marking_scheme": [
+    {
+     "step": "Informing",
+     "marks": 1
+    },
+    {
+     "step": "Persuading",
+     "marks": 1
+    },
+    {
+     "step": "Reminding",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch15_039",
+   "unit": "isc-12-commerce-ch15",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Meenachil Rubber Mats, an imagined firm in Kottayam, pays a television channel to show a short film about its mats, with the firm's name shown at the end. This promotion tool is",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "publicity"
+    },
+    {
+     "id": "b",
+     "text_md": "personal selling"
+    },
+    {
+     "id": "c",
+     "text_md": "sales promotion"
+    },
+    {
+     "id": "d",
+     "text_md": "advertising"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (d)** advertising. A paid, impersonal message about a product by an identified sponsor is advertising.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch15-t04"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "d"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (d)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch15_040",
+   "unit": "isc-12-commerce-ch15",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "During the Onam fair, every buyer of a Meenachil mat (imagined brand) gets a coupon worth ₹100 off the next purchase. This is",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "sales promotion"
+    },
+    {
+     "id": "b",
+     "text_md": "advertising"
+    },
+    {
+     "id": "c",
+     "text_md": "publicity"
+    },
+    {
+     "id": "d",
+     "text_md": "personal selling"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (a)** sales promotion. Short-term incentives such as coupons that encourage buying now are sales promotion.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch15-t04"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (a)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch15_041",
+   "unit": "isc-12-commerce-ch15",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "At a food fair, Pearl City Macaroons (imagined) hands out small free packs of a new cashew flavour so that visitors can taste it. Which tool, and which technique, is this?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Advertising, through a paid message"
+    },
+    {
+     "id": "b",
+     "text_md": "Publicity, through a news story"
+    },
+    {
+     "id": "c",
+     "text_md": "Sales promotion, through free samples"
+    },
+    {
+     "id": "d",
+     "text_md": "Personal selling, through a sales call"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (c)** Sales promotion, through free samples. Free samples given to induce trial are a sales promotion technique.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch15-t04"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "c"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (c)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch15_042",
+   "unit": "isc-12-commerce-ch15",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "A sales engineer of Eluru Agro Sprayers (imagined) visits each farmers' cooperative, shows the sprayer working in a field, answers questions and books orders on the spot. This promotion tool is",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "advertising"
+    },
+    {
+     "id": "b",
+     "text_md": "publicity"
+    },
+    {
+     "id": "c",
+     "text_md": "personal selling"
+    },
+    {
+     "id": "d",
+     "text_md": "sales promotion"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (c)** personal selling. Face-to-face, two-way presentation to prospective buyers with the aim of making a sale is personal selling.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch15-t04"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "c"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (c)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch15_043",
+   "unit": "isc-12-commerce-ch15",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "A national newspaper, on its own initiative, publishes a feature on the women artisans of Pedana Kalamkari Prints (imagined). The firm paid nothing and did not control what was written. This is",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "publicity"
+    },
+    {
+     "id": "b",
+     "text_md": "advertising"
+    },
+    {
+     "id": "c",
+     "text_md": "sales promotion"
+    },
+    {
+     "id": "d",
+     "text_md": "personal selling"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (a)** publicity. Unpaid, non-personal coverage in the media that the firm does not control is publicity.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch15-t04"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (a)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch15_044",
+   "unit": "isc-12-commerce-ch15",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "A student compares the television film of Meenachil Rubber Mats (imagined) with the field visits of the Eluru Agro Sprayers engineer. Which difference is correct?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Advertising is face-to-face; personal selling is impersonal"
+    },
+    {
+     "id": "b",
+     "text_md": "Both are unpaid forms of promotion"
+    },
+    {
+     "id": "c",
+     "text_md": "Personal selling reaches millions at a low cost per person"
+    },
+    {
+     "id": "d",
+     "text_md": "Advertising is impersonal and one-way; personal selling is face-to-face and two-way"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (d)** Advertising is impersonal and one-way; personal selling is face-to-face and two-way. Advertising sends one message to many without dialogue; personal selling allows conversation and immediate feedback, at a high cost per buyer.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch15-t04"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "d"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (d)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch15_045",
+   "unit": "isc-12-commerce-ch15",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Hosur Precision Gears, an imagined firm, sells costly gears made to each buyer's drawings to a few tractor makers. Which promotion element suits it best?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Television advertising"
+    },
+    {
+     "id": "b",
+     "text_md": "Personal selling"
+    },
+    {
+     "id": "c",
+     "text_md": "Coupons and contests"
+    },
+    {
+     "id": "d",
+     "text_md": "Free samples at fairs"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (b)** Personal selling. Technical, costly, custom products sold to a few buyers need explanation and negotiation, which personal selling provides.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch15-t04"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "b"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (b)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch15_046",
+   "unit": "isc-12-commerce-ch15",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Pearl City Macaroons (imagined) wants lakhs of buyers across Tamil Nadu to learn about its new flavour within a month. Which promotion element suits this aim best?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Advertising"
+    },
+    {
+     "id": "b",
+     "text_md": "Personal selling"
+    },
+    {
+     "id": "c",
+     "text_md": "Publicity alone"
+    },
+    {
+     "id": "d",
+     "text_md": "Waiting for word of mouth"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (a)** Advertising. Advertising reaches a large, scattered audience quickly at a low cost per person.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch15-t04"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (a)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch15_047",
+   "unit": "isc-12-commerce-ch15",
+   "language": "en",
+   "type": "assertion-reason",
+   "stem_md": "**Assertion (A):** Personal selling is costly for each buyer reached.\n\n**Reason (R):** Advertising carries the name of an identified sponsor.\n\nChoose the correct option.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Both Assertion and Reason are true and Reason is the correct explanation for Assertion."
+    },
+    {
+     "id": "b",
+     "text_md": "Both Assertion and Reason are true but Reason is not the correct explanation for Assertion."
+    },
+    {
+     "id": "c",
+     "text_md": "Assertion is true and Reason is false."
+    },
+    {
+     "id": "d",
+     "text_md": "Both Assertion and Reason are false."
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (b)** Both are true, but the identified sponsor in advertising has nothing to do with why personal selling is costly; that is because a salesperson meets buyers one at a time.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch15-t04"
+   ],
+   "expected_time_sec": 75,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "b"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (b)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch15_048",
+   "unit": "isc-12-commerce-ch15",
+   "language": "en",
+   "type": "assertion-reason",
+   "stem_md": "**Assertion (A):** Publicity is a paid form of promotion that the firm fully controls.\n\n**Reason (R):** Sales promotion aims mainly at long-term brand building rather than immediate sales.\n\nChoose the correct option.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Both Assertion and Reason are true and Reason is the correct explanation for Assertion."
+    },
+    {
+     "id": "b",
+     "text_md": "Both Assertion and Reason are true but Reason is not the correct explanation for Assertion."
+    },
+    {
+     "id": "c",
+     "text_md": "Assertion is true and Reason is false."
+    },
+    {
+     "id": "d",
+     "text_md": "Both Assertion and Reason are false."
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (d)** Both statements are false. Publicity is unpaid and not controlled by the firm; sales promotion offers short-term incentives to boost immediate sales.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch15-t04"
+   ],
+   "expected_time_sec": 75,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "d"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (d)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch15_049",
+   "unit": "isc-12-commerce-ch15",
+   "language": "en",
+   "type": "true-false",
+   "stem_md": "A \"buy two, get one free\" offer on doormats is an example of sales promotion.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "True"
+    },
+    {
+     "id": "b",
+     "text_md": "False"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**True.** True. It is a short-term incentive to buy now, which is sales promotion.",
+   "marks": 1,
+   "difficulty": 1,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch15-t04"
+   ],
+   "expected_time_sec": 40,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct choice (True)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch15_050",
+   "unit": "isc-12-commerce-ch15",
+   "language": "en",
+   "type": "true-false",
+   "stem_md": "Publicity is always paid for by the firm that it describes.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "True"
+    },
+    {
+     "id": "b",
+     "text_md": "False"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**False.** False. Publicity is unpaid; the media cover the firm because the story is newsworthy.",
+   "marks": 1,
+   "difficulty": 1,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch15-t04"
+   ],
+   "expected_time_sec": 40,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "b"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct choice (False)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch15_051",
+   "unit": "isc-12-commerce-ch15",
+   "language": "en",
+   "type": "fill-blank",
+   "stem_md": "Complete the analogy. Face-to-face, two-way communication with buyers : Personal selling :: Paid, impersonal, one-way message by an identified sponsor : ___",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Personal selling is face-to-face and two-way; advertising is paid, impersonal and one-way, with an identified sponsor.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch15-t04"
+   ],
+   "expected_time_sec": 45,
+   "assets": [],
+   "answer": {
+    "blanks": [
+     {
+      "accepted": [
+       "Advertising",
+       "advertisement"
+      ]
+     }
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Blank 1: Advertising",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch15_052",
+   "unit": "isc-12-commerce-ch15",
+   "language": "en",
+   "type": "match",
+   "stem_md": "Match each activity of imagined firms with the promotion tool it represents.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "A paid film about rubber mats on television"
+    },
+    {
+     "id": "b",
+     "text_md": "A ₹100 coupon on the next purchase"
+    },
+    {
+     "id": "c",
+     "text_md": "An engineer demonstrating a sprayer to a cooperative"
+    },
+    {
+     "id": "d",
+     "text_md": "An unpaid newspaper feature on artisans"
+    }
+   ],
+   "match_right": [
+    {
+     "id": "p",
+     "text_md": "Publicity"
+    },
+    {
+     "id": "q",
+     "text_md": "Advertising"
+    },
+    {
+     "id": "r",
+     "text_md": "Personal selling"
+    },
+    {
+     "id": "s",
+     "text_md": "Sales promotion"
+    }
+   ],
+   "solution_md": "**Key:** (a)–(q), (b)–(s), (c)–(r), (d)–(p). A paid impersonal message is advertising; a short-term incentive is sales promotion; a face-to-face demonstration is personal selling; unpaid media coverage is publicity.",
+   "marks": 2,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch15-t04"
+   ],
+   "expected_time_sec": 120,
+   "assets": [],
+   "answer": {
+    "pairs": [
+     {
+      "left_id": "a",
+      "right_id": "q"
+     },
+     {
+      "left_id": "b",
+      "right_id": "s"
+     },
+     {
+      "left_id": "c",
+      "right_id": "r"
+     },
+     {
+      "left_id": "d",
+      "right_id": "p"
+     }
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Each correct pair 0.5 mark (4 pairs)",
+     "marks": 2
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch15_053",
+   "unit": "isc-12-commerce-ch15",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Distinguish between advertising and personal selling on the basis of (i) nature of communication and (ii) cost per buyer reached.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Both bases correctly contrasted.",
+   "marks": 2,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch15-t04"
+   ],
+   "expected_time_sec": 150,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "(i) **Advertising** is **impersonal and one-way**, a single message to many; **personal selling** is **face-to-face and two-way**, so doubts are answered at once.\n(ii) Advertising has a **low cost per buyer** reached; personal selling has a **high cost per buyer**, as each meeting needs a salesperson's time."
+   },
+   "word_limit": {
+    "min": 30,
+    "max": 50
+   },
+   "marking_scheme": [
+    {
+     "step": "(i) Nature of communication",
+     "marks": 1
+    },
+    {
+     "step": "(ii) Cost per buyer",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch15_054",
+   "unit": "isc-12-commerce-ch15",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Distinguish between sales promotion and publicity on the basis of (i) payment and control and (ii) purpose.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Both bases correctly contrasted.",
+   "marks": 2,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch15-t04"
+   ],
+   "expected_time_sec": 150,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "(i) **Sales promotion** is **paid for and controlled** by the firm; **publicity** is **unpaid**, and the firm cannot control what the media say.\n(ii) Sales promotion aims at **immediate sales** through short-term incentives; publicity builds **awareness and credibility** through news."
+   },
+   "word_limit": {
+    "min": 30,
+    "max": 50
+   },
+   "marking_scheme": [
+    {
+     "step": "(i) Payment and control",
+     "marks": 1
+    },
+    {
+     "step": "(ii) Purpose",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch15_055",
+   "unit": "isc-12-commerce-ch15",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Recommend a suitable promotion element, with one reason, for (i) Hosur Precision Gears (imagined), selling custom gears to a few tractor makers, and (ii) Pearl City Macaroons (imagined), launching a new flavour for buyers across the state.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "A suitable element with a sound reason for each.",
+   "marks": 2,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch15-t04"
+   ],
+   "expected_time_sec": 150,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "(i) **Personal selling:** custom, **technical** gears for **a few buyers** need explanation and negotiation face to face.\n(ii) **Advertising:** it reaches a **large, scattered audience** quickly at a **low cost per person**."
+   },
+   "word_limit": {
+    "min": 30,
+    "max": 50
+   },
+   "marking_scheme": [
+    {
+     "step": "(i) Personal selling with reason",
+     "marks": 1
+    },
+    {
+     "step": "(ii) Advertising with reason",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch15_056",
+   "unit": "isc-12-commerce-ch15",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Explain three objectives of advertising, with an example of each from Doddabetta Chocolates (imagined), Ooty.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Three objectives (inform, persuade, remind, build image, support salespeople) with examples.",
+   "marks": 3,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch15-t04"
+   ],
+   "expected_time_sec": 210,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **To inform:** tell tourists about a **new sugar-free chocolate** and where it is sold.\n2. **To persuade:** show why its **hand-made chocolates** are better than factory bars, so visitors choose them.\n3. **To build the brand and remind:** keep the **Doddabetta name** in buyers' minds so they order online after going home."
+   },
+   "word_limit": {
+    "min": 50,
+    "max": 75
+   },
+   "marking_scheme": [
+    {
+     "step": "First objective",
+     "marks": 1
+    },
+    {
+     "step": "Second objective",
+     "marks": 1
+    },
+    {
+     "step": "Third objective",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch15_057",
+   "unit": "isc-12-commerce-ch15",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Explain three features of personal selling, using the sales engineer of Eluru Agro Sprayers (imagined) as an example.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Three features (personal contact, two-way, flexibility, relationship, focus on prospects, immediate feedback) applied.",
+   "marks": 3,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch15-t04"
+   ],
+   "expected_time_sec": 210,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Personal, two-way contact:** the engineer **talks face to face** with farmers and answers their doubts on the spot.\n2. **Flexibility:** he **adapts his demonstration** to each cooperative's crops and budget.\n3. **Relationship and immediate result:** he builds **trust over repeat visits** and can **book orders** at once."
+   },
+   "word_limit": {
+    "min": 50,
+    "max": 75
+   },
+   "marking_scheme": [
+    {
+     "step": "First feature",
+     "marks": 1
+    },
+    {
+     "step": "Second feature",
+     "marks": 1
+    },
+    {
+     "step": "Third feature",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch15_058",
+   "unit": "isc-12-commerce-ch15",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Compare advertising, sales promotion and publicity on three bases: whether paid, how long the effect lasts, and the firm's control over the message.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "All three tools compared on each basis.",
+   "marks": 3,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch15-t04"
+   ],
+   "expected_time_sec": 210,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Payment:** advertising and sales promotion are **paid** by the firm; publicity is **unpaid**.\n2. **Duration:** sales promotion gives a **short-term** push to sales; advertising and publicity build awareness over a **longer** period.\n3. **Control:** the firm **controls** the message in advertising and sales promotion, but **not** in publicity, which the media write."
+   },
+   "word_limit": {
+    "min": 50,
+    "max": 75
+   },
+   "marking_scheme": [
+    {
+     "step": "Payment",
+     "marks": 1
+    },
+    {
+     "step": "Duration",
+     "marks": 1
+    },
+    {
+     "step": "Control",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch15_059",
+   "unit": "isc-12-commerce-ch15",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Recommend the most suitable promotion element, with a reason, for each imagined case: (i) a costly custom gear for a few tractor makers; (ii) a new macaroon flavour for buyers across a state; (iii) last season's bedsheet designs that must be cleared before new stock arrives.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "A suitable element with a sound reason for each case.",
+   "marks": 3,
+   "difficulty": 4,
+   "competency": "evaluation",
+   "bloom": "evaluate",
+   "topic_ids": [
+    "isc-12-commerce-ch15-t04"
+   ],
+   "expected_time_sec": 210,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "(i) **Personal selling:** a **technical, costly** product for **few buyers** needs face-to-face explanation and negotiation.\n(ii) **Advertising:** it informs a **large, scattered** market quickly at a **low cost per person**.\n(iii) **Sales promotion:** short-term offers such as **discounts or buy-two-get-one** move **old stock quickly**."
+   },
+   "word_limit": {
+    "min": 50,
+    "max": 75
+   },
+   "marking_scheme": [
+    {
+     "step": "(i) Personal selling with reason",
+     "marks": 1
+    },
+    {
+     "step": "(ii) Advertising with reason",
+     "marks": 1
+    },
+    {
+     "step": "(iii) Sales promotion with reason",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch15_060",
+   "unit": "isc-12-commerce-ch15",
+   "language": "en",
+   "type": "long",
+   "stem_md": "(a) What is meant by the promotion mix? [1]\n(b) Pedana Kalamkari Prints (imagined), Machilipatnam, wants to sell more of its hand-printed fabrics. Explain the four elements of the promotion mix, with a way the firm could use each. [4]",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Meaning; four elements explained and applied.",
+   "marks": 5,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch15-t03",
+    "isc-12-commerce-ch15-t04"
+   ],
+   "expected_time_sec": 600,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "(a) The **promotion mix** is the combination of **advertising, sales promotion, personal selling and publicity** a firm uses to **inform, persuade and remind** buyers.\n\n(b) 1. **Advertising:** a **paid, impersonal** message by an identified sponsor; for example, advertisements in **lifestyle magazines and online** showing its prints.\n2. **Sales promotion:** **short-term incentives** to buy now; for example, a **festival discount** or a free cushion cover with every bedspread.\n3. **Personal selling:** **face-to-face** presentation; for example, staff explaining the **hand-printing process** to buyers at craft exhibitions.\n4. **Publicity:** **unpaid** media coverage; for example, inviting journalists to meet the **women artisans**, which may lead to news features."
+   },
+   "word_limit": {
+    "min": 100,
+    "max": 150
+   },
+   "marking_scheme": [
+    {
+     "step": "(a) Meaning",
+     "marks": 1
+    },
+    {
+     "step": "(b) Four elements applied",
+     "marks": 4
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch15_061",
+   "unit": "isc-12-commerce-ch15",
+   "language": "en",
+   "type": "long",
+   "stem_md": "(a) Distinguish between advertising and personal selling on any three bases. [3]\n(b) Distinguish between sales promotion and publicity on any two bases. [2]",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Three bases for (a); two bases for (b).",
+   "marks": 5,
+   "difficulty": 3,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch15-t04"
+   ],
+   "expected_time_sec": 600,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "(a) 1. **Nature:** advertising is **impersonal**; personal selling is **face-to-face**.\n2. **Flow of communication:** advertising is **one-way**; personal selling is **two-way**, so objections are answered at once.\n3. **Reach and cost:** advertising reaches **many people at a low cost per person**; personal selling reaches **few at a high cost per person**.\n\n(b) 1. **Payment and control:** sales promotion is **paid for and controlled** by the firm; publicity is **unpaid** and controlled by the media.\n2. **Purpose and duration:** sales promotion gives a **short-term push** to sales through incentives; publicity builds **credibility and awareness** through news over a longer time."
+   },
+   "word_limit": {
+    "min": 100,
+    "max": 150
+   },
+   "marking_scheme": [
+    {
+     "step": "(a) Three bases",
+     "marks": 3
+    },
+    {
+     "step": "(b) Two bases",
+     "marks": 2
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch15_062",
+   "unit": "isc-12-commerce-ch15",
+   "language": "en",
+   "type": "case-based",
+   "stem_md": "Read the passage and answer the questions that follow. *(Imagined firm and people, written by SOYL for practice.)*",
+   "options": [],
+   "match_right": [],
+   "solution_md": "**(a)** **Correct option: (b)** two-level. Stockist (wholesaler) and shop (retailer): two middlemen, a two-level channel.\n\n**(b)** Holding stock near the market is warehousing.\n\n**(c) (i)** Inventory control with its purpose.\n\n**OR (c) (ii)** Product factor linked to the channel.",
+   "marks": 4,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch15-t01",
+    "isc-12-commerce-ch15-t02"
+   ],
+   "expected_time_sec": 420,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "**(a)** (b) two-level\n\n**(b)** **Warehousing.**\n\n**(c) (i)** **Inventory control.** It keeps **enough stock** to avoid shortages, but **not so much** that chips go stale.\n\n**OR (c) (ii)** The chips **stay crisp for a month** (fairly durable) and are **cheap**, so they can pass through **two middlemen** without spoiling."
+   },
+   "marking_scheme": [
+    {
+     "step": "Part (a)",
+     "marks": 1
+    },
+    {
+     "step": "Part (b)",
+     "marks": 1
+    },
+    {
+     "step": "Part (c): either (i) or (ii)",
+     "marks": 2
+    }
+   ],
+   "passage_md": "**Sirumalai Banana Chips (imagined), Dindigul**\n\nThe firm fries banana chips that stay crisp for about a month. It sells through stockists in each district, who supply bakeries and grocery shops. Its manager, Mr Pandian, has set up a small godown in Coimbatore, and now keeps a fixed reorder level for each pack size so that shops never run short and old stock does not go stale.",
+   "passage_origin": "soyl-original",
+   "children": [
+    {
+     "id": "a",
+     "type": "mcq",
+     "stem_md": "The firm's channel of distribution is",
+     "options": [
+      {
+       "id": "a",
+       "text_md": "zero-level"
+      },
+      {
+       "id": "b",
+       "text_md": "two-level"
+      },
+      {
+       "id": "c",
+       "text_md": "one-level"
+      },
+      {
+       "id": "d",
+       "text_md": "direct"
+      }
+     ],
+     "match_right": [],
+     "solution_md": "**Correct option: (b)** two-level. Stockist (wholesaler) and shop (retailer): two middlemen, a two-level channel.",
+     "marks": 1,
+     "difficulty": 2,
+     "competency": "application",
+     "bloom": "apply",
+     "topic_ids": [
+      "isc-12-commerce-ch15-t01"
+     ],
+     "expected_time_sec": 60,
+     "assets": [],
+     "answer": {
+      "option_ids": [
+       "b"
+      ]
+     },
+     "marking_scheme": [
+      {
+       "step": "Correct option (b)",
+       "marks": 1
+      }
+     ],
+     "alternatives": []
+    },
+    {
+     "id": "b",
+     "type": "short",
+     "stem_md": "Name the element of physical distribution shown by the Coimbatore godown.",
+     "options": [],
+     "match_right": [],
+     "solution_md": "Holding stock near the market is warehousing.",
+     "marks": 1,
+     "difficulty": 2,
+     "competency": "application",
+     "bloom": "apply",
+     "topic_ids": [
+      "isc-12-commerce-ch15-t02"
+     ],
+     "expected_time_sec": 90,
+     "assets": [],
+     "answer": {
+      "model_answer_md": "**Warehousing.**"
+     },
+     "marking_scheme": [
+      {
+       "step": "Warehousing",
+       "marks": 1
+      }
+     ],
+     "alternatives": []
+    },
+    {
+     "id": "c",
+     "type": "short",
+     "stem_md": "**Either** (i): Identify the element of physical distribution shown by the fixed reorder level, and state its purpose.",
+     "options": [],
+     "match_right": [],
+     "solution_md": "Inventory control with its purpose.",
+     "marks": 2,
+     "difficulty": 3,
+     "competency": "analysis",
+     "bloom": "analyze",
+     "topic_ids": [
+      "isc-12-commerce-ch15-t02"
+     ],
+     "expected_time_sec": 150,
+     "assets": [],
+     "answer": {
+      "model_answer_md": "**Inventory control.** It keeps **enough stock** to avoid shortages, but **not so much** that chips go stale."
+     },
+     "marking_scheme": [
+      {
+       "step": "Element",
+       "marks": 1
+      },
+      {
+       "step": "Purpose",
+       "marks": 1
+      }
+     ],
+     "alternatives": [
+      {
+       "id": "c-ii",
+       "type": "short",
+       "stem_md": "**Or** (ii): Explain one product factor that makes this channel workable for the firm.",
+       "options": [],
+       "match_right": [],
+       "solution_md": "Product factor linked to the channel.",
+       "marks": 2,
+       "difficulty": 3,
+       "competency": "analysis",
+       "bloom": "analyze",
+       "topic_ids": [
+        "isc-12-commerce-ch15-t01"
+       ],
+       "expected_time_sec": 150,
+       "assets": [],
+       "answer": {
+        "model_answer_md": "The chips **stay crisp for a month** (fairly durable) and are **cheap**, so they can pass through **two middlemen** without spoiling."
+       },
+       "marking_scheme": [
+        {
+         "step": "Product factor",
+         "marks": 1
+        },
+        {
+         "step": "Linked to two-level channel",
+         "marks": 1
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch15_063",
+   "unit": "isc-12-commerce-ch15",
+   "language": "en",
+   "type": "case-based",
+   "stem_md": "Read the passage and answer the questions that follow. *(Imagined firm and people, written by SOYL for practice.)*",
+   "options": [],
+   "match_right": [],
+   "solution_md": "**(a)** **Correct option: (c)** sales promotion. A short-term incentive to book now is sales promotion.\n\n**(b)** Unpaid media coverage is publicity.\n\n**(c) (i)** Personal selling with a merit.\n\n**OR (c) (ii)** All four elements with evidence.",
+   "marks": 4,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch15-t03",
+    "isc-12-commerce-ch15-t04"
+   ],
+   "expected_time_sec": 420,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "**(a)** (c) sales promotion\n\n**(b)** **Publicity.**\n\n**(c) (i)** **Personal selling.** **Merit:** two-way talk lets her **answer agents' questions** and adapt packages on the spot.\n\n**OR (c) (ii)** **Advertising** (travel magazines), **sales promotion** (free third night), **personal selling** (agents in Nagpur), **publicity** (wildlife programme)."
+   },
+   "marking_scheme": [
+    {
+     "step": "Part (a)",
+     "marks": 1
+    },
+    {
+     "step": "Part (b)",
+     "marks": 1
+    },
+    {
+     "step": "Part (c): either (i) or (ii)",
+     "marks": 2
+    }
+   ],
+   "passage_md": "**Erai Valley Lodges (imagined), Chandrapur**\n\nThe lodge runs jungle stays near a tiger reserve. It placed paid advertisements in two travel magazines. In the slow summer months it offered a free third night for every two nights booked. Its manager, Ms Wankhede, met travel agents in Nagpur one by one to explain the packages. A wildlife channel later filmed a programme on the lodge's solar-powered cottages, for which it paid nothing.",
+   "passage_origin": "soyl-original",
+   "children": [
+    {
+     "id": "a",
+     "type": "mcq",
+     "stem_md": "The free third night offered in summer is an example of",
+     "options": [
+      {
+       "id": "a",
+       "text_md": "publicity"
+      },
+      {
+       "id": "b",
+       "text_md": "advertising"
+      },
+      {
+       "id": "c",
+       "text_md": "sales promotion"
+      },
+      {
+       "id": "d",
+       "text_md": "personal selling"
+      }
+     ],
+     "match_right": [],
+     "solution_md": "**Correct option: (c)** sales promotion. A short-term incentive to book now is sales promotion.",
+     "marks": 1,
+     "difficulty": 2,
+     "competency": "application",
+     "bloom": "apply",
+     "topic_ids": [
+      "isc-12-commerce-ch15-t04"
+     ],
+     "expected_time_sec": 60,
+     "assets": [],
+     "answer": {
+      "option_ids": [
+       "c"
+      ]
+     },
+     "marking_scheme": [
+      {
+       "step": "Correct option (c)",
+       "marks": 1
+      }
+     ],
+     "alternatives": []
+    },
+    {
+     "id": "b",
+     "type": "short",
+     "stem_md": "Which promotion tool is shown by the wildlife channel's programme?",
+     "options": [],
+     "match_right": [],
+     "solution_md": "Unpaid media coverage is publicity.",
+     "marks": 1,
+     "difficulty": 2,
+     "competency": "application",
+     "bloom": "apply",
+     "topic_ids": [
+      "isc-12-commerce-ch15-t04"
+     ],
+     "expected_time_sec": 90,
+     "assets": [],
+     "answer": {
+      "model_answer_md": "**Publicity.**"
+     },
+     "marking_scheme": [
+      {
+       "step": "Publicity",
+       "marks": 1
+      }
+     ],
+     "alternatives": []
+    },
+    {
+     "id": "c",
+     "type": "short",
+     "stem_md": "**Either** (i): Identify the promotion tool used by Ms Wankhede and state one of its merits.",
+     "options": [],
+     "match_right": [],
+     "solution_md": "Personal selling with a merit.",
+     "marks": 2,
+     "difficulty": 3,
+     "competency": "analysis",
+     "bloom": "analyze",
+     "topic_ids": [
+      "isc-12-commerce-ch15-t04"
+     ],
+     "expected_time_sec": 150,
+     "assets": [],
+     "answer": {
+      "model_answer_md": "**Personal selling.** **Merit:** two-way talk lets her **answer agents' questions** and adapt packages on the spot."
+     },
+     "marking_scheme": [
+      {
+       "step": "Tool",
+       "marks": 1
+      },
+      {
+       "step": "Merit",
+       "marks": 1
+      }
+     ],
+     "alternatives": [
+      {
+       "id": "c-ii",
+       "type": "short",
+       "stem_md": "**Or** (ii): Name the four elements of the promotion mix used by the lodge, with the line that shows each.",
+       "options": [],
+       "match_right": [],
+       "solution_md": "All four elements with evidence.",
+       "marks": 2,
+       "difficulty": 3,
+       "competency": "analysis",
+       "bloom": "analyze",
+       "topic_ids": [
+        "isc-12-commerce-ch15-t03"
+       ],
+       "expected_time_sec": 150,
+       "assets": [],
+       "answer": {
+        "model_answer_md": "**Advertising** (travel magazines), **sales promotion** (free third night), **personal selling** (agents in Nagpur), **publicity** (wildlife programme)."
+       },
+       "marking_scheme": [
+        {
+         "step": "Two elements with evidence",
+         "marks": 1
+        },
+        {
+         "step": "Other two with evidence",
+         "marks": 1
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  }
+ ],
+ "build": {
+  "run_id": null,
+  "checks": {
+   "syllabus": "topics t01–t04 of isc-12-commerce-ch15 (channels of distribution, their levels and the factors in choosing one; physical distribution and its elements, meaning only; the promotion mix; advertising, sales promotion, personal selling and publicity: meaning, features, objectives and differences)",
+   "originality": "every firm, person and case is imagined and written by SOYL and labelled; no ISC or CBSE textbook text, illustration or exercise and no CISCE specimen or board item reused (D-036); firms, places and set-ups differ from the CBSE 12 Business Studies chapter on marketing",
+   "data": "no computed figures; all examples are imagined and labelled",
+   "facts": "stable textbook concepts only; no dated figures",
+   "gate": "schema, pipeline lint, deterministic verify, word limits, narration and answer-leak checks run clean in this build"
+  }
+ }
+}
