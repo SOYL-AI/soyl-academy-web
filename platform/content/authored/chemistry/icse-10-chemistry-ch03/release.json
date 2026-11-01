@@ -1,0 +1,4846 @@
+{
+  "unit": "icse-10-chemistry-ch03",
+  "version": 1,
+  "academic_year": "2026-27",
+  "created_at": "2026-11-01T00:00:00+05:30",
+  "decks": [
+    {
+      "unit": "icse-10-chemistry-ch03",
+      "part": 1,
+      "version": 1,
+      "title": "Acids, Bases and Salts — Part 1: Ions, indicators and kinds of salts",
+      "language": "en",
+      "goals": [
+        "Define acids and alkalis in terms of the ions they give in water",
+        "Write ionisation and dissociation equations",
+        "Use indicators and the pH scale to classify solutions",
+        "Classify salts as normal, acid, basic or complex"
+      ],
+      "slides": [
+        {
+          "id": "s01",
+          "layout": "title",
+          "heading": "Sour, bitter and in between",
+          "body_md": "Part 1 — what makes a solution acidic or alkaline, how we measure it, and the many kinds of salt formed when acids react.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Substance",
+                "Nature"
+              ],
+              "rows": [
+                [
+                  "Hydrochloric acid in the stomach",
+                  "Strong acid"
+                ],
+                [
+                  "Vinegar (ethanoic acid)",
+                  "Weak acid"
+                ],
+                [
+                  "Lime water (calcium hydroxide)",
+                  "Weak alkali"
+                ],
+                [
+                  "Caustic soda (sodium hydroxide)",
+                  "Strong alkali"
+                ],
+                [
+                  "Common salt (sodium chloride)",
+                  "Neutral salt"
+                ]
+              ]
+            },
+            "alt": "Table of five everyday substances and whether each is an acid, an alkali or a salt"
+          },
+          "math": [],
+          "narration": "Namaste! Acids, alkalis and salts are everywhere, from the hydrochloric acid in your stomach to the caustic soda in drain cleaner and the salt on your table. In this part we define acids and alkalis by the ions they produce in water, learn to measure how acidic a solution is, and sort salts into four kinds.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s02",
+          "layout": "concept",
+          "heading": "Acids: hydronium ions in water",
+          "body_md": "An **acid** is a compound which, when dissolved in water, gives **hydronium ions (H₃O⁺) as the only positive ions**. The acid molecule **ionises**: it gives H⁺, which joins a water molecule. **Monobasic** acids give one H⁺ per molecule (HCl, HNO₃); **dibasic** acids give two (H₂SO₄, in two steps). Strong acids (HCl, HNO₃, H₂SO₄) ionise almost completely; weak acids (ethanoic acid, carbonic acid) only partly.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Acid",
+                "Basicity",
+                "Ions formed in water"
+              ],
+              "rows": [
+                [
+                  "Hydrochloric acid, HCl",
+                  "Monobasic",
+                  "H₃O⁺, Cl⁻"
+                ],
+                [
+                  "Nitric acid, HNO₃",
+                  "Monobasic",
+                  "H₃O⁺, NO₃⁻"
+                ],
+                [
+                  "Sulphuric acid, H₂SO₄",
+                  "Dibasic",
+                  "H₃O⁺, HSO₄⁻, SO₄²⁻"
+                ]
+              ]
+            },
+            "alt": "Table of three mineral acids with their basicity and the ions formed in water"
+          },
+          "math": [
+            "\\ce{HCl + H2O -> H3O+ + Cl-}",
+            "\\ce{HNO3 + H2O -> H3O+ + NO3-}",
+            "\\ce{H2SO4 + H2O -> H3O+ + HSO4-}",
+            "\\ce{HSO4- + H2O -> H3O+ + SO4^2-}"
+          ],
+          "narration": "An acid dissolved in water produces hydronium ions, and these are the only positive ions it gives. Hydrochloric and nitric acids each give one hydrogen ion per molecule, so they are monobasic. Sulphuric acid gives two, in two steps, so it is dibasic. Strong acids ionise almost completely, while weak acids like vinegar ionise only a little.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s03",
+          "layout": "concept",
+          "heading": "Bases and alkalis: hydroxide ions",
+          "body_md": "A **base** is a compound that reacts with an acid to give a salt and water only (metal oxides and hydroxides: CuO, MgO, NaOH). An **alkali** is a base that is **soluble in water** and gives **hydroxide ions (OH⁻) as the only negative ions**. Alkalis **dissociate** (their ions already exist in the solid). **All alkalis are bases, but not all bases are alkalis.**",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Base",
+                "Soluble in water?",
+                "Alkali?"
+              ],
+              "rows": [
+                [
+                  "Sodium hydroxide",
+                  "Yes",
+                  "Yes (strong)"
+                ],
+                [
+                  "Potassium hydroxide",
+                  "Yes",
+                  "Yes (strong)"
+                ],
+                [
+                  "Ammonium hydroxide",
+                  "Yes",
+                  "Yes (weak)"
+                ],
+                [
+                  "Copper(II) oxide",
+                  "No",
+                  "No"
+                ],
+                [
+                  "Iron(III) hydroxide",
+                  "No",
+                  "No"
+                ]
+              ]
+            },
+            "alt": "Table of five bases showing which are soluble alkalis"
+          },
+          "math": [
+            "\\ce{NaOH -> Na+ + OH-}",
+            "\\ce{KOH -> K+ + OH-}",
+            "\\ce{Ca(OH)2 -> Ca^2+ + 2OH-}"
+          ],
+          "narration": "A base reacts with an acid to give only a salt and water. Copper oxide and magnesium oxide are bases, but they do not dissolve in water. A base that does dissolve is called an alkali, and in water it gives hydroxide ions as the only negative ions. Sodium hydroxide and potassium hydroxide are strong alkalis; ammonium hydroxide is a weak one. So every alkali is a base, but not every base is an alkali.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s04",
+          "layout": "example",
+          "heading": "Worked example: ionise or dissociate?",
+          "body_md": "**Problem.** Write equations to show what happens when (a) nitric acid and (b) potassium hydroxide dissolve in water, and say which process is ionisation and which is dissociation.\n\n**(a)** HNO₃ + H₂O → H₃O⁺ + NO₃⁻ — **ionisation**: the covalent acid molecule forms ions only on reacting with water.\n\n**(b)** KOH → K⁺ + OH⁻ — **dissociation**: the ions already present in the solid separate.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Substance",
+                "Bonding in pure form",
+                "Process in water"
+              ],
+              "rows": [
+                [
+                  "HNO₃",
+                  "Covalent molecules",
+                  "Ionisation"
+                ],
+                [
+                  "KOH",
+                  "Ionic lattice",
+                  "Dissociation"
+                ]
+              ]
+            },
+            "alt": "Table comparing ionisation of nitric acid and dissociation of potassium hydroxide"
+          },
+          "math": [],
+          "narration": "Nitric acid is made of covalent molecules, so ions appear only when the molecules react with water. That is called ionisation. Potassium hydroxide is already made of ions, held in a lattice, and water simply separates them. That is called dissociation. Both solutions end up full of ions and conduct electricity.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s05",
+          "layout": "check",
+          "heading": "Quick check: acids and alkalis",
+          "body_md": "Decide which substance fits the ionic definition of an acid or an alkali.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. An acid gives hydronium ions as the only positive ions; an alkali gives hydroxide ions as the only negative ions.",
+          "check_question_id": "q_icse10chem_ch03_001",
+          "audio": null
+        },
+        {
+          "id": "s06",
+          "layout": "concept",
+          "heading": "Indicators",
+          "body_md": "An **indicator** changes colour depending on whether the solution is acidic or alkaline.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Indicator",
+                "In acid",
+                "In neutral solution",
+                "In alkali"
+              ],
+              "rows": [
+                [
+                  "Litmus",
+                  "Red",
+                  "Purple",
+                  "Blue"
+                ],
+                [
+                  "Methyl orange",
+                  "Pink (red)",
+                  "Orange",
+                  "Yellow"
+                ],
+                [
+                  "Phenolphthalein",
+                  "Colourless",
+                  "Colourless",
+                  "Pink"
+                ]
+              ]
+            },
+            "alt": "Table of the colours of litmus, methyl orange and phenolphthalein in acidic, neutral and alkaline solutions"
+          },
+          "math": [],
+          "narration": "Indicators are dyes whose colour depends on acidity. Litmus is red in acid and blue in alkali. Methyl orange is pink in acid, orange in neutral solution and yellow in alkali. Phenolphthalein stays colourless in acid and neutral solutions and turns pink only in alkali. Learn this table well, because examiners ask for these colours often.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s07",
+          "layout": "diagram",
+          "heading": "The pH scale and universal indicator",
+          "body_md": "**pH** measures how acidic or alkaline a solution is, on a scale from **0 to 14**. pH **7** is **neutral**; **below 7 acidic** (lower = more strongly acidic, more H₃O⁺); **above 7 alkaline** (higher = more strongly alkaline, more OH⁻). **pH paper** or **universal indicator**, a mixture of indicators, shows a different colour for each pH: red (strongly acidic) through orange, yellow, green (neutral), blue to violet (strongly alkaline).",
+          "bullets": [],
+          "visual": {
+            "kind": "svg",
+            "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 460 170\" role=\"img\" aria-label=\"A pH scale from 0 to 14 drawn as a bar. The left part, from 0 to just below 7, is shaded as acidic, with strongly acidic values near 0 to 2 and weakly acidic values near 4 to 6. The point 7 is marked neutral. The right part, above 7 up to 14, is shaded as alkaline, weakly alkaline near 8 to 10 and strongly alkaline near 12 to 14. Arrows show that hydronium ion concentration increases towards the left and hydroxide ion concentration increases towards the right. Example labels: dilute hydrochloric acid about 1, vinegar about 3, pure water 7, baking soda solution about 8, sodium hydroxide solution about 13.\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>A pH scale from 0 to 14 drawn as a bar. The left part, from 0 to just below 7, is shaded as acidic, with strongly acidic values near 0 to 2 and weakly acidic values near 4 to 6. The point 7 is marked neutral. The right part, above 7 up to 14, is shaded as alkaline, weakly alkaline near 8 to 10 and strongly alkaline near 12 to 14. Arrows show that hydronium ion concentration increases towards the left and hydroxide ion concentration increases towards the right. Example labels: dilute hydrochloric acid about 1, vinegar about 3, pure water 7, baking soda solution about 8, sodium hydroxide solution about 13.</title><rect x=\"30\" y=\"60\" width=\"180\" height=\"26\" fill=\"var(--diagram-red)\" stroke=\"currentColor\" stroke-width=\"1\" fill-opacity=\"0.25\"/><rect x=\"210\" y=\"60\" width=\"40\" height=\"26\" fill=\"var(--diagram-green)\" stroke=\"currentColor\" stroke-width=\"1\" fill-opacity=\"0.3\"/><rect x=\"250\" y=\"60\" width=\"180\" height=\"26\" fill=\"var(--diagram-blue)\" stroke=\"currentColor\" stroke-width=\"1\" fill-opacity=\"0.25\"/><text x=\"30\" y=\"102\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">0</text><text x=\"58.6\" y=\"102\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">1</text><text x=\"87.1\" y=\"102\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">2</text><text x=\"115.7\" y=\"102\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">3</text><text x=\"144.3\" y=\"102\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">4</text><text x=\"172.9\" y=\"102\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">5</text><text x=\"201.4\" y=\"102\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">6</text><text x=\"230\" y=\"102\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">7</text><text x=\"258.6\" y=\"102\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">8</text><text x=\"287.1\" y=\"102\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">9</text><text x=\"315.7\" y=\"102\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">10</text><text x=\"344.3\" y=\"102\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">11</text><text x=\"372.8\" y=\"102\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">12</text><text x=\"401.4\" y=\"102\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">13</text><text x=\"430\" y=\"102\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">14</text><text x=\"120\" y=\"78\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\">acidic</text><text x=\"230\" y=\"78\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\">7</text><text x=\"340\" y=\"78\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\">alkaline</text><text x=\"230\" y=\"52\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">neutral</text><line x1=\"200\" y1=\"30\" x2=\"45.6\" y2=\"30\" stroke=\"var(--diagram-red)\" stroke-width=\"1.5\"/><polygon points=\"40,30 46.4,27.1 46.4,32.9\" fill=\"var(--diagram-red)\" stroke=\"none\"/><text x=\"120\" y=\"24\" fill=\"var(--diagram-red)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">more H₃O⁺</text><line x1=\"260\" y1=\"30\" x2=\"414.4\" y2=\"30\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.5\"/><polygon points=\"420,30 413.6,32.9 413.6,27.1\" fill=\"var(--diagram-blue)\" stroke=\"none\"/><text x=\"340\" y=\"24\" fill=\"var(--diagram-blue)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">more OH⁻</text><text x=\"59\" y=\"125\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">dil. HCl ≈ 1</text><text x=\"116\" y=\"142\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">vinegar ≈ 3</text><text x=\"230\" y=\"125\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">pure water 7</text><text x=\"290\" y=\"142\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">NaHCO₃(aq) ≈ 8</text><text x=\"400\" y=\"125\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">NaOH(aq) ≈ 13</text></svg>",
+            "alt": "A pH scale from 0 to 14 with acidic, neutral and alkaline regions and example values"
+          },
+          "math": [],
+          "narration": "The pH scale runs from nought to fourteen. Seven is neutral, like pure water. Values below seven are acidic, and the lower the number, the more hydronium ions and the stronger the acid. Values above seven are alkaline. Universal indicator, a mixture of several indicators, gives a different colour for each pH, from red for strong acids, through green for neutral, to violet for strong alkalis.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s08",
+          "layout": "example",
+          "heading": "Worked example: reading pH values",
+          "body_md": "**Problem.** Solutions P, Q, R and S have pH values 1, 5, 7 and 12. (a) Which is weakly acidic? (b) Which turns phenolphthalein pink? (c) Which could be a solution of a salt of a strong acid and a strong alkali? (d) What colour does methyl orange show in P?\n\n**(a)** Q (pH 5). **(b)** S (pH 12, alkaline). **(c)** R (pH 7, neutral). **(d)** Pink.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Solution",
+                "pH",
+                "Nature"
+              ],
+              "rows": [
+                [
+                  "P",
+                  "1",
+                  "Strongly acidic"
+                ],
+                [
+                  "Q",
+                  "5",
+                  "Weakly acidic"
+                ],
+                [
+                  "R",
+                  "7",
+                  "Neutral"
+                ],
+                [
+                  "S",
+                  "12",
+                  "Strongly alkaline"
+                ]
+              ]
+            },
+            "alt": "Table classifying four solutions by pH"
+          },
+          "math": [],
+          "narration": "Place each value on the scale. One is strongly acidic, five is weakly acidic, seven is neutral and twelve is strongly alkaline. Only the alkaline solution turns phenolphthalein pink. A neutral solution could contain a salt such as sodium chloride, made from a strong acid and a strong alkali. Methyl orange turns pink in the strongly acidic solution.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s09",
+          "layout": "check",
+          "heading": "Quick check: indicators and pH",
+          "body_md": "Predict an indicator colour or a pH range.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Methyl orange is pink in acid and yellow in alkali; pH seven is neutral.",
+          "check_question_id": "q_icse10chem_ch03_011",
+          "audio": null
+        },
+        {
+          "id": "s10",
+          "layout": "concept",
+          "heading": "Salts and their kinds",
+          "body_md": "A **salt** is formed when the hydrogen ion of an acid is **replaced, partly or completely, by a metal ion** (or ammonium ion). **Normal salt:** all replaceable hydrogen replaced (Na₂SO₄, NaCl, KNO₃). **Acid salt:** only part replaced, so the salt still contains replaceable hydrogen (NaHSO₄, NaHCO₃) — formed only by acids with more than one replaceable hydrogen. **Basic salt:** formed by partial replacement of the hydroxide of a base by an acid radical (Pb(OH)Cl, Cu(OH)₂·CuCO₃). **Complex salt:** contains a complex ion that does not break up into simple ions in solution (potassium ferrocyanide, K₄Fe(CN)₆; sodium argentocyanide).",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Salt",
+                "Kind",
+                "Why"
+              ],
+              "rows": [
+                [
+                  "Na₂SO₄",
+                  "Normal",
+                  "Both H of H₂SO₄ replaced"
+                ],
+                [
+                  "NaHSO₄",
+                  "Acid",
+                  "One H of H₂SO₄ still present"
+                ],
+                [
+                  "Pb(OH)Cl",
+                  "Basic",
+                  "Contains OH from the base"
+                ],
+                [
+                  "K₄Fe(CN)₆",
+                  "Complex",
+                  "Fe(CN)₆⁴⁻ stays intact in water"
+                ]
+              ]
+            },
+            "alt": "Table of four salts classified as normal, acid, basic and complex with reasons"
+          },
+          "math": [],
+          "narration": "A salt forms when the hydrogen of an acid is replaced by a metal. If all of it is replaced, the salt is normal, like sodium sulphate. If only part is replaced, the salt still has some acid hydrogen and is called an acid salt, like sodium hydrogensulphate. A basic salt still carries hydroxide from the base. A complex salt contains a large ion that stays together in water.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s11",
+          "layout": "example",
+          "heading": "Worked example: normal or acid salt?",
+          "body_md": "**Problem.** Sodium hydroxide reacts with sulphuric acid in two different mole ratios. Write both equations and classify each salt.\n\n**(1:1)** NaOH + H₂SO₄ → NaHSO₄ + H₂O — **acid salt** (one H replaced).\n\n**(2:1)** 2NaOH + H₂SO₄ → Na₂SO₄ + 2H₂O — **normal salt** (both H replaced).\n\nHydrochloric acid, being monobasic, forms only the normal salt NaCl.",
+          "bullets": [],
+          "visual": {
+            "kind": "flow",
+            "spec": {
+              "direction": "LR",
+              "nodes": [
+                {
+                  "id": "a",
+                  "label": "H₂SO₄ (two replaceable H)"
+                },
+                {
+                  "id": "b",
+                  "label": "NaHSO₄ (acid salt)"
+                },
+                {
+                  "id": "c",
+                  "label": "Na₂SO₄ (normal salt)"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "a",
+                  "to": "b",
+                  "label": "1 NaOH"
+                },
+                {
+                  "from": "a",
+                  "to": "c",
+                  "label": "2 NaOH"
+                }
+              ]
+            },
+            "alt": "Flow from sulphuric acid to the acid salt with one mole of sodium hydroxide and the normal salt with two moles"
+          },
+          "math": [],
+          "narration": "Sulphuric acid has two replaceable hydrogen atoms. With one mole of sodium hydroxide, only one is replaced, and the product, sodium hydrogensulphate, is an acid salt. With two moles, both are replaced and normal sodium sulphate forms. Hydrochloric acid has only one replaceable hydrogen, so it can form only a normal salt.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s12",
+          "layout": "check",
+          "heading": "Quick check: kinds of salt",
+          "body_md": "Classify a salt as normal, acid, basic or complex.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Look for leftover hydrogen from the acid or leftover hydroxide from the base.",
+          "check_question_id": "q_icse10chem_ch03_020",
+          "audio": null
+        },
+        {
+          "id": "s13",
+          "layout": "summary",
+          "heading": "Summary: Part 1",
+          "body_md": "",
+          "bullets": [
+            "Acid: H₃O⁺ as the only positive ion in water (ionisation); alkali: OH⁻ as the only negative ion (dissociation).",
+            "All alkalis are bases; insoluble bases (CuO, MgO) are not alkalis.",
+            "Litmus red/blue; methyl orange pink/yellow; phenolphthalein colourless/pink.",
+            "pH 7 neutral, below 7 acidic, above 7 alkaline; universal indicator shows the value.",
+            "Salts: normal (Na₂SO₄), acid (NaHSO₄), basic (Pb(OH)Cl), complex (K₄Fe(CN)₆)."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Term",
+                "Key ion"
+              ],
+              "rows": [
+                [
+                  "Acid",
+                  "H₃O⁺"
+                ],
+                [
+                  "Alkali",
+                  "OH⁻"
+                ],
+                [
+                  "Acid salt",
+                  "Contains replaceable H"
+                ]
+              ]
+            },
+            "alt": "Summary table of acids, alkalis and acid salts"
+          },
+          "math": [],
+          "narration": "Let us sum up Part 1. Acids give hydronium ions in water and alkalis give hydroxide ions. Every alkali is a base, but some bases do not dissolve. Indicators and the pH scale tell us how acidic or alkaline a solution is. Salts may be normal, acid, basic or complex, depending on how much of the acid or base has been replaced.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s14",
+          "layout": "exam-tips",
+          "heading": "Exam tips: Part 1",
+          "body_md": "",
+          "bullets": [
+            "Use the word “only” in the definitions of acid and alkali.",
+            "Write the two-step ionisation of sulphuric acid when asked about its basicity.",
+            "State methyl orange colours as pink (acid) and yellow (alkali).",
+            "An acid salt still contains replaceable hydrogen — not just “any hydrogen”."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Slip",
+                "Fix"
+              ],
+              "rows": [
+                [
+                  "Phenolphthalein turns pink in acid",
+                  "Pink only in alkali"
+                ],
+                [
+                  "CuO is an alkali",
+                  "It is an insoluble base"
+                ],
+                [
+                  "HCl forms acid salts",
+                  "Monobasic acids form only normal salts"
+                ]
+              ]
+            },
+            "alt": "Table of three common slips in Part 1 and their fixes"
+          },
+          "math": [],
+          "narration": "Some tips. Include the word only in the definitions of acids and alkalis. When asked why sulphuric acid is dibasic, show its two ionisation steps. Learn the indicator colours exactly. And remember that only acids with more than one replaceable hydrogen can form acid salts.",
+          "check_question_id": null,
+          "audio": null
+        }
+      ],
+      "status": "draft",
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "unit": "icse-10-chemistry-ch03",
+      "part": 2,
+      "version": 1,
+      "title": "Acids, Bases and Salts — Part 2: Acids on salts and preparing salts",
+      "language": "en",
+      "goals": [
+        "Write equations for dilute acids reacting with carbonates, hydrogen carbonates, sulphites, hydrogen sulphites and sulphides",
+        "Identify the gas evolved in each case with a test",
+        "Choose a method to prepare a given salt from its solubility",
+        "Write equations for preparing salts by each method"
+      ],
+      "slides": [
+        {
+          "id": "s01",
+          "layout": "title",
+          "heading": "Fizz, smell and precipitate",
+          "body_md": "Part 2 — dilute acids release tell-tale gases from certain salts, and the solubility of a salt decides how we make it.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Salt treated with dilute acid",
+                "Gas",
+                "Clue"
+              ],
+              "rows": [
+                [
+                  "Carbonate / hydrogen carbonate",
+                  "CO₂",
+                  "Lime water turns milky"
+                ],
+                [
+                  "Sulphite / hydrogen sulphite",
+                  "SO₂",
+                  "Smell of burning sulphur"
+                ],
+                [
+                  "Sulphide",
+                  "H₂S",
+                  "Smell of rotten eggs"
+                ]
+              ]
+            },
+            "alt": "Table of three classes of salt, the gas each gives with dilute acid and a clue to the gas"
+          },
+          "math": [],
+          "narration": "When a dilute acid is poured on certain salts, a gas fizzes out, and the gas tells you which salt you had. Carbonates give carbon dioxide, sulphites give sulphur dioxide and sulphides give hydrogen sulphide. Later in this part we choose the best way to make a salt, depending on whether it dissolves in water.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s02",
+          "layout": "concept",
+          "heading": "Carbonates and hydrogen carbonates",
+          "body_md": "Dilute acids decompose carbonates and hydrogen carbonates, giving a **salt, water and carbon dioxide** with brisk effervescence. **Test for CO₂:** it turns **lime water milky** (CaCO₃ precipitate); it has no effect on acidified potassium dichromate.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Reactants",
+                "Products"
+              ],
+              "rows": [
+                [
+                  "Na₂CO₃ + dil. HCl",
+                  "NaCl, H₂O, CO₂"
+                ],
+                [
+                  "KHCO₃ + dil. HNO₃",
+                  "KNO₃, H₂O, CO₂"
+                ],
+                [
+                  "ZnCO₃ + dil. H₂SO₄",
+                  "ZnSO₄, H₂O, CO₂"
+                ]
+              ]
+            },
+            "alt": "Table of three carbonate and hydrogen carbonate reactions with dilute acids and their products"
+          },
+          "math": [
+            "\\ce{Na2CO3 + 2HCl -> 2NaCl + H2O + CO2}",
+            "\\ce{KHCO3 + HNO3 -> KNO3 + H2O + CO2}",
+            "\\ce{Ca(OH)2 + CO2 -> CaCO3 + H2O}"
+          ],
+          "narration": "Any carbonate or hydrogen carbonate fizzes with a dilute acid, giving a salt, water and carbon dioxide. To prove the gas is carbon dioxide, bubble it through lime water, which turns milky because white calcium carbonate forms. Carbon dioxide does not change the colour of acidified potassium dichromate, and this helps to tell it apart from sulphur dioxide.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s03",
+          "layout": "concept",
+          "heading": "Sulphites, hydrogen sulphites and sulphides",
+          "body_md": "**Sulphites and hydrogen sulphites** + dilute acid → salt + water + **sulphur dioxide** (choking smell of burning sulphur). **Test for SO₂:** turns **acidified potassium dichromate paper from orange to green** (and acidified KMnO₄ from pink to colourless); it also turns lime water milky. **Sulphides** + dilute acid → salt + **hydrogen sulphide** (smell of rotten eggs). **Test for H₂S:** turns **lead acetate paper silvery black** (PbS).",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Gas",
+                "Smell",
+                "Test"
+              ],
+              "rows": [
+                [
+                  "SO₂",
+                  "Burning sulphur (choking)",
+                  "Acidified K₂Cr₂O₇: orange → green"
+                ],
+                [
+                  "H₂S",
+                  "Rotten eggs",
+                  "Lead acetate paper: turns black"
+                ],
+                [
+                  "CO₂",
+                  "None",
+                  "Lime water: milky"
+                ]
+              ]
+            },
+            "alt": "Table of the smells and tests for sulphur dioxide, hydrogen sulphide and carbon dioxide"
+          },
+          "math": [
+            "\\ce{Na2SO3 + H2SO4 -> Na2SO4 + H2O + SO2}",
+            "\\ce{NaHSO3 + HCl -> NaCl + H2O + SO2}",
+            "\\ce{ZnS + H2SO4 -> ZnSO4 + H2S}"
+          ],
+          "narration": "Sulphites and hydrogen sulphites give sulphur dioxide with dilute acids. It has a choking smell and turns orange acidified potassium dichromate green. Sulphides give hydrogen sulphide, which smells of rotten eggs and blackens paper soaked in lead acetate. Remember that sulphur dioxide also turns lime water milky, so the dichromate test is what separates it from carbon dioxide.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s04",
+          "layout": "example",
+          "heading": "Worked example: which salt was it?",
+          "body_md": "**Problem.** Three white powders X, Y and Z are each warmed with dilute sulphuric acid. X gives a gas that turns lime water milky but does not affect acidified potassium dichromate. Y gives a gas that turns acidified potassium dichromate green. Z gives a gas that blackens lead acetate paper. All three are sodium salts. Name the anion in each and write the equation for X.\n\n**X:** carbonate (CO₂): Na₂CO₃ + H₂SO₄ → Na₂SO₄ + H₂O + CO₂.\n\n**Y:** sulphite (SO₂). **Z:** sulphide (H₂S).",
+          "bullets": [],
+          "visual": {
+            "kind": "flow",
+            "spec": {
+              "direction": "LR",
+              "nodes": [
+                {
+                  "id": "a",
+                  "label": "Gas with dilute acid"
+                },
+                {
+                  "id": "b",
+                  "label": "Lime water milky, dichromate unchanged → CO₂ → carbonate"
+                },
+                {
+                  "id": "c",
+                  "label": "Dichromate turns green → SO₂ → sulphite"
+                },
+                {
+                  "id": "d",
+                  "label": "Lead acetate black → H₂S → sulphide"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "a",
+                  "to": "b"
+                },
+                {
+                  "from": "a",
+                  "to": "c"
+                },
+                {
+                  "from": "a",
+                  "to": "d"
+                }
+              ]
+            },
+            "alt": "Flow identifying carbonate, sulphite and sulphide from the gas they give with dilute acid"
+          },
+          "math": [],
+          "narration": "Use the gas tests one at a time. A gas that turns lime water milky but leaves the dichromate orange is carbon dioxide, so X is a carbonate. A gas that turns the dichromate green is sulphur dioxide, so Y is a sulphite. A gas that blackens lead acetate paper is hydrogen sulphide, so Z is a sulphide.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s05",
+          "layout": "check",
+          "heading": "Quick check: gases from salts",
+          "body_md": "Identify the gas given off and its test.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Carbonates give carbon dioxide, sulphites give sulphur dioxide and sulphides give hydrogen sulphide.",
+          "check_question_id": "q_icse10chem_ch03_029",
+          "audio": null
+        },
+        {
+          "id": "s06",
+          "layout": "concept",
+          "heading": "Choosing a method: solubility decides",
+          "body_md": "First decide whether the salt is **soluble** or **insoluble** in water. **Insoluble salts** are made by **precipitation**. **Soluble salts** are made by direct combination, displacement (metal + acid), neutralisation of an insoluble base, **titration** (for salts of sodium, potassium and ammonium) or an acid on a carbonate.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Soluble in water",
+                "Insoluble in water"
+              ],
+              "rows": [
+                [
+                  "All sodium, potassium and ammonium salts",
+                  "—"
+                ],
+                [
+                  "All nitrates",
+                  "—"
+                ],
+                [
+                  "Most chlorides",
+                  "AgCl, PbCl₂ (cold)"
+                ],
+                [
+                  "Most sulphates",
+                  "BaSO₄, PbSO₄ (CaSO₄ slightly)"
+                ],
+                [
+                  "Na, K and NH₄ carbonates",
+                  "Most other carbonates"
+                ]
+              ]
+            },
+            "alt": "Table of general solubility rules for salts"
+          },
+          "math": [],
+          "narration": "Before choosing a method, ask whether the salt dissolves in water. Insoluble salts, such as silver chloride, lead chloride and barium sulphate, are made by precipitation. Soluble salts are made in other ways: by joining the elements directly, by reacting a metal with an acid, by neutralising an insoluble base, by titrating an alkali, or by reacting an acid with a carbonate.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s07",
+          "layout": "concept",
+          "heading": "Direct combination, displacement and precipitation",
+          "body_md": "**Direct combination:** two elements combine — iron burns in dry chlorine to give **iron(III) chloride**. **Displacement:** an active metal displaces hydrogen from a dilute acid — **zinc + dilute sulphuric acid → zinc sulphate**. **Precipitation (double decomposition):** two soluble salts exchange ions and the insoluble salt is filtered off — **lead nitrate + sodium chloride → lead chloride**.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Method",
+                "Example salt",
+                "Type of salt"
+              ],
+              "rows": [
+                [
+                  "Direct combination",
+                  "Iron(III) chloride",
+                  "Soluble"
+                ],
+                [
+                  "Displacement",
+                  "Zinc sulphate",
+                  "Soluble"
+                ],
+                [
+                  "Precipitation",
+                  "Lead chloride, barium sulphate",
+                  "Insoluble"
+                ]
+              ]
+            },
+            "alt": "Table of three salt-preparation methods with an example of each"
+          },
+          "math": [
+            "\\ce{2Fe + 3Cl2 -> 2FeCl3}",
+            "\\ce{Zn + H2SO4 -> ZnSO4 + H2}",
+            "\\ce{Pb(NO3)2 + 2NaCl -> PbCl2 + 2NaNO3}"
+          ],
+          "narration": "Some salts are made by joining two elements directly: hot iron burns in chlorine to form iron three chloride. Others are made by displacement, where an active metal like zinc pushes hydrogen out of dilute sulphuric acid. Insoluble salts, like lead chloride, are made by precipitation: two solutions are mixed, the solid salt settles out and is filtered off.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s08",
+          "layout": "example",
+          "heading": "Worked example: choose the method",
+          "body_md": "**Problem.** Suggest a method and write the equation for preparing (a) barium sulphate, (b) zinc sulphate and (c) iron(III) chloride.\n\n**(a)** Insoluble → **precipitation**: BaCl₂ + Na₂SO₄ → BaSO₄ + 2NaCl.\n\n**(b)** Soluble; zinc is above hydrogen → **displacement**: Zn + H₂SO₄ → ZnSO₄ + H₂.\n\n**(c)** **Direct combination**: 2Fe + 3Cl₂ → 2FeCl₃ (iron with dilute HCl would give iron(II) chloride instead).",
+          "bullets": [],
+          "visual": {
+            "kind": "flow",
+            "spec": {
+              "direction": "LR",
+              "nodes": [
+                {
+                  "id": "a",
+                  "label": "Is the salt soluble?"
+                },
+                {
+                  "id": "b",
+                  "label": "No → precipitation"
+                },
+                {
+                  "id": "c",
+                  "label": "Yes → metal, base, alkali or carbonate route"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "a",
+                  "to": "b"
+                },
+                {
+                  "from": "a",
+                  "to": "c"
+                }
+              ]
+            },
+            "alt": "Flow for choosing a preparation method by solubility"
+          },
+          "math": [],
+          "narration": "Barium sulphate does not dissolve, so it is made by precipitation from two soluble salts. Zinc sulphate dissolves, and zinc is reactive enough to displace hydrogen from dilute sulphuric acid. Iron three chloride is made by heating iron in chlorine, because iron with dilute hydrochloric acid gives iron two chloride, not iron three chloride.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s09",
+          "layout": "check",
+          "heading": "Quick check: preparation methods",
+          "body_md": "Pick the right method for a given salt.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Insoluble salts are always made by precipitation.",
+          "check_question_id": "q_icse10chem_ch03_041",
+          "audio": null
+        },
+        {
+          "id": "s10",
+          "layout": "concept",
+          "heading": "Neutralisation, titration and acids on carbonates",
+          "body_md": "**Insoluble base + acid:** add **excess** insoluble base (CuO) to warm dilute acid, filter off the excess, crystallise — **copper(II) sulphate**. **Titration:** for salts of **sodium, potassium and ammonium**, since the alkali and salt are both soluble and any excess could not be filtered off — the exact volumes are found with an indicator, then mixed without it. **Acid + carbonate or hydrogen carbonate:** e.g. **sodium chloride** from sodium hydrogen carbonate, or zinc sulphate from zinc carbonate.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Salt wanted",
+                "Method",
+                "Why"
+              ],
+              "rows": [
+                [
+                  "Copper(II) sulphate",
+                  "Excess CuO + dil. H₂SO₄",
+                  "Insoluble base: excess filtered off"
+                ],
+                [
+                  "Sodium chloride",
+                  "Titration of NaOH with HCl",
+                  "Excess alkali cannot be filtered off"
+                ],
+                [
+                  "Calcium nitrate",
+                  "CaCO₃ + dil. HNO₃",
+                  "Carbonate reacts; CO₂ escapes"
+                ]
+              ]
+            },
+            "alt": "Table of three salts and the neutralisation or carbonate route used for each"
+          },
+          "math": [
+            "\\ce{CuO + H2SO4 -> CuSO4 + H2O}",
+            "\\ce{NaOH + HCl -> NaCl + H2O}",
+            "\\ce{NaHCO3 + HCl -> NaCl + H2O + CO2}"
+          ],
+          "narration": "To make copper sulphate, add black copper oxide to warm dilute sulphuric acid until no more dissolves, then filter off the extra oxide. Sodium and potassium salts are made by titration, because both the alkali and the salt dissolve, so any excess could not be removed by filtering. Acids also react with carbonates, giving the salt, water and carbon dioxide.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s11",
+          "layout": "example",
+          "heading": "Worked example: why titration for sodium sulphate?",
+          "body_md": "**Problem.** Explain why sodium sulphate is made by titration, while copper(II) sulphate is made by adding excess copper(II) oxide. Write both equations.\n\n**Sodium sulphate:** NaOH is soluble, so excess alkali would stay dissolved in the product; exact volumes must be used: 2NaOH + H₂SO₄ → Na₂SO₄ + 2H₂O.\n\n**Copper(II) sulphate:** CuO is insoluble; excess is simply filtered off, leaving pure solution: CuO + H₂SO₄ → CuSO₄ + H₂O.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Salt",
+                "Base",
+                "Base soluble?",
+                "Method"
+              ],
+              "rows": [
+                [
+                  "Na₂SO₄",
+                  "NaOH",
+                  "Yes",
+                  "Titration"
+                ],
+                [
+                  "CuSO₄",
+                  "CuO",
+                  "No",
+                  "Excess base, filter"
+                ]
+              ]
+            },
+            "alt": "Table comparing preparation of sodium sulphate and copper sulphate"
+          },
+          "math": [],
+          "narration": "The difference is solubility. Sodium hydroxide dissolves, so any extra would remain mixed with the salt and could not be filtered out; the exact amount must be found by titration. Copper oxide does not dissolve, so you can add more than enough, and the leftover black powder is simply filtered off.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s12",
+          "layout": "check",
+          "heading": "Quick check: titration or filtration?",
+          "body_md": "Explain the choice of method for a soluble salt.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Titration is needed when the base is soluble.",
+          "check_question_id": "q_icse10chem_ch03_049",
+          "audio": null
+        },
+        {
+          "id": "s13",
+          "layout": "summary",
+          "heading": "Summary: Part 2",
+          "body_md": "",
+          "bullets": [
+            "Dilute acid + carbonate or hydrogen carbonate → salt + H₂O + CO₂ (lime water milky).",
+            "Dilute acid + sulphite or hydrogen sulphite → salt + H₂O + SO₂ (acidified dichromate orange → green).",
+            "Dilute acid + sulphide → salt + H₂S (lead acetate paper black).",
+            "Insoluble salts: precipitation. Soluble salts: direct combination, displacement, excess insoluble base, titration (Na, K, NH₄), acid + carbonate."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Salt",
+                "Method"
+              ],
+              "rows": [
+                [
+                  "BaSO₄, PbCl₂",
+                  "Precipitation"
+                ],
+                [
+                  "FeCl₃",
+                  "Direct combination"
+                ],
+                [
+                  "ZnSO₄",
+                  "Displacement"
+                ],
+                [
+                  "CuSO₄",
+                  "Excess CuO"
+                ],
+                [
+                  "NaCl, K₂SO₄",
+                  "Titration"
+                ]
+              ]
+            },
+            "alt": "Summary table of salts and preparation methods"
+          },
+          "math": [],
+          "narration": "Let us sum up Part 2. Dilute acids release carbon dioxide from carbonates, sulphur dioxide from sulphites and hydrogen sulphide from sulphides, and each gas has its own test. To prepare a salt, first check its solubility. Insoluble salts are precipitated; soluble salts are made by direct combination, displacement, neutralising an insoluble base, titration, or from a carbonate.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s14",
+          "layout": "exam-tips",
+          "heading": "Exam tips: Part 2",
+          "body_md": "",
+          "bullets": [
+            "Name the gas and its test in “state one observation” questions.",
+            "Remember that SO₂ also turns lime water milky: use acidified dichromate to confirm it.",
+            "Justify a method by the solubility of the salt and of the base.",
+            "Iron with dilute HCl gives FeCl₂; FeCl₃ needs direct combination with chlorine."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Slip",
+                "Fix"
+              ],
+              "rows": [
+                [
+                  "CuSO₄ by titration",
+                  "Excess CuO, filter"
+                ],
+                [
+                  "PbCl₂ by Pb + HCl",
+                  "Precipitation from Pb(NO₃)₂"
+                ],
+                [
+                  "H₂S turns lime water milky",
+                  "H₂S blackens lead acetate paper"
+                ]
+              ]
+            },
+            "alt": "Table of three common slips in Part 2 and their fixes"
+          },
+          "math": [],
+          "narration": "Final tips. In observation questions, name the gas and describe its test. Sulphur dioxide also turns lime water milky, so confirm it with acidified dichromate. Always justify your choice of method using solubility. And remember that iron with dilute hydrochloric acid gives iron two chloride; iron three chloride needs chlorine gas.",
+          "check_question_id": null,
+          "audio": null
+        }
+      ],
+      "status": "draft",
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    }
+  ],
+  "notes": {
+    "unit": "icse-10-chemistry-ch03",
+    "version": 1,
+    "title": "Acids, Bases and Salts — Notes",
+    "language": "en",
+    "sections": [
+      {
+        "heading": "1. Acids, bases and alkalis in terms of ions",
+        "body_md": "**Acid:** gives **H₃O⁺ as the only positive ion** in water (ionisation of covalent molecules). Monobasic: HCl, HNO₃; dibasic: H₂SO₄ (two steps). Strong acids ionise almost completely; weak acids (CH₃COOH, H₂CO₃) only partly.\n\n**Base:** reacts with an acid to give salt and water only (metal oxides and hydroxides). **Alkali:** a soluble base giving **OH⁻ as the only negative ion** (dissociation of an ionic solid). All alkalis are bases; not all bases are alkalis.",
+        "key_terms": [
+          {
+            "term": "Acid",
+            "definition_md": "A compound that gives hydronium ions as the only positive ions in aqueous solution."
+          },
+          {
+            "term": "Alkali",
+            "definition_md": "A base that dissolves in water and gives hydroxide ions as the only negative ions."
+          },
+          {
+            "term": "Basicity",
+            "definition_md": "The number of hydronium ions produced by one molecule of an acid in water."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\ce{H2SO4 + 2H2O -> 2H3O+ + SO4^2-}",
+            "label": "Overall ionisation of sulphuric acid"
+          },
+          {
+            "latex": "\\ce{KOH -> K+ + OH-}",
+            "label": "Dissociation of potassium hydroxide"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Process",
+              "Happens to",
+              "Example"
+            ],
+            "rows": [
+              [
+                "Ionisation",
+                "Covalent molecules",
+                "HCl in water"
+              ],
+              [
+                "Dissociation",
+                "Ionic solids",
+                "NaOH in water"
+              ]
+            ]
+          },
+          "alt": "Table contrasting ionisation and dissociation"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-chemistry-ch03-t01"
+        ]
+      },
+      {
+        "heading": "2. Indicators and pH",
+        "body_md": "| Indicator | Acid | Neutral | Alkali |\n|---|---|---|---|\n| Litmus | Red | Purple | Blue |\n| Methyl orange | Pink | Orange | Yellow |\n| Phenolphthalein | Colourless | Colourless | Pink |\n\n**pH scale** 0–14: 7 neutral; below 7 acidic (0–3 strongly, 4–6 weakly); above 7 alkaline (8–10 weakly, 11–14 strongly). **Universal indicator / pH paper** gives a colour for each pH (red → green → violet).",
+        "key_terms": [
+          {
+            "term": "pH",
+            "definition_md": "A number from 0 to 14 expressing how acidic or alkaline a solution is; 7 is neutral."
+          },
+          {
+            "term": "Universal indicator",
+            "definition_md": "A mixture of indicators that shows a different colour at each pH value."
+          }
+        ],
+        "formulas": [],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "pH",
+              "Nature"
+            ],
+            "rows": [
+              [
+                "1",
+                "Strongly acidic"
+              ],
+              [
+                "5",
+                "Weakly acidic"
+              ],
+              [
+                "7",
+                "Neutral"
+              ],
+              [
+                "13",
+                "Strongly alkaline"
+              ]
+            ]
+          },
+          "alt": "Table of pH values and the nature of the solution"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-chemistry-ch03-t02"
+        ]
+      },
+      {
+        "heading": "3. Kinds of salts",
+        "body_md": "A **salt** forms when the hydrogen ion of an acid is replaced, partly or completely, by a metal or ammonium ion.\n\n- **Normal salt:** all replaceable H replaced — Na₂SO₄, NaCl, KNO₃.\n- **Acid salt:** part of the replaceable H remains — NaHSO₄, NaHCO₃ (only from acids with more than one replaceable H).\n- **Basic salt:** contains hydroxide from the base — Pb(OH)Cl, basic copper carbonate.\n- **Complex salt:** contains a complex ion that does not break up in water — K₄Fe(CN)₆, sodium argentocyanide.",
+        "key_terms": [
+          {
+            "term": "Acid salt",
+            "definition_md": "A salt formed by partial replacement of the replaceable hydrogen of an acid; it still contains replaceable hydrogen."
+          },
+          {
+            "term": "Basic salt",
+            "definition_md": "A salt formed by partial replacement of the hydroxide of a base by an acid radical."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\ce{NaOH + H2SO4 -> NaHSO4 + H2O}",
+            "label": "An acid salt"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Salt",
+              "Kind"
+            ],
+            "rows": [
+              [
+                "KNO₃",
+                "Normal"
+              ],
+              [
+                "NaHCO₃",
+                "Acid"
+              ],
+              [
+                "Pb(OH)Cl",
+                "Basic"
+              ],
+              [
+                "K₄Fe(CN)₆",
+                "Complex"
+              ]
+            ]
+          },
+          "alt": "Table of four salts and their kinds"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-chemistry-ch03-t03"
+        ]
+      },
+      {
+        "heading": "4. Dilute acids on carbonates, sulphites and sulphides",
+        "body_md": "| Salt + dilute acid | Gas | Test |\n|---|---|---|\n| Carbonate / hydrogen carbonate | CO₂ | Lime water milky; no effect on acidified K₂Cr₂O₇ |\n| Sulphite / hydrogen sulphite | SO₂ | Acidified K₂Cr₂O₇ orange → green; acidified KMnO₄ pink → colourless |\n| Sulphide | H₂S | Rotten-egg smell; lead acetate paper turns silvery black |\n\n$\\ce{CaCO3 + 2HCl -> CaCl2 + H2O + CO2}$; $\\ce{Na2SO3 + 2HCl -> 2NaCl + H2O + SO2}$; $\\ce{FeS + H2SO4 -> FeSO4 + H2S}$.",
+        "key_terms": [
+          {
+            "term": "Effervescence",
+            "definition_md": "Brisk bubbling caused by a gas being given off from a liquid."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\ce{NaHSO3 + HCl -> NaCl + H2O + SO2}",
+            "label": "Hydrogen sulphite with dilute acid"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Gas",
+              "Test"
+            ],
+            "rows": [
+              [
+                "CO₂",
+                "Lime water milky"
+              ],
+              [
+                "SO₂",
+                "Dichromate green"
+              ],
+              [
+                "H₂S",
+                "Lead acetate black"
+              ]
+            ]
+          },
+          "alt": "Table of tests for three gases"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-chemistry-ch03-t04"
+        ]
+      },
+      {
+        "heading": "5. Preparing salts: direct combination, displacement, precipitation",
+        "body_md": "Choose the method by **solubility**. Insoluble salts (AgCl, PbCl₂, BaSO₄, PbSO₄, most carbonates) → **precipitation** (double decomposition). Soluble salts → other methods.\n\n- Direct combination: $\\ce{2Fe + 3Cl2 -> 2FeCl3}$\n- Displacement: $\\ce{Zn + H2SO4 -> ZnSO4 + H2}$\n- Precipitation: $\\ce{Pb(NO3)2 + 2NaCl -> PbCl2 + 2NaNO3}$; $\\ce{BaCl2 + Na2SO4 -> BaSO4 + 2NaCl}$",
+        "key_terms": [
+          {
+            "term": "Precipitation (double decomposition)",
+            "definition_md": "Preparation of an insoluble salt by mixing solutions of two soluble salts that exchange ions."
+          }
+        ],
+        "formulas": [],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Salt",
+              "Soluble?",
+              "Method"
+            ],
+            "rows": [
+              [
+                "BaSO₄",
+                "No",
+                "Precipitation"
+              ],
+              [
+                "ZnSO₄",
+                "Yes",
+                "Displacement"
+              ],
+              [
+                "FeCl₃",
+                "Yes",
+                "Direct combination"
+              ]
+            ]
+          },
+          "alt": "Table of three salts with solubility and method"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-chemistry-ch03-t05"
+        ]
+      },
+      {
+        "heading": "6. Preparing salts: insoluble base, titration, carbonates",
+        "body_md": "- **Excess insoluble base + dilute acid**, filter, crystallise: $\\ce{CuO + H2SO4 -> CuSO4 + H2O}$.\n- **Titration** (salts of Na, K, NH₄): alkali and salt both soluble, so excess cannot be filtered off; find exact volumes with an indicator, repeat without it: $\\ce{KOH + HNO3 -> KNO3 + H2O}$.\n- **Acid + carbonate or hydrogen carbonate:** $\\ce{ZnCO3 + H2SO4 -> ZnSO4 + H2O + CO2}$; $\\ce{NaHCO3 + HCl -> NaCl + H2O + CO2}$.",
+        "key_terms": [
+          {
+            "term": "Titration",
+            "definition_md": "Adding one solution to another from a burette until the reaction is exactly complete, judged by an indicator."
+          }
+        ],
+        "formulas": [],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Base or salt used",
+              "Soluble?",
+              "Excess removed by"
+            ],
+            "rows": [
+              [
+                "CuO",
+                "No",
+                "Filtration"
+              ],
+              [
+                "NaOH",
+                "Yes",
+                "Cannot — use titration"
+              ]
+            ]
+          },
+          "alt": "Table explaining when titration is needed"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-chemistry-ch03-t06"
+        ]
+      }
+    ],
+    "exam_tips_md": "**Common mistakes**\n- Leaving out “only” in the definitions of acid and alkali.\n- Phenolphthalein colours reversed; methyl orange called red in alkali.\n- Choosing titration for copper sulphate or displacement for lead chloride.\n- Forgetting that SO₂ also turns lime water milky.\n\n**How marks are usually awarded**\n- Equations (1 mark): correct formulae and balancing; state the gas.\n- Methods (2 marks): name the method and justify it by solubility.\n- Tests (1 mark): reagent and colour change.",
+    "status": "draft",
+    "provenance": {
+      "origin": "human",
+      "template_version": null,
+      "model": null,
+      "generated_at": "2026-11-01",
+      "author": "claude-opus-5-5 (subject-producer)"
+    }
+  },
+  "flashcards": {
+    "unit": "icse-10-chemistry-ch03",
+    "version": 1,
+    "language": "en",
+    "cards": [
+      {
+        "id": "f01",
+        "front_md": "Acid (ionic definition)?",
+        "back_md": "Gives H₃O⁺ as the only positive ion in water.",
+        "tag": "definition",
+        "topic_id": "icse-10-chemistry-ch03-t01"
+      },
+      {
+        "id": "f02",
+        "front_md": "Alkali (ionic definition)?",
+        "back_md": "Soluble base giving OH⁻ as the only negative ion.",
+        "tag": "definition",
+        "topic_id": "icse-10-chemistry-ch03-t01"
+      },
+      {
+        "id": "f03",
+        "front_md": "Basicity of H₂SO₄?",
+        "back_md": "Two (dibasic).",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch03-t01"
+      },
+      {
+        "id": "f04",
+        "front_md": "Ionisation of HCl?",
+        "back_md": "HCl + H₂O → H₃O⁺ + Cl⁻.",
+        "tag": "formula",
+        "topic_id": "icse-10-chemistry-ch03-t01"
+      },
+      {
+        "id": "f05",
+        "front_md": "Is CuO an alkali?",
+        "back_md": "No: an insoluble base.",
+        "tag": "concept",
+        "topic_id": "icse-10-chemistry-ch03-t01"
+      },
+      {
+        "id": "f06",
+        "front_md": "Ionisation vs dissociation?",
+        "back_md": "Ionisation: molecules form ions; dissociation: existing ions separate.",
+        "tag": "concept",
+        "topic_id": "icse-10-chemistry-ch03-t01"
+      },
+      {
+        "id": "f07",
+        "front_md": "Litmus in alkali?",
+        "back_md": "Blue.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch03-t02"
+      },
+      {
+        "id": "f08",
+        "front_md": "Methyl orange in acid / alkali?",
+        "back_md": "Pink / yellow.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch03-t02"
+      },
+      {
+        "id": "f09",
+        "front_md": "Phenolphthalein in alkali?",
+        "back_md": "Pink.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch03-t02"
+      },
+      {
+        "id": "f10",
+        "front_md": "pH of a neutral solution?",
+        "back_md": "7.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch03-t02"
+      },
+      {
+        "id": "f11",
+        "front_md": "Lower pH means?",
+        "back_md": "More strongly acidic (more H₃O⁺).",
+        "tag": "concept",
+        "topic_id": "icse-10-chemistry-ch03-t02"
+      },
+      {
+        "id": "f12",
+        "front_md": "Universal indicator?",
+        "back_md": "Mixture of indicators; a colour for each pH.",
+        "tag": "definition",
+        "topic_id": "icse-10-chemistry-ch03-t02"
+      },
+      {
+        "id": "f13",
+        "front_md": "Salt?",
+        "back_md": "Formed when the H of an acid is replaced by a metal or NH₄⁺.",
+        "tag": "definition",
+        "topic_id": "icse-10-chemistry-ch03-t03"
+      },
+      {
+        "id": "f14",
+        "front_md": "Acid salt example?",
+        "back_md": "NaHSO₄ or NaHCO₃.",
+        "tag": "example",
+        "topic_id": "icse-10-chemistry-ch03-t03"
+      },
+      {
+        "id": "f15",
+        "front_md": "Basic salt example?",
+        "back_md": "Pb(OH)Cl.",
+        "tag": "example",
+        "topic_id": "icse-10-chemistry-ch03-t03"
+      },
+      {
+        "id": "f16",
+        "front_md": "Complex salt example?",
+        "back_md": "K₄Fe(CN)₆.",
+        "tag": "example",
+        "topic_id": "icse-10-chemistry-ch03-t03"
+      },
+      {
+        "id": "f17",
+        "front_md": "Why can HCl not form an acid salt?",
+        "back_md": "It has only one replaceable hydrogen.",
+        "tag": "concept",
+        "topic_id": "icse-10-chemistry-ch03-t03"
+      },
+      {
+        "id": "f18",
+        "front_md": "Carbonate + dilute acid gives?",
+        "back_md": "Salt + water + CO₂.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch03-t04"
+      },
+      {
+        "id": "f19",
+        "front_md": "Test for SO₂?",
+        "back_md": "Acidified K₂Cr₂O₇ turns orange to green.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch03-t04"
+      },
+      {
+        "id": "f20",
+        "front_md": "Test for H₂S?",
+        "back_md": "Lead acetate paper turns black.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch03-t04"
+      },
+      {
+        "id": "f21",
+        "front_md": "Smell of SO₂?",
+        "back_md": "Burning sulphur (choking).",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch03-t04"
+      },
+      {
+        "id": "f22",
+        "front_md": "Gas from FeS + dil. H₂SO₄?",
+        "back_md": "Hydrogen sulphide.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch03-t04"
+      },
+      {
+        "id": "f23",
+        "front_md": "How are insoluble salts made?",
+        "back_md": "Precipitation (double decomposition).",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch03-t05"
+      },
+      {
+        "id": "f24",
+        "front_md": "Iron(III) chloride is made by?",
+        "back_md": "Direct combination: 2Fe + 3Cl₂ → 2FeCl₃.",
+        "tag": "formula",
+        "topic_id": "icse-10-chemistry-ch03-t05"
+      },
+      {
+        "id": "f25",
+        "front_md": "Zinc sulphate is made by?",
+        "back_md": "Displacement: Zn + dil. H₂SO₄.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch03-t05"
+      },
+      {
+        "id": "f26",
+        "front_md": "Lead chloride is made by?",
+        "back_md": "Precipitation: Pb(NO₃)₂ + 2NaCl.",
+        "tag": "formula",
+        "topic_id": "icse-10-chemistry-ch03-t05"
+      },
+      {
+        "id": "f27",
+        "front_md": "Copper sulphate is made by?",
+        "back_md": "Excess CuO + dil. H₂SO₄; filter.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch03-t06"
+      },
+      {
+        "id": "f28",
+        "front_md": "Why titration for sodium salts?",
+        "back_md": "Alkali is soluble; excess cannot be filtered off.",
+        "tag": "concept",
+        "topic_id": "icse-10-chemistry-ch03-t06"
+      },
+      {
+        "id": "f29",
+        "front_md": "NaCl from a hydrogen carbonate?",
+        "back_md": "NaHCO₃ + HCl → NaCl + H₂O + CO₂.",
+        "tag": "formula",
+        "topic_id": "icse-10-chemistry-ch03-t06"
+      },
+      {
+        "id": "f30",
+        "front_md": "Exam tip: methods",
+        "back_md": "Always justify by solubility.",
+        "tag": "exam-tip",
+        "topic_id": "icse-10-chemistry-ch03-t05"
+      }
+    ],
+    "status": "draft",
+    "provenance": {
+      "origin": "human",
+      "template_version": null,
+      "model": null,
+      "generated_at": "2026-11-01",
+      "author": "claude-opus-5-5 (subject-producer)"
+    }
+  },
+  "questions": [
+    {
+      "id": "q_icse10chem_ch03_001",
+      "unit": "icse-10-chemistry-ch03",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which substance, dissolved in water, gives hydronium ions as the only positive ions?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Sodium hydrogen sulphate, NaHSO₄"
+        },
+        {
+          "id": "b",
+          "text_md": "Ammonium chloride, NH₄Cl"
+        },
+        {
+          "id": "c",
+          "text_md": "Nitric acid, HNO₃"
+        },
+        {
+          "id": "d",
+          "text_md": "Potassium hydroxide, KOH"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "NaHSO₄ also gives Na⁺ ions, NH₄Cl gives NH₄⁺, and KOH gives K⁺ and OH⁻ — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch03-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch03_002",
+      "unit": "icse-10-chemistry-ch03",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Sulphuric acid is called a dibasic acid because one molecule:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "contains two oxygen atoms"
+        },
+        {
+          "id": "b",
+          "text_md": "can give two hydronium ions in water"
+        },
+        {
+          "id": "c",
+          "text_md": "reacts with two different bases"
+        },
+        {
+          "id": "d",
+          "text_md": "contains two sulphur atoms"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "H₂SO₄ has two replaceable hydrogen atoms, released in two ionisation steps — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch03-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch03_003",
+      "unit": "icse-10-chemistry-ch03",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which of these bases is NOT an alkali?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Potassium hydroxide"
+        },
+        {
+          "id": "b",
+          "text_md": "Ammonium hydroxide"
+        },
+        {
+          "id": "c",
+          "text_md": "Copper(II) oxide"
+        },
+        {
+          "id": "d",
+          "text_md": "Sodium hydroxide"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Copper(II) oxide is insoluble in water, so it is a base but not an alkali — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch03-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch03_004",
+      "unit": "icse-10-chemistry-ch03",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Ethanoic acid solution conducts electricity less well than hydrochloric acid of the same concentration because ethanoic acid:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "does not contain hydrogen"
+        },
+        {
+          "id": "b",
+          "text_md": "is only partly ionised in water"
+        },
+        {
+          "id": "c",
+          "text_md": "is a base"
+        },
+        {
+          "id": "d",
+          "text_md": "is a strong acid"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "A weak acid produces fewer ions — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch03-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch03_005",
+      "unit": "icse-10-chemistry-ch03",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** All alkalis are bases, but all bases are not alkalis.\n\n**Reason (R):** An alkali is a base that is soluble in water.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Both are true, and R explains A — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch03-t01"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch03_006",
+      "unit": "icse-10-chemistry-ch03",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? Hydrogen chloride ionises when it dissolves in water, but solid potassium hydroxide dissociates.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "t"
+        ]
+      },
+      "solution_md": "True: covalent HCl forms ions only by reacting with water; ionic KOH already contains ions.",
+      "marking_scheme": [
+        {
+          "step": "True",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch03-t01"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch03_007",
+      "unit": "icse-10-chemistry-ch03",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write the equation for the ionisation of nitric acid in water.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "HNO₃ + H₂O → H₃O⁺ + NO₃⁻."
+      },
+      "solution_md": "Equation.",
+      "marking_scheme": [
+        {
+          "step": "Balanced equation",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch03-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch03_008",
+      "unit": "icse-10-chemistry-ch03",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write the equation for the dissociation of potassium hydroxide in water.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "KOH → K⁺ + OH⁻."
+      },
+      "solution_md": "Equation.",
+      "marking_scheme": [
+        {
+          "step": "Balanced equation",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch03-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch03_009",
+      "unit": "icse-10-chemistry-ch03",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write the two steps by which sulphuric acid ionises in water, and use them to explain why it is called dibasic.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "H₂SO₄ + H₂O → H₃O⁺ + HSO₄⁻; HSO₄⁻ + H₂O → H₃O⁺ + SO₄²⁻. One molecule can give two hydronium ions (it has two replaceable hydrogen atoms), so it is dibasic."
+      },
+      "solution_md": "Two steps; two H₃O⁺.",
+      "marking_scheme": [
+        {
+          "step": "Both steps",
+          "marks": 1
+        },
+        {
+          "step": "Explanation",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch03-t01"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch03_010",
+      "unit": "icse-10-chemistry-ch03",
+      "language": "en",
+      "type": "short",
+      "stem_md": "(a) Define an alkali in terms of ions. (b) Name one base that is not an alkali and say why. (c) Explain why sodium hydrogen sulphate is not called an acid by this definition, although its solution turns blue litmus red.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) A base which dissolves in water and gives hydroxide ions as the only negative ions. (b) Copper(II) oxide (or iron(III) hydroxide): it does not dissolve in water. (c) In water it gives Na⁺ as well as H₃O⁺, so hydronium ions are not the only positive ions; it is an acid salt."
+      },
+      "solution_md": "Definition; insoluble base; acid salt.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch03-t01",
+        "icse-10-chemistry-ch03-t03"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch03_011",
+      "unit": "icse-10-chemistry-ch03",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A few drops of methyl orange are added to dilute potassium hydroxide solution. The colour seen is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "pink"
+        },
+        {
+          "id": "b",
+          "text_md": "orange"
+        },
+        {
+          "id": "c",
+          "text_md": "colourless"
+        },
+        {
+          "id": "d",
+          "text_md": "yellow"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Methyl orange is yellow in alkali — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch03-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch03_012",
+      "unit": "icse-10-chemistry-ch03",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Universal indicator added to a sample of rainwater turns orange-yellow, corresponding to pH 5. The rainwater is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "weakly acidic"
+        },
+        {
+          "id": "b",
+          "text_md": "strongly acidic"
+        },
+        {
+          "id": "c",
+          "text_md": "neutral"
+        },
+        {
+          "id": "d",
+          "text_md": "weakly alkaline"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "pH 5 is just below 7 — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch03-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch03_013",
+      "unit": "icse-10-chemistry-ch03",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Phenolphthalein is added to a solution of pH 12, and then dilute nitric acid is added slowly until the pH is 4. The colour changes from:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "colourless to pink"
+        },
+        {
+          "id": "b",
+          "text_md": "yellow to pink"
+        },
+        {
+          "id": "c",
+          "text_md": "blue to red"
+        },
+        {
+          "id": "d",
+          "text_md": "pink to colourless"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Pink in alkali, colourless once the solution is neutral or acidic — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch03-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch03_014",
+      "unit": "icse-10-chemistry-ch03",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** A solution of pH 2 turns blue litmus red.\n\n**Reason (R):** A solution of pH 2 contains more hydroxide ions than hydronium ions.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "A is true (strongly acidic); R is false: an acidic solution has more H₃O⁺ than OH⁻ — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch03-t02"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch03_015",
+      "unit": "icse-10-chemistry-ch03",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? Neutral litmus solution is purple.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "t"
+        ]
+      },
+      "solution_md": "True: red in acid, blue in alkali, purple when neutral.",
+      "marking_scheme": [
+        {
+          "step": "True",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch03-t02"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch03_016",
+      "unit": "icse-10-chemistry-ch03",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "Complete each sentence by choosing the correct word from the bracket.\n\n(a) Phenolphthalein in a solution of lime water is ___ (colourless / pink).\n\n(b) A solution of pH 9 is ___ (acidic / alkaline).\n\n(c) A salt that still contains replaceable hydrogen is called an ___ salt (acid / basic).",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "pink"
+            ]
+          },
+          {
+            "accepted": [
+              "alkaline"
+            ]
+          },
+          {
+            "accepted": [
+              "acid"
+            ]
+          }
+        ]
+      },
+      "solution_md": "(a) **pink**; (b) **alkaline**; (c) **acid**.",
+      "marking_scheme": [
+        {
+          "step": "Blank 1: \"pink\"",
+          "marks": 1
+        },
+        {
+          "step": "Blank 2: \"alkaline\"",
+          "marks": 1
+        },
+        {
+          "step": "Blank 3: \"acid\"",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch03-t02",
+        "icse-10-chemistry-ch03-t03"
+      ],
+      "expected_time_sec": 135,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch03_017",
+      "unit": "icse-10-chemistry-ch03",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Name the indicator that is pink in acidic solution and yellow in alkaline solution.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Methyl orange."
+      },
+      "solution_md": "Methyl orange.",
+      "marking_scheme": [
+        {
+          "step": "Methyl orange",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch03-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch03_018",
+      "unit": "icse-10-chemistry-ch03",
+      "language": "en",
+      "type": "short",
+      "stem_md": "A sample of soil solution has pH 6. Is it acidic, neutral or alkaline?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Weakly acidic."
+      },
+      "solution_md": "Below 7.",
+      "marking_scheme": [
+        {
+          "step": "Weakly acidic",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch03-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch03_019",
+      "unit": "icse-10-chemistry-ch03",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Solutions A, B and C have pH values 3, 7 and 13. (a) Which turns phenolphthalein pink? (b) Which has the highest concentration of hydronium ions? (c) Which could be distilled water? (d) What colour is litmus in A?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) C. (b) A. (c) B. (d) Red."
+      },
+      "solution_md": "Read the scale.",
+      "marking_scheme": [
+        {
+          "step": "(a) and (b)",
+          "marks": 1
+        },
+        {
+          "step": "(c) and (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch03-t02"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch03_020",
+      "unit": "icse-10-chemistry-ch03",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Basic lead chloride, Pb(OH)Cl, is an example of a:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "normal salt"
+        },
+        {
+          "id": "b",
+          "text_md": "acid salt"
+        },
+        {
+          "id": "c",
+          "text_md": "complex salt"
+        },
+        {
+          "id": "d",
+          "text_md": "basic salt"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "It still contains hydroxide from the base Pb(OH)₂ — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch03-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch03_021",
+      "unit": "icse-10-chemistry-ch03",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which acid can form an acid salt with sodium hydroxide?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Hydrochloric acid, HCl"
+        },
+        {
+          "id": "b",
+          "text_md": "Carbonic acid, H₂CO₃"
+        },
+        {
+          "id": "c",
+          "text_md": "Nitric acid, HNO₃"
+        },
+        {
+          "id": "d",
+          "text_md": "Hydrobromic acid, HBr"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Only an acid with more than one replaceable hydrogen can form an acid salt (NaHCO₃) — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch03-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch03_022",
+      "unit": "icse-10-chemistry-ch03",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Potassium ferrocyanide, K₄Fe(CN)₆, does not give a test for iron(II) ions in solution. This is because it is a:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "basic salt"
+        },
+        {
+          "id": "b",
+          "text_md": "normal salt of a weak acid"
+        },
+        {
+          "id": "c",
+          "text_md": "covalent compound"
+        },
+        {
+          "id": "d",
+          "text_md": "complex salt whose complex ion does not break up in water"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "The Fe(CN)₆⁴⁻ ion stays intact — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch03-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch03_023",
+      "unit": "icse-10-chemistry-ch03",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Sodium hydrogen carbonate is an acid salt.\n\n**Reason (R):** Sodium hydrogen carbonate solution is strongly acidic.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "A is true (it contains replaceable H); R is false: its solution is weakly alkaline (pH about 8) — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch03-t03"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch03_024",
+      "unit": "icse-10-chemistry-ch03",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? Potassium nitrate, KNO₃, is a normal salt.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "t"
+        ]
+      },
+      "solution_md": "True: the single replaceable hydrogen of nitric acid is replaced.",
+      "marking_scheme": [
+        {
+          "step": "True",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch03-t03"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch03_025",
+      "unit": "icse-10-chemistry-ch03",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "A salt formed by the complete replacement of the replaceable hydrogen of an acid by a metal is called a ___ salt.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "normal"
+            ]
+          }
+        ]
+      },
+      "solution_md": "**Normal** salt.",
+      "marking_scheme": [
+        {
+          "step": "Blank 1: \"normal\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch03-t03"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch03_026",
+      "unit": "icse-10-chemistry-ch03",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Classify sodium hydrogen sulphate, NaHSO₄, as a normal, acid, basic or complex salt.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Acid salt."
+      },
+      "solution_md": "It contains replaceable hydrogen.",
+      "marking_scheme": [
+        {
+          "step": "Acid salt",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch03-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch03_027",
+      "unit": "icse-10-chemistry-ch03",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write the equation for the reaction of sodium hydroxide with sulphuric acid in the ratio 1 : 1.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "NaOH + H₂SO₄ → NaHSO₄ + H₂O."
+      },
+      "solution_md": "Equation.",
+      "marking_scheme": [
+        {
+          "step": "Balanced equation",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch03-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch03_028",
+      "unit": "icse-10-chemistry-ch03",
+      "language": "en",
+      "type": "match",
+      "stem_md": "Match each salt in Column A with its kind or property in Column B.",
+      "options": [
+        {
+          "id": "1",
+          "text_md": "Sodium sulphate"
+        },
+        {
+          "id": "2",
+          "text_md": "Sodium hydrogen sulphate"
+        },
+        {
+          "id": "3",
+          "text_md": "Basic lead chloride"
+        },
+        {
+          "id": "4",
+          "text_md": "Potassium ferrocyanide"
+        },
+        {
+          "id": "5",
+          "text_md": "Barium sulphate"
+        }
+      ],
+      "match_right": [
+        {
+          "id": "p",
+          "text_md": "Acid salt"
+        },
+        {
+          "id": "q",
+          "text_md": "Complex salt"
+        },
+        {
+          "id": "r",
+          "text_md": "Insoluble salt made by precipitation"
+        },
+        {
+          "id": "s",
+          "text_md": "Normal salt"
+        },
+        {
+          "id": "t",
+          "text_md": "Basic salt"
+        }
+      ],
+      "answer": {
+        "pairs": [
+          {
+            "left_id": "1",
+            "right_id": "s"
+          },
+          {
+            "left_id": "2",
+            "right_id": "p"
+          },
+          {
+            "left_id": "3",
+            "right_id": "t"
+          },
+          {
+            "left_id": "4",
+            "right_id": "q"
+          },
+          {
+            "left_id": "5",
+            "right_id": "r"
+          }
+        ]
+      },
+      "solution_md": "Na₂SO₄ → normal; NaHSO₄ → acid; Pb(OH)Cl → basic; K₄Fe(CN)₆ → complex; BaSO₄ → insoluble, by precipitation.",
+      "marking_scheme": [
+        {
+          "step": "1 → s",
+          "marks": 1
+        },
+        {
+          "step": "2 → p",
+          "marks": 1
+        },
+        {
+          "step": "3 → t",
+          "marks": 1
+        },
+        {
+          "step": "4 → q",
+          "marks": 1
+        },
+        {
+          "step": "5 → r",
+          "marks": 1
+        }
+      ],
+      "marks": 5,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch03-t03",
+        "icse-10-chemistry-ch03-t05"
+      ],
+      "expected_time_sec": 200,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch03_029",
+      "unit": "icse-10-chemistry-ch03",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Dilute hydrochloric acid is poured on crystals of sodium sulphite. The gas given off:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "turns lead acetate paper black"
+        },
+        {
+          "id": "b",
+          "text_md": "burns with a pop"
+        },
+        {
+          "id": "c",
+          "text_md": "turns acidified potassium dichromate paper from orange to green"
+        },
+        {
+          "id": "d",
+          "text_md": "relights a glowing splint"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Sulphite + acid gives SO₂ — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch03-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch03_030",
+      "unit": "icse-10-chemistry-ch03",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Chips of marble (calcium carbonate) are dropped into dilute nitric acid. The products are:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "calcium nitrate and hydrogen"
+        },
+        {
+          "id": "b",
+          "text_md": "calcium oxide and nitrogen dioxide"
+        },
+        {
+          "id": "c",
+          "text_md": "calcium nitrate, water and carbon dioxide"
+        },
+        {
+          "id": "d",
+          "text_md": "calcium hydroxide and carbon dioxide"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "CaCO₃ + 2HNO₃ → Ca(NO₃)₂ + H₂O + CO₂ — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch03-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch03_031",
+      "unit": "icse-10-chemistry-ch03",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Iron(II) sulphide is treated with dilute sulphuric acid. A gas with a smell of rotten eggs is evolved. It is identified by:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "lime water turning milky"
+        },
+        {
+          "id": "b",
+          "text_md": "moist red litmus turning blue"
+        },
+        {
+          "id": "c",
+          "text_md": "a burning splint going out with a pop"
+        },
+        {
+          "id": "d",
+          "text_md": "lead acetate paper turning silvery black"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "H₂S forms black PbS — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch03-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch03_032",
+      "unit": "icse-10-chemistry-ch03",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A gas turns lime water milky. To show that it is carbon dioxide and not sulphur dioxide, the gas should be passed through:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "more lime water"
+        },
+        {
+          "id": "b",
+          "text_md": "acidified potassium dichromate, which stays orange"
+        },
+        {
+          "id": "c",
+          "text_md": "lead acetate solution"
+        },
+        {
+          "id": "d",
+          "text_md": "blue litmus solution"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "SO₂ would turn the dichromate green; CO₂ does not — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch03-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch03_033",
+      "unit": "icse-10-chemistry-ch03",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Both sodium carbonate and sodium sulphite give a gas that turns lime water milky when treated with dilute hydrochloric acid.\n\n**Reason (R):** Carbon dioxide and sulphur dioxide both form insoluble calcium salts with lime water.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Both are true, and R explains A (CaCO₃ and CaSO₃ precipitates) — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch03-t04"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch03_034",
+      "unit": "icse-10-chemistry-ch03",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? Potassium hydrogen carbonate gives brisk effervescence with dilute sulphuric acid.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "t"
+        ]
+      },
+      "solution_md": "True: carbon dioxide is evolved.",
+      "marking_scheme": [
+        {
+          "step": "True",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch03-t04"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch03_035",
+      "unit": "icse-10-chemistry-ch03",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write a balanced equation for the action of dilute hydrochloric acid on sodium hydrogen sulphite.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "NaHSO₃ + HCl → NaCl + H₂O + SO₂."
+      },
+      "solution_md": "Equation.",
+      "marking_scheme": [
+        {
+          "step": "Balanced equation",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch03-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch03_036",
+      "unit": "icse-10-chemistry-ch03",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write a balanced equation for the action of dilute sulphuric acid on zinc sulphide.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "ZnS + H₂SO₄ → ZnSO₄ + H₂S."
+      },
+      "solution_md": "Equation.",
+      "marking_scheme": [
+        {
+          "step": "Balanced equation",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch03-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch03_037",
+      "unit": "icse-10-chemistry-ch03",
+      "language": "en",
+      "type": "short",
+      "stem_md": "State one observation when the gas from dilute acid on potassium sulphite is passed through acidified potassium permanganate solution.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "The pink (purple) solution becomes colourless."
+      },
+      "solution_md": "Decolourised.",
+      "marking_scheme": [
+        {
+          "step": "Pink → colourless",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch03-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch03_038",
+      "unit": "icse-10-chemistry-ch03",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "What volume of carbon dioxide, measured at STP, is given off when 10 g of calcium carbonate reacts completely with dilute hydrochloric acid? (Ca = 40, C = 12, O = 16; molar volume at STP = 22.4 L)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 2.24,
+        "tolerance": 0.01,
+        "unit": "L"
+      },
+      "solution_md": "CaCO₃ + 2HCl → CaCl₂ + H₂O + CO₂. Moles of CaCO₃ = 10 ÷ 100 = 0.1; volume of CO₂ = 0.1 × 22.4 = 2.24 L.",
+      "marking_scheme": [
+        {
+          "step": "0.1 mol CaCO₃ → 0.1 mol CO₂",
+          "marks": 1
+        },
+        {
+          "step": "2.24 L",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch03-t04"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch03_039",
+      "unit": "icse-10-chemistry-ch03",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Describe one test each to identify (a) sulphur dioxide and (b) hydrogen sulphide, giving the observation.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Pass the gas through acidified potassium dichromate solution (or over dichromate paper): orange turns green. (b) Hold a strip of lead acetate paper in the gas: it turns silvery black."
+      },
+      "solution_md": "Dichromate; lead acetate.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch03-t04"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch03_040",
+      "unit": "icse-10-chemistry-ch03",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Three white solids P, Q and R are sodium salts. With dilute sulphuric acid: P gives a colourless, odourless gas that turns lime water milky; Q gives a gas with a choking smell that turns acidified potassium dichromate green; R gives a gas that blackens lead acetate paper. (a) Identify the anion in each. (b) Write the equation for Q if it is sodium sulphite. (c) Name the gas from R.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) P: carbonate (or hydrogen carbonate); Q: sulphite (or hydrogen sulphite); R: sulphide. (b) Na₂SO₃ + H₂SO₄ → Na₂SO₄ + H₂O + SO₂. (c) Hydrogen sulphide."
+      },
+      "solution_md": "Gas tests → anions; equation; H₂S.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 4,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch03-t04"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch03_041",
+      "unit": "icse-10-chemistry-ch03",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "The most suitable method for preparing lead(II) chloride in the laboratory is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "precipitation from lead nitrate solution and sodium chloride solution"
+        },
+        {
+          "id": "b",
+          "text_md": "lead metal with dilute hydrochloric acid"
+        },
+        {
+          "id": "c",
+          "text_md": "titration of lead hydroxide with hydrochloric acid"
+        },
+        {
+          "id": "d",
+          "text_md": "direct combination of lead and chlorine at room temperature"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "PbCl₂ is insoluble in cold water, so it is precipitated — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch03-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch03_042",
+      "unit": "icse-10-chemistry-ch03",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Iron(III) chloride is made by passing dry chlorine over heated iron, rather than by reacting iron with dilute hydrochloric acid, because the acid gives:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "iron(II) chloride instead"
+        },
+        {
+          "id": "b",
+          "text_md": "no reaction at all"
+        },
+        {
+          "id": "c",
+          "text_md": "iron(III) oxide"
+        },
+        {
+          "id": "d",
+          "text_md": "chlorine gas"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Fe + 2HCl → FeCl₂ + H₂ — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch03-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch03_043",
+      "unit": "icse-10-chemistry-ch03",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which pair of solutions, when mixed, gives a white precipitate of barium sulphate?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Barium chloride and sodium nitrate"
+        },
+        {
+          "id": "b",
+          "text_md": "Barium chloride and sodium sulphate"
+        },
+        {
+          "id": "c",
+          "text_md": "Barium nitrate and sodium chloride"
+        },
+        {
+          "id": "d",
+          "text_md": "Sodium sulphate and potassium chloride"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "BaCl₂ + Na₂SO₄ → BaSO₄ + 2NaCl — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch03-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch03_044",
+      "unit": "icse-10-chemistry-ch03",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Zinc sulphate can be prepared by adding zinc granules to dilute sulphuric acid.\n\n**Reason (R):** Zinc is below hydrogen in the activity series.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "A is true; R is false: zinc is above hydrogen in the activity series, which is why it displaces hydrogen — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch03-t05"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch03_045",
+      "unit": "icse-10-chemistry-ch03",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? Silver chloride is prepared by adding dilute hydrochloric acid to silver metal.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "f"
+        ]
+      },
+      "solution_md": "False: silver does not react with dilute HCl; AgCl is precipitated from silver nitrate solution and a soluble chloride.",
+      "marking_scheme": [
+        {
+          "step": "False, with the correction",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch03-t05"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch03_046",
+      "unit": "icse-10-chemistry-ch03",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write a balanced equation for the preparation of iron(III) chloride by direct combination.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "2Fe + 3Cl₂ → 2FeCl₃."
+      },
+      "solution_md": "Equation.",
+      "marking_scheme": [
+        {
+          "step": "Balanced equation",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch03-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch03_047",
+      "unit": "icse-10-chemistry-ch03",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write a balanced equation for the preparation of lead chloride from lead nitrate solution.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Pb(NO₃)₂ + 2NaCl → PbCl₂ + 2NaNO₃ (or with dilute HCl)."
+      },
+      "solution_md": "Equation.",
+      "marking_scheme": [
+        {
+          "step": "Balanced equation",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch03-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch03_048",
+      "unit": "icse-10-chemistry-ch03",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Name the method you would use to prepare (a) barium sulphate and (b) zinc sulphate, and give a reason for each choice.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Precipitation: barium sulphate is insoluble in water. (b) Displacement (zinc with dilute sulphuric acid): zinc sulphate is soluble and zinc is above hydrogen in the activity series."
+      },
+      "solution_md": "Precipitation; displacement.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch03-t05"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch03_049",
+      "unit": "icse-10-chemistry-ch03",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Potassium sulphate is prepared by titrating potassium hydroxide with dilute sulphuric acid, and not by adding excess base and filtering, because:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "potassium sulphate is insoluble"
+        },
+        {
+          "id": "b",
+          "text_md": "potassium hydroxide does not react with sulphuric acid"
+        },
+        {
+          "id": "c",
+          "text_md": "potassium hydroxide is soluble, so excess could not be removed by filtration"
+        },
+        {
+          "id": "d",
+          "text_md": "the reaction is too slow without an indicator"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "A soluble base cannot be filtered off — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch03-t06"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch03_050",
+      "unit": "icse-10-chemistry-ch03",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Black copper(II) oxide is added to warm dilute sulphuric acid until some remains undissolved. The mixture is filtered. The filtrate is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "blue copper(II) sulphate solution"
+        },
+        {
+          "id": "b",
+          "text_md": "colourless copper(II) sulphate solution"
+        },
+        {
+          "id": "c",
+          "text_md": "black copper(II) oxide suspension"
+        },
+        {
+          "id": "d",
+          "text_md": "dilute sulphuric acid only"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "CuO + H₂SO₄ → CuSO₄ + H₂O; excess CuO stays on the filter paper — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch03-t06"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch03_051",
+      "unit": "icse-10-chemistry-ch03",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which salt is best prepared by the titration method?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Ammonium nitrate"
+        },
+        {
+          "id": "b",
+          "text_md": "Copper(II) sulphate"
+        },
+        {
+          "id": "c",
+          "text_md": "Lead(II) chloride"
+        },
+        {
+          "id": "d",
+          "text_md": "Barium sulphate"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Ammonium hydroxide and ammonium nitrate are both soluble — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch03-t06"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch03_052",
+      "unit": "icse-10-chemistry-ch03",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Excess copper(II) oxide is used when preparing copper(II) sulphate from dilute sulphuric acid.\n\n**Reason (R):** Excess copper(II) oxide makes sure all the acid is used up, and it can be removed by filtration.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Both are true, and R explains A — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch03-t06"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch03_053",
+      "unit": "icse-10-chemistry-ch03",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? Zinc sulphate can be prepared by adding zinc carbonate to dilute sulphuric acid.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "t"
+        ]
+      },
+      "solution_md": "True: ZnCO₃ + H₂SO₄ → ZnSO₄ + H₂O + CO₂.",
+      "marking_scheme": [
+        {
+          "step": "True",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch03-t06"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch03_054",
+      "unit": "icse-10-chemistry-ch03",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write a balanced equation for preparing copper(II) sulphate from copper(II) oxide.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "CuO + H₂SO₄ → CuSO₄ + H₂O."
+      },
+      "solution_md": "Equation.",
+      "marking_scheme": [
+        {
+          "step": "Balanced equation",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch03-t06"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch03_055",
+      "unit": "icse-10-chemistry-ch03",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Name the method used to prepare potassium nitrate from potassium hydroxide and nitric acid.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Titration (neutralisation of an alkali by an acid)."
+      },
+      "solution_md": "Titration.",
+      "marking_scheme": [
+        {
+          "step": "Titration",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch03-t06"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch03_056",
+      "unit": "icse-10-chemistry-ch03",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "What mass of copper(II) oxide is needed to react exactly with 4.9 g of sulphuric acid? (Cu = 64, O = 16, H = 1, S = 32)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 4,
+        "tolerance": 0.02,
+        "unit": "g"
+      },
+      "solution_md": "CuO + H₂SO₄ → CuSO₄ + H₂O (1 : 1). Moles of H₂SO₄ = 4.9 ÷ 98 = 0.05; mass of CuO = 0.05 × 80 = 4 g.",
+      "marking_scheme": [
+        {
+          "step": "0.05 mol",
+          "marks": 1
+        },
+        {
+          "step": "4 g",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch03-t06"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch03_057",
+      "unit": "icse-10-chemistry-ch03",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Explain why (a) titration is used to prepare sodium chloride, and (b) an indicator is used in the first titration but not when the salt is finally made.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Both sodium hydroxide and sodium chloride are soluble, so excess alkali could not be removed; exact volumes of acid and alkali must be mixed. (b) The indicator finds the exact volumes; repeating without it gives a salt solution free from the indicator."
+      },
+      "solution_md": "Soluble base; pure product.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch03-t06"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch03_058",
+      "unit": "icse-10-chemistry-ch03",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write balanced equations for preparing (a) sodium sulphate by titration, (b) calcium nitrate from calcium carbonate and (c) zinc sulphate from zinc oxide.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) 2NaOH + H₂SO₄ → Na₂SO₄ + 2H₂O. (b) CaCO₃ + 2HNO₃ → Ca(NO₃)₂ + H₂O + CO₂. (c) ZnO + H₂SO₄ → ZnSO₄ + H₂O."
+      },
+      "solution_md": "Three equations.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch03-t06"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch03_059",
+      "unit": "icse-10-chemistry-ch03",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Define (i) an acid and (ii) an alkali in terms of the ions they produce in water. [2]\n\n(b) Write the ionisation equation for hydrochloric acid and the dissociation equation for sodium hydroxide. [2]\n\n(c) Give the colour of (i) litmus, (ii) methyl orange and (iii) phenolphthalein in a solution of pH 12. [3]\n\n(d) Solutions X, Y and Z have pH 2, 6 and 9. (i) Which is weakly acidic? (ii) Which contains more hydroxide ions than hydronium ions? (iii) Which would react most vigorously with magnesium ribbon? [3]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) (i) A compound which in water gives hydronium ions as the only positive ions. (ii) A soluble base which in water gives hydroxide ions as the only negative ions.\n\n(b) HCl + H₂O → H₃O⁺ + Cl⁻; NaOH → Na⁺ + OH⁻.\n\n(c) (i) Blue. (ii) Yellow. (iii) Pink.\n\n(d) (i) Y. (ii) Z. (iii) X (highest concentration of hydronium ions)."
+      },
+      "solution_md": "Definitions; equations; colours; pH reasoning.",
+      "marking_scheme": [
+        {
+          "step": "(a)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(a)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(b) HCl",
+          "marks": 1
+        },
+        {
+          "step": "(b) NaOH",
+          "marks": 1
+        },
+        {
+          "step": "(c)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(iii)",
+          "marks": 1
+        },
+        {
+          "step": "(d)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(d)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(d)(iii)",
+          "marks": 1
+        }
+      ],
+      "marks": 10,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch03-t01",
+        "icse-10-chemistry-ch03-t02"
+      ],
+      "expected_time_sec": 1080,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch03_060",
+      "unit": "icse-10-chemistry-ch03",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) What is a salt? Distinguish between a normal salt and an acid salt with one example of each. [3]\n\n(b) Why does hydrochloric acid not form an acid salt, while sulphuric acid does? [2]\n\n(c) Classify (i) Pb(OH)Cl, (ii) K₄Fe(CN)₆ and (iii) KNO₃. [3]\n\n(d) Write the equation for the formation of an acid salt from sodium hydroxide and sulphuric acid, and state the mole ratio used. [2]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) A compound formed when the hydrogen ion of an acid is replaced, partly or completely, by a metal or ammonium ion. Normal salt: all replaceable H replaced (Na₂SO₄). Acid salt: only part replaced, so replaceable H remains (NaHSO₄).\n\n(b) HCl has only one replaceable hydrogen (monobasic); H₂SO₄ has two, so one can be left unreplaced.\n\n(c) (i) Basic salt. (ii) Complex salt. (iii) Normal salt.\n\n(d) NaOH + H₂SO₄ → NaHSO₄ + H₂O; NaOH : H₂SO₄ = 1 : 1."
+      },
+      "solution_md": "Definitions; basicity; classification; equation.",
+      "marking_scheme": [
+        {
+          "step": "(a) definition",
+          "marks": 1
+        },
+        {
+          "step": "(a) normal and acid with examples",
+          "marks": 2
+        },
+        {
+          "step": "(b)",
+          "marks": 2
+        },
+        {
+          "step": "(c)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(iii)",
+          "marks": 1
+        },
+        {
+          "step": "(d)",
+          "marks": 2
+        }
+      ],
+      "marks": 10,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch03-t03"
+      ],
+      "expected_time_sec": 1080,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch03_061",
+      "unit": "icse-10-chemistry-ch03",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Write balanced equations for the action of dilute hydrochloric acid on (i) sodium carbonate and (ii) sodium sulphite. [2]\n\n(b) Both gases in (a) turn lime water milky. Describe one test that distinguishes them. [2]\n\n(c) Iron(II) sulphide is warmed with dilute sulphuric acid. (i) Write the equation. (ii) State the smell of the gas. (iii) Name the paper used to identify it and its colour change. [3]\n\n(d) 10.6 g of sodium carbonate reacts completely with dilute hydrochloric acid. Calculate (i) the moles of sodium carbonate, (ii) the volume of carbon dioxide at STP and (iii) the mass of sodium chloride formed. (Na = 23, C = 12, O = 16, Cl = 35.5; molar volume 22.4 L) [3]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) (i) Na₂CO₃ + 2HCl → 2NaCl + H₂O + CO₂. (ii) Na₂SO₃ + 2HCl → 2NaCl + H₂O + SO₂.\n\n(b) Pass each gas through acidified potassium dichromate: SO₂ turns it from orange to green; CO₂ has no effect.\n\n(c) (i) FeS + H₂SO₄ → FeSO₄ + H₂S. (ii) Rotten eggs. (iii) Lead acetate paper turns silvery black.\n\n(d) (i) M(Na₂CO₃) = 106; moles = 10.6 ÷ 106 = 0.1. (ii) CO₂ = 0.1 × 22.4 = 2.24 L. (iii) NaCl = 0.2 mol × 58.5 = 11.7 g."
+      },
+      "solution_md": "Equations; dichromate test; H₂S; calculation.",
+      "marking_scheme": [
+        {
+          "step": "(a)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(a)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 2
+        },
+        {
+          "step": "(c)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(iii)",
+          "marks": 1
+        },
+        {
+          "step": "(d)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(d)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(d)(iii)",
+          "marks": 1
+        }
+      ],
+      "marks": 10,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch03-t04"
+      ],
+      "expected_time_sec": 1080,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch03_062",
+      "unit": "icse-10-chemistry-ch03",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Name the method of preparation you would use for each salt and give a reason: (i) barium sulphate, (ii) iron(III) chloride. [2]\n\n(b) Write balanced equations for the preparations in (a). [2]\n\n(c) (i) Name a soluble salt prepared by displacement. (ii) Write the equation. (iii) Why cannot copper sulphate be made in the same way? [3]\n\n(d) Explain why lead chloride is prepared by precipitation and not by adding lead to dilute hydrochloric acid. Write the equation for the precipitation. [3]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) (i) Precipitation: BaSO₄ is insoluble. (ii) Direct combination: iron with dilute HCl would give FeCl₂, not FeCl₃.\n\n(b) (i) BaCl₂ + Na₂SO₄ → BaSO₄ + 2NaCl. (ii) 2Fe + 3Cl₂ → 2FeCl₃.\n\n(c) (i) Zinc sulphate (or magnesium sulphate). (ii) Zn + H₂SO₄ → ZnSO₄ + H₂. (iii) Copper is below hydrogen in the activity series and does not displace hydrogen from dilute acids.\n\n(d) Lead chloride is insoluble in cold water, so it would coat the lead and stop the reaction; lead also reacts only very slowly with dilute HCl. Pb(NO₃)₂ + 2HCl → PbCl₂ + 2HNO₃ (or with NaCl)."
+      },
+      "solution_md": "Methods and reasons; equations; displacement; precipitation.",
+      "marking_scheme": [
+        {
+          "step": "(a)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(a)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(b)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(b)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(iii)",
+          "marks": 1
+        },
+        {
+          "step": "(d) reason",
+          "marks": 2
+        },
+        {
+          "step": "(d) equation",
+          "marks": 1
+        }
+      ],
+      "marks": 10,
+      "difficulty": 4,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch03-t05"
+      ],
+      "expected_time_sec": 1080,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch03_063",
+      "unit": "icse-10-chemistry-ch03",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Describe briefly how copper(II) sulphate solution is prepared from copper(II) oxide, and write the equation. [3]\n\n(b) Explain why potassium sulphate cannot be prepared in the same way. Name the method used instead. [3]\n\n(c) Write balanced equations for preparing (i) sodium chloride from sodium hydrogen carbonate and (ii) magnesium sulphate from magnesium carbonate. [2]\n\n(d) A student needs pure crystals of potassium nitrate. Suggest the reactants and explain the role of the indicator. [2]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Add black CuO a little at a time to warm dilute sulphuric acid until some remains undissolved (excess); filter off the excess; evaporate and crystallise. CuO + H₂SO₄ → CuSO₄ + H₂O.\n\n(b) Potassium hydroxide is soluble, so excess base cannot be filtered off and would contaminate the salt. Titration is used: exact volumes of KOH and H₂SO₄ are found and then mixed.\n\n(c) (i) NaHCO₃ + HCl → NaCl + H₂O + CO₂. (ii) MgCO₃ + H₂SO₄ → MgSO₄ + H₂O + CO₂.\n\n(d) Potassium hydroxide solution and dilute nitric acid; the indicator shows the exact neutralisation point in a trial titration, after which the same volumes are mixed without indicator and the solution is crystallised."
+      },
+      "solution_md": "Excess base; titration; carbonate routes; indicator.",
+      "marking_scheme": [
+        {
+          "step": "(a) method",
+          "marks": 2
+        },
+        {
+          "step": "(a) equation",
+          "marks": 1
+        },
+        {
+          "step": "(b) reason",
+          "marks": 2
+        },
+        {
+          "step": "(b) method",
+          "marks": 1
+        },
+        {
+          "step": "(c)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(d)",
+          "marks": 2
+        }
+      ],
+      "marks": 10,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch03-t06"
+      ],
+      "expected_time_sec": 1080,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    }
+  ],
+  "build": {
+    "run_id": null,
+    "checks": {
+      "katex_mhchem": "34 math strings parsed with KaTeX 0.19.0 + mhchem (throwOnError, strict \"error\"), 0 failures",
+      "svg_allowlist": "1 SVG visuals (1 distinct diagrams) checked with saxes against svg-allowlist.ts: elements, attributes, class pattern, fragment-only refs, no style, palette incl. named hues, viewBox, title, per-page unique ids — 0 failures",
+      "narration": "28 slides, 9–75 words (mean 49), no symbols, formulae or unit abbreviations",
+      "resolve": "2/2 scripted re-solve checks pass",
+      "chemistry_facts": "Ionic definitions and ionisation/dissociation equations, indicator colours and pH, kinds of salts, dilute acids on carbonates, sulphites and sulphides with gas tests, and the methods of preparing normal salts, checked against the ICSE 2027 syllabus (Class X, section 3)",
+      "content_gate": "npm test -w @soyl/content-templates: all checks pass for this chapter",
+      "verifier_pass": "2026-11-01: every question and every internal-choice alternative re-solved from its stem by the author; every numerical re-computed by the build script — see README \"Verifier pass\"",
+      "pipeline_lint": "npm run content -- lint --exemplars: 0 errors, 0 warnings"
+    }
+  }
+}
