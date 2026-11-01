@@ -1,0 +1,10 @@
+  tests: {
+    short: {
+      A: ['cause-mcq', 'common-mcq', 'cloud-mcq', 'disp-ar', 'disp-fill', 'ir-fill', 'recomb-short2', 'sunrise-short2'],
+      B: [['disp-long', 'scatter-long']],
+    },
+    long: {
+      A: ['devorder-mcq', 'gamma-mcq', 'glass-mcq', 'fog-mcq', 'danger-mcq', 'ozone-ar', 'order-fill', 'em-fill', 'scat-fill', 'em-match', 'props-short2', 'ir-short2', 'uv-short2', 'iruv-short3'],
+      B: [['em-long', 'iruv-long', 'spectrum-long']],
+    },
+  },
