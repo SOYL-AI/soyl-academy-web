@@ -1,0 +1,10 @@
+  tests: {
+    short: {
+      A: ['oersted-mcq', 'core-mcq', 'gen-mcq', 'induced-ar', 'emag-fill', 'emi-fill', 'emag-short2', 'acdc-short2'],
+      B: [['field-long', 'gen-long']],
+    },
+    long: {
+      A: ['forcedir-mcq', 'pins-mcq', 'slip-mcq', 'dc-mcq', 'stepdown-mcq', 'trans-ar', 'oersted-fill', 'slip-fill', 'trans-fill', 'rule-match', 'flhr-short2', 'emi-short2', 'loop-short2', 'trans-short3'],
+      B: [['emag-long', 'motor-long', 'trans-long']],
+    },
+  },
