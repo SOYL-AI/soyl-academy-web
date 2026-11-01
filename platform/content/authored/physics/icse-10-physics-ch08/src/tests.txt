@@ -1,0 +1,10 @@
+  tests: {
+    short: {
+      A: ['charge-mcq', 'terminal-mcq', 'least-mcq', 'ohm-ar', 'ohm-fill', 'series-fill', 'readings-short2', 'split-short2'],
+      B: [['ohm-long', 'emf-long']],
+    },
+    long: {
+      A: ['slope-mcq', 'lamp-mcq', 'stretch-mcq', 'intr-mcq', 'four-mcq', 'emf-ar', 'rho-fill', 'emf-fill', 'par-fill', 'term-match', 'emfvs-short2', 'get-short2', 'rho-short2', 'net-short3'],
+      B: [['rho-long', 'series-long', 'network-long']],
+    },
+  },

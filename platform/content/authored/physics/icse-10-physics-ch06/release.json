@@ -1,0 +1,5245 @@
+{
+  "unit": "icse-10-physics-ch06",
+  "version": 1,
+  "academic_year": "2026-27",
+  "created_at": "2026-11-01T00:00:00+05:30",
+  "decks": [
+    {
+      "unit": "icse-10-physics-ch06",
+      "part": 1,
+      "version": 1,
+      "title": "Spectrum — Part 1: Dispersion and the electromagnetic spectrum",
+      "language": "en",
+      "goals": [
+        "Explain why a prism splits white light and why violet deviates most and red least",
+        "List the colours of the visible spectrum in order of wavelength",
+        "Arrange the regions of the electromagnetic spectrum in order of wavelength",
+        "State properties common to all electromagnetic waves and use c = f λ"
+      ],
+      "slides": [
+        {
+          "id": "s01",
+          "layout": "title",
+          "heading": "Where do the colours come from?",
+          "body_md": "Part 1 — sunlight looks white, yet a glass prism, a cut-glass chandelier or a soap bubble shows it is a mixture of colours. And visible light is only a tiny part of a much bigger family of waves.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "You see",
+                "What it shows"
+              ],
+              "rows": [
+                [
+                  "Colours from a chandelier drop in sunlight",
+                  "White light is a mixture of colours"
+                ],
+                [
+                  "A prism spreads a beam into a band",
+                  "Each colour bends by a different amount"
+                ],
+                [
+                  "A TV remote works without visible light",
+                  "There is radiation our eyes cannot see"
+                ],
+                [
+                  "Doctors photograph bones",
+                  "Some radiation passes through flesh"
+                ]
+              ]
+            },
+            "alt": "Table of four observations and what each shows about light and radiation"
+          },
+          "math": [],
+          "narration": "Namaste! Hang a cut glass drop in a sunny window and you will see patches of colour on the wall. White sunlight is really a mixture of colours, and glass can separate them. In this part we see how a prism does this, and we meet the whole family of electromagnetic waves, of which visible light is only a small part.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s02",
+          "layout": "diagram",
+          "heading": "Dispersion of white light by a prism",
+          "body_md": "When a narrow beam of white light passes through a glass prism, it splits into a band of colours called a **spectrum**: **V I B G Y O R** — violet, indigo, blue, green, yellow, orange, red. This splitting is **dispersion**. **Red** is deviated **least** (it appears nearest the apex side) and **violet** is deviated **most** (nearest the base). A prism does not create the colours; it only **separates** colours already present in white light.",
+          "bullets": [],
+          "visual": {
+            "kind": "svg",
+            "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 530 382\" role=\"img\" aria-label=\"White light enters a glass prism and is split into its colours. Each colour has a slightly different refractive index in glass, so each is bent by a different amount: red is deviated least, about 48 degrees, and violet most, about 52 degrees. On the screen the colours appear in the order red, orange, yellow, green, blue, indigo, violet, with red nearest the apex side.\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>White light enters a glass prism and is split into its colours. Each colour has a slightly different refractive index in glass, so each is bent by a different amount: red is deviated least, about 48 degrees, and violet most, about 52 degrees. On the screen the colours appear in the order red, orange, yellow, green, blue, indigo, violet, with red nearest the apex side.</title><path d=\"M170 30 L70.0 203.2 L270.0 203.2 Z\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\" fill-opacity=\"0.6\"/><line x1=\"7.2\" y1=\"157.6\" x2=\"120\" y2=\"116.6\" stroke=\"currentColor\" stroke-width=\"3\"/><polygon points=\"66.9,135.9 61.9,140.8 59.9,135.4\" fill=\"currentColor\" stroke=\"none\"/><text x=\"11.2\" y=\"179.6\" fill=\"currentColor\" stroke=\"none\" font-size=\"11\">white light</text><line x1=\"120\" y1=\"116.6\" x2=\"221.7\" y2=\"119.5\" stroke=\"var(--diagram-red)\" stroke-width=\"1\"/><line x1=\"221.7\" y1=\"119.5\" x2=\"470\" y2=\"249.9\" stroke=\"var(--diagram-red)\" stroke-width=\"1.6\"/><line x1=\"120\" y1=\"116.6\" x2=\"221.7\" y2=\"119.6\" stroke=\"var(--diagram-accent)\" stroke-width=\"1\"/><line x1=\"221.7\" y1=\"119.6\" x2=\"470\" y2=\"252.3\" stroke=\"var(--diagram-accent)\" stroke-width=\"1.6\"/><line x1=\"120\" y1=\"116.6\" x2=\"221.8\" y2=\"119.8\" stroke=\"var(--diagram-yellow)\" stroke-width=\"1\"/><line x1=\"221.8\" y1=\"119.8\" x2=\"470\" y2=\"254.8\" stroke=\"var(--diagram-yellow)\" stroke-width=\"1.6\"/><line x1=\"120\" y1=\"116.6\" x2=\"221.9\" y2=\"120\" stroke=\"var(--diagram-green)\" stroke-width=\"1\"/><line x1=\"221.9\" y1=\"120\" x2=\"470\" y2=\"258.7\" stroke=\"var(--diagram-green)\" stroke-width=\"1.6\"/><line x1=\"120\" y1=\"116.6\" x2=\"222.1\" y2=\"120.3\" stroke=\"var(--diagram-blue)\" stroke-width=\"1\"/><line x1=\"222.1\" y1=\"120.3\" x2=\"470\" y2=\"264.6\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.6\"/><line x1=\"120\" y1=\"116.6\" x2=\"222.3\" y2=\"120.5\" stroke=\"currentColor\" stroke-width=\"1\"/><line x1=\"222.3\" y1=\"120.5\" x2=\"470\" y2=\"270.2\" stroke=\"currentColor\" stroke-width=\"1.6\"/><line x1=\"120\" y1=\"116.6\" x2=\"222.5\" y2=\"120.8\" stroke=\"var(--diagram-brown)\" stroke-width=\"1\"/><line x1=\"222.5\" y1=\"120.8\" x2=\"470\" y2=\"276.7\" stroke=\"var(--diagram-brown)\" stroke-width=\"1.6\"/><line x1=\"470\" y1=\"209.9\" x2=\"470\" y2=\"316.7\" stroke=\"var(--diagram-muted)\" stroke-width=\"3\"/><text x=\"470\" y=\"203.9\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">screen</text><text x=\"476\" y=\"253.9\" fill=\"var(--diagram-red)\" stroke=\"none\" font-size=\"10\">red</text><text x=\"476\" y=\"280.7\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">violet</text><text x=\"410\" y=\"205.9\" fill=\"var(--diagram-red)\" stroke=\"none\" text-anchor=\"end\" font-size=\"10\">least deviated</text><text x=\"462\" y=\"306.7\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"end\" font-size=\"10\">most deviated</text><text x=\"10\" y=\"372\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">Flint glass, A = 60°, i = 50°: deviation from 47.7° (red) to 52.2° (violet)</text></svg>",
+            "alt": "White light split by a glass prism into seven colours, red deviated least and violet most"
+          },
+          "math": [],
+          "narration": "Shine a narrow beam of white light through a prism onto a screen and a band of colours appears: violet, indigo, blue, green, yellow, orange and red. This splitting of white light is called dispersion. Red is bent the least and violet the most. The prism does not add colour; it separates the colours that were already mixed in the white light.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s03",
+          "layout": "concept",
+          "heading": "Why the colours separate",
+          "body_md": "In **vacuum (or air)** all colours travel at the same speed, $3 \\times 10^{8}$ m s⁻¹. In **glass** each colour has a **different speed**, so the **refractive index of glass depends on the colour (wavelength)**: it is **largest for violet** (shortest wavelength, slowest) and **smallest for red** (longest wavelength, fastest). A larger refractive index means more bending, so **violet deviates most and red least**.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Colour",
+                "Wavelength in air (about)",
+                "Refractive index of crown glass (about)",
+                "Deviation"
+              ],
+              "rows": [
+                [
+                  "Red",
+                  "700 nm",
+                  "1.513",
+                  "Least"
+                ],
+                [
+                  "Yellow",
+                  "580 nm",
+                  "1.517",
+                  "More"
+                ],
+                [
+                  "Blue",
+                  "470 nm",
+                  "1.524",
+                  "More still"
+                ],
+                [
+                  "Violet",
+                  "410 nm",
+                  "1.532",
+                  "Most"
+                ]
+              ]
+            },
+            "alt": "Table of wavelength, refractive index of crown glass and deviation for four colours"
+          },
+          "math": [],
+          "narration": "Why are the colours bent by different amounts? In vacuum all colours travel at the same speed. Inside glass, violet light travels a little more slowly than red light. So glass has a slightly higher refractive index for violet than for red. A higher refractive index means more bending, so violet is deviated the most and red the least.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s04",
+          "layout": "example",
+          "heading": "Worked example: red and violet in glass",
+          "body_md": "**Problem.** The refractive index of a crown glass is 1.513 for red light and 1.532 for violet light. Find the speed of each colour in the glass and say which is deviated more by a prism. ($c = 3.0 \\times 10^{8}$ m s⁻¹)\n\n**Red:** $v = \\dfrac{c}{\\mu} = \\dfrac{3.0 \\times 10^{8}}{1.513} = 1.98 \\times 10^{8}$ m s⁻¹.\n\n**Violet:** $v = \\dfrac{3.0 \\times 10^{8}}{1.532} = 1.96 \\times 10^{8}$ m s⁻¹.\n\nViolet is slower in glass (larger $\\mu$), so it is **deviated more**.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Colour",
+                "μ",
+                "Speed in glass (× 10⁸ m/s)"
+              ],
+              "rows": [
+                [
+                  "Red",
+                  "1.513",
+                  "1.98"
+                ],
+                [
+                  "Violet",
+                  "1.532",
+                  "1.96"
+                ]
+              ]
+            },
+            "alt": "Table of refractive index and speed of red and violet light in crown glass"
+          },
+          "math": [],
+          "narration": "Divide the speed of light in air by each refractive index. Red light travels at about one point nine eight times ten to the eight metres per second in the glass, and violet at about one point nine six. The difference is small, but violet is slower, has the larger refractive index, and so is bent more by the prism.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s05",
+          "layout": "check",
+          "heading": "Quick check: which colour bends most?",
+          "body_md": "Decide where each colour falls on the screen.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Remember that violet has the largest refractive index in glass.",
+          "check_question_id": "q_icse10phy_ch06_001",
+          "audio": null
+        },
+        {
+          "id": "s06",
+          "layout": "diagram",
+          "heading": "The visible spectrum",
+          "body_md": "The **visible spectrum** stretches from about **400 nm (violet)** to about **700–800 nm (red)** (1 nm = 10⁻⁹ m). In order of **increasing wavelength**: violet, indigo, blue, green, yellow, orange, red. Since $c = f \\lambda$, the order of **increasing frequency** is the reverse. Light of a **single wavelength** (for example from a sodium lamp) is **monochromatic** and is **not** split by a prism.",
+          "bullets": [],
+          "visual": {
+            "kind": "svg",
+            "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 620 168\" role=\"img\" aria-label=\"The visible spectrum drawn to scale, from about 400 nanometres to about 800 nanometres: violet, indigo, blue, green, yellow, orange and red. Red light has the longest wavelength and violet the shortest.\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>The visible spectrum drawn to scale, from about 400 nanometres to about 800 nanometres: violet, indigo, blue, green, yellow, orange and red. Red light has the longest wavelength and violet the shortest.</title><rect x=\"30\" y=\"50\" width=\"56\" height=\"40\" fill=\"var(--diagram-brown)\" stroke=\"currentColor\" stroke-width=\"0.8\" fill-opacity=\"0.4\"/><text x=\"58\" y=\"42\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">violet</text><rect x=\"86\" y=\"50\" width=\"28\" height=\"40\" fill=\"currentColor\" stroke=\"currentColor\" stroke-width=\"0.8\" fill-opacity=\"0.4\"/><text x=\"100\" y=\"106\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">indigo</text><rect x=\"114\" y=\"50\" width=\"56\" height=\"40\" fill=\"var(--diagram-blue)\" stroke=\"currentColor\" stroke-width=\"0.8\" fill-opacity=\"0.4\"/><text x=\"142\" y=\"42\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">blue</text><rect x=\"170\" y=\"50\" width=\"98\" height=\"40\" fill=\"var(--diagram-green)\" stroke=\"currentColor\" stroke-width=\"0.8\" fill-opacity=\"0.4\"/><text x=\"219\" y=\"106\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">green</text><rect x=\"268\" y=\"50\" width=\"28\" height=\"40\" fill=\"var(--diagram-yellow)\" stroke=\"currentColor\" stroke-width=\"0.8\" fill-opacity=\"0.4\"/><text x=\"282\" y=\"42\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">yellow</text><rect x=\"296\" y=\"50\" width=\"42\" height=\"40\" fill=\"var(--diagram-accent)\" stroke=\"currentColor\" stroke-width=\"0.8\" fill-opacity=\"0.4\"/><text x=\"317\" y=\"106\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">orange</text><rect x=\"338\" y=\"50\" width=\"252\" height=\"40\" fill=\"var(--diagram-red)\" stroke=\"currentColor\" stroke-width=\"0.8\" fill-opacity=\"0.4\"/><text x=\"464\" y=\"42\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">red</text><line x1=\"30\" y1=\"90\" x2=\"30\" y2=\"96\" stroke=\"currentColor\" stroke-width=\"1\"/><text x=\"30\" y=\"122\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">400 nm</text><line x1=\"170\" y1=\"90\" x2=\"170\" y2=\"96\" stroke=\"currentColor\" stroke-width=\"1\"/><text x=\"170\" y=\"122\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">500 nm</text><line x1=\"310\" y1=\"90\" x2=\"310\" y2=\"96\" stroke=\"currentColor\" stroke-width=\"1\"/><text x=\"310\" y=\"122\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">600 nm</text><line x1=\"450\" y1=\"90\" x2=\"450\" y2=\"96\" stroke=\"currentColor\" stroke-width=\"1\"/><text x=\"450\" y=\"122\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">700 nm</text><line x1=\"590\" y1=\"90\" x2=\"590\" y2=\"96\" stroke=\"currentColor\" stroke-width=\"1\"/><text x=\"590\" y=\"122\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">800 nm</text><line x1=\"30\" y1=\"140\" x2=\"584.4\" y2=\"140\" stroke=\"var(--diagram-red)\" stroke-width=\"1.2\"/><polygon points=\"590,140 583.6,142.9 583.6,137.1\" fill=\"var(--diagram-red)\" stroke=\"none\"/><text x=\"30\" y=\"156\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">wavelength increases; frequency and refractive index in glass decrease</text></svg>",
+            "alt": "The visible spectrum from violet at about four hundred nanometres to red at about eight hundred nanometres"
+          },
+          "math": [],
+          "narration": "The visible spectrum runs from violet, with a wavelength of about four hundred nanometres, to red, at about seven hundred to eight hundred nanometres. Violet has the shortest wavelength and highest frequency; red has the longest wavelength and lowest frequency. Light of one single wavelength, such as the yellow of a sodium lamp, cannot be split any further.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s07",
+          "layout": "example",
+          "heading": "Worked example: frequencies of violet and red",
+          "body_md": "**Problem.** Find the frequencies of violet light ($\\lambda = 400$ nm) and red light ($\\lambda = 700$ nm) in air. ($c = 3.0 \\times 10^{8}$ m s⁻¹)\n\n**Violet:** $f = \\dfrac{c}{\\lambda} = \\dfrac{3.0 \\times 10^{8}}{4.0 \\times 10^{-7}} = 7.5 \\times 10^{14}$ Hz.\n\n**Red:** $f = \\dfrac{3.0 \\times 10^{8}}{7.0 \\times 10^{-7}} = 4.29 \\times 10^{14}$ Hz.\n\nViolet has the **higher** frequency; red the **lower**.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Colour",
+                "Wavelength",
+                "Frequency"
+              ],
+              "rows": [
+                [
+                  "Violet",
+                  "400 nm",
+                  "7.5 × 10¹⁴ Hz"
+                ],
+                [
+                  "Red",
+                  "700 nm",
+                  "4.29 × 10¹⁴ Hz"
+                ]
+              ]
+            },
+            "alt": "Table of wavelength and frequency of violet and red light"
+          },
+          "math": [],
+          "narration": "Frequency equals the speed of light divided by wavelength. For violet light of four hundred nanometres, that gives seven and a half times ten to the fourteen hertz. For red light of seven hundred nanometres, it is about four point three times ten to the fourteen hertz. Shorter wavelength means higher frequency.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s08",
+          "layout": "check",
+          "heading": "Quick check: order of colours",
+          "body_md": "Put colours in order of wavelength.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Red has the longest wavelength and violet the shortest.",
+          "check_question_id": "q_icse10phy_ch06_016",
+          "audio": null
+        },
+        {
+          "id": "s09",
+          "layout": "diagram",
+          "heading": "The electromagnetic spectrum",
+          "body_md": "Visible light is one small band of a continuous family of **electromagnetic (EM) waves**. In order of **increasing wavelength** (decreasing frequency):\n\n**gamma rays → X-rays → ultraviolet → visible → infrared → microwaves → radio waves**\n\nApproximate wavelengths: gamma below 10⁻¹¹ m; X-rays 10⁻¹¹ to 10⁻⁸ m; UV 10⁻⁸ m to 4 × 10⁻⁷ m; visible 4 × 10⁻⁷ to 8 × 10⁻⁷ m; infrared 8 × 10⁻⁷ m to 10⁻³ m; microwaves 10⁻³ to about 0.3 m; radio waves longer.",
+          "bullets": [],
+          "visual": {
+            "kind": "svg",
+            "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 640 160\" role=\"img\" aria-label=\"The electromagnetic spectrum on a logarithmic wavelength scale from ten to the minus thirteen metre to a thousand metres. In order of increasing wavelength: gamma rays, X-rays, ultraviolet, a very narrow band of visible light from about 400 to 800 nanometres, infrared, microwaves and radio waves. Frequency decreases in the same direction.\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>The electromagnetic spectrum on a logarithmic wavelength scale from ten to the minus thirteen metre to a thousand metres. In order of increasing wavelength: gamma rays, X-rays, ultraviolet, a very narrow band of visible light from about 400 to 800 nanometres, infrared, microwaves and radio waves. Frequency decreases in the same direction.</title><rect x=\"30\" y=\"70\" width=\"72.5\" height=\"40\" fill=\"var(--diagram-brown)\" stroke=\"currentColor\" stroke-width=\"1\" fill-opacity=\"0.35\"/><text x=\"66.3\" y=\"94\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\">gamma</text><rect x=\"102.5\" y=\"70\" width=\"108.8\" height=\"40\" fill=\"var(--diagram-muted)\" stroke=\"currentColor\" stroke-width=\"1\" fill-opacity=\"0.35\"/><text x=\"156.9\" y=\"94\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\">X-rays</text><rect x=\"211.3\" y=\"70\" width=\"58.1\" height=\"40\" fill=\"var(--diagram-blue)\" stroke=\"currentColor\" stroke-width=\"1\" fill-opacity=\"0.35\"/><text x=\"240.3\" y=\"94\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\">UV</text><rect x=\"269.3\" y=\"70\" width=\"10.9\" height=\"40\" fill=\"var(--diagram-yellow)\" stroke=\"currentColor\" stroke-width=\"1\" fill-opacity=\"0.35\"/><line x1=\"274.8\" y1=\"70\" x2=\"274.8\" y2=\"48\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\"/><text x=\"274.8\" y=\"44\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">visible</text><rect x=\"280.2\" y=\"70\" width=\"112.3\" height=\"40\" fill=\"var(--diagram-red)\" stroke=\"currentColor\" stroke-width=\"1\" fill-opacity=\"0.35\"/><text x=\"336.4\" y=\"94\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\">infrared</text><rect x=\"392.5\" y=\"70\" width=\"89.8\" height=\"40\" fill=\"var(--diagram-accent)\" stroke=\"currentColor\" stroke-width=\"1\" fill-opacity=\"0.35\"/><text x=\"437.4\" y=\"94\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">microwaves</text><rect x=\"482.3\" y=\"70\" width=\"127.7\" height=\"40\" fill=\"var(--diagram-green)\" stroke=\"currentColor\" stroke-width=\"1\" fill-opacity=\"0.35\"/><text x=\"546.1\" y=\"94\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">radio waves</text><line x1=\"66.3\" y1=\"110\" x2=\"66.3\" y2=\"116\" stroke=\"currentColor\" stroke-width=\"1\"/><text x=\"66.3\" y=\"128\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">10⁻¹²</text><line x1=\"66.3\" y1=\"66\" x2=\"66.3\" y2=\"70\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\"/><text x=\"66.3\" y=\"62\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">3×10²⁰</text><line x1=\"138.8\" y1=\"110\" x2=\"138.8\" y2=\"116\" stroke=\"currentColor\" stroke-width=\"1\"/><text x=\"138.8\" y=\"128\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">10⁻¹⁰</text><line x1=\"138.8\" y1=\"66\" x2=\"138.8\" y2=\"70\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\"/><text x=\"138.8\" y=\"62\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">3×10¹⁸</text><line x1=\"211.3\" y1=\"110\" x2=\"211.3\" y2=\"116\" stroke=\"currentColor\" stroke-width=\"1\"/><text x=\"211.3\" y=\"128\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">10⁻⁸</text><line x1=\"211.3\" y1=\"66\" x2=\"211.3\" y2=\"70\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\"/><text x=\"211.3\" y=\"62\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">3×10¹⁶</text><line x1=\"283.8\" y1=\"110\" x2=\"283.8\" y2=\"116\" stroke=\"currentColor\" stroke-width=\"1\"/><text x=\"283.8\" y=\"128\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">10⁻⁶</text><line x1=\"283.8\" y1=\"66\" x2=\"283.8\" y2=\"70\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\"/><text x=\"283.8\" y=\"62\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">3×10¹⁴</text><line x1=\"356.3\" y1=\"110\" x2=\"356.3\" y2=\"116\" stroke=\"currentColor\" stroke-width=\"1\"/><text x=\"356.3\" y=\"128\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">10⁻⁴</text><line x1=\"356.3\" y1=\"66\" x2=\"356.3\" y2=\"70\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\"/><text x=\"356.3\" y=\"62\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">3×10¹²</text><line x1=\"428.8\" y1=\"110\" x2=\"428.8\" y2=\"116\" stroke=\"currentColor\" stroke-width=\"1\"/><text x=\"428.8\" y=\"128\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">10⁻²</text><line x1=\"428.8\" y1=\"66\" x2=\"428.8\" y2=\"70\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\"/><text x=\"428.8\" y=\"62\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">3×10¹⁰</text><line x1=\"501.3\" y1=\"110\" x2=\"501.3\" y2=\"116\" stroke=\"currentColor\" stroke-width=\"1\"/><text x=\"501.3\" y=\"128\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">10⁰</text><line x1=\"501.3\" y1=\"66\" x2=\"501.3\" y2=\"70\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\"/><text x=\"501.3\" y=\"62\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">3×10⁸</text><line x1=\"573.8\" y1=\"110\" x2=\"573.8\" y2=\"116\" stroke=\"currentColor\" stroke-width=\"1\"/><text x=\"573.8\" y=\"128\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">10²</text><line x1=\"573.8\" y1=\"66\" x2=\"573.8\" y2=\"70\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\"/><text x=\"573.8\" y=\"62\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">3×10⁶</text><text x=\"30\" y=\"146\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">wavelength (m) →  increasing</text><text x=\"610\" y=\"146\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"end\" font-size=\"10\">frequency (Hz, top) decreases →</text><text x=\"30\" y=\"22\" fill=\"currentColor\" stroke=\"none\" font-size=\"11\">Electromagnetic spectrum (logarithmic scale: each tick is a factor of 100)</text></svg>",
+            "alt": "The electromagnetic spectrum on a logarithmic wavelength scale from gamma rays to radio waves"
+          },
+          "math": [],
+          "narration": "Visible light belongs to a much larger family called the electromagnetic spectrum. Arranged from the shortest wavelength to the longest, the family is gamma rays, X rays, ultraviolet, visible light, infrared, microwaves and radio waves. On this scale each step is a factor of one hundred, and the visible band is a narrow sliver.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s10",
+          "layout": "concept",
+          "heading": "Properties common to all EM waves",
+          "body_md": "All electromagnetic waves:\n1. are produced by **accelerated (oscillating) charges** and consist of **electric and magnetic fields** varying at right angles to each other;\n2. are **transverse** waves;\n3. travel through **vacuum** — no medium is needed — at the same speed $c = 3 \\times 10^{8}$ m s⁻¹;\n4. obey $c = f \\lambda$;\n5. are **not deflected** by electric or magnetic fields (they carry no charge);\n6. show **reflection, refraction**, interference and diffraction, and carry **energy**.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Property",
+                "All EM waves"
+              ],
+              "rows": [
+                [
+                  "Speed in vacuum",
+                  "3 × 10⁸ m/s"
+                ],
+                [
+                  "Medium needed?",
+                  "No"
+                ],
+                [
+                  "Type of wave",
+                  "Transverse"
+                ],
+                [
+                  "Deflected by electric or magnetic fields?",
+                  "No"
+                ],
+                [
+                  "Relation",
+                  "c = f λ"
+                ]
+              ]
+            },
+            "alt": "Table of five properties shared by all electromagnetic waves"
+          },
+          "math": [],
+          "narration": "Although they behave very differently, all electromagnetic waves have a lot in common. They are made of changing electric and magnetic fields at right angles. They are transverse waves that can travel through empty space, all at three hundred thousand kilometres per second. They are not bent by electric or magnetic fields, and they can be reflected and refracted.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s11",
+          "layout": "example",
+          "heading": "Worked example: which region is it?",
+          "body_md": "**Problem.** Identify the region of each radiation. (a) A Wi-Fi router transmits at $6.0 \\times 10^{9}$ Hz. (b) A heat lamp emits most strongly at $\\lambda = 2.0 \\times 10^{-6}$ m. ($c = 3.0 \\times 10^{8}$ m s⁻¹)\n\n**(a)** $\\lambda = \\dfrac{c}{f} = \\dfrac{3.0 \\times 10^{8}}{6.0 \\times 10^{9}} = 0.05$ m $= 5$ cm: between $10^{-3}$ m and 0.3 m, so **microwaves**.\n\n**(b)** $2.0 \\times 10^{-6}$ m lies between $8 \\times 10^{-7}$ m and $10^{-3}$ m: **infrared**. Its frequency is $\\dfrac{3.0 \\times 10^{8}}{2.0 \\times 10^{-6}} = 1.5 \\times 10^{14}$ Hz.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Radiation",
+                "Wavelength",
+                "Region"
+              ],
+              "rows": [
+                [
+                  "Wi-Fi signal, 6.0 GHz",
+                  "5 cm",
+                  "Microwaves"
+                ],
+                [
+                  "Heat lamp",
+                  "2.0 μm",
+                  "Infrared"
+                ]
+              ]
+            },
+            "alt": "Table identifying the region of the Wi-Fi signal and the heat lamp radiation"
+          },
+          "math": [],
+          "narration": "To place a radiation in the spectrum, find its wavelength. For the Wi Fi signal, wavelength is speed divided by frequency, which gives five centimetres: that is in the microwave region. The heat lamp’s wavelength of two micrometres is longer than red light but much shorter than a millimetre, so it is infrared.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s12",
+          "layout": "check",
+          "heading": "Quick check: a wavelength from a frequency",
+          "body_md": "Use c = f λ to find a wavelength.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Wavelength is the speed of light divided by the frequency.",
+          "check_question_id": "q_icse10phy_ch06_017",
+          "audio": null
+        },
+        {
+          "id": "s13",
+          "layout": "summary",
+          "heading": "Summary: Part 1",
+          "body_md": "",
+          "bullets": [
+            "Dispersion: splitting of white light into VIBGYOR by a prism.",
+            "Cause: refractive index of glass depends on colour; largest for violet, smallest for red.",
+            "Violet deviated most, red least; in vacuum all colours have the same speed.",
+            "EM spectrum by increasing wavelength: gamma, X-rays, UV, visible, IR, microwaves, radio.",
+            "All EM waves: transverse, travel through vacuum at 3 × 10⁸ m/s, c = f λ, not deflected by fields."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Idea",
+                "Key fact"
+              ],
+              "rows": [
+                [
+                  "Dispersion",
+                  "μ depends on wavelength"
+                ],
+                [
+                  "Most deviated",
+                  "Violet"
+                ],
+                [
+                  "Shortest wavelength (EM)",
+                  "Gamma rays"
+                ],
+                [
+                  "Longest wavelength (EM)",
+                  "Radio waves"
+                ]
+              ]
+            },
+            "alt": "Summary table of four key facts from Part 1"
+          },
+          "math": [],
+          "narration": "Let us sum up Part 1. A prism splits white light because glass has a different refractive index for each colour, so violet bends most and red least. Visible light is one small band in the electromagnetic spectrum, which runs from gamma rays to radio waves. All these waves are transverse and travel through vacuum at the same speed.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s14",
+          "layout": "exam-tips",
+          "heading": "Exam tips: Part 1",
+          "body_md": "",
+          "bullets": [
+            "Say the prism SEPARATES colours already in white light; it does not produce them.",
+            "Link: shorter wavelength → larger μ in glass → more deviation.",
+            "Memorise the EM order with wavelengths: gamma, X, UV, visible, IR, micro, radio.",
+            "In c = f λ, convert nm to m (1 nm = 10⁻⁹ m) and GHz to Hz."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Slip",
+                "Fix"
+              ],
+              "rows": [
+                [
+                  "Red deviated most",
+                  "Violet deviated most"
+                ],
+                [
+                  "Prism adds colours",
+                  "Prism separates colours"
+                ],
+                [
+                  "Speed of colours differs in vacuum",
+                  "Same speed in vacuum; differs in glass"
+                ],
+                [
+                  "400 nm used as 400 m",
+                  "400 nm = 4 × 10⁻⁷ m"
+                ]
+              ]
+            },
+            "alt": "Table of four common slips in Part 1 and their fixes"
+          },
+          "math": [],
+          "narration": "Some tips. Write that a prism separates the colours already present in white light. Explain dispersion with the chain: shorter wavelength, larger refractive index, more bending. Learn the order of the electromagnetic spectrum. And in calculations, change nanometres to metres and gigahertz to hertz before using the wave equation.",
+          "check_question_id": null,
+          "audio": null
+        }
+      ],
+      "status": "draft",
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "unit": "icse-10-physics-ch06",
+      "part": 2,
+      "version": 1,
+      "title": "Spectrum — Part 2: Infrared, ultraviolet and scattering",
+      "language": "en",
+      "goals": [
+        "Give two properties and two uses each of infrared and ultraviolet radiation",
+        "Explain why the sky is blue using wavelength-dependent scattering",
+        "Explain why the Sun looks red at sunrise and sunset",
+        "Explain other effects of scattering such as red danger signals and white clouds"
+      ],
+      "slides": [
+        {
+          "id": "s01",
+          "layout": "title",
+          "heading": "Light beyond red and violet",
+          "body_md": "Part 2 — just beyond the red end of the spectrum lies **infrared**, which we feel as heat; just beyond the violet end lies **ultraviolet**, which tans skin. And the way air scatters sunlight paints the sky blue.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Radiation or effect",
+                "Everyday example"
+              ],
+              "rows": [
+                [
+                  "Infrared",
+                  "Warmth felt near a heater or a hot tawa"
+                ],
+                [
+                  "Ultraviolet",
+                  "Sun tan after a day at the beach"
+                ],
+                [
+                  "Scattering",
+                  "Blue sky, red sunrise"
+                ],
+                [
+                  "Visible light",
+                  "Everything we see"
+                ]
+              ]
+            },
+            "alt": "Table of radiations and effects with everyday examples"
+          },
+          "math": [],
+          "narration": "Stand near a hot tawa and you feel its warmth without touching it; that is infrared radiation. Spend a day in strong sunshine and your skin may tan; that is ultraviolet. Neither can be seen. In this part we study these two invisible radiations, and then find out why the sky is blue.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s02",
+          "layout": "concept",
+          "heading": "Infrared radiation: production, detection and properties",
+          "body_md": "**Infrared (IR)** lies beyond the red end of the visible spectrum ($8 \\times 10^{-7}$ m to $10^{-3}$ m). It was found by placing a thermometer beyond the red end of a solar spectrum: the temperature rose.\n- **Produced** by all hot bodies: the Sun, a heater coil, a hot iron, our bodies.\n- **Detected** by its **heating effect**: a thermometer with a blackened bulb, or a **thermopile**; also by special photographic films and sensors.\n- **Properties:** strong **heating effect**; **less scattered** by haze and fog than visible light (longer wavelength); **absorbed by water vapour and carbon dioxide**; mostly **reflected by** shiny surfaces; obeys reflection and refraction.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Feature",
+                "Infrared"
+              ],
+              "rows": [
+                [
+                  "Position",
+                  "Beyond red"
+                ],
+                [
+                  "Source",
+                  "Hot bodies"
+                ],
+                [
+                  "Detector",
+                  "Thermopile, blackened-bulb thermometer"
+                ],
+                [
+                  "Key property",
+                  "Heating effect; little scattering by haze"
+                ]
+              ]
+            },
+            "alt": "Table of the position, source, detector and key property of infrared radiation"
+          },
+          "math": [],
+          "narration": "Infrared lies just beyond red light. Every hot object gives it out, from the Sun to a heater coil to your own body. We detect it by its heating effect, using a blackened thermometer or a thermopile. Because its wavelength is long, it is scattered much less by haze and fog than visible light.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s03",
+          "layout": "concept",
+          "heading": "Uses of infrared",
+          "body_md": "- **Remote controls** of TVs and air conditioners.\n- **Night vision and thermal cameras**, and **photography through haze or fog** (little scattering).\n- **Physiotherapy:** IR lamps warm muscles and relieve pain.\n- **Drying and heating:** drying paint on cars, cooking, warming rooms; greenhouses trap infrared.\n- **Weather forecasting** with infrared photographs from satellites, and **intruder alarms**.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Use",
+                "Property used"
+              ],
+              "rows": [
+                [
+                  "TV remote control",
+                  "Invisible signal, easily detected by a sensor"
+                ],
+                [
+                  "Thermal camera",
+                  "Warm bodies give out more infrared"
+                ],
+                [
+                  "Photography in haze",
+                  "Little scattering"
+                ],
+                [
+                  "Physiotherapy lamp",
+                  "Heating effect"
+                ]
+              ]
+            },
+            "alt": "Table of four uses of infrared radiation and the property each uses"
+          },
+          "math": [],
+          "narration": "Infrared has many uses. Your television remote sends invisible infrared pulses. Thermal cameras see warm bodies in the dark. Pictures taken with infrared cut through haze. Doctors use infrared lamps to warm aching muscles, and factories use them to dry paint. Weather satellites take infrared photographs of clouds.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s04",
+          "layout": "example",
+          "heading": "Worked example: radiation from a heater",
+          "body_md": "**Problem.** The element of a room heater emits radiation most strongly at a wavelength of $1.5 \\times 10^{-5}$ m. (a) Find its frequency. (b) Name the region. (c) Why do you feel it as warmth but cannot see it? ($c = 3.0 \\times 10^{8}$ m s⁻¹)\n\n**(a)** $f = \\dfrac{c}{\\lambda} = \\dfrac{3.0 \\times 10^{8}}{1.5 \\times 10^{-5}} = 2.0 \\times 10^{13}$ Hz.\n\n**(b)** The wavelength is longer than $8 \\times 10^{-7}$ m and shorter than $10^{-3}$ m: **infrared**.\n\n**(c)** Infrared has a strong heating effect, but its wavelength is beyond the range the eye can detect.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Quantity",
+                "Value"
+              ],
+              "rows": [
+                [
+                  "Wavelength",
+                  "1.5 × 10⁻⁵ m"
+                ],
+                [
+                  "Frequency",
+                  "2.0 × 10¹³ Hz"
+                ],
+                [
+                  "Region",
+                  "Infrared"
+                ],
+                [
+                  "Detected by",
+                  "Skin (warmth), thermopile"
+                ]
+              ]
+            },
+            "alt": "Table of the values in the heater example"
+          },
+          "math": [],
+          "narration": "Frequency is the speed of light divided by wavelength, which gives two times ten to the thirteen hertz. The wavelength is longer than red light but shorter than a millimetre, so this is infrared. You feel it because infrared has a strong heating effect, but your eyes cannot detect wavelengths that long.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s05",
+          "layout": "check",
+          "heading": "Quick check: detecting infrared",
+          "body_md": "Identify the radiation beyond the red end of a spectrum.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Think about which radiation has a strong heating effect.",
+          "check_question_id": "q_icse10phy_ch06_034",
+          "audio": null
+        },
+        {
+          "id": "s06",
+          "layout": "concept",
+          "heading": "Ultraviolet radiation: production, detection and properties",
+          "body_md": "**Ultraviolet (UV)** lies beyond the violet end ($10^{-8}$ m to $4 \\times 10^{-7}$ m).\n- **Produced** by very hot bodies such as the **Sun**, electric **arcs** (welding), and **mercury vapour lamps** in quartz tubes.\n- **Detected** by **photographic film** and by **fluorescence**: zinc sulphide or fluorescent paint glows when UV falls on it.\n- **Properties:** causes **fluorescence**; affects photographic plates; **kills germs**; causes **chemical changes** (tanning, fading of colours); **absorbed by ordinary glass** but passes through **quartz**; mostly **absorbed by the ozone layer**.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Feature",
+                "Ultraviolet"
+              ],
+              "rows": [
+                [
+                  "Position",
+                  "Beyond violet"
+                ],
+                [
+                  "Sources",
+                  "Sun, electric arc, mercury vapour lamp"
+                ],
+                [
+                  "Detector",
+                  "Photographic film, fluorescent paint"
+                ],
+                [
+                  "Passes through",
+                  "Quartz (not ordinary glass)"
+                ]
+              ]
+            },
+            "alt": "Table of the position, sources, detectors and transmission of ultraviolet radiation"
+          },
+          "math": [],
+          "narration": "Ultraviolet lies just beyond violet light. The Sun, welding arcs and mercury vapour lamps give it out. We detect it with photographic film, or because it makes certain paints glow. Ordinary glass absorbs ultraviolet, so prisms and lamps for it are made of quartz. High in the atmosphere, the ozone layer absorbs most of the Sun’s ultraviolet.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s07",
+          "layout": "concept",
+          "heading": "Uses and dangers of ultraviolet",
+          "body_md": "**Uses:** **sterilising** water, surgical instruments and air (kills bacteria); **detecting forged notes** and documents (special inks fluoresce); helping the skin make **vitamin D**; fluorescent tubes; studying molecular structure.\n\n**Dangers:** too much UV causes **sunburn**, damages the **eyes** and can cause **skin cancer**. Welders wear dark goggles; we use sunscreen. The **ozone layer** protects life by absorbing most solar UV.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Use or danger",
+                "Property"
+              ],
+              "rows": [
+                [
+                  "Water purifier",
+                  "Kills germs"
+                ],
+                [
+                  "Checking currency notes",
+                  "Causes fluorescence"
+                ],
+                [
+                  "Vitamin D",
+                  "Chemical change in the skin"
+                ],
+                [
+                  "Sunburn and eye damage",
+                  "High-energy radiation absorbed by tissue"
+                ]
+              ]
+            },
+            "alt": "Table of uses and dangers of ultraviolet radiation and the property behind each"
+          },
+          "math": [],
+          "narration": "Ultraviolet kills germs, so it is used to purify water and sterilise instruments. Bank staff check notes under ultraviolet lamps, because special inks glow. A little ultraviolet helps our skin make vitamin D, but too much burns the skin and harms the eyes. That is why welders wear dark goggles and why the ozone layer matters.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s08",
+          "layout": "check",
+          "heading": "Quick check: ultraviolet",
+          "body_md": "Recognise a property of ultraviolet radiation.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Think about which radiation makes certain paints glow.",
+          "check_question_id": "q_icse10phy_ch06_035",
+          "audio": null
+        },
+        {
+          "id": "s09",
+          "layout": "concept",
+          "heading": "Scattering of light",
+          "body_md": "When light falls on very small particles (air molecules, fine dust), the particles absorb it and send it out again in **all directions**. This is **scattering**. For particles much **smaller than the wavelength**, the intensity of scattered light is roughly proportional to $\\dfrac{1}{\\lambda^{4}}$ (Rayleigh’s law). So **shorter wavelengths (violet, blue)** are scattered **much more** than **longer wavelengths (red)**. Large particles (water droplets in clouds) scatter all colours **almost equally**.",
+          "bullets": [],
+          "visual": {
+            "kind": "plot",
+            "spec": {
+              "grid": true,
+              "functions": [
+                {
+                  "expr": "(400/x)^4",
+                  "label": "proportional to 1 / wavelength⁴",
+                  "domain": [
+                    400,
+                    700
+                  ]
+                }
+              ],
+              "points": [
+                {
+                  "at": [
+                    400,
+                    1
+                  ],
+                  "label": "violet"
+                },
+                {
+                  "at": [
+                    450,
+                    0.6243
+                  ],
+                  "label": "blue"
+                },
+                {
+                  "at": [
+                    700,
+                    0.1066
+                  ],
+                  "label": "red"
+                }
+              ],
+              "series": [],
+              "x": {
+                "min": 400,
+                "max": 700,
+                "label": "wavelength (nm)"
+              },
+              "y": {
+                "min": 0,
+                "max": 1.1,
+                "label": "scattering compared with 400 nm"
+              }
+            },
+            "alt": "Graph of relative scattering against wavelength, falling steeply from one at four hundred nanometres to about one tenth at seven hundred nanometres",
+            "caption": "Shorter wavelengths are scattered far more strongly."
+          },
+          "math": [],
+          "narration": "Tiny particles such as air molecules take in light and send it out again in all directions. This is scattering. It depends strongly on wavelength: halve the wavelength and the scattering becomes sixteen times stronger. So violet and blue light are scattered far more than red. Big water droplets, however, scatter all colours about equally.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s10",
+          "layout": "example",
+          "heading": "Worked example: blue against red",
+          "body_md": "**Problem.** Compare the scattering of blue light ($\\lambda = 450$ nm) with that of red light ($\\lambda = 675$ nm) by air molecules.\n\n**Ratio** $= \\left(\\dfrac{\\lambda_{red}}{\\lambda_{blue}}\\right)^{4} = \\left(\\dfrac{675}{450}\\right)^{4} = 1.5^{4} = 5.0625$.\n\nSo blue light is scattered about **5 times** as strongly as red light. This is why scattered skylight looks blue.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Colour",
+                "Wavelength",
+                "Relative scattering"
+              ],
+              "rows": [
+                [
+                  "Blue",
+                  "450 nm",
+                  "About 5"
+                ],
+                [
+                  "Red",
+                  "675 nm",
+                  "1"
+                ]
+              ]
+            },
+            "alt": "Table of wavelength and relative scattering for blue and red light"
+          },
+          "math": [],
+          "narration": "Scattering goes as one over the fourth power of wavelength, so the ratio is the red wavelength over the blue wavelength, raised to the fourth power. Six hundred and seventy five divided by four hundred and fifty is one and a half, and one and a half to the fourth power is about five. Blue is scattered about five times as strongly as red.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s11",
+          "layout": "diagram",
+          "heading": "Blue sky and red sunrise",
+          "body_md": "**Blue sky:** sunlight crossing the atmosphere is scattered by air molecules; **blue** (and violet) is scattered most, so light reaching us from all parts of the sky is mainly blue. (Our eyes are less sensitive to violet, and some violet is absorbed high up, so the sky looks blue rather than violet.)\n\n**Red Sun at sunrise and sunset:** the Sun is near the horizon, so its light travels a **much longer path** through the air. Most of the blue is scattered out of the beam on the way, and the light that reaches us is mainly **red and orange**. At noon the path is short, so the Sun looks white.",
+          "bullets": [],
+          "visual": {
+            "kind": "svg",
+            "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 620 200\" role=\"img\" aria-label=\"Sunlight reaching an observer on the Earth. At noon the Sun is overhead and its light crosses only the thickness of the atmosphere. At sunrise the Sun is on the horizon and its light travels a much longer path through the air, so most of the blue light is scattered away and the Sun looks red.\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>Sunlight reaching an observer on the Earth. At noon the Sun is overhead and its light crosses only the thickness of the atmosphere. At sunrise the Sun is on the horizon and its light travels a much longer path through the air, so most of the blue light is scattered away and the Sun looks red.</title><circle cx=\"300\" cy=\"520\" r=\"490\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"1\" fill-opacity=\"0.1\"/><circle cx=\"300\" cy=\"520\" r=\"420\" fill=\"var(--diagram-green)\" stroke=\"var(--diagram-green)\" stroke-width=\"1.5\" fill-opacity=\"0.25\"/><line x1=\"300\" y1=\"10\" x2=\"300\" y2=\"91.4\" stroke=\"var(--diagram-yellow)\" stroke-width=\"3\"/><polygon points=\"300,97 297.1,90.6 302.9,90.6\" fill=\"var(--diagram-yellow)\" stroke=\"none\"/><text x=\"308\" y=\"24\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">noon: short path</text><line x1=\"27.6\" y1=\"100\" x2=\"291.4\" y2=\"100\" stroke=\"var(--diagram-red)\" stroke-width=\"3\"/><polygon points=\"297,100 290.6,102.9 290.6,97.1\" fill=\"var(--diagram-red)\" stroke=\"none\"/><text x=\"35.6\" y=\"90\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">sunrise: long path through air</text><circle cx=\"300\" cy=\"100\" r=\"4\" fill=\"currentColor\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"308\" y=\"116\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">observer</text><text x=\"415\" y=\"60\" fill=\"var(--diagram-blue)\" stroke=\"none\" font-size=\"10\">atmosphere (thickness exaggerated)</text><text x=\"300\" y=\"170\" fill=\"var(--diagram-green)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\">Earth</text><text x=\"20\" y=\"190\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">Path at sunrise ≈ 3.6 × path at noon (in this drawing); blue is scattered out, red reaches the eye</text></svg>",
+            "alt": "Sunlight crossing a short path through the air at noon and a long path at sunrise"
+          },
+          "math": [],
+          "narration": "At noon, sunlight crosses only a short thickness of air, and the Sun looks white. The blue light scattered sideways fills the sky. At sunrise, the Sun is on the horizon and its light must cross a much longer path through the air. By the time it reaches you, most of the blue has been scattered away, so the Sun looks red.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s12",
+          "layout": "concept",
+          "heading": "Other effects of scattering",
+          "body_md": "- **Danger signals and brake lights are red:** red is scattered **least**, so it travels farthest through fog and smoke and is seen from a distance.\n- **Clouds are white:** water droplets are large compared with the wavelength and scatter **all colours** about equally.\n- **The sky looks black** from the Moon or to an astronaut in space: there is **no air** to scatter sunlight.\n- **The deep sea looks blue**, partly because of scattering of blue light by water and partly by reflection of the sky.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Observation",
+                "Explanation"
+              ],
+              "rows": [
+                [
+                  "Red danger lights",
+                  "Red scattered least, seen far away"
+                ],
+                [
+                  "White clouds",
+                  "Large drops scatter all colours equally"
+                ],
+                [
+                  "Black sky on the Moon",
+                  "No atmosphere to scatter light"
+                ],
+                [
+                  "Blue sea",
+                  "Scattering by water, reflection of the sky"
+                ]
+              ]
+            },
+            "alt": "Table of four effects of scattering and their explanations"
+          },
+          "math": [],
+          "narration": "Scattering explains more everyday sights. Danger signals are red because red light is scattered least and can be seen from far away, even in mist. Clouds look white because their big water drops scatter all colours equally. And on the Moon, which has no air, the sky is black even when the Sun is shining.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s13",
+          "layout": "check",
+          "heading": "Quick check: the blue sky",
+          "body_md": "Explain the colour of the sky.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Shorter wavelengths are scattered more strongly by air molecules.",
+          "check_question_id": "q_icse10phy_ch06_053",
+          "audio": null
+        },
+        {
+          "id": "s14",
+          "layout": "summary",
+          "heading": "Summary: Part 2",
+          "body_md": "",
+          "bullets": [
+            "Infrared: beyond red; from hot bodies; detected by thermopile; heating effect, little scattering; remote controls, night vision, physiotherapy.",
+            "Ultraviolet: beyond violet; from Sun, arcs, mercury lamps; detected by fluorescence and film; absorbed by glass, passes quartz; kills germs, detects forged notes, vitamin D.",
+            "Scattering by small particles ∝ 1/λ⁴: blue scattered most, red least.",
+            "Blue sky; red Sun at sunrise and sunset (long path); red danger signals; white clouds; black sky in space."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Radiation or effect",
+                "Key property"
+              ],
+              "rows": [
+                [
+                  "Infrared",
+                  "Heating effect"
+                ],
+                [
+                  "Ultraviolet",
+                  "Fluorescence, kills germs"
+                ],
+                [
+                  "Scattering",
+                  "Strongest for short wavelengths"
+                ]
+              ]
+            },
+            "alt": "Summary table of three key ideas from Part 2"
+          },
+          "math": [],
+          "narration": "Let us sum up Part 2. Infrared lies beyond red, comes from hot objects and is felt as heat. Ultraviolet lies beyond violet, makes some materials glow, kills germs and is stopped by ordinary glass and by the ozone layer. Tiny particles scatter short wavelengths most, which gives us a blue sky and a red rising Sun.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s15",
+          "layout": "exam-tips",
+          "heading": "Exam tips: Part 2",
+          "body_md": "",
+          "bullets": [
+            "For IR and UV, give properties AND uses separately, two of each.",
+            "Name the detector: thermopile for IR; fluorescence or film for UV.",
+            "Blue sky: name the particles (air molecules) and say short wavelengths are scattered more.",
+            "Red sunrise: mention the LONGER PATH through the atmosphere."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Slip",
+                "Fix"
+              ],
+              "rows": [
+                [
+                  "“Sky is blue because sea is blue”",
+                  "Scattering of short wavelengths by air molecules"
+                ],
+                [
+                  "Red sun because red is scattered most",
+                  "Red is scattered least; blue is removed"
+                ],
+                [
+                  "UV passes through window glass",
+                  "Ordinary glass absorbs UV; quartz transmits it"
+                ],
+                [
+                  "IR detected by fluorescence",
+                  "IR detected by its heating effect"
+                ]
+              ]
+            },
+            "alt": "Table of four common slips in Part 2 and their fixes"
+          },
+          "math": [],
+          "narration": "Final tips. When asked about infrared or ultraviolet, give two properties and two uses, and name a detector. To explain the blue sky, say that air molecules scatter short wavelengths most. To explain the red rising Sun, say that its light travels a longer path through the air, so the blue is scattered away.",
+          "check_question_id": null,
+          "audio": null
+        }
+      ],
+      "status": "draft",
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    }
+  ],
+  "notes": {
+    "unit": "icse-10-physics-ch06",
+    "version": 1,
+    "title": "Spectrum — Notes",
+    "language": "en",
+    "sections": [
+      {
+        "heading": "1. Dispersion of white light",
+        "body_md": "- **Dispersion:** the splitting of white light into its constituent colours by a prism. The band of colours is the **spectrum**: violet, indigo, blue, green, yellow, orange, red (VIBGYOR).\n- **Cause:** in a material medium, light of different colours travels at different speeds, so the **refractive index depends on wavelength**: $\\mu_{violet} > \\mu_{red}$. Hence **violet is deviated most and red least**.\n- In vacuum all colours travel at the same speed, $3 \\times 10^{8}$ m s⁻¹.\n- A prism only separates colours already present; a second, identical prism placed inverted recombines them into white light.\n- **Monochromatic light** (one wavelength, for example a sodium lamp) is deviated but not dispersed.",
+        "key_terms": [
+          {
+            "term": "Dispersion",
+            "definition_md": "The splitting of white light into its constituent colours on passing through a prism."
+          },
+          {
+            "term": "Spectrum",
+            "definition_md": "The band of colours obtained when white light is dispersed."
+          },
+          {
+            "term": "Monochromatic light",
+            "definition_md": "Light of a single wavelength (single colour)."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\mu = \\frac{c}{v}, \\quad \\mu_{violet} > \\mu_{red}",
+            "label": "Refractive index depends on colour"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Colour",
+              "Speed in glass",
+              "μ in glass",
+              "Deviation"
+            ],
+            "rows": [
+              [
+                "Red",
+                "Highest",
+                "Least",
+                "Least"
+              ],
+              [
+                "Violet",
+                "Lowest",
+                "Greatest",
+                "Greatest"
+              ]
+            ]
+          },
+          "alt": "Table comparing red and violet light in glass"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-physics-ch06-t01"
+        ]
+      },
+      {
+        "heading": "2. The visible spectrum",
+        "body_md": "- Wavelength range about **400 nm (violet) to 700–800 nm (red)**; $1\\ \\text{nm} = 10^{-9}$ m.\n- Order of increasing wavelength: violet, indigo, blue, green, yellow, orange, red; frequency increases the other way ($c = f\\lambda$).\n- Colour is decided by **frequency**, which does not change on refraction.",
+        "key_terms": [
+          {
+            "term": "Wavelength",
+            "definition_md": "The distance between two successive crests (or compressions) of a wave."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "c = f \\lambda",
+            "label": "Wave equation for light"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Colour",
+              "Wavelength (about)",
+              "Frequency (about)"
+            ],
+            "rows": [
+              [
+                "Violet",
+                "400 nm",
+                "7.5 × 10¹⁴ Hz"
+              ],
+              [
+                "Green",
+                "530 nm",
+                "5.7 × 10¹⁴ Hz"
+              ],
+              [
+                "Red",
+                "700 nm",
+                "4.3 × 10¹⁴ Hz"
+              ]
+            ]
+          },
+          "alt": "Table of wavelength and frequency of violet, green and red light"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-physics-ch06-t01",
+          "icse-10-physics-ch06-t02"
+        ]
+      },
+      {
+        "heading": "3. The electromagnetic spectrum",
+        "body_md": "| Region | Wavelength (about) | Source or use |\n|---|---|---|\n| Gamma rays | below 10⁻¹¹ m | Radioactive nuclei; cancer treatment |\n| X-rays | 10⁻¹¹ to 10⁻⁸ m | Fast electrons hitting a metal; bone images |\n| Ultraviolet | 10⁻⁸ to 4 × 10⁻⁷ m | Sun, arcs; sterilising |\n| Visible | 4 × 10⁻⁷ to 8 × 10⁻⁷ m | Sun, lamps; seeing |\n| Infrared | 8 × 10⁻⁷ to 10⁻³ m | Hot bodies; remote controls |\n| Microwaves | 10⁻³ to 0.3 m | Ovens, radar, mobile phones |\n| Radio waves | above 0.3 m | Broadcasting |\n\n**Common properties:** produced by accelerated charges; transverse electric and magnetic fields; travel in vacuum at $3 \\times 10^{8}$ m s⁻¹; obey $c = f\\lambda$; not deflected by electric or magnetic fields; can be reflected and refracted; carry energy.",
+        "key_terms": [
+          {
+            "term": "Electromagnetic wave",
+            "definition_md": "A transverse wave of changing electric and magnetic fields that can travel through vacuum at the speed of light."
+          }
+        ],
+        "formulas": [],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Order",
+              "Increasing wavelength",
+              "Increasing frequency"
+            ],
+            "rows": [
+              [
+                "First",
+                "Gamma rays",
+                "Radio waves"
+              ],
+              [
+                "Last",
+                "Radio waves",
+                "Gamma rays"
+              ]
+            ]
+          },
+          "alt": "Table showing the two ends of the electromagnetic spectrum"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-physics-ch06-t02"
+        ]
+      },
+      {
+        "heading": "4. Infrared and ultraviolet radiation",
+        "body_md": "**Infrared (IR):** beyond red. Produced by hot bodies (Sun, heater, human body). Detected by a thermopile or blackened-bulb thermometer. Properties: strong heating effect; less scattered by haze and fog; absorbed by water vapour and CO₂; reflected by polished surfaces. Uses: remote controls, night vision and thermal cameras, haze photography, physiotherapy, drying paint, weather satellites, greenhouses.\n\n**Ultraviolet (UV):** beyond violet. Produced by the Sun, electric arcs, mercury vapour lamps (quartz tubes). Detected by photographic film and fluorescence (zinc sulphide). Properties: causes fluorescence; kills germs; causes chemical changes (tanning); absorbed by ordinary glass, transmitted by quartz; absorbed by the ozone layer. Uses: sterilising water and instruments, checking forged notes, vitamin D formation. Harmful in excess: sunburn, eye damage, skin cancer.",
+        "key_terms": [
+          {
+            "term": "Thermopile",
+            "definition_md": "A detector of infrared radiation that produces a current when warmed by the radiation."
+          },
+          {
+            "term": "Fluorescence",
+            "definition_md": "The emission of visible light by a substance while ultraviolet radiation falls on it."
+          }
+        ],
+        "formulas": [],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Feature",
+              "Infrared",
+              "Ultraviolet"
+            ],
+            "rows": [
+              [
+                "Position",
+                "Beyond red",
+                "Beyond violet"
+              ],
+              [
+                "Detector",
+                "Thermopile",
+                "Fluorescent screen, film"
+              ],
+              [
+                "Glass",
+                "Partly transmitted",
+                "Absorbed (quartz transmits)"
+              ],
+              [
+                "Main effect",
+                "Heating",
+                "Chemical, germicidal"
+              ]
+            ]
+          },
+          "alt": "Table comparing infrared and ultraviolet radiation"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-physics-ch06-t03"
+        ]
+      },
+      {
+        "heading": "5. Scattering of light",
+        "body_md": "- **Scattering:** absorption and re-emission of light in all directions by small particles.\n- For particles much smaller than the wavelength (air molecules): scattered intensity $\\propto \\dfrac{1}{\\lambda^{4}}$. Blue is scattered about 5 times as much as red.\n- **Blue sky:** air molecules scatter blue most; skylight is mainly blue.\n- **Red Sun at sunrise and sunset:** long path through air removes blue by scattering; red reaches the eye.\n- **Red danger signals:** red is scattered least and penetrates fog farthest.\n- **White clouds:** large droplets scatter all colours equally.\n- **Black sky in space or on the Moon:** no atmosphere, no scattering.",
+        "key_terms": [
+          {
+            "term": "Scattering of light",
+            "definition_md": "The process by which small particles absorb light and send it out again in all directions."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "I_{\\text{scattered}} \\propto \\frac{1}{\\lambda^{4}}",
+            "label": "Scattering by very small particles"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Observation",
+              "Reason"
+            ],
+            "rows": [
+              [
+                "Blue sky",
+                "Blue scattered most"
+              ],
+              [
+                "Red sunrise",
+                "Blue scattered out on a long path"
+              ],
+              [
+                "Red signals",
+                "Red scattered least"
+              ],
+              [
+                "White clouds",
+                "Large drops scatter all colours"
+              ]
+            ]
+          },
+          "alt": "Table of four scattering effects and their reasons"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-physics-ch06-t04"
+        ]
+      }
+    ],
+    "exam_tips_md": "**Common mistakes**\n- Saying red is deviated (or scattered) most.\n- Saying the prism “produces” colours.\n- Mixing up the order of the electromagnetic spectrum, especially X-rays and gamma rays, or infrared and microwaves.\n- Forgetting that ordinary glass absorbs ultraviolet.\n- Explaining the red sunrise without mentioning the longer path through air.\n\n**How marks are usually awarded**\n- Dispersion: definition (1), cause — μ depends on wavelength (1), order of deviation (1).\n- IR and UV: each property or use 1 mark; a named detector or source earns credit.\n- Scattering: name the particles, the wavelength dependence and the conclusion.",
+    "status": "draft",
+    "provenance": {
+      "origin": "human",
+      "template_version": null,
+      "model": null,
+      "generated_at": "2026-11-01",
+      "author": "claude-opus-5-5 (subject-producer)"
+    }
+  },
+  "flashcards": {
+    "unit": "icse-10-physics-ch06",
+    "version": 1,
+    "language": "en",
+    "cards": [
+      {
+        "id": "f01",
+        "front_md": "Dispersion?",
+        "back_md": "Splitting of white light into its colours by a prism.",
+        "tag": "definition",
+        "topic_id": "icse-10-physics-ch06-t01"
+      },
+      {
+        "id": "f02",
+        "front_md": "Order of colours from a prism (VIBGYOR)?",
+        "back_md": "Violet, indigo, blue, green, yellow, orange, red.",
+        "tag": "fact",
+        "topic_id": "icse-10-physics-ch06-t01"
+      },
+      {
+        "id": "f03",
+        "front_md": "Colour deviated most?",
+        "back_md": "Violet.",
+        "tag": "fact",
+        "topic_id": "icse-10-physics-ch06-t01"
+      },
+      {
+        "id": "f04",
+        "front_md": "Colour deviated least?",
+        "back_md": "Red.",
+        "tag": "fact",
+        "topic_id": "icse-10-physics-ch06-t01"
+      },
+      {
+        "id": "f05",
+        "front_md": "Cause of dispersion?",
+        "back_md": "Refractive index of glass differs for different colours.",
+        "tag": "concept",
+        "topic_id": "icse-10-physics-ch06-t01"
+      },
+      {
+        "id": "f06",
+        "front_md": "Speed of colours in vacuum?",
+        "back_md": "All the same: 3 × 10⁸ m/s.",
+        "tag": "fact",
+        "topic_id": "icse-10-physics-ch06-t01"
+      },
+      {
+        "id": "f07",
+        "front_md": "Recombining a spectrum?",
+        "back_md": "Second identical prism, inverted.",
+        "tag": "example",
+        "topic_id": "icse-10-physics-ch06-t01"
+      },
+      {
+        "id": "f08",
+        "front_md": "Monochromatic light?",
+        "back_md": "Light of a single wavelength.",
+        "tag": "definition",
+        "topic_id": "icse-10-physics-ch06-t01"
+      },
+      {
+        "id": "f09",
+        "front_md": "Visible wavelength range?",
+        "back_md": "About 400 nm to 700–800 nm.",
+        "tag": "fact",
+        "topic_id": "icse-10-physics-ch06-t02"
+      },
+      {
+        "id": "f10",
+        "front_md": "Wave equation for light?",
+        "back_md": "c = f λ.",
+        "tag": "formula",
+        "topic_id": "icse-10-physics-ch06-t02"
+      },
+      {
+        "id": "f11",
+        "front_md": "EM order, increasing wavelength?",
+        "back_md": "Gamma, X-rays, UV, visible, IR, microwaves, radio.",
+        "tag": "fact",
+        "topic_id": "icse-10-physics-ch06-t02"
+      },
+      {
+        "id": "f12",
+        "front_md": "Shortest-wavelength EM radiation?",
+        "back_md": "Gamma rays.",
+        "tag": "fact",
+        "topic_id": "icse-10-physics-ch06-t02"
+      },
+      {
+        "id": "f13",
+        "front_md": "Speed of all EM waves in vacuum?",
+        "back_md": "3 × 10⁸ m/s.",
+        "tag": "fact",
+        "topic_id": "icse-10-physics-ch06-t02"
+      },
+      {
+        "id": "f14",
+        "front_md": "Are EM waves longitudinal or transverse?",
+        "back_md": "Transverse.",
+        "tag": "concept",
+        "topic_id": "icse-10-physics-ch06-t02"
+      },
+      {
+        "id": "f15",
+        "front_md": "Do EM waves need a medium?",
+        "back_md": "No.",
+        "tag": "concept",
+        "topic_id": "icse-10-physics-ch06-t02"
+      },
+      {
+        "id": "f16",
+        "front_md": "Effect of a magnetic field on EM waves?",
+        "back_md": "No deflection (no charge).",
+        "tag": "concept",
+        "topic_id": "icse-10-physics-ch06-t02"
+      },
+      {
+        "id": "f17",
+        "front_md": "Region just beyond red?",
+        "back_md": "Infrared.",
+        "tag": "fact",
+        "topic_id": "icse-10-physics-ch06-t03"
+      },
+      {
+        "id": "f18",
+        "front_md": "Detector of infrared?",
+        "back_md": "Thermopile or blackened-bulb thermometer.",
+        "tag": "fact",
+        "topic_id": "icse-10-physics-ch06-t03"
+      },
+      {
+        "id": "f19",
+        "front_md": "Two uses of infrared?",
+        "back_md": "Remote controls; night vision (also physiotherapy).",
+        "tag": "example",
+        "topic_id": "icse-10-physics-ch06-t03"
+      },
+      {
+        "id": "f20",
+        "front_md": "Why IR for photographs in haze?",
+        "back_md": "Long wavelength, scattered less.",
+        "tag": "concept",
+        "topic_id": "icse-10-physics-ch06-t03"
+      },
+      {
+        "id": "f21",
+        "front_md": "Region just beyond violet?",
+        "back_md": "Ultraviolet.",
+        "tag": "fact",
+        "topic_id": "icse-10-physics-ch06-t03"
+      },
+      {
+        "id": "f22",
+        "front_md": "Detector of ultraviolet?",
+        "back_md": "Fluorescent screen or photographic film.",
+        "tag": "fact",
+        "topic_id": "icse-10-physics-ch06-t03"
+      },
+      {
+        "id": "f23",
+        "front_md": "Prism material for UV?",
+        "back_md": "Quartz (glass absorbs UV).",
+        "tag": "fact",
+        "topic_id": "icse-10-physics-ch06-t03"
+      },
+      {
+        "id": "f24",
+        "front_md": "Two uses of ultraviolet?",
+        "back_md": "Sterilising water; checking forged notes.",
+        "tag": "example",
+        "topic_id": "icse-10-physics-ch06-t03"
+      },
+      {
+        "id": "f25",
+        "front_md": "What absorbs most solar UV?",
+        "back_md": "The ozone layer.",
+        "tag": "fact",
+        "topic_id": "icse-10-physics-ch06-t03"
+      },
+      {
+        "id": "f26",
+        "front_md": "Scattering law for tiny particles?",
+        "back_md": "Intensity ∝ 1/λ⁴.",
+        "tag": "formula",
+        "topic_id": "icse-10-physics-ch06-t04"
+      },
+      {
+        "id": "f27",
+        "front_md": "Why is the sky blue?",
+        "back_md": "Air molecules scatter blue light most.",
+        "tag": "concept",
+        "topic_id": "icse-10-physics-ch06-t04"
+      },
+      {
+        "id": "f28",
+        "front_md": "Why is the rising Sun red?",
+        "back_md": "Long path through air scatters away blue.",
+        "tag": "concept",
+        "topic_id": "icse-10-physics-ch06-t04"
+      },
+      {
+        "id": "f29",
+        "front_md": "Why are danger signals red?",
+        "back_md": "Red is scattered least, seen from far.",
+        "tag": "concept",
+        "topic_id": "icse-10-physics-ch06-t04"
+      },
+      {
+        "id": "f30",
+        "front_md": "Sky colour seen from the Moon?",
+        "back_md": "Black: no atmosphere to scatter light.",
+        "tag": "example",
+        "topic_id": "icse-10-physics-ch06-t04"
+      },
+      {
+        "id": "f31",
+        "front_md": "Exam tip: IR and UV",
+        "back_md": "Give two properties, two uses and a detector for each.",
+        "tag": "exam-tip",
+        "topic_id": "icse-10-physics-ch06-t03"
+      }
+    ],
+    "status": "draft",
+    "provenance": {
+      "origin": "human",
+      "template_version": null,
+      "model": null,
+      "generated_at": "2026-11-01",
+      "author": "claude-opus-5-5 (subject-producer)"
+    }
+  },
+  "questions": [
+    {
+      "id": "q_icse10phy_ch06_001",
+      "unit": "icse-10-physics-ch06",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A narrow beam of white light passes through a glass prism standing on its base, and falls on a screen. Which colour appears nearest the base end of the spectrum?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Red"
+        },
+        {
+          "id": "b",
+          "text_md": "Yellow"
+        },
+        {
+          "id": "c",
+          "text_md": "Green"
+        },
+        {
+          "id": "d",
+          "text_md": "Violet"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Violet has the largest refractive index in glass, so it is bent most towards the base — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch06-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch06_002",
+      "unit": "icse-10-physics-ch06",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "White light is split into colours by a glass prism because:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "glass has a slightly different refractive index for each colour"
+        },
+        {
+          "id": "b",
+          "text_md": "the prism adds colours to the white light"
+        },
+        {
+          "id": "c",
+          "text_md": "the colours travel at different speeds in vacuum"
+        },
+        {
+          "id": "d",
+          "text_md": "the prism reflects some colours and absorbs others"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Each colour travels at a different speed in glass, so each is refracted by a different amount — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-physics-ch06-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch06_003",
+      "unit": "icse-10-physics-ch06",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Inside a block of glass, which colour of light travels fastest?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Violet"
+        },
+        {
+          "id": "b",
+          "text_md": "Blue"
+        },
+        {
+          "id": "c",
+          "text_md": "Red"
+        },
+        {
+          "id": "d",
+          "text_md": "All colours travel at the same speed in glass"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Red has the smallest refractive index in glass, so it is the fastest there — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-physics-ch06-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch06_004",
+      "unit": "icse-10-physics-ch06",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A ray of yellow light and a ray of blue light enter a glass prism along exactly the same path. Which statement is correct?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "The blue ray is deviated more, because glass has a larger refractive index for blue light"
+        },
+        {
+          "id": "b",
+          "text_md": "The yellow ray is deviated more, because yellow has a longer wavelength"
+        },
+        {
+          "id": "c",
+          "text_md": "Both are deviated equally, because they enter along the same path"
+        },
+        {
+          "id": "d",
+          "text_md": "The blue ray is deviated less, because it travels faster in glass"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Shorter wavelength → larger μ in glass → larger deviation — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch06-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch06_005",
+      "unit": "icse-10-physics-ch06",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Light from a sodium vapour street lamp is passed through a glass prism. On the screen, Nidhi sees:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "a single yellow patch, shifted towards the base, but no band of colours"
+        },
+        {
+          "id": "b",
+          "text_md": "the full band of seven colours"
+        },
+        {
+          "id": "c",
+          "text_md": "a white patch"
+        },
+        {
+          "id": "d",
+          "text_md": "two patches, one red and one violet"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Sodium light is (nearly) monochromatic: it is deviated but not dispersed — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-physics-ch06-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch06_006",
+      "unit": "icse-10-physics-ch06",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? In a glass prism, red light is deviated more than violet light.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "f"
+        ]
+      },
+      "solution_md": "False: violet is deviated most and red least.",
+      "marking_scheme": [
+        {
+          "step": "False, with the correction",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-physics-ch06-t01"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch06_007",
+      "unit": "icse-10-physics-ch06",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "The splitting of white light into its constituent colours by a prism is called ___.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "dispersion"
+            ]
+          }
+        ]
+      },
+      "solution_md": "**Dispersion**.",
+      "marking_scheme": [
+        {
+          "step": "Blank 1: \"dispersion\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-physics-ch06-t01"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch06_008",
+      "unit": "icse-10-physics-ch06",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Violet light is deviated more than red light by a glass prism.\n\n**Reason (R):** The refractive index of glass is greater for violet light than for red light.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Both are true, and R explains A — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-physics-ch06-t01"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch06_009",
+      "unit": "icse-10-physics-ch06",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** All the colours of white light travel at the same speed in vacuum.\n\n**Reason (R):** White light is split into colours when it passes through a glass prism.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Both statements are true, but R does not explain A — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-physics-ch06-t01",
+        "icse-10-physics-ch06-t02"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch06_010",
+      "unit": "icse-10-physics-ch06",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "The refractive index of a crown glass for violet light is 1.532. Find the speed of violet light in this glass, in units of 10⁸ m/s, to three significant figures.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 1.96,
+        "tolerance": 0.01,
+        "unit": "× 10⁸ m/s"
+      },
+      "solution_md": "$v = \\dfrac{c}{\\mu} = \\dfrac{3.0 \\times 10^{8}}{1.532} = 1.96 \\times 10^{8}$ m/s, so in units of $10^{8}$ m/s the speed is $\\dfrac{3.0}{1.532} = 1.96$.",
+      "marking_scheme": [
+        {
+          "step": "1.96",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch06-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch06_011",
+      "unit": "icse-10-physics-ch06",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "A prism of flint glass deviates red light by 39.6° and violet light by 41.9°. Find the angle, in degrees, between the emergent red and violet rays (the angular spread of the spectrum).",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 2.3,
+        "tolerance": 0.01,
+        "unit": "°"
+      },
+      "solution_md": "Angular spread $= \\delta_{violet} - \\delta_{red} = 41.9 - 39.6 = 2.3$, that is $2.3^\\circ$.",
+      "marking_scheme": [
+        {
+          "step": "2.3°",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch06-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch06_012",
+      "unit": "icse-10-physics-ch06",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write the seven colours of the visible spectrum in order of increasing wavelength.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Violet, indigo, blue, green, yellow, orange, red."
+      },
+      "solution_md": "VIBGYOR.",
+      "marking_scheme": [
+        {
+          "step": "Correct order",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-physics-ch06-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch06_013",
+      "unit": "icse-10-physics-ch06",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Dhruv makes a spectrum with one glass prism and wants to turn it back into white light using a second, identical prism. How should he place the second prism, and why does this work?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "He should place the second prism close to the first but upside down (inverted, with its base on the side of the first prism’s apex). It deviates each colour by the same amount in the opposite direction, so all the colours come out together along one path and mix to give white light."
+      },
+      "solution_md": "Inverted second prism; opposite deviation.",
+      "marking_scheme": [
+        {
+          "step": "Arrangement",
+          "marks": 1
+        },
+        {
+          "step": "Reason",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch06-t01"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch06_014",
+      "unit": "icse-10-physics-ch06",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Explain why a glass prism splits white light into colours, while a single colour such as pure red light is only bent, not split.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "White light is a mixture of colours, and glass has a different refractive index for each colour (largest for violet, smallest for red), so each colour is bent through a different angle and they separate. Pure red light has only one wavelength, so there is nothing to separate; it is simply deviated."
+      },
+      "solution_md": "μ depends on colour; monochromatic light.",
+      "marking_scheme": [
+        {
+          "step": "Cause of dispersion",
+          "marks": 1
+        },
+        {
+          "step": "Monochromatic light not split",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-physics-ch06-t01"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch06_015",
+      "unit": "icse-10-physics-ch06",
+      "language": "en",
+      "type": "short",
+      "stem_md": "A glass has refractive index 1.513 for red light and 1.532 for violet light. (a) Find the speed of red light in it. (b) Find the speed of violet light in it. (c) Which colour is deviated more by a prism made of this glass? Give a reason. (c = 3.0 × 10⁸ m/s)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) $\\dfrac{3.0 \\times 10^{8}}{1.513} \\approx 1.98 \\times 10^{8}$ m/s. (b) $\\dfrac{3.0 \\times 10^{8}}{1.532} \\approx 1.96 \\times 10^{8}$ m/s. (c) Violet: it travels more slowly in the glass (larger refractive index), so it is bent more."
+      },
+      "solution_md": "1.98 and 1.96 × 10⁸ m/s; violet.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch06-t01"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch06_016",
+      "unit": "icse-10-physics-ch06",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which arrangement of colours is in order of increasing wavelength?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Blue, green, yellow, red"
+        },
+        {
+          "id": "b",
+          "text_md": "Red, yellow, green, blue"
+        },
+        {
+          "id": "c",
+          "text_md": "Green, blue, yellow, red"
+        },
+        {
+          "id": "d",
+          "text_md": "Yellow, red, blue, green"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Wavelength increases from violet towards red — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-physics-ch06-t01",
+        "icse-10-physics-ch06-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch06_017",
+      "unit": "icse-10-physics-ch06",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A microwave oven heats food with waves of frequency 2.45 × 10⁹ Hz. The wavelength of these waves is about:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "1.22 cm"
+        },
+        {
+          "id": "b",
+          "text_md": "122 cm"
+        },
+        {
+          "id": "c",
+          "text_md": "0.82 cm"
+        },
+        {
+          "id": "d",
+          "text_md": "12.2 cm"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "$\\lambda = \\dfrac{c}{f} = \\dfrac{3.0 \\times 10^{8}}{2.45 \\times 10^{9}} = 0.122$ m $\\approx 12.2$ cm — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch06-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch06_018",
+      "unit": "icse-10-physics-ch06",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which arrangement of radiations is in order of increasing wavelength?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Ultraviolet, X-rays, microwaves, infrared"
+        },
+        {
+          "id": "b",
+          "text_md": "Microwaves, infrared, ultraviolet, X-rays"
+        },
+        {
+          "id": "c",
+          "text_md": "X-rays, infrared, ultraviolet, microwaves"
+        },
+        {
+          "id": "d",
+          "text_md": "X-rays, ultraviolet, infrared, microwaves"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Gamma, X-rays, UV, visible, IR, microwaves, radio — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-physics-ch06-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch06_019",
+      "unit": "icse-10-physics-ch06",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which property is shared by gamma rays, visible light and radio waves?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "They all have the same wavelength"
+        },
+        {
+          "id": "b",
+          "text_md": "They are all deflected by a magnetic field"
+        },
+        {
+          "id": "c",
+          "text_md": "They all travel through vacuum at 3 × 10⁸ m/s"
+        },
+        {
+          "id": "d",
+          "text_md": "They all need a material medium to travel"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "All EM waves have the same speed in vacuum — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-physics-ch06-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch06_020",
+      "unit": "icse-10-physics-ch06",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Of the following radiations, the one with the shortest wavelength is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "X-rays"
+        },
+        {
+          "id": "b",
+          "text_md": "gamma rays"
+        },
+        {
+          "id": "c",
+          "text_md": "ultraviolet rays"
+        },
+        {
+          "id": "d",
+          "text_md": "microwaves"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Gamma rays lie at the short-wavelength end of the EM spectrum — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-physics-ch06-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch06_021",
+      "unit": "icse-10-physics-ch06",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A radiation has a wavelength slightly longer than that of red light. It is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "ultraviolet"
+        },
+        {
+          "id": "b",
+          "text_md": "X-rays"
+        },
+        {
+          "id": "c",
+          "text_md": "infrared"
+        },
+        {
+          "id": "d",
+          "text_md": "gamma rays"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Just beyond the red end lies infrared — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-physics-ch06-t02",
+        "icse-10-physics-ch06-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch06_022",
+      "unit": "icse-10-physics-ch06",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? Electromagnetic waves are not deflected by electric or magnetic fields.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "t"
+        ]
+      },
+      "solution_md": "True: they carry no charge.",
+      "marking_scheme": [
+        {
+          "step": "True",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-physics-ch06-t02"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch06_023",
+      "unit": "icse-10-physics-ch06",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? Like sound, electromagnetic waves need a material medium in which to travel.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "f"
+        ]
+      },
+      "solution_md": "False: they travel through vacuum, as sunlight does through space.",
+      "marking_scheme": [
+        {
+          "step": "False, with the correction",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-physics-ch06-t02"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch06_024",
+      "unit": "icse-10-physics-ch06",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "Electromagnetic waves are ___ waves: their electric and magnetic fields vary at right angles to the direction of travel.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "transverse"
+            ]
+          }
+        ]
+      },
+      "solution_md": "**Transverse**.",
+      "marking_scheme": [
+        {
+          "step": "Blank 1: \"transverse\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-physics-ch06-t02"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch06_025",
+      "unit": "icse-10-physics-ch06",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "Of the seven colours of the visible spectrum, the one with the longest wavelength is ___.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "red"
+            ]
+          }
+        ]
+      },
+      "solution_md": "**Red**.",
+      "marking_scheme": [
+        {
+          "step": "Blank 1: \"red\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-physics-ch06-t01",
+        "icse-10-physics-ch06-t02"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch06_026",
+      "unit": "icse-10-physics-ch06",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Radio waves from a broadcasting tower and X-rays from a hospital machine travel at the same speed in vacuum.\n\n**Reason (R):** Both are electromagnetic waves.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Both are true, and R explains A — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-physics-ch06-t02"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch06_027",
+      "unit": "icse-10-physics-ch06",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** X-rays have longer wavelengths than ultraviolet rays.\n\n**Reason (R):** X-rays are produced when fast-moving electrons strike a metal target.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "A is false — X-rays have shorter wavelengths than UV; R is true — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-physics-ch06-t02"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch06_028",
+      "unit": "icse-10-physics-ch06",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "A long-wave radio transmitter sends out waves of wavelength 1500 m. Find their frequency in kHz.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 200,
+        "tolerance": 0.01,
+        "unit": "kHz"
+      },
+      "solution_md": "$f = \\dfrac{c}{\\lambda} = \\dfrac{3.0 \\times 10^{8}}{1500} = 200000$ Hz $= 200$ kHz.",
+      "marking_scheme": [
+        {
+          "step": "200 kHz",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch06-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch06_029",
+      "unit": "icse-10-physics-ch06",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "A mobile phone tower transmits at a frequency of 1.8 GHz. Find the wavelength of its waves in cm, to three significant figures.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 16.7,
+        "tolerance": 0.1,
+        "unit": "cm"
+      },
+      "solution_md": "$\\lambda = \\dfrac{3.0 \\times 10^{8}}{1.8 \\times 10^{9}} = 0.1667$ m, that is $0.1667 \\times 100 = 16.7$ cm.",
+      "marking_scheme": [
+        {
+          "step": "16.7 cm",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch06-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch06_030",
+      "unit": "icse-10-physics-ch06",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "X-rays used to study crystals have a wavelength of 1.0 × 10⁻¹⁰ m. Find their frequency in units of 10¹⁸ Hz.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 3,
+        "tolerance": 0.01,
+        "unit": "× 10¹⁸ Hz"
+      },
+      "solution_md": "$f = \\dfrac{3.0 \\times 10^{8}}{1.0 \\times 10^{-10}} = 3.0 \\times 10^{18}$ Hz, so in units of $10^{18}$ Hz the frequency is $\\dfrac{3.0 \\times 10^{18}}{10^{18}} = 3$.",
+      "marking_scheme": [
+        {
+          "step": "3.0",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch06-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch06_031",
+      "unit": "icse-10-physics-ch06",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Name the region of the electromagnetic spectrum that lies between visible light and microwaves.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Infrared."
+      },
+      "solution_md": "Infrared.",
+      "marking_scheme": [
+        {
+          "step": "Infrared",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-physics-ch06-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch06_032",
+      "unit": "icse-10-physics-ch06",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Gamma rays from a radioactive source and radio waves from an FM station have very different effects. State four properties that they share.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Both are transverse electromagnetic waves; both travel through vacuum at 3 × 10⁸ m/s; both obey c = f λ; both are undeflected by electric and magnetic fields (and both can be reflected and refracted, carrying energy)."
+      },
+      "solution_md": "Any four common properties.",
+      "marking_scheme": [
+        {
+          "step": "Any two properties",
+          "marks": 1
+        },
+        {
+          "step": "Two more properties",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-physics-ch06-t02"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch06_033",
+      "unit": "icse-10-physics-ch06",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Arrange radio waves, gamma rays, visible light and microwaves in order of decreasing frequency, and name the one whose wavelength is longest.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Gamma rays, visible light, microwaves, radio waves (decreasing frequency). Radio waves have the longest wavelength."
+      },
+      "solution_md": "γ, visible, micro, radio; radio.",
+      "marking_scheme": [
+        {
+          "step": "Order",
+          "marks": 1
+        },
+        {
+          "step": "Longest wavelength",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch06-t02"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch06_034",
+      "unit": "icse-10-physics-ch06",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A thermopile joined to a sensitive galvanometer is moved along a spectrum of sunlight. The galvanometer shows its largest deflection just beyond the red end. This shows that:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "ultraviolet radiation lies beyond red"
+        },
+        {
+          "id": "b",
+          "text_md": "red light has the strongest chemical effect"
+        },
+        {
+          "id": "c",
+          "text_md": "no radiation reaches beyond the red end"
+        },
+        {
+          "id": "d",
+          "text_md": "invisible infrared radiation with a strong heating effect lies beyond red"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "A thermopile detects radiation by its heating effect; the region beyond red is infrared — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch06-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch06_035",
+      "unit": "icse-10-physics-ch06",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A strip of paper painted with a fluorescent dye is moved along a solar spectrum formed by a quartz prism. It glows brightly just beyond the violet end because there it receives:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "infrared radiation"
+        },
+        {
+          "id": "b",
+          "text_md": "red light"
+        },
+        {
+          "id": "c",
+          "text_md": "ultraviolet radiation"
+        },
+        {
+          "id": "d",
+          "text_md": "microwaves"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Ultraviolet causes fluorescence — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch06-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch06_036",
+      "unit": "icse-10-physics-ch06",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Prisms and lenses for studying ultraviolet radiation are made of quartz, not ordinary glass, because ordinary glass:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "reflects all ultraviolet radiation"
+        },
+        {
+          "id": "b",
+          "text_md": "absorbs ultraviolet radiation strongly"
+        },
+        {
+          "id": "c",
+          "text_md": "turns ultraviolet into infrared"
+        },
+        {
+          "id": "d",
+          "text_md": "cannot be shaped into a prism"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Glass absorbs UV, while quartz transmits it — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-physics-ch06-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch06_037",
+      "unit": "icse-10-physics-ch06",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Satellite and aerial photographs of hazy areas are often taken with infrared-sensitive cameras because infrared:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "is scattered more by haze, making objects brighter"
+        },
+        {
+          "id": "b",
+          "text_md": "travels faster than visible light through air"
+        },
+        {
+          "id": "c",
+          "text_md": "is not absorbed by anything"
+        },
+        {
+          "id": "d",
+          "text_md": "is scattered much less by haze, owing to its longer wavelength"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Longer wavelength means much less scattering, so IR passes through haze — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch06-t03",
+        "icse-10-physics-ch06-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch06_038",
+      "unit": "icse-10-physics-ch06",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A bank cashier holds a ₹500 note under a special lamp, and a hidden strip on it glows. The lamp gives out:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "infrared radiation, which heats the ink"
+        },
+        {
+          "id": "b",
+          "text_md": "ultraviolet radiation, which makes the special ink fluoresce"
+        },
+        {
+          "id": "c",
+          "text_md": "X-rays, which pass through the paper"
+        },
+        {
+          "id": "d",
+          "text_md": "microwaves, which make the ink vibrate"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Security inks fluoresce under UV — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch06-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch06_039",
+      "unit": "icse-10-physics-ch06",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which of these is the strongest source of infrared radiation in a kitchen?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "A glass of cold water"
+        },
+        {
+          "id": "b",
+          "text_md": "A hot iron griddle (tawa) on the stove"
+        },
+        {
+          "id": "c",
+          "text_md": "A steel plate at room temperature"
+        },
+        {
+          "id": "d",
+          "text_md": "A sheet of white paper"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Hot bodies are strong emitters of infrared — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch06-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch06_040",
+      "unit": "icse-10-physics-ch06",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? Infrared radiation can be detected with a thermometer whose bulb has been blackened.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "t"
+        ]
+      },
+      "solution_md": "True: the blackened bulb absorbs the radiation and warms up.",
+      "marking_scheme": [
+        {
+          "step": "True",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-physics-ch06-t03"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch06_041",
+      "unit": "icse-10-physics-ch06",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? Ultraviolet radiation passes easily through ordinary window glass.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "f"
+        ]
+      },
+      "solution_md": "False: ordinary glass absorbs most ultraviolet radiation.",
+      "marking_scheme": [
+        {
+          "step": "False, with the correction",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-physics-ch06-t03"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch06_042",
+      "unit": "icse-10-physics-ch06",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "An instrument that detects infrared radiation by its heating effect and produces an electric current is called a ___.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "thermopile"
+            ]
+          }
+        ]
+      },
+      "solution_md": "**Thermopile**.",
+      "marking_scheme": [
+        {
+          "step": "Blank 1: \"thermopile\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-physics-ch06-t03"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch06_043",
+      "unit": "icse-10-physics-ch06",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "A little ultraviolet radiation falling on our skin helps the body to make vitamin ___.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "D"
+            ]
+          }
+        ]
+      },
+      "solution_md": "**D**.",
+      "marking_scheme": [
+        {
+          "step": "Blank 1: \"D\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-physics-ch06-t03"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch06_044",
+      "unit": "icse-10-physics-ch06",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Life on land would be harmed far more by sunlight if the stratosphere lost its ozone.\n\n**Reason (R):** Ozone absorbs most of the Sun’s ultraviolet radiation before it reaches the ground.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Both are true, and R explains A — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-physics-ch06-t03"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch06_045",
+      "unit": "icse-10-physics-ch06",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Infrared radiation produces a heating effect when absorbed by the skin.\n\n**Reason (R):** Infrared radiation has a shorter wavelength than visible light.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "A is true; R is false — infrared has a longer wavelength than visible light — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-physics-ch06-t03"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch06_046",
+      "unit": "icse-10-physics-ch06",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "A warm human body gives out infrared radiation most strongly at a wavelength of about 1.0 × 10⁻⁵ m. Find the corresponding frequency in units of 10¹³ Hz.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 2.9999999999999996,
+        "tolerance": 0.01,
+        "unit": "× 10¹³ Hz"
+      },
+      "solution_md": "$f = \\dfrac{3.0 \\times 10^{8}}{1.0 \\times 10^{-5}} = 3.0 \\times 10^{13}$ Hz, so in units of $10^{13}$ Hz the frequency is $\\dfrac{3.0 \\times 10^{13}}{10^{13}} = 3$.",
+      "marking_scheme": [
+        {
+          "step": "3.0",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch06-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch06_047",
+      "unit": "icse-10-physics-ch06",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "A “black light” lamp used in a museum emits ultraviolet radiation of wavelength 360 nm. Find its frequency in units of 10¹⁴ Hz, to three significant figures.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 8.33,
+        "tolerance": 0.01,
+        "unit": "× 10¹⁴ Hz"
+      },
+      "solution_md": "$\\lambda = 360 \\times 10^{-9} = 3.6 \\times 10^{-7}$ m; $f = \\dfrac{3.0 \\times 10^{8}}{3.6 \\times 10^{-7}} = 8.33 \\times 10^{14}$ Hz, so in units of $10^{14}$ Hz the frequency is $\\dfrac{3.0}{3.6} \\times 10 = 8.33$.",
+      "marking_scheme": [
+        {
+          "step": "8.33",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch06-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch06_048",
+      "unit": "icse-10-physics-ch06",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Name one artificial source of ultraviolet radiation used in a laboratory.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "A mercury vapour lamp in a quartz tube (or an electric arc)."
+      },
+      "solution_md": "Mercury vapour lamp.",
+      "marking_scheme": [
+        {
+          "step": "A correct source",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-physics-ch06-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch06_049",
+      "unit": "icse-10-physics-ch06",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Give two properties and two uses of infrared radiation.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Properties: it has a strong heating effect; it is scattered much less than visible light by haze and fog (also absorbed by water vapour and carbon dioxide). Uses: remote controls for TVs; night-vision and thermal cameras (also physiotherapy lamps, drying paint)."
+      },
+      "solution_md": "Two properties; two uses.",
+      "marking_scheme": [
+        {
+          "step": "Two properties",
+          "marks": 1
+        },
+        {
+          "step": "Two uses",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-physics-ch06-t03"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch06_050",
+      "unit": "icse-10-physics-ch06",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Give two properties and two uses of ultraviolet radiation.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Properties: it causes fluorescence; it kills germs (also affects photographic film and is absorbed by ordinary glass). Uses: sterilising drinking water and surgical instruments; detecting forged notes and documents (also helping make vitamin D)."
+      },
+      "solution_md": "Two properties; two uses.",
+      "marking_scheme": [
+        {
+          "step": "Two properties",
+          "marks": 1
+        },
+        {
+          "step": "Two uses",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-physics-ch06-t03"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch06_051",
+      "unit": "icse-10-physics-ch06",
+      "language": "en",
+      "type": "short",
+      "stem_md": "A road-side welder works without eye protection. (a) Which invisible radiation from the welding arc can harm his eyes? (b) Why would ordinary glass goggles help him, even though they are clear?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Ultraviolet radiation, which is given out strongly by an electric arc. (b) Ordinary glass absorbs most ultraviolet radiation while letting visible light through, so it shields the eyes yet he can still see."
+      },
+      "solution_md": "UV; glass absorbs UV.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 3,
+      "competency": "evaluation",
+      "bloom": "evaluate",
+      "topic_ids": [
+        "icse-10-physics-ch06-t03"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch06_052",
+      "unit": "icse-10-physics-ch06",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Compare infrared and ultraviolet radiation by stating, for each: (a) its position relative to the visible spectrum, (b) one source, and (c) one way of detecting it.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Infrared lies beyond the red end (longer wavelength); ultraviolet lies beyond the violet end (shorter wavelength). (b) Infrared: any hot body such as a heater coil; ultraviolet: the Sun or a mercury vapour lamp. (c) Infrared: a thermopile or blackened-bulb thermometer; ultraviolet: fluorescence of zinc sulphide or a photographic film."
+      },
+      "solution_md": "Positions; sources; detectors.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 2,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-physics-ch06-t03"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch06_053",
+      "unit": "icse-10-physics-ch06",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "On a clear afternoon the sky overhead looks deep blue mainly because:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "the sea reflects its colour onto the sky"
+        },
+        {
+          "id": "b",
+          "text_md": "air molecules scatter short-wavelength blue light much more than red light"
+        },
+        {
+          "id": "c",
+          "text_md": "air molecules scatter red light most strongly"
+        },
+        {
+          "id": "d",
+          "text_md": "blue light travels faster than other colours in air"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Scattering by tiny molecules varies as 1/λ⁴, so blue is scattered most — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-physics-ch06-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch06_054",
+      "unit": "icse-10-physics-ch06",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Seen from a hill at dawn, the rising Sun looks reddish because its light:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "is reflected from the red soil of the hills"
+        },
+        {
+          "id": "b",
+          "text_md": "travels a much longer path through the air, so most of the blue is scattered away before reaching us"
+        },
+        {
+          "id": "c",
+          "text_md": "travels a shorter path through the air at dawn"
+        },
+        {
+          "id": "d",
+          "text_md": "contains no blue light early in the morning"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Long path → blue removed by scattering → red and orange reach the eye — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch06-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch06_055",
+      "unit": "icse-10-physics-ch06",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Railway signals and the brake lights of vehicles are red because red light:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "is scattered most, so it spreads over a wide area"
+        },
+        {
+          "id": "b",
+          "text_md": "has the highest frequency of visible light"
+        },
+        {
+          "id": "c",
+          "text_md": "is scattered least by air, fog and dust, so it can be seen from far away"
+        },
+        {
+          "id": "d",
+          "text_md": "travels faster in air than other colours"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Red has the longest wavelength and is scattered least — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch06-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch06_056",
+      "unit": "icse-10-physics-ch06",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Clouds look white, not blue, because the water droplets in them:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "are large compared with the wavelength of light and scatter all colours almost equally"
+        },
+        {
+          "id": "b",
+          "text_md": "scatter only red light"
+        },
+        {
+          "id": "c",
+          "text_md": "absorb all colours except white"
+        },
+        {
+          "id": "d",
+          "text_md": "are smaller than air molecules"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Large particles scatter all wavelengths about equally, so the scattered light is white — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-physics-ch06-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch06_057",
+      "unit": "icse-10-physics-ch06",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "An astronaut standing on the Moon in daytime sees the sky as:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "black, because there is no atmosphere to scatter sunlight"
+        },
+        {
+          "id": "b",
+          "text_md": "blue, as on the Earth"
+        },
+        {
+          "id": "c",
+          "text_md": "red, because of long paths through air"
+        },
+        {
+          "id": "d",
+          "text_md": "white, because of large dust particles"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "No atmosphere means no scattered skylight — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch06-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch06_058",
+      "unit": "icse-10-physics-ch06",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? For particles much smaller than the wavelength, the intensity of scattered light is inversely proportional to the fourth power of the wavelength.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "t"
+        ]
+      },
+      "solution_md": "True: this is Rayleigh’s law of scattering.",
+      "marking_scheme": [
+        {
+          "step": "True",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-physics-ch06-t04"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch06_059",
+      "unit": "icse-10-physics-ch06",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "Air molecules scatter light of shorter wavelength ___ strongly than light of longer wavelength.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "more"
+            ]
+          }
+        ]
+      },
+      "solution_md": "**More**.",
+      "marking_scheme": [
+        {
+          "step": "Blank 1: \"more\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-physics-ch06-t04"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch06_060",
+      "unit": "icse-10-physics-ch06",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** The Sun looks red at sunset.\n\n**Reason (R):** Red light is scattered most strongly by the air.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "A is true; R is false — red is scattered least, so it survives the long path — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-physics-ch06-t04"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch06_061",
+      "unit": "icse-10-physics-ch06",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** There is no blue sky above the surface of the Moon.\n\n**Reason (R):** The Moon has no atmosphere to scatter sunlight.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Both are true, and R explains A — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-physics-ch06-t04"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch06_062",
+      "unit": "icse-10-physics-ch06",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "Using the law that scattered intensity is proportional to 1/λ⁴, how many times more strongly is light of wavelength 400 nm scattered than light of wavelength 800 nm by air molecules?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 16,
+        "tolerance": 0,
+        "unit": null
+      },
+      "solution_md": "Ratio $= \\left(\\dfrac{800}{400}\\right)^{4} = 2^{4} = 16$.",
+      "marking_scheme": [
+        {
+          "step": "16",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch06-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch06_063",
+      "unit": "icse-10-physics-ch06",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "Compare the scattering of green light (λ = 500 nm) with that of red light (λ = 700 nm) by air molecules. Give the ratio of their scattered intensities, to three significant figures.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 3.84,
+        "tolerance": 0.01,
+        "unit": null
+      },
+      "solution_md": "Ratio $= \\left(\\dfrac{700}{500}\\right)^{4} = 1.4^{4} = 3.8416$, about 3.84.",
+      "marking_scheme": [
+        {
+          "step": "3.84",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch06-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch06_064",
+      "unit": "icse-10-physics-ch06",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Why are the tail lamps of trucks red?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Red light is scattered least by fog, dust and air, so it is visible from the greatest distance."
+      },
+      "solution_md": "Least scattered.",
+      "marking_scheme": [
+        {
+          "step": "Least scattered, seen from far",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch06-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch06_065",
+      "unit": "icse-10-physics-ch06",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Watching the Sun from the beach at Puri, Kavya notices that it looks orange-red just after sunrise but nearly white at noon. Explain both observations.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Just after sunrise the Sun is near the horizon, so its light passes through a long stretch of air; most of the blue and violet is scattered out of the beam on the way, and mainly red and orange reach her. At noon the light crosses only a short thickness of air, little of it is scattered, and all colours reach her, so the Sun looks white."
+      },
+      "solution_md": "Long path at sunrise; short path at noon.",
+      "marking_scheme": [
+        {
+          "step": "Sunrise: long path, blue scattered away",
+          "marks": 1
+        },
+        {
+          "step": "Noon: short path, all colours reach the eye",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch06-t04"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch06_066",
+      "unit": "icse-10-physics-ch06",
+      "language": "en",
+      "type": "short",
+      "stem_md": "A high-altitude balloonist notices that the sky becomes darker and darker blue, and finally almost black, as the balloon rises. Explain why.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "The blue of the sky is light scattered by air molecules. As the balloon rises, there is less and less air above it to scatter sunlight towards the balloonist, so less scattered blue light reaches him and the sky looks darker, becoming nearly black where the air is very thin."
+      },
+      "solution_md": "Less air above, less scattering.",
+      "marking_scheme": [
+        {
+          "step": "Sky colour due to scattering by air",
+          "marks": 1
+        },
+        {
+          "step": "Less air above, so less scattered light",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-physics-ch06-t04"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch06_067",
+      "unit": "icse-10-physics-ch06",
+      "language": "en",
+      "type": "match",
+      "stem_md": "Pair each kind of radiation in Column A with a job it does in Column B.",
+      "options": [
+        {
+          "id": "1",
+          "text_md": "Gamma rays"
+        },
+        {
+          "id": "2",
+          "text_md": "X-rays"
+        },
+        {
+          "id": "3",
+          "text_md": "Microwaves"
+        },
+        {
+          "id": "4",
+          "text_md": "Radio waves"
+        }
+      ],
+      "match_right": [
+        {
+          "id": "p",
+          "text_md": "Broadcasting"
+        },
+        {
+          "id": "q",
+          "text_md": "Radar and cooking"
+        },
+        {
+          "id": "r",
+          "text_md": "Killing cancer cells"
+        },
+        {
+          "id": "s",
+          "text_md": "Photographing broken bones"
+        }
+      ],
+      "answer": {
+        "pairs": [
+          {
+            "left_id": "1",
+            "right_id": "r"
+          },
+          {
+            "left_id": "2",
+            "right_id": "s"
+          },
+          {
+            "left_id": "3",
+            "right_id": "q"
+          },
+          {
+            "left_id": "4",
+            "right_id": "p"
+          }
+        ]
+      },
+      "solution_md": "Gamma → cancer treatment; X-rays → bones; microwaves → radar and cooking; radio → broadcasting.",
+      "marking_scheme": [
+        {
+          "step": "1 → r",
+          "marks": 0.5
+        },
+        {
+          "step": "2 → s",
+          "marks": 0.5
+        },
+        {
+          "step": "3 → q",
+          "marks": 0.5
+        },
+        {
+          "step": "4 → p",
+          "marks": 0.5
+        }
+      ],
+      "marks": 2,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-physics-ch06-t02"
+      ],
+      "expected_time_sec": 160,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch06_068",
+      "unit": "icse-10-physics-ch06",
+      "language": "en",
+      "type": "match",
+      "stem_md": "Match each description in Column A with the radiation in Column B.",
+      "options": [
+        {
+          "id": "1",
+          "text_md": "Detected with a blackened-bulb thermometer"
+        },
+        {
+          "id": "2",
+          "text_md": "Makes fluorescent paint glow"
+        },
+        {
+          "id": "3",
+          "text_md": "Detected by the human eye"
+        },
+        {
+          "id": "4",
+          "text_md": "Given out by radioactive nuclei"
+        }
+      ],
+      "match_right": [
+        {
+          "id": "p",
+          "text_md": "Visible light"
+        },
+        {
+          "id": "q",
+          "text_md": "Infrared"
+        },
+        {
+          "id": "r",
+          "text_md": "Gamma rays"
+        },
+        {
+          "id": "s",
+          "text_md": "Ultraviolet"
+        }
+      ],
+      "answer": {
+        "pairs": [
+          {
+            "left_id": "1",
+            "right_id": "q"
+          },
+          {
+            "left_id": "2",
+            "right_id": "s"
+          },
+          {
+            "left_id": "3",
+            "right_id": "p"
+          },
+          {
+            "left_id": "4",
+            "right_id": "r"
+          }
+        ]
+      },
+      "solution_md": "Thermometer → infrared; fluorescent paint → ultraviolet; eye → visible light; radioactive nuclei → gamma rays.",
+      "marking_scheme": [
+        {
+          "step": "1 → q",
+          "marks": 0.5
+        },
+        {
+          "step": "2 → s",
+          "marks": 0.5
+        },
+        {
+          "step": "3 → p",
+          "marks": 0.5
+        },
+        {
+          "step": "4 → r",
+          "marks": 0.5
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-physics-ch06-t02",
+        "icse-10-physics-ch06-t03"
+      ],
+      "expected_time_sec": 160,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch06_069",
+      "unit": "icse-10-physics-ch06",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) What is meant by dispersion of light? State its cause. [3]\n\n(b) Describe, as you would draw it, the passage of a narrow beam of white light through a glass prism onto a screen. Which colour is deviated (i) the most and (ii) the least? [3]\n\n(c) (i) Yellow light has a refractive index of 1.62 in a flint glass. Find its speed in the glass. (ii) Is the refractive index of this glass for blue light more or less than 1.62? (iii) How can the spectrum be recombined into white light? (c = 3.0 × 10⁸ m/s) [4]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Dispersion is the splitting of white light into its constituent colours when it passes through a prism. Cause: the refractive index of glass is different for different colours (wavelengths), so each colour is deviated by a different amount.\n\n(b) The beam bends towards the base at both faces and spreads into a band of colours, VIBGYOR, with red nearest the apex side and violet nearest the base. (i) Violet. (ii) Red.\n\n(c) (i) $v = \\dfrac{3.0 \\times 10^{8}}{1.62} = 1.85 \\times 10^{8}$ m/s. (ii) More: blue has a shorter wavelength than yellow. (iii) Place a second identical prism, inverted, close to the first; it reverses the deviations and the colours mix to white."
+      },
+      "solution_md": "Definition and cause; diagram; speed and recombination.",
+      "marking_scheme": [
+        {
+          "step": "(a) definition",
+          "marks": 1
+        },
+        {
+          "step": "(a) cause",
+          "marks": 2
+        },
+        {
+          "step": "(b) diagram",
+          "marks": 1
+        },
+        {
+          "step": "(b)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(b)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(i)",
+          "marks": 2
+        },
+        {
+          "step": "(c)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(iii)",
+          "marks": 1
+        }
+      ],
+      "marks": 10,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-physics-ch06-t01"
+      ],
+      "expected_time_sec": 1080,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch06_070",
+      "unit": "icse-10-physics-ch06",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Name the regions of the electromagnetic spectrum in order of increasing wavelength. [3]\n\n(b) State three properties common to all electromagnetic waves. [3]\n\n(c) (i) An FM radio wave has a wavelength of 3.0 m. Find its frequency. (ii) A radiation has a frequency of 6.0 × 10¹⁴ Hz. Find its wavelength and name the region. (iii) Which of the two has the greater frequency? (c = 3.0 × 10⁸ m/s) [4]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Gamma rays, X-rays, ultraviolet, visible light, infrared, microwaves, radio waves.\n\n(b) They are transverse waves of electric and magnetic fields; they travel through vacuum at $3 \\times 10^{8}$ m/s; they are not deflected by electric or magnetic fields (also obey $c = f\\lambda$, can be reflected and refracted).\n\n(c) (i) $f = \\dfrac{3.0 \\times 10^{8}}{3.0} = 100000000$ Hz $= 100$ MHz. (ii) $\\lambda = \\dfrac{3.0 \\times 10^{8}}{6.0 \\times 10^{14}} = 5.0 \\times 10^{-7}$ m (500 nm): visible light (green). (iii) The visible radiation."
+      },
+      "solution_md": "Order; properties; calculations.",
+      "marking_scheme": [
+        {
+          "step": "(a) correct order",
+          "marks": 3
+        },
+        {
+          "step": "(b) three properties",
+          "marks": 3
+        },
+        {
+          "step": "(c)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(ii) wavelength",
+          "marks": 1
+        },
+        {
+          "step": "(c)(ii) region",
+          "marks": 1
+        },
+        {
+          "step": "(c)(iii)",
+          "marks": 1
+        }
+      ],
+      "marks": 10,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch06-t02"
+      ],
+      "expected_time_sec": 1080,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch06_071",
+      "unit": "icse-10-physics-ch06",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) State two properties of infrared radiation and name one instrument used to detect it. [3]\n\n(b) State two properties of ultraviolet radiation and name one source of it. [3]\n\n(c) For each of the following, name the radiation used and the property on which the use depends: (i) a TV remote control, (ii) a water purifier, (iii) a thermal camera used to find people trapped under rubble, (iv) checking whether a passport is forged. [4]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Infrared has a strong heating effect and is scattered less by haze than visible light (it is also absorbed by water vapour). Detector: a thermopile (or blackened-bulb thermometer).\n\n(b) Ultraviolet causes fluorescence and kills germs (it is also absorbed by ordinary glass). Source: the Sun, an electric arc or a mercury vapour lamp.\n\n(c) (i) Infrared: an invisible signal picked up by a sensor. (ii) Ultraviolet: it kills germs. (iii) Infrared: warm bodies give out more infrared than cooler surroundings. (iv) Ultraviolet: special inks fluoresce."
+      },
+      "solution_md": "IR properties and detector; UV properties and source; four uses.",
+      "marking_scheme": [
+        {
+          "step": "(a) two properties",
+          "marks": 2
+        },
+        {
+          "step": "(a) detector",
+          "marks": 1
+        },
+        {
+          "step": "(b) two properties",
+          "marks": 2
+        },
+        {
+          "step": "(b) source",
+          "marks": 1
+        },
+        {
+          "step": "(c)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(iii)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(iv)",
+          "marks": 1
+        }
+      ],
+      "marks": 10,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch06-t03"
+      ],
+      "expected_time_sec": 1080,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch06_072",
+      "unit": "icse-10-physics-ch06",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) What is scattering of light? How does the intensity of scattered light depend on wavelength, for very small particles? [3]\n\n(b) Explain (i) why the clear sky looks blue and (ii) why the Sun looks red at sunrise. [3]\n\n(c) (i) How many times more strongly is light of wavelength 400 nm scattered than light of 600 nm? (ii) Why are clouds white? (iii) Why is the sky black for an astronaut in space? [4]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Scattering is the absorption of light by small particles and its re-emission in all directions. For particles much smaller than the wavelength, the intensity of scattered light is inversely proportional to the fourth power of the wavelength.\n\n(b) (i) Air molecules scatter short wavelengths (blue) much more than long ones, so light reaching us from all over the sky is mainly blue. (ii) At sunrise sunlight travels a long path through the air; blue is scattered out on the way and mainly red reaches the eye.\n\n(c) (i) $\\left(\\dfrac{600}{400}\\right)^{4} = 1.5^{4} = 5.063$, about 5 times. (ii) Cloud droplets are large compared with the wavelength and scatter all colours about equally. (iii) There is no air in space to scatter sunlight towards the eye."
+      },
+      "solution_md": "Definition and law; blue sky and red sunrise; ratio and two effects.",
+      "marking_scheme": [
+        {
+          "step": "(a) definition",
+          "marks": 1
+        },
+        {
+          "step": "(a) dependence on wavelength",
+          "marks": 2
+        },
+        {
+          "step": "(b)(i)",
+          "marks": 2
+        },
+        {
+          "step": "(b)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(i)",
+          "marks": 2
+        },
+        {
+          "step": "(c)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(iii)",
+          "marks": 1
+        }
+      ],
+      "marks": 10,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch06-t04"
+      ],
+      "expected_time_sec": 1080,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch06_073",
+      "unit": "icse-10-physics-ch06",
+      "language": "en",
+      "type": "long",
+      "stem_md": "Sunlight is passed through a quartz prism to form a spectrum on a long white card. A thermometer with a blackened bulb and a strip of fluorescent paper are moved along the card, well beyond both ends of the visible band.\n\n(a) Where does the thermometer show the greatest rise in temperature? Name the radiation and explain your answer. [3]\n\n(b) Where does the fluorescent paper glow? Name the radiation. Why is a quartz prism used instead of glass? [3]\n\n(c) (i) Radiation at point A has a wavelength of 900 nm and at point B of 300 nm. Find their frequencies. (ii) Which point lies beyond the red end? (iii) Predict what happens to the glow at B if a sheet of window glass is held in front of the card. (c = 3.0 × 10⁸ m/s) [4]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Just beyond the red end: infrared radiation falls there, and infrared has a strong heating effect, which the blackened bulb absorbs.\n\n(b) Just beyond the violet end: ultraviolet radiation, which causes fluorescence. Ordinary glass absorbs ultraviolet, but quartz transmits it, so with a glass prism the ultraviolet would not reach the card.\n\n(c) (i) $f_{A} = \\dfrac{3.0 \\times 10^{8}}{9.0 \\times 10^{-7}} = 3.33 \\times 10^{14}$ Hz; $f_{B} = \\dfrac{3.0 \\times 10^{8}}{3.0 \\times 10^{-7}} = 1.0 \\times 10^{15}$ Hz. (ii) A (900 nm, longer than red). (iii) The glow fades or stops, because the glass absorbs the ultraviolet."
+      },
+      "solution_md": "Infrared region; ultraviolet region and quartz; frequencies and prediction.",
+      "marking_scheme": [
+        {
+          "step": "(a) position",
+          "marks": 1
+        },
+        {
+          "step": "(a) radiation and reason",
+          "marks": 2
+        },
+        {
+          "step": "(b) position and radiation",
+          "marks": 2
+        },
+        {
+          "step": "(b) quartz",
+          "marks": 1
+        },
+        {
+          "step": "(c)(i)",
+          "marks": 2
+        },
+        {
+          "step": "(c)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(iii)",
+          "marks": 1
+        }
+      ],
+      "marks": 10,
+      "difficulty": 4,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-physics-ch06-t01",
+        "icse-10-physics-ch06-t03"
+      ],
+      "expected_time_sec": 1080,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    }
+  ],
+  "build": {
+    "run_id": null,
+    "checks": {
+      "katex_mhchem": "80 math strings parsed with KaTeX 0.19.0 + mhchem (throwOnError, strict \"error\"), 0 failures",
+      "svg_allowlist": "4 SVG visuals (4 distinct diagrams) checked with saxes against svg-allowlist.ts: elements, attributes, class pattern, fragment-only refs, no style, palette incl. named hues, viewBox, title, per-page unique ids — 0 failures",
+      "narration": "29 slides, 10–64 words (mean 47), no symbols, formulae or unit abbreviations",
+      "resolve": "15/15 scripted re-solve checks pass",
+      "physics_facts": "Dispersion traced colour by colour with flint-glass indices (violet deviated most, red least), the EM spectrum order and wavelength ranges on a log scale with f = c / lambda, infrared and ultraviolet sources, detectors, properties and uses (UV absorbed by glass, transmitted by quartz), and Rayleigh scattering proportional to 1 / lambda^4 for the blue sky and red sunrise, checked against the ICSE 2027 syllabus (Class X, section 2)",
+      "diagrams": "4 diagram self-checks (geometry computed in svgs.mjs): 0 failures",
+      "content_gate": "npm test -w @soyl/content-templates: all checks pass for this chapter",
+      "verifier_pass": "2026-11-01: every question and every internal-choice alternative re-solved from its stem by the author; every numerical computed and asserted by the build script — see README \"Verifier pass\"",
+      "pipeline_lint": "npm run content -- lint --exemplars: 0 errors, 0 warnings"
+    }
+  }
+}

@@ -1,0 +1,4646 @@
+{
+  "unit": "icse-10-physics-ch01",
+  "version": 1,
+  "academic_year": "2026-27",
+  "created_at": "2026-11-01T00:00:00+05:30",
+  "decks": [
+    {
+      "unit": "icse-10-physics-ch01",
+      "part": 1,
+      "version": 1,
+      "title": "Force — Part 1: Turning effect of a force",
+      "language": "en",
+      "goals": [
+        "Distinguish translational and rotational motion",
+        "Calculate the moment of a force in N m and in dyne cm",
+        "Explain why handles are placed far from the axis of rotation",
+        "Find the resultant moment of several forces with a sign convention"
+      ],
+      "slides": [
+        {
+          "id": "s01",
+          "layout": "title",
+          "heading": "Push, pull — or turn?",
+          "body_md": "Part 1 — a force can move a body along, or make it turn about a fixed point. The turning effect depends on where the force acts.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Everyday action",
+                "Effect of the force"
+              ],
+              "rows": [
+                [
+                  "Pushing a trolley",
+                  "Moves it along (translation)"
+                ],
+                [
+                  "Opening a door",
+                  "Turns it about the hinges (rotation)"
+                ],
+                [
+                  "Tightening a nut",
+                  "Turns it about its axis"
+                ],
+                [
+                  "A rolling ball",
+                  "Both translation and rotation"
+                ]
+              ]
+            },
+            "alt": "Table of everyday actions and whether the force translates or rotates the body"
+          },
+          "math": [],
+          "narration": "Namaste! When you push a trolley, it moves along the floor. When you push a door, it swings round its hinges. The same kind of push can move a body along or turn it, depending on how the body is held. In this part we learn how to measure the turning effect of a force.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s02",
+          "layout": "concept",
+          "heading": "Translational and rotational motion",
+          "body_md": "In **translational motion** every particle of the body moves through the same distance in the same direction (a car on a straight road). In **rotational motion** the body turns about a fixed axis, and each particle moves in a circle about that axis (a fan blade, a door). A force applied to a body **pivoted** at a point produces **rotation**; a force on a **free** body through its centre of gravity produces **translation**.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Motion",
+                "What happens",
+                "Example"
+              ],
+              "rows": [
+                [
+                  "Translational",
+                  "All points move the same distance in the same direction",
+                  "A lift going up"
+                ],
+                [
+                  "Rotational",
+                  "Body turns about a fixed axis",
+                  "A ceiling fan"
+                ],
+                [
+                  "Both",
+                  "Turns while moving along",
+                  "A rolling wheel"
+                ]
+              ]
+            },
+            "alt": "Table comparing translational and rotational motion with examples"
+          },
+          "math": [],
+          "narration": "In translational motion every part of the body moves the same distance in the same direction, like a lift rising. In rotational motion the body turns about a fixed line called the axis, and each part travels round a circle, like a ceiling fan. A wheel rolling along the road does both at once.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s03",
+          "layout": "diagram",
+          "heading": "Moment of a force",
+          "body_md": "The turning effect of a force is called its **moment** (or **torque**): $\\text{moment} = F \\times d$, where $d$ is the **perpendicular distance** from the axis of rotation to the line of action of the force. SI unit: **newton metre (N m)**; cgs unit: **dyne centimetre (dyne cm)**; $1\\ \\text{N m} = 10^{5}\\ \\text{dyne} \\times 10^{2}\\ \\text{cm} = 10^{7}\\ \\text{dyne cm}$. A larger moment comes from a **larger force** or a **larger perpendicular distance**.",
+          "bullets": [],
+          "visual": {
+            "kind": "svg",
+            "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 380 210\" role=\"img\" aria-label=\"A spanner turning a nut. A downward force F acts at the end of the horizontal handle. The perpendicular distance d from the centre of the nut to the line of action of the force is marked along the handle. The nut turns clockwise, and the moment equals F times d.\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>A spanner turning a nut. A downward force F acts at the end of the horizontal handle. The perpendicular distance d from the centre of the nut to the line of action of the force is marked along the handle. The nut turns clockwise, and the moment equals F times d.</title><circle cx=\"70\" cy=\"100\" r=\"18\" fill=\"var(--diagram-muted)\" stroke=\"currentColor\" stroke-width=\"1.5\" fill-opacity=\"0.3\"/><text x=\"70\" y=\"104\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">nut</text><rect x=\"84\" y=\"91\" width=\"226\" height=\"18\" rx=\"6\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\" fill-opacity=\"0.7\"/><line x1=\"300\" y1=\"30\" x2=\"300\" y2=\"82.4\" stroke=\"var(--diagram-red)\" stroke-width=\"2\"/><polygon points=\"300,88 297.1,81.6 302.9,81.6\" fill=\"var(--diagram-red)\" stroke=\"none\"/><text x=\"308\" y=\"50\" fill=\"var(--diagram-red)\" stroke=\"none\" font-size=\"13\" font-weight=\"bold\">F</text><line x1=\"70\" y1=\"130\" x2=\"300\" y2=\"130\" stroke=\"var(--diagram-accent)\" stroke-width=\"1\"/><line x1=\"70\" y1=\"124\" x2=\"70\" y2=\"136\" stroke=\"var(--diagram-accent)\" stroke-width=\"1\"/><line x1=\"300\" y1=\"124\" x2=\"300\" y2=\"136\" stroke=\"var(--diagram-accent)\" stroke-width=\"1\"/><text x=\"185\" y=\"146\" fill=\"var(--diagram-accent)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\">perpendicular distance d</text><path d=\"M100 60 A 40 40 0 0 1 110 96\" fill=\"none\" stroke=\"var(--diagram-green)\" stroke-width=\"1.5\"/><polygon points=\"110,96 107.1,89.6 112.9,89.6\" fill=\"var(--diagram-green)\" stroke=\"none\"/><text x=\"120\" y=\"56\" fill=\"var(--diagram-green)\" stroke=\"none\" font-size=\"10\">clockwise turning</text><text x=\"240\" y=\"190\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\">moment = F × d</text></svg>",
+            "alt": "A spanner on a nut with a downward force at the end of the handle and the perpendicular distance from the nut to the line of action marked"
+          },
+          "math": [],
+          "narration": "The turning effect of a force is called its moment, or torque. It equals the force multiplied by the perpendicular distance from the axis to the line along which the force acts. In SI units it is measured in newton metres; in the older system, in dyne centimetres. One newton metre equals ten million dyne centimetres.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s04",
+          "layout": "example",
+          "heading": "Worked example: tightening a nut",
+          "body_md": "**Problem.** A mechanic applies a force of 50 N at right angles to a spanner, 0.25 m from the centre of a nut. (a) Find the moment. (b) What force would give the same moment at 0.10 m? (c) Express the moment in dyne cm.\n\n**(a)** $\\text{moment} = F \\times d = 50 \\times 0.25 = 12.5\\ \\text{N m}$.\n\n**(b)** $F = 12.5 \\div 0.10 = 125\\ \\text{N}$.\n\n**(c)** $12.5 \\times 10^{7} = 1.25 \\times 10^{8}\\ \\text{dyne cm}$.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Quantity",
+                "Value"
+              ],
+              "rows": [
+                [
+                  "Force",
+                  "50 N"
+                ],
+                [
+                  "Perpendicular distance",
+                  "0.25 m"
+                ],
+                [
+                  "Moment",
+                  "12.5 N m"
+                ],
+                [
+                  "Force needed at 0.10 m",
+                  "125 N"
+                ]
+              ]
+            },
+            "alt": "Table of the values in the spanner example"
+          },
+          "math": [],
+          "narration": "The moment is the force times the perpendicular distance: fifty newtons times a quarter of a metre gives twelve and a half newton metres. Holding the spanner closer, at a tenth of a metre, you would need a hundred and twenty five newtons for the same turning effect. That is why long spanners make nuts easier to turn.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s05",
+          "layout": "check",
+          "heading": "Quick check: moment of a force",
+          "body_md": "Calculate or compare moments.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Moment equals force times perpendicular distance from the axis.",
+          "check_question_id": "q_icse10phy_ch01_001",
+          "audio": null
+        },
+        {
+          "id": "s06",
+          "layout": "concept",
+          "heading": "Why handles are far from the axis",
+          "body_md": "For the same moment, **force × distance** is fixed, so a **larger distance needs a smaller force**. That is why door handles are fixed near the edge **away from the hinges**, a spanner has a **long handle**, and the steering wheel of a bus is **large**. If the force passes **through the axis** (d = 0), it produces **no turning effect** at all, however large it is.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Device",
+                "How it gains a large moment"
+              ],
+              "rows": [
+                [
+                  "Door handle",
+                  "Placed far from the hinges"
+                ],
+                [
+                  "Spanner",
+                  "Long handle"
+                ],
+                [
+                  "Bus steering wheel",
+                  "Large radius"
+                ],
+                [
+                  "Hand flour mill (chakki)",
+                  "Handle near the rim"
+                ]
+              ]
+            },
+            "alt": "Table of devices that use a large perpendicular distance to gain turning effect"
+          },
+          "math": [],
+          "narration": "Because moment is force times distance, the same turning effect can come from a small force applied far from the axis. That is why door handles are put at the edge farthest from the hinges, spanners have long handles and buses have large steering wheels. A push through the hinge line, however hard, will never open the door.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s07",
+          "layout": "concept",
+          "heading": "Clockwise and anticlockwise moments",
+          "body_md": "A moment that turns a body **clockwise** is taken as **negative**, and one that turns it **anticlockwise** as **positive** (a common convention). When several forces act, the **resultant moment** is the algebraic sum: if anticlockwise and clockwise moments are unequal, the body turns in the sense of the larger one.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Force",
+                "Distance from pivot",
+                "Sense",
+                "Moment (N m)"
+              ],
+              "rows": [
+                [
+                  "6 N",
+                  "0.5 m",
+                  "Anticlockwise",
+                  "+3.0"
+                ],
+                [
+                  "4 N",
+                  "0.5 m",
+                  "Clockwise",
+                  "−2.0"
+                ],
+                [
+                  "Resultant",
+                  "",
+                  "Anticlockwise",
+                  "+1.0"
+                ]
+              ]
+            },
+            "alt": "Table showing two moments of opposite sense and their resultant"
+          },
+          "math": [],
+          "narration": "A moment can turn a body clockwise or anticlockwise. We give the two senses opposite signs, usually taking anticlockwise as positive and clockwise as negative. When several forces act, we add their moments with signs. The body turns in the direction of the larger total, and the size of the result tells us how strong the turning effect is.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s08",
+          "layout": "example",
+          "heading": "Worked example: a resultant moment",
+          "body_md": "**Problem.** A see-saw is pivoted at its centre. A boy pushes down with 300 N at 1.5 m to the left of the pivot; a girl pushes down with 250 N at 2.0 m to the right. Find the resultant moment and the direction of turning.\n\n**Anticlockwise (left side down):** $300 \\times 1.5 = 450\\ \\text{N m}$.\n\n**Clockwise (right side down):** $250 \\times 2.0 = 500\\ \\text{N m}$.\n\n**Resultant** $= 500 - 450 = 50\\ \\text{N m}$, **clockwise**: the girl’s side goes down.",
+          "bullets": [],
+          "visual": {
+            "kind": "flow",
+            "spec": {
+              "direction": "LR",
+              "nodes": [
+                {
+                  "id": "a",
+                  "label": "Anticlockwise 450 N m"
+                },
+                {
+                  "id": "b",
+                  "label": "Clockwise 500 N m"
+                },
+                {
+                  "id": "c",
+                  "label": "Resultant 50 N m clockwise"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "a",
+                  "to": "c"
+                },
+                {
+                  "from": "b",
+                  "to": "c"
+                }
+              ]
+            },
+            "alt": "Flow combining an anticlockwise and a clockwise moment into a resultant"
+          },
+          "math": [],
+          "narration": "Work out each moment. The boy gives four hundred and fifty newton metres anticlockwise. The girl, although she pushes with less force, sits farther out and gives five hundred newton metres clockwise. The difference, fifty newton metres, is clockwise, so the girl’s end of the see-saw goes down.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s09",
+          "layout": "check",
+          "heading": "Quick check: resultant moment",
+          "body_md": "Decide which way a body turns.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Add the moments in each sense and compare.",
+          "check_question_id": "q_icse10phy_ch01_012",
+          "audio": null
+        },
+        {
+          "id": "s10",
+          "layout": "concept",
+          "heading": "Couple: two equal and opposite forces",
+          "body_md": "Two **equal and opposite parallel forces** whose lines of action do not coincide form a **couple**. A couple produces **rotation only** (no translation). Its moment = **one force × perpendicular distance between the two forces** (the arm of the couple). Examples: turning a tap, a steering wheel with both hands, winding a key.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Example",
+                "Forces",
+                "Effect"
+              ],
+              "rows": [
+                [
+                  "Turning a water tap",
+                  "Finger and thumb push opposite ways",
+                  "Rotation only"
+                ],
+                [
+                  "Steering wheel",
+                  "Both hands, opposite directions",
+                  "Rotation only"
+                ],
+                [
+                  "Winding a clock key",
+                  "Opposite pushes on the key",
+                  "Rotation only"
+                ]
+              ]
+            },
+            "alt": "Table of everyday couples"
+          },
+          "math": [],
+          "narration": "Sometimes two equal forces act in opposite directions on either side of an axis. Such a pair is called a couple. Because the forces are equal and opposite, they cannot move the body along, but they turn it strongly. The moment of a couple equals one force times the perpendicular distance between them. Turning a tap uses a couple.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s11",
+          "layout": "check",
+          "heading": "Quick check: couples",
+          "body_md": "Recognise a couple and its effect.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Two equal and opposite parallel forces turn a body without moving it along.",
+          "check_question_id": "q_icse10phy_ch01_013",
+          "audio": null
+        },
+        {
+          "id": "s12",
+          "layout": "summary",
+          "heading": "Summary: Part 1",
+          "body_md": "",
+          "bullets": [
+            "Translational motion: every point moves the same way; rotational: turning about an axis.",
+            "Moment of a force = F × perpendicular distance from the axis; units N m and dyne cm (1 N m = 10⁷ dyne cm).",
+            "Larger distance → smaller force needed for the same moment.",
+            "Anticlockwise moments positive, clockwise negative; the resultant is their algebraic sum.",
+            "A couple: two equal, opposite, parallel forces; rotation only."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Quantity",
+                "Formula",
+                "SI unit"
+              ],
+              "rows": [
+                [
+                  "Moment of a force",
+                  "F × d",
+                  "N m"
+                ],
+                [
+                  "Moment of a couple",
+                  "F × arm",
+                  "N m"
+                ]
+              ]
+            },
+            "alt": "Summary table of moment formulae"
+          },
+          "math": [],
+          "narration": "Let us sum up Part 1. A force can move a body along or turn it. The turning effect, called the moment, equals force times perpendicular distance from the axis and is measured in newton metres. A small force far from the axis can match a large force near it. Clockwise and anticlockwise moments are added with opposite signs.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s13",
+          "layout": "exam-tips",
+          "heading": "Exam tips: Part 1",
+          "body_md": "",
+          "bullets": [
+            "Use the perpendicular distance, not the length along the body, when the force is slanted.",
+            "Convert cm to m before giving a moment in N m.",
+            "State the sense (clockwise or anticlockwise) with every resultant moment.",
+            "Remember 1 N m = 10⁷ dyne cm."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Slip",
+                "Fix"
+              ],
+              "rows": [
+                [
+                  "Moment = F × distance along the rod",
+                  "F × perpendicular distance"
+                ],
+                [
+                  "50 N at 25 cm = 1250 N m",
+                  "50 × 0.25 = 12.5 N m"
+                ],
+                [
+                  "Resultant without a sense",
+                  "Say clockwise or anticlockwise"
+                ]
+              ]
+            },
+            "alt": "Table of three common slips in Part 1 and their fixes"
+          },
+          "math": [],
+          "narration": "Some tips. Always use the perpendicular distance from the axis to the line of the force. Change centimetres to metres before giving an answer in newton metres. Say whether a resultant moment is clockwise or anticlockwise. And remember that one newton metre is ten million dyne centimetres.",
+          "check_question_id": null,
+          "audio": null
+        }
+      ],
+      "status": "draft",
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "unit": "icse-10-physics-ch01",
+      "part": 2,
+      "version": 1,
+      "title": "Force — Part 2: Equilibrium, centre of gravity and circular motion",
+      "language": "en",
+      "goals": [
+        "State the conditions of equilibrium and the principle of moments",
+        "Use the principle of moments to find an unknown force or distance",
+        "Locate the centre of gravity of regular bodies and an irregular lamina",
+        "Explain uniform circular motion and distinguish centripetal from centrifugal force"
+      ],
+      "slides": [
+        {
+          "id": "s01",
+          "layout": "title",
+          "heading": "Balance and going round",
+          "body_md": "Part 2 — when do forces cancel so that a body stays at rest, where does the weight of a body act, and why does circling at constant speed still need a force?",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Situation",
+                "Idea used"
+              ],
+              "rows": [
+                [
+                  "A balanced see-saw",
+                  "Principle of moments"
+                ],
+                [
+                  "A book resting on a table",
+                  "Equilibrium of forces"
+                ],
+                [
+                  "Balancing a ruler on one finger",
+                  "Centre of gravity"
+                ],
+                [
+                  "A stone whirled on a string",
+                  "Centripetal force"
+                ]
+              ]
+            },
+            "alt": "Table of everyday situations and the idea each illustrates"
+          },
+          "math": [],
+          "narration": "In this part we look at balance. A see-saw stays level when the turning effects on both sides are equal. A ruler balances on your finger only at one special point, its centre of gravity. And a stone whirled on a string keeps going round only because the string pulls it towards the centre.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s02",
+          "layout": "concept",
+          "heading": "Conditions of equilibrium",
+          "body_md": "A body is in **equilibrium** when it stays at rest (static) or moves with constant velocity without turning (dynamic). Two conditions: (1) **the resultant force is zero** — no translational acceleration; (2) **the resultant moment about any point is zero** — sum of anticlockwise moments = sum of clockwise moments, so no rotational acceleration. Static examples: a book on a table, a balanced see-saw; dynamic: a raindrop falling at constant (terminal) speed.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Condition",
+                "Prevents",
+                "Equation"
+              ],
+              "rows": [
+                [
+                  "Resultant force = 0",
+                  "Translation",
+                  "Upward forces = downward forces"
+                ],
+                [
+                  "Resultant moment = 0",
+                  "Rotation",
+                  "Anticlockwise moments = clockwise moments"
+                ]
+              ]
+            },
+            "alt": "Table of the two conditions of equilibrium"
+          },
+          "math": [],
+          "narration": "A body is in equilibrium when it stays still or moves steadily without speeding up or turning faster. Two conditions must hold. The forces on it must add up to zero, so it does not start moving along. And the moments must add up to zero, so it does not start turning. A balanced see-saw meets both conditions.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s03",
+          "layout": "diagram",
+          "heading": "The principle of moments",
+          "body_md": "**Principle of moments:** when a body is in equilibrium under several forces, **the sum of the anticlockwise moments about any point equals the sum of the clockwise moments** about that point. **Verification:** balance a metre rule on a knife edge, hang weights on both sides, adjust until the rule is horizontal, and compare W₁ × d₁ with W₂ × d₂. In the figure, 40 gf × 20 cm = 20 gf × 40 cm = 800 gf cm.",
+          "bullets": [],
+          "visual": {
+            "kind": "svg",
+            "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 460 210\" role=\"img\" aria-label=\"A metre rule balanced on a fulcrum at the 50 centimetre mark. A 40 gram-force weight hangs at the 30 centimetre mark, 20 centimetres to the left, and a 20 gram-force weight hangs at the 90 centimetre mark, 40 centimetres to the right. The anticlockwise moment, 40 times 20, equals the clockwise moment, 20 times 40: 800 gram-force centimetre each.\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>A metre rule balanced on a fulcrum at the 50 centimetre mark. A 40 gram-force weight hangs at the 30 centimetre mark, 20 centimetres to the left, and a 20 gram-force weight hangs at the 90 centimetre mark, 40 centimetres to the right. The anticlockwise moment, 40 times 20, equals the clockwise moment, 20 times 40: 800 gram-force centimetre each.</title><rect x=\"30\" y=\"64\" width=\"400\" height=\"12\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.2\" fill-opacity=\"0.6\"/><line x1=\"30\" y1=\"64\" x2=\"30\" y2=\"69\" stroke=\"currentColor\" stroke-width=\"1\"/><text x=\"30\" y=\"60\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">0</text><line x1=\"70\" y1=\"64\" x2=\"70\" y2=\"69\" stroke=\"currentColor\" stroke-width=\"1\"/><text x=\"70\" y=\"60\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">10</text><line x1=\"110\" y1=\"64\" x2=\"110\" y2=\"69\" stroke=\"currentColor\" stroke-width=\"1\"/><text x=\"110\" y=\"60\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">20</text><line x1=\"150\" y1=\"64\" x2=\"150\" y2=\"69\" stroke=\"currentColor\" stroke-width=\"1\"/><text x=\"150\" y=\"60\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">30</text><line x1=\"190\" y1=\"64\" x2=\"190\" y2=\"69\" stroke=\"currentColor\" stroke-width=\"1\"/><text x=\"190\" y=\"60\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">40</text><line x1=\"230\" y1=\"64\" x2=\"230\" y2=\"69\" stroke=\"currentColor\" stroke-width=\"1\"/><text x=\"230\" y=\"60\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">50</text><line x1=\"270\" y1=\"64\" x2=\"270\" y2=\"69\" stroke=\"currentColor\" stroke-width=\"1\"/><text x=\"270\" y=\"60\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">60</text><line x1=\"310\" y1=\"64\" x2=\"310\" y2=\"69\" stroke=\"currentColor\" stroke-width=\"1\"/><text x=\"310\" y=\"60\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">70</text><line x1=\"350\" y1=\"64\" x2=\"350\" y2=\"69\" stroke=\"currentColor\" stroke-width=\"1\"/><text x=\"350\" y=\"60\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">80</text><line x1=\"390\" y1=\"64\" x2=\"390\" y2=\"69\" stroke=\"currentColor\" stroke-width=\"1\"/><text x=\"390\" y=\"60\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">90</text><line x1=\"430\" y1=\"64\" x2=\"430\" y2=\"69\" stroke=\"currentColor\" stroke-width=\"1\"/><text x=\"430\" y=\"60\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">100</text><path d=\"M230 76 L218 100 L242 100 Z\" fill=\"var(--diagram-accent)\" stroke=\"var(--diagram-accent)\" stroke-width=\"1.5\" fill-opacity=\"0.4\"/><text x=\"230\" y=\"114\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">fulcrum (50 cm)</text><line x1=\"150\" y1=\"76\" x2=\"150\" y2=\"110\" stroke=\"currentColor\" stroke-width=\"1\"/><rect x=\"136\" y=\"110\" width=\"28\" height=\"22\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.5\" fill-opacity=\"0.25\"/><text x=\"150\" y=\"126\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">40 gf</text><line x1=\"150\" y1=\"134\" x2=\"150\" y2=\"156.4\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.5\"/><polygon points=\"150,162 147.1,155.6 152.9,155.6\" fill=\"var(--diagram-blue)\" stroke=\"none\"/><line x1=\"390\" y1=\"76\" x2=\"390\" y2=\"110\" stroke=\"currentColor\" stroke-width=\"1\"/><rect x=\"376\" y=\"110\" width=\"28\" height=\"22\" fill=\"var(--diagram-red)\" stroke=\"var(--diagram-red)\" stroke-width=\"1.5\" fill-opacity=\"0.25\"/><text x=\"390\" y=\"126\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">20 gf</text><line x1=\"390\" y1=\"134\" x2=\"390\" y2=\"156.4\" stroke=\"var(--diagram-red)\" stroke-width=\"1.5\"/><polygon points=\"390,162 387.1,155.6 392.9,155.6\" fill=\"var(--diagram-red)\" stroke=\"none\"/><text x=\"190\" y=\"180\" fill=\"var(--diagram-blue)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">anticlockwise: 40 × 20 = 800 gf cm</text><text x=\"330\" y=\"196\" fill=\"var(--diagram-red)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">clockwise: 20 × 40 = 800 gf cm</text></svg>",
+            "alt": "A metre rule balanced at 50 centimetres with 40 gram-force at 30 centimetres and 20 gram-force at 90 centimetres"
+          },
+          "math": [],
+          "narration": "The principle of moments says that when a body is balanced, the total anticlockwise moment about any point equals the total clockwise moment. You can check it with a metre rule on a knife edge. Hang forty gram force at twenty centimetres on one side and twenty gram force at forty centimetres on the other, and the rule stays level, because both moments are eight hundred.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s04",
+          "layout": "example",
+          "heading": "Worked example: finding an unknown weight",
+          "body_md": "**Problem.** A uniform metre rule is balanced at its 50 cm mark. A 60 gf weight hangs at the 20 cm mark. Where must a 90 gf weight hang to balance it, and what force does the fulcrum exert?\n\n**Step 1.** Anticlockwise moment $= 60 \\times (50 - 20) = 1800\\ \\text{gf cm}$.\n\n**Step 2.** Clockwise: $90 \\times x = 1800$, so $x = 20\\ \\text{cm}$: the weight hangs at the **70 cm** mark.\n\n**Step 3.** Fulcrum reaction (resultant force zero, rule’s own weight included): $60 + 90 + W_{rule}$ upwards.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Load",
+                "Position",
+                "Distance from 50 cm",
+                "Moment (gf cm)"
+              ],
+              "rows": [
+                [
+                  "60 gf",
+                  "20 cm",
+                  "30 cm",
+                  "1800 anticlockwise"
+                ],
+                [
+                  "90 gf",
+                  "70 cm",
+                  "20 cm",
+                  "1800 clockwise"
+                ]
+              ]
+            },
+            "alt": "Table of loads, positions and moments for the balanced metre rule"
+          },
+          "math": [],
+          "narration": "Take moments about the fulcrum, so its own push has no moment. Sixty gram force at thirty centimetres gives eighteen hundred anticlockwise. The ninety gram force must give the same clockwise, so its distance is eighteen hundred divided by ninety, which is twenty centimetres, at the seventy centimetre mark. Because the rule is uniform and pivoted at its middle, its own weight has no moment.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s05",
+          "layout": "check",
+          "heading": "Quick check: principle of moments",
+          "body_md": "Find an unknown distance or force on a balanced rule.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Set anticlockwise moments equal to clockwise moments.",
+          "check_question_id": "q_icse10phy_ch01_021",
+          "audio": null
+        },
+        {
+          "id": "s06",
+          "layout": "diagram",
+          "heading": "Centre of gravity",
+          "body_md": "The **centre of gravity (G)** of a body is the point through which the **whole weight of the body acts**, in every position. **Regular bodies:** rod — mid-point; ring — centre of the ring (outside the material); circular disc — centre; triangular lamina — point where the **medians meet**; rectangle — where the diagonals meet. **Irregular lamina:** hang it freely from a hole, draw the plumb line; repeat from a second hole; G is where the lines cross.",
+          "bullets": [],
+          "visual": {
+            "kind": "svg",
+            "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 360 230\" role=\"img\" aria-label=\"Centre of gravity of regular bodies: the mid-point of a uniform rod, the centre of a ring (which lies outside the material), and the point where the medians of a triangular lamina meet. Below, an irregular lamina hung from two points; the two plumb-line traces cross at its centre of gravity.\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>Centre of gravity of regular bodies: the mid-point of a uniform rod, the centre of a ring (which lies outside the material), and the point where the medians of a triangular lamina meet. Below, an irregular lamina hung from two points; the two plumb-line traces cross at its centre of gravity.</title><rect x=\"20\" y=\"40\" width=\"120\" height=\"14\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\" fill-opacity=\"0.6\"/><circle cx=\"80\" cy=\"47\" r=\"3\" fill=\"var(--diagram-red)\" stroke=\"var(--diagram-red)\" stroke-width=\"1.5\"/><text x=\"80\" y=\"74\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">rod: mid-point</text><circle cx=\"200\" cy=\"50\" r=\"28\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"4\"/><circle cx=\"200\" cy=\"50\" r=\"3\" fill=\"var(--diagram-red)\" stroke=\"var(--diagram-red)\" stroke-width=\"1.5\"/><text x=\"200\" y=\"96\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">ring: centre</text><path d=\"M270 80 L330 80 L300 25 Z\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\" fill-opacity=\"0.6\"/><line x1=\"300\" y1=\"25\" x2=\"300\" y2=\"80\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\" stroke-dasharray=\"3 2\"/><line x1=\"270\" y1=\"80\" x2=\"315\" y2=\"52.5\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\" stroke-dasharray=\"3 2\"/><circle cx=\"300\" cy=\"61.7\" r=\"3\" fill=\"var(--diagram-red)\" stroke=\"var(--diagram-red)\" stroke-width=\"1.5\"/><text x=\"300\" y=\"96\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">triangle: medians meet</text><path d=\"M60 130 C 30 170 70 220 110 200 C 150 185 160 140 120 125 Z\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\" fill-opacity=\"0.6\"/><line x1=\"70\" y1=\"128\" x2=\"105\" y2=\"210\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.2\"/><line x1=\"130\" y1=\"132\" x2=\"60\" y2=\"180\" stroke=\"var(--diagram-green)\" stroke-width=\"1.2\"/><text x=\"175\" y=\"150\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">irregular lamina: hang from two</text><text x=\"175\" y=\"164\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">points; plumb lines cross at G</text></svg>",
+            "alt": "Centre of gravity of a rod, a ring and a triangle, and the plumb-line method for an irregular lamina"
+          },
+          "math": [],
+          "narration": "The centre of gravity is the point where the whole weight of a body seems to act. For a uniform rod it is at the middle, for a ring at its centre, which is in empty space, and for a triangle where the medians meet. For an irregular sheet, hang it from two different holes and draw the vertical line through each with a plumb line. The lines cross at the centre of gravity.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s07",
+          "layout": "example",
+          "heading": "Worked example: a rule not pivoted at its centre",
+          "body_md": "**Problem.** A uniform metre rule weighing 100 gf is balanced at the 40 cm mark by a weight W hung at the 10 cm mark. Find W.\n\n**Step 1.** The rule’s weight acts at its centre of gravity, the **50 cm mark**, 10 cm right of the fulcrum: clockwise moment $= 100 \\times 10 = 1000\\ \\text{gf cm}$.\n\n**Step 2.** W is 30 cm left: anticlockwise moment $= W \\times 30$.\n\n**Step 3.** $W \\times 30 = 1000$, so $W = 33.3\\ \\text{gf}$.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Force",
+                "Acts at",
+                "Distance from 40 cm",
+                "Sense"
+              ],
+              "rows": [
+                [
+                  "Weight of rule, 100 gf",
+                  "50 cm (G)",
+                  "10 cm",
+                  "Clockwise"
+                ],
+                [
+                  "W",
+                  "10 cm",
+                  "30 cm",
+                  "Anticlockwise"
+                ]
+              ]
+            },
+            "alt": "Table of forces on the metre rule pivoted at 40 centimetres"
+          },
+          "math": [],
+          "narration": "When a rule is not pivoted at its middle, its own weight must be included. The weight of a uniform rule acts at its centre of gravity, the fifty centimetre mark. That is ten centimetres from the fulcrum, giving a thousand gram force centimetres clockwise. The unknown weight, thirty centimetres on the other side, must balance this, so it is about thirty three gram force.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s08",
+          "layout": "check",
+          "heading": "Quick check: centre of gravity",
+          "body_md": "Locate the centre of gravity of a regular body.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. For a ring the centre of gravity is at the centre, where there is no material.",
+          "check_question_id": "q_icse10phy_ch01_034",
+          "audio": null
+        },
+        {
+          "id": "s09",
+          "layout": "diagram",
+          "heading": "Uniform circular motion",
+          "body_md": "In **uniform circular motion** a body moves in a circle at **constant speed**, but its **direction keeps changing** — the velocity is along the **tangent** at every point. A change in velocity means **acceleration**, so uniform circular motion is **accelerated motion**. The acceleration is directed **towards the centre**, and so is the force needed to produce it.",
+          "bullets": [],
+          "visual": {
+            "kind": "svg",
+            "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 380 240\" role=\"img\" aria-label=\"A body moving in a circle at constant speed, shown at three positions. At each position the velocity arrow is along the tangent and changes direction from point to point, while the centripetal force arrow points along the radius towards the centre.\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>A body moving in a circle at constant speed, shown at three positions. At each position the velocity arrow is along the tangent and changes direction from point to point, while the centripetal force arrow points along the radius towards the centre.</title><circle cx=\"150\" cy=\"120\" r=\"80\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-dasharray=\"5 4\"/><circle cx=\"150\" cy=\"120\" r=\"3\" fill=\"currentColor\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"156\" y=\"134\" fill=\"var(--diagram-muted)\" stroke=\"none\" font-size=\"10\">centre</text><circle cx=\"150\" cy=\"40\" r=\"6\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.5\" fill-opacity=\"0.5\"/><line x1=\"150\" y1=\"40\" x2=\"184.4\" y2=\"40\" stroke=\"var(--diagram-green)\" stroke-width=\"1.8\"/><polygon points=\"190,40 183.6,42.9 183.6,37.1\" fill=\"var(--diagram-green)\" stroke=\"none\"/><line x1=\"150\" y1=\"40\" x2=\"150\" y2=\"70.4\" stroke=\"var(--diagram-red)\" stroke-width=\"1.8\"/><polygon points=\"150,76 147.1,69.6 152.9,69.6\" fill=\"var(--diagram-red)\" stroke=\"none\"/><circle cx=\"219.3\" cy=\"160\" r=\"6\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.5\" fill-opacity=\"0.5\"/><line x1=\"219.3\" y1=\"160\" x2=\"202.1\" y2=\"189.8\" stroke=\"var(--diagram-green)\" stroke-width=\"1.8\"/><polygon points=\"199.3,194.6 200,187.7 204.9,190.5\" fill=\"var(--diagram-green)\" stroke=\"none\"/><line x1=\"219.3\" y1=\"160\" x2=\"193\" y2=\"144.8\" stroke=\"var(--diagram-red)\" stroke-width=\"1.8\"/><polygon points=\"188.1,142 195.1,142.7 192.2,147.7\" fill=\"var(--diagram-red)\" stroke=\"none\"/><circle cx=\"80.7\" cy=\"160\" r=\"6\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.5\" fill-opacity=\"0.5\"/><line x1=\"80.7\" y1=\"160\" x2=\"63.5\" y2=\"130.2\" stroke=\"var(--diagram-green)\" stroke-width=\"1.8\"/><polygon points=\"60.7,125.4 66.4,129.5 61.4,132.3\" fill=\"var(--diagram-green)\" stroke=\"none\"/><line x1=\"80.7\" y1=\"160\" x2=\"107\" y2=\"144.8\" stroke=\"var(--diagram-red)\" stroke-width=\"1.8\"/><polygon points=\"111.9,142 107.8,147.7 104.9,142.7\" fill=\"var(--diagram-red)\" stroke=\"none\"/><text x=\"250\" y=\"40\" fill=\"var(--diagram-green)\" stroke=\"none\" font-size=\"11\">velocity (tangent)</text><text x=\"250\" y=\"58\" fill=\"var(--diagram-red)\" stroke=\"none\" font-size=\"11\">centripetal force</text><text x=\"250\" y=\"74\" fill=\"var(--diagram-red)\" stroke=\"none\" font-size=\"10\">(towards the centre)</text></svg>",
+            "alt": "A body in uniform circular motion with velocity arrows along the tangent and force arrows towards the centre"
+          },
+          "math": [],
+          "narration": "A body going round a circle at steady speed is still accelerating, because the direction of its velocity changes all the time. At each instant the velocity points along the tangent to the circle. The change in velocity is always towards the centre, so a force towards the centre is needed to keep the body on its circular path.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s10",
+          "layout": "concept",
+          "heading": "Centripetal and centrifugal force",
+          "body_md": "**Centripetal force** is the force **towards the centre** that keeps a body moving in a circle: the tension in a string for a whirled stone, the gravitational pull of the Earth on the Moon, friction between tyres and road for a car turning a corner. **Centrifugal force** is the apparent outward force felt by a body **in the rotating frame** (for example, a passenger pressed outward on a turning bus); it is a **fictitious** force, equal in size and opposite in direction to the centripetal force. If the centripetal force stops, the body flies off **along the tangent**.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Feature",
+                "Centripetal force",
+                "Centrifugal force"
+              ],
+              "rows": [
+                [
+                  "Direction",
+                  "Towards the centre",
+                  "Away from the centre"
+                ],
+                [
+                  "Nature",
+                  "Real force (tension, gravity, friction)",
+                  "Fictitious (felt in the rotating frame)"
+                ],
+                [
+                  "Example",
+                  "String pulling a whirled stone",
+                  "Passenger pushed outward on a turning bus"
+                ]
+              ]
+            },
+            "alt": "Table comparing centripetal and centrifugal force"
+          },
+          "math": [],
+          "narration": "The force that keeps a body moving in a circle always points to the centre and is called the centripetal force. It is a real force, such as the tension in a string or friction on car tyres. Centrifugal force is the outward push you seem to feel when a bus turns sharply. It is not a real force but appears only in the turning frame. If the string breaks, the stone flies off along the tangent.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s11",
+          "layout": "example",
+          "heading": "Worked example: what supplies the centripetal force?",
+          "body_md": "**Problem.** Name the force that provides the centripetal force in each case: (a) a stone whirled on a string; (b) the Moon going round the Earth; (c) a cyclist rounding a bend; (d) an electron round the nucleus (Bohr model). (e) In which direction does the stone move if the string snaps?\n\n**(a)** Tension in the string. **(b)** Gravitational attraction of the Earth. **(c)** Friction between tyres and road. **(d)** Electrostatic attraction of the nucleus. **(e)** Along the **tangent** at the point where it was released.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Case",
+                "Centripetal force supplied by"
+              ],
+              "rows": [
+                [
+                  "Stone on a string",
+                  "Tension"
+                ],
+                [
+                  "Moon round the Earth",
+                  "Gravity"
+                ],
+                [
+                  "Cyclist on a bend",
+                  "Friction"
+                ],
+                [
+                  "Electron round the nucleus",
+                  "Electrostatic attraction"
+                ]
+              ]
+            },
+            "alt": "Table of four circular motions and the force that supplies the centripetal force"
+          },
+          "math": [],
+          "narration": "Centripetal force is not a new kind of force; it is a job done by some real force. For a stone on a string, it is the tension. For the Moon, it is the Earth’s gravity. For a cyclist on a bend, it is friction from the road. For an electron in the Bohr model, it is the attraction of the nucleus. If the string snaps, the stone shoots off along the tangent.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s12",
+          "layout": "check",
+          "heading": "Quick check: circular motion",
+          "body_md": "Identify the direction of velocity or force in circular motion.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Velocity is along the tangent; centripetal force is towards the centre.",
+          "check_question_id": "q_icse10phy_ch01_042",
+          "audio": null
+        },
+        {
+          "id": "s13",
+          "layout": "summary",
+          "heading": "Summary: Part 2",
+          "body_md": "",
+          "bullets": [
+            "Equilibrium: resultant force zero and resultant moment zero.",
+            "Principle of moments: sum of anticlockwise moments = sum of clockwise moments about any point.",
+            "Centre of gravity: point where the whole weight acts; rod mid-point, ring centre, triangle median point; plumb line for irregular laminae.",
+            "Uniform circular motion: constant speed, changing velocity, so accelerated.",
+            "Centripetal force acts towards the centre (real); centrifugal force is an apparent outward force in the rotating frame."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Idea",
+                "Key statement"
+              ],
+              "rows": [
+                [
+                  "Principle of moments",
+                  "ACW = CW"
+                ],
+                [
+                  "Centre of gravity",
+                  "Weight acts here"
+                ],
+                [
+                  "Centripetal force",
+                  "Towards the centre"
+                ]
+              ]
+            },
+            "alt": "Summary table of three key ideas from Part 2"
+          },
+          "math": [],
+          "narration": "Let us sum up Part 2. A body is in equilibrium when the forces and the moments on it both add up to zero. The principle of moments lets us find unknown weights and distances. The centre of gravity is where the whole weight acts. A body moving in a circle at steady speed is accelerating towards the centre, and the force that does this is the centripetal force.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s14",
+          "layout": "exam-tips",
+          "heading": "Exam tips: Part 2",
+          "body_md": "",
+          "bullets": [
+            "Take moments about the fulcrum so the unknown reaction has no moment.",
+            "Include the weight of a non-uniform or off-centre rule, acting at its centre of gravity.",
+            "Say “uniform circular motion is accelerated because the direction of velocity changes”.",
+            "Centrifugal force is not real in the ground frame; do not draw it on a free-body diagram."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Slip",
+                "Fix"
+              ],
+              "rows": [
+                [
+                  "Forgetting the rule’s weight",
+                  "Put it at the 50 cm mark of a uniform rule"
+                ],
+                [
+                  "Velocity towards the centre",
+                  "Velocity along the tangent"
+                ],
+                [
+                  "Speed constant, so no acceleration",
+                  "Direction changes, so it accelerates"
+                ]
+              ]
+            },
+            "alt": "Table of three common slips in Part 2 and their fixes"
+          },
+          "math": [],
+          "narration": "Final tips. Take moments about the fulcrum to remove the unknown reaction force. Remember to include the weight of the rule when it is not pivoted at its middle. Explain that circular motion is accelerated because the direction of velocity keeps changing. And do not draw centrifugal force on a diagram of the forces acting on a body.",
+          "check_question_id": null,
+          "audio": null
+        }
+      ],
+      "status": "draft",
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    }
+  ],
+  "notes": {
+    "unit": "icse-10-physics-ch01",
+    "version": 1,
+    "title": "Force: Turning Effect and Circular Motion — Notes",
+    "language": "en",
+    "sections": [
+      {
+        "heading": "1. Translational and rotational motion; moment of a force",
+        "body_md": "- **Translational motion:** every particle moves the same distance in the same direction. **Rotational motion:** the body turns about a fixed axis.\n- A force on a pivoted body turns it; its turning effect is the **moment of the force (torque)**: $\\tau = F \\times d$, $d$ = perpendicular distance from the axis to the line of action.\n- Units: **N m** (SI), **dyne cm** (cgs); $1\\ \\text{N m} = 10^{7}\\ \\text{dyne cm}$.\n- Moment increases with force and with perpendicular distance: handles far from hinges, long spanners, large steering wheels. A force through the axis has zero moment.",
+        "key_terms": [
+          {
+            "term": "Moment of a force",
+            "definition_md": "The turning effect of a force about an axis, equal to the force multiplied by the perpendicular distance of its line of action from the axis."
+          },
+          {
+            "term": "Rotational motion",
+            "definition_md": "Motion in which a body turns about a fixed axis, each particle moving in a circle."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\tau = F \\times d",
+            "label": "Moment of a force"
+          },
+          {
+            "latex": "1\\ \\text{N m} = 10^{7}\\ \\text{dyne cm}",
+            "label": "Unit conversion"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "F",
+              "d",
+              "Moment"
+            ],
+            "rows": [
+              [
+                "20 N",
+                "0.5 m",
+                "10 N m"
+              ],
+              [
+                "10 N",
+                "1.0 m",
+                "10 N m"
+              ],
+              [
+                "40 N",
+                "0 m",
+                "0"
+              ]
+            ]
+          },
+          "alt": "Table showing that equal moments can come from different force and distance pairs"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-physics-ch01-t01"
+        ]
+      },
+      {
+        "heading": "2. Clockwise and anticlockwise moments; couples",
+        "body_md": "- Convention: **anticlockwise moments positive, clockwise negative**.\n- **Resultant moment** = algebraic sum; the body turns in the sense of the larger total.\n- **Couple:** two equal, opposite, parallel forces not in the same line; produces rotation only. Moment of couple = $F \\times$ arm (perpendicular distance between the forces). Examples: tap, steering wheel, winding a key.",
+        "key_terms": [
+          {
+            "term": "Couple",
+            "definition_md": "Two equal and opposite parallel forces whose lines of action are different; it produces rotation only."
+          },
+          {
+            "term": "Resultant moment",
+            "definition_md": "The algebraic sum of the moments of all the forces about a point."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\tau_{\\text{couple}} = F \\times \\text{arm}",
+            "label": "Moment of a couple"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Moment",
+              "Sense",
+              "Sign"
+            ],
+            "rows": [
+              [
+                "Turns like clock hands",
+                "Clockwise",
+                "Negative"
+              ],
+              [
+                "Turns the other way",
+                "Anticlockwise",
+                "Positive"
+              ]
+            ]
+          },
+          "alt": "Table of the sign convention for moments"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-physics-ch01-t02"
+        ]
+      },
+      {
+        "heading": "3. Equilibrium and the principle of moments",
+        "body_md": "**Equilibrium:** a body at rest (static) or moving with uniform velocity without turning faster (dynamic). Conditions: (1) **resultant force = 0**; (2) **resultant moment = 0**.\n\n**Principle of moments:** for a body in equilibrium, sum of anticlockwise moments about any point = sum of clockwise moments about that point: $W_{1} d_{1} = W_{2} d_{2}$.\n\n**Verification:** metre rule on a knife edge, weights hung on both sides, adjusted until the rule is horizontal; products W × d agree. Take moments about the fulcrum; include the rule’s weight at its centre of gravity if it is not pivoted there.",
+        "key_terms": [
+          {
+            "term": "Principle of moments",
+            "definition_md": "For a body in equilibrium, the sum of the anticlockwise moments about any point equals the sum of the clockwise moments about that point."
+          },
+          {
+            "term": "Static equilibrium",
+            "definition_md": "The state of a body at rest under several forces."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "W_{1} d_{1} = W_{2} d_{2}",
+            "label": "Balanced lever"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Condition",
+              "Prevents"
+            ],
+            "rows": [
+              [
+                "Resultant force zero",
+                "Translation"
+              ],
+              [
+                "Resultant moment zero",
+                "Rotation"
+              ]
+            ]
+          },
+          "alt": "Table of the two conditions of equilibrium"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-physics-ch01-t03"
+        ]
+      },
+      {
+        "heading": "4. Centre of gravity",
+        "body_md": "**Centre of gravity (G):** the point through which the whole weight of a body acts, in every orientation. It may lie outside the material (ring).\n\n| Body | Position of G |\n|---|---|\n| Uniform rod | Mid-point |\n| Ring | Centre of the ring |\n| Circular disc | Centre |\n| Triangular lamina | Point of intersection of the medians |\n| Rectangle, parallelogram | Intersection of the diagonals |\n\n**Irregular lamina:** suspend freely from a hole with a plumb line, mark the vertical; repeat from a second hole; G is where the lines cross.",
+        "key_terms": [
+          {
+            "term": "Centre of gravity",
+            "definition_md": "The point through which the whole weight of a body acts, whatever its position."
+          }
+        ],
+        "formulas": [],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Shape",
+              "G"
+            ],
+            "rows": [
+              [
+                "Rod",
+                "Middle"
+              ],
+              [
+                "Ring",
+                "Centre (in air)"
+              ],
+              [
+                "Triangle",
+                "Medians meet"
+              ]
+            ]
+          },
+          "alt": "Table of centres of gravity of three regular shapes"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-physics-ch01-t04"
+        ]
+      },
+      {
+        "heading": "5. Uniform circular motion",
+        "body_md": "- **Uniform circular motion:** constant speed along a circle; velocity is along the **tangent** and changes direction continuously, so the motion is **accelerated**.\n- **Centripetal force:** the real force towards the centre that keeps the body in the circle (tension, gravity, friction, electrostatic attraction).\n- **Centrifugal force:** the apparent outward force felt in the rotating frame; fictitious, equal and opposite to the centripetal force.\n- If the centripetal force stops, the body moves off along the tangent (mud flying off a cycle wheel).",
+        "key_terms": [
+          {
+            "term": "Centripetal force",
+            "definition_md": "The force directed towards the centre that keeps a body moving in a circle."
+          },
+          {
+            "term": "Centrifugal force",
+            "definition_md": "An apparent outward force felt by a body in a rotating frame; it is not a real force."
+          }
+        ],
+        "formulas": [],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Motion",
+              "Centripetal force from"
+            ],
+            "rows": [
+              [
+                "Moon round Earth",
+                "Gravity"
+              ],
+              [
+                "Car on a bend",
+                "Friction"
+              ],
+              [
+                "Stone on string",
+                "Tension"
+              ]
+            ]
+          },
+          "alt": "Table of three circular motions and their centripetal forces"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-physics-ch01-t05"
+        ]
+      }
+    ],
+    "exam_tips_md": "**Common mistakes**\n- Using the length along a body instead of the perpendicular distance.\n- Forgetting to convert cm to m for N m answers.\n- Ignoring the weight of a metre rule pivoted away from its centre.\n- Saying uniform circular motion is not accelerated.\n\n**How marks are usually awarded**\n- Calculations (1 mark each step): formula, substitution with units, answer with unit and sense.\n- Definitions (1 mark): include “perpendicular distance”, “about any point”, “whole weight acts”.\n- Circular motion (1 mark each): direction of velocity and of centripetal force.",
+    "status": "draft",
+    "provenance": {
+      "origin": "human",
+      "template_version": null,
+      "model": null,
+      "generated_at": "2026-11-01",
+      "author": "claude-opus-5-5 (subject-producer)"
+    }
+  },
+  "flashcards": {
+    "unit": "icse-10-physics-ch01",
+    "version": 1,
+    "language": "en",
+    "cards": [
+      {
+        "id": "f01",
+        "front_md": "Translational motion?",
+        "back_md": "Every particle moves the same distance in the same direction.",
+        "tag": "definition",
+        "topic_id": "icse-10-physics-ch01-t01"
+      },
+      {
+        "id": "f02",
+        "front_md": "Rotational motion?",
+        "back_md": "Turning about a fixed axis.",
+        "tag": "definition",
+        "topic_id": "icse-10-physics-ch01-t01"
+      },
+      {
+        "id": "f03",
+        "front_md": "Moment of a force?",
+        "back_md": "Force × perpendicular distance from the axis.",
+        "tag": "formula",
+        "topic_id": "icse-10-physics-ch01-t01"
+      },
+      {
+        "id": "f04",
+        "front_md": "SI unit of moment?",
+        "back_md": "Newton metre (N m).",
+        "tag": "fact",
+        "topic_id": "icse-10-physics-ch01-t01"
+      },
+      {
+        "id": "f05",
+        "front_md": "cgs unit of moment?",
+        "back_md": "Dyne centimetre (dyne cm).",
+        "tag": "fact",
+        "topic_id": "icse-10-physics-ch01-t01"
+      },
+      {
+        "id": "f06",
+        "front_md": "1 N m in dyne cm?",
+        "back_md": "10⁷ dyne cm.",
+        "tag": "formula",
+        "topic_id": "icse-10-physics-ch01-t01"
+      },
+      {
+        "id": "f07",
+        "front_md": "Why is a door handle far from the hinges?",
+        "back_md": "Larger distance, so less force for the same moment.",
+        "tag": "concept",
+        "topic_id": "icse-10-physics-ch01-t01"
+      },
+      {
+        "id": "f08",
+        "front_md": "Moment of a force through the axis?",
+        "back_md": "Zero.",
+        "tag": "fact",
+        "topic_id": "icse-10-physics-ch01-t01"
+      },
+      {
+        "id": "f09",
+        "front_md": "Sign of an anticlockwise moment (usual convention)?",
+        "back_md": "Positive.",
+        "tag": "fact",
+        "topic_id": "icse-10-physics-ch01-t02"
+      },
+      {
+        "id": "f10",
+        "front_md": "Resultant moment?",
+        "back_md": "Algebraic sum of all moments about the point.",
+        "tag": "definition",
+        "topic_id": "icse-10-physics-ch01-t02"
+      },
+      {
+        "id": "f11",
+        "front_md": "Couple?",
+        "back_md": "Two equal, opposite, parallel forces not in one line.",
+        "tag": "definition",
+        "topic_id": "icse-10-physics-ch01-t02"
+      },
+      {
+        "id": "f12",
+        "front_md": "Effect of a couple?",
+        "back_md": "Rotation only.",
+        "tag": "fact",
+        "topic_id": "icse-10-physics-ch01-t02"
+      },
+      {
+        "id": "f13",
+        "front_md": "Moment of a couple?",
+        "back_md": "One force × arm of the couple.",
+        "tag": "formula",
+        "topic_id": "icse-10-physics-ch01-t02"
+      },
+      {
+        "id": "f14",
+        "front_md": "Conditions of equilibrium?",
+        "back_md": "Resultant force zero and resultant moment zero.",
+        "tag": "concept",
+        "topic_id": "icse-10-physics-ch01-t03"
+      },
+      {
+        "id": "f15",
+        "front_md": "Principle of moments?",
+        "back_md": "Sum of anticlockwise moments = sum of clockwise moments.",
+        "tag": "definition",
+        "topic_id": "icse-10-physics-ch01-t03"
+      },
+      {
+        "id": "f16",
+        "front_md": "Static vs dynamic equilibrium?",
+        "back_md": "At rest vs moving with constant velocity.",
+        "tag": "concept",
+        "topic_id": "icse-10-physics-ch01-t03"
+      },
+      {
+        "id": "f17",
+        "front_md": "Example of dynamic equilibrium?",
+        "back_md": "A raindrop falling at terminal speed.",
+        "tag": "example",
+        "topic_id": "icse-10-physics-ch01-t03"
+      },
+      {
+        "id": "f18",
+        "front_md": "Where is the weight of a uniform metre rule?",
+        "back_md": "At the 50 cm mark.",
+        "tag": "fact",
+        "topic_id": "icse-10-physics-ch01-t03"
+      },
+      {
+        "id": "f19",
+        "front_md": "Centre of gravity?",
+        "back_md": "Point through which the whole weight acts.",
+        "tag": "definition",
+        "topic_id": "icse-10-physics-ch01-t04"
+      },
+      {
+        "id": "f20",
+        "front_md": "G of a ring?",
+        "back_md": "At its centre (outside the material).",
+        "tag": "fact",
+        "topic_id": "icse-10-physics-ch01-t04"
+      },
+      {
+        "id": "f21",
+        "front_md": "G of a triangular lamina?",
+        "back_md": "Where the medians meet.",
+        "tag": "fact",
+        "topic_id": "icse-10-physics-ch01-t04"
+      },
+      {
+        "id": "f22",
+        "front_md": "Finding G of an irregular lamina?",
+        "back_md": "Plumb lines from two suspension points cross at G.",
+        "tag": "concept",
+        "topic_id": "icse-10-physics-ch01-t04"
+      },
+      {
+        "id": "f23",
+        "front_md": "Uniform circular motion: speed?",
+        "back_md": "Constant.",
+        "tag": "fact",
+        "topic_id": "icse-10-physics-ch01-t05"
+      },
+      {
+        "id": "f24",
+        "front_md": "Why is uniform circular motion accelerated?",
+        "back_md": "Direction of velocity changes continuously.",
+        "tag": "concept",
+        "topic_id": "icse-10-physics-ch01-t05"
+      },
+      {
+        "id": "f25",
+        "front_md": "Direction of velocity in circular motion?",
+        "back_md": "Along the tangent.",
+        "tag": "fact",
+        "topic_id": "icse-10-physics-ch01-t05"
+      },
+      {
+        "id": "f26",
+        "front_md": "Centripetal force direction?",
+        "back_md": "Towards the centre.",
+        "tag": "fact",
+        "topic_id": "icse-10-physics-ch01-t05"
+      },
+      {
+        "id": "f27",
+        "front_md": "Is centrifugal force real?",
+        "back_md": "No: an apparent force in the rotating frame.",
+        "tag": "concept",
+        "topic_id": "icse-10-physics-ch01-t05"
+      },
+      {
+        "id": "f28",
+        "front_md": "Centripetal force for the Moon?",
+        "back_md": "Earth’s gravitational pull.",
+        "tag": "example",
+        "topic_id": "icse-10-physics-ch01-t05"
+      },
+      {
+        "id": "f29",
+        "front_md": "Stone released from a whirling string moves?",
+        "back_md": "Along the tangent.",
+        "tag": "fact",
+        "topic_id": "icse-10-physics-ch01-t05"
+      },
+      {
+        "id": "f30",
+        "front_md": "Exam tip: moments",
+        "back_md": "Perpendicular distance, metres, and say the sense.",
+        "tag": "exam-tip",
+        "topic_id": "icse-10-physics-ch01-t01"
+      }
+    ],
+    "status": "draft",
+    "provenance": {
+      "origin": "human",
+      "template_version": null,
+      "model": null,
+      "generated_at": "2026-11-01",
+      "author": "claude-opus-5-5 (subject-producer)"
+    }
+  },
+  "questions": [
+    {
+      "id": "q_icse10phy_ch01_001",
+      "unit": "icse-10-physics-ch01",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A force of 40 N is applied at right angles to a wrench, 30 cm from the centre of a bolt. The moment of the force about the bolt is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "1200 N m"
+        },
+        {
+          "id": "b",
+          "text_md": "12 N m"
+        },
+        {
+          "id": "c",
+          "text_md": "120 N m"
+        },
+        {
+          "id": "d",
+          "text_md": "1.2 N m"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Moment $= F \\times d = 40 \\times 0.30 = 12$ N m — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch01-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch01_002",
+      "unit": "icse-10-physics-ch01",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which of these is an example of purely rotational motion?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "A lift moving up its shaft"
+        },
+        {
+          "id": "b",
+          "text_md": "The blades of a ceiling fan turning about its fixed axis"
+        },
+        {
+          "id": "c",
+          "text_md": "A car moving along a straight road"
+        },
+        {
+          "id": "d",
+          "text_md": "A ball rolling down a slope"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "The fan turns about a fixed axis; a rolling ball both rotates and translates — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-physics-ch01-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch01_003",
+      "unit": "icse-10-physics-ch01",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A door is easiest to open when it is pushed:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "close to the hinges, at right angles to the door"
+        },
+        {
+          "id": "b",
+          "text_md": "at the edge, along the plane of the door towards the hinges"
+        },
+        {
+          "id": "c",
+          "text_md": "at the hinges themselves"
+        },
+        {
+          "id": "d",
+          "text_md": "at the edge farthest from the hinges, at right angles to the door"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Largest perpendicular distance gives the largest moment for a given force — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch01-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch01_004",
+      "unit": "icse-10-physics-ch01",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A moment of 0.6 N m expressed in cgs units is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "6 × 10⁵ dyne cm"
+        },
+        {
+          "id": "b",
+          "text_md": "60 dyne cm"
+        },
+        {
+          "id": "c",
+          "text_md": "6 × 10⁷ dyne cm"
+        },
+        {
+          "id": "d",
+          "text_md": "6 × 10⁶ dyne cm"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "$1\\ \\text{N m} = 10^{7}$ dyne cm, so $0.6 \\times 10^{7} = 6 \\times 10^{6}$ dyne cm — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch01-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch01_005",
+      "unit": "icse-10-physics-ch01",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? A force whose line of action passes through the axis of rotation produces no moment about that axis.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "t"
+        ]
+      },
+      "solution_md": "True: the perpendicular distance is zero.",
+      "marking_scheme": [
+        {
+          "step": "True",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-physics-ch01-t01"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch01_006",
+      "unit": "icse-10-physics-ch01",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "The SI unit of the moment of a force is the newton ___.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "metre",
+              "meter"
+            ]
+          }
+        ]
+      },
+      "solution_md": "**Metre** (N m).",
+      "marking_scheme": [
+        {
+          "step": "Blank 1: \"metre\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-physics-ch01-t01"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch01_007",
+      "unit": "icse-10-physics-ch01",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "The moment of a force equals the force multiplied by the ___ distance of its line of action from the axis.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "perpendicular"
+            ]
+          }
+        ]
+      },
+      "solution_md": "**Perpendicular**.",
+      "marking_scheme": [
+        {
+          "step": "Blank 1: \"perpendicular\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-physics-ch01-t01"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch01_008",
+      "unit": "icse-10-physics-ch01",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "A bus driver needs a moment of 18 N m to turn the steering wheel. The radius of the wheel is 0.6 m. What force (in N), applied at the rim at right angles, is needed?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 30,
+        "tolerance": 0,
+        "unit": "N"
+      },
+      "solution_md": "$F = \\dfrac{\\text{moment}}{d} = \\dfrac{18}{0.6} = 30$ N.",
+      "marking_scheme": [
+        {
+          "step": "30 N",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch01-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch01_009",
+      "unit": "icse-10-physics-ch01",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "A force of 25 N produces a moment of 7.5 N m about a hinge. How far (in m) is the line of action of the force from the hinge?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 0.3,
+        "tolerance": 0.001,
+        "unit": "m"
+      },
+      "solution_md": "$d = \\dfrac{7.5}{25} = 0.3$ m.",
+      "marking_scheme": [
+        {
+          "step": "0.3 m",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch01-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch01_010",
+      "unit": "icse-10-physics-ch01",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Name the type of motion of a wheel of a moving bicycle.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Both rotational (about its axle) and translational (along the road)."
+      },
+      "solution_md": "Rotation + translation.",
+      "marking_scheme": [
+        {
+          "step": "Both named",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-physics-ch01-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch01_011",
+      "unit": "icse-10-physics-ch01",
+      "language": "en",
+      "type": "short",
+      "stem_md": "A 20 N force is applied at right angles to a spanner (a) 40 cm and (b) 10 cm from the nut. Calculate the moment in each case and explain which is better for loosening a tight nut.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) $20 \\times 0.40 = 8$ N m. (b) $20 \\times 0.10 = 2$ N m. Case (a): the same force gives four times the moment because the perpendicular distance is larger."
+      },
+      "solution_md": "Two moments; larger distance better.",
+      "marking_scheme": [
+        {
+          "step": "Both moments",
+          "marks": 1
+        },
+        {
+          "step": "Explanation",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch01-t01"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch01_012",
+      "unit": "icse-10-physics-ch01",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "On a see-saw pivoted at its centre, Arjun pushes down with 300 N at 1.5 m on the left and Meera pushes down with 250 N at 2.0 m on the right. The see-saw:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "turns clockwise, with a resultant moment of 50 N m"
+        },
+        {
+          "id": "b",
+          "text_md": "turns anticlockwise, with a resultant moment of 50 N m"
+        },
+        {
+          "id": "c",
+          "text_md": "stays balanced"
+        },
+        {
+          "id": "d",
+          "text_md": "turns clockwise, with a resultant moment of 950 N m"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Anticlockwise $300 \\times 1.5 = 450$; clockwise $250 \\times 2.0 = 500$; resultant $= 500 - 450 = 50$ N m clockwise — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch01-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch01_013",
+      "unit": "icse-10-physics-ch01",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "When you turn a water tap with your finger and thumb, the two equal and opposite forces form a couple. The couple:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "turns the tap without moving it from its place"
+        },
+        {
+          "id": "b",
+          "text_md": "moves the tap sideways without turning it"
+        },
+        {
+          "id": "c",
+          "text_md": "produces no effect because the forces cancel"
+        },
+        {
+          "id": "d",
+          "text_md": "both moves and turns the tap equally"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "A couple has zero resultant force but a non-zero moment — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-physics-ch01-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch01_014",
+      "unit": "icse-10-physics-ch01",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Two equal and opposite forces of 15 N act tangentially at opposite ends of a steering wheel of diameter 40 cm. The moment of the couple is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "3 N m"
+        },
+        {
+          "id": "b",
+          "text_md": "600 N m"
+        },
+        {
+          "id": "c",
+          "text_md": "6 N m"
+        },
+        {
+          "id": "d",
+          "text_md": "12 N m"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Moment of couple $= F \\times \\text{arm} = 15 \\times 0.40 = 6$ N m — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch01-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch01_015",
+      "unit": "icse-10-physics-ch01",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** A body acted on by an anticlockwise moment of 20 N m and a clockwise moment of 20 N m about the same axis does not start rotating.\n\n**Reason (R):** The resultant moment on the body is zero.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Both are true, and R explains A — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-physics-ch01-t02",
+        "icse-10-physics-ch01-t03"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch01_016",
+      "unit": "icse-10-physics-ch01",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? A couple can make a body move along a straight line.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "f"
+        ]
+      },
+      "solution_md": "False: its two forces cancel, so it produces rotation only.",
+      "marking_scheme": [
+        {
+          "step": "False, with the correction",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-physics-ch01-t02"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch01_017",
+      "unit": "icse-10-physics-ch01",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "Two equal and opposite parallel forces acting along different lines form a ___.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "couple"
+            ]
+          }
+        ]
+      },
+      "solution_md": "**Couple**.",
+      "marking_scheme": [
+        {
+          "step": "Blank 1: \"couple\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-physics-ch01-t02"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch01_018",
+      "unit": "icse-10-physics-ch01",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "A rod is pivoted at its centre. Forces act at right angles to it: 6 N at 0.5 m on one side giving an anticlockwise moment, 4 N at 0.5 m on the other side giving a clockwise moment, and 2 N at 0.25 m giving a clockwise moment. Find the resultant moment in N m (anticlockwise positive).",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 0.5,
+        "tolerance": 0.001,
+        "unit": "N m"
+      },
+      "solution_md": "Resultant $= 6 \\times 0.5 - 4 \\times 0.5 - 2 \\times 0.25 = 0.5$ N m (anticlockwise).",
+      "marking_scheme": [
+        {
+          "step": "0.5 N m",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch01-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch01_019",
+      "unit": "icse-10-physics-ch01",
+      "language": "en",
+      "type": "short",
+      "stem_md": "State the usual sign given to a clockwise moment.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Negative (anticlockwise moments are taken as positive)."
+      },
+      "solution_md": "Negative.",
+      "marking_scheme": [
+        {
+          "step": "Negative",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-physics-ch01-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch01_020",
+      "unit": "icse-10-physics-ch01",
+      "language": "en",
+      "type": "short",
+      "stem_md": "What is a couple? Give two examples from daily life.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "A pair of equal and opposite parallel forces whose lines of action are different, producing rotation only. Examples: turning a tap with finger and thumb; turning a steering wheel with both hands (also winding a key, opening a bottle cap)."
+      },
+      "solution_md": "Definition; two examples.",
+      "marking_scheme": [
+        {
+          "step": "Definition",
+          "marks": 1
+        },
+        {
+          "step": "Two examples",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-physics-ch01-t02"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch01_021",
+      "unit": "icse-10-physics-ch01",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A uniform metre rule balances at its 50 cm mark with 60 gf hung at the 20 cm mark. Where must 90 gf be hung to keep it balanced?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "At the 80 cm mark"
+        },
+        {
+          "id": "b",
+          "text_md": "At the 90 cm mark"
+        },
+        {
+          "id": "c",
+          "text_md": "At the 70 cm mark"
+        },
+        {
+          "id": "d",
+          "text_md": "At the 65 cm mark"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "$60 \\times 30 = 90 \\times x$, so $x = 20$ cm from the fulcrum: the 70 cm mark — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch01-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch01_022",
+      "unit": "icse-10-physics-ch01",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "For a body to be in complete equilibrium:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "only the resultant force must be zero"
+        },
+        {
+          "id": "b",
+          "text_md": "only the resultant moment must be zero"
+        },
+        {
+          "id": "c",
+          "text_md": "the resultant force and the resultant moment on it must both be zero"
+        },
+        {
+          "id": "d",
+          "text_md": "all the forces on it must be equal"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Both translational and rotational conditions — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-physics-ch01-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch01_023",
+      "unit": "icse-10-physics-ch01",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A raindrop falls through still air at a constant speed. It is in:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "static equilibrium, because it is at rest"
+        },
+        {
+          "id": "b",
+          "text_md": "dynamic equilibrium, because the forces on it balance while it moves"
+        },
+        {
+          "id": "c",
+          "text_md": "neither kind of equilibrium, because it is moving"
+        },
+        {
+          "id": "d",
+          "text_md": "equilibrium only if it is spinning"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Weight is balanced by air resistance; uniform velocity — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch01-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch01_024",
+      "unit": "icse-10-physics-ch01",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A uniform metre rule of weight 100 gf is balanced on a knife edge at its 40 cm mark when a weight W is hung at the 10 cm mark. W is about:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "33.3 gf"
+        },
+        {
+          "id": "b",
+          "text_md": "100 gf"
+        },
+        {
+          "id": "c",
+          "text_md": "25 gf"
+        },
+        {
+          "id": "d",
+          "text_md": "75 gf"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "The rule’s weight acts at 50 cm: $100 \\times 10 = W \\times 30$, so $W = 33.3$ gf — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 4,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-physics-ch01-t03",
+        "icse-10-physics-ch01-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch01_025",
+      "unit": "icse-10-physics-ch01",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** When moments are taken about the fulcrum of a balanced lever, the force exerted by the fulcrum can be ignored.\n\n**Reason (R):** The fulcrum force passes through the point about which moments are taken, so its moment is zero.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Both are true, and R explains A — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-physics-ch01-t03"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch01_026",
+      "unit": "icse-10-physics-ch01",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? The principle of moments holds for moments taken about any point of a body in equilibrium, not only about the fulcrum.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "t"
+        ]
+      },
+      "solution_md": "True: the resultant moment is zero about every point.",
+      "marking_scheme": [
+        {
+          "step": "True",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-physics-ch01-t03"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch01_027",
+      "unit": "icse-10-physics-ch01",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "For a body in equilibrium, the sum of the anticlockwise moments about any point equals the sum of the ___ moments about that point.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "clockwise"
+            ]
+          }
+        ]
+      },
+      "solution_md": "**Clockwise**.",
+      "marking_scheme": [
+        {
+          "step": "Blank 1: \"clockwise\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-physics-ch01-t03"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch01_028",
+      "unit": "icse-10-physics-ch01",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "A light (weightless) rod balanced on a fulcrum carries 60 gf on one side and 90 gf on the other. What upward force, in gf, does the fulcrum exert?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 150,
+        "tolerance": 0,
+        "unit": "gf"
+      },
+      "solution_md": "Resultant force zero: reaction $= 60 + 90 = 150$ gf.",
+      "marking_scheme": [
+        {
+          "step": "150 gf",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch01-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch01_029",
+      "unit": "icse-10-physics-ch01",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "A uniform metre rule is balanced at its centre. A 50 gf weight hangs at the 30 cm mark. At what mark (in cm) must a 25 gf weight hang on the other side to balance it?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 90,
+        "tolerance": 0,
+        "unit": "cm"
+      },
+      "solution_md": "$50 \\times 20 = 25 \\times x$, so $x = 40$ cm; mark $= 50 + 40 = 90$ cm.",
+      "marking_scheme": [
+        {
+          "step": "90 cm",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch01-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch01_030",
+      "unit": "icse-10-physics-ch01",
+      "language": "en",
+      "type": "short",
+      "stem_md": "State the principle of moments.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "For a body in equilibrium, the sum of the anticlockwise moments about any point is equal to the sum of the clockwise moments about the same point."
+      },
+      "solution_md": "Statement.",
+      "marking_scheme": [
+        {
+          "step": "Statement with “any point”",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-physics-ch01-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch01_031",
+      "unit": "icse-10-physics-ch01",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Describe briefly how you would verify the principle of moments using a metre rule, a knife edge and two known weights.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Balance the metre rule on the knife edge at its centre of gravity. Hang the two weights on opposite sides and move them until the rule is horizontal again. Measure each distance from the knife edge and show that W₁ × d₁ = W₂ × d₂; repeat for other positions."
+      },
+      "solution_md": "Balance; adjust; compare products.",
+      "marking_scheme": [
+        {
+          "step": "Set-up and balancing",
+          "marks": 1
+        },
+        {
+          "step": "Measurements and comparison",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-physics-ch01-t03"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch01_032",
+      "unit": "icse-10-physics-ch01",
+      "language": "en",
+      "type": "short",
+      "stem_md": "A light plank is balanced on a log at its middle. A 30 kgf box sits 0.8 m to one side of the log. (a) What weight placed 0.4 m on the other side will balance it? (b) What is the total upward force from the log?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) $30 \\times 0.8 = W \\times 0.4$, so $W = 60$ kgf. (b) $30 + 60 = 90$ kgf."
+      },
+      "solution_md": "60 kgf; 90 kgf.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch01-t03"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch01_033",
+      "unit": "icse-10-physics-ch01",
+      "language": "en",
+      "type": "short",
+      "stem_md": "A uniform metre rule is balanced at its 50 cm mark. On the left, 40 gf hangs at the 25 cm mark; on the right, 20 gf hangs at the 65 cm mark. (a) Calculate the total anticlockwise moment. (b) Where must an extra 30 gf be hung (right side) to restore balance? (c) Why does the rule’s own weight not appear in your equation?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Anticlockwise $= 40 \\times 25 = 1000$ gf cm. (b) Clockwise so far $20 \\times 15 = 300$; needed $1000 - 300 = 700 = 30 \\times x$, so $x \\approx 23.3$ cm: about the 73.3 cm mark. (c) Its weight acts at its centre of gravity, the fulcrum, so its moment is zero."
+      },
+      "solution_md": "1000 gf cm; about 73.3 cm; weight at the fulcrum.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch01-t03",
+        "icse-10-physics-ch01-t04"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch01_034",
+      "unit": "icse-10-physics-ch01",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "The centre of gravity of a uniform circular ring lies:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "at any point on the rim"
+        },
+        {
+          "id": "b",
+          "text_md": "at the lowest point of the ring"
+        },
+        {
+          "id": "c",
+          "text_md": "at the centre of the ring, where there is no material"
+        },
+        {
+          "id": "d",
+          "text_md": "outside the circle of the ring"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "By symmetry it is at the geometric centre — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-physics-ch01-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch01_035",
+      "unit": "icse-10-physics-ch01",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "The centre of gravity of a uniform triangular lamina is at the point where its:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "three altitudes meet"
+        },
+        {
+          "id": "b",
+          "text_md": "three medians meet"
+        },
+        {
+          "id": "c",
+          "text_md": "longest side is bisected"
+        },
+        {
+          "id": "d",
+          "text_md": "three angle bisectors meet"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Centroid — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-physics-ch01-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch01_036",
+      "unit": "icse-10-physics-ch01",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "To find the centre of gravity of an irregular cardboard sheet, it is hung from a pin through a hole and a plumb line is used. The sheet must then be hung from:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "a second hole, and G is where the two plumb lines cross"
+        },
+        {
+          "id": "b",
+          "text_md": "the same hole again, upside down"
+        },
+        {
+          "id": "c",
+          "text_md": "its heaviest corner only"
+        },
+        {
+          "id": "d",
+          "text_md": "a hole at its centre"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "G lies on every vertical through a suspension point — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-physics-ch01-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch01_037",
+      "unit": "icse-10-physics-ch01",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** The centre of gravity of a body always lies within the material of the body.\n\n**Reason (R):** The centre of gravity is the point through which the whole weight of the body acts.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "A is false (for a ring it lies in empty space); R is true — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-physics-ch01-t04"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch01_038",
+      "unit": "icse-10-physics-ch01",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? The centre of gravity of a uniform rectangular sheet lies where its diagonals intersect.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "t"
+        ]
+      },
+      "solution_md": "True.",
+      "marking_scheme": [
+        {
+          "step": "True",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-physics-ch01-t04"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch01_039",
+      "unit": "icse-10-physics-ch01",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "The point through which the whole weight of a body acts is called its centre of ___.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "gravity"
+            ]
+          }
+        ]
+      },
+      "solution_md": "**Gravity**.",
+      "marking_scheme": [
+        {
+          "step": "Blank 1: \"gravity\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-physics-ch01-t04"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch01_040",
+      "unit": "icse-10-physics-ch01",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Where is the centre of gravity of a uniform metre rule?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "At its mid-point, the 50 cm mark."
+      },
+      "solution_md": "50 cm.",
+      "marking_scheme": [
+        {
+          "step": "50 cm mark",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-physics-ch01-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch01_041",
+      "unit": "icse-10-physics-ch01",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Describe how you would locate the centre of gravity of an irregular lamina using a plumb line.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Make two holes near the edge. Hang the lamina freely from one hole on a pin with a plumb line from the same pin; mark the line along the lamina. Repeat from the second hole. The point where the two lines cross is the centre of gravity."
+      },
+      "solution_md": "Two suspensions; intersection.",
+      "marking_scheme": [
+        {
+          "step": "Suspension with plumb line marked",
+          "marks": 1
+        },
+        {
+          "step": "Second suspension; intersection is G",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-physics-ch01-t04"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch01_042",
+      "unit": "icse-10-physics-ch01",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A stone tied to a string is whirled in a horizontal circle at constant speed. At any instant, its velocity is directed:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "towards the centre"
+        },
+        {
+          "id": "b",
+          "text_md": "away from the centre"
+        },
+        {
+          "id": "c",
+          "text_md": "along the tangent to the circle"
+        },
+        {
+          "id": "d",
+          "text_md": "along the string"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Velocity is tangential; the string pulls towards the centre — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-physics-ch01-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch01_043",
+      "unit": "icse-10-physics-ch01",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A satellite moves round the Earth at constant speed in a circular orbit. Its motion is accelerated because:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "its speed keeps increasing"
+        },
+        {
+          "id": "b",
+          "text_md": "it has no mass in space"
+        },
+        {
+          "id": "c",
+          "text_md": "the Earth pushes it outward"
+        },
+        {
+          "id": "d",
+          "text_md": "the direction of its velocity changes continuously"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Changing direction means changing velocity — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-physics-ch01-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch01_044",
+      "unit": "icse-10-physics-ch01",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A car takes a circular turn on a level road. The centripetal force on the car is provided by:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "the weight of the car"
+        },
+        {
+          "id": "b",
+          "text_md": "the engine pushing forward"
+        },
+        {
+          "id": "c",
+          "text_md": "the centrifugal force"
+        },
+        {
+          "id": "d",
+          "text_md": "friction between the tyres and the road"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Sideways friction acts towards the centre of the turn — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch01-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch01_045",
+      "unit": "icse-10-physics-ch01",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Mud on the tyre of a moving bicycle flies off. It leaves the wheel:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "along the spoke, away from the axle"
+        },
+        {
+          "id": "b",
+          "text_md": "along the tangent to the wheel at the point where it separates"
+        },
+        {
+          "id": "c",
+          "text_md": "towards the axle"
+        },
+        {
+          "id": "d",
+          "text_md": "straight downwards"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Once the adhesion (centripetal force) fails, the mud keeps its tangential velocity — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch01-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch01_046",
+      "unit": "icse-10-physics-ch01",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Centrifugal force is not shown when we draw the forces acting on a stone whirled on a string, as seen from the ground.\n\n**Reason (R):** Centrifugal force is an apparent force that is felt only in the rotating frame.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Both are true, and R explains A — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-physics-ch01-t05"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch01_047",
+      "unit": "icse-10-physics-ch01",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** In uniform circular motion the speed is constant, so there is no acceleration.\n\n**Reason (R):** In uniform circular motion the velocity is always along the tangent.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "A is false (velocity changes direction, so the body accelerates); R is true — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-physics-ch01-t05"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch01_048",
+      "unit": "icse-10-physics-ch01",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? In uniform circular motion, both the speed and the velocity remain constant.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "f"
+        ]
+      },
+      "solution_md": "False: speed is constant but velocity changes direction.",
+      "marking_scheme": [
+        {
+          "step": "False, with the correction",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-physics-ch01-t05"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch01_049",
+      "unit": "icse-10-physics-ch01",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "The force that keeps a body moving in a circle and acts towards the centre is called the ___ force.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "centripetal"
+            ]
+          }
+        ]
+      },
+      "solution_md": "**Centripetal**.",
+      "marking_scheme": [
+        {
+          "step": "Blank 1: \"centripetal\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-physics-ch01-t05"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch01_050",
+      "unit": "icse-10-physics-ch01",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Name the force that provides the centripetal force for the Moon moving round the Earth.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "The gravitational force of attraction of the Earth."
+      },
+      "solution_md": "Gravity.",
+      "marking_scheme": [
+        {
+          "step": "Gravitational force",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-physics-ch01-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch01_051",
+      "unit": "icse-10-physics-ch01",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Distinguish between centripetal force and centrifugal force with one example of each.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Centripetal force acts towards the centre and is a real force that keeps a body in a circle (tension in the string of a whirled stone). Centrifugal force acts away from the centre and is an apparent force felt in the rotating frame (a passenger on a turning bus feels pushed outward)."
+      },
+      "solution_md": "Direction and nature; examples.",
+      "marking_scheme": [
+        {
+          "step": "Difference",
+          "marks": 1
+        },
+        {
+          "step": "Examples",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-physics-ch01-t05"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch01_052",
+      "unit": "icse-10-physics-ch01",
+      "language": "en",
+      "type": "short",
+      "stem_md": "A ball tied to a string is whirled in a horizontal circle at constant speed. (a) Is its motion uniform or accelerated? Give a reason. (b) What provides the centripetal force? (c) Describe the path of the ball if the string breaks.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Accelerated: the direction of the velocity changes continuously. (b) The tension in the string. (c) It moves along the tangent to the circle at the point where the string broke (then curves down under gravity)."
+      },
+      "solution_md": "Accelerated; tension; tangent.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch01-t05"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch01_053",
+      "unit": "icse-10-physics-ch01",
+      "language": "en",
+      "type": "match",
+      "stem_md": "Match each quantity in Column A with its unit or description in Column B.",
+      "options": [
+        {
+          "id": "1",
+          "text_md": "Moment of a force"
+        },
+        {
+          "id": "2",
+          "text_md": "Couple"
+        },
+        {
+          "id": "3",
+          "text_md": "Centripetal force"
+        },
+        {
+          "id": "4",
+          "text_md": "Centre of gravity of a ring"
+        }
+      ],
+      "match_right": [
+        {
+          "id": "p",
+          "text_md": "Towards the centre"
+        },
+        {
+          "id": "q",
+          "text_md": "N m"
+        },
+        {
+          "id": "r",
+          "text_md": "At its centre"
+        },
+        {
+          "id": "s",
+          "text_md": "Rotation only"
+        }
+      ],
+      "answer": {
+        "pairs": [
+          {
+            "left_id": "1",
+            "right_id": "q"
+          },
+          {
+            "left_id": "2",
+            "right_id": "s"
+          },
+          {
+            "left_id": "3",
+            "right_id": "p"
+          },
+          {
+            "left_id": "4",
+            "right_id": "r"
+          }
+        ]
+      },
+      "solution_md": "Moment → N m; couple → rotation only; centripetal force → towards the centre; ring → G at its centre.",
+      "marking_scheme": [
+        {
+          "step": "1 → q",
+          "marks": 0.5
+        },
+        {
+          "step": "2 → s",
+          "marks": 0.5
+        },
+        {
+          "step": "3 → p",
+          "marks": 0.5
+        },
+        {
+          "step": "4 → r",
+          "marks": 0.5
+        }
+      ],
+      "marks": 2,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-physics-ch01-t01",
+        "icse-10-physics-ch01-t02",
+        "icse-10-physics-ch01-t04",
+        "icse-10-physics-ch01-t05"
+      ],
+      "expected_time_sec": 160,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch01_054",
+      "unit": "icse-10-physics-ch01",
+      "language": "en",
+      "type": "match",
+      "stem_md": "Match each situation in Column A with the idea it shows in Column B.",
+      "options": [
+        {
+          "id": "1",
+          "text_md": "A long spanner loosens a tight nut"
+        },
+        {
+          "id": "2",
+          "text_md": "A balanced see-saw"
+        },
+        {
+          "id": "3",
+          "text_md": "A raindrop at terminal speed"
+        },
+        {
+          "id": "4",
+          "text_md": "A car turning on a level road"
+        }
+      ],
+      "match_right": [
+        {
+          "id": "p",
+          "text_md": "Principle of moments"
+        },
+        {
+          "id": "q",
+          "text_md": "Friction as centripetal force"
+        },
+        {
+          "id": "r",
+          "text_md": "Moment increases with distance"
+        },
+        {
+          "id": "s",
+          "text_md": "Dynamic equilibrium"
+        }
+      ],
+      "answer": {
+        "pairs": [
+          {
+            "left_id": "1",
+            "right_id": "r"
+          },
+          {
+            "left_id": "2",
+            "right_id": "p"
+          },
+          {
+            "left_id": "3",
+            "right_id": "s"
+          },
+          {
+            "left_id": "4",
+            "right_id": "q"
+          }
+        ]
+      },
+      "solution_md": "Spanner → distance; see-saw → principle of moments; raindrop → dynamic equilibrium; car → friction as centripetal force.",
+      "marking_scheme": [
+        {
+          "step": "1 → r",
+          "marks": 0.5
+        },
+        {
+          "step": "2 → p",
+          "marks": 0.5
+        },
+        {
+          "step": "3 → s",
+          "marks": 0.5
+        },
+        {
+          "step": "4 → q",
+          "marks": 0.5
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch01-t01",
+        "icse-10-physics-ch01-t03",
+        "icse-10-physics-ch01-t05"
+      ],
+      "expected_time_sec": 160,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch01_055",
+      "unit": "icse-10-physics-ch01",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Define the moment of a force and state its SI unit. [3]\n\n(b) A force of 60 N is applied at right angles to a door at 25 cm from the hinges. (i) Calculate the moment. (ii) What force would produce the same moment at 75 cm? (iii) Express the moment in dyne cm. [3]\n\n(c) Explain, using moments, why (i) a spanner with a long handle is used for a tight nut, (ii) a door cannot be opened by pushing at the hinges, (iii) a steering wheel is turned with a couple, and (iv) a hand-operated flour mill has its handle near the rim. [4]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) The turning effect of a force about an axis, equal to the force × the perpendicular distance of its line of action from the axis; SI unit N m.\n\n(b) (i) $60 \\times 0.25 = 15$ N m. (ii) $15 \\div 0.75 = 20$ N. (iii) $15 \\times 10^{7} = 1.5 \\times 10^{8}$ dyne cm.\n\n(c) (i) Larger perpendicular distance gives a larger moment for the same force. (ii) At the hinges d = 0, so the moment is zero. (iii) Two equal opposite forces give rotation only, with moment F × diameter. (iv) Large d means a smaller force is needed."
+      },
+      "solution_md": "Definition; three calculations; four reasons.",
+      "marking_scheme": [
+        {
+          "step": "(a) definition",
+          "marks": 2
+        },
+        {
+          "step": "(a) unit",
+          "marks": 1
+        },
+        {
+          "step": "(b)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(b)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(b)(iii)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(iii)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(iv)",
+          "marks": 1
+        }
+      ],
+      "marks": 10,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch01-t01",
+        "icse-10-physics-ch01-t02"
+      ],
+      "expected_time_sec": 1080,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch01_056",
+      "unit": "icse-10-physics-ch01",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) State the two conditions for a body to be in equilibrium, and the principle of moments. [3]\n\n(b) A uniform metre rule is balanced at its 50 cm mark. A 50 gf weight hangs at the 20 cm mark. (i) Find the weight that must hang at the 85 cm mark to balance it. (ii) Find the upward force exerted by the knife edge if the rule weighs 40 gf. [3]\n\n(c) The same rule is now balanced at its 30 cm mark with nothing on it but a weight P at the 10 cm mark. (i) Where does the rule’s weight act? (ii) Calculate P. (iii) Which condition of equilibrium did you use? (iv) Why can the knife-edge force be ignored when taking moments about the knife edge? [4]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Resultant force zero; resultant moment zero. Principle: for a body in equilibrium the sum of anticlockwise moments about any point equals the sum of clockwise moments about that point.\n\n(b) (i) $50 \\times 30 = W \\times 35$, so $W = 42.9$ gf. (ii) $50 + 42.9 + 40 = 133$ gf.\n\n(c) (i) At its centre of gravity, the 50 cm mark. (ii) $40 \\times 20 = P \\times 20$, so $P = 40$ gf. (iii) Resultant moment zero (principle of moments). (iv) It passes through the point about which moments are taken, so its moment is zero."
+      },
+      "solution_md": "Conditions; two calculations; off-centre rule.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 3
+        },
+        {
+          "step": "(b)(i)",
+          "marks": 2
+        },
+        {
+          "step": "(b)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(iii)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(iv)",
+          "marks": 1
+        }
+      ],
+      "marks": 10,
+      "difficulty": 4,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-physics-ch01-t03",
+        "icse-10-physics-ch01-t04"
+      ],
+      "expected_time_sec": 1080,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch01_057",
+      "unit": "icse-10-physics-ch01",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Define the centre of gravity of a body. Can it lie outside the body? Give an example. [3]\n\n(b) State the position of the centre of gravity of (i) a uniform rod, (ii) a circular disc and (iii) a triangular lamina. [3]\n\n(c) Describe, step by step, the plumb-line method of finding the centre of gravity of an irregular lamina, and explain why it works. [4]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) The point through which the whole weight of the body acts, in every position. Yes: for a ring (or a hollow sphere, or a boomerang) it is at the centre, where there is no material.\n\n(b) (i) Mid-point. (ii) Centre of the disc. (iii) Point of intersection of the medians.\n\n(c) Make two or three holes near the edge. Suspend the lamina freely from one hole on a pin; hang a plumb line from the same pin and mark its line on the lamina. Repeat from another hole. The lines cross at G. It works because a freely suspended body comes to rest with its centre of gravity vertically below the point of suspension, so G lies on each plumb line."
+      },
+      "solution_md": "Definition and example; three positions; method and reason.",
+      "marking_scheme": [
+        {
+          "step": "(a) definition",
+          "marks": 2
+        },
+        {
+          "step": "(a) example",
+          "marks": 1
+        },
+        {
+          "step": "(b)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(b)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(b)(iii)",
+          "marks": 1
+        },
+        {
+          "step": "(c) method",
+          "marks": 3
+        },
+        {
+          "step": "(c) reason",
+          "marks": 1
+        }
+      ],
+      "marks": 10,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-physics-ch01-t04"
+      ],
+      "expected_time_sec": 1080,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch01_058",
+      "unit": "icse-10-physics-ch01",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) What is uniform circular motion? Explain why it is called accelerated motion. [3]\n\n(b) Distinguish between centripetal and centrifugal force. [3]\n\n(c) Name the force that provides the centripetal force in each case: (i) a car on a curved level road; (ii) the Earth going round the Sun; (iii) a stone whirled on a string. (iv) In which direction does the stone move if the string snaps? [4]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Motion of a body along a circular path at constant speed. The direction of the velocity, along the tangent, changes at every point, so the velocity changes and the motion is accelerated (towards the centre).\n\n(b) Centripetal force: real, acts towards the centre, needed for circular motion. Centrifugal force: apparent, acts away from the centre, felt only in the rotating frame, equal and opposite to the centripetal force.\n\n(c) (i) Friction between tyres and road. (ii) The Sun’s gravitational attraction. (iii) Tension in the string. (iv) Along the tangent at the point of release."
+      },
+      "solution_md": "Definition; difference; four answers.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 3
+        },
+        {
+          "step": "(b)",
+          "marks": 3
+        },
+        {
+          "step": "(c)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(iii)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(iv)",
+          "marks": 1
+        }
+      ],
+      "marks": 10,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-physics-ch01-t05"
+      ],
+      "expected_time_sec": 1080,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch01_059",
+      "unit": "icse-10-physics-ch01",
+      "language": "en",
+      "type": "long",
+      "stem_md": "Two children sit on a see-saw pivoted at its centre. Child A (weight 400 N) sits 1.2 m to the left of the pivot.\n\n(a) Where must child B (weight 300 N) sit on the right so that the see-saw balances? [3]\n\n(b) Child B instead sits 1.0 m to the right. (i) Calculate the resultant moment. (ii) State its sense. (iii) Which end goes down? [3]\n\n(c) (i) What upward force does the pivot exert when the see-saw is balanced as in (a) (plank weight 200 N, centred on the pivot)? (ii) Explain why the plank’s weight does not appear in the moment equation. (iii) State which condition of equilibrium each part uses. [4]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) $400 \\times 1.2 = 300 \\times x$, so $x = 1.6$ m to the right.\n\n(b) (i) Anticlockwise $400 \\times 1.2 = 480$ N m; clockwise $300 \\times 1.0 = 300$ N m; resultant $= 480 - 300 = 180$ N m. (ii) Anticlockwise. (iii) A’s end (left) goes down.\n\n(c) (i) $400 + 300 + 200 = 900$ N. (ii) It acts at the pivot, so its moment about the pivot is zero. (iii) (a) uses resultant moment zero; (c)(i) uses resultant force zero."
+      },
+      "solution_md": "Balance position; resultant moment; reaction.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 3
+        },
+        {
+          "step": "(b)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(b)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(b)(iii)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(i)",
+          "marks": 2
+        },
+        {
+          "step": "(c)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(iii)",
+          "marks": 1
+        }
+      ],
+      "marks": 10,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch01-t02",
+        "icse-10-physics-ch01-t03"
+      ],
+      "expected_time_sec": 1080,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch01_060",
+      "unit": "icse-10-physics-ch01",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "A force of 2 N acts at right angles to a lever at 30 cm from its pivot. Find the moment in dyne cm. (1 N = 10⁵ dyne)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 6000000,
+        "tolerance": 0,
+        "unit": "dyne cm"
+      },
+      "solution_md": "$F = 200000$ dyne; moment $= 200000 \\times 30 = 6000000$ dyne cm, that is $6 \\times 10^{6}$ dyne cm.",
+      "marking_scheme": [
+        {
+          "step": "6 × 10⁶ dyne cm",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch01-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch01_061",
+      "unit": "icse-10-physics-ch01",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "A door needs a moment of 12 N m to open. Its handle is 0.8 m from the hinges. What is the least force (in N) that must be applied at the handle?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 15,
+        "tolerance": 0,
+        "unit": "N"
+      },
+      "solution_md": "Force is least when applied at right angles: $F = 12 \\div 0.8 = 15$ N.",
+      "marking_scheme": [
+        {
+          "step": "15 N",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch01-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch01_062",
+      "unit": "icse-10-physics-ch01",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "On a light rod, a 2 kg mass hangs 30 cm to the left of the fulcrum. How far to the right must a 3 kg mass hang for the rod to balance?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "20 cm"
+        },
+        {
+          "id": "b",
+          "text_md": "45 cm"
+        },
+        {
+          "id": "c",
+          "text_md": "30 cm"
+        },
+        {
+          "id": "d",
+          "text_md": "15 cm"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "$2 \\times 30 = 3 \\times x$, so $x = 20$ cm — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch01-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch01_063",
+      "unit": "icse-10-physics-ch01",
+      "language": "en",
+      "type": "short",
+      "stem_md": "An athlete runs round a circular track at a steady 6 m/s. (a) Is her velocity constant? Explain. (b) Which force provides the centripetal force she needs?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) No: her speed is constant but her direction changes continuously, so her velocity changes. (b) Friction between her shoes and the track, directed towards the centre."
+      },
+      "solution_md": "Velocity changes; friction.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch01-t05"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch01_064",
+      "unit": "icse-10-physics-ch01",
+      "language": "en",
+      "type": "short",
+      "stem_md": "A plumber turns a tap with equal and opposite forces of 8 N at the two ends of its 5 cm handle. Calculate the moment of the couple in N m, and state why the tap does not move sideways.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Moment $= 8 \\times 0.05 = 0.4$ N m. The two forces are equal and opposite, so the resultant force is zero: no translation."
+      },
+      "solution_md": "0.4 N m; zero resultant force.",
+      "marking_scheme": [
+        {
+          "step": "Moment",
+          "marks": 1
+        },
+        {
+          "step": "Reason",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch01-t02"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    }
+  ],
+  "build": {
+    "run_id": null,
+    "checks": {
+      "katex_mhchem": "74 math strings parsed with KaTeX 0.19.0 + mhchem (throwOnError, strict \"error\"), 0 failures",
+      "svg_allowlist": "4 SVG visuals (4 distinct diagrams) checked with saxes against svg-allowlist.ts: elements, attributes, class pattern, fragment-only refs, no style, palette incl. named hues, viewBox, title, per-page unique ids — 0 failures",
+      "narration": "27 slides, 9–77 words (mean 50), no symbols, formulae or unit abbreviations",
+      "resolve": "21/21 scripted re-solve checks pass",
+      "physics_facts": "Moments in N m and dyne cm, resultant moments, couples, the conditions of equilibrium and the principle of moments with the metre-rule weight at its centre of gravity, centres of gravity of regular bodies and the plumb-line method, and uniform circular motion with centripetal and centrifugal force, checked against the ICSE 2027 syllabus (Class X, section 1)",
+      "diagrams": "4 diagram self-checks (geometry computed in svgs.mjs): 0 failures",
+      "content_gate": "npm test -w @soyl/content-templates: all checks pass for this chapter",
+      "verifier_pass": "2026-11-01: every question and every internal-choice alternative re-solved from its stem by the author; every numerical computed and asserted by the build script — see README \"Verifier pass\"",
+      "pipeline_lint": "npm run content -- lint --exemplars: 0 errors, 0 warnings"
+    }
+  }
+}

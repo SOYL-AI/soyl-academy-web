@@ -1,0 +1,10 @@
+  tests: {
+    short: {
+      A: ['normal-mcq', 'lateral-mcq', 'tircond-mcq', 'bend-ar', 'plane-fill', 'depth-fill', 'undev-short2', 'pool-short2'],
+      B: [['laws-long', 'tir-long']],
+    },
+    long: {
+      A: ['wave-mcq', 'thick-mcq', 'stick-mcq', 'p90-mcq', 'devfactor-mcq', 'fish-ar', 'lateral-fill', 'dev-fill', 'crit-fill', 'effect-match', 'block-short2', 'devfactors-short2', 'adv-short2', 'depth-short3'],
+      B: [['block-long', 'depth-long', 'prism-long']],
+    },
+  },

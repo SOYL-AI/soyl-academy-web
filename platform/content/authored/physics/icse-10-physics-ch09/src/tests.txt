@@ -1,0 +1,10 @@
+  tests: {
+    short: {
+      A: ['drop-mcq', 'mainswitch-mcq', 'colour-mcq', 'fuse-ar', 'watt-fill', 'earth-fill', 'bill-short2', 'pin-short2'],
+      B: [['power-long', 'safety-long']],
+    },
+    long: {
+      A: ['energy-mcq', 'cost-mcq', 'live-mcq', 'staircase-mcq', 'earthfault-mcq', 'ring-ar', 'kwh-fill', 'fuse-fill', 'twoway-fill', 'part-match', 'drop-short2', 'distrib-short2', 'earthing-short2', 'order-short3'],
+      B: [['bill-long', 'wiring-long', 'fuse-long']],
+    },
+  },
