@@ -1,0 +1,4509 @@
+{
+  "unit": "icse-10-physics-ch03",
+  "version": 1,
+  "academic_year": "2026-27",
+  "created_at": "2026-11-01T00:00:00+05:30",
+  "decks": [
+    {
+      "unit": "icse-10-physics-ch03",
+      "part": 1,
+      "version": 1,
+      "title": "Machines — Part 1: Mechanical advantage, efficiency and levers",
+      "language": "en",
+      "goals": [
+        "Define load, effort, mechanical advantage, velocity ratio and efficiency",
+        "Derive efficiency = MA / VR and explain why MA < VR in practice",
+        "Classify levers and predict whether MA is more or less than 1",
+        "Identify levers in the human body"
+      ],
+      "slides": [
+        {
+          "id": "s01",
+          "layout": "title",
+          "heading": "Doing more with less",
+          "body_md": "Part 1 — a machine lets a small effort move a large load, or a slow movement become a fast one. Every machine follows the same rules of work and energy.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Machine",
+                "What it helps with"
+              ],
+              "rows": [
+                [
+                  "Crowbar",
+                  "Lifting a heavy stone with a small effort"
+                ],
+                [
+                  "Tongs",
+                  "Gripping quickly at a distance"
+                ],
+                [
+                  "Pulley on a well",
+                  "Pulling down instead of lifting up"
+                ],
+                [
+                  "Wheelbarrow",
+                  "Carrying a heavy load"
+                ]
+              ]
+            },
+            "alt": "Table of four simple machines and how each helps"
+          },
+          "math": [],
+          "narration": "Namaste! A crowbar lets you shift a stone far too heavy to lift by hand, and a pulley lets you draw water by pulling down instead of up. Machines make jobs easier, but they never give out more work than you put in. In this part we measure how much a machine helps, and meet the three classes of lever.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s02",
+          "layout": "concept",
+          "heading": "Load, effort, MA and VR",
+          "body_md": "A **machine** is a device by which a force applied at one point (**effort**, $E$) overcomes a force at another point (**load**, $L$). **Mechanical advantage** $\\text{MA} = \\dfrac{L}{E}$ (no unit). **Velocity ratio** $\\text{VR} = \\dfrac{d_E}{d_L} = \\dfrac{\\text{distance moved by effort}}{\\text{distance moved by load}}$ (no unit). A machine can be a **force multiplier** (MA > 1), a **speed multiplier** (MA < 1, load moves farther or faster), or simply **change the direction** of the force.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Term",
+                "Definition",
+                "Unit"
+              ],
+              "rows": [
+                [
+                  "Load L",
+                  "Force overcome by the machine",
+                  "N"
+                ],
+                [
+                  "Effort E",
+                  "Force applied to the machine",
+                  "N"
+                ],
+                [
+                  "MA",
+                  "L / E",
+                  "None"
+                ],
+                [
+                  "VR",
+                  "dE / dL",
+                  "None"
+                ]
+              ]
+            },
+            "alt": "Table defining load, effort, mechanical advantage and velocity ratio"
+          },
+          "math": [],
+          "narration": "In a machine, the force you apply is the effort and the force it overcomes is the load. Mechanical advantage is load divided by effort and tells you how much the force is multiplied. Velocity ratio is the distance moved by the effort divided by the distance moved by the load. Neither has a unit, because each is a ratio of two similar quantities.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s03",
+          "layout": "concept",
+          "heading": "Efficiency and η = MA / VR",
+          "body_md": "**Work input** $= E \\times d_E$; **work output** $= L \\times d_L$. **Efficiency** $\\eta = \\dfrac{\\text{output}}{\\text{input}} = \\dfrac{L\\,d_L}{E\\,d_E} = \\dfrac{L}{E} \\times \\dfrac{d_L}{d_E} = \\dfrac{\\text{MA}}{\\text{VR}}$. In an **ideal machine** (no friction, weightless parts) $\\eta = 1$ and MA = VR. In a **practical machine** some input is wasted against friction and in lifting moving parts, so output < input: $\\eta < 1$ and **MA < VR**. VR depends only on the design; MA depends on friction and the load.",
+          "bullets": [],
+          "visual": {
+            "kind": "flow",
+            "spec": {
+              "direction": "LR",
+              "nodes": [
+                {
+                  "id": "a",
+                  "label": "Work input E × dE"
+                },
+                {
+                  "id": "b",
+                  "label": "Work output L × dL"
+                },
+                {
+                  "id": "c",
+                  "label": "Wasted: friction, moving parts"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "a",
+                  "to": "b",
+                  "label": "useful"
+                },
+                {
+                  "from": "a",
+                  "to": "c",
+                  "label": "lost"
+                }
+              ]
+            },
+            "alt": "Flow of work input splitting into useful work output and work wasted against friction"
+          },
+          "math": [],
+          "narration": "The work you put in is effort times the distance it moves; the useful work out is load times the distance it moves. Efficiency is output divided by input. Rearranging shows it equals mechanical advantage divided by velocity ratio. A perfect machine would have an efficiency of one, but every real machine wastes some work on friction and on lifting its own parts, so its mechanical advantage is always less than its velocity ratio.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s04",
+          "layout": "example",
+          "heading": "Worked example: a machine’s efficiency",
+          "body_md": "**Problem.** In a machine an effort of 150 N lifts a load of 600 N. The effort moves 2 m while the load rises 0.4 m. Find MA, VR, efficiency, and the work wasted.\n\n**MA** $= L/E = 600 \\div 150 = 4$.\n\n**VR** $= d_E/d_L = 2 \\div 0.4 = 5$.\n\n**Efficiency** $= \\text{MA}/\\text{VR} = 4 \\div 5 = 0.8$, that is 80%.\n\n**Wasted** $= E\\,d_E - L\\,d_L = 300 - 240 = 60\\ \\text{J}$.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Quantity",
+                "Value"
+              ],
+              "rows": [
+                [
+                  "MA",
+                  "4"
+                ],
+                [
+                  "VR",
+                  "5"
+                ],
+                [
+                  "Efficiency",
+                  "80%"
+                ],
+                [
+                  "Input",
+                  "300 J"
+                ],
+                [
+                  "Output",
+                  "240 J"
+                ]
+              ]
+            },
+            "alt": "Table of results for the machine example"
+          },
+          "math": [],
+          "narration": "The load is four times the effort, so the mechanical advantage is four. The effort moves five times as far as the load, so the velocity ratio is five. Efficiency is four divided by five, or eighty percent. The input is three hundred joules and the output two hundred and forty, so sixty joules are wasted.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s05",
+          "layout": "check",
+          "heading": "Quick check: MA, VR and efficiency",
+          "body_md": "Calculate MA, VR or efficiency.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Efficiency equals mechanical advantage divided by velocity ratio.",
+          "check_question_id": "q_icse10phy_ch03_001",
+          "audio": null
+        },
+        {
+          "id": "s06",
+          "layout": "diagram",
+          "heading": "Levers: the three classes",
+          "body_md": "A **lever** is a rigid bar free to turn about a fixed point, the **fulcrum**. **Principle of the lever:** load × load arm = effort × effort arm, so $\\text{MA} = \\dfrac{\\text{effort arm}}{\\text{load arm}}$ (ideal). **Class I:** fulcrum between load and effort — MA > 1, = 1 or < 1 (see-saw, scissors, crowbar, beam balance). **Class II:** load between fulcrum and effort — effort arm always longer, **MA > 1** (nutcracker, wheelbarrow, bottle opener). **Class III:** effort between fulcrum and load — effort arm always shorter, **MA < 1**, a speed multiplier (forceps, fishing rod, sugar tongs).",
+          "bullets": [],
+          "visual": {
+            "kind": "svg",
+            "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 440 280\" role=\"img\" aria-label=\"The three classes of lever. Class one: the fulcrum lies between the load and the effort, as in a see-saw or scissors. Class two: the load lies between the fulcrum and the effort, so the effort arm is longer and the mechanical advantage is more than one, as in a nutcracker or wheelbarrow. Class three: the effort lies between the fulcrum and the load, so the effort arm is shorter and the mechanical advantage is less than one, as in forceps or the human forearm.\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>The three classes of lever. Class one: the fulcrum lies between the load and the effort, as in a see-saw or scissors. Class two: the load lies between the fulcrum and the effort, so the effort arm is longer and the mechanical advantage is more than one, as in a nutcracker or wheelbarrow. Class three: the effort lies between the fulcrum and the load, so the effort arm is shorter and the mechanical advantage is less than one, as in forceps or the human forearm.</title><rect x=\"40\" y=\"46\" width=\"240\" height=\"8\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.2\" fill-opacity=\"0.6\"/><path d=\"M136 54 L126 72 L146 72 Z\" fill=\"var(--diagram-accent)\" stroke=\"var(--diagram-accent)\" stroke-width=\"1.5\" fill-opacity=\"0.5\"/><line x1=\"52\" y1=\"20\" x2=\"52\" y2=\"38.4\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.5\"/><polygon points=\"52,44 49.1,37.6 54.9,37.6\" fill=\"var(--diagram-blue)\" stroke=\"none\"/><text x=\"52\" y=\"16\" fill=\"var(--diagram-blue)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">L</text><line x1=\"268\" y1=\"20\" x2=\"268\" y2=\"38.4\" stroke=\"var(--diagram-red)\" stroke-width=\"1.5\"/><polygon points=\"268,44 265.1,37.6 270.9,37.6\" fill=\"var(--diagram-red)\" stroke=\"none\"/><text x=\"268\" y=\"16\" fill=\"var(--diagram-red)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">E</text><text x=\"300\" y=\"46\" fill=\"currentColor\" stroke=\"none\" font-size=\"12\" font-weight=\"bold\">Class I</text><text x=\"300\" y=\"62\" fill=\"var(--diagram-muted)\" stroke=\"none\" font-size=\"10\">see-saw, scissors</text><rect x=\"40\" y=\"126\" width=\"240\" height=\"8\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.2\" fill-opacity=\"0.6\"/><path d=\"M52 134 L42 152 L62 152 Z\" fill=\"var(--diagram-accent)\" stroke=\"var(--diagram-accent)\" stroke-width=\"1.5\" fill-opacity=\"0.5\"/><line x1=\"124\" y1=\"100\" x2=\"124\" y2=\"118.4\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.5\"/><polygon points=\"124,124 121.1,117.6 126.9,117.6\" fill=\"var(--diagram-blue)\" stroke=\"none\"/><text x=\"124\" y=\"96\" fill=\"var(--diagram-blue)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">L</text><line x1=\"268\" y1=\"160\" x2=\"268\" y2=\"141.6\" stroke=\"var(--diagram-red)\" stroke-width=\"1.5\"/><polygon points=\"268,136 270.9,142.4 265.1,142.4\" fill=\"var(--diagram-red)\" stroke=\"none\"/><text x=\"268\" y=\"172\" fill=\"var(--diagram-red)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">E</text><text x=\"300\" y=\"126\" fill=\"currentColor\" stroke=\"none\" font-size=\"12\" font-weight=\"bold\">Class II</text><text x=\"300\" y=\"142\" fill=\"var(--diagram-muted)\" stroke=\"none\" font-size=\"10\">nutcracker, wheelbarrow</text><rect x=\"40\" y=\"206\" width=\"240\" height=\"8\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.2\" fill-opacity=\"0.6\"/><path d=\"M52 214 L42 232 L62 232 Z\" fill=\"var(--diagram-accent)\" stroke=\"var(--diagram-accent)\" stroke-width=\"1.5\" fill-opacity=\"0.5\"/><line x1=\"268\" y1=\"180\" x2=\"268\" y2=\"198.4\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.5\"/><polygon points=\"268,204 265.1,197.6 270.9,197.6\" fill=\"var(--diagram-blue)\" stroke=\"none\"/><text x=\"268\" y=\"176\" fill=\"var(--diagram-blue)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">L</text><line x1=\"124\" y1=\"240\" x2=\"124\" y2=\"221.6\" stroke=\"var(--diagram-red)\" stroke-width=\"1.5\"/><polygon points=\"124,216 126.9,222.4 121.1,222.4\" fill=\"var(--diagram-red)\" stroke=\"none\"/><text x=\"124\" y=\"252\" fill=\"var(--diagram-red)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">E</text><text x=\"300\" y=\"206\" fill=\"currentColor\" stroke=\"none\" font-size=\"12\" font-weight=\"bold\">Class III</text><text x=\"300\" y=\"222\" fill=\"var(--diagram-muted)\" stroke=\"none\" font-size=\"10\">forceps, forearm</text><text x=\"40\" y=\"268\" fill=\"var(--diagram-muted)\" stroke=\"none\" font-size=\"10\">▲ fulcrum   L load   E effort</text></svg>",
+            "alt": "The three classes of lever showing the positions of fulcrum, load and effort with an example of each"
+          },
+          "math": [],
+          "narration": "A lever is a rigid bar that turns about a fixed point called the fulcrum. By the principle of moments, load times load arm equals effort times effort arm. In class one levers, like a see-saw, the fulcrum is in the middle. In class two, like a wheelbarrow, the load is in the middle and the mechanical advantage is always more than one. In class three, like forceps, the effort is in the middle and the mechanical advantage is always less than one.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s07",
+          "layout": "example",
+          "heading": "Worked example: classifying and calculating",
+          "body_md": "**Problem.** (a) A wheelbarrow carries a 600 N load 0.4 m from the wheel axle; the handles are 1.2 m from the axle. Find the effort and MA. (b) Classify a pair of sugar tongs and say why its MA is less than 1.\n\n**(a)** Class II. $E \\times 1.2 = 600 \\times 0.4$, so $E = 200\\ \\text{N}$; $\\text{MA} = 600 \\div 200 = 3$.\n\n**(b)** Class III (effort applied between the hinge and the sugar cube). The effort arm is shorter than the load arm, so MA < 1 — but the tips move farther and faster than the fingers.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Lever",
+                "Class",
+                "MA"
+              ],
+              "rows": [
+                [
+                  "Wheelbarrow",
+                  "II",
+                  "3"
+                ],
+                [
+                  "Sugar tongs",
+                  "III",
+                  "Less than 1"
+                ]
+              ]
+            },
+            "alt": "Table classifying a wheelbarrow and sugar tongs with their mechanical advantages"
+          },
+          "math": [],
+          "narration": "In a wheelbarrow the axle is the fulcrum and the load sits between it and the handles, so it is a class two lever. Taking moments, the effort at the handles is two hundred newtons, and the mechanical advantage is three. Sugar tongs are squeezed between the hinge and the tips, so they are class three levers with a mechanical advantage below one, but the tips move more than your fingers.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s08",
+          "layout": "check",
+          "heading": "Quick check: classes of lever",
+          "body_md": "Classify a lever and predict its MA.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Look for what lies in the middle: fulcrum, load or effort.",
+          "check_question_id": "q_icse10phy_ch03_016",
+          "audio": null
+        },
+        {
+          "id": "s09",
+          "layout": "concept",
+          "heading": "Levers in the human body",
+          "body_md": "**Head nodding on the neck:** the fulcrum (top of the spine) lies between the weight of the face (load) and the neck muscles at the back (effort) — **class I**. **Raising the body on the toes:** the toes are the fulcrum, the body’s weight acts through the ankle (load) and the calf muscle pulls up at the heel (effort) — **class II**. **Lifting a weight in the hand:** the elbow is the fulcrum, the biceps pulls between the elbow and the hand (effort), and the weight is in the hand (load) — **class III**, MA < 1, so the hand moves fast.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Action",
+                "Fulcrum",
+                "Load",
+                "Effort",
+                "Class"
+              ],
+              "rows": [
+                [
+                  "Nodding the head",
+                  "Top of spine",
+                  "Weight of face",
+                  "Neck muscles",
+                  "I"
+                ],
+                [
+                  "Standing on toes",
+                  "Toes",
+                  "Body weight at ankle",
+                  "Calf muscle at heel",
+                  "II"
+                ],
+                [
+                  "Lifting a load in the hand",
+                  "Elbow",
+                  "Load in hand",
+                  "Biceps",
+                  "III"
+                ]
+              ]
+            },
+            "alt": "Table of three levers in the human body with fulcrum, load, effort and class"
+          },
+          "math": [],
+          "narration": "Our bodies use all three classes of lever. When you nod, the top of the spine is the fulcrum between your face and your neck muscles: class one. When you rise onto your toes, the toes are the fulcrum, your weight acts at the ankle and the calf muscle pulls the heel: class two. When you lift a weight in your hand, the elbow is the fulcrum and the biceps pulls in between: class three.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s10",
+          "layout": "check",
+          "heading": "Quick check: levers in the body",
+          "body_md": "Identify the class of a lever in the body.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. In the forearm the biceps pulls between the elbow and the hand.",
+          "check_question_id": "q_icse10phy_ch03_029",
+          "audio": null
+        },
+        {
+          "id": "s11",
+          "layout": "summary",
+          "heading": "Summary: Part 1",
+          "body_md": "",
+          "bullets": [
+            "MA = L / E; VR = dE / dL; both have no unit.",
+            "Efficiency η = output / input = MA / VR; practical machines: η < 1 and MA < VR.",
+            "Lever principle: L × load arm = E × effort arm.",
+            "Class I: fulcrum in middle; Class II: load in middle (MA > 1); Class III: effort in middle (MA < 1).",
+            "Body: neck (I), toes (II), forearm (III)."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Class",
+                "Middle",
+                "MA"
+              ],
+              "rows": [
+                [
+                  "I",
+                  "Fulcrum",
+                  ">, = or < 1"
+                ],
+                [
+                  "II",
+                  "Load",
+                  "> 1"
+                ],
+                [
+                  "III",
+                  "Effort",
+                  "< 1"
+                ]
+              ]
+            },
+            "alt": "Summary table of lever classes"
+          },
+          "math": [],
+          "narration": "Let us sum up Part 1. Mechanical advantage is load over effort, velocity ratio is effort distance over load distance, and efficiency is their ratio. Real machines always have efficiency below one. Levers come in three classes, depending on whether the fulcrum, the load or the effort is in the middle, and our bodies use all three.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s12",
+          "layout": "exam-tips",
+          "heading": "Exam tips: Part 1",
+          "body_md": "",
+          "bullets": [
+            "Write the derivation η = MA/VR from output/input step by step.",
+            "Give efficiency as a fraction or a percentage, never more than 1 (100%).",
+            "To classify a lever, name what is in the middle.",
+            "Explain why class III levers are useful: they gain speed or distance."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Slip",
+                "Fix"
+              ],
+              "rows": [
+                [
+                  "MA = 0.5 is useless",
+                  "It gains speed (class III)"
+                ],
+                [
+                  "Efficiency 120%",
+                  "Impossible: output < input"
+                ],
+                [
+                  "VR depends on friction",
+                  "VR depends only on design"
+                ]
+              ]
+            },
+            "alt": "Table of three common slips in Part 1 and their fixes"
+          },
+          "math": [],
+          "narration": "Some tips. Learn to derive efficiency equals mechanical advantage over velocity ratio. Efficiency can never be more than one hundred percent. To classify a lever, say which of fulcrum, load or effort lies in the middle. And remember that a mechanical advantage below one is not useless: the load moves faster and farther.",
+          "check_question_id": null,
+          "audio": null
+        }
+      ],
+      "status": "draft",
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "unit": "icse-10-physics-ch03",
+      "part": 2,
+      "version": 1,
+      "title": "Machines — Part 2: Pulleys",
+      "language": "en",
+      "goals": [
+        "State MA, VR and the use of a single fixed pulley",
+        "Find MA, VR and efficiency of a single movable pulley",
+        "Calculate MA, VR and efficiency of a block and tackle, including the weight of the movable block",
+        "Explain why a single fixed pulley is used though its MA is 1"
+      ],
+      "slides": [
+        {
+          "id": "s01",
+          "layout": "title",
+          "heading": "Wheels with a groove",
+          "body_md": "Part 2 — a pulley is a grooved wheel turning on an axle, with a string or rope round it. Arranged in blocks, pulleys lift engines and building materials.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Pulley system",
+                "Where it is used"
+              ],
+              "rows": [
+                [
+                  "Single fixed pulley",
+                  "Drawing water from a well, raising a flag"
+                ],
+                [
+                  "Single movable pulley",
+                  "Lifting loads on a building site"
+                ],
+                [
+                  "Block and tackle",
+                  "Cranes, garage engine hoists, ships"
+                ]
+              ]
+            },
+            "alt": "Table of three pulley systems and where each is used"
+          },
+          "math": [],
+          "narration": "A pulley is a wheel with a groove for a rope. A single pulley fixed at the top of a well lets you draw water by pulling down. Pulleys that move with the load share its weight between several strands of rope. Combined in blocks, they let a mechanic lift a car engine by hand.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s02",
+          "layout": "diagram",
+          "heading": "Single fixed and single movable pulleys",
+          "body_md": "**Single fixed pulley:** the axle is fixed; effort and load are on the two ends of one string. Ideal MA = 1 and VR = 1 (effort moves as far as the load). In practice MA < 1 because of friction. **Use:** it **changes the direction** of the effort — pulling down is easier and safer than lifting up, and you can use your own weight. **Single movable pulley:** the pulley moves with the load, hanging in a loop of string fixed at one end. Two strands support the load, so **VR = 2** and ideal MA = 2.",
+          "bullets": [],
+          "visual": {
+            "kind": "svg",
+            "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 340 240\" role=\"img\" aria-label=\"Left: a single fixed pulley. The effort pulls down on one side of the string and the load hangs on the other; the mechanical advantage and velocity ratio are both one, but the direction of the force is changed. Right: a single movable pulley hanging in a loop of string fixed at one end; the effort pulls up the free end, two strands share the load, and the velocity ratio is two.\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>Left: a single fixed pulley. The effort pulls down on one side of the string and the load hangs on the other; the mechanical advantage and velocity ratio are both one, but the direction of the force is changed. Right: a single movable pulley hanging in a loop of string fixed at one end; the effort pulls up the free end, two strands share the load, and the velocity ratio is two.</title><line x1=\"20\" y1=\"20\" x2=\"330\" y2=\"20\" stroke=\"currentColor\" stroke-width=\"4\"/><line x1=\"90\" y1=\"20\" x2=\"90\" y2=\"42\" stroke=\"currentColor\" stroke-width=\"2\"/><circle cx=\"90\" cy=\"60\" r=\"18\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\" fill-opacity=\"0.6\"/><circle cx=\"90\" cy=\"60\" r=\"3\" fill=\"currentColor\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"72\" y1=\"60\" x2=\"72\" y2=\"160\" stroke=\"currentColor\" stroke-width=\"1.4\"/><line x1=\"108\" y1=\"60\" x2=\"108\" y2=\"120\" stroke=\"var(--diagram-red)\" stroke-width=\"1.4\"/><line x1=\"108\" y1=\"120\" x2=\"108\" y2=\"154.4\" stroke=\"var(--diagram-red)\" stroke-width=\"1.5\"/><polygon points=\"108,160 105.1,153.6 110.9,153.6\" fill=\"var(--diagram-red)\" stroke=\"none\"/><text x=\"114\" y=\"150\" fill=\"var(--diagram-red)\" stroke=\"none\" font-size=\"12\" font-weight=\"bold\">E</text><rect x=\"57\" y=\"160\" width=\"30\" height=\"26\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.5\" fill-opacity=\"0.3\"/><text x=\"72\" y=\"178\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\">L</text><text x=\"90\" y=\"210\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\">fixed: MA = VR = 1</text><text x=\"90\" y=\"226\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">changes direction</text><line x1=\"222\" y1=\"20\" x2=\"222\" y2=\"130\" stroke=\"currentColor\" stroke-width=\"1.4\"/><circle cx=\"240\" cy=\"130\" r=\"18\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\" fill-opacity=\"0.6\"/><circle cx=\"240\" cy=\"130\" r=\"3\" fill=\"currentColor\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"258\" y1=\"130\" x2=\"258\" y2=\"70\" stroke=\"var(--diagram-red)\" stroke-width=\"1.4\"/><line x1=\"258\" y1=\"70\" x2=\"258\" y2=\"41.6\" stroke=\"var(--diagram-red)\" stroke-width=\"1.5\"/><polygon points=\"258,36 260.9,42.4 255.1,42.4\" fill=\"var(--diagram-red)\" stroke=\"none\"/><text x=\"264\" y=\"50\" fill=\"var(--diagram-red)\" stroke=\"none\" font-size=\"12\" font-weight=\"bold\">E</text><line x1=\"240\" y1=\"148\" x2=\"240\" y2=\"160\" stroke=\"currentColor\" stroke-width=\"1.5\"/><rect x=\"225\" y=\"160\" width=\"30\" height=\"26\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.5\" fill-opacity=\"0.3\"/><text x=\"240\" y=\"178\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\">L</text><text x=\"240\" y=\"210\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\">movable: VR = 2</text><text x=\"240\" y=\"226\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">2 strands share the load</text></svg>",
+            "alt": "A single fixed pulley and a single movable pulley with their velocity ratios"
+          },
+          "math": [],
+          "narration": "A single fixed pulley does not reduce the force: its mechanical advantage is one, or a little less because of friction. Its value lies in changing direction, so you can pull down using your own weight instead of lifting up. A single movable pulley hangs in a loop of rope and moves with the load. Two strands share the load, so the velocity ratio is two.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s03",
+          "layout": "example",
+          "heading": "Worked example: a movable pulley with a heavy block",
+          "body_md": "**Problem.** A single movable pulley of weight 20 N is used to lift a load of 180 N. Ignoring friction, find the effort, MA, VR and efficiency.\n\n**Effort:** two strands support load + pulley: $2E = 180 + 20$, so $E = 100\\ \\text{N}$.\n\n**MA** $= 180 \\div 100 = 1.8$; **VR** = 2.\n\n**Efficiency** $= 1.8 \\div 2 = 0.9$, that is 90%: the pulley’s own weight wastes some of the input.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Quantity",
+                "Value"
+              ],
+              "rows": [
+                [
+                  "Effort",
+                  "100 N"
+                ],
+                [
+                  "MA",
+                  "1.8"
+                ],
+                [
+                  "VR",
+                  "2"
+                ],
+                [
+                  "Efficiency",
+                  "90%"
+                ]
+              ]
+            },
+            "alt": "Table of results for the movable pulley example"
+          },
+          "math": [],
+          "narration": "The two strands hold up both the load and the pulley, two hundred newtons in all, so each strand, and so the effort, carries a hundred newtons. The mechanical advantage is one hundred and eighty divided by one hundred, which is one point eight. The velocity ratio is two, so the efficiency is ninety percent.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s04",
+          "layout": "check",
+          "heading": "Quick check: single pulleys",
+          "body_md": "State the VR or use of a single pulley.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. A fixed pulley changes direction; a movable pulley has two supporting strands.",
+          "check_question_id": "q_icse10phy_ch03_034",
+          "audio": null
+        },
+        {
+          "id": "s05",
+          "layout": "diagram",
+          "heading": "Block and tackle",
+          "body_md": "A **block and tackle** has an upper block of fixed pulleys and a lower block of movable pulleys, with **one continuous string** passing round all of them. If $n$ strands support the lower block: **VR = n** (the effort must move $n$ times as far as the load). With **no friction** and a movable block of weight $w$: tension in each strand $= E$, so $nE = L + w$ and $\\text{MA} = \\dfrac{L}{E} = \\dfrac{nL}{L + w}$. Efficiency $= \\dfrac{\\text{MA}}{\\text{VR}} = \\dfrac{L}{L + w}$.",
+          "bullets": [],
+          "visual": {
+            "kind": "svg",
+            "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 270\" role=\"img\" aria-label=\"A block and tackle with two pulleys in a fixed upper block and two in a movable lower block. One continuous string passes round all four pulleys, so four strands support the lower block and the load hanging from it. The free end is pulled down with the effort. The velocity ratio equals the number of supporting strands, four.\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>A block and tackle with two pulleys in a fixed upper block and two in a movable lower block. One continuous string passes round all four pulleys, so four strands support the lower block and the load hanging from it. The free end is pulled down with the effort. The velocity ratio equals the number of supporting strands, four.</title><line x1=\"100\" y1=\"20\" x2=\"230\" y2=\"20\" stroke=\"currentColor\" stroke-width=\"4\"/><line x1=\"165\" y1=\"20\" x2=\"165\" y2=\"32\" stroke=\"currentColor\" stroke-width=\"2\"/><rect x=\"115\" y=\"32\" width=\"100\" height=\"36\" fill=\"none\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\" stroke-dasharray=\"3 2\"/><rect x=\"115\" y=\"172\" width=\"100\" height=\"36\" fill=\"none\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\" stroke-dasharray=\"3 2\"/><circle cx=\"140\" cy=\"50\" r=\"18\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\" fill-opacity=\"0.6\"/><circle cx=\"140\" cy=\"50\" r=\"3\" fill=\"currentColor\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"190\" cy=\"50\" r=\"18\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\" fill-opacity=\"0.6\"/><circle cx=\"190\" cy=\"50\" r=\"3\" fill=\"currentColor\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"140\" cy=\"190\" r=\"18\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\" fill-opacity=\"0.6\"/><circle cx=\"140\" cy=\"190\" r=\"3\" fill=\"currentColor\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"190\" cy=\"190\" r=\"18\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\" fill-opacity=\"0.6\"/><circle cx=\"190\" cy=\"190\" r=\"3\" fill=\"currentColor\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"122\" y1=\"50\" x2=\"122\" y2=\"190\" stroke=\"currentColor\" stroke-width=\"1.4\"/><line x1=\"158\" y1=\"50\" x2=\"158\" y2=\"190\" stroke=\"currentColor\" stroke-width=\"1.4\"/><line x1=\"172\" y1=\"50\" x2=\"172\" y2=\"190\" stroke=\"currentColor\" stroke-width=\"1.4\"/><line x1=\"208\" y1=\"50\" x2=\"208\" y2=\"190\" stroke=\"var(--diagram-red)\" stroke-width=\"1.4\"/><line x1=\"208\" y1=\"50\" x2=\"250\" y2=\"50\" stroke=\"var(--diagram-red)\" stroke-width=\"1.4\"/><line x1=\"250\" y1=\"50\" x2=\"250\" y2=\"140\" stroke=\"var(--diagram-red)\" stroke-width=\"1.4\"/><line x1=\"250\" y1=\"140\" x2=\"250\" y2=\"174.4\" stroke=\"var(--diagram-red)\" stroke-width=\"1.5\"/><polygon points=\"250,180 247.1,173.6 252.9,173.6\" fill=\"var(--diagram-red)\" stroke=\"none\"/><text x=\"258\" y=\"170\" fill=\"var(--diagram-red)\" stroke=\"none\" font-size=\"11\">E (effort)</text><line x1=\"165\" y1=\"208\" x2=\"165\" y2=\"228\" stroke=\"currentColor\" stroke-width=\"1.5\"/><rect x=\"140\" y=\"228\" width=\"50\" height=\"28\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.5\" fill-opacity=\"0.3\"/><text x=\"165\" y=\"247\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\">L</text><text x=\"20\" y=\"120\" fill=\"var(--diagram-accent)\" stroke=\"none\" font-size=\"11\">4 strands</text><text x=\"20\" y=\"134\" fill=\"var(--diagram-accent)\" stroke=\"none\" font-size=\"11\">support the</text><text x=\"20\" y=\"148\" fill=\"var(--diagram-accent)\" stroke=\"none\" font-size=\"11\">lower block</text><text x=\"20\" y=\"180\" fill=\"var(--diagram-green)\" stroke=\"none\" font-size=\"12\" font-weight=\"bold\">VR = 4</text></svg>",
+            "alt": "A block and tackle with four strands supporting the lower block, giving a velocity ratio of four"
+          },
+          "math": [],
+          "narration": "In a block and tackle, the top block of pulleys is fixed and the bottom block moves with the load, and one rope runs round them all. If n strands hold up the bottom block, the effort end must be pulled n times as far as the load rises, so the velocity ratio is n. The same tension acts in every strand, so n times the effort holds up the load plus the weight of the lower block.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s06",
+          "layout": "example",
+          "heading": "Worked example: a block and tackle",
+          "body_md": "**Problem.** A block and tackle with 4 strands supporting the lower block lifts a load of 900 N. The lower block weighs 100 N; friction is negligible. Find (a) VR, (b) the effort, (c) MA and (d) efficiency.\n\n**(a)** VR = 4.\n\n**(b)** $4E = 900 + 100$, so $E = 250\\ \\text{N}$.\n\n**(c)** $\\text{MA} = 900 \\div 250 = 3.6$.\n\n**(d)** $\\eta = 3.6 \\div 4 = 0.9$, that is 90% $= L/(L + w)$.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Quantity",
+                "Value"
+              ],
+              "rows": [
+                [
+                  "VR",
+                  "4"
+                ],
+                [
+                  "Effort",
+                  "250 N"
+                ],
+                [
+                  "MA",
+                  "3.6"
+                ],
+                [
+                  "Efficiency",
+                  "90%"
+                ]
+              ]
+            },
+            "alt": "Table of results for the block and tackle example"
+          },
+          "math": [],
+          "narration": "Four strands support the lower block, so the velocity ratio is four. Together they carry the load and the block, a thousand newtons, so each strand, and the effort, is two hundred and fifty newtons. The mechanical advantage is nine hundred divided by two hundred and fifty, which is three point six, and the efficiency is ninety percent.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s07",
+          "layout": "check",
+          "heading": "Quick check: block and tackle",
+          "body_md": "Find VR or effort for a block and tackle.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. The velocity ratio equals the number of strands supporting the lower block.",
+          "check_question_id": "q_icse10phy_ch03_035",
+          "audio": null
+        },
+        {
+          "id": "s08",
+          "layout": "concept",
+          "heading": "Why MA is less than VR in pulley systems",
+          "body_md": "In a practical block and tackle, part of the effort is used **to lift the lower block** and **to overcome friction** at the axles, and the string has some weight. So MA < VR and η < 1. **Efficiency improves** as the load increases (the block’s weight becomes a smaller fraction of the total), and when the pulleys are light and well lubricated. VR stays the same because it depends only on the number of strands.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Change",
+                "Effect on MA",
+                "Effect on VR",
+                "Effect on η"
+              ],
+              "rows": [
+                [
+                  "Heavier lower block",
+                  "Decreases",
+                  "No change",
+                  "Decreases"
+                ],
+                [
+                  "More friction",
+                  "Decreases",
+                  "No change",
+                  "Decreases"
+                ],
+                [
+                  "Larger load",
+                  "Increases",
+                  "No change",
+                  "Increases"
+                ],
+                [
+                  "More strands",
+                  "Increases",
+                  "Increases",
+                  "Usually decreases (more friction, heavier block)"
+                ]
+              ]
+            },
+            "alt": "Table of how changes affect mechanical advantage, velocity ratio and efficiency of a block and tackle"
+          },
+          "math": [],
+          "narration": "In a real block and tackle, some of the effort goes into lifting the lower block and overcoming friction, so the mechanical advantage is less than the velocity ratio. A larger load raises the efficiency, because the block’s weight becomes a smaller share of the total. The velocity ratio does not change at all, since it depends only on how many strands support the lower block.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s09",
+          "layout": "example",
+          "heading": "Worked example: efficiency rises with load",
+          "body_md": "**Problem.** A block and tackle has VR 4 and a lower block of weight 100 N; friction is negligible. Find the efficiency when it lifts (a) 300 N, (b) 900 N and (c) 1900 N.\n\n**Rule:** $\\eta = \\dfrac{L}{L + w}$.\n\n**(a)** $300 \\div 400 = 0.75$ (75%). **(b)** $900 \\div 1000 = 0.9$ (90%). **(c)** $1900 \\div 2000 = 0.95$ (95%).\n\nThe block’s weight matters less as the load grows, so heavy loads are lifted more efficiently.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Load (N)",
+                "Effort (N)",
+                "MA",
+                "Efficiency"
+              ],
+              "rows": [
+                [
+                  "300",
+                  "100",
+                  "3",
+                  "75%"
+                ],
+                [
+                  "900",
+                  "250",
+                  "3.6",
+                  "90%"
+                ],
+                [
+                  "1900",
+                  "500",
+                  "3.8",
+                  "95%"
+                ]
+              ]
+            },
+            "alt": "Table of effort, mechanical advantage and efficiency of a block and tackle at three loads"
+          },
+          "math": [],
+          "narration": "Use efficiency equals load divided by load plus block weight. With a three hundred newton load, the efficiency is seventy five percent; with nine hundred, ninety percent; with nineteen hundred, ninety five percent. The block weighs the same each time, so it wastes a smaller share of the work as the load gets bigger.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s10",
+          "layout": "check",
+          "heading": "Quick check: efficiency of pulleys",
+          "body_md": "Predict how a change affects MA, VR or efficiency.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Velocity ratio depends only on the number of supporting strands.",
+          "check_question_id": "q_icse10phy_ch03_036",
+          "audio": null
+        },
+        {
+          "id": "s11",
+          "layout": "summary",
+          "heading": "Summary: Part 2",
+          "body_md": "",
+          "bullets": [
+            "Single fixed pulley: MA = VR = 1 (ideal); changes the direction of effort.",
+            "Single movable pulley: VR = 2; with pulley weight w, 2E = L + w.",
+            "Block and tackle: VR = n (strands supporting the lower block); nE = L + w; η = L / (L + w) (no friction).",
+            "MA < VR because of friction and the weight of moving parts; η rises with load."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "System",
+                "VR"
+              ],
+              "rows": [
+                [
+                  "Single fixed",
+                  "1"
+                ],
+                [
+                  "Single movable",
+                  "2"
+                ],
+                [
+                  "Block and tackle",
+                  "n"
+                ]
+              ]
+            },
+            "alt": "Summary table of velocity ratios of pulley systems"
+          },
+          "math": [],
+          "narration": "Let us sum up Part 2. A single fixed pulley does not multiply force but changes its direction. A single movable pulley has a velocity ratio of two. A block and tackle has a velocity ratio equal to the number of strands holding up the lower block. The weight of that block and friction make the mechanical advantage less than the velocity ratio.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s12",
+          "layout": "exam-tips",
+          "heading": "Exam tips: Part 2",
+          "body_md": "",
+          "bullets": [
+            "Count only the strands that support the lower (movable) block.",
+            "Include the weight of the lower block when finding the effort.",
+            "For a fixed pulley, give its advantage as “change of direction”, not “force gain”.",
+            "Show nE = L + w before solving for E."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Slip",
+                "Fix"
+              ],
+              "rows": [
+                [
+                  "Counting the effort strand from a fixed pulley twice",
+                  "Count strands supporting the lower block"
+                ],
+                [
+                  "Ignoring block weight",
+                  "nE = L + w"
+                ],
+                [
+                  "Fixed pulley MA = 2",
+                  "MA = 1"
+                ]
+              ]
+            },
+            "alt": "Table of three common slips in Part 2 and their fixes"
+          },
+          "math": [],
+          "narration": "Final tips. Count only the strands that hold up the lower block. Include that block’s weight when you work out the effort. Describe the use of a single fixed pulley as changing the direction of the force. And write the equation n times effort equals load plus block weight before solving.",
+          "check_question_id": null,
+          "audio": null
+        }
+      ],
+      "status": "draft",
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    }
+  ],
+  "notes": {
+    "unit": "icse-10-physics-ch03",
+    "version": 1,
+    "title": "Machines — Notes",
+    "language": "en",
+    "sections": [
+      {
+        "heading": "1. Machines: MA, VR and efficiency",
+        "body_md": "- **Load (L):** force overcome; **effort (E):** force applied.\n- $\\text{MA} = L/E$; $\\text{VR} = d_E/d_L$ (no units).\n- Work input $= E d_E$; output $= L d_L$; $\\eta = \\dfrac{L d_L}{E d_E} = \\dfrac{\\text{MA}}{\\text{VR}}$.\n- Ideal machine: $\\eta = 1$, MA = VR. Practical: friction and weight of moving parts → $\\eta < 1$, MA < VR.\n- Uses: force multiplier (MA > 1), speed multiplier (MA < 1), change of direction, convenient point of application.",
+        "key_terms": [
+          {
+            "term": "Mechanical advantage",
+            "definition_md": "The ratio of the load to the effort."
+          },
+          {
+            "term": "Velocity ratio",
+            "definition_md": "The ratio of the distance moved by the effort to the distance moved by the load in the same time."
+          },
+          {
+            "term": "Efficiency",
+            "definition_md": "The ratio of the useful work output to the work input of a machine."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\eta = \\dfrac{\\text{MA}}{\\text{VR}}",
+            "label": "Efficiency"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Machine",
+              "MA",
+              "VR",
+              "η"
+            ],
+            "rows": [
+              [
+                "Ideal",
+                "VR",
+                "VR",
+                "1"
+              ],
+              [
+                "Practical",
+                "< VR",
+                "VR",
+                "< 1"
+              ]
+            ]
+          },
+          "alt": "Table contrasting ideal and practical machines"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-physics-ch03-t01"
+        ]
+      },
+      {
+        "heading": "2. Levers",
+        "body_md": "Rigid bar turning about a fulcrum. **Principle:** $L \\times \\text{load arm} = E \\times \\text{effort arm}$, so ideal $\\text{MA} = \\dfrac{\\text{effort arm}}{\\text{load arm}}$.\n\n| Class | In the middle | MA | Examples |\n|---|---|---|---|\n| I | Fulcrum | > 1, = 1 or < 1 | See-saw, scissors, crowbar, beam balance |\n| II | Load | Always > 1 | Nutcracker, wheelbarrow, bottle opener |\n| III | Effort | Always < 1 | Forceps, sugar tongs, fishing rod |\n\nClass III levers sacrifice force for speed and distance.",
+        "key_terms": [
+          {
+            "term": "Fulcrum",
+            "definition_md": "The fixed point about which a lever turns."
+          },
+          {
+            "term": "Effort arm",
+            "definition_md": "The perpendicular distance of the effort from the fulcrum."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\text{MA} = \\dfrac{\\text{effort arm}}{\\text{load arm}}",
+            "label": "Ideal lever"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Lever",
+              "Class"
+            ],
+            "rows": [
+              [
+                "Scissors",
+                "I"
+              ],
+              [
+                "Nutcracker",
+                "II"
+              ],
+              [
+                "Forceps",
+                "III"
+              ]
+            ]
+          },
+          "alt": "Table of three levers and their classes"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-physics-ch03-t02"
+        ]
+      },
+      {
+        "heading": "3. Levers in the human body",
+        "body_md": "| Action | Fulcrum | Load | Effort | Class |\n|---|---|---|---|---|\n| Nodding | Top of spine | Weight of face | Neck muscles | I |\n| Raising heels | Toes | Body weight at ankle | Calf muscle | II |\n| Lifting with forearm | Elbow | Weight in hand | Biceps | III |",
+        "key_terms": [
+          {
+            "term": "Biceps lever",
+            "definition_md": "The forearm used as a class III lever, with the biceps pulling between the elbow and the hand."
+          }
+        ],
+        "formulas": [],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Body part",
+              "Class"
+            ],
+            "rows": [
+              [
+                "Neck",
+                "I"
+              ],
+              [
+                "Foot",
+                "II"
+              ],
+              [
+                "Forearm",
+                "III"
+              ]
+            ]
+          },
+          "alt": "Table of body levers"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-physics-ch03-t03"
+        ]
+      },
+      {
+        "heading": "4. Pulley systems",
+        "body_md": "- **Single fixed pulley:** MA = VR = 1 (ideal); changes direction of effort (pull down using body weight).\n- **Single movable pulley:** VR = 2; with pulley weight $w$: $2E = L + w$.\n- **Block and tackle:** VR = $n$ = number of strands supporting the lower block. No friction: $nE = L + w$, $\\text{MA} = \\dfrac{nL}{L + w}$, $\\eta = \\dfrac{L}{L + w}$.\n- MA < VR because of friction and the weight of the lower block; efficiency rises with larger load.",
+        "key_terms": [
+          {
+            "term": "Block and tackle",
+            "definition_md": "A pulley system with a fixed upper block and a movable lower block joined by one continuous string."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "nE = L + w",
+            "label": "Block and tackle without friction"
+          },
+          {
+            "latex": "\\eta = \\dfrac{L}{L + w}",
+            "label": "Efficiency without friction"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "System",
+              "VR",
+              "Ideal MA"
+            ],
+            "rows": [
+              [
+                "Fixed pulley",
+                "1",
+                "1"
+              ],
+              [
+                "Movable pulley",
+                "2",
+                "2"
+              ],
+              [
+                "Block and tackle",
+                "n",
+                "n"
+              ]
+            ]
+          },
+          "alt": "Table of pulley systems"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-physics-ch03-t04"
+        ]
+      }
+    ],
+    "exam_tips_md": "**Common mistakes**\n- Giving units to MA or VR.\n- Efficiency greater than 1.\n- Counting strands attached to the upper block.\n- Forgetting the weight of the lower block.\n\n**How marks are usually awarded**\n- Definitions (1 mark each).\n- Derivation η = MA/VR (2 marks).\n- Pulley numericals (1 mark each): VR, effort from nE = L + w, MA, efficiency.",
+    "status": "draft",
+    "provenance": {
+      "origin": "human",
+      "template_version": null,
+      "model": null,
+      "generated_at": "2026-11-01",
+      "author": "claude-opus-5-5 (subject-producer)"
+    }
+  },
+  "flashcards": {
+    "unit": "icse-10-physics-ch03",
+    "version": 1,
+    "language": "en",
+    "cards": [
+      {
+        "id": "f01",
+        "front_md": "Mechanical advantage?",
+        "back_md": "Load ÷ effort.",
+        "tag": "formula",
+        "topic_id": "icse-10-physics-ch03-t01"
+      },
+      {
+        "id": "f02",
+        "front_md": "Velocity ratio?",
+        "back_md": "Distance moved by effort ÷ distance moved by load.",
+        "tag": "formula",
+        "topic_id": "icse-10-physics-ch03-t01"
+      },
+      {
+        "id": "f03",
+        "front_md": "Efficiency?",
+        "back_md": "Work output ÷ work input = MA ÷ VR.",
+        "tag": "formula",
+        "topic_id": "icse-10-physics-ch03-t01"
+      },
+      {
+        "id": "f04",
+        "front_md": "Why is MA < VR in practice?",
+        "back_md": "Friction and weight of moving parts.",
+        "tag": "concept",
+        "topic_id": "icse-10-physics-ch03-t01"
+      },
+      {
+        "id": "f05",
+        "front_md": "Units of MA and VR?",
+        "back_md": "None (ratios).",
+        "tag": "fact",
+        "topic_id": "icse-10-physics-ch03-t01"
+      },
+      {
+        "id": "f06",
+        "front_md": "Ideal machine efficiency?",
+        "back_md": "1 (100%).",
+        "tag": "fact",
+        "topic_id": "icse-10-physics-ch03-t01"
+      },
+      {
+        "id": "f07",
+        "front_md": "Does VR depend on friction?",
+        "back_md": "No; only on the design.",
+        "tag": "concept",
+        "topic_id": "icse-10-physics-ch03-t01"
+      },
+      {
+        "id": "f08",
+        "front_md": "Speed multiplier?",
+        "back_md": "A machine with MA < 1.",
+        "tag": "definition",
+        "topic_id": "icse-10-physics-ch03-t01"
+      },
+      {
+        "id": "f09",
+        "front_md": "Lever principle?",
+        "back_md": "Load × load arm = effort × effort arm.",
+        "tag": "formula",
+        "topic_id": "icse-10-physics-ch03-t02"
+      },
+      {
+        "id": "f10",
+        "front_md": "Class I lever?",
+        "back_md": "Fulcrum between load and effort.",
+        "tag": "definition",
+        "topic_id": "icse-10-physics-ch03-t02"
+      },
+      {
+        "id": "f11",
+        "front_md": "Class II lever?",
+        "back_md": "Load between fulcrum and effort; MA > 1.",
+        "tag": "definition",
+        "topic_id": "icse-10-physics-ch03-t02"
+      },
+      {
+        "id": "f12",
+        "front_md": "Class III lever?",
+        "back_md": "Effort between fulcrum and load; MA < 1.",
+        "tag": "definition",
+        "topic_id": "icse-10-physics-ch03-t02"
+      },
+      {
+        "id": "f13",
+        "front_md": "Class of a wheelbarrow?",
+        "back_md": "II.",
+        "tag": "fact",
+        "topic_id": "icse-10-physics-ch03-t02"
+      },
+      {
+        "id": "f14",
+        "front_md": "Class of forceps?",
+        "back_md": "III.",
+        "tag": "fact",
+        "topic_id": "icse-10-physics-ch03-t02"
+      },
+      {
+        "id": "f15",
+        "front_md": "Class of scissors?",
+        "back_md": "I.",
+        "tag": "fact",
+        "topic_id": "icse-10-physics-ch03-t02"
+      },
+      {
+        "id": "f16",
+        "front_md": "Use of a class III lever?",
+        "back_md": "Gains speed and distance.",
+        "tag": "concept",
+        "topic_id": "icse-10-physics-ch03-t02"
+      },
+      {
+        "id": "f17",
+        "front_md": "Nodding head: class?",
+        "back_md": "I.",
+        "tag": "fact",
+        "topic_id": "icse-10-physics-ch03-t03"
+      },
+      {
+        "id": "f18",
+        "front_md": "Standing on toes: class?",
+        "back_md": "II.",
+        "tag": "fact",
+        "topic_id": "icse-10-physics-ch03-t03"
+      },
+      {
+        "id": "f19",
+        "front_md": "Forearm lifting: class?",
+        "back_md": "III.",
+        "tag": "fact",
+        "topic_id": "icse-10-physics-ch03-t03"
+      },
+      {
+        "id": "f20",
+        "front_md": "Fulcrum of the forearm?",
+        "back_md": "Elbow.",
+        "tag": "fact",
+        "topic_id": "icse-10-physics-ch03-t03"
+      },
+      {
+        "id": "f21",
+        "front_md": "Single fixed pulley MA (ideal)?",
+        "back_md": "1.",
+        "tag": "fact",
+        "topic_id": "icse-10-physics-ch03-t04"
+      },
+      {
+        "id": "f22",
+        "front_md": "Use of a single fixed pulley?",
+        "back_md": "Changes the direction of effort.",
+        "tag": "concept",
+        "topic_id": "icse-10-physics-ch03-t04"
+      },
+      {
+        "id": "f23",
+        "front_md": "VR of a single movable pulley?",
+        "back_md": "2.",
+        "tag": "fact",
+        "topic_id": "icse-10-physics-ch03-t04"
+      },
+      {
+        "id": "f24",
+        "front_md": "VR of a block and tackle?",
+        "back_md": "Number of strands supporting the lower block.",
+        "tag": "fact",
+        "topic_id": "icse-10-physics-ch03-t04"
+      },
+      {
+        "id": "f25",
+        "front_md": "Effort in a frictionless block and tackle?",
+        "back_md": "E = (L + w)/n.",
+        "tag": "formula",
+        "topic_id": "icse-10-physics-ch03-t04"
+      },
+      {
+        "id": "f26",
+        "front_md": "Efficiency of a frictionless block and tackle?",
+        "back_md": "L/(L + w).",
+        "tag": "formula",
+        "topic_id": "icse-10-physics-ch03-t04"
+      },
+      {
+        "id": "f27",
+        "front_md": "Effect of a heavier lower block on η?",
+        "back_md": "Decreases.",
+        "tag": "fact",
+        "topic_id": "icse-10-physics-ch03-t04"
+      },
+      {
+        "id": "f28",
+        "front_md": "Effect of a larger load on η?",
+        "back_md": "Increases.",
+        "tag": "fact",
+        "topic_id": "icse-10-physics-ch03-t04"
+      },
+      {
+        "id": "f29",
+        "front_md": "Effect of friction on VR?",
+        "back_md": "None.",
+        "tag": "fact",
+        "topic_id": "icse-10-physics-ch03-t04"
+      },
+      {
+        "id": "f30",
+        "front_md": "Exam tip: pulleys",
+        "back_md": "Count only strands supporting the lower block.",
+        "tag": "exam-tip",
+        "topic_id": "icse-10-physics-ch03-t04"
+      }
+    ],
+    "status": "draft",
+    "provenance": {
+      "origin": "human",
+      "template_version": null,
+      "model": null,
+      "generated_at": "2026-11-01",
+      "author": "claude-opus-5-5 (subject-producer)"
+    }
+  },
+  "questions": [
+    {
+      "id": "q_icse10phy_ch03_001",
+      "unit": "icse-10-physics-ch03",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A car jack lifts a 1200 N load with an effort of 300 N. Its velocity ratio is 5. Its efficiency is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "400%"
+        },
+        {
+          "id": "b",
+          "text_md": "25%"
+        },
+        {
+          "id": "c",
+          "text_md": "80%"
+        },
+        {
+          "id": "d",
+          "text_md": "125%"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "MA $= 1200 \\div 300 = 4$; $\\eta = 4 \\div 5 = 0.8$, that is 80% — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch03-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch03_002",
+      "unit": "icse-10-physics-ch03",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "For every practical machine:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "MA is less than VR, so efficiency is less than 1"
+        },
+        {
+          "id": "b",
+          "text_md": "MA equals VR"
+        },
+        {
+          "id": "c",
+          "text_md": "MA is greater than VR"
+        },
+        {
+          "id": "d",
+          "text_md": "VR is less than 1"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Friction and moving parts waste part of the input — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-physics-ch03-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch03_003",
+      "unit": "icse-10-physics-ch03",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "In a machine, the effort moves 3 m while the load rises 0.5 m. The velocity ratio is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "1.5"
+        },
+        {
+          "id": "b",
+          "text_md": "6"
+        },
+        {
+          "id": "c",
+          "text_md": "0.17"
+        },
+        {
+          "id": "d",
+          "text_md": "3.5"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "VR = 3 ÷ 0.5 = 6 — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch03-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch03_004",
+      "unit": "icse-10-physics-ch03",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A machine with mechanical advantage less than 1 is still useful because:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "it has an efficiency greater than 1"
+        },
+        {
+          "id": "b",
+          "text_md": "it moves the load through a larger distance or at a greater speed than the effort"
+        },
+        {
+          "id": "c",
+          "text_md": "it needs no effort"
+        },
+        {
+          "id": "d",
+          "text_md": "its velocity ratio is greater than its mechanical advantage only when ideal"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "It works as a speed multiplier — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-physics-ch03-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch03_005",
+      "unit": "icse-10-physics-ch03",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "A lever lifts an 800 N stone when an effort of 250 N is applied. Find its mechanical advantage.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 3.2,
+        "tolerance": 0,
+        "unit": null
+      },
+      "solution_md": "MA $= L/E = 800 \\div 250 = 3.2$.",
+      "marking_scheme": [
+        {
+          "step": "3.2",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch03-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch03_006",
+      "unit": "icse-10-physics-ch03",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "A machine lifts a 500 N load through 0.6 m when an effort of 125 N moves 3 m. Find its efficiency as a percentage.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 80,
+        "tolerance": 0.1,
+        "unit": "%"
+      },
+      "solution_md": "Output $= 500 \\times 0.6 = 300$ J; input $= 125 \\times 3 = 375$ J; efficiency $= 300 \\div 375 \\times 100 = 80$%.",
+      "marking_scheme": [
+        {
+          "step": "80%",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch03-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch03_007",
+      "unit": "icse-10-physics-ch03",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "A machine of velocity ratio 4 and efficiency 75% is used to lift a load of 400 N. What effort (in N) is needed?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 133.33333333333334,
+        "tolerance": 0.1,
+        "unit": "N"
+      },
+      "solution_md": "MA $= \\eta \\times \\text{VR} = 0.75 \\times 4 = 3$; effort $= 400 \\div 3 = 133$ N.",
+      "marking_scheme": [
+        {
+          "step": "133 N",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch03-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch03_008",
+      "unit": "icse-10-physics-ch03",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** The efficiency of a practical machine is always less than 100%.\n\n**Reason (R):** Some of the work input is used to overcome friction and to move parts of the machine.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Both are true, and R explains A — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-physics-ch03-t01"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch03_009",
+      "unit": "icse-10-physics-ch03",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Oiling the moving parts of a machine increases its velocity ratio.\n\n**Reason (R):** Oiling reduces friction.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "A is false (VR depends only on the design; oiling raises MA and efficiency); R is true — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-physics-ch03-t01"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch03_010",
+      "unit": "icse-10-physics-ch03",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? Mechanical advantage and velocity ratio are both measured in newtons.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "f"
+        ]
+      },
+      "solution_md": "False: both are ratios and have no unit.",
+      "marking_scheme": [
+        {
+          "step": "False, with the correction",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-physics-ch03-t01"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch03_011",
+      "unit": "icse-10-physics-ch03",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "Efficiency of a machine equals its mechanical advantage divided by its ___ ratio.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "velocity"
+            ]
+          }
+        ]
+      },
+      "solution_md": "**Velocity** ratio.",
+      "marking_scheme": [
+        {
+          "step": "Blank 1: \"velocity\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-physics-ch03-t01"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch03_012",
+      "unit": "icse-10-physics-ch03",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "For an ideal machine, the mechanical advantage is ___ to the velocity ratio. (Write one word.)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "equal"
+            ]
+          }
+        ]
+      },
+      "solution_md": "**Equal**.",
+      "marking_scheme": [
+        {
+          "step": "Blank 1: \"equal\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-physics-ch03-t01"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch03_013",
+      "unit": "icse-10-physics-ch03",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Starting from the definition of efficiency as useful work output ÷ work input, show that efficiency = MA ÷ VR.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "$\\eta = \\dfrac{L \\times d_L}{E \\times d_E} = \\dfrac{L}{E} \\times \\dfrac{d_L}{d_E}$. Since $L/E$ is the MA and $d_L/d_E$ is $1/\\text{VR}$, $\\eta = \\text{MA}/\\text{VR}$."
+      },
+      "solution_md": "Split the ratio.",
+      "marking_scheme": [
+        {
+          "step": "Output and input written",
+          "marks": 1
+        },
+        {
+          "step": "Rearranged to MA/VR",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-physics-ch03-t01"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch03_014",
+      "unit": "icse-10-physics-ch03",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Give two reasons why the mechanical advantage of a practical machine is less than its velocity ratio.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Part of the effort is used to overcome friction between moving parts; part is used to lift or move parts of the machine itself (for example the lower block of a pulley system), so less is available for the load."
+      },
+      "solution_md": "Friction; weight of moving parts.",
+      "marking_scheme": [
+        {
+          "step": "Friction",
+          "marks": 1
+        },
+        {
+          "step": "Weight of moving parts",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-physics-ch03-t01",
+        "icse-10-physics-ch03-t04"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch03_015",
+      "unit": "icse-10-physics-ch03",
+      "language": "en",
+      "type": "short",
+      "stem_md": "A ramp of length 6 m is used to push a 900 N barrel onto a platform 1.5 m high with an effort of 300 N along the ramp. Find (a) the VR, (b) the MA and (c) the efficiency.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) VR $= 6 \\div 1.5 = 4$. (b) MA $= 900 \\div 300 = 3$. (c) $\\eta = 3 \\div 4 = 0.75$, that is 75%."
+      },
+      "solution_md": "4; 3; 75%.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch03-t01"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch03_016",
+      "unit": "icse-10-physics-ch03",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "In a nutcracker, the nut is placed between the hinge and the place where the hand squeezes. It is a lever of:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "class I, with MA always 1"
+        },
+        {
+          "id": "b",
+          "text_md": "class II, with MA greater than 1"
+        },
+        {
+          "id": "c",
+          "text_md": "class III, with MA less than 1"
+        },
+        {
+          "id": "d",
+          "text_md": "class II, with MA less than 1"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Load between fulcrum and effort; effort arm longer — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch03-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch03_017",
+      "unit": "icse-10-physics-ch03",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A pair of fire tongs is held near the hinge and used to pick up a hot coal at the tips. Its mechanical advantage is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "greater than 1, because the load is between fulcrum and effort"
+        },
+        {
+          "id": "b",
+          "text_md": "exactly 1, because it is a class I lever"
+        },
+        {
+          "id": "c",
+          "text_md": "less than 1, because the effort arm is shorter than the load arm"
+        },
+        {
+          "id": "d",
+          "text_md": "greater than 1, because it is a class III lever"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Class III: effort between hinge and coal — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch03-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch03_018",
+      "unit": "icse-10-physics-ch03",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A crowbar 1.1 m long is pivoted on a stone 0.1 m from the end under a 1000 N rock. The least effort needed at the other end is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "100 N"
+        },
+        {
+          "id": "b",
+          "text_md": "1000 N"
+        },
+        {
+          "id": "c",
+          "text_md": "10 N"
+        },
+        {
+          "id": "d",
+          "text_md": "110 N"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "$E \\times 1.0 = 1000 \\times 0.1$, so $E = 100$ N — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch03-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch03_019",
+      "unit": "icse-10-physics-ch03",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A common beam balance has its fulcrum exactly at the middle. As a lever its mechanical advantage is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "greater than 1"
+        },
+        {
+          "id": "b",
+          "text_md": "1, because the effort and load arms are equal"
+        },
+        {
+          "id": "c",
+          "text_md": "less than 1"
+        },
+        {
+          "id": "d",
+          "text_md": "zero"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Class I with equal arms — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch03-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch03_020",
+      "unit": "icse-10-physics-ch03",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "A wheelbarrow carries a 300 N load whose weight acts 0.25 m from the wheel axle. The handles are lifted 1.5 m from the axle. What upward effort (in N) is needed?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 50,
+        "tolerance": 0,
+        "unit": "N"
+      },
+      "solution_md": "$E \\times 1.5 = 300 \\times 0.25$, so $E = 50$ N.",
+      "marking_scheme": [
+        {
+          "step": "50 N",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch03-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch03_021",
+      "unit": "icse-10-physics-ch03",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "In a pair of sugar tongs, the effort is applied 5 cm from the hinge and the sugar cube is held 20 cm from it. Find the mechanical advantage.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 0.25,
+        "tolerance": 0,
+        "unit": null
+      },
+      "solution_md": "MA $= \\text{effort arm} \\div \\text{load arm} = 5 \\div 20 = 0.25$.",
+      "marking_scheme": [
+        {
+          "step": "0.25",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch03-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch03_022",
+      "unit": "icse-10-physics-ch03",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** A class II lever always has a mechanical advantage greater than 1.\n\n**Reason (R):** In a class II lever the load lies between the fulcrum and the effort, so the effort arm is always longer than the load arm.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Both are true, and R explains A — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-physics-ch03-t02"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch03_023",
+      "unit": "icse-10-physics-ch03",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? A pair of scissors is a class I lever.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "t"
+        ]
+      },
+      "solution_md": "True: the pivot lies between the cloth (load) and the fingers (effort).",
+      "marking_scheme": [
+        {
+          "step": "True",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-physics-ch03-t02"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch03_024",
+      "unit": "icse-10-physics-ch03",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "The fixed point about which a lever turns is called the ___.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "fulcrum"
+            ]
+          }
+        ]
+      },
+      "solution_md": "**Fulcrum**.",
+      "marking_scheme": [
+        {
+          "step": "Blank 1: \"fulcrum\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-physics-ch03-t02"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch03_025",
+      "unit": "icse-10-physics-ch03",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "In a class ___ lever, the effort lies between the fulcrum and the load. (Write I, II or III.)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "III",
+              "3",
+              "three"
+            ]
+          }
+        ]
+      },
+      "solution_md": "Class **III**.",
+      "marking_scheme": [
+        {
+          "step": "Blank 1: \"III\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-physics-ch03-t02"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch03_026",
+      "unit": "icse-10-physics-ch03",
+      "language": "en",
+      "type": "short",
+      "stem_md": "State the principle of the lever.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Load × load arm = effort × effort arm (anticlockwise moment equals clockwise moment about the fulcrum)."
+      },
+      "solution_md": "Moments balance.",
+      "marking_scheme": [
+        {
+          "step": "Statement",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-physics-ch03-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch03_027",
+      "unit": "icse-10-physics-ch03",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Classify each lever and state whether its MA is more than 1, equal to 1 or less than 1: (a) a bottle opener, (b) a fishing rod held at one end with the other hand pulling midway, (c) a see-saw with equal arms, (d) a pair of forceps.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Class II, MA > 1. (b) Class III, MA < 1. (c) Class I, MA = 1. (d) Class III, MA < 1."
+      },
+      "solution_md": "II, III, I, III.",
+      "marking_scheme": [
+        {
+          "step": "(a) and (b)",
+          "marks": 1
+        },
+        {
+          "step": "(c) and (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch03-t02"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch03_028",
+      "unit": "icse-10-physics-ch03",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Draw labelled sketches (or describe the arrangement of fulcrum, load and effort) of class I, class II and class III levers, giving one example of each.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Class I: fulcrum between load and effort (see-saw, crowbar). Class II: load between fulcrum and effort (nutcracker, wheelbarrow). Class III: effort between fulcrum and load (forceps, sugar tongs)."
+      },
+      "solution_md": "Three arrangements with examples.",
+      "marking_scheme": [
+        {
+          "step": "Class I",
+          "marks": 1
+        },
+        {
+          "step": "Class II",
+          "marks": 1
+        },
+        {
+          "step": "Class III",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-physics-ch03-t02"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch03_029",
+      "unit": "icse-10-physics-ch03",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "When you lift a school bag with your hand, bending the arm at the elbow, the forearm acts as a lever of:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "class III, with the biceps pulling between the elbow and the hand"
+        },
+        {
+          "id": "b",
+          "text_md": "class I, with the elbow between the bag and the biceps"
+        },
+        {
+          "id": "c",
+          "text_md": "class II, with the bag between the elbow and the biceps"
+        },
+        {
+          "id": "d",
+          "text_md": "class II, with the elbow between the bag and the biceps"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Fulcrum at the elbow, effort (biceps) in the middle, load in the hand — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch03-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch03_030",
+      "unit": "icse-10-physics-ch03",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "When a dancer rises on her toes, the fulcrum, load and effort are respectively:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "the heel, the toes, and the knee"
+        },
+        {
+          "id": "b",
+          "text_md": "the ankle, the calf muscle, and the toes"
+        },
+        {
+          "id": "c",
+          "text_md": "the toes, the body weight at the ankle, and the calf muscle pulling at the heel"
+        },
+        {
+          "id": "d",
+          "text_md": "the knee, the heel, and the body weight"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Class II lever with load in the middle — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-physics-ch03-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch03_031",
+      "unit": "icse-10-physics-ch03",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? Nodding the head forward and back uses the neck as a class I lever.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "t"
+        ]
+      },
+      "solution_md": "True: the fulcrum (top of the spine) lies between the weight of the face and the neck muscles.",
+      "marking_scheme": [
+        {
+          "step": "True",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-physics-ch03-t03"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch03_032",
+      "unit": "icse-10-physics-ch03",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Name the class of lever and identify the fulcrum in (a) raising the heels to stand on the toes and (b) nodding the head.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Class II; fulcrum at the toes. (b) Class I; fulcrum at the top of the spine (atlas joint)."
+      },
+      "solution_md": "II at toes; I at spine.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch03-t03"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch03_033",
+      "unit": "icse-10-physics-ch03",
+      "language": "en",
+      "type": "short",
+      "stem_md": "A 30 N weight is held in the hand 35 cm from the elbow. The biceps is attached 4 cm from the elbow. (a) Find the force the biceps must exert to hold the forearm horizontal (neglect the forearm’s weight). (b) Why is the forearm useful despite this large force?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) $F \\times 0.04 = 30 \\times 0.35$, so $F = 263$ N. (b) It is a class III lever: a small contraction of the biceps moves the hand through a large distance quickly."
+      },
+      "solution_md": "263 N; speed and distance gain.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 4,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-physics-ch03-t03"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch03_034",
+      "unit": "icse-10-physics-ch03",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A single fixed pulley at the top of a flagpole is used to raise a flag. Its main advantage is that it:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "doubles the force applied"
+        },
+        {
+          "id": "b",
+          "text_md": "has an efficiency greater than 1"
+        },
+        {
+          "id": "c",
+          "text_md": "has a velocity ratio of 2"
+        },
+        {
+          "id": "d",
+          "text_md": "changes the direction of the effort, so the flag is raised by pulling down"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "MA = VR = 1 ideally; it only changes direction — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-physics-ch03-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch03_035",
+      "unit": "icse-10-physics-ch03",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "In a block and tackle, five strands of rope support the lower block. The load moves up 0.4 m. How far must the effort end be pulled?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "0.08 m"
+        },
+        {
+          "id": "b",
+          "text_md": "0.4 m"
+        },
+        {
+          "id": "c",
+          "text_md": "5 m"
+        },
+        {
+          "id": "d",
+          "text_md": "2.0 m"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "VR = 5, so the effort moves 5 × 0.4 = 2.0 m — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch03-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch03_036",
+      "unit": "icse-10-physics-ch03",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "The lower block of a block and tackle is replaced by a lighter one, with the same number of strands. Its:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "VR increases"
+        },
+        {
+          "id": "b",
+          "text_md": "MA, VR and efficiency all decrease"
+        },
+        {
+          "id": "c",
+          "text_md": "MA and efficiency increase but VR stays the same"
+        },
+        {
+          "id": "d",
+          "text_md": "efficiency stays the same"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Less effort is wasted lifting the block; VR depends only on the strands — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-physics-ch03-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch03_037",
+      "unit": "icse-10-physics-ch03",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A single movable pulley weighing 20 N lifts a load of 240 N. Neglecting friction, the effort needed is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "120 N"
+        },
+        {
+          "id": "b",
+          "text_md": "260 N"
+        },
+        {
+          "id": "c",
+          "text_md": "110 N"
+        },
+        {
+          "id": "d",
+          "text_md": "130 N"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "$2E = 240 + 20$, so $E = 130$ N — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch03-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch03_038",
+      "unit": "icse-10-physics-ch03",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "A block and tackle with 3 strands supporting the lower block lifts a 480 N load. The lower block weighs 60 N. Neglecting friction, find the effort in N.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 180,
+        "tolerance": 0,
+        "unit": "N"
+      },
+      "solution_md": "$3E = 480 + 60$, so $E = 540 \\div 3 = 180$ N.",
+      "marking_scheme": [
+        {
+          "step": "180 N",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch03-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch03_039",
+      "unit": "icse-10-physics-ch03",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "For the block and tackle of the previous question (3 strands, load 480 N, lower block 60 N, no friction), find the efficiency as a percentage, to the nearest whole number.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 89,
+        "tolerance": 1,
+        "unit": "%"
+      },
+      "solution_md": "$\\eta = L/(L + w) = 480 \\div 540 \\approx 0.889$, so efficiency $= 0.889 \\times 100 \\approx 89$%.",
+      "marking_scheme": [
+        {
+          "step": "89%",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch03-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch03_040",
+      "unit": "icse-10-physics-ch03",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** A single fixed pulley is often used even though its mechanical advantage is not more than 1.\n\n**Reason (R):** A single fixed pulley lets the effort be applied downwards, using the body’s own weight.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Both are true, and R explains A — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-physics-ch03-t04"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch03_041",
+      "unit": "icse-10-physics-ch03",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** The velocity ratio of a block and tackle equals the number of strands supporting the lower block.\n\n**Reason (R):** The efficiency of a block and tackle increases with the weight of its lower block.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "A is true; R is false: a heavier lower block lowers the efficiency — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-physics-ch03-t04"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch03_042",
+      "unit": "icse-10-physics-ch03",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? The velocity ratio of a single movable pulley is 2.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "t"
+        ]
+      },
+      "solution_md": "True: two strands support it.",
+      "marking_scheme": [
+        {
+          "step": "True",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-physics-ch03-t04"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch03_043",
+      "unit": "icse-10-physics-ch03",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "In a block and tackle, the velocity ratio equals the number of ___ supporting the lower block.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "strands",
+              "segments",
+              "ropes"
+            ]
+          }
+        ]
+      },
+      "solution_md": "**Strands**.",
+      "marking_scheme": [
+        {
+          "step": "Blank 1: \"strands\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-physics-ch03-t04"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch03_044",
+      "unit": "icse-10-physics-ch03",
+      "language": "en",
+      "type": "short",
+      "stem_md": "State the ideal mechanical advantage of a single fixed pulley.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "One (1)."
+      },
+      "solution_md": "1.",
+      "marking_scheme": [
+        {
+          "step": "1",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-physics-ch03-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch03_045",
+      "unit": "icse-10-physics-ch03",
+      "language": "en",
+      "type": "short",
+      "stem_md": "A single movable pulley is used to lift a 150 N load with an effort of 90 N. Find (a) its MA and (b) its efficiency.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) MA $= 150 \\div 90 \\approx 1.67$. (b) VR $= 2$, so $\\eta = 1.67 \\div 2 \\approx 0.833$, about 83%."
+      },
+      "solution_md": "MA about 1.67; efficiency about 83%.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch03-t04"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch03_046",
+      "unit": "icse-10-physics-ch03",
+      "language": "en",
+      "type": "short",
+      "stem_md": "A block and tackle has 2 pulleys in the upper block and 2 in the lower block. Its lower block weighs 40 N. It lifts a 360 N load. Neglecting friction, find (a) its VR, (b) the effort and (c) its MA.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) VR $= 4$. (b) $4E = 360 + 40$, so $E = 100$ N. (c) MA $= 360 \\div 100 = 3.6$."
+      },
+      "solution_md": "4; 100 N; 3.6.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch03-t04"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch03_047",
+      "unit": "icse-10-physics-ch03",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A screw jack has a velocity ratio of 5 and an efficiency of 60%. Its mechanical advantage is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "3"
+        },
+        {
+          "id": "b",
+          "text_md": "8.3"
+        },
+        {
+          "id": "c",
+          "text_md": "0.12"
+        },
+        {
+          "id": "d",
+          "text_md": "300"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "MA = η × VR = 0.6 × 5 = 3 — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch03-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch03_048",
+      "unit": "icse-10-physics-ch03",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "An electrician cuts a thick wire by placing it close to the hinge of the pliers rather than near the tips. This is because:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "the effort arm becomes shorter, so the MA decreases"
+        },
+        {
+          "id": "b",
+          "text_md": "the pliers become a class III lever"
+        },
+        {
+          "id": "c",
+          "text_md": "the velocity ratio becomes less than 1"
+        },
+        {
+          "id": "d",
+          "text_md": "the load arm becomes shorter, so the MA of the class I lever increases"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "MA = effort arm ÷ load arm; a short load arm gives a large MA — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-physics-ch03-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch03_049",
+      "unit": "icse-10-physics-ch03",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A block and tackle with VR 6 and efficiency 75% is used to lift a 900 N load. The effort needed is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "200 N"
+        },
+        {
+          "id": "b",
+          "text_md": "150 N"
+        },
+        {
+          "id": "c",
+          "text_md": "675 N"
+        },
+        {
+          "id": "d",
+          "text_md": "112.5 N"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "MA $= 0.75 \\times 6 = 4.5$; $E = 900 \\div 4.5 = 200$ N — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch03-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch03_050",
+      "unit": "icse-10-physics-ch03",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? The mechanical advantage of a class III lever can be made greater than 1 by moving the effort closer to the load.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "f"
+        ]
+      },
+      "solution_md": "False: as long as the effort is between the fulcrum and the load, the effort arm is shorter than the load arm, so MA < 1.",
+      "marking_scheme": [
+        {
+          "step": "False, with the correction",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-physics-ch03-t02"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch03_051",
+      "unit": "icse-10-physics-ch03",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "In the human forearm used as a lever, the fulcrum is at the ___.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "elbow",
+              "elbow joint"
+            ]
+          }
+        ]
+      },
+      "solution_md": "**Elbow**.",
+      "marking_scheme": [
+        {
+          "step": "Blank 1: \"elbow\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-physics-ch03-t03"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch03_052",
+      "unit": "icse-10-physics-ch03",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "In a pulley system of velocity ratio 4, how far (in m) must the effort move to raise the load by 0.25 m?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 1,
+        "tolerance": 0,
+        "unit": "m"
+      },
+      "solution_md": "$d_E = \\text{VR} \\times d_L = 4 \\times 0.25 = 1$ m.",
+      "marking_scheme": [
+        {
+          "step": "1 m",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch03-t01",
+        "icse-10-physics-ch03-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch03_053",
+      "unit": "icse-10-physics-ch03",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "A single movable pulley weighing 10 N is used to lift a 90 N bucket of sand. Neglecting friction, what effort (in N) is required?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 50,
+        "tolerance": 0,
+        "unit": "N"
+      },
+      "solution_md": "$2E = 90 + 10$, so $E = 100 \\div 2 = 50$ N.",
+      "marking_scheme": [
+        {
+          "step": "50 N",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch03-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch03_054",
+      "unit": "icse-10-physics-ch03",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Shears used for cutting metal sheets have long handles and short blades, whereas scissors for cutting cloth have short handles and long blades. Explain both designs.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Both are class I levers. Long handles and short blades make the effort arm long and the load arm short, giving a large MA to cut tough metal. Long blades and short handles give MA < 1, so the blade tips move fast through a large distance, cutting cloth quickly."
+      },
+      "solution_md": "Force gain vs speed gain.",
+      "marking_scheme": [
+        {
+          "step": "Metal shears",
+          "marks": 1
+        },
+        {
+          "step": "Cloth scissors",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-physics-ch03-t02"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch03_055",
+      "unit": "icse-10-physics-ch03",
+      "language": "en",
+      "type": "short",
+      "stem_md": "A block and tackle has three pulleys in the upper block and three in the lower block. What is its velocity ratio?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "6 (six strands support the lower block)."
+      },
+      "solution_md": "6.",
+      "marking_scheme": [
+        {
+          "step": "6",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch03-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch03_056",
+      "unit": "icse-10-physics-ch03",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** When the free end of the rope of a block and tackle of VR 4 is pulled down 1 m, the load rises 0.25 m.\n\n**Reason (R):** The velocity ratio is the distance moved by the effort divided by the distance moved by the load.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Both are true, and R explains A (0.25 = 1 ÷ 4) — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch03-t01",
+        "icse-10-physics-ch03-t04"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch03_057",
+      "unit": "icse-10-physics-ch03",
+      "language": "en",
+      "type": "match",
+      "stem_md": "Match each tool or action in Column A with its class of lever in Column B.",
+      "options": [
+        {
+          "id": "1",
+          "text_md": "Crowbar"
+        },
+        {
+          "id": "2",
+          "text_md": "Bottle opener"
+        },
+        {
+          "id": "3",
+          "text_md": "Fishing rod"
+        },
+        {
+          "id": "4",
+          "text_md": "Single fixed pulley"
+        }
+      ],
+      "match_right": [
+        {
+          "id": "p",
+          "text_md": "Class II"
+        },
+        {
+          "id": "q",
+          "text_md": "Changes direction only"
+        },
+        {
+          "id": "r",
+          "text_md": "Class I"
+        },
+        {
+          "id": "s",
+          "text_md": "Class III"
+        }
+      ],
+      "answer": {
+        "pairs": [
+          {
+            "left_id": "1",
+            "right_id": "r"
+          },
+          {
+            "left_id": "2",
+            "right_id": "p"
+          },
+          {
+            "left_id": "3",
+            "right_id": "s"
+          },
+          {
+            "left_id": "4",
+            "right_id": "q"
+          }
+        ]
+      },
+      "solution_md": "Crowbar → I; bottle opener → II; fishing rod → III; fixed pulley → changes direction only.",
+      "marking_scheme": [
+        {
+          "step": "1 → r",
+          "marks": 0.5
+        },
+        {
+          "step": "2 → p",
+          "marks": 0.5
+        },
+        {
+          "step": "3 → s",
+          "marks": 0.5
+        },
+        {
+          "step": "4 → q",
+          "marks": 0.5
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch03-t02",
+        "icse-10-physics-ch03-t04"
+      ],
+      "expected_time_sec": 160,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch03_058",
+      "unit": "icse-10-physics-ch03",
+      "language": "en",
+      "type": "match",
+      "stem_md": "Match each quantity in Column A with its definition in Column B.",
+      "options": [
+        {
+          "id": "1",
+          "text_md": "Mechanical advantage"
+        },
+        {
+          "id": "2",
+          "text_md": "Velocity ratio"
+        },
+        {
+          "id": "3",
+          "text_md": "Efficiency"
+        },
+        {
+          "id": "4",
+          "text_md": "Fulcrum"
+        }
+      ],
+      "match_right": [
+        {
+          "id": "p",
+          "text_md": "Output work ÷ input work"
+        },
+        {
+          "id": "q",
+          "text_md": "Load ÷ effort"
+        },
+        {
+          "id": "r",
+          "text_md": "Fixed turning point of a lever"
+        },
+        {
+          "id": "s",
+          "text_md": "Effort distance ÷ load distance"
+        }
+      ],
+      "answer": {
+        "pairs": [
+          {
+            "left_id": "1",
+            "right_id": "q"
+          },
+          {
+            "left_id": "2",
+            "right_id": "s"
+          },
+          {
+            "left_id": "3",
+            "right_id": "p"
+          },
+          {
+            "left_id": "4",
+            "right_id": "r"
+          }
+        ]
+      },
+      "solution_md": "MA → L/E; VR → dE/dL; efficiency → output/input; fulcrum → turning point.",
+      "marking_scheme": [
+        {
+          "step": "1 → q",
+          "marks": 0.5
+        },
+        {
+          "step": "2 → s",
+          "marks": 0.5
+        },
+        {
+          "step": "3 → p",
+          "marks": 0.5
+        },
+        {
+          "step": "4 → r",
+          "marks": 0.5
+        }
+      ],
+      "marks": 2,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-physics-ch03-t01",
+        "icse-10-physics-ch03-t02"
+      ],
+      "expected_time_sec": 160,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch03_059",
+      "unit": "icse-10-physics-ch03",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Define (i) mechanical advantage, (ii) velocity ratio and (iii) efficiency of a machine. [3]\n\n(b) Derive the relation between efficiency, MA and VR. Why is the efficiency of a practical machine always less than 1? [3]\n\n(c) A machine with VR 6 lifts a load of 900 N with an effort of 200 N. Find (i) MA, (ii) efficiency, (iii) the distance the effort moves when the load rises 0.5 m and (iv) the work wasted in that time. [4]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) (i) Ratio of load to effort. (ii) Ratio of the distance moved by the effort to the distance moved by the load. (iii) Ratio of useful work output to work input.\n\n(b) $\\eta = \\dfrac{L d_L}{E d_E} = \\dfrac{L}{E} \\cdot \\dfrac{d_L}{d_E} = \\dfrac{\\text{MA}}{\\text{VR}}$. Some input is always wasted against friction and in moving parts of the machine.\n\n(c) (i) MA $= 900 \\div 200 = 4.5$. (ii) $\\eta = 4.5 \\div 6 = 0.75$, that is 75%. (iii) $d_E = 6 \\times 0.5 = 3$ m. (iv) Input $= 200 \\times 3 = 600$ J; output $= 900 \\times 0.5 = 450$ J; wasted $= 150$ J."
+      },
+      "solution_md": "Definitions; derivation; calculation.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 3
+        },
+        {
+          "step": "(b) derivation",
+          "marks": 2
+        },
+        {
+          "step": "(b) reason",
+          "marks": 1
+        },
+        {
+          "step": "(c)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(iii)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(iv)",
+          "marks": 1
+        }
+      ],
+      "marks": 10,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch03-t01"
+      ],
+      "expected_time_sec": 1080,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch03_060",
+      "unit": "icse-10-physics-ch03",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) State the principle of the lever. How are levers classified? [3]\n\n(b) Name the class of each lever and say whether MA > 1 or < 1: (i) a pair of forceps, (ii) a wheelbarrow, (iii) the human forearm lifting a load. [3]\n\n(c) A uniform crowbar is used to lift a 1200 N boulder. The fulcrum is 20 cm from the boulder end and the effort is applied 1.0 m from the fulcrum. (i) Find the least effort. (ii) Find the MA. (iii) Name the class. (iv) How could the effort be reduced further? [4]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Load × load arm = effort × effort arm. Levers are classified by the relative positions of fulcrum, load and effort: class I (fulcrum in the middle), II (load in the middle), III (effort in the middle).\n\n(b) (i) Class III, MA < 1. (ii) Class II, MA > 1. (iii) Class III, MA < 1.\n\n(c) (i) $E \\times 1.0 = 1200 \\times 0.2$, so $E = 240$ N. (ii) MA $= 1200 \\div 240 = 5$. (iii) Class I. (iv) Move the fulcrum closer to the boulder or push farther from the fulcrum (longer effort arm)."
+      },
+      "solution_md": "Principle and classes; classification; crowbar.",
+      "marking_scheme": [
+        {
+          "step": "(a) principle",
+          "marks": 1
+        },
+        {
+          "step": "(a) classes",
+          "marks": 2
+        },
+        {
+          "step": "(b)",
+          "marks": 3
+        },
+        {
+          "step": "(c)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(iii)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(iv)",
+          "marks": 1
+        }
+      ],
+      "marks": 10,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch03-t02",
+        "icse-10-physics-ch03-t03"
+      ],
+      "expected_time_sec": 1080,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch03_061",
+      "unit": "icse-10-physics-ch03",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Draw (or describe) a block and tackle system with a VR of 4, showing the direction of the effort and the tension in each strand. [3]\n\n(b) The lower block weighs 80 N and the system lifts a 720 N load. Neglecting friction, find (i) the effort, (ii) the MA and (iii) the efficiency. [3]\n\n(c) (i) How do MA, VR and efficiency change if a heavier lower block is used? (ii) Why is a single fixed pulley used for drawing water from a well even though its MA is 1? (iii) What is the VR of a single movable pulley? [4]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Two pulleys in a fixed upper block, two in a movable lower block, one continuous string; four strands support the lower block, each with tension E; the free end is pulled down with effort E.\n\n(b) (i) $4E = 720 + 80$, so $E = 200$ N. (ii) MA $= 720 \\div 200 = 3.6$. (iii) $\\eta = 3.6 \\div 4 = 0.9$, that is 90%.\n\n(c) (i) MA and efficiency decrease; VR is unchanged. (ii) It changes the direction of the effort: one can pull downwards, using one’s own weight, which is easier and safer. (iii) 2."
+      },
+      "solution_md": "Diagram; effort, MA, efficiency; effects.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 3
+        },
+        {
+          "step": "(b)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(b)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(b)(iii)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(i)",
+          "marks": 2
+        },
+        {
+          "step": "(c)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(iii)",
+          "marks": 1
+        }
+      ],
+      "marks": 10,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch03-t04"
+      ],
+      "expected_time_sec": 1080,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch03_062",
+      "unit": "icse-10-physics-ch03",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Name the class of lever in each, and identify fulcrum, load and effort: (i) nodding the head, (ii) raising the heels. [3]\n\n(b) The forearm is a class III lever. (i) Where is the fulcrum? (ii) Where does the effort act? (iii) Why is its MA less than 1? [3]\n\n(c) A 20 N book is held in the hand 30 cm from the elbow; the biceps is attached 5 cm from the elbow. (i) Find the force exerted by the biceps (neglect the forearm’s weight). (ii) Find the MA. (iii) What advantage does the arm gain in exchange for its low MA? (iv) Is the MA of a class III lever ever more than 1? [4]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) (i) Class I: fulcrum at the top of the spine, load the weight of the face, effort by the neck muscles. (ii) Class II: fulcrum at the toes, load the body weight at the ankle, effort by the calf muscle at the heel.\n\n(b) (i) At the elbow. (ii) Where the biceps is attached, between the elbow and the hand. (iii) The effort arm is shorter than the load arm.\n\n(c) (i) $F \\times 0.05 = 20 \\times 0.30$, so $F = 120$ N. (ii) MA $= 20 \\div 120 = 0.167$. (iii) A small movement of the biceps moves the hand through a large distance quickly (speed and range). (iv) No: the effort arm is always shorter."
+      },
+      "solution_md": "Body levers; forearm; calculation.",
+      "marking_scheme": [
+        {
+          "step": "(a)(i)",
+          "marks": 1.5
+        },
+        {
+          "step": "(a)(ii)",
+          "marks": 1.5
+        },
+        {
+          "step": "(b)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(b)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(b)(iii)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(iii)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(iv)",
+          "marks": 1
+        }
+      ],
+      "marks": 10,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-physics-ch03-t02",
+        "icse-10-physics-ch03-t03"
+      ],
+      "expected_time_sec": 1080,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch03_063",
+      "unit": "icse-10-physics-ch03",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) What is meant by a force multiplier and a speed multiplier? Give one example of each. [3]\n\n(b) A single movable pulley of weight 30 N lifts a 270 N load. Neglecting friction, find (i) the effort, (ii) the MA, (iii) the efficiency. [3]\n\n(c) A block and tackle of VR 5 has an efficiency of 80%. (i) Find its MA. (ii) Find the effort to lift 2000 N. (iii) Find the work done by the effort to raise the load 0.6 m. (iv) Why is its efficiency not 100%? [4]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) A force multiplier has MA > 1 and lets a small effort overcome a large load (crowbar, wheelbarrow). A speed multiplier has MA < 1 and moves the load through a larger distance or faster (forceps, fishing rod).\n\n(b) (i) $2E = 270 + 30$, so $E = 150$ N. (ii) MA $= 270 \\div 150 = 1.8$. (iii) $\\eta = 1.8 \\div 2 = 0.9$, that is 90%.\n\n(c) (i) MA $= 0.8 \\times 5 = 4$. (ii) $E = 2000 \\div 4 = 500$ N. (iii) Effort moves $5 \\times 0.6 = 3$ m; work $= 500 \\times 3 = 1500$ J. (iv) Work is wasted against friction and in lifting the lower block."
+      },
+      "solution_md": "Definitions; movable pulley; block and tackle.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 3
+        },
+        {
+          "step": "(b)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(b)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(b)(iii)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(iii)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(iv)",
+          "marks": 1
+        }
+      ],
+      "marks": 10,
+      "difficulty": 4,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch03-t01",
+        "icse-10-physics-ch03-t04"
+      ],
+      "expected_time_sec": 1080,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    }
+  ],
+  "build": {
+    "run_id": null,
+    "checks": {
+      "katex_mhchem": "122 math strings parsed with KaTeX 0.19.0 + mhchem (throwOnError, strict \"error\"), 0 failures",
+      "svg_allowlist": "3 SVG visuals (3 distinct diagrams) checked with saxes against svg-allowlist.ts: elements, attributes, class pattern, fragment-only refs, no style, palette incl. named hues, viewBox, title, per-page unique ids — 0 failures",
+      "narration": "24 slides, 10–83 words (mean 51), no symbols, formulae or unit abbreviations",
+      "resolve": "25/25 scripted re-solve checks pass",
+      "physics_facts": "MA, VR and efficiency with the derivation of efficiency = MA / VR, the three classes of lever and levers in the human body, and single fixed, single movable and block-and-tackle pulley systems including the weight of the lower block, with every number computed and asserted in the build, checked against the ICSE 2027 syllabus (Class X, section 1)",
+      "diagrams": "3 diagram self-checks (geometry computed in svgs.mjs): 0 failures",
+      "content_gate": "npm test -w @soyl/content-templates: all checks pass for this chapter",
+      "verifier_pass": "2026-11-01: every question and every internal-choice alternative re-solved from its stem by the author; every numerical computed and asserted by the build script — see README \"Verifier pass\"",
+      "pipeline_lint": "npm run content -- lint --exemplars: 0 errors, 0 warnings"
+    }
+  }
+}
