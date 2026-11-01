@@ -11,20 +11,22 @@ New folders only: `platform/content/authored/maths/icse-10-mathematics-chNN/` wi
 - Chapter helpers (e.g. `fin.mjs` exact paise/rational arithmetic for GST, recurring deposits, shares; `ineq.mjs` solution sets checked by brute force; `work.mjs` working lines generated from the computed values).
 - Rebuild from `platform/`: `npx tsx content/authored/maths/icse-10-mathematics-chNN/src/build.mjs` (prints `NO ERRORS`; byte-identical on rebuild).
 
-| Ch | Title | Slides | With visual | Notes | Cards | Questions (marks) | App.+ | Commit |
-|---|---|---|---|---|---|---|---|---|
-| 01 | Goods and Services Tax (GST) | 20 + 20 | 28 | 7 | 32 | 66 (162) | 58% | c947acf |
-| 02 | Banking: Recurring Deposit Accounts | 18 + 18 | 24 | 7 | 30 | 69 (164) | 55% | e6f68bc |
-| 03 | Shares and Dividends | 18 + 17 | 23 | 7 | 30 | 69 (164) | 55% | ade63a9 |
-| 04 | Linear Inequations | 18 + 18 | 24 | 7 | 30 | 67 (162) | 60% | af4f2c6 |
-| 05 | Quadratic Equations in One Variable | 18 + 17 | 23 | 7 | 30 | 69 (173) | 57% | d39818d |
-| 06 | Ratio and Proportion | 19 + 18 | 25 | 7 | 30 | 66 (161) | 58% | 5c1c1c4 |
-| 07 | Factorisation of Polynomials: Remainder and Factor Theorems | 19 + 17 | 24 | 7 | 28 | 67 (169) | 58% | 2305169 |
-| 08 | Matrices | 20 + 18 | 26 | 7 | 30 | 66 (161) | 59% | 01f711c |
-| 09 | Arithmetic Progression | 20 + 19 | 27 | 7 | 29 | 68 (169) | 59% | 9108a77 |
-| 10 | Geometric Progression | 20 + 19 | 27 | 7 | 28 | 66 (167) | 58% | 05da964 |
-| 11 | Reflection | 20 + 19 | 27 | 7 | 30 | 66 (166) | 56% | 289fb22 |
-| | **Total (11 chapters)** | **410 slides** | | | **327** | **739 (1,818)** | | |
+| Ch | Title | Writer | Slides | With visual | Notes | Cards | Questions (marks) | App.+ | Commit |
+|---|---|---|---|---|---|---|---|---|---|
+| 01 | Goods and Services Tax (GST) | Opus 5.5 | 20 + 20 | 28 | 7 | 32 | 66 (162) | 58% | c947acf |
+| 02 | Banking: Recurring Deposit Accounts | Opus 5.5 | 18 + 18 | 24 | 7 | 30 | 69 (164) | 55% | e6f68bc |
+| 03 | Shares and Dividends | Opus 5.5 | 18 + 17 | 23 | 7 | 30 | 69 (164) | 55% | ade63a9 |
+| 04 | Linear Inequations | Opus 5.5 | 18 + 18 | 24 | 7 | 30 | 67 (162) | 60% | af4f2c6 |
+| 05 | Quadratic Equations in One Variable | Opus 5.5 | 18 + 17 | 23 | 7 | 30 | 69 (173) | 57% | d39818d |
+| 06 | Ratio and Proportion | Opus 5.5 | 19 + 18 | 25 | 7 | 30 | 66 (161) | 58% | 5c1c1c4 |
+| 07 | Factorisation of Polynomials: Remainder and Factor Theorems | Opus 5.5 | 19 + 17 | 24 | 7 | 28 | 67 (169) | 58% | 2305169 |
+| 08 | Matrices | Opus 5.5 | 20 + 18 | 26 | 7 | 30 | 66 (161) | 59% | 01f711c |
+| 09 | Arithmetic Progression | Opus 5.5 | 20 + 19 | 27 | 7 | 29 | 68 (169) | 59% | 9108a77 |
+| 10 | Geometric Progression | Opus 5.5 | 20 + 19 | 27 | 7 | 28 | 66 (167) | 58% | 05da964 |
+| 11 | Reflection | Opus 5.5 | 20 + 19 | 27 | 7 | 30 | 66 (166) | 56% | 289fb22 |
+| | **Total (11 chapters)** | | **410 slides** | | | **327** | **739 (1,818)** | | |
+
+Writer models: ch01–ch13 were written by Opus 5.5 sub-agents. From 2026-11-01 22:10 IST (owner instruction) chapters are written by Sonnet 5.5 sub-agents (Agent tool model "sonnet"), at most two at a time, and the producer (Opus) reviews each returned chapter — recomputes a sample of answers, checks scope and ICSE conventions — runs the full gates, fixes or sends back problems, and commits. A chapter that needs heavy fixing, or two Sonnet chapters in a row failing gates for content reasons, falls back to an Opus writer; any such fallback is noted here.
 
 ## How to verify
 
