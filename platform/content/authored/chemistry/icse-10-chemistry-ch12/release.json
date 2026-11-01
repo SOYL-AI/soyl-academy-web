@@ -1,0 +1,5023 @@
+{
+  "unit": "icse-10-chemistry-ch12",
+  "version": 1,
+  "academic_year": "2026-27",
+  "created_at": "2026-11-01T00:00:00+05:30",
+  "decks": [
+    {
+      "unit": "icse-10-chemistry-ch12",
+      "part": 1,
+      "version": 1,
+      "title": "Sulphuric Acid — Part 1: The Contact process and the dilute acid",
+      "language": "en",
+      "goals": [
+        "Write the equations, with catalyst and conditions, for the Contact process",
+        "Explain why sulphur trioxide is absorbed in concentrated sulphuric acid and not in water",
+        "Explain why sulphuric acid is dibasic and forms normal and acid salts",
+        "Write equations for dilute sulphuric acid with metals, oxides, hydroxides, carbonates, hydrogen carbonates, sulphites, hydrogen sulphites and sulphides"
+      ],
+      "slides": [
+        {
+          "id": "s01",
+          "layout": "title",
+          "heading": "The king of chemicals",
+          "body_md": "Part 1 — Sulphuric acid, H₂SO₄, is called the **king of chemicals**: more of it is made than any other chemical, for **fertilisers**, **detergents**, **paints**, **car batteries** and the refining of petroleum.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Property",
+                "Sulphuric acid"
+              ],
+              "rows": [
+                [
+                  "Formula",
+                  "H₂SO₄ (dibasic)"
+                ],
+                [
+                  "Appearance",
+                  "Colourless, dense, oily liquid"
+                ],
+                [
+                  "Boiling point",
+                  "High: about 338 °C (non-volatile)"
+                ],
+                [
+                  "Mixing with water",
+                  "Gives out a lot of heat"
+                ],
+                [
+                  "Uses",
+                  "Fertilisers, detergents, batteries, paints"
+                ]
+              ]
+            },
+            "alt": "Table of the formula, appearance, boiling point and uses of sulphuric acid"
+          },
+          "math": [],
+          "narration": "Namaste! Sulphuric acid is often called the king of chemicals, because industry makes more of it than of any other chemical. It goes into fertilisers, detergents, paints and car batteries. It is a heavy, oily, colourless liquid with a high boiling point. In this part we see how it is manufactured and how the dilute acid behaves.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s02",
+          "layout": "concept",
+          "heading": "Contact process, step 1: sulphur dioxide",
+          "body_md": "Sulphur is **burnt in air** to give sulphur dioxide. (Sulphur dioxide can also be obtained by **roasting iron pyrites**, FeS₂.) The gas is **purified and dried** before the next step.",
+          "bullets": [],
+          "visual": {
+            "kind": "chem",
+            "spec": {
+              "equation": "S + O2 -> SO2"
+            },
+            "alt": "Equation: sulphur plus oxygen gives sulphur dioxide",
+            "caption": "Burning sulphur in air"
+          },
+          "math": [],
+          "narration": "The Contact process starts with sulphur dioxide. Molten sulphur is burnt in air, and it combines with oxygen to form sulphur dioxide gas. Sulphur dioxide can also come from roasting iron pyrites, an ore of iron and sulphur. Before going further, the gas is cleaned and dried.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s03",
+          "layout": "concept",
+          "heading": "Contact process, step 2: the catalytic step",
+          "body_md": "Sulphur dioxide and **excess air** pass over **vanadium pentoxide** (V₂O₅) at about **450 °C** and **1–2 atm**. The reaction is **reversible** and **exothermic**. The name “contact” comes from the gases reacting **in contact with the catalyst** surface.",
+          "bullets": [],
+          "visual": {
+            "kind": "chem",
+            "spec": {
+              "equation": "2SO2 + O2 <=> 2SO3"
+            },
+            "alt": "Equation: two sulphur dioxide plus oxygen reversibly gives two sulphur trioxide",
+            "caption": "Vanadium pentoxide, about 450 °C, 1–2 atm"
+          },
+          "math": [],
+          "narration": "This is the key step. Sulphur dioxide and extra air are passed over a catalyst of vanadium pentoxide at about four hundred and fifty degrees Celsius and only one or two atmospheres. Sulphur dioxide combines with oxygen to form sulphur trioxide. The reaction is reversible and gives out heat, and it takes place on the surface of the catalyst, which gives the process its name.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s04",
+          "layout": "check",
+          "heading": "Quick check: the catalyst",
+          "body_md": "Recall the catalyst and temperature for oxidising sulphur dioxide.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Which oxide of vanadium is used, and at about what temperature?",
+          "check_question_id": "q_icse10chem_ch12_001",
+          "audio": null
+        },
+        {
+          "id": "s05",
+          "layout": "diagram",
+          "heading": "Contact process: the whole route",
+          "body_md": "**Step 3.** Sulphur trioxide is **dissolved in concentrated sulphuric acid** to give **oleum** (fuming sulphuric acid).\n\n**Step 4.** Oleum is **diluted with the right amount of water** to give sulphuric acid of the required strength.\n\nSO₃ + H₂SO₄ → H₂S₂O₇; H₂S₂O₇ + H₂O → 2H₂SO₄",
+          "bullets": [],
+          "visual": {
+            "kind": "flow",
+            "spec": {
+              "direction": "LR",
+              "nodes": [
+                {
+                  "id": "a",
+                  "label": "Sulphur + air"
+                },
+                {
+                  "id": "b",
+                  "label": "SO₂ (purified, dried)"
+                },
+                {
+                  "id": "c",
+                  "label": "SO₃"
+                },
+                {
+                  "id": "d",
+                  "label": "Oleum, H₂S₂O₇"
+                },
+                {
+                  "id": "e",
+                  "label": "H₂SO₄"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "a",
+                  "to": "b",
+                  "label": "burn"
+                },
+                {
+                  "from": "b",
+                  "to": "c",
+                  "label": "V₂O₅, 450 °C, 1–2 atm"
+                },
+                {
+                  "from": "c",
+                  "to": "d",
+                  "label": "into conc. H₂SO₄"
+                },
+                {
+                  "from": "d",
+                  "to": "e",
+                  "label": "+ water"
+                }
+              ]
+            },
+            "alt": "Flow of the Contact process from sulphur and air through sulphur dioxide, sulphur trioxide and oleum to sulphuric acid"
+          },
+          "math": [],
+          "narration": "Here is the full route. Sulphur burns to sulphur dioxide, which is oxidised to sulphur trioxide over the catalyst. The sulphur trioxide is then dissolved in concentrated sulphuric acid, forming a thick, fuming liquid called oleum. Finally, oleum is diluted with exactly the right amount of water to give sulphuric acid.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s06",
+          "layout": "concept",
+          "heading": "Why not dissolve SO₃ in water?",
+          "body_md": "Sulphur trioxide reacts with water **very exothermically**. The heat turns the acid into a **dense fog (mist)** of tiny droplets that does **not condense easily** and escapes. Dissolving it in **concentrated sulphuric acid** is smooth and controllable.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Absorbing SO₃ in",
+                "Result"
+              ],
+              "rows": [
+                [
+                  "Water directly",
+                  "Violent, heat given out; acid mist forms and is lost"
+                ],
+                [
+                  "Concentrated H₂SO₄",
+                  "Smooth absorption to oleum, H₂S₂O₇"
+                ],
+                [
+                  "Oleum + water",
+                  "Controlled dilution to H₂SO₄"
+                ]
+              ]
+            },
+            "alt": "Table comparing absorption of sulphur trioxide in water and in concentrated sulphuric acid"
+          },
+          "math": [],
+          "narration": "Why the extra step? If sulphur trioxide is passed straight into water, the reaction is so violent and gives out so much heat that a thick fog of acid droplets forms. This fog is very hard to condense, so acid is lost into the air. Absorbing the gas in concentrated sulphuric acid avoids the fog, and the oleum can then be diluted safely.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s07",
+          "layout": "example",
+          "heading": "Worked example: acid from sulphur",
+          "body_md": "**Problem.** What mass of sulphuric acid can be made from 8 g of sulphur in the Contact process, assuming complete conversion? (S = 32, H = 1, O = 16)\n\n**Step 1.** Follow the sulphur: S → SO₂ → SO₃ → H₂SO₄, so 1 mole S gives 1 mole H₂SO₄.\n\n**Step 2.** Moles of S = 8 ÷ 32 = 0.25.\n\n**Step 3.** H₂SO₄ = 2 + 32 + 64 = 98; mass = 0.25 × 98 = **24.5 g**.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Quantity",
+                "Value"
+              ],
+              "rows": [
+                [
+                  "Moles of S",
+                  "0.25"
+                ],
+                [
+                  "Mole ratio S : H₂SO₄",
+                  "1 : 1"
+                ],
+                [
+                  "Molar mass of H₂SO₄",
+                  "98"
+                ],
+                [
+                  "Mass of H₂SO₄",
+                  "24.5 g"
+                ]
+              ]
+            },
+            "alt": "Table of the steps from 8 grams of sulphur to 24.5 grams of sulphuric acid"
+          },
+          "math": [],
+          "narration": "Track the sulphur atom through every step: one sulphur atom ends up in one sulphuric acid molecule. Eight grams of sulphur is a quarter of a mole, because the molar mass of sulphur is thirty two. A quarter of a mole of sulphuric acid, with molar mass ninety eight, weighs twenty four point five grams.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s08",
+          "layout": "check",
+          "heading": "Quick check: absorbing sulphur trioxide",
+          "body_md": "Explain why sulphur trioxide is not passed directly into water.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Think about the heat given out and what happens to the acid formed.",
+          "check_question_id": "q_icse10chem_ch12_002",
+          "audio": null
+        },
+        {
+          "id": "s09",
+          "layout": "concept",
+          "heading": "A dibasic acid",
+          "body_md": "Each molecule of sulphuric acid can give **two hydrogen ions**, so it is **dibasic**: H₂SO₄ → 2H⁺ + SO₄²⁻ (in two stages, through HSO₄⁻). It therefore forms **two kinds of salt** with a base:\n\n- an **acid salt** when only one H is replaced: NaOH + H₂SO₄ → NaHSO₄ + H₂O\n- a **normal salt** when both are replaced: 2NaOH + H₂SO₄ → Na₂SO₄ + 2H₂O",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Moles of NaOH per mole of H₂SO₄",
+                "Salt formed",
+                "Type"
+              ],
+              "rows": [
+                [
+                  "1",
+                  "Sodium hydrogen sulphate, NaHSO₄",
+                  "Acid salt"
+                ],
+                [
+                  "2",
+                  "Sodium sulphate, Na₂SO₄",
+                  "Normal salt"
+                ]
+              ]
+            },
+            "alt": "Table of the acid salt and the normal salt formed from sulphuric acid and sodium hydroxide"
+          },
+          "math": [],
+          "narration": "Every sulphuric acid molecule has two hydrogen atoms that can be replaced by a metal, so we call it dibasic. If only one of them is replaced, we get an acid salt such as sodium hydrogen sulphate, which still has a replaceable hydrogen. If both are replaced, we get a normal salt, sodium sulphate. Which one forms depends on how much alkali is used.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s10",
+          "layout": "concept",
+          "heading": "Dilute acid with metals, oxides and hydroxides",
+          "body_md": "Dilute sulphuric acid behaves as a typical **strong acid**. Metals **above hydrogen** give **hydrogen**; copper does not react.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Reacts with",
+                "Example equation"
+              ],
+              "rows": [
+                [
+                  "Metal",
+                  "Mg + H₂SO₄ → MgSO₄ + H₂"
+                ],
+                [
+                  "Metal",
+                  "Fe + H₂SO₄ → FeSO₄ + H₂"
+                ],
+                [
+                  "Basic oxide",
+                  "CuO + H₂SO₄ → CuSO₄ + H₂O"
+                ],
+                [
+                  "Hydroxide",
+                  "2KOH + H₂SO₄ → K₂SO₄ + 2H₂O"
+                ],
+                [
+                  "Ammonium hydroxide",
+                  "2NH₄OH + H₂SO₄ → (NH₄)₂SO₄ + 2H₂O"
+                ]
+              ]
+            },
+            "alt": "Table of dilute sulphuric acid with metals, a basic oxide and hydroxides"
+          },
+          "math": [],
+          "narration": "Dilute sulphuric acid is a strong acid. Magnesium and iron, which are above hydrogen in the activity series, dissolve in it and give hydrogen gas and the metal sulphate. Copper, below hydrogen, does not react. Basic oxides such as black copper oxide dissolve to give a sulphate and water, and alkalis are neutralised in the same way.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s11",
+          "layout": "concept",
+          "heading": "Dilute acid with salts of weaker acids",
+          "body_md": "Dilute sulphuric acid **displaces weaker, more volatile acids** from their salts, which then give off a gas:",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Salt",
+                "Example equation",
+                "Gas"
+              ],
+              "rows": [
+                [
+                  "Carbonate",
+                  "Na₂CO₃ + H₂SO₄ → Na₂SO₄ + H₂O + CO₂",
+                  "CO₂"
+                ],
+                [
+                  "Hydrogen carbonate",
+                  "2NaHCO₃ + H₂SO₄ → Na₂SO₄ + 2H₂O + 2CO₂",
+                  "CO₂"
+                ],
+                [
+                  "Sulphite",
+                  "Na₂SO₃ + H₂SO₄ → Na₂SO₄ + H₂O + SO₂",
+                  "SO₂"
+                ],
+                [
+                  "Hydrogen sulphite",
+                  "2NaHSO₃ + H₂SO₄ → Na₂SO₄ + 2H₂O + 2SO₂",
+                  "SO₂"
+                ],
+                [
+                  "Sulphide",
+                  "FeS + H₂SO₄ → FeSO₄ + H₂S",
+                  "H₂S (rotten-egg smell)"
+                ]
+              ]
+            },
+            "alt": "Table of dilute sulphuric acid with a carbonate, a hydrogen carbonate, a sulphite, a hydrogen sulphite and a sulphide"
+          },
+          "math": [],
+          "narration": "Salts of weaker acids react with dilute sulphuric acid and give off a gas. Carbonates and hydrogen carbonates give carbon dioxide. Sulphites and hydrogen sulphites give sulphur dioxide, which smells of burning sulphur. Sulphides give hydrogen sulphide, with its smell of rotten eggs. In every case a sulphate is left behind.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s12",
+          "layout": "example",
+          "heading": "Worked example: the reaction that stops",
+          "body_md": "**Problem.** Marble chips (calcium carbonate) are dropped into dilute sulphuric acid. There is brisk fizzing at first, but it soon stops although both marble and acid are left. Explain, with an equation.\n\n**Step 1.** CaCO₃ + H₂SO₄ → CaSO₄ + H₂O + CO₂.\n\n**Step 2.** Calcium sulphate is **only slightly soluble**. It forms a **coating** on the marble.\n\n**Step 3.** The coating **stops the acid reaching** the carbonate, so the reaction stops. (Dilute hydrochloric acid is used instead to make CO₂.)",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Acid on marble",
+                "Salt formed",
+                "Solubility",
+                "Reaction"
+              ],
+              "rows": [
+                [
+                  "Dilute H₂SO₄",
+                  "CaSO₄",
+                  "Slightly soluble: coats the chips",
+                  "Stops"
+                ],
+                [
+                  "Dilute HCl",
+                  "CaCl₂",
+                  "Very soluble",
+                  "Continues"
+                ]
+              ]
+            },
+            "alt": "Table comparing marble chips with dilute sulphuric acid and dilute hydrochloric acid"
+          },
+          "math": [],
+          "narration": "At first marble fizzes in dilute sulphuric acid as carbon dioxide is given off. But the calcium sulphate formed hardly dissolves, so it builds up as a coat over the chips. The acid can no longer reach the calcium carbonate underneath, and the fizzing stops. That is why dilute hydrochloric acid, not sulphuric acid, is used with marble to prepare carbon dioxide.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s13",
+          "layout": "check",
+          "heading": "Quick check: normal or acid salt?",
+          "body_md": "Decide which salt forms when sodium hydroxide and sulphuric acid react in a one to one mole ratio.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. If only one of the two hydrogens is replaced, what kind of salt do you get?",
+          "check_question_id": "q_icse10chem_ch12_014",
+          "audio": null
+        },
+        {
+          "id": "s14",
+          "layout": "summary",
+          "heading": "Summary: Part 1",
+          "body_md": "",
+          "bullets": [
+            "Contact: S + O₂ → SO₂; 2SO₂ + O₂ ⇌ 2SO₃ (V₂O₅, about 450 °C, 1–2 atm); SO₃ + H₂SO₄ → H₂S₂O₇; H₂S₂O₇ + H₂O → 2H₂SO₄.",
+            "SO₃ is not absorbed in water: a dense acid mist forms.",
+            "Dibasic: acid salts (NaHSO₄) and normal salts (Na₂SO₄).",
+            "Dilute acid: metals above H give H₂; carbonates give CO₂; sulphites give SO₂; sulphides give H₂S."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Step",
+                "Equation",
+                "Condition"
+              ],
+              "rows": [
+                [
+                  "1",
+                  "S + O₂ → SO₂",
+                  "Burning in air"
+                ],
+                [
+                  "2",
+                  "2SO₂ + O₂ ⇌ 2SO₃",
+                  "V₂O₅, about 450 °C, 1–2 atm"
+                ],
+                [
+                  "3",
+                  "SO₃ + H₂SO₄ → H₂S₂O₇",
+                  "Absorb in conc. acid"
+                ],
+                [
+                  "4",
+                  "H₂S₂O₇ + H₂O → 2H₂SO₄",
+                  "Dilute with water"
+                ]
+              ]
+            },
+            "alt": "Summary table of the four steps of the Contact process with conditions"
+          },
+          "math": [],
+          "narration": "Let us sum up Part 1. In the Contact process, sulphur burns to sulphur dioxide, which is oxidised over vanadium pentoxide to sulphur trioxide. This is absorbed in concentrated acid to give oleum, which is diluted to sulphuric acid. The acid is dibasic, forming acid salts and normal salts, and the dilute acid reacts with metals, bases and salts of weaker acids.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s15",
+          "layout": "exam-tips",
+          "heading": "Exam tips: Part 1",
+          "body_md": "",
+          "bullets": [
+            "Write the double arrow for 2SO₂ + O₂ ⇌ 2SO₃ and give catalyst, temperature and pressure.",
+            "Give the reason for oleum in one line: a dense mist of acid that does not condense.",
+            "Name the salt type: NaHSO₄ is an acid salt, Na₂SO₄ a normal salt.",
+            "Plant details are not needed: equations with conditions are enough."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Slip",
+                "Fix"
+              ],
+              "rows": [
+                [
+                  "Catalyst: platinum",
+                  "Vanadium pentoxide (platinum is for Ostwald’s process)"
+                ],
+                [
+                  "SO₃ + H₂O → H₂SO₄ in the plant",
+                  "SO₃ is absorbed in conc. H₂SO₄ first"
+                ],
+                [
+                  "Cu + dil. H₂SO₄ → CuSO₄ + H₂",
+                  "Copper does not react with the dilute acid"
+                ]
+              ]
+            },
+            "alt": "Table of three common slips in Part 1 and their fixes"
+          },
+          "math": [],
+          "narration": "Some tips. Show the oxidation of sulphur dioxide with a double arrow, and always give the catalyst, temperature and pressure. Explain the use of oleum by mentioning the acid mist. Say whether a salt is an acid salt or a normal salt. And remember that copper does not react with dilute sulphuric acid.",
+          "check_question_id": null,
+          "audio": null
+        }
+      ],
+      "status": "draft",
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "unit": "icse-10-chemistry-ch12",
+      "part": 2,
+      "version": 1,
+      "title": "Sulphuric Acid — Part 2: The concentrated acid and tests",
+      "language": "en",
+      "goals": [
+        "Write equations for hot concentrated sulphuric acid oxidising carbon and sulphur",
+        "Describe and explain the action of concentrated sulphuric acid on sugar and on blue vitriol",
+        "Distinguish dehydration from drying",
+        "Use the non-volatile nature of sulphuric acid to prepare HCl and HNO₃, and test for sulphuric acid and sulphates"
+      ],
+      "slides": [
+        {
+          "id": "s01",
+          "layout": "title",
+          "heading": "Three powers of the concentrated acid",
+          "body_md": "Part 2 — **Concentrated** sulphuric acid shows three special properties besides being an acid:",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Property",
+                "What it does",
+                "Example"
+              ],
+              "rows": [
+                [
+                  "Oxidising agent",
+                  "Gives oxygen when hot",
+                  "Oxidises carbon and sulphur"
+                ],
+                [
+                  "Dehydrating agent",
+                  "Removes the elements of water",
+                  "Chars sugar; whitens blue vitriol"
+                ],
+                [
+                  "Non-volatile acid",
+                  "High boiling point",
+                  "Drives out HCl and HNO₃ from their salts"
+                ]
+              ]
+            },
+            "alt": "Table of three properties of concentrated sulphuric acid with what each does and an example"
+          },
+          "math": [],
+          "narration": "Concentrated sulphuric acid is far more than a strong acid. When hot, it is an oxidising agent. It has such a strong pull on water that it removes water even from compounds like sugar. And because it has a high boiling point, it can push more volatile acids out of their salts. We look at each of these in turn.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s02",
+          "layout": "concept",
+          "heading": "Oxidising agent: carbon and sulphur",
+          "body_md": "**Hot concentrated** sulphuric acid gives oxygen (H₂SO₄ → H₂O + SO₂ + [O]) and is itself reduced to **sulphur dioxide**:",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Heated with",
+                "Balanced equation",
+                "Products"
+              ],
+              "rows": [
+                [
+                  "Carbon (charcoal)",
+                  "C + 2H₂SO₄ → CO₂ + 2H₂O + 2SO₂",
+                  "CO₂, water, SO₂"
+                ],
+                [
+                  "Sulphur",
+                  "S + 2H₂SO₄ → 3SO₂ + 2H₂O",
+                  "SO₂ and water only"
+                ]
+              ]
+            },
+            "alt": "Table of the oxidation of carbon and sulphur by hot concentrated sulphuric acid"
+          },
+          "math": [],
+          "narration": "When it is hot and concentrated, sulphuric acid releases oxygen and is reduced to sulphur dioxide. Charcoal is oxidised to carbon dioxide, so the gas given off is a mixture of carbon dioxide and sulphur dioxide. Sulphur is oxidised to sulphur dioxide, so in that case sulphur dioxide is the only gas, along with water.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s03",
+          "layout": "example",
+          "heading": "Worked example: gas from charcoal",
+          "body_md": "**Problem.** 1.2 g of charcoal is heated with excess concentrated sulphuric acid. Find the total volume of gas (CO₂ and SO₂) at STP. (C = 12; molar volume 22.4 L)\n\n**Step 1.** C + 2H₂SO₄ → CO₂ + 2H₂O + 2SO₂: 1 mole C gives 1 mole CO₂ and 2 moles SO₂.\n\n**Step 2.** Moles of C = 1.2 ÷ 12 = 0.1.\n\n**Step 3.** Gas = 0.1 + 0.2 = 0.3 mole; volume = 0.3 × 22.4 = **6.72 L** (2.24 L CO₂, 4.48 L SO₂).",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Gas",
+                "Moles",
+                "Volume at STP"
+              ],
+              "rows": [
+                [
+                  "CO₂",
+                  "0.1",
+                  "2.24 L"
+                ],
+                [
+                  "SO₂",
+                  "0.2",
+                  "4.48 L"
+                ],
+                [
+                  "Total",
+                  "0.3",
+                  "6.72 L"
+                ]
+              ]
+            },
+            "alt": "Table of the moles and volumes of carbon dioxide and sulphur dioxide from 1.2 grams of charcoal"
+          },
+          "math": [],
+          "narration": "The equation tells us that one unit of carbon gives one unit of carbon dioxide and two of sulphur dioxide. One point two grams of carbon is zero point one mole. So we get zero point one mole of carbon dioxide and zero point two mole of sulphur dioxide, zero point three mole in all, which is six point seven two litres at standard conditions.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s04",
+          "layout": "check",
+          "heading": "Quick check: oxidising carbon",
+          "body_md": "Name the gases given off when charcoal is heated with concentrated sulphuric acid.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Carbon is oxidised, and the acid is reduced. What does each become?",
+          "check_question_id": "q_icse10chem_ch12_032",
+          "audio": null
+        },
+        {
+          "id": "s05",
+          "layout": "diagram",
+          "heading": "Dehydrating agent: sugar",
+          "body_md": "Concentrated sulphuric acid removes **hydrogen and oxygen in the ratio 2 : 1** (the elements of water) from sugar. The sugar turns **yellow, brown, then black**; a **spongy column of carbon** rises, with **steam** and much **heat**. This is called **charring**.\n\nC₁₂H₂₂O₁₁ → 12C + 11H₂O (conc. H₂SO₄)",
+          "bullets": [],
+          "visual": {
+            "kind": "svg",
+            "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 540 320\" role=\"img\" aria-label=\"Two beakers showing concentrated sulphuric acid acting on sugar. In the first beaker, a heap of white sugar sits at the bottom while a little concentrated sulphuric acid is poured onto it. In the second beaker, a few minutes later, a tall black spongy column of carbon has risen up out of the beaker, full of holes, with clouds of steam coming off and the beaker feeling very hot. The acid has removed the elements of water from the sugar, leaving carbon.\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>Two beakers showing concentrated sulphuric acid acting on sugar. In the first beaker, a heap of white sugar sits at the bottom while a little concentrated sulphuric acid is poured onto it. In the second beaker, a few minutes later, a tall black spongy column of carbon has risen up out of the beaker, full of holes, with clouds of steam coming off and the beaker feeling very hot. The acid has removed the elements of water from the sugar, leaving carbon.</title><path d=\"M 54 146 L 60 150 L 60 290 L 180 290 L 180 150\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"/><circle cx=\"78\" cy=\"282\" r=\"3\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\"/><circle cx=\"92\" cy=\"276\" r=\"3\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\"/><circle cx=\"106\" cy=\"270\" r=\"3\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\"/><circle cx=\"120\" cy=\"266\" r=\"3\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\"/><circle cx=\"134\" cy=\"270\" r=\"3\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\"/><circle cx=\"148\" cy=\"276\" r=\"3\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\"/><circle cx=\"162\" cy=\"282\" r=\"3\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\"/><circle cx=\"100\" cy=\"282\" r=\"3\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\"/><circle cx=\"120\" cy=\"280\" r=\"3\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\"/><circle cx=\"140\" cy=\"282\" r=\"3\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\"/><circle cx=\"112\" cy=\"274\" r=\"3\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\"/><circle cx=\"128\" cy=\"274\" r=\"3\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\"/><path d=\"M 74 288 Q 120 252 166 288\" fill=\"none\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\"/><path d=\"M 150 70 L 150 110 L 134 140\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"/><rect x=\"143\" y=\"58\" width=\"14\" height=\"14\" fill=\"var(--diagram-muted)\" stroke=\"currentColor\" stroke-width=\"1\" fill-opacity=\"0.4\"/><path d=\"M 132 146 L 128 240\" fill=\"none\" stroke=\"var(--diagram-muted)\" stroke-width=\"1.2\" stroke-dasharray=\"3 3\"/><text x=\"166\" y=\"76\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">conc. H₂SO₄</text><text x=\"166\" y=\"88\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">added</text><text x=\"36\" y=\"310\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">white sugar (sucrose)</text><text x=\"120\" y=\"40\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\">Before</text><line x1=\"206\" y1=\"210\" x2=\"294.4\" y2=\"210\" stroke=\"var(--diagram-accent)\" stroke-width=\"1.5\"/><polygon points=\"300,210 293.6,212.9 293.6,207.1\" fill=\"var(--diagram-accent)\" stroke=\"none\"/><text x=\"253\" y=\"196\" fill=\"var(--diagram-accent)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">a few</text><text x=\"253\" y=\"208\" fill=\"var(--diagram-accent)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">minutes</text><path d=\"M 324 146 L 330 150 L 330 290 L 450 290 L 450 150\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"/><path d=\"M 352 288 L 356 130 Q 360 72 390 66 Q 420 72 424 130 L 428 288 Z\" fill=\"currentColor\" stroke=\"currentColor\" stroke-width=\"1.2\" fill-opacity=\"0.75\"/><circle cx=\"372\" cy=\"96\" r=\"4\" fill=\"var(--diagram-muted)\" stroke=\"var(--diagram-muted)\" stroke-width=\"0.8\" fill-opacity=\"0.6\"/><circle cx=\"392\" cy=\"118\" r=\"4\" fill=\"var(--diagram-muted)\" stroke=\"var(--diagram-muted)\" stroke-width=\"0.8\" fill-opacity=\"0.6\"/><circle cx=\"380\" cy=\"146\" r=\"4\" fill=\"var(--diagram-muted)\" stroke=\"var(--diagram-muted)\" stroke-width=\"0.8\" fill-opacity=\"0.6\"/><circle cx=\"404\" cy=\"160\" r=\"4\" fill=\"var(--diagram-muted)\" stroke=\"var(--diagram-muted)\" stroke-width=\"0.8\" fill-opacity=\"0.6\"/><circle cx=\"370\" cy=\"186\" r=\"4\" fill=\"var(--diagram-muted)\" stroke=\"var(--diagram-muted)\" stroke-width=\"0.8\" fill-opacity=\"0.6\"/><circle cx=\"398\" cy=\"200\" r=\"4\" fill=\"var(--diagram-muted)\" stroke=\"var(--diagram-muted)\" stroke-width=\"0.8\" fill-opacity=\"0.6\"/><circle cx=\"384\" cy=\"226\" r=\"4\" fill=\"var(--diagram-muted)\" stroke=\"var(--diagram-muted)\" stroke-width=\"0.8\" fill-opacity=\"0.6\"/><circle cx=\"408\" cy=\"236\" r=\"4\" fill=\"var(--diagram-muted)\" stroke=\"var(--diagram-muted)\" stroke-width=\"0.8\" fill-opacity=\"0.6\"/><circle cx=\"366\" cy=\"222\" r=\"4\" fill=\"var(--diagram-muted)\" stroke=\"var(--diagram-muted)\" stroke-width=\"0.8\" fill-opacity=\"0.6\"/><circle cx=\"394\" cy=\"82\" r=\"4\" fill=\"var(--diagram-muted)\" stroke=\"var(--diagram-muted)\" stroke-width=\"0.8\" fill-opacity=\"0.6\"/><path d=\"M 372 58 Q 364 46 372 34 Q 380 22 372 10\" fill=\"none\" stroke=\"var(--diagram-muted)\" stroke-width=\"1.4\"/><path d=\"M 390 58 Q 382 46 390 34 Q 398 22 390 10\" fill=\"none\" stroke=\"var(--diagram-muted)\" stroke-width=\"1.4\"/><path d=\"M 408 58 Q 400 46 408 34 Q 416 22 408 10\" fill=\"none\" stroke=\"var(--diagram-muted)\" stroke-width=\"1.4\"/><text x=\"456\" y=\"30\" fill=\"var(--diagram-muted)\" stroke=\"none\" font-size=\"10\">steam</text><text x=\"456\" y=\"120\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">black, spongy</text><text x=\"456\" y=\"132\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">mass of carbon</text><text x=\"456\" y=\"144\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">rises out of</text><text x=\"456\" y=\"156\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">the beaker</text><line x1=\"426\" y1=\"132\" x2=\"452\" y2=\"124\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\"/><text x=\"456\" y=\"250\" fill=\"var(--diagram-red)\" stroke=\"none\" font-size=\"10\">beaker</text><text x=\"456\" y=\"262\" fill=\"var(--diagram-red)\" stroke=\"none\" font-size=\"10\">very hot</text><text x=\"390\" y=\"312\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\">After</text></svg>",
+            "alt": "Concentrated sulphuric acid poured on white sugar in a beaker; a few minutes later a tall black spongy column of carbon rises out of the hot beaker with steam"
+          },
+          "math": [],
+          "narration": "Pour a little concentrated sulphuric acid onto white sugar in a beaker and wait. The sugar turns yellow, then brown, then black, and a black spongy column of carbon slowly climbs out of the beaker, hissing steam. The beaker gets very hot. The acid has pulled hydrogen and oxygen out of the sugar as water, leaving carbon behind.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s06",
+          "layout": "concept",
+          "heading": "Dehydrating agent: blue vitriol",
+          "body_md": "Blue crystals of **hydrated copper(II) sulphate** (blue vitriol) turn **white** when concentrated sulphuric acid is added, as the acid removes the **water of crystallisation**:\n\nCuSO₄·5H₂O → CuSO₄ + 5H₂O (conc. H₂SO₄)",
+          "bullets": [],
+          "visual": {
+            "kind": "svg",
+            "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 440 280\" role=\"img\" aria-label=\"Two test tubes showing the dehydration of copper(II) sulphate crystals. The first tube holds blue crystals of hydrated copper(II) sulphate. Concentrated sulphuric acid is added, and in the second tube the crystals have turned into a white powder of anhydrous copper(II) sulphate at the bottom of the colourless acid, because the acid has removed the water of crystallisation.\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>Two test tubes showing the dehydration of copper(II) sulphate crystals. The first tube holds blue crystals of hydrated copper(II) sulphate. Concentrated sulphuric acid is added, and in the second tube the crystals have turned into a white powder of anhydrous copper(II) sulphate at the bottom of the colourless acid, because the acid has removed the water of crystallisation.</title><path d=\"M 80 40 L 80 190 Q 104 216.4 128 190 L 128 40\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/><line x1=\"76\" y1=\"40\" x2=\"132\" y2=\"40\" stroke=\"currentColor\" stroke-width=\"1.6\"/><rect x=\"88\" y=\"170\" width=\"10\" height=\"10\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0.8\" fill-opacity=\"0.75\"/><rect x=\"100\" y=\"182\" width=\"10\" height=\"10\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0.8\" fill-opacity=\"0.75\"/><rect x=\"114\" y=\"176\" width=\"10\" height=\"10\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0.8\" fill-opacity=\"0.75\"/><rect x=\"124\" y=\"186\" width=\"10\" height=\"10\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0.8\" fill-opacity=\"0.75\"/><rect x=\"94\" y=\"194\" width=\"10\" height=\"10\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0.8\" fill-opacity=\"0.75\"/><rect x=\"110\" y=\"196\" width=\"10\" height=\"10\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0.8\" fill-opacity=\"0.75\"/><rect x=\"118\" y=\"164\" width=\"10\" height=\"10\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0.8\" fill-opacity=\"0.75\"/><rect x=\"102\" y=\"160\" width=\"10\" height=\"10\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0.8\" fill-opacity=\"0.75\"/><text x=\"104\" y=\"236\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">blue crystals</text><text x=\"104\" y=\"248\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">CuSO₄·5H₂O</text><line x1=\"150\" y1=\"120\" x2=\"264.4\" y2=\"120\" stroke=\"var(--diagram-accent)\" stroke-width=\"1.5\"/><polygon points=\"270,120 263.6,122.9 263.6,117.1\" fill=\"var(--diagram-accent)\" stroke=\"none\"/><text x=\"210\" y=\"104\" fill=\"var(--diagram-accent)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">add conc. H₂SO₄</text><text x=\"210\" y=\"140\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">water of</text><text x=\"210\" y=\"152\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">crystallisation</text><text x=\"210\" y=\"164\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">removed</text><path d=\"M 290 40 L 290 190 Q 314 216.4 338 190 L 338 40\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/><line x1=\"286\" y1=\"40\" x2=\"342\" y2=\"40\" stroke=\"currentColor\" stroke-width=\"1.6\"/><rect x=\"292\" y=\"110\" width=\"44\" height=\"84\" fill=\"var(--diagram-muted)\" stroke=\"none\" stroke-width=\"0\" fill-opacity=\"0.15\"/><circle cx=\"298\" cy=\"182\" r=\"2.6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\"/><circle cx=\"308\" cy=\"188\" r=\"2.6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\"/><circle cx=\"318\" cy=\"184\" r=\"2.6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\"/><circle cx=\"328\" cy=\"188\" r=\"2.6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\"/><circle cx=\"302\" cy=\"194\" r=\"2.6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\"/><circle cx=\"314\" cy=\"198\" r=\"2.6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\"/><circle cx=\"324\" cy=\"196\" r=\"2.6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\"/><circle cx=\"312\" cy=\"176\" r=\"2.6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\"/><circle cx=\"322\" cy=\"178\" r=\"2.6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\"/><circle cx=\"304\" cy=\"174\" r=\"2.6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\"/><text x=\"314\" y=\"236\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">white powder</text><text x=\"314\" y=\"248\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">CuSO₄ (anhydrous)</text><text x=\"350\" y=\"100\" fill=\"var(--diagram-muted)\" stroke=\"none\" font-size=\"10\">colourless</text><text x=\"350\" y=\"112\" fill=\"var(--diagram-muted)\" stroke=\"none\" font-size=\"10\">acid</text></svg>",
+            "alt": "Blue copper(II) sulphate crystals in a test tube turn into a white powder when concentrated sulphuric acid is added"
+          },
+          "math": [],
+          "narration": "Blue copper sulphate crystals owe their colour to water of crystallisation. When concentrated sulphuric acid is added, it takes this water away, and the blue crystals crumble to a white powder of anhydrous copper sulphate. Adding water to the white powder would bring the blue colour back.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s07",
+          "layout": "concept",
+          "heading": "Dehydration is not drying",
+          "body_md": "**Drying:** removing **moisture** (water that is merely present) from a substance, for example drying a gas. **Dehydration:** removing the **elements of water** (H and O in the ratio 2 : 1) from a **compound**, or its water of crystallisation.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Feature",
+                "Drying",
+                "Dehydration"
+              ],
+              "rows": [
+                [
+                  "What is removed",
+                  "Moisture (free water)",
+                  "Elements of water from a compound"
+                ],
+                [
+                  "Example",
+                  "Moist chlorine passed through conc. H₂SO₄",
+                  "Conc. H₂SO₄ on sugar or blue vitriol"
+                ],
+                [
+                  "Substance changed?",
+                  "No (same substance, now dry)",
+                  "Yes (a new substance forms)"
+                ]
+              ]
+            },
+            "alt": "Table comparing drying and dehydration with examples"
+          },
+          "math": [],
+          "narration": "Drying and dehydration are different. Drying removes water that is simply mixed with a substance, such as moisture in a gas, and the substance itself does not change. Dehydration removes hydrogen and oxygen from inside a compound, in the same ratio as in water, so a new substance forms. Charring sugar is dehydration; passing moist chlorine through the acid is drying.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s08",
+          "layout": "check",
+          "heading": "Quick check: dehydrating sugar",
+          "body_md": "Name the property shown when concentrated sulphuric acid chars sugar.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. The acid removed hydrogen and oxygen from the sugar in the same ratio as in water. What property is that?",
+          "check_question_id": "q_icse10chem_ch12_037",
+          "audio": null
+        },
+        {
+          "id": "s09",
+          "layout": "concept",
+          "heading": "Which gases can it dry?",
+          "body_md": "Concentrated sulphuric acid dries gases that **do not react** with it, such as **chlorine, sulphur dioxide, hydrogen chloride, oxygen and carbon dioxide**. It **cannot dry ammonia** (a base: forms ammonium sulphate) or **hydrogen sulphide** (oxidised to sulphur).",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Gas",
+                "Dried by conc. H₂SO₄?",
+                "Reason"
+              ],
+              "rows": [
+                [
+                  "Chlorine, SO₂, HCl, CO₂",
+                  "Yes",
+                  "No reaction"
+                ],
+                [
+                  "Ammonia",
+                  "No",
+                  "2NH₃ + H₂SO₄ → (NH₄)₂SO₄"
+                ],
+                [
+                  "Hydrogen sulphide",
+                  "No",
+                  "Oxidised: H₂S + H₂SO₄ → S + SO₂ + 2H₂O"
+                ]
+              ]
+            },
+            "alt": "Table of gases that can and cannot be dried by concentrated sulphuric acid"
+          },
+          "math": [],
+          "narration": "Because it absorbs water so strongly, concentrated sulphuric acid is used to dry many gases, such as chlorine, sulphur dioxide, hydrogen chloride and carbon dioxide, which simply bubble through it. But it cannot dry ammonia, which is a base and reacts with the acid, or hydrogen sulphide, which the acid oxidises to sulphur.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s10",
+          "layout": "concept",
+          "heading": "Non-volatile acid",
+          "body_md": "Concentrated sulphuric acid has a **high boiling point** (about 338 °C), so it is **non-volatile**. Heated with salts of **volatile acids**, it drives those acids out as vapour, which is used to **prepare HCl and HNO₃**:\n\n- NaCl + H₂SO₄ → NaHSO₄ + HCl (below 200 °C)\n- KNO₃ + H₂SO₄ → KHSO₄ + HNO₃ (below 200 °C)",
+          "bullets": [],
+          "visual": {
+            "kind": "chem",
+            "spec": {
+              "equation": "KCl + H2SO4 -> KHSO4 + HCl"
+            },
+            "alt": "Equation: potassium chloride plus sulphuric acid gives potassium hydrogen sulphate plus hydrogen chloride",
+            "caption": "Non-volatile acid driving out a volatile acid"
+          },
+          "math": [],
+          "narration": "Sulphuric acid boils at a much higher temperature than hydrochloric or nitric acid. So when it is heated with a chloride or a nitrate, the more volatile acid escapes as a vapour and the sulphuric acid stays behind. That is how hydrogen chloride and nitric acid are prepared in the laboratory, from common salt and from potassium nitrate.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s11",
+          "layout": "example",
+          "heading": "Worked example: identifying a sulphate",
+          "body_md": "**Problem.** A colourless solution Y gives a **white precipitate** with barium chloride solution. The precipitate does **not dissolve** in dilute hydrochloric acid. Y also turns blue litmus red. Identify Y and write the equation.\n\n**Step 1.** White precipitate with BaCl₂, insoluble in HCl → **sulphate ion** (BaSO₄).\n\n**Step 2.** Turns blue litmus red → an **acid**.\n\n**Step 3.** Y is **dilute sulphuric acid**: BaCl₂ + H₂SO₄ → BaSO₄ + 2HCl.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Test on Y",
+                "Observation",
+                "Inference"
+              ],
+              "rows": [
+                [
+                  "Blue litmus",
+                  "Turns red",
+                  "Acidic"
+                ],
+                [
+                  "BaCl₂ solution",
+                  "White precipitate",
+                  "SO₄²⁻ (or SO₃²⁻, CO₃²⁻)"
+                ],
+                [
+                  "Add dilute HCl",
+                  "Precipitate stays",
+                  "Sulphate confirmed"
+                ]
+              ]
+            },
+            "alt": "Table of tests on solution Y with observations and inferences"
+          },
+          "math": [],
+          "narration": "Barium chloride gives a white precipitate with sulphates, but also with sulphites and carbonates. Adding dilute hydrochloric acid settles it: barium sulphite and carbonate dissolve, while barium sulphate does not. Since Y also turns blue litmus red, it must be dilute sulphuric acid.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s12",
+          "layout": "concept",
+          "heading": "Tests for sulphuric acid",
+          "body_md": "- **Barium chloride** (or barium nitrate) solution: **white precipitate** of BaSO₄, **insoluble** in dilute HCl or HNO₃.\n- **Lead nitrate** solution: **white precipitate** of PbSO₄: Pb(NO₃)₂ + H₂SO₄ → PbSO₄ + 2HNO₃.\n- **Concentrated** acid: **chars** sugar or paper.",
+          "bullets": [],
+          "visual": {
+            "kind": "flow",
+            "spec": {
+              "direction": "TB",
+              "nodes": [
+                {
+                  "id": "a",
+                  "label": "Colourless acid"
+                },
+                {
+                  "id": "b",
+                  "label": "Add BaCl₂ solution"
+                },
+                {
+                  "id": "c",
+                  "label": "White precipitate"
+                },
+                {
+                  "id": "d",
+                  "label": "Add dilute HCl"
+                },
+                {
+                  "id": "e",
+                  "label": "Precipitate stays: sulphate (H₂SO₄)"
+                },
+                {
+                  "id": "f",
+                  "label": "Precipitate dissolves: not a sulphate"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "a",
+                  "to": "b"
+                },
+                {
+                  "from": "b",
+                  "to": "c"
+                },
+                {
+                  "from": "c",
+                  "to": "d"
+                },
+                {
+                  "from": "d",
+                  "to": "e"
+                },
+                {
+                  "from": "d",
+                  "to": "f"
+                }
+              ]
+            },
+            "alt": "Flow chart of the barium chloride test for sulphuric acid and sulphates"
+          },
+          "math": [],
+          "narration": "To confirm sulphuric acid, add barium chloride solution: a white precipitate of barium sulphate forms, and it does not dissolve in dilute hydrochloric acid. Lead nitrate solution also gives a white precipitate, of lead sulphate. And a drop of the concentrated acid on sugar or paper turns it black.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s13",
+          "layout": "check",
+          "heading": "Quick check: the sulphate test",
+          "body_md": "Predict what barium chloride does with dilute sulphuric acid.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. What colour is the precipitate, and does it dissolve in dilute hydrochloric acid?",
+          "check_question_id": "q_icse10chem_ch12_050",
+          "audio": null
+        },
+        {
+          "id": "s14",
+          "layout": "summary",
+          "heading": "Summary: Part 2",
+          "body_md": "",
+          "bullets": [
+            "Oxidising (hot, conc.): C + 2H₂SO₄ → CO₂ + 2H₂O + 2SO₂; S + 2H₂SO₄ → 3SO₂ + 2H₂O.",
+            "Dehydrating: chars sugar (C₁₂H₂₂O₁₁ → 12C + 11H₂O); whitens blue vitriol.",
+            "Drying ≠ dehydration; conc. H₂SO₄ cannot dry NH₃ or H₂S.",
+            "Non-volatile: prepares HCl and HNO₃ from chlorides and nitrates.",
+            "Test: BaCl₂ gives white BaSO₄, insoluble in dilute HCl."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Property",
+                "Key reaction"
+              ],
+              "rows": [
+                [
+                  "Oxidising",
+                  "Carbon → CO₂; sulphur → SO₂"
+                ],
+                [
+                  "Dehydrating",
+                  "Sugar → carbon; CuSO₄·5H₂O → CuSO₄"
+                ],
+                [
+                  "Non-volatile",
+                  "NaCl → HCl; KNO₃ → HNO₃"
+                ],
+                [
+                  "Acidic (test)",
+                  "BaCl₂ → white BaSO₄"
+                ]
+              ]
+            },
+            "alt": "Summary table of the properties of concentrated sulphuric acid with a key reaction for each"
+          },
+          "math": [],
+          "narration": "Let us sum up Part 2. Hot concentrated sulphuric acid oxidises carbon and sulphur and is reduced to sulphur dioxide. It dehydrates sugar to carbon and blue vitriol to a white powder. It dries gases that do not react with it. Its high boiling point lets it drive hydrochloric and nitric acids out of their salts. Barium chloride gives a white precipitate that confirms a sulphate.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s15",
+          "layout": "exam-tips",
+          "heading": "Exam tips: Part 2",
+          "body_md": "",
+          "bullets": [
+            "Use the word “hot” for the oxidising reactions with carbon and sulphur.",
+            "In sugar questions, give at least two observations: blackening, a rising spongy mass, steam, heat.",
+            "For drying versus dehydration, give one example of each.",
+            "In the sulphate test, always add dilute HCl to show the precipitate is insoluble."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Slip",
+                "Fix"
+              ],
+              "rows": [
+                [
+                  "S + H₂SO₄ gives H₂S",
+                  "It gives SO₂ and water"
+                ],
+                [
+                  "Sugar charring is oxidation",
+                  "It is dehydration"
+                ],
+                [
+                  "Conc. H₂SO₄ dries ammonia",
+                  "It reacts with ammonia"
+                ]
+              ]
+            },
+            "alt": "Table of three common slips in Part 2 and their fixes"
+          },
+          "math": [],
+          "narration": "Final tips. Say hot and concentrated for the oxidation reactions. For sugar, examiners want at least two observations, such as the black spongy mass and the steam. Give an example each of drying and dehydration. And in the sulphate test, add dilute hydrochloric acid to show the white precipitate does not dissolve.",
+          "check_question_id": null,
+          "audio": null
+        }
+      ],
+      "status": "draft",
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    }
+  ],
+  "notes": {
+    "unit": "icse-10-chemistry-ch12",
+    "version": 1,
+    "title": "Study of Compounds: Sulphuric Acid — Notes",
+    "language": "en",
+    "sections": [
+      {
+        "heading": "1. The Contact process (equations and conditions)",
+        "body_md": "- **Step 1:** sulphur burnt in air (or iron pyrites roasted) → SO₂, which is purified and dried.\n- **Step 2 (contact step):** SO₂ + excess air over **vanadium pentoxide, V₂O₅**, at about **450 °C** and **1–2 atm**; reversible and exothermic.\n- **Step 3:** SO₃ absorbed in **concentrated H₂SO₄** → **oleum** (fuming sulphuric acid, H₂S₂O₇).\n- **Step 4:** oleum diluted with the calculated amount of water → H₂SO₄.\n\n**Why not water?** SO₃ + H₂O is violently exothermic and forms a **dense mist** of acid droplets that does not condense easily.",
+        "key_terms": [
+          {
+            "term": "Contact process",
+            "definition_md": "The industrial manufacture of sulphuric acid in which sulphur dioxide and oxygen combine on the surface of a vanadium pentoxide catalyst."
+          },
+          {
+            "term": "Oleum",
+            "definition_md": "H₂S₂O₇, fuming sulphuric acid, formed when sulphur trioxide dissolves in concentrated sulphuric acid."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\ce{S + O2 -> SO2}",
+            "label": "Burning sulphur"
+          },
+          {
+            "latex": "\\ce{2SO2 + O2 <=> 2SO3}",
+            "label": "V₂O₅, about 450 °C, 1–2 atm"
+          },
+          {
+            "latex": "\\ce{SO3 + H2SO4 -> H2S2O7}",
+            "label": "Oleum"
+          },
+          {
+            "latex": "\\ce{H2S2O7 + H2O -> 2H2SO4}",
+            "label": "Dilution of oleum"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Step",
+              "Condition"
+            ],
+            "rows": [
+              [
+                "SO₂ → SO₃",
+                "V₂O₅, about 450 °C, 1–2 atm, excess air"
+              ],
+              [
+                "SO₃ → oleum",
+                "Absorbed in conc. H₂SO₄"
+              ],
+              [
+                "Oleum → acid",
+                "Diluted with water"
+              ]
+            ]
+          },
+          "alt": "Table of the conditions for the later steps of the Contact process"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-chemistry-ch12-t01"
+        ]
+      },
+      {
+        "heading": "2. Dilute sulphuric acid: a dibasic acid",
+        "body_md": "Each molecule gives **two H⁺ ions** (H₂SO₄ → 2H⁺ + SO₄²⁻), so the acid is **dibasic** and forms **two series of salts**:\n\n- **acid salts** (one H replaced): NaHSO₄, KHSO₄\n- **normal salts** (both H replaced): Na₂SO₄, K₂SO₄",
+        "key_terms": [
+          {
+            "term": "Dibasic acid",
+            "definition_md": "An acid with two replaceable hydrogen atoms per molecule, which forms both acid salts and normal salts."
+          },
+          {
+            "term": "Acid salt",
+            "definition_md": "A salt in which only part of the replaceable hydrogen of the acid has been replaced by a metal, such as NaHSO₄."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\ce{NaOH + H2SO4 -> NaHSO4 + H2O}",
+            "label": "Acid salt"
+          },
+          {
+            "latex": "\\ce{2NaOH + H2SO4 -> Na2SO4 + 2H2O}",
+            "label": "Normal salt"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Base : acid (moles)",
+              "Salt",
+              "Type"
+            ],
+            "rows": [
+              [
+                "1 : 1 (NaOH)",
+                "NaHSO₄",
+                "Acid salt"
+              ],
+              [
+                "2 : 1 (NaOH)",
+                "Na₂SO₄",
+                "Normal salt"
+              ]
+            ]
+          },
+          "alt": "Table of the salts formed by sodium hydroxide and sulphuric acid in two mole ratios"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-chemistry-ch12-t02"
+        ]
+      },
+      {
+        "heading": "3. Reactions of the dilute acid",
+        "body_md": "- **Active metals** (above H): sulphate + **hydrogen**. Copper does not react.\n- **Basic oxides and hydroxides:** sulphate + water.\n- **Carbonates, hydrogen carbonates:** sulphate + water + **CO₂**. With marble chips the reaction soon stops: insoluble **CaSO₄** coats the chips.\n- **Sulphites, hydrogen sulphites:** sulphate + water + **SO₂**.\n- **Sulphides:** sulphate + **H₂S** (rotten-egg smell).",
+        "key_terms": [
+          {
+            "term": "Displacement of a weaker acid",
+            "definition_md": "A strong acid reacting with a salt of a weaker or more volatile acid, setting that acid (or its gas) free."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\ce{Fe + H2SO4 -> FeSO4 + H2}",
+            "label": "Metal"
+          },
+          {
+            "latex": "\\ce{CuO + H2SO4 -> CuSO4 + H2O}",
+            "label": "Basic oxide"
+          },
+          {
+            "latex": "\\ce{2NaHCO3 + H2SO4 -> Na2SO4 + 2H2O + 2CO2}",
+            "label": "Hydrogen carbonate"
+          },
+          {
+            "latex": "\\ce{Na2SO3 + H2SO4 -> Na2SO4 + H2O + SO2}",
+            "label": "Sulphite"
+          },
+          {
+            "latex": "\\ce{2NaHSO3 + H2SO4 -> Na2SO4 + 2H2O + 2SO2}",
+            "label": "Hydrogen sulphite"
+          },
+          {
+            "latex": "\\ce{FeS + H2SO4 -> FeSO4 + H2S}",
+            "label": "Sulphide"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Salt type",
+              "Gas",
+              "Test for the gas"
+            ],
+            "rows": [
+              [
+                "Carbonate",
+                "CO₂",
+                "Lime water turns milky"
+              ],
+              [
+                "Sulphite",
+                "SO₂",
+                "Acidified K₂Cr₂O₇ turns green"
+              ],
+              [
+                "Sulphide",
+                "H₂S",
+                "Lead acetate paper turns black"
+              ]
+            ]
+          },
+          "alt": "Table of the gases given by salts with dilute sulphuric acid and tests for them"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-chemistry-ch12-t02"
+        ]
+      },
+      {
+        "heading": "4. Concentrated acid as an oxidising agent",
+        "body_md": "**Hot concentrated** sulphuric acid gives oxygen (H₂SO₄ → H₂O + SO₂ + [O]) and is reduced to **sulphur dioxide**.\n\n- **Carbon** is oxidised to CO₂ (gas mixture of CO₂ and SO₂).\n- **Sulphur** is oxidised to SO₂ (the only gas).",
+        "key_terms": [
+          {
+            "term": "Oxidising agent",
+            "definition_md": "A substance that supplies oxygen to another substance and is itself reduced."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\ce{C + 2H2SO4 -> CO2 + 2H2O + 2SO2}",
+            "label": "Carbon, hot conc. acid"
+          },
+          {
+            "latex": "\\ce{S + 2H2SO4 -> 3SO2 + 2H2O}",
+            "label": "Sulphur, hot conc. acid"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Heated with",
+              "Gases given off"
+            ],
+            "rows": [
+              [
+                "Carbon",
+                "CO₂ and SO₂"
+              ],
+              [
+                "Sulphur",
+                "SO₂ only"
+              ]
+            ]
+          },
+          "alt": "Table of the gases given off when carbon and sulphur are oxidised by hot concentrated sulphuric acid"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-chemistry-ch12-t03"
+        ]
+      },
+      {
+        "heading": "5. Concentrated acid as a dehydrating agent",
+        "body_md": "Concentrated sulphuric acid has a very strong attraction for water.\n\n- **Sugar:** turns yellow → brown → black; a **black spongy mass of carbon** rises; steam; much heat (**charring**): C₁₂H₂₂O₁₁ → 12C + 11H₂O.\n- **Blue vitriol:** blue crystals turn **white** as the water of crystallisation is removed: CuSO₄·5H₂O → CuSO₄ + 5H₂O.\n\n**Drying** removes moisture that is merely present (e.g. moist Cl₂, SO₂, HCl passed through the acid); **dehydration** removes the elements of water from a compound. The acid **cannot dry NH₃** (reacts: 2NH₃ + H₂SO₄ → (NH₄)₂SO₄) or **H₂S** (oxidised to sulphur).",
+        "key_terms": [
+          {
+            "term": "Dehydration",
+            "definition_md": "Removal of hydrogen and oxygen in the ratio 2 : 1 (the elements of water) from a compound, or of its water of crystallisation."
+          },
+          {
+            "term": "Drying",
+            "definition_md": "Removal of moisture that is simply present in a substance, without changing the substance."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\ce{C12H22O11 -> 12C + 11H2O}",
+            "label": "Charring of sugar by conc. H₂SO₄"
+          },
+          {
+            "latex": "\\ce{2NH3 + H2SO4 -> (NH4)2SO4}",
+            "label": "Why ammonia cannot be dried by it"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Change",
+              "Drying or dehydration?"
+            ],
+            "rows": [
+              [
+                "Moist chlorine through conc. H₂SO₄",
+                "Drying"
+              ],
+              [
+                "Sugar charred",
+                "Dehydration"
+              ],
+              [
+                "Blue vitriol turns white",
+                "Dehydration"
+              ]
+            ]
+          },
+          "alt": "Table classifying three changes as drying or dehydration"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-chemistry-ch12-t04"
+        ]
+      },
+      {
+        "heading": "6. Non-volatile nature and tests",
+        "body_md": "With a boiling point of about 338 °C, sulphuric acid is **non-volatile**. Heated with salts of **volatile acids**, it drives them out: this is how **HCl** and **HNO₃** are prepared.\n\n**Tests for sulphuric acid / a sulphate:**\n- **Barium chloride** solution → **white precipitate** of BaSO₄, **insoluble in dilute HCl** (or HNO₃).\n- **Lead nitrate** solution → white precipitate of PbSO₄.\n- The **concentrated** acid chars sugar, wood or paper.",
+        "key_terms": [
+          {
+            "term": "Non-volatile acid",
+            "definition_md": "An acid with a high boiling point that does not easily turn to vapour, such as sulphuric acid."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\ce{NaCl + H2SO4 -> NaHSO4 + HCl}",
+            "label": "Below 200 °C"
+          },
+          {
+            "latex": "\\ce{KNO3 + H2SO4 -> KHSO4 + HNO3}",
+            "label": "Below 200 °C"
+          },
+          {
+            "latex": "\\ce{BaCl2 + H2SO4 -> BaSO4 + 2HCl}",
+            "label": "White precipitate"
+          },
+          {
+            "latex": "\\ce{Pb(NO3)2 + H2SO4 -> PbSO4 + 2HNO3}",
+            "label": "White precipitate"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Reagent",
+              "Observation with H₂SO₄"
+            ],
+            "rows": [
+              [
+                "BaCl₂ solution",
+                "White precipitate, insoluble in dil. HCl"
+              ],
+              [
+                "Pb(NO₃)₂ solution",
+                "White precipitate"
+              ],
+              [
+                "Sugar (conc. acid)",
+                "Chars black"
+              ]
+            ]
+          },
+          "alt": "Table of three tests for sulphuric acid and their observations"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-chemistry-ch12-t05"
+        ]
+      }
+    ],
+    "exam_tips_md": "**Common mistakes**\n- Using platinum (Ostwald) instead of vanadium pentoxide as the Contact catalyst.\n- Writing SO₃ + H₂O → H₂SO₄ as the plant step (SO₃ is absorbed in conc. H₂SO₄ first).\n- Calling the charring of sugar “oxidation” or “drying” (it is dehydration).\n- Forgetting to add dilute HCl in the barium chloride test.\n\n**How marks are usually awarded**\n- Contact process (1 mark per step): equation plus catalyst, temperature and pressure.\n- Observations (1 mark each): colour change and the gas or residue.\n- Drying versus dehydration (2 marks): one example of each.",
+    "status": "draft",
+    "provenance": {
+      "origin": "human",
+      "template_version": null,
+      "model": null,
+      "generated_at": "2026-11-01",
+      "author": "claude-opus-5-5 (subject-producer)"
+    }
+  },
+  "flashcards": {
+    "unit": "icse-10-chemistry-ch12",
+    "version": 1,
+    "language": "en",
+    "cards": [
+      {
+        "id": "f01",
+        "front_md": "Why is H₂SO₄ called the king of chemicals?",
+        "back_md": "More of it is made and used than any other chemical.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch12-t01"
+      },
+      {
+        "id": "f02",
+        "front_md": "Contact process, step 1?",
+        "back_md": "S + O₂ → SO₂ (or roasting iron pyrites).",
+        "tag": "formula",
+        "topic_id": "icse-10-chemistry-ch12-t01"
+      },
+      {
+        "id": "f03",
+        "front_md": "Contact process, step 2?",
+        "back_md": "2SO₂ + O₂ ⇌ 2SO₃.",
+        "tag": "formula",
+        "topic_id": "icse-10-chemistry-ch12-t01"
+      },
+      {
+        "id": "f04",
+        "front_md": "Catalyst and conditions for step 2?",
+        "back_md": "V₂O₅, about 450 °C, 1–2 atm.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch12-t01"
+      },
+      {
+        "id": "f05",
+        "front_md": "What is oleum?",
+        "back_md": "H₂S₂O₇, fuming sulphuric acid (SO₃ in conc. H₂SO₄).",
+        "tag": "definition",
+        "topic_id": "icse-10-chemistry-ch12-t01"
+      },
+      {
+        "id": "f06",
+        "front_md": "Oleum to sulphuric acid?",
+        "back_md": "H₂S₂O₇ + H₂O → 2H₂SO₄.",
+        "tag": "formula",
+        "topic_id": "icse-10-chemistry-ch12-t01"
+      },
+      {
+        "id": "f07",
+        "front_md": "Why not dissolve SO₃ in water?",
+        "back_md": "Violently exothermic: a dense acid mist forms that does not condense.",
+        "tag": "concept",
+        "topic_id": "icse-10-chemistry-ch12-t01"
+      },
+      {
+        "id": "f08",
+        "front_md": "Diagram: order of the Contact process",
+        "back_md": "S → SO₂ → SO₃ (V₂O₅) → oleum → H₂SO₄.",
+        "tag": "diagram",
+        "topic_id": "icse-10-chemistry-ch12-t01"
+      },
+      {
+        "id": "f09",
+        "front_md": "Why is sulphuric acid dibasic?",
+        "back_md": "Two replaceable hydrogens per molecule.",
+        "tag": "concept",
+        "topic_id": "icse-10-chemistry-ch12-t02"
+      },
+      {
+        "id": "f10",
+        "front_md": "Acid salt of H₂SO₄ with NaOH?",
+        "back_md": "Sodium hydrogen sulphate, NaHSO₄.",
+        "tag": "example",
+        "topic_id": "icse-10-chemistry-ch12-t02"
+      },
+      {
+        "id": "f11",
+        "front_md": "Fe + dil. H₂SO₄?",
+        "back_md": "Fe + H₂SO₄ → FeSO₄ + H₂.",
+        "tag": "formula",
+        "topic_id": "icse-10-chemistry-ch12-t02"
+      },
+      {
+        "id": "f12",
+        "front_md": "Gas from a sulphite with dil. H₂SO₄?",
+        "back_md": "Sulphur dioxide.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch12-t02"
+      },
+      {
+        "id": "f13",
+        "front_md": "Gas from FeS with dil. H₂SO₄?",
+        "back_md": "Hydrogen sulphide (rotten-egg smell).",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch12-t02"
+      },
+      {
+        "id": "f14",
+        "front_md": "Why does marble stop fizzing in dil. H₂SO₄?",
+        "back_md": "Insoluble CaSO₄ coats the chips.",
+        "tag": "concept",
+        "topic_id": "icse-10-chemistry-ch12-t02"
+      },
+      {
+        "id": "f15",
+        "front_md": "Does copper react with dil. H₂SO₄?",
+        "back_md": "No: copper is below hydrogen.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch12-t02"
+      },
+      {
+        "id": "f16",
+        "front_md": "C + hot conc. H₂SO₄?",
+        "back_md": "C + 2H₂SO₄ → CO₂ + 2H₂O + 2SO₂.",
+        "tag": "formula",
+        "topic_id": "icse-10-chemistry-ch12-t03"
+      },
+      {
+        "id": "f17",
+        "front_md": "S + hot conc. H₂SO₄?",
+        "back_md": "S + 2H₂SO₄ → 3SO₂ + 2H₂O.",
+        "tag": "formula",
+        "topic_id": "icse-10-chemistry-ch12-t03"
+      },
+      {
+        "id": "f18",
+        "front_md": "What is conc. H₂SO₄ reduced to when it oxidises?",
+        "back_md": "Sulphur dioxide.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch12-t03"
+      },
+      {
+        "id": "f19",
+        "front_md": "Conc. H₂SO₄ on sugar?",
+        "back_md": "Black spongy carbon, steam, heat: C₁₂H₂₂O₁₁ → 12C + 11H₂O.",
+        "tag": "formula",
+        "topic_id": "icse-10-chemistry-ch12-t04"
+      },
+      {
+        "id": "f20",
+        "front_md": "Conc. H₂SO₄ on blue vitriol?",
+        "back_md": "Blue crystals turn white (water of crystallisation removed).",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch12-t04"
+      },
+      {
+        "id": "f21",
+        "front_md": "Dehydration?",
+        "back_md": "Removing the elements of water (H : O = 2 : 1) from a compound.",
+        "tag": "definition",
+        "topic_id": "icse-10-chemistry-ch12-t04"
+      },
+      {
+        "id": "f22",
+        "front_md": "Drying?",
+        "back_md": "Removing moisture merely present, without changing the substance.",
+        "tag": "definition",
+        "topic_id": "icse-10-chemistry-ch12-t04"
+      },
+      {
+        "id": "f23",
+        "front_md": "Two gases conc. H₂SO₄ cannot dry?",
+        "back_md": "Ammonia and hydrogen sulphide.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch12-t04"
+      },
+      {
+        "id": "f24",
+        "front_md": "Why can’t it dry ammonia?",
+        "back_md": "It reacts: 2NH₃ + H₂SO₄ → (NH₄)₂SO₄.",
+        "tag": "concept",
+        "topic_id": "icse-10-chemistry-ch12-t04"
+      },
+      {
+        "id": "f25",
+        "front_md": "Why is H₂SO₄ non-volatile?",
+        "back_md": "High boiling point (about 338 °C).",
+        "tag": "concept",
+        "topic_id": "icse-10-chemistry-ch12-t05"
+      },
+      {
+        "id": "f26",
+        "front_md": "NaCl + conc. H₂SO₄ below 200 °C?",
+        "back_md": "NaCl + H₂SO₄ → NaHSO₄ + HCl.",
+        "tag": "formula",
+        "topic_id": "icse-10-chemistry-ch12-t05"
+      },
+      {
+        "id": "f27",
+        "front_md": "Test for a sulphate?",
+        "back_md": "BaCl₂ solution: white precipitate insoluble in dilute HCl.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch12-t05"
+      },
+      {
+        "id": "f28",
+        "front_md": "BaCl₂ + H₂SO₄?",
+        "back_md": "BaCl₂ + H₂SO₄ → BaSO₄ + 2HCl.",
+        "tag": "formula",
+        "topic_id": "icse-10-chemistry-ch12-t05"
+      },
+      {
+        "id": "f29",
+        "front_md": "Lead nitrate + H₂SO₄?",
+        "back_md": "White precipitate of PbSO₄.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch12-t05"
+      },
+      {
+        "id": "f30",
+        "front_md": "Exam tip: catalysts",
+        "back_md": "Contact: V₂O₅. Ostwald: Pt. Haber: Fe.",
+        "tag": "exam-tip",
+        "topic_id": "icse-10-chemistry-ch12-t01"
+      }
+    ],
+    "status": "draft",
+    "provenance": {
+      "origin": "human",
+      "template_version": null,
+      "model": null,
+      "generated_at": "2026-11-01",
+      "author": "claude-opus-5-5 (subject-producer)"
+    }
+  },
+  "questions": [
+    {
+      "id": "q_icse10chem_ch12_001",
+      "unit": "icse-10-chemistry-ch12",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "In the Contact process, sulphur dioxide is oxidised to sulphur trioxide. The catalyst and the approximate temperature are:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "vanadium pentoxide, about 450 °C"
+        },
+        {
+          "id": "b",
+          "text_md": "platinum gauze, about 800 °C"
+        },
+        {
+          "id": "c",
+          "text_md": "finely divided iron, about 500 °C"
+        },
+        {
+          "id": "d",
+          "text_md": "nickel, about 200 °C"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "2SO₂ + O₂ ⇌ 2SO₃ over V₂O₅ at about 450 °C and 1–2 atm — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch12-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch12_002",
+      "unit": "icse-10-chemistry-ch12",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "In the Contact process, sulphur trioxide is not passed directly into water. The reason is that:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "sulphur trioxide does not dissolve in water at all"
+        },
+        {
+          "id": "b",
+          "text_md": "water would poison the vanadium pentoxide catalyst"
+        },
+        {
+          "id": "c",
+          "text_md": "the reaction is so exothermic that a dense mist of acid forms, which is hard to condense"
+        },
+        {
+          "id": "d",
+          "text_md": "water converts sulphur trioxide back into sulphur dioxide"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "SO₃ is absorbed in concentrated H₂SO₄ instead, giving oleum, which is then diluted — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch12-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch12_003",
+      "unit": "icse-10-chemistry-ch12",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "The reaction 2SO₂ + O₂ ⇌ 2SO₃ is exothermic, so a lower temperature would give more SO₃ at equilibrium. Yet the Contact process runs at about 450 °C. The best reason is that:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "the reaction is endothermic, so heat must be supplied"
+        },
+        {
+          "id": "b",
+          "text_md": "at much lower temperatures the reaction is too slow, even with the catalyst"
+        },
+        {
+          "id": "c",
+          "text_md": "vanadium pentoxide only exists above 450 °C"
+        },
+        {
+          "id": "d",
+          "text_md": "sulphur trioxide decomposes completely below 450 °C"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "About 450 °C is a compromise: fast enough with V₂O₅, while still giving a good yield — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 4,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch12-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch12_004",
+      "unit": "icse-10-chemistry-ch12",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Sulphur trioxide dissolved in concentrated sulphuric acid forms:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "dilute sulphuric acid"
+        },
+        {
+          "id": "b",
+          "text_md": "oleum, H₂S₂O₇"
+        },
+        {
+          "id": "c",
+          "text_md": "sulphurous acid, H₂SO₃"
+        },
+        {
+          "id": "d",
+          "text_md": "sulphur dioxide"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "SO₃ + H₂SO₄ → H₂S₂O₇ (fuming sulphuric acid) — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch12-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch12_005",
+      "unit": "icse-10-chemistry-ch12",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Sulphur dioxide for the Contact process can be obtained by burning sulphur or by roasting:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "bauxite"
+        },
+        {
+          "id": "b",
+          "text_md": "haematite"
+        },
+        {
+          "id": "c",
+          "text_md": "limestone"
+        },
+        {
+          "id": "d",
+          "text_md": "iron pyrites, FeS₂"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Iron pyrites is a sulphide ore; roasting it in air gives SO₂ — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch12-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch12_006",
+      "unit": "icse-10-chemistry-ch12",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** In the Contact process, sulphur trioxide is absorbed in concentrated sulphuric acid rather than in water.\n\n**Reason (R):** Sulphur trioxide reacts with water so exothermically that a dense acid mist forms, which is difficult to condense.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Both are true, and R explains A — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch12-t01"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch12_007",
+      "unit": "icse-10-chemistry-ch12",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? In the Contact process, sulphur dioxide is oxidised to sulphur trioxide over a platinum catalyst at about 800 °C.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "f"
+        ]
+      },
+      "solution_md": "False: the catalyst is vanadium pentoxide at about 450 °C (platinum at 800 °C is used in Ostwald’s process).",
+      "marking_scheme": [
+        {
+          "step": "False, with the correction",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch12-t01"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch12_008",
+      "unit": "icse-10-chemistry-ch12",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "Sulphur trioxide dissolves in concentrated sulphuric acid to form ___, which is then diluted with water.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "oleum",
+              "fuming sulphuric acid",
+              "pyrosulphuric acid",
+              "H₂S₂O₇"
+            ]
+          }
+        ]
+      },
+      "solution_md": "**Oleum** (fuming sulphuric acid), H₂S₂O₇.",
+      "marking_scheme": [
+        {
+          "step": "Blank 1: \"oleum\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch12-t01"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch12_009",
+      "unit": "icse-10-chemistry-ch12",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write the balanced equation, with the catalyst and temperature, for the conversion of sulphur dioxide to sulphur trioxide in the Contact process.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "2SO₂ + O₂ ⇌ 2SO₃ (vanadium pentoxide, about 450 °C)."
+      },
+      "solution_md": "Equation with conditions.",
+      "marking_scheme": [
+        {
+          "step": "Equation with V₂O₅ and 450 °C",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch12-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch12_010",
+      "unit": "icse-10-chemistry-ch12",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write the balanced equations for the formation of oleum and for its dilution to sulphuric acid.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "SO₃ + H₂SO₄ → H₂S₂O₇; H₂S₂O₇ + H₂O → 2H₂SO₄."
+      },
+      "solution_md": "Two equations.",
+      "marking_scheme": [
+        {
+          "step": "Both equations",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch12-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch12_011",
+      "unit": "icse-10-chemistry-ch12",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "What mass of sulphuric acid, in grams, can be made from 16 g of sulphur by the Contact process, assuming complete conversion? (S = 32, H = 1, O = 16)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 49,
+        "tolerance": 0.1,
+        "unit": "g"
+      },
+      "solution_md": "Every sulphur atom ends up in one molecule of sulphuric acid ($\\ce{S -> SO2 -> SO3 -> H2SO4}$), so one mole of sulphur gives one mole of acid. Moles of S $= \\dfrac{16}{32} = 0.5$. Molar mass of $\\ce{H2SO4} = 2 \\times 1 + 32 + 4 \\times 16 = 98$. Mass of acid $= 0.5 \\times 98 = 49$, so 49 g.",
+      "marking_scheme": [
+        {
+          "step": "Moles of S and 1 : 1 ratio",
+          "marks": 1
+        },
+        {
+          "step": "49 g",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch12-t01"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch12_012",
+      "unit": "icse-10-chemistry-ch12",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Why is sulphur trioxide not dissolved directly in water in the Contact process? How is it converted into sulphuric acid instead?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Its reaction with water is so exothermic that a dense mist (fog) of acid droplets forms, which does not condense easily. Instead it is absorbed in concentrated sulphuric acid to form oleum (SO₃ + H₂SO₄ → H₂S₂O₇), which is diluted with the right amount of water (H₂S₂O₇ + H₂O → 2H₂SO₄)."
+      },
+      "solution_md": "Acid mist; oleum, then dilution.",
+      "marking_scheme": [
+        {
+          "step": "Reason",
+          "marks": 1
+        },
+        {
+          "step": "Oleum route",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch12-t01"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch12_013",
+      "unit": "icse-10-chemistry-ch12",
+      "language": "en",
+      "type": "short",
+      "stem_md": "For the Contact process: (a) write the equation for the burning of sulphur; (b) state the catalyst, temperature and pressure used to oxidise sulphur dioxide; (c) explain why excess air is used in the catalytic step.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) S + O₂ → SO₂. (b) Vanadium pentoxide; about 450 °C; 1–2 atm. (c) Extra oxygen pushes the reversible reaction 2SO₂ + O₂ ⇌ 2SO₃ forward, so that more sulphur dioxide is converted to sulphur trioxide."
+      },
+      "solution_md": "Equation; conditions; excess oxygen favours SO₃.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch12-t01"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch12_014",
+      "unit": "icse-10-chemistry-ch12",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A solution containing 1 mole of sodium hydroxide is mixed with a solution containing 1 mole of sulphuric acid. The salt formed is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "sodium hydrogen sulphate, NaHSO₄, an acid salt"
+        },
+        {
+          "id": "b",
+          "text_md": "sodium sulphate, Na₂SO₄, a normal salt"
+        },
+        {
+          "id": "c",
+          "text_md": "sodium sulphite, Na₂SO₃, a normal salt"
+        },
+        {
+          "id": "d",
+          "text_md": "sodium hydrogen sulphite, NaHSO₃, an acid salt"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "NaOH + H₂SO₄ → NaHSO₄ + H₂O: only one of the two hydrogens is replaced — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch12-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch12_015",
+      "unit": "icse-10-chemistry-ch12",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Sulphuric acid is described as dibasic because:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "it reacts with two different bases at once"
+        },
+        {
+          "id": "b",
+          "text_md": "each molecule can give two hydrogen ions"
+        },
+        {
+          "id": "c",
+          "text_md": "it contains two oxygen atoms that can be replaced"
+        },
+        {
+          "id": "d",
+          "text_md": "its solutions have a pH of 2"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "H₂SO₄ → 2H⁺ + SO₄²⁻: two replaceable hydrogens — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch12-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch12_016",
+      "unit": "icse-10-chemistry-ch12",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Iron filings are added to dilute sulphuric acid. The products are:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "iron(II) sulphate and hydrogen"
+        },
+        {
+          "id": "b",
+          "text_md": "iron(III) sulphate and hydrogen"
+        },
+        {
+          "id": "c",
+          "text_md": "iron(II) sulphate and sulphur dioxide"
+        },
+        {
+          "id": "d",
+          "text_md": "iron(III) oxide and water"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Fe + H₂SO₄ → FeSO₄ + H₂ — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch12-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch12_017",
+      "unit": "icse-10-chemistry-ch12",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Marble chips are dropped into dilute sulphuric acid. Fizzing starts at once but soon stops, although plenty of marble and acid remain. This is because:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "the carbon dioxide dissolves in the acid"
+        },
+        {
+          "id": "b",
+          "text_md": "dilute sulphuric acid is a weak acid"
+        },
+        {
+          "id": "c",
+          "text_md": "marble is an amphoteric substance"
+        },
+        {
+          "id": "d",
+          "text_md": "slightly soluble calcium sulphate forms a coating on the marble"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "CaCO₃ + H₂SO₄ → CaSO₄ + H₂O + CO₂; the CaSO₄ layer keeps the acid away from the carbonate — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch12-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch12_018",
+      "unit": "icse-10-chemistry-ch12",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Dilute sulphuric acid is poured onto zinc sulphide. The gas given off is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "sulphur dioxide, which smells of burning sulphur"
+        },
+        {
+          "id": "b",
+          "text_md": "hydrogen, which burns with a pop"
+        },
+        {
+          "id": "c",
+          "text_md": "sulphur trioxide, which forms white fumes"
+        },
+        {
+          "id": "d",
+          "text_md": "hydrogen sulphide, which smells of rotten eggs"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "ZnS + H₂SO₄ → ZnSO₄ + H₂S — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch12-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch12_019",
+      "unit": "icse-10-chemistry-ch12",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which equation correctly shows the reaction of dilute sulphuric acid with sodium hydrogen sulphite?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "NaHSO₃ + H₂SO₄ → Na₂SO₄ + H₂O + SO₂"
+        },
+        {
+          "id": "b",
+          "text_md": "2NaHSO₃ + H₂SO₄ → Na₂SO₄ + 2H₂ + 2SO₃"
+        },
+        {
+          "id": "c",
+          "text_md": "2NaHSO₃ + H₂SO₄ → Na₂SO₄ + 2H₂O + 2SO₂"
+        },
+        {
+          "id": "d",
+          "text_md": "NaHSO₃ + H₂SO₄ → NaHSO₄ + H₂S + O₂"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Sulphur dioxide and water are formed, and the equation must balance: Na 2, H 4, S 3, O 10 on each side — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch12-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch12_020",
+      "unit": "icse-10-chemistry-ch12",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Sulphuric acid forms two kinds of salts with sodium hydroxide.\n\n**Reason (R):** Sulphuric acid is a monobasic acid.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "A is true (NaHSO₄ and Na₂SO₄); R is false: sulphuric acid is dibasic — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch12-t02"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch12_021",
+      "unit": "icse-10-chemistry-ch12",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Dilute sulphuric acid reacts with copper to give hydrogen.\n\n**Reason (R):** Copper is below hydrogen in the activity series.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "A is false: copper does not displace hydrogen from dilute acids. R is true — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch12-t02"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch12_022",
+      "unit": "icse-10-chemistry-ch12",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? Sodium hydrogen sulphate is an acid salt.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "t"
+        ]
+      },
+      "solution_md": "True: it still contains one replaceable hydrogen.",
+      "marking_scheme": [
+        {
+          "step": "True",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch12-t02"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch12_023",
+      "unit": "icse-10-chemistry-ch12",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "When sodium hydroxide and sulphuric acid react in a 1 : 1 mole ratio, the salt formed is sodium ___ sulphate.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "hydrogen",
+              "hydrogen sulphate",
+              "bi"
+            ]
+          }
+        ]
+      },
+      "solution_md": "Sodium **hydrogen** sulphate, NaHSO₄ (an acid salt).",
+      "marking_scheme": [
+        {
+          "step": "Blank 1: \"hydrogen\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch12-t02"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch12_024",
+      "unit": "icse-10-chemistry-ch12",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write the balanced equation for the reaction of sodium hydroxide with sulphuric acid in which an acid salt is formed.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "NaOH + H₂SO₄ → NaHSO₄ + H₂O."
+      },
+      "solution_md": "Equation.",
+      "marking_scheme": [
+        {
+          "step": "Balanced equation",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch12-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch12_025",
+      "unit": "icse-10-chemistry-ch12",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write the balanced equation for the reaction of magnesium ribbon with dilute sulphuric acid.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Mg + H₂SO₄ → MgSO₄ + H₂."
+      },
+      "solution_md": "Equation.",
+      "marking_scheme": [
+        {
+          "step": "Balanced equation",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch12-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch12_026",
+      "unit": "icse-10-chemistry-ch12",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write the balanced equation for the action of dilute sulphuric acid on sodium sulphite.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Na₂SO₃ + H₂SO₄ → Na₂SO₄ + H₂O + SO₂."
+      },
+      "solution_md": "Equation.",
+      "marking_scheme": [
+        {
+          "step": "Balanced equation",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch12-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch12_027",
+      "unit": "icse-10-chemistry-ch12",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write the balanced equation for the action of dilute sulphuric acid on iron(II) sulphide.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "FeS + H₂SO₄ → FeSO₄ + H₂S."
+      },
+      "solution_md": "Equation.",
+      "marking_scheme": [
+        {
+          "step": "Balanced equation",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch12-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch12_028",
+      "unit": "icse-10-chemistry-ch12",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write the balanced equation for black copper(II) oxide dissolving in warm dilute sulphuric acid.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "CuO + H₂SO₄ → CuSO₄ + H₂O."
+      },
+      "solution_md": "Equation.",
+      "marking_scheme": [
+        {
+          "step": "Balanced equation",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch12-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch12_029",
+      "unit": "icse-10-chemistry-ch12",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "Excess barium chloride solution is added to a solution containing 9.8 g of sulphuric acid. What mass of barium sulphate, in grams, is precipitated? (Ba = 137, S = 32, O = 16, H = 1)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 23.3,
+        "tolerance": 0.05,
+        "unit": "g"
+      },
+      "solution_md": "$\\ce{BaCl2 + H2SO4 -> BaSO4 + 2HCl}$: one mole of acid gives one mole of barium sulphate. Moles of acid $= \\dfrac{9.8}{98} = 0.1$. Molar mass of $\\ce{BaSO4} = 137 + 32 + 4 \\times 16 = 233$. Mass $= 0.1 \\times 233 = 23.3$, so 23.3 g.",
+      "marking_scheme": [
+        {
+          "step": "Moles of H₂SO₄ and 1 : 1 ratio",
+          "marks": 1
+        },
+        {
+          "step": "23.3 g",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch12-t02",
+        "icse-10-chemistry-ch12-t05"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch12_030",
+      "unit": "icse-10-chemistry-ch12",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Explain why sulphuric acid is called dibasic. Write the balanced equations for its reactions with potassium hydroxide that form (a) an acid salt and (b) a normal salt.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Each molecule has two replaceable hydrogen atoms (H₂SO₄ → 2H⁺ + SO₄²⁻). (a) KOH + H₂SO₄ → KHSO₄ + H₂O. (b) 2KOH + H₂SO₄ → K₂SO₄ + 2H₂O."
+      },
+      "solution_md": "Two replaceable hydrogens; two equations.",
+      "marking_scheme": [
+        {
+          "step": "Reason and (a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch12-t02"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch12_031",
+      "unit": "icse-10-chemistry-ch12",
+      "language": "en",
+      "type": "short",
+      "stem_md": "How would you distinguish dilute sulphuric acid from dilute hydrochloric acid using barium chloride solution? State the observation for each.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Add barium chloride solution to each. Dilute sulphuric acid gives a white precipitate of barium sulphate that does not dissolve in dilute hydrochloric acid; dilute hydrochloric acid gives no precipitate."
+      },
+      "solution_md": "White precipitate only with sulphuric acid.",
+      "marking_scheme": [
+        {
+          "step": "Sulphuric acid: white precipitate",
+          "marks": 1
+        },
+        {
+          "step": "Hydrochloric acid: no change",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch12-t02",
+        "icse-10-chemistry-ch12-t05"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch12_032",
+      "unit": "icse-10-chemistry-ch12",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Charcoal is heated with concentrated sulphuric acid. The gases given off are:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "carbon dioxide and sulphur dioxide"
+        },
+        {
+          "id": "b",
+          "text_md": "carbon monoxide and hydrogen"
+        },
+        {
+          "id": "c",
+          "text_md": "carbon dioxide and nitrogen dioxide"
+        },
+        {
+          "id": "d",
+          "text_md": "sulphur trioxide and hydrogen"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "C + 2H₂SO₄ → CO₂ + 2H₂O + 2SO₂ — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch12-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch12_033",
+      "unit": "icse-10-chemistry-ch12",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Sulphur is heated with concentrated sulphuric acid. The products are:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "hydrogen sulphide and water"
+        },
+        {
+          "id": "b",
+          "text_md": "sulphur trioxide and hydrogen"
+        },
+        {
+          "id": "c",
+          "text_md": "sulphuric acid and nitrogen dioxide"
+        },
+        {
+          "id": "d",
+          "text_md": "sulphur dioxide and water only"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "S + 2H₂SO₄ → 3SO₂ + 2H₂O — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch12-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch12_034",
+      "unit": "icse-10-chemistry-ch12",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "In the reaction C + 2H₂SO₄ → CO₂ + 2H₂O + 2SO₂, sulphuric acid acts as:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "a dehydrating agent"
+        },
+        {
+          "id": "b",
+          "text_md": "a reducing agent"
+        },
+        {
+          "id": "c",
+          "text_md": "a drying agent"
+        },
+        {
+          "id": "d",
+          "text_md": "an oxidising agent"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "It supplies oxygen to carbon and is itself reduced to SO₂ — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch12-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch12_035",
+      "unit": "icse-10-chemistry-ch12",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write the balanced equation for the action of hot concentrated sulphuric acid on sulphur.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "S + 2H₂SO₄ → 3SO₂ + 2H₂O."
+      },
+      "solution_md": "Equation.",
+      "marking_scheme": [
+        {
+          "step": "Balanced equation",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch12-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch12_036",
+      "unit": "icse-10-chemistry-ch12",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "Charcoal weighing 3 g is heated with excess concentrated sulphuric acid until it has all reacted. What volume of sulphur dioxide, measured at STP, is formed? Give the answer in litres. (C = 12; one mole of a gas occupies 22.4 L at STP)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 11.2,
+        "tolerance": 0.01,
+        "unit": "L"
+      },
+      "solution_md": "$\\ce{C + 2H2SO4 -> CO2 + 2H2O + 2SO2}$: one mole of carbon gives two moles of sulphur dioxide. Moles of C $= \\dfrac{3}{12} = 0.25$. Moles of $\\ce{SO2} = 2 \\times 0.25 = 0.5$. Volume $= 0.5 \\times 22.4 = 11.2$, so 11.2 L.",
+      "marking_scheme": [
+        {
+          "step": "Moles of C and 1 : 2 ratio",
+          "marks": 1
+        },
+        {
+          "step": "11.2 L",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch12-t03"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch12_037",
+      "unit": "icse-10-chemistry-ch12",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A few spoonfuls of sugar in a beaker are treated with concentrated sulphuric acid. The sugar blackens and a spongy black mass rises out of the beaker. The property of the acid shown is its:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "dehydrating property"
+        },
+        {
+          "id": "b",
+          "text_md": "acidic property"
+        },
+        {
+          "id": "c",
+          "text_md": "non-volatile nature"
+        },
+        {
+          "id": "d",
+          "text_md": "drying property"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "The acid removes the elements of water: C₁₂H₂₂O₁₁ → 12C + 11H₂O — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch12-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch12_038",
+      "unit": "icse-10-chemistry-ch12",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Concentrated sulphuric acid is added to blue crystals of copper(II) sulphate in a test tube. The crystals:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "turn white, as the water of crystallisation is removed"
+        },
+        {
+          "id": "b",
+          "text_md": "turn black, as copper metal is formed"
+        },
+        {
+          "id": "c",
+          "text_md": "dissolve to give a deep blue solution"
+        },
+        {
+          "id": "d",
+          "text_md": "turn green, as copper(II) carbonate forms"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "CuSO₄·5H₂O → CuSO₄ + 5H₂O; anhydrous copper(II) sulphate is white — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch12-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch12_039",
+      "unit": "icse-10-chemistry-ch12",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Concentrated sulphuric acid can be used to dry:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "ammonia"
+        },
+        {
+          "id": "b",
+          "text_md": "hydrogen sulphide"
+        },
+        {
+          "id": "c",
+          "text_md": "sulphur dioxide"
+        },
+        {
+          "id": "d",
+          "text_md": "both ammonia and hydrogen sulphide"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Ammonia reacts to form ammonium sulphate and hydrogen sulphide is oxidised to sulphur; sulphur dioxide does not react — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch12-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch12_040",
+      "unit": "icse-10-chemistry-ch12",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which of these is drying, not dehydration?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Concentrated sulphuric acid charring cane sugar"
+        },
+        {
+          "id": "b",
+          "text_md": "Concentrated sulphuric acid turning blue vitriol white"
+        },
+        {
+          "id": "c",
+          "text_md": "Passing moist chlorine through concentrated sulphuric acid"
+        },
+        {
+          "id": "d",
+          "text_md": "Concentrated sulphuric acid blackening a strip of paper"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Only the chlorine is unchanged; it merely loses moisture. The others remove the elements of water from compounds — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch12-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch12_041",
+      "unit": "icse-10-chemistry-ch12",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Concentrated sulphuric acid chars cane sugar.\n\n**Reason (R):** Concentrated sulphuric acid is a non-volatile acid.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Both are true, but charring is due to the dehydrating property, not to the acid being non-volatile — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch12-t04",
+        "icse-10-chemistry-ch12-t05"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch12_042",
+      "unit": "icse-10-chemistry-ch12",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Concentrated sulphuric acid is not used to dry ammonia gas.\n\n**Reason (R):** Ammonia, a base, reacts with sulphuric acid to form ammonium sulphate.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Both are true, and R explains A: 2NH₃ + H₂SO₄ → (NH₄)₂SO₄ — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch12-t04"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch12_043",
+      "unit": "icse-10-chemistry-ch12",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? Removing the water of crystallisation from blue copper(II) sulphate with concentrated sulphuric acid is an example of drying.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "f"
+        ]
+      },
+      "solution_md": "False: it is dehydration; the blue crystals become a different substance, white anhydrous copper(II) sulphate.",
+      "marking_scheme": [
+        {
+          "step": "False, with the correction",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch12-t04"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch12_044",
+      "unit": "icse-10-chemistry-ch12",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "The black mass left when concentrated sulphuric acid acts on sugar is mainly ___.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "carbon",
+              "C",
+              "sugar charcoal"
+            ]
+          }
+        ]
+      },
+      "solution_md": "Mainly **carbon** (sugar charcoal).",
+      "marking_scheme": [
+        {
+          "step": "Blank 1: \"carbon\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch12-t04"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch12_045",
+      "unit": "icse-10-chemistry-ch12",
+      "language": "en",
+      "type": "short",
+      "stem_md": "State one observation when concentrated sulphuric acid is added to cane sugar in a beaker.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "The sugar turns black and a spongy black mass of carbon rises (with steam, and the beaker becomes hot)."
+      },
+      "solution_md": "Black spongy mass.",
+      "marking_scheme": [
+        {
+          "step": "One correct observation",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch12-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch12_046",
+      "unit": "icse-10-chemistry-ch12",
+      "language": "en",
+      "type": "short",
+      "stem_md": "State the colour change when concentrated sulphuric acid is added to crystals of hydrated copper(II) sulphate.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Blue to white."
+      },
+      "solution_md": "Blue to white.",
+      "marking_scheme": [
+        {
+          "step": "Blue to white",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch12-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch12_047",
+      "unit": "icse-10-chemistry-ch12",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Distinguish between drying and dehydration, giving one example of each using concentrated sulphuric acid.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Drying removes moisture that is merely present, without changing the substance: moist chlorine (or SO₂, HCl) passed through concentrated sulphuric acid. Dehydration removes the elements of water (H and O in the ratio 2 : 1) from a compound, forming a new substance: the acid charring sugar (C₁₂H₂₂O₁₁ → 12C + 11H₂O) or turning blue vitriol white."
+      },
+      "solution_md": "Definitions with an example each.",
+      "marking_scheme": [
+        {
+          "step": "Drying with example",
+          "marks": 1
+        },
+        {
+          "step": "Dehydration with example",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch12-t04"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch12_048",
+      "unit": "icse-10-chemistry-ch12",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Concentrated sulphuric acid is added to blue vitriol. (a) State the observation. (b) Write the equation and name the property of the acid shown.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) The blue crystals turn into a white powder. (b) CuSO₄·5H₂O → CuSO₄ + 5H₂O; dehydrating property."
+      },
+      "solution_md": "Blue to white; dehydration.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch12-t04"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch12_049",
+      "unit": "icse-10-chemistry-ch12",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Concentrated sulphuric acid is added to sugar in a beaker. (a) State two observations. (b) Write the balanced equation for the reaction. (c) Name the property of the acid shown, and explain why the process is called charring.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Any two: the sugar turns yellow, brown and then black; a black spongy mass rises out of the beaker; steam is given off; the beaker becomes very hot. (b) C₁₂H₂₂O₁₁ → 12C + 11H₂O (conc. H₂SO₄). (c) Dehydrating property. The acid removes hydrogen and oxygen as water, leaving black carbon, like the charcoal left when something is burnt."
+      },
+      "solution_md": "Observations; equation; dehydration.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch12-t04"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch12_050",
+      "unit": "icse-10-chemistry-ch12",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Barium chloride solution is added to dilute sulphuric acid, and then dilute hydrochloric acid is added. The observation is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "a white precipitate that dissolves in the hydrochloric acid"
+        },
+        {
+          "id": "b",
+          "text_md": "a yellow precipitate"
+        },
+        {
+          "id": "c",
+          "text_md": "a white precipitate that does not dissolve in the hydrochloric acid"
+        },
+        {
+          "id": "d",
+          "text_md": "no change at any stage"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "BaCl₂ + H₂SO₄ → BaSO₄ + 2HCl; barium sulphate is insoluble in dilute acids — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch12-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch12_051",
+      "unit": "icse-10-chemistry-ch12",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Concentrated sulphuric acid is used to prepare hydrogen chloride from sodium chloride mainly because sulphuric acid is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "a dehydrating agent"
+        },
+        {
+          "id": "b",
+          "text_md": "non-volatile, with a high boiling point"
+        },
+        {
+          "id": "c",
+          "text_md": "an oxidising agent"
+        },
+        {
+          "id": "d",
+          "text_md": "dibasic"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "The non-volatile acid drives the volatile HCl out of its salt — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch12-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch12_052",
+      "unit": "icse-10-chemistry-ch12",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Dilute sulphuric acid is added to lead nitrate solution. The observation is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "a yellow precipitate of lead iodide"
+        },
+        {
+          "id": "b",
+          "text_md": "a white precipitate of lead sulphate"
+        },
+        {
+          "id": "c",
+          "text_md": "a white precipitate of lead chloride"
+        },
+        {
+          "id": "d",
+          "text_md": "brown fumes of nitrogen dioxide"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Pb(NO₃)₂ + H₂SO₄ → PbSO₄ + 2HNO₃ — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch12-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch12_053",
+      "unit": "icse-10-chemistry-ch12",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? The white precipitate formed by barium chloride with a sulphate dissolves in dilute hydrochloric acid.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "f"
+        ]
+      },
+      "solution_md": "False: barium sulphate is insoluble in dilute hydrochloric acid; that is what confirms a sulphate.",
+      "marking_scheme": [
+        {
+          "step": "False, with the correction",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch12-t05"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch12_054",
+      "unit": "icse-10-chemistry-ch12",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write the balanced equation for the reaction of concentrated sulphuric acid with potassium chloride that shows its non-volatile nature.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "KCl + H₂SO₄ → KHSO₄ + HCl (below 200 °C)."
+      },
+      "solution_md": "Equation.",
+      "marking_scheme": [
+        {
+          "step": "Balanced equation",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch12-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch12_055",
+      "unit": "icse-10-chemistry-ch12",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Name the reagent used to test for a sulphate ion in solution, and state the observation.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Barium chloride solution: a white precipitate, insoluble in dilute hydrochloric acid."
+      },
+      "solution_md": "BaCl₂; white precipitate.",
+      "marking_scheme": [
+        {
+          "step": "Reagent and observation",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch12-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch12_056",
+      "unit": "icse-10-chemistry-ch12",
+      "language": "en",
+      "type": "short",
+      "stem_md": "A colourless, oily liquid X chars a strip of paper. A dilute solution of X gives a white precipitate with barium chloride solution that does not dissolve in dilute hydrochloric acid. When concentrated X is heated with charcoal, the gas mixture formed turns acidified potassium dichromate solution green and lime water milky. (a) Identify X. (b) Write the balanced equation for the reaction with barium chloride. (c) Write the balanced equation for the reaction with charcoal.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Concentrated sulphuric acid. (b) BaCl₂ + H₂SO₄ → BaSO₄ + 2HCl. (c) C + 2H₂SO₄ → CO₂ + 2H₂O + 2SO₂."
+      },
+      "solution_md": "Charring, sulphate test and SO₂ with CO₂ point to sulphuric acid.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch12-t03",
+        "icse-10-chemistry-ch12-t04",
+        "icse-10-chemistry-ch12-t05"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch12_057",
+      "unit": "icse-10-chemistry-ch12",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "Complete each sentence by choosing the correct word or words from the bracket.\n\n(a) The catalyst used to oxidise sulphur dioxide in the Contact process is ___ (vanadium pentoxide / platinum).\n\n(b) Concentrated sulphuric acid turns sugar ___ (black / white).\n\n(c) Barium sulphate is ___ (soluble / insoluble) in dilute hydrochloric acid.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "vanadium pentoxide"
+            ]
+          },
+          {
+            "accepted": [
+              "black"
+            ]
+          },
+          {
+            "accepted": [
+              "insoluble"
+            ]
+          }
+        ]
+      },
+      "solution_md": "(a) **vanadium pentoxide**; (b) **black**; (c) **insoluble**.",
+      "marking_scheme": [
+        {
+          "step": "Blank 1: \"vanadium pentoxide\"",
+          "marks": 1
+        },
+        {
+          "step": "Blank 2: \"black\"",
+          "marks": 1
+        },
+        {
+          "step": "Blank 3: \"insoluble\"",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch12-t01",
+        "icse-10-chemistry-ch12-t04",
+        "icse-10-chemistry-ch12-t05"
+      ],
+      "expected_time_sec": 135,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch12_058",
+      "unit": "icse-10-chemistry-ch12",
+      "language": "en",
+      "type": "match",
+      "stem_md": "Match each property of sulphuric acid in Column A with the change in Column B that shows it.",
+      "options": [
+        {
+          "id": "1",
+          "text_md": "Dibasic acid"
+        },
+        {
+          "id": "2",
+          "text_md": "Oxidising agent"
+        },
+        {
+          "id": "3",
+          "text_md": "Dehydrating agent"
+        },
+        {
+          "id": "4",
+          "text_md": "Drying agent"
+        },
+        {
+          "id": "5",
+          "text_md": "Typical acid"
+        }
+      ],
+      "match_right": [
+        {
+          "id": "p",
+          "text_md": "Concentrated acid turns cane sugar into black carbon"
+        },
+        {
+          "id": "q",
+          "text_md": "Moist chlorine bubbled through the concentrated acid comes out dry"
+        },
+        {
+          "id": "r",
+          "text_md": "Hot concentrated acid turns charcoal into carbon dioxide"
+        },
+        {
+          "id": "s",
+          "text_md": "The dilute acid turns blue litmus red"
+        },
+        {
+          "id": "t",
+          "text_md": "Forms both NaHSO₄ and Na₂SO₄ with sodium hydroxide"
+        }
+      ],
+      "answer": {
+        "pairs": [
+          {
+            "left_id": "1",
+            "right_id": "t"
+          },
+          {
+            "left_id": "2",
+            "right_id": "r"
+          },
+          {
+            "left_id": "3",
+            "right_id": "p"
+          },
+          {
+            "left_id": "4",
+            "right_id": "q"
+          },
+          {
+            "left_id": "5",
+            "right_id": "s"
+          }
+        ]
+      },
+      "solution_md": "Dibasic → NaHSO₄ and Na₂SO₄; oxidising agent → charcoal to CO₂; dehydrating agent → sugar to carbon; drying agent → moist chlorine dried; typical acid → blue litmus turns red.",
+      "marking_scheme": [
+        {
+          "step": "1 → t",
+          "marks": 1
+        },
+        {
+          "step": "2 → r",
+          "marks": 1
+        },
+        {
+          "step": "3 → p",
+          "marks": 1
+        },
+        {
+          "step": "4 → q",
+          "marks": 1
+        },
+        {
+          "step": "5 → s",
+          "marks": 1
+        }
+      ],
+      "marks": 5,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch12-t02",
+        "icse-10-chemistry-ch12-t03",
+        "icse-10-chemistry-ch12-t04"
+      ],
+      "expected_time_sec": 200,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch12_059",
+      "unit": "icse-10-chemistry-ch12",
+      "language": "en",
+      "type": "match",
+      "stem_md": "Concentrated sulphuric acid is heated with each substance in Column A. Match it with the product in Column B that leaves as a gas or vapour.",
+      "options": [
+        {
+          "id": "1",
+          "text_md": "Charcoal"
+        },
+        {
+          "id": "2",
+          "text_md": "Sulphur"
+        },
+        {
+          "id": "3",
+          "text_md": "Sodium chloride"
+        },
+        {
+          "id": "4",
+          "text_md": "Potassium nitrate"
+        }
+      ],
+      "match_right": [
+        {
+          "id": "p",
+          "text_md": "Hydrogen chloride"
+        },
+        {
+          "id": "q",
+          "text_md": "Carbon dioxide and sulphur dioxide"
+        },
+        {
+          "id": "r",
+          "text_md": "Nitric acid vapour"
+        },
+        {
+          "id": "s",
+          "text_md": "Sulphur dioxide only"
+        }
+      ],
+      "answer": {
+        "pairs": [
+          {
+            "left_id": "1",
+            "right_id": "q"
+          },
+          {
+            "left_id": "2",
+            "right_id": "s"
+          },
+          {
+            "left_id": "3",
+            "right_id": "p"
+          },
+          {
+            "left_id": "4",
+            "right_id": "r"
+          }
+        ]
+      },
+      "solution_md": "Charcoal → CO₂ and SO₂; sulphur → SO₂ only; sodium chloride → HCl; potassium nitrate → HNO₃ vapour.",
+      "marking_scheme": [
+        {
+          "step": "1 → q",
+          "marks": 1
+        },
+        {
+          "step": "2 → s",
+          "marks": 1
+        },
+        {
+          "step": "3 → p",
+          "marks": 1
+        },
+        {
+          "step": "4 → r",
+          "marks": 1
+        }
+      ],
+      "marks": 4,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch12-t03",
+        "icse-10-chemistry-ch12-t05"
+      ],
+      "expected_time_sec": 160,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch12_060",
+      "unit": "icse-10-chemistry-ch12",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Write the balanced equations for (i) the burning of sulphur and (ii) the catalytic oxidation of sulphur dioxide, stating the catalyst and temperature for (ii). [2]\n\n(b) The oxidation of sulphur dioxide is reversible and exothermic. Why is excess air used, and why is the pressure only 1–2 atm? [2]\n\n(c) (i) Why is sulphur trioxide not absorbed directly in water? (ii) Write the equation for the formation of oleum. (iii) Write the equation for the conversion of oleum into sulphuric acid. [3]\n\n(d) 12.8 g of sulphur is completely converted into sulphuric acid. Calculate (i) the mass of sulphuric acid formed and (ii) the total volume of oxygen at STP used in the first two steps. (S = 32, H = 1, O = 16; molar volume 22.4 L) [3]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) (i) S + O₂ → SO₂. (ii) 2SO₂ + O₂ ⇌ 2SO₃; vanadium pentoxide, about 450 °C.\n\n(b) Excess oxygen pushes the reversible reaction forward, converting more SO₂ to SO₃. A good conversion is already obtained at 1–2 atm, so costly high pressure is not needed.\n\n(c) (i) The reaction is violently exothermic and forms a dense acid mist that does not condense easily. (ii) SO₃ + H₂SO₄ → H₂S₂O₇. (iii) H₂S₂O₇ + H₂O → 2H₂SO₄.\n\n(d) Moles of sulphur $= \\dfrac{12.8}{32} = 0.4$. (i) One mole of sulphur gives one mole of sulphuric acid: mass $= 0.4 \\times 98 = 39.2$, that is 39.2 g. (ii) Step 1 uses one mole of oxygen per mole of sulphur and step 2 half a mole more, so moles of oxygen $= 0.4 \\times 1.5 = 0.6$; volume $= 0.6 \\times 22.4 = 13.44$, that is 13.44 L."
+      },
+      "solution_md": "Equations with conditions; reasons; oleum route; 1 : 1 and 1 : 1.5 ratios.",
+      "marking_scheme": [
+        {
+          "step": "(a)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(a)(ii) with conditions",
+          "marks": 1
+        },
+        {
+          "step": "(b) excess air",
+          "marks": 1
+        },
+        {
+          "step": "(b) pressure",
+          "marks": 1
+        },
+        {
+          "step": "(c)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(iii)",
+          "marks": 1
+        },
+        {
+          "step": "(d) moles of S",
+          "marks": 1
+        },
+        {
+          "step": "(d)(i) 39.2 g",
+          "marks": 1
+        },
+        {
+          "step": "(d)(ii) 13.44 L",
+          "marks": 1
+        }
+      ],
+      "marks": 10,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch12-t01"
+      ],
+      "expected_time_sec": 1080,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch12_061",
+      "unit": "icse-10-chemistry-ch12",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) What is meant by a dibasic acid? Write the equation for the complete ionisation of sulphuric acid in water. [2]\n\n(b) Write the balanced equations for the reaction of sodium hydroxide with sulphuric acid to form (i) an acid salt and (ii) a normal salt. [2]\n\n(c) Write the balanced equations for dilute sulphuric acid with (i) sodium carbonate, (ii) sodium hydrogen sulphite and (iii) sodium sulphide. [3]\n\n(d) (i) Explain why dilute sulphuric acid is not used with marble chips to prepare carbon dioxide. (ii) Calculate the mass of sodium hydroxide needed to neutralise 4.9 g of sulphuric acid completely. (Na = 23, O = 16, H = 1, S = 32) [3]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) An acid with two replaceable hydrogen atoms per molecule. H₂SO₄ → 2H⁺ + SO₄²⁻.\n\n(b) (i) NaOH + H₂SO₄ → NaHSO₄ + H₂O. (ii) 2NaOH + H₂SO₄ → Na₂SO₄ + 2H₂O.\n\n(c) (i) Na₂CO₃ + H₂SO₄ → Na₂SO₄ + H₂O + CO₂. (ii) 2NaHSO₃ + H₂SO₄ → Na₂SO₄ + 2H₂O + 2SO₂. (iii) Na₂S + H₂SO₄ → Na₂SO₄ + H₂S.\n\n(d) (i) Calcium sulphate formed is only slightly soluble; it coats the marble chips and stops the reaction. (ii) Complete neutralisation: 2NaOH + H₂SO₄ → Na₂SO₄ + 2H₂O. Moles of acid $= \\dfrac{4.9}{98} = 0.05$; moles of NaOH $= 2 \\times 0.05 = 0.1$; mass $= 0.1 \\times 40 = 4$, that is 4 g."
+      },
+      "solution_md": "Basicity; two salts; three equations; coating; 1 : 2 ratio.",
+      "marking_scheme": [
+        {
+          "step": "(a) meaning",
+          "marks": 1
+        },
+        {
+          "step": "(a) ionisation",
+          "marks": 1
+        },
+        {
+          "step": "(b)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(b)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(iii)",
+          "marks": 1
+        },
+        {
+          "step": "(d)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(d)(ii) moles",
+          "marks": 1
+        },
+        {
+          "step": "(d)(ii) 4 g",
+          "marks": 1
+        }
+      ],
+      "marks": 10,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch12-t02"
+      ],
+      "expected_time_sec": 1080,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch12_062",
+      "unit": "icse-10-chemistry-ch12",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Write the balanced equations for the action of hot concentrated sulphuric acid on (i) carbon and (ii) sulphur. [2]\n\n(b) Concentrated sulphuric acid is added to cane sugar. State two observations and write the balanced equation. [2]\n\n(c) (i) What is seen when concentrated sulphuric acid is added to blue vitriol? (ii) Is this drying or dehydration? Give a reason. (iii) Name one gas that concentrated sulphuric acid can dry and one it cannot. [3]\n\n(d) 34.2 g of cane sugar (C₁₂H₂₂O₁₁) is completely charred by concentrated sulphuric acid. Calculate the mass of (i) carbon and (ii) water formed. (C = 12, H = 1, O = 16) [3]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) (i) C + 2H₂SO₄ → CO₂ + 2H₂O + 2SO₂. (ii) S + 2H₂SO₄ → 3SO₂ + 2H₂O.\n\n(b) The sugar turns black and a black spongy mass rises out of the beaker; steam is given off and the beaker becomes hot. C₁₂H₂₂O₁₁ → 12C + 11H₂O.\n\n(c) (i) The blue crystals turn white. (ii) Dehydration: the water of crystallisation is removed and a new substance, anhydrous copper(II) sulphate, forms. (iii) Can dry: chlorine (or SO₂, HCl, CO₂). Cannot dry: ammonia (or hydrogen sulphide).\n\n(d) Molar mass of sugar $= 12 \\times 12 + 22 \\times 1 + 11 \\times 16 = 342$. Moles $= \\dfrac{34.2}{342} = 0.1$. (i) Mass of carbon $= 0.1 \\times 12 \\times 12 = 14.4$, that is 14.4 g. (ii) Mass of water $= 0.1 \\times 11 \\times 18 = 19.8$, that is 19.8 g."
+      },
+      "solution_md": "Oxidation equations; charring; dehydration of blue vitriol; 1 : 12 : 11 mole ratio.",
+      "marking_scheme": [
+        {
+          "step": "(a)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(a)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(b) observations",
+          "marks": 1
+        },
+        {
+          "step": "(b) equation",
+          "marks": 1
+        },
+        {
+          "step": "(c)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(iii)",
+          "marks": 1
+        },
+        {
+          "step": "(d) moles of sugar",
+          "marks": 1
+        },
+        {
+          "step": "(d)(i) 14.4 g",
+          "marks": 1
+        },
+        {
+          "step": "(d)(ii) 19.8 g",
+          "marks": 1
+        }
+      ],
+      "marks": 10,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch12-t03",
+        "icse-10-chemistry-ch12-t04"
+      ],
+      "expected_time_sec": 1080,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch12_063",
+      "unit": "icse-10-chemistry-ch12",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) What is meant by saying that sulphuric acid is non-volatile? Write the balanced equation for its action on potassium nitrate below 200 °C. [2]\n\n(b) Write the balanced equation for the action of concentrated sulphuric acid on sodium chloride, and explain why the concentrated acid, not the dilute acid, is used. [2]\n\n(c) Describe a test that shows that a solution contains sulphate ions: name the reagent, state the observation and write the balanced equation for sodium sulphate. [3]\n\n(d) Excess barium chloride solution is added to a solution of 7.1 g of sodium sulphate. Calculate the mass of barium sulphate formed. (Na = 23, S = 32, O = 16, Ba = 137) [3]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) It has a high boiling point (about 338 °C) and does not readily form vapour. KNO₃ + H₂SO₄ → KHSO₄ + HNO₃.\n\n(b) NaCl + H₂SO₄ → NaHSO₄ + HCl. The concentrated acid supplies little water, so the hydrogen chloride escapes as a gas instead of staying dissolved.\n\n(c) Add barium chloride solution: a white precipitate forms that does not dissolve in dilute hydrochloric acid. Na₂SO₄ + BaCl₂ → BaSO₄ + 2NaCl.\n\n(d) Molar mass of sodium sulphate $= 2 \\times 23 + 32 + 4 \\times 16 = 142$. Moles $= \\dfrac{7.1}{142} = 0.05$. One mole gives one mole of barium sulphate, molar mass $137 + 32 + 4 \\times 16 = 233$. Mass $= 0.05 \\times 233 = 11.65$, that is 11.65 g."
+      },
+      "solution_md": "Non-volatile; HCl preparation; barium chloride test; 1 : 1 ratio.",
+      "marking_scheme": [
+        {
+          "step": "(a) meaning",
+          "marks": 1
+        },
+        {
+          "step": "(a) equation",
+          "marks": 1
+        },
+        {
+          "step": "(b) equation",
+          "marks": 1
+        },
+        {
+          "step": "(b) reason",
+          "marks": 1
+        },
+        {
+          "step": "(c) reagent",
+          "marks": 1
+        },
+        {
+          "step": "(c) observation",
+          "marks": 1
+        },
+        {
+          "step": "(c) equation",
+          "marks": 1
+        },
+        {
+          "step": "(d) moles of Na₂SO₄",
+          "marks": 1
+        },
+        {
+          "step": "(d) molar mass of BaSO₄",
+          "marks": 1
+        },
+        {
+          "step": "(d) 11.65 g",
+          "marks": 1
+        }
+      ],
+      "marks": 10,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch12-t05"
+      ],
+      "expected_time_sec": 1080,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch12_064",
+      "unit": "icse-10-chemistry-ch12",
+      "language": "en",
+      "type": "long",
+      "stem_md": "Three colourless liquids, X, Y and Z, are concentrated sulphuric acid, dilute sulphuric acid and dilute hydrochloric acid, in some order.\n\n(a) A drop of X on a sugar crystal turns it black. Identify X and name the property shown. Why would X not be used to dry ammonia? [3]\n\n(b) Barium chloride solution gives a white precipitate with Y but not with Z. Identify Y and Z, and write the balanced equation for the reaction of Y. [3]\n\n(c) (i) Y is added to sodium sulphite. Write the balanced equation and name the gas. (ii) X is heated with sulphur. Write the balanced equation. (iii) Z is added to marble chips and keeps fizzing, whereas Y soon stops. Explain. [4]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) X is concentrated sulphuric acid; dehydrating property. Ammonia is a base and reacts with it: 2NH₃ + H₂SO₄ → (NH₄)₂SO₄.\n\n(b) Y is dilute sulphuric acid and Z is dilute hydrochloric acid. BaCl₂ + H₂SO₄ → BaSO₄ + 2HCl.\n\n(c) (i) Na₂SO₃ + H₂SO₄ → Na₂SO₄ + H₂O + SO₂; sulphur dioxide. (ii) S + 2H₂SO₄ → 3SO₂ + 2H₂O. (iii) With hydrochloric acid the calcium chloride formed is very soluble, so the acid keeps reaching the marble. With sulphuric acid, slightly soluble calcium sulphate coats the chips and stops the reaction."
+      },
+      "solution_md": "Charring identifies X; the sulphate test separates Y and Z; reactions and the marble difference.",
+      "marking_scheme": [
+        {
+          "step": "(a) X",
+          "marks": 1
+        },
+        {
+          "step": "(a) property",
+          "marks": 1
+        },
+        {
+          "step": "(a) ammonia",
+          "marks": 1
+        },
+        {
+          "step": "(b) Y and Z",
+          "marks": 2
+        },
+        {
+          "step": "(b) equation",
+          "marks": 1
+        },
+        {
+          "step": "(c)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(iii)",
+          "marks": 2
+        }
+      ],
+      "marks": 10,
+      "difficulty": 4,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch12-t02",
+        "icse-10-chemistry-ch12-t03",
+        "icse-10-chemistry-ch12-t04",
+        "icse-10-chemistry-ch12-t05"
+      ],
+      "expected_time_sec": 1080,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    }
+  ],
+  "build": {
+    "run_id": null,
+    "checks": {
+      "katex_mhchem": "50 math strings parsed with KaTeX 0.19.0 + mhchem (throwOnError, strict \"error\"), 0 failures",
+      "svg_allowlist": "2 SVG visuals (2 distinct diagrams) checked with saxes against svg-allowlist.ts: elements, attributes, class pattern, fragment-only refs, no style, palette incl. named hues, viewBox, title, per-page unique ids — 0 failures",
+      "narration": "30 slides, 13–66 words (mean 48), no symbols, formulae or unit abbreviations",
+      "resolve": "7/7 scripted re-solve checks pass",
+      "chemistry_facts": "Contact process equations with conditions only (S + O₂ → SO₂; 2SO₂ + O₂ ⇌ 2SO₃ over V₂O₅ at about 450 °C and 1–2 atm, reversible and exothermic; SO₃ absorbed in conc. H₂SO₄ to oleum, then diluted) and why SO₃ is not absorbed in water, the dibasic acid with acid and normal salts, the dilute acid with metals, oxides, hydroxides, carbonates, hydrogen carbonates, sulphites, hydrogen sulphites and sulphides (CaSO₄ coating on marble), hot conc. acid oxidising carbon and sulphur to SO₂, dehydration of sugar and blue vitriol versus drying (not NH₃ or H₂S), the non-volatile acid preparing HCl and HNO₃, and the BaCl₂ and lead nitrate tests, checked against the ICSE 2027 syllabus (Class X, section 8D); every equation balanced by atom count",
+      "content_gate": "npm test -w @soyl/content-templates: all checks pass for this chapter",
+      "verifier_pass": "2026-11-01: every question re-solved from its stem by the author; every numerical re-computed by the build script",
+      "pipeline_lint": "npm run content -- lint --exemplars: 0 errors, 0 warnings"
+    }
+  }
+}

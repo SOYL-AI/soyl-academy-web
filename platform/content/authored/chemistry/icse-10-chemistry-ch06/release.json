@@ -1,0 +1,5222 @@
+{
+  "unit": "icse-10-chemistry-ch06",
+  "version": 1,
+  "academic_year": "2026-27",
+  "created_at": "2026-11-01T00:00:00+05:30",
+  "decks": [
+    {
+      "unit": "icse-10-chemistry-ch06",
+      "part": 1,
+      "version": 1,
+      "title": "Stoichiometry — Part 1: Percentage composition and formulae",
+      "language": "en",
+      "goals": [
+        "Calculate the percentage by mass of each element, and of water of crystallisation, in a compound",
+        "Find the empirical formula of a compound from its percentage composition",
+        "Find the molecular formula from the empirical formula and the vapour density or molar mass",
+        "Find an empirical formula from the masses of elements that combine"
+      ],
+      "slides": [
+        {
+          "id": "s01",
+          "layout": "title",
+          "heading": "What is a compound made of?",
+          "body_md": "Part 1 — a formula tells us how many atoms of each element are in a compound. Using atomic masses, we can turn a formula into percentages by mass, and percentages back into a formula.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Compound",
+                "Formula",
+                "Molar mass / g"
+              ],
+              "rows": [
+                [
+                  "Ammonium nitrate",
+                  "NH₄NO₃",
+                  "80"
+                ],
+                [
+                  "Calcium carbonate",
+                  "CaCO₃",
+                  "100"
+                ],
+                [
+                  "Glucose",
+                  "C₆H₁₂O₆",
+                  "180"
+                ],
+                [
+                  "Hydrated copper(II) sulphate",
+                  "CuSO₄·5H₂O",
+                  "250 (Cu = 64)"
+                ]
+              ]
+            },
+            "alt": "Table of four compounds with their formulae and molar masses"
+          },
+          "math": [],
+          "narration": "Namaste! A farmer buying fertiliser wants to know how much nitrogen is in each bag. A chemist who makes a new compound wants to know its formula. Both questions are answered by the same idea. In this part we turn a formula into percentages by mass, and then work backwards from percentages, or from measured masses, to find a formula.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s02",
+          "layout": "concept",
+          "heading": "Percentage composition",
+          "body_md": "**Percentage composition** gives the percentage by mass of each element in a compound.\n\n**% of an element = (mass of that element in 1 mol of the compound ÷ molar mass) × 100**\n\nFor urea, CO(NH₂)₂, M = 12 + 16 + 2 × 14 + 4 × 1 = 60, so nitrogen = 28 ÷ 60 × 100 = 46.67%. The percentages of all the elements add up to 100.",
+          "bullets": [],
+          "visual": {
+            "kind": "svg",
+            "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 520 250\" role=\"img\" aria-label=\"Two horizontal bars, each standing for 100 percent of the mass of a fertiliser. Urea, CO(NH2)2, molar mass 60: nitrogen 46.67 percent, oxygen 26.67 percent, carbon 20 percent and hydrogen 6.67 percent. Ammonium nitrate, NH4NO3, molar mass 80: nitrogen 35 percent, oxygen 60 percent and hydrogen 5 percent. Urea has the larger share of nitrogen.\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>Two horizontal bars, each standing for 100 percent of the mass of a fertiliser. Urea, CO(NH2)2, molar mass 60: nitrogen 46.67 percent, oxygen 26.67 percent, carbon 20 percent and hydrogen 6.67 percent. Ammonium nitrate, NH4NO3, molar mass 80: nitrogen 35 percent, oxygen 60 percent and hydrogen 5 percent. Urea has the larger share of nitrogen.</title><text x=\"20\" y=\"28\" fill=\"currentColor\" stroke=\"none\" font-size=\"12\" font-weight=\"bold\">Urea, CO(NH₂)₂ — M = 60</text><rect x=\"20\" y=\"36\" width=\"224\" height=\"40\" fill=\"var(--diagram-blue)\" stroke=\"currentColor\" stroke-width=\"1.2\" fill-opacity=\"0.3\"/><text x=\"132\" y=\"53\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\">N</text><text x=\"132\" y=\"68\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\">46.67%</text><rect x=\"244\" y=\"36\" width=\"128\" height=\"40\" fill=\"var(--diagram-red)\" stroke=\"currentColor\" stroke-width=\"1.2\" fill-opacity=\"0.3\"/><text x=\"308\" y=\"53\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\">O</text><text x=\"308\" y=\"68\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\">26.67%</text><rect x=\"372\" y=\"36\" width=\"96\" height=\"40\" fill=\"var(--diagram-muted)\" stroke=\"currentColor\" stroke-width=\"1.2\" fill-opacity=\"0.3\"/><text x=\"420\" y=\"53\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\">C</text><text x=\"420\" y=\"68\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\">20%</text><rect x=\"468\" y=\"36\" width=\"32\" height=\"40\" fill=\"var(--diagram-green)\" stroke=\"currentColor\" stroke-width=\"1.2\" fill-opacity=\"0.3\"/><text x=\"484\" y=\"61\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">H</text><text x=\"484\" y=\"92\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">6.67%</text><text x=\"20\" y=\"132\" fill=\"currentColor\" stroke=\"none\" font-size=\"12\" font-weight=\"bold\">Ammonium nitrate, NH₄NO₃ — M = 80</text><rect x=\"20\" y=\"140\" width=\"168\" height=\"40\" fill=\"var(--diagram-blue)\" stroke=\"currentColor\" stroke-width=\"1.2\" fill-opacity=\"0.3\"/><text x=\"104\" y=\"157\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\">N</text><text x=\"104\" y=\"172\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\">35%</text><rect x=\"188\" y=\"140\" width=\"288\" height=\"40\" fill=\"var(--diagram-red)\" stroke=\"currentColor\" stroke-width=\"1.2\" fill-opacity=\"0.3\"/><text x=\"332\" y=\"157\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\">O</text><text x=\"332\" y=\"172\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\">60%</text><rect x=\"476\" y=\"140\" width=\"24\" height=\"40\" fill=\"var(--diagram-green)\" stroke=\"currentColor\" stroke-width=\"1.2\" fill-opacity=\"0.3\"/><text x=\"488\" y=\"165\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">H</text><text x=\"488\" y=\"196\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">5%</text><text x=\"20\" y=\"236\" fill=\"var(--diagram-muted)\" stroke=\"none\" font-size=\"11\">% of an element = (mass of the element in 1 mol ÷ molar mass) × 100</text></svg>",
+            "alt": "Bars showing the percentage by mass of each element in urea and in ammonium nitrate"
+          },
+          "math": [],
+          "narration": "Percentage composition tells us what fraction of the mass of a compound comes from each element. Find the molar mass first. Then take the mass of the element in one mole, divide by the molar mass and multiply by one hundred. Urea has a molar mass of sixty, and its two nitrogen atoms weigh twenty eight, so nearly half of urea is nitrogen.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s03",
+          "layout": "example",
+          "heading": "Worked example: nitrogen in ammonium nitrate",
+          "body_md": "**Problem.** Calculate the percentage of nitrogen in ammonium nitrate, NH₄NO₃. (N = 14, H = 1, O = 16)\n\n**Step 1.** Molar mass $= 2 \\times 14 + 4 \\times 1 + 3 \\times 16 = 80$ g.\n\n**Step 2.** Mass of nitrogen in 1 mol $= 2 \\times 14 = 28$ g (one N in NH₄⁺, one in NO₃⁻).\n\n**Step 3.** Percentage of nitrogen $= \\frac{28}{80} \\times 100 = 35$%.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Element",
+                "Mass in 1 mol / g",
+                "Percentage"
+              ],
+              "rows": [
+                [
+                  "Nitrogen",
+                  "28",
+                  "35%"
+                ],
+                [
+                  "Hydrogen",
+                  "4",
+                  "5%"
+                ],
+                [
+                  "Oxygen",
+                  "48",
+                  "60%"
+                ],
+                [
+                  "Total",
+                  "80",
+                  "100%"
+                ]
+              ]
+            },
+            "alt": "Table of the mass and percentage of nitrogen, hydrogen and oxygen in ammonium nitrate"
+          },
+          "math": [],
+          "narration": "Count the atoms carefully. Ammonium nitrate has two nitrogen atoms, one in the ammonium ion and one in the nitrate ion, four hydrogens and three oxygens. That makes a molar mass of eighty grams, of which twenty eight grams is nitrogen. Twenty eight divided by eighty, times one hundred, gives thirty five percent nitrogen.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s04",
+          "layout": "concept",
+          "heading": "Water of crystallisation",
+          "body_md": "**Water of crystallisation** is the fixed number of water molecules that form part of the crystal structure of some salts. It is written after a dot: CuSO₄·5H₂O. On strong heating the water is driven off and the crystals lose their shape (and, for copper sulphate, their blue colour).\n\nTo find the **percentage of water**, treat the whole formula, water included, as one unit: % water = (mass of water in 1 mol ÷ molar mass of the hydrated salt) × 100.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Hydrated salt",
+                "Formula",
+                "Molar mass / g",
+                "Water / g"
+              ],
+              "rows": [
+                [
+                  "Blue vitriol",
+                  "CuSO₄·5H₂O",
+                  "250 (Cu = 64)",
+                  "90"
+                ],
+                [
+                  "Washing soda",
+                  "Na₂CO₃·10H₂O",
+                  "286",
+                  "180"
+                ],
+                [
+                  "Gypsum",
+                  "CaSO₄·2H₂O",
+                  "172",
+                  "36"
+                ]
+              ]
+            },
+            "alt": "Table of three hydrated salts with formulae, molar masses and mass of water in one mole"
+          },
+          "math": [],
+          "narration": "Some salts trap a fixed number of water molecules inside their crystals. This is called water of crystallisation, and it is shown after a dot in the formula. Blue copper sulphate crystals, for example, hold five water molecules for each copper sulphate unit. When we calculate the percentage of water, we include the water in the molar mass of the whole crystal.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s05",
+          "layout": "example",
+          "heading": "Worked example: water in Epsom salt",
+          "body_md": "**Problem.** Calculate the percentage of water of crystallisation in Epsom salt, MgSO₄·7H₂O. (Mg = 24, S = 32, O = 16, H = 1)\n\n**Step 1.** Molar mass $= 24 + 32 + 4 \\times 16 + 7 \\times 18 = 246$ g.\n\n**Step 2.** Mass of water in 1 mol $= 7 \\times 18 = 126$ g.\n\n**Step 3.** Percentage of water $= \\frac{126}{246} \\times 100 \\approx 51.2$%.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Part of the formula",
+                "Mass in 1 mol / g"
+              ],
+              "rows": [
+                [
+                  "MgSO₄",
+                  "120"
+                ],
+                [
+                  "7H₂O",
+                  "126"
+                ],
+                [
+                  "MgSO₄·7H₂O",
+                  "246"
+                ]
+              ]
+            },
+            "alt": "Table splitting the molar mass of Epsom salt into the anhydrous salt and the water"
+          },
+          "math": [],
+          "narration": "Each water molecule weighs eighteen, so seven of them weigh one hundred and twenty six. The magnesium sulphate part weighs one hundred and twenty. Together the crystal has a molar mass of two hundred and forty six. Dividing the water by the total and multiplying by one hundred shows that just over half of Epsom salt, by mass, is water.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s06",
+          "layout": "check",
+          "heading": "Quick check: percentage composition",
+          "body_md": "Find the percentage of one element in a compound.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Work out the molar mass, then divide the mass of the element in one mole by it and multiply by one hundred.",
+          "check_question_id": "q_icse10chem_ch06_001",
+          "audio": null
+        },
+        {
+          "id": "s07",
+          "layout": "concept",
+          "heading": "Empirical and molecular formulae",
+          "body_md": "- **Empirical formula:** the **simplest whole-number ratio** of the atoms of the elements in a compound.\n- **Molecular formula:** the **actual number** of atoms of each element in one molecule.\n- Molecular formula = *n* × empirical formula, where *n* = molar mass ÷ empirical formula mass (a whole number).\n- For a gas, molar mass = 2 × vapour density.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Compound",
+                "Molecular formula",
+                "Empirical formula",
+                "n"
+              ],
+              "rows": [
+                [
+                  "Glucose",
+                  "C₆H₁₂O₆",
+                  "CH₂O",
+                  "6"
+                ],
+                [
+                  "Benzene",
+                  "C₆H₆",
+                  "CH",
+                  "6"
+                ],
+                [
+                  "Hydrogen peroxide",
+                  "H₂O₂",
+                  "HO",
+                  "2"
+                ],
+                [
+                  "Water",
+                  "H₂O",
+                  "H₂O",
+                  "1"
+                ]
+              ]
+            },
+            "alt": "Table of four compounds with molecular formula, empirical formula and the multiplying number n"
+          },
+          "math": [],
+          "narration": "The empirical formula gives only the simplest ratio of atoms. The molecular formula gives the real number of each kind of atom in a molecule. Glucose has six carbons, twelve hydrogens and six oxygens, but its simplest ratio is one carbon, two hydrogens and one oxygen. The molecular formula is always a whole number multiple of the empirical formula, and sometimes the two are the same, as for water.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s08",
+          "layout": "concept",
+          "heading": "Finding an empirical formula: the table method",
+          "body_md": "1. Write the **percentage** (or mass) of each element.\n2. **Divide by the atomic mass** to get the relative number of moles of atoms.\n3. **Divide each answer by the smallest** one.\n4. If a ratio is not close to a whole number, **multiply all** by a small number: 1.5 → × 2; 1.33 or 1.67 → × 3; 1.25 → × 4.\n5. Write the empirical formula from the whole-number ratio.",
+          "bullets": [],
+          "visual": {
+            "kind": "flow",
+            "spec": {
+              "direction": "LR",
+              "nodes": [
+                {
+                  "id": "a",
+                  "label": "Percentage of each element"
+                },
+                {
+                  "id": "b",
+                  "label": "÷ atomic mass"
+                },
+                {
+                  "id": "c",
+                  "label": "÷ smallest value"
+                },
+                {
+                  "id": "d",
+                  "label": "Make whole numbers"
+                },
+                {
+                  "id": "e",
+                  "label": "Empirical formula"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "a",
+                  "to": "b"
+                },
+                {
+                  "from": "b",
+                  "to": "c"
+                },
+                {
+                  "from": "c",
+                  "to": "d"
+                },
+                {
+                  "from": "d",
+                  "to": "e"
+                }
+              ]
+            },
+            "alt": "Flow of the steps for finding an empirical formula from percentage composition"
+          },
+          "math": [],
+          "narration": "Here is the method. Write down the percentage of each element. Divide each by its atomic mass to find the relative number of moles of atoms. Then divide every answer by the smallest one. If a number comes out near one and a half, double everything; if it is near one and a third, multiply everything by three. The whole numbers you get give the empirical formula.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s09",
+          "layout": "example",
+          "heading": "Worked example: from percentages to a molecular formula",
+          "body_md": "**Problem.** A hydrocarbon contains 85.7% carbon and 14.3% hydrogen. Its vapour density is 28. Find its empirical and molecular formulae. (C = 12, H = 1)\n\n**Step 1.** Carbon: $\\frac{85.7}{12} \\approx 7.14$. Hydrogen: $\\frac{14.3}{1} = 14.3$.\n\n**Step 2.** Divide by the smaller value: carbon 1, hydrogen $\\frac{14.3}{7.14} \\approx 2.0$. Empirical formula **CH₂** (empirical formula mass $= 12 + 2 = 14$).\n\n**Step 3.** Molar mass $= 2 \\times 28 = 56$, so $n = \\frac{56}{14} = 4$.\n\n**Step 4.** Molecular formula $=$ (CH₂)₄ $=$ **C₄H₈**.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Element",
+                "%",
+                "÷ atomic mass",
+                "÷ smallest",
+                "Ratio"
+              ],
+              "rows": [
+                [
+                  "C",
+                  "85.7",
+                  "7.14",
+                  "1",
+                  "1"
+                ],
+                [
+                  "H",
+                  "14.3",
+                  "14.3",
+                  "2.0",
+                  "2"
+                ]
+              ]
+            },
+            "alt": "Table of the working for the empirical formula of a hydrocarbon with 85.7 percent carbon"
+          },
+          "math": [],
+          "narration": "Divide each percentage by the atomic mass: carbon gives about seven point one four and hydrogen fourteen point three. Dividing both by the smaller number gives one to two, so the empirical formula is C H two, with a formula mass of fourteen. The vapour density is twenty eight, so the molar mass is fifty six. Fifty six is four times fourteen, so the molecular formula has four carbons and eight hydrogens.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s10",
+          "layout": "check",
+          "heading": "Quick check: empirical formula",
+          "body_md": "Reduce a molecular formula to its simplest ratio.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Divide every subscript by the largest number that divides all of them exactly.",
+          "check_question_id": "q_icse10chem_ch06_015",
+          "audio": null
+        },
+        {
+          "id": "s11",
+          "layout": "concept",
+          "heading": "Empirical formula from combining masses",
+          "body_md": "Sometimes an experiment gives **masses**, not percentages: a known mass of a metal is burnt and the oxide is weighed, or an oxide is reduced and the metal is weighed.\n\n- Mass of the other element = mass of the compound − mass of the first element.\n- Then use the **same table**: divide each mass by its atomic mass, divide by the smallest, make whole numbers.\n\nPercentages are not needed: masses work directly, because only the **ratio** matters.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Experiment",
+                "Masses found"
+              ],
+              "rows": [
+                [
+                  "Burn a metal in air",
+                  "Mass of metal; mass of oxide → oxygen by difference"
+                ],
+                [
+                  "Reduce an oxide with hydrogen",
+                  "Mass of oxide; mass of metal left → oxygen by difference"
+                ],
+                [
+                  "Heat a metal with sulphur",
+                  "Mass of metal; mass of sulphide → sulphur by difference"
+                ]
+              ]
+            },
+            "alt": "Table of three experiments that give the masses of combining elements"
+          },
+          "math": [],
+          "narration": "Experiments often give masses instead of percentages. For example, you might burn a weighed piece of metal and weigh the oxide formed. The increase in mass is the oxygen that combined. You do not need percentages at all. Divide each mass by its atomic mass, divide by the smallest number, and turn the ratio into whole numbers, exactly as before.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s12",
+          "layout": "example",
+          "heading": "Worked example: an oxide of iron",
+          "body_md": "**Problem.** 8.0 g of an oxide of iron contains 5.6 g of iron. Find its empirical formula. (Fe = 56, O = 16)\n\n**Step 1.** Mass of oxygen $= 8.0 - 5.6 = 2.4$ g.\n\n**Step 2.** Iron: $\\frac{5.6}{56} = 0.1$. Oxygen: $\\frac{2.4}{16} = 0.15$.\n\n**Step 3.** Divide by the smaller: iron 1, oxygen $\\frac{0.15}{0.1} = 1.5$.\n\n**Step 4.** Multiply by 2: iron 2, oxygen 3. Empirical formula **Fe₂O₃**.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Element",
+                "Mass / g",
+                "÷ atomic mass",
+                "÷ smallest",
+                "× 2"
+              ],
+              "rows": [
+                [
+                  "Fe",
+                  "5.6",
+                  "0.1",
+                  "1",
+                  "2"
+                ],
+                [
+                  "O",
+                  "2.4",
+                  "0.15",
+                  "1.5",
+                  "3"
+                ]
+              ]
+            },
+            "alt": "Table of the working for the empirical formula of an iron oxide"
+          },
+          "math": [],
+          "narration": "The oxygen is found by difference: eight minus five point six is two point four grams. Dividing by the atomic masses gives one tenth for iron and fifteen hundredths for oxygen. Dividing by the smaller gives one to one and a half. One and a half is not a whole number, so double both, giving two iron atoms to three oxygen atoms.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s13",
+          "layout": "check",
+          "heading": "Quick check: formula from masses",
+          "body_md": "Find an empirical formula from combining masses.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Find the moles of atoms of each element from its mass, then compare them.",
+          "check_question_id": "q_icse10chem_ch06_031",
+          "audio": null
+        },
+        {
+          "id": "s14",
+          "layout": "summary",
+          "heading": "Summary: Part 1",
+          "body_md": "",
+          "bullets": [
+            "Percentage of an element = (its mass in 1 mol ÷ molar mass) × 100.",
+            "Include water of crystallisation in the molar mass of a hydrated salt.",
+            "Empirical formula = simplest whole-number ratio; molecular formula = n × empirical formula.",
+            "Table method: ÷ atomic mass, ÷ smallest, make whole numbers.",
+            "For a gas, molar mass = 2 × vapour density; n = molar mass ÷ empirical formula mass."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Given",
+                "Find",
+                "Key step"
+              ],
+              "rows": [
+                [
+                  "Formula",
+                  "Percentage composition",
+                  "Mass of element ÷ molar mass × 100"
+                ],
+                [
+                  "Percentages or masses",
+                  "Empirical formula",
+                  "÷ atomic mass, ÷ smallest"
+                ],
+                [
+                  "Empirical formula + vapour density",
+                  "Molecular formula",
+                  "n = 2 × VD ÷ empirical formula mass"
+                ]
+              ]
+            },
+            "alt": "Summary table of the three kinds of formula calculation"
+          },
+          "math": [],
+          "narration": "To sum up Part 1. To find a percentage, divide the mass of the element in one mole by the molar mass and multiply by one hundred. To find an empirical formula, divide by atomic masses, divide by the smallest, and make whole numbers. To find the molecular formula, compare the molar mass, often twice the vapour density, with the empirical formula mass.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s15",
+          "layout": "exam-tips",
+          "heading": "Exam tips: Part 1",
+          "body_md": "",
+          "bullets": [
+            "Count atoms inside brackets and in the water of crystallisation carefully.",
+            "Keep two or three decimal places while dividing; round only at the end.",
+            "Never round 1.5 or 1.33 to a whole number: multiply through instead.",
+            "Show the table: examiners give step marks for each column."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Slip",
+                "Fix"
+              ],
+              "rows": [
+                [
+                  "Rounding 1.5 to 2",
+                  "Multiply all ratios by 2"
+                ],
+                [
+                  "Forgetting the water in a hydrate",
+                  "Add n × 18 to the molar mass"
+                ],
+                [
+                  "Dividing % by atomic number",
+                  "Divide by atomic mass"
+                ]
+              ]
+            },
+            "alt": "Table of three common slips in Part 1 and their fixes"
+          },
+          "math": [],
+          "narration": "Some exam tips. Count the atoms in brackets and in the water of crystallisation carefully. Keep a few decimal places while you divide, and round only at the end. If a ratio comes out as one and a half, do not round it: multiply every number by two. And always set out the table, because each column earns marks.",
+          "check_question_id": null,
+          "audio": null
+        }
+      ],
+      "status": "draft",
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "unit": "icse-10-chemistry-ch06",
+      "part": 2,
+      "version": 1,
+      "title": "Stoichiometry — Part 2: Calculations from equations",
+      "language": "en",
+      "goals": [
+        "Read a balanced equation in moles, masses and gas volumes",
+        "Calculate the mass of a product from the mass of a reactant",
+        "Calculate the volume of a gas at STP from a mass, and a mass from a volume",
+        "Solve volume–volume and multi-step problems"
+      ],
+      "slides": [
+        {
+          "id": "s01",
+          "layout": "title",
+          "heading": "Reading an equation in moles",
+          "body_md": "Part 2 — a balanced equation is a recipe. Its coefficients tell us the ratio in which **moles** react and form, and from moles we can reach masses, gas volumes and numbers of particles.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Read as",
+                "2H₂",
+                "O₂",
+                "2H₂O"
+              ],
+              "rows": [
+                [
+                  "Molecules",
+                  "2",
+                  "1",
+                  "2"
+                ],
+                [
+                  "Moles",
+                  "2 mol",
+                  "1 mol",
+                  "2 mol"
+                ],
+                [
+                  "Masses (H = 1, O = 16)",
+                  "4 g",
+                  "32 g",
+                  "36 g"
+                ],
+                [
+                  "Gas volumes at STP",
+                  "44.8 dm³",
+                  "22.4 dm³",
+                  "(liquid)"
+                ]
+              ]
+            },
+            "alt": "Table reading the equation for hydrogen burning in oxygen as molecules, moles, masses and gas volumes"
+          },
+          "math": [],
+          "narration": "A balanced equation is like a recipe. Two molecules of hydrogen react with one molecule of oxygen to give two molecules of water. Scale that up by Avogadro’s number and it reads two moles, one mole and two moles. From moles we can find masses, gas volumes and numbers of particles. Notice that the masses on both sides add up to the same total.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s02",
+          "layout": "concept",
+          "heading": "What a balanced equation tells us",
+          "body_md": "For a balanced equation:\n\n- The **coefficients** give the **mole ratio** (and, for gases at the same temperature and pressure, the **volume ratio**).\n- **Masses** come from moles × molar mass; the total mass of reactants **equals** the total mass of products.\n- **Gas volumes at STP** come from moles × 22.4 dm³.\n\nThe coefficients are **not** a mass ratio: in 2H₂ + O₂ → 2H₂O, 4 g of hydrogen reacts with 32 g of oxygen.",
+          "bullets": [],
+          "visual": {
+            "kind": "svg",
+            "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 560 230\" role=\"img\" aria-label=\"The three-step bridge for calculations from equations. Step 1: change the given mass of substance A into moles by dividing by its molar mass, or change a gas volume at STP into moles by dividing by 22.4. Step 2: use the mole ratio from the balanced equation to get the moles of substance B. Step 3: change the moles of B into a mass by multiplying by its molar mass, or into a gas volume at STP by multiplying by 22.4. Example below: carbon burning to carbon dioxide, 3 g of carbon is 0.25 mol, giving 0.25 mol of carbon dioxide, which is 11 g or 5.6 cubic decimetres at STP.\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>The three-step bridge for calculations from equations. Step 1: change the given mass of substance A into moles by dividing by its molar mass, or change a gas volume at STP into moles by dividing by 22.4. Step 2: use the mole ratio from the balanced equation to get the moles of substance B. Step 3: change the moles of B into a mass by multiplying by its molar mass, or into a gas volume at STP by multiplying by 22.4. Example below: carbon burning to carbon dioxide, 3 g of carbon is 0.25 mol, giving 0.25 mol of carbon dioxide, which is 11 g or 5.6 cubic decimetres at STP.</title><rect x=\"8\" y=\"60\" width=\"112\" height=\"56\" rx=\"6\" fill=\"var(--diagram-blue)\" stroke=\"currentColor\" stroke-width=\"1.5\" fill-opacity=\"0.16\"/><text x=\"64\" y=\"84\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\">Given</text><text x=\"64\" y=\"102\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\">mass or volume of A</text><rect x=\"150\" y=\"60\" width=\"100\" height=\"56\" rx=\"6\" fill=\"var(--diagram-accent)\" stroke=\"currentColor\" stroke-width=\"1.5\" fill-opacity=\"0.16\"/><text x=\"200\" y=\"84\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\">Moles</text><text x=\"200\" y=\"102\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\">of A</text><rect x=\"300\" y=\"60\" width=\"100\" height=\"56\" rx=\"6\" fill=\"var(--diagram-accent)\" stroke=\"currentColor\" stroke-width=\"1.5\" fill-opacity=\"0.16\"/><text x=\"350\" y=\"84\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\">Moles</text><text x=\"350\" y=\"102\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\">of B</text><rect x=\"440\" y=\"60\" width=\"112\" height=\"56\" rx=\"6\" fill=\"var(--diagram-green)\" stroke=\"currentColor\" stroke-width=\"1.5\" fill-opacity=\"0.16\"/><text x=\"496\" y=\"84\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\">Wanted</text><text x=\"496\" y=\"102\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\">mass or volume of B</text><line x1=\"122\" y1=\"88\" x2=\"143.2\" y2=\"88\" stroke=\"currentColor\" stroke-width=\"1.5\"/><polygon points=\"148,88 142.5,90.4 142.5,85.6\" fill=\"currentColor\" stroke=\"none\"/><line x1=\"252\" y1=\"88\" x2=\"293.2\" y2=\"88\" stroke=\"var(--diagram-red)\" stroke-width=\"1.5\"/><polygon points=\"298,88 292.5,90.4 292.5,85.6\" fill=\"var(--diagram-red)\" stroke=\"none\"/><line x1=\"402\" y1=\"88\" x2=\"433.2\" y2=\"88\" stroke=\"currentColor\" stroke-width=\"1.5\"/><polygon points=\"438,88 432.5,90.4 432.5,85.6\" fill=\"currentColor\" stroke=\"none\"/><text x=\"64\" y=\"26\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">Step 1</text><text x=\"64\" y=\"39\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">÷ M(A) or ÷ 22.4</text><text x=\"276\" y=\"26\" fill=\"var(--diagram-red)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">Step 2</text><text x=\"276\" y=\"39\" fill=\"var(--diagram-red)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">× mole ratio B : A</text><text x=\"490\" y=\"26\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">Step 3</text><text x=\"490\" y=\"39\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">× M(B) or × 22.4</text><text x=\"276\" y=\"136\" fill=\"var(--diagram-red)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">from the balanced equation</text><line x1=\"20\" y1=\"156\" x2=\"540\" y2=\"156\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\" stroke-dasharray=\"4 3\"/><text x=\"20\" y=\"178\" fill=\"currentColor\" stroke=\"none\" font-size=\"11\" font-weight=\"bold\">Example: C + O₂ → CO₂ (C = 12, O = 16)</text><text x=\"20\" y=\"198\" fill=\"currentColor\" stroke=\"none\" font-size=\"11\">3 g of C  →  3 ÷ 12 = 0.25 mol C  →  0.25 mol CO₂ (ratio 1 : 1)</text><text x=\"20\" y=\"216\" fill=\"currentColor\" stroke=\"none\" font-size=\"11\">→  0.25 × 44 = 11 g of CO₂,  or  0.25 × 22.4 = 5.6 dm³ at STP</text></svg>",
+            "alt": "Three-step bridge from a given mass or volume of one substance, through moles and the mole ratio, to the mass or volume of another"
+          },
+          "math": [],
+          "narration": "The coefficients in a balanced equation give the ratio of moles, not the ratio of masses. To get masses, multiply the moles by the molar masses. For gases, multiply the moles by twenty two point four to get volumes at standard conditions. The bridge in the picture shows the route: change what is given into moles, use the mole ratio, then change the moles back into what is wanted.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s03",
+          "layout": "concept",
+          "heading": "The three-step method",
+          "body_md": "1. **Given → moles:** moles of A = mass ÷ molar mass (or volume at STP ÷ 22.4).\n2. **Mole ratio:** moles of B = moles of A × (coefficient of B ÷ coefficient of A).\n3. **Moles → wanted:** mass of B = moles × molar mass; volume of B at STP = moles × 22.4; particles = moles × Avogadro’s number.\n\nAlways start from a **balanced** equation.",
+          "bullets": [],
+          "visual": {
+            "kind": "flow",
+            "spec": {
+              "direction": "LR",
+              "nodes": [
+                {
+                  "id": "a",
+                  "label": "Balanced equation"
+                },
+                {
+                  "id": "b",
+                  "label": "Moles of the given substance"
+                },
+                {
+                  "id": "c",
+                  "label": "Moles of the wanted substance"
+                },
+                {
+                  "id": "d",
+                  "label": "Mass, volume or number of particles"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "a",
+                  "to": "b"
+                },
+                {
+                  "from": "b",
+                  "to": "c",
+                  "label": "mole ratio"
+                },
+                {
+                  "from": "c",
+                  "to": "d"
+                }
+              ]
+            },
+            "alt": "Flow of the three-step method for calculations from equations"
+          },
+          "math": [],
+          "narration": "Every equation problem follows three steps. First, change the given amount into moles. Second, use the coefficients to find the moles of the substance you want. Third, change those moles into a mass, a gas volume or a number of particles. And never start until you are sure the equation is balanced.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s04",
+          "layout": "example",
+          "heading": "Worked example: mass to mass",
+          "body_md": "**Problem.** 10 g of sodium hydroxide is neutralised completely by dilute hydrochloric acid: $\\ce{NaOH + HCl -> NaCl + H2O}$. What mass of sodium chloride is formed? (Na = 23, O = 16, H = 1, Cl = 35.5)\n\n**Step 1.** Molar mass of NaOH $= 23 + 16 + 1 = 40$ g, so moles $= \\frac{10}{40} = 0.25$.\n\n**Step 2.** Mole ratio NaOH to NaCl is 1 : 1, so 0.25 mol of NaCl forms.\n\n**Step 3.** Molar mass of NaCl $= 23 + 35.5 = 58.5$ g. Mass $= 0.25 \\times 58.5 = 14.625$ g, about 14.6 g.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Step",
+                "Working",
+                "Result"
+              ],
+              "rows": [
+                [
+                  "Moles of NaOH",
+                  "10 ÷ 40",
+                  "0.25 mol"
+                ],
+                [
+                  "Moles of NaCl",
+                  "0.25 × 1",
+                  "0.25 mol"
+                ],
+                [
+                  "Mass of NaCl",
+                  "0.25 × 58.5",
+                  "14.6 g"
+                ]
+              ]
+            },
+            "alt": "Table of the three steps for the mass of sodium chloride from sodium hydroxide"
+          },
+          "math": [],
+          "narration": "Sodium hydroxide has a molar mass of forty, so ten grams is a quarter of a mole. The equation shows that one mole of sodium hydroxide gives one mole of sodium chloride, so a quarter of a mole of salt forms. Sodium chloride has a molar mass of fifty eight point five, and a quarter of that is about fourteen point six grams.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s05",
+          "layout": "check",
+          "heading": "Quick check: mass to mass",
+          "body_md": "Find the mass of a product from the mass of a reactant.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Change the given mass into moles, use the mole ratio, then multiply by the molar mass of the product.",
+          "check_question_id": "q_icse10chem_ch06_039",
+          "audio": null
+        },
+        {
+          "id": "s06",
+          "layout": "concept",
+          "heading": "Mass to volume, and volume to mass",
+          "body_md": "When the wanted substance is a **gas**, finish with **moles × 22.4 dm³** (at STP). When the given substance is a gas volume at STP, start with **volume ÷ 22.4**.\n\n- Volumes in cm³: divide by 22 400 (or convert to dm³ first).\n- If the gas volume is not at STP, it cannot be turned into moles with 22.4.\n- Only gases have a molar volume; never use 22.4 dm³ for a solid or a liquid.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Given",
+                "Wanted",
+                "Route"
+              ],
+              "rows": [
+                [
+                  "Mass of a solid",
+                  "Volume of a gas at STP",
+                  "mass ÷ M → mole ratio → × 22.4"
+                ],
+                [
+                  "Volume of a gas at STP",
+                  "Mass of a solid",
+                  "÷ 22.4 → mole ratio → × M"
+                ],
+                [
+                  "Volume of a gas at STP",
+                  "Mass of another gas",
+                  "÷ 22.4 → mole ratio → × M"
+                ]
+              ]
+            },
+            "alt": "Table of routes for mass-to-volume and volume-to-mass calculations"
+          },
+          "math": [],
+          "narration": "If the substance you want is a gas, the last step is to multiply its moles by twenty two point four, which gives its volume at standard temperature and pressure. If you are given a gas volume at standard conditions, the first step is to divide by twenty two point four. Remember to convert cubic centimetres into litres, and use molar volume only for gases.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s07",
+          "layout": "example",
+          "heading": "Worked example: mass to volume",
+          "body_md": "**Problem.** 2.7 g of aluminium reacts with excess dilute hydrochloric acid: $\\ce{2Al + 6HCl -> 2AlCl3 + 3H2}$. What volume of hydrogen is produced at STP? (Al = 27)\n\n**Step 1.** Moles of aluminium $= \\frac{2.7}{27} = 0.1$.\n\n**Step 2.** Mole ratio Al to H₂ is 2 : 3, so moles of hydrogen $= 0.1 \\times \\frac{3}{2} = 0.15$.\n\n**Step 3.** Volume $= 0.15 \\times 22.4 = 3.36$ dm³.",
+          "bullets": [],
+          "visual": {
+            "kind": "chem",
+            "spec": {
+              "equation": "2Al + 6HCl -> 2AlCl3 + 3H2"
+            },
+            "alt": "Two aluminium plus six hydrochloric acid gives two aluminium chloride plus three hydrogen",
+            "caption": "Mole ratio Al : H₂ = 2 : 3."
+          },
+          "math": [],
+          "narration": "Aluminium has an atomic mass of twenty seven, so two point seven grams is one tenth of a mole. The equation shows two moles of aluminium giving three moles of hydrogen, so one tenth of a mole gives fifteen hundredths of a mole of hydrogen. Multiplying by twenty two point four gives three point three six litres of hydrogen at standard conditions.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s08",
+          "layout": "check",
+          "heading": "Quick check: mass to volume",
+          "body_md": "Find the volume of a gas at STP from the mass of a reactant.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Moles of the metal, then the mole ratio, then multiply by twenty two point four.",
+          "check_question_id": "q_icse10chem_ch06_040",
+          "audio": null
+        },
+        {
+          "id": "s09",
+          "layout": "concept",
+          "heading": "Volume to volume",
+          "body_md": "When **both** substances are **gases** at the same temperature and pressure, use Gay-Lussac’s law directly: **volume ratio = mole ratio = ratio of coefficients**. No molar masses are needed.\n\nExample: 2SO₂ + O₂ → 2SO₃. 100 cm³ of sulphur dioxide needs 50 cm³ of oxygen and gives 100 cm³ of sulphur trioxide vapour (same conditions).\n\nTo get a **mass** from a gas volume, the volume must be at **STP**: moles = volume ÷ 22.4, then × molar mass.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Gas reaction",
+                "Volume ratio"
+              ],
+              "rows": [
+                [
+                  "H₂ + Cl₂ → 2HCl",
+                  "1 : 1 : 2"
+                ],
+                [
+                  "2SO₂ + O₂ → 2SO₃",
+                  "2 : 1 : 2"
+                ],
+                [
+                  "4NH₃ + 5O₂ → 4NO + 6H₂O (steam)",
+                  "4 : 5 : 4 : 6"
+                ]
+              ]
+            },
+            "alt": "Table of three gas reactions with their volume ratios"
+          },
+          "math": [],
+          "narration": "When the given and the wanted substances are both gases, measured under the same conditions, you do not need moles at all. The volumes react in the same ratio as the coefficients. So one hundred cubic centimetres of sulphur dioxide needs half as much oxygen. But if you want a mass, convert the volume at standard conditions into moles first.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s10",
+          "layout": "example",
+          "heading": "Worked example: volume to volume, then mass",
+          "body_md": "**Problem.** 6.72 dm³ of chlorine, measured at STP, reacts completely with hydrogen: $\\ce{H2 + Cl2 -> 2HCl}$. Find (a) the volume of hydrogen chloride formed at STP and (b) its mass. (H = 1, Cl = 35.5)\n\n**(a)** Volume ratio Cl₂ to HCl is 1 : 2, so hydrogen chloride $= 6.72 \\times 2 = 13.44$ dm³.\n\n**(b)** Moles of HCl $= \\frac{13.44}{22.4} = 0.6$. Molar mass $= 1 + 35.5 = 36.5$ g. Mass $= 0.6 \\times 36.5 = 21.9$ g.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Quantity",
+                "Chlorine",
+                "Hydrogen chloride"
+              ],
+              "rows": [
+                [
+                  "Volume at STP / dm³",
+                  "6.72",
+                  "13.44"
+                ],
+                [
+                  "Moles",
+                  "0.3",
+                  "0.6"
+                ],
+                [
+                  "Mass / g",
+                  "21.3",
+                  "21.9"
+                ]
+              ]
+            },
+            "alt": "Table of volumes, moles and masses of chlorine used and hydrogen chloride formed"
+          },
+          "math": [],
+          "narration": "Both chlorine and hydrogen chloride are gases, so the volumes follow the coefficients. One volume of chlorine gives two volumes of hydrogen chloride, which is thirteen point four four litres. To find the mass, divide this volume by twenty two point four to get six tenths of a mole, and multiply by the molar mass, thirty six point five. That gives twenty one point nine grams.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s11",
+          "layout": "check",
+          "heading": "Quick check: volume to volume",
+          "body_md": "Find a gas volume from another gas volume.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. For gases under the same conditions, the volumes follow the coefficients directly.",
+          "check_question_id": "q_icse10chem_ch06_041",
+          "audio": null
+        },
+        {
+          "id": "s12",
+          "layout": "concept",
+          "heading": "Counting particles from an equation",
+          "body_md": "To find the **number of molecules** of a product, find its **moles** and multiply by **Avogadro’s number**. For atoms, multiply the number of molecules by the number of atoms in one molecule.\n\nUse the value given in the question: 6 × 10²³ or 6.022 × 10²³.\n\nAlso remember: mass is conserved, so the **total mass** of the products always equals the total mass of the reactants that actually reacted.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Moles of product",
+                "Molecules (6 × 10²³ per mole)"
+              ],
+              "rows": [
+                [
+                  "0.1",
+                  "6 × 10²²"
+                ],
+                [
+                  "0.3",
+                  "1.8 × 10²³"
+                ],
+                [
+                  "2",
+                  "1.2 × 10²⁴"
+                ]
+              ]
+            },
+            "alt": "Table converting moles of a product into numbers of molecules"
+          },
+          "math": [],
+          "narration": "Sometimes the question asks how many molecules of a product are formed. Find the moles of that product in the usual way and multiply by Avogadro’s number, using whichever value the question gives. For a number of atoms, multiply again by the atoms in one molecule. And remember that mass is always conserved in a reaction.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s13",
+          "layout": "example",
+          "heading": "Worked example: heating potassium chlorate",
+          "body_md": "**Problem.** 24.5 g of potassium chlorate is heated until it decomposes completely: $\\ce{2KClO3 -> 2KCl + 3O2}$. Find (a) the volume of oxygen at STP, (b) its mass and (c) the number of oxygen molecules. (K = 39, Cl = 35.5, O = 16; Avogadro’s number $= 6 \\times 10^{23}$)\n\n**Moles of KClO₃.** Molar mass $= 39 + 35.5 + 3 \\times 16 = 122.5$ g, so moles $= \\frac{24.5}{122.5} = 0.2$.\n\n**Moles of O₂.** $0.2 \\times \\frac{3}{2} = 0.3$.\n\n**(a)** Volume $= 0.3 \\times 22.4 = 6.72$ dm³. **(b)** Mass $= 0.3 \\times 32 = 9.6$ g. **(c)** Molecules $= 0.3 \\times 6 \\times 10^{23} = 1.8 \\times 10^{23}$.",
+          "bullets": [],
+          "visual": {
+            "kind": "chem",
+            "spec": {
+              "equation": "2KClO3 -> 2KCl + 3O2"
+            },
+            "alt": "Two potassium chlorate gives two potassium chloride plus three oxygen",
+            "caption": "Mole ratio KClO₃ : O₂ = 2 : 3."
+          },
+          "math": [],
+          "narration": "Potassium chlorate has a molar mass of one hundred and twenty two point five, so twenty four point five grams is two tenths of a mole. Two moles of it give three moles of oxygen, so we get three tenths of a mole of oxygen. That fills six point seven two litres at standard conditions, weighs nine point six grams, and contains one point eight times ten to the twenty three molecules.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s14",
+          "layout": "summary",
+          "heading": "Summary: Part 2",
+          "body_md": "",
+          "bullets": [
+            "Coefficients give the mole ratio (and the volume ratio for gases), not the mass ratio.",
+            "Three steps: given → moles; × mole ratio; moles → mass, volume or particles.",
+            "Gas at STP: moles = volume in dm³ ÷ 22.4; volume = moles × 22.4.",
+            "Gas to gas at the same conditions: use the volume ratio directly.",
+            "Total mass of reactants used = total mass of products."
+          ],
+          "visual": {
+            "kind": "svg",
+            "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 560 230\" role=\"img\" aria-label=\"The three-step bridge for calculations from equations. Step 1: change the given mass of substance A into moles by dividing by its molar mass, or change a gas volume at STP into moles by dividing by 22.4. Step 2: use the mole ratio from the balanced equation to get the moles of substance B. Step 3: change the moles of B into a mass by multiplying by its molar mass, or into a gas volume at STP by multiplying by 22.4. Example below: carbon burning to carbon dioxide, 3 g of carbon is 0.25 mol, giving 0.25 mol of carbon dioxide, which is 11 g or 5.6 cubic decimetres at STP.\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>The three-step bridge for calculations from equations. Step 1: change the given mass of substance A into moles by dividing by its molar mass, or change a gas volume at STP into moles by dividing by 22.4. Step 2: use the mole ratio from the balanced equation to get the moles of substance B. Step 3: change the moles of B into a mass by multiplying by its molar mass, or into a gas volume at STP by multiplying by 22.4. Example below: carbon burning to carbon dioxide, 3 g of carbon is 0.25 mol, giving 0.25 mol of carbon dioxide, which is 11 g or 5.6 cubic decimetres at STP.</title><rect x=\"8\" y=\"60\" width=\"112\" height=\"56\" rx=\"6\" fill=\"var(--diagram-blue)\" stroke=\"currentColor\" stroke-width=\"1.5\" fill-opacity=\"0.16\"/><text x=\"64\" y=\"84\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\">Given</text><text x=\"64\" y=\"102\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\">mass or volume of A</text><rect x=\"150\" y=\"60\" width=\"100\" height=\"56\" rx=\"6\" fill=\"var(--diagram-accent)\" stroke=\"currentColor\" stroke-width=\"1.5\" fill-opacity=\"0.16\"/><text x=\"200\" y=\"84\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\">Moles</text><text x=\"200\" y=\"102\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\">of A</text><rect x=\"300\" y=\"60\" width=\"100\" height=\"56\" rx=\"6\" fill=\"var(--diagram-accent)\" stroke=\"currentColor\" stroke-width=\"1.5\" fill-opacity=\"0.16\"/><text x=\"350\" y=\"84\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\">Moles</text><text x=\"350\" y=\"102\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\">of B</text><rect x=\"440\" y=\"60\" width=\"112\" height=\"56\" rx=\"6\" fill=\"var(--diagram-green)\" stroke=\"currentColor\" stroke-width=\"1.5\" fill-opacity=\"0.16\"/><text x=\"496\" y=\"84\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\">Wanted</text><text x=\"496\" y=\"102\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\">mass or volume of B</text><line x1=\"122\" y1=\"88\" x2=\"143.2\" y2=\"88\" stroke=\"currentColor\" stroke-width=\"1.5\"/><polygon points=\"148,88 142.5,90.4 142.5,85.6\" fill=\"currentColor\" stroke=\"none\"/><line x1=\"252\" y1=\"88\" x2=\"293.2\" y2=\"88\" stroke=\"var(--diagram-red)\" stroke-width=\"1.5\"/><polygon points=\"298,88 292.5,90.4 292.5,85.6\" fill=\"var(--diagram-red)\" stroke=\"none\"/><line x1=\"402\" y1=\"88\" x2=\"433.2\" y2=\"88\" stroke=\"currentColor\" stroke-width=\"1.5\"/><polygon points=\"438,88 432.5,90.4 432.5,85.6\" fill=\"currentColor\" stroke=\"none\"/><text x=\"64\" y=\"26\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">Step 1</text><text x=\"64\" y=\"39\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">÷ M(A) or ÷ 22.4</text><text x=\"276\" y=\"26\" fill=\"var(--diagram-red)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">Step 2</text><text x=\"276\" y=\"39\" fill=\"var(--diagram-red)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">× mole ratio B : A</text><text x=\"490\" y=\"26\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">Step 3</text><text x=\"490\" y=\"39\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">× M(B) or × 22.4</text><text x=\"276\" y=\"136\" fill=\"var(--diagram-red)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">from the balanced equation</text><line x1=\"20\" y1=\"156\" x2=\"540\" y2=\"156\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\" stroke-dasharray=\"4 3\"/><text x=\"20\" y=\"178\" fill=\"currentColor\" stroke=\"none\" font-size=\"11\" font-weight=\"bold\">Example: C + O₂ → CO₂ (C = 12, O = 16)</text><text x=\"20\" y=\"198\" fill=\"currentColor\" stroke=\"none\" font-size=\"11\">3 g of C  →  3 ÷ 12 = 0.25 mol C  →  0.25 mol CO₂ (ratio 1 : 1)</text><text x=\"20\" y=\"216\" fill=\"currentColor\" stroke=\"none\" font-size=\"11\">→  0.25 × 44 = 11 g of CO₂,  or  0.25 × 22.4 = 5.6 dm³ at STP</text></svg>",
+            "alt": "Three-step bridge from a given mass or volume of one substance, through moles and the mole ratio, to the mass or volume of another"
+          },
+          "math": [],
+          "narration": "To sum up Part 2. The coefficients of a balanced equation give the mole ratio, and for gases the volume ratio. Change the given amount into moles, use the mole ratio, and change the answer into a mass, a gas volume or a number of particles. When both substances are gases under the same conditions, the volumes follow the coefficients directly.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s15",
+          "layout": "exam-tips",
+          "heading": "Exam tips: Part 2",
+          "body_md": "",
+          "bullets": [
+            "Write and check the balanced equation before any arithmetic.",
+            "Show the mole ratio as a separate line: it carries a mark.",
+            "Give units with every answer: g, dm³ or cm³, mol.",
+            "Watch for “excess”: the substance in excess does not limit the product."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Slip",
+                "Fix"
+              ],
+              "rows": [
+                [
+                  "Using coefficients as a mass ratio",
+                  "Coefficients are a mole ratio"
+                ],
+                [
+                  "Forgetting the mole ratio (2 : 3)",
+                  "Multiply by the ratio from the equation"
+                ],
+                [
+                  "Using 22.4 dm³ for a solid",
+                  "Molar volume is for gases only"
+                ]
+              ]
+            },
+            "alt": "Table of three common slips in Part 2 and their fixes"
+          },
+          "math": [],
+          "narration": "Final tips. Write the balanced equation first and check it. Show the mole ratio on its own line, because examiners give a mark for it. Put a unit on every answer. And when a question says a reactant is in excess, the amount of product depends on the other reactant.",
+          "check_question_id": null,
+          "audio": null
+        }
+      ],
+      "status": "draft",
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    }
+  ],
+  "notes": {
+    "unit": "icse-10-chemistry-ch06",
+    "version": 1,
+    "title": "Stoichiometry: Formulae and Calculations from Equations — Notes",
+    "language": "en",
+    "sections": [
+      {
+        "heading": "1. Percentage composition",
+        "body_md": "**Percentage composition:** the percentage by mass of each element in a compound.\n\n**Method:** find the molar mass → mass of the element in 1 mol → divide → × 100. All the percentages add up to 100.\n\nA pure compound always has the same percentage composition, whatever its source (law of constant proportions).\n\nExample: ammonium nitrate, NH₄NO₃ (M = 80) contains 28 g of nitrogen per mole, so 35% nitrogen; urea, CO(NH₂)₂ (M = 60), contains 46.67% nitrogen.",
+        "key_terms": [
+          {
+            "term": "Percentage composition",
+            "definition_md": "The percentage by mass of each element present in a compound."
+          },
+          {
+            "term": "Law of constant proportions",
+            "definition_md": "A pure compound always contains the same elements combined in the same proportion by mass."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\%\\ \\text{of element} = \\frac{\\text{mass of element in 1 mol}}{\\text{molar mass}} \\times 100",
+            "label": "Percentage of an element"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Compound",
+              "Molar mass / g",
+              "% of the named element"
+            ],
+            "rows": [
+              [
+                "NH₄NO₃",
+                "80",
+                "N: 35%"
+              ],
+              [
+                "CaCO₃",
+                "100",
+                "O: 48%"
+              ],
+              [
+                "CH₄",
+                "16",
+                "C: 75%"
+              ]
+            ]
+          },
+          "alt": "Table of three compounds with molar mass and the percentage of one element"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-chemistry-ch06-t01"
+        ]
+      },
+      {
+        "heading": "2. Water of crystallisation",
+        "body_md": "**Water of crystallisation:** the fixed number of water molecules that are part of the crystal structure of a hydrated salt, written after a dot (CuSO₄·5H₂O).\n\n- Include the water in the molar mass: CuSO₄·5H₂O = 64 + 32 + 64 + 5 × 18 = 250 (Cu = 64).\n- % water = (n × 18 ÷ molar mass of the hydrate) × 100; for CuSO₄·5H₂O, 90 ÷ 250 × 100 = 36%.\n- Heating drives the water off: mass lost = water; mass left = anhydrous salt. The number of water molecules, x, = moles of water ÷ moles of anhydrous salt.",
+        "key_terms": [
+          {
+            "term": "Water of crystallisation",
+            "definition_md": "The fixed number of molecules of water present in one formula unit of a hydrated crystalline salt."
+          },
+          {
+            "term": "Anhydrous",
+            "definition_md": "Without water of crystallisation."
+          }
+        ],
+        "formulas": [],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Hydrated salt",
+              "Molar mass / g",
+              "% water"
+            ],
+            "rows": [
+              [
+                "CuSO₄·5H₂O",
+                "250",
+                "36%"
+              ],
+              [
+                "MgSO₄·7H₂O",
+                "246",
+                "51.2%"
+              ],
+              [
+                "CaSO₄·2H₂O",
+                "172",
+                "20.9%"
+              ]
+            ]
+          },
+          "alt": "Table of three hydrated salts with molar mass and percentage of water"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-chemistry-ch06-t01"
+        ]
+      },
+      {
+        "heading": "3. Empirical and molecular formulae",
+        "body_md": "- **Empirical formula:** the simplest whole-number ratio of atoms of the elements in a compound.\n- **Molecular formula:** the actual number of atoms of each element in one molecule.\n- Molecular formula = n × empirical formula, where n = molar mass ÷ empirical formula mass (a whole number, often 1).\n- For a gas or vapour: molar mass = 2 × vapour density.\n\nExamples: glucose C₆H₁₂O₆ → CH₂O (n = 6); ethyne C₂H₂ and benzene C₆H₆ both → CH; water H₂O → H₂O (n = 1).",
+        "key_terms": [
+          {
+            "term": "Empirical formula",
+            "definition_md": "The formula showing the simplest whole-number ratio of the atoms of each element in a compound."
+          },
+          {
+            "term": "Molecular formula",
+            "definition_md": "The formula showing the actual number of atoms of each element in one molecule of a compound."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "n = \\frac{\\text{molar mass}}{\\text{empirical formula mass}}",
+            "label": "Multiplying factor"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Molecular formula",
+              "Empirical formula",
+              "n"
+            ],
+            "rows": [
+              [
+                "C₆H₁₂O₆",
+                "CH₂O",
+                "6"
+              ],
+              [
+                "H₂O₂",
+                "HO",
+                "2"
+              ],
+              [
+                "N₂O₄",
+                "NO₂",
+                "2"
+              ]
+            ]
+          },
+          "alt": "Table of three molecular formulae with their empirical formulae"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-chemistry-ch06-t02"
+        ]
+      },
+      {
+        "heading": "4. Empirical formula from percentage composition",
+        "body_md": "| Step | What to do |\n|---|---|\n| 1 | Write the percentage of each element |\n| 2 | Divide each by its atomic mass (relative number of moles of atoms) |\n| 3 | Divide every result by the smallest |\n| 4 | Make whole numbers: 1.5 → × 2; 1.33 or 1.67 → × 3; 1.25 → × 4 |\n| 5 | Write the empirical formula |\n\nThen, if the vapour density or molar mass is given, find n and the molecular formula. Example: 85.7% C and 14.3% H gives CH₂ (formula mass 14); VD 28 → M = 56 → n = 4 → C₄H₈.",
+        "key_terms": [
+          {
+            "term": "Empirical formula mass",
+            "definition_md": "The sum of the atomic masses of the atoms in the empirical formula."
+          }
+        ],
+        "formulas": [],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Element",
+              "%",
+              "÷ atomic mass",
+              "÷ smallest"
+            ],
+            "rows": [
+              [
+                "N",
+                "82.35",
+                "5.88",
+                "1"
+              ],
+              [
+                "H",
+                "17.65",
+                "17.65",
+                "3"
+              ]
+            ]
+          },
+          "alt": "Table of the working for the empirical formula NH3 from percentages"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-chemistry-ch06-t02"
+        ]
+      },
+      {
+        "heading": "5. Empirical formula from combining masses",
+        "body_md": "When an experiment gives masses (for example, a metal burnt to its oxide, or an oxide reduced to the metal):\n\n- mass of the second element = mass of the compound − mass of the first element;\n- divide each mass by its atomic mass, divide by the smallest and make whole numbers, exactly as with percentages.\n\nExample: 8.0 g of an iron oxide contains 5.6 g of iron, so 2.4 g of oxygen; Fe 5.6 ÷ 56 = 0.1, O 2.4 ÷ 16 = 0.15; ratio 1 : 1.5 = 2 : 3 → Fe₂O₃.",
+        "key_terms": [
+          {
+            "term": "Combining masses",
+            "definition_md": "The masses of the elements that combine with each other to form a compound."
+          }
+        ],
+        "formulas": [],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Data",
+              "Element masses",
+              "Empirical formula"
+            ],
+            "rows": [
+              [
+                "0.24 g Mg gives 0.40 g oxide",
+                "Mg 0.24 g, O 0.16 g",
+                "MgO"
+              ],
+              [
+                "8.0 g oxide contains 5.6 g Fe",
+                "Fe 5.6 g, O 2.4 g",
+                "Fe₂O₃"
+              ]
+            ]
+          },
+          "alt": "Table of two combining-mass experiments and the empirical formulae found"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-chemistry-ch06-t03"
+        ]
+      },
+      {
+        "heading": "6. Calculations from balanced equations",
+        "body_md": "The **coefficients** of a balanced equation give the **mole ratio** (and the volume ratio of gases at the same temperature and pressure). They are **not** a mass ratio.\n\n**Three steps:** (1) given quantity → moles (mass ÷ M, or volume at STP ÷ 22.4); (2) × mole ratio from the equation; (3) moles → wanted quantity (× M for mass, × 22.4 for volume at STP, × Avogadro's number for particles).\n\n| Type | Example |\n|---|---|\n| Mass–mass | 10 g NaOH → 0.25 mol → 0.25 mol NaCl → 14.6 g |\n| Mass–volume | 2.7 g Al → 0.1 mol → 0.15 mol H₂ → 3.36 dm³ |\n| Volume–volume | 6.72 dm³ Cl₂ → 13.44 dm³ HCl (ratio 1 : 2) |\n\nTotal mass of reactants used = total mass of products (conservation of mass).",
+        "key_terms": [
+          {
+            "term": "Stoichiometry",
+            "definition_md": "The calculation of the quantities of reactants and products in a chemical reaction from its balanced equation."
+          },
+          {
+            "term": "Mole ratio",
+            "definition_md": "The ratio of the coefficients of two substances in a balanced equation."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "n_\\text{B} = n_\\text{A} \\times \\frac{\\text{coefficient of B}}{\\text{coefficient of A}}",
+            "label": "Moles of B from moles of A"
+          },
+          {
+            "latex": "\\ce{2KClO3 -> 2KCl + 3O2}",
+            "label": "Decomposition of potassium chlorate"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Given",
+              "Wanted",
+              "Last step"
+            ],
+            "rows": [
+              [
+                "Mass of A",
+                "Mass of B",
+                "× molar mass of B"
+              ],
+              [
+                "Mass of A",
+                "Volume of gas B at STP",
+                "× 22.4 dm³"
+              ],
+              [
+                "Volume of gas A",
+                "Volume of gas B (same conditions)",
+                "Volume ratio only"
+              ]
+            ]
+          },
+          "alt": "Table of the three kinds of equation calculation and their last steps"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-chemistry-ch06-t04"
+        ]
+      }
+    ],
+    "exam_tips_md": "**Common mistakes**\n- Rounding a ratio such as 1.5 or 1.33 instead of multiplying through.\n- Leaving out the water of crystallisation from the molar mass of a hydrate.\n- Treating the coefficients of an equation as a mass ratio.\n- Forgetting the mole ratio (for example 2 : 3 for Al : H₂).\n- Using 22.4 dm³ for a gas that is not at STP, or for a solid or liquid.\n\n**How marks are usually awarded**\n- Empirical formula (2–3 marks): the division table, the whole-number ratio, the formula.\n- Molecular formula (1 mark): molar mass from vapour density and the value of n.\n- Equation calculations (3 marks): moles of the given substance, the mole ratio, the final answer with a unit.",
+    "status": "draft",
+    "provenance": {
+      "origin": "human",
+      "template_version": null,
+      "model": null,
+      "generated_at": "2026-11-01",
+      "author": "claude-opus-5-5 (subject-producer)"
+    }
+  },
+  "flashcards": {
+    "unit": "icse-10-chemistry-ch06",
+    "version": 1,
+    "language": "en",
+    "cards": [
+      {
+        "id": "f01",
+        "front_md": "Percentage composition?",
+        "back_md": "The percentage by mass of each element in a compound.",
+        "tag": "definition",
+        "topic_id": "icse-10-chemistry-ch06-t01"
+      },
+      {
+        "id": "f02",
+        "front_md": "% of an element in a compound?",
+        "back_md": "(Mass of the element in 1 mol ÷ molar mass) × 100.",
+        "tag": "formula",
+        "topic_id": "icse-10-chemistry-ch06-t01"
+      },
+      {
+        "id": "f03",
+        "front_md": "% of carbon in CH₄ (C = 12, H = 1)?",
+        "back_md": "12 ÷ 16 × 100 = 75%.",
+        "tag": "example",
+        "topic_id": "icse-10-chemistry-ch06-t01"
+      },
+      {
+        "id": "f04",
+        "front_md": "% of nitrogen in NH₄NO₃?",
+        "back_md": "35% (28 ÷ 80 × 100).",
+        "tag": "example",
+        "topic_id": "icse-10-chemistry-ch06-t01"
+      },
+      {
+        "id": "f05",
+        "front_md": "Law of constant proportions?",
+        "back_md": "A pure compound always has the same elements in the same proportion by mass.",
+        "tag": "definition",
+        "topic_id": "icse-10-chemistry-ch06-t01"
+      },
+      {
+        "id": "f06",
+        "front_md": "Water of crystallisation?",
+        "back_md": "Fixed number of water molecules in the crystal structure of a hydrated salt.",
+        "tag": "definition",
+        "topic_id": "icse-10-chemistry-ch06-t01"
+      },
+      {
+        "id": "f07",
+        "front_md": "Molar mass of CuSO₄·5H₂O (Cu = 64)?",
+        "back_md": "250 g mol⁻¹.",
+        "tag": "example",
+        "topic_id": "icse-10-chemistry-ch06-t01"
+      },
+      {
+        "id": "f08",
+        "front_md": "% water in CuSO₄·5H₂O?",
+        "back_md": "36% (90 ÷ 250 × 100).",
+        "tag": "example",
+        "topic_id": "icse-10-chemistry-ch06-t01"
+      },
+      {
+        "id": "f09",
+        "front_md": "Empirical formula?",
+        "back_md": "Simplest whole-number ratio of atoms in a compound.",
+        "tag": "definition",
+        "topic_id": "icse-10-chemistry-ch06-t02"
+      },
+      {
+        "id": "f10",
+        "front_md": "Molecular formula?",
+        "back_md": "Actual number of atoms of each element in one molecule.",
+        "tag": "definition",
+        "topic_id": "icse-10-chemistry-ch06-t02"
+      },
+      {
+        "id": "f11",
+        "front_md": "How are they related?",
+        "back_md": "Molecular formula = n × empirical formula; n = molar mass ÷ empirical formula mass.",
+        "tag": "formula",
+        "topic_id": "icse-10-chemistry-ch06-t02"
+      },
+      {
+        "id": "f12",
+        "front_md": "Empirical formula of glucose, C₆H₁₂O₆?",
+        "back_md": "CH₂O.",
+        "tag": "example",
+        "topic_id": "icse-10-chemistry-ch06-t02"
+      },
+      {
+        "id": "f13",
+        "front_md": "Two compounds with empirical formula CH?",
+        "back_md": "Ethyne C₂H₂ and benzene C₆H₆.",
+        "tag": "example",
+        "topic_id": "icse-10-chemistry-ch06-t02"
+      },
+      {
+        "id": "f14",
+        "front_md": "A ratio comes out as 1 : 1.5. What next?",
+        "back_md": "Multiply both by 2: 2 : 3.",
+        "tag": "concept",
+        "topic_id": "icse-10-chemistry-ch06-t02"
+      },
+      {
+        "id": "f15",
+        "front_md": "A ratio comes out as 1 : 1.33. What next?",
+        "back_md": "Multiply both by 3: 3 : 4.",
+        "tag": "concept",
+        "topic_id": "icse-10-chemistry-ch06-t02"
+      },
+      {
+        "id": "f16",
+        "front_md": "Molar mass from vapour density?",
+        "back_md": "Molar mass = 2 × vapour density.",
+        "tag": "formula",
+        "topic_id": "icse-10-chemistry-ch06-t02"
+      },
+      {
+        "id": "f17",
+        "front_md": "Empirical formula CH₂, vapour density 28: molecular formula?",
+        "back_md": "M = 56, n = 4, so C₄H₈.",
+        "tag": "example",
+        "topic_id": "icse-10-chemistry-ch06-t02"
+      },
+      {
+        "id": "f18",
+        "front_md": "Can empirical and molecular formula be the same?",
+        "back_md": "Yes, for example H₂O, CH₄, CO₂.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch06-t02"
+      },
+      {
+        "id": "f19",
+        "front_md": "Burning a metal: how is the oxygen mass found?",
+        "back_md": "Mass of oxide − mass of metal.",
+        "tag": "concept",
+        "topic_id": "icse-10-chemistry-ch06-t03"
+      },
+      {
+        "id": "f20",
+        "front_md": "Fe 0.1 mol, O 0.15 mol: empirical formula?",
+        "back_md": "Fe₂O₃.",
+        "tag": "example",
+        "topic_id": "icse-10-chemistry-ch06-t03"
+      },
+      {
+        "id": "f21",
+        "front_md": "Divide masses by atomic number or atomic mass?",
+        "back_md": "Atomic mass.",
+        "tag": "exam-tip",
+        "topic_id": "icse-10-chemistry-ch06-t03"
+      },
+      {
+        "id": "f22",
+        "front_md": "What do the coefficients of a balanced equation give?",
+        "back_md": "The mole ratio (and volume ratio for gases).",
+        "tag": "concept",
+        "topic_id": "icse-10-chemistry-ch06-t04"
+      },
+      {
+        "id": "f23",
+        "front_md": "Are coefficients a mass ratio?",
+        "back_md": "No: in 2H₂ + O₂ → 2H₂O, 4 g of H₂ reacts with 32 g of O₂.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch06-t04"
+      },
+      {
+        "id": "f24",
+        "front_md": "Three steps of an equation calculation?",
+        "back_md": "Given → moles; × mole ratio; moles → wanted.",
+        "tag": "concept",
+        "topic_id": "icse-10-chemistry-ch06-t04"
+      },
+      {
+        "id": "f25",
+        "front_md": "Moles of H₂ from 0.1 mol Al (2Al + 6HCl → 2AlCl₃ + 3H₂)?",
+        "back_md": "0.15 mol.",
+        "tag": "example",
+        "topic_id": "icse-10-chemistry-ch06-t04"
+      },
+      {
+        "id": "f26",
+        "front_md": "Gas volume at STP from moles?",
+        "back_md": "Moles × 22.4 dm³.",
+        "tag": "formula",
+        "topic_id": "icse-10-chemistry-ch06-t04"
+      },
+      {
+        "id": "f27",
+        "front_md": "Volume–volume problems need molar masses?",
+        "back_md": "No: gas volumes follow the coefficients (same conditions).",
+        "tag": "concept",
+        "topic_id": "icse-10-chemistry-ch06-t04"
+      },
+      {
+        "id": "f28",
+        "front_md": "Volume of HCl from 1 dm³ of Cl₂ with excess H₂?",
+        "back_md": "2 dm³.",
+        "tag": "example",
+        "topic_id": "icse-10-chemistry-ch06-t04"
+      },
+      {
+        "id": "f29",
+        "front_md": "Stoichiometry?",
+        "back_md": "Calculating quantities of reactants and products from a balanced equation.",
+        "tag": "definition",
+        "topic_id": "icse-10-chemistry-ch06-t04"
+      },
+      {
+        "id": "f30",
+        "front_md": "Exam tip: equation problems",
+        "back_md": "Show the mole ratio on its own line; it earns a mark.",
+        "tag": "exam-tip",
+        "topic_id": "icse-10-chemistry-ch06-t04"
+      }
+    ],
+    "status": "draft",
+    "provenance": {
+      "origin": "human",
+      "template_version": null,
+      "model": null,
+      "generated_at": "2026-11-01",
+      "author": "claude-opus-5-5 (subject-producer)"
+    }
+  },
+  "questions": [
+    {
+      "id": "q_icse10chem_ch06_001",
+      "unit": "icse-10-chemistry-ch06",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "The percentage of oxygen in calcium carbonate, CaCO₃, is (Ca = 40, C = 12, O = 16):",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "48%"
+        },
+        {
+          "id": "b",
+          "text_md": "16%"
+        },
+        {
+          "id": "c",
+          "text_md": "40%"
+        },
+        {
+          "id": "d",
+          "text_md": "12%"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Molar mass $= 40 + 12 + 3 \\times 16 = 100$; oxygen $= \\frac{48}{100} \\times 100 = 48$% — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch06-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch06_002",
+      "unit": "icse-10-chemistry-ch06",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "The percentage of sulphur in sulphur dioxide, SO₂, is (S = 32, O = 16):",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "50%"
+        },
+        {
+          "id": "b",
+          "text_md": "32%"
+        },
+        {
+          "id": "c",
+          "text_md": "33.3%"
+        },
+        {
+          "id": "d",
+          "text_md": "64%"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Molar mass $= 32 + 2 \\times 16 = 64$; sulphur $= \\frac{32}{64} \\times 100 = 50$% — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch06-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch06_003",
+      "unit": "icse-10-chemistry-ch06",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which fertiliser has the highest percentage of nitrogen by mass? (H = 1, C = 12, N = 14, O = 16, S = 32, Cl = 35.5)",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Ammonium nitrate, NH₄NO₃ (M = 80)"
+        },
+        {
+          "id": "b",
+          "text_md": "Urea, CO(NH₂)₂ (M = 60)"
+        },
+        {
+          "id": "c",
+          "text_md": "Ammonium sulphate, (NH₄)₂SO₄ (M = 132)"
+        },
+        {
+          "id": "d",
+          "text_md": "Ammonium chloride, NH₄Cl (M = 53.5)"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Nitrogen: urea 28 ÷ 60 → 46.7%; ammonium nitrate 28 ÷ 80 → 35%; ammonium sulphate 28 ÷ 132 → 21.2%; ammonium chloride 14 ÷ 53.5 → 26.2% — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch06-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch06_004",
+      "unit": "icse-10-chemistry-ch06",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "The percentage of water of crystallisation in washing soda, Na₂CO₃·10H₂O, is (Na = 23, C = 12, O = 16, H = 1):",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "37.1%"
+        },
+        {
+          "id": "b",
+          "text_md": "62.9%"
+        },
+        {
+          "id": "c",
+          "text_md": "10%"
+        },
+        {
+          "id": "d",
+          "text_md": "18%"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Molar mass $= 2 \\times 23 + 12 + 3 \\times 16 + 10 \\times 18 = 286$; water $= \\frac{180}{286} \\times 100 \\approx 62.9$% — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch06-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch06_005",
+      "unit": "icse-10-chemistry-ch06",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Blue crystals of copper(II) sulphate lose mass when they are heated strongly.\n\n**Reason (R):** Hydrated copper(II) sulphate, CuSO₄·5H₂O, contains 25.6% copper by mass (Cu = 64).\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Both statements are true (64 ÷ 250 × 100 = 25.6%), but the loss of mass is due to the water of crystallisation being driven off — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch06-t01"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch06_006",
+      "unit": "icse-10-chemistry-ch06",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? A pure sample of a compound has the same percentage composition whatever its source.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "t"
+        ]
+      },
+      "solution_md": "True: this is the law of constant proportions.",
+      "marking_scheme": [
+        {
+          "step": "True",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch06-t01"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch06_007",
+      "unit": "icse-10-chemistry-ch06",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "The water molecules that form part of the crystal structure of a salt, as in CuSO₄·5H₂O, are called water of ___.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "crystallisation",
+              "crystallization"
+            ]
+          }
+        ]
+      },
+      "solution_md": "Water of **crystallisation**.",
+      "marking_scheme": [
+        {
+          "step": "Blank 1: \"crystallisation\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch06-t01"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch06_008",
+      "unit": "icse-10-chemistry-ch06",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "Calculate the percentage of nitrogen in calcium nitrate, Ca(NO₃)₂. (Ca = 40, N = 14, O = 16)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 17.1,
+        "tolerance": 0.1,
+        "unit": "%"
+      },
+      "solution_md": "Molar mass $= 40 + 2 \\times 14 + 6 \\times 16 = 164$ g. Percentage of nitrogen $= \\frac{28}{164} \\times 100 \\approx 17.1$%.",
+      "marking_scheme": [
+        {
+          "step": "Molar mass 164",
+          "marks": 0.5
+        },
+        {
+          "step": "17.1%",
+          "marks": 0.5
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch06-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch06_009",
+      "unit": "icse-10-chemistry-ch06",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "Calculate the percentage of water of crystallisation in gypsum, CaSO₄·2H₂O. (Ca = 40, S = 32, O = 16, H = 1)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 20.9,
+        "tolerance": 0.1,
+        "unit": "%"
+      },
+      "solution_md": "Molar mass $= 40 + 32 + 4 \\times 16 + 2 \\times 18 = 172$ g. Percentage of water $= \\frac{36}{172} \\times 100 \\approx 20.9$%.",
+      "marking_scheme": [
+        {
+          "step": "Molar mass 172",
+          "marks": 0.5
+        },
+        {
+          "step": "20.9%",
+          "marks": 0.5
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch06-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch06_010",
+      "unit": "icse-10-chemistry-ch06",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Calculate the percentage of carbon in methane, CH₄. (C = 12, H = 1)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Molar mass $= 12 + 4 = 16$; carbon $= \\frac{12}{16} \\times 100 = 75$%."
+      },
+      "solution_md": "Mass of carbon ÷ molar mass × 100.",
+      "marking_scheme": [
+        {
+          "step": "75%",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch06-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch06_011",
+      "unit": "icse-10-chemistry-ch06",
+      "language": "en",
+      "type": "short",
+      "stem_md": "What is meant by water of crystallisation? Give one example.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "The fixed number of water molecules present in one formula unit of a hydrated salt as part of its crystal structure, for example the five water molecules in CuSO₄·5H₂O."
+      },
+      "solution_md": "Definition and example.",
+      "marking_scheme": [
+        {
+          "step": "Definition with example",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch06-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch06_012",
+      "unit": "icse-10-chemistry-ch06",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Name the law which states that a pure chemical compound always contains the same elements combined in the same proportion by mass.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "The law of constant proportions (law of definite proportions)."
+      },
+      "solution_md": "Name of the law.",
+      "marking_scheme": [
+        {
+          "step": "Law of constant proportions",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch06-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch06_013",
+      "unit": "icse-10-chemistry-ch06",
+      "language": "en",
+      "type": "short",
+      "stem_md": "State what is observed when blue crystals of hydrated copper(II) sulphate are heated strongly, and why their mass decreases.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "The blue crystals change to a white powder (anhydrous copper(II) sulphate); the water of crystallisation is driven off as steam, so the mass decreases."
+      },
+      "solution_md": "Loss of water of crystallisation.",
+      "marking_scheme": [
+        {
+          "step": "Blue to white and loss of water",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch06-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch06_014",
+      "unit": "icse-10-chemistry-ch06",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Calculate the percentage of (a) copper and (b) water in hydrated copper(II) sulphate, CuSO₄·5H₂O. (Cu = 64, S = 32, O = 16, H = 1)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Molar mass $= 64 + 32 + 4 \\times 16 + 5 \\times 18 = 250$ g. (a) Copper $= \\frac{64}{250} \\times 100 = 25.6$%. (b) Water $= \\frac{90}{250} \\times 100 = 36$%."
+      },
+      "solution_md": "Molar mass of the hydrate, then each percentage.",
+      "marking_scheme": [
+        {
+          "step": "(a) 25.6%",
+          "marks": 1
+        },
+        {
+          "step": "(b) 36%",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch06-t01"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch06_015",
+      "unit": "icse-10-chemistry-ch06",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "The empirical formula of glucose, whose molecular formula is C₆H₁₂O₆, is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "C₆H₁₂O₆"
+        },
+        {
+          "id": "b",
+          "text_md": "C₂H₄O₂"
+        },
+        {
+          "id": "c",
+          "text_md": "CH₂O"
+        },
+        {
+          "id": "d",
+          "text_md": "CHO"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Dividing 6 : 12 : 6 by 6 gives 1 : 2 : 1 — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch06-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch06_016",
+      "unit": "icse-10-chemistry-ch06",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A hydrocarbon has the empirical formula CH₂ and a vapour density of 21. Its molecular formula is (C = 12, H = 1):",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "C₂H₄"
+        },
+        {
+          "id": "b",
+          "text_md": "C₄H₈"
+        },
+        {
+          "id": "c",
+          "text_md": "C₃H₆"
+        },
+        {
+          "id": "d",
+          "text_md": "CH₂"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Molar mass $= 2 \\times 21 = 42$; empirical formula mass $= 14$; $n = \\frac{42}{14} = 3$ — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch06-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch06_017",
+      "unit": "icse-10-chemistry-ch06",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which pair of compounds has the same empirical formula?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Ethane, C₂H₆, and ethene, C₂H₄"
+        },
+        {
+          "id": "b",
+          "text_md": "Methane, CH₄, and ethane, C₂H₆"
+        },
+        {
+          "id": "c",
+          "text_md": "Water, H₂O, and hydrogen peroxide, H₂O₂"
+        },
+        {
+          "id": "d",
+          "text_md": "Ethyne, C₂H₂, and benzene, C₆H₆"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "C₂H₂ and C₆H₆ both reduce to CH — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch06-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch06_018",
+      "unit": "icse-10-chemistry-ch06",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "While working out an empirical formula, the atom ratio X : Y comes out as 1 : 1.5. The empirical formula is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "XY"
+        },
+        {
+          "id": "b",
+          "text_md": "X₂Y₃"
+        },
+        {
+          "id": "c",
+          "text_md": "XY₂"
+        },
+        {
+          "id": "d",
+          "text_md": "X₃Y₂"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "1 : 1.5 is not a whole-number ratio; multiplying by 2 gives 2 : 3 — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch06-t02",
+        "icse-10-chemistry-ch06-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch06_019",
+      "unit": "icse-10-chemistry-ch06",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Ethyne, C₂H₂, and benzene, C₆H₆, have the same empirical formula.\n\n**Reason (R):** The empirical formula shows the simplest whole-number ratio of the atoms in a compound.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Both have C : H = 1 : 1, so both have the empirical formula CH; R explains A — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch06-t02"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch06_020",
+      "unit": "icse-10-chemistry-ch06",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** The molecular formula of a compound is always different from its empirical formula.\n\n**Reason (R):** Molecular formula = n × empirical formula, where n is a whole number.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "A is false: when n = 1 the two are the same (H₂O, CH₄, CO₂). R is true — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch06-t02"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch06_021",
+      "unit": "icse-10-chemistry-ch06",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? The empirical formula of a compound can be the same as its molecular formula.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "t"
+        ]
+      },
+      "solution_md": "True: for example water, H₂O, and methane, CH₄ (n = 1).",
+      "marking_scheme": [
+        {
+          "step": "True",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch06-t02"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch06_022",
+      "unit": "icse-10-chemistry-ch06",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "The molecular formula of a compound is a whole-number multiple of its ___ formula.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "empirical"
+            ]
+          }
+        ]
+      },
+      "solution_md": "Its **empirical** formula.",
+      "marking_scheme": [
+        {
+          "step": "Blank 1: \"empirical\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch06-t02"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch06_023",
+      "unit": "icse-10-chemistry-ch06",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "A compound has the empirical formula CH₂O and a molar mass of 180 g mol⁻¹. By what whole number must the empirical formula be multiplied to give the molecular formula? (C = 12, H = 1, O = 16)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 6,
+        "tolerance": 0,
+        "unit": null
+      },
+      "solution_md": "Empirical formula mass $= 12 + 2 + 16 = 30$. $n = \\frac{180}{30} = 6$ (molecular formula C₆H₁₂O₆).",
+      "marking_scheme": [
+        {
+          "step": "Empirical formula mass 30",
+          "marks": 0.5
+        },
+        {
+          "step": "n = 6",
+          "marks": 0.5
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch06-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch06_024",
+      "unit": "icse-10-chemistry-ch06",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "A gaseous hydrocarbon has the empirical formula CH and a vapour density of 13. How many carbon atoms are there in one molecule? (C = 12, H = 1)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 2,
+        "tolerance": 0,
+        "unit": null
+      },
+      "solution_md": "Molar mass $= 2 \\times 13 = 26$. Empirical formula mass $= 12 + 1 = 13$. $n = \\frac{26}{13} = 2$, so the molecular formula is C₂H₂ with 2 carbon atoms.",
+      "marking_scheme": [
+        {
+          "step": "M = 26, n = 2",
+          "marks": 0.5
+        },
+        {
+          "step": "2 carbon atoms",
+          "marks": 0.5
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch06-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch06_025",
+      "unit": "icse-10-chemistry-ch06",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Define empirical formula.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "The empirical formula of a compound shows the simplest whole-number ratio of the atoms of the different elements present in it."
+      },
+      "solution_md": "Definition.",
+      "marking_scheme": [
+        {
+          "step": "Simplest whole-number ratio of atoms",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch06-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch06_026",
+      "unit": "icse-10-chemistry-ch06",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Define molecular formula.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "The molecular formula shows the actual number of atoms of each element present in one molecule of a compound."
+      },
+      "solution_md": "Definition.",
+      "marking_scheme": [
+        {
+          "step": "Actual number of atoms in one molecule",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch06-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch06_027",
+      "unit": "icse-10-chemistry-ch06",
+      "language": "en",
+      "type": "short",
+      "stem_md": "The molecular formula of hydrogen peroxide is H₂O₂. Write its empirical formula.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "HO (ratio 2 : 2 = 1 : 1)."
+      },
+      "solution_md": "Simplest ratio.",
+      "marking_scheme": [
+        {
+          "step": "HO",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch06-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch06_028",
+      "unit": "icse-10-chemistry-ch06",
+      "language": "en",
+      "type": "short",
+      "stem_md": "A compound has the empirical formula CH₂ and a molar mass of 70 g mol⁻¹. Write its molecular formula. (C = 12, H = 1)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "$n = \\frac{70}{14} = 5$, so the molecular formula is C₅H₁₀."
+      },
+      "solution_md": "n = M ÷ 14.",
+      "marking_scheme": [
+        {
+          "step": "C₅H₁₀",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch06-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch06_029",
+      "unit": "icse-10-chemistry-ch06",
+      "language": "en",
+      "type": "short",
+      "stem_md": "A compound of nitrogen and hydrogen contains 82.35% nitrogen and 17.65% hydrogen by mass. Find its empirical formula. (N = 14, H = 1)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Nitrogen: $\\frac{82.35}{14} \\approx 5.88$. Hydrogen: $\\frac{17.65}{1} = 17.65$. Dividing by the smaller: nitrogen 1, hydrogen $\\frac{17.65}{5.88} \\approx 3.0$. Empirical formula NH₃."
+      },
+      "solution_md": "Table method.",
+      "marking_scheme": [
+        {
+          "step": "Division by atomic masses and by the smaller",
+          "marks": 1
+        },
+        {
+          "step": "NH₃",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch06-t02"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch06_030",
+      "unit": "icse-10-chemistry-ch06",
+      "language": "en",
+      "type": "short",
+      "stem_md": "A hydrocarbon contains 92.3% carbon and 7.7% hydrogen by mass, and its vapour density is 39. Find (a) its empirical formula, (b) its molar mass and (c) its molecular formula. (C = 12, H = 1)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Carbon: $\\frac{92.3}{12} \\approx 7.69$; hydrogen: $\\frac{7.7}{1} = 7.7$. Ratio 1 : 1, so the empirical formula is CH (formula mass 13). (b) Molar mass $= 2 \\times 39 = 78$. (c) $n = \\frac{78}{13} = 6$, so the molecular formula is C₆H₆."
+      },
+      "solution_md": "Empirical formula, molar mass from vapour density, then n.",
+      "marking_scheme": [
+        {
+          "step": "(a) CH",
+          "marks": 1
+        },
+        {
+          "step": "(b) 78",
+          "marks": 1
+        },
+        {
+          "step": "(c) C₆H₆",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch06-t02"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch06_031",
+      "unit": "icse-10-chemistry-ch06",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "0.24 g of magnesium ribbon is burnt completely in air and gives 0.40 g of magnesium oxide. The empirical formula of the oxide is (Mg = 24, O = 16):",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Mg₂O"
+        },
+        {
+          "id": "b",
+          "text_md": "MgO"
+        },
+        {
+          "id": "c",
+          "text_md": "MgO₂"
+        },
+        {
+          "id": "d",
+          "text_md": "Mg₂O₃"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Oxygen $= 0.40 - 0.24 = 0.16$ g. Magnesium $\\frac{0.24}{24} = 0.01$; oxygen $\\frac{0.16}{16} = 0.01$; ratio 1 : 1 — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch06-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch06_032",
+      "unit": "icse-10-chemistry-ch06",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "In an oxide of nitrogen, 1.4 g of nitrogen is combined with 1.6 g of oxygen. The empirical formula of the oxide is (N = 14, O = 16):",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "N₂O"
+        },
+        {
+          "id": "b",
+          "text_md": "NO₂"
+        },
+        {
+          "id": "c",
+          "text_md": "NO"
+        },
+        {
+          "id": "d",
+          "text_md": "N₂O₃"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Nitrogen $\\frac{1.4}{14} = 0.1$; oxygen $\\frac{1.6}{16} = 0.1$; ratio 1 : 1 — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch06-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch06_033",
+      "unit": "icse-10-chemistry-ch06",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "1.44 g of a red oxide of copper is reduced by heating in hydrogen and leaves 1.28 g of copper. The empirical formula of the oxide is (Cu = 64, O = 16):",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Cu₂O"
+        },
+        {
+          "id": "b",
+          "text_md": "CuO"
+        },
+        {
+          "id": "c",
+          "text_md": "CuO₂"
+        },
+        {
+          "id": "d",
+          "text_md": "Cu₃O₂"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Oxygen $= 1.44 - 1.28 = 0.16$ g. Copper $\\frac{1.28}{64} = 0.02$; oxygen $\\frac{0.16}{16} = 0.01$; ratio 2 : 1 — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch06-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch06_034",
+      "unit": "icse-10-chemistry-ch06",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? To find an empirical formula from combining masses, the mass of each element is divided by its atomic number.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "f"
+        ]
+      },
+      "solution_md": "False: each mass is divided by the atomic mass of the element, to give the relative number of moles of atoms.",
+      "marking_scheme": [
+        {
+          "step": "False, with the correction",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch06-t03"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch06_035",
+      "unit": "icse-10-chemistry-ch06",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "A metal M has an atomic mass of 27. 5.4 g of M combines with 4.8 g of oxygen to form an oxide with the empirical formula M₂Oₓ. Find the value of x. (O = 16)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 3,
+        "tolerance": 0,
+        "unit": null
+      },
+      "solution_md": "Moles of M atoms $= \\frac{5.4}{27} = 0.2$; moles of O atoms $= \\frac{4.8}{16} = 0.3$. Ratio M : O $= 1 : 1.5$ $= 2 : 3$, so $x = 1.5 \\times 2 = 3$ (the oxide is M₂O₃).",
+      "marking_scheme": [
+        {
+          "step": "Ratio 0.2 : 0.3",
+          "marks": 0.5
+        },
+        {
+          "step": "x = 3",
+          "marks": 0.5
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch06-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch06_036",
+      "unit": "icse-10-chemistry-ch06",
+      "language": "en",
+      "type": "short",
+      "stem_md": "In a compound, 0.6 g of carbon is combined with 1.6 g of oxygen. Write its empirical formula. (C = 12, O = 16)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Carbon $\\frac{0.6}{12} = 0.05$; oxygen $\\frac{1.6}{16} = 0.1$; ratio 1 : 2, so CO₂."
+      },
+      "solution_md": "Ratio of moles of atoms.",
+      "marking_scheme": [
+        {
+          "step": "CO₂",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch06-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch06_037",
+      "unit": "icse-10-chemistry-ch06",
+      "language": "en",
+      "type": "short",
+      "stem_md": "3.2 g of sulphur combines with 4.8 g of oxygen to form an oxide. Find the empirical formula of the oxide. (S = 32, O = 16)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Sulphur $\\frac{3.2}{32} = 0.1$; oxygen $\\frac{4.8}{16} = 0.3$. Dividing by 0.1 gives 1 : 3, so the empirical formula is SO₃."
+      },
+      "solution_md": "Moles of atoms, then the ratio.",
+      "marking_scheme": [
+        {
+          "step": "Moles 0.1 and 0.3",
+          "marks": 1
+        },
+        {
+          "step": "SO₃",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch06-t03"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch06_038",
+      "unit": "icse-10-chemistry-ch06",
+      "language": "en",
+      "type": "short",
+      "stem_md": "2.46 g of hydrated magnesium sulphate, MgSO₄·xH₂O, is heated until all its water is driven off; 1.20 g of anhydrous magnesium sulphate remains. Calculate (a) the moles of MgSO₄, (b) the moles of water lost and (c) the value of x. (Mg = 24, S = 32, O = 16, H = 1)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Molar mass of MgSO₄ $= 24 + 32 + 4 \\times 16 = 120$, so moles $= \\frac{1.20}{120} = 0.01$. (b) Water lost $= 2.46 - 1.20 = 1.26$ g, so moles $= \\frac{1.26}{18} = 0.07$. (c) $x = \\frac{0.07}{0.01} = 7$; the formula is MgSO₄·7H₂O."
+      },
+      "solution_md": "Moles of anhydrous salt and of water; their ratio.",
+      "marking_scheme": [
+        {
+          "step": "(a) 0.01 mol",
+          "marks": 1
+        },
+        {
+          "step": "(b) 0.07 mol",
+          "marks": 1
+        },
+        {
+          "step": "(c) x = 7",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch06-t01",
+        "icse-10-chemistry-ch06-t03"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch06_039",
+      "unit": "icse-10-chemistry-ch06",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "What mass of calcium oxide is formed when 50 g of calcium carbonate is heated strongly until it decomposes completely? CaCO₃ → CaO + CO₂ (Ca = 40, C = 12, O = 16)",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "56 g"
+        },
+        {
+          "id": "b",
+          "text_md": "22 g"
+        },
+        {
+          "id": "c",
+          "text_md": "28 g"
+        },
+        {
+          "id": "d",
+          "text_md": "50 g"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Moles of CaCO₃ $= \\frac{50}{100} = 0.5$, giving 0.5 mol of CaO; mass $= 0.5 \\times 56 = 28$ g — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch06-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch06_040",
+      "unit": "icse-10-chemistry-ch06",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "What volume of hydrogen, measured at STP, is produced when 2.4 g of magnesium reacts with excess dilute hydrochloric acid? Mg + 2HCl → MgCl₂ + H₂ (Mg = 24)",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "4.48 dm³"
+        },
+        {
+          "id": "b",
+          "text_md": "1.12 dm³"
+        },
+        {
+          "id": "c",
+          "text_md": "22.4 dm³"
+        },
+        {
+          "id": "d",
+          "text_md": "2.24 dm³"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Moles of Mg $= \\frac{2.4}{24} = 0.1$, giving 0.1 mol of H₂; volume $= 0.1 \\times 22.4 = 2.24$ dm³ — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch06-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch06_041",
+      "unit": "icse-10-chemistry-ch06",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "What volume of oxygen is needed to convert 8 dm³ of sulphur dioxide completely into sulphur trioxide, all volumes at the same temperature and pressure? 2SO₂ + O₂ → 2SO₃",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "4 dm³"
+        },
+        {
+          "id": "b",
+          "text_md": "8 dm³"
+        },
+        {
+          "id": "c",
+          "text_md": "16 dm³"
+        },
+        {
+          "id": "d",
+          "text_md": "2 dm³"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Sulphur dioxide and oxygen react in the volume ratio 2 : 1, so oxygen $= 8 \\div 2 = 4$ dm³ — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch06-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch06_042",
+      "unit": "icse-10-chemistry-ch06",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "What mass of oxygen is needed to burn 6 g of carbon completely to carbon dioxide? C + O₂ → CO₂ (C = 12, O = 16)",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "8 g"
+        },
+        {
+          "id": "b",
+          "text_md": "32 g"
+        },
+        {
+          "id": "c",
+          "text_md": "22 g"
+        },
+        {
+          "id": "d",
+          "text_md": "16 g"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Moles of carbon $= \\frac{6}{12} = 0.5$, needing 0.5 mol of O₂; mass $= 0.5 \\times 32 = 16$ g — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch06-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch06_043",
+      "unit": "icse-10-chemistry-ch06",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "In the reaction 2KClO₃ → 2KCl + 3O₂, how many moles of oxygen are formed from 4 mol of potassium chlorate?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "3 mol"
+        },
+        {
+          "id": "b",
+          "text_md": "6 mol"
+        },
+        {
+          "id": "c",
+          "text_md": "4 mol"
+        },
+        {
+          "id": "d",
+          "text_md": "2.67 mol"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Mole ratio KClO₃ to O₂ is 2 : 3, so oxygen $= 4 \\times \\frac{3}{2} = 6$ mol — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch06-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch06_044",
+      "unit": "icse-10-chemistry-ch06",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "4 g of hydrogen and 32 g of oxygen are mixed and exploded: 2H₂ + O₂ → 2H₂O. The mass of water formed is (H = 1, O = 16):",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "18 g"
+        },
+        {
+          "id": "b",
+          "text_md": "72 g"
+        },
+        {
+          "id": "c",
+          "text_md": "34 g"
+        },
+        {
+          "id": "d",
+          "text_md": "36 g"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Hydrogen $\\frac{4}{2} = 2$ mol and oxygen $\\frac{32}{32} = 1$ mol: exactly the 2 : 1 ratio, so 2 mol of water forms, $2 \\times 18 = 36$ g (mass is conserved) — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch06-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch06_045",
+      "unit": "icse-10-chemistry-ch06",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "What volume of carbon dioxide, at STP, is obtained by heating 21 g of sodium hydrogencarbonate until it decomposes completely? 2NaHCO₃ → Na₂CO₃ + H₂O + CO₂ (Na = 23, H = 1, C = 12, O = 16)",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "5.6 dm³"
+        },
+        {
+          "id": "b",
+          "text_md": "1.4 dm³"
+        },
+        {
+          "id": "c",
+          "text_md": "22.4 dm³"
+        },
+        {
+          "id": "d",
+          "text_md": "2.8 dm³"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Molar mass $= 23 + 1 + 12 + 3 \\times 16 = 84$; moles $= \\frac{21}{84} = 0.25$; carbon dioxide $= 0.25 \\div 2 = 0.125$ mol; volume $= 0.125 \\times 22.4 = 2.8$ dm³ — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch06-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch06_046",
+      "unit": "icse-10-chemistry-ch06",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "The calculation of the quantities of reactants and products from a balanced chemical equation is called:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "electrolysis"
+        },
+        {
+          "id": "b",
+          "text_md": "catalysis"
+        },
+        {
+          "id": "c",
+          "text_md": "stoichiometry"
+        },
+        {
+          "id": "d",
+          "text_md": "crystallisation"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch06-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch06_047",
+      "unit": "icse-10-chemistry-ch06",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which statement about the equation 2H₂ + O₂ → 2H₂O is correct?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "2 mol of hydrogen react with 1 mol of oxygen to give 2 mol of water"
+        },
+        {
+          "id": "b",
+          "text_md": "2 g of hydrogen react with 1 g of oxygen to give 2 g of water"
+        },
+        {
+          "id": "c",
+          "text_md": "4 mol of reactants give 4 mol of product"
+        },
+        {
+          "id": "d",
+          "text_md": "2 volumes of hydrogen react with 1 volume of oxygen to give 2 volumes of liquid water"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "The coefficients are a mole ratio, not a mass ratio; 3 mol of reactants give 2 mol of product, and liquid water has no gas volume — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch06-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch06_048",
+      "unit": "icse-10-chemistry-ch06",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** In any chemical reaction, the total mass of the reactants used equals the total mass of the products.\n\n**Reason (R):** In any chemical reaction, the total number of moles of reactants equals the total number of moles of products.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "A is true (conservation of mass). R is false: in 2H₂ + O₂ → 2H₂O, 3 mol of reactants give 2 mol of product — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch06-t04"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch06_049",
+      "unit": "icse-10-chemistry-ch06",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** In the reaction N₂ + 3H₂ → 2NH₃, 1 mol of nitrogen gives 34 g of ammonia (N = 14, H = 1).\n\n**Reason (R):** The coefficients of a balanced equation give the ratio in which moles react and are formed.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "1 mol of N₂ gives 2 mol of NH₃, that is 2 × 17 = 34 g; R explains A — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch06-t04"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch06_050",
+      "unit": "icse-10-chemistry-ch06",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? The coefficients of a balanced equation give the ratio of the masses in which the substances react.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "f"
+        ]
+      },
+      "solution_md": "False: the coefficients give the mole ratio; masses are found by multiplying the moles by the molar masses.",
+      "marking_scheme": [
+        {
+          "step": "False, with the correction",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch06-t04"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch06_051",
+      "unit": "icse-10-chemistry-ch06",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "When 1 mol of carbon burns completely in oxygen, the volume of carbon dioxide formed at STP is ___ dm³.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "22.4"
+            ]
+          }
+        ]
+      },
+      "solution_md": "C + O₂ → CO₂: 1 mol of carbon gives 1 mol of carbon dioxide, which occupies **22.4** dm³ at STP.",
+      "marking_scheme": [
+        {
+          "step": "Blank 1: \"22.4\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch06-t04"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch06_052",
+      "unit": "icse-10-chemistry-ch06",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "What mass of copper is obtained when 8 g of copper(II) oxide is reduced completely by hydrogen? CuO + H₂ → Cu + H₂O (Cu = 64, O = 16)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 6.4,
+        "tolerance": 0.05,
+        "unit": "g"
+      },
+      "solution_md": "Molar mass of CuO $= 64 + 16 = 80$; moles $= \\frac{8}{80} = 0.1$. Mole ratio 1 : 1, so mass of copper $= 0.1 \\times 64 = 6.4$ g.",
+      "marking_scheme": [
+        {
+          "step": "0.1 mol",
+          "marks": 0.5
+        },
+        {
+          "step": "6.4 g",
+          "marks": 0.5
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch06-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch06_053",
+      "unit": "icse-10-chemistry-ch06",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "What volume of oxygen, at STP, is needed to burn 3.6 g of magnesium completely? 2Mg + O₂ → 2MgO (Mg = 24)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 1.68,
+        "tolerance": 0.01,
+        "unit": "dm³"
+      },
+      "solution_md": "Moles of Mg $= \\frac{3.6}{24} = 0.15$. Mole ratio Mg to O₂ is 2 : 1, so oxygen $= 0.15 \\div 2 = 0.075$ mol. Volume $= 0.075 \\times 22.4 = 1.68$ dm³.",
+      "marking_scheme": [
+        {
+          "step": "0.075 mol O₂",
+          "marks": 0.5
+        },
+        {
+          "step": "1.68 dm³",
+          "marks": 0.5
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch06-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch06_054",
+      "unit": "icse-10-chemistry-ch06",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "6.72 dm³ of nitrogen, measured at STP, reacts completely with hydrogen: N₂ + 3H₂ → 2NH₃. What mass of ammonia is formed? (N = 14, H = 1)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 10.2,
+        "tolerance": 0.05,
+        "unit": "g"
+      },
+      "solution_md": "Moles of N₂ $= \\frac{6.72}{22.4} = 0.3$. Mole ratio 1 : 2, so ammonia $= 0.3 \\times 2 = 0.6$ mol. Mass $= 0.6 \\times 17 = 10.2$ g.",
+      "marking_scheme": [
+        {
+          "step": "0.6 mol NH₃",
+          "marks": 0.5
+        },
+        {
+          "step": "10.2 g",
+          "marks": 0.5
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch06-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch06_055",
+      "unit": "icse-10-chemistry-ch06",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "In the catalytic oxidation of ammonia, 4NH₃ + 5O₂ → 4NO + 6H₂O, what volume of oxygen reacts with 200 cm³ of ammonia? All volumes are measured at the same temperature and pressure.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 250,
+        "tolerance": 0,
+        "unit": "cm³"
+      },
+      "solution_md": "Volume ratio NH₃ to O₂ is 4 : 5, so oxygen $= 200 \\times \\frac{5}{4} = 250$ cm³.",
+      "marking_scheme": [
+        {
+          "step": "Ratio 4 : 5",
+          "marks": 0.5
+        },
+        {
+          "step": "250 cm³",
+          "marks": 0.5
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch06-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch06_056",
+      "unit": "icse-10-chemistry-ch06",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "What mass of potassium chlorate must be heated to give 3.36 dm³ of oxygen at STP? 2KClO₃ → 2KCl + 3O₂ (K = 39, Cl = 35.5, O = 16)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 12.25,
+        "tolerance": 0.05,
+        "unit": "g"
+      },
+      "solution_md": "Moles of O₂ $= \\frac{3.36}{22.4} = 0.15$. Mole ratio KClO₃ to O₂ is 2 : 3, so KClO₃ $= 0.15 \\times \\frac{2}{3} = 0.1$ mol. Molar mass $= 39 + 35.5 + 3 \\times 16 = 122.5$, so mass $= 0.1 \\times 122.5 = 12.25$ g.",
+      "marking_scheme": [
+        {
+          "step": "0.1 mol KClO₃",
+          "marks": 0.5
+        },
+        {
+          "step": "12.25 g",
+          "marks": 0.5
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch06-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch06_057",
+      "unit": "icse-10-chemistry-ch06",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "What mass of water is formed when 1.12 dm³ of methane, measured at STP, burns completely? CH₄ + 2O₂ → CO₂ + 2H₂O (H = 1, O = 16)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 1.8,
+        "tolerance": 0.02,
+        "unit": "g"
+      },
+      "solution_md": "Moles of CH₄ $= \\frac{1.12}{22.4} = 0.05$. Mole ratio 1 : 2, so water $= 0.05 \\times 2 = 0.1$ mol. Mass $= 0.1 \\times 18 = 1.8$ g.",
+      "marking_scheme": [
+        {
+          "step": "0.1 mol water",
+          "marks": 0.5
+        },
+        {
+          "step": "1.8 g",
+          "marks": 0.5
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch06-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch06_058",
+      "unit": "icse-10-chemistry-ch06",
+      "language": "en",
+      "type": "short",
+      "stem_md": "What mass of sodium hydroxide reacts exactly with 0.1 mol of sulphuric acid? 2NaOH + H₂SO₄ → Na₂SO₄ + 2H₂O (Na = 23, O = 16, H = 1)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Moles of NaOH $= 0.1 \\times 2 = 0.2$; mass $= 0.2 \\times 40 = 8$ g."
+      },
+      "solution_md": "Mole ratio 2 : 1.",
+      "marking_scheme": [
+        {
+          "step": "8 g",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch06-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch06_059",
+      "unit": "icse-10-chemistry-ch06",
+      "language": "en",
+      "type": "short",
+      "stem_md": "How many moles of oxygen are needed to burn 2 mol of ethane completely? 2C₂H₆ + 7O₂ → 4CO₂ + 6H₂O",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "The equation shows 2 mol of ethane reacting with 7 mol of oxygen, so 7 mol of oxygen is needed."
+      },
+      "solution_md": "Read from the coefficients.",
+      "marking_scheme": [
+        {
+          "step": "7 mol",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch06-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch06_060",
+      "unit": "icse-10-chemistry-ch06",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Why can the volume of a gaseous product be found from the volume of a gaseous reactant without using molar masses?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "At the same temperature and pressure, gas volumes are in the same ratio as the moles (Gay-Lussac's and Avogadro's laws), so the volume ratio is simply the ratio of the coefficients."
+      },
+      "solution_md": "Volume ratio = mole ratio.",
+      "marking_scheme": [
+        {
+          "step": "Volume ratio equals the ratio of coefficients",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch06-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch06_061",
+      "unit": "icse-10-chemistry-ch06",
+      "language": "en",
+      "type": "short",
+      "stem_md": "2.8 g of iron filings is heated with excess sulphur: Fe + S → FeS. Calculate (a) the moles of sulphur that react and (b) the mass of iron(II) sulphide formed. (Fe = 56, S = 32)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Moles of iron $= \\frac{2.8}{56} = 0.05$; mole ratio 1 : 1, so 0.05 mol of sulphur reacts. (b) Molar mass of FeS $= 56 + 32 = 88$; mass $= 0.05 \\times 88 = 4.4$ g."
+      },
+      "solution_md": "Moles of iron, ratio 1 : 1.",
+      "marking_scheme": [
+        {
+          "step": "(a) 0.05 mol",
+          "marks": 1
+        },
+        {
+          "step": "(b) 4.4 g",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch06-t04"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch06_062",
+      "unit": "icse-10-chemistry-ch06",
+      "language": "en",
+      "type": "short",
+      "stem_md": "A student mixes 1 g of hydrogen with 1 g of oxygen and explodes the mixture: 2H₂ + O₂ → 2H₂O. She expects 2 g of water. Show by calculation how much water actually forms, and explain the difference. (H = 1, O = 16)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Hydrogen $= \\frac{1}{2} = 0.5$ mol; oxygen $= \\frac{1}{32} = 0.03125$ mol. The oxygen needs only $0.03125 \\times 2 = 0.0625$ mol of hydrogen, so oxygen is used up and hydrogen is in excess. Water formed $= 0.0625$ mol $= 0.0625 \\times 18 = 1.125$ g. The rest of the 2 g, 0.875 g, is unreacted hydrogen: the amount of product is set by the reactant that runs out, not by the total mass mixed."
+      },
+      "solution_md": "Oxygen is used up first; hydrogen remains.",
+      "marking_scheme": [
+        {
+          "step": "Moles and the reactant used up (oxygen)",
+          "marks": 1
+        },
+        {
+          "step": "1.125 g of water with the explanation",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 4,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch06-t04"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch06_063",
+      "unit": "icse-10-chemistry-ch06",
+      "language": "en",
+      "type": "short",
+      "stem_md": "5.6 g of iron reacts with excess dilute hydrochloric acid: Fe + 2HCl → FeCl₂ + H₂. Calculate (a) the moles of iron, (b) the volume of hydrogen formed at STP and (c) the mass of iron(II) chloride formed. (Fe = 56, Cl = 35.5)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Moles of iron $= \\frac{5.6}{56} = 0.1$. (b) Mole ratio Fe to H₂ is 1 : 1, so volume of hydrogen $= 0.1 \\times 22.4 = 2.24$ dm³. (c) Molar mass of FeCl₂ $= 56 + 2 \\times 35.5 = 127$; mass $= 0.1 \\times 127 = 12.7$ g."
+      },
+      "solution_md": "Moles, ratio 1 : 1, then volume and mass.",
+      "marking_scheme": [
+        {
+          "step": "(a) 0.1 mol",
+          "marks": 1
+        },
+        {
+          "step": "(b) 2.24 dm³",
+          "marks": 1
+        },
+        {
+          "step": "(c) 12.7 g",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch06-t04"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch06_064",
+      "unit": "icse-10-chemistry-ch06",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "Complete each sentence by choosing the correct word from the bracket.\n\n(a) The simplest whole-number ratio of atoms in a compound is shown by its ___ (empirical / molecular) formula.\n\n(b) If an atom ratio works out as 1 : 1.33, all the numbers are multiplied by ___ (2 / 3) to make whole numbers.\n\n(c) For a gas, molar mass = 2 × ___ (vapour density / atomic mass).",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "empirical"
+            ]
+          },
+          {
+            "accepted": [
+              "3"
+            ]
+          },
+          {
+            "accepted": [
+              "vapour density"
+            ]
+          }
+        ]
+      },
+      "solution_md": "(a) **empirical**; (b) **3** (1.33 × 3 = 4, giving 3 : 4); (c) **vapour density**.",
+      "marking_scheme": [
+        {
+          "step": "Blank 1: \"empirical\"",
+          "marks": 1
+        },
+        {
+          "step": "Blank 2: \"3\"",
+          "marks": 1
+        },
+        {
+          "step": "Blank 3: \"vapour density\"",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch06-t02"
+      ],
+      "expected_time_sec": 135,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch06_065",
+      "unit": "icse-10-chemistry-ch06",
+      "language": "en",
+      "type": "match",
+      "stem_md": "Match each compound in Column A with its empirical formula in Column B.",
+      "options": [
+        {
+          "id": "1",
+          "text_md": "Glucose, C₆H₁₂O₆"
+        },
+        {
+          "id": "2",
+          "text_md": "Benzene, C₆H₆"
+        },
+        {
+          "id": "3",
+          "text_md": "Hydrogen peroxide, H₂O₂"
+        },
+        {
+          "id": "4",
+          "text_md": "Ethane, C₂H₆"
+        },
+        {
+          "id": "5",
+          "text_md": "Butene, C₄H₈"
+        }
+      ],
+      "match_right": [
+        {
+          "id": "p",
+          "text_md": "CH₃"
+        },
+        {
+          "id": "q",
+          "text_md": "CH"
+        },
+        {
+          "id": "r",
+          "text_md": "CH₂"
+        },
+        {
+          "id": "s",
+          "text_md": "CH₂O"
+        },
+        {
+          "id": "t",
+          "text_md": "HO"
+        }
+      ],
+      "answer": {
+        "pairs": [
+          {
+            "left_id": "1",
+            "right_id": "s"
+          },
+          {
+            "left_id": "2",
+            "right_id": "q"
+          },
+          {
+            "left_id": "3",
+            "right_id": "t"
+          },
+          {
+            "left_id": "4",
+            "right_id": "p"
+          },
+          {
+            "left_id": "5",
+            "right_id": "r"
+          }
+        ]
+      },
+      "solution_md": "Glucose → CH₂O; benzene → CH; hydrogen peroxide → HO; ethane → CH₃; butene → CH₂ (divide each set of subscripts by their highest common factor).",
+      "marking_scheme": [
+        {
+          "step": "1 → s",
+          "marks": 1
+        },
+        {
+          "step": "2 → q",
+          "marks": 1
+        },
+        {
+          "step": "3 → t",
+          "marks": 1
+        },
+        {
+          "step": "4 → p",
+          "marks": 1
+        },
+        {
+          "step": "5 → r",
+          "marks": 1
+        }
+      ],
+      "marks": 5,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch06-t02"
+      ],
+      "expected_time_sec": 200,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch06_066",
+      "unit": "icse-10-chemistry-ch06",
+      "language": "en",
+      "type": "match",
+      "stem_md": "Match each conversion in Column A with the factor used in Column B.",
+      "options": [
+        {
+          "id": "1",
+          "text_md": "Moles of a gas → volume at STP"
+        },
+        {
+          "id": "2",
+          "text_md": "Mass → moles"
+        },
+        {
+          "id": "3",
+          "text_md": "Moles → number of molecules"
+        },
+        {
+          "id": "4",
+          "text_md": "Moles of A → moles of B"
+        }
+      ],
+      "match_right": [
+        {
+          "id": "p",
+          "text_md": "÷ molar mass"
+        },
+        {
+          "id": "q",
+          "text_md": "× mole ratio from the equation"
+        },
+        {
+          "id": "r",
+          "text_md": "× 22.4 dm³"
+        },
+        {
+          "id": "s",
+          "text_md": "× Avogadro’s number"
+        }
+      ],
+      "answer": {
+        "pairs": [
+          {
+            "left_id": "1",
+            "right_id": "r"
+          },
+          {
+            "left_id": "2",
+            "right_id": "p"
+          },
+          {
+            "left_id": "3",
+            "right_id": "s"
+          },
+          {
+            "left_id": "4",
+            "right_id": "q"
+          }
+        ]
+      },
+      "solution_md": "Moles of gas → × 22.4 dm³; mass → ÷ molar mass; moles → × Avogadro’s number; moles of A → × mole ratio B : A.",
+      "marking_scheme": [
+        {
+          "step": "1 → r",
+          "marks": 1
+        },
+        {
+          "step": "2 → p",
+          "marks": 1
+        },
+        {
+          "step": "3 → s",
+          "marks": 1
+        },
+        {
+          "step": "4 → q",
+          "marks": 1
+        }
+      ],
+      "marks": 4,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch06-t04"
+      ],
+      "expected_time_sec": 160,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch06_067",
+      "unit": "icse-10-chemistry-ch06",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Distinguish between empirical formula and molecular formula, using glucose, C₆H₁₂O₆, as an example. [2]\n\n(b) Calculate the percentage of water of crystallisation in Glauber's salt, Na₂SO₄·10H₂O. (Na = 23, S = 32, O = 16, H = 1) [2]\n\n(c) An organic compound contains 54.55% carbon, 9.09% hydrogen and 36.36% oxygen. Its vapour density is 44. Find its empirical formula and its molecular formula. (C = 12, H = 1, O = 16) [3]\n\n(d) An oxide of nitrogen contains 30.4% nitrogen. (i) Find its empirical formula. (ii) Its vapour density is 46; find its molecular formula. (N = 14, O = 16) [3]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) The empirical formula gives the simplest whole-number ratio of atoms; the molecular formula gives the actual number of atoms in one molecule. Glucose: molecular formula C₆H₁₂O₆, empirical formula CH₂O.\n\n(b) Molar mass $= 2 \\times 23 + 32 + 4 \\times 16 + 10 \\times 18 = 322$. Water $= \\frac{180}{322} \\times 100 \\approx 55.9$%.\n\n(c) Carbon $\\frac{54.55}{12} \\approx 4.55$; hydrogen $\\frac{9.09}{1} = 9.09$; oxygen $\\frac{36.36}{16} \\approx 2.27$. Dividing by 2.27 gives 2 : 4 : 1, so the empirical formula is C₂H₄O (formula mass 44). Molar mass $= 2 \\times 44 = 88$, $n = \\frac{88}{44} = 2$, so the molecular formula is C₄H₈O₂.\n\n(d) (i) Oxygen $= 100 - 30.4 = 69.6$%. Nitrogen $\\frac{30.4}{14} \\approx 2.17$; oxygen $\\frac{69.6}{16} = 4.35$; ratio 1 : 2, so NO₂ (formula mass 46). (ii) Molar mass $= 2 \\times 46 = 92$, $n = \\frac{92}{46} = 2$, so N₂O₄."
+      },
+      "solution_md": "Definitions; hydrate percentage; table method and n twice.",
+      "marking_scheme": [
+        {
+          "step": "(a) difference",
+          "marks": 1
+        },
+        {
+          "step": "(a) glucose example",
+          "marks": 1
+        },
+        {
+          "step": "(b) molar mass 322",
+          "marks": 1
+        },
+        {
+          "step": "(b) 55.9%",
+          "marks": 1
+        },
+        {
+          "step": "(c) ratio table",
+          "marks": 1
+        },
+        {
+          "step": "(c) C₂H₄O",
+          "marks": 1
+        },
+        {
+          "step": "(c) C₄H₈O₂",
+          "marks": 1
+        },
+        {
+          "step": "(d)(i) NO₂",
+          "marks": 1.5
+        },
+        {
+          "step": "(d)(ii) N₂O₄",
+          "marks": 1.5
+        }
+      ],
+      "marks": 10,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch06-t01",
+        "icse-10-chemistry-ch06-t02"
+      ],
+      "expected_time_sec": 1080,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch06_068",
+      "unit": "icse-10-chemistry-ch06",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) For the reaction 2CO + O₂ → 2CO₂, state what the equation tells you about (i) the moles and (ii) the volumes of the gases at the same temperature and pressure. [2]\n\n(b) Iron(III) oxide is reduced by carbon monoxide: Fe₂O₃ + 3CO → 2Fe + 3CO₂. Calculate the mass of iron obtained from 80 g of iron(III) oxide. (Fe = 56, O = 16) [2]\n\n(c) For the reaction in (b), calculate the volume of carbon monoxide needed and the volume of carbon dioxide formed, both at STP. [3]\n\n(d) Calculate the mass of the carbon dioxide formed in (c) and the number of its molecules. (C = 12, O = 16; Avogadro’s number = 6 × 10²³) [3]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) (i) 2 mol of carbon monoxide react with 1 mol of oxygen to form 2 mol of carbon dioxide. (ii) 2 volumes of carbon monoxide react with 1 volume of oxygen to give 2 volumes of carbon dioxide.\n\n(b) Molar mass of Fe₂O₃ $= 2 \\times 56 + 3 \\times 16 = 160$; moles $= \\frac{80}{160} = 0.5$. Iron $= 0.5 \\times 2 = 1$ mol $= 56$ g.\n\n(c) Carbon monoxide $= 0.5 \\times 3 = 1.5$ mol; volume $= 1.5 \\times 22.4 = 33.6$ dm³. Carbon dioxide $= 1.5$ mol, also 33.6 dm³.\n\n(d) Mass $= 1.5 \\times 44 = 66$ g. Molecules $= 1.5 \\times 6 \\times 10^{23} = 9 \\times 10^{23}$."
+      },
+      "solution_md": "Mole and volume ratios; moles of Fe₂O₃ first.",
+      "marking_scheme": [
+        {
+          "step": "(a)(i) moles",
+          "marks": 1
+        },
+        {
+          "step": "(a)(ii) volumes",
+          "marks": 1
+        },
+        {
+          "step": "(b) 0.5 mol",
+          "marks": 1
+        },
+        {
+          "step": "(b) 56 g",
+          "marks": 1
+        },
+        {
+          "step": "(c) 33.6 dm³ of CO",
+          "marks": 1.5
+        },
+        {
+          "step": "(c) 33.6 dm³ of CO₂",
+          "marks": 1.5
+        },
+        {
+          "step": "(d) 66 g",
+          "marks": 1.5
+        },
+        {
+          "step": "(d) 9 × 10²³ molecules",
+          "marks": 1.5
+        }
+      ],
+      "marks": 10,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch06-t04"
+      ],
+      "expected_time_sec": 1080,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch06_069",
+      "unit": "icse-10-chemistry-ch06",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Lead(II) nitrate decomposes on strong heating. Write the balanced equation, and state two observations. [2]\n\n(b) Calculate the molar mass of lead(II) nitrate and the number of moles in 6.62 g of it. (Pb = 207, N = 14, O = 16) [2]\n\n(c) For the decomposition of 6.62 g of lead(II) nitrate, calculate the mass of lead(II) oxide formed and the volume of nitrogen dioxide at STP. [3]\n\n(d) Calculate the volume of oxygen at STP, the total volume of gas given off at STP, and the ratio of the volumes of nitrogen dioxide to oxygen. [3]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) $\\ce{2Pb(NO3)2 -> 2PbO + 4NO2 + O2}$. Observations (any two): a crackling sound (decrepitation); reddish-brown fumes of nitrogen dioxide; a residue that is reddish-brown when hot and yellow when cold; the gas relights a glowing splint.\n\n(b) Molar mass $= 207 + 2 \\times 14 + 6 \\times 16 = 331$ g; moles $= \\frac{6.62}{331} = 0.02$.\n\n(c) Lead(II) oxide: mole ratio 1 : 1, so 0.02 mol; molar mass $= 207 + 16 = 223$; mass $= 0.02 \\times 223 = 4.46$ g. Nitrogen dioxide $= 0.02 \\times 2 = 0.04$ mol; volume $= 0.04 \\times 22.4 = 0.896$ dm³.\n\n(d) Oxygen $= 0.02 \\div 2 = 0.01$ mol; volume $= 0.01 \\times 22.4 = 0.224$ dm³. Total gas $= 0.896 + 0.224 = 1.12$ dm³. Ratio NO₂ : O₂ = 4 : 1 (from the coefficients)."
+      },
+      "solution_md": "Balanced equation; moles 0.02; mole ratios 2 : 2 : 4 : 1.",
+      "marking_scheme": [
+        {
+          "step": "(a) equation",
+          "marks": 1
+        },
+        {
+          "step": "(a) two observations",
+          "marks": 1
+        },
+        {
+          "step": "(b) 331",
+          "marks": 1
+        },
+        {
+          "step": "(b) 0.02 mol",
+          "marks": 1
+        },
+        {
+          "step": "(c) 4.46 g",
+          "marks": 1.5
+        },
+        {
+          "step": "(c) 0.896 dm³",
+          "marks": 1.5
+        },
+        {
+          "step": "(d) 0.224 dm³",
+          "marks": 1
+        },
+        {
+          "step": "(d) 1.12 dm³",
+          "marks": 1
+        },
+        {
+          "step": "(d) 4 : 1",
+          "marks": 1
+        }
+      ],
+      "marks": 10,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch06-t04"
+      ],
+      "expected_time_sec": 1080,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch06_070",
+      "unit": "icse-10-chemistry-ch06",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) 1.08 g of aluminium powder is heated in oxygen and combines with 0.96 g of oxygen. Find the empirical formula of the oxide. (Al = 27, O = 16) [3]\n\n(b) A chloride of iron contains 34.46% iron by mass. Find its empirical formula. (Fe = 56, Cl = 35.5) [3]\n\n(c) 0.42 g of a gaseous hydrocarbon contains 0.36 g of carbon. 224 cm³ of the gas at STP weighs 0.42 g. Find (i) its empirical formula, (ii) its molar mass and (iii) its molecular formula. (C = 12, H = 1) [4]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Aluminium $\\frac{1.08}{27} = 0.04$; oxygen $\\frac{0.96}{16} = 0.06$. Ratio 1 : 1.5, multiplied by 2 gives 2 : 3: Al₂O₃.\n\n(b) Chlorine $= 100 - 34.46 = 65.54$%. Iron $\\frac{34.46}{56} \\approx 0.615$; chlorine $\\frac{65.54}{35.5} \\approx 1.846$. Ratio 1 : 3, so FeCl₃.\n\n(c) (i) Hydrogen $= 0.42 - 0.36 = 0.06$ g. Carbon $\\frac{0.36}{12} = 0.03$; hydrogen $\\frac{0.06}{1} = 0.06$; ratio 1 : 2, so CH₂ (formula mass 14). (ii) Moles $= \\frac{0.224}{22.4} = 0.01$; molar mass $= \\frac{0.42}{0.01} = 42$ g mol⁻¹. (iii) $n = \\frac{42}{14} = 3$, so C₃H₆."
+      },
+      "solution_md": "Ratios with × 2; percentage by difference; mass by difference and molar mass from molar volume.",
+      "marking_scheme": [
+        {
+          "step": "(a) moles of atoms",
+          "marks": 1.5
+        },
+        {
+          "step": "(a) Al₂O₃",
+          "marks": 1.5
+        },
+        {
+          "step": "(b) ratio",
+          "marks": 1.5
+        },
+        {
+          "step": "(b) FeCl₃",
+          "marks": 1.5
+        },
+        {
+          "step": "(c)(i) CH₂",
+          "marks": 1.5
+        },
+        {
+          "step": "(c)(ii) 42",
+          "marks": 1
+        },
+        {
+          "step": "(c)(iii) C₃H₆",
+          "marks": 1.5
+        }
+      ],
+      "marks": 10,
+      "difficulty": 4,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch06-t02",
+        "icse-10-chemistry-ch06-t03"
+      ],
+      "expected_time_sec": 1080,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch06_071",
+      "unit": "icse-10-chemistry-ch06",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Calculate the percentage of nitrogen in urea, CO(NH₂)₂, and in ammonium nitrate, NH₄NO₃. Which is the richer source of nitrogen? (C = 12, O = 16, N = 14, H = 1) [3]\n\n(b) Ammonia is made by the reaction N₂ + 3H₂ → 2NH₃. Calculate the volume of hydrogen at STP needed to make 3.4 g of ammonia. [3]\n\n(c) The 3.4 g of ammonia is passed into nitric acid: NH₃ + HNO₃ → NH₄NO₃. Calculate (i) the mass of ammonium nitrate formed and (ii) the mass of nitric acid used. [4]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Urea: molar mass $= 12 + 16 + 2 \\times 14 + 4 \\times 1 = 60$; nitrogen $= \\frac{28}{60} \\times 100 \\approx 46.7$%. Ammonium nitrate: molar mass $= 80$; nitrogen $= \\frac{28}{80} \\times 100 = 35$%. Urea is the richer source.\n\n(b) Moles of ammonia $= \\frac{3.4}{17} = 0.2$. Mole ratio H₂ to NH₃ is 3 : 2, so hydrogen $= 0.2 \\times \\frac{3}{2} = 0.3$ mol; volume $= 0.3 \\times 22.4 = 6.72$ dm³.\n\n(c) Mole ratio 1 : 1 : 1. (i) Ammonium nitrate $= 0.2$ mol $= 0.2 \\times 80 = 16$ g. (ii) Nitric acid: molar mass $= 1 + 14 + 3 \\times 16 = 63$; mass $= 0.2 \\times 63 = 12.6$ g."
+      },
+      "solution_md": "Percentages; moles of ammonia; mole ratios.",
+      "marking_scheme": [
+        {
+          "step": "(a) urea 46.7%",
+          "marks": 1
+        },
+        {
+          "step": "(a) ammonium nitrate 35%",
+          "marks": 1
+        },
+        {
+          "step": "(a) urea richer",
+          "marks": 1
+        },
+        {
+          "step": "(b) 0.2 mol NH₃",
+          "marks": 1
+        },
+        {
+          "step": "(b) 0.3 mol H₂",
+          "marks": 1
+        },
+        {
+          "step": "(b) 6.72 dm³",
+          "marks": 1
+        },
+        {
+          "step": "(c)(i) 16 g",
+          "marks": 2
+        },
+        {
+          "step": "(c)(ii) 12.6 g",
+          "marks": 2
+        }
+      ],
+      "marks": 10,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch06-t01",
+        "icse-10-chemistry-ch06-t04"
+      ],
+      "expected_time_sec": 1080,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    }
+  ],
+  "build": {
+    "run_id": null,
+    "checks": {
+      "katex_mhchem": "198 math strings parsed with KaTeX 0.19.0 + mhchem (throwOnError, strict \"error\"), 0 failures",
+      "svg_allowlist": "3 SVG visuals (2 distinct diagrams) checked with saxes against svg-allowlist.ts: elements, attributes, class pattern, fragment-only refs, no style, palette incl. named hues, viewBox, title, per-page unique ids — 0 failures",
+      "narration": "30 slides, 14–72 words (mean 53), no symbols, formulae or unit abbreviations",
+      "resolve": "23/23 scripted re-solve checks pass",
+      "chemistry_facts": "Percentage composition including water of crystallisation, empirical formula from percentage composition and from combining masses (ratio rounding by ×2 and ×3), molecular formula from vapour density or molar mass, and mass–mass, mass–volume and volume–volume calculations from balanced equations at STP (22.4 dm3, Avogadro’s number 6 × 10^23 or 6.022 × 10^23), checked against the ICSE 2027 syllabus (Class X, section 5); every equation balanced and every number re-computed by the author and by the build script",
+      "content_gate": "npm test -w @soyl/content-templates: all checks pass for this chapter",
+      "verifier_pass": "2026-11-01: every question re-solved from its stem by the author; every numerical re-computed by the build script",
+      "pipeline_lint": "npm run content -- lint --exemplars: 0 errors, 0 warnings"
+    }
+  }
+}

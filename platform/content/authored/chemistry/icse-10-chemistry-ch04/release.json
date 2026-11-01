@@ -1,0 +1,5139 @@
+{
+  "unit": "icse-10-chemistry-ch04",
+  "version": 1,
+  "academic_year": "2026-27",
+  "created_at": "2026-11-01T00:00:00+05:30",
+  "decks": [
+    {
+      "unit": "icse-10-chemistry-ch04",
+      "part": 1,
+      "version": 1,
+      "title": "Analytical Chemistry — Part 1: Colours, sodium hydroxide and ammonium salts",
+      "language": "en",
+      "goals": [
+        "State the colours of common salts of copper, iron, zinc and lead and of their solutions",
+        "Predict the precipitate formed when sodium hydroxide is added to a salt solution, and what excess alkali does",
+        "Write balanced equations for the precipitation reactions",
+        "Describe how warming with sodium hydroxide shows that a salt is an ammonium salt"
+      ],
+      "slides": [
+        {
+          "id": "s01",
+          "layout": "title",
+          "heading": "Detective work with test tubes",
+          "body_md": "Part 1 — **Analytical chemistry** finds out what a substance is made of. In **qualitative analysis** we identify the ions in a salt from simple observations: its **colour**, and the **precipitate** it gives with an alkali.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Clue",
+                "What it tells us"
+              ],
+              "rows": [
+                [
+                  "Colour of the solid or solution",
+                  "Narrows down the metal (blue often means copper)"
+                ],
+                [
+                  "Colour of a hydroxide precipitate",
+                  "Identifies the cation"
+                ],
+                [
+                  "Whether the precipitate dissolves in excess alkali",
+                  "Separates look-alike cations (zinc, lead)"
+                ],
+                [
+                  "A gas given off on warming with alkali",
+                  "Shows ammonium ions"
+                ]
+              ]
+            },
+            "alt": "Table of four clues used in qualitative analysis and what each tells us"
+          },
+          "math": [],
+          "narration": "Namaste! A chemist handed an unlabelled bottle behaves like a detective. Simple clues, such as the colour of a salt and the colour of the solid that forms when an alkali is added, tell us which metal ion is present. In this part we learn the colours of common salts, the action of sodium hydroxide on their solutions, and a quick test for ammonium salts.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s02",
+          "layout": "concept",
+          "heading": "Colours of salts and their solutions",
+          "body_md": "Salts of **sodium, potassium, calcium, zinc, lead and ammonium** are **white** solids and give **colourless** solutions. Salts of some **transition metals** are coloured, and the colour of the solid often differs from that of the solution.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Substance",
+                "Solid",
+                "Solution in water"
+              ],
+              "rows": [
+                [
+                  "Copper(II) sulphate (hydrated)",
+                  "Blue crystals",
+                  "Blue"
+                ],
+                [
+                  "Copper(II) chloride",
+                  "Bluish-green",
+                  "Green to blue-green"
+                ],
+                [
+                  "Iron(II) sulphate (hydrated)",
+                  "Pale green crystals",
+                  "Pale green"
+                ],
+                [
+                  "Iron(III) chloride",
+                  "Yellowish-brown",
+                  "Yellowish-brown"
+                ],
+                [
+                  "Zinc sulphate, lead nitrate",
+                  "White",
+                  "Colourless"
+                ],
+                [
+                  "Potassium permanganate",
+                  "Purple-black",
+                  "Purple (pink when dilute)"
+                ]
+              ]
+            },
+            "alt": "Table of the colours of common salts as solids and in solution"
+          },
+          "math": [],
+          "narration": "Start with colour. Salts of sodium, potassium, calcium, zinc, lead and ammonium are white, and their solutions are colourless. Copper salts are usually blue or green. Iron two salts are pale green, while iron three salts are yellowish brown. So a pale green solution hints at iron two ions, and a blue one at copper. Colour alone is only a hint, so we confirm it with an alkali.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s03",
+          "layout": "concept",
+          "heading": "Coloured oxides and other compounds",
+          "body_md": "Some insoluble compounds have colours worth remembering, because they appear as **residues** and **precipitates** in many reactions.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Compound",
+                "Colour"
+              ],
+              "rows": [
+                [
+                  "Copper(II) oxide, CuO",
+                  "Black"
+                ],
+                [
+                  "Copper(II) carbonate",
+                  "Green"
+                ],
+                [
+                  "Zinc oxide, ZnO",
+                  "White when cold, yellow when hot"
+                ],
+                [
+                  "Lead(II) oxide, PbO",
+                  "Yellow"
+                ],
+                [
+                  "Red lead, Pb₃O₄",
+                  "Bright red"
+                ],
+                [
+                  "Lead(IV) oxide, PbO₂",
+                  "Dark brown"
+                ],
+                [
+                  "Iron(III) oxide, Fe₂O₃",
+                  "Reddish brown"
+                ]
+              ]
+            },
+            "alt": "Table of the colours of oxides and carbonates of copper, zinc, lead and iron"
+          },
+          "math": [],
+          "narration": "A few insoluble compounds turn up again and again. Copper oxide is black and copper carbonate is green. Zinc oxide is white when cold but yellow when hot. Lead two oxide is yellow, red lead is bright red, and lead four oxide is dark brown. Iron three oxide is reddish brown, the colour of rust.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s04",
+          "layout": "check",
+          "heading": "Quick check: colour of a solution",
+          "body_md": "Use the colour of a salt solution to name the ion it hints at.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Remember which iron ion gives a pale green solution and which gives a yellowish brown one.",
+          "check_question_id": "q_icse10chem_ch04_001",
+          "audio": null
+        },
+        {
+          "id": "s05",
+          "layout": "diagram",
+          "heading": "Sodium hydroxide, a few drops at a time",
+          "body_md": "Sodium hydroxide gives **hydroxide ions**. Most metal hydroxides are **insoluble**, so they appear as **precipitates**, each with its own colour. Add the alkali **drop by drop**, then **in excess**, and note both observations.",
+          "bullets": [],
+          "visual": {
+            "kind": "svg",
+            "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 560 330\" role=\"img\" aria-label=\"Five test tubes, each holding a salt solution to which a few drops of sodium hydroxide solution have been added. Iron two ions, in a pale green solution, give a dirty green precipitate of iron(II) hydroxide. Iron three ions, in a yellowish-brown solution, give a reddish-brown precipitate of iron(III) hydroxide. Copper two ions, in a blue solution, give a pale blue precipitate of copper(II) hydroxide. Zinc ions give a white gelatinous precipitate and lead ions a white chalky precipitate, both from colourless solutions. A row underneath shows that with excess sodium hydroxide the first three precipitates stay, while the zinc and lead hydroxides dissolve.\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>Five test tubes, each holding a salt solution to which a few drops of sodium hydroxide solution have been added. Iron two ions, in a pale green solution, give a dirty green precipitate of iron(II) hydroxide. Iron three ions, in a yellowish-brown solution, give a reddish-brown precipitate of iron(III) hydroxide. Copper two ions, in a blue solution, give a pale blue precipitate of copper(II) hydroxide. Zinc ions give a white gelatinous precipitate and lead ions a white chalky precipitate, both from colourless solutions. A row underneath shows that with excess sodium hydroxide the first three precipitates stay, while the zinc and lead hydroxides dissolve.</title><text x=\"280\" y=\"22\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\">A few drops of sodium hydroxide solution added</text><path d=\"M 42 110 L 42 196 Q 62 217.2 82 196 L 82 110 Z\" fill=\"var(--diagram-green)\" stroke=\"none\" stroke-width=\"0\" fill-opacity=\"0.22\"/><path d=\"M 42 172 L 42 196 Q 62 217.2 82 196 L 82 172 Z\" fill=\"var(--diagram-green)\" stroke=\"none\" stroke-width=\"0\" fill-opacity=\"0.65\"/><line x1=\"42\" y1=\"110\" x2=\"82\" y2=\"110\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\"/><path d=\"M 40 46 L 40 196 Q 62 220.2 84 196 L 84 46\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/><line x1=\"36\" y1=\"46\" x2=\"88\" y2=\"46\" stroke=\"currentColor\" stroke-width=\"1.6\"/><text x=\"62\" y=\"252\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\">Fe²⁺</text><text x=\"62\" y=\"268\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">dirty green</text><text x=\"62\" y=\"282\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">Fe(OH)₂</text><text x=\"62\" y=\"318\" fill=\"var(--diagram-red)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">stays</text><path d=\"M 146 110 L 146 196 Q 166 217.2 186 196 L 186 110 Z\" fill=\"var(--diagram-yellow)\" stroke=\"none\" stroke-width=\"0\" fill-opacity=\"0.22\"/><path d=\"M 146 172 L 146 196 Q 166 217.2 186 196 L 186 172 Z\" fill=\"var(--diagram-brown)\" stroke=\"none\" stroke-width=\"0\" fill-opacity=\"0.65\"/><line x1=\"146\" y1=\"110\" x2=\"186\" y2=\"110\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\"/><path d=\"M 144 46 L 144 196 Q 166 220.2 188 196 L 188 46\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/><line x1=\"140\" y1=\"46\" x2=\"192\" y2=\"46\" stroke=\"currentColor\" stroke-width=\"1.6\"/><text x=\"166\" y=\"252\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\">Fe³⁺</text><text x=\"166\" y=\"268\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">reddish brown</text><text x=\"166\" y=\"282\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">Fe(OH)₃</text><text x=\"166\" y=\"318\" fill=\"var(--diagram-red)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">stays</text><path d=\"M 250 110 L 250 196 Q 270 217.2 290 196 L 290 110 Z\" fill=\"var(--diagram-blue)\" stroke=\"none\" stroke-width=\"0\" fill-opacity=\"0.22\"/><path d=\"M 250 172 L 250 196 Q 270 217.2 290 196 L 290 172 Z\" fill=\"var(--diagram-blue)\" stroke=\"none\" stroke-width=\"0\" fill-opacity=\"0.65\"/><line x1=\"250\" y1=\"110\" x2=\"290\" y2=\"110\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\"/><path d=\"M 248 46 L 248 196 Q 270 220.2 292 196 L 292 46\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/><line x1=\"244\" y1=\"46\" x2=\"296\" y2=\"46\" stroke=\"currentColor\" stroke-width=\"1.6\"/><text x=\"270\" y=\"252\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\">Cu²⁺</text><text x=\"270\" y=\"268\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">pale blue</text><text x=\"270\" y=\"282\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">Cu(OH)₂</text><text x=\"270\" y=\"318\" fill=\"var(--diagram-red)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">stays</text><path d=\"M 354 110 L 354 196 Q 374 217.2 394 196 L 394 110 Z\" fill=\"var(--diagram-muted)\" stroke=\"none\" stroke-width=\"0\" fill-opacity=\"0.22\"/><circle cx=\"360\" cy=\"178\" r=\"2.2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\"/><circle cx=\"370\" cy=\"184\" r=\"2.2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\"/><circle cx=\"382\" cy=\"179\" r=\"2.2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\"/><circle cx=\"364\" cy=\"192\" r=\"2.2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\"/><circle cx=\"378\" cy=\"194\" r=\"2.2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\"/><circle cx=\"372\" cy=\"202\" r=\"2.2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\"/><circle cx=\"386\" cy=\"188\" r=\"2.2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\"/><line x1=\"354\" y1=\"110\" x2=\"394\" y2=\"110\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\"/><path d=\"M 352 46 L 352 196 Q 374 220.2 396 196 L 396 46\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/><line x1=\"348\" y1=\"46\" x2=\"400\" y2=\"46\" stroke=\"currentColor\" stroke-width=\"1.6\"/><text x=\"374\" y=\"252\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\">Zn²⁺</text><text x=\"374\" y=\"268\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">white, gelatinous</text><text x=\"374\" y=\"282\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">Zn(OH)₂</text><text x=\"374\" y=\"318\" fill=\"var(--diagram-green)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">dissolves</text><path d=\"M 458 110 L 458 196 Q 478 217.2 498 196 L 498 110 Z\" fill=\"var(--diagram-muted)\" stroke=\"none\" stroke-width=\"0\" fill-opacity=\"0.22\"/><circle cx=\"464\" cy=\"178\" r=\"2.2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\"/><circle cx=\"474\" cy=\"184\" r=\"2.2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\"/><circle cx=\"486\" cy=\"179\" r=\"2.2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\"/><circle cx=\"468\" cy=\"192\" r=\"2.2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\"/><circle cx=\"482\" cy=\"194\" r=\"2.2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\"/><circle cx=\"476\" cy=\"202\" r=\"2.2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\"/><circle cx=\"490\" cy=\"188\" r=\"2.2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\"/><line x1=\"458\" y1=\"110\" x2=\"498\" y2=\"110\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\"/><path d=\"M 456 46 L 456 196 Q 478 220.2 500 196 L 500 46\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/><line x1=\"452\" y1=\"46\" x2=\"504\" y2=\"46\" stroke=\"currentColor\" stroke-width=\"1.6\"/><text x=\"478\" y=\"252\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\">Pb²⁺</text><text x=\"478\" y=\"268\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">white, chalky</text><text x=\"478\" y=\"282\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">Pb(OH)₂</text><text x=\"478\" y=\"318\" fill=\"var(--diagram-green)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">dissolves</text><line x1=\"20\" y1=\"296\" x2=\"540\" y2=\"296\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\" stroke-dasharray=\"4 3\"/><text x=\"8\" y=\"310\" fill=\"var(--diagram-muted)\" stroke=\"none\" font-size=\"10\">In excess:</text></svg>",
+            "alt": "Five test tubes showing the colours of the hydroxide precipitates formed by a few drops of sodium hydroxide with iron(II), iron(III), copper(II), zinc and lead ions, and whether each dissolves in excess"
+          },
+          "math": [],
+          "narration": "Sodium hydroxide solution supplies hydroxide ions. Most metal hydroxides do not dissolve in water, so a solid called a precipitate appears. Iron two ions give a dirty green precipitate, iron three ions a reddish brown one, copper ions a pale blue one, and zinc and lead ions white ones. Then keep adding alkali: the zinc and lead precipitates dissolve, but the others stay.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s06",
+          "layout": "concept",
+          "heading": "Equations for the coloured precipitates",
+          "body_md": "The metal hydroxide precipitates; the sodium salt stays in solution. These precipitates do **not** dissolve in excess sodium hydroxide.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Solution",
+                "Equation",
+                "Precipitate"
+              ],
+              "rows": [
+                [
+                  "Iron(II) sulphate",
+                  "FeSO₄ + 2NaOH → Fe(OH)₂ + Na₂SO₄",
+                  "Dirty green"
+                ],
+                [
+                  "Iron(III) chloride",
+                  "FeCl₃ + 3NaOH → Fe(OH)₃ + 3NaCl",
+                  "Reddish brown"
+                ],
+                [
+                  "Copper(II) sulphate",
+                  "CuSO₄ + 2NaOH → Cu(OH)₂ + Na₂SO₄",
+                  "Pale blue"
+                ],
+                [
+                  "Calcium nitrate",
+                  "Ca(NO₃)₂ + 2NaOH → Ca(OH)₂ + 2NaNO₃",
+                  "White, sparingly soluble"
+                ]
+              ]
+            },
+            "alt": "Table of equations for sodium hydroxide with iron(II), iron(III), copper(II) and calcium salts and the precipitate colours"
+          },
+          "math": [],
+          "narration": "Here are the equations. In each one, the metal hydroxide comes out as a precipitate and a sodium salt stays dissolved. Iron two sulphate gives dirty green iron two hydroxide, iron three chloride gives reddish brown iron three hydroxide, and copper sulphate gives pale blue copper hydroxide. Calcium nitrate gives a white precipitate. None of these dissolves in excess sodium hydroxide.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s07",
+          "layout": "example",
+          "heading": "Worked example: iron(II) or iron(III)?",
+          "body_md": "**Problem.** Two bottles, P and Q, hold iron salt solutions. With sodium hydroxide, P gives a **dirty green** precipitate and Q a **reddish-brown** one. Identify the ion in each and write the equation for Q, taking Q as iron(III) sulphate.\n\n**Step 1.** Dirty green → iron(II) hydroxide → **P has Fe²⁺**.\n\n**Step 2.** Reddish brown → iron(III) hydroxide → **Q has Fe³⁺**.\n\n**Step 3.** Fe₂(SO₄)₃ + 6NaOH → 2Fe(OH)₃ + 3Na₂SO₄.\n\n**Note.** The dirty green solid slowly turns brown at its surface in air, as iron(II) is oxidised to iron(III).",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Bottle",
+                "Precipitate with NaOH",
+                "In excess",
+                "Ion"
+              ],
+              "rows": [
+                [
+                  "P",
+                  "Dirty green",
+                  "Insoluble",
+                  "Fe²⁺"
+                ],
+                [
+                  "Q",
+                  "Reddish brown",
+                  "Insoluble",
+                  "Fe³⁺"
+                ]
+              ]
+            },
+            "alt": "Table identifying the iron ions in bottles P and Q from the colour of the precipitate"
+          },
+          "math": [],
+          "narration": "The colour of the precipitate decides it. A dirty green precipitate is iron two hydroxide, so bottle P contains iron two ions. A reddish brown precipitate is iron three hydroxide, so bottle Q contains iron three ions. For iron three sulphate, one unit needs six units of sodium hydroxide. Notice too that the green solid browns slowly in air as it is oxidised.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s08",
+          "layout": "check",
+          "heading": "Quick check: a coloured precipitate",
+          "body_md": "Predict the precipitate from a pale green solution.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Match the precipitate to the iron ion, and think about whether it dissolves in excess.",
+          "check_question_id": "q_icse10chem_ch04_007",
+          "audio": null
+        },
+        {
+          "id": "s09",
+          "layout": "concept",
+          "heading": "Zinc and lead: precipitates that dissolve",
+          "body_md": "Zinc and lead salts give **white** precipitates that **dissolve in excess** sodium hydroxide, forming soluble **sodium zincate** and **sodium plumbite**. Zinc and lead hydroxides are **amphoteric**: they react with an alkali as well as with an acid.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Stage",
+                "Zinc sulphate",
+                "Lead nitrate"
+              ],
+              "rows": [
+                [
+                  "A few drops of NaOH",
+                  "ZnSO₄ + 2NaOH → Zn(OH)₂ + Na₂SO₄ (white, gelatinous)",
+                  "Pb(NO₃)₂ + 2NaOH → Pb(OH)₂ + 2NaNO₃ (white, chalky)"
+                ],
+                [
+                  "Excess NaOH",
+                  "Zn(OH)₂ + 2NaOH → Na₂ZnO₂ + 2H₂O (colourless solution)",
+                  "Pb(OH)₂ + 2NaOH → Na₂PbO₂ + 2H₂O (colourless solution)"
+                ]
+              ]
+            },
+            "alt": "Table of equations for zinc sulphate and lead nitrate with a little and with excess sodium hydroxide"
+          },
+          "math": [],
+          "narration": "Zinc and lead behave differently. A few drops of sodium hydroxide give a white precipitate, gelatinous for zinc and chalky for lead. But add more alkali and the precipitate disappears, leaving a clear, colourless solution of sodium zincate or sodium plumbite. That happens because zinc and lead hydroxides react with alkalis as well as acids.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s10",
+          "layout": "example",
+          "heading": "Worked example: how much alkali?",
+          "body_md": "**Problem.** What mass of sodium hydroxide is just enough to precipitate all the copper from a solution of 31.9 g of copper(II) sulphate? (Cu = 63.5, S = 32, O = 16, Na = 23, H = 1)\n\n**Step 1.** CuSO₄ + 2NaOH → Cu(OH)₂ + Na₂SO₄: 1 mole CuSO₄ needs 2 moles NaOH.\n\n**Step 2.** CuSO₄ = 63.5 + 32 + 64 = 159.5; moles = 31.9 ÷ 159.5 = 0.2.\n\n**Step 3.** NaOH = 2 × 0.2 = 0.4 mole; mass = 0.4 × 40 = **16 g**.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Quantity",
+                "Value"
+              ],
+              "rows": [
+                [
+                  "Molar mass of CuSO₄",
+                  "159.5"
+                ],
+                [
+                  "Moles of CuSO₄",
+                  "0.2"
+                ],
+                [
+                  "Moles of NaOH (two per CuSO₄)",
+                  "0.4"
+                ],
+                [
+                  "Mass of NaOH (molar mass 40)",
+                  "16 g"
+                ]
+              ]
+            },
+            "alt": "Table of the steps from 31.9 grams of copper sulphate to 16 grams of sodium hydroxide"
+          },
+          "math": [],
+          "narration": "From the equation, each unit of copper sulphate needs two units of sodium hydroxide. The molar mass of copper sulphate is one hundred fifty nine point five, so thirty one point nine grams is zero point two mole. Twice that is zero point four mole of sodium hydroxide, and since its molar mass is forty, the mass needed is sixteen grams.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s11",
+          "layout": "concept",
+          "heading": "Sodium hydroxide and ammonium salts",
+          "body_md": "An **ammonium salt** warmed with sodium hydroxide gives **ammonia**. The stronger base drives out the weaker one. Identify the gas by its **pungent smell**, by **moist red litmus turning blue**, and by **dense white fumes** with a rod dipped in concentrated hydrochloric acid.",
+          "bullets": [],
+          "visual": {
+            "kind": "chem",
+            "spec": {
+              "equation": "NH4Cl + NaOH -> NaCl + H2O + NH3"
+            },
+            "alt": "Equation: ammonium chloride plus sodium hydroxide gives sodium chloride, water and ammonia",
+            "caption": "Warming an ammonium salt with sodium hydroxide"
+          },
+          "math": [],
+          "narration": "Ammonium salts are white and dissolve to give colourless solutions, so colour does not help. Instead, warm the salt with sodium hydroxide. Ammonia gas is given off, with a sharp smell. It turns moist red litmus paper blue, and it gives dense white fumes of ammonium chloride with a glass rod dipped in concentrated hydrochloric acid.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s12",
+          "layout": "example",
+          "heading": "Worked example: is it an ammonium salt?",
+          "body_md": "**Problem.** White crystals R are warmed with sodium hydroxide solution. A gas turns moist red litmus blue. With barium chloride solution, a solution of R gives a white precipitate insoluble in dilute HCl. Identify R and write the equation for the warming.\n\n**Step 1.** Alkaline gas on warming with NaOH → **ammonium ion**.\n\n**Step 2.** White precipitate with barium chloride, insoluble in acid → **sulphate ion**.\n\n**Step 3.** R is **ammonium sulphate**: (NH₄)₂SO₄ + 2NaOH → Na₂SO₄ + 2H₂O + 2NH₃.",
+          "bullets": [],
+          "visual": {
+            "kind": "flow",
+            "spec": {
+              "direction": "LR",
+              "nodes": [
+                {
+                  "id": "a",
+                  "label": "White salt + NaOH, warm"
+                },
+                {
+                  "id": "b",
+                  "label": "Gas turns moist red litmus blue?"
+                },
+                {
+                  "id": "c",
+                  "label": "Ammonia: ammonium salt"
+                },
+                {
+                  "id": "d",
+                  "label": "Not an ammonium salt"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "a",
+                  "to": "b"
+                },
+                {
+                  "from": "b",
+                  "to": "c",
+                  "label": "yes"
+                },
+                {
+                  "from": "b",
+                  "to": "d",
+                  "label": "no"
+                }
+              ]
+            },
+            "alt": "Flow for testing whether a white salt is an ammonium salt by warming it with sodium hydroxide"
+          },
+          "math": [],
+          "narration": "Take the clues one at a time. A gas that turns moist red litmus blue, given off on warming with sodium hydroxide, can only be ammonia, so the salt contains ammonium ions. A white precipitate with barium chloride that does not dissolve in acid shows sulphate ions. Together they point to ammonium sulphate.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s13",
+          "layout": "check",
+          "heading": "Quick check: testing for ammonium ions",
+          "body_md": "Decide what an alkaline gas on warming with sodium hydroxide tells you.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Which gas turns moist red litmus blue, and which ion must the salt contain to give it?",
+          "check_question_id": "q_icse10chem_ch04_035",
+          "audio": null
+        },
+        {
+          "id": "s14",
+          "layout": "summary",
+          "heading": "Summary: Part 1",
+          "body_md": "",
+          "bullets": [
+            "Salts of Na, K, Ca, Zn, Pb and NH₄⁺ are white with colourless solutions; copper salts are blue or green; iron(II) pale green; iron(III) yellowish brown.",
+            "NaOH, a few drops: Fe²⁺ dirty green, Fe³⁺ reddish brown, Cu²⁺ pale blue, Zn²⁺ and Pb²⁺ white precipitates.",
+            "In excess NaOH, only the zinc and lead hydroxides dissolve (sodium zincate, sodium plumbite).",
+            "Ammonium salts warmed with NaOH give ammonia: moist red litmus turns blue."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Cation",
+                "NaOH, a few drops",
+                "NaOH in excess"
+              ],
+              "rows": [
+                [
+                  "Fe²⁺",
+                  "Dirty green",
+                  "Insoluble"
+                ],
+                [
+                  "Fe³⁺",
+                  "Reddish brown",
+                  "Insoluble"
+                ],
+                [
+                  "Cu²⁺",
+                  "Pale blue",
+                  "Insoluble"
+                ],
+                [
+                  "Zn²⁺",
+                  "White, gelatinous",
+                  "Dissolves"
+                ],
+                [
+                  "Pb²⁺",
+                  "White, chalky",
+                  "Dissolves"
+                ],
+                [
+                  "Ca²⁺",
+                  "White (sparingly soluble)",
+                  "Insoluble"
+                ]
+              ]
+            },
+            "alt": "Summary table of the action of sodium hydroxide, a few drops and in excess, on six cations"
+          },
+          "math": [],
+          "narration": "Let us sum up Part 1. The colour of a salt gives a first hint. Sodium hydroxide then gives a dirty green precipitate with iron two, reddish brown with iron three, pale blue with copper, and white with zinc, lead and calcium. Only the zinc and lead precipitates dissolve in excess. Ammonium salts give ammonia when warmed with the alkali.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s15",
+          "layout": "exam-tips",
+          "heading": "Exam tips: Part 1",
+          "body_md": "",
+          "bullets": [
+            "Always state two observations: the precipitate with a few drops, then its behaviour in excess.",
+            "Give the colour and the nature of the precipitate (gelatinous, chalky) where you can.",
+            "Write formulae of hydroxides carefully: Fe(OH)₂, Fe(OH)₃, Cu(OH)₂, Zn(OH)₂, Pb(OH)₂.",
+            "For an ammonium salt, the word “warm” and the litmus test both earn marks."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Slip",
+                "Fix"
+              ],
+              "rows": [
+                [
+                  "Fe(OH)₃ is dirty green",
+                  "Fe(OH)₂ is dirty green; Fe(OH)₃ is reddish brown"
+                ],
+                [
+                  "Cu(OH)₂ dissolves in excess NaOH",
+                  "It does not; it dissolves in excess NH₄OH"
+                ],
+                [
+                  "Ammonium salt + NaOH: no reaction",
+                  "Ammonia is given off on warming"
+                ]
+              ]
+            },
+            "alt": "Table of three common slips in Part 1 and their fixes"
+          },
+          "math": [],
+          "narration": "Some tips. Examiners want two observations, one with a few drops of alkali and one with excess. Describe the precipitate fully, with its colour and whether it is gelatinous or chalky. Check your hydroxide formulae, and do not mix up the two iron hydroxides. For ammonium salts, mention warming and the moist red litmus test.",
+          "check_question_id": null,
+          "audio": null
+        }
+      ],
+      "status": "draft",
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "unit": "icse-10-chemistry-ch04",
+      "part": 2,
+      "version": 1,
+      "title": "Analytical Chemistry — Part 2: Ammonium hydroxide and amphoteric substances",
+      "language": "en",
+      "goals": [
+        "Describe what a little and then excess ammonium hydroxide does to solutions of iron, copper, zinc and lead salts",
+        "Choose a reagent to distinguish between two salt solutions and state the observations",
+        "Define an amphoteric substance with examples",
+        "Write equations for sodium hydroxide with aluminium, zinc and lead and with their oxides and hydroxides"
+      ],
+      "slides": [
+        {
+          "id": "s01",
+          "layout": "title",
+          "heading": "A weaker alkali, new clues",
+          "body_md": "Part 2 — **Ammonium hydroxide** (aqueous ammonia) is a **weak alkali**. It precipitates the same hydroxides, but in **excess** it behaves differently from sodium hydroxide, giving us a second test.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Reagent",
+                "Strength",
+                "Special action in excess"
+              ],
+              "rows": [
+                [
+                  "Sodium hydroxide, NaOH",
+                  "Strong alkali",
+                  "Dissolves Zn(OH)₂ and Pb(OH)₂"
+                ],
+                [
+                  "Ammonium hydroxide, NH₄OH",
+                  "Weak alkali",
+                  "Dissolves Zn(OH)₂ and Cu(OH)₂"
+                ]
+              ]
+            },
+            "alt": "Table comparing sodium hydroxide and ammonium hydroxide and which precipitates each dissolves in excess"
+          },
+          "math": [],
+          "narration": "Ammonium hydroxide, a solution of ammonia in water, is a weak alkali. With a few drops it gives much the same hydroxide precipitates as sodium hydroxide. The difference shows up in excess. Sodium hydroxide dissolves the zinc and lead precipitates, but ammonium hydroxide dissolves the zinc and copper ones. Using both reagents, we can tell apart cations that look alike.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s02",
+          "layout": "concept",
+          "heading": "Ammonium hydroxide, a few drops",
+          "body_md": "A few drops of ammonium hydroxide give the **same coloured precipitates** as sodium hydroxide; the ammonium salt stays in solution.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Solution",
+                "Equation",
+                "Precipitate"
+              ],
+              "rows": [
+                [
+                  "Iron(II) sulphate",
+                  "FeSO₄ + 2NH₄OH → Fe(OH)₂ + (NH₄)₂SO₄",
+                  "Dirty green"
+                ],
+                [
+                  "Iron(III) chloride",
+                  "FeCl₃ + 3NH₄OH → Fe(OH)₃ + 3NH₄Cl",
+                  "Reddish brown"
+                ],
+                [
+                  "Lead nitrate",
+                  "Pb(NO₃)₂ + 2NH₄OH → Pb(OH)₂ + 2NH₄NO₃",
+                  "White, chalky"
+                ],
+                [
+                  "Zinc nitrate",
+                  "Zn(NO₃)₂ + 2NH₄OH → Zn(OH)₂ + 2NH₄NO₃",
+                  "White, gelatinous"
+                ],
+                [
+                  "Copper(II) sulphate",
+                  "CuSO₄ + 2NH₄OH → Cu(OH)₂ + (NH₄)₂SO₄",
+                  "Pale blue"
+                ]
+              ]
+            },
+            "alt": "Table of equations for a few drops of ammonium hydroxide with five salt solutions"
+          },
+          "math": [],
+          "narration": "With just a few drops of ammonium hydroxide, the results look familiar. Iron two gives a dirty green precipitate, iron three a reddish brown one, lead and zinc give white ones, and copper gives pale blue. The equations are like those for sodium hydroxide, except that an ammonium salt, not a sodium salt, is left in solution.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s03",
+          "layout": "diagram",
+          "heading": "Excess ammonium hydroxide: copper and zinc",
+          "body_md": "In excess, ammonium hydroxide **dissolves** two precipitates by forming soluble **complex salts**:\n\n- **Copper(II) hydroxide** → a **deep (inky) blue** solution of tetraamminecopper(II) sulphate, [Cu(NH₃)₄]SO₄.\n- **Zinc hydroxide** → a **colourless** solution of tetraamminezinc(II) sulphate, [Zn(NH₃)₄]SO₄.\n\nIron(II), iron(III) and **lead** hydroxides do **not** dissolve.",
+          "bullets": [],
+          "visual": {
+            "kind": "svg",
+            "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 540 430\" role=\"img\" aria-label=\"Two rows of three test tubes showing ammonium hydroxide added first a little and then in excess. Top row, copper two ions: a blue solution gives a pale blue precipitate of copper(II) hydroxide, which dissolves in excess to form a deep, inky blue solution of tetraamminecopper(II) sulphate. Bottom row, zinc ions: a colourless solution gives a white gelatinous precipitate of zinc hydroxide, which dissolves in excess to form a colourless solution of tetraamminezinc(II) sulphate.\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>Two rows of three test tubes showing ammonium hydroxide added first a little and then in excess. Top row, copper two ions: a blue solution gives a pale blue precipitate of copper(II) hydroxide, which dissolves in excess to form a deep, inky blue solution of tetraamminecopper(II) sulphate. Bottom row, zinc ions: a colourless solution gives a white gelatinous precipitate of zinc hydroxide, which dissolves in excess to form a colourless solution of tetraamminezinc(II) sulphate.</title><text x=\"16\" y=\"32\" fill=\"currentColor\" stroke=\"none\" font-size=\"12\" font-weight=\"bold\">Copper(II) sulphate solution</text><path d=\"M 82 88 L 82 158 Q 100 177 118 158 L 118 88 Z\" fill=\"var(--diagram-blue)\" stroke=\"none\" stroke-width=\"0\" fill-opacity=\"0.22\"/><line x1=\"82\" y1=\"88\" x2=\"118\" y2=\"88\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\"/><path d=\"M 80 48 L 80 158 Q 100 180 120 158 L 120 48\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/><line x1=\"76\" y1=\"48\" x2=\"124\" y2=\"48\" stroke=\"currentColor\" stroke-width=\"1.6\"/><path d=\"M 262 88 L 262 158 Q 280 177 298 158 L 298 88 Z\" fill=\"var(--diagram-blue)\" stroke=\"none\" stroke-width=\"0\" fill-opacity=\"0.22\"/><path d=\"M 262 136 L 262 158 Q 280 177 298 158 L 298 136 Z\" fill=\"var(--diagram-blue)\" stroke=\"none\" stroke-width=\"0\" fill-opacity=\"0.65\"/><line x1=\"262\" y1=\"88\" x2=\"298\" y2=\"88\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\"/><path d=\"M 260 48 L 260 158 Q 280 180 300 158 L 300 48\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/><line x1=\"256\" y1=\"48\" x2=\"304\" y2=\"48\" stroke=\"currentColor\" stroke-width=\"1.6\"/><path d=\"M 442 88 L 442 158 Q 460 177 478 158 L 478 88 Z\" fill=\"var(--diagram-blue)\" stroke=\"none\" stroke-width=\"0\" fill-opacity=\"0.6\"/><line x1=\"442\" y1=\"88\" x2=\"478\" y2=\"88\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\"/><path d=\"M 440 48 L 440 158 Q 460 180 480 158 L 480 48\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/><line x1=\"436\" y1=\"48\" x2=\"484\" y2=\"48\" stroke=\"currentColor\" stroke-width=\"1.6\"/><text x=\"100\" y=\"200\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">blue</text><text x=\"100\" y=\"212\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">solution</text><text x=\"280\" y=\"200\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">pale blue</text><text x=\"280\" y=\"212\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">precipitate, Cu(OH)₂</text><text x=\"460\" y=\"200\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">deep (inky) blue</text><text x=\"460\" y=\"212\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">solution</text><line x1=\"132\" y1=\"112\" x2=\"242.4\" y2=\"112\" stroke=\"var(--diagram-accent)\" stroke-width=\"1.5\"/><polygon points=\"248,112 241.6,114.9 241.6,109.1\" fill=\"var(--diagram-accent)\" stroke=\"none\"/><line x1=\"312\" y1=\"112\" x2=\"422.4\" y2=\"112\" stroke=\"var(--diagram-accent)\" stroke-width=\"1.5\"/><polygon points=\"428,112 421.6,114.9 421.6,109.1\" fill=\"var(--diagram-accent)\" stroke=\"none\"/><text x=\"190\" y=\"90\" fill=\"var(--diagram-accent)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">a few drops</text><text x=\"190\" y=\"102\" fill=\"var(--diagram-accent)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">of NH₄OH</text><text x=\"370\" y=\"90\" fill=\"var(--diagram-accent)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">excess</text><text x=\"370\" y=\"102\" fill=\"var(--diagram-accent)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">NH₄OH</text><text x=\"16\" y=\"242\" fill=\"currentColor\" stroke=\"none\" font-size=\"12\" font-weight=\"bold\">Zinc sulphate solution</text><path d=\"M 82 298 L 82 368 Q 100 387 118 368 L 118 298 Z\" fill=\"var(--diagram-muted)\" stroke=\"none\" stroke-width=\"0\" fill-opacity=\"0.22\"/><line x1=\"82\" y1=\"298\" x2=\"118\" y2=\"298\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\"/><path d=\"M 80 258 L 80 368 Q 100 390 120 368 L 120 258\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/><line x1=\"76\" y1=\"258\" x2=\"124\" y2=\"258\" stroke=\"currentColor\" stroke-width=\"1.6\"/><path d=\"M 262 298 L 262 368 Q 280 387 298 368 L 298 298 Z\" fill=\"var(--diagram-muted)\" stroke=\"none\" stroke-width=\"0\" fill-opacity=\"0.22\"/><circle cx=\"268\" cy=\"352\" r=\"2.2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\"/><circle cx=\"278\" cy=\"358\" r=\"2.2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\"/><circle cx=\"290\" cy=\"353\" r=\"2.2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\"/><circle cx=\"272\" cy=\"366\" r=\"2.2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\"/><circle cx=\"286\" cy=\"368\" r=\"2.2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\"/><circle cx=\"280\" cy=\"376\" r=\"2.2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\"/><circle cx=\"294\" cy=\"362\" r=\"2.2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\"/><line x1=\"262\" y1=\"298\" x2=\"298\" y2=\"298\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\"/><path d=\"M 260 258 L 260 368 Q 280 390 300 368 L 300 258\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/><line x1=\"256\" y1=\"258\" x2=\"304\" y2=\"258\" stroke=\"currentColor\" stroke-width=\"1.6\"/><path d=\"M 442 298 L 442 368 Q 460 387 478 368 L 478 298 Z\" fill=\"var(--diagram-muted)\" stroke=\"none\" stroke-width=\"0\" fill-opacity=\"0.22\"/><line x1=\"442\" y1=\"298\" x2=\"478\" y2=\"298\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\"/><path d=\"M 440 258 L 440 368 Q 460 390 480 368 L 480 258\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/><line x1=\"436\" y1=\"258\" x2=\"484\" y2=\"258\" stroke=\"currentColor\" stroke-width=\"1.6\"/><text x=\"100\" y=\"410\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">colourless</text><text x=\"100\" y=\"422\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">solution</text><text x=\"280\" y=\"410\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">white gelatinous</text><text x=\"280\" y=\"422\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">precipitate, Zn(OH)₂</text><text x=\"460\" y=\"410\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">colourless</text><text x=\"460\" y=\"422\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">solution</text><line x1=\"132\" y1=\"322\" x2=\"242.4\" y2=\"322\" stroke=\"var(--diagram-accent)\" stroke-width=\"1.5\"/><polygon points=\"248,322 241.6,324.9 241.6,319.1\" fill=\"var(--diagram-accent)\" stroke=\"none\"/><line x1=\"312\" y1=\"322\" x2=\"422.4\" y2=\"322\" stroke=\"var(--diagram-accent)\" stroke-width=\"1.5\"/><polygon points=\"428,322 421.6,324.9 421.6,319.1\" fill=\"var(--diagram-accent)\" stroke=\"none\"/><text x=\"190\" y=\"300\" fill=\"var(--diagram-accent)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">a few drops</text><text x=\"190\" y=\"312\" fill=\"var(--diagram-accent)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">of NH₄OH</text><text x=\"370\" y=\"300\" fill=\"var(--diagram-accent)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">excess</text><text x=\"370\" y=\"312\" fill=\"var(--diagram-accent)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">NH₄OH</text></svg>",
+            "alt": "Copper(II) and zinc solutions with a little and then excess ammonium hydroxide: pale blue precipitate to deep blue solution, and white precipitate to colourless solution"
+          },
+          "math": [],
+          "narration": "Now add ammonium hydroxide in excess. The pale blue copper precipitate dissolves to give a deep, inky blue solution, which is a very sensitive sign of copper ions. The white zinc precipitate also dissolves, leaving a colourless solution. Both form soluble complex salts with ammonia. The iron and lead precipitates stay put.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s04",
+          "layout": "check",
+          "heading": "Quick check: copper with excess ammonia",
+          "body_md": "Predict the final observation when ammonium hydroxide is added to a copper salt until in excess.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Which colour tells you that copper ions are present when aqueous ammonia is in excess?",
+          "check_question_id": "q_icse10chem_ch04_026",
+          "audio": null
+        },
+        {
+          "id": "s05",
+          "layout": "concept",
+          "heading": "Equations for the excess reactions",
+          "body_md": "The ammonium salt formed in the first step takes part in dissolving the precipitate. The two complex-forming equations have the same shape.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Precipitate",
+                "Equation in excess NH₄OH",
+                "Result"
+              ],
+              "rows": [
+                [
+                  "Cu(OH)₂",
+                  "Cu(OH)₂ + (NH₄)₂SO₄ + 2NH₄OH → [Cu(NH₃)₄]SO₄ + 4H₂O",
+                  "Deep blue solution"
+                ],
+                [
+                  "Zn(OH)₂",
+                  "Zn(OH)₂ + (NH₄)₂SO₄ + 2NH₄OH → [Zn(NH₃)₄]SO₄ + 4H₂O",
+                  "Colourless solution"
+                ],
+                [
+                  "Pb(OH)₂, Fe(OH)₂, Fe(OH)₃",
+                  "No reaction",
+                  "Precipitate stays"
+                ]
+              ]
+            },
+            "alt": "Table of equations for copper and zinc hydroxides dissolving in excess ammonium hydroxide"
+          },
+          "math": [],
+          "narration": "Here is what happens in excess. Copper hydroxide reacts with ammonium sulphate and more ammonium hydroxide to give tetraammine copper two sulphate and water, which is deep blue. Zinc hydroxide reacts in exactly the same pattern to give a colourless complex salt. Lead and iron hydroxides do not react, so their precipitates remain.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s06",
+          "layout": "example",
+          "heading": "Worked example: telling pairs apart",
+          "body_md": "**Problem.** Suggest a reagent to distinguish each pair, and state the observation for each solution: (a) zinc nitrate and lead nitrate; (b) iron(II) sulphate and iron(III) sulphate; (c) ammonium chloride and sodium chloride.\n\n**(a)** Excess **NH₄OH**: zinc — white precipitate **dissolves**; lead — white precipitate **stays**.\n\n**(b)** **NaOH**: iron(II) — **dirty green**; iron(III) — **reddish brown**.\n\n**(c)** **NaOH, warm**: ammonium chloride — **ammonia** turns moist red litmus blue; sodium chloride — **no gas**.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Pair",
+                "Reagent",
+                "First",
+                "Second"
+              ],
+              "rows": [
+                [
+                  "Zn(NO₃)₂, Pb(NO₃)₂",
+                  "NH₄OH in excess",
+                  "Precipitate dissolves",
+                  "Precipitate stays"
+                ],
+                [
+                  "FeSO₄, Fe₂(SO₄)₃",
+                  "NaOH",
+                  "Dirty green",
+                  "Reddish brown"
+                ],
+                [
+                  "NH₄Cl, NaCl",
+                  "NaOH, warm",
+                  "Ammonia evolved",
+                  "No gas"
+                ]
+              ]
+            },
+            "alt": "Table of three pairs of solutions with a reagent and the observation for each"
+          },
+          "math": [],
+          "narration": "Pick a reagent that gives a different result for each member of the pair. Zinc and lead both give white precipitates, but only zinc hydroxide dissolves in excess aqueous ammonia. The two iron salts differ in the colour of their precipitates. And only the ammonium salt gives off ammonia when warmed with sodium hydroxide.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s07",
+          "layout": "concept",
+          "heading": "Identifying a cation: a flow",
+          "body_md": "Combine the clues in order: **colour of the precipitate** with a few drops, then its behaviour in **excess NaOH** and in **excess NH₄OH**.",
+          "bullets": [],
+          "visual": {
+            "kind": "flow",
+            "spec": {
+              "direction": "TB",
+              "nodes": [
+                {
+                  "id": "a",
+                  "label": "Add a few drops of NaOH"
+                },
+                {
+                  "id": "b",
+                  "label": "Coloured precipitate"
+                },
+                {
+                  "id": "c",
+                  "label": "White precipitate"
+                },
+                {
+                  "id": "d",
+                  "label": "Dirty green: Fe²⁺; reddish brown: Fe³⁺; pale blue: Cu²⁺"
+                },
+                {
+                  "id": "e",
+                  "label": "Dissolves in excess NaOH?"
+                },
+                {
+                  "id": "f",
+                  "label": "No: Ca²⁺"
+                },
+                {
+                  "id": "g",
+                  "label": "Yes: add excess NH₄OH to a fresh sample"
+                },
+                {
+                  "id": "h",
+                  "label": "Dissolves: Zn²⁺"
+                },
+                {
+                  "id": "i",
+                  "label": "Stays: Pb²⁺"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "a",
+                  "to": "b"
+                },
+                {
+                  "from": "a",
+                  "to": "c"
+                },
+                {
+                  "from": "b",
+                  "to": "d"
+                },
+                {
+                  "from": "c",
+                  "to": "e"
+                },
+                {
+                  "from": "e",
+                  "to": "f",
+                  "label": "no"
+                },
+                {
+                  "from": "e",
+                  "to": "g",
+                  "label": "yes"
+                },
+                {
+                  "from": "g",
+                  "to": "h"
+                },
+                {
+                  "from": "g",
+                  "to": "i"
+                }
+              ]
+            },
+            "alt": "Flow chart for identifying iron(II), iron(III), copper, calcium, zinc and lead ions using sodium hydroxide and ammonium hydroxide"
+          },
+          "math": [],
+          "narration": "Here is a simple plan. Add a few drops of sodium hydroxide. A coloured precipitate names the ion at once: dirty green for iron two, reddish brown for iron three, pale blue for copper. If the precipitate is white, add excess sodium hydroxide. If it stays, the ion is calcium. If it dissolves, test a fresh sample with excess aqueous ammonia: zinc dissolves, lead does not.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s08",
+          "layout": "check",
+          "heading": "Quick check: lead with excess ammonia",
+          "body_md": "Predict what excess ammonium hydroxide does to a lead salt solution.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Lead hydroxide dissolves in one of the two alkalis only. Which one?",
+          "check_question_id": "q_icse10chem_ch04_029",
+          "audio": null
+        },
+        {
+          "id": "s09",
+          "layout": "concept",
+          "heading": "Amphoteric substances",
+          "body_md": "An **amphoteric** substance reacts with **both acids and bases** to form a salt and water. The **oxides and hydroxides of aluminium, zinc and lead** are amphoteric, and the **metals** themselves react with hot, concentrated caustic alkalis (NaOH, KOH) to give **hydrogen**.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Substance",
+                "With an acid",
+                "With sodium hydroxide"
+              ],
+              "rows": [
+                [
+                  "ZnO",
+                  "ZnO + 2HCl → ZnCl₂ + H₂O",
+                  "ZnO + 2NaOH → Na₂ZnO₂ + H₂O"
+                ],
+                [
+                  "PbO",
+                  "PbO + 2HNO₃ → Pb(NO₃)₂ + H₂O",
+                  "PbO + 2NaOH → Na₂PbO₂ + H₂O"
+                ],
+                [
+                  "Al₂O₃",
+                  "Al₂O₃ + 6HCl → 2AlCl₃ + 3H₂O",
+                  "Al₂O₃ + 2NaOH → 2NaAlO₂ + H₂O"
+                ]
+              ]
+            },
+            "alt": "Table of zinc oxide, lead(II) oxide and aluminium oxide reacting with an acid and with sodium hydroxide"
+          },
+          "math": [],
+          "narration": "Some oxides cannot make up their minds. Zinc oxide, lead two oxide and aluminium oxide react with acids, like a base, and with sodium hydroxide, like an acid, giving a salt and water each time. Such substances are called amphoteric. Their hydroxides are amphoteric too, which is why zinc and lead hydroxides dissolve in excess sodium hydroxide.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s10",
+          "layout": "concept",
+          "heading": "Metals that react with alkalis",
+          "body_md": "Aluminium, zinc and lead react with **hot, concentrated** sodium hydroxide to give a salt and **hydrogen**. Aluminium also needs water:\n\n- 2Al + 2NaOH + 2H₂O → 2NaAlO₂ + 3H₂ (sodium aluminate)\n- Zn + 2NaOH → Na₂ZnO₂ + H₂ (sodium zincate)\n- Pb + 2NaOH → Na₂PbO₂ + H₂ (sodium plumbite)",
+          "bullets": [],
+          "visual": {
+            "kind": "chem",
+            "spec": {
+              "equation": "2Al + 2NaOH + 2H2O -> 2NaAlO2 + 3H2"
+            },
+            "alt": "Equation: two aluminium plus two sodium hydroxide plus two water gives two sodium aluminate plus three hydrogen",
+            "caption": "Aluminium with hot sodium hydroxide solution"
+          },
+          "math": [],
+          "narration": "The metals themselves react with hot, concentrated caustic soda. Aluminium, together with water, gives sodium aluminate and hydrogen. Zinc gives sodium zincate and hydrogen, and lead gives sodium plumbite and hydrogen. The gas burns with a pop. This is why aluminium vessels should not be scrubbed with strong washing soda or caustic soda.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s11",
+          "layout": "example",
+          "heading": "Worked example: hydrogen from aluminium",
+          "body_md": "**Problem.** 2.7 g of aluminium foil dissolves completely in hot sodium hydroxide solution. Find the volume of hydrogen at STP. (Al = 27; molar volume 22.4 L)\n\n**Step 1.** 2Al + 2NaOH + 2H₂O → 2NaAlO₂ + 3H₂: 2 moles Al give 3 moles H₂.\n\n**Step 2.** Moles of Al = 2.7 ÷ 27 = 0.1.\n\n**Step 3.** Moles of H₂ = 0.1 × 3 ÷ 2 = 0.15; volume = 0.15 × 22.4 = **3.36 L**.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Quantity",
+                "Value"
+              ],
+              "rows": [
+                [
+                  "Moles of Al",
+                  "0.1"
+                ],
+                [
+                  "Mole ratio Al : H₂",
+                  "2 : 3"
+                ],
+                [
+                  "Moles of H₂",
+                  "0.15"
+                ],
+                [
+                  "Volume of H₂ at STP",
+                  "3.36 L"
+                ]
+              ]
+            },
+            "alt": "Table of the steps from 2.7 grams of aluminium to 3.36 litres of hydrogen"
+          },
+          "math": [],
+          "narration": "The equation shows that two units of aluminium give three units of hydrogen. Two point seven grams of aluminium is zero point one mole, since its molar mass is twenty seven. That gives one and a half times as much hydrogen, zero point one five mole, which occupies zero point one five times twenty two point four, or three point three six litres, at standard conditions.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s12",
+          "layout": "concept",
+          "heading": "Hydroxides with caustic alkali",
+          "body_md": "The amphoteric **hydroxides** dissolve in sodium hydroxide; this is what happens when the zinc or lead precipitate disappears in excess alkali.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Hydroxide",
+                "Equation with NaOH",
+                "Salt formed"
+              ],
+              "rows": [
+                [
+                  "Al(OH)₃",
+                  "Al(OH)₃ + NaOH → NaAlO₂ + 2H₂O",
+                  "Sodium aluminate"
+                ],
+                [
+                  "Zn(OH)₂",
+                  "Zn(OH)₂ + 2NaOH → Na₂ZnO₂ + 2H₂O",
+                  "Sodium zincate"
+                ],
+                [
+                  "Pb(OH)₂",
+                  "Pb(OH)₂ + 2NaOH → Na₂PbO₂ + 2H₂O",
+                  "Sodium plumbite"
+                ]
+              ]
+            },
+            "alt": "Table of aluminium, zinc and lead hydroxides reacting with sodium hydroxide and the salts formed"
+          },
+          "math": [],
+          "narration": "The hydroxides follow the same pattern as the oxides. Aluminium hydroxide gives sodium aluminate, zinc hydroxide gives sodium zincate, and lead hydroxide gives sodium plumbite, with water in each case. With potassium hydroxide the salts are potassium aluminate, potassium zincate and potassium plumbite.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s13",
+          "layout": "check",
+          "heading": "Quick check: an amphoteric oxide",
+          "body_md": "Pick the oxide that reacts with both an acid and an alkali.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Which of these oxides belongs to the amphoteric group of aluminium, zinc and lead?",
+          "check_question_id": "q_icse10chem_ch04_043",
+          "audio": null
+        },
+        {
+          "id": "s14",
+          "layout": "summary",
+          "heading": "Summary: Part 2",
+          "body_md": "",
+          "bullets": [
+            "A few drops of NH₄OH give the same precipitates as NaOH.",
+            "Excess NH₄OH dissolves Cu(OH)₂ (deep blue) and Zn(OH)₂ (colourless); Pb(OH)₂ and the iron hydroxides stay.",
+            "Zinc and lead: both white; only zinc dissolves in excess NH₄OH.",
+            "Amphoteric: reacts with acids and bases; oxides and hydroxides of Al, Zn and Pb.",
+            "Al, Zn and Pb with hot NaOH give hydrogen and sodium aluminate, zincate or plumbite."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Cation",
+                "Excess NaOH",
+                "Excess NH₄OH"
+              ],
+              "rows": [
+                [
+                  "Fe²⁺, Fe³⁺",
+                  "Precipitate stays",
+                  "Precipitate stays"
+                ],
+                [
+                  "Cu²⁺",
+                  "Precipitate stays",
+                  "Deep blue solution"
+                ],
+                [
+                  "Zn²⁺",
+                  "Colourless solution",
+                  "Colourless solution"
+                ],
+                [
+                  "Pb²⁺",
+                  "Colourless solution",
+                  "Precipitate stays"
+                ]
+              ]
+            },
+            "alt": "Summary table of the behaviour of five cations in excess sodium hydroxide and excess ammonium hydroxide"
+          },
+          "math": [],
+          "narration": "Let us sum up Part 2. Aqueous ammonia gives the same precipitates as caustic soda at first, but in excess it dissolves the copper precipitate to a deep blue solution and the zinc precipitate to a colourless one. Lead stays insoluble. Aluminium, zinc and lead, and their oxides and hydroxides, react with both acids and alkalis, so they are amphoteric.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s15",
+          "layout": "exam-tips",
+          "heading": "Exam tips: Part 2",
+          "body_md": "",
+          "bullets": [
+            "For copper with excess ammonium hydroxide, write “deep blue” or “inky blue” solution, not just “blue”.",
+            "To tell zinc from lead, use excess ammonium hydroxide; excess sodium hydroxide dissolves both.",
+            "Name the salts: sodium aluminate, sodium zincate, sodium plumbite.",
+            "Aluminium with NaOH needs water in the equation: 2Al + 2NaOH + 2H₂O → 2NaAlO₂ + 3H₂."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Slip",
+                "Fix"
+              ],
+              "rows": [
+                [
+                  "Pb(OH)₂ dissolves in excess NH₄OH",
+                  "It does not; it dissolves in excess NaOH"
+                ],
+                [
+                  "Al + NaOH → NaAlO₂ + H₂",
+                  "Balance with water: 2Al + 2NaOH + 2H₂O → 2NaAlO₂ + 3H₂"
+                ],
+                [
+                  "Excess NaOH tells Zn from Pb",
+                  "Use excess NH₄OH"
+                ]
+              ]
+            },
+            "alt": "Table of three common slips in Part 2 and their fixes"
+          },
+          "math": [],
+          "narration": "Final tips. With copper and excess aqueous ammonia, say deep blue or inky blue. To separate zinc from lead, choose excess ammonium hydroxide, because excess sodium hydroxide dissolves both. Learn the names aluminate, zincate and plumbite, and remember the water in the aluminium equation.",
+          "check_question_id": null,
+          "audio": null
+        }
+      ],
+      "status": "draft",
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    }
+  ],
+  "notes": {
+    "unit": "icse-10-chemistry-ch04",
+    "version": 1,
+    "title": "Analytical Chemistry — Notes",
+    "language": "en",
+    "sections": [
+      {
+        "heading": "1. Colours of salts and their solutions",
+        "body_md": "**Qualitative analysis** identifies the ions in a substance from observations such as colour and precipitates.\n\n- **White solids, colourless solutions:** salts of Na⁺, K⁺, Ca²⁺, NH₄⁺, Zn²⁺ and Pb²⁺.\n- **Copper(II):** hydrated CuSO₄ blue crystals, blue solution; CuCl₂ green to blue-green; CuO black; CuCO₃ green.\n- **Iron(II):** FeSO₄·7H₂O pale green crystals, pale green solution.\n- **Iron(III):** FeCl₃ yellowish-brown solid and solution; Fe₂O₃ reddish brown.\n- **Zinc and lead oxides:** ZnO white (yellow when hot); PbO yellow; Pb₃O₄ bright red; PbO₂ dark brown.",
+        "key_terms": [
+          {
+            "term": "Qualitative analysis",
+            "definition_md": "Finding out which ions or substances are present, without measuring how much."
+          },
+          {
+            "term": "Precipitate",
+            "definition_md": "An insoluble solid that forms when two solutions are mixed."
+          }
+        ],
+        "formulas": [],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Ion",
+              "Typical colour of its solution"
+            ],
+            "rows": [
+              [
+                "Cu²⁺",
+                "Blue"
+              ],
+              [
+                "Fe²⁺",
+                "Pale green"
+              ],
+              [
+                "Fe³⁺",
+                "Yellowish brown"
+              ],
+              [
+                "Zn²⁺, Pb²⁺, Ca²⁺, NH₄⁺",
+                "Colourless"
+              ]
+            ]
+          },
+          "alt": "Table of four groups of ions and the colours of their solutions"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-chemistry-ch04-t01"
+        ]
+      },
+      {
+        "heading": "2. Sodium hydroxide: coloured precipitates",
+        "body_md": "Sodium hydroxide supplies OH⁻ ions; insoluble metal hydroxides precipitate. Add it **drop by drop**, then **in excess**.\n\n- **Fe²⁺:** dirty green Fe(OH)₂, insoluble in excess (turns brown on standing in air: oxidised to Fe(OH)₃).\n- **Fe³⁺:** reddish-brown Fe(OH)₃, insoluble in excess.\n- **Cu²⁺:** pale blue Cu(OH)₂, insoluble in excess.\n- **Ca²⁺:** white Ca(OH)₂ (sparingly soluble), insoluble in excess.",
+        "key_terms": [
+          {
+            "term": "Drop by drop",
+            "definition_md": "Adding a reagent a little at a time so that the first change can be seen before an excess is present."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\ce{FeSO4 + 2NaOH -> Fe(OH)2 + Na2SO4}",
+            "label": "Dirty green precipitate"
+          },
+          {
+            "latex": "\\ce{FeCl3 + 3NaOH -> Fe(OH)3 + 3NaCl}",
+            "label": "Reddish-brown precipitate"
+          },
+          {
+            "latex": "\\ce{CuSO4 + 2NaOH -> Cu(OH)2 + Na2SO4}",
+            "label": "Pale blue precipitate"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Cation",
+              "Precipitate",
+              "Colour",
+              "Excess NaOH"
+            ],
+            "rows": [
+              [
+                "Fe²⁺",
+                "Fe(OH)₂",
+                "Dirty green",
+                "Insoluble"
+              ],
+              [
+                "Fe³⁺",
+                "Fe(OH)₃",
+                "Reddish brown",
+                "Insoluble"
+              ],
+              [
+                "Cu²⁺",
+                "Cu(OH)₂",
+                "Pale blue",
+                "Insoluble"
+              ],
+              [
+                "Ca²⁺",
+                "Ca(OH)₂",
+                "White",
+                "Insoluble"
+              ]
+            ]
+          },
+          "alt": "Table of precipitates formed by sodium hydroxide with four cations and their behaviour in excess"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-chemistry-ch04-t02"
+        ]
+      },
+      {
+        "heading": "3. Sodium hydroxide: zinc and lead",
+        "body_md": "Zinc and lead salts give **white** precipitates that **dissolve in excess** NaOH, because their hydroxides are amphoteric.\n\n- **Zn²⁺:** white gelatinous Zn(OH)₂ → dissolves to **sodium zincate**, Na₂ZnO₂ (colourless solution).\n- **Pb²⁺:** white chalky Pb(OH)₂ → dissolves to **sodium plumbite**, Na₂PbO₂ (colourless solution).",
+        "key_terms": [
+          {
+            "term": "Sodium zincate",
+            "definition_md": "Na₂ZnO₂, the soluble salt formed when zinc, its oxide or its hydroxide reacts with sodium hydroxide."
+          },
+          {
+            "term": "Sodium plumbite",
+            "definition_md": "Na₂PbO₂, the soluble salt formed when lead, lead(II) oxide or lead(II) hydroxide reacts with sodium hydroxide."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\ce{ZnSO4 + 2NaOH -> Zn(OH)2 + Na2SO4}",
+            "label": "A few drops"
+          },
+          {
+            "latex": "\\ce{Zn(OH)2 + 2NaOH -> Na2ZnO2 + 2H2O}",
+            "label": "Excess: sodium zincate"
+          },
+          {
+            "latex": "\\ce{Pb(NO3)2 + 2NaOH -> Pb(OH)2 + 2NaNO3}",
+            "label": "A few drops"
+          },
+          {
+            "latex": "\\ce{Pb(OH)2 + 2NaOH -> Na2PbO2 + 2H2O}",
+            "label": "Excess: sodium plumbite"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Cation",
+              "A few drops of NaOH",
+              "Excess NaOH"
+            ],
+            "rows": [
+              [
+                "Zn²⁺",
+                "White, gelatinous",
+                "Dissolves (sodium zincate)"
+              ],
+              [
+                "Pb²⁺",
+                "White, chalky",
+                "Dissolves (sodium plumbite)"
+              ]
+            ]
+          },
+          "alt": "Table of zinc and lead ions with a little and excess sodium hydroxide"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-chemistry-ch04-t02",
+          "icse-10-chemistry-ch04-t05"
+        ]
+      },
+      {
+        "heading": "4. Ammonium hydroxide, a few drops and in excess",
+        "body_md": "A few drops of NH₄OH give the **same precipitates** as NaOH (an ammonium salt stays in solution). In **excess**:\n\n- **Cu(OH)₂ dissolves** → **deep (inky) blue** solution of tetraamminecopper(II) sulphate, [Cu(NH₃)₄]SO₄.\n- **Zn(OH)₂ dissolves** → **colourless** solution of tetraamminezinc(II) sulphate, [Zn(NH₃)₄]SO₄.\n- **Pb(OH)₂, Fe(OH)₂, Fe(OH)₃ do not dissolve.**\n\nPlain-text equation for copper in excess: Cu(OH)₂ + (NH₄)₂SO₄ + 2NH₄OH → [Cu(NH₃)₄]SO₄ + 4H₂O (zinc follows the same pattern).",
+        "key_terms": [
+          {
+            "term": "Ammonium hydroxide",
+            "definition_md": "A solution of ammonia in water; a weak alkali."
+          },
+          {
+            "term": "Tetraamminecopper(II) sulphate",
+            "definition_md": "The deep blue soluble complex salt formed when copper(II) hydroxide dissolves in excess ammonium hydroxide."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\ce{FeSO4 + 2NH4OH -> Fe(OH)2 + (NH4)2SO4}",
+            "label": "Dirty green precipitate"
+          },
+          {
+            "latex": "\\ce{Pb(NO3)2 + 2NH4OH -> Pb(OH)2 + 2NH4NO3}",
+            "label": "White precipitate, insoluble in excess"
+          },
+          {
+            "latex": "\\ce{Zn(NO3)2 + 2NH4OH -> Zn(OH)2 + 2NH4NO3}",
+            "label": "White precipitate, soluble in excess"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Cation",
+              "Excess NaOH",
+              "Excess NH₄OH"
+            ],
+            "rows": [
+              [
+                "Fe²⁺, Fe³⁺",
+                "Precipitate stays",
+                "Precipitate stays"
+              ],
+              [
+                "Cu²⁺",
+                "Precipitate stays",
+                "Deep blue solution"
+              ],
+              [
+                "Zn²⁺",
+                "Dissolves",
+                "Dissolves"
+              ],
+              [
+                "Pb²⁺",
+                "Dissolves",
+                "Precipitate stays"
+              ]
+            ]
+          },
+          "alt": "Table comparing the behaviour of five cations in excess sodium hydroxide and excess ammonium hydroxide"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-chemistry-ch04-t03"
+        ]
+      },
+      {
+        "heading": "5. Sodium hydroxide and ammonium salts",
+        "body_md": "Any **ammonium salt warmed with an alkali** gives **ammonia**: the stronger base drives out the weaker one.\n\n**Identifying ammonia:** pungent smell; turns **moist red litmus blue**; gives **dense white fumes** of NH₄Cl with a rod dipped in concentrated HCl (NH₃ + HCl → NH₄Cl).",
+        "key_terms": [
+          {
+            "term": "Test for the ammonium ion",
+            "definition_md": "Warm the substance with sodium hydroxide solution: ammonia is given off, which turns moist red litmus paper blue."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\ce{NH4Cl + NaOH -> NaCl + H2O + NH3}",
+            "label": "Ammonium chloride, warmed"
+          },
+          {
+            "latex": "\\ce{(NH4)2SO4 + 2NaOH -> Na2SO4 + 2H2O + 2NH3}",
+            "label": "Ammonium sulphate, warmed"
+          },
+          {
+            "latex": "\\ce{NH4NO3 + NaOH -> NaNO3 + H2O + NH3}",
+            "label": "Ammonium nitrate, warmed"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Test on the gas",
+              "Observation for ammonia"
+            ],
+            "rows": [
+              [
+                "Smell (waft gently)",
+                "Sharp, pungent"
+              ],
+              [
+                "Moist red litmus",
+                "Turns blue"
+              ],
+              [
+                "Rod dipped in conc. HCl",
+                "Dense white fumes"
+              ]
+            ]
+          },
+          "alt": "Table of three tests that identify ammonia"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-chemistry-ch04-t04"
+        ]
+      },
+      {
+        "heading": "6. Amphoteric nature of aluminium, zinc and lead",
+        "body_md": "**Amphoteric:** reacts with **both acids and bases** to form a salt and water. Examples: Al₂O₃, ZnO, PbO and Al(OH)₃, Zn(OH)₂, Pb(OH)₂.\n\n- **Metals with hot concentrated NaOH** give **hydrogen**: aluminium (with water) → sodium aluminate; zinc → sodium zincate; lead → sodium plumbite.\n- **Oxides and hydroxides with NaOH** give the same salts and **water** (no hydrogen).\n- With KOH the products are potassium aluminate, zincate and plumbite.",
+        "key_terms": [
+          {
+            "term": "Amphoteric substance",
+            "definition_md": "A substance that reacts with both acids and bases to form a salt and water."
+          },
+          {
+            "term": "Sodium aluminate",
+            "definition_md": "NaAlO₂, the soluble salt formed when aluminium, its oxide or its hydroxide reacts with sodium hydroxide."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\ce{2Al + 2NaOH + 2H2O -> 2NaAlO2 + 3H2}",
+            "label": "Aluminium with hot NaOH"
+          },
+          {
+            "latex": "\\ce{Zn + 2NaOH -> Na2ZnO2 + H2}",
+            "label": "Zinc with hot NaOH"
+          },
+          {
+            "latex": "\\ce{Pb + 2NaOH -> Na2PbO2 + H2}",
+            "label": "Lead with hot NaOH"
+          },
+          {
+            "latex": "\\ce{Al2O3 + 2NaOH -> 2NaAlO2 + H2O}",
+            "label": "Aluminium oxide"
+          },
+          {
+            "latex": "\\ce{ZnO + 2NaOH -> Na2ZnO2 + H2O}",
+            "label": "Zinc oxide"
+          },
+          {
+            "latex": "\\ce{PbO + 2NaOH -> Na2PbO2 + H2O}",
+            "label": "Lead(II) oxide"
+          },
+          {
+            "latex": "\\ce{Al(OH)3 + NaOH -> NaAlO2 + 2H2O}",
+            "label": "Aluminium hydroxide"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Reactant with NaOH",
+              "Salt",
+              "Other product"
+            ],
+            "rows": [
+              [
+                "Al (with water)",
+                "Sodium aluminate, NaAlO₂",
+                "Hydrogen"
+              ],
+              [
+                "Zn",
+                "Sodium zincate, Na₂ZnO₂",
+                "Hydrogen"
+              ],
+              [
+                "Pb",
+                "Sodium plumbite, Na₂PbO₂",
+                "Hydrogen"
+              ],
+              [
+                "Oxide or hydroxide",
+                "Same salt",
+                "Water"
+              ]
+            ]
+          },
+          "alt": "Table of the products when aluminium, zinc, lead and their oxides or hydroxides react with sodium hydroxide"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-chemistry-ch04-t05"
+        ]
+      },
+      {
+        "heading": "7. Telling solutions apart",
+        "body_md": "Choose a reagent that gives a **different observation for each member** of the pair:\n\n| Pair | Reagent | Observations |\n|---|---|---|\n| Fe²⁺ / Fe³⁺ | NaOH | dirty green / reddish brown |\n| Zn²⁺ / Pb²⁺ | excess NH₄OH | precipitate dissolves / stays |\n| Zn²⁺ / Ca²⁺ | excess NaOH | precipitate dissolves / stays |\n| Cu²⁺ / Fe²⁺ | excess NH₄OH | deep blue solution / dirty green precipitate stays |\n| NH₄⁺ / Na⁺ | NaOH, warm | ammonia evolved / no gas |",
+        "key_terms": [
+          {
+            "term": "Distinguishing test",
+            "definition_md": "A single test whose observation differs for the two substances being compared."
+          }
+        ],
+        "formulas": [],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Step",
+              "Observation",
+              "Conclusion"
+            ],
+            "rows": [
+              [
+                "A few drops of NaOH",
+                "Coloured precipitate",
+                "Fe²⁺, Fe³⁺ or Cu²⁺ by colour"
+              ],
+              [
+                "Excess NaOH",
+                "White precipitate dissolves",
+                "Zn²⁺ or Pb²⁺"
+              ],
+              [
+                "Excess NH₄OH",
+                "White precipitate dissolves",
+                "Zn²⁺"
+              ],
+              [
+                "Excess NH₄OH",
+                "White precipitate stays",
+                "Pb²⁺"
+              ]
+            ]
+          },
+          "alt": "Table of a sequence of tests for identifying a cation"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-chemistry-ch04-t02",
+          "icse-10-chemistry-ch04-t03",
+          "icse-10-chemistry-ch04-t04"
+        ]
+      }
+    ],
+    "exam_tips_md": "**Common mistakes**\n- Swapping the colours of Fe(OH)₂ (dirty green) and Fe(OH)₃ (reddish brown).\n- Saying Cu(OH)₂ dissolves in excess NaOH (it dissolves in excess NH₄OH).\n- Using excess NaOH to tell zinc from lead (it dissolves both).\n- Leaving water out of the aluminium–NaOH equation.\n\n**How marks are usually awarded**\n- Observation questions (1 mark each): colour **and** behaviour in excess where asked.\n- Equations (1 mark): correct formulae and balancing; name the salt (zincate, plumbite, aluminate) if asked.\n- Distinguish questions (2 marks): one reagent, one observation for each substance.",
+    "status": "draft",
+    "provenance": {
+      "origin": "human",
+      "template_version": null,
+      "model": null,
+      "generated_at": "2026-11-01",
+      "author": "claude-opus-5-5 (subject-producer)"
+    }
+  },
+  "flashcards": {
+    "unit": "icse-10-chemistry-ch04",
+    "version": 1,
+    "language": "en",
+    "cards": [
+      {
+        "id": "f01",
+        "front_md": "Qualitative analysis?",
+        "back_md": "Identifying which ions or substances are present.",
+        "tag": "definition",
+        "topic_id": "icse-10-chemistry-ch04-t01"
+      },
+      {
+        "id": "f02",
+        "front_md": "Colour of iron(II) sulphate solution?",
+        "back_md": "Pale green.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch04-t01"
+      },
+      {
+        "id": "f03",
+        "front_md": "Colour of iron(III) chloride solution?",
+        "back_md": "Yellowish brown.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch04-t01"
+      },
+      {
+        "id": "f04",
+        "front_md": "Colour of a copper(II) sulphate solution?",
+        "back_md": "Blue.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch04-t01"
+      },
+      {
+        "id": "f05",
+        "front_md": "Colour of zinc oxide, cold and hot?",
+        "back_md": "White when cold, yellow when hot.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch04-t01"
+      },
+      {
+        "id": "f06",
+        "front_md": "Colour of red lead, Pb₃O₄?",
+        "back_md": "Bright red.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch04-t01"
+      },
+      {
+        "id": "f07",
+        "front_md": "Which salts give colourless solutions?",
+        "back_md": "Salts of Na, K, Ca, NH₄, Zn and Pb.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch04-t01"
+      },
+      {
+        "id": "f08",
+        "front_md": "Precipitate from Fe²⁺ with NaOH?",
+        "back_md": "Dirty green Fe(OH)₂, insoluble in excess.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch04-t02"
+      },
+      {
+        "id": "f09",
+        "front_md": "Precipitate from Fe³⁺ with NaOH?",
+        "back_md": "Reddish-brown Fe(OH)₃, insoluble in excess.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch04-t02"
+      },
+      {
+        "id": "f10",
+        "front_md": "Precipitate from Cu²⁺ with NaOH?",
+        "back_md": "Pale blue Cu(OH)₂, insoluble in excess.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch04-t02"
+      },
+      {
+        "id": "f11",
+        "front_md": "FeCl₃ + NaOH equation?",
+        "back_md": "FeCl₃ + 3NaOH → Fe(OH)₃ + 3NaCl.",
+        "tag": "formula",
+        "topic_id": "icse-10-chemistry-ch04-t02"
+      },
+      {
+        "id": "f12",
+        "front_md": "Zn²⁺ with NaOH, a few drops then excess?",
+        "back_md": "White gelatinous precipitate; dissolves in excess.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch04-t02"
+      },
+      {
+        "id": "f13",
+        "front_md": "Pb²⁺ with NaOH, a few drops then excess?",
+        "back_md": "White chalky precipitate; dissolves in excess.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch04-t02"
+      },
+      {
+        "id": "f14",
+        "front_md": "Zn(OH)₂ + excess NaOH?",
+        "back_md": "Zn(OH)₂ + 2NaOH → Na₂ZnO₂ + 2H₂O (sodium zincate).",
+        "tag": "formula",
+        "topic_id": "icse-10-chemistry-ch04-t02"
+      },
+      {
+        "id": "f15",
+        "front_md": "Why does Fe(OH)₂ turn brown in air?",
+        "back_md": "It is oxidised to Fe(OH)₃.",
+        "tag": "concept",
+        "topic_id": "icse-10-chemistry-ch04-t02"
+      },
+      {
+        "id": "f16",
+        "front_md": "Cu²⁺ with excess NH₄OH?",
+        "back_md": "Pale blue precipitate dissolves to a deep (inky) blue solution.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch04-t03"
+      },
+      {
+        "id": "f17",
+        "front_md": "Name of the deep blue compound?",
+        "back_md": "Tetraamminecopper(II) sulphate, [Cu(NH₃)₄]SO₄.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch04-t03"
+      },
+      {
+        "id": "f18",
+        "front_md": "Zn²⁺ with excess NH₄OH?",
+        "back_md": "White precipitate dissolves; colourless solution.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch04-t03"
+      },
+      {
+        "id": "f19",
+        "front_md": "Pb²⁺ with excess NH₄OH?",
+        "back_md": "White precipitate stays (insoluble).",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch04-t03"
+      },
+      {
+        "id": "f20",
+        "front_md": "Reagent to tell Zn²⁺ from Pb²⁺?",
+        "back_md": "Excess ammonium hydroxide.",
+        "tag": "exam-tip",
+        "topic_id": "icse-10-chemistry-ch04-t03"
+      },
+      {
+        "id": "f21",
+        "front_md": "Ammonium salt warmed with NaOH gives?",
+        "back_md": "Ammonia gas.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch04-t04"
+      },
+      {
+        "id": "f22",
+        "front_md": "NH₄Cl + NaOH (warm)?",
+        "back_md": "NH₄Cl + NaOH → NaCl + H₂O + NH₃.",
+        "tag": "formula",
+        "topic_id": "icse-10-chemistry-ch04-t04"
+      },
+      {
+        "id": "f23",
+        "front_md": "Two tests for ammonia?",
+        "back_md": "Moist red litmus turns blue; dense white fumes with conc. HCl.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch04-t04"
+      },
+      {
+        "id": "f24",
+        "front_md": "Amphoteric substance?",
+        "back_md": "Reacts with both acids and bases to form a salt and water.",
+        "tag": "definition",
+        "topic_id": "icse-10-chemistry-ch04-t05"
+      },
+      {
+        "id": "f25",
+        "front_md": "Three amphoteric oxides?",
+        "back_md": "Al₂O₃, ZnO, PbO.",
+        "tag": "example",
+        "topic_id": "icse-10-chemistry-ch04-t05"
+      },
+      {
+        "id": "f26",
+        "front_md": "Al with NaOH solution?",
+        "back_md": "2Al + 2NaOH + 2H₂O → 2NaAlO₂ + 3H₂.",
+        "tag": "formula",
+        "topic_id": "icse-10-chemistry-ch04-t05"
+      },
+      {
+        "id": "f27",
+        "front_md": "Salt from lead and NaOH?",
+        "back_md": "Sodium plumbite, Na₂PbO₂.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch04-t05"
+      },
+      {
+        "id": "f28",
+        "front_md": "Gas from Zn and hot NaOH?",
+        "back_md": "Hydrogen (Zn + 2NaOH → Na₂ZnO₂ + H₂).",
+        "tag": "formula",
+        "topic_id": "icse-10-chemistry-ch04-t05"
+      },
+      {
+        "id": "f29",
+        "front_md": "Oxide + NaOH: hydrogen or water?",
+        "back_md": "Water (only the metals give hydrogen).",
+        "tag": "concept",
+        "topic_id": "icse-10-chemistry-ch04-t05"
+      },
+      {
+        "id": "f30",
+        "front_md": "Diagram: what the test-tube row shows",
+        "back_md": "Fe²⁺ green, Fe³⁺ brown, Cu²⁺ blue, Zn²⁺ and Pb²⁺ white; only Zn and Pb dissolve in excess NaOH.",
+        "tag": "diagram",
+        "topic_id": "icse-10-chemistry-ch04-t02"
+      }
+    ],
+    "status": "draft",
+    "provenance": {
+      "origin": "human",
+      "template_version": null,
+      "model": null,
+      "generated_at": "2026-11-01",
+      "author": "claude-opus-5-5 (subject-producer)"
+    }
+  },
+  "questions": [
+    {
+      "id": "q_icse10chem_ch04_001",
+      "unit": "icse-10-chemistry-ch04",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A few crystals of iron(III) chloride are dissolved in distilled water. The colour of the solution is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "yellowish brown"
+        },
+        {
+          "id": "b",
+          "text_md": "pale green"
+        },
+        {
+          "id": "c",
+          "text_md": "blue"
+        },
+        {
+          "id": "d",
+          "text_md": "colourless"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Iron(III) salts give yellowish-brown solutions; pale green is the colour of iron(II) solutions — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch04-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch04_002",
+      "unit": "icse-10-chemistry-ch04",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Four bottles hold solutions of copper(II) nitrate, iron(II) sulphate, iron(III) chloride and zinc sulphate. The only colourless solution is that of:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "zinc sulphate"
+        },
+        {
+          "id": "b",
+          "text_md": "copper(II) nitrate"
+        },
+        {
+          "id": "c",
+          "text_md": "iron(II) sulphate"
+        },
+        {
+          "id": "d",
+          "text_md": "iron(III) chloride"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Zinc salts are white and dissolve to colourless solutions; the others are blue, pale green and yellowish brown — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch04-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch04_003",
+      "unit": "icse-10-chemistry-ch04",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which lead compound is correctly matched with its colour?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Lead(IV) oxide, PbO₂ — white"
+        },
+        {
+          "id": "b",
+          "text_md": "Lead nitrate crystals — blue"
+        },
+        {
+          "id": "c",
+          "text_md": "Red lead, Pb₃O₄ — bright red"
+        },
+        {
+          "id": "d",
+          "text_md": "Lead(II) hydroxide — reddish brown"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Pb₃O₄ is bright red; PbO₂ is dark brown, lead nitrate is white and Pb(OH)₂ is white — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch04-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch04_004",
+      "unit": "icse-10-chemistry-ch04",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? Solutions of zinc sulphate and lead nitrate in water are colourless.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "t"
+        ]
+      },
+      "solution_md": "True: zinc and lead salts are white and give colourless solutions.",
+      "marking_scheme": [
+        {
+          "step": "True",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch04-t01"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch04_005",
+      "unit": "icse-10-chemistry-ch04",
+      "language": "en",
+      "type": "short",
+      "stem_md": "State the colour of the solution formed when crystals of copper(II) nitrate dissolve in water.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Blue."
+      },
+      "solution_md": "Copper(II) salts give blue solutions.",
+      "marking_scheme": [
+        {
+          "step": "Blue",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch04-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch04_006",
+      "unit": "icse-10-chemistry-ch04",
+      "language": "en",
+      "type": "match",
+      "stem_md": "Match each substance in Column A with its colour in Column B.",
+      "options": [
+        {
+          "id": "1",
+          "text_md": "Iron(II) sulphate crystals"
+        },
+        {
+          "id": "2",
+          "text_md": "Iron(III) chloride solution"
+        },
+        {
+          "id": "3",
+          "text_md": "Copper(II) oxide"
+        },
+        {
+          "id": "4",
+          "text_md": "Zinc oxide, while hot"
+        },
+        {
+          "id": "5",
+          "text_md": "Red lead, Pb₃O₄"
+        }
+      ],
+      "match_right": [
+        {
+          "id": "p",
+          "text_md": "Black"
+        },
+        {
+          "id": "q",
+          "text_md": "Bright red"
+        },
+        {
+          "id": "r",
+          "text_md": "Pale green"
+        },
+        {
+          "id": "s",
+          "text_md": "Yellow"
+        },
+        {
+          "id": "t",
+          "text_md": "Yellowish brown"
+        }
+      ],
+      "answer": {
+        "pairs": [
+          {
+            "left_id": "1",
+            "right_id": "r"
+          },
+          {
+            "left_id": "2",
+            "right_id": "t"
+          },
+          {
+            "left_id": "3",
+            "right_id": "p"
+          },
+          {
+            "left_id": "4",
+            "right_id": "s"
+          },
+          {
+            "left_id": "5",
+            "right_id": "q"
+          }
+        ]
+      },
+      "solution_md": "Iron(II) sulphate crystals → pale green; iron(III) chloride solution → yellowish brown; copper(II) oxide → black; zinc oxide while hot → yellow (white when cold); red lead → bright red.",
+      "marking_scheme": [
+        {
+          "step": "1 → r",
+          "marks": 1
+        },
+        {
+          "step": "2 → t",
+          "marks": 1
+        },
+        {
+          "step": "3 → p",
+          "marks": 1
+        },
+        {
+          "step": "4 → s",
+          "marks": 1
+        },
+        {
+          "step": "5 → q",
+          "marks": 1
+        }
+      ],
+      "marks": 5,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch04-t01"
+      ],
+      "expected_time_sec": 200,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch04_007",
+      "unit": "icse-10-chemistry-ch04",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A few drops of sodium hydroxide solution are added to a freshly prepared pale green solution of iron(II) sulphate, and then more alkali is added. The observations are:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "a reddish-brown precipitate that dissolves in excess"
+        },
+        {
+          "id": "b",
+          "text_md": "a white precipitate that dissolves in excess"
+        },
+        {
+          "id": "c",
+          "text_md": "a pale blue precipitate that does not dissolve in excess"
+        },
+        {
+          "id": "d",
+          "text_md": "a dirty green precipitate that does not dissolve in excess"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "FeSO₄ + 2NaOH → Fe(OH)₂ + Na₂SO₄; iron(II) hydroxide is dirty green and insoluble in excess — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch04-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch04_008",
+      "unit": "icse-10-chemistry-ch04",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Sodium hydroxide solution is added drop by drop to a yellowish-brown solution of iron(III) chloride. The precipitate formed is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Fe(OH)₂, dirty green"
+        },
+        {
+          "id": "b",
+          "text_md": "Fe(OH)₃, dirty green"
+        },
+        {
+          "id": "c",
+          "text_md": "Fe(OH)₂, reddish brown"
+        },
+        {
+          "id": "d",
+          "text_md": "Fe(OH)₃, reddish brown"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "FeCl₃ + 3NaOH → Fe(OH)₃ + 3NaCl; iron(III) hydroxide is reddish brown — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch04-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch04_009",
+      "unit": "icse-10-chemistry-ch04",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Sodium hydroxide solution is added a little at a time, and then in excess, to a blue solution of copper(II) nitrate. What is seen?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "A pale blue precipitate forms and dissolves in excess to a deep blue solution"
+        },
+        {
+          "id": "b",
+          "text_md": "A pale blue precipitate forms and stays in excess"
+        },
+        {
+          "id": "c",
+          "text_md": "A white precipitate forms and dissolves in excess"
+        },
+        {
+          "id": "d",
+          "text_md": "No precipitate forms; the blue colour only deepens"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Cu(NO₃)₂ + 2NaOH → Cu(OH)₂ + 2NaNO₃; copper(II) hydroxide does not dissolve in excess sodium hydroxide (it is excess ammonium hydroxide that gives the deep blue solution) — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch04-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch04_010",
+      "unit": "icse-10-chemistry-ch04",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Sodium hydroxide solution is added drop by drop, and then in excess, to two colourless solutions: lead nitrate in tube 1 and zinc sulphate in tube 2. Which statement is correct?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Only tube 1 gives a precipitate that dissolves in excess"
+        },
+        {
+          "id": "b",
+          "text_md": "Only tube 2 gives a precipitate that dissolves in excess"
+        },
+        {
+          "id": "c",
+          "text_md": "Neither tube gives a precipitate"
+        },
+        {
+          "id": "d",
+          "text_md": "Both tubes give white precipitates that dissolve in excess"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Pb(OH)₂ and Zn(OH)₂ are both white and amphoteric; they dissolve in excess NaOH as sodium plumbite and sodium zincate — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch04-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch04_011",
+      "unit": "icse-10-chemistry-ch04",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A colourless solution gives a white precipitate with a few drops of sodium hydroxide solution, and the precipitate does not dissolve when more alkali is added. The solution could be:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "zinc nitrate"
+        },
+        {
+          "id": "b",
+          "text_md": "calcium nitrate"
+        },
+        {
+          "id": "c",
+          "text_md": "lead nitrate"
+        },
+        {
+          "id": "d",
+          "text_md": "iron(II) sulphate"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Zinc and lead hydroxides dissolve in excess NaOH; iron(II) gives a dirty green precipitate from a pale green solution. Calcium hydroxide is white and stays — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch04-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch04_012",
+      "unit": "icse-10-chemistry-ch04",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "The dirty green precipitate obtained from iron(II) sulphate and sodium hydroxide is left in an open test tube. After some time its surface turns reddish brown. This is because:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "iron(II) hydroxide dissolves in the excess alkali"
+        },
+        {
+          "id": "b",
+          "text_md": "iron(III) hydroxide is reduced by air to iron(II) hydroxide"
+        },
+        {
+          "id": "c",
+          "text_md": "iron(II) hydroxide is oxidised by air to iron(III) hydroxide"
+        },
+        {
+          "id": "d",
+          "text_md": "sodium hydroxide reduces the precipitate to iron"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Oxygen of the air oxidises Fe(OH)₂ (dirty green) to Fe(OH)₃ (reddish brown) — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch04-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch04_013",
+      "unit": "icse-10-chemistry-ch04",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** A solution of iron(II) sulphate can be told apart from a solution of iron(III) chloride by adding sodium hydroxide solution.\n\n**Reason (R):** Iron(II) hydroxide and iron(III) hydroxide both dissolve in excess sodium hydroxide solution.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "A is true: the precipitates differ in colour (dirty green and reddish brown). R is false: neither hydroxide dissolves in excess NaOH — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch04-t02"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch04_014",
+      "unit": "icse-10-chemistry-ch04",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** When sodium hydroxide solution is added in excess to zinc sulphate solution, the white precipitate first formed disappears.\n\n**Reason (R):** Zinc hydroxide reacts with sodium hydroxide to form sodium zincate, which is soluble in water.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Both are true, and R explains A: Zn(OH)₂ + 2NaOH → Na₂ZnO₂ + 2H₂O — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch04-t02",
+        "icse-10-chemistry-ch04-t05"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch04_015",
+      "unit": "icse-10-chemistry-ch04",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? Copper(II) hydroxide dissolves in excess sodium hydroxide solution, giving a deep blue solution.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "f"
+        ]
+      },
+      "solution_md": "False: the pale blue precipitate does not dissolve in excess sodium hydroxide. The deep blue solution forms with excess ammonium hydroxide.",
+      "marking_scheme": [
+        {
+          "step": "False, with the correction",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch04-t02"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch04_016",
+      "unit": "icse-10-chemistry-ch04",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "Sodium hydroxide solution added to a pale green solution of iron(II) sulphate gives a ___ green precipitate.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "dirty"
+            ]
+          }
+        ]
+      },
+      "solution_md": "A **dirty** green precipitate of iron(II) hydroxide.",
+      "marking_scheme": [
+        {
+          "step": "Blank 1: \"dirty\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch04-t02"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch04_017",
+      "unit": "icse-10-chemistry-ch04",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write the balanced equation for the reaction between iron(II) sulphate solution and sodium hydroxide solution.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "FeSO₄ + 2NaOH → Fe(OH)₂ + Na₂SO₄."
+      },
+      "solution_md": "Equation.",
+      "marking_scheme": [
+        {
+          "step": "Balanced equation",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch04-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch04_018",
+      "unit": "icse-10-chemistry-ch04",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write the balanced equation for the reaction of lead nitrate solution with a few drops of sodium hydroxide solution.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Pb(NO₃)₂ + 2NaOH → Pb(OH)₂ + 2NaNO₃."
+      },
+      "solution_md": "Equation.",
+      "marking_scheme": [
+        {
+          "step": "Balanced equation",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch04-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch04_019",
+      "unit": "icse-10-chemistry-ch04",
+      "language": "en",
+      "type": "short",
+      "stem_md": "State one observation when sodium hydroxide solution is added drop by drop to copper(II) chloride solution.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "A pale blue precipitate (of copper(II) hydroxide) is formed."
+      },
+      "solution_md": "Pale blue precipitate.",
+      "marking_scheme": [
+        {
+          "step": "Pale blue precipitate",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch04-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch04_020",
+      "unit": "icse-10-chemistry-ch04",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Name the soluble salt formed when the white precipitate of zinc hydroxide dissolves in excess sodium hydroxide solution.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Sodium zincate, Na₂ZnO₂."
+      },
+      "solution_md": "Sodium zincate.",
+      "marking_scheme": [
+        {
+          "step": "Sodium zincate",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch04-t02",
+        "icse-10-chemistry-ch04-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch04_021",
+      "unit": "icse-10-chemistry-ch04",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "What mass of sodium hydroxide, in grams, is needed to precipitate all the copper, as copper(II) hydroxide, from a solution containing 15.95 g of anhydrous copper(II) sulphate? (Cu = 63.5, S = 32, O = 16, Na = 23, H = 1)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 8,
+        "tolerance": 0.01,
+        "unit": "g"
+      },
+      "solution_md": "$\\ce{CuSO4 + 2NaOH -> Cu(OH)2 + Na2SO4}$: one mole of copper(II) sulphate needs two moles of sodium hydroxide. Molar mass of $\\ce{CuSO4} = 63.5 + 32 + 4 \\times 16 = 159.5$. Moles $= \\dfrac{15.95}{159.5} = 0.1$. Moles of NaOH $= 2 \\times 0.1 = 0.2$. Mass of NaOH $= 0.2 \\times 40 = 8$, so 8 g.",
+      "marking_scheme": [
+        {
+          "step": "Moles of CuSO₄ and 1 : 2 ratio",
+          "marks": 1
+        },
+        {
+          "step": "8 g",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch04-t02"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch04_022",
+      "unit": "icse-10-chemistry-ch04",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Sodium hydroxide solution is added drop by drop, and then in excess, to zinc sulphate solution. Write the balanced equation for each stage.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "A few drops: ZnSO₄ + 2NaOH → Zn(OH)₂ + Na₂SO₄ (white gelatinous precipitate). In excess: Zn(OH)₂ + 2NaOH → Na₂ZnO₂ + 2H₂O (the precipitate dissolves)."
+      },
+      "solution_md": "Precipitation, then sodium zincate.",
+      "marking_scheme": [
+        {
+          "step": "First equation",
+          "marks": 1
+        },
+        {
+          "step": "Second equation",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch04-t02",
+        "icse-10-chemistry-ch04-t05"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch04_023",
+      "unit": "icse-10-chemistry-ch04",
+      "language": "en",
+      "type": "short",
+      "stem_md": "How would you distinguish between iron(II) sulphate solution and iron(III) chloride solution using sodium hydroxide solution? State the observation for each.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Add sodium hydroxide solution to each. Iron(II) sulphate gives a dirty green precipitate (Fe(OH)₂); iron(III) chloride gives a reddish-brown precipitate (Fe(OH)₃). Neither dissolves in excess."
+      },
+      "solution_md": "Dirty green against reddish brown.",
+      "marking_scheme": [
+        {
+          "step": "Iron(II): dirty green",
+          "marks": 1
+        },
+        {
+          "step": "Iron(III): reddish brown",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch04-t02"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch04_024",
+      "unit": "icse-10-chemistry-ch04",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Calcium nitrate solution and zinc nitrate solution are both colourless. Explain how you would distinguish them using sodium hydroxide solution.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Add sodium hydroxide solution drop by drop and then in excess to each. Both give a white precipitate at first. The precipitate from zinc nitrate (zinc hydroxide) dissolves in excess to a colourless solution; the precipitate from calcium nitrate (calcium hydroxide) does not dissolve."
+      },
+      "solution_md": "Excess NaOH dissolves only the zinc precipitate.",
+      "marking_scheme": [
+        {
+          "step": "Zinc: precipitate dissolves in excess",
+          "marks": 1
+        },
+        {
+          "step": "Calcium: precipitate stays",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch04-t02"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch04_025",
+      "unit": "icse-10-chemistry-ch04",
+      "language": "en",
+      "type": "short",
+      "stem_md": "A student adds sodium hydroxide solution to a freshly prepared iron(II) sulphate solution, and also to an old sample of the same solution that has stood open for some weeks and turned yellowish brown. (a) State the colour of the precipitate from the fresh solution. (b) State the colour of the precipitate from the old sample and explain the difference. (c) Write the balanced equation for the reaction in (b), taking the old sample to contain iron(III) sulphate.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Dirty green. (b) Reddish brown. On standing in air, iron(II) sulphate is oxidised to an iron(III) salt, which gives iron(III) hydroxide. (c) Fe₂(SO₄)₃ + 6NaOH → 2Fe(OH)₃ + 3Na₂SO₄."
+      },
+      "solution_md": "Fresh: Fe²⁺; old: oxidised to Fe³⁺.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b) colour and reason",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch04-t01",
+        "icse-10-chemistry-ch04-t02"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch04_026",
+      "unit": "icse-10-chemistry-ch04",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Ammonium hydroxide is added drop by drop to copper(II) nitrate solution in a boiling tube until no further change occurs. The final appearance is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "a pale blue precipitate under a colourless liquid"
+        },
+        {
+          "id": "b",
+          "text_md": "a colourless solution"
+        },
+        {
+          "id": "c",
+          "text_md": "a reddish-brown precipitate"
+        },
+        {
+          "id": "d",
+          "text_md": "a clear, deep (inky) blue solution"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "The pale blue Cu(OH)₂ first formed dissolves in excess ammonium hydroxide to give a deep blue complex salt — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch04-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch04_027",
+      "unit": "icse-10-chemistry-ch04",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which reagent can be used to tell zinc nitrate solution from lead nitrate solution?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Sodium hydroxide solution, added in excess"
+        },
+        {
+          "id": "b",
+          "text_md": "Sodium hydroxide solution, a few drops only"
+        },
+        {
+          "id": "c",
+          "text_md": "Ammonium hydroxide solution, added in excess"
+        },
+        {
+          "id": "d",
+          "text_md": "Distilled water"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Both give white precipitates with a little alkali, and both dissolve in excess NaOH; only zinc hydroxide dissolves in excess NH₄OH — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch04-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch04_028",
+      "unit": "icse-10-chemistry-ch04",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Excess sodium hydroxide solution is added to one sample of a salt solution, and excess ammonium hydroxide to another sample of the same solution. For which solution are the two final observations the same?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Copper(II) sulphate: a pale blue precipitate remains in both"
+        },
+        {
+          "id": "b",
+          "text_md": "Lead nitrate: the white precipitate dissolves in both"
+        },
+        {
+          "id": "c",
+          "text_md": "Iron(III) chloride: the reddish-brown precipitate dissolves in both"
+        },
+        {
+          "id": "d",
+          "text_md": "Iron(II) sulphate: a dirty green precipitate remains in both"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Copper(II) hydroxide dissolves only in excess NH₄OH; lead hydroxide only in excess NaOH; iron(III) hydroxide dissolves in neither. Iron(II) hydroxide stays in both — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 4,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch04-t02",
+        "icse-10-chemistry-ch04-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch04_029",
+      "unit": "icse-10-chemistry-ch04",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Ammonium hydroxide is added drop by drop, and then in excess, to lead nitrate solution. The observation is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "a white precipitate that dissolves in excess"
+        },
+        {
+          "id": "b",
+          "text_md": "a white chalky precipitate that does not dissolve in excess"
+        },
+        {
+          "id": "c",
+          "text_md": "a deep blue solution"
+        },
+        {
+          "id": "d",
+          "text_md": "no precipitate at any stage"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Pb(NO₃)₂ + 2NH₄OH → Pb(OH)₂ + 2NH₄NO₃; lead hydroxide is insoluble in excess ammonium hydroxide — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch04-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch04_030",
+      "unit": "icse-10-chemistry-ch04",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** The precipitate formed by adding ammonium hydroxide to iron(III) chloride solution does not dissolve in excess.\n\n**Reason (R):** Iron(III) hydroxide is reddish brown in colour.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Both statements are true, but the colour of the precipitate does not explain why it is insoluble in excess — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch04-t03"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch04_031",
+      "unit": "icse-10-chemistry-ch04",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "When ammonium hydroxide is added in excess to copper(II) nitrate solution, the pale blue precipitate dissolves to give a ___ blue solution.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "deep",
+              "inky",
+              "deep (inky)"
+            ]
+          }
+        ]
+      },
+      "solution_md": "A **deep** (inky) blue solution of the tetraamminecopper(II) complex.",
+      "marking_scheme": [
+        {
+          "step": "Blank 1: \"deep\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch04-t03"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch04_032",
+      "unit": "icse-10-chemistry-ch04",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Name the compound responsible for the deep blue colour formed when ammonium hydroxide is added in excess to copper(II) sulphate solution.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Tetraamminecopper(II) sulphate, [Cu(NH₃)₄]SO₄."
+      },
+      "solution_md": "Tetraamminecopper(II) sulphate.",
+      "marking_scheme": [
+        {
+          "step": "Tetraamminecopper(II) sulphate",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch04-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch04_033",
+      "unit": "icse-10-chemistry-ch04",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write the balanced equation for the reaction of zinc nitrate solution with a few drops of ammonium hydroxide.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Zn(NO₃)₂ + 2NH₄OH → Zn(OH)₂ + 2NH₄NO₃."
+      },
+      "solution_md": "Equation.",
+      "marking_scheme": [
+        {
+          "step": "Balanced equation",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch04-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch04_034",
+      "unit": "icse-10-chemistry-ch04",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Two test tubes contain copper(II) sulphate solution. Sodium hydroxide solution is added to the first until in excess, and ammonium hydroxide to the second until in excess. (a) Describe the final appearance of each tube. (b) Write the balanced equation for the formation of the precipitate in the first tube. (c) Explain why the result in the second tube is different.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) First tube: a pale blue precipitate remains (under an almost colourless liquid). Second tube: a clear, deep (inky) blue solution. (b) CuSO₄ + 2NaOH → Cu(OH)₂ + Na₂SO₄. (c) Copper(II) hydroxide does not react with sodium hydroxide, but with excess ammonium hydroxide it forms a soluble deep blue complex salt, tetraamminecopper(II) sulphate."
+      },
+      "solution_md": "Precipitate stays with NaOH; soluble complex with NH₄OH.",
+      "marking_scheme": [
+        {
+          "step": "(a) both tubes",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch04-t02",
+        "icse-10-chemistry-ch04-t03"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch04_035",
+      "unit": "icse-10-chemistry-ch04",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A white crystalline salt is warmed with sodium hydroxide solution, and the gas given off turns moist red litmus paper blue. The salt must contain:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "zinc ions"
+        },
+        {
+          "id": "b",
+          "text_md": "ammonium ions"
+        },
+        {
+          "id": "c",
+          "text_md": "lead ions"
+        },
+        {
+          "id": "d",
+          "text_md": "calcium ions"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "An alkaline gas on warming with NaOH is ammonia, which comes only from an ammonium salt — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch04-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch04_036",
+      "unit": "icse-10-chemistry-ch04",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Crystals of ammonium nitrate are warmed with sodium hydroxide solution, and a glass rod dipped in concentrated hydrochloric acid is held at the mouth of the test tube. The observation is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "reddish-brown fumes of nitrogen dioxide"
+        },
+        {
+          "id": "b",
+          "text_md": "dense white fumes of ammonium chloride"
+        },
+        {
+          "id": "c",
+          "text_md": "a greenish-yellow gas"
+        },
+        {
+          "id": "d",
+          "text_md": "a white precipitate in the test tube"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "NH₄NO₃ + NaOH → NaNO₃ + H₂O + NH₃; then NH₃ + HCl → NH₄Cl, seen as dense white fumes — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch04-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch04_037",
+      "unit": "icse-10-chemistry-ch04",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Ammonia is given off when ammonium sulphate is warmed with sodium hydroxide solution.\n\n**Reason (R):** Sodium hydroxide is a stronger base than ammonia and displaces it from its salt.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Both are true, and R explains A — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch04-t04"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch04_038",
+      "unit": "icse-10-chemistry-ch04",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? Ammonium chloride gives off ammonia only when it is heated with an acid.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "f"
+        ]
+      },
+      "solution_md": "False: ammonia is given off when an ammonium salt is warmed with an alkali such as sodium hydroxide.",
+      "marking_scheme": [
+        {
+          "step": "False, with the correction",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch04-t04"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch04_039",
+      "unit": "icse-10-chemistry-ch04",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write the balanced equation for the reaction when ammonium chloride is warmed with sodium hydroxide solution.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "NH₄Cl + NaOH → NaCl + H₂O + NH₃."
+      },
+      "solution_md": "Equation.",
+      "marking_scheme": [
+        {
+          "step": "Balanced equation",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch04-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch04_040",
+      "unit": "icse-10-chemistry-ch04",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Name the gas given off when ammonium sulphate is warmed with caustic soda solution, and state one test for it.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Ammonia; it turns moist red litmus paper blue (or gives dense white fumes with a rod dipped in concentrated hydrochloric acid)."
+      },
+      "solution_md": "Ammonia; litmus or HCl test.",
+      "marking_scheme": [
+        {
+          "step": "Ammonia with one test",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch04-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch04_041",
+      "unit": "icse-10-chemistry-ch04",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "A sample of 8.0 g of ammonium nitrate is warmed with excess sodium hydroxide solution until no more gas is given off. What volume of ammonia, measured at STP, is obtained? Give the answer in litres. (N = 14, H = 1, O = 16; one mole of a gas occupies 22.4 L at STP)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 2.24,
+        "tolerance": 0.01,
+        "unit": "L"
+      },
+      "solution_md": "$\\ce{NH4NO3 + NaOH -> NaNO3 + H2O + NH3}$: one mole of ammonium nitrate gives one mole of ammonia. Molar mass of $\\ce{NH4NO3} = 2 \\times 14 + 4 \\times 1 + 3 \\times 16 = 80$. Moles $= \\dfrac{8.0}{80} = 0.1$. Volume of ammonia $= 0.1 \\times 22.4 = 2.24$, so 2.24 L.",
+      "marking_scheme": [
+        {
+          "step": "Moles of NH₄NO₃ and 1 : 1 ratio",
+          "marks": 1
+        },
+        {
+          "step": "2.24 L",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch04-t04"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch04_042",
+      "unit": "icse-10-chemistry-ch04",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Describe how you would show that a sample of white crystals contains ammonium ions. Write the balanced equation if the crystals are ammonium chloride.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Warm a little of the crystals with sodium hydroxide solution and hold moist red litmus paper at the mouth of the tube: it turns blue (a pungent gas, ammonia, is given off). NH₄Cl + NaOH → NaCl + H₂O + NH₃."
+      },
+      "solution_md": "Warm with NaOH; ammonia turns moist red litmus blue.",
+      "marking_scheme": [
+        {
+          "step": "Test and observation",
+          "marks": 1
+        },
+        {
+          "step": "Equation",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch04-t04"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch04_043",
+      "unit": "icse-10-chemistry-ch04",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A white powder dissolves in dilute nitric acid and also in hot sodium hydroxide solution, forming a salt and water each time. The powder could be:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "zinc oxide"
+        },
+        {
+          "id": "b",
+          "text_md": "calcium oxide"
+        },
+        {
+          "id": "c",
+          "text_md": "magnesium oxide"
+        },
+        {
+          "id": "d",
+          "text_md": "sodium oxide"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Zinc oxide is amphoteric: it reacts with acids and with alkalis. The others are basic oxides and do not react with NaOH — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch04-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch04_044",
+      "unit": "icse-10-chemistry-ch04",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A strip of aluminium foil is warmed with sodium hydroxide solution. The gas given off and the salt formed are:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "oxygen and sodium aluminate"
+        },
+        {
+          "id": "b",
+          "text_md": "hydrogen and aluminium hydroxide"
+        },
+        {
+          "id": "c",
+          "text_md": "hydrogen and sodium aluminate"
+        },
+        {
+          "id": "d",
+          "text_md": "ammonia and sodium aluminate"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "2Al + 2NaOH + 2H₂O → 2NaAlO₂ + 3H₂ — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch04-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch04_045",
+      "unit": "icse-10-chemistry-ch04",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Yellow lead(II) oxide dissolves when it is boiled with concentrated sodium hydroxide solution. The products are:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "sodium plumbite and water"
+        },
+        {
+          "id": "b",
+          "text_md": "sodium plumbite and hydrogen"
+        },
+        {
+          "id": "c",
+          "text_md": "lead(II) hydroxide and sodium oxide"
+        },
+        {
+          "id": "d",
+          "text_md": "lead and sodium peroxide"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "PbO + 2NaOH → Na₂PbO₂ + H₂O; an oxide gives water, not hydrogen — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch04-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch04_046",
+      "unit": "icse-10-chemistry-ch04",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Pieces of four metals are boiled separately with concentrated sodium hydroxide solution. Which metal gives no hydrogen?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Zinc"
+        },
+        {
+          "id": "b",
+          "text_md": "Aluminium"
+        },
+        {
+          "id": "c",
+          "text_md": "Copper"
+        },
+        {
+          "id": "d",
+          "text_md": "Lead"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Aluminium, zinc and lead are amphoteric metals that react with hot caustic alkali; copper does not — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch04-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch04_047",
+      "unit": "icse-10-chemistry-ch04",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Zinc granules are boiled with concentrated potassium hydroxide solution, and a gas is given off. The salt left in solution is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "potassium zincate, K₂ZnO₂"
+        },
+        {
+          "id": "b",
+          "text_md": "zinc hydroxide, Zn(OH)₂"
+        },
+        {
+          "id": "c",
+          "text_md": "potassium aluminate, KAlO₂"
+        },
+        {
+          "id": "d",
+          "text_md": "zinc oxide, ZnO"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Zn + 2KOH → K₂ZnO₂ + H₂ — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch04-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch04_048",
+      "unit": "icse-10-chemistry-ch04",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Aluminium oxide is a purely basic oxide.\n\n**Reason (R):** Aluminium oxide reacts with hydrochloric acid and with sodium hydroxide to form a salt and water.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "A is false: aluminium oxide is amphoteric. R is true, and it is exactly why the oxide is amphoteric — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch04-t05"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch04_049",
+      "unit": "icse-10-chemistry-ch04",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? Lead reacts with hot, concentrated sodium hydroxide solution, giving off hydrogen.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "t"
+        ]
+      },
+      "solution_md": "True: Pb + 2NaOH → Na₂PbO₂ + H₂ (sodium plumbite).",
+      "marking_scheme": [
+        {
+          "step": "True",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch04-t05"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch04_050",
+      "unit": "icse-10-chemistry-ch04",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "Aluminium dissolves in hot sodium hydroxide solution, forming hydrogen and sodium ___.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "aluminate",
+              "meta-aluminate"
+            ]
+          }
+        ]
+      },
+      "solution_md": "Sodium **aluminate**, NaAlO₂.",
+      "marking_scheme": [
+        {
+          "step": "Blank 1: \"aluminate\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch04-t05"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch04_051",
+      "unit": "icse-10-chemistry-ch04",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "Complete each sentence by choosing the correct word or words from the bracket.\n\n(a) Lead(II) oxide is ___ (basic / amphoteric).\n\n(b) Excess ammonium hydroxide dissolves copper(II) hydroxide to form a ___ (deep blue / colourless) solution.\n\n(c) When an ammonium salt is warmed with sodium hydroxide solution, ___ (ammonia / hydrogen) is given off.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "amphoteric"
+            ]
+          },
+          {
+            "accepted": [
+              "deep blue"
+            ]
+          },
+          {
+            "accepted": [
+              "ammonia"
+            ]
+          }
+        ]
+      },
+      "solution_md": "(a) **amphoteric**; (b) **deep blue**; (c) **ammonia**.",
+      "marking_scheme": [
+        {
+          "step": "Blank 1: \"amphoteric\"",
+          "marks": 1
+        },
+        {
+          "step": "Blank 2: \"deep blue\"",
+          "marks": 1
+        },
+        {
+          "step": "Blank 3: \"ammonia\"",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch04-t03",
+        "icse-10-chemistry-ch04-t04",
+        "icse-10-chemistry-ch04-t05"
+      ],
+      "expected_time_sec": 135,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch04_052",
+      "unit": "icse-10-chemistry-ch04",
+      "language": "en",
+      "type": "match",
+      "stem_md": "Each substance in Column A is warmed with sodium hydroxide solution. Match it with the products in Column B.",
+      "options": [
+        {
+          "id": "1",
+          "text_md": "Aluminium (with water)"
+        },
+        {
+          "id": "2",
+          "text_md": "Zinc oxide"
+        },
+        {
+          "id": "3",
+          "text_md": "Lead(II) hydroxide"
+        },
+        {
+          "id": "4",
+          "text_md": "Ammonium chloride"
+        }
+      ],
+      "match_right": [
+        {
+          "id": "p",
+          "text_md": "Sodium plumbite and water"
+        },
+        {
+          "id": "q",
+          "text_md": "Sodium aluminate and hydrogen"
+        },
+        {
+          "id": "r",
+          "text_md": "Sodium chloride, water and ammonia"
+        },
+        {
+          "id": "s",
+          "text_md": "Sodium zincate and water"
+        }
+      ],
+      "answer": {
+        "pairs": [
+          {
+            "left_id": "1",
+            "right_id": "q"
+          },
+          {
+            "left_id": "2",
+            "right_id": "s"
+          },
+          {
+            "left_id": "3",
+            "right_id": "p"
+          },
+          {
+            "left_id": "4",
+            "right_id": "r"
+          }
+        ]
+      },
+      "solution_md": "Aluminium → sodium aluminate and hydrogen; zinc oxide → sodium zincate and water; lead(II) hydroxide → sodium plumbite and water; ammonium chloride → sodium chloride, water and ammonia.",
+      "marking_scheme": [
+        {
+          "step": "1 → q",
+          "marks": 1
+        },
+        {
+          "step": "2 → s",
+          "marks": 1
+        },
+        {
+          "step": "3 → p",
+          "marks": 1
+        },
+        {
+          "step": "4 → r",
+          "marks": 1
+        }
+      ],
+      "marks": 4,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch04-t04",
+        "icse-10-chemistry-ch04-t05"
+      ],
+      "expected_time_sec": 160,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch04_053",
+      "unit": "icse-10-chemistry-ch04",
+      "language": "en",
+      "type": "short",
+      "stem_md": "What is meant by an amphoteric oxide?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "An oxide that reacts with both acids and bases to form a salt and water (for example zinc oxide)."
+      },
+      "solution_md": "Definition.",
+      "marking_scheme": [
+        {
+          "step": "Reacts with acids and bases to give salt and water",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch04-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch04_054",
+      "unit": "icse-10-chemistry-ch04",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write the balanced equation for the reaction of aluminium with sodium hydroxide solution.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "2Al + 2NaOH + 2H₂O → 2NaAlO₂ + 3H₂."
+      },
+      "solution_md": "Equation.",
+      "marking_scheme": [
+        {
+          "step": "Balanced equation (with water)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch04-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch04_055",
+      "unit": "icse-10-chemistry-ch04",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write the balanced equation for the action of hot, concentrated caustic soda solution on lead.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Pb + 2NaOH → Na₂PbO₂ + H₂."
+      },
+      "solution_md": "Equation.",
+      "marking_scheme": [
+        {
+          "step": "Balanced equation",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch04-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch04_056",
+      "unit": "icse-10-chemistry-ch04",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "Aluminium powder weighing 5.4 g is warmed with excess sodium hydroxide solution until it has all dissolved. What volume of hydrogen, measured at STP, is given off? Give the answer in litres. (Al = 27; one mole of a gas occupies 22.4 L at STP)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 6.72,
+        "tolerance": 0.01,
+        "unit": "L"
+      },
+      "solution_md": "$\\ce{2Al + 2NaOH + 2H2O -> 2NaAlO2 + 3H2}$: two moles of aluminium give three moles of hydrogen. Moles of Al $= \\dfrac{5.4}{27} = 0.2$. Moles of hydrogen $= 0.2 \\times \\dfrac{3}{2} = 0.3$. Volume of hydrogen $= 0.3 \\times 22.4 = 6.72$, so 6.72 L.",
+      "marking_scheme": [
+        {
+          "step": "Moles of Al and 2 : 3 ratio",
+          "marks": 1
+        },
+        {
+          "step": "6.72 L",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch04-t05"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch04_057",
+      "unit": "icse-10-chemistry-ch04",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write balanced equations to show that aluminium hydroxide is amphoteric.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "With an acid: Al(OH)₃ + 3HCl → AlCl₃ + 3H₂O. With an alkali: Al(OH)₃ + NaOH → NaAlO₂ + 2H₂O. It forms a salt and water with both."
+      },
+      "solution_md": "One equation with an acid and one with an alkali.",
+      "marking_scheme": [
+        {
+          "step": "With acid",
+          "marks": 1
+        },
+        {
+          "step": "With alkali",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch04-t05"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch04_058",
+      "unit": "icse-10-chemistry-ch04",
+      "language": "en",
+      "type": "short",
+      "stem_md": "A light, silvery metal M dissolves in hot sodium hydroxide solution, giving a gas that burns with a pop. A solution of the chloride of M gives a white gelatinous precipitate with sodium hydroxide that dissolves in excess, but the white precipitate it gives with ammonium hydroxide does not dissolve in excess. (a) Identify M and the gas. (b) Write the balanced equation for the action of sodium hydroxide solution on M. (c) Write the balanced equation for the white precipitate dissolving in excess sodium hydroxide, and name the salt formed.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) M is aluminium; the gas is hydrogen. (b) 2Al + 2NaOH + 2H₂O → 2NaAlO₂ + 3H₂. (c) Al(OH)₃ + NaOH → NaAlO₂ + 2H₂O; sodium aluminate."
+      },
+      "solution_md": "A light metal whose hydroxide dissolves in NaOH but not in NH₄OH: aluminium.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch04-t05"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch04_059",
+      "unit": "icse-10-chemistry-ch04",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) State the colour of (i) a solution of iron(II) sulphate and (ii) the precipitate formed when a few drops of sodium hydroxide solution are added to it. [2]\n\n(b) Write balanced equations for the reactions of sodium hydroxide solution, added drop by drop, with (i) iron(III) chloride solution and (ii) copper(II) sulphate solution. [2]\n\n(c) Sodium hydroxide solution is added, first a little and then in excess, to lead nitrate solution. (i) State the observations. (ii) Write the balanced equation for each stage. [3]\n\n(d) Calculate the mass of sodium hydroxide needed to precipitate all the iron, as iron(III) hydroxide, from a solution containing 32.5 g of iron(III) chloride. (Fe = 56, Cl = 35.5, Na = 23, O = 16, H = 1) [3]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) (i) Pale green. (ii) Dirty green.\n\n(b) (i) FeCl₃ + 3NaOH → Fe(OH)₃ + 3NaCl. (ii) CuSO₄ + 2NaOH → Cu(OH)₂ + Na₂SO₄.\n\n(c) (i) A white chalky precipitate forms, which dissolves in excess to give a colourless solution. (ii) Pb(NO₃)₂ + 2NaOH → Pb(OH)₂ + 2NaNO₃; Pb(OH)₂ + 2NaOH → Na₂PbO₂ + 2H₂O.\n\n(d) FeCl₃ + 3NaOH → Fe(OH)₃ + 3NaCl: one mole of iron(III) chloride needs three moles of sodium hydroxide. Molar mass of iron(III) chloride $= 56 + 3 \\times 35.5 = 162.5$. Moles $= \\dfrac{32.5}{162.5} = 0.2$. Moles of NaOH $= 3 \\times 0.2 = 0.6$. Mass $= 0.6 \\times 40 = 24$, that is 24 g."
+      },
+      "solution_md": "Colours; two equations; observations and two equations; mole ratio 1 : 3.",
+      "marking_scheme": [
+        {
+          "step": "(a)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(a)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(b)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(b)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(ii) first equation",
+          "marks": 1
+        },
+        {
+          "step": "(c)(ii) second equation",
+          "marks": 1
+        },
+        {
+          "step": "(d) moles of FeCl₃",
+          "marks": 1
+        },
+        {
+          "step": "(d) 1 : 3 ratio",
+          "marks": 1
+        },
+        {
+          "step": "(d) 24 g",
+          "marks": 1
+        }
+      ],
+      "marks": 10,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch04-t01",
+        "icse-10-chemistry-ch04-t02"
+      ],
+      "expected_time_sec": 1080,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch04_060",
+      "unit": "icse-10-chemistry-ch04",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) A few drops of ammonium hydroxide are added to (i) iron(II) sulphate solution and (ii) zinc nitrate solution. State the colour of the precipitate in each case. [2]\n\n(b) Write balanced equations for the reaction of ammonium hydroxide with (i) lead nitrate solution and (ii) iron(III) chloride solution. [2]\n\n(c) Ammonium hydroxide is added drop by drop, until in excess, to copper(II) sulphate solution. (i) State two observations. (ii) Name the compound responsible for the final colour. [3]\n\n(d) Using ammonium hydroxide alone, explain how you would distinguish between solutions of (i) zinc nitrate and lead nitrate and (ii) copper(II) sulphate and iron(II) sulphate. [3]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) (i) Dirty green. (ii) White (gelatinous).\n\n(b) (i) Pb(NO₃)₂ + 2NH₄OH → Pb(OH)₂ + 2NH₄NO₃. (ii) FeCl₃ + 3NH₄OH → Fe(OH)₃ + 3NH₄Cl.\n\n(c) (i) A pale blue precipitate forms first; in excess it dissolves to give a deep (inky) blue solution. (ii) Tetraamminecopper(II) sulphate, [Cu(NH₃)₄]SO₄.\n\n(d) (i) Add ammonium hydroxide in excess: the white precipitate from zinc nitrate dissolves, while that from lead nitrate does not. (ii) Add ammonium hydroxide in excess: copper(II) sulphate gives a pale blue precipitate that dissolves to a deep blue solution, while iron(II) sulphate gives a dirty green precipitate that stays."
+      },
+      "solution_md": "Colours; equations; copper with excess NH₄OH; two distinctions.",
+      "marking_scheme": [
+        {
+          "step": "(a)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(a)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(b)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(b)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(i) pale blue precipitate",
+          "marks": 1
+        },
+        {
+          "step": "(c)(i) deep blue solution",
+          "marks": 1
+        },
+        {
+          "step": "(c)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(d)(i)",
+          "marks": 1.5
+        },
+        {
+          "step": "(d)(ii)",
+          "marks": 1.5
+        }
+      ],
+      "marks": 10,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch04-t03"
+      ],
+      "expected_time_sec": 1080,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch04_061",
+      "unit": "icse-10-chemistry-ch04",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Write the balanced equation for the reaction when ammonium sulphate is warmed with sodium hydroxide solution, and name the gas evolved. [2]\n\n(b) State two tests, with observations, that identify this gas. [2]\n\n(c) A white salt S dissolves to give a colourless solution. With sodium hydroxide solution it gives a white precipitate that dissolves in excess; with ammonium hydroxide it gives a white precipitate that does not dissolve in excess. When S is warmed with sodium hydroxide, no gas is given off. (i) Identify the cation in S. (ii) Why does its precipitate dissolve in excess sodium hydroxide? (iii) Write the balanced equation for this dissolving. [3]\n\n(d) 13.2 g of ammonium sulphate is warmed with excess sodium hydroxide solution. Calculate the volume of ammonia given off at STP. (N = 14, H = 1, S = 32, O = 16; molar volume 22.4 L) [3]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) (NH₄)₂SO₄ + 2NaOH → Na₂SO₄ + 2H₂O + 2NH₃; the gas is ammonia.\n\n(b) It turns moist red litmus paper blue; it gives dense white fumes with a glass rod dipped in concentrated hydrochloric acid.\n\n(c) (i) Lead ion, Pb²⁺. (ii) Lead(II) hydroxide is amphoteric, so it reacts with the alkali to form a soluble salt, sodium plumbite. (iii) Pb(OH)₂ + 2NaOH → Na₂PbO₂ + 2H₂O.\n\n(d) One mole of ammonium sulphate gives two moles of ammonia. Molar mass $= 2 \\times 14 + 8 \\times 1 + 32 + 4 \\times 16 = 132$. Moles $= \\dfrac{13.2}{132} = 0.1$. Moles of ammonia $= 2 \\times 0.1 = 0.2$. Volume $= 0.2 \\times 22.4 = 4.48$, that is 4.48 L."
+      },
+      "solution_md": "Equation; two tests; lead identified from the two alkalis; mole ratio 1 : 2.",
+      "marking_scheme": [
+        {
+          "step": "(a) equation",
+          "marks": 1
+        },
+        {
+          "step": "(a) ammonia",
+          "marks": 1
+        },
+        {
+          "step": "(b) first test",
+          "marks": 1
+        },
+        {
+          "step": "(b) second test",
+          "marks": 1
+        },
+        {
+          "step": "(c)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(iii)",
+          "marks": 1
+        },
+        {
+          "step": "(d) molar mass and moles",
+          "marks": 1
+        },
+        {
+          "step": "(d) 1 : 2 ratio",
+          "marks": 1
+        },
+        {
+          "step": "(d) 4.48 L",
+          "marks": 1
+        }
+      ],
+      "marks": 10,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch04-t02",
+        "icse-10-chemistry-ch04-t03",
+        "icse-10-chemistry-ch04-t04"
+      ],
+      "expected_time_sec": 1080,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch04_062",
+      "unit": "icse-10-chemistry-ch04",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) What is an amphoteric hydroxide? Name two amphoteric hydroxides. [2]\n\n(b) Write balanced equations for the reaction of aluminium oxide with (i) dilute hydrochloric acid and (ii) sodium hydroxide solution. [2]\n\n(c) Zinc granules are boiled with concentrated sodium hydroxide solution. (i) Write the balanced equation. (ii) Name the salt formed. (iii) State how you would test the gas given off. [3]\n\n(d) 13 g of zinc dissolves completely in hot sodium hydroxide solution. Calculate (i) the volume of hydrogen formed at STP and (ii) the mass of the sodium salt formed. (Zn = 65, Na = 23, O = 16; molar volume 22.4 L) [3]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) A hydroxide that reacts with both acids and bases to form a salt and water. Examples: zinc hydroxide, lead(II) hydroxide (or aluminium hydroxide).\n\n(b) (i) Al₂O₃ + 6HCl → 2AlCl₃ + 3H₂O. (ii) Al₂O₃ + 2NaOH → 2NaAlO₂ + H₂O.\n\n(c) (i) Zn + 2NaOH → Na₂ZnO₂ + H₂. (ii) Sodium zincate. (iii) Bring a burning splint to the gas: it burns with a pop (hydrogen).\n\n(d) One mole of zinc gives one mole of hydrogen and one mole of sodium zincate. Moles of zinc $= \\dfrac{13}{65} = 0.2$. (i) Volume of hydrogen $= 0.2 \\times 22.4 = 4.48$, that is 4.48 L. (ii) Molar mass of sodium zincate $= 2 \\times 23 + 65 + 2 \\times 16 = 143$; mass $= 0.2 \\times 143 = 28.6$, that is 28.6 g."
+      },
+      "solution_md": "Definition; equations for an amphoteric oxide; zinc with NaOH; 1 : 1 : 1 mole ratio.",
+      "marking_scheme": [
+        {
+          "step": "(a) definition",
+          "marks": 1
+        },
+        {
+          "step": "(a) two examples",
+          "marks": 1
+        },
+        {
+          "step": "(b)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(b)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(iii)",
+          "marks": 1
+        },
+        {
+          "step": "(d) moles of zinc",
+          "marks": 1
+        },
+        {
+          "step": "(d)(i) 4.48 L",
+          "marks": 1
+        },
+        {
+          "step": "(d)(ii) 28.6 g",
+          "marks": 1
+        }
+      ],
+      "marks": 10,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch04-t05"
+      ],
+      "expected_time_sec": 1080,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch04_063",
+      "unit": "icse-10-chemistry-ch04",
+      "language": "en",
+      "type": "long",
+      "stem_md": "Five solutions, A to E, each contain one of the cations Fe²⁺, Fe³⁺, Cu²⁺, Zn²⁺ and Pb²⁺. The observations are:\n\n- A: colourless; a white precipitate with sodium hydroxide that dissolves in excess; a white precipitate with ammonium hydroxide that does not dissolve in excess.\n- B: blue; a pale blue precipitate with sodium hydroxide that does not dissolve in excess.\n- C: yellowish brown; a reddish-brown precipitate with sodium hydroxide.\n- D: colourless; a white precipitate that dissolves in excess sodium hydroxide and also in excess ammonium hydroxide.\n- E: pale green; a dirty green precipitate with sodium hydroxide.\n\n(a) Identify the cations in B, C and E. [3]\n\n(b) Identify the cations in A and D, and explain how the test with ammonium hydroxide decides between them. [3]\n\n(c) (i) What would be seen if ammonium hydroxide were added to B until in excess? (ii) Taking D to be zinc sulphate, write the balanced equations for its reaction with a little sodium hydroxide and with excess sodium hydroxide. (iii) The precipitate from E is left to stand in air for a day. What change is seen, and why? [4]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) B: Cu²⁺. C: Fe³⁺. E: Fe²⁺.\n\n(b) A: Pb²⁺. D: Zn²⁺. Both hydroxides are white and amphoteric, so both dissolve in excess sodium hydroxide; but only zinc hydroxide dissolves in excess ammonium hydroxide (forming a soluble complex), so the solution whose precipitate dissolves is zinc and the one whose precipitate stays is lead.\n\n(c) (i) A pale blue precipitate forms, which dissolves in excess to give a deep (inky) blue solution. (ii) ZnSO₄ + 2NaOH → Zn(OH)₂ + Na₂SO₄; Zn(OH)₂ + 2NaOH → Na₂ZnO₂ + 2H₂O. (iii) The dirty green precipitate turns reddish brown, because iron(II) hydroxide is oxidised by the air to iron(III) hydroxide."
+      },
+      "solution_md": "Colours identify B, C and E; the two alkalis separate A and D; equations and oxidation.",
+      "marking_scheme": [
+        {
+          "step": "(a) B",
+          "marks": 1
+        },
+        {
+          "step": "(a) C",
+          "marks": 1
+        },
+        {
+          "step": "(a) E",
+          "marks": 1
+        },
+        {
+          "step": "(b) A",
+          "marks": 1
+        },
+        {
+          "step": "(b) D",
+          "marks": 1
+        },
+        {
+          "step": "(b) explanation",
+          "marks": 1
+        },
+        {
+          "step": "(c)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(ii) first equation",
+          "marks": 1
+        },
+        {
+          "step": "(c)(ii) second equation",
+          "marks": 1
+        },
+        {
+          "step": "(c)(iii)",
+          "marks": 1
+        }
+      ],
+      "marks": 10,
+      "difficulty": 4,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch04-t01",
+        "icse-10-chemistry-ch04-t02",
+        "icse-10-chemistry-ch04-t03"
+      ],
+      "expected_time_sec": 1080,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    }
+  ],
+  "build": {
+    "run_id": null,
+    "checks": {
+      "katex_mhchem": "47 math strings parsed with KaTeX 0.19.0 + mhchem (throwOnError, strict \"error\"), 0 failures",
+      "svg_allowlist": "2 SVG visuals (2 distinct diagrams) checked with saxes against svg-allowlist.ts: elements, attributes, class pattern, fragment-only refs, no style, palette incl. named hues, viewBox, title, per-page unique ids — 0 failures",
+      "narration": "30 slides, 14–68 words (mean 49), no symbols, formulae or unit abbreviations",
+      "resolve": "6/6 scripted re-solve checks pass",
+      "chemistry_facts": "Colours of copper, iron(II), iron(III), zinc and lead salts, oxides and solutions; sodium hydroxide and ammonium hydroxide added drop by drop and in excess to Fe²⁺, Fe³⁺, Cu²⁺, Zn²⁺, Pb²⁺ and Ca²⁺ (Zn and Pb hydroxides soluble in excess NaOH as zincate and plumbite; Cu and Zn hydroxides soluble in excess NH₄OH as tetraammine complexes; Pb hydroxide not), ammonia from ammonium salts and its tests, and NaOH with Al, Zn, Pb and their oxides and hydroxides, checked against the ICSE 2027 syllabus (Class X, section 4); every equation balanced by atom count",
+      "content_gate": "npm test -w @soyl/content-templates: all checks pass for this chapter",
+      "verifier_pass": "2026-11-01: every question re-solved from its stem by the author; every numerical re-computed by the build script",
+      "pipeline_lint": "npm run content -- lint --exemplars: 0 errors, 0 warnings"
+    }
+  }
+}

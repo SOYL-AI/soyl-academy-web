@@ -1,0 +1,5097 @@
+{
+  "unit": "icse-10-chemistry-ch10",
+  "version": 1,
+  "academic_year": "2026-27",
+  "created_at": "2026-11-01T00:00:00+05:30",
+  "decks": [
+    {
+      "unit": "icse-10-chemistry-ch10",
+      "part": 1,
+      "version": 1,
+      "title": "Ammonia — Part 1: Preparation, manufacture and physical properties",
+      "language": "en",
+      "goals": [
+        "Write the equation and describe the apparatus for preparing ammonia in the laboratory",
+        "Explain why ammonia is dried over quicklime and collected by downward displacement of air",
+        "Write equations for ammonia from nitrides and from ammonium salts",
+        "State the conditions of Haber’s process and describe the fountain experiment"
+      ],
+      "slides": [
+        {
+          "id": "s01",
+          "layout": "title",
+          "heading": "The gas with a sharp smell",
+          "body_md": "Part 1 — Ammonia is the gas you smell near a cattle shed or a bottle of household cleaner. It is the only common **alkaline gas**, and it is made in huge amounts for **fertilisers**.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Property",
+                "Ammonia"
+              ],
+              "rows": [
+                [
+                  "Colour and smell",
+                  "Colourless; sharp, pungent"
+                ],
+                [
+                  "Density",
+                  "Lighter than air (vapour density 8.5)"
+                ],
+                [
+                  "Solubility in water",
+                  "Extremely soluble"
+                ],
+                [
+                  "Nature",
+                  "Basic: turns moist red litmus blue"
+                ],
+                [
+                  "Liquefies",
+                  "Easily, under pressure"
+                ]
+              ]
+            },
+            "alt": "Table of the physical properties of ammonia"
+          },
+          "math": [],
+          "narration": "Namaste! Ammonia is the gas with the sharp smell you notice near a cattle shed or a bottle of household cleaner. It is the only common gas that is alkaline, and factories make millions of tonnes of it every year, mostly for fertilisers. In this part we prepare it, manufacture it, and study how light and how soluble it is.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s02",
+          "layout": "concept",
+          "heading": "Laboratory preparation",
+          "body_md": "A mixture of **ammonium chloride** and **slaked lime** (calcium hydroxide) is heated. The stronger base, calcium hydroxide, drives out the weaker base, ammonia.",
+          "bullets": [],
+          "visual": {
+            "kind": "chem",
+            "spec": {
+              "equation": "2NH4Cl + Ca(OH)2 -> CaCl2 + 2H2O + 2NH3"
+            },
+            "alt": "Equation: two ammonium chloride plus calcium hydroxide gives calcium chloride, two water and two ammonia",
+            "caption": "Laboratory preparation of ammonia"
+          },
+          "math": [],
+          "narration": "In the laboratory, ammonium chloride is mixed with slaked lime, which is calcium hydroxide, and the mixture is heated. Calcium hydroxide is a stronger base than ammonia, so it pushes ammonia out of its salt. The products are calcium chloride, water and ammonia gas.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s03",
+          "layout": "diagram",
+          "heading": "The apparatus",
+          "body_md": "- **Flask:** clamped **slanting**, mouth slightly lower, so that the **water formed** does not run back onto the hot glass and crack it.\n- **Drying tower:** packed with **quicklime** (CaO).\n- **Gas jar:** held **upside down**; ammonia rises and pushes the air down and out — **downward displacement of air**.",
+          "bullets": [],
+          "visual": {
+            "kind": "svg",
+            "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 560 320\" role=\"img\" aria-label=\"Schematic of the laboratory preparation of ammonia. A mixture of ammonium chloride and slaked lime is heated in a round-bottomed flask clamped in a slanting position with its mouth slightly lower than its base, so that the water formed cannot run back onto the hot glass. The gas passes through a tall drying tower packed with lumps of quicklime, entering at the bottom and leaving at the top. The dry ammonia is led up into an inverted gas jar, where it pushes the heavier air down and out: collection by downward displacement of air.\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>Schematic of the laboratory preparation of ammonia. A mixture of ammonium chloride and slaked lime is heated in a round-bottomed flask clamped in a slanting position with its mouth slightly lower than its base, so that the water formed cannot run back onto the hot glass. The gas passes through a tall drying tower packed with lumps of quicklime, entering at the bottom and leaving at the top. The dry ammonia is led up into an inverted gas jar, where it pushes the heavier air down and out: collection by downward displacement of air.</title><circle cx=\"105\" cy=\"175\" r=\"46\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"/><path d=\"M 146 160 L 196 184 M 140 176 L 190 200\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"/><path d=\"M 192 180 L 202 186 L 196 204 L 186 198 Z\" fill=\"var(--diagram-muted)\" stroke=\"currentColor\" stroke-width=\"1.5\" fill-opacity=\"0.4\"/><path d=\"M 64 196 Q 105 236 146 196 Z\" fill=\"var(--diagram-muted)\" stroke=\"none\" stroke-width=\"0\" fill-opacity=\"0.3\"/><path d=\"M 105 268 Q 97 256 105 244 Q 113 256 105 268\" fill=\"var(--diagram-red)\" stroke=\"var(--diagram-red)\" stroke-width=\"1.5\" fill-opacity=\"0.3\"/><rect x=\"97\" y=\"268\" width=\"16\" height=\"26\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"/><path d=\"M 199 194 L 240 194 L 240 236 L 262 236\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"/><rect x=\"262\" y=\"80\" width=\"56\" height=\"176\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"/><circle cx=\"275\" cy=\"110\" r=\"7\" fill=\"var(--diagram-muted)\" stroke=\"currentColor\" stroke-width=\"1\" fill-opacity=\"0.35\"/><circle cx=\"298\" cy=\"104\" r=\"7\" fill=\"var(--diagram-muted)\" stroke=\"currentColor\" stroke-width=\"1\" fill-opacity=\"0.35\"/><circle cx=\"285\" cy=\"132\" r=\"7\" fill=\"var(--diagram-muted)\" stroke=\"currentColor\" stroke-width=\"1\" fill-opacity=\"0.35\"/><circle cx=\"304\" cy=\"140\" r=\"7\" fill=\"var(--diagram-muted)\" stroke=\"currentColor\" stroke-width=\"1\" fill-opacity=\"0.35\"/><circle cx=\"272\" cy=\"158\" r=\"7\" fill=\"var(--diagram-muted)\" stroke=\"currentColor\" stroke-width=\"1\" fill-opacity=\"0.35\"/><circle cx=\"295\" cy=\"170\" r=\"7\" fill=\"var(--diagram-muted)\" stroke=\"currentColor\" stroke-width=\"1\" fill-opacity=\"0.35\"/><circle cx=\"280\" cy=\"192\" r=\"7\" fill=\"var(--diagram-muted)\" stroke=\"currentColor\" stroke-width=\"1\" fill-opacity=\"0.35\"/><circle cx=\"303\" cy=\"204\" r=\"7\" fill=\"var(--diagram-muted)\" stroke=\"currentColor\" stroke-width=\"1\" fill-opacity=\"0.35\"/><circle cx=\"274\" cy=\"226\" r=\"7\" fill=\"var(--diagram-muted)\" stroke=\"currentColor\" stroke-width=\"1\" fill-opacity=\"0.35\"/><circle cx=\"296\" cy=\"236\" r=\"7\" fill=\"var(--diagram-muted)\" stroke=\"currentColor\" stroke-width=\"1\" fill-opacity=\"0.35\"/><path d=\"M 290 80 L 290 40 L 380 40 L 380 300 L 425 300 L 425 90\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"/><path d=\"M 395 270 L 395 70 L 465 70 L 465 270\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"/><line x1=\"388\" y1=\"70\" x2=\"472\" y2=\"70\" stroke=\"currentColor\" stroke-width=\"2.5\"/><line x1=\"445\" y1=\"240\" x2=\"445\" y2=\"285.2\" stroke=\"var(--diagram-muted)\" stroke-width=\"1.5\"/><polygon points=\"445,290 442.6,284.5 447.4,284.5\" fill=\"var(--diagram-muted)\" stroke=\"none\"/><text x=\"452\" y=\"300\" fill=\"var(--diagram-muted)\" stroke=\"none\" font-size=\"10\">air out</text><line x1=\"425\" y1=\"120\" x2=\"425\" y2=\"96.8\" stroke=\"var(--diagram-green)\" stroke-width=\"1.5\"/><polygon points=\"425,92 427.4,97.5 422.6,97.5\" fill=\"var(--diagram-green)\" stroke=\"none\"/><text x=\"8\" y=\"92\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">ammonium</text><text x=\"8\" y=\"104\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">chloride +</text><text x=\"8\" y=\"116\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">slaked lime</text><line x1=\"78\" y1=\"196\" x2=\"50\" y2=\"124\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\"/><text x=\"122\" y=\"250\" fill=\"var(--diagram-red)\" stroke=\"none\" font-size=\"10\">heat</text><text x=\"132\" y=\"112\" fill=\"var(--diagram-muted)\" stroke=\"none\" font-size=\"10\">flask tilted,</text><text x=\"132\" y=\"124\" fill=\"var(--diagram-muted)\" stroke=\"none\" font-size=\"10\">mouth lower</text><text x=\"232\" y=\"276\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">drying tower:</text><text x=\"232\" y=\"288\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">quicklime (CaO)</text><text x=\"300\" y=\"32\" fill=\"var(--diagram-green)\" stroke=\"none\" font-size=\"10\">dry ammonia</text><text x=\"474\" y=\"150\" fill=\"var(--diagram-green)\" stroke=\"none\" font-size=\"10\">inverted jar:</text><text x=\"474\" y=\"162\" fill=\"var(--diagram-green)\" stroke=\"none\" font-size=\"10\">downward</text><text x=\"474\" y=\"174\" fill=\"var(--diagram-green)\" stroke=\"none\" font-size=\"10\">displacement</text><text x=\"474\" y=\"186\" fill=\"var(--diagram-green)\" stroke=\"none\" font-size=\"10\">of air</text></svg>",
+            "alt": "Apparatus for preparing ammonia: a slanting flask of ammonium chloride and slaked lime, a drying tower of quicklime and an inverted gas jar filled by downward displacement of air"
+          },
+          "math": [],
+          "narration": "Here is the apparatus. The flask is clamped in a slanting position with its mouth a little lower than its base, so the water formed runs towards the mouth and not back onto the hot glass. The gas passes up through a tower of quicklime to dry it, and it is collected in an upside down gas jar, pushing the heavier air down and out.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s04",
+          "layout": "check",
+          "heading": "Quick check: drying ammonia",
+          "body_md": "Choose the drying agent for ammonia.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Ammonia is basic, so the drying agent must not be acidic and must not combine with it.",
+          "check_question_id": "q_icse10chem_ch10_001",
+          "audio": null
+        },
+        {
+          "id": "s05",
+          "layout": "concept",
+          "heading": "Drying and collecting",
+          "body_md": "**Drying:** quicklime absorbs water and does **not** react with the basic gas. **Concentrated sulphuric acid** and **phosphorus pentoxide** are acidic and react; **anhydrous calcium chloride** forms CaCl₂·8NH₃.\n\n**Collection:** **downward displacement of air** — ammonia is **lighter than air** and **too soluble** to collect over water.\n\n**Jar full?** Moist red litmus turns **blue** at the mouth; a rod dipped in concentrated HCl gives **dense white fumes**.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Drying agent",
+                "Used?",
+                "Reason"
+              ],
+              "rows": [
+                [
+                  "Quicklime, CaO",
+                  "Yes",
+                  "Basic; does not react"
+                ],
+                [
+                  "Conc. H₂SO₄",
+                  "No",
+                  "2NH₃ + H₂SO₄ → (NH₄)₂SO₄"
+                ],
+                [
+                  "Phosphorus pentoxide",
+                  "No",
+                  "Acidic oxide; reacts"
+                ],
+                [
+                  "Anhydrous CaCl₂",
+                  "No",
+                  "Forms CaCl₂·8NH₃"
+                ]
+              ]
+            },
+            "alt": "Table of possible drying agents for ammonia and why only quicklime is used"
+          },
+          "math": [],
+          "narration": "Quicklime is used to dry ammonia, because it soaks up water and does not react with a basic gas. Concentrated sulphuric acid and phosphorus pentoxide are acidic, so they react with ammonia, and calcium chloride combines with it too. Ammonia is lighter than air and very soluble, so it is collected in an inverted jar. Moist red litmus turning blue shows the jar is full.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s06",
+          "layout": "concept",
+          "heading": "Other sources: nitrides and ammonium salts",
+          "body_md": "**Metal nitrides** react with **warm water** to give ammonia and the metal hydroxide. **Any ammonium salt** gives ammonia when **warmed with an alkali** — this is also a **test for ammonium ions**.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Reactants",
+                "Equation"
+              ],
+              "rows": [
+                [
+                  "Magnesium nitride + water",
+                  "Mg₃N₂ + 6H₂O → 3Mg(OH)₂ + 2NH₃"
+                ],
+                [
+                  "Aluminium nitride + water",
+                  "AlN + 3H₂O → Al(OH)₃ + NH₃"
+                ],
+                [
+                  "Ammonium sulphate + NaOH",
+                  "(NH₄)₂SO₄ + 2NaOH → Na₂SO₄ + 2H₂O + 2NH₃"
+                ],
+                [
+                  "Ammonium nitrate + KOH",
+                  "NH₄NO₃ + KOH → KNO₃ + H₂O + NH₃"
+                ]
+              ]
+            },
+            "alt": "Table of reactions that give ammonia from nitrides and from ammonium salts"
+          },
+          "math": [],
+          "narration": "Ammonia can also be made in other ways. Metal nitrides, such as magnesium nitride and aluminium nitride, react with warm water to give ammonia and the metal hydroxide. And every ammonium salt gives off ammonia when it is warmed with an alkali such as sodium hydroxide. That is why the smell of ammonia on warming with an alkali is a test for ammonium salts.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s07",
+          "layout": "example",
+          "heading": "Worked example: ammonia from ammonium chloride",
+          "body_md": "**Problem.** What volume of ammonia at STP is obtained by heating 21.4 g of ammonium chloride with excess slaked lime? (N = 14, H = 1, Cl = 35.5)\n\n**Step 1.** 2NH₄Cl + Ca(OH)₂ → CaCl₂ + 2H₂O + 2NH₃: 1 mole NH₄Cl gives 1 mole NH₃.\n\n**Step 2.** NH₄Cl = 14 + 4 + 35.5 = 53.5; moles = 21.4 ÷ 53.5 = 0.4.\n\n**Step 3.** Volume = 0.4 × 22.4 = **8.96 L**.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Quantity",
+                "Value"
+              ],
+              "rows": [
+                [
+                  "Molar mass of NH₄Cl",
+                  "53.5"
+                ],
+                [
+                  "Moles of NH₄Cl",
+                  "0.4"
+                ],
+                [
+                  "Moles of NH₃",
+                  "0.4"
+                ],
+                [
+                  "Volume of NH₃ at STP",
+                  "8.96 L"
+                ]
+              ]
+            },
+            "alt": "Table of the steps from 21.4 grams of ammonium chloride to 8.96 litres of ammonia"
+          },
+          "math": [],
+          "narration": "From the equation, two units of ammonium chloride give two units of ammonia, so the ratio is one to one. The molar mass of ammonium chloride is fifty three point five, so twenty one point four grams is zero point four mole. Zero point four mole of a gas at standard conditions occupies zero point four times twenty two point four, which is eight point nine six litres.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s08",
+          "layout": "concept",
+          "heading": "Manufacture: Haber’s process",
+          "body_md": "**Nitrogen** (from liquid air) and **hydrogen** are mixed in the ratio **1 : 3** by volume and passed over **finely divided iron** (promoter: **molybdenum**) at **450–500 °C** and **200–900 atm**. The reaction is **reversible** and **exothermic**.",
+          "bullets": [],
+          "visual": {
+            "kind": "chem",
+            "spec": {
+              "equation": "N2 + 3H2 <=> 2NH3"
+            },
+            "alt": "Equation: nitrogen plus three hydrogen reversibly gives two ammonia",
+            "caption": "Haber’s process: iron catalyst, molybdenum promoter, 450–500 °C, 200–900 atm"
+          },
+          "math": [],
+          "narration": "Ammonia is made in industry by Haber’s process. Nitrogen from the air and hydrogen are mixed in the ratio one to three by volume. The mixture is compressed to between two hundred and nine hundred atmospheres and passed over finely divided iron, with molybdenum as a promoter, at four hundred and fifty to five hundred degrees Celsius. The reaction is reversible and gives out heat.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s09",
+          "layout": "diagram",
+          "heading": "Inside the Haber plant",
+          "body_md": "Only part of the gas mixture turns into ammonia in one pass. The gases leaving the converter are **cooled**: ammonia **liquefies** easily and is drawn off. The **unreacted nitrogen and hydrogen are recycled** over the catalyst.",
+          "bullets": [],
+          "visual": {
+            "kind": "flow",
+            "spec": {
+              "direction": "LR",
+              "nodes": [
+                {
+                  "id": "a",
+                  "label": "N₂ + H₂ (1 : 3)"
+                },
+                {
+                  "id": "b",
+                  "label": "Compressor: 200–900 atm"
+                },
+                {
+                  "id": "c",
+                  "label": "Converter: Fe + Mo, 450–500 °C"
+                },
+                {
+                  "id": "d",
+                  "label": "Cooler"
+                },
+                {
+                  "id": "e",
+                  "label": "Liquid ammonia"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "a",
+                  "to": "b"
+                },
+                {
+                  "from": "b",
+                  "to": "c"
+                },
+                {
+                  "from": "c",
+                  "to": "d"
+                },
+                {
+                  "from": "d",
+                  "to": "e",
+                  "label": "ammonia liquefies"
+                },
+                {
+                  "from": "d",
+                  "to": "b",
+                  "label": "unreacted gases recycled"
+                }
+              ]
+            },
+            "alt": "Flow of Haber’s process from the gas mixture through the compressor, converter and cooler to liquid ammonia, with unreacted gases recycled"
+          },
+          "math": [],
+          "narration": "Only part of the nitrogen and hydrogen reacts on each trip through the converter. So the hot gas mixture is cooled. Ammonia turns into a liquid much more easily than nitrogen or hydrogen, so it condenses and is drawn off. The unreacted nitrogen and hydrogen are sent back through the compressor and over the catalyst again, so nothing is wasted.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s10",
+          "layout": "check",
+          "heading": "Quick check: Haber’s process",
+          "body_md": "Recall the catalyst used in Haber’s process.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Remember the catalyst and the substance that improves it.",
+          "check_question_id": "q_icse10chem_ch10_015",
+          "audio": null
+        },
+        {
+          "id": "s11",
+          "layout": "example",
+          "heading": "Worked example: volumes in Haber’s process",
+          "body_md": "**Problem.** 30 L of nitrogen reacts completely in Haber’s process. What volume of hydrogen does it need, and what volume of ammonia forms? (All volumes at the same temperature and pressure.)\n\n**Step 1.** N₂ + 3H₂ ⇌ 2NH₃: volumes react in the ratio 1 : 3 : 2 (Gay-Lussac’s law).\n\n**Step 2.** Hydrogen = 3 × 30 = **90 L**.\n\n**Step 3.** Ammonia = 2 × 30 = **60 L**.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Gas",
+                "Volume ratio",
+                "Volume"
+              ],
+              "rows": [
+                [
+                  "Nitrogen",
+                  "1",
+                  "30 L"
+                ],
+                [
+                  "Hydrogen",
+                  "3",
+                  "90 L"
+                ],
+                [
+                  "Ammonia",
+                  "2",
+                  "60 L"
+                ]
+              ]
+            },
+            "alt": "Table of the volumes of nitrogen, hydrogen and ammonia in the ratio one to three to two"
+          },
+          "math": [],
+          "narration": "Gases react in simple whole number ratios by volume, which is Gay-Lussac’s law. From the equation, one volume of nitrogen needs three volumes of hydrogen and gives two volumes of ammonia. So thirty litres of nitrogen needs ninety litres of hydrogen and gives sixty litres of ammonia.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s12",
+          "layout": "diagram",
+          "heading": "Density, solubility and the fountain",
+          "body_md": "Ammonia (M = 17) has a **vapour density of 8.5**: it is **lighter than air**. It is the **most soluble** common gas. In the **fountain experiment**, a flask of dry ammonia over water with **red litmus** gives a **blue fountain** (with phenolphthalein, a **pink** one): the gas is **very soluble** and its solution is **alkaline**.",
+          "bullets": [],
+          "visual": {
+            "kind": "svg",
+            "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 400 330\" role=\"img\" aria-label=\"Schematic of the fountain experiment with ammonia. A dry round-bottomed flask filled with dry ammonia is clamped upside down. A long glass tube with a jet at its upper end passes through the cork, and its lower end dips into a trough of water coloured with red litmus solution. When a little water enters, the ammonia dissolves, the pressure inside falls and the water rushes up as a fountain, which turns blue inside the flask.\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>Schematic of the fountain experiment with ammonia. A dry round-bottomed flask filled with dry ammonia is clamped upside down. A long glass tube with a jet at its upper end passes through the cork, and its lower end dips into a trough of water coloured with red litmus solution. When a little water enters, the ammonia dissolves, the pressure inside falls and the water rushes up as a fountain, which turns blue inside the flask.</title><circle cx=\"200\" cy=\"100\" r=\"70\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"/><path d=\"M 186 168 L 186 200 M 214 168 L 214 200\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"/><rect x=\"182\" y=\"198\" width=\"36\" height=\"14\" fill=\"var(--diagram-muted)\" stroke=\"currentColor\" stroke-width=\"1.5\" fill-opacity=\"0.4\"/><line x1=\"200\" y1=\"70\" x2=\"200\" y2=\"300\" stroke=\"currentColor\" stroke-width=\"1.5\"/><path d=\"M 200 70 Q 185 56 170 90\" fill=\"none\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.5\"/><path d=\"M 200 70 Q 193 40 186 74\" fill=\"none\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.5\"/><path d=\"M 200 70 Q 200 36 200 70\" fill=\"none\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.5\"/><path d=\"M 200 70 Q 207 40 214 74\" fill=\"none\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.5\"/><path d=\"M 200 70 Q 215 56 230 90\" fill=\"none\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.5\"/><path d=\"M 90 250 L 90 312 L 310 312 L 310 250\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"/><rect x=\"92\" y=\"268\" width=\"216\" height=\"42\" fill=\"var(--diagram-red)\" stroke=\"none\" stroke-width=\"0\" fill-opacity=\"0.15\"/><line x1=\"92\" y1=\"268\" x2=\"308\" y2=\"268\" stroke=\"var(--diagram-red)\" stroke-width=\"1\"/><line x1=\"206\" y1=\"290\" x2=\"206\" y2=\"244.8\" stroke=\"var(--diagram-red)\" stroke-width=\"1.5\"/><polygon points=\"206,240 208.4,245.5 203.6,245.5\" fill=\"var(--diagram-red)\" stroke=\"none\"/><text x=\"290\" y=\"70\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">flask of</text><text x=\"290\" y=\"82\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">dry ammonia</text><line x1=\"266\" y1=\"90\" x2=\"288\" y2=\"72\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\"/><text x=\"8\" y=\"60\" fill=\"var(--diagram-blue)\" stroke=\"none\" font-size=\"10\">blue fountain</text><text x=\"8\" y=\"72\" fill=\"var(--diagram-blue)\" stroke=\"none\" font-size=\"10\">(red litmus</text><text x=\"8\" y=\"84\" fill=\"var(--diagram-blue)\" stroke=\"none\" font-size=\"10\">turns blue)</text><line x1=\"172\" y1=\"80\" x2=\"84\" y2=\"66\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\"/><text x=\"8\" y=\"200\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">glass tube</text><text x=\"8\" y=\"212\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">with a jet</text><line x1=\"198\" y1=\"230\" x2=\"70\" y2=\"206\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\"/><text x=\"316\" y=\"280\" fill=\"var(--diagram-red)\" stroke=\"none\" font-size=\"10\">water with</text><text x=\"316\" y=\"292\" fill=\"var(--diagram-red)\" stroke=\"none\" font-size=\"10\">red litmus</text><text x=\"222\" y=\"246\" fill=\"var(--diagram-red)\" stroke=\"none\" font-size=\"10\">water rises</text></svg>",
+            "alt": "Fountain experiment with ammonia: an inverted flask of dry ammonia with a jet tube dipping into water coloured with red litmus, which rises as a blue fountain"
+          },
+          "math": [],
+          "narration": "Ammonia has a vapour density of eight point five, so it is lighter than air, and it dissolves in water more than almost any other gas. In the fountain experiment, a flask of dry ammonia is turned upside down over water coloured with red litmus. The gas dissolves, the pressure falls, the water shoots up as a fountain, and the red litmus turns blue.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s13",
+          "layout": "check",
+          "heading": "Quick check: the fountain",
+          "body_md": "Predict the colour of the fountain.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. A solution of ammonia is an alkali; think about what an alkali does to litmus.",
+          "check_question_id": "q_icse10chem_ch10_022",
+          "audio": null
+        },
+        {
+          "id": "s14",
+          "layout": "summary",
+          "heading": "Summary: Part 1",
+          "body_md": "",
+          "bullets": [
+            "2NH₄Cl + Ca(OH)₂ → CaCl₂ + 2H₂O + 2NH₃; flask slanting; dried over quicklime.",
+            "Collected by downward displacement of air (lighter than air, very soluble).",
+            "Nitrides + warm water and ammonium salts + alkali also give ammonia.",
+            "Haber: N₂ + 3H₂ ⇌ 2NH₃; Fe with Mo promoter, 450–500 °C, 200–900 atm; NH₃ liquefied, gases recycled.",
+            "Fountain experiment: very soluble, alkaline (red litmus turns blue)."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Feature",
+                "Ammonia",
+                "Hydrogen chloride"
+              ],
+              "rows": [
+                [
+                  "Drying agent",
+                  "Quicklime",
+                  "Conc. H₂SO₄"
+                ],
+                [
+                  "Collection",
+                  "Downward displacement",
+                  "Upward displacement"
+                ],
+                [
+                  "Fountain colour",
+                  "Red litmus turns blue",
+                  "Blue litmus turns red"
+                ]
+              ]
+            },
+            "alt": "Summary table comparing the drying, collection and fountain colour of ammonia and hydrogen chloride"
+          },
+          "math": [],
+          "narration": "Let us sum up Part 1. Ammonia is made by heating ammonium chloride with slaked lime, dried over quicklime and collected in an inverted jar. Nitrides and ammonium salts also give ammonia. In industry it is made by Haber’s process over an iron catalyst. The fountain experiment shows that it is very soluble and that its solution is alkaline.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s15",
+          "layout": "exam-tips",
+          "heading": "Exam tips: Part 1",
+          "body_md": "",
+          "bullets": [
+            "Give the reason for the slanting flask: water formed must not crack the hot glass.",
+            "Name quicklime as the drying agent and say why the others fail.",
+            "Learn Haber’s conditions exactly: 450–500 °C, 200–900 atm, iron with molybdenum, 1 : 3.",
+            "Ammonia: downward displacement; hydrogen chloride: upward displacement."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Slip",
+                "Fix"
+              ],
+              "rows": [
+                [
+                  "Dried with conc. H₂SO₄",
+                  "Dried with quicklime"
+                ],
+                [
+                  "Catalyst is platinum",
+                  "Haber: iron (platinum is for catalytic oxidation)"
+                ],
+                [
+                  "Fountain turns red",
+                  "Red litmus turns blue (alkaline)"
+                ]
+              ]
+            },
+            "alt": "Table of three common slips in Part 1 and their fixes"
+          },
+          "math": [],
+          "narration": "Some tips. Be ready to explain why the flask is clamped at a slant. Name quicklime as the drying agent and say why sulphuric acid and calcium chloride cannot be used. Learn the conditions of Haber’s process exactly. And do not mix up the catalysts: iron is for Haber’s process, while platinum is used for oxidising ammonia.",
+          "check_question_id": null,
+          "audio": null
+        }
+      ],
+      "status": "draft",
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "unit": "icse-10-chemistry-ch10",
+      "part": 2,
+      "version": 1,
+      "title": "Ammonia — Part 2: Chemical properties, uses and tests",
+      "language": "en",
+      "goals": [
+        "Compare the burning of ammonia with its catalytic oxidation, with equations and conditions",
+        "Write equations and observations for ammonia reducing hot metal oxides and reacting with chlorine",
+        "Predict the precipitates formed by aqueous ammonia with salt solutions",
+        "State the uses of ammonia, explain the move to ozone-safe refrigerants and describe tests for ammonia"
+      ],
+      "slides": [
+        {
+          "id": "s01",
+          "layout": "title",
+          "heading": "Ammonia reacts",
+          "body_md": "Part 2 — Ammonia **burns** in oxygen, is **oxidised** over platinum, **reduces** hot metal oxides, reacts with **chlorine**, and in water forms an **alkali** that precipitates metal hydroxides.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Reaction",
+                "Main products"
+              ],
+              "rows": [
+                [
+                  "Burning in oxygen",
+                  "Nitrogen + water"
+                ],
+                [
+                  "Catalytic oxidation (Pt, 800 °C)",
+                  "Nitric oxide + water"
+                ],
+                [
+                  "With hot CuO",
+                  "Copper + water + nitrogen"
+                ],
+                [
+                  "With chlorine",
+                  "NH₄Cl + N₂ or NCl₃ + HCl"
+                ],
+                [
+                  "Aqueous, with salt solutions",
+                  "Metal hydroxide precipitates"
+                ]
+              ]
+            },
+            "alt": "Table of the reactions of ammonia studied in Part 2 and their main products"
+          },
+          "math": [],
+          "narration": "In this part we look at what ammonia does. It burns in oxygen, and over hot platinum it is oxidised to nitric oxide. It removes oxygen from hot metal oxides, it reacts in two different ways with chlorine, and its solution in water is an alkali that forms coloured precipitates with many metal salts.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s02",
+          "layout": "concept",
+          "heading": "Burning in oxygen",
+          "body_md": "Ammonia does **not burn in air** and does **not support combustion**. But a jet of ammonia burns in **oxygen** with a **greenish-yellow flame**, forming **nitrogen** and water vapour.",
+          "bullets": [],
+          "visual": {
+            "kind": "chem",
+            "spec": {
+              "equation": "4NH3 + 3O2 -> 2N2 + 6H2O"
+            },
+            "alt": "Equation: four ammonia plus three oxygen gives two nitrogen plus six water",
+            "caption": "Burning of ammonia in oxygen"
+          },
+          "math": [],
+          "narration": "Ammonia does not burn in air, and a burning splint is put out in it. But if a jet of ammonia is lit inside a jar of oxygen, it burns with a greenish yellow flame. The hydrogen of ammonia joins with oxygen to form water vapour, and the nitrogen is set free as nitrogen gas.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s03",
+          "layout": "concept",
+          "heading": "Catalytic oxidation over platinum",
+          "body_md": "Over a **platinum** catalyst at about **800 °C**, ammonia is oxidised to **nitric oxide** instead of nitrogen. The reaction is **exothermic**, so the platinum stays red-hot. In air, nitric oxide forms **reddish-brown nitrogen dioxide**: 2NO + O₂ → 2NO₂. This is the first step of **Ostwald’s process** for nitric acid.",
+          "bullets": [],
+          "visual": {
+            "kind": "chem",
+            "spec": {
+              "equation": "4NH3 + 5O2 -> 4NO + 6H2O"
+            },
+            "alt": "Equation: four ammonia plus five oxygen gives four nitric oxide plus six water",
+            "caption": "Catalytic oxidation: platinum, about 800 °C"
+          },
+          "math": [],
+          "narration": "With a platinum catalyst at about eight hundred degrees Celsius, ammonia reacts with oxygen in a different way and forms nitric oxide and water. The reaction gives out so much heat that the platinum keeps glowing red hot. Nitric oxide then combines with more oxygen to give reddish brown nitrogen dioxide. This is how nitric acid is made in industry.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s04",
+          "layout": "check",
+          "heading": "Quick check: the glowing coil",
+          "body_md": "Explain the platinum coil experiment.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Think about the heat given out and the colour of the gas that forms in air.",
+          "check_question_id": "q_icse10chem_ch10_024",
+          "audio": null
+        },
+        {
+          "id": "s05",
+          "layout": "concept",
+          "heading": "Ammonia as a reducing agent",
+          "body_md": "Dry ammonia passed over **heated metal oxides** removes their oxygen, leaving the metal, water and **nitrogen**. With copper(II) oxide the **black** solid turns **reddish-brown**.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Oxide",
+                "Equation",
+                "Colour change"
+              ],
+              "rows": [
+                [
+                  "Copper(II) oxide",
+                  "3CuO + 2NH₃ → 3Cu + 3H₂O + N₂",
+                  "Black → reddish-brown"
+                ],
+                [
+                  "Lead(II) oxide",
+                  "3PbO + 2NH₃ → 3Pb + 3H₂O + N₂",
+                  "Yellow → grey"
+                ],
+                [
+                  "Lead(IV) oxide",
+                  "3PbO₂ + 4NH₃ → 3Pb + 6H₂O + 2N₂",
+                  "Dark brown → grey"
+                ]
+              ]
+            },
+            "alt": "Table of the reduction of copper and lead oxides by ammonia with equations and colour changes"
+          },
+          "math": [],
+          "narration": "Ammonia is a reducing agent. When dry ammonia is passed over heated copper oxide, the black solid turns reddish brown as copper is formed, droplets of water collect, and nitrogen gas passes out of the tube. Heated lead oxides are reduced in the same way, leaving grey lead metal.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s06",
+          "layout": "example",
+          "heading": "Worked example: copper from copper oxide",
+          "body_md": "**Problem.** Dry ammonia is passed over 15.9 g of heated copper(II) oxide until no further change occurs. What mass of copper remains? (Cu = 63.5, O = 16)\n\n**Step 1.** 3CuO + 2NH₃ → 3Cu + 3H₂O + N₂: 1 mole CuO gives 1 mole Cu.\n\n**Step 2.** CuO = 63.5 + 16 = 79.5; moles = 15.9 ÷ 79.5 = 0.2.\n\n**Step 3.** Copper = 0.2 × 63.5 = **12.7 g**.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Quantity",
+                "Value"
+              ],
+              "rows": [
+                [
+                  "Molar mass of CuO",
+                  "79.5"
+                ],
+                [
+                  "Moles of CuO",
+                  "0.2"
+                ],
+                [
+                  "Moles of Cu",
+                  "0.2"
+                ],
+                [
+                  "Mass of Cu",
+                  "12.7 g"
+                ]
+              ]
+            },
+            "alt": "Table of the steps from 15.9 grams of copper oxide to 12.7 grams of copper"
+          },
+          "math": [],
+          "narration": "Each unit of copper oxide gives one unit of copper, so the mole ratio is one to one. The molar mass of copper oxide is seventy nine point five, so fifteen point nine grams is zero point two mole. Zero point two mole of copper, at sixty three point five grams per mole, has a mass of twelve point seven grams.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s07",
+          "layout": "concept",
+          "heading": "With chlorine and with hydrogen chloride",
+          "body_md": "**Excess ammonia + chlorine:** dense white fumes of **ammonium chloride**, and nitrogen.\n\n**Ammonia + excess chlorine:** **nitrogen trichloride**, a yellow, **highly explosive** liquid, and hydrogen chloride.\n\n**With hydrogen chloride:** dense white fumes of ammonium chloride.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Reactants",
+                "Equation",
+                "Observation"
+              ],
+              "rows": [
+                [
+                  "Excess NH₃ + Cl₂",
+                  "8NH₃ + 3Cl₂ → 6NH₄Cl + N₂",
+                  "Dense white fumes"
+                ],
+                [
+                  "NH₃ + excess Cl₂",
+                  "NH₃ + 3Cl₂ → NCl₃ + 3HCl",
+                  "Yellow explosive liquid"
+                ],
+                [
+                  "NH₃ + HCl",
+                  "NH₃ + HCl → NH₄Cl",
+                  "Dense white fumes"
+                ]
+              ]
+            },
+            "alt": "Table of the reactions of ammonia with chlorine in excess of each and with hydrogen chloride"
+          },
+          "math": [],
+          "narration": "With chlorine, the products depend on which gas is in excess. If ammonia is in excess, it mops up the hydrogen chloride formed, so we see dense white fumes of ammonium chloride, and nitrogen is set free. If chlorine is in excess, it replaces all three hydrogen atoms, forming nitrogen trichloride, a yellow liquid that explodes very easily.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s08",
+          "layout": "check",
+          "heading": "Quick check: ammonia and chlorine",
+          "body_md": "Identify the product when chlorine is in excess.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. When chlorine is in excess, every hydrogen atom of ammonia is replaced.",
+          "check_question_id": "q_icse10chem_ch10_034",
+          "audio": null
+        },
+        {
+          "id": "s09",
+          "layout": "concept",
+          "heading": "Aqueous ammonia: a weak alkali",
+          "body_md": "Ammonia dissolves in water to form **ammonium hydroxide**, a **weak alkali**: NH₃ + H₂O ⇌ NH₄OH. It **neutralises acids** to form ammonium salts and water.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Acid",
+                "Equation"
+              ],
+              "rows": [
+                [
+                  "Dilute sulphuric acid",
+                  "2NH₄OH + H₂SO₄ → (NH₄)₂SO₄ + 2H₂O"
+                ],
+                [
+                  "Dilute nitric acid",
+                  "NH₄OH + HNO₃ → NH₄NO₃ + H₂O"
+                ],
+                [
+                  "Dilute hydrochloric acid",
+                  "NH₄OH + HCl → NH₄Cl + H₂O"
+                ]
+              ]
+            },
+            "alt": "Table of the neutralisation of three acids by ammonium hydroxide"
+          },
+          "math": [],
+          "narration": "A solution of ammonia in water is called ammonium hydroxide. It is a weak alkali, because only a small part of it forms ions. Like any alkali, it neutralises acids: with sulphuric acid it gives ammonium sulphate, with nitric acid ammonium nitrate, and with hydrochloric acid ammonium chloride, each time with water.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s10",
+          "layout": "concept",
+          "heading": "Aqueous ammonia with salt solutions",
+          "body_md": "Ammonium hydroxide precipitates **metal hydroxides** from salt solutions. Watch the **colour** and whether the precipitate **dissolves in excess**.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Salt solution",
+                "Precipitate",
+                "In excess NH₄OH"
+              ],
+              "rows": [
+                [
+                  "Iron(III) chloride",
+                  "Reddish-brown Fe(OH)₃",
+                  "Insoluble"
+                ],
+                [
+                  "Iron(II) sulphate",
+                  "Dirty green Fe(OH)₂",
+                  "Insoluble"
+                ],
+                [
+                  "Lead nitrate",
+                  "Chalky white Pb(OH)₂",
+                  "Insoluble"
+                ],
+                [
+                  "Zinc nitrate",
+                  "White gelatinous Zn(OH)₂",
+                  "Dissolves: colourless solution"
+                ],
+                [
+                  "Copper sulphate",
+                  "Pale blue Cu(OH)₂",
+                  "Dissolves: deep blue solution"
+                ]
+              ]
+            },
+            "alt": "Table of the precipitates formed by ammonium hydroxide with five salt solutions and their behaviour in excess"
+          },
+          "math": [],
+          "narration": "Ammonium hydroxide gives coloured precipitates of metal hydroxides. Iron three chloride gives a reddish brown precipitate and iron two sulphate a dirty green one. Lead nitrate gives a chalky white precipitate that stays. Zinc nitrate gives a white precipitate that dissolves in excess, and copper sulphate gives a pale blue precipitate that dissolves to a deep blue solution.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s11",
+          "layout": "check",
+          "heading": "Quick check: precipitates",
+          "body_md": "Match a precipitate colour to a salt.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Recall which iron compound gives the reddish brown hydroxide.",
+          "check_question_id": "q_icse10chem_ch10_043",
+          "audio": null
+        },
+        {
+          "id": "s12",
+          "layout": "example",
+          "heading": "Worked example: identifying a cation",
+          "body_md": "**Problem.** Ammonium hydroxide is added drop by drop, then in excess, to a colourless solution. A white precipitate forms and then dissolves. Which cation is present: zinc or lead?\n\n**Answer.** Both zinc and lead give **white** precipitates, but only **zinc hydroxide dissolves** in excess ammonium hydroxide. The cation is **zinc**: Zn(NO₃)₂ + 2NH₄OH → Zn(OH)₂ + 2NH₄NO₃, and the precipitate then dissolves to a colourless solution.",
+          "bullets": [],
+          "visual": {
+            "kind": "flow",
+            "spec": {
+              "direction": "TB",
+              "nodes": [
+                {
+                  "id": "a",
+                  "label": "Add NH₄OH, then excess"
+                },
+                {
+                  "id": "b",
+                  "label": "Coloured precipitate"
+                },
+                {
+                  "id": "c",
+                  "label": "White precipitate"
+                },
+                {
+                  "id": "d",
+                  "label": "Reddish-brown: Fe³⁺; dirty green: Fe²⁺; pale blue then deep blue: Cu²⁺"
+                },
+                {
+                  "id": "e",
+                  "label": "Dissolves in excess: Zn²⁺"
+                },
+                {
+                  "id": "f",
+                  "label": "Stays: Pb²⁺"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "a",
+                  "to": "b"
+                },
+                {
+                  "from": "a",
+                  "to": "c"
+                },
+                {
+                  "from": "b",
+                  "to": "d"
+                },
+                {
+                  "from": "c",
+                  "to": "e"
+                },
+                {
+                  "from": "c",
+                  "to": "f"
+                }
+              ]
+            },
+            "alt": "Decision flow for identifying iron, copper, zinc and lead ions with ammonium hydroxide"
+          },
+          "math": [],
+          "narration": "Start with the colour. A coloured precipitate points to iron or copper. A white precipitate could be zinc or lead, so add excess ammonium hydroxide. Zinc hydroxide dissolves to give a colourless solution, but lead hydroxide does not. Here the precipitate dissolved, so the cation is zinc.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s13",
+          "layout": "concept",
+          "heading": "Uses of ammonia and ozone-safe refrigerants",
+          "body_md": "- **Fertilisers:** urea, ammonium sulphate, ammonium nitrate, ammonium phosphate.\n- **Nitric acid** (Ostwald’s process) and **explosives** (e.g. ammonium nitrate).\n- **Refrigerant:** liquid ammonia absorbs much heat as it evaporates (ice plants, cold stores).\n- **Cleansing agent:** dilute ammonia solution removes grease.\n\n**CFCs** (chlorofluorocarbons) release chlorine that **destroys the ozone layer**; they are being replaced by **non-ozone-depleting** refrigerants such as HFCs, hydrocarbons and ammonia itself.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Use",
+                "Property or product"
+              ],
+              "rows": [
+                [
+                  "Fertilisers",
+                  "Supplies nitrogen to crops"
+                ],
+                [
+                  "Nitric acid",
+                  "Catalytic oxidation of ammonia"
+                ],
+                [
+                  "Refrigerant",
+                  "High latent heat of vaporisation"
+                ],
+                [
+                  "Cleaning",
+                  "Alkaline; removes grease"
+                ],
+                [
+                  "Replacing CFCs",
+                  "Does not deplete ozone"
+                ]
+              ]
+            },
+            "alt": "Table of the uses of ammonia with the property or product involved"
+          },
+          "math": [],
+          "narration": "Most ammonia becomes fertilisers such as urea and ammonium sulphate. It is also oxidised to make nitric acid, which leads to explosives. Liquid ammonia is a refrigerant, because it absorbs a lot of heat when it evaporates. Older refrigerants called chlorofluorocarbons release chlorine that destroys the ozone layer, so they are being replaced by ozone safe refrigerants, including ammonia.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s14",
+          "layout": "concept",
+          "heading": "Tests for ammonia",
+          "body_md": "Ammonia is identified by its **smell** and by these tests.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Test",
+                "Result"
+              ],
+              "rows": [
+                [
+                  "Smell (waft carefully)",
+                  "Sharp, pungent"
+                ],
+                [
+                  "Moist red litmus",
+                  "Turns blue"
+                ],
+                [
+                  "Rod dipped in conc. HCl",
+                  "Dense white fumes of NH₄Cl"
+                ],
+                [
+                  "Copper sulphate solution",
+                  "Pale blue precipitate, then deep blue solution"
+                ]
+              ]
+            },
+            "alt": "Table of four tests for ammonia and their results"
+          },
+          "math": [],
+          "narration": "To identify ammonia, first notice its sharp smell, wafting it gently towards your nose. Moist red litmus paper turns blue, because ammonia is the only common alkaline gas. A glass rod dipped in concentrated hydrochloric acid gives dense white fumes. And with copper sulphate solution it gives a pale blue precipitate that dissolves to a deep blue solution.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s15",
+          "layout": "summary",
+          "heading": "Summary: Part 2",
+          "body_md": "",
+          "bullets": [
+            "Burning in oxygen: 4NH₃ + 3O₂ → 2N₂ + 6H₂O (greenish-yellow flame).",
+            "Catalytic oxidation: 4NH₃ + 5O₂ → 4NO + 6H₂O (Pt, about 800 °C).",
+            "Reducing agent: 3CuO + 2NH₃ → 3Cu + 3H₂O + N₂.",
+            "Excess NH₃ + Cl₂ → NH₄Cl + N₂; excess Cl₂ → NCl₃ + HCl.",
+            "NH₄OH: Fe(OH)₃ reddish-brown, Fe(OH)₂ dirty green, Pb(OH)₂ white; Zn(OH)₂ and Cu(OH)₂ dissolve in excess."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Ion",
+                "With NH₄OH (excess)"
+              ],
+              "rows": [
+                [
+                  "Fe³⁺",
+                  "Reddish-brown, stays"
+                ],
+                [
+                  "Fe²⁺",
+                  "Dirty green, stays"
+                ],
+                [
+                  "Pb²⁺",
+                  "White, stays"
+                ],
+                [
+                  "Zn²⁺",
+                  "White, dissolves"
+                ],
+                [
+                  "Cu²⁺",
+                  "Pale blue, dissolves to deep blue"
+                ]
+              ]
+            },
+            "alt": "Summary table of the behaviour of five metal ions with ammonium hydroxide"
+          },
+          "math": [],
+          "narration": "Let us sum up Part 2. Ammonia burns in oxygen to give nitrogen, but over platinum it gives nitric oxide. It reduces hot copper oxide to copper. With chlorine, the products depend on which gas is in excess. Its solution is a weak alkali that neutralises acids and precipitates metal hydroxides, which we use to identify metal ions.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s16",
+          "layout": "exam-tips",
+          "heading": "Exam tips: Part 2",
+          "body_md": "",
+          "bullets": [
+            "Burning gives N₂; catalytic oxidation gives NO — state the catalyst and temperature.",
+            "With chlorine, always say which gas is in excess.",
+            "For precipitates, give the colour and what happens in excess.",
+            "Two tests for ammonia: moist red litmus turns blue; white fumes with a rod dipped in conc. HCl."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Slip",
+                "Fix"
+              ],
+              "rows": [
+                [
+                  "Burning gives NO",
+                  "Burning gives N₂; only catalytic oxidation gives NO"
+                ],
+                [
+                  "Lead hydroxide dissolves in excess",
+                  "Only zinc and copper hydroxides dissolve"
+                ],
+                [
+                  "Ammonia is an oxidising agent with CuO",
+                  "It is a reducing agent"
+                ]
+              ]
+            },
+            "alt": "Table of three common slips in Part 2 and their fixes"
+          },
+          "math": [],
+          "narration": "Final tips. Keep the two oxidations apart: burning in oxygen gives nitrogen, while the platinum catalyst gives nitric oxide. In chlorine questions, check which gas is in excess. For precipitates, always state the colour and what happens when more ammonium hydroxide is added. And learn two tests for ammonia.",
+          "check_question_id": null,
+          "audio": null
+        }
+      ],
+      "status": "draft",
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    }
+  ],
+  "notes": {
+    "unit": "icse-10-chemistry-ch10",
+    "version": 1,
+    "title": "Study of Compounds: Ammonia — Notes",
+    "language": "en",
+    "sections": [
+      {
+        "heading": "1. Laboratory preparation",
+        "body_md": "**Reactants:** ammonium chloride and slaked lime (calcium hydroxide), heated.\n\n- **Flask** clamped **slanting**, mouth slightly lower, so the water formed does not run back onto the hot glass.\n- **Drying agent:** **quicklime** (CaO). Not concentrated H₂SO₄ or P₂O₅ (acidic, react with ammonia), not anhydrous CaCl₂ (forms CaCl₂·8NH₃).\n- **Collection:** **downward displacement of air** in an inverted jar (lighter than air; extremely soluble, so not over water).\n- **Jar full?** Moist red litmus turns blue at the mouth; a rod dipped in conc. HCl gives dense white fumes.",
+        "key_terms": [
+          {
+            "term": "Downward displacement of air",
+            "definition_md": "Collection of a gas lighter than air in an inverted jar: the gas rises and pushes the air down and out."
+          },
+          {
+            "term": "Slaked lime",
+            "definition_md": "Calcium hydroxide, Ca(OH)₂."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\ce{2NH4Cl + Ca(OH)2 -> CaCl2 + 2H2O + 2NH3}",
+            "label": "Laboratory preparation (heat)"
+          },
+          {
+            "latex": "\\ce{2NH3 + H2SO4 -> (NH4)2SO4}",
+            "label": "Why sulphuric acid cannot dry ammonia"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Drying agent",
+              "Suitable?",
+              "Reason"
+            ],
+            "rows": [
+              [
+                "Quicklime",
+                "Yes",
+                "Basic, does not react"
+              ],
+              [
+                "Conc. H₂SO₄",
+                "No",
+                "Forms (NH₄)₂SO₄"
+              ],
+              [
+                "P₂O₅",
+                "No",
+                "Acidic; reacts"
+              ],
+              [
+                "Anhydrous CaCl₂",
+                "No",
+                "Forms CaCl₂·8NH₃"
+              ]
+            ]
+          },
+          "alt": "Table of drying agents for ammonia with reasons"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-chemistry-ch10-t01"
+        ]
+      },
+      {
+        "heading": "2. Ammonia from nitrides and ammonium salts",
+        "body_md": "- **Metal nitrides + warm water** → metal hydroxide + ammonia.\n- **Any ammonium salt + alkali, warmed** → salt + water + ammonia (a test for ammonium ions).",
+        "key_terms": [
+          {
+            "term": "Nitride",
+            "definition_md": "A compound of a metal with nitrogen only, such as Mg₃N₂ or AlN."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\ce{Mg3N2 + 6H2O -> 3Mg(OH)2 + 2NH3}",
+            "label": "Magnesium nitride"
+          },
+          {
+            "latex": "\\ce{AlN + 3H2O -> Al(OH)3 + NH3}",
+            "label": "Aluminium nitride"
+          },
+          {
+            "latex": "\\ce{(NH4)2SO4 + 2NaOH -> Na2SO4 + 2H2O + 2NH3}",
+            "label": "Ammonium salt with alkali"
+          },
+          {
+            "latex": "\\ce{NH4NO3 + KOH -> KNO3 + H2O + NH3}",
+            "label": "Ammonium salt with alkali"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Source",
+              "Condition",
+              "Other product"
+            ],
+            "rows": [
+              [
+                "Mg₃N₂",
+                "Warm water",
+                "Mg(OH)₂"
+              ],
+              [
+                "AlN",
+                "Warm water",
+                "Al(OH)₃"
+              ],
+              [
+                "(NH₄)₂SO₄",
+                "Warm with NaOH",
+                "Na₂SO₄ + H₂O"
+              ]
+            ]
+          },
+          "alt": "Table of other sources of ammonia, the conditions and the other products"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-chemistry-ch10-t02"
+        ]
+      },
+      {
+        "heading": "3. Manufacture: Haber’s process",
+        "body_md": "- **Raw materials:** nitrogen (from liquid air) and hydrogen, **1 : 3 by volume**.\n- **Conditions:** **450–500 °C**, **200–900 atm**, catalyst **finely divided iron**, promoter **molybdenum**.\n- The reaction is **reversible** and **exothermic**; high pressure favours ammonia (4 volumes → 2 volumes).\n- **Separation:** the gases are cooled; ammonia **liquefies** and is drawn off. **Unreacted N₂ and H₂ are recycled.**",
+        "key_terms": [
+          {
+            "term": "Catalyst",
+            "definition_md": "A substance that changes the rate of a reaction without itself being used up."
+          },
+          {
+            "term": "Promoter",
+            "definition_md": "A substance that increases the efficiency of a catalyst (molybdenum in Haber’s process)."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\ce{N2 + 3H2 <=> 2NH3}",
+            "label": "Iron catalyst, molybdenum promoter, 450–500 °C, 200–900 atm"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Condition",
+              "Value"
+            ],
+            "rows": [
+              [
+                "N₂ : H₂",
+                "1 : 3 by volume"
+              ],
+              [
+                "Temperature",
+                "450–500 °C"
+              ],
+              [
+                "Pressure",
+                "200–900 atm"
+              ],
+              [
+                "Catalyst",
+                "Finely divided iron"
+              ],
+              [
+                "Promoter",
+                "Molybdenum"
+              ]
+            ]
+          },
+          "alt": "Table of the conditions of Haber’s process"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-chemistry-ch10-t03"
+        ]
+      },
+      {
+        "heading": "4. Physical properties; burning and catalytic oxidation",
+        "body_md": "- **Lighter than air** (vapour density 8.5); **extremely soluble** in water. **Fountain experiment:** red litmus → **blue** fountain (phenolphthalein → **pink**): very soluble, alkaline solution.\n- **Burning:** does not burn in air or support combustion; burns in **oxygen** with a **greenish-yellow flame**, giving nitrogen.\n- **Catalytic oxidation:** over **platinum at about 800 °C**, giving **nitric oxide**; exothermic, so the platinum keeps glowing. In air, 2NO + O₂ → 2NO₂ (reddish-brown).",
+        "key_terms": [
+          {
+            "term": "Catalytic oxidation of ammonia",
+            "definition_md": "Oxidation of ammonia by oxygen over hot platinum to nitric oxide and water; the first step of Ostwald’s process."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\ce{4NH3 + 3O2 -> 2N2 + 6H2O}",
+            "label": "Burning in oxygen"
+          },
+          {
+            "latex": "\\ce{4NH3 + 5O2 -> 4NO + 6H2O}",
+            "label": "Catalytic oxidation: Pt, about 800 °C"
+          },
+          {
+            "latex": "\\ce{2NO + O2 -> 2NO2}",
+            "label": "Reddish-brown fumes"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Feature",
+              "Burning",
+              "Catalytic oxidation"
+            ],
+            "rows": [
+              [
+                "Condition",
+                "Lit in oxygen",
+                "Pt, about 800 °C"
+              ],
+              [
+                "Nitrogen product",
+                "N₂",
+                "NO"
+              ],
+              [
+                "Sign",
+                "Greenish-yellow flame",
+                "Pt glows; brown fumes in air"
+              ]
+            ]
+          },
+          "alt": "Table comparing burning and catalytic oxidation of ammonia"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-chemistry-ch10-t04"
+        ]
+      },
+      {
+        "heading": "5. Reducing nature; reactions with chlorine and hydrogen chloride",
+        "body_md": "- **Hot metal oxides** are reduced to the metal; ammonia is oxidised to nitrogen. Copper(II) oxide: black → reddish-brown, with water droplets. Lead(II) and lead(IV) oxides give grey lead.\n- **Chlorine:** with **excess ammonia** → NH₄Cl (white fumes) + N₂; with **excess chlorine** → NCl₃ (yellow, explosive) + HCl.\n- **Hydrogen chloride:** dense white fumes of NH₄Cl.",
+        "key_terms": [
+          {
+            "term": "Reducing agent",
+            "definition_md": "A substance that removes oxygen from another substance (or gives electrons), being itself oxidised."
+          },
+          {
+            "term": "Nitrogen trichloride",
+            "definition_md": "NCl₃, a yellow, highly explosive oily liquid formed by ammonia with excess chlorine."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\ce{3CuO + 2NH3 -> 3Cu + 3H2O + N2}",
+            "label": "Copper(II) oxide"
+          },
+          {
+            "latex": "\\ce{3PbO + 2NH3 -> 3Pb + 3H2O + N2}",
+            "label": "Lead(II) oxide"
+          },
+          {
+            "latex": "\\ce{3PbO2 + 4NH3 -> 3Pb + 6H2O + 2N2}",
+            "label": "Lead(IV) oxide"
+          },
+          {
+            "latex": "\\ce{8NH3 + 3Cl2 -> 6NH4Cl + N2}",
+            "label": "Excess ammonia"
+          },
+          {
+            "latex": "\\ce{NH3 + 3Cl2 -> NCl3 + 3HCl}",
+            "label": "Excess chlorine"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Reagent",
+              "Product with ammonia"
+            ],
+            "rows": [
+              [
+                "Hot CuO",
+                "Cu, H₂O, N₂"
+              ],
+              [
+                "Cl₂ (NH₃ in excess)",
+                "NH₄Cl, N₂"
+              ],
+              [
+                "Cl₂ in excess",
+                "NCl₃, HCl"
+              ],
+              [
+                "HCl",
+                "NH₄Cl"
+              ]
+            ]
+          },
+          "alt": "Table of reagents and the products they give with ammonia"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-chemistry-ch10-t05"
+        ]
+      },
+      {
+        "heading": "6. Aqueous ammonia",
+        "body_md": "Ammonia dissolves to give **ammonium hydroxide**, a **weak alkali**. It neutralises acids and precipitates metal hydroxides:\n\n| Solution | Precipitate | Excess NH₄OH |\n|---|---|---|\n| FeCl₃ | Reddish-brown Fe(OH)₃ | Insoluble |\n| FeSO₄ | Dirty green Fe(OH)₂ | Insoluble |\n| Pb(NO₃)₂ | Chalky white Pb(OH)₂ | Insoluble |\n| Zn(NO₃)₂ | White gelatinous Zn(OH)₂ | Dissolves (colourless) |\n| CuSO₄ | Pale blue Cu(OH)₂ | Dissolves (deep blue) |",
+        "key_terms": [
+          {
+            "term": "Ammonium hydroxide",
+            "definition_md": "The weak alkali formed when ammonia dissolves in water, NH₄OH."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\ce{2NH4OH + H2SO4 -> (NH4)2SO4 + 2H2O}",
+            "label": "Neutralisation"
+          },
+          {
+            "latex": "\\ce{FeCl3 + 3NH4OH -> Fe(OH)3 + 3NH4Cl}",
+            "label": "Reddish-brown precipitate"
+          },
+          {
+            "latex": "\\ce{FeSO4 + 2NH4OH -> Fe(OH)2 + (NH4)2SO4}",
+            "label": "Dirty green precipitate"
+          },
+          {
+            "latex": "\\ce{CuSO4 + 2NH4OH -> Cu(OH)2 + (NH4)2SO4}",
+            "label": "Pale blue precipitate"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Ion",
+              "Identified by"
+            ],
+            "rows": [
+              [
+                "Fe³⁺",
+                "Reddish-brown precipitate"
+              ],
+              [
+                "Fe²⁺",
+                "Dirty green precipitate"
+              ],
+              [
+                "Zn²⁺",
+                "White, soluble in excess"
+              ],
+              [
+                "Pb²⁺",
+                "White, insoluble in excess"
+              ],
+              [
+                "Cu²⁺",
+                "Deep blue solution in excess"
+              ]
+            ]
+          },
+          "alt": "Table of metal ions identified with ammonium hydroxide"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-chemistry-ch10-t06"
+        ]
+      },
+      {
+        "heading": "7. Uses, refrigerants and tests",
+        "body_md": "- **Uses:** fertilisers (urea, ammonium sulphate, nitrate, phosphate); nitric acid (Ostwald’s process); explosives; refrigerant in ice plants and cold stores (high latent heat of vaporisation); cleansing agent (removes grease).\n- **Refrigerants:** CFCs release chlorine in the upper atmosphere that **destroys the ozone layer**; they are replaced by **non-ozone-depleting** refrigerants (HFCs, hydrocarbons, ammonia).\n- **Tests:** pungent smell; moist red litmus turns blue; dense white fumes with a rod dipped in conc. HCl; with copper sulphate solution, a deep blue solution in excess.",
+        "key_terms": [
+          {
+            "term": "CFCs",
+            "definition_md": "Chlorofluorocarbons: older refrigerants that release chlorine in the upper atmosphere and deplete the ozone layer."
+          }
+        ],
+        "formulas": [],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Test",
+              "Result"
+            ],
+            "rows": [
+              [
+                "Moist red litmus",
+                "Turns blue"
+              ],
+              [
+                "Rod dipped in conc. HCl",
+                "Dense white fumes"
+              ],
+              [
+                "CuSO₄ solution",
+                "Pale blue precipitate, then deep blue solution"
+              ]
+            ]
+          },
+          "alt": "Table of tests for ammonia"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-chemistry-ch10-t07"
+        ]
+      }
+    ],
+    "exam_tips_md": "**Common mistakes**\n- Naming concentrated sulphuric acid or calcium chloride as the drying agent for ammonia.\n- Writing \"upward displacement\" for ammonia (it is downward).\n- Mixing up the catalysts: iron (Haber) and platinum (catalytic oxidation).\n- Saying burning in oxygen gives nitric oxide (it gives nitrogen).\n- Saying lead hydroxide dissolves in excess ammonium hydroxide (only zinc and copper hydroxides do).\n\n**How marks are usually awarded**\n- Equations (1 mark): balanced, with conditions (Pt, 800 °C; iron, 450–500 °C, 200–900 atm) where asked.\n- Observations (1 mark): colour of precipitate or solid, and its behaviour in excess.\n- Reasons (1 mark): drying agent, method of collection, slanting flask.",
+    "status": "draft",
+    "provenance": {
+      "origin": "human",
+      "template_version": null,
+      "model": null,
+      "generated_at": "2026-11-01",
+      "author": "claude-opus-5-5 (subject-producer)"
+    }
+  },
+  "flashcards": {
+    "unit": "icse-10-chemistry-ch10",
+    "version": 1,
+    "language": "en",
+    "cards": [
+      {
+        "id": "f01",
+        "front_md": "Lab preparation of ammonia?",
+        "back_md": "2NH₄Cl + Ca(OH)₂ → CaCl₂ + 2H₂O + 2NH₃ (heat).",
+        "tag": "formula",
+        "topic_id": "icse-10-chemistry-ch10-t01"
+      },
+      {
+        "id": "f02",
+        "front_md": "Drying agent for ammonia?",
+        "back_md": "Quicklime (CaO).",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch10-t01"
+      },
+      {
+        "id": "f03",
+        "front_md": "Why not anhydrous CaCl₂?",
+        "back_md": "It forms CaCl₂·8NH₃ with ammonia.",
+        "tag": "concept",
+        "topic_id": "icse-10-chemistry-ch10-t01"
+      },
+      {
+        "id": "f04",
+        "front_md": "How is ammonia collected?",
+        "back_md": "Downward displacement of air (inverted jar).",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch10-t01"
+      },
+      {
+        "id": "f05",
+        "front_md": "Why is the flask tilted?",
+        "back_md": "Water formed must not run onto the hot glass and crack it.",
+        "tag": "diagram",
+        "topic_id": "icse-10-chemistry-ch10-t01"
+      },
+      {
+        "id": "f06",
+        "front_md": "Mg₃N₂ + warm water?",
+        "back_md": "Mg₃N₂ + 6H₂O → 3Mg(OH)₂ + 2NH₃.",
+        "tag": "formula",
+        "topic_id": "icse-10-chemistry-ch10-t02"
+      },
+      {
+        "id": "f07",
+        "front_md": "AlN + warm water?",
+        "back_md": "AlN + 3H₂O → Al(OH)₃ + NH₃.",
+        "tag": "formula",
+        "topic_id": "icse-10-chemistry-ch10-t02"
+      },
+      {
+        "id": "f08",
+        "front_md": "Ammonium salt + alkali?",
+        "back_md": "Gives ammonia on warming (test for NH₄⁺).",
+        "tag": "concept",
+        "topic_id": "icse-10-chemistry-ch10-t02"
+      },
+      {
+        "id": "f09",
+        "front_md": "Haber equation?",
+        "back_md": "N₂ + 3H₂ ⇌ 2NH₃ (exothermic).",
+        "tag": "formula",
+        "topic_id": "icse-10-chemistry-ch10-t03"
+      },
+      {
+        "id": "f10",
+        "front_md": "Haber catalyst and promoter?",
+        "back_md": "Finely divided iron; molybdenum.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch10-t03"
+      },
+      {
+        "id": "f11",
+        "front_md": "Haber temperature and pressure?",
+        "back_md": "450–500 °C; 200–900 atm.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch10-t03"
+      },
+      {
+        "id": "f12",
+        "front_md": "How is ammonia separated in Haber’s process?",
+        "back_md": "Cooling liquefies it; unreacted gases recycled.",
+        "tag": "concept",
+        "topic_id": "icse-10-chemistry-ch10-t03"
+      },
+      {
+        "id": "f13",
+        "front_md": "Why does high pressure help?",
+        "back_md": "4 volumes of reactants give 2 volumes of ammonia.",
+        "tag": "concept",
+        "topic_id": "icse-10-chemistry-ch10-t03"
+      },
+      {
+        "id": "f14",
+        "front_md": "Vapour density of ammonia?",
+        "back_md": "8.5 (lighter than air).",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch10-t04"
+      },
+      {
+        "id": "f15",
+        "front_md": "Fountain colour with red litmus?",
+        "back_md": "Blue.",
+        "tag": "diagram",
+        "topic_id": "icse-10-chemistry-ch10-t04"
+      },
+      {
+        "id": "f16",
+        "front_md": "Flame when ammonia burns in oxygen?",
+        "back_md": "Greenish-yellow; products N₂ and H₂O.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch10-t04"
+      },
+      {
+        "id": "f17",
+        "front_md": "Catalytic oxidation?",
+        "back_md": "4NH₃ + 5O₂ → 4NO + 6H₂O (Pt, about 800 °C).",
+        "tag": "formula",
+        "topic_id": "icse-10-chemistry-ch10-t04"
+      },
+      {
+        "id": "f18",
+        "front_md": "Why does the Pt coil keep glowing?",
+        "back_md": "The oxidation is exothermic.",
+        "tag": "concept",
+        "topic_id": "icse-10-chemistry-ch10-t04"
+      },
+      {
+        "id": "f19",
+        "front_md": "NH₃ over hot CuO?",
+        "back_md": "3CuO + 2NH₃ → 3Cu + 3H₂O + N₂ (black → reddish-brown).",
+        "tag": "formula",
+        "topic_id": "icse-10-chemistry-ch10-t05"
+      },
+      {
+        "id": "f20",
+        "front_md": "Excess NH₃ + Cl₂?",
+        "back_md": "8NH₃ + 3Cl₂ → 6NH₄Cl + N₂ (white fumes).",
+        "tag": "formula",
+        "topic_id": "icse-10-chemistry-ch10-t05"
+      },
+      {
+        "id": "f21",
+        "front_md": "NH₃ + excess Cl₂?",
+        "back_md": "NH₃ + 3Cl₂ → NCl₃ + 3HCl (explosive NCl₃).",
+        "tag": "formula",
+        "topic_id": "icse-10-chemistry-ch10-t05"
+      },
+      {
+        "id": "f22",
+        "front_md": "Role of ammonia with hot CuO?",
+        "back_md": "Reducing agent.",
+        "tag": "concept",
+        "topic_id": "icse-10-chemistry-ch10-t05"
+      },
+      {
+        "id": "f23",
+        "front_md": "Fe³⁺ with NH₄OH?",
+        "back_md": "Reddish-brown precipitate, insoluble in excess.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch10-t06"
+      },
+      {
+        "id": "f24",
+        "front_md": "Fe²⁺ with NH₄OH?",
+        "back_md": "Dirty green precipitate, insoluble in excess.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch10-t06"
+      },
+      {
+        "id": "f25",
+        "front_md": "Zn²⁺ with NH₄OH?",
+        "back_md": "White gelatinous precipitate, soluble in excess.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch10-t06"
+      },
+      {
+        "id": "f26",
+        "front_md": "Cu²⁺ with excess NH₄OH?",
+        "back_md": "Pale blue precipitate dissolves to a deep blue solution.",
+        "tag": "example",
+        "topic_id": "icse-10-chemistry-ch10-t06"
+      },
+      {
+        "id": "f27",
+        "front_md": "Two uses of ammonia?",
+        "back_md": "Fertilisers; nitric acid (also refrigerant, cleaning).",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch10-t07"
+      },
+      {
+        "id": "f28",
+        "front_md": "Why replace CFCs?",
+        "back_md": "They release chlorine that destroys the ozone layer.",
+        "tag": "concept",
+        "topic_id": "icse-10-chemistry-ch10-t07"
+      },
+      {
+        "id": "f29",
+        "front_md": "Two tests for ammonia?",
+        "back_md": "Moist red litmus turns blue; white fumes with conc. HCl.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch10-t07"
+      },
+      {
+        "id": "f30",
+        "front_md": "Exam tip: catalysts",
+        "back_md": "Haber: iron (Mo promoter). Oxidation of NH₃: platinum.",
+        "tag": "exam-tip",
+        "topic_id": "icse-10-chemistry-ch10-t03"
+      }
+    ],
+    "status": "draft",
+    "provenance": {
+      "origin": "human",
+      "template_version": null,
+      "model": null,
+      "generated_at": "2026-11-01",
+      "author": "claude-opus-5-5 (subject-producer)"
+    }
+  },
+  "questions": [
+    {
+      "id": "q_icse10chem_ch10_001",
+      "unit": "icse-10-chemistry-ch10",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Ammonia made from ammonium chloride and slaked lime is passed through a drying tower before collection. The tower is packed with:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "quicklime (calcium oxide)"
+        },
+        {
+          "id": "b",
+          "text_md": "concentrated sulphuric acid"
+        },
+        {
+          "id": "c",
+          "text_md": "phosphorus pentoxide"
+        },
+        {
+          "id": "d",
+          "text_md": "anhydrous calcium chloride"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "The other three react with ammonia — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch10-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch10_002",
+      "unit": "icse-10-chemistry-ch10",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "In the laboratory preparation of ammonia, the round-bottomed flask is clamped in a slanting position with its mouth slightly lower than its base. This is done so that:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "the ammonia, being heavy, flows out more easily"
+        },
+        {
+          "id": "b",
+          "text_md": "quicklime can be added through the mouth during heating"
+        },
+        {
+          "id": "c",
+          "text_md": "the water formed does not run back onto the hot part of the flask and crack it"
+        },
+        {
+          "id": "d",
+          "text_md": "the solid mixture melts evenly"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "2NH₄Cl + Ca(OH)₂ → CaCl₂ + 2H₂O + 2NH₃ produces water, which would condense near the mouth — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch10-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch10_003",
+      "unit": "icse-10-chemistry-ch10",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Anhydrous calcium chloride is not used to dry ammonia.\n\n**Reason (R):** Anhydrous calcium chloride combines with ammonia to form an addition compound.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Both are true, and R explains A (CaCl₂·8NH₃ is formed) — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch10-t01"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch10_004",
+      "unit": "icse-10-chemistry-ch10",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write the balanced equation for the laboratory preparation of ammonia from ammonium chloride and slaked lime.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "2NH₄Cl + Ca(OH)₂ → CaCl₂ + 2H₂O + 2NH₃ (on heating)."
+      },
+      "solution_md": "Equation.",
+      "marking_scheme": [
+        {
+          "step": "Balanced equation",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch10-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch10_005",
+      "unit": "icse-10-chemistry-ch10",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Why is phosphorus pentoxide not used to dry ammonia?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Phosphorus pentoxide is an acidic oxide and reacts with the basic gas ammonia (forming ammonium phosphate)."
+      },
+      "solution_md": "Acidic; reacts with ammonia.",
+      "marking_scheme": [
+        {
+          "step": "Reacts with ammonia (acidic oxide)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch10-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch10_006",
+      "unit": "icse-10-chemistry-ch10",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Ammonia is dried over quicklime. Give a reason why each of these cannot be used instead: (a) concentrated sulphuric acid; (b) anhydrous calcium chloride.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Concentrated sulphuric acid reacts with ammonia: 2NH₃ + H₂SO₄ → (NH₄)₂SO₄. (b) Anhydrous calcium chloride combines with ammonia to form the addition compound CaCl₂·8NH₃."
+      },
+      "solution_md": "Each reacts with ammonia.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch10-t01"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch10_007",
+      "unit": "icse-10-chemistry-ch10",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "A mixture of 10.7 g of ammonium chloride and excess slaked lime is heated until no more gas comes off. What volume of ammonia, measured at STP, is obtained? Give the answer in litres. (N = 14, H = 1, Cl = 35.5; one mole of a gas occupies 22.4 L at STP)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 4.48,
+        "tolerance": 0.01,
+        "unit": "L"
+      },
+      "solution_md": "$\\ce{2NH4Cl + Ca(OH)2 -> CaCl2 + 2H2O + 2NH3}$: one mole of ammonium chloride gives one mole of ammonia. Molar mass of $\\ce{NH4Cl} = 14 + 4 + 35.5 = 53.5$. Moles $= \\dfrac{10.7}{53.5} = 0.2$. Volume of ammonia $= 0.2 \\times 22.4 = 4.48$, so 4.48 L.",
+      "marking_scheme": [
+        {
+          "step": "Moles of NH₄Cl and 1 : 1 ratio",
+          "marks": 1
+        },
+        {
+          "step": "4.48 L",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch10-t01"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch10_008",
+      "unit": "icse-10-chemistry-ch10",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Warm water is poured onto magnesium nitride, Mg₃N₂. The products are:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "magnesium hydroxide and ammonia"
+        },
+        {
+          "id": "b",
+          "text_md": "magnesium oxide and nitrogen"
+        },
+        {
+          "id": "c",
+          "text_md": "magnesium hydroxide and nitrogen"
+        },
+        {
+          "id": "d",
+          "text_md": "magnesium and ammonia"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Mg₃N₂ + 6H₂O → 3Mg(OH)₂ + 2NH₃ — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch10-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch10_009",
+      "unit": "icse-10-chemistry-ch10",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which pair of substances gives ammonia when warmed together?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Ammonium chloride and dilute hydrochloric acid"
+        },
+        {
+          "id": "b",
+          "text_md": "Ammonium sulphate and sodium hydroxide solution"
+        },
+        {
+          "id": "c",
+          "text_md": "Sodium nitrate and water"
+        },
+        {
+          "id": "d",
+          "text_md": "Ammonium nitrate and dilute sulphuric acid"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "An ammonium salt warmed with an alkali gives ammonia: (NH₄)₂SO₄ + 2NaOH → Na₂SO₄ + 2H₂O + 2NH₃ — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch10-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch10_010",
+      "unit": "icse-10-chemistry-ch10",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Ammonium nitrate gives ammonia when it is warmed with potassium hydroxide solution.\n\n**Reason (R):** A strong alkali displaces the weaker base, ammonia, from an ammonium salt.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Both are true, and R explains A: NH₄NO₃ + KOH → KNO₃ + H₂O + NH₃ — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch10-t02"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch10_011",
+      "unit": "icse-10-chemistry-ch10",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? Aluminium nitride gives ammonia when it is warmed with water.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "t"
+        ]
+      },
+      "solution_md": "True: AlN + 3H₂O → Al(OH)₃ + NH₃.",
+      "marking_scheme": [
+        {
+          "step": "True",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch10-t02"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch10_012",
+      "unit": "icse-10-chemistry-ch10",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write the balanced equation for the action of warm water on magnesium nitride.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Mg₃N₂ + 6H₂O → 3Mg(OH)₂ + 2NH₃."
+      },
+      "solution_md": "Equation.",
+      "marking_scheme": [
+        {
+          "step": "Balanced equation",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch10-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch10_013",
+      "unit": "icse-10-chemistry-ch10",
+      "language": "en",
+      "type": "short",
+      "stem_md": "A sample of aluminium nitride is warmed with water and a pungent gas is given off. Name the gas and write the balanced equation.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Ammonia: AlN + 3H₂O → Al(OH)₃ + NH₃."
+      },
+      "solution_md": "Equation.",
+      "marking_scheme": [
+        {
+          "step": "Balanced equation",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch10-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch10_014",
+      "unit": "icse-10-chemistry-ch10",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write balanced equations for the formation of ammonia when (a) ammonium sulphate is warmed with sodium hydroxide solution and (b) ammonium nitrate is warmed with potassium hydroxide solution.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) (NH₄)₂SO₄ + 2NaOH → Na₂SO₄ + 2H₂O + 2NH₃. (b) NH₄NO₃ + KOH → KNO₃ + H₂O + NH₃."
+      },
+      "solution_md": "Two equations.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch10-t02"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch10_015",
+      "unit": "icse-10-chemistry-ch10",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "In Haber's process for making ammonia, the catalyst and the promoter used are:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "platinum gauze, with rhodium as promoter"
+        },
+        {
+          "id": "b",
+          "text_md": "vanadium pentoxide, with iron as promoter"
+        },
+        {
+          "id": "c",
+          "text_md": "finely divided iron, with molybdenum as promoter"
+        },
+        {
+          "id": "d",
+          "text_md": "nickel powder, with copper as promoter"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch10-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch10_016",
+      "unit": "icse-10-chemistry-ch10",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Nitrogen and hydrogen are fed into the converter in Haber's process in the ratio, by volume, of:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "3 : 1"
+        },
+        {
+          "id": "b",
+          "text_md": "1 : 3"
+        },
+        {
+          "id": "c",
+          "text_md": "1 : 1"
+        },
+        {
+          "id": "d",
+          "text_md": "2 : 3"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "N₂ + 3H₂ ⇌ 2NH₃ — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch10-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch10_017",
+      "unit": "icse-10-chemistry-ch10",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Haber's process is run at a high pressure (200–900 atm). High pressure favours the formation of ammonia because:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "ammonia is lighter than air"
+        },
+        {
+          "id": "b",
+          "text_md": "four volumes of reacting gases give only two volumes of ammonia"
+        },
+        {
+          "id": "c",
+          "text_md": "the iron catalyst works only under pressure"
+        },
+        {
+          "id": "d",
+          "text_md": "high pressure makes the reaction endothermic"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "N₂ + 3H₂ ⇌ 2NH₃: 1 + 3 = 4 volumes become 2 volumes, so raising the pressure pushes the change towards ammonia — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch10-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch10_018",
+      "unit": "icse-10-chemistry-ch10",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** In Haber's process, the gas mixture leaving the catalyst chamber is cooled.\n\n**Reason (R):** Finely divided iron is the catalyst in Haber's process.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Both are true, but the mixture is cooled so that ammonia liquefies and separates from unreacted nitrogen and hydrogen; the catalyst is not the reason — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch10-t03"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch10_019",
+      "unit": "icse-10-chemistry-ch10",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write the balanced equation for Haber's process, with the conditions.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "N₂ + 3H₂ ⇌ 2NH₃ (+ heat); 450–500 °C, 200–900 atm, finely divided iron with molybdenum as promoter."
+      },
+      "solution_md": "Equation with conditions.",
+      "marking_scheme": [
+        {
+          "step": "Balanced reversible equation with conditions",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch10-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch10_020",
+      "unit": "icse-10-chemistry-ch10",
+      "language": "en",
+      "type": "short",
+      "stem_md": "In Haber's process, how is ammonia separated from the unreacted gases, and what is done with these gases?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "The gas mixture is cooled (under pressure), so ammonia, which liquefies much more easily, condenses and is drawn off. The unreacted nitrogen and hydrogen are mixed with fresh gases and recirculated over the catalyst."
+      },
+      "solution_md": "Cooling and liquefaction; recycling.",
+      "marking_scheme": [
+        {
+          "step": "Ammonia liquefied by cooling",
+          "marks": 1
+        },
+        {
+          "step": "Unreacted gases recycled",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch10-t03"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch10_021",
+      "unit": "icse-10-chemistry-ch10",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "In Haber's process, 60 L of hydrogen reacts completely with nitrogen. What volume of ammonia is formed, all volumes measured at the same temperature and pressure? Give the answer in litres.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 40,
+        "tolerance": 0.1,
+        "unit": "L"
+      },
+      "solution_md": "$\\ce{N2 + 3H2 <=> 2NH3}$: 3 volumes of hydrogen give 2 volumes of ammonia (Gay-Lussac's law). Volume of ammonia $= 60 \\times \\dfrac{2}{3} = 40$, so 40 L.",
+      "marking_scheme": [
+        {
+          "step": "Volume ratio 3 : 2",
+          "marks": 1
+        },
+        {
+          "step": "40 L",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch10-t03"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch10_022",
+      "unit": "icse-10-chemistry-ch10",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "In the fountain experiment, a flask of dry ammonia is inverted over water coloured with red litmus. The fountain that forms inside the flask is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "red, because ammonia is acidic"
+        },
+        {
+          "id": "b",
+          "text_md": "colourless, because ammonia bleaches litmus"
+        },
+        {
+          "id": "c",
+          "text_md": "blue, because the solution of ammonia is alkaline"
+        },
+        {
+          "id": "d",
+          "text_md": "green, because ammonia reacts with litmus"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Ammonia is very soluble and forms ammonium hydroxide, an alkali — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch10-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch10_023",
+      "unit": "icse-10-chemistry-ch10",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A jet of ammonia is lit in a jar of oxygen. It burns with:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "a blue flame, forming nitric oxide and water"
+        },
+        {
+          "id": "b",
+          "text_md": "a lilac flame, forming nitrogen dioxide"
+        },
+        {
+          "id": "c",
+          "text_md": "no flame, because ammonia cannot burn in oxygen"
+        },
+        {
+          "id": "d",
+          "text_md": "a greenish-yellow flame, forming nitrogen and water vapour"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "4NH₃ + 3O₂ → 2N₂ + 6H₂O — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch10-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch10_024",
+      "unit": "icse-10-chemistry-ch10",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A red-hot platinum coil is held just above concentrated ammonia solution in a conical flask while oxygen is bubbled through. The coil keeps glowing and reddish-brown fumes appear. The best explanation is that:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "ammonia burns to nitrogen, which is reddish-brown"
+        },
+        {
+          "id": "b",
+          "text_md": "the catalytic oxidation of ammonia gives out heat, and the nitric oxide formed reacts with oxygen to form nitrogen dioxide"
+        },
+        {
+          "id": "c",
+          "text_md": "platinum reacts with ammonia to form a brown nitride"
+        },
+        {
+          "id": "d",
+          "text_md": "the coil heats the solution until ammonia decomposes to hydrogen"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "4NH₃ + 5O₂ → 4NO + 6H₂O is exothermic, keeping the platinum hot; 2NO + O₂ → 2NO₂ gives the brown fumes — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch10-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch10_025",
+      "unit": "icse-10-chemistry-ch10",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Ammonia is collected over water.\n\n**Reason (R):** Ammonia is extremely soluble in water.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "A is false: because it is extremely soluble, ammonia is collected by downward displacement of air. R is true — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch10-t04"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch10_026",
+      "unit": "icse-10-chemistry-ch10",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Ammonia burns in oxygen with a greenish-yellow flame.\n\n**Reason (R):** Ammonia is a good supporter of combustion.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "A is true; R is false: ammonia neither burns in air nor supports combustion — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch10-t04"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch10_027",
+      "unit": "icse-10-chemistry-ch10",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? Ammonia is lighter than air.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "t"
+        ]
+      },
+      "solution_md": "True: its vapour density is 8.5 (17 ÷ 2), less than about 14.4 for air.",
+      "marking_scheme": [
+        {
+          "step": "True",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch10-t04"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch10_028",
+      "unit": "icse-10-chemistry-ch10",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "In the fountain experiment with ammonia, if the water in the trough contains a few drops of phenolphthalein, the fountain is ___ in colour.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "pink"
+            ]
+          }
+        ]
+      },
+      "solution_md": "The fountain is **pink**, because ammonia solution is alkaline.",
+      "marking_scheme": [
+        {
+          "step": "Blank 1: \"pink\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch10-t04"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch10_029",
+      "unit": "icse-10-chemistry-ch10",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write the balanced equation, with the conditions, for the catalytic oxidation of ammonia.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "4NH₃ + 5O₂ → 4NO + 6H₂O (platinum catalyst, about 800 °C)."
+      },
+      "solution_md": "Equation with Pt and 800 °C.",
+      "marking_scheme": [
+        {
+          "step": "Balanced equation with conditions",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch10-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch10_030",
+      "unit": "icse-10-chemistry-ch10",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Compare the burning of ammonia in oxygen with its catalytic oxidation, giving the balanced equation for each.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Burning (ammonia lit in oxygen, no catalyst): 4NH₃ + 3O₂ → 2N₂ + 6H₂O, with a greenish-yellow flame; nitrogen is formed. Catalytic oxidation (over platinum at about 800 °C): 4NH₃ + 5O₂ → 4NO + 6H₂O; nitric oxide is formed, the first step in making nitric acid."
+      },
+      "solution_md": "Different products and conditions.",
+      "marking_scheme": [
+        {
+          "step": "Burning with equation",
+          "marks": 1
+        },
+        {
+          "step": "Catalytic oxidation with equation",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch10-t04"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch10_031",
+      "unit": "icse-10-chemistry-ch10",
+      "language": "en",
+      "type": "short",
+      "stem_md": "In the fountain experiment with ammonia: (a) how is the flask filled with ammonia, and why must it be dry? (b) why does the water rise into the flask? (c) what colour is the fountain if the water contains phenolphthalein, and why?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) The flask is held upside down over the delivery tube and filled by downward displacement of air; it must be dry, because any water would dissolve the ammonia before the experiment. (b) A few drops of water dissolve a large volume of ammonia, the pressure in the flask falls, and the outside air pressure pushes the water up the jet. (c) Pink, because ammonia dissolves to form ammonium hydroxide, which is alkaline."
+      },
+      "solution_md": "Filling; pressure; alkaline solution.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch10-t04"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch10_032",
+      "unit": "icse-10-chemistry-ch10",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Dry ammonia is passed over heated copper(II) oxide in a hard-glass tube. The observation is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "the black solid turns white and brown fumes of nitrogen dioxide appear"
+        },
+        {
+          "id": "b",
+          "text_md": "the black solid turns blue and dense white fumes appear"
+        },
+        {
+          "id": "c",
+          "text_md": "there is no change, because ammonia is not a reducing agent"
+        },
+        {
+          "id": "d",
+          "text_md": "the black solid turns reddish-brown and droplets of water form in the cooler part of the tube"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "3CuO + 2NH₃ → 3Cu + 3H₂O + N₂ — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch10-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch10_033",
+      "unit": "icse-10-chemistry-ch10",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Chlorine gas is passed into an excess of ammonia. The products are:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "nitrogen trichloride and hydrogen chloride"
+        },
+        {
+          "id": "b",
+          "text_md": "ammonium chloride and nitrogen"
+        },
+        {
+          "id": "c",
+          "text_md": "ammonium chloride and hydrogen"
+        },
+        {
+          "id": "d",
+          "text_md": "nitrogen and hydrogen chloride only"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "8NH₃ + 3Cl₂ → 6NH₄Cl + N₂: the hydrogen chloride formed combines with the excess ammonia — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch10-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch10_034",
+      "unit": "icse-10-chemistry-ch10",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "When ammonia reacts with an excess of chlorine, a yellow, highly explosive liquid is formed. It is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "nitrogen trichloride"
+        },
+        {
+          "id": "b",
+          "text_md": "ammonium chloride"
+        },
+        {
+          "id": "c",
+          "text_md": "nitrogen dioxide"
+        },
+        {
+          "id": "d",
+          "text_md": "hydrogen chloride"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "NH₃ + 3Cl₂ → NCl₃ + 3HCl — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch10-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch10_035",
+      "unit": "icse-10-chemistry-ch10",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? In the reaction of ammonia with hot copper(II) oxide, ammonia acts as an oxidising agent.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "f"
+        ]
+      },
+      "solution_md": "False: ammonia removes oxygen from copper(II) oxide, so it is a reducing agent (it is itself oxidised to nitrogen).",
+      "marking_scheme": [
+        {
+          "step": "False, with the correction",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch10-t05"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch10_036",
+      "unit": "icse-10-chemistry-ch10",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write the balanced equation for the reaction of ammonia with heated copper(II) oxide.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "3CuO + 2NH₃ → 3Cu + 3H₂O + N₂."
+      },
+      "solution_md": "Equation.",
+      "marking_scheme": [
+        {
+          "step": "Balanced equation",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch10-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch10_037",
+      "unit": "icse-10-chemistry-ch10",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write the balanced equation for the reduction of heated lead(IV) oxide by ammonia.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "3PbO₂ + 4NH₃ → 3Pb + 6H₂O + 2N₂."
+      },
+      "solution_md": "Equation.",
+      "marking_scheme": [
+        {
+          "step": "Balanced equation",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch10-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch10_038",
+      "unit": "icse-10-chemistry-ch10",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write the balanced equation for the reaction of ammonia with an excess of chlorine.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "NH₃ + 3Cl₂ → NCl₃ + 3HCl."
+      },
+      "solution_md": "Equation.",
+      "marking_scheme": [
+        {
+          "step": "Balanced equation",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch10-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch10_039",
+      "unit": "icse-10-chemistry-ch10",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "When ammonia reacts with excess chlorine, the yellow explosive liquid formed is ___.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "nitrogen trichloride",
+              "NCl3",
+              "NCl₃"
+            ]
+          }
+        ]
+      },
+      "solution_md": "**Nitrogen trichloride**, NCl₃.",
+      "marking_scheme": [
+        {
+          "step": "Blank 1: \"nitrogen trichloride\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch10-t05"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch10_040",
+      "unit": "icse-10-chemistry-ch10",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Ammonia reacts with chlorine in two different ways. Write the balanced equation for the reaction when (a) ammonia is in excess and (b) chlorine is in excess, and name the main product in each case.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) 8NH₃ + 3Cl₂ → 6NH₄Cl + N₂; dense white fumes of ammonium chloride (and nitrogen). (b) NH₃ + 3Cl₂ → NCl₃ + 3HCl; nitrogen trichloride, a yellow explosive liquid."
+      },
+      "solution_md": "Two equations and products.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch10-t05"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch10_041",
+      "unit": "icse-10-chemistry-ch10",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "Dry ammonia is passed over 7.95 g of heated copper(II) oxide until the reaction is complete. What mass of copper, in grams, is formed? (Cu = 63.5, O = 16)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 6.35,
+        "tolerance": 0.01,
+        "unit": "g"
+      },
+      "solution_md": "$\\ce{3CuO + 2NH3 -> 3Cu + 3H2O + N2}$: one mole of CuO gives one mole of Cu. Molar mass of CuO $= 63.5 + 16 = 79.5$. Moles $= \\dfrac{7.95}{79.5} = 0.1$. Mass of copper $= 0.1 \\times 63.5 = 6.35$, so 6.35 g.",
+      "marking_scheme": [
+        {
+          "step": "Moles of CuO",
+          "marks": 1
+        },
+        {
+          "step": "6.35 g",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch10-t05"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch10_042",
+      "unit": "icse-10-chemistry-ch10",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Dry ammonia is passed over heated copper(II) oxide. (a) State two observations. (b) Write the balanced equation. (c) Name the gas that passes out of the tube and state the property of ammonia shown by this reaction.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) The black copper(II) oxide turns reddish-brown (copper), and droplets of a colourless liquid (water) collect in the cooler part of the tube. (b) 3CuO + 2NH₃ → 3Cu + 3H₂O + N₂. (c) Nitrogen; ammonia acts as a reducing agent."
+      },
+      "solution_md": "Observations; equation; nitrogen and reducing nature.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch10-t05"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch10_043",
+      "unit": "icse-10-chemistry-ch10",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which salt solution gives a reddish-brown precipitate, insoluble in excess, when ammonium hydroxide is added?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Iron(II) sulphate"
+        },
+        {
+          "id": "b",
+          "text_md": "Zinc nitrate"
+        },
+        {
+          "id": "c",
+          "text_md": "Iron(III) chloride"
+        },
+        {
+          "id": "d",
+          "text_md": "Lead nitrate"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "FeCl₃ + 3NH₄OH → Fe(OH)₃ + 3NH₄Cl; iron(III) hydroxide is reddish-brown — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch10-t06"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch10_044",
+      "unit": "icse-10-chemistry-ch10",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Ammonium hydroxide is added drop by drop to a colourless salt solution: a white gelatinous precipitate forms, which dissolves in excess to give a colourless solution. The salt is most likely:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "lead nitrate"
+        },
+        {
+          "id": "b",
+          "text_md": "iron(II) sulphate"
+        },
+        {
+          "id": "c",
+          "text_md": "copper sulphate"
+        },
+        {
+          "id": "d",
+          "text_md": "zinc nitrate"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Zinc hydroxide dissolves in excess ammonium hydroxide; lead hydroxide does not; the iron and copper compounds are coloured — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch10-t06"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch10_045",
+      "unit": "icse-10-chemistry-ch10",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? The white precipitate of lead hydroxide dissolves in excess ammonium hydroxide.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "f"
+        ]
+      },
+      "solution_md": "False: lead hydroxide is insoluble in excess ammonium hydroxide; zinc hydroxide dissolves.",
+      "marking_scheme": [
+        {
+          "step": "False, with the correction",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch10-t06"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch10_046",
+      "unit": "icse-10-chemistry-ch10",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write the balanced equation for the neutralisation of dilute sulphuric acid by ammonium hydroxide.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "2NH₄OH + H₂SO₄ → (NH₄)₂SO₄ + 2H₂O."
+      },
+      "solution_md": "Equation.",
+      "marking_scheme": [
+        {
+          "step": "Balanced equation",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch10-t06"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch10_047",
+      "unit": "icse-10-chemistry-ch10",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write the balanced equation for the reaction of ammonium hydroxide with lead nitrate solution.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Pb(NO₃)₂ + 2NH₄OH → Pb(OH)₂ + 2NH₄NO₃."
+      },
+      "solution_md": "Equation.",
+      "marking_scheme": [
+        {
+          "step": "Balanced equation",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch10-t06"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch10_048",
+      "unit": "icse-10-chemistry-ch10",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Ammonium hydroxide is added to copper sulphate solution, first a little and then in excess. State the observation at each stage and write the equation for the first stage.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "A little: a pale blue precipitate of copper(II) hydroxide: CuSO₄ + 2NH₄OH → Cu(OH)₂ + (NH₄)₂SO₄. In excess: the precipitate dissolves to give a deep (inky) blue solution of tetraamminecopper(II) sulphate."
+      },
+      "solution_md": "Pale blue precipitate; deep blue solution.",
+      "marking_scheme": [
+        {
+          "step": "Observations at both stages",
+          "marks": 1
+        },
+        {
+          "step": "Equation",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch10-t06"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch10_049",
+      "unit": "icse-10-chemistry-ch10",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Ammonium hydroxide is added drop by drop and then in excess to three solutions. P gives a reddish-brown precipitate that does not dissolve; Q gives a white precipitate that dissolves in excess; R gives a pale blue precipitate that dissolves to form a deep blue solution. (a) Name the cation present in each solution. (b) Write the balanced equation for the precipitate formed by P, taking P to be a chloride.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) P: iron(III), Fe³⁺; Q: zinc, Zn²⁺; R: copper(II), Cu²⁺. (b) FeCl₃ + 3NH₄OH → Fe(OH)₃ + 3NH₄Cl."
+      },
+      "solution_md": "Identify from colours and solubility in excess.",
+      "marking_scheme": [
+        {
+          "step": "(a) P and Q",
+          "marks": 1
+        },
+        {
+          "step": "(a) R",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch10-t06"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch10_050",
+      "unit": "icse-10-chemistry-ch10",
+      "language": "en",
+      "type": "match",
+      "stem_md": "Ammonium hydroxide is added, first a little and then in excess, to each solution in Column A. Match each with the observation in Column B.",
+      "options": [
+        {
+          "id": "1",
+          "text_md": "Iron(III) chloride"
+        },
+        {
+          "id": "2",
+          "text_md": "Iron(II) sulphate"
+        },
+        {
+          "id": "3",
+          "text_md": "Lead nitrate"
+        },
+        {
+          "id": "4",
+          "text_md": "Zinc nitrate"
+        },
+        {
+          "id": "5",
+          "text_md": "Copper sulphate"
+        }
+      ],
+      "match_right": [
+        {
+          "id": "p",
+          "text_md": "Dirty green precipitate, insoluble in excess"
+        },
+        {
+          "id": "q",
+          "text_md": "White gelatinous precipitate, soluble in excess"
+        },
+        {
+          "id": "r",
+          "text_md": "Pale blue precipitate that dissolves to a deep blue solution"
+        },
+        {
+          "id": "s",
+          "text_md": "Reddish-brown precipitate, insoluble in excess"
+        },
+        {
+          "id": "t",
+          "text_md": "Chalky white precipitate, insoluble in excess"
+        }
+      ],
+      "answer": {
+        "pairs": [
+          {
+            "left_id": "1",
+            "right_id": "s"
+          },
+          {
+            "left_id": "2",
+            "right_id": "p"
+          },
+          {
+            "left_id": "3",
+            "right_id": "t"
+          },
+          {
+            "left_id": "4",
+            "right_id": "q"
+          },
+          {
+            "left_id": "5",
+            "right_id": "r"
+          }
+        ]
+      },
+      "solution_md": "Iron(III) → reddish-brown Fe(OH)₃; iron(II) → dirty green Fe(OH)₂; lead → chalky white Pb(OH)₂; zinc → white Zn(OH)₂ that dissolves; copper → pale blue Cu(OH)₂ that dissolves to a deep blue solution.",
+      "marking_scheme": [
+        {
+          "step": "1 → s",
+          "marks": 1
+        },
+        {
+          "step": "2 → p",
+          "marks": 1
+        },
+        {
+          "step": "3 → t",
+          "marks": 1
+        },
+        {
+          "step": "4 → q",
+          "marks": 1
+        },
+        {
+          "step": "5 → r",
+          "marks": 1
+        }
+      ],
+      "marks": 5,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch10-t06"
+      ],
+      "expected_time_sec": 200,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch10_051",
+      "unit": "icse-10-chemistry-ch10",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Liquid ammonia is used as the refrigerant in ice plants and cold stores because it:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "absorbs a large amount of heat from its surroundings when it evaporates"
+        },
+        {
+          "id": "b",
+          "text_md": "is a good conductor of electricity"
+        },
+        {
+          "id": "c",
+          "text_md": "is heavier than air and sinks"
+        },
+        {
+          "id": "d",
+          "text_md": "does not dissolve in water"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Its high latent heat of vaporisation cools the surroundings — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch10-t07"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch10_052",
+      "unit": "icse-10-chemistry-ch10",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Chlorofluorocarbons (CFCs) are being replaced as refrigerants mainly because they:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "spoil the food stored in refrigerators"
+        },
+        {
+          "id": "b",
+          "text_md": "are too costly to liquefy"
+        },
+        {
+          "id": "c",
+          "text_md": "release chlorine in the upper atmosphere, which destroys the ozone layer"
+        },
+        {
+          "id": "d",
+          "text_md": "react with the copper pipes of the cooling coil"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "CFCs are ozone-depleting; ozone-safe refrigerants such as HFCs, hydrocarbons or ammonia are used instead — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch10-t07"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch10_053",
+      "unit": "icse-10-chemistry-ch10",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A colourless gas with a pungent smell is suspected to be ammonia. Which result confirms it?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Moist red litmus turns blue, and a rod dipped in concentrated hydrochloric acid gives dense white fumes"
+        },
+        {
+          "id": "b",
+          "text_md": "Lime water turns milky, and moist blue litmus turns red"
+        },
+        {
+          "id": "c",
+          "text_md": "A burning splint is put out with a pop"
+        },
+        {
+          "id": "d",
+          "text_md": "Acidified potassium dichromate paper turns from orange to green"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Ammonia is the common alkaline gas, and NH₃ + HCl → NH₄Cl — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch10-t07"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch10_054",
+      "unit": "icse-10-chemistry-ch10",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which of these is NOT a fertiliser made from ammonia?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Urea"
+        },
+        {
+          "id": "b",
+          "text_md": "Ammonium sulphate"
+        },
+        {
+          "id": "c",
+          "text_md": "Ammonium nitrate"
+        },
+        {
+          "id": "d",
+          "text_md": "Calcium carbonate"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Calcium carbonate contains no nitrogen — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch10-t07"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch10_055",
+      "unit": "icse-10-chemistry-ch10",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "Ammonia is oxidised in Ostwald's process to manufacture ___ acid.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "nitric"
+            ]
+          }
+        ]
+      },
+      "solution_md": "**Nitric** acid.",
+      "marking_scheme": [
+        {
+          "step": "Blank 1: \"nitric\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch10-t07"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch10_056",
+      "unit": "icse-10-chemistry-ch10",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Name one nitrogenous fertiliser made from ammonia, and give its formula.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Ammonium sulphate, (NH₄)₂SO₄ (or urea, CO(NH₂)₂; ammonium nitrate, NH₄NO₃)."
+      },
+      "solution_md": "One fertiliser.",
+      "marking_scheme": [
+        {
+          "step": "Fertiliser and formula",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch10-t07"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch10_057",
+      "unit": "icse-10-chemistry-ch10",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Why are chlorofluorocarbons no longer used as refrigerants? Name one refrigerant used in their place.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "CFCs rise to the upper atmosphere, where sunlight breaks them down and the chlorine released destroys the ozone layer, which protects us from ultraviolet rays. They are replaced by non-ozone-depleting refrigerants such as hydrofluorocarbons (HFCs), hydrocarbons, or ammonia itself."
+      },
+      "solution_md": "Ozone depletion; one alternative.",
+      "marking_scheme": [
+        {
+          "step": "Reason",
+          "marks": 1
+        },
+        {
+          "step": "Alternative",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch10-t07"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch10_058",
+      "unit": "icse-10-chemistry-ch10",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "Complete each sentence by choosing the correct word from the bracket.\n\n(a) Ammonia is collected by ___ (upward / downward) displacement of air.\n\n(b) Ammonia is dried by passing it over ___ (quicklime / phosphorus pentoxide).\n\n(c) A solution of ammonia turns phenolphthalein ___ (pink / colourless).",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "downward"
+            ]
+          },
+          {
+            "accepted": [
+              "quicklime",
+              "calcium oxide"
+            ]
+          },
+          {
+            "accepted": [
+              "pink"
+            ]
+          }
+        ]
+      },
+      "solution_md": "(a) **downward**; (b) **quicklime**; (c) **pink**.",
+      "marking_scheme": [
+        {
+          "step": "Blank 1: \"downward\"",
+          "marks": 1
+        },
+        {
+          "step": "Blank 2: \"quicklime\"",
+          "marks": 1
+        },
+        {
+          "step": "Blank 3: \"pink\"",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch10-t01",
+        "icse-10-chemistry-ch10-t04"
+      ],
+      "expected_time_sec": 135,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch10_059",
+      "unit": "icse-10-chemistry-ch10",
+      "language": "en",
+      "type": "match",
+      "stem_md": "Match each reaction of ammonia in Column A with its products in Column B.",
+      "options": [
+        {
+          "id": "1",
+          "text_md": "Ammonia with excess chlorine"
+        },
+        {
+          "id": "2",
+          "text_md": "Excess ammonia with chlorine"
+        },
+        {
+          "id": "3",
+          "text_md": "Ammonia and oxygen over platinum at 800 °C"
+        },
+        {
+          "id": "4",
+          "text_md": "Ammonia burnt in oxygen"
+        }
+      ],
+      "match_right": [
+        {
+          "id": "p",
+          "text_md": "Ammonium chloride and nitrogen"
+        },
+        {
+          "id": "q",
+          "text_md": "Nitrogen and water"
+        },
+        {
+          "id": "r",
+          "text_md": "Nitrogen trichloride and hydrogen chloride"
+        },
+        {
+          "id": "s",
+          "text_md": "Nitric oxide and water"
+        }
+      ],
+      "answer": {
+        "pairs": [
+          {
+            "left_id": "1",
+            "right_id": "r"
+          },
+          {
+            "left_id": "2",
+            "right_id": "p"
+          },
+          {
+            "left_id": "3",
+            "right_id": "s"
+          },
+          {
+            "left_id": "4",
+            "right_id": "q"
+          }
+        ]
+      },
+      "solution_md": "Excess chlorine → NCl₃ + HCl; excess ammonia → NH₄Cl + N₂; catalytic oxidation → NO + H₂O; burning → N₂ + H₂O.",
+      "marking_scheme": [
+        {
+          "step": "1 → r",
+          "marks": 1
+        },
+        {
+          "step": "2 → p",
+          "marks": 1
+        },
+        {
+          "step": "3 → s",
+          "marks": 1
+        },
+        {
+          "step": "4 → q",
+          "marks": 1
+        }
+      ],
+      "marks": 4,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch10-t04",
+        "icse-10-chemistry-ch10-t05"
+      ],
+      "expected_time_sec": 160,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch10_060",
+      "unit": "icse-10-chemistry-ch10",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Write the balanced equation for the laboratory preparation of ammonia from ammonium chloride. [2]\n\n(b) Why is the flask clamped with its mouth slightly downwards, and why is the gas passed over quicklime? [2]\n\n(c) Name the method of collecting ammonia, give a reason for it, and state how you would know that the gas jar is full. [3]\n\n(d) Write balanced equations for the formation of ammonia from (i) magnesium nitride and warm water, (ii) aluminium nitride and warm water, (iii) ammonium sulphate and sodium hydroxide solution. [3]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) 2NH₄Cl + Ca(OH)₂ → CaCl₂ + 2H₂O + 2NH₃ (on heating).\n\n(b) Water formed in the reaction must not run back onto the hot part of the flask and crack it. Quicklime dries the gas without reacting with it (the gas is basic).\n\n(c) Downward displacement of air (inverted jar), because ammonia is lighter than air (vapour density 8.5) and is too soluble to collect over water. Moist red litmus held at the mouth turns blue (or a rod dipped in concentrated hydrochloric acid gives dense white fumes).\n\n(d) (i) Mg₃N₂ + 6H₂O → 3Mg(OH)₂ + 2NH₃. (ii) AlN + 3H₂O → Al(OH)₃ + NH₃. (iii) (NH₄)₂SO₄ + 2NaOH → Na₂SO₄ + 2H₂O + 2NH₃."
+      },
+      "solution_md": "Equation; slanting flask and drying; collection and test; three equations.",
+      "marking_scheme": [
+        {
+          "step": "(a) formulae",
+          "marks": 1
+        },
+        {
+          "step": "(a) balancing",
+          "marks": 1
+        },
+        {
+          "step": "(b) slanting flask",
+          "marks": 1
+        },
+        {
+          "step": "(b) quicklime",
+          "marks": 1
+        },
+        {
+          "step": "(c) method",
+          "marks": 1
+        },
+        {
+          "step": "(c) reason",
+          "marks": 1
+        },
+        {
+          "step": "(c) test",
+          "marks": 1
+        },
+        {
+          "step": "(d)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(d)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(d)(iii)",
+          "marks": 1
+        }
+      ],
+      "marks": 10,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch10-t01",
+        "icse-10-chemistry-ch10-t02"
+      ],
+      "expected_time_sec": 1080,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch10_061",
+      "unit": "icse-10-chemistry-ch10",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Write the balanced equation for Haber's process and state whether the forward reaction is exothermic or endothermic. [2]\n\n(b) State the temperature and pressure used. [2]\n\n(c) Name the catalyst and the promoter, and state the ratio by volume in which nitrogen and hydrogen are mixed. [3]\n\n(d) Explain how ammonia is separated from the gas mixture leaving the converter, what happens to the unreacted gases, and why high pressure favours the yield of ammonia. [3]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) N₂ + 3H₂ ⇌ 2NH₃; the forward reaction is exothermic (heat is given out).\n\n(b) About 450–500 °C and 200–900 atm.\n\n(c) Catalyst: finely divided iron; promoter: molybdenum; N₂ : H₂ = 1 : 3 by volume.\n\n(d) The mixture is cooled, so ammonia liquefies and is removed. The unreacted nitrogen and hydrogen are recirculated over the catalyst with fresh gases. Four volumes of reactants give two volumes of ammonia, so high pressure favours the side with fewer gas molecules."
+      },
+      "solution_md": "Equation and heat change; conditions; catalyst, promoter, ratio; separation, recycling, pressure.",
+      "marking_scheme": [
+        {
+          "step": "(a) equation",
+          "marks": 1
+        },
+        {
+          "step": "(a) exothermic",
+          "marks": 1
+        },
+        {
+          "step": "(b) temperature",
+          "marks": 1
+        },
+        {
+          "step": "(b) pressure",
+          "marks": 1
+        },
+        {
+          "step": "(c) catalyst",
+          "marks": 1
+        },
+        {
+          "step": "(c) promoter",
+          "marks": 1
+        },
+        {
+          "step": "(c) ratio",
+          "marks": 1
+        },
+        {
+          "step": "(d) separation",
+          "marks": 1
+        },
+        {
+          "step": "(d) recycling",
+          "marks": 1
+        },
+        {
+          "step": "(d) pressure",
+          "marks": 1
+        }
+      ],
+      "marks": 10,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch10-t03"
+      ],
+      "expected_time_sec": 1080,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch10_062",
+      "unit": "icse-10-chemistry-ch10",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Describe what is seen in the fountain experiment with ammonia when the water contains red litmus, and name the two properties of ammonia it shows. [2]\n\n(b) Write the balanced equation for the burning of ammonia in oxygen, and state the colour of the flame. [2]\n\n(c) Write the balanced equation for the catalytic oxidation of ammonia, with its conditions, and explain why the platinum catalyst keeps glowing once the reaction has started. [3]\n\n(d) 40 L of ammonia undergoes complete catalytic oxidation. Calculate (i) the volume of oxygen used and (ii) the volume of nitric oxide formed, all volumes at the same temperature and pressure. State the law you used. [3]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Water rushes up into the flask as a fountain, and the red litmus turns blue. Ammonia is extremely soluble in water, and its solution is alkaline.\n\n(b) 4NH₃ + 3O₂ → 2N₂ + 6H₂O; a greenish-yellow flame.\n\n(c) 4NH₃ + 5O₂ → 4NO + 6H₂O, over platinum at about 800 °C. The reaction is exothermic, so the heat it gives out keeps the platinum red-hot.\n\n(d) By Gay-Lussac's law of combining volumes, 4 volumes of ammonia use 5 volumes of oxygen and give 4 volumes of nitric oxide. (i) Volume of oxygen $= 40 \\times \\dfrac{5}{4} = 50$, that is 50 L. (ii) Volume of nitric oxide $= 40 \\times \\dfrac{4}{4} = 40$, that is 40 L."
+      },
+      "solution_md": "Fountain; burning; catalytic oxidation; volumes from the 4 : 5 : 4 ratio.",
+      "marking_scheme": [
+        {
+          "step": "(a) observation",
+          "marks": 1
+        },
+        {
+          "step": "(a) properties",
+          "marks": 1
+        },
+        {
+          "step": "(b) equation",
+          "marks": 1
+        },
+        {
+          "step": "(b) flame",
+          "marks": 1
+        },
+        {
+          "step": "(c) equation",
+          "marks": 1
+        },
+        {
+          "step": "(c) conditions",
+          "marks": 1
+        },
+        {
+          "step": "(c) exothermic",
+          "marks": 1
+        },
+        {
+          "step": "(d)(i) 50 L",
+          "marks": 1
+        },
+        {
+          "step": "(d)(ii) 40 L",
+          "marks": 1
+        },
+        {
+          "step": "(d) law",
+          "marks": 1
+        }
+      ],
+      "marks": 10,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch10-t04"
+      ],
+      "expected_time_sec": 1080,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch10_063",
+      "unit": "icse-10-chemistry-ch10",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Write the balanced equation for the reaction of ammonia with heated copper(II) oxide, and state the colour change. [2]\n\n(b) Which property of ammonia does this reaction show? Name the gas that is collected at the end of the apparatus. [2]\n\n(c) Write balanced equations for the reaction of ammonia with chlorine when (i) ammonia is in excess and (ii) chlorine is in excess, and state one observation for (i). [3]\n\n(d) 23.85 g of copper(II) oxide is completely reduced by ammonia. Calculate (i) the mass of copper formed and (ii) the volume of nitrogen formed at STP. (Cu = 63.5, O = 16; molar volume 22.4 L) [3]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) 3CuO + 2NH₃ → 3Cu + 3H₂O + N₂; the black solid turns reddish-brown.\n\n(b) Ammonia is a reducing agent. Nitrogen.\n\n(c) (i) 8NH₃ + 3Cl₂ → 6NH₄Cl + N₂; dense white fumes of ammonium chloride. (ii) NH₃ + 3Cl₂ → NCl₃ + 3HCl.\n\n(d) Molar mass of CuO $= 63.5 + 16 = 79.5$; moles of CuO $= \\dfrac{23.85}{79.5} = 0.3$. (i) Mass of copper $= 0.3 \\times 63.5 = 19.05$, that is 19.05 g. (ii) 3 moles of CuO give 1 mole of N₂, so moles of nitrogen $= \\dfrac{0.3}{3} = 0.1$ and volume $= 0.1 \\times 22.4 = 2.24$, that is 2.24 L."
+      },
+      "solution_md": "Reduction of CuO; reducing agent; chlorine reactions; 19.05 g Cu and 2.24 L N₂.",
+      "marking_scheme": [
+        {
+          "step": "(a) equation",
+          "marks": 1
+        },
+        {
+          "step": "(a) colour change",
+          "marks": 1
+        },
+        {
+          "step": "(b) reducing agent",
+          "marks": 1
+        },
+        {
+          "step": "(b) nitrogen",
+          "marks": 1
+        },
+        {
+          "step": "(c)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(c) observation",
+          "marks": 1
+        },
+        {
+          "step": "(d) moles of CuO",
+          "marks": 1
+        },
+        {
+          "step": "(d)(i) 19.05 g",
+          "marks": 1
+        },
+        {
+          "step": "(d)(ii) 2.24 L",
+          "marks": 1
+        }
+      ],
+      "marks": 10,
+      "difficulty": 4,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch10-t05"
+      ],
+      "expected_time_sec": 1080,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch10_064",
+      "unit": "icse-10-chemistry-ch10",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Write balanced equations for the neutralisation of (i) dilute nitric acid and (ii) dilute hydrochloric acid by ammonium hydroxide. [2]\n\n(b) Ammonium hydroxide is added to iron(III) chloride solution. State the observation and write the balanced equation. [2]\n\n(c) Ammonium hydroxide is added to copper sulphate solution, first a little and then in excess. State the observation at each stage, and write the equation for the first stage. [3]\n\n(d) You are given solutions of zinc nitrate and lead nitrate. Explain how ammonium hydroxide can be used to tell them apart, and write the equation for the precipitate formed with zinc nitrate. [3]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) (i) NH₄OH + HNO₃ → NH₄NO₃ + H₂O. (ii) NH₄OH + HCl → NH₄Cl + H₂O.\n\n(b) A reddish-brown precipitate of iron(III) hydroxide: FeCl₃ + 3NH₄OH → Fe(OH)₃ + 3NH₄Cl.\n\n(c) A little: a pale blue precipitate. In excess: it dissolves to give a deep (inky) blue solution. First stage: CuSO₄ + 2NH₄OH → Cu(OH)₂ + (NH₄)₂SO₄.\n\n(d) Add ammonium hydroxide a little at a time, then in excess. Both give white precipitates at first; the zinc hydroxide dissolves in excess ammonium hydroxide to a colourless solution, but the lead hydroxide does not. Zn(NO₃)₂ + 2NH₄OH → Zn(OH)₂ + 2NH₄NO₃."
+      },
+      "solution_md": "Neutralisation; iron(III) hydroxide; copper hydroxide and its solution in excess; zinc versus lead.",
+      "marking_scheme": [
+        {
+          "step": "(a)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(a)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(b) observation",
+          "marks": 1
+        },
+        {
+          "step": "(b) equation",
+          "marks": 1
+        },
+        {
+          "step": "(c) first stage",
+          "marks": 1
+        },
+        {
+          "step": "(c) excess",
+          "marks": 1
+        },
+        {
+          "step": "(c) equation",
+          "marks": 1
+        },
+        {
+          "step": "(d) method and observations",
+          "marks": 2
+        },
+        {
+          "step": "(d) equation",
+          "marks": 1
+        }
+      ],
+      "marks": 10,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch10-t06"
+      ],
+      "expected_time_sec": 1080,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    }
+  ],
+  "build": {
+    "run_id": null,
+    "checks": {
+      "katex_mhchem": "40 math strings parsed with KaTeX 0.19.0 + mhchem (throwOnError, strict \"error\"), 0 failures",
+      "svg_allowlist": "2 SVG visuals (2 distinct diagrams) checked with saxes against svg-allowlist.ts: elements, attributes, class pattern, fragment-only refs, no style, palette incl. named hues, viewBox, title, per-page unique ids — 0 failures",
+      "narration": "31 slides, 11–68 words (mean 49), no symbols, formulae or unit abbreviations",
+      "resolve": "3/3 scripted re-solve checks pass",
+      "chemistry_facts": "Laboratory preparation of ammonia (slanting flask, quicklime drying, downward displacement of air), ammonia from nitrides and ammonium salts, Haber’s process (1 : 3, 450–500 °C, 200–900 atm, iron with molybdenum promoter, liquefaction and recycling), vapour density 8.5 and the fountain experiment, burning in oxygen versus catalytic oxidation over platinum at 800 °C, reduction of CuO and lead oxides, chlorine in excess of either reagent, aqueous ammonia with acids and with Fe³⁺, Fe²⁺, Pb²⁺, Zn²⁺ and Cu²⁺ solutions, uses, ozone-safe refrigerants and tests, checked against the ICSE 2027 syllabus (Class X, section 8B); every equation balanced by atom count",
+      "content_gate": "npm test -w @soyl/content-templates: all checks pass for this chapter",
+      "verifier_pass": "2026-11-01: every question re-solved from its stem by the author; every numerical re-computed by the build script",
+      "pipeline_lint": "npm run content -- lint --exemplars: 0 errors, 0 warnings"
+    }
+  }
+}

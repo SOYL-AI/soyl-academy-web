@@ -1,0 +1,4909 @@
+{
+  "unit": "icse-10-chemistry-ch09",
+  "version": 1,
+  "academic_year": "2026-27",
+  "created_at": "2026-11-01T00:00:00+05:30",
+  "decks": [
+    {
+      "unit": "icse-10-chemistry-ch09",
+      "part": 1,
+      "version": 1,
+      "title": "Hydrogen Chloride — Part 1: Preparation and physical properties",
+      "language": "en",
+      "goals": [
+        "Write the equation and describe the apparatus for preparing hydrogen chloride in the laboratory",
+        "Explain the choice of drying agent and method of collection",
+        "Describe experiments that show hydrogen chloride is heavier than air and very soluble in water",
+        "Explain how the inverted funnel prevents back suction when making hydrochloric acid"
+      ],
+      "slides": [
+        {
+          "id": "s01",
+          "layout": "title",
+          "heading": "A gas that fumes in moist air",
+          "body_md": "Part 1 — Hydrogen chloride is a colourless gas with a sharp, choking smell. Open a jar of it in damp air and it forms **misty white fumes**: tiny droplets of hydrochloric acid.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Property",
+                "Hydrogen chloride"
+              ],
+              "rows": [
+                [
+                  "Colour and smell",
+                  "Colourless; pungent, choking"
+                ],
+                [
+                  "Density",
+                  "Heavier than air (vapour density 18.25)"
+                ],
+                [
+                  "Solubility in water",
+                  "Extremely soluble"
+                ],
+                [
+                  "In moist air",
+                  "Fumes"
+                ],
+                [
+                  "Effect on moist litmus",
+                  "Blue turns red"
+                ]
+              ]
+            },
+            "alt": "Table of the physical properties of hydrogen chloride"
+          },
+          "math": [],
+          "narration": "Namaste! Hydrogen chloride is a colourless gas with a sharp, choking smell. When a jar of it is opened in damp air, it forms misty white fumes, because the gas dissolves in the water vapour to make tiny droplets of hydrochloric acid. In this part we make the gas, dry it, collect it, and look at how heavy and how soluble it is.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s02",
+          "layout": "concept",
+          "heading": "The reaction",
+          "body_md": "Sodium chloride (rock salt) is heated gently with **concentrated sulphuric acid**, keeping the temperature **below 200 °C**. The acid gives its hydrogen to the chloride, forming **sodium hydrogensulphate** and hydrogen chloride.\n\nAbove 200 °C the reaction goes further to sodium sulphate, which is **avoided** (see the worked example).",
+          "bullets": [],
+          "visual": {
+            "kind": "chem",
+            "spec": {
+              "equation": "NaCl + H2SO4 -> NaHSO4 + HCl"
+            },
+            "alt": "Equation: sodium chloride plus sulphuric acid gives sodium hydrogensulphate plus hydrogen chloride",
+            "caption": "Laboratory preparation, below 200 °C"
+          },
+          "math": [],
+          "narration": "In the laboratory, sodium chloride is warmed with concentrated sulphuric acid. The temperature is kept below two hundred degrees Celsius. The products are sodium hydrogensulphate, which stays in the flask, and hydrogen chloride gas, which comes off. At higher temperatures a different salt forms, and we will see why that is a problem.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s03",
+          "layout": "diagram",
+          "heading": "The apparatus",
+          "body_md": "- **Flask:** sodium chloride + concentrated sulphuric acid added through a **thistle funnel**; gentle heat.\n- **Wash bottle:** concentrated sulphuric acid **dries** the gas.\n- **Gas jar:** kept **upright**; the gas enters at the bottom and pushes the air out — **upward displacement of air**.",
+          "bullets": [],
+          "visual": {
+            "kind": "svg",
+            "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 560 320\" role=\"img\" aria-label=\"Schematic of the laboratory preparation of hydrogen chloride. A round-bottomed flask holds sodium chloride and concentrated sulphuric acid and is heated gently, keeping the temperature below two hundred degrees Celsius. A thistle funnel passes through the cork into the mixture. A delivery tube carries the gas into a wash bottle of concentrated sulphuric acid, where the gas bubbles through the acid and is dried. The dry gas then passes down a tube to the bottom of an upright gas jar, pushing the lighter air out at the top: collection by upward displacement of air.\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>Schematic of the laboratory preparation of hydrogen chloride. A round-bottomed flask holds sodium chloride and concentrated sulphuric acid and is heated gently, keeping the temperature below two hundred degrees Celsius. A thistle funnel passes through the cork into the mixture. A delivery tube carries the gas into a wash bottle of concentrated sulphuric acid, where the gas bubbles through the acid and is dried. The dry gas then passes down a tube to the bottom of an upright gas jar, pushing the lighter air out at the top: collection by upward displacement of air.</title><circle cx=\"110\" cy=\"200\" r=\"48\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"/><path d=\"M 98 154 L 98 110 M 122 154 L 122 110\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"/><rect x=\"94\" y=\"100\" width=\"32\" height=\"12\" fill=\"var(--diagram-muted)\" stroke=\"currentColor\" stroke-width=\"1.5\" fill-opacity=\"0.4\"/><path d=\"M 64 212 Q 110 260 156 212 Z\" fill=\"var(--diagram-accent)\" stroke=\"none\" stroke-width=\"0\" fill-opacity=\"0.25\"/><line x1=\"104\" y1=\"228\" x2=\"104\" y2=\"70\" stroke=\"currentColor\" stroke-width=\"1.5\"/><path d=\"M 104 70 Q 88 66 88 54 Q 104 40 120 54 Q 120 66 104 70\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"70\" y1=\"256\" x2=\"150\" y2=\"256\" stroke=\"currentColor\" stroke-width=\"2\"/><path d=\"M 104 286 Q 96 274 104 262 Q 112 274 104 286\" fill=\"var(--diagram-red)\" stroke=\"var(--diagram-red)\" stroke-width=\"1.5\" fill-opacity=\"0.3\"/><rect x=\"96\" y=\"286\" width=\"16\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"/><path d=\"M 118 106 L 118 80 L 250 80 L 250 236\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"/><rect x=\"225\" y=\"140\" width=\"70\" height=\"120\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"/><rect x=\"227\" y=\"190\" width=\"66\" height=\"68\" fill=\"var(--diagram-blue)\" stroke=\"none\" stroke-width=\"0\" fill-opacity=\"0.18\"/><circle cx=\"250\" cy=\"222\" r=\"3\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\"/><circle cx=\"254\" cy=\"208\" r=\"3\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\"/><circle cx=\"248\" cy=\"196\" r=\"3\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\"/><path d=\"M 272 150 L 272 80 L 410 80 L 410 290\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"/><path d=\"M 375 120 L 375 300 L 445 300 L 445 120\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"/><line x1=\"368\" y1=\"116\" x2=\"400\" y2=\"116\" stroke=\"currentColor\" stroke-width=\"2.5\"/><line x1=\"420\" y1=\"116\" x2=\"452\" y2=\"116\" stroke=\"currentColor\" stroke-width=\"2.5\"/><line x1=\"434\" y1=\"140\" x2=\"434\" y2=\"104.8\" stroke=\"var(--diagram-muted)\" stroke-width=\"1.5\"/><polygon points=\"434,100 436.4,105.5 431.6,105.5\" fill=\"var(--diagram-muted)\" stroke=\"none\"/><text x=\"452\" y=\"100\" fill=\"var(--diagram-muted)\" stroke=\"none\" font-size=\"10\">air out</text><line x1=\"398\" y1=\"260\" x2=\"398\" y2=\"285.2\" stroke=\"var(--diagram-green)\" stroke-width=\"1.5\"/><polygon points=\"398,290 395.6,284.5 400.4,284.5\" fill=\"var(--diagram-green)\" stroke=\"none\"/><text x=\"8\" y=\"40\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">thistle</text><text x=\"8\" y=\"52\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">funnel</text><line x1=\"90\" y1=\"56\" x2=\"52\" y2=\"46\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\"/><text x=\"8\" y=\"160\" fill=\"var(--diagram-accent)\" stroke=\"none\" font-size=\"10\">sodium</text><text x=\"8\" y=\"172\" fill=\"var(--diagram-accent)\" stroke=\"none\" font-size=\"10\">chloride +</text><text x=\"8\" y=\"184\" fill=\"var(--diagram-accent)\" stroke=\"none\" font-size=\"10\">conc. sulphuric</text><text x=\"8\" y=\"196\" fill=\"var(--diagram-accent)\" stroke=\"none\" font-size=\"10\">acid</text><line x1=\"70\" y1=\"220\" x2=\"50\" y2=\"200\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\"/><text x=\"122\" y=\"300\" fill=\"var(--diagram-red)\" stroke=\"none\" font-size=\"10\">gentle heat</text><text x=\"122\" y=\"312\" fill=\"var(--diagram-red)\" stroke=\"none\" font-size=\"10\">(below 200 °C)</text><text x=\"214\" y=\"276\" fill=\"var(--diagram-blue)\" stroke=\"none\" font-size=\"10\">conc. sulphuric acid</text><text x=\"214\" y=\"288\" fill=\"var(--diagram-blue)\" stroke=\"none\" font-size=\"10\">(drying agent)</text><text x=\"300\" y=\"72\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">dry hydrogen chloride</text><text x=\"456\" y=\"200\" fill=\"var(--diagram-green)\" stroke=\"none\" font-size=\"10\">gas jar:</text><text x=\"456\" y=\"212\" fill=\"var(--diagram-green)\" stroke=\"none\" font-size=\"10\">upward</text><text x=\"456\" y=\"224\" fill=\"var(--diagram-green)\" stroke=\"none\" font-size=\"10\">displacement</text><text x=\"456\" y=\"236\" fill=\"var(--diagram-green)\" stroke=\"none\" font-size=\"10\">of air</text></svg>",
+            "alt": "Apparatus for preparing hydrogen chloride: flask of sodium chloride and concentrated sulphuric acid with a thistle funnel, wash bottle of concentrated sulphuric acid, gas jar filled by upward displacement of air"
+          },
+          "math": [],
+          "narration": "Here is the apparatus. Concentrated sulphuric acid is added through a thistle funnel onto sodium chloride in a round bottomed flask, which is heated gently. The gas bubbles through a wash bottle of concentrated sulphuric acid to dry it. Then it is led to the bottom of an upright gas jar, where it pushes the lighter air out at the top.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s04",
+          "layout": "check",
+          "heading": "Quick check: drying the gas",
+          "body_md": "Choose the drying agent for hydrogen chloride.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. The drying agent must absorb water but must not react with an acidic gas.",
+          "check_question_id": "q_icse10chem_ch09_001",
+          "audio": null
+        },
+        {
+          "id": "s05",
+          "layout": "concept",
+          "heading": "Drying and collecting",
+          "body_md": "**Drying:** concentrated sulphuric acid absorbs water and does **not** react with hydrogen chloride. Quicklime and caustic soda are **bases** and would react with the gas.\n\n**Collection:** by **upward displacement of air**, because the gas is **heavier than air**; never over water, because it is **extremely soluble**.\n\n**Jar full?** A rod dipped in ammonia solution at the mouth gives **dense white fumes**; moist blue litmus turns **red**.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Choice",
+                "Used?",
+                "Reason"
+              ],
+              "rows": [
+                [
+                  "Conc. sulphuric acid",
+                  "Yes",
+                  "Absorbs water; no reaction with HCl"
+                ],
+                [
+                  "Quicklime, CaO",
+                  "No",
+                  "Basic: CaO + 2HCl → CaCl₂ + H₂O"
+                ],
+                [
+                  "Collection over water",
+                  "No",
+                  "Gas is extremely soluble"
+                ],
+                [
+                  "Upward displacement of air",
+                  "Yes",
+                  "Gas is heavier than air"
+                ]
+              ]
+            },
+            "alt": "Table of choices for drying and collecting hydrogen chloride with reasons"
+          },
+          "math": [],
+          "narration": "Concentrated sulphuric acid soaks up water but leaves hydrogen chloride alone, so it is the drying agent. Quicklime and caustic soda are bases, so they would react with the acidic gas. Hydrogen chloride is heavier than air, so it is collected in an upright jar, and it is far too soluble to collect over water. A rod dipped in ammonia solution shows when the jar is full.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s06",
+          "layout": "example",
+          "heading": "Worked example: why stay below two hundred degrees?",
+          "body_md": "**Problem.** A student heats the flask strongly, well above 200 °C. What changes, and why is this avoided?\n\n**Step 1.** The reaction goes further: 2NaCl + H₂SO₄ → Na₂SO₄ + 2HCl.\n\n**Step 2.** Sodium sulphate forms a **hard crust** that sticks to the flask and is difficult to remove.\n\n**Step 3.** The high temperature **wastes fuel** and may **crack the glass** flask.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Temperature",
+                "Salt left in flask",
+                "Problem"
+              ],
+              "rows": [
+                [
+                  "Below 200 °C",
+                  "NaHSO₄ (sodium hydrogensulphate)",
+                  "None: easy to remove"
+                ],
+                [
+                  "Well above 200 °C",
+                  "Na₂SO₄ (sodium sulphate)",
+                  "Hard crust; fuel wasted; glass may crack"
+                ]
+              ]
+            },
+            "alt": "Table comparing the products and problems below and above 200 degrees Celsius"
+          },
+          "math": [],
+          "narration": "If the flask is heated strongly, both hydrogen atoms of sulphuric acid are used and sodium sulphate is formed. This salt forms a hard crust that sticks to the flask and is very hard to clean out. The extra heat also wastes fuel and may crack the glass. So the mixture is warmed gently, below two hundred degrees Celsius.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s07",
+          "layout": "concept",
+          "heading": "Heavier than air",
+          "body_md": "Relative molecular mass of HCl = 1 + 35.5 = 36.5, so its **vapour density is 18.25**. Air has an average vapour density of about **14.4**, so hydrogen chloride is **heavier than air**.\n\n**Simple test:** tilt an open jar of the gas over an open jar of air as if pouring water. A rod dipped in ammonia solution then gives white fumes in the **lower** jar.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Gas",
+                "Relative molecular mass",
+                "Vapour density",
+                "Compared with air"
+              ],
+              "rows": [
+                [
+                  "Air (average)",
+                  "about 28.8",
+                  "about 14.4",
+                  "—"
+                ],
+                [
+                  "Hydrogen chloride",
+                  "36.5",
+                  "18.25",
+                  "Heavier"
+                ],
+                [
+                  "Ammonia",
+                  "17",
+                  "8.5",
+                  "Lighter"
+                ]
+              ]
+            },
+            "alt": "Table of vapour densities of air, hydrogen chloride and ammonia"
+          },
+          "math": [],
+          "narration": "The vapour density of a gas is half its relative molecular mass. For hydrogen chloride that is eighteen point two five, while air averages about fourteen point four. So hydrogen chloride is heavier than air. You can even pour it: tilt a jar of the gas over an empty jar, then a rod dipped in ammonia shows white fumes in the lower jar.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s08",
+          "layout": "diagram",
+          "heading": "The fountain experiment",
+          "body_md": "A dry flask of **dry hydrogen chloride** is clamped upside down with a jet tube dipping into water coloured with **blue litmus**. A few drops of water dissolve a large volume of gas, the **pressure inside falls**, and the outside air pressure pushes the water up as a **fountain**. The fountain turns **red**.\n\nThis shows the gas is **extremely soluble** and its solution is **acidic**.",
+          "bullets": [],
+          "visual": {
+            "kind": "svg",
+            "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 400 330\" role=\"img\" aria-label=\"Schematic of the fountain experiment. A dry round-bottomed flask filled with dry hydrogen chloride is clamped upside down. A long glass tube with a narrow jet at its upper end passes through the cork, and its lower end dips into a trough of water coloured with blue litmus solution. When a little water enters, the gas dissolves, the pressure inside falls and the water rushes up the tube as a fountain, which turns red inside the flask.\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>Schematic of the fountain experiment. A dry round-bottomed flask filled with dry hydrogen chloride is clamped upside down. A long glass tube with a narrow jet at its upper end passes through the cork, and its lower end dips into a trough of water coloured with blue litmus solution. When a little water enters, the gas dissolves, the pressure inside falls and the water rushes up the tube as a fountain, which turns red inside the flask.</title><circle cx=\"200\" cy=\"100\" r=\"70\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"/><path d=\"M 186 168 L 186 200 M 214 168 L 214 200\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"/><rect x=\"182\" y=\"198\" width=\"36\" height=\"14\" fill=\"var(--diagram-muted)\" stroke=\"currentColor\" stroke-width=\"1.5\" fill-opacity=\"0.4\"/><line x1=\"200\" y1=\"70\" x2=\"200\" y2=\"300\" stroke=\"currentColor\" stroke-width=\"1.5\"/><path d=\"M 200 70 Q 185 56 170 90\" fill=\"none\" stroke=\"var(--diagram-red)\" stroke-width=\"1.5\"/><path d=\"M 200 70 Q 193 40 186 74\" fill=\"none\" stroke=\"var(--diagram-red)\" stroke-width=\"1.5\"/><path d=\"M 200 70 Q 200 36 200 70\" fill=\"none\" stroke=\"var(--diagram-red)\" stroke-width=\"1.5\"/><path d=\"M 200 70 Q 207 40 214 74\" fill=\"none\" stroke=\"var(--diagram-red)\" stroke-width=\"1.5\"/><path d=\"M 200 70 Q 215 56 230 90\" fill=\"none\" stroke=\"var(--diagram-red)\" stroke-width=\"1.5\"/><path d=\"M 90 250 L 90 312 L 310 312 L 310 250\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"/><rect x=\"92\" y=\"268\" width=\"216\" height=\"42\" fill=\"var(--diagram-blue)\" stroke=\"none\" stroke-width=\"0\" fill-opacity=\"0.2\"/><line x1=\"92\" y1=\"268\" x2=\"308\" y2=\"268\" stroke=\"var(--diagram-blue)\" stroke-width=\"1\"/><line x1=\"206\" y1=\"290\" x2=\"206\" y2=\"244.8\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.5\"/><polygon points=\"206,240 208.4,245.5 203.6,245.5\" fill=\"var(--diagram-blue)\" stroke=\"none\"/><text x=\"290\" y=\"70\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">flask of dry</text><text x=\"290\" y=\"82\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">hydrogen</text><text x=\"290\" y=\"94\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">chloride</text><line x1=\"266\" y1=\"90\" x2=\"288\" y2=\"78\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\"/><text x=\"8\" y=\"60\" fill=\"var(--diagram-red)\" stroke=\"none\" font-size=\"10\">red fountain</text><text x=\"8\" y=\"72\" fill=\"var(--diagram-red)\" stroke=\"none\" font-size=\"10\">(blue litmus</text><text x=\"8\" y=\"84\" fill=\"var(--diagram-red)\" stroke=\"none\" font-size=\"10\">turns red)</text><line x1=\"172\" y1=\"80\" x2=\"84\" y2=\"66\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\"/><text x=\"8\" y=\"200\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">glass tube</text><text x=\"8\" y=\"212\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">with a jet</text><line x1=\"198\" y1=\"230\" x2=\"70\" y2=\"206\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\"/><text x=\"316\" y=\"280\" fill=\"var(--diagram-blue)\" stroke=\"none\" font-size=\"10\">water with</text><text x=\"316\" y=\"292\" fill=\"var(--diagram-blue)\" stroke=\"none\" font-size=\"10\">blue litmus</text><text x=\"222\" y=\"246\" fill=\"var(--diagram-blue)\" stroke=\"none\" font-size=\"10\">water rises</text></svg>",
+            "alt": "Fountain experiment: an inverted flask of dry hydrogen chloride with a jet tube dipping into water coloured with blue litmus, which rises as a red fountain"
+          },
+          "math": [],
+          "narration": "In the fountain experiment, a dry flask full of dry hydrogen chloride is turned upside down, with a jet tube dipping into water coloured blue with litmus. As soon as a little water enters, it dissolves a huge amount of gas, so the pressure inside drops. The air pressing on the water outside pushes it up the tube in a fountain, and the blue colour turns red.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s09",
+          "layout": "check",
+          "heading": "Quick check: the fountain",
+          "body_md": "Interpret the fountain experiment.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Ask what the fountain shows, and what the change of colour shows.",
+          "check_question_id": "q_icse10chem_ch09_013",
+          "audio": null
+        },
+        {
+          "id": "s10",
+          "layout": "example",
+          "heading": "Worked example: how much gas from rock salt?",
+          "body_md": "**Problem.** What mass of hydrogen chloride can be made from 23.4 g of sodium chloride? (Na = 23, Cl = 35.5, H = 1)\n\n**Step 1.** NaCl + H₂SO₄ → NaHSO₄ + HCl: one mole of NaCl gives one mole of HCl.\n\n**Step 2.** NaCl = 58.5; moles = 23.4 ÷ 58.5 = 0.4.\n\n**Step 3.** HCl = 36.5; mass = 0.4 × 36.5 = **14.6 g**.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Substance",
+                "Molar mass",
+                "Moles",
+                "Mass"
+              ],
+              "rows": [
+                [
+                  "NaCl",
+                  "58.5",
+                  "0.4",
+                  "23.4 g"
+                ],
+                [
+                  "HCl",
+                  "36.5",
+                  "0.4",
+                  "14.6 g"
+                ]
+              ]
+            },
+            "alt": "Table showing that 0.4 mole of sodium chloride gives 0.4 mole, or 14.6 grams, of hydrogen chloride"
+          },
+          "math": [],
+          "narration": "From the equation, one mole of sodium chloride gives one mole of hydrogen chloride. The molar mass of sodium chloride is fifty eight point five, so twenty three point four grams is zero point four mole. Zero point four mole of hydrogen chloride, at thirty six point five grams per mole, has a mass of fourteen point six grams.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s11",
+          "layout": "diagram",
+          "heading": "Making hydrochloric acid: the inverted funnel",
+          "body_md": "If the delivery tube dipped straight into water, the gas would dissolve so fast that water could be **sucked back** into the hot flask (**back suction**), cracking it.\n\nInstead the gas enters an **inverted funnel** whose **rim just dips** below the water. If water rises into the funnel, the level in the beaker falls below the rim, **air enters**, and the water falls back. The funnel also gives a **large surface** for absorption.",
+          "bullets": [],
+          "visual": {
+            "kind": "svg",
+            "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 400 260\" role=\"img\" aria-label=\"Schematic of the inverted funnel arrangement for making hydrochloric acid. Hydrogen chloride from a delivery tube enters the stem of a funnel held upside down over a beaker of water, with the rim of the funnel just dipping below the water surface. If water rises into the funnel, the level in the beaker falls below the rim, air enters and the water drops back, so it cannot be sucked back into the apparatus.\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>Schematic of the inverted funnel arrangement for making hydrochloric acid. Hydrogen chloride from a delivery tube enters the stem of a funnel held upside down over a beaker of water, with the rim of the funnel just dipping below the water surface. If water rises into the funnel, the level in the beaker falls below the rim, air enters and the water drops back, so it cannot be sucked back into the apparatus.</title><path d=\"M 20 50 L 200 50 L 200 110\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"60\" y1=\"40\" x2=\"115.2\" y2=\"40\" stroke=\"var(--diagram-muted)\" stroke-width=\"1.5\"/><polygon points=\"120,40 114.5,42.4 114.5,37.6\" fill=\"var(--diagram-muted)\" stroke=\"none\"/><text x=\"20\" y=\"30\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">hydrogen chloride gas</text><path d=\"M 200 110 L 200 130 L 140 196 M 200 130 L 260 196\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"/><path d=\"M 100 150 L 100 240 L 300 240 L 300 150\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"/><rect x=\"102\" y=\"190\" width=\"196\" height=\"48\" fill=\"var(--diagram-blue)\" stroke=\"none\" stroke-width=\"0\" fill-opacity=\"0.18\"/><line x1=\"102\" y1=\"190\" x2=\"298\" y2=\"190\" stroke=\"var(--diagram-blue)\" stroke-width=\"1\"/><text x=\"270\" y=\"120\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">inverted</text><text x=\"270\" y=\"132\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">funnel</text><line x1=\"232\" y1=\"160\" x2=\"268\" y2=\"128\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\"/><text x=\"306\" y=\"186\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">rim just dips</text><text x=\"306\" y=\"198\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">below the</text><text x=\"306\" y=\"210\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">water surface</text><line x1=\"262\" y1=\"194\" x2=\"302\" y2=\"186\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\"/><text x=\"110\" y=\"228\" fill=\"var(--diagram-blue)\" stroke=\"none\" font-size=\"10\">water → hydrochloric acid</text></svg>",
+            "alt": "Inverted funnel arrangement: hydrogen chloride led into a funnel whose rim just dips below the water in a beaker"
+          },
+          "math": [],
+          "narration": "To make hydrochloric acid we dissolve the gas in water, but the gas dissolves so quickly that water could be sucked back into the hot flask. So the gas is led into an upside down funnel whose rim just touches the water. If water rushes up into the funnel, the level outside drops below the rim, air gets in, and the water simply falls back.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s12",
+          "layout": "check",
+          "heading": "Quick check: back suction",
+          "body_md": "Explain the inverted funnel arrangement.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Think about what happens when the rim of the funnel is no longer under water.",
+          "check_question_id": "q_icse10chem_ch09_022",
+          "audio": null
+        },
+        {
+          "id": "s13",
+          "layout": "summary",
+          "heading": "Summary: Part 1",
+          "body_md": "",
+          "bullets": [
+            "NaCl + H₂SO₄ → NaHSO₄ + HCl, heated below 200 °C.",
+            "Dried by concentrated sulphuric acid; collected by upward displacement of air.",
+            "Heavier than air (vapour density 18.25) and extremely soluble in water.",
+            "The fountain experiment shows high solubility and acidity (blue litmus turns red).",
+            "An inverted funnel prevents back suction when making hydrochloric acid."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Step",
+                "Key point"
+              ],
+              "rows": [
+                [
+                  "Preparation",
+                  "NaCl and conc. H₂SO₄, below 200 °C"
+                ],
+                [
+                  "Drying",
+                  "Conc. H₂SO₄"
+                ],
+                [
+                  "Collection",
+                  "Upward displacement of air"
+                ],
+                [
+                  "Dissolving",
+                  "Inverted funnel"
+                ]
+              ]
+            },
+            "alt": "Summary table of preparation, drying, collection and dissolving of hydrogen chloride"
+          },
+          "math": [],
+          "narration": "Let us sum up Part 1. Hydrogen chloride is made by warming sodium chloride with concentrated sulphuric acid below two hundred degrees Celsius. It is dried by concentrated sulphuric acid and collected by upward displacement of air. It is heavier than air and extremely soluble, as the fountain experiment shows, and it is dissolved in water through an inverted funnel.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s14",
+          "layout": "exam-tips",
+          "heading": "Exam tips: Part 1",
+          "body_md": "",
+          "bullets": [
+            "Write the condition “below 200 °C” with the preparation equation.",
+            "For drying, say why the others fail: quicklime is basic and reacts.",
+            "Use “upward displacement of air” — not “downward”, which is for ammonia.",
+            "Explain the fountain with pressure: gas dissolves → pressure falls → air pushes water up."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Slip",
+                "Fix"
+              ],
+              "rows": [
+                [
+                  "Dried with quicklime",
+                  "Dried with conc. sulphuric acid"
+                ],
+                [
+                  "Collected over water",
+                  "Upward displacement of air"
+                ],
+                [
+                  "Fountain turns blue",
+                  "Blue litmus turns red (acidic)"
+                ]
+              ]
+            },
+            "alt": "Table of three common slips in Part 1 and their fixes"
+          },
+          "math": [],
+          "narration": "Some tips. Always add the temperature condition to the preparation equation. When you name the drying agent, be ready to say why quicklime cannot be used. Remember that hydrogen chloride is collected by upward displacement of air. And explain the fountain experiment using pressure: the gas dissolves, the pressure falls, and the air outside pushes the water in.",
+          "check_question_id": null,
+          "audio": null
+        }
+      ],
+      "status": "draft",
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "unit": "icse-10-chemistry-ch09",
+      "part": 2,
+      "version": 1,
+      "title": "Hydrogen Chloride — Part 2: Chemical properties and tests",
+      "language": "en",
+      "goals": [
+        "Write balanced equations for hydrochloric acid with metals, oxides, hydroxides, carbonates, hydrogencarbonates, sulphides and sulphites",
+        "Describe the dense white fumes formed with ammonia",
+        "State the composition and use of aqua regia",
+        "Use silver nitrate and lead nitrate to identify hydrochloric acid and chlorides"
+      ],
+      "slides": [
+        {
+          "id": "s01",
+          "layout": "title",
+          "heading": "Hydrochloric acid at work",
+          "body_md": "Part 2 — In water, hydrogen chloride ionises completely, so hydrochloric acid is a **strong acid**. It shows all the typical reactions of acids, plus some special ones of its own.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Reacts with",
+                "Main products"
+              ],
+              "rows": [
+                [
+                  "Ammonia",
+                  "Ammonium chloride (white fumes)"
+                ],
+                [
+                  "Active metals",
+                  "Metal chloride + hydrogen"
+                ],
+                [
+                  "Oxides and hydroxides",
+                  "Metal chloride + water"
+                ],
+                [
+                  "Carbonates, hydrogencarbonates",
+                  "Chloride + water + carbon dioxide"
+                ],
+                [
+                  "Sulphides",
+                  "Chloride + hydrogen sulphide"
+                ],
+                [
+                  "Sulphites",
+                  "Chloride + water + sulphur dioxide"
+                ]
+              ]
+            },
+            "alt": "Table of the classes of substance that react with hydrochloric acid and the main products"
+          },
+          "math": [],
+          "narration": "When hydrogen chloride dissolves in water it ionises completely, so hydrochloric acid is a strong acid. It reacts with metals, bases, carbonates, sulphides and sulphites like any acid, and it also has special reactions, such as the white fumes it forms with ammonia and the white precipitates it gives with silver nitrate and lead nitrate.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s02",
+          "layout": "concept",
+          "heading": "With ammonia: dense white fumes",
+          "body_md": "Hydrogen chloride and ammonia gas combine directly to form tiny solid particles of **ammonium chloride**, seen as **dense white fumes**. This is used to **identify** either gas, and to check whether a jar of either gas is full.",
+          "bullets": [],
+          "visual": {
+            "kind": "chem",
+            "spec": {
+              "equation": "NH3 + HCl -> NH4Cl"
+            },
+            "alt": "Equation: ammonia plus hydrogen chloride gives ammonium chloride",
+            "caption": "Dense white fumes of ammonium chloride"
+          },
+          "math": [],
+          "narration": "When hydrogen chloride meets ammonia gas, the two combine at once to form ammonium chloride. This is a white solid, and it forms as a cloud of tiny particles, so we see dense white fumes. Because this reaction is so striking, a rod dipped in ammonia solution is used to test for hydrogen chloride, and a rod dipped in the acid is used to test for ammonia.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s03",
+          "layout": "concept",
+          "heading": "With active metals",
+          "body_md": "Metals **above hydrogen** in the activity series displace hydrogen: metal + hydrochloric acid → metal chloride + hydrogen. Iron gives **iron(II) chloride**. Metals **below hydrogen** (copper, silver, gold) do **not** react.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Metal",
+                "Equation",
+                "Observation"
+              ],
+              "rows": [
+                [
+                  "Zinc",
+                  "Zn + 2HCl → ZnCl₂ + H₂",
+                  "Effervescence; gas burns with a pop"
+                ],
+                [
+                  "Magnesium",
+                  "Mg + 2HCl → MgCl₂ + H₂",
+                  "Vigorous effervescence"
+                ],
+                [
+                  "Iron",
+                  "Fe + 2HCl → FeCl₂ + H₂",
+                  "Pale green solution"
+                ],
+                [
+                  "Copper",
+                  "No reaction",
+                  "No change"
+                ]
+              ]
+            },
+            "alt": "Table of the reactions of zinc, magnesium, iron and copper with dilute hydrochloric acid"
+          },
+          "math": [],
+          "narration": "Metals that are above hydrogen in the activity series push hydrogen out of the acid. Zinc and magnesium fizz and give hydrogen, which burns with a pop. Iron gives a pale green solution of iron two chloride. Copper, silver and gold are below hydrogen, so they do not react with dilute hydrochloric acid at all.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s04",
+          "layout": "check",
+          "heading": "Quick check: acid and metal",
+          "body_md": "Predict the products of a metal with dilute hydrochloric acid.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. An active metal gives its chloride and one particular gas.",
+          "check_question_id": "q_icse10chem_ch09_026",
+          "audio": null
+        },
+        {
+          "id": "s05",
+          "layout": "concept",
+          "heading": "With oxides and hydroxides",
+          "body_md": "Metal oxides and hydroxides are **bases**: they **neutralise** hydrochloric acid to give a **salt and water** only.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Base",
+                "Equation",
+                "Observation"
+              ],
+              "rows": [
+                [
+                  "Copper(II) oxide",
+                  "CuO + 2HCl → CuCl₂ + H₂O",
+                  "Black solid dissolves; blue-green solution"
+                ],
+                [
+                  "Sodium hydroxide",
+                  "NaOH + HCl → NaCl + H₂O",
+                  "No visible change; heat given out"
+                ],
+                [
+                  "Calcium hydroxide",
+                  "Ca(OH)₂ + 2HCl → CaCl₂ + 2H₂O",
+                  "Solid dissolves"
+                ]
+              ]
+            },
+            "alt": "Table of the reactions of hydrochloric acid with copper oxide, sodium hydroxide and calcium hydroxide"
+          },
+          "math": [],
+          "narration": "Metal oxides and hydroxides are bases, so they neutralise the acid, giving a salt and water. Warm black copper oxide dissolves to give a blue green solution of copper chloride. Sodium hydroxide gives common salt and water, with heat given out. Calcium hydroxide gives calcium chloride and water.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s06",
+          "layout": "concept",
+          "heading": "With carbonates and hydrogencarbonates",
+          "body_md": "Carbonates and hydrogencarbonates give a chloride, water and **carbon dioxide**, seen as **brisk effervescence**. The gas turns **lime water milky**.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Substance",
+                "Equation"
+              ],
+              "rows": [
+                [
+                  "Calcium carbonate (marble)",
+                  "CaCO₃ + 2HCl → CaCl₂ + H₂O + CO₂"
+                ],
+                [
+                  "Sodium carbonate",
+                  "Na₂CO₃ + 2HCl → 2NaCl + H₂O + CO₂"
+                ],
+                [
+                  "Sodium hydrogencarbonate",
+                  "NaHCO₃ + HCl → NaCl + H₂O + CO₂"
+                ]
+              ]
+            },
+            "alt": "Table of equations for hydrochloric acid with calcium carbonate, sodium carbonate and sodium hydrogencarbonate"
+          },
+          "math": [],
+          "narration": "Carbonates and hydrogencarbonates fizz with hydrochloric acid, giving a chloride, water and carbon dioxide. Marble chips, washing soda and baking soda all behave this way. The gas is colourless and odourless, and it turns lime water milky. Notice that a carbonate needs two molecules of acid, while a hydrogencarbonate needs only one.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s07",
+          "layout": "example",
+          "heading": "Worked example: gas from marble",
+          "body_md": "**Problem.** What volume of carbon dioxide at STP is given off when 25 g of marble (calcium carbonate) reacts completely with dilute hydrochloric acid? (Ca = 40, C = 12, O = 16; molar volume 22.4 L)\n\n**Step 1.** CaCO₃ + 2HCl → CaCl₂ + H₂O + CO₂: 1 mole CaCO₃ gives 1 mole CO₂.\n\n**Step 2.** CaCO₃ = 40 + 12 + 48 = 100; moles = 25 ÷ 100 = 0.25.\n\n**Step 3.** Volume = 0.25 × 22.4 = **5.6 L**.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Quantity",
+                "Value"
+              ],
+              "rows": [
+                [
+                  "Molar mass of CaCO₃",
+                  "100"
+                ],
+                [
+                  "Moles of CaCO₃",
+                  "0.25"
+                ],
+                [
+                  "Moles of CO₂",
+                  "0.25"
+                ],
+                [
+                  "Volume of CO₂ at STP",
+                  "5.6 L"
+                ]
+              ]
+            },
+            "alt": "Table of the steps from 25 grams of calcium carbonate to 5.6 litres of carbon dioxide"
+          },
+          "math": [],
+          "narration": "Write the balanced equation first: one mole of calcium carbonate gives one mole of carbon dioxide. The molar mass of calcium carbonate is one hundred, so twenty five grams is a quarter of a mole. A quarter of a mole of gas at standard temperature and pressure occupies a quarter of twenty two point four litres, which is five point six litres.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s08",
+          "layout": "concept",
+          "heading": "With sulphides and sulphites",
+          "body_md": "**Sulphides** give **hydrogen sulphide**, which smells of rotten eggs and turns lead acetate paper black. **Sulphites** give **sulphur dioxide**, which has a choking smell and turns orange acidified potassium dichromate **green**.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Substance",
+                "Equation",
+                "Gas and its test"
+              ],
+              "rows": [
+                [
+                  "Iron(II) sulphide",
+                  "FeS + 2HCl → FeCl₂ + H₂S",
+                  "Rotten-egg smell; lead acetate paper turns black"
+                ],
+                [
+                  "Sodium sulphide",
+                  "Na₂S + 2HCl → 2NaCl + H₂S",
+                  "As above"
+                ],
+                [
+                  "Sodium sulphite",
+                  "Na₂SO₃ + 2HCl → 2NaCl + H₂O + SO₂",
+                  "Choking smell; dichromate orange to green"
+                ]
+              ]
+            },
+            "alt": "Table of the reactions of hydrochloric acid with sulphides and sulphites and the tests for the gases"
+          },
+          "math": [],
+          "narration": "Sulphides react with the acid to give hydrogen sulphide, a gas that smells of rotten eggs and turns lead acetate paper black. Sulphites give sulphur dioxide, which has a choking smell and turns orange acidified potassium dichromate paper green. These two smells and tests help us identify unknown salts.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s09",
+          "layout": "example",
+          "heading": "Worked example: which salt gave the gas?",
+          "body_md": "**Problem.** Dilute hydrochloric acid is added to an unknown white salt. A gas with a choking smell is given off; it turns acidified potassium dichromate paper green but does not blacken lead acetate paper. Identify the gas and suggest the salt.\n\n**Answer.** The gas is **sulphur dioxide** (choking smell, dichromate turns green). Lead acetate is not blackened, so it is **not** hydrogen sulphide. The salt is a **sulphite**, e.g. sodium sulphite: Na₂SO₃ + 2HCl → 2NaCl + H₂O + SO₂.",
+          "bullets": [],
+          "visual": {
+            "kind": "flow",
+            "spec": {
+              "direction": "TB",
+              "nodes": [
+                {
+                  "id": "a",
+                  "label": "Gas from salt + dilute HCl"
+                },
+                {
+                  "id": "b",
+                  "label": "Burns with a pop: hydrogen (metal)"
+                },
+                {
+                  "id": "c",
+                  "label": "Lime water milky, no smell: CO₂ (carbonate)"
+                },
+                {
+                  "id": "d",
+                  "label": "Rotten eggs, lead acetate black: H₂S (sulphide)"
+                },
+                {
+                  "id": "e",
+                  "label": "Choking, dichromate green: SO₂ (sulphite)"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "a",
+                  "to": "b"
+                },
+                {
+                  "from": "a",
+                  "to": "c"
+                },
+                {
+                  "from": "a",
+                  "to": "d"
+                },
+                {
+                  "from": "a",
+                  "to": "e"
+                }
+              ]
+            },
+            "alt": "Decision flow linking the gas given off with dilute hydrochloric acid to the type of substance"
+          },
+          "math": [],
+          "narration": "Use the properties of the gas. A choking smell points to sulphur dioxide or hydrogen sulphide. Acidified dichromate turning green fits sulphur dioxide, and the lead acetate paper staying unchanged rules out hydrogen sulphide. So the gas is sulphur dioxide, and the white salt must be a sulphite, such as sodium sulphite.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s10",
+          "layout": "concept",
+          "heading": "Precipitates with silver nitrate and lead nitrate",
+          "body_md": "**Silver nitrate:** a **curdy white precipitate** of silver chloride, **insoluble in dilute nitric acid** but soluble in excess ammonium hydroxide.\n\n**Lead nitrate:** a **white precipitate** of lead chloride, which **dissolves on heating** and reappears on cooling.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Reagent",
+                "Equation",
+                "Precipitate"
+              ],
+              "rows": [
+                [
+                  "Silver nitrate",
+                  "AgNO₃ + HCl → AgCl + HNO₃",
+                  "Curdy white; insoluble in dil. HNO₃"
+                ],
+                [
+                  "Lead nitrate",
+                  "Pb(NO₃)₂ + 2HCl → PbCl₂ + 2HNO₃",
+                  "White; soluble in hot water"
+                ]
+              ]
+            },
+            "alt": "Table of the precipitation reactions of hydrochloric acid with silver nitrate and lead nitrate"
+          },
+          "math": [],
+          "narration": "Hydrochloric acid gives two important white precipitates. With silver nitrate solution it forms curdy white silver chloride, which does not dissolve in dilute nitric acid but does dissolve in excess ammonium hydroxide. With lead nitrate it forms white lead chloride, which dissolves when the mixture is heated and comes back on cooling.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s11",
+          "layout": "check",
+          "heading": "Quick check: precipitates",
+          "body_md": "Recognise the silver chloride precipitate.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Recall the colour of silver chloride and how it behaves in nitric acid.",
+          "check_question_id": "q_icse10chem_ch09_043",
+          "audio": null
+        },
+        {
+          "id": "s12",
+          "layout": "concept",
+          "heading": "Aqua regia",
+          "body_md": "**Aqua regia** (“royal water”) is a mixture of **three volumes of concentrated hydrochloric acid** and **one volume of concentrated nitric acid**. Nitric acid oxidises hydrochloric acid to **nascent chlorine**, which converts **gold and platinum** into soluble chlorides. It is used to dissolve these noble metals.",
+          "bullets": [],
+          "visual": {
+            "kind": "chem",
+            "spec": {
+              "equation": "HNO3 + 3HCl -> NOCl + 2H2O + 2Cl"
+            },
+            "alt": "Equation: nitric acid plus three hydrogen chloride gives nitrosyl chloride, two water and two nascent chlorine",
+            "caption": "Formation of nascent chlorine in aqua regia"
+          },
+          "math": [],
+          "narration": "Aqua regia means royal water, because it dissolves gold, the king of metals. It is made by mixing three volumes of concentrated hydrochloric acid with one volume of concentrated nitric acid. The nitric acid oxidises the hydrochloric acid to give very reactive nascent chlorine, which turns gold and platinum into soluble chlorides.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s13",
+          "layout": "check",
+          "heading": "Quick check: aqua regia",
+          "body_md": "Recall how aqua regia is made.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Which acid is present in the larger amount?",
+          "check_question_id": "q_icse10chem_ch09_042",
+          "audio": null
+        },
+        {
+          "id": "s14",
+          "layout": "concept",
+          "heading": "Tests for hydrogen chloride and hydrochloric acid",
+          "body_md": "Hydrogen chloride gas and its solution are identified by these tests.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Test",
+                "Result",
+                "For"
+              ],
+              "rows": [
+                [
+                  "Moist blue litmus",
+                  "Turns red",
+                  "HCl gas"
+                ],
+                [
+                  "Rod dipped in ammonia solution",
+                  "Dense white fumes",
+                  "HCl gas"
+                ],
+                [
+                  "Silver nitrate solution (+ dil. HNO₃)",
+                  "Curdy white precipitate",
+                  "Hydrochloric acid (chloride ion)"
+                ],
+                [
+                  "Lead nitrate solution",
+                  "White precipitate, dissolves on heating",
+                  "Hydrochloric acid (chloride ion)"
+                ]
+              ]
+            },
+            "alt": "Table of the tests for hydrogen chloride gas and hydrochloric acid with their results"
+          },
+          "math": [],
+          "narration": "To identify hydrogen chloride gas, hold moist blue litmus in it, which turns red, or a rod dipped in ammonia solution, which gives dense white fumes. To identify hydrochloric acid, add silver nitrate solution, which gives a curdy white precipitate that does not dissolve in dilute nitric acid. Lead nitrate gives a white precipitate that dissolves on heating.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s15",
+          "layout": "summary",
+          "heading": "Summary: Part 2",
+          "body_md": "",
+          "bullets": [
+            "NH₃ + HCl → NH₄Cl: dense white fumes.",
+            "Active metals give hydrogen; oxides and hydroxides give salt and water; carbonates give CO₂.",
+            "Sulphides give H₂S; sulphites give SO₂.",
+            "Silver nitrate: curdy white AgCl, insoluble in dil. HNO₃; lead nitrate: PbCl₂, soluble in hot water.",
+            "Aqua regia: 3 volumes conc. HCl + 1 volume conc. HNO₃; dissolves gold."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Reagent",
+                "Product with HCl"
+              ],
+              "rows": [
+                [
+                  "Ammonia",
+                  "NH₄Cl fumes"
+                ],
+                [
+                  "Zinc",
+                  "H₂"
+                ],
+                [
+                  "Marble",
+                  "CO₂"
+                ],
+                [
+                  "Sodium sulphite",
+                  "SO₂"
+                ],
+                [
+                  "Silver nitrate",
+                  "AgCl precipitate"
+                ]
+              ]
+            },
+            "alt": "Summary table of reagents and their products with hydrochloric acid"
+          },
+          "math": [],
+          "narration": "Let us sum up Part 2. Hydrogen chloride forms white fumes with ammonia. As an acid, it gives hydrogen with active metals, salt and water with bases, and carbon dioxide with carbonates. Sulphides give hydrogen sulphide and sulphites give sulphur dioxide. Silver nitrate and lead nitrate give white precipitates, and aqua regia dissolves gold.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s16",
+          "layout": "exam-tips",
+          "heading": "Exam tips: Part 2",
+          "body_md": "",
+          "bullets": [
+            "Iron with dilute HCl gives iron(II) chloride, FeCl₂, not FeCl₃.",
+            "State observations: effervescence, smell, colour of solution or precipitate.",
+            "For silver chloride, add that it is insoluble in dilute nitric acid.",
+            "Aqua regia is 3 : 1 hydrochloric acid to nitric acid — not the other way round."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Slip",
+                "Fix"
+              ],
+              "rows": [
+                [
+                  "Fe + HCl gives FeCl₃",
+                  "It gives FeCl₂"
+                ],
+                [
+                  "Copper gives hydrogen",
+                  "No reaction: copper is below hydrogen"
+                ],
+                [
+                  "Lead chloride insoluble when hot",
+                  "It dissolves in hot water"
+                ]
+              ]
+            },
+            "alt": "Table of three common slips in Part 2 and their fixes"
+          },
+          "math": [],
+          "narration": "Final tips. Iron reacts with dilute hydrochloric acid to give iron two chloride. In observation questions, describe what you see or smell: fizzing, colours, precipitates. When you describe silver chloride, add that it does not dissolve in dilute nitric acid. And remember that aqua regia has three parts of hydrochloric acid to one part of nitric acid.",
+          "check_question_id": null,
+          "audio": null
+        }
+      ],
+      "status": "draft",
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    }
+  ],
+  "notes": {
+    "unit": "icse-10-chemistry-ch09",
+    "version": 1,
+    "title": "Study of Compounds: Hydrogen Chloride — Notes",
+    "language": "en",
+    "sections": [
+      {
+        "heading": "1. Laboratory preparation",
+        "body_md": "**Reactants:** sodium chloride (rock salt) and **concentrated sulphuric acid**, heated gently **below 200 °C**.\n\n- **Apparatus:** round-bottomed flask with a thistle funnel and delivery tube; wash bottle of concentrated sulphuric acid; upright gas jar.\n- **Drying agent:** concentrated sulphuric acid (absorbs water, does not react). Quicklime and solid caustic soda are **not** used: they are bases and react with the gas.\n- **Collection:** **upward displacement of air** (heavier than air); not over water (extremely soluble).\n- **Jar full?** A rod dipped in ammonia solution gives dense white fumes; moist blue litmus turns red.\n- **Why below 200 °C?** At a higher temperature sodium sulphate forms as a hard crust that sticks to the flask; fuel is wasted and the glass may crack.",
+        "key_terms": [
+          {
+            "term": "Upward displacement of air",
+            "definition_md": "Collection of a gas heavier than air in an upright jar: the gas enters at the bottom and pushes the air out at the top."
+          },
+          {
+            "term": "Drying agent",
+            "definition_md": "A substance that absorbs water vapour from a gas without reacting with the gas."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\ce{NaCl + H2SO4 -> NaHSO4 + HCl}",
+            "label": "Below 200 °C (used)"
+          },
+          {
+            "latex": "\\ce{2NaCl + H2SO4 -> Na2SO4 + 2HCl}",
+            "label": "Above 200 °C (avoided)"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Feature",
+              "Choice",
+              "Reason"
+            ],
+            "rows": [
+              [
+                "Drying agent",
+                "Conc. H₂SO₄",
+                "Does not react with HCl"
+              ],
+              [
+                "Collection",
+                "Upward displacement of air",
+                "Heavier than air, very soluble"
+              ],
+              [
+                "Temperature",
+                "Below 200 °C",
+                "Avoids hard crust of Na₂SO₄"
+              ]
+            ]
+          },
+          "alt": "Table of the conditions for preparing hydrogen chloride with reasons"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-chemistry-ch09-t01"
+        ]
+      },
+      {
+        "heading": "2. Density and solubility; the fountain experiment",
+        "body_md": "- **Density:** vapour density of HCl = 36.5 ÷ 2 = **18.25**, greater than that of air (about 14.4), so it is **heavier than air**. It can be \"poured\" from one jar into another.\n- **Solubility:** extremely soluble in water; fumes in moist air.\n- **Fountain experiment:** a dry flask of dry HCl, inverted, with a jet tube dipping into water containing blue litmus. A little water dissolves much gas, the pressure inside falls and atmospheric pressure drives water up as a **fountain**, which turns **red**. Shows **high solubility** and **acidic nature**.",
+        "key_terms": [
+          {
+            "term": "Vapour density",
+            "definition_md": "Half the relative molecular mass of a gas; compares the mass of a volume of the gas with the same volume of hydrogen."
+          },
+          {
+            "term": "Fountain experiment",
+            "definition_md": "An experiment in which a very soluble gas dissolves in a little water, lowering the pressure so that water is forced into the flask as a fountain."
+          }
+        ],
+        "formulas": [],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Observation",
+              "Shows"
+            ],
+            "rows": [
+              [
+                "Water rises as a fountain",
+                "Gas is extremely soluble"
+              ],
+              [
+                "Blue litmus turns red",
+                "Solution is acidic"
+              ],
+              [
+                "Gas poured into a lower jar",
+                "Gas is heavier than air"
+              ]
+            ]
+          },
+          "alt": "Table of observations and what each shows about hydrogen chloride"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-chemistry-ch09-t02"
+        ]
+      },
+      {
+        "heading": "3. Hydrochloric acid and back suction",
+        "body_md": "Hydrochloric acid is made by dissolving hydrogen chloride in water. A delivery tube dipped straight into water would allow **back suction** (water sucked back into the hot flask). An **inverted funnel** with its rim just dipping in the water is used:\n\n- if water rises into the funnel, the level in the beaker falls below the rim, **air enters** and the water falls back;\n- the funnel also gives a **large surface area** for absorbing the gas.",
+        "key_terms": [
+          {
+            "term": "Back suction",
+            "definition_md": "Water being drawn back into a hot apparatus when a very soluble gas dissolves rapidly and the pressure falls."
+          }
+        ],
+        "formulas": [],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Arrangement",
+              "Result"
+            ],
+            "rows": [
+              [
+                "Tube dipped into water",
+                "Back suction may crack the flask"
+              ],
+              [
+                "Inverted funnel, rim just dipping",
+                "No back suction; large surface for absorption"
+              ]
+            ]
+          },
+          "alt": "Table comparing a dipped tube with an inverted funnel for dissolving hydrogen chloride"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-chemistry-ch09-t03"
+        ]
+      },
+      {
+        "heading": "4. Reactions of hydrochloric acid",
+        "body_md": "- **With ammonia:** dense white fumes of ammonium chloride.\n- **Active metals:** chloride + hydrogen (Zn, Mg, Fe → FeCl₂). Copper, silver, gold do not react.\n- **Oxides and hydroxides:** salt + water (CuO gives a blue-green solution).\n- **Carbonates and hydrogencarbonates:** chloride + water + CO₂ (effervescence; lime water milky).\n- **Sulphides:** chloride + H₂S (rotten-egg smell; lead acetate paper black).\n- **Sulphites:** chloride + water + SO₂ (choking smell; acidified potassium dichromate orange → green).",
+        "key_terms": [
+          {
+            "term": "Neutralisation",
+            "definition_md": "The reaction of an acid with a base to give a salt and water only."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\ce{NH3 + HCl -> NH4Cl}",
+            "label": "Dense white fumes"
+          },
+          {
+            "latex": "\\ce{Zn + 2HCl -> ZnCl2 + H2}",
+            "label": "Active metal"
+          },
+          {
+            "latex": "\\ce{CuO + 2HCl -> CuCl2 + H2O}",
+            "label": "Metal oxide"
+          },
+          {
+            "latex": "\\ce{CaCO3 + 2HCl -> CaCl2 + H2O + CO2}",
+            "label": "Carbonate"
+          },
+          {
+            "latex": "\\ce{FeS + 2HCl -> FeCl2 + H2S}",
+            "label": "Sulphide"
+          },
+          {
+            "latex": "\\ce{Na2SO3 + 2HCl -> 2NaCl + H2O + SO2}",
+            "label": "Sulphite"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Substance",
+              "Gas given off",
+              "Test for the gas"
+            ],
+            "rows": [
+              [
+                "Zinc",
+                "H₂",
+                "Burns with a pop"
+              ],
+              [
+                "Marble",
+                "CO₂",
+                "Lime water milky"
+              ],
+              [
+                "Iron(II) sulphide",
+                "H₂S",
+                "Lead acetate paper black"
+              ],
+              [
+                "Sodium sulphite",
+                "SO₂",
+                "Acidified dichromate green"
+              ]
+            ]
+          },
+          "alt": "Table of substances, the gas each gives with hydrochloric acid and the test for the gas"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-chemistry-ch09-t04"
+        ]
+      },
+      {
+        "heading": "5. Aqua regia",
+        "body_md": "**Aqua regia:** 3 volumes of concentrated HCl + 1 volume of concentrated HNO₃. Nitric acid oxidises hydrochloric acid to **nascent chlorine**, which converts **gold** and **platinum** into soluble chlorides. **Use:** dissolving noble metals (e.g. in testing and purifying gold).",
+        "key_terms": [
+          {
+            "term": "Aqua regia",
+            "definition_md": "A mixture of three volumes of concentrated hydrochloric acid and one volume of concentrated nitric acid that dissolves gold and platinum."
+          },
+          {
+            "term": "Nascent chlorine",
+            "definition_md": "Freshly formed, very reactive atomic chlorine."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\ce{HNO3 + 3HCl -> NOCl + 2H2O + 2Cl}",
+            "label": "Formation of nascent chlorine"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Feature",
+              "Aqua regia"
+            ],
+            "rows": [
+              [
+                "Composition",
+                "3 vol conc. HCl : 1 vol conc. HNO₃"
+              ],
+              [
+                "Active agent",
+                "Nascent chlorine"
+              ],
+              [
+                "Dissolves",
+                "Gold, platinum"
+              ]
+            ]
+          },
+          "alt": "Table of the composition, active agent and use of aqua regia"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-chemistry-ch09-t05"
+        ]
+      },
+      {
+        "heading": "6. Precipitation reactions and tests",
+        "body_md": "- **Silver nitrate:** AgNO₃ + HCl → AgCl + HNO₃; **curdy white** precipitate, insoluble in dilute HNO₃, soluble in excess NH₄OH.\n- **Lead nitrate:** Pb(NO₃)₂ + 2HCl → PbCl₂ + 2HNO₃; white precipitate, **soluble in hot water**.\n\n**Tests:** HCl gas — moist blue litmus turns red; dense white fumes with a rod dipped in ammonia solution. Hydrochloric acid — curdy white precipitate with silver nitrate solution (insoluble in dilute nitric acid).",
+        "key_terms": [
+          {
+            "term": "Precipitate",
+            "definition_md": "An insoluble solid formed when two solutions are mixed."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\ce{AgNO3 + HCl -> AgCl + HNO3}",
+            "label": "Curdy white precipitate"
+          },
+          {
+            "latex": "\\ce{Pb(NO3)2 + 2HCl -> PbCl2 + 2HNO3}",
+            "label": "White precipitate, soluble in hot water"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Reagent",
+              "Observation with HCl"
+            ],
+            "rows": [
+              [
+                "Moist blue litmus",
+                "Turns red"
+              ],
+              [
+                "Ammonia rod",
+                "Dense white fumes"
+              ],
+              [
+                "Silver nitrate",
+                "Curdy white precipitate, insoluble in dil. HNO₃"
+              ],
+              [
+                "Lead nitrate",
+                "White precipitate, dissolves on heating"
+              ]
+            ]
+          },
+          "alt": "Table of reagents used to test for hydrogen chloride and hydrochloric acid"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-chemistry-ch09-t05"
+        ]
+      }
+    ],
+    "exam_tips_md": "**Common mistakes**\n- Leaving out \"below 200 °C\" from the preparation.\n- Naming quicklime as the drying agent (it reacts with HCl).\n- Saying HCl is collected by downward displacement (that is ammonia).\n- Writing FeCl₃ for iron with dilute HCl (it is FeCl₂).\n- Reversing the 3 : 1 ratio of aqua regia.\n\n**How marks are usually awarded**\n- Equations (1 mark each): correct formulae, balanced, with conditions where asked.\n- Observations (1 mark): colour, smell, effervescence or precipitate, stated clearly.\n- Fountain experiment: set-up, reason (pressure) and the colour change.",
+    "status": "draft",
+    "provenance": {
+      "origin": "human",
+      "template_version": null,
+      "model": null,
+      "generated_at": "2026-11-01",
+      "author": "claude-opus-5-5 (subject-producer)"
+    }
+  },
+  "flashcards": {
+    "unit": "icse-10-chemistry-ch09",
+    "version": 1,
+    "language": "en",
+    "cards": [
+      {
+        "id": "f01",
+        "front_md": "Lab preparation of HCl?",
+        "back_md": "NaCl + H₂SO₄ → NaHSO₄ + HCl, below 200 °C.",
+        "tag": "formula",
+        "topic_id": "icse-10-chemistry-ch09-t01"
+      },
+      {
+        "id": "f02",
+        "front_md": "Drying agent for HCl?",
+        "back_md": "Concentrated sulphuric acid.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch09-t01"
+      },
+      {
+        "id": "f03",
+        "front_md": "Why not quicklime?",
+        "back_md": "It is basic and reacts: CaO + 2HCl → CaCl₂ + H₂O.",
+        "tag": "concept",
+        "topic_id": "icse-10-chemistry-ch09-t01"
+      },
+      {
+        "id": "f04",
+        "front_md": "How is HCl collected?",
+        "back_md": "Upward displacement of air.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch09-t01"
+      },
+      {
+        "id": "f05",
+        "front_md": "Why not over water?",
+        "back_md": "HCl is extremely soluble in water.",
+        "tag": "concept",
+        "topic_id": "icse-10-chemistry-ch09-t01"
+      },
+      {
+        "id": "f06",
+        "front_md": "Why keep below 200 °C?",
+        "back_md": "Avoids a hard crust of Na₂SO₄, wasted fuel and cracked glass.",
+        "tag": "concept",
+        "topic_id": "icse-10-chemistry-ch09-t01"
+      },
+      {
+        "id": "f07",
+        "front_md": "Test that a jar of HCl is full?",
+        "back_md": "Rod dipped in ammonia solution gives dense white fumes.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch09-t01"
+      },
+      {
+        "id": "f08",
+        "front_md": "Vapour density of HCl?",
+        "back_md": "18.25 (36.5 ÷ 2).",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch09-t02"
+      },
+      {
+        "id": "f09",
+        "front_md": "Is HCl heavier or lighter than air?",
+        "back_md": "Heavier.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch09-t02"
+      },
+      {
+        "id": "f10",
+        "front_md": "What does the fountain experiment show?",
+        "back_md": "High solubility and acidic nature.",
+        "tag": "concept",
+        "topic_id": "icse-10-chemistry-ch09-t02"
+      },
+      {
+        "id": "f11",
+        "front_md": "Colour of the fountain with blue litmus?",
+        "back_md": "Red.",
+        "tag": "diagram",
+        "topic_id": "icse-10-chemistry-ch09-t02"
+      },
+      {
+        "id": "f12",
+        "front_md": "Why does the fountain rise?",
+        "back_md": "Gas dissolves, pressure falls, air pressure pushes water up.",
+        "tag": "concept",
+        "topic_id": "icse-10-chemistry-ch09-t02"
+      },
+      {
+        "id": "f13",
+        "front_md": "Why does HCl fume in moist air?",
+        "back_md": "It dissolves in water vapour to form droplets of hydrochloric acid.",
+        "tag": "concept",
+        "topic_id": "icse-10-chemistry-ch09-t02"
+      },
+      {
+        "id": "f14",
+        "front_md": "What is back suction?",
+        "back_md": "Water being sucked back into the hot apparatus.",
+        "tag": "definition",
+        "topic_id": "icse-10-chemistry-ch09-t03"
+      },
+      {
+        "id": "f15",
+        "front_md": "How is back suction prevented?",
+        "back_md": "Inverted funnel with its rim just dipping in water.",
+        "tag": "diagram",
+        "topic_id": "icse-10-chemistry-ch09-t03"
+      },
+      {
+        "id": "f16",
+        "front_md": "HCl + NH₃?",
+        "back_md": "NH₄Cl: dense white fumes.",
+        "tag": "formula",
+        "topic_id": "icse-10-chemistry-ch09-t04"
+      },
+      {
+        "id": "f17",
+        "front_md": "Zn + dilute HCl?",
+        "back_md": "Zn + 2HCl → ZnCl₂ + H₂.",
+        "tag": "formula",
+        "topic_id": "icse-10-chemistry-ch09-t04"
+      },
+      {
+        "id": "f18",
+        "front_md": "Iron + dilute HCl gives…?",
+        "back_md": "FeCl₂ + H₂ (iron(II) chloride).",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch09-t04"
+      },
+      {
+        "id": "f19",
+        "front_md": "Does copper react with dilute HCl?",
+        "back_md": "No: copper is below hydrogen.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch09-t04"
+      },
+      {
+        "id": "f20",
+        "front_md": "CaCO₃ + HCl?",
+        "back_md": "CaCO₃ + 2HCl → CaCl₂ + H₂O + CO₂.",
+        "tag": "formula",
+        "topic_id": "icse-10-chemistry-ch09-t04"
+      },
+      {
+        "id": "f21",
+        "front_md": "NaHCO₃ + HCl?",
+        "back_md": "NaHCO₃ + HCl → NaCl + H₂O + CO₂.",
+        "tag": "formula",
+        "topic_id": "icse-10-chemistry-ch09-t04"
+      },
+      {
+        "id": "f22",
+        "front_md": "FeS + dilute HCl?",
+        "back_md": "FeCl₂ + H₂S (rotten-egg smell).",
+        "tag": "formula",
+        "topic_id": "icse-10-chemistry-ch09-t04"
+      },
+      {
+        "id": "f23",
+        "front_md": "Gas from a sulphite and HCl?",
+        "back_md": "SO₂: turns acidified K₂Cr₂O₇ green.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch09-t04"
+      },
+      {
+        "id": "f24",
+        "front_md": "CuO + dilute HCl: observation?",
+        "back_md": "Black solid dissolves; blue-green solution.",
+        "tag": "example",
+        "topic_id": "icse-10-chemistry-ch09-t04"
+      },
+      {
+        "id": "f25",
+        "front_md": "Aqua regia?",
+        "back_md": "3 volumes conc. HCl + 1 volume conc. HNO₃.",
+        "tag": "definition",
+        "topic_id": "icse-10-chemistry-ch09-t05"
+      },
+      {
+        "id": "f26",
+        "front_md": "Why does aqua regia dissolve gold?",
+        "back_md": "It produces nascent chlorine.",
+        "tag": "concept",
+        "topic_id": "icse-10-chemistry-ch09-t05"
+      },
+      {
+        "id": "f27",
+        "front_md": "HCl + AgNO₃?",
+        "back_md": "Curdy white AgCl, insoluble in dilute HNO₃.",
+        "tag": "formula",
+        "topic_id": "icse-10-chemistry-ch09-t05"
+      },
+      {
+        "id": "f28",
+        "front_md": "HCl + Pb(NO₃)₂?",
+        "back_md": "White PbCl₂, soluble in hot water.",
+        "tag": "formula",
+        "topic_id": "icse-10-chemistry-ch09-t05"
+      },
+      {
+        "id": "f29",
+        "front_md": "HCl gas and moist blue litmus?",
+        "back_md": "Turns red.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch09-t05"
+      },
+      {
+        "id": "f30",
+        "front_md": "Exam tip: collection",
+        "back_md": "HCl: upward displacement; NH₃: downward displacement.",
+        "tag": "exam-tip",
+        "topic_id": "icse-10-chemistry-ch09-t01"
+      }
+    ],
+    "status": "draft",
+    "provenance": {
+      "origin": "human",
+      "template_version": null,
+      "model": null,
+      "generated_at": "2026-11-01",
+      "author": "claude-opus-5-5 (subject-producer)"
+    }
+  },
+  "questions": [
+    {
+      "id": "q_icse10chem_ch09_001",
+      "unit": "icse-10-chemistry-ch09",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Hydrogen chloride made from rock salt and concentrated sulphuric acid is passed through a wash bottle before collection. The drying agent in the wash bottle is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "quicklime (calcium oxide)"
+        },
+        {
+          "id": "b",
+          "text_md": "solid sodium hydroxide"
+        },
+        {
+          "id": "c",
+          "text_md": "concentrated sulphuric acid"
+        },
+        {
+          "id": "d",
+          "text_md": "slaked lime (calcium hydroxide)"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "The other three are bases and would react with the acidic gas — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch09-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch09_002",
+      "unit": "icse-10-chemistry-ch09",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Hydrogen chloride is collected in an upright gas jar by upward displacement of air because it is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "heavier than air and very soluble in water"
+        },
+        {
+          "id": "b",
+          "text_md": "lighter than air and insoluble in water"
+        },
+        {
+          "id": "c",
+          "text_md": "heavier than air and insoluble in water"
+        },
+        {
+          "id": "d",
+          "text_md": "lighter than air and very soluble in water"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "It sinks to the bottom of the jar, pushing air out, and cannot be collected over water because it dissolves — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch09-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch09_003",
+      "unit": "icse-10-chemistry-ch09",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A flask of sodium chloride and concentrated sulphuric acid is heated far above 200 °C. Besides hydrogen chloride, the product formed is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "sodium sulphate, which forms a hard crust that sticks to the flask"
+        },
+        {
+          "id": "b",
+          "text_md": "sodium hydrogensulphate, which stays liquid and is easy to pour out"
+        },
+        {
+          "id": "c",
+          "text_md": "sodium hydroxide, which absorbs the gas"
+        },
+        {
+          "id": "d",
+          "text_md": "chlorine, which colours the gas greenish-yellow"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "At high temperature: 2NaCl + H₂SO₄ → Na₂SO₄ + 2HCl; sodium sulphate forms a hard crust, more fuel is used and the glass may crack — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch09-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch09_004",
+      "unit": "icse-10-chemistry-ch09",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A student collecting hydrogen chloride wants to know when the gas jar is full. The best test at the mouth of the jar is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "a burning splint makes the gas burn with a pop"
+        },
+        {
+          "id": "b",
+          "text_md": "a glass rod dipped in ammonia solution gives dense white fumes"
+        },
+        {
+          "id": "c",
+          "text_md": "a drop of lime water turns milky"
+        },
+        {
+          "id": "d",
+          "text_md": "moist red litmus paper turns blue"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "NH₃ + HCl → NH₄Cl (white fumes) as soon as the gas reaches the mouth (moist blue litmus turning red also works) — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch09-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch09_005",
+      "unit": "icse-10-chemistry-ch09",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Concentrated sulphuric acid is used to dry hydrogen chloride gas.\n\n**Reason (R):** Concentrated sulphuric acid is a dibasic acid.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Both are true, but it is used because it absorbs water and does not react with hydrogen chloride, not because it is dibasic — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch09-t01"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch09_006",
+      "unit": "icse-10-chemistry-ch09",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Hydrogen chloride is not collected over water.\n\n**Reason (R):** Hydrogen chloride is extremely soluble in water.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Both are true, and R explains A — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch09-t01"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch09_007",
+      "unit": "icse-10-chemistry-ch09",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write the balanced equation, with the condition, for the laboratory preparation of hydrogen chloride from sodium chloride.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "NaCl + H₂SO₄ → NaHSO₄ + HCl (conc. acid, heated below 200 °C)."
+      },
+      "solution_md": "Equation with condition.",
+      "marking_scheme": [
+        {
+          "step": "Balanced equation with temperature",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch09-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch09_008",
+      "unit": "icse-10-chemistry-ch09",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Why is quicklime not used to dry hydrogen chloride gas?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Quicklime is a basic oxide and reacts with the acidic gas: CaO + 2HCl → CaCl₂ + H₂O."
+      },
+      "solution_md": "It reacts with HCl.",
+      "marking_scheme": [
+        {
+          "step": "Reacts with HCl (basic)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch09-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch09_009",
+      "unit": "icse-10-chemistry-ch09",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Explain why hydrogen chloride is (a) collected by upward displacement of air and (b) never collected over water.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) It is heavier than air (vapour density 18.25 against about 14.4 for air), so it sinks to the bottom of the upright jar and pushes the air out. (b) It is extremely soluble in water, so it would dissolve instead of collecting."
+      },
+      "solution_md": "Density; solubility.",
+      "marking_scheme": [
+        {
+          "step": "(a) heavier than air",
+          "marks": 1
+        },
+        {
+          "step": "(b) highly soluble",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch09-t01",
+        "icse-10-chemistry-ch09-t02"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch09_010",
+      "unit": "icse-10-chemistry-ch09",
+      "language": "en",
+      "type": "short",
+      "stem_md": "In the laboratory preparation of hydrogen chloride, the flask is heated gently and kept below 200 °C. Give two reasons why a higher temperature is avoided.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Above 200 °C the reaction goes further, 2NaCl + H₂SO₄ → Na₂SO₄ + 2HCl, and (1) the sodium sulphate forms a hard crust that sticks to the flask and is difficult to remove; (2) the glass flask may crack, and more fuel is wasted."
+      },
+      "solution_md": "Crust of sodium sulphate; cracking and fuel.",
+      "marking_scheme": [
+        {
+          "step": "Reason 1",
+          "marks": 1
+        },
+        {
+          "step": "Reason 2",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch09-t01"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch09_011",
+      "unit": "icse-10-chemistry-ch09",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "What mass of sodium chloride, in grams, is needed to prepare 7.3 g of hydrogen chloride by the reaction NaCl + H₂SO₄ → NaHSO₄ + HCl? (Na = 23, Cl = 35.5, H = 1)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 11.7,
+        "tolerance": 0.05,
+        "unit": "g"
+      },
+      "solution_md": "Molar masses: NaCl $= 23 + 35.5 = 58.5$; HCl $= 1 + 35.5 = 36.5$. One mole of NaCl gives one mole of HCl, so mass of NaCl $= \\dfrac{58.5}{36.5} \\times 7.3 = 11.7$, that is 11.7 g.",
+      "marking_scheme": [
+        {
+          "step": "Molar masses and 1 : 1 ratio",
+          "marks": 1
+        },
+        {
+          "step": "11.7 g",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch09-t01"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch09_012",
+      "unit": "icse-10-chemistry-ch09",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A gas jar of hydrogen chloride is tilted over an open jar of air, as if pouring water. A glass rod dipped in ammonia solution is then held inside the lower jar, and dense white fumes appear. This shows that hydrogen chloride:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "is lighter than air"
+        },
+        {
+          "id": "b",
+          "text_md": "is a neutral gas"
+        },
+        {
+          "id": "c",
+          "text_md": "does not dissolve in water"
+        },
+        {
+          "id": "d",
+          "text_md": "is heavier than air"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "The gas flowed down into the lower jar, like a liquid — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch09-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch09_013",
+      "unit": "icse-10-chemistry-ch09",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "In the fountain experiment, water coloured with blue litmus rushes up a jet tube into a flask of dry hydrogen chloride and turns red. Together these observations show that hydrogen chloride is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "lighter than air and basic"
+        },
+        {
+          "id": "b",
+          "text_md": "insoluble in water and neutral"
+        },
+        {
+          "id": "c",
+          "text_md": "highly soluble in water and acidic"
+        },
+        {
+          "id": "d",
+          "text_md": "highly soluble in water and basic"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "The fountain shows high solubility; the red colour shows the solution is acidic — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch09-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch09_014",
+      "unit": "icse-10-chemistry-ch09",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "In the fountain experiment with hydrogen chloride, water is forced up the jet tube into the flask because:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "hydrogen chloride reacts with glass and draws water after it"
+        },
+        {
+          "id": "b",
+          "text_md": "the gas dissolves in the first drops of water, the pressure inside falls and the outside air pushes water in"
+        },
+        {
+          "id": "c",
+          "text_md": "the flask is heated, so the gas expands"
+        },
+        {
+          "id": "d",
+          "text_md": "water is lighter than hydrogen chloride and floats upwards"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "A partial vacuum forms as the very soluble gas dissolves; atmospheric pressure drives the water up — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch09-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch09_015",
+      "unit": "icse-10-chemistry-ch09",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Hydrogen chloride is heavier than air.\n\n**Reason (R):** The vapour density of hydrogen chloride (18.25) is greater than the average vapour density of air (about 14.4).\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Both are true, and R explains A — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch09-t02"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch09_016",
+      "unit": "icse-10-chemistry-ch09",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? Hydrogen chloride is lighter than air.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "f"
+        ]
+      },
+      "solution_md": "False: its vapour density is 18.25, greater than that of air (about 14.4), so it is heavier than air.",
+      "marking_scheme": [
+        {
+          "step": "False, with the correction",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch09-t02"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch09_017",
+      "unit": "icse-10-chemistry-ch09",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "In the fountain experiment with hydrogen chloride, the blue litmus solution turns ___ as it enters the flask.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "red"
+            ]
+          }
+        ]
+      },
+      "solution_md": "It turns **red**, because the solution formed is acidic.",
+      "marking_scheme": [
+        {
+          "step": "Blank 1: \"red\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch09-t02"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch09_018",
+      "unit": "icse-10-chemistry-ch09",
+      "language": "en",
+      "type": "short",
+      "stem_md": "State what is seen inside the flask in the fountain experiment when the trough holds water coloured with blue litmus.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Water rushes up the tube as a fountain, and the blue colour turns red."
+      },
+      "solution_md": "Red fountain.",
+      "marking_scheme": [
+        {
+          "step": "Fountain, blue to red",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch09-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch09_019",
+      "unit": "icse-10-chemistry-ch09",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Describe a simple experiment, with the observation, to show that hydrogen chloride is heavier than air.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Hold an open jar of hydrogen chloride over an open jar of air and tilt it as if pouring a liquid. Then hold a glass rod dipped in ammonia solution inside the lower jar: dense white fumes of ammonium chloride form, showing that the gas has flowed down into it."
+      },
+      "solution_md": "Pouring the gas; white fumes in the lower jar.",
+      "marking_scheme": [
+        {
+          "step": "Procedure",
+          "marks": 1
+        },
+        {
+          "step": "Observation and conclusion",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch09-t02"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch09_020",
+      "unit": "icse-10-chemistry-ch09",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "Calculate the vapour density of hydrogen chloride. (H = 1, Cl = 35.5)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 18.25,
+        "tolerance": 0.01,
+        "unit": null
+      },
+      "solution_md": "Relative molecular mass of HCl $= 1 + 35.5 = 36.5$. Vapour density $= \\dfrac{36.5}{2} = 18.25$.",
+      "marking_scheme": [
+        {
+          "step": "M = 36.5",
+          "marks": 0.5
+        },
+        {
+          "step": "VD = 18.25",
+          "marks": 0.5
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch09-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch09_021",
+      "unit": "icse-10-chemistry-ch09",
+      "language": "en",
+      "type": "short",
+      "stem_md": "In the fountain experiment with hydrogen chloride: (a) why must the flask and the gas be completely dry? (b) explain why the water rises into the flask as a fountain; (c) name the two properties of hydrogen chloride shown by the experiment.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) If water were present, some gas would dissolve before the experiment and the pressure difference would be too small for a good fountain. (b) The first drops of water dissolve so much gas that the pressure inside the flask falls far below atmospheric pressure; the outside air pressure on the trough pushes water up the jet. (c) It is highly soluble in water, and its solution is acidic (turns blue litmus red)."
+      },
+      "solution_md": "Dryness; pressure difference; solubility and acidity.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch09-t02"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch09_022",
+      "unit": "icse-10-chemistry-ch09",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Hydrogen chloride is dissolved in water through an inverted funnel whose rim just dips below the water surface. This arrangement:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "dries the gas before it dissolves"
+        },
+        {
+          "id": "b",
+          "text_md": "removes chlorine from the gas"
+        },
+        {
+          "id": "c",
+          "text_md": "prevents back suction and gives a large surface for absorbing the gas"
+        },
+        {
+          "id": "d",
+          "text_md": "cools the gas until it becomes a liquid"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch09-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch09_023",
+      "unit": "icse-10-chemistry-ch09",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "While hydrogen chloride is being absorbed through an inverted funnel, water suddenly rises inside the funnel. The level in the beaker falls below the rim. What happens next?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Water is sucked back into the generating flask"
+        },
+        {
+          "id": "b",
+          "text_md": "Air enters the funnel, the pressure is equalised and the water inside falls back into the beaker"
+        },
+        {
+          "id": "c",
+          "text_md": "The gas stops dissolving permanently"
+        },
+        {
+          "id": "d",
+          "text_md": "The funnel fills completely with acid and overflows"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Once the rim is uncovered, air enters and breaks the suction — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch09-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch09_024",
+      "unit": "icse-10-chemistry-ch09",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "Water is prevented from being sucked back into the hot generating flask by using an inverted ___ arrangement.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "funnel"
+            ]
+          }
+        ]
+      },
+      "solution_md": "An inverted **funnel**.",
+      "marking_scheme": [
+        {
+          "step": "Blank 1: \"funnel\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch09-t03"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch09_025",
+      "unit": "icse-10-chemistry-ch09",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Explain how the inverted funnel arrangement prevents back suction when hydrogen chloride is dissolved in water.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "The rim of the inverted funnel just touches the water. If the gas dissolves fast and water rises into the funnel, the water level in the beaker falls below the rim; air then enters the funnel, the pressure is equalised and the water drops back. So water is never sucked back into the generating flask."
+      },
+      "solution_md": "Rim uncovered; air enters; water falls back.",
+      "marking_scheme": [
+        {
+          "step": "Level falls below the rim",
+          "marks": 1
+        },
+        {
+          "step": "Air enters and water falls back",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch09-t03"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch09_026",
+      "unit": "icse-10-chemistry-ch09",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Granulated zinc is dropped into dilute hydrochloric acid. The gas evolved and the salt formed are:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "chlorine and zinc oxide"
+        },
+        {
+          "id": "b",
+          "text_md": "hydrogen and zinc chloride"
+        },
+        {
+          "id": "c",
+          "text_md": "hydrogen chloride and zinc hydroxide"
+        },
+        {
+          "id": "d",
+          "text_md": "oxygen and zinc chloride"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Zn + 2HCl → ZnCl₂ + H₂ — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch09-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch09_027",
+      "unit": "icse-10-chemistry-ch09",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A jar of hydrogen chloride is held mouth-down over an open bottle of concentrated ammonia solution. The dense white fumes seen are of:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "ammonium chloride"
+        },
+        {
+          "id": "b",
+          "text_md": "ammonium hydroxide"
+        },
+        {
+          "id": "c",
+          "text_md": "chlorine"
+        },
+        {
+          "id": "d",
+          "text_md": "nitrogen"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "NH₃ + HCl → NH₄Cl, a white solid formed as fine particles — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch09-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch09_028",
+      "unit": "icse-10-chemistry-ch09",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Dilute hydrochloric acid is poured onto lumps of iron(II) sulphide. The gas given off is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "sulphur dioxide, which has a choking smell"
+        },
+        {
+          "id": "b",
+          "text_md": "hydrogen sulphide, which smells of rotten eggs"
+        },
+        {
+          "id": "c",
+          "text_md": "hydrogen, which is odourless"
+        },
+        {
+          "id": "d",
+          "text_md": "chlorine, which is greenish-yellow"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "FeS + 2HCl → FeCl₂ + H₂S — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch09-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch09_029",
+      "unit": "icse-10-chemistry-ch09",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which pair of substances gives a gas that turns orange acidified potassium dichromate paper green?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Sodium carbonate and dilute hydrochloric acid"
+        },
+        {
+          "id": "b",
+          "text_md": "Zinc and dilute hydrochloric acid"
+        },
+        {
+          "id": "c",
+          "text_md": "Copper(II) oxide and dilute hydrochloric acid"
+        },
+        {
+          "id": "d",
+          "text_md": "Sodium sulphite and dilute hydrochloric acid"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Na₂SO₃ + 2HCl → 2NaCl + H₂O + SO₂; sulphur dioxide reduces dichromate (orange) to a green chromium compound. The others give CO₂, H₂ or no gas — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch09-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch09_030",
+      "unit": "icse-10-chemistry-ch09",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Copper turnings are left in dilute hydrochloric acid for an hour, and no gas is seen. The reason is that copper:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "is above hydrogen in the activity series"
+        },
+        {
+          "id": "b",
+          "text_md": "forms a protective coat of copper chloride at once"
+        },
+        {
+          "id": "c",
+          "text_md": "reacts only with concentrated nitric acid in the cold"
+        },
+        {
+          "id": "d",
+          "text_md": "is below hydrogen in the activity series"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Metals below hydrogen cannot displace it from dilute acids — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch09-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch09_031",
+      "unit": "icse-10-chemistry-ch09",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which equation correctly shows the reaction of dilute hydrochloric acid with baking soda (sodium hydrogencarbonate)?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "NaHCO₃ + HCl → NaCl + H₂O + CO₂"
+        },
+        {
+          "id": "b",
+          "text_md": "NaHCO₃ + 2HCl → NaCl + H₂O + CO₂"
+        },
+        {
+          "id": "c",
+          "text_md": "NaHCO₃ + HCl → NaCl + H₂ + CO₂"
+        },
+        {
+          "id": "d",
+          "text_md": "2NaHCO₃ + HCl → Na₂CO₃ + NaCl + H₂O"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Only the first is balanced and gives the right products — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch09-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch09_032",
+      "unit": "icse-10-chemistry-ch09",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Copper reacts with dilute hydrochloric acid to give hydrogen.\n\n**Reason (R):** Copper is below hydrogen in the activity series.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "A is false (there is no reaction); R is true — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch09-t04"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch09_033",
+      "unit": "icse-10-chemistry-ch09",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write the balanced equation for the reaction between hydrogen chloride and ammonia gas.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "NH₃ + HCl → NH₄Cl."
+      },
+      "solution_md": "Equation.",
+      "marking_scheme": [
+        {
+          "step": "Balanced equation",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch09-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch09_034",
+      "unit": "icse-10-chemistry-ch09",
+      "language": "en",
+      "type": "short",
+      "stem_md": "A strip of magnesium fizzes when dropped into dilute hydrochloric acid. Write the balanced equation for this change.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Mg + 2HCl → MgCl₂ + H₂."
+      },
+      "solution_md": "Equation.",
+      "marking_scheme": [
+        {
+          "step": "Balanced equation",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch09-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch09_035",
+      "unit": "icse-10-chemistry-ch09",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write the balanced equation for the neutralisation of calcium hydroxide by dilute hydrochloric acid.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Ca(OH)₂ + 2HCl → CaCl₂ + 2H₂O."
+      },
+      "solution_md": "Equation.",
+      "marking_scheme": [
+        {
+          "step": "Balanced equation",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch09-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch09_036",
+      "unit": "icse-10-chemistry-ch09",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write the balanced equation for the action of dilute hydrochloric acid on iron(II) sulphide.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "FeS + 2HCl → FeCl₂ + H₂S."
+      },
+      "solution_md": "Equation.",
+      "marking_scheme": [
+        {
+          "step": "Balanced equation",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch09-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch09_037",
+      "unit": "icse-10-chemistry-ch09",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write the balanced equation for the action of dilute hydrochloric acid on sodium sulphite.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Na₂SO₃ + 2HCl → 2NaCl + H₂O + SO₂."
+      },
+      "solution_md": "Equation.",
+      "marking_scheme": [
+        {
+          "step": "Balanced equation",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch09-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch09_038",
+      "unit": "icse-10-chemistry-ch09",
+      "language": "en",
+      "type": "short",
+      "stem_md": "State one observation when dilute hydrochloric acid is poured onto marble chips.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Brisk effervescence: a colourless, odourless gas (carbon dioxide) is given off, which turns lime water milky."
+      },
+      "solution_md": "Effervescence of CO₂.",
+      "marking_scheme": [
+        {
+          "step": "Effervescence (CO₂)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch09-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch09_039",
+      "unit": "icse-10-chemistry-ch09",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Baking soda (sodium hydrogencarbonate) and black copper(II) oxide are each added to dilute hydrochloric acid. Write a balanced equation for each reaction: (a) baking soda; (b) copper(II) oxide.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) NaHCO₃ + HCl → NaCl + H₂O + CO₂. (b) CuO + 2HCl → CuCl₂ + H₂O."
+      },
+      "solution_md": "Two equations.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch09-t04"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch09_040",
+      "unit": "icse-10-chemistry-ch09",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write balanced equations for the reactions of dilute hydrochloric acid with (a) iron filings, (b) sodium carbonate and (c) potassium hydroxide solution.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Fe + 2HCl → FeCl₂ + H₂. (b) Na₂CO₃ + 2HCl → 2NaCl + H₂O + CO₂. (c) KOH + HCl → KCl + H₂O."
+      },
+      "solution_md": "Three equations.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch09-t04"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch09_041",
+      "unit": "icse-10-chemistry-ch09",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "What volume of hydrogen, measured at STP, is given off when 6.5 g of zinc reacts completely with excess dilute hydrochloric acid? Give the answer in litres. (Zn = 65; one mole of a gas occupies 22.4 L at STP)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 2.24,
+        "tolerance": 0.01,
+        "unit": "L"
+      },
+      "solution_md": "$\\ce{Zn + 2HCl -> ZnCl2 + H2}$: one mole of zinc gives one mole of hydrogen. Moles of zinc $= \\dfrac{6.5}{65} = 0.1$. Volume of hydrogen $= 0.1 \\times 22.4 = 2.24$, so 2.24 L.",
+      "marking_scheme": [
+        {
+          "step": "Moles of zinc",
+          "marks": 1
+        },
+        {
+          "step": "2.24 L",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch09-t04"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch09_042",
+      "unit": "icse-10-chemistry-ch09",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Aqua regia is prepared by mixing:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "three volumes of concentrated hydrochloric acid with one volume of concentrated nitric acid"
+        },
+        {
+          "id": "b",
+          "text_md": "one volume of concentrated hydrochloric acid with three volumes of concentrated nitric acid"
+        },
+        {
+          "id": "c",
+          "text_md": "three volumes of concentrated hydrochloric acid with one volume of concentrated sulphuric acid"
+        },
+        {
+          "id": "d",
+          "text_md": "equal volumes of concentrated hydrochloric acid and water"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch09-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch09_043",
+      "unit": "icse-10-chemistry-ch09",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A few drops of dilute hydrochloric acid are added to silver nitrate solution. The observation is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "a yellow precipitate that dissolves in dilute nitric acid"
+        },
+        {
+          "id": "b",
+          "text_md": "a pale blue precipitate"
+        },
+        {
+          "id": "c",
+          "text_md": "a curdy white precipitate that does not dissolve in dilute nitric acid"
+        },
+        {
+          "id": "d",
+          "text_md": "a white precipitate that dissolves in dilute nitric acid"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "AgNO₃ + HCl → AgCl + HNO₃; silver chloride is insoluble in dilute nitric acid — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch09-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch09_044",
+      "unit": "icse-10-chemistry-ch09",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Dilute hydrochloric acid is added to lead nitrate solution. A white precipitate forms, which dissolves when the mixture is heated. The precipitate is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "lead hydroxide"
+        },
+        {
+          "id": "b",
+          "text_md": "lead oxide"
+        },
+        {
+          "id": "c",
+          "text_md": "lead chloride"
+        },
+        {
+          "id": "d",
+          "text_md": "lead sulphate"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Pb(NO₃)₂ + 2HCl → PbCl₂ + 2HNO₃; lead chloride is soluble in hot water — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch09-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch09_045",
+      "unit": "icse-10-chemistry-ch09",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Gold does not dissolve in concentrated hydrochloric acid or in concentrated nitric acid alone, but it dissolves in aqua regia. This is because aqua regia produces:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "nascent hydrogen"
+        },
+        {
+          "id": "b",
+          "text_md": "oxygen gas"
+        },
+        {
+          "id": "c",
+          "text_md": "ammonia gas"
+        },
+        {
+          "id": "d",
+          "text_md": "nascent chlorine"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "HNO₃ + 3HCl → NOCl + 2H₂O + 2Cl; the nascent chlorine converts gold into a soluble chloride — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch09-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch09_046",
+      "unit": "icse-10-chemistry-ch09",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Aqua regia dissolves gold.\n\n**Reason (R):** Aqua regia contains three volumes of concentrated nitric acid to one volume of concentrated hydrochloric acid.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "A is true; R is false: the ratio is three volumes of hydrochloric acid to one of nitric acid — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch09-t05"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch09_047",
+      "unit": "icse-10-chemistry-ch09",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? Hydrogen chloride gas turns moist blue litmus paper red.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "t"
+        ]
+      },
+      "solution_md": "True: in the moisture it forms hydrochloric acid.",
+      "marking_scheme": [
+        {
+          "step": "True",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch09-t05"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch09_048",
+      "unit": "icse-10-chemistry-ch09",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? Lead chloride is insoluble in hot water.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "f"
+        ]
+      },
+      "solution_md": "False: lead chloride is insoluble in cold water but dissolves in hot water.",
+      "marking_scheme": [
+        {
+          "step": "False, with the correction",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch09-t05"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch09_049",
+      "unit": "icse-10-chemistry-ch09",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? The white precipitate of silver chloride dissolves in excess ammonium hydroxide solution.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "t"
+        ]
+      },
+      "solution_md": "True: silver chloride is insoluble in dilute nitric acid but soluble in excess ammonium hydroxide.",
+      "marking_scheme": [
+        {
+          "step": "True",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch09-t05"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch09_050",
+      "unit": "icse-10-chemistry-ch09",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "Aqua regia is a mixture of concentrated hydrochloric acid and concentrated ___ acid in the ratio 3 : 1 by volume.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "nitric"
+            ]
+          }
+        ]
+      },
+      "solution_md": "Concentrated **nitric** acid.",
+      "marking_scheme": [
+        {
+          "step": "Blank 1: \"nitric\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch09-t05"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch09_051",
+      "unit": "icse-10-chemistry-ch09",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write the balanced equation for the reaction of dilute hydrochloric acid with silver nitrate solution.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "AgNO₃ + HCl → AgCl + HNO₃."
+      },
+      "solution_md": "Equation.",
+      "marking_scheme": [
+        {
+          "step": "Balanced equation",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch09-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch09_052",
+      "unit": "icse-10-chemistry-ch09",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write the balanced equation for the reaction of dilute hydrochloric acid with lead nitrate solution.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Pb(NO₃)₂ + 2HCl → PbCl₂ + 2HNO₃."
+      },
+      "solution_md": "Equation.",
+      "marking_scheme": [
+        {
+          "step": "Balanced equation",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch09-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch09_053",
+      "unit": "icse-10-chemistry-ch09",
+      "language": "en",
+      "type": "short",
+      "stem_md": "State one use of aqua regia.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "To dissolve noble metals such as gold and platinum (for example, in testing or purifying gold)."
+      },
+      "solution_md": "Dissolving gold or platinum.",
+      "marking_scheme": [
+        {
+          "step": "One use",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch09-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch09_054",
+      "unit": "icse-10-chemistry-ch09",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Two unlabelled bottles hold dilute hydrochloric acid and dilute nitric acid. Explain how silver nitrate solution can be used to tell them apart, with an equation.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Add silver nitrate solution to a little of each acid. Hydrochloric acid gives a curdy white precipitate of silver chloride, insoluble in dilute nitric acid: AgNO₃ + HCl → AgCl + HNO₃. Nitric acid gives no precipitate."
+      },
+      "solution_md": "White precipitate only with hydrochloric acid.",
+      "marking_scheme": [
+        {
+          "step": "Observations for both acids",
+          "marks": 1
+        },
+        {
+          "step": "Balanced equation",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch09-t05"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch09_055",
+      "unit": "icse-10-chemistry-ch09",
+      "language": "en",
+      "type": "short",
+      "stem_md": "A colourless gas X fumes in moist air, turns moist blue litmus red and gives dense white fumes with a rod dipped in ammonia solution. A solution of X in water gives a curdy white precipitate with silver nitrate solution. (a) Identify X. (b) Write the equation for the white fumes. (c) Write the equation for the precipitate.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) X is hydrogen chloride. (b) NH₃ + HCl → NH₄Cl. (c) AgNO₃ + HCl → AgCl + HNO₃."
+      },
+      "solution_md": "HCl; two equations.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 2,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch09-t04",
+        "icse-10-chemistry-ch09-t05"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch09_056",
+      "unit": "icse-10-chemistry-ch09",
+      "language": "en",
+      "type": "short",
+      "stem_md": "(a) State the composition of aqua regia. (b) Write the equation that shows how aqua regia produces nascent chlorine. (c) Why can aqua regia dissolve gold when neither acid alone can?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Three volumes of concentrated hydrochloric acid and one volume of concentrated nitric acid. (b) HNO₃ + 3HCl → NOCl + 2H₂O + 2Cl. (c) Nitric acid oxidises hydrochloric acid to nascent (atomic) chlorine, which is very reactive and converts gold into soluble gold(III) chloride."
+      },
+      "solution_md": "Composition; equation; nascent chlorine.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 3,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch09-t05"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch09_057",
+      "unit": "icse-10-chemistry-ch09",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "Complete each sentence by choosing the correct word or words from the bracket.\n\n(a) Hydrogen chloride is collected by ___ (upward / downward) displacement of air.\n\n(b) Hydrogen chloride is dried by passing it through ___ (concentrated sulphuric acid / quicklime).\n\n(c) Hydrogen chloride and ammonia form dense white fumes of ___ (ammonium chloride / ammonium nitrate).",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "upward"
+            ]
+          },
+          {
+            "accepted": [
+              "concentrated sulphuric acid",
+              "conc. sulphuric acid",
+              "sulphuric acid"
+            ]
+          },
+          {
+            "accepted": [
+              "ammonium chloride"
+            ]
+          }
+        ]
+      },
+      "solution_md": "(a) **upward**; (b) **concentrated sulphuric acid**; (c) **ammonium chloride**.",
+      "marking_scheme": [
+        {
+          "step": "Blank 1: \"upward\"",
+          "marks": 1
+        },
+        {
+          "step": "Blank 2: \"concentrated sulphuric acid\"",
+          "marks": 1
+        },
+        {
+          "step": "Blank 3: \"ammonium chloride\"",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch09-t01",
+        "icse-10-chemistry-ch09-t04"
+      ],
+      "expected_time_sec": 135,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch09_058",
+      "unit": "icse-10-chemistry-ch09",
+      "language": "en",
+      "type": "match",
+      "stem_md": "Dilute hydrochloric acid is added to each substance in Column A. Match each with the gas in Column B that identifies the reaction.",
+      "options": [
+        {
+          "id": "1",
+          "text_md": "Zinc granules"
+        },
+        {
+          "id": "2",
+          "text_md": "Sodium carbonate"
+        },
+        {
+          "id": "3",
+          "text_md": "Iron(II) sulphide"
+        },
+        {
+          "id": "4",
+          "text_md": "Sodium sulphite"
+        }
+      ],
+      "match_right": [
+        {
+          "id": "p",
+          "text_md": "Hydrogen sulphide, which smells of rotten eggs"
+        },
+        {
+          "id": "q",
+          "text_md": "Hydrogen, which burns with a pop"
+        },
+        {
+          "id": "r",
+          "text_md": "Sulphur dioxide, which turns acidified potassium dichromate green"
+        },
+        {
+          "id": "s",
+          "text_md": "Carbon dioxide, which turns lime water milky"
+        }
+      ],
+      "answer": {
+        "pairs": [
+          {
+            "left_id": "1",
+            "right_id": "q"
+          },
+          {
+            "left_id": "2",
+            "right_id": "s"
+          },
+          {
+            "left_id": "3",
+            "right_id": "p"
+          },
+          {
+            "left_id": "4",
+            "right_id": "r"
+          }
+        ]
+      },
+      "solution_md": "Zinc → hydrogen; sodium carbonate → carbon dioxide; iron(II) sulphide → hydrogen sulphide; sodium sulphite → sulphur dioxide.",
+      "marking_scheme": [
+        {
+          "step": "1 → q",
+          "marks": 1
+        },
+        {
+          "step": "2 → s",
+          "marks": 1
+        },
+        {
+          "step": "3 → p",
+          "marks": 1
+        },
+        {
+          "step": "4 → r",
+          "marks": 1
+        }
+      ],
+      "marks": 4,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch09-t04",
+        "icse-10-chemistry-ch09-t05"
+      ],
+      "expected_time_sec": 160,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch09_059",
+      "unit": "icse-10-chemistry-ch09",
+      "language": "en",
+      "type": "match",
+      "stem_md": "Match each test in Column A with the observation in Column B.",
+      "options": [
+        {
+          "id": "1",
+          "text_md": "Moist blue litmus paper held in hydrogen chloride"
+        },
+        {
+          "id": "2",
+          "text_md": "Dilute HCl added to lead nitrate solution, then the mixture heated"
+        },
+        {
+          "id": "3",
+          "text_md": "Dilute HCl added to silver nitrate solution, then dilute nitric acid added"
+        },
+        {
+          "id": "4",
+          "text_md": "Dilute HCl warmed with black copper(II) oxide"
+        },
+        {
+          "id": "5",
+          "text_md": "Dilute HCl poured onto copper turnings"
+        }
+      ],
+      "match_right": [
+        {
+          "id": "p",
+          "text_md": "White precipitate that dissolves on heating"
+        },
+        {
+          "id": "q",
+          "text_md": "Solid dissolves to give a blue-green solution"
+        },
+        {
+          "id": "r",
+          "text_md": "No visible change"
+        },
+        {
+          "id": "s",
+          "text_md": "Turns red"
+        },
+        {
+          "id": "t",
+          "text_md": "Curdy white precipitate that does not dissolve"
+        }
+      ],
+      "answer": {
+        "pairs": [
+          {
+            "left_id": "1",
+            "right_id": "s"
+          },
+          {
+            "left_id": "2",
+            "right_id": "p"
+          },
+          {
+            "left_id": "3",
+            "right_id": "t"
+          },
+          {
+            "left_id": "4",
+            "right_id": "q"
+          },
+          {
+            "left_id": "5",
+            "right_id": "r"
+          }
+        ]
+      },
+      "solution_md": "Litmus → turns red; lead nitrate → white precipitate soluble on heating; silver nitrate → white precipitate insoluble in nitric acid; copper(II) oxide → blue-green solution of copper(II) chloride; copper → no change (copper is below hydrogen).",
+      "marking_scheme": [
+        {
+          "step": "1 → s",
+          "marks": 1
+        },
+        {
+          "step": "2 → p",
+          "marks": 1
+        },
+        {
+          "step": "3 → t",
+          "marks": 1
+        },
+        {
+          "step": "4 → q",
+          "marks": 1
+        },
+        {
+          "step": "5 → r",
+          "marks": 1
+        }
+      ],
+      "marks": 5,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch09-t04",
+        "icse-10-chemistry-ch09-t05"
+      ],
+      "expected_time_sec": 200,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch09_060",
+      "unit": "icse-10-chemistry-ch09",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Write the balanced equation for the laboratory preparation of hydrogen chloride from sodium chloride, and state the temperature condition. [2]\n\n(b) Name the drying agent used, and give a reason why quicklime is not used. [2]\n\n(c) Name the method of collecting the gas, give a reason for it, and state how you would know that the gas jar is full. [3]\n\n(d) Hydrogen chloride is dissolved in water to make hydrochloric acid. Describe the arrangement used, and explain how it prevents back suction. [3]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) NaCl + H₂SO₄ → NaHSO₄ + HCl; the mixture is heated below 200 °C.\n\n(b) Concentrated sulphuric acid. Quicklime is basic and reacts with hydrogen chloride (CaO + 2HCl → CaCl₂ + H₂O).\n\n(c) Upward displacement of air, because the gas is heavier than air (and too soluble to collect over water). A rod dipped in ammonia solution held at the mouth gives dense white fumes (or moist blue litmus turns red).\n\n(d) The gas is led into an inverted funnel whose rim just dips below the water in a beaker. If water rises into the funnel, the level in the beaker falls below the rim, air enters and the water falls back, so it cannot be sucked into the generating flask. The funnel also gives a large surface for absorption."
+      },
+      "solution_md": "Equation and condition; drying agent; collection and test; inverted funnel.",
+      "marking_scheme": [
+        {
+          "step": "(a) equation",
+          "marks": 1
+        },
+        {
+          "step": "(a) below 200 °C",
+          "marks": 1
+        },
+        {
+          "step": "(b) drying agent",
+          "marks": 1
+        },
+        {
+          "step": "(b) reason",
+          "marks": 1
+        },
+        {
+          "step": "(c) method",
+          "marks": 1
+        },
+        {
+          "step": "(c) reason",
+          "marks": 1
+        },
+        {
+          "step": "(c) test",
+          "marks": 1
+        },
+        {
+          "step": "(d) arrangement",
+          "marks": 1
+        },
+        {
+          "step": "(d) explanation",
+          "marks": 2
+        }
+      ],
+      "marks": 10,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch09-t01",
+        "icse-10-chemistry-ch09-t03"
+      ],
+      "expected_time_sec": 1080,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch09_061",
+      "unit": "icse-10-chemistry-ch09",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) State two physical properties of hydrogen chloride (other than colour). [2]\n\n(b) Describe an experiment to show that hydrogen chloride is heavier than air. [2]\n\n(c) Describe the fountain experiment, stating what you would see if the water in the trough contained blue litmus. [3]\n\n(d) A gas jar of hydrogen chloride is opened in moist air. (i) State what is seen at its mouth. (ii) Explain the observation. (iii) What does this show about the solubility of the gas? [3]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) It is heavier than air (vapour density 18.25); it is extremely soluble in water; it has a pungent, choking smell and fumes in moist air (any two).\n\n(b) Tilt an open jar of hydrogen chloride over an open jar of air, as if pouring a liquid; a rod dipped in ammonia solution held in the lower jar then gives dense white fumes.\n\n(c) A dry flask filled with dry hydrogen chloride is fitted with a cork and a long jet tube and clamped upside down with the tube dipping into water containing blue litmus. A few drops of water entering dissolve much gas, the pressure inside falls, and atmospheric pressure forces the water up the tube as a fountain; the blue litmus turns red.\n\n(d) (i) Misty white fumes. (ii) The gas dissolves in the water vapour of the air, forming tiny droplets of hydrochloric acid. (iii) Hydrogen chloride is very soluble in water."
+      },
+      "solution_md": "Two properties; pouring experiment; fountain; fuming in moist air.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 2
+        },
+        {
+          "step": "(b)",
+          "marks": 2
+        },
+        {
+          "step": "(c) set-up",
+          "marks": 1
+        },
+        {
+          "step": "(c) explanation",
+          "marks": 1
+        },
+        {
+          "step": "(c) observation",
+          "marks": 1
+        },
+        {
+          "step": "(d)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(d)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(d)(iii)",
+          "marks": 1
+        }
+      ],
+      "marks": 10,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch09-t02",
+        "icse-10-chemistry-ch09-t04"
+      ],
+      "expected_time_sec": 1080,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch09_062",
+      "unit": "icse-10-chemistry-ch09",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Write balanced equations for the reactions of dilute hydrochloric acid with (i) zinc and (ii) iron. [2]\n\n(b) Write balanced equations for the reactions of dilute hydrochloric acid with (i) calcium carbonate and (ii) sodium hydrogencarbonate. [2]\n\n(c) Write the balanced equation for the action of dilute hydrochloric acid on sodium sulphite, and give one test for the gas formed. [3]\n\n(d) (i) Explain why silver does not react with dilute hydrochloric acid. (ii) Calculate the volume of hydrogen at STP given off when 3.25 g of zinc reacts with excess dilute hydrochloric acid. (Zn = 65; molar volume 22.4 L) [3]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) (i) Zn + 2HCl → ZnCl₂ + H₂. (ii) Fe + 2HCl → FeCl₂ + H₂.\n\n(b) (i) CaCO₃ + 2HCl → CaCl₂ + H₂O + CO₂. (ii) NaHCO₃ + HCl → NaCl + H₂O + CO₂.\n\n(c) Na₂SO₃ + 2HCl → 2NaCl + H₂O + SO₂. Sulphur dioxide turns orange acidified potassium dichromate paper green (or decolourises acidified potassium permanganate).\n\n(d) (i) Silver is below hydrogen in the activity series, so it cannot displace hydrogen from the acid. (ii) One mole of zinc gives one mole of hydrogen. Moles of zinc $= \\dfrac{3.25}{65} = 0.05$; volume of hydrogen $= 0.05 \\times 22.4 = 1.12$, that is 1.12 L."
+      },
+      "solution_md": "Six equations and a test; activity series; 1.12 L of hydrogen.",
+      "marking_scheme": [
+        {
+          "step": "(a)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(a)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(b)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(b)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(c) equation",
+          "marks": 2
+        },
+        {
+          "step": "(c) test",
+          "marks": 1
+        },
+        {
+          "step": "(d)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(d)(ii) moles",
+          "marks": 1
+        },
+        {
+          "step": "(d)(ii) 1.12 L",
+          "marks": 1
+        }
+      ],
+      "marks": 10,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch09-t04"
+      ],
+      "expected_time_sec": 1080,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch09_063",
+      "unit": "icse-10-chemistry-ch09",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) State the composition of aqua regia and one use of it. [2]\n\n(b) Write the balanced equation for the reaction of dilute hydrochloric acid with silver nitrate solution, and state the observation. [2]\n\n(c) Dilute hydrochloric acid is added to lead nitrate solution. (i) State the observation. (ii) Write the balanced equation. (iii) What happens when the mixture is heated? [3]\n\n(d) Give one test, with the result, to identify each of: (i) hydrogen chloride gas; (ii) hydrochloric acid; (iii) chloride ions in a solution of sodium chloride. [3]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Three volumes of concentrated hydrochloric acid and one volume of concentrated nitric acid; used to dissolve gold and platinum.\n\n(b) AgNO₃ + HCl → AgCl + HNO₃; a curdy white precipitate forms, insoluble in dilute nitric acid.\n\n(c) (i) A white precipitate. (ii) Pb(NO₃)₂ + 2HCl → PbCl₂ + 2HNO₃. (iii) The precipitate dissolves, because lead chloride is soluble in hot water.\n\n(d) (i) A rod dipped in ammonia solution gives dense white fumes (or moist blue litmus turns red). (ii) It turns blue litmus red and gives a curdy white precipitate with silver nitrate solution, insoluble in dilute nitric acid. (iii) Acidify with dilute nitric acid and add silver nitrate solution: a curdy white precipitate, soluble in excess ammonium hydroxide."
+      },
+      "solution_md": "Aqua regia; silver nitrate; lead nitrate; three tests.",
+      "marking_scheme": [
+        {
+          "step": "(a) composition",
+          "marks": 1
+        },
+        {
+          "step": "(a) use",
+          "marks": 1
+        },
+        {
+          "step": "(b) equation",
+          "marks": 1
+        },
+        {
+          "step": "(b) observation",
+          "marks": 1
+        },
+        {
+          "step": "(c)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(iii)",
+          "marks": 1
+        },
+        {
+          "step": "(d)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(d)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(d)(iii)",
+          "marks": 1
+        }
+      ],
+      "marks": 10,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch09-t05"
+      ],
+      "expected_time_sec": 1080,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch09_064",
+      "unit": "icse-10-chemistry-ch09",
+      "language": "en",
+      "type": "long",
+      "stem_md": "Four test tubes, A, B, C and D, contain sodium carbonate, iron(II) sulphide, zinc granules and sodium sulphite, not in that order. Dilute hydrochloric acid is added to each.\n\n(a) The gas from A burns with a pop. Identify A and write the equation. [2]\n\n(b) The gas from B turns lime water milky but has no smell. Identify B and write the equation. [2]\n\n(c) C and D both give gases with a smell. The gas from C turns lead acetate paper black; the gas from D turns acidified potassium dichromate green but not lead acetate paper. Identify C and D and name both gases. [3]\n\n(d) Silver nitrate solution is added to the liquid left in B after the reaction. State the observation, write the equation for it, and explain why dilute nitric acid is added before the silver nitrate in such tests. [3]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) A is zinc: Zn + 2HCl → ZnCl₂ + H₂.\n\n(b) B is sodium carbonate: Na₂CO₃ + 2HCl → 2NaCl + H₂O + CO₂.\n\n(c) C is iron(II) sulphide, giving hydrogen sulphide; D is sodium sulphite, giving sulphur dioxide.\n\n(d) A curdy white precipitate: NaCl + AgNO₃ → AgCl + NaNO₃. Dilute nitric acid removes carbonate (and sulphite) ions, which would otherwise also give a white precipitate with silver nitrate; silver chloride alone stays undissolved in it."
+      },
+      "solution_md": "Identify from the gases; chloride test.",
+      "marking_scheme": [
+        {
+          "step": "(a) identity",
+          "marks": 1
+        },
+        {
+          "step": "(a) equation",
+          "marks": 1
+        },
+        {
+          "step": "(b) identity",
+          "marks": 1
+        },
+        {
+          "step": "(b) equation",
+          "marks": 1
+        },
+        {
+          "step": "(c) C and its gas",
+          "marks": 1.5
+        },
+        {
+          "step": "(c) D and its gas",
+          "marks": 1.5
+        },
+        {
+          "step": "(d) observation",
+          "marks": 1
+        },
+        {
+          "step": "(d) equation",
+          "marks": 1
+        },
+        {
+          "step": "(d) reason",
+          "marks": 1
+        }
+      ],
+      "marks": 10,
+      "difficulty": 4,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch09-t04",
+        "icse-10-chemistry-ch09-t05"
+      ],
+      "expected_time_sec": 1080,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    }
+  ],
+  "build": {
+    "run_id": null,
+    "checks": {
+      "katex_mhchem": "24 math strings parsed with KaTeX 0.19.0 + mhchem (throwOnError, strict \"error\"), 0 failures",
+      "svg_allowlist": "3 SVG visuals (3 distinct diagrams) checked with saxes against svg-allowlist.ts: elements, attributes, class pattern, fragment-only refs, no style, palette incl. named hues, viewBox, title, per-page unique ids — 0 failures",
+      "narration": "30 slides, 10–67 words (mean 49), no symbols, formulae or unit abbreviations",
+      "resolve": "3/3 scripted re-solve checks pass",
+      "chemistry_facts": "Laboratory preparation of hydrogen chloride below 200 °C with concentrated sulphuric acid as drying agent and upward displacement of air, vapour density 18.25, the fountain experiment, the inverted-funnel arrangement, reactions with ammonia, metals, oxides, hydroxides, carbonates, hydrogencarbonates, sulphides and sulphites, aqua regia (3 : 1) and nascent chlorine, and the silver nitrate and lead nitrate precipitates, checked against the ICSE 2027 syllabus (Class X, section 8A); every equation balanced by atom count",
+      "content_gate": "npm test -w @soyl/content-templates: all checks pass for this chapter",
+      "verifier_pass": "2026-11-01: every question re-solved from its stem by the author; every numerical re-computed by the build script",
+      "pipeline_lint": "npm run content -- lint --exemplars: 0 errors, 0 warnings"
+    }
+  }
+}

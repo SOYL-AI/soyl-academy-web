@@ -1,0 +1,4985 @@
+{
+  "unit": "icse-10-chemistry-ch11",
+  "version": 1,
+  "academic_year": "2026-27",
+  "created_at": "2026-11-01T00:00:00+05:30",
+  "decks": [
+    {
+      "unit": "icse-10-chemistry-ch11",
+      "part": 1,
+      "version": 1,
+      "title": "Nitric Acid — Part 1: Laboratory preparation and Ostwald’s process",
+      "language": "en",
+      "goals": [
+        "Write the equation for preparing nitric acid from potassium or sodium nitrate",
+        "Describe the all-glass apparatus and explain the precautions taken",
+        "Explain why concentrated nitric acid often looks yellow",
+        "Write the equations, with conditions, for Ostwald’s process"
+      ],
+      "slides": [
+        {
+          "id": "s01",
+          "layout": "title",
+          "heading": "Aqua fortis: strong water",
+          "body_md": "Part 1 — Nitric acid, HNO₃, was once called **aqua fortis** (strong water) because it attacks most metals. It is a **strong acid** and a **strong oxidising agent**, and it is made in huge amounts for **fertilisers** and **explosives**.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Property",
+                "Nitric acid"
+              ],
+              "rows": [
+                [
+                  "Formula",
+                  "HNO₃ (monobasic)"
+                ],
+                [
+                  "Pure acid",
+                  "Colourless, fuming liquid"
+                ],
+                [
+                  "Laboratory concentrated acid",
+                  "Often pale yellow"
+                ],
+                [
+                  "Main uses",
+                  "Fertilisers such as ammonium nitrate, explosives, dyes"
+                ]
+              ]
+            },
+            "alt": "Table of the formula, appearance and uses of nitric acid"
+          },
+          "math": [],
+          "narration": "Namaste! Nitric acid was once called strong water, because it dissolves most metals. It is a strong acid, and also a powerful oxidising agent. Factories make it in enormous quantities, mainly to turn into fertilisers such as ammonium nitrate, and also for explosives and dyes. In this part we prepare it in the laboratory and see how it is made on a large scale.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s02",
+          "layout": "concept",
+          "heading": "Laboratory preparation",
+          "body_md": "**Potassium nitrate** (or sodium nitrate) is heated gently with **concentrated sulphuric acid**. Sulphuric acid is **less volatile** (higher boiling) than nitric acid, so it drives the more volatile nitric acid out as vapour, which is then condensed.\n\nWith sodium nitrate: NaNO₃ + H₂SO₄ → NaHSO₄ + HNO₃.",
+          "bullets": [],
+          "visual": {
+            "kind": "chem",
+            "spec": {
+              "equation": "KNO3 + H2SO4 -> KHSO4 + HNO3"
+            },
+            "alt": "Equation: potassium nitrate plus sulphuric acid gives potassium hydrogen sulphate plus nitric acid",
+            "caption": "Below 200 °C"
+          },
+          "math": [],
+          "narration": "In the laboratory, potassium nitrate is warmed with concentrated sulphuric acid. Sulphuric acid has a much higher boiling point than nitric acid, so the nitric acid formed escapes as a vapour and can be condensed. The other product is potassium hydrogen sulphate. Sodium nitrate works in exactly the same way, giving sodium hydrogen sulphate.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s03",
+          "layout": "diagram",
+          "heading": "An all-glass apparatus",
+          "body_md": "- A **glass retort** with a **glass stopper** holds the mixture.\n- The retort neck leads into a **receiver** kept **cold** with running water.\n- **No cork or rubber**: nitric acid vapour **attacks** them.\n- Heat **gently**, keeping the temperature **below 200 °C**.",
+          "bullets": [],
+          "visual": {
+            "kind": "svg",
+            "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 580 340\" role=\"img\" aria-label=\"Schematic of the laboratory preparation of nitric acid. A glass retort with a glass stopper holds potassium nitrate and concentrated sulphuric acid and stands on a wire gauze over a burner; the mixture is heated gently, below two hundred degrees Celsius. The long glass neck of the retort slopes down into a round receiver flask that sits in a basin of cold water, with more cold water running over the flask from a tap. Nitric acid vapour passes along the neck and condenses in the cooled receiver as a pale yellow liquid. No cork or rubber is used anywhere, because nitric acid vapour attacks them.\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>Schematic of the laboratory preparation of nitric acid. A glass retort with a glass stopper holds potassium nitrate and concentrated sulphuric acid and stands on a wire gauze over a burner; the mixture is heated gently, below two hundred degrees Celsius. The long glass neck of the retort slopes down into a round receiver flask that sits in a basin of cold water, with more cold water running over the flask from a tap. Nitric acid vapour passes along the neck and condenses in the cooled receiver as a pale yellow liquid. No cork or rubber is used anywhere, because nitric acid vapour attacks them.</title><circle cx=\"140\" cy=\"165\" r=\"52\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"/><path d=\"M 93 188 Q 140 236 187 188 Z\" fill=\"var(--diagram-muted)\" stroke=\"none\" stroke-width=\"0\" fill-opacity=\"0.35\"/><rect x=\"130\" y=\"100\" width=\"20\" height=\"16\" fill=\"var(--diagram-muted)\" stroke=\"currentColor\" stroke-width=\"1.5\" fill-opacity=\"0.3\"/><path d=\"M 132 116 L 133 122 M 148 116 L 147 122\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"/><path d=\"M 180 132 L 446 236\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/><path d=\"M 190 152 L 444 250\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/><line x1=\"250\" y1=\"170\" x2=\"315.5\" y2=\"195.3\" stroke=\"var(--diagram-accent)\" stroke-width=\"1.5\"/><polygon points=\"320,197 314,197.3 315.8,192.7\" fill=\"var(--diagram-accent)\" stroke=\"none\"/><line x1=\"84\" y1=\"222\" x2=\"196\" y2=\"222\" stroke=\"currentColor\" stroke-width=\"2\"/><path d=\"M 96 222 L 88 300 M 184 222 L 192 300\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"/><path d=\"M 140 268 Q 131 254 140 238 Q 149 254 140 268\" fill=\"var(--diagram-red)\" stroke=\"var(--diagram-red)\" stroke-width=\"1.5\" fill-opacity=\"0.3\"/><rect x=\"132\" y=\"268\" width=\"16\" height=\"32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"/><path d=\"M 396 228 L 396 318 L 566 318 L 566 228\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"/><rect x=\"398\" y=\"246\" width=\"166\" height=\"70\" fill=\"var(--diagram-blue)\" stroke=\"none\" stroke-width=\"0\" fill-opacity=\"0.15\"/><line x1=\"398\" y1=\"246\" x2=\"564\" y2=\"246\" stroke=\"var(--diagram-blue)\" stroke-width=\"1\"/><circle cx=\"486\" cy=\"274\" r=\"34\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"/><path d=\"M 462 250 L 440 232 M 470 242 L 450 226\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"/><path d=\"M 455 286 Q 486 314 517 286 Z\" fill=\"var(--diagram-yellow)\" stroke=\"none\" stroke-width=\"0\" fill-opacity=\"0.45\"/><path d=\"M 520 150 L 520 170 L 500 170\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"500\" y1=\"176\" x2=\"494.5\" y2=\"227.2\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.5\"/><polygon points=\"494,232 492.2,226.3 497,226.8\" fill=\"var(--diagram-blue)\" stroke=\"none\"/><text x=\"162\" y=\"96\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">glass stopper</text><line x1=\"150\" y1=\"106\" x2=\"160\" y2=\"98\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\"/><text x=\"8\" y=\"120\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">KNO₃ +</text><text x=\"8\" y=\"132\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">conc. H₂SO₄</text><line x1=\"60\" y1=\"136\" x2=\"104\" y2=\"196\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\"/><text x=\"8\" y=\"256\" fill=\"var(--diagram-red)\" stroke=\"none\" font-size=\"10\">heat gently:</text><text x=\"8\" y=\"268\" fill=\"var(--diagram-red)\" stroke=\"none\" font-size=\"10\">below 200 °C</text><text x=\"250\" y=\"150\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">glass retort neck</text><text x=\"300\" y=\"222\" fill=\"var(--diagram-accent)\" stroke=\"none\" font-size=\"10\">HNO₃ vapour</text><text x=\"528\" y=\"150\" fill=\"var(--diagram-blue)\" stroke=\"none\" font-size=\"10\">cold</text><text x=\"528\" y=\"162\" fill=\"var(--diagram-blue)\" stroke=\"none\" font-size=\"10\">water</text><text x=\"404\" y=\"334\" fill=\"var(--diagram-muted)\" stroke=\"none\" font-size=\"10\">receiver in cold water: nitric acid collects</text><text x=\"250\" y=\"40\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\">All-glass apparatus: no cork or rubber</text></svg>",
+            "alt": "All-glass apparatus for preparing nitric acid: a stoppered glass retort of potassium nitrate and concentrated sulphuric acid heated gently, its neck leading into a receiver cooled by water"
+          },
+          "math": [],
+          "narration": "The whole apparatus is made of glass. The mixture is heated in a glass retort closed with a glass stopper, and its long neck leads into a receiver flask cooled by cold water. Nitric acid vapour is so corrosive that it attacks cork and rubber, so neither is used anywhere. The vapour condenses in the cold receiver as a slightly yellow liquid.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s04",
+          "layout": "check",
+          "heading": "Quick check: the apparatus",
+          "body_md": "Explain a feature of the apparatus used to prepare nitric acid.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Think about what hot nitric acid vapour does to cork and rubber stoppers.",
+          "check_question_id": "q_icse10chem_ch11_001",
+          "audio": null
+        },
+        {
+          "id": "s05",
+          "layout": "concept",
+          "heading": "Why keep the temperature below 200 °C?",
+          "body_md": "At higher temperatures the acid salt reacts further, which would need much more heat:\n\nKNO₃ + KHSO₄ → K₂SO₄ + HNO₃ (needs a high temperature)\n\nWe avoid this because:",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Reason",
+                "Explanation"
+              ],
+              "rows": [
+                [
+                  "Nitric acid decomposes",
+                  "Strong heat breaks it down into nitrogen dioxide, water and oxygen"
+                ],
+                [
+                  "Glass may crack",
+                  "The retort could break at very high temperatures"
+                ],
+                [
+                  "Hard residue",
+                  "Potassium sulphate forms a hard crust that is difficult to remove"
+                ],
+                [
+                  "Wasted fuel",
+                  "More heat gives little extra acid"
+                ]
+              ]
+            },
+            "alt": "Table of four reasons for keeping the temperature below two hundred degrees Celsius"
+          },
+          "math": [],
+          "narration": "The mixture is heated gently, below two hundred degrees Celsius. At a higher temperature, the acid salt left behind would react with more nitrate, but that needs strong heating. Strong heat would decompose some of the nitric acid, could crack the glass retort, would leave a hard crust of potassium sulphate that is difficult to remove, and would waste fuel.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s06",
+          "layout": "example",
+          "heading": "Worked example: how much acid?",
+          "body_md": "**Problem.** What mass of nitric acid can be obtained from 50.5 g of potassium nitrate, heated with excess concentrated sulphuric acid below 200 °C? (K = 39, N = 14, O = 16, H = 1)\n\n**Step 1.** KNO₃ + H₂SO₄ → KHSO₄ + HNO₃: 1 mole KNO₃ gives 1 mole HNO₃.\n\n**Step 2.** KNO₃ = 39 + 14 + 48 = 101; moles = 50.5 ÷ 101 = 0.5.\n\n**Step 3.** HNO₃ = 1 + 14 + 48 = 63; mass = 0.5 × 63 = **31.5 g**.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Quantity",
+                "Value"
+              ],
+              "rows": [
+                [
+                  "Molar mass of KNO₃",
+                  "101"
+                ],
+                [
+                  "Moles of KNO₃",
+                  "0.5"
+                ],
+                [
+                  "Moles of HNO₃",
+                  "0.5"
+                ],
+                [
+                  "Mass of HNO₃ (molar mass 63)",
+                  "31.5 g"
+                ]
+              ]
+            },
+            "alt": "Table of the steps from 50.5 grams of potassium nitrate to 31.5 grams of nitric acid"
+          },
+          "math": [],
+          "narration": "The equation shows one unit of potassium nitrate giving one unit of nitric acid. The molar mass of potassium nitrate is one hundred and one, so fifty point five grams is half a mole. Half a mole of nitric acid, whose molar mass is sixty three, has a mass of thirty one point five grams.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s07",
+          "layout": "concept",
+          "heading": "Why the acid looks yellow",
+          "body_md": "Nitric acid **decomposes** slightly on heating or in **sunlight**. The **reddish-brown nitrogen dioxide** formed dissolves in the acid and makes it **yellow**. It is stored in **dark brown bottles**.\n\nThe yellow colour can be removed by **bubbling dry air** (or carbon dioxide) through the **warm** acid, which sweeps out the NO₂, or by **adding water**, which converts the dissolved NO₂ into nitric acid.",
+          "bullets": [],
+          "visual": {
+            "kind": "chem",
+            "spec": {
+              "equation": "4HNO3 -> 4NO2 + 2H2O + O2"
+            },
+            "alt": "Equation: four nitric acid gives four nitrogen dioxide plus two water plus oxygen",
+            "caption": "Decomposition by heat or light"
+          },
+          "math": [],
+          "narration": "Pure nitric acid is colourless, but the acid in the laboratory often looks yellow. Heat and sunlight break a little of it down into nitrogen dioxide, water and oxygen. The reddish brown nitrogen dioxide dissolves in the acid and colours it yellow. That is why nitric acid is kept in brown bottles. Blowing dry air through the warm acid removes the colour.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s08",
+          "layout": "check",
+          "heading": "Quick check: the yellow colour",
+          "body_md": "Explain why a bottle of concentrated nitric acid turns yellow.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Which coloured gas does nitric acid give off when light falls on it?",
+          "check_question_id": "q_icse10chem_ch11_002",
+          "audio": null
+        },
+        {
+          "id": "s09",
+          "layout": "concept",
+          "heading": "Ostwald’s process: step 1",
+          "body_md": "**Dry ammonia** and **air** (about **1 : 10** by volume) are passed over a **platinum gauze** catalyst at about **800 °C**. Ammonia is oxidised to **nitric oxide**. The reaction is **exothermic**, so once started it keeps the gauze **red-hot** without outside heating.",
+          "bullets": [],
+          "visual": {
+            "kind": "chem",
+            "spec": {
+              "equation": "4NH3 + 5O2 -> 4NO + 6H2O"
+            },
+            "alt": "Equation: four ammonia plus five oxygen gives four nitric oxide plus six water",
+            "caption": "Platinum gauze, about 800 °C"
+          },
+          "math": [],
+          "narration": "Industry makes nitric acid by Ostwald’s process. Dry ammonia mixed with about ten times its volume of air is passed over a platinum gauze heated to about eight hundred degrees Celsius. The ammonia is oxidised to nitric oxide and steam. The reaction gives out heat, so after it starts, the gauze stays red hot on its own.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s10",
+          "layout": "concept",
+          "heading": "Ostwald’s process: steps 2 and 3",
+          "body_md": "**Step 2.** On cooling, nitric oxide combines with more oxygen to give **nitrogen dioxide**: 2NO + O₂ → 2NO₂.\n\n**Step 3.** Nitrogen dioxide is **absorbed in water** in the presence of **excess air** to give nitric acid: 4NO₂ + 2H₂O + O₂ → 4HNO₃.\n\nOverall, one molecule of NH₃ gives one molecule of HNO₃.",
+          "bullets": [],
+          "visual": {
+            "kind": "flow",
+            "spec": {
+              "direction": "LR",
+              "nodes": [
+                {
+                  "id": "a",
+                  "label": "NH₃ + air (1 : 10)"
+                },
+                {
+                  "id": "b",
+                  "label": "Pt gauze, about 800 °C"
+                },
+                {
+                  "id": "c",
+                  "label": "Nitric oxide, NO"
+                },
+                {
+                  "id": "d",
+                  "label": "+ O₂ on cooling: NO₂"
+                },
+                {
+                  "id": "e",
+                  "label": "+ water and air: HNO₃"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "a",
+                  "to": "b"
+                },
+                {
+                  "from": "b",
+                  "to": "c",
+                  "label": "step 1"
+                },
+                {
+                  "from": "c",
+                  "to": "d",
+                  "label": "step 2"
+                },
+                {
+                  "from": "d",
+                  "to": "e",
+                  "label": "step 3"
+                }
+              ]
+            },
+            "alt": "Flow of the three steps of Ostwald’s process from ammonia and air to nitric acid"
+          },
+          "math": [],
+          "narration": "The nitric oxide is cooled, and it combines with more oxygen from the air to form reddish brown nitrogen dioxide. This gas is then dissolved in water while extra air is supplied, which gives nitric acid. Follow the nitrogen atom: one ammonia molecule ends up as one nitric acid molecule.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s11",
+          "layout": "example",
+          "heading": "Worked example: acid from ammonia",
+          "body_md": "**Problem.** In Ostwald’s process, what mass of nitric acid can be made from 6.8 g of ammonia, assuming complete conversion? (N = 14, H = 1, O = 16)\n\n**Step 1.** Follow the nitrogen: 4NH₃ → 4NO → 4NO₂ → 4HNO₃, so 1 mole NH₃ gives 1 mole HNO₃.\n\n**Step 2.** NH₃ = 17; moles = 6.8 ÷ 17 = 0.4.\n\n**Step 3.** Mass of HNO₃ = 0.4 × 63 = **25.2 g**.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Quantity",
+                "Value"
+              ],
+              "rows": [
+                [
+                  "Molar mass of NH₃",
+                  "17"
+                ],
+                [
+                  "Moles of NH₃",
+                  "0.4"
+                ],
+                [
+                  "Moles of HNO₃ (1 : 1)",
+                  "0.4"
+                ],
+                [
+                  "Mass of HNO₃",
+                  "25.2 g"
+                ]
+              ]
+            },
+            "alt": "Table of the steps from 6.8 grams of ammonia to 25.2 grams of nitric acid"
+          },
+          "math": [],
+          "narration": "Look at the three equations together. Four ammonia molecules give four nitric oxide, then four nitrogen dioxide, then four nitric acid, so the ratio is one to one. Six point eight grams of ammonia is zero point four mole, since its molar mass is seventeen. Zero point four mole of nitric acid has a mass of twenty five point two grams.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s12",
+          "layout": "check",
+          "heading": "Quick check: Ostwald’s process",
+          "body_md": "Recall the catalyst and conditions of the first step.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Which metal gauze is used to oxidise ammonia, and at roughly what temperature?",
+          "check_question_id": "q_icse10chem_ch11_017",
+          "audio": null
+        },
+        {
+          "id": "s13",
+          "layout": "concept",
+          "heading": "Physical properties",
+          "body_md": "Pure nitric acid is a **colourless, fuming** liquid with a **choking smell**, **heavier than water**, and it **mixes with water in all proportions**. It is **corrosive**: it stains skin **yellow** and burns it, so it is handled with great care.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Property",
+                "Description"
+              ],
+              "rows": [
+                [
+                  "Colour",
+                  "Colourless when pure; yellow when it holds dissolved NO₂"
+                ],
+                [
+                  "Smell",
+                  "Choking, pungent"
+                ],
+                [
+                  "Density",
+                  "Heavier than water"
+                ],
+                [
+                  "Solubility",
+                  "Mixes with water in all proportions"
+                ],
+                [
+                  "Action on skin",
+                  "Corrosive; leaves yellow stains"
+                ]
+              ]
+            },
+            "alt": "Table of the physical properties of nitric acid"
+          },
+          "math": [],
+          "narration": "Pure nitric acid is a colourless liquid that fumes in moist air and has a choking smell. It is heavier than water and mixes with it in any amount. It is very corrosive: a drop on the skin burns it and leaves a yellow stain, so it must always be handled with care.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s14",
+          "layout": "summary",
+          "heading": "Summary: Part 1",
+          "body_md": "",
+          "bullets": [
+            "Laboratory: KNO₃ + H₂SO₄ → KHSO₄ + HNO₃, heated below 200 °C.",
+            "All-glass apparatus with a cooled receiver; no cork or rubber.",
+            "Yellow colour: dissolved NO₂ from decomposition; store in brown bottles.",
+            "Ostwald: 4NH₃ + 5O₂ → 4NO + 6H₂O (Pt, about 800 °C); 2NO + O₂ → 2NO₂; 4NO₂ + 2H₂O + O₂ → 4HNO₃."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Process",
+                "Raw materials",
+                "Key condition"
+              ],
+              "rows": [
+                [
+                  "Laboratory",
+                  "KNO₃ (or NaNO₃) and conc. H₂SO₄",
+                  "Below 200 °C, all-glass"
+                ],
+                [
+                  "Ostwald’s process",
+                  "Ammonia, air, water",
+                  "Platinum gauze, about 800 °C"
+                ]
+              ]
+            },
+            "alt": "Summary table comparing the laboratory preparation and Ostwald’s process"
+          },
+          "math": [],
+          "narration": "Let us sum up Part 1. In the laboratory, potassium nitrate is heated gently with concentrated sulphuric acid in an all glass apparatus, below two hundred degrees Celsius. The acid looks yellow because of dissolved nitrogen dioxide. In Ostwald’s process, ammonia is oxidised over hot platinum to nitric oxide, which becomes nitrogen dioxide and then nitric acid.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s15",
+          "layout": "exam-tips",
+          "heading": "Exam tips: Part 1",
+          "body_md": "",
+          "bullets": [
+            "Write KHSO₄ (not K₂SO₄) as the product below 200 °C.",
+            "Give two reasons for “all-glass”: the vapour attacks cork and rubber.",
+            "Quote conditions with each Ostwald equation: platinum, about 800 °C, ammonia to air 1 : 10.",
+            "Plant details are not needed: equations with conditions are enough."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Slip",
+                "Fix"
+              ],
+              "rows": [
+                [
+                  "KNO₃ + H₂SO₄ → K₂SO₄ + HNO₃",
+                  "Below 200 °C the product is KHSO₄"
+                ],
+                [
+                  "Catalyst: iron",
+                  "Platinum (iron is for Haber’s process)"
+                ],
+                [
+                  "NO₂ dissolved in water only",
+                  "Water and oxygen (air) are both needed"
+                ]
+              ]
+            },
+            "alt": "Table of three common slips in Part 1 and their fixes"
+          },
+          "math": [],
+          "narration": "Some tips. Below two hundred degrees Celsius the product is potassium hydrogen sulphate, so do not write potassium sulphate. Explain the all glass apparatus by saying that the vapour attacks cork and rubber. In Ostwald’s process, the catalyst is platinum, not iron, and the last step needs both water and oxygen.",
+          "check_question_id": null,
+          "audio": null
+        }
+      ],
+      "status": "draft",
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "unit": "icse-10-chemistry-ch11",
+      "part": 2,
+      "version": 1,
+      "title": "Nitric Acid — Part 2: Oxidising and acidic properties, and tests",
+      "language": "en",
+      "goals": [
+        "Explain why nitric acid is a strong oxidising agent",
+        "Write equations for concentrated and dilute nitric acid with copper, and for the concentrated acid with carbon and sulphur",
+        "Explain why only very dilute nitric acid gives hydrogen, and with which metals",
+        "Write equations for nitric acid with bases, carbonates, hydrogen carbonates and sulphites, and describe tests for the acid"
+      ],
+      "slides": [
+        {
+          "id": "s01",
+          "layout": "title",
+          "heading": "Two personalities",
+          "body_md": "Part 2 — Nitric acid behaves both as an **acid** (it gives H⁺ ions) and as an **oxidising agent** (it gives oxygen). Which one wins depends on the **concentration** and on what it meets.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Behaviour",
+                "Typical reaction",
+                "Usual products"
+              ],
+              "rows": [
+                [
+                  "Oxidising agent",
+                  "With copper, carbon, sulphur",
+                  "A nitrate or oxide, water and NO₂ or NO"
+                ],
+                [
+                  "Acid",
+                  "With bases, carbonates, sulphites",
+                  "A nitrate, water (and CO₂ or SO₂)"
+                ],
+                [
+                  "Acid giving hydrogen",
+                  "Only very dilute acid with Mg or Mn",
+                  "A nitrate and hydrogen"
+                ]
+              ]
+            },
+            "alt": "Table of the two kinds of behaviour of nitric acid with typical reactions and products"
+          },
+          "math": [],
+          "narration": "Nitric acid has two personalities. As an acid, it gives hydrogen ions and reacts with bases and carbonates like any other acid. As an oxidising agent, it gives oxygen, which attacks metals and non metals, and nitrogen dioxide or nitric oxide comes off. The concentration of the acid decides which behaviour we see.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s02",
+          "layout": "concept",
+          "heading": "Why it oxidises",
+          "body_md": "Nitric acid **decomposes to give oxygen**, which oxidises the substance it meets:\n\n- **Concentrated acid:** 2HNO₃ → H₂O + 2NO₂ + [O], one atom of oxygen for every two molecules of acid\n- **Dilute acid:** 2HNO₃ → H₂O + 2NO + 3[O], three atoms of oxygen for every two molecules\n\nThe **reddish-brown NO₂** (from concentrated acid) or **colourless NO** (from dilute acid) is the sign of oxidation.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Acid",
+                "Gas from the acid",
+                "Colour of the gas"
+              ],
+              "rows": [
+                [
+                  "Concentrated HNO₃",
+                  "Nitrogen dioxide, NO₂",
+                  "Reddish brown"
+                ],
+                [
+                  "Dilute HNO₃",
+                  "Nitric oxide, NO",
+                  "Colourless (turns reddish brown in air)"
+                ]
+              ]
+            },
+            "alt": "Table of the gases given by concentrated and dilute nitric acid when they act as oxidising agents"
+          },
+          "math": [],
+          "narration": "Nitric acid oxidises because it easily breaks down and releases oxygen. Concentrated acid releases oxygen and forms reddish brown nitrogen dioxide. Dilute acid releases more oxygen per molecule and forms colourless nitric oxide. So the colour of the gas tells us whether concentrated or dilute acid has reacted.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s03",
+          "layout": "concept",
+          "heading": "Copper and concentrated nitric acid",
+          "body_md": "Copper does **not** give hydrogen with dilute HCl or H₂SO₄, but nitric acid **oxidises** it. With **concentrated** acid: **reddish-brown fumes** of NO₂, and the solution turns **green**, becoming **blue** on dilution (copper nitrate).",
+          "bullets": [],
+          "visual": {
+            "kind": "chem",
+            "spec": {
+              "equation": "Cu + 4HNO3 -> Cu(NO3)2 + 2H2O + 2NO2"
+            },
+            "alt": "Equation: copper plus four nitric acid gives copper nitrate plus two water plus two nitrogen dioxide",
+            "caption": "Copper with concentrated nitric acid"
+          },
+          "math": [],
+          "narration": "Copper sits below hydrogen in the activity series, so ordinary dilute acids do not attack it. Nitric acid is different, because it is an oxidising agent. With the concentrated acid, copper turnings dissolve quickly, thick reddish brown fumes of nitrogen dioxide pour out, and the solution turns green, then blue when water is added.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s04",
+          "layout": "check",
+          "heading": "Quick check: copper and concentrated acid",
+          "body_md": "Name the gas given off when copper meets concentrated nitric acid.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Think about the colour of the fumes when concentrated nitric acid oxidises copper.",
+          "check_question_id": "q_icse10chem_ch11_025",
+          "audio": null
+        },
+        {
+          "id": "s05",
+          "layout": "concept",
+          "heading": "Copper and dilute nitric acid",
+          "body_md": "With **moderately dilute** acid (about 1 : 1 with water) copper gives **nitric oxide**, which is **colourless** but turns **reddish brown** at the mouth of the tube as it meets air: 2NO + O₂ → 2NO₂.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Acid",
+                "Balanced equation",
+                "Gas seen"
+              ],
+              "rows": [
+                [
+                  "Concentrated",
+                  "Cu + 4HNO₃ → Cu(NO₃)₂ + 2H₂O + 2NO₂",
+                  "Reddish-brown NO₂"
+                ],
+                [
+                  "Dilute",
+                  "3Cu + 8HNO₃ → 3Cu(NO₃)₂ + 4H₂O + 2NO",
+                  "Colourless NO, brown at the mouth"
+                ]
+              ]
+            },
+            "alt": "Table comparing the reactions of copper with concentrated and dilute nitric acid"
+          },
+          "math": [],
+          "narration": "With dilute nitric acid, copper dissolves more slowly and the solution turns blue. The gas formed inside the tube is nitric oxide, which is colourless. As it reaches the open mouth of the tube, it meets the oxygen of the air and turns into reddish brown nitrogen dioxide. Learn both equations: four acid for every copper with the concentrated acid, eight acid for three copper with the dilute.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s06",
+          "layout": "example",
+          "heading": "Worked example: volume of nitrogen dioxide",
+          "body_md": "**Problem.** 3.175 g of copper dissolves in excess concentrated nitric acid. Find the volume of nitrogen dioxide at STP. (Cu = 63.5; molar volume 22.4 L)\n\n**Step 1.** Cu + 4HNO₃ → Cu(NO₃)₂ + 2H₂O + 2NO₂: 1 mole Cu gives 2 moles NO₂.\n\n**Step 2.** Moles of Cu = 3.175 ÷ 63.5 = 0.05.\n\n**Step 3.** Moles of NO₂ = 2 × 0.05 = 0.1; volume = 0.1 × 22.4 = **2.24 L**.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Quantity",
+                "Value"
+              ],
+              "rows": [
+                [
+                  "Moles of Cu",
+                  "0.05"
+                ],
+                [
+                  "Mole ratio Cu : NO₂",
+                  "1 : 2"
+                ],
+                [
+                  "Moles of NO₂",
+                  "0.1"
+                ],
+                [
+                  "Volume at STP",
+                  "2.24 L"
+                ]
+              ]
+            },
+            "alt": "Table of the steps from 3.175 grams of copper to 2.24 litres of nitrogen dioxide"
+          },
+          "math": [],
+          "narration": "One unit of copper gives two units of nitrogen dioxide with the concentrated acid. Three point one seven five grams of copper is zero point zero five mole, because the molar mass of copper is sixty three point five. Twice that is zero point one mole of gas, which occupies two point two four litres at standard conditions.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s07",
+          "layout": "concept",
+          "heading": "Carbon and sulphur",
+          "body_md": "**Hot concentrated** nitric acid oxidises **non-metals** to their highest oxides or oxyacids, giving reddish-brown NO₂:",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Non-metal",
+                "Balanced equation",
+                "Non-metal becomes"
+              ],
+              "rows": [
+                [
+                  "Carbon (charcoal)",
+                  "C + 4HNO₃ → CO₂ + 2H₂O + 4NO₂",
+                  "Carbon dioxide"
+                ],
+                [
+                  "Sulphur",
+                  "S + 6HNO₃ → H₂SO₄ + 2H₂O + 6NO₂",
+                  "Sulphuric acid"
+                ]
+              ]
+            },
+            "alt": "Table of the oxidation of carbon and sulphur by hot concentrated nitric acid"
+          },
+          "math": [],
+          "narration": "Hot concentrated nitric acid also oxidises non metals. Powdered charcoal is oxidised to carbon dioxide, and sulphur is oxidised all the way to sulphuric acid. In both reactions, reddish brown nitrogen dioxide is given off and water is formed. Notice that carbon needs four molecules of acid and sulphur needs six.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s08",
+          "layout": "check",
+          "heading": "Quick check: oxidising a non-metal",
+          "body_md": "Predict the products when hot concentrated nitric acid oxidises carbon.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. What does carbon become when it is oxidised, and which gas comes from the acid?",
+          "check_question_id": "q_icse10chem_ch11_026",
+          "audio": null
+        },
+        {
+          "id": "s09",
+          "layout": "concept",
+          "heading": "Hydrogen only from very dilute acid",
+          "body_md": "Most metals do **not** give hydrogen with nitric acid, because the acid **oxidises the hydrogen to water**. Only **very dilute** (about 1%) nitric acid gives hydrogen, and only with **magnesium** and **manganese**, which react fast enough before the hydrogen is oxidised.\n\nMn + 2HNO₃ → Mn(NO₃)₂ + H₂",
+          "bullets": [],
+          "visual": {
+            "kind": "chem",
+            "spec": {
+              "equation": "Mg + 2HNO3 -> Mg(NO3)2 + H2"
+            },
+            "alt": "Equation: magnesium plus two nitric acid gives magnesium nitrate plus hydrogen",
+            "caption": "Very dilute nitric acid, about 1 per cent"
+          },
+          "math": [],
+          "narration": "Here is a surprise. Metals such as zinc and iron give hydrogen with dilute hydrochloric acid, but not with nitric acid, because nitric acid oxidises any hydrogen to water. Only very dilute nitric acid, about one part in a hundred, gives hydrogen, and only with magnesium and manganese. These metals react so quickly that some hydrogen escapes before it can be oxidised.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s10",
+          "layout": "concept",
+          "heading": "Nitric acid as an acid",
+          "body_md": "Dilute nitric acid turns **blue litmus red** and reacts with bases and salts of weaker acids to form **nitrates**:",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Reacts with",
+                "Example equation",
+                "Gas"
+              ],
+              "rows": [
+                [
+                  "Basic oxide",
+                  "CuO + 2HNO₃ → Cu(NO₃)₂ + H₂O",
+                  "None"
+                ],
+                [
+                  "Hydroxide",
+                  "Ca(OH)₂ + 2HNO₃ → Ca(NO₃)₂ + 2H₂O",
+                  "None"
+                ],
+                [
+                  "Carbonate",
+                  "CaCO₃ + 2HNO₃ → Ca(NO₃)₂ + H₂O + CO₂",
+                  "CO₂"
+                ],
+                [
+                  "Hydrogen carbonate",
+                  "KHCO₃ + HNO₃ → KNO₃ + H₂O + CO₂",
+                  "CO₂"
+                ],
+                [
+                  "Sulphite",
+                  "Na₂SO₃ + 2HNO₃ → 2NaNO₃ + H₂O + SO₂",
+                  "SO₂"
+                ],
+                [
+                  "Hydrogen sulphite",
+                  "NaHSO₃ + HNO₃ → NaNO₃ + H₂O + SO₂",
+                  "SO₂"
+                ]
+              ]
+            },
+            "alt": "Table of dilute nitric acid with a basic oxide, a hydroxide, a carbonate, a hydrogen carbonate, a sulphite and a hydrogen sulphite"
+          },
+          "math": [],
+          "narration": "As an acid, dilute nitric acid turns blue litmus red. It neutralises basic oxides and hydroxides to give a nitrate and water. With carbonates and hydrogen carbonates it gives a nitrate, water and carbon dioxide. With sulphites and hydrogen sulphites it gives a nitrate, water and sulphur dioxide. Nitric acid has one replaceable hydrogen, so it is monobasic and forms only normal salts.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s11",
+          "layout": "example",
+          "heading": "Worked example: matching equations to observations",
+          "body_md": "**Problem.** Dilute nitric acid is added to (a) black copper(II) oxide, (b) baking soda and (c) zinc oxide. State one observation for each and write the equations.\n\n**(a)** The black solid dissolves to a **blue** solution: CuO + 2HNO₃ → Cu(NO₃)₂ + H₂O.\n\n**(b)** **Brisk effervescence** of CO₂: NaHCO₃ + HNO₃ → NaNO₃ + H₂O + CO₂.\n\n**(c)** The white solid dissolves to a **colourless** solution: ZnO + 2HNO₃ → Zn(NO₃)₂ + H₂O.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Substance",
+                "Observation",
+                "Salt formed"
+              ],
+              "rows": [
+                [
+                  "Copper(II) oxide",
+                  "Blue solution",
+                  "Copper(II) nitrate"
+                ],
+                [
+                  "Sodium hydrogencarbonate",
+                  "Brisk effervescence",
+                  "Sodium nitrate"
+                ],
+                [
+                  "Zinc oxide",
+                  "Colourless solution",
+                  "Zinc nitrate"
+                ]
+              ]
+            },
+            "alt": "Table of observations and salts when dilute nitric acid reacts with copper oxide, baking soda and zinc oxide"
+          },
+          "math": [],
+          "narration": "Each reaction gives a nitrate. Black copper oxide dissolves to give a blue solution of copper nitrate. Baking soda fizzes as carbon dioxide escapes, leaving sodium nitrate. White zinc oxide dissolves to give a colourless solution of zinc nitrate. In every case water is also formed.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s12",
+          "layout": "diagram",
+          "heading": "Tests for nitric acid",
+          "body_md": "**Test 1.** Warm the acid with **copper turnings**: **reddish-brown fumes** of NO₂ and a blue-green solution.\n\n**Test 2 (brown ring).** Add **freshly prepared iron(II) sulphate** solution, then pour **concentrated sulphuric acid** slowly down the side: a **brown ring** forms at the junction of the two layers.",
+          "bullets": [],
+          "visual": {
+            "kind": "svg",
+            "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 380 320\" role=\"img\" aria-label=\"The brown ring test. A test tube holds the solution being tested mixed with freshly prepared iron(II) sulphate solution, which is pale green. Concentrated sulphuric acid is poured slowly down the side of the tilted tube from a dropper, so that it sinks and forms a separate heavy layer at the bottom. A brown ring appears where the two layers meet, showing that a nitrate, or nitric acid, is present.\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>The brown ring test. A test tube holds the solution being tested mixed with freshly prepared iron(II) sulphate solution, which is pale green. Concentrated sulphuric acid is poured slowly down the side of the tilted tube from a dropper, so that it sinks and forms a separate heavy layer at the bottom. A brown ring appears where the two layers meet, showing that a nitrate, or nitric acid, is present.</title><path d=\"M 150 40 L 150 250 Q 180 286 210 250 L 210 40\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"/><line x1=\"144\" y1=\"40\" x2=\"216\" y2=\"40\" stroke=\"currentColor\" stroke-width=\"1.8\"/><rect x=\"152\" y=\"110\" width=\"56\" height=\"100\" fill=\"var(--diagram-green)\" stroke=\"none\" stroke-width=\"0\" fill-opacity=\"0.2\"/><rect x=\"152\" y=\"206\" width=\"56\" height=\"10\" fill=\"var(--diagram-brown)\" stroke=\"none\" stroke-width=\"0\" fill-opacity=\"0.85\"/><path d=\"M 152 216 L 152 250 Q 180 282 208 250 L 208 216 Z\" fill=\"var(--diagram-muted)\" stroke=\"none\" stroke-width=\"0\" fill-opacity=\"0.35\"/><path d=\"M 236 6 L 236 30 L 216 52\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"/><rect x=\"229\" y=\"0\" width=\"14\" height=\"10\" fill=\"var(--diagram-muted)\" stroke=\"currentColor\" stroke-width=\"1\" fill-opacity=\"0.4\"/><path d=\"M 210 60 L 209 200\" fill=\"none\" stroke=\"var(--diagram-muted)\" stroke-width=\"1.2\" stroke-dasharray=\"3 3\"/><text x=\"232\" y=\"70\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">conc. H₂SO₄ poured</text><text x=\"232\" y=\"82\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">slowly down the side</text><text x=\"8\" y=\"140\" fill=\"var(--diagram-green)\" stroke=\"none\" font-size=\"10\">test solution +</text><text x=\"8\" y=\"152\" fill=\"var(--diagram-green)\" stroke=\"none\" font-size=\"10\">freshly made FeSO₄</text><text x=\"8\" y=\"164\" fill=\"var(--diagram-green)\" stroke=\"none\" font-size=\"10\">solution</text><line x1=\"118\" y1=\"150\" x2=\"152\" y2=\"160\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\"/><text x=\"232\" y=\"206\" fill=\"var(--diagram-brown)\" stroke=\"none\" font-size=\"11\" font-weight=\"bold\">brown ring at</text><text x=\"232\" y=\"219\" fill=\"var(--diagram-brown)\" stroke=\"none\" font-size=\"11\" font-weight=\"bold\">the junction</text><line x1=\"212\" y1=\"211\" x2=\"230\" y2=\"206\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\"/><text x=\"8\" y=\"250\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">heavy layer of</text><text x=\"8\" y=\"262\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">conc. H₂SO₄</text><line x1=\"104\" y1=\"256\" x2=\"156\" y2=\"240\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\"/></svg>",
+            "alt": "Brown ring test: concentrated sulphuric acid poured down the side of a tube holding the test solution and iron(II) sulphate forms a lower layer, with a brown ring at the junction"
+          },
+          "math": [],
+          "narration": "Two tests confirm nitric acid. First, warm it with copper turnings: reddish brown fumes of nitrogen dioxide and a blue green solution appear. Second, the brown ring test. Mix the liquid with freshly made iron two sulphate solution, then pour concentrated sulphuric acid slowly down the side of the tube. The heavy acid sinks, and a brown ring forms where the layers meet.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s13",
+          "layout": "check",
+          "heading": "Quick check: the brown ring test",
+          "body_md": "Recall what is added in the brown ring test and where the ring appears.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Which freshly made solution is used in the brown ring test, and where does the ring form?",
+          "check_question_id": "q_icse10chem_ch11_052",
+          "audio": null
+        },
+        {
+          "id": "s14",
+          "layout": "summary",
+          "heading": "Summary: Part 2",
+          "body_md": "",
+          "bullets": [
+            "Oxidising agent: conc. acid gives NO₂; dilute acid gives NO.",
+            "Cu + 4HNO₃ (conc.) → Cu(NO₃)₂ + 2H₂O + 2NO₂; 3Cu + 8HNO₃ (dil.) → 3Cu(NO₃)₂ + 4H₂O + 2NO.",
+            "C + 4HNO₃ → CO₂ + 2H₂O + 4NO₂; S + 6HNO₃ → H₂SO₄ + 2H₂O + 6NO₂.",
+            "Hydrogen only with very dilute acid and Mg or Mn.",
+            "Tests: copper turnings give brown fumes; brown ring test."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Reaction",
+                "Gas evolved"
+              ],
+              "rows": [
+                [
+                  "Cu + conc. HNO₃",
+                  "NO₂ (reddish brown)"
+                ],
+                [
+                  "Cu + dil. HNO₃",
+                  "NO (colourless)"
+                ],
+                [
+                  "C or S + conc. HNO₃",
+                  "NO₂"
+                ],
+                [
+                  "Mg + very dil. HNO₃",
+                  "H₂"
+                ],
+                [
+                  "Carbonate + dil. HNO₃",
+                  "CO₂"
+                ]
+              ]
+            },
+            "alt": "Summary table of the gases given off in five reactions of nitric acid"
+          },
+          "math": [],
+          "narration": "Let us sum up Part 2. As an oxidising agent, concentrated nitric acid gives nitrogen dioxide and dilute acid gives nitric oxide, whether it meets copper or, when hot and concentrated, carbon and sulphur. As an acid, it forms nitrates with bases, carbonates and sulphites. Only very dilute acid gives hydrogen, with magnesium or manganese. Copper turnings and the brown ring test identify it.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s15",
+          "layout": "exam-tips",
+          "heading": "Exam tips: Part 2",
+          "body_md": "",
+          "bullets": [
+            "State the concentration (conc. or dil.) with every copper equation; the products differ.",
+            "Nitric oxide is colourless; it only looks brown at the mouth of the tube.",
+            "For hydrogen, write “very dilute (about 1%)” and name magnesium or manganese.",
+            "In the brown ring test the iron(II) sulphate must be freshly prepared."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Slip",
+                "Fix"
+              ],
+              "rows": [
+                [
+                  "Cu + 2HNO₃ → Cu(NO₃)₂ + H₂",
+                  "Copper never gives hydrogen with nitric acid"
+                ],
+                [
+                  "Dilute acid gives NO₂",
+                  "It gives NO, which browns in air"
+                ],
+                [
+                  "S + HNO₃ gives SO₂",
+                  "Hot conc. acid oxidises S to H₂SO₄"
+                ]
+              ]
+            },
+            "alt": "Table of three common slips in Part 2 and their fixes"
+          },
+          "math": [],
+          "narration": "Final tips. Always say whether the acid is concentrated or dilute, because the products change. Remember that nitric oxide is colourless and only turns brown when it meets air. Hydrogen comes only from very dilute acid with magnesium or manganese. And use freshly made iron two sulphate solution for the brown ring test.",
+          "check_question_id": null,
+          "audio": null
+        }
+      ],
+      "status": "draft",
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    }
+  ],
+  "notes": {
+    "unit": "icse-10-chemistry-ch11",
+    "version": 1,
+    "title": "Study of Compounds: Nitric Acid — Notes",
+    "language": "en",
+    "sections": [
+      {
+        "heading": "1. Laboratory preparation",
+        "body_md": "**Reactants:** potassium nitrate (or sodium nitrate) and **concentrated sulphuric acid**, heated gently.\n\n- **Principle:** the less volatile (higher-boiling) sulphuric acid displaces the more volatile nitric acid from its salt.\n- **Apparatus:** a **glass retort** with a **glass stopper**; the neck leads into a **receiver cooled by water**. The apparatus is **all glass** because nitric acid vapour **attacks cork and rubber**.\n- **Temperature:** kept **below 200 °C**.",
+        "key_terms": [
+          {
+            "term": "All-glass apparatus",
+            "definition_md": "Apparatus with no cork or rubber parts, used because hot nitric acid vapour attacks cork and rubber."
+          },
+          {
+            "term": "Volatile acid",
+            "definition_md": "An acid with a low boiling point that easily forms vapour, such as nitric acid."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\ce{KNO3 + H2SO4 -> KHSO4 + HNO3}",
+            "label": "Below 200 °C"
+          },
+          {
+            "latex": "\\ce{NaNO3 + H2SO4 -> NaHSO4 + HNO3}",
+            "label": "With sodium nitrate"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Part",
+              "Purpose"
+            ],
+            "rows": [
+              [
+                "Glass retort and stopper",
+                "Holds the mixture; resists the acid vapour"
+              ],
+              [
+                "Receiver in cold water",
+                "Condenses the nitric acid vapour"
+              ],
+              [
+                "Gentle heating",
+                "Keeps the temperature below 200 °C"
+              ]
+            ]
+          },
+          "alt": "Table of the parts of the apparatus for preparing nitric acid and their purposes"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-chemistry-ch11-t01"
+        ]
+      },
+      {
+        "heading": "2. Precautions, colour and physical properties",
+        "body_md": "**Why below 200 °C?** At higher temperature KNO₃ + KHSO₄ → K₂SO₄ + HNO₃ would occur, but the strong heat needed would **decompose nitric acid**, may **crack the glass**, leaves a **hard crust** of K₂SO₄ and **wastes fuel**.\n\n**Yellow colour:** heat or light decomposes some acid; the **NO₂** formed dissolves in it. Remove it by **bubbling dry air or CO₂ through the warm acid**, or by **adding water**. Store the acid in **brown bottles**.\n\n**Physical properties:** colourless fuming liquid (pure), choking smell, heavier than water, miscible with water in all proportions, corrosive (yellow stains on skin).",
+        "key_terms": [
+          {
+            "term": "Decomposition of nitric acid",
+            "definition_md": "The breakdown of nitric acid by heat or light into nitrogen dioxide, water and oxygen."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\ce{4HNO3 -> 4NO2 + 2H2O + O2}",
+            "label": "Heat or sunlight"
+          },
+          {
+            "latex": "\\ce{KNO3 + KHSO4 -> K2SO4 + HNO3}",
+            "label": "Only at high temperature: avoided"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Observation",
+              "Reason"
+            ],
+            "rows": [
+              [
+                "Laboratory acid is yellow",
+                "Dissolved NO₂ from decomposition"
+              ],
+              [
+                "Stored in brown bottles",
+                "Light decomposes the acid"
+              ],
+              [
+                "Yellow stain on skin",
+                "The acid attacks proteins in the skin"
+              ]
+            ]
+          },
+          "alt": "Table of three observations about nitric acid and their reasons"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-chemistry-ch11-t01"
+        ]
+      },
+      {
+        "heading": "3. Ostwald’s process (equations and conditions)",
+        "body_md": "**Step 1 (catalytic oxidation of ammonia):** dry ammonia and air, about **1 : 10** by volume, over **platinum gauze** at about **800 °C**. Exothermic, so the catalyst stays red-hot.\n\n**Step 2:** nitric oxide combines with more oxygen on cooling.\n\n**Step 3:** nitrogen dioxide is absorbed in **water** in the presence of **excess air (oxygen)**.\n\nOverall, one NH₃ gives one HNO₃ (the nitrogen atom is carried through).",
+        "key_terms": [
+          {
+            "term": "Ostwald’s process",
+            "definition_md": "The industrial manufacture of nitric acid by the catalytic oxidation of ammonia over platinum."
+          },
+          {
+            "term": "Catalytic oxidation",
+            "definition_md": "Oxidation that takes place only in the presence of a catalyst, here platinum."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\ce{4NH3 + 5O2 -> 4NO + 6H2O}",
+            "label": "Platinum gauze, about 800 °C"
+          },
+          {
+            "latex": "\\ce{2NO + O2 -> 2NO2}",
+            "label": "On cooling"
+          },
+          {
+            "latex": "\\ce{4NO2 + 2H2O + O2 -> 4HNO3}",
+            "label": "Absorption in water with air"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Step",
+              "Change",
+              "Condition"
+            ],
+            "rows": [
+              [
+                "1",
+                "NH₃ → NO",
+                "Pt gauze, about 800 °C, NH₃ : air = 1 : 10"
+              ],
+              [
+                "2",
+                "NO → NO₂",
+                "Cooling, more oxygen"
+              ],
+              [
+                "3",
+                "NO₂ → HNO₃",
+                "Water and excess air"
+              ]
+            ]
+          },
+          "alt": "Table of the three steps of Ostwald’s process with conditions"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-chemistry-ch11-t02"
+        ]
+      },
+      {
+        "heading": "4. Oxidising agent: copper",
+        "body_md": "Nitric acid gives **oxygen** on decomposition (conc.: 2HNO₃ → H₂O + 2NO₂ + [O]; dil.: 2HNO₃ → H₂O + 2NO + 3[O]), so it **oxidises** copper, which ordinary dilute acids cannot attack.\n\n- **Concentrated:** reddish-brown **NO₂**; solution green, blue on dilution.\n- **Dilute (about 1 : 1):** colourless **NO**, which turns reddish brown at the mouth of the tube (2NO + O₂ → 2NO₂); blue solution.",
+        "key_terms": [
+          {
+            "term": "Oxidising agent",
+            "definition_md": "A substance that gives oxygen to (or removes electrons from) another substance."
+          },
+          {
+            "term": "Nitric oxide",
+            "definition_md": "NO, a colourless gas that turns reddish brown in air as it forms nitrogen dioxide."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\ce{Cu + 4HNO3 -> Cu(NO3)2 + 2H2O + 2NO2}",
+            "label": "Concentrated acid"
+          },
+          {
+            "latex": "\\ce{3Cu + 8HNO3 -> 3Cu(NO3)2 + 4H2O + 2NO}",
+            "label": "Dilute acid"
+          },
+          {
+            "latex": "\\ce{2NO + O2 -> 2NO2}",
+            "label": "Brown fumes at the mouth of the tube"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Acid",
+              "Gas",
+              "Mole ratio Cu : gas"
+            ],
+            "rows": [
+              [
+                "Concentrated",
+                "NO₂ (reddish brown)",
+                "1 : 2"
+              ],
+              [
+                "Dilute",
+                "NO (colourless)",
+                "3 : 2"
+              ]
+            ]
+          },
+          "alt": "Table of the gases formed when copper reacts with concentrated and dilute nitric acid"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-chemistry-ch11-t03"
+        ]
+      },
+      {
+        "heading": "5. Oxidising agent: carbon and sulphur",
+        "body_md": "**Hot concentrated** nitric acid oxidises non-metals and gives **reddish-brown NO₂**:\n\n- **Carbon** → carbon dioxide.\n- **Sulphur** → sulphuric acid.",
+        "key_terms": [
+          {
+            "term": "Oxidation of a non-metal",
+            "definition_md": "Conversion of a non-metal into its oxide or oxyacid, here by hot concentrated nitric acid."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\ce{C + 4HNO3 -> CO2 + 2H2O + 4NO2}",
+            "label": "Carbon"
+          },
+          {
+            "latex": "\\ce{S + 6HNO3 -> H2SO4 + 2H2O + 6NO2}",
+            "label": "Sulphur"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Non-metal",
+              "Product",
+              "Molecules of HNO₃ per atom"
+            ],
+            "rows": [
+              [
+                "Carbon",
+                "CO₂",
+                "4"
+              ],
+              [
+                "Sulphur",
+                "H₂SO₄",
+                "6"
+              ]
+            ]
+          },
+          "alt": "Table of the products when carbon and sulphur are oxidised by concentrated nitric acid"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-chemistry-ch11-t03"
+        ]
+      },
+      {
+        "heading": "6. Acidic properties",
+        "body_md": "Nitric acid is a **strong, monobasic** acid: it turns blue litmus red and forms **nitrates**.\n\n- **Metals:** hydrogen is given only by **very dilute (about 1%)** acid with **magnesium** or **manganese**; with other metals the acid oxidises the hydrogen to water.\n- **Basic oxides and hydroxides:** nitrate + water.\n- **Carbonates and hydrogen carbonates:** nitrate + water + CO₂.\n- **Sulphites and hydrogen sulphites:** nitrate + water + SO₂.",
+        "key_terms": [
+          {
+            "term": "Monobasic acid",
+            "definition_md": "An acid with one replaceable hydrogen atom per molecule, such as nitric acid."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\ce{Mg + 2HNO3 -> Mg(NO3)2 + H2}",
+            "label": "Very dilute acid"
+          },
+          {
+            "latex": "\\ce{Mn + 2HNO3 -> Mn(NO3)2 + H2}",
+            "label": "Very dilute acid"
+          },
+          {
+            "latex": "\\ce{CuO + 2HNO3 -> Cu(NO3)2 + H2O}",
+            "label": "Basic oxide"
+          },
+          {
+            "latex": "\\ce{CaCO3 + 2HNO3 -> Ca(NO3)2 + H2O + CO2}",
+            "label": "Carbonate"
+          },
+          {
+            "latex": "\\ce{NaHCO3 + HNO3 -> NaNO3 + H2O + CO2}",
+            "label": "Hydrogen carbonate"
+          },
+          {
+            "latex": "\\ce{Na2SO3 + 2HNO3 -> 2NaNO3 + H2O + SO2}",
+            "label": "Sulphite"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Reactant",
+              "Products"
+            ],
+            "rows": [
+              [
+                "Mg (very dilute acid)",
+                "Mg(NO₃)₂ + H₂"
+              ],
+              [
+                "NaOH",
+                "NaNO₃ + H₂O"
+              ],
+              [
+                "K₂CO₃",
+                "2KNO₃ + H₂O + CO₂"
+              ],
+              [
+                "NaHSO₃",
+                "NaNO₃ + H₂O + SO₂"
+              ]
+            ]
+          },
+          "alt": "Table of four reactions showing the acidic properties of nitric acid"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-chemistry-ch11-t04"
+        ]
+      },
+      {
+        "heading": "7. Tests for nitric acid",
+        "body_md": "- **Copper turnings, warmed:** reddish-brown fumes of NO₂ and a blue-green solution.\n- **Brown ring test:** add **freshly prepared** iron(II) sulphate solution, then pour **conc. H₂SO₄** slowly down the side of the tube. A **brown ring** (of nitroso iron(II) sulphate, FeSO₄·NO) forms at the junction of the layers.",
+        "key_terms": [
+          {
+            "term": "Brown ring test",
+            "definition_md": "A test for nitric acid or a nitrate: a brown ring forms at the junction when concentrated sulphuric acid is layered under a mixture of the test solution and fresh iron(II) sulphate solution."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\ce{6FeSO4 + 3H2SO4 + 2HNO3 -> 3Fe2(SO4)3 + 4H2O + 2NO}",
+            "label": "Nitric oxide formed in the brown ring test"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Test",
+              "Observation"
+            ],
+            "rows": [
+              [
+                "Warm with copper turnings",
+                "Reddish-brown fumes, blue-green solution"
+              ],
+              [
+                "Brown ring test",
+                "Brown ring at the junction of the layers"
+              ]
+            ]
+          },
+          "alt": "Table of two tests for nitric acid and their observations"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-chemistry-ch11-t05"
+        ]
+      }
+    ],
+    "exam_tips_md": "**Common mistakes**\n- Writing K₂SO₄ instead of KHSO₄ for the laboratory preparation.\n- Using iron as the catalyst in Ostwald’s process (it is platinum).\n- Saying dilute nitric acid gives NO₂ with copper (it gives NO).\n- Writing hydrogen as a product of copper and nitric acid.\n\n**How marks are usually awarded**\n- Equations (1 mark each): correct products and balancing, with “conc.” or “dil.” stated.\n- Conditions (1 mark): catalyst and temperature together.\n- Reasons (1 mark each): all-glass apparatus, below 200 °C, yellow colour.",
+    "status": "draft",
+    "provenance": {
+      "origin": "human",
+      "template_version": null,
+      "model": null,
+      "generated_at": "2026-11-01",
+      "author": "claude-opus-5-5 (subject-producer)"
+    }
+  },
+  "flashcards": {
+    "unit": "icse-10-chemistry-ch11",
+    "version": 1,
+    "language": "en",
+    "cards": [
+      {
+        "id": "f01",
+        "front_md": "Reactants for nitric acid in the laboratory?",
+        "back_md": "Potassium (or sodium) nitrate and concentrated sulphuric acid.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch11-t01"
+      },
+      {
+        "id": "f02",
+        "front_md": "Equation for the laboratory preparation?",
+        "back_md": "KNO₃ + H₂SO₄ → KHSO₄ + HNO₃ (below 200 °C).",
+        "tag": "formula",
+        "topic_id": "icse-10-chemistry-ch11-t01"
+      },
+      {
+        "id": "f03",
+        "front_md": "Why an all-glass apparatus?",
+        "back_md": "Nitric acid vapour attacks cork and rubber.",
+        "tag": "concept",
+        "topic_id": "icse-10-chemistry-ch11-t01"
+      },
+      {
+        "id": "f04",
+        "front_md": "Why is the receiver cooled?",
+        "back_md": "To condense the nitric acid vapour.",
+        "tag": "concept",
+        "topic_id": "icse-10-chemistry-ch11-t01"
+      },
+      {
+        "id": "f05",
+        "front_md": "Why heat below 200 °C?",
+        "back_md": "Avoids decomposing the acid, cracking the glass, a hard K₂SO₄ crust and wasted fuel.",
+        "tag": "concept",
+        "topic_id": "icse-10-chemistry-ch11-t01"
+      },
+      {
+        "id": "f06",
+        "front_md": "Why does sulphuric acid drive out nitric acid?",
+        "back_md": "It is less volatile (higher boiling).",
+        "tag": "concept",
+        "topic_id": "icse-10-chemistry-ch11-t01"
+      },
+      {
+        "id": "f07",
+        "front_md": "Why is concentrated nitric acid often yellow?",
+        "back_md": "Dissolved NO₂ from its decomposition.",
+        "tag": "concept",
+        "topic_id": "icse-10-chemistry-ch11-t01"
+      },
+      {
+        "id": "f08",
+        "front_md": "Decomposition of nitric acid?",
+        "back_md": "4HNO₃ → 4NO₂ + 2H₂O + O₂.",
+        "tag": "formula",
+        "topic_id": "icse-10-chemistry-ch11-t01"
+      },
+      {
+        "id": "f09",
+        "front_md": "How is the yellow colour removed?",
+        "back_md": "Bubble dry air or CO₂ through the warm acid, or add water.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch11-t01"
+      },
+      {
+        "id": "f10",
+        "front_md": "Catalyst in Ostwald’s process?",
+        "back_md": "Platinum gauze, about 800 °C.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch11-t02"
+      },
+      {
+        "id": "f11",
+        "front_md": "Ostwald step 1?",
+        "back_md": "4NH₃ + 5O₂ → 4NO + 6H₂O.",
+        "tag": "formula",
+        "topic_id": "icse-10-chemistry-ch11-t02"
+      },
+      {
+        "id": "f12",
+        "front_md": "Ostwald step 3?",
+        "back_md": "4NO₂ + 2H₂O + O₂ → 4HNO₃.",
+        "tag": "formula",
+        "topic_id": "icse-10-chemistry-ch11-t02"
+      },
+      {
+        "id": "f13",
+        "front_md": "Ratio of ammonia to air in Ostwald’s process?",
+        "back_md": "About 1 : 10 by volume.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch11-t02"
+      },
+      {
+        "id": "f14",
+        "front_md": "Why does the platinum stay red-hot?",
+        "back_md": "The oxidation of ammonia is exothermic.",
+        "tag": "concept",
+        "topic_id": "icse-10-chemistry-ch11-t02"
+      },
+      {
+        "id": "f15",
+        "front_md": "Cu + conc. HNO₃?",
+        "back_md": "Cu + 4HNO₃ → Cu(NO₃)₂ + 2H₂O + 2NO₂.",
+        "tag": "formula",
+        "topic_id": "icse-10-chemistry-ch11-t03"
+      },
+      {
+        "id": "f16",
+        "front_md": "Cu + dil. HNO₃?",
+        "back_md": "3Cu + 8HNO₃ → 3Cu(NO₃)₂ + 4H₂O + 2NO.",
+        "tag": "formula",
+        "topic_id": "icse-10-chemistry-ch11-t03"
+      },
+      {
+        "id": "f17",
+        "front_md": "Colour of NO and of NO₂?",
+        "back_md": "NO colourless; NO₂ reddish brown.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch11-t03"
+      },
+      {
+        "id": "f18",
+        "front_md": "Why does NO look brown at the mouth of the tube?",
+        "back_md": "It reacts with air: 2NO + O₂ → 2NO₂.",
+        "tag": "concept",
+        "topic_id": "icse-10-chemistry-ch11-t03"
+      },
+      {
+        "id": "f19",
+        "front_md": "C + conc. HNO₃?",
+        "back_md": "C + 4HNO₃ → CO₂ + 2H₂O + 4NO₂.",
+        "tag": "formula",
+        "topic_id": "icse-10-chemistry-ch11-t03"
+      },
+      {
+        "id": "f20",
+        "front_md": "S + conc. HNO₃?",
+        "back_md": "S + 6HNO₃ → H₂SO₄ + 2H₂O + 6NO₂.",
+        "tag": "formula",
+        "topic_id": "icse-10-chemistry-ch11-t03"
+      },
+      {
+        "id": "f21",
+        "front_md": "Why is nitric acid an oxidising agent?",
+        "back_md": "It decomposes to give oxygen.",
+        "tag": "concept",
+        "topic_id": "icse-10-chemistry-ch11-t03"
+      },
+      {
+        "id": "f22",
+        "front_md": "Which metals give H₂ with nitric acid?",
+        "back_md": "Mg and Mn, with very dilute (about 1%) acid only.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch11-t04"
+      },
+      {
+        "id": "f23",
+        "front_md": "Why don’t most metals give H₂ with HNO₃?",
+        "back_md": "The acid oxidises the hydrogen to water.",
+        "tag": "concept",
+        "topic_id": "icse-10-chemistry-ch11-t04"
+      },
+      {
+        "id": "f24",
+        "front_md": "Basicity of nitric acid?",
+        "back_md": "Monobasic: forms only normal salts (nitrates).",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch11-t04"
+      },
+      {
+        "id": "f25",
+        "front_md": "CaCO₃ + dil. HNO₃?",
+        "back_md": "CaCO₃ + 2HNO₃ → Ca(NO₃)₂ + H₂O + CO₂.",
+        "tag": "formula",
+        "topic_id": "icse-10-chemistry-ch11-t04"
+      },
+      {
+        "id": "f26",
+        "front_md": "Na₂SO₃ + dil. HNO₃?",
+        "back_md": "Na₂SO₃ + 2HNO₃ → 2NaNO₃ + H₂O + SO₂.",
+        "tag": "formula",
+        "topic_id": "icse-10-chemistry-ch11-t04"
+      },
+      {
+        "id": "f27",
+        "front_md": "Brown ring test: reagents?",
+        "back_md": "Freshly made FeSO₄ solution, then conc. H₂SO₄ down the side.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch11-t05"
+      },
+      {
+        "id": "f28",
+        "front_md": "Where does the brown ring form?",
+        "back_md": "At the junction of the two layers.",
+        "tag": "diagram",
+        "topic_id": "icse-10-chemistry-ch11-t05"
+      },
+      {
+        "id": "f29",
+        "front_md": "Copper-turnings test for nitric acid?",
+        "back_md": "Warm: reddish-brown fumes and a blue-green solution.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch11-t05"
+      },
+      {
+        "id": "f30",
+        "front_md": "Exam tip: copper equations",
+        "back_md": "Always state conc. or dil.; the gas differs (NO₂ or NO).",
+        "tag": "exam-tip",
+        "topic_id": "icse-10-chemistry-ch11-t03"
+      }
+    ],
+    "status": "draft",
+    "provenance": {
+      "origin": "human",
+      "template_version": null,
+      "model": null,
+      "generated_at": "2026-11-01",
+      "author": "claude-opus-5-5 (subject-producer)"
+    }
+  },
+  "questions": [
+    {
+      "id": "q_icse10chem_ch11_001",
+      "unit": "icse-10-chemistry-ch11",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "The apparatus used to prepare nitric acid from potassium nitrate and concentrated sulphuric acid is made entirely of glass. The main reason is that:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "glass conducts heat better than cork"
+        },
+        {
+          "id": "b",
+          "text_md": "rubber would absorb the potassium nitrate"
+        },
+        {
+          "id": "c",
+          "text_md": "glass catalyses the reaction"
+        },
+        {
+          "id": "d",
+          "text_md": "nitric acid vapour attacks cork and rubber"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Hot nitric acid vapour is highly corrosive and attacks cork and rubber, so a glass retort with a glass stopper is used — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch11-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch11_002",
+      "unit": "icse-10-chemistry-ch11",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A colourless sample of concentrated nitric acid, left in a clear glass bottle on a sunny window sill, slowly turns yellow. This is because:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "light decomposes some of the acid, and the nitrogen dioxide formed dissolves in it"
+        },
+        {
+          "id": "b",
+          "text_md": "the acid absorbs moisture from the air"
+        },
+        {
+          "id": "c",
+          "text_md": "the acid reacts with the glass to form a yellow silicate"
+        },
+        {
+          "id": "d",
+          "text_md": "oxygen from the air dissolves in the acid"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "4HNO₃ → 4NO₂ + 2H₂O + O₂; the reddish-brown NO₂ dissolves and colours the acid yellow — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch11-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch11_003",
+      "unit": "icse-10-chemistry-ch11",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Nitric acid is prepared by heating potassium nitrate with concentrated sulphuric acid. This works because sulphuric acid is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "more volatile than nitric acid"
+        },
+        {
+          "id": "b",
+          "text_md": "less volatile than nitric acid"
+        },
+        {
+          "id": "c",
+          "text_md": "a stronger oxidising agent than nitric acid"
+        },
+        {
+          "id": "d",
+          "text_md": "a dehydrating agent"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "The higher-boiling, less volatile acid displaces the more volatile nitric acid, which distils off — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch11-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch11_004",
+      "unit": "icse-10-chemistry-ch11",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Sodium nitrate is heated gently with concentrated sulphuric acid, keeping the temperature below 200 °C. The products are:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "sodium sulphate and nitric acid"
+        },
+        {
+          "id": "b",
+          "text_md": "sodium hydrogen sulphate and nitrogen dioxide"
+        },
+        {
+          "id": "c",
+          "text_md": "sodium hydrogen sulphate and nitric acid"
+        },
+        {
+          "id": "d",
+          "text_md": "sodium sulphate and nitrogen dioxide"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "NaNO₃ + H₂SO₄ → NaHSO₄ + HNO₃; the normal salt forms only at much higher temperatures — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch11-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch11_005",
+      "unit": "icse-10-chemistry-ch11",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which of the following is NOT a reason for keeping the temperature below 200 °C when preparing nitric acid in the laboratory?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Nitric acid would start to decompose"
+        },
+        {
+          "id": "b",
+          "text_md": "The glass retort could crack"
+        },
+        {
+          "id": "c",
+          "text_md": "No nitric acid at all is formed above 200 °C"
+        },
+        {
+          "id": "d",
+          "text_md": "A hard crust of potassium sulphate would form"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Nitric acid still forms at higher temperatures (KNO₃ + KHSO₄ → K₂SO₄ + HNO₃), but the other three effects make strong heating undesirable — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch11-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch11_006",
+      "unit": "icse-10-chemistry-ch11",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Concentrated nitric acid is stored in dark brown bottles because:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "light decomposes it"
+        },
+        {
+          "id": "b",
+          "text_md": "it reacts with clear glass"
+        },
+        {
+          "id": "c",
+          "text_md": "it absorbs moisture from the air"
+        },
+        {
+          "id": "d",
+          "text_md": "brown glass catalyses its formation"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Brown glass keeps out light, which would decompose the acid to NO₂, water and oxygen — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch11-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch11_007",
+      "unit": "icse-10-chemistry-ch11",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** In the laboratory preparation of nitric acid, the apparatus has no rubber or cork parts.\n\n**Reason (R):** Nitric acid vapour attacks rubber and cork.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Both are true, and R explains A — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch11-t01"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch11_008",
+      "unit": "icse-10-chemistry-ch11",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Concentrated nitric acid kept in a clear bottle in sunlight turns yellow.\n\n**Reason (R):** Nitric acid is a weak acid.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "A is true (light decomposes it, giving dissolved NO₂); R is false: nitric acid is a strong acid — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch11-t01"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch11_009",
+      "unit": "icse-10-chemistry-ch11",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? Potassium sulphate is formed when potassium nitrate is heated with concentrated sulphuric acid below 200 °C.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "f"
+        ]
+      },
+      "solution_md": "False: below 200 °C the product is potassium hydrogen sulphate, KHSO₄.",
+      "marking_scheme": [
+        {
+          "step": "False, with the correction",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch11-t01"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch11_010",
+      "unit": "icse-10-chemistry-ch11",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "Concentrated nitric acid is stored in ___ bottles to protect it from light.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "brown",
+              "dark brown",
+              "amber",
+              "dark"
+            ]
+          }
+        ]
+      },
+      "solution_md": "In **brown** (dark) bottles.",
+      "marking_scheme": [
+        {
+          "step": "Blank 1: \"brown\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch11-t01"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch11_011",
+      "unit": "icse-10-chemistry-ch11",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "In the laboratory preparation of nitric acid, the receiver is cooled with ___ so that the acid vapour condenses.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "water",
+              "cold water",
+              "running water",
+              "ice"
+            ]
+          }
+        ]
+      },
+      "solution_md": "Cold running **water** (or ice) cools the receiver.",
+      "marking_scheme": [
+        {
+          "step": "Blank 1: \"water\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch11-t01"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch11_012",
+      "unit": "icse-10-chemistry-ch11",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write the balanced equation for the laboratory preparation of nitric acid from sodium nitrate.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "NaNO₃ + H₂SO₄ → NaHSO₄ + HNO₃ (below 200 °C)."
+      },
+      "solution_md": "Equation.",
+      "marking_scheme": [
+        {
+          "step": "Balanced equation",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch11-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch11_013",
+      "unit": "icse-10-chemistry-ch11",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write the balanced equation for the decomposition of nitric acid by sunlight.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "4HNO₃ → 4NO₂ + 2H₂O + O₂."
+      },
+      "solution_md": "Equation.",
+      "marking_scheme": [
+        {
+          "step": "Balanced equation",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch11-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch11_014",
+      "unit": "icse-10-chemistry-ch11",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "What mass of nitric acid, in grams, is obtained when 20.2 g of potassium nitrate is heated with excess concentrated sulphuric acid below 200 °C? (K = 39, N = 14, O = 16, H = 1)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 12.6,
+        "tolerance": 0.01,
+        "unit": "g"
+      },
+      "solution_md": "$\\ce{KNO3 + H2SO4 -> KHSO4 + HNO3}$: one mole of potassium nitrate gives one mole of nitric acid. Molar mass of $\\ce{KNO3} = 39 + 14 + 3 \\times 16 = 101$. Moles $= \\dfrac{20.2}{101} = 0.2$. Molar mass of $\\ce{HNO3} = 1 + 14 + 3 \\times 16 = 63$. Mass of nitric acid $= 0.2 \\times 63 = 12.6$, so 12.6 g.",
+      "marking_scheme": [
+        {
+          "step": "Moles of KNO₃ and 1 : 1 ratio",
+          "marks": 1
+        },
+        {
+          "step": "12.6 g",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch11-t01"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch11_015",
+      "unit": "icse-10-chemistry-ch11",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Concentrated nitric acid in the laboratory is often yellow. (a) Explain why. (b) How can the yellow colour be removed?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Heat or light decomposes some of the acid (4HNO₃ → 4NO₂ + 2H₂O + O₂); the reddish-brown nitrogen dioxide dissolves in the acid and colours it yellow. (b) By bubbling dry air (or carbon dioxide) through the warm acid, which drives out the NO₂, or by adding water."
+      },
+      "solution_md": "Dissolved NO₂; blow air through warm acid.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch11-t01"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch11_016",
+      "unit": "icse-10-chemistry-ch11",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Give two reasons why the temperature is kept below 200 °C in the laboratory preparation of nitric acid.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Any two: at higher temperatures nitric acid decomposes (giving NO₂); the glass apparatus may crack; a hard crust of potassium sulphate forms that is difficult to remove; more fuel is wasted for little extra acid."
+      },
+      "solution_md": "Two reasons.",
+      "marking_scheme": [
+        {
+          "step": "First reason",
+          "marks": 1
+        },
+        {
+          "step": "Second reason",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch11-t01"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch11_017",
+      "unit": "icse-10-chemistry-ch11",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "In the first step of Ostwald’s process, ammonia is oxidised to nitric oxide. The catalyst and the approximate temperature are:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "platinum gauze, about 800 °C"
+        },
+        {
+          "id": "b",
+          "text_md": "iron with molybdenum, about 450 °C"
+        },
+        {
+          "id": "c",
+          "text_md": "vanadium pentoxide, about 450 °C"
+        },
+        {
+          "id": "d",
+          "text_md": "nickel, about 200 °C"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "4NH₃ + 5O₂ → 4NO + 6H₂O over platinum at about 800 °C — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch11-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch11_018",
+      "unit": "icse-10-chemistry-ch11",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "In Ostwald’s process, the colourless gas leaving the platinum gauze is cooled and mixed with more air. The gas formed is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "colourless nitrous oxide"
+        },
+        {
+          "id": "b",
+          "text_md": "reddish-brown nitric oxide"
+        },
+        {
+          "id": "c",
+          "text_md": "pale yellow nitrogen"
+        },
+        {
+          "id": "d",
+          "text_md": "reddish-brown nitrogen dioxide"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "2NO + O₂ → 2NO₂; nitric oxide is colourless and nitrogen dioxide is reddish brown — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch11-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch11_019",
+      "unit": "icse-10-chemistry-ch11",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "The last step of Ostwald’s process, which produces nitric acid, needs:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "nitric oxide and water only"
+        },
+        {
+          "id": "b",
+          "text_md": "ammonia and water"
+        },
+        {
+          "id": "c",
+          "text_md": "nitrogen dioxide, water and oxygen"
+        },
+        {
+          "id": "d",
+          "text_md": "nitrogen dioxide and sulphuric acid"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "4NO₂ + 2H₂O + O₂ → 4HNO₃ — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch11-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch11_020",
+      "unit": "icse-10-chemistry-ch11",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "In the first step of Ostwald’s process, dry ammonia is mixed with air in the ratio, by volume, of about:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "1 : 10"
+        },
+        {
+          "id": "b",
+          "text_md": "1 : 3"
+        },
+        {
+          "id": "c",
+          "text_md": "10 : 1"
+        },
+        {
+          "id": "d",
+          "text_md": "2 : 1"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Ammonia and air are mixed in about 1 : 10 by volume — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch11-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch11_021",
+      "unit": "icse-10-chemistry-ch11",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** In Ostwald’s process, the platinum gauze stays red-hot without outside heating once the reaction has started.\n\n**Reason (R):** Platinum is a good conductor of electricity.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Both are true, but the gauze stays hot because the oxidation of ammonia is exothermic, not because platinum conducts electricity — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch11-t02"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch11_022",
+      "unit": "icse-10-chemistry-ch11",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? Platinum is the catalyst for the oxidation of ammonia in Ostwald’s process.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "t"
+        ]
+      },
+      "solution_md": "True: a platinum gauze at about 800 °C.",
+      "marking_scheme": [
+        {
+          "step": "True",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch11-t02"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch11_023",
+      "unit": "icse-10-chemistry-ch11",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write the balanced equation for the conversion of nitrogen dioxide into nitric acid in Ostwald’s process.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "4NO₂ + 2H₂O + O₂ → 4HNO₃."
+      },
+      "solution_md": "Equation.",
+      "marking_scheme": [
+        {
+          "step": "Balanced equation",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch11-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch11_024",
+      "unit": "icse-10-chemistry-ch11",
+      "language": "en",
+      "type": "short",
+      "stem_md": "For Ostwald’s process: (a) name the catalyst and the temperature used in the first step; (b) write the balanced equations for the second and third steps; (c) explain why extra air is supplied in the third step.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Platinum gauze; about 800 °C. (b) 2NO + O₂ → 2NO₂; 4NO₂ + 2H₂O + O₂ → 4HNO₃. (c) Oxygen is a reactant in the third step: without it, nitrogen dioxide and water alone would not convert all the nitrogen into nitric acid."
+      },
+      "solution_md": "Pt, 800 °C; two equations; oxygen needed.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch11-t02"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch11_025",
+      "unit": "icse-10-chemistry-ch11",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A few drops of concentrated nitric acid are poured onto copper turnings in a test tube. The gas given off is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "hydrogen, colourless"
+        },
+        {
+          "id": "b",
+          "text_md": "nitrogen dioxide, reddish brown"
+        },
+        {
+          "id": "c",
+          "text_md": "nitric oxide, colourless throughout"
+        },
+        {
+          "id": "d",
+          "text_md": "oxygen, colourless"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Cu + 4HNO₃ → Cu(NO₃)₂ + 2H₂O + 2NO₂ — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch11-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch11_026",
+      "unit": "icse-10-chemistry-ch11",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Powdered charcoal is heated with concentrated nitric acid. The products are:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "carbon monoxide, water and nitric oxide"
+        },
+        {
+          "id": "b",
+          "text_md": "carbon dioxide and hydrogen"
+        },
+        {
+          "id": "c",
+          "text_md": "carbonic acid and ammonia"
+        },
+        {
+          "id": "d",
+          "text_md": "carbon dioxide, water and nitrogen dioxide"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "C + 4HNO₃ → CO₂ + 2H₂O + 4NO₂ — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch11-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch11_027",
+      "unit": "icse-10-chemistry-ch11",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Copper turnings are warmed with nitric acid diluted 1 : 1 with water. A colourless gas forms inside the tube, but reddish-brown fumes appear at its mouth. The colourless gas is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "nitrogen dioxide, NO₂"
+        },
+        {
+          "id": "b",
+          "text_md": "hydrogen, H₂"
+        },
+        {
+          "id": "c",
+          "text_md": "nitric oxide, NO"
+        },
+        {
+          "id": "d",
+          "text_md": "oxygen, O₂"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "3Cu + 8HNO₃ → 3Cu(NO₃)₂ + 4H₂O + 2NO; at the mouth 2NO + O₂ → 2NO₂ — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch11-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch11_028",
+      "unit": "icse-10-chemistry-ch11",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Sulphur powder is heated with concentrated nitric acid. The sulphur is converted into:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "sulphuric acid"
+        },
+        {
+          "id": "b",
+          "text_md": "sulphur dioxide"
+        },
+        {
+          "id": "c",
+          "text_md": "hydrogen sulphide"
+        },
+        {
+          "id": "d",
+          "text_md": "sulphur trioxide"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "S + 6HNO₃ → H₂SO₄ + 2H₂O + 6NO₂ — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch11-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch11_029",
+      "unit": "icse-10-chemistry-ch11",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "In the reaction 3Cu + 8HNO₃ → 3Cu(NO₃)₂ + 4H₂O + 2NO, how many of the eight nitric acid molecules act as an oxidising agent (that is, have their nitrogen changed into nitric oxide)?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "6"
+        },
+        {
+          "id": "b",
+          "text_md": "2"
+        },
+        {
+          "id": "c",
+          "text_md": "8"
+        },
+        {
+          "id": "d",
+          "text_md": "3"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Only 2 nitrogen atoms end up in NO; the other 6 stay as nitrate ions in 3Cu(NO₃)₂ and act only as an acid — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 4,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch11-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch11_030",
+      "unit": "icse-10-chemistry-ch11",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Reddish-brown fumes appear at the mouth of a test tube in which copper is reacting with dilute nitric acid.\n\n**Reason (R):** The nitric oxide formed in the tube combines with oxygen of the air to form nitrogen dioxide.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Both are true, and R explains A: 2NO + O₂ → 2NO₂ — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch11-t03"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch11_031",
+      "unit": "icse-10-chemistry-ch11",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Copper gives hydrogen gas with concentrated nitric acid.\n\n**Reason (R):** Nitric acid is a strong oxidising agent.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "A is false: copper gives nitrogen dioxide, not hydrogen. R is true — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch11-t03"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch11_032",
+      "unit": "icse-10-chemistry-ch11",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write the balanced equation for the reaction of copper with concentrated nitric acid.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Cu + 4HNO₃ → Cu(NO₃)₂ + 2H₂O + 2NO₂."
+      },
+      "solution_md": "Equation.",
+      "marking_scheme": [
+        {
+          "step": "Balanced equation",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch11-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch11_033",
+      "unit": "icse-10-chemistry-ch11",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write the balanced equation for the action of hot concentrated nitric acid on charcoal.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "C + 4HNO₃ → CO₂ + 2H₂O + 4NO₂."
+      },
+      "solution_md": "Equation.",
+      "marking_scheme": [
+        {
+          "step": "Balanced equation",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch11-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch11_034",
+      "unit": "icse-10-chemistry-ch11",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write the balanced equation for the oxidation of sulphur by hot concentrated nitric acid.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "S + 6HNO₃ → H₂SO₄ + 2H₂O + 6NO₂."
+      },
+      "solution_md": "Equation.",
+      "marking_scheme": [
+        {
+          "step": "Balanced equation",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch11-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch11_035",
+      "unit": "icse-10-chemistry-ch11",
+      "language": "en",
+      "type": "short",
+      "stem_md": "State one observation when concentrated nitric acid is added to copper turnings.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Reddish-brown fumes are given off (or: the copper dissolves and the solution turns green, then blue on dilution)."
+      },
+      "solution_md": "Brown fumes.",
+      "marking_scheme": [
+        {
+          "step": "One correct observation",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch11-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch11_036",
+      "unit": "icse-10-chemistry-ch11",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "Copper turnings weighing 12.7 g dissolve completely in excess concentrated nitric acid. What volume of nitrogen dioxide, measured at STP, is given off? Give the answer in litres. (Cu = 63.5; one mole of a gas occupies 22.4 L at STP)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 8.96,
+        "tolerance": 0.01,
+        "unit": "L"
+      },
+      "solution_md": "$\\ce{Cu + 4HNO3 -> Cu(NO3)2 + 2H2O + 2NO2}$: one mole of copper gives two moles of nitrogen dioxide. Moles of Cu $= \\dfrac{12.7}{63.5} = 0.2$. Moles of $\\ce{NO2} = 2 \\times 0.2 = 0.4$. Volume $= 0.4 \\times 22.4 = 8.96$, so 8.96 L.",
+      "marking_scheme": [
+        {
+          "step": "Moles of Cu and 1 : 2 ratio",
+          "marks": 1
+        },
+        {
+          "step": "8.96 L",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch11-t03"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch11_037",
+      "unit": "icse-10-chemistry-ch11",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "Copper weighing 9.525 g dissolves completely in dilute nitric acid. What volume of nitric oxide, measured at STP, is formed? Give the answer in litres. (Cu = 63.5; one mole of a gas occupies 22.4 L at STP)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 2.24,
+        "tolerance": 0.01,
+        "unit": "L"
+      },
+      "solution_md": "$\\ce{3Cu + 8HNO3 -> 3Cu(NO3)2 + 4H2O + 2NO}$: three moles of copper give two moles of nitric oxide. Moles of Cu $= \\dfrac{9.525}{63.5} = 0.15$. Moles of NO $= 0.15 \\times \\dfrac{2}{3} = 0.1$. Volume $= 0.1 \\times 22.4 = 2.24$, so 2.24 L.",
+      "marking_scheme": [
+        {
+          "step": "Moles of Cu and 3 : 2 ratio",
+          "marks": 1
+        },
+        {
+          "step": "2.24 L",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch11-t03"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch11_038",
+      "unit": "icse-10-chemistry-ch11",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Compare the action of concentrated and dilute nitric acid on copper by writing the balanced equation for each.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Concentrated: Cu + 4HNO₃ → Cu(NO₃)₂ + 2H₂O + 2NO₂ (reddish-brown gas). Dilute: 3Cu + 8HNO₃ → 3Cu(NO₃)₂ + 4H₂O + 2NO (colourless gas)."
+      },
+      "solution_md": "Two equations.",
+      "marking_scheme": [
+        {
+          "step": "Concentrated",
+          "marks": 1
+        },
+        {
+          "step": "Dilute",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch11-t03"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch11_039",
+      "unit": "icse-10-chemistry-ch11",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Hot concentrated nitric acid is added separately to charcoal and to sulphur. (a) Write a balanced equation for each reaction. (b) Name the gas given off in both, and state its colour. (c) Which property of nitric acid do both reactions show? Give a reason.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) C + 4HNO₃ → CO₂ + 2H₂O + 4NO₂; S + 6HNO₃ → H₂SO₄ + 2H₂O + 6NO₂. (b) Nitrogen dioxide, reddish brown. (c) Nitric acid acts as an oxidising agent: it gives oxygen that oxidises carbon to carbon dioxide and sulphur to sulphuric acid, and is itself reduced to NO₂."
+      },
+      "solution_md": "Equations; NO₂; oxidising agent.",
+      "marking_scheme": [
+        {
+          "step": "(a) both equations",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch11-t03"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch11_040",
+      "unit": "icse-10-chemistry-ch11",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A clean magnesium ribbon is dropped into very dilute nitric acid (about 1%). The gas given off is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "hydrogen"
+        },
+        {
+          "id": "b",
+          "text_md": "nitrogen dioxide"
+        },
+        {
+          "id": "c",
+          "text_md": "nitric oxide"
+        },
+        {
+          "id": "d",
+          "text_md": "oxygen"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Mg + 2HNO₃ → Mg(NO₃)₂ + H₂: very dilute acid gives hydrogen with magnesium — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch11-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch11_041",
+      "unit": "icse-10-chemistry-ch11",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Nitric acid forms only one kind of salt, sodium nitrate, with sodium hydroxide. This shows that nitric acid is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "dibasic"
+        },
+        {
+          "id": "b",
+          "text_md": "tribasic"
+        },
+        {
+          "id": "c",
+          "text_md": "a weak acid"
+        },
+        {
+          "id": "d",
+          "text_md": "monobasic"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "One replaceable hydrogen per molecule, so only normal salts (nitrates) form — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch11-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch11_042",
+      "unit": "icse-10-chemistry-ch11",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Dilute nitric acid is added to sodium hydrogen sulphite. The gas given off, and a test for it, are:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "carbon dioxide, which turns lime water milky"
+        },
+        {
+          "id": "b",
+          "text_md": "hydrogen sulphide, which turns lead acetate paper black"
+        },
+        {
+          "id": "c",
+          "text_md": "sulphur dioxide, which turns orange acidified potassium dichromate solution green"
+        },
+        {
+          "id": "d",
+          "text_md": "hydrogen, which burns with a pop"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "NaHSO₃ + HNO₃ → NaNO₃ + H₂O + SO₂ — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch11-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch11_043",
+      "unit": "icse-10-chemistry-ch11",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Black copper(II) oxide is warmed with dilute nitric acid. The observation is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "reddish-brown fumes are given off"
+        },
+        {
+          "id": "b",
+          "text_md": "the black solid dissolves to give a blue solution"
+        },
+        {
+          "id": "c",
+          "text_md": "a white precipitate forms"
+        },
+        {
+          "id": "d",
+          "text_md": "hydrogen is given off"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "CuO + 2HNO₃ → Cu(NO₃)₂ + H₂O; copper(II) nitrate solution is blue — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch11-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch11_044",
+      "unit": "icse-10-chemistry-ch11",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? Iron filings give hydrogen with moderately dilute nitric acid just as they do with dilute hydrochloric acid.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "f"
+        ]
+      },
+      "solution_md": "False: nitric acid oxidises the hydrogen to water; only very dilute nitric acid gives hydrogen, and only with magnesium or manganese.",
+      "marking_scheme": [
+        {
+          "step": "False, with the correction",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch11-t04"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch11_045",
+      "unit": "icse-10-chemistry-ch11",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "Besides magnesium, the metal ___ gives hydrogen with very dilute nitric acid.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "manganese",
+              "Mn"
+            ]
+          }
+        ]
+      },
+      "solution_md": "**Manganese**: Mn + 2HNO₃ → Mn(NO₃)₂ + H₂.",
+      "marking_scheme": [
+        {
+          "step": "Blank 1: \"manganese\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch11-t04"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch11_046",
+      "unit": "icse-10-chemistry-ch11",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Name the two metals that give hydrogen with very dilute nitric acid.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Magnesium and manganese."
+      },
+      "solution_md": "Mg and Mn.",
+      "marking_scheme": [
+        {
+          "step": "Both metals",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch11-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch11_047",
+      "unit": "icse-10-chemistry-ch11",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write the balanced equation for the reaction of zinc oxide with dilute nitric acid.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "ZnO + 2HNO₃ → Zn(NO₃)₂ + H₂O."
+      },
+      "solution_md": "Equation.",
+      "marking_scheme": [
+        {
+          "step": "Balanced equation",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch11-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch11_048",
+      "unit": "icse-10-chemistry-ch11",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write the balanced equation for the action of dilute nitric acid on potassium hydrogencarbonate.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "KHCO₃ + HNO₃ → KNO₃ + H₂O + CO₂."
+      },
+      "solution_md": "Equation.",
+      "marking_scheme": [
+        {
+          "step": "Balanced equation",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch11-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch11_049",
+      "unit": "icse-10-chemistry-ch11",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write the balanced equation for the neutralisation of sodium hydroxide solution by dilute nitric acid.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "NaOH + HNO₃ → NaNO₃ + H₂O."
+      },
+      "solution_md": "Equation.",
+      "marking_scheme": [
+        {
+          "step": "Balanced equation",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch11-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch11_050",
+      "unit": "icse-10-chemistry-ch11",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Explain why only very dilute nitric acid gives hydrogen with metals, and write the balanced equation for its reaction with manganese.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Nitric acid is a strong oxidising agent, so it normally oxidises any hydrogen formed to water. In very dilute acid (about 1%) its oxidising power is weak, and with very reactive metals such as magnesium and manganese some hydrogen escapes. Mn + 2HNO₃ → Mn(NO₃)₂ + H₂."
+      },
+      "solution_md": "Oxidising power; equation.",
+      "marking_scheme": [
+        {
+          "step": "Reason",
+          "marks": 1
+        },
+        {
+          "step": "Equation",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch11-t04"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch11_051",
+      "unit": "icse-10-chemistry-ch11",
+      "language": "en",
+      "type": "short",
+      "stem_md": "How would you distinguish dilute nitric acid from dilute hydrochloric acid using copper turnings? State the observation for each.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Warm each acid with copper turnings. Dilute nitric acid reacts: the solution turns blue and a colourless gas forms that turns reddish brown at the mouth of the tube (NO, then NO₂). Dilute hydrochloric acid does not react with copper: no change."
+      },
+      "solution_md": "Copper reacts only with nitric acid.",
+      "marking_scheme": [
+        {
+          "step": "Nitric acid: blue solution and brown fumes at the mouth",
+          "marks": 1
+        },
+        {
+          "step": "Hydrochloric acid: no reaction",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch11-t03",
+        "icse-10-chemistry-ch11-t04"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch11_052",
+      "unit": "icse-10-chemistry-ch11",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "In the brown ring test for a nitrate, the test solution is first mixed with:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "copper(II) sulphate solution, before dilute hydrochloric acid is added"
+        },
+        {
+          "id": "b",
+          "text_md": "iron(III) chloride solution, before sodium hydroxide is added"
+        },
+        {
+          "id": "c",
+          "text_md": "silver nitrate solution, before dilute nitric acid is added"
+        },
+        {
+          "id": "d",
+          "text_md": "freshly prepared iron(II) sulphate solution, before concentrated sulphuric acid is poured down the side"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Fresh FeSO₄ solution, then concentrated H₂SO₄ layered underneath; the brown ring forms at the junction — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch11-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch11_053",
+      "unit": "icse-10-chemistry-ch11",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A colourless liquid is warmed with copper turnings and gives reddish-brown fumes and a bluish-green solution. The liquid is most likely:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "concentrated hydrochloric acid"
+        },
+        {
+          "id": "b",
+          "text_md": "concentrated nitric acid"
+        },
+        {
+          "id": "c",
+          "text_md": "dilute sulphuric acid"
+        },
+        {
+          "id": "d",
+          "text_md": "sodium hydroxide solution"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Only nitric acid oxidises copper with brown NO₂ fumes — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch11-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch11_054",
+      "unit": "icse-10-chemistry-ch11",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? In the brown ring test, the brown ring forms at the top surface of the liquid in the test tube.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "f"
+        ]
+      },
+      "solution_md": "False: it forms at the junction of the heavy sulphuric acid layer and the upper layer of test solution and iron(II) sulphate.",
+      "marking_scheme": [
+        {
+          "step": "False, with the correction",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch11-t05"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch11_055",
+      "unit": "icse-10-chemistry-ch11",
+      "language": "en",
+      "type": "short",
+      "stem_md": "In the brown ring test, why is concentrated sulphuric acid poured slowly down the side of the test tube?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "So that the heavy acid sinks to form a separate layer below the solution, and the brown ring forms at the junction of the two layers."
+      },
+      "solution_md": "Forms a separate lower layer.",
+      "marking_scheme": [
+        {
+          "step": "Separate layer, ring at the junction",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch11-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch11_056",
+      "unit": "icse-10-chemistry-ch11",
+      "language": "en",
+      "type": "short",
+      "stem_md": "A colourless liquid X turns blue litmus red. When warmed with copper turnings it gives reddish-brown fumes; with sodium carbonate it effervesces; and it gives a brown ring in the brown ring test. (a) Identify X. (b) Write the balanced equation for its reaction with sodium carbonate. (c) Name the gas given off with copper and write the balanced equation.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Concentrated nitric acid. (b) Na₂CO₃ + 2HNO₃ → 2NaNO₃ + H₂O + CO₂. (c) Nitrogen dioxide: Cu + 4HNO₃ → Cu(NO₃)₂ + 2H₂O + 2NO₂."
+      },
+      "solution_md": "Acid; brown fumes with copper and a brown ring: nitric acid.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch11-t03",
+        "icse-10-chemistry-ch11-t04",
+        "icse-10-chemistry-ch11-t05"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch11_057",
+      "unit": "icse-10-chemistry-ch11",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "Complete each sentence by choosing the correct word from the bracket.\n\n(a) In Ostwald’s process, ammonia is oxidised over a ___ (platinum / iron) gauze.\n\n(b) Nitric oxide is a ___ (colourless / reddish-brown) gas.\n\n(c) Pure nitric acid is ___ (colourless / yellow).",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "platinum"
+            ]
+          },
+          {
+            "accepted": [
+              "colourless"
+            ]
+          },
+          {
+            "accepted": [
+              "colourless"
+            ]
+          }
+        ]
+      },
+      "solution_md": "(a) **platinum**; (b) **colourless**; (c) **colourless**.",
+      "marking_scheme": [
+        {
+          "step": "Blank 1: \"platinum\"",
+          "marks": 1
+        },
+        {
+          "step": "Blank 2: \"colourless\"",
+          "marks": 1
+        },
+        {
+          "step": "Blank 3: \"colourless\"",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch11-t01",
+        "icse-10-chemistry-ch11-t02",
+        "icse-10-chemistry-ch11-t03"
+      ],
+      "expected_time_sec": 135,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch11_058",
+      "unit": "icse-10-chemistry-ch11",
+      "language": "en",
+      "type": "match",
+      "stem_md": "Match each process or test in Column A with the condition or reagent in Column B.",
+      "options": [
+        {
+          "id": "1",
+          "text_md": "Laboratory preparation of nitric acid"
+        },
+        {
+          "id": "2",
+          "text_md": "Storing concentrated nitric acid"
+        },
+        {
+          "id": "3",
+          "text_md": "Removing the yellow colour of the acid"
+        },
+        {
+          "id": "4",
+          "text_md": "Brown ring test"
+        },
+        {
+          "id": "5",
+          "text_md": "Collecting nitric acid vapour"
+        }
+      ],
+      "match_right": [
+        {
+          "id": "p",
+          "text_md": "Dark brown bottles"
+        },
+        {
+          "id": "q",
+          "text_md": "Fresh iron(II) sulphate solution and concentrated sulphuric acid"
+        },
+        {
+          "id": "r",
+          "text_md": "Receiver cooled by running water"
+        },
+        {
+          "id": "s",
+          "text_md": "Gentle heating below 200 °C in an all-glass apparatus"
+        },
+        {
+          "id": "t",
+          "text_md": "Dry air bubbled through the warm acid"
+        }
+      ],
+      "answer": {
+        "pairs": [
+          {
+            "left_id": "1",
+            "right_id": "s"
+          },
+          {
+            "left_id": "2",
+            "right_id": "p"
+          },
+          {
+            "left_id": "3",
+            "right_id": "t"
+          },
+          {
+            "left_id": "4",
+            "right_id": "q"
+          },
+          {
+            "left_id": "5",
+            "right_id": "r"
+          }
+        ]
+      },
+      "solution_md": "Laboratory preparation → below 200 °C, all glass; storing → brown bottles; removing yellow colour → dry air through warm acid; brown ring test → fresh FeSO₄ and conc. H₂SO₄; collecting the vapour → cooled receiver.",
+      "marking_scheme": [
+        {
+          "step": "1 → s",
+          "marks": 1
+        },
+        {
+          "step": "2 → p",
+          "marks": 1
+        },
+        {
+          "step": "3 → t",
+          "marks": 1
+        },
+        {
+          "step": "4 → q",
+          "marks": 1
+        },
+        {
+          "step": "5 → r",
+          "marks": 1
+        }
+      ],
+      "marks": 5,
+      "difficulty": 2,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch11-t01",
+        "icse-10-chemistry-ch11-t05"
+      ],
+      "expected_time_sec": 200,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch11_059",
+      "unit": "icse-10-chemistry-ch11",
+      "language": "en",
+      "type": "match",
+      "stem_md": "Match each pair of reactants in Column A with the gas given off in Column B.",
+      "options": [
+        {
+          "id": "1",
+          "text_md": "Copper and concentrated nitric acid"
+        },
+        {
+          "id": "2",
+          "text_md": "Copper and dilute nitric acid"
+        },
+        {
+          "id": "3",
+          "text_md": "Magnesium and very dilute nitric acid"
+        },
+        {
+          "id": "4",
+          "text_md": "Sodium hydrogencarbonate and dilute nitric acid"
+        }
+      ],
+      "match_right": [
+        {
+          "id": "p",
+          "text_md": "Nitric oxide"
+        },
+        {
+          "id": "q",
+          "text_md": "Carbon dioxide"
+        },
+        {
+          "id": "r",
+          "text_md": "Nitrogen dioxide"
+        },
+        {
+          "id": "s",
+          "text_md": "Hydrogen"
+        }
+      ],
+      "answer": {
+        "pairs": [
+          {
+            "left_id": "1",
+            "right_id": "r"
+          },
+          {
+            "left_id": "2",
+            "right_id": "p"
+          },
+          {
+            "left_id": "3",
+            "right_id": "s"
+          },
+          {
+            "left_id": "4",
+            "right_id": "q"
+          }
+        ]
+      },
+      "solution_md": "Copper and conc. acid → NO₂; copper and dil. acid → NO; magnesium and very dilute acid → H₂; sodium hydrogencarbonate → CO₂.",
+      "marking_scheme": [
+        {
+          "step": "1 → r",
+          "marks": 1
+        },
+        {
+          "step": "2 → p",
+          "marks": 1
+        },
+        {
+          "step": "3 → s",
+          "marks": 1
+        },
+        {
+          "step": "4 → q",
+          "marks": 1
+        }
+      ],
+      "marks": 4,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch11-t03",
+        "icse-10-chemistry-ch11-t04"
+      ],
+      "expected_time_sec": 160,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch11_060",
+      "unit": "icse-10-chemistry-ch11",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Name the two reactants used to prepare nitric acid in the laboratory, and write the balanced equation. [2]\n\n(b) Explain why (i) the apparatus is made entirely of glass and (ii) the receiver is cooled. [2]\n\n(c) Give three reasons why the reaction mixture is not heated above 200 °C. [3]\n\n(d) Calculate (i) the mass of potassium nitrate needed to prepare 25.2 g of nitric acid and (ii) the mass of potassium hydrogen sulphate formed at the same time. (K = 39, N = 14, O = 16, H = 1, S = 32) [3]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Potassium nitrate and concentrated sulphuric acid. KNO₃ + H₂SO₄ → KHSO₄ + HNO₃.\n\n(b) (i) Nitric acid vapour attacks cork and rubber. (ii) To condense the nitric acid vapour into a liquid.\n\n(c) Nitric acid would decompose; the glass retort could crack; a hard crust of potassium sulphate would form (any three, with wasted fuel also accepted).\n\n(d) One mole of nitric acid needs one mole of potassium nitrate and gives one mole of potassium hydrogen sulphate. Moles of nitric acid $= \\dfrac{25.2}{63} = 0.4$. (i) Mass of potassium nitrate $= 0.4 \\times 101 = 40.4$, that is 40.4 g. (ii) Molar mass of potassium hydrogen sulphate $= 39 + 1 + 32 + 4 \\times 16 = 136$; mass $= 0.4 \\times 136 = 54.4$, that is 54.4 g."
+      },
+      "solution_md": "Reactants and equation; reasons; three reasons; 1 : 1 : 1 mole ratio.",
+      "marking_scheme": [
+        {
+          "step": "(a) reactants",
+          "marks": 1
+        },
+        {
+          "step": "(a) equation",
+          "marks": 1
+        },
+        {
+          "step": "(b)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(b)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(c) three reasons",
+          "marks": 3
+        },
+        {
+          "step": "(d) moles of HNO₃",
+          "marks": 1
+        },
+        {
+          "step": "(d)(i) 40.4 g",
+          "marks": 1
+        },
+        {
+          "step": "(d)(ii) 54.4 g",
+          "marks": 1
+        }
+      ],
+      "marks": 10,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch11-t01"
+      ],
+      "expected_time_sec": 1080,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch11_061",
+      "unit": "icse-10-chemistry-ch11",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Write the balanced equation for the first step of Ostwald’s process and state the catalyst and temperature. [2]\n\n(b) Write the balanced equations for the second and third steps. [2]\n\n(c) (i) Why does the catalyst stay red-hot once the reaction has started? (ii) Why does concentrated nitric acid often look yellow? (iii) How can this colour be removed? [3]\n\n(d) Calculate the volumes, at STP, of (i) oxygen needed and (ii) nitric oxide formed when 8.5 g of ammonia is oxidised in the first step. (N = 14, H = 1; molar volume 22.4 L) [3]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) 4NH₃ + 5O₂ → 4NO + 6H₂O; platinum gauze, about 800 °C.\n\n(b) 2NO + O₂ → 2NO₂; 4NO₂ + 2H₂O + O₂ → 4HNO₃.\n\n(c) (i) The oxidation of ammonia is exothermic; the heat given out keeps the gauze hot. (ii) Some acid decomposes, and the nitrogen dioxide formed dissolves in it. (iii) Bubble dry air (or carbon dioxide) through the warm acid, or add water.\n\n(d) Moles of ammonia $= \\dfrac{8.5}{17} = 0.5$. From the equation, 4 moles of ammonia need 5 moles of oxygen and give 4 moles of nitric oxide. (i) Moles of oxygen $= 0.5 \\times \\dfrac{5}{4} = 0.625$; volume $= 0.625 \\times 22.4 = 14$, that is 14 L. (ii) Moles of nitric oxide $= 0.5$; volume $= 0.5 \\times 22.4 = 11.2$, that is 11.2 L."
+      },
+      "solution_md": "Equations with conditions; reasons; 4 : 5 : 4 mole ratio.",
+      "marking_scheme": [
+        {
+          "step": "(a) equation",
+          "marks": 1
+        },
+        {
+          "step": "(a) conditions",
+          "marks": 1
+        },
+        {
+          "step": "(b) step 2",
+          "marks": 1
+        },
+        {
+          "step": "(b) step 3",
+          "marks": 1
+        },
+        {
+          "step": "(c)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(iii)",
+          "marks": 1
+        },
+        {
+          "step": "(d) moles of NH₃",
+          "marks": 1
+        },
+        {
+          "step": "(d)(i) 14 L",
+          "marks": 1
+        },
+        {
+          "step": "(d)(ii) 11.2 L",
+          "marks": 1
+        }
+      ],
+      "marks": 10,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch11-t01",
+        "icse-10-chemistry-ch11-t02"
+      ],
+      "expected_time_sec": 1080,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch11_062",
+      "unit": "icse-10-chemistry-ch11",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Explain why nitric acid acts as an oxidising agent, and name the gas formed from the acid when (i) concentrated and (ii) dilute nitric acid reacts with copper. [2]\n\n(b) Write the balanced equations for the reaction of copper with (i) concentrated and (ii) dilute nitric acid. [2]\n\n(c) Write the balanced equations for the action of hot concentrated nitric acid on (i) carbon and (ii) sulphur, and state one observation common to both. [3]\n\n(d) 19.05 g of copper dissolves completely in dilute nitric acid. Calculate (i) the volume of nitric oxide formed at STP and (ii) the mass of copper(II) nitrate formed. (Cu = 63.5, N = 14, O = 16; molar volume 22.4 L) [3]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) It decomposes easily to give oxygen, which oxidises other substances. (i) Nitrogen dioxide. (ii) Nitric oxide.\n\n(b) (i) Cu + 4HNO₃ → Cu(NO₃)₂ + 2H₂O + 2NO₂. (ii) 3Cu + 8HNO₃ → 3Cu(NO₃)₂ + 4H₂O + 2NO.\n\n(c) (i) C + 4HNO₃ → CO₂ + 2H₂O + 4NO₂. (ii) S + 6HNO₃ → H₂SO₄ + 2H₂O + 6NO₂. Reddish-brown fumes are given off in both.\n\n(d) Moles of copper $= \\dfrac{19.05}{63.5} = 0.3$. Three moles of copper give two moles of nitric oxide and three moles of copper(II) nitrate. (i) Moles of nitric oxide $= 0.3 \\times \\dfrac{2}{3} = 0.2$; volume $= 0.2 \\times 22.4 = 4.48$, that is 4.48 L. (ii) Molar mass of copper(II) nitrate $= 63.5 + 2 \\times 14 + 6 \\times 16 = 187.5$; mass $= 0.3 \\times 187.5 = 56.25$, that is 56.25 g."
+      },
+      "solution_md": "Oxygen from decomposition; two copper equations; carbon and sulphur; 3 : 2 and 1 : 1 ratios.",
+      "marking_scheme": [
+        {
+          "step": "(a) reason",
+          "marks": 1
+        },
+        {
+          "step": "(a) both gases",
+          "marks": 1
+        },
+        {
+          "step": "(b)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(b)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(c) observation",
+          "marks": 1
+        },
+        {
+          "step": "(d) moles of Cu",
+          "marks": 1
+        },
+        {
+          "step": "(d)(i) 4.48 L",
+          "marks": 1
+        },
+        {
+          "step": "(d)(ii) 56.25 g",
+          "marks": 1
+        }
+      ],
+      "marks": 10,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch11-t03"
+      ],
+      "expected_time_sec": 1080,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch11_063",
+      "unit": "icse-10-chemistry-ch11",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) What is meant by saying that nitric acid is monobasic? Name the normal salt it forms with potassium hydroxide. [2]\n\n(b) A magnesium ribbon is placed in very dilute nitric acid. Write the balanced equation, and explain why more concentrated nitric acid does not give this gas. [2]\n\n(c) Write the balanced equations for the reactions of dilute nitric acid with (i) copper(II) oxide, (ii) sodium carbonate and (iii) sodium hydrogen sulphite. [3]\n\n(d) Dilute nitric acid is added to three test tubes holding sodium hydrogencarbonate, sodium sulphite and copper(II) oxide. State one observation for each tube, naming any gas given off. [3]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Each molecule has one replaceable hydrogen atom, so it forms only one kind of salt (a normal salt). Potassium nitrate, KNO₃.\n\n(b) Mg + 2HNO₃ → Mg(NO₃)₂ + H₂. More concentrated nitric acid is a strong oxidising agent and oxidises the hydrogen to water.\n\n(c) (i) CuO + 2HNO₃ → Cu(NO₃)₂ + H₂O. (ii) Na₂CO₃ + 2HNO₃ → 2NaNO₃ + H₂O + CO₂. (iii) NaHSO₃ + HNO₃ → NaNO₃ + H₂O + SO₂.\n\n(d) Sodium hydrogencarbonate: brisk effervescence of carbon dioxide (turns lime water milky). Sodium sulphite: effervescence of sulphur dioxide, with a smell of burning sulphur (turns acidified potassium dichromate green). Copper(II) oxide: the black solid dissolves to a blue solution; no gas."
+      },
+      "solution_md": "Basicity; hydrogen only from very dilute acid; three equations; three observations.",
+      "marking_scheme": [
+        {
+          "step": "(a) meaning",
+          "marks": 1
+        },
+        {
+          "step": "(a) KNO₃",
+          "marks": 1
+        },
+        {
+          "step": "(b) equation",
+          "marks": 1
+        },
+        {
+          "step": "(b) reason",
+          "marks": 1
+        },
+        {
+          "step": "(c)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(iii)",
+          "marks": 1
+        },
+        {
+          "step": "(d) NaHCO₃",
+          "marks": 1
+        },
+        {
+          "step": "(d) Na₂SO₃",
+          "marks": 1
+        },
+        {
+          "step": "(d) CuO",
+          "marks": 1
+        }
+      ],
+      "marks": 10,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch11-t04"
+      ],
+      "expected_time_sec": 1080,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch11_064",
+      "unit": "icse-10-chemistry-ch11",
+      "language": "en",
+      "type": "long",
+      "stem_md": "Three unlabelled bottles, P, Q and R, contain dilute nitric acid, dilute hydrochloric acid and dilute sulphuric acid, in some order.\n\n(a) Copper turnings are warmed with a sample from each bottle. Only the sample from P reacts. Identify P, state two observations and write the balanced equation. [3]\n\n(b) Describe how the brown ring test is carried out on a sample from P, and state where the brown ring appears. [3]\n\n(c) Suggest one reagent that distinguishes Q from R. State the observation with each acid, and write the balanced equation for the reaction that gives a visible change. [4]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) P is dilute nitric acid. The solution turns blue, and a colourless gas forms that turns reddish brown at the mouth of the tube. 3Cu + 8HNO₃ → 3Cu(NO₃)₂ + 4H₂O + 2NO.\n\n(b) Mix the sample with freshly prepared iron(II) sulphate solution in a test tube. Tilt the tube and pour concentrated sulphuric acid slowly down the side so that it forms a separate layer at the bottom. A brown ring appears at the junction of the two layers.\n\n(c) Barium chloride solution. Dilute sulphuric acid gives a white precipitate of barium sulphate (insoluble in dilute hydrochloric acid); dilute hydrochloric acid gives no precipitate. H₂SO₄ + BaCl₂ → BaSO₄ + 2HCl. (Silver nitrate is also accepted: a curdy white precipitate with hydrochloric acid only.)"
+      },
+      "solution_md": "Copper reacts only with nitric acid; brown ring procedure; barium chloride for sulphate.",
+      "marking_scheme": [
+        {
+          "step": "(a) P identified",
+          "marks": 1
+        },
+        {
+          "step": "(a) two observations",
+          "marks": 1
+        },
+        {
+          "step": "(a) equation",
+          "marks": 1
+        },
+        {
+          "step": "(b) fresh FeSO₄",
+          "marks": 1
+        },
+        {
+          "step": "(b) conc. H₂SO₄ down the side",
+          "marks": 1
+        },
+        {
+          "step": "(b) ring at the junction",
+          "marks": 1
+        },
+        {
+          "step": "(c) reagent",
+          "marks": 1
+        },
+        {
+          "step": "(c) sulphuric acid observation",
+          "marks": 1
+        },
+        {
+          "step": "(c) hydrochloric acid observation",
+          "marks": 1
+        },
+        {
+          "step": "(c) equation",
+          "marks": 1
+        }
+      ],
+      "marks": 10,
+      "difficulty": 4,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch11-t03",
+        "icse-10-chemistry-ch11-t05"
+      ],
+      "expected_time_sec": 1080,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    }
+  ],
+  "build": {
+    "run_id": null,
+    "checks": {
+      "katex_mhchem": "51 math strings parsed with KaTeX 0.19.0 + mhchem (throwOnError, strict \"error\"), 0 failures",
+      "svg_allowlist": "2 SVG visuals (2 distinct diagrams) checked with saxes against svg-allowlist.ts: elements, attributes, class pattern, fragment-only refs, no style, palette incl. named hues, viewBox, title, per-page unique ids — 0 failures",
+      "narration": "30 slides, 15–68 words (mean 49), no symbols, formulae or unit abbreviations",
+      "resolve": "6/6 scripted re-solve checks pass",
+      "chemistry_facts": "Laboratory preparation from KNO₃ or NaNO₃ and conc. H₂SO₄ below 200 °C (acid salt, all-glass retort, cooled receiver, reasons for the temperature limit), decomposition by light and the yellow colour, Ostwald’s process equations with conditions only (Pt gauze, about 800 °C, NH₃ : air about 1 : 10; 2NO + O₂ → 2NO₂; 4NO₂ + 2H₂O + O₂ → 4HNO₃), copper with conc. (NO₂) and dil. (NO) acid, carbon and sulphur with hot conc. acid, hydrogen only from very dilute acid with Mg and Mn, acidic reactions with oxides, hydroxides, carbonates, hydrogen carbonates, sulphites and hydrogen sulphites, and the copper-turnings and brown ring tests, checked against the ICSE 2027 syllabus (Class X, section 8C); every equation balanced by atom count",
+      "content_gate": "npm test -w @soyl/content-templates: all checks pass for this chapter",
+      "verifier_pass": "2026-11-01: every question re-solved from its stem by the author; every numerical re-computed by the build script",
+      "pipeline_lint": "npm run content -- lint --exemplars: 0 errors, 0 warnings"
+    }
+  }
+}
