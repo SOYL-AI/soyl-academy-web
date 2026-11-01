@@ -1,0 +1,4688 @@
+{
+  "unit": "icse-10-chemistry-ch02",
+  "version": 1,
+  "academic_year": "2026-27",
+  "created_at": "2026-11-01T00:00:00+05:30",
+  "decks": [
+    {
+      "unit": "icse-10-chemistry-ch02",
+      "part": 1,
+      "version": 1,
+      "title": "Chemical Bonding — Part 1: Electrovalent (ionic) bonding",
+      "language": "en",
+      "goals": [
+        "Explain why atoms combine, using the octet and duplet rules",
+        "Draw electron dot diagrams for the formation of NaCl, MgCl₂ and CaO",
+        "State the conditions that favour an electrovalent bond",
+        "Explain the properties of electrovalent compounds"
+      ],
+      "slides": [
+        {
+          "id": "s01",
+          "layout": "title",
+          "heading": "Why do atoms join?",
+          "body_md": "Part 1 — atoms bond to reach a stable arrangement of electrons like a noble gas. One way is to **transfer** electrons and form ions.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Noble gas",
+                "Configuration",
+                "Outer shell"
+              ],
+              "rows": [
+                [
+                  "Helium",
+                  "2",
+                  "Duplet (2 electrons)"
+                ],
+                [
+                  "Neon",
+                  "2, 8",
+                  "Octet"
+                ],
+                [
+                  "Argon",
+                  "2, 8, 8",
+                  "Octet"
+                ]
+              ]
+            },
+            "alt": "Table of helium, neon and argon with their stable duplet or octet configurations"
+          },
+          "math": [],
+          "narration": "Namaste! Noble gases hardly react at all, because their outer shells are full: two electrons for helium, eight for neon and argon. Other atoms react so that they too end up with a full outer shell. They can do this by giving and taking electrons, which we study in this part, or by sharing electrons, which comes in Part 2.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s02",
+          "layout": "concept",
+          "heading": "Octet rule and the electrovalent bond",
+          "body_md": "Atoms tend to gain, lose or share electrons to get **eight electrons in the outer shell** (an **octet**), or two in the first shell (a **duplet**, as for H, Li). An **electrovalent (ionic) bond** forms when one atom **transfers** electrons to another: the atom that loses electrons becomes a **cation**, the one that gains becomes an **anion**, and the opposite charges attract strongly. The number of electrons lost or gained is the **electrovalency**.",
+          "bullets": [],
+          "visual": {
+            "kind": "flow",
+            "spec": {
+              "direction": "LR",
+              "nodes": [
+                {
+                  "id": "a",
+                  "label": "Metal atom (1–3 valence e⁻)"
+                },
+                {
+                  "id": "b",
+                  "label": "Loses e⁻ → cation"
+                },
+                {
+                  "id": "c",
+                  "label": "Non-metal atom (5–7 valence e⁻)"
+                },
+                {
+                  "id": "d",
+                  "label": "Gains e⁻ → anion"
+                },
+                {
+                  "id": "e",
+                  "label": "Electrostatic attraction = ionic bond"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "a",
+                  "to": "b"
+                },
+                {
+                  "from": "c",
+                  "to": "d"
+                },
+                {
+                  "from": "b",
+                  "to": "e"
+                },
+                {
+                  "from": "d",
+                  "to": "e"
+                }
+              ]
+            },
+            "alt": "Flow showing a metal atom losing electrons and a non-metal atom gaining them, the ions attracting to form an ionic bond"
+          },
+          "math": [],
+          "narration": "Atoms try to reach eight electrons in their outer shell, or two if they have only one shell. In an electrovalent bond, a metal atom with only a few outer electrons hands them over to a non-metal atom that needs only a few more. The metal becomes a positive ion and the non-metal a negative ion, and the strong attraction between them is the ionic bond.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s03",
+          "layout": "diagram",
+          "heading": "Electron dot diagrams: NaCl, MgCl₂ and CaO",
+          "body_md": "**NaCl:** Na (2, 8, 1) gives 1 electron to Cl (2, 8, 7) → Na⁺ (2, 8) and Cl⁻ (2, 8, 8). **MgCl₂:** Mg (2, 8, 2) gives 1 electron to each of 2 Cl atoms → Mg²⁺ and 2Cl⁻. **CaO:** Ca (2, 8, 8, 2) gives 2 electrons to O (2, 6) → Ca²⁺ (2, 8, 8) and O²⁻ (2, 8). Show the metal’s electrons as crosses and the non-metal’s as dots, and put each ion in square brackets with its charge.",
+          "bullets": [],
+          "visual": {
+            "kind": "svg",
+            "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 460 260\" role=\"img\" aria-label=\"Electron dot diagrams for three ionic compounds. Top row: a sodium atom with one outer electron, shown as a cross, transfers it to a chlorine atom with seven outer electrons, shown as dots, giving a sodium ion with charge plus one and a chloride ion with a complete octet and charge minus one. Middle row: a magnesium atom gives one electron to each of two chlorine atoms, forming Mg two plus and two chloride ions. Bottom row: a calcium atom gives two electrons to an oxygen atom with six outer electrons, forming Ca two plus and an oxide ion with a complete octet and charge minus two.\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>Electron dot diagrams for three ionic compounds. Top row: a sodium atom with one outer electron, shown as a cross, transfers it to a chlorine atom with seven outer electrons, shown as dots, giving a sodium ion with charge plus one and a chloride ion with a complete octet and charge minus one. Middle row: a magnesium atom gives one electron to each of two chlorine atoms, forming Mg two plus and two chloride ions. Bottom row: a calcium atom gives two electrons to an oxygen atom with six outer electrons, forming Ca two plus and an oxide ion with a complete octet and charge minus two.</title><text x=\"30\" y=\"45\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"bold\">Na</text><line x1=\"42.5\" y1=\"37.5\" x2=\"47.5\" y2=\"42.5\" stroke=\"var(--diagram-red)\" stroke-width=\"1.4\"/><line x1=\"42.5\" y1=\"42.5\" x2=\"47.5\" y2=\"37.5\" stroke=\"var(--diagram-red)\" stroke-width=\"1.4\"/><text x=\"52\" y=\"45\" fill=\"currentColor\" stroke=\"none\" font-size=\"13\">+</text><text x=\"85\" y=\"45\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"bold\">Cl</text><circle cx=\"81\" cy=\"26\" r=\"2.2\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\"/><circle cx=\"89\" cy=\"26\" r=\"2.2\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\"/><circle cx=\"81\" cy=\"54\" r=\"2.2\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\"/><circle cx=\"89\" cy=\"54\" r=\"2.2\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\"/><circle cx=\"70\" cy=\"40\" r=\"2.2\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\"/><circle cx=\"100\" cy=\"36\" r=\"2.2\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\"/><circle cx=\"100\" cy=\"44\" r=\"2.2\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\"/><line x1=\"115\" y1=\"40\" x2=\"159.4\" y2=\"40\" stroke=\"currentColor\" stroke-width=\"1.5\"/><polygon points=\"165,40 158.6,42.9 158.6,37.1\" fill=\"currentColor\" stroke=\"none\"/><text x=\"140\" y=\"32\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">transfer</text><path d=\"M183 25 L178 25 L178 55 L183 55\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.2\"/><path d=\"M213 25 L218 25 L218 55 L213 55\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.2\"/><text x=\"221\" y=\"33\" fill=\"currentColor\" stroke=\"none\" font-size=\"11\" font-weight=\"bold\">+</text><text x=\"198\" y=\"45\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"bold\">Na</text><path d=\"M255 18 L250 18 L250 62 L255 62\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.2\"/><path d=\"M309 18 L314 18 L314 62 L309 62\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.2\"/><text x=\"317\" y=\"26\" fill=\"currentColor\" stroke=\"none\" font-size=\"11\" font-weight=\"bold\">−</text><text x=\"282\" y=\"45\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"bold\">Cl</text><circle cx=\"278\" cy=\"26\" r=\"2.2\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\"/><circle cx=\"286\" cy=\"26\" r=\"2.2\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\"/><circle cx=\"278\" cy=\"54\" r=\"2.2\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\"/><circle cx=\"286\" cy=\"54\" r=\"2.2\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\"/><line x1=\"264.5\" y1=\"33.5\" x2=\"269.5\" y2=\"38.5\" stroke=\"var(--diagram-red)\" stroke-width=\"1.4\"/><line x1=\"264.5\" y1=\"38.5\" x2=\"269.5\" y2=\"33.5\" stroke=\"var(--diagram-red)\" stroke-width=\"1.4\"/><circle cx=\"267\" cy=\"44\" r=\"2.2\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\"/><circle cx=\"297\" cy=\"36\" r=\"2.2\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\"/><circle cx=\"297\" cy=\"44\" r=\"2.2\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\"/><text x=\"360\" y=\"45\" fill=\"currentColor\" stroke=\"none\" font-size=\"12\" font-weight=\"bold\">NaCl</text><text x=\"85\" y=\"125\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"bold\">Mg</text><line x1=\"67.5\" y1=\"117.5\" x2=\"72.5\" y2=\"122.5\" stroke=\"var(--diagram-red)\" stroke-width=\"1.4\"/><line x1=\"67.5\" y1=\"122.5\" x2=\"72.5\" y2=\"117.5\" stroke=\"var(--diagram-red)\" stroke-width=\"1.4\"/><line x1=\"97.5\" y1=\"117.5\" x2=\"102.5\" y2=\"122.5\" stroke=\"var(--diagram-red)\" stroke-width=\"1.4\"/><line x1=\"97.5\" y1=\"122.5\" x2=\"102.5\" y2=\"117.5\" stroke=\"var(--diagram-red)\" stroke-width=\"1.4\"/><text x=\"30\" y=\"125\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"bold\">Cl</text><circle cx=\"26\" cy=\"106\" r=\"2.2\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\"/><circle cx=\"34\" cy=\"106\" r=\"2.2\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\"/><circle cx=\"26\" cy=\"134\" r=\"2.2\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\"/><circle cx=\"34\" cy=\"134\" r=\"2.2\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\"/><circle cx=\"15\" cy=\"116\" r=\"2.2\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\"/><circle cx=\"15\" cy=\"124\" r=\"2.2\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\"/><circle cx=\"45\" cy=\"120\" r=\"2.2\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\"/><text x=\"140\" y=\"125\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"bold\">Cl</text><circle cx=\"136\" cy=\"106\" r=\"2.2\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\"/><circle cx=\"144\" cy=\"106\" r=\"2.2\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\"/><circle cx=\"136\" cy=\"134\" r=\"2.2\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\"/><circle cx=\"144\" cy=\"134\" r=\"2.2\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\"/><circle cx=\"125\" cy=\"120\" r=\"2.2\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\"/><circle cx=\"155\" cy=\"116\" r=\"2.2\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\"/><circle cx=\"155\" cy=\"124\" r=\"2.2\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\"/><line x1=\"170\" y1=\"120\" x2=\"199.4\" y2=\"120\" stroke=\"currentColor\" stroke-width=\"1.5\"/><polygon points=\"205,120 198.6,122.9 198.6,117.1\" fill=\"currentColor\" stroke=\"none\"/><path d=\"M217 98 L212 98 L212 142 L217 142\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.2\"/><path d=\"M271 98 L276 98 L276 142 L271 142\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.2\"/><text x=\"279\" y=\"106\" fill=\"currentColor\" stroke=\"none\" font-size=\"11\" font-weight=\"bold\">−</text><text x=\"244\" y=\"125\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"bold\">Cl</text><circle cx=\"240\" cy=\"106\" r=\"2.2\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\"/><circle cx=\"248\" cy=\"106\" r=\"2.2\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\"/><circle cx=\"240\" cy=\"134\" r=\"2.2\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\"/><circle cx=\"248\" cy=\"134\" r=\"2.2\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\"/><circle cx=\"229\" cy=\"116\" r=\"2.2\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\"/><circle cx=\"229\" cy=\"124\" r=\"2.2\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\"/><circle cx=\"259\" cy=\"116\" r=\"2.2\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\"/><line x1=\"256.5\" y1=\"121.5\" x2=\"261.5\" y2=\"126.5\" stroke=\"var(--diagram-red)\" stroke-width=\"1.4\"/><line x1=\"256.5\" y1=\"126.5\" x2=\"261.5\" y2=\"121.5\" stroke=\"var(--diagram-red)\" stroke-width=\"1.4\"/><path d=\"M297 105 L292 105 L292 135 L297 135\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.2\"/><path d=\"M327 105 L332 105 L332 135 L327 135\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.2\"/><text x=\"335\" y=\"113\" fill=\"currentColor\" stroke=\"none\" font-size=\"11\" font-weight=\"bold\">2+</text><text x=\"312\" y=\"125\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"bold\">Mg</text><path d=\"M355 98 L350 98 L350 142 L355 142\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.2\"/><path d=\"M409 98 L414 98 L414 142 L409 142\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.2\"/><text x=\"417\" y=\"106\" fill=\"currentColor\" stroke=\"none\" font-size=\"11\" font-weight=\"bold\">−</text><text x=\"382\" y=\"125\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"bold\">Cl</text><circle cx=\"378\" cy=\"106\" r=\"2.2\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\"/><circle cx=\"386\" cy=\"106\" r=\"2.2\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\"/><circle cx=\"378\" cy=\"134\" r=\"2.2\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\"/><circle cx=\"386\" cy=\"134\" r=\"2.2\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\"/><line x1=\"364.5\" y1=\"113.5\" x2=\"369.5\" y2=\"118.5\" stroke=\"var(--diagram-red)\" stroke-width=\"1.4\"/><line x1=\"364.5\" y1=\"118.5\" x2=\"369.5\" y2=\"113.5\" stroke=\"var(--diagram-red)\" stroke-width=\"1.4\"/><circle cx=\"367\" cy=\"124\" r=\"2.2\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\"/><circle cx=\"397\" cy=\"116\" r=\"2.2\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\"/><circle cx=\"397\" cy=\"124\" r=\"2.2\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\"/><text x=\"395\" y=\"160\" fill=\"currentColor\" stroke=\"none\" font-size=\"12\" font-weight=\"bold\">MgCl₂</text><text x=\"30\" y=\"215\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"bold\">Ca</text><line x1=\"42.5\" y1=\"203.5\" x2=\"47.5\" y2=\"208.5\" stroke=\"var(--diagram-red)\" stroke-width=\"1.4\"/><line x1=\"42.5\" y1=\"208.5\" x2=\"47.5\" y2=\"203.5\" stroke=\"var(--diagram-red)\" stroke-width=\"1.4\"/><line x1=\"42.5\" y1=\"211.5\" x2=\"47.5\" y2=\"216.5\" stroke=\"var(--diagram-red)\" stroke-width=\"1.4\"/><line x1=\"42.5\" y1=\"216.5\" x2=\"47.5\" y2=\"211.5\" stroke=\"var(--diagram-red)\" stroke-width=\"1.4\"/><text x=\"55\" y=\"215\" fill=\"currentColor\" stroke=\"none\" font-size=\"13\">+</text><text x=\"90\" y=\"215\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"bold\">O</text><circle cx=\"86\" cy=\"196\" r=\"2.2\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\"/><circle cx=\"94\" cy=\"196\" r=\"2.2\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\"/><circle cx=\"90\" cy=\"224\" r=\"2.2\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\"/><circle cx=\"75\" cy=\"210\" r=\"2.2\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\"/><circle cx=\"105\" cy=\"206\" r=\"2.2\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\"/><circle cx=\"105\" cy=\"214\" r=\"2.2\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\"/><line x1=\"118\" y1=\"210\" x2=\"159.4\" y2=\"210\" stroke=\"currentColor\" stroke-width=\"1.5\"/><polygon points=\"165,210 158.6,212.9 158.6,207.1\" fill=\"currentColor\" stroke=\"none\"/><path d=\"M183 195 L178 195 L178 225 L183 225\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.2\"/><path d=\"M213 195 L218 195 L218 225 L213 225\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.2\"/><text x=\"221\" y=\"203\" fill=\"currentColor\" stroke=\"none\" font-size=\"11\" font-weight=\"bold\">2+</text><text x=\"198\" y=\"215\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"bold\">Ca</text><path d=\"M255 188 L250 188 L250 232 L255 232\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.2\"/><path d=\"M309 188 L314 188 L314 232 L309 232\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.2\"/><text x=\"317\" y=\"196\" fill=\"currentColor\" stroke=\"none\" font-size=\"11\" font-weight=\"bold\">2−</text><text x=\"282\" y=\"215\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"bold\">O</text><circle cx=\"278\" cy=\"196\" r=\"2.2\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\"/><circle cx=\"286\" cy=\"196\" r=\"2.2\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\"/><circle cx=\"278\" cy=\"224\" r=\"2.2\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\"/><line x1=\"283.5\" y1=\"221.5\" x2=\"288.5\" y2=\"226.5\" stroke=\"var(--diagram-red)\" stroke-width=\"1.4\"/><line x1=\"283.5\" y1=\"226.5\" x2=\"288.5\" y2=\"221.5\" stroke=\"var(--diagram-red)\" stroke-width=\"1.4\"/><circle cx=\"267\" cy=\"206\" r=\"2.2\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\"/><line x1=\"264.5\" y1=\"211.5\" x2=\"269.5\" y2=\"216.5\" stroke=\"var(--diagram-red)\" stroke-width=\"1.4\"/><line x1=\"264.5\" y1=\"216.5\" x2=\"269.5\" y2=\"211.5\" stroke=\"var(--diagram-red)\" stroke-width=\"1.4\"/><circle cx=\"297\" cy=\"206\" r=\"2.2\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\"/><circle cx=\"297\" cy=\"214\" r=\"2.2\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\"/><text x=\"360\" y=\"215\" fill=\"currentColor\" stroke=\"none\" font-size=\"12\" font-weight=\"bold\">CaO</text><text x=\"12\" y=\"252\" fill=\"var(--diagram-muted)\" stroke=\"none\" font-size=\"10\">× electron of the metal   • electron of the non-metal</text></svg>",
+            "alt": "Electron dot diagrams showing electron transfer in the formation of sodium chloride, magnesium chloride and calcium oxide"
+          },
+          "math": [],
+          "narration": "Here are the three compounds named in the syllabus. A sodium atom passes its single outer electron to a chlorine atom, so both end up with complete octets. A magnesium atom has two outer electrons, so it needs two chlorine atoms, one for each electron. A calcium atom gives both its outer electrons to one oxygen atom. Crosses show the metal’s electrons and dots the non-metal’s, so you can see where each electron went.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s04",
+          "layout": "example",
+          "heading": "Worked example: predicting an ionic formula",
+          "body_md": "**Problem.** Element X (atomic number 19) reacts with element Y (atomic number 8). (a) Write their configurations. (b) Which loses and which gains electrons, and how many? (c) Write the formula of the compound and its ions.\n\n**(a)** X: 2, 8, 8, 1; Y: 2, 6.\n\n**(b)** X loses 1 electron (→ X⁺); Y gains 2 electrons (→ Y²⁻).\n\n**(c)** Two X⁺ balance one Y²⁻: formula **X₂Y** (potassium oxide, K₂O).",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Element",
+                "Configuration",
+                "Change",
+                "Ion"
+              ],
+              "rows": [
+                [
+                  "X (19)",
+                  "2, 8, 8, 1",
+                  "Loses 1 e⁻",
+                  "X⁺"
+                ],
+                [
+                  "Y (8)",
+                  "2, 6",
+                  "Gains 2 e⁻",
+                  "Y²⁻"
+                ],
+                [
+                  "Compound",
+                  "",
+                  "2 × (+1) + (−2) = 0",
+                  "X₂Y"
+                ]
+              ]
+            },
+            "alt": "Table predicting the ions and formula of the compound of elements 19 and 8"
+          },
+          "math": [],
+          "narration": "Start with the configurations. X has one outer electron, which it loses easily, forming a plus one ion. Y has six outer electrons and gains two, forming a minus two ion. The charges must balance, so two X ions are needed for each Y ion, giving X two Y. The real compound is potassium oxide.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s05",
+          "layout": "check",
+          "heading": "Quick check: electron transfer",
+          "body_md": "Decide how many electrons are transferred and what ions form.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Count the outer electrons of each atom, then balance the charges.",
+          "check_question_id": "q_icse10chem_ch02_001",
+          "audio": null
+        },
+        {
+          "id": "s06",
+          "layout": "concept",
+          "heading": "When does an electrovalent bond form?",
+          "body_md": "Electron transfer is easy when one atom has a **low ionisation potential** (loses electrons easily: metals of groups 1 and 2) and the other has a **high electron affinity** (gains electrons readily: non-metals of groups 16 and 17). A **large difference in electronegativity** between the two atoms also favours ionic bonding. So sodium and chlorine bond ionically, but carbon and chlorine share electrons.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Pair",
+                "Ionisation potential of first",
+                "Electron affinity of second",
+                "Bond"
+              ],
+              "rows": [
+                [
+                  "Na and Cl",
+                  "Low",
+                  "High",
+                  "Electrovalent"
+                ],
+                [
+                  "Ca and O",
+                  "Low",
+                  "High",
+                  "Electrovalent"
+                ],
+                [
+                  "C and Cl",
+                  "High",
+                  "High",
+                  "Covalent"
+                ]
+              ]
+            },
+            "alt": "Table of three pairs of elements showing that low ionisation potential plus high electron affinity favours an electrovalent bond"
+          },
+          "math": [],
+          "narration": "An ionic bond forms easily when one atom gives up electrons readily, which means a low ionisation potential, and the other accepts them readily, which means a high electron affinity. Metals on the left of the table and non-metals on the right fit this perfectly. Carbon, in the middle, holds its electrons too tightly to give them away, so it shares them instead.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s07",
+          "layout": "concept",
+          "heading": "Properties of electrovalent compounds",
+          "body_md": "In the solid, ions are held in a regular **crystal lattice** by strong electrostatic forces, so electrovalent compounds are **hard crystalline solids** with **high melting and boiling points** (NaCl melts at 801 °C). They are usually **soluble in water** but **insoluble in organic solvents** such as kerosene. They **do not conduct as solids** (ions fixed in place) but **conduct when molten or in solution**, where the ions are free to move — they **dissociate** into ions, and the current decomposes them (**electrolysis**).",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "State of NaCl",
+                "Are ions free to move?",
+                "Conducts?"
+              ],
+              "rows": [
+                [
+                  "Solid crystal",
+                  "No (fixed in lattice)",
+                  "No"
+                ],
+                [
+                  "Molten (above 801 °C)",
+                  "Yes",
+                  "Yes"
+                ],
+                [
+                  "Aqueous solution",
+                  "Yes",
+                  "Yes"
+                ]
+              ]
+            },
+            "alt": "Table of sodium chloride as a solid, melt and solution, showing it conducts only when its ions can move"
+          },
+          "math": [],
+          "narration": "In a crystal of salt, millions of sodium and chloride ions are locked together by strong attractions, so the crystal is hard and melts only at a very high temperature. Salt dissolves in water, but not in kerosene. Solid salt does not conduct electricity because its ions cannot move. Once it is melted or dissolved, the ions move freely and carry the current, and the compound is broken down by electrolysis.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s08",
+          "layout": "example",
+          "heading": "Worked example: explaining conductivity",
+          "body_md": "**Problem.** Solid magnesium chloride does not conduct electricity, but molten magnesium chloride does. (a) Explain. (b) Write the dissociation equation. (c) What happens at the electrodes?\n\n**(a)** In the solid the ions are fixed in the lattice; in the melt they are free to move to the electrodes.\n\n**(b)** MgCl₂ → Mg²⁺ + 2Cl⁻.\n\n**(c)** Mg²⁺ ions move to the cathode and Cl⁻ ions to the anode, where they are discharged: the compound is electrolysed into magnesium and chlorine.",
+          "bullets": [],
+          "visual": {
+            "kind": "flow",
+            "spec": {
+              "direction": "LR",
+              "nodes": [
+                {
+                  "id": "a",
+                  "label": "Solid MgCl₂: ions fixed"
+                },
+                {
+                  "id": "b",
+                  "label": "Heat to melt"
+                },
+                {
+                  "id": "c",
+                  "label": "Mg²⁺ and Cl⁻ free"
+                },
+                {
+                  "id": "d",
+                  "label": "Current flows; Mg and Cl₂ formed"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "a",
+                  "to": "b"
+                },
+                {
+                  "from": "b",
+                  "to": "c"
+                },
+                {
+                  "from": "c",
+                  "to": "d"
+                }
+              ]
+            },
+            "alt": "Flow from solid magnesium chloride to molten ions that conduct and are electrolysed"
+          },
+          "math": [],
+          "narration": "A current is simply moving charge. In solid magnesium chloride the ions are held in place, so no charge can move. When it melts, the lattice breaks up into free magnesium ions and chloride ions. The positive ions drift to the cathode and the negative ions to the anode, carrying the current, and there they are converted into magnesium metal and chlorine gas.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s09",
+          "layout": "check",
+          "heading": "Quick check: ionic properties",
+          "body_md": "Explain a property of an electrovalent compound.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Ask whether the ions in the substance are fixed or free to move.",
+          "check_question_id": "q_icse10chem_ch02_013",
+          "audio": null
+        },
+        {
+          "id": "s10",
+          "layout": "concept",
+          "heading": "Writing formulae from electrovalency",
+          "body_md": "The electrovalency of an ion is the number of electrons its atom lost or gained. Combine ions so that **total positive charge = total negative charge**.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Cation",
+                "Anion",
+                "Formula"
+              ],
+              "rows": [
+                [
+                  "Na⁺",
+                  "O²⁻",
+                  "Na₂O"
+                ],
+                [
+                  "Mg²⁺",
+                  "N³⁻",
+                  "Mg₃N₂"
+                ],
+                [
+                  "Al³⁺",
+                  "O²⁻",
+                  "Al₂O₃"
+                ],
+                [
+                  "Ca²⁺",
+                  "Cl⁻",
+                  "CaCl₂"
+                ]
+              ]
+            },
+            "alt": "Table of four cation and anion pairs with the formulae of their compounds"
+          },
+          "math": [],
+          "narration": "Once you know the charges on the ions, the formula follows. Add ions until the positive and negative charges cancel. Two sodium ions balance one oxide ion. Three magnesium ions, with six positive charges, balance two nitride ions. Two aluminium ions balance three oxide ions.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s11",
+          "layout": "check",
+          "heading": "Quick check: formulae",
+          "body_md": "Write the formula of an ionic compound from its ions.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Balance the total positive and negative charges.",
+          "check_question_id": "q_icse10chem_ch02_002",
+          "audio": null
+        },
+        {
+          "id": "s12",
+          "layout": "summary",
+          "heading": "Summary: Part 1",
+          "body_md": "",
+          "bullets": [
+            "Atoms bond to reach an octet (or a duplet).",
+            "Electrovalent bond: electron transfer from metal to non-metal; ions held by electrostatic attraction.",
+            "Favoured by low ionisation potential of one atom and high electron affinity of the other.",
+            "NaCl, MgCl₂ and CaO: show crosses for metal electrons, dots for non-metal electrons, brackets and charges.",
+            "Electrovalent compounds: hard solids, high melting points, soluble in water, conduct only when molten or dissolved."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Compound",
+                "Ions"
+              ],
+              "rows": [
+                [
+                  "NaCl",
+                  "Na⁺, Cl⁻"
+                ],
+                [
+                  "MgCl₂",
+                  "Mg²⁺, 2Cl⁻"
+                ],
+                [
+                  "CaO",
+                  "Ca²⁺, O²⁻"
+                ]
+              ]
+            },
+            "alt": "Summary table of three ionic compounds and their ions"
+          },
+          "math": [],
+          "narration": "Let us sum up Part 1. Atoms bond to reach a full outer shell. In an electrovalent bond, a metal hands electrons to a non-metal and the ions attract one another. This happens most easily between atoms with a low ionisation potential and atoms with a high electron affinity. Electrovalent compounds are hard, high melting solids that conduct only when their ions can move.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s13",
+          "layout": "exam-tips",
+          "heading": "Exam tips: Part 1",
+          "body_md": "",
+          "bullets": [
+            "In dot diagrams, show only outer-shell electrons, use two different symbols, and put brackets and charges on the ions.",
+            "Say “ions are free to move” (not “electrons are free”) to explain conduction in the melt.",
+            "For MgCl₂, draw two separate chlorine atoms, each receiving one electron.",
+            "Check that the charges in a formula add up to zero."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Slip",
+                "Fix"
+              ],
+              "rows": [
+                [
+                  "Solid NaCl conducts",
+                  "Only molten or dissolved NaCl conducts"
+                ],
+                [
+                  "CaO: Ca gains electrons",
+                  "Ca loses 2 electrons"
+                ],
+                [
+                  "MgCl₂ drawn with one Cl₂ molecule",
+                  "Two separate Cl atoms"
+                ]
+              ]
+            },
+            "alt": "Table of three common slips in Part 1 and their fixes"
+          },
+          "math": [],
+          "narration": "Some tips. In electron dot diagrams, draw only the outer electrons, use dots for one atom and crosses for the other, and put square brackets and charges on the ions. When you explain conduction, say that ions are free to move. For magnesium chloride, draw two separate chlorine atoms, each taking one electron.",
+          "check_question_id": null,
+          "audio": null
+        }
+      ],
+      "status": "draft",
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "unit": "icse-10-chemistry-ch02",
+      "part": 2,
+      "version": 1,
+      "title": "Chemical Bonding — Part 2: Covalent, polar and coordinate bonds",
+      "language": "en",
+      "goals": [
+        "Draw electron dot structures of H₂, Cl₂, O₂, N₂, CH₄ and CCl₄",
+        "Explain polar bonds in HCl, H₂O and NH₃ using electronegativity",
+        "Compare electrovalent and covalent compounds",
+        "Show the formation of H₃O⁺ and NH₄⁺ by coordinate bonds"
+      ],
+      "slides": [
+        {
+          "id": "s01",
+          "layout": "title",
+          "heading": "Sharing instead of giving",
+          "body_md": "Part 2 — when neither atom will give up electrons, they **share** pairs of electrons: the covalent bond.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Molecule",
+                "Shared pairs",
+                "Bond"
+              ],
+              "rows": [
+                [
+                  "H₂, Cl₂",
+                  "1",
+                  "Single"
+                ],
+                [
+                  "O₂",
+                  "2",
+                  "Double"
+                ],
+                [
+                  "N₂",
+                  "3",
+                  "Triple"
+                ]
+              ]
+            },
+            "alt": "Table of hydrogen, chlorine, oxygen and nitrogen molecules with their numbers of shared pairs"
+          },
+          "math": [],
+          "narration": "Two chlorine atoms both want one more electron, and neither will give one up. Instead, each puts one electron into a shared pair, and both atoms count that pair as their own. This sharing is a covalent bond. In this part we draw covalent molecules, see why some are polar, and meet a special kind of shared pair called a coordinate bond.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s02",
+          "layout": "diagram",
+          "heading": "Covalent bonds: single, double and triple",
+          "body_md": "A **covalent bond** is formed by **sharing a pair of electrons**, each atom contributing one. **H₂:** one shared pair gives each H a duplet. **Cl₂:** one shared pair (single bond) completes both octets. **O₂:** two shared pairs (**double bond**). **N₂:** three shared pairs (**triple bond**). **CH₄:** carbon shares one pair with each of four H atoms. **CCl₄:** the same, with four Cl atoms. Unshared pairs on an atom are **lone pairs**.",
+          "bullets": [],
+          "visual": {
+            "kind": "svg",
+            "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 460 200\" role=\"img\" aria-label=\"Electron dot diagrams for four covalent molecules. Chlorine shares one pair of electrons between two chlorine atoms, a single bond, and each atom keeps three lone pairs. Oxygen shares two pairs, a double bond, and each atom keeps two lone pairs. Nitrogen shares three pairs, a triple bond, and each atom keeps one lone pair. Methane has a carbon atom sharing one pair with each of four hydrogen atoms.\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>Electron dot diagrams for four covalent molecules. Chlorine shares one pair of electrons between two chlorine atoms, a single bond, and each atom keeps three lone pairs. Oxygen shares two pairs, a double bond, and each atom keeps two lone pairs. Nitrogen shares three pairs, a triple bond, and each atom keeps one lone pair. Methane has a carbon atom sharing one pair with each of four hydrogen atoms.</title><text x=\"30\" y=\"55\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"bold\">Cl</text><circle cx=\"26\" cy=\"36\" r=\"2.2\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\"/><circle cx=\"34\" cy=\"36\" r=\"2.2\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\"/><circle cx=\"26\" cy=\"64\" r=\"2.2\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\"/><circle cx=\"34\" cy=\"64\" r=\"2.2\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\"/><circle cx=\"15\" cy=\"46\" r=\"2.2\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\"/><circle cx=\"15\" cy=\"54\" r=\"2.2\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\"/><circle cx=\"45\" cy=\"50\" r=\"2.2\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\"/><line x1=\"49.5\" y1=\"47.5\" x2=\"54.5\" y2=\"52.5\" stroke=\"var(--diagram-red)\" stroke-width=\"1.4\"/><line x1=\"49.5\" y1=\"52.5\" x2=\"54.5\" y2=\"47.5\" stroke=\"var(--diagram-red)\" stroke-width=\"1.4\"/><text x=\"74\" y=\"55\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"bold\">Cl</text><line x1=\"67.5\" y1=\"33.5\" x2=\"72.5\" y2=\"38.5\" stroke=\"var(--diagram-red)\" stroke-width=\"1.4\"/><line x1=\"67.5\" y1=\"38.5\" x2=\"72.5\" y2=\"33.5\" stroke=\"var(--diagram-red)\" stroke-width=\"1.4\"/><line x1=\"75.5\" y1=\"33.5\" x2=\"80.5\" y2=\"38.5\" stroke=\"var(--diagram-red)\" stroke-width=\"1.4\"/><line x1=\"75.5\" y1=\"38.5\" x2=\"80.5\" y2=\"33.5\" stroke=\"var(--diagram-red)\" stroke-width=\"1.4\"/><line x1=\"67.5\" y1=\"61.5\" x2=\"72.5\" y2=\"66.5\" stroke=\"var(--diagram-red)\" stroke-width=\"1.4\"/><line x1=\"67.5\" y1=\"66.5\" x2=\"72.5\" y2=\"61.5\" stroke=\"var(--diagram-red)\" stroke-width=\"1.4\"/><line x1=\"75.5\" y1=\"61.5\" x2=\"80.5\" y2=\"66.5\" stroke=\"var(--diagram-red)\" stroke-width=\"1.4\"/><line x1=\"75.5\" y1=\"66.5\" x2=\"80.5\" y2=\"61.5\" stroke=\"var(--diagram-red)\" stroke-width=\"1.4\"/><line x1=\"86.5\" y1=\"43.5\" x2=\"91.5\" y2=\"48.5\" stroke=\"var(--diagram-red)\" stroke-width=\"1.4\"/><line x1=\"86.5\" y1=\"48.5\" x2=\"91.5\" y2=\"43.5\" stroke=\"var(--diagram-red)\" stroke-width=\"1.4\"/><line x1=\"86.5\" y1=\"51.5\" x2=\"91.5\" y2=\"56.5\" stroke=\"var(--diagram-red)\" stroke-width=\"1.4\"/><line x1=\"86.5\" y1=\"56.5\" x2=\"91.5\" y2=\"51.5\" stroke=\"var(--diagram-red)\" stroke-width=\"1.4\"/><text x=\"52\" y=\"90\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">Cl₂: single bond</text><text x=\"150\" y=\"55\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"bold\">O</text><circle cx=\"146\" cy=\"36\" r=\"2.2\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\"/><circle cx=\"154\" cy=\"36\" r=\"2.2\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\"/><circle cx=\"135\" cy=\"46\" r=\"2.2\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\"/><circle cx=\"135\" cy=\"54\" r=\"2.2\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\"/><circle cx=\"167\" cy=\"46\" r=\"2.2\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\"/><circle cx=\"167\" cy=\"54\" r=\"2.2\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\"/><line x1=\"172.5\" y1=\"43.5\" x2=\"177.5\" y2=\"48.5\" stroke=\"var(--diagram-red)\" stroke-width=\"1.4\"/><line x1=\"172.5\" y1=\"48.5\" x2=\"177.5\" y2=\"43.5\" stroke=\"var(--diagram-red)\" stroke-width=\"1.4\"/><line x1=\"172.5\" y1=\"51.5\" x2=\"177.5\" y2=\"56.5\" stroke=\"var(--diagram-red)\" stroke-width=\"1.4\"/><line x1=\"172.5\" y1=\"56.5\" x2=\"177.5\" y2=\"51.5\" stroke=\"var(--diagram-red)\" stroke-width=\"1.4\"/><text x=\"192\" y=\"55\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"bold\">O</text><line x1=\"185.5\" y1=\"33.5\" x2=\"190.5\" y2=\"38.5\" stroke=\"var(--diagram-red)\" stroke-width=\"1.4\"/><line x1=\"185.5\" y1=\"38.5\" x2=\"190.5\" y2=\"33.5\" stroke=\"var(--diagram-red)\" stroke-width=\"1.4\"/><line x1=\"193.5\" y1=\"33.5\" x2=\"198.5\" y2=\"38.5\" stroke=\"var(--diagram-red)\" stroke-width=\"1.4\"/><line x1=\"193.5\" y1=\"38.5\" x2=\"198.5\" y2=\"33.5\" stroke=\"var(--diagram-red)\" stroke-width=\"1.4\"/><line x1=\"204.5\" y1=\"43.5\" x2=\"209.5\" y2=\"48.5\" stroke=\"var(--diagram-red)\" stroke-width=\"1.4\"/><line x1=\"204.5\" y1=\"48.5\" x2=\"209.5\" y2=\"43.5\" stroke=\"var(--diagram-red)\" stroke-width=\"1.4\"/><line x1=\"204.5\" y1=\"51.5\" x2=\"209.5\" y2=\"56.5\" stroke=\"var(--diagram-red)\" stroke-width=\"1.4\"/><line x1=\"204.5\" y1=\"56.5\" x2=\"209.5\" y2=\"51.5\" stroke=\"var(--diagram-red)\" stroke-width=\"1.4\"/><text x=\"171\" y=\"90\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">O₂: double bond</text><text x=\"265\" y=\"55\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"bold\">N</text><circle cx=\"250\" cy=\"46\" r=\"2.2\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\"/><circle cx=\"250\" cy=\"54\" r=\"2.2\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\"/><circle cx=\"282\" cy=\"43\" r=\"2.2\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\"/><circle cx=\"282\" cy=\"50\" r=\"2.2\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\"/><circle cx=\"282\" cy=\"57\" r=\"2.2\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\"/><line x1=\"287.5\" y1=\"40.5\" x2=\"292.5\" y2=\"45.5\" stroke=\"var(--diagram-red)\" stroke-width=\"1.4\"/><line x1=\"287.5\" y1=\"45.5\" x2=\"292.5\" y2=\"40.5\" stroke=\"var(--diagram-red)\" stroke-width=\"1.4\"/><line x1=\"287.5\" y1=\"47.5\" x2=\"292.5\" y2=\"52.5\" stroke=\"var(--diagram-red)\" stroke-width=\"1.4\"/><line x1=\"287.5\" y1=\"52.5\" x2=\"292.5\" y2=\"47.5\" stroke=\"var(--diagram-red)\" stroke-width=\"1.4\"/><line x1=\"287.5\" y1=\"54.5\" x2=\"292.5\" y2=\"59.5\" stroke=\"var(--diagram-red)\" stroke-width=\"1.4\"/><line x1=\"287.5\" y1=\"59.5\" x2=\"292.5\" y2=\"54.5\" stroke=\"var(--diagram-red)\" stroke-width=\"1.4\"/><text x=\"307\" y=\"55\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"bold\">N</text><line x1=\"319.5\" y1=\"43.5\" x2=\"324.5\" y2=\"48.5\" stroke=\"var(--diagram-red)\" stroke-width=\"1.4\"/><line x1=\"319.5\" y1=\"48.5\" x2=\"324.5\" y2=\"43.5\" stroke=\"var(--diagram-red)\" stroke-width=\"1.4\"/><line x1=\"319.5\" y1=\"51.5\" x2=\"324.5\" y2=\"56.5\" stroke=\"var(--diagram-red)\" stroke-width=\"1.4\"/><line x1=\"319.5\" y1=\"56.5\" x2=\"324.5\" y2=\"51.5\" stroke=\"var(--diagram-red)\" stroke-width=\"1.4\"/><text x=\"286\" y=\"90\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">N₂: triple bond</text><text x=\"400\" y=\"145\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"bold\">C</text><text x=\"400\" y=\"105\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"13\">H</text><text x=\"400\" y=\"192\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"13\">H</text><text x=\"360\" y=\"145\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"13\">H</text><text x=\"440\" y=\"145\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"13\">H</text><circle cx=\"397\" cy=\"124\" r=\"2.2\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\"/><line x1=\"400.5\" y1=\"121.5\" x2=\"405.5\" y2=\"126.5\" stroke=\"var(--diagram-red)\" stroke-width=\"1.4\"/><line x1=\"400.5\" y1=\"126.5\" x2=\"405.5\" y2=\"121.5\" stroke=\"var(--diagram-red)\" stroke-width=\"1.4\"/><circle cx=\"397\" cy=\"168\" r=\"2.2\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\"/><line x1=\"400.5\" y1=\"165.5\" x2=\"405.5\" y2=\"170.5\" stroke=\"var(--diagram-red)\" stroke-width=\"1.4\"/><line x1=\"400.5\" y1=\"170.5\" x2=\"405.5\" y2=\"165.5\" stroke=\"var(--diagram-red)\" stroke-width=\"1.4\"/><circle cx=\"380\" cy=\"137\" r=\"2.2\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\"/><line x1=\"377.5\" y1=\"142.5\" x2=\"382.5\" y2=\"147.5\" stroke=\"var(--diagram-red)\" stroke-width=\"1.4\"/><line x1=\"377.5\" y1=\"147.5\" x2=\"382.5\" y2=\"142.5\" stroke=\"var(--diagram-red)\" stroke-width=\"1.4\"/><circle cx=\"420\" cy=\"137\" r=\"2.2\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\"/><line x1=\"417.5\" y1=\"142.5\" x2=\"422.5\" y2=\"147.5\" stroke=\"var(--diagram-red)\" stroke-width=\"1.4\"/><line x1=\"417.5\" y1=\"147.5\" x2=\"422.5\" y2=\"142.5\" stroke=\"var(--diagram-red)\" stroke-width=\"1.4\"/><text x=\"400\" y=\"82\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">CH₄</text><text x=\"12\" y=\"190\" fill=\"var(--diagram-muted)\" stroke=\"none\" font-size=\"10\">• and × are electrons from the two different atoms</text></svg>",
+            "alt": "Electron dot diagrams of chlorine, oxygen, nitrogen and methane showing single, double and triple shared pairs"
+          },
+          "math": [],
+          "narration": "In a covalent bond each atom gives one electron to a shared pair. Hydrogen and chlorine molecules share one pair, a single bond. Oxygen atoms need two more electrons each, so they share two pairs, a double bond. Nitrogen atoms share three pairs, a triple bond. In methane, carbon shares a pair with each of four hydrogen atoms, and carbon tetrachloride is the same with four chlorine atoms.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s03",
+          "layout": "concept",
+          "heading": "Non-polar molecules",
+          "body_md": "When two **identical atoms** share a pair (H₂, Cl₂, O₂, N₂), the pair is shared **equally**: the bond is **non-polar**. CH₄ and CCl₄ contain bonds between different atoms, but the four bonds point symmetrically to the corners of a **tetrahedron**, so their effects **cancel** and the molecules are **non-polar** overall.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Molecule",
+                "Bonds",
+                "Shape",
+                "Polarity of molecule"
+              ],
+              "rows": [
+                [
+                  "Cl₂",
+                  "Cl–Cl (identical atoms)",
+                  "Linear",
+                  "Non-polar"
+                ],
+                [
+                  "CH₄",
+                  "4 C–H",
+                  "Tetrahedral",
+                  "Non-polar (symmetrical)"
+                ],
+                [
+                  "CCl₄",
+                  "4 C–Cl (polar bonds)",
+                  "Tetrahedral",
+                  "Non-polar (effects cancel)"
+                ]
+              ]
+            },
+            "alt": "Table of chlorine, methane and carbon tetrachloride showing why each molecule is non-polar"
+          },
+          "math": [],
+          "narration": "If both atoms in a bond are the same, they pull equally on the shared pair, so the bond is non-polar. Methane and carbon tetrachloride are more interesting: each carbon to chlorine bond is slightly uneven, but the four bonds point to the corners of a tetrahedron, so their pulls cancel out and the molecule as a whole is non-polar.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s04",
+          "layout": "example",
+          "heading": "Worked example: drawing a covalent molecule",
+          "body_md": "**Problem.** Draw the electron dot structure of carbon tetrachloride, CCl₄, and state the number of shared pairs and lone pairs.\n\n**Step 1.** C (2, 4) has 4 valence electrons; each Cl (2, 8, 7) has 7.\n\n**Step 2.** C shares one pair with each Cl: **4 shared pairs** (single bonds).\n\n**Step 3.** Each Cl keeps 3 lone pairs: **12 lone pairs** in all; carbon has none.\n\nEvery atom now has an octet.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Atom",
+                "Valence e⁻",
+                "Shared pairs",
+                "Lone pairs"
+              ],
+              "rows": [
+                [
+                  "C",
+                  "4",
+                  "4",
+                  "0"
+                ],
+                [
+                  "Each Cl",
+                  "7",
+                  "1",
+                  "3"
+                ],
+                [
+                  "Whole molecule",
+                  "32",
+                  "4",
+                  "12"
+                ]
+              ]
+            },
+            "alt": "Table counting valence electrons, shared pairs and lone pairs in carbon tetrachloride"
+          },
+          "math": [],
+          "narration": "Carbon has four outer electrons, so it can share one with each of four chlorine atoms. Each chlorine has seven outer electrons; after sharing one pair, it keeps three lone pairs. That gives four shared pairs and twelve lone pairs in total, and every atom ends up with eight electrons around it.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s05",
+          "layout": "check",
+          "heading": "Quick check: covalent bonds",
+          "body_md": "Count shared pairs in a molecule.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Each shared pair is one bond; a double bond has two pairs.",
+          "check_question_id": "q_icse10chem_ch02_021",
+          "audio": null
+        },
+        {
+          "id": "s06",
+          "layout": "diagram",
+          "heading": "Polar molecules: HCl, H₂O and NH₃",
+          "body_md": "When two **different atoms** share a pair, the **more electronegative** atom pulls the pair closer and gets a **partial negative charge (δ−)**; the other gets **δ+**. Such a bond is **polar**. **HCl:** Cl is δ−, H is δ+. **H₂O:** O shares two pairs with H atoms and has **two lone pairs**; the molecule is bent and polar. **NH₃:** N shares three pairs and has **one lone pair**; the molecule is pyramidal and polar.",
+          "bullets": [],
+          "visual": {
+            "kind": "svg",
+            "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 460 220\" role=\"img\" aria-label=\"Electron dot diagrams. Water: oxygen shares one pair with each of two hydrogen atoms and keeps two lone pairs; oxygen carries a partial negative charge and each hydrogen a partial positive charge. Ammonia: nitrogen shares one pair with each of three hydrogen atoms and keeps one lone pair. Hydronium ion: a hydrogen ion with no electrons accepts one lone pair of the oxygen of water, giving H3O plus. Ammonium ion: a hydrogen ion accepts the lone pair of ammonia, giving NH4 plus; the donated pair forms a coordinate bond, shown by an arrow.\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>Electron dot diagrams. Water: oxygen shares one pair with each of two hydrogen atoms and keeps two lone pairs; oxygen carries a partial negative charge and each hydrogen a partial positive charge. Ammonia: nitrogen shares one pair with each of three hydrogen atoms and keeps one lone pair. Hydronium ion: a hydrogen ion with no electrons accepts one lone pair of the oxygen of water, giving H3O plus. Ammonium ion: a hydrogen ion accepts the lone pair of ammonia, giving NH4 plus; the donated pair forms a coordinate bond, shown by an arrow.</title><text x=\"60\" y=\"60\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"bold\">O</text><circle cx=\"56\" cy=\"41\" r=\"2.2\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\"/><circle cx=\"64\" cy=\"41\" r=\"2.2\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\"/><circle cx=\"56\" cy=\"69\" r=\"2.2\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\"/><circle cx=\"64\" cy=\"69\" r=\"2.2\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\"/><text x=\"18\" y=\"60\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"13\">H</text><text x=\"102\" y=\"60\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"13\">H</text><circle cx=\"42\" cy=\"51\" r=\"2.2\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\"/><line x1=\"33.5\" y1=\"56.5\" x2=\"38.5\" y2=\"61.5\" stroke=\"var(--diagram-red)\" stroke-width=\"1.4\"/><line x1=\"33.5\" y1=\"61.5\" x2=\"38.5\" y2=\"56.5\" stroke=\"var(--diagram-red)\" stroke-width=\"1.4\"/><circle cx=\"78\" cy=\"51\" r=\"2.2\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\"/><line x1=\"81.5\" y1=\"56.5\" x2=\"86.5\" y2=\"61.5\" stroke=\"var(--diagram-red)\" stroke-width=\"1.4\"/><line x1=\"81.5\" y1=\"61.5\" x2=\"86.5\" y2=\"56.5\" stroke=\"var(--diagram-red)\" stroke-width=\"1.4\"/><text x=\"60\" y=\"26\" fill=\"var(--diagram-red)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">δ−</text><text x=\"18\" y=\"82\" fill=\"var(--diagram-blue)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">δ+</text><text x=\"102\" y=\"82\" fill=\"var(--diagram-blue)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">δ+</text><text x=\"60\" y=\"105\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">H₂O</text><text x=\"200\" y=\"60\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"bold\">N</text><circle cx=\"196\" cy=\"41\" r=\"2.2\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\"/><circle cx=\"204\" cy=\"41\" r=\"2.2\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\"/><text x=\"158\" y=\"60\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"13\">H</text><text x=\"242\" y=\"60\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"13\">H</text><text x=\"200\" y=\"100\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"13\">H</text><circle cx=\"182\" cy=\"51\" r=\"2.2\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\"/><line x1=\"173.5\" y1=\"56.5\" x2=\"178.5\" y2=\"61.5\" stroke=\"var(--diagram-red)\" stroke-width=\"1.4\"/><line x1=\"173.5\" y1=\"61.5\" x2=\"178.5\" y2=\"56.5\" stroke=\"var(--diagram-red)\" stroke-width=\"1.4\"/><circle cx=\"218\" cy=\"51\" r=\"2.2\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\"/><line x1=\"221.5\" y1=\"56.5\" x2=\"226.5\" y2=\"61.5\" stroke=\"var(--diagram-red)\" stroke-width=\"1.4\"/><line x1=\"221.5\" y1=\"61.5\" x2=\"226.5\" y2=\"56.5\" stroke=\"var(--diagram-red)\" stroke-width=\"1.4\"/><circle cx=\"196\" cy=\"76\" r=\"2.2\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\"/><line x1=\"201.5\" y1=\"73.5\" x2=\"206.5\" y2=\"78.5\" stroke=\"var(--diagram-red)\" stroke-width=\"1.4\"/><line x1=\"201.5\" y1=\"78.5\" x2=\"206.5\" y2=\"73.5\" stroke=\"var(--diagram-red)\" stroke-width=\"1.4\"/><text x=\"200\" y=\"120\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">NH₃ (one lone pair)</text><text x=\"20\" y=\"160\" fill=\"currentColor\" stroke=\"none\" font-size=\"12\" font-weight=\"bold\">H₂O</text><text x=\"52\" y=\"160\" fill=\"currentColor\" stroke=\"none\" font-size=\"12\">+ H⁺ →</text><path d=\"M105 140 L100 140 L100 172 L105 172\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.2\"/><path d=\"M187 140 L192 140 L192 172 L187 172\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.2\"/><text x=\"195\" y=\"148\" fill=\"currentColor\" stroke=\"none\" font-size=\"11\" font-weight=\"bold\">+</text><text x=\"146\" y=\"160\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\">H—O—H</text><line x1=\"146\" y1=\"170\" x2=\"146\" y2=\"190.4\" stroke=\"var(--diagram-accent)\" stroke-width=\"1.5\"/><polygon points=\"146,196 143.1,189.6 148.9,189.6\" fill=\"var(--diagram-accent)\" stroke=\"none\"/><text x=\"146\" y=\"210\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"13\">H</text><text x=\"146\" y=\"135\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">H₃O⁺</text><text x=\"250\" y=\"160\" fill=\"currentColor\" stroke=\"none\" font-size=\"12\" font-weight=\"bold\">NH₃</text><text x=\"282\" y=\"160\" fill=\"currentColor\" stroke=\"none\" font-size=\"12\">+ H⁺ →</text><path d=\"M335 140 L330 140 L330 172 L335 172\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.2\"/><path d=\"M417 140 L422 140 L422 172 L417 172\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.2\"/><text x=\"425\" y=\"148\" fill=\"currentColor\" stroke=\"none\" font-size=\"11\" font-weight=\"bold\">+</text><text x=\"376\" y=\"160\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\">H—N—H</text><line x1=\"376\" y1=\"170\" x2=\"376\" y2=\"190.4\" stroke=\"var(--diagram-accent)\" stroke-width=\"1.5\"/><polygon points=\"376,196 373.1,189.6 378.9,189.6\" fill=\"var(--diagram-accent)\" stroke=\"none\"/><text x=\"376\" y=\"210\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"13\">H</text><line x1=\"376\" y1=\"140\" x2=\"376\" y2=\"128\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"376\" y=\"124\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"13\">H</text><text x=\"430\" y=\"200\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">NH₄⁺</text><text x=\"250\" y=\"214\" fill=\"var(--diagram-accent)\" stroke=\"none\" font-size=\"10\">→ coordinate bond (lone pair donated)</text></svg>",
+            "alt": "Electron dot diagrams of water and ammonia with lone pairs, and the formation of hydronium and ammonium ions by coordinate bonds"
+          },
+          "math": [],
+          "narration": "If the two atoms are different, the more electronegative one pulls the shared pair closer and becomes slightly negative, while the other becomes slightly positive. Hydrogen chloride is polar in this way. Water has two lone pairs on oxygen and a bent shape, and ammonia has one lone pair on nitrogen and a pyramid shape, so both molecules are polar.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s07",
+          "layout": "concept",
+          "heading": "Covalent compounds compared with electrovalent compounds",
+          "body_md": "Covalent compounds are made of **molecules** held together only by **weak forces**, so most are gases, liquids or soft solids with **low melting and boiling points**. Most are **insoluble in water** but **soluble in organic solvents**, and they **do not conduct** electricity. Some **polar** covalent compounds such as **HCl** **ionise in water**: HCl + H₂O → H₃O⁺ + Cl⁻, so hydrochloric acid conducts.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Property",
+                "Electrovalent",
+                "Covalent"
+              ],
+              "rows": [
+                [
+                  "Particles",
+                  "Ions",
+                  "Molecules"
+                ],
+                [
+                  "State",
+                  "Hard crystalline solids",
+                  "Gases, liquids, soft solids"
+                ],
+                [
+                  "Melting and boiling points",
+                  "High",
+                  "Low"
+                ],
+                [
+                  "Solubility",
+                  "Water",
+                  "Organic solvents"
+                ],
+                [
+                  "Conductivity",
+                  "Molten or aqueous: yes",
+                  "Usually no (except some polar ones in water)"
+                ]
+              ]
+            },
+            "alt": "Table comparing electrovalent and covalent compounds in particles, state, melting point, solubility and conductivity"
+          },
+          "math": [],
+          "narration": "Covalent compounds are made of separate molecules, and the forces between the molecules are weak. That is why many are gases or liquids, with low melting and boiling points. They usually dissolve in organic solvents rather than water and do not conduct. A few polar ones, like hydrogen chloride, react with water to form ions, so their solutions do conduct.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s08",
+          "layout": "example",
+          "heading": "Worked example: classifying from properties",
+          "body_md": "**Problem.** Substance P melts at 770 °C and conducts when molten. Substance Q boils at −85 °C, does not conduct as a liquid, but its solution in water conducts. Identify the type of bonding in each and explain Q’s behaviour.\n\n**P:** high melting point, conducts when molten → **electrovalent** (for example KCl).\n\n**Q:** very low boiling point, non-conducting liquid → **covalent molecules**. It is **polar** and ionises in water, like HCl: HCl + H₂O → H₃O⁺ + Cl⁻.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Clue",
+                "P",
+                "Q"
+              ],
+              "rows": [
+                [
+                  "Melting / boiling point",
+                  "High (770 °C)",
+                  "Low (−85 °C)"
+                ],
+                [
+                  "Pure liquid conducts?",
+                  "Yes",
+                  "No"
+                ],
+                [
+                  "Water solution conducts?",
+                  "—",
+                  "Yes"
+                ],
+                [
+                  "Bonding",
+                  "Electrovalent",
+                  "Polar covalent"
+                ]
+              ]
+            },
+            "alt": "Table of clues used to classify substances P and Q"
+          },
+          "math": [],
+          "narration": "A very high melting point and conduction in the melt point to ions, so P is electrovalent. Q boils far below zero and its liquid does not conduct, so it is made of covalent molecules. Its solution conducts because the polar molecules react with water to form ions, exactly as hydrogen chloride does.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s09",
+          "layout": "check",
+          "heading": "Quick check: comparing compounds",
+          "body_md": "Classify a substance from its properties.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. High melting point and conduction when molten mean ions.",
+          "check_question_id": "q_icse10chem_ch02_041",
+          "audio": null
+        },
+        {
+          "id": "s10",
+          "layout": "concept",
+          "heading": "Coordinate bonds: H₃O⁺ and NH₄⁺",
+          "body_md": "A **lone pair** is a pair of valence electrons not used in bonding. In a **coordinate (dative) bond**, **both electrons of the shared pair come from one atom** (the donor); the acceptor has an empty place. Once formed it is the same as any covalent bond. **H₃O⁺:** a lone pair on the O of water is donated to H⁺: H₂O + H⁺ → H₃O⁺. **NH₄⁺:** the lone pair on N of ammonia is donated to H⁺: NH₃ + H⁺ → NH₄⁺. Water itself contains a few H₃O⁺ and OH⁻ ions, because one water molecule’s lone pair takes H⁺ from another: H₂O + H₂O ⇌ H₃O⁺ + OH⁻.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Ion",
+                "Donor (lone pair)",
+                "Acceptor",
+                "Bonds in the ion"
+              ],
+              "rows": [
+                [
+                  "H₃O⁺",
+                  "O of H₂O",
+                  "H⁺",
+                  "2 covalent + 1 coordinate"
+                ],
+                [
+                  "NH₄⁺",
+                  "N of NH₃",
+                  "H⁺",
+                  "3 covalent + 1 coordinate"
+                ]
+              ]
+            },
+            "alt": "Table of the hydronium and ammonium ions with donor, acceptor and types of bond"
+          },
+          "math": [],
+          "narration": "A lone pair is a pair of outer electrons that is not used in a bond. In a coordinate bond, one atom supplies both electrons of the shared pair. The oxygen in water has lone pairs, and a hydrogen ion has none at all, so the oxygen donates a lone pair to make the hydronium ion. Ammonia does the same with its lone pair to make the ammonium ion.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s11",
+          "layout": "check",
+          "heading": "Quick check: coordinate bonds",
+          "body_md": "Identify the donor and acceptor in a coordinate bond.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. The donor has a lone pair; the hydrogen ion has none.",
+          "check_question_id": "q_icse10chem_ch02_047",
+          "audio": null
+        },
+        {
+          "id": "s12",
+          "layout": "summary",
+          "heading": "Summary: Part 2",
+          "body_md": "",
+          "bullets": [
+            "Covalent bond: a shared pair, one electron from each atom; single, double, triple bonds.",
+            "Non-polar: H₂, Cl₂, O₂, N₂; CH₄ and CCl₄ (symmetrical).",
+            "Polar: HCl, H₂O (two lone pairs), NH₃ (one lone pair); δ− on the more electronegative atom.",
+            "Covalent compounds: low melting points, soluble in organic solvents, non-conductors (HCl ionises in water).",
+            "Coordinate bond: both shared electrons from one atom; H₃O⁺ and NH₄⁺."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Bond type",
+                "Electrons come from"
+              ],
+              "rows": [
+                [
+                  "Electrovalent",
+                  "Transferred from metal to non-metal"
+                ],
+                [
+                  "Covalent",
+                  "One from each atom"
+                ],
+                [
+                  "Coordinate",
+                  "Both from the donor atom"
+                ]
+              ]
+            },
+            "alt": "Summary table of where the bonding electrons come from in each bond type"
+          },
+          "math": [],
+          "narration": "Let us sum up Part 2. A covalent bond is a shared pair, with one electron from each atom. Bonds between identical atoms are non-polar, and symmetrical molecules like methane are non-polar overall. Water, ammonia and hydrogen chloride are polar. Covalent compounds have low melting points and usually do not conduct. In a coordinate bond, one atom donates both electrons, as in the hydronium and ammonium ions.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s13",
+          "layout": "exam-tips",
+          "heading": "Exam tips: Part 2",
+          "body_md": "",
+          "bullets": [
+            "Show lone pairs in H₂O (two) and NH₃ (one); examiners look for them.",
+            "Draw N₂ with three shared pairs and one lone pair on each N.",
+            "For a coordinate bond, name the donor and the acceptor, or show an arrow from donor to acceptor.",
+            "Explain why HCl solution conducts: it ionises in water."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Slip",
+                "Fix"
+              ],
+              "rows": [
+                [
+                  "CCl₄ is polar",
+                  "Non-polar (symmetrical)"
+                ],
+                [
+                  "O₂ has a single bond",
+                  "Double bond"
+                ],
+                [
+                  "NH₄⁺ has four ordinary covalent bonds from the start",
+                  "One forms as a coordinate bond"
+                ]
+              ]
+            },
+            "alt": "Table of three common slips in Part 2 and their fixes"
+          },
+          "math": [],
+          "narration": "Final tips. Always show the lone pairs on water and ammonia. Draw nitrogen with a triple bond and a lone pair on each atom. In coordinate bond questions, name the donor and the acceptor, or draw an arrow from the donor. And explain the conductivity of hydrochloric acid by saying that hydrogen chloride ionises in water.",
+          "check_question_id": null,
+          "audio": null
+        }
+      ],
+      "status": "draft",
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    }
+  ],
+  "notes": {
+    "unit": "icse-10-chemistry-ch02",
+    "version": 1,
+    "title": "Chemical Bonding — Notes",
+    "language": "en",
+    "sections": [
+      {
+        "heading": "1. Electrovalent (ionic) bonding",
+        "body_md": "Atoms combine to reach a noble-gas arrangement: an **octet** (or a **duplet** for the first shell). An **electrovalent bond** is formed by **transfer of electrons** from a metal atom (low ionisation potential) to a non-metal atom (high electron affinity); the ions are held by **electrostatic attraction**. Electrovalency = number of electrons lost or gained.\n\n| Compound | Transfer | Ions |\n|---|---|---|\n| NaCl | Na (2, 8, 1) → 1 e⁻ → Cl (2, 8, 7) | Na⁺ (2, 8), Cl⁻ (2, 8, 8) |\n| MgCl₂ | Mg (2, 8, 2) → 1 e⁻ to each of 2 Cl | Mg²⁺, 2Cl⁻ |\n| CaO | Ca (2, 8, 8, 2) → 2 e⁻ → O (2, 6) | Ca²⁺, O²⁻ (2, 8) |\n\nIn dot diagrams: crosses for the metal’s electrons, dots for the non-metal’s, square brackets and charges on the ions.",
+        "key_terms": [
+          {
+            "term": "Electrovalent bond",
+            "definition_md": "A bond formed by the transfer of electrons from one atom to another, the resulting ions being held by electrostatic attraction."
+          },
+          {
+            "term": "Electrovalency",
+            "definition_md": "The number of electrons an atom loses or gains in forming an ionic bond."
+          }
+        ],
+        "formulas": [],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Favours an ionic bond",
+              "Reason"
+            ],
+            "rows": [
+              [
+                "Low ionisation potential of the metal",
+                "Loses electrons easily"
+              ],
+              [
+                "High electron affinity of the non-metal",
+                "Gains electrons readily"
+              ],
+              [
+                "Large electronegativity difference",
+                "Complete transfer rather than sharing"
+              ]
+            ]
+          },
+          "alt": "Table of the conditions that favour electrovalent bonding"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-chemistry-ch02-t01"
+        ]
+      },
+      {
+        "heading": "2. Properties of electrovalent compounds",
+        "body_md": "- **Hard crystalline solids**: ions in a lattice held by strong forces.\n- **High melting and boiling points** (NaCl melts at 801 °C).\n- **Soluble in water**, insoluble in organic solvents (kerosene, petrol).\n- **Conduct only when molten or in aqueous solution**: the compound **dissociates** into free ions (NaCl → Na⁺ + Cl⁻), which carry current and are discharged at the electrodes — **electrolysis**. Solid: ions fixed, no conduction.",
+        "key_terms": [
+          {
+            "term": "Dissociation",
+            "definition_md": "The separation of an electrovalent compound into its free ions when melted or dissolved."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\ce{MgCl2 -> Mg^2+ + 2Cl-}",
+            "label": "Dissociation of molten magnesium chloride"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "State",
+              "Conducts?"
+            ],
+            "rows": [
+              [
+                "Solid NaCl",
+                "No"
+              ],
+              [
+                "Molten NaCl",
+                "Yes"
+              ],
+              [
+                "NaCl solution",
+                "Yes"
+              ]
+            ]
+          },
+          "alt": "Table of sodium chloride conductivity in three states"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-chemistry-ch02-t02"
+        ]
+      },
+      {
+        "heading": "3. Covalent bonding: non-polar molecules",
+        "body_md": "A **covalent bond** is a **shared pair of electrons**, one electron from each atom. Single bond = 1 pair, double = 2 pairs, triple = 3 pairs. **Lone pairs** are unshared valence pairs.\n\n| Molecule | Shared pairs | Lone pairs |\n|---|---|---|\n| H₂ | 1 (H–H) | 0 |\n| Cl₂ | 1 (Cl–Cl) | 3 on each Cl |\n| O₂ | 2 (O=O) | 2 on each O |\n| N₂ | 3 (N≡N) | 1 on each N |\n| CH₄ | 4 C–H | 0 |\n| CCl₄ | 4 C–Cl | 3 on each Cl |\n\nIdentical atoms share equally (**non-polar**). CH₄ and CCl₄ are symmetrical (tetrahedral), so they are **non-polar molecules**.",
+        "key_terms": [
+          {
+            "term": "Covalent bond",
+            "definition_md": "A bond formed by the sharing of a pair of electrons between two atoms, each contributing one electron."
+          },
+          {
+            "term": "Lone pair",
+            "definition_md": "A pair of valence electrons on an atom that is not used in bonding."
+          }
+        ],
+        "formulas": [],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Bond",
+              "Pairs",
+              "Example"
+            ],
+            "rows": [
+              [
+                "Single",
+                "1",
+                "Cl₂"
+              ],
+              [
+                "Double",
+                "2",
+                "O₂"
+              ],
+              [
+                "Triple",
+                "3",
+                "N₂"
+              ]
+            ]
+          },
+          "alt": "Table of single, double and triple bonds with examples"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-chemistry-ch02-t03"
+        ]
+      },
+      {
+        "heading": "4. Polar covalent molecules",
+        "body_md": "When different atoms share a pair, the **more electronegative** atom attracts it more strongly and carries **δ−**; the other carries **δ+**: a **polar covalent bond**.\n\n- **HCl**: H(δ+)–Cl(δ−); one shared pair, three lone pairs on Cl.\n- **H₂O**: two O–H bonds, **two lone pairs** on O; bent; polar.\n- **NH₃**: three N–H bonds, **one lone pair** on N; pyramidal; polar.",
+        "key_terms": [
+          {
+            "term": "Polar covalent bond",
+            "definition_md": "A covalent bond in which the shared pair lies closer to the more electronegative atom, giving partial charges."
+          }
+        ],
+        "formulas": [],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Molecule",
+              "Bond pairs",
+              "Lone pairs on central atom"
+            ],
+            "rows": [
+              [
+                "HCl",
+                "1",
+                "3 (on Cl)"
+              ],
+              [
+                "H₂O",
+                "2",
+                "2"
+              ],
+              [
+                "NH₃",
+                "3",
+                "1"
+              ]
+            ]
+          },
+          "alt": "Table of bond pairs and lone pairs in HCl, water and ammonia"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-chemistry-ch02-t04"
+        ]
+      },
+      {
+        "heading": "5. Electrovalent and covalent compounds compared",
+        "body_md": "| Property | Electrovalent | Covalent |\n|---|---|---|\n| Particles | Ions | Molecules |\n| State | Hard crystalline solids | Gases, liquids, soft solids |\n| Melting / boiling point | High | Low |\n| Solubility | Water | Organic solvents |\n| Conductivity | Molten or aqueous: yes; solid: no | Non-conductors |\n\nSome polar covalent compounds **ionise in water** and conduct: $\\ce{HCl + H2O -> H3O+ + Cl-}$.",
+        "key_terms": [
+          {
+            "term": "Ionisation (of a polar compound)",
+            "definition_md": "Formation of ions when a polar covalent compound such as HCl reacts with water."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\ce{HCl + H2O -> H3O+ + Cl-}",
+            "label": "HCl ionises in water"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Substance",
+              "Bonding"
+            ],
+            "rows": [
+              [
+                "KCl",
+                "Electrovalent"
+              ],
+              [
+                "CCl₄",
+                "Covalent (non-polar)"
+              ],
+              [
+                "HCl",
+                "Covalent (polar)"
+              ]
+            ]
+          },
+          "alt": "Table classifying three substances by bonding"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-chemistry-ch02-t05"
+        ]
+      },
+      {
+        "heading": "6. Coordinate bonding",
+        "body_md": "A **coordinate (dative) bond** is a shared pair in which **both electrons come from one atom** (the donor, which has a **lone pair**); the acceptor (here H⁺) has none.\n\n- $\\ce{H2O + H+ -> H3O+}$ (hydronium ion: 2 covalent + 1 coordinate bond)\n- $\\ce{NH3 + H+ -> NH4+}$ (ammonium ion: 3 covalent + 1 coordinate bond)\n- Water self-ionises: $\\ce{H2O + H2O <=> H3O+ + OH-}$ — the lone pair on one water molecule takes H⁺ from another.",
+        "key_terms": [
+          {
+            "term": "Coordinate bond",
+            "definition_md": "A covalent bond in which both electrons of the shared pair are donated by one atom."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\ce{NH3 + H+ -> NH4+}",
+            "label": "Ammonium ion"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Ion",
+              "Donor",
+              "Acceptor"
+            ],
+            "rows": [
+              [
+                "H₃O⁺",
+                "O of H₂O",
+                "H⁺"
+              ],
+              [
+                "NH₄⁺",
+                "N of NH₃",
+                "H⁺"
+              ]
+            ]
+          },
+          "alt": "Table of donor and acceptor in hydronium and ammonium ions"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-chemistry-ch02-t06"
+        ]
+      }
+    ],
+    "exam_tips_md": "**Common mistakes**\n- Drawing inner-shell electrons in dot diagrams, or forgetting brackets and charges on ions.\n- Saying solid sodium chloride conducts.\n- Drawing O₂ with a single bond or N₂ without lone pairs.\n- Calling CCl₄ polar.\n\n**How marks are usually awarded**\n- Dot diagram (2 marks): correct electrons on each atom, and correct ions or shared pairs.\n- Properties (1 mark each): property with the reason (ions fixed or free; weak forces between molecules).\n- Coordinate bond (2 marks): lone pair donated, product ion with charge.",
+    "status": "draft",
+    "provenance": {
+      "origin": "human",
+      "template_version": null,
+      "model": null,
+      "generated_at": "2026-11-01",
+      "author": "claude-opus-5-5 (subject-producer)"
+    }
+  },
+  "flashcards": {
+    "unit": "icse-10-chemistry-ch02",
+    "version": 1,
+    "language": "en",
+    "cards": [
+      {
+        "id": "f01",
+        "front_md": "Octet rule?",
+        "back_md": "Atoms tend to gain, lose or share electrons to get eight outer electrons.",
+        "tag": "definition",
+        "topic_id": "icse-10-chemistry-ch02-t01"
+      },
+      {
+        "id": "f02",
+        "front_md": "Electrovalent bond?",
+        "back_md": "Transfer of electrons; ions held by electrostatic attraction.",
+        "tag": "definition",
+        "topic_id": "icse-10-chemistry-ch02-t01"
+      },
+      {
+        "id": "f03",
+        "front_md": "Ions in CaO?",
+        "back_md": "Ca²⁺ and O²⁻.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch02-t01"
+      },
+      {
+        "id": "f04",
+        "front_md": "Why does MgCl₂ need two Cl atoms?",
+        "back_md": "Mg loses two electrons; each Cl takes only one.",
+        "tag": "concept",
+        "topic_id": "icse-10-chemistry-ch02-t01"
+      },
+      {
+        "id": "f05",
+        "front_md": "Conditions for an ionic bond?",
+        "back_md": "Low ionisation potential of one atom, high electron affinity of the other.",
+        "tag": "concept",
+        "topic_id": "icse-10-chemistry-ch02-t01"
+      },
+      {
+        "id": "f06",
+        "front_md": "Electrovalency of Al in Al₂O₃?",
+        "back_md": "3 (Al³⁺).",
+        "tag": "example",
+        "topic_id": "icse-10-chemistry-ch02-t01"
+      },
+      {
+        "id": "f07",
+        "front_md": "Why are ionic compounds hard with high melting points?",
+        "back_md": "Strong electrostatic forces between ions in a lattice.",
+        "tag": "concept",
+        "topic_id": "icse-10-chemistry-ch02-t02"
+      },
+      {
+        "id": "f08",
+        "front_md": "When does NaCl conduct?",
+        "back_md": "When molten or dissolved in water.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch02-t02"
+      },
+      {
+        "id": "f09",
+        "front_md": "Why does solid NaCl not conduct?",
+        "back_md": "Ions are fixed in the lattice.",
+        "tag": "concept",
+        "topic_id": "icse-10-chemistry-ch02-t02"
+      },
+      {
+        "id": "f10",
+        "front_md": "Ionic compounds dissolve in?",
+        "back_md": "Water (not organic solvents).",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch02-t02"
+      },
+      {
+        "id": "f11",
+        "front_md": "Covalent bond?",
+        "back_md": "A shared pair of electrons, one from each atom.",
+        "tag": "definition",
+        "topic_id": "icse-10-chemistry-ch02-t03"
+      },
+      {
+        "id": "f12",
+        "front_md": "Bond in N₂?",
+        "back_md": "Triple bond (three shared pairs).",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch02-t03"
+      },
+      {
+        "id": "f13",
+        "front_md": "Bond in O₂?",
+        "back_md": "Double bond (two shared pairs).",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch02-t03"
+      },
+      {
+        "id": "f14",
+        "front_md": "Lone pairs in Cl₂?",
+        "back_md": "Three on each Cl atom (six in all).",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch02-t03"
+      },
+      {
+        "id": "f15",
+        "front_md": "Why is CCl₄ non-polar?",
+        "back_md": "Symmetrical tetrahedral shape; bond polarities cancel.",
+        "tag": "concept",
+        "topic_id": "icse-10-chemistry-ch02-t03"
+      },
+      {
+        "id": "f16",
+        "front_md": "Polar covalent bond?",
+        "back_md": "Shared pair nearer the more electronegative atom; δ+ and δ−.",
+        "tag": "definition",
+        "topic_id": "icse-10-chemistry-ch02-t04"
+      },
+      {
+        "id": "f17",
+        "front_md": "Lone pairs on O in H₂O?",
+        "back_md": "Two.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch02-t04"
+      },
+      {
+        "id": "f18",
+        "front_md": "Lone pairs on N in NH₃?",
+        "back_md": "One.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch02-t04"
+      },
+      {
+        "id": "f19",
+        "front_md": "Which end of HCl is δ−?",
+        "back_md": "Chlorine.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch02-t04"
+      },
+      {
+        "id": "f20",
+        "front_md": "Shape of NH₃?",
+        "back_md": "Pyramidal.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch02-t04"
+      },
+      {
+        "id": "f21",
+        "front_md": "Melting points of covalent compounds?",
+        "back_md": "Usually low (weak forces between molecules).",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch02-t05"
+      },
+      {
+        "id": "f22",
+        "front_md": "Covalent compounds dissolve in?",
+        "back_md": "Organic solvents.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch02-t05"
+      },
+      {
+        "id": "f23",
+        "front_md": "Why does HCl solution conduct?",
+        "back_md": "HCl ionises in water: H₃O⁺ and Cl⁻.",
+        "tag": "concept",
+        "topic_id": "icse-10-chemistry-ch02-t05"
+      },
+      {
+        "id": "f24",
+        "front_md": "Coordinate bond?",
+        "back_md": "Shared pair donated entirely by one atom.",
+        "tag": "definition",
+        "topic_id": "icse-10-chemistry-ch02-t06"
+      },
+      {
+        "id": "f25",
+        "front_md": "Donor in NH₄⁺?",
+        "back_md": "N of ammonia (lone pair).",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch02-t06"
+      },
+      {
+        "id": "f26",
+        "front_md": "Formation of H₃O⁺?",
+        "back_md": "H₂O + H⁺ → H₃O⁺.",
+        "tag": "formula",
+        "topic_id": "icse-10-chemistry-ch02-t06"
+      },
+      {
+        "id": "f27",
+        "front_md": "Bonds in NH₄⁺?",
+        "back_md": "Three covalent and one coordinate.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch02-t06"
+      },
+      {
+        "id": "f28",
+        "front_md": "Why can H⁺ only accept?",
+        "back_md": "It has no electrons at all.",
+        "tag": "concept",
+        "topic_id": "icse-10-chemistry-ch02-t06"
+      },
+      {
+        "id": "f29",
+        "front_md": "Water self-ionisation?",
+        "back_md": "H₂O + H₂O ⇌ H₃O⁺ + OH⁻.",
+        "tag": "formula",
+        "topic_id": "icse-10-chemistry-ch02-t06"
+      },
+      {
+        "id": "f30",
+        "front_md": "Exam tip: dot diagrams",
+        "back_md": "Outer electrons only; dots and crosses; brackets and charges on ions.",
+        "tag": "exam-tip",
+        "topic_id": "icse-10-chemistry-ch02-t01"
+      }
+    ],
+    "status": "draft",
+    "provenance": {
+      "origin": "human",
+      "template_version": null,
+      "model": null,
+      "generated_at": "2026-11-01",
+      "author": "claude-opus-5-5 (subject-producer)"
+    }
+  },
+  "questions": [
+    {
+      "id": "q_icse10chem_ch02_001",
+      "unit": "icse-10-chemistry-ch02",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "When calcium (2, 8, 8, 2) combines with oxygen (2, 6) to form calcium oxide, the electrons transferred are:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "two, from each oxygen atom to a calcium atom"
+        },
+        {
+          "id": "b",
+          "text_md": "one, from each calcium atom to an oxygen atom"
+        },
+        {
+          "id": "c",
+          "text_md": "two, from each calcium atom to an oxygen atom"
+        },
+        {
+          "id": "d",
+          "text_md": "none — the atoms share two pairs"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Ca loses its two valence electrons; O gains two to complete its octet — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch02-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch02_002",
+      "unit": "icse-10-chemistry-ch02",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Element E forms the ion E³⁺ and element G forms the ion G²⁻. The formula of the compound formed between them is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "E₃G₂"
+        },
+        {
+          "id": "b",
+          "text_md": "EG"
+        },
+        {
+          "id": "c",
+          "text_md": "E₂G"
+        },
+        {
+          "id": "d",
+          "text_md": "E₂G₃"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "2 × (+3) = +6 balances 3 × (−2) = −6 — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch02-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch02_003",
+      "unit": "icse-10-chemistry-ch02",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "An electrovalent bond is most likely to form between an atom with:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "high ionisation potential and an atom with low electron affinity"
+        },
+        {
+          "id": "b",
+          "text_md": "equal electronegativities"
+        },
+        {
+          "id": "c",
+          "text_md": "four valence electrons and an atom with four valence electrons"
+        },
+        {
+          "id": "d",
+          "text_md": "low ionisation potential and an atom with high electron affinity"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "One atom must lose electrons easily and the other gain them readily — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch02-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch02_004",
+      "unit": "icse-10-chemistry-ch02",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "In magnesium chloride, the electronic configuration of the magnesium ion is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "2, 8, 2"
+        },
+        {
+          "id": "b",
+          "text_md": "2, 8, 8"
+        },
+        {
+          "id": "c",
+          "text_md": "2, 8"
+        },
+        {
+          "id": "d",
+          "text_md": "2, 8, 1"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Mg (2, 8, 2) loses two electrons to form Mg²⁺ (2, 8), like neon — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch02-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch02_005",
+      "unit": "icse-10-chemistry-ch02",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Lithium (atomic number 3) reacts with nitrogen (atomic number 7) to form an ionic nitride. Its formula is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Li₃N"
+        },
+        {
+          "id": "b",
+          "text_md": "LiN₃"
+        },
+        {
+          "id": "c",
+          "text_md": "LiN"
+        },
+        {
+          "id": "d",
+          "text_md": "Li₂N₃"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Li⁺ (loses 1) and N³⁻ (gains 3): three Li⁺ per N³⁻ — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch02-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch02_006",
+      "unit": "icse-10-chemistry-ch02",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Sodium and chlorine combine by transfer of an electron rather than by sharing.\n\n**Reason (R):** Sodium has a low ionisation potential and chlorine has a high electron affinity.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Both are true, and R explains A — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch02-t01"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch02_007",
+      "unit": "icse-10-chemistry-ch02",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? In forming calcium oxide, the oxygen atom gains two electrons and becomes the oxide ion, O²⁻, with the configuration 2, 8.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "t"
+        ]
+      },
+      "solution_md": "True.",
+      "marking_scheme": [
+        {
+          "step": "True",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch02-t01"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch02_008",
+      "unit": "icse-10-chemistry-ch02",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "The number of electrons an atom loses or gains when it forms an ionic bond is called its ___.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "electrovalency",
+              "electro-valency",
+              "electrovalence"
+            ]
+          }
+        ]
+      },
+      "solution_md": "**Electrovalency**.",
+      "marking_scheme": [
+        {
+          "step": "Blank 1: \"electrovalency\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch02-t01"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch02_009",
+      "unit": "icse-10-chemistry-ch02",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write the electronic configurations of the two ions present in calcium oxide.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Ca²⁺: 2, 8, 8; O²⁻: 2, 8."
+      },
+      "solution_md": "Both configurations.",
+      "marking_scheme": [
+        {
+          "step": "Both correct",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch02-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch02_010",
+      "unit": "icse-10-chemistry-ch02",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Name the type of bond present in potassium bromide, KBr.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Electrovalent (ionic) bond."
+      },
+      "solution_md": "Electrovalent.",
+      "marking_scheme": [
+        {
+          "step": "Electrovalent",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch02-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch02_011",
+      "unit": "icse-10-chemistry-ch02",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Element A (atomic number 12) combines with element B (atomic number 17). (a) How many electrons does each A atom lose and each B atom gain? (b) Write the formula of the compound and name the type of bonding.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) A (2, 8, 2) loses 2 electrons; each B (2, 8, 7) gains 1 electron. (b) AB₂ (MgCl₂); electrovalent bonding."
+      },
+      "solution_md": "Electron counts; AB₂, ionic.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch02-t01"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch02_012",
+      "unit": "icse-10-chemistry-ch02",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Draw electron dot diagrams to show the formation of calcium oxide from calcium (atomic number 20) and oxygen (atomic number 8). Show the charges on the ions formed.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Ca with two crosses in its outer shell; O with six dots. Both crosses move to O. Product: [Ca]²⁺ with an empty outer shell shown as brackets, and [O with six dots and two crosses]²⁻ in square brackets."
+      },
+      "solution_md": "Atoms with outer electrons; transfer of two electrons; ions in brackets with charges.",
+      "marking_scheme": [
+        {
+          "step": "Atoms with correct outer electrons",
+          "marks": 1
+        },
+        {
+          "step": "Transfer of two electrons shown",
+          "marks": 1
+        },
+        {
+          "step": "Ions with brackets and charges",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch02-t01"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch02_013",
+      "unit": "icse-10-chemistry-ch02",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Potassium chloride crystals do not conduct electricity, but a hot melt of potassium chloride does. This is because in the melt:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "free electrons are released from the potassium"
+        },
+        {
+          "id": "b",
+          "text_md": "covalent bonds break to form molecules"
+        },
+        {
+          "id": "c",
+          "text_md": "the chlorine is given off as a gas before conduction starts"
+        },
+        {
+          "id": "d",
+          "text_md": "the K⁺ and Cl⁻ ions are free to move"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Ions are fixed in the solid lattice but mobile in the melt — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch02-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch02_014",
+      "unit": "icse-10-chemistry-ch02",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Magnesium oxide melts at about 2850 °C. The main reason for this very high melting point is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "weak forces between MgO molecules"
+        },
+        {
+          "id": "b",
+          "text_md": "strong electrostatic attraction between Mg²⁺ and O²⁻ ions in the lattice"
+        },
+        {
+          "id": "c",
+          "text_md": "the presence of free electrons"
+        },
+        {
+          "id": "d",
+          "text_md": "a triple covalent bond between Mg and O"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Ions with double charges attract very strongly — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch02-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch02_015",
+      "unit": "icse-10-chemistry-ch02",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A crystalline white solid melts at 770 °C, dissolves in water and is insoluble in kerosene. The solid is most probably:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "a non-polar covalent compound"
+        },
+        {
+          "id": "b",
+          "text_md": "a polar covalent gas"
+        },
+        {
+          "id": "c",
+          "text_md": "an electrovalent compound"
+        },
+        {
+          "id": "d",
+          "text_md": "a metal"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "High melting point and solubility in water, not in organic solvents — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch02-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch02_016",
+      "unit": "icse-10-chemistry-ch02",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Molten calcium chloride is decomposed when a current is passed through it.\n\n**Reason (R):** Calcium chloride is a covalent compound.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "A is true (electrolysis of the free ions); R is false: calcium chloride is electrovalent — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch02-t02"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch02_017",
+      "unit": "icse-10-chemistry-ch02",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? Crystals of lithium fluoride conduct electricity because they contain ions.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "f"
+        ]
+      },
+      "solution_md": "False: the ions in the crystal are fixed and cannot move; only the melt or solution conducts.",
+      "marking_scheme": [
+        {
+          "step": "False, with the correction",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch02-t02"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch02_018",
+      "unit": "icse-10-chemistry-ch02",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write the equation for the dissociation of molten calcium chloride into its ions.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "CaCl₂ → Ca²⁺ + 2Cl⁻."
+      },
+      "solution_md": "Equation.",
+      "marking_scheme": [
+        {
+          "step": "Balanced equation with charges",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch02-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch02_019",
+      "unit": "icse-10-chemistry-ch02",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Name one solvent in which sodium chloride does not dissolve.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Kerosene (or petrol, benzene)."
+      },
+      "solution_md": "An organic solvent.",
+      "marking_scheme": [
+        {
+          "step": "Any organic solvent",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch02-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch02_020",
+      "unit": "icse-10-chemistry-ch02",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Give reasons: (a) electrovalent compounds are hard and have high melting points; (b) they conduct electricity in aqueous solution.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Their ions are held in a rigid lattice by strong electrostatic forces, which need much energy to overcome. (b) In solution the compound dissociates into ions that are free to move and carry charge."
+      },
+      "solution_md": "Strong forces in a lattice; free ions.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch02-t02"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch02_021",
+      "unit": "icse-10-chemistry-ch02",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "In a molecule of oxygen, O₂, the number of shared pairs of electrons and the number of lone pairs on each oxygen atom are:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "2 shared pairs; 2 lone pairs on each atom"
+        },
+        {
+          "id": "b",
+          "text_md": "1 shared pair; 3 lone pairs on each atom"
+        },
+        {
+          "id": "c",
+          "text_md": "3 shared pairs; 1 lone pair on each atom"
+        },
+        {
+          "id": "d",
+          "text_md": "2 shared pairs; 3 lone pairs on each atom"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "O (2, 6) needs two electrons: a double bond, leaving 4 electrons (2 lone pairs) on each O — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch02-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch02_022",
+      "unit": "icse-10-chemistry-ch02",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Carbon tetrachloride, CCl₄, contains four C–Cl bonds but the molecule is non-polar because:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "carbon and chlorine have the same electronegativity"
+        },
+        {
+          "id": "b",
+          "text_md": "the four bonds point symmetrically to the corners of a tetrahedron, so their polarities cancel"
+        },
+        {
+          "id": "c",
+          "text_md": "it contains no lone pairs"
+        },
+        {
+          "id": "d",
+          "text_md": "its bonds are ionic"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Symmetry cancels the bond polarities — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch02-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch02_023",
+      "unit": "icse-10-chemistry-ch02",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "The total number of lone pairs in one molecule of chlorine, Cl₂, is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "6"
+        },
+        {
+          "id": "b",
+          "text_md": "3"
+        },
+        {
+          "id": "c",
+          "text_md": "2"
+        },
+        {
+          "id": "d",
+          "text_md": "8"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Each Cl keeps three lone pairs after sharing one pair: 2 × 3 = 6 — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch02-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch02_024",
+      "unit": "icse-10-chemistry-ch02",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "In a hydrogen molecule, H₂, each hydrogen atom attains the stable configuration of:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "neon (an octet)"
+        },
+        {
+          "id": "b",
+          "text_md": "helium (a duplet)"
+        },
+        {
+          "id": "c",
+          "text_md": "lithium"
+        },
+        {
+          "id": "d",
+          "text_md": "argon"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "The shared pair gives each H two electrons — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch02-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch02_025",
+      "unit": "icse-10-chemistry-ch02",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** In a molecule of nitrogen, each nitrogen atom has one lone pair.\n\n**Reason (R):** Each nitrogen atom contributes three electrons to the shared pairs.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Both are true; R explains the triple bond, but A follows from 5 − 3 = 2 unshared electrons (one lone pair) — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch02-t03"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch02_026",
+      "unit": "icse-10-chemistry-ch02",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? Methane is a non-polar molecule even though the C–H bonds are slightly polar.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "t"
+        ]
+      },
+      "solution_md": "True: the tetrahedral shape is symmetrical.",
+      "marking_scheme": [
+        {
+          "step": "True",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch02-t03"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch02_027",
+      "unit": "icse-10-chemistry-ch02",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "Complete each sentence by choosing the correct word from the bracket.\n\n(a) The bond between the two atoms in a nitrogen molecule is a ___ bond (double / triple).\n\n(b) A molecule of carbon tetrachloride is ___ (polar / non-polar).\n\n(c) In the ammonium ion, the lone pair of nitrogen forms a ___ bond with H⁺ (coordinate / electrovalent).",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "triple"
+            ]
+          },
+          {
+            "accepted": [
+              "non-polar",
+              "nonpolar"
+            ]
+          },
+          {
+            "accepted": [
+              "coordinate",
+              "dative"
+            ]
+          }
+        ]
+      },
+      "solution_md": "(a) **triple**; (b) **non-polar**; (c) **coordinate**.",
+      "marking_scheme": [
+        {
+          "step": "Blank 1: \"triple\"",
+          "marks": 1
+        },
+        {
+          "step": "Blank 2: \"non-polar\"",
+          "marks": 1
+        },
+        {
+          "step": "Blank 3: \"coordinate\"",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch02-t03",
+        "icse-10-chemistry-ch02-t06"
+      ],
+      "expected_time_sec": 135,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch02_028",
+      "unit": "icse-10-chemistry-ch02",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "How many electrons in total are shared between the carbon atom and the chlorine atoms in one molecule of carbon tetrachloride, CCl₄?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 8,
+        "tolerance": 0,
+        "unit": null
+      },
+      "solution_md": "Four single bonds, each a pair of electrons: total shared electrons = 4 × 2 = 8.",
+      "marking_scheme": [
+        {
+          "step": "8",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch02-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch02_029",
+      "unit": "icse-10-chemistry-ch02",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "How many lone pairs of electrons are present in one molecule of carbon tetrachloride, CCl₄?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 12,
+        "tolerance": 0,
+        "unit": null
+      },
+      "solution_md": "Each Cl keeps 3 lone pairs; carbon has none: lone pairs = 4 × 3 = 12.",
+      "marking_scheme": [
+        {
+          "step": "12",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch02-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch02_030",
+      "unit": "icse-10-chemistry-ch02",
+      "language": "en",
+      "type": "short",
+      "stem_md": "State the number of lone pairs on each nitrogen atom in a nitrogen molecule.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "One."
+      },
+      "solution_md": "One lone pair.",
+      "marking_scheme": [
+        {
+          "step": "One",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch02-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch02_031",
+      "unit": "icse-10-chemistry-ch02",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Name the type of bond formed between carbon and hydrogen in methane.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Single covalent bond (non-polar enough to give a non-polar molecule)."
+      },
+      "solution_md": "Covalent.",
+      "marking_scheme": [
+        {
+          "step": "Covalent (single)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch02-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch02_032",
+      "unit": "icse-10-chemistry-ch02",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Draw the electron dot structure of carbon tetrachloride, CCl₄, and state why it is a non-polar molecule.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "C in the centre with four shared pairs (one dot and one cross each) to four Cl atoms, each Cl with three lone pairs. Non-polar: the four C–Cl bonds are arranged symmetrically (tetrahedral), so the bond polarities cancel."
+      },
+      "solution_md": "Structure; symmetry.",
+      "marking_scheme": [
+        {
+          "step": "Structure",
+          "marks": 1
+        },
+        {
+          "step": "Reason",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch02-t03"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch02_033",
+      "unit": "icse-10-chemistry-ch02",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "In a molecule of hydrogen chloride, the chlorine atom carries a partial negative charge because:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "chlorine gives one electron to hydrogen"
+        },
+        {
+          "id": "b",
+          "text_md": "hydrogen has more protons than chlorine"
+        },
+        {
+          "id": "c",
+          "text_md": "chlorine is more electronegative than hydrogen and pulls the shared pair towards itself"
+        },
+        {
+          "id": "d",
+          "text_md": "chlorine has a lower electron affinity"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Unequal sharing in a polar bond — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch02-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch02_034",
+      "unit": "icse-10-chemistry-ch02",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "The number of bond pairs and lone pairs on the nitrogen atom of an ammonia molecule is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "3 bond pairs and 1 lone pair"
+        },
+        {
+          "id": "b",
+          "text_md": "4 bond pairs and no lone pair"
+        },
+        {
+          "id": "c",
+          "text_md": "3 bond pairs and 2 lone pairs"
+        },
+        {
+          "id": "d",
+          "text_md": "2 bond pairs and 2 lone pairs"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "N (2, 5) shares 3 electrons with 3 H and keeps one pair — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch02-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch02_035",
+      "unit": "icse-10-chemistry-ch02",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which molecule is polar?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Water, H₂O"
+        },
+        {
+          "id": "b",
+          "text_md": "Methane, CH₄"
+        },
+        {
+          "id": "c",
+          "text_md": "Chlorine, Cl₂"
+        },
+        {
+          "id": "d",
+          "text_md": "Carbon tetrachloride, CCl₄"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Water has polar O–H bonds and a bent shape, so the polarities do not cancel — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch02-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch02_036",
+      "unit": "icse-10-chemistry-ch02",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Ammonia is a polar molecule.\n\n**Reason (R):** The ammonia molecule has a lone pair of electrons on nitrogen and is not symmetrical.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Both are true, and R explains A — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch02-t04"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch02_037",
+      "unit": "icse-10-chemistry-ch02",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? In a water molecule, the oxygen atom carries a partial positive charge.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "f"
+        ]
+      },
+      "solution_md": "False: oxygen is more electronegative and carries δ−; each hydrogen is δ+.",
+      "marking_scheme": [
+        {
+          "step": "False, with the correction",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch02-t04"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch02_038",
+      "unit": "icse-10-chemistry-ch02",
+      "language": "en",
+      "type": "short",
+      "stem_md": "State the number of lone pairs on the oxygen atom in a water molecule.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Two."
+      },
+      "solution_md": "Two.",
+      "marking_scheme": [
+        {
+          "step": "Two",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch02-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch02_039",
+      "unit": "icse-10-chemistry-ch02",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Draw the electron dot structure of hydrogen chloride and mark the partial charges. Explain why the bond is polar.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "H : Cl with one shared pair (one dot, one cross) and three lone pairs on Cl; H is δ+ and Cl is δ−. Chlorine is more electronegative than hydrogen, so the shared pair is pulled closer to chlorine."
+      },
+      "solution_md": "Structure with charges; electronegativity.",
+      "marking_scheme": [
+        {
+          "step": "Structure with δ+ and δ−",
+          "marks": 1
+        },
+        {
+          "step": "Reason",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch02-t04"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch02_040",
+      "unit": "icse-10-chemistry-ch02",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Compare the molecules NH₃ and CH₄ with respect to (a) the number of lone pairs on the central atom, (b) shape and (c) polarity, giving a reason for (c).",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) NH₃: one lone pair on N; CH₄: none on C. (b) NH₃ pyramidal; CH₄ tetrahedral. (c) NH₃ is polar (polar N–H bonds with an unsymmetrical shape); CH₄ is non-polar (symmetrical, so bond polarities cancel)."
+      },
+      "solution_md": "Lone pairs; shape; polarity.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch02-t03",
+        "icse-10-chemistry-ch02-t04"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch02_041",
+      "unit": "icse-10-chemistry-ch02",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Substance Z is a liquid that boils at 77 °C, does not conduct electricity and mixes with petrol but not with water. Z is most probably:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "an electrovalent compound such as KCl"
+        },
+        {
+          "id": "b",
+          "text_md": "a metal"
+        },
+        {
+          "id": "c",
+          "text_md": "a non-polar covalent compound such as CCl₄"
+        },
+        {
+          "id": "d",
+          "text_md": "a polar compound that ionises in water"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Low boiling point, non-conducting, soluble in organic solvents — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch02-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch02_042",
+      "unit": "icse-10-chemistry-ch02",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Dry liquid hydrogen chloride does not conduct electricity, but its solution in water conducts well. This is because:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "water itself is a good conductor"
+        },
+        {
+          "id": "b",
+          "text_md": "HCl is an electrovalent compound"
+        },
+        {
+          "id": "c",
+          "text_md": "liquid HCl contains free electrons"
+        },
+        {
+          "id": "d",
+          "text_md": "in water HCl ionises to H₃O⁺ and Cl⁻ ions"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "HCl + H₂O → H₃O⁺ + Cl⁻ — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch02-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch02_043",
+      "unit": "icse-10-chemistry-ch02",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Most covalent compounds have low melting and boiling points because:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "the forces between their molecules are weak"
+        },
+        {
+          "id": "b",
+          "text_md": "the covalent bonds inside the molecules are weak"
+        },
+        {
+          "id": "c",
+          "text_md": "they contain ions"
+        },
+        {
+          "id": "d",
+          "text_md": "they are always gases"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Only weak intermolecular forces are overcome on melting or boiling — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch02-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch02_044",
+      "unit": "icse-10-chemistry-ch02",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write the equation for the ionisation of hydrogen chloride in water.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "HCl + H₂O → H₃O⁺ + Cl⁻."
+      },
+      "solution_md": "Equation.",
+      "marking_scheme": [
+        {
+          "step": "Balanced equation",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch02-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch02_045",
+      "unit": "icse-10-chemistry-ch02",
+      "language": "en",
+      "type": "short",
+      "stem_md": "State two differences between sodium chloride and carbon tetrachloride other than the type of bonding.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Sodium chloride is a hard crystalline solid with a high melting point; carbon tetrachloride is a volatile liquid with a low boiling point. Sodium chloride conducts when molten or dissolved; carbon tetrachloride does not conduct. (Also: NaCl dissolves in water, CCl₄ in organic solvents.)"
+      },
+      "solution_md": "Any two property differences.",
+      "marking_scheme": [
+        {
+          "step": "First difference",
+          "marks": 1
+        },
+        {
+          "step": "Second difference",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch02-t05"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch02_046",
+      "unit": "icse-10-chemistry-ch02",
+      "language": "en",
+      "type": "match",
+      "stem_md": "Match each substance in Column A with the description in Column B.",
+      "options": [
+        {
+          "id": "1",
+          "text_md": "Magnesium oxide"
+        },
+        {
+          "id": "2",
+          "text_md": "Carbon tetrachloride"
+        },
+        {
+          "id": "3",
+          "text_md": "Hydrogen chloride"
+        },
+        {
+          "id": "4",
+          "text_md": "Ammonium ion"
+        },
+        {
+          "id": "5",
+          "text_md": "Nitrogen"
+        }
+      ],
+      "match_right": [
+        {
+          "id": "p",
+          "text_md": "Polar covalent; ionises in water"
+        },
+        {
+          "id": "q",
+          "text_md": "Triple covalent bond"
+        },
+        {
+          "id": "r",
+          "text_md": "Non-polar covalent liquid"
+        },
+        {
+          "id": "s",
+          "text_md": "Contains a coordinate bond"
+        },
+        {
+          "id": "t",
+          "text_md": "Electrovalent; very high melting point"
+        }
+      ],
+      "answer": {
+        "pairs": [
+          {
+            "left_id": "1",
+            "right_id": "t"
+          },
+          {
+            "left_id": "2",
+            "right_id": "r"
+          },
+          {
+            "left_id": "3",
+            "right_id": "p"
+          },
+          {
+            "left_id": "4",
+            "right_id": "s"
+          },
+          {
+            "left_id": "5",
+            "right_id": "q"
+          }
+        ]
+      },
+      "solution_md": "MgO → electrovalent, high melting point; CCl₄ → non-polar liquid; HCl → polar, ionises in water; NH₄⁺ → coordinate bond; N₂ → triple bond.",
+      "marking_scheme": [
+        {
+          "step": "1 → t",
+          "marks": 1
+        },
+        {
+          "step": "2 → r",
+          "marks": 1
+        },
+        {
+          "step": "3 → p",
+          "marks": 1
+        },
+        {
+          "step": "4 → s",
+          "marks": 1
+        },
+        {
+          "step": "5 → q",
+          "marks": 1
+        }
+      ],
+      "marks": 5,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch02-t02",
+        "icse-10-chemistry-ch02-t03",
+        "icse-10-chemistry-ch02-t04",
+        "icse-10-chemistry-ch02-t05",
+        "icse-10-chemistry-ch02-t06"
+      ],
+      "expected_time_sec": 200,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch02_047",
+      "unit": "icse-10-chemistry-ch02",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "When ammonia gas meets hydrogen ions to form the ammonium ion, NH₄⁺, the new bond is formed by:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "transfer of an electron from hydrogen to nitrogen"
+        },
+        {
+          "id": "b",
+          "text_md": "the lone pair on nitrogen being donated to the hydrogen ion"
+        },
+        {
+          "id": "c",
+          "text_md": "sharing one electron from nitrogen and one from the hydrogen ion"
+        },
+        {
+          "id": "d",
+          "text_md": "transfer of an electron from nitrogen to the hydrogen ion"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "H⁺ has no electrons; both electrons come from nitrogen — a coordinate bond — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch02-t06"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch02_048",
+      "unit": "icse-10-chemistry-ch02",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "In the hydronium ion, H₃O⁺, the numbers of ordinary covalent bonds and coordinate bonds are:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "3 covalent and no coordinate"
+        },
+        {
+          "id": "b",
+          "text_md": "1 covalent and 2 coordinate"
+        },
+        {
+          "id": "c",
+          "text_md": "2 covalent and 2 coordinate"
+        },
+        {
+          "id": "d",
+          "text_md": "2 covalent and 1 coordinate"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Water has two O–H bonds; the third forms when a lone pair on O is donated to H⁺ — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch02-t06"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch02_049",
+      "unit": "icse-10-chemistry-ch02",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which particle can only act as an acceptor in forming a coordinate bond?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "NH₃"
+        },
+        {
+          "id": "b",
+          "text_md": "H⁺"
+        },
+        {
+          "id": "c",
+          "text_md": "H₂O"
+        },
+        {
+          "id": "d",
+          "text_md": "Cl⁻"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "A hydrogen ion has no electrons to donate — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch02-t06"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch02_050",
+      "unit": "icse-10-chemistry-ch02",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Methane does not form a coordinate bond with a hydrogen ion.\n\n**Reason (R):** Methane has no lone pair on its carbon atom.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Both are true, and R explains A — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch02-t06"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch02_051",
+      "unit": "icse-10-chemistry-ch02",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** All four N–H bonds in the ammonium ion are different from one another once the ion is formed.\n\n**Reason (R):** One N–H bond in the ammonium ion is formed by a lone pair donated by nitrogen.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "A is false: once formed, the coordinate bond is identical to the others; R is true — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 4,
+      "competency": "evaluation",
+      "bloom": "evaluate",
+      "topic_ids": [
+        "icse-10-chemistry-ch02-t06"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch02_052",
+      "unit": "icse-10-chemistry-ch02",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? In a coordinate bond, both electrons of the shared pair are supplied by the same atom.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "t"
+        ]
+      },
+      "solution_md": "True.",
+      "marking_scheme": [
+        {
+          "step": "True",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch02-t06"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch02_053",
+      "unit": "icse-10-chemistry-ch02",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "A pair of valence electrons that is not shared with another atom is called a ___ pair.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "lone"
+            ]
+          }
+        ]
+      },
+      "solution_md": "**Lone** pair.",
+      "marking_scheme": [
+        {
+          "step": "Blank 1: \"lone\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch02-t06"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch02_054",
+      "unit": "icse-10-chemistry-ch02",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write the equation for the formation of the hydronium ion from water.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "H₂O + H⁺ → H₃O⁺."
+      },
+      "solution_md": "Equation.",
+      "marking_scheme": [
+        {
+          "step": "Equation",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch02-t06"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch02_055",
+      "unit": "icse-10-chemistry-ch02",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write the equation that shows how pure water produces hydronium and hydroxide ions.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "H₂O + H₂O ⇌ H₃O⁺ + OH⁻."
+      },
+      "solution_md": "Equation.",
+      "marking_scheme": [
+        {
+          "step": "Equation",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch02-t06"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch02_056",
+      "unit": "icse-10-chemistry-ch02",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Draw electron dot diagrams to show the formation of the ammonium ion from ammonia and a hydrogen ion. Label the coordinate bond.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "NH₃ with three shared pairs to H and one lone pair on N; H⁺ with no electrons. The lone pair on N becomes the shared pair to the new H, giving [NH₄]⁺ with four shared pairs; the bond from the donated pair is labelled coordinate."
+      },
+      "solution_md": "NH₃ with lone pair; NH₄⁺ with label.",
+      "marking_scheme": [
+        {
+          "step": "NH₃ and H⁺ correct",
+          "marks": 1
+        },
+        {
+          "step": "NH₄⁺ with coordinate bond labelled and charge",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch02-t06"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch02_057",
+      "unit": "icse-10-chemistry-ch02",
+      "language": "en",
+      "type": "short",
+      "stem_md": "(a) Define a coordinate bond. (b) Explain why water and ammonia can form coordinate bonds with H⁺ but methane cannot. (c) Name the ion formed when water accepts H⁺.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) A covalent bond in which both electrons of the shared pair are donated by one atom. (b) Oxygen in water (two lone pairs) and nitrogen in ammonia (one lone pair) have lone pairs to donate; the carbon in methane has none. (c) Hydronium ion, H₃O⁺."
+      },
+      "solution_md": "Definition; lone pairs; hydronium.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch02-t06"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch02_058",
+      "unit": "icse-10-chemistry-ch02",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) What is meant by an electrovalent bond? State the conditions that favour its formation. [2]\n\n(b) Draw electron dot diagrams to show the formation of sodium chloride from sodium (11) and chlorine (17). [2]\n\n(c) Element X has atomic number 12 and element Y has atomic number 9. (i) Write their configurations. (ii) Write the formula of the compound XY₂ in terms of ions. (iii) Name the bond. [3]\n\n(d) Give reasons: (i) solid sodium bromide does not conduct but its solution does; (ii) magnesium oxide has a higher melting point than sodium chloride; (iii) sodium chloride dissolves in water but not in petrol. [3]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) A bond formed by complete transfer of electrons from one atom to another; the ions are held by electrostatic attraction. Favoured by low ionisation potential of one atom (a metal) and high electron affinity of the other (a non-metal).\n\n(b) Na with one cross in the outer shell; Cl with seven dots; the cross moves to Cl, giving [Na]⁺ and [Cl with seven dots and one cross]⁻ in brackets.\n\n(c) (i) X: 2, 8, 2; Y: 2, 7. (ii) X²⁺(Y⁻)₂ (MgF₂). (iii) Electrovalent.\n\n(d) (i) In the solid the ions are fixed; in solution they are free to move. (ii) Mg²⁺ and O²⁻ carry double charges, so the attraction in MgO is much stronger. (iii) Water attracts and separates the ions; petrol, a non-polar solvent, does not."
+      },
+      "solution_md": "Definition and conditions; dot diagram; configurations and formula; reasons.",
+      "marking_scheme": [
+        {
+          "step": "(a) definition",
+          "marks": 1
+        },
+        {
+          "step": "(a) conditions",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 2
+        },
+        {
+          "step": "(c)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(iii)",
+          "marks": 1
+        },
+        {
+          "step": "(d)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(d)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(d)(iii)",
+          "marks": 1
+        }
+      ],
+      "marks": 10,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch02-t01",
+        "icse-10-chemistry-ch02-t02"
+      ],
+      "expected_time_sec": 1080,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch02_059",
+      "unit": "icse-10-chemistry-ch02",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) What is a covalent bond? How does a double bond differ from a single bond? [2]\n\n(b) Draw electron dot structures of (i) a nitrogen molecule and (ii) methane. [2]\n\n(c) (i) Name a non-polar molecule that contains polar bonds. (ii) Explain why it is non-polar. (iii) State its shape. [3]\n\n(d) State three properties of covalent compounds such as tetrachloromethane and explain any one of them. [3]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) A bond formed by sharing a pair of electrons, one from each atom. A single bond is one shared pair; a double bond is two shared pairs (as in O₂).\n\n(b) (i) N≡N: three shared pairs between the N atoms and one lone pair on each N. (ii) C at the centre sharing one pair with each of four H atoms.\n\n(c) (i) CCl₄ (or CH₄). (ii) The bond polarities cancel because the bonds are arranged symmetrically. (iii) Tetrahedral.\n\n(d) Low melting and boiling points; insoluble in water but soluble in organic solvents; do not conduct electricity. Explanation (any one): e.g. low boiling point — only weak forces between molecules have to be overcome."
+      },
+      "solution_md": "Definition; two structures; non-polar molecule; properties.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 2
+        },
+        {
+          "step": "(b)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(b)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(iii)",
+          "marks": 1
+        },
+        {
+          "step": "(d) three properties",
+          "marks": 2
+        },
+        {
+          "step": "(d) explanation",
+          "marks": 1
+        }
+      ],
+      "marks": 10,
+      "difficulty": 3,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch02-t03",
+        "icse-10-chemistry-ch02-t05"
+      ],
+      "expected_time_sec": 1080,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch02_060",
+      "unit": "icse-10-chemistry-ch02",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Define electronegativity and explain how a difference in electronegativity makes a covalent bond polar. [2]\n\n(b) Draw the electron dot structure of water and mark the partial charges. [2]\n\n(c) Compare HCl and NaCl with respect to (i) the type of bond, (ii) the particles present in the pure substance and (iii) electrical conductivity of the pure liquid. [3]\n\n(d) Hydrogen chloride gas dissolves in water and the solution turns blue litmus red. (i) Write the equation for the ionisation. (ii) Name the positive ion formed. (iii) Explain why the pure liquid does not conduct but the solution does. [3]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Electronegativity is the tendency of an atom in a molecule to attract the shared pair towards itself. When the two atoms differ, the pair lies closer to the more electronegative atom, which becomes δ− while the other becomes δ+.\n\n(b) O with two shared pairs to two H atoms and two lone pairs; O δ−, each H δ+.\n\n(c) (i) HCl: polar covalent; NaCl: electrovalent. (ii) HCl: molecules; NaCl: ions. (iii) Liquid HCl does not conduct; molten NaCl conducts.\n\n(d) (i) HCl + H₂O → H₃O⁺ + Cl⁻. (ii) Hydronium ion. (iii) Pure liquid HCl contains only molecules; in water it ionises, giving free ions that carry charge."
+      },
+      "solution_md": "Electronegativity; water structure; comparison; ionisation.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 2
+        },
+        {
+          "step": "(b)",
+          "marks": 2
+        },
+        {
+          "step": "(c)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(iii)",
+          "marks": 1
+        },
+        {
+          "step": "(d)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(d)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(d)(iii)",
+          "marks": 1
+        }
+      ],
+      "marks": 10,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch02-t04",
+        "icse-10-chemistry-ch02-t05"
+      ],
+      "expected_time_sec": 1080,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch02_061",
+      "unit": "icse-10-chemistry-ch02",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Define (i) a lone pair and (ii) a coordinate bond. [2]\n\n(b) Draw an electron dot diagram for the formation of the hydronium ion from water and a hydrogen ion. [2]\n\n(c) (i) How many lone pairs are present on the nitrogen of ammonia? (ii) Write the equation for the formation of the ammonium ion. (iii) How many coordinate bonds are present in the ammonium ion? [3]\n\n(d) Explain (i) why methane does not form CH₅⁺ in the same way, (ii) why water contains a small number of H₃O⁺ and OH⁻ ions, and (iii) why the four N–H bonds of NH₄⁺ cannot be told apart once it has formed. [3]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) (i) A pair of valence electrons on an atom not used in bonding. (ii) A covalent bond in which both shared electrons come from one atom.\n\n(b) H₂O with two shared pairs and two lone pairs on O; H⁺ with no electrons; one lone pair of O shared with H⁺, giving [H₃O]⁺ with three shared pairs and one lone pair.\n\n(c) (i) One. (ii) NH₃ + H⁺ → NH₄⁺. (iii) One.\n\n(d) (i) Carbon in methane has no lone pair to donate. (ii) A lone pair on one water molecule accepts H⁺ from another: H₂O + H₂O ⇌ H₃O⁺ + OH⁻. (iii) Once formed, a coordinate bond is a shared pair just like the others."
+      },
+      "solution_md": "Definitions; hydronium diagram; ammonium; reasons.",
+      "marking_scheme": [
+        {
+          "step": "(a)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(a)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 2
+        },
+        {
+          "step": "(c)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(iii)",
+          "marks": 1
+        },
+        {
+          "step": "(d)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(d)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(d)(iii)",
+          "marks": 1
+        }
+      ],
+      "marks": 10,
+      "difficulty": 3,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch02-t06"
+      ],
+      "expected_time_sec": 1080,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch02_062",
+      "unit": "icse-10-chemistry-ch02",
+      "language": "en",
+      "type": "long",
+      "stem_md": "Elements P, Q and R have atomic numbers 19, 8 and 1.\n\n(a) Write the electronic configurations of P, Q and R. [2]\n\n(b) (i) Name the type of bond formed between P and Q and write the formula of the compound. (ii) Name the type of bond formed between Q and R and write the formula of the compound. [2]\n\n(c) For the compound of Q and R: (i) state the number of lone pairs on Q, (ii) state whether the molecule is polar, and (iii) name the ion formed when it accepts H⁺. [3]\n\n(d) Predict, with reasons, which of the two compounds in (b) (i) has the higher melting point, (ii) conducts when molten and (iii) dissolves in kerosene. [3]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) P: 2, 8, 8, 1; Q: 2, 6; R: 1.\n\n(b) (i) Electrovalent; P₂Q (K₂O). (ii) Covalent (polar); R₂Q (H₂O).\n\n(c) (i) Two. (ii) Polar. (iii) Hydronium ion, H₃O⁺.\n\n(d) (i) P₂Q — ions held by strong electrostatic forces. (ii) P₂Q — its ions become free to move in the melt; water is molecular. (iii) Neither readily: P₂Q is ionic (insoluble in non-polar solvents) and water is polar and does not mix with kerosene."
+      },
+      "solution_md": "Configurations; bond types and formulae; water; predictions.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 2
+        },
+        {
+          "step": "(b)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(b)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(iii)",
+          "marks": 1
+        },
+        {
+          "step": "(d)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(d)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(d)(iii)",
+          "marks": 1
+        }
+      ],
+      "marks": 10,
+      "difficulty": 4,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch02-t01",
+        "icse-10-chemistry-ch02-t02",
+        "icse-10-chemistry-ch02-t04",
+        "icse-10-chemistry-ch02-t05",
+        "icse-10-chemistry-ch02-t06"
+      ],
+      "expected_time_sec": 1080,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    }
+  ],
+  "build": {
+    "run_id": null,
+    "checks": {
+      "katex_mhchem": "7 math strings parsed with KaTeX 0.19.0 + mhchem (throwOnError, strict \"error\"), 0 failures",
+      "svg_allowlist": "3 SVG visuals (3 distinct diagrams) checked with saxes against svg-allowlist.ts: elements, attributes, class pattern, fragment-only refs, no style, palette incl. named hues, viewBox, title, per-page unique ids — 0 failures",
+      "narration": "26 slides, 9–74 words (mean 50), no symbols, formulae or unit abbreviations",
+      "resolve": "2/2 scripted re-solve checks pass",
+      "chemistry_facts": "Electron transfer in NaCl, MgCl2 and CaO, properties of electrovalent compounds, shared pairs and lone pairs in H2, Cl2, O2, N2, CH4 and CCl4, polarity of HCl, H2O and NH3, comparison of compound types and coordinate bonds in H3O+ and NH4+, checked against the ICSE 2027 syllabus (Class X, section 2)",
+      "content_gate": "npm test -w @soyl/content-templates: all checks pass for this chapter",
+      "verifier_pass": "2026-11-01: every question and every internal-choice alternative re-solved from its stem by the author; every numerical re-computed by the build script — see README \"Verifier pass\"",
+      "pipeline_lint": "npm run content -- lint --exemplars: 0 errors, 0 warnings"
+    }
+  }
+}
