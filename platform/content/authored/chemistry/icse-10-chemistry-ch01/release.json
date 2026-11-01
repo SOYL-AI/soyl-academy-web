@@ -1,0 +1,4648 @@
+{
+  "unit": "icse-10-chemistry-ch01",
+  "version": 1,
+  "academic_year": "2026-27",
+  "created_at": "2026-11-01T00:00:00+05:30",
+  "decks": [
+    {
+      "unit": "icse-10-chemistry-ch01",
+      "part": 1,
+      "version": 1,
+      "title": "Periodic Table — Part 1: The modern periodic law and atomic size",
+      "language": "en",
+      "goals": [
+        "State the modern periodic law",
+        "Find the group and period of an element (atomic number 1–20) from its electronic configuration",
+        "Explain trends using nuclear charge and the number of shells",
+        "Compare the atomic sizes of two elements and give a reason"
+      ],
+      "slides": [
+        {
+          "id": "s01",
+          "layout": "title",
+          "heading": "Why a table?",
+          "body_md": "Part 1 — 118 elements, but only a few patterns. The periodic table puts elements with similar properties in the same column, so learning one element tells you a lot about its neighbours.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Family",
+                "Members (up to calcium)",
+                "Shared behaviour"
+              ],
+              "rows": [
+                [
+                  "Alkali metals (group 1)",
+                  "Li, Na, K",
+                  "Soft, very reactive metals"
+                ],
+                [
+                  "Alkaline earth metals (group 2)",
+                  "Be, Mg, Ca",
+                  "Reactive metals, form M²⁺ ions"
+                ],
+                [
+                  "Halogens (group 17)",
+                  "F, Cl",
+                  "Reactive non-metals, form X⁻ ions"
+                ],
+                [
+                  "Noble gases (group 18)",
+                  "He, Ne, Ar",
+                  "Very unreactive gases"
+                ]
+              ]
+            },
+            "alt": "Table of four families of elements with members up to calcium and their shared behaviour"
+          },
+          "math": [],
+          "narration": "Namaste! There are more than a hundred elements, but you do not need to learn each one separately. The periodic table places elements that behave alike in the same column. Sodium and potassium, for example, are both soft metals that react fiercely with water. In this part we see why the table works and how the size of atoms changes across it.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s02",
+          "layout": "concept",
+          "heading": "The modern periodic law",
+          "body_md": "**Modern periodic law:** the properties of elements are a **periodic function of their atomic numbers**. Mendeleev arranged elements by atomic mass, which put some pairs in the wrong order (argon, 39.9, comes before potassium, 39.1). Arranging by **atomic number** (the number of protons) removes these problems, because the atomic number fixes the number of electrons — and the **valence electrons decide chemical properties**.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Basis",
+                "Problem or advantage"
+              ],
+              "rows": [
+                [
+                  "Atomic mass (Mendeleev)",
+                  "Ar (39.9) would come after K (39.1); isotopes would need separate places"
+                ],
+                [
+                  "Atomic number (modern)",
+                  "Ar (18) before K (19) naturally; isotopes share one place"
+                ],
+                [
+                  "Why it works",
+                  "Atomic number → electronic configuration → valence electrons → properties"
+                ]
+              ]
+            },
+            "alt": "Table comparing atomic mass and atomic number as the basis of the periodic table"
+          },
+          "math": [],
+          "narration": "The modern periodic law says that the properties of elements repeat in a regular way when the elements are arranged by atomic number. Mendeleev used atomic mass, which put argon after potassium even though argon is a noble gas. Atomic number, the number of protons, fixes the number of electrons in an atom, and the outermost electrons decide how an element reacts. That is why atomic number is the correct basis.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s03",
+          "layout": "check",
+          "heading": "Quick check: the periodic law",
+          "body_md": "Decide why atomic number, not atomic mass, is the basis of the modern table.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Think about what the atomic number fixes in an atom.",
+          "check_question_id": "q_icse10chem_ch01_001",
+          "audio": null
+        },
+        {
+          "id": "s04",
+          "layout": "diagram",
+          "heading": "Groups and periods",
+          "body_md": "**Groups** are the 18 vertical columns: elements in a group have the **same number of valence electrons** and similar properties. **Periods** are the 7 horizontal rows: elements in a period have the **same number of electron shells**. Period 1 has 2 elements, periods 2 and 3 have 8 each, and period 4 begins with K and Ca. Groups may be numbered 1–18 (IUPAC) or IA–VIIA and 0 (old).",
+          "bullets": [],
+          "visual": {
+            "kind": "svg",
+            "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 430 230\" role=\"img\" aria-label=\"The first twenty elements arranged in the modern periodic table. Period 1 holds hydrogen in group 1 and helium in group 18. Period 2 runs from lithium to neon and period 3 from sodium to argon, filling groups 1, 2 and 13 to 18. Period 4 begins with potassium and calcium in groups 1 and 2. A gap between groups 2 and 13 marks where the transition elements fit from period 4 onwards. Each box shows the symbol and the atomic number.\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>The first twenty elements arranged in the modern periodic table. Period 1 holds hydrogen in group 1 and helium in group 18. Period 2 runs from lithium to neon and period 3 from sodium to argon, filling groups 1, 2 and 13 to 18. Period 4 begins with potassium and calcium in groups 1 and 2. A gap between groups 2 and 13 marks where the transition elements fit from period 4 onwards. Each box shows the symbol and the atomic number.</title><text x=\"76\" y=\"22\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">1</text><text x=\"116\" y=\"22\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">2</text><text x=\"196\" y=\"22\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">13</text><text x=\"236\" y=\"22\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">14</text><text x=\"276\" y=\"22\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">15</text><text x=\"316\" y=\"22\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">16</text><text x=\"356\" y=\"22\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">17</text><text x=\"396\" y=\"22\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">18</text><text x=\"22\" y=\"72\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">1</text><text x=\"22\" y=\"114\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">2</text><text x=\"22\" y=\"156\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">3</text><text x=\"22\" y=\"198\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">4</text><text x=\"8\" y=\"14\" fill=\"var(--diagram-muted)\" stroke=\"none\" font-size=\"10\">Period</text><text x=\"210\" y=\"10\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">Group</text><rect x=\"60\" y=\"50\" width=\"34\" height=\"34\" fill=\"var(--diagram-blue)\" stroke=\"currentColor\" stroke-width=\"1.2\" fill-opacity=\"0.18\"/><text x=\"77\" y=\"63\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">1</text><text x=\"77\" y=\"78\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\">H</text><rect x=\"380\" y=\"50\" width=\"34\" height=\"34\" fill=\"var(--diagram-muted)\" stroke=\"currentColor\" stroke-width=\"1.2\" fill-opacity=\"0.18\"/><text x=\"397\" y=\"63\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">2</text><text x=\"397\" y=\"78\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\">He</text><rect x=\"60\" y=\"92\" width=\"34\" height=\"34\" fill=\"var(--diagram-blue)\" stroke=\"currentColor\" stroke-width=\"1.2\" fill-opacity=\"0.18\"/><text x=\"77\" y=\"105\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">3</text><text x=\"77\" y=\"120\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\">Li</text><rect x=\"100\" y=\"92\" width=\"34\" height=\"34\" fill=\"var(--diagram-blue)\" stroke=\"currentColor\" stroke-width=\"1.2\" fill-opacity=\"0.18\"/><text x=\"117\" y=\"105\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">4</text><text x=\"117\" y=\"120\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\">Be</text><rect x=\"180\" y=\"92\" width=\"34\" height=\"34\" fill=\"var(--diagram-accent)\" stroke=\"currentColor\" stroke-width=\"1.2\" fill-opacity=\"0.18\"/><text x=\"197\" y=\"105\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">5</text><text x=\"197\" y=\"120\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\">B</text><rect x=\"220\" y=\"92\" width=\"34\" height=\"34\" fill=\"var(--diagram-accent)\" stroke=\"currentColor\" stroke-width=\"1.2\" fill-opacity=\"0.18\"/><text x=\"237\" y=\"105\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">6</text><text x=\"237\" y=\"120\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\">C</text><rect x=\"260\" y=\"92\" width=\"34\" height=\"34\" fill=\"var(--diagram-green)\" stroke=\"currentColor\" stroke-width=\"1.2\" fill-opacity=\"0.18\"/><text x=\"277\" y=\"105\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">7</text><text x=\"277\" y=\"120\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\">N</text><rect x=\"300\" y=\"92\" width=\"34\" height=\"34\" fill=\"var(--diagram-green)\" stroke=\"currentColor\" stroke-width=\"1.2\" fill-opacity=\"0.18\"/><text x=\"317\" y=\"105\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">8</text><text x=\"317\" y=\"120\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\">O</text><rect x=\"340\" y=\"92\" width=\"34\" height=\"34\" fill=\"var(--diagram-green)\" stroke=\"currentColor\" stroke-width=\"1.2\" fill-opacity=\"0.18\"/><text x=\"357\" y=\"105\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">9</text><text x=\"357\" y=\"120\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\">F</text><rect x=\"380\" y=\"92\" width=\"34\" height=\"34\" fill=\"var(--diagram-muted)\" stroke=\"currentColor\" stroke-width=\"1.2\" fill-opacity=\"0.18\"/><text x=\"397\" y=\"105\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">10</text><text x=\"397\" y=\"120\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\">Ne</text><rect x=\"60\" y=\"134\" width=\"34\" height=\"34\" fill=\"var(--diagram-blue)\" stroke=\"currentColor\" stroke-width=\"1.2\" fill-opacity=\"0.18\"/><text x=\"77\" y=\"147\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">11</text><text x=\"77\" y=\"162\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\">Na</text><rect x=\"100\" y=\"134\" width=\"34\" height=\"34\" fill=\"var(--diagram-blue)\" stroke=\"currentColor\" stroke-width=\"1.2\" fill-opacity=\"0.18\"/><text x=\"117\" y=\"147\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">12</text><text x=\"117\" y=\"162\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\">Mg</text><rect x=\"180\" y=\"134\" width=\"34\" height=\"34\" fill=\"var(--diagram-accent)\" stroke=\"currentColor\" stroke-width=\"1.2\" fill-opacity=\"0.18\"/><text x=\"197\" y=\"147\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">13</text><text x=\"197\" y=\"162\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\">Al</text><rect x=\"220\" y=\"134\" width=\"34\" height=\"34\" fill=\"var(--diagram-accent)\" stroke=\"currentColor\" stroke-width=\"1.2\" fill-opacity=\"0.18\"/><text x=\"237\" y=\"147\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">14</text><text x=\"237\" y=\"162\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\">Si</text><rect x=\"260\" y=\"134\" width=\"34\" height=\"34\" fill=\"var(--diagram-green)\" stroke=\"currentColor\" stroke-width=\"1.2\" fill-opacity=\"0.18\"/><text x=\"277\" y=\"147\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">15</text><text x=\"277\" y=\"162\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\">P</text><rect x=\"300\" y=\"134\" width=\"34\" height=\"34\" fill=\"var(--diagram-green)\" stroke=\"currentColor\" stroke-width=\"1.2\" fill-opacity=\"0.18\"/><text x=\"317\" y=\"147\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">16</text><text x=\"317\" y=\"162\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\">S</text><rect x=\"340\" y=\"134\" width=\"34\" height=\"34\" fill=\"var(--diagram-green)\" stroke=\"currentColor\" stroke-width=\"1.2\" fill-opacity=\"0.18\"/><text x=\"357\" y=\"147\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">17</text><text x=\"357\" y=\"162\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\">Cl</text><rect x=\"380\" y=\"134\" width=\"34\" height=\"34\" fill=\"var(--diagram-muted)\" stroke=\"currentColor\" stroke-width=\"1.2\" fill-opacity=\"0.18\"/><text x=\"397\" y=\"147\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">18</text><text x=\"397\" y=\"162\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\">Ar</text><rect x=\"60\" y=\"176\" width=\"34\" height=\"34\" fill=\"var(--diagram-blue)\" stroke=\"currentColor\" stroke-width=\"1.2\" fill-opacity=\"0.18\"/><text x=\"77\" y=\"189\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">19</text><text x=\"77\" y=\"204\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\">K</text><rect x=\"100\" y=\"176\" width=\"34\" height=\"34\" fill=\"var(--diagram-blue)\" stroke=\"currentColor\" stroke-width=\"1.2\" fill-opacity=\"0.18\"/><text x=\"117\" y=\"189\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">20</text><text x=\"117\" y=\"204\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\">Ca</text><rect x=\"136\" y=\"176\" width=\"36\" height=\"34\" fill=\"none\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\" stroke-dasharray=\"3 2\"/><text x=\"154\" y=\"222\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">transition block</text></svg>",
+            "alt": "The first twenty elements in periods 1 to 4 of the modern periodic table, with groups 1, 2 and 13 to 18 and a gap for the transition block"
+          },
+          "math": [],
+          "narration": "The columns of the table are called groups. All the elements in one group have the same number of electrons in their outer shell, so they behave alike. The rows are called periods, and every element in a period has the same number of shells. Period one has only two elements, periods two and three have eight each, and period four starts with potassium and calcium.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s05",
+          "layout": "example",
+          "heading": "Worked example: placing an element",
+          "body_md": "**Problem.** Element X has atomic number 15. Find its electronic configuration, period, group and valency, and say whether it is a metal or a non-metal.\n\n**Step 1.** Configuration: 2, 8, 5.\n\n**Step 2.** Three shells → **period 3**.\n\n**Step 3.** Five valence electrons → **group 15** (VA).\n\n**Step 4.** It gains or shares 3 electrons → **valency 3**; a **non-metal** (it is phosphorus).",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Atomic number",
+                "Configuration",
+                "Period",
+                "Group",
+                "Element"
+              ],
+              "rows": [
+                [
+                  "15",
+                  "2, 8, 5",
+                  "3",
+                  "15 (VA)",
+                  "Phosphorus"
+                ],
+                [
+                  "12",
+                  "2, 8, 2",
+                  "3",
+                  "2 (IIA)",
+                  "Magnesium"
+                ],
+                [
+                  "19",
+                  "2, 8, 8, 1",
+                  "4",
+                  "1 (IA)",
+                  "Potassium"
+                ]
+              ]
+            },
+            "alt": "Table placing three elements by configuration, period and group"
+          },
+          "math": [],
+          "narration": "Write the configuration first: fifteen electrons fill shells as two, eight and five. Three shells put the element in period three. Five outer electrons put it in group fifteen. To complete an octet it must gain or share three electrons, so its valency is three, and an element that gains electrons is a non-metal. This element is phosphorus.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s06",
+          "layout": "check",
+          "heading": "Quick check: group and period",
+          "body_md": "Place an element from its atomic number.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. The number of shells gives the period; the outer electrons give the group.",
+          "check_question_id": "q_icse10chem_ch01_002",
+          "audio": null
+        },
+        {
+          "id": "s07",
+          "layout": "concept",
+          "heading": "What controls the trends: nuclear charge and shells",
+          "body_md": "Two factors explain every trend in this chapter. **Across a period**, the number of shells stays the same but the **nuclear charge rises** by one unit each step, so the valence electrons are **pulled in more strongly**. **Down a group**, a **new shell** is added each time, so the valence electrons are **farther from the nucleus** and are also shielded by inner shells — the pull on them is **weaker**, even though the nuclear charge is larger.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Direction",
+                "Nuclear charge",
+                "Number of shells",
+                "Pull on valence electrons"
+              ],
+              "rows": [
+                [
+                  "Across a period (left → right)",
+                  "Increases",
+                  "Same",
+                  "Stronger"
+                ],
+                [
+                  "Down a group",
+                  "Increases",
+                  "Increases",
+                  "Weaker (distance and shielding win)"
+                ]
+              ]
+            },
+            "alt": "Table of how nuclear charge, number of shells and pull on valence electrons change across a period and down a group"
+          },
+          "math": [],
+          "narration": "Every trend comes back to one question: how strongly does the nucleus hold the outer electrons? Across a period, protons are added but no new shell, so the pull grows stronger. Down a group, a new shell is added each time. The outer electrons are then farther away and screened by the inner electrons, so the pull becomes weaker, even though the nucleus has more protons.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s08",
+          "layout": "concept",
+          "heading": "Atomic size",
+          "body_md": "**Atomic size (atomic radius)** is the distance from the centre of the nucleus to the outermost shell. **Across a period it decreases** (stronger nuclear pull on the same number of shells). **Down a group it increases** (a new shell is added each time). Noble-gas radii are measured differently (van der Waals radii, not bonded radii), so they are **not compared** with the other elements of the period.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Period 3 element",
+                "Na",
+                "Mg",
+                "Al",
+                "Si",
+                "P",
+                "S",
+                "Cl"
+              ],
+              "rows": [
+                [
+                  "Atomic radius / pm",
+                  "186",
+                  "160",
+                  "143",
+                  "117",
+                  "110",
+                  "104",
+                  "99"
+                ]
+              ]
+            },
+            "alt": "Table of the atomic radii of the period 3 elements from sodium to chlorine, falling from 186 to 99 picometres"
+          },
+          "math": [],
+          "narration": "Atomic size is the distance from the nucleus to the outermost shell. Across period three, from sodium to chlorine, the radius falls steadily, because each extra proton pulls the same shells in more tightly. Down a group, each element has one more shell than the one above, so the atoms get bigger. Argon is left out, because the size of a noble gas atom is measured in a different way.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s09",
+          "layout": "example",
+          "heading": "Worked example: comparing sizes",
+          "body_md": "**Problem.** Give the larger atom in each pair, with a reason: (a) Na or Cl; (b) Li or K; (c) Mg or Ca.\n\n**(a) Na** — same period; Na has the smaller nuclear charge (11 against 17), so its electrons are held less tightly.\n\n**(b) K** — same group; K has four shells, Li only two.\n\n**(c) Ca** — same group; Ca has four shells, Mg three.",
+          "bullets": [],
+          "visual": {
+            "kind": "flow",
+            "spec": {
+              "direction": "LR",
+              "nodes": [
+                {
+                  "id": "a",
+                  "label": "Same period?"
+                },
+                {
+                  "id": "b",
+                  "label": "Smaller nuclear charge → larger atom"
+                },
+                {
+                  "id": "c",
+                  "label": "Same group?"
+                },
+                {
+                  "id": "d",
+                  "label": "More shells → larger atom"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "a",
+                  "to": "b",
+                  "label": "yes"
+                },
+                {
+                  "from": "c",
+                  "to": "d",
+                  "label": "yes"
+                }
+              ]
+            },
+            "alt": "Flow showing how to decide the larger atom in the same period and in the same group"
+          },
+          "math": [],
+          "narration": "First ask whether the two elements are in the same period or the same group. In the same period, the element with the smaller nuclear charge is larger, so sodium is larger than chlorine. In the same group, the element with more shells is larger, so potassium beats lithium and calcium beats magnesium.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s10",
+          "layout": "check",
+          "heading": "Quick check: atomic size",
+          "body_md": "Pick the largest or smallest atom in a set.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Across a period atoms shrink; down a group they grow.",
+          "check_question_id": "q_icse10chem_ch01_015",
+          "audio": null
+        },
+        {
+          "id": "s11",
+          "layout": "concept",
+          "heading": "Size of ions (a useful link)",
+          "body_md": "A **cation is smaller** than its atom: Na (186 pm) → Na⁺ (about 102 pm), because the whole outer shell is lost and the same nuclear charge holds fewer electrons. An **anion is larger** than its atom: Cl (99 pm) → Cl⁻ (about 181 pm), because the extra electron increases repulsion between electrons with no extra nuclear charge.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Particle",
+                "Electrons",
+                "Shells",
+                "Radius / pm"
+              ],
+              "rows": [
+                [
+                  "Na atom",
+                  "11",
+                  "3",
+                  "186"
+                ],
+                [
+                  "Na⁺ ion",
+                  "10",
+                  "2",
+                  "about 102"
+                ],
+                [
+                  "Cl atom",
+                  "17",
+                  "3",
+                  "99"
+                ],
+                [
+                  "Cl⁻ ion",
+                  "18",
+                  "3",
+                  "about 181"
+                ]
+              ]
+            },
+            "alt": "Table comparing the sizes of sodium and chlorine atoms with their ions"
+          },
+          "math": [],
+          "narration": "Atoms change size when they form ions. A sodium atom loses its only outer electron and with it the whole third shell, so the sodium ion is much smaller. A chlorine atom gains an electron; the extra electron repels the others and nothing extra holds it in, so the chloride ion is larger than the chlorine atom.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s12",
+          "layout": "summary",
+          "heading": "Summary: Part 1",
+          "body_md": "",
+          "bullets": [
+            "Modern periodic law: properties are a periodic function of atomic number.",
+            "Group = same valence electrons; period = same number of shells.",
+            "Across a period: nuclear charge ↑, pull ↑; down a group: shells ↑, pull ↓.",
+            "Atomic size decreases across a period and increases down a group; noble gases are not compared.",
+            "Cations are smaller and anions larger than their atoms."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Trend",
+                "Across a period",
+                "Down a group"
+              ],
+              "rows": [
+                [
+                  "Nuclear charge",
+                  "Increases",
+                  "Increases"
+                ],
+                [
+                  "Shells",
+                  "Same",
+                  "Increase"
+                ],
+                [
+                  "Atomic size",
+                  "Decreases",
+                  "Increases"
+                ]
+              ]
+            },
+            "alt": "Summary table of nuclear charge, shells and atomic size across a period and down a group"
+          },
+          "math": [],
+          "narration": "Let us sum up Part 1. Properties repeat when elements are arranged by atomic number. Elements in a group share the same number of outer electrons; elements in a period share the same number of shells. Across a period the nucleus pulls harder and atoms get smaller; down a group new shells are added and atoms get bigger.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s13",
+          "layout": "exam-tips",
+          "heading": "Exam tips: Part 1",
+          "body_md": "",
+          "bullets": [
+            "Always write the electronic configuration before naming the group or period.",
+            "For “give a reason”, mention nuclear charge (across) or number of shells (down).",
+            "Never compare the radius of a noble gas with the other elements of its period.",
+            "Group 18 is also called group 0; both numberings are accepted."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Slip",
+                "Fix"
+              ],
+              "rows": [
+                [
+                  "Size increases across a period",
+                  "It decreases"
+                ],
+                [
+                  "K is in period 3",
+                  "K (2, 8, 8, 1) is in period 4"
+                ],
+                [
+                  "Reason: “more electrons”",
+                  "Reason: larger nuclear charge, same shells"
+                ]
+              ]
+            },
+            "alt": "Table of three common slips in Part 1 and their fixes"
+          },
+          "math": [],
+          "narration": "Some tips. Write the electronic configuration first, then read off the period and group. When asked for a reason, talk about nuclear charge across a period and the number of shells down a group. And never compare the size of a noble gas atom with the other atoms of its period.",
+          "check_question_id": null,
+          "audio": null
+        }
+      ],
+      "status": "draft",
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "unit": "icse-10-chemistry-ch01",
+      "part": 2,
+      "version": 1,
+      "title": "Periodic Table — Part 2: Periodic properties and two families",
+      "language": "en",
+      "goals": [
+        "Relate metallic and non-metallic character to losing and gaining electrons",
+        "Define ionisation potential, electron affinity and electronegativity and describe their trends",
+        "Compare the reactivity of lithium, sodium and potassium",
+        "Explain why the reactivity of halogens decreases down the group"
+      ],
+      "slides": [
+        {
+          "id": "s01",
+          "layout": "title",
+          "heading": "Patterns you can predict",
+          "body_md": "Part 2 — the same two factors (nuclear charge and shells) explain how easily atoms lose or gain electrons, and so how reactive they are.",
+          "bullets": [],
+          "visual": {
+            "kind": "svg",
+            "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 420 250\" role=\"img\" aria-label=\"Trend arrows on an outline of the periodic table. Across a period from left to right, atomic size and metallic character decrease, while ionisation potential, electron affinity, electronegativity and non-metallic character increase. Down a group, atomic size and metallic character increase, while ionisation potential, electron affinity and electronegativity decrease.\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>Trend arrows on an outline of the periodic table. Across a period from left to right, atomic size and metallic character decrease, while ionisation potential, electron affinity, electronegativity and non-metallic character increase. Down a group, atomic size and metallic character increase, while ionisation potential, electron affinity and electronegativity decrease.</title><rect x=\"70\" y=\"50\" width=\"300\" height=\"150\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"80\" y1=\"36\" x2=\"354.4\" y2=\"36\" stroke=\"var(--diagram-red)\" stroke-width=\"1.5\"/><polygon points=\"360,36 353.6,38.9 353.6,33.1\" fill=\"var(--diagram-red)\" stroke=\"none\"/><text x=\"220\" y=\"28\" fill=\"var(--diagram-red)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\">Across a period: size ↓  metallic ↓</text><text x=\"220\" y=\"216\" fill=\"var(--diagram-blue)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\">Across a period: IP ↑  EA ↑  EN ↑  non-metallic ↑</text><line x1=\"80\" y1=\"228\" x2=\"354.4\" y2=\"228\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.5\"/><polygon points=\"360,228 353.6,230.9 353.6,225.1\" fill=\"var(--diagram-blue)\" stroke=\"none\"/><line x1=\"50\" y1=\"60\" x2=\"50\" y2=\"184.4\" stroke=\"var(--diagram-green)\" stroke-width=\"1.5\"/><polygon points=\"50,190 47.1,183.6 52.9,183.6\" fill=\"var(--diagram-green)\" stroke=\"none\"/><text x=\"8\" y=\"110\" fill=\"var(--diagram-green)\" stroke=\"none\" font-size=\"10\">Down</text><text x=\"8\" y=\"122\" fill=\"var(--diagram-green)\" stroke=\"none\" font-size=\"10\">a group:</text><text x=\"8\" y=\"134\" fill=\"var(--diagram-green)\" stroke=\"none\" font-size=\"10\">size ↑</text><text x=\"8\" y=\"146\" fill=\"var(--diagram-green)\" stroke=\"none\" font-size=\"10\">metallic ↑</text><text x=\"8\" y=\"158\" fill=\"var(--diagram-green)\" stroke=\"none\" font-size=\"10\">IP, EA,</text><text x=\"8\" y=\"170\" fill=\"var(--diagram-green)\" stroke=\"none\" font-size=\"10\">EN ↓</text><text x=\"110\" y=\"80\" fill=\"currentColor\" stroke=\"none\" font-size=\"11\">Na, K</text><text x=\"110\" y=\"96\" fill=\"var(--diagram-muted)\" stroke=\"none\" font-size=\"10\">(most metallic)</text><text x=\"300\" y=\"80\" fill=\"currentColor\" stroke=\"none\" font-size=\"11\">F, Cl</text><text x=\"290\" y=\"96\" fill=\"var(--diagram-muted)\" stroke=\"none\" font-size=\"10\">(most non-metallic)</text><text x=\"220\" y=\"150\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">noble-gas radii are not compared with the rest</text></svg>",
+            "alt": "Arrows showing that across a period atomic size and metallic character fall while ionisation potential, electron affinity and electronegativity rise, and the reverse down a group"
+          },
+          "math": [],
+          "narration": "In this part we use the same two ideas, nuclear charge and the number of shells, to predict how easily an atom loses or gains electrons. That one idea explains metallic character, ionisation potential, electron affinity, electronegativity and the reactivity of whole families of elements.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s02",
+          "layout": "concept",
+          "heading": "Metallic and non-metallic character",
+          "body_md": "**Metallic character** is the tendency of an atom to **lose** electrons and form a positive ion; **non-metallic character** is the tendency to **gain** electrons and form a negative ion. **Across a period**, metallic character **decreases** and non-metallic character **increases** (the nucleus holds electrons more tightly). **Down a group**, metallic character **increases** (outer electrons are held less tightly).",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Period 3",
+                "Na",
+                "Mg",
+                "Al",
+                "Si",
+                "P",
+                "S",
+                "Cl"
+              ],
+              "rows": [
+                [
+                  "Character",
+                  "Metal",
+                  "Metal",
+                  "Metal",
+                  "Metalloid",
+                  "Non-metal",
+                  "Non-metal",
+                  "Non-metal"
+                ],
+                [
+                  "Oxide",
+                  "Basic",
+                  "Basic",
+                  "Amphoteric",
+                  "Acidic",
+                  "Acidic",
+                  "Acidic",
+                  "Acidic"
+                ]
+              ]
+            },
+            "alt": "Table of period 3 elements showing the change from metal to non-metal and from basic to acidic oxides"
+          },
+          "math": [],
+          "narration": "A metal tends to lose electrons and a non-metal tends to gain them. Going across period three, sodium, magnesium and aluminium are metals, silicon is in between, and phosphorus, sulfur and chlorine are non-metals. Their oxides change from basic to acidic in the same order. Down a group, atoms lose electrons more easily, so metallic character increases.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s03",
+          "layout": "check",
+          "heading": "Quick check: metal or non-metal?",
+          "body_md": "Use position in the table to compare metallic character.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Metallic character falls across a period and rises down a group.",
+          "check_question_id": "q_icse10chem_ch01_023",
+          "audio": null
+        },
+        {
+          "id": "s04",
+          "layout": "concept",
+          "heading": "Ionisation potential",
+          "body_md": "**Ionisation potential (ionisation energy)** is the energy needed to remove an electron from the outermost shell of an **isolated gaseous atom**, forming a positive ion: M(g) + energy → M⁺(g) + e⁻. **Across a period it increases** (stronger pull); **down a group it decreases** (electrons farther away and shielded). **Noble gases** have the **highest** values in each period (stable octet or duplet). A **low** ionisation potential means **strong metallic character**.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Element",
+                "Li",
+                "Na",
+                "K"
+              ],
+              "rows": [
+                [
+                  "First ionisation potential / kJ mol⁻¹",
+                  "520",
+                  "496",
+                  "419"
+                ]
+              ]
+            },
+            "alt": "Table of the first ionisation potentials of lithium, sodium and potassium, falling down group 1"
+          },
+          "math": [],
+          "narration": "Ionisation potential is the energy needed to pull the outermost electron away from a single atom in the gas state. It rises across a period, because the nucleus holds the electrons more tightly, and falls down a group, because the outer electron is farther away. The noble gases have the highest values, since their full outer shells are very stable. Elements with low values, like potassium, are the most metallic.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s05",
+          "layout": "concept",
+          "heading": "Electron affinity and electronegativity",
+          "body_md": "**Electron affinity** is the energy **released** when an isolated gaseous atom **gains** an electron: X(g) + e⁻ → X⁻(g) + energy. It generally **increases across a period** and **decreases down a group** (chlorine’s value is in fact a little higher than fluorine’s, because the small fluorine atom is crowded). Noble gases have practically **zero** electron affinity. **Electronegativity** is the tendency of an atom **in a molecule** to **attract the shared pair** of electrons towards itself. It **increases across a period** and **decreases down a group**; **fluorine** is the most electronegative element.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Property",
+                "Refers to",
+                "Across a period",
+                "Down a group"
+              ],
+              "rows": [
+                [
+                  "Ionisation potential",
+                  "Isolated atom losing an electron",
+                  "Increases",
+                  "Decreases"
+                ],
+                [
+                  "Electron affinity",
+                  "Isolated atom gaining an electron",
+                  "Increases",
+                  "Decreases (generally)"
+                ],
+                [
+                  "Electronegativity",
+                  "Atom in a molecule attracting a shared pair",
+                  "Increases",
+                  "Decreases"
+                ]
+              ]
+            },
+            "alt": "Table comparing ionisation potential, electron affinity and electronegativity"
+          },
+          "math": [],
+          "narration": "Electron affinity is the energy given out when a single gaseous atom gains an electron. It generally rises across a period and falls down a group, although chlorine actually gives out slightly more energy than fluorine. Electronegativity is different: it describes how strongly an atom already in a molecule pulls a shared pair of electrons towards itself. It rises across a period and falls down a group, and fluorine is the most electronegative element of all.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s06",
+          "layout": "example",
+          "heading": "Worked example: ordering elements",
+          "body_md": "**Problem.** For the period 3 elements Na, Al, P and Cl, arrange them in increasing order of (a) ionisation potential, (b) atomic size and (c) electronegativity.\n\n**(a)** Na < Al < P < Cl (nuclear charge rises across the period).\n\n**(b)** Cl < P < Al < Na (the reverse: stronger pull, smaller atom).\n\n**(c)** Na < Al < P < Cl (same order as ionisation potential).",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Order asked",
+                "Answer"
+              ],
+              "rows": [
+                [
+                  "Increasing ionisation potential",
+                  "Na < Al < P < Cl"
+                ],
+                [
+                  "Increasing atomic size",
+                  "Cl < P < Al < Na"
+                ],
+                [
+                  "Increasing electronegativity",
+                  "Na < Al < P < Cl"
+                ]
+              ]
+            },
+            "alt": "Table of the three orders for sodium, aluminium, phosphorus and chlorine"
+          },
+          "math": [],
+          "narration": "All four elements are in period three, so only the nuclear charge changes. As it increases from sodium to chlorine, the outer electrons are held more tightly. That makes ionisation potential and electronegativity rise from sodium to chlorine, and atomic size fall in the same direction. Notice that size always runs opposite to the other two.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s07",
+          "layout": "check",
+          "heading": "Quick check: periodic properties",
+          "body_md": "Identify the element with the highest or lowest value of a property.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Look for the element farthest right and highest up for ionisation potential and electronegativity.",
+          "check_question_id": "q_icse10chem_ch01_028",
+          "audio": null
+        },
+        {
+          "id": "s08",
+          "layout": "concept",
+          "heading": "Group 1: the alkali metals",
+          "body_md": "Li, Na and K each have **one valence electron** and lose it to form M⁺ ions. Down the group, **atomic size increases** and **ionisation potential decreases**, so the electron is lost more easily: **reactivity increases** (Li < Na < K). All react with water to give an alkali and hydrogen: 2Na + 2H₂O → 2NaOH + H₂. Lithium reacts steadily, sodium vigorously, potassium so violently that the hydrogen catches fire.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Metal",
+                "Configuration",
+                "Reaction with cold water"
+              ],
+              "rows": [
+                [
+                  "Lithium",
+                  "2, 1",
+                  "Steady fizzing"
+                ],
+                [
+                  "Sodium",
+                  "2, 8, 1",
+                  "Darts about, melts into a ball"
+                ],
+                [
+                  "Potassium",
+                  "2, 8, 8, 1",
+                  "Violent; hydrogen burns with a lilac flame"
+                ]
+              ]
+            },
+            "alt": "Table of lithium, sodium and potassium with configurations and their reactions with cold water"
+          },
+          "math": [],
+          "narration": "The alkali metals lithium, sodium and potassium all have one electron in their outer shell. Going down the group, the atoms get bigger and the outer electron is held more loosely, so it is lost more easily and the metals become more reactive. In water, lithium fizzes steadily, sodium races around the surface, and potassium reacts so violently that the hydrogen bursts into flame.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s09",
+          "layout": "concept",
+          "heading": "Group 17: the halogens",
+          "body_md": "F, Cl, Br and I each have **seven valence electrons** and **gain one** to form X⁻. Down the group, atomic size increases, so the nucleus attracts an incoming electron **less strongly**: electronegativity falls and **reactivity decreases** (F > Cl > Br > I). A more reactive halogen **displaces** a less reactive one from its salt solution: Cl₂ + 2KBr → 2KCl + Br₂ (the colourless solution turns orange-brown).",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Halogen",
+                "State at room temperature",
+                "Colour",
+                "Reactivity"
+              ],
+              "rows": [
+                [
+                  "Fluorine",
+                  "Gas",
+                  "Pale yellow",
+                  "Most reactive"
+                ],
+                [
+                  "Chlorine",
+                  "Gas",
+                  "Greenish-yellow",
+                  "↓"
+                ],
+                [
+                  "Bromine",
+                  "Liquid",
+                  "Red-brown",
+                  "↓"
+                ],
+                [
+                  "Iodine",
+                  "Solid",
+                  "Violet-black",
+                  "Least reactive"
+                ]
+              ]
+            },
+            "alt": "Table of the four halogens with their states, colours and reactivity order"
+          },
+          "math": [],
+          "narration": "The halogens fluorine, chlorine, bromine and iodine each need one more electron to complete an octet. Down the group the atoms get larger, so the nucleus attracts an extra electron less strongly, and the halogens become less reactive. That is why chlorine water added to potassium bromide solution pushes out bromine, turning the solution orange-brown.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s10",
+          "layout": "example",
+          "heading": "Worked example: predicting reactions",
+          "body_md": "**Problem.** Predict, with a reason, whether a reaction occurs: (a) chlorine water is added to sodium iodide solution; (b) iodine solution is added to potassium chloride solution. Write the equation where there is a reaction.\n\n**(a) Yes.** Chlorine is more reactive than iodine and displaces it; the solution turns brown: Cl₂ + 2NaI → 2NaCl + I₂.\n\n**(b) No.** Iodine is less reactive than chlorine and cannot displace chloride ions.",
+          "bullets": [],
+          "visual": {
+            "kind": "flow",
+            "spec": {
+              "direction": "LR",
+              "nodes": [
+                {
+                  "id": "a",
+                  "label": "Halogen added"
+                },
+                {
+                  "id": "b",
+                  "label": "More reactive than the halide in solution?"
+                },
+                {
+                  "id": "c",
+                  "label": "Displacement: new halogen freed"
+                },
+                {
+                  "id": "d",
+                  "label": "No reaction"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "a",
+                  "to": "b"
+                },
+                {
+                  "from": "b",
+                  "to": "c",
+                  "label": "yes"
+                },
+                {
+                  "from": "b",
+                  "to": "d",
+                  "label": "no"
+                }
+              ]
+            },
+            "alt": "Flow for deciding whether a halogen displaces another from its salt solution"
+          },
+          "math": [],
+          "narration": "Compare the two halogens. Chlorine sits above iodine in group seventeen, so it is more reactive and takes the electron from the iodide ion, setting iodine free and turning the solution brown. Iodine is below chlorine, so it cannot take the electron from a chloride ion, and nothing happens.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s11",
+          "layout": "check",
+          "heading": "Quick check: group trends",
+          "body_md": "Use reactivity trends in group 1 or group 17.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Alkali metals get more reactive down the group; halogens get less reactive.",
+          "check_question_id": "q_icse10chem_ch01_045",
+          "audio": null
+        },
+        {
+          "id": "s12",
+          "layout": "concept",
+          "heading": "All the trends together",
+          "body_md": "One rule of thumb: **anything that depends on holding electrons tightly** (ionisation potential, electron affinity, electronegativity, non-metallic character) **rises across a period and falls down a group**. **Anything that depends on losing electrons easily or on size** (atomic size, metallic character, reducing power) does the **opposite**.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Property",
+                "Across a period →",
+                "Down a group ↓"
+              ],
+              "rows": [
+                [
+                  "Atomic size",
+                  "Decreases",
+                  "Increases"
+                ],
+                [
+                  "Metallic character",
+                  "Decreases",
+                  "Increases"
+                ],
+                [
+                  "Non-metallic character",
+                  "Increases",
+                  "Decreases"
+                ],
+                [
+                  "Ionisation potential",
+                  "Increases",
+                  "Decreases"
+                ],
+                [
+                  "Electron affinity",
+                  "Increases",
+                  "Decreases"
+                ],
+                [
+                  "Electronegativity",
+                  "Increases",
+                  "Decreases"
+                ]
+              ]
+            },
+            "alt": "Table of six periodic properties and how each changes across a period and down a group"
+          },
+          "math": [],
+          "narration": "Here is a way to remember all the trends. Properties that depend on holding electrons tightly, such as ionisation potential, electron affinity, electronegativity and non-metallic character, increase across a period and decrease down a group. Atomic size and metallic character do exactly the opposite.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s13",
+          "layout": "summary",
+          "heading": "Summary: Part 2",
+          "body_md": "",
+          "bullets": [
+            "Metallic character = ease of losing electrons; non-metallic = ease of gaining them.",
+            "Ionisation potential, electron affinity and electronegativity increase across a period and decrease down a group.",
+            "Noble gases have the highest ionisation potentials; fluorine is the most electronegative element.",
+            "Group 1 reactivity increases down the group (Li < Na < K).",
+            "Group 17 reactivity decreases down the group (F > Cl > Br > I); a more reactive halogen displaces a less reactive one."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Family",
+                "Reactivity down the group",
+                "Reason"
+              ],
+              "rows": [
+                [
+                  "Alkali metals",
+                  "Increases",
+                  "Larger atoms lose electrons more easily"
+                ],
+                [
+                  "Halogens",
+                  "Decreases",
+                  "Larger atoms attract electrons less strongly"
+                ]
+              ]
+            },
+            "alt": "Summary table of reactivity trends in group 1 and group 17"
+          },
+          "math": [],
+          "narration": "Let us sum up Part 2. Metallic character means losing electrons easily, and non-metallic character means gaining them easily. Ionisation potential, electron affinity and electronegativity rise across a period and fall down a group. Alkali metals get more reactive down their group, while halogens get less reactive, and a more reactive halogen pushes a less reactive one out of its salt.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s14",
+          "layout": "exam-tips",
+          "heading": "Exam tips: Part 2",
+          "body_md": "",
+          "bullets": [
+            "Learn the exact definitions: “isolated gaseous atom” for ionisation potential and electron affinity; “in a molecule” for electronegativity.",
+            "Reactivity runs in opposite directions in groups 1 and 17 — explain both with atomic size.",
+            "For displacement, compare the positions of the two halogens.",
+            "Use the units kJ mol⁻¹ (or eV) for ionisation potential and electron affinity; electronegativity has no unit."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Slip",
+                "Fix"
+              ],
+              "rows": [
+                [
+                  "Electronegativity is “energy released”",
+                  "That is electron affinity"
+                ],
+                [
+                  "Iodine displaces chlorine",
+                  "Only a more reactive halogen displaces"
+                ],
+                [
+                  "Halogens get more reactive down",
+                  "They get less reactive"
+                ]
+              ]
+            },
+            "alt": "Table of three common slips in Part 2 and their fixes"
+          },
+          "math": [],
+          "narration": "Final tips. Learn the definitions word for word, especially the phrase isolated gaseous atom, and remember that electronegativity is about an atom in a molecule. Explain the opposite trends in groups one and seventeen using atomic size. And in displacement questions, check which halogen is higher in the group.",
+          "check_question_id": null,
+          "audio": null
+        }
+      ],
+      "status": "draft",
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    }
+  ],
+  "notes": {
+    "unit": "icse-10-chemistry-ch01",
+    "version": 1,
+    "title": "Periodic Table, Periodic Properties and Variations of Properties — Notes",
+    "language": "en",
+    "sections": [
+      {
+        "heading": "1. The modern periodic law; groups and periods",
+        "body_md": "**Modern periodic law:** the properties of elements are a periodic function of their **atomic numbers**. Atomic number fixes the number of electrons, hence the valence electrons, which decide properties (argon, 39.9, correctly comes before potassium, 39.1).\n\n- **Group** (18 vertical columns): same number of **valence electrons**; similar properties. Numbered 1–18 (IUPAC) or IA–VIIA, 0.\n- **Period** (7 horizontal rows): same number of **shells**. Period 1: 2 elements; periods 2 and 3: 8 each; period 4 starts K, Ca.\n- From configuration: number of shells = period; valence electrons = group (1, 2) or 10 + valence electrons (groups 13–18).",
+        "key_terms": [
+          {
+            "term": "Modern periodic law",
+            "definition_md": "The properties of elements are a periodic function of their atomic numbers."
+          },
+          {
+            "term": "Period",
+            "definition_md": "A horizontal row of the periodic table; its elements have the same number of electron shells."
+          }
+        ],
+        "formulas": [],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Element",
+              "Configuration",
+              "Period",
+              "Group"
+            ],
+            "rows": [
+              [
+                "N (7)",
+                "2, 5",
+                "2",
+                "15"
+              ],
+              [
+                "Mg (12)",
+                "2, 8, 2",
+                "3",
+                "2"
+              ],
+              [
+                "Ca (20)",
+                "2, 8, 8, 2",
+                "4",
+                "2"
+              ]
+            ]
+          },
+          "alt": "Table of three elements with configuration, period and group"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-chemistry-ch01-t01"
+        ]
+      },
+      {
+        "heading": "2. Nuclear charge and number of shells",
+        "body_md": "- **Across a period:** shells stay the same; nuclear charge increases by one each step → valence electrons pulled in more strongly.\n- **Down a group:** a new shell is added each step → valence electrons farther away and shielded by inner shells → weaker pull, despite the larger nuclear charge.\n\nEvery trend in this chapter follows from these two statements.",
+        "key_terms": [
+          {
+            "term": "Nuclear charge",
+            "definition_md": "The positive charge of the nucleus, equal to the number of protons (atomic number)."
+          },
+          {
+            "term": "Shielding",
+            "definition_md": "The screening of outer electrons from the nucleus by electrons in inner shells."
+          }
+        ],
+        "formulas": [],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Direction",
+              "Pull on valence electrons"
+            ],
+            "rows": [
+              [
+                "Across a period",
+                "Stronger"
+              ],
+              [
+                "Down a group",
+                "Weaker"
+              ]
+            ]
+          },
+          "alt": "Table of the change in nuclear pull across a period and down a group"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-chemistry-ch01-t02"
+        ]
+      },
+      {
+        "heading": "3. Atomic size",
+        "body_md": "**Atomic radius:** distance from the centre of the nucleus to the outermost shell. **Decreases across a period** (Na 186 pm → Cl 99 pm); **increases down a group** (Li < Na < K). Noble-gas radii are van der Waals radii and are **not compared** with the bonded radii of the other elements in a period.\n\nCations are smaller than their atoms (Na⁺ < Na); anions are larger (Cl⁻ > Cl).",
+        "key_terms": [
+          {
+            "term": "Atomic radius",
+            "definition_md": "The distance from the centre of the nucleus to the outermost shell of an atom."
+          }
+        ],
+        "formulas": [],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Pair",
+              "Larger",
+              "Reason"
+            ],
+            "rows": [
+              [
+                "Na, Cl",
+                "Na",
+                "Smaller nuclear charge, same shells"
+              ],
+              [
+                "Li, K",
+                "K",
+                "More shells"
+              ]
+            ]
+          },
+          "alt": "Table comparing atomic sizes in two pairs"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-chemistry-ch01-t03"
+        ]
+      },
+      {
+        "heading": "4. Metallic and non-metallic character",
+        "body_md": "**Metallic character:** tendency to **lose** electrons (form cations). **Non-metallic character:** tendency to **gain** electrons (form anions).\n\n- Across a period: metallic ↓, non-metallic ↑ (period 3: Na, Mg, Al metals; Si metalloid; P, S, Cl non-metals).\n- Down a group: metallic ↑, non-metallic ↓.\n- Oxides change from basic (Na₂O, MgO) through amphoteric (Al₂O₃) to acidic (SO₂, Cl₂O₇) across period 3.",
+        "key_terms": [
+          {
+            "term": "Metallic character",
+            "definition_md": "The tendency of an atom to lose electrons and form a positive ion."
+          }
+        ],
+        "formulas": [],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Element",
+              "Character",
+              "Oxide"
+            ],
+            "rows": [
+              [
+                "Na",
+                "Metal",
+                "Basic"
+              ],
+              [
+                "Al",
+                "Metal",
+                "Amphoteric"
+              ],
+              [
+                "S",
+                "Non-metal",
+                "Acidic"
+              ]
+            ]
+          },
+          "alt": "Table of three period 3 elements with character and nature of oxide"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-chemistry-ch01-t04"
+        ]
+      },
+      {
+        "heading": "5. Ionisation potential, electron affinity and electronegativity",
+        "body_md": "| Property | Definition | Across a period | Down a group |\n|---|---|---|---|\n| Ionisation potential | Energy needed to remove an electron from the outer shell of an isolated gaseous atom | Increases | Decreases |\n| Electron affinity | Energy released when an isolated gaseous atom gains an electron | Increases | Decreases (generally) |\n| Electronegativity | Tendency of an atom in a molecule to attract the shared pair to itself | Increases | Decreases |\n\nNoble gases: highest ionisation potential in each period, almost zero electron affinity. Fluorine: most electronegative element. Chlorine’s electron affinity is slightly higher than fluorine’s.",
+        "key_terms": [
+          {
+            "term": "Ionisation potential",
+            "definition_md": "The energy required to remove an electron from the outermost shell of an isolated gaseous atom."
+          },
+          {
+            "term": "Electron affinity",
+            "definition_md": "The energy released when an isolated gaseous atom gains an electron to form a negative ion."
+          },
+          {
+            "term": "Electronegativity",
+            "definition_md": "The tendency of an atom in a molecule to attract the shared pair of electrons towards itself."
+          }
+        ],
+        "formulas": [],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Highest in period 3",
+              "Element"
+            ],
+            "rows": [
+              [
+                "Ionisation potential",
+                "Ar"
+              ],
+              [
+                "Electronegativity",
+                "Cl"
+              ],
+              [
+                "Atomic size (excluding Ar)",
+                "Na"
+              ]
+            ]
+          },
+          "alt": "Table of extreme values in period 3"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-chemistry-ch01-t05"
+        ]
+      },
+      {
+        "heading": "6. Alkali metals and halogens",
+        "body_md": "**Group 1 (Li, Na, K):** one valence electron; size ↑ and ionisation potential ↓ down the group, so **reactivity increases** (Li < Na < K). With water: 2M + 2H₂O → 2MOH + H₂.\n\n**Group 17 (F, Cl, Br, I):** seven valence electrons; size ↑ down the group, so attraction for an extra electron ↓ and **reactivity decreases** (F > Cl > Br > I). Displacement: Cl₂ + 2KBr → 2KCl + Br₂; Br₂ + 2KI → 2KBr + I₂.",
+        "key_terms": [
+          {
+            "term": "Displacement (halogens)",
+            "definition_md": "A more reactive halogen removes a less reactive halogen from a solution of its salt."
+          }
+        ],
+        "formulas": [],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Family",
+              "Trend down the group"
+            ],
+            "rows": [
+              [
+                "Alkali metals",
+                "More reactive"
+              ],
+              [
+                "Halogens",
+                "Less reactive"
+              ]
+            ]
+          },
+          "alt": "Table of reactivity trends in groups 1 and 17"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-chemistry-ch01-t06"
+        ]
+      }
+    ],
+    "exam_tips_md": "**Common mistakes**\n- Saying atomic size increases across a period.\n- Mixing up electron affinity (energy released, isolated atom) and electronegativity (attraction in a molecule).\n- Comparing argon’s radius with chlorine’s.\n- Saying halogens become more reactive down the group.\n\n**How marks are usually awarded**\n- Trend questions (1 mark each): the correct order plus a reason using nuclear charge or shells.\n- Definitions (1 mark): include “isolated gaseous atom” where needed.\n- Placing an element (2 marks): configuration, then period and group.",
+    "status": "draft",
+    "provenance": {
+      "origin": "human",
+      "template_version": null,
+      "model": null,
+      "generated_at": "2026-11-01",
+      "author": "claude-opus-5-5 (subject-producer)"
+    }
+  },
+  "flashcards": {
+    "unit": "icse-10-chemistry-ch01",
+    "version": 1,
+    "language": "en",
+    "cards": [
+      {
+        "id": "f01",
+        "front_md": "Modern periodic law?",
+        "back_md": "Properties of elements are a periodic function of their atomic numbers.",
+        "tag": "definition",
+        "topic_id": "icse-10-chemistry-ch01-t01"
+      },
+      {
+        "id": "f02",
+        "front_md": "What is the same for elements in a group?",
+        "back_md": "Number of valence electrons.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch01-t01"
+      },
+      {
+        "id": "f03",
+        "front_md": "What is the same for elements in a period?",
+        "back_md": "Number of shells.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch01-t01"
+      },
+      {
+        "id": "f04",
+        "front_md": "How many elements in period 3?",
+        "back_md": "Eight (Na to Ar).",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch01-t01"
+      },
+      {
+        "id": "f05",
+        "front_md": "Group and period of Cl (2, 8, 7)?",
+        "back_md": "Group 17, period 3.",
+        "tag": "example",
+        "topic_id": "icse-10-chemistry-ch01-t01"
+      },
+      {
+        "id": "f06",
+        "front_md": "Why atomic number, not mass?",
+        "back_md": "It fixes the electron configuration, which decides properties.",
+        "tag": "concept",
+        "topic_id": "icse-10-chemistry-ch01-t01"
+      },
+      {
+        "id": "f07",
+        "front_md": "Nuclear charge across a period?",
+        "back_md": "Increases (one more proton each step).",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch01-t02"
+      },
+      {
+        "id": "f08",
+        "front_md": "Why does the pull weaken down a group?",
+        "back_md": "New shells: electrons farther away and shielded.",
+        "tag": "concept",
+        "topic_id": "icse-10-chemistry-ch01-t02"
+      },
+      {
+        "id": "f09",
+        "front_md": "Atomic size across a period?",
+        "back_md": "Decreases.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch01-t03"
+      },
+      {
+        "id": "f10",
+        "front_md": "Atomic size down a group?",
+        "back_md": "Increases.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch01-t03"
+      },
+      {
+        "id": "f11",
+        "front_md": "Why are noble-gas radii not compared?",
+        "back_md": "They are van der Waals radii, not bonded radii.",
+        "tag": "concept",
+        "topic_id": "icse-10-chemistry-ch01-t03"
+      },
+      {
+        "id": "f12",
+        "front_md": "Is Na⁺ larger or smaller than Na?",
+        "back_md": "Smaller (loses the whole third shell).",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch01-t03"
+      },
+      {
+        "id": "f13",
+        "front_md": "Metallic character?",
+        "back_md": "Tendency to lose electrons.",
+        "tag": "definition",
+        "topic_id": "icse-10-chemistry-ch01-t04"
+      },
+      {
+        "id": "f14",
+        "front_md": "Metallic character across a period?",
+        "back_md": "Decreases.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch01-t04"
+      },
+      {
+        "id": "f15",
+        "front_md": "Metalloid in period 3?",
+        "back_md": "Silicon.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch01-t04"
+      },
+      {
+        "id": "f16",
+        "front_md": "Nature of Al₂O₃?",
+        "back_md": "Amphoteric.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch01-t04"
+      },
+      {
+        "id": "f17",
+        "front_md": "Ionisation potential?",
+        "back_md": "Energy to remove an outer electron from an isolated gaseous atom.",
+        "tag": "definition",
+        "topic_id": "icse-10-chemistry-ch01-t05"
+      },
+      {
+        "id": "f18",
+        "front_md": "Electron affinity?",
+        "back_md": "Energy released when an isolated gaseous atom gains an electron.",
+        "tag": "definition",
+        "topic_id": "icse-10-chemistry-ch01-t05"
+      },
+      {
+        "id": "f19",
+        "front_md": "Electronegativity?",
+        "back_md": "Tendency of an atom in a molecule to attract the shared pair.",
+        "tag": "definition",
+        "topic_id": "icse-10-chemistry-ch01-t05"
+      },
+      {
+        "id": "f20",
+        "front_md": "Most electronegative element?",
+        "back_md": "Fluorine.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch01-t05"
+      },
+      {
+        "id": "f21",
+        "front_md": "Highest ionisation potential in period 2?",
+        "back_md": "Neon.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch01-t05"
+      },
+      {
+        "id": "f22",
+        "front_md": "Ionisation potential down a group?",
+        "back_md": "Decreases.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch01-t05"
+      },
+      {
+        "id": "f23",
+        "front_md": "Electron affinity of noble gases?",
+        "back_md": "Practically zero.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch01-t05"
+      },
+      {
+        "id": "f24",
+        "front_md": "Most reactive of Li, Na, K?",
+        "back_md": "Potassium.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch01-t06"
+      },
+      {
+        "id": "f25",
+        "front_md": "Why is K more reactive than Na?",
+        "back_md": "Larger atom, lower ionisation potential.",
+        "tag": "concept",
+        "topic_id": "icse-10-chemistry-ch01-t06"
+      },
+      {
+        "id": "f26",
+        "front_md": "Most reactive halogen?",
+        "back_md": "Fluorine.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch01-t06"
+      },
+      {
+        "id": "f27",
+        "front_md": "Why are halogens less reactive down the group?",
+        "back_md": "Larger atoms attract an extra electron less strongly.",
+        "tag": "concept",
+        "topic_id": "icse-10-chemistry-ch01-t06"
+      },
+      {
+        "id": "f28",
+        "front_md": "Cl₂ + 2KBr →?",
+        "back_md": "2KCl + Br₂ (solution turns orange-brown).",
+        "tag": "formula",
+        "topic_id": "icse-10-chemistry-ch01-t06"
+      },
+      {
+        "id": "f29",
+        "front_md": "Does I₂ react with KCl solution?",
+        "back_md": "No: iodine is less reactive than chlorine.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch01-t06"
+      },
+      {
+        "id": "f30",
+        "front_md": "Exam tip: reasons",
+        "back_md": "Across: nuclear charge. Down: number of shells.",
+        "tag": "exam-tip",
+        "topic_id": "icse-10-chemistry-ch01-t02"
+      }
+    ],
+    "status": "draft",
+    "provenance": {
+      "origin": "human",
+      "template_version": null,
+      "model": null,
+      "generated_at": "2026-11-01",
+      "author": "claude-opus-5-5 (subject-producer)"
+    }
+  },
+  "questions": [
+    {
+      "id": "q_icse10chem_ch01_001",
+      "unit": "icse-10-chemistry-ch01",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "In the modern periodic table, argon (atomic mass 39.9) is placed before potassium (atomic mass 39.1). This is because elements are arranged in order of their:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "atomic numbers"
+        },
+        {
+          "id": "b",
+          "text_md": "atomic masses"
+        },
+        {
+          "id": "c",
+          "text_md": "densities"
+        },
+        {
+          "id": "d",
+          "text_md": "dates of discovery"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Ar has atomic number 18 and K has 19 — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch01-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch01_002",
+      "unit": "icse-10-chemistry-ch01",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "An element has the electronic configuration 2, 8, 6. In the periodic table it is found in:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "period 2, group 16"
+        },
+        {
+          "id": "b",
+          "text_md": "period 3, group 6"
+        },
+        {
+          "id": "c",
+          "text_md": "period 3, group 16"
+        },
+        {
+          "id": "d",
+          "text_md": "period 6, group 3"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Three shells → period 3; six valence electrons → group 16 (VIA) — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch01-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch01_003",
+      "unit": "icse-10-chemistry-ch01",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which element with atomic number from 1 to 20 is in period 4 and group 2?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Magnesium (atomic number 12)"
+        },
+        {
+          "id": "b",
+          "text_md": "Calcium (atomic number 20)"
+        },
+        {
+          "id": "c",
+          "text_md": "Potassium (atomic number 19)"
+        },
+        {
+          "id": "d",
+          "text_md": "Beryllium (atomic number 4)"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Ca: 2, 8, 8, 2 — four shells, two valence electrons — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch01-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch01_004",
+      "unit": "icse-10-chemistry-ch01",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Element Q is in period 2 and group 15. Its valency and the formula of its hydride are:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "5 and QH₅"
+        },
+        {
+          "id": "b",
+          "text_md": "3 and QH₃"
+        },
+        {
+          "id": "c",
+          "text_md": "2 and QH₂"
+        },
+        {
+          "id": "d",
+          "text_md": "3 and Q₃H"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Q is nitrogen (2, 5): needs three electrons, hydride NH₃ — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch01-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch01_005",
+      "unit": "icse-10-chemistry-ch01",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? Elements in the same period of the periodic table have the same number of valence electrons.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "f"
+        ]
+      },
+      "solution_md": "False: elements in the same period have the same number of shells; elements in the same group have the same number of valence electrons.",
+      "marking_scheme": [
+        {
+          "step": "False, with the correction",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch01-t01"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch01_006",
+      "unit": "icse-10-chemistry-ch01",
+      "language": "en",
+      "type": "short",
+      "stem_md": "State the modern periodic law.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Physical and chemical properties of elements are periodic functions of their atomic numbers: they recur at regular intervals when the elements are arranged by atomic number."
+      },
+      "solution_md": "Definition.",
+      "marking_scheme": [
+        {
+          "step": "Periodic function of atomic number",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch01-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch01_007",
+      "unit": "icse-10-chemistry-ch01",
+      "language": "en",
+      "type": "short",
+      "stem_md": "An element Z has 3 shells and 2 electrons in its outermost shell. Name the group (by number) and the period to which Z belongs.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Group 2 (IIA), period 3 (Z is magnesium)."
+      },
+      "solution_md": "Group 2, period 3.",
+      "marking_scheme": [
+        {
+          "step": "Group 2 and period 3",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch01-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch01_008",
+      "unit": "icse-10-chemistry-ch01",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "What is the atomic number of the element in period 3 and group 17 of the periodic table?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 17,
+        "tolerance": 0,
+        "unit": null
+      },
+      "solution_md": "Period 3 → three shells; group 17 → seven valence electrons; configuration 2, 8, 7, so atomic number = 2 + 8 + 7 = 17 (chlorine).",
+      "marking_scheme": [
+        {
+          "step": "17",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch01-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch01_009",
+      "unit": "icse-10-chemistry-ch01",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "What is the atomic number of the element placed in period 2 and group 14?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 6,
+        "tolerance": 0,
+        "unit": null
+      },
+      "solution_md": "Period 2 → two shells; group 14 → four valence electrons; configuration 2, 4, so atomic number = 2 + 4 = 6 (carbon).",
+      "marking_scheme": [
+        {
+          "step": "6",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch01-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch01_010",
+      "unit": "icse-10-chemistry-ch01",
+      "language": "en",
+      "type": "match",
+      "stem_md": "Match each electronic configuration in Column A with the position of the element in Column B.",
+      "options": [
+        {
+          "id": "1",
+          "text_md": "2, 8, 8, 2"
+        },
+        {
+          "id": "2",
+          "text_md": "2, 8, 3"
+        },
+        {
+          "id": "3",
+          "text_md": "2, 6"
+        },
+        {
+          "id": "4",
+          "text_md": "2, 8, 8"
+        }
+      ],
+      "match_right": [
+        {
+          "id": "p",
+          "text_md": "Period 3, group 13"
+        },
+        {
+          "id": "q",
+          "text_md": "Period 3, group 18"
+        },
+        {
+          "id": "r",
+          "text_md": "Period 4, group 2"
+        },
+        {
+          "id": "s",
+          "text_md": "Period 2, group 16"
+        }
+      ],
+      "answer": {
+        "pairs": [
+          {
+            "left_id": "1",
+            "right_id": "r"
+          },
+          {
+            "left_id": "2",
+            "right_id": "p"
+          },
+          {
+            "left_id": "3",
+            "right_id": "s"
+          },
+          {
+            "left_id": "4",
+            "right_id": "q"
+          }
+        ]
+      },
+      "solution_md": "2, 8, 8, 2 (Ca) → period 4, group 2; 2, 8, 3 (Al) → period 3, group 13; 2, 6 (O) → period 2, group 16; 2, 8, 8 (Ar) → period 3, group 18.",
+      "marking_scheme": [
+        {
+          "step": "1 → r",
+          "marks": 1
+        },
+        {
+          "step": "2 → p",
+          "marks": 1
+        },
+        {
+          "step": "3 → s",
+          "marks": 1
+        },
+        {
+          "step": "4 → q",
+          "marks": 1
+        }
+      ],
+      "marks": 4,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch01-t01"
+      ],
+      "expected_time_sec": 160,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch01_011",
+      "unit": "icse-10-chemistry-ch01",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "On moving from lithium to fluorine across period 2, the number of shells stays the same. The force of attraction between the nucleus and the valence electrons:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "decreases, because more electrons repel each other"
+        },
+        {
+          "id": "b",
+          "text_md": "stays the same, because the number of shells is the same"
+        },
+        {
+          "id": "c",
+          "text_md": "increases, because the nuclear charge increases"
+        },
+        {
+          "id": "d",
+          "text_md": "decreases, because the atom gets larger"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Nuclear charge rises from 3 to 9 with no new shell — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch01-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch01_012",
+      "unit": "icse-10-chemistry-ch01",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Potassium loses its valence electron more easily than sodium.\n\n**Reason (R):** The valence electron of potassium is in the fourth shell, farther from the nucleus and shielded by more inner electrons.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Both are true, and R explains A — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch01-t02",
+        "icse-10-chemistry-ch01-t06"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch01_013",
+      "unit": "icse-10-chemistry-ch01",
+      "language": "en",
+      "type": "short",
+      "stem_md": "What happens to the nuclear charge of the atoms as you move down group 1 from lithium to potassium?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "It increases (from +3 to +19), but the valence electron is held less tightly because new shells are added."
+      },
+      "solution_md": "Increases.",
+      "marking_scheme": [
+        {
+          "step": "Increases",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch01-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch01_014",
+      "unit": "icse-10-chemistry-ch01",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Give a reason for each: (a) the nuclear pull on the valence electrons increases from sodium to chlorine; (b) it decreases from fluorine to chlorine.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Na to Cl are in the same period: the number of shells stays three while the nuclear charge rises from +11 to +17. (b) Chlorine has one more shell than fluorine, so its valence electrons are farther from the nucleus and more shielded."
+      },
+      "solution_md": "Nuclear charge; extra shell.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch01-t02"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch01_015",
+      "unit": "icse-10-chemistry-ch01",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which atom in the set Mg, Al, Si, S has the largest atomic radius?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Al"
+        },
+        {
+          "id": "b",
+          "text_md": "Si"
+        },
+        {
+          "id": "c",
+          "text_md": "Mg"
+        },
+        {
+          "id": "d",
+          "text_md": "S"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "All are in period 3; size decreases across the period, so Mg (furthest left) is largest — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch01-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch01_016",
+      "unit": "icse-10-chemistry-ch01",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which of the following has the smallest radius?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Mg²⁺"
+        },
+        {
+          "id": "b",
+          "text_md": "Mg"
+        },
+        {
+          "id": "c",
+          "text_md": "Na"
+        },
+        {
+          "id": "d",
+          "text_md": "Cl⁻"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Mg²⁺ has lost its third shell and has 12 protons holding 10 electrons — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch01-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch01_017",
+      "unit": "icse-10-chemistry-ch01",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** The atomic radius of argon is not compared with that of chlorine to show the trend across period 3.\n\n**Reason (R):** Argon has more protons than chlorine.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Both statements are true, but the reason is that argon’s radius is a van der Waals radius, measured differently — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch01-t03"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch01_018",
+      "unit": "icse-10-chemistry-ch01",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? The chloride ion, Cl⁻, is larger than the chlorine atom.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "t"
+        ]
+      },
+      "solution_md": "True: the extra electron increases electron repulsion with no increase in nuclear charge.",
+      "marking_scheme": [
+        {
+          "step": "True",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch01-t03"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch01_019",
+      "unit": "icse-10-chemistry-ch01",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Name the element of period 3 (other than argon) that has the smallest atomic size.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Chlorine."
+      },
+      "solution_md": "Cl.",
+      "marking_scheme": [
+        {
+          "step": "Chlorine",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch01-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch01_020",
+      "unit": "icse-10-chemistry-ch01",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Arrange B, Be, Li and C in order of increasing atomic size.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "C < B < Be < Li."
+      },
+      "solution_md": "Size falls across period 2.",
+      "marking_scheme": [
+        {
+          "step": "Correct order",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch01-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch01_021",
+      "unit": "icse-10-chemistry-ch01",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Explain why (a) the atomic size of potassium is greater than that of sodium and (b) a sodium ion is smaller than a sodium atom.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) K (2, 8, 8, 1) has four shells and Na (2, 8, 1) three; the extra shell outweighs the larger nuclear charge. (b) Na⁺ has lost its only outer electron and with it the whole third shell; 11 protons now hold 10 electrons in two shells."
+      },
+      "solution_md": "Extra shell; loss of the outer shell.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch01-t03"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch01_022",
+      "unit": "icse-10-chemistry-ch01",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Elements P, Q and R have atomic numbers 9, 17 and 19. (a) Write their electronic configurations. (b) Which two are in the same group? (c) Arrange them in increasing order of atomic size, with a reason.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) P: 2, 7; Q: 2, 8, 7; R: 2, 8, 8, 1. (b) P and Q (both seven valence electrons, group 17). (c) P < Q < R: P has two shells, Q three; R has four shells."
+      },
+      "solution_md": "Configurations; group 17; shells.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch01-t01",
+        "icse-10-chemistry-ch01-t03"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch01_023",
+      "unit": "icse-10-chemistry-ch01",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which element has the most metallic character?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Sodium"
+        },
+        {
+          "id": "b",
+          "text_md": "Potassium"
+        },
+        {
+          "id": "c",
+          "text_md": "Magnesium"
+        },
+        {
+          "id": "d",
+          "text_md": "Aluminium"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Metallic character increases down a group and decreases across a period; K is lowest and furthest left — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch01-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch01_024",
+      "unit": "icse-10-chemistry-ch01",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Across period 3, the oxides of the elements change from basic to acidic. The oxide that is amphoteric is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "aluminium oxide, Al₂O₃"
+        },
+        {
+          "id": "b",
+          "text_md": "magnesium oxide, MgO"
+        },
+        {
+          "id": "c",
+          "text_md": "sulphur dioxide, SO₂"
+        },
+        {
+          "id": "d",
+          "text_md": "sodium oxide, Na₂O"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Al₂O₃ reacts with both acids and alkalis — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch01-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch01_025",
+      "unit": "icse-10-chemistry-ch01",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Silicon has some properties of metals and some of non-metals. Such an element is called a:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "metalloid"
+        },
+        {
+          "id": "b",
+          "text_md": "noble gas"
+        },
+        {
+          "id": "c",
+          "text_md": "transition element"
+        },
+        {
+          "id": "d",
+          "text_md": "halogen"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch01-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch01_026",
+      "unit": "icse-10-chemistry-ch01",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Arrange Al, Mg, Na and Si in order of increasing metallic character.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Si < Al < Mg < Na."
+      },
+      "solution_md": "Metallic character falls across period 3.",
+      "marking_scheme": [
+        {
+          "step": "Correct order",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch01-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch01_027",
+      "unit": "icse-10-chemistry-ch01",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Define metallic character. Explain why metallic character increases from magnesium to calcium.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Metallic character is the tendency of an atom to lose electrons and form a positive ion. Calcium has one more shell than magnesium, so its valence electrons are farther from the nucleus, held less tightly and lost more easily."
+      },
+      "solution_md": "Definition; extra shell.",
+      "marking_scheme": [
+        {
+          "step": "Definition",
+          "marks": 1
+        },
+        {
+          "step": "Reason",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch01-t04"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch01_028",
+      "unit": "icse-10-chemistry-ch01",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which element of period 2 has the highest ionisation potential?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Fluorine"
+        },
+        {
+          "id": "b",
+          "text_md": "Lithium"
+        },
+        {
+          "id": "c",
+          "text_md": "Oxygen"
+        },
+        {
+          "id": "d",
+          "text_md": "Neon"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "The noble gas has a stable octet — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch01-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch01_029",
+      "unit": "icse-10-chemistry-ch01",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "The first ionisation potentials of Li, Na and K are 520, 496 and 419 kJ mol⁻¹. The fall in value down the group is mainly due to:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "the increase in atomic size and shielding by inner shells"
+        },
+        {
+          "id": "b",
+          "text_md": "the decrease in nuclear charge"
+        },
+        {
+          "id": "c",
+          "text_md": "the increase in the number of valence electrons"
+        },
+        {
+          "id": "d",
+          "text_md": "the decrease in the number of shells"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Outer electron farther away and more shielded — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch01-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch01_030",
+      "unit": "icse-10-chemistry-ch01",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "In a molecule of hydrogen chloride, the shared pair of electrons lies closer to chlorine. The property of chlorine responsible for this is its:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "larger atomic size"
+        },
+        {
+          "id": "b",
+          "text_md": "lower ionisation potential"
+        },
+        {
+          "id": "c",
+          "text_md": "higher electronegativity"
+        },
+        {
+          "id": "d",
+          "text_md": "higher metallic character"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Electronegativity describes attraction for a shared pair — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch01-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch01_031",
+      "unit": "icse-10-chemistry-ch01",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "The energy released when an isolated gaseous chlorine atom gains an electron to form Cl⁻ is called its:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "ionisation potential"
+        },
+        {
+          "id": "b",
+          "text_md": "electron affinity"
+        },
+        {
+          "id": "c",
+          "text_md": "electronegativity"
+        },
+        {
+          "id": "d",
+          "text_md": "atomic radius"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch01-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch01_032",
+      "unit": "icse-10-chemistry-ch01",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which shows the elements N, O and F in increasing order of electronegativity?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "F < O < N"
+        },
+        {
+          "id": "b",
+          "text_md": "O < N < F"
+        },
+        {
+          "id": "c",
+          "text_md": "N < F < O"
+        },
+        {
+          "id": "d",
+          "text_md": "N < O < F"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Electronegativity rises across period 2 — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch01-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch01_033",
+      "unit": "icse-10-chemistry-ch01",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "The electron affinity of chlorine is slightly greater than that of fluorine, although fluorine is higher in group 17. The best explanation is that:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "chlorine has fewer shells than fluorine"
+        },
+        {
+          "id": "b",
+          "text_md": "fluorine has a smaller nuclear charge than chlorine"
+        },
+        {
+          "id": "c",
+          "text_md": "the fluorine atom is so small that an incoming electron is repelled by the crowded electrons already present"
+        },
+        {
+          "id": "d",
+          "text_md": "chlorine is more electronegative than fluorine"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Electron–electron repulsion in the small 2nd shell of F reduces the energy released — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 4,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch01-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch01_034",
+      "unit": "icse-10-chemistry-ch01",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Noble gases have practically zero electron affinity.\n\n**Reason (R):** Noble gases have the lowest ionisation potentials in their periods.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "A is true (a stable octet or duplet does not accept an electron); R is false: they have the highest ionisation potentials — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch01-t05"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch01_035",
+      "unit": "icse-10-chemistry-ch01",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Sodium has a higher ionisation potential than magnesium.\n\n**Reason (R):** Ionisation potential generally increases across a period from left to right.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "A is false (magnesium, further right, has the higher value); R is true — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch01-t05"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch01_036",
+      "unit": "icse-10-chemistry-ch01",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? Electronegativity is the energy released when an isolated gaseous atom gains an electron.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "f"
+        ]
+      },
+      "solution_md": "False: that is electron affinity. Electronegativity is the tendency of an atom in a molecule to attract the shared pair.",
+      "marking_scheme": [
+        {
+          "step": "False, with the correction",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch01-t05"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch01_037",
+      "unit": "icse-10-chemistry-ch01",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "Complete each sentence by choosing the correct word from the bracket.\n\n(a) Across a period from left to right, ionisation potential ___ (increases / decreases).\n\n(b) Down a group, electronegativity ___ (increases / decreases).\n\n(c) The element with the highest electronegativity is ___ (chlorine / fluorine).",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "increases"
+            ]
+          },
+          {
+            "accepted": [
+              "decreases"
+            ]
+          },
+          {
+            "accepted": [
+              "fluorine"
+            ]
+          }
+        ]
+      },
+      "solution_md": "(a) **increases**; (b) **decreases**; (c) **fluorine**.",
+      "marking_scheme": [
+        {
+          "step": "Blank 1: \"increases\"",
+          "marks": 1
+        },
+        {
+          "step": "Blank 2: \"decreases\"",
+          "marks": 1
+        },
+        {
+          "step": "Blank 3: \"fluorine\"",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch01-t05"
+      ],
+      "expected_time_sec": 135,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch01_038",
+      "unit": "icse-10-chemistry-ch01",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "The energy required to remove an electron from the outermost shell of an isolated gaseous atom is called ___ potential.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "ionisation",
+              "ionization"
+            ]
+          }
+        ]
+      },
+      "solution_md": "**Ionisation** potential.",
+      "marking_scheme": [
+        {
+          "step": "Blank 1: \"ionisation\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch01-t05"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch01_039",
+      "unit": "icse-10-chemistry-ch01",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Name the element in period 3 with the highest electronegativity.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Chlorine."
+      },
+      "solution_md": "Cl.",
+      "marking_scheme": [
+        {
+          "step": "Chlorine",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch01-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch01_040",
+      "unit": "icse-10-chemistry-ch01",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write the equation that represents the first ionisation of a gaseous sodium atom.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Na(g) + energy → Na⁺(g) + e⁻."
+      },
+      "solution_md": "Equation.",
+      "marking_scheme": [
+        {
+          "step": "Equation with (g) and electron",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch01-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch01_041",
+      "unit": "icse-10-chemistry-ch01",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Which has the higher ionisation potential: nitrogen or phosphorus?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Nitrogen (fewer shells; valence electrons closer to the nucleus)."
+      },
+      "solution_md": "N.",
+      "marking_scheme": [
+        {
+          "step": "Nitrogen",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch01-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch01_042",
+      "unit": "icse-10-chemistry-ch01",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Distinguish between electron affinity and electronegativity, giving one similarity in their trends.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Electron affinity is the energy released when an isolated gaseous atom gains an electron; electronegativity is the tendency of an atom in a molecule to attract a shared pair of electrons. Both (generally) increase across a period and decrease down a group."
+      },
+      "solution_md": "Definitions; same trend.",
+      "marking_scheme": [
+        {
+          "step": "Difference",
+          "marks": 1
+        },
+        {
+          "step": "Similarity",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch01-t05"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch01_043",
+      "unit": "icse-10-chemistry-ch01",
+      "language": "en",
+      "type": "match",
+      "stem_md": "Match each property in Column A with the correct description in Column B.",
+      "options": [
+        {
+          "id": "1",
+          "text_md": "Ionisation potential"
+        },
+        {
+          "id": "2",
+          "text_md": "Electron affinity"
+        },
+        {
+          "id": "3",
+          "text_md": "Electronegativity"
+        },
+        {
+          "id": "4",
+          "text_md": "Atomic radius"
+        },
+        {
+          "id": "5",
+          "text_md": "Metallic character"
+        }
+      ],
+      "match_right": [
+        {
+          "id": "p",
+          "text_md": "Energy released when an isolated gaseous atom gains an electron"
+        },
+        {
+          "id": "q",
+          "text_md": "Distance from the nucleus to the outermost shell"
+        },
+        {
+          "id": "r",
+          "text_md": "Tendency to lose electrons and form cations"
+        },
+        {
+          "id": "s",
+          "text_md": "Energy needed to remove an electron from an isolated gaseous atom"
+        },
+        {
+          "id": "t",
+          "text_md": "Pull of an atom in a molecule on a shared pair"
+        }
+      ],
+      "answer": {
+        "pairs": [
+          {
+            "left_id": "1",
+            "right_id": "s"
+          },
+          {
+            "left_id": "2",
+            "right_id": "p"
+          },
+          {
+            "left_id": "3",
+            "right_id": "t"
+          },
+          {
+            "left_id": "4",
+            "right_id": "q"
+          },
+          {
+            "left_id": "5",
+            "right_id": "r"
+          }
+        ]
+      },
+      "solution_md": "Ionisation potential → removal energy; electron affinity → energy released on gain; electronegativity → pull on shared pair; atomic radius → nucleus-to-outer-shell distance; metallic character → tendency to lose electrons.",
+      "marking_scheme": [
+        {
+          "step": "1 → s",
+          "marks": 1
+        },
+        {
+          "step": "2 → p",
+          "marks": 1
+        },
+        {
+          "step": "3 → t",
+          "marks": 1
+        },
+        {
+          "step": "4 → q",
+          "marks": 1
+        },
+        {
+          "step": "5 → r",
+          "marks": 1
+        }
+      ],
+      "marks": 5,
+      "difficulty": 2,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch01-t03",
+        "icse-10-chemistry-ch01-t04",
+        "icse-10-chemistry-ch01-t05"
+      ],
+      "expected_time_sec": 200,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch01_044",
+      "unit": "icse-10-chemistry-ch01",
+      "language": "en",
+      "type": "short",
+      "stem_md": "The elements of period 2 are Li, Be, B, C, N, O, F and Ne. (a) Which has the lowest ionisation potential? (b) Which is the most electronegative? (c) Explain why ionisation potential generally increases from Li to Ne.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Lithium. (b) Fluorine. (c) All have two shells, but the nuclear charge rises from +3 to +10, so the valence electrons are held more tightly and more energy is needed to remove one."
+      },
+      "solution_md": "Li; F; nuclear charge.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch01-t05"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch01_045",
+      "unit": "icse-10-chemistry-ch01",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Chlorine water is added to colourless potassium iodide solution. The observation and the reason are:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "no change, because iodine is more reactive than chlorine"
+        },
+        {
+          "id": "b",
+          "text_md": "a white precipitate forms, because potassium chloride is insoluble"
+        },
+        {
+          "id": "c",
+          "text_md": "the solution turns green, because chlorine dissolves"
+        },
+        {
+          "id": "d",
+          "text_md": "the solution turns brown, because chlorine is more reactive than iodine and displaces it"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Cl₂ + 2KI → 2KCl + I₂ — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch01-t06"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch01_046",
+      "unit": "icse-10-chemistry-ch01",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Small pieces of lithium, sodium and potassium are dropped into separate troughs of water. The metal that reacts most vigorously, with the hydrogen catching fire, is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "lithium, because it is the smallest atom"
+        },
+        {
+          "id": "b",
+          "text_md": "potassium, because it loses its valence electron most easily"
+        },
+        {
+          "id": "c",
+          "text_md": "sodium, because it is in the middle of the group"
+        },
+        {
+          "id": "d",
+          "text_md": "lithium, because it has the highest nuclear charge"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Reactivity of group 1 increases down the group — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch01-t06"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch01_047",
+      "unit": "icse-10-chemistry-ch01",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Bromine water is added separately to sodium chloride solution and to sodium iodide solution. A reaction occurs:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "only with sodium chloride"
+        },
+        {
+          "id": "b",
+          "text_md": "with both solutions"
+        },
+        {
+          "id": "c",
+          "text_md": "with neither solution"
+        },
+        {
+          "id": "d",
+          "text_md": "only with sodium iodide"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Bromine is more reactive than iodine but less reactive than chlorine — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch01-t06"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch01_048",
+      "unit": "icse-10-chemistry-ch01",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Fluorine is the most reactive halogen.\n\n**Reason (R):** Fluorine has the smallest atom in group 17, so its nucleus strongly attracts an incoming electron.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Both are true, and R explains A — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch01-t06"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch01_049",
+      "unit": "icse-10-chemistry-ch01",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? The reactivity of the halogens increases down group 17 from fluorine to iodine.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "f"
+        ]
+      },
+      "solution_md": "False: it decreases, because larger atoms attract an extra electron less strongly.",
+      "marking_scheme": [
+        {
+          "step": "False, with the correction",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch01-t06"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch01_050",
+      "unit": "icse-10-chemistry-ch01",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "The most reactive metal among lithium, sodium and potassium is ___.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "potassium",
+              "K"
+            ]
+          }
+        ]
+      },
+      "solution_md": "**Potassium**.",
+      "marking_scheme": [
+        {
+          "step": "Blank 1: \"potassium\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch01-t06"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch01_051",
+      "unit": "icse-10-chemistry-ch01",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write a balanced equation for the reaction of sodium with cold water.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "2Na + 2H₂O → 2NaOH + H₂."
+      },
+      "solution_md": "Equation.",
+      "marking_scheme": [
+        {
+          "step": "Balanced equation",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch01-t06"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch01_052",
+      "unit": "icse-10-chemistry-ch01",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write a balanced equation for the reaction of chlorine with potassium bromide solution.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Cl₂ + 2KBr → 2KCl + Br₂."
+      },
+      "solution_md": "Equation.",
+      "marking_scheme": [
+        {
+          "step": "Balanced equation",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch01-t06"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch01_053",
+      "unit": "icse-10-chemistry-ch01",
+      "language": "en",
+      "type": "short",
+      "stem_md": "State what you would observe when bromine water is added to potassium iodide solution.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "The solution turns brown as iodine is set free."
+      },
+      "solution_md": "Brown colour.",
+      "marking_scheme": [
+        {
+          "step": "Brown colour (iodine)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch01-t06"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch01_054",
+      "unit": "icse-10-chemistry-ch01",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Lithium reacts gently with water, but potassium reacts violently. Explain this difference in terms of atomic size and ionisation potential.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Potassium (2, 8, 8, 1) is a much larger atom than lithium (2, 1); its valence electron is farther from the nucleus and more shielded, so its ionisation potential is lower. It loses the electron much more easily and so reacts much faster."
+      },
+      "solution_md": "Larger atom; lower ionisation potential.",
+      "marking_scheme": [
+        {
+          "step": "Atomic size",
+          "marks": 1
+        },
+        {
+          "step": "Ionisation potential and reactivity",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch01-t06"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch01_055",
+      "unit": "icse-10-chemistry-ch01",
+      "language": "en",
+      "type": "short",
+      "stem_md": "A student adds chlorine water to a solution of sodium bromide, and iodine solution to a solution of sodium chloride. (a) State the observation in each case. (b) Write the balanced equation for the reaction that occurs. (c) Explain the difference.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Sodium bromide: the colourless solution turns orange-brown. Sodium chloride with iodine: no change (no reaction). (b) Cl₂ + 2NaBr → 2NaCl + Br₂. (c) Chlorine is above bromine in group 17 and is more reactive, so it displaces bromide; iodine is below chlorine and less reactive, so it cannot displace chloride."
+      },
+      "solution_md": "Orange-brown / no change; equation; reactivity order.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch01-t06"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch01_056",
+      "unit": "icse-10-chemistry-ch01",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) State the modern periodic law, and explain why atomic number is a better basis for classification than atomic mass. [2]\n\n(b) Element A has atomic number 13 and element B has atomic number 20. Write their electronic configurations and state the period and group of each. [2]\n\n(c) Arrange Na, Mg, Al and Cl in order of decreasing atomic size and give a reason. [3]\n\n(d) Explain why (i) atomic size increases down a group and (ii) the size of argon is not compared with the other elements of period 3. [3]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Properties of elements are a periodic function of their atomic numbers. Atomic number fixes the number of electrons and so the valence electrons, which decide properties; ordering by mass would wrongly put Ar (39.9) after K (39.1).\n\n(b) A: 2, 8, 3 — period 3, group 13 (aluminium). B: 2, 8, 8, 2 — period 4, group 2 (calcium).\n\n(c) Na > Mg > Al > Cl. Same period (three shells); nuclear charge increases from +11 to +17, pulling the shells in more.\n\n(d) (i) A new shell is added at each step down a group, so the outermost electrons are farther from the nucleus. (ii) Argon’s radius is a van der Waals (non-bonded) radius, measured differently from the bonded radii of the others."
+      },
+      "solution_md": "Law; configurations; order; reasons.",
+      "marking_scheme": [
+        {
+          "step": "(a) law",
+          "marks": 1
+        },
+        {
+          "step": "(a) reason",
+          "marks": 1
+        },
+        {
+          "step": "(b) A",
+          "marks": 1
+        },
+        {
+          "step": "(b) B",
+          "marks": 1
+        },
+        {
+          "step": "(c) order",
+          "marks": 1
+        },
+        {
+          "step": "(c) reason",
+          "marks": 2
+        },
+        {
+          "step": "(d)(i)",
+          "marks": 1.5
+        },
+        {
+          "step": "(d)(ii)",
+          "marks": 1.5
+        }
+      ],
+      "marks": 10,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch01-t01",
+        "icse-10-chemistry-ch01-t02",
+        "icse-10-chemistry-ch01-t03"
+      ],
+      "expected_time_sec": 1080,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch01_057",
+      "unit": "icse-10-chemistry-ch01",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Define (i) ionisation potential and (ii) electronegativity. [2]\n\n(b) Explain why the ionisation potential of potassium is lower than that of sodium. [2]\n\n(c) The elements of period 3 are Na, Mg, Al, Si, P, S, Cl and Ar. Name: (i) the most metallic element, (ii) the element with an amphoteric oxide, (iii) the element with the highest ionisation potential. [3]\n\n(d) Give one reason each why (i) electronegativity increases across a period, (ii) noble gases have very high ionisation potentials, and (iii) chlorine is more non-metallic than sulphur. [3]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) (i) The energy needed to remove an electron from the outermost shell of an isolated gaseous atom. (ii) The tendency of an atom in a molecule to attract the shared pair of electrons towards itself.\n\n(b) K has four shells and Na three, so the valence electron of K is farther from the nucleus and more shielded; less energy is needed to remove it.\n\n(c) (i) Sodium. (ii) Aluminium. (iii) Argon.\n\n(d) (i) Nuclear charge rises with the same number of shells, so the attraction for the shared pair increases. (ii) They have stable complete outer shells (octet or duplet). (iii) Chlorine has a larger nuclear charge and smaller size than sulphur, so it gains an electron more readily."
+      },
+      "solution_md": "Definitions; shells; three names; three reasons.",
+      "marking_scheme": [
+        {
+          "step": "(a)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(a)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 2
+        },
+        {
+          "step": "(c)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(iii)",
+          "marks": 1
+        },
+        {
+          "step": "(d)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(d)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(d)(iii)",
+          "marks": 1
+        }
+      ],
+      "marks": 10,
+      "difficulty": 3,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch01-t04",
+        "icse-10-chemistry-ch01-t05"
+      ],
+      "expected_time_sec": 1080,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch01_058",
+      "unit": "icse-10-chemistry-ch01",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Write the electronic configurations of lithium, sodium and potassium, and state what they have in common. [2]\n\n(b) Arrange the three metals in order of increasing reactivity and explain the order. [2]\n\n(c) Chlorine gas is bubbled into potassium bromide solution. (i) State the observation. (ii) Write the balanced equation. (iii) Name the type of reaction. [3]\n\n(d) Explain why the reactivity of the halogens decreases from fluorine to iodine, and predict whether bromine will react with potassium chloride solution. [3]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Li 2, 1; Na 2, 8, 1; K 2, 8, 8, 1. Each has one valence electron (group 1).\n\n(b) Li < Na < K. Down the group atomic size increases and ionisation potential decreases, so the valence electron is lost more easily.\n\n(c) (i) The colourless solution turns orange-brown. (ii) Cl₂ + 2KBr → 2KCl + Br₂. (iii) Displacement (redox) reaction.\n\n(d) Down the group atoms become larger, so the nucleus attracts an incoming electron less strongly; the tendency to gain an electron falls. Bromine will not react with potassium chloride, because bromine is less reactive than chlorine."
+      },
+      "solution_md": "Configurations; order; displacement; reasons and prediction.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 2
+        },
+        {
+          "step": "(b) order",
+          "marks": 1
+        },
+        {
+          "step": "(b) reason",
+          "marks": 1
+        },
+        {
+          "step": "(c)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(iii)",
+          "marks": 1
+        },
+        {
+          "step": "(d) reason",
+          "marks": 2
+        },
+        {
+          "step": "(d) prediction",
+          "marks": 1
+        }
+      ],
+      "marks": 10,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch01-t06"
+      ],
+      "expected_time_sec": 1080,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch01_059",
+      "unit": "icse-10-chemistry-ch01",
+      "language": "en",
+      "type": "long",
+      "stem_md": "Three elements X, Y and Z have atomic numbers 11, 16 and 19.\n\n(a) Write their electronic configurations and state which two are in the same group. [2]\n\n(b) Which of X and Z has the larger atom, and which has the higher ionisation potential? [2]\n\n(c) (i) Which of the three is a non-metal? (ii) Write the formula of the compound formed between X and Y. (iii) Is that compound formed by gain or loss of electrons by Y? [3]\n\n(d) Arrange X, Y and Z in increasing order of (i) metallic character and (ii) electronegativity, and give a reason for the position of Y in (ii). [3]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) X 2, 8, 1; Y 2, 8, 6; Z 2, 8, 8, 1. X and Z are in group 1.\n\n(b) Z has the larger atom (four shells); X has the higher ionisation potential (electron closer to the nucleus).\n\n(c) (i) Y (sulphur). (ii) X₂Y (Na₂S). (iii) Y gains two electrons (forming Y²⁻).\n\n(d) (i) Y < X < Z. (ii) Z < X < Y. Y has a large nuclear charge (+16) with three shells and six valence electrons, so it attracts a shared pair most strongly."
+      },
+      "solution_md": "Configurations; size and IP; non-metal and formula; orders.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 2
+        },
+        {
+          "step": "(b) size",
+          "marks": 1
+        },
+        {
+          "step": "(b) IP",
+          "marks": 1
+        },
+        {
+          "step": "(c)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(iii)",
+          "marks": 1
+        },
+        {
+          "step": "(d)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(d)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(d) reason",
+          "marks": 1
+        }
+      ],
+      "marks": 10,
+      "difficulty": 4,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch01-t01",
+        "icse-10-chemistry-ch01-t03",
+        "icse-10-chemistry-ch01-t04",
+        "icse-10-chemistry-ch01-t05"
+      ],
+      "expected_time_sec": 1080,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch01_060",
+      "unit": "icse-10-chemistry-ch01",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) What is common to all the elements of period 3? What changes from one element to the next? [2]\n\n(b) Classify Na, Si and S as metal, metalloid or non-metal. [2]\n\n(c) The oxides of period 3 change from basic to acidic. (i) Name one basic oxide and one acidic oxide. (ii) Explain this change in terms of metallic character. [3]\n\n(d) Explain why (i) chlorine has a higher electron affinity than sulphur, (ii) magnesium is more metallic than aluminium, and (iii) the atomic radius falls from Na to Cl. [3]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) All have three shells. The nuclear charge (and number of valence electrons) increases by one from each element to the next.\n\n(b) Na: metal; Si: metalloid; S: non-metal.\n\n(c) (i) Basic: Na₂O or MgO; acidic: SO₂ (or SO₃, P₂O₅). (ii) Across the period metallic character decreases and non-metallic character increases; metal oxides are basic, non-metal oxides acidic.\n\n(d) (i) Chlorine has a larger nuclear charge and smaller size, so an incoming electron is attracted more strongly and more energy is released. (ii) Magnesium has a smaller nuclear charge (+12) than aluminium (+13) and is larger, so it loses electrons more easily. (iii) Nuclear charge rises with no new shell, pulling the electrons closer."
+      },
+      "solution_md": "Shells; classification; oxides; reasons.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 2
+        },
+        {
+          "step": "(b)",
+          "marks": 2
+        },
+        {
+          "step": "(c)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(ii)",
+          "marks": 2
+        },
+        {
+          "step": "(d)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(d)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(d)(iii)",
+          "marks": 1
+        }
+      ],
+      "marks": 10,
+      "difficulty": 3,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch01-t02",
+        "icse-10-chemistry-ch01-t04",
+        "icse-10-chemistry-ch01-t05"
+      ],
+      "expected_time_sec": 1080,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    }
+  ],
+  "build": {
+    "run_id": null,
+    "checks": {
+      "katex_mhchem": "0 math strings parsed with KaTeX 0.19.0 + mhchem (throwOnError, strict \"error\"), 0 failures",
+      "svg_allowlist": "2 SVG visuals (2 distinct diagrams) checked with saxes against svg-allowlist.ts: elements, attributes, class pattern, fragment-only refs, no style, palette incl. named hues, viewBox, title, per-page unique ids — 0 failures",
+      "narration": "27 slides, 12–76 words (mean 49), no symbols, formulae or unit abbreviations",
+      "resolve": "2/2 scripted re-solve checks pass",
+      "chemistry_facts": "Modern periodic law, positions of elements 1–20, nuclear charge and shell effects, trends in atomic size, metallic character, ionisation potential, electron affinity and electronegativity, and group 1 and group 17 reactivity, checked against the ICSE 2027 syllabus (Class X, section 1)",
+      "content_gate": "npm test -w @soyl/content-templates: all checks pass for this chapter",
+      "verifier_pass": "2026-11-01: every question and every internal-choice alternative re-solved from its stem by the author; every numerical re-computed by the build script — see README \"Verifier pass\"",
+      "pipeline_lint": "npm run content -- lint --exemplars: 0 errors, 0 warnings"
+    }
+  }
+}
