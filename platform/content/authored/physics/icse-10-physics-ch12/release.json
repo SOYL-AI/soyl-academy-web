@@ -1,0 +1,4817 @@
+{
+  "unit": "icse-10-physics-ch12",
+  "version": 1,
+  "academic_year": "2026-27",
+  "created_at": "2026-11-01T00:00:00+05:30",
+  "decks": [
+    {
+      "unit": "icse-10-physics-ch12",
+      "part": 1,
+      "version": 1,
+      "title": "Radioactivity — Part 1: The nucleus and radioactive decay",
+      "language": "en",
+      "goals": [
+        "Represent a nuclide with Z and A and count its protons and neutrons",
+        "Define isotopes with examples",
+        "Compare alpha, beta and gamma radiations",
+        "Write balanced equations for alpha and beta decay"
+      ],
+      "slides": [
+        {
+          "id": "s01",
+          "layout": "title",
+          "heading": "Inside the atom’s core",
+          "body_md": "Part 1 — the tiny nucleus holds almost all the mass of an atom. Some nuclei are unstable and break up on their own, giving out radiation.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Particle",
+                "Where",
+                "Charge",
+                "Mass (approx.)"
+              ],
+              "rows": [
+                [
+                  "Proton",
+                  "Nucleus",
+                  "+1",
+                  "1 u"
+                ],
+                [
+                  "Neutron",
+                  "Nucleus",
+                  "0",
+                  "1 u"
+                ],
+                [
+                  "Electron",
+                  "Outside the nucleus",
+                  "−1",
+                  "1/1840 u"
+                ]
+              ]
+            },
+            "alt": "Table of the three particles in an atom with location, charge and mass"
+          },
+          "math": [],
+          "narration": "Namaste! An atom is mostly empty space, with a tiny, dense nucleus at its centre made of protons and neutrons. In 1896 Henri Becquerel found that uranium salts gave out invisible rays on their own. In this part we look at the structure of the nucleus and the three kinds of radiation given out when unstable nuclei break up.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s02",
+          "layout": "concept",
+          "heading": "Atomic number, mass number and isotopes",
+          "body_md": "**Atomic number** $Z$: number of protons in the nucleus (also the number of electrons in a neutral atom); it decides the element. **Mass number** $A$: number of protons + neutrons (nucleons). Number of neutrons $N = A - Z$. A nuclide is written ${}^{A}_{Z}\\text{X}$, e.g. ${}^{23}_{11}\\text{Na}$: 11 protons, 12 neutrons. **Isotopes:** atoms of the same element (same $Z$) with different mass numbers (different numbers of neutrons), e.g. ${}^{1}_{1}\\text{H}$, ${}^{2}_{1}\\text{H}$, ${}^{3}_{1}\\text{H}$; ${}^{12}_{6}\\text{C}$ and ${}^{14}_{6}\\text{C}$. They have the same chemical properties.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Nuclide",
+                "Z (protons)",
+                "A",
+                "Neutrons"
+              ],
+              "rows": [
+                [
+                  "Sodium-23",
+                  "11",
+                  "23",
+                  "12"
+                ],
+                [
+                  "Cobalt-60",
+                  "27",
+                  "60",
+                  "33"
+                ],
+                [
+                  "Carbon-14",
+                  "6",
+                  "14",
+                  "8"
+                ],
+                [
+                  "Radium-226",
+                  "88",
+                  "226",
+                  "138"
+                ]
+              ]
+            },
+            "alt": "Table of four nuclides with their protons, mass numbers and neutrons"
+          },
+          "math": [],
+          "narration": "The atomic number is the number of protons and decides which element an atom is. The mass number is the total number of protons and neutrons. Subtract one from the other to get the number of neutrons. Atoms of the same element with different numbers of neutrons are called isotopes, like carbon twelve and carbon fourteen. Isotopes behave the same way chemically.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s03",
+          "layout": "check",
+          "heading": "Quick check: protons and neutrons",
+          "body_md": "Count protons and neutrons in a nuclide.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Neutrons equal mass number minus atomic number.",
+          "check_question_id": "q_icse10phy_ch12_001",
+          "audio": null
+        },
+        {
+          "id": "s04",
+          "layout": "concept",
+          "heading": "Radioactivity",
+          "body_md": "**Radioactivity** is the **spontaneous disintegration** of the nucleus of an unstable atom, with the emission of **alpha (α)**, **beta (β)** or **gamma (γ)** radiation. It is a **nuclear** process: it is **not affected** by temperature, pressure, chemical combination or physical state. Naturally radioactive elements include uranium, thorium, radium and polonium; heavy nuclei (Z > 82) are generally unstable.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Feature",
+                "Radioactivity"
+              ],
+              "rows": [
+                [
+                  "Cause",
+                  "Unstable nucleus"
+                ],
+                [
+                  "Affected by heating or pressure?",
+                  "No"
+                ],
+                [
+                  "Affected by chemical combination?",
+                  "No"
+                ],
+                [
+                  "Radiations given out",
+                  "α, β, γ"
+                ]
+              ]
+            },
+            "alt": "Table of features of radioactivity"
+          },
+          "math": [],
+          "narration": "Radioactivity is the breaking up of an unstable nucleus all by itself, giving out alpha, beta or gamma radiation. It happens inside the nucleus, so heating, cooling, squeezing or combining the element with others makes no difference to it. Very heavy elements such as uranium and radium are naturally radioactive.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s05",
+          "layout": "diagram",
+          "heading": "Alpha, beta and gamma: charge and deflection",
+          "body_md": "**Alpha particles** are helium nuclei, ${}^{4}_{2}$He: charge +2e, mass 4 u. **Beta particles** are fast electrons emitted from the nucleus: charge −e, mass about 1/1840 u. **Gamma rays** are electromagnetic waves of very short wavelength: no charge, no mass. In an electric (or magnetic) field, α and β bend in **opposite directions** (β much more, being far lighter), and γ is **not deflected**.",
+          "bullets": [],
+          "visual": {
+            "kind": "svg",
+            "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 420 215\" role=\"img\" aria-label=\"Radiations from a source pass between two charged plates, positive at the top and negative at the bottom. Alpha particles, positively charged and heavy, bend slightly towards the negative plate. Beta particles, negatively charged and very light, bend sharply towards the positive plate. Gamma rays carry no charge and go straight through.\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>Radiations from a source pass between two charged plates, positive at the top and negative at the bottom. Alpha particles, positively charged and heavy, bend slightly towards the negative plate. Beta particles, negatively charged and very light, bend sharply towards the positive plate. Gamma rays carry no charge and go straight through.</title><rect x=\"20\" y=\"105\" width=\"30\" height=\"30\" fill=\"var(--diagram-muted)\" stroke=\"currentColor\" stroke-width=\"1.5\" fill-opacity=\"0.4\"/><text x=\"35\" y=\"150\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">source</text><line x1=\"110\" y1=\"50\" x2=\"330\" y2=\"50\" stroke=\"var(--diagram-red)\" stroke-width=\"4\"/><text x=\"340\" y=\"54\" fill=\"var(--diagram-red)\" stroke=\"none\" font-size=\"11\">+ plate</text><line x1=\"110\" y1=\"190\" x2=\"330\" y2=\"190\" stroke=\"var(--diagram-blue)\" stroke-width=\"4\"/><text x=\"340\" y=\"194\" fill=\"var(--diagram-blue)\" stroke=\"none\" font-size=\"11\">− plate</text><path d=\"M50 120 L110 120 Q 250 125 380 160\" fill=\"none\" stroke=\"var(--diagram-accent)\" stroke-width=\"2\"/><text x=\"360\" y=\"178\" fill=\"var(--diagram-accent)\" stroke=\"none\" font-size=\"10\">α (+2e, heavy)</text><path d=\"M110 120 Q 170 118 250 60\" fill=\"none\" stroke=\"var(--diagram-green)\" stroke-width=\"2\"/><text x=\"256\" y=\"66\" fill=\"var(--diagram-green)\" stroke=\"none\" font-size=\"10\">β (−e, light)</text><line x1=\"110\" y1=\"120\" x2=\"400\" y2=\"120\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-dasharray=\"6 3\"/><text x=\"330\" y=\"114\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">γ (no charge)</text></svg>",
+            "alt": "Alpha, beta and gamma radiations passing between charged plates: alpha bends slightly to the negative plate, beta sharply to the positive plate, gamma goes straight"
+          },
+          "math": [],
+          "narration": "Alpha particles are helium nuclei, with two protons and two neutrons, so they carry a double positive charge. Beta particles are very fast electrons that come out of the nucleus, with a single negative charge and tiny mass. Gamma rays are electromagnetic waves with no charge or mass. Between charged plates, alpha and beta bend opposite ways, beta much more, and gamma goes straight through.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s06",
+          "layout": "diagram",
+          "heading": "Penetrating and ionising power",
+          "body_md": "The three radiations differ greatly in how far they travel and how strongly they **ionise** the air (knock electrons out of atoms). **α:** least penetrating (stopped by paper or a few cm of air), **most ionising**. **β:** stopped by a few mm of aluminium; moderately ionising. **γ:** most penetrating (reduced only by several cm of lead or thick concrete), **least ionising**. Speeds: α about 1/10 of the speed of light; β up to 0.99 of it; γ at the speed of light.",
+          "bullets": [],
+          "visual": {
+            "kind": "svg",
+            "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 380 205\" role=\"img\" aria-label=\"Penetrating power of the three radiations. Alpha particles are stopped by a sheet of paper. Beta particles pass through paper but are stopped by a few millimetres of aluminium. Gamma rays pass through both and are only greatly reduced by several centimetres of lead.\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>Penetrating power of the three radiations. Alpha particles are stopped by a sheet of paper. Beta particles pass through paper but are stopped by a few millimetres of aluminium. Gamma rays pass through both and are only greatly reduced by several centimetres of lead.</title><rect x=\"115\" y=\"25\" width=\"6\" height=\"150\" fill=\"var(--diagram-muted)\" stroke=\"var(--diagram-muted)\" stroke-width=\"1.5\" fill-opacity=\"0.3\"/><text x=\"118\" y=\"192\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">paper</text><rect x=\"210\" y=\"25\" width=\"18\" height=\"150\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.5\" fill-opacity=\"0.3\"/><text x=\"219\" y=\"192\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">few mm Al</text><rect x=\"310\" y=\"25\" width=\"40\" height=\"150\" fill=\"currentColor\" stroke=\"currentColor\" stroke-width=\"1.5\" fill-opacity=\"0.25\"/><text x=\"330\" y=\"192\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">several cm Pb</text><text x=\"20\" y=\"54\" fill=\"var(--diagram-accent)\" stroke=\"none\" font-size=\"14\" font-weight=\"bold\">α</text><line x1=\"40\" y1=\"50\" x2=\"111.4\" y2=\"50\" stroke=\"var(--diagram-accent)\" stroke-width=\"2\"/><polygon points=\"117,50 110.6,52.9 110.6,47.1\" fill=\"var(--diagram-accent)\" stroke=\"none\"/><text x=\"20\" y=\"104\" fill=\"var(--diagram-green)\" stroke=\"none\" font-size=\"14\" font-weight=\"bold\">β</text><line x1=\"40\" y1=\"100\" x2=\"211.4\" y2=\"100\" stroke=\"var(--diagram-green)\" stroke-width=\"2\"/><polygon points=\"217,100 210.6,102.9 210.6,97.1\" fill=\"var(--diagram-green)\" stroke=\"none\"/><text x=\"20\" y=\"154\" fill=\"currentColor\" stroke=\"none\" font-size=\"14\" font-weight=\"bold\">γ</text><line x1=\"40\" y1=\"150\" x2=\"311.4\" y2=\"150\" stroke=\"currentColor\" stroke-width=\"2\"/><polygon points=\"317,150 310.6,152.9 310.6,147.1\" fill=\"currentColor\" stroke=\"none\"/></svg>",
+            "alt": "Alpha stopped by paper, beta by a few millimetres of aluminium, gamma reduced only by several centimetres of lead"
+          },
+          "math": [],
+          "narration": "The more a radiation ionises the air, the faster it loses energy and the shorter its range. Alpha particles ionise strongly and are stopped by a sheet of paper. Beta particles go further and are stopped by a few millimetres of aluminium. Gamma rays ionise least and can pass through several centimetres of lead. So penetrating power and ionising power run in opposite orders.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s07",
+          "layout": "example",
+          "heading": "Worked example: identifying radiation",
+          "body_md": "**Problem.** A source gives radiation that passes through a sheet of paper but is stopped by 5 mm of aluminium, and bends towards the positive plate in an electric field. (a) Identify it. (b) What would happen with a sheet of paper and an α emitter? (c) Which radiation would pass through the aluminium and not bend?\n\n**(a)** β particles (negative, stopped by aluminium).\n\n**(b)** The α particles would be stopped by the paper.\n\n**(c)** γ rays (no charge, very penetrating).",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Test",
+                "α",
+                "β",
+                "γ"
+              ],
+              "rows": [
+                [
+                  "Passes paper?",
+                  "No",
+                  "Yes",
+                  "Yes"
+                ],
+                [
+                  "Passes 5 mm Al?",
+                  "No",
+                  "No",
+                  "Yes"
+                ],
+                [
+                  "Bends towards + plate?",
+                  "No (towards −)",
+                  "Yes",
+                  "No bend"
+                ]
+              ]
+            },
+            "alt": "Table of tests used to identify alpha, beta and gamma radiation"
+          },
+          "math": [],
+          "narration": "Use the clues one at a time. It gets through paper, so it is not alpha. It is stopped by aluminium, so it is not gamma. And it bends towards the positive plate, which shows a negative charge. So it is beta radiation. Alpha particles would be stopped by the paper, while gamma rays would pass through the aluminium without bending.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s08",
+          "layout": "check",
+          "heading": "Quick check: properties of radiation",
+          "body_md": "Compare the properties of α, β and γ.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Alpha ionises most and penetrates least; gamma the reverse.",
+          "check_question_id": "q_icse10phy_ch12_008",
+          "audio": null
+        },
+        {
+          "id": "s09",
+          "layout": "concept",
+          "heading": "Changes in the nucleus: alpha and beta decay",
+          "body_md": "**Alpha decay:** the nucleus loses 2 protons and 2 neutrons: $A$ decreases by 4, $Z$ by 2 — a new element two places back in the periodic table. ${}^{226}_{88}\\text{Ra} \\rightarrow {}^{222}_{86}\\text{Rn} + {}^{4}_{2}\\text{He}$. **Beta decay:** a neutron changes into a proton and an electron, and the electron is emitted: $A$ unchanged, $Z$ increases by 1 — the next element. ${}^{14}_{6}\\text{C} \\rightarrow {}^{14}_{7}\\text{N} + {}^{0}_{-1}e$. **Gamma emission:** no change in $A$ or $Z$; the nucleus only loses energy. In every equation the totals of $A$ and of $Z$ balance.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Emission",
+                "Change in A",
+                "Change in Z",
+                "Element"
+              ],
+              "rows": [
+                [
+                  "α",
+                  "− 4",
+                  "− 2",
+                  "Changes"
+                ],
+                [
+                  "β",
+                  "0",
+                  "+ 1",
+                  "Changes"
+                ],
+                [
+                  "γ",
+                  "0",
+                  "0",
+                  "Same"
+                ]
+              ]
+            },
+            "alt": "Table of the changes in mass number and atomic number for alpha, beta and gamma emission"
+          },
+          "math": [],
+          "narration": "When a nucleus gives out an alpha particle, it loses two protons and two neutrons, so its mass number falls by four and its atomic number by two. In beta decay, a neutron turns into a proton and an electron, and the electron shoots out, so the mass number stays the same and the atomic number goes up by one. Gamma emission changes neither number.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s10",
+          "layout": "example",
+          "heading": "Worked example: a decay series",
+          "body_md": "**Problem.** ${}^{238}_{92}\\text{U}$ emits one α particle, then two β particles. Find $A$ and $Z$ after each step and name the final element (Z = 92 uranium).\n\n**α:** $A = 238 - 4 = 234$, $Z = 92 - 2 = 90$ (thorium).\n\n**First β:** $A = 234$, $Z = 90 + 1 = 91$ (protactinium).\n\n**Second β:** $A = 234$, $Z = 91 + 1 = 92$ — **uranium-234**, an isotope of the starting element.",
+          "bullets": [],
+          "visual": {
+            "kind": "flow",
+            "spec": {
+              "direction": "LR",
+              "nodes": [
+                {
+                  "id": "a",
+                  "label": "U-238 (Z 92)"
+                },
+                {
+                  "id": "b",
+                  "label": "Th-234 (Z 90)"
+                },
+                {
+                  "id": "c",
+                  "label": "Pa-234 (Z 91)"
+                },
+                {
+                  "id": "d",
+                  "label": "U-234 (Z 92)"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "a",
+                  "to": "b",
+                  "label": "α"
+                },
+                {
+                  "from": "b",
+                  "to": "c",
+                  "label": "β"
+                },
+                {
+                  "from": "c",
+                  "to": "d",
+                  "label": "β"
+                }
+              ]
+            },
+            "alt": "Flow of uranium-238 decaying by one alpha and two beta emissions to uranium-234"
+          },
+          "math": [],
+          "narration": "Work step by step. The alpha emission takes four off the mass number and two off the atomic number, giving thorium two thirty four. Each beta emission leaves the mass number alone and adds one to the atomic number. After two beta emissions the atomic number is back to ninety two, so the result is uranium two thirty four, an isotope of the uranium we started with.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s11",
+          "layout": "check",
+          "heading": "Quick check: decay equations",
+          "body_md": "Predict A and Z after a decay.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Alpha: mass number down four, atomic number down two. Beta: atomic number up one.",
+          "check_question_id": "q_icse10phy_ch12_020",
+          "audio": null
+        },
+        {
+          "id": "s12",
+          "layout": "summary",
+          "heading": "Summary: Part 1",
+          "body_md": "",
+          "bullets": [
+            "Nuclide notation: mass number A on top, atomic number Z below; neutrons = A − Z.",
+            "Isotopes: same Z, different A.",
+            "Radioactivity: spontaneous disintegration of unstable nuclei; unaffected by physical or chemical conditions.",
+            "α: +2e, 4 u, most ionising, least penetrating; β: −e, light, moderate; γ: no charge, most penetrating.",
+            "α decay: A − 4, Z − 2; β decay: A same, Z + 1; γ: no change."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Radiation",
+                "Stopped by"
+              ],
+              "rows": [
+                [
+                  "α",
+                  "Paper"
+                ],
+                [
+                  "β",
+                  "Few mm aluminium"
+                ],
+                [
+                  "γ",
+                  "Several cm lead (reduced)"
+                ]
+              ]
+            },
+            "alt": "Summary table of what stops each radiation"
+          },
+          "math": [],
+          "narration": "Let us sum up Part 1. A nucleus is described by its atomic number and mass number, and isotopes share an atomic number. Radioactivity is the spontaneous break-up of unstable nuclei. Alpha particles ionise most and penetrate least, gamma rays the reverse. Alpha decay lowers the mass number by four and atomic number by two; beta decay raises the atomic number by one.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s13",
+          "layout": "exam-tips",
+          "heading": "Exam tips: Part 1",
+          "body_md": "",
+          "bullets": [
+            "Check that A and Z both balance in every decay equation.",
+            "A β particle comes from the nucleus (a neutron changing to a proton), not from the electron shells.",
+            "Learn the order of ionising power (α > β > γ) and of penetrating power (γ > β > α).",
+            "Gamma emission does not change the element."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Slip",
+                "Fix"
+              ],
+              "rows": [
+                [
+                  "β decay lowers Z",
+                  "Z increases by 1"
+                ],
+                [
+                  "α is an electron",
+                  "α is a helium nucleus"
+                ],
+                [
+                  "γ changes A",
+                  "No change in A or Z"
+                ]
+              ]
+            },
+            "alt": "Table of three common slips in Part 1 and their fixes"
+          },
+          "math": [],
+          "narration": "Some tips. In every decay equation, check that the mass numbers and atomic numbers balance on both sides. Remember that the beta particle comes from the nucleus. Learn the orders of ionising and penetrating power, which run in opposite directions. And gamma emission never changes the element.",
+          "check_question_id": null,
+          "audio": null
+        }
+      ],
+      "status": "draft",
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "unit": "icse-10-physics-ch12",
+      "part": 2,
+      "version": 1,
+      "title": "Radioactivity — Part 2: Uses, hazards and nuclear energy",
+      "language": "en",
+      "goals": [
+        "Give uses of radioisotopes in medicine, industry and agriculture",
+        "Describe harmful effects, background radiation and safety precautions",
+        "Distinguish nuclear fission from fusion with equations",
+        "Explain why nuclear waste must be disposed of safely"
+      ],
+      "slides": [
+        {
+          "id": "s01",
+          "layout": "title",
+          "heading": "Helpful and harmful",
+          "body_md": "Part 2 — radiation can cure cancer and power cities, but it can also damage living cells. Using it safely means understanding both sides.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Use",
+                "Risk"
+              ],
+              "rows": [
+                [
+                  "Cancer treatment with cobalt-60",
+                  "Damage to healthy tissue"
+                ],
+                [
+                  "Nuclear power stations",
+                  "Radioactive waste"
+                ],
+                [
+                  "Tracers in medicine and farming",
+                  "Exposure if handled carelessly"
+                ]
+              ]
+            },
+            "alt": "Table pairing uses of radioactivity with their risks"
+          },
+          "math": [],
+          "narration": "Radiation from radioactive substances is used to treat cancer, check welds, trace leaks and even date ancient objects. Nuclear reactions power electricity stations and the Sun itself. But the same radiation can harm living cells. In this part we look at uses, hazards and safety, and at the two nuclear reactions that release huge amounts of energy.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s02",
+          "layout": "concept",
+          "heading": "Uses of radioisotopes",
+          "body_md": "**Medicine:** cobalt-60 (γ) to destroy cancer cells (radiotherapy); iodine-131 to diagnose and treat thyroid disorders; sterilising surgical instruments with γ rays. **Industry:** detecting leaks in underground pipes; checking the thickness of paper or metal sheets; finding flaws in welds. **Agriculture:** phosphorus-32 as a tracer to study how plants take up fertiliser; preserving food and producing improved seed varieties. **Dating:** carbon-14 to find the age of old wood and bones.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Field",
+                "Radioisotope",
+                "Use"
+              ],
+              "rows": [
+                [
+                  "Medicine",
+                  "Cobalt-60",
+                  "Radiotherapy for cancer"
+                ],
+                [
+                  "Medicine",
+                  "Iodine-131",
+                  "Thyroid diagnosis and treatment"
+                ],
+                [
+                  "Agriculture",
+                  "Phosphorus-32",
+                  "Tracer for fertiliser uptake"
+                ],
+                [
+                  "Archaeology",
+                  "Carbon-14",
+                  "Dating ancient remains"
+                ],
+                [
+                  "Industry",
+                  "γ sources",
+                  "Checking welds and pipe leaks"
+                ]
+              ]
+            },
+            "alt": "Table of radioisotopes and their uses in different fields"
+          },
+          "math": [],
+          "narration": "Radioisotopes have many uses. In medicine, gamma rays from cobalt sixty destroy cancer cells, and iodine one thirty one is used for thyroid problems. In industry, radiation reveals leaks in buried pipes and flaws in welds. Farmers and scientists use phosphorus thirty two to trace how plants take up fertiliser, and carbon fourteen tells archaeologists how old a piece of wood is.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s03",
+          "layout": "check",
+          "heading": "Quick check: uses",
+          "body_md": "Match a radioisotope with its use.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Think of cobalt sixty for cancer and carbon fourteen for dating.",
+          "check_question_id": "q_icse10phy_ch12_030",
+          "audio": null
+        },
+        {
+          "id": "s04",
+          "layout": "concept",
+          "heading": "Harmful effects, background radiation and safety",
+          "body_md": "**Harmful effects:** radiation ionises molecules in cells — causing burns, radiation sickness, cancer (leukaemia) and **genetic mutations** passed to children. **Background radiation:** always present — **cosmic rays** from space, radioactive rocks and soil (radon gas), building materials, potassium-40 in food and our bodies, and medical X-rays. **Safety precautions:** handle sources with **long tongs**, store them in **thick lead containers**, keep exposure time short and distance large, wear **lead aprons** and **film badges (dosimeters)**, and never eat or drink near sources. **X-rays**, though not from the nucleus, are also ionising and need care. **Radioactive fallout** is dust from nuclear explosions or accidents that settles over a wide area.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Source of background radiation",
+                "Natural or man-made"
+              ],
+              "rows": [
+                [
+                  "Cosmic rays",
+                  "Natural"
+                ],
+                [
+                  "Radon from rocks and soil",
+                  "Natural"
+                ],
+                [
+                  "Potassium-40 in food and body",
+                  "Natural"
+                ],
+                [
+                  "Medical X-rays",
+                  "Man-made"
+                ],
+                [
+                  "Fallout from nuclear tests",
+                  "Man-made"
+                ]
+              ]
+            },
+            "alt": "Table of sources of background radiation"
+          },
+          "math": [],
+          "narration": "Radiation damages living cells by ionising their molecules. It can cause burns, sickness, cancer and changes in genes that are passed on to children. We are always exposed to a little background radiation from space, rocks, soil and even our own food. People who work with radioactive sources use long tongs, lead containers and lead aprons, keep their distance and time short, and wear badges that record their dose.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s05",
+          "layout": "example",
+          "heading": "Worked example: choosing a source",
+          "body_md": "**Problem.** Choose α, β or γ for each job and give a reason: (a) checking the thickness of paper on a production line; (b) finding a leak in a pipe buried 1 m underground; (c) a smoke alarm in which the radiation must ionise the air strongly but not escape the alarm.\n\n**(a)** β: partly absorbed by paper, so the count changes with thickness (α would be stopped completely, γ hardly affected).\n\n**(b)** γ: penetrates the soil to reach a detector at the surface.\n\n**(c)** α: strongly ionising, stopped by a few cm of air or the alarm case.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Job",
+                "Radiation",
+                "Reason"
+              ],
+              "rows": [
+                [
+                  "Paper thickness",
+                  "β",
+                  "Partly absorbed by paper"
+                ],
+                [
+                  "Buried pipe leak",
+                  "γ",
+                  "Penetrates soil"
+                ],
+                [
+                  "Smoke alarm",
+                  "α",
+                  "Strongly ionising, short range"
+                ]
+              ]
+            },
+            "alt": "Table of three jobs and the best radiation for each"
+          },
+          "math": [],
+          "narration": "Match the radiation to the job. For paper thickness you want radiation that paper partly absorbs, which is beta. To detect a leak through a metre of soil, you need gamma rays, the most penetrating. A smoke alarm needs strong ionisation in a small space with no escape, which is exactly what alpha particles give.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s06",
+          "layout": "check",
+          "heading": "Quick check: safety",
+          "body_md": "Choose a correct safety precaution.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Distance, shielding and short time keep doses low.",
+          "check_question_id": "q_icse10phy_ch12_031",
+          "audio": null
+        },
+        {
+          "id": "s07",
+          "layout": "concept",
+          "heading": "Nuclear fission",
+          "body_md": "**Nuclear fission:** a heavy nucleus splits into two lighter nuclei of comparable size when struck by a slow neutron, releasing **energy** and **2–3 neutrons**. For example ${}^{235}_{92}\\text{U} + {}^{1}_{0}n \\rightarrow {}^{141}_{56}\\text{Ba} + {}^{92}_{36}\\text{Kr} + 3\\,{}^{1}_{0}n + \\text{energy}$. The neutrons released can split more nuclei — a **chain reaction**. **Controlled** in a nuclear reactor (power stations); **uncontrolled** in an atom bomb. The energy comes from a small loss of mass, $E = mc^{2}$.",
+          "bullets": [],
+          "visual": {
+            "kind": "flow",
+            "spec": {
+              "direction": "LR",
+              "nodes": [
+                {
+                  "id": "a",
+                  "label": "Slow neutron"
+                },
+                {
+                  "id": "b",
+                  "label": "U-235 nucleus"
+                },
+                {
+                  "id": "c",
+                  "label": "Ba-141 + Kr-92"
+                },
+                {
+                  "id": "d",
+                  "label": "3 neutrons"
+                },
+                {
+                  "id": "e",
+                  "label": "More fissions (chain reaction)"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "a",
+                  "to": "b"
+                },
+                {
+                  "from": "b",
+                  "to": "c",
+                  "label": "splits"
+                },
+                {
+                  "from": "b",
+                  "to": "d"
+                },
+                {
+                  "from": "d",
+                  "to": "e"
+                }
+              ]
+            },
+            "alt": "Flow of a neutron splitting uranium-235 into barium and krypton with three neutrons that cause further fissions"
+          },
+          "math": [],
+          "narration": "In nuclear fission, a slow neutron strikes a heavy nucleus such as uranium two thirty five, which splits into two smaller nuclei, releasing a great deal of energy and two or three more neutrons. These neutrons can split further nuclei, setting off a chain reaction. In a reactor the chain reaction is controlled to produce steady power; in an atom bomb it runs out of control.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s08",
+          "layout": "concept",
+          "heading": "Nuclear fusion",
+          "body_md": "**Nuclear fusion:** two light nuclei join to form a heavier nucleus, releasing energy. For example ${}^{2}_{1}\\text{H} + {}^{3}_{1}\\text{H} \\rightarrow {}^{4}_{2}\\text{He} + {}^{1}_{0}n + \\text{energy}$. It needs **extremely high temperatures** (millions of kelvin) so the positively charged nuclei can overcome their repulsion — it powers the **Sun and stars** and the hydrogen bomb. Fusion releases more energy **per unit mass** than fission and produces little long-lived waste, but it has not yet been controlled for power.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Feature",
+                "Fission",
+                "Fusion"
+              ],
+              "rows": [
+                [
+                  "Process",
+                  "Heavy nucleus splits",
+                  "Light nuclei join"
+                ],
+                [
+                  "Fuel",
+                  "U-235, Pu-239",
+                  "Isotopes of hydrogen"
+                ],
+                [
+                  "Conditions",
+                  "Slow neutrons",
+                  "Millions of kelvin"
+                ],
+                [
+                  "Natural example",
+                  "None common",
+                  "Sun and stars"
+                ],
+                [
+                  "Waste",
+                  "Radioactive, long-lived",
+                  "Little"
+                ]
+              ]
+            },
+            "alt": "Table comparing nuclear fission and fusion"
+          },
+          "math": [],
+          "narration": "In nuclear fusion, very light nuclei such as isotopes of hydrogen join to make a heavier nucleus, releasing energy. Because nuclei repel each other, fusion needs temperatures of millions of degrees, which is why it happens naturally only in stars like the Sun. Fusion gives more energy per kilogram than fission and leaves little dangerous waste, but scientists have not yet controlled it to make electricity.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s09",
+          "layout": "example",
+          "heading": "Worked example: balancing nuclear equations",
+          "body_md": "**Problem.** Find $x$ and $y$: (a) ${}^{235}_{92}\\text{U} + {}^{1}_{0}n \\rightarrow {}^{144}_{56}\\text{Ba} + {}^{x}_{36}\\text{Kr} + 3\\,{}^{1}_{0}n$; (b) ${}^{2}_{1}\\text{H} + {}^{2}_{1}\\text{H} \\rightarrow {}^{3}_{y}\\text{He} + {}^{1}_{0}n$.\n\n**(a)** Mass numbers: $235 + 1 = 144 + x + 3$, so $x = 89$. Atomic numbers: $92 = 56 + 36$ ✓.\n\n**(b)** Atomic numbers: $1 + 1 = y + 0$, so $y = 2$. Mass numbers: $2 + 2 = 3 + 1$ ✓.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Equation",
+                "Mass numbers",
+                "Atomic numbers"
+              ],
+              "rows": [
+                [
+                  "(a) fission",
+                  "236 = 144 + 89 + 3",
+                  "92 = 56 + 36"
+                ],
+                [
+                  "(b) fusion",
+                  "4 = 3 + 1",
+                  "2 = 2 + 0"
+                ]
+              ]
+            },
+            "alt": "Table checking mass and atomic numbers in two nuclear equations"
+          },
+          "math": [],
+          "narration": "In every nuclear equation the mass numbers add up to the same total on both sides, and so do the atomic numbers. In the fission equation, two hundred and thirty six must equal one hundred and forty four plus x plus three, so x is eighty nine. In the fusion equation, the atomic numbers two must equal y plus zero, so y is two, which is helium.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s10",
+          "layout": "concept",
+          "heading": "Safe disposal of nuclear waste",
+          "body_md": "Spent fuel from reactors stays dangerously **radioactive for thousands of years** and gives out heat. It must not reach water, soil or air. Methods: store it under water in **cooling ponds** first; then seal it in **glass or steel containers** inside thick concrete; finally bury it **deep underground** in stable rock formations away from water and earthquakes. Low-level waste (gloves, clothing) is packed and buried in shallow sites. Careless disposal would cause cancers and genetic damage in people living nearby for generations.",
+          "bullets": [],
+          "visual": {
+            "kind": "flow",
+            "spec": {
+              "direction": "LR",
+              "nodes": [
+                {
+                  "id": "a",
+                  "label": "Spent fuel"
+                },
+                {
+                  "id": "b",
+                  "label": "Cooling pond (years)"
+                },
+                {
+                  "id": "c",
+                  "label": "Sealed in glass, steel, concrete"
+                },
+                {
+                  "id": "d",
+                  "label": "Deep underground storage"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "a",
+                  "to": "b"
+                },
+                {
+                  "from": "b",
+                  "to": "c"
+                },
+                {
+                  "from": "c",
+                  "to": "d"
+                }
+              ]
+            },
+            "alt": "Flow of nuclear waste from cooling ponds to sealed containers to deep underground storage"
+          },
+          "math": [],
+          "narration": "Used reactor fuel stays dangerously radioactive for thousands of years and keeps giving out heat. First it is cooled under water in ponds for several years. Then it is sealed in glass or steel containers surrounded by concrete, and finally stored deep underground in stable rock, far from water supplies and earthquake zones. This keeps the radiation away from people and the environment.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s11",
+          "layout": "check",
+          "heading": "Quick check: fission and fusion",
+          "body_md": "Distinguish fission from fusion.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Fission splits heavy nuclei; fusion joins light ones.",
+          "check_question_id": "q_icse10phy_ch12_040",
+          "audio": null
+        },
+        {
+          "id": "s12",
+          "layout": "summary",
+          "heading": "Summary: Part 2",
+          "body_md": "",
+          "bullets": [
+            "Uses: Co-60 radiotherapy, I-131 thyroid, P-32 tracer, C-14 dating, leak and thickness tests.",
+            "Hazards: burns, cancer, genetic mutation; background radiation from cosmic rays, rocks, radon, K-40, X-rays.",
+            "Safety: tongs, lead shielding, distance, short time, film badges.",
+            "Fission: heavy nucleus splits, chain reaction, reactors and atom bombs. Fusion: light nuclei join at millions of kelvin, the Sun.",
+            "Nuclear waste: cooling ponds, sealed containers, deep underground storage."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Reaction",
+                "Example"
+              ],
+              "rows": [
+                [
+                  "Fission",
+                  "U-235 + n → Ba + Kr + 3n"
+                ],
+                [
+                  "Fusion",
+                  "²H + ³H → ⁴He + n"
+                ]
+              ]
+            },
+            "alt": "Summary table of fission and fusion"
+          },
+          "math": [],
+          "narration": "Let us sum up Part 2. Radioisotopes are used in medicine, industry, farming and dating, but radiation can cause cancer and genetic damage, so sources are handled with tongs, lead shielding and badges. Fission splits heavy nuclei and can run as a chain reaction; fusion joins light nuclei and powers the Sun. Nuclear waste must be cooled, sealed and stored deep underground.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s13",
+          "layout": "exam-tips",
+          "heading": "Exam tips: Part 2",
+          "body_md": "",
+          "bullets": [
+            "Name the isotope and the use together (Co-60 → cancer therapy).",
+            "For safety questions, give practical steps: tongs, lead, distance, time, badges.",
+            "In fission equations, count the neutrons released when balancing A.",
+            "Fusion needs very high temperature to overcome repulsion between nuclei."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Slip",
+                "Fix"
+              ],
+              "rows": [
+                [
+                  "Fission joins nuclei",
+                  "Fission splits a heavy nucleus"
+                ],
+                [
+                  "Background radiation is man-made only",
+                  "Mostly natural"
+                ],
+                [
+                  "Forgetting the 3 neutrons when balancing",
+                  "Include them in the A total"
+                ]
+              ]
+            },
+            "alt": "Table of three common slips in Part 2 and their fixes"
+          },
+          "math": [],
+          "narration": "Final tips. Always name the isotope with its use. For safety, give practical steps such as tongs, lead shielding, distance, short exposure and film badges. When balancing a fission equation, include the neutrons released. And explain that fusion needs very high temperatures so that the nuclei can overcome their repulsion.",
+          "check_question_id": null,
+          "audio": null
+        }
+      ],
+      "status": "draft",
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    }
+  ],
+  "notes": {
+    "unit": "icse-10-physics-ch12",
+    "version": 1,
+    "title": "Radioactivity and Nuclear Energy — Notes",
+    "language": "en",
+    "sections": [
+      {
+        "heading": "1. The nucleus; Z, A and isotopes",
+        "body_md": "Nucleus: protons (+1, ~1 u) and neutrons (0, ~1 u). **Atomic number** $Z$ = number of protons; **mass number** $A$ = protons + neutrons; neutrons $N = A - Z$. Notation $\\,{}^{A}_{Z}\\text{X}$.\n\n**Isotopes:** same $Z$, different $A$ (different numbers of neutrons); same chemical properties. Examples: protium, deuterium, tritium ($\\,{}^{1}_{1}\\text{H}$, $\\,{}^{2}_{1}\\text{H}$, $\\,{}^{3}_{1}\\text{H}$); carbon-12 and carbon-14.",
+        "key_terms": [
+          {
+            "term": "Atomic number",
+            "definition_md": "The number of protons in the nucleus of an atom."
+          },
+          {
+            "term": "Mass number",
+            "definition_md": "The total number of protons and neutrons in the nucleus."
+          },
+          {
+            "term": "Isotopes",
+            "definition_md": "Atoms of the same element with the same atomic number but different mass numbers."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "N = A - Z",
+            "label": "Number of neutrons"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Nuclide",
+              "Protons",
+              "Neutrons"
+            ],
+            "rows": [
+              [
+                "Na-23",
+                "11",
+                "12"
+              ],
+              [
+                "Co-60",
+                "27",
+                "33"
+              ],
+              [
+                "C-14",
+                "6",
+                "8"
+              ]
+            ]
+          },
+          "alt": "Table of protons and neutrons in three nuclides"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-physics-ch12-t01"
+        ]
+      },
+      {
+        "heading": "2. Radioactivity and the three radiations",
+        "body_md": "**Radioactivity:** spontaneous disintegration of unstable nuclei, emitting α, β or γ radiation; not affected by temperature, pressure or chemical state.\n\n| Property | α | β | γ |\n|---|---|---|---|\n| Nature | Helium nucleus | Fast electron (from nucleus) | Electromagnetic wave |\n| Charge | +2e | −e | 0 |\n| Mass | 4 u | ≈ 1/1840 u | 0 |\n| Speed | ≈ 0.1c | up to 0.99c | c |\n| Ionising power | Highest | Medium | Lowest |\n| Penetrating power | Lowest (paper) | Medium (few mm Al) | Highest (cm of lead) |\n| In electric field | Towards − plate | Towards + plate (more) | Undeflected |",
+        "key_terms": [
+          {
+            "term": "Radioactivity",
+            "definition_md": "The spontaneous disintegration of the nucleus of an unstable atom with the emission of alpha, beta or gamma radiation."
+          },
+          {
+            "term": "Ionising power",
+            "definition_md": "The ability of radiation to knock electrons out of atoms of a gas."
+          }
+        ],
+        "formulas": [],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Radiation",
+              "Stopped by"
+            ],
+            "rows": [
+              [
+                "α",
+                "Paper"
+              ],
+              [
+                "β",
+                "Aluminium (few mm)"
+              ],
+              [
+                "γ",
+                "Lead (several cm)"
+              ]
+            ]
+          },
+          "alt": "Table of absorbers for each radiation"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-physics-ch12-t02"
+        ]
+      },
+      {
+        "heading": "3. Changes in the nucleus",
+        "body_md": "- **α decay:** $A \\to A - 4$, $Z \\to Z - 2$: $\\,{}^{226}_{88}\\text{Ra} \\rightarrow {}^{222}_{86}\\text{Rn} + {}^{4}_{2}\\text{He}$.\n- **β decay:** a neutron becomes a proton + electron; $A$ unchanged, $Z \\to Z + 1$: $\\,{}^{14}_{6}\\text{C} \\rightarrow {}^{14}_{7}\\text{N} + {}^{0}_{-1}e$.\n- **γ emission:** no change in $A$ or $Z$ (the nucleus loses excess energy).\n- In every equation, totals of $A$ and of $Z$ balance on both sides.",
+        "key_terms": [
+          {
+            "term": "Alpha decay",
+            "definition_md": "Emission of an alpha particle, which lowers the mass number by 4 and the atomic number by 2."
+          },
+          {
+            "term": "Beta decay",
+            "definition_md": "Emission of an electron from the nucleus, which raises the atomic number by 1 and leaves the mass number unchanged."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "{}^{A}_{Z}\\text{X} \\rightarrow {}^{A-4}_{Z-2}\\text{Y} + {}^{4}_{2}\\text{He}",
+            "label": "Alpha decay"
+          },
+          {
+            "latex": "{}^{A}_{Z}\\text{X} \\rightarrow {}^{A}_{Z+1}\\text{Y} + {}^{0}_{-1}e",
+            "label": "Beta decay"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Emission",
+              "ΔA",
+              "ΔZ"
+            ],
+            "rows": [
+              [
+                "α",
+                "−4",
+                "−2"
+              ],
+              [
+                "β",
+                "0",
+                "+1"
+              ],
+              [
+                "γ",
+                "0",
+                "0"
+              ]
+            ]
+          },
+          "alt": "Table of changes in A and Z"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-physics-ch12-t03"
+        ]
+      },
+      {
+        "heading": "4. Uses, hazards and safety",
+        "body_md": "**Uses:** Co-60 (radiotherapy), I-131 (thyroid), Na-24 (blood circulation studies), P-32 (tracer in agriculture), C-14 (dating), γ sources (sterilising instruments, checking welds, pipe leaks), β sources (thickness gauges).\n\n**Harmful effects:** burns, radiation sickness, cancer (leukaemia), genetic mutations.\n\n**Background radiation:** cosmic rays, radioactive rocks and soil, radon gas, K-40 in food and the body, medical X-rays, fallout.\n\n**Safety:** long tongs, lead containers and aprons, distance, short exposure time, film badges (dosimeters), no eating near sources. **X-rays** are also ionising; **radioactive fallout** is radioactive dust spread by nuclear explosions or accidents.",
+        "key_terms": [
+          {
+            "term": "Background radiation",
+            "definition_md": "Low-level radiation always present in the environment from natural and man-made sources."
+          },
+          {
+            "term": "Radioisotope",
+            "definition_md": "A radioactive isotope of an element."
+          }
+        ],
+        "formulas": [],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Isotope",
+              "Use"
+            ],
+            "rows": [
+              [
+                "Co-60",
+                "Cancer therapy"
+              ],
+              [
+                "I-131",
+                "Thyroid"
+              ],
+              [
+                "C-14",
+                "Dating"
+              ]
+            ]
+          },
+          "alt": "Table of three radioisotopes and their uses"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-physics-ch12-t04"
+        ]
+      },
+      {
+        "heading": "5. Fission, fusion and nuclear waste",
+        "body_md": "**Fission:** a heavy nucleus splits into two lighter nuclei when struck by a slow neutron, releasing energy and 2–3 neutrons; chain reaction (controlled in reactors, uncontrolled in atom bombs). $\\,{}^{235}_{92}\\text{U} + {}^{1}_{0}n \\rightarrow {}^{141}_{56}\\text{Ba} + {}^{92}_{36}\\text{Kr} + 3\\,{}^{1}_{0}n + \\text{energy}$.\n\n**Fusion:** light nuclei join to form a heavier nucleus at extremely high temperatures, releasing energy (Sun, stars, hydrogen bomb). $\\,{}^{2}_{1}\\text{H} + {}^{3}_{1}\\text{H} \\rightarrow {}^{4}_{2}\\text{He} + {}^{1}_{0}n + \\text{energy}$.\n\nEnergy comes from a loss of mass ($E = mc^{2}$). **Nuclear waste:** cool in ponds, seal in glass/steel and concrete, store deep underground; it remains radioactive for thousands of years.",
+        "key_terms": [
+          {
+            "term": "Nuclear fission",
+            "definition_md": "The splitting of a heavy nucleus into two lighter nuclei with the release of energy."
+          },
+          {
+            "term": "Nuclear fusion",
+            "definition_md": "The joining of light nuclei to form a heavier nucleus with the release of energy."
+          },
+          {
+            "term": "Chain reaction",
+            "definition_md": "A self-sustaining series of fissions in which neutrons from one fission cause further fissions."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "E = mc^{2}",
+            "label": "Mass–energy equivalence"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Fission",
+              "Fusion"
+            ],
+            "rows": [
+              [
+                "Heavy splits",
+                "Light join"
+              ],
+              [
+                "Reactors",
+                "Sun"
+              ]
+            ]
+          },
+          "alt": "Table contrasting fission and fusion"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-physics-ch12-t05"
+        ]
+      }
+    ],
+    "exam_tips_md": "**Common mistakes**\n- Saying β particles come from the electron shells.\n- Getting the change in Z wrong for β decay.\n- Confusing fission (splitting) with fusion (joining).\n- Forgetting the neutrons when balancing fission equations.\n\n**How marks are usually awarded**\n- Decay equations (1–2 marks): correct A and Z, symbol of the radiation.\n- Comparisons (1 mark per property).\n- Uses and safety (1 mark each): named isotope or precaution with a reason.",
+    "status": "draft",
+    "provenance": {
+      "origin": "human",
+      "template_version": null,
+      "model": null,
+      "generated_at": "2026-11-01",
+      "author": "claude-opus-5-5 (subject-producer)"
+    }
+  },
+  "flashcards": {
+    "unit": "icse-10-physics-ch12",
+    "version": 1,
+    "language": "en",
+    "cards": [
+      {
+        "id": "f01",
+        "front_md": "Atomic number Z?",
+        "back_md": "Number of protons.",
+        "tag": "definition",
+        "topic_id": "icse-10-physics-ch12-t01"
+      },
+      {
+        "id": "f02",
+        "front_md": "Mass number A?",
+        "back_md": "Protons + neutrons.",
+        "tag": "definition",
+        "topic_id": "icse-10-physics-ch12-t01"
+      },
+      {
+        "id": "f03",
+        "front_md": "Neutrons in a nuclide?",
+        "back_md": "A − Z.",
+        "tag": "formula",
+        "topic_id": "icse-10-physics-ch12-t01"
+      },
+      {
+        "id": "f04",
+        "front_md": "Isotopes?",
+        "back_md": "Same Z, different A.",
+        "tag": "definition",
+        "topic_id": "icse-10-physics-ch12-t01"
+      },
+      {
+        "id": "f05",
+        "front_md": "Isotopes of hydrogen?",
+        "back_md": "Protium, deuterium, tritium.",
+        "tag": "fact",
+        "topic_id": "icse-10-physics-ch12-t01"
+      },
+      {
+        "id": "f06",
+        "front_md": "Radioactivity?",
+        "back_md": "Spontaneous disintegration of unstable nuclei.",
+        "tag": "definition",
+        "topic_id": "icse-10-physics-ch12-t02"
+      },
+      {
+        "id": "f07",
+        "front_md": "Does heating change the rate of radioactivity?",
+        "back_md": "No.",
+        "tag": "fact",
+        "topic_id": "icse-10-physics-ch12-t02"
+      },
+      {
+        "id": "f08",
+        "front_md": "Alpha particle?",
+        "back_md": "Helium nucleus, +2e, 4 u.",
+        "tag": "fact",
+        "topic_id": "icse-10-physics-ch12-t02"
+      },
+      {
+        "id": "f09",
+        "front_md": "Beta particle?",
+        "back_md": "Fast electron from the nucleus.",
+        "tag": "fact",
+        "topic_id": "icse-10-physics-ch12-t02"
+      },
+      {
+        "id": "f10",
+        "front_md": "Gamma ray?",
+        "back_md": "Electromagnetic wave, no charge or mass.",
+        "tag": "fact",
+        "topic_id": "icse-10-physics-ch12-t02"
+      },
+      {
+        "id": "f11",
+        "front_md": "Most ionising radiation?",
+        "back_md": "Alpha.",
+        "tag": "fact",
+        "topic_id": "icse-10-physics-ch12-t02"
+      },
+      {
+        "id": "f12",
+        "front_md": "Most penetrating radiation?",
+        "back_md": "Gamma.",
+        "tag": "fact",
+        "topic_id": "icse-10-physics-ch12-t02"
+      },
+      {
+        "id": "f13",
+        "front_md": "What stops beta?",
+        "back_md": "A few mm of aluminium.",
+        "tag": "fact",
+        "topic_id": "icse-10-physics-ch12-t02"
+      },
+      {
+        "id": "f14",
+        "front_md": "Undeflected in a field?",
+        "back_md": "Gamma.",
+        "tag": "fact",
+        "topic_id": "icse-10-physics-ch12-t02"
+      },
+      {
+        "id": "f15",
+        "front_md": "Alpha decay changes?",
+        "back_md": "A − 4, Z − 2.",
+        "tag": "formula",
+        "topic_id": "icse-10-physics-ch12-t03"
+      },
+      {
+        "id": "f16",
+        "front_md": "Beta decay changes?",
+        "back_md": "A same, Z + 1.",
+        "tag": "formula",
+        "topic_id": "icse-10-physics-ch12-t03"
+      },
+      {
+        "id": "f17",
+        "front_md": "Gamma emission changes?",
+        "back_md": "Neither A nor Z.",
+        "tag": "fact",
+        "topic_id": "icse-10-physics-ch12-t03"
+      },
+      {
+        "id": "f18",
+        "front_md": "Origin of beta particle?",
+        "back_md": "A neutron changes into a proton and an electron.",
+        "tag": "concept",
+        "topic_id": "icse-10-physics-ch12-t03"
+      },
+      {
+        "id": "f19",
+        "front_md": "Co-60 used for?",
+        "back_md": "Cancer radiotherapy.",
+        "tag": "fact",
+        "topic_id": "icse-10-physics-ch12-t04"
+      },
+      {
+        "id": "f20",
+        "front_md": "C-14 used for?",
+        "back_md": "Dating ancient remains.",
+        "tag": "fact",
+        "topic_id": "icse-10-physics-ch12-t04"
+      },
+      {
+        "id": "f21",
+        "front_md": "I-131 used for?",
+        "back_md": "Thyroid diagnosis and treatment.",
+        "tag": "fact",
+        "topic_id": "icse-10-physics-ch12-t04"
+      },
+      {
+        "id": "f22",
+        "front_md": "Two sources of background radiation?",
+        "back_md": "Cosmic rays; radon from rocks (also K-40).",
+        "tag": "fact",
+        "topic_id": "icse-10-physics-ch12-t04"
+      },
+      {
+        "id": "f23",
+        "front_md": "Two safety precautions?",
+        "back_md": "Handle with tongs; store in lead containers.",
+        "tag": "fact",
+        "topic_id": "icse-10-physics-ch12-t04"
+      },
+      {
+        "id": "f24",
+        "front_md": "What is a film badge for?",
+        "back_md": "Recording radiation dose received by workers.",
+        "tag": "fact",
+        "topic_id": "icse-10-physics-ch12-t04"
+      },
+      {
+        "id": "f25",
+        "front_md": "Nuclear fission?",
+        "back_md": "Heavy nucleus splits into two lighter nuclei with energy.",
+        "tag": "definition",
+        "topic_id": "icse-10-physics-ch12-t05"
+      },
+      {
+        "id": "f26",
+        "front_md": "Nuclear fusion?",
+        "back_md": "Light nuclei join to form a heavier one with energy.",
+        "tag": "definition",
+        "topic_id": "icse-10-physics-ch12-t05"
+      },
+      {
+        "id": "f27",
+        "front_md": "Chain reaction?",
+        "back_md": "Neutrons from one fission cause more fissions.",
+        "tag": "definition",
+        "topic_id": "icse-10-physics-ch12-t05"
+      },
+      {
+        "id": "f28",
+        "front_md": "Why does fusion need high temperature?",
+        "back_md": "To overcome repulsion between positive nuclei.",
+        "tag": "concept",
+        "topic_id": "icse-10-physics-ch12-t05"
+      },
+      {
+        "id": "f29",
+        "front_md": "Source of the Sun’s energy?",
+        "back_md": "Nuclear fusion of hydrogen.",
+        "tag": "fact",
+        "topic_id": "icse-10-physics-ch12-t05"
+      },
+      {
+        "id": "f30",
+        "front_md": "Exam tip: decay equations",
+        "back_md": "Balance both A and Z.",
+        "tag": "exam-tip",
+        "topic_id": "icse-10-physics-ch12-t03"
+      }
+    ],
+    "status": "draft",
+    "provenance": {
+      "origin": "human",
+      "template_version": null,
+      "model": null,
+      "generated_at": "2026-11-01",
+      "author": "claude-opus-5-5 (subject-producer)"
+    }
+  },
+  "questions": [
+    {
+      "id": "q_icse10phy_ch12_001",
+      "unit": "icse-10-physics-ch12",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A nucleus of cobalt is written ${}^{60}_{27}\\text{Co}$. It contains:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "33 protons and 27 neutrons"
+        },
+        {
+          "id": "b",
+          "text_md": "27 protons and 60 neutrons"
+        },
+        {
+          "id": "c",
+          "text_md": "27 protons and 33 neutrons"
+        },
+        {
+          "id": "d",
+          "text_md": "60 protons and 27 neutrons"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Protons = Z = 27; neutrons = A − Z = 60 − 27 = 33 — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch12-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch12_002",
+      "unit": "icse-10-physics-ch12",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which pair are isotopes of the same element?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "${}^{40}_{18}\\text{Ar}$ and ${}^{40}_{20}\\text{Ca}$"
+        },
+        {
+          "id": "b",
+          "text_md": "${}^{35}_{17}\\text{Cl}$ and ${}^{37}_{17}\\text{Cl}$"
+        },
+        {
+          "id": "c",
+          "text_md": "${}^{14}_{6}\\text{C}$ and ${}^{14}_{7}\\text{N}$"
+        },
+        {
+          "id": "d",
+          "text_md": "${}^{23}_{11}\\text{Na}$ and ${}^{24}_{12}\\text{Mg}$"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Same atomic number (17), different mass numbers — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch12-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch12_003",
+      "unit": "icse-10-physics-ch12",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Carbon-12 and carbon-14 have the same chemical properties because they have the same:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "number of neutrons"
+        },
+        {
+          "id": "b",
+          "text_md": "mass number"
+        },
+        {
+          "id": "c",
+          "text_md": "number of protons and electrons"
+        },
+        {
+          "id": "d",
+          "text_md": "nuclear stability"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Chemistry depends on electrons, fixed by Z — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-physics-ch12-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch12_004",
+      "unit": "icse-10-physics-ch12",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "How many neutrons are present in a nucleus of sodium-24 (Z = 11)?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 13,
+        "tolerance": 0,
+        "unit": null
+      },
+      "solution_md": "Neutrons $= A - Z = 24 - 11 = 13$.",
+      "marking_scheme": [
+        {
+          "step": "13",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch12-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch12_005",
+      "unit": "icse-10-physics-ch12",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? Deuterium and tritium are isotopes of hydrogen with different numbers of protons.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "f"
+        ]
+      },
+      "solution_md": "False: they have the same number of protons (1) but different numbers of neutrons (1 and 2).",
+      "marking_scheme": [
+        {
+          "step": "False, with the correction",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-physics-ch12-t01"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch12_006",
+      "unit": "icse-10-physics-ch12",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "The number of protons in the nucleus of an atom is called its ___ number.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "atomic"
+            ]
+          }
+        ]
+      },
+      "solution_md": "**Atomic** number.",
+      "marking_scheme": [
+        {
+          "step": "Blank 1: \"atomic\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-physics-ch12-t01"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch12_007",
+      "unit": "icse-10-physics-ch12",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Define isotopes. State the number of protons and neutrons in ${}^{16}_{8}\\text{O}$ and ${}^{18}_{8}\\text{O}$.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Isotopes are atoms of one element having the same atomic number but different mass numbers. Oxygen-16: 8 protons, 8 neutrons; oxygen-18: 8 protons, 10 neutrons."
+      },
+      "solution_md": "Same Z, different A; 8/8 and 8/10.",
+      "marking_scheme": [
+        {
+          "step": "Definition",
+          "marks": 1
+        },
+        {
+          "step": "Counts",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch12-t01"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch12_008",
+      "unit": "icse-10-physics-ch12",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which radiation has the greatest ionising power but is stopped by a sheet of paper?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Beta particles"
+        },
+        {
+          "id": "b",
+          "text_md": "Gamma rays"
+        },
+        {
+          "id": "c",
+          "text_md": "X-rays"
+        },
+        {
+          "id": "d",
+          "text_md": "Alpha particles"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "α: most ionising, least penetrating — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-physics-ch12-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch12_009",
+      "unit": "icse-10-physics-ch12",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A beam containing α, β and γ radiation passes between two oppositely charged plates. The radiation bent most strongly is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "β, towards the positive plate"
+        },
+        {
+          "id": "b",
+          "text_md": "α, towards the positive plate"
+        },
+        {
+          "id": "c",
+          "text_md": "γ, towards the negative plate"
+        },
+        {
+          "id": "d",
+          "text_md": "α, towards the negative plate"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "β particles are charged and very light, so they bend most, towards the + plate — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch12-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch12_010",
+      "unit": "icse-10-physics-ch12",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Gamma radiation differs from alpha and beta radiation because gamma radiation:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "is a stream of helium nuclei"
+        },
+        {
+          "id": "b",
+          "text_md": "is an electromagnetic wave with no charge and no mass"
+        },
+        {
+          "id": "c",
+          "text_md": "is a stream of electrons"
+        },
+        {
+          "id": "d",
+          "text_md": "is stopped by a thin sheet of paper"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-physics-ch12-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch12_011",
+      "unit": "icse-10-physics-ch12",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A sample of radium salt is heated strongly in a furnace. Its radioactivity:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "increases, because the nuclei move faster"
+        },
+        {
+          "id": "b",
+          "text_md": "decreases, because the salt decomposes"
+        },
+        {
+          "id": "c",
+          "text_md": "stops completely"
+        },
+        {
+          "id": "d",
+          "text_md": "is unchanged, because radioactivity is a nuclear process"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Physical and chemical conditions do not affect the nucleus — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-physics-ch12-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch12_012",
+      "unit": "icse-10-physics-ch12",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Alpha particles have a very short range in air.\n\n**Reason (R):** Alpha particles ionise the air strongly and lose their energy quickly.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Both are true, and R explains A — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-physics-ch12-t02"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch12_013",
+      "unit": "icse-10-physics-ch12",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Beta particles are deflected more than alpha particles in the same electric field.\n\n**Reason (R):** Beta particles carry a larger charge than alpha particles.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "A is true; R is false: β carries −e, α carries +2e; β bends more because it is far lighter — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-physics-ch12-t02"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch12_014",
+      "unit": "icse-10-physics-ch12",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? Gamma rays are not deflected by a magnetic field.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "t"
+        ]
+      },
+      "solution_md": "True: they carry no charge.",
+      "marking_scheme": [
+        {
+          "step": "True",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-physics-ch12-t02"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch12_015",
+      "unit": "icse-10-physics-ch12",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "An alpha particle is the nucleus of a ___ atom.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "helium"
+            ]
+          }
+        ]
+      },
+      "solution_md": "**Helium**.",
+      "marking_scheme": [
+        {
+          "step": "Blank 1: \"helium\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-physics-ch12-t02"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch12_016",
+      "unit": "icse-10-physics-ch12",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "Of α, β and γ radiations, the most penetrating is ___.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "γ",
+              "gamma",
+              "gamma rays"
+            ]
+          }
+        ]
+      },
+      "solution_md": "**γ** (gamma).",
+      "marking_scheme": [
+        {
+          "step": "Blank 1: \"γ\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-physics-ch12-t02"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch12_017",
+      "unit": "icse-10-physics-ch12",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Define radioactivity.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "The spontaneous disintegration of the nuclei of unstable atoms with the emission of alpha, beta or gamma radiation."
+      },
+      "solution_md": "Definition.",
+      "marking_scheme": [
+        {
+          "step": "Definition with “spontaneous”",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-physics-ch12-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch12_018",
+      "unit": "icse-10-physics-ch12",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Compare α particles and γ rays with respect to (a) charge, (b) mass, (c) ionising power and (d) penetrating power.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) α: +2e; γ: none. (b) α: 4 u; γ: none. (c) α: very high; γ: very low. (d) α: very low (stopped by paper); γ: very high (several cm of lead)."
+      },
+      "solution_md": "Four comparisons.",
+      "marking_scheme": [
+        {
+          "step": "(a) and (b)",
+          "marks": 1
+        },
+        {
+          "step": "(c) and (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-physics-ch12-t02"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch12_019",
+      "unit": "icse-10-physics-ch12",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Radiation X passes through paper and 1 cm of aluminium and is not bent between charged plates. Radiation Y is stopped by paper and bends slightly towards the negative plate. Radiation Z passes through paper, is stopped by 5 mm of aluminium and bends sharply towards the positive plate. Identify X, Y and Z with a reason for each.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "X: γ rays (very penetrating, uncharged). Y: α particles (least penetrating, positive and heavy, so small deflection towards −). Z: β particles (stopped by aluminium, negative and light, so large deflection towards +)."
+      },
+      "solution_md": "γ, α, β.",
+      "marking_scheme": [
+        {
+          "step": "X",
+          "marks": 1
+        },
+        {
+          "step": "Y",
+          "marks": 1
+        },
+        {
+          "step": "Z",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-physics-ch12-t02"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch12_020",
+      "unit": "icse-10-physics-ch12",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Polonium-210, ${}^{210}_{84}\\text{Po}$, emits an α particle. The new nucleus has:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "A = 210, Z = 85"
+        },
+        {
+          "id": "b",
+          "text_md": "A = 206, Z = 84"
+        },
+        {
+          "id": "c",
+          "text_md": "A = 206, Z = 82"
+        },
+        {
+          "id": "d",
+          "text_md": "A = 208, Z = 82"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "α emission: $A - 4 = 206$, $Z - 2 = 82$ (lead) — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch12-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch12_021",
+      "unit": "icse-10-physics-ch12",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Strontium-90 (Z = 38) is a β emitter. The daughter nucleus has:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "A = 90, Z = 39"
+        },
+        {
+          "id": "b",
+          "text_md": "A = 90, Z = 37"
+        },
+        {
+          "id": "c",
+          "text_md": "A = 86, Z = 36"
+        },
+        {
+          "id": "d",
+          "text_md": "A = 89, Z = 39"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "β emission: A unchanged, $Z + 1 = 39$ (yttrium) — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch12-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch12_022",
+      "unit": "icse-10-physics-ch12",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "When a nucleus emits a γ ray only, its:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "mass number and atomic number both stay the same"
+        },
+        {
+          "id": "b",
+          "text_md": "atomic number increases by 1"
+        },
+        {
+          "id": "c",
+          "text_md": "mass number decreases by 4"
+        },
+        {
+          "id": "d",
+          "text_md": "atomic number decreases by 2"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "γ emission only releases energy — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-physics-ch12-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch12_023",
+      "unit": "icse-10-physics-ch12",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "Thorium-232 (Z = 90) emits one α particle followed by two β particles. What is the atomic number of the final nucleus?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 90,
+        "tolerance": 0,
+        "unit": null
+      },
+      "solution_md": "After α: $Z = 90 - 2 = 88$; after two β: $Z = 88 + 1 + 1 = 90$ (A = 228).",
+      "marking_scheme": [
+        {
+          "step": "90",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch12-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch12_024",
+      "unit": "icse-10-physics-ch12",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "Uranium-238 (Z = 92) emits three α particles in succession. What is the mass number of the resulting nucleus?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 226,
+        "tolerance": 0,
+        "unit": null
+      },
+      "solution_md": "Each α lowers A by 4: $A = 238 - 3 \\times 4 = 226$.",
+      "marking_scheme": [
+        {
+          "step": "226",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch12-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch12_025",
+      "unit": "icse-10-physics-ch12",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? In β decay, a neutron in the nucleus changes into a proton and an electron, and the electron is emitted.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "t"
+        ]
+      },
+      "solution_md": "True.",
+      "marking_scheme": [
+        {
+          "step": "True",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-physics-ch12-t03"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch12_026",
+      "unit": "icse-10-physics-ch12",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** After α emission, the daughter element lies two places before the parent in the periodic table.\n\n**Reason (R):** α emission reduces the atomic number by 2.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Both are true, and R explains A — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch12-t03"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch12_027",
+      "unit": "icse-10-physics-ch12",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "In β decay the atomic number of the nucleus increases by ___. (Write a number.)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "1",
+              "one"
+            ]
+          }
+        ]
+      },
+      "solution_md": "**1**.",
+      "marking_scheme": [
+        {
+          "step": "Blank 1: \"1\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-physics-ch12-t03"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch12_028",
+      "unit": "icse-10-physics-ch12",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Complete: ${}^{226}_{88}\\text{Ra} \\rightarrow {}^{?}_{?}\\text{Rn} + {}^{4}_{2}\\text{He}$.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "${}^{222}_{86}\\text{Rn}$."
+      },
+      "solution_md": "A = 222, Z = 86.",
+      "marking_scheme": [
+        {
+          "step": "A and Z",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch12-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch12_029",
+      "unit": "icse-10-physics-ch12",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write balanced equations for (a) the β decay of ${}^{24}_{11}\\text{Na}$ to magnesium and (b) the α decay of ${}^{238}_{92}\\text{U}$ to thorium.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) ${}^{24}_{11}\\text{Na} \\rightarrow {}^{24}_{12}\\text{Mg} + {}^{0}_{-1}e$. (b) ${}^{238}_{92}\\text{U} \\rightarrow {}^{234}_{90}\\text{Th} + {}^{4}_{2}\\text{He}$."
+      },
+      "solution_md": "Two balanced equations.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch12-t03"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch12_030",
+      "unit": "icse-10-physics-ch12",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which radioisotope is used in hospitals as a source of γ rays to destroy cancer cells?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Carbon-14"
+        },
+        {
+          "id": "b",
+          "text_md": "Phosphorus-32"
+        },
+        {
+          "id": "c",
+          "text_md": "Iodine-131"
+        },
+        {
+          "id": "d",
+          "text_md": "Cobalt-60"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Co-60 is used in radiotherapy — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-physics-ch12-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch12_031",
+      "unit": "icse-10-physics-ch12",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A laboratory assistant must move a small radioactive source from its storage box. The safest way is to:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "pick it up with bare hands, since the dose is small"
+        },
+        {
+          "id": "b",
+          "text_md": "lift it with long tongs, keep it away from the body and return it quickly to its lead box"
+        },
+        {
+          "id": "c",
+          "text_md": "wrap it in paper to stop all its radiation"
+        },
+        {
+          "id": "d",
+          "text_md": "carry it in a pocket to keep it safe"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Distance, short time and shielding — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch12-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch12_032",
+      "unit": "icse-10-physics-ch12",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which is a NATURAL source of background radiation?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "A hospital X-ray machine"
+        },
+        {
+          "id": "b",
+          "text_md": "Fallout from a nuclear test"
+        },
+        {
+          "id": "c",
+          "text_md": "A smoke-detector source"
+        },
+        {
+          "id": "d",
+          "text_md": "Radon gas seeping from granite rocks"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Radon comes from radioactive decay in rocks — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-physics-ch12-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch12_033",
+      "unit": "icse-10-physics-ch12",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A factory checks the thickness of aluminium foil by placing a radioactive source on one side and a detector on the other. The best type of source is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "α, because it passes through thick metal"
+        },
+        {
+          "id": "b",
+          "text_md": "β, because the amount absorbed changes noticeably with small changes in thickness"
+        },
+        {
+          "id": "c",
+          "text_md": "γ, because it is easily stopped by thin foil"
+        },
+        {
+          "id": "d",
+          "text_md": "α, because it is not ionising"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "α would be fully stopped; γ would hardly be affected — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-physics-ch12-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch12_034",
+      "unit": "icse-10-physics-ch12",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Exposure to radiation can cause genetic disorders in later generations.\n\n**Reason (R):** Radiation can damage the DNA in reproductive cells.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Both are true, and R explains A — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-physics-ch12-t04"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch12_035",
+      "unit": "icse-10-physics-ch12",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? X-rays come from the nucleus of an atom, like gamma rays.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "f"
+        ]
+      },
+      "solution_md": "False: X-rays are produced outside the nucleus (by fast electrons hitting a target), though both are ionising electromagnetic waves.",
+      "marking_scheme": [
+        {
+          "step": "False, with the correction",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-physics-ch12-t04"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch12_036",
+      "unit": "icse-10-physics-ch12",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "Workers in nuclear plants wear a ___ badge to record the radiation dose they receive.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "film",
+              "dosimeter"
+            ]
+          }
+        ]
+      },
+      "solution_md": "**Film** badge (dosimeter).",
+      "marking_scheme": [
+        {
+          "step": "Blank 1: \"film\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-physics-ch12-t04"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch12_037",
+      "unit": "icse-10-physics-ch12",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Give one use of a radioisotope in (a) medicine, (b) agriculture, (c) industry and (d) archaeology.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Co-60 to treat cancer (or I-131 for the thyroid). (b) P-32 as a tracer to study fertiliser uptake. (c) γ sources to find flaws in welds or leaks in pipes. (d) C-14 to date ancient wood and bones."
+      },
+      "solution_md": "Four uses.",
+      "marking_scheme": [
+        {
+          "step": "(a) and (b)",
+          "marks": 1
+        },
+        {
+          "step": "(c) and (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-physics-ch12-t04"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch12_038",
+      "unit": "icse-10-physics-ch12",
+      "language": "en",
+      "type": "short",
+      "stem_md": "State four safety precautions to be taken while handling radioactive materials.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Handle sources with long tongs; store them in thick lead containers; wear lead aprons and film badges; keep exposure time short and distance large; never eat or drink in the laboratory (any four)."
+      },
+      "solution_md": "Four precautions.",
+      "marking_scheme": [
+        {
+          "step": "Two precautions",
+          "marks": 1
+        },
+        {
+          "step": "Two more precautions",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-physics-ch12-t04"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch12_039",
+      "unit": "icse-10-physics-ch12",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Name two sources of background radiation.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Cosmic rays from space; radioactive rocks and soil (radon gas); also potassium-40 in food, medical X-rays."
+      },
+      "solution_md": "Any two.",
+      "marking_scheme": [
+        {
+          "step": "Two sources",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-physics-ch12-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch12_040",
+      "unit": "icse-10-physics-ch12",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "In a nuclear power station, energy is obtained from:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "the fusion of hydrogen nuclei at room temperature"
+        },
+        {
+          "id": "b",
+          "text_md": "the burning of uranium in oxygen"
+        },
+        {
+          "id": "c",
+          "text_md": "the fission of uranium-235 nuclei by slow neutrons in a controlled chain reaction"
+        },
+        {
+          "id": "d",
+          "text_md": "the radioactive decay of carbon-14"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Controlled fission chain reaction — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-physics-ch12-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch12_041",
+      "unit": "icse-10-physics-ch12",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "In the fission ${}^{235}_{92}\\text{U} + {}^{1}_{0}n \\rightarrow {}^{141}_{56}\\text{Ba} + {}^{x}_{36}\\text{Kr} + 3\\,{}^{1}_{0}n$, the value of x is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "92"
+        },
+        {
+          "id": "b",
+          "text_md": "95"
+        },
+        {
+          "id": "c",
+          "text_md": "94"
+        },
+        {
+          "id": "d",
+          "text_md": "89"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Mass numbers: $235 + 1 = 141 + x + 3$, so $x = 92$ — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch12-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch12_042",
+      "unit": "icse-10-physics-ch12",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "The Sun produces its energy mainly by:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "fission of uranium nuclei"
+        },
+        {
+          "id": "b",
+          "text_md": "fusion of hydrogen nuclei into helium at very high temperature"
+        },
+        {
+          "id": "c",
+          "text_md": "burning of coal and gas"
+        },
+        {
+          "id": "d",
+          "text_md": "radioactive decay of radium"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-physics-ch12-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch12_043",
+      "unit": "icse-10-physics-ch12",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Nuclear fusion needs a temperature of millions of kelvin because:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "the nuclei must first be melted"
+        },
+        {
+          "id": "b",
+          "text_md": "neutrons are produced only at high temperature"
+        },
+        {
+          "id": "c",
+          "text_md": "the positively charged nuclei must move fast enough to overcome their electrical repulsion"
+        },
+        {
+          "id": "d",
+          "text_md": "the electrons must be removed by chemical reactions"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-physics-ch12-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch12_044",
+      "unit": "icse-10-physics-ch12",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "In the fusion reaction ²₁H + ²₁H → ³ᵧHe + ¹₀n, what is the value of y (the atomic number of the helium nucleus formed)?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 2,
+        "tolerance": 0,
+        "unit": null
+      },
+      "solution_md": "Atomic numbers balance: $1 + 1 = y + 0$, so $y = 2$.",
+      "marking_scheme": [
+        {
+          "step": "2",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch12-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch12_045",
+      "unit": "icse-10-physics-ch12",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** A chain reaction can take place in uranium-235.\n\n**Reason (R):** Each fission of uranium-235 releases two or three neutrons, which can cause further fissions.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Both are true, and R explains A — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-physics-ch12-t05"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch12_046",
+      "unit": "icse-10-physics-ch12",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Nuclear waste can be safely dumped in rivers after a few days.\n\n**Reason (R):** Many products of fission remain radioactive for thousands of years.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "A is false: waste must be sealed and stored deep underground; R is true — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-physics-ch12-t05"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch12_047",
+      "unit": "icse-10-physics-ch12",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? Fusion releases more energy per kilogram of fuel than fission.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "t"
+        ]
+      },
+      "solution_md": "True.",
+      "marking_scheme": [
+        {
+          "step": "True",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-physics-ch12-t05"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch12_048",
+      "unit": "icse-10-physics-ch12",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "A self-sustaining series of fissions, in which neutrons from one fission cause further fissions, is called a ___ reaction.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "chain"
+            ]
+          }
+        ]
+      },
+      "solution_md": "**Chain** reaction.",
+      "marking_scheme": [
+        {
+          "step": "Blank 1: \"chain\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-physics-ch12-t05"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch12_049",
+      "unit": "icse-10-physics-ch12",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Define nuclear fusion.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "The process in which two light nuclei combine to form a heavier nucleus, with the release of a large amount of energy."
+      },
+      "solution_md": "Definition.",
+      "marking_scheme": [
+        {
+          "step": "Definition",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-physics-ch12-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch12_050",
+      "unit": "icse-10-physics-ch12",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Distinguish nuclear fission from nuclear fusion with respect to (a) what happens to the nuclei and (b) the conditions needed. Give one example of each.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Fission: a heavy nucleus (U-235) splits into two lighter nuclei; fusion: light nuclei (isotopes of hydrogen) join to form a heavier one (helium). (b) Fission: bombardment by slow neutrons; fusion: extremely high temperature (millions of kelvin). Examples: nuclear reactor or atom bomb (fission); the Sun or hydrogen bomb (fusion)."
+      },
+      "solution_md": "Split vs join; neutrons vs high temperature.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b) with examples",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-physics-ch12-t05"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch12_051",
+      "unit": "icse-10-physics-ch12",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Why must nuclear waste be disposed of with great care? Describe one method of safe disposal.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "It remains strongly radioactive (and hot) for thousands of years; leaks into soil, water or air would cause cancers and genetic damage. It is first cooled in water ponds, then sealed in glass or steel containers encased in concrete and buried deep underground in stable rock away from water."
+      },
+      "solution_md": "Long-lived radioactivity; sealed deep storage.",
+      "marking_scheme": [
+        {
+          "step": "Reason",
+          "marks": 1
+        },
+        {
+          "step": "Method",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-physics-ch12-t05"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch12_052",
+      "unit": "icse-10-physics-ch12",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "How many neutrons are there in a nucleus of uranium-235 (Z = 92)?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 143,
+        "tolerance": 0,
+        "unit": null
+      },
+      "solution_md": "Neutrons $= A - Z = 235 - 92 = 143$.",
+      "marking_scheme": [
+        {
+          "step": "143",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch12-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch12_053",
+      "unit": "icse-10-physics-ch12",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Bismuth-210 (Z = 83) emits a β particle. The product is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "polonium-210 (Z = 84)"
+        },
+        {
+          "id": "b",
+          "text_md": "lead-210 (Z = 82)"
+        },
+        {
+          "id": "c",
+          "text_md": "thallium-206 (Z = 81)"
+        },
+        {
+          "id": "d",
+          "text_md": "bismuth-206 (Z = 83)"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "β emission: A unchanged, Z + 1 = 84 — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch12-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch12_054",
+      "unit": "icse-10-physics-ch12",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A nucleus formed by α emission has A = 222 and Z = 86. The parent nucleus had:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "A = 218, Z = 84"
+        },
+        {
+          "id": "b",
+          "text_md": "A = 222, Z = 87"
+        },
+        {
+          "id": "c",
+          "text_md": "A = 226, Z = 84"
+        },
+        {
+          "id": "d",
+          "text_md": "A = 226, Z = 88"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Add back the α particle: A + 4, Z + 2 — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch12-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch12_055",
+      "unit": "icse-10-physics-ch12",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "Uranium-238 (Z = 92) finally changes into stable lead-206 (Z = 82) through a series of α and β emissions. How many α particles are emitted in all?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 8,
+        "tolerance": 0,
+        "unit": null
+      },
+      "solution_md": "Only α changes A: number of α $= (238 - 206) \\div 4 = 8$.",
+      "marking_scheme": [
+        {
+          "step": "8",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 4,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-physics-ch12-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch12_056",
+      "unit": "icse-10-physics-ch12",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "In the decay of uranium-238 (Z = 92) to lead-206 (Z = 82), 8 α particles are emitted. How many β particles are emitted?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 6,
+        "tolerance": 0,
+        "unit": null
+      },
+      "solution_md": "8 α lower Z by 16, to 76; to reach 82, Z must rise by 6, so number of β $= 82 - 76 = 6$.",
+      "marking_scheme": [
+        {
+          "step": "6",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 4,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-physics-ch12-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch12_057",
+      "unit": "icse-10-physics-ch12",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A doctor wants to follow the flow of blood through a patient’s veins with a detector held outside the body. A suitable tracer is a radioisotope that:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "emits γ rays (detectable through tissue) and decays away within a short time"
+        },
+        {
+          "id": "b",
+          "text_md": "emits only α particles and lasts for thousands of years"
+        },
+        {
+          "id": "c",
+          "text_md": "is not radioactive"
+        },
+        {
+          "id": "d",
+          "text_md": "emits only β particles that are stopped by the skin"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "γ rays escape the body; a short life limits the dose (for example sodium-24) — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch12-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch12_058",
+      "unit": "icse-10-physics-ch12",
+      "language": "en",
+      "type": "short",
+      "stem_md": "An α source kept outside the body is fairly safe, but the same source swallowed is very dangerous. Explain. Why are radioactive sources stored in thick lead boxes?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Outside the body, α particles are stopped by air or the dead outer layer of skin; inside, they are absorbed by living cells and, being strongly ionising, cause severe damage. Lead boxes absorb β and γ radiation, protecting people nearby."
+      },
+      "solution_md": "Range and ionisation; lead absorbs radiation.",
+      "marking_scheme": [
+        {
+          "step": "α inside vs outside",
+          "marks": 1
+        },
+        {
+          "step": "Lead box",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch12-t02",
+        "icse-10-physics-ch12-t04"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch12_059",
+      "unit": "icse-10-physics-ch12",
+      "language": "en",
+      "type": "match",
+      "stem_md": "Match each radiation or particle in Column A with its description in Column B.",
+      "options": [
+        {
+          "id": "1",
+          "text_md": "α particle"
+        },
+        {
+          "id": "2",
+          "text_md": "β particle"
+        },
+        {
+          "id": "3",
+          "text_md": "γ ray"
+        },
+        {
+          "id": "4",
+          "text_md": "Neutron"
+        }
+      ],
+      "match_right": [
+        {
+          "id": "p",
+          "text_md": "Fast electron from the nucleus"
+        },
+        {
+          "id": "q",
+          "text_md": "Causes fission of U-235"
+        },
+        {
+          "id": "r",
+          "text_md": "Helium nucleus"
+        },
+        {
+          "id": "s",
+          "text_md": "Electromagnetic wave"
+        }
+      ],
+      "answer": {
+        "pairs": [
+          {
+            "left_id": "1",
+            "right_id": "r"
+          },
+          {
+            "left_id": "2",
+            "right_id": "p"
+          },
+          {
+            "left_id": "3",
+            "right_id": "s"
+          },
+          {
+            "left_id": "4",
+            "right_id": "q"
+          }
+        ]
+      },
+      "solution_md": "α → helium nucleus; β → electron; γ → EM wave; neutron → causes fission.",
+      "marking_scheme": [
+        {
+          "step": "1 → r",
+          "marks": 0.5
+        },
+        {
+          "step": "2 → p",
+          "marks": 0.5
+        },
+        {
+          "step": "3 → s",
+          "marks": 0.5
+        },
+        {
+          "step": "4 → q",
+          "marks": 0.5
+        }
+      ],
+      "marks": 2,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-physics-ch12-t02",
+        "icse-10-physics-ch12-t05"
+      ],
+      "expected_time_sec": 160,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch12_060",
+      "unit": "icse-10-physics-ch12",
+      "language": "en",
+      "type": "match",
+      "stem_md": "Match each radioisotope in Column A with its main use in Column B.",
+      "options": [
+        {
+          "id": "1",
+          "text_md": "Cobalt-60"
+        },
+        {
+          "id": "2",
+          "text_md": "Carbon-14"
+        },
+        {
+          "id": "3",
+          "text_md": "Iodine-131"
+        },
+        {
+          "id": "4",
+          "text_md": "Phosphorus-32"
+        }
+      ],
+      "match_right": [
+        {
+          "id": "p",
+          "text_md": "Thyroid treatment"
+        },
+        {
+          "id": "q",
+          "text_md": "Dating ancient wood"
+        },
+        {
+          "id": "r",
+          "text_md": "Tracing fertiliser uptake"
+        },
+        {
+          "id": "s",
+          "text_md": "Cancer radiotherapy"
+        }
+      ],
+      "answer": {
+        "pairs": [
+          {
+            "left_id": "1",
+            "right_id": "s"
+          },
+          {
+            "left_id": "2",
+            "right_id": "q"
+          },
+          {
+            "left_id": "3",
+            "right_id": "p"
+          },
+          {
+            "left_id": "4",
+            "right_id": "r"
+          }
+        ]
+      },
+      "solution_md": "Co-60 → radiotherapy; C-14 → dating; I-131 → thyroid; P-32 → fertiliser tracer.",
+      "marking_scheme": [
+        {
+          "step": "1 → s",
+          "marks": 0.5
+        },
+        {
+          "step": "2 → q",
+          "marks": 0.5
+        },
+        {
+          "step": "3 → p",
+          "marks": 0.5
+        },
+        {
+          "step": "4 → r",
+          "marks": 0.5
+        }
+      ],
+      "marks": 2,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-physics-ch12-t04"
+      ],
+      "expected_time_sec": 160,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch12_061",
+      "unit": "icse-10-physics-ch12",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Define atomic number, mass number and isotopes. [3]\\n\\n(b) For ${}^{39}_{19}\\text{K}$ and ${}^{40}_{19}\\text{K}$, state (i) the number of protons, (ii) the number of neutrons in each, and (iii) the relationship between them. [3]\\n\\n(c) What is radioactivity? Name three radioactive elements and state two factors that do NOT affect the rate of radioactive decay. [4]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Atomic number: number of protons in the nucleus. Mass number: total number of protons and neutrons. Isotopes: atoms of the same element with the same atomic number but different mass numbers.\n\n(b) (i) 19 each. (ii) K-39: 20; K-40: 21. (iii) They are isotopes.\n\n(c) The spontaneous disintegration of unstable nuclei with emission of α, β or γ radiation. Uranium, radium, thorium (or polonium). Not affected by temperature, pressure, or chemical combination (any two)."
+      },
+      "solution_md": "Definitions; counts; radioactivity.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 3
+        },
+        {
+          "step": "(b)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(b)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(b)(iii)",
+          "marks": 1
+        },
+        {
+          "step": "(c) definition",
+          "marks": 1
+        },
+        {
+          "step": "(c) three elements",
+          "marks": 1.5
+        },
+        {
+          "step": "(c) two factors",
+          "marks": 1.5
+        }
+      ],
+      "marks": 10,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-physics-ch12-t01",
+        "icse-10-physics-ch12-t02"
+      ],
+      "expected_time_sec": 1080,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch12_062",
+      "unit": "icse-10-physics-ch12",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Give the nature of α, β and γ radiations. [3]\n\n(b) Compare them in (i) ionising power, (ii) penetrating power and (iii) deflection in an electric field. [3]\n\n(c) A radioactive source is placed in front of a detector. The count rate is unchanged when a sheet of paper is inserted, falls sharply when 3 mm of aluminium is inserted, and falls only a little more when 2 cm of lead is added. (i) Which radiations are present? (ii) Which is absent? Give reasons. (iii) Which of the radiations present would be deflected by a magnetic field? [4]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) α: helium nuclei (+2e, 4 u). β: fast electrons emitted from the nucleus (−e). γ: electromagnetic waves of very short wavelength (no charge, no mass).\n\n(b) (i) α > β > γ. (ii) γ > β > α. (iii) α bends towards the negative plate, β more strongly towards the positive plate, γ undeflected.\n\n(c) (i) β (absorbed by aluminium) and γ (passes through aluminium; reduced a little by lead). (ii) α: paper caused no drop, so no α is present. (iii) Only β (γ is uncharged)."
+      },
+      "solution_md": "Nature; comparison; analysis of absorption data.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 3
+        },
+        {
+          "step": "(b)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(b)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(b)(iii)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(i)",
+          "marks": 2
+        },
+        {
+          "step": "(c)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(iii)",
+          "marks": 1
+        }
+      ],
+      "marks": 10,
+      "difficulty": 4,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-physics-ch12-t02"
+      ],
+      "expected_time_sec": 1080,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch12_063",
+      "unit": "icse-10-physics-ch12",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) State the changes in mass number and atomic number when a nucleus emits (i) an α particle, (ii) a β particle and (iii) a γ ray. [3]\\n\\n(b) Explain how a nucleus can emit an electron although it contains no electrons. Write a balanced equation for the β decay of ${}^{32}_{15}\\text{P}$ to sulphur. [3]\\n\\n(c) ${}^{232}_{90}\\text{Th}$ decays by the sequence α, β, β, α. Find A and Z after each step and name the element at the end (Z = 88 radium, 89 actinium, 90 thorium). [4]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) (i) A − 4, Z − 2. (ii) A unchanged, Z + 1. (iii) No change.\n\n(b) A neutron in the nucleus changes into a proton and an electron; the electron is emitted at high speed as a β particle. ${}^{32}_{15}\\text{P} \\rightarrow {}^{32}_{16}\\text{S} + {}^{0}_{-1}e$.\n\n(c) α: A = 228, Z = 88; β: A = 228, Z = 89; β: A = 228, Z = 90; α: A = 224, Z = 88 — radium-224."
+      },
+      "solution_md": "Rules; origin of β; decay sequence.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 3
+        },
+        {
+          "step": "(b) explanation",
+          "marks": 2
+        },
+        {
+          "step": "(b) equation",
+          "marks": 1
+        },
+        {
+          "step": "(c) steps",
+          "marks": 3
+        },
+        {
+          "step": "(c) element",
+          "marks": 1
+        }
+      ],
+      "marks": 10,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch12-t03"
+      ],
+      "expected_time_sec": 1080,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch12_064",
+      "unit": "icse-10-physics-ch12",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Give two uses of radioisotopes in medicine and two in industry. [3]\n\n(b) What is background radiation? Name two natural and one man-made source. [3]\n\n(c) (i) State three harmful effects of radiation on the human body. (ii) Describe three precautions in a laboratory using radioactive sources. (iii) What is radioactive fallout? [4]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Medicine: Co-60 radiotherapy for cancer; I-131 for thyroid diagnosis or treatment (also sterilising instruments). Industry: detecting leaks in buried pipes; checking welds or thickness of sheets.\n\n(b) Low-level radiation always present around us. Natural: cosmic rays, radioactive rocks and soil (radon), K-40 in the body. Man-made: medical X-rays (or fallout).\n\n(c) (i) Burns, radiation sickness, cancer (leukaemia), genetic mutations (any three). (ii) Use long tongs; store in lead containers; wear lead aprons and film badges; limit time and keep distance (any three). (iii) Radioactive dust and particles spread by nuclear explosions or reactor accidents that settle over large areas."
+      },
+      "solution_md": "Uses; background radiation; hazards and safety.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 3
+        },
+        {
+          "step": "(b) definition",
+          "marks": 1
+        },
+        {
+          "step": "(b) sources",
+          "marks": 2
+        },
+        {
+          "step": "(c)(i)",
+          "marks": 1.5
+        },
+        {
+          "step": "(c)(ii)",
+          "marks": 1.5
+        },
+        {
+          "step": "(c)(iii)",
+          "marks": 1
+        }
+      ],
+      "marks": 10,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-physics-ch12-t04"
+      ],
+      "expected_time_sec": 1080,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10phy_ch12_065",
+      "unit": "icse-10-physics-ch12",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) What is nuclear fission? What is a chain reaction, and how is it used in a reactor and in an atom bomb? [3]\\n\\n(b) In the fission ${}^{235}_{92}\\text{U} + {}^{1}_{0}n \\rightarrow {}^{x}_{y}\\text{Xe} + {}^{92}_{38}\\text{Sr} + 2\\,{}^{1}_{0}n$, find x and y. [3]\\n\\n(c) (i) What is nuclear fusion? (ii) Why does it occur naturally in the Sun but not on Earth? (iii) Give one advantage of fusion over fission. (iv) Why must fission waste be stored deep underground? [4]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) The splitting of a heavy nucleus into two lighter nuclei of comparable mass when struck by a slow neutron, with release of energy and 2–3 neutrons. These neutrons split more nuclei — a chain reaction; in a reactor it is controlled to give steady energy; in an atom bomb it is uncontrolled.\n\n(b) Mass numbers: $235 + 1 = x + 92 + 2$, so $x = 142$. Atomic numbers: $92 = y + 38$, so $y = 54$.\n\n(c) (i) The joining of light nuclei to form a heavier nucleus with release of energy. (ii) It needs temperatures of millions of kelvin, which exist in the Sun’s core. (iii) More energy per kilogram and little long-lived radioactive waste. (iv) The waste stays radioactive for thousands of years and must be kept away from people and water."
+      },
+      "solution_md": "Fission and chain reaction; balancing; fusion.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 3
+        },
+        {
+          "step": "(b) x",
+          "marks": 1.5
+        },
+        {
+          "step": "(b) y",
+          "marks": 1.5
+        },
+        {
+          "step": "(c)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(iii)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(iv)",
+          "marks": 1
+        }
+      ],
+      "marks": 10,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-physics-ch12-t05"
+      ],
+      "expected_time_sec": 1080,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    }
+  ],
+  "build": {
+    "run_id": null,
+    "checks": {
+      "katex_mhchem": "113 math strings parsed with KaTeX 0.19.0 + mhchem (throwOnError, strict \"error\"), 0 failures",
+      "svg_allowlist": "2 SVG visuals (2 distinct diagrams) checked with saxes against svg-allowlist.ts: elements, attributes, class pattern, fragment-only refs, no style, palette incl. named hues, viewBox, title, per-page unique ids — 0 failures",
+      "narration": "26 slides, 9–69 words (mean 50), no symbols, formulae or unit abbreviations",
+      "resolve": "18/18 scripted re-solve checks pass",
+      "physics_facts": "Nuclide notation and isotopes, the nature and properties of alpha, beta and gamma radiation, changes in A and Z in alpha and beta decay (computed for every series), uses of radioisotopes, hazards, background radiation and safety, and nuclear fission and fusion with balanced equations, checked against the ICSE 2027 syllabus (Class X, section 6)",
+      "diagrams": "2 diagram self-checks (geometry computed in svgs.mjs): 0 failures",
+      "content_gate": "npm test -w @soyl/content-templates: all checks pass for this chapter",
+      "verifier_pass": "2026-11-01: every question and every internal-choice alternative re-solved from its stem by the author; every numerical computed and asserted by the build script — see README \"Verifier pass\"",
+      "pipeline_lint": "npm run content -- lint --exemplars: 0 errors, 0 warnings"
+    }
+  }
+}
