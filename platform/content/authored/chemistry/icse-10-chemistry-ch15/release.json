@@ -1,0 +1,4842 @@
+{
+  "unit": "icse-10-chemistry-ch15",
+  "version": 1,
+  "academic_year": "2026-27",
+  "created_at": "2026-11-01T00:00:00+05:30",
+  "decks": [
+    {
+      "unit": "icse-10-chemistry-ch15",
+      "part": 1,
+      "version": 1,
+      "title": "Alcohols and Carboxylic Acids — Part 1: Ethanol",
+      "language": "en",
+      "goals": [
+        "Write the equation for preparing ethanol from bromoethane with aqueous alkali",
+        "Describe the nature, solubility, density and boiling point of ethanol",
+        "Write equations, with conditions, for the combustion of ethanol and its reactions with sodium, ethanoic acid and concentrated sulphuric acid",
+        "Explain why ethanol is denatured and why spurious alcohol is dangerous, and list uses of ethanol"
+      ],
+      "slides": [
+        {
+          "id": "s01",
+          "layout": "title",
+          "heading": "The alcohol we all know",
+          "body_md": "Part 1 — **Ethanol** (ethyl alcohol), C₂H₅OH, is the best-known **alcohol**. It is the solvent in hand sanitisers and many medicines, a fuel blended with petrol, and a raw material for perfumes and vinegar. Alcohols contain the **hydroxyl group, –OH**, joined to a carbon chain.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Where you meet ethanol",
+                "What it does there"
+              ],
+              "rows": [
+                [
+                  "Hand sanitiser",
+                  "Kills germs on the skin"
+                ],
+                [
+                  "Petrol blended with ethanol (E20)",
+                  "Burns as a cleaner fuel"
+                ],
+                [
+                  "Cough syrups and tinctures",
+                  "Dissolves the medicine"
+                ],
+                [
+                  "Spirit-filled thermometers",
+                  "Stays liquid far below 0 °C"
+                ]
+              ]
+            },
+            "alt": "Table of four everyday uses of ethanol and its role in each"
+          },
+          "math": [],
+          "narration": "Namaste! Ethanol is the alcohol in hand sanitisers, cough syrups and the fuel blended into petrol. It belongs to a family called alcohols, which all contain a hydroxyl group, an oxygen and a hydrogen atom, joined to a carbon chain. In this part we see how ethanol is made, what it looks like, how it reacts, and why some alcohol is deliberately made poisonous.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s02",
+          "layout": "concept",
+          "heading": "The structure of ethanol",
+          "body_md": "Ethanol, **CH₃–CH₂–OH**, is an ethyl group joined to a **hydroxyl group (–OH)**. The –OH group is the **functional group** of alcohols and decides their chemistry. Molecular formula C₂H₆O; molecular mass 46. It belongs to the homologous series CₙH₂ₙ₊₁OH (methanol, ethanol, propan-1-ol…).",
+          "bullets": [],
+          "visual": {
+            "kind": "svg",
+            "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 420 150\" role=\"img\" aria-label=\"Displayed formula of ethanol. Two carbon atoms are joined by a single bond. The first carbon carries three hydrogen atoms; the second carries two hydrogen atoms and is bonded to an oxygen atom, which is bonded to a hydrogen atom. The oxygen and its hydrogen, the hydroxyl group, are marked with a dashed box.\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>Displayed formula of ethanol. Two carbon atoms are joined by a single bond. The first carbon carries three hydrogen atoms; the second carries two hydrogen atoms and is bonded to an oxygen atom, which is bonded to a hydrogen atom. The oxygen and its hydrogen, the hydroxyl group, are marked with a dashed box.</title><line x1=\"78\" y1=\"70\" x2=\"106\" y2=\"70\" stroke=\"currentColor\" stroke-width=\"1.3\"/><line x1=\"122\" y1=\"70\" x2=\"154\" y2=\"70\" stroke=\"currentColor\" stroke-width=\"1.3\"/><line x1=\"170\" y1=\"70\" x2=\"192\" y2=\"70\" stroke=\"currentColor\" stroke-width=\"1.3\"/><line x1=\"70\" y1=\"60.5\" x2=\"70\" y2=\"47.5\" stroke=\"currentColor\" stroke-width=\"1.3\"/><line x1=\"70\" y1=\"79.5\" x2=\"70\" y2=\"92.5\" stroke=\"currentColor\" stroke-width=\"1.3\"/><line x1=\"62\" y1=\"70\" x2=\"42\" y2=\"70\" stroke=\"currentColor\" stroke-width=\"1.3\"/><line x1=\"114\" y1=\"60.5\" x2=\"114\" y2=\"47.5\" stroke=\"currentColor\" stroke-width=\"1.3\"/><line x1=\"114\" y1=\"79.5\" x2=\"114\" y2=\"92.5\" stroke=\"currentColor\" stroke-width=\"1.3\"/><text x=\"70\" y=\"74.7\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\">C</text><text x=\"114\" y=\"74.7\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\">C</text><text x=\"162\" y=\"74.7\" fill=\"var(--diagram-red)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"13\">O</text><text x=\"200\" y=\"74.7\" fill=\"var(--diagram-red)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"13\">H</text><text x=\"70\" y=\"42.7\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"13\">H</text><text x=\"70\" y=\"106.7\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"13\">H</text><text x=\"34\" y=\"74.7\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"13\">H</text><text x=\"114\" y=\"42.7\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"13\">H</text><text x=\"114\" y=\"106.7\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"13\">H</text><rect x=\"146\" y=\"52\" width=\"70\" height=\"36\" rx=\"6\" fill=\"none\" stroke=\"var(--diagram-red)\" stroke-width=\"1.2\" stroke-dasharray=\"4 3\"/><text x=\"181\" y=\"108\" fill=\"var(--diagram-red)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\">hydroxyl group –OH</text><text x=\"290\" y=\"60\" fill=\"currentColor\" stroke=\"none\" font-size=\"11\" font-weight=\"bold\">ethanol, C₂H₅OH</text><text x=\"290\" y=\"78\" fill=\"var(--diagram-muted)\" stroke=\"none\" font-size=\"10\">CH₃–CH₂–OH</text><text x=\"290\" y=\"96\" fill=\"var(--diagram-muted)\" stroke=\"none\" font-size=\"10\">molecular mass 46</text><text x=\"70\" y=\"140\" fill=\"var(--diagram-muted)\" stroke=\"none\" font-size=\"10\">an alkyl group (ethyl) joined to –OH</text></svg>",
+            "alt": "Displayed formula of ethanol with the hydroxyl group marked"
+          },
+          "math": [],
+          "narration": "In ethanol, two carbon atoms are joined together. The first carbon carries three hydrogen atoms, and the second carries two hydrogen atoms and the hydroxyl group. That hydroxyl group is the functional group of every alcohol, and it is responsible for most of ethanol’s reactions. Methanol, ethanol and propanol form a homologous series.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s03",
+          "layout": "concept",
+          "heading": "Preparing ethanol: hydrolysis of bromoethane",
+          "body_md": "An alkyl halide is **hydrolysed** by boiling it with an **aqueous** solution of sodium hydroxide or potassium hydroxide. The hydroxide ion **replaces the halogen atom**, so bromoethane gives ethanol. (With **alcoholic** KOH, bromoethane gives ethene instead — compare Chapter 14.)",
+          "bullets": [],
+          "visual": {
+            "kind": "chem",
+            "spec": {
+              "equation": "C2H5Br + NaOH ->[{aqueous, boil}] C2H5OH + NaBr"
+            },
+            "alt": "Bromoethane plus aqueous sodium hydroxide, boiled, gives ethanol and sodium bromide",
+            "caption": "The OH group takes the place of the Br atom."
+          },
+          "math": [],
+          "narration": "Ethanol can be made by boiling bromoethane with sodium hydroxide dissolved in water. The hydroxide replaces the bromine atom, giving ethanol and sodium bromide. This is called hydrolysis of an alkyl halide. Remember the difference: in water the product is ethanol, but potassium hydroxide dissolved in alcohol gives ethene.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s04",
+          "layout": "check",
+          "heading": "Quick check: making ethanol",
+          "body_md": "Predict the product of an alkyl halide with an alkali.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Look carefully at whether the alkali is dissolved in water or in alcohol. In water, the hydroxide group takes the place of the halogen atom. Decide what product that gives, then choose your answer.",
+          "check_question_id": "q_icse10chem_ch15_001",
+          "audio": null
+        },
+        {
+          "id": "s05",
+          "layout": "concept",
+          "heading": "Physical properties of ethanol",
+          "body_md": "- A **colourless, volatile liquid** with a pleasant, characteristic smell and a burning taste.\n- **Boiling point 78 °C**; freezing point about −114 °C.\n- **Density 0.79 g cm⁻³**: lighter than water.\n- **Miscible with water** in all proportions (its –OH group forms hydrogen bonds with water); also a good **solvent** for many organic compounds.\n- **Neutral to litmus**: it does not ionise to give H⁺ ions in water.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Property",
+                "Ethanol",
+                "Water"
+              ],
+              "rows": [
+                [
+                  "Boiling point",
+                  "78 °C",
+                  "100 °C"
+                ],
+                [
+                  "Freezing point",
+                  "about −114 °C",
+                  "0 °C"
+                ],
+                [
+                  "Density / g cm⁻³",
+                  "0.79",
+                  "1.00"
+                ],
+                [
+                  "Effect on litmus",
+                  "Neutral",
+                  "Neutral"
+                ]
+              ]
+            },
+            "alt": "Table comparing the boiling point, freezing point, density and litmus effect of ethanol and water"
+          },
+          "math": [],
+          "narration": "Ethanol is a colourless liquid that evaporates easily and has a pleasant smell. It boils at seventy eight degrees Celsius and freezes only at about minus one hundred and fourteen degrees. It is lighter than water, yet it mixes with water completely in any amount. It does not change the colour of litmus, because it is neutral.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s06",
+          "layout": "example",
+          "heading": "Worked example: identifying a liquid from data",
+          "body_md": "**Problem.** A colourless liquid L (formula C₂H₆O) boils at 78 °C, mixes with water in all proportions and has no effect on blue or red litmus. A piece of sodium dropped into it gives a gas that burns with a pop. Identify L and the gas.\n\n**Step 1.** C₂H₆O and neutral to litmus: not an acid.\n\n**Step 2.** Boiling point 78 °C and miscible with water: matches **ethanol**.\n\n**Step 3.** Sodium gives a gas that burns with a pop: **hydrogen**, confirming an –OH group.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Clue",
+                "What it tells you"
+              ],
+              "rows": [
+                [
+                  "C₂H₆O, neutral to litmus",
+                  "An alcohol, not an acid"
+                ],
+                [
+                  "Boils at 78 °C, mixes with water",
+                  "Ethanol"
+                ],
+                [
+                  "Gas with sodium burns with a pop",
+                  "Hydrogen: –OH present"
+                ]
+              ]
+            },
+            "alt": "Table matching each clue about liquid L to what it shows"
+          },
+          "math": [],
+          "narration": "Work through the clues one at a time. The formula has two carbons, six hydrogens and one oxygen, and the liquid does not affect litmus, so it is not an acid. Its boiling point of seventy eight degrees and the way it mixes with water point to ethanol. The gas from sodium that burns with a pop is hydrogen, which confirms the hydroxyl group.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s07",
+          "layout": "concept",
+          "heading": "Combustion and the reaction with sodium",
+          "body_md": "**Combustion:** ethanol burns in air with a **blue, non-sooty flame**, releasing much heat, so it is a useful fuel:\n\nC₂H₅OH + 3O₂ → 2CO₂ + 3H₂O\n\n**Sodium:** sodium reacts with ethanol, more gently than with water, giving **brisk effervescence** of **hydrogen** and leaving **sodium ethoxide**, C₂H₅ONa, which is a white solid when the excess ethanol is evaporated.",
+          "bullets": [],
+          "visual": {
+            "kind": "chem",
+            "spec": {
+              "equation": "2C2H5OH + 2Na -> 2C2H5ONa + H2"
+            },
+            "alt": "Two ethanol plus two sodium gives two sodium ethoxide plus hydrogen",
+            "caption": "Hydrogen is given off with effervescence."
+          },
+          "math": [],
+          "narration": "Ethanol burns with a clean blue flame, forming carbon dioxide and water and giving out plenty of heat, which is why it is blended into petrol. When a small piece of sodium is dropped into ethanol, it fizzes steadily, less violently than in water. Hydrogen gas is given off, and sodium ethoxide is left in the solution.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s08",
+          "layout": "example",
+          "heading": "Worked example: hydrogen from ethanol and sodium",
+          "body_md": "**Problem.** 2.3 g of ethanol reacts completely with sodium. Find the volume of hydrogen at STP. (C = 12, H = 1, O = 16; 1 mol of gas occupies 22.4 L at STP)\n\n**Step 1.** Molar mass of C₂H₅OH: $2 \\times 12 + 6 \\times 1 + 16 = 46$ g.\n\n**Step 2.** Moles of ethanol: $\\frac{2.3}{46} = 0.05$ mol.\n\n**Step 3.** 2 mol ethanol give 1 mol H₂, so moles of H₂ $= \\frac{0.05}{2} = 0.025$.\n\n**Step 4.** Volume $= 0.025 \\times 22.4 = 0.56$ L at STP.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Quantity",
+                "Value"
+              ],
+              "rows": [
+                [
+                  "Molar mass of ethanol",
+                  "46 g mol⁻¹"
+                ],
+                [
+                  "Moles of ethanol",
+                  "0.05"
+                ],
+                [
+                  "Moles of hydrogen (half)",
+                  "0.025"
+                ],
+                [
+                  "Volume of hydrogen at STP",
+                  "0.56 L"
+                ]
+              ]
+            },
+            "alt": "Table of the steps from mass of ethanol to volume of hydrogen"
+          },
+          "math": [],
+          "narration": "Start with the molar mass of ethanol, which is forty six grams. Two point three grams is therefore five hundredths of a mole. The equation shows that two moles of ethanol give one mole of hydrogen, so we get half as much hydrogen. Multiplying by the molar volume gives just over half a litre of hydrogen at standard temperature and pressure.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s09",
+          "layout": "check",
+          "heading": "Quick check: ethanol and sodium",
+          "body_md": "Identify the products when sodium reacts with ethanol.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Sodium takes the place of the hydrogen of the hydroxyl group. Think about which gas is set free and what the sodium compound left behind is called, then choose the pair that matches.",
+          "check_question_id": "q_icse10chem_ch15_009",
+          "audio": null
+        },
+        {
+          "id": "s10",
+          "layout": "concept",
+          "heading": "Esterification",
+          "body_md": "Ethanol reacts with **ethanoic acid**, when warmed with a few drops of **concentrated sulphuric acid**, to form the ester **ethyl ethanoate** and water. The –OH of the acid and the H of the alcohol leave as water. The reaction is **reversible** and slow; the sulphuric acid acts as a **catalyst** and takes up the water formed. Esters have a pleasant, **fruity smell**.\n\nCH₃COOH + C₂H₅OH ⇌ CH₃COOC₂H₅ + H₂O",
+          "bullets": [],
+          "visual": {
+            "kind": "svg",
+            "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 360 200\" role=\"img\" aria-label=\"Esterification of ethanoic acid with ethanol. Top row: ethanoic acid, CH3 joined to a carbon that has a double-bonded oxygen and an OH group, plus ethanol written H, O, C2H5. The OH of the acid and the H of the alcohol, shown in a dashed box, leave together as water. Bottom row: the product ethyl ethanoate, CH3 joined to a carbon with a double-bonded oxygen and an oxygen linked to C2H5, plus a molecule of water. The reaction needs a few drops of concentrated sulphuric acid and is reversible.\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>Esterification of ethanoic acid with ethanol. Top row: ethanoic acid, CH3 joined to a carbon that has a double-bonded oxygen and an OH group, plus ethanol written H, O, C2H5. The OH of the acid and the H of the alcohol, shown in a dashed box, leave together as water. Bottom row: the product ethyl ethanoate, CH3 joined to a carbon with a double-bonded oxygen and an oxygen linked to C2H5, plus a molecule of water. The reaction needs a few drops of concentrated sulphuric acid and is reversible.</title><line x1=\"45.5\" y1=\"50\" x2=\"72\" y2=\"50\" stroke=\"currentColor\" stroke-width=\"1.3\"/><line x1=\"77.8\" y1=\"40.5\" x2=\"77.8\" y2=\"29.5\" stroke=\"currentColor\" stroke-width=\"1.3\"/><line x1=\"82.2\" y1=\"40.5\" x2=\"82.2\" y2=\"29.5\" stroke=\"currentColor\" stroke-width=\"1.3\"/><line x1=\"88\" y1=\"50\" x2=\"118.7\" y2=\"50\" stroke=\"currentColor\" stroke-width=\"1.3\"/><text x=\"30\" y=\"54.7\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"13\">CH₃</text><text x=\"80\" y=\"54.7\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\">C</text><text x=\"80\" y=\"24.7\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"13\">O</text><text x=\"130\" y=\"54.7\" fill=\"var(--diagram-red)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"13\">OH</text><text x=\"158\" y=\"54\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"14\">+</text><line x1=\"208\" y1=\"50\" x2=\"228\" y2=\"50\" stroke=\"currentColor\" stroke-width=\"1.3\"/><line x1=\"244\" y1=\"50\" x2=\"268.4\" y2=\"50\" stroke=\"currentColor\" stroke-width=\"1.3\"/><text x=\"200\" y=\"54.7\" fill=\"var(--diagram-red)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"13\">H</text><text x=\"236\" y=\"54.7\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"13\">O</text><text x=\"288\" y=\"54.7\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"13\">C₂H₅</text><rect x=\"114\" y=\"36\" width=\"98\" height=\"28\" rx=\"6\" fill=\"none\" stroke=\"var(--diagram-red)\" stroke-width=\"1.2\" stroke-dasharray=\"4 3\"/><text x=\"163\" y=\"80\" fill=\"var(--diagram-red)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">these leave as H₂O</text><line x1=\"230\" y1=\"94\" x2=\"230\" y2=\"120.4\" stroke=\"currentColor\" stroke-width=\"1.5\"/><polygon points=\"230,126 227.1,119.6 232.9,119.6\" fill=\"currentColor\" stroke=\"none\"/><text x=\"242\" y=\"106\" fill=\"var(--diagram-muted)\" stroke=\"none\" font-size=\"10\">conc. H₂SO₄, warm</text><text x=\"242\" y=\"119\" fill=\"var(--diagram-muted)\" stroke=\"none\" font-size=\"10\">reversible (⇌)</text><line x1=\"55.5\" y1=\"160\" x2=\"82\" y2=\"160\" stroke=\"currentColor\" stroke-width=\"1.3\"/><line x1=\"87.8\" y1=\"150.5\" x2=\"87.8\" y2=\"139.5\" stroke=\"currentColor\" stroke-width=\"1.3\"/><line x1=\"92.2\" y1=\"150.5\" x2=\"92.2\" y2=\"139.5\" stroke=\"currentColor\" stroke-width=\"1.3\"/><line x1=\"98\" y1=\"160\" x2=\"128\" y2=\"160\" stroke=\"currentColor\" stroke-width=\"1.3\"/><line x1=\"144\" y1=\"160\" x2=\"166.4\" y2=\"160\" stroke=\"currentColor\" stroke-width=\"1.3\"/><text x=\"40\" y=\"164.7\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"13\">CH₃</text><text x=\"90\" y=\"164.7\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\">C</text><text x=\"90\" y=\"134.7\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"13\">O</text><text x=\"136\" y=\"164.7\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"13\">O</text><text x=\"186\" y=\"164.7\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"13\">C₂H₅</text><text x=\"240\" y=\"164\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"14\">+</text><text x=\"280\" y=\"164\" fill=\"var(--diagram-red)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"13\">H₂O</text><text x=\"110\" y=\"192\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\" font-weight=\"bold\">ethyl ethanoate (fruity smell)</text><text x=\"280\" y=\"192\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">water</text></svg>",
+            "alt": "Ethanoic acid and ethanol losing a molecule of water to form ethyl ethanoate"
+          },
+          "math": [],
+          "narration": "When ethanol is warmed with ethanoic acid and a few drops of concentrated sulphuric acid, the two molecules join together and a molecule of water is removed. The product, ethyl ethanoate, is an ester with a sweet fruity smell. This reaction is called esterification. It is slow and reversible, and the sulphuric acid speeds it up and takes up the water.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s11",
+          "layout": "concept",
+          "heading": "Dehydration to ethene",
+          "body_md": "Heated with **excess concentrated sulphuric acid** at about **170 °C**, ethanol **loses a molecule of water** and gives ethene. Concentrated sulphuric acid acts as a **dehydrating agent**. This is the laboratory method for ethene you met in Chapter 14.",
+          "bullets": [],
+          "visual": {
+            "kind": "chem",
+            "spec": {
+              "equation": "C2H5OH ->[{conc. H2SO4, 170 °C}] C2H4 + H2O"
+            },
+            "alt": "Ethanol heated with concentrated sulphuric acid at one hundred and seventy degrees gives ethene and water",
+            "caption": "Dehydration: a molecule of water is removed from each ethanol molecule."
+          },
+          "math": [],
+          "narration": "If ethanol is heated with excess concentrated sulphuric acid to about one hundred and seventy degrees Celsius, the acid pulls a molecule of water out of each ethanol molecule. The product is ethene, an unsaturated gas. This is called dehydration, and it is the usual laboratory method for making ethene.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s12",
+          "layout": "check",
+          "heading": "Quick check: reactions of ethanol",
+          "body_md": "Choose the reagent and condition that turn ethanol into ethene.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. To make ethene, a molecule of water must be removed from each ethanol molecule. Decide which reagent is a strong dehydrating agent, and remember that the temperature matters as well as the reagent.",
+          "check_question_id": "q_icse10chem_ch15_011",
+          "audio": null
+        },
+        {
+          "id": "s13",
+          "layout": "concept",
+          "heading": "Denatured, methylated and spurious alcohol",
+          "body_md": "**Denatured alcohol:** ethanol made **unfit for drinking** by adding poisonous or nauseating substances such as **methanol**, pyridine and a blue dye (copper sulphate). Industrial ethanol is sold cheaply, without the tax on liquor; denaturing stops it being drunk. **Methylated spirit** is ethanol denatured mainly with methanol.\n\n**Spurious (illicit) alcohol** is liquor made or sold illegally, often mixed with **methanol**. Methanol is changed in the body into methanal and methanoic acid, which damage the **optic nerve** and can cause **blindness and death**.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Term",
+                "Meaning",
+                "Danger or purpose"
+              ],
+              "rows": [
+                [
+                  "Denatured alcohol",
+                  "Ethanol + methanol, pyridine, dye",
+                  "Prevents misuse of untaxed industrial ethanol"
+                ],
+                [
+                  "Methylated spirit",
+                  "Ethanol denatured mainly with methanol",
+                  "Used as a fuel and solvent, not for drinking"
+                ],
+                [
+                  "Spurious alcohol",
+                  "Illicit liquor, often containing methanol",
+                  "Blindness or death"
+                ]
+              ]
+            },
+            "alt": "Table explaining denatured alcohol, methylated spirit and spurious alcohol"
+          },
+          "math": [],
+          "narration": "Industrial ethanol is sold cheaply without liquor tax, so poisonous substances such as methanol and a blue dye are added to make it unfit to drink. This is denatured alcohol, and when methanol is the main additive it is called methylated spirit. Illegal liquor, called spurious alcohol, often contains methanol. In the body methanol damages the nerve of the eye and can cause blindness or even death.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s14",
+          "layout": "concept",
+          "heading": "Uses of ethanol",
+          "body_md": "Each use of ethanol depends on one of its properties.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Use",
+                "Property used"
+              ],
+              "rows": [
+                [
+                  "Solvent for medicines (tinctures, syrups), perfumes, varnishes",
+                  "Dissolves many organic substances"
+                ],
+                [
+                  "Fuel, alone or blended with petrol",
+                  "Burns with a clean, hot flame"
+                ],
+                [
+                  "Antiseptic and hand sanitiser",
+                  "Kills germs"
+                ],
+                [
+                  "Liquid in thermometers for cold places",
+                  "Freezes only at about −114 °C"
+                ],
+                [
+                  "Making ethanoic acid, esters and ethene",
+                  "Reactive –OH group"
+                ]
+              ]
+            },
+            "alt": "Table of five uses of ethanol with the property each depends on"
+          },
+          "math": [],
+          "narration": "Ethanol has many uses, and each one depends on a property. It dissolves many substances, so it is used in medicines, perfumes and varnishes. It burns cleanly, so it is used as a fuel and blended into petrol. It kills germs, so it is in hand sanitisers. And because it freezes only at a very low temperature, it is used in thermometers for cold places.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s15",
+          "layout": "summary",
+          "heading": "Summary: Part 1",
+          "body_md": "",
+          "bullets": [
+            "Ethanol, C₂H₅OH, has the hydroxyl group –OH; made by boiling bromoethane with aqueous alkali.",
+            "Colourless, volatile, boils at 78 °C, lighter than water, miscible with water, neutral to litmus.",
+            "Burns with a blue flame; sodium gives hydrogen and sodium ethoxide.",
+            "With ethanoic acid (conc. H₂SO₄) gives the fruity ester ethyl ethanoate; with excess conc. H₂SO₄ at 170 °C gives ethene.",
+            "Denatured or methylated spirit is unfit to drink; spurious alcohol containing methanol causes blindness or death."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Reagent with ethanol",
+                "Product"
+              ],
+              "rows": [
+                [
+                  "Oxygen (burning)",
+                  "CO₂ + H₂O"
+                ],
+                [
+                  "Sodium",
+                  "Sodium ethoxide + H₂"
+                ],
+                [
+                  "Ethanoic acid + conc. H₂SO₄",
+                  "Ethyl ethanoate + H₂O"
+                ],
+                [
+                  "Excess conc. H₂SO₄, 170 °C",
+                  "Ethene + H₂O"
+                ]
+              ]
+            },
+            "alt": "Summary table of four reactions of ethanol and their products"
+          },
+          "math": [],
+          "narration": "Let us sum up Part 1. Ethanol contains the hydroxyl group and is made by boiling bromoethane with an aqueous alkali. It is a neutral liquid that boils at seventy eight degrees and mixes with water. It burns cleanly, gives hydrogen with sodium, forms a fruity ester with ethanoic acid and gives ethene when dehydrated. Denatured alcohol is not for drinking, and spurious alcohol can kill.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s16",
+          "layout": "exam-tips",
+          "heading": "Exam tips: Part 1",
+          "body_md": "",
+          "bullets": [
+            "Bromoethane + aqueous alkali → ethanol; + alcoholic KOH → ethene. Name the solvent.",
+            "Balance the sodium equation with 2 ethanol: 2C₂H₅OH + 2Na → 2C₂H₅ONa + H₂.",
+            "Esterification needs a few drops of conc. H₂SO₄ and warming; dehydration needs excess acid at 170 °C.",
+            "Ethanol is neutral to litmus: do not call it an acid because it reacts with sodium."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Slip",
+                "Fix"
+              ],
+              "rows": [
+                [
+                  "C₂H₅OH + Na → C₂H₅ONa + H₂",
+                  "Not balanced: use 2C₂H₅OH + 2Na → 2C₂H₅ONa + H₂"
+                ],
+                [
+                  "Ethanol turns blue litmus red",
+                  "Ethanol is neutral"
+                ],
+                [
+                  "Methylated spirit is pure methanol",
+                  "It is ethanol denatured with methanol"
+                ]
+              ]
+            },
+            "alt": "Table of three common slips in Part 1 and their fixes"
+          },
+          "math": [],
+          "narration": "Some tips. Always state whether the alkali is in water or in alcohol, because the products are different. Balance the sodium equation with two molecules of ethanol. Learn the two different conditions with sulphuric acid: a few drops and warming for the ester, but excess acid at one hundred and seventy degrees for ethene. And remember that ethanol is neutral to litmus.",
+          "check_question_id": null,
+          "audio": null
+        }
+      ],
+      "status": "draft",
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "unit": "icse-10-chemistry-ch15",
+      "part": 2,
+      "version": 1,
+      "title": "Alcohols and Carboxylic Acids — Part 2: Ethanoic (acetic) acid",
+      "language": "en",
+      "goals": [
+        "Draw the structure of acetic acid and identify the carboxyl group",
+        "Describe the physical properties of acetic acid and explain what glacial acetic acid is",
+        "Write equations for acetic acid with sodium hydroxide and with ethanol, and describe its effect on litmus",
+        "Use the fruity smell of the ester as evidence of esterification and list uses of acetic acid"
+      ],
+      "slides": [
+        {
+          "id": "s01",
+          "layout": "title",
+          "heading": "The sour taste of vinegar",
+          "body_md": "Part 2 — **Vinegar** is a dilute solution (about 5–8 per cent) of **ethanoic acid**, also called **acetic acid**, CH₃COOH. It is the best-known **carboxylic acid**. Carboxylic acids contain the **carboxyl group, –COOH**.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Carboxylic acid",
+                "Formula",
+                "Found in"
+              ],
+              "rows": [
+                [
+                  "Methanoic acid (formic acid)",
+                  "HCOOH",
+                  "Ant and bee stings"
+                ],
+                [
+                  "Ethanoic acid (acetic acid)",
+                  "CH₃COOH",
+                  "Vinegar"
+                ],
+                [
+                  "Propanoic acid",
+                  "CH₃CH₂COOH",
+                  "Used to preserve bread"
+                ]
+              ]
+            },
+            "alt": "Table of three carboxylic acids with formulae and where they are found"
+          },
+          "math": [],
+          "narration": "The sharp, sour taste of vinegar comes from ethanoic acid, which is also called acetic acid. Vinegar is a dilute solution of it in water. Ethanoic acid is the best known member of the carboxylic acids, a family whose functional group is the carboxyl group. The sting of an ant contains methanoic acid, the first member of the same family.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s02",
+          "layout": "concept",
+          "heading": "Structure: the carboxyl group",
+          "body_md": "In ethanoic acid a **methyl group** is joined to a **carboxyl group, –COOH**. The carboxyl carbon is joined to one oxygen by a **double bond** (C=O) and to an **–OH group** by a single bond. Molecular formula C₂H₄O₂; molecular mass 60. The hydrogen of the –OH can be released as H⁺, which makes the compound an **acid**.",
+          "bullets": [],
+          "visual": {
+            "kind": "svg",
+            "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 420 160\" role=\"img\" aria-label=\"Displayed formula of ethanoic acid. A methyl group, a carbon carrying three hydrogen atoms, is joined to a second carbon atom. The second carbon is joined by a double bond to one oxygen atom and by a single bond to another oxygen atom, which carries a hydrogen atom. The second carbon with its two oxygen atoms and the hydrogen, the carboxyl group, is marked with a dashed box.\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>Displayed formula of ethanoic acid. A methyl group, a carbon carrying three hydrogen atoms, is joined to a second carbon atom. The second carbon is joined by a double bond to one oxygen atom and by a single bond to another oxygen atom, which carries a hydrogen atom. The second carbon with its two oxygen atoms and the hydrogen, the carboxyl group, is marked with a dashed box.</title><line x1=\"78\" y1=\"86\" x2=\"108\" y2=\"86\" stroke=\"currentColor\" stroke-width=\"1.3\"/><line x1=\"113.8\" y1=\"76.5\" x2=\"113.8\" y2=\"57.5\" stroke=\"currentColor\" stroke-width=\"1.3\"/><line x1=\"118.2\" y1=\"76.5\" x2=\"118.2\" y2=\"57.5\" stroke=\"currentColor\" stroke-width=\"1.3\"/><line x1=\"124\" y1=\"86\" x2=\"154\" y2=\"86\" stroke=\"currentColor\" stroke-width=\"1.3\"/><line x1=\"170\" y1=\"86\" x2=\"190\" y2=\"86\" stroke=\"currentColor\" stroke-width=\"1.3\"/><line x1=\"70\" y1=\"76.5\" x2=\"70\" y2=\"63.5\" stroke=\"currentColor\" stroke-width=\"1.3\"/><line x1=\"70\" y1=\"95.5\" x2=\"70\" y2=\"108.5\" stroke=\"currentColor\" stroke-width=\"1.3\"/><line x1=\"62\" y1=\"86\" x2=\"42\" y2=\"86\" stroke=\"currentColor\" stroke-width=\"1.3\"/><text x=\"70\" y=\"90.7\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\">C</text><text x=\"116\" y=\"90.7\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\">C</text><text x=\"116\" y=\"52.7\" fill=\"var(--diagram-red)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"13\">O</text><text x=\"162\" y=\"90.7\" fill=\"var(--diagram-red)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"13\">O</text><text x=\"198\" y=\"90.7\" fill=\"var(--diagram-red)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"13\">H</text><text x=\"70\" y=\"58.7\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"13\">H</text><text x=\"70\" y=\"122.7\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"13\">H</text><text x=\"34\" y=\"90.7\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"13\">H</text><rect x=\"100\" y=\"30\" width=\"112\" height=\"76\" rx=\"6\" fill=\"none\" stroke=\"var(--diagram-red)\" stroke-width=\"1.2\" stroke-dasharray=\"4 3\"/><text x=\"156\" y=\"124\" fill=\"var(--diagram-red)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\">carboxyl group –COOH</text><text x=\"290\" y=\"66\" fill=\"currentColor\" stroke=\"none\" font-size=\"11\" font-weight=\"bold\">ethanoic acid, CH₃COOH</text><text x=\"290\" y=\"84\" fill=\"var(--diagram-muted)\" stroke=\"none\" font-size=\"10\">(acetic acid)</text><text x=\"290\" y=\"102\" fill=\"var(--diagram-muted)\" stroke=\"none\" font-size=\"10\">molecular mass 60</text><text x=\"70\" y=\"152\" fill=\"var(--diagram-muted)\" stroke=\"none\" font-size=\"10\">C=O and C–OH on the same carbon</text></svg>",
+            "alt": "Displayed formula of ethanoic acid with the carboxyl group marked"
+          },
+          "math": [],
+          "narration": "In ethanoic acid, a methyl group is joined to a carboxyl group. The carbon of the carboxyl group is bonded to one oxygen by a double bond and to a hydroxyl group by a single bond. The hydrogen of that hydroxyl group can be released as a hydrogen ion in water, and that is what makes ethanoic acid an acid.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s03",
+          "layout": "concept",
+          "heading": "Physical properties of ethanoic acid",
+          "body_md": "- A **colourless liquid** with a sharp, **pungent smell of vinegar** and a **sour taste**.\n- **Boiling point 118 °C**; **melting point about 17 °C** (16.6 °C).\n- **Miscible with water** in all proportions; density a little more than water (1.05 g cm⁻³).\n- Pure ethanoic acid is **corrosive** and blisters the skin.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Property",
+                "Ethanol",
+                "Ethanoic acid"
+              ],
+              "rows": [
+                [
+                  "Smell",
+                  "Pleasant, spirit-like",
+                  "Pungent, of vinegar"
+                ],
+                [
+                  "Boiling point",
+                  "78 °C",
+                  "118 °C"
+                ],
+                [
+                  "Melting point",
+                  "about −114 °C",
+                  "about 17 °C"
+                ],
+                [
+                  "Effect on blue litmus",
+                  "No change",
+                  "Turns red"
+                ]
+              ]
+            },
+            "alt": "Table comparing the smell, boiling point, melting point and effect on litmus of ethanol and ethanoic acid"
+          },
+          "math": [],
+          "narration": "Ethanoic acid is a colourless liquid with the sharp smell of vinegar and a sour taste. It boils at one hundred and eighteen degrees Celsius, higher than ethanol, and it melts at about seventeen degrees, which is just below room temperature on a warm day. It mixes with water in any proportion, and the pure acid can burn the skin.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s04",
+          "layout": "check",
+          "heading": "Quick check: the carboxyl group",
+          "body_md": "Recall how the atoms of the carboxyl group are bonded.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Picture the carboxyl carbon of ethanoic acid. Count how many oxygen atoms are attached to it, and decide whether each one is joined by a single bond or a double bond before you choose.",
+          "check_question_id": "q_icse10chem_ch15_033",
+          "audio": null
+        },
+        {
+          "id": "s05",
+          "layout": "diagram",
+          "heading": "Glacial acetic acid",
+          "body_md": "Pure, water-free ethanoic acid **freezes at about 17 °C**. In cold weather it turns into a colourless solid that looks like **ice** or a glacier, so pure ethanoic acid is called **glacial acetic acid**. A little water lowers the freezing point, so dilute solutions such as vinegar do not freeze this way.",
+          "bullets": [],
+          "visual": {
+            "kind": "svg",
+            "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 420 250\" role=\"img\" aria-label=\"Two bottles of pure ethanoic acid. Left, at a room temperature above seventeen degrees Celsius, the acid is a clear colourless liquid. Right, on a cold day below seventeen degrees Celsius, the acid has frozen into colourless ice-like crystals, which is why pure ethanoic acid is called glacial acetic acid.\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>Two bottles of pure ethanoic acid. Left, at a room temperature above seventeen degrees Celsius, the acid is a clear colourless liquid. Right, on a cold day below seventeen degrees Celsius, the acid has frozen into colourless ice-like crystals, which is why pure ethanoic acid is called glacial acetic acid.</title><path d=\"M82 40 V62 L60 84 V200 H140 V84 L118 62 V40 Z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/><rect x=\"61\" y=\"110\" width=\"78\" height=\"89\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\" fill-opacity=\"0.12\"/><text x=\"100\" y=\"26\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">above 17 °C</text><text x=\"100\" y=\"222\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\">clear liquid</text><path d=\"M282 40 V62 L260 84 V200 H340 V84 L318 62 V40 Z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/><path d=\"M272 120 l8 -8 l8 8 l-8 8 Z\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.1\" fill-opacity=\"0.2\"/><path d=\"M298 112 l8 -8 l8 8 l-8 8 Z\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.1\" fill-opacity=\"0.2\"/><path d=\"M322 124 l8 -8 l8 8 l-8 8 Z\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.1\" fill-opacity=\"0.2\"/><path d=\"M284 148 l8 -8 l8 8 l-8 8 Z\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.1\" fill-opacity=\"0.2\"/><path d=\"M310 142 l8 -8 l8 8 l-8 8 Z\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.1\" fill-opacity=\"0.2\"/><path d=\"M276 176 l8 -8 l8 8 l-8 8 Z\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.1\" fill-opacity=\"0.2\"/><path d=\"M300 170 l8 -8 l8 8 l-8 8 Z\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.1\" fill-opacity=\"0.2\"/><path d=\"M324 160 l8 -8 l8 8 l-8 8 Z\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.1\" fill-opacity=\"0.2\"/><path d=\"M318 184 l8 -8 l8 8 l-8 8 Z\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.1\" fill-opacity=\"0.2\"/><text x=\"300\" y=\"26\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">below 17 °C</text><text x=\"300\" y=\"222\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\">ice-like crystals</text><text x=\"210\" y=\"244\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">pure (100 per cent) ethanoic acid freezes at about 17 °C: &quot;glacial&quot;</text></svg>",
+            "alt": "Pure ethanoic acid as a liquid above seventeen degrees Celsius and as ice-like crystals below it"
+          },
+          "math": [],
+          "narration": "Pure ethanoic acid, with no water in it, freezes at about seventeen degrees Celsius. On a cold winter morning a bottle of it can turn into colourless crystals that look just like ice. That is why the pure acid is called glacial acetic acid. Vinegar, which is mostly water, does not freeze at that temperature.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s06",
+          "layout": "example",
+          "heading": "Worked example: which liquid is which?",
+          "body_md": "**Problem.** Three bottles A, B and C contain ethanol, ethanoic acid and water (not in that order). A smells of vinegar and turns blue litmus red. B boils at 78 °C and burns with a blue flame. C boils at 100 °C and does not burn. Identify each.\n\n**A** — turns blue litmus red and smells of vinegar: **ethanoic acid**.\n\n**B** — boils at 78 °C and is inflammable: **ethanol**.\n\n**C** — boils at 100 °C and does not burn: **water**.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Bottle",
+                "Key evidence",
+                "Identity"
+              ],
+              "rows": [
+                [
+                  "A",
+                  "Acidic; vinegar smell",
+                  "Ethanoic acid"
+                ],
+                [
+                  "B",
+                  "Boils at 78 °C; burns",
+                  "Ethanol"
+                ],
+                [
+                  "C",
+                  "Boils at 100 °C; does not burn",
+                  "Water"
+                ]
+              ]
+            },
+            "alt": "Table identifying the three liquids from their key evidence"
+          },
+          "math": [],
+          "narration": "Use one clear property for each bottle. Only an acid turns blue litmus red, and the smell of vinegar confirms that bottle A is ethanoic acid. Bottle B boils at seventy eight degrees and burns, which fits ethanol. Bottle C boils at one hundred degrees and does not burn, so it is water.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s07",
+          "layout": "concept",
+          "heading": "Ethanoic acid and litmus: a weak acid",
+          "body_md": "In water, ethanoic acid **ionises** to give hydrogen ions, so it **turns blue litmus red**: CH₃COOH ⇌ CH₃COO⁻ + H⁺. It ionises **only partly**, so it is a **weak acid**: a solution has fewer H⁺ ions, and a higher pH, than hydrochloric acid of the same concentration. That is why it is safe to eat in vinegar.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Acid (same concentration)",
+                "Ionisation in water",
+                "Strength",
+                "Blue litmus"
+              ],
+              "rows": [
+                [
+                  "Hydrochloric acid",
+                  "Complete",
+                  "Strong",
+                  "Turns red"
+                ],
+                [
+                  "Ethanoic acid",
+                  "Partial",
+                  "Weak",
+                  "Turns red"
+                ]
+              ]
+            },
+            "alt": "Table comparing hydrochloric acid and ethanoic acid: ionisation, strength and effect on litmus"
+          },
+          "math": [],
+          "narration": "When ethanoic acid dissolves in water, some of its molecules split up to release hydrogen ions, so it turns blue litmus red. But only a small fraction of the molecules ionise, so ethanoic acid is a weak acid. A solution of it has a higher pH than hydrochloric acid of the same strength, which is why we can safely eat vinegar.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s08",
+          "layout": "check",
+          "heading": "Quick check: acid or not?",
+          "body_md": "Predict the effect of ethanol and ethanoic acid on litmus.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Only a substance that gives hydrogen ions in water can turn blue litmus red. Decide which of the two compounds is an acid and which is neutral, then choose the option that matches.",
+          "check_question_id": "q_icse10chem_ch15_041",
+          "audio": null
+        },
+        {
+          "id": "s09",
+          "layout": "concept",
+          "heading": "Reaction with alkalis",
+          "body_md": "Ethanoic acid **neutralises alkalis**, forming a **salt** (an ethanoate, also called an acetate) and **water**:\n\nCH₃COOH + KOH → CH₃COOK + H₂O\n\nThe sodium salt, **sodium ethanoate**, is the salt used to make methane with soda lime (Chapter 14).",
+          "bullets": [],
+          "visual": {
+            "kind": "chem",
+            "spec": {
+              "equation": "CH3COOH + NaOH -> CH3COONa + H2O"
+            },
+            "alt": "Ethanoic acid plus sodium hydroxide gives sodium ethanoate plus water",
+            "caption": "Neutralisation: a salt and water form."
+          },
+          "math": [],
+          "narration": "Like other acids, ethanoic acid reacts with alkalis to form a salt and water. With sodium hydroxide it gives sodium ethanoate, and with potassium hydroxide it gives potassium ethanoate. This is a neutralisation reaction. Sodium ethanoate is the same salt that is heated with soda lime to make methane.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s10",
+          "layout": "example",
+          "heading": "Worked example: how much alkali?",
+          "body_md": "**Problem.** What mass of potassium hydroxide exactly neutralises 3.0 g of ethanoic acid? (C = 12, H = 1, O = 16, K = 39)\n\n**Step 1.** CH₃COOH + KOH → CH₃COOK + H₂O: 1 mol acid needs 1 mol KOH.\n\n**Step 2.** Molar mass of CH₃COOH: $2 \\times 12 + 4 \\times 1 + 2 \\times 16 = 60$ g, so moles $= \\frac{3.0}{60} = 0.05$.\n\n**Step 3.** Molar mass of KOH: $39 + 16 + 1 = 56$ g, so mass of KOH $= 0.05 \\times 56 = 2.8$ g.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Step",
+                "Result"
+              ],
+              "rows": [
+                [
+                  "Molar mass of ethanoic acid",
+                  "60 g mol⁻¹"
+                ],
+                [
+                  "Moles of acid",
+                  "0.05"
+                ],
+                [
+                  "Moles of KOH (1 : 1)",
+                  "0.05"
+                ],
+                [
+                  "Mass of KOH",
+                  "2.8 g"
+                ]
+              ]
+            },
+            "alt": "Table of the steps from the mass of ethanoic acid to the mass of potassium hydroxide"
+          },
+          "math": [],
+          "narration": "The equation shows that one mole of ethanoic acid reacts with one mole of potassium hydroxide. Ethanoic acid has a molar mass of sixty grams, so three grams is five hundredths of a mole. The same number of moles of potassium hydroxide is needed, and its molar mass is fifty six grams, so the answer is two point eight grams.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s11",
+          "layout": "diagram",
+          "heading": "Esterification in the laboratory",
+          "body_md": "Warm about 1 cm³ each of **ethanoic acid** and **ethanol** with **a few drops of concentrated sulphuric acid** in a test tube standing in a **hot water bath** for a few minutes. Pour the mixture into a beaker of cold water or sodium carbonate solution. An oily layer floats on top and a **sweet, fruity smell** is noticed: evidence that an **ester** has formed.",
+          "bullets": [],
+          "visual": {
+            "kind": "svg",
+            "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 460 240\" role=\"img\" aria-label=\"Testing for an ester. Left: a test tube containing ethanol, ethanoic acid and a few drops of concentrated sulphuric acid stands in a beaker of hot water, which acts as a water bath, for a few minutes. Right: the contents are poured into a beaker of cold water or sodium carbonate solution. An oily layer of ester floats on top and a sweet, fruity smell is noticed.\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>Testing for an ester. Left: a test tube containing ethanol, ethanoic acid and a few drops of concentrated sulphuric acid stands in a beaker of hot water, which acts as a water bath, for a few minutes. Right: the contents are poured into a beaker of cold water or sodium carbonate solution. An oily layer of ester floats on top and a sweet, fruity smell is noticed.</title><path d=\"M40 110 V210 H160 V110\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/><rect x=\"41\" y=\"140\" width=\"118\" height=\"69\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\" fill-opacity=\"0.15\"/><text x=\"100\" y=\"228\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">hot water bath</text><path d=\"M88 60 V190 A12 12 0 0 0 112 190 V60\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"/><path d=\"M89 150 V190 A11 11 0 0 0 111 190 V150 Z\" fill=\"var(--diagram-accent)\" stroke=\"var(--diagram-accent)\" stroke-width=\"1.5\" fill-opacity=\"0.35\"/><text x=\"170\" y=\"60\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">ethanol</text><text x=\"170\" y=\"73\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">+ ethanoic acid</text><text x=\"170\" y=\"86\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">+ few drops of</text><text x=\"170\" y=\"99\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">conc. H₂SO₄</text><line x1=\"112\" y1=\"160\" x2=\"168\" y2=\"100\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\"/><line x1=\"240\" y1=\"140\" x2=\"284.4\" y2=\"140\" stroke=\"currentColor\" stroke-width=\"1.5\"/><polygon points=\"290,140 283.6,142.9 283.6,137.1\" fill=\"currentColor\" stroke=\"none\"/><text x=\"265\" y=\"130\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">pour</text><path d=\"M310 110 V210 H430 V110\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/><rect x=\"311\" y=\"150\" width=\"118\" height=\"59\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\" fill-opacity=\"0.15\"/><rect x=\"311\" y=\"140\" width=\"118\" height=\"10\" fill=\"var(--diagram-accent)\" stroke=\"var(--diagram-accent)\" stroke-width=\"0\" fill-opacity=\"0.5\"/><text x=\"370\" y=\"98\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">oily ester layer</text><line x1=\"370\" y1=\"102\" x2=\"370\" y2=\"140\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\"/><text x=\"370\" y=\"228\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">fruity smell</text><text x=\"370\" y=\"178\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">cold water or</text><text x=\"370\" y=\"191\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">Na₂CO₃ solution</text></svg>",
+            "alt": "Warming ethanol, ethanoic acid and concentrated sulphuric acid in a water bath, then pouring into water to smell the ester"
+          },
+          "math": [],
+          "narration": "To make an ester in the laboratory, warm a little ethanoic acid and ethanol with a few drops of concentrated sulphuric acid in a test tube placed in hot water. After a few minutes, pour the mixture into cold water or sodium carbonate solution. An oily layer floats on top, and you notice a sweet, fruity smell. That smell tells you that an ester has formed.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s12",
+          "layout": "concept",
+          "heading": "The esterification equation",
+          "body_md": "Ethanoic acid + ethanol ⇌ ethyl ethanoate + water. **Concentrated sulphuric acid** is a **catalyst** and a **dehydrating agent** (it removes the water and so pushes the reaction forward). The ester is named from the alcohol part (**ethyl**) and the acid part (**ethanoate**). With methanol, ethanoic acid gives **methyl ethanoate**, CH₃COOCH₃.",
+          "bullets": [],
+          "visual": {
+            "kind": "chem",
+            "spec": {
+              "equation": "CH3COOH + C2H5OH <=>[{conc. H2SO4}] CH3COOC2H5 + H2O"
+            },
+            "alt": "Ethanoic acid plus ethanol, with concentrated sulphuric acid, gives ethyl ethanoate plus water, reversibly",
+            "caption": "Esterification is slow and reversible."
+          },
+          "math": [],
+          "narration": "The equation shows ethanoic acid and ethanol forming ethyl ethanoate and water. The double arrow means the reaction can go both ways. Concentrated sulphuric acid speeds it up and soaks up the water, which helps more ester to form. The ester takes the first part of its name from the alcohol and the second part from the acid.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s13",
+          "layout": "check",
+          "heading": "Quick check: making an ester",
+          "body_md": "Choose the reactants that give a named ester.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. An ester name has two words. The first word comes from the alcohol and the second from the acid. Split the name of the ester into its two parts and match each part to its parent compound.",
+          "check_question_id": "q_icse10chem_ch15_044",
+          "audio": null
+        },
+        {
+          "id": "s14",
+          "layout": "concept",
+          "heading": "Uses of ethanoic acid",
+          "body_md": "Ethanoic acid is used both in the kitchen and in industry.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Use",
+                "Detail"
+              ],
+              "rows": [
+                [
+                  "Vinegar",
+                  "Flavouring food and preserving pickles"
+                ],
+                [
+                  "Making esters",
+                  "For perfumes and food flavourings"
+                ],
+                [
+                  "Rubber industry",
+                  "Coagulating latex to make rubber sheets"
+                ],
+                [
+                  "Making plastics and fibres",
+                  "Cellulose acetate for films and rayon"
+                ],
+                [
+                  "Laboratory reagent and solvent",
+                  "Making ethanoates, such as sodium ethanoate"
+                ]
+              ]
+            },
+            "alt": "Table of five uses of ethanoic acid with details"
+          },
+          "math": [],
+          "narration": "Ethanoic acid is used as vinegar to flavour food and to preserve pickles. In industry it is used to make esters for perfumes and flavourings, to make cellulose acetate for films and fibres, and to coagulate rubber latex into sheets. In the laboratory it is used to make salts such as sodium ethanoate.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s15",
+          "layout": "summary",
+          "heading": "Summary: Part 2",
+          "body_md": "",
+          "bullets": [
+            "Ethanoic (acetic) acid, CH₃COOH, contains the carboxyl group –COOH.",
+            "Colourless, vinegar smell, boils at 118 °C, melts at about 17 °C; pure acid freezes into glacial acetic acid.",
+            "A weak acid: turns blue litmus red; partly ionised.",
+            "With alkalis: salt + water (CH₃COOH + NaOH → CH₃COONa + H₂O).",
+            "With ethanol and conc. H₂SO₄: ethyl ethanoate, with a fruity smell. Uses: vinegar, esters, rubber, plastics."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Reagent with ethanoic acid",
+                "Product",
+                "Observation"
+              ],
+              "rows": [
+                [
+                  "Blue litmus",
+                  "—",
+                  "Turns red"
+                ],
+                [
+                  "Sodium hydroxide",
+                  "Sodium ethanoate + water",
+                  "No visible change (heat given out)"
+                ],
+                [
+                  "Ethanol + conc. H₂SO₄",
+                  "Ethyl ethanoate + water",
+                  "Fruity smell"
+                ]
+              ]
+            },
+            "alt": "Summary table of three reactions of ethanoic acid with products and observations"
+          },
+          "math": [],
+          "narration": "Let us sum up Part 2. Ethanoic acid contains the carboxyl group. It smells of vinegar, boils at one hundred and eighteen degrees and freezes at about seventeen degrees, which is why the pure acid is called glacial. It is a weak acid that turns blue litmus red, neutralises alkalis to give salts, and forms fruity esters with alcohols.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s16",
+          "layout": "exam-tips",
+          "heading": "Exam tips: Part 2",
+          "body_md": "",
+          "bullets": [
+            "Draw the carboxyl group with both oxygens: one C=O and one C–O–H.",
+            "Explain \"glacial\": the pure acid freezes at about 17 °C into ice-like crystals.",
+            "For esterification, give the observation (fruity smell) and the catalyst (conc. H₂SO₄).",
+            "Ethanoic acid is weak because it is only partly ionised, not because it is organic."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Slip",
+                "Fix"
+              ],
+              "rows": [
+                [
+                  "CH₃COOH + NaOH → CH₃COONa + H₂",
+                  "Alkali gives water, not hydrogen: … + H₂O"
+                ],
+                [
+                  "Ester from ethanoic acid + methanol is ethyl methanoate",
+                  "It is methyl ethanoate"
+                ],
+                [
+                  "Glacial acetic acid is very cold acid",
+                  "It is pure (anhydrous) acid that freezes at 17 °C"
+                ]
+              ]
+            },
+            "alt": "Table of three common slips in Part 2 and their fixes"
+          },
+          "math": [],
+          "narration": "Final tips. Draw both oxygens of the carboxyl group, one with a double bond and one carrying a hydrogen. When asked about glacial acetic acid, say that the pure acid freezes at about seventeen degrees into ice-like crystals. In esterification questions give the catalyst and the fruity smell. And name esters with the alcohol part first.",
+          "check_question_id": null,
+          "audio": null
+        }
+      ],
+      "status": "draft",
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    }
+  ],
+  "notes": {
+    "unit": "icse-10-chemistry-ch15",
+    "version": 1,
+    "title": "Alcohols and Carboxylic Acids — Notes",
+    "language": "en",
+    "sections": [
+      {
+        "heading": "1. Ethanol: preparation and physical properties",
+        "body_md": "**Ethanol** (ethyl alcohol), C₂H₅OH or CH₃–CH₂–OH: an ethyl group joined to the **hydroxyl group, –OH**, the functional group of alcohols (general formula CₙH₂ₙ₊₁OH).\n\n**Preparation by hydrolysis of an alkyl halide:** boil bromoethane with **aqueous** NaOH or KOH; OH⁻ replaces Br. (Alcoholic KOH gives ethene instead.)\n\n**Physical properties:** colourless, volatile liquid; pleasant smell, burning taste; **boils at 78 °C**, freezes at about −114 °C; **density 0.79 g cm⁻³** (lighter than water); **miscible with water** in all proportions (hydrogen bonding through –OH); good solvent; **neutral to litmus**.",
+        "key_terms": [
+          {
+            "term": "Alcohol",
+            "definition_md": "An organic compound in which a hydroxyl group, –OH, is joined to a saturated carbon atom."
+          },
+          {
+            "term": "Hydrolysis (of an alkyl halide)",
+            "definition_md": "Replacement of the halogen atom of an alkyl halide by –OH on boiling with an aqueous alkali."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\ce{C2H5Br + NaOH ->[{aqueous, boil}] C2H5OH + NaBr}",
+            "label": "Ethanol from bromoethane"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Property",
+              "Ethanol"
+            ],
+            "rows": [
+              [
+                "Appearance",
+                "Colourless, volatile liquid"
+              ],
+              [
+                "Boiling point",
+                "78 °C"
+              ],
+              [
+                "Density",
+                "0.79 g cm⁻³"
+              ],
+              [
+                "Solubility in water",
+                "Miscible in all proportions"
+              ],
+              [
+                "Litmus",
+                "Neutral"
+              ]
+            ]
+          },
+          "alt": "Table of five physical properties of ethanol"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-chemistry-ch15-t01"
+        ]
+      },
+      {
+        "heading": "2. Chemical properties of ethanol",
+        "body_md": "- **Combustion:** burns with a blue, non-sooty flame; CO₂ and H₂O; much heat (fuel).\n- **Sodium:** brisk effervescence of **hydrogen**; **sodium ethoxide** C₂H₅ONa is left (gentler than sodium with water).\n- **Esterification:** warmed with ethanoic acid and **a few drops of conc. H₂SO₄**, gives **ethyl ethanoate** (fruity smell) and water; reversible.\n- **Dehydration:** heated with **excess conc. H₂SO₄ at about 170 °C**, gives **ethene**.",
+        "key_terms": [
+          {
+            "term": "Sodium ethoxide",
+            "definition_md": "The compound C₂H₅ONa formed, with hydrogen, when sodium reacts with ethanol."
+          },
+          {
+            "term": "Esterification",
+            "definition_md": "The reaction of a carboxylic acid with an alcohol, in the presence of concentrated sulphuric acid, to form an ester and water."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\ce{C2H5OH + 3O2 -> 2CO2 + 3H2O}",
+            "label": "Combustion"
+          },
+          {
+            "latex": "\\ce{2C2H5OH + 2Na -> 2C2H5ONa + H2}",
+            "label": "With sodium"
+          },
+          {
+            "latex": "\\ce{C2H5OH + CH3COOH <=>[{conc. H2SO4}] CH3COOC2H5 + H2O}",
+            "label": "Esterification"
+          },
+          {
+            "latex": "\\ce{C2H5OH ->[{conc. H2SO4, 170 °C}] C2H4 + H2O}",
+            "label": "Dehydration"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Reagent and condition",
+              "Product",
+              "Observation"
+            ],
+            "rows": [
+              [
+                "Air, ignite",
+                "CO₂ + H₂O",
+                "Blue flame"
+              ],
+              [
+                "Sodium",
+                "C₂H₅ONa + H₂",
+                "Effervescence"
+              ],
+              [
+                "Ethanoic acid, conc. H₂SO₄, warm",
+                "CH₃COOC₂H₅ + H₂O",
+                "Fruity smell"
+              ],
+              [
+                "Excess conc. H₂SO₄, 170 °C",
+                "C₂H₄ + H₂O",
+                "Gas decolourises bromine water"
+              ]
+            ]
+          },
+          "alt": "Table of four reactions of ethanol with products and observations"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-chemistry-ch15-t02"
+        ]
+      },
+      {
+        "heading": "3. Denatured, methylated and spurious alcohol; uses of ethanol",
+        "body_md": "**Denatured alcohol:** ethanol made unfit to drink by adding **methanol**, pyridine and a dye (such as copper sulphate). Industrial ethanol carries no liquor tax; denaturing prevents its misuse as a drink. **Methylated spirit:** ethanol denatured mainly with methanol.\n\n**Spurious alcohol:** illicit liquor, often containing **methanol**. In the body methanol is oxidised to methanal and methanoic acid, which damage the optic nerve: **blindness** and even **death**.\n\n**Uses of ethanol:** solvent (medicines, tinctures, perfumes, varnishes); fuel and petrol blend (E20); antiseptic and hand sanitiser; thermometer liquid for cold places (freezes at about −114 °C); making ethanoic acid, esters and ethene; alcoholic drinks.",
+        "key_terms": [
+          {
+            "term": "Denatured alcohol",
+            "definition_md": "Ethanol made unfit for drinking by adding poisonous or unpleasant substances such as methanol and pyridine."
+          },
+          {
+            "term": "Spurious alcohol",
+            "definition_md": "Illegally made liquor, often contaminated with methanol, which can cause blindness or death."
+          }
+        ],
+        "formulas": [],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Use of ethanol",
+              "Property it depends on"
+            ],
+            "rows": [
+              [
+                "Solvent in medicines and perfumes",
+                "Dissolves many organic substances"
+              ],
+              [
+                "Fuel",
+                "Burns with a clean, hot flame"
+              ],
+              [
+                "Sanitiser",
+                "Kills germs"
+              ],
+              [
+                "Thermometers for cold places",
+                "Very low freezing point"
+              ]
+            ]
+          },
+          "alt": "Table of four uses of ethanol with the property each depends on"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-chemistry-ch15-t03"
+        ]
+      },
+      {
+        "heading": "4. Ethanoic (acetic) acid: structure and physical properties",
+        "body_md": "**Ethanoic acid**, CH₃COOH: a methyl group joined to the **carboxyl group, –COOH** (the carboxyl carbon has one C=O and one C–OH). Molecular mass 60. **Vinegar** is a 5–8 per cent solution of it in water.\n\n**Physical properties:** colourless liquid; pungent vinegar smell; sour taste; **boils at 118 °C**; **melts at about 17 °C** (16.6 °C); miscible with water; the pure acid is corrosive.\n\n**Glacial acetic acid:** pure (anhydrous) ethanoic acid. Below about 17 °C it freezes into colourless, **ice-like crystals**, hence \"glacial\".",
+        "key_terms": [
+          {
+            "term": "Carboxyl group",
+            "definition_md": "The functional group –COOH of carboxylic acids: a carbon atom with a C=O bond and a C–OH bond."
+          },
+          {
+            "term": "Glacial acetic acid",
+            "definition_md": "Pure, water-free ethanoic acid, which freezes at about 17 °C to an ice-like solid."
+          }
+        ],
+        "formulas": [],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Property",
+              "Ethanol",
+              "Ethanoic acid"
+            ],
+            "rows": [
+              [
+                "Smell",
+                "Pleasant",
+                "Vinegar"
+              ],
+              [
+                "Boiling point",
+                "78 °C",
+                "118 °C"
+              ],
+              [
+                "Melting point",
+                "about −114 °C",
+                "about 17 °C"
+              ],
+              [
+                "Blue litmus",
+                "No change",
+                "Red"
+              ]
+            ]
+          },
+          "alt": "Table comparing ethanol and ethanoic acid"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-chemistry-ch15-t04"
+        ]
+      },
+      {
+        "heading": "5. Chemical properties of ethanoic acid",
+        "body_md": "- **Litmus:** turns blue litmus red. It is a **weak acid**: only partly ionised in water (CH₃COOH ⇌ CH₃COO⁻ + H⁺).\n- **Alkalis:** neutralisation gives a salt (ethanoate) and water.\n- **Alcohols (esterification):** with ethanol and a few drops of conc. H₂SO₄ (warm), gives **ethyl ethanoate**; with methanol gives **methyl ethanoate**. **Evidence:** the mixture poured into water gives an oily layer with a **sweet, fruity smell**. Conc. H₂SO₄ acts as catalyst and dehydrating agent; the reaction is reversible.",
+        "key_terms": [
+          {
+            "term": "Weak acid",
+            "definition_md": "An acid that is only partly ionised in water, so its solution contains relatively few hydrogen ions."
+          },
+          {
+            "term": "Ester",
+            "definition_md": "A compound formed from a carboxylic acid and an alcohol, with the group –COO–; esters have fruity smells."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\ce{CH3COOH + NaOH -> CH3COONa + H2O}",
+            "label": "With sodium hydroxide"
+          },
+          {
+            "latex": "\\ce{CH3COOH + KOH -> CH3COOK + H2O}",
+            "label": "With potassium hydroxide"
+          },
+          {
+            "latex": "\\ce{CH3COOH + CH3OH <=>[{conc. H2SO4}] CH3COOCH3 + H2O}",
+            "label": "With methanol: methyl ethanoate"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Reagent",
+              "Product",
+              "Type of reaction"
+            ],
+            "rows": [
+              [
+                "Blue litmus",
+                "Turns red",
+                "Acidic nature"
+              ],
+              [
+                "NaOH solution",
+                "Sodium ethanoate + water",
+                "Neutralisation"
+              ],
+              [
+                "Ethanol, conc. H₂SO₄",
+                "Ethyl ethanoate + water",
+                "Esterification"
+              ]
+            ]
+          },
+          "alt": "Table of three reactions of ethanoic acid"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-chemistry-ch15-t05"
+        ]
+      },
+      {
+        "heading": "6. Uses of ethanoic acid",
+        "body_md": "- **Vinegar:** flavouring food and preserving pickles (the acid stops microbes from growing).\n- **Esters:** for perfumes and artificial food flavourings.\n- **Rubber industry:** coagulating latex.\n- **Plastics and fibres:** cellulose acetate (photographic film, rayon).\n- **Laboratory:** a reagent and solvent; making ethanoates such as sodium ethanoate.",
+        "key_terms": [
+          {
+            "term": "Vinegar",
+            "definition_md": "A dilute (about 5–8 per cent) solution of ethanoic acid in water, used in food."
+          }
+        ],
+        "formulas": [],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Use",
+              "Why ethanoic acid"
+            ],
+            "rows": [
+              [
+                "Preserving pickles",
+                "Acidic: stops microbes growing"
+              ],
+              [
+                "Making esters",
+                "Reacts with alcohols"
+              ],
+              [
+                "Coagulating latex",
+                "Acid makes rubber particles clump"
+              ]
+            ]
+          },
+          "alt": "Table of three uses of ethanoic acid and the reason for each"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-chemistry-ch15-t05"
+        ]
+      }
+    ],
+    "exam_tips_md": "**Common mistakes**\n- Writing aqueous and alcoholic KOH as if they gave the same product with bromoethane.\n- Unbalanced sodium equation: write 2C₂H₅OH + 2Na → 2C₂H₅ONa + H₂.\n- Calling ethanol acidic because it reacts with sodium (it is neutral to litmus).\n- Writing hydrogen instead of water as a product of ethanoic acid with an alkali.\n- Naming the ester with the acid part first (it is ethyl ethanoate, methyl ethanoate).\n\n**How marks are usually awarded**\n- Equation (1 mark): correct formulae, balanced, with the condition.\n- Observation (1 mark): \"brisk effervescence\" with sodium; \"fruity smell\" for an ester; \"blue litmus turns red\" for the acid.\n- Definitions (1 mark): denatured alcohol, glacial acetic acid — include the key reason.",
+    "status": "draft",
+    "provenance": {
+      "origin": "human",
+      "template_version": null,
+      "model": null,
+      "generated_at": "2026-11-01",
+      "author": "claude-opus-5-5 (subject-producer)"
+    }
+  },
+  "flashcards": {
+    "unit": "icse-10-chemistry-ch15",
+    "version": 1,
+    "language": "en",
+    "cards": [
+      {
+        "id": "f01",
+        "front_md": "Functional group of alcohols?",
+        "back_md": "Hydroxyl group, –OH.",
+        "tag": "definition",
+        "topic_id": "icse-10-chemistry-ch15-t01"
+      },
+      {
+        "id": "f02",
+        "front_md": "Bromoethane + aqueous NaOH →?",
+        "back_md": "Ethanol + NaBr (hydrolysis).",
+        "tag": "formula",
+        "topic_id": "icse-10-chemistry-ch15-t01"
+      },
+      {
+        "id": "f03",
+        "front_md": "Boiling point of ethanol?",
+        "back_md": "78 °C.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch15-t01"
+      },
+      {
+        "id": "f04",
+        "front_md": "Is ethanol lighter or heavier than water?",
+        "back_md": "Lighter (0.79 g cm⁻³).",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch15-t01"
+      },
+      {
+        "id": "f05",
+        "front_md": "Effect of ethanol on litmus?",
+        "back_md": "None: it is neutral.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch15-t01"
+      },
+      {
+        "id": "f06",
+        "front_md": "Why does ethanol mix with water?",
+        "back_md": "Its –OH group forms hydrogen bonds with water.",
+        "tag": "concept",
+        "topic_id": "icse-10-chemistry-ch15-t01"
+      },
+      {
+        "id": "f07",
+        "front_md": "Combustion of ethanol (balanced)?",
+        "back_md": "C₂H₅OH + 3O₂ → 2CO₂ + 3H₂O.",
+        "tag": "formula",
+        "topic_id": "icse-10-chemistry-ch15-t02"
+      },
+      {
+        "id": "f08",
+        "front_md": "Ethanol + sodium: products?",
+        "back_md": "Sodium ethoxide and hydrogen.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch15-t02"
+      },
+      {
+        "id": "f09",
+        "front_md": "Observation: sodium in ethanol?",
+        "back_md": "Brisk effervescence; gas burns with a pop.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch15-t02"
+      },
+      {
+        "id": "f10",
+        "front_md": "Condition for dehydration of ethanol?",
+        "back_md": "Excess conc. H₂SO₄, about 170 °C.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch15-t02"
+      },
+      {
+        "id": "f11",
+        "front_md": "Ethanol + ethanoic acid (conc. H₂SO₄) →?",
+        "back_md": "Ethyl ethanoate + water.",
+        "tag": "formula",
+        "topic_id": "icse-10-chemistry-ch15-t02"
+      },
+      {
+        "id": "f12",
+        "front_md": "Denatured alcohol?",
+        "back_md": "Ethanol made unfit to drink by adding methanol, pyridine and a dye.",
+        "tag": "definition",
+        "topic_id": "icse-10-chemistry-ch15-t03"
+      },
+      {
+        "id": "f13",
+        "front_md": "Why is ethanol denatured?",
+        "back_md": "To stop untaxed industrial ethanol being drunk.",
+        "tag": "concept",
+        "topic_id": "icse-10-chemistry-ch15-t03"
+      },
+      {
+        "id": "f14",
+        "front_md": "Methylated spirit?",
+        "back_md": "Ethanol denatured mainly with methanol.",
+        "tag": "definition",
+        "topic_id": "icse-10-chemistry-ch15-t03"
+      },
+      {
+        "id": "f15",
+        "front_md": "Why is spurious alcohol dangerous?",
+        "back_md": "It may contain methanol, which causes blindness or death.",
+        "tag": "concept",
+        "topic_id": "icse-10-chemistry-ch15-t03"
+      },
+      {
+        "id": "f16",
+        "front_md": "Two uses of ethanol?",
+        "back_md": "Solvent for medicines; fuel (also sanitiser, thermometers).",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch15-t03"
+      },
+      {
+        "id": "f17",
+        "front_md": "Functional group of carboxylic acids?",
+        "back_md": "Carboxyl group, –COOH.",
+        "tag": "definition",
+        "topic_id": "icse-10-chemistry-ch15-t04"
+      },
+      {
+        "id": "f18",
+        "front_md": "Draw the carboxyl group in words.",
+        "back_md": "C with =O and –OH: CH₃–C(=O)–O–H.",
+        "tag": "diagram",
+        "topic_id": "icse-10-chemistry-ch15-t04"
+      },
+      {
+        "id": "f19",
+        "front_md": "Boiling and melting points of ethanoic acid?",
+        "back_md": "118 °C; about 17 °C.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch15-t04"
+      },
+      {
+        "id": "f20",
+        "front_md": "Glacial acetic acid?",
+        "back_md": "Pure ethanoic acid; freezes at about 17 °C into ice-like crystals.",
+        "tag": "definition",
+        "topic_id": "icse-10-chemistry-ch15-t04"
+      },
+      {
+        "id": "f21",
+        "front_md": "What is vinegar?",
+        "back_md": "A 5–8 per cent solution of ethanoic acid in water.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch15-t04"
+      },
+      {
+        "id": "f22",
+        "front_md": "Ethanoic acid and blue litmus?",
+        "back_md": "Turns red.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch15-t05"
+      },
+      {
+        "id": "f23",
+        "front_md": "Why is ethanoic acid a weak acid?",
+        "back_md": "It is only partly ionised in water.",
+        "tag": "concept",
+        "topic_id": "icse-10-chemistry-ch15-t05"
+      },
+      {
+        "id": "f24",
+        "front_md": "CH₃COOH + NaOH →?",
+        "back_md": "CH₃COONa + H₂O (sodium ethanoate).",
+        "tag": "formula",
+        "topic_id": "icse-10-chemistry-ch15-t05"
+      },
+      {
+        "id": "f25",
+        "front_md": "Evidence that an ester has formed?",
+        "back_md": "Sweet, fruity smell (oily layer on water).",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch15-t05"
+      },
+      {
+        "id": "f26",
+        "front_md": "Role of conc. H₂SO₄ in esterification?",
+        "back_md": "Catalyst and dehydrating agent.",
+        "tag": "concept",
+        "topic_id": "icse-10-chemistry-ch15-t05"
+      },
+      {
+        "id": "f27",
+        "front_md": "Ester from ethanoic acid and methanol?",
+        "back_md": "Methyl ethanoate, CH₃COOCH₃.",
+        "tag": "example",
+        "topic_id": "icse-10-chemistry-ch15-t05"
+      },
+      {
+        "id": "f28",
+        "front_md": "Use of ethanoic acid in the rubber industry?",
+        "back_md": "Coagulating latex.",
+        "tag": "fact",
+        "topic_id": "icse-10-chemistry-ch15-t05"
+      },
+      {
+        "id": "f29",
+        "front_md": "One test to tell ethanol from ethanoic acid?",
+        "back_md": "Blue litmus: only the acid turns it red.",
+        "tag": "example",
+        "topic_id": "icse-10-chemistry-ch15-t05"
+      },
+      {
+        "id": "f30",
+        "front_md": "Exam tip: naming esters",
+        "back_md": "Alcohol part first: ethyl ethanoate.",
+        "tag": "exam-tip",
+        "topic_id": "icse-10-chemistry-ch15-t05"
+      }
+    ],
+    "status": "draft",
+    "provenance": {
+      "origin": "human",
+      "template_version": null,
+      "model": null,
+      "generated_at": "2026-11-01",
+      "author": "claude-opus-5-5 (subject-producer)"
+    }
+  },
+  "questions": [
+    {
+      "id": "q_icse10chem_ch15_001",
+      "unit": "icse-10-chemistry-ch15",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "The alkyl halide C₂H₅Br is hydrolysed by heating it with water in which sodium hydroxide is dissolved. Which organic compound forms?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "ethene"
+        },
+        {
+          "id": "b",
+          "text_md": "ethanol"
+        },
+        {
+          "id": "c",
+          "text_md": "ethane"
+        },
+        {
+          "id": "d",
+          "text_md": "ethanoic acid"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "In water, OH⁻ replaces Br (hydrolysis): C₂H₅Br + NaOH → C₂H₅OH + NaBr — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch15-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch15_002",
+      "unit": "icse-10-chemistry-ch15",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A student adds 10 cm³ of ethanol to 10 cm³ of water in a test tube and shakes it. What does she observe?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Two layers, with ethanol at the bottom"
+        },
+        {
+          "id": "b",
+          "text_md": "A single clear liquid, because ethanol is miscible with water"
+        },
+        {
+          "id": "c",
+          "text_md": "Two layers, with ethanol on top"
+        },
+        {
+          "id": "d",
+          "text_md": "A white precipitate"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Ethanol mixes with water in all proportions, so no layers form — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch15-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch15_003",
+      "unit": "icse-10-chemistry-ch15",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which temperature is closest to the boiling point of ethanol at normal pressure?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "100 °C"
+        },
+        {
+          "id": "b",
+          "text_md": "118 °C"
+        },
+        {
+          "id": "c",
+          "text_md": "78 °C"
+        },
+        {
+          "id": "d",
+          "text_md": "35 °C"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Ethanol boils at 78 °C (water at 100 °C, ethanoic acid at 118 °C) — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch15-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch15_004",
+      "unit": "icse-10-chemistry-ch15",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Bromoethane gives ethanol when boiled with aqueous potassium hydroxide.\n\n**Reason (R):** In aqueous solution, the hydroxide ion takes the place of the bromine atom in bromoethane.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Both are true, and R explains how the –OH group of ethanol comes to replace Br — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch15-t01"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch15_005",
+      "unit": "icse-10-chemistry-ch15",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? Ethanol turns blue litmus red because its molecule contains a hydroxyl group.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "f"
+        ]
+      },
+      "solution_md": "False: ethanol does not ionise to give H⁺ ions in water, so it is neutral to litmus.",
+      "marking_scheme": [
+        {
+          "step": "False, with the correction",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch15-t01"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch15_006",
+      "unit": "icse-10-chemistry-ch15",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "Ethanol, with a density of 0.79 g cm⁻³, is ___ (lighter / heavier) than water.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "lighter"
+            ]
+          }
+        ]
+      },
+      "solution_md": "**Lighter** (water has a density of 1.00 g cm⁻³).",
+      "marking_scheme": [
+        {
+          "step": "Blank 1: \"lighter\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch15-t01"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch15_007",
+      "unit": "icse-10-chemistry-ch15",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write a balanced equation for the preparation of ethanol from bromoethane, stating the condition.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "$\\ce{C2H5Br + NaOH ->[{aqueous, boil}] C2H5OH + NaBr}$ (boiled with aqueous sodium hydroxide)."
+      },
+      "solution_md": "Hydrolysis.",
+      "marking_scheme": [
+        {
+          "step": "Balanced equation with aqueous alkali",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch15-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch15_008",
+      "unit": "icse-10-chemistry-ch15",
+      "language": "en",
+      "type": "short",
+      "stem_md": "(a) State two physical properties of ethanol other than its colour. (b) Give a reason why ethanol dissolves in water in all proportions.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Any two: it is a volatile liquid with a pleasant smell; it boils at 78 °C; it is lighter than water (0.79 g cm⁻³); it is neutral to litmus. (b) The –OH group of ethanol forms hydrogen bonds with water molecules."
+      },
+      "solution_md": "Two properties; hydrogen bonding.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch15-t01"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch15_009",
+      "unit": "icse-10-chemistry-ch15",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A small piece of sodium is dropped into dry ethanol in a test tube. The gas given off and the other product are:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "hydrogen and sodium ethoxide"
+        },
+        {
+          "id": "b",
+          "text_md": "oxygen and sodium hydroxide"
+        },
+        {
+          "id": "c",
+          "text_md": "hydrogen and sodium hydroxide"
+        },
+        {
+          "id": "d",
+          "text_md": "carbon dioxide and sodium ethanoate"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "2C₂H₅OH + 2Na → 2C₂H₅ONa + H₂ — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch15-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch15_010",
+      "unit": "icse-10-chemistry-ch15",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A spirit lamp burns ethanol in plenty of air. The flame and the products are:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "a yellow, sooty flame, giving carbon and water"
+        },
+        {
+          "id": "b",
+          "text_md": "a green flame, giving carbon monoxide only"
+        },
+        {
+          "id": "c",
+          "text_md": "no flame, because ethanol does not burn"
+        },
+        {
+          "id": "d",
+          "text_md": "a blue, non-sooty flame, giving carbon dioxide and water"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "C₂H₅OH + 3O₂ → 2CO₂ + 3H₂O with a clean blue flame — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch15-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch15_011",
+      "unit": "icse-10-chemistry-ch15",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which reagent and condition convert ethanol into ethene?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Excess concentrated sulphuric acid at about 170 °C"
+        },
+        {
+          "id": "b",
+          "text_md": "Aqueous sodium hydroxide at room temperature"
+        },
+        {
+          "id": "c",
+          "text_md": "Sodium metal at room temperature"
+        },
+        {
+          "id": "d",
+          "text_md": "Ethanoic acid with a few drops of concentrated sulphuric acid, warmed"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Excess conc. H₂SO₄ removes water at about 170 °C; the last option gives an ester instead — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch15-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch15_012",
+      "unit": "icse-10-chemistry-ch15",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Ethanol is warmed with ethanoic acid and a few drops of concentrated sulphuric acid, and the mixture is poured into water. The product noticed has:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "a pungent smell, and is ethene"
+        },
+        {
+          "id": "b",
+          "text_md": "a fruity smell, and is methyl methanoate"
+        },
+        {
+          "id": "c",
+          "text_md": "a vinegar smell, and is sodium ethanoate"
+        },
+        {
+          "id": "d",
+          "text_md": "a fruity smell, and is ethyl ethanoate"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Esterification gives the ester ethyl ethanoate, CH₃COOC₂H₅, with a sweet fruity smell — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch15-t02",
+        "icse-10-chemistry-ch15-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch15_013",
+      "unit": "icse-10-chemistry-ch15",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Ethanol reacts with sodium to give off hydrogen.\n\n**Reason (R):** Ethanol is a strong acid that turns blue litmus red.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "A is true (sodium replaces the H of –OH). R is false: ethanol is neutral to litmus — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch15-t01",
+        "icse-10-chemistry-ch15-t02"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch15_014",
+      "unit": "icse-10-chemistry-ch15",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? The reaction between ethanol and ethanoic acid to form ethyl ethanoate is reversible.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "t"
+        ]
+      },
+      "solution_md": "True: CH₃COOH + C₂H₅OH ⇌ CH₃COOC₂H₅ + H₂O; conc. H₂SO₄ removes water and helps more ester form.",
+      "marking_scheme": [
+        {
+          "step": "True",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch15-t02"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch15_015",
+      "unit": "icse-10-chemistry-ch15",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write a balanced equation for the reaction of ethanol with sodium.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "$\\ce{2C2H5OH + 2Na -> 2C2H5ONa + H2}$"
+      },
+      "solution_md": "Sodium ethoxide and hydrogen.",
+      "marking_scheme": [
+        {
+          "step": "Balanced equation",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch15-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch15_016",
+      "unit": "icse-10-chemistry-ch15",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Ethanol is blended with petrol as a vehicle fuel. Write the balanced equation for ethanol burning in excess air.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "$\\ce{C2H5OH + 3O2 -> 2CO2 + 3H2O}$"
+      },
+      "solution_md": "Complete combustion.",
+      "marking_scheme": [
+        {
+          "step": "Balanced equation",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch15-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch15_017",
+      "unit": "icse-10-chemistry-ch15",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write a balanced equation for the reaction of ethanol with ethanoic acid, and name the catalyst.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "$\\ce{C2H5OH + CH3COOH <=>[{conc. H2SO4}] CH3COOC2H5 + H2O}$; catalyst: concentrated sulphuric acid."
+      },
+      "solution_md": "Esterification.",
+      "marking_scheme": [
+        {
+          "step": "Equation and catalyst",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch15-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch15_018",
+      "unit": "icse-10-chemistry-ch15",
+      "language": "en",
+      "type": "short",
+      "stem_md": "A pea-sized piece of sodium is placed in 5 cm³ of dry ethanol. State what you would see.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Brisk effervescence (bubbles of hydrogen) as the sodium slowly dissolves; the gas burns with a pop."
+      },
+      "solution_md": "Effervescence.",
+      "marking_scheme": [
+        {
+          "step": "Effervescence of a gas",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch15-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch15_019",
+      "unit": "icse-10-chemistry-ch15",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write balanced equations, with conditions, for the conversion of ethanol into (a) ethene and (b) ethyl ethanoate.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) $\\ce{C2H5OH ->[{conc. H2SO4, 170 °C}] C2H4 + H2O}$ (b) $\\ce{C2H5OH + CH3COOH <=>[{conc. H2SO4}] CH3COOC2H5 + H2O}$ (warm with a few drops of concentrated sulphuric acid)."
+      },
+      "solution_md": "Dehydration; esterification.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch15-t02"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch15_020",
+      "unit": "icse-10-chemistry-ch15",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "4.6 g of ethanol reacts completely with excess sodium. Calculate the volume of hydrogen produced at STP. (C = 12, H = 1, O = 16; 1 mole of a gas occupies 22.4 litres at STP)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 1.12,
+        "tolerance": 0.01,
+        "unit": "L"
+      },
+      "solution_md": "$\\ce{2C2H5OH + 2Na -> 2C2H5ONa + H2}$. Molar mass of ethanol $= 2 \\times 12 + 6 \\times 1 + 16 = 46$ g, so moles $= \\frac{4.6}{46} = 0.1$. Moles of hydrogen $= \\frac{0.1}{2} = 0.05$. Volume $= 0.05 \\times 22.4 = 1.12$ litres.",
+      "marking_scheme": [
+        {
+          "step": "0.1 mol ethanol, 0.05 mol H₂",
+          "marks": 0.5
+        },
+        {
+          "step": "1.12 L",
+          "marks": 0.5
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch15-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch15_021",
+      "unit": "icse-10-chemistry-ch15",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "Calculate the volume of oxygen at STP needed to burn 4.6 g of ethanol completely. (C = 12, H = 1, O = 16; 1 mole of a gas occupies 22.4 litres at STP)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 6.72,
+        "tolerance": 0.02,
+        "unit": "L"
+      },
+      "solution_md": "$\\ce{C2H5OH + 3O2 -> 2CO2 + 3H2O}$. Moles of ethanol $= \\frac{4.6}{46} = 0.1$; moles of oxygen $= 0.1 \\times 3 = 0.3$. Volume $= 0.3 \\times 22.4 = 6.72$ litres.",
+      "marking_scheme": [
+        {
+          "step": "0.3 mol O₂",
+          "marks": 0.5
+        },
+        {
+          "step": "6.72 L",
+          "marks": 0.5
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch15-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch15_022",
+      "unit": "icse-10-chemistry-ch15",
+      "language": "en",
+      "type": "short",
+      "stem_md": "A neutral organic liquid X, C₂H₆O, boils at 78 °C, mixes completely with water and gives a gas with sodium. (a) Identify X and draw its structural formula. (b) Write the balanced equation for its reaction with sodium. (c) Name the organic product formed when X is heated with excess concentrated sulphuric acid at about 170 °C.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Ethanol, CH₃–CH₂–OH (two carbons; three H on C1, two H and –OH on C2). (b) $\\ce{2C2H5OH + 2Na -> 2C2H5ONa + H2}$ (c) Ethene, C₂H₄."
+      },
+      "solution_md": "Ethanol; sodium equation; ethene.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch15-t01",
+        "icse-10-chemistry-ch15-t02"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch15_023",
+      "unit": "icse-10-chemistry-ch15",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Ethanol supplied to factories is usually denatured before sale. The main reason is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "to make it burn with a hotter flame"
+        },
+        {
+          "id": "b",
+          "text_md": "to stop its misuse as a drink, because industrial ethanol is sold without the tax charged on liquor"
+        },
+        {
+          "id": "c",
+          "text_md": "to raise its boiling point"
+        },
+        {
+          "id": "d",
+          "text_md": "to make it a better solvent"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Denaturing makes cheap industrial ethanol unfit to drink — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch15-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch15_024",
+      "unit": "icse-10-chemistry-ch15",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Illicit (spurious) liquor sometimes causes blindness and death because it is contaminated with:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "ethanoic acid"
+        },
+        {
+          "id": "b",
+          "text_md": "water"
+        },
+        {
+          "id": "c",
+          "text_md": "sugar"
+        },
+        {
+          "id": "d",
+          "text_md": "methanol"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Methanol is oxidised in the body to methanal and methanoic acid, which damage the optic nerve — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch15-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch15_025",
+      "unit": "icse-10-chemistry-ch15",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Thermometers used in places where the temperature falls to −50 °C contain coloured ethanol rather than water because ethanol:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "boils at a higher temperature than water"
+        },
+        {
+          "id": "b",
+          "text_md": "is denser than water"
+        },
+        {
+          "id": "c",
+          "text_md": "does not expand on heating"
+        },
+        {
+          "id": "d",
+          "text_md": "freezes only at about −114 °C"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Water would freeze at 0 °C; ethanol stays liquid far below −50 °C — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch15-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch15_026",
+      "unit": "icse-10-chemistry-ch15",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Denatured alcohol must not be drunk.\n\n**Reason (R):** Ethanol is a good solvent for many organic compounds.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Both are true, but R does not explain A: denatured alcohol is unfit to drink because poisons such as methanol and pyridine have been added — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch15-t03"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch15_027",
+      "unit": "icse-10-chemistry-ch15",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? Methylated spirit is ethanol to which methanol has been added.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "t"
+        ]
+      },
+      "solution_md": "True: it is ethanol denatured mainly with methanol (often with a dye), so it is poisonous.",
+      "marking_scheme": [
+        {
+          "step": "True",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch15-t03"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch15_028",
+      "unit": "icse-10-chemistry-ch15",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "Industrial ethanol to which methanol, pyridine and a colouring agent have been added, so that it is unfit to drink, is called ___ alcohol.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "denatured",
+              "methylated"
+            ]
+          }
+        ]
+      },
+      "solution_md": "**Denatured** alcohol (methylated spirit when methanol is the main additive).",
+      "marking_scheme": [
+        {
+          "step": "Blank 1: \"denatured\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch15-t03"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch15_029",
+      "unit": "icse-10-chemistry-ch15",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Name the poisonous alcohol that is often present in spurious liquor.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Methanol (methyl alcohol), CH₃OH."
+      },
+      "solution_md": "Methanol.",
+      "marking_scheme": [
+        {
+          "step": "Methanol",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch15-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch15_030",
+      "unit": "icse-10-chemistry-ch15",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Give two uses of ethanol.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Any two: solvent for medicines, perfumes and varnishes; fuel (blended with petrol); antiseptic or hand sanitiser; thermometer liquid; making ethanoic acid or esters."
+      },
+      "solution_md": "Two uses.",
+      "marking_scheme": [
+        {
+          "step": "Two correct uses",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch15-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch15_031",
+      "unit": "icse-10-chemistry-ch15",
+      "language": "en",
+      "type": "short",
+      "stem_md": "(a) What is spurious alcohol? (b) Why is drinking it dangerous?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Liquor made or sold illegally, often mixed with cheap methanol. (b) Methanol is changed in the body into methanal and methanoic acid, which damage the optic nerve and other organs, causing blindness and even death."
+      },
+      "solution_md": "Definition; methanol poisoning.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch15-t03"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch15_032",
+      "unit": "icse-10-chemistry-ch15",
+      "language": "en",
+      "type": "match",
+      "stem_md": "Match each property of ethanol in Column A with a use that depends on it in Column B.",
+      "options": [
+        {
+          "id": "1",
+          "text_md": "Very low freezing point"
+        },
+        {
+          "id": "2",
+          "text_md": "Dissolves many organic substances"
+        },
+        {
+          "id": "3",
+          "text_md": "Burns with a clean, hot flame"
+        },
+        {
+          "id": "4",
+          "text_md": "Kills microbes"
+        }
+      ],
+      "match_right": [
+        {
+          "id": "p",
+          "text_md": "Fuel blended with petrol"
+        },
+        {
+          "id": "q",
+          "text_md": "Liquid in thermometers for very cold places"
+        },
+        {
+          "id": "r",
+          "text_md": "Hand sanitiser"
+        },
+        {
+          "id": "s",
+          "text_md": "Making tinctures and cough syrups"
+        }
+      ],
+      "answer": {
+        "pairs": [
+          {
+            "left_id": "1",
+            "right_id": "q"
+          },
+          {
+            "left_id": "2",
+            "right_id": "s"
+          },
+          {
+            "left_id": "3",
+            "right_id": "p"
+          },
+          {
+            "left_id": "4",
+            "right_id": "r"
+          }
+        ]
+      },
+      "solution_md": "Low freezing point → thermometers; good solvent → tinctures and syrups; clean flame → fuel; kills microbes → sanitiser.",
+      "marking_scheme": [
+        {
+          "step": "1 → q",
+          "marks": 1
+        },
+        {
+          "step": "2 → s",
+          "marks": 1
+        },
+        {
+          "step": "3 → p",
+          "marks": 1
+        },
+        {
+          "step": "4 → r",
+          "marks": 1
+        }
+      ],
+      "marks": 4,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch15-t03"
+      ],
+      "expected_time_sec": 160,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch15_033",
+      "unit": "icse-10-chemistry-ch15",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "In the structural formula of ethanoic acid, CH₃COOH, how many oxygen atoms are bonded to the carboxyl carbon, and by what kind of bonds?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "One, by a double bond"
+        },
+        {
+          "id": "b",
+          "text_md": "Two: one by a double bond and one by a single bond"
+        },
+        {
+          "id": "c",
+          "text_md": "Two, both by double bonds"
+        },
+        {
+          "id": "d",
+          "text_md": "Three, all by single bonds"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "The carboxyl group is –C(=O)–OH: one C=O and one C–OH — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch15-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch15_034",
+      "unit": "icse-10-chemistry-ch15",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A bottle of pure ethanoic acid left in an unheated laboratory on a winter morning at 10 °C is found to contain ice-like crystals. This is because:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "water vapour from the air has frozen inside the bottle"
+        },
+        {
+          "id": "b",
+          "text_md": "the acid has reacted with the glass"
+        },
+        {
+          "id": "c",
+          "text_md": "pure ethanoic acid freezes at about 17 °C"
+        },
+        {
+          "id": "d",
+          "text_md": "pure ethanoic acid boils at about 17 °C"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "The melting point of pure (glacial) ethanoic acid is about 17 °C, above 10 °C — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch15-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch15_035",
+      "unit": "icse-10-chemistry-ch15",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Table vinegar is best described as:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "pure ethanoic acid"
+        },
+        {
+          "id": "b",
+          "text_md": "a dilute solution of ethanol in water"
+        },
+        {
+          "id": "c",
+          "text_md": "a dilute solution (about 5–8 per cent) of ethanoic acid in water"
+        },
+        {
+          "id": "d",
+          "text_md": "a solution of ethyl ethanoate in water"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch15-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch15_036",
+      "unit": "icse-10-chemistry-ch15",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Pure ethanoic acid is called glacial acetic acid.\n\n**Reason (R):** Pure ethanoic acid freezes at about 17 °C into colourless crystals that look like ice.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Both are true, and R explains the name in A — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch15-t04"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch15_037",
+      "unit": "icse-10-chemistry-ch15",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? Ethanoic acid has a lower boiling point than ethanol.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "f"
+        ]
+      },
+      "solution_md": "False: ethanoic acid boils at 118 °C and ethanol at 78 °C.",
+      "marking_scheme": [
+        {
+          "step": "False, with the correction",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch15-t04"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch15_038",
+      "unit": "icse-10-chemistry-ch15",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Explain why pure ethanoic acid is called glacial acetic acid.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Pure (water-free) ethanoic acid freezes at about 17 °C; in cold weather it forms colourless, ice-like crystals, like a glacier."
+      },
+      "solution_md": "Freezes at about 17 °C.",
+      "marking_scheme": [
+        {
+          "step": "Freezes at about 17 °C into ice-like solid",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch15-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch15_039",
+      "unit": "icse-10-chemistry-ch15",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Draw the structural formula of ethanoic acid, showing all bonds.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "CH₃–COOH drawn in full: a carbon with three H atoms joined to a second carbon, which is joined to one O by a double bond and to an O–H group by a single bond."
+      },
+      "solution_md": "Displayed formula.",
+      "marking_scheme": [
+        {
+          "step": "All bonds correct",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch15-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch15_040",
+      "unit": "icse-10-chemistry-ch15",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Give two differences in physical properties between ethanol and ethanoic acid.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Any two: ethanol has a pleasant smell, ethanoic acid a pungent vinegar smell; ethanol boils at 78 °C, ethanoic acid at 118 °C; ethanol freezes at about −114 °C, pure ethanoic acid at about 17 °C; ethanol is lighter than water, ethanoic acid slightly heavier."
+      },
+      "solution_md": "Two differences.",
+      "marking_scheme": [
+        {
+          "step": "First difference",
+          "marks": 1
+        },
+        {
+          "step": "Second difference",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch15-t01",
+        "icse-10-chemistry-ch15-t04"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch15_041",
+      "unit": "icse-10-chemistry-ch15",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Moist blue litmus paper is dipped separately into ethanoic acid and into ethanol. The result is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "both turn it red"
+        },
+        {
+          "id": "b",
+          "text_md": "only ethanol turns it red"
+        },
+        {
+          "id": "c",
+          "text_md": "neither changes its colour"
+        },
+        {
+          "id": "d",
+          "text_md": "only ethanoic acid turns it red"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Ethanoic acid gives H⁺ ions in water; ethanol is neutral — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch15-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch15_042",
+      "unit": "icse-10-chemistry-ch15",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Dilute hydrochloric acid and dilute ethanoic acid of the same concentration are tested with universal indicator. Ethanoic acid shows a higher pH because it:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "ionises only partly in water, giving fewer hydrogen ions"
+        },
+        {
+          "id": "b",
+          "text_md": "contains no hydrogen atoms"
+        },
+        {
+          "id": "c",
+          "text_md": "is a base"
+        },
+        {
+          "id": "d",
+          "text_md": "ionises completely in water"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Ethanoic acid is a weak acid: CH₃COOH ⇌ CH₃COO⁻ + H⁺ lies mainly to the left — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch15-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch15_043",
+      "unit": "icse-10-chemistry-ch15",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Ethanoic acid is added to sodium hydroxide solution until the solution is just neutral. The products are:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "sodium ethoxide and hydrogen"
+        },
+        {
+          "id": "b",
+          "text_md": "sodium ethanoate and water"
+        },
+        {
+          "id": "c",
+          "text_md": "ethyl ethanoate and water"
+        },
+        {
+          "id": "d",
+          "text_md": "sodium ethanoate and hydrogen"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Neutralisation: CH₃COOH + NaOH → CH₃COONa + H₂O — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch15-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch15_044",
+      "unit": "icse-10-chemistry-ch15",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which pair of substances, warmed with a few drops of concentrated sulphuric acid, gives ethyl ethanoate?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Ethanoic acid and ethanol"
+        },
+        {
+          "id": "b",
+          "text_md": "Ethanoic acid and methanol"
+        },
+        {
+          "id": "c",
+          "text_md": "Methanoic acid and ethanol"
+        },
+        {
+          "id": "d",
+          "text_md": "Ethanol and ethene"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "\"Ethyl\" comes from ethanol and \"ethanoate\" from ethanoic acid — option (a). Ethanoic acid with methanol gives methyl ethanoate; methanoic acid with ethanol gives ethyl methanoate.",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch15-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch15_045",
+      "unit": "icse-10-chemistry-ch15",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Why are a few drops of concentrated sulphuric acid added to the mixture of ethanoic acid and ethanol when an ester is made?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "They neutralise the ethanoic acid"
+        },
+        {
+          "id": "b",
+          "text_md": "They supply the oxygen atoms of the ester"
+        },
+        {
+          "id": "c",
+          "text_md": "They speed up the reaction and take up the water formed"
+        },
+        {
+          "id": "d",
+          "text_md": "They turn the ethanol into ethanoic acid"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Conc. H₂SO₄ is a catalyst and a dehydrating agent — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch15-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch15_046",
+      "unit": "icse-10-chemistry-ch15",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "In the rubber industry, ethanoic acid is added to latex from rubber trees in order to:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "vulcanise the rubber"
+        },
+        {
+          "id": "b",
+          "text_md": "dissolve the rubber"
+        },
+        {
+          "id": "c",
+          "text_md": "coagulate the latex so that rubber can be separated"
+        },
+        {
+          "id": "d",
+          "text_md": "colour the rubber"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Acid makes the rubber particles in latex clump together — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch15-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch15_047",
+      "unit": "icse-10-chemistry-ch15",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which ester is obtained from methanol, CH₃OH, and ethanoic acid, CH₃COOH?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "methyl ethanoate, CH₃COOCH₃"
+        },
+        {
+          "id": "b",
+          "text_md": "ethyl methanoate, HCOOC₂H₅"
+        },
+        {
+          "id": "c",
+          "text_md": "ethyl ethanoate, CH₃COOC₂H₅"
+        },
+        {
+          "id": "d",
+          "text_md": "methyl methanoate, HCOOCH₃"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Alcohol part methyl, acid part ethanoate — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch15-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch15_048",
+      "unit": "icse-10-chemistry-ch15",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Ethyl ethanoate is formed when ethanol is warmed with sodium hydroxide solution.\n\n**Reason (R):** Ethyl ethanoate is formed when ethanol is warmed with ethanoic acid and a few drops of concentrated sulphuric acid.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "A is false: ethanol does not react with sodium hydroxide to give an ester. R is true (esterification) — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch15-t05"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch15_049",
+      "unit": "icse-10-chemistry-ch15",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "Complete each sentence by choosing the correct word from the bracket.\n\n(a) Ethanoic acid turns blue litmus ___ (red / colourless).\n\n(b) The reaction of ethanoic acid with ethanol is called ___ (esterification / neutralisation).\n\n(c) The ester formed has a ___ (fruity / pungent) smell.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "red"
+            ]
+          },
+          {
+            "accepted": [
+              "esterification"
+            ]
+          },
+          {
+            "accepted": [
+              "fruity"
+            ]
+          }
+        ]
+      },
+      "solution_md": "(a) **red**; (b) **esterification**; (c) **fruity**.",
+      "marking_scheme": [
+        {
+          "step": "Blank 1: \"red\"",
+          "marks": 1
+        },
+        {
+          "step": "Blank 2: \"esterification\"",
+          "marks": 1
+        },
+        {
+          "step": "Blank 3: \"fruity\"",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch15-t05"
+      ],
+      "expected_time_sec": 135,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch15_050",
+      "unit": "icse-10-chemistry-ch15",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write a balanced equation for the reaction of ethanoic acid with sodium hydroxide, and name the salt formed.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "$\\ce{CH3COOH + NaOH -> CH3COONa + H2O}$; sodium ethanoate (sodium acetate)."
+      },
+      "solution_md": "Neutralisation.",
+      "marking_scheme": [
+        {
+          "step": "Equation and name",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch15-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch15_051",
+      "unit": "icse-10-chemistry-ch15",
+      "language": "en",
+      "type": "short",
+      "stem_md": "How can you tell, without any chemical test, that ethyl ethanoate has formed in a test tube of warmed ethanoic acid, ethanol and concentrated sulphuric acid?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "On pouring the mixture into water, a sweet, fruity smell is noticed (an oily layer floats on the water)."
+      },
+      "solution_md": "Fruity smell.",
+      "marking_scheme": [
+        {
+          "step": "Fruity smell",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch15-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch15_052",
+      "unit": "icse-10-chemistry-ch15",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Give two uses of ethanoic acid.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Any two: as vinegar for flavouring and preserving food; making esters for perfumes and flavours; coagulating rubber latex; making cellulose acetate; as a laboratory reagent."
+      },
+      "solution_md": "Two uses.",
+      "marking_scheme": [
+        {
+          "step": "Two correct uses",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-chemistry-ch15-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch15_053",
+      "unit": "icse-10-chemistry-ch15",
+      "language": "en",
+      "type": "short",
+      "stem_md": "You are given two unlabelled colourless liquids: one is ethanol and the other is ethanoic acid. Describe one chemical test, with the observation for each liquid, to tell which is which.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Add a few drops of each to moist blue litmus paper: ethanoic acid turns it red, ethanol leaves it blue. (Or add sodium hydrogencarbonate: ethanoic acid gives brisk effervescence of carbon dioxide, ethanol gives no change.)"
+      },
+      "solution_md": "Test; two observations.",
+      "marking_scheme": [
+        {
+          "step": "Test named",
+          "marks": 1
+        },
+        {
+          "step": "Both observations",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch15-t01",
+        "icse-10-chemistry-ch15-t05"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch15_054",
+      "unit": "icse-10-chemistry-ch15",
+      "language": "en",
+      "type": "short",
+      "stem_md": "(a) Draw the structural formula of ethanoic acid and name its functional group. (b) Write the balanced equation for its reaction with potassium hydroxide. (c) Name the type of reaction in (b).",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) CH₃–C(=O)–O–H (a methyl group joined to –COOH); the carboxyl group. (b) $\\ce{CH3COOH + KOH -> CH3COOK + H2O}$ (c) Neutralisation."
+      },
+      "solution_md": "Structure; equation; neutralisation.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch15-t04",
+        "icse-10-chemistry-ch15-t05"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch15_055",
+      "unit": "icse-10-chemistry-ch15",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Ethyl ethanoate is prepared in a test tube in the school laboratory. (a) Name the two reactants and the catalyst. (b) Write the balanced equation. (c) Why is the warm mixture poured into a beaker of water before it is smelt?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Ethanoic acid and ethanol; a few drops of concentrated sulphuric acid. (b) $\\ce{CH3COOH + C2H5OH <=>[{conc. H2SO4}] CH3COOC2H5 + H2O}$ (c) The excess acid and alcohol dissolve in the water while the ester forms an oily layer on top, so the fruity smell of the ester is not masked by the sharp smell of the acid."
+      },
+      "solution_md": "Reactants; equation; masking smell removed.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch15-t05"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch15_056",
+      "unit": "icse-10-chemistry-ch15",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "What mass of sodium hydroxide is needed to neutralise exactly 6.0 g of ethanoic acid? (C = 12, H = 1, O = 16, Na = 23)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 4,
+        "tolerance": 0.05,
+        "unit": "g"
+      },
+      "solution_md": "$\\ce{CH3COOH + NaOH -> CH3COONa + H2O}$: 1 mol acid needs 1 mol NaOH. Moles of acid $= \\frac{6.0}{60} = 0.1$. Molar mass of NaOH $= 23 + 16 + 1 = 40$ g. Mass of NaOH $= 0.1 \\times 40 = 4$ g.",
+      "marking_scheme": [
+        {
+          "step": "0.1 mol",
+          "marks": 0.5
+        },
+        {
+          "step": "4.0 g",
+          "marks": 0.5
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch15-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch15_057",
+      "unit": "icse-10-chemistry-ch15",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "3.0 g of ethanoic acid reacts completely with excess ethanol. Calculate the mass of ethyl ethanoate, CH₃COOC₂H₅, formed. (C = 12, H = 1, O = 16)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 4.4,
+        "tolerance": 0.05,
+        "unit": "g"
+      },
+      "solution_md": "$\\ce{CH3COOH + C2H5OH -> CH3COOC2H5 + H2O}$: 1 mol acid gives 1 mol ester. Moles of acid $= \\frac{3.0}{60} = 0.05$. Molar mass of the ester $= 4 \\times 12 + 8 \\times 1 + 2 \\times 16 = 88$ g. Mass of ester $= 0.05 \\times 88 = 4.4$ g.",
+      "marking_scheme": [
+        {
+          "step": "0.05 mol and 88",
+          "marks": 0.5
+        },
+        {
+          "step": "4.4 g",
+          "marks": 0.5
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch15-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch15_058",
+      "unit": "icse-10-chemistry-ch15",
+      "language": "en",
+      "type": "match",
+      "stem_md": "Match each reaction in Column A with its organic product in Column B.",
+      "options": [
+        {
+          "id": "1",
+          "text_md": "Ethanol + sodium"
+        },
+        {
+          "id": "2",
+          "text_md": "Ethanol + excess concentrated sulphuric acid at 170 °C"
+        },
+        {
+          "id": "3",
+          "text_md": "Ethanoic acid + sodium hydroxide"
+        },
+        {
+          "id": "4",
+          "text_md": "Ethanoic acid + ethanol (conc. H₂SO₄, warm)"
+        },
+        {
+          "id": "5",
+          "text_md": "Bromoethane + aqueous sodium hydroxide"
+        }
+      ],
+      "match_right": [
+        {
+          "id": "p",
+          "text_md": "Ethyl ethanoate"
+        },
+        {
+          "id": "q",
+          "text_md": "Ethene"
+        },
+        {
+          "id": "r",
+          "text_md": "Ethanol"
+        },
+        {
+          "id": "s",
+          "text_md": "Sodium ethanoate"
+        },
+        {
+          "id": "t",
+          "text_md": "Sodium ethoxide"
+        }
+      ],
+      "answer": {
+        "pairs": [
+          {
+            "left_id": "1",
+            "right_id": "t"
+          },
+          {
+            "left_id": "2",
+            "right_id": "q"
+          },
+          {
+            "left_id": "3",
+            "right_id": "s"
+          },
+          {
+            "left_id": "4",
+            "right_id": "p"
+          },
+          {
+            "left_id": "5",
+            "right_id": "r"
+          }
+        ]
+      },
+      "solution_md": "Ethanol + Na → sodium ethoxide; ethanol + conc. H₂SO₄ at 170 °C → ethene; ethanoic acid + NaOH → sodium ethanoate; ethanoic acid + ethanol → ethyl ethanoate; bromoethane + aqueous NaOH → ethanol.",
+      "marking_scheme": [
+        {
+          "step": "1 → t",
+          "marks": 1
+        },
+        {
+          "step": "2 → q",
+          "marks": 1
+        },
+        {
+          "step": "3 → s",
+          "marks": 1
+        },
+        {
+          "step": "4 → p",
+          "marks": 1
+        },
+        {
+          "step": "5 → r",
+          "marks": 1
+        }
+      ],
+      "marks": 5,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch15-t01",
+        "icse-10-chemistry-ch15-t02",
+        "icse-10-chemistry-ch15-t05"
+      ],
+      "expected_time_sec": 200,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch15_059",
+      "unit": "icse-10-chemistry-ch15",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Write the balanced equation for the preparation of ethanol from bromoethane, state the condition and name the type of reaction. [2]\n\n(b) State two physical properties of ethanol. [2]\n\n(c) Write balanced equations for the reaction of ethanol with (i) oxygen and (ii) sodium. (iii) State one observation for (ii). [3]\n\n(d) Ethanol is heated with excess concentrated sulphuric acid at about 170 °C. (i) Name the organic product. (ii) Write the balanced equation. (iii) State the role of the sulphuric acid. [3]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) $\\ce{C2H5Br + NaOH ->[{aqueous, boil}] C2H5OH + NaBr}$; boiled with aqueous alkali; hydrolysis (substitution).\n\n(b) Any two: colourless volatile liquid with a pleasant smell; boils at 78 °C; lighter than water; miscible with water; neutral to litmus.\n\n(c) (i) $\\ce{C2H5OH + 3O2 -> 2CO2 + 3H2O}$ (ii) $\\ce{2C2H5OH + 2Na -> 2C2H5ONa + H2}$ (iii) Brisk effervescence; the gas burns with a pop.\n\n(d) (i) Ethene. (ii) $\\ce{C2H5OH ->[{conc. H2SO4, 170 °C}] C2H4 + H2O}$ (iii) Dehydrating agent."
+      },
+      "solution_md": "Hydrolysis; properties; combustion and sodium; dehydration.",
+      "marking_scheme": [
+        {
+          "step": "(a) equation and condition",
+          "marks": 1
+        },
+        {
+          "step": "(a) type",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 2
+        },
+        {
+          "step": "(c)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(iii)",
+          "marks": 1
+        },
+        {
+          "step": "(d)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(d)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(d)(iii)",
+          "marks": 1
+        }
+      ],
+      "marks": 10,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch15-t01",
+        "icse-10-chemistry-ch15-t02"
+      ],
+      "expected_time_sec": 1080,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch15_060",
+      "unit": "icse-10-chemistry-ch15",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) What is denatured alcohol? Why is industrial ethanol denatured? Name one substance used to denature it. [3]\n\n(b) What is spurious alcohol? Explain why drinking it can cause blindness. [3]\n\n(c) (i) Give two uses of ethanol and the property on which each depends. (ii) Calculate the volume of carbon dioxide at STP formed when 2.3 g of ethanol burns completely. (C = 12, H = 1, O = 16; 1 mole of a gas occupies 22.4 litres at STP) [4]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Ethanol made unfit for drinking by adding poisonous or nauseating substances. Industrial ethanol is sold without liquor tax, so it is denatured to prevent people drinking it. Substance: methanol (or pyridine, or a dye such as copper sulphate).\n\n(b) Illicit liquor, often contaminated with methanol. In the body, methanol is changed into methanal and methanoic acid, which damage the optic nerve, causing blindness and even death.\n\n(c) (i) Any two: solvent for medicines and perfumes (dissolves organic substances); fuel (burns with a clean, hot flame); sanitiser (kills germs); thermometers in cold places (very low freezing point). (ii) $\\ce{C2H5OH + 3O2 -> 2CO2 + 3H2O}$. Moles of ethanol $= \\frac{2.3}{46} = 0.05$; moles of CO₂ $= 0.05 \\times 2 = 0.1$; volume $= 0.1 \\times 22.4 = 2.24$ litres."
+      },
+      "solution_md": "Denatured; spurious; uses and CO₂ volume.",
+      "marking_scheme": [
+        {
+          "step": "(a) definition",
+          "marks": 1
+        },
+        {
+          "step": "(a) reason",
+          "marks": 1
+        },
+        {
+          "step": "(a) substance",
+          "marks": 1
+        },
+        {
+          "step": "(b) definition",
+          "marks": 1
+        },
+        {
+          "step": "(b) reason",
+          "marks": 2
+        },
+        {
+          "step": "(c)(i)",
+          "marks": 2
+        },
+        {
+          "step": "(c)(ii)",
+          "marks": 2
+        }
+      ],
+      "marks": 10,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch15-t02",
+        "icse-10-chemistry-ch15-t03"
+      ],
+      "expected_time_sec": 1080,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch15_061",
+      "unit": "icse-10-chemistry-ch15",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Draw the structural formula of ethanoic acid and name its functional group. [2]\n\n(b) What is glacial acetic acid? Why is it so called? [2]\n\n(c) (i) State the effect of ethanoic acid on blue litmus. (ii) Write the balanced equation for its reaction with sodium hydroxide. (iii) Name the salt formed. [3]\n\n(d) Give three uses of ethanoic acid. [3]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) CH₃–C(=O)–O–H, drawn with all bonds; the carboxyl group, –COOH.\n\n(b) Pure, water-free ethanoic acid. It freezes at about 17 °C into colourless, ice-like crystals, which look like a glacier.\n\n(c) (i) It turns blue litmus red. (ii) $\\ce{CH3COOH + NaOH -> CH3COONa + H2O}$ (iii) Sodium ethanoate (sodium acetate).\n\n(d) Any three: vinegar for flavouring and preserving food; making esters for perfumes and flavourings; coagulating rubber latex; making cellulose acetate for films and fibres; laboratory reagent."
+      },
+      "solution_md": "Structure; glacial; litmus and neutralisation; uses.",
+      "marking_scheme": [
+        {
+          "step": "(a) structure",
+          "marks": 1
+        },
+        {
+          "step": "(a) group",
+          "marks": 1
+        },
+        {
+          "step": "(b) meaning",
+          "marks": 1
+        },
+        {
+          "step": "(b) reason",
+          "marks": 1
+        },
+        {
+          "step": "(c)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(iii)",
+          "marks": 1
+        },
+        {
+          "step": "(d)",
+          "marks": 3
+        }
+      ],
+      "marks": 10,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-chemistry-ch15-t04",
+        "icse-10-chemistry-ch15-t05"
+      ],
+      "expected_time_sec": 1080,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch15_062",
+      "unit": "icse-10-chemistry-ch15",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Name the reactants and the catalyst used to prepare ethyl ethanoate, and write the balanced equation. [3]\n\n(b) (i) State the observation that shows that an ester has formed. (ii) Is the reaction reversible? (iii) Name the type of reaction. [3]\n\n(c) (i) Name the ester formed from ethanoic acid and methanol, and write its formula. (ii) Calculate the mass of ethyl ethanoate formed when 1.2 g of ethanoic acid reacts completely with excess ethanol. (C = 12, H = 1, O = 16) [4]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Ethanoic acid and ethanol; a few drops of concentrated sulphuric acid. $\\ce{CH3COOH + C2H5OH <=>[{conc. H2SO4}] CH3COOC2H5 + H2O}$\n\n(b) (i) A sweet, fruity smell (an oily layer forms when the mixture is poured into water). (ii) Yes. (iii) Esterification.\n\n(c) (i) Methyl ethanoate, CH₃COOCH₃. (ii) Moles of acid $= \\frac{1.2}{60} = 0.02$; 1 mol acid gives 1 mol ester (88 g); mass $= 0.02 \\times 88 = 1.76$ g."
+      },
+      "solution_md": "Reactants and equation; observation; methyl ethanoate and mass.",
+      "marking_scheme": [
+        {
+          "step": "(a) reactants",
+          "marks": 1
+        },
+        {
+          "step": "(a) catalyst",
+          "marks": 1
+        },
+        {
+          "step": "(a) equation",
+          "marks": 1
+        },
+        {
+          "step": "(b)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(b)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(b)(iii)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(i)",
+          "marks": 2
+        },
+        {
+          "step": "(c)(ii)",
+          "marks": 2
+        }
+      ],
+      "marks": 10,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-chemistry-ch15-t02",
+        "icse-10-chemistry-ch15-t05"
+      ],
+      "expected_time_sec": 1080,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10chem_ch15_063",
+      "unit": "icse-10-chemistry-ch15",
+      "language": "en",
+      "type": "long",
+      "stem_md": "Two organic liquids P and Q each contain two carbon atoms. P is neutral to litmus and boils at 78 °C. Q turns blue litmus red, smells of vinegar and freezes at about 17 °C.\n\n(a) Identify P and Q and draw their structural formulae. [3]\n\n(b) P and Q are warmed together with a few drops of concentrated sulphuric acid. (i) Name the product R. (ii) Write the balanced equation. (iii) State how R can be recognised. [3]\n\n(c) (i) Write balanced equations for the reaction of P with sodium and of Q with sodium hydroxide. (ii) Calculate the mass of sodium needed to react completely with 9.2 g of P. (C = 12, H = 1, O = 16, Na = 23) [4]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) P is ethanol, CH₃–CH₂–OH; Q is ethanoic acid, CH₃–C(=O)–O–H.\n\n(b) (i) Ethyl ethanoate. (ii) $\\ce{C2H5OH + CH3COOH <=>[{conc. H2SO4}] CH3COOC2H5 + H2O}$ (iii) By its sweet, fruity smell.\n\n(c) (i) $\\ce{2C2H5OH + 2Na -> 2C2H5ONa + H2}$ and $\\ce{CH3COOH + NaOH -> CH3COONa + H2O}$ (ii) Moles of ethanol $= \\frac{9.2}{46} = 0.2$; ethanol and sodium react 1 : 1, so mass of sodium $= 0.2 \\times 23 = 4.6$ g."
+      },
+      "solution_md": "Identification; ester; equations and mass.",
+      "marking_scheme": [
+        {
+          "step": "(a) P",
+          "marks": 1.5
+        },
+        {
+          "step": "(a) Q",
+          "marks": 1.5
+        },
+        {
+          "step": "(b)(i)",
+          "marks": 1
+        },
+        {
+          "step": "(b)(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(b)(iii)",
+          "marks": 1
+        },
+        {
+          "step": "(c)(i)",
+          "marks": 2
+        },
+        {
+          "step": "(c)(ii)",
+          "marks": 2
+        }
+      ],
+      "marks": 10,
+      "difficulty": 4,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-chemistry-ch15-t01",
+        "icse-10-chemistry-ch15-t02",
+        "icse-10-chemistry-ch15-t04",
+        "icse-10-chemistry-ch15-t05"
+      ],
+      "expected_time_sec": 1080,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    }
+  ],
+  "build": {
+    "run_id": null,
+    "checks": {
+      "katex_mhchem": "65 math strings parsed with KaTeX 0.19.0 + mhchem (throwOnError, strict \"error\"), 0 failures",
+      "svg_allowlist": "5 SVG visuals (5 distinct diagrams) checked with saxes against svg-allowlist.ts: elements, attributes, class pattern, fragment-only refs, no style, palette incl. named hues, viewBox, title, per-page unique ids — 0 failures",
+      "narration": "32 slides, 35–67 words (mean 54), no symbols, formulae or unit abbreviations",
+      "resolve": "4/4 scripted re-solve checks pass",
+      "chemistry_facts": "Hydrolysis of bromoethane to ethanol, physical constants of ethanol (b.p. 78 °C, density 0.79 g cm⁻³) and ethanoic acid (b.p. 118 °C, m.p. 16.6 °C), combustion, sodium, esterification and dehydration of ethanol, denatured, methylated and spurious alcohol, glacial acetic acid, litmus, neutralisation and esterification of ethanoic acid, and uses; every ce equation atom-balanced and every calculation re-computed; checked against the ICSE 2027 syllabus (Class X, section 9)",
+      "content_gate": "npm test -w @soyl/content-templates: all checks pass for this chapter",
+      "verifier_pass": "2026-11-01: every question re-solved from its stem by the author; every numerical re-computed by the build script",
+      "pipeline_lint": "npm run content -- lint --exemplars: 0 errors, 0 warnings"
+    }
+  }
+}
