@@ -1,0 +1,4965 @@
+{
+  "unit": "icse-10-geography-ch15",
+  "version": 1,
+  "academic_year": "2026-27",
+  "created_at": "2026-11-01T00:00:00+05:30",
+  "decks": [
+    {
+      "unit": "icse-10-geography-ch15",
+      "part": 1,
+      "version": 1,
+      "title": "Manufacturing Industries — Part 1: Importance and classification",
+      "language": "en",
+      "goals": [
+        "Explain how industries contribute to employment, exports and self-reliance",
+        "Classify industries by size, raw material and ownership",
+        "Weigh the factors that decide where an industry is located"
+      ],
+      "slides": [
+        {
+          "id": "s01",
+          "layout": "title",
+          "heading": "From raw material to finished goods",
+          "body_md": "Part 1 — **manufacturing** turns raw materials into goods of higher value: cane into sugar, cotton into cloth, cocoons into silk sarees, iron ore into steel. It is the heart of the **secondary sector**.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Raw material",
+                "Manufactured product",
+                "Example centre"
+              ],
+              "rows": [
+                [
+                  "Sugarcane",
+                  "Sugar",
+                  "Kolhapur"
+                ],
+                [
+                  "Raw cotton",
+                  "Yarn and cloth",
+                  "Ahmedabad"
+                ],
+                [
+                  "Silk cocoons",
+                  "Silk sarees",
+                  "Kanchipuram"
+                ],
+                [
+                  "Iron ore",
+                  "Steel",
+                  "Jamshedpur"
+                ]
+              ]
+            },
+            "alt": "Table of raw materials, the manufactured products made from them and an example centre"
+          },
+          "math": [],
+          "narration": "Namaste! Manufacturing means turning raw materials into finished goods that are worth more. Sugarcane becomes sugar, raw cotton becomes cloth, silk cocoons become sarees, and iron ore becomes steel. Manufacturing belongs to the secondary sector of the economy. In this part we see why it matters so much, how industries are classified, and what decides where a factory is built.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s02",
+          "layout": "concept",
+          "heading": "Importance of manufacturing: jobs and value",
+          "body_md": "**Employment:** factories, workshops and the services around them employ millions and draw surplus workers away from farming. **Value addition:** processing raises the value of raw materials many times. **Modernising agriculture:** industry supplies tractors, pumps, fertilisers and pesticides, and agro-based industries buy farm produce. **Balanced development:** new industries in backward regions bring roads, power, schools and towns.",
+          "bullets": [],
+          "visual": {
+            "kind": "flow",
+            "spec": {
+              "direction": "LR",
+              "nodes": [
+                {
+                  "id": "a",
+                  "label": "Raw materials from farms and mines"
+                },
+                {
+                  "id": "b",
+                  "label": "Factories process them"
+                },
+                {
+                  "id": "c",
+                  "label": "Value added, jobs created"
+                },
+                {
+                  "id": "d",
+                  "label": "Incomes rise; towns and services grow"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "a",
+                  "to": "b"
+                },
+                {
+                  "from": "b",
+                  "to": "c"
+                },
+                {
+                  "from": "c",
+                  "to": "d"
+                }
+              ]
+            },
+            "alt": "Flow from raw materials to factories to value addition, jobs and growth"
+          },
+          "math": [],
+          "narration": "Why does manufacturing matter? It gives jobs to millions of people and takes pressure off farmland, where too many people already work. It adds value: a tonne of raw cotton becomes cloth worth many times more. It supports farming by making tractors, pumps and fertilisers, and by buying cane, cotton and silk. And new factories bring roads, power and towns to backward areas.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s03",
+          "layout": "concept",
+          "heading": "Importance of manufacturing: exports and self-reliance",
+          "body_md": "**Exports:** manufactured goods such as textiles, garments, steel, chemicals, medicines, vehicles and electronics earn **foreign exchange**, which pays for imports such as crude oil. **Self-reliance:** making our own machines, steel, fertilisers and defence equipment reduces **dependence on imports** and protects the country in emergencies. **Strength of the economy:** a strong manufacturing base raises national income and the standard of living.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Benefit",
+                "Example"
+              ],
+              "rows": [
+                [
+                  "Employment",
+                  "Textile mills and powerlooms of Surat"
+                ],
+                [
+                  "Exports",
+                  "Garments from Tiruppur"
+                ],
+                [
+                  "Self-reliance",
+                  "Indian-made steel and fertilisers"
+                ],
+                [
+                  "Linked growth",
+                  "Sugar mills buying cane from farmers"
+                ]
+              ]
+            },
+            "alt": "Table of benefits of manufacturing with an example of each"
+          },
+          "math": [],
+          "narration": "Factories also earn money from abroad. Garments, cloth, steel, medicines and vehicles are sold to other countries, and the foreign exchange they earn pays for things we must import, such as crude oil. When we make our own machines, steel, fertilisers and defence goods, we depend less on other nations. So a strong manufacturing base makes the whole country stronger and more self reliant.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s04",
+          "layout": "check",
+          "heading": "Quick check: why industries matter",
+          "body_md": "Link an industry to a benefit for the country.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Exports earn foreign exchange; home production reduces imports.",
+          "check_question_id": "q_icse10geo_ch15_001",
+          "audio": null
+        },
+        {
+          "id": "s05",
+          "layout": "concept",
+          "heading": "Classification by size",
+          "body_md": "**Large-scale industries** need huge **capital**, employ thousands of workers, use heavy machinery and produce in bulk — integrated steel plants, cotton mills, oil refineries, fertiliser plants. **Small-scale industries** need less capital and fewer workers, often use family labour and simple machines — handlooms, powerlooms, food processing, toys, sports goods. **Cottage industries** run in homes with traditional skills — pottery, handloom weaving, basket making. Small-scale units create many jobs for each rupee invested.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Head",
+                "Large-scale",
+                "Small-scale"
+              ],
+              "rows": [
+                [
+                  "Capital",
+                  "Very large",
+                  "Small"
+                ],
+                [
+                  "Workers",
+                  "Thousands",
+                  "A few to a few hundred"
+                ],
+                [
+                  "Machinery",
+                  "Heavy, automated",
+                  "Simple, often power-driven"
+                ],
+                [
+                  "Example",
+                  "Steel plant, cotton mill",
+                  "Handloom, sports goods, food processing"
+                ]
+              ]
+            },
+            "alt": "Table comparing large-scale and small-scale industries"
+          },
+          "math": [],
+          "narration": "Industries can be grouped by size. Large scale industries, like steel plants and big cotton mills, need huge amounts of money, thousands of workers and heavy machines. Small scale industries, like powerlooms, food processing and sports goods units, need less money and fewer workers. Cottage industries are run at home by families using traditional skills, such as pottery and handloom weaving.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s06",
+          "layout": "concept",
+          "heading": "Classification by raw material and by ownership",
+          "body_md": "**By raw material:** **agro-based** industries use farm produce — sugar, cotton textiles, jute, silk, vegetable oil, tea, food processing; **mineral-based** industries use minerals — iron and steel, aluminium, cement, petrochemicals; others are **forest-based** (paper, plywood) or **marine-based** (fish processing). **By ownership:** **public sector** — owned and run by the government (Steel Authority of India, BHEL); **private sector** — owned by individuals or companies (Tata Steel, Reliance Industries); **joint sector** — owned by the government and private firms together; **cooperative sector** — owned by the producers or workers who supply the raw material (sugar cooperatives of Maharashtra, Amul dairy at Anand).",
+          "bullets": [],
+          "visual": {
+            "kind": "flow",
+            "spec": {
+              "direction": "TB",
+              "nodes": [
+                {
+                  "id": "a",
+                  "label": "Industries"
+                },
+                {
+                  "id": "b",
+                  "label": "By raw material"
+                },
+                {
+                  "id": "c",
+                  "label": "Agro-based: sugar, cotton, silk"
+                },
+                {
+                  "id": "d",
+                  "label": "Mineral-based: steel, cement, petrochemicals"
+                },
+                {
+                  "id": "e",
+                  "label": "By ownership"
+                },
+                {
+                  "id": "f",
+                  "label": "Public, private, joint, cooperative"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "a",
+                  "to": "b"
+                },
+                {
+                  "from": "b",
+                  "to": "c"
+                },
+                {
+                  "from": "b",
+                  "to": "d"
+                },
+                {
+                  "from": "a",
+                  "to": "e"
+                },
+                {
+                  "from": "e",
+                  "to": "f"
+                }
+              ]
+            },
+            "alt": "Tree showing classification of industries by raw material and by ownership"
+          },
+          "math": [],
+          "narration": "Industries can also be grouped by the raw material they use. Agro based industries, such as sugar, cotton and silk, use farm produce. Mineral based industries, such as steel, cement and petrochemicals, use minerals. By ownership, public sector industries belong to the government, private sector firms to individuals or companies, joint sector firms to both, and cooperatives to the farmers or workers who supply them.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s07",
+          "layout": "example",
+          "heading": "Worked example: classifying industries",
+          "body_md": "**Problem.** Classify each industry by raw material and by ownership.\n\n**(a)** A cooperative sugar mill near Kolhapur owned by cane growers → **agro-based; cooperative sector**.\n\n**(b)** The Bhilai steel plant of the Steel Authority of India → **mineral-based; public sector**.\n\n**(c)** A family-owned silk-weaving unit in Kanchipuram → **agro-based; private sector, small-scale**.\n\n**(d)** A company-owned petrochemical complex at Jamnagar → **mineral-based; private sector, large-scale**.\n\n**Method.** Ask two questions: *Where does the raw material come from?* and *Who owns the unit?*",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Industry",
+                "Raw material",
+                "Ownership"
+              ],
+              "rows": [
+                [
+                  "Kolhapur cooperative sugar mill",
+                  "Agro-based",
+                  "Cooperative"
+                ],
+                [
+                  "Bhilai steel plant",
+                  "Mineral-based",
+                  "Public"
+                ],
+                [
+                  "Kanchipuram silk unit",
+                  "Agro-based",
+                  "Private"
+                ],
+                [
+                  "Jamnagar petrochemicals",
+                  "Mineral-based",
+                  "Private"
+                ]
+              ]
+            },
+            "alt": "Table classifying four industries by raw material and ownership"
+          },
+          "math": [],
+          "narration": "To classify an industry, ask two questions. Where does its raw material come from, and who owns it? A sugar mill near Kolhapur owned by cane growers is agro based and cooperative. The Bhilai steel plant is mineral based and in the public sector. A family silk unit in Kanchipuram is agro based and private. A company owned petrochemical complex at Jamnagar is mineral based and private.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s08",
+          "layout": "check",
+          "heading": "Quick check: classification",
+          "body_md": "Classify an industry by raw material or ownership.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Agro based uses farm produce; cooperatives are owned by the producers.",
+          "check_question_id": "q_icse10geo_ch15_009",
+          "audio": null
+        },
+        {
+          "id": "s09",
+          "layout": "diagram",
+          "heading": "Reading an industrial profile (illustrative)",
+          "body_md": "An imagined district has 40 factories. By raw material: agro-based 20 (50%), mineral-based 12 (30%), other (forest, marine) 8 (20%). By ownership: private 28 (70%), cooperative 6 (15%), public 4 (10%), joint 2 (5%). Share = number ÷ total × 100. Half the factories process farm produce, so the district's industry depends closely on its farmers.",
+          "bullets": [],
+          "visual": {
+            "kind": "svg",
+            "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 440 222\" role=\"img\" aria-label=\"Two bars dividing the 40 factories of an imagined district, illustrative. By raw material: Agro-based 20, Mineral-based 12, Other (forest, marine) 8. By ownership: Private 28, Cooperative 6, Public 4, Joint 2.\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>Two bars dividing the 40 factories of an imagined district, illustrative. By raw material: Agro-based 20, Mineral-based 12, Other (forest, marine) 8. By ownership: Private 28, Cooperative 6, Public 4, Joint 2.</title><text x=\"30\" y=\"42\" fill=\"currentColor\" stroke=\"none\" font-size=\"11\" font-weight=\"bold\">By raw material</text><rect x=\"30\" y=\"50\" width=\"190\" height=\"34\" fill=\"var(--diagram-green)\" stroke=\"currentColor\" stroke-width=\"1\" fill-opacity=\"0.5\"/><text x=\"125\" y=\"65\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">20</text><text x=\"125\" y=\"78\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">50%</text><rect x=\"220\" y=\"50\" width=\"114\" height=\"34\" fill=\"var(--diagram-brown)\" stroke=\"currentColor\" stroke-width=\"1\" fill-opacity=\"0.5\"/><text x=\"277\" y=\"65\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">12</text><text x=\"277\" y=\"78\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">30%</text><rect x=\"334\" y=\"50\" width=\"76\" height=\"34\" fill=\"var(--diagram-blue)\" stroke=\"currentColor\" stroke-width=\"1\" fill-opacity=\"0.5\"/><text x=\"372\" y=\"65\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">8</text><text x=\"372\" y=\"78\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">20%</text><text x=\"30\" y=\"122\" fill=\"currentColor\" stroke=\"none\" font-size=\"11\" font-weight=\"bold\">By ownership</text><rect x=\"30\" y=\"130\" width=\"266\" height=\"34\" fill=\"var(--diagram-green)\" stroke=\"currentColor\" stroke-width=\"1\" fill-opacity=\"0.5\"/><text x=\"163\" y=\"145\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">28</text><text x=\"163\" y=\"158\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">70%</text><rect x=\"296\" y=\"130\" width=\"57\" height=\"34\" fill=\"var(--diagram-brown)\" stroke=\"currentColor\" stroke-width=\"1\" fill-opacity=\"0.5\"/><text x=\"324.5\" y=\"145\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">6</text><text x=\"324.5\" y=\"158\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">15%</text><rect x=\"353\" y=\"130\" width=\"38\" height=\"34\" fill=\"var(--diagram-blue)\" stroke=\"currentColor\" stroke-width=\"1\" fill-opacity=\"0.5\"/><rect x=\"391\" y=\"130\" width=\"19\" height=\"34\" fill=\"var(--diagram-yellow)\" stroke=\"currentColor\" stroke-width=\"1\" fill-opacity=\"0.5\"/><text x=\"30\" y=\"182\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">Raw material: green agro, brown mineral, blue other</text><text x=\"30\" y=\"196\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">Ownership: green private, brown cooperative, blue public, yellow joint</text><text x=\"220\" y=\"214\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">Imagined district, 40 factories (illustrative)</text></svg>",
+            "alt": "Two bars dividing the factories of an imagined district by raw material and by ownership"
+          },
+          "math": [],
+          "narration": "Here is an imagined district with forty factories. Twenty of them, exactly half, are agro based, twelve are mineral based and eight use forest or sea products. Most are privately owned, but six are cooperatives, four belong to the government and two are joint ventures. To find each share, divide the number by forty and multiply by one hundred.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s10",
+          "layout": "concept",
+          "heading": "Factors of location",
+          "body_md": "An industry is located where its total costs are lowest. **Physical factors:** **raw material** (especially if bulky or perishable), **power**, **water**, **climate**. **Human and economic factors:** **labour** (cheap or skilled), **market**, **transport** (railways, roads, ports), **capital** and banking, **government policy** (incentives, industrial estates). Industries using **heavy, bulky or perishable** raw materials, such as sugar and steel, are pulled towards the raw material; industries making goods that are fragile or costly to carry are pulled towards the **market**.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Factor",
+                "Industry strongly pulled by it"
+              ],
+              "rows": [
+                [
+                  "Perishable or bulky raw material",
+                  "Sugar mills near cane fields"
+                ],
+                [
+                  "Humid climate and port",
+                  "Cotton mills of Mumbai (historically)"
+                ],
+                [
+                  "Cheap power",
+                  "Aluminium smelters"
+                ],
+                [
+                  "Skilled labour, market",
+                  "Electronics in Bengaluru"
+                ]
+              ]
+            },
+            "alt": "Table of location factors and industries strongly pulled by each"
+          },
+          "math": [],
+          "narration": "Where should a factory be built? Owners look for the place where total costs are lowest. They think about raw material, power, water and climate, and also about workers, markets, transport, money and government support. If the raw material is heavy or spoils quickly, as with sugarcane, the factory goes near the raw material. If the product is costly to carry, it goes near the market.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s11",
+          "layout": "example",
+          "heading": "Worked example: weighing the factors",
+          "body_md": "**Problem.** Two sites are scored out of 10 for a new sugar mill (illustrative). Weights reflect each factor's importance for sugar: raw material 0.35, market 0.2, power 0.15, labour 0.15, transport 0.15. Which site should be chosen?\n\n**Step 1.** Site P: 0.35 × 9 + 0.2 × 5 + 0.15 × 6 + 0.15 × 7 + 0.15 × 6 = **7**.\n\n**Step 2.** Site Q: 0.35 × 4 + 0.2 × 9 + 0.15 × 8 + 0.15 × 7 + 0.15 × 8 = **6.65**.\n\n**Step 3. Decide.** Site P wins, although Q scores higher on market, power and transport, because the heavily weighted factor — nearness to cane — matters most for a perishable, bulky raw material.",
+          "bullets": [],
+          "visual": {
+            "kind": "svg",
+            "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 440 210\" role=\"img\" aria-label=\"Paired bars scoring two illustrative sites for a sugar mill on five factors, each out of 10, with weights Raw material 0.35, Market 0.2, Power 0.15, Labour 0.15, Transport 0.15. Site P near cane fields: 9, 5, 6, 7, 6, weighted score 7. Site Q at the city edge: 4, 9, 8, 7, 8, weighted score 6.65.\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>Paired bars scoring two illustrative sites for a sugar mill on five factors, each out of 10, with weights Raw material 0.35, Market 0.2, Power 0.15, Labour 0.15, Transport 0.15. Site P near cane fields: 9, 5, 6, 7, 6, weighted score 7. Site Q at the city edge: 4, 9, 8, 7, 8, weighted score 6.65.</title><text x=\"122\" y=\"54\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"end\" font-size=\"10\">Raw material (×0.35)</text><rect x=\"130\" y=\"40\" width=\"198\" height=\"10\" fill=\"var(--diagram-green)\" stroke=\"none\" stroke-width=\"0\" fill-opacity=\"0.55\"/><text x=\"332\" y=\"49\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">9</text><rect x=\"130\" y=\"51\" width=\"88\" height=\"10\" fill=\"var(--diagram-blue)\" stroke=\"none\" stroke-width=\"0\" fill-opacity=\"0.55\"/><text x=\"222\" y=\"60\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">4</text><text x=\"122\" y=\"82\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"end\" font-size=\"10\">Market (×0.2)</text><rect x=\"130\" y=\"68\" width=\"110\" height=\"10\" fill=\"var(--diagram-green)\" stroke=\"none\" stroke-width=\"0\" fill-opacity=\"0.55\"/><text x=\"244\" y=\"77\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">5</text><rect x=\"130\" y=\"79\" width=\"198\" height=\"10\" fill=\"var(--diagram-blue)\" stroke=\"none\" stroke-width=\"0\" fill-opacity=\"0.55\"/><text x=\"332\" y=\"88\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">9</text><text x=\"122\" y=\"110\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"end\" font-size=\"10\">Power (×0.15)</text><rect x=\"130\" y=\"96\" width=\"132\" height=\"10\" fill=\"var(--diagram-green)\" stroke=\"none\" stroke-width=\"0\" fill-opacity=\"0.55\"/><text x=\"266\" y=\"105\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">6</text><rect x=\"130\" y=\"107\" width=\"176\" height=\"10\" fill=\"var(--diagram-blue)\" stroke=\"none\" stroke-width=\"0\" fill-opacity=\"0.55\"/><text x=\"310\" y=\"116\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">8</text><text x=\"122\" y=\"138\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"end\" font-size=\"10\">Labour (×0.15)</text><rect x=\"130\" y=\"124\" width=\"154\" height=\"10\" fill=\"var(--diagram-green)\" stroke=\"none\" stroke-width=\"0\" fill-opacity=\"0.55\"/><text x=\"288\" y=\"133\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">7</text><rect x=\"130\" y=\"135\" width=\"154\" height=\"10\" fill=\"var(--diagram-blue)\" stroke=\"none\" stroke-width=\"0\" fill-opacity=\"0.55\"/><text x=\"288\" y=\"144\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">7</text><text x=\"122\" y=\"166\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"end\" font-size=\"10\">Transport (×0.15)</text><rect x=\"130\" y=\"152\" width=\"132\" height=\"10\" fill=\"var(--diagram-green)\" stroke=\"none\" stroke-width=\"0\" fill-opacity=\"0.55\"/><text x=\"266\" y=\"161\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">6</text><rect x=\"130\" y=\"163\" width=\"176\" height=\"10\" fill=\"var(--diagram-blue)\" stroke=\"none\" stroke-width=\"0\" fill-opacity=\"0.55\"/><text x=\"310\" y=\"172\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">8</text><rect x=\"130\" y=\"190\" width=\"12\" height=\"10\" fill=\"var(--diagram-green)\" stroke=\"none\" stroke-width=\"0\" fill-opacity=\"0.55\"/><text x=\"146\" y=\"199\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\" font-weight=\"bold\">P weighted score 7</text><rect x=\"300\" y=\"190\" width=\"12\" height=\"10\" fill=\"var(--diagram-blue)\" stroke=\"none\" stroke-width=\"0\" fill-opacity=\"0.55\"/><text x=\"316\" y=\"199\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\" font-weight=\"bold\">Q weighted score 6.65</text><text x=\"220\" y=\"20\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">Scoring two sites for a sugar mill (scores out of 10, illustrative)</text></svg>",
+            "alt": "Paired bars scoring two sites for a sugar mill on five weighted factors"
+          },
+          "math": [],
+          "narration": "We can weigh location factors with a simple score. For a sugar mill, nearness to cane gets the biggest weight. Multiply each score by its weight and add them up. The site among the cane fields scores seven, while the site at the edge of the city scores six point six five. Even though the city site is better for markets and power, the cane site wins.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s12",
+          "layout": "check",
+          "heading": "Quick check: location factors",
+          "body_md": "Pick the factor that most strongly decides a location.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Bulky or perishable raw materials pull factories towards their source.",
+          "check_question_id": "q_icse10geo_ch15_013",
+          "audio": null
+        },
+        {
+          "id": "s13",
+          "layout": "summary",
+          "heading": "Summary: Part 1",
+          "body_md": "",
+          "bullets": [
+            "Manufacturing adds value, creates jobs, earns foreign exchange through exports, supports agriculture and builds self-reliance.",
+            "By size: large-scale (steel plants, cotton mills) and small-scale or cottage (powerlooms, handlooms, food processing).",
+            "By raw material: agro-based (sugar, cotton, silk) and mineral-based (steel, cement, petrochemicals).",
+            "By ownership: public, private, joint and cooperative sectors.",
+            "Location: raw material, power, water, climate, labour, market, transport, capital and policy."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Basis",
+                "Groups"
+              ],
+              "rows": [
+                [
+                  "Size",
+                  "Large-scale, small-scale"
+                ],
+                [
+                  "Raw material",
+                  "Agro-based, mineral-based"
+                ],
+                [
+                  "Ownership",
+                  "Public, private, joint, cooperative"
+                ]
+              ]
+            },
+            "alt": "Summary table of the bases of classification"
+          },
+          "math": [],
+          "narration": "Let us sum up Part 1. Manufacturing adds value, creates jobs, earns foreign exchange and makes the country self reliant. Industries are classified by size into large and small scale, by raw material into agro based and mineral based, and by ownership into public, private, joint and cooperative. Their location depends on raw material, power, labour, markets, transport and policy.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s14",
+          "layout": "exam-tips",
+          "heading": "Exam tips: Part 1",
+          "body_md": "",
+          "bullets": [
+            "For importance, give named examples: Tiruppur garments, Kolhapur sugar cooperatives.",
+            "Classify each industry on all three bases when asked.",
+            "Cooperatives are owned by the producers who supply the raw material.",
+            "For location, name the factor and explain how it lowers costs."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Slip",
+                "Fix"
+              ],
+              "rows": [
+                [
+                  "Sugar is mineral-based",
+                  "Sugar is agro-based"
+                ],
+                [
+                  "Cooperative = government-owned",
+                  "Owned by producers or workers"
+                ],
+                [
+                  "Location: \"good place\"",
+                  "Name the factor and its effect on cost"
+                ]
+              ]
+            },
+            "alt": "Table of three common slips in Part 1 and their fixes"
+          },
+          "math": [],
+          "narration": "Some tips. When you explain why industries matter, give named examples. Be ready to classify an industry by size, raw material and ownership. Remember that cooperatives are owned by the producers, not the government. And when you discuss location, name each factor and say how it lowers the cost of production.",
+          "check_question_id": null,
+          "audio": null
+        }
+      ],
+      "status": "draft",
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "unit": "icse-10-geography-ch15",
+      "part": 2,
+      "version": 1,
+      "title": "Manufacturing Industries — Part 2: Sugar, cotton textiles and silk",
+      "language": "en",
+      "goals": [
+        "Explain why sugar mills are located close to sugarcane fields and why the industry has shifted to peninsular India",
+        "Explain the factors that favoured the cotton textile industry in Mumbai and Ahmedabad",
+        "Name the types of silk and the major silk centres, and explain why Karnataka leads in mulberry silk"
+      ],
+      "slides": [
+        {
+          "id": "s01",
+          "layout": "title",
+          "heading": "Industries that begin on the farm",
+          "body_md": "Part 2 — three great agro-based industries: **sugar**, which must be close to its cane; **cotton textiles**, among the oldest modern industries of India; and **silk**, a craft and an industry that keeps millions of rural families busy.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Industry",
+                "Raw material",
+                "Leading region (early 2020s)"
+              ],
+              "rows": [
+                [
+                  "Sugar",
+                  "Sugarcane",
+                  "Uttar Pradesh, Maharashtra, Karnataka"
+                ],
+                [
+                  "Cotton textiles",
+                  "Raw cotton",
+                  "Gujarat, Maharashtra, Tamil Nadu"
+                ],
+                [
+                  "Silk",
+                  "Silk cocoons",
+                  "Karnataka (mulberry), Assam, Jharkhand"
+                ]
+              ]
+            },
+            "alt": "Table of three agro-based industries with their raw material and leading regions"
+          },
+          "math": [],
+          "narration": "In this part we study three industries that begin on the farm. Sugar mills must stand close to the cane fields. Cotton textiles are among the oldest modern industries in India. And silk, from the cocoons of silkworms, supports millions of rural families. For each, we ask where it is found, why it is there, and what problems it faces.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s02",
+          "layout": "concept",
+          "heading": "Sugar: why mills stand among the cane fields",
+          "body_md": "Sugarcane is **heavy and bulky** — only about a tenth of its weight becomes sugar — so carrying it far is costly. It is also **perishable**: once cut, its **sucrose content starts falling**, so it must be crushed within about a day. It cannot be stored. So sugar mills are built **in the cane-growing belt**, and farmers bring cane by tractor or bullock cart within a short radius. Mills also need water, cheap labour in the crushing season, and transport for the finished sugar.",
+          "bullets": [],
+          "visual": {
+            "kind": "flow",
+            "spec": {
+              "direction": "LR",
+              "nodes": [
+                {
+                  "id": "a",
+                  "label": "Cane is bulky; little of its weight becomes sugar"
+                },
+                {
+                  "id": "b",
+                  "label": "Sucrose falls soon after cutting"
+                },
+                {
+                  "id": "c",
+                  "label": "Cane must be crushed quickly"
+                },
+                {
+                  "id": "d",
+                  "label": "Mills built in the cane belt"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "a",
+                  "to": "d"
+                },
+                {
+                  "from": "b",
+                  "to": "c"
+                },
+                {
+                  "from": "c",
+                  "to": "d"
+                }
+              ]
+            },
+            "alt": "Flow showing why bulky, perishable cane pulls sugar mills into the cane belt"
+          },
+          "math": [],
+          "narration": "Sugarcane is heavy and bulky, and only about a tenth of its weight ends up as sugar, so it is expensive to carry far. Worse, once the cane is cut, its sugar starts to break down, so it must be crushed within about a day. It cannot be stored. That is why sugar mills are built right among the cane fields, and farmers bring their cane in by tractor and bullock cart.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s03",
+          "layout": "diagram",
+          "heading": "Delay costs sugar (illustrative)",
+          "body_md": "The illustrative graph shows sugar recovered from cane falling as crushing is delayed: 0 h — 11%; 24 h — 10.5%; 48 h — 9.8%; 72 h — 9%. A mill that keeps cane waiting loses sugar every hour, which is why mills schedule cutting and crushing together and buy cane only from nearby fields.",
+          "bullets": [],
+          "visual": {
+            "kind": "svg",
+            "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 440 220\" role=\"img\" aria-label=\"Line graph, illustrative: sugar recovered as a percentage of cane weight falls as the delay between cutting and crushing grows: 0 hours 11 per cent, 24 hours 10.5 per cent, 48 hours 9.8 per cent, 72 hours 9 per cent.\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>Line graph, illustrative: sugar recovered as a percentage of cane weight falls as the delay between cutting and crushing grows: 0 hours 11 per cent, 24 hours 10.5 per cent, 48 hours 9.8 per cent, 72 hours 9 per cent.</title><line x1=\"70\" y1=\"180\" x2=\"380\" y2=\"180\" stroke=\"currentColor\" stroke-width=\"1.2\"/><line x1=\"70\" y1=\"180\" x2=\"70\" y2=\"40\" stroke=\"currentColor\" stroke-width=\"1.2\"/><text x=\"64\" y=\"184\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"end\" font-size=\"10\">8</text><text x=\"64\" y=\"149\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"end\" font-size=\"10\">9</text><text x=\"64\" y=\"114\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"end\" font-size=\"10\">10</text><text x=\"64\" y=\"79\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"end\" font-size=\"10\">11</text><text x=\"64\" y=\"44\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"end\" font-size=\"10\">12</text><path d=\"M70.0 75.0 L170.0 92.5 L270.0 117.0 L370.0 145.0\" fill=\"none\" stroke=\"var(--diagram-red)\" stroke-width=\"2\"/><circle cx=\"70\" cy=\"75\" r=\"3\" fill=\"var(--diagram-red)\" stroke=\"var(--diagram-red)\" stroke-width=\"0\"/><text x=\"70\" y=\"67\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\" font-weight=\"bold\">11%</text><text x=\"70\" y=\"195\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">0 h</text><circle cx=\"170\" cy=\"92.5\" r=\"3\" fill=\"var(--diagram-red)\" stroke=\"var(--diagram-red)\" stroke-width=\"0\"/><text x=\"170\" y=\"84.5\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\" font-weight=\"bold\">10.5%</text><text x=\"170\" y=\"195\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">24 h</text><circle cx=\"270\" cy=\"117\" r=\"3\" fill=\"var(--diagram-red)\" stroke=\"var(--diagram-red)\" stroke-width=\"0\"/><text x=\"270\" y=\"109\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\" font-weight=\"bold\">9.8%</text><text x=\"270\" y=\"195\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">48 h</text><circle cx=\"370\" cy=\"145\" r=\"3\" fill=\"var(--diagram-red)\" stroke=\"var(--diagram-red)\" stroke-width=\"0\"/><text x=\"370\" y=\"137\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\" font-weight=\"bold\">9%</text><text x=\"370\" y=\"195\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">72 h</text><text x=\"14\" y=\"28\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">sugar recovered (% of cane weight)</text><text x=\"225\" y=\"212\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">hours between cutting and crushing (illustrative data)</text></svg>",
+            "alt": "Line graph of sugar recovery falling as crushing is delayed"
+          },
+          "math": [],
+          "narration": "This illustrative graph shows what happens when cane waits. Crushed at once, it gives eleven per cent of its weight as sugar. After a day it gives ten and a half per cent, after two days less than ten, and after three days only nine. Every hour of delay costs sugar, so mills plan cutting and crushing together and take cane only from nearby fields.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s04",
+          "layout": "check",
+          "heading": "Quick check: sugar mill location",
+          "body_md": "Explain why sugar mills are located near cane fields.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Cane is bulky and loses sucrose quickly after cutting.",
+          "check_question_id": "q_icse10geo_ch15_025",
+          "audio": null
+        },
+        {
+          "id": "s05",
+          "layout": "concept",
+          "heading": "Sugar: distribution and the shift to the peninsula",
+          "body_md": "**Distribution:** **Uttar Pradesh** and **Maharashtra** are the leading producers **(as of the early 2020s)**, followed by **Karnataka**, Tamil Nadu, Gujarat, Bihar and Andhra Pradesh. **Shift to peninsular India:** cane in the warmer south and west has a **higher sucrose content** and a **higher yield per hectare**; the frost-free tropical climate allows a **longer crushing season**; **cooperative mills** in Maharashtra are well managed and invest in modern machinery; newer, larger mills are more efficient than many old mills of the north; coastal and irrigated areas give steady cane supply.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Head",
+                "Northern plains (UP, Bihar)",
+                "Peninsula (Maharashtra, Karnataka)"
+              ],
+              "rows": [
+                [
+                  "Sucrose content",
+                  "Lower",
+                  "Higher"
+                ],
+                [
+                  "Yield per hectare",
+                  "Lower",
+                  "Higher"
+                ],
+                [
+                  "Crushing season",
+                  "Shorter (cold winter)",
+                  "Longer (frost-free)"
+                ],
+                [
+                  "Mills",
+                  "Many old, small",
+                  "Newer, cooperative, larger"
+                ]
+              ]
+            },
+            "alt": "Table comparing sugar production conditions in the northern plains and the peninsula"
+          },
+          "math": [],
+          "narration": "Uttar Pradesh and Maharashtra are the leading sugar producing states, followed by Karnataka and Tamil Nadu. Over the years the industry has grown faster in the peninsula. There, the warm, frost free climate gives cane with more sugar and a bigger harvest per hectare, and mills can crush for more months of the year. Maharashtra’s cooperative mills are also well run and modern.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s06",
+          "layout": "concept",
+          "heading": "Sugar: process, by-products and problems",
+          "body_md": "**Process:** cane is crushed to extract juice → juice is cleaned → boiled and concentrated → crystallised → separated in centrifuges → sugar. **By-products:** **bagasse** (fibre) is burnt as fuel or made into paper and boards; **molasses** is used to make **industrial alcohol (ethanol)**; **press mud** is used as manure. **Problems:** crushing is **seasonal** (a few months a year), so workers and machines sit idle; **low yield** and low sucrose in the north; **old, small mills**; high cost of production; delays in paying farmers; competition from **gur and khandsari** makers.",
+          "bullets": [],
+          "visual": {
+            "kind": "flow",
+            "spec": {
+              "direction": "LR",
+              "nodes": [
+                {
+                  "id": "a",
+                  "label": "Crush cane"
+                },
+                {
+                  "id": "b",
+                  "label": "Clean and boil juice"
+                },
+                {
+                  "id": "c",
+                  "label": "Crystallise"
+                },
+                {
+                  "id": "d",
+                  "label": "Centrifuge: sugar"
+                },
+                {
+                  "id": "e",
+                  "label": "Bagasse: fuel, paper"
+                },
+                {
+                  "id": "f",
+                  "label": "Molasses: ethanol"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "a",
+                  "to": "b"
+                },
+                {
+                  "from": "b",
+                  "to": "c"
+                },
+                {
+                  "from": "c",
+                  "to": "d"
+                },
+                {
+                  "from": "a",
+                  "to": "e"
+                },
+                {
+                  "from": "c",
+                  "to": "f"
+                }
+              ]
+            },
+            "alt": "Flow of sugar making with by-products bagasse and molasses"
+          },
+          "math": [],
+          "narration": "In the mill, cane is crushed for its juice, which is cleaned, boiled and crystallised into sugar. Nothing is wasted: the fibre, called bagasse, is burnt as fuel or made into paper, molasses becomes industrial alcohol, and press mud becomes manure. But the industry has problems. It works only a few months a year, many northern mills are old and small, and costs are high.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s07",
+          "layout": "example",
+          "heading": "Worked example: what does waiting cost?",
+          "body_md": "**Problem.** Because of a transport strike, 2000 t of cane waits 72 hours before crushing instead of being crushed at once. Using the illustrative recoveries, how much sugar is lost?\n\n**Step 1.** Crushed at once: $\\frac{11}{100} \\times 2000 = 220$ t of sugar.\n\n**Step 2.** After 72 hours: $\\frac{9}{100} \\times 2000 = 180$ t.\n\n**Step 3.** Loss $= 220 - 180 = 40$ t — lost to the mill and to the farmers, which is why mills are sited within easy reach of the fields.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Delay",
+                "Recovery",
+                "Sugar from 2000 t of cane"
+              ],
+              "rows": [
+                [
+                  "0 h",
+                  "11%",
+                  "220 t"
+                ],
+                [
+                  "72 h",
+                  "9%",
+                  "180 t"
+                ]
+              ]
+            },
+            "alt": "Table of illustrative sugar obtained with no delay and after three days"
+          },
+          "math": [],
+          "narration": "Suppose two thousand tonnes of cane is held up for three days by a strike. Crushed at once, it would give two hundred and twenty tonnes of sugar. After three days it gives only one hundred and eighty. Forty tonnes of sugar are lost, a heavy blow to both the mill and the farmers. That is the cost of distance and delay for a perishable raw material.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s08",
+          "layout": "concept",
+          "heading": "Cotton textiles: why Mumbai and Ahmedabad",
+          "body_md": "**Mumbai** grew as the first great centre (\"Cottonopolis of India\"): **humid coastal climate** keeps yarn from breaking during spinning; a **port** to import machinery and export cloth; **capital** from merchants who had traded in raw cotton; raw cotton from the **black-soil cotton belt** of Maharashtra and Gujarat, brought by **railway**; **cheap labour** from the Konkan and Deccan; and **hydroelectric power** from the Western Ghats. **Ahmedabad** (\"Manchester of India\") had **cotton fields** of Gujarat around it, local merchant **capital**, cheap **labour**, a large **market**, a fairly humid climate, and access to ports.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Factor",
+                "Mumbai",
+                "Ahmedabad"
+              ],
+              "rows": [
+                [
+                  "Raw cotton",
+                  "From the Deccan and Gujarat cotton belt",
+                  "From nearby Gujarat fields"
+                ],
+                [
+                  "Climate",
+                  "Humid, coastal",
+                  "Fairly humid"
+                ],
+                [
+                  "Port",
+                  "Its own harbour",
+                  "Nearby ports"
+                ],
+                [
+                  "Capital",
+                  "Cotton traders",
+                  "Local merchant families"
+                ],
+                [
+                  "Power",
+                  "Hydel from the Western Ghats",
+                  "Thermal power"
+                ]
+              ]
+            },
+            "alt": "Table comparing the factors that favoured cotton mills in Mumbai and Ahmedabad"
+          },
+          "math": [],
+          "narration": "Why did cotton mills first grow in Mumbai? Its damp sea air stopped the yarn from snapping, its port brought in machines and sent out cloth, and its traders had money to invest. Railways carried raw cotton from the black soil belt, workers came from the Konkan, and hydro power came from the Western Ghats. Ahmedabad had cotton fields all around it, local capital, workers and a big market.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s09",
+          "layout": "check",
+          "heading": "Quick check: cotton textiles",
+          "body_md": "Name a factor that favoured cotton mills in Mumbai or Ahmedabad.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Humid air, a port, capital and the cotton belt favoured Mumbai.",
+          "check_question_id": "q_icse10geo_ch15_037",
+          "audio": null
+        },
+        {
+          "id": "s10",
+          "layout": "concept",
+          "heading": "Cotton textiles: other centres and problems",
+          "body_md": "**Other centres:** **Coimbatore** (\"Manchester of South India\") — cotton, cheap power and skilled labour; **Kanpur** in Uttar Pradesh; **Surat** (now mainly synthetic fabrics); Solapur, Nagpur, Indore, Madurai, Tiruppur (knitwear and garments), Kolkata. **Problems:** **old, obsolete machinery** in many mills; **power shortages** and high power cost; **competition from synthetic fibres** and from **powerlooms**; shortage of **long-staple cotton**, part of which is imported; low productivity; many **sick (loss-making) mills** closed in Mumbai; strong **foreign competition** in exports.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Problem",
+                "Effect"
+              ],
+              "rows": [
+                [
+                  "Obsolete machinery",
+                  "Low output, poor quality"
+                ],
+                [
+                  "Power shortage",
+                  "Mills stop, costs rise"
+                ],
+                [
+                  "Synthetic fibres, powerlooms",
+                  "Mill cloth loses market"
+                ],
+                [
+                  "Short-staple cotton",
+                  "Fine cloth needs imports"
+                ],
+                [
+                  "Foreign competition",
+                  "Export orders lost"
+                ]
+              ]
+            },
+            "alt": "Table of problems of the cotton textile industry and their effects"
+          },
+          "math": [],
+          "narration": "Cotton mills later spread to Coimbatore, the Manchester of South India, and to Kanpur, Indore, Nagpur, Solapur and many other towns. Tiruppur makes knitwear for export. But the industry has problems: many mills have old machines, power is short or costly, synthetic fabrics and powerlooms take away buyers, and fine long staple cotton must partly be imported. Many old Mumbai mills have closed.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s11",
+          "layout": "example",
+          "heading": "Worked example: why Ahmedabad overtook its rivals",
+          "body_md": "**Problem.** Explain why Ahmedabad became one of India’s largest cotton textile centres.\n\n**Step 1. Raw material.** The black soils of Gujarat grow cotton close by, so raw cotton is cheap to bring in.\n\n**Step 2. Capital and enterprise.** Local merchant families invested their trading profits in mills.\n\n**Step 3. Labour and market.** Cheap labour from the surrounding villages; a large market in Gujarat, Rajasthan and beyond.\n\n**Step 4. Transport and climate.** Rail links and nearby ports; a fairly humid climate in the mill season.",
+          "bullets": [],
+          "visual": {
+            "kind": "flow",
+            "spec": {
+              "direction": "LR",
+              "nodes": [
+                {
+                  "id": "a",
+                  "label": "Cotton from Gujarat fields"
+                },
+                {
+                  "id": "b",
+                  "label": "Local merchant capital"
+                },
+                {
+                  "id": "c",
+                  "label": "Cheap labour, large market"
+                },
+                {
+                  "id": "d",
+                  "label": "Rail and ports"
+                },
+                {
+                  "id": "e",
+                  "label": "Ahmedabad: Manchester of India"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "a",
+                  "to": "e"
+                },
+                {
+                  "from": "b",
+                  "to": "e"
+                },
+                {
+                  "from": "c",
+                  "to": "e"
+                },
+                {
+                  "from": "d",
+                  "to": "e"
+                }
+              ]
+            },
+            "alt": "Flow of four factors that made Ahmedabad a great cotton textile centre"
+          },
+          "math": [],
+          "narration": "Why did Ahmedabad grow into a great textile city? Cotton grows on the black soils of Gujarat close by. Local merchant families put their trading profits into building mills. Workers came from the surrounding villages, and the cloth found buyers across western India. Railways and nearby ports carried cotton in and cloth out. No wonder it was called the Manchester of India.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s12",
+          "layout": "diagram",
+          "heading": "Silk: from silkworm to thread",
+          "body_md": "Silk comes from the **cocoons** spun by silkworms. **Sericulture** is the rearing of silkworms. India produces all four commercial kinds of silk: **mulberry** (worms fed on mulberry leaves), **tasar** (on arjun, asan and sal; temperate tasar on oak), **eri** (on castor leaves) and **muga**, the golden silk found only in **Assam** (on som and soalu leaves). At **reeling** units, cocoons are boiled and the thread unwound; roughly 8 kg of cocoons give 1 kg of raw silk (illustrative).",
+          "bullets": [],
+          "visual": {
+            "kind": "svg",
+            "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 440 250\" role=\"img\" aria-label=\"Schematic life cycle of the silkworm: eggs hatch into silkworms that feed on leaves (mulberry, castor, oak, arjun or som leaves depending on the silk), the worms spin cocoons, and a few moths are kept to lay eggs. Most cocoons go to reeling, where they are boiled and the silk thread is unwound; about 8 kilograms of cocoons give 1 kilogram of raw silk (illustrative).\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>Schematic life cycle of the silkworm: eggs hatch into silkworms that feed on leaves (mulberry, castor, oak, arjun or som leaves depending on the silk), the worms spin cocoons, and a few moths are kept to lay eggs. Most cocoons go to reeling, where they are boiled and the silk thread is unwound; about 8 kilograms of cocoons give 1 kilogram of raw silk (illustrative).</title><circle cx=\"150\" cy=\"45\" r=\"7\" fill=\"var(--diagram-yellow)\" stroke=\"currentColor\" stroke-width=\"1\" fill-opacity=\"0.7\"/><text x=\"150\" y=\"33\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">Eggs</text><line x1=\"157.1\" y1=\"52.1\" x2=\"213.8\" y2=\"108.8\" stroke=\"var(--diagram-accent)\" stroke-width=\"1.5\"/><polygon points=\"217.2,112.2 211.6,110.1 215.1,106.6\" fill=\"var(--diagram-accent)\" stroke=\"none\"/><circle cx=\"225\" cy=\"120\" r=\"7\" fill=\"var(--diagram-green)\" stroke=\"currentColor\" stroke-width=\"1\" fill-opacity=\"0.7\"/><text x=\"237\" y=\"124\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">Silkworms feed on leaves</text><line x1=\"217.9\" y1=\"127.1\" x2=\"161.2\" y2=\"183.8\" stroke=\"var(--diagram-accent)\" stroke-width=\"1.5\"/><polygon points=\"157.8,187.2 159.9,181.6 163.4,185.1\" fill=\"var(--diagram-accent)\" stroke=\"none\"/><circle cx=\"150\" cy=\"195\" r=\"7\" fill=\"var(--diagram-brown)\" stroke=\"currentColor\" stroke-width=\"1\" fill-opacity=\"0.7\"/><text x=\"150\" y=\"215\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">Spin cocoons</text><line x1=\"142.9\" y1=\"187.9\" x2=\"86.2\" y2=\"131.2\" stroke=\"var(--diagram-accent)\" stroke-width=\"1.5\"/><polygon points=\"82.8,127.8 88.4,129.9 84.9,133.4\" fill=\"var(--diagram-accent)\" stroke=\"none\"/><circle cx=\"75\" cy=\"120\" r=\"7\" fill=\"var(--diagram-muted)\" stroke=\"currentColor\" stroke-width=\"1\" fill-opacity=\"0.7\"/><text x=\"63\" y=\"124\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"end\" font-size=\"10\">Moths (a few kept for eggs)</text><line x1=\"82.1\" y1=\"112.9\" x2=\"138.8\" y2=\"56.2\" stroke=\"var(--diagram-accent)\" stroke-width=\"1.5\"/><polygon points=\"142.2,52.8 140.1,58.4 136.6,54.9\" fill=\"var(--diagram-accent)\" stroke=\"none\"/><line x1=\"160\" y1=\"195\" x2=\"294.4\" y2=\"195\" stroke=\"var(--diagram-blue)\" stroke-width=\"2\"/><polygon points=\"300,195 293.6,197.9 293.6,192.1\" fill=\"var(--diagram-blue)\" stroke=\"none\"/><rect x=\"305\" y=\"173\" width=\"120\" height=\"44\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"1\" fill-opacity=\"0.2\"/><text x=\"365\" y=\"189\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">Reeling: boil and</text><text x=\"365\" y=\"203\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">unwind silk thread</text><text x=\"365\" y=\"235\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">about 8 kg cocoons</text><text x=\"365\" y=\"248\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\" font-weight=\"bold\">→ 1 kg raw silk</text><text x=\"220\" y=\"14\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">Life cycle of the silkworm (schematic; ratio illustrative)</text></svg>",
+            "alt": "Life cycle of the silkworm with reeling of cocoons into raw silk"
+          },
+          "math": [],
+          "narration": "Silk comes from the cocoons of silkworms, and rearing them is called sericulture. India produces four kinds of silk. Mulberry silk comes from worms fed on mulberry leaves. Tasar comes from worms that eat arjun, asan or sal leaves. Eri worms feed on castor leaves, and golden muga silk is made only in Assam. Cocoons are boiled and unwound into thread; about eight kilograms of cocoons give one kilogram of raw silk.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s13",
+          "layout": "concept",
+          "heading": "Silk centres and Karnataka’s lead",
+          "body_md": "**Centres:** **Karnataka** — Bengaluru, Mysuru, **Ramanagara** (a huge cocoon market), Kolar, Chikkaballapur; **Kanchipuram** (Tamil Nadu) and **Dharmavaram** (Andhra Pradesh) for silk sarees; **Varanasi** for brocades; **Bhagalpur** (Bihar) for tasar; **Sualkuchi** (Assam) for muga and mulberry weaving; **Murshidabad** (West Bengal); Jharkhand and Chhattisgarh for tasar. **Why Karnataka leads in mulberry silk:** an **equable plateau climate** with moderate temperature all year lets mulberry grow continuously, so farmers rear **five or more crops** of cocoons a year; red loamy soils and irrigation suit mulberry; **traditional skills**; **government support**, research institutes and **organised cocoon markets**.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Silk",
+                "Food plant",
+                "Main region"
+              ],
+              "rows": [
+                [
+                  "Mulberry",
+                  "Mulberry",
+                  "Karnataka, Andhra Pradesh, Tamil Nadu"
+                ],
+                [
+                  "Tasar",
+                  "Arjun, asan, sal; oak",
+                  "Jharkhand, Chhattisgarh, Bihar"
+                ],
+                [
+                  "Eri",
+                  "Castor",
+                  "Assam, Meghalaya"
+                ],
+                [
+                  "Muga",
+                  "Som, soalu",
+                  "Assam only"
+                ]
+              ]
+            },
+            "alt": "Table of the four kinds of silk with the food plant and main region of each"
+          },
+          "math": [],
+          "narration": "Karnataka is the leading producer of mulberry silk, with centres such as Bengaluru, Mysuru and Ramanagara, which has a huge cocoon market. Its plateau has mild temperatures all year, so mulberry grows without a break and farmers can rear five or more crops of cocoons a year. Other centres include Kanchipuram for sarees, Varanasi for brocades, Bhagalpur for tasar and Sualkuchi in Assam for muga.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s14",
+          "layout": "check",
+          "heading": "Quick check: silk",
+          "body_md": "Name a type of silk, its region or its food plant.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Muga is golden silk from Assam; eri worms feed on castor.",
+          "check_question_id": "q_icse10geo_ch15_049",
+          "audio": null
+        },
+        {
+          "id": "s15",
+          "layout": "summary",
+          "heading": "Summary: Part 2",
+          "body_md": "",
+          "bullets": [
+            "Sugar mills sit in cane belts because cane is bulky and loses sucrose soon after cutting; the industry has shifted towards the peninsula (higher sucrose and yield, longer season, cooperatives).",
+            "Sugar problems: seasonal working, low yields in the north, old mills, high costs; by-products bagasse, molasses, press mud.",
+            "Cotton textiles: Mumbai (humid, port, capital, cotton belt, hydel power) and Ahmedabad (cotton fields, merchant capital, labour, market); problems of old machinery, power, synthetic competition.",
+            "Silk: mulberry, tasar, eri, muga; Karnataka leads in mulberry thanks to its equable climate and many crops a year."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Industry",
+                "Key location factor"
+              ],
+              "rows": [
+                [
+                  "Sugar",
+                  "Nearness to cane"
+                ],
+                [
+                  "Cotton textiles",
+                  "Cotton, humidity, capital, port"
+                ],
+                [
+                  "Mulberry silk",
+                  "Equable climate for mulberry"
+                ]
+              ]
+            },
+            "alt": "Summary table of the key location factor of each industry"
+          },
+          "math": [],
+          "narration": "Let us sum up Part 2. Sugar mills stand among the cane fields because cane is bulky and spoils quickly, and the industry has grown fastest in Maharashtra and the south. Cotton mills first grew in Mumbai and Ahmedabad because of cotton, humid air, capital and ports, but they face old machinery and competition. India makes four kinds of silk, and Karnataka leads in mulberry silk.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s16",
+          "layout": "exam-tips",
+          "heading": "Exam tips: Part 2",
+          "body_md": "",
+          "bullets": [
+            "Sugar: say both \"bulky\" and \"perishable (sucrose falls)\" when explaining location.",
+            "For the shift south, give at least three reasons: sucrose, yield, season, cooperatives.",
+            "For Mumbai, cover climate, port, capital, raw cotton, labour and power.",
+            "Silk: name all four kinds with a region or food plant for each."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Slip",
+                "Fix"
+              ],
+              "rows": [
+                [
+                  "Muga is made in Karnataka",
+                  "Muga is made only in Assam"
+                ],
+                [
+                  "Sugar mills near cities for markets",
+                  "Near cane fields for raw material"
+                ],
+                [
+                  "Eri worms eat mulberry",
+                  "Eri worms eat castor leaves"
+                ]
+              ]
+            },
+            "alt": "Table of three common slips in Part 2 and their fixes"
+          },
+          "math": [],
+          "narration": "Final tips. For sugar mills, explain that cane is both bulky and perishable. For the move to the south, give at least three reasons. For Mumbai’s cotton mills, cover climate, port, capital, cotton, labour and power. And for silk, name all four kinds, each with its region or its food plant.",
+          "check_question_id": null,
+          "audio": null
+        }
+      ],
+      "status": "draft",
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    }
+  ],
+  "notes": {
+    "unit": "icse-10-geography-ch15",
+    "version": 1,
+    "title": "Manufacturing Industries: Classification and Agro-based Industries — Notes",
+    "language": "en",
+    "sections": [
+      {
+        "heading": "1. Importance of manufacturing industries",
+        "body_md": "- **Manufacturing:** processing raw materials into goods of higher value (secondary sector).\n- **Employment:** jobs in factories and related services; reduces pressure on agriculture.\n- **Value addition** and higher national income.\n- **Exports:** textiles, garments, steel, chemicals, medicines, vehicles, electronics earn foreign exchange.\n- **Self-reliance:** home-made machinery, steel, fertilisers and defence goods reduce imports.\n- **Support to agriculture:** tractors, pumps, fertilisers; agro-based industries buy farm produce.\n- **Regional development:** industries bring infrastructure and towns to backward areas.",
+        "key_terms": [
+          {
+            "term": "Manufacturing",
+            "definition_md": "Converting raw materials into finished goods of higher value."
+          },
+          {
+            "term": "Value addition",
+            "definition_md": "The increase in the worth of a material when it is processed into a product."
+          }
+        ],
+        "formulas": [],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Benefit",
+              "Example"
+            ],
+            "rows": [
+              [
+                "Jobs",
+                "Powerlooms of Surat"
+              ],
+              [
+                "Exports",
+                "Garments of Tiruppur"
+              ],
+              [
+                "Self-reliance",
+                "Indian steel and fertilisers"
+              ]
+            ]
+          },
+          "alt": "Table of benefits of manufacturing with examples"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-geography-ch15-t01"
+        ]
+      },
+      {
+        "heading": "2. Classification of industries",
+        "body_md": "| Basis | Types | Examples |\n|---|---|---|\n| Size | Large-scale; small-scale; cottage | Steel plant; powerloom unit; handloom |\n| Raw material | Agro-based; mineral-based; forest-based; marine-based | Sugar, cotton, silk; steel, cement, petrochemicals; paper; fish canning |\n| Ownership | Public; private; joint; cooperative | SAIL, BHEL; Tata Steel, Reliance; government + private; Kolhapur sugar cooperatives, Amul |\n\n- **Location factors:** raw material, power, water, climate, labour, market, transport, capital, government policy.\n- Bulky or perishable raw materials pull industries towards their source; fragile or costly-to-carry products pull them towards markets.",
+        "key_terms": [
+          {
+            "term": "Agro-based industry",
+            "definition_md": "An industry that uses farm produce as its raw material, such as sugar or cotton textiles."
+          },
+          {
+            "term": "Cooperative sector",
+            "definition_md": "Industries owned and run by the producers or workers who supply the raw material."
+          },
+          {
+            "term": "Public sector",
+            "definition_md": "Industries owned and managed by the government."
+          }
+        ],
+        "formulas": [],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Ownership",
+              "Owner"
+            ],
+            "rows": [
+              [
+                "Public",
+                "Government"
+              ],
+              [
+                "Private",
+                "Individuals or companies"
+              ],
+              [
+                "Joint",
+                "Government and private firms"
+              ],
+              [
+                "Cooperative",
+                "Producers or workers"
+              ]
+            ]
+          },
+          "alt": "Table of ownership sectors and their owners"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-geography-ch15-t02"
+        ]
+      },
+      {
+        "heading": "3. Sugar industry",
+        "body_md": "- **Location near cane fields:** cane is heavy and bulky (only about a tenth becomes sugar); sucrose falls soon after cutting, so cane must be crushed within about a day; it cannot be stored.\n- **Leading states (as of the early 2020s):** Uttar Pradesh and Maharashtra; also Karnataka, Tamil Nadu, Gujarat, Bihar, Andhra Pradesh.\n- **Shift to the peninsula:** higher sucrose content and yield per hectare; longer crushing season in a frost-free climate; well-run cooperatives in Maharashtra; newer, larger mills.\n- **By-products:** bagasse (fuel, paper, boards); molasses (industrial alcohol, ethanol); press mud (manure).\n- **Problems:** seasonal working; low yields and sucrose in the north; old, small mills; high costs; delayed payments to farmers; competition from gur and khandsari.",
+        "key_terms": [
+          {
+            "term": "Molasses",
+            "definition_md": "A thick syrup left after sugar crystals are removed, used to make industrial alcohol."
+          },
+          {
+            "term": "Crushing season",
+            "definition_md": "The months in which a sugar mill crushes cane."
+          }
+        ],
+        "formulas": [],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Head",
+              "North",
+              "Peninsula"
+            ],
+            "rows": [
+              [
+                "Sucrose",
+                "Lower",
+                "Higher"
+              ],
+              [
+                "Season",
+                "Shorter",
+                "Longer"
+              ],
+              [
+                "Mills",
+                "Older",
+                "Newer, cooperative"
+              ]
+            ]
+          },
+          "alt": "Table comparing sugar production in the north and the peninsula"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-geography-ch15-t03"
+        ]
+      },
+      {
+        "heading": "4. Cotton textile industry",
+        "body_md": "- **Mumbai:** humid coastal climate; port for machinery and exports; capital of cotton traders; raw cotton from the black-soil cotton belt by rail; cheap labour from the Konkan and Deccan; hydel power from the Western Ghats.\n- **Ahmedabad (Manchester of India):** cotton fields of Gujarat nearby; local merchant capital; cheap labour; large market; ports and railways.\n- **Other centres:** Coimbatore (Manchester of South India), Kanpur, Surat, Solapur, Nagpur, Indore, Madurai, Tiruppur, Kolkata.\n- **Problems:** obsolete machinery; power shortage and cost; competition from synthetic fibres and powerlooms; shortage of long-staple cotton; low productivity; sick mills; foreign competition.",
+        "key_terms": [
+          {
+            "term": "Cottonopolis of India",
+            "definition_md": "A name for Mumbai, the first great centre of cotton mills."
+          },
+          {
+            "term": "Long-staple cotton",
+            "definition_md": "Cotton with long fibres, used for fine yarn and cloth."
+          }
+        ],
+        "formulas": [],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Centre",
+              "Nickname or speciality"
+            ],
+            "rows": [
+              [
+                "Mumbai",
+                "Cottonopolis"
+              ],
+              [
+                "Ahmedabad",
+                "Manchester of India"
+              ],
+              [
+                "Coimbatore",
+                "Manchester of South India"
+              ],
+              [
+                "Tiruppur",
+                "Knitwear exports"
+              ]
+            ]
+          },
+          "alt": "Table of cotton textile centres and their nicknames or specialities"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-geography-ch15-t04"
+        ]
+      },
+      {
+        "heading": "5. Silk textile industry",
+        "body_md": "- **Sericulture:** rearing silkworms for silk; cocoons are boiled and reeled into raw silk (roughly 8 kg of cocoons per kg of raw silk, illustrative).\n- **Types:** mulberry (mulberry leaves; Karnataka, Andhra Pradesh, Tamil Nadu, West Bengal); tasar (arjun, asan, sal; oak for temperate tasar; Jharkhand, Chhattisgarh, Bihar); eri (castor; Assam, Meghalaya); muga (golden; som and soalu; Assam only).\n- **Centres:** Bengaluru, Mysuru, Ramanagara (cocoon market); Kanchipuram; Dharmavaram; Varanasi; Bhagalpur (tasar); Sualkuchi (Assam); Murshidabad.\n- **Karnataka leads in mulberry silk:** equable plateau climate lets mulberry grow all year (five or more cocoon crops a year); suitable red loamy soils and irrigation; traditional skills; government support, research and organised cocoon markets.",
+        "key_terms": [
+          {
+            "term": "Sericulture",
+            "definition_md": "The rearing of silkworms for the production of silk."
+          },
+          {
+            "term": "Muga",
+            "definition_md": "A golden silk produced only in Assam."
+          }
+        ],
+        "formulas": [],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Silk",
+              "Region"
+            ],
+            "rows": [
+              [
+                "Mulberry",
+                "Karnataka"
+              ],
+              [
+                "Tasar",
+                "Jharkhand, Bhagalpur"
+              ],
+              [
+                "Eri",
+                "Assam"
+              ],
+              [
+                "Muga",
+                "Assam only"
+              ]
+            ]
+          },
+          "alt": "Table of the four silks and their regions"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-10-geography-ch15-t05"
+        ]
+      }
+    ],
+    "exam_tips_md": "**Common mistakes**\n- Calling sugar or silk mineral-based.\n- Saying sugar mills are located near markets.\n- Writing that muga silk is produced in Karnataka.\n- Giving only one factor for Mumbai's cotton mills.\n\n**How marks are usually awarded**\n- Location questions: 1 mark per factor explained with its effect.\n- Classification: correct basis and correct group.\n- Silk: kind of silk with region or food plant.",
+    "status": "draft",
+    "provenance": {
+      "origin": "human",
+      "template_version": null,
+      "model": null,
+      "generated_at": "2026-11-01",
+      "author": "claude-opus-5-5 (subject-producer)"
+    }
+  },
+  "flashcards": {
+    "unit": "icse-10-geography-ch15",
+    "version": 1,
+    "language": "en",
+    "cards": [
+      {
+        "id": "f01",
+        "front_md": "Manufacturing?",
+        "back_md": "Turning raw materials into higher-value goods.",
+        "tag": "definition",
+        "topic_id": "icse-10-geography-ch15-t01"
+      },
+      {
+        "id": "f02",
+        "front_md": "Two benefits of manufacturing?",
+        "back_md": "Jobs; exports earning foreign exchange.",
+        "tag": "fact",
+        "topic_id": "icse-10-geography-ch15-t01"
+      },
+      {
+        "id": "f03",
+        "front_md": "How does industry help self-reliance?",
+        "back_md": "Fewer imports of machines, steel, fertilisers.",
+        "tag": "concept",
+        "topic_id": "icse-10-geography-ch15-t01"
+      },
+      {
+        "id": "f04",
+        "front_md": "Three bases of classification?",
+        "back_md": "Size, raw material, ownership.",
+        "tag": "fact",
+        "topic_id": "icse-10-geography-ch15-t02"
+      },
+      {
+        "id": "f05",
+        "front_md": "Agro-based industry?",
+        "back_md": "Uses farm produce, e.g. sugar.",
+        "tag": "definition",
+        "topic_id": "icse-10-geography-ch15-t02"
+      },
+      {
+        "id": "f06",
+        "front_md": "Mineral-based industry?",
+        "back_md": "Uses minerals, e.g. steel, cement.",
+        "tag": "definition",
+        "topic_id": "icse-10-geography-ch15-t02"
+      },
+      {
+        "id": "f07",
+        "front_md": "Public sector example?",
+        "back_md": "Steel Authority of India.",
+        "tag": "example",
+        "topic_id": "icse-10-geography-ch15-t02"
+      },
+      {
+        "id": "f08",
+        "front_md": "Private sector example?",
+        "back_md": "Tata Steel.",
+        "tag": "example",
+        "topic_id": "icse-10-geography-ch15-t02"
+      },
+      {
+        "id": "f09",
+        "front_md": "Cooperative sector example?",
+        "back_md": "Sugar cooperatives of Kolhapur; Amul.",
+        "tag": "example",
+        "topic_id": "icse-10-geography-ch15-t02"
+      },
+      {
+        "id": "f10",
+        "front_md": "Small-scale industry?",
+        "back_md": "Little capital, few workers, e.g. powerlooms.",
+        "tag": "definition",
+        "topic_id": "icse-10-geography-ch15-t02"
+      },
+      {
+        "id": "f11",
+        "front_md": "Weighted score?",
+        "back_md": "Sum of weight × score for each factor.",
+        "tag": "formula",
+        "topic_id": "icse-10-geography-ch15-t02"
+      },
+      {
+        "id": "f12",
+        "front_md": "Why sugar mills near cane fields?",
+        "back_md": "Cane is bulky and loses sucrose fast.",
+        "tag": "concept",
+        "topic_id": "icse-10-geography-ch15-t03"
+      },
+      {
+        "id": "f13",
+        "front_md": "Two leading sugar states?",
+        "back_md": "Uttar Pradesh, Maharashtra (early 2020s).",
+        "tag": "fact",
+        "topic_id": "icse-10-geography-ch15-t03"
+      },
+      {
+        "id": "f14",
+        "front_md": "Why the shift south?",
+        "back_md": "More sucrose, higher yield, longer season.",
+        "tag": "concept",
+        "topic_id": "icse-10-geography-ch15-t03"
+      },
+      {
+        "id": "f15",
+        "front_md": "Bagasse used for?",
+        "back_md": "Fuel and paper.",
+        "tag": "fact",
+        "topic_id": "icse-10-geography-ch15-t03"
+      },
+      {
+        "id": "f16",
+        "front_md": "Molasses used for?",
+        "back_md": "Industrial alcohol (ethanol).",
+        "tag": "fact",
+        "topic_id": "icse-10-geography-ch15-t03"
+      },
+      {
+        "id": "f17",
+        "front_md": "One problem of sugar mills?",
+        "back_md": "Seasonal working.",
+        "tag": "fact",
+        "topic_id": "icse-10-geography-ch15-t03"
+      },
+      {
+        "id": "f18",
+        "front_md": "Sugar from cane?",
+        "back_md": "Recovery % ÷ 100 × tonnes of cane.",
+        "tag": "formula",
+        "topic_id": "icse-10-geography-ch15-t03"
+      },
+      {
+        "id": "f19",
+        "front_md": "Why humidity for spinning?",
+        "back_md": "Yarn does not break easily.",
+        "tag": "concept",
+        "topic_id": "icse-10-geography-ch15-t04"
+      },
+      {
+        "id": "f20",
+        "front_md": "Cottonopolis of India?",
+        "back_md": "Mumbai.",
+        "tag": "fact",
+        "topic_id": "icse-10-geography-ch15-t04"
+      },
+      {
+        "id": "f21",
+        "front_md": "Manchester of India?",
+        "back_md": "Ahmedabad.",
+        "tag": "fact",
+        "topic_id": "icse-10-geography-ch15-t04"
+      },
+      {
+        "id": "f22",
+        "front_md": "Manchester of South India?",
+        "back_md": "Coimbatore.",
+        "tag": "fact",
+        "topic_id": "icse-10-geography-ch15-t04"
+      },
+      {
+        "id": "f23",
+        "front_md": "Two problems of cotton mills?",
+        "back_md": "Old machinery; competition from synthetics.",
+        "tag": "fact",
+        "topic_id": "icse-10-geography-ch15-t04"
+      },
+      {
+        "id": "f24",
+        "front_md": "Four kinds of silk?",
+        "back_md": "Mulberry, tasar, eri, muga.",
+        "tag": "fact",
+        "topic_id": "icse-10-geography-ch15-t05"
+      },
+      {
+        "id": "f25",
+        "front_md": "Eri silkworm food?",
+        "back_md": "Castor leaves.",
+        "tag": "fact",
+        "topic_id": "icse-10-geography-ch15-t05"
+      },
+      {
+        "id": "f26",
+        "front_md": "Golden silk of Assam?",
+        "back_md": "Muga.",
+        "tag": "fact",
+        "topic_id": "icse-10-geography-ch15-t05"
+      },
+      {
+        "id": "f27",
+        "front_md": "Tasar silk city of Bihar?",
+        "back_md": "Bhagalpur.",
+        "tag": "fact",
+        "topic_id": "icse-10-geography-ch15-t05"
+      },
+      {
+        "id": "f28",
+        "front_md": "Why Karnataka leads in mulberry silk?",
+        "back_md": "Equable climate: mulberry all year, many crops.",
+        "tag": "concept",
+        "topic_id": "icse-10-geography-ch15-t05"
+      },
+      {
+        "id": "f29",
+        "front_md": "Silk sarees of Tamil Nadu?",
+        "back_md": "Kanchipuram.",
+        "tag": "example",
+        "topic_id": "icse-10-geography-ch15-t05"
+      },
+      {
+        "id": "f30",
+        "front_md": "Exam tip: sugar location",
+        "back_md": "Bulky + perishable → near fields.",
+        "tag": "exam-tip",
+        "topic_id": "icse-10-geography-ch15-t03"
+      }
+    ],
+    "status": "draft",
+    "provenance": {
+      "origin": "human",
+      "template_version": null,
+      "model": null,
+      "generated_at": "2026-11-01",
+      "author": "claude-opus-5-5 (subject-producer)"
+    }
+  },
+  "questions": [
+    {
+      "id": "q_icse10geo_ch15_001",
+      "unit": "icse-10-geography-ch15",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Garment factories in Tiruppur sell most of their knitwear to buyers in Europe and the USA. For India, the most direct benefit of this is that it:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "reduces the need for cotton farming"
+        },
+        {
+          "id": "b",
+          "text_md": "increases imports of garments"
+        },
+        {
+          "id": "c",
+          "text_md": "earns foreign exchange that helps pay for imports such as crude oil"
+        },
+        {
+          "id": "d",
+          "text_md": "lowers employment in Tamil Nadu"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Exports bring in foreign exchange — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-geography-ch15-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10geo_ch15_002",
+      "unit": "icse-10-geography-ch15",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "India once imported most of its fertilisers and much of its machinery. Building its own fertiliser and machine-tool plants mainly helped the country to:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "reduce its farm output"
+        },
+        {
+          "id": "b",
+          "text_md": "stop all foreign trade"
+        },
+        {
+          "id": "c",
+          "text_md": "become more self-reliant and save on imports"
+        },
+        {
+          "id": "d",
+          "text_md": "move workers back into farming"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Home production reduces dependence on imports — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-geography-ch15-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10geo_ch15_003",
+      "unit": "icse-10-geography-ch15",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A district in Bihar where most people depend on small farms gets a new food-processing park. Which effect is most likely?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Farm output falls because land is no longer needed"
+        },
+        {
+          "id": "b",
+          "text_md": "Some surplus farm workers find jobs, and farmers get a nearby buyer for their produce"
+        },
+        {
+          "id": "c",
+          "text_md": "All farmers stop growing crops"
+        },
+        {
+          "id": "d",
+          "text_md": "Imports of food rise sharply"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Manufacturing absorbs surplus labour and links with agriculture — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-geography-ch15-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10geo_ch15_004",
+      "unit": "icse-10-geography-ch15",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Agro-based industries help to raise farmers’ incomes.\n\n**Reason (R):** Such industries buy farm produce such as cane, cotton and cocoons as their raw material.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Both are true, and R explains A — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-geography-ch15-t01",
+        "icse-10-geography-ch15-t02"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10geo_ch15_005",
+      "unit": "icse-10-geography-ch15",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? Manufacturing belongs to the primary sector of the economy.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "f"
+        ]
+      },
+      "solution_md": "False: it belongs to the secondary sector.",
+      "marking_scheme": [
+        {
+          "step": "False, with the correction",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-geography-ch15-t01"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10geo_ch15_006",
+      "unit": "icse-10-geography-ch15",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "Processing raw materials into finished goods belongs to the ___ sector of the economy.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "secondary"
+            ]
+          }
+        ]
+      },
+      "solution_md": "**Secondary** sector.",
+      "marking_scheme": [
+        {
+          "step": "Blank 1: \"secondary\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-geography-ch15-t01"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10geo_ch15_007",
+      "unit": "icse-10-geography-ch15",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Explain two ways in which the steel and fertiliser plants built after independence helped India become self-reliant.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "They reduced the need to import steel and fertilisers, saving foreign exchange for other needs. They supplied home-made steel for railways, machines and defence, and fertilisers for the Green Revolution, so the country did not depend on other nations for these essentials."
+      },
+      "solution_md": "Fewer imports; home supply of essentials.",
+      "marking_scheme": [
+        {
+          "step": "Imports reduced",
+          "marks": 1
+        },
+        {
+          "step": "Essential supplies at home",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-geography-ch15-t01"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10geo_ch15_008",
+      "unit": "icse-10-geography-ch15",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Explain how manufacturing industries contribute to (a) employment, (b) exports and (c) the development of agriculture.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Factories, workshops and their transport and trade employ millions, taking surplus workers away from overcrowded farms. (b) Manufactured goods such as garments, steel, medicines and vehicles are sold abroad and earn foreign exchange. (c) Industry supplies tractors, pumps, fertilisers and pesticides, while agro-based industries buy cane, cotton and silk cocoons and so raise farmers’ incomes."
+      },
+      "solution_md": "Employment; exports; links with agriculture.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-geography-ch15-t01"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10geo_ch15_009",
+      "unit": "icse-10-geography-ch15",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A dairy in Anand is owned by thousands of milk producers who supply it and share its profits. On the basis of ownership it belongs to the:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "public sector"
+        },
+        {
+          "id": "b",
+          "text_md": "cooperative sector"
+        },
+        {
+          "id": "c",
+          "text_md": "private sector"
+        },
+        {
+          "id": "d",
+          "text_md": "joint sector"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Owned by the producers who supply the raw material — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-geography-ch15-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10geo_ch15_010",
+      "unit": "icse-10-geography-ch15",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which of these is a small-scale industry?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "An integrated steel plant at Rourkela"
+        },
+        {
+          "id": "b",
+          "text_md": "An oil refinery at Jamnagar"
+        },
+        {
+          "id": "c",
+          "text_md": "A large cotton mill complex with thousands of workers"
+        },
+        {
+          "id": "d",
+          "text_md": "A powerloom unit in Bhiwandi with a dozen looms and twenty workers"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Little capital and few workers — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-geography-ch15-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10geo_ch15_011",
+      "unit": "icse-10-geography-ch15",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which group lists only agro-based industries?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Sugar, cotton textiles, silk"
+        },
+        {
+          "id": "b",
+          "text_md": "Cement, sugar, steel"
+        },
+        {
+          "id": "c",
+          "text_md": "Aluminium, silk, petrochemicals"
+        },
+        {
+          "id": "d",
+          "text_md": "Iron and steel, cement, aluminium"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "All three use farm produce — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-geography-ch15-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10geo_ch15_012",
+      "unit": "icse-10-geography-ch15",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Bharat Heavy Electricals Limited (BHEL), owned and managed by the Government of India, is an example of a:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "public sector industry"
+        },
+        {
+          "id": "b",
+          "text_md": "private sector industry"
+        },
+        {
+          "id": "c",
+          "text_md": "cooperative sector industry"
+        },
+        {
+          "id": "d",
+          "text_md": "cottage industry"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-geography-ch15-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10geo_ch15_013",
+      "unit": "icse-10-geography-ch15",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which industry is most strongly pulled towards the place where its raw material is produced?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "A sugar mill, because cane is bulky and spoils soon after cutting"
+        },
+        {
+          "id": "b",
+          "text_md": "A software company, because code is heavy"
+        },
+        {
+          "id": "c",
+          "text_md": "A jewellery workshop, because gold is bulky"
+        },
+        {
+          "id": "d",
+          "text_md": "A printing press, because paper spoils in a day"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Bulky, perishable raw material → location at the source — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-geography-ch15-t02",
+        "icse-10-geography-ch15-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10geo_ch15_014",
+      "unit": "icse-10-geography-ch15",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "An imagined district has 40 factories: by raw material agro-based 20, mineral-based 12, other (forest, marine) 8; by ownership private 28, cooperative 6, public 4, joint 2 (illustrative). Which statement is correct?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Most of the factories are in the public sector"
+        },
+        {
+          "id": "b",
+          "text_md": "Mineral-based factories outnumber agro-based ones"
+        },
+        {
+          "id": "c",
+          "text_md": "Cooperatives are the largest ownership group"
+        },
+        {
+          "id": "d",
+          "text_md": "Half of the factories are agro-based, and 70% are privately owned"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Agro-based $= \\frac{20}{40} \\times 100 = 50$%; private $= \\frac{28}{40} \\times 100 = 70$% — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-geography-ch15-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10geo_ch15_015",
+      "unit": "icse-10-geography-ch15",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** The Bhilai steel plant is a mineral-based industry.\n\n**Reason (R):** The Bhilai steel plant is in the private sector.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "A is true; R is false: Bhilai belongs to the Steel Authority of India, a public sector company — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-geography-ch15-t02"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10geo_ch15_016",
+      "unit": "icse-10-geography-ch15",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? A sugar mill owned by the cane growers who supply it is an example of a cooperative-sector industry.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "t"
+        ]
+      },
+      "solution_md": "True.",
+      "marking_scheme": [
+        {
+          "step": "True",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-geography-ch15-t02"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10geo_ch15_017",
+      "unit": "icse-10-geography-ch15",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "Industries that use farm produce such as cane, cotton or silk cocoons as raw material are called ___ industries.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "agro-based",
+              "agro based",
+              "agrobased",
+              "agricultural"
+            ]
+          }
+        ]
+      },
+      "solution_md": "**Agro-based** industries.",
+      "marking_scheme": [
+        {
+          "step": "Blank 1: \"agro-based\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-geography-ch15-t02"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10geo_ch15_018",
+      "unit": "icse-10-geography-ch15",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Name one public sector industrial company of India.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Steel Authority of India Limited (SAIL) (BHEL is also accepted)."
+      },
+      "solution_md": "SAIL.",
+      "marking_scheme": [
+        {
+          "step": "SAIL / BHEL / any correct",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-geography-ch15-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10geo_ch15_019",
+      "unit": "icse-10-geography-ch15",
+      "language": "en",
+      "type": "match",
+      "stem_md": "Match each unit in Column A with its correct class in Column B.",
+      "options": [
+        {
+          "id": "1",
+          "text_md": "Rourkela steel plant"
+        },
+        {
+          "id": "2",
+          "text_md": "A cane growers’ sugar mill near Sangli"
+        },
+        {
+          "id": "3",
+          "text_md": "A family handloom in Varanasi"
+        },
+        {
+          "id": "4",
+          "text_md": "A company-owned refinery at Jamnagar"
+        }
+      ],
+      "match_right": [
+        {
+          "id": "p",
+          "text_md": "Cottage industry, agro-based"
+        },
+        {
+          "id": "q",
+          "text_md": "Cooperative sector, agro-based"
+        },
+        {
+          "id": "r",
+          "text_md": "Private sector, mineral-based"
+        },
+        {
+          "id": "s",
+          "text_md": "Public sector, mineral-based"
+        }
+      ],
+      "answer": {
+        "pairs": [
+          {
+            "left_id": "1",
+            "right_id": "s"
+          },
+          {
+            "left_id": "2",
+            "right_id": "q"
+          },
+          {
+            "left_id": "3",
+            "right_id": "p"
+          },
+          {
+            "left_id": "4",
+            "right_id": "r"
+          }
+        ]
+      },
+      "solution_md": "Rourkela → public, mineral-based; Sangli cooperative → cooperative, agro-based; Varanasi handloom → cottage, agro-based; Jamnagar refinery → private, mineral-based.",
+      "marking_scheme": [
+        {
+          "step": "1 → s",
+          "marks": 0.5
+        },
+        {
+          "step": "2 → q",
+          "marks": 0.5
+        },
+        {
+          "step": "3 → p",
+          "marks": 0.5
+        },
+        {
+          "step": "4 → r",
+          "marks": 0.5
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-geography-ch15-t02"
+      ],
+      "expected_time_sec": 160,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10geo_ch15_020",
+      "unit": "icse-10-geography-ch15",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Classify (a) the Tata Steel works at Jamshedpur and (b) a cooperative sugar mill in Kolhapur on the basis of raw material and ownership.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Tata Steel: mineral-based; private sector. (b) Kolhapur sugar mill: agro-based; cooperative sector, owned by the cane growers."
+      },
+      "solution_md": "Mineral-based private; agro-based cooperative.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-geography-ch15-t02"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10geo_ch15_021",
+      "unit": "icse-10-geography-ch15",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Distinguish between large-scale and small-scale industries, giving one example of each from India.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Large-scale industries need very large capital, thousands of workers and heavy machinery, for example the Rourkela steel plant. Small-scale industries need little capital and few workers and use simple machines, for example a powerloom unit in Bhiwandi or a sports-goods unit in Jalandhar."
+      },
+      "solution_md": "Capital, workers, machinery, with examples.",
+      "marking_scheme": [
+        {
+          "step": "Large-scale with example",
+          "marks": 1
+        },
+        {
+          "step": "Small-scale with example",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-geography-ch15-t02"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10geo_ch15_022",
+      "unit": "icse-10-geography-ch15",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Explain how (a) raw material, (b) market and (c) power influence the location of industries, with an Indian example of each.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Industries using bulky or perishable raw material are built near the source, as sugar mills stand among the cane fields of Maharashtra. (b) Industries whose products are fragile or costly to transport, or that need customers close by, locate near big cities, as bakeries and consumer-goods plants cluster around Delhi. (c) Industries using huge amounts of electricity locate near cheap power, as aluminium smelters near Hirakud and Renukoot."
+      },
+      "solution_md": "Raw material; market; power — with examples.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-geography-ch15-t02"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10geo_ch15_023",
+      "unit": "icse-10-geography-ch15",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "Two illustrative sites are scored out of 10 for a sugar mill on raw material (weight 0.35), market (weight 0.2), power (weight 0.15), labour (weight 0.15), transport (weight 0.15). Site Q scores 4, 9, 8, 7, 8 in that order. What is its weighted score?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 6.65,
+        "tolerance": 0.01,
+        "unit": null
+      },
+      "solution_md": "Score $= 0.35 \\times 4 + 0.2 \\times 9 + 0.15 \\times 8 + 0.15 \\times 7 + 0.15 \\times 8 = 6.65$.",
+      "marking_scheme": [
+        {
+          "step": "6.65",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-geography-ch15-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10geo_ch15_024",
+      "unit": "icse-10-geography-ch15",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "In an imagined district, 6 of its 40 factories are cooperatives (illustrative). What percentage of the factories are cooperatives?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 15,
+        "tolerance": 0.1,
+        "unit": "%"
+      },
+      "solution_md": "Share $= \\frac{6}{40} \\times 100 = 15$, so 15%.",
+      "marking_scheme": [
+        {
+          "step": "15%",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-geography-ch15-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10geo_ch15_025",
+      "unit": "icse-10-geography-ch15",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A sugar company plans a new mill in western Uttar Pradesh. Its engineers insist the mill must be within about 30 km of the cane farms supplying it. The main reason is that:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "sugar cannot be carried by road or rail"
+        },
+        {
+          "id": "b",
+          "text_md": "cane is very light and blows away during transport"
+        },
+        {
+          "id": "c",
+          "text_md": "cut cane is bulky and loses its sucrose if it is not crushed within about a day"
+        },
+        {
+          "id": "d",
+          "text_md": "sugar mills need no electricity"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Cane is bulky and perishable — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-geography-ch15-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10geo_ch15_026",
+      "unit": "icse-10-geography-ch15",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which two states were the leading producers of sugar in India in the early 2020s?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Punjab and Kerala"
+        },
+        {
+          "id": "b",
+          "text_md": "Rajasthan and Assam"
+        },
+        {
+          "id": "c",
+          "text_md": "Uttar Pradesh and Maharashtra"
+        },
+        {
+          "id": "d",
+          "text_md": "West Bengal and Odisha"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-geography-ch15-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10geo_ch15_027",
+      "unit": "icse-10-geography-ch15",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A sugar mill near Kolhapur can crush cane for more months of the year than a mill near Gorakhpur. The main reason is that:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Kolhapur has snow in winter"
+        },
+        {
+          "id": "b",
+          "text_md": "Gorakhpur grows no sugarcane"
+        },
+        {
+          "id": "c",
+          "text_md": "cane in Kolhapur needs no water"
+        },
+        {
+          "id": "d",
+          "text_md": "the frost-free tropical climate of the south lets cane be harvested over a longer season"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "A longer season comes from the warmer climate — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-geography-ch15-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10geo_ch15_028",
+      "unit": "icse-10-geography-ch15",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A distillery is built next to a sugar mill in Uttar Pradesh. Which by-product of the mill does it mainly use?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Bagasse, to make cement"
+        },
+        {
+          "id": "b",
+          "text_md": "Press mud, to make petrol"
+        },
+        {
+          "id": "c",
+          "text_md": "Molasses, to make industrial alcohol (ethanol)"
+        },
+        {
+          "id": "d",
+          "text_md": "Cane leaves, to make steel"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Molasses is fermented into alcohol — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-geography-ch15-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10geo_ch15_029",
+      "unit": "icse-10-geography-ch15",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A sugar mill near Meerut employs about 800 workers from November to April but keeps only a small staff for the rest of the year. This happens because:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "sugar is produced only in the monsoon"
+        },
+        {
+          "id": "b",
+          "text_md": "mills crush cotton in the off-season"
+        },
+        {
+          "id": "c",
+          "text_md": "cane can be stored for years"
+        },
+        {
+          "id": "d",
+          "text_md": "cane is harvested and crushed only in a particular season"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "The sugar industry is seasonal — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-geography-ch15-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10geo_ch15_030",
+      "unit": "icse-10-geography-ch15",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Sugar recovery is generally higher in Maharashtra and Karnataka than in Bihar.\n\n**Reason (R):** Cane grown in the warm, frost-free peninsula usually has a higher sucrose content.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Both are true, and R explains A — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-geography-ch15-t03"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10geo_ch15_031",
+      "unit": "icse-10-geography-ch15",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? Bagasse, the fibre left after crushing cane, can be used as fuel in the mill’s own boilers.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "t"
+        ]
+      },
+      "solution_md": "True: it is also used to make paper and boards.",
+      "marking_scheme": [
+        {
+          "step": "True",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-geography-ch15-t03"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10geo_ch15_032",
+      "unit": "icse-10-geography-ch15",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Name the by-product of the sugar industry from which industrial alcohol is made.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Molasses."
+      },
+      "solution_md": "Molasses.",
+      "marking_scheme": [
+        {
+          "step": "Molasses",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-geography-ch15-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10geo_ch15_033",
+      "unit": "icse-10-geography-ch15",
+      "language": "en",
+      "type": "short",
+      "stem_md": "A sugar mill near Gorakhpur, built about seventy years ago, makes losses although cane is grown all around it. State two problems of the sugar industry in the northern plains that probably explain this.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Many mills are old and small, with outdated machinery, so their costs are high and recovery is low. Cane yield per hectare and sucrose content are lower than in the south, and the crushing season is short, so mills stand idle for much of the year (also delayed payments to farmers, competition from gur and khandsari)."
+      },
+      "solution_md": "Old mills; low yield and short season.",
+      "marking_scheme": [
+        {
+          "step": "First problem",
+          "marks": 1
+        },
+        {
+          "step": "Second problem",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-geography-ch15-t03"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10geo_ch15_034",
+      "unit": "icse-10-geography-ch15",
+      "language": "en",
+      "type": "short",
+      "stem_md": "A planner compares a cooperative sugar mill near Sangli in Maharashtra with an older mill near Gorakhpur in Uttar Pradesh. Explain three reasons why the Sangli mill is likely to be more productive.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Cane in the warm, frost-free peninsula has a higher sucrose content and a higher yield per hectare, so each tonne crushed gives more sugar. The crushing season is longer because cane can be harvested over more months, so machinery and workers are used for longer. Maharashtra’s cooperative mills are owned by the cane growers, are well managed and have invested in newer, larger machinery, while many northern mills are old and small."
+      },
+      "solution_md": "Sucrose and yield; longer season; cooperative, modern mills.",
+      "marking_scheme": [
+        {
+          "step": "Sucrose and yield",
+          "marks": 1
+        },
+        {
+          "step": "Longer season",
+          "marks": 1
+        },
+        {
+          "step": "Cooperatives, modern machinery",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-geography-ch15-t03"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10geo_ch15_035",
+      "unit": "icse-10-geography-ch15",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "Illustrative sugar recoveries by delay between cutting and crushing are: 0 hours 11%, 24 hours 10.5%, 48 hours 9.8%, 72 hours 9%. How many tonnes of sugar are lost if 1000 t of cane is crushed after 48 hours instead of at once?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 12,
+        "tolerance": 0,
+        "unit": "t"
+      },
+      "solution_md": "At once $= \\frac{11}{100} \\times 1000 = 110$ t; after 48 h $= \\frac{9.8}{100} \\times 1000 = 98$ t; loss $= 110 - 98 = 12$ t.",
+      "marking_scheme": [
+        {
+          "step": "12 t",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-geography-ch15-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10geo_ch15_036",
+      "unit": "icse-10-geography-ch15",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "Using the illustrative recovery of 10.5% for cane crushed 24 hours after cutting, how many tonnes of sugar does 2500 t of such cane give?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 262.5,
+        "tolerance": 0.1,
+        "unit": "t"
+      },
+      "solution_md": "Sugar $= \\frac{10.5}{100} \\times 2500 = 262.5$ t.",
+      "marking_scheme": [
+        {
+          "step": "262.5 t",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-geography-ch15-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10geo_ch15_037",
+      "unit": "icse-10-geography-ch15",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which group of factors favoured the early growth of cotton mills in Mumbai?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Humid climate, a port, merchant capital and raw cotton from the Deccan by rail"
+        },
+        {
+          "id": "b",
+          "text_md": "Cold climate, iron-ore mines and coalfields nearby"
+        },
+        {
+          "id": "c",
+          "text_md": "Desert climate, oilfields and pipelines"
+        },
+        {
+          "id": "d",
+          "text_md": "Snow-fed rivers, tea gardens and forests"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-geography-ch15-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10geo_ch15_038",
+      "unit": "icse-10-geography-ch15",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Early cotton mills preferred places with a humid climate, such as coastal Mumbai, mainly because:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "humid air makes cotton grow inside the mill"
+        },
+        {
+          "id": "b",
+          "text_md": "moist air stops cotton yarn from breaking during spinning"
+        },
+        {
+          "id": "c",
+          "text_md": "dry air is needed to dye cloth"
+        },
+        {
+          "id": "d",
+          "text_md": "humidity reduces the need for workers"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Humidity keeps the fibres supple — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-geography-ch15-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10geo_ch15_039",
+      "unit": "icse-10-geography-ch15",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which advantage did Ahmedabad have over Mumbai in obtaining raw cotton for its mills?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "It had a larger harbour than Mumbai"
+        },
+        {
+          "id": "b",
+          "text_md": "It received heavier monsoon rain"
+        },
+        {
+          "id": "c",
+          "text_md": "It had hydroelectric stations of the Western Ghats beside it"
+        },
+        {
+          "id": "d",
+          "text_md": "It lay in the midst of the cotton fields of Gujarat"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Nearness to the raw material — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-geography-ch15-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10geo_ch15_040",
+      "unit": "icse-10-geography-ch15",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "The textile city of Tamil Nadu often called the \"Manchester of South India\" is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Madurai"
+        },
+        {
+          "id": "b",
+          "text_md": "Coimbatore"
+        },
+        {
+          "id": "c",
+          "text_md": "Kanchipuram"
+        },
+        {
+          "id": "d",
+          "text_md": "Chennai"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-geography-ch15-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10geo_ch15_041",
+      "unit": "icse-10-geography-ch15",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Several old cotton mills in central Mumbai closed down after they could no longer sell their cloth profitably. Which problem of the industry does this best show?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Too much long-staple cotton grown in Mumbai"
+        },
+        {
+          "id": "b",
+          "text_md": "Lack of any market for cloth in India"
+        },
+        {
+          "id": "c",
+          "text_md": "Obsolete machinery and competition from powerlooms and synthetic fabrics"
+        },
+        {
+          "id": "d",
+          "text_md": "Excessively cheap electricity"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Old mills lost out to cheaper, newer producers — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-geography-ch15-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10geo_ch15_042",
+      "unit": "icse-10-geography-ch15",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Some cotton mills in India import long-staple cotton.\n\n**Reason (R):** Much of the cotton grown in India is short-staple, while fine cloth needs long fibres.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Both are true, and R explains A — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-geography-ch15-t04"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10geo_ch15_043",
+      "unit": "icse-10-geography-ch15",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Mumbai was an early centre of cotton mills.\n\n**Reason (R):** Mumbai is surrounded by large coalfields.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "A is true; R is false: Mumbai has no coalfields; its mills used hydel power from the Western Ghats — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-geography-ch15-t04"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10geo_ch15_044",
+      "unit": "icse-10-geography-ch15",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? Ahmedabad is often called the \"Manchester of India\".",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "t"
+        ]
+      },
+      "solution_md": "True.",
+      "marking_scheme": [
+        {
+          "step": "True",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-geography-ch15-t04"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10geo_ch15_045",
+      "unit": "icse-10-geography-ch15",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "Because of its many cotton mills, Mumbai was once known as the ___ of India.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "Cottonopolis",
+              "cottonopolis"
+            ]
+          }
+        ]
+      },
+      "solution_md": "**Cottonopolis**.",
+      "marking_scheme": [
+        {
+          "step": "Blank 1: \"Cottonopolis\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-geography-ch15-t04"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10geo_ch15_046",
+      "unit": "icse-10-geography-ch15",
+      "language": "en",
+      "type": "match",
+      "stem_md": "Match each textile centre in Column A with its description in Column B.",
+      "options": [
+        {
+          "id": "1",
+          "text_md": "Ahmedabad"
+        },
+        {
+          "id": "2",
+          "text_md": "Coimbatore"
+        },
+        {
+          "id": "3",
+          "text_md": "Tiruppur"
+        },
+        {
+          "id": "4",
+          "text_md": "Surat"
+        }
+      ],
+      "match_right": [
+        {
+          "id": "p",
+          "text_md": "Manchester of South India"
+        },
+        {
+          "id": "q",
+          "text_md": "Centre of synthetic fabrics"
+        },
+        {
+          "id": "r",
+          "text_md": "Manchester of India, amid Gujarat’s cotton fields"
+        },
+        {
+          "id": "s",
+          "text_md": "Knitwear made for export"
+        }
+      ],
+      "answer": {
+        "pairs": [
+          {
+            "left_id": "1",
+            "right_id": "r"
+          },
+          {
+            "left_id": "2",
+            "right_id": "p"
+          },
+          {
+            "left_id": "3",
+            "right_id": "s"
+          },
+          {
+            "left_id": "4",
+            "right_id": "q"
+          }
+        ]
+      },
+      "solution_md": "Ahmedabad → Manchester of India; Coimbatore → Manchester of South India; Tiruppur → knitwear exports; Surat → synthetic fabrics.",
+      "marking_scheme": [
+        {
+          "step": "1 → r",
+          "marks": 0.5
+        },
+        {
+          "step": "2 → p",
+          "marks": 0.5
+        },
+        {
+          "step": "3 → s",
+          "marks": 0.5
+        },
+        {
+          "step": "4 → q",
+          "marks": 0.5
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-geography-ch15-t04"
+      ],
+      "expected_time_sec": 160,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10geo_ch15_047",
+      "unit": "icse-10-geography-ch15",
+      "language": "en",
+      "type": "short",
+      "stem_md": "A cotton mill in central Mumbai, set up a century ago, now struggles to sell its cloth. State two problems of the cotton textile industry that probably explain this.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Many mills use old, obsolete machinery, which lowers output and quality and raises costs. The mills face strong competition from powerlooms and synthetic fabrics at home and from other countries abroad (also power shortage, shortage of long-staple cotton)."
+      },
+      "solution_md": "Obsolete machinery; competition.",
+      "marking_scheme": [
+        {
+          "step": "First problem",
+          "marks": 1
+        },
+        {
+          "step": "Second problem",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-geography-ch15-t04"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10geo_ch15_048",
+      "unit": "icse-10-geography-ch15",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Explain three factors that helped Mumbai become the first major centre of cotton mills in India.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Its humid coastal climate kept the yarn from breaking during spinning. Its port allowed machinery to be imported from Britain and cloth to be exported, and its cotton merchants had capital to invest. Railways brought raw cotton from the black-soil belt of Maharashtra and Gujarat, cheap labour came from the Konkan and Deccan, and hydroelectricity came from the Western Ghats."
+      },
+      "solution_md": "Climate; port and capital; raw cotton, labour and power.",
+      "marking_scheme": [
+        {
+          "step": "Climate",
+          "marks": 1
+        },
+        {
+          "step": "Port and capital",
+          "marks": 1
+        },
+        {
+          "step": "Cotton, labour or power",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-geography-ch15-t04"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10geo_ch15_049",
+      "unit": "icse-10-geography-ch15",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A weaver in Sualkuchi, Assam, works with a naturally golden silk produced only in that state. This silk is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "eri"
+        },
+        {
+          "id": "b",
+          "text_md": "muga"
+        },
+        {
+          "id": "c",
+          "text_md": "tasar"
+        },
+        {
+          "id": "d",
+          "text_md": "mulberry"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-geography-ch15-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10geo_ch15_050",
+      "unit": "icse-10-geography-ch15",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Silkworms reared on castor leaves in Assam and Meghalaya produce:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "eri silk"
+        },
+        {
+          "id": "b",
+          "text_md": "muga silk"
+        },
+        {
+          "id": "c",
+          "text_md": "tasar silk"
+        },
+        {
+          "id": "d",
+          "text_md": "mulberry silk"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-geography-ch15-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10geo_ch15_051",
+      "unit": "icse-10-geography-ch15",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Bhagalpur in Bihar is best known for weaving which kind of silk?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Tasar"
+        },
+        {
+          "id": "b",
+          "text_md": "Muga"
+        },
+        {
+          "id": "c",
+          "text_md": "Eri"
+        },
+        {
+          "id": "d",
+          "text_md": "Mulberry only"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-geography-ch15-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10geo_ch15_052",
+      "unit": "icse-10-geography-ch15",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Farmers around Ramanagara in Karnataka can rear five or more crops of silkworms a year. The main reason is that:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "heavy snow keeps the worms cool"
+        },
+        {
+          "id": "b",
+          "text_md": "the plateau’s mild temperature all year lets mulberry grow continuously"
+        },
+        {
+          "id": "c",
+          "text_md": "mulberry grows only in deserts"
+        },
+        {
+          "id": "d",
+          "text_md": "silkworms there need no leaves"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "An equable climate gives fresh mulberry leaves throughout the year — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-geography-ch15-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10geo_ch15_053",
+      "unit": "icse-10-geography-ch15",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Karnataka is the leading producer of mulberry silk in India.\n\n**Reason (R):** Muga silk is produced only in Assam.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Both are true, but the location of muga does not explain Karnataka’s lead in mulberry silk — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-geography-ch15-t05"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10geo_ch15_054",
+      "unit": "icse-10-geography-ch15",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? Tasar silkworms feed mainly on mulberry leaves.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "f"
+        ]
+      },
+      "solution_md": "False: tasar worms feed on arjun, asan and sal (or oak) leaves.",
+      "marking_scheme": [
+        {
+          "step": "False, with the correction",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-geography-ch15-t05"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10geo_ch15_055",
+      "unit": "icse-10-geography-ch15",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "The rearing of silkworms for the production of silk is called ___.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "sericulture"
+            ]
+          }
+        ]
+      },
+      "solution_md": "**Sericulture**.",
+      "marking_scheme": [
+        {
+          "step": "Blank 1: \"sericulture\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-geography-ch15-t05"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10geo_ch15_056",
+      "unit": "icse-10-geography-ch15",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Name the Tamil Nadu town famous for silk sarees.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Kanchipuram."
+      },
+      "solution_md": "Kanchipuram.",
+      "marking_scheme": [
+        {
+          "step": "Kanchipuram",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-geography-ch15-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10geo_ch15_057",
+      "unit": "icse-10-geography-ch15",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Name the four kinds of silk produced in India, with the food plant of the silkworm for any two of them.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Mulberry, tasar, eri and muga. Mulberry silkworms feed on mulberry leaves; eri silkworms on castor leaves (tasar on arjun, asan or sal; muga on som and soalu)."
+      },
+      "solution_md": "Four kinds; two food plants.",
+      "marking_scheme": [
+        {
+          "step": "Four kinds",
+          "marks": 1
+        },
+        {
+          "step": "Two food plants",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-10-geography-ch15-t05"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10geo_ch15_058",
+      "unit": "icse-10-geography-ch15",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Give three reasons why Karnataka leads India in the production of mulberry silk.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Its plateau has an equable climate with moderate temperature all year, so mulberry grows without a break and farmers can rear five or more crops of cocoons a year. Red loamy soils with irrigation suit mulberry bushes. Long traditions of rearing and reeling, government research and training, and organised cocoon markets such as Ramanagara support the farmers."
+      },
+      "solution_md": "Climate; soil and irrigation; skills, support and markets.",
+      "marking_scheme": [
+        {
+          "step": "Climate",
+          "marks": 1
+        },
+        {
+          "step": "Soil or water",
+          "marks": 1
+        },
+        {
+          "step": "Skills, support or markets",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-geography-ch15-t05"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10geo_ch15_059",
+      "unit": "icse-10-geography-ch15",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "If about 8 kg of cocoons give 1 kg of raw silk (illustrative), how many kg of raw silk can be reeled from 400 kg of cocoons?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 50,
+        "tolerance": 0,
+        "unit": "kg"
+      },
+      "solution_md": "Raw silk $= \\frac{400}{8} = 50$ kg.",
+      "marking_scheme": [
+        {
+          "step": "50 kg",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-geography-ch15-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10geo_ch15_060",
+      "unit": "icse-10-geography-ch15",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "An acre of mulberry gives about 120 kg of cocoons per rearing (illustrative). A farmer near Mysuru rears 5 crops a year; a farmer in a cooler hill area rears 2. How many more kg of cocoons does the Mysuru farmer get from an acre in a year?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 360,
+        "tolerance": 0,
+        "unit": "kg"
+      },
+      "solution_md": "Mysuru $= 5 \\times 120 = 600$ kg; hill area $= 2 \\times 120 = 240$ kg; difference $= 600 - 240 = 360$ kg.",
+      "marking_scheme": [
+        {
+          "step": "360 kg",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-geography-ch15-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10geo_ch15_061",
+      "unit": "icse-10-geography-ch15",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Give two reasons why manufacturing industries are important for India. [2]\n\n(b) Distinguish between agro-based and mineral-based industries, with one example of each. [2]\n\n(c) Explain the classification of industries on the basis of ownership, giving an Indian example of each type. [3]\n\n(d) Classify the following on all three bases (size, raw material, ownership): (i) the Rourkela steel plant, (ii) a family silk-weaving unit in Kanchipuram, (iii) a cane growers’ sugar mill near Kolhapur. [3]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) They create jobs and take surplus workers off the land; they earn foreign exchange through exports and make the country self-reliant (also add value, modernise farming).\n\n(b) Agro-based industries use farm produce as raw material, for example sugar mills; mineral-based industries use minerals, for example iron and steel plants.\n\n(c) Public sector — owned by the government, for example the Steel Authority of India; private sector — owned by individuals or companies, for example Tata Steel; joint sector — owned by the government and private firms together; cooperative sector — owned by the producers who supply raw material, for example sugar cooperatives of Maharashtra or Amul.\n\n(d) (i) Large-scale, mineral-based, public sector. (ii) Small-scale or cottage, agro-based, private sector. (iii) Large-scale, agro-based, cooperative sector."
+      },
+      "solution_md": "Importance; agro and mineral; ownership types; three classifications.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 2
+        },
+        {
+          "step": "(b)",
+          "marks": 2
+        },
+        {
+          "step": "(c)",
+          "marks": 3
+        },
+        {
+          "step": "(d)",
+          "marks": 3
+        }
+      ],
+      "marks": 10,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-geography-ch15-t01",
+        "icse-10-geography-ch15-t02"
+      ],
+      "expected_time_sec": 1080,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10geo_ch15_062",
+      "unit": "icse-10-geography-ch15",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Name the two leading sugar-producing states of India. [2]\n\n(b) Name two by-products of the sugar industry and state one use of each. [2]\n\n(c) Explain three reasons why the sugar industry has grown faster in Maharashtra and Karnataka than in the northern plains. [3]\n\n(d) Illustrative recoveries by delay in crushing are: 0 hours 11%, 24 hours 10.5%, 48 hours 9.8%, 72 hours 9%. Calculate the sugar lost when 3000 t of cane is crushed 72 hours after cutting instead of at once, and use your answer to explain why sugar mills are located near cane fields. [3]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Uttar Pradesh and Maharashtra (as of the early 2020s).\n\n(b) Bagasse — fuel for the mill’s boilers or raw material for paper; molasses — industrial alcohol (ethanol) (press mud — manure).\n\n(c) Cane in the warm, frost-free peninsula has more sucrose and a higher yield per hectare; the crushing season is longer; well-run cooperative mills with newer machinery are common in Maharashtra.\n\n(d) At once $= \\frac{11}{100} \\times 3000 = 330$ t; after 72 h $= \\frac{9}{100} \\times 3000 = 270$ t; loss $= 60$ t. Cane loses sucrose rapidly after cutting and is bulky to carry, so mills are built among the cane fields to crush it quickly and cheaply."
+      },
+      "solution_md": "States; by-products; reasons; loss 60 t and location.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 2
+        },
+        {
+          "step": "(b)",
+          "marks": 2
+        },
+        {
+          "step": "(c)",
+          "marks": 3
+        },
+        {
+          "step": "(d)",
+          "marks": 3
+        }
+      ],
+      "marks": 10,
+      "difficulty": 4,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-geography-ch15-t03"
+      ],
+      "expected_time_sec": 1080,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10geo_ch15_063",
+      "unit": "icse-10-geography-ch15",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Name two cotton textile centres in Tamil Nadu or Uttar Pradesh. [2]\n\n(b) Why did early cotton mills prefer a humid climate? Name a humid coastal centre. [2]\n\n(c) Explain three factors that favoured the cotton textile industry in Ahmedabad. [3]\n\n(d) Describe three problems faced by the cotton textile industry of India today. [3]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Coimbatore and Madurai (Tamil Nadu), or Kanpur (Uttar Pradesh) — any two (Tiruppur also accepted).\n\n(b) Moist air keeps cotton yarn supple so it does not break during spinning; Mumbai.\n\n(c) It lies amid the cotton fields of Gujarat, so raw cotton is close; local merchant families invested capital in mills; cheap labour from nearby villages, a large market in western India, and rail links with ports.\n\n(d) Many mills have obsolete machinery, so output and quality are low; power shortages and high power costs; competition from powerlooms, synthetic fabrics and foreign producers, and a shortage of long-staple cotton that has to be imported."
+      },
+      "solution_md": "Centres; humidity; Ahmedabad factors; problems.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 2
+        },
+        {
+          "step": "(b)",
+          "marks": 2
+        },
+        {
+          "step": "(c)",
+          "marks": 3
+        },
+        {
+          "step": "(d)",
+          "marks": 3
+        }
+      ],
+      "marks": 10,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-10-geography-ch15-t04"
+      ],
+      "expected_time_sec": 1080,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10geo_ch15_064",
+      "unit": "icse-10-geography-ch15",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Name the four kinds of silk produced in India. [2]\n\n(b) Name one centre each famous for (i) silk sarees and (ii) tasar silk. [2]\n\n(c) Explain three reasons why Karnataka leads India in mulberry silk. [3]\n\n(d) If about 8 kg of cocoons give 1 kg of raw silk (illustrative), how much raw silk can be reeled from 1200 kg of cocoons? Why are reeling units usually located close to the cocoon-rearing villages? [3]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Mulberry, tasar, eri and muga.\n\n(b) (i) Kanchipuram (or Varanasi, Dharmavaram); (ii) Bhagalpur.\n\n(c) An equable plateau climate lets mulberry grow all year, so five or more crops of cocoons are possible; red loamy soils and irrigation suit mulberry; long traditions, government research and support, and organised cocoon markets such as Ramanagara.\n\n(d) Raw silk $= \\frac{1200}{8} = 150$ kg. Most of the cocoon’s weight is lost in reeling, and live pupae must be killed and the cocoons reeled soon after harvest, so reeling is done near the rearing villages."
+      },
+      "solution_md": "Four silks; centres; Karnataka; 150 kg.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 2
+        },
+        {
+          "step": "(b)",
+          "marks": 2
+        },
+        {
+          "step": "(c)",
+          "marks": 3
+        },
+        {
+          "step": "(d)",
+          "marks": 3
+        }
+      ],
+      "marks": 10,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-10-geography-ch15-t05"
+      ],
+      "expected_time_sec": 1080,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse10geo_ch15_065",
+      "unit": "icse-10-geography-ch15",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Name four factors that influence the location of an industry. [2]\n\n(b) Why is a sugar mill pulled towards its raw material while a bakery is pulled towards its market? [2]\n\n(c) Two illustrative sites are scored out of 10 for a sugar mill on raw material (weight 0.35), market (weight 0.2), power (weight 0.15), labour (weight 0.15), transport (weight 0.15). Site P scores 9, 5, 6, 7, 6; site Q scores 4, 9, 8, 7, 8. Calculate the weighted score of each site and choose one. [3]\n\n(d) Site Q scored higher on market, power and transport. Explain why it still loses, and suggest one change that would make Q suitable for a different industry. [3]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Raw material, power, labour, market (also transport, water, capital, climate, government policy).\n\n(b) Cane is bulky and loses sucrose soon after cutting, so the mill goes to the cane; bread is perishable and needed fresh by many customers, so the bakery goes to the market.\n\n(c) P $= 0.35 \\times 9 + 0.2 \\times 5 + 0.15 \\times 6 + 0.15 \\times 7 + 0.15 \\times 6 = 7$; Q $= 0.35 \\times 4 + 0.2 \\times 9 + 0.15 \\times 8 + 0.15 \\times 7 + 0.15 \\times 8 = 6.65$. Choose site P.\n\n(d) For sugar, the raw-material factor carries the highest weight (0.35) because cane is bulky and perishable; Q’s low raw-material score (4) outweighs its other advantages. Q would suit a market-oriented industry, such as electronics assembly or food packaging for the city, for which market and transport would carry the greatest weights."
+      },
+      "solution_md": "Factors; pull of raw material and market; P 7, Q 6.65; weights explain the choice.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 2
+        },
+        {
+          "step": "(b)",
+          "marks": 2
+        },
+        {
+          "step": "(c)",
+          "marks": 3
+        },
+        {
+          "step": "(d)",
+          "marks": 3
+        }
+      ],
+      "marks": 10,
+      "difficulty": 4,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-10-geography-ch15-t02",
+        "icse-10-geography-ch15-t03"
+      ],
+      "expected_time_sec": 1080,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-01",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    }
+  ],
+  "build": {
+    "run_id": null,
+    "checks": {
+      "katex_mhchem": "21 math strings parsed with KaTeX 0.19.0 + mhchem (throwOnError, strict \"error\"), 0 failures",
+      "svg_allowlist": "4 SVG visuals (4 distinct diagrams) checked with saxes against svg-allowlist.ts: elements, attributes, class pattern, fragment-only refs, no style, palette incl. named hues, viewBox, title, per-page unique ids — 0 failures",
+      "narration": "30 slides, 10–72 words (mean 53), no symbols, formulae or unit abbreviations",
+      "resolve": "10/10 scripted re-solve checks pass",
+      "geography_facts": "Importance of manufacturing; classification by size, raw material and ownership; factors of location; sugar (location near cane, leading states as of the early 2020s, shift to the peninsula, by-products, problems); cotton textiles (Mumbai, Ahmedabad, other centres, problems); silk (mulberry, tasar, eri, muga, centres, Karnataka lead), with illustrative district, site-scoring, sugar-delay and cocoon data computed and asserted in the build, checked against the ICSE 2027 syllabus (Class X)",
+      "diagrams": "4 diagram self-checks (geometry computed in svgs.mjs): 0 failures",
+      "content_gate": "npm test -w @soyl/content-templates: all checks pass for this chapter",
+      "verifier_pass": "2026-11-01: every question and every internal-choice alternative re-solved from its stem by the author; every numerical and every map or chart value computed and asserted by the build script — see README \"Verifier pass\"",
+      "pipeline_lint": "npm run content -- lint --exemplars: 0 errors, 0 warnings"
+    }
+  }
+}
