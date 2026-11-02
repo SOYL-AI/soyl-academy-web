@@ -25,7 +25,7 @@ RUN npm ci --workspace @soyl/worker --include-workspace-root=false \
 # ---- runtime ----
 # No node_modules: dist/index.js bundles every runtime dependency (D-022). Shipping node_modules
 # pulled in dev tooling of linked workspaces (drizzle-kit's old esbuild binary: HIGH/CRITICAL in trivy).
-FROM gcr.io/distroless/nodejs24-debian13:nonroot@sha256:cb606325b7ec4af55462cb0b424a53b452a5b4a894ffe841fcf1048d216fb9f8
+FROM gcr.io/distroless/nodejs24-debian13:nonroot@sha256:b8cec4b2f2126ff7bd034ec9ac207ffb3272667dfdc48376e3b035d3270549ba
 ENV NODE_ENV=production PORT=8080
 WORKDIR /app
 COPY --from=build --chown=nonroot:nonroot /src/worker/package.json ./package.json
