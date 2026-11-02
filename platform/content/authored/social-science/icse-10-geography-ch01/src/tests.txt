@@ -1,0 +1,10 @@
+  tests: {
+    short: {
+      A: ['sq-mcq', 'sixsym-mcq', 'between-mcq', 'escfig-mcq', 'grid-ar', 'gridrule-short2', 'grid-short3'],
+      B: [['long-grid', 'long-esc']],
+    },
+    long: {
+      A: ['atref-mcq', 'eastnorth-mcq', 'contour-def', 'index-mcq', 'hillfig-mcq', 'ridgefig-mcq', 'trig-mcq', 'relh-mcq', 'slope-ar', 'height-ar', 'gentle-short2', 'rel-short2', 'ci-short3', 'slope-short3'],
+      B: [['long-contour', 'long-ridge', 'long-plain']],
+    },
+  },
