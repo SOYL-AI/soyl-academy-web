@@ -29,7 +29,7 @@ RUN npm ci --workspace @soyl/db --workspace @soyl/worker --workspace @soyl/conte
 # Strip CRs first: a Windows working tree uploaded by `az acr build` may carry CRLF line endings.
 RUN sed -i 's/\r$//' infra/docker/bundle-migrate.sh && sh infra/docker/bundle-migrate.sh /out
 
-FROM gcr.io/distroless/nodejs24-debian13:nonroot@sha256:cb606325b7ec4af55462cb0b424a53b452a5b4a894ffe841fcf1048d216fb9f8
+FROM gcr.io/distroless/nodejs24-debian13:nonroot@sha256:b8cec4b2f2126ff7bd034ec9ac207ffb3272667dfdc48376e3b035d3270549ba
 ENV NODE_ENV=production \
     MIGRATE_CLI=/app/migrate-cli.mjs \
     SOYL_MIGRATIONS_DIR=/app/db/migrations \
