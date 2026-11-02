@@ -39,7 +39,26 @@ All items are `status: "draft"`.
 
 | Chapter | Commit | Decks (slides) | Questions | Cases | Application or higher | d4 | Flashcards | Distinct SVGs |
 |---|---|---|---|---|---|---|---|---|
-STATS
+| ch01 The Living World | — | 2 (15 + 16) | 79 | 4 | 53% | 1 | 30 | 5 |
+| ch02 Biological Classification | — | 2 (17 + 18) | 105 | 4 | 54% | 1 | 30 | 7 |
+| ch03 Plant Kingdom | — | 2 (18 + 17) | 82 | 4 | 51% | 1 | 30 | 11 |
+| ch04 Animal Kingdom | — | 2 (18 + 16) | 107 | 4 | 50% | 1 | 30 | 9 |
+| ch05 Morphology of Flowering Plants | — | 2 (18 + 18) | 78 | 4 | 47% | 1 | 32 | 7 |
+| ch06 Anatomy of Flowering Plants | — | 2 (16 + 16) | 76 | 4 | 46% | 1 | 31 | 8 |
+| ch07 Structural Organisation in Animals | — | 2 (16 + 16) | 68 | 4 | 49% | 1 | 30 | 7 |
+| ch08 Cell: The Unit of Life | — | 2 (17 + 18) | 70 | 4 | 49% | 1 | 30 | 7 |
+| ch09 Biomolecules | — | 2 (17 + 18) | 72 | 4 | 47% | 1 | 30 | 9 |
+| ch10 Cell Cycle and Cell Division | — | 2 (16 + 17) | 82 | 4 | 52% | 1 | 30 | 8 |
+| ch11 Photosynthesis in Higher Plants | — | 2 (16 + 17) | 94 | 4 | 47% | 1 | 30 | 10 |
+| ch12 Respiration in Plants | — | 2 (16 + 17) | 90 | 4 | 47% | 1 | 30 | 7 |
+| ch13 Plant Growth and Development | — | 2 (17 + 16) | 78 | 4 | 56% | 1 | 32 | 4 |
+| ch14 Breathing and Exchange of Gases | — | 2 (18 + 16) | 72 | 4 | 51% | 2 | 30 | 6 |
+| ch15 Body Fluids and Circulation | — | 2 (16 + 17) | 70 | 4 | 50% | 1 | 31 | 3 |
+| ch16 Excretory Products and their Elimination | — | 2 (16 + 17) | 72 | 4 | 50% | 1 | 31 | 4 |
+| ch17 Locomotion and Movement | — | 2 (16 + 16) | 68 | 4 | 51% | 2 | 30 | 5 |
+| ch18 Neural Control and Coordination | — | 2 (16 + 15) | 70 | 4 | 51% | 2 | 30 | 6 |
+| ch19 Chemical Coordination and Integration | — | 2 (18 + 18) | 67 | 4 | 51% | 2 | 30 | 4 |
+| ch20 Digestion and Absorption | — | 2 (18 + 17) | 67 | 4 | 51% | 2 | 30 | 5 |
 
 Totals: 20 chapters, 1,567 questions, 40 decks, 40 chapter tests.
 
@@ -53,7 +72,7 @@ Totals: 20 chapters, 1,567 questions, 40 decks, 40 chapter tests.
 ## How to verify
 Run from `platform/` in the worktree under `_tools/heavy.sh`, using script `scratchpad/isc-bio/cbse11/gates.sh`. Runs on 2026-11-02:
 - **07:43:** fully green with 17 units; ch01, 02, 07–12 and 14–20 were committed from it.
-- **08:11:** BATCH4; ch03, 04, 05, 06 and 13 were committed from it.
+- **08:11:** fully green with all 20 units: content-templates 2605/2605; ch03, 04, 05, 06 and 13 were committed from it.
 
 Two earlier runs were not fully green, and nothing was committed from them:
 - 22:15, 1 Nov: content-templates failed because ch14 had no README yet.
