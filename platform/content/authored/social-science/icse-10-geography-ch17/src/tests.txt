@@ -1,0 +1,10 @@
+  tests: {
+    short: {
+      A: ['integration-mcq', 'expressway-mcq', 'unigauge-mcq', 'nw3-mcq', 'gq-ar', 'rail-short2', 'road-short3'],
+      B: [['road-long', 'rail-long']],
+    },
+    long: {
+      A: ['relief-mcq', 'ladakh-mcq', 'delta-road-mcq', 'jhansi-mcq', 'konkan-mcq', 'rail-adv-mcq', 'fog-mcq', 'coastal-mcq', 'rail-ar', 'air-ar', 'gq-short2', 'water-short2', 'corridor-short3', 'water-short3'],
+      B: [['airwater-long', 'imp-long', 'data-long']],
+    },
+  },

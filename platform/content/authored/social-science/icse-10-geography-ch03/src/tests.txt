@@ -1,0 +1,10 @@
+  tests: {
+    short: {
+      A: ['service-mcq', 'lu-mcq', 'flow-mcq', 'pat-mcq', 'site-ar', 'flow-short2', 'site-short3'],
+      B: [['long-settle', 'long-drain']],
+    },
+    long: {
+      A: ['site2-mcq', 'lu2-mcq', 'occ-mcq', 'road-mcq', 'flowT-mcq', 'vbend-mcq', 'clus-mcq', 'nat-mcq', 'flow-ar', 'settle-ar', 'occ-short2', 'nat-short2', 'lu-short3', 'settle-short3'],
+      B: [['long-lu', 'long-trans', 'long-pattern']],
+    },
+  },
