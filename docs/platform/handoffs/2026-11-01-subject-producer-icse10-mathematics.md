@@ -1,6 +1,6 @@
 # subject-producer — ICSE Class 10 Mathematics (hand-authored) — 2026-11-01
 
-Status: partial — ch01–ch18 committed; ch19–ch24 in progress (this note is updated as chapters land)
+Status: partial — ch01–ch20 committed; ch21–ch24 in progress (this note is updated as chapters land)
 
 Branch: `platform/subject-producer/icse-10-mathematics` (from `platform/main` 36babbf). Author `claude-opus-5-5 (subject-producer)`, D-025/D-026, provenance `origin: "human"`, all items `status: "draft"`.
 
@@ -31,7 +31,9 @@ New folders only: `platform/content/authored/maths/icse-10-mathematics-chNN/` wi
 | 16 | Circles: Angle and Cyclic Properties | Sonnet 5.5 | 20 + 20 | 32 | 7 | 30 | 72 (175) | 57% | 2563d22 |
 | 17 | Circles: Tangents, Secants and Intersecting Chords | Sonnet 5.5 (restarted after a cut-off; second Sonnet writer reused the first one's partial files) | 20 + 21 | 32 | 7 | 30 | 66 (157) | 56% | d57ab20 |
 | 18 | Constructions: Tangents and Circles | Sonnet 5.5 | 17 + 21 | 26 | 7 | 30 | 69 (170) | 58% | 58d783f |
-| | **Total (18 chapters)** | | **692 slides** | | | **537** | **1223 (2,999)** | | |
+| 19 | Mensuration: Cylinder, Cone and Sphere | Sonnet 5.5 | 23 + 22 | 45 | 8 | 32 | 64 (169) | 58% | 41bfa2a |
+| 20 | Trigonometric Identities | Sonnet 5.5 | 18 + 20 | 27 | 7 | 30 | 65 (167) | 58% | 7023211 |
+| | **Total (20 chapters)** | | **775 slides** | | | **599** | **1352 (3,335)** | | |
 
 Writer models: ch01–ch13 were written by Opus 5.5 sub-agents. From 2026-11-01 22:10 IST (owner instruction) chapters are written by Sonnet 5.5 sub-agents (Agent tool model "sonnet"), at most two at a time, and the producer (Opus) reviews each returned chapter — recomputes a sample of answers, checks scope and ICSE conventions — runs the full gates, fixes or sends back problems, and commits. A chapter that needs heavy fixing, or two Sonnet chapters in a row failing gates for content reasons, falls back to an Opus writer; any such fallback is noted here.
 
@@ -46,6 +48,7 @@ From `platform/` in the worktree, wrapped in `_tools/heavy.sh` (gate script `scr
 - Runs 7–8 (2026-11-01 22:10 and 22:35 IST; ch12–ch14): run 7 caught ch12 mid-edit (one bank duplicate against CBSE 10 ch07, one lint warning), both fixed by its writer before run 8; run 8: catalog valid; content gate 2213 passed; lint 0/0; verify 14 units, 939 questions, 0 blocking, 0 minor; originality 316 units, 0 errors; DB-6 8/8; API 13/13. Producer review of the Sonnet chapter ch14: a fixed sample (2 MCQ, 1 numerical, 2 short, 1 long) recomputed by hand, all correct; scope and removed-topic mentions checked.
 - Run 9 (2026-11-01 23:03 IST; ch15–ch16): catalog valid; content gate 2227 passed; lint 0/0; verify 16 units, 1,088 questions, 0 blocking, 0 minor; originality 318 units, 0 errors; DB-6 8/8; API 13/13. Producer review of the Sonnet chapters: fixed samples recomputed by hand, all correct (e.g. ch15 construction AC = 7.5 cm, BP = 4.3 cm; ch16 angle chases). Producer fix in ch16 before gating: 58 answers read "73° degrees" (degree sign and the word); the word was removed in the question sources and the chapter rebuilt (verify, lint and rebuild unchanged otherwise).
 - Run 10 (2026-11-02 07:54 IST; ch17–ch18): catalog valid; content gate 2241 passed; lint 0/0; verify 18 units, 1,223 questions, 0 blocking, 0 minor; originality 320 units, 0 errors; DB-6 8/8; API 13/13. Producer review samples recomputed by hand, all correct (ch17 tangent–secant AB = 15, kite area 432 and AB = 28.8; ch18 tangent length 6.0 cm and angle 74°, hexagon incircle 3.9 cm). The ch17 restart writer reports it fixed an impossible chord (14.5 in a radius-7 circle) and two wrong-vertex angle checks left by the cut-off writer.
+- Run 11 (2026-11-02 08:22 IST; ch19–ch20): catalog valid; content gate 2255 passed; lint 0/0; verify 20 units, 1,352 questions, 0 blocking, 0 minor; originality 322 units, 0 errors; DB-6 8/8; API 13/13. Producer review samples recomputed by hand, all correct (ch19 roller 396 m², pillar h = 14 cm and V = 539 cm³, recast cone h = 6 cm, tank 41,580 L, sheet 53.46 m², ₹8,019, 12 min; ch20 2, 3.125, 9/25, sin A = 60/61).
 
 ## Scope decisions
 
