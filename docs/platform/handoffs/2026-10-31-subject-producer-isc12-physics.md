@@ -1,6 +1,6 @@
-# subject-producer — ISC 12 Physics ch01–ch13 and ch15 (in progress), hand-authored (D-025, D-026) — 2026-10-31
+# subject-producer — ISC 12 Physics ch01–ch17 (in progress), hand-authored (D-025, D-026) — 2026-10-31
 
-Status: **partial — in progress**: ch01–ch13 and ch15 done and committed, one commit per chapter (all items `status: "draft"` pending review); work continues in syllabus order (ch14 and ch16 in progress, uncommitted; ch15 passed its gates first and was committed ahead of ch14) to ch21. Since 2026-10-31 evening, chapters are authored by up to two chapter sub-agents at a time (shared brief) and gated and committed by the subject-producer.
+Status: **partial — in progress**: ch01–ch17 done and committed, one commit per chapter (all items `status: "draft"` pending review); work continues in syllabus order (ch18 and ch19 in progress, uncommitted; ch15 passed its gates first and was committed ahead of ch14) to ch21. Since 2026-10-31 evening, chapters are authored by up to two chapter sub-agents at a time (shared brief) and gated and committed by the subject-producer.
 
 Branch: `platform/subject-producer/isc-12-physics` (worktree `C:/Users/Prabhu/soyl-wt/content-isc12-physics`), created from local `platform/main` 4b86da3. Not pushed, not merged.
 
@@ -21,6 +21,9 @@ Branch: `platform/subject-producer/isc-12-physics` (worktree `C:/Users/Prabhu/so
 | `platform/content/authored/physics/isc-12-physics-ch12/` | Electromagnetic Waves | 600a597 |
 | `platform/content/authored/physics/isc-12-physics-ch13/` | Reflection at Spherical Mirrors and Refraction at Plane Surfaces | b30709a |
 | `platform/content/authored/physics/isc-12-physics-ch15/` | Refraction at Spherical Surfaces and Thin Lenses | 2be00b0 |
+| `platform/content/authored/physics/isc-12-physics-ch14/` | Refraction and Dispersion by a Prism | 459b7cb |
+| `platform/content/authored/physics/isc-12-physics-ch16/` | Optical Instruments | 48e838d |
+| `platform/content/authored/physics/isc-12-physics-ch17/` | Wave Optics: Interference and Diffraction | 3c86ec5 |
 | `docs/platform/handoffs/2026-10-31-subject-producer-isc12-physics.md` | This note | updated per chapter |
 
 **ISC library** — `isc-12-physics-ch01/src/lib.mjs` is a copy of the author’s CBSE 12 Physics library adapted to ISC: unit `isc-12-physics-chNN`, ids `q_isc12phy_chNN_###` and `t_isc12phy_chNN_{short,long}`, subject `isc-12-physics`; assertion-reason options in ISC wording with option (d) “Assertion is false and Reason is true” (the ISC 2027 Physics specimen keeps the CBSE-style option d); chapter tests on `isc-12-default-chapter-test-short` / `-long` (catalog/cisce/blueprints/12) with the section builder of the ISC 12 Biology library, which asserts each section’s exact type/mark/choice layout and that the two tests are disjoint. Later chapters import it from ch01.
@@ -42,7 +45,10 @@ Branch: `platform/subject-producer/isc-12-physics` (worktree `C:/Users/Prabhu/so
 | ch12 Electromagnetic Waves | 2 (18 + 18) | 6 | 30 | 68 | short 20 m / long 40 m | 5 SVG + 2 plots + 2 flows | 54% |
 | ch13 Reflection at Spherical Mirrors and Refraction at Plane Surfaces | 2 (18 + 20) | 5 | 30 | 70 | short 20 m / long 40 m | 14 SVG + 3 plots | 57% |
 | ch15 Refraction at Spherical Surfaces and Thin Lenses | 2 (17 + 19) | 5 | 30 | 70 | short 20 m / long 40 m | 10 SVG + 3 plots + 1 flow | 59% |
-| **Total so far** | | | **420** | **973** | **28 tests** | | |
+| ch14 Refraction and Dispersion by a Prism | 2 (19 + 17) | 6 | 30 | 69 | short 20 m / long 40 m | 9 SVG + 4 plots + 1 flow | 57% |
+| ch16 Optical Instruments | 2 (17 + 19) | 5 | 30 | 68 | short 20 m / long 40 m | 9 SVG + 2 plots | 54% |
+| ch17 Wave Optics: Interference and Diffraction | 2 (19 + 19) | 6 | 30 | 74 | short 20 m / long 40 m | 10 SVG + 7 plots | 55% |
+| **Total so far** | | | **510** | **1184** | **34 tests** | | |
 
 Chapter notes since ch03:
 - **ch04** was finished by the previous agent; one fill-blank stem (the farad) was word for word the CBSE 12 Physics ch02 stem and failed originality, so it was reworded before commit.
@@ -56,18 +62,21 @@ Chapter notes since ch03:
 - **ch12** uses band edges radio > 30 cm, microwave 1 mm–30 cm, IR 700 nm–1 mm, visible 400–700 nm, UV 1–400 nm, X-rays 1 pm–1 nm, gamma < 10 pm (textbooks differ; items avoid the boundaries); no mathematical treatment of EM waves.
 - **ch13** uses the New Cartesian sign convention with signed answers; "total reflecting prisms (30, 45, 60, 90 degrees)" is read as 45°–90°–45° and 30°–60°–90° prisms; the fibre acceptance-angle items go slightly beyond the syllabus wording.
 - **ch15** derives refraction at a single spherical surface only for the convex-towards-rarer, real-image case and does not examine silvered lenses (both removed in ISC); a lens with a separate plane or concave mirror is in scope. New Cartesian signs throughout.
+- **ch14** treats the rainbow by ray diagram and explanation only (its derivation is removed in ISC); total reflecting prisms stay in ch13.
+- **ch16** derives the simple microscope (D and ∞), the compound microscope (image at D) and the telescope (normal adjustment and D); the compound microscope with the image at infinity is an expression only (derivation removed). Resolving power uses d = λ/(2n sin β) without the 1.22 factor, stated in each stem; the Cassegrain is treated with an effective focal length.
+- **ch17** states I = I₁ + I₂ + 2√(I₁I₂) cos φ without derivation (removed in ISC) and keeps the single slit elementary; the first secondary maximum uses the (n + ½)λ approximation (exact 1.43λ/a is noted). Its release.json is 1.28 MB, the largest authored release, because the intensity plots are fine point series; worth a look if bundle size matters.
 - From ch09 on, the competency lint's 45–65% application-or-higher band was hit from above twice (66%, 70%); one-step items were relabelled "understanding".
 
 Every chapter follows the ISC 2027 Physics specimen style: 1-mark MCQ and assertion-reason items, 2- and 3-mark short answers (derivations among the 3-mark items), 5-mark questions set in parts with the marks shown, internal choice in the tests as the ISC default blueprints require, numericals in every topic. Per-chapter details are in each `README.md`.
 
 ## How to verify (from `platform/`)
 ```
-npm test -w @soyl/content-templates                                   # Tests 1618 passed after ch15 (run included ch14)
-npm run content -- lint --exemplars                                   # exit 0; isc-12-physics-ch01..15: 0 error(s), 0 warning(s)
+npm test -w @soyl/content-templates                                   # Tests 1632 passed after ch17
+npm run content -- lint --exemplars                                   # exit 0; isc-12-physics-ch01..17: 0 error(s), 0 warning(s)
 npm run content -- verify --board cisce --class 12 --subject physics --authored
-                                                                       # 15 unit(s), 1042 questions (incl. uncommitted ch14), 0 blocking flag(s), 0 minor flags
+                                                                       # 17 unit(s), 1184 questions, 0 blocking flag(s), 0 minor flags
 npm run content -- verify --board cbse --class 12 --subject physics --authored   # unchanged: 13 units, 899 questions, 0 blocking
-npm run content -- originality --authored                             # 231 unit(s), 0 error(s); every ISC 12 Physics chapter 0 error(s), 0 warning(s)
+npm run content -- originality --authored                             # 233 unit(s), 0 error(s); every ISC 12 Physics chapter 0 error(s), 0 warning(s)
 npm run content -- catalog                                            # catalog valid: 0 error(s), 0 warning(s)
 npx vitest run --root db test/db6-split.test.ts                       # Tests 8 passed (8)
 npx vitest run --root api test/content.test.ts                        # Tests 13 passed (13)
