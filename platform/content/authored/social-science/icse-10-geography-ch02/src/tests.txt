@@ -1,0 +1,10 @@
+  tests: {
+    short: {
+      A: ['sym-mcq', 'rf-mcq', 'dist-mcq', 'dir-mcq', 'scale-ar', 'sh2-rf', 'dist-short3'],
+      B: [['long-dist', 'long-colour']],
+    },
+    long: {
+      A: ['line-mcq', 'canal-mcq', 'yellow-mcq', 'barscale-mcq', 'dist2-mcq', 'area-mcq', 'dir2-mcq', 'rev-mcq', 'dist-ar', 'area-ar', 'dir-short2', 'area-short2', 'area-short3', 'dir-short3'],
+      B: [['long-area', 'long-dir', 'long-scale']],
+    },
+  },
