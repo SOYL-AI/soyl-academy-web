@@ -39,26 +39,26 @@ All items are `status: "draft"`.
 
 | Chapter | Commit | Decks (slides) | Questions | Cases | Application or higher | d4 | Flashcards | Distinct SVGs |
 |---|---|---|---|---|---|---|---|---|
-| ch01 The Living World | — | 2 (15 + 16) | 79 | 4 | 53% | 1 | 30 | 5 |
-| ch02 Biological Classification | — | 2 (17 + 18) | 105 | 4 | 54% | 1 | 30 | 7 |
-| ch03 Plant Kingdom | — | 2 (18 + 17) | 82 | 4 | 51% | 1 | 30 | 11 |
-| ch04 Animal Kingdom | — | 2 (18 + 16) | 107 | 4 | 50% | 1 | 30 | 9 |
-| ch05 Morphology of Flowering Plants | — | 2 (18 + 18) | 78 | 4 | 47% | 1 | 32 | 7 |
-| ch06 Anatomy of Flowering Plants | — | 2 (16 + 16) | 76 | 4 | 46% | 1 | 31 | 8 |
-| ch07 Structural Organisation in Animals | — | 2 (16 + 16) | 68 | 4 | 49% | 1 | 30 | 7 |
-| ch08 Cell: The Unit of Life | — | 2 (17 + 18) | 70 | 4 | 49% | 1 | 30 | 7 |
-| ch09 Biomolecules | — | 2 (17 + 18) | 72 | 4 | 47% | 1 | 30 | 9 |
-| ch10 Cell Cycle and Cell Division | — | 2 (16 + 17) | 82 | 4 | 52% | 1 | 30 | 8 |
-| ch11 Photosynthesis in Higher Plants | — | 2 (16 + 17) | 94 | 4 | 47% | 1 | 30 | 10 |
-| ch12 Respiration in Plants | — | 2 (16 + 17) | 90 | 4 | 47% | 1 | 30 | 7 |
-| ch13 Plant Growth and Development | — | 2 (17 + 16) | 78 | 4 | 56% | 1 | 32 | 4 |
-| ch14 Breathing and Exchange of Gases | — | 2 (18 + 16) | 72 | 4 | 51% | 2 | 30 | 6 |
-| ch15 Body Fluids and Circulation | — | 2 (16 + 17) | 70 | 4 | 50% | 1 | 31 | 3 |
-| ch16 Excretory Products and their Elimination | — | 2 (16 + 17) | 72 | 4 | 50% | 1 | 31 | 4 |
-| ch17 Locomotion and Movement | — | 2 (16 + 16) | 68 | 4 | 51% | 2 | 30 | 5 |
-| ch18 Neural Control and Coordination | — | 2 (16 + 15) | 70 | 4 | 51% | 2 | 30 | 6 |
-| ch19 Chemical Coordination and Integration | — | 2 (18 + 18) | 67 | 4 | 51% | 2 | 30 | 4 |
-| ch20 Digestion and Absorption | — | 2 (18 + 17) | 67 | 4 | 51% | 2 | 30 | 5 |
+| ch01 The Living World | 3e2c30e | 2 (15 + 16) | 79 | 4 | 53% | 1 | 30 | 5 |
+| ch02 Biological Classification | 9144670 | 2 (17 + 18) | 105 | 4 | 54% | 1 | 30 | 7 |
+| ch03 Plant Kingdom | 962f8a0 | 2 (18 + 17) | 82 | 4 | 51% | 1 | 30 | 11 |
+| ch04 Animal Kingdom | 4476401 | 2 (18 + 16) | 107 | 4 | 50% | 1 | 30 | 9 |
+| ch05 Morphology of Flowering Plants | 0f7ecb0 | 2 (18 + 18) | 78 | 4 | 47% | 1 | 32 | 7 |
+| ch06 Anatomy of Flowering Plants | 9d381f8 | 2 (16 + 16) | 76 | 4 | 46% | 1 | 31 | 8 |
+| ch07 Structural Organisation in Animals | dab6ae4 | 2 (16 + 16) | 68 | 4 | 49% | 1 | 30 | 7 |
+| ch08 Cell: The Unit of Life | d63310b | 2 (17 + 18) | 70 | 4 | 49% | 1 | 30 | 7 |
+| ch09 Biomolecules | ce09b46 | 2 (17 + 18) | 72 | 4 | 47% | 1 | 30 | 9 |
+| ch10 Cell Cycle and Cell Division | e3912ab | 2 (16 + 17) | 82 | 4 | 52% | 1 | 30 | 8 |
+| ch11 Photosynthesis in Higher Plants | 72a905d | 2 (16 + 17) | 94 | 4 | 47% | 1 | 30 | 10 |
+| ch12 Respiration in Plants | 904d90e | 2 (16 + 17) | 90 | 4 | 47% | 1 | 30 | 7 |
+| ch13 Plant Growth and Development | d882988 | 2 (17 + 16) | 78 | 4 | 56% | 1 | 32 | 4 |
+| ch14 Breathing and Exchange of Gases | 0b3bf72 | 2 (18 + 16) | 72 | 4 | 51% | 2 | 30 | 6 |
+| ch15 Body Fluids and Circulation | 25ba076 | 2 (16 + 17) | 70 | 4 | 50% | 1 | 31 | 3 |
+| ch16 Excretory Products and their Elimination | f39402a | 2 (16 + 17) | 72 | 4 | 50% | 1 | 31 | 4 |
+| ch17 Locomotion and Movement | 7462d46 | 2 (16 + 16) | 68 | 4 | 51% | 2 | 30 | 5 |
+| ch18 Neural Control and Coordination | 17b676e | 2 (16 + 15) | 70 | 4 | 51% | 2 | 30 | 6 |
+| ch19 Chemical Coordination and Integration | 26d618a | 2 (18 + 18) | 67 | 4 | 51% | 2 | 30 | 4 |
+| ch20 Digestion and Absorption | a495434 | 2 (18 + 17) | 67 | 4 | 51% | 2 | 30 | 5 |
 
 Totals: 20 chapters, 1,567 questions, 40 decks, 40 chapter tests.
 
