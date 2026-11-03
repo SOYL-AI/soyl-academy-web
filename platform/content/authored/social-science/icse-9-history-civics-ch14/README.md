@@ -59,7 +59,7 @@ Deliberately left out: any verse, hymn or saying of any saint (ideas are paraphr
 11. **Impact:** social harmony and a message of equality; growth of regional languages and literature (Hindi, Punjabi, Bengali, Marathi and others); devotional music (kirtan, bhajan, qawwali); simpler forms of worship; shrines and dargahs visited by people of many faiths.
 12. **Composite culture examples:** Indo-Islamic architecture (arches, domes and minarets with brackets, chhatris and carved motifs; Fatehpur Sikri); Hindustani classical music, with Tansen at Akbar's court; Mughal miniature painting blending Persian and Indian styles; Urdu and Persian translations of Sanskrit works. The architecture figure is a schematic drawing, not a real building.
 13. **Christian missionaries (education and social service only):** the Portuguese reached India from 1498 (Vasco da Gama); St Francis Xavier came to Goa in 1542; a printing press was set up in Goa about 1556; Jesuit priests visited Akbar's court about 1580; William Carey at Serampore from 1800 set up presses and translated texts into Indian languages including Bengali; missionaries founded schools and colleges, hospitals and orphanages, and some opposed social evils (stated generally, with no named campaign or controversy).
-14. **Map:** the saints-by-region map is schematic, "not to scale; positions are approximate"; the India outline is a rough polygon and is not a survey map.
+14. **Map:** the saints-by-region map is schematic, "not to scale; positions are approximate"; no outline, coastline or borders are drawn (OA-23).
 
 ## Unsure / gaps
 - **Surdas's region:** the brief gave no region for Surdas. The chapter places him in the Braj region (commonly taught); a reviewer may prefer to drop the region or confirm it.

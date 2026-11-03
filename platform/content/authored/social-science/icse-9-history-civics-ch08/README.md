@@ -66,5 +66,5 @@ Deliberately left out: any quotation of an edict, of Kautilya or of Megasthenes;
 - Some books use "Chanakya" and "Kautilya" interchangeably and some date Ashoka's accession about 273 BCE with a consecration about 269 or 268; the chapter uses the commonly taught reign dates and says "about".
 - The six functions of the Pataliputra committees are not listed in full; only four matters are named, in loose terms, to avoid a mismatch with differing book lists.
 - "Respect for elders" and "kindness to servants" are paraphrases of themes in the edicts; no edict number is cited.
-- The map is schematic and the outline is a rough sketch, not a boundary.
+- The map is a schematic sketch of relative positions only; no outline, coastline or borders are drawn (OA-23).
 - No past-paper or specimen item was consulted; the built-in originality scan shows no duplicate stem.

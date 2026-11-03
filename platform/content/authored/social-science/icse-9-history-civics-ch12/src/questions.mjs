@@ -116,7 +116,6 @@ export function minarFigure(alt, caption) {
 /** Schematic map of the Deccan campaign. */
 export function deccanFigure(alt, caption) {
   const s = new Svg(820, 420);
-  s.polygon([[170, 100], [575, 100], [555, 160], [530, 230], [490, 300], [425, 392], [295, 392], [240, 330], [205, 250], [175, 170]], { sw: 1.6, color: 'muted', dash: true });
   const pts = [
     [360, 45, 'Delhi', 'start', 'accent'],
     [290, 170, '1 Devagiri', 'end', 'green'],

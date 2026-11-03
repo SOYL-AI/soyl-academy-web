@@ -80,7 +80,7 @@ const vInternal = table(['Kind of trade', 'How it worked'], [
   ['Markets', 'Towns and ports had markets where many goods were sold'],
   ['Overseas', 'Ships linked the ports with distant lands'],
 ], 'Table on kinds of trade: barter exchanges goods for goods such as rice for cloth, markets in towns and ports sold many goods, and overseas trade used ships to link the ports with distant lands');
-const vMap = portsFigure('Schematic outline of South India showing five places: Muziris of the Cheras on the west coast, Madurai inland, Korkai of the Pandyas near the southern tip, Puhar of the Cholas on the east coast and Arikamedu north of Puhar on the east coast; not to scale and positions approximate', 'Ports and Madurai (schematic).');
+const vMap = portsFigure('Schematic sketch of relative positions in South India, with no coastline or borders drawn, showing five places: Muziris of the Cheras on the west coast, Madurai inland, Korkai of the Pandyas near the southern tip, Puhar of the Cholas on the east coast and Arikamedu north of Puhar on the east coast; not to scale and positions approximate', 'Ports and Madurai (schematic).');
 const vPorts = table(['Port', 'Kingdom', 'Known for'], [
   ['Puhar (Kaveripattinam)', 'Chola', 'A busy port at the mouth of the Kaveri'],
   ['Muziris', 'Chera', 'Pepper trade on the Kerala coast'],

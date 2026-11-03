@@ -65,7 +65,6 @@ export function adminFigure(alt, caption) {
 /** Schematic map of some Mauryan places and edict sites. */
 export function mapFigure(alt, caption) {
   const s = new Svg(720, 430);
-  s.polygon([[300, 40], [420, 50], [520, 90], [600, 110], [580, 170], [520, 190], [500, 240], [470, 280], [430, 330], [380, 395], [350, 395], [300, 320], [260, 250], [200, 210], [190, 170], [230, 130], [260, 80]], { sw: 1.6, color: 'muted', dash: true });
   const pts = [
     [290, 90, 'Taxila', 'start', 'accent'],
     [420, 150, 'Sarnath', 'end', 'green'],
