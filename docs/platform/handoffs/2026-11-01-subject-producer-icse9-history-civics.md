@@ -76,8 +76,22 @@ Rebuild any chapter with `npx tsx content/authored/social-science/icse-9-history
 | g6 | 2026-11-02 08:41 | ch01–14 | templates 2927/2927, verify 14 units 1091 q, originality 418 units 0 errors, db6 8/8, api 13/13 → ch13, ch14 committed |
 | g7 | 2026-11-03 23:57 | ch01–17 | templates 2948/2948, verify 17 units 1315 q, originality 421 units 0 errors, db6 8/8, api 13/13 → ch15, ch16 committed (ch17 was rebuilt after a review fix, so it was re-gated) |
 | g8 | 2026-11-04 00:09 | ch01–17 | templates 2948/2948, catalog 0/0, lint 0/0, verify 17 units 1315 q 0 blocking, originality 421 units 0 errors, db6 8/8, api 13/13 → ch17 committed |
+| g9 | 2026-11-04 00:22 | ch01–17 after the OA-23 map fix | green except one API content-test failure that passed alone (13/13) on an immediate rerun, so I treated it as a timeout and reran the full gate |
+| g10 | 2026-11-04 00:38 | ch01–17 after the OA-23 map fix | templates 2948/2948, catalog 0/0, lint 0/0, verify 17 units 1315 q 0 blocking, originality 421 units 0 errors, db6 8/8, api 13/13 → map fix committed (16d5b4d) |
 
 Commits were made by a script that commits a chapter only if none of its files changed after the start of the green gate run.
+
+## Maps and OA-23 (owner decision pending on maps of modern India)
+I checked every SVG in all 17 chapters. I read the figure code and scanned the built SVGs for polygons, polylines or paths with more than 6 points (`outline-scan.cjs`).
+- **Five chapters drew a landmass outline behind a schematic map:**
+  - ch08 (Mauryan edict sites) and ch10 (Gupta sites): a rough subcontinent outline.
+  - ch09 (Sangam ports) and ch12 (Deccan campaign): a rough peninsula outline.
+  - ch14 (saints by region): a lon/lat outline of modern India.
+- **What I did:** I removed the outline polygons (commit 16d5b4d), so no chapter needed to be held back.
+  - The figures now show only labelled places as dots in relative position; ch09 keeps its sea labels and ch12 its campaign arrows.
+  - Alt text and READMEs now say that no outline, coastline or borders are drawn.
+- **No change needed:** ch05 draws the Indus and Ghaggar-Hakra river lines with Harappan sites, and ch07 and ch13 draw the Ganga as a line with places. None has an outline or borders.
+- **After the fix:** no SVG in the subject has a shape with more than 6 points, except ch05's two 7-point river polylines.
 
 ## Review (Opus) — fixes made
 - **All chapters:** I checked every assertion-reason verdict against its A/R statements, and all were correct. I scanned for loaded or communal wording, graphic detail, quotations and meta wording.
