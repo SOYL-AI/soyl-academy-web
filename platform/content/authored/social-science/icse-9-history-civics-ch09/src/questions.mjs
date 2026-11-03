@@ -61,7 +61,6 @@ export function tinaiFigure(alt, caption) {
 /** Schematic map of ports and Madurai. */
 export function portsFigure(alt, caption) {
   const s = new Svg(720, 440);
-  s.polygon([[140, 40], [560, 40], [540, 160], [500, 250], [430, 340], [360, 410], [330, 410], [290, 330], [230, 230], [170, 130]], { sw: 1.6, color: 'muted', dash: true });
   s.text(110, 250, 'Arabian Sea', { size: 13, italic: true, muted: true });
   s.text(615, 330, 'Bay of Bengal', { size: 13, italic: true, muted: true });
   const pts = [

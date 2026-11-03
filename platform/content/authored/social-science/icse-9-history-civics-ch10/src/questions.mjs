@@ -101,7 +101,6 @@ export function templeFigure(alt, caption) {
 /** Schematic map of some places linked with the Guptas. */
 export function mapFigure(alt, caption) {
   const s = new Svg(720, 400);
-  s.polygon([[300, 40], [420, 50], [520, 90], [600, 110], [580, 170], [520, 190], [500, 240], [470, 280], [430, 330], [380, 375], [350, 375], [300, 320], [260, 250], [200, 210], [190, 170], [230, 130], [260, 80]], { sw: 1.6, color: 'muted', dash: true });
   const pts = [
     [392, 175, 'Deogarh', 'end', 'green', 0],
     [445, 130, 'Prayagraj (Allahabad)', 'end', 'accent', 0],
