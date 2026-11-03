@@ -1,6 +1,6 @@
 # subject-producer — ICSE Class 10 Mathematics (hand-authored) — 2026-11-01
 
-Status: partial — ch01–ch22 committed; ch23–ch24 in progress (this note is updated as chapters land)
+Status: done — all 24 chapters of `icse-10-mathematics` gated and committed (one commit each)
 
 Branch: `platform/subject-producer/icse-10-mathematics` (from `platform/main` 36babbf). Author `claude-opus-5-5 (subject-producer)`, D-025/D-026, provenance `origin: "human"`, all items `status: "draft"`.
 
@@ -35,7 +35,9 @@ New folders only: `platform/content/authored/maths/icse-10-mathematics-chNN/` wi
 | 20 | Trigonometric Identities | Sonnet 5.5 | 18 + 20 | 27 | 7 | 30 | 65 (167) | 58% | 7023211 |
 | 21 | Heights and Distances | Sonnet 5.5 | 20 + 20 | 30 | 7 | 28 | 68 (172) | 57% | a49a838 |
 | 22 | Measures of Central Tendency | Sonnet 5.5 | 19 + 20 | 29 | 8 | 30 | 65 (173) | 54% | 2048708 |
-| | **Total (22 chapters)** | | **854 slides** | | | **657** | **1485 (3,680)** | | |
+| 23 | Graphical Representation: Histograms and Ogives | Sonnet 5.5 | 18 + 19 | 27 | 8 | 30 | 66 (176) | 55% | d3efa4d |
+| 24 | Probability | Sonnet 5.5 | 19 + 19 | 31 | 8 | 30 | 65 (169) | 51% | a968842 |
+| | **Total (24 chapters)** | | **929 slides** | | | **717** | **1616 (4,025)** | | |
 
 Writer models: ch01–ch13 were written by Opus 5.5 sub-agents. From 2026-11-01 22:10 IST (owner instruction) chapters are written by Sonnet 5.5 sub-agents (Agent tool model "sonnet"), at most two at a time, and the producer (Opus) reviews each returned chapter — recomputes a sample of answers, checks scope and ICSE conventions — runs the full gates, fixes or sends back problems, and commits. A chapter that needs heavy fixing, or two Sonnet chapters in a row failing gates for content reasons, falls back to an Opus writer; any such fallback is noted here.
 
@@ -52,13 +54,14 @@ From `platform/` in the worktree, wrapped in `_tools/heavy.sh` (gate script `scr
 - Run 10 (2026-11-02 07:54 IST; ch17–ch18): catalog valid; content gate 2241 passed; lint 0/0; verify 18 units, 1,223 questions, 0 blocking, 0 minor; originality 320 units, 0 errors; DB-6 8/8; API 13/13. Producer review samples recomputed by hand, all correct (ch17 tangent–secant AB = 15, kite area 432 and AB = 28.8; ch18 tangent length 6.0 cm and angle 74°, hexagon incircle 3.9 cm). The ch17 restart writer reports it fixed an impossible chord (14.5 in a radius-7 circle) and two wrong-vertex angle checks left by the cut-off writer.
 - Run 11 (2026-11-02 08:22 IST; ch19–ch20): catalog valid; content gate 2255 passed; lint 0/0; verify 20 units, 1,352 questions, 0 blocking, 0 minor; originality 322 units, 0 errors; DB-6 8/8; API 13/13. Producer review samples recomputed by hand, all correct (ch19 roller 396 m², pillar h = 14 cm and V = 539 cm³, recast cone h = 6 cm, tank 41,580 L, sheet 53.46 m², ₹8,019, 12 min; ch20 2, 3.125, 9/25, sin A = 60/61).
 - Run 12 (2026-11-02 08:33 IST; ch21–ch22): catalog valid; content gate 2269 passed; lint 0/0; verify 22 units, 1,485 questions, 0 blocking, 0 minor; originality 324 units, 0 errors; DB-6 8/8; API 13/13. Producer review samples recomputed by hand, all correct (ch21 mast 47.9 m, cycle 42.9 m, tower 56.8 m, platform 41.6 / 13.9 / 27.7 / 65.6 m; ch22 assumed-mean 58, 50.25, seventh value 37, grouped mean 111.5).
+- Run 13 — final (2026-11-04 00:04 IST; all 24 chapters in the tree): catalog valid; content gate 2283 passed; lint 0/0 for every ICSE unit; verify 24 units, 1,616 questions, 0 blocking, 0 minor; originality 326 units, 0 errors; DB-6 8/8; API 13/13. Producer review samples for ch23–ch24 recomputed by hand, all correct (ch23 ogive median 280, 16 pupils above 55 min, histogram mode 30.5; ch24 9/25, 0.04, k = 0.25 and P(E) = 0.35, 1/2, 1/3, 13/18).
 
 ## Scope decisions
 
 - Topics follow `catalog/cisce/icse-10/mathematics/syllabus.yaml` exactly; removed ICSE 2027 topics appear at most as one "not in the ICSE 2027 syllabus" line (e.g. brokerage and fractional shares in ch03).
 - Style follows the ICSE 2027 specimen (511) pattern only: compulsory short items, structured 10-mark questions in parts (a)(b)(c) worth 3 + 3 + 4, all working shown.
 - Commercial mathematics is computed in exact paise/rational arithmetic and every chain is asserted (CGST = SGST, input-tax credit, tax payable; RD interest by formula cross-checked by summing monthly products; whole numbers of shares, dividend and return by two formulas).
-- Points for a reviewer (also in chapter READMEs): ch01 practises with the classic 5/12/18/28 % rates, every problem states its rate, and the notes say rates are set by the GST Council; ch04 draws number lines as allow-listed `svg` (the geometry/plot renderers cannot show open circles).
+- Points for a reviewer (also in chapter READMEs): ch01 practises with the classic 5/12/18/28 % rates, every problem states its rate, and the notes say rates are set by the GST Council; ch04 draws number lines as allow-listed `svg` (the geometry/plot renderers cannot show open circles); ch10 leaves out the sum to infinity (not in the ICSE 2027 topics); ch12 never uses external division; ch15 and ch18 assert construction measurements after rounding to 0.1 cm (marking should accept ±0.1 cm); ch16/ch17 build every circle figure from coordinates; ch19 states π in every stem (22/7, one item 3.14, some answers in terms of π); ch21 relaxes its rounding-margin check to 0.02 for four √3 = 1.732 answers (README); ch22 only names the median/modal class for grouped data; ch23 draws histograms as closed outline series (the plot builder's bars do not touch) and accepts graph readings within a stated tolerance; ch24 keeps to single-event classical probability (two dice and successive draws avoided as combined events — widen if the owner reads the syllabus otherwise).
 - Originality (D-036): imagined people, shops, banks and companies; content-specific stems; checked by the repo originality gate against the whole bank including CBSE 10 Mathematics.
 
 ## Known gaps / follow-ups
