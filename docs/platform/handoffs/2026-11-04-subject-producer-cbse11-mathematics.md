@@ -22,7 +22,9 @@ New folders only: `platform/content/authored/maths/cbse-11-mathematics-chNN/` wi
 | 08 | Sequences and Series | Sonnet 5.5 | 19 + 23 | 29 | 8 | 30 | 73 (144) | 60% | f9f1aae |
 | 09 | Straight Lines | Sonnet 5.5 | 21 + 21 | 29 | 8 | 30 | 73 (144) | 60% | 3fcdeef |
 | 10 | Conic Sections | Sonnet 5.5 | 20 + 21 | 29 | 7 | 30 | 73 (144) | 58% | 5c682db |
-| | **Total (10 chapters)** | | **408 slides** | | | **301** | **715 (1,393)** | | |
+| 11 | Introduction to Three-dimensional Geometry | Sonnet 5.5 | 15 + 17 | 24 | 8 | 30 | 69 (134) | 57% | cfc7147 |
+| 12 | Limits and Derivatives | Sonnet 5.5 | 20 + 21 | 31 | 8 | 30 | 75 (143) | 56% | dc85c11 |
+| | **Total (12 chapters)** | | **481 slides** | | | **361** | **859 (1,670)** | | |
 
 ## How to verify
 
@@ -32,6 +34,7 @@ From `platform/` in the worktree, wrapped in `_tools/heavy.sh` (gate script `scr
 - Run 4 (2026-11-04 10:06 IST; ch05–ch06, no writer active): catalog valid; content gate 3417 passed; lint 0/0; verify 6 units, 427 questions, 0 blocking, 0 minor; originality 488 units, 0 errors; DB-6 8/8; API 13/13. Producer review samples recomputed by hand, all correct (ch05 largest integer 13, integer sum −15, [5, 26] with 22 integers; ch06 ¹²C₄ = 495, 180 even numbers, 9000 / 4536 / 2296 / 952).
 - Run 5 (2026-11-04 10:40 IST; ch07–ch08, no writer active): catalog valid; content gate 3431 passed; lint 0/0; verify 8 units, 569 questions, 0 blocking, 0 minor; originality 490 units, 0 errors; DB-6 8/8; API 13/13. Producer review samples recomputed by hand, all correct (ch07 coefficient 2160, term 560x⁵, all six terms of (a/2 − 2b)⁵; ch08 a₅ = 14, sixth GP term 2/3, AP with d = 7, S₂₀ = 1310, least n = 18). Producer fix in ch07 before gating: q058's model answer contained `\\left(\\dfrac…` (doubled backslashes from a raw/normal template mix), which KaTeX accepts but renders as a line break plus the word "left"; fixed in the source and rebuilt. A new scan (scratchpad dblslash.cjs) over every maths release in the bank found no other case.
 - Run 6 (2026-11-04 18:41 IST; ch09–ch10, no writer active): catalog valid; content gate 3445 passed; lint 0/0; verify 10 units, 715 questions, 0 blocking, 0 minor; originality 492 units, 0 errors; DB-6 8/8; API 13/13; doubled-backslash scan total 0. Producer review samples recomputed by hand, all correct (ch09 slope −3/2, 3x + 4y − 16 = 0, normal form p = 2, altitude foot (26/5, 7/5) and area 32; ch10 directrix y = 5, k = −8, x²/64 + y²/289 = 1, centre (−3, 6), r = 7, chord 2√13). ch10 reuses two teaching curves (x²/25 + y²/9 and 9x² + 16y² = 144) that also occur in CBSE 12 / ISC 12 area chapters; disclosed in its README; no stem overlaps.
+- Run 7 (2026-11-04 19:40 IST; ch11–ch12, both writers finished before the run; ch13 not yet built): catalog valid; content gate 3459 passed; lint 0/0; verify 12 units, 859 questions, 0 blocking, 0 minor; originality 494 units, 0 errors; DB-6 8/8; API 13/13. Producer review samples recomputed by hand, all correct (ch11 distance 11, section point (2, 0, 1), box diagonal 5√2 and octant IV; ch12 limit 21, f′(2) = 22, rational limits 3 and 40/13, removable limits 2 and 3). ch11 and ch12 writers were cut off by a session limit and resumed with their own context.
 
 ## Scope decisions
 
