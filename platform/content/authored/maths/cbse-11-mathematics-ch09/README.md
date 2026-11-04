@@ -1,0 +1,45 @@
+# CBSE Class 11 Mathematics — Chapter 9: Straight Lines (authored, v1)
+
+Hand-authored production chapter (DECISIONS D-025, D-026, D-050) written to the maths exemplar standard and the structure of the CBSE 12 Mathematics chapters. Author: `claude-sonnet-5-5 (subject-producer chapter writer)`, provenance `origin: "human"`, `model: null`. All items are `status: "draft"` until review.
+
+`src/lib.mjs` and `src/lint.mts` are the shared CBSE 11 Mathematics copies, unchanged (the lib stamps its own author string; `build.mjs` rewrites it to this chapter's author after the build). `src/fr.mjs` is an unchanged copy of the exact-fraction module of ICSE 10 ch13. `src/ln.mjs` is the exact line geometry for this chapter (adapted from ICSE 10 ch13 `line.mjs`, with angles between lines, point-line and parallel-line distances as exact surds, and the normal form added). `src/qh.mjs` holds small helpers.
+
+## Scope (2026-27 syllabus, 041)
+- **t01** Slope of a line and angle between lines: inclination and slope, slope from two points or from `ax + by + c = 0`, parallel, perpendicular and collinear tests, `tan(theta) = |(m1 - m2)/(1 + m1 m2)|` with the obtuse angle and the perpendicular case.
+- **t02** Forms of the equation of a line: horizontal and vertical lines, point-slope, slope-intercept, two-point and intercept forms; parallel and perpendicular lines through a point.
+- **t03** Distance of a point from a line and distance between parallel lines (including surd answers, the altitude of a triangle, lines at a given distance, the mid-line between two parallels).
+- **t04** Normal form and general equation is `board_assessed: false` (formative only). Kept light: one concept slide and one example in Part 2 for the general equation and one each for the normal form, one notes section marked "formative only", three flashcards, and seven practice items (`m18`, `m19`, `ar6`, `s210`, `s309`, `l07` and the topic tag on `s305`) of which none is placed in either chapter test. The general equation is also used (without the t04 tag) wherever slopes and intercepts are read from `ax + by + c = 0`.
+- The subject-level removed topics do not appear in this chapter.
+
+## Contents
+| Item | Count |
+|---|---|
+| Decks | Part 1 "Slope, angle between lines and the first forms of an equation" (t01, t02) 21 slides; Part 2 "More forms, distances and the normal form" (t02, t03, t04 light) 21 slides |
+| Worked examples | 5 + 7 (slope and inclination; finding `k` for parallel and perpendicular; angle and meeting point; a parallel line through a point; a perpendicular line through a point; two-point form; intercept form; general to slope and intercept form; a point-line distance; a surd distance; distance between parallels with unequal coefficients; normal form) |
+| Visuals | 29 of 42 slides (plot 14, table 13, flow 2; the 13 slides without a visual are the goals, exam tips and the 9 check slides; max 1 slide in a row without one). Notes and questions: table 16, plot 12 |
+| Check slides | 5 + 4, all objective (m01 tf1 fb3 m13 tf2; fb2 m11 m15 tf4), none used in the chapter tests |
+| Notes | 8 sections (section 8 marked formative only), each with key terms, formulas and a visual; exam tips with a mark split and 7 common mistakes |
+| Flashcards | 30 (formula 16, exam-tip 5, concept 4, fact 4, definition 1) |
+| Questions | 73 items, 144 marks: mcq 19, assertion-reason 6 (keys a c d b a c), true-false 5, fill-blank 5, numerical 7, short-2 10, short-3 9, long-5 7, case-based 5 (each 1 + 1 + 2 with an either/or part (c) via `alternatives`) |
+| MCQ keys | a 6, b 6, c 6, d 6 (rotated by the build) |
+| Difficulty | d1 10, d2 29, d3 30, d4 4 |
+| Competency | recall 6, understanding 23, application 40, analysis 4 — application or higher 60 % of items, 76 % of marks (lint band 45–65 % of items) |
+| Topics | t01 31 items, t02 28, t03 19, t04 7 |
+| Tests | `t_cbse11math_ch09_short` (20 marks / 40 min: A m04 m09 m16 ar1; B s203 s208 s304; C l01 or l04; D c02) and `_long` (40 marks / 90 min: A m02 m03 m05 m06 m07 m10 m14 m17 + ar2 ar3; B s201 s206 [s207 s209] s302 [s306 s307]; C l02 [l05 l06]; D c04 c05), on `cbse-11-default-chapter-test-short/-long`; disjoint, no deck-check item and no t04 item used |
+
+## Verifier record
+Build from `platform/`: `npx tsx content/authored/maths/cbse-11-mathematics-ch09/src/build.mjs` (prints stats and `NO ERRORS`; rebuilding is byte-identical, md5 of `release.json` and `tests.json` checked twice).
+Lint: `npx tsx content/authored/maths/cbse-11-mathematics-ch09/src/lint.mts content/authored/maths/cbse-11-mathematics-ch09` → 0 errors, 0 warnings. `verify-local.mts` (numerical items need an "=" step ending at the key): 73 questions, 0 flags. `dblslash.cjs`: total 0.
+
+- **Re-solve:** 169/169 checks pass (`src/resolve.log`). All values are exact fractions (`fr.mjs`), never floats. Every line is normalised to integer `ax + by + c = 0` and compared as a triple. A point-slope line must contain its point and a second point one step along the slope; a two-point line is built by slope and by the determinant form and both must agree; the intercept form is rebuilt from the intercepts and compared with the two-point line. Parallel and perpendicular are tested by slopes and by coefficients (`a1 b2 - a2 b1`, `a1 a2 + b1 b2`) and the two routes must agree, vertical and horizontal lines included. The angle between lines is `tan(theta)` from the slope formula as an exact fraction, checked against `|cross|/|dot|` of the direction vectors and against `atan2`; inclinations by `atan2` of the direction vector. A distance `|ax0 + by0 + c|/sqrt(a^2 + b^2)` is held as an exact squared fraction and checked by finding the exact foot of the perpendicular (it lies on the line, the segment to it is perpendicular to the line, and its squared length equals the formula); surd answers are rationalised by code (`7 sqrt(10)/10`, `11 sqrt(13)/13`, `16 sqrt(5)/5`). The distance between parallel lines is checked as the distance of an exact point of one line from the other. The normal form has `cos^2 + sin^2 = 1`, `p > 0`, a point of the line satisfying it, and the angle checked by `atan2`. Meeting points are substituted into both lines; area by the shoelace formula agrees with half base times altitude (`l01`, `l06`). Unknown-`k` items (`m04`, `m05`, `m07`, `m08`, `m17`, `n02`, `s203`, `s307`) are checked over ranges of candidate values so that exactly the stated solutions work (for example `k = 8` and `-12/5` and no other multiple of one fifth in `-8..8`). MCQ options are typed independently of the text and compared with the re-solved answer (exactly one must match and it must be the key); distractors are the results of plausible wrong methods (sign slips, reciprocal slopes, swapped intercepts, the perpendicular condition used for parallel, no square root, `a + b` under the root, unmatched coefficients in the parallel-distance formula, `p` left as the constant).
+- **Plots:** 63 marked points, all on a drawn line (the lines are plotted as functions with domains; vertical lines as dashed `vlines`) and matching their labels; where an x-intercept is marked it is the line's only zero (5 zeros located and marked); 5 intersection points lie on both lines. The foot-of-perpendicular figures mark the far point `Q` and the origin `O` as `on_curve: false` (they are not on a line) and join them with a labelled series segment.
+- **KaTeX:** 1,661 maths strings parse in strict mode; no lost backslashes, no LaTeX outside `$…$`, no doubled backslashes.
+- **Narration:** 42 slides, max 78 words, mean 49; numbers in words, no symbols, letter-digit mixes or capitalised abbreviations.
+- **Originality gate:** `npm run content -- originality --authored` reports this unit `ok` (0 errors, 0 warnings). First run flagged six stems (against CBSE 12 ch11 distance between parallel lines, ICSE 10 ch13 parallel/slope stems, and two of this chapter's own distance items); all were reworded.
+- **Originality notes:** ICSE 10 ch13, ICSE 10 ch12 and CBSE 10 ch07 stems were read before writing. None of their points (such as `(2, -3)`, `(6, 5)`, `(-1, -1)`, `(0, -3)`, `A(1, 4)`) or set-ups (medians and altitudes of their triangles, perpendicular bisector, x-axis division ratio, rectangle by slopes) is used; this chapter adds the angle between lines, the distance formulas, lines at a given distance and the normal form. Contexts are imagined: Tarana Fields drone club, laser beams in a school lab, solar-panel rails, a village map with canals, an orchard with irrigation channels.
+
+## Gaps / follow-ups
+- Narration audio not generated (TTS stage).
+- Only 4 d4 items; the board treatment of this chapter is mostly procedural, so the competency share (60 % application or higher) is honest and not padded.
+- Family of lines through the intersection of two lines, area of a triangle by determinant and the shifting of origin are outside the topic list and not covered; the foot of the perpendicular appears only where it has a rational answer.
+- The 9 check slides carry no visual by design (the goals and exam-tips slides likewise).
