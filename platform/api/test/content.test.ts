@@ -234,7 +234,9 @@ describe('DB-6 / F-006 contract: no answers in content or practice GET responses
       }
     }
     expect(scanned).toBeGreaterThan(releases.length * 6);
-  });
+    // The scan grows with the authored bank (~600 chapters by 2026-11-04, about 3 min on the dev machine), so it gets its
+    // own budget instead of the 60 s default; every chapter is still scanned in full.
+  }, 900_000);
 
   it('internal-choice alternatives are served as stems only', async () => {
     const maths = releases.find((r) => r.release.questions.some((q) => q.children.some((c) => c.alternatives.length)))!.release;
