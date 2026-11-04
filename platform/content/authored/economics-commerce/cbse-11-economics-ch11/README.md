@@ -1,0 +1,52 @@
+# CBSE Class 11 Economics, Chapter 11: The Theory of the Firm under Perfect Competition
+
+`cbse-11-economics-ch11` · release v1 · academic year 2026-27 · family `economics-commerce` (Part B: Introductory Microeconomics) · provenance `human`, every item `status: "draft"`
+
+Built from `src/` (`npx tsx content/authored/economics-commerce/cbse-11-economics-ch11/src/build.mjs` from `platform/`). The build validates the schema, runs the pipeline lint and deterministic verify checks, word limits, narration rules, editorial counts and the answer-leak scan, then writes `release.json` and `tests.json`. Edit `src/`, not the JSON. The shared `lib.mjs` and `stats.mjs` are imported from `cbse-11-economics-ch01/src/` and are not copied here.
+
+## Scope
+Syllabus topics t01 to t03. t01: features of perfect competition and the price taker; TR, AR and MR; AR = MR = price (horizontal), TR a straight line from the origin. t02: profit = TR − TC; the two conditions of producer's equilibrium (MR = MC, MC rising); short-run shut-down price (minimum AVC); long-run break-even price (minimum AC) and normal profit. t03: firm supply curve (rising MC above minimum AVC), law of supply, determinants of supply, movement versus shift, market supply as a horizontal sum (and its dependence on the number of firms), price elasticity of supply by the percentage method and its five classes. Not taught: the geometric method, monopoly, monopolistic competition, oligopoly (deleted from the syllabus), market equilibrium and price controls (chapter 12), long-run industry supply.
+
+## Contents
+| File | What |
+|---|---|
+| `release.json` | 2 decks (21 + 22 slides), notes (7 sections), 30 flashcards, 78 questions (139 marks; 4 case-based items with 12 parts) |
+| `tests.json` | short test (20 marks, 40 min, `cbse-11-default-chapter-test-short`) and long test (40 marks, 90 min, `cbse-11-default-chapter-test-long`) |
+| `src/questions.mjs` | revenue, cost, profit, supply and elasticity schedules (with the asserted laws) and the question bank |
+| `src/build.mjs` | SVG figures, tables, decks, notes, flashcards, tests |
+
+- Deck 1 (21 slides, 16 visuals, 4 checks, 2 worked examples): features, price taker, revenue concepts, Sukhdev's wheat farm, TR curve, AR = MR line, profit and conditions, Diya Candles cost schedule, equilibrium at prices 140, 90 (falling MC) and 160, the equilibrium diagram.
+- Deck 2 (22 slides, 18 visuals, 3 checks, 3 worked examples): short-run decision, shut-down price, break-even price, the two points on a graph, Karigar Pottery, firm supply schedule and curve, law of supply, determinants, movement versus shift, market supply from three kilns, fourth kiln and tax, elasticity of supply, its classes.
+- Own SVGs (8, all computed from the schedules, no maps): TR for a price taker at two prices; AR = MR as a horizontal line; MR = MC equilibrium with MC, AC, AVC and the profit rectangle; shut-down and break-even points; the firm's supply curve; market supply summation; movement along versus shift (tax); five classes of elasticity of supply.
+- Questions: mcq 27, assertion-reason 6, true-false 2, fill-blank 2, match 2, ordering 2, numerical 12, short 2-mark 9, short 3-mark 6, long 5-mark 6, case-based 4. Difficulty d1/d2/d3/d4 = 6/23/32/17. Competency: recall 6, understanding 27, application 33, analysis 12 (58% application or above). Topics: t01 22, t02 26, t03 30.
+- Tests (disjoint, no deck-check item, no numerical item). Short: A m_pt, m_loss_short, m_move, ar_mcfall; B s2_ar_mr, s2_supply_curve, s3_eq; C one of l_eq / l_market; D cb_pottery. Long: A m_comp_feat, m_tr_shape, m_cond2, m_shut_price, m_breakeven, m_law, m_shift_tax, m_vertical, ar_ar_mr, ar_shut; B s2_features, s2_shut, one of s2_law / s2_move_shift, s3_tr_curve, one of s3_market / s3_es; C l_features_rev and one of l_shut_be / l_supply; D cb_wheat and cb_kilns.
+- Deck check items (kept out of both tests): n_tr, tf_mr_lt_ar, m_ar_curve, n_eqq (deck 1); n_shut, mt_det, n_es_kiln (deck 2).
+
+## How verified
+- Every figure is computed with `stats.mjs` (`marginal`, `average`, `elasticitySupply`, `rnd`, `check`) from imagined schedules and asserted: Sukhdev's wheat farm (price Rs 2,000 and Rs 2,500 a quintal), Kamla's onion plot (Rs 18 a kg), Diya Candles (TFC 220; TVC 0, 100, 190, 250, 320, 400, 500, 620, 760, 920; MC 100, 90, 60, 70, 80, 100, 120, 140, 160; minimum AVC 80 where MC = AVC at 5 hundred; minimum AC 120 where MC = AC at 7 hundred), Karigar Pottery (TFC 150), three Dhanpur kilns (supply schedules; market 0, 2, 6, 13, 20, 27, 34, 41 thousand bricks at 4000 to 11000 rupees), and five elasticity cases.
+- `revenue()` throws unless AR = price and MR = price at every quantity and TR is a straight line through the origin. `costs()` throws unless MC from TC equals MC from TVC and, for AVC and for AC, the sign of the change in the average equals the sign of (MC − previous average) (MC cuts each at its minimum), and, for Diya Candles, MC equals the minimum AVC and the minimum AC exactly. `equilibrium()` takes the MR = MC output as the largest output with MC at most the price, checks that MC rises after it, checks by TR − TC over every output that at prices at or above the minimum AVC this output has the largest profit of all positive outputs and loses no more than the fixed cost, and that below the minimum AVC it loses more than the fixed cost (so shutting down is better). Supply at a price is that output (zero below the minimum AVC); the market column is summed in code; the tax and subsidy schedules are computed from the market schedule.
+- Build prints `NO ERRORS`, lint 0 errors and 0 warnings; consecutive builds give byte-identical `release.json` and `tests.json`; no `*.wip.json` remains.
+- Near-duplicate scan: 78 stems against 39,328 others, 0 flags; SVG label scan: 8 figures, 0 issues.
+- Not run, as instructed: git, `npm test`, tree-wide gates, e2e. The SVGs were not viewed in a browser; they were checked by the label overflow/overlap scan and by construction from the data.
+
+## Facts for a reviewer
+1. Perfect competition: a large number of buyers and sellers, a homogeneous product, free entry and exit, perfect knowledge. Consequence: each firm is a price taker and can sell any quantity at the market price.
+2. TR = p × q; AR = TR ÷ q = p; MR = ΔTR ÷ Δq (the change in TR from one more unit; with units of 10 kg in the onion plot the item states MR per kg). Under perfect competition AR = MR = p, a horizontal line; TR is a straight line from the origin with slope p.
+3. Profit = TR − TC. Conditions of producer's equilibrium: (1) MR (= price) = MC; (2) MC rising, or not falling, at that output.
+4. Discrete-schedule convention: when price equals MC exactly at an output q, the q-th unit adds nothing to profit, so profit is the same at q − 1 and q and both are maximum. The chapter takes the larger output (the one where MR = MC) as the equilibrium output. This is a property of unit steps; with a smooth curve the maximum is unique.
+5. At price 90 Diya Candles has MC = 90 at 2 hundred but MC is falling there; profit is lower than at 5 hundred, where MC (80) is below the price and the next unit's MC (100) is above it. This illustrates condition (2). For a price that is not an MC value the MR = MC output is taken as the largest output with MC at most the price.
+6. Shut-down price = minimum AVC (short run): below it the loss from producing exceeds the fixed cost, so the firm produces nothing and loses only its fixed cost; at exactly the minimum AVC the two losses are equal (the firm is indifferent; the chapter treats supply as starting at that price). At price 70, MR = MC at 4 hundred satisfies both conditions but operating loses 260, more than the fixed cost 220; the chapter therefore presents the equilibrium conditions together with the comparison with shutting down.
+7. Break-even price = minimum AC (long run): TR = TC, the firm earns normal profit. Between minimum AVC and minimum AC the firm makes a loss but produces in the short run. In the long run a firm whose price stays below minimum AC exits.
+8. Normal profit: the minimum reward that keeps the entrepreneur in the business, counted as part of cost, so TR = TC at normal profit.
+9. Firm's short-run supply curve = the rising part of MC above the minimum AVC. Market supply = horizontal sum of firm supplies at each price; it also depends on the number of firms.
+10. Law of supply: other things unchanged, quantity supplied rises when price rises. Determinants taught: own price, technology, input prices, unit taxes and subsidies, prices of related goods, number of firms (market). A rise in the price of an alternative product shifts supply of this product left (the usual textbook statement).
+11. A change in the good's own price is a movement along the curve (expansion or contraction); a change in another determinant shifts the curve (right = increase in supply, left = decrease in supply).
+12. Unit tax t: at price p sellers keep p − t, so the supply at p is the old supply at p − t (a left shift); a subsidy is the mirror image. Schedules in the chapter are computed this way on the imagined market schedule.
+13. Price elasticity of supply by the percentage method: es = (% change in quantity supplied) ÷ (% change in price), with percentages of the original values; positive for an upward-sloping supply. Classes: es > 1 elastic, es = 1 unit elastic (straight line through the origin), es < 1 inelastic, es = 0 (vertical line), es infinite (horizontal line). The geometric method is not taught; the elasticity graph draws straight lines through the computed pairs of points.
+14. All firms, prices, costs and quantities are imagined (Sukhdev's farm, Kamla's onion plot, Diya Candles, Karigar Pottery, Dhanpur kilns, Lakshmi Looms); no real statistics are used.
+
+## Unsure or to double-check
+- The convention in fact 4 (equal profit at q − 1 and q when price equals MC exactly). Items ask for the "output where MR = MC on the rising part"; if the reviewer prefers a unique maximum, change a price to fall strictly between two MC values.
+- AC for the first hundred candles (320) lies above the vertical scale of the cost graphs and is omitted from the AC curve; the alt text says so. MC is drawn through all points. Curves are straight segments between computed points.
+- In the elasticity figure the line for es greater than one is drawn extended across the chart; no intercept rule is taught.
+- The SVG layouts were not eyeballed in a browser; label placement relies on the overflow/overlap scan only.
