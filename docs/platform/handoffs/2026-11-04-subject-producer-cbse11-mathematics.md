@@ -1,6 +1,6 @@
 # subject-producer — CBSE Class 11 Mathematics (hand-authored) — 2026-11-04
 
-Status: partial — chapters land one commit each after a fully green gate run (table below); this note is updated as they land
+Status: done — all 14 chapters of `cbse-11-mathematics` gated and committed (one commit each, every one written by a Sonnet 5.5 writer and reviewed by the producer; no Opus fallback was needed)
 
 Branch: `platform/subject-producer/cbse-11-mathematics` (from `platform/main` 44dbe07). D-025/D-026/D-050: chapters are written by Sonnet 5.5 sub-agents (at most two at a time); the producer (Opus 5.5) reviews each returned chapter (recomputes a fixed sample of answers by hand, checks scope, removed topics and LaTeX), runs the full gates, fixes or sends back problems and commits. A chapter needing heavy fixing, or two Sonnet chapters in a row failing gates for content reasons, falls back to an Opus writer; the writer of each chapter is recorded below. Provenance `origin: "human"`, all items `status: "draft"`.
 
@@ -24,7 +24,9 @@ New folders only: `platform/content/authored/maths/cbse-11-mathematics-chNN/` wi
 | 10 | Conic Sections | Sonnet 5.5 | 20 + 21 | 29 | 7 | 30 | 73 (144) | 58% | 5c682db |
 | 11 | Introduction to Three-dimensional Geometry | Sonnet 5.5 | 15 + 17 | 24 | 8 | 30 | 69 (134) | 57% | cfc7147 |
 | 12 | Limits and Derivatives | Sonnet 5.5 | 20 + 21 | 31 | 8 | 30 | 75 (143) | 56% | dc85c11 |
-| | **Total (12 chapters)** | | **481 slides** | | | **361** | **859 (1,670)** | | |
+| 13 | Statistics | Sonnet 5.5 | 19 + 20 | 31 | 7 | 30 | 71 (139) | 63% | 9f7fd48 |
+| 14 | Probability | Sonnet 5.5 | 19 + 18 | 27 | 8 | 30 | 68 (138) | 57% | 4ce7e7a |
+| | **Total (14 chapters)** | | **557 slides** | | | **421** | **998 (1,947)** | | |
 
 ## How to verify
 
@@ -35,10 +37,14 @@ From `platform/` in the worktree, wrapped in `_tools/heavy.sh` (gate script `scr
 - Run 5 (2026-11-04 10:40 IST; ch07–ch08, no writer active): catalog valid; content gate 3431 passed; lint 0/0; verify 8 units, 569 questions, 0 blocking, 0 minor; originality 490 units, 0 errors; DB-6 8/8; API 13/13. Producer review samples recomputed by hand, all correct (ch07 coefficient 2160, term 560x⁵, all six terms of (a/2 − 2b)⁵; ch08 a₅ = 14, sixth GP term 2/3, AP with d = 7, S₂₀ = 1310, least n = 18). Producer fix in ch07 before gating: q058's model answer contained `\\left(\\dfrac…` (doubled backslashes from a raw/normal template mix), which KaTeX accepts but renders as a line break plus the word "left"; fixed in the source and rebuilt. A new scan (scratchpad dblslash.cjs) over every maths release in the bank found no other case.
 - Run 6 (2026-11-04 18:41 IST; ch09–ch10, no writer active): catalog valid; content gate 3445 passed; lint 0/0; verify 10 units, 715 questions, 0 blocking, 0 minor; originality 492 units, 0 errors; DB-6 8/8; API 13/13; doubled-backslash scan total 0. Producer review samples recomputed by hand, all correct (ch09 slope −3/2, 3x + 4y − 16 = 0, normal form p = 2, altitude foot (26/5, 7/5) and area 32; ch10 directrix y = 5, k = −8, x²/64 + y²/289 = 1, centre (−3, 6), r = 7, chord 2√13). ch10 reuses two teaching curves (x²/25 + y²/9 and 9x² + 16y² = 144) that also occur in CBSE 12 / ISC 12 area chapters; disclosed in its README; no stem overlaps.
 - Run 7 (2026-11-04 19:40 IST; ch11–ch12, both writers finished before the run; ch13 not yet built): catalog valid; content gate 3459 passed; lint 0/0; verify 12 units, 859 questions, 0 blocking, 0 minor; originality 494 units, 0 errors; DB-6 8/8; API 13/13. Producer review samples recomputed by hand, all correct (ch11 distance 11, section point (2, 0, 1), box diagonal 5√2 and octant IV; ch12 limit 21, f′(2) = 22, rational limits 3 and 40/13, removable limits 2 and 3). ch11 and ch12 writers were cut off by a session limit and resumed with their own context.
+- Run 8 — final (2026-11-04 20:37 IST; all 14 chapters in the tree, no writer active): catalog valid; content gate 3473 passed; lint 0/0 for every CBSE 11 Mathematics unit; verify 14 units, 998 questions, 0 blocking, 0 minor; originality 496 units, 0 errors; DB-6 8/8; API 13/13; doubled-backslash scan total 0 across every maths release. Producer review samples for ch13–ch14 recomputed by hand, all correct (ch13 mean deviation 7.6, 6.75 about the mean vs 6.5 about the median; ch14 16 events of a four-outcome space, ⁵C₂ = 10, P(A ∩ B) = 0.22, two-dice union 1/2 by the addition theorem and by counting).
 
 ## Scope decisions
 
 - Topics follow `catalog/cbse/11/mathematics/syllabus.yaml` (2026–27 rationalised); the subject's removed topics (Mathematical Induction formative only; Mathematical Reasoning deleted) appear at most as one note; topics marked `board_assessed: false` are taught lightly and noted in the chapter README.
+- Topics marked `board_assessed: false` in the syllabus (e.g. ch01 t04, ch02 t05 composition, ch03 t04 general solutions, ch04 t03 polar form, ch05 t02 two-variable inequalities, ch07 t02 general and middle terms, ch08 t04 sums of powers, ch09 t04 normal form, ch11 t03 section formula, ch12 t04 chain rule, ch14 t03 sample spaces) are taught lightly, flagged formative on slides and notes, and kept out of compulsory test slots.
+- Points for a reviewer (chapter READMEs list them): ch07 history table uses hedged dates; ch10 reuses two teaching curves that also appear in CBSE 12 / ISC 12 area chapters (no stem overlap); ch13 uses divisor n for variance and estimates mean deviation about the median for grouped data from class marks.
+- Provenance: the shared lib stamps `author: claude-opus-5-5 (subject-producer)` on items; ch02's build overrides it to the Sonnet writer. The writer column in the table above is the authoritative record of who wrote each chapter.
 - Tests use the class defaults `cbse-11-default-chapter-test-short/-long` (the subject has only annual and half-yearly blueprints).
 - Originality (D-036): fresh set-ups, content-specific stems; checked by the repo gate against the whole bank.
 
