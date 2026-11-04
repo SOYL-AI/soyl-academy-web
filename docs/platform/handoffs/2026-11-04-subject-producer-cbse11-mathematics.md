@@ -16,13 +16,16 @@ New folders only: `platform/content/authored/maths/cbse-11-mathematics-chNN/` wi
 | 02 | Relations and Functions | Sonnet 5.5 | 20 + 24 | 32 | 8 | 30 | 76 (141) | 55% | 53a245d |
 | 03 | Trigonometric Functions | Sonnet 5.5 | 25 + 22 | 33 | 8 | 30 | 77 (145) | 62% | 2cc6254 |
 | 04 | Complex Numbers and Quadratic Equations | Sonnet 5.5 | 20 + 19 | 27 | 7 | 30 | 65 (123) | 55% | 6c16c4b |
-| | **Total (4 chapters)** | | **172 slides** | | | **120** | **290 (549)** | | |
+| 05 | Linear Inequalities | Sonnet 5.5 | 18 + 18 | 26 | 7 | 31 | 68 (138) | 57% | d3e5430 |
+| 06 | Permutations and Combinations | Sonnet 5.5 | 19 + 20 | 26 | 7 | 30 | 69 (137) | 55% | f3e5e5d |
+| | **Total (6 chapters)** | | **247 slides** | | | **181** | **427 (824)** | | |
 
 ## How to verify
 
 From `platform/` in the worktree, wrapped in `_tools/heavy.sh` (gate script `scratchpad/cbse11-maths/gates.sh`; logs `C:/Users/Prabhu/soyl-wt/cbse11-maths-gates*.log`): `npm run content -- catalog`, `npm test -w @soyl/content-templates`, `npm run content -- lint --exemplars`, `npm run content -- verify --board cbse --class 11 --subject mathematics --authored`, `npm run content -- originality --authored` (whole bank, incl. CBSE 10/12, ISC 12 and ICSE 10 Mathematics), `npx vitest run --root db test/db6-split.test.ts`, `npx vitest run --root api test/content.test.ts`.
 
 - Runs 1–3 (2026-11-04 00:31, 01:20 and 09:35 IST; ch01–ch04). Runs 1–2 failed only the API every-chapter leak scan: in run 1 it overlapped writers still building ch03/ch04 (this lib writes release.json even when its build fails), and in run 2 the scan timed out at 60 s (fixed on main by 852ea29, which gives it a 900 s budget; merged into this branch). Run 3, after the merge and with no writer active: catalog valid; content gate 3403 passed; lint 0/0; verify 4 units, 290 questions, 0 blocking, 0 minor; originality 486 units, 0 errors; DB-6 8/8; API 13/13. Producer review samples recomputed by hand, all correct (ch01 A − B, 2³ subsets, De Morgan; ch02 domain, n(A × B) = 30, pair equality; ch03 period of |sin x|, conversions, arc 628 m; ch04 z = 2 − 2i, quotient and product). From here on gate runs start only when no writer is mid-build.
+- Run 4 (2026-11-04 10:06 IST; ch05–ch06, no writer active): catalog valid; content gate 3417 passed; lint 0/0; verify 6 units, 427 questions, 0 blocking, 0 minor; originality 488 units, 0 errors; DB-6 8/8; API 13/13. Producer review samples recomputed by hand, all correct (ch05 largest integer 13, integer sum −15, [5, 26] with 22 integers; ch06 ¹²C₄ = 495, 180 even numbers, 9000 / 4536 / 2296 / 952).
 
 ## Scope decisions
 
