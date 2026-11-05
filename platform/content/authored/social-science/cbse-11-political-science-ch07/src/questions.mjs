@@ -455,7 +455,7 @@ Q('s3_autonomy', short({
   t: 2, d: 3, c: 'analysis', marks: 3, wl: S3,
   stem: 'Explain, in general terms, why some states have demanded more autonomy and why others stress a strong centre.',
   model: 'Some states have asked for a **larger share of revenue**, **less interference** and the right to **their own priorities**, because they say they know local needs best. Others point out that a **strong centre protects unity**, sets **common standards** and helps **poorer regions** through transfers. Students should weigh both views with reasons.',
-  sol: 'Both views, in general terms.',
+  sol: 'Both views, each with its reasons.',
   scheme: [['Reasons for the demand for autonomy', 1], ['Reasons for a strong centre', 1], ['Both views are presented without taking sides', 1]],
 }));
 

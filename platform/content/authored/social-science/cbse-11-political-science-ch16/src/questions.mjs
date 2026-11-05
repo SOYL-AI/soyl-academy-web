@@ -339,7 +339,7 @@ Q('s_oblig', short({
 }));
 Q('s_apartheid', short({
   t: 1, d: 3, c: 'understanding', marks: 2, wl: S2,
-  stem: 'In general terms, how does the struggle against apartheid in South Africa illustrate the demand for equal citizenship?',
+  stem: 'How does the struggle against apartheid in South Africa illustrate the demand for equal citizenship?',
   model: 'Under **apartheid**, most people were denied equal rights by a system of racial discrimination. Their struggle demanded **full and equal citizenship**. Apartheid ended in the early 1990s, and the first **democratic election** was held in 1994.',
   sol: 'Denial of equality, the struggle, and dates.',
   scheme: [['Apartheid denied equal rights through racial discrimination, and the struggle demanded equal citizenship', 1], ['Ended in the early 1990s; first democratic election in 1994', 1]],
@@ -448,7 +448,7 @@ Q('l_marshall', long({
 }));
 Q('l_struggles', long({
   t: 1, d: 3, c: 'understanding', marks: 5, wl: L5,
-  stem: 'Describe, in general terms, struggles in history and in India for equal citizenship.',
+  stem: 'Describe struggles in history and in India for equal citizenship.',
   model: '1. The **French Revolution** of 1789 stressed that people are citizens with equal rights, not subjects ranked by birth.\n2. In **South Africa**, the struggle against apartheid, which denied equality by racial discrimination, led to its end in the early 1990s.\n3. The first **democratic election** there was held in 1994.\n4. In India, **women\'s movements** demanded equal rights.\n5. Movements of **Dalits** sought equal treatment and dignity as full citizens.',
   sol: 'Four struggles, with dates.',
   scheme: [['French Revolution 1789 and equal rights', 1], ['South Africa, apartheid denied equality', 1], ['End in the early 1990s; election in 1994', 1], ['Women\'s movements in India', 1], ['Dalit movements in India', 1]],
