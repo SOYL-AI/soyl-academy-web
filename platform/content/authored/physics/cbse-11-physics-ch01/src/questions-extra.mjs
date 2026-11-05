@@ -127,7 +127,7 @@ add('wave-num', num({
   ...NV(wv.v, 3), unit: 'm s⁻¹',
   sol: r`$v = \sqrt{\dfrac{F}{\mu}} = \sqrt{\dfrac{1.80 \times 10^{2}}{2.00 \times 10^{-2}}} = \sqrt{${sf(wv.F / wv.mu, 3)}} \approx ${dec(wv.v, 3)}$ m s$^{-1}$.`,
   scheme: [['Substitute F and μ', 1]],
-  marks: 1, d: 2, c: 'understanding', t: [3],
+  marks: 1, d: 2, c: 'application', t: [3],
 }), (q) => near(Math.sqrt(1.8e2 / 2e-2), q.answer.value, 0.01) || 'wave');
 
 // ---- short answers

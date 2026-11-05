@@ -66,6 +66,9 @@ Every question, case part and alternative was re-solved from its stem against th
 ### Subject-producer review (2026-11-04)
 Every item, case part and alternative was re-solved by the subject-producer (Opus 5.5) from the built bank: all keys, numbers, marking schemes and assertion-reason keys (a c b d a c) check out; no changes were needed. Writer: Sonnet 5.5 chapter sub-agent under D-050.
 
+### Competency tags corrected (2026-11-05)
+Under the team-wide rule that tags must describe the item honestly, the subject-producer retagged seven numericals that the writer had labelled "understanding" to "application" (comet-num, pct-num, vol-num, tile-num, speed-sf-num, relerr-num, wave-num). Application or higher is now 64% of items (76% of marks), inside the 45–65% band; no item text changed.
+
 ## Known gaps
 - No answer asks students to draw; the log scale of lengths shows typical sizes only and the T²–l graph is a computed line, not measured data.
 - Rounding uses the NCERT "make the last kept digit even" rule for an exact 5; teachers who round every 5 up will see 5.365 → 5.37, and item q024 states the rule it uses.

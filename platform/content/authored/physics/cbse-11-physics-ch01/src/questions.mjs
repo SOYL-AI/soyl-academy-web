@@ -90,7 +90,7 @@ add('comet-num', num({
   ...NV(comet.au, 3), unit: 'AU',
   sol: r`$\dfrac{6.00 \times 10^{12}}{1.496 \times 10^{11}} \approx ${dec(comet.au, 3)}$ AU.`,
   scheme: [['Divide by the length of 1 AU', 1]],
-  marks: 1, d: 1, c: 'understanding', t: [1],
+  marks: 1, d: 1, c: 'application', t: [1],
 }), (q) => near(6.0e12 / 1.496e11, q.answer.value, 0.01) || 'comet');
 const srr = { A: 3.0, R: 1.5 };
 srr.sr = srr.A / srr.R ** 2;
@@ -284,7 +284,7 @@ add('pct-num', num({
   ...NV(cl.pct, 3), unit: '%',
   sol: r`Percentage error $= \dfrac{\Delta l}{l} \times 100 = \dfrac{0.06}{8.45} \times 100 \approx ${dec(cl.pct, 3)}\ \%$.`,
   scheme: [['Relative error = Δl/l', 1]],
-  marks: 1, d: 1, c: 'understanding', t: [2],
+  marks: 1, d: 1, c: 'application', t: [2],
 }), (q) => near(0.06 / 8.45 * 100, q.answer.value, 0.01) || 'pct');
 const pw = { V: 220, dV: 4, R: 48, dR: 1 };
 pw.rel = (2 * pw.dV) / pw.V + pw.dR / pw.R;
@@ -324,7 +324,7 @@ add('vol-num', num({
   ...NV(bv.pct, 3), unit: '%',
   sol: r`$V = \tfrac{4}{3}\pi r^3$, so $\dfrac{\Delta V}{V} = 3\dfrac{\Delta r}{r} = 3 \times \dfrac{0.05}{3.50} = ${dec(bv.pct / 100, 3)}$. Percentage error $= ${dec(bv.pct / 100, 3)} \times 100 = ${dec(bv.pct, 3)}$ %.`,
   scheme: [['Power rule: factor 3 for r³', 1]],
-  marks: 1, d: 2, c: 'understanding', t: [2],
+  marks: 1, d: 2, c: 'application', t: [2],
 }), (q) => near(3 * 0.05 / 3.5 * 100, q.answer.value, 0.01) || 'vol');
 const tl = { a: 59.6, b: 29.8 };
 tl.area = tl.a * tl.b;
@@ -333,7 +333,7 @@ add('tile-num', num({
   ...NV(tl.area / 1e3, 3), unit: '× 10³ cm²',
   sol: r`$59.6 \times 29.8 = ${dec(tl.area, 6)}$ cm$^2$. Both factors have 3 significant figures, so the area is $${dec(tl.area / 1e3, 3)} \times 10^{3}$ cm$^2$. In units of $10^{3}$ cm$^2$: $A = ${dec(tl.area / 1e3, 3)}$.`,
   scheme: [['Multiply the two lengths', 1]],
-  marks: 1, d: 2, c: 'understanding', t: [2],
+  marks: 1, d: 2, c: 'application', t: [2],
 }), (q) => near(59.6 * 29.8 / 1e3, q.answer.value, 0.01) || 'tile');
 const sp = { s: 100.0, t: 11.2 };
 sp.v = sp.s / sp.t;
@@ -342,7 +342,7 @@ add('speed-sf-num', num({
   ...NV(sp.v, 4, 0.002), unit: 'm s⁻¹',
   sol: r`$v = \dfrac{100.0}{11.20} = ${dec(sp.v, 7)}$ m s$^{-1}$. Both data have 4 significant figures, so $v \approx ${dec(sp.v, 4)}$ m s$^{-1}$.`,
   scheme: [['Divide distance by time', 1]],
-  marks: 1, d: 1, c: 'understanding', t: [2],
+  marks: 1, d: 1, c: 'application', t: [2],
 }), (q) => near(100 / 11.2, q.answer.value, 0.005) || 'speed');
 const lc = { lc: 0.01, d: 0.5 };
 lc.pct = (lc.lc / lc.d) * 100;
@@ -351,7 +351,7 @@ add('relerr-num', num({
   ...NV(lc.pct, 2), unit: '%',
   sol: r`The error can be as large as one least count: $\dfrac{0.01}{0.50} \times 100 = ${dec(lc.pct, 2)}\ \%$, so $\approx ${dec(lc.pct, 2)}\ \%$.`,
   scheme: [['Take Δd = least count 0.01 mm', 1]],
-  marks: 1, d: 1, c: 'understanding', t: [2],
+  marks: 1, d: 1, c: 'application', t: [2],
 }), (q) => near(0.01 / 0.5 * 100, q.answer.value, 0.01) || 'relerr');
 
 const zs = { a: '0.0207', b: '5.00', c: '4300' };
