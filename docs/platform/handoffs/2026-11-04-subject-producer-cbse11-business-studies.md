@@ -66,7 +66,7 @@ To rebuild a chapter, run `npx tsx content/authored/economics-commerce/cbse-11-b
 |---|---|---|---|
 | g1 | 2026-11-04 20:54 | ch01–04 | fully green. ch01 and ch02 committed; ch03 and ch04 had changed during the run, so they were not committed. |
 | g2 | 2026-11-05 00:47 | ch01–05 | everything green except the API content test, which failed to load and skipped all 13 tests. Run alone, it passed 13/13. Treated as transient; nothing was committed on g2. |
-| g3 | 2026-11-05 (see commit) | ch01–10, after merging main and the review fixes | → ch03–ch10 |
+| g3 | 2026-11-05 08:15 | ch01–10, after merging main and the review fixes | templates 4159, catalog 0/0, lint 0/0, verify 10 units 769 q 0 blocking, originality 594 units 0 errors, db6 8/8, api 13/13 → ch03–ch10 |
 
 ## Review (Opus): fixes and checks
 - **Assertion-reason verdicts:** checked every one against its A and R statements; all correct.
