@@ -51,3 +51,10 @@ Every item re-answered from its stem; every factual claim checked against the ex
 ## Known gaps
 - No n-gram check against the actual extract (reference texts are not supplied to `catalog/sources/reference/`); the reproduction review was manual. A human reviewer with the textbook should run the checklist above.
 - The diary's textual history (Anne's own revisions, the different editions) is not taught; the chapter uses the NCERT extract as given.
+
+## Competency audit 2026-11-05
+
+Remediation of the content-verifier audit `docs/platform/content-qa/2026-11-05-competency-retag-audit.md`. Retagged honestly; no question text, key, solution or marking scheme changed, and the chapter stays inside its band, so no items needed upgrading:
+- `q023` (how Anne and Mrs Kuperus parted, and what it shows) analysis → understanding: the parting is literal and the warm bond is stated.
+
+Now: recall 15 · understanding 17 · application 4 · analysis 24 · evaluation 3; application or higher **49.2% of items (63% of marks)**, inside the 45–65% band. This supersedes the competency figures above.

@@ -201,7 +201,7 @@ Q('sb_school_years', short({
   sol: 'Montessori nursery school until six + first form + Mrs Kuperus in the sixth form.',
 }));
 Q('sb_kuperus', short({
-  ...SA2, t: [1, 3], d: 3, c: 'analysis',
+  ...SA2, t: [1, 3], d: 3, c: 'understanding',
   stem: 'How did Anne and Mrs Kuperus part at the end of the school year, and what does it show? Answer in 30–40 words.',
   model: 'At the end of that school year, Anne and Mrs Kuperus parted in tears. The scene shows how warm the bond between pupil and headmistress had become, and it reveals Anne\'s sensitive, loving nature beneath her chatter.',
   sol: 'What happened (a tearful farewell) + what it shows (a close bond; Anne\'s sensitivity).',
