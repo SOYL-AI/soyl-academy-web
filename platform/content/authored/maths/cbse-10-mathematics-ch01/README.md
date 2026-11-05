@@ -53,3 +53,10 @@ Rewritten in `src/questions.mjs` (then rebuilt) because `originality --authored`
 Board papers need recall/understanding written items (CBSE design: Standard 54/24/22, Basic 75/15/10 per cent of marks), and the bank had tagged almost every routine written answer as application or higher. Every short, long, numerical and case item was re-read against what it actually asks. A routine, textbook-standard procedure on given data (find the HCF by prime factorisation, solve a given pair, find a term, compute a mean, a sector area, a single right triangle) is now **understanding**; word problems that need modelling, multi-step or non-routine reasoning, error analysis and justification keep application / analysis / evaluation. 6 item tag(s) and 6 case-part tag(s) changed (case items whose parts are now mostly recall/understanding carry `understanding` at the top level). No question text, key, solution or marking scheme changed.
 
 Added (appended, so earlier ids are unchanged; each has its re-solve check): `q_cbse10math_ch01_071` short-3, `q_cbse10math_ch01_072` short-3, `q_cbse10math_ch01_073` long, `q_cbse10math_ch01_074` long, `q_cbse10math_ch01_075` long.
+
+## Competency audit 2026-11-05
+
+Remediation of the content-verifier audit `docs/platform/content-qa/2026-11-05-competency-retag-audit.md`. Retagged honestly; no question text, key, solution or marking scheme changed, and the chapter stays inside its band, so no items needed upgrading:
+- `q002` (which of 6ⁿ, 15ⁿ, 20ⁿ, 21ⁿ always ends in 0) application → understanding: 20 is a multiple of 10, a one-step check; `q027` (HCF(a, b) = a ⇒ LCM(a, b) = b) analysis → understanding: a one-step inference from the definition. `q045` was already understanding after the 2026-10-27 audit.
+
+Now: recall 9 · understanding 40 · application 12 · analysis 10 · evaluation 4; application or higher **34.7% of items (46% of marks)**, inside this subject’s 20–65% band (D-035). This supersedes the competency figures above.
