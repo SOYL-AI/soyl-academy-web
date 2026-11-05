@@ -61,3 +61,10 @@ Every item re-answered from its stem; every factual claim checked against the st
 ## Known gaps
 - No n-gram check against the actual stories (reference texts are not supplied to `catalog/sources/reference/`); the reproduction review was manual. A human reviewer with the textbook should run the checklist above.
 - Small plot details not used because they could not be confirmed with certainty without the text (the exact time of night, the radio heading given by Paris Control, the amount of fuel left in minutes).
+
+## Competency audit 2026-11-05
+
+Remediation of the content-verifier audit `docs/platform/content-qa/2026-11-05-competency-retag-audit.md`. Retagged honestly; no question text, key, solution or marking scheme changed, and the chapter stays inside its band, so no items needed upgrading:
+- `q053` (the cross-story fill-blank: saved by his mother / by a black aeroplane) analysis → recall: two plot facts, not a comparison. `q042` (the pilot’s decision as an inference) was confirmed honest and keeps analysis.
+
+Now: recall 17 · understanding 17 · application 4 · analysis 22 · evaluation 6; application or higher **48.5% of items (64% of marks)**, inside the 45–65% band. This supersedes the competency figures above.
