@@ -202,24 +202,24 @@ add('protein-short3', short({
   d: 3, c: 'application', t: [2],
 }));
 add('protein-long', long({
-  stem: '(a) Show, with an equation, the formation of the dipeptide glycylalanine, and name the bond formed. [2]\n\n(b) Define the primary, secondary, tertiary and quaternary structures of proteins. [2]\n\n(c) Classify keratin and insulin as fibrous or globular proteins. [1]',
-  model: r`(a) $\ce{H2NCH2COOH + H2NCH(CH3)COOH -> H2NCH2CONHCH(CH3)COOH + H2O}$; the –CO–NH– link is a peptide (amide) bond.
+  stem: 'A tripeptide Q contains one residue each of glycine ($M = 75$), leucine ($M = 131$) and phenylalanine ($M = 165$).\n\n(a) How many different tripeptides could contain one residue of each of these three amino acids? [1]\n\n(b) Partial hydrolysis of Q gives only the dipeptides Phe–Gly and Gly–Leu (written N-terminal first). Deduce the sequence of Q and name its N-terminal and C-terminal residues. [2]\n\n(c) Calculate the molar mass of Q. [2]',
+  model: r`(a) $3 \times 2 \times 1 = 6$ sequences.
 
-(b) Primary: sequence of amino acids. Secondary: α-helix or β-pleated sheet held by hydrogen bonds. Tertiary: overall three-dimensional folding of one chain. Quaternary: arrangement of two or more subunits.
+(b) Phe–Gly and Gly–Leu overlap at glycine, so the sequence is Phe–Gly–Leu. The N-terminal residue is phenylalanine (it is the first residue in Phe–Gly, with a free –NH₂ group) and the C-terminal residue is leucine (the last in Gly–Leu, with a free –COOH group).
 
-(c) Keratin: fibrous. Insulin: globular.`,
-  sol: 'Equation; four definitions; classification.',
-  scheme: [['(a) equation', 1], ['(a) bond named', 1], ['(b) primary and secondary', 1], ['(b) tertiary and quaternary', 1], ['(c)', 1]],
-  d: 2, c: 'understanding', t: [2],
+(c) Two peptide bonds release two $\ce{H2O}$: $M = 165 + 75 + 131 - 2 \times 18 = 335\ \text{g mol}^{-1}$.`,
+  sol: '6; Phe–Gly–Leu; 335.',
+  scheme: [['(a) 6', 1], ['(b) sequence Phe–Gly–Leu', 1], ['(b) N-terminal Phe, C-terminal Leu', 1], ['(c) two water molecules lost', 1], ['(c) 335', 1]],
+  d: 3, c: 'application', t: [2],
 }));
 
 // ---------------------------------------------------------------- t03 denaturation, enzymes, hormones
 add('alcohol-mcq', mcq({
-  stem: 'A 70% ethanol hand rub kills bacteria by denaturing their proteins. During this denaturation, which bonds remain intact?',
-  right: 'The peptide bonds of the polypeptide chains',
-  wrong: ['The hydrogen bonds holding the α-helices', 'The interactions that maintain the tertiary folding', 'The attractions between protein subunits'],
-  sol: 'Denaturation leaves the primary structure intact — option (@K).',
-  d: 2, c: 'application', t: [3],
+  stem: 'A small soluble protein made of a single polypeptide chain, with no other groups attached, is heated in water; it separates as an insoluble white solid. Analysis shows that the solid has the same molar mass as the original protein and gives the same amino acids, in the same proportions, on complete hydrolysis. Which conclusion is correct?',
+  right: 'The primary structure is unchanged; the loss of solubility comes from loss of the secondary and tertiary folding',
+  wrong: ['The primary structure has been broken, because the protein can no longer dissolve', 'Only the quaternary structure has been lost, because heat separates the subunits', 'Only the secondary structure is lost, because the tertiary folding is held by covalent bonds that heat cannot break'],
+  sol: 'Unchanged molar mass and unchanged amino-acid composition show that no peptide bond was broken, so the sequence (primary structure) is intact. Insolubility shows that the folded shape is lost: heat breaks hydrogen bonds and other weak interactions, so both secondary and tertiary structure are lost. The protein is a single chain, so it has no quaternary structure — option (@K).',
+  d: 3, c: 'application', t: [3],
 }));
 add('heavymetal-mcq', mcq({
   stem: 'A person who has swallowed a solution of a mercury(II) salt is quickly given milk or raw egg white to drink. This first-aid measure works because:',
@@ -229,11 +229,11 @@ add('heavymetal-mcq', mcq({
   d: 3, c: 'analysis', t: [3],
 }));
 add('urease-mcq', mcq({
-  stem: 'Urease catalyses the hydrolysis of urea to ammonia and carbon dioxide but has no effect on its close relative methylurea. This shows that enzymes are:',
-  right: 'highly specific in their action',
-  wrong: ['used up in the reactions they catalyse', 'active only at high temperatures', 'non-protein catalysts'],
-  sol: 'Each enzyme acts on a particular substrate — option (@K).',
-  d: 2, c: 'application', t: [3],
+  stem: 'The activity of an enzyme from a hot-spring bacterium, in arbitrary units, is 12 at 30 °C, 40 at 50 °C, 88 at 70 °C, 100 at 80 °C, 20 at 90 °C and 0 at 100 °C. A sample held at 100 °C and then cooled to 80 °C still shows zero activity. Which interpretation fits all the readings?',
+  right: 'The optimum is near 80 °C, and heating well above it denatures the enzyme irreversibly',
+  wrong: ['The enzyme is not a protein, since a protein would be denatured below 80 °C', 'The fall above 80 °C is reversible, so cooling to 80 °C should have restored the activity', 'The optimum is 30 °C, the mildest temperature tested, because enzymes work best in mild conditions'],
+  sol: 'Activity rises to a maximum at 80 °C and then falls sharply: that is the optimum. Because activity does not return when the sample is cooled, the loss is permanent, which is denaturation of the protein (loss of the shape of the active site). Enzymes from hot springs are proteins whose folding is stable at these temperatures — option (@K).',
+  d: 3, c: 'application', t: [3],
 }));
 add('pepsin-mcq', mcq({
   stem: 'Pepsin, which works in the acidic conditions of the stomach, catalyses the:',
@@ -243,18 +243,18 @@ add('pepsin-mcq', mcq({
   d: 1, c: 'recall', t: [3],
 }));
 add('glucagon-mcq', mcq({
-  stem: 'Several hours after a meal, blood glucose begins to fall and the pancreas releases glucagon. Glucagon acts by:',
-  right: 'promoting the breakdown of liver glycogen, raising blood glucose',
-  wrong: ['converting blood glucose into glycogen, lowering blood glucose', 'increasing the absorption of iodine by the thyroid', 'catalysing the hydrolysis of sucrose in the gut'],
-  sol: 'Glucagon opposes insulin — option (@K).',
-  d: 2, c: 'application', t: [3],
+  stem: 'A diabetic patient takes her usual dose of insulin but skips lunch. An hour later she is sweating, shaky and confused. Which statement gives the correct cause and emergency treatment?',
+  right: 'Her blood glucose has fallen too low; an injection of glucagon would raise it by breaking down liver glycogen',
+  wrong: ['Her blood glucose is too high; a second dose of insulin would lower it', 'Her blood glucose has fallen too low; a further dose of insulin would raise it by breaking down liver glycogen', 'Her blood glucose is too high; an injection of glucagon would store the excess as glycogen'],
+  sol: 'Insulin lowers blood glucose; with no meal to supply glucose, the usual dose has made it too low. Glucagon opposes insulin and raises glucose by breaking down glycogen in the liver, so it is the emergency treatment; more insulin would worsen the fall — option (@K).',
+  d: 3, c: 'application', t: [3],
 }));
 add('adrenaline-mcq', mcq({
   stem: 'A student suddenly sees a snake on the path; her heart races and her blood glucose rises within seconds. The hormone mainly responsible is:',
   right: 'adrenaline',
   wrong: ['insulin', 'thyroxine', 'testosterone'],
   sol: 'Adrenaline prepares the body for emergency — option (@K).',
-  d: 2, c: 'application', t: [3],
+  d: 2, c: 'understanding', t: [3],
 }));
 add('enzyme-tf', tf({
   stem: 'An enzyme molecule is used up in the reaction it catalyses and must be replaced after each reaction.',
@@ -308,15 +308,15 @@ add('enzyme-short3', short({
   d: 4, c: 'analysis', t: [3],
 }));
 add('denat-long', long({
-  stem: '(a) What is meant by denaturation of a protein? Name two agents that cause it. [2]\n\n(b) Which level of protein structure is unaffected by denaturation, and why? [1]\n\n(c) What are enzymes? State two characteristics and name one enzyme with its reaction. [2]',
-  model: r`(a) Loss of the secondary and tertiary (and quaternary) structure of a protein, with loss of biological activity, when hydrogen bonds and other interactions are broken. Agents: heat, change of pH (acid or alkali), alcohol, heavy-metal ions (any two).
+  stem: 'A globular enzyme E is a single polypeptide chain held in shape by hydrogen bonds, other weak interactions and several disulfide (S–S) bridges. Three separate samples are treated: (P) heated at 90 °C for ten minutes; (Q) treated with a reagent that breaks only the S–S bridges; (R) boiled with concentrated hydrochloric acid for 24 hours.\n\n(a) For each treatment, state which of the primary, secondary and tertiary structures are lost, giving a reason. [3]\n\n(b) Which sample would show free amino acids on analysis, and which two keep the amino-acid sequence intact? [1]\n\n(c) Predict whether the enzyme keeps its activity after P and after Q, giving one reason that applies to both. [1]',
+  model: r`(a) P: the secondary and tertiary structures are lost, because heat breaks the hydrogen bonds and other weak interactions that hold the folds; the primary structure is intact because no covalent peptide bond breaks. Q: the tertiary structure is lost, because the S–S bridges hold the chain in its folded shape; the primary structure is intact, and the hydrogen-bonded secondary structure is not directly affected. R: all levels are lost, because hot concentrated acid hydrolyses the peptide bonds, destroying the primary structure and hence the folding.
 
-(b) The primary structure: denaturation does not break the covalent peptide bonds, so the amino-acid sequence is unchanged.
+(b) R gives free amino acids; P and Q keep the sequence intact.
 
-(c) Enzymes are biological catalysts, mostly globular proteins. They are highly specific and work best at an optimum temperature and pH. Urease: $\ce{NH2CONH2 + H2O -> 2NH3 + CO2}$.`,
-  sol: 'Definition and agents; primary structure; enzymes.',
-  scheme: [['(a) definition', 1], ['(a) two agents', 1], ['(b)', 1], ['(c) definition and characteristics', 1], ['(c) example', 1]],
-  d: 2, c: 'understanding', t: [3],
+(c) The enzyme loses its activity in both P and Q: its active site depends on the tertiary folding, which is destroyed in each case.`,
+  sol: 'P: secondary and tertiary; Q: tertiary only; R: all; activity lost after P and Q.',
+  scheme: [['(a) P with reason', 1], ['(a) Q with reason', 1], ['(a) R with reason', 1], ['(b)', 1], ['(c)', 1]],
+  d: 3, c: 'application', t: [3],
 }));
 
 // ---------------------------------------------------------------- t04 vitamins
@@ -328,25 +328,25 @@ add('vitgroup-mcq', mcq({
   d: 1, c: 'recall', t: [4],
 }));
 add('night-mcq', mcq({
-  stem: 'A child whose diet lacks milk, carrots and green vegetables finds it hard to see in dim light, and her eyes become dry. The vitamin most likely lacking is:',
-  right: 'vitamin A',
-  wrong: ['vitamin B₁', 'vitamin D', 'vitamin K'],
-  sol: 'Night blindness and xerophthalmia — option (@K).',
-  d: 2, c: 'application', t: [4],
+  stem: 'After months on an almost fat-free diet prescribed following gall-bladder surgery, a patient has difficulty seeing in dim light and cuts that are slow to stop bleeding. Which statement best explains both symptoms?',
+  right: 'Poor absorption of fats has reduced the supply of the fat-soluble vitamins A and K',
+  wrong: ['Vitamins A and K are water-soluble and are being lost in the urine', 'A lack of vitamin B₁ affects both vision and blood clotting', 'A lack of vitamin D has reduced the absorption of calcium, which impairs both vision and clotting'],
+  sol: 'Dim-light vision points to vitamin A and slow clotting to vitamin K; both are fat-soluble and are absorbed with dietary fat, so a fat-free diet with reduced fat absorption leaves both deficient. Vitamins A and K are not water-soluble, and B₁ and D do not explain these two symptoms — option (@K).',
+  d: 3, c: 'application', t: [4],
 }));
 add('clot-mcq', mcq({
-  stem: 'Before an operation, a patient whose cuts take unusually long to stop bleeding is given a vitamin injection. The vitamin is most likely:',
-  right: 'vitamin K',
-  wrong: ['vitamin C', 'vitamin E', 'vitamin B₆'],
-  sol: 'Vitamin K is needed for blood clotting — option (@K).',
-  d: 2, c: 'application', t: [4],
+  stem: 'A patient’s gums bleed and small cuts take unusually long to stop bleeding. Her diet has no fresh fruit and no green vegetables. The doctor prescribes one vitamin for the gums and another for the clotting, and warns that only one of them is not stored in the body, so it must be eaten every day after the course ends. Which statement is correct?',
+  right: 'Vitamin C for the gums and vitamin K for the clotting; vitamin C is the one that must be eaten every day',
+  wrong: ['Vitamin C for the gums and vitamin K for the clotting; vitamin K is the one that must be eaten every day', 'Vitamin K for the gums and vitamin C for the clotting; vitamin K is the one that must be eaten every day', 'Vitamin K for the gums and vitamin C for the clotting; vitamin C is the one that must be eaten every day'],
+  sol: 'Bleeding gums are the sign of scurvy (vitamin C); slow clotting is the sign of vitamin K deficiency. Vitamin C is water-soluble: the body does not store it and excess is excreted, so it is needed in the diet every day. Vitamin K is fat-soluble and is stored in the liver — option (@K).',
+  d: 3, c: 'application', t: [4],
 }));
 add('rickets-mcq', mcq({
-  stem: 'Several children in a town with heavy winter smog, who rarely play outdoors, develop soft, bow-shaped leg bones. The deficiency is most likely of:',
-  right: 'vitamin D, causing rickets',
-  wrong: ['vitamin C, causing scurvy', 'vitamin B₁, causing beriberi', 'vitamin A, causing xerophthalmia'],
-  sol: 'Vitamin D is made in skin exposed to sunlight; lack causes rickets — option (@K).',
-  d: 2, c: 'application', t: [4],
+  stem: 'Two people who never go outdoors in daylight, a 9-year-old with bow legs and a 50-year-old cook with bone pain and easy fractures, are given the same vitamin, but only once a week, and are warned that larger weekly doses are dangerous. Which statement is correct?',
+  right: 'The vitamin is D, which is fat-soluble and stored; the child has rickets and the adult has osteomalacia',
+  wrong: ['The vitamin is D, which is fat-soluble and stored; the child has osteomalacia and the adult has rickets', 'The vitamin is D, which is water-soluble and excreted, so weekly doses are safe; the child has rickets and the adult has osteomalacia', 'The vitamin is C, which is water-soluble and excreted; both have scurvy'],
+  sol: 'Little sunlight means little vitamin D made in the skin; its lack softens bones, called rickets in growing children and osteomalacia in adults. Vitamin D is fat-soluble and stored in the body, which explains both the weekly dosing and the warning about overdose — option (@K).',
+  d: 3, c: 'application', t: [4],
 }));
 add('b12-mcq', mcq({
   stem: 'Pernicious anaemia, in which red blood cells are deficient in haemoglobin, results from a lack of:',
@@ -411,11 +411,11 @@ add('nutrition-short3', short({
   d: 4, c: 'evaluation', t: [1, 4],
 }));
 add('vitamin-long', long({
-  stem: '(a) What are vitamins? Classify vitamins A, B₁, C, D, E and K as fat-soluble or water-soluble. [2]\n\n(b) Name the disease or symptom caused by deficiency of (i) vitamin A, (ii) vitamin B₁, (iii) vitamin D and (iv) vitamin K. [2]\n\n(c) Why are water-soluble vitamins needed in the diet regularly? [1]',
-  model: '(a) Organic compounds required in small amounts in the diet for normal growth and health. Fat-soluble: A, D, E, K. Water-soluble: B₁, C.\n\n(b) (i) Night blindness / xerophthalmia. (ii) Beriberi. (iii) Rickets (children) / osteomalacia (adults). (iv) Increased blood-clotting time.\n\n(c) They are not stored in the body; excess is excreted in urine.',
-  sol: 'Definition and classification; four deficiencies; not stored.',
-  scheme: [['(a) definition', 1], ['(a) classification', 1], ['(b)(i)–(ii)', 1], ['(b)(iii)–(iv)', 1], ['(c)', 1]],
-  d: 2, c: 'recall', t: [4],
+  stem: 'A 45-year-old man lives alone and eats mainly polished rice and tea. He works night shifts and is rarely in sunlight. He has tingling in his feet, loss of appetite and weak legs, and also bone pain.\n\n(a) The symptoms point to two different vitamins. Name each vitamin, with the deficiency disease it indicates, and the symptoms that point to it. [2]\n\n(b) One of the two vitamins is stored in the body and the other is not. Identify which is which and use this to explain why one deficiency can build up in a few weeks while the other usually needs many months of poor diet. [2]\n\n(c) His friend advises a large daily dose of both vitamins. Explain why this is risky for one of them. [1]',
+  model: '(a) Vitamin B₁ (thiamine): tingling feet, loss of appetite and weak legs indicate beriberi; polished rice has lost the husk that supplies B₁. Vitamin D: bone pain in an adult with little sunlight indicates osteomalacia (vitamin D is made in the skin in sunlight).\n\n(b) Vitamin B₁ is water-soluble and is not stored; body reserves are small and excess is excreted, so a poor diet can bring on deficiency within weeks. Vitamin D is fat-soluble and is stored in the liver and fatty tissue, so the reserves must be used up first and deficiency takes months.\n\n(c) Excess vitamin D, being fat-soluble, is stored and can build up to harmful levels (hypervitaminosis); excess B₁ is simply excreted in urine.',
+  sol: 'B₁/beriberi; D/osteomalacia; water- vs fat-soluble storage.',
+  scheme: [['(a) B₁ and beriberi with symptoms', 1], ['(a) D and osteomalacia with symptoms', 1], ['(b) which is stored', 1], ['(b) link to speed of deficiency', 1], ['(c) vitamin D overdose risk', 1]],
+  d: 3, c: 'application', t: [4],
 }));
 
 // ---------------------------------------------------------------- t05 nucleic acids

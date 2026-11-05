@@ -2957,39 +2957,39 @@
       "unit": "isc-12-chemistry-ch22",
       "language": "en",
       "type": "long",
-      "stem_md": "(a) Show, with an equation, the formation of the dipeptide glycylalanine, and name the bond formed. [2]\n\n(b) Define the primary, secondary, tertiary and quaternary structures of proteins. [2]\n\n(c) Classify keratin and insulin as fibrous or globular proteins. [1]",
+      "stem_md": "A tripeptide Q contains one residue each of glycine ($M = 75$), leucine ($M = 131$) and phenylalanine ($M = 165$).\n\n(a) How many different tripeptides could contain one residue of each of these three amino acids? [1]\n\n(b) Partial hydrolysis of Q gives only the dipeptides Phe–Gly and Gly–Leu (written N-terminal first). Deduce the sequence of Q and name its N-terminal and C-terminal residues. [2]\n\n(c) Calculate the molar mass of Q. [2]",
       "options": [],
       "match_right": [],
       "answer": {
-        "model_answer_md": "(a) $\\ce{H2NCH2COOH + H2NCH(CH3)COOH -> H2NCH2CONHCH(CH3)COOH + H2O}$; the –CO–NH– link is a peptide (amide) bond.\n\n(b) Primary: sequence of amino acids. Secondary: α-helix or β-pleated sheet held by hydrogen bonds. Tertiary: overall three-dimensional folding of one chain. Quaternary: arrangement of two or more subunits.\n\n(c) Keratin: fibrous. Insulin: globular."
+        "model_answer_md": "(a) $3 \\times 2 \\times 1 = 6$ sequences.\n\n(b) Phe–Gly and Gly–Leu overlap at glycine, so the sequence is Phe–Gly–Leu. The N-terminal residue is phenylalanine (it is the first residue in Phe–Gly, with a free –NH₂ group) and the C-terminal residue is leucine (the last in Gly–Leu, with a free –COOH group).\n\n(c) Two peptide bonds release two $\\ce{H2O}$: $M = 165 + 75 + 131 - 2 \\times 18 = 335\\ \\text{g mol}^{-1}$."
       },
-      "solution_md": "Equation; four definitions; classification.",
+      "solution_md": "6; Phe–Gly–Leu; 335.",
       "marking_scheme": [
         {
-          "step": "(a) equation",
+          "step": "(a) 6",
           "marks": 1
         },
         {
-          "step": "(a) bond named",
+          "step": "(b) sequence Phe–Gly–Leu",
           "marks": 1
         },
         {
-          "step": "(b) primary and secondary",
+          "step": "(b) N-terminal Phe, C-terminal Leu",
           "marks": 1
         },
         {
-          "step": "(b) tertiary and quaternary",
+          "step": "(c) two water molecules lost",
           "marks": 1
         },
         {
-          "step": "(c)",
+          "step": "(c) 335",
           "marks": 1
         }
       ],
       "marks": 5,
-      "difficulty": 2,
-      "competency": "understanding",
-      "bloom": "understand",
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
       "topic_ids": [
         "isc-12-chemistry-ch22-t02"
       ],
@@ -3011,23 +3011,23 @@
       "unit": "isc-12-chemistry-ch22",
       "language": "en",
       "type": "mcq",
-      "stem_md": "A 70% ethanol hand rub kills bacteria by denaturing their proteins. During this denaturation, which bonds remain intact?",
+      "stem_md": "A small soluble protein made of a single polypeptide chain, with no other groups attached, is heated in water; it separates as an insoluble white solid. Analysis shows that the solid has the same molar mass as the original protein and gives the same amino acids, in the same proportions, on complete hydrolysis. Which conclusion is correct?",
       "options": [
         {
           "id": "a",
-          "text_md": "The hydrogen bonds holding the α-helices"
+          "text_md": "The primary structure has been broken, because the protein can no longer dissolve"
         },
         {
           "id": "b",
-          "text_md": "The peptide bonds of the polypeptide chains"
+          "text_md": "The primary structure is unchanged; the loss of solubility comes from loss of the secondary and tertiary folding"
         },
         {
           "id": "c",
-          "text_md": "The interactions that maintain the tertiary folding"
+          "text_md": "Only the quaternary structure has been lost, because heat separates the subunits"
         },
         {
           "id": "d",
-          "text_md": "The attractions between protein subunits"
+          "text_md": "Only the secondary structure is lost, because the tertiary folding is held by covalent bonds that heat cannot break"
         }
       ],
       "match_right": [],
@@ -3036,7 +3036,7 @@
           "b"
         ]
       },
-      "solution_md": "Denaturation leaves the primary structure intact — option (b).",
+      "solution_md": "Unchanged molar mass and unchanged amino-acid composition show that no peptide bond was broken, so the sequence (primary structure) is intact. Insolubility shows that the folded shape is lost: heat breaks hydrogen bonds and other weak interactions, so both secondary and tertiary structure are lost. The protein is a single chain, so it has no quaternary structure — option (b).",
       "marking_scheme": [
         {
           "step": "Correct option (b)",
@@ -3044,7 +3044,7 @@
         }
       ],
       "marks": 1,
-      "difficulty": 2,
+      "difficulty": 3,
       "competency": "application",
       "bloom": "apply",
       "topic_ids": [
@@ -3125,23 +3125,23 @@
       "unit": "isc-12-chemistry-ch22",
       "language": "en",
       "type": "mcq",
-      "stem_md": "Urease catalyses the hydrolysis of urea to ammonia and carbon dioxide but has no effect on its close relative methylurea. This shows that enzymes are:",
+      "stem_md": "The activity of an enzyme from a hot-spring bacterium, in arbitrary units, is 12 at 30 °C, 40 at 50 °C, 88 at 70 °C, 100 at 80 °C, 20 at 90 °C and 0 at 100 °C. A sample held at 100 °C and then cooled to 80 °C still shows zero activity. Which interpretation fits all the readings?",
       "options": [
         {
           "id": "a",
-          "text_md": "used up in the reactions they catalyse"
+          "text_md": "The enzyme is not a protein, since a protein would be denatured below 80 °C"
         },
         {
           "id": "b",
-          "text_md": "highly specific in their action"
+          "text_md": "The optimum is near 80 °C, and heating well above it denatures the enzyme irreversibly"
         },
         {
           "id": "c",
-          "text_md": "active only at high temperatures"
+          "text_md": "The fall above 80 °C is reversible, so cooling to 80 °C should have restored the activity"
         },
         {
           "id": "d",
-          "text_md": "non-protein catalysts"
+          "text_md": "The optimum is 30 °C, the mildest temperature tested, because enzymes work best in mild conditions"
         }
       ],
       "match_right": [],
@@ -3150,7 +3150,7 @@
           "b"
         ]
       },
-      "solution_md": "Each enzyme acts on a particular substrate — option (b).",
+      "solution_md": "Activity rises to a maximum at 80 °C and then falls sharply: that is the optimum. Because activity does not return when the sample is cooled, the loss is permanent, which is denaturation of the protein (loss of the shape of the active site). Enzymes from hot springs are proteins whose folding is stable at these temperatures — option (b).",
       "marking_scheme": [
         {
           "step": "Correct option (b)",
@@ -3158,7 +3158,7 @@
         }
       ],
       "marks": 1,
-      "difficulty": 2,
+      "difficulty": 3,
       "competency": "application",
       "bloom": "apply",
       "topic_ids": [
@@ -3239,23 +3239,23 @@
       "unit": "isc-12-chemistry-ch22",
       "language": "en",
       "type": "mcq",
-      "stem_md": "Several hours after a meal, blood glucose begins to fall and the pancreas releases glucagon. Glucagon acts by:",
+      "stem_md": "A diabetic patient takes her usual dose of insulin but skips lunch. An hour later she is sweating, shaky and confused. Which statement gives the correct cause and emergency treatment?",
       "options": [
         {
           "id": "a",
-          "text_md": "converting blood glucose into glycogen, lowering blood glucose"
+          "text_md": "Her blood glucose is too high; a second dose of insulin would lower it"
         },
         {
           "id": "b",
-          "text_md": "promoting the breakdown of liver glycogen, raising blood glucose"
+          "text_md": "Her blood glucose has fallen too low; an injection of glucagon would raise it by breaking down liver glycogen"
         },
         {
           "id": "c",
-          "text_md": "increasing the absorption of iodine by the thyroid"
+          "text_md": "Her blood glucose has fallen too low; a further dose of insulin would raise it by breaking down liver glycogen"
         },
         {
           "id": "d",
-          "text_md": "catalysing the hydrolysis of sucrose in the gut"
+          "text_md": "Her blood glucose is too high; an injection of glucagon would store the excess as glycogen"
         }
       ],
       "match_right": [],
@@ -3264,7 +3264,7 @@
           "b"
         ]
       },
-      "solution_md": "Glucagon opposes insulin — option (b).",
+      "solution_md": "Insulin lowers blood glucose; with no meal to supply glucose, the usual dose has made it too low. Glucagon opposes insulin and raises glucose by breaking down glycogen in the liver, so it is the emergency treatment; more insulin would worsen the fall — option (b).",
       "marking_scheme": [
         {
           "step": "Correct option (b)",
@@ -3272,7 +3272,7 @@
         }
       ],
       "marks": 1,
-      "difficulty": 2,
+      "difficulty": 3,
       "competency": "application",
       "bloom": "apply",
       "topic_ids": [
@@ -3330,8 +3330,8 @@
       ],
       "marks": 1,
       "difficulty": 2,
-      "competency": "application",
-      "bloom": "apply",
+      "competency": "understanding",
+      "bloom": "understand",
       "topic_ids": [
         "isc-12-chemistry-ch22-t03"
       ],
@@ -3675,20 +3675,24 @@
       "unit": "isc-12-chemistry-ch22",
       "language": "en",
       "type": "long",
-      "stem_md": "(a) What is meant by denaturation of a protein? Name two agents that cause it. [2]\n\n(b) Which level of protein structure is unaffected by denaturation, and why? [1]\n\n(c) What are enzymes? State two characteristics and name one enzyme with its reaction. [2]",
+      "stem_md": "A globular enzyme E is a single polypeptide chain held in shape by hydrogen bonds, other weak interactions and several disulfide (S–S) bridges. Three separate samples are treated: (P) heated at 90 °C for ten minutes; (Q) treated with a reagent that breaks only the S–S bridges; (R) boiled with concentrated hydrochloric acid for 24 hours.\n\n(a) For each treatment, state which of the primary, secondary and tertiary structures are lost, giving a reason. [3]\n\n(b) Which sample would show free amino acids on analysis, and which two keep the amino-acid sequence intact? [1]\n\n(c) Predict whether the enzyme keeps its activity after P and after Q, giving one reason that applies to both. [1]",
       "options": [],
       "match_right": [],
       "answer": {
-        "model_answer_md": "(a) Loss of the secondary and tertiary (and quaternary) structure of a protein, with loss of biological activity, when hydrogen bonds and other interactions are broken. Agents: heat, change of pH (acid or alkali), alcohol, heavy-metal ions (any two).\n\n(b) The primary structure: denaturation does not break the covalent peptide bonds, so the amino-acid sequence is unchanged.\n\n(c) Enzymes are biological catalysts, mostly globular proteins. They are highly specific and work best at an optimum temperature and pH. Urease: $\\ce{NH2CONH2 + H2O -> 2NH3 + CO2}$."
+        "model_answer_md": "(a) P: the secondary and tertiary structures are lost, because heat breaks the hydrogen bonds and other weak interactions that hold the folds; the primary structure is intact because no covalent peptide bond breaks. Q: the tertiary structure is lost, because the S–S bridges hold the chain in its folded shape; the primary structure is intact, and the hydrogen-bonded secondary structure is not directly affected. R: all levels are lost, because hot concentrated acid hydrolyses the peptide bonds, destroying the primary structure and hence the folding.\n\n(b) R gives free amino acids; P and Q keep the sequence intact.\n\n(c) The enzyme loses its activity in both P and Q: its active site depends on the tertiary folding, which is destroyed in each case."
       },
-      "solution_md": "Definition and agents; primary structure; enzymes.",
+      "solution_md": "P: secondary and tertiary; Q: tertiary only; R: all; activity lost after P and Q.",
       "marking_scheme": [
         {
-          "step": "(a) definition",
+          "step": "(a) P with reason",
           "marks": 1
         },
         {
-          "step": "(a) two agents",
+          "step": "(a) Q with reason",
+          "marks": 1
+        },
+        {
+          "step": "(a) R with reason",
           "marks": 1
         },
         {
@@ -3696,18 +3700,14 @@
           "marks": 1
         },
         {
-          "step": "(c) definition and characteristics",
-          "marks": 1
-        },
-        {
-          "step": "(c) example",
+          "step": "(c)",
           "marks": 1
         }
       ],
       "marks": 5,
-      "difficulty": 2,
-      "competency": "understanding",
-      "bloom": "understand",
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
       "topic_ids": [
         "isc-12-chemistry-ch22-t03"
       ],
@@ -3786,23 +3786,23 @@
       "unit": "isc-12-chemistry-ch22",
       "language": "en",
       "type": "mcq",
-      "stem_md": "A child whose diet lacks milk, carrots and green vegetables finds it hard to see in dim light, and her eyes become dry. The vitamin most likely lacking is:",
+      "stem_md": "After months on an almost fat-free diet prescribed following gall-bladder surgery, a patient has difficulty seeing in dim light and cuts that are slow to stop bleeding. Which statement best explains both symptoms?",
       "options": [
         {
           "id": "a",
-          "text_md": "vitamin B₁"
+          "text_md": "Vitamins A and K are water-soluble and are being lost in the urine"
         },
         {
           "id": "b",
-          "text_md": "vitamin D"
+          "text_md": "A lack of vitamin B₁ affects both vision and blood clotting"
         },
         {
           "id": "c",
-          "text_md": "vitamin A"
+          "text_md": "Poor absorption of fats has reduced the supply of the fat-soluble vitamins A and K"
         },
         {
           "id": "d",
-          "text_md": "vitamin K"
+          "text_md": "A lack of vitamin D has reduced the absorption of calcium, which impairs both vision and clotting"
         }
       ],
       "match_right": [],
@@ -3811,7 +3811,7 @@
           "c"
         ]
       },
-      "solution_md": "Night blindness and xerophthalmia — option (c).",
+      "solution_md": "Dim-light vision points to vitamin A and slow clotting to vitamin K; both are fat-soluble and are absorbed with dietary fat, so a fat-free diet with reduced fat absorption leaves both deficient. Vitamins A and K are not water-soluble, and B₁ and D do not explain these two symptoms — option (c).",
       "marking_scheme": [
         {
           "step": "Correct option (c)",
@@ -3819,7 +3819,7 @@
         }
       ],
       "marks": 1,
-      "difficulty": 2,
+      "difficulty": 3,
       "competency": "application",
       "bloom": "apply",
       "topic_ids": [
@@ -3843,23 +3843,23 @@
       "unit": "isc-12-chemistry-ch22",
       "language": "en",
       "type": "mcq",
-      "stem_md": "Before an operation, a patient whose cuts take unusually long to stop bleeding is given a vitamin injection. The vitamin is most likely:",
+      "stem_md": "A patient’s gums bleed and small cuts take unusually long to stop bleeding. Her diet has no fresh fruit and no green vegetables. The doctor prescribes one vitamin for the gums and another for the clotting, and warns that only one of them is not stored in the body, so it must be eaten every day after the course ends. Which statement is correct?",
       "options": [
         {
           "id": "a",
-          "text_md": "vitamin C"
+          "text_md": "Vitamin C for the gums and vitamin K for the clotting; vitamin K is the one that must be eaten every day"
         },
         {
           "id": "b",
-          "text_md": "vitamin K"
+          "text_md": "Vitamin C for the gums and vitamin K for the clotting; vitamin C is the one that must be eaten every day"
         },
         {
           "id": "c",
-          "text_md": "vitamin E"
+          "text_md": "Vitamin K for the gums and vitamin C for the clotting; vitamin K is the one that must be eaten every day"
         },
         {
           "id": "d",
-          "text_md": "vitamin B₆"
+          "text_md": "Vitamin K for the gums and vitamin C for the clotting; vitamin C is the one that must be eaten every day"
         }
       ],
       "match_right": [],
@@ -3868,7 +3868,7 @@
           "b"
         ]
       },
-      "solution_md": "Vitamin K is needed for blood clotting — option (b).",
+      "solution_md": "Bleeding gums are the sign of scurvy (vitamin C); slow clotting is the sign of vitamin K deficiency. Vitamin C is water-soluble: the body does not store it and excess is excreted, so it is needed in the diet every day. Vitamin K is fat-soluble and is stored in the liver — option (b).",
       "marking_scheme": [
         {
           "step": "Correct option (b)",
@@ -3876,7 +3876,7 @@
         }
       ],
       "marks": 1,
-      "difficulty": 2,
+      "difficulty": 3,
       "competency": "application",
       "bloom": "apply",
       "topic_ids": [
@@ -3900,23 +3900,23 @@
       "unit": "isc-12-chemistry-ch22",
       "language": "en",
       "type": "mcq",
-      "stem_md": "Several children in a town with heavy winter smog, who rarely play outdoors, develop soft, bow-shaped leg bones. The deficiency is most likely of:",
+      "stem_md": "Two people who never go outdoors in daylight, a 9-year-old with bow legs and a 50-year-old cook with bone pain and easy fractures, are given the same vitamin, but only once a week, and are warned that larger weekly doses are dangerous. Which statement is correct?",
       "options": [
         {
           "id": "a",
-          "text_md": "vitamin D, causing rickets"
+          "text_md": "The vitamin is D, which is fat-soluble and stored; the child has rickets and the adult has osteomalacia"
         },
         {
           "id": "b",
-          "text_md": "vitamin C, causing scurvy"
+          "text_md": "The vitamin is D, which is fat-soluble and stored; the child has osteomalacia and the adult has rickets"
         },
         {
           "id": "c",
-          "text_md": "vitamin B₁, causing beriberi"
+          "text_md": "The vitamin is D, which is water-soluble and excreted, so weekly doses are safe; the child has rickets and the adult has osteomalacia"
         },
         {
           "id": "d",
-          "text_md": "vitamin A, causing xerophthalmia"
+          "text_md": "The vitamin is C, which is water-soluble and excreted; both have scurvy"
         }
       ],
       "match_right": [],
@@ -3925,7 +3925,7 @@
           "a"
         ]
       },
-      "solution_md": "Vitamin D is made in skin exposed to sunlight; lack causes rickets — option (a).",
+      "solution_md": "Little sunlight means little vitamin D made in the skin; its lack softens bones, called rickets in growing children and osteomalacia in adults. Vitamin D is fat-soluble and stored in the body, which explains both the weekly dosing and the warning about overdose — option (a).",
       "marking_scheme": [
         {
           "step": "Correct option (a)",
@@ -3933,7 +3933,7 @@
         }
       ],
       "marks": 1,
-      "difficulty": 2,
+      "difficulty": 3,
       "competency": "application",
       "bloom": "apply",
       "topic_ids": [
@@ -4400,39 +4400,39 @@
       "unit": "isc-12-chemistry-ch22",
       "language": "en",
       "type": "long",
-      "stem_md": "(a) What are vitamins? Classify vitamins A, B₁, C, D, E and K as fat-soluble or water-soluble. [2]\n\n(b) Name the disease or symptom caused by deficiency of (i) vitamin A, (ii) vitamin B₁, (iii) vitamin D and (iv) vitamin K. [2]\n\n(c) Why are water-soluble vitamins needed in the diet regularly? [1]",
+      "stem_md": "A 45-year-old man lives alone and eats mainly polished rice and tea. He works night shifts and is rarely in sunlight. He has tingling in his feet, loss of appetite and weak legs, and also bone pain.\n\n(a) The symptoms point to two different vitamins. Name each vitamin, with the deficiency disease it indicates, and the symptoms that point to it. [2]\n\n(b) One of the two vitamins is stored in the body and the other is not. Identify which is which and use this to explain why one deficiency can build up in a few weeks while the other usually needs many months of poor diet. [2]\n\n(c) His friend advises a large daily dose of both vitamins. Explain why this is risky for one of them. [1]",
       "options": [],
       "match_right": [],
       "answer": {
-        "model_answer_md": "(a) Organic compounds required in small amounts in the diet for normal growth and health. Fat-soluble: A, D, E, K. Water-soluble: B₁, C.\n\n(b) (i) Night blindness / xerophthalmia. (ii) Beriberi. (iii) Rickets (children) / osteomalacia (adults). (iv) Increased blood-clotting time.\n\n(c) They are not stored in the body; excess is excreted in urine."
+        "model_answer_md": "(a) Vitamin B₁ (thiamine): tingling feet, loss of appetite and weak legs indicate beriberi; polished rice has lost the husk that supplies B₁. Vitamin D: bone pain in an adult with little sunlight indicates osteomalacia (vitamin D is made in the skin in sunlight).\n\n(b) Vitamin B₁ is water-soluble and is not stored; body reserves are small and excess is excreted, so a poor diet can bring on deficiency within weeks. Vitamin D is fat-soluble and is stored in the liver and fatty tissue, so the reserves must be used up first and deficiency takes months.\n\n(c) Excess vitamin D, being fat-soluble, is stored and can build up to harmful levels (hypervitaminosis); excess B₁ is simply excreted in urine."
       },
-      "solution_md": "Definition and classification; four deficiencies; not stored.",
+      "solution_md": "B₁/beriberi; D/osteomalacia; water- vs fat-soluble storage.",
       "marking_scheme": [
         {
-          "step": "(a) definition",
+          "step": "(a) B₁ and beriberi with symptoms",
           "marks": 1
         },
         {
-          "step": "(a) classification",
+          "step": "(a) D and osteomalacia with symptoms",
           "marks": 1
         },
         {
-          "step": "(b)(i)–(ii)",
+          "step": "(b) which is stored",
           "marks": 1
         },
         {
-          "step": "(b)(iii)–(iv)",
+          "step": "(b) link to speed of deficiency",
           "marks": 1
         },
         {
-          "step": "(c)",
+          "step": "(c) vitamin D overdose risk",
           "marks": 1
         }
       ],
       "marks": 5,
-      "difficulty": 2,
-      "competency": "recall",
-      "bloom": "remember",
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
       "topic_ids": [
         "isc-12-chemistry-ch22-t04"
       ],
@@ -5177,7 +5177,7 @@
   "build": {
     "run_id": null,
     "checks": {
-      "katex_mhchem": "48 math strings parsed with KaTeX 0.19.0 + mhchem (throwOnError, strict \"error\"), 0 failures",
+      "katex_mhchem": "52 math strings parsed with KaTeX 0.19.0 + mhchem (throwOnError, strict \"error\"), 0 failures",
       "svg_allowlist": "2 SVG visuals (2 distinct diagrams) checked with saxes against svg-allowlist.ts: elements, attributes, class pattern, fragment-only refs, no style, palette incl. named hues, viewBox, title, per-page unique ids — 0 failures",
       "narration": "29 slides, 8–78 words (mean 53), no symbols, formulae or unit abbreviations",
       "resolve": "5/5 scripted re-solve checks pass",
