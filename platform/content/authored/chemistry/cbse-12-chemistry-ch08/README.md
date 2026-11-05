@@ -37,7 +37,7 @@ All items are `status: "draft"` until a reviewer approves them.
 | case-based | 4 | 4 (1 + 1 + 2), part (c) either/or via `alternatives` |
 
 - **Difficulty:** d1 13 · d2 29 · d3 20 · d4 3.
-- **Competency:** recall 10 · understanding 25 · application 26 · analysis 4. Application or higher is **46% of items (52% of marks)**, inside the 45–65% band.
+- **Competency:** recall 10 · understanding 25 · application 26 · analysis 4. Application or higher is **46% of items (52% of marks)**, inside the 45–65% band. (superseded: see Competency audit 2026-11-05)
 - **Topic tags:** t01 5 · t02 10 · t03 24 · t04 6 · t05 26.
 - **Cases:** three C₃ unknowns (propanal, propanone, propanoic acid from four tests); vinegar titration (0.80 M = 4.8 g per 100 mL, meets the standard; or baking soda); benzaldehyde in an old bottle (air oxidation to benzoic acid; Cannizzaro; separation by NaHCO₃ extraction, or Tollens’ vs Fehling’s); ethyl ethanoate for perfume (role of H₂SO₄; 60% yield; reasons, or Le Chatelier).
 - **Deck checks:** q006, q015, q016 (Part 1); q035, q037, q038 (Part 2) — all objective.
@@ -64,3 +64,26 @@ Every question, case part and alternative was re-solved from its stem; distracto
 - Narration audio is not generated (TTS stage).
 - SVGs were reviewed by coordinates, not rasterised (no rasteriser is installed in this worktree).
 - Data in case passages are realistic illustrative values, not cited measurements.
+
+## Competency audit 2026-11-05
+Audit reference: `docs/platform/content-qa/2026-11-05-competency-retag-audit.md`. Item order, ids, types, marks, topic tags and test slots are unchanged.
+
+- **Retagged honestly (not rewritten):** q013 prep-short3, q038 nahco3-mcq: application → recall; q016 cannizzaro-mcq, q037 sodalime-mcq: application → understanding.
+- **Rewritten as genuine application items (stem replaced, tag set honestly):**
+  - q001 (retagged): identify an unbranched C₆H₁₂O ketone from the iodoform result, then name it.
+  - q008 (retagged): choose a route from bromoethane to propanal (add a carbon as –CN, then Stephen).
+  - q009: choose a rearrangement-free route from benzene to propylbenzene (acylation, then Clemmensen).
+  - q017: two-step prediction on cyclohexanone (cyanohydrin, then acid hydrolysis).
+  - q018: Grignard addition to propanone, hydrolysis, then oxidation of a tertiary alcohol.
+  - q019 (retagged): classify seven compounds for the iodoform test and count the positives.
+  - q028 (retagged): design a minimum set of tests to identify pentan-2-one, pentan-3-one and pentanal.
+  - q030: crossed aldol of propanal with benzaldehyde, product structure and why slow addition favours it.
+  - q031 (retagged): deduce which substituted arene gives benzene-1,4-dicarboxylic acid on oxidation.
+  - q032 (retagged): four-step chain (Grignard, CO₂, SOCl₂, Rosenmund) from 2-bromopropane.
+  - q039: HVZ then aqueous hydrolysis then acidification (two-step prediction).
+  - q049: salt-mass and gas-volume data give M = 96, identify sodium propanoate and ethane.
+  - q052 (retagged): reagent sequences for three unfamiliar conversions with a justification.
+  - q057: rank four unfamiliar carbonyls for HCN, deduce P from three tests, identify an aldehyde from silver mass.
+  - q058: interpret pKa data by distance of Cl, find M of an acid from neutralisation, identify it, CO₂ volume.
+  - q059: plan two toluene routes (Etard then Grignard; oxidation then nitration with order justified) and a haloform route from benzene.
+- **Competency now:** recall 11 · understanding 19 · application 31 · analysis 4 (case parents tagged by majority). Application or higher is **35 of 65 items (54%; 67% of marks)**, inside the 45–65% band. Difficulty: d1 12 · d2 19 · d3 29 · d4 5.

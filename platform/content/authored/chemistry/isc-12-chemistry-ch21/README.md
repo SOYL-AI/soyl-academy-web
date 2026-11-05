@@ -35,7 +35,7 @@ All items are `status: "draft"` until a reviewer approves them.
 
 - No case-based items: the ISC pattern has none (long answers carry the stimulus or calculation instead).
 - **Difficulty:** d1 10 · d2 38 · d3 19 · d4 2.
-- **Competency:** recall 10 · understanding 24 · application 25 · analysis 10. Application or higher is **51% of items (59% of marks)**, inside the 45–65% band and in line with the ISC aim of about half the marks on higher-order skills.
+- **Competency:** recall 10 · understanding 24 · application 25 · analysis 10. Application or higher is **51% of items (59% of marks)**, inside the 45–65% band and in line with the ISC aim of about half the marks on higher-order skills. (superseded: see Competency audit 2026-11-05)
 - **Topic tags:** t01 9 · t02 26 · t03 17 · t04 15 · t05 12.
 - **Deck checks:** q001, q010, q015 (Part 1); q035, q048, q061 (Part 2) — all objective, none used in the tests.
 
@@ -57,4 +57,10 @@ Every question and every internal-choice alternative was re-solved from its stem
 ## Known gaps
 - Narration audio is not generated (TTS stage).
 - SVGs were reviewed by coordinates, not rasterised.
+
+## Competency audit 2026-11-05
+Audit: `docs/platform/content-qa/2026-11-05-competency-retag-audit.md`.
+- **Retagged honestly:** q046, q067, q068 analysis → understanding; q003, q007, q012, q024, q028 application → understanding; q006, q036, q057 application → recall (q036 is now understanding after its rewrite). q006 stays retagged; six others (q003, q007, q012, q024, q028, q057) were then rewritten, so they are tagged application again on genuine demands (see below). q036 was also rewritten on a new substrate (which –OH of D-ribose closes its five-membered ring) but is a one-step ring count, so it stays understanding.
+- **Rewritten as genuine application items (same key, type, marks, topic tags, test slots):** q003 (deduce a ketopentose from Tollens/bromine-water results and the cyanohydrin–HI product); q007 (reducing character and mutarotation of two unfamiliar disaccharides from their links); q012 (count –OH groups of sucrose from its formula, then moles of acetic anhydride); q024 (chiral centres of a ketohexose, then the D-series count); q028 (bromine water and acetic anhydride on D-ribose, new substrate, with balanced equations); q049 (deduce the link of a non-reducing, non-mutarotating difructose); q057 (judge a student's claim that only α-links give reducing disaccharides, using cellobiose); q058 (polarimeter reading before and after hydrolysis of 10 g sucrose, with the sign change); q060 (long: link of an unknown glucose disaccharide, then acetic anhydride moles and glucose mass).
+- **Result:** recall 11 · understanding 25 · application 26 · analysis 7. Application or higher is **33 of 69 (47.8%) of items, 56% of marks**, inside the 45–65% band.
 

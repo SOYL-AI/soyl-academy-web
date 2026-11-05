@@ -65,3 +65,15 @@ Every question, case part and alternative was re-solved from its stem; every dis
 - Narration audio is not generated (TTS stage).
 - SVGs were reviewed by coordinates, not rasterised (no rasteriser is installed in this worktree).
 - Data in case passages are realistic illustrative values, not cited measurements.
+
+## Competency audit 2026-11-05
+
+Remediation of the content-verifier audit `docs/platform/content-qa/2026-11-05-competency-retag-audit.md`, which found the two "explanation items that interpret given data" (verifier pass, finding 1) and their look-alikes over-tagged.
+
+- **Retagged honestly (application → understanding):** `q012` (Mn³⁺ vs Cr²⁺ from the signs of E°), `q017` (A-R on Cr²⁺ with a given negative E°), `q022` (why E°(Mn²⁺/Mn) is anomalous and Cu's is positive: the textbook explanation) and `q006` (Fe³⁺ vs Fe²⁺ stability from d⁵, which the audit noted as over-tagged too).
+- **Rewritten as genuine application items** (same key, type, marks, topic and test slots):
+  - `q021` (numerical): a manganese oxoanion with a spin-only moment of 1.73 BM; deduce one unpaired electron, d¹, oxidation state +6 (manganate), with a charge check.
+  - `q023` (short, 2 marks, long test B choice): successive ionisation enthalpies of Sc, Mn and Fe; explain why Sc stops at +3 from the jump at ΔiH₄, and use d⁵/d⁶ to decide which of Mn²⁺ and Fe²⁺ is more easily oxidised.
+  - `q024` (short, 2 marks, long test B choice): Fe³⁺ catalysis of I⁻ + S₂O₈²⁻ in two given steps; add them to show Fe³⁺ is regenerated and explain why Zn²⁺ could not act this way.
+  - `q031` (MCQ): a KMnO₄ / Fe²⁺ titration with data; compute [Fe²⁺] = 0.080 M through the 1 : 5 ratio and give the self-indicator reason (distractors: ratio ignored, ratio inverted, wrong colour reasoning).
+- **Now:** recall 9 · understanding 25 · application 28 · analysis 2 · evaluation 0; application or higher **30 of 64 = 46.9% of items (50% of marks)**, inside the 45–65% band. This supersedes the competency line under "Question bank" and the "Final 47%" in the verifier pass.

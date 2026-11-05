@@ -64,3 +64,14 @@ Every question, case part and alternative was re-solved from its stem; distracto
 - Narration audio is not generated (TTS stage).
 - SVGs were reviewed by coordinates, not rasterised (no rasteriser is installed in this worktree).
 - Data in case passages are realistic illustrative values, not cited measurements.
+
+## Competency audit 2026-11-05
+
+Remediation of the content-verifier audit `docs/platform/content-qa/2026-11-05-competency-retag-audit.md`, which found the two upward relabels of the verifier pass (finding 1 above) over-tagged.
+
+- **Retagged honestly (application → understanding):** `q025` (mixing warms and contracts → negative deviation: the textbook defines it by these signs) and `q027` (the vapour is richer in the more volatile component: a textbook statement).
+- **Rewritten as genuine higher-order items** (same key, type, marks, topic and test slots):
+  - `q012` (short, 2 marks, short test B): a 1.00 M glucose solution of given density; convert to molality through the density, find ΔTf (≈ 2.11 K) and say why molarity cannot be substituted. Multi-step → application.
+  - `q036` (short, 3 marks, short test B): measured vs Raoult-predicted vapour pressure of an equimolar X + Y mixture; classify the deviation, infer the signs of ΔmixH and ΔmixV, and judge a student's boiling-point assumption. Inference from data → analysis.
+  - `q048` (numerical, 1 mark): mass of glucose for 500 mL of a solution isotonic with plasma (π = 7.7 bar, 310 K), three steps → application.
+- **Now:** recall 10 · understanding 25 · application 26 · analysis 6 · evaluation 1; application or higher **33 of 68 = 48.5% of items (64% of marks)**, inside the 45–65% band. This supersedes the competency line under "Question bank" and the "Final 47%" in the verifier pass.

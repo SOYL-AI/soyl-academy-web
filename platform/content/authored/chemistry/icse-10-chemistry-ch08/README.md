@@ -35,8 +35,8 @@ All items are `status: "draft"` until a reviewer approves them.
 | long | 5 | 10, set in parts with marks shown (2 + 2 + 3 + 3 or 3 + 3 + 4), as in Section B of the ICSE paper |
 
 - No case-based items: the ICSE Chemistry pattern has none (the 10-mark structured questions carry the data or situation instead).
-- **Difficulty:** d1 19 · d2 34 · d3 9 · d4 2.
-- **Competency:** recall 16 · understanding 18 · application 23 · analysis 6 · evaluation 1. Application or higher is **47% of items (60% of marks)**, inside the 45–65% band and in line with the CISCE aim (October 2026 circular) of about half the marks on higher-order skills.
+- **Difficulty (superseded: see Competency audit 2026-11-05):** d1 19 · d2 34 · d3 9 · d4 2.
+- **Competency (superseded: see Competency audit 2026-11-05):** recall 16 · understanding 18 · application 23 · analysis 6 · evaluation 1. Application or higher is **47% of items (60% of marks)**, inside the 45–65% band and in line with the CISCE aim (October 2026 circular) of about half the marks on higher-order skills.
 - **Topic tags:** t01 8 · t02 8 · t03 9 · t04 13 · t05 8 · t06 13 · t07 10.
 - **Deck checks:** q001, q008, q020 (Part 1); q032, q039, q050 (Part 2) — all objective, none used in the tests.
 
@@ -58,4 +58,10 @@ Every question and every internal-choice alternative was re-solved from its stem
 ## Known gaps
 - Narration audio is not generated (TTS stage).
 - SVGs were reviewed by coordinates, not rasterised.
+
+## Competency audit 2026-11-05
+Reference: `docs/platform/content-qa/2026-11-05-competency-retag-audit.md`. Keys, types, marks, topic tags and test slots are unchanged; items were edited in place.
+- **Retagged honestly:** q017, q018, q026, q027, q034, q035, q045 (learnt equations) and q014 (gas from roasting zinc blende) application → recall; q015 application → understanding; q022 analysis → understanding. (q014, q015 and q022 were then rewritten, see below.)
+- **Rewritten as genuine application items:** q006 (decide which rock is an iron ore, then percentage-of-metal calculation, 420 kg); q009 (predict froth flotation with the pine oil omitted); q010 (choose the ore–gangue pair that hydraulic washing can separate from densities); q014 (97 g ZnS roasted: volume of SO₂ at STP, 22.4 L); q015 (identify calcination of calamine from a sequence of observations); q019 (identify roasting and calcination, ore types and gases from observations); q022 (deduce the oxide Fe₂O₃ from the mass of oxide and of iron left after CO reduction); q033 (predict the outcome of diluting and seeding sodium aluminate versus leaving it concentrated); q037 (balanced hydrolysis equation plus mass of Al(OH)₃ from 820 g NaAlO₂, 780 g); q038 (consequence of omitting cryolite from the cell); q040 (why aqueous aluminium sulphate gives hydrogen, not aluminium); q049 (interpret melting-point and conductivity figures; predict cooling to 800 °C; role of alumina versus cryolite). `q054` (true/false) was also rewritten (an alloy can meet a melting-point limit that neither metal meets) but is a two-step inference from a known property, so the reviewer kept it at understanding.
+- **New competency counts:** recall 22 · understanding 10 · application 26 · analysis 5 · evaluation 1. Application or higher is **32 of 64 items (50.0%)**, inside the 45–65% band (65% of marks). Difficulty: d1 19 · d2 23 · d3 20 · d4 2.
 

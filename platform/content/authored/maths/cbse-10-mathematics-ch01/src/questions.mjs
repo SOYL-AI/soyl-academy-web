@@ -27,7 +27,7 @@ Q('m02', mk.mcq({
 **Step 2.** $20^n = 2^{2n} \times 5^n$ contains both, so it always ends with $0$.
 
 **Step 3.** $6^n = 2^n \times 3^n$ has no $5$; $15^n = 3^n \times 5^n$ has no $2$; $21^n = 3^n \times 7^n$ has neither. By the uniqueness of prime factorisation, no other factor can appear, so none of these can ever end with $0$.`,
-  d: 2, c: 'application', t: [1], time: 60,
+  d: 2, c: 'understanding', t: [1], time: 60,
 }), (C) => { const ends0 = [6, 15, 20, 21].map((b) => lastDigits(b).every((dgt) => dgt === 0)); C.key('abcd'[ends0.indexOf(true)]); C.assert(ends0.filter(Boolean).length === 1, 'exactly one base always ends in 0'); });
 
 Q('m03', mk.mcq({
@@ -257,7 +257,7 @@ Q('tf2', mk.tf({
 Q('tf3', mk.tf({
   stem: r`If $\text{HCF}(a, b) = a$, then $\text{LCM}(a, b) = b$.`,
   key: 't', sol: r`$\text{HCF}(a, b) = a$ means $a$ divides $b$. Then $b$ is a common multiple and no smaller multiple of $b$ exists, so $\text{LCM}(a, b) = b$. Also $\dfrac{ab}{a} = b$. Example: $\text{HCF}(8, 24) = 8$, $\text{LCM}(8, 24) = 24$.`,
-  d: 3, c: 'analysis', t: [2],
+  d: 3, c: 'understanding', t: [2],
 }), (C) => { C.assert(gcd(8, 24) === 8 && lcm(8, 24) === 24, 'example'); C.key('t'); });
 Q('tf4', mk.tf({
   stem: r`$\pi$ is a rational number because $\pi = \dfrac{22}{7}$.`,

@@ -99,13 +99,17 @@ $x_\text{ethanol} = \dfrac{1}{1 + 3} = 0.25$.`,
   d: 2, c: 'application', t: [1],
 }), () => near(1 / (1 + 54 / 18), 0.25) || 'x');
 add('molarity-molality-short', short({
-  marks: 2,
-  stem: 'Why is molality preferred to molarity for expressing concentration in experiments on boiling and freezing points?',
-  model: 'Molarity uses the volume of the solution, and volume changes when a liquid is heated or cooled, so molarity changes with temperature. Molality uses the mass of the solvent, which does not change, so it stays constant over the temperature range of such experiments.',
-  sol: 'Contrast the volume basis of molarity with the mass basis of molality.',
-  scheme: [['Molarity depends on volume, which changes with temperature', 1], ['Molality depends on mass, which does not', 1]],
-  d: 2, c: 'understanding', t: [1],
-}));
+  marks: 2, wl: null,
+  stem: r`A $1.00\ \text{mol L}^{-1}$ aqueous glucose solution ($M = 180\ \text{g mol}^{-1}$, density $1.06\ \text{g mL}^{-1}$) is used in a freezing point experiment. Find the depression of freezing point, and say why the molarity cannot simply be substituted into $\Delta T_\text{f} = K_\text{f}\,m$. ($K_\text{f} = 1.86\ \text{K kg mol}^{-1}$)`,
+  model: r`Take $1\ \text{L}$ of solution: mass $= 1000 \times 1.06 = 1060\ \text{g}$, containing $1.00\ \text{mol} = 180\ \text{g}$ of glucose, so the solvent is $1060 - 180 = 880\ \text{g}$.
+
+Molality $= \dfrac{1.00}{0.880} \approx 1.14\ \text{mol kg}^{-1}$, so $\Delta T_\text{f} = 1.86 \times 1.14 \approx 2.11\ \text{K}$.
+
+Molarity cannot be used directly because the formula needs moles per kilogram of **solvent**; the volume of solution includes the solute and changes with temperature. Substituting $1.00$ would give $1.86\ \text{K}$, about 12% too small.`,
+  sol: 'Convert molarity to molality through the density (mass of 1 L of solution minus the mass of solute gives the solvent), then apply the depression formula.',
+  scheme: [['Solvent mass 880 g from density and molar mass; molality ≈ 1.14 mol/kg', 1], ['ΔTf ≈ 2.11 K, with the reason that the formula needs moles per kg of solvent, not per litre of solution', 1]],
+  d: 3, c: 'application', t: [1],
+}), () => (near(1 / ((1060 - 180) / 1000), 1.136, 0.002) && near(1.86 / 0.88, 2.114, 0.002)) || 'molality-conv');
 add('urea-short3', short({
   marks: 3, wl: null,
   stem: r`A fertiliser solution is $15\%$ urea ($\ce{NH2CONH2}$, $M = 60\ \text{g mol}^{-1}$) by mass and has a density of $1.05\ \text{g mL}^{-1}$. Calculate (a) its molality, (b) its molarity and (c) the mole fraction of urea.`,
@@ -219,7 +223,7 @@ add('deviation-sign-mcq', mcq({
   right: 'shows negative deviation from Raoult’s law',
   wrong: ['shows positive deviation from Raoult’s law', 'is an ideal solution', 'must form a minimum-boiling azeotrope'],
   sol: r`Warming means $\Delta_\text{mix}H < 0$ and contraction means $\Delta_\text{mix}V < 0$: new A–B attractions are stronger, molecules escape less easily and the vapour pressure is lower than predicted — option (@K). An ideal solution (@2) has no heat or volume change; a minimum-boiling azeotrope (@3) comes from positive deviation (@1).`,
-  d: 2, c: 'application', t: [3],
+  d: 2, c: 'understanding', t: [3],
 }));
 add('ideal-pair-mcq', mcq({
   stem: 'Which pair of liquids forms a solution that is very nearly ideal?',
@@ -233,7 +237,7 @@ add('vapour-rich-mcq', mcq({
   right: 'The mole fraction of A is larger in the vapour than in the liquid.',
   wrong: ['The vapour and the liquid have the same composition.', 'The mole fraction of A is smaller in the vapour than in the liquid.', 'The vapour contains only A.'],
   sol: r`$y_\text{A} = \dfrac{p^\circ_\text{A} x_\text{A}}{p_\text{total}}$, and $p^\circ_\text{A}$ is greater than $p_\text{total}$ because A is the more volatile component, so $y_\text{A} > x_\text{A}$ — option (@K). Equal compositions (@1) occur only at an azeotrope, which an ideal solution never forms.`,
-  d: 3, c: 'application', t: [3],
+  d: 3, c: 'understanding', t: [3],
 }));
 add('azeotrope-mcq', mcq({
   stem: 'Rectified spirit (about 95% ethanol) cannot be turned into pure ethanol by fractional distillation because:',
@@ -301,13 +305,17 @@ add('ideal-nonideal-short', short({
   d: 2, c: 'understanding', t: [3],
 }));
 add('deviation-explain-short3', short({
-  marks: 3,
-  stem: 'Explain, in terms of intermolecular attractions, why (a) a mixture of ethanol and acetone shows positive deviation, and (b) a mixture of chloroform and acetone shows negative deviation. (c) State the sign of the enthalpy of mixing in each case.',
-  model: '(a) Pure ethanol is held together by hydrogen bonds. Acetone molecules come between ethanol molecules and break some of these bonds, and the new ethanol–acetone attractions are weaker, so molecules escape more easily and the vapour pressure is higher than predicted. (b) Chloroform’s hydrogen forms a hydrogen bond with acetone’s oxygen; these new attractions are stronger, so molecules escape less easily. (c) Ethanol + acetone: positive (heat absorbed); chloroform + acetone: negative (heat released).',
-  sol: 'Weaker A–B attraction means positive deviation and endothermic mixing; stronger means negative deviation and exothermic mixing.',
-  scheme: [['(a) Acetone breaks ethanol’s hydrogen bonds, weaker A–B attractions', 1], ['(b) New hydrogen bonds between chloroform and acetone, stronger attractions', 1], ['(c) Positive for ethanol + acetone; negative for chloroform + acetone', 1]],
-  d: 3, c: 'understanding', t: [3],
-}));
+  marks: 3, wl: null,
+  stem: r`At $300\ \text{K}$ the pure liquids X and Y have vapour pressures of $20\ \text{kPa}$ and $30\ \text{kPa}$. An equimolar liquid mixture of X and Y is found to have a total vapour pressure of $21\ \text{kPa}$. (a) Find the vapour pressure predicted by Raoult’s law and say what kind of deviation the measurement shows. (b) Infer the signs of $\Delta_\text{mix}H$ and $\Delta_\text{mix}V$ and explain the inference in terms of intermolecular attractions. (c) A student expects this mixture to boil at a temperature between the boiling points of X and Y; say whether that is safe to assume at the composition studied, and why.`,
+  model: r`(a) Raoult’s law: $p = 0.5 \times 20 + 0.5 \times 30 = 25\ \text{kPa}$. The measured $21\ \text{kPa}$ is lower, so the mixture shows **negative** deviation.
+
+(b) Lower vapour pressure means molecules escape less easily, so the new X–Y attractions are stronger than the X–X and Y–Y attractions. Forming them releases heat, so $\Delta_\text{mix}H < 0$, and the molecules pack more closely, so $\Delta_\text{mix}V < 0$.
+
+(c) Not safe. With a vapour pressure below the ideal value, the mixture needs a higher temperature to reach atmospheric pressure than an ideal mixture would; strong negative deviation can even make it boil above both pure liquids (a maximum-boiling azeotrope).`,
+  sol: 'Compare the measured pressure with the Raoult value, link the sign of the deviation to the strength of A–B attractions, and then to the boiling behaviour.',
+  scheme: [['(a) Predicted 25 kPa; measured 21 kPa is lower, negative deviation', 1], ['(b) ΔmixH < 0 and ΔmixV < 0, with stronger X–Y attractions as the reason', 1], ['(c) Boiling point can lie above an ideal mixture’s and even above both pure liquids (maximum-boiling azeotrope)', 1]],
+  d: 3, c: 'analysis', t: [3],
+}), () => near(0.5 * 20 + 0.5 * 30, 25) || 'raoult-xy');
 
 // ---------------------------------------------------------------- t04 colligative properties
 add('colligative-def-mcq', mcq({
@@ -390,12 +398,16 @@ Step 2 — $M_2 = \dfrac{5.12 \times 1000 \times 2.5}{0.512 \times 100} = 250$, 
   d: 3, c: 'application', t: [4],
 }), () => near((KF_BZ * 1000 * 2.5) / (0.512 * 100), 250) || 'M');
 add('osmotic-num', num({
-  stem: r`A glucose solution contains $0.02\ \text{mol}$ of glucose per litre. Find its osmotic pressure in **bar** at $300\ \text{K}$. ($R = 0.083\ \text{L bar K}^{-1}\ \text{mol}^{-1}$)`,
-  value: 0.498, tol: 0.003, unit: 'bar',
-  sol: r`$\pi = CRT = 0.02 \times 0.083 \times 300 = 0.498$, so the osmotic pressure is $0.498\ \text{bar}$.`,
-  scheme: [['π = CRT with C = 0.02, T = 300 K, π = 0.498 bar', 1]],
-  d: 2, c: 'understanding', t: [4],
-}), () => near(0.02 * R * 300, 0.498) || 'pi');
+  stem: r`The osmotic pressure of blood plasma at $310\ \text{K}$ is $7.7\ \text{bar}$. Find the mass of glucose ($M = 180\ \text{g mol}^{-1}$), in **grams**, needed to make $500\ \text{mL}$ of an isotonic glucose solution at this temperature. ($R = 0.083\ \text{L bar K}^{-1}\ \text{mol}^{-1}$)`,
+  value: 26.9, tol: 0.2, unit: 'g',
+  sol: r`Step 1 — Isotonic means equal $\pi$, so $C = \dfrac{\pi}{RT} = \dfrac{7.7}{0.083 \times 310} \approx 0.299\ \text{mol L}^{-1}$.
+
+Step 2 — Moles in $0.500\ \text{L}$ $= 0.299 \times 0.500 \approx 0.150$.
+
+Step 3 — Mass $= 0.150 \times 180 \approx 26.9$, so about $26.9\ \text{g}$.`,
+  scheme: [['C = π/RT ≈ 0.299 mol/L', 0.5], ['Moles in 0.500 L and mass ≈ 26.9 g', 0.5]],
+  d: 3, c: 'application', t: [4],
+}), () => near((7.7 / (0.083 * 310)) * 0.5 * 180, 26.9, 0.005) || 'glucose-iso');
 add('kb-define-short', short({
   marks: 2,
   stem: 'Define the molal elevation constant and explain why a solution of a non-volatile solute boils at a higher temperature than the pure solvent.',

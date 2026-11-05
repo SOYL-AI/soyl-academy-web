@@ -222,7 +222,7 @@ Q('sb_bangles', short({
   sol: 'Bread-bangles / sweet bread for children + loaves bought by the servant.',
 }));
 Q('sb_accounts', short({
-  ...SA2, t: [1, 2], d: 3, c: 'analysis',
+  ...SA2, t: [1, 2], d: 3, c: 'understanding',
   stem: `${BAKER} How did the baker keep his accounts, and how do we know baking was profitable? Answer in 30–40 words.`,
   model: 'The baker marked his monthly accounts in pencil on a wall and collected payment at the end of the month. Bakers and their families never went hungry, and their well-fed, prosperous look proved the trade paid well.',
   sol: 'The wall accounts, settled monthly + the evidence of prosperity.',

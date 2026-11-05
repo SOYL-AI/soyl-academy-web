@@ -300,7 +300,7 @@ add('tyndall-fill', fill({
   stem: 'A torch beam shone through a glass of diluted milk shows up as a bright path when seen from the side, but not through a glass of salt water. This is the ___ effect.',
   acc: [['Tyndall']],
   sol: 'The **Tyndall** effect: milk droplets are of colloidal size and scatter light; dissolved ions are too small.',
-  d: 1, c: 'application', t: [2],
+  d: 1, c: 'understanding', t: [2],
 }));
 add('peptisation-fill', fill({
   stem: 'Converting a freshly prepared precipitate into a colloidal sol by shaking it with a small amount of an electrolyte is called ___.',

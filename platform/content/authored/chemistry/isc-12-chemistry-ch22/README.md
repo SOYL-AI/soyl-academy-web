@@ -35,7 +35,7 @@ All items are `status: "draft"` until a reviewer approves them.
 
 - No case-based items: the ISC pattern has none (long answers carry the stimulus or calculation instead).
 - **Difficulty:** d1 15 · d2 38 · d3 13 · d4 2.
-- **Competency:** recall 19 · understanding 17 · application 25 · analysis 6 · evaluation 1. Application or higher is **47% of items (49% of marks)**, inside the 45–65% band and in line with the ISC aim of about half the marks on higher-order skills.
+- **Competency:** recall 19 · understanding 17 · application 25 · analysis 6 · evaluation 1. Application or higher is **47% of items (49% of marks)**, inside the 45–65% band and in line with the ISC aim of about half the marks on higher-order skills. (superseded: see Competency audit 2026-11-05)
 - **Topic tags:** t01 13 · t02 15 · t03 14 · t04 13 · t05 14.
 - **Deck checks:** q001, q013, q028 (Part 1); q044, q042, q055 (Part 2) — all objective, none used in the tests.
 
@@ -57,4 +57,10 @@ Every question and every internal-choice alternative was re-solved from its stem
 ## Known gaps
 - Narration audio is not generated (TTS stage).
 - SVGs were reviewed by coordinates, not rasterised.
+
+## Competency audit 2026-11-05
+Audit: `docs/platform/content-qa/2026-11-05-competency-retag-audit.md`.
+- **Retagged honestly (application → understanding):** q033 (adrenaline after a fright, a one-cue hormone match; kept as is). q028, q030, q032, q043, q044 and q045 were on the audit list too, but were rewritten (below) rather than relabelled.
+- **Rewritten as genuine application items (same key, type, marks, topic tags, test slots):** q028 (infer from molar-mass and hydrolysis data which structural levels a boiled protein has lost); q030 (interpret activity-vs-temperature data, including a cooled sample, to explain the optimum and irreversible denaturation); q032 (diabetic patient skips a meal after insulin: cause and emergency treatment); q043 (dim-light vision plus slow clotting after fat malabsorption: two fat-soluble vitamins); q044 (bleeding gums and slow clotting: assign vitamins C and K and decide, from storage, which must be eaten every day); q045 (two patients, rickets and osteomalacia, with a storage argument for weekly dosing); q027 (long: number of tripeptides, sequence and terminals from partial-hydrolysis fragments, molar mass); q041 (long: which structural levels are lost under three different treatments, and effect on activity); q054 (long: beriberi and osteomalacia from a diet case, with a water-/fat-soluble storage argument).
+- **Result:** recall 18 · understanding 16 · application 27 · analysis 6 · evaluation 1. Application or higher is **34 of 68 (50.0%) of items, 61% of marks**.
 

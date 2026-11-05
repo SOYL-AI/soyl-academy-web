@@ -7,11 +7,11 @@ const near = (a, b, rel = 0.005) => Math.abs(a - b) <= Math.max(1e-9, Math.abs(b
 
 // ---------------------------------------------------------------- t01 naming and structure
 add('name-mcq', mcq({
-  stem: r`The IUPAC name of $\ce{CH3CH(CH3)CH2COCH3}$ is:`,
-  right: '4-methylpentan-2-one',
-  wrong: ['2-methylpentan-4-one', '4-methylpentanal', '2-methylbutyl methyl ketone'],
-  sol: 'Five-carbon chain; number from the end nearer C=O: carbonyl at C2, methyl at C4 — option (@K). (@1) gives the carbonyl the higher locant.',
-  d: 2, c: 'application', t: [1],
+  stem: r`An unbranched ketone of formula $\ce{C6H12O}$ gives a yellow precipitate when warmed with iodine and sodium hydroxide. Its IUPAC name is:`,
+  right: 'hexan-2-one',
+  wrong: ['hexan-3-one', 'hexanal', '4-methylpentan-2-one'],
+  sol: 'A yellow precipitate (iodoform test) needs a CH₃CO– group, so the carbonyl is at C2 of an unbranched six-carbon chain: hexan-2-one — option (@K). (@1) has no CH₃CO– group; (@2) is an aldehyde, not a ketone; (@3) gives the test but is branched.',
+  d: 3, c: 'application', t: [1],
 }));
 add('structure-mcq', mcq({
   stem: 'Which statement about the carbonyl group is correct?',
@@ -62,18 +62,18 @@ add('etard-mcq', mcq({
   d: 1, c: 'recall', t: [2],
 }));
 add('stephen-mcq', mcq({
-  stem: 'Which sequence converts propanenitrile into propanal?',
-  right: 'SnCl₂ + HCl, then hydrolysis with water',
-  wrong: ['LiAlH₄, then water', 'H₃O⁺, heat', 'Zn–Hg + conc. HCl'],
-  sol: 'Stephen reaction: SnCl₂/HCl reduces the nitrile to an imine, which hydrolyses to the aldehyde — option (@K). LiAlH₄ (@1) gives the amine; H₃O⁺ (@2) gives propanoic acid.',
-  d: 2, c: 'application', t: [2],
+  stem: 'Which reagent sequence converts bromoethane into propanal?',
+  right: 'KCN; then SnCl₂ + HCl, followed by water',
+  wrong: ['KCN; then H₃O⁺ and heat', 'Mg in dry ether; then CO₂; then H₃O⁺', 'Aqueous NaOH; then Cu at 573 K'],
+  sol: 'Propanal has one more carbon than bromoethane, so first add a carbon as –CN (KCN gives propanenitrile), then stop the reduction at the aldehyde with the Stephen reaction (SnCl₂/HCl, then hydrolysis) — option (@K). (@1) carries on to propanoic acid; (@2) also gives propanoic acid, by the Grignard route; (@3) gives ethanal, which has only two carbons.',
+  d: 3, c: 'application', t: [2],
 }));
 add('fc-acyl-mcq', mcq({
-  stem: 'Which reagents convert benzene into acetophenone?',
-  right: 'Ethanoyl chloride and anhydrous AlCl₃',
-  wrong: ['Ethanal and dilute NaOH', 'Chloroethane and AlCl₃', 'Ethanoic acid and sodium'],
-  sol: r`Friedel–Crafts acylation: $\ce{C6H6 + CH3COCl ->[AlCl3] C6H5COCH3 + HCl}$ — option (@K). Chloroethane (@2) gives ethylbenzene (alkylation).`,
-  d: 2, c: 'understanding', t: [2],
+  stem: 'Propylbenzene is to be made from benzene, free from its isomer isopropylbenzene. Which route is suitable?',
+  right: 'Propanoyl chloride with anhydrous AlCl₃, then Zn–Hg and conc. HCl',
+  wrong: ['1-Chloropropane with anhydrous AlCl₃', 'Propanoyl chloride with anhydrous AlCl₃, then NaBH₄', 'Propanal with dilute NaOH, then Zn–Hg and conc. HCl'],
+  sol: r`Acylation attaches the propanoyl group to the ring without rearrangement, giving $\ce{C6H5COCH2CH3}$, and Clemmensen reduction then turns C=O into CH₂, giving $\ce{C6H5CH2CH2CH3}$ — option (@K). (@1) can rearrange the propyl cation to the isopropyl cation and give isopropylbenzene; (@2) stops at the alcohol 1-phenylpropan-1-ol; (@3) is not a way of attaching propanal to a benzene ring.`,
+  d: 3, c: 'application', t: [2],
 }));
 add('alkyne-tf', tf({
   stem: 'Hydration of ethyne with dilute H₂SO₄ and HgSO₄ gives ethanal, while propyne gives propanone.',
@@ -109,7 +109,7 @@ add('prep-short3', short({
   model: '(a) Pass ethyne into dilute H₂SO₄ containing HgSO₄ (about 333 K): the enol formed rearranges to ethanal.\n\n(b) Etard reaction: chromyl chloride (CrO₂Cl₂) in CS₂, then hydrolysis with water.\n\n(c) Oxidise with acidified K₂Cr₂O₇ (or pass the vapour over Cu at 573 K).',
   sol: 'Alkyne hydration; Etard; oxidation of a secondary alcohol.',
   scheme: [['(a)', 1], ['(b)', 1], ['(c)', 1]],
-  d: 2, c: 'application', t: [2],
+  d: 2, c: 'recall', t: [2],
 }));
 
 // ---------------------------------------------------------------- t03 reactions of aldehydes and ketones
@@ -132,27 +132,27 @@ add('cannizzaro-mcq', mcq({
   right: '2,2-Dimethylpropanal',
   wrong: ['Ethanal', 'Propanal', 'Butanal'],
   sol: '(CH₃)₃CCHO has no α-hydrogen, so it cannot form an enolate for aldol and undergoes Cannizzaro instead — option (@K). The others have α-H and give aldol reactions.',
-  d: 3, c: 'application', t: [3],
+  d: 3, c: 'understanding', t: [3],
 }));
 add('cyanohydrin-mcq', mcq({
-  stem: 'Ethanal reacts with HCN in the presence of a trace of base. The product is:',
-  right: '2-hydroxypropanenitrile',
-  wrong: ['propanenitrile', 'ethanenitrile', '2-hydroxypropanoic acid'],
-  sol: r`$\ce{CH3CHO + HCN -> CH3CH(OH)CN}$: the cyanohydrin, named 2-hydroxypropanenitrile — option (@K). Hydrolysis would later give 2-hydroxypropanoic acid (@3).`,
-  d: 2, c: 'understanding', t: [3],
+  stem: 'Cyclohexanone is treated with HCN and a trace of base. The product is then heated with dilute HCl until hydrolysis is complete. The final organic product is:',
+  right: '1-hydroxycyclohexane-1-carboxylic acid',
+  wrong: ['1-hydroxycyclohexane-1-carbonitrile', 'cyclohexanecarboxylic acid', '2-hydroxycyclohexane-1-carboxylic acid'],
+  sol: r`$\ce{C6H10O + HCN -> C6H10(OH)CN}$ gives the cyanohydrin; acid hydrolysis then converts –CN into –COOH while the –OH stays on the same carbon: 1-hydroxycyclohexane-1-carboxylic acid — option (@K). (@1) is only the intermediate from step one; (@2) would need the –OH to be lost; (@3) puts the –OH on the wrong carbon.`,
+  d: 3, c: 'application', t: [3],
 }));
 add('clemmensen-mcq', mcq({
-  stem: 'Acetophenone is heated with zinc amalgam and concentrated HCl. The product is:',
-  right: 'ethylbenzene',
-  wrong: ['1-phenylethanol', 'benzoic acid', 'styrene'],
-  sol: 'Clemmensen reduction replaces C=O by CH₂ — option (@K). NaBH₄ would give 1-phenylethanol (@1).',
-  d: 2, c: 'understanding', t: [3],
+  stem: 'Propanone is treated with ethylmagnesium bromide in dry ether and the mixture is hydrolysed with dilute acid. The product is then warmed with acidified potassium dichromate. The final organic product is:',
+  right: '2-methylbutan-2-ol, which is not oxidised',
+  wrong: ['pentan-2-one', 'butan-2-one', '2-methylbutanoic acid'],
+  sol: r`The Grignard reagent adds to the C=O of a ketone and hydrolysis gives a tertiary alcohol, $\ce{(CH3)2C(OH)CH2CH3}$ (2-methylbutan-2-ol). Its carbinol carbon carries no hydrogen, so the oxidant leaves it unchanged — option (@K). (@1) and (@2) assume an oxidisable secondary alcohol; (@3) assumes a primary alcohol.`,
+  d: 3, c: 'application', t: [3],
 }));
 add('iodoform-mcq', mcq({
-  stem: 'Which compound does NOT give a yellow precipitate with iodine and sodium hydroxide?',
-  right: 'Pentan-3-one',
-  wrong: ['Pentan-2-one', 'Ethanal', 'Propan-2-ol'],
-  sol: 'The iodoform test needs CH₃CO– or CH₃CH(OH)–. Pentan-3-one, CH₃CH₂COCH₂CH₃, has neither — option (@K). Propan-2-ol (@3) is oxidised to propanone and gives the test.',
+  stem: 'How many of these seven compounds give a yellow precipitate when warmed with iodine and sodium hydroxide: ethanol, propan-1-ol, propan-2-ol, butan-2-one, pentan-3-one, acetophenone, benzaldehyde?',
+  right: 'Four',
+  wrong: ['Two', 'Three', 'Five'],
+  sol: 'The iodoform test needs CH₃CO– or CH₃CH(OH)–. Ethanol, propan-2-ol, butan-2-one and acetophenone have one of these: four — option (@K). Propan-1-ol, pentan-3-one and benzaldehyde have neither. (@1) counts only the two ketones; (@2) misses ethanol, the only primary alcohol that responds; (@3) wrongly adds pentan-3-one.',
   d: 3, c: 'application', t: [3],
 }));
 add('aldol-mcq', mcq({
@@ -214,11 +214,11 @@ add('iodoform-num', num({
 }), () => near((0.58 / 58) * 394, 3.94) || 'CHI3');
 add('test-short', short({
   marks: 2,
-  stem: 'Give a chemical test to distinguish (a) ethanal from propanone and (b) propanal from benzaldehyde.',
-  model: '(a) Warm with Tollens’ reagent: ethanal gives a silver mirror, propanone does not (or the iodoform test is positive for both, so it is not suitable). (b) Warm with Fehling’s solution: propanal gives a red-brown precipitate of Cu₂O; benzaldehyde does not.',
-  sol: 'Tollens’ for aldehyde vs ketone; Fehling’s for aliphatic vs aromatic aldehyde.',
-  scheme: [['(a) reagent and results', 1], ['(b) reagent and results', 1]],
-  d: 2, c: 'application', t: [3],
+  stem: 'Three unlabelled bottles contain pentan-2-one, pentan-3-one and pentanal. Using as few tests as possible, describe how you would identify each liquid, stating the observations.',
+  model: 'Add iodine and NaOH to a sample of each: only pentan-2-one, which has a CH₃CO– group, gives a yellow precipitate of iodoform. Warm the other two with Tollens’ reagent: pentanal, an aldehyde, gives a silver mirror; pentan-3-one, a ketone, gives none.',
+  sol: 'Iodoform test isolates the methyl ketone; Tollens’ test then separates the aldehyde from the other ketone.',
+  scheme: [['Iodoform test picks out pentan-2-one (yellow precipitate)', 1], ['Tollens’ (or Fehling’s) test separates pentanal from pentan-3-one', 1]],
+  d: 3, c: 'application', t: [3],
 }));
 add('cannizzaro-short', short({
   marks: 2,
@@ -230,27 +230,28 @@ add('cannizzaro-short', short({
 }));
 add('aldol-short3', short({
   marks: 3,
-  stem: 'Explain aldol condensation using ethanal. Why does benzaldehyde not undergo self-aldol condensation?',
-  model: r`In dilute NaOH, hydroxide removes an α-hydrogen from ethanal, giving a resonance-stabilised carbanion (enolate). This attacks the carbonyl carbon of a second ethanal molecule, and protonation gives the aldol, 3-hydroxybutanal: $\ce{2CH3CHO -> CH3CH(OH)CH2CHO}$. On heating it loses water to give but-2-enal. Benzaldehyde has no α-hydrogen, so it cannot form the enolate and cannot undergo self-aldol condensation.`,
-  sol: 'Enolate formation, addition, dehydration; no α-H in benzaldehyde.',
-  scheme: [['Enolate from α-H', 1], ['Addition to second molecule giving aldol; dehydration', 1], ['Benzaldehyde lacks α-H', 1]],
-  d: 3, c: 'understanding', t: [3],
+  stem: 'Propanal is added slowly to a warm mixture of benzaldehyde and dilute NaOH, and the product is then heated. Give the structure and IUPAC name of the main final product, and explain why benzaldehyde cannot condense with itself and why slow addition of propanal keeps its self-condensation small.',
+  model: r`Only propanal has α-hydrogens, so it alone gives the enolate $\ce{CH3CH^-CHO}$, which attacks the carbonyl carbon of benzaldehyde. Protonation gives $\ce{C6H5CH(OH)CH(CH3)CHO}$, which loses water on heating to give $\ce{C6H5CH=C(CH3)CHO}$, 2-methyl-3-phenylprop-2-enal. Benzaldehyde has no α-hydrogen, so it forms no enolate and cannot condense with itself. Adding propanal slowly keeps its concentration low, so each enolate meets plentiful benzaldehyde rather than another propanal.`,
+  sol: 'Crossed aldol (Claisen–Schmidt): enolate only from propanal; dehydration gives the conjugated product.',
+  scheme: [['Enolate only from propanal; benzaldehyde has no α-H', 1], ['Product C₆H₅CH=C(CH₃)CHO named 2-methyl-3-phenylprop-2-enal', 1], ['Slow addition keeps propanal concentration low, so the enolate reacts with benzaldehyde', 1]],
+  wl: [60, 110],
+  d: 3, c: 'application', t: [3],
 }));
 
 // ---------------------------------------------------------------- t04 carboxylic acids: preparation
 add('benzoic-mcq', mcq({
-  stem: 'Which compound gives benzoic acid on heating with alkaline KMnO₄ followed by acidification?',
-  right: 'Ethylbenzene',
-  wrong: ['Cyclohexane', 'Phenol', 'tert-Butylbenzene'],
-  sol: 'Any alkyl side chain with a benzylic hydrogen is oxidised to –COOH — option (@K). tert-Butylbenzene (@3) has no benzylic hydrogen and resists oxidation.',
+  stem: 'Which compound gives benzene-1,4-dicarboxylic acid on heating with alkaline KMnO₄ followed by acidification?',
+  right: '1-Ethyl-4-methylbenzene',
+  wrong: ['1-tert-Butyl-4-methylbenzene', '1-Ethyl-3-methylbenzene', '1,4-Di-tert-butylbenzene'],
+  sol: 'Every alkyl side chain that has a benzylic hydrogen is oxidised to –COOH, whatever its length, so the para ethyl and methyl groups both become –COOH — option (@K). (@1) keeps its tert-butyl group (no benzylic H) and gives 4-tert-butylbenzoic acid; (@2) has the groups meta, giving the 1,3-diacid; (@3) is not oxidised at all.',
   d: 3, c: 'application', t: [4],
 }));
 add('grignard-acid-mcq', mcq({
-  stem: 'Ethylmagnesium bromide is poured onto dry ice and the mixture is acidified. The product is:',
-  right: 'propanoic acid',
-  wrong: ['ethanoic acid', 'ethanol', 'propanal'],
-  sol: 'RMgX + CO₂ gives RCOOMgX; acid gives RCOOH with one extra carbon: CH₃CH₂COOH — option (@K).',
-  d: 2, c: 'application', t: [4],
+  stem: '2-Bromopropane is converted into its Grignard reagent, which is poured onto dry ice and acidified. The acid formed is converted into its acid chloride with thionyl chloride, and this is hydrogenated over palladium poisoned with BaSO₄. The final product is:',
+  right: '2-methylpropanal',
+  wrong: ['butanal', 'propanal', '2-methylpropan-1-ol'],
+  sol: r`$\ce{(CH3)2CHMgBr}$ adds CO₂ to give 2-methylpropanoic acid, one carbon more than the halide; SOCl₂ gives $\ce{(CH3)2CHCOCl}$; Rosenmund reduction stops at $\ce{(CH3)2CHCHO}$ — option (@K). (@1) would need a straight chain; (@2) forgets the carbon added by CO₂; (@3) is over-reduction, which the poisoned catalyst prevents.`,
+  d: 3, c: 'application', t: [4],
 }));
 add('nitrile-tf', tf({
   stem: 'Hydrolysis of ethanenitrile with dilute acid gives ethanoic acid.',
@@ -287,21 +288,21 @@ add('sodalime-mcq', mcq({
   right: 'ethane',
   wrong: ['propane', 'methane', 'carbon dioxide'],
   sol: r`Decarboxylation removes one carbon: $\ce{CH3CH2COONa + NaOH -> CH3CH3 + Na2CO3}$ — option (@K).`,
-  d: 2, c: 'application', t: [5],
+  d: 2, c: 'understanding', t: [5],
 }));
 add('nahco3-mcq', mcq({
   stem: 'A solution of an organic compound gives brisk effervescence with aqueous sodium hydrogencarbonate. The compound is most likely:',
   right: 'benzoic acid',
   wrong: ['phenol', 'ethanol', 'benzaldehyde'],
   sol: r`Carboxylic acids are stronger than carbonic acid: $\ce{C6H5COOH + NaHCO3 -> C6H5COONa + H2O + CO2}$ — option (@K). Phenol (@1) is too weak.`,
-  d: 1, c: 'application', t: [5],
+  d: 1, c: 'recall', t: [5],
 }));
 add('hvz-mcq', mcq({
-  stem: 'Propanoic acid is treated with bromine in the presence of red phosphorus. The product is:',
-  right: '2-bromopropanoic acid',
-  wrong: ['3-bromopropanoic acid', 'bromoethane', 'propanoyl bromide only'],
-  sol: 'Hell–Volhard–Zelinsky reaction substitutes an α-hydrogen: CH₃CHBrCOOH — option (@K).',
-  d: 2, c: 'understanding', t: [5],
+  stem: 'Propanoic acid is treated with bromine and red phosphorus. The product is warmed with excess aqueous NaOH and the solution is then acidified. The final organic product is:',
+  right: '2-hydroxypropanoic acid',
+  wrong: ['propenoic acid', '3-hydroxypropanoic acid', '2-bromopropanoic acid'],
+  sol: r`The Hell–Volhard–Zelinsky reaction gives $\ce{CH3CHBrCOOH}$. Warm aqueous alkali replaces Br by OH (substitution) and neutralises the –COOH; acidifying then frees 2-hydroxypropanoic acid — option (@K). (@1) needs alcoholic KOH, which eliminates HBr; (@2) puts the –OH on the wrong carbon, since Br is on C2; (@3) is only the intermediate.`,
+  d: 3, c: 'application', t: [5],
 }));
 add('ester-mcq', mcq({
   stem: 'Ethanoic acid is warmed with ethanol and a few drops of concentrated H₂SO₄. A fruity smell develops because:',
@@ -374,12 +375,12 @@ add('acidity-short', short({
 }));
 add('decarb-short', short({
   marks: 2, wl: null,
-  stem: 'What is decarboxylation? Write the equation for sodium ethanoate with soda lime.',
-  model: r`Decarboxylation is the removal of CO₂ from a carboxylic acid or its salt, giving a hydrocarbon with one carbon fewer. $\ce{CH3COONa + NaOH ->[CaO][\Delta] CH4 + Na2CO3}$.`,
-  sol: 'Definition and equation.',
-  scheme: [['Definition', 1], ['Equation', 1]],
-  d: 1, c: 'recall', t: [5],
-}));
+  stem: r`A sodium salt of a monocarboxylic acid, $9.6\ \text{g}$, is heated with excess soda lime and gives $2.24\ \text{L}$ of a hydrocarbon gas at STP (22.4 L mol⁻¹). (a) Find the molar mass of the salt. (b) Identify the salt and the gas and write the equation.`,
+  model: r`Moles of gas $= \dfrac{2.24}{22.4} = 0.100$. With excess soda lime the reaction is 1 : 1, so the salt is $0.100$ mol and $M = \dfrac{9.6}{0.100} = 96\ \text{g mol}^{-1}$. For RCOONa, $M(\text{R}) = 96 - 67 = 29$, which is $\ce{C2H5}$. The salt is sodium propanoate and the gas is ethane: $\ce{CH3CH2COONa + NaOH ->[CaO][\Delta] CH3CH3 + Na2CO3}$.`,
+  sol: 'Moles of gas = moles of salt; M = 96; R = C₂H₅.',
+  scheme: [['0.100 mol gives M = 96', 1], ['Sodium propanoate and ethane with balanced equation', 1]],
+  d: 3, c: 'application', t: [5],
+}), () => near(9.6 / (2.24 / 22.4), 96) && near(96 - 67, 29) || 'decarb');
 add('bp-short', short({
   marks: 2,
   stem: 'Propanoic acid (M = 74) boils at 414 K, while butan-1-ol (M = 74) boils at 391 K. Explain.',
@@ -398,11 +399,11 @@ add('acidity-short3', short({
 }));
 add('conversions-short3', short({
   marks: 3, wl: null,
-  stem: 'Give reagents for: (a) ethanoic acid → ethanoyl chloride; (b) ethanoic acid → ethanol; (c) ethanoic acid → chloroethanoic acid.',
-  model: '(a) SOCl₂ (or PCl₅).\n\n(b) LiAlH₄ in dry ether, then H₃O⁺.\n\n(c) Cl₂ with red phosphorus (HVZ reaction).',
-  sol: 'Acid chloride; reduction; HVZ.',
-  scheme: [['(a)', 1], ['(b)', 1], ['(c)', 1]],
-  d: 2, c: 'application', t: [5],
+  stem: 'Give reagent sequences, naming the intermediate, for: (a) ethanoic acid → ethanal, and say why LiAlH₄ cannot be used directly; (b) ethanal → propanone; (c) ethanoic acid → hydroxyethanoic acid.',
+  model: '(a) SOCl₂ gives ethanoyl chloride; H₂ over Pd–BaSO₄ (Rosenmund) then stops at ethanal. LiAlH₄ would carry the reduction through to ethanol, so the aldehyde could not be isolated.\n\n(b) CH₃MgBr in dry ether, then H₃O⁺, gives propan-2-ol; oxidise it with acidified K₂Cr₂O₇ (or Cu at 573 K) to propanone.\n\n(c) Cl₂ with red phosphorus (HVZ) gives chloroethanoic acid; warm with aqueous KOH, then acidify, to give HOCH₂COOH.',
+  sol: 'Acid chloride then Rosenmund; Grignard then oxidation; HVZ then hydrolysis.',
+  scheme: [['(a) two steps and the reason', 1], ['(b) Grignard addition then oxidation', 1], ['(c) HVZ then hydrolysis', 1]],
+  d: 3, c: 'application', t: [5],
 }));
 
 // ---------------------------------------------------------------- more practice
@@ -437,25 +438,45 @@ add('soda-num', num({
 
 // ---------------------------------------------------------------- long answers
 add('carbonyl-long', long({
-  stem: '(a) Explain why aldehydes are more reactive than ketones towards nucleophilic addition.\n\n(b) Describe the mechanism of nucleophilic addition of HCN to a carbonyl compound.\n\n(c) Describe Tollens’ and Fehling’s tests, and state which of ethanal, benzaldehyde and propanone respond to each.',
-  model: 'Aldehydes have one hydrogen on the carbonyl carbon, so there is less crowding around it and less electron release; in ketones two alkyl groups hinder the nucleophile and, by their +I effect, reduce the positive charge on carbon. In the addition of HCN, a base generates CN⁻, which attacks the carbonyl carbon; the π electrons move to oxygen, giving a tetrahedral alkoxide intermediate, which takes a proton from HCN or water to give the cyanohydrin, regenerating CN⁻. Tollens’ reagent (ammoniacal silver nitrate) is reduced by aldehydes to metallic silver, forming a silver mirror; ethanal and benzaldehyde respond, propanone does not. Fehling’s solution (alkaline copper(II) tartrate) is reduced by aliphatic aldehydes to a red-brown precipitate of Cu₂O; only ethanal responds.',
-  sol: 'Steric and electronic effects; two-step mechanism; two tests with results.',
-  scheme: [['(a) Steric and +I effects', 1], ['(b) Attack by CN⁻ and tetrahedral intermediate', 1], ['(b) Protonation to cyanohydrin', 0.5], ['(c) Tollens’ test and results', 1.5], ['(c) Fehling’s test and results', 1]],
-  d: 3, c: 'understanding', t: [3],
-}));
+  stem: r`(a) Arrange in increasing reactivity towards HCN, giving reasons: ethanal, propanal, pentan-3-one, 2,2,4,4-tetramethylpentan-3-one.
+
+(b) Compound P, $\ce{C5H10O}$, has an unbranched carbon chain. It gives an orange precipitate with 2,4-DNP, no silver mirror with Tollens’ reagent and a yellow precipitate with iodine and NaOH. Deduce the structure and name of P.
+
+(c) A $1.44\ \text{g}$ sample of an unbranched aliphatic aldehyde gives $4.32\ \text{g}$ of silver with excess Tollens’ reagent (2 mol Ag per mole of aldehyde; Ag = 108). Find its molar mass and identify it.`,
+  model: r`(a) 2,2,4,4-Tetramethylpentan-3-one < pentan-3-one < propanal < ethanal. A carbonyl carbon is attacked more easily when it is less crowded and less shielded by electron-releasing alkyl groups (+I). Ethanal has one methyl group and propanal a slightly larger, more electron-releasing ethyl group. The two ketones carry two alkyl groups each, and the two tert-butyl groups of the last ketone block the approach of CN⁻ almost completely.
+
+(b) The 2,4-DNP result shows a carbonyl compound; no mirror shows a ketone; the iodoform result shows CH₃CO–. With an unbranched chain of five carbons, P is $\ce{CH3COCH2CH2CH3}$, pentan-2-one (pentan-3-one has no CH₃CO– group).
+
+(c) Moles of Ag $= \dfrac{4.32}{108} = 0.040$, so moles of aldehyde $= 0.020$ and $M = \dfrac{1.44}{0.020} = 72\ \text{g mol}^{-1}$. A saturated aldehyde has the formula $\text{C}_n\text{H}_{2n}\text{O}$ with $M = 14n + 16 = 72$, so $n = 4$: the unbranched aldehyde is butanal, $\ce{CH3CH2CH2CHO}$.`,
+  sol: 'Reactivity ranking from steric and +I effects; structure deduced from three tests; molar mass from silver yield.',
+  scheme: [['(a) Correct order', 1], ['(a) Reasons: crowding and +I effect', 1], ['(b) Deduction from the three results; pentan-2-one', 1.5], ['(c) 0.040 mol Ag, 0.020 mol aldehyde, M = 72', 1], ['(c) Butanal', 0.5]],
+  d: 4, c: 'application', t: [3],
+}), () => (near(4.32 / 108, 0.04) && near(1.44 / (4.32 / 108 / 2), 72) && near(14 * 4 + 16, 72)) || 'carbonyl-long');
 add('acid-long', long({
-  stem: '(a) Explain why carboxylic acids are acidic, and how electron-withdrawing and electron-releasing groups affect their acidity, with examples.\n\n(b) Write the reactions of ethanoic acid with (i) sodium hydrogencarbonate, (ii) PCl₅, (iii) chlorine and red phosphorus, and of sodium ethanoate with soda lime.',
-  model: 'The O–H bond of the carboxyl group ionises because the carboxylate ion is stabilised by resonance, with the negative charge spread equally over two oxygen atoms. Electron-withdrawing groups such as Cl, F or NO₂ disperse the charge further and increase acidity: chloroethanoic acid (pKa 2.86) is stronger than ethanoic acid (4.76), and trichloroethanoic acid (0.65) stronger still. Electron-releasing alkyl groups concentrate the charge and decrease acidity, so propanoic acid (4.88) is weaker than ethanoic acid, and methanoic acid (3.75) is stronger. Reactions: CH₃COOH + NaHCO₃ → CH₃COONa + H₂O + CO₂; CH₃COOH + PCl₅ → CH₃COCl + POCl₃ + HCl; CH₃COOH + Cl₂ (red P) → ClCH₂COOH + HCl; CH₃COONa + NaOH (CaO, heat) → CH₄ + Na₂CO₃.',
-  sol: 'Carboxylate resonance; −I/+I with pKa examples; four equations.',
-  scheme: [['(a) Resonance stabilisation', 1], ['(a) −I and +I effects with examples', 1.5], ['(b) Four reactions', 2.5]],
-  d: 3, c: 'understanding', t: [5],
-}));
+  stem: r`(a) The pKa values of four acids are: butanoic acid 4.82, 4-chlorobutanoic acid 4.52, 3-chlorobutanoic acid 4.06 and 2-chlorobutanoic acid 2.86. Explain the trend, and predict, with a reason, whether 2,2-dichlorobutanoic acid has a pKa above or below 2.86.
+
+(b) A monocarboxylic acid X, $0.74\ \text{g}$, needs $10.0\ \text{mL}$ of $1.00\ \text{M}$ NaOH for complete neutralisation. Find the molar mass of X and identify it.
+
+(c) Write the equation for X with sodium hydrogencarbonate and find the volume of CO₂ released at STP (22.4 L mol⁻¹) from $0.74\ \text{g}$ of X.`,
+  model: r`(a) The chlorine atom withdraws electrons (−I effect) and stabilises the carboxylate ion, but the effect weakens as the number of bonds between Cl and the carboxyl group increases. So the acid is strongest when Cl is on C2 and weakens as Cl moves to C3 and C4, approaching butanoic acid, whose ethyl group releases electrons (+I) and gives the weakest acid. A second chlorine on C2 withdraws still more charge, so 2,2-dichlorobutanoic acid has a pKa below 2.86.
+
+(b) Moles of NaOH $= 1.00 \times 0.0100 = 0.0100$, which equals the moles of the monocarboxylic acid, so $M = \dfrac{0.74}{0.0100} = 74\ \text{g mol}^{-1}$. For a saturated monocarboxylic acid, $\text{C}_n\text{H}_{2n}\text{O}_2$ with $M = 14n + 32 = 74$ gives $n = 3$: X is propanoic acid, $\ce{CH3CH2COOH}$.
+
+(c) $\ce{CH3CH2COOH + NaHCO3 -> CH3CH2COONa + H2O + CO2}$. The ratio is 1 : 1, so $0.0100$ mol of CO₂ forms, and $V = 0.0100 \times 22.4 = 0.224\ \text{L}$ (224 mL).`,
+  sol: 'Distance and number of −I groups; neutralisation gives M = 74; propanoic acid; 1 : 1 with NaHCO₃.',
+  scheme: [['(a) −I effect falls with distance; alkyl +I in butanoic acid', 1], ['(a) Two Cl on C2 give pKa below 2.86', 0.5], ['(b) 0.0100 mol and M = 74', 1], ['(b) 14n + 32 = 74 gives propanoic acid', 1.5], ['(c) Balanced equation and 0.224 L', 1]],
+  d: 4, c: 'application', t: [5],
+}), () => (near(1.0 * 0.01, 0.01) && near(0.74 / 0.01, 74) && near(14 * 3 + 32, 74) && near(0.01 * 22.4, 0.224)) || 'acid-long');
 add('prep-long', long({
-  stem: '(a) Describe the Rosenmund reduction, the Stephen reaction and the Etard reaction, with equations or reagents.\n\n(b) How are carboxylic acids prepared from Grignard reagents and from nitriles? Explain why both methods are useful for increasing chain length.',
-  model: 'In the Rosenmund reduction, an acid chloride is hydrogenated over palladium poisoned with barium sulfate, which stops the reduction at the aldehyde: C₆H₅COCl + H₂ → C₆H₅CHO + HCl. In the Stephen reaction, a nitrile is reduced by tin(II) chloride and hydrochloric acid to an imine, which is hydrolysed to an aldehyde. In the Etard reaction, toluene is oxidised by chromyl chloride to a chromium complex, which is hydrolysed to benzaldehyde. A Grignard reagent RMgX adds to carbon dioxide (dry ice) to give RCOOMgX, which is acidified to RCOOH. An alkyl halide RX with KCN gives the nitrile RCN, which acid hydrolysis converts into RCOOH. In both cases the carboxylic acid has one carbon more than the alkyl halide, so these methods step up the carbon chain.',
-  sol: 'Three named reactions; two acid preparations adding a carbon.',
-  scheme: [['(a) Rosenmund', 1], ['(a) Stephen', 1], ['(a) Etard', 1], ['(b) Grignard and nitrile routes', 1.5], ['(b) Chain lengthening explained', 0.5]],
-  d: 2, c: 'understanding', t: [2, 4],
+  stem: '(a) Give reagent sequences, naming the intermediates, for (i) toluene → 1-phenylethanol and (ii) toluene → 3-nitrobenzoic acid. Explain why the steps in (ii) must be done in that order.\n\n(b) Show how benzene can be converted into benzoic acid in two steps without using an oxidising agent such as KMnO₄, and name the by-product that is lost.',
+  model: r`(a)(i) Etard reaction: $\ce{CrO2Cl2}$ in CS₂, then hydrolysis with water, converts toluene into benzaldehyde. Benzaldehyde is then treated with $\ce{CH3MgBr}$ in dry ether, followed by hydrolysis with dilute acid: the Grignard reagent adds to C=O, giving $\ce{C6H5CH(OH)CH3}$, 1-phenylethanol.
+
+(ii) First oxidise toluene with alkaline KMnO₄ (then acidify) to benzoic acid, and then nitrate with conc. HNO₃ and conc. H₂SO₄. The –COOH group is meta-directing and gives 3-nitrobenzoic acid. If toluene were nitrated first, the methyl group, which is ortho/para-directing, would give 2- and 4-nitrotoluene, and oxidation would then give the 2- and 4-nitrobenzoic acids.
+
+(b) Friedel–Crafts acylation with $\ce{CH3COCl}$ and anhydrous AlCl₃ gives acetophenone. Warming it with iodine and NaOH (haloform reaction) gives sodium benzoate, and acidification gives benzoic acid. The by-product lost is iodoform, $\ce{CHI3}$.`,
+  sol: 'Etard then Grignard; oxidation before nitration because of directing effects; acylation then haloform.',
+  scheme: [['(a)(i) Etard giving benzaldehyde', 1], ['(a)(i) CH₃MgBr then hydrolysis giving 1-phenylethanol', 1], ['(a)(ii) oxidation then nitration', 1], ['(a)(ii) order explained by directing effects', 1], ['(b) acylation, then I₂/NaOH and acidification; CHI₃ lost', 1]],
+  d: 3, c: 'application', t: [2, 4],
 }));
 add('mechanism-long', long({
   stem: '(a) What are α-hydrogens, and why are they acidic?\n\n(b) Explain aldol condensation with propanal, giving the aldol and the final unsaturated product.\n\n(c) Explain the Cannizzaro reaction of benzaldehyde, and why benzaldehyde cannot undergo aldol condensation.',

@@ -65,3 +65,10 @@ Every question, case part and alternative was re-solved from its stem; distracto
 - Narration audio is not generated (TTS stage).
 - SVGs were reviewed by coordinates, not rasterised (no rasteriser is installed in this worktree).
 - Plots and case data are illustrative values, labelled as such.
+
+## Competency audit 2026-11-05
+
+Remediation of the content-verifier audit `docs/platform/content-qa/2026-11-05-competency-retag-audit.md`. Retagged honestly; no question text, key, solution or marking scheme changed, and the chapter stays inside its band, so no items needed upgrading:
+- `q041` (Tyndall effect fill-blank) application → understanding: naming the effect from its description; the earlier rewrite changed the wording, not the demand.
+
+Now: recall 7 · understanding 22 · application 29 · analysis 4 · evaluation 0; application or higher **53.2% of items (54% of marks)**, inside the 45–65% band. This supersedes the competency figures above.

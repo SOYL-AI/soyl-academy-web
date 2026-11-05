@@ -3536,36 +3536,32 @@
       "unit": "cbse-12-chemistry-ch01",
       "language": "en",
       "type": "short",
-      "stem_md": "Why is molality preferred to molarity for expressing concentration in experiments on boiling and freezing points?",
+      "stem_md": "A $1.00\\ \\text{mol L}^{-1}$ aqueous glucose solution ($M = 180\\ \\text{g mol}^{-1}$, density $1.06\\ \\text{g mL}^{-1}$) is used in a freezing point experiment. Find the depression of freezing point, and say why the molarity cannot simply be substituted into $\\Delta T_\\text{f} = K_\\text{f}\\,m$. ($K_\\text{f} = 1.86\\ \\text{K kg mol}^{-1}$)",
       "options": [],
       "match_right": [],
       "answer": {
-        "model_answer_md": "Molarity uses the volume of the solution, and volume changes when a liquid is heated or cooled, so molarity changes with temperature. Molality uses the mass of the solvent, which does not change, so it stays constant over the temperature range of such experiments."
+        "model_answer_md": "Take $1\\ \\text{L}$ of solution: mass $= 1000 \\times 1.06 = 1060\\ \\text{g}$, containing $1.00\\ \\text{mol} = 180\\ \\text{g}$ of glucose, so the solvent is $1060 - 180 = 880\\ \\text{g}$.\n\nMolality $= \\dfrac{1.00}{0.880} \\approx 1.14\\ \\text{mol kg}^{-1}$, so $\\Delta T_\\text{f} = 1.86 \\times 1.14 \\approx 2.11\\ \\text{K}$.\n\nMolarity cannot be used directly because the formula needs moles per kilogram of **solvent**; the volume of solution includes the solute and changes with temperature. Substituting $1.00$ would give $1.86\\ \\text{K}$, about 12% too small."
       },
-      "solution_md": "Contrast the volume basis of molarity with the mass basis of molality.",
+      "solution_md": "Convert molarity to molality through the density (mass of 1 L of solution minus the mass of solute gives the solvent), then apply the depression formula.",
       "marking_scheme": [
         {
-          "step": "Molarity depends on volume, which changes with temperature",
+          "step": "Solvent mass 880 g from density and molar mass; molality ≈ 1.14 mol/kg",
           "marks": 1
         },
         {
-          "step": "Molality depends on mass, which does not",
+          "step": "ΔTf ≈ 2.11 K, with the reason that the formula needs moles per kg of solvent, not per litre of solution",
           "marks": 1
         }
       ],
       "marks": 2,
-      "difficulty": 2,
-      "competency": "understanding",
-      "bloom": "understand",
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
       "topic_ids": [
         "cbse-12-chemistry-ch01-t01"
       ],
       "expected_time_sec": 150,
       "assets": [],
-      "word_limit": {
-        "min": 30,
-        "max": 50
-      },
       "children": [],
       "status": "draft",
       "version": 1,
@@ -4275,8 +4271,8 @@
       ],
       "marks": 1,
       "difficulty": 2,
-      "competency": "application",
-      "bloom": "apply",
+      "competency": "understanding",
+      "bloom": "understand",
       "topic_ids": [
         "cbse-12-chemistry-ch01-t03"
       ],
@@ -4389,8 +4385,8 @@
       ],
       "marks": 1,
       "difficulty": 3,
-      "competency": "application",
-      "bloom": "apply",
+      "competency": "understanding",
+      "bloom": "understand",
       "topic_ids": [
         "cbse-12-chemistry-ch01-t03"
       ],
@@ -4873,40 +4869,36 @@
       "unit": "cbse-12-chemistry-ch01",
       "language": "en",
       "type": "short",
-      "stem_md": "Explain, in terms of intermolecular attractions, why (a) a mixture of ethanol and acetone shows positive deviation, and (b) a mixture of chloroform and acetone shows negative deviation. (c) State the sign of the enthalpy of mixing in each case.",
+      "stem_md": "At $300\\ \\text{K}$ the pure liquids X and Y have vapour pressures of $20\\ \\text{kPa}$ and $30\\ \\text{kPa}$. An equimolar liquid mixture of X and Y is found to have a total vapour pressure of $21\\ \\text{kPa}$. (a) Find the vapour pressure predicted by Raoult’s law and say what kind of deviation the measurement shows. (b) Infer the signs of $\\Delta_\\text{mix}H$ and $\\Delta_\\text{mix}V$ and explain the inference in terms of intermolecular attractions. (c) A student expects this mixture to boil at a temperature between the boiling points of X and Y; say whether that is safe to assume at the composition studied, and why.",
       "options": [],
       "match_right": [],
       "answer": {
-        "model_answer_md": "(a) Pure ethanol is held together by hydrogen bonds. Acetone molecules come between ethanol molecules and break some of these bonds, and the new ethanol–acetone attractions are weaker, so molecules escape more easily and the vapour pressure is higher than predicted. (b) Chloroform’s hydrogen forms a hydrogen bond with acetone’s oxygen; these new attractions are stronger, so molecules escape less easily. (c) Ethanol + acetone: positive (heat absorbed); chloroform + acetone: negative (heat released)."
+        "model_answer_md": "(a) Raoult’s law: $p = 0.5 \\times 20 + 0.5 \\times 30 = 25\\ \\text{kPa}$. The measured $21\\ \\text{kPa}$ is lower, so the mixture shows **negative** deviation.\n\n(b) Lower vapour pressure means molecules escape less easily, so the new X–Y attractions are stronger than the X–X and Y–Y attractions. Forming them releases heat, so $\\Delta_\\text{mix}H < 0$, and the molecules pack more closely, so $\\Delta_\\text{mix}V < 0$.\n\n(c) Not safe. With a vapour pressure below the ideal value, the mixture needs a higher temperature to reach atmospheric pressure than an ideal mixture would; strong negative deviation can even make it boil above both pure liquids (a maximum-boiling azeotrope)."
       },
-      "solution_md": "Weaker A–B attraction means positive deviation and endothermic mixing; stronger means negative deviation and exothermic mixing.",
+      "solution_md": "Compare the measured pressure with the Raoult value, link the sign of the deviation to the strength of A–B attractions, and then to the boiling behaviour.",
       "marking_scheme": [
         {
-          "step": "(a) Acetone breaks ethanol’s hydrogen bonds, weaker A–B attractions",
+          "step": "(a) Predicted 25 kPa; measured 21 kPa is lower, negative deviation",
           "marks": 1
         },
         {
-          "step": "(b) New hydrogen bonds between chloroform and acetone, stronger attractions",
+          "step": "(b) ΔmixH < 0 and ΔmixV < 0, with stronger X–Y attractions as the reason",
           "marks": 1
         },
         {
-          "step": "(c) Positive for ethanol + acetone; negative for chloroform + acetone",
+          "step": "(c) Boiling point can lie above an ideal mixture’s and even above both pure liquids (maximum-boiling azeotrope)",
           "marks": 1
         }
       ],
       "marks": 3,
       "difficulty": 3,
-      "competency": "understanding",
-      "bloom": "understand",
+      "competency": "analysis",
+      "bloom": "analyze",
       "topic_ids": [
         "cbse-12-chemistry-ch01-t03"
       ],
       "expected_time_sec": 270,
       "assets": [],
-      "word_limit": {
-        "min": 50,
-        "max": 80
-      },
       "children": [],
       "status": "draft",
       "version": 1,
@@ -5499,25 +5491,29 @@
       "unit": "cbse-12-chemistry-ch01",
       "language": "en",
       "type": "numerical",
-      "stem_md": "A glucose solution contains $0.02\\ \\text{mol}$ of glucose per litre. Find its osmotic pressure in **bar** at $300\\ \\text{K}$. ($R = 0.083\\ \\text{L bar K}^{-1}\\ \\text{mol}^{-1}$)",
+      "stem_md": "The osmotic pressure of blood plasma at $310\\ \\text{K}$ is $7.7\\ \\text{bar}$. Find the mass of glucose ($M = 180\\ \\text{g mol}^{-1}$), in **grams**, needed to make $500\\ \\text{mL}$ of an isotonic glucose solution at this temperature. ($R = 0.083\\ \\text{L bar K}^{-1}\\ \\text{mol}^{-1}$)",
       "options": [],
       "match_right": [],
       "answer": {
-        "value": 0.498,
-        "tolerance": 0.003,
-        "unit": "bar"
+        "value": 26.9,
+        "tolerance": 0.2,
+        "unit": "g"
       },
-      "solution_md": "$\\pi = CRT = 0.02 \\times 0.083 \\times 300 = 0.498$, so the osmotic pressure is $0.498\\ \\text{bar}$.",
+      "solution_md": "Step 1 — Isotonic means equal $\\pi$, so $C = \\dfrac{\\pi}{RT} = \\dfrac{7.7}{0.083 \\times 310} \\approx 0.299\\ \\text{mol L}^{-1}$.\n\nStep 2 — Moles in $0.500\\ \\text{L}$ $= 0.299 \\times 0.500 \\approx 0.150$.\n\nStep 3 — Mass $= 0.150 \\times 180 \\approx 26.9$, so about $26.9\\ \\text{g}$.",
       "marking_scheme": [
         {
-          "step": "π = CRT with C = 0.02, T = 300 K, π = 0.498 bar",
-          "marks": 1
+          "step": "C = π/RT ≈ 0.299 mol/L",
+          "marks": 0.5
+        },
+        {
+          "step": "Moles in 0.500 L and mass ≈ 26.9 g",
+          "marks": 0.5
         }
       ],
       "marks": 1,
-      "difficulty": 2,
-      "competency": "understanding",
-      "bloom": "understand",
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
       "topic_ids": [
         "cbse-12-chemistry-ch01-t04"
       ],
@@ -7139,10 +7135,10 @@
   "build": {
     "run_id": null,
     "checks": {
-      "katex_mhchem": "686 math strings parsed with KaTeX 0.19.0 + mhchem (throwOnError, strict \"error\"), 0 failures",
+      "katex_mhchem": "715 math strings parsed with KaTeX 0.19.0 + mhchem (throwOnError, strict \"error\"), 0 failures",
       "svg_allowlist": "8 SVG visuals (4 distinct diagrams) checked with saxes against svg-allowlist.ts: elements, attributes, class pattern, fragment-only refs, no style, palette incl. named hues, viewBox, title, per-page unique ids — 0 failures",
       "narration": "47 slides, 24–75 words (mean 61), no symbols, formulae or unit abbreviations",
-      "resolve": "27/27 scripted re-solve checks pass",
+      "resolve": "29/29 scripted re-solve checks pass",
       "chemistry_facts": "Concentration units, Henry’s law constants, Raoult’s law, deviations and azeotropes, Kb/Kf values and van’t Hoff factors checked against the 2026-27 syllabus scope (see README \"Verifier pass\")",
       "content_gate": "npm test -w @soyl/content-templates: all 7 checks pass for this chapter",
       "verifier_pass": "2026-10-29: every question, case part and alternative re-solved from its stem by the author; every numerical re-computed by the build script — see README \"Verifier pass\"",
