@@ -61,3 +61,10 @@ Every item re-answered from its stem; every factual claim checked against the th
 ## Known gaps
 - No n-gram check against the actual pieces (reference texts are not supplied to `catalog/sources/reference/`); the reproduction review was manual. A human reviewer with the textbook should run the checklist above.
 - Distances in the Coorg fact box (airports, road routes) are not used, since they could not be confirmed without the text; author biographies are kept minimal for the same reason.
+
+## Competency audit 2026-11-05
+
+Remediation of the content-verifier audit `docs/platform/content-qa/2026-11-05-competency-retag-audit.md`. Retagged honestly; no question text, key, solution or marking scheme changed, and the chapter stays inside its band, so no items needed upgrading:
+- `q023` (how the baker kept accounts, and how we know baking paid) analysis → understanding: both answers are stated in the text.
+
+Now: recall 16 · understanding 18 · application 6 · analysis 23 · evaluation 4; application or higher **49.3% of items (63% of marks)**, inside the 45–65% band. This supersedes the competency figures above.
