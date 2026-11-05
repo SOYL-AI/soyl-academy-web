@@ -104,7 +104,7 @@ const tNotRace = T('a nation compared with a race, a language group and a religi
   ['Language group', 'People who speak the same language', 'A nation may have several languages'],
   ['Religion', 'People who share a faith', 'A nation may include many faiths'],
   ['Nation', 'A community with a shared identity and a wish to govern itself', 'Rests on belief, history, territory and ideals'],
-], 'The comparison uses general terms.');
+], 'Uniformity and pluralism compared.');
 const tImagined = T('the imagined community', ['Point', 'Imagined community'], [
   ['The phrase', 'A nation is sometimes called an imagined community'],
   ['Associated with', 'Benedict Anderson'],
@@ -143,7 +143,7 @@ const tApply = T('applying self-determination to an imagined case', ['Step', 'Im
   ['4. The consequence', 'A new state would contain minorities of its own, and division could repeat'],
   ['5. A fair approach', 'Hear the Hallow, then consider constitutional protection of language, culture and schools'],
 ], 'The case is imagined; no real group is meant.');
-const tProblems = T('problems of self-determination', ['Problem', 'Explanation in general terms'], [
+const tProblems = T('problems of self-determination', ['Problem', 'Explanation'], [
   ['Minorities everywhere', 'Almost every state contains minorities, because peoples live mixed together'],
   ['Division may not end', 'A new state creates new minorities, and the same demand could be made again'],
   ['Practical and peaceful limits', 'Ever smaller states are neither practical nor peaceful'],

@@ -30,10 +30,10 @@ Q('m_simple_app', mcq({
   sol: 'Forming a new state under Article 3 is done by an ordinary law of Parliament, passed by a simple majority, and is technically not an amendment under Article 368. The other options wrongly apply the procedures of Article 368, or give the state legislature a binding approval that Article 3 does not provide.',
 }));
 Q('m_special_def', mcq({
-  t: 1, d: 2, c: 'recall',
-  stem: 'When a provision of the Constitution is amended by a special majority in each House of Parliament, the special majority means',
-  opts: ['a majority of the total membership of the House together with two thirds of the members present and voting', 'a majority of the members present and voting only', 'two thirds of the total membership of the House, with no other condition', 'the vote of the presiding officer of the House alone'],
-  sol: 'Both conditions must be met: more than half of all the members of the House, and at least two thirds of those who are present and voting. A bare majority of those voting is the simple majority, two thirds of the total membership is a stricter test than the Constitution sets, and the presiding officer does not decide the matter alone.',
+  t: 1, d: 3, c: 'application',
+  stem: 'The imagined 147th Amendment Bill of the Harbour Road School project would change the powers of the High Courts. Which procedure must it follow, and why?',
+  opts: ['A special majority in each House plus ratification by at least half of the state legislatures, because it changes a provision concerning the High Courts, which affects the federal structure', 'A simple majority in each House, because it changes no Fundamental Right', 'A special majority in each House alone, because only the Fundamental Rights need a special majority', 'A special majority in each House plus approval by every state legislature, because any change to courts needs every state'],
+  sol: 'The Supreme Court and the High Courts are among the matters that need ratification by at least half of the state legislatures after the special majority, since they touch the federal structure. A simple majority is the route for ordinary laws such as those under Article 3, a special majority alone is used for provisions such as the Fundamental Rights, and approval by every state is not part of the procedure.',
 }));
 Q('m_special_app', mcq({
   t: 1, d: 4, c: 'application',
@@ -72,10 +72,10 @@ Q('m_number', mcq({
   sol: 'By 2024 the Constitution had been amended more than a hundred times, the 106th Amendment of 2023 being the latest counted. The other options understate the number or give dates that are wrong.',
 }));
 Q('m_technical', mcq({
-  t: 1, d: 2, c: 'recall',
-  stem: 'Which of the following is a commonly cited example of a technical or administrative amendment?',
-  opts: ['The 15th Amendment (1963), which raised the retirement age of High Court judges from 60 to 62', 'The 42nd Amendment (1976), which changed many parts of the Constitution', 'The 61st Amendment (1988), which lowered the voting age to 18', 'The 73rd and 74th Amendments (1992), which dealt with local government'],
-  sol: 'Raising a retirement age is a change of detail that does not alter the policy of the Constitution, which makes it technical or administrative. The 42nd changed many parts at once, the 61st lowered the voting age after wide agreement, and the 73rd and 74th created local government on a constitutional footing.',
+  t: 1, d: 3, c: 'application',
+  stem: 'A class at Harbour Road School sorts three imagined amendments of Tarnovia into the kinds taught in the chapter. Amendment X changes the month in which the state audit report is tabled. Amendment Y lowers the age for a local office after every party agreed on the text beforehand. Amendment Z is passed so that a new reading of a right by the courts no longer applies. Which sorting is correct?',
+  opts: ['X is technical or administrative, Y comes from political consensus, Z arises from differing interpretations of the judiciary and Parliament', 'X comes from political consensus, Y is technical or administrative, Z arises from differing interpretations', 'X arises from differing interpretations, Y is technical or administrative, Z comes from political consensus', 'X, Y and Z are all technical or administrative, since each changes only a detail'],
+  sol: 'X adjusts a detail of timing, so it is technical or administrative. Y was agreed by all parties beforehand, which marks a consensus amendment. Z answers a court reading, so it arises from differing interpretations. The other sortings swap the kinds, and Y and Z are not details.',
 }));
 Q('m_technical_app', mcq({
   t: 1, d: 3, c: 'application',
@@ -134,10 +134,10 @@ Q('m_basic_app', mcq({
   sol: 'Judicial review has been identified as part of the basic structure, so the Court may test whether the Act alters it and may strike the Act down if it does. Passing by a special majority does not put an amendment beyond review, the Court does not become the lawmaker, and it does not ask a minister to withdraw an Act.',
 }));
 Q('m_elements', mcq({
-  t: 2, d: 2, c: 'recall',
-  stem: 'Which of the following has been identified by the courts, for example, as part of the basic structure of the Constitution?',
-  opts: ['Judicial review', 'The retirement age of High Court judges', 'The rate of a particular tax', 'The number of seats of one state in the Lok Sabha'],
-  sol: 'Judicial review is one of the features commonly listed as part of the basic structure, along with the supremacy of the Constitution, the republican and democratic form of government, secular character, separation of powers, federal character and the rule of law. The other options are matters of detail that can be changed by amendment.',
+  t: 2, d: 4, c: 'application',
+  stem: 'The imagined 148th Amendment Act, passed by the special majority and ratified by the states, lets the Union government dismiss any state government at will and take over all the legislative powers of the states permanently. Would it survive a challenge in the Supreme Court?',
+  opts: ['It is likely to be struck down, because it destroys the federal character, a feature that the courts have listed as part of the basic structure', 'It must survive, because it was passed by the special majority and ratified by the states', 'It must survive, because the Court may never examine an amendment', 'It is likely to be struck down, because every amendment that increases the Union government powers is invalid'],
+  sol: 'Federal character is among the features commonly listed in the basic structure, and an amendment that removes the powers of the states altogether alters it, so the Court may strike it down despite the special majority and ratification. Passing by the required majorities does not put an amendment beyond review, and not every change of the balance of powers touches the basic structure, so the last option is too wide.',
 }));
 Q('m_minerva', mcq({
   t: 2, d: 2, c: 'recall',
@@ -146,7 +146,7 @@ Q('m_minerva', mcq({
   sol: 'Minerva Mills reaffirmed the doctrine of Kesavananda Bharati and the balance between the Fundamental Rights and the Directive Principles. It did not abolish the doctrine, and the Finance Commission and the voting age have no connection with it.',
 }));
 Q('m_significance', mcq({
-  t: 2, d: 3, c: 'analysis',
+  t: 2, d: 3, c: 'understanding',
   stem: 'Why is the basic structure doctrine said to balance rigidity and flexibility?',
   opts: ['Most provisions can be amended to meet new needs, but the core features of the Constitution cannot be altered', 'Every provision can be changed by a simple majority', 'No provision can be changed at all', 'It lets the President amend the Constitution without Parliament'],
   sol: 'The doctrine leaves the wide power to amend, which gives flexibility, and protects the core, which gives stability. A simple majority for everything would be pure flexibility, no change at all would be pure rigidity, and the President has no such amending power.',
@@ -164,10 +164,10 @@ Q('m_rigid_app', mcq({
   sol: 'A procedure with several demanding conditions makes a constitution rigid. Consulting the voters or having provincial councils does not make it flexible, and the procedure says nothing about whether it is written.',
 }));
 Q('m_living', mcq({
-  t: 2, d: 2, c: 'understanding',
-  stem: 'Describing a constitution as a living document means that',
-  opts: ['it grows and adapts through amendment, interpretation and practice while keeping its core', 'it can be altered only by the head of state', 'it must be rewritten completely every ten years', 'it has no rules to guide the government'],
-  sol: 'A living document develops with the society it serves, through formal amendments, judicial interpretation and political practice, and still keeps its core. The other options describe powers or rules that a living constitution does not have.',
+  t: 2, d: 4, c: 'evaluation',
+  stem: 'A Harbour Road School student claims that the rigid constitution of the imagined country Veldora, amended only twice in sixty years, cannot be called a living document. Which judgment of this claim is best supported?',
+  opts: ['The claim is weak, because a constitution also lives through judicial interpretation and political conventions, so a rigid amendment procedure limits only one of the ways it can change', 'The claim is sound, because a constitution lives only through formal amendment', 'The claim is sound, because rigidity means that a constitution cannot adapt in any way', 'The claim is weak, because a rigid constitution is changed as easily as an ordinary law'],
+  sol: 'Rigidity makes the formal route of amendment difficult, but courts can widen the meaning of rights and conventions can fill gaps, so the constitution can still adapt while keeping its core. The claim wrongly treats amendment as the only way of change. A rigid constitution is by definition hard to change, so the last option is false.',
 }));
 Q('m_art21_app', mcq({
   t: 2, d: 3, c: 'application',
@@ -202,7 +202,7 @@ Q('ar_special', ar({
   sol: 'Both are true, and R explains A: the special majority is demanding on purpose, so that important provisions are not changed by a bare majority.',
 }));
 Q('ar_golak', ar({
-  t: 2, d: 3, c: 'analysis', verdict: 'both-true-not-explains',
+  t: 2, d: 3, c: 'understanding', verdict: 'both-true-not-explains',
   a: 'In the Golaknath case (1967), the Supreme Court held that Parliament cannot amend the Fundamental Rights.',
   r: 'The 24th Amendment (1971) asserted the power of Parliament to amend any part of the Constitution.',
   sol: 'Both statements are true, but R does not explain A: the 24th Amendment was a later response by Parliament to the position taken in the case, and not the reason for the Court\'s decision.',
@@ -214,7 +214,7 @@ Q('ar_basic', ar({
   sol: 'A is false because the doctrine sets a limit on the amending power. R is true and states the limit, which contradicts A.',
 }));
 Q('ar_44', ar({
-  t: 1, d: 3, c: 'analysis', verdict: 'A-true-R-false',
+  t: 1, d: 3, c: 'recall', verdict: 'A-true-R-false',
   a: 'The 44th Amendment (1978) restored several provisions that the 42nd Amendment (1976) had changed.',
   r: 'The 44th Amendment was passed before the 42nd Amendment.',
   sol: 'A is true. R is false: the 42nd Amendment was passed in 1976 and the 44th in 1978, so the 44th came later.',

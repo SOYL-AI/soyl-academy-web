@@ -22,7 +22,7 @@ Hand-authored chapter. Build from `platform/`: `npx tsx content/authored/social-
 - Narration at most 80 words (mean 50), no symbols, digits or quotation marks.
 
 ### Question bank (75 items)
-Types: mcq 30, assertion-reason 6, true-false 3, fill-blank 3, match 2, ordering 2, short 2-mark 10, short 3-mark 8, long 5-mark 6, case-based 5 (1 + 1 + 2 with either/or in part c). Competency: recall 18, understanding 21, application 18, analysis 13, evaluation 5 (application or above 48%). Difficulty: d1 3, d2 23, d3 34, d4 15. Stems use imagined bills (140th to 150th Amendment Bills and Acts), imagined countries Veldora (rigid), Quillan (flexible), Pellara (conventions) and Tarnovia (an amendment register), the imagined state of Merivia and the town of Halsey, an imagined bulletin, register, newspaper report, club discussion and class project.
+Types: mcq 30, assertion-reason 6, true-false 3, fill-blank 3, match 2, ordering 2, short 2-mark 10, short 3-mark 8, long 5-mark 6, case-based 5 (1 + 1 + 2 with either/or in part c). Competency: recall 16, understanding 22, application 21, analysis 10, evaluation 6 (application or above 49%). Difficulty: d1 3, d2 23, d3 34, d4 15. Stems use imagined bills (140th to 150th Amendment Bills and Acts), imagined countries Veldora (rigid), Quillan (flexible), Pellara (conventions) and Tarnovia (an amendment register), the imagined state of Merivia and the town of Halsey, an imagined bulletin, register, newspaper report, club discussion and class project.
 
 ### Tests
 - **Short (20 marks):** A m_special_app, m_ratify_app, m_basic_app, ar_golak; B s_assent, s_golak, s3_methods; C one of l_procedure, l_basic; D c_bill.
@@ -60,3 +60,18 @@ Run from `platform/`, results of this chapter:
 22. Everything else is imagined and labelled: the 140th to 150th Amendment Bills or Acts, the countries Veldora, Quillan, Pellara and Tarnovia, the state of Merivia, the new state Tarnia, the town Halsey, Harbour Road School, the Merivia Courier, the bulletin, register and project tables. No map is used.
 
 Unsure or noted: (a) the Article 169 procedure is simplified to an ordinary law after a state Assembly resolution; (b) the thirteen-judge bench and "largest bench" statement for Kesavananda Bharati is from memory and should be checked once; (c) the proviso list of Article 368 is given as commonly taught, not exhaustively; (d) the year of the 73rd and 74th Amendments is given as 1992 (the Acts came into force in 1993); (e) the 106th Amendment (2023) is dated "as of 2024" and may need a note if later amendments are counted.
+
+## Competency fix (2026-11-05)
+
+Three tags were raised earlier only to reach the 45-65% band; they are now honest:
+- `ar_44`: analysis to recall (date order of two amendments).
+- `ar_golak`: analysis to understanding (a later amendment as a response, not a cause).
+- `m_significance`: analysis to understanding (explaining a stated idea).
+
+With honest tags the bank was at 33 of 75 (44%), so four items were rewritten as genuine scenario items (key, type, marks, topic and position unchanged):
+- `m_special_def`: recall to application (d2 to d3). Was a definition of the special majority; now the student decides which of the three methods an imagined 147th Amendment Bill on High Courts needs, with the reason.
+- `m_technical`: recall to application (d2 to d3). Was naming the 15th Amendment as a technical example; now the student sorts three imagined amendments of Tarnovia into technical, consensus and differing-interpretation kinds.
+- `m_elements`: recall to application (d2 to d4). Was picking judicial review from a list; now the student judges whether an imagined 148th Amendment Act that removes the powers of the states would survive review under the basic structure doctrine.
+- `m_living`: understanding to evaluation (d2 to d4). Was defining a living document; now the student judges an imagined claim that a rigid constitution cannot be living.
+
+New counts: recall 16, understanding 22, application 21, analysis 10, evaluation 6 (75 items); application or above 37 = 49%. Difficulty: d1 3, d2 19, d3 36, d4 17.

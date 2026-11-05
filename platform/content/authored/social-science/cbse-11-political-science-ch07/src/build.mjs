@@ -137,7 +137,7 @@ const vFeatures = table(
     ['Written, supreme constitution', 'Both levels are bound by it; it fixes who does what'],
     ['Difficult change', 'Changing the division of powers needs both levels or a special procedure'],
     ['Independent judiciary', 'Acts as umpire when levels disagree about powers'],
-    ['Examples', 'The United States, Canada and Australia, in general terms'],
+    ['Examples', 'The United States, Canada and Australia'],
   ],
   'Table of the features of a federation: two or more levels, a written and supreme constitution, a difficult change of the division of powers, an independent judiciary as umpire, with the United States, Canada and Australia as examples',
 );

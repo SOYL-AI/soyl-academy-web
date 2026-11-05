@@ -90,7 +90,7 @@ Q('m_money_14', mcq({
   sol: 'The Rajya Sabha can only delay a money bill for 14 days, after which it is treated as passed. There is no lapse, no joint sitting for money bills, and no indefinite wait.',
 }));
 Q('m_certify', mcq({
-  t: 1, d: 2, c: 'application',
+  t: 1, d: 2, c: 'recall',
   stem: 'If a doubt arises whether the imagined Harbour Tax Bill is a money bill, whose certificate settles the question?',
   opts: ['The Speaker of the Lok Sabha', 'The Chairman of the Rajya Sabha', 'The Prime Minister', 'The Chief Justice of India'],
   sol: 'The Speaker certifies a money bill, and that decision is final. The Chairman presides over the other House, and neither the Prime Minister nor the Chief Justice has this task.',
@@ -108,15 +108,16 @@ Q('m_249', mcq({
   sol: 'Article 249 gives the initiative to the Rajya Sabha, which speaks for the States, and requires a two-thirds majority present and voting. A Lok Sabha resolution, state resolutions and an ordinance are not the route this Article provides.',
 }));
 Q('m_312', mcq({
-  t: 1, d: 3, c: 'recall',
-  stem: 'The creation of a new All India Service requires a resolution of',
-  opts: ['the Rajya Sabha, supported by two-thirds of its members present and voting', 'the Lok Sabha, by a simple majority', 'the State Legislative Councils', 'the Union Public Service Commission'],
-  sol: 'Under Article 312 the Rajya Sabha must pass the resolution by two-thirds of those present and voting. The Lok Sabha has no such special role here, Councils exist in few States, and the Commission recruits for existing services.',
+  t: 1, d: 4, c: 'application',
+  stem: 'The Union government proposes an imagined All India Coastal Service. In the Rajya Sabha, 90 of the 150 members present and voting support a resolution saying that the Service should be created. Can Parliament now create it under Article 312?',
+  opts: ['No, because the resolution needs the support of two-thirds of the members present and voting, which here would be 100', 'Yes, because a simple majority of the members present and voting is enough', 'Yes, because a Lok Sabha resolution is not needed for an All India Service', 'No, because every State Legislative Council must first pass the same resolution'],
+  sol: 'Article 312 requires a Rajya Sabha resolution supported by two-thirds of members present and voting; two-thirds of 150 is 100, and 90 falls short. A simple majority is not enough, and the State Legislative Councils have no role in this procedure.',
 }));
+
 
 // ---------------------------------------------------------------- t02 Law-making and control
 Q('m_first', mcq({
-  t: 2, d: 2, c: 'application',
+  t: 2, d: 2, c: 'understanding',
   stem: 'A minister rises in the Lok Sabha, introduces the imagined Village Libraries Bill and states its aim; members do not yet discuss the clauses. This stage is',
   opts: ['the introduction and first reading', 'the second reading', 'the third reading', 'the assent'],
   sol: 'At the first reading the bill is only introduced. The second reading is when the principles and clauses are debated, the third reading is the final vote, and assent comes from the President at the end.',
@@ -134,11 +135,12 @@ Q('m_assent_return', mcq({
   sol: 'An ordinary bill can be returned once; if Parliament passes it again, assent must be given. There is no lapse, a joint sitting is for disagreement between the Houses, and a second return is not allowed.',
 }));
 Q('m_joint_presides', mcq({
-  t: 2, d: 3, c: 'recall',
-  stem: 'A joint sitting of the two Houses to settle a disagreement over an ordinary bill is presided over by the',
-  opts: ['Speaker of the Lok Sabha', 'Vice-President', 'Prime Minister', 'President'],
-  sol: 'The Speaker presides at a joint sitting. The Vice-President chairs only the Rajya Sabha, the Prime Minister is a member of one House, and the President summons the sitting but does not preside.',
+  t: 2, d: 3, c: 'application',
+  stem: 'The Lok Sabha passed the imagined Urban Wetlands Bill, an ordinary bill, in January. The Rajya Sabha has neither passed nor rejected it, and more than six months have gone by. The government wants the matter settled. What can be done?',
+  opts: ['The President may summon a joint sitting of the two Houses, where the Speaker presides and a majority of members present and voting decides the bill', 'The bill is deemed passed, as a money bill would be after 14 days', 'The bill lapses because the Rajya Sabha has not acted on it', 'The Lok Sabha may pass the bill a second time and send it straight to the President'],
+  sol: 'Under Article 108, if more than six months pass without the other House passing an ordinary bill, a joint sitting may be called, with the Speaker presiding. The deemed-passed rule belongs to money bills only, an ordinary bill does not lapse merely because the Rajya Sabha is silent, and the Lok Sabha cannot bypass the other House by passing it again.',
 }));
+
 Q('m_joint_trigger', mcq({
   t: 2, d: 4, c: 'application',
   stem: 'In the imagined case of the Coastal Fisheries Bill, an ordinary bill, the Lok Sabha passes it and the Rajya Sabha rejects it. Which statement is correct?',
@@ -182,19 +184,21 @@ Q('m_pac', mcq({
   sol: 'Audit reports on government spending go to the Public Accounts Committee. The Business Advisory Committee arranges time for business, the Committee on Privileges deals with the rights of members, and a select committee studies a particular bill.',
 }));
 Q('m_cag', mcq({
-  t: 2, d: 2, c: 'recall',
-  stem: 'The Comptroller and Auditor General',
-  opts: ['audits government accounts and submits reports that are placed before Parliament', 'prepares the annual budget', 'recruits civil servants for the Union', 'settles disputes between States'],
-  sol: 'The office audits the accounts of the Union and the States and reports to Parliament through the President. The budget is prepared by the executive, recruitment is by the Commissions, and disputes between States are dealt with by other bodies.',
+  t: 2, d: 3, c: 'application',
+  stem: 'The Lok Sabha passes the imagined Salt Pan Tax Bill, certified as a money bill. The Rajya Sabha debates it for ten days, votes to reject it, and sends back no recommendation. Fourteen days after it received the bill, what is the position?',
+  opts: ['The bill is deemed passed by both Houses in the form the Lok Sabha passed it, since the Rajya Sabha cannot defeat a money bill', 'The bill is defeated, since one House has rejected it', 'The bill goes to a joint sitting under Article 108', 'The bill lapses and must be introduced afresh in the Lok Sabha'],
+  sol: 'The Rajya Sabha can only return a money bill with recommendations within 14 days; it cannot reject it. If it does not return the bill in that time, the bill is deemed passed in the Lok Sabha form. A joint sitting does not apply to money bills, and the bill does not lapse.',
 }));
+
 Q('m_dept', mcq({
-  t: 2, d: 3, c: 'understanding',
-  stem: 'One reason why department-related standing committees are valued is that',
-  opts: ['they study the work and budgets of ministries in detail through the year, away from the heat of floor debates', 'they pass laws on behalf of Parliament', 'they replace Question Hour', 'they elect the Speaker'],
-  sol: 'Committees allow close, continuous scrutiny in a smaller setting. They recommend and report but do not pass laws, Question Hour continues alongside them, and the Speaker is elected by the Lok Sabha.',
+  t: 2, d: 3, c: 'application',
+  stem: 'Ishaan Verma, an imagined Lok Sabha member, wants the yearly work and budget of the imagined Ministry of Rural Roads studied in detail, with officials and experts called in over several months, away from the rush of floor debates. Which instrument of parliamentary control best serves this aim?',
+  opts: ['The department-related standing committee for that ministry', 'Zero Hour', 'A no-confidence motion', 'An adjournment motion'],
+  sol: 'A department-related standing committee follows a ministry through the year in a smaller setting and can hear experts. Zero Hour raises a matter without notice and gives no time for study, a no-confidence motion tests the majority rather than examining a budget, and an adjournment motion sets aside a day for one urgent matter.',
 }));
+
 Q('m_jpc', mcq({
-  t: 2, d: 2, c: 'application',
+  t: 2, d: 2, c: 'understanding',
   stem: 'Members of both Houses are chosen for a panel to examine the imagined Urban Lakes Protection Bill, and the panel is to end its life once it reports. Such a body is best described as',
   opts: ['an ad hoc committee with members from both Houses, set up for a particular bill or matter', 'a permanent committee of the Lok Sabha alone', 'a committee of the President and the Prime Minister', 'the committee that fixes the sitting days of Parliament'],
   sol: 'A joint committee has members of both Houses and is formed for a particular purpose, after which it ends. It is not permanent or confined to one House, and it does not include the President and Prime Minister or fix sitting dates.',
@@ -206,11 +210,12 @@ Q('m_whip', mcq({
   sol: 'The presiding officer of the House to which the member belongs decides, so the Speaker decides for a Lok Sabha member. The Election Commission, the Prime Minister and the other House\'s Chairman have no such task.',
 }));
 Q('m_split', mcq({
-  t: 2, d: 3, c: 'understanding',
-  stem: 'Before 2003, a group of one-third of a party\'s legislators could leave the party without being disqualified. This exception for a split was removed by the',
-  opts: ['91st Amendment (2003)', '52nd Amendment (1985)', '44th Amendment (1978)', '104th Amendment (2019)'],
-  sol: 'The 91st Amendment removed the split exception. The 52nd Amendment first introduced the anti-defection law (with that exception), the 44th concerned advice to the President, and the 104th ended the nomination of Anglo-Indian members.',
+  t: 2, d: 3, c: 'application',
+  stem: 'The imagined Harvest Party has thirty members in the Lok Sabha. Twenty-four of them agree in writing to merge with the imagined Lake Party. Under the Tenth Schedule as it stands after the 91st Amendment (2003), what is their position?',
+  opts: ['They are not disqualified, since a merger agreed by two-thirds of the party\'s legislators is protected', 'They are disqualified, since leaving the party always leads to disqualification', 'They are disqualified unless the Election Commission permits the merger', 'They are not disqualified, because a group of one-third may split away freely'],
+  sol: 'Twenty-four of thirty is more than two-thirds (twenty), so the merger is protected. Leaving does not always disqualify, the Election Commission does not decide such cases, and the one-third split exception was removed by the 91st Amendment.',
 }));
+
 Q('m_52', mcq({
   t: 2, d: 2, c: 'recall',
   stem: 'The Tenth Schedule, which provides for disqualification on the ground of defection, was added by the',

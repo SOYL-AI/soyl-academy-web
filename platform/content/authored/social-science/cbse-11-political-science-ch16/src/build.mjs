@@ -116,7 +116,7 @@ const tOblig = table(
   'The cases in Kalvara are imagined.',
 );
 const tStruggles = table(
-  ['Struggle', 'What was demanded, in general terms'],
+  ['Struggle', 'What was demanded'],
   [
     ['French Revolution, 1789', 'That people be citizens with equal rights and not subjects ranked by birth'],
     ['Struggle against apartheid in South Africa', 'Equal citizenship for all people; apartheid ended in the early 1990s and the first democratic election was in 1994'],
@@ -385,7 +385,7 @@ const part1 = deck({
   goals: [
     'State the standard definition of citizenship and name its rights and obligations',
     'Describe Marshall\'s civil, political and social rights',
-    'Describe struggles for equal citizenship in general terms',
+    'Describe struggles for equal citizenship',
     'Explain how equal citizenship in practice needs attention to disadvantaged groups',
     'Explain how nation-states set criteria and the general modes of acquiring citizenship in India',
   ],
