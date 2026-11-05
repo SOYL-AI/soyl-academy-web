@@ -60,3 +60,10 @@ Every question, case part and alternative was re-solved from its stem; distracto
 - Narration audio is not generated (TTS stage).
 - SVGs were reviewed by coordinates, not rasterised (no rasteriser is installed in this worktree).
 - Data in case passages are realistic illustrative values, not cited measurements.
+
+## Competency audit 2026-11-05
+
+Remediation of the content-verifier audit `docs/platform/content-qa/2026-11-05-competency-retag-audit.md`. Retagged honestly; no question text, key, solution or marking scheme changed, and the chapter stays inside its band, so no items needed upgrading:
+- `q022` (K_b from pK_b) application → understanding: a one-step substitution.
+
+Now: recall 5 · understanding 30 · application 25 · analysis 5 · evaluation 0; application or higher **46.2% of items (53% of marks)**, inside the 45–65% band. This supersedes the competency figures above.

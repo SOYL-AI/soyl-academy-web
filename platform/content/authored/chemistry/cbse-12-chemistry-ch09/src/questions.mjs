@@ -170,7 +170,7 @@ add('pkb-num', num({
   value: 4.17, tol: 0.03, unit: '× 10⁻⁴',
   sol: r`$K_\text{b} = 10^{-3.38} = 0.000417$; in units of $10^{-4}$: $0.000417 \times 10000 = 4.17$.`,
   scheme: [['Kb = 10^(−pKb)', 1], ['4.17 × 10⁻⁴', 1]],
-  d: 2, c: 'application', t: [3],
+  d: 2, c: 'understanding', t: [3],
 }), () => near(Math.pow(10, -3.38) * 1e4, 4.17, 0.003) || 'Kb');
 add('benzylamine-mcq', mcq({
   stem: 'Benzylamine, C₆H₅CH₂NH₂, and aniline, C₆H₅NH₂, both contain a benzene ring. Which is the stronger base, and why?',
