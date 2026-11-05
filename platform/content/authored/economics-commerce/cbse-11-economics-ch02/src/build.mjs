@@ -244,7 +244,7 @@ const vNonSamp = table(
   'A census can suffer from these too.',
 );
 const vSources = table(
-  ['Source', 'What it is', 'In general terms'],
+  ['Source', 'What it is', 'What it provides'],
   [
     ['Census of India', 'Count of the whole population every ten years', 'Population, demographic, social and economic data'],
     ['National Sample Survey Organisation', 'Nationwide sample surveys in rounds', 'Consumption expenditure, employment and other subjects'],
