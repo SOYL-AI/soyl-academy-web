@@ -21,11 +21,11 @@ add('formula-mcq', mcq({
   d: 2, c: 'understanding', t: [1],
 }));
 add('ketotriose-mcq', mcq({
-  stem: 'Dihydroxyacetone, HOCH₂COCH₂OH, the active ingredient of sunless tanning lotions, is the simplest:',
-  right: 'ketotriose',
-  wrong: ['aldotriose', 'ketotetrose', 'disaccharide'],
-  sol: 'Three carbons and a ketone group — option (@K).',
-  d: 2, c: 'application', t: [1],
+  stem: 'A pentose, C₅H₁₀O₅, reduces Tollens’ reagent but does not decolourise bromine water. Its cyanohydrin, after hydrolysis and prolonged heating with HI, gives 2-methylpentanoic acid. The sugar is:',
+  right: 'a ketopentose with the carbonyl group at C2',
+  wrong: ['an aldopentose', 'a ketohexose with the carbonyl group at C2', 'an aldohexose'],
+  sol: 'A branched product (methyl on C2 of a five-carbon acid) means the new –COOH went on to C2, so C=O was at C2; the sugar has five carbons, so it is a ketopentose. An aldopentose would give unbranched hexanoic acid; the bromine-water result agrees with a ketose — option (@K).',
+  d: 3, c: 'application', t: [1],
 }));
 add('reducing-tf', tf({
   stem: 'Every monosaccharide, whether an aldose or a ketose, reduces Fehling’s solution.',
@@ -49,15 +49,15 @@ add('class-match', match({
   ],
   order: [3, 1, 0, 2],
   sol: 'Galactose → aldohexose; lactose → reducing disaccharide; sucrose → non-reducing disaccharide; glycogen → branched polysaccharide.',
-  d: 2, c: 'application', t: [1, 4, 5],
+  d: 2, c: 'recall', t: [1, 4, 5],
 }));
 add('classify-short', short({
   marks: 2,
-  stem: 'Classify each of the following as a mono-, di- or polysaccharide, and as reducing or non-reducing: (a) maltose, (b) cellulose, (c) fructose, (d) sucrose.',
-  model: '(a) Maltose: disaccharide, reducing. (b) Cellulose: polysaccharide, non-reducing. (c) Fructose: monosaccharide, reducing. (d) Sucrose: disaccharide, non-reducing.',
-  sol: 'Four classifications.',
-  scheme: [['(a)', 0.5], ['(b)', 0.5], ['(c)', 0.5], ['(d)', 0.5]],
-  d: 2, c: 'application', t: [1],
+  stem: 'Two disaccharides are described only by their links. Melibiose: C1 of α-D-galactose joined to C6 of D-glucose. Trehalose: C1 of one α-D-glucose joined to C1 of another. For each, state with a reason whether it is reducing and whether its solution shows mutarotation.',
+  model: 'Melibiose: the link uses C1 of galactose and C6 of glucose, so the anomeric carbon (C1) of the glucose unit is free, as a hemiacetal; it can open to –CHO, so melibiose is reducing and shows mutarotation. Trehalose: the link joins C1 to C1, so both anomeric carbons are tied up (no free hemiacetal); it is non-reducing and shows no mutarotation.',
+  sol: 'Free anomeric carbon: melibiose yes, trehalose no.',
+  scheme: [['Melibiose: reducing, mutarotation, reason', 1], ['Trehalose: non-reducing, no mutarotation, reason', 1]],
+  d: 3, c: 'application', t: [1],
 }));
 add('classify-short3', short({
   marks: 3,
@@ -92,11 +92,11 @@ add('osazone-mcq', mcq({
   d: 2, c: 'understanding', t: [2],
 }));
 add('acetyl-mcq', mcq({
-  stem: 'How many moles of acetic anhydride are needed to convert one mole of D-glucose completely into its acetyl ester?',
-  right: '5',
-  wrong: ['6', '4', '3'],
-  sol: 'Five –OH groups, one acetic anhydride each — option (@K).',
-  d: 2, c: 'application', t: [2],
+  stem: 'Sucrose, C₁₂H₂₂O₁₁, has one ring oxygen in each unit and one glycosidic oxygen, and all its other oxygen atoms are in –OH groups. How many moles of acetic anhydride are needed to acetylate 0.25 mol of sucrose completely?',
+  right: '2.0 mol',
+  wrong: ['2.75 mol', '2.5 mol', '1.25 mol'],
+  sol: 'Of 11 oxygen atoms, 3 are in ether links (two ring O, one glycosidic O), leaving 8 –OH groups; 0.25 × 8 = 2.0 mol — option (@K). Counting all 11 oxygens gives 2.75; counting two glucose units at five –OH each gives 2.5; copying glucose’s five gives 1.25.',
+  d: 3, c: 'application', t: [2],
 }));
 add('nitric2-mcq', mcq({
   stem: 'D-Glucose is oxidised to acid X by nitric acid and to acid Y by bromine water. Which statement about X and Y is correct?',
@@ -179,12 +179,12 @@ add('evidence-match', match({
   d: 1, c: 'recall', t: [2],
 }));
 add('stereo-num', num({
-  stem: 'How many stereoisomers are possible for an open-chain aldohexose, HOCH₂(CHOH)₄CHO, which has four different chiral carbon atoms?',
-  value: 16, tol: 0,
-  sol: r`Number $= 2^{4} = 16$.`,
-  scheme: [['16', 1]],
-  d: 2, c: 'application', t: [2],
-}), () => 2 ** 4 === 16 || 'count');
+  stem: 'How many stereoisomers of the open-chain ketohexose HOCH₂–CO–(CHOH)₃–CH₂OH belong to the D series? (D and L forms are equally numerous.)',
+  value: 4, tol: 0,
+  sol: r`Chiral carbons: C3, C4 and C5 (C1 and C6 are $\ce{CH2OH}$, C2 is $\ce{C=O}$), so $3$ centres; total $= 2^{3} = 8$; half are D, so $8 \div 2 = 4$.`,
+  scheme: [['3 chiral carbons, 8 in all', 1]],
+  d: 3, c: 'application', t: [2],
+}), () => 2 ** 3 / 2 === 4 || 'count');
 add('mutarotation-num', num({
   marks: 2,
   stem: r`α-D-Glucose has $[\alpha]_D = +111^\circ$ and β-D-glucose $+19.2^\circ$; an equilibrium solution in water shows $+52.5^\circ$. Ignoring the open-chain form, what percentage of the dissolved glucose is the β-anomer?`,
@@ -211,11 +211,11 @@ add('osazone-num', num({
 }), () => near(9 / 180 * 3 * 108, 16.2) || 'mass');
 add('evidence-short', short({
   marks: 2,
-  stem: 'Write equations for the reactions of D-glucose with (a) hydroxylamine and (b) bromine water, and state what each reaction shows about its structure.',
-  model: r`(a) $\ce{HOCH2(CHOH)4CHO + NH2OH -> HOCH2(CHOH)4CH=NOH + H2O}$: a carbonyl group is present. (b) $\ce{HOCH2(CHOH)4CHO + Br2 + H2O -> HOCH2(CHOH)4COOH + 2HBr}$: gluconic acid has the same six carbons, so the carbonyl is an aldehyde.`,
-  sol: 'Oxime → C=O; gluconic acid → –CHO.',
-  scheme: [['(a) equation + inference', 1], ['(b) equation + inference', 1]],
-  d: 2, c: 'application', t: [2],
+  stem: 'D-Ribose, HOCH₂(CHOH)₃CHO, a sugar not met in the glucose experiments, is treated with (a) bromine water and (b) excess acetic anhydride. Write a balanced equation for each, giving the formula of the organic product, and state how many moles of acetic anhydride react with one mole of ribose, with your reasoning.',
+  model: r`(a) $\ce{HOCH2(CHOH)3CHO + Br2 + H2O -> HOCH2(CHOH)3COOH + 2HBr}$: ribonic acid; only the –CHO is oxidised. (b) The open-chain form has four –OH groups (three secondary and one primary), each acetylated: $\ce{C5H10O5 + 4(CH3CO)2O -> C13H18O9 + 4CH3COOH}$, so 4 mol of acetic anhydride per mole of ribose.`,
+  sol: 'Ribonic acid; four –OH groups give a tetraacetate (C₁₃H₁₈O₉) using 4 mol.',
+  scheme: [['(a) equation and product', 1], ['(b) equation and 4 mol with reasoning', 1]],
+  d: 3, c: 'application', t: [2],
 }));
 add('dl-short', short({
   marks: 2,
@@ -278,11 +278,11 @@ add('brwater-mcq', mcq({
   d: 2, c: 'application', t: [3],
 }));
 add('furanose-mcq', mcq({
-  stem: 'The five-membered ring of D-fructose, as found in sucrose, is formed by reaction between:',
-  right: 'the C5 –OH and the C2 ketone group',
-  wrong: ['the C5 –OH and a C1 aldehyde group', 'the C6 –OH and the C2 ketone group', 'the C4 –OH and the C1 –CH₂OH group'],
-  sol: 'A hemiketal from C5–OH and C2=O gives a ring of four carbons and one oxygen — option (@K).',
-  d: 2, c: 'application', t: [3],
+  stem: 'D-Ribose, HOCH₂(CHOH)₃CHO, closes into a five-membered ring (four carbons and one oxygen). Which hydroxyl group adds to the C1 aldehyde group to form this ring?',
+  right: 'the C4 –OH',
+  wrong: ['the C5 –OH, the terminal primary –OH', 'the C3 –OH, in the middle of the chain', 'the C2 –OH, the one nearest the carbonyl group'],
+  sol: 'The ring contains the ring oxygen plus the carbons from C1 up to the carbon bearing that –OH. Four carbons (C1 to C4) plus oxygen means the C4 –OH closes the ring; the C5 –OH would give a six-membered ring — option (@K).',
+  d: 3, c: 'understanding', t: [3],
 }));
 add('methylhex-mcq', mcq({
   stem: 'Fructose is converted to its cyanohydrin, which is hydrolysed and then heated with HI. The final product is:',
@@ -354,7 +354,7 @@ add('compare-short3', short({
   model: '(a) Glucose: aldehyde at C1 (aldohexose); fructose: ketone at C2 (ketohexose). (b) Glucose: six-membered pyranose (C5–OH + C1); fructose: five-membered furanose (C5–OH + C2). (c) Glucose decolourises bromine water (→ gluconic acid); fructose does not react.',
   sol: 'Carbonyl; ring; bromine water.',
   scheme: [['(a)', 1], ['(b)', 1], ['(c)', 1]],
-  d: 2, c: 'analysis', t: [2, 3],
+  d: 2, c: 'understanding', t: [2, 3],
 }));
 add('fructose-long', long({
   stem: '(a) Write the open-chain structure of D-fructose and describe how its cyclic structure is formed, naming the ring type. [2]\n\n(b) Describe, with an equation, a test to distinguish glucose from fructose. [2]\n\n(c) Why do glucose and fructose give the same osazone? [1]',
@@ -377,11 +377,11 @@ add('linkage-mcq', mcq({
   d: 1, c: 'recall', t: [4],
 }));
 add('sucroselink-mcq', mcq({
-  stem: 'Sucrose does not reduce Tollens’ reagent because its glycosidic link joins:',
-  right: 'C1 of α-D-glucose to C2 of β-D-fructose, using both anomeric carbons',
-  wrong: ['C1 of α-D-glucose to C4 of D-fructose', 'C1 of β-D-galactose to C4 of D-glucose', 'C1 of α-D-glucose to C6 of D-fructose'],
-  sol: 'No free hemiacetal or hemiketal remains — option (@K).',
-  d: 2, c: 'understanding', t: [4],
+  stem: 'A disaccharide W gives only D-fructose on hydrolysis. W does not reduce Tollens’ reagent and its solution shows no mutarotation. Which link between the two fructose units fits these observations?',
+  right: 'C2 of one unit joined to C2 of the other, using both anomeric carbons',
+  wrong: ['C2 of one unit joined to C6 of the other', 'C2 of one unit joined to C1 of the other', 'C2 of one unit joined to C4 of the other'],
+  sol: 'No reduction and no mutarotation means no free hemiketal: both anomeric carbons (C2 in a ketose) must be in the link. A link from C2 to any other carbon leaves the second unit’s C2 free, so that sugar would reduce and show mutarotation — option (@K).',
+  d: 3, c: 'application', t: [4],
 }));
 add('lactoselink-mcq', mcq({
   stem: 'Lactose, the sugar of milk, contains a glycosidic link between:',
@@ -438,19 +438,19 @@ add('invert-num', num({
 }), () => near((52.5 - 92.4) / 2, -19.95) || 'rotation');
 add('disacch-short', short({
   marks: 2,
-  stem: 'Name the monosaccharide units and describe the glycosidic link in (a) maltose and (b) lactose. Are these sugars reducing?',
-  model: '(a) Maltose: two α-D-glucose units, C1 of one to C4 of the other (α-1,4). (b) Lactose: β-D-galactose and D-glucose, C1 of galactose to C4 of glucose (β-1,4). Both are reducing (free hemiacetal at C1 of the second unit).',
-  sol: 'Maltose α-1,4; lactose β-1,4; both reducing.',
-  scheme: [['(a)', 1], ['(b)', 1]],
-  d: 2, c: 'application', t: [4],
+  stem: 'A student claims: “Maltose, with an α-1,4 link, reduces Tollens’ reagent, but cellobiose, in which two β-D-glucose units are joined C1 to C4, cannot, because only α-links give reducing sugars.” Judge this claim, using the structure of cellobiose to justify your answer.',
+  model: 'The claim is wrong. Reducing power depends on whether a free anomeric carbon (hemiacetal) remains, not on whether the link is α or β. In cellobiose the link uses C1 of the first unit and C4 of the second, so C1 of the second glucose unit is still a free hemiacetal; it can open to give –CHO, so cellobiose reduces Tollens’ reagent (and shows mutarotation). Only when both anomeric carbons are in the link, as in sucrose, is a disaccharide non-reducing.',
+  sol: 'Claim false; free hemiacetal at C1 of second unit.',
+  scheme: [['Verdict: claim is wrong', 1], ['Free anomeric carbon of the second unit', 1]],
+  d: 3, c: 'application', t: [4],
 }));
 add('invert-short', short({
   marks: 2,
-  stem: 'A solution of sucrose has a specific rotation of +66.5°. After warming with the enzyme invertase, the rotation is negative. Explain this change with an equation and name the product mixture.',
-  model: r`$\ce{C12H22O11 + H2O ->[invertase] C6H12O6 + C6H12O6}$ (glucose + fructose). Glucose (+52.5°) is less dextrorotatory than fructose (−92.4°) is laevorotatory, so the equimolar mixture is laevorotatory (about −20°). The sign is inverted: invert sugar.`,
-  sol: 'Hydrolysis; fructose dominates; invert sugar.',
-  scheme: [['Equation', 1], ['Explanation + name', 1]],
-  d: 2, c: 'understanding', t: [4],
+  stem: r`A solution of $10.0\ \text{g}$ of sucrose ($M = 342$, $[\alpha]_D = +66.5^\circ$) in $100\ \text{mL}$ is placed in a $1\ \text{dm}$ polarimeter tube. It is then completely hydrolysed by invertase to glucose and fructose ($[\alpha]_D = +52.5^\circ$ and $-92.4^\circ$; $M = 180$ each; $\ce{C12H22O11 + H2O -> C6H12O6 + C6H12O6}$). Calculate the observed rotation before and after hydrolysis, taking the volume as unchanged, and explain the change of sign.`,
+  model: r`Before: $\alpha = 66.5 \times 1 \times 0.100 = +6.65^\circ$. After: $10.0\ \text{g}$ sucrose is $10.0 \div 342 = 0.02924\ \text{mol}$, giving $0.02924\ \text{mol}$ each of glucose and fructose, i.e. $0.02924 \times 180 = 5.263\ \text{g}$ of each in $100\ \text{mL}$ ($0.05263\ \text{g mL}^{-1}$). $\alpha = (52.5 - 92.4) \times 0.05263 = -2.10^\circ$. The rotation changes from $+6.65^\circ$ to $-2.10^\circ$ because fructose is more strongly laevorotatory than glucose is dextrorotatory, so the equimolar mixture (invert sugar) is laevorotatory.`,
+  sol: 'Initial +6.65°; moles of each product; rotation −2.10°; fructose dominates.',
+  scheme: [['Initial rotation +6.65°', 0.5], ['Mass of each product 5.26 g', 0.5], ['Final rotation −2.10°', 0.5], ['Explanation of the sign change', 0.5]],
+  d: 3, c: 'application', t: [4],
 }));
 add('disacch-short3', short({
   marks: 3,
@@ -461,11 +461,15 @@ add('disacch-short3', short({
   d: 3, c: 'application', t: [4],
 }));
 add('sucrose-long', long({
-  stem: '(a) What is a glycosidic linkage? [1]\n\n(b) Name the monosaccharide units and describe the glycosidic link in (i) sucrose, (ii) maltose and (iii) lactose. [3]\n\n(c) Explain why maltose is a reducing sugar but sucrose is not. [1]',
-  model: '(a) The C–O–C (ether) link formed between the anomeric –OH of one monosaccharide and an –OH of another, with loss of water.\n\n(b) (i) Sucrose: α-D-glucopyranose and β-D-fructofuranose, C1 of glucose to C2 of fructose (α1→β2). (ii) Maltose: two α-D-glucose units, C1 to C4 (α-1,4). (iii) Lactose: β-D-galactose and D-glucose, C1 of galactose to C4 of glucose (β-1,4).\n\n(c) Maltose has a free hemiacetal at C1 of its second glucose unit, which opens to –CHO; in sucrose both anomeric carbons are in the link.',
-  sol: 'Definition; three structures; free hemiacetal.',
-  scheme: [['(a)', 1], ['(b)(i)', 1], ['(b)(ii)', 1], ['(b)(iii)', 1], ['(c)', 1]],
-  d: 3, c: 'understanding', t: [4],
+  stem: '$3.42\\ \\text{g}$ of a disaccharide Y ($\\ce{C12H22O11}$, $M = 342$) gives only D-glucose on hydrolysis with dilute acid. Y reduces Tollens’ reagent and shows mutarotation.\n\n(a) What do these two observations show about the glycosidic link of Y, and why does Y differ from sucrose in this respect? [2]\n\n(b) Y has eight –OH groups. Calculate the moles of acetic anhydride needed to acetylate the 3.42 g sample completely. [1]\n\n(c) Calculate the mass of glucose obtained when the 3.42 g sample is hydrolysed completely. [2]',
+  model: r`(a) The link joins the anomeric carbon (C1) of one glucose unit to a non-anomeric carbon of the other (for example C4 as in maltose), so the second unit keeps a free hemiacetal. That ring can open to give –CHO (reduces Tollens’ reagent) and re-close as α or β (mutarotation). In sucrose both anomeric carbons are used in the link, so neither effect occurs.
+
+(b) $n(\text{Y}) = 3.42 \div 342 = 0.0100\ \text{mol}$; moles of acetic anhydride $= 8 \times 0.0100 = 0.0800\ \text{mol}$.
+
+(c) $\ce{C12H22O11 + H2O -> 2C6H12O6}$: $0.0100\ \text{mol}$ gives $0.0200\ \text{mol}$ glucose; mass $= 0.0200 \times 180 = 3.60\ \text{g}$.`,
+  sol: 'Free hemiacetal; 0.0800 mol; 3.60 g.',
+  scheme: [['(a) link joins C1 to a non-anomeric carbon', 1], ['(a) free hemiacetal vs sucrose', 1], ['(b) 0.0800 mol', 1], ['(c) 0.0200 mol glucose', 1], ['(c) 3.60 g', 1]],
+  d: 3, c: 'application', t: [4],
 }));
 
 // ---------------------------------------------------------------- t05 polysaccharides
@@ -517,7 +521,7 @@ add('poly-short', short({
   model: 'Amylose is unbranched (α-1,4 only) while amylopectin is branched (α-1,4 chains with α-1,6 branches); amylose is soluble in hot water and gives a deep blue colour with iodine, while amylopectin is insoluble and gives a red-violet colour. (Amylose is 15–20% of starch, amylopectin 80–85%.)',
   sol: 'Branching; solubility/iodine colour.',
   scheme: [['Branching', 1], ['Solubility or iodine colour or proportion', 1]],
-  d: 2, c: 'analysis', t: [5],
+  d: 2, c: 'understanding', t: [5],
 }));
 add('poly-short3', short({
   marks: 3,
@@ -525,7 +529,7 @@ add('poly-short3', short({
   model: '(a) Starch and glycogen: α-D-glucose; cellulose: β-D-glucose. (b) Starch: α-1,4 (amylose) plus α-1,6 branches (amylopectin); glycogen: α-1,4 with more frequent α-1,6 branches; cellulose: unbranched β-1,4. (c) Starch: energy store in plants; glycogen: energy store in animals (liver, muscle); cellulose: structural material of plant cell walls.',
   sol: 'Anomer; links and branching; function.',
   scheme: [['(a)', 1], ['(b)', 1], ['(c)', 1]],
-  d: 2, c: 'analysis', t: [5],
+  d: 2, c: 'understanding', t: [5],
 }));
 add('poly-long', long({
   stem: '(a) Describe the structure of starch, naming its two components and their glycosidic links. [2]\n\n(b) Describe the structure of cellulose and explain why humans cannot digest it. [2]\n\n(c) How does glycogen differ from amylopectin, and where is it stored? [1]',
