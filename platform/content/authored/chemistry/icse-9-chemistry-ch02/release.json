@@ -1,0 +1,5586 @@
+{
+  "unit": "icse-9-chemistry-ch02",
+  "version": 1,
+  "academic_year": "2026-27",
+  "created_at": "2026-11-05T00:00:00+05:30",
+  "decks": [
+    {
+      "unit": "icse-9-chemistry-ch02",
+      "part": 1,
+      "version": 1,
+      "title": "Chemical Equations and Relative Masses — Part 1: Writing and balancing equations",
+      "language": "en",
+      "goals": [
+        "Write word and formula equations for reactions with one or two reactants and one or more products",
+        "State the information a balanced chemical equation conveys",
+        "Balance simple equations by the hit-and-trial method"
+      ],
+      "slides": [
+        {
+          "id": "s01",
+          "layout": "title",
+          "heading": "A sentence in the language of chemistry",
+          "body_md": "Part 1 — a chemical equation tells the story of a reaction in a few symbols, and a balanced equation tells it truthfully.",
+          "bullets": [],
+          "visual": {
+            "kind": "flow",
+            "spec": {
+              "direction": "LR",
+              "nodes": [
+                {
+                  "id": "r",
+                  "label": "Reactants"
+                },
+                {
+                  "id": "a",
+                  "label": "Reaction"
+                },
+                {
+                  "id": "p",
+                  "label": "Products"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "r",
+                  "to": "a"
+                },
+                {
+                  "from": "a",
+                  "to": "p"
+                }
+              ]
+            },
+            "alt": "Flow: reactants, reaction, products"
+          },
+          "math": [],
+          "narration": "When magnesium burns, a bright flame appears and a white powder is left. A chemical equation records exactly what went in and what came out. In this part we learn to write equations and to balance them.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s02",
+          "layout": "concept",
+          "heading": "Word equation and formula equation",
+          "body_md": "A **chemical equation** is a shorthand way of showing a chemical change using symbols and formulae. The substances before the arrow are **reactants**; those after it are **products**.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Kind",
+                "Magnesium burning in air"
+              ],
+              "rows": [
+                [
+                  "Word equation",
+                  "Magnesium + oxygen → magnesium oxide"
+                ],
+                [
+                  "Formula equation (skeletal)",
+                  "Mg + O₂ → MgO"
+                ],
+                [
+                  "Balanced formula equation",
+                  "2Mg + O₂ → 2MgO"
+                ]
+              ]
+            },
+            "alt": "Table showing the word equation, skeletal equation and balanced equation for magnesium burning"
+          },
+          "math": [],
+          "narration": "A word equation uses names. A formula equation replaces them with symbols and formulae. The first formula equation we write is skeletal, because it is not yet balanced. The final balanced version has numbers in front of some formulae.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s03",
+          "layout": "concept",
+          "heading": "One reactant, several products",
+          "body_md": "Heating **ammonium dichromate**: one reactant breaks into **three** products. The orange crystals swell up and leave a fluffy green powder.",
+          "bullets": [],
+          "visual": {
+            "kind": "chem",
+            "spec": {
+              "equation": "(NH4)2Cr2O7 ->[\\Delta] N2 + Cr2O3 + 4H2O"
+            },
+            "alt": "Ammonium dichromate on heating gives nitrogen, chromium(III) oxide and water",
+            "caption": "One reactant, three products."
+          },
+          "math": [],
+          "narration": "Some reactions have only one reactant. When ammonium dichromate is heated, it breaks down into nitrogen gas, green chromium oxide and steam. The triangle above the arrow stands for heat.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s04",
+          "layout": "concept",
+          "heading": "Two reactants, one product",
+          "body_md": "Magnesium and oxygen **combine**. Two reactants form a **single** product, magnesium oxide.",
+          "bullets": [],
+          "visual": {
+            "kind": "chem",
+            "spec": {
+              "equation": "2Mg + O2 -> 2MgO"
+            },
+            "alt": "Two magnesium plus one oxygen gives two magnesium oxide",
+            "caption": "Two reactants, one product."
+          },
+          "math": [],
+          "narration": "In this reaction two substances join to make one. Two atoms of magnesium combine with one molecule of oxygen to give two units of magnesium oxide.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s05",
+          "layout": "concept",
+          "heading": "Two reactants, several products",
+          "body_md": "Copper reacts with **concentrated nitric acid** to give **three** products: copper nitrate, a brown gas and water.",
+          "bullets": [],
+          "visual": {
+            "kind": "chem",
+            "spec": {
+              "equation": "Cu + 4HNO3 -> Cu(NO3)2 + 2NO2 + 2H2O"
+            },
+            "alt": "Copper plus four nitric acid gives copper nitrate, two nitrogen dioxide and two water",
+            "caption": "Two reactants, three products."
+          },
+          "math": [],
+          "narration": "Many reactions have more than one product. Copper and concentrated nitric acid give copper nitrate, a brown gas called nitrogen dioxide, and water.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s06",
+          "layout": "check",
+          "heading": "Quick check: reading a reaction",
+          "body_md": "Copper reacts with concentrated nitric acid to give copper nitrate, nitrogen dioxide and water.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Reactants",
+                "Products"
+              ],
+              "rows": [
+                [
+                  "Copper, nitric acid",
+                  "Copper nitrate, nitrogen dioxide, water"
+                ]
+              ]
+            },
+            "alt": "Reactants and products of the copper and nitric acid reaction"
+          },
+          "math": [],
+          "narration": "How many reactants and how many products does this reaction have?",
+          "check_question_id": "q_icse9chem_ch02_001",
+          "audio": null
+        },
+        {
+          "id": "s07",
+          "layout": "concept",
+          "heading": "What a balanced equation tells us",
+          "body_md": "Take the balanced equation $\\ce{2Mg + O2 -> 2MgO}$.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Information",
+                "From 2Mg + O₂ → 2MgO"
+              ],
+              "rows": [
+                [
+                  "Substances",
+                  "Magnesium and oxygen react; magnesium oxide forms"
+                ],
+                [
+                  "Number of particles",
+                  "2 atoms of Mg + 1 molecule of O₂ → 2 units of MgO"
+                ],
+                [
+                  "Relative masses",
+                  "48 + 32 → 80"
+                ],
+                [
+                  "Conditions and states",
+                  "Heat, written above the arrow, and (s), (l), (g), (aq) if needed"
+                ]
+              ]
+            },
+            "alt": "Table of the information given by the equation for magnesium burning"
+          },
+          "math": [],
+          "narration": "A balanced equation names the substances, shows how many atoms or molecules of each take part, and gives their relative masses. Forty eight parts of magnesium and thirty two parts of oxygen make eighty parts of magnesium oxide. Nothing is lost.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s08",
+          "layout": "example",
+          "heading": "Worked example 1: reading an equation",
+          "body_md": "**Problem.** For $\\ce{Zn + H2SO4 -> ZnSO4 + H2}$ find the total relative mass of the reactants and of the products. (Zn = 65, H = 1, S = 32, O = 16)\n\n**Step 1.** Reactants: $65 + 98 = 163$.\n\n**Step 2.** Products: $161 + 2 = 163$.\n\n**Step 3.** The totals are equal: mass is conserved.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Substance",
+                "Working",
+                "Relative mass"
+              ],
+              "rows": [
+                [
+                  "Zn",
+                  "",
+                  "65"
+                ],
+                [
+                  "H₂SO₄",
+                  "2 × 1 + 32 + 4 × 16",
+                  "98"
+                ],
+                [
+                  "ZnSO₄",
+                  "65 + 32 + 4 × 16",
+                  "161"
+                ],
+                [
+                  "H₂",
+                  "2 × 1",
+                  "2"
+                ]
+              ]
+            },
+            "alt": "Table of the relative masses of the four substances in the zinc and sulphuric acid reaction"
+          },
+          "math": [],
+          "narration": "Add the relative masses on each side. Zinc is sixty five and sulphuric acid is ninety eight, so the reactants total one hundred and sixty three. Zinc sulphate is one hundred and sixty one and hydrogen is two, so the products also total one hundred and sixty three. The two sides agree.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s09",
+          "layout": "check",
+          "heading": "Quick check: what the equation says",
+          "body_md": "Look at the numbers in front of each formula.",
+          "bullets": [],
+          "visual": {
+            "kind": "chem",
+            "spec": {
+              "equation": "2Mg + O2 -> 2MgO"
+            },
+            "alt": "Two magnesium plus one oxygen gives two magnesium oxide"
+          },
+          "math": [],
+          "narration": "Which statement about this equation is correct?",
+          "check_question_id": "q_icse9chem_ch02_002",
+          "audio": null
+        },
+        {
+          "id": "s10",
+          "layout": "concept",
+          "heading": "Balancing by hit and trial",
+          "body_md": "",
+          "bullets": [],
+          "visual": {
+            "kind": "flow",
+            "spec": {
+              "direction": "TB",
+              "nodes": [
+                {
+                  "id": "a",
+                  "label": "Write the correct formulae of reactants and products"
+                },
+                {
+                  "id": "b",
+                  "label": "Count the atoms of each element on both sides"
+                },
+                {
+                  "id": "c",
+                  "label": "Put a number in front of a formula to change the count"
+                },
+                {
+                  "id": "d",
+                  "label": "Balance the element in the most complex formula first"
+                },
+                {
+                  "id": "e",
+                  "label": "Recount; never change a subscript"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "a",
+                  "to": "b"
+                },
+                {
+                  "from": "b",
+                  "to": "c"
+                },
+                {
+                  "from": "c",
+                  "to": "d"
+                },
+                {
+                  "from": "d",
+                  "to": "e"
+                }
+              ]
+            },
+            "alt": "Five steps for balancing an equation by hit and trial"
+          },
+          "math": [],
+          "narration": "Balancing is a careful game of trial and error. Write the right formulae first. Count the atoms on each side. Then change only the numbers in front of formulae, never the small numbers inside them. Recount at the end.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s11",
+          "layout": "example",
+          "heading": "Worked example 2: balance aluminium burning in oxygen",
+          "body_md": "**Problem.** Balance $\\ce{Al + O2 -> Al2O3}$.\n\n**Step 1.** Oxygen: 2 on the left, 3 on the right. The least common multiple is 6, so use $3\\ce{O2}$ and $2\\ce{Al2O3}$.\n\n**Step 2.** Aluminium on the right is now $2 \\times 2 = 4$, so use $4\\ce{Al}$.\n\n**Step 3.** Check: Al 4 and 4; O 6 and 6.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Element",
+                "Left (4Al + 3O₂)",
+                "Right (2Al₂O₃)"
+              ],
+              "rows": [
+                [
+                  "Al",
+                  "4",
+                  "4"
+                ],
+                [
+                  "O",
+                  "6",
+                  "6"
+                ]
+              ]
+            },
+            "alt": "Table checking the atoms of aluminium and oxygen on both sides of the balanced equation"
+          },
+          "math": [],
+          "narration": "Oxygen is the awkward one, two on the left and three on the right. Make both six, using three oxygen molecules and two aluminium oxide units. That gives four aluminium atoms on the right, so we need four on the left. Both sides now have four aluminium and six oxygen.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s12",
+          "layout": "concept",
+          "heading": "Balancing with groups of atoms",
+          "body_md": "Treat a radical such as hydroxide or phosphate as **one unit** if it appears unchanged on both sides. Balance $\\ce{Ca(OH)2 + H3PO4 -> Ca3(PO4)2 + H2O}$.",
+          "bullets": [],
+          "visual": {
+            "kind": "chem",
+            "spec": {
+              "equation": "3Ca(OH)2 + 2H3PO4 -> Ca3(PO4)2 + 6H2O"
+            },
+            "alt": "Three calcium hydroxide plus two phosphoric acid gives calcium phosphate and six water",
+            "caption": "Ca 3 and 3; phosphate 2 and 2; H 12 and 12; O 14 and 14."
+          },
+          "math": [],
+          "narration": "Keep the phosphate group together. Calcium needs three, so use three calcium hydroxide. Phosphate needs two, so use two phosphoric acid. Hydrogen and oxygen then fix the number of water molecules, which is six.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s13",
+          "layout": "check",
+          "heading": "Quick check: balancing",
+          "body_md": "Balance magnesium burning in nitrogen.",
+          "bullets": [],
+          "visual": {
+            "kind": "chem",
+            "spec": {
+              "equation": "3Mg + N2 -> Mg3N2"
+            },
+            "alt": "Three magnesium plus one nitrogen gives magnesium nitride"
+          },
+          "math": [],
+          "narration": "Magnesium reacts with nitrogen to form magnesium nitride. Which set of numbers balances the equation?",
+          "check_question_id": "q_icse9chem_ch02_003",
+          "audio": null
+        },
+        {
+          "id": "s14",
+          "layout": "summary",
+          "heading": "Summary: Part 1",
+          "body_md": "",
+          "bullets": [
+            "A chemical equation shows reactants and products in symbols.",
+            "A balanced equation shows the substances, the number of particles, the relative masses, and the conditions and states.",
+            "Balance by changing the number in front of a formula, never a subscript.",
+            "Treat an unchanged radical as one unit when balancing."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Reaction type",
+                "Example"
+              ],
+              "rows": [
+                [
+                  "One reactant, several products",
+                  "(NH₄)₂Cr₂O₇ → N₂ + Cr₂O₃ + 4H₂O"
+                ],
+                [
+                  "Two reactants, one product",
+                  "2Mg + O₂ → 2MgO"
+                ],
+                [
+                  "Two reactants, several products",
+                  "Cu + 4HNO₃ → Cu(NO₃)₂ + 2NO₂ + 2H₂O"
+                ]
+              ]
+            },
+            "alt": "Summary table of three kinds of equation"
+          },
+          "math": [],
+          "narration": "To sum up Part 1. An equation lists reactants and products. A balanced one has the same atoms on both sides and shows the relative masses. Balance by hit and trial with numbers in front of formulae, and never alter a subscript.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s15",
+          "layout": "exam-tips",
+          "heading": "Exam tips: Part 1",
+          "body_md": "",
+          "bullets": [
+            "Write correct formulae before you balance.",
+            "Never change a subscript to balance; change the number in front.",
+            "Show a check of the atom count for each element.",
+            "Write state symbols and the heat sign if the question gives them."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Slip",
+                "Fix"
+              ],
+              "rows": [
+                [
+                  "Writing MgO₂ to balance oxygen",
+                  "The formula is MgO; use 2MgO"
+                ],
+                [
+                  "Balancing hydrogen and forgetting oxygen",
+                  "Recount every element at the end"
+                ],
+                [
+                  "Giving a balanced equation with no arrow",
+                  "Always use an arrow"
+                ]
+              ]
+            },
+            "alt": "Table of three common slips in Part 1 and their fixes"
+          },
+          "math": [],
+          "narration": "Exam tips. Get the formulae right first. Fix the numbers in front, never the small numbers. Show your atom count, because it earns marks. And write conditions such as heat above the arrow when the question gives them.",
+          "check_question_id": null,
+          "audio": null
+        }
+      ],
+      "status": "draft",
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "unit": "icse-9-chemistry-ch02",
+      "part": 2,
+      "version": 1,
+      "title": "Chemical Equations and Relative Masses — Part 2: Relative masses and percentage composition",
+      "language": "en",
+      "goals": [
+        "Define relative atomic mass and relative molecular mass and state the standard they use",
+        "Calculate the relative molecular mass of a compound, including one with water of crystallisation",
+        "Calculate the percentage by mass of each element in a compound and the percentage of water in a hydrate"
+      ],
+      "slides": [
+        {
+          "id": "s01",
+          "layout": "title",
+          "heading": "Weighing atoms by comparison",
+          "body_md": "Part 2 — atoms are far too small to weigh one by one, so chemists compare their masses with a standard.",
+          "bullets": [],
+          "visual": {
+            "kind": "flow",
+            "spec": {
+              "direction": "LR",
+              "nodes": [
+                {
+                  "id": "a",
+                  "label": "Relative atomic mass"
+                },
+                {
+                  "id": "m",
+                  "label": "Relative molecular mass"
+                },
+                {
+                  "id": "p",
+                  "label": "Percentage composition"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "a",
+                  "to": "m"
+                },
+                {
+                  "from": "m",
+                  "to": "p"
+                }
+              ]
+            },
+            "alt": "Flow: relative atomic mass, relative molecular mass, percentage composition"
+          },
+          "math": [],
+          "narration": "No balance can weigh a single atom. Instead we say how many times heavier an atom is than a standard atom. From these numbers we get molecular masses, and then the percentage of each element in a compound.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s02",
+          "layout": "diagram",
+          "heading": "Relative atomic mass",
+          "body_md": "**Relative atomic mass** is the number of times one atom of an element is **heavier than one-twelfth of an atom of carbon-12**. It is a ratio and has no unit.",
+          "bullets": [],
+          "visual": {
+            "kind": "svg",
+            "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 480 272\" role=\"img\" aria-label=\"Bar chart of relative atomic masses: hydrogen 1, carbon 12, oxygen 16, magnesium 24, sulphur 32, chlorine 35.5 and iron 56, each measured in units of one-twelfth of a carbon-12 atom\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>Bar chart of relative atomic masses: hydrogen 1, carbon 12, oxygen 16, magnesium 24, sulphur 32, chlorine 35.5 and iron 56, each measured in units of one-twelfth of a carbon-12 atom</title><rect x=\"110\" y=\"14\" width=\"6\" height=\"12\" fill=\"var(--diagram-red)\" stroke=\"var(--diagram-red)\" stroke-width=\"0\"/><text x=\"124\" y=\"24\" fill=\"var(--diagram-muted)\" stroke=\"none\" font-size=\"11\">= 1 unit, one-twelfth of a carbon-12 atom</text><text x=\"100\" y=\"59\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"end\" font-size=\"11\">Hydrogen</text><rect x=\"110\" y=\"46\" width=\"6\" height=\"20\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.4\" fill-opacity=\"0.35\"/><text x=\"122\" y=\"60\" fill=\"currentColor\" stroke=\"none\" font-size=\"11\" font-weight=\"bold\">1</text><text x=\"100\" y=\"89\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"end\" font-size=\"11\">Carbon-12</text><rect x=\"110\" y=\"76\" width=\"72\" height=\"20\" fill=\"var(--diagram-red)\" stroke=\"var(--diagram-red)\" stroke-width=\"1.4\" fill-opacity=\"0.35\"/><text x=\"188\" y=\"90\" fill=\"currentColor\" stroke=\"none\" font-size=\"11\" font-weight=\"bold\">12</text><text x=\"100\" y=\"119\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"end\" font-size=\"11\">Oxygen</text><rect x=\"110\" y=\"106\" width=\"96\" height=\"20\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.4\" fill-opacity=\"0.35\"/><text x=\"212\" y=\"120\" fill=\"currentColor\" stroke=\"none\" font-size=\"11\" font-weight=\"bold\">16</text><text x=\"100\" y=\"149\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"end\" font-size=\"11\">Magnesium</text><rect x=\"110\" y=\"136\" width=\"144\" height=\"20\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.4\" fill-opacity=\"0.35\"/><text x=\"260\" y=\"150\" fill=\"currentColor\" stroke=\"none\" font-size=\"11\" font-weight=\"bold\">24</text><text x=\"100\" y=\"179\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"end\" font-size=\"11\">Sulphur</text><rect x=\"110\" y=\"166\" width=\"192\" height=\"20\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.4\" fill-opacity=\"0.35\"/><text x=\"308\" y=\"180\" fill=\"currentColor\" stroke=\"none\" font-size=\"11\" font-weight=\"bold\">32</text><text x=\"100\" y=\"209\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"end\" font-size=\"11\">Chlorine</text><rect x=\"110\" y=\"196\" width=\"213\" height=\"20\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.4\" fill-opacity=\"0.35\"/><text x=\"329\" y=\"210\" fill=\"currentColor\" stroke=\"none\" font-size=\"11\" font-weight=\"bold\">35.5</text><text x=\"100\" y=\"239\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"end\" font-size=\"11\">Iron</text><rect x=\"110\" y=\"226\" width=\"336\" height=\"20\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.4\" fill-opacity=\"0.35\"/><text x=\"452\" y=\"240\" fill=\"currentColor\" stroke=\"none\" font-size=\"11\" font-weight=\"bold\">56</text><line x1=\"182\" y1=\"40\" x2=\"182\" y2=\"256\" stroke=\"var(--diagram-red)\" stroke-width=\"1\" stroke-dasharray=\"4 3\"/><text x=\"186\" y=\"262\" fill=\"var(--diagram-red)\" stroke=\"none\" font-size=\"10\">carbon-12 atom: 12 units</text></svg>",
+            "alt": "Bar chart of the relative atomic masses of seven elements compared with one-twelfth of a carbon-12 atom"
+          },
+          "math": [],
+          "narration": "Take one carbon twelve atom and cut its mass into twelve equal parts. One part is our unit. A hydrogen atom weighs one unit, a carbon atom twelve, an oxygen atom sixteen, and an iron atom fifty six. Chlorine is thirty five and a half.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s03",
+          "layout": "concept",
+          "heading": "The standard for atomic masses",
+          "body_md": "",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Standard",
+                "Atom compared",
+                "Where used"
+              ],
+              "rows": [
+                [
+                  "Hydrogen atom",
+                  "One hydrogen atom taken as 1",
+                  "Earlier scale"
+                ],
+                [
+                  "Carbon-12 atom",
+                  "One-twelfth of its mass taken as 1",
+                  "Present scale"
+                ]
+              ]
+            },
+            "alt": "Table of the hydrogen standard and the carbon-12 standard"
+          },
+          "math": [],
+          "narration": "Earlier, the hydrogen atom was the standard, with a mass of one. Today the standard is one twelfth of a carbon twelve atom. The two scales give almost the same numbers, because a hydrogen atom has a mass very close to one unit.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s04",
+          "layout": "concept",
+          "heading": "Relative molecular mass",
+          "body_md": "**Relative molecular mass** is the number of times one molecule is heavier than one-twelfth of a carbon-12 atom. It equals the **sum of the relative atomic masses** of all the atoms in the formula.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Compound",
+                "Working",
+                "Relative molecular mass"
+              ],
+              "rows": [
+                [
+                  "Water, H₂O",
+                  "2 × 1 + 16",
+                  "18"
+                ],
+                [
+                  "Carbon dioxide, CO₂",
+                  "12 + 2 × 16",
+                  "44"
+                ],
+                [
+                  "Ammonia, NH₃",
+                  "14 + 3 × 1",
+                  "17"
+                ],
+                [
+                  "Sulphuric acid, H₂SO₄",
+                  "2 × 1 + 32 + 4 × 16",
+                  "98"
+                ]
+              ]
+            },
+            "alt": "Table of relative molecular masses of four compounds with working"
+          },
+          "math": [],
+          "narration": "To find a relative molecular mass, add the atomic masses of every atom in the formula. Water is two plus sixteen, eighteen. Carbon dioxide is forty four. Ammonia is seventeen and sulphuric acid is ninety eight.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s05",
+          "layout": "example",
+          "heading": "Worked example 1: aluminium sulphate",
+          "body_md": "**Problem.** Find the relative molecular mass of $\\ce{Al2(SO4)3}$. (Al = 27, S = 32, O = 16)\n\n**Step 1.** Count atoms: Al 2, S 3, O 12.\n\n**Step 2.** Multiply: $2 \\times 27 = 54$; $3 \\times 32 = 96$; $12 \\times 16 = 192$.\n\n**Step 3.** Add: $54 + 96 + 192 = 342$.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Element",
+                "Atoms",
+                "Mass of each",
+                "Total"
+              ],
+              "rows": [
+                [
+                  "Al",
+                  "2",
+                  "27",
+                  "54"
+                ],
+                [
+                  "S",
+                  "3",
+                  "32",
+                  "96"
+                ],
+                [
+                  "O",
+                  "12",
+                  "16",
+                  "192"
+                ],
+                [
+                  "Total",
+                  "",
+                  "",
+                  "342"
+                ]
+              ]
+            },
+            "alt": "Table working out the relative molecular mass of aluminium sulphate"
+          },
+          "math": [],
+          "narration": "First count the atoms inside the bracket carefully. The bracket multiplies each atom by three, so sulphur is three and oxygen is twelve. Two aluminium is fifty four. Three sulphur is ninety six. Twelve oxygen is one hundred and ninety two. The total is three hundred and forty two.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s06",
+          "layout": "check",
+          "heading": "Quick check: relative molecular mass",
+          "body_md": "Count the atoms inside the bracket first. (Ca = 40, O = 16, H = 1)",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Element",
+                "Atoms"
+              ],
+              "rows": [
+                [
+                  "Ca",
+                  "1"
+                ],
+                [
+                  "O",
+                  "2"
+                ],
+                [
+                  "H",
+                  "2"
+                ]
+              ]
+            },
+            "alt": "Atoms in one unit of calcium hydroxide"
+          },
+          "math": [],
+          "narration": "What is the relative molecular mass of calcium hydroxide? Use the atomic masses given.",
+          "check_question_id": "q_icse9chem_ch02_004",
+          "audio": null
+        },
+        {
+          "id": "s07",
+          "layout": "diagram",
+          "heading": "Water of crystallisation in the mass",
+          "body_md": "Crystals such as zinc sulphate crystals hold **water of crystallisation**. Heating drives it off, and the formula is written with a dot: $\\ce{ZnSO4.7H2O}$. Include the water when you add up the mass.",
+          "bullets": [],
+          "visual": {
+            "kind": "svg",
+            "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 480 240\" role=\"img\" aria-label=\"A laboratory set-up for heating hydrated crystals in a test tube. The tube is clamped with its mouth lower than its closed end, hydrated crystals lie at the closed end over a burner flame and drops of water collect on the cooler wall near the mouth\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>A laboratory set-up for heating hydrated crystals in a test tube. The tube is clamped with its mouth lower than its closed end, hydrated crystals lie at the closed end over a burner flame and drops of water collect on the cooler wall near the mouth</title><path d=\"M108.0 143.4 L301.7 102.3 L301.7 102.3 L313.1 102.9 L322.6 109.1 L327.8 119.2 L327.2 130.6 L321.0 140.1 L310.9 145.3 L117.2 186.5\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"2\" fill-opacity=\"0.5\"/><rect x=\"278.9\" y=\"135\" width=\"8\" height=\"8\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.2\" fill-opacity=\"0.45\"/><rect x=\"293.1\" y=\"134\" width=\"8\" height=\"8\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.2\" fill-opacity=\"0.45\"/><rect x=\"282.7\" y=\"123.9\" width=\"8\" height=\"8\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.2\" fill-opacity=\"0.45\"/><rect x=\"296.8\" y=\"123\" width=\"8\" height=\"8\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.2\" fill-opacity=\"0.45\"/><rect x=\"267.8\" y=\"140.4\" width=\"8\" height=\"8\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.2\" fill-opacity=\"0.45\"/><rect x=\"284.8\" y=\"114.3\" width=\"8\" height=\"8\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.2\" fill-opacity=\"0.45\"/><circle cx=\"168\" cy=\"136.8\" r=\"2.8\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\" fill-opacity=\"0.7\"/><circle cx=\"193.2\" cy=\"130.4\" r=\"2.8\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\" fill-opacity=\"0.7\"/><circle cx=\"155.1\" cy=\"172.3\" r=\"2.8\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\" fill-opacity=\"0.7\"/><circle cx=\"189.5\" cy=\"166\" r=\"2.8\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\" fill-opacity=\"0.7\"/><circle cx=\"215.1\" cy=\"127.8\" r=\"2.8\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\" fill-opacity=\"0.7\"/><line x1=\"194.8\" y1=\"118.8\" x2=\"206.5\" y2=\"173.6\" stroke=\"var(--diagram-muted)\" stroke-width=\"3\"/><line x1=\"194.8\" y1=\"118.8\" x2=\"194.8\" y2=\"78.8\" stroke=\"var(--diagram-muted)\" stroke-width=\"3\"/><line x1=\"194.8\" y1=\"78.8\" x2=\"232\" y2=\"20\" stroke=\"var(--diagram-muted)\" stroke-width=\"3\"/><path d=\"M282.8825019700288 208.4539031913131 Q278.8825019700288 178.4539031913131 296.8825019700288 158.4539031913131 Q314.8825019700288 178.4539031913131 310.8825019700288 208.4539031913131 Z\" fill=\"var(--diagram-red)\" stroke=\"var(--diagram-red)\" stroke-width=\"1.4\" fill-opacity=\"0.4\"/><rect x=\"282.9\" y=\"208.5\" width=\"28\" height=\"22\" fill=\"var(--diagram-muted)\" stroke=\"var(--diagram-muted)\" stroke-width=\"1.4\" fill-opacity=\"0.5\"/><text x=\"352\" y=\"100\" fill=\"currentColor\" stroke=\"none\" font-size=\"11\">Hydrated crystals</text><line x1=\"350\" y1=\"104\" x2=\"312\" y2=\"125\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\"/><text x=\"10\" y=\"90\" fill=\"currentColor\" stroke=\"none\" font-size=\"11\">Hard glass test tube</text><line x1=\"60\" y1=\"96\" x2=\"138\" y2=\"124\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\"/><text x=\"56\" y=\"198\" fill=\"currentColor\" stroke=\"none\" font-size=\"11\">Drops of water on the cool wall</text><line x1=\"120\" y1=\"192\" x2=\"180\" y2=\"160\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\"/><text x=\"356\" y=\"214\" fill=\"currentColor\" stroke=\"none\" font-size=\"11\">Flame</text><line x1=\"352\" y1=\"210\" x2=\"312\" y2=\"205\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\"/><text x=\"240\" y=\"14\" fill=\"currentColor\" stroke=\"none\" font-size=\"11\">Clamp</text><line x1=\"236\" y1=\"18\" x2=\"220\" y2=\"24\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\"/></svg>",
+            "alt": "Heating hydrated crystals in a clamped test tube, with drops of water forming on the cool wall"
+          },
+          "math": [],
+          "narration": "Some crystals carry water inside their structure. Heating them in a test tube drives the water off as steam, which condenses on the cool wall. In the formula, a dot separates the salt from the water, and the water counts in the molecular mass.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s08",
+          "layout": "example",
+          "heading": "Worked example 2: a hydrated salt",
+          "body_md": "**Problem.** Find the relative molecular mass of $\\ce{ZnSO4.7H2O}$. (Zn = 65, S = 32, O = 16, H = 1)\n\n**Step 1.** Anhydrous part: $65 + 32 + 4 \\times 16 = 161$.\n\n**Step 2.** Water part: $7 \\times (2 \\times 1 + 16) = 7 \\times 18 = 126$.\n\n**Step 3.** Total $= 161 + 126 = 287$.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Part",
+                "Working",
+                "Mass"
+              ],
+              "rows": [
+                [
+                  "ZnSO₄",
+                  "65 + 32 + 64",
+                  "161"
+                ],
+                [
+                  "7H₂O",
+                  "7 × 18",
+                  "126"
+                ],
+                [
+                  "ZnSO₄·7H₂O",
+                  "161 + 126",
+                  "287"
+                ]
+              ]
+            },
+            "alt": "Table working out the relative molecular mass of zinc sulphate crystals"
+          },
+          "math": [],
+          "narration": "Split the formula at the dot. The salt part comes to one hundred and sixty one. Seven water molecules weigh seven times eighteen, one hundred and twenty six. Add them to get two hundred and eighty seven.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s09",
+          "layout": "concept",
+          "heading": "Percentage composition",
+          "body_md": "The **percentage composition** of a compound is the mass of each element in 100 parts of the compound.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Step",
+                "Rule"
+              ],
+              "rows": [
+                [
+                  "1",
+                  "Find the relative molecular mass of the compound"
+                ],
+                [
+                  "2",
+                  "Find the total mass of the element (atoms × atomic mass)"
+                ],
+                [
+                  "3",
+                  "Divide step 2 by step 1 and multiply by 100"
+                ],
+                [
+                  "4",
+                  "The percentages must add up to 100"
+                ]
+              ]
+            },
+            "alt": "Table of four steps for percentage composition"
+          },
+          "math": [
+            "\\text{percentage of an element} = \\frac{\\text{mass of the element in one formula}}{\\text{relative molecular mass}} \\times 100"
+          ],
+          "narration": "Percentage composition tells us how much of each element is present in a hundred parts of a compound. Divide the mass of the element by the molecular mass of the compound, and multiply by one hundred. The percentages must add up to one hundred.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s10",
+          "layout": "example",
+          "heading": "Worked example 3: magnesium sulphate",
+          "body_md": "**Problem.** Find the percentage of each element in $\\ce{MgSO4}$. (Mg = 24, S = 32, O = 16)\n\n**Step 1.** Relative molecular mass $= 24 + 32 + 64 = 120$.\n\n**Step 2.** Mg: $\\frac{24}{120} \\times 100 = 20\\%$; S: $\\frac{32}{120} \\times 100 = 26.7\\%$; O: $\\frac{64}{120} \\times 100 = 53.3\\%$.\n\n**Step 3.** Check: $20 + 26.7 + 53.3 = 100$.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Element",
+                "Mass in one formula",
+                "Percentage"
+              ],
+              "rows": [
+                [
+                  "Mg",
+                  "24",
+                  "20%"
+                ],
+                [
+                  "S",
+                  "32",
+                  "26.7%"
+                ],
+                [
+                  "O",
+                  "64",
+                  "53.3%"
+                ]
+              ]
+            },
+            "alt": "Table of the percentage composition of magnesium sulphate"
+          },
+          "math": [],
+          "narration": "The molecular mass of magnesium sulphate is one hundred and twenty. Magnesium is twenty four out of one hundred and twenty, which is exactly twenty percent. Sulphur is just over twenty six percent and oxygen just over fifty three percent. They add up to one hundred.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s11",
+          "layout": "diagram",
+          "heading": "Seeing the composition",
+          "body_md": "Each bar stands for 100 percent of the mass of the compound.",
+          "bullets": [],
+          "visual": {
+            "kind": "svg",
+            "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 500 190\" role=\"img\" aria-label=\"Two bars showing percentage composition by mass. Magnesium sulphate is magnesium 20 percent, sulphur 26.7 percent and oxygen 53.3 percent. Iron(II) sulphate crystals are 54.7 percent anhydrous salt and 45.3 percent water of crystallisation\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>Two bars showing percentage composition by mass. Magnesium sulphate is magnesium 20 percent, sulphur 26.7 percent and oxygen 53.3 percent. Iron(II) sulphate crystals are 54.7 percent anhydrous salt and 45.3 percent water of crystallisation</title><text x=\"70\" y=\"24\" fill=\"currentColor\" stroke=\"none\" font-size=\"11\" font-weight=\"bold\">Magnesium sulphate, MgSO₄ (RMM 120)</text><rect x=\"70\" y=\"34\" width=\"80\" height=\"34\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.4\" fill-opacity=\"0.35\"/><text x=\"110\" y=\"55\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">Mg 20%</text><rect x=\"150\" y=\"34\" width=\"106.8\" height=\"34\" fill=\"var(--diagram-yellow)\" stroke=\"var(--diagram-yellow)\" stroke-width=\"1.4\" fill-opacity=\"0.35\"/><text x=\"203.4\" y=\"55\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">S 26.7%</text><rect x=\"256.8\" y=\"34\" width=\"213.2\" height=\"34\" fill=\"var(--diagram-red)\" stroke=\"var(--diagram-red)\" stroke-width=\"1.4\" fill-opacity=\"0.35\"/><text x=\"363.4\" y=\"55\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">O 53.3%</text><text x=\"70\" y=\"100\" fill=\"currentColor\" stroke=\"none\" font-size=\"11\" font-weight=\"bold\">Iron(II) sulphate crystals, FeSO₄·7H₂O (RMM 278)</text><rect x=\"70\" y=\"110\" width=\"218.8\" height=\"34\" fill=\"var(--diagram-green)\" stroke=\"var(--diagram-green)\" stroke-width=\"1.4\" fill-opacity=\"0.35\"/><text x=\"179.4\" y=\"131\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">FeSO₄ 54.7%</text><rect x=\"288.8\" y=\"110\" width=\"181.2\" height=\"34\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.4\" fill-opacity=\"0.35\"/><text x=\"379.4\" y=\"131\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">7H₂O 45.3%</text><text x=\"70\" y=\"176\" fill=\"var(--diagram-muted)\" stroke=\"none\" font-size=\"11\">Each bar is 100 percent of the mass of the compound.</text></svg>",
+            "alt": "Bars showing the percentage composition of magnesium sulphate and of iron(II) sulphate crystals"
+          },
+          "math": [],
+          "narration": "In magnesium sulphate, oxygen makes up more than half the mass, although it is a light atom, because there are four of them. In the iron sulphate crystals, nearly half the mass is water of crystallisation.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s12",
+          "layout": "check",
+          "heading": "Quick check: percentage",
+          "body_md": "Ethane has the formula C₂H₆. (C = 12, H = 1)",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Item",
+                "Value"
+              ],
+              "rows": [
+                [
+                  "Relative molecular mass",
+                  "30"
+                ],
+                [
+                  "Mass of carbon in one molecule",
+                  "24"
+                ]
+              ]
+            },
+            "alt": "Relative molecular mass of ethane and the mass of carbon in it"
+          },
+          "math": [],
+          "narration": "What is the percentage of carbon in ethane?",
+          "check_question_id": "q_icse9chem_ch02_005",
+          "audio": null
+        },
+        {
+          "id": "s13",
+          "layout": "example",
+          "heading": "Worked example 4: percentage of water of crystallisation",
+          "body_md": "**Problem.** Find the percentage of water in $\\ce{FeSO4.7H2O}$. (Fe = 56, S = 32, O = 16, H = 1)\n\n**Step 1.** Relative molecular mass $= 152 + 126 = 278$.\n\n**Step 2.** Water $= 7 \\times 18 = 126$.\n\n**Step 3.** Percentage $= \\frac{126}{278} \\times 100 = 45.3\\%$.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Part",
+                "Mass",
+                "Percentage"
+              ],
+              "rows": [
+                [
+                  "FeSO₄",
+                  "152",
+                  "54.7%"
+                ],
+                [
+                  "7H₂O",
+                  "126",
+                  "45.3%"
+                ]
+              ]
+            },
+            "alt": "Table of the percentage of anhydrous salt and of water in iron(II) sulphate crystals"
+          },
+          "math": [],
+          "narration": "The total mass of the crystals is two hundred and seventy eight. The seven water molecules account for one hundred and twenty six of it. One hundred and twenty six over two hundred and seventy eight, times one hundred, is about forty five point three percent.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s14",
+          "layout": "check",
+          "heading": "Quick check: water percentage",
+          "body_md": "Pick the correct expression.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Item",
+                "Mass"
+              ],
+              "rows": [
+                [
+                  "Water in ZnSO₄·7H₂O",
+                  "126"
+                ],
+                [
+                  "Whole formula",
+                  "287"
+                ]
+              ]
+            },
+            "alt": "Masses needed for the percentage of water in zinc sulphate crystals"
+          },
+          "math": [],
+          "narration": "Which expression gives the percentage of water of crystallisation in zinc sulphate crystals?",
+          "check_question_id": "q_icse9chem_ch02_006",
+          "audio": null
+        },
+        {
+          "id": "s15",
+          "layout": "concept",
+          "heading": "Finding the mass of an element in a sample",
+          "body_md": "Use the percentage or the ratio of masses. In 204 g of aluminium oxide, Al₂O₃ (RMM 102), the aluminium is $\\frac{54}{102} \\times 204 = 108$ g.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Quantity",
+                "Value"
+              ],
+              "rows": [
+                [
+                  "Aluminium in one formula",
+                  "2 × 27 = 54"
+                ],
+                [
+                  "RMM of Al₂O₃",
+                  "102"
+                ],
+                [
+                  "Mass of aluminium in 204 g",
+                  "108 g"
+                ],
+                [
+                  "Mass of oxygen in 204 g",
+                  "96 g"
+                ]
+              ]
+            },
+            "alt": "Table finding the mass of aluminium and oxygen in 204 grams of aluminium oxide"
+          },
+          "math": [],
+          "narration": "Once you know a ratio, you can scale it. Fifty four parts out of one hundred and two of aluminium oxide are aluminium. In two hundred and four grams of the oxide that is one hundred and eight grams of aluminium, and ninety six grams of oxygen.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s16",
+          "layout": "summary",
+          "heading": "Summary: Part 2",
+          "body_md": "",
+          "bullets": [
+            "Relative atomic mass: how many times an atom is heavier than one-twelfth of a carbon-12 atom; no unit.",
+            "Relative molecular mass: the sum of the relative atomic masses in the formula.",
+            "Include water of crystallisation in the molecular mass of a hydrate.",
+            "Percentage of an element = (mass of the element in the formula ÷ relative molecular mass) × 100."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Quantity",
+                "Example"
+              ],
+              "rows": [
+                [
+                  "RMM of Al₂(SO₄)₃",
+                  "342"
+                ],
+                [
+                  "Mg in MgSO₄",
+                  "20%"
+                ],
+                [
+                  "Water in FeSO₄·7H₂O",
+                  "45.3%"
+                ]
+              ]
+            },
+            "alt": "Summary table of three worked results"
+          },
+          "math": [],
+          "narration": "To sum up Part 2. Relative atomic mass compares an atom with one twelfth of carbon twelve. Add atomic masses to get the molecular mass, counting the water in a hydrate. Divide the part by the whole and multiply by one hundred for a percentage.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s17",
+          "layout": "exam-tips",
+          "heading": "Exam tips: Part 2",
+          "body_md": "",
+          "bullets": [
+            "Write the atomic masses you use at the start.",
+            "Multiply by the subscript, and by the bracket number, for every atom.",
+            "In a hydrate, find the water part separately as the number of water molecules × 18.",
+            "Check that the percentages add up to 100."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Slip",
+                "Fix"
+              ],
+              "rows": [
+                [
+                  "Counting one oxygen in Ca(OH)₂ as two",
+                  "Two OH groups, so 2 O and 2 H"
+                ],
+                [
+                  "Leaving out the water in a hydrate",
+                  "Add 7 × 18 for 7H₂O"
+                ],
+                [
+                  "Putting a unit on relative mass",
+                  "It is a ratio; write the number only"
+                ]
+              ]
+            },
+            "alt": "Table of three common slips in Part 2 and their fixes"
+          },
+          "math": [],
+          "narration": "Exam tips. State the atomic masses you use. Multiply every atom by its subscript and by the number outside a bracket. Treat the water of a hydrate as a separate part. And always check that your percentages add up to one hundred.",
+          "check_question_id": null,
+          "audio": null
+        }
+      ],
+      "status": "draft",
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    }
+  ],
+  "notes": {
+    "unit": "icse-9-chemistry-ch02",
+    "version": 1,
+    "title": "Chemical Equations and Relative Masses — Notes",
+    "language": "en",
+    "sections": [
+      {
+        "heading": "1. Chemical equations",
+        "body_md": "A **chemical equation** is a shorthand way of showing a chemical change using symbols and formulae. **Reactants** are written before the arrow and **products** after it.\n\n| Kind of reaction | Word equation | Formula equation |\n|---|---|---|\n| One reactant, several products | Ammonium dichromate → nitrogen + chromium(III) oxide + water | $\\ce{(NH4)2Cr2O7 ->[\\Delta] N2 + Cr2O3 + 4H2O}$ |\n| Two reactants, one product | Magnesium + oxygen → magnesium oxide | $\\ce{2Mg + O2 -> 2MgO}$ |\n| Two reactants, several products | Copper + nitric acid → copper nitrate + nitrogen dioxide + water | $\\ce{Cu + 4HNO3 -> Cu(NO3)2 + 2NO2 + 2H2O}$ |\n\n**A balanced equation tells us**\n- the **substances** that react and form;\n- the **number of atoms or molecules** of each (the numbers in front of the formulae);\n- the **relative masses**: for 2Mg + O₂ → 2MgO, 48 + 32 → 80, so total mass is the same on both sides;\n- the **conditions** (such as heat, written above the arrow) and the **states** (s), (l), (g), (aq) when shown.\n\nAn equation does not tell how fast the reaction is, or whether it will happen in practice.",
+        "key_terms": [
+          {
+            "term": "Chemical equation",
+            "definition_md": "A shorthand representation of a chemical change using symbols and formulae."
+          },
+          {
+            "term": "Reactants and products",
+            "definition_md": "Reactants are the substances that react; products are the substances formed."
+          }
+        ],
+        "formulas": [],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Information",
+              "For 2Mg + O₂ → 2MgO"
+            ],
+            "rows": [
+              [
+                "Particles",
+                "2 atoms + 1 molecule → 2 units"
+              ],
+              [
+                "Relative masses",
+                "48 + 32 → 80"
+              ]
+            ]
+          },
+          "alt": "Table of information in the equation for magnesium burning"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-9-chemistry-ch02-t01"
+        ]
+      },
+      {
+        "heading": "2. Balancing by hit and trial",
+        "body_md": "The **law of conservation of mass** requires the same number of atoms of each element on both sides. To balance:\n\n1. Write the correct formulae of all reactants and products.\n2. Count atoms of each element on both sides.\n3. Put a **number in front of a formula** to make the counts equal. Start with the element in the most complex formula, and leave hydrogen and oxygen for last.\n4. **Never change a subscript**: that would change the substance.\n5. Recount every element.\n\n| Skeletal equation | Balanced equation |\n|---|---|\n| Al + O₂ → Al₂O₃ | 4Al + 3O₂ → 2Al₂O₃ |\n| Mg + N₂ → Mg₃N₂ | 3Mg + N₂ → Mg₃N₂ |\n| Ca(OH)₂ + H₃PO₄ → Ca₃(PO₄)₂ + H₂O | 3Ca(OH)₂ + 2H₃PO₄ → Ca₃(PO₄)₂ + 6H₂O |\n\nA radical that stays unchanged on both sides (such as PO₄ or OH) can be balanced as one unit.",
+        "key_terms": [
+          {
+            "term": "Hit and trial method",
+            "definition_md": "Balancing an equation by trying numbers in front of formulae until every element has the same count on both sides."
+          }
+        ],
+        "formulas": [],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Element",
+              "Left",
+              "Right"
+            ],
+            "rows": [
+              [
+                "Al",
+                "4",
+                "4"
+              ],
+              [
+                "O",
+                "6",
+                "6"
+              ]
+            ]
+          },
+          "alt": "Atom count for 4Al + 3O₂ → 2Al₂O₃"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-9-chemistry-ch02-t02"
+        ]
+      },
+      {
+        "heading": "3. Relative atomic mass and relative molecular mass",
+        "body_md": "**Relative atomic mass** of an element is the number of times one atom of the element is heavier than **one-twelfth of an atom of carbon-12**. (Earlier the standard was the hydrogen atom, taken as 1; the two scales give nearly the same values.) It is a ratio, so it has no unit.\n\n**Relative molecular mass** of a compound is the number of times one molecule of it is heavier than one-twelfth of a carbon-12 atom. It is the **sum of the relative atomic masses of all the atoms** in the formula.\n\nAtomic masses used: H 1, C 12, N 14, O 16, Na 23, Mg 24, Al 27, S 32, Cl 35.5, K 39, Ca 40, Fe 56, Cu 63.5, Zn 65.\n\n| Compound | Working | RMM |\n|---|---|---|\n| H₂O | 2 × 1 + 16 | 18 |\n| CO₂ | 12 + 2 × 16 | 44 |\n| Ca(OH)₂ | 40 + 2 × (16 + 1) | 74 |\n| Al₂(SO₄)₃ | 2 × 27 + 3 × 32 + 12 × 16 | 342 |\n| ZnSO₄·7H₂O | 161 + 7 × 18 | 287 |\n\nFor a hydrate, add the **water of crystallisation** (the number of water molecules × 18). Some books write \"relative molecular mass in u\"; here it has no unit.",
+        "key_terms": [
+          {
+            "term": "Relative atomic mass",
+            "definition_md": "The number of times an atom of an element is heavier than one-twelfth of an atom of carbon-12."
+          },
+          {
+            "term": "Relative molecular mass",
+            "definition_md": "The sum of the relative atomic masses of all the atoms in one molecule (or formula unit)."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\text{RMM} = \\sum (\\text{atoms of each element} \\times \\text{its relative atomic mass})",
+            "label": "Relative molecular mass"
+          }
+        ],
+        "visual": {
+          "kind": "svg",
+          "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 480 272\" role=\"img\" aria-label=\"Bar chart of relative atomic masses: hydrogen 1, carbon 12, oxygen 16, magnesium 24, sulphur 32, chlorine 35.5 and iron 56, each measured in units of one-twelfth of a carbon-12 atom\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>Bar chart of relative atomic masses: hydrogen 1, carbon 12, oxygen 16, magnesium 24, sulphur 32, chlorine 35.5 and iron 56, each measured in units of one-twelfth of a carbon-12 atom</title><rect x=\"110\" y=\"14\" width=\"6\" height=\"12\" fill=\"var(--diagram-red)\" stroke=\"var(--diagram-red)\" stroke-width=\"0\"/><text x=\"124\" y=\"24\" fill=\"var(--diagram-muted)\" stroke=\"none\" font-size=\"11\">= 1 unit, one-twelfth of a carbon-12 atom</text><text x=\"100\" y=\"59\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"end\" font-size=\"11\">Hydrogen</text><rect x=\"110\" y=\"46\" width=\"6\" height=\"20\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.4\" fill-opacity=\"0.35\"/><text x=\"122\" y=\"60\" fill=\"currentColor\" stroke=\"none\" font-size=\"11\" font-weight=\"bold\">1</text><text x=\"100\" y=\"89\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"end\" font-size=\"11\">Carbon-12</text><rect x=\"110\" y=\"76\" width=\"72\" height=\"20\" fill=\"var(--diagram-red)\" stroke=\"var(--diagram-red)\" stroke-width=\"1.4\" fill-opacity=\"0.35\"/><text x=\"188\" y=\"90\" fill=\"currentColor\" stroke=\"none\" font-size=\"11\" font-weight=\"bold\">12</text><text x=\"100\" y=\"119\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"end\" font-size=\"11\">Oxygen</text><rect x=\"110\" y=\"106\" width=\"96\" height=\"20\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.4\" fill-opacity=\"0.35\"/><text x=\"212\" y=\"120\" fill=\"currentColor\" stroke=\"none\" font-size=\"11\" font-weight=\"bold\">16</text><text x=\"100\" y=\"149\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"end\" font-size=\"11\">Magnesium</text><rect x=\"110\" y=\"136\" width=\"144\" height=\"20\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.4\" fill-opacity=\"0.35\"/><text x=\"260\" y=\"150\" fill=\"currentColor\" stroke=\"none\" font-size=\"11\" font-weight=\"bold\">24</text><text x=\"100\" y=\"179\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"end\" font-size=\"11\">Sulphur</text><rect x=\"110\" y=\"166\" width=\"192\" height=\"20\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.4\" fill-opacity=\"0.35\"/><text x=\"308\" y=\"180\" fill=\"currentColor\" stroke=\"none\" font-size=\"11\" font-weight=\"bold\">32</text><text x=\"100\" y=\"209\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"end\" font-size=\"11\">Chlorine</text><rect x=\"110\" y=\"196\" width=\"213\" height=\"20\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.4\" fill-opacity=\"0.35\"/><text x=\"329\" y=\"210\" fill=\"currentColor\" stroke=\"none\" font-size=\"11\" font-weight=\"bold\">35.5</text><text x=\"100\" y=\"239\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"end\" font-size=\"11\">Iron</text><rect x=\"110\" y=\"226\" width=\"336\" height=\"20\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.4\" fill-opacity=\"0.35\"/><text x=\"452\" y=\"240\" fill=\"currentColor\" stroke=\"none\" font-size=\"11\" font-weight=\"bold\">56</text><line x1=\"182\" y1=\"40\" x2=\"182\" y2=\"256\" stroke=\"var(--diagram-red)\" stroke-width=\"1\" stroke-dasharray=\"4 3\"/><text x=\"186\" y=\"262\" fill=\"var(--diagram-red)\" stroke=\"none\" font-size=\"10\">carbon-12 atom: 12 units</text></svg>",
+          "alt": "Bar chart of the relative atomic masses of seven elements compared with one-twelfth of a carbon-12 atom"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-9-chemistry-ch02-t03"
+        ]
+      },
+      {
+        "heading": "4. Percentage composition",
+        "body_md": "The **percentage composition** of a compound gives the mass of each element in 100 parts by mass of the compound.\n\n$$\\text{percentage of an element} = \\frac{\\text{mass of the element in one formula}}{\\text{relative molecular mass of the compound}} \\times 100$$\n\n**Magnesium sulphate, MgSO₄** (RMM 120): Mg 20%, S 26.7%, O 53.3%.\n\n**Water of crystallisation.** Percentage of water in a hydrate = (mass of the water in one formula ÷ RMM of the hydrate) × 100. For FeSO₄·7H₂O: 126 ÷ 278 × 100 = 45.3%; for ZnSO₄·7H₂O it is 43.9%.\n\n**Using a percentage.** A fixed fraction of a sample's mass is the element: in 204 g of Al₂O₃ the aluminium is 54 ÷ 102 × 204 = 108 g.\n\nPercentages are rounded to one decimal place. The percentages of all the elements must add up to 100 (allow 99.9 or 100.1 from rounding).",
+        "key_terms": [
+          {
+            "term": "Percentage composition",
+            "definition_md": "The percentage by mass of each element in a compound."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\text{percentage} = \\frac{\\text{mass of element in the formula}}{\\text{RMM}} \\times 100",
+            "label": "Percentage by mass of an element"
+          }
+        ],
+        "visual": {
+          "kind": "svg",
+          "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 500 190\" role=\"img\" aria-label=\"Two bars showing percentage composition by mass. Magnesium sulphate is magnesium 20 percent, sulphur 26.7 percent and oxygen 53.3 percent. Iron(II) sulphate crystals are 54.7 percent anhydrous salt and 45.3 percent water of crystallisation\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>Two bars showing percentage composition by mass. Magnesium sulphate is magnesium 20 percent, sulphur 26.7 percent and oxygen 53.3 percent. Iron(II) sulphate crystals are 54.7 percent anhydrous salt and 45.3 percent water of crystallisation</title><text x=\"70\" y=\"24\" fill=\"currentColor\" stroke=\"none\" font-size=\"11\" font-weight=\"bold\">Magnesium sulphate, MgSO₄ (RMM 120)</text><rect x=\"70\" y=\"34\" width=\"80\" height=\"34\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.4\" fill-opacity=\"0.35\"/><text x=\"110\" y=\"55\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">Mg 20%</text><rect x=\"150\" y=\"34\" width=\"106.8\" height=\"34\" fill=\"var(--diagram-yellow)\" stroke=\"var(--diagram-yellow)\" stroke-width=\"1.4\" fill-opacity=\"0.35\"/><text x=\"203.4\" y=\"55\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">S 26.7%</text><rect x=\"256.8\" y=\"34\" width=\"213.2\" height=\"34\" fill=\"var(--diagram-red)\" stroke=\"var(--diagram-red)\" stroke-width=\"1.4\" fill-opacity=\"0.35\"/><text x=\"363.4\" y=\"55\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">O 53.3%</text><text x=\"70\" y=\"100\" fill=\"currentColor\" stroke=\"none\" font-size=\"11\" font-weight=\"bold\">Iron(II) sulphate crystals, FeSO₄·7H₂O (RMM 278)</text><rect x=\"70\" y=\"110\" width=\"218.8\" height=\"34\" fill=\"var(--diagram-green)\" stroke=\"var(--diagram-green)\" stroke-width=\"1.4\" fill-opacity=\"0.35\"/><text x=\"179.4\" y=\"131\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">FeSO₄ 54.7%</text><rect x=\"288.8\" y=\"110\" width=\"181.2\" height=\"34\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.4\" fill-opacity=\"0.35\"/><text x=\"379.4\" y=\"131\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">7H₂O 45.3%</text><text x=\"70\" y=\"176\" fill=\"var(--diagram-muted)\" stroke=\"none\" font-size=\"11\">Each bar is 100 percent of the mass of the compound.</text></svg>",
+          "alt": "Bars showing the percentage composition of magnesium sulphate and of iron(II) sulphate crystals"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-9-chemistry-ch02-t04"
+        ]
+      }
+    ],
+    "exam_tips_md": "**Common mistakes**\n- Changing a subscript (writing MgO₂) to balance an equation instead of changing the number in front.\n- Forgetting to multiply every atom inside a bracket by the number outside it.\n- Leaving out the water of crystallisation when finding the relative molecular mass of a hydrate.\n- Writing a unit such as g with a relative mass.\n- Dividing by the mass of the element instead of the mass of the whole compound.\n- Giving percentages that do not add up to 100.\n\n**How marks are usually awarded**\n- 1 mark: a balanced equation, a relative molecular mass or one percentage.\n- 2 marks: a calculation with the atomic masses stated and the working shown.\n- 3 marks: working for percentage composition, with the final answer.\n- 10-mark structured question: a situation or data with parts of 2 to 4 marks; show each step of every calculation and give units for masses.",
+    "status": "draft",
+    "provenance": {
+      "origin": "human",
+      "template_version": null,
+      "model": null,
+      "generated_at": "2026-11-05",
+      "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+    }
+  },
+  "flashcards": {
+    "unit": "icse-9-chemistry-ch02",
+    "version": 1,
+    "language": "en",
+    "cards": [
+      {
+        "id": "f01",
+        "front_md": "What is a chemical equation?",
+        "back_md": "A shorthand way of showing a chemical change using symbols and formulae.",
+        "tag": "definition",
+        "topic_id": "icse-9-chemistry-ch02-t01"
+      },
+      {
+        "id": "f02",
+        "front_md": "Reactants and products?",
+        "back_md": "Reactants are before the arrow, products after it.",
+        "tag": "definition",
+        "topic_id": "icse-9-chemistry-ch02-t01"
+      },
+      {
+        "id": "f03",
+        "front_md": "One reactant, three products: an example?",
+        "back_md": "Heating ammonium dichromate gives nitrogen, chromium(III) oxide and water.",
+        "tag": "example",
+        "topic_id": "icse-9-chemistry-ch02-t01"
+      },
+      {
+        "id": "f04",
+        "front_md": "Two reactants, one product: an example?",
+        "back_md": "2Mg + O₂ → 2MgO.",
+        "tag": "example",
+        "topic_id": "icse-9-chemistry-ch02-t01"
+      },
+      {
+        "id": "f05",
+        "front_md": "Two reactants, three products: an example?",
+        "back_md": "Cu + 4HNO₃ → Cu(NO₃)₂ + 2NO₂ + 2H₂O.",
+        "tag": "example",
+        "topic_id": "icse-9-chemistry-ch02-t01"
+      },
+      {
+        "id": "f06",
+        "front_md": "Four things a balanced equation tells us?",
+        "back_md": "The substances, the number of particles, the relative masses, and the conditions and states.",
+        "tag": "concept",
+        "topic_id": "icse-9-chemistry-ch02-t01"
+      },
+      {
+        "id": "f07",
+        "front_md": "What does the triangle above an arrow mean?",
+        "back_md": "Heat is supplied.",
+        "tag": "fact",
+        "topic_id": "icse-9-chemistry-ch02-t01"
+      },
+      {
+        "id": "f08",
+        "front_md": "State symbols (s), (l), (g), (aq) mean?",
+        "back_md": "Solid, liquid, gas, and dissolved in water.",
+        "tag": "fact",
+        "topic_id": "icse-9-chemistry-ch02-t01"
+      },
+      {
+        "id": "f09",
+        "front_md": "Why must an equation be balanced?",
+        "back_md": "Atoms are neither created nor destroyed, so each element has the same count on both sides.",
+        "tag": "concept",
+        "topic_id": "icse-9-chemistry-ch02-t02"
+      },
+      {
+        "id": "f10",
+        "front_md": "Which numbers may be changed when balancing?",
+        "back_md": "The numbers in front of formulae (coefficients), never the subscripts.",
+        "tag": "concept",
+        "topic_id": "icse-9-chemistry-ch02-t02"
+      },
+      {
+        "id": "f11",
+        "front_md": "Balance Al + O₂ → Al₂O₃.",
+        "back_md": "4Al + 3O₂ → 2Al₂O₃.",
+        "tag": "example",
+        "topic_id": "icse-9-chemistry-ch02-t02"
+      },
+      {
+        "id": "f12",
+        "front_md": "Balance Mg + N₂ → Mg₃N₂.",
+        "back_md": "3Mg + N₂ → Mg₃N₂.",
+        "tag": "example",
+        "topic_id": "icse-9-chemistry-ch02-t02"
+      },
+      {
+        "id": "f13",
+        "front_md": "Balance H₂S + O₂ → SO₂ + H₂O.",
+        "back_md": "2H₂S + 3O₂ → 2SO₂ + 2H₂O.",
+        "tag": "example",
+        "topic_id": "icse-9-chemistry-ch02-t02"
+      },
+      {
+        "id": "f14",
+        "front_md": "Balance Fe₂O₃ + CO → Fe + CO₂.",
+        "back_md": "Fe₂O₃ + 3CO → 2Fe + 3CO₂.",
+        "tag": "example",
+        "topic_id": "icse-9-chemistry-ch02-t02"
+      },
+      {
+        "id": "f15",
+        "front_md": "Which element is balanced first?",
+        "back_md": "The element in the most complex formula; leave hydrogen and oxygen for last.",
+        "tag": "exam-tip",
+        "topic_id": "icse-9-chemistry-ch02-t02"
+      },
+      {
+        "id": "f16",
+        "front_md": "Relative atomic mass?",
+        "back_md": "The number of times an atom is heavier than one-twelfth of a carbon-12 atom.",
+        "tag": "definition",
+        "topic_id": "icse-9-chemistry-ch02-t03"
+      },
+      {
+        "id": "f17",
+        "front_md": "Earlier standard for atomic masses?",
+        "back_md": "The hydrogen atom, taken as 1.",
+        "tag": "fact",
+        "topic_id": "icse-9-chemistry-ch02-t03"
+      },
+      {
+        "id": "f18",
+        "front_md": "Unit of relative atomic mass?",
+        "back_md": "None: it is a ratio.",
+        "tag": "fact",
+        "topic_id": "icse-9-chemistry-ch02-t03"
+      },
+      {
+        "id": "f19",
+        "front_md": "Relative molecular mass?",
+        "back_md": "The sum of the relative atomic masses of all the atoms in the formula.",
+        "tag": "definition",
+        "topic_id": "icse-9-chemistry-ch02-t03"
+      },
+      {
+        "id": "f20",
+        "front_md": "RMM of Ca(OH)₂ (Ca 40, O 16, H 1)?",
+        "back_md": "74.",
+        "tag": "example",
+        "topic_id": "icse-9-chemistry-ch02-t03"
+      },
+      {
+        "id": "f21",
+        "front_md": "RMM of Al₂(SO₄)₃ (Al 27, S 32, O 16)?",
+        "back_md": "342.",
+        "tag": "example",
+        "topic_id": "icse-9-chemistry-ch02-t03"
+      },
+      {
+        "id": "f22",
+        "front_md": "Mass of 7H₂O in a hydrate?",
+        "back_md": "7 × 18 = 126.",
+        "tag": "fact",
+        "topic_id": "icse-9-chemistry-ch02-t03"
+      },
+      {
+        "id": "f23",
+        "front_md": "Atomic masses to learn?",
+        "back_md": "H 1, C 12, N 14, O 16, Na 23, Mg 24, Al 27, S 32, Cl 35.5, K 39, Ca 40, Fe 56, Cu 63.5, Zn 65.",
+        "tag": "fact",
+        "topic_id": "icse-9-chemistry-ch02-t03"
+      },
+      {
+        "id": "f24",
+        "front_md": "Percentage composition?",
+        "back_md": "The mass of each element in 100 parts by mass of the compound.",
+        "tag": "definition",
+        "topic_id": "icse-9-chemistry-ch02-t04"
+      },
+      {
+        "id": "f25",
+        "front_md": "Formula for percentage of an element?",
+        "back_md": "(Mass of the element in the formula ÷ relative molecular mass) × 100.",
+        "tag": "formula",
+        "topic_id": "icse-9-chemistry-ch02-t04"
+      },
+      {
+        "id": "f26",
+        "front_md": "Percentage of magnesium in MgSO₄?",
+        "back_md": "20%.",
+        "tag": "example",
+        "topic_id": "icse-9-chemistry-ch02-t04"
+      },
+      {
+        "id": "f27",
+        "front_md": "Percentage of water in FeSO₄·7H₂O?",
+        "back_md": "45.3%.",
+        "tag": "example",
+        "topic_id": "icse-9-chemistry-ch02-t04"
+      },
+      {
+        "id": "f28",
+        "front_md": "How do you check percentage composition?",
+        "back_md": "The percentages of all the elements add up to 100.",
+        "tag": "exam-tip",
+        "topic_id": "icse-9-chemistry-ch02-t04"
+      },
+      {
+        "id": "f29",
+        "front_md": "Mass of aluminium in 204 g of Al₂O₃?",
+        "back_md": "108 g (54 ÷ 102 × 204).",
+        "tag": "example",
+        "topic_id": "icse-9-chemistry-ch02-t04"
+      },
+      {
+        "id": "f30",
+        "front_md": "Exam tip: state the atomic masses",
+        "back_md": "Write the atomic masses you use before the working.",
+        "tag": "exam-tip",
+        "topic_id": "icse-9-chemistry-ch02-t04"
+      }
+    ],
+    "status": "draft",
+    "provenance": {
+      "origin": "human",
+      "template_version": null,
+      "model": null,
+      "generated_at": "2026-11-05",
+      "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+    }
+  },
+  "questions": [
+    {
+      "id": "q_icse9chem_ch02_001",
+      "unit": "icse-9-chemistry-ch02",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Copper reacts with concentrated nitric acid to give copper nitrate, nitrogen dioxide and water. The reaction has",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "one reactant and three products"
+        },
+        {
+          "id": "b",
+          "text_md": "three reactants and two products"
+        },
+        {
+          "id": "c",
+          "text_md": "two reactants and three products"
+        },
+        {
+          "id": "d",
+          "text_md": "two reactants and one product"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Copper and nitric acid are the two reactants; copper nitrate, nitrogen dioxide and water are the three products, option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-9-chemistry-ch02-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9chem_ch02_002",
+      "unit": "icse-9-chemistry-ch02",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which statement about $\\ce{2Mg + O2 -> 2MgO}$ is correct?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "48 parts by mass of magnesium combine with 32 parts by mass of oxygen"
+        },
+        {
+          "id": "b",
+          "text_md": "2 g of magnesium combine with 1 g of oxygen"
+        },
+        {
+          "id": "c",
+          "text_md": "The magnesium oxide formed weighs less than the magnesium used"
+        },
+        {
+          "id": "d",
+          "text_md": "2 atoms of oxygen combine with 1 atom of magnesium"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "2 × 24 = 48 and 2 × 16 = 32; the products weigh 80, option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-chemistry-ch02-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9chem_ch02_003",
+      "unit": "icse-9-chemistry-ch02",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Magnesium burns in nitrogen to form magnesium nitride, Mg₃N₂. Which coefficients balance Mg + N₂ → Mg₃N₂?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "3, 1, 1"
+        },
+        {
+          "id": "b",
+          "text_md": "1, 1, 1"
+        },
+        {
+          "id": "c",
+          "text_md": "2, 1, 1"
+        },
+        {
+          "id": "d",
+          "text_md": "3, 3, 1"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Three magnesium atoms are needed on the left to match Mg₃ on the right; the solver gives 3, 1, 1, option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-chemistry-ch02-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9chem_ch02_004",
+      "unit": "icse-9-chemistry-ch02",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "The relative molecular mass of calcium hydroxide, Ca(OH)₂, is (Ca = 40, O = 16, H = 1)",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "57"
+        },
+        {
+          "id": "b",
+          "text_md": "74"
+        },
+        {
+          "id": "c",
+          "text_md": "58"
+        },
+        {
+          "id": "d",
+          "text_md": "90"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "40 + 2 × (16 + 1) = 74, option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-chemistry-ch02-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9chem_ch02_005",
+      "unit": "icse-9-chemistry-ch02",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "The percentage of carbon in ethane, C₂H₆, is (C = 12, H = 1)",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "80%"
+        },
+        {
+          "id": "b",
+          "text_md": "20%"
+        },
+        {
+          "id": "c",
+          "text_md": "40%"
+        },
+        {
+          "id": "d",
+          "text_md": "75%"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "24 ÷ 30 × 100 = 80%, option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-chemistry-ch02-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9chem_ch02_006",
+      "unit": "icse-9-chemistry-ch02",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which expression gives the percentage of water of crystallisation in ZnSO₄·7H₂O?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "(126 ÷ 287) × 100"
+        },
+        {
+          "id": "b",
+          "text_md": "(126 ÷ 161) × 100"
+        },
+        {
+          "id": "c",
+          "text_md": "(287 ÷ 126) × 100"
+        },
+        {
+          "id": "d",
+          "text_md": "(7 ÷ 287) × 100"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "The mass of the water divided by the mass of the whole hydrate, times 100, option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-9-chemistry-ch02-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9chem_ch02_007",
+      "unit": "icse-9-chemistry-ch02",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A student writes: calcium carbonate → calcium oxide + carbon dioxide. This is a",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "word equation"
+        },
+        {
+          "id": "b",
+          "text_md": "balanced formula equation"
+        },
+        {
+          "id": "c",
+          "text_md": "skeletal formula equation"
+        },
+        {
+          "id": "d",
+          "text_md": "state symbol"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Names are used instead of formulae, so it is a word equation, option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-9-chemistry-ch02-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9chem_ch02_008",
+      "unit": "icse-9-chemistry-ch02",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which equation shows a reaction with one reactant and three products?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "$\\ce{2Mg + O2 -> 2MgO}$"
+        },
+        {
+          "id": "b",
+          "text_md": "$\\ce{CaCO3 -> CaO + CO2}$"
+        },
+        {
+          "id": "c",
+          "text_md": "$\\ce{(NH4)2CO3 -> 2NH3 + H2O + CO2}$"
+        },
+        {
+          "id": "d",
+          "text_md": "$\\ce{Zn + 2HCl -> ZnCl2 + H2}$"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Ammonium carbonate is the single reactant and ammonia, water and carbon dioxide are the three products, option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-chemistry-ch02-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9chem_ch02_009",
+      "unit": "icse-9-chemistry-ch02",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "In $\\ce{4Al + 3O2 -> 2Al2O3}$ the relative masses of aluminium, oxygen and aluminium oxide taking part are in the ratio (Al = 27, O = 16)",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "4 : 3 : 2"
+        },
+        {
+          "id": "b",
+          "text_md": "27 : 32 : 102"
+        },
+        {
+          "id": "c",
+          "text_md": "108 : 96 : 204"
+        },
+        {
+          "id": "d",
+          "text_md": "108 : 32 : 102"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "4 × 27 = 108; 3 × 32 = 96; 2 × 102 = 204, option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-chemistry-ch02-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9chem_ch02_010",
+      "unit": "icse-9-chemistry-ch02",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A balanced chemical equation does NOT tell us",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "the substances that react"
+        },
+        {
+          "id": "b",
+          "text_md": "how fast the reaction takes place"
+        },
+        {
+          "id": "c",
+          "text_md": "the number of molecules that react"
+        },
+        {
+          "id": "d",
+          "text_md": "the relative masses taking part"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Speed of a reaction is not shown by an equation, option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-9-chemistry-ch02-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9chem_ch02_011",
+      "unit": "icse-9-chemistry-ch02",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "In a chemical equation the symbol (aq) written after a formula shows that the substance is",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "a gas"
+        },
+        {
+          "id": "b",
+          "text_md": "dissolved in water"
+        },
+        {
+          "id": "c",
+          "text_md": "a solid"
+        },
+        {
+          "id": "d",
+          "text_md": "a pure liquid"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "The symbol (aq) means aqueous, that is dissolved in water, option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-9-chemistry-ch02-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9chem_ch02_012",
+      "unit": "icse-9-chemistry-ch02",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** A balanced equation has the same number of atoms of each element on both sides.\n\n**Reason (R):** Atoms are neither created nor destroyed in a chemical reaction.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "(A) is true and (R) is false."
+        },
+        {
+          "id": "b",
+          "text_md": "(A) is false and (R) is true."
+        },
+        {
+          "id": "c",
+          "text_md": "Both (A) and (R) are true, and (R) is the correct explanation of (A)."
+        },
+        {
+          "id": "d",
+          "text_md": "Both (A) and (R) are true, but (R) is not the correct explanation of (A)."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Because atoms are conserved, the counts match on both sides, so (R) explains (A), option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-9-chemistry-ch02-t01",
+        "icse-9-chemistry-ch02-t02"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9chem_ch02_013",
+      "unit": "icse-9-chemistry-ch02",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? The triangle written above the arrow in an equation is one of the products.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "f"
+        ]
+      },
+      "solution_md": "False. It shows that heat is supplied; it is a condition, not a substance.",
+      "marking_scheme": [
+        {
+          "step": "False, with the correction",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-9-chemistry-ch02-t01"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9chem_ch02_014",
+      "unit": "icse-9-chemistry-ch02",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "The substances written on the left of the arrow in a chemical equation are called ___.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "reactants",
+              "reactant"
+            ]
+          }
+        ]
+      },
+      "solution_md": "The **reactants**.",
+      "marking_scheme": [
+        {
+          "step": "Writes \"reactants\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-9-chemistry-ch02-t01"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9chem_ch02_015",
+      "unit": "icse-9-chemistry-ch02",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write the word equation for heating copper(II) carbonate, which gives copper(II) oxide and carbon dioxide.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Copper(II) carbonate → copper(II) oxide + carbon dioxide (on heating)."
+      },
+      "solution_md": "Copper(II) carbonate gives copper(II) oxide and carbon dioxide.",
+      "marking_scheme": [
+        {
+          "step": "Correct word equation",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-chemistry-ch02-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9chem_ch02_016",
+      "unit": "icse-9-chemistry-ch02",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Balance the equation $\\ce{Zn + HCl -> ZnCl2 + H2}$.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "$\\ce{Zn + 2HCl -> ZnCl2 + H2}$"
+      },
+      "solution_md": "Two hydrochloric acid are needed to supply two chlorine atoms.",
+      "marking_scheme": [
+        {
+          "step": "Balanced equation",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-chemistry-ch02-t01",
+        "icse-9-chemistry-ch02-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9chem_ch02_017",
+      "unit": "icse-9-chemistry-ch02",
+      "language": "en",
+      "type": "short",
+      "stem_md": "State two differences between a word equation and a formula equation.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "A word equation uses the **names** of the substances; a formula equation uses **symbols and formulae**. A formula equation can be **balanced** to show the number of atoms and the relative masses, while a word equation cannot."
+      },
+      "solution_md": "Names against formulae; balancing possible only with formulae.",
+      "marking_scheme": [
+        {
+          "step": "Names against symbols and formulae",
+          "marks": 1
+        },
+        {
+          "step": "Balancing or quantities only in a formula equation",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-9-chemistry-ch02-t01"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9chem_ch02_018",
+      "unit": "icse-9-chemistry-ch02",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Calcium carbonate decomposes on strong heating: $\\ce{CaCO3 ->[\\Delta] CaO + CO2}$. State (a) the number of reactants and products and (b) what the sign above the arrow means.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "**(a)** **One** reactant and **two** products.\n\n**(b)** The triangle means that **heat** is supplied."
+      },
+      "solution_md": "One reactant, two products; heat.",
+      "marking_scheme": [
+        {
+          "step": "One reactant and two products",
+          "marks": 1
+        },
+        {
+          "step": "Heat",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-chemistry-ch02-t01"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9chem_ch02_019",
+      "unit": "icse-9-chemistry-ch02",
+      "language": "en",
+      "type": "short",
+      "stem_md": "State three items of information that the balanced equation $\\ce{Fe2O3 + 3CO -> 2Fe + 3CO2}$ gives. (Fe = 56, C = 12, O = 16)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "**1.** The **substances**: iron(III) oxide and carbon monoxide react to give iron and carbon dioxide.\n\n**2.** The **numbers of particles**: 1 unit of oxide and 3 molecules of carbon monoxide give 2 atoms of iron and 3 molecules of carbon dioxide.\n\n**3.** The **relative masses**: 160 + 84 = 112 + 132, that is 244 on each side."
+      },
+      "solution_md": "Substances; numbers of particles; relative masses 244 each side.",
+      "marking_scheme": [
+        {
+          "step": "Substances named",
+          "marks": 1
+        },
+        {
+          "step": "Numbers of particles",
+          "marks": 1
+        },
+        {
+          "step": "Relative masses with totals",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-chemistry-ch02-t01"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9chem_ch02_020",
+      "unit": "icse-9-chemistry-ch02",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "The sum of all the coefficients when the skeletal equation $\\ce{C2H4 + O2 -> CO2 + H2O}$ is balanced is",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "4"
+        },
+        {
+          "id": "b",
+          "text_md": "6"
+        },
+        {
+          "id": "c",
+          "text_md": "10"
+        },
+        {
+          "id": "d",
+          "text_md": "8"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Balanced: C₂H₄ + 3O₂ → 2CO₂ + 2H₂O; 1 + 3 + 2 + 2 = 8, option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-chemistry-ch02-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9chem_ch02_021",
+      "unit": "icse-9-chemistry-ch02",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "When the skeletal equation $\\ce{Al + HCl -> AlCl3 + H2}$ is balanced, the coefficient of hydrochloric acid is",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "2"
+        },
+        {
+          "id": "b",
+          "text_md": "3"
+        },
+        {
+          "id": "c",
+          "text_md": "4"
+        },
+        {
+          "id": "d",
+          "text_md": "6"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "The balanced equation is 2Al + 6HCl → 2AlCl₃ + 3H₂, so the coefficient is 6, option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-chemistry-ch02-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9chem_ch02_022",
+      "unit": "icse-9-chemistry-ch02",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A student balances H₂ + O₂ → H₂O by writing H₂ + O₂ → H₂O₂. This is wrong because",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "water has no oxygen in it"
+        },
+        {
+          "id": "b",
+          "text_md": "the equation now has fewer hydrogen atoms"
+        },
+        {
+          "id": "c",
+          "text_md": "a balanced equation must have the same number of molecules"
+        },
+        {
+          "id": "d",
+          "text_md": "changing a subscript makes a different substance"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "H₂O₂ is hydrogen peroxide, not water, so the substance was changed, option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-9-chemistry-ch02-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9chem_ch02_023",
+      "unit": "icse-9-chemistry-ch02",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "In the balanced equation $\\ce{2Na + 2H2O -> 2NaOH + H2}$ the number of hydrogen atoms on each side is",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "4"
+        },
+        {
+          "id": "b",
+          "text_md": "2"
+        },
+        {
+          "id": "c",
+          "text_md": "3"
+        },
+        {
+          "id": "d",
+          "text_md": "6"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Left: 2 × 2 = 4; right: 2 + 2 = 4, option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-chemistry-ch02-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9chem_ch02_024",
+      "unit": "icse-9-chemistry-ch02",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** The equation Mg + O₂ → MgO is balanced.\n\n**Reason (R):** There is one magnesium atom on each side of the equation.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "(A) is true and (R) is false."
+        },
+        {
+          "id": "b",
+          "text_md": "(A) is false and (R) is true."
+        },
+        {
+          "id": "c",
+          "text_md": "Both (A) and (R) are true, and (R) is the correct explanation of (A)."
+        },
+        {
+          "id": "d",
+          "text_md": "Both (A) and (R) are true, but (R) is not the correct explanation of (A)."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Oxygen has 2 atoms on the left and 1 on the right, so the equation is not balanced; (A) is false and (R) is true, option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-9-chemistry-ch02-t02"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9chem_ch02_025",
+      "unit": "icse-9-chemistry-ch02",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? An equation may be balanced by changing a subscript inside a formula.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "f"
+        ]
+      },
+      "solution_md": "False. Changing a subscript changes the substance; only the number in front of the formula may be changed.",
+      "marking_scheme": [
+        {
+          "step": "False, with the correction",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-9-chemistry-ch02-t02"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9chem_ch02_026",
+      "unit": "icse-9-chemistry-ch02",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Name the law which makes it necessary to balance a chemical equation.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "The **law of conservation of mass**."
+      },
+      "solution_md": "Law of conservation of mass.",
+      "marking_scheme": [
+        {
+          "step": "Law of conservation of mass",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-9-chemistry-ch02-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9chem_ch02_027",
+      "unit": "icse-9-chemistry-ch02",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Balance the equation $\\ce{Na2CO3 + HCl -> NaCl + H2O + CO2}$.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "$\\ce{Na2CO3 + 2HCl -> 2NaCl + H2O + CO2}$"
+      },
+      "solution_md": "Two sodium and two chlorine atoms need 2 on the right and 2 on the left.",
+      "marking_scheme": [
+        {
+          "step": "Balanced equation",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-chemistry-ch02-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9chem_ch02_028",
+      "unit": "icse-9-chemistry-ch02",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Balance the equations (a) $\\ce{NH3 + O2 -> N2 + H2O}$ and (b) $\\ce{Na + O2 -> Na2O}$.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "**(a)** $\\ce{4NH3 + 3O2 -> 2N2 + 6H2O}$\n\n**(b)** $\\ce{4Na + O2 -> 2Na2O}$"
+      },
+      "solution_md": "Nitrogen and hydrogen first; then oxygen; sodium after the oxide.",
+      "marking_scheme": [
+        {
+          "step": "(a) balanced",
+          "marks": 1
+        },
+        {
+          "step": "(b) balanced",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-chemistry-ch02-t02"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9chem_ch02_029",
+      "unit": "icse-9-chemistry-ch02",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Explain why a subscript must never be changed while balancing an equation, using water, H₂O, and hydrogen peroxide, H₂O₂, as an example.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "The subscripts are part of the **formula of a substance**. Changing H₂O to H₂O₂ gives **hydrogen peroxide, a different substance**, so the equation would no longer describe the real reaction."
+      },
+      "solution_md": "Subscripts define the substance; H₂O₂ is a different compound.",
+      "marking_scheme": [
+        {
+          "step": "Subscript fixes the substance",
+          "marks": 1
+        },
+        {
+          "step": "Example: H₂O₂ is a different substance",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-9-chemistry-ch02-t02"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9chem_ch02_030",
+      "unit": "icse-9-chemistry-ch02",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Balance the equations (a) $\\ce{C2H5OH + O2 -> CO2 + H2O}$, (b) $\\ce{KOH + H3PO4 -> K3PO4 + H2O}$ and (c) $\\ce{Fe + H2O -> Fe3O4 + H2}$.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "**(a)** $\\ce{C2H5OH + 3O2 -> 2CO2 + 3H2O}$\n\n**(b)** $\\ce{3KOH + H3PO4 -> K3PO4 + 3H2O}$\n\n**(c)** $\\ce{3Fe + 4H2O -> Fe3O4 + 4H2}$"
+      },
+      "solution_md": "Carbon and hydrogen first; potassium first; iron and then oxygen.",
+      "marking_scheme": [
+        {
+          "step": "(a) balanced",
+          "marks": 1
+        },
+        {
+          "step": "(b) balanced",
+          "marks": 1
+        },
+        {
+          "step": "(c) balanced",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-chemistry-ch02-t02"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9chem_ch02_031",
+      "unit": "icse-9-chemistry-ch02",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "The standard used today for the relative atomic masses of elements is",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "the mass of an oxygen atom"
+        },
+        {
+          "id": "b",
+          "text_md": "the mass of one hydrogen molecule"
+        },
+        {
+          "id": "c",
+          "text_md": "the mass of a whole carbon-12 atom"
+        },
+        {
+          "id": "d",
+          "text_md": "one-twelfth of the mass of a carbon-12 atom"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Today the standard is one-twelfth of the mass of a carbon-12 atom, option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-9-chemistry-ch02-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9chem_ch02_032",
+      "unit": "icse-9-chemistry-ch02",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "The relative atomic mass of an element has no unit because it is",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "measured in grams"
+        },
+        {
+          "id": "b",
+          "text_md": "the mass of a mole"
+        },
+        {
+          "id": "c",
+          "text_md": "a ratio of two masses"
+        },
+        {
+          "id": "d",
+          "text_md": "the mass of one proton"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "It compares the mass of an atom with a standard mass, so the units cancel, option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-9-chemistry-ch02-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9chem_ch02_033",
+      "unit": "icse-9-chemistry-ch02",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "The relative molecular mass of potassium sulphate, K₂SO₄, is (K = 39, S = 32, O = 16)",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "135"
+        },
+        {
+          "id": "b",
+          "text_md": "174"
+        },
+        {
+          "id": "c",
+          "text_md": "126"
+        },
+        {
+          "id": "d",
+          "text_md": "207"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "2 × 39 + 32 + 4 × 16 = 78 + 32 + 64 = 174, option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-chemistry-ch02-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9chem_ch02_034",
+      "unit": "icse-9-chemistry-ch02",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which compound has a relative molecular mass of 100? (Ca = 40, Mg = 24, Na = 23, Cl = 35.5, C = 12, O = 16)",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Calcium carbonate, CaCO₃"
+        },
+        {
+          "id": "b",
+          "text_md": "Magnesium carbonate, MgCO₃"
+        },
+        {
+          "id": "c",
+          "text_md": "Sodium carbonate, Na₂CO₃"
+        },
+        {
+          "id": "d",
+          "text_md": "Calcium chloride, CaCl₂"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "40 + 12 + 48 = 100 for CaCO₃; the others give 84, 106 and 111, option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-chemistry-ch02-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9chem_ch02_035",
+      "unit": "icse-9-chemistry-ch02",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A molecule of oxygen, O₂, is how many times heavier than a molecule of hydrogen, H₂? (O = 16, H = 1)",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "8"
+        },
+        {
+          "id": "b",
+          "text_md": "32"
+        },
+        {
+          "id": "c",
+          "text_md": "16"
+        },
+        {
+          "id": "d",
+          "text_md": "2"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "32 ÷ 2 = 16, option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-chemistry-ch02-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9chem_ch02_036",
+      "unit": "icse-9-chemistry-ch02",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "In the crystals Na₂SO₄·10H₂O (Na = 23, S = 32, O = 16, H = 1) the water of crystallisation contributes to the relative molecular mass",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "10"
+        },
+        {
+          "id": "b",
+          "text_md": "18"
+        },
+        {
+          "id": "c",
+          "text_md": "180"
+        },
+        {
+          "id": "d",
+          "text_md": "142"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "10 × 18 = 180; the rest is 142, option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-chemistry-ch02-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9chem_ch02_037",
+      "unit": "icse-9-chemistry-ch02",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** The relative molecular mass of water is 18.\n\n**Reason (R):** It is found by multiplying the relative atomic masses of hydrogen and oxygen.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "(A) is true and (R) is false."
+        },
+        {
+          "id": "b",
+          "text_md": "(A) is false and (R) is true."
+        },
+        {
+          "id": "c",
+          "text_md": "Both (A) and (R) are true, and (R) is the correct explanation of (A)."
+        },
+        {
+          "id": "d",
+          "text_md": "Both (A) and (R) are true, but (R) is not the correct explanation of (A)."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "It is the sum 2 × 1 + 16 = 18, not a product, so (A) is true and (R) is false, option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-9-chemistry-ch02-t03"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9chem_ch02_038",
+      "unit": "icse-9-chemistry-ch02",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? The relative molecular mass of a hydrated salt does not include the water of crystallisation.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "f"
+        ]
+      },
+      "solution_md": "False. The water of crystallisation is part of the formula, so it is included.",
+      "marking_scheme": [
+        {
+          "step": "False, with the correction",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-9-chemistry-ch02-t03"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9chem_ch02_039",
+      "unit": "icse-9-chemistry-ch02",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "Relative atomic mass is the number of times an atom is heavier than one-twelfth of an atom of ___.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "carbon-12",
+              "carbon 12",
+              "carbon"
+            ]
+          }
+        ]
+      },
+      "solution_md": "**Carbon-12**.",
+      "marking_scheme": [
+        {
+          "step": "Writes \"carbon-12\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-9-chemistry-ch02-t03"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9chem_ch02_040",
+      "unit": "icse-9-chemistry-ch02",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Name the atom that was taken as the standard for atomic masses before carbon-12.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "The **hydrogen** atom."
+      },
+      "solution_md": "Hydrogen.",
+      "marking_scheme": [
+        {
+          "step": "Hydrogen",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-9-chemistry-ch02-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9chem_ch02_041",
+      "unit": "icse-9-chemistry-ch02",
+      "language": "en",
+      "type": "short",
+      "stem_md": "State the unit of relative molecular mass.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "**None**, because it is a ratio."
+      },
+      "solution_md": "No unit.",
+      "marking_scheme": [
+        {
+          "step": "No unit",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-9-chemistry-ch02-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9chem_ch02_042",
+      "unit": "icse-9-chemistry-ch02",
+      "language": "en",
+      "type": "match",
+      "stem_md": "Match each compound in Column A with its relative molecular mass in Column B. (Mg = 24, K = 39, Cu = 63.5, Ca = 40, Fe = 56, Cl = 35.5, S = 32, O = 16, H = 1)",
+      "options": [
+        {
+          "id": "1",
+          "text_md": "Mg(OH)₂"
+        },
+        {
+          "id": "2",
+          "text_md": "K₂SO₄"
+        },
+        {
+          "id": "3",
+          "text_md": "CuSO₄"
+        },
+        {
+          "id": "4",
+          "text_md": "CaCl₂"
+        },
+        {
+          "id": "5",
+          "text_md": "Fe₂O₃"
+        }
+      ],
+      "match_right": [
+        {
+          "id": "p",
+          "text_md": "58"
+        },
+        {
+          "id": "q",
+          "text_md": "160"
+        },
+        {
+          "id": "r",
+          "text_md": "111"
+        },
+        {
+          "id": "s",
+          "text_md": "159.5"
+        },
+        {
+          "id": "t",
+          "text_md": "174"
+        }
+      ],
+      "answer": {
+        "pairs": [
+          {
+            "left_id": "1",
+            "right_id": "p"
+          },
+          {
+            "left_id": "2",
+            "right_id": "t"
+          },
+          {
+            "left_id": "3",
+            "right_id": "s"
+          },
+          {
+            "left_id": "4",
+            "right_id": "r"
+          },
+          {
+            "left_id": "5",
+            "right_id": "q"
+          }
+        ]
+      },
+      "solution_md": "Mg(OH)₂ 58; K₂SO₄ 174; CuSO₄ 159.5; CaCl₂ 111; Fe₂O₃ 160.",
+      "marking_scheme": [
+        {
+          "step": "1 → p",
+          "marks": 1
+        },
+        {
+          "step": "2 → t",
+          "marks": 1
+        },
+        {
+          "step": "3 → s",
+          "marks": 1
+        },
+        {
+          "step": "4 → r",
+          "marks": 1
+        },
+        {
+          "step": "5 → q",
+          "marks": 1
+        }
+      ],
+      "marks": 5,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-chemistry-ch02-t03"
+      ],
+      "expected_time_sec": 240,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9chem_ch02_043",
+      "unit": "icse-9-chemistry-ch02",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Define relative atomic mass and give a reason why it has no unit.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "It is the number of times an atom of the element is **heavier than one-twelfth of a carbon-12 atom**. It has no unit because it is the **ratio of two masses**."
+      },
+      "solution_md": "Definition; ratio of masses.",
+      "marking_scheme": [
+        {
+          "step": "Definition with the carbon-12 standard",
+          "marks": 1
+        },
+        {
+          "step": "Ratio, so no unit",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-9-chemistry-ch02-t03"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9chem_ch02_044",
+      "unit": "icse-9-chemistry-ch02",
+      "language": "en",
+      "type": "short",
+      "stem_md": "State two differences between relative atomic mass and relative molecular mass.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Relative atomic mass belongs to **one atom of an element**, whereas relative molecular mass belongs to **a molecule or formula unit of a compound**. The molecular mass is **found by adding** the atomic masses of all the atoms in the formula."
+      },
+      "solution_md": "Atom against molecule; the latter is a sum of the former.",
+      "marking_scheme": [
+        {
+          "step": "Atom of an element against molecule or formula of a compound",
+          "marks": 1
+        },
+        {
+          "step": "Molecular mass is the sum of atomic masses",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-9-chemistry-ch02-t03"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9chem_ch02_045",
+      "unit": "icse-9-chemistry-ch02",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Calculate the relative molecular mass of (a) copper(II) nitrate, Cu(NO₃)₂, (b) calcium chloride crystals, CaCl₂·6H₂O. (Cu = 63.5, Ca = 40, Cl = 35.5, N = 14, O = 16, H = 1)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "**(a)** 63.5 + 2 × (14 + 3 × 16) = 63.5 + 2 × 62 = **187.5**.\n\n**(b)** CaCl₂ = 40 + 2 × 35.5 = 111; 6H₂O = 6 × 18 = 108; total **219**."
+      },
+      "solution_md": "187.5 and 219.",
+      "marking_scheme": [
+        {
+          "step": "Copper nitrate working",
+          "marks": 1
+        },
+        {
+          "step": "Calcium chloride part and water part",
+          "marks": 1
+        },
+        {
+          "step": "Totals 187.5 and 219",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-chemistry-ch02-t03"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9chem_ch02_046",
+      "unit": "icse-9-chemistry-ch02",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "Calculate the relative molecular mass of copper(II) sulphate, CuSO₄. (Cu = 63.5, S = 32, O = 16)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 159.5,
+        "tolerance": 0,
+        "unit": null
+      },
+      "solution_md": "63.5 + 32 + 4 × 16 = 159.5.",
+      "marking_scheme": [
+        {
+          "step": "Working with the atomic masses",
+          "marks": 0.5
+        },
+        {
+          "step": "159.5",
+          "marks": 0.5
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-chemistry-ch02-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9chem_ch02_047",
+      "unit": "icse-9-chemistry-ch02",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "Calculate the relative molecular mass of the hydrated salt FeSO₄·7H₂O. (Fe = 56, S = 32, O = 16, H = 1)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 278,
+        "tolerance": 0,
+        "unit": null
+      },
+      "solution_md": "FeSO₄ = 152; 7H₂O = 126; total 278.",
+      "marking_scheme": [
+        {
+          "step": "FeSO₄ and 7H₂O parts",
+          "marks": 0.5
+        },
+        {
+          "step": "278",
+          "marks": 0.5
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-chemistry-ch02-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9chem_ch02_048",
+      "unit": "icse-9-chemistry-ch02",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "An atom of an element X is 3.5 times as heavy as an atom of oxygen (relative atomic mass 16). What is the relative atomic mass of X?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 56,
+        "tolerance": 0,
+        "unit": null
+      },
+      "solution_md": "3.5 × 16 = 56.",
+      "marking_scheme": [
+        {
+          "step": "Multiplication",
+          "marks": 0.5
+        },
+        {
+          "step": "56",
+          "marks": 0.5
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-chemistry-ch02-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9chem_ch02_049",
+      "unit": "icse-9-chemistry-ch02",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "Find the total relative mass of the reactants in $\\ce{2H2S + 3O2 -> 2SO2 + 2H2O}$. (H = 1, S = 32, O = 16)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 164,
+        "tolerance": 0,
+        "unit": null
+      },
+      "solution_md": "2 × 34 + 3 × 32 = 68 + 96 = 164, which equals the total of the products.",
+      "marking_scheme": [
+        {
+          "step": "Relative masses of 2H₂S and 3O₂",
+          "marks": 0.5
+        },
+        {
+          "step": "164",
+          "marks": 0.5
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-chemistry-ch02-t01",
+        "icse-9-chemistry-ch02-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9chem_ch02_050",
+      "unit": "icse-9-chemistry-ch02",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "Calculate the percentage of iron in iron(III) oxide, Fe₂O₃. (Fe = 56, O = 16)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 70,
+        "tolerance": 0.1,
+        "unit": "%"
+      },
+      "solution_md": "112 ÷ 160 × 100 = 70%.",
+      "marking_scheme": [
+        {
+          "step": "112 ÷ 160",
+          "marks": 0.5
+        },
+        {
+          "step": "70%",
+          "marks": 0.5
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-chemistry-ch02-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9chem_ch02_051",
+      "unit": "icse-9-chemistry-ch02",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "Calculate the percentage of magnesium in magnesium chloride, MgCl₂, correct to one decimal place. (Mg = 24, Cl = 35.5)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 25.3,
+        "tolerance": 0.1,
+        "unit": "%"
+      },
+      "solution_md": "24 ÷ 95 × 100 = 25.3%.",
+      "marking_scheme": [
+        {
+          "step": "24 ÷ 95",
+          "marks": 0.5
+        },
+        {
+          "step": "25.3%",
+          "marks": 0.5
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-chemistry-ch02-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9chem_ch02_052",
+      "unit": "icse-9-chemistry-ch02",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "Calculate the percentage of water of crystallisation in ZnSO₄·7H₂O, correct to one decimal place. (Zn = 65, S = 32, O = 16, H = 1)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 43.9,
+        "tolerance": 0.1,
+        "unit": "%"
+      },
+      "solution_md": "126 ÷ 287 × 100 = 43.9%.",
+      "marking_scheme": [
+        {
+          "step": "126 ÷ 287",
+          "marks": 0.5
+        },
+        {
+          "step": "43.9%",
+          "marks": 0.5
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-chemistry-ch02-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9chem_ch02_053",
+      "unit": "icse-9-chemistry-ch02",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "How many grams of water are there in 161 g of the crystals Na₂SO₄·10H₂O? (Na = 23, S = 32, O = 16, H = 1)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 90,
+        "tolerance": 0,
+        "unit": "g"
+      },
+      "solution_md": "RMM = 322; water = 180. Mass of water = 180 ÷ 322 × 161 = 90 g.",
+      "marking_scheme": [
+        {
+          "step": "RMM and water part",
+          "marks": 0.5
+        },
+        {
+          "step": "90 g",
+          "marks": 0.5
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-chemistry-ch02-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9chem_ch02_054",
+      "unit": "icse-9-chemistry-ch02",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "How many grams of calcium are there in 148 g of calcium hydroxide, Ca(OH)₂? (Ca = 40, O = 16, H = 1)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 80,
+        "tolerance": 0,
+        "unit": "g"
+      },
+      "solution_md": "RMM of Ca(OH)₂ = 74. Calcium = 40 ÷ 74 × 148 = 80 g.",
+      "marking_scheme": [
+        {
+          "step": "40 ÷ 74 × 148",
+          "marks": 0.5
+        },
+        {
+          "step": "80 g",
+          "marks": 0.5
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-chemistry-ch02-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9chem_ch02_055",
+      "unit": "icse-9-chemistry-ch02",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which of these compounds has the greatest percentage of oxygen by mass? (H = 1, C = 12, O = 16, Al = 27, Fe = 56)",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Carbon dioxide, CO₂"
+        },
+        {
+          "id": "b",
+          "text_md": "Aluminium oxide, Al₂O₃"
+        },
+        {
+          "id": "c",
+          "text_md": "Iron(III) oxide, Fe₂O₃"
+        },
+        {
+          "id": "d",
+          "text_md": "Water, H₂O"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "The percentages of oxygen are H₂O 88.9%, CO₂ 72.7%, Al₂O₃ 47.1% and Fe₂O₃ 30%, option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-9-chemistry-ch02-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9chem_ch02_056",
+      "unit": "icse-9-chemistry-ch02",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "The percentage of calcium in calcium chloride, CaCl₂, is (Ca = 40, Cl = 35.5)",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "64%"
+        },
+        {
+          "id": "b",
+          "text_md": "36%"
+        },
+        {
+          "id": "c",
+          "text_md": "18%"
+        },
+        {
+          "id": "d",
+          "text_md": "50%"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "40 ÷ 111 × 100 = 36%, option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-chemistry-ch02-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9chem_ch02_057",
+      "unit": "icse-9-chemistry-ch02",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Crystals of a hydrated salt weighing 25.0 g are heated until they lose all their water of crystallisation, and 16.0 g of dry salt remains. The percentage of water in the crystals is",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "64%"
+        },
+        {
+          "id": "b",
+          "text_md": "9%"
+        },
+        {
+          "id": "c",
+          "text_md": "56.25%"
+        },
+        {
+          "id": "d",
+          "text_md": "36%"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Water lost = 25 − 16 = 9 g; 9 ÷ 25 × 100 = 36%, option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-chemistry-ch02-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9chem_ch02_058",
+      "unit": "icse-9-chemistry-ch02",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Hydrogen makes up 25% by mass of one of these compounds. It is (H = 1, C = 12, N = 14, O = 16)",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "ethane, C₂H₆"
+        },
+        {
+          "id": "b",
+          "text_md": "ammonia, NH₃"
+        },
+        {
+          "id": "c",
+          "text_md": "water, H₂O"
+        },
+        {
+          "id": "d",
+          "text_md": "methane, CH₄"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "The percentages of hydrogen are CH₄ 25%, C₂H₆ 20%, NH₃ 17.6% and H₂O 11.1%, option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-9-chemistry-ch02-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9chem_ch02_059",
+      "unit": "icse-9-chemistry-ch02",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Oxygen forms the larger part of the mass of water.\n\n**Reason (R):** A molecule of water contains two atoms of hydrogen and only one atom of oxygen.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "(A) is true and (R) is false."
+        },
+        {
+          "id": "b",
+          "text_md": "(A) is false and (R) is true."
+        },
+        {
+          "id": "c",
+          "text_md": "Both (A) and (R) are true, and (R) is the correct explanation of (A)."
+        },
+        {
+          "id": "d",
+          "text_md": "Both (A) and (R) are true, but (R) is not the correct explanation of (A)."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Oxygen is 88.9% of water because each oxygen atom is sixteen times heavier than a hydrogen atom; (R) is true but does not explain (A), option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-9-chemistry-ch02-t04"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9chem_ch02_060",
+      "unit": "icse-9-chemistry-ch02",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? The percentages of all the elements in a compound add up to 100.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "t"
+        ]
+      },
+      "solution_md": "True. They are the parts of 100 parts by mass of the compound.",
+      "marking_scheme": [
+        {
+          "step": "True",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-9-chemistry-ch02-t04"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9chem_ch02_061",
+      "unit": "icse-9-chemistry-ch02",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "The percentage composition of a compound gives the mass of each element in ___ parts by mass of the compound.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "100",
+              "hundred",
+              "one hundred"
+            ]
+          }
+        ]
+      },
+      "solution_md": "**100** parts.",
+      "marking_scheme": [
+        {
+          "step": "Writes \"100\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-9-chemistry-ch02-t04"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9chem_ch02_062",
+      "unit": "icse-9-chemistry-ch02",
+      "language": "en",
+      "type": "short",
+      "stem_md": "State the mass of water of crystallisation in one formula unit of a hydrate whose formula ends in 5H₂O. (H = 1, O = 16)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "5 × 18 = **90**."
+      },
+      "solution_md": "90.",
+      "marking_scheme": [
+        {
+          "step": "90",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-chemistry-ch02-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9chem_ch02_063",
+      "unit": "icse-9-chemistry-ch02",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Magnesium oxide is MgO. Show by calculation that oxygen is 40% of its mass. (Mg = 24, O = 16)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Relative molecular mass = 24 + 16 = **40**. Oxygen = 16 ÷ 40 × 100 = **40%**."
+      },
+      "solution_md": "RMM 40; 16 ÷ 40 × 100.",
+      "marking_scheme": [
+        {
+          "step": "RMM of MgO",
+          "marks": 1
+        },
+        {
+          "step": "16 ÷ 40 × 100 = 40%",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-chemistry-ch02-t04"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9chem_ch02_064",
+      "unit": "icse-9-chemistry-ch02",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Calculate the percentage of each element in magnesium hydroxide, Mg(OH)₂, and show that the percentages add up to 100. (Mg = 24, O = 16, H = 1)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "RMM = 24 + 2 × (16 + 1) = **58**.\n\nMg = 24 ÷ 58 × 100 = **41.4%**; O = 32 ÷ 58 × 100 = **55.2%**; H = 2 ÷ 58 × 100 = **3.4%**.\n\nCheck: 41.4 + 55.2 + 3.4 = 100."
+      },
+      "solution_md": "41.4, 55.2, 3.4; total 100.",
+      "marking_scheme": [
+        {
+          "step": "RMM 58",
+          "marks": 1
+        },
+        {
+          "step": "Three percentages",
+          "marks": 1
+        },
+        {
+          "step": "Total 100",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-chemistry-ch02-t04"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9chem_ch02_065",
+      "unit": "icse-9-chemistry-ch02",
+      "language": "en",
+      "type": "long",
+      "stem_md": "A student heats 5.74 g of hydrated zinc sulphate crystals, ZnSO₄·7H₂O, in the apparatus shown. Its parts are lettered A to E. (Zn = 65, S = 32, O = 16, H = 1)\n\n(a) Name the parts A, B and C. [3]\n\n(b) State why the tube is clamped with its mouth a little lower than its closed end. [1]\n\n(c) Calculate the relative molecular mass of the crystals and the percentage of water of crystallisation in them. [3]\n\n(d) Calculate the mass of water driven off and the mass of dry zinc sulphate left from the 5.74 g. [3]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "**(a)** **A** is the **hydrated crystals**; **B** is the **(hard glass) test tube**; **C** is the **drops of water** (condensed steam).\n\n**(b)** So that the **water that condenses on the cool wall does not run back on to the hot glass** and crack it.\n\n**(c)** RMM = 65 + 32 + 64 + 126 = **287**. Percentage of water = 126 ÷ 287 × 100 = **43.9%**.\n\n**(d)** Water = 126 ÷ 287 × 5.74 = **2.52 g**; dry salt = 5.74 − 2.52 = **3.22 g**."
+      },
+      "solution_md": "Crystals, test tube, drops of water; to stop water running back; 287 and 43.9%; 2.52 g and 3.22 g.",
+      "marking_scheme": [
+        {
+          "step": "A crystals",
+          "marks": 1
+        },
+        {
+          "step": "B test tube",
+          "marks": 1
+        },
+        {
+          "step": "C drops of water",
+          "marks": 1
+        },
+        {
+          "step": "Water does not run back to the hot glass",
+          "marks": 1
+        },
+        {
+          "step": "RMM 287",
+          "marks": 1
+        },
+        {
+          "step": "Working for the percentage",
+          "marks": 1
+        },
+        {
+          "step": "43.9%",
+          "marks": 1
+        },
+        {
+          "step": "Water 2.52 g",
+          "marks": 1
+        },
+        {
+          "step": "Subtraction",
+          "marks": 1
+        },
+        {
+          "step": "Dry salt 3.22 g",
+          "marks": 1
+        }
+      ],
+      "marks": 10,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-chemistry-ch02-t03",
+        "icse-9-chemistry-ch02-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [
+        {
+          "kind": "svg",
+          "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 420 240\" role=\"img\" aria-label=\"A laboratory set-up for heating hydrated crystals in a test tube with five parts lettered A to E\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>A laboratory set-up for heating hydrated crystals in a test tube with five parts lettered A to E</title><path d=\"M108.0 143.4 L301.7 102.3 L301.7 102.3 L313.1 102.9 L322.6 109.1 L327.8 119.2 L327.2 130.6 L321.0 140.1 L310.9 145.3 L117.2 186.5\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"2\" fill-opacity=\"0.5\"/><rect x=\"278.9\" y=\"135\" width=\"8\" height=\"8\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.2\" fill-opacity=\"0.45\"/><rect x=\"293.1\" y=\"134\" width=\"8\" height=\"8\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.2\" fill-opacity=\"0.45\"/><rect x=\"282.7\" y=\"123.9\" width=\"8\" height=\"8\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.2\" fill-opacity=\"0.45\"/><rect x=\"296.8\" y=\"123\" width=\"8\" height=\"8\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.2\" fill-opacity=\"0.45\"/><rect x=\"267.8\" y=\"140.4\" width=\"8\" height=\"8\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.2\" fill-opacity=\"0.45\"/><rect x=\"284.8\" y=\"114.3\" width=\"8\" height=\"8\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.2\" fill-opacity=\"0.45\"/><circle cx=\"168\" cy=\"136.8\" r=\"2.8\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\" fill-opacity=\"0.7\"/><circle cx=\"193.2\" cy=\"130.4\" r=\"2.8\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\" fill-opacity=\"0.7\"/><circle cx=\"155.1\" cy=\"172.3\" r=\"2.8\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\" fill-opacity=\"0.7\"/><circle cx=\"189.5\" cy=\"166\" r=\"2.8\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\" fill-opacity=\"0.7\"/><circle cx=\"215.1\" cy=\"127.8\" r=\"2.8\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"0\" fill-opacity=\"0.7\"/><line x1=\"194.8\" y1=\"118.8\" x2=\"206.5\" y2=\"173.6\" stroke=\"var(--diagram-muted)\" stroke-width=\"3\"/><line x1=\"194.8\" y1=\"118.8\" x2=\"194.8\" y2=\"78.8\" stroke=\"var(--diagram-muted)\" stroke-width=\"3\"/><line x1=\"194.8\" y1=\"78.8\" x2=\"232\" y2=\"20\" stroke=\"var(--diagram-muted)\" stroke-width=\"3\"/><path d=\"M282.8825019700288 208.4539031913131 Q278.8825019700288 178.4539031913131 296.8825019700288 158.4539031913131 Q314.8825019700288 178.4539031913131 310.8825019700288 208.4539031913131 Z\" fill=\"var(--diagram-red)\" stroke=\"var(--diagram-red)\" stroke-width=\"1.4\" fill-opacity=\"0.4\"/><rect x=\"282.9\" y=\"208.5\" width=\"28\" height=\"22\" fill=\"var(--diagram-muted)\" stroke=\"var(--diagram-muted)\" stroke-width=\"1.4\" fill-opacity=\"0.5\"/><text x=\"352\" y=\"100\" fill=\"var(--diagram-red)\" stroke=\"none\" font-size=\"15\" font-weight=\"bold\">A</text><line x1=\"348\" y1=\"98\" x2=\"312\" y2=\"125\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\"/><text x=\"60\" y=\"90\" fill=\"var(--diagram-red)\" stroke=\"none\" font-size=\"15\" font-weight=\"bold\">B</text><line x1=\"76\" y1=\"94\" x2=\"138\" y2=\"124\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\"/><text x=\"110\" y=\"196\" fill=\"var(--diagram-red)\" stroke=\"none\" font-size=\"15\" font-weight=\"bold\">C</text><line x1=\"124\" y1=\"190\" x2=\"180\" y2=\"160\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\"/><text x=\"356\" y=\"214\" fill=\"var(--diagram-red)\" stroke=\"none\" font-size=\"15\" font-weight=\"bold\">D</text><line x1=\"352\" y1=\"210\" x2=\"312\" y2=\"205\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\"/><text x=\"240\" y=\"14\" fill=\"var(--diagram-red)\" stroke=\"none\" font-size=\"15\" font-weight=\"bold\">E</text><line x1=\"236\" y1=\"18\" x2=\"220\" y2=\"24\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\"/></svg>",
+          "alt": "A laboratory set-up for heating hydrated crystals in a test tube with five parts lettered A to E"
+        }
+      ],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9chem_ch02_066",
+      "unit": "icse-9-chemistry-ch02",
+      "language": "en",
+      "type": "long",
+      "stem_md": "Haematite is an ore of iron whose main constituent is iron(III) oxide, Fe₂O₃. (Fe = 56, O = 16)\n\n(a) Calculate the relative molecular mass of Fe₂O₃. [2]\n\n(b) Calculate the percentage of iron and of oxygen in it. [3]\n\n(c) Find the mass of iron in 400 g of pure Fe₂O₃. [2]\n\n(d) Balance the skeletal equation Fe + O₂ → Fe₂O₃ for the rusting of iron. [3]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "**(a)** 2 × 56 + 3 × 16 = 112 + 48 = **160**.\n\n**(b)** Iron = 112 ÷ 160 × 100 = **70%**; oxygen = 48 ÷ 160 × 100 = **30%**.\n\n**(c)** Iron = 70% of 400 g = 112 ÷ 160 × 400 = **280 g**.\n\n**(d)** $\\ce{4Fe + 3O2 -> 2Fe2O3}$ (Fe 4 and 4; O 6 and 6)."
+      },
+      "solution_md": "160; 70% and 30%; 280 g; 4Fe + 3O₂ → 2Fe₂O₃.",
+      "marking_scheme": [
+        {
+          "step": "RMM working",
+          "marks": 1
+        },
+        {
+          "step": "RMM 160",
+          "marks": 1
+        },
+        {
+          "step": "Iron 70%",
+          "marks": 1
+        },
+        {
+          "step": "Oxygen 30%",
+          "marks": 1
+        },
+        {
+          "step": "Working for the percentages",
+          "marks": 1
+        },
+        {
+          "step": "Working for the mass of iron",
+          "marks": 1
+        },
+        {
+          "step": "280 g",
+          "marks": 1
+        },
+        {
+          "step": "Correct coefficients",
+          "marks": 2
+        },
+        {
+          "step": "Atom count check",
+          "marks": 1
+        }
+      ],
+      "marks": 10,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-chemistry-ch02-t02",
+        "icse-9-chemistry-ch02-t03",
+        "icse-9-chemistry-ch02-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9chem_ch02_067",
+      "unit": "icse-9-chemistry-ch02",
+      "language": "en",
+      "type": "long",
+      "stem_md": "A student writes these skeletal equations in her notebook and has to balance them.\n\n(i) H₂S + O₂ → SO₂ + H₂O\n\n(ii) Fe₂O₃ + CO → Fe + CO₂\n\n(iii) Al(OH)₃ + H₂SO₄ → Al₂(SO₄)₃ + H₂O\n\n(a) Balance the three equations. [6]\n\n(b) For equation (ii), state the ratio of molecules of carbon monoxide to molecules of carbon dioxide and the total relative mass of the reactants. (Fe = 56, C = 12, O = 16) [2]\n\n(c) She tries to balance (iii) by changing Al(OH)₃ to Al₂(OH)₆. Explain why this is not allowed. [2]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "**(a)** (i) $\\ce{2H2S + 3O2 -> 2SO2 + 2H2O}$\n\n(ii) $\\ce{Fe2O3 + 3CO -> 2Fe + 3CO2}$\n\n(iii) $\\ce{2Al(OH)3 + 3H2SO4 -> Al2(SO4)3 + 6H2O}$\n\n**(b)** CO : CO₂ = **3 : 3, that is 1 : 1**; total relative mass of reactants = 160 + 3 × 28 = **244**.\n\n**(c)** Al₂(OH)₆ is **not the formula of aluminium hydroxide as the reactant is Al(OH)₃**; changing a subscript changes the substance, so only **the number in front** may be changed."
+      },
+      "solution_md": "Three balanced equations; 1 : 1 and 244; subscripts fix the substance.",
+      "marking_scheme": [
+        {
+          "step": "(i) balanced",
+          "marks": 2
+        },
+        {
+          "step": "(ii) balanced",
+          "marks": 2
+        },
+        {
+          "step": "(iii) balanced",
+          "marks": 2
+        },
+        {
+          "step": "Ratio 1 : 1",
+          "marks": 1
+        },
+        {
+          "step": "Total 244",
+          "marks": 1
+        },
+        {
+          "step": "Subscript fixes the substance",
+          "marks": 1
+        },
+        {
+          "step": "Change only the coefficient",
+          "marks": 1
+        }
+      ],
+      "marks": 10,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-chemistry-ch02-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9chem_ch02_068",
+      "unit": "icse-9-chemistry-ch02",
+      "language": "en",
+      "type": "long",
+      "stem_md": "A student drops a few chips of marble (calcium carbonate) into dilute hydrochloric acid. The balanced equation is CaCO₃ + 2HCl → CaCl₂ + H₂O + CO₂. (Ca = 40, C = 12, O = 16, H = 1, Cl = 35.5)\n\n(a) Write the word equation for the reaction. [2]\n\n(b) Calculate the total relative mass of the reactants and of the products to show that mass is conserved. [4]\n\n(c) State two items of information, other than masses, that the equation gives. [2]\n\n(d) State one observation and name the test for the gas formed. [2]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "**(a)** **Calcium carbonate + hydrochloric acid → calcium chloride + water + carbon dioxide.**\n\n**(b)** Reactants: 100 + 2 × 36.5 = **173**. Products: 111 + 18 + 44 = **173**. The totals are equal, so **mass is conserved**.\n\n**(c)** The **substances** that react and form, and the **numbers of particles** (1 unit of calcium carbonate reacts with 2 molecules of hydrochloric acid).\n\n**(d)** **Brisk effervescence** (bubbles of gas) is seen; the gas **turns lime water milky**."
+      },
+      "solution_md": "Word equation; 173 on each side; substances and numbers of particles; fizzing and the lime water test.",
+      "marking_scheme": [
+        {
+          "step": "Reactants named",
+          "marks": 1
+        },
+        {
+          "step": "Products named",
+          "marks": 1
+        },
+        {
+          "step": "Reactants 173",
+          "marks": 1
+        },
+        {
+          "step": "Working for 2HCl",
+          "marks": 1
+        },
+        {
+          "step": "Products 173",
+          "marks": 1
+        },
+        {
+          "step": "Conclusion about mass",
+          "marks": 1
+        },
+        {
+          "step": "Two items of information",
+          "marks": 2
+        },
+        {
+          "step": "Observation",
+          "marks": 1
+        },
+        {
+          "step": "Lime water test",
+          "marks": 1
+        }
+      ],
+      "marks": 10,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-chemistry-ch02-t01",
+        "icse-9-chemistry-ch02-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9chem_ch02_069",
+      "unit": "icse-9-chemistry-ch02",
+      "language": "en",
+      "type": "long",
+      "stem_md": "Magnesium chloride, MgCl₂, is used to make tofu and to control dust on roads. (Mg = 24, Cl = 35.5)\n\n(a) Define relative atomic mass. [2]\n\n(b) Calculate the relative molecular mass of magnesium chloride. [2]\n\n(c) Calculate the percentage of chlorine in it, correct to one decimal place. [3]\n\n(d) State how many times heavier one formula unit of MgCl₂ is than (i) one-twelfth of a carbon-12 atom and (ii) a hydrogen atom, and say why the two answers are almost the same. [3]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "**(a)** The number of times **one atom of the element is heavier than one-twelfth of a carbon-12 atom**.\n\n**(b)** 24 + 2 × 35.5 = 24 + 71 = **95**.\n\n**(c)** Chlorine = 71 ÷ 95 × 100 = **74.7%**.\n\n**(d)** (i) **95 times**; (ii) about **95 times** too (using H = 1). They agree because **a hydrogen atom has a mass of almost one-twelfth of a carbon-12 atom**, that is about one unit."
+      },
+      "solution_md": "Definition; 95; 74.7%; 95 and 95 since hydrogen is about one unit.",
+      "marking_scheme": [
+        {
+          "step": "Number of times heavier",
+          "marks": 1
+        },
+        {
+          "step": "One-twelfth of carbon-12",
+          "marks": 1
+        },
+        {
+          "step": "24 + 71",
+          "marks": 1
+        },
+        {
+          "step": "95",
+          "marks": 1
+        },
+        {
+          "step": "71 ÷ 95 × 100",
+          "marks": 1
+        },
+        {
+          "step": "74.7%",
+          "marks": 2
+        },
+        {
+          "step": "95 for both standards",
+          "marks": 1
+        },
+        {
+          "step": "Reason about the hydrogen atom",
+          "marks": 1
+        },
+        {
+          "step": "Link to one unit",
+          "marks": 1
+        }
+      ],
+      "marks": 10,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-chemistry-ch02-t03",
+        "icse-9-chemistry-ch02-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9chem_ch02_070",
+      "unit": "icse-9-chemistry-ch02",
+      "language": "en",
+      "type": "long",
+      "stem_md": "Orange crystals of ammonium dichromate, (NH₄)₂Cr₂O₇, are heated in a hard glass test tube. They swell up, glow and give out sparks, and a fluffy green powder is left. Nitrogen gas and steam are given out.\n\n(a) Write the word equation. [1]\n\n(b) Write the balanced formula equation, showing the heat sign. [2]\n\n(c) State two observations from the experiment. [2]\n\n(d) Say how many reactants and how many products there are. [1]\n\n(e) Copy and complete the table to show that the atoms balance. [4]\n\n| Element | Atoms on the left | Atoms on the right |\n|---|---|---|\n| N | | |\n| H | | |\n| Cr | | |\n| O | | |",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "**(a)** **Ammonium dichromate → nitrogen + chromium(III) oxide + water (steam).**\n\n**(b)** $\\ce{(NH4)2Cr2O7 ->[\\Delta] N2 + Cr2O3 + 4H2O}$\n\n**(c)** The orange crystals **swell and glow with sparks**, and a **green powder** is left (nitrogen is given off).\n\n**(d)** **One** reactant and **three** products.\n\n**(e)** N 2 and 2; H 8 and 8; Cr 2 and 2; O 7 and 7."
+      },
+      "solution_md": "Word equation; balanced equation; swelling with sparks, green powder; 1 and 3; atom table.",
+      "marking_scheme": [
+        {
+          "step": "Word equation",
+          "marks": 1
+        },
+        {
+          "step": "Correct formulae",
+          "marks": 1
+        },
+        {
+          "step": "Coefficient 4 and heat sign",
+          "marks": 1
+        },
+        {
+          "step": "First observation",
+          "marks": 1
+        },
+        {
+          "step": "Second observation",
+          "marks": 1
+        },
+        {
+          "step": "One reactant and three products",
+          "marks": 1
+        },
+        {
+          "step": "N and H counts",
+          "marks": 2
+        },
+        {
+          "step": "Cr and O counts",
+          "marks": 2
+        }
+      ],
+      "marks": 10,
+      "difficulty": 4,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-chemistry-ch02-t01",
+        "icse-9-chemistry-ch02-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9chem_ch02_071",
+      "unit": "icse-9-chemistry-ch02",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "The new substances formed in a chemical reaction are called",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "reactants"
+        },
+        {
+          "id": "b",
+          "text_md": "products"
+        },
+        {
+          "id": "c",
+          "text_md": "catalysts"
+        },
+        {
+          "id": "d",
+          "text_md": "solvents"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Substances formed are the products; those used up are the reactants, option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-9-chemistry-ch02-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9chem_ch02_072",
+      "unit": "icse-9-chemistry-ch02",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Balancing a chemical equation is based on the law of",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "constant composition"
+        },
+        {
+          "id": "b",
+          "text_md": "conservation of mass"
+        },
+        {
+          "id": "c",
+          "text_md": "multiple proportions"
+        },
+        {
+          "id": "d",
+          "text_md": "conservation of volume"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Atoms are conserved, so the mass of the reactants equals the mass of the products, option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-9-chemistry-ch02-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9chem_ch02_073",
+      "unit": "icse-9-chemistry-ch02",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "On the ICSE scale the relative atomic mass of sulphur is taken as",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "32"
+        },
+        {
+          "id": "b",
+          "text_md": "16"
+        },
+        {
+          "id": "c",
+          "text_md": "35.5"
+        },
+        {
+          "id": "d",
+          "text_md": "64"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Sulphur is 32, option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-9-chemistry-ch02-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9chem_ch02_074",
+      "unit": "icse-9-chemistry-ch02",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "To find the percentage of an element in a compound, the mass of the element in the formula is divided by",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "the atomic number of the element"
+        },
+        {
+          "id": "b",
+          "text_md": "the number of atoms in the formula"
+        },
+        {
+          "id": "c",
+          "text_md": "the relative molecular mass of the compound"
+        },
+        {
+          "id": "d",
+          "text_md": "the mass of one mole of the element"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "The part is compared with the whole, option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-9-chemistry-ch02-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9chem_ch02_075",
+      "unit": "icse-9-chemistry-ch02",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? Relative atomic mass is measured in grams.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "f"
+        ]
+      },
+      "solution_md": "False. It is a ratio, so it has no unit.",
+      "marking_scheme": [
+        {
+          "step": "False, with the correction",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-9-chemistry-ch02-t03"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9chem_ch02_076",
+      "unit": "icse-9-chemistry-ch02",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "Relative molecular mass is the ___ of the relative atomic masses of all the atoms in the formula.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "sum",
+              "total"
+            ]
+          }
+        ]
+      },
+      "solution_md": "The **sum**.",
+      "marking_scheme": [
+        {
+          "step": "Writes \"sum\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-9-chemistry-ch02-t03"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9chem_ch02_077",
+      "unit": "icse-9-chemistry-ch02",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? The water of crystallisation in a hydrated salt is held in the crystal as water molecules.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "t"
+        ]
+      },
+      "solution_md": "True. It forms part of the crystal and is given out as steam on heating.",
+      "marking_scheme": [
+        {
+          "step": "True",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-9-chemistry-ch02-t03",
+        "icse-9-chemistry-ch02-t04"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9chem_ch02_078",
+      "unit": "icse-9-chemistry-ch02",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Calcium chloride crystals have the formula CaCl₂·6H₂O. (a) Calculate the percentage of water of crystallisation in them, correct to one decimal place. (b) Find the mass of water in 54.75 g of the crystals. (Ca = 40, Cl = 35.5, O = 16, H = 1)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "**(a)** RMM = 111 + 108 = **219**; water = 108 ÷ 219 × 100 = **49.3%**.\n\n**(b)** Water = 108 ÷ 219 × 54.75 = **27 g**."
+      },
+      "solution_md": "RMM 219; 49.3%; 27 g.",
+      "marking_scheme": [
+        {
+          "step": "RMM 219 with working",
+          "marks": 1
+        },
+        {
+          "step": "49.3%",
+          "marks": 1
+        },
+        {
+          "step": "27 g",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-chemistry-ch02-t04"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    }
+  ],
+  "build": {
+    "run_id": null,
+    "checks": {
+      "katex_mhchem": "75 math strings parsed with KaTeX 0.19.0 + mhchem (throwOnError, strict \"error\"), 0 failures",
+      "svg_allowlist": "6 SVG visuals (4 distinct diagrams) checked with saxes against svg-allowlist.ts: elements, attributes, class pattern, fragment-only refs, no style, palette incl. named hues, viewBox, title, per-page unique ids — 0 failures",
+      "narration": "32 slides, 7–52 words (mean 35), no symbols, formulae or unit abbreviations",
+      "resolve": "17/17 scripted re-solve checks pass",
+      "chemistry_facts": "Word and formula equations, state symbols and heat sign, balancing by hit and trial, relative atomic mass (carbon-12 standard, hydrogen as the earlier standard), relative molecular mass, percentage composition and water of crystallisation, checked against the ICSE 2028 Chemistry syllabus Class IX (The Language of Chemistry) — see README \"For a reviewer\"",
+      "counting_rules": "Relative masses, percentages, masses of water and of elements, equation mass totals and balancing coefficients are computed and asserted in src/calc.mjs (including a balancing solver), not typed in",
+      "icse_style": "Assertion-reason items use the ICSE option order; 1-mark balancing and names; numericals with working; a 5-pair match; 10-mark structured questions in parts, one with a lettered apparatus diagram; chapter tests on icse-9-default-chapter-test-short / -long",
+      "verifier_pass": "2026-11-05: every question re-solved from its stem by the author; keys, schemes and word limits checked",
+      "pipeline_lint": "npm run content -- lint --exemplars: 0 errors, 0 warnings"
+    }
+  }
+}
