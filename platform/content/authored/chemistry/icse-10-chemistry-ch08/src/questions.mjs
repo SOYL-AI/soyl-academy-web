@@ -45,11 +45,11 @@ add('feore-short1', short({
 }));
 add('mineralore-short2', short({
   marks: 2,
-  stem: 'Both bauxite and clay contain aluminium. Explain why bauxite is called an ore of aluminium but clay is only a mineral of aluminium.',
-  model: 'A mineral is a naturally occurring compound of a metal; an ore is a mineral from which the metal can be extracted conveniently and profitably. Bauxite (Al₂O₃·2H₂O) is rich in alumina and is purified easily, so aluminium is extracted from it at a profit. Clay also contains aluminium but mixed with much silica, so extraction from it is difficult and costly.',
-  sol: 'Definitions; profitable extraction.',
-  scheme: [['Mineral and ore defined', 1], ['Bauxite profitable, clay not', 1]],
-  d: 2, c: 'understanding', t: [1],
+  stem: 'A mining company tests two rocks. Rock P is 60% haematite, Fe₂O₃, by mass. Rock Q contains only 3% iron, locked in a silicate that no cheap process can break down. (a) Which rock would the company work as an ore of iron? Give a reason. (b) Calculate the mass of iron present in 1000 kg of that rock. (Fe = 56, O = 16)',
+  model: '(a) Rock P, because iron can be extracted from haematite conveniently and at a profit, which is what makes a mineral an ore; in Q the iron is locked in a silicate and cannot be extracted profitably. (b) Fe₂O₃ is 70% iron (112 ÷ 160). Mass of Fe₂O₃ in 1000 kg of P = 600 kg, so mass of iron = 0.70 × 600 = 420 kg.',
+  sol: 'Ore: profitable extraction (P). Iron = 70% of 600 kg = 420 kg.',
+  scheme: [['(a) P chosen, with the profit reason', 1], ['(b) 420 kg', 1]],
+  d: 3, c: 'application', t: [1],
 }));
 add('percent-num', num({
   stem: 'Calculate the percentage by mass of iron in pure haematite, Fe₂O₃. (Fe = 56, O = 16)',
@@ -69,18 +69,18 @@ add('magnet-mcq', mcq({
   d: 1, c: 'application', t: [2],
 }));
 add('froth-mcq', mcq({
-  stem: 'Finely powdered galena (PbS) is stirred with water and a little pine oil while air is blown through it. The pine oil is added because it:',
-  right: 'wets the sulphide particles so that they cling to air bubbles and rise into the froth',
-  wrong: ['dissolves the sandy gangue completely', 'makes the ore particles heavier so that they sink', 'converts lead sulphide into lead oxide'],
-  sol: 'Sulphide particles are wetted by oil, gangue by water; the oiled particles are carried up by air bubbles — option (@K).',
-  d: 2, c: 'understanding', t: [2],
+  stem: 'In a froth flotation tank holding finely powdered zinc blende mixed with sand and water, air is blown in but an operator forgets to add the pine oil. The most likely result is that:',
+  right: 'little ore reaches the froth, because the water-wetted sulphide particles do not cling to the air bubbles, so ore and sand stay together',
+  wrong: ['the sand rises into the froth, because it is wetted by air', 'the zinc blende is converted into zinc oxide by the air', 'the froth carries even more ore, because air alone wets sulphides'],
+  sol: 'Without oil the sulphide particles are wetted by water like the gangue, so the air bubbles do not lift them and no separation occurs. Sand is wetted by water in any case and stays in the tank. Zinc blende is not oxidised at room temperature in the tank, so roasting does not occur — option (@K).',
+  d: 3, c: 'application', t: [2],
 }));
 add('hydraulic-mcq', mcq({
-  stem: 'In hydraulic washing, a stream of water is run over a crushed ore on a sloping, shaking table. The method separates the ore from the gangue only when:',
-  right: 'the ore particles are much heavier than the gangue particles',
-  wrong: ['the ore is attracted by a magnet', 'the ore is a sulphide that is wetted by oil', 'the ore dissolves in water'],
-  sol: 'The light gangue is washed away and the heavy ore particles stay behind — option (@K).',
-  d: 2, c: 'understanding', t: [2],
+  stem: 'Four crushed ore–gangue mixtures (approximate densities in g/cm³) are each run over a sloping, shaking table with a stream of water. In which mixture does hydraulic washing give the best concentration of the ore?',
+  right: 'haematite (5.2) mixed with quartz sand (2.6)',
+  wrong: ['zinc blende (4.0) mixed with barytes (4.5)', 'bauxite (2.4) mixed with clay (2.6)', 'an ore (3.0) mixed with a gangue (3.1)'],
+  sol: 'Washing carries away the lighter material and leaves the heavier one behind. Only haematite and sand differ greatly, with the ore the heavier. Barytes is denser than zinc blende, so the ore would be washed away; the last two pairs differ by too little to separate — option (@K).',
+  d: 3, c: 'application', t: [2],
 }));
 add('froth-ar', ar({
   a: 'Froth flotation is a suitable method for concentrating zinc blende.',
@@ -112,18 +112,18 @@ add('conc-short3', short({
 
 // ---------------------------------------------------------------- t03 roasting and calcination
 add('roast-mcq', mcq({
-  stem: 'Concentrated zinc blende is heated strongly in a current of excess air, below its melting point. The gas given off is:',
-  right: 'sulphur dioxide',
-  wrong: ['carbon dioxide', 'hydrogen sulphide', 'water vapour'],
-  sol: '2ZnS + 3O₂ → 2ZnO + 2SO₂ — option (@K).',
-  d: 2, c: 'application', t: [3],
+  stem: 'A sample of 97 g of pure zinc blende, ZnS, is roasted completely in excess air. What volume of sulphur dioxide, measured at STP, is given off? (Zn = 65, S = 32; one mole of a gas occupies 22.4 L at STP)',
+  right: '22.4 L',
+  wrong: ['11.2 L', '33.6 L', '44.8 L'],
+  sol: 'Molar mass of ZnS = 97, so 97 g is 1 mol. 2ZnS + 3O₂ → 2ZnO + 2SO₂: 2 mol ZnS give 2 mol SO₂, so 1 mol gives 1 mol, which is 22.4 L at STP — option (@K). (33.6 L uses the 3 of 3O₂; 44.8 L takes 2 mol of gas; 11.2 L halves it.)',
+  d: 3, c: 'application', t: [3],
 }));
 add('calcine-mcq', mcq({
-  stem: 'Which of these is an example of calcination?',
-  right: 'Heating calamine to give zinc oxide and carbon dioxide',
-  wrong: ['Heating galena in excess air to give lead(II) oxide', 'Heating copper(II) oxide in a stream of hydrogen', 'Passing an electric current through fused alumina'],
-  sol: 'Calcination is heating a carbonate or hydrated ore in a limited supply of air or none: ZnCO₃ → ZnO + CO₂ — option (@K).',
-  d: 2, c: 'application', t: [3],
+  stem: 'A dull white ore is heated strongly in a covered crucible with very little air. An odourless gas is given off that turns lime water milky, there is no choking smell, and the residue is a solid that is yellow when hot and white on cooling. The change is best described as:',
+  right: 'calcination of a carbonate ore, leaving zinc oxide',
+  wrong: ['roasting of a sulphide ore, leaving zinc oxide', 'reduction of zinc oxide by carbon, leaving zinc metal', 'concentration of the ore, leaving pure calamine'],
+  sol: 'An odourless gas that clouds lime water is CO₂, not the choking SO₂ of roasting; so the ore is a carbonate heated in limited air (calcination), and the residue that is yellow when hot and white when cold is ZnO: ZnCO₃ → ZnO + CO₂ — option (@K).',
+  d: 3, c: 'application', t: [3],
 }));
 add('roast-tf', tf({
   stem: 'Roasting is carried out in excess air and is used mainly for sulphide ores.',
@@ -137,7 +137,7 @@ add('galena-short1', short({
   model: '2PbS + 3O₂ → 2PbO + 2SO₂ (heated in excess air).',
   sol: 'Equation.',
   scheme: [['Balanced equation', 1]],
-  d: 2, c: 'application', t: [3],
+  d: 2, c: 'recall', t: [3],
 }));
 add('calamine-short1', short({
   marks: 1,
@@ -145,15 +145,15 @@ add('calamine-short1', short({
   model: 'ZnCO₃ → ZnO + CO₂ (on heating).',
   sol: 'Equation.',
   scheme: [['Balanced equation', 1]],
-  d: 1, c: 'application', t: [3],
+  d: 1, c: 'recall', t: [3],
 }));
 add('roastcalc-short2', short({
   marks: 2,
-  stem: 'Give two differences between roasting and calcination.',
-  model: '(1) Roasting is done in excess air; calcination is done in a limited supply of air or in its absence. (2) Roasting is used for sulphide ores and gives sulphur dioxide; calcination is used for carbonate and hydrated ores and gives carbon dioxide or water vapour.',
-  sol: 'Air supply; type of ore and gas given off.',
-  scheme: [['Air supply', 1], ['Type of ore or product', 1]],
-  d: 2, c: 'understanding', t: [3],
+  stem: 'Two concentrated ores are heated. Ore E, heated in excess air, gives a pungent gas that turns acidified potassium dichromate paper from orange to green. Ore F, heated in a limited supply of air, gives an odourless gas that turns lime water milky. (a) Name the process applied to E and to F, and the type of ore (sulphide, carbonate) each most probably is. (b) Name the gas from each and give the formula of one zinc ore that could be E and one that could be F.',
+  model: '(a) E: roasting, so E is a sulphide ore; F: calcination, so F is a carbonate ore. (b) E gives sulphur dioxide (the gas that turns dichromate green); a zinc ore that fits is zinc blende, ZnS. F gives carbon dioxide (it turns lime water milky); a zinc ore that fits is calamine, ZnCO₃.',
+  sol: 'Pungent gas, dichromate green: SO₂, so a sulphide roasted in excess air; odourless gas, lime water milky: CO₂, so a carbonate calcined.',
+  scheme: [['(a) processes and ore types from the observations', 1], ['(b) gases and ore formulae', 1]],
+  d: 3, c: 'application', t: [3],
 }));
 
 // ---------------------------------------------------------------- t04 reduction and the activity series
@@ -172,11 +172,11 @@ add('h2red-mcq', mcq({
   d: 2, c: 'application', t: [4],
 }));
 add('coreduce-mcq', mcq({
-  stem: 'In the reaction Fe₂O₃ + 3CO → 2Fe + 3CO₂, the substance that is oxidised is:',
-  right: 'carbon monoxide',
-  wrong: ['iron(III) oxide', 'iron', 'carbon dioxide'],
-  sol: 'CO gains oxygen to become CO₂, so it is oxidised and acts as the reducing agent — option (@K).',
-  d: 2, c: 'analysis', t: [4],
+  stem: 'A student heats 16.0 g of an oxide of iron in a stream of carbon monoxide until the mass stops changing. Only 11.2 g of iron remains. Using Fe = 56 and O = 16, the oxide must be:',
+  right: 'Fe₂O₃',
+  wrong: ['FeO', 'Fe₃O₄', 'Fe₃O₂'],
+  sol: 'Oxygen removed = 16.0 − 11.2 = 4.8 g. Moles: Fe = 11.2 ÷ 56 = 0.2; O = 4.8 ÷ 16 = 0.3. The ratio Fe : O = 2 : 3, so the oxide is Fe₂O₃ — option (@K). (0.2 mol of iron in FeO would come from only 14.4 g of oxide, and in Fe₃O₄ from about 15.5 g; Fe₃O₂ comes from reversing the subscripts of 2 : 3.)',
+  d: 3, c: 'application', t: [4],
 }));
 add('series-mcq', mcq({
   stem: 'Metal X is obtained by electrolysis of its fused chloride, metal Y by heating its oxide with coke, and metal Z by heating its oxide alone. The order of decreasing reactivity is:',
@@ -204,7 +204,7 @@ add('cuo-short1', short({
   model: 'CuO + H₂ → Cu + H₂O (on heating).',
   sol: 'Equation with heat.',
   scheme: [['Balanced equation with heat', 1]],
-  d: 1, c: 'application', t: [4],
+  d: 1, c: 'recall', t: [4],
 }));
 add('pbo-short1', short({
   marks: 1,
@@ -212,7 +212,7 @@ add('pbo-short1', short({
   model: 'PbO + C → Pb + CO (on heating).',
   sol: 'Equation.',
   scheme: [['Balanced equation', 1]],
-  d: 1, c: 'application', t: [4],
+  d: 1, c: 'recall', t: [4],
 }));
 add('kmethod-short1', short({
   marks: 1,
@@ -256,11 +256,11 @@ add('redmud-mcq', mcq({
   d: 2, c: 'understanding', t: [5],
 }));
 add('seed-mcq', mcq({
-  stem: "In Baeyer's process, the filtered sodium aluminate solution is diluted with water and a little freshly made aluminium hydroxide is stirred in. The purpose of this added aluminium hydroxide is to:",
-  right: 'start (seed) the precipitation of aluminium hydroxide',
-  wrong: ['neutralise all the sodium hydroxide', 'remove the iron(III) oxide', 'lower the melting point of alumina'],
-  sol: 'The solid crystals act as seeds on which more aluminium hydroxide precipitates — option (@K).',
-  d: 3, c: 'understanding', t: [5],
+  stem: "Two equal portions of the filtered sodium aluminate solution from Baeyer's process are kept apart. Portion 1 is left concentrated and unseeded. Portion 2 is diluted with water and stirred with a little freshly made aluminium hydroxide. After some hours, the observation most likely is that:",
+  right: 'portion 2 has deposited much more solid aluminium hydroxide than portion 1',
+  wrong: ['portion 1 has deposited more, because it holds more sodium aluminate', 'neither portion has deposited anything, because aluminium hydroxide stays dissolved in water', 'portion 2 has deposited iron(III) oxide instead of aluminium hydroxide'],
+  sol: 'Dilution favours the hydrolysis NaAlO₂ + 2H₂O → NaOH + Al(OH)₃, and the added solid gives crystals on which more aluminium hydroxide can grow, so portion 2 yields far more precipitate. Iron(III) oxide was removed earlier by filtration — option (@K).',
+  d: 3, c: 'application', t: [5],
 }));
 add('naoh-short1', short({
   marks: 1,
@@ -268,7 +268,7 @@ add('naoh-short1', short({
   model: 'Al₂O₃·2H₂O + 2NaOH → 2NaAlO₂ + 3H₂O.',
   sol: 'Equation.',
   scheme: [['Balanced equation', 1]],
-  d: 2, c: 'application', t: [5],
+  d: 2, c: 'recall', t: [5],
 }));
 add('ignite-short1', short({
   marks: 1,
@@ -276,7 +276,7 @@ add('ignite-short1', short({
   model: '2Al(OH)₃ → Al₂O₃ + 3H₂O.',
   sol: 'Equation.',
   scheme: [['Balanced equation', 1]],
-  d: 1, c: 'application', t: [5],
+  d: 1, c: 'recall', t: [5],
 }));
 add('baeyer-fill', fill({
   stem: "In Baeyer's process, aluminium hydroxide is heated strongly to give pure ___, which is then sent for electrolysis.",
@@ -286,20 +286,20 @@ add('baeyer-fill', fill({
 }));
 add('baeyer-short2', short({
   marks: 2,
-  stem: "Write the equation for the change of sodium aluminate into aluminium hydroxide in Baeyer's process, and state why the solution is diluted before this step.",
-  model: 'NaAlO₂ + 2H₂O → NaOH + Al(OH)₃↓. Dilution with water shifts the change towards hydrolysis of sodium aluminate, so aluminium hydroxide precipitates (helped by seeding with fresh aluminium hydroxide).',
-  sol: 'Hydrolysis equation; dilution favours hydrolysis.',
-  scheme: [['Balanced equation', 1], ['Reason for dilution', 1]],
-  d: 3, c: 'understanding', t: [5],
+  stem: "In Baeyer's process, 820 g of pure sodium aluminate, NaAlO₂, is changed completely into aluminium hydroxide by dilution with water. Write the balanced equation and calculate the mass of aluminium hydroxide formed. (Na = 23, Al = 27, O = 16, H = 1)",
+  model: 'NaAlO₂ + 2H₂O → NaOH + Al(OH)₃↓. Molar mass of NaAlO₂ = 23 + 27 + 32 = 82, so 820 g is 10 mol. One mole gives one mole of Al(OH)₃ (molar mass 27 + 51 = 78), so 10 mol gives 780 g of aluminium hydroxide.',
+  sol: 'Hydrolysis equation; 10 mol NaAlO₂ give 10 mol Al(OH)₃ = 780 g.',
+  scheme: [['Balanced equation', 1], ['Moles and 780 g', 1]],
+  d: 3, c: 'application', t: [5],
 }));
 
 // ---------------------------------------------------------------- t06 Hall–Héroult process
 add('cryolite-mcq', mcq({
-  stem: 'Pure alumina melts at about 2050 °C, yet the Hall–Héroult cell runs at about 950 °C. This is possible because:',
-  right: 'alumina is dissolved in fused cryolite, which lowers the fusion temperature',
-  wrong: ['fluorspar raises the melting point of the electrolyte', 'powdered coke on the surface melts the alumina', 'molten aluminium acts as the solvent for alumina'],
-  sol: 'Cryolite (Na₃AlF₆) is the solvent; the mixture melts near 950 °C and also conducts better — option (@K).',
-  d: 2, c: 'understanding', t: [6],
+  stem: 'A trial cell is filled with fused pure alumina alone, with no cryolite or fluorspar, between the carbon electrodes. Compared with the normal Hall–Héroult cell, the trial cell:',
+  right: 'would need a temperature above 2000 °C and would conduct poorly, so it would be very costly to run',
+  wrong: ['would work at about 950 °C but give impure aluminium', 'would deposit aluminium at the anode instead of the cathode', 'would give hydrogen at the cathode instead of aluminium'],
+  sol: 'Alumina melts at about 2050 °C, and the fused oxide conducts poorly; cryolite is what lets the cell run near 950 °C with good conductivity. Without it the cell must be kept far hotter for little current. The electrode reactions (aluminium at the cathode) are unchanged, and there is no water, so no hydrogen — option (@K).',
+  d: 3, c: 'application', t: [6],
 }));
 add('anode-mcq', mcq({
   stem: 'In the Hall–Héroult cell, the carbon anodes have to be replaced from time to time because:',
@@ -309,11 +309,11 @@ add('anode-mcq', mcq({
   d: 2, c: 'understanding', t: [6],
 }));
 add('cathode-mcq', mcq({
-  stem: 'The reaction at the cathode of the Hall–Héroult cell is:',
-  right: 'Al³⁺ + 3e⁻ → Al',
-  wrong: ['Al → Al³⁺ + 3e⁻', '2O²⁻ → O₂ + 4e⁻', 'C + O₂ → CO₂'],
-  sol: 'Reduction (gain of electrons) takes place at the cathode — option (@K).',
-  d: 2, c: 'recall', t: [6],
+  stem: 'A student tries to make aluminium by passing a current through a solution of aluminium sulphate in water, using inert electrodes. At the cathode:',
+  right: 'hydrogen gas is given off and no aluminium is formed, because hydrogen ions from water are discharged in preference to Al³⁺',
+  wrong: ['aluminium is deposited, as in the Hall–Héroult cell', 'oxygen gas is given off, because oxide ions from the sulphate are reduced', 'a layer of alumina forms on the cathode'],
+  sol: 'Aluminium is high in the activity series, so in aqueous solution H⁺ ions from water are discharged before Al³⁺ (2H⁺ + 2e⁻ → H₂). Aluminium is therefore obtained only from a fused, water-free electrolyte. Oxygen is a product at the anode, not the cathode — option (@K).',
+  d: 3, c: 'application', t: [6],
 }));
 add('cryolite-ar', ar({
   a: 'Cryolite is added to alumina in the Hall–Héroult cell.',
@@ -349,7 +349,7 @@ add('anodeeq-short1', short({
   model: '2O²⁻ → O₂ + 4e⁻ (or 6O²⁻ → 3O₂ + 12e⁻).',
   sol: 'Oxide ions lose electrons.',
   scheme: [['Anode equation', 1]],
-  d: 2, c: 'application', t: [6],
+  d: 2, c: 'recall', t: [6],
 }));
 add('anode-short2', short({
   marks: 2,
@@ -377,11 +377,11 @@ add('o2-num', num({
 }), () => near((54 / 27) * (3 / 4) * 22.4, 33.6) || 'o2');
 add('cell-short3', short({
   marks: 3,
-  stem: 'For the Hall–Héroult process: (a) name the material of the cathode and of the anodes; (b) state two reasons for adding cryolite; (c) state why fresh alumina is added from time to time.',
-  model: '(a) Cathode: carbon lining of the steel tank; anodes: thick carbon (graphite) rods. (b) Cryolite lowers the fusion temperature of the electrolyte from about 2050 °C to about 950 °C and increases its electrical conductivity. (c) Alumina is used up as it is decomposed into aluminium and oxygen, so it is added to keep the process running continuously.',
-  sol: 'Electrodes; two roles of cryolite; alumina consumed.',
-  scheme: [['(a)', 1], ['(b)', 1], ['(c)', 1]],
-  d: 2, c: 'understanding', t: [6],
+  stem: 'A plant manager reads these figures. Alumina melts at about 2050 °C and is a poor conductor when fused; cryolite melts at about 1010 °C and is a good conductor when fused; a mixture of cryolite with a little alumina melts at about 950 °C. (a) Use the figures to give two reasons why alumina is dissolved in fused cryolite instead of being electrolysed alone. (b) The cell is allowed to cool to 800 °C with current still switched on. Predict what happens and why. (c) Cryolite alone melts easily and conducts well, so why is the cell not simply filled with fused cryolite?',
+  model: '(a) Dissolving alumina in cryolite brings the working temperature down from 2050 °C to about 950 °C, and the cryolite melt is a good conductor whereas fused alumina is not. (b) 800 °C is below the melting point of the mixture (about 950 °C), so the electrolyte begins to solidify into a crust; the ions cannot move, the current falls and the cell stops working. (c) The aim is to obtain aluminium from alumina; cryolite is only the solvent and conductor, and alumina must keep being supplied as the source of aluminium.',
+  sol: 'Lower temperature and better conduction; solidification below 950 °C; alumina is the source of aluminium.',
+  scheme: [['(a) two reasons from the data', 1], ['(b) solidifies, current stops', 1], ['(c) alumina is the source of aluminium', 1]],
+  d: 3, c: 'application', t: [6],
 }));
 
 // ---------------------------------------------------------------- t07 alloys and amalgams
@@ -414,10 +414,10 @@ add('bronze-ar', ar({
   d: 2, c: 'recall', t: [7],
 }));
 add('solder-tf', tf({
-  stem: 'Solder melts at a lower temperature than either of the metals, lead and tin, from which it is made.',
+  stem: 'Lead melts at about 327 °C and tin at about 232 °C. A technician must join electronic parts that must not be heated above 200 °C. She reasons that an alloy of lead and tin could be used even though neither metal alone melts low enough.',
   key: 't',
-  sol: 'True: alloying lowers the melting point, which is why solder is used to join wires and metal parts.',
-  d: 2, c: 'understanding', t: [7],
+  sol: 'True: an alloy usually melts at a lower temperature than its constituents, and lead–tin solder melts at about 183 °C, below both metals and below 200 °C.',
+  d: 3, c: 'understanding', t: [7],
 }));
 add('amalgam-fill', fill({
   stem: 'An alloy in which one of the metals is mercury is called an ___.',
