@@ -46,7 +46,7 @@ add('config-short', short({
   model: 'Mn²⁺ is [Ar]3d⁵ and Fe³⁺ is [Ar]3d⁵: both have a half-filled 3d subshell. Fe²⁺ (3d⁶) is easily oxidised by air to Fe³⁺, because losing the sixth d electron gives the extra-stable half-filled d⁵ arrangement.',
   sol: 'Remove 4s electrons first; link stability to the half-filled d⁵ configuration.',
   scheme: [['Both configurations correct', 1], ['Fe³⁺ has stable half-filled d⁵', 1]],
-  d: 2, c: 'application', t: [1, 2],
+  d: 2, c: 'understanding', t: [1, 2],
 }));
 
 // ---------------------------------------------------------------- t02 general properties
@@ -90,7 +90,7 @@ add('mn3-mcq', mcq({
   right: r`$\ce{Mn^3+}$ is a strong oxidising agent and $\ce{Cr^2+}$ is a reducing agent.`,
   wrong: [r`$\ce{Mn^3+}$ is a reducing agent and $\ce{Cr^2+}$ is an oxidising agent.`, r`Both are strong oxidising agents.`, r`Both are stable and unreactive in water.`],
   sol: r`A large positive $E^\circ$ means $\ce{Mn^3+}$ readily gains an electron (forming stable $d^5$ $\ce{Mn^2+}$); a negative $E^\circ$ means $\ce{Cr^2+}$ readily loses one (forming stable $d^3$ $\ce{Cr^3+}$) — option (@K).`,
-  d: 3, c: 'application', t: [2],
+  d: 3, c: 'understanding', t: [2],
 }));
 add('magnetic-mcq', mcq({
   stem: 'Which ion has the highest spin-only magnetic moment? (Z: Mn 25, Fe 26, Ni 28, Cu 29)',
@@ -125,7 +125,7 @@ add('cr2-ar', ar({
   r: r`$E^\circ(\ce{Cr^3+/Cr^2+})$ is negative ($-0.41\ \text{V}$).`,
   key: 'd',
   sol: 'A is false: the negative potential means Cr²⁺ readily loses an electron to become Cr³⁺, so it is a reducing agent. R is true — option (d).',
-  d: 3, c: 'application', t: [2],
+  d: 3, c: 'understanding', t: [2],
 }));
 add('alloy-ar', ar({
   a: 'Transition metals form alloys with each other very easily.',
@@ -152,35 +152,43 @@ Step 2 — Solving $n^2 + 2n - 35 = 0$: $\sqrt{4 + 140} = 12$, so $n = (-2 + 12)
   d: 3, c: 'application', t: [2],
 }), () => near(mu(5), 5.92, 0.002) || 'n');
 add('ox-state-num', num({
-  stem: r`What is the oxidation state of chromium in the dichromate ion, $\ce{Cr2O7^2-}$? (Give the number.)`,
+  stem: r`A manganese oxoanion of formula $\ce{MnO4^{n-}}$ is paramagnetic, with a spin-only magnetic moment of $1.73\ \text{BM}$. Find the oxidation state of manganese in this ion. (Mn, Z = 25) (Give the number.)`,
   value: 6, tol: 0, unit: null,
-  sol: r`$2x + 7(-2) = -2$, so $2x = 12$ and $x = 6$: chromium is $+6$.`,
-  scheme: [['2x − 14 = −2, x = +6', 1]],
-  d: 1, c: 'understanding', t: [2, 3],
-}), () => near((-2 + 14) / 2, 6) || 'ox');
+  sol: r`Step 1 — $\mu = \sqrt{n(n+2)} = 1.73$ gives $n(n+2) = 3$, so $n = 1$ unpaired electron.
+
+Step 2 — Mn is $[\text{Ar}]3d^5 4s^2$; an ion with one $3d$ electron and none in $4s$ is $3d^1$, so $7 - 1 = 6$ electrons have been removed: the oxidation state is $+6$.
+
+Step 3 — Check: $+6 + 4(-2) = -2$, so the ion is $\ce{MnO4^2-}$ (manganate), consistent with the formula. ($\ce{MnO4-}$, $d^0$, would be diamagnetic.)`,
+  scheme: [['n = 1 from μ = 1.73 BM', 0.5], ['d¹ configuration, so oxidation state +6', 0.5]],
+  d: 3, c: 'application', t: [2, 3],
+}), () => (near(mu(1), 1.73, 0.002) && 7 - 1 === 6 && 6 - 8 === -2) || 'ox');
 add('eo-short', short({
   marks: 2,
   stem: r`$E^\circ(\ce{M^2+/M})$ values are: Mn $-1.18\ \text{V}$, Fe $-0.44\ \text{V}$, Zn $-0.76\ \text{V}$, Cu $+0.34\ \text{V}$. Explain why the value for manganese is more negative than expected from the general trend, and why copper’s is positive.`,
   model: 'Mn²⁺ has a half-filled 3d⁵ configuration, which is extra stable, so manganese forms Mn²⁺ more readily and its E° is more negative. For copper, the high enthalpy of atomisation and ionisation needed to make Cu²⁺(aq) is not compensated by its hydration enthalpy, so E° is positive.',
   sol: 'd⁵ stability for Mn; energy balance of atomisation, ionisation and hydration for Cu.',
   scheme: [['Mn: stable half-filled d⁵ of Mn²⁺', 1], ['Cu: atomisation + ionisation not compensated by hydration', 1]],
-  d: 3, c: 'application', t: [2],
+  d: 3, c: 'understanding', t: [2],
 }));
 add('ox-short', short({
-  marks: 2,
-  stem: 'Why does the number of oxidation states in the 3d series increase up to manganese and then decrease?',
-  model: 'Up to manganese, all 3d and 4s electrons can be used in bonding, so the highest oxidation state rises from +3 (Sc) to +7 (Mn). After manganese, the d electrons begin to pair; paired electrons are harder to use, so fewer oxidation states are shown and the maximum falls to +2 at zinc.',
-  sol: 'Number of available unpaired d electrons rises to Mn, then pairing reduces it.',
-  scheme: [['Up to Mn all (n − 1)d and ns electrons can be used', 1], ['After Mn pairing reduces the number of usable electrons', 1]],
-  d: 2, c: 'understanding', t: [2],
-}));
+  marks: 2, wl: null,
+  stem: r`Approximate ionisation enthalpies (kJ mol⁻¹): Sc: $\Delta_\text{i}H_1$ 633, $\Delta_\text{i}H_2$ 1235, $\Delta_\text{i}H_3$ 2389, $\Delta_\text{i}H_4$ 7091. Mn: $\Delta_\text{i}H_2$ 1509, $\Delta_\text{i}H_3$ 3248. Fe: $\Delta_\text{i}H_2$ 1562, $\Delta_\text{i}H_3$ 2957. (a) Use the Sc data to explain why scandium shows only the +3 state. (b) Mn and Fe differ by one proton, yet $\Delta_\text{i}H_3$ of Mn is about $290\ \text{kJ mol}^{-1}$ higher than that of Fe. Explain this using d configurations, and say which of $\ce{Mn^2+}$ and $\ce{Fe^2+}$ is more easily oxidised to the +3 state.`,
+  model: r`(a) Sc is $[\text{Ar}]3d^1 4s^2$; after three electrons are removed the ion has the noble-gas core $[\text{Ar}]$. $\Delta_\text{i}H_4$ (7091) is nearly three times $\Delta_\text{i}H_3$ (2389) because the fourth electron must come from this stable core, so scandium does not reach the $+4$ state.
+
+(b) $\ce{Mn^2+}$ is $3d^5$, a half-filled and extra-stable arrangement, so removing a third electron is very hard (3248). $\ce{Fe^2+}$ is $3d^6$; losing one electron gives the stable $3d^5$ of $\ce{Fe^3+}$, so $\Delta_\text{i}H_3$ is lower (2957). Hence $\ce{Fe^2+}$ is more easily oxidised to $+3$; $\ce{Mn^2+}$ resists oxidation.`,
+  sol: 'Read the jump in successive ionisation enthalpies as the start of a stable core, then compare d⁵ and d⁶ ions.',
+  scheme: [['(a) Large jump at ΔiH₄: fourth electron comes from the [Ar] core', 1], ['(b) Mn²⁺ is half-filled d⁵ (hard to oxidise); Fe²⁺ d⁶ gains d⁵ on oxidation, so Fe²⁺ is more easily oxidised', 1]],
+  d: 3, c: 'application', t: [2],
+}), () => (near(7091 / 2389, 2.97, 0.005) && 3248 - 2957 === 291) || 'ie');
 add('catalyst-short', short({
-  marks: 2,
-  stem: 'Give two reasons why transition metals and their compounds act as catalysts, with one industrial example for each reason.',
-  model: 'First, they show variable oxidation states, so they can form unstable intermediates and then regenerate, as V₂O₅ does in the contact process for sulfuric acid. Second, they provide surfaces that adsorb reactant molecules and weaken their bonds, as iron does in the Haber process and nickel in the hydrogenation of oils.',
-  sol: 'Variable oxidation states; surface adsorption.',
-  scheme: [['Variable oxidation states with an example', 1], ['Surface adsorption with an example', 1]],
-  d: 2, c: 'recall', t: [2, 5],
+  marks: 2, wl: null,
+  stem: r`Iron(III) ions catalyse the reaction between iodide ions and peroxodisulfate ions through two steps: $\ce{2Fe^3+ + 2I- -> 2Fe^2+ + I2}$ and $\ce{2Fe^2+ + S2O8^2- -> 2Fe^3+ + 2SO4^2-}$. (a) Add the steps to obtain the overall equation and show that $\ce{Fe^3+}$ is a catalyst, not a reactant. (b) Which property of transition metals makes this possible, and why could $\ce{Zn^2+}$ not do the same job?`,
+  model: r`(a) Adding the steps, $\ce{2Fe^3+}$, $\ce{2Fe^2+}$ appear on both sides and cancel: $\ce{2I- + S2O8^2- -> I2 + 2SO4^2-}$ (charge $-4$ on each side). Iron(III) is used up in step 1 and regenerated in step 2, so it is not consumed.
+
+(b) Iron cycles between $+3$ and $+2$: transition metals have variable oxidation states and can form and regenerate intermediates. $\ce{Zn^2+}$ ($3d^{10}$) has no other accessible oxidation state, so it cannot shuttle electrons in this way.`,
+  sol: 'Cancel the species common to both steps; link the Fe³⁺/Fe²⁺ cycle to variable oxidation states.',
+  scheme: [['(a) Overall equation 2I⁻ + S₂O₈²⁻ → I₂ + 2SO₄²⁻; Fe³⁺ regenerated', 1], ['(b) Variable oxidation states; Zn²⁺ has only +2', 1]],
+  d: 3, c: 'application', t: [2, 5],
 }));
 add('colour-short3', short({
   marks: 3,
@@ -231,12 +239,12 @@ add('permanganate-neutral-mcq', mcq({
   d: 2, c: 'understanding', t: [3],
 }));
 add('self-indicator-mcq', mcq({
-  stem: 'No separate indicator is added in titrations of iron(II) with potassium permanganate because:',
-  right: 'the first excess drop of permanganate gives a permanent pink colour, since Mn²⁺ is almost colourless',
-  wrong: ['iron(III) ions are deep purple', 'permanganate turns colourless only at the end point', 'the reaction gives off a gas at the end point'],
-  sol: 'Before the end point, purple MnO₄⁻ is reduced to nearly colourless Mn²⁺ at once; one extra drop stays pink — option (@K).',
-  d: 2, c: 'understanding', t: [3],
-}));
+  stem: r`In a titration, $25.0\ \text{mL}$ of acidified iron(II) solution needs $20.0\ \text{mL}$ of $0.0200\ \text{M}$ $\ce{KMnO4}$ to give the first lasting pink colour, with no indicator added. Which option gives the concentration of $\ce{Fe^2+}$ and the reason no indicator is needed?`,
+  right: r`$0.080\ \text{M}$; the first excess drop of permanganate stays pink because $\ce{Mn^2+}$ is almost colourless`,
+  wrong: [r`$0.016\ \text{M}$; the first excess drop of permanganate stays pink because $\ce{Mn^2+}$ is almost colourless`, r`$0.080\ \text{M}$; the end point is the appearance of the deep purple colour of $\ce{Fe^3+}$`, r`$0.0032\ \text{M}$; the first excess drop of permanganate stays pink because $\ce{Mn^2+}$ is almost colourless`],
+  sol: r`$\ce{MnO4- + 5Fe^2+ + 8H+ -> Mn^2+ + 5Fe^3+ + 4H2O}$: moles of $\ce{MnO4-} = 0.0200 \times 0.0200 = 4.0 \times 10^{-4}$; moles of $\ce{Fe^2+} = 5 \times 4.0 \times 10^{-4} = 2.0 \times 10^{-3}$; concentration $= \dfrac{0.0020}{0.0250} = 0.080\ \text{M}$. Before the end point each drop is decolourised as purple $\ce{MnO4-}$ becomes nearly colourless $\ce{Mn^2+}$; the first excess drop stays pink — option (@K). (@1) forgets the 1 : 5 ratio (0.016 M), (@2) has the right number but the wrong colour reasoning (Fe³⁺ is yellow-brown, not purple), and (@3) divides by 5 instead of multiplying (0.0032 M).`,
+  d: 3, c: 'application', t: [3],
+}), () => (near((5 * 0.02 * 0.02) / 0.025, 0.08) && near((0.02 * 0.02) / 0.025, 0.016) && near((0.02 * 0.02) / 5 / 0.025, 0.0032)) || 'fe');
 add('disprop-mcq', mcq({
   stem: r`In $\ce{3MnO4^2- + 4H+ -> 2MnO4- + MnO2 + 2H2O}$, the oxidation state of manganese changes:`,
   right: 'from +6 to +7 and +4',
