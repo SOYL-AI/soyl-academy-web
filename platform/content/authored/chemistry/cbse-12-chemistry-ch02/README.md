@@ -64,3 +64,10 @@ Every question, case part and alternative was re-solved from its stem; every dis
 - Narration audio is not generated (TTS stage).
 - SVGs were reviewed by coordinates, not rasterised (no rasteriser is installed in this worktree).
 - Data in case passages are realistic illustrative values, not cited measurements.
+
+## Competency audit 2026-11-05
+
+Remediation of the content-verifier audit `docs/platform/content-qa/2026-11-05-competency-retag-audit.md`. Retagged honestly; no question text, key, solution or marking scheme changed, and the chapter stays inside its band, so no items needed upgrading:
+- `q005` (salt bridge removed, voltmeter falls to zero) application → understanding: it follows in one step from the bridge’s function.
+
+Now: recall 9 · understanding 29 · application 29 · analysis 3 · evaluation 0; application or higher **45.7% of items (59% of marks)**, inside the 45–65% band. This supersedes the competency figures above.

@@ -42,7 +42,7 @@ add('salt-bridge-mcq', mcq({
   right: 'drops to zero, because the internal circuit is broken and charge builds up in the solutions',
   wrong: ['stays the same, because electrons still flow through the wire', 'doubles, because the solutions can no longer mix', 'reverses, because copper becomes the anode'],
   sol: 'Without the salt bridge, ions cannot move between the half-cells; positive charge collects around the zinc and negative around the copper, and the current stops at once — option (@K).',
-  d: 2, c: 'application', t: [1],
+  d: 2, c: 'understanding', t: [1],
 }));
 add('emf-intensive-ar', ar({
   a: r`The standard potential of $\ce{Ag+ + e- -> Ag}$ is $+0.80\ \text{V}$; for $\ce{2Ag+ + 2e- -> 2Ag}$ it is still $+0.80\ \text{V}$.`,
