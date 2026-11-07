@@ -85,8 +85,8 @@ add('echo-fill', fill({
 add('echo-ar', ar({
   a: 'No distinct echo of a shout is heard from a wall 8 m away in air.',
   r: 'The reflected sound returns in less than 0.1 s and merges with the original.',
-  key: 'a',
-  sol: 'Both are true (round trip 16 m takes about 0.047 s), and R explains A — option (a).',
+  key: 'c',
+  sol: 'Both are true (round trip 16 m takes about 0.047 s), and R explains A — option (c).',
   d: 2, c: 'analysis', t: [1],
 }));
 add('temple-short1', short({
@@ -185,8 +185,8 @@ add('sonar-tf', tf({
 add('sonar-ar', ar({
   a: 'Fishing trawlers use ultrasonic pulses to locate shoals of fish.',
   r: 'Ultrasound has a short wavelength, so it travels as a narrow beam and is reflected even by small objects.',
-  key: 'a',
-  sol: 'Both are true, and R explains A — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A — option (c).',
   d: 2, c: 'understanding', t: [2],
 }));
 add('sonar-short2', short({
@@ -251,8 +251,8 @@ add('forced-fill', fill({
 add('bell-ar', ar({
   a: 'The sound of a temple bell slowly dies away after it is struck.',
   r: 'The vibrations of the bell are damped by air resistance and internal friction.',
-  key: 'a',
-  sol: 'Both are true, and R explains A — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A — option (c).',
   d: 2, c: 'understanding', t: [3],
 }));
 add('types-short2', short({
@@ -316,15 +316,15 @@ add('res-fill', fill({
 add('pend-ar', ar({
   a: 'A pendulum of length 50 cm hanging from a common string resonates with a driver pendulum of length 80 cm.',
   r: 'Resonance occurs only when the forcing frequency equals the natural frequency.',
-  key: 'd',
-  sol: 'A is false — different lengths give different natural frequencies; R is true — option (d).',
+  key: 'b',
+  sol: 'A is false — different lengths give different natural frequencies; R is true — option (b).',
   d: 3, c: 'analysis', t: [4],
 }));
 add('glass-ar', ar({
   a: 'A trained singer holding one steady note can make a thin wine glass shatter.',
   r: 'When the frequency of the note equals the natural frequency of the glass, its vibrations build up to a very large amplitude.',
-  key: 'a',
-  sol: 'Both are true, and R explains A — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A — option (c).',
   d: 3, c: 'analysis', t: [4],
 }));
 add('res-short2', short({
@@ -440,15 +440,15 @@ add('db-fill', fill({
 add('quality-ar', ar({
   a: 'A flute and a violin playing the same note equally loudly can still be told apart.',
   r: 'The two instruments produce sound waves of different waveforms, with different overtones.',
-  key: 'a',
-  sol: 'Both are true, and R explains A — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A — option (c).',
   d: 2, c: 'understanding', t: [5],
 }));
 add('loud-ar', ar({
   a: 'Striking a tabla harder makes its sound louder.',
   r: 'The pitch of a sound depends on the amplitude of vibration.',
-  key: 'c',
-  sol: 'A is true (larger amplitude); R is false — pitch depends on frequency — option (c).',
+  key: 'a',
+  sol: 'A is true (larger amplitude); R is false — pitch depends on frequency — option (a).',
   d: 2, c: 'analysis', t: [5],
 }));
 add('area-short1', short({
