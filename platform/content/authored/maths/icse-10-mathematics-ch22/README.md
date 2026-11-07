@@ -20,7 +20,7 @@ CBSE maths chapter approach (builders + independent re-solve). Author: `claude-o
 | Check slides | 4 + 4, all objective (q001 mcq, q003 mcq, q005 mcq, q032 fill-blank; q010 mcq, q011 mcq, q017 mcq, q007 mcq) |
 | Notes | 8 sections with key terms and formulas; exam tips with mark split and 6 common mistakes |
 | Flashcards | 30 (formula 7, example 7, concept 6, definition 4, exam-tip 3, fact 3) |
-| Questions | 65 items, 173 marks: mcq 18, assertion-reason 6 (keys a b c d a c), true-false 5, fill-blank 5, numerical 9, short-2 4, short-3 5, short-4 6, long-10 7 (structured (a)(b)(c), 3 + 3 + 4, 6–7 step marks each) |
+| Questions | 65 items, 173 marks: mcq 18, assertion-reason 6 (keys c d a b c a), true-false 5, fill-blank 5, numerical 9, short-2 4, short-3 5, short-4 6, long-10 7 (structured (a)(b)(c), 3 + 3 + 4, 6–7 step marks each) |
 | Difficulty | d1 18, d2 25, d3 19, d4 3 |
 | Competency | recall 10, understanding 20, application 31, analysis 4 — application or higher 54% of items, 77% of marks |
 | Topics | t01 33, t02 14, t03 16, t04 7 (items may carry two topics) |
@@ -48,3 +48,4 @@ All set-ups and data are new and imagined (canteen teas, ticket counter waits, b
 - Narration audio not generated (TTS stage).
 - Quartiles and graphs (histogram, ogive, graphical median and mode) belong to ch23 and are not here; the median and mode of grouped data are only named by class, as in the 2027 syllabus.
 - Difficulty is concentrated at d1–d3 (three d4 items); no case-based items.
+- **2026-11-05:** assertion-reason options reordered to the ICSE 2027 Mathematics specimen paper (511) order and wording; every key re-mapped so each item's meaning is unchanged.
