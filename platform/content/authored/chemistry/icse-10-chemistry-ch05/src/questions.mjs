@@ -39,15 +39,15 @@ add('scope-mcq', mcq({
 add('nh3vol-ar', ar({
   a: 'When nitrogen and hydrogen react completely to form ammonia, the total volume of gas decreases (same temperature and pressure).',
   r: 'One volume of nitrogen and three volumes of hydrogen give only two volumes of ammonia.',
-  key: 'a',
-  sol: 'Four volumes of reactants give two volumes of product, so R explains A — option (a).',
+  key: 'c',
+  sol: 'Four volumes of reactants give two volumes of product, so R explains A — option (c).',
   d: 2, c: 'understanding', t: [1],
 }));
 add('water-ar', ar({
   a: "When hydrogen burns in oxygen at room temperature, the volume of the water formed is not counted when applying Gay-Lussac's law.",
   r: 'Water is a compound of hydrogen and oxygen.',
-  key: 'b',
-  sol: 'Both statements are true, but the reason water is not counted is that it condenses to a liquid at room temperature — option (b).',
+  key: 'd',
+  sol: 'Both statements are true, but the reason water is not counted is that it condenses to a liquid at room temperature — option (d).',
   d: 2, c: 'understanding', t: [1],
 }));
 add('gl-tf', tf({
@@ -305,8 +305,8 @@ add('samevol-mcq', mcq({
 add('molar-ar', ar({
   a: 'One mole of carbon dioxide and one mole of water contain the same number of molecules.',
   r: 'One mole of any substance occupies 22.4 dm³ at STP.',
-  key: 'c',
-  sol: 'A is true (each contains 6.022 × 10²³ molecules). R is false: molar volume applies only to gases, and water is not a gas at STP — option (c).',
+  key: 'a',
+  sol: 'A is true (each contains 6.022 × 10²³ molecules). R is false: molar volume applies only to gases, and water is not a gas at STP — option (a).',
   d: 2, c: 'understanding', t: [3, 4],
 }));
 add('water-tf', tf({
@@ -394,15 +394,15 @@ add('vddef-mcq', mcq({
 add('vdunit-ar', ar({
   a: 'The vapour density of a gas is expressed in g dm⁻³.',
   r: 'Vapour density is the ratio of two masses.',
-  key: 'd',
-  sol: 'A is false: a ratio of two masses has no unit. R is true — option (d).',
+  key: 'b',
+  sol: 'A is false: a ratio of two masses has no unit. R is true — option (b).',
   d: 2, c: 'understanding', t: [5],
 }));
 add('nh3vd-ar', ar({
   a: 'The vapour density of ammonia, NH₃, is 8.5 (N = 14, H = 1).',
   r: 'The relative molecular mass of a gas is twice its vapour density.',
-  key: 'a',
-  sol: 'M of NH₃ = 14 + 3 = 17, and 17 ÷ 2 = 8.5; R explains A — option (a).',
+  key: 'c',
+  sol: 'M of NH₃ = 14 + 3 = 17, and 17 ÷ 2 = 8.5; R explains A — option (c).',
   d: 2, c: 'application', t: [5],
 }));
 add('vd-tf', tf({
