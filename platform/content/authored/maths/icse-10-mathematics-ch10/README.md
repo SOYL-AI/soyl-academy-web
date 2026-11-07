@@ -19,7 +19,7 @@ CBSE maths chapter approach (builders + independent re-solve). Author: `claude-o
 | Check slides | 4 + 4, all objective (q002 mcq, q031 fill-blank, q038 numerical, q027 true-false; q010 mcq, q034 fill-blank, q015 mcq, q028 true-false) |
 | Notes | 7 sections with key terms and formulas; exam tips with mark split and 6 common mistakes |
 | Flashcards | 28 (definition 1, formula 8, concept 7, example 5, exam-tip 4, fact 2, diagram 1) |
-| Questions | 66 items, 167 marks: mcq 18, assertion-reason 6 (keys a b d c a d), true-false 6, fill-blank 6, numerical 7 (2 × 1 mark, 5 × 2 marks), short-2 5, short-3 5, short-4 6, long-10 7 (structured (a)(b)(c), 3 + 3 + 4 or 4 + 3 + 3, 6–7 step marks each) |
+| Questions | 66 items, 167 marks: mcq 18, assertion-reason 6 (keys c d b a c b), true-false 6, fill-blank 6, numerical 7 (2 × 1 mark, 5 × 2 marks), short-2 5, short-3 5, short-4 6, long-10 7 (structured (a)(b)(c), 3 + 3 + 4 or 4 + 3 + 3, 6–7 step marks each) |
 | Difficulty | d1 8, d2 35, d3 21, d4 2 |
 | Competency | recall 1, understanding 27, application 28, analysis 10 — application or higher 58% of items, 80% of marks (lint band 45–65% of items) |
 | Topics | t01 37, t02 25, t03 12 (items may carry two topics) |
@@ -56,3 +56,4 @@ pattern only.
 - Narration audio not generated (TTS stage).
 - Model answers describe graphs in words (answers carry no visuals); no question carries a figure in its stem.
 - Log tables (allowed in the board paper) are not needed: every "which term" or "how many terms" item resolves to an exact power.
+- **2026-11-05:** assertion-reason options reordered to the ICSE 2027 Mathematics specimen paper (511) order and wording; every key re-mapped so each item's meaning is unchanged.
