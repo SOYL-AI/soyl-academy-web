@@ -68,3 +68,9 @@ Every question was re-solved from its stem. Findings and fixes:
 ## Known gaps
 - Diagrams asked for in answers (BE/A graph, reactor) are described in words; graders should accept any correct sketch.
 - Narration was not yet run through TTS (stage 8); slide `audio` is null.
+
+## Competency audit 2026-11-05
+
+Follow-up to the content-verifier audit `docs/platform/content-qa/2026-11-05-competency-retag-audit.md`, which named ISC 12 Physics ch09 onwards as a lead (the handoff reports one-step items relabelled to stay under 65%). The subject-producer re-read every objective and numerical item tagged application or higher against the audit's definitions: a single formula substitution (with or without a unit conversion), or a stated rule applied directly, is **understanding**; chained relations, a non-routine step (plane vs normal, round trips, reversibility) or a new set-up keep application or analysis. Retagged application/analysis → understanding, with no text, key or solution changed: `q001` (N = A − Z), `q002` (R ∝ A^⅓), `q007` (R = R₀A^⅓), `q008` (A from R), `q017` (λ = hc/E), `q021` (mass defect), `q024` (m = E/c²), `q034` (towards the binding-energy peak releases energy: the stated rule), `q045` (balancing nucleon number).
+
+Now: recall 9 · understanding 29 · application 24 · analysis 12 · evaluation 1; application or higher **37 of 75 = 49.3% of items (61% of marks)**, inside the 45–65% band. This supersedes the competency figures above. Short and long answers were not re-judged in this pass.
