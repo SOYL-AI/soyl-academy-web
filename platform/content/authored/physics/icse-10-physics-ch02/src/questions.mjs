@@ -55,8 +55,8 @@ add('mower-num', num({
 add('work-ar', ar({
   a: 'A boy pushing hard against a wall that does not move does no work on the wall.',
   r: 'Work is done only when the point of application of a force moves.',
-  key: 'a',
-  sol: 'Both are true, and R explains A — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A — option (c).',
   d: 1, c: 'understanding', t: [1],
 }));
 add('work-tf', tf({
@@ -121,8 +121,8 @@ add('kwh-num', num({
 add('unit-ar', ar({
   a: 'The kilowatt hour is a unit of power.',
   r: 'A kilowatt hour is the energy used by a 1 kW appliance in one hour.',
-  key: 'd',
-  sol: 'A is false (kW h is a unit of energy); R is true — option (d).',
+  key: 'b',
+  sol: 'A is false (kW h is a unit of energy); R is true — option (b).',
   d: 2, c: 'understanding', t: [2, 3],
 }));
 add('unit-tf', tf({
@@ -270,8 +270,8 @@ add('speed-num', num({
 add('ke-ar', ar({
   a: 'If the speed of a body is doubled, its kinetic energy is doubled.',
   r: 'Kinetic energy is directly proportional to the square of the speed.',
-  key: 'd',
-  sol: 'A is false (K becomes four times); R is true — option (d).',
+  key: 'b',
+  sol: 'A is false (K becomes four times); R is true — option (b).',
   d: 2, c: 'understanding', t: [4],
 }));
 add('pe-tf', tf({
@@ -381,15 +381,15 @@ add('half-num', num({
 add('pend-ar', ar({
   a: 'The amplitude of a pendulum swinging in air slowly decreases.',
   r: 'Mechanical energy of the pendulum is slowly converted into heat by air resistance.',
-  key: 'a',
-  sol: 'Both are true, and R explains A — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A — option (c).',
   d: 2, c: 'understanding', t: [6],
 }));
 add('cons-ar', ar({
   a: 'The total mechanical energy of a freely falling body is the same at every height.',
   r: 'The potential energy of the body is the same at every height.',
-  key: 'c',
-  sol: 'A is true; R is false (potential energy decreases as it falls) — option (c).',
+  key: 'a',
+  sol: 'A is true; R is false (potential energy decreases as it falls) — option (a).',
   d: 2, c: 'understanding', t: [6],
 }));
 add('cons-tf', tf({
