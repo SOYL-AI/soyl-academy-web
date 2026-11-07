@@ -128,7 +128,7 @@ add('Cvalue-num', num({
   value: Number(dec(cv.C * 1e6, 3)), tol: 0.02, unit: 'μF',
   sol: r`$C = \dfrac{1}{2\pi fX_C} = \dfrac{1}{2\pi \times 50 \times 400} \approx ${sci(cv.C, 3)}$ F, i.e. $${sci(cv.C, 3)} \times 10^{6} = ${dec(cv.C * 1e6, 3)}$ μF.`,
   scheme: [['C = 1/(2πfX_C) ≈ 7.96 μF', 1]],
-  d: 2, c: 'application', t: [2],
+  d: 2, c: 'understanding', t: [2],
 }), (q) => near(cv.C, 7.9577e-6, 1e-4) && q.answer.value === 7.96 || `cv ${cv.C}`);
 add('ship-num', num({
   stem: 'A capacitor draws 0.60 A from a 230 V, 50 Hz supply. On board a ship it is connected to a 230 V, 60 Hz supply instead. What current does it draw now, in amperes?',
@@ -252,7 +252,7 @@ add('Vsupply-num', num({
   value: 100, tol: 0.5, unit: 'V',
   sol: r`$V = \sqrt{V_R^2 + (V_L - V_C)^2} = \sqrt{60^2 + (140 - 60)^2} = \sqrt{3600 + 6400} = 100$ V (not the arithmetic sum, 260 V).`,
   scheme: [['V = √(60² + 80²) = 100 V', 1]],
-  d: 3, c: 'application', t: [3],
+  d: 3, c: 'understanding', t: [3],
 }), (q) => near(Math.hypot(60, 80), 100) && q.answer.value === 100 || 'vs');
 const fl = { Vdc: 12, Idc: 2, Vac: 12, Iac: 1.2 };
 fl.R = fl.Vdc / fl.Idc;
@@ -343,7 +343,7 @@ add('power-num', num({
   value: 478, tol: 1, unit: 'W',
   sol: r`$P = V_\text{rms}I_\text{rms}\cos\phi = 230 \times 3.2 \times 0.65 = 478$ W (to 3 significant figures).`,
   scheme: [['P = VI cos φ ≈ 478 W', 1]],
-  d: 2, c: 'application', t: [4],
+  d: 2, c: 'understanding', t: [4],
 }), (q) => near(230 * 3.2 * 0.65, 478.4) && q.answer.value === 478 || 'pw');
 add('pf-num', num({
   stem: 'A series AC circuit has R = 21 Ω, X_L = 32 Ω and X_C = 12 Ω. Find its power factor (3 significant figures).',
@@ -447,7 +447,7 @@ add('f0-num', num({
   value: Number(dec(f0q.f0 / 1e3, 3)), tol: 0.05, unit: 'kHz',
   sol: r`$LC = 2.5 \times 10^{-3} \times 0.10 \times 10^{-6} = 2.5 \times 10^{-10}$ s², so $f_0 = \dfrac{1}{2\pi\sqrt{LC}} \approx ${sci(f0q.f0, 3)}$ Hz, i.e. $${sci(f0q.f0, 3)} \times 10^{-3} = ${dec(f0q.f0 / 1e3, 3)}$ kHz.`,
   scheme: [['f₀ = 1/(2π√LC) ≈ 10.1 kHz', 1]],
-  d: 2, c: 'application', t: [5],
+  d: 2, c: 'understanding', t: [5],
 }), (q) => near(f0q.f0, 10065.9, 1e-4) && q.answer.value === 10.1 || `f0 ${f0q.f0}`);
 const tn = { L: 240e-6, f: 702e3 };
 tn.C = 1 / (W(tn.f) ** 2 * tn.L);
@@ -456,7 +456,7 @@ add('tune-num', num({
   value: Number(dec(tn.C * 1e12, 3)), tol: 1, unit: 'pF',
   sol: r`At resonance $C = \dfrac{1}{4\pi^2f^2L} = \dfrac{1}{4\pi^2 \times (702 \times 10^{3})^2 \times 240 \times 10^{-6}} \approx ${sci(tn.C, 3)}$ F, i.e. $${sci(tn.C, 3)} \times 10^{12} = ${dec(tn.C * 1e12, 3)}$ pF.`,
   scheme: [['C = 1/(4π²f²L)', 1], ['C ≈ 214 pF', 1]],
-  marks: 2, d: 3, c: 'application', t: [5],
+  marks: 2, d: 3, c: 'understanding', t: [5],
 }), (q) => near(tn.C, 2.1416e-10, 1e-3) && q.answer.value === 214 || `tn ${tn.C}`);
 const qf = { R: 5, L: 0.04, C: 0.25e-6 };
 qf.w0 = 1 / Math.sqrt(qf.L * qf.C);
@@ -473,7 +473,7 @@ add('bw-num', num({
   value: 40, tol: 0.5, unit: 'Hz',
   sol: r`$Q = \dfrac{f_0}{\Delta f}$, so $\Delta f = \dfrac{1200}{30} = 40$ Hz.`,
   scheme: [['Δf = f₀/Q = 40 Hz', 1]],
-  d: 2, c: 'application', t: [5],
+  d: 2, c: 'understanding', t: [5],
 }), () => near(1200 / 30, 40) || 'bw');
 add('resR-ar', ar({
   a: 'The resonant frequency of a series LCR circuit increases when its resistance is reduced.',

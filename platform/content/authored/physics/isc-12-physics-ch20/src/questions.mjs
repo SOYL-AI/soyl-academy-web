@@ -19,14 +19,14 @@ add('isotones-mcq', mcq({
   right: `${nu(37, 17, 'Cl')} and ${nu(39, 19, 'K')}`,
   wrong: [`${nu(35, 17, 'Cl')} and ${nu(37, 17, 'Cl')}`, `${nu(40, 18, 'Ar')} and ${nu(40, 20, 'Ca')}`, `${nu(12, 6, 'C')} and ${nu(14, 6, 'C')}`],
   sol: `N = A − Z. ${nu(37, 17, 'Cl')} has 37 − 17 = 20 neutrons and ${nu(39, 19, 'K')} has 39 − 19 = 20: isotones. The chlorine pair and the carbon pair share Z (isotopes); the argon–calcium pair shares A (isobars) — option (@K).`,
-  d: 2, c: 'application', t: [1],
+  d: 2, c: 'understanding', t: [1],
 }), () => 37 - 17 === 39 - 19 && 35 - 17 !== 37 - 17 && 40 - 18 !== 40 - 20 && 12 - 6 !== 14 - 6 || 'iso');
 add('halfradius-mcq', mcq({
   stem: `The nucleus of copper-64 (${nu(64, 29, 'Cu')}) has radius R. A nucleus of radius R/2 has a mass number of`,
   right: '8',
   wrong: ['32', '16', '128'],
   sol: r`$R \propto A^{1/3}$, so $\dfrac{A'}{64} = \left(\dfrac{1}{2}\right)^3 = \dfrac{1}{8}$ and $A' = 8$ — option (@K). Halving A (32) or quartering it (16) would only reduce the radius by 2^(1/3) or 4^(1/3).`,
-  d: 3, c: 'application', t: [1],
+  d: 3, c: 'understanding', t: [1],
 }), () => near(64 * (0.5) ** 3, 8, 1e-9) && near(rad(8) / rad(64), 0.5, 1e-9) || 'half');
 add('amu-mcq', mcq({
   stem: 'The unified atomic mass unit (u) is defined as',
@@ -60,7 +60,7 @@ add('radiussn-num', num({
   value: Number(dec(sn.R, 3)), tol: 0.02, unit: 'fm',
   sol: r`$R = R_0A^{1/3} = 1.2 \times 120^{1/3} = 1.2 \times ${dec(Math.cbrt(120), 4)} = ${dec(sn.R, 3)}$ fm.`,
   scheme: [['R = 1.2 × 120^(1/3) = 5.92 fm', 1]],
-  d: 1, c: 'application', t: [1],
+  d: 1, c: 'understanding', t: [1],
 }), (q) => near(Math.cbrt(120 * 1.2 ** 3), q.answer.value, 0.004) || 'sn');
 const nc = { R: 5.0, r0: 1.25 };
 nc.A = (nc.R / nc.r0) ** 3;
@@ -69,7 +69,7 @@ add('nucleons-num', num({
   value: 64, tol: 0.5, unit: null,
   sol: r`$A^{1/3} = \dfrac{R}{R_0} = \dfrac{5.0}{1.25} = 4$, so $A = 4^3 = ${Math.round(nc.A)}$.`,
   scheme: [['A^(1/3) = R/R₀ = 4', 1]],
-  d: 2, c: 'application', t: [1],
+  d: 2, c: 'understanding', t: [1],
 }), (q) => near(rad(q.answer.value, 1.25), 5.0, 1e-9) || 'nc');
 const mb = { r0: 1.25, V: 4.0e-2 * 3.0e-2 * 1.5e-2 };
 mb.rho = rho0(mb.r0);
@@ -152,7 +152,7 @@ add('threshold-mcq', mcq({
   right: '1.21 pm',
   wrong: ['2.43 pm', '0.61 pm', '4.86 pm'],
   sol: r`$\lambda_{\max} = \dfrac{hc}{E_{\min}} = \dfrac{1240\ \text{MeV fm}}{1.022\ \text{MeV}} = ${dec(th.lam, 4)}$ fm $= ${dec(th.lam / 1000, 3)}$ pm — option (@K). 2.43 pm is the wavelength of one annihilation photon (0.511 MeV); 0.61 pm would need 2.04 MeV.`,
-  d: 3, c: 'application', t: [2],
+  d: 3, c: 'understanding', t: [2],
 }), () => near(th.lam / 1000, 1.21, 0.005) && near(HCMEVFM / MEC2 / 1000, 2.43, 0.003) || 'th');
 add('pair-ar', ar({
   a: 'A photon of energy 0.80 MeV cannot produce an electron–positron pair, however close it passes to a nucleus.',
@@ -183,7 +183,7 @@ add('mgdefect-num', num({
   value: Number(dec(mg.dm, 4)), tol: 0.0003, unit: 'u',
   sol: r`$\Delta m = 12 \times 1.007825 + 12 \times 1.008665 - 23.985042 = 24.197880 - 23.985042 = ${dec(mg.dm, 6)}$ u $\approx ${dec(mg.dm, 4)}$ u.`,
   scheme: [['Δm = 24.197880 − 23.985042 = 0.2128 u', 1]],
-  d: 1, c: 'application', t: [2],
+  d: 1, c: 'understanding', t: [2],
 }), (q) => near(beNuc('Mg24') / UMEV, q.answer.value, 0.002) || 'mg');
 const ns = { dm: NUC.Ca39.M + MN - NUC.Ca40.M };
 ns.E = ns.dm * UMEV;
@@ -210,7 +210,7 @@ add('photonmass-num', num({
   value: Number(dec(pm.m / 1e-30, 3)), tol: 0.02, unit: '10⁻³⁰ kg',
   sol: r`$m = \dfrac{E}{c^2} = \dfrac{1.6 \times 10^{-13}}{(3.0 \times 10^{8})^2} = ${sci(pm.m, 3)}$ kg $= ${dec(pm.m / 1e-30, 3)}$ in units of $10^{-30}$ kg (about twice the mass of an electron, 9.1 × 10⁻³¹ kg).`,
   scheme: [['m = E/c² = 1.78 × 10⁻³⁰ kg', 1]],
-  d: 2, c: 'application', t: [2],
+  d: 2, c: 'understanding', t: [2],
 }), (q) => near(1.6e-13 / 9e16 / 1e-30, q.answer.value, 0.002) || 'pm');
 const bu = { P: 100, t: 3.15e7, c: 3.0e8 };
 bu.E = bu.P * bu.t;
@@ -308,7 +308,7 @@ add('fusionside-mcq', mcq({
   right: 'P fuses with another light nucleus, or Q splits into two middle-order nuclei',
   wrong: ['P splits into two smaller nuclei, or Q fuses with a heavier nucleus', 'only P can release energy, by fusion; Q cannot release energy by any nuclear process', 'only Q can release energy, by fission; P cannot release energy by any nuclear process'],
   sol: 'Energy is released when nuclei move towards the maximum of the curve (higher B/A). P, on the rising part, gains B/A by fusing into a heavier nucleus; Q, on the falling part, gains B/A by splitting into middle-order fragments. Both are possible — option (@K).',
-  d: 2, c: 'application', t: [3],
+  d: 2, c: 'understanding', t: [3],
 }));
 add('ironend-mcq', mcq({
   stem: 'In a massive star, the release of energy by fusion stops when the core has become mostly iron-group nuclei. This is because',
@@ -400,7 +400,7 @@ add('xneutrons-mcq', mcq({
   right: '3',
   wrong: ['2', '4', '1'],
   sol: `Nucleon number: 1 + 235 = 144 + 89 + x, so x = 236 − 233 = ${xn.A}. Charge: 92 = 56 + 36 balances with no charge carried by the neutrons — option (@K).`,
-  d: 1, c: 'application', t: [4],
+  d: 1, c: 'understanding', t: [4],
 }), () => xn.A === 3 && xn.Z === 0 || 'xn');
 add('poormod-mcq', mcq({
   stem: 'A moderator slows neutrons down by collisions. Which of these materials would be the poorest moderator?',

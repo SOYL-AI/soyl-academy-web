@@ -53,7 +53,7 @@ This text is long, idiomatic and full of quoted speech (the father's outbursts, 
 - **Questions: 75 (139 marks) + 34 passage children (+ 2 alternatives).**
   - By type: source-based 6, case-based 1, mcq 30, short 2-mark 16 (25–30 words), long 4-mark 6 (60–80 words), true-false 5, fill-blank 3, match 2, assertion-reason 5 (keys a, c, a, d, b), ordering 1.
   - Difficulty: d1 12 · d2 40 · d3 19 · d4 4.
-  - Competency: application or higher on 49% of items and 65% of marks. Higher-order items include: a sibling-comparison case; the father's अंतर्विरोध in a sports case and in a "लोग क्या कहेंगे" short; whether keeping the daughter out of the kitchen was progressive; whether talent and housework must clash; father vs Sheela Agarwal; generational vs ideological conflict; writing about one's family honestly; a 1946 news report; the पड़ोस question for one's own society; inference and title children in every passage.
+  - Competency: application or higher on 49% of items and 65% of marks (superseded: see Competency audit 2026-11-05). Higher-order items include: a sibling-comparison case; the father's अंतर्विरोध in a sports case and in a "लोग क्या कहेंगे" short; whether keeping the daughter out of the kitchen was progressive; whether talent and housework must clash; father vs Sheela Agarwal; generational vs ideological conflict; writing about one's family honestly; a 1946 news report; the पड़ोस question for one's own society; inference and title children in every passage.
   - MCQ keys (incl. children): a 16, b 17, c 14, d 17.
   - Model answers: 2-mark 26–30 words; 4-mark 67–77 words.
 - **Deck:** 22 slides — title, how-to, author, genre, father's two faces, the comparison, AR check, mother vs father, the मोहल्ला, father's attention and the debates, AR check (kitchen), Sheela Agarwal, ordering check, the two episodes, the अंतर्विरोध, application check, time-line, influences, style, word meanings, summary, exam tips. 13 visuals. Narration max 65 words (mean 53), Devanagari only, no digits or symbols.
@@ -91,3 +91,20 @@ This text is long, idiomatic and full of quoted speech (the father's outbursts, 
 
 - No reference text of the lesson is in the repo, so the pipeline's originality n-gram check could not run against it. The author's scratch check is recorded above.
 - Facts from the author's knowledge, to confirm with the textbook: the author's death year (2021); the exact months of the 1947 college events (May notice, July bar, August reopening — SOYL says only "मई में नोटिस … अगस्त में कक्षाएँ खुलीं").
+
+## Competency audit 2026-11-05
+
+Reference: `docs/platform/content-qa/2026-11-05-competency-retag-audit.md`.
+- **Audit finding:** the passage parents q001 (`src_pita`), q003 (`src_maa`), q004 (`src_padosi`), q005 (`src_sheela`) and q006 (`src_ghatna`) had only 2 of 5 parts at application or higher, so by the majority rule each was honestly understanding. q002 (`src_heen`) has 3 of 5 and keeps analysis.
+- **Second pass (passage parts re-judged):** a part whose answer the passage states, or near-verbatim paraphrases, is recall or understanding however it is phrased. The first fix below (rewriting one part per passage to bring parents back to analysis) was not honest for several parts and is superseded by the second-pass list that follows it.
+- **First fix (superseded):**
+  - `src_pita` part b: understanding to analysis (join the facts of the two periods to infer why the father's temper changed).
+  - `src_maa` part e: understanding to evaluation (judge a reader's claim that the author did not respect her mother, against the passage).
+  - `src_padosi` part b: understanding to application (choose the modern situation that best supports the author's link between lost neighbourliness and loneliness).
+  - `src_sheela` part b: understanding to analysis (infer the link between choosing and debating books and leading in politics).
+  - `src_ghatna` part c: recall to application (predict the father's reaction if the doctor had criticised the speech).
+- **Second-pass part retags to understanding:** `src_pita` b, c, d; `src_heen` c, d, e; `src_maa` c, d, e (e is the reader-claim item, answered directly by the passage); `src_padosi` c, d; `src_sheela` c, e; `src_ghatna` d, e; `case_neha` c. Kept higher-order because they go beyond the passage: `src_padosi` b (application to a new case), `src_sheela` b (analysis, link not stated), `src_ghatna` c (application, counterfactual).
+- **Parent retags:** `src_pita`, `src_heen`, `src_maa`, `src_padosi`, `src_sheela`, `src_ghatna` analysis to understanding (0 or 1 higher-order part each). `case_neha` stays application (3 of 4 parts higher-order).
+- **Six standalone items rewritten as genuine inference items:** `b_debates` (application: what would not develop had the father not seated her in the debates), `b_shock` (analysis: what her surprise reveals about her expectation), `b_1944` (analysis: what the timing says about her earlier place in the house), `b_short_padosi` (analysis: compare an open-mohalla child and a closed-society child and the effect on writing material), `c_short_mother` (analysis: compare what she rejected from her mother and what she found in herself from her father, with causes), `m_short_style` (analysis: effect of her candour on the reader's trust).
+- **New counts (75 items):** recall 16 · understanding 22 · application 8 · analysis 23 · evaluation 6 = 37/75, **49.3% application or higher**.
+- All new passage-part text is SOYL-written; no sentence of the book is reproduced.

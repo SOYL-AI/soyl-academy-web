@@ -36,7 +36,7 @@ All items are `status: "draft"` until a reviewer approves them.
 
 - No case-based items: the ICSE Physics pattern has none (the 10-mark structured questions carry the data, diagram or situation instead).
 - **Difficulty:** d1 25 · d2 33 · d3 10 · d4 3.
-- **Competency:** recall 20 · understanding 18 · application 25 · analysis 8. Application or higher is **46% of items (58% of marks)**, inside the 45–65% band and in line with the CISCE aim (October 2026 circular) of about half the marks on higher-order skills.
+- **Competency:** recall 20 · understanding 18 · application 25 · analysis 8. Application or higher is **46% of items (58% of marks)**, inside the 45–65% band and in line with the CISCE aim (October 2026 circular) of about half the marks on higher-order skills. (superseded: see Competency audit 2026-11-05)
 - **Topic tags:** t01 14 · t02 17 · t03 14 · t04 20 · t05 15.
 - **Deck checks:** q001, q014, q025 (Part 1); q036, q040, q051 (Part 2) — all objective, none used in the tests.
 
@@ -58,4 +58,28 @@ Every question and every internal-choice alternative was re-solved from its stem
 ## Known gaps
 - Narration audio is not generated (TTS stage).
 - SVGs were reviewed by coordinates, not rasterised.
+
+## Competency audit 2026-11-05
+Reference: `docs/platform/content-qa/2026-11-05-competency-retag-audit.md`. Tags must describe the demand honestly; items were improved, not relabelled.
+- **Honest retags only (text unchanged):** q038 (gen-mcq) application → recall; q040 (freq-mcq), q051 (trans-mcq) and q056 (trans-tf) → understanding. q046 (period-num) was rewritten (time for 15 cycles at 60 Hz, 250 ms) but is still essentially one step (15 ÷ 60), so the reviewer tagged it understanding. q040 and q051 are deck checks and keep their slides.
+- **Rewritten as genuine application or analysis items (same key, type, marks, topics, test slots; ids unchanged):**
+  - q004 (reverse-mcq): current reversed and compass moved to the opposite side of a vertical wire; the two changes cancel (application).
+  - q012 (factors-short2): interpret compass-swing readings against distance, then decide what to change (analysis).
+  - q014 (emag-mcq, deck check): predict clips lifted from a table of turns and current readings (analysis).
+  - q015 (core-mcq): predict an electric bell with a steel core instead of soft iron (application).
+  - q017 (perm-mcq): choose electromagnet or permanent magnet for a fail-safe fire-door holder (application).
+  - q022 (pole-fill): solenoid polarity by the clock rule, then attraction with a bar magnet's south pole (application).
+  - q028 (parallel-mcq): Fleming's left-hand rule in a new set-up, then the effect of reversing both current and field (application).
+  - q036 (induce-mcq, deck check): predict the galvanometer through a sequence of magnet motions (application).
+  - q041 (speed-mcq): direction and size of the swing when the magnet is pulled out faster (application).
+  - q047 (cycles-num): cycles in 3 minutes, then reversals (two per cycle), 18000 (application).
+  - q048 (emi-short2): predict direction and size of the swing for two described magnet motions, with reasons (application).
+  - q053 (advantage-mcq): same power through the same cable at two voltages; compare heat loss (application).
+  - q054 (stepdown-mcq): turns ratio, output voltage, output power, then mains current of an ideal transformer, 0.5 A (application).
+  - q058 (vs-num): turns ratio to output voltage, then power delivered to a lamp, 12 W (application).
+  - q059 (ns-num): ideal transformer, turns ratio from the two currents, then secondary turns, 1500 (application).
+  - q061 (turns-num): efficiency from input and output powers, 80% (application).
+  - q063 (acdc-short2): currents at 220 V and 22000 V for 22 kW, then which wastes less and why AC is needed (application).
+- **Competency now:** recall 21 · understanding 17 · application 25 · analysis 8 (evaluation 0). Application or higher is **33 of 71 = 46.5%** of items, inside the 45–65% band. Difficulty: d1 23 · d2 17 · d3 28 · d4 3.
+- Rebuilt twice with byte-identical `release.json` and `tests.json`; validator 0 errors, 0 warnings; lint 0 errors, 0 warnings; 23 re-solve checks pass.
 

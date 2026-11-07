@@ -58,3 +58,9 @@ Every question was re-solved from its stem. Findings and fixes:
 - Ray diagrams asked for in answers (the deviation geometry, minimum deviation, the raindrop) are described in words; graders should accept any correct sketch.
 - The rainbow angles are quoted, not derived, as the syllabus requires; a reviewer may prefer “about 42°/40°” wording only (the diagrams show one decimal place).
 - Narration was not yet run through TTS (stage 8); slide `audio` is null.
+
+## Competency audit 2026-11-05
+
+Follow-up to the content-verifier audit `docs/platform/content-qa/2026-11-05-competency-retag-audit.md`, which named ISC 12 Physics ch09 onwards as a lead (the handoff reports one-step items relabelled to stay under 65%). The subject-producer re-read every objective and numerical item tagged application or higher against the audit's definitions: a single formula substitution (with or without a unit conversion), or a stated rule applied directly, is **understanding**; chained relations, a non-routine step (plane vs normal, round trips, reversibility) or a new set-up keep application or analysis. Retagged application/analysis → understanding, with no text, key or solution changed: `q002` (r₂ = A − r₁).
+
+Now: recall 2 · understanding 29 · application 17 · analysis 20 · evaluation 1; application or higher **38 of 69 = 55.1% of items (67% of marks)**, inside the 45–65% band. This supersedes the competency figures above. Short and long answers were not re-judged in this pass.

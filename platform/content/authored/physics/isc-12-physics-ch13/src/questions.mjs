@@ -38,7 +38,7 @@ add('ring-num', num({
   value: Number(dec(ring.v, 2)), tol: 0.5, unit: 'cm',
   sol: r`$u = -15$ cm, $f = -10$ cm. $\dfrac{1}{v} = \dfrac{1}{f} - \dfrac{1}{u} = -\dfrac{1}{10} + \dfrac{1}{15} = -\dfrac{1}{30}$, so $v = ${dec(ring.v, 2)}$ cm: a real image 30 cm in front of the mirror.`,
   scheme: [['Signs: u = −15 cm, f = −10 cm', 1], ['v = −30 cm (real, in front)', 1]],
-  marks: 2, d: 2, c: 'application', t: [1],
+  marks: 2, d: 2, c: 'understanding', t: [1],
 }), (q) => near(ring.v, -30) && q.answer.value === -30 || 'ring');
 const sec = mirror(-45, 30);
 add('security-num', num({
@@ -349,7 +349,7 @@ add('slabshift-num', num({
   value: Number(dec(pw, 2)), tol: 0.05, unit: 'cm',
   sol: r`$s = t\left(1 - \dfrac{1}{n}\right) = 4.5 \times \left(1 - \dfrac{1}{1.5}\right) = ${dec(pw, 2)}$ cm.`,
   scheme: [['s = t(1 − 1/n)', 1], ['s = 1.5 cm', 1]],
-  marks: 2, d: 2, c: 'application', t: [3],
+  marks: 2, d: 2, c: 'understanding', t: [3],
 }), (q) => near(pw, 1.5) && q.answer.value === 1.5 || 'pw');
 const ly = 20 / (4 / 3) + 12 / 1.5;
 add('layers-num', num({
@@ -459,7 +459,7 @@ add('glycerine-num', num({
   value: Number(dec(gly, 3)), tol: 0.2, unit: '°',
   sol: r`$\sin C = \dfrac{n_2}{n_1} = \dfrac{1.47}{1.52} = ${dec(1.47 / 1.52, 4)}$, so $C = \sin^{-1}(${dec(1.47 / 1.52, 4)}) = ${dec(gly, 3)}$ degrees: only rays meeting the boundary almost at grazing incidence are totally reflected.`,
   scheme: [['sin C = n₂/n₁ = 1.47/1.52', 1], ['C ≈ 75.3°', 1]],
-  marks: 2, d: 3, c: 'application', t: [4],
+  marks: 2, d: 3, c: 'understanding', t: [4],
 }), (q) => near(gly, 75.25, 0.001) && q.answer.value === 75.3 || `gly ${gly}`);
 const pl = { v: 1.8e8 };
 pl.n = 3e8 / pl.v;

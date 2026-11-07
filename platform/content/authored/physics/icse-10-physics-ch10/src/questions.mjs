@@ -31,12 +31,12 @@ add('spacing-mcq', mcq({
   d: 2, c: 'understanding', t: [1],
 }));
 add('reverse-mcq', mcq({
-  stem: 'The current in a straight wire threaded through a horizontal card is reversed. The magnetic field lines on the card:',
-  right: 'keep their circular shape but reverse their direction',
-  wrong: ['become straight lines', 'disappear completely', 'keep both their shape and their direction'],
-  sol: 'By the thumb rule, reversing the current reverses the curl of the field — option (@K).',
-  d: 2, c: 'application', t: [1],
-}));
+  stem: 'A long vertical wire passes through a horizontal card and carries a current upwards. A small compass on the card, due east of the wire, has its north pole pointing north (the field of the wire is much stronger than the Earth’s). The current is now reversed and the compass is moved to a point due west of the wire. Its north pole now points:',
+  right: 'north',
+  wrong: ['south', 'east', 'west'],
+  sol: 'Upward current: the field is anticlockwise seen from above, so east of the wire it points north. Reversing the current makes the field clockwise, and west of the wire a clockwise field also points north. Both changes cancel — option (@K).',
+  d: 3, c: 'application', t: [1],
+}), () => same(cross([0, 0, 1], [1, 0, 0]), [0, 1, 0]) && same(cross([0, 0, -1], [-1, 0, 0]), [0, 1, 0]) || 'N');
 add('thumb-ar', ar({
   a: 'Reversing the current in a straight wire reverses the direction of the magnetic field around it.',
   r: 'By the right-hand thumb rule, the curl of the fingers gives the field direction when the thumb points along the current.',
@@ -88,11 +88,11 @@ add('clock-short1', short({
 }));
 add('factors-short2', short({
   marks: 2,
-  stem: 'A long straight cable in a workshop carries a steady current. (a) State one way of making the magnetic field at a point near it stronger. (b) How does the field change as you move farther from the cable?',
-  model: '(a) Increase the current in the cable (or move the point closer to the cable). (b) It becomes weaker; the circular field lines are drawn farther apart.',
-  sol: 'More current; weaker with distance.',
+  stem: 'A student places a small compass at different distances from a long straight wire carrying a steady current and records how far the needle swings from its starting position. At 2 cm the swing is 40°, at 4 cm it is 22° and at 8 cm it is 11°. (a) What do the readings show about the magnetic field as the distance from the wire increases? (b) The student wants the swing at 8 cm to be about 22°. What should be changed in the circuit, and why will it work?',
+  model: '(a) The field gets weaker as the distance increases: the swing falls steadily, to roughly half each time the distance is doubled. (b) Increase the current in the wire. A larger current gives a stronger field at every distance, so the needle at 8 cm will swing farther.',
+  sol: 'Weaker with distance; more current.',
   scheme: [['(a)', 1], ['(b)', 1]],
-  d: 2, c: 'understanding', t: [1],
+  d: 3, c: 'analysis', t: [1],
 }));
 add('loop-short2', short({
   marks: 2,
@@ -105,18 +105,18 @@ add('loop-short2', short({
 
 // ---------------------------------------------------------------- t02 solenoid and electromagnets
 add('emag-mcq', mcq({
-  stem: 'Priya’s home-made electromagnet cannot quite lift a steel spoon. Which change will help it lift the spoon?',
-  right: 'Winding more turns of wire on the same core',
-  wrong: ['Replacing the soft iron core with a wooden rod', 'Reducing the current in the coil', 'Replacing the soft iron core with a plastic tube'],
-  sol: 'More turns (or more current, or a soft iron core) make the electromagnet stronger — option (@K).',
-  d: 1, c: 'application', t: [2],
-}));
+  stem: 'A student winds a coil on an iron nail and counts the paper clips it lifts. With 20 turns and 1.0 A it lifts 4 clips; with 40 turns and 1.0 A it lifts 8 clips; with 20 turns and 2.0 A it lifts 8 clips. Using the pattern in these readings, the number of clips lifted with 40 turns and 2.0 A would be about:',
+  right: '16',
+  wrong: ['12', '8', '32'],
+  sol: 'Doubling the turns doubles the strength (4 to 8) and doubling the current doubles it as well (4 to 8). Doing both doubles it twice: 4 × 2 × 2 = 16 — option (@K). Adding the two gains (12) ignores that the effects multiply.',
+  d: 3, c: 'analysis', t: [2],
+}), () => 4 * 2 * 2 === 16 || 'clips');
 add('core-mcq', mcq({
-  stem: 'The core of the electromagnet in a scrapyard crane is made of soft iron and not steel because soft iron:',
-  right: 'is strongly magnetised by the current and loses almost all its magnetism when the current is switched off',
-  wrong: ['keeps its magnetism permanently after the current stops', 'is a poor conductor of electricity', 'cannot be magnetised at all'],
-  sol: 'The crane must drop its load when switched off — option (@K).',
-  d: 2, c: 'analysis', t: [2],
+  stem: 'In an electric bell, the electromagnet pulls an iron armature, which makes the hammer strike the gong and also breaks the circuit so that a spring can pull the armature back. If the soft iron core were replaced by a steel rod of the same size, the bell would most likely:',
+  right: 'ring once and then stick, because the steel stays magnetised and keeps holding the armature',
+  wrong: ['ring continuously, but more loudly, because steel makes a stronger magnet', 'not ring at all, because steel cannot be magnetised', 'ring continuously, because steel conducts current better than iron'],
+  sol: 'The bell works only if the core loses its magnetism as soon as the circuit breaks. A steel core stays magnetised, so the armature stays pulled in — option (@K).',
+  d: 3, c: 'application', t: [2],
 }));
 add('pins-mcq', mcq({
   stem: 'An electromagnet is holding a cluster of iron pins. The key in its circuit is opened. The pins fall because:',
@@ -126,11 +126,11 @@ add('pins-mcq', mcq({
   d: 2, c: 'understanding', t: [2],
 }));
 add('perm-mcq', mcq({
-  stem: 'Which is an advantage of an electromagnet over a permanent magnet?',
-  right: 'Its strength can be changed by changing the current',
-  wrong: ['It needs no electric supply', 'It keeps its magnetism when the supply fails', 'Its poles can never be reversed'],
-  sol: 'An electromagnet’s strength depends on the current and turns — option (@K).',
-  d: 1, c: 'understanding', t: [2],
+  stem: 'A shop’s fire door is held open against a spring by a magnet fixed in the wall. When the fire alarm trips, the door must close by itself. The wall magnet should be:',
+  right: 'an electromagnet, switched off by the alarm so that it lets go of the door',
+  wrong: ['a permanent magnet, because it never loses its strength', 'a permanent magnet, because the alarm can reverse its poles', 'an electromagnet with a steel core, which keeps holding the door after the current stops'],
+  sol: 'Only an electromagnet with a soft iron core can be switched off to release the door; a permanent magnet cannot, and a steel core would stay magnetised — option (@K).',
+  d: 3, c: 'application', t: [2],
 }));
 add('compass-mcq', mcq({
   stem: 'Seen from its left end, the current in the coil of an electromagnet flows anticlockwise. A small compass is placed just beyond that left end, on the axis. The north pole of the compass needle points:',
@@ -159,10 +159,10 @@ add('emag-fill', fill({
   d: 1, c: 'recall', t: [2],
 }));
 add('pole-fill', fill({
-  stem: 'Looking at one end of a solenoid, Arjun sees the current flowing clockwise. That end of the solenoid is a ___ pole.',
-  acc: [['south', 'S']],
-  sol: 'Clock rule: clockwise means a **south** pole.',
-  d: 2, c: 'application', t: [2],
+  stem: 'Looking at the left end of a solenoid, Arjun sees the current flowing anticlockwise. He brings the south pole of a bar magnet towards that end. The magnet and the solenoid ___ each other.',
+  acc: [['attract', 'attracts', 'attracted']],
+  sol: 'Clock rule: anticlockwise makes the left end a north pole, and a south pole is attracted to it, so they **attract**.',
+  d: 3, c: 'application', t: [2],
 }));
 add('emag-short2', short({
   marks: 2,
@@ -204,12 +204,12 @@ add('forcedir-mcq', mcq({
   d: 4, c: 'analysis', t: [3],
 }), () => same(cross([0, 0, 1], [0, 1, 0]), [-1, 0, 0]) || 'F');
 add('parallel-mcq', mcq({
-  stem: 'A straight wire carrying a current is placed along the field lines, between the poles of a magnet. The force on it is:',
-  right: 'zero',
-  wrong: ['greatest possible', 'along the wire', 'towards the north pole'],
-  sol: 'There is no force when the current is parallel to the field — option (@K).',
-  d: 2, c: 'application', t: [3],
-}), () => same(cross([1, 0, 0], [1, 0, 0]), [0, 0, 0]) || 'F');
+  stem: 'A horizontal rod lies east–west and carries a current from west to east in a uniform horizontal magnetic field pointing north. The rod is pushed upwards. If both the current and the field are now reversed together, the rod is pushed:',
+  right: 'upwards, as before',
+  wrong: ['downwards', 'towards the north', 'nowhere, because the force becomes zero'],
+  sol: 'Left hand: forefinger north, middle finger east, so the thumb points up. Reversing only one of the two would reverse the force, but reversing both restores it: upwards again — option (@K).',
+  d: 3, c: 'application', t: [3],
+}), () => same(cross([1, 0, 0], [0, 1, 0]), [0, 0, 1]) && same(cross([-1, 0, 0], [0, -1, 0]), [0, 0, 1]) || 'F');
 add('parts-mcq', mcq({
   stem: 'In a simple DC motor, the parts that press on the split rings and connect the rotating coil to the battery are the:',
   right: 'carbon brushes',
@@ -261,11 +261,11 @@ add('motor-short2', short({
 
 // ---------------------------------------------------------------- t04 electromagnetic induction; right-hand rule; AC generator; household AC
 add('induce-mcq', mcq({
-  stem: 'A bar magnet is held still inside a coil that is connected to a galvanometer. The galvanometer:',
-  right: 'shows no deflection, because the magnetic field through the coil is not changing',
-  wrong: ['shows a steady deflection, because the magnet is inside the coil', 'deflects to and fro continuously', 'shows the largest deflection possible'],
-  sol: 'A current is induced only while the field linked with the coil changes — option (@K).',
-  d: 2, c: 'application', t: [4],
+  stem: 'A bar magnet is held still inside a coil connected to a galvanometer. It is then pulled out quickly, held still beside the coil, and finally pushed back in slowly. The galvanometer needle shows:',
+  right: 'zero, a large swing one way, zero, then a small swing the opposite way',
+  wrong: ['zero, a large swing one way, zero, then a small swing the same way', 'zero, a small swing one way, zero, then a large swing the opposite way', 'a steady deflection, a large swing, a steady deflection, then a small swing'],
+  sol: 'No change of field means zero; pulling out fast gives a large swing; pushing in reverses the change, so the swing reverses, and slow motion makes it small — option (@K).',
+  d: 3, c: 'application', t: [4],
 }));
 add('frhr-mcq', mcq({
   stem: 'A straight horizontal rod lying north–south is moved due east through a magnetic field that acts vertically downwards. The current induced in the rod flows towards the:',
@@ -279,7 +279,7 @@ add('gen-mcq', mcq({
   right: 'mechanical energy into electrical energy',
   wrong: ['electrical energy into mechanical energy', 'chemical energy into electrical energy', 'light energy into electrical energy'],
   sol: 'A generator (dynamo) converts the energy of motion into electrical energy — option (@K).',
-  d: 1, c: 'application', t: [4],
+  d: 1, c: 'recall', t: [4],
 }));
 add('slip-mcq', mcq({
   stem: 'In a simple AC generator, the two ends of the armature coil are connected to:',
@@ -294,14 +294,14 @@ add('freq-mcq', mcq({
   right: `${f(fq)} Hz`,
   wrong: ['20 Hz', '0.05 Hz', '500 Hz'],
   sol: `$f = \\dfrac{1}{T} = \\dfrac{1}{0.02} = ${f(fq)}$ Hz — option (@K).`,
-  d: 2, c: 'application', t: [4],
+  d: 2, c: 'understanding', t: [4],
 }), () => near(fq, 50) || 'f');
 add('speed-mcq', mcq({
-  stem: 'A student pushes a magnet into a coil connected to a galvanometer, first slowly and then quickly. When it is pushed quickly, the deflection is:',
-  right: 'larger, because the field through the coil changes faster',
-  wrong: ['smaller, because there is less time', 'the same, because the same magnet is used', 'zero, because the magnet moves too fast'],
-  sol: 'A faster change induces a larger current — option (@K).',
-  d: 2, c: 'application', t: [4],
+  stem: 'Pushing the north pole of a magnet slowly into a coil makes the galvanometer needle swing to the right. The same pole is then pulled out of the coil more quickly. The needle swings:',
+  right: 'to the left, by a larger amount',
+  wrong: ['to the right, by a larger amount', 'to the left, by a smaller amount', 'not at all, because the magnet is leaving the coil'],
+  sol: 'Pulling out reverses the change of field, so the swing reverses (left); the faster change makes it larger — option (@K).',
+  d: 3, c: 'application', t: [4],
 }));
 add('induced-ar', ar({
   a: 'A current is induced in a closed coil when a bar magnet is moved towards it.',
@@ -328,29 +328,29 @@ add('slip-fill', fill({
   sol: '**Slip** rings.',
   d: 1, c: 'recall', t: [4],
 }));
-const T60 = 1000 / 60;
+const T60 = (15 * 1000) / 60;
 add('period-num', num({
-  stem: 'In some countries the mains supply has a frequency of 60 Hz. Find the time for one complete cycle, in milliseconds.',
-  value: T60, tol: 0.1, unit: 'ms',
-  sol: r`$T = \dfrac{1}{60}$ s $= \dfrac{1000}{60} \approx 16.7$ ms, so $T = 16.67$ ms.`,
-  scheme: [['16.7 ms', 1]],
-  d: 2, c: 'application', t: [4],
-}), () => near(T60, 16.67, 0.001) || 'T');
-const cyc = 50 * 180;
+  stem: 'In some countries the mains supply has a frequency of 60 Hz. How long, in milliseconds, does the supply take to go through 15 complete cycles?',
+  value: T60, tol: 0.5, unit: 'ms',
+  sol: r`$T = \dfrac{1}{60}$ s, so 15 cycles take $15 \times \dfrac{1}{60} = 0.25$ s $= 250$ ms.`,
+  scheme: [['250 ms', 1]],
+  d: 3, c: 'understanding', t: [4],
+}), () => near(T60, 250) || 'T');
+const cyc = 2 * 50 * 180;
 add('cycles-num', num({
-  stem: 'How many complete cycles does the 50 Hz mains supply go through in 3 minutes?',
+  stem: 'A lamp is connected to the 50 Hz mains for 3 minutes. How many times does the current in the lamp reverse its direction in this time?',
   value: cyc, tol: 0, unit: null,
-  sol: r`$t = 180$ s; cycles $= 50 \times 180 = 9000$.`,
-  scheme: [['9000', 1]],
-  d: 2, c: 'application', t: [4],
-}), () => cyc === 9000 || 'cycles');
+  sol: r`$t = 180$ s, so cycles $= 50 \times 180 = 9000$. The current reverses twice in every cycle, so reversals $= 2 \times 9000 = 18000$.`,
+  scheme: [['18000', 1]],
+  d: 3, c: 'application', t: [4],
+}), () => cyc === 18000 || 'cycles');
 add('emi-short2', short({
   marks: 2,
-  stem: 'Describe how you would show, with a coil, a galvanometer and a bar magnet, that a current can be induced. State one way of making the induced current larger.',
-  model: 'Join the coil to the galvanometer. Push the magnet into the coil: the needle deflects; hold it still: no deflection; pull it out: the needle deflects the other way. The current is larger if the magnet is moved faster (or the coil has more turns, or a stronger magnet is used).',
-  sol: 'Push in, hold, pull out; faster motion.',
-  scheme: [['Observations', 1], ['One way to increase', 1]],
-  d: 2, c: 'understanding', t: [4],
+  stem: 'A coil is joined to a galvanometer. Pushing the north pole of a bar magnet into the coil at a steady speed makes the needle swing to the right. Predict the swing, with a reason, when (a) the same north pole is pulled out again at the same speed, and (b) the south pole is pushed in at twice that speed.',
+  model: '(a) The needle swings to the left by about the same amount: the field through the coil is now decreasing, so the induced current is reversed. (b) The needle swings to the left, because the opposite pole reverses the direction of the change, and by a larger amount, because the field changes faster.',
+  sol: 'Left, same size; left, larger.',
+  scheme: [['(a)', 1], ['(b)', 1]],
+  d: 3, c: 'application', t: [4],
 }));
 add('gen-short2', short({
   marks: 2,
@@ -375,7 +375,7 @@ add('trans-mcq', mcq({
   right: 'step-up transformer',
   wrong: ['step-down transformer', 'DC generator', 'split ring commutator'],
   sol: 'More turns on the secondary raise the voltage — option (@K).',
-  d: 1, c: 'application', t: [5],
+  d: 1, c: 'understanding', t: [5],
 }));
 add('dc-mcq', mcq({
   stem: 'A transformer is connected by mistake to a 12 V car battery. After the switch is closed it gives no output, because:',
@@ -385,20 +385,21 @@ add('dc-mcq', mcq({
   d: 3, c: 'analysis', t: [5],
 }));
 add('advantage-mcq', mcq({
-  stem: 'One important reason why electricity is supplied to towns as AC rather than DC is that AC:',
-  right: 'can be stepped up or down easily with transformers',
-  wrong: ['flows in one direction only', 'can be stored in batteries directly', 'produces no heating in wires'],
-  sol: 'Transformers make high-voltage transmission possible — option (@K).',
-  d: 2, c: 'understanding', t: [5],
+  stem: 'Two designs send the same electric power through the same long cable: design X at 11 kV and design Y at 440 V. Compared with design Y, design X wastes:',
+  right: 'less energy as heat in the cable, because its current is smaller',
+  wrong: ['less energy as heat in the cable, because its current is larger', 'more energy as heat in the cable, because a higher voltage heats the wire more', 'the same energy, because the power sent is the same'],
+  sol: 'For the same power P = VI, the higher voltage means a much smaller current, and the heat produced in the cable depends on the current — option (@K).',
+  d: 3, c: 'application', t: [5],
 }));
-const ratioSD = 11 / 220;
+const VsSD = (220 * 100) / 1000;
+const IpSD = (VsSD * 5) / 220;
 add('stepdown-mcq', mcq({
-  stem: 'A transformer in a phone charger steps 220 V down to 11 V. The ratio of secondary turns to primary turns, Ns : Np, is:',
-  right: '1 : 20',
-  wrong: ['20 : 1', '1 : 11', '11 : 1'],
-  sol: `$\\dfrac{N_{s}}{N_{p}} = \\dfrac{11}{220} = ${f(ratioSD)}$, that is 1 : 20 — option (@K).`,
-  d: 2, c: 'application', t: [5],
-}), () => near(ratioSD, 1 / 20) || 'ratio');
+  stem: 'A transformer in a hostel has 1000 turns on its primary and 100 turns on its secondary, and its primary is joined to the 220 V mains. The secondary supplies a current of 5 A. Assuming no energy is lost, the current drawn from the mains is:',
+  right: '0.5 A',
+  wrong: ['50 A', '5 A', '0.05 A'],
+  sol: `$V_{s} = 220 \\times \\dfrac{100}{1000} = ${f(VsSD)}$ V, so the output power is $22 \\times 5 = 110$ W. The primary takes the same power: $I_{p} = \\dfrac{110}{220} = ${f(IpSD)}$ A — option (@K).`,
+  d: 3, c: 'application', t: [5],
+}), () => near(VsSD, 22) && near(IpSD, 0.5) || 'Ip');
 add('trans-ar', ar({
   a: 'A step-down transformer has fewer turns on its secondary coil than on its primary coil.',
   r: 'A step-down transformer raises both the voltage and the current.',
@@ -410,7 +411,7 @@ add('trans-tf', tf({
   stem: 'A step-up transformer increases both the voltage and the current.',
   key: 'f',
   sol: 'False: when the voltage is stepped up, the current is stepped down (power in about equals power out).',
-  d: 3, c: 'analysis', t: [5],
+  d: 3, c: 'understanding', t: [5],
 }));
 add('trans-fill', fill({
   stem: 'The coil of a transformer that is connected to the AC supply is called the ___ coil.',
@@ -419,20 +420,21 @@ add('trans-fill', fill({
   d: 1, c: 'recall', t: [5],
 }));
 const Vs1 = (220 * 240) / 2200;
+const P1 = Vs1 * 0.5;
 add('vs-num', num({
-  stem: 'The transformer of a bedside lamp has 2200 turns on its primary and 240 turns on its secondary. Find the output voltage, in volts, when the primary is connected to the 220 V mains.',
-  value: Vs1, tol: 0.01, unit: 'V',
-  sol: r`$V_{s} = V_{p} \times \dfrac{N_{s}}{N_{p}} = 220 \times \dfrac{240}{2200} = 24$ V.`,
-  scheme: [['24 V', 1]],
-  d: 2, c: 'application', t: [5],
-}), () => near(Vs1, 24) || 'Vs');
-const Ns2 = (150 * 2200) / 220;
+  stem: 'The transformer of a bedside lamp has 2200 turns on its primary and 240 turns on its secondary, and its primary is connected to the 220 V mains. A small lamp joined across the secondary draws a current of 0.5 A. Find the power delivered to the lamp, in watts.',
+  value: P1, tol: 0.01, unit: 'W',
+  sol: r`$V_{s} = V_{p} \times \dfrac{N_{s}}{N_{p}} = 220 \times \dfrac{240}{2200} = 24$ V, so $P = V_{s}I_{s} = 24 \times 0.5 = 12$ W.`,
+  scheme: [['12 W', 1]],
+  d: 3, c: 'application', t: [5],
+}), () => near(Vs1, 24) && near(P1, 12) || 'Vs');
+const Ns2 = (150 * (220 * 5)) / (220 * 0.5);
 add('ns-num', num({
-  stem: 'A step-up transformer in a microwave oven raises 220 V to 2200 V. Its primary has 150 turns. How many turns does its secondary have?',
+  stem: 'An ideal step-up transformer in a microwave oven takes 5 A from the 220 V mains and delivers a current of 0.5 A at its output. Its primary has 150 turns. How many turns does its secondary have?',
   value: Ns2, tol: 0, unit: 'turns',
-  sol: r`$N_{s} = N_{p} \times \dfrac{V_{s}}{V_{p}} = 150 \times \dfrac{2200}{220} = 1500$.`,
+  sol: r`For an ideal transformer $V_{p}I_{p} = V_{s}I_{s}$, so $\dfrac{V_{s}}{V_{p}} = \dfrac{I_{p}}{I_{s}} = \dfrac{5}{0.5} = 10$ and $N_{s} = N_{p} \times \dfrac{V_{s}}{V_{p}} = 150 \times 10 = 1500$.`,
   scheme: [['1500 turns', 1]],
-  d: 2, c: 'application', t: [5],
+  d: 3, c: 'application', t: [5],
 }), () => Ns2 === 1500 || 'Ns');
 const Ip = (11 * 4) / 220;
 add('ip-num', num({
@@ -442,14 +444,14 @@ add('ip-num', num({
   scheme: [['0.2 A', 1]],
   d: 4, c: 'analysis', t: [5],
 }), () => near(Ip, 0.2) || 'Ip');
-const NsT = (1650 * 12) / 220;
+const effT = ((22 * 4) / (220 * 0.5)) * 100;
 add('turns-num', num({
-  stem: 'A transformer for a 12 V halogen lamp works from the 220 V mains and has 1650 turns on its primary. How many turns must its secondary have?',
-  value: NsT, tol: 0, unit: 'turns',
-  sol: r`$N_{s} = N_{p} \times \dfrac{V_{s}}{V_{p}} = 1650 \times \dfrac{12}{220} = 90$.`,
-  scheme: [['90 turns', 1]],
-  d: 2, c: 'application', t: [5],
-}), () => near(NsT, 90) || 'Ns');
+  stem: 'A transformer takes a current of 0.5 A from the 220 V mains. Its secondary delivers 4 A at 22 V to a set of lamps. Find the efficiency of the transformer, as a percentage.',
+  value: effT, tol: 0.1, unit: '%',
+  sol: r`Input power $= 220 \times 0.5 = 110$ W; output power $= 22 \times 4 = 88$ W. Efficiency $= \dfrac{88}{110} \times 100 = 80\%$.`,
+  scheme: [['80 %', 1]],
+  d: 3, c: 'application', t: [5],
+}), () => near(effT, 80) || 'eff');
 add('hz-short1', short({
   marks: 1,
   stem: 'What is the frequency of the AC mains supply in India, and how long does one cycle take?',
@@ -460,12 +462,12 @@ add('hz-short1', short({
 }));
 add('acdc-short2', short({
   marks: 2,
-  stem: 'Give two advantages of alternating current over direct current for supplying electricity to a city.',
-  model: 'Its voltage can be raised or lowered easily with transformers, so it can be sent at a high voltage and a small current with little loss in the lines. AC generators for large power are simpler and cheaper, and AC can easily be changed into DC when needed.',
-  sol: 'Transformers; simpler generation or easy conversion.',
-  scheme: [['First advantage', 1], ['Second advantage', 1]],
-  d: 2, c: 'understanding', t: [5],
-}));
+  stem: 'A power station sends 22 kW of electric power to a town through two long, thin cables. (a) Find the current in the cables if the power is sent at 220 V, and if it is sent at 22000 V. (b) Which way wastes less energy as heat in the cables, and why can only an alternating supply be changed to that voltage easily?',
+  model: '(a) $I = \\dfrac{P}{V}$: at 220 V, $I = \\dfrac{22000}{220} = 100$ A; at 22000 V, $I = \\dfrac{22000}{22000} = 1$ A. (b) Sending at 22000 V wastes far less energy, because its current is 100 times smaller and the heating of the cables depends on the current. A transformer, which works only on AC, can raise the voltage for transmission and lower it again for use.',
+  sol: '100 A and 1 A; high voltage, transformer needs AC.',
+  scheme: [['(a)', 1], ['(b)', 1]],
+  d: 3, c: 'application', t: [5],
+}), () => near(22000 / 220, 100) && near(22000 / 22000, 1) || 'I');
 const VsT = (220 * 30) / 1100;
 add('trans-short3', short({
   marks: 3,

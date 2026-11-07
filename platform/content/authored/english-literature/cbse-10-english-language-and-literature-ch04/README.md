@@ -34,7 +34,7 @@ CONTEXT §8: summaries, themes, character sketches, literary devices, word meani
 **Deck (23 slides):** title (board-pattern table) → how to use → author and setting (table) → five stages (flow) → summary in four slides → check (ordering) → faith (two-column: strength / blindness) → irony (belief vs fact table) → theme web (table) → check → Lencho (trait/evidence table) → postmaster (table) → "Was Lencho ungrateful?" (two-column) → check → narrative technique → comparison practice with SOYL lines → word meanings (table) → worked example: planning a 6-mark answer (flow) → summary → exam tips. Narration max 69 words, mean 58. Visuals on 10 slides.
 
 **Question bank (63 items, 161 marks):** source-based 7 (5 × 1 each, commentary passages) · short 3-mark 12 (models 40–45 words) · short 2-mark 6 (32–36 words) · long 6-mark 7 (character sketch, "postmaster is the hero", irony, nature, faith debate, postmaster's diary, Lencho's letter after learning the truth; 103–112 words) · mcq 14 · fill-blank 4 · assertion-reason 4 (keys a, b, d, c) · true-false 4 · ordering 2 · match 3.
-- **Difficulty:** d1 8 · d2 28 · d3 20 · d4 7. **Competency:** recall 13 · understanding 20 · application 6 · analysis 19 · evaluation 5 → **48% application or higher** (literature recall is legitimate; higher-order items are the irony, character evaluation, faith debate and extrapolation tasks).
+- **Difficulty:** d1 8 · d2 28 · d3 20 · d4 7. **Competency:** recall 13 · understanding 20 · application 6 · analysis 19 · evaluation 5 → **48% application or higher** (superseded: see Competency audit 2026-11-05) (literature recall is legitimate; higher-order items are the irony, character evaluation, faith debate and extrapolation tasks).
 - **Schemes:** 3-mark = point (1) + explanation (1) + expression (1); 2-mark = point (1) + explanation (1); 6-mark = content 3 + interpretation 1 + organisation/expression 2.
 
 **Tests:** short (20 marks, 40 min): A extract (5) · B 3 of 4 three-mark (9) · C 1 of 2 long (6). Long (40 marks, 90 min): A two extract pairs (10) · B 3 of 4 two-mark (6) · C 4 of 5 three-mark (12) · D two long pairs (12). No shared questions. Both tests follow the board's section pattern (5-mark extracts, 3-mark shorts in 40–50 words, 6-mark longs in 100–120 words) and match the subject's chapter-test blueprints item for item, so `blueprint_id` is `cbse-10-english-language-and-literature-chapter-test-short` / `-long` (blueprints revised 2026-10-27, catalog QA).
@@ -49,3 +49,19 @@ Every item re-answered from its stem; every factual claim checked against the st
 ## Known gaps
 - No n-gram check against the actual text (reference texts are not supplied to `catalog/sources/reference/`); the reproduction review was manual, against the author's knowledge of the story. A human reviewer with the textbook should run the checklist above.
 - Author facts are kept to what is well established (dates, nationality, Spanish original, *El Indio*).
+
+## Competency audit 2026-11-05
+Reference: `docs/platform/content-qa/2026-11-05-competency-retag-audit.md`. (The earlier "Competency:" line above is superseded: see this section.)
+- **Retagged honestly (analysis to lower):** `mc_postmaster_trait` (q039) to understanding; `mc_dramatic` (q041) to understanding; `tf_charity` (q058) to recall; `mt_devices` (q063) to understanding. Assertion-reason q051, q052, q054 and MCQs q040, q045 keep their tags.
+- **Rewritten as genuine higher-order items (same key, type, marks, topic tags, test slots):**
+  - `sa_postmaster_change` (q010) to evaluation: judge whether a classmate's claim (postmaster = postman) is supported, with evidence.
+  - `sa_collection` (q011) to analysis: compare Lencho's faith (waits) with the postmaster's response (acts) on how help reaches a person.
+  - `sa_angry` (q013) to analysis: state the unspoken assumption behind Lencho's anger and trace how it leads him to blame the post office.
+  - `sb_contentment` (q022) to analysis: infer the postmaster's motive from his staying in the office and support it with a second action.
+  - `sb_not_mail` (q023) to application: apply the story's irony to an imagined turn (Lencho learns the truth) and say what he concludes about his own request.
+  - `mc_why_reply` (q044) to analysis: choose the evidence that best supports an inference about the postmaster's motive.
+- **Second pass: passage parts re-judged (rule: a part whose answer the commentary states, or near-verbatim paraphrases, is recall or understanding, however phrased).**
+  - Part retags: `src_rain` b analysis to understanding; `src_night` b, d and e analysis to understanding; `src_letter` b and d analysis to understanding (e stays application); `src_postmaster` d analysis to understanding; `src_money` c, d and e analysis to understanding; `src_irony` c analysis to recall, e evaluation to understanding (d stays evaluation: the writer's reason is not stated); `src_storm` c and d analysis to understanding.
+  - Parent retags (majority of parts): `src_night`, `src_letter`, `src_money` analysis to understanding; `src_irony` evaluation to understanding. All seven passages are now understanding (0 or 1 higher-order part each).
+  - Four more standalone items rewritten as genuine inference items: `sa_why_letter` (q008) to analysis (circumstances plus belief explain the choice of God), `sa_hail_effect` (q014) to analysis (contrast with a family that has savings), `sb_wife` (q024) to analysis (why joy deepens the loss and what that shows about the writer's method), `mc_narrator` (q042) to analysis (what an all-knowing outside narrator allows).
+- **New counts (63 items):** recall 14 · understanding 17 · application 7 · analysis 20 · evaluation 5 = 32/63, **50.8% application or higher**.

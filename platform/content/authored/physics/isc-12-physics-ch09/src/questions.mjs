@@ -44,7 +44,7 @@ add('equivI-num', num({
   value: Number(dec(eqI.I, 2)), tol: 0.05, unit: 'A',
   sol: r`$m = NIA$, so $I = \dfrac{m}{NA} = \dfrac{1.8}{600 \times 5.0 \times 10^{-4}} = \dfrac{1.8}{0.30} = 6.0$ A.`,
   scheme: [['I = m/NA = 6.0 A', 1]],
-  d: 2, c: 'application', t: [1],
+  d: 2, c: 'understanding', t: [1],
 }), (q) => near(eqI.I, 6) && q.answer.value === 6 || 'eqI');
 add('differ-short', short({
   marks: 2,
@@ -86,7 +86,7 @@ add('endon-num', num({
   value: Number(dec(en.B * 1e6, 2)), tol: 0.3, unit: 'μT',
   sol: r`$B = \dfrac{\mu_0}{4\pi}\dfrac{2m}{d^3} = 10^{-7} \times \dfrac{2 \times 2.5}{(0.25)^3} = ${sci(en.B, 2)}$ T, i.e. $${sci(en.B, 2)} \times 10^{6} = ${dec(en.B * 1e6, 2)}$ μT, along the magnetic moment.`,
   scheme: [['B = 3.2 × 10⁻⁵ T = 32 μT', 1]],
-  d: 2, c: 'application', t: [2],
+  d: 2, c: 'understanding', t: [2],
 }), (q) => near(en.B, 3.2e-5) && q.answer.value === 32 || 'en');
 const bs = { l: 0.05, m: 1.2, d: 0.12 };
 bs.B = KM * broadside(bs.m, bs.l, bs.d);
@@ -95,7 +95,7 @@ add('broadside-num', num({
   value: Number(dec(bs.B * 1e6, 3)), tol: 0.3, unit: 'μT',
   sol: r`$l = 0.050$ m and $d = 0.12$ m, so $d^2 + l^2 = 0.0144 + 0.0025 = 0.0169$ m² and $(d^2 + l^2)^{3/2} = (0.13)^3 = ${sci(0.13 ** 3, 4)}$ m³. $B = \dfrac{\mu_0}{4\pi}\dfrac{m}{(d^2 + l^2)^{3/2}} \approx 10^{-7} \times \dfrac{1.2}{${sci(0.13 ** 3, 4)}} \approx ${sci(bs.B, 3)}$ T, i.e. $${sci(bs.B, 3)} \times 10^{6} = ${dec(bs.B * 1e6, 3)}$ μT, opposite to the magnetic moment.`,
   scheme: [['(d² + l²)^(3/2) = (0.13)³ m³', 1], ['B ≈ 54.6 μT', 1]],
-  marks: 2, d: 3, c: 'application', t: [2],
+  marks: 2, d: 3, c: 'understanding', t: [2],
 }), (q) => near(bs.B, 5.462e-5, 0.001) && near(q.answer.value, 54.6) || `bs ${bs.B}`);
 const ex = { l: 0.03, m: 0.8, d: 0.09 };
 ex.B = KM * endOn(ex.m, ex.l, ex.d);
@@ -104,7 +104,7 @@ add('endon-exact-num', num({
   value: Number(dec(ex.B * 1e6, 3)), tol: 1.5, unit: 'μT',
   sol: r`$l = 0.030$ m and $d = 0.090$ m: $d^2 - l^2 = 0.0081 - 0.0009 = 0.0072$ m². $B = \dfrac{\mu_0}{4\pi}\dfrac{2md}{(d^2 - l^2)^2} \approx 10^{-7} \times \dfrac{2 \times 0.80 \times 0.090}{(0.0072)^2} \approx ${sci(ex.B, 3)}$ T, i.e. $${sci(ex.B, 3)} \times 10^{6} = ${dec(ex.B * 1e6, 3)}$ μT, along the magnetic moment.`,
   scheme: [['d² − l² = 0.0072 m² in the end-on formula', 1], ['B ≈ 278 μT', 1]],
-  marks: 2, d: 3, c: 'application', t: [2],
+  marks: 2, d: 3, c: 'understanding', t: [2],
 }), (q) => near(ex.B, 2.7778e-4, 0.001) && q.answer.value === 278 || `ex ${ex.B}`);
 add('ratio-endbroad-mcq', mcq({
   stem: 'Point P lies end-on to a short bar magnet, 20 cm from its centre, and point Q lies broadside-on to the same magnet, 10 cm from its centre. The ratio of the field strengths $B_P : B_Q$ is',
@@ -129,14 +129,14 @@ add('torque-num', num({
   value: Number(dec(tq.t * 1e3, 3)), tol: 0.2, unit: 'mN m',
   sol: r`$\tau = mB\sin\theta = 1.6 \times 0.050 \times \sin 25^\circ \approx 0.080 \times 0.4226 \approx ${sci(tq.t, 3)}$ N m, i.e. $${sci(tq.t, 3)} \times 10^{3} = ${dec(tq.t * 1e3, 3)}$ mN m.`,
   scheme: [['τ = mB sin θ', 1], ['τ ≈ 33.8 mN m', 1]],
-  marks: 2, d: 2, c: 'application', t: [2],
+  marks: 2, d: 2, c: 'understanding', t: [2],
 }), (q) => near(tq.t, 0.033809, 0.001) && near(q.answer.value, 33.8) || `tq ${tq.t}`);
 add('findm-num', num({
   stem: 'A short magnet hung at 30° to a uniform field of 0.032 T experiences a torque of 0.012 N m. Find its magnetic moment, in A m².',
   value: 0.75, tol: 0.01, unit: 'A m²',
   sol: r`$m = \dfrac{\tau}{B\sin\theta} = \dfrac{0.012}{0.032 \times 0.5} = 0.75$ A m².`,
   scheme: [['m = τ/(B sin θ) = 0.75 A m²', 1]],
-  d: 2, c: 'application', t: [2],
+  d: 2, c: 'understanding', t: [2],
 }), () => near(0.012 / (0.032 * Math.sin(rad(30))), 0.75) || 'findm');
 const nt = { m: 0.4, BH: 4e-5 };
 nt.d = Math.cbrt((KM * nt.m) / nt.BH);
@@ -159,7 +159,7 @@ add('halfmax-mcq', mcq({
   right: '30°',
   wrong: ['45°', '60°', '90°'],
   sol: r`$\tau = mB\sin\theta$, so $\sin\theta = \tfrac12$ gives $\theta = 30^\circ$ (150° also works, on the far side) — option (@K).`,
-  d: 2, c: 'application', t: [2],
+  d: 2, c: 'understanding', t: [2],
 }), () => near(Math.sin(rad(30)), 0.5) || 'half');
 add('torquedir-mcq', mcq({
   stem: 'A bar magnet lies on a horizontal table with its magnetic moment pointing north. A uniform horizontal magnetic field pointing east is switched on. The torque on the magnet points',
@@ -221,7 +221,7 @@ add('momentB-num', num({
   value: Number(dec(mb.m, 2)), tol: 0.02, unit: 'A m²',
   sol: r`$B = \dfrac{\mu_0}{4\pi}\dfrac{m}{d^3}$, so $m = \dfrac{Bd^3}{10^{-7}} = \dfrac{2.0 \times 10^{-5} \times (0.20)^3}{10^{-7}} = ${dec(mb.m, 2)}$ A m².`,
   scheme: [['m = Bd³/(μ₀/4π) = 1.6 A m²', 1]],
-  d: 2, c: 'application', t: [2],
+  d: 2, c: 'understanding', t: [2],
 }), (q) => near(mb.m, 1.6) && q.answer.value === 1.6 || 'mb');
 
 // ================================================================ t03 magnetic flux and flux density
@@ -273,7 +273,7 @@ add('Bgauss-num', num({
   value: Math.round(bg.B * 1e4), tol: 5, unit: 'G',
   sol: r`$B = \dfrac{\Phi}{A} = \dfrac{4.8 \times 10^{-4}}{60 \times 10^{-4}} = 0.080$ T, i.e. $0.080 \times 10^{4} = 800$ G.`,
   scheme: [['B = 0.080 T = 800 G', 1]],
-  d: 2, c: 'application', t: [3],
+  d: 2, c: 'understanding', t: [3],
 }), (q) => near(bg.B, 0.08) && q.answer.value === 800 || 'bg');
 add('scalar-ar', ar({
   a: 'Magnetic flux through a surface is a scalar quantity, although the flux density B is a vector.',
@@ -329,7 +329,7 @@ add('chi-num', num({
   value: Number(dec(ch.chi * 1e4, 2)), tol: 0.05, unit: '× 10⁻⁴',
   sol: r`$\chi = \dfrac{M}{H} = \dfrac{1.8}{2.4 \times 10^{3}} = 7.5 \times 10^{-4}$, i.e. $7.5 \times 10^{-4} \times 10^{4} = 7.5$ (small and positive, as for a paramagnet).`,
   scheme: [['χ = M/H = 7.5 × 10⁻⁴', 1]],
-  d: 2, c: 'application', t: [4],
+  d: 2, c: 'understanding', t: [4],
 }), (q) => near(ch.chi, 7.5e-4) && q.answer.value === 7.5 || 'ch');
 const cu = { chi1: 4.2e-4, T1: 250, tC: 77 };
 cu.T2 = cu.tC + 273;
@@ -356,7 +356,7 @@ add('murclass-mcq', mcq({
   right: '−1.0 × 10⁻⁴; diamagnetic',
   wrong: ['+1.0 × 10⁻⁴; paramagnetic', '0.99990; paramagnetic', '−0.99990; diamagnetic'],
   sol: r`$\chi = \mu_r - 1 = 0.99990 - 1 = -1.0 \times 10^{-4}$: small and negative, so the material is diamagnetic — option (@K).`,
-  d: 2, c: 'application', t: [4],
+  d: 2, c: 'understanding', t: [4],
 }), () => near(0.9999 - 1, -1e-4, 1e-6) || 'mur');
 add('sphere-mcq', mcq({
   stem: 'A small sphere of a material whose susceptibility is −1.6 × 10⁻⁵ is placed in a uniform magnetic field. Compared with the empty space around it, the field lines inside the sphere are',
@@ -557,7 +557,7 @@ add('airB-num', num({
   value: Number(dec(ab.B, 3)), tol: 0.01, unit: 'T',
   sol: r`$B = \mu_rB_0 = 700 \times 1.6 \times 10^{-3} = ${dec(ab.B, 3)}$ T.`,
   scheme: [['B = μr B₀ = 1.12 T', 1]],
-  d: 2, c: 'application', t: [5],
+  d: 2, c: 'understanding', t: [5],
 }), (q) => near(ab.B, 1.12) && q.answer.value === 1.12 || 'ab');
 const ec2 = { N: 400, len: 0.25, mur: 900, B: 1.2 };
 ec2.n = ec2.N / ec2.len;

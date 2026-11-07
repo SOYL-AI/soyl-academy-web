@@ -103,7 +103,7 @@ add('silver-num', num({
   value: Number(dec(ag.d * 1e15, 3)), tol: 0.2, unit: 'fm',
   sol: r`$K = 5.5 \times 1.6 \times 10^{-13} = 8.8 \times 10^{-13}$ J. $d = \dfrac{9 \times 10^{9} \times 2 \times 47 \times (1.6 \times 10^{-19})^2}{8.8 \times 10^{-13}} = ${sci(ag.d, 3)}$ m $= ${dec(ag.d * 1e15, 3)}$ fm.`,
   scheme: [['K = 8.8 × 10⁻¹³ J and K = k(2e)(Ze)/d', 1], ['d = 2.46 × 10⁻¹⁴ m = 24.6 fm', 1]],
-  marks: 2, d: 2, c: 'application', t: [1],
+  marks: 2, d: 2, c: 'understanding', t: [1],
 }), (q) => near(turnPoint(M_ALPHA, vFromMeV(5.5), 47) * 1e15, q.answer.value, 0.003) || `ag ${ag.d}`);
 const sn = { dfm: 15, Z: 50 };
 sn.K = (2 * sn.Z * KE2) / (sn.dfm * 1e-15) / MEV;
@@ -112,7 +112,7 @@ add('tin-num', num({
   value: Number(dec(sn.K, 2)), tol: 0.05, unit: 'MeV',
   sol: r`$K = \dfrac{1}{4\pi\varepsilon_0}\cdot\dfrac{2Ze^2}{d} = \dfrac{9 \times 10^{9} \times 2 \times 50 \times (1.6 \times 10^{-19})^2}{1.5 \times 10^{-14}} = ${sci(sn.K * MEV, 4)}$ J $= \dfrac{${sci(sn.K * MEV, 4)}}{1.6 \times 10^{-13}} = ${dec(sn.K, 2)}$ MeV.`,
   scheme: [['K = k(2e)(Ze)/d = 1.536 × 10⁻¹² J', 1], ['K = 9.6 MeV', 1]],
-  marks: 2, d: 2, c: 'application', t: [1],
+  marks: 2, d: 2, c: 'understanding', t: [1],
 }), (q) => near(turnPoint(M_ALPHA, vFromMeV(q.answer.value), 50), 15e-15, 0.003) || `sn ${sn.K}`);
 const sa = { v: 1.6e7, Z: 79 };
 sa.K = 0.5 * M_ALPHA * sa.v ** 2;
@@ -131,7 +131,7 @@ add('cricket-num', num({
   value: Number(dec(cb.km, 2)), tol: 0.05, unit: 'km',
   sol: r`Scale factor $\dfrac{0.53 \times 10^{-10}}{1.0 \times 10^{-15}} = 5.3 \times 10^{4}$, so the atom’s radius becomes $3.6 \times 5.3 \times 10^{4}$ cm $= ${sci(cb.km * 1e5, 2)}$ cm $= ${dec(cb.km, 2)}$ km: a ball in the middle of a town-sized empty sphere.`,
   scheme: [['Ratio 5.3 × 10⁴; radius ≈ 1.9 km', 1]],
-  d: 2, c: 'application', t: [1],
+  d: 2, c: 'understanding', t: [1],
 }), (q) => near((rn(1) / 1e-15) * 0.036 / 1000, q.answer.value, 0.01) || `cb ${cb.km}`);
 const hw = { K: 7.2, Z: 92 };
 hw.d = closest(hw.K, hw.Z);
@@ -235,7 +235,7 @@ add('whichorbit-num', num({
   value: 4, tol: 0, unit: null,
   sol: r`$v_n = \dfrac{v_1}{n}$, so $n = \dfrac{2.2 \times 10^{6}}{5.5 \times 10^{5}} = ${dec(2.2e6 / 5.5e5, 1)}$.`,
   scheme: [['n = v₁/v = 4', 1]],
-  d: 2, c: 'application', t: [2],
+  d: 2, c: 'understanding', t: [2],
 }), (q) => near(bohrV(q.answer.value), 5.5e5, 0.01) && near(vn(4), 5.5e5) || 'wo');
 add('increase-mcq', mcq({
   stem: 'As the electron of a hydrogen atom is moved to orbits of larger n, which one of these quantities increases?',
@@ -472,7 +472,7 @@ add('brackett-num', num({
   value: Number(dec(lamNm(4, 5) / 1000, 3)), tol: 0.01, unit: 'μm',
   sol: r`Brackett: $n_1 = 4$; first line $n_2 = 5$. $\dfrac{1}{\lambda} = 1.097 \times 10^{7}\left(\dfrac{1}{16} - \dfrac{1}{25}\right) = 1.097 \times 10^{7} \times \dfrac{9}{400} = ${sci(invLam(4, 5), 4)}$ m⁻¹, so $\lambda = ${sci(lamNm(4, 5) * 1e-9, 3)}$ m $= ${dec(lamNm(4, 5) / 1000, 3)}$ μm (infrared).`,
   scheme: [['n₁ = 4, n₂ = 5: 1/λ = R × 9/400', 1], ['λ = 4.05 μm', 1]],
-  marks: 2, d: 2, c: 'application', t: [3],
+  marks: 2, d: 2, c: 'understanding', t: [3],
 }), (q) => near(lamFromE(4, 5) / 1000, q.answer.value, 0.002) || 'br');
 add('bracklimit-num', num({
   stem: 'Find the series limit (shortest wavelength) of the Brackett series of hydrogen, in nm (4 significant figures). (R = 1.097 × 10⁷ m⁻¹)',
@@ -486,7 +486,7 @@ add('balmer62-num', num({
   value: Number(dec(lamNm(2, 6), 3)), tol: 1, unit: 'nm',
   sol: r`$\dfrac{1}{\lambda} = R\left(\dfrac{1}{4} - \dfrac{1}{36}\right) = R \times \dfrac{2}{9} = ${sci(invLam(2, 6), 4)}$ m⁻¹, so $\lambda = ${dec(lamNm(2, 6), 4)}$ nm ≈ ${dec(lamNm(2, 6), 3)} nm: a Balmer line, violet, at the edge of the visible.`,
   scheme: [['1/λ = R(1/4 − 1/36) = 2R/9', 1], ['λ = 410 nm', 1]],
-  marks: 2, d: 2, c: 'application', t: [3],
+  marks: 2, d: 2, c: 'understanding', t: [3],
 }), (q) => near(lamFromE(2, 6), q.answer.value, 0.003) && region(lamNm(2, 6)) === 'visible' || 'b62');
 add('lyman31-num', num({
   stem: 'Find the wavelength of the photon emitted when the electron of a hydrogen atom drops from the n = 3 level to the ground state, in nm (4 significant figures). (R = 1.097 × 10⁷ m⁻¹)',
@@ -654,7 +654,7 @@ add('limitwave-mcq', mcq({
   right: `${dec(lamNm(3, Infinity), 3)} nm`,
   wrong: [`${dec(lamNm(3, 4), 4)} nm`, `${dec(lamNm(2, Infinity), 3)} nm`, `${dec(lamNm(4, Infinity), 4)} nm`],
   sol: r`The shortest line is the series limit, $n_2 = \infty$: $\lambda = \dfrac{9}{R} = ${dec(lamNm(3, Infinity), 4)}$ nm — option (@K). ${dec(lamNm(3, 4), 4)} nm is the longest Paschen line; ${dec(lamNm(2, Infinity), 3)} nm is the Balmer limit and ${dec(lamNm(4, Infinity), 4)} nm the Brackett limit.`,
-  d: 2, c: 'application', t: [3],
+  d: 2, c: 'understanding', t: [3],
 }), () => near(lamFromE(3, Infinity), lamNm(3, Infinity), 0.001) || 'lw');
 add('seriesname-mcq', mcq({
   stem: 'All the spectral lines of hydrogen produced by electrons falling to the n = 5 level belong to the',
