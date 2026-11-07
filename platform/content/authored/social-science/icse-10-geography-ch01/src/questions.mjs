@@ -103,8 +103,8 @@ add('corner-fill', fill({
 add('grid-ar', ar({
   a: 'The grid references 4674 and 4746 name different squares of the sheet.',
   r: 'In a grid reference the easting digits are written before the northing digits.',
-  key: 'a',
-  sol: '4674 is easting 46, northing 74. 4746 is easting 47, northing 46. The order of reading (easting first) explains why they differ — option (a).',
+  key: 'c',
+  sol: '4674 is easting 46, northing 74. 4746 is easting 47, northing 46. The order of reading (easting first) explains why they differ — option (c).',
   d: 2, c: 'understanding', t: [1],
 }));
 add('gridrule-short2', short({
@@ -191,8 +191,8 @@ add('contour-tf', tf({
 add('contour-ar', ar({
   a: 'Every point on one contour line has the same height above mean sea level.',
   r: 'The height difference between a contour and the next contour is different in different parts of the sheet.',
-  key: 'c',
-  sol: 'A is true. R is false: the contour interval is constant — option (c).',
+  key: 'a',
+  sol: 'A is true. R is false: the contour interval is constant — option (a).',
   d: 2, c: 'understanding', t: [2],
 }));
 add('close-mcq', mcq({
@@ -233,8 +233,8 @@ add('profile-tf', tf({
 add('slope-ar', ar({
   a: 'Where the contours are widely spaced, the slope is steep.',
   r: 'Contours that are close together show a steep slope.',
-  key: 'd',
-  sol: 'A is false: wide spacing means a gentle slope. R is true — option (d).',
+  key: 'b',
+  sol: 'A is false: wide spacing means a gentle slope. R is true — option (b).',
   d: 2, c: 'understanding', t: [2],
 }));
 add('ci-short3', short({
@@ -325,8 +325,8 @@ add('land-fill', fill({
 add('esc-ar', ar({
   a: 'An escarpment shows on a map as contours bunched along a line.',
   r: 'A ridge shows on a map as long, narrow closed contours.',
-  key: 'b',
-  sol: 'Both statements are true, but R describes a different landform and does not explain A — option (b).',
+  key: 'd',
+  sol: 'Both statements are true, but R describes a different landform and does not explain A — option (d).',
   d: 2, c: 'understanding', t: [3],
 }));
 add('ridgehill-short2', short({
@@ -414,8 +414,8 @@ add('tri-fill', fill({
 add('height-ar', ar({
   a: 'The relative height between two points is found by subtracting the lower height from the higher height.',
   r: 'Relative height is the difference in height between the two points.',
-  key: 'a',
-  sol: 'Both are true, and R explains A — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A — option (c).',
   d: 2, c: 'understanding', t: [4],
 }));
 add('spot-short1', short({
