@@ -60,15 +60,15 @@ add('soil-mcq', mcq({
 add('credit-ar', ar({
   a: 'Many small farmers in India remain in debt to village moneylenders.',
   r: 'They lack easy access to cheap institutional credit, and their incomes are uncertain.',
-  key: 'a',
-  sol: 'Both are true, and R explains A — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A — option (c).',
   d: 2, c: 'understanding', t: [1],
 }));
 add('imp-ar', ar({
   a: 'Agriculture supplies raw materials to several Indian industries.',
   r: 'Most Indian farmers own large, fully mechanised farms.',
-  key: 'c',
-  sol: 'A is true (cotton, jute, sugarcane); R is false — most holdings are small — option (c).',
+  key: 'a',
+  sol: 'A is true (cotton, jute, sugarcane); R is false — most holdings are small — option (a).',
   d: 2, c: 'understanding', t: [1],
 }));
 add('imp-tf', tf({
@@ -175,15 +175,15 @@ add('gr-policy-mcq', mcq({
 add('gr-ar', ar({
   a: 'The first Green Revolution did little for pulses and millets.',
   r: 'High-yielding varieties were developed mainly for wheat and rice.',
-  key: 'a',
-  sol: 'Both are true, and R explains A — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A — option (c).',
   d: 2, c: 'understanding', t: [2],
 }));
 add('gr-ar2', ar({
   a: 'The Green Revolution helped India build up buffer stocks of food grains.',
   r: 'India became the world’s largest exporter of pulses.',
-  key: 'c',
-  sol: 'A is true; R is false — India grows and imports pulses; the gains were in wheat and rice — option (c).',
+  key: 'a',
+  sol: 'A is true; R is false — India grows and imports pulses; the gains were in wheat and rice — option (a).',
   d: 2, c: 'understanding', t: [2],
 }));
 add('gr-tf', tf({
@@ -298,15 +298,15 @@ add('yieldab-mcq', mcq({
 add('type-ar', ar({
   a: 'Intensive farming is common in the densely populated Ganga delta of West Bengal.',
   r: 'Where land is scarce and labour plentiful, farmers try to get the most out of every hectare.',
-  key: 'a',
-  sol: 'Both are true, and R explains A — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A — option (c).',
   d: 2, c: 'analysis', t: [3],
 }));
 add('type-ar2', ar({
   a: 'Plantation farming needs large amounts of capital.',
   r: 'Plantations grow several food crops mainly for the owner’s family.',
-  key: 'c',
-  sol: 'A is true (estates, factories, transport, labour); R is false — plantations grow one cash crop for sale — option (c).',
+  key: 'a',
+  sol: 'A is true (estates, factories, transport, labour); R is false — plantations grow one cash crop for sale — option (a).',
   d: 2, c: 'understanding', t: [3],
 }));
 add('type-tf', tf({
@@ -399,15 +399,15 @@ add('rabi-why-mcq', mcq({
 add('season-ar', ar({
   a: 'Kharif crops are sown in winter.',
   r: 'Kharif crops depend on the rain of the south-west monsoon.',
-  key: 'd',
-  sol: 'A is false (they are sown in June–July); R is true — option (d).',
+  key: 'b',
+  sol: 'A is false (they are sown in June–July); R is true — option (b).',
   d: 2, c: 'understanding', t: [4],
 }));
 add('season-ar2', ar({
   a: 'Zayad crops are grown between the rabi and kharif seasons.',
   r: 'Watermelon and cucumber are examples of zayad crops.',
-  key: 'b',
-  sol: 'Both are true, but naming examples does not explain when the season falls — option (b).',
+  key: 'd',
+  sol: 'Both are true, but naming examples does not explain when the season falls — option (d).',
   d: 2, c: 'understanding', t: [4],
 }));
 add('season-tf', tf({

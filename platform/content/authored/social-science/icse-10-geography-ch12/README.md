@@ -23,7 +23,7 @@ All items are `status: "draft"` until a reviewer approves them.
 | Type | Count | Marks |
 |---|---|---|
 | mcq | 25 | 1 (keys a 7, b 6, c 6, d 6; seeded balanced shuffle) |
-| assertion-reason | 8 | 1 (keys a c a c a c d b) |
+| assertion-reason | 8 | 1 (keys c a c a c a b d) |
 | true-false | 6 | 1 |
 | fill-blank | 5 | 1 (one blank each) |
 | match | 2 | 2 (four pairs, half a mark each) |
@@ -57,4 +57,4 @@ Every question and every internal-choice alternative was re-solved from its stem
 ## Known gaps
 - Narration audio is not generated (TTS stage).
 - SVGs were reviewed by coordinates, not rasterised.
-
+- **2026-11-05:** assertion-reason options reordered to the ICSE 2027 Geography specimen paper (502) order and wording; every key re-mapped so each item's meaning is unchanged.
