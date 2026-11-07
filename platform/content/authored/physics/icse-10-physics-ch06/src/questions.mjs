@@ -58,15 +58,15 @@ add('disp-fill', fill({
 add('disp-ar', ar({
   a: 'Violet light is deviated more than red light by a glass prism.',
   r: 'The refractive index of glass is greater for violet light than for red light.',
-  key: 'a',
-  sol: 'Both are true, and R explains A — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A — option (c).',
   d: 2, c: 'understanding', t: [1],
 }));
 add('mono-ar', ar({
   a: 'All the colours of white light travel at the same speed in vacuum.',
   r: 'White light is split into colours when it passes through a glass prism.',
-  key: 'b',
-  sol: 'Both statements are true, but R does not explain A — option (b).',
+  key: 'd',
+  sol: 'Both statements are true, but R does not explain A — option (d).',
   d: 3, c: 'analysis', t: [1, 2],
 }));
 const vV = c / 1.532;
@@ -191,15 +191,15 @@ add('order-fill', fill({
 add('same-ar', ar({
   a: 'Radio waves from a broadcasting tower and X-rays from a hospital machine travel at the same speed in vacuum.',
   r: 'Both are electromagnetic waves.',
-  key: 'a',
-  sol: 'Both are true, and R explains A — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A — option (c).',
   d: 2, c: 'understanding', t: [2],
 }));
 add('xray-ar', ar({
   a: 'X-rays have longer wavelengths than ultraviolet rays.',
   r: 'X-rays are produced when fast-moving electrons strike a metal target.',
-  key: 'd',
-  sol: 'A is false — X-rays have shorter wavelengths than UV; R is true — option (d).',
+  key: 'b',
+  sol: 'A is false — X-rays have shorter wavelengths than UV; R is true — option (b).',
   d: 2, c: 'understanding', t: [2],
 }));
 const fLW = c / 1500;
@@ -321,15 +321,15 @@ add('uv-fill', fill({
 add('ozone-ar', ar({
   a: 'Life on land would be harmed far more by sunlight if the stratosphere lost its ozone.',
   r: 'Ozone absorbs most of the Sun’s ultraviolet radiation before it reaches the ground.',
-  key: 'a',
-  sol: 'Both are true, and R explains A — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A — option (c).',
   d: 2, c: 'understanding', t: [3],
 }));
 add('irwave-ar', ar({
   a: 'Infrared radiation produces a heating effect when absorbed by the skin.',
   r: 'Infrared radiation has a shorter wavelength than visible light.',
-  key: 'c',
-  sol: 'A is true; R is false — infrared has a longer wavelength than visible light — option (c).',
+  key: 'a',
+  sol: 'A is true; R is false — infrared has a longer wavelength than visible light — option (a).',
   d: 2, c: 'understanding', t: [3],
 }));
 const fIR = c / 1.0e-5;
@@ -440,15 +440,15 @@ add('scat-fill', fill({
 add('sunset-ar', ar({
   a: 'The Sun looks red at sunset.',
   r: 'Red light is scattered most strongly by the air.',
-  key: 'c',
-  sol: 'A is true; R is false — red is scattered least, so it survives the long path — option (c).',
+  key: 'a',
+  sol: 'A is true; R is false — red is scattered least, so it survives the long path — option (a).',
   d: 2, c: 'analysis', t: [4],
 }));
 add('moon-ar', ar({
   a: 'There is no blue sky above the surface of the Moon.',
   r: 'The Moon has no atmosphere to scatter sunlight.',
-  key: 'a',
-  sol: 'Both are true, and R explains A — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A — option (c).',
   d: 2, c: 'understanding', t: [4],
 }));
 const ratio16 = (800 / 400) ** 4;
