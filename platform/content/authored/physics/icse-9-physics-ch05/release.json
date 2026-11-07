@@ -1,0 +1,5320 @@
+{
+  "unit": "icse-9-physics-ch05",
+  "version": 1,
+  "academic_year": "2026-27",
+  "created_at": "2026-11-05T00:00:00+05:30",
+  "decks": [
+    {
+      "unit": "icse-9-physics-ch05",
+      "part": 1,
+      "version": 1,
+      "title": "Pressure in Fluids — Part 1: Thrust, pressure and liquid columns",
+      "language": "en",
+      "goals": [
+        "Distinguish thrust from pressure and calculate pressure as thrust per unit area",
+        "Explain why sharp knives cut better and why heavy vehicles have broad tyres",
+        "Calculate the pressure at a depth in a liquid using p = h rho g"
+      ],
+      "slides": [
+        {
+          "id": "s01",
+          "layout": "title",
+          "heading": "Why does a pin go in so easily?",
+          "body_md": "Part 1 — the same push can do very different jobs depending on the area it acts on.",
+          "bullets": [],
+          "visual": {
+            "kind": "flow",
+            "spec": {
+              "direction": "LR",
+              "nodes": [
+                {
+                  "id": "a",
+                  "label": "Force on a surface"
+                },
+                {
+                  "id": "b",
+                  "label": "Area of contact"
+                },
+                {
+                  "id": "c",
+                  "label": "Pressure"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "a",
+                  "to": "c"
+                },
+                {
+                  "from": "b",
+                  "to": "c"
+                }
+              ]
+            },
+            "alt": "Flow showing that force and area together decide the pressure"
+          },
+          "math": [],
+          "narration": "Push a drawing pin with your thumb and the point goes into the board. Push the same pin the other way round and nothing happens. The force is the same. What changed is the area it acts on.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s02",
+          "layout": "concept",
+          "heading": "Thrust and pressure",
+          "body_md": "**Thrust** is the force acting **perpendicular** to a surface. **Pressure** is the **thrust acting on unit area**: $p = \\dfrac{F}{A}$. The SI unit of pressure is the **pascal (Pa)**, which is one newton per square metre.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Quantity",
+                "Symbol",
+                "SI unit"
+              ],
+              "rows": [
+                [
+                  "Thrust",
+                  "F",
+                  "newton (N)"
+                ],
+                [
+                  "Area",
+                  "A",
+                  "square metre (m²)"
+                ],
+                [
+                  "Pressure",
+                  "p",
+                  "pascal (Pa), 1 Pa = 1 N m⁻²"
+                ]
+              ]
+            },
+            "alt": "Table of thrust, area and pressure with their symbols and SI units"
+          },
+          "math": [
+            "p = \\dfrac{F}{A}"
+          ],
+          "narration": "Thrust is the force pressing at right angles on a surface. Divide it by the area it presses on and you get pressure. One newton on every square metre is one pascal.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s03",
+          "layout": "concept",
+          "heading": "A brick on a sponge",
+          "body_md": "A brick weighing 20 N is placed on a sponge in three ways. The **thrust is the same** each time, but the **area** is different, so the pressure and the dent are different.",
+          "bullets": [],
+          "visual": {
+            "kind": "svg",
+            "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 520 270\" role=\"img\" aria-label=\"The same brick of weight 20 newton on a sponge in three positions. Lying flat on a base of 200 square centimetres it presses with 1000 pascal and makes a shallow dent; on its long edge, base 100 square centimetres, 2000 pascal and a deeper dent; on its end, base 50 square centimetres, 4000 pascal and the deepest dent\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>The same brick of weight 20 newton on a sponge in three positions. Lying flat on a base of 200 square centimetres it presses with 1000 pascal and makes a shallow dent; on its long edge, base 100 square centimetres, 2000 pascal and a deeper dent; on its end, base 50 square centimetres, 4000 pascal and the deepest dent</title><path d=\"M 20 176 H 55 V 186 H 135 V 176 H 170 V 236 H 20 Z\" fill=\"var(--diagram-yellow)\" stroke=\"var(--diagram-muted)\" stroke-width=\"1.5\" fill-opacity=\"0.35\"/><rect x=\"55\" y=\"166\" width=\"80\" height=\"20\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"2\" fill-opacity=\"0.3\"/><text x=\"95\" y=\"140\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\">lying flat</text><text x=\"95\" y=\"156\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"12\">base 200 cm²</text><text x=\"95\" y=\"258\" fill=\"var(--diagram-red)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\">p = 1000 Pa</text><path d=\"M 190 176 H 225 V 196 H 305 V 176 H 340 V 236 H 190 Z\" fill=\"var(--diagram-yellow)\" stroke=\"var(--diagram-muted)\" stroke-width=\"1.5\" fill-opacity=\"0.35\"/><rect x=\"225\" y=\"156\" width=\"80\" height=\"40\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"2\" fill-opacity=\"0.3\"/><text x=\"265\" y=\"130\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\">on its long edge</text><text x=\"265\" y=\"146\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"12\">base 100 cm²</text><text x=\"265\" y=\"258\" fill=\"var(--diagram-red)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\">p = 2000 Pa</text><path d=\"M 350 176 H 405 V 216 H 445 V 176 H 500 V 236 H 350 Z\" fill=\"var(--diagram-yellow)\" stroke=\"var(--diagram-muted)\" stroke-width=\"1.5\" fill-opacity=\"0.35\"/><rect x=\"405\" y=\"136\" width=\"40\" height=\"80\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"2\" fill-opacity=\"0.3\"/><text x=\"425\" y=\"110\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\">on its end</text><text x=\"425\" y=\"126\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"12\">base 50 cm²</text><text x=\"425\" y=\"258\" fill=\"var(--diagram-red)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\">p = 4000 Pa</text><text x=\"260\" y=\"18\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"12\">The same brick, weight 20 N, on a sponge</text></svg>",
+            "alt": "The same brick on a sponge in three positions, with the base area, the pressure and the depth of the dent"
+          },
+          "math": [],
+          "narration": "The brick always weighs the same, so the thrust never changes. Lying flat it spreads the weight over a large area and makes a shallow dent. Standing on its end it uses a small area and presses the hardest.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s04",
+          "layout": "check",
+          "heading": "Quick check: which face presses most?",
+          "body_md": "Look at the three positions of the brick.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Position",
+                "Area of contact",
+                "Pressure"
+              ],
+              "rows": [
+                [
+                  "lying flat",
+                  "200 cm²",
+                  "1000 Pa"
+                ],
+                [
+                  "on its long edge",
+                  "100 cm²",
+                  "2000 Pa"
+                ],
+                [
+                  "on its end",
+                  "50 cm²",
+                  "4000 Pa"
+                ]
+              ]
+            },
+            "alt": "Table of the area and pressure for each position of the brick"
+          },
+          "math": [],
+          "narration": "A brick can rest on any of its faces. Which face gives the greatest pressure on the sponge?",
+          "check_question_id": "q_icse9phy_ch05_001",
+          "audio": null
+        },
+        {
+          "id": "s05",
+          "layout": "concept",
+          "heading": "Increasing and reducing pressure",
+          "body_md": "To get a **large pressure**, make the area **small**. To get a **small pressure**, make the area **large**.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Everyday example",
+                "What is done to the area",
+                "Result"
+              ],
+              "rows": [
+                [
+                  "Knife, needle, nail",
+                  "Edge or point has a very small area",
+                  "Large pressure, so it cuts or pierces"
+                ],
+                [
+                  "Broad tyres of a heavy truck",
+                  "Large area of contact with the road",
+                  "Smaller pressure, so the tyre does not sink"
+                ],
+                [
+                  "Wide strap of a heavy school bag",
+                  "Large area on the shoulder",
+                  "Smaller pressure, more comfortable"
+                ]
+              ]
+            },
+            "alt": "Table of three everyday examples of increasing and reducing pressure by changing the area"
+          },
+          "math": [],
+          "narration": "A sharp knife has an edge with almost no area, so even a gentle push gives a huge pressure. A heavy truck has broad tyres to spread its weight, and a wide bag strap spreads the load on your shoulder.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s06",
+          "layout": "example",
+          "heading": "Worked example 1: a girl standing on the floor",
+          "body_md": "**Problem.** A girl weighs 500 N. The soles of both her feet cover 0.025 m². Find the pressure on the floor when she stands on both feet and when she lifts one foot.\n\n**Step 1.** Thrust $F = 500$ N. On both feet: $p = \\dfrac{F}{A} = \\dfrac{500}{0.025} = 20000$ Pa.\n\n**Step 2.** On one foot the area is halved, so $p = \\dfrac{500}{0.0125} = 40000$ Pa.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Case",
+                "Area",
+                "Pressure"
+              ],
+              "rows": [
+                [
+                  "Both feet",
+                  "0.025 m²",
+                  "20000 Pa"
+                ],
+                [
+                  "One foot",
+                  "0.0125 m²",
+                  "40000 Pa"
+                ]
+              ]
+            },
+            "alt": "Table of the area and pressure when the girl stands on two feet and on one foot"
+          },
+          "math": [],
+          "narration": "Her weight is the thrust on the floor. Divide it by the area of both feet to get twenty thousand pascal. Lift one foot, the area halves, and the pressure doubles to forty thousand pascal.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s07",
+          "layout": "check",
+          "heading": "Quick check: the unit of pressure",
+          "body_md": "Pressure is thrust divided by area.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Thrust",
+                "Area",
+                "Pressure"
+              ],
+              "rows": [
+                [
+                  "N",
+                  "m²",
+                  "?"
+                ]
+              ]
+            },
+            "alt": "Table showing thrust in newton and area in square metre giving a unit for pressure"
+          },
+          "math": [],
+          "narration": "Thrust is measured in newtons and area in square metres. Which of the options is the same as one pascal?",
+          "check_question_id": "q_icse9phy_ch05_002",
+          "audio": null
+        },
+        {
+          "id": "s08",
+          "layout": "concept",
+          "heading": "Pressure inside a liquid",
+          "body_md": "A liquid presses on the **bottom** and on the **walls** of its container, and the pressure acts **in all directions**. At a greater depth the liquid has more weight above it, so the pressure is **greater**. A jet from a lower hole is faster.",
+          "bullets": [],
+          "visual": {
+            "kind": "svg",
+            "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 440 240\" role=\"img\" aria-label=\"A tall vessel of water with three holes in its side at depths of 10, 20 and 30 centimetres, numbered 1, 2 and 3 from the top. The jet from each hole curves down to the table; the deeper holes give jets that start faster and land farther away, because the pressure of the liquid is greater at greater depth (1000, 2000, 3000 pascal)\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>A tall vessel of water with three holes in its side at depths of 10, 20 and 30 centimetres, numbered 1, 2 and 3 from the top. The jet from each hole curves down to the table; the deeper holes give jets that start faster and land farther away, because the pressure of the liquid is greater at greater depth (1000, 2000, 3000 pascal)</title><rect x=\"60\" y=\"34\" width=\"100\" height=\"180\" fill=\"var(--diagram-blue)\" stroke=\"currentColor\" stroke-width=\"2\" fill-opacity=\"0.2\"/><line x1=\"20\" y1=\"214\" x2=\"420\" y2=\"214\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"54\" y1=\"34\" x2=\"42\" y2=\"34\" stroke=\"currentColor\" stroke-width=\"1\"/><line x1=\"48\" y1=\"34\" x2=\"48\" y2=\"106\" stroke=\"currentColor\" stroke-width=\"1\"/><line x1=\"42\" y1=\"58\" x2=\"54\" y2=\"58\" stroke=\"currentColor\" stroke-width=\"1\"/><text x=\"38\" y=\"62\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"end\" font-size=\"11\">10 cm</text><path d=\"M 160.0 58.0 L 163.1 58.1 L 166.1 58.4 L 169.2 58.9 L 172.2 59.6 L 175.3 60.4 L 178.4 61.5 L 181.4 62.8 L 184.5 64.2 L 187.5 65.9 L 190.6 67.8 L 193.7 69.8 L 196.7 72.0 L 199.8 74.5 L 202.8 77.1 L 205.9 79.9 L 209.0 83.0 L 212.0 86.2 L 215.1 89.6 L 218.1 93.2 L 221.2 97.0 L 224.2 101.0 L 227.3 105.2 L 230.4 109.6 L 233.4 114.2 L 236.5 118.9 L 239.5 123.9 L 242.6 129.1 L 245.7 134.4 L 248.7 140.0 L 251.8 145.8 L 254.8 151.7 L 257.9 157.8 L 261.0 164.2 L 264.0 170.7 L 267.1 177.4 L 270.1 184.4 L 273.2 191.5 L 276.3 198.8 L 279.3 206.3 L 282.4 214.0\" fill=\"none\" stroke=\"var(--diagram-blue)\" stroke-width=\"2.5\"/><text x=\"282.4\" y=\"230\" fill=\"var(--diagram-blue)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\">1</text><circle cx=\"160\" cy=\"58\" r=\"3\" fill=\"currentColor\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"150\" y=\"62\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"end\" font-size=\"12\" font-weight=\"bold\">1</text><line x1=\"42\" y1=\"82\" x2=\"54\" y2=\"82\" stroke=\"currentColor\" stroke-width=\"1\"/><text x=\"38\" y=\"86\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"end\" font-size=\"11\">20 cm</text><path d=\"M 160.0 82.0 L 164.0 82.1 L 168.0 82.3 L 171.9 82.7 L 175.9 83.3 L 179.9 84.1 L 183.9 85.0 L 187.9 86.0 L 191.8 87.3 L 195.8 88.7 L 199.8 90.3 L 203.8 92.0 L 207.8 93.9 L 211.7 95.9 L 215.7 98.2 L 219.7 100.6 L 223.7 103.1 L 227.7 105.8 L 231.6 108.7 L 235.6 111.8 L 239.6 115.0 L 243.6 118.4 L 247.6 121.9 L 251.5 125.6 L 255.5 129.5 L 259.5 133.6 L 263.5 137.8 L 267.5 142.1 L 271.4 146.7 L 275.4 151.4 L 279.4 156.3 L 283.4 161.3 L 287.4 166.5 L 291.3 171.8 L 295.3 177.4 L 299.3 183.1 L 303.3 188.9 L 307.3 194.9 L 311.2 201.1 L 315.2 207.5 L 319.2 214.0\" fill=\"none\" stroke=\"var(--diagram-green)\" stroke-width=\"2.5\"/><text x=\"319.2\" y=\"230\" fill=\"var(--diagram-green)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\">2</text><circle cx=\"160\" cy=\"82\" r=\"3\" fill=\"currentColor\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"150\" y=\"86\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"end\" font-size=\"12\" font-weight=\"bold\">2</text><line x1=\"42\" y1=\"106\" x2=\"54\" y2=\"106\" stroke=\"currentColor\" stroke-width=\"1\"/><text x=\"38\" y=\"110\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"end\" font-size=\"11\">30 cm</text><path d=\"M 160.0 106.0 L 164.4 106.1 L 168.8 106.3 L 173.2 106.6 L 177.6 107.1 L 182.0 107.7 L 186.5 108.4 L 190.9 109.3 L 195.3 110.3 L 199.7 111.5 L 204.1 112.8 L 208.5 114.2 L 212.9 115.7 L 217.3 117.4 L 221.7 119.2 L 226.1 121.2 L 230.5 123.3 L 235.0 125.5 L 239.4 127.9 L 243.8 130.4 L 248.2 133.0 L 252.6 135.8 L 257.0 138.7 L 261.4 141.7 L 265.8 144.9 L 270.2 148.2 L 274.6 151.6 L 279.0 155.2 L 283.5 158.9 L 287.9 162.8 L 292.3 166.8 L 296.7 170.9 L 301.1 175.1 L 305.5 179.5 L 309.9 184.0 L 314.3 188.7 L 318.7 193.5 L 323.1 198.4 L 327.5 203.5 L 332.0 208.7 L 336.4 214.0\" fill=\"none\" stroke=\"var(--diagram-red)\" stroke-width=\"2.5\"/><text x=\"336.4\" y=\"230\" fill=\"var(--diagram-red)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\">3</text><circle cx=\"160\" cy=\"106\" r=\"3\" fill=\"currentColor\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"150\" y=\"110\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"end\" font-size=\"12\" font-weight=\"bold\">3</text><text x=\"110\" y=\"26\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\">water surface</text><text x=\"300\" y=\"58\" fill=\"var(--diagram-muted)\" stroke=\"none\" font-size=\"12\">The deeper the hole,</text><text x=\"300\" y=\"74\" fill=\"var(--diagram-muted)\" stroke=\"none\" font-size=\"12\">the faster the jet.</text></svg>",
+            "alt": "A tall vessel with three side holes at different depths; the deeper the hole the faster the jet"
+          },
+          "math": [],
+          "narration": "In the vessel with three holes, the water from the lowest hole shoots out fastest and lands farthest. The deeper we go, the more water lies above, and the greater is the pressure.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s09",
+          "layout": "concept",
+          "heading": "Pressure of a liquid column: p = h rho g",
+          "body_md": "Take a column of liquid of height $h$ and base area $A$ and density $\\rho$. Its weight is the thrust on the base.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Step",
+                "Working"
+              ],
+              "rows": [
+                [
+                  "Volume of the column",
+                  "A × h"
+                ],
+                [
+                  "Mass",
+                  "density × volume = ρ A h"
+                ],
+                [
+                  "Weight (thrust)",
+                  "ρ A h g"
+                ],
+                [
+                  "Pressure = thrust ÷ area",
+                  "ρ A h g ÷ A = h ρ g"
+                ]
+              ]
+            },
+            "alt": "Table of the steps that give the pressure of a liquid column as h rho g"
+          },
+          "math": [
+            "p = h \\rho g"
+          ],
+          "narration": "The weight of the column is density times area times height times gee. Divide by the area and the area cancels. The pressure is height times density times gee. It does not depend on the width of the column at all.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s10",
+          "layout": "example",
+          "heading": "Worked example 2: pressure at the bottom of a lake",
+          "body_md": "**Problem.** Find the pressure due to the water at a depth of 8 m in a lake. ($\\rho = 1000$ kg m⁻³, $g = 10$ m s⁻²)\n\n**Step 1.** $p = h \\rho g = 8 \\times 1000 \\times 10$.\n\n**Step 2.** $p = 80000$ Pa.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Quantity",
+                "Value"
+              ],
+              "rows": [
+                [
+                  "Depth h",
+                  "8 m"
+                ],
+                [
+                  "Density of water",
+                  "1000 kg m⁻³"
+                ],
+                [
+                  "g",
+                  "10 m s⁻²"
+                ],
+                [
+                  "Pressure",
+                  "80000 Pa"
+                ]
+              ]
+            },
+            "alt": "Table of the data and the answer for the pressure at the bottom of a lake"
+          },
+          "math": [],
+          "narration": "Multiply the depth, the density and gee. Eight metres times one thousand times ten gives eighty thousand pascal. Always keep the units in kilograms per cubic metre and metres.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s11",
+          "layout": "check",
+          "heading": "Quick check: doubling the depth",
+          "body_md": "Use p = h ρ g and think about what stays the same.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Depth",
+                "Pressure"
+              ],
+              "rows": [
+                [
+                  "h",
+                  "p"
+                ],
+                [
+                  "2h",
+                  "?"
+                ]
+              ]
+            },
+            "alt": "Table asking for the pressure at twice the depth"
+          },
+          "math": [],
+          "narration": "A diver goes down from a certain depth to twice that depth in the same lake. What happens to the pressure due to the water?",
+          "check_question_id": "q_icse9phy_ch05_003",
+          "audio": null
+        },
+        {
+          "id": "s12",
+          "layout": "concept",
+          "heading": "Pressure grows steadily with depth",
+          "body_md": "In water, the pressure rises by **10 000 Pa for every metre** of depth ($\\rho g = 1000 \\times 10$). The graph of $p$ against $h$ is a **straight line through the origin**.",
+          "bullets": [],
+          "visual": {
+            "kind": "plot",
+            "spec": {
+              "grid": true,
+              "functions": [
+                {
+                  "expr": "10000x",
+                  "label": "p = 10000 h",
+                  "domain": [
+                    0,
+                    10
+                  ]
+                }
+              ],
+              "points": [
+                {
+                  "at": [
+                    2,
+                    20000
+                  ],
+                  "label": "2 m, 20000 Pa"
+                },
+                {
+                  "at": [
+                    5,
+                    50000
+                  ],
+                  "label": "5 m, 50000 Pa"
+                },
+                {
+                  "at": [
+                    8,
+                    80000
+                  ],
+                  "label": "8 m, 80000 Pa"
+                }
+              ],
+              "series": [],
+              "x": {
+                "min": 0,
+                "max": 10,
+                "label": "depth h (m)"
+              },
+              "y": {
+                "min": 0,
+                "max": 100000,
+                "label": "pressure p (Pa)"
+              }
+            },
+            "alt": "Straight-line graph of liquid pressure against depth for water, through the origin and reaching eighty thousand pascal at eight metres",
+            "caption": "Pressure is proportional to depth."
+          },
+          "math": [],
+          "narration": "Because density and gee do not change, the pressure grows in step with depth. The graph is a straight line through the origin. Double the depth and the pressure is doubled.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s13",
+          "layout": "summary",
+          "heading": "Summary: Part 1",
+          "body_md": "",
+          "bullets": [
+            "Thrust is the force perpendicular to a surface; pressure is thrust per unit area, p = F / A.",
+            "The SI unit of pressure is the pascal: 1 Pa = 1 N m⁻².",
+            "A small area gives a large pressure; a large area gives a small pressure.",
+            "A liquid column of height h exerts pressure p = h ρ g, and pressure increases with depth."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Quantity",
+                "Formula",
+                "Unit"
+              ],
+              "rows": [
+                [
+                  "Pressure",
+                  "F / A",
+                  "Pa"
+                ],
+                [
+                  "Pressure of a liquid column",
+                  "h ρ g",
+                  "Pa"
+                ]
+              ]
+            },
+            "alt": "Summary table of the two pressure formulae"
+          },
+          "math": [],
+          "narration": "To sum up Part one. Thrust is a force at right angles to a surface. Pressure is thrust divided by area, measured in pascals. Liquids press harder at greater depth, and the pressure of a column is height times density times gee.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s14",
+          "layout": "exam-tips",
+          "heading": "Exam tips: Part 1",
+          "body_md": "",
+          "bullets": [
+            "Convert the area to square metres before you divide: 1 cm² = 0.0001 m².",
+            "Use the weight of the body as the thrust when it rests on a surface.",
+            "Write density in kg m⁻³ and height in metres in p = h ρ g.",
+            "For reasons, always mention the area: small area, large pressure."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Slip",
+                "Fix"
+              ],
+              "rows": [
+                [
+                  "Using area in cm² with newton and calling the answer Pa",
+                  "Change to m² first"
+                ],
+                [
+                  "Using the mass instead of the weight as thrust",
+                  "Multiply the mass by g"
+                ],
+                [
+                  "Forgetting the unit of pressure",
+                  "Write Pa or N m⁻²"
+                ]
+              ]
+            },
+            "alt": "Table of three common slips and their fixes"
+          },
+          "math": [],
+          "narration": "Exam tips. Change square centimetres to square metres before dividing. When a body rests on a surface, its weight is the thrust, not its mass. And in every explanation, mention the area.",
+          "check_question_id": null,
+          "audio": null
+        }
+      ],
+      "status": "draft",
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "unit": "icse-9-physics-ch05",
+      "part": 2,
+      "version": 1,
+      "title": "Pressure in Fluids — Part 2: Liquid pressure in use, and Pascal’s law",
+      "language": "en",
+      "goals": [
+        "State the factors on which pressure in a stationary liquid depends and those on which it does not",
+        "Explain why a dam is broader at the base and why a diver needs a special suit",
+        "State Pascal’s law and solve simple problems on force and pressure transmitted through a liquid"
+      ],
+      "slides": [
+        {
+          "id": "s01",
+          "layout": "title",
+          "heading": "Why is a dam thicker at the bottom?",
+          "body_md": "Part 2 — what decides the pressure in a liquid, and how a liquid passes pressure on.",
+          "bullets": [],
+          "visual": {
+            "kind": "flow",
+            "spec": {
+              "direction": "LR",
+              "nodes": [
+                {
+                  "id": "a",
+                  "label": "Depth, density, g"
+                },
+                {
+                  "id": "b",
+                  "label": "Pressure at a point"
+                },
+                {
+                  "id": "c",
+                  "label": "Passed on equally by the liquid"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "a",
+                  "to": "b"
+                },
+                {
+                  "from": "b",
+                  "to": "c"
+                }
+              ]
+            },
+            "alt": "Flow from depth, density and g to pressure at a point to pressure passed on equally"
+          },
+          "math": [],
+          "narration": "Look at a dam from the side. It is thin at the top and very thick at the bottom. The builders were using what we shall learn now about pressure in liquids.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s02",
+          "layout": "concept",
+          "heading": "What the pressure depends on",
+          "body_md": "The pressure at a point in a stationary liquid depends on the **depth**, the **density** of the liquid and the **acceleration due to gravity**. It does **not** depend on the shape of the vessel, the area of its base or the total amount of liquid.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Depends on",
+                "Does not depend on"
+              ],
+              "rows": [
+                [
+                  "Depth h of the point",
+                  "Shape of the vessel"
+                ],
+                [
+                  "Density ρ of the liquid",
+                  "Area of the base"
+                ],
+                [
+                  "g at the place",
+                  "Total volume or weight of liquid"
+                ]
+              ]
+            },
+            "alt": "Table of the factors that decide liquid pressure and those that do not"
+          },
+          "math": [],
+          "narration": "Only three things matter: how deep the point is, how dense the liquid is, and the pull of gravity. A narrow tube and a wide tank of the same depth give exactly the same pressure at the bottom.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s03",
+          "layout": "concept",
+          "heading": "Three vessels, one pressure",
+          "body_md": "Vessels of different shape are filled to the **same height**. The pressure at the base is the **same** in all of them: here 4000 Pa.",
+          "bullets": [],
+          "visual": {
+            "kind": "svg",
+            "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 530 225\" role=\"img\" aria-label=\"Three vessels of different shape (straight sides, wider at the base, wider at the top) filled with water to the same height of 0.4 metre. The pressure at the base is 4000 pascal in each\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>Three vessels of different shape (straight sides, wider at the base, wider at the top) filled with water to the same height of 0.4 metre. The pressure at the base is 4000 pascal in each</title><polygon points=\"100,60 160,60 160,170 100,170\" fill=\"var(--diagram-blue)\" fill-opacity=\"0.25\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"60\" y1=\"172\" x2=\"200\" y2=\"172\" stroke=\"currentColor\" stroke-width=\"3\"/><text x=\"130\" y=\"192\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"12\">straight sides</text><text x=\"130\" y=\"210\" fill=\"var(--diagram-red)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\">base pressure 4000 Pa</text><polygon points=\"268,60 312,60 348,170 232,170\" fill=\"var(--diagram-blue)\" fill-opacity=\"0.25\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"220\" y1=\"172\" x2=\"360\" y2=\"172\" stroke=\"currentColor\" stroke-width=\"3\"/><text x=\"290\" y=\"192\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"12\">wider at the base</text><text x=\"290\" y=\"210\" fill=\"var(--diagram-red)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\">base pressure 4000 Pa</text><polygon points=\"392,60 508,60 472,170 428,170\" fill=\"var(--diagram-blue)\" fill-opacity=\"0.25\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"380\" y1=\"172\" x2=\"520\" y2=\"172\" stroke=\"currentColor\" stroke-width=\"3\"/><text x=\"450\" y=\"192\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"12\">wider at the top</text><text x=\"450\" y=\"210\" fill=\"var(--diagram-red)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\">base pressure 4000 Pa</text><line x1=\"14\" y1=\"60\" x2=\"520\" y2=\"60\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\" stroke-dasharray=\"5 4\"/><line x1=\"24\" y1=\"66\" x2=\"24\" y2=\"163.2\" stroke=\"currentColor\" stroke-width=\"1.2\"/><polygon points=\"24,168 21.6,162.5 26.4,162.5\" fill=\"currentColor\" stroke=\"none\"/><line x1=\"24\" y1=\"168\" x2=\"24\" y2=\"70.8\" stroke=\"currentColor\" stroke-width=\"1.2\"/><polygon points=\"24,66 26.4,71.5 21.6,71.5\" fill=\"currentColor\" stroke=\"none\"/><text x=\"30\" y=\"119\" fill=\"currentColor\" stroke=\"none\" font-size=\"11\">h = 0.4 m</text><text x=\"265\" y=\"22\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"12\">The same liquid to the same height h in three vessels</text></svg>",
+            "alt": "Three vessels of different shapes filled to the same height, with the same pressure at the base"
+          },
+          "math": [],
+          "narration": "The three vessels have different shapes and hold different amounts of water. The depth is the same, so the pressure at the base is the same in each. Shape and quantity have no effect.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s04",
+          "layout": "check",
+          "heading": "Quick check: shape does not matter",
+          "body_md": "Think about which factor changes between the vessels.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Vessel",
+                "Depth of liquid"
+              ],
+              "rows": [
+                [
+                  "Narrow tube",
+                  "same"
+                ],
+                [
+                  "Wide tank",
+                  "same"
+                ],
+                [
+                  "Funnel",
+                  "same"
+                ]
+              ]
+            },
+            "alt": "Table showing that three different vessels have the same depth of liquid"
+          },
+          "math": [],
+          "narration": "A narrow tube, a wide tank and a funnel are filled with the same liquid to the same height. How do the pressures at their bases compare?",
+          "check_question_id": "q_icse9phy_ch05_004",
+          "audio": null
+        },
+        {
+          "id": "s05",
+          "layout": "concept",
+          "heading": "Pressure at one depth acts in all directions",
+          "body_md": "At a given depth, the pressure is the **same in every direction**: up, down and sideways. Points at the **same depth** in the same liquid have the **same pressure**.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Observation",
+                "What it shows"
+              ],
+              "rows": [
+                [
+                  "A bubble released at the bottom is squeezed equally on all sides",
+                  "Pressure acts equally in all directions"
+                ],
+                [
+                  "Water in a U-tube stands at the same level in both arms",
+                  "Equal pressure at equal depth"
+                ],
+                [
+                  "A jet from a hole near the bottom is stronger than from a hole near the top",
+                  "Pressure increases with depth"
+                ]
+              ]
+            },
+            "alt": "Table of three observations and what each shows about liquid pressure"
+          },
+          "math": [],
+          "narration": "A tiny bubble deep in water is squeezed from every side by the same amount. Water in the two arms of a U-tube settles at the same level. And jets from lower holes are stronger. All three come from the same idea.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s06",
+          "layout": "concept",
+          "heading": "Dams and divers",
+          "body_md": "Because pressure grows with depth, the water presses much harder near the **base** of a dam. A deep-sea diver faces a large pressure on her body and needs a **strong special suit**.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Situation",
+                "Reason"
+              ],
+              "rows": [
+                [
+                  "Dam wall broader at the base",
+                  "The pressure of the water is greatest at the bottom, so the wall must be strongest there"
+                ],
+                [
+                  "Diver wears a special suit",
+                  "The pressure at depth is very large and can harm the body"
+                ],
+                [
+                  "Deep-sea fish have strong bodies",
+                  "They live where the pressure is huge"
+                ]
+              ]
+            },
+            "alt": "Table of three situations and the reason for each in terms of pressure and depth"
+          },
+          "math": [],
+          "narration": "The deeper the water, the greater the pressure, so a dam needs a thick base to withstand the largest push. In the same way a diver needs a strong suit at great depths.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s07",
+          "layout": "example",
+          "heading": "Worked example 1: force on a window under water",
+          "body_md": "**Problem.** A flat window of area 0.5 m² is fixed in the side of a tank at a depth of 20 m in water. Find the pressure there and the force on the window. ($\\rho = 1000$ kg m⁻³, $g = 10$ m s⁻²)\n\n**Step 1.** $p = h \\rho g = 20 \\times 1000 \\times 10 = 200000$ Pa.\n\n**Step 2.** $F = p \\times A = 200000 \\times 0.5 = 100000$ N.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Step",
+                "Working",
+                "Result"
+              ],
+              "rows": [
+                [
+                  "Pressure",
+                  "20 × 1000 × 10",
+                  "200000 Pa"
+                ],
+                [
+                  "Force",
+                  "200000 × 0.5",
+                  "100000 N"
+                ]
+              ]
+            },
+            "alt": "Table of the working for the pressure and the force on the window"
+          },
+          "math": [],
+          "narration": "First find the pressure at that depth, which is two hundred thousand pascal. The force is pressure times area, so it is one hundred thousand newtons, about the weight of ten tonnes.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s08",
+          "layout": "concept",
+          "heading": "Liquids pass on pressure",
+          "body_md": "When pressure is applied to a liquid in a **closed** vessel, the liquid passes it on to **every part** of the liquid and to the walls. A sealed bottle with holes sends out equal jets all round when it is squeezed.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Place the pressure is applied",
+                "What happens in the liquid"
+              ],
+              "rows": [
+                [
+                  "Piston pushing on a sealed syringe of water",
+                  "Pressure rises everywhere inside"
+                ],
+                [
+                  "Squeezing a sealed plastic bag of milk",
+                  "Milk is forced out of any hole with equal pressure"
+                ],
+                [
+                  "A hole in a squeezed ball full of water",
+                  "Jets start from every hole"
+                ]
+              ]
+            },
+            "alt": "Table of examples in which pressure applied to a liquid is passed on"
+          },
+          "math": [],
+          "narration": "Squeeze a sealed bag of milk and the pressure you apply reaches every corner. That is why milk jets out of a hole wherever it is. Liquids hardly compress, so they carry the pressure on.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s09",
+          "layout": "concept",
+          "heading": "Pascal’s law",
+          "body_md": "Pressure applied to an **enclosed liquid** is transmitted **equally and undiminished** to every part of the liquid and to the walls of the container. If a force $F_1$ acts on a piston of area $A_1$, the pressure $\\dfrac{F_1}{A_1}$ also acts on a piston of area $A_2$, giving $F_2 = \\dfrac{F_1}{A_1} \\times A_2$.",
+          "bullets": [],
+          "visual": {
+            "kind": "svg",
+            "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 400 180\" role=\"img\" aria-label=\"A closed vessel of liquid with a small piston of area A1 pushed down by force F1 and a large piston of area A2 pushed up by force F2; the pressure in the liquid is the same everywhere\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>A closed vessel of liquid with a small piston of area A1 pushed down by force F1 and a large piston of area A2 pushed up by force F2; the pressure in the liquid is the same everywhere</title><path d=\"M 60 82 H 100 V 130 H 220 V 82 H 340 V 150 H 60 Z\" fill=\"var(--diagram-blue)\" fill-opacity=\"0.25\" stroke=\"none\"/><path d=\"M 60 40 V 150 H 340 V 40\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\"/><path d=\"M 100 40 V 130 H 220 V 40\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\"/><rect x=\"62\" y=\"74\" width=\"36\" height=\"8\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"2\"/><rect x=\"222\" y=\"74\" width=\"116\" height=\"8\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"80\" y1=\"34\" x2=\"80\" y2=\"62.8\" stroke=\"var(--diagram-red)\" stroke-width=\"3\"/><polygon points=\"80,70 76.3,61.8 83.7,61.8\" fill=\"var(--diagram-red)\" stroke=\"none\"/><line x1=\"280\" y1=\"70\" x2=\"280\" y2=\"41.2\" stroke=\"var(--diagram-green)\" stroke-width=\"3\"/><polygon points=\"280,34 283.7,42.2 276.3,42.2\" fill=\"var(--diagram-green)\" stroke=\"none\"/><text x=\"46\" y=\"80\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"end\" font-size=\"12\">area A₁</text><text x=\"352\" y=\"80\" fill=\"currentColor\" stroke=\"none\" font-size=\"12\">area A₂</text><text x=\"160\" y=\"108\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"12\">liquid</text><text x=\"80\" y=\"24\" fill=\"var(--diagram-red)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"bold\">F₁</text><text x=\"280\" y=\"24\" fill=\"var(--diagram-green)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"bold\">F₂</text></svg>",
+            "alt": "A closed vessel of liquid with a small piston and a large piston"
+          },
+          "math": [],
+          "narration": "Push the small piston and the liquid carries that pressure to the large piston. The pressure is the same on both. A larger area under the same pressure means a larger force.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s10",
+          "layout": "check",
+          "heading": "Quick check: what Pascal’s law says",
+          "body_md": "Think about what is passed on and what is the same everywhere.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Piston",
+                "Force",
+                "Area"
+              ],
+              "rows": [
+                [
+                  "Small",
+                  "F₁",
+                  "A₁"
+                ],
+                [
+                  "Large",
+                  "F₂",
+                  "A₂"
+                ]
+              ]
+            },
+            "alt": "Table of the force and area of the small and large pistons"
+          },
+          "math": [],
+          "narration": "Which statement agrees with Pascal’s law?",
+          "check_question_id": "q_icse9phy_ch05_005",
+          "audio": null
+        },
+        {
+          "id": "s11",
+          "layout": "example",
+          "heading": "Worked example 2: force transmitted through a liquid",
+          "body_md": "**Problem.** A force of 25 N acts on a piston of area 4 cm² in a liquid-filled closed vessel. Find the force on a piston of area 60 cm² in the same vessel.\n\n**Step 1.** Pressure $p = \\dfrac{F_1}{A_1} = \\dfrac{25}{0.0004} = 62500$ Pa.\n\n**Step 2.** $F_2 = p \\times A_2 = 62500 \\times 0.006 = 375$ N.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Step",
+                "Working",
+                "Result"
+              ],
+              "rows": [
+                [
+                  "Pressure",
+                  "25 ÷ 0.0004",
+                  "62500 Pa"
+                ],
+                [
+                  "Force on the large piston",
+                  "62500 × 0.006",
+                  "375 N"
+                ]
+              ]
+            },
+            "alt": "Table of the working for the pressure and the force on the larger piston"
+          },
+          "math": [],
+          "narration": "Change the areas to square metres first. The pressure is the force divided by the small area. The same pressure acts on the large area, so multiply by it to find the larger force.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s12",
+          "layout": "check",
+          "heading": "Quick check: force from pressure",
+          "body_md": "The pressure is the same everywhere in the liquid.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Piston",
+                "Area"
+              ],
+              "rows": [
+                [
+                  "Small",
+                  "1 cm²"
+                ],
+                [
+                  "Large",
+                  "10 cm²"
+                ]
+              ]
+            },
+            "alt": "Table of the areas of a small and a large piston"
+          },
+          "math": [],
+          "narration": "A force of five newtons acts on a piston of area one square centimetre. What force acts on a piston of area ten square centimetres?",
+          "check_question_id": "q_icse9phy_ch05_006",
+          "audio": null
+        },
+        {
+          "id": "s13",
+          "layout": "summary",
+          "heading": "Summary: Part 2",
+          "body_md": "",
+          "bullets": [
+            "Pressure in a stationary liquid depends on depth, density and g, not on shape, base area or quantity.",
+            "Points at the same depth in a liquid have the same pressure, acting in all directions.",
+            "Dams are broader at the base and divers wear strong suits because pressure increases with depth.",
+            "Pascal’s law: pressure applied to an enclosed liquid is transmitted equally and undiminished everywhere."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Idea",
+                "Result"
+              ],
+              "rows": [
+                [
+                  "Same depth, same liquid",
+                  "Same pressure"
+                ],
+                [
+                  "Pressure on a piston",
+                  "F ÷ A"
+                ],
+                [
+                  "Transmitted pressure",
+                  "Same on every piston"
+                ]
+              ]
+            },
+            "alt": "Summary table of the three main ideas of part two"
+          },
+          "math": [],
+          "narration": "To sum up Part two. Depth, density and gee decide liquid pressure. It is the same at the same depth and acts in every direction. Dams and diver suits follow from this. And Pascal’s law says that a liquid carries applied pressure on equally to every part.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s14",
+          "layout": "exam-tips",
+          "heading": "Exam tips: Part 2",
+          "body_md": "",
+          "bullets": [
+            "Do not mention the shape of the vessel as a factor that changes the pressure.",
+            "In Pascal problems, find the pressure first, then use it for the second piston.",
+            "Convert cm² to m² before dividing force by area.",
+            "Give the reason for a dam or a diver in terms of pressure increasing with depth."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Slip",
+                "Fix"
+              ],
+              "rows": [
+                [
+                  "Saying a wider vessel has more pressure at the base",
+                  "Only depth, density and g matter"
+                ],
+                [
+                  "Using the same force on both pistons",
+                  "The same pressure acts on both, not the same force"
+                ],
+                [
+                  "Leaving out the reason for a thick dam base",
+                  "Pressure increases with depth"
+                ]
+              ]
+            },
+            "alt": "Table of three common slips and their fixes"
+          },
+          "math": [],
+          "narration": "Exam tips. Shape and quantity of liquid never change the pressure at a given depth. In Pascal sums, find the pressure first. Change the units of area. And explain dams and divers by saying that pressure increases with depth.",
+          "check_question_id": null,
+          "audio": null
+        }
+      ],
+      "status": "draft",
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    }
+  ],
+  "notes": {
+    "unit": "icse-9-physics-ch05",
+    "version": 1,
+    "title": "Pressure in Fluids — Notes",
+    "language": "en",
+    "sections": [
+      {
+        "heading": "1. Thrust and pressure",
+        "body_md": "**Thrust** is the force acting perpendicular to a surface; its SI unit is the newton. **Pressure** is the thrust acting on unit area: $p = \\dfrac{F}{A}$. SI unit: **pascal (Pa)**, $1\\ \\text{Pa} = 1\\ \\text{N m}^{-2}$. Convert areas first: $1\\ \\text{cm}^2 = 10^{-4}\\ \\text{m}^2$.\n\n- The same thrust gives a **larger pressure on a smaller area**. A brick of weight 20 N on a sponge presses most when it stands on its smallest face.\n- **Large pressure (small area):** knife edge, needle, nail, axe, pointed tip of a drawing pin.\n- **Small pressure (large area):** broad tyres of heavy vehicles, broad straps of a school bag, the wide feet of a camel, skis and snow shoes.\n- When a body rests on a surface, its **weight** is the thrust on the surface.",
+        "key_terms": [
+          {
+            "term": "Thrust",
+            "definition_md": "The force acting perpendicular to a surface."
+          },
+          {
+            "term": "Pressure",
+            "definition_md": "The thrust acting on a unit area of a surface; p = F / A."
+          },
+          {
+            "term": "Pascal",
+            "definition_md": "The pressure of one newton acting on one square metre."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "p = \\dfrac{F}{A}",
+            "label": "Pressure"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Position of the brick",
+              "Area",
+              "Pressure"
+            ],
+            "rows": [
+              [
+                "lying flat",
+                "200 cm²",
+                "1000 Pa"
+              ],
+              [
+                "on its long edge",
+                "100 cm²",
+                "2000 Pa"
+              ],
+              [
+                "on its end",
+                "50 cm²",
+                "4000 Pa"
+              ]
+            ]
+          },
+          "alt": "Table of the area and pressure for the three positions of a brick"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-9-physics-ch05-t01"
+        ]
+      },
+      {
+        "heading": "2. Pressure in a liquid: p = h ρ g",
+        "body_md": "A liquid presses on the bottom and the walls of its container, and at a point the pressure acts equally in all directions.\n\n**Pressure of a liquid column:** for height $h$, density $\\rho$ and base area $A$, the weight of the liquid is $A h \\rho g$, so the pressure is $p = \\dfrac{A h \\rho g}{A} = h \\rho g$ (the pressure of the liquid alone; the atmosphere is not included).\n\n**Factors:** the pressure depends on the **depth** $h$, the **density** $\\rho$ of the liquid and $g$. It does **not** depend on the shape of the vessel, the area of its base or the quantity of liquid. At the same depth in the same liquid the pressure is the same.\n\n- **Dam:** the wall is made broader at the base because the water pressure increases with depth.\n- **Diver:** needs a strong special suit because of the large pressure at depth.\n- A jet from a lower hole of a tall vessel is faster than from a higher hole.\n- In water ($\\rho = 1000$ kg m⁻³, $g = 10$ m s⁻²) the pressure rises by $10\\,000$ Pa for every metre of depth. Mercury has $\\rho = 13\\,600$ kg m⁻³.",
+        "key_terms": [
+          {
+            "term": "Pressure of a liquid column",
+            "definition_md": "The pressure at depth h in a liquid of density ρ: p = h ρ g."
+          },
+          {
+            "term": "Hydrostatic pressure",
+            "definition_md": "The pressure in a liquid that is not moving, which increases with depth."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "p = h \\rho g",
+            "label": "Pressure at depth h in a liquid"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Depth in water",
+              "Pressure (ρ = 1000 kg m⁻³, g = 10 m s⁻²)"
+            ],
+            "rows": [
+              [
+                "1 m",
+                "10 000 Pa"
+              ],
+              [
+                "5 m",
+                "50 000 Pa"
+              ],
+              [
+                "10 m",
+                "100 000 Pa"
+              ]
+            ]
+          },
+          "alt": "Table of liquid pressure at three depths in water"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-9-physics-ch05-t02"
+        ]
+      },
+      {
+        "heading": "3. Transmission of pressure and Pascal’s law",
+        "body_md": "Liquids are almost incompressible, so pressure applied to a liquid in a closed vessel is passed on to every part of it.\n\n**Pascal’s law:** pressure applied to an enclosed liquid is transmitted equally and undiminished to every part of the liquid and to the walls of the container.\n\nFor a closed vessel with two pistons of areas $A_1$ and $A_2$, a force $F_1$ on the first piston gives the pressure $p = \\dfrac{F_1}{A_1}$ everywhere, so the force on the second piston is $F_2 = p A_2 = F_1 \\dfrac{A_2}{A_1}$.\n\n- **Examples of transmitted pressure:** squeezing a toothpaste tube, a syringe, a sealed bag of milk with holes pricked in it.\n- The **pressure** is the same on every piston; the **force** is not.",
+        "key_terms": [
+          {
+            "term": "Pascal’s law",
+            "definition_md": "Pressure applied to an enclosed liquid is transmitted equally and undiminished to every part of the liquid and to the walls of the container."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "F_2 = F_1 \\dfrac{A_2}{A_1}",
+            "label": "Force on the second piston"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Quantity",
+              "Small piston",
+              "Large piston"
+            ],
+            "rows": [
+              [
+                "Pressure",
+                "F₁ / A₁",
+                "Same pressure"
+              ],
+              [
+                "Force",
+                "F₁",
+                "F₁ × A₂ / A₁"
+              ],
+              [
+                "Area",
+                "A₁",
+                "A₂"
+              ]
+            ]
+          },
+          "alt": "Table comparing pressure, force and area on the two pistons"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-9-physics-ch05-t03"
+        ]
+      }
+    ],
+    "exam_tips_md": "**Common mistakes**\n- Using the area in cm² in p = F / A and calling the answer Pa.\n- Using the mass of a body instead of its weight as the thrust.\n- Writing that liquid pressure depends on the shape or width of the vessel.\n- Saying the same force acts on both pistons instead of the same pressure.\n\n**How marks are usually awarded**\n- Definitions (1 mark each): thrust, pressure, unit; Pascal's law in full.\n- Numericals (1 to 3 marks): formula, substitution with units, answer with unit.\n- Reasons (2 marks): link the area (knife, tyre) or the depth (dam, diver) to pressure.",
+    "status": "draft",
+    "provenance": {
+      "origin": "human",
+      "template_version": null,
+      "model": null,
+      "generated_at": "2026-11-05",
+      "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+    }
+  },
+  "flashcards": {
+    "unit": "icse-9-physics-ch05",
+    "version": 1,
+    "language": "en",
+    "cards": [
+      {
+        "id": "f01",
+        "front_md": "Thrust?",
+        "back_md": "The force acting perpendicular to a surface.",
+        "tag": "definition",
+        "topic_id": "icse-9-physics-ch05-t01"
+      },
+      {
+        "id": "f02",
+        "front_md": "Pressure?",
+        "back_md": "Thrust per unit area, p = F / A.",
+        "tag": "definition",
+        "topic_id": "icse-9-physics-ch05-t01"
+      },
+      {
+        "id": "f03",
+        "front_md": "SI unit of pressure?",
+        "back_md": "Pascal, 1 Pa = 1 N m⁻².",
+        "tag": "fact",
+        "topic_id": "icse-9-physics-ch05-t01"
+      },
+      {
+        "id": "f04",
+        "front_md": "1 cm² in m²?",
+        "back_md": "10⁻⁴ m².",
+        "tag": "fact",
+        "topic_id": "icse-9-physics-ch05-t01"
+      },
+      {
+        "id": "f05",
+        "front_md": "Same thrust, smaller area: pressure?",
+        "back_md": "Greater.",
+        "tag": "concept",
+        "topic_id": "icse-9-physics-ch05-t01"
+      },
+      {
+        "id": "f06",
+        "front_md": "Why do sharp knives cut better?",
+        "back_md": "Small area of the edge gives a large pressure.",
+        "tag": "concept",
+        "topic_id": "icse-9-physics-ch05-t01"
+      },
+      {
+        "id": "f07",
+        "front_md": "Why do heavy trucks have broad tyres?",
+        "back_md": "Large area gives a smaller pressure on the road.",
+        "tag": "concept",
+        "topic_id": "icse-9-physics-ch05-t01"
+      },
+      {
+        "id": "f08",
+        "front_md": "Why is a school bag strap broad?",
+        "back_md": "Large area, smaller pressure on the shoulder.",
+        "tag": "example",
+        "topic_id": "icse-9-physics-ch05-t01"
+      },
+      {
+        "id": "f09",
+        "front_md": "Thrust of a body resting on a table?",
+        "back_md": "Its weight.",
+        "tag": "concept",
+        "topic_id": "icse-9-physics-ch05-t01"
+      },
+      {
+        "id": "f10",
+        "front_md": "Is thrust a scalar or a vector?",
+        "back_md": "A vector, as it is a force.",
+        "tag": "concept",
+        "topic_id": "icse-9-physics-ch05-t01"
+      },
+      {
+        "id": "f11",
+        "front_md": "Pressure of a liquid column?",
+        "back_md": "p = h ρ g.",
+        "tag": "formula",
+        "topic_id": "icse-9-physics-ch05-t02"
+      },
+      {
+        "id": "f12",
+        "front_md": "Factors affecting liquid pressure?",
+        "back_md": "Depth, density, g.",
+        "tag": "concept",
+        "topic_id": "icse-9-physics-ch05-t02"
+      },
+      {
+        "id": "f13",
+        "front_md": "Does vessel shape change the pressure at a given depth?",
+        "back_md": "No.",
+        "tag": "concept",
+        "topic_id": "icse-9-physics-ch05-t02"
+      },
+      {
+        "id": "f14",
+        "front_md": "Does base area change the pressure at a given depth?",
+        "back_md": "No.",
+        "tag": "concept",
+        "topic_id": "icse-9-physics-ch05-t02"
+      },
+      {
+        "id": "f15",
+        "front_md": "Pressure at the same depth in the same liquid?",
+        "back_md": "The same everywhere.",
+        "tag": "fact",
+        "topic_id": "icse-9-physics-ch05-t02"
+      },
+      {
+        "id": "f16",
+        "front_md": "Direction of pressure at a point in a liquid?",
+        "back_md": "Equal in all directions.",
+        "tag": "fact",
+        "topic_id": "icse-9-physics-ch05-t02"
+      },
+      {
+        "id": "f17",
+        "front_md": "Why is a dam broader at the base?",
+        "back_md": "Water pressure increases with depth.",
+        "tag": "concept",
+        "topic_id": "icse-9-physics-ch05-t02"
+      },
+      {
+        "id": "f18",
+        "front_md": "Why does a diver need a special suit?",
+        "back_md": "Large pressure at depth.",
+        "tag": "concept",
+        "topic_id": "icse-9-physics-ch05-t02"
+      },
+      {
+        "id": "f19",
+        "front_md": "Pressure rise per metre of water?",
+        "back_md": "10 000 Pa (ρ = 1000, g = 10).",
+        "tag": "fact",
+        "topic_id": "icse-9-physics-ch05-t02"
+      },
+      {
+        "id": "f20",
+        "front_md": "Density of water in SI units?",
+        "back_md": "1000 kg m⁻³.",
+        "tag": "fact",
+        "topic_id": "icse-9-physics-ch05-t02"
+      },
+      {
+        "id": "f21",
+        "front_md": "Density of mercury?",
+        "back_md": "13 600 kg m⁻³.",
+        "tag": "fact",
+        "topic_id": "icse-9-physics-ch05-t02"
+      },
+      {
+        "id": "f22",
+        "front_md": "Depth doubled: liquid pressure?",
+        "back_md": "Doubled.",
+        "tag": "fact",
+        "topic_id": "icse-9-physics-ch05-t02"
+      },
+      {
+        "id": "f23",
+        "front_md": "Pascal’s law?",
+        "back_md": "Pressure on an enclosed liquid is transmitted equally and undiminished everywhere.",
+        "tag": "definition",
+        "topic_id": "icse-9-physics-ch05-t03"
+      },
+      {
+        "id": "f24",
+        "front_md": "Force on the second piston?",
+        "back_md": "F₂ = F₁ × A₂ / A₁.",
+        "tag": "formula",
+        "topic_id": "icse-9-physics-ch05-t03"
+      },
+      {
+        "id": "f25",
+        "front_md": "What is the same on both pistons?",
+        "back_md": "The pressure.",
+        "tag": "concept",
+        "topic_id": "icse-9-physics-ch05-t03"
+      },
+      {
+        "id": "f26",
+        "front_md": "Why do liquids transmit pressure well?",
+        "back_md": "They are almost incompressible.",
+        "tag": "concept",
+        "topic_id": "icse-9-physics-ch05-t03"
+      },
+      {
+        "id": "f27",
+        "front_md": "Give an example of transmitted pressure.",
+        "back_md": "Squeezing a toothpaste tube; a syringe.",
+        "tag": "example",
+        "topic_id": "icse-9-physics-ch05-t03"
+      },
+      {
+        "id": "f28",
+        "front_md": "Pressure on a piston?",
+        "back_md": "Force divided by its area.",
+        "tag": "formula",
+        "topic_id": "icse-9-physics-ch05-t03"
+      },
+      {
+        "id": "f29",
+        "front_md": "Convert before dividing: area unit?",
+        "back_md": "Square metre.",
+        "tag": "exam-tip",
+        "topic_id": "icse-9-physics-ch05-t03"
+      },
+      {
+        "id": "f30",
+        "front_md": "Exam tip: reasons",
+        "back_md": "Mention area (knife, tyre) or depth (dam, diver).",
+        "tag": "exam-tip",
+        "topic_id": "icse-9-physics-ch05-t01"
+      }
+    ],
+    "status": "draft",
+    "provenance": {
+      "origin": "human",
+      "template_version": null,
+      "model": null,
+      "generated_at": "2026-11-05",
+      "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+    }
+  },
+  "questions": [
+    {
+      "id": "q_icse9phy_ch05_001",
+      "unit": "icse-9-physics-ch05",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A brick is placed on a sponge, resting on each of its three different faces in turn. The pressure on the sponge is greatest when the brick rests on",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "its largest face"
+        },
+        {
+          "id": "b",
+          "text_md": "its middle-sized face"
+        },
+        {
+          "id": "c",
+          "text_md": "any face, because the pressure depends only on the weight"
+        },
+        {
+          "id": "d",
+          "text_md": "its smallest face"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "The thrust (the weight) is the same each time, so the smallest area gives the largest pressure, option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-9-physics-ch05-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch05_002",
+      "unit": "icse-9-physics-ch05",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "One pascal is equal to",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "$1\\ \\text{N m}$"
+        },
+        {
+          "id": "b",
+          "text_md": "$1\\ \\text{N}$"
+        },
+        {
+          "id": "c",
+          "text_md": "$1\\ \\text{N m}^{-2}$"
+        },
+        {
+          "id": "d",
+          "text_md": "$1\\ \\text{kg m}^{-2}$"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Pressure is thrust in newton divided by area in square metre, so the pascal is one newton per square metre, option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-9-physics-ch05-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch05_003",
+      "unit": "icse-9-physics-ch05",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A diver in a lake goes from a depth h to a depth 2h. The pressure due to the water",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "stays the same"
+        },
+        {
+          "id": "b",
+          "text_md": "is doubled"
+        },
+        {
+          "id": "c",
+          "text_md": "is halved"
+        },
+        {
+          "id": "d",
+          "text_md": "becomes four times as great"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Since p = h ρ g, the pressure is proportional to the depth, so it doubles, option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-9-physics-ch05-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch05_004",
+      "unit": "icse-9-physics-ch05",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A narrow tube, a wide tank and a funnel are filled with the same liquid to the same height. The pressures at their bases are",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "greatest in the narrow tube, as the liquid is concentrated there"
+        },
+        {
+          "id": "b",
+          "text_md": "equal in all three"
+        },
+        {
+          "id": "c",
+          "text_md": "greatest in the wide tank, as it holds the most liquid"
+        },
+        {
+          "id": "d",
+          "text_md": "least in the funnel, as its sides slope"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "The depth, the density and g are the same, so the pressure at the base is the same, option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-9-physics-ch05-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch05_005",
+      "unit": "icse-9-physics-ch05",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which statement agrees with Pascal’s law?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "The force on every piston in a closed liquid is the same"
+        },
+        {
+          "id": "b",
+          "text_md": "Pressure in a liquid is greatest at its free surface"
+        },
+        {
+          "id": "c",
+          "text_md": "Pressure applied to an enclosed liquid is passed on equally to every part of the liquid"
+        },
+        {
+          "id": "d",
+          "text_md": "Pressure applied to a liquid is passed on only in the direction of the force"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Pascal’s law concerns the transmission of the applied pressure, equally to all parts, option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-9-physics-ch05-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch05_006",
+      "unit": "icse-9-physics-ch05",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A force of 5 N acts on a piston of area 1 cm² in a closed vessel of liquid. The force on a piston of area 10 cm² in the same vessel is",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "0.5 N"
+        },
+        {
+          "id": "b",
+          "text_md": "5 N"
+        },
+        {
+          "id": "c",
+          "text_md": "50 N"
+        },
+        {
+          "id": "d",
+          "text_md": "500 N"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "$F_2 = F_1 \\times \\dfrac{A_2}{A_1} = 5 \\times \\dfrac{10}{1} = 50$ N, option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-physics-ch05-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch05_007",
+      "unit": "icse-9-physics-ch05",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Thrust is",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "the force acting on a unit area of a surface"
+        },
+        {
+          "id": "b",
+          "text_md": "the force acting perpendicular to a surface"
+        },
+        {
+          "id": "c",
+          "text_md": "the area over which a force acts"
+        },
+        {
+          "id": "d",
+          "text_md": "a force that acts only inside liquids"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Thrust is the perpendicular force on a surface; pressure is the thrust per unit area, option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-9-physics-ch05-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch05_008",
+      "unit": "icse-9-physics-ch05",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "The SI unit of pressure is the",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "newton"
+        },
+        {
+          "id": "b",
+          "text_md": "joule"
+        },
+        {
+          "id": "c",
+          "text_md": "pascal"
+        },
+        {
+          "id": "d",
+          "text_md": "kilogram"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Pressure is measured in pascal, option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-9-physics-ch05-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch05_009",
+      "unit": "icse-9-physics-ch05",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "The tip of a drawing pin is made pointed so that",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "a small area gives a small pressure when the pin is pushed"
+        },
+        {
+          "id": "b",
+          "text_md": "the thrust on the pin becomes larger"
+        },
+        {
+          "id": "c",
+          "text_md": "the weight of the pin is increased"
+        },
+        {
+          "id": "d",
+          "text_md": "a small area gives a large pressure when the pin is pushed"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "The same thrust acting on a tiny area gives a large pressure, option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-9-physics-ch05-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch05_010",
+      "unit": "icse-9-physics-ch05",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A camel walks on soft sand without sinking in much because its broad feet",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "have a small area, which reduces the pressure on the sand"
+        },
+        {
+          "id": "b",
+          "text_md": "reduce the weight of the camel"
+        },
+        {
+          "id": "c",
+          "text_md": "increase the thrust on the sand"
+        },
+        {
+          "id": "d",
+          "text_md": "have a large area, which reduces the pressure on the sand"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "For the same weight, a larger area means a smaller pressure, option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-9-physics-ch05-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch05_011",
+      "unit": "icse-9-physics-ch05",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A thrust of 500 N acts on an area of 0.25 m². The pressure is",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "125 Pa"
+        },
+        {
+          "id": "b",
+          "text_md": "0.0005 Pa"
+        },
+        {
+          "id": "c",
+          "text_md": "500 Pa"
+        },
+        {
+          "id": "d",
+          "text_md": "2000 Pa"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "$p = \\dfrac{F}{A} = \\dfrac{500}{0.25} = 2000$ Pa, option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-physics-ch05-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch05_012",
+      "unit": "icse-9-physics-ch05",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A rectangular block rests on a table, first on its largest face and then on its smallest face. Which statement is correct?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "The thrust and the pressure are the same in both positions"
+        },
+        {
+          "id": "b",
+          "text_md": "The thrust is the same in both positions, but the pressure is greater on the smallest face"
+        },
+        {
+          "id": "c",
+          "text_md": "The thrust is greater on the smallest face"
+        },
+        {
+          "id": "d",
+          "text_md": "The pressure is greater on the largest face"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "The thrust is the weight of the block, which does not change; the pressure is thrust divided by area, option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-9-physics-ch05-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch05_013",
+      "unit": "icse-9-physics-ch05",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A thrust of 20 N acts at right angles on an area of 4 m². The pressure is",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "5 Pa"
+        },
+        {
+          "id": "b",
+          "text_md": "80 Pa"
+        },
+        {
+          "id": "c",
+          "text_md": "0.2 Pa"
+        },
+        {
+          "id": "d",
+          "text_md": "16 Pa"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "$p = \\dfrac{F}{A} = \\dfrac{20}{4} = 5$ Pa, option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-physics-ch05-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch05_014",
+      "unit": "icse-9-physics-ch05",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** A sharp knife cuts a vegetable more easily than a blunt knife when both are pressed with the same force.\n\n**Reason (R):** The sharp edge has a smaller area of contact, so it exerts a larger pressure.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "(A) is true and (R) is false."
+        },
+        {
+          "id": "b",
+          "text_md": "(A) is false and (R) is true."
+        },
+        {
+          "id": "c",
+          "text_md": "Both (A) and (R) are true, and (R) is the correct explanation of (A)."
+        },
+        {
+          "id": "d",
+          "text_md": "Both (A) and (R) are true, but (R) is not the correct explanation of (A)."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Both are true, and the smaller area explains the larger pressure, option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-9-physics-ch05-t01"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch05_015",
+      "unit": "icse-9-physics-ch05",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? Thrust is a scalar quantity.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "f"
+        ]
+      },
+      "solution_md": "False. Thrust is a force and has a direction, perpendicular to the surface.",
+      "marking_scheme": [
+        {
+          "step": "False, with the correction",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-9-physics-ch05-t01"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch05_016",
+      "unit": "icse-9-physics-ch05",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "One pascal is one ___ per square metre.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "newton"
+            ]
+          }
+        ]
+      },
+      "solution_md": "One **newton** per square metre.",
+      "marking_scheme": [
+        {
+          "step": "Writes \"newton\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-9-physics-ch05-t01"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch05_017",
+      "unit": "icse-9-physics-ch05",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Define thrust.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "The **force acting perpendicular to a surface**."
+      },
+      "solution_md": "The perpendicular force on a surface.",
+      "marking_scheme": [
+        {
+          "step": "Perpendicular force on a surface",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-9-physics-ch05-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch05_018",
+      "unit": "icse-9-physics-ch05",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Define thrust and pressure, and state the SI unit of each.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "**Thrust** is the force acting perpendicular to a surface; its unit is the **newton**. **Pressure** is the thrust on each unit of area; its unit is the **pascal** (newton per square metre)."
+      },
+      "solution_md": "Thrust is a perpendicular force (N); pressure is thrust per unit area (Pa).",
+      "marking_scheme": [
+        {
+          "step": "Thrust with its unit",
+          "marks": 1
+        },
+        {
+          "step": "Pressure with its unit",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-9-physics-ch05-t01"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch05_019",
+      "unit": "icse-9-physics-ch05",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Explain why a sharp knife cuts a vegetable more easily than a blunt knife, using the same force.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "The sharp edge has a **much smaller area** in contact with the vegetable. The same force acting on a small area gives a **larger pressure**, so the knife cuts in."
+      },
+      "solution_md": "Small area gives large pressure.",
+      "marking_scheme": [
+        {
+          "step": "Smaller area of the edge",
+          "marks": 1
+        },
+        {
+          "step": "Larger pressure for the same force",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-9-physics-ch05-t01"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch05_020",
+      "unit": "icse-9-physics-ch05",
+      "language": "en",
+      "type": "short",
+      "stem_md": "A girl in high-heeled shoes sinks into soft ground, but the same girl in flat sandals does not. Explain.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Her weight, which is the thrust, is the same in both cases. The heels have a **very small area**, so they exert a **large pressure** and sink; the flat sandals spread the weight over a **large area**, giving a small pressure."
+      },
+      "solution_md": "Same thrust; small heel area gives large pressure, flat sole gives small pressure.",
+      "marking_scheme": [
+        {
+          "step": "Same thrust (weight)",
+          "marks": 1
+        },
+        {
+          "step": "Small area, large pressure, against large area, small pressure",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-physics-ch05-t01"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch05_021",
+      "unit": "icse-9-physics-ch05",
+      "language": "en",
+      "type": "short",
+      "stem_md": "A block of weight 36 N measures 24 cm × 10 cm × 5 cm. Find the greatest and the least pressure it can exert on a table.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "The thrust is the weight, 36 N. The greatest pressure is on the smallest face, $10 \\times 5 = 50\\ \\text{cm}^2 = 0.005\\ \\text{m}^2$: $p = \\dfrac{36}{0.005} = 7200$ Pa.\n\nThe least pressure is on the largest face, $24 \\times 10 = 240\\ \\text{cm}^2 = 0.024\\ \\text{m}^2$: $p = \\dfrac{36}{0.024} = 1500$ Pa."
+      },
+      "solution_md": "7200 Pa on the smallest face; 1500 Pa on the largest face.",
+      "marking_scheme": [
+        {
+          "step": "Faces chosen and areas in m²",
+          "marks": 1
+        },
+        {
+          "step": "7200 Pa",
+          "marks": 1
+        },
+        {
+          "step": "1500 Pa",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-physics-ch05-t01"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch05_022",
+      "unit": "icse-9-physics-ch05",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "A thrust of 600 N acts on a surface of area 0.15 m². Find the pressure on the surface in pascal.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 4000,
+        "tolerance": 0,
+        "unit": "Pa"
+      },
+      "solution_md": "$p = \\dfrac{F}{A} = \\dfrac{600}{0.15} = 4000$ Pa.",
+      "marking_scheme": [
+        {
+          "step": "p = F / A with substitution",
+          "marks": 0.5
+        },
+        {
+          "step": "4000 Pa",
+          "marks": 0.5
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-physics-ch05-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch05_023",
+      "unit": "icse-9-physics-ch05",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "A boy of mass 45 kg stands on one foot, whose sole has an area of 150 cm². Find the pressure on the ground in pascal. (g = 10 m s⁻²)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 30000,
+        "tolerance": 0,
+        "unit": "Pa"
+      },
+      "solution_md": "$F = m g = 45 \\times 10 = 450$ N and $A = 150 \\times 10^{-4} = 0.015$ m², so $p = \\dfrac{450}{0.015} = 30000$ Pa.",
+      "marking_scheme": [
+        {
+          "step": "Thrust 450 N and area in m²",
+          "marks": 0.5
+        },
+        {
+          "step": "30000 Pa",
+          "marks": 0.5
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-physics-ch05-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch05_024",
+      "unit": "icse-9-physics-ch05",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "The edge of a knife has an area of 4 × 10⁻⁵ m². Find the pressure on a fruit when the knife is pressed with a force of 24 N.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 600000,
+        "tolerance": 0,
+        "unit": "Pa"
+      },
+      "solution_md": "$p = \\dfrac{F}{A} = \\dfrac{24}{0.00004} = 600000$ Pa.",
+      "marking_scheme": [
+        {
+          "step": "p = F / A with substitution",
+          "marks": 0.5
+        },
+        {
+          "step": "600000 Pa",
+          "marks": 0.5
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-physics-ch05-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch05_025",
+      "unit": "icse-9-physics-ch05",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "The pressure due to a liquid at a depth h, where the density of the liquid is ρ and the acceleration due to gravity is g, is",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "$\\dfrac{h \\rho}{g}$"
+        },
+        {
+          "id": "b",
+          "text_md": "$h \\rho g$"
+        },
+        {
+          "id": "c",
+          "text_md": "$\\dfrac{h g}{\\rho}$"
+        },
+        {
+          "id": "d",
+          "text_md": "$\\dfrac{\\rho g}{h}$"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "The weight of the column divided by its base area gives h ρ g, option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-9-physics-ch05-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch05_026",
+      "unit": "icse-9-physics-ch05",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A dam is made broader at the base than at the top because",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "the pressure of the water decreases with depth"
+        },
+        {
+          "id": "b",
+          "text_md": "the water at the bottom of the lake is colder"
+        },
+        {
+          "id": "c",
+          "text_md": "the pressure of the water increases with depth"
+        },
+        {
+          "id": "d",
+          "text_md": "a broad base makes the dam look stronger"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "The greatest push of the water is near the bottom, so the wall must be strongest there, option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-9-physics-ch05-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch05_027",
+      "unit": "icse-9-physics-ch05",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "The pressure due to a liquid of density 1100 kg m⁻³ at a depth of 5 m is (g = 10 m s⁻²)",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "5500 Pa"
+        },
+        {
+          "id": "b",
+          "text_md": "110000 Pa"
+        },
+        {
+          "id": "c",
+          "text_md": "27500 Pa"
+        },
+        {
+          "id": "d",
+          "text_md": "55000 Pa"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "$p = h \\rho g = 5 \\times 1100 \\times 10 = 55000$ Pa, option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-physics-ch05-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch05_028",
+      "unit": "icse-9-physics-ch05",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which of the following does NOT affect the pressure at a point inside a liquid at rest?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "the depth of the point below the surface"
+        },
+        {
+          "id": "b",
+          "text_md": "the density of the liquid"
+        },
+        {
+          "id": "c",
+          "text_md": "the area of the base of the vessel"
+        },
+        {
+          "id": "d",
+          "text_md": "the acceleration due to gravity"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Pressure depends on h, ρ and g, but not on the base area or the shape, option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-9-physics-ch05-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch05_029",
+      "unit": "icse-9-physics-ch05",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "At a point inside a liquid at rest, the pressure acts",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "only downwards"
+        },
+        {
+          "id": "b",
+          "text_md": "only upwards"
+        },
+        {
+          "id": "c",
+          "text_md": "only sideways"
+        },
+        {
+          "id": "d",
+          "text_md": "equally in all directions"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "A liquid presses equally in every direction at a given point, option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-9-physics-ch05-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch05_030",
+      "unit": "icse-9-physics-ch05",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Both the depth and the density of a liquid are doubled. The pressure at that depth becomes",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "four times as great"
+        },
+        {
+          "id": "b",
+          "text_md": "twice as great"
+        },
+        {
+          "id": "c",
+          "text_md": "eight times as great"
+        },
+        {
+          "id": "d",
+          "text_md": "unchanged"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "p = h ρ g, so the factor is 2 × 2 = 4, option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-physics-ch05-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch05_031",
+      "unit": "icse-9-physics-ch05",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A deep-sea diver wears a strong special suit because",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "the pressure of the water at great depth is very large"
+        },
+        {
+          "id": "b",
+          "text_md": "the water at great depth is very hot"
+        },
+        {
+          "id": "c",
+          "text_md": "the density of the diver increases at depth"
+        },
+        {
+          "id": "d",
+          "text_md": "the suit reduces the weight of the diver"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Pressure grows with depth and the suit protects the body, option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-9-physics-ch05-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch05_032",
+      "unit": "icse-9-physics-ch05",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** The pressure at the bottom of a lake would increase if the lake were made wider, its depth remaining the same.\n\n**Reason (R):** The pressure at a point in a liquid depends only on the depth, the density of the liquid and g.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "(A) is true and (R) is false."
+        },
+        {
+          "id": "b",
+          "text_md": "(A) is false and (R) is true."
+        },
+        {
+          "id": "c",
+          "text_md": "Both (A) and (R) are true, and (R) is the correct explanation of (A)."
+        },
+        {
+          "id": "d",
+          "text_md": "Both (A) and (R) are true, but (R) is not the correct explanation of (A)."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "(A) is false because width does not matter; (R) is true, option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-9-physics-ch05-t02"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch05_033",
+      "unit": "icse-9-physics-ch05",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? At the same depth, the pressure in sea water is greater than in fresh water.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "t"
+        ]
+      },
+      "solution_md": "True. Sea water has a greater density, so h ρ g is larger.",
+      "marking_scheme": [
+        {
+          "step": "True",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-9-physics-ch05-t02"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch05_034",
+      "unit": "icse-9-physics-ch05",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "The pressure at a point in a liquid depends on its ___ below the surface, the ___ of the liquid and the acceleration due to ___.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "depth",
+              "height"
+            ]
+          },
+          {
+            "accepted": [
+              "density"
+            ]
+          },
+          {
+            "accepted": [
+              "gravity"
+            ]
+          }
+        ]
+      },
+      "solution_md": "Depth; density; gravity.",
+      "marking_scheme": [
+        {
+          "step": "(a) depth",
+          "marks": 1
+        },
+        {
+          "step": "(b) density",
+          "marks": 1
+        },
+        {
+          "step": "(c) gravity",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-9-physics-ch05-t02"
+      ],
+      "expected_time_sec": 240,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch05_035",
+      "unit": "icse-9-physics-ch05",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write the formula for the pressure at depth h in a liquid of density ρ.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "$p = h \\rho g$"
+      },
+      "solution_md": "p = h ρ g.",
+      "marking_scheme": [
+        {
+          "step": "Formula",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-9-physics-ch05-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch05_036",
+      "unit": "icse-9-physics-ch05",
+      "language": "en",
+      "type": "short",
+      "stem_md": "State two factors on which the pressure at a point in a stationary liquid depends.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "The **depth** of the point below the surface and the **density** of the liquid. (The acceleration due to gravity is also acceptable.)"
+      },
+      "solution_md": "Any two of depth, density, g.",
+      "marking_scheme": [
+        {
+          "step": "First factor",
+          "marks": 1
+        },
+        {
+          "step": "Second factor",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-9-physics-ch05-t02"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch05_037",
+      "unit": "icse-9-physics-ch05",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Why is the wall of a dam made thicker at the bottom than at the top?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "The pressure of the water **increases with depth**, so the push on the wall is greatest at the bottom. A **thicker base** is needed there to withstand it."
+      },
+      "solution_md": "Pressure increases with depth, so the base needs more strength.",
+      "marking_scheme": [
+        {
+          "step": "Pressure increases with depth",
+          "marks": 1
+        },
+        {
+          "step": "Thicker base to withstand the larger push",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-9-physics-ch05-t02"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch05_038",
+      "unit": "icse-9-physics-ch05",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Why must a deep-sea diver wear a special suit?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "At great depths the **pressure of the water is very large**, because it grows with depth. The **strong suit** protects the diver’s body from this pressure."
+      },
+      "solution_md": "The pressure at depth is very large; the suit protects the body.",
+      "marking_scheme": [
+        {
+          "step": "Large pressure at great depth",
+          "marks": 1
+        },
+        {
+          "step": "Suit protects the body",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-9-physics-ch05-t02"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch05_039",
+      "unit": "icse-9-physics-ch05",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Show that the pressure at a depth h in a liquid of density ρ is h ρ g.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Take a column of the liquid of height $h$ and base area $A$. Its volume is $A h$ and its mass is $\\rho A h$, so its weight, which is the thrust on the base, is $\\rho A h g$.\n\nPressure $= \\dfrac{\\text{thrust}}{\\text{area}} = \\dfrac{\\rho A h g}{A} = h \\rho g$."
+      },
+      "solution_md": "Volume A h; mass ρ A h; weight ρ A h g; divide by A.",
+      "marking_scheme": [
+        {
+          "step": "Volume and mass of the column",
+          "marks": 1
+        },
+        {
+          "step": "Weight as the thrust",
+          "marks": 1
+        },
+        {
+          "step": "Division by A to give h ρ g",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-9-physics-ch05-t02"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch05_040",
+      "unit": "icse-9-physics-ch05",
+      "language": "en",
+      "type": "short",
+      "stem_md": "A vessel holds water to a depth of 0.5 m and another vessel holds mercury to a depth of 0.04 m. Find the pressure due to each liquid at the bottom and say which is greater. (Density of water 1000 kg m⁻³, of mercury 13 600 kg m⁻³; g = 10 m s⁻²)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Water: $p = 0.5 \\times 1000 \\times 10 = 5000$ Pa.\n\nMercury: $p = 0.04 \\times 13600 \\times 10 = 5440$ Pa.\n\nThe **mercury** exerts the greater pressure, although its column is much shorter."
+      },
+      "solution_md": "5000 Pa; 5440 Pa; mercury is greater.",
+      "marking_scheme": [
+        {
+          "step": "5000 Pa",
+          "marks": 1
+        },
+        {
+          "step": "5440 Pa",
+          "marks": 1
+        },
+        {
+          "step": "Mercury greater",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-physics-ch05-t02"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch05_041",
+      "unit": "icse-9-physics-ch05",
+      "language": "en",
+      "type": "short",
+      "stem_md": "A tall vessel full of water has three small holes in its side, at different depths. Describe what is seen when the holes are opened, and explain it.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "The water spurts out of all three holes, but the **jet from the lowest hole is the fastest and goes farthest**; the top jet is the weakest. This is because the **pressure of the liquid increases with depth** (p = h ρ g), so the water at the lowest hole is pushed out with the greatest force."
+      },
+      "solution_md": "Lowest jet fastest; pressure increases with depth.",
+      "marking_scheme": [
+        {
+          "step": "Jets from all holes",
+          "marks": 1
+        },
+        {
+          "step": "Lowest jet strongest",
+          "marks": 1
+        },
+        {
+          "step": "Pressure increases with depth",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-9-physics-ch05-t02"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch05_042",
+      "unit": "icse-9-physics-ch05",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "Find the pressure due to the water at a depth of 12 m in the sea. (Density of sea water 1030 kg m⁻³; g = 10 m s⁻²)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 123600,
+        "tolerance": 0,
+        "unit": "Pa"
+      },
+      "solution_md": "$p = h \\rho g = 12 \\times 1030 \\times 10 = 123600$ Pa.",
+      "marking_scheme": [
+        {
+          "step": "p = h ρ g with substitution",
+          "marks": 0.5
+        },
+        {
+          "step": "123600 Pa",
+          "marks": 0.5
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-physics-ch05-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch05_043",
+      "unit": "icse-9-physics-ch05",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "Find the pressure due to kerosene at the bottom of a tank in which it is 0.35 m deep. (Density of kerosene 800 kg m⁻³; g = 10 m s⁻²)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 2800,
+        "tolerance": 0,
+        "unit": "Pa"
+      },
+      "solution_md": "$p = h \\rho g = 0.35 \\times 800 \\times 10 = 2800$ Pa.",
+      "marking_scheme": [
+        {
+          "step": "p = h ρ g with substitution",
+          "marks": 0.5
+        },
+        {
+          "step": "2800 Pa",
+          "marks": 0.5
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-physics-ch05-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch05_044",
+      "unit": "icse-9-physics-ch05",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "A column of mercury 0.30 m high stands in a vessel. Find the pressure due to the mercury at the bottom. (Density of mercury 13 600 kg m⁻³; g = 10 m s⁻²)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 40800,
+        "tolerance": 0,
+        "unit": "Pa"
+      },
+      "solution_md": "$p = h \\rho g = 0.30 \\times 13600 \\times 10 = 40800$ Pa.",
+      "marking_scheme": [
+        {
+          "step": "p = h ρ g with substitution",
+          "marks": 0.5
+        },
+        {
+          "step": "40800 Pa",
+          "marks": 0.5
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-physics-ch05-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch05_045",
+      "unit": "icse-9-physics-ch05",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "At what depth in a lake is the pressure due to the water 50 000 Pa? (Density of water 1000 kg m⁻³; g = 10 m s⁻²)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 5,
+        "tolerance": 0,
+        "unit": "m"
+      },
+      "solution_md": "$h = \\dfrac{p}{\\rho g} = \\dfrac{50000}{1000 \\times 10} = 5$ m.",
+      "marking_scheme": [
+        {
+          "step": "h = p / (ρ g) with substitution",
+          "marks": 0.5
+        },
+        {
+          "step": "5 m",
+          "marks": 0.5
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-physics-ch05-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch05_046",
+      "unit": "icse-9-physics-ch05",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "The pressure at a depth of 0.6 m in a liquid is 5400 Pa. Find the density of the liquid. (g = 10 m s⁻²)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 900,
+        "tolerance": 0,
+        "unit": "kg m⁻³"
+      },
+      "solution_md": "$\\rho = \\dfrac{p}{h g} = \\dfrac{5400}{0.6 \\times 10} = 900$ kg m⁻³.",
+      "marking_scheme": [
+        {
+          "step": "ρ = p / (h g) with substitution",
+          "marks": 0.5
+        },
+        {
+          "step": "900 kg m⁻³",
+          "marks": 0.5
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-physics-ch05-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch05_047",
+      "unit": "icse-9-physics-ch05",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "A tank has a rectangular base 3.0 m by 2.0 m and holds water to a depth of 0.8 m. Find the force of the water on the base. (Density of water 1000 kg m⁻³; g = 10 m s⁻²)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 48000,
+        "tolerance": 0,
+        "unit": "N"
+      },
+      "solution_md": "$p = h \\rho g = 0.8 \\times 1000 \\times 10 = 8000$ Pa and $A = 3.0 \\times 2.0 = 6$ m², so $F = p A = 8000 \\times 6 = 48000$ N.",
+      "marking_scheme": [
+        {
+          "step": "Pressure at the base",
+          "marks": 0.5
+        },
+        {
+          "step": "F = p A = 48000 N",
+          "marks": 0.5
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-physics-ch05-t01",
+        "icse-9-physics-ch05-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch05_048",
+      "unit": "icse-9-physics-ch05",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Pascal’s law states that pressure applied to an enclosed liquid is",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "transmitted equally and undiminished to every part of the liquid"
+        },
+        {
+          "id": "b",
+          "text_md": "transmitted only in the direction of the applied force"
+        },
+        {
+          "id": "c",
+          "text_md": "greatest at the point where it is applied"
+        },
+        {
+          "id": "d",
+          "text_md": "divided among the parts in proportion to their areas"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "This is the statement of Pascal’s law, option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-9-physics-ch05-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch05_049",
+      "unit": "icse-9-physics-ch05",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which of the following is an example of the transmission of pressure in a liquid?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Squeezing a sealed bag of milk makes milk spurt from a pinhole anywhere in the bag"
+        },
+        {
+          "id": "b",
+          "text_md": "A knife cutting a fruit"
+        },
+        {
+          "id": "c",
+          "text_md": "A heavy truck running on broad tyres"
+        },
+        {
+          "id": "d",
+          "text_md": "A dam with a broad base"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "The pressure applied by the hand is passed on to every part of the milk, option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-9-physics-ch05-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch05_050",
+      "unit": "icse-9-physics-ch05",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A force of 10 N acts on a piston of area 2 cm² in a closed vessel of liquid. The force on a second piston of area 40 cm² in the same vessel is",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "0.5 N"
+        },
+        {
+          "id": "b",
+          "text_md": "200 N"
+        },
+        {
+          "id": "c",
+          "text_md": "20 N"
+        },
+        {
+          "id": "d",
+          "text_md": "400 N"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "$F_2 = F_1 \\times \\dfrac{A_2}{A_1} = 10 \\times \\dfrac{40}{2} = 200$ N, option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-physics-ch05-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch05_051",
+      "unit": "icse-9-physics-ch05",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Liquids are used to transmit pressure because they are",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "almost incompressible"
+        },
+        {
+          "id": "b",
+          "text_md": "easily compressed"
+        },
+        {
+          "id": "c",
+          "text_md": "very light"
+        },
+        {
+          "id": "d",
+          "text_md": "always very hot"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "A liquid hardly changes its volume, so the pressure is passed on undiminished, option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-9-physics-ch05-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch05_052",
+      "unit": "icse-9-physics-ch05",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A spherical rubber ball full of water has small holes all over it. When it is squeezed, water spurts out",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "from every hole, because the pressure is passed on to all parts of the water"
+        },
+        {
+          "id": "b",
+          "text_md": "only from the holes nearest the fingers"
+        },
+        {
+          "id": "c",
+          "text_md": "only from the holes at the top"
+        },
+        {
+          "id": "d",
+          "text_md": "only from the holes at the bottom"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "The pressure applied by the hand is transmitted equally in all directions, option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-9-physics-ch05-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch05_053",
+      "unit": "icse-9-physics-ch05",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A box of weight 90 N rests on a table, its base covering an area of 0.03 m². The pressure on the table is",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "2.7 Pa"
+        },
+        {
+          "id": "b",
+          "text_md": "0.000333 Pa"
+        },
+        {
+          "id": "c",
+          "text_md": "300 Pa"
+        },
+        {
+          "id": "d",
+          "text_md": "3000 Pa"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "$p = \\dfrac{F}{A} = \\dfrac{90}{0.03} = 3000$ Pa, option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-physics-ch05-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch05_054",
+      "unit": "icse-9-physics-ch05",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A jar holds oil of density 900 kg m⁻³ to a depth of 0.4 m. The pressure due to the oil at the bottom of the jar is (g = 10 m s⁻²)",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "360 Pa"
+        },
+        {
+          "id": "b",
+          "text_md": "4000 Pa"
+        },
+        {
+          "id": "c",
+          "text_md": "3600 Pa"
+        },
+        {
+          "id": "d",
+          "text_md": "36000 Pa"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "$p = h \\rho g = 0.4 \\times 900 \\times 10 = 3600$ Pa, option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-physics-ch05-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch05_055",
+      "unit": "icse-9-physics-ch05",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Two identical open jars hold the same liquid to depths of h and 2h. The pressures at the bottoms of the two jars are in the ratio",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "2 : 1"
+        },
+        {
+          "id": "b",
+          "text_md": "1 : 2"
+        },
+        {
+          "id": "c",
+          "text_md": "1 : 4"
+        },
+        {
+          "id": "d",
+          "text_md": "1 : 1"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "The pressure is proportional to the depth, so the ratio is h : 2h = 1 : 2, option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-physics-ch05-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch05_056",
+      "unit": "icse-9-physics-ch05",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A force of 8 N acts on a piston of area 4 cm² in a closed vessel of liquid. The pressure transmitted through the liquid is",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "20000 Pa"
+        },
+        {
+          "id": "b",
+          "text_md": "2 Pa"
+        },
+        {
+          "id": "c",
+          "text_md": "0.0032 Pa"
+        },
+        {
+          "id": "d",
+          "text_md": "200 Pa"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "$p = \\dfrac{F}{A} = \\dfrac{8}{0.0004} = 20000$ Pa, option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-physics-ch05-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch05_057",
+      "unit": "icse-9-physics-ch05",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "The two pistons of a closed liquid-filled vessel have areas A and 5A. A force F acts on the smaller piston. The force on the larger piston is",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "F"
+        },
+        {
+          "id": "b",
+          "text_md": "5F"
+        },
+        {
+          "id": "c",
+          "text_md": "F/5"
+        },
+        {
+          "id": "d",
+          "text_md": "25F"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "$F_2 = F \\times \\dfrac{5A}{A} = 5F$, option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-physics-ch05-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch05_058",
+      "unit": "icse-9-physics-ch05",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** At a given depth in a liquid, the pressure is the same in all directions.\n\n**Reason (R):** Pressure is a vector quantity.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "(A) is true and (R) is false."
+        },
+        {
+          "id": "b",
+          "text_md": "(A) is false and (R) is true."
+        },
+        {
+          "id": "c",
+          "text_md": "Both (A) and (R) are true, and (R) is the correct explanation of (A)."
+        },
+        {
+          "id": "d",
+          "text_md": "Both (A) and (R) are true, but (R) is not the correct explanation of (A)."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "(A) is true; (R) is false because pressure is a scalar, option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-9-physics-ch05-t02",
+        "icse-9-physics-ch05-t03"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch05_059",
+      "unit": "icse-9-physics-ch05",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? In a closed vessel of liquid, the pressure on a large piston is greater than the pressure on a small piston.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "f"
+        ]
+      },
+      "solution_md": "False. The pressure is the same on both; only the force is greater on the large piston.",
+      "marking_scheme": [
+        {
+          "step": "False, with the correction",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-9-physics-ch05-t03"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch05_060",
+      "unit": "icse-9-physics-ch05",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "Pressure applied to an enclosed liquid is transmitted ___ and ___ to every part of the liquid.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "equally"
+            ]
+          },
+          {
+            "accepted": [
+              "undiminished"
+            ]
+          }
+        ]
+      },
+      "solution_md": "Equally; undiminished.",
+      "marking_scheme": [
+        {
+          "step": "(a) equally",
+          "marks": 1
+        },
+        {
+          "step": "(b) undiminished",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-9-physics-ch05-t03"
+      ],
+      "expected_time_sec": 240,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch05_061",
+      "unit": "icse-9-physics-ch05",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Name the law which states that pressure applied to an enclosed liquid is transmitted equally to every part of it.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "**Pascal’s law**."
+      },
+      "solution_md": "Pascal’s law.",
+      "marking_scheme": [
+        {
+          "step": "Pascal’s law",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-9-physics-ch05-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch05_062",
+      "unit": "icse-9-physics-ch05",
+      "language": "en",
+      "type": "short",
+      "stem_md": "State Pascal’s law and give one example of the transmission of pressure by a liquid.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Pressure applied to an **enclosed liquid** is transmitted **equally and undiminished** to every part of the liquid and to the walls of the vessel. For example, pressing the plunger of a **syringe** raises the pressure throughout the liquid."
+      },
+      "solution_md": "Statement of the law; one example.",
+      "marking_scheme": [
+        {
+          "step": "Statement of the law",
+          "marks": 1
+        },
+        {
+          "step": "One example",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-9-physics-ch05-t03"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch05_063",
+      "unit": "icse-9-physics-ch05",
+      "language": "en",
+      "type": "short",
+      "stem_md": "A closed vessel of liquid has two pistons, of areas 5 cm² and 100 cm². A force of 20 N pushes the smaller piston. Find (a) the pressure transmitted through the liquid and (b) the force on the larger piston.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "**(a)** $p = \\dfrac{F_1}{A_1} = \\dfrac{20}{0.0005} = 40000$ Pa.\n\n**(b)** $F_2 = p \\times A_2 = 40000 \\times 0.01 = 400$ N.\n\nThe pressure is the same on both pistons; the force is larger on the larger area."
+      },
+      "solution_md": "40 000 Pa; 400 N.",
+      "marking_scheme": [
+        {
+          "step": "Areas in m²",
+          "marks": 1
+        },
+        {
+          "step": "40 000 Pa",
+          "marks": 1
+        },
+        {
+          "step": "400 N",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-physics-ch05-t03"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch05_064",
+      "unit": "icse-9-physics-ch05",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "A force of 30 N acts on a piston of area 2 cm² in a closed vessel of liquid. Find the force on a piston of area 50 cm² in the same vessel.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 750,
+        "tolerance": 0,
+        "unit": "N"
+      },
+      "solution_md": "$F_2 = F_1 \\times \\dfrac{A_2}{A_1} = 30 \\times \\dfrac{50}{2} = 750$ N.",
+      "marking_scheme": [
+        {
+          "step": "F₂ = F₁ A₂ / A₁ with substitution",
+          "marks": 0.5
+        },
+        {
+          "step": "750 N",
+          "marks": 0.5
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-physics-ch05-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch05_065",
+      "unit": "icse-9-physics-ch05",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "A force of 40 N pushes a piston of area 8 cm² against a liquid in a closed vessel. Find the pressure transmitted to every part of the liquid, in pascal.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 50000,
+        "tolerance": 0,
+        "unit": "Pa"
+      },
+      "solution_md": "$p = \\dfrac{F}{A} = \\dfrac{40}{0.0008} = 50000$ Pa.",
+      "marking_scheme": [
+        {
+          "step": "Area in m² and p = F / A",
+          "marks": 0.5
+        },
+        {
+          "step": "50000 Pa",
+          "marks": 0.5
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-physics-ch05-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch05_066",
+      "unit": "icse-9-physics-ch05",
+      "language": "en",
+      "type": "match",
+      "stem_md": "Match each item in Column A with the correct item in Column B.",
+      "options": [
+        {
+          "id": "1",
+          "text_md": "Thrust"
+        },
+        {
+          "id": "2",
+          "text_md": "Pressure"
+        },
+        {
+          "id": "3",
+          "text_md": "Pointed nail"
+        },
+        {
+          "id": "4",
+          "text_md": "Dam thicker at the base"
+        },
+        {
+          "id": "5",
+          "text_md": "Broad strap of a heavy bag"
+        }
+      ],
+      "match_right": [
+        {
+          "id": "p",
+          "text_md": "N m⁻²"
+        },
+        {
+          "id": "q",
+          "text_md": "newton"
+        },
+        {
+          "id": "r",
+          "text_md": "large area, small pressure"
+        },
+        {
+          "id": "s",
+          "text_md": "pressure increases with depth"
+        },
+        {
+          "id": "t",
+          "text_md": "small area, large pressure"
+        }
+      ],
+      "answer": {
+        "pairs": [
+          {
+            "left_id": "1",
+            "right_id": "q"
+          },
+          {
+            "left_id": "2",
+            "right_id": "p"
+          },
+          {
+            "left_id": "3",
+            "right_id": "t"
+          },
+          {
+            "left_id": "4",
+            "right_id": "s"
+          },
+          {
+            "left_id": "5",
+            "right_id": "r"
+          }
+        ]
+      },
+      "solution_md": "Thrust: newton; pressure: N m⁻²; nail: small area; dam: pressure increases with depth; strap: large area.",
+      "marking_scheme": [
+        {
+          "step": "1 → q",
+          "marks": 1
+        },
+        {
+          "step": "2 → p",
+          "marks": 1
+        },
+        {
+          "step": "3 → t",
+          "marks": 1
+        },
+        {
+          "step": "4 → s",
+          "marks": 1
+        },
+        {
+          "step": "5 → r",
+          "marks": 1
+        }
+      ],
+      "marks": 5,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-9-physics-ch05-t01",
+        "icse-9-physics-ch05-t02"
+      ],
+      "expected_time_sec": 240,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch05_067",
+      "unit": "icse-9-physics-ch05",
+      "language": "en",
+      "type": "long",
+      "stem_md": "A student places a block of weight 54 N on soft sand in three ways. Its faces measure 30 cm × 15 cm, 30 cm × 6 cm and 15 cm × 6 cm.\n\n(a) Define thrust and pressure, and state the SI unit of pressure. [3]\n\n(b) Calculate the pressure on the sand when the block rests on each of the three faces. [4]\n\n(c) State, with a reason, the position in which the block sinks deepest into the sand. [2]\n\n(d) State the thrust on the sand in each position. [1]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "**(a)** **Thrust** is the force acting perpendicular to a surface; **pressure** is the thrust on each unit of area; the SI unit of pressure is the **pascal** (N m⁻²).\n\n**(b)** Thrust $= 54$ N. Areas: $450\\ \\text{cm}^2 = 0.045\\ \\text{m}^2$, $180\\ \\text{cm}^2 = 0.018\\ \\text{m}^2$, $90\\ \\text{cm}^2 = 0.009\\ \\text{m}^2$. $p = \\dfrac{54}{0.045} = 1200$ Pa; $\\dfrac{54}{0.018} = 3000$ Pa; $\\dfrac{54}{0.009} = 6000$ Pa.\n\n**(c)** On the **smallest face** (15 cm × 6 cm), because the same thrust acts on the smallest area and so gives the greatest pressure.\n\n**(d)** **54 N** in every position, the weight of the block."
+      },
+      "solution_md": "Definitions and Pa; 1200 Pa, 3000 Pa, 6000 Pa; smallest face; 54 N each.",
+      "marking_scheme": [
+        {
+          "step": "Thrust defined",
+          "marks": 1
+        },
+        {
+          "step": "Pressure defined",
+          "marks": 1
+        },
+        {
+          "step": "Unit pascal",
+          "marks": 1
+        },
+        {
+          "step": "Areas in m²",
+          "marks": 1
+        },
+        {
+          "step": "1200 Pa",
+          "marks": 1
+        },
+        {
+          "step": "3000 Pa",
+          "marks": 1
+        },
+        {
+          "step": "6000 Pa",
+          "marks": 1
+        },
+        {
+          "step": "Smallest face",
+          "marks": 1
+        },
+        {
+          "step": "Smallest area, greatest pressure",
+          "marks": 1
+        },
+        {
+          "step": "54 N in each position",
+          "marks": 1
+        }
+      ],
+      "marks": 10,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-physics-ch05-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch05_068",
+      "unit": "icse-9-physics-ch05",
+      "language": "en",
+      "type": "long",
+      "stem_md": "The figure shows a closed vessel filled with a liquid and fitted with two pistons. Its parts are lettered A to E.\n\n(a) Name the parts A, B, C, D and E. [3]\n\n(b) State Pascal’s law. [2]\n\n(c) The areas of the pistons are 4 cm² and 80 cm², and the force D is 15 N. Find the pressure in the liquid and the force E. [3]\n\n(d) Compare the pressure on the two pistons and the forces on them, and give one reason for using a liquid rather than a gas. [2]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "**(a)** **A** is the small piston; **B** is the large piston; **C** is the liquid; **D** is the force pushing down on the small piston; **E** is the force on the large piston (upwards).\n\n**(b)** Pressure applied to an **enclosed liquid** is transmitted **equally and undiminished** to every part of the liquid and to the walls of the container.\n\n**(c)** $p = \\dfrac{F}{A} = \\dfrac{15}{0.0004} = 37500$ Pa. $E = p \\times A_2 = 37500 \\times 0.008 = 300$ N.\n\n**(d)** The **pressure is the same** on both pistons, but the **force on the large piston is greater** because its area is larger. A liquid is used because it is **almost incompressible**, so it transmits the pressure undiminished."
+      },
+      "solution_md": "A, B pistons; C liquid; D, E forces; Pascal’s law; 37 500 Pa and 300 N; equal pressure, larger force; incompressible.",
+      "marking_scheme": [
+        {
+          "step": "A and B named",
+          "marks": 1
+        },
+        {
+          "step": "C named",
+          "marks": 1
+        },
+        {
+          "step": "D and E named",
+          "marks": 1
+        },
+        {
+          "step": "Transmitted equally to every part",
+          "marks": 1
+        },
+        {
+          "step": "Enclosed liquid, undiminished",
+          "marks": 1
+        },
+        {
+          "step": "Areas in m² and p = F / A",
+          "marks": 1
+        },
+        {
+          "step": "37 500 Pa",
+          "marks": 1
+        },
+        {
+          "step": "300 N",
+          "marks": 1
+        },
+        {
+          "step": "Same pressure, larger force",
+          "marks": 1
+        },
+        {
+          "step": "Liquid is almost incompressible",
+          "marks": 1
+        }
+      ],
+      "marks": 10,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-physics-ch05-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [
+        {
+          "kind": "svg",
+          "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 400 180\" role=\"img\" aria-label=\"A closed vessel of liquid with a narrow cylinder on the left and a wide cylinder on the right joined at the bottom. A is the small piston, B the large piston, C the liquid, D the downward force pushing the small piston and E the upward force on the large piston\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>A closed vessel of liquid with a narrow cylinder on the left and a wide cylinder on the right joined at the bottom. A is the small piston, B the large piston, C the liquid, D the downward force pushing the small piston and E the upward force on the large piston</title><path d=\"M 60 82 H 100 V 130 H 220 V 82 H 340 V 150 H 60 Z\" fill=\"var(--diagram-blue)\" fill-opacity=\"0.25\" stroke=\"none\"/><path d=\"M 60 40 V 150 H 340 V 40\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\"/><path d=\"M 100 40 V 130 H 220 V 40\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\"/><rect x=\"62\" y=\"74\" width=\"36\" height=\"8\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"2\"/><rect x=\"222\" y=\"74\" width=\"116\" height=\"8\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"80\" y1=\"34\" x2=\"80\" y2=\"62.8\" stroke=\"var(--diagram-red)\" stroke-width=\"3\"/><polygon points=\"80,70 76.3,61.8 83.7,61.8\" fill=\"var(--diagram-red)\" stroke=\"none\"/><line x1=\"280\" y1=\"70\" x2=\"280\" y2=\"41.2\" stroke=\"var(--diagram-green)\" stroke-width=\"3\"/><polygon points=\"280,34 283.7,42.2 276.3,42.2\" fill=\"var(--diagram-green)\" stroke=\"none\"/><text x=\"46\" y=\"80\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"end\" font-size=\"16\" font-weight=\"bold\">A</text><text x=\"352\" y=\"80\" fill=\"currentColor\" stroke=\"none\" font-size=\"16\" font-weight=\"bold\">B</text><text x=\"160\" y=\"108\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"16\" font-weight=\"bold\">C</text><text x=\"80\" y=\"24\" fill=\"var(--diagram-red)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"16\" font-weight=\"bold\">D</text><text x=\"280\" y=\"24\" fill=\"var(--diagram-green)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"16\" font-weight=\"bold\">E</text></svg>",
+          "alt": "A closed vessel of liquid with two pistons and parts lettered A to E"
+        }
+      ],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch05_069",
+      "unit": "icse-9-physics-ch05",
+      "language": "en",
+      "type": "long",
+      "stem_md": "A dam holds back a reservoir of water 40 m deep. (Density of water 1000 kg m⁻³; g = 10 m s⁻²)\n\n(a) Explain why the wall of the dam is made broader at the base. [2]\n\n(b) Find the pressure due to the water at depths of 10 m and 30 m. [3]\n\n(c) Find the force of the water on a flat gate of area 2 m² fixed at a depth of 30 m. [2]\n\n(d) Another reservoir behind a different dam is much wider but also 40 m deep and holds the same kind of water. Compare the pressure at the base in the two reservoirs and give the reason. [3]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "**(a)** The pressure of the water **increases with depth**, so the push on the wall is greatest near the bottom. A **broad, strong base** is needed to withstand it.\n\n**(b)** $p = h \\rho g$: at 10 m, $p = 10 \\times 1000 \\times 10 = 100000$ Pa; at 30 m, $p = 30 \\times 1000 \\times 10 = 300000$ Pa.\n\n**(c)** $F = p A = 300000 \\times 2 = 600000$ N.\n\n**(d)** The pressures at the base are **equal**. The pressure depends only on the **depth, the density of the liquid and g**, not on the width of the reservoir or the amount of water."
+      },
+      "solution_md": "Pressure increases with depth; 100 000 Pa and 300 000 Pa; 600 000 N; equal pressure as depth is the same.",
+      "marking_scheme": [
+        {
+          "step": "Pressure increases with depth",
+          "marks": 1
+        },
+        {
+          "step": "Strong, broad base for the largest push",
+          "marks": 1
+        },
+        {
+          "step": "p = h ρ g with substitution",
+          "marks": 1
+        },
+        {
+          "step": "100 000 Pa",
+          "marks": 1
+        },
+        {
+          "step": "300 000 Pa",
+          "marks": 1
+        },
+        {
+          "step": "F = p A",
+          "marks": 1
+        },
+        {
+          "step": "600 000 N",
+          "marks": 1
+        },
+        {
+          "step": "Pressures equal",
+          "marks": 1
+        },
+        {
+          "step": "Depends on depth, density and g only",
+          "marks": 1
+        },
+        {
+          "step": "Width and quantity do not matter",
+          "marks": 1
+        }
+      ],
+      "marks": 10,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-physics-ch05-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch05_070",
+      "unit": "icse-9-physics-ch05",
+      "language": "en",
+      "type": "long",
+      "stem_md": "The figure shows a tall vessel of water with three small holes in its side, numbered 1, 2 and 3 from the top, at depths of 0.10 m, 0.20 m and 0.30 m below the water surface. (Density of water 1000 kg m⁻³; g = 10 m s⁻²)\n\n(a) State which jet is the fastest, and what this shows about the pressure of a liquid. [2]\n\n(b) Calculate the pressure due to the water at hole 1 and at hole 3. [3]\n\n(c) The water is replaced by brine of density 1200 kg m⁻³. Find the pressure at hole 3. [2]\n\n(d) Name one structure or person that has to allow for this effect, and say how. [2]\n\n(e) How does the pressure at hole 3 compare in the downward and sideways directions? [1]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "**(a)** The jet from **hole 3** (the deepest) is the fastest. This shows that the **pressure of a liquid increases with depth**.\n\n**(b)** $p = h \\rho g$: hole 1, $p = 0.10 \\times 1000 \\times 10 = 1000$ Pa; hole 3, $p = 0.30 \\times 1000 \\times 10 = 3000$ Pa.\n\n**(c)** $p = 0.30 \\times 1200 \\times 10 = 3600$ Pa.\n\n**(d)** A **dam** is built with a broad base, or a **diver** wears a strong suit, because the pressure is greatest at the bottom or at depth.\n\n**(e)** The pressure is **equal in all directions** at a point, so it is the same downwards and sideways."
+      },
+      "solution_md": "Hole 3, pressure increases with depth; 1000 Pa and 3000 Pa; 3600 Pa; dam or diver; equal in all directions.",
+      "marking_scheme": [
+        {
+          "step": "Hole 3 fastest",
+          "marks": 1
+        },
+        {
+          "step": "Pressure increases with depth",
+          "marks": 1
+        },
+        {
+          "step": "Substitution",
+          "marks": 1
+        },
+        {
+          "step": "1000 Pa",
+          "marks": 1
+        },
+        {
+          "step": "3000 Pa",
+          "marks": 1
+        },
+        {
+          "step": "Substitution for brine",
+          "marks": 1
+        },
+        {
+          "step": "3600 Pa",
+          "marks": 1
+        },
+        {
+          "step": "Structure or person named",
+          "marks": 1
+        },
+        {
+          "step": "How it allows for the pressure",
+          "marks": 1
+        },
+        {
+          "step": "Equal in all directions",
+          "marks": 1
+        }
+      ],
+      "marks": 10,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-physics-ch05-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [
+        {
+          "kind": "svg",
+          "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 440 240\" role=\"img\" aria-label=\"A tall vessel of water with three holes in its side at depths of 10, 20 and 30 centimetres, numbered 1, 2 and 3 from the top. The jet from each hole curves down to the table; the deeper holes give jets that start faster and land farther away, because the pressure of the liquid is greater at greater depth (1000, 2000, 3000 pascal)\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>A tall vessel of water with three holes in its side at depths of 10, 20 and 30 centimetres, numbered 1, 2 and 3 from the top. The jet from each hole curves down to the table; the deeper holes give jets that start faster and land farther away, because the pressure of the liquid is greater at greater depth (1000, 2000, 3000 pascal)</title><rect x=\"60\" y=\"34\" width=\"100\" height=\"180\" fill=\"var(--diagram-blue)\" stroke=\"currentColor\" stroke-width=\"2\" fill-opacity=\"0.2\"/><line x1=\"20\" y1=\"214\" x2=\"420\" y2=\"214\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"54\" y1=\"34\" x2=\"42\" y2=\"34\" stroke=\"currentColor\" stroke-width=\"1\"/><line x1=\"48\" y1=\"34\" x2=\"48\" y2=\"106\" stroke=\"currentColor\" stroke-width=\"1\"/><line x1=\"42\" y1=\"58\" x2=\"54\" y2=\"58\" stroke=\"currentColor\" stroke-width=\"1\"/><text x=\"38\" y=\"62\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"end\" font-size=\"11\">10 cm</text><path d=\"M 160.0 58.0 L 163.1 58.1 L 166.1 58.4 L 169.2 58.9 L 172.2 59.6 L 175.3 60.4 L 178.4 61.5 L 181.4 62.8 L 184.5 64.2 L 187.5 65.9 L 190.6 67.8 L 193.7 69.8 L 196.7 72.0 L 199.8 74.5 L 202.8 77.1 L 205.9 79.9 L 209.0 83.0 L 212.0 86.2 L 215.1 89.6 L 218.1 93.2 L 221.2 97.0 L 224.2 101.0 L 227.3 105.2 L 230.4 109.6 L 233.4 114.2 L 236.5 118.9 L 239.5 123.9 L 242.6 129.1 L 245.7 134.4 L 248.7 140.0 L 251.8 145.8 L 254.8 151.7 L 257.9 157.8 L 261.0 164.2 L 264.0 170.7 L 267.1 177.4 L 270.1 184.4 L 273.2 191.5 L 276.3 198.8 L 279.3 206.3 L 282.4 214.0\" fill=\"none\" stroke=\"var(--diagram-blue)\" stroke-width=\"2.5\"/><text x=\"282.4\" y=\"230\" fill=\"var(--diagram-blue)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\">1</text><circle cx=\"160\" cy=\"58\" r=\"3\" fill=\"currentColor\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"150\" y=\"62\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"end\" font-size=\"12\" font-weight=\"bold\">1</text><line x1=\"42\" y1=\"82\" x2=\"54\" y2=\"82\" stroke=\"currentColor\" stroke-width=\"1\"/><text x=\"38\" y=\"86\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"end\" font-size=\"11\">20 cm</text><path d=\"M 160.0 82.0 L 164.0 82.1 L 168.0 82.3 L 171.9 82.7 L 175.9 83.3 L 179.9 84.1 L 183.9 85.0 L 187.9 86.0 L 191.8 87.3 L 195.8 88.7 L 199.8 90.3 L 203.8 92.0 L 207.8 93.9 L 211.7 95.9 L 215.7 98.2 L 219.7 100.6 L 223.7 103.1 L 227.7 105.8 L 231.6 108.7 L 235.6 111.8 L 239.6 115.0 L 243.6 118.4 L 247.6 121.9 L 251.5 125.6 L 255.5 129.5 L 259.5 133.6 L 263.5 137.8 L 267.5 142.1 L 271.4 146.7 L 275.4 151.4 L 279.4 156.3 L 283.4 161.3 L 287.4 166.5 L 291.3 171.8 L 295.3 177.4 L 299.3 183.1 L 303.3 188.9 L 307.3 194.9 L 311.2 201.1 L 315.2 207.5 L 319.2 214.0\" fill=\"none\" stroke=\"var(--diagram-green)\" stroke-width=\"2.5\"/><text x=\"319.2\" y=\"230\" fill=\"var(--diagram-green)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\">2</text><circle cx=\"160\" cy=\"82\" r=\"3\" fill=\"currentColor\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"150\" y=\"86\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"end\" font-size=\"12\" font-weight=\"bold\">2</text><line x1=\"42\" y1=\"106\" x2=\"54\" y2=\"106\" stroke=\"currentColor\" stroke-width=\"1\"/><text x=\"38\" y=\"110\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"end\" font-size=\"11\">30 cm</text><path d=\"M 160.0 106.0 L 164.4 106.1 L 168.8 106.3 L 173.2 106.6 L 177.6 107.1 L 182.0 107.7 L 186.5 108.4 L 190.9 109.3 L 195.3 110.3 L 199.7 111.5 L 204.1 112.8 L 208.5 114.2 L 212.9 115.7 L 217.3 117.4 L 221.7 119.2 L 226.1 121.2 L 230.5 123.3 L 235.0 125.5 L 239.4 127.9 L 243.8 130.4 L 248.2 133.0 L 252.6 135.8 L 257.0 138.7 L 261.4 141.7 L 265.8 144.9 L 270.2 148.2 L 274.6 151.6 L 279.0 155.2 L 283.5 158.9 L 287.9 162.8 L 292.3 166.8 L 296.7 170.9 L 301.1 175.1 L 305.5 179.5 L 309.9 184.0 L 314.3 188.7 L 318.7 193.5 L 323.1 198.4 L 327.5 203.5 L 332.0 208.7 L 336.4 214.0\" fill=\"none\" stroke=\"var(--diagram-red)\" stroke-width=\"2.5\"/><text x=\"336.4\" y=\"230\" fill=\"var(--diagram-red)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\">3</text><circle cx=\"160\" cy=\"106\" r=\"3\" fill=\"currentColor\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"150\" y=\"110\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"end\" font-size=\"12\" font-weight=\"bold\">3</text><text x=\"110\" y=\"26\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\">water surface</text><text x=\"300\" y=\"58\" fill=\"var(--diagram-muted)\" stroke=\"none\" font-size=\"12\">The deeper the hole,</text><text x=\"300\" y=\"74\" fill=\"var(--diagram-muted)\" stroke=\"none\" font-size=\"12\">the faster the jet.</text></svg>",
+          "alt": "A tall vessel of water with three numbered side holes at depths of 10, 20 and 30 centimetres and the jets from them"
+        }
+      ],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch05_071",
+      "unit": "icse-9-physics-ch05",
+      "language": "en",
+      "type": "long",
+      "stem_md": "A rectangular tank with a base 2.0 m by 1.5 m is filled with water to a depth of 1.2 m. (Density of water 1000 kg m⁻³; g = 10 m s⁻²)\n\n(a) Find the pressure of the water at the base. [2]\n\n(b) Find the force of the water on the base. [2]\n\n(c) Find the weight of the water in the tank and compare it with your answer to (b). [3]\n\n(d) A second vessel has the same base area but its walls lean outwards, so it is wider at the top. It is filled with water to the same depth of 1.2 m. State, with reasons, how the pressure at its base and the force on its base compare with those in the tank, and whether the force on the base equals the weight of the water in it. [3]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "**(a)** $p = h \\rho g = 1.2 \\times 1000 \\times 10 = 12000$ Pa.\n\n**(b)** Area $= 2.0 \\times 1.5 = 3.0$ m², so $F = p A = 12000 \\times 3.0 = 36000$ N.\n\n**(c)** Volume $= 3.0 \\times 1.2 = 3.6$ m³; mass $= 1000 \\times 3.6 = 3600$ kg; weight $= 3600 \\times 10 = 36000$ N. This **equals the force on the base**, as the walls are vertical.\n\n**(d)** The **pressure is the same**, because it depends only on depth, density and g. The **force on the base is also the same**, since pressure and base area are unchanged. But the vessel holds **more water**, so its weight is **greater than the force on the base**: the sloping walls carry the weight of the extra water."
+      },
+      "solution_md": "12 000 Pa; 36 000 N; 3.6 m³, 3600 kg, 36 000 N equal to (b); same pressure and force, weight greater.",
+      "marking_scheme": [
+        {
+          "step": "p = h ρ g with substitution",
+          "marks": 1
+        },
+        {
+          "step": "12 000 Pa",
+          "marks": 1
+        },
+        {
+          "step": "F = p A",
+          "marks": 1
+        },
+        {
+          "step": "36 000 N",
+          "marks": 1
+        },
+        {
+          "step": "Volume and mass",
+          "marks": 1
+        },
+        {
+          "step": "Weight 36 000 N",
+          "marks": 1
+        },
+        {
+          "step": "Equal to the force on the base",
+          "marks": 1
+        },
+        {
+          "step": "Pressure the same, with reason",
+          "marks": 1
+        },
+        {
+          "step": "Force on the base the same",
+          "marks": 1
+        },
+        {
+          "step": "Weight greater; sloping walls carry the extra",
+          "marks": 1
+        }
+      ],
+      "marks": 10,
+      "difficulty": 4,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-9-physics-ch05-t01",
+        "icse-9-physics-ch05-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch05_072",
+      "unit": "icse-9-physics-ch05",
+      "language": "en",
+      "type": "long",
+      "stem_md": "A diver works at a depth of 25 m in the sea. (Density of sea water 1030 kg m⁻³; g = 10 m s⁻²)\n\n(a) Find the pressure due to the water at this depth. [2]\n\n(b) Find the force of the water on a flat window of area 0.02 m² on her helmet. [2]\n\n(c) She descends to 50 m. Find the pressure there and say how it compares with that at 25 m. [3]\n\n(d) Explain why a diver needs a special suit. [2]\n\n(e) State the direction in which the water presses on her body. [1]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "**(a)** $p = h \\rho g = 25 \\times 1030 \\times 10 = 257500$ Pa.\n\n**(b)** $F = p A = 257500 \\times 0.02 = 5150$ N.\n\n**(c)** $p = 50 \\times 1030 \\times 10 = 515000$ Pa, which is **twice** the pressure at 25 m, as the pressure is proportional to the depth.\n\n**(d)** The pressure of the water at depth is **very large** and would harm the body; the **strong suit** protects it.\n\n**(e)** The water presses **equally from all directions**."
+      },
+      "solution_md": "257 500 Pa; 5150 N; 515 000 Pa, double; pressure is large at depth; all directions.",
+      "marking_scheme": [
+        {
+          "step": "Substitution",
+          "marks": 1
+        },
+        {
+          "step": "257 500 Pa",
+          "marks": 1
+        },
+        {
+          "step": "F = p A",
+          "marks": 1
+        },
+        {
+          "step": "5150 N",
+          "marks": 1
+        },
+        {
+          "step": "515 000 Pa",
+          "marks": 1
+        },
+        {
+          "step": "Working",
+          "marks": 1
+        },
+        {
+          "step": "Twice, proportional to depth",
+          "marks": 1
+        },
+        {
+          "step": "Large pressure at depth",
+          "marks": 1
+        },
+        {
+          "step": "Suit protects the body",
+          "marks": 1
+        },
+        {
+          "step": "All directions",
+          "marks": 1
+        }
+      ],
+      "marks": 10,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-physics-ch05-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    }
+  ],
+  "build": {
+    "run_id": null,
+    "checks": {
+      "katex_mhchem": "123 math strings parsed with KaTeX 0.19.0 + mhchem (throwOnError, strict \"error\"), 0 failures",
+      "svg_allowlist": "6 SVG visuals (5 distinct diagrams) checked with saxes against svg-allowlist.ts: elements, attributes, class pattern, fragment-only refs, no style, palette incl. named hues, viewBox, title, per-page unique ids — 0 failures",
+      "narration": "28 slides, 6–47 words (mean 33), no symbols, formulae or unit abbreviations",
+      "resolve": "28/28 scripted re-solve checks pass",
+      "physics_facts": "Thrust and pressure p = F / A (pascal), everyday examples of small and large area, pressure of a liquid column p = h rho g and the factors it does and does not depend on, dams and divers, transmission of pressure and Pascal law with simple force and pressure numericals (g = 10 m s^-2; water 1000, sea water 1030, kerosene 800, mercury 13600 kg m^-3), checked against the ICSE 2028 Physics syllabus Class IX (Fluids); the working of hydraulic machines is a removed topic and is not taught or asked",
+      "computed_values": "Pressures, forces, areas and depths are computed and asserted in src/calc.mjs, not typed in",
+      "icse_style": "Assertion-reason items use the 521 option order; 1-mark terms, fill-ins and a 5-pair match; numericals with formula, substitution and unit; 10-mark structured questions in parts (one with a lettered A to E figure, one on the jets figure); chapter tests on icse-9-default-chapter-test-short / -long",
+      "verifier_pass": "2026-11-07: every question re-solved from its stem by the author; keys, schemes and word limits checked",
+      "pipeline_lint": "npm run content -- lint --exemplars: 0 errors, 0 warnings"
+    }
+  }
+}

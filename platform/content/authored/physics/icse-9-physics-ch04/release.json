@@ -1,0 +1,5155 @@
+{
+  "unit": "icse-9-physics-ch04",
+  "version": 1,
+  "academic_year": "2026-27",
+  "created_at": "2026-11-05T00:00:00+05:30",
+  "decks": [
+    {
+      "unit": "icse-9-physics-ch04",
+      "part": 1,
+      "version": 1,
+      "title": "Gravitation — Part 1: The universal law of gravitation",
+      "language": "en",
+      "goals": [
+        "State the universal law of gravitation and write its equation",
+        "Predict how the gravitational force changes when the masses or the separation change",
+        "Describe why the law is called universal and name its important effects"
+      ],
+      "slides": [
+        {
+          "id": "s01",
+          "layout": "title",
+          "heading": "Why does the apple fall?",
+          "body_md": "Part 1 — the same pull that drops a ripe mango also keeps the Moon circling the Earth.",
+          "bullets": [],
+          "visual": {
+            "kind": "flow",
+            "spec": {
+              "direction": "LR",
+              "nodes": [
+                {
+                  "id": "a",
+                  "label": "Mango on the tree"
+                },
+                {
+                  "id": "b",
+                  "label": "Pulled by the Earth"
+                },
+                {
+                  "id": "c",
+                  "label": "Falls to the ground"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "a",
+                  "to": "b"
+                },
+                {
+                  "from": "b",
+                  "to": "c"
+                }
+              ]
+            },
+            "alt": "Flow from a mango on a tree to being pulled by the Earth to falling to the ground"
+          },
+          "math": [],
+          "narration": "A ripe mango drops from a branch and lands on the ground. Newton asked why it falls straight down and whether the same pull reaches as far as the Moon. His answer was one law for the whole universe.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s02",
+          "layout": "concept",
+          "heading": "Every body attracts every other body",
+          "body_md": "The force of attraction between any two bodies in the universe is called **gravitation**. It acts between a book and a desk, between two cricket balls and between the Sun and the planets. It is always an **attraction**, never a push.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Pair of bodies",
+                "Is there gravitational attraction?",
+                "Can we notice it?"
+              ],
+              "rows": [
+                [
+                  "Earth and a falling mango",
+                  "Yes",
+                  "Yes, because the Earth is huge"
+                ],
+                [
+                  "Two cricket balls on a table",
+                  "Yes",
+                  "No, the force is tiny"
+                ],
+                [
+                  "Sun and Earth",
+                  "Yes",
+                  "Yes, it keeps the Earth in its orbit"
+                ]
+              ]
+            },
+            "alt": "Table of three pairs of bodies and whether the gravitational attraction can be noticed"
+          },
+          "math": [],
+          "narration": "Gravitation acts between every pair of bodies, large or small. Two cricket balls on a table do attract each other, but the force is far too small to notice. When one body is as huge as the Earth, the pull becomes obvious.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s03",
+          "layout": "concept",
+          "heading": "The universal law of gravitation",
+          "body_md": "The force of attraction between two bodies is **directly proportional to the product of their masses** and **inversely proportional to the square of the distance between their centres**. It acts along the line joining the centres.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Change",
+                "Effect on the force"
+              ],
+              "rows": [
+                [
+                  "Mass of either body increases",
+                  "Force increases in the same ratio"
+                ],
+                [
+                  "Distance between the centres increases",
+                  "Force decreases much faster, as the square of the distance"
+                ],
+                [
+                  "Medium or position of other bodies",
+                  "The pair of bodies is unaffected; the law holds everywhere"
+                ]
+              ]
+            },
+            "alt": "Table showing how the gravitational force depends on mass and on distance"
+          },
+          "math": [
+            "F = \\dfrac{G\\, m_1 m_2}{r^{2}}"
+          ],
+          "narration": "Newton stated the law in two parts. The force grows with the product of the two masses. It falls with the square of the distance between their centres. Put both together and you get one equation with a constant called big gee.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s04",
+          "layout": "concept",
+          "heading": "What each symbol means",
+          "body_md": "In $F = \\dfrac{G m_1 m_2}{r^2}$ the constant **G** is the same for every pair of bodies anywhere. It is called the **universal gravitational constant**.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Symbol",
+                "Meaning",
+                "SI unit"
+              ],
+              "rows": [
+                [
+                  "F",
+                  "Gravitational force",
+                  "newton"
+                ],
+                [
+                  "m₁, m₂",
+                  "Masses of the two bodies",
+                  "kilogram"
+                ],
+                [
+                  "r",
+                  "Distance between the centres",
+                  "metre"
+                ],
+                [
+                  "G",
+                  "Universal gravitational constant, 6.67 × 10⁻¹¹",
+                  "newton metre squared per kilogram squared"
+                ]
+              ]
+            },
+            "alt": "Table of the symbols in the law of gravitation with their meanings and SI units"
+          },
+          "math": [],
+          "narration": "F is the force in newtons. The two masses are in kilograms and the distance between their centres is in metres. The constant G has a very small value, which is why the force between everyday objects is too small to feel.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s05",
+          "layout": "check",
+          "heading": "Quick check: the unit of G",
+          "body_md": "Work out the unit of G from the equation by making G the subject.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Quantity",
+                "SI unit"
+              ],
+              "rows": [
+                [
+                  "F",
+                  "newton"
+                ],
+                [
+                  "r",
+                  "metre"
+                ],
+                [
+                  "m",
+                  "kilogram"
+                ]
+              ]
+            },
+            "alt": "Table of the SI units of force, distance and mass"
+          },
+          "math": [],
+          "narration": "Rearrange the law to give G in terms of force, distance and mass. Which option is the correct unit of the gravitational constant?",
+          "check_question_id": "q_icse9phy_ch04_003",
+          "audio": null
+        },
+        {
+          "id": "s06",
+          "layout": "concept",
+          "heading": "A pair of equal and opposite forces",
+          "body_md": "Body 1 pulls body 2 with force $F$, and body 2 pulls body 1 with the **same** force $F$ in the **opposite** direction. The two forces act on **different bodies**, so they never cancel.",
+          "bullets": [],
+          "visual": {
+            "kind": "svg",
+            "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 480 200\" role=\"img\" aria-label=\"Two spherical bodies of masses m1 and m2 attract each other with equal and opposite forces F along the line joining their centres, a distance r apart\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>Two spherical bodies of masses m1 and m2 attract each other with equal and opposite forces F along the line joining their centres, a distance r apart</title><line x1=\"138\" y1=\"96\" x2=\"351\" y2=\"96\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\" stroke-dasharray=\"4 3\"/><circle cx=\"110\" cy=\"96\" r=\"28\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"2\" fill-opacity=\"0.3\"/><circle cx=\"370\" cy=\"96\" r=\"19\" fill=\"var(--diagram-green)\" stroke=\"var(--diagram-green)\" stroke-width=\"2\" fill-opacity=\"0.3\"/><line x1=\"138\" y1=\"96\" x2=\"202.8\" y2=\"96\" stroke=\"var(--diagram-red)\" stroke-width=\"2.5\"/><polygon points=\"210,96 201.8,99.7 201.8,92.3\" fill=\"var(--diagram-red)\" stroke=\"none\"/><line x1=\"351\" y1=\"96\" x2=\"286.2\" y2=\"96\" stroke=\"var(--diagram-red)\" stroke-width=\"2.5\"/><polygon points=\"279,96 287.2,92.3 287.2,99.7\" fill=\"var(--diagram-red)\" stroke=\"none\"/><line x1=\"110\" y1=\"128\" x2=\"110\" y2=\"162\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><line x1=\"370\" y1=\"119\" x2=\"370\" y2=\"162\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><line x1=\"118\" y1=\"156\" x2=\"357.2\" y2=\"156\" stroke=\"currentColor\" stroke-width=\"1.2\"/><polygon points=\"362,156 356.5,158.4 356.5,153.6\" fill=\"currentColor\" stroke=\"none\"/><line x1=\"362\" y1=\"156\" x2=\"122.8\" y2=\"156\" stroke=\"currentColor\" stroke-width=\"1.2\"/><polygon points=\"118,156 123.5,153.6 123.5,158.4\" fill=\"currentColor\" stroke=\"none\"/><text x=\"110\" y=\"100\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\">m₁</text><text x=\"370\" y=\"100\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\">m₂</text><text x=\"174\" y=\"84\" fill=\"var(--diagram-red)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"bold\">F</text><text x=\"315\" y=\"84\" fill=\"var(--diagram-red)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"bold\">F</text><text x=\"240\" y=\"148\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"12\">r (between the centres)</text></svg>",
+            "alt": "Two bodies attract each other with equal and opposite forces along the line joining their centres, a distance r apart"
+          },
+          "math": [],
+          "narration": "The pull is mutual. The first body attracts the second, and the second attracts the first with exactly the same strength, in the opposite direction. This is the third law of motion at work. Each arrow acts on a different body.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s07",
+          "layout": "check",
+          "heading": "Quick check: the pull of a mango",
+          "body_md": "A mango is pulled towards the Earth. Think of the pair of forces.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Body",
+                "Pulled by",
+                "Direction of pull"
+              ],
+              "rows": [
+                [
+                  "Mango",
+                  "Earth",
+                  "Down, towards the Earth"
+                ],
+                [
+                  "Earth",
+                  "Mango",
+                  "Up, towards the mango"
+                ]
+              ]
+            },
+            "alt": "Table of the two forces in the mango and Earth pair"
+          },
+          "math": [],
+          "narration": "The Earth pulls the mango downwards. What can you say about the pull of the mango on the Earth?",
+          "check_question_id": "q_icse9phy_ch04_001",
+          "audio": null
+        },
+        {
+          "id": "s08",
+          "layout": "concept",
+          "heading": "Changing the masses or the distance",
+          "body_md": "Work with **ratios**. If the masses are multiplied by $a$ and $b$ and the distance by $k$, the new force is $F \\times \\dfrac{ab}{k^{2}}$.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "What happens",
+                "Force becomes"
+              ],
+              "rows": [
+                [
+                  "One mass doubled",
+                  "2 times the old force"
+                ],
+                [
+                  "Distance doubled",
+                  "one quarter of the old force"
+                ],
+                [
+                  "Distance halved",
+                  "4 times the old force"
+                ],
+                [
+                  "Both masses doubled and distance doubled",
+                  "the same force"
+                ]
+              ]
+            },
+            "alt": "Table of how the gravitational force changes when the masses or the distance change"
+          },
+          "math": [],
+          "narration": "Do not recalculate from scratch. Double one mass and the force doubles. Double the distance and the force drops to a quarter. Halve the distance and it becomes four times larger. Double both masses and the distance together, and the force stays the same.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s09",
+          "layout": "example",
+          "heading": "Worked example 1: a ratio problem",
+          "body_md": "**Problem.** The force between two bodies is 12 N. The mass of the second body is doubled and the distance between them is tripled. Find the new force.\n\n**Step 1.** The factor is $\\dfrac{1 \\times 2}{3^{2}} = \\dfrac{2}{9}$.\n\n**Step 2.** New force $= 12 \\times \\dfrac{2}{9} = 2.67$ N.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Quantity",
+                "Factor"
+              ],
+              "rows": [
+                [
+                  "First mass",
+                  "1"
+                ],
+                [
+                  "Second mass",
+                  "2"
+                ],
+                [
+                  "Distance",
+                  "3, so the force falls by 9"
+                ],
+                [
+                  "Force overall",
+                  "two ninths of the old force"
+                ]
+              ]
+            },
+            "alt": "Table of the factors for each quantity in the ratio problem"
+          },
+          "math": [],
+          "narration": "Write the factor for each quantity. The masses give one and two. The distance is tripled, so divide by nine. The overall factor is two ninths. Multiply the old force by it, and the new force is about two point six seven newtons.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s10",
+          "layout": "check",
+          "heading": "Quick check: two factors at once",
+          "body_md": "Use the ratio method for two changes together.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Change",
+                "Factor"
+              ],
+              "rows": [
+                [
+                  "First mass",
+                  "three times"
+                ],
+                [
+                  "Distance",
+                  "three times"
+                ]
+              ]
+            },
+            "alt": "Table of the changes in one mass and in distance"
+          },
+          "math": [],
+          "narration": "The first mass is made three times larger and the distance is also made three times larger. By what factor does the force change?",
+          "check_question_id": "q_icse9phy_ch04_002",
+          "audio": null
+        },
+        {
+          "id": "s11",
+          "layout": "concept",
+          "heading": "The graph of force against distance",
+          "body_md": "For a fixed pair of bodies the force falls steeply as they move apart. Doubling the distance cuts the force to **a quarter**; quadrupling it cuts it to **one-sixteenth**.",
+          "bullets": [],
+          "visual": {
+            "kind": "plot",
+            "spec": {
+              "grid": true,
+              "functions": [
+                {
+                  "expr": "64/x^2",
+                  "label": "F is proportional to 1 / r²",
+                  "domain": [
+                    1,
+                    4
+                  ]
+                }
+              ],
+              "points": [
+                {
+                  "at": [
+                    1,
+                    64
+                  ],
+                  "label": "r = 1, F = 64"
+                },
+                {
+                  "at": [
+                    2,
+                    16
+                  ],
+                  "label": "r = 2, F = 16"
+                },
+                {
+                  "at": [
+                    4,
+                    4
+                  ],
+                  "label": "r = 4, F = 4"
+                }
+              ],
+              "series": [],
+              "x": {
+                "min": 1,
+                "max": 4,
+                "label": "distance r (arbitrary units)"
+              },
+              "y": {
+                "min": 0,
+                "max": 70,
+                "label": "force F (arbitrary units)"
+              }
+            },
+            "alt": "Graph of gravitational force against distance, falling from sixty-four units at one unit of distance to sixteen at two and four at four",
+            "caption": "The inverse-square curve."
+          },
+          "math": [],
+          "narration": "This curve shows a force dropping as the distance grows. From one unit to two units of distance, the force falls from sixty four to sixteen, which is one quarter. At four units it is only four. The curve never reaches zero but gets very small.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s12",
+          "layout": "example",
+          "heading": "Worked example 2: the pull between two students",
+          "body_md": "**Problem.** Two students of mass 55 kg and 65 kg sit 1.5 m apart. Find the gravitational force between them. ($G = 6.67 \\times 10^{-11}$ N m² kg⁻²)\n\n**Step 1.** $F = \\dfrac{G m_1 m_2}{r^{2}} = \\dfrac{6.67 \\times 10^{-11} \\times 55 \\times 65}{1.5^{2}}$.\n\n**Step 2.** $F = 1.06 \\times 10^{-7}$ N.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Quantity",
+                "Value"
+              ],
+              "rows": [
+                [
+                  "m₁",
+                  "55 kg"
+                ],
+                [
+                  "m₂",
+                  "65 kg"
+                ],
+                [
+                  "r",
+                  "1.5 m"
+                ],
+                [
+                  "F",
+                  "1.06 × 10⁻⁷ N, about one ten-millionth of a newton"
+                ]
+              ]
+            },
+            "alt": "Table of the data and the answer for the force between two students"
+          },
+          "math": [],
+          "narration": "Put the numbers into the law. Multiply the constant by both masses and divide by the square of the distance. The answer is about one ten millionth of a newton, far too small to feel. That is why we do not drift towards each other.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s13",
+          "layout": "concept",
+          "heading": "Why the law matters",
+          "body_md": "The law explains many things at once. The same pull of the Earth makes bodies **fall**, makes the **Moon orbit** the Earth, holds the **planets** in orbit round the Sun and causes **tides**.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Effect",
+                "Which bodies attract"
+              ],
+              "rows": [
+                [
+                  "Objects fall to the ground",
+                  "Earth and the object"
+                ],
+                [
+                  "The Moon stays in orbit",
+                  "Earth and the Moon"
+                ],
+                [
+                  "Planets circle the Sun",
+                  "Sun and each planet"
+                ],
+                [
+                  "Ocean tides",
+                  "Moon and the oceans, with help from the Sun"
+                ]
+              ]
+            },
+            "alt": "Table of four effects of gravitation and the bodies that attract"
+          },
+          "math": [],
+          "narration": "Newton showed that one law covers falling fruit and orbiting planets. The Earth holds the Moon, the Sun holds the planets, and the Moon lifts the ocean to make tides. Nothing in the sky needs a separate rule.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s14",
+          "layout": "summary",
+          "heading": "Summary: Part 1",
+          "body_md": "",
+          "bullets": [
+            "Every body attracts every other body; the force acts along the line joining their centres.",
+            "The force is proportional to the product of the masses and inversely proportional to the square of the distance.",
+            "The equation is F = G m₁ m₂ / r², with G = 6.67 × 10⁻¹¹ N m² kg⁻².",
+            "The two forces of a pair are equal, opposite and act on different bodies."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Change",
+                "Force"
+              ],
+              "rows": [
+                [
+                  "Mass doubled",
+                  "doubled"
+                ],
+                [
+                  "Distance doubled",
+                  "one quarter"
+                ],
+                [
+                  "Distance halved",
+                  "four times"
+                ]
+              ]
+            },
+            "alt": "Summary table of the changes in force"
+          },
+          "math": [],
+          "narration": "To sum up. Gravitation is a universal attraction. The force rises with the product of the masses and falls with the square of the distance. The forces on the two bodies are equal and opposite. Use ratios for quick answers.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s15",
+          "layout": "exam-tips",
+          "heading": "Exam tips: Part 1",
+          "body_md": "",
+          "bullets": [
+            "Measure the distance between the centres, not the surfaces.",
+            "For ratio questions, write the factor for each quantity before multiplying.",
+            "Write the unit of G when you substitute: N m² kg⁻².",
+            "Say that the two forces act on different bodies when asked why they do not cancel."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Slip",
+                "Fix"
+              ],
+              "rows": [
+                [
+                  "Forgetting to square the distance",
+                  "Divide by r squared"
+                ],
+                [
+                  "Using the radius of a body as the distance",
+                  "Use the distance between the centres"
+                ],
+                [
+                  "Saying the heavier body pulls harder on the lighter one",
+                  "The two pulls are equal"
+                ]
+              ]
+            },
+            "alt": "Table of three common slips and their fixes"
+          },
+          "math": [],
+          "narration": "Exam tips. Measure from centre to centre. Square the distance, and show the factor for each quantity in ratio problems. Remember that the two pulls of a pair are equal in size, whatever the masses may be.",
+          "check_question_id": null,
+          "audio": null
+        }
+      ],
+      "status": "draft",
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "unit": "icse-9-physics-ch04",
+      "part": 2,
+      "version": 1,
+      "title": "Gravitation — Part 2: Free fall, mass and weight",
+      "language": "en",
+      "goals": [
+        "Explain why all bodies fall with the same acceleration when air resistance is absent",
+        "Compare mass and weight in terms of definition, unit, nature and measuring instrument",
+        "Calculate the weight of a body from its mass in newton and kgf"
+      ],
+      "slides": [
+        {
+          "id": "s01",
+          "layout": "title",
+          "heading": "Dropping things",
+          "body_md": "Part 2 — gravity pulls every falling body, heavy or light, with the same acceleration.",
+          "bullets": [],
+          "visual": {
+            "kind": "flow",
+            "spec": {
+              "direction": "LR",
+              "nodes": [
+                {
+                  "id": "a",
+                  "label": "Gravity of the Earth"
+                },
+                {
+                  "id": "b",
+                  "label": "Body released"
+                },
+                {
+                  "id": "c",
+                  "label": "Speed grows every second"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "a",
+                  "to": "b"
+                },
+                {
+                  "from": "b",
+                  "to": "c"
+                }
+              ]
+            },
+            "alt": "Flow from the gravity of the Earth to a body released to speed growing every second"
+          },
+          "math": [],
+          "narration": "Drop a stone from a bridge and watch it. It does not move at a steady speed. It speeds up all the way down. In this part we find how fast, and why a feather and a stone can fall together.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s02",
+          "layout": "concept",
+          "heading": "Gravity and the acceleration due to gravity",
+          "body_md": "The pull of the **Earth** on a body is called **gravity**. It gives every freely falling body the same acceleration, the **acceleration due to gravity**, $g$. Near the Earth, $g \\approx 9.8$ m s⁻². Many problems use $g = 10$ m s⁻² and say so.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Term",
+                "Meaning"
+              ],
+              "rows": [
+                [
+                  "Gravitation",
+                  "Attraction between any two bodies"
+                ],
+                [
+                  "Gravity",
+                  "Attraction by the Earth on a body"
+                ],
+                [
+                  "g",
+                  "Acceleration of a body falling freely near the Earth, 9.8 m s⁻²"
+                ]
+              ]
+            },
+            "alt": "Table distinguishing gravitation, gravity and the acceleration due to gravity"
+          },
+          "math": [],
+          "narration": "Gravitation is the attraction between any two bodies. Gravity is the special case in which the Earth is one of the bodies. The acceleration it gives is about nine point eight metres per second every second. Many sums use ten for easy arithmetic.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s03",
+          "layout": "concept",
+          "heading": "Free fall",
+          "body_md": "A body is in **free fall** when gravity is the **only force** acting on it. In air, a feather falls slowly because **air resistance** is large for it. In a vacuum, a feather and a coin fall **together**.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Place",
+                "Feather and coin released together",
+                "Reason"
+              ],
+              "rows": [
+                [
+                  "Air",
+                  "Coin lands first",
+                  "Air resistance affects the feather far more"
+                ],
+                [
+                  "Vacuum tube",
+                  "Both land together",
+                  "No air; only gravity acts"
+                ]
+              ]
+            },
+            "alt": "Table comparing the fall of a feather and a coin in air and in a vacuum"
+          },
+          "math": [],
+          "narration": "In ordinary air the coin beats the feather, not because gravity favours the coin but because the air holds the feather back. Pump the air out of a long tube and both reach the bottom at the same moment.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s04",
+          "layout": "concept",
+          "heading": "Speed and distance in free fall",
+          "body_md": "Starting from rest, a falling ball gains speed $g t$ and covers a distance $\\tfrac{1}{2} g t^{2}$ in time $t$ (with $g = 10$ m s⁻²). The gaps between pictures **grow** because the speed keeps increasing.",
+          "bullets": [],
+          "visual": {
+            "kind": "svg",
+            "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 380 280\" role=\"img\" aria-label=\"Strobe picture of a ball dropped from rest. The ball is shown at times of 0, 1, 2 and 3 seconds, after falling 0, 5, 20 and 45 metres, with speeds of 0, 10, 20 and 30 metres per second. The gaps between successive positions grow because the speed keeps increasing\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>Strobe picture of a ball dropped from rest. The ball is shown at times of 0, 1, 2 and 3 seconds, after falling 0, 5, 20 and 45 metres, with speeds of 0, 10, 20 and 30 metres per second. The gaps between successive positions grow because the speed keeps increasing</title><line x1=\"70\" y1=\"24\" x2=\"70\" y2=\"249\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"64\" y1=\"24\" x2=\"76\" y2=\"24\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"58\" y=\"28\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"end\" font-size=\"11\">0 m</text><line x1=\"76\" y1=\"24\" x2=\"139\" y2=\"24\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><circle cx=\"150\" cy=\"24\" r=\"9\" fill=\"var(--diagram-fill)\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.8\" fill-opacity=\"1\"/><text x=\"170\" y=\"28\" fill=\"currentColor\" stroke=\"none\" font-size=\"11\">t = 0 s, speed 0 m s⁻¹</text><line x1=\"64\" y1=\"49\" x2=\"76\" y2=\"49\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"58\" y=\"53\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"end\" font-size=\"11\">5 m</text><line x1=\"76\" y1=\"49\" x2=\"139\" y2=\"49\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><circle cx=\"150\" cy=\"49\" r=\"9\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.8\" fill-opacity=\"0.4\"/><text x=\"170\" y=\"53\" fill=\"currentColor\" stroke=\"none\" font-size=\"11\">t = 1 s, speed 10 m s⁻¹</text><line x1=\"64\" y1=\"124\" x2=\"76\" y2=\"124\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"58\" y=\"128\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"end\" font-size=\"11\">20 m</text><line x1=\"76\" y1=\"124\" x2=\"139\" y2=\"124\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><circle cx=\"150\" cy=\"124\" r=\"9\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.8\" fill-opacity=\"0.4\"/><text x=\"170\" y=\"128\" fill=\"currentColor\" stroke=\"none\" font-size=\"11\">t = 2 s, speed 20 m s⁻¹</text><line x1=\"64\" y1=\"249\" x2=\"76\" y2=\"249\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"58\" y=\"253\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"end\" font-size=\"11\">45 m</text><line x1=\"76\" y1=\"249\" x2=\"139\" y2=\"249\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><circle cx=\"150\" cy=\"249\" r=\"9\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.8\" fill-opacity=\"0.4\"/><text x=\"170\" y=\"253\" fill=\"currentColor\" stroke=\"none\" font-size=\"11\">t = 3 s, speed 30 m s⁻¹</text><line x1=\"300\" y1=\"44\" x2=\"300\" y2=\"136.8\" stroke=\"var(--diagram-red)\" stroke-width=\"2.5\"/><polygon points=\"300,144 296.3,135.8 303.7,135.8\" fill=\"var(--diagram-red)\" stroke=\"none\"/><text x=\"312\" y=\"94\" fill=\"var(--diagram-red)\" stroke=\"none\" font-size=\"14\" font-weight=\"bold\">g</text><text x=\"300\" y=\"164\" fill=\"var(--diagram-red)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\">steady pull</text><text x=\"300\" y=\"178\" fill=\"var(--diagram-red)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\">of the Earth</text></svg>",
+            "alt": "Strobe picture of a ball falling from rest, shown at one-second intervals with distances and speeds"
+          },
+          "math": [],
+          "narration": "In the strobe picture, the ball is photographed once every second. The gaps between positions get bigger and bigger. After one second it has fallen a little, after two seconds much more. Speed grows by the same amount each second.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s05",
+          "layout": "check",
+          "heading": "Quick check: the strobe picture",
+          "body_md": "Read the distances in the strobe picture.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Time",
+                "Distance fallen"
+              ],
+              "rows": [
+                [
+                  "1 s",
+                  "5 m"
+                ],
+                [
+                  "2 s",
+                  "20 m"
+                ],
+                [
+                  "3 s",
+                  "45 m"
+                ]
+              ]
+            },
+            "alt": "Table of the times and distances in the strobe picture"
+          },
+          "math": [],
+          "narration": "In the picture, the ball falls a short distance in the first second and a longer distance in each later second. What does this show?",
+          "check_question_id": "q_icse9phy_ch04_004",
+          "audio": null
+        },
+        {
+          "id": "s06",
+          "layout": "example",
+          "heading": "Worked example 1: speed and distance after two seconds",
+          "body_md": "**Problem.** A ball is dropped from rest. Find its speed and the distance fallen after 2 s. ($g = 10$ m s⁻²)\n\n**Step 1.** $v = g t = 10 \\times 2 = 20$ m s⁻¹.\n\n**Step 2.** $s = \\tfrac{1}{2} g t^{2} = \\tfrac{1}{2} \\times 10 \\times 2^{2} = 20$ m.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Quantity",
+                "Working",
+                "Result"
+              ],
+              "rows": [
+                [
+                  "Speed",
+                  "10 × 2",
+                  "20 m s⁻¹"
+                ],
+                [
+                  "Distance",
+                  "½ × 10 × 2²",
+                  "20 m"
+                ]
+              ]
+            },
+            "alt": "Table of the working for the speed and distance after two seconds"
+          },
+          "math": [],
+          "narration": "Speed after two seconds is gee times time, ten times two, which is twenty metres per second. The distance is half of gee times time squared, half of ten times four, which is twenty metres.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s07",
+          "layout": "concept",
+          "heading": "Why heavy and light bodies fall together",
+          "body_md": "A body of mass $m$ feels a pull $mg$. The acceleration is force divided by mass: $a = \\dfrac{mg}{m} = g$. The **mass cancels**, so every body has the same acceleration.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Body",
+                "Pull of the Earth",
+                "Acceleration"
+              ],
+              "rows": [
+                [
+                  "1 kg",
+                  "10 N",
+                  "g"
+                ],
+                [
+                  "4 kg",
+                  "40 N",
+                  "g"
+                ]
+              ]
+            },
+            "alt": "Table showing that a one kilogram and a four kilogram body both have acceleration g"
+          },
+          "math": [],
+          "narration": "A heavier body is pulled harder, but it also has more mass to move. The two effects cancel exactly. A one kilogram ball and a four kilogram ball have the same acceleration, so they reach the ground together.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s08",
+          "layout": "concept",
+          "heading": "Mass and weight",
+          "body_md": "**Mass** is the quantity of matter in a body. **Weight** is the force with which the Earth attracts the body: $W = m g$. Mass stays the same everywhere; weight depends on $g$ at the place.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Property",
+                "Mass",
+                "Weight"
+              ],
+              "rows": [
+                [
+                  "Meaning",
+                  "Quantity of matter",
+                  "Force of gravity on the body"
+                ],
+                [
+                  "SI unit",
+                  "kilogram",
+                  "newton"
+                ],
+                [
+                  "Nature",
+                  "Scalar",
+                  "Vector, directed to the centre of the Earth"
+                ],
+                [
+                  "Instrument",
+                  "Beam balance",
+                  "Spring balance"
+                ],
+                [
+                  "Changes with place?",
+                  "No",
+                  "Yes, as g changes"
+                ]
+              ]
+            },
+            "alt": "Table comparing mass and weight in meaning, unit, nature, instrument and variation with place"
+          },
+          "math": [],
+          "narration": "Mass tells how much matter there is, and it never changes. Weight is a force, and it depends on the place. Mass is measured in kilograms on a beam balance. Weight is measured in newtons on a spring balance.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s09",
+          "layout": "concept",
+          "heading": "Weight on a spring balance",
+          "body_md": "A spring balance shows weight. Its scale can be marked in **newton** or in **kilogram force (kgf)**. One kgf is the weight of a one-kilogram mass.",
+          "bullets": [],
+          "visual": {
+            "kind": "svg",
+            "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 440 290\" role=\"img\" aria-label=\"A spring balance with a 5 kilogram body hanging from it. The pointer stands at 5 kilogram force on the left scale and at 49 newton on the right scale\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>A spring balance with a 5 kilogram body hanging from it. The pointer stands at 5 kilogram force on the left scale and at 49 newton on the right scale</title><path d=\"M 190 8 a 10 10 0 1 1 0.1 0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"190\" y1=\"26\" x2=\"190\" y2=\"32\" stroke=\"currentColor\" stroke-width=\"2\"/><rect x=\"150\" y=\"32\" width=\"80\" height=\"176\" rx=\"6\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"150\" y1=\"40\" x2=\"164\" y2=\"40\" stroke=\"currentColor\" stroke-width=\"1.2\"/><text x=\"144\" y=\"44\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"end\" font-size=\"11\">0</text><line x1=\"150\" y1=\"55\" x2=\"158\" y2=\"55\" stroke=\"currentColor\" stroke-width=\"1.2\"/><line x1=\"150\" y1=\"70\" x2=\"164\" y2=\"70\" stroke=\"currentColor\" stroke-width=\"1.2\"/><text x=\"144\" y=\"74\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"end\" font-size=\"11\">2</text><line x1=\"150\" y1=\"85\" x2=\"158\" y2=\"85\" stroke=\"currentColor\" stroke-width=\"1.2\"/><line x1=\"150\" y1=\"100\" x2=\"164\" y2=\"100\" stroke=\"currentColor\" stroke-width=\"1.2\"/><text x=\"144\" y=\"104\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"end\" font-size=\"11\">4</text><line x1=\"150\" y1=\"115\" x2=\"158\" y2=\"115\" stroke=\"currentColor\" stroke-width=\"1.2\"/><line x1=\"150\" y1=\"130\" x2=\"164\" y2=\"130\" stroke=\"currentColor\" stroke-width=\"1.2\"/><text x=\"144\" y=\"134\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"end\" font-size=\"11\">6</text><line x1=\"150\" y1=\"145\" x2=\"158\" y2=\"145\" stroke=\"currentColor\" stroke-width=\"1.2\"/><line x1=\"150\" y1=\"160\" x2=\"164\" y2=\"160\" stroke=\"currentColor\" stroke-width=\"1.2\"/><text x=\"144\" y=\"164\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"end\" font-size=\"11\">8</text><line x1=\"150\" y1=\"175\" x2=\"158\" y2=\"175\" stroke=\"currentColor\" stroke-width=\"1.2\"/><line x1=\"150\" y1=\"190\" x2=\"164\" y2=\"190\" stroke=\"currentColor\" stroke-width=\"1.2\"/><text x=\"144\" y=\"194\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"end\" font-size=\"11\">10</text><line x1=\"230\" y1=\"40\" x2=\"216\" y2=\"40\" stroke=\"var(--diagram-green)\" stroke-width=\"1.2\"/><text x=\"236\" y=\"44\" fill=\"var(--diagram-green)\" stroke=\"none\" font-size=\"11\">0</text><line x1=\"230\" y1=\"55.3\" x2=\"222\" y2=\"55.3\" stroke=\"var(--diagram-green)\" stroke-width=\"1.2\"/><line x1=\"230\" y1=\"70.6\" x2=\"216\" y2=\"70.6\" stroke=\"var(--diagram-green)\" stroke-width=\"1.2\"/><text x=\"236\" y=\"74.6\" fill=\"var(--diagram-green)\" stroke=\"none\" font-size=\"11\">20</text><line x1=\"230\" y1=\"85.9\" x2=\"222\" y2=\"85.9\" stroke=\"var(--diagram-green)\" stroke-width=\"1.2\"/><line x1=\"230\" y1=\"101.2\" x2=\"216\" y2=\"101.2\" stroke=\"var(--diagram-green)\" stroke-width=\"1.2\"/><text x=\"236\" y=\"105.2\" fill=\"var(--diagram-green)\" stroke=\"none\" font-size=\"11\">40</text><line x1=\"230\" y1=\"116.5\" x2=\"222\" y2=\"116.5\" stroke=\"var(--diagram-green)\" stroke-width=\"1.2\"/><line x1=\"230\" y1=\"131.8\" x2=\"216\" y2=\"131.8\" stroke=\"var(--diagram-green)\" stroke-width=\"1.2\"/><text x=\"236\" y=\"135.8\" fill=\"var(--diagram-green)\" stroke=\"none\" font-size=\"11\">60</text><line x1=\"230\" y1=\"147.1\" x2=\"222\" y2=\"147.1\" stroke=\"var(--diagram-green)\" stroke-width=\"1.2\"/><line x1=\"230\" y1=\"162.4\" x2=\"216\" y2=\"162.4\" stroke=\"var(--diagram-green)\" stroke-width=\"1.2\"/><text x=\"236\" y=\"166.4\" fill=\"var(--diagram-green)\" stroke=\"none\" font-size=\"11\">80</text><line x1=\"230\" y1=\"177.8\" x2=\"222\" y2=\"177.8\" stroke=\"var(--diagram-green)\" stroke-width=\"1.2\"/><text x=\"112\" y=\"26\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"end\" font-size=\"12\" font-weight=\"bold\">kgf</text><text x=\"258\" y=\"26\" fill=\"var(--diagram-green)\" stroke=\"none\" font-size=\"12\" font-weight=\"bold\">N</text><line x1=\"160\" y1=\"115\" x2=\"220\" y2=\"115\" stroke=\"var(--diagram-red)\" stroke-width=\"2.5\"/><polygon points=\"220,115 212.7,118.3 212.7,111.7\" fill=\"var(--diagram-red)\" stroke=\"none\"/><line x1=\"190\" y1=\"208\" x2=\"190\" y2=\"234\" stroke=\"currentColor\" stroke-width=\"2\"/><rect x=\"165\" y=\"234\" width=\"50\" height=\"36\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"2\" fill-opacity=\"0.35\"/><text x=\"190\" y=\"257\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\">5 kg</text><text x=\"300\" y=\"109\" fill=\"var(--diagram-red)\" stroke=\"none\" font-size=\"12\">pointer at 5 kgf</text><text x=\"300\" y=\"125\" fill=\"var(--diagram-red)\" stroke=\"none\" font-size=\"12\">which is 49 N</text><line x1=\"236\" y1=\"115\" x2=\"296\" y2=\"115\" stroke=\"var(--diagram-red)\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/></svg>",
+            "alt": "A spring balance with a five kilogram body, showing the pointer at five kilogram force and forty-nine newton"
+          },
+          "math": [],
+          "narration": "The hanging body stretches the spring, and the pointer moves down to show its weight. The same pointer reads five on the kilogram force scale and forty nine on the newton scale. Both numbers describe one and the same pull.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s10",
+          "layout": "check",
+          "heading": "Quick check: reading the balance",
+          "body_md": "The pointer stands at 5 kgf, which is 49 N.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Scale",
+                "Reading"
+              ],
+              "rows": [
+                [
+                  "kgf",
+                  "5"
+                ],
+                [
+                  "N",
+                  "49"
+                ]
+              ]
+            },
+            "alt": "Table of the two readings of the spring balance"
+          },
+          "math": [],
+          "narration": "The body on the balance has a mass of five kilograms. Which statement about it is correct?",
+          "check_question_id": "q_icse9phy_ch04_005",
+          "audio": null
+        },
+        {
+          "id": "s11",
+          "layout": "concept",
+          "heading": "Newton and kilogram force",
+          "body_md": "$1\\ \\text{kgf} = 9.8$ N. To change kgf to newton, **multiply by 9.8**; to change newton to kgf, **divide by 9.8**. A body of mass $m$ kg weighs $m$ kgf.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Mass",
+                "Weight in kgf",
+                "Weight in N (1 kgf = 9.8 N)"
+              ],
+              "rows": [
+                [
+                  "1 kg",
+                  "1",
+                  "9.8"
+                ],
+                [
+                  "2 kg",
+                  "2",
+                  "19.6"
+                ],
+                [
+                  "10 kg",
+                  "10",
+                  "98"
+                ]
+              ]
+            },
+            "alt": "Table of weights of three masses in kgf and in newton"
+          },
+          "math": [],
+          "narration": "The kilogram force is a larger unit than the newton. Multiply by nine point eight to go from kilogram force to newtons, and divide to come back. A mass of so many kilograms always weighs that many kilogram force.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s12",
+          "layout": "example",
+          "heading": "Worked example 2: weight of a parcel",
+          "body_md": "**Problem.** A parcel has mass 7.5 kg. Find its weight in kgf and in N. ($1$ kgf $= 9.8$ N)\n\n**Step 1.** Weight in kgf $= 7.5$ kgf.\n\n**Step 2.** Weight in N $= 7.5 \\times 9.8 = 73.5$ N.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Step",
+                "Working",
+                "Result"
+              ],
+              "rows": [
+                [
+                  "In kgf",
+                  "same number as the mass",
+                  "7.5 kgf"
+                ],
+                [
+                  "In N",
+                  "7.5 × 9.8",
+                  "73.5 N"
+                ]
+              ]
+            },
+            "alt": "Table of the working for the weight of the parcel in kgf and in newton"
+          },
+          "math": [],
+          "narration": "In kilogram force the weight has the same number as the mass, seven point five. To get newtons, multiply by nine point eight. That gives seventy three point five newtons.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s13",
+          "layout": "check",
+          "heading": "Quick check: kgf and newton",
+          "body_md": "Convert a weight from kgf to newton.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Weight",
+                "Unit"
+              ],
+              "rows": [
+                [
+                  "3 kgf",
+                  "? N"
+                ]
+              ]
+            },
+            "alt": "Table asking for three kilogram force in newton"
+          },
+          "math": [],
+          "narration": "A body weighs three kilogram force. Which of the options gives its weight in newtons?",
+          "check_question_id": "q_icse9phy_ch04_006",
+          "audio": null
+        },
+        {
+          "id": "s14",
+          "layout": "summary",
+          "heading": "Summary: Part 2",
+          "body_md": "",
+          "bullets": [
+            "Free fall is motion under gravity alone; all bodies have the same acceleration g, about 9.8 m s⁻².",
+            "In air, a light body falls slowly because of air resistance, not because gravity pulls it less.",
+            "Weight W = m g is a force in newton; mass is the quantity of matter in kilogram.",
+            "1 kgf = 9.8 N; weight changes with place, mass does not."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Quantity",
+                "Unit",
+                "Measured by"
+              ],
+              "rows": [
+                [
+                  "Mass",
+                  "kilogram",
+                  "beam balance"
+                ],
+                [
+                  "Weight",
+                  "newton or kgf",
+                  "spring balance"
+                ]
+              ]
+            },
+            "alt": "Summary table of mass and weight with units and instruments"
+          },
+          "math": [],
+          "narration": "To sum up. Freely falling bodies share one acceleration. Weight is mass times gee, a force measured in newtons or kilogram force on a spring balance. Mass is matter, measured in kilograms, and it does not change from place to place.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s15",
+          "layout": "exam-tips",
+          "heading": "Exam tips: Part 2",
+          "body_md": "",
+          "bullets": [
+            "State which value of g you use: 9.8 or 10 m s⁻².",
+            "Give both the unit and the instrument when comparing mass and weight.",
+            "Write kgf to newton as a multiplication by 9.8, with the unit.",
+            "Blame air resistance, not a smaller gravity, when a feather falls slowly."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Slip",
+                "Fix"
+              ],
+              "rows": [
+                [
+                  "Writing weight in kg",
+                  "Weight is in N or kgf"
+                ],
+                [
+                  "Saying a heavy body falls faster in a vacuum",
+                  "All bodies fall together"
+                ],
+                [
+                  "Saying mass changes on another planet",
+                  "Only the weight changes"
+                ]
+              ]
+            },
+            "alt": "Table of three common slips and their fixes"
+          },
+          "math": [],
+          "narration": "Exam tips. Say which gee you use. Keep mass and weight apart, in meaning, unit and instrument. When a light body is slow, give air resistance as the reason. Mass does not change with place.",
+          "check_question_id": null,
+          "audio": null
+        }
+      ],
+      "status": "draft",
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    }
+  ],
+  "notes": {
+    "unit": "icse-9-physics-ch04",
+    "version": 1,
+    "title": "Gravitation — Notes",
+    "language": "en",
+    "sections": [
+      {
+        "heading": "1. The universal law of gravitation",
+        "body_md": "Every body in the universe attracts every other body. **Law:** the force of attraction between two bodies is directly proportional to the product of their masses and inversely proportional to the square of the distance between their centres. It acts along the line joining the centres.\n\n$F = \\dfrac{G\\, m_1 m_2}{r^{2}}$, where $G = 6.67 \\times 10^{-11}$ N m² kg⁻² has the same value everywhere (that is why it is called universal).\n\n- The two forces of a pair are **equal and opposite** and act on **different bodies**, so they do not cancel. This follows the third law of motion.\n- **Ratio method:** if the masses are multiplied by $a$ and $b$ and the distance by $k$, the force is multiplied by $\\dfrac{ab}{k^{2}}$.\n- **Importance:** the same law explains the fall of bodies, the orbit of the Moon round the Earth, the motion of planets round the Sun, the tides, and the motion of artificial satellites.\n- The force between everyday objects is tiny because $G$ is tiny; it is noticeable only when at least one body is very massive.",
+        "key_terms": [
+          {
+            "term": "Gravitation",
+            "definition_md": "The force of attraction between any two bodies in the universe."
+          },
+          {
+            "term": "Universal gravitational constant G",
+            "definition_md": "The constant in the law of gravitation; 6.67 × 10⁻¹¹ N m² kg⁻² in SI units, the same for every pair of bodies."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "F = \\dfrac{G\\, m_1 m_2}{r^{2}}",
+            "label": "Universal law of gravitation"
+          },
+          {
+            "latex": "F_{\\text{new}} = F \\times \\dfrac{ab}{k^{2}}",
+            "label": "Ratio method"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Change",
+              "Force becomes"
+            ],
+            "rows": [
+              [
+                "One mass doubled",
+                "2 times"
+              ],
+              [
+                "Distance doubled",
+                "one quarter"
+              ],
+              [
+                "Distance halved",
+                "4 times"
+              ],
+              [
+                "Distance tripled",
+                "one ninth"
+              ],
+              [
+                "Both masses and the distance doubled",
+                "unchanged"
+              ]
+            ]
+          },
+          "alt": "Table of how the force changes with the masses and the distance"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-9-physics-ch04-t01"
+        ]
+      },
+      {
+        "heading": "2. Gravity, acceleration due to gravity and free fall",
+        "body_md": "**Gravity** is the force of attraction of the Earth on a body. A body released near the Earth speeds up; the acceleration it gains is the **acceleration due to gravity**, $g$, about 9.8 m s⁻² (10 m s⁻² where a question says so).\n\n**Free fall:** motion under gravity alone, with no air resistance. Because the pull on a body of mass $m$ is $mg$, its acceleration is $\\dfrac{mg}{m} = g$: the mass cancels, so **all bodies fall with the same acceleration**, whatever their masses.\n\n- In air, a feather or a sheet of paper falls slower than a coin because of **air resistance**. In a vacuum tube both fall together.\n- Starting from rest, after time $t$: speed $v = g t$ and distance $s = \\tfrac{1}{2} g t^{2}$.\n- The distances covered in successive equal intervals grow because the speed grows.",
+        "key_terms": [
+          {
+            "term": "Acceleration due to gravity",
+            "definition_md": "The acceleration of a freely falling body near the Earth, about 9.8 m s⁻²; it is the same for all bodies."
+          },
+          {
+            "term": "Free fall",
+            "definition_md": "The motion of a body under the action of gravity alone."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "v = g t",
+            "label": "Speed after time t from rest"
+          },
+          {
+            "latex": "s = \\tfrac{1}{2} g t^{2}",
+            "label": "Distance fallen in time t from rest"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Time",
+              "Speed (g = 10)",
+              "Distance fallen"
+            ],
+            "rows": [
+              [
+                "1 s",
+                "10 m s⁻¹",
+                "5 m"
+              ],
+              [
+                "2 s",
+                "20 m s⁻¹",
+                "20 m"
+              ],
+              [
+                "3 s",
+                "30 m s⁻¹",
+                "45 m"
+              ]
+            ]
+          },
+          "alt": "Table of speed and distance fallen at one, two and three seconds"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-9-physics-ch04-t02"
+        ]
+      },
+      {
+        "heading": "3. Mass and weight",
+        "body_md": "**Mass** is the quantity of matter in a body; it is a scalar, measured in kilograms with a beam (physical) balance, and it is the same everywhere.\n\n**Weight** is the force with which the Earth attracts a body: $W = m g$. It is a vector pointing towards the centre of the Earth, measured with a spring balance, and it changes with the place because $g$ changes. At a place where $g$ is smaller (for example on the Moon) the weight is smaller, but the mass is unchanged.\n\n- SI unit of weight: **newton**. Gravitational unit: **kilogram force (kgf)**; $1\\ \\text{kgf} = 9.8$ N (about 10 N when $g = 10$ m s⁻² is used). A body of mass $m$ kg weighs $m$ kgf.\n- Weight in newton $=$ weight in kgf $\\times$ 9.8.\n\n| Property | Mass | Weight |\n|---|---|---|\n| Meaning | Quantity of matter | Force of gravity on the body |\n| SI unit | kilogram | newton |\n| Nature | Scalar | Vector |\n| Instrument | Beam balance | Spring balance |\n| Varies with place | No | Yes |\n\nBooks differ on whether 1 kgf is taken as 9.8 N or 10 N; every problem here states the value used.",
+        "key_terms": [
+          {
+            "term": "Mass",
+            "definition_md": "The quantity of matter contained in a body; SI unit kilogram."
+          },
+          {
+            "term": "Weight",
+            "definition_md": "The force with which the Earth attracts a body; W = m g; SI unit newton."
+          },
+          {
+            "term": "Kilogram force",
+            "definition_md": "The weight of a one-kilogram mass; equal to 9.8 N."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "W = m g",
+            "label": "Weight"
+          },
+          {
+            "latex": "1\\ \\text{kgf} = 9.8\\ \\text{N}",
+            "label": "Kilogram force"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Mass",
+              "Weight in kgf",
+              "Weight in N (1 kgf = 9.8 N)"
+            ],
+            "rows": [
+              [
+                "1 kg",
+                "1",
+                "9.8"
+              ],
+              [
+                "5 kg",
+                "5",
+                "49"
+              ],
+              [
+                "10 kg",
+                "10",
+                "98"
+              ]
+            ]
+          },
+          "alt": "Table of three masses with their weights in kgf and in newton"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "icse-9-physics-ch04-t03"
+        ]
+      }
+    ],
+    "exam_tips_md": "**Common mistakes**\n- Measuring the distance from the surfaces instead of from the centres.\n- Forgetting to square the distance in the law of gravitation.\n- Writing the unit of weight as kg.\n- Saying that a heavier body falls faster in a vacuum, or that mass changes from place to place.\n\n**How marks are usually awarded**\n- Statement of the law (2 marks): both proportionalities and the line of action.\n- Numericals (1 to 3 marks): formula, substitution with units, answer with unit; for ratio problems, the factor for each quantity.\n- Mass against weight (3 marks): definition, unit and instrument, one mark each.",
+    "status": "draft",
+    "provenance": {
+      "origin": "human",
+      "template_version": null,
+      "model": null,
+      "generated_at": "2026-11-05",
+      "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+    }
+  },
+  "flashcards": {
+    "unit": "icse-9-physics-ch04",
+    "version": 1,
+    "language": "en",
+    "cards": [
+      {
+        "id": "f01",
+        "front_md": "Law of gravitation, equation?",
+        "back_md": "F = G m₁ m₂ / r².",
+        "tag": "formula",
+        "topic_id": "icse-9-physics-ch04-t01"
+      },
+      {
+        "id": "f02",
+        "front_md": "Value of G?",
+        "back_md": "6.67 × 10⁻¹¹ N m² kg⁻².",
+        "tag": "fact",
+        "topic_id": "icse-9-physics-ch04-t01"
+      },
+      {
+        "id": "f03",
+        "front_md": "SI unit of G?",
+        "back_md": "N m² kg⁻².",
+        "tag": "fact",
+        "topic_id": "icse-9-physics-ch04-t01"
+      },
+      {
+        "id": "f04",
+        "front_md": "Distance in the law is measured between?",
+        "back_md": "The centres of the two bodies.",
+        "tag": "concept",
+        "topic_id": "icse-9-physics-ch04-t01"
+      },
+      {
+        "id": "f05",
+        "front_md": "Distance doubled: force?",
+        "back_md": "One quarter.",
+        "tag": "fact",
+        "topic_id": "icse-9-physics-ch04-t01"
+      },
+      {
+        "id": "f06",
+        "front_md": "Distance halved: force?",
+        "back_md": "Four times.",
+        "tag": "fact",
+        "topic_id": "icse-9-physics-ch04-t01"
+      },
+      {
+        "id": "f07",
+        "front_md": "One mass tripled: force?",
+        "back_md": "Three times.",
+        "tag": "fact",
+        "topic_id": "icse-9-physics-ch04-t01"
+      },
+      {
+        "id": "f08",
+        "front_md": "Are the two forces of a gravitational pair equal?",
+        "back_md": "Yes, equal and opposite, on different bodies.",
+        "tag": "concept",
+        "topic_id": "icse-9-physics-ch04-t01"
+      },
+      {
+        "id": "f09",
+        "front_md": "Why do the pair of forces not cancel?",
+        "back_md": "They act on different bodies.",
+        "tag": "concept",
+        "topic_id": "icse-9-physics-ch04-t01"
+      },
+      {
+        "id": "f10",
+        "front_md": "Why can we not feel the pull between two students?",
+        "back_md": "G is tiny and the masses are small.",
+        "tag": "concept",
+        "topic_id": "icse-9-physics-ch04-t01"
+      },
+      {
+        "id": "f11",
+        "front_md": "Name two effects explained by the law.",
+        "back_md": "Orbit of the Moon; tides (also planets, satellites).",
+        "tag": "example",
+        "topic_id": "icse-9-physics-ch04-t01"
+      },
+      {
+        "id": "f12",
+        "front_md": "Gravity?",
+        "back_md": "The Earth’s force of attraction on a body.",
+        "tag": "definition",
+        "topic_id": "icse-9-physics-ch04-t02"
+      },
+      {
+        "id": "f13",
+        "front_md": "Acceleration due to gravity, value?",
+        "back_md": "About 9.8 m s⁻² (10 where stated).",
+        "tag": "fact",
+        "topic_id": "icse-9-physics-ch04-t02"
+      },
+      {
+        "id": "f14",
+        "front_md": "Free fall?",
+        "back_md": "Motion under gravity alone.",
+        "tag": "definition",
+        "topic_id": "icse-9-physics-ch04-t02"
+      },
+      {
+        "id": "f15",
+        "front_md": "Speed after t from rest in free fall?",
+        "back_md": "v = g t.",
+        "tag": "formula",
+        "topic_id": "icse-9-physics-ch04-t02"
+      },
+      {
+        "id": "f16",
+        "front_md": "Distance in time t from rest?",
+        "back_md": "s = ½ g t².",
+        "tag": "formula",
+        "topic_id": "icse-9-physics-ch04-t02"
+      },
+      {
+        "id": "f17",
+        "front_md": "Why do all bodies fall together in a vacuum?",
+        "back_md": "Pull is m g, so acceleration m g / m = g for every mass.",
+        "tag": "concept",
+        "topic_id": "icse-9-physics-ch04-t02"
+      },
+      {
+        "id": "f18",
+        "front_md": "Why does a feather fall slowly in air?",
+        "back_md": "Air resistance acts strongly on it.",
+        "tag": "concept",
+        "topic_id": "icse-9-physics-ch04-t02"
+      },
+      {
+        "id": "f19",
+        "front_md": "Fall distances in 1 s, 2 s, 3 s (g = 10)?",
+        "back_md": "5 m, 20 m, 45 m.",
+        "tag": "fact",
+        "topic_id": "icse-9-physics-ch04-t02"
+      },
+      {
+        "id": "f20",
+        "front_md": "Mass?",
+        "back_md": "Quantity of matter in a body (kg).",
+        "tag": "definition",
+        "topic_id": "icse-9-physics-ch04-t03"
+      },
+      {
+        "id": "f21",
+        "front_md": "Weight?",
+        "back_md": "Force of gravity on a body, W = m g (N).",
+        "tag": "definition",
+        "topic_id": "icse-9-physics-ch04-t03"
+      },
+      {
+        "id": "f22",
+        "front_md": "Instrument for mass?",
+        "back_md": "Beam balance.",
+        "tag": "fact",
+        "topic_id": "icse-9-physics-ch04-t03"
+      },
+      {
+        "id": "f23",
+        "front_md": "Instrument for weight?",
+        "back_md": "Spring balance.",
+        "tag": "fact",
+        "topic_id": "icse-9-physics-ch04-t03"
+      },
+      {
+        "id": "f24",
+        "front_md": "Is weight a scalar or a vector?",
+        "back_md": "A vector, towards the centre of the Earth.",
+        "tag": "concept",
+        "topic_id": "icse-9-physics-ch04-t03"
+      },
+      {
+        "id": "f25",
+        "front_md": "Does mass change with place?",
+        "back_md": "No.",
+        "tag": "fact",
+        "topic_id": "icse-9-physics-ch04-t03"
+      },
+      {
+        "id": "f26",
+        "front_md": "Does weight change with place?",
+        "back_md": "Yes, because g changes.",
+        "tag": "fact",
+        "topic_id": "icse-9-physics-ch04-t03"
+      },
+      {
+        "id": "f27",
+        "front_md": "1 kgf in newton?",
+        "back_md": "9.8 N.",
+        "tag": "fact",
+        "topic_id": "icse-9-physics-ch04-t03"
+      },
+      {
+        "id": "f28",
+        "front_md": "Weight of 1 kg in kgf?",
+        "back_md": "1 kgf.",
+        "tag": "fact",
+        "topic_id": "icse-9-physics-ch04-t03"
+      },
+      {
+        "id": "f29",
+        "front_md": "Convert kgf to N?",
+        "back_md": "Multiply by 9.8.",
+        "tag": "formula",
+        "topic_id": "icse-9-physics-ch04-t03"
+      },
+      {
+        "id": "f30",
+        "front_md": "Exam tip: ratio problems",
+        "back_md": "Write the factor for each quantity, then multiply.",
+        "tag": "exam-tip",
+        "topic_id": "icse-9-physics-ch04-t01"
+      }
+    ],
+    "status": "draft",
+    "provenance": {
+      "origin": "human",
+      "template_version": null,
+      "model": null,
+      "generated_at": "2026-11-05",
+      "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+    }
+  },
+  "questions": [
+    {
+      "id": "q_icse9phy_ch04_001",
+      "unit": "icse-9-physics-ch04",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "The Earth pulls a falling mango downwards with a force of 3 N. The pull of the mango on the Earth is",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "zero, because the mango is so light"
+        },
+        {
+          "id": "b",
+          "text_md": "3 N, directed upwards towards the mango"
+        },
+        {
+          "id": "c",
+          "text_md": "much less than 3 N, because the mango has a small mass"
+        },
+        {
+          "id": "d",
+          "text_md": "3 N, directed downwards"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "The two forces of a pair are equal and opposite, so the mango pulls the Earth upwards with 3 N, option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-9-physics-ch04-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch04_002",
+      "unit": "icse-9-physics-ch04",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "The mass of one body is made three times larger and the distance between the two bodies is also made three times larger. The gravitational force becomes",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "one third of the old force"
+        },
+        {
+          "id": "b",
+          "text_md": "three times the old force"
+        },
+        {
+          "id": "c",
+          "text_md": "one ninth of the old force"
+        },
+        {
+          "id": "d",
+          "text_md": "equal to the old force"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "The factor is $\\dfrac{3}{3^2} = \\dfrac{1}{3}$, option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-physics-ch04-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch04_003",
+      "unit": "icse-9-physics-ch04",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "The SI unit of the universal gravitational constant G is",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "$\\text{N kg}^2\\ \\text{m}^{-2}$"
+        },
+        {
+          "id": "b",
+          "text_md": "$\\text{N m kg}^{-1}$"
+        },
+        {
+          "id": "c",
+          "text_md": "$\\text{kg m s}^{-2}$"
+        },
+        {
+          "id": "d",
+          "text_md": "$\\text{N m}^2\\ \\text{kg}^{-2}$"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Since $G = \\dfrac{F r^2}{m_1 m_2}$, its unit is N m² divided by kg², that is N m² kg⁻², option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-9-physics-ch04-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch04_004",
+      "unit": "icse-9-physics-ch04",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "In a strobe picture of a ball dropped from rest, the gap between successive positions increases steadily. This shows that",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "the ball falls with a steady speed"
+        },
+        {
+          "id": "b",
+          "text_md": "the mass of the ball increases as it falls"
+        },
+        {
+          "id": "c",
+          "text_md": "air is pushing the ball downwards"
+        },
+        {
+          "id": "d",
+          "text_md": "the speed of the ball keeps increasing as it falls"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "The photographs are taken at equal time intervals; larger gaps mean greater speed, option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-9-physics-ch04-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch04_005",
+      "unit": "icse-9-physics-ch04",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A body of mass 5 kg hangs from a spring balance that reads 5 kgf, which is 49 N. Which statement is correct?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "49 N is the mass of the body"
+        },
+        {
+          "id": "b",
+          "text_md": "The mass of the body is 49 kg"
+        },
+        {
+          "id": "c",
+          "text_md": "5 kgf and 49 N are two ways of stating the same pull of the Earth on the body"
+        },
+        {
+          "id": "d",
+          "text_md": "The weight of the body is 5 kg"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Weight is a force; kgf and newton are two units for the same force, option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-9-physics-ch04-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch04_006",
+      "unit": "icse-9-physics-ch04",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A body weighs 3 kgf. Its weight in newton is (1 kgf = 9.8 N)",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "0.306 N"
+        },
+        {
+          "id": "b",
+          "text_md": "29.4 N"
+        },
+        {
+          "id": "c",
+          "text_md": "3 N"
+        },
+        {
+          "id": "d",
+          "text_md": "3.27 N"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Newton = kgf × 9.8 = 3 × 9.8 = 29.4 N, option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-physics-ch04-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch04_007",
+      "unit": "icse-9-physics-ch04",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "The universal law of gravitation says that the force between two bodies is",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "directly proportional to the product of their masses and inversely proportional to the square of the distance between their centres"
+        },
+        {
+          "id": "b",
+          "text_md": "directly proportional to the sum of their masses and inversely proportional to the distance between their centres"
+        },
+        {
+          "id": "c",
+          "text_md": "inversely proportional to the product of their masses and directly proportional to the distance between their centres"
+        },
+        {
+          "id": "d",
+          "text_md": "directly proportional to the square of the distance between their centres and independent of their masses"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Product of the masses in the numerator and the square of the distance in the denominator, option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-9-physics-ch04-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch04_008",
+      "unit": "icse-9-physics-ch04",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "The gravitational force between two bodies is F. The mass of one body is tripled and the distance between them is doubled. The new force is",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "3F/2"
+        },
+        {
+          "id": "b",
+          "text_md": "3F/4"
+        },
+        {
+          "id": "c",
+          "text_md": "6F"
+        },
+        {
+          "id": "d",
+          "text_md": "4F/3"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "The factor is $\\dfrac{3}{2^2} = \\dfrac{3}{4}$, so the new force is $\\dfrac{3F}{4}$, option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-physics-ch04-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch04_009",
+      "unit": "icse-9-physics-ch04",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "The universal gravitational constant G has",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "a larger value for heavier bodies"
+        },
+        {
+          "id": "b",
+          "text_md": "a smaller value at a greater distance between the bodies"
+        },
+        {
+          "id": "c",
+          "text_md": "the same value for every pair of bodies, everywhere"
+        },
+        {
+          "id": "d",
+          "text_md": "a different value on the Moon than on the Earth"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "G is a constant of nature; that is why it is called universal, option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-9-physics-ch04-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch04_010",
+      "unit": "icse-9-physics-ch04",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A student says: \"The Earth pulls the Moon harder than the Moon pulls the Earth, because the Earth has the larger mass.\" This statement is",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "correct, because the force is proportional to the larger mass"
+        },
+        {
+          "id": "b",
+          "text_md": "wrong, because the Moon pulls the Earth harder as it is nearer the Sun"
+        },
+        {
+          "id": "c",
+          "text_md": "correct, because the Earth is at the centre of the orbit"
+        },
+        {
+          "id": "d",
+          "text_md": "wrong, because the two pulls are equal in size and opposite in direction"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "F = G m₁ m₂ / r² is the same for both bodies, and they form an action-reaction pair, option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-9-physics-ch04-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch04_011",
+      "unit": "icse-9-physics-ch04",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which of the following is NOT explained by the universal law of gravitation?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "the occurrence of ocean tides"
+        },
+        {
+          "id": "b",
+          "text_md": "the motion of the Moon round the Earth"
+        },
+        {
+          "id": "c",
+          "text_md": "the fall of a ripe mango to the ground"
+        },
+        {
+          "id": "d",
+          "text_md": "the lengthening of a metal rod when it is heated"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Thermal expansion concerns heat, not the attraction between masses, option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-9-physics-ch04-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch04_012",
+      "unit": "icse-9-physics-ch04",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Gravity differs from gravitation in that",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "gravity is the pull of the Earth on a body, while gravitation is the attraction between any two bodies"
+        },
+        {
+          "id": "b",
+          "text_md": "gravity acts between any two bodies, while gravitation acts only on the Earth"
+        },
+        {
+          "id": "c",
+          "text_md": "gravity is a repulsion, while gravitation is an attraction"
+        },
+        {
+          "id": "d",
+          "text_md": "gravity depends on the charge of a body, while gravitation depends on its mass"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Gravity is the special case of gravitation in which one body is the Earth, option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-9-physics-ch04-t01",
+        "icse-9-physics-ch04-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch04_013",
+      "unit": "icse-9-physics-ch04",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "In the equation of the law of gravitation, the distance r is measured between",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "the nearest surfaces of the two bodies"
+        },
+        {
+          "id": "b",
+          "text_md": "the centre of one body and the surface of the other"
+        },
+        {
+          "id": "c",
+          "text_md": "the centres of the two bodies"
+        },
+        {
+          "id": "d",
+          "text_md": "the farthest points of the two bodies"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "The law is stated for the distance between the centres, option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-9-physics-ch04-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch04_014",
+      "unit": "icse-9-physics-ch04",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Two students sitting side by side do not feel any pull towards each other.\n\n**Reason (R):** The gravitational force between two small bodies is extremely small because the value of G is very small.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "(A) is true and (R) is false."
+        },
+        {
+          "id": "b",
+          "text_md": "(A) is false and (R) is true."
+        },
+        {
+          "id": "c",
+          "text_md": "Both (A) and (R) are true, and (R) is the correct explanation of (A)."
+        },
+        {
+          "id": "d",
+          "text_md": "Both (A) and (R) are true, but (R) is not the correct explanation of (A)."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Both are true; the tiny force is the reason it cannot be felt, so (R) explains (A), option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-9-physics-ch04-t01"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch04_015",
+      "unit": "icse-9-physics-ch04",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? In a gravitational pair, the heavier body pulls the lighter body with the larger force.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "f"
+        ]
+      },
+      "solution_md": "False. The two pulls are equal in size, whatever the masses.",
+      "marking_scheme": [
+        {
+          "step": "False, with the correction",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-9-physics-ch04-t01"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch04_016",
+      "unit": "icse-9-physics-ch04",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "The gravitational force between two bodies is inversely proportional to the ___ of the distance between their centres.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "square"
+            ]
+          }
+        ]
+      },
+      "solution_md": "The **square** of the distance.",
+      "marking_scheme": [
+        {
+          "step": "Writes \"square\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-9-physics-ch04-t01"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch04_017",
+      "unit": "icse-9-physics-ch04",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Name the quantity whose SI unit is N m² kg⁻².",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "The universal gravitational constant, **G**."
+      },
+      "solution_md": "The universal gravitational constant.",
+      "marking_scheme": [
+        {
+          "step": "G named",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-9-physics-ch04-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch04_018",
+      "unit": "icse-9-physics-ch04",
+      "language": "en",
+      "type": "short",
+      "stem_md": "State the universal law of gravitation in words and write the equation that expresses it.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Any two bodies attract each other with a force that grows with **the product of their masses** and falls with **the square of the distance between their centres**.\n\n$F = \\dfrac{G m_1 m_2}{r^2}$"
+      },
+      "solution_md": "Proportional to the product of the masses, inversely to the square of the distance; F = G m₁ m₂ / r².",
+      "marking_scheme": [
+        {
+          "step": "Both proportionalities stated",
+          "marks": 1
+        },
+        {
+          "step": "Equation with G",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-9-physics-ch04-t01"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch04_019",
+      "unit": "icse-9-physics-ch04",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Two books lie 10 cm apart on a table. Give two reasons why they do not move towards each other.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "The gravitational force between them is **extremely small**, because their masses are small and **G is very small**. It is also far smaller than the **friction** that holds each book on the table."
+      },
+      "solution_md": "The force is very small; friction is far larger.",
+      "marking_scheme": [
+        {
+          "step": "Tiny force: small masses and tiny G",
+          "marks": 1
+        },
+        {
+          "step": "Friction much larger",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-9-physics-ch04-t01"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch04_020",
+      "unit": "icse-9-physics-ch04",
+      "language": "en",
+      "type": "short",
+      "stem_md": "The force of attraction between two bodies is F. State the new force when (i) the mass of one body is doubled, (ii) the distance between them is halved, (iii) both masses and the distance are doubled.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "**(i)** The factor is 2, so the force is **2F**.\n\n**(ii)** The factor is $\\dfrac{1}{(1/2)^2}$, so the force is **4F**.\n\n**(iii)** The factor is $\\dfrac{2 \\times 2}{2^2} = 1$, so the force is **F** (unchanged)."
+      },
+      "solution_md": "2F; 4F; F.",
+      "marking_scheme": [
+        {
+          "step": "2F",
+          "marks": 1
+        },
+        {
+          "step": "4F",
+          "marks": 1
+        },
+        {
+          "step": "F, unchanged",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-physics-ch04-t01"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch04_021",
+      "unit": "icse-9-physics-ch04",
+      "language": "en",
+      "type": "short",
+      "stem_md": "A stone of mass 2 kg is released near the ground. (a) Find the force with which the Earth pulls it. (b) State the magnitude and direction of the force with which the stone pulls the Earth. (c) Why do we see only the stone move? (g = 10 m s⁻²)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "**(a)** $F = m g = 2 \\times 10 = 20$ N.\n\n**(b)** **20 N**, directed **upwards**, towards the stone.\n\n**(c)** The same force gives the stone a large acceleration, but gives the Earth, whose mass is enormous, an **acceleration too small to notice**."
+      },
+      "solution_md": "20 N; 20 N upwards; huge mass of the Earth.",
+      "marking_scheme": [
+        {
+          "step": "20 N with working",
+          "marks": 1
+        },
+        {
+          "step": "20 N upwards",
+          "marks": 1
+        },
+        {
+          "step": "Enormous mass, negligible acceleration",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-9-physics-ch04-t01",
+        "icse-9-physics-ch04-t03"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch04_022",
+      "unit": "icse-9-physics-ch04",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "Two steel balls of mass 4 kg and 25 kg have their centres 0.5 m apart. Find the gravitational force between them, in units of 10⁻⁸ N. (G = 6.67 × 10⁻¹¹ N m² kg⁻²)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 2.67,
+        "tolerance": 0.01,
+        "unit": "× 10⁻⁸ N"
+      },
+      "solution_md": "$F = \\dfrac{G m_1 m_2}{r^2} = \\dfrac{6.67 \\times 10^{-11} \\times 4 \\times 25}{0.5^2} = 2.67 \\times 10^{-8}$ N, so $F = 2.67$ in units of $10^{-8}$ N.",
+      "marking_scheme": [
+        {
+          "step": "Formula and substitution",
+          "marks": 0.5
+        },
+        {
+          "step": "2.67 × 10⁻⁸ N",
+          "marks": 0.5
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-physics-ch04-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch04_023",
+      "unit": "icse-9-physics-ch04",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "Two ships of mass 3 × 10⁶ kg and 5 × 10⁶ kg are 100 m apart. Find the gravitational force between them in newton. (G = 6.67 × 10⁻¹¹ N m² kg⁻²)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 0.1,
+        "tolerance": 0.001,
+        "unit": "N"
+      },
+      "solution_md": "$F = \\dfrac{G m_1 m_2}{r^2} = \\dfrac{6.67 \\times 10^{-11} \\times 3 \\times 10^{6} \\times 5 \\times 10^{6}}{100^2} = 0.1$ N.",
+      "marking_scheme": [
+        {
+          "step": "Formula and substitution",
+          "marks": 0.5
+        },
+        {
+          "step": "0.1 N",
+          "marks": 0.5
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-physics-ch04-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch04_024",
+      "unit": "icse-9-physics-ch04",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "The gravitational force between two bodies is 36 N. Find the force when the distance between them is tripled, the masses remaining the same.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 4,
+        "tolerance": 0,
+        "unit": "N"
+      },
+      "solution_md": "$F_{\\text{new}} = 36 \\times \\dfrac{1}{3^2} = 4$ N.",
+      "marking_scheme": [
+        {
+          "step": "Factor 1/9",
+          "marks": 0.5
+        },
+        {
+          "step": "4 N",
+          "marks": 0.5
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-physics-ch04-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch04_025",
+      "unit": "icse-9-physics-ch04",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "Two bodies attract each other with a force of 18 N. The mass of the first body is doubled, the mass of the second is tripled and the distance between them is doubled. Find the new force.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 27,
+        "tolerance": 0,
+        "unit": "N"
+      },
+      "solution_md": "$F_{\\text{new}} = 18 \\times \\dfrac{2 \\times 3}{2^2} = 18 \\times 1.5 = 27$ N.",
+      "marking_scheme": [
+        {
+          "step": "Factor 6/4",
+          "marks": 0.5
+        },
+        {
+          "step": "27 N",
+          "marks": 0.5
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-physics-ch04-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch04_026",
+      "unit": "icse-9-physics-ch04",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A cricket ball and a heavier iron ball are dropped together from the same height inside a long evacuated tube. The two balls",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "reach the bottom at different moments, with the iron ball first because the pull on it is greater"
+        },
+        {
+          "id": "b",
+          "text_md": "reach the bottom at different moments, with the cricket ball first"
+        },
+        {
+          "id": "c",
+          "text_md": "reach the bottom at the same moment"
+        },
+        {
+          "id": "d",
+          "text_md": "have different accelerations because their masses differ"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "With no air, both have the acceleration g, option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-9-physics-ch04-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch04_027",
+      "unit": "icse-9-physics-ch04",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A pebble is dropped from rest from a bridge. Taking g = 10 m s⁻², its speed after 6 s is",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "60 m s⁻¹"
+        },
+        {
+          "id": "b",
+          "text_md": "30 m s⁻¹"
+        },
+        {
+          "id": "c",
+          "text_md": "180 m s⁻¹"
+        },
+        {
+          "id": "d",
+          "text_md": "10 m s⁻¹"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "$v = g t = 10 \\times 6 = 60$ m s⁻¹, option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-physics-ch04-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch04_028",
+      "unit": "icse-9-physics-ch04",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A coin and a crumpled paper ball reach the floor almost together, but a flat sheet of paper dropped with them drifts down slowly. The main reason is that",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "the Earth pulls the flat sheet with a smaller acceleration"
+        },
+        {
+          "id": "b",
+          "text_md": "air resistance acts much more strongly on the flat sheet"
+        },
+        {
+          "id": "c",
+          "text_md": "the mass of the flat sheet becomes less as it falls"
+        },
+        {
+          "id": "d",
+          "text_md": "the flat sheet has no weight"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "The large area of the flat sheet makes the air resistance large compared with its weight, option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-9-physics-ch04-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch04_029",
+      "unit": "icse-9-physics-ch04",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A ball thrown vertically upwards is momentarily at rest at its highest point. The acceleration of the ball at that instant is",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "zero, because the ball is at rest"
+        },
+        {
+          "id": "b",
+          "text_md": "about 10 m s⁻², directed upwards"
+        },
+        {
+          "id": "c",
+          "text_md": "less than 10 m s⁻², directed downwards"
+        },
+        {
+          "id": "d",
+          "text_md": "about 10 m s⁻², directed downwards"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Gravity alone acts all through the flight, so the acceleration is g downwards even at the top, option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-9-physics-ch04-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch04_030",
+      "unit": "icse-9-physics-ch04",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "The acceleration of a freely falling body does not depend on its mass because",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "the Earth pulls all bodies with the same force"
+        },
+        {
+          "id": "b",
+          "text_md": "the pull of the Earth is proportional to the mass, so the mass cancels when force is divided by mass"
+        },
+        {
+          "id": "c",
+          "text_md": "heavier bodies are slowed more by the air"
+        },
+        {
+          "id": "d",
+          "text_md": "the acceleration depends only on the shape of the body"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "a = m g / m = g for every body, option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-9-physics-ch04-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch04_031",
+      "unit": "icse-9-physics-ch04",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** In a vacuum, a heavy stone falls faster than a light stone.\n\n**Reason (R):** The Earth pulls a heavy stone with a greater force than it pulls a light stone.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "(A) is true and (R) is false."
+        },
+        {
+          "id": "b",
+          "text_md": "(A) is false and (R) is true."
+        },
+        {
+          "id": "c",
+          "text_md": "Both (A) and (R) are true, and (R) is the correct explanation of (A)."
+        },
+        {
+          "id": "d",
+          "text_md": "Both (A) and (R) are true, but (R) is not the correct explanation of (A)."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "(A) is false because both stones have the acceleration g in a vacuum; (R) is true, but the larger pull is balanced by the larger mass, option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-9-physics-ch04-t02"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch04_032",
+      "unit": "icse-9-physics-ch04",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "A body that moves under gravity alone is said to be in ___. All such bodies, whatever their ___, have the same ___.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "free fall",
+              "freefall"
+            ]
+          },
+          {
+            "accepted": [
+              "mass",
+              "masses"
+            ]
+          },
+          {
+            "accepted": [
+              "acceleration"
+            ]
+          }
+        ]
+      },
+      "solution_md": "Free fall; mass; acceleration.",
+      "marking_scheme": [
+        {
+          "step": "(a) free fall",
+          "marks": 1
+        },
+        {
+          "step": "(b) mass",
+          "marks": 1
+        },
+        {
+          "step": "(c) acceleration",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-9-physics-ch04-t02"
+      ],
+      "expected_time_sec": 240,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch04_033",
+      "unit": "icse-9-physics-ch04",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Define free fall.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "The motion of a body under the action of **gravity alone**."
+      },
+      "solution_md": "Motion under gravity alone.",
+      "marking_scheme": [
+        {
+          "step": "Gravity alone",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-9-physics-ch04-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch04_034",
+      "unit": "icse-9-physics-ch04",
+      "language": "en",
+      "type": "short",
+      "stem_md": "A coin and a flat sheet of paper are dropped together from a height. State which lands first and why. What would happen in a vacuum?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "The **coin** lands first, because **air resistance** slows the sheet of paper far more than the coin. In a vacuum there is no air, so the two would land **together**."
+      },
+      "solution_md": "Coin first due to air resistance; together in a vacuum.",
+      "marking_scheme": [
+        {
+          "step": "Coin first because of air resistance",
+          "marks": 1
+        },
+        {
+          "step": "Together in a vacuum",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-physics-ch04-t02"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch04_035",
+      "unit": "icse-9-physics-ch04",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Define free fall and state the value of g in SI units that is used when a question gives no other value.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Free fall is motion in which **gravity is the only force** on the body. Near the Earth, **g = 9.8 m s⁻²**."
+      },
+      "solution_md": "Gravity alone; 9.8 m s⁻².",
+      "marking_scheme": [
+        {
+          "step": "Definition",
+          "marks": 1
+        },
+        {
+          "step": "9.8 m s⁻²",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-9-physics-ch04-t02"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch04_036",
+      "unit": "icse-9-physics-ch04",
+      "language": "en",
+      "type": "short",
+      "stem_md": "A ball is dropped from the top of a tower 80 m high. Find (a) the time it takes to reach the ground and (b) its speed just before it lands. (g = 10 m s⁻²)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "**(a)** $s = \\tfrac{1}{2} g t^2$, so $80 = \\tfrac{1}{2} \\times 10 \\times t^2$ and $t^2 = 16$, giving $t = 4$ s.\n\n**(b)** $v = g t = 10 \\times 4 = 40$ m s⁻¹."
+      },
+      "solution_md": "4 s; 40 m s⁻¹.",
+      "marking_scheme": [
+        {
+          "step": "Formula s = ½ g t² with substitution",
+          "marks": 1
+        },
+        {
+          "step": "t = 4 s",
+          "marks": 1
+        },
+        {
+          "step": "v = 40 m s⁻¹",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-physics-ch04-t02"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch04_037",
+      "unit": "icse-9-physics-ch04",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "A stone is dropped from rest from the edge of a cliff. Find its speed after 2.5 s. (g = 10 m s⁻²)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 25,
+        "tolerance": 0,
+        "unit": "m s⁻¹"
+      },
+      "solution_md": "$v = g t = 10 \\times 2.5 = 25$ m s⁻¹.",
+      "marking_scheme": [
+        {
+          "step": "v = g t with substitution",
+          "marks": 0.5
+        },
+        {
+          "step": "25 m s⁻¹",
+          "marks": 0.5
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-physics-ch04-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch04_038",
+      "unit": "icse-9-physics-ch04",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "A coin released from rest falls freely for 1.5 s. Find the distance it falls. (g = 10 m s⁻²)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 11.25,
+        "tolerance": 0.01,
+        "unit": "m"
+      },
+      "solution_md": "$s = \\tfrac{1}{2} g t^2 = \\tfrac{1}{2} \\times 10 \\times 1.5^2 = 11.25$ m.",
+      "marking_scheme": [
+        {
+          "step": "s = ½ g t² with substitution",
+          "marks": 0.5
+        },
+        {
+          "step": "11.25 m",
+          "marks": 0.5
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-physics-ch04-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch04_039",
+      "unit": "icse-9-physics-ch04",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "A ball is dropped from a building 125 m high. Find the time it takes to reach the ground. (g = 10 m s⁻²)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 5,
+        "tolerance": 0,
+        "unit": "s"
+      },
+      "solution_md": "$s = \\tfrac{1}{2} g t^2$, so $125 = \\tfrac{1}{2} \\times 10 \\times t^2$, $t^2 = 25$ and $t = 5$ s.",
+      "marking_scheme": [
+        {
+          "step": "Substitution in s = ½ g t²",
+          "marks": 0.5
+        },
+        {
+          "step": "5 s",
+          "marks": 0.5
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-physics-ch04-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch04_040",
+      "unit": "icse-9-physics-ch04",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "A body of mass 2.5 kg is pulled by the Earth with a force of 24.5 N. Find the acceleration due to gravity at that place.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 9.8,
+        "tolerance": 0.01,
+        "unit": "m s⁻²"
+      },
+      "solution_md": "$g = \\dfrac{W}{m} = \\dfrac{24.5}{2.5} = 9.8$ m s⁻².",
+      "marking_scheme": [
+        {
+          "step": "g = W / m with substitution",
+          "marks": 0.5
+        },
+        {
+          "step": "9.8 m s⁻²",
+          "marks": 0.5
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-physics-ch04-t02",
+        "icse-9-physics-ch04-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch04_041",
+      "unit": "icse-9-physics-ch04",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "The SI unit of weight is",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "kilogram"
+        },
+        {
+          "id": "b",
+          "text_md": "joule"
+        },
+        {
+          "id": "c",
+          "text_md": "pascal"
+        },
+        {
+          "id": "d",
+          "text_md": "newton"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Weight is a force, so its SI unit is the newton, option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-9-physics-ch04-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch04_042",
+      "unit": "icse-9-physics-ch04",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "The instrument that is used to measure the weight of a body is a",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "beam balance"
+        },
+        {
+          "id": "b",
+          "text_md": "spring balance"
+        },
+        {
+          "id": "c",
+          "text_md": "measuring cylinder"
+        },
+        {
+          "id": "d",
+          "text_md": "metre scale"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "A spring balance reads the force of gravity on the body, option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-9-physics-ch04-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch04_043",
+      "unit": "icse-9-physics-ch04",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A sealed packet of food is carried from the Earth to the Moon. Compared with its values on the Earth, on the Moon the packet has",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "the same mass and a smaller weight"
+        },
+        {
+          "id": "b",
+          "text_md": "a smaller mass and the same weight"
+        },
+        {
+          "id": "c",
+          "text_md": "the same mass and the same weight"
+        },
+        {
+          "id": "d",
+          "text_md": "a smaller mass and a smaller weight"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Mass is the amount of matter and does not change; weight falls because g is smaller there, option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-9-physics-ch04-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch04_044",
+      "unit": "icse-9-physics-ch04",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "The weight of a body of mass 3 kg is (g = 10 m s⁻²)",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "0.3 N"
+        },
+        {
+          "id": "b",
+          "text_md": "3 N"
+        },
+        {
+          "id": "c",
+          "text_md": "30 N"
+        },
+        {
+          "id": "d",
+          "text_md": "300 N"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "$W = m g = 3 \\times 10 = 30$ N, option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-physics-ch04-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch04_045",
+      "unit": "icse-9-physics-ch04",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "One kilogram force (1 kgf) is equal to",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "9.8 N"
+        },
+        {
+          "id": "b",
+          "text_md": "1 N"
+        },
+        {
+          "id": "c",
+          "text_md": "0.98 N"
+        },
+        {
+          "id": "d",
+          "text_md": "98 N"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "It is the weight of a one-kilogram mass, 1 × 9.8 N, option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-9-physics-ch04-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch04_046",
+      "unit": "icse-9-physics-ch04",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which pair correctly describes mass and weight?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Mass is a scalar and weight is a vector"
+        },
+        {
+          "id": "b",
+          "text_md": "Mass is a vector and weight is a scalar"
+        },
+        {
+          "id": "c",
+          "text_md": "Both are scalars"
+        },
+        {
+          "id": "d",
+          "text_md": "Both are vectors"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Weight is a force and has a direction; mass has only magnitude, option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-9-physics-ch04-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch04_047",
+      "unit": "icse-9-physics-ch04",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A body weighs 196 N at a place where g = 9.8 m s⁻². Its mass is",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "19.6 kg"
+        },
+        {
+          "id": "b",
+          "text_md": "1920.8 kg"
+        },
+        {
+          "id": "c",
+          "text_md": "20 kg"
+        },
+        {
+          "id": "d",
+          "text_md": "2 kg"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "$m = \\dfrac{W}{g} = \\dfrac{196}{9.8} = 20$ kg, option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-physics-ch04-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch04_048",
+      "unit": "icse-9-physics-ch04",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** The mass of a body remains the same when it is taken to the Moon.\n\n**Reason (R):** The weight of a body on the Moon is less than its weight on the Earth.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "(A) is true and (R) is false."
+        },
+        {
+          "id": "b",
+          "text_md": "(A) is false and (R) is true."
+        },
+        {
+          "id": "c",
+          "text_md": "Both (A) and (R) are true, and (R) is the correct explanation of (A)."
+        },
+        {
+          "id": "d",
+          "text_md": "Both (A) and (R) are true, but (R) is not the correct explanation of (A)."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Both statements are true, but the change in weight does not explain why the mass is unchanged (mass is the amount of matter), option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-9-physics-ch04-t03"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch04_049",
+      "unit": "icse-9-physics-ch04",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? The weight of a body is a force and is directed towards the centre of the Earth.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "t"
+        ]
+      },
+      "solution_md": "True. Weight is the pull of the Earth, a force acting downwards.",
+      "marking_scheme": [
+        {
+          "step": "True",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-9-physics-ch04-t03"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch04_050",
+      "unit": "icse-9-physics-ch04",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? The universal gravitational constant G and the acceleration due to gravity g are the same quantity.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "f"
+        ]
+      },
+      "solution_md": "False. G is a constant of the law for any two bodies; g is the acceleration near the Earth.",
+      "marking_scheme": [
+        {
+          "step": "False, with the correction",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-9-physics-ch04-t02",
+        "icse-9-physics-ch04-t03"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch04_051",
+      "unit": "icse-9-physics-ch04",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "To change a weight from kgf to newton, multiply it by ___.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "9.8"
+            ]
+          }
+        ]
+      },
+      "solution_md": "Multiply by **9.8**.",
+      "marking_scheme": [
+        {
+          "step": "Writes \"9.8\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-9-physics-ch04-t03"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch04_052",
+      "unit": "icse-9-physics-ch04",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Define the weight of a body.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "The **force with which the Earth attracts the body**."
+      },
+      "solution_md": "The pull of the Earth on the body.",
+      "marking_scheme": [
+        {
+          "step": "Force of attraction by the Earth",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-9-physics-ch04-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch04_053",
+      "unit": "icse-9-physics-ch04",
+      "language": "en",
+      "type": "match",
+      "stem_md": "Match each quantity in Column A with its SI unit or instrument in Column B.",
+      "options": [
+        {
+          "id": "1",
+          "text_md": "Mass"
+        },
+        {
+          "id": "2",
+          "text_md": "Weight"
+        },
+        {
+          "id": "3",
+          "text_md": "Universal gravitational constant"
+        },
+        {
+          "id": "4",
+          "text_md": "Acceleration due to gravity"
+        },
+        {
+          "id": "5",
+          "text_md": "Instrument that measures mass"
+        }
+      ],
+      "match_right": [
+        {
+          "id": "p",
+          "text_md": "N m² kg⁻²"
+        },
+        {
+          "id": "q",
+          "text_md": "newton"
+        },
+        {
+          "id": "r",
+          "text_md": "beam balance"
+        },
+        {
+          "id": "s",
+          "text_md": "kilogram"
+        },
+        {
+          "id": "t",
+          "text_md": "m s⁻²"
+        }
+      ],
+      "answer": {
+        "pairs": [
+          {
+            "left_id": "1",
+            "right_id": "s"
+          },
+          {
+            "left_id": "2",
+            "right_id": "q"
+          },
+          {
+            "left_id": "3",
+            "right_id": "p"
+          },
+          {
+            "left_id": "4",
+            "right_id": "t"
+          },
+          {
+            "left_id": "5",
+            "right_id": "r"
+          }
+        ]
+      },
+      "solution_md": "Mass: kilogram; weight: newton; G: N m² kg⁻²; g: m s⁻²; mass is measured on a beam balance.",
+      "marking_scheme": [
+        {
+          "step": "1 → s",
+          "marks": 1
+        },
+        {
+          "step": "2 → q",
+          "marks": 1
+        },
+        {
+          "step": "3 → p",
+          "marks": 1
+        },
+        {
+          "step": "4 → t",
+          "marks": 1
+        },
+        {
+          "step": "5 → r",
+          "marks": 1
+        }
+      ],
+      "marks": 5,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-9-physics-ch04-t01",
+        "icse-9-physics-ch04-t02",
+        "icse-9-physics-ch04-t03"
+      ],
+      "expected_time_sec": 240,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch04_054",
+      "unit": "icse-9-physics-ch04",
+      "language": "en",
+      "type": "short",
+      "stem_md": "State two differences between mass and weight.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "**Mass** is the quantity of matter, a scalar, measured in kilogram on a beam balance and unchanged by place. **Weight** is a force (a vector), measured in newton on a spring balance and changes from place to place. (Any two.)"
+      },
+      "solution_md": "Any two of: quantity of matter against force; scalar against vector; kg against N; beam against spring balance; fixed against place-dependent.",
+      "marking_scheme": [
+        {
+          "step": "First difference",
+          "marks": 1
+        },
+        {
+          "step": "Second difference",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "icse-9-physics-ch04-t03"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch04_055",
+      "unit": "icse-9-physics-ch04",
+      "language": "en",
+      "type": "short",
+      "stem_md": "An astronaut of mass 72 kg stands on the Moon. State her mass there and say whether her weight is more or less than on the Earth, with a reason.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Her mass is still **72 kg**. Her weight is **less** than on the Earth, because **g on the Moon is smaller** than g on the Earth."
+      },
+      "solution_md": "72 kg; less, since g is smaller on the Moon.",
+      "marking_scheme": [
+        {
+          "step": "Mass 72 kg",
+          "marks": 1
+        },
+        {
+          "step": "Less, because g is smaller",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "icse-9-physics-ch04-t03"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch04_056",
+      "unit": "icse-9-physics-ch04",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Using 1 kgf = 9.8 N, convert (a) 20 kgf into newton and (b) 245 N into kgf.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "**(a)** $20 \\times 9.8 = 196$ N.\n\n**(b)** $\\dfrac{245}{9.8} = 25$ kgf."
+      },
+      "solution_md": "196 N; 25 kgf.",
+      "marking_scheme": [
+        {
+          "step": "196 N",
+          "marks": 1
+        },
+        {
+          "step": "25 kgf",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-physics-ch04-t03"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch04_057",
+      "unit": "icse-9-physics-ch04",
+      "language": "en",
+      "type": "short",
+      "stem_md": "A man has a mass of 62 kg. Taking g = 9.8 m s⁻², find (a) his weight in newton, (b) his weight in kgf and (c) the mass of a body that weighs 441 N.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "**(a)** $W = m g = 62 \\times 9.8 = 607.6$ N.\n\n**(b)** Weight in kgf = mass in kg = **62 kgf**.\n\n**(c)** $m = \\dfrac{W}{g} = \\dfrac{441}{9.8} = 45$ kg."
+      },
+      "solution_md": "607.6 N; 62 kgf; 45 kg.",
+      "marking_scheme": [
+        {
+          "step": "607.6 N",
+          "marks": 1
+        },
+        {
+          "step": "62 kgf",
+          "marks": 1
+        },
+        {
+          "step": "45 kg",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-physics-ch04-t03"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch04_058",
+      "unit": "icse-9-physics-ch04",
+      "language": "en",
+      "type": "short",
+      "stem_md": "A spring balance and a beam balance are each used to weigh the same body, first on the Earth and then at a place where g is smaller. Say which balance gives a different reading at the second place, and explain why the other does not.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "The **spring balance** shows a **smaller** reading, because it measures the weight, which falls when g is smaller. The **beam balance** compares the body with standard masses that are pulled by the same smaller g, so the **two pans stay balanced** and it still gives the same mass."
+      },
+      "solution_md": "Spring balance changes; beam balance compares masses so it does not.",
+      "marking_scheme": [
+        {
+          "step": "Spring balance named, smaller reading",
+          "marks": 1
+        },
+        {
+          "step": "It measures weight, which depends on g",
+          "marks": 1
+        },
+        {
+          "step": "Beam balance compares masses, so unchanged",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-9-physics-ch04-t03"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch04_059",
+      "unit": "icse-9-physics-ch04",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "Find the weight, in newton, of a student of mass 54 kg. (g = 10 m s⁻²)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 540,
+        "tolerance": 0,
+        "unit": "N"
+      },
+      "solution_md": "$W = m g = 54 \\times 10 = 540$ N.",
+      "marking_scheme": [
+        {
+          "step": "W = m g with substitution",
+          "marks": 0.5
+        },
+        {
+          "step": "540 N",
+          "marks": 0.5
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-physics-ch04-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch04_060",
+      "unit": "icse-9-physics-ch04",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "A bag of vegetables weighs 8.5 kgf. Express its weight in newton. (1 kgf = 9.8 N)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 83.3,
+        "tolerance": 0.05,
+        "unit": "N"
+      },
+      "solution_md": "$W = 8.5 \\times 9.8 = 83.3$ N.",
+      "marking_scheme": [
+        {
+          "step": "8.5 × 9.8",
+          "marks": 0.5
+        },
+        {
+          "step": "83.3 N",
+          "marks": 0.5
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-physics-ch04-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch04_061",
+      "unit": "icse-9-physics-ch04",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "A parcel weighs 735 N at a place where g = 9.8 m s⁻². Find its mass in kilogram.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 75,
+        "tolerance": 0,
+        "unit": "kg"
+      },
+      "solution_md": "$m = \\dfrac{W}{g} = \\dfrac{735}{9.8} = 75$ kg.",
+      "marking_scheme": [
+        {
+          "step": "m = W / g with substitution",
+          "marks": 0.5
+        },
+        {
+          "step": "75 kg",
+          "marks": 0.5
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-physics-ch04-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch04_062",
+      "unit": "icse-9-physics-ch04",
+      "language": "en",
+      "type": "long",
+      "stem_md": "The figure shows two heavy spherical bodies in a model of the gravitational pull between two bodies. Its parts are lettered A to E.\n\n(a) Name the parts A, B, C, D and E. [3]\n\n(b) State the universal law of gravitation and write its equation, naming each symbol. [3]\n\n(c) Compare C and D in magnitude and direction, and say why the two do not cancel each other. [2]\n\n(d) The force between the bodies is 0.6 N. Find the new force if the mass of A is doubled and the distance between the centres is also doubled. [2]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "**(a)** **A** is the first body, of mass m₁; **B** is the second body, of mass m₂; **C** is the force exerted by B on A (towards B); **D** is the force exerted by A on B (towards A); **E** is the distance between the centres of the bodies.\n\n**(b)** The force of attraction between two bodies is proportional to the **product of their masses** and inversely proportional to the **square of the distance between their centres**. $F = \\dfrac{G m_1 m_2}{r^2}$, where $G$ is the universal gravitational constant, $m_1$ and $m_2$ are the masses and $r$ the distance between the centres.\n\n**(c)** C and D are **equal in magnitude and opposite in direction**. They act on **different bodies** (C on A, D on B), so they cannot cancel.\n\n**(d)** Factor $= \\dfrac{2 \\times 1}{2^2} = 0.5$, so the new force $= 0.6 \\times 0.5 = 0.3$ N."
+      },
+      "solution_md": "A, B bodies; C, D forces; E distance; law and equation; equal and opposite on different bodies; 0.30 N.",
+      "marking_scheme": [
+        {
+          "step": "A and B named",
+          "marks": 1
+        },
+        {
+          "step": "C and D named",
+          "marks": 1
+        },
+        {
+          "step": "E named",
+          "marks": 1
+        },
+        {
+          "step": "Product of the masses",
+          "marks": 1
+        },
+        {
+          "step": "Inverse square of the distance, between the centres",
+          "marks": 1
+        },
+        {
+          "step": "Equation with symbols named",
+          "marks": 1
+        },
+        {
+          "step": "Equal and opposite",
+          "marks": 1
+        },
+        {
+          "step": "Different bodies",
+          "marks": 1
+        },
+        {
+          "step": "Factor 1/2",
+          "marks": 1
+        },
+        {
+          "step": "0.3 N",
+          "marks": 1
+        }
+      ],
+      "marks": 10,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-physics-ch04-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [
+        {
+          "kind": "svg",
+          "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 480 200\" role=\"img\" aria-label=\"Two spherical bodies A and B with a red arrow C on A pointing towards B and a red arrow D on B pointing towards A, both of the same length, and a double-headed line E showing the distance between their centres\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>Two spherical bodies A and B with a red arrow C on A pointing towards B and a red arrow D on B pointing towards A, both of the same length, and a double-headed line E showing the distance between their centres</title><line x1=\"138\" y1=\"96\" x2=\"351\" y2=\"96\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\" stroke-dasharray=\"4 3\"/><circle cx=\"110\" cy=\"96\" r=\"28\" fill=\"var(--diagram-blue)\" stroke=\"var(--diagram-blue)\" stroke-width=\"2\" fill-opacity=\"0.3\"/><circle cx=\"370\" cy=\"96\" r=\"19\" fill=\"var(--diagram-green)\" stroke=\"var(--diagram-green)\" stroke-width=\"2\" fill-opacity=\"0.3\"/><line x1=\"138\" y1=\"96\" x2=\"202.8\" y2=\"96\" stroke=\"var(--diagram-red)\" stroke-width=\"2.5\"/><polygon points=\"210,96 201.8,99.7 201.8,92.3\" fill=\"var(--diagram-red)\" stroke=\"none\"/><line x1=\"351\" y1=\"96\" x2=\"286.2\" y2=\"96\" stroke=\"var(--diagram-red)\" stroke-width=\"2.5\"/><polygon points=\"279,96 287.2,92.3 287.2,99.7\" fill=\"var(--diagram-red)\" stroke=\"none\"/><line x1=\"110\" y1=\"128\" x2=\"110\" y2=\"162\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><line x1=\"370\" y1=\"119\" x2=\"370\" y2=\"162\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><line x1=\"118\" y1=\"156\" x2=\"357.2\" y2=\"156\" stroke=\"currentColor\" stroke-width=\"1.2\"/><polygon points=\"362,156 356.5,158.4 356.5,153.6\" fill=\"currentColor\" stroke=\"none\"/><line x1=\"362\" y1=\"156\" x2=\"122.8\" y2=\"156\" stroke=\"currentColor\" stroke-width=\"1.2\"/><polygon points=\"118,156 123.5,153.6 123.5,158.4\" fill=\"currentColor\" stroke=\"none\"/><text x=\"110\" y=\"56\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"16\" font-weight=\"bold\">A</text><text x=\"370\" y=\"65\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"16\" font-weight=\"bold\">B</text><text x=\"174\" y=\"84\" fill=\"var(--diagram-red)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"16\" font-weight=\"bold\">C</text><text x=\"315\" y=\"84\" fill=\"var(--diagram-red)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"16\" font-weight=\"bold\">D</text><text x=\"240\" y=\"178\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"16\" font-weight=\"bold\">E</text></svg>",
+          "alt": "Two bodies A and B with force arrows C and D and the distance E between their centres"
+        }
+      ],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch04_063",
+      "unit": "icse-9-physics-ch04",
+      "language": "en",
+      "type": "long",
+      "stem_md": "Two girls of mass 48 kg and 52 kg stand 2.0 m apart, the distance being measured between their centres. (G = 6.67 × 10⁻¹¹ N m² kg⁻²; g = 10 m s⁻²)\n\n(a) Write the equation for the gravitational force between two bodies. [2]\n\n(b) Calculate the force of attraction between the girls, in units of 10⁻⁸ N. [3]\n\n(c) Find the force when they move to 1.0 m apart, using the ratio method. [2]\n\n(d) The weight of the 48 kg girl is 480 N. Say about how many times this is larger than the pull in (b), and why the girls do not feel that pull. [3]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "**(a)** $F = \\dfrac{G m_1 m_2}{r^2}$.\n\n**(b)** $F = \\dfrac{6.67 \\times 10^{-11} \\times 48 \\times 52}{2^2} = 4.16 \\times 10^{-8}$ N.\n\n**(c)** The distance is halved, so the factor is $\\dfrac{1}{(1/2)^2} = 4$ and $F = 4 \\times 4.16 \\times 10^{-8} = 16.6 \\times 10^{-8}$ N.\n\n**(d)** $\\dfrac{480}{4.16 \\times 10^{-8}}$ is about $1.2 \\times 10^{10}$, so the weight is **about ten billion times larger**. The pull is far too small to notice beside the pull of the Earth and the friction at their feet, because G is tiny and their masses are small."
+      },
+      "solution_md": "F = G m₁ m₂ / r²; 4.16 × 10⁻⁸ N; 16.6 × 10⁻⁸ N; about 10¹⁰ times, so the pull is negligible.",
+      "marking_scheme": [
+        {
+          "step": "Equation",
+          "marks": 1
+        },
+        {
+          "step": "Equation with the symbols named",
+          "marks": 1
+        },
+        {
+          "step": "Substitution",
+          "marks": 1
+        },
+        {
+          "step": "Working",
+          "marks": 1
+        },
+        {
+          "step": "4.16 × 10⁻⁸ N",
+          "marks": 1
+        },
+        {
+          "step": "Factor 4",
+          "marks": 1
+        },
+        {
+          "step": "16.6 × 10⁻⁸ N",
+          "marks": 1
+        },
+        {
+          "step": "About 10¹⁰ times",
+          "marks": 1
+        },
+        {
+          "step": "G tiny, small masses",
+          "marks": 1
+        },
+        {
+          "step": "Earth pull and friction dominate",
+          "marks": 1
+        }
+      ],
+      "marks": 10,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-physics-ch04-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch04_064",
+      "unit": "icse-9-physics-ch04",
+      "language": "en",
+      "type": "long",
+      "stem_md": "A student drops a ball from a tower and records its distance fallen, s, at several times, t:\n\n| t (s) | 0.5 | 1 | 1.5 | 2 |\n|---|---|---|---|---|\n| s (m) | 1.25 | 5 | 11.25 | 20 |\n\n(a) Work out s ÷ t² for each reading and state what you notice. [3]\n\n(b) Using s = ½ g t², find the value of g from your answer. [2]\n\n(c) Find the speed of the ball at the end of 2 s. [2]\n\n(d) State the shape of a graph of s against t², and say what its gradient represents. [3]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "**(a)** $s \\div t^2$ is 5, 5, 5, 5, that is **5 m s⁻² every time**. The ratio is constant.\n\n**(b)** $s = \\tfrac{1}{2} g t^2$, so $\\dfrac{s}{t^2} = \\dfrac{g}{2}$ and $g = 2 \\times 5 = 10$ m s⁻².\n\n**(c)** $v = g t = 10 \\times 2 = 20$ m s⁻¹.\n\n**(d)** A **straight line through the origin**, because $s$ is proportional to $t^2$. Its gradient is $\\tfrac{1}{2} g$, which is 5 m s⁻²."
+      },
+      "solution_md": "s/t² = 5 each time; g = 10 m s⁻²; 20 m s⁻¹; straight line through the origin with gradient g/2.",
+      "marking_scheme": [
+        {
+          "step": "Working of s ÷ t²",
+          "marks": 1
+        },
+        {
+          "step": "All equal to 5",
+          "marks": 1
+        },
+        {
+          "step": "Constant ratio stated",
+          "marks": 1
+        },
+        {
+          "step": "s/t² = g/2",
+          "marks": 1
+        },
+        {
+          "step": "g = 10 m s⁻²",
+          "marks": 1
+        },
+        {
+          "step": "v = g t with substitution",
+          "marks": 1
+        },
+        {
+          "step": "20 m s⁻¹",
+          "marks": 1
+        },
+        {
+          "step": "Straight line through the origin",
+          "marks": 1
+        },
+        {
+          "step": "s proportional to t²",
+          "marks": 1
+        },
+        {
+          "step": "Gradient is g/2",
+          "marks": 1
+        }
+      ],
+      "marks": 10,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-physics-ch04-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch04_065",
+      "unit": "icse-9-physics-ch04",
+      "language": "en",
+      "type": "long",
+      "stem_md": "A long glass tube contains a coin of mass 5 g and a small feather of mass 0.5 g. (g = 10 m s⁻²)\n\n(a) The tube, full of air, is turned upside down quickly. State which object reaches the other end first and why. [2]\n\n(b) The air is now pumped out and the tube is turned upside down again. State what is seen and what it shows. [2]\n\n(c) Find the pull of the Earth on the coin and on the feather, and the ratio of the two pulls. Why are the two accelerations still equal? [3]\n\n(d) The tube is 0.8 m long. In the vacuum, find the time the coin takes to fall through it and its speed on reaching the bottom. [3]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "**(a)** The **coin** reaches the bottom first, because the **air resistance** on the feather is large compared with its tiny weight.\n\n**(b)** The coin and the feather reach the bottom **together**. This shows that, without air, **all bodies fall with the same acceleration**.\n\n**(c)** Pull on the coin $= 0.005 \\times 10 = 0.05$ N; on the feather $= 0.0005 \\times 10 = 0.005$ N; ratio $= 10$. The coin has ten times the pull but also ten times the mass, so $a = \\dfrac{mg}{m} = g$ for both.\n\n**(d)** $s = \\tfrac{1}{2} g t^2$: $0.8 = \\tfrac{1}{2} \\times 10 \\times t^2$, $t^2 = 0.16$ and $t = 0.4$ s. Speed $v = g t = 10 \\times 0.4 = 4$ m s⁻¹."
+      },
+      "solution_md": "Coin first (air resistance); together in vacuum; 0.05 N, 0.005 N, ratio 10, same g; 0.4 s and 4 m s⁻¹.",
+      "marking_scheme": [
+        {
+          "step": "Coin first",
+          "marks": 1
+        },
+        {
+          "step": "Air resistance on the feather",
+          "marks": 1
+        },
+        {
+          "step": "Together in vacuum",
+          "marks": 1
+        },
+        {
+          "step": "All bodies fall with the same acceleration",
+          "marks": 1
+        },
+        {
+          "step": "Both pulls",
+          "marks": 1
+        },
+        {
+          "step": "Ratio 10",
+          "marks": 1
+        },
+        {
+          "step": "Mass cancels, a = g",
+          "marks": 1
+        },
+        {
+          "step": "t = 0.4 s with working",
+          "marks": 1
+        },
+        {
+          "step": "v = g t",
+          "marks": 1
+        },
+        {
+          "step": "4 m s⁻¹",
+          "marks": 1
+        }
+      ],
+      "marks": 10,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-physics-ch04-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch04_066",
+      "unit": "icse-9-physics-ch04",
+      "language": "en",
+      "type": "long",
+      "stem_md": "A shopkeeper finds with a beam balance that a sack of rice has a mass of 2.5 kg.\n\n(a) State the weight of the sack in kgf. [1]\n\n(b) Find its weight in newton (i) taking g = 10 m s⁻² and (ii) taking 1 kgf = 9.8 N. [3]\n\n(c) The sack is taken to the Moon. State how (i) its mass and (ii) its weight change. [2]\n\n(d) Give three differences between mass and weight, other than the places they are measured. [3]\n\n(e) Name the balance whose reading would change on the Moon. [1]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "**(a)** **2.5 kgf**, the same number as the mass.\n\n**(b)** (i) $W = m g = 2.5 \\times 10 = 25$ N. (ii) $W = 2.5 \\times 9.8 = 24.5$ N.\n\n**(c)** (i) The mass is **unchanged**. (ii) The weight becomes **smaller**, because g is smaller on the Moon.\n\n**(d)** Mass is the quantity of matter and weight is a force; mass is a scalar and weight a vector; the SI unit of mass is the kilogram and of weight the newton. (Any three, including the instruments if wished.)\n\n**(e)** The **spring balance**."
+      },
+      "solution_md": "2.5 kgf; 25 N and 24.5 N; mass same, weight less; three differences; spring balance.",
+      "marking_scheme": [
+        {
+          "step": "2.5 kgf",
+          "marks": 1
+        },
+        {
+          "step": "25 N with working",
+          "marks": 1
+        },
+        {
+          "step": "24.5 N with working",
+          "marks": 2
+        },
+        {
+          "step": "Mass unchanged",
+          "marks": 1
+        },
+        {
+          "step": "Weight smaller, with reason",
+          "marks": 1
+        },
+        {
+          "step": "First difference",
+          "marks": 1
+        },
+        {
+          "step": "Second difference",
+          "marks": 1
+        },
+        {
+          "step": "Third difference",
+          "marks": 1
+        },
+        {
+          "step": "Spring balance",
+          "marks": 1
+        }
+      ],
+      "marks": 10,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "icse-9-physics-ch04-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    },
+    {
+      "id": "q_icse9phy_ch04_067",
+      "unit": "icse-9-physics-ch04",
+      "language": "en",
+      "type": "long",
+      "stem_md": "A mango of mass 0.15 kg falls from a tree. (g = 10 m s⁻²; mass of the Earth = 6 × 10²⁴ kg)\n\n(a) Find the force with which the Earth pulls the mango. [2]\n\n(b) State the magnitude and direction of the force with which the mango pulls the Earth. [2]\n\n(c) Find the acceleration that this force gives the Earth, and say how many times smaller it is than the acceleration of the mango. [3]\n\n(d) Why is the motion of the Earth never noticed? [1]\n\n(e) Explain why a mango of twice the mass would fall with the same acceleration. [2]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "**(a)** $F = m g = 0.15 \\times 10 = 1.5$ N.\n\n**(b)** **1.5 N**, directed **upwards**, towards the mango, as the forces of a pair are equal and opposite.\n\n**(c)** $a = \\dfrac{F}{M} = \\dfrac{1.5}{6 \\times 10^{24}} = 2.5 \\times 10^{-25}$ m s⁻². The mango's acceleration is 10 m s⁻², which is about $4 \\times 10^{25}$ times larger.\n\n**(d)** The acceleration of the Earth is **absurdly small**, because its mass is enormous.\n\n**(e)** The pull doubles but so does the mass, so the **mass cancels** in $a = \\dfrac{mg}{m}$ and the acceleration stays equal to g."
+      },
+      "solution_md": "1.5 N; 1.5 N upwards; 2.5 × 10⁻²⁵ m s⁻², 4 × 10²⁵ times smaller; huge mass; mass cancels.",
+      "marking_scheme": [
+        {
+          "step": "Formula with substitution",
+          "marks": 1
+        },
+        {
+          "step": "1.5 N",
+          "marks": 1
+        },
+        {
+          "step": "1.5 N",
+          "marks": 1
+        },
+        {
+          "step": "Upwards, equal and opposite",
+          "marks": 1
+        },
+        {
+          "step": "a = F / M with substitution",
+          "marks": 1
+        },
+        {
+          "step": "2.5 × 10⁻²⁵ m s⁻²",
+          "marks": 1
+        },
+        {
+          "step": "4 × 10²⁵ times smaller",
+          "marks": 1
+        },
+        {
+          "step": "Huge mass of the Earth",
+          "marks": 1
+        },
+        {
+          "step": "Pull doubles with the mass",
+          "marks": 1
+        },
+        {
+          "step": "Mass cancels, a = g",
+          "marks": 1
+        }
+      ],
+      "marks": 10,
+      "difficulty": 4,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "icse-9-physics-ch04-t01",
+        "icse-9-physics-ch04-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-11-05",
+        "author": "claude-sonnet-5-5 (writer; reviewed by the subject-producer)"
+      }
+    }
+  ],
+  "build": {
+    "run_id": null,
+    "checks": {
+      "katex_mhchem": "140 math strings parsed with KaTeX 0.19.0 + mhchem (throwOnError, strict \"error\"), 0 failures",
+      "svg_allowlist": "4 SVG visuals (4 distinct diagrams) checked with saxes against svg-allowlist.ts: elements, attributes, class pattern, fragment-only refs, no style, palette incl. named hues, viewBox, title, per-page unique ids — 0 failures",
+      "narration": "30 slides, 15–46 words (mean 36), no symbols, formulae or unit abbreviations",
+      "resolve": "28/28 scripted re-solve checks pass",
+      "physics_facts": "Universal law of gravitation F = G m1 m2 / r^2 with G = 6.67e-11 N m^2 kg^-2 and ratio-type changes, equal and opposite gravitational pairs, gravity and free fall (v = g t, s = 1/2 g t^2, same acceleration for all bodies, air resistance), mass and weight (W = m g, newton and kgf with 1 kgf = 9.8 N), checked against the ICSE 2028 Physics syllabus Class IX (Fluids and Laws of Motion groupings); problems on the variation of g are a removed topic and are not asked",
+      "computed_values": "Forces, ratios, times, speeds, distances and weights are computed and asserted in src/calc.mjs, not typed in",
+      "icse_style": "Assertion-reason items use the 521 option order; 1-mark terms, fill-ins and a 5-pair match; numericals with formula, substitution and unit; 10-mark structured questions in parts (one with a lettered A to E figure); chapter tests on icse-9-default-chapter-test-short / -long",
+      "verifier_pass": "2026-11-07: every question re-solved from its stem by the author; keys, schemes and word limits checked",
+      "pipeline_lint": "npm run content -- lint --exemplars: 0 errors, 0 warnings"
+    }
+  }
+}
