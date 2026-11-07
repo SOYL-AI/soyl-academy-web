@@ -85,8 +85,8 @@ add('hydraulic-mcq', mcq({
 add('froth-ar', ar({
   a: 'Froth flotation is a suitable method for concentrating zinc blende.',
   r: 'Sulphide ore particles are wetted by oil, while the gangue particles are wetted by water.',
-  key: 'a',
-  sol: 'Both are true, and R is the principle on which the method works — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R is the principle on which the method works — option (c).',
   d: 2, c: 'understanding', t: [2],
 }));
 add('method-match', match({
@@ -188,8 +188,8 @@ add('series-mcq', mcq({
 add('sodium-ar', ar({
   a: 'Sodium is extracted by electrolysis of fused sodium chloride.',
   r: 'Sodium chloride is a covalent compound that does not conduct electricity when molten.',
-  key: 'c',
-  sol: 'A is true; R is false: sodium chloride is ionic and conducts when molten — option (c).',
+  key: 'a',
+  sol: 'A is true; R is false: sodium chloride is ionic and conducts when molten — option (a).',
   d: 2, c: 'understanding', t: [4],
 }));
 add('hg-tf', tf({
@@ -318,15 +318,15 @@ add('cathode-mcq', mcq({
 add('cryolite-ar', ar({
   a: 'Cryolite is added to alumina in the Hall–Héroult cell.',
   r: 'Cryolite is a mineral of aluminium.',
-  key: 'b',
-  sol: 'Both are true, but cryolite is added to lower the fusion temperature and raise the conductivity, not because it contains aluminium — option (b).',
+  key: 'd',
+  sol: 'Both are true, but cryolite is added to lower the fusion temperature and raise the conductivity, not because it contains aluminium — option (d).',
   d: 3, c: 'analysis', t: [6],
 }));
 add('coke-ar', ar({
   a: 'A layer of powdered coke is spread over the surface of the electrolyte in the Hall–Héroult cell.',
   r: 'The coke layer reduces heat loss from the surface and stops the anodes burning in air at the surface.',
-  key: 'a',
-  sol: 'Both are true, and R explains A — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A — option (c).',
   d: 2, c: 'understanding', t: [6],
 }));
 add('cryolite-fill', fill({
@@ -409,8 +409,8 @@ add('magnalium-mcq', mcq({
 add('bronze-ar', ar({
   a: 'Bronze is an alloy of copper and zinc.',
   r: 'Alloys are usually harder than the pure metals from which they are made.',
-  key: 'd',
-  sol: 'A is false: bronze is copper and tin (brass is copper and zinc). R is true — option (d).',
+  key: 'b',
+  sol: 'A is false: bronze is copper and tin (brass is copper and zinc). R is true — option (b).',
   d: 2, c: 'recall', t: [7],
 }));
 add('solder-tf', tf({

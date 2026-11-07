@@ -24,7 +24,7 @@ All items are `status: "draft"` until a reviewer approves them.
 | Type | Count | Marks |
 |---|---|---|
 | mcq | 19 | 1 (keys a 5, b 5, c 5, d 4; seeded balanced shuffle) |
-| assertion-reason | 5 | 1 (keys a c b a d) |
+| assertion-reason | 5 | 1 (keys c a d c b) |
 | true-false | 4 | 1 |
 | fill-blank | 4 | 1 per blank (the 3-blank bracket completion carries 3) |
 | match | 2 | 1 per pair (4 or 5 pairs) |
@@ -64,4 +64,4 @@ Reference: `docs/platform/content-qa/2026-11-05-competency-retag-audit.md`. Keys
 - **Retagged honestly:** q017, q018, q026, q027, q034, q035, q045 (learnt equations) and q014 (gas from roasting zinc blende) application → recall; q015 application → understanding; q022 analysis → understanding. (q014, q015 and q022 were then rewritten, see below.)
 - **Rewritten as genuine application items:** q006 (decide which rock is an iron ore, then percentage-of-metal calculation, 420 kg); q009 (predict froth flotation with the pine oil omitted); q010 (choose the ore–gangue pair that hydraulic washing can separate from densities); q014 (97 g ZnS roasted: volume of SO₂ at STP, 22.4 L); q015 (identify calcination of calamine from a sequence of observations); q019 (identify roasting and calcination, ore types and gases from observations); q022 (deduce the oxide Fe₂O₃ from the mass of oxide and of iron left after CO reduction); q033 (predict the outcome of diluting and seeding sodium aluminate versus leaving it concentrated); q037 (balanced hydrolysis equation plus mass of Al(OH)₃ from 820 g NaAlO₂, 780 g); q038 (consequence of omitting cryolite from the cell); q040 (why aqueous aluminium sulphate gives hydrogen, not aluminium); q049 (interpret melting-point and conductivity figures; predict cooling to 800 °C; role of alumina versus cryolite). `q054` (true/false) was also rewritten (an alloy can meet a melting-point limit that neither metal meets) but is a two-step inference from a known property, so the reviewer kept it at understanding.
 - **New competency counts:** recall 22 · understanding 10 · application 26 · analysis 5 · evaluation 1. Application or higher is **32 of 64 items (50.0%)**, inside the 45–65% band (65% of marks). Difficulty: d1 19 · d2 23 · d3 20 · d4 2.
-
+- **2026-11-05:** assertion-reason options reordered to the ICSE 2027 Chemistry specimen paper (522) order and wording; every key re-mapped so each item's meaning is unchanged.
