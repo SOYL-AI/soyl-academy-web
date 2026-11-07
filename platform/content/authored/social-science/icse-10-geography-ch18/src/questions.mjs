@@ -44,8 +44,8 @@ add('fire-mcq', mcq({
 add('imp-ar', ar({
   a: 'Burning garbage in the open is harmful to health.',
   r: 'It releases smoke and toxic gases that cause breathing problems.',
-  key: 'a',
-  sol: 'Both are true, and R explains A — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A — option (c).',
   d: 2, c: 'understanding', t: [1],
 }));
 add('imp-tf', tf({
@@ -110,8 +110,8 @@ add('resource-mcq', mcq({
 add('need-ar', ar({
   a: 'The amount of waste is increasing in Indian cities.',
   r: 'The Swachh Bharat Mission was launched in 2014.',
-  key: 'b',
-  sol: 'Both are true, but R does not explain A — waste rises with urban population, incomes and packaging — option (b).',
+  key: 'd',
+  sol: 'Both are true, but R does not explain A — waste rises with urban population, incomes and packaging — option (d).',
   d: 2, c: 'analysis', t: [2],
 }));
 add('need-tf', tf({
@@ -188,22 +188,22 @@ add('sea-mcq', mcq({
 add('term-ar', ar({
   a: 'Acid rain can kill fish in lakes.',
   r: 'It makes the water of lakes more acidic.',
-  key: 'a',
-  sol: 'Both are true, and R explains A — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A — option (c).',
   d: 2, c: 'understanding', t: [3],
 }));
 add('term-ar2', ar({
   a: 'Biomagnification occurs with substances that are quickly broken down by bacteria.',
   r: 'DDT is a persistent pesticide.',
-  key: 'd',
-  sol: 'A is false — biomagnification needs persistent, non-biodegradable substances; R is true — option (d).',
+  key: 'b',
+  sol: 'A is false — biomagnification needs persistent, non-biodegradable substances; R is true — option (b).',
   d: 2, c: 'understanding', t: [3],
 }));
 add('term-ar3', ar({
   a: 'Thermal pollution harms aquatic life.',
   r: 'Warm water holds more dissolved oxygen than cold water.',
-  key: 'c',
-  sol: 'A is true; R is false — warm water holds less oxygen — option (c).',
+  key: 'a',
+  sol: 'A is true; R is false — warm water holds less oxygen — option (a).',
   d: 2, c: 'understanding', t: [3],
 }));
 add('term-tf', tf({
@@ -310,15 +310,15 @@ add('aerobic-mcq', mcq({
 add('method-ar', ar({
   a: 'Only inert rejects should be sent to sanitary landfills.',
   r: 'Wet waste can be composted and dry waste recycled, while landfill space is scarce.',
-  key: 'a',
-  sol: 'Both are true, and R explains A — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A — option (c).',
   d: 2, c: 'application', t: [4],
 }));
 add('method-ar2', ar({
   a: 'Composting works best with segregated wet waste.',
   r: 'Earthworms are used in vermicomposting.',
-  key: 'b',
-  sol: 'Both are true, but R does not explain A — plastics, glass and hazardous items in mixed waste spoil compost — option (b).',
+  key: 'd',
+  sol: 'Both are true, but R does not explain A — plastics, glass and hazardous items in mixed waste spoil compost — option (d).',
   d: 3, c: 'analysis', t: [4],
 }));
 add('method-tf', tf({
@@ -420,8 +420,8 @@ add('indore-mcq', mcq({
 add('r-ar', ar({
   a: 'Recycling paper helps to conserve forests.',
   r: 'Fewer trees need to be cut to make new paper.',
-  key: 'a',
-  sol: 'Both are true, and R explains A — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A — option (c).',
   d: 2, c: 'understanding', t: [5],
 }));
 add('r-tf', tf({
