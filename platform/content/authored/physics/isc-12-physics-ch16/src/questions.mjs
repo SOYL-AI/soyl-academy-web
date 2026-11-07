@@ -69,7 +69,7 @@ add('leaf-mcq', mcq({
   right: '5.8 cm',
   wrong: ['7.5 cm', '10.7 cm', '3.3 cm'],
   sol: r`$v = -25$ cm: $\dfrac{1}{u} = \dfrac{1}{v} - \dfrac{1}{f} = -\dfrac{1}{25} - \dfrac{1}{7.5}$, so $|u| = ${dec(-lf.u, 3)}$ cm — option (@K). At 7.5 cm (the focus) the image would be at infinity; 10.7 cm comes from subtracting the reciprocals; 3.3 is D/f, the magnifying power at infinity.`,
-  d: 2, c: 'application', t: [1],
+  d: 2, c: 'understanding', t: [1],
 }), () => near(lensImage(lf.u, lf.f).v, -25) && near(-lf.u, 5.77, 0.002) || `lf ${lf.u}`);
 const sc = { f: 4 };
 sc.u = objectFor(-D, sc.f);
@@ -79,7 +79,7 @@ add('loupeD-num', num({
   value: Number(dec(-sc.u, 3)), tol: 0.03, unit: 'cm',
   sol: r`$\dfrac{1}{|u|} = \dfrac{1}{f} + \dfrac{1}{D} = \dfrac{1}{4.0} + \dfrac{1}{25} = 0.29$ cm⁻¹, so $|u| = ${dec(-sc.u, 3)}$ cm (and $M = 1 + \dfrac{25}{4.0} = ${dec(sc.M, 3)}$).`,
   scheme: [['v = −25 cm in the lens formula: 1/|u| = 1/4.0 + 1/25', 1], ['|u| = 3.45 cm', 1]],
-  marks: 2, d: 2, c: 'application', t: [1],
+  marks: 2, d: 2, c: 'understanding', t: [1],
 }), (q) => near(lensImage(-q.answer.value, 4).v, -25, 0.01) && q.answer.value === 3.45 || `sc ${sc.u}`);
 add('simple-fill', fill({
   stem: 'A naturalist examines an insect’s wing through a hand lens of focal length 10 cm with a relaxed eye, the final image being at infinity. The magnifying power is ___.',
@@ -202,7 +202,7 @@ add('infinity-mcq', mcq({
   right: '375',
   wrong: ['405', '60', '15'],
   sol: r`Final image at infinity: $M = m_o \cdot \dfrac{D}{f_e} = 30 \times \dfrac{25}{2.0} = ${dec(im.M, 3)}$ — option (@K). 405 uses $1 + D/f_e$ (image at D); 60 multiplies by $f_e$; 15 divides by it.`,
-  d: 2, c: 'application', t: [2],
+  d: 2, c: 'understanding', t: [2],
 }), () => near(im.M, 375) || 'im');
 const ii = { fo: 1, uo: -1.1, fe: 4 };
 Object.assign(ii, compound(ii));
@@ -594,7 +594,7 @@ add('rp-mcq', mcq({
   right: 'lighting the specimen with violet light instead of red',
   wrong: ['fitting an eyepiece of shorter focal length', 'using a longer microscope tube', 'lighting the specimen with infrared radiation'],
   sol: 'd = λ/(2n sin β): a shorter wavelength makes the smallest resolvable separation smaller. A stronger eyepiece or a longer tube only increases the magnification of the blurred image; infrared has a longer wavelength — option (@K).',
-  d: 2, c: 'application', t: [5],
+  d: 2, c: 'understanding', t: [5],
 }), () => dmin(400, 1, rad(60)) < dmin(700, 1, rad(60)) || 'rpm');
 const rp = { lambda: 480, na: 0.8 };
 rp.d = rp.lambda / (2 * rp.na);
@@ -603,7 +603,7 @@ add('rp-num', num({
   value: Number(dec(rp.d, 3)), tol: 2, unit: 'nm',
   sol: r`$d = \dfrac{480}{2 \times 0.80} = ${dec(rp.d, 3)}$ nm, i.e. $3.0 \times 10^{-7}$ m; resolving power $\dfrac{1}{d} = ${dec(1 / (rp.d * 1e-9) / 1e6, 3)} \times 10^{6}$ m⁻¹.`,
   scheme: [['d = λ/(2n sin β) substituted', 1], ['d = 300 nm', 1]],
-  marks: 2, d: 2, c: 'application', t: [5],
+  marks: 2, d: 2, c: 'understanding', t: [5],
 }), (q) => near(dmin(480, 1, Math.asin(0.8)), q.answer.value) || `rp ${rp.d}`);
 const oil = { lambda: 600, n: 1.52, beta: 60 };
 oil.d = dmin(oil.lambda, oil.n, rad(oil.beta));
