@@ -24,8 +24,8 @@ add('tilt-mcq', mcq({
 add('cacl2-ar', ar({
   a: 'Anhydrous calcium chloride is not used to dry ammonia.',
   r: 'Anhydrous calcium chloride combines with ammonia to form an addition compound.',
-  key: 'a',
-  sol: 'Both are true, and R explains A (CaCl₂·8NH₃ is formed) — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A (CaCl₂·8NH₃ is formed) — option (c).',
   d: 2, c: 'understanding', t: [1],
 }));
 add('prep-short1', short({
@@ -79,8 +79,8 @@ add('alkali-mcq', mcq({
 add('salt-ar', ar({
   a: 'Ammonium nitrate gives ammonia when it is warmed with potassium hydroxide solution.',
   r: 'A strong alkali displaces the weaker base, ammonia, from an ammonium salt.',
-  key: 'a',
-  sol: 'Both are true, and R explains A: NH₄NO₃ + KOH → KNO₃ + H₂O + NH₃ — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A: NH₄NO₃ + KOH → KNO₃ + H₂O + NH₃ — option (c).',
   d: 2, c: 'understanding', t: [2],
 }));
 add('nitride-tf', tf({
@@ -139,8 +139,8 @@ add('pressure-mcq', mcq({
 add('haber-ar', ar({
   a: "In Haber's process, the gas mixture leaving the catalyst chamber is cooled.",
   r: "Finely divided iron is the catalyst in Haber's process.",
-  key: 'b',
-  sol: 'Both are true, but the mixture is cooled so that ammonia liquefies and separates from unreacted nitrogen and hydrogen; the catalyst is not the reason — option (b).',
+  key: 'd',
+  sol: 'Both are true, but the mixture is cooled so that ammonia liquefies and separates from unreacted nitrogen and hydrogen; the catalyst is not the reason — option (d).',
   d: 2, c: 'analysis', t: [3],
 }));
 add('haber-short1', short({
@@ -193,15 +193,15 @@ add('pt-mcq', mcq({
 add('solub-ar', ar({
   a: 'Ammonia is collected over water.',
   r: 'Ammonia is extremely soluble in water.',
-  key: 'd',
-  sol: 'A is false: because it is extremely soluble, ammonia is collected by downward displacement of air. R is true — option (d).',
+  key: 'b',
+  sol: 'A is false: because it is extremely soluble, ammonia is collected by downward displacement of air. R is true — option (b).',
   d: 2, c: 'understanding', t: [4],
 }));
 add('burn-ar', ar({
   a: 'Ammonia burns in oxygen with a greenish-yellow flame.',
   r: 'Ammonia is a good supporter of combustion.',
-  key: 'c',
-  sol: 'A is true; R is false: ammonia neither burns in air nor supports combustion — option (c).',
+  key: 'a',
+  sol: 'A is true; R is false: ammonia neither burns in air nor supports combustion — option (a).',
   d: 2, c: 'understanding', t: [4],
 }));
 add('lighter-tf', tf({
