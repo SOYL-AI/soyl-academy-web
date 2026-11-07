@@ -17,7 +17,7 @@ Hand-authored production chapter (DECISIONS D-025, D-026) in the ICSE 2027 Mathe
 | Check slides | 4 + 4, all objective (q001 mcq, q003 mcq, q012 mcq, q033 fill-blank; q008 mcq, q006 mcq, q016 mcq, q032 fill-blank) |
 | Notes | 7 sections with key terms and formulas; exam tips with mark split and 6 common mistakes |
 | Flashcards | 30 (formula 11, concept 5, example 5, fact 4, exam-tip 4, definition 1) |
-| Questions | 65 items, 167 marks: mcq 20, assertion-reason 6 (keys a b c d b a), true-false 5, fill-blank 6, numerical 6 (2–3 marks), short-2 4, short-3 5, short-4 6, long-10 7 (structured (a)(b)(c), 3 + 3 + 4, 7–8 step marks each) |
+| Questions | 65 items, 167 marks: mcq 20, assertion-reason 6 (keys c d a b d c), true-false 5, fill-blank 6, numerical 6 (2–3 marks), short-2 4, short-3 5, short-4 6, long-10 7 (structured (a)(b)(c), 3 + 3 + 4, 7–8 step marks each) |
 | Difficulty | d1 12, d2 28, d3 23, d4 2 |
 | Competency | recall 7, understanding 20, application 32, analysis 6 — application or higher 58% of items, 83% of marks (lint band 45–65% of items) |
 | Topics | t01 25, t02 16, t03 32 (items may carry two topics) |
@@ -46,3 +46,4 @@ Every stem names its own content and every "prove that" item opens with its own 
 - Difficulty is concentrated at d2–d3 (two d4 items); proofs are 3–4 marks and the ten-mark questions combine three of them with an evaluation.
 - No plots: the chapter's visuals are tables, flow charts and two triangle figures (a graph of $\sin^2 + \cos^2$ would add nothing the exact tables do not).
 - `src/prop.mjs` is a copy of the ch06 rational-arithmetic helper kept only for its `Fr` class.
+- **2026-11-05:** assertion-reason options reordered to the ICSE 2027 Mathematics specimen paper (511) order and wording; every key re-mapped so each item's meaning is unchanged.
