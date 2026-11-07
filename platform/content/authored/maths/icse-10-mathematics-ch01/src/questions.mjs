@@ -94,35 +94,35 @@ Q('m13', mk.mcq({ stem: 'Goods pass from a manufacturer through a wholesaler and
 // =============================================================== assertion-reason (7), keys a d c a b c d
 {
   const s = sale(rs(1000), 18);
-  Q('ar1', mk.ar({ a: 'On a sale within a state at a GST rate of 18%, CGST is charged at 9% and SGST at 9%.', r: 'On an intra-state supply, GST is shared equally between the central government and the state government.', key: 'a', sol: 'R states the equal sharing, which is exactly why the 18% splits into 9% + 9%. Both are true and R explains A.', d: 1, c: 'understanding', t: [1] }),
-    (C) => { C.assert(s.cgst === pctOf(rs(1000), 9) && s.sgst === s.cgst, '9% + 9%'); C.key('a'); });
+  Q('ar1', mk.ar({ a: 'On a sale within a state at a GST rate of 18%, CGST is charged at 9% and SGST at 9%.', r: 'On an intra-state supply, GST is shared equally between the central government and the state government.', key: 'c', sol: 'R states the equal sharing, which is exactly why the 18% splits into 9% + 9%. Both are true and R explains A.', d: 1, c: 'understanding', t: [1] }),
+    (C) => { C.assert(s.cgst === pctOf(rs(1000), 9) && s.sgst === s.cgst, '9% + 9%'); C.key('c'); });
 }
 {
   const s = sale(rs(10000), 12, { inter: true });
-  Q('ar2', mk.ar({ a: `Goods priced at ${R(rs(10000))}, sent by a dealer in Pune (Maharashtra) to a buyer in Indore (Madhya Pradesh) at a GST rate of 12%, attract CGST of ${R(rs(600))} and SGST of ${R(rs(600))}.`, r: 'A supply of goods from one state to another attracts IGST at the full GST rate.', key: 'd', sol: `Pune to Indore crosses a state boundary, so the bill shows IGST of ${R(s.igst)}, not CGST and SGST. A is false; R is true.`, d: 2, c: 'understanding', t: [1] }),
-    (C) => { C.assert(s.cgst === 0 && s.igst === rs(1200), 'IGST 1200'); C.key('d'); });
+  Q('ar2', mk.ar({ a: `Goods priced at ${R(rs(10000))}, sent by a dealer in Pune (Maharashtra) to a buyer in Indore (Madhya Pradesh) at a GST rate of 12%, attract CGST of ${R(rs(600))} and SGST of ${R(rs(600))}.`, r: 'A supply of goods from one state to another attracts IGST at the full GST rate.', key: 'b', sol: `Pune to Indore crosses a state boundary, so the bill shows IGST of ${R(s.igst)}, not CGST and SGST. A is false; R is true.`, d: 2, c: 'understanding', t: [1] }),
+    (C) => { C.assert(s.cgst === 0 && s.igst === rs(1200), 'IGST 1200'); C.key('b'); });
 }
 {
   const b = bill(rs(8000), 10, 10);
-  Q('ar3', mk.ar({ a: `An article listed at ${R(b.list)} is sold at a discount of 10%, and GST at 10% is charged on the reduced price. The customer pays ${R(b.amount)}.`, r: 'A discount of x% followed by a tax of x% on the reduced price always brings the price back to the list price.', key: 'c', sol: r`A: $8000 \times 0.9 = ${nm(b.sp)}$ and $${nm(b.sp)} \times 1.1 = ${nm(b.amount)}$, true. R is false: the tax is a percentage of a smaller number, so the result is $(1 - x/100)(1 + x/100) = 1 - x^2/10000$ times the list price, always a little less.`, d: 3, c: 'analysis', t: [2] }),
-    (C) => { C.assert(b.amount === rs(7920) && b.amount < b.list, '7920 < 8000'); C.key('c'); });
+  Q('ar3', mk.ar({ a: `An article listed at ${R(b.list)} is sold at a discount of 10%, and GST at 10% is charged on the reduced price. The customer pays ${R(b.amount)}.`, r: 'A discount of x% followed by a tax of x% on the reduced price always brings the price back to the list price.', key: 'a', sol: r`A: $8000 \times 0.9 = ${nm(b.sp)}$ and $${nm(b.sp)} \times 1.1 = ${nm(b.amount)}$, true. R is false: the tax is a percentage of a smaller number, so the result is $(1 - x/100)(1 + x/100) = 1 - x^2/10000$ times the list price, always a little less.`, d: 3, c: 'analysis', t: [2] }),
+    (C) => { C.assert(b.amount === rs(7920) && b.amount < b.list, '7920 < 8000'); C.key('a'); });
 }
 {
   const c = chain([rs(2000), rs(2500)], 12);
-  Q('ar4', mk.ar({ a: `A retailer buys a toaster for ${R(rs(2000))} and sells it for ${R(rs(2500))}, both before GST, within the same state. GST is 12%. The retailer pays ${R(c.stages[1].pay)} to the government.`, r: 'Because of input tax credit, a dealer effectively pays GST only on the value it adds, that is, on its selling price minus its purchase price.', key: 'a', sol: r`$12\% \text{ of } (2500 - 2000) = 12\% \text{ of } 500 = ${nm(c.stages[1].pay)}$. Both true, and R is the reason the retailer's payment is so small.`, d: 2, c: 'understanding', t: [3] }),
-    (C) => { C.assert(c.stages[1].pay === pctOf(rs(500), 12), '12% of 500'); C.key('a'); });
+  Q('ar4', mk.ar({ a: `A retailer buys a toaster for ${R(rs(2000))} and sells it for ${R(rs(2500))}, both before GST, within the same state. GST is 12%. The retailer pays ${R(c.stages[1].pay)} to the government.`, r: 'Because of input tax credit, a dealer effectively pays GST only on the value it adds, that is, on its selling price minus its purchase price.', key: 'c', sol: r`$12\% \text{ of } (2500 - 2000) = 12\% \text{ of } 500 = ${nm(c.stages[1].pay)}$. Both true, and R is the reason the retailer's payment is so small.`, d: 2, c: 'understanding', t: [3] }),
+    (C) => { C.assert(c.stages[1].pay === pctOf(rs(500), 12), '12% of 500'); C.key('c'); });
 }
-Q('ar5', mk.ar({ a: 'On an intra-state sale at a GST rate of 28%, central GST is charged at 14%.', r: 'A supply from one state to another attracts IGST.', key: 'b', sol: 'A is true: 28% is split as 14% CGST + 14% SGST. R is also true, but it is about inter-state sales, so it does not explain A.', d: 1, c: 'understanding', t: [1] }),
-  (C) => { C.assert(sale(rs(100), 28).cgst === pctOf(rs(100), 14) && sale(rs(100), 28, { inter: true }).igst === pctOf(rs(100), 28), 'facts'); C.key('b'); });
+Q('ar5', mk.ar({ a: 'On an intra-state sale at a GST rate of 28%, central GST is charged at 14%.', r: 'A supply from one state to another attracts IGST.', key: 'd', sol: 'A is true: 28% is split as 14% CGST + 14% SGST. R is also true, but it is about inter-state sales, so it does not explain A.', d: 1, c: 'understanding', t: [1] }),
+  (C) => { C.assert(sale(rs(100), 28).cgst === pctOf(rs(100), 14) && sale(rs(100), 28, { inter: true }).igst === pctOf(rs(100), 28), 'facts'); C.key('d'); });
 {
   const a = rs(5900), b = baseFrom(a, 18);
-  Q('ar6', mk.ar({ a: `If a customer pays ${R(a)} including GST at 18%, the price before GST is ${R(b)}.`, r: 'The price before GST is 82% of the amount paid.', key: 'c', sol: r`A: $5000 + 18\% \text{ of } 5000 = 5900$, true. R is false: $82\% \text{ of } 5900$ is ${R(pctOf(a, 82))}. The correct factor is $\dfrac{100}{118}$, because the $18\%$ was added to the price, not taken from the amount.`, d: 3, c: 'analysis', t: [4] }),
-    (C) => { C.assert(b === rs(5000) && pctOf(a, 82) !== b, 'R false'); C.key('c'); });
+  Q('ar6', mk.ar({ a: `If a customer pays ${R(a)} including GST at 18%, the price before GST is ${R(b)}.`, r: 'The price before GST is 82% of the amount paid.', key: 'a', sol: r`A: $5000 + 18\% \text{ of } 5000 = 5900$, true. R is false: $82\% \text{ of } 5900$ is ${R(pctOf(a, 82))}. The correct factor is $\dfrac{100}{118}$, because the $18\%$ was added to the price, not taken from the amount.`, d: 3, c: 'analysis', t: [4] }),
+    (C) => { C.assert(b === rs(5000) && pctOf(a, 82) !== b, 'R false'); C.key('a'); });
 }
 {
   const c = chain([rs(5500), rs(5280)], 18);
-  Q('ar7', mk.ar({ a: 'A dealer who sells an article for less than the price at which it was bought (both before GST, same rate) still has to pay a positive amount of GST on that sale.', r: 'The net GST payable by a dealer is the output tax minus the input tax.', key: 'd', sol: 'By R, a lower selling price means output tax smaller than input tax, so the net figure is negative: nothing is payable and the difference stays as credit. A is false, R is true.', d: 3, c: 'analysis', t: [3] }),
-    (C) => { C.assert(c.stages[1].pay < 0, 'negative net GST at a loss'); C.key('d'); });
+  Q('ar7', mk.ar({ a: 'A dealer who sells an article for less than the price at which it was bought (both before GST, same rate) still has to pay a positive amount of GST on that sale.', r: 'The net GST payable by a dealer is the output tax minus the input tax.', key: 'b', sol: 'By R, a lower selling price means output tax smaller than input tax, so the net figure is negative: nothing is payable and the difference stays as credit. A is false, R is true.', d: 3, c: 'analysis', t: [3] }),
+    (C) => { C.assert(c.stages[1].pay < 0, 'negative net GST at a loss'); C.key('b'); });
 }
 
 // =============================================================== true-false (5)
