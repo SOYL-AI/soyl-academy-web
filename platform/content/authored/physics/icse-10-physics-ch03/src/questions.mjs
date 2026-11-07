@@ -62,15 +62,15 @@ add('effort-num', num({
 add('mach-ar', ar({
   a: 'The efficiency of a practical machine is always less than 100%.',
   r: 'Some of the work input is used to overcome friction and to move parts of the machine.',
-  key: 'a',
-  sol: 'Both are true, and R explains A — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A — option (c).',
   d: 1, c: 'understanding', t: [1],
 }));
 add('vr-ar', ar({
   a: 'Oiling the moving parts of a machine increases its velocity ratio.',
   r: 'Oiling reduces friction.',
-  key: 'd',
-  sol: 'A is false (VR depends only on the design; oiling raises MA and efficiency); R is true — option (d).',
+  key: 'b',
+  sol: 'A is false (VR depends only on the design; oiling raises MA and efficiency); R is true — option (b).',
   d: 3, c: 'analysis', t: [1],
 }));
 add('mach-tf', tf({
@@ -165,8 +165,8 @@ add('tong-num', num({
 add('lever-ar', ar({
   a: 'A class II lever always has a mechanical advantage greater than 1.',
   r: 'In a class II lever the load lies between the fulcrum and the effort, so the effort arm is always longer than the load arm.',
-  key: 'a',
-  sol: 'Both are true, and R explains A — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A — option (c).',
   d: 2, c: 'understanding', t: [2],
 }));
 add('lever-tf', tf({
@@ -301,15 +301,15 @@ add('tackleeff-num', num({
 add('pulley-ar', ar({
   a: 'A single fixed pulley is often used even though its mechanical advantage is not more than 1.',
   r: 'A single fixed pulley lets the effort be applied downwards, using the body’s own weight.',
-  key: 'a',
-  sol: 'Both are true, and R explains A — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A — option (c).',
   d: 2, c: 'understanding', t: [4],
 }));
 add('pulley-ar2', ar({
   a: 'The velocity ratio of a block and tackle equals the number of strands supporting the lower block.',
   r: 'The efficiency of a block and tackle increases with the weight of its lower block.',
-  key: 'c',
-  sol: 'A is true; R is false: a heavier lower block lowers the efficiency — option (c).',
+  key: 'a',
+  sol: 'A is true; R is false: a heavier lower block lowers the efficiency — option (a).',
   d: 3, c: 'analysis', t: [4],
 }));
 add('pulley-tf', tf({
@@ -419,8 +419,8 @@ add('vr-short1', short({
 add('tackle-ar', ar({
   a: 'When the free end of the rope of a block and tackle of VR 4 is pulled down 1 m, the load rises 0.25 m.',
   r: 'The velocity ratio is the distance moved by the effort divided by the distance moved by the load.',
-  key: 'a',
-  sol: 'Both are true, and R explains A (0.25 = 1 ÷ 4) — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A (0.25 = 1 ÷ 4) — option (c).',
   d: 2, c: 'application', t: [1, 4],
 }));
 
