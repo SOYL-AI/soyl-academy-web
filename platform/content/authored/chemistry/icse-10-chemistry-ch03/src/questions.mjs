@@ -36,8 +36,8 @@ add('weak-mcq', mcq({
 add('alkali-ar', ar({
   a: 'All alkalis are bases, but all bases are not alkalis.',
   r: 'An alkali is a base that is soluble in water.',
-  key: 'a',
-  sol: 'Both are true, and R explains A — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A — option (c).',
   d: 2, c: 'understanding', t: [1],
 }));
 add('ionise-tf', tf({
@@ -104,8 +104,8 @@ add('phen-mcq', mcq({
 add('ph-ar', ar({
   a: 'A solution of pH 2 turns blue litmus red.',
   r: 'A solution of pH 2 contains more hydroxide ions than hydronium ions.',
-  key: 'c',
-  sol: 'A is true (strongly acidic); R is false: an acidic solution has more H₃O⁺ than OH⁻ — option (c).',
+  key: 'a',
+  sol: 'A is true (strongly acidic); R is false: an acidic solution has more H₃O⁺ than OH⁻ — option (a).',
   d: 2, c: 'understanding', t: [2],
 }));
 add('litmus-tf', tf({
@@ -170,8 +170,8 @@ add('complex-mcq', mcq({
 add('salt-ar', ar({
   a: 'Sodium hydrogen carbonate is an acid salt.',
   r: 'Sodium hydrogen carbonate solution is strongly acidic.',
-  key: 'c',
-  sol: 'A is true (it contains replaceable H); R is false: its solution is weakly alkaline (pH about 8) — option (c).',
+  key: 'a',
+  sol: 'A is true (it contains replaceable H); R is false: its solution is weakly alkaline (pH about 8) — option (a).',
   d: 3, c: 'analysis', t: [3],
 }));
 add('salt-tf', tf({
@@ -248,8 +248,8 @@ add('so2co2-mcq', mcq({
 add('gas-ar', ar({
   a: 'Both sodium carbonate and sodium sulphite give a gas that turns lime water milky when treated with dilute hydrochloric acid.',
   r: 'Carbon dioxide and sulphur dioxide both form insoluble calcium salts with lime water.',
-  key: 'a',
-  sol: 'Both are true, and R explains A (CaCO₃ and CaSO₃ precipitates) — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A (CaCO₃ and CaSO₃ precipitates) — option (c).',
   d: 3, c: 'analysis', t: [4],
 }));
 add('effer-tf', tf({
@@ -332,8 +332,8 @@ add('baso4-mcq', mcq({
 add('method-ar', ar({
   a: 'Zinc sulphate can be prepared by adding zinc granules to dilute sulphuric acid.',
   r: 'Zinc is below hydrogen in the activity series.',
-  key: 'c',
-  sol: 'A is true; R is false: zinc is above hydrogen in the activity series, which is why it displaces hydrogen — option (c).',
+  key: 'a',
+  sol: 'A is true; R is false: zinc is above hydrogen in the activity series, which is why it displaces hydrogen — option (a).',
   d: 2, c: 'understanding', t: [5],
 }));
 add('precip-tf', tf({
@@ -392,8 +392,8 @@ add('nh4-mcq', mcq({
 add('cuo-ar', ar({
   a: 'Excess copper(II) oxide is used when preparing copper(II) sulphate from dilute sulphuric acid.',
   r: 'Excess copper(II) oxide makes sure all the acid is used up, and it can be removed by filtration.',
-  key: 'a',
-  sol: 'Both are true, and R explains A — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A — option (c).',
   d: 2, c: 'understanding', t: [6],
 }));
 add('carbsalt-tf', tf({
