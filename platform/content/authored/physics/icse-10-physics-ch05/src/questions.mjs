@@ -45,8 +45,8 @@ add('focus-fill', fill({
 add('conv-ar', ar({
   a: 'A convex lens is called a converging lens.',
   r: 'It behaves like a set of prisms with their bases towards the principal axis, so it bends rays towards the axis.',
-  key: 'a',
-  sol: 'Both are true, and R explains A — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A — option (c).',
   d: 2, c: 'understanding', t: [1],
 }));
 add('burn-short2', short({
@@ -85,15 +85,15 @@ add('parallel-mcq', mcq({
 add('size-ar', ar({
   a: 'The image formed by a convex lens of an object placed at 2F₁ is the same size as the object.',
   r: 'Every image formed by a convex lens is real.',
-  key: 'c',
-  sol: 'A is true; R is false — a convex lens gives a virtual image when the object is within F — option (c).',
+  key: 'a',
+  sol: 'A is true; R is false — a convex lens gives a virtual image when the object is within F — option (a).',
   d: 2, c: 'analysis', t: [2],
 }));
 add('pwr-ar', ar({
   a: 'A lens of power +4 D has a focal length of 25 cm.',
   r: 'A convex lens is thicker at the middle than at its edges.',
-  key: 'b',
-  sol: 'Both are true ($f = \\dfrac{1}{4} = 0.25$ m), but R does not explain A, which follows from $P = \\dfrac{1}{f}$ — option (b).',
+  key: 'd',
+  sol: 'Both are true ($f = \\dfrac{1}{4} = 0.25$ m), but R does not explain A, which follows from $P = \\dfrac{1}{f}$ — option (d).',
   d: 2, c: 'analysis', t: [1, 5],
 }));
 add('mag-tf', tf({
@@ -145,8 +145,8 @@ add('conv-fill', fill({
 add('ray3-ar', ar({
   a: 'A ray of light passing through the first principal focus of a convex lens emerges parallel to the principal axis.',
   r: 'A ray parallel to the axis passes through the principal focus, and the path of light is reversible.',
-  key: 'a',
-  sol: 'Both are true, and R explains A — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A — option (c).',
   d: 3, c: 'analysis', t: [2],
 }));
 add('copy-short1', short({
@@ -206,8 +206,8 @@ add('centre-fill', fill({
 add('tree-ar', ar({
   a: 'A distant tree seen through a concave lens looks upright and smaller.',
   r: 'A concave lens makes rays diverge so that they appear to come from a point between F₁ and the lens.',
-  key: 'a',
-  sol: 'Both are true, and R explains A — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A — option (c).',
   d: 2, c: 'understanding', t: [3],
 }));
 add('concave-short2', short({
@@ -310,8 +310,8 @@ add('formula-fill', fill({
 add('signs-ar', ar({
   a: 'A lens gives a magnification of −2 for an object; this image can be caught on a screen.',
   r: 'A negative magnification means the image is real and inverted.',
-  key: 'a',
-  sol: 'Both are true, and R explains A — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A — option (c).',
   d: 3, c: 'analysis', t: [4],
 }));
 add('vsign-tf', tf({
@@ -399,15 +399,15 @@ add('power-tf', tf({
 add('power-ar', ar({
   a: 'A convex lens of focal length 10 cm has a greater power than a convex lens of focal length 25 cm.',
   r: 'The power of a lens is the reciprocal of its focal length in metres.',
-  key: 'a',
-  sol: 'Both are true (+10 D against +4 D), and R explains A — option (a).',
+  key: 'c',
+  sol: 'Both are true (+10 D against +4 D), and R explains A — option (c).',
   d: 2, c: 'application', t: [5],
 }));
 add('glass-ar', ar({
   a: 'A magnifying glass forms a real image of a small insect.',
   r: 'The insect is held between the lens and its principal focus.',
-  key: 'd',
-  sol: 'A is false — the image is virtual and erect; R is true — option (d).',
+  key: 'b',
+  sol: 'A is false — the image is virtual and erect; R is true — option (b).',
   d: 2, c: 'understanding', t: [5],
 }));
 add('magglass-short2', short({
