@@ -32,3 +32,4 @@ All stems are original, imagined contexts, with their own numbers and wording; n
 ## Known gaps
 - Constructions are described in words with a computed figure of the finished construction; no step-by-step animation.
 - Tangent at a point on the circle is only treated as a fact (the syllabus asks for tangents from an external point).
+- **2026-11-05:** assertion-reason options reordered to the ICSE 2027 Mathematics specimen paper (511) order and wording; every key re-mapped so each item's meaning is unchanged.
