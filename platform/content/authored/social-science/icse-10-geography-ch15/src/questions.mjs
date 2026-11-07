@@ -34,8 +34,8 @@ add('surplus-mcq', mcq({
 add('ar-imp', ar({
   a: 'Agro-based industries help to raise farmers’ incomes.',
   r: 'Such industries buy farm produce such as cane, cotton and cocoons as their raw material.',
-  key: 'a',
-  sol: 'Both are true, and R explains A — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A — option (c).',
   d: 2, c: 'understanding', t: [1, 2],
 }));
 add('tf-imp', tf({
@@ -113,8 +113,8 @@ add('district-mcq', mcq({
 add('ar-class', ar({
   a: 'The Bhilai steel plant is a mineral-based industry.',
   r: 'The Bhilai steel plant is in the private sector.',
-  key: 'c',
-  sol: 'A is true; R is false: Bhilai belongs to the Steel Authority of India, a public sector company — option (c).',
+  key: 'a',
+  sol: 'A is true; R is false: Bhilai belongs to the Steel Authority of India, a public sector company — option (a).',
   d: 2, c: 'understanding', t: [2],
 }));
 add('tf-class', tf({
@@ -231,8 +231,8 @@ add('seasonal-mcq', mcq({
 add('ar-sugar', ar({
   a: 'Sugar recovery is generally higher in Maharashtra and Karnataka than in Bihar.',
   r: 'Cane grown in the warm, frost-free peninsula usually has a higher sucrose content.',
-  key: 'a',
-  sol: 'Both are true, and R explains A — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A — option (c).',
   d: 3, c: 'analysis', t: [3],
 }));
 add('tf-sugar', tf({
@@ -323,15 +323,15 @@ add('problem-mcq', mcq({
 add('ar-cotton', ar({
   a: 'Some cotton mills in India import long-staple cotton.',
   r: 'Much of the cotton grown in India is short-staple, while fine cloth needs long fibres.',
-  key: 'a',
-  sol: 'Both are true, and R explains A — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A — option (c).',
   d: 3, c: 'analysis', t: [4],
 }));
 add('ar-mumbai', ar({
   a: 'Mumbai was an early centre of cotton mills.',
   r: 'Mumbai is surrounded by large coalfields.',
-  key: 'c',
-  sol: 'A is true; R is false: Mumbai has no coalfields; its mills used hydel power from the Western Ghats — option (c).',
+  key: 'a',
+  sol: 'A is true; R is false: Mumbai has no coalfields; its mills used hydel power from the Western Ghats — option (a).',
   d: 2, c: 'understanding', t: [4],
 }));
 add('tf-cotton', tf({
@@ -408,8 +408,8 @@ add('karnataka-mcq', mcq({
 add('ar-silk', ar({
   a: 'Karnataka is the leading producer of mulberry silk in India.',
   r: 'Muga silk is produced only in Assam.',
-  key: 'b',
-  sol: 'Both are true, but the location of muga does not explain Karnataka’s lead in mulberry silk — option (b).',
+  key: 'd',
+  sol: 'Both are true, but the location of muga does not explain Karnataka’s lead in mulberry silk — option (d).',
   d: 3, c: 'analysis', t: [5],
 }));
 add('tf-silk', tf({
