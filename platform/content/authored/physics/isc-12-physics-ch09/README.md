@@ -57,3 +57,9 @@ Every question was re-solved from its stem. Findings and fixes:
 - Diagrams asked for in answers (field-line patterns, the B–H loop) are described in words; graders should accept any correct sketch.
 - The B–H loop diagrams are qualitative models (the soft-iron and steel loops share one H scale, not to scale).
 - Narration was not yet run through TTS (stage 8); slide `audio` is null.
+
+## Competency audit 2026-11-05
+
+Follow-up to the content-verifier audit `docs/platform/content-qa/2026-11-05-competency-retag-audit.md`, which named ISC 12 Physics ch09 onwards as a lead (the handoff reports one-step items relabelled to stay under 65%). The subject-producer re-read every objective and numerical item tagged application or higher against the audit's definitions: a single formula substitution (with or without a unit conversion), or a stated rule applied directly, is **understanding**; chained relations, a non-routine step (plane vs normal, round trips, reversibility) or a new set-up keep application or analysis. Retagged application/analysis → understanding, with no text, key or solution changed: `q005` (I = m/NA), `q010` (end-on field of a short magnet), `q011` (broadside-on field, finite length), `q012` (end-on field, finite length), `q015` (τ = mB sin θ), `q016` (m from τ), `q019` (sin θ = ½), `q025` (m from a broadside-on field), `q031` (B = Φ/A in gauss), `q037` (χ = M/H), `q040` (χ = μr − 1, classify), `q065` (B = μr B₀).
+
+Now: recall 5 · understanding 33 · application 23 · analysis 9 · evaluation 1; application or higher **33 of 71 = 46.5% of items (59% of marks)**, inside the 45–65% band. This supersedes the competency figures above. Short and long answers were not re-judged in this pass.
