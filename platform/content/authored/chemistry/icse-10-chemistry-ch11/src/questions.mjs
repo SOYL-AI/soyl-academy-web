@@ -52,15 +52,15 @@ add('storage-mcq', mcq({
 add('glass-ar', ar({
   a: 'In the laboratory preparation of nitric acid, the apparatus has no rubber or cork parts.',
   r: 'Nitric acid vapour attacks rubber and cork.',
-  key: 'a',
-  sol: 'Both are true, and R explains A — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A — option (c).',
   d: 1, c: 'understanding', t: [1],
 }));
 add('brown-ar', ar({
   a: 'Concentrated nitric acid kept in a clear bottle in sunlight turns yellow.',
   r: 'Nitric acid is a weak acid.',
-  key: 'c',
-  sol: 'A is true (light decomposes it, giving dissolved NO₂); R is false: nitric acid is a strong acid — option (c).',
+  key: 'a',
+  sol: 'A is true (light decomposes it, giving dissolved NO₂); R is false: nitric acid is a strong acid — option (a).',
   d: 2, c: 'understanding', t: [1],
 }));
 add('kno3-tf', tf({
@@ -154,8 +154,8 @@ add('nh3air-mcq', mcq({
 add('ostwald-ar', ar({
   a: 'In Ostwald’s process, the platinum gauze stays red-hot without outside heating once the reaction has started.',
   r: 'Platinum is a good conductor of electricity.',
-  key: 'b',
-  sol: 'Both are true, but the gauze stays hot because the oxidation of ammonia is exothermic, not because platinum conducts electricity — option (b).',
+  key: 'd',
+  sol: 'Both are true, but the gauze stays hot because the oxidation of ammonia is exothermic, not because platinum conducts electricity — option (d).',
   d: 2, c: 'understanding', t: [2],
 }));
 add('pt-tf', tf({
@@ -220,15 +220,15 @@ add('ratio-mcq', mcq({
 add('nitrate-ar', ar({
   a: 'Reddish-brown fumes appear at the mouth of a test tube in which copper is reacting with dilute nitric acid.',
   r: 'The nitric oxide formed in the tube combines with oxygen of the air to form nitrogen dioxide.',
-  key: 'a',
-  sol: 'Both are true, and R explains A: 2NO + O₂ → 2NO₂ — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A: 2NO + O₂ → 2NO₂ — option (c).',
   d: 3, c: 'analysis', t: [3],
 }));
 add('h2-ar', ar({
   a: 'Copper gives hydrogen gas with concentrated nitric acid.',
   r: 'Nitric acid is a strong oxidising agent.',
-  key: 'd',
-  sol: 'A is false: copper gives nitrogen dioxide, not hydrogen. R is true — option (d).',
+  key: 'b',
+  sol: 'A is false: copper gives nitrogen dioxide, not hydrogen. R is true — option (b).',
   d: 2, c: 'application', t: [3],
 }));
 add('cuconc-short1', short({
