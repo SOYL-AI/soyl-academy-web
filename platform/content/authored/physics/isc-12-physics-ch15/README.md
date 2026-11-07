@@ -58,3 +58,9 @@ Every question was re-solved from its stem. Findings and fixes:
 ## Known gaps
 - Ray diagrams asked for in answers (the surface and lens maker derivations, lens combinations) are described in words; graders should accept any correct sketch.
 - Narration was not yet run through TTS (stage 8); slide `audio` is null.
+
+## Competency audit 2026-11-05
+
+Follow-up to the content-verifier audit `docs/platform/content-qa/2026-11-05-competency-retag-audit.md`, which named ISC 12 Physics ch09 onwards as a lead (the handoff reports one-step items relabelled to stay under 65%). The subject-producer re-read every objective and numerical item tagged application or higher against the audit's definitions: a single formula substitution (with or without a unit conversion), or a stated rule applied directly, is **understanding**; chained relations, a non-routine step (plane vs normal, round trips, reversibility) or a new set-up keep application or analysis. Retagged application/analysis → understanding, with no text, key or solution changed: `q015` (R = (n − 1)f), `q016` (lens maker’s formula), `q044` (lenses in contact), `q046` (second lens for a required combination), `q051` (lenses in contact, nature).
+
+Now: recall 0 · understanding 34 · application 16 · analysis 18 · evaluation 2; application or higher **36 of 70 = 51.4% of items (66% of marks)**, inside the 45–65% band. This supersedes the competency figures above. Short and long answers were not re-judged in this pass.

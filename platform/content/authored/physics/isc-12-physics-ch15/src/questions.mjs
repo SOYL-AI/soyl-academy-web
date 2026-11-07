@@ -148,7 +148,7 @@ add('planoconvex-num', num({
   value: Number(dec(pc.R, 2)), tol: 0.2, unit: 'cm',
   sol: r`With the plane face $R = \infty$: $\dfrac{1}{f} = \dfrac{n - 1}{R}$, so $R = (n - 1)f = 0.52 \times 50 = ${dec(pc.R, 2)}$ cm.`,
   scheme: [['1/f = (n − 1)/R for a plano-convex lens', 1], ['R = 26 cm', 1]],
-  marks: 2, d: 2, c: 'application', t: [2],
+  marks: 2, d: 2, c: 'understanding', t: [2],
 }), (q) => near(lensMaker(1.52, Infinity, -pc.R), 50) && q.answer.value === 26 || 'pc');
 const ue = lensMaker(1.55, 22, -33);
 add('unequal-num', num({
@@ -156,7 +156,7 @@ add('unequal-num', num({
   value: Number(dec(ue, 2)), tol: 0.2, unit: 'cm',
   sol: r`$R_1 = +22$ cm, $R_2 = -33$ cm: $\dfrac{1}{f} = 0.55\left(\dfrac{1}{22} + \dfrac{1}{33}\right) = 0.55 \times \dfrac{5}{66} = \dfrac{1}{24}$, so $f = ${dec(ue, 2)}$ cm.`,
   scheme: [['Signs R₁ = +22 cm, R₂ = −33 cm in the lens maker’s formula', 1], ['f = 24 cm', 1]],
-  marks: 2, d: 2, c: 'application', t: [2],
+  marks: 2, d: 2, c: 'understanding', t: [2],
 }), (q) => near(ue, 24) && near(lensMaker(1.55, 33, -22), 24) && q.answer.value === 24 || `ue ${ue}`);
 const bcn = lensMaker(1.65, -26, 26);
 add('biconcave-num', num({
@@ -416,7 +416,7 @@ add('contact-num', num({
   value: Number(dec(ct.F, 3)), tol: 0.2, unit: 'cm',
   sol: r`$\dfrac{1}{F} = \dfrac{1}{16} - \dfrac{1}{40} = \dfrac{5 - 2}{80} = \dfrac{3}{80}$, so $F = ${dec(ct.F, 3)}$ cm (power $+${dec(100 / ct.F, 3)}$ D, converging).`,
   scheme: [['1/F = 1/16 − 1/40', 1], ['F = 26.7 cm', 1]],
-  marks: 2, d: 2, c: 'application', t: [4],
+  marks: 2, d: 2, c: 'understanding', t: [4],
 }), (q) => near(100 / 16 - 100 / 40, 100 / ct.F) && q.answer.value === 26.7 || `ct ${ct.F}`);
 add('zero-mcq', mcq({
   stem: 'A converging lens of focal length 25 cm is placed in contact with a diverging lens of focal length 25 cm. The combination',
@@ -432,7 +432,7 @@ add('needed-num', num({
   value: Number(dec(nd.f2, 2)), tol: 0.3, unit: 'cm',
   sol: r`$\dfrac{1}{f_2} = \dfrac{1}{F} - \dfrac{1}{f_1} = \dfrac{1}{20} - \dfrac{1}{12} = \dfrac{3 - 5}{60} = -\dfrac{1}{30}$, so $f_2 = ${dec(nd.f2, 2)}$ cm: a diverging lens.`,
   scheme: [['1/f₂ = 1/F − 1/f₁', 1], ['f₂ = −30 cm (diverging)', 1]],
-  marks: 2, d: 3, c: 'application', t: [4],
+  marks: 2, d: 3, c: 'understanding', t: [4],
 }), (q) => near(1 / (1 / 12 + 1 / nd.f2), 20) && q.answer.value === -30 || `nd ${nd.f2}`);
 add('contact-tf', tf({
   stem: 'Two identical converging lenses, each of focal length 30 cm, placed in contact give a combination of focal length 60 cm.',
@@ -481,7 +481,7 @@ add('contactnature-mcq', mcq({
   right: 'diverging, with a focal length of magnitude 60 cm',
   wrong: ['converging, with a focal length of 60 cm', 'diverging, with a focal length of magnitude 5.5 cm', 'converging, with a focal length of 22 cm'],
   sol: r`$\dfrac{1}{F} = \dfrac{1}{12} - \dfrac{1}{10} = -\dfrac{1}{60}$, so $F = ${dec(cn.F, 2)}$ cm: the diverging lens is the more powerful one, so the pair diverges light — option (@K).`,
-  d: 2, c: 'application', t: [4],
+  d: 2, c: 'understanding', t: [4],
 }), () => near(cn.F, -60) || 'cn');
 const c8 = 1 / (1 / 10 + 1 / 40);
 add('contact8-mcq', mcq({
