@@ -90,15 +90,15 @@ add('temp-mcq', mcq({
 add('ion-ar', ar({
   a: 'Alpha particles have a very short range in air.',
   r: 'Alpha particles ionise the air strongly and lose their energy quickly.',
-  key: 'a',
-  sol: 'Both are true, and R explains A — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A — option (c).',
   d: 2, c: 'understanding', t: [2],
 }));
 add('beta-ar', ar({
   a: 'Beta particles are deflected more than alpha particles in the same electric field.',
   r: 'Beta particles carry a larger charge than alpha particles.',
-  key: 'c',
-  sol: 'A is true; R is false: β carries −e, α carries +2e; β bends more because it is far lighter — option (c).',
+  key: 'a',
+  sol: 'A is true; R is false: β carries −e, α carries +2e; β bends more because it is far lighter — option (a).',
   d: 3, c: 'analysis', t: [2],
 }));
 add('gamma-tf', tf({
@@ -197,8 +197,8 @@ add('beta-tf', tf({
 add('decay-ar', ar({
   a: 'After α emission, the daughter element lies two places before the parent in the periodic table.',
   r: 'α emission reduces the atomic number by 2.',
-  key: 'a',
-  sol: 'Both are true, and R explains A — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A — option (c).',
   d: 2, c: 'application', t: [3],
 }));
 add('Zchange-fill', fill({
@@ -256,8 +256,8 @@ add('thick-mcq', mcq({
 add('harm-ar', ar({
   a: 'Exposure to radiation can cause genetic disorders in later generations.',
   r: 'Radiation can damage the DNA in reproductive cells.',
-  key: 'a',
-  sol: 'Both are true, and R explains A — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A — option (c).',
   d: 2, c: 'understanding', t: [4],
 }));
 add('xray-tf', tf({
@@ -338,15 +338,15 @@ add('fusionZ-num', num({
 add('chain-ar', ar({
   a: 'A chain reaction can take place in uranium-235.',
   r: 'Each fission of uranium-235 releases two or three neutrons, which can cause further fissions.',
-  key: 'a',
-  sol: 'Both are true, and R explains A — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A — option (c).',
   d: 2, c: 'understanding', t: [5],
 }));
 add('waste-ar', ar({
   a: 'Nuclear waste can be safely dumped in rivers after a few days.',
   r: 'Many products of fission remain radioactive for thousands of years.',
-  key: 'd',
-  sol: 'A is false: waste must be sealed and stored deep underground; R is true — option (d).',
+  key: 'b',
+  sol: 'A is false: waste must be sealed and stored deep underground; R is true — option (b).',
   d: 2, c: 'understanding', t: [5],
 }));
 add('fusion-tf', tf({
