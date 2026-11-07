@@ -40,8 +40,8 @@ add('seasonal-mcq', mcq({
 add('ar-gw', ar({
   a: 'Wells in the hard-rock areas of the Deccan often dry up in summer.',
   r: 'Crystalline rocks hold only small amounts of groundwater.',
-  key: 'a',
-  sol: 'Both are true, and R explains A — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A — option (c).',
   d: 2, c: 'understanding', t: [1],
 }));
 add('tf-gw', tf({
@@ -118,15 +118,15 @@ add('checkdam-mcq', mcq({
 add('ar-rwh', ar({
   a: 'Rooftop rainwater harvesting can improve the quality of groundwater in fluoride-affected villages.',
   r: 'Fresh rainwater entering the aquifer dilutes the fluoride and salts in it.',
-  key: 'a',
-  sol: 'Both are true, and R explains A — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A — option (c).',
   d: 3, c: 'analysis', t: [2],
 }));
 add('ar-rwh2', ar({
   a: 'Rooftop harvesting is a low-cost method of water conservation.',
   r: 'Most of India receives its rain mainly from the south-west monsoon.',
-  key: 'b',
-  sol: 'Both are true, but the source of the rain does not explain why the method is cheap (it uses existing roofs and simple pipes, filters and pits) — option (b).',
+  key: 'd',
+  sol: 'Both are true, but the source of the rain does not explain why the method is cheap (it uses existing roofs and simple pipes, filters and pits) — option (d).',
   d: 2, c: 'understanding', t: [2],
 }));
 add('tf-onelitre', tf({
@@ -237,15 +237,15 @@ add('leading-mcq', mcq({
 add('ar-tank', ar({
   a: 'Tank irrigation is common in Tamil Nadu.',
   r: 'Tamil Nadu has deep, porous alluvium full of groundwater over most of its area.',
-  key: 'c',
-  sol: 'A is true; R is false: much of Tamil Nadu is hard crystalline rock with little groundwater, which is why tanks are used — option (c).',
+  key: 'a',
+  sol: 'A is true; R is false: much of Tamil Nadu is hard crystalline rock with little groundwater, which is why tanks are used — option (a).',
   d: 2, c: 'understanding', t: [3],
 }));
 add('ar-tubewell', ar({
   a: 'Tube wells are the main source of irrigation on the hard-rock plateau of interior Karnataka.',
   r: 'A tube well needs an electric or diesel pump.',
-  key: 'd',
-  sol: 'A is false: hard rock holds little groundwater, so tanks and wells matter more there; R is true — option (d).',
+  key: 'b',
+  sol: 'A is false: hard rock holds little groundwater, so tanks and wells matter more there; R is true — option (b).',
   d: 2, c: 'understanding', t: [3],
 }));
 add('tf-tank', tf({
@@ -372,8 +372,8 @@ add('sprinkler-mcq', mcq({
 add('ar-canal', ar({
   a: 'Canal irrigation has caused waterlogging in parts of the Punjab plains.',
   r: 'Seepage from unlined canals and over-watering of fields raise the water table.',
-  key: 'a',
-  sol: 'Both are true, and R explains A — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A — option (c).',
   d: 3, c: 'analysis', t: [4],
 }));
 add('tf-inund', tf({
