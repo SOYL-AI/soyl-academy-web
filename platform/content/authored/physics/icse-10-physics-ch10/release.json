@@ -1581,23 +1581,23 @@
       "unit": "icse-10-physics-ch10",
       "language": "en",
       "type": "mcq",
-      "stem_md": "The current in a straight wire threaded through a horizontal card is reversed. The magnetic field lines on the card:",
+      "stem_md": "A long vertical wire passes through a horizontal card and carries a current upwards. A small compass on the card, due east of the wire, has its north pole pointing north (the field of the wire is much stronger than the Earth’s). The current is now reversed and the compass is moved to a point due west of the wire. Its north pole now points:",
       "options": [
         {
           "id": "a",
-          "text_md": "keep their circular shape but reverse their direction"
+          "text_md": "north"
         },
         {
           "id": "b",
-          "text_md": "become straight lines"
+          "text_md": "south"
         },
         {
           "id": "c",
-          "text_md": "disappear completely"
+          "text_md": "east"
         },
         {
           "id": "d",
-          "text_md": "keep both their shape and their direction"
+          "text_md": "west"
         }
       ],
       "match_right": [],
@@ -1606,7 +1606,7 @@
           "a"
         ]
       },
-      "solution_md": "By the thumb rule, reversing the current reverses the curl of the field — option (a).",
+      "solution_md": "Upward current: the field is anticlockwise seen from above, so east of the wire it points north. Reversing the current makes the field clockwise, and west of the wire a clockwise field also points north. Both changes cancel — option (a).",
       "marking_scheme": [
         {
           "step": "Correct option (a)",
@@ -1614,7 +1614,7 @@
         }
       ],
       "marks": 1,
-      "difficulty": 2,
+      "difficulty": 3,
       "competency": "application",
       "bloom": "apply",
       "topic_ids": [
@@ -1948,13 +1948,13 @@
       "unit": "icse-10-physics-ch10",
       "language": "en",
       "type": "short",
-      "stem_md": "A long straight cable in a workshop carries a steady current. (a) State one way of making the magnetic field at a point near it stronger. (b) How does the field change as you move farther from the cable?",
+      "stem_md": "A student places a small compass at different distances from a long straight wire carrying a steady current and records how far the needle swings from its starting position. At 2 cm the swing is 40°, at 4 cm it is 22° and at 8 cm it is 11°. (a) What do the readings show about the magnetic field as the distance from the wire increases? (b) The student wants the swing at 8 cm to be about 22°. What should be changed in the circuit, and why will it work?",
       "options": [],
       "match_right": [],
       "answer": {
-        "model_answer_md": "(a) Increase the current in the cable (or move the point closer to the cable). (b) It becomes weaker; the circular field lines are drawn farther apart."
+        "model_answer_md": "(a) The field gets weaker as the distance increases: the swing falls steadily, to roughly half each time the distance is doubled. (b) Increase the current in the wire. A larger current gives a stronger field at every distance, so the needle at 8 cm will swing farther."
       },
-      "solution_md": "More current; weaker with distance.",
+      "solution_md": "Weaker with distance; more current.",
       "marking_scheme": [
         {
           "step": "(a)",
@@ -1966,9 +1966,9 @@
         }
       ],
       "marks": 2,
-      "difficulty": 2,
-      "competency": "understanding",
-      "bloom": "understand",
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
       "topic_ids": [
         "icse-10-physics-ch10-t01"
       ],
@@ -2033,23 +2033,23 @@
       "unit": "icse-10-physics-ch10",
       "language": "en",
       "type": "mcq",
-      "stem_md": "Priya’s home-made electromagnet cannot quite lift a steel spoon. Which change will help it lift the spoon?",
+      "stem_md": "A student winds a coil on an iron nail and counts the paper clips it lifts. With 20 turns and 1.0 A it lifts 4 clips; with 40 turns and 1.0 A it lifts 8 clips; with 20 turns and 2.0 A it lifts 8 clips. Using the pattern in these readings, the number of clips lifted with 40 turns and 2.0 A would be about:",
       "options": [
         {
           "id": "a",
-          "text_md": "Replacing the soft iron core with a wooden rod"
+          "text_md": "12"
         },
         {
           "id": "b",
-          "text_md": "Winding more turns of wire on the same core"
+          "text_md": "16"
         },
         {
           "id": "c",
-          "text_md": "Reducing the current in the coil"
+          "text_md": "8"
         },
         {
           "id": "d",
-          "text_md": "Replacing the soft iron core with a plastic tube"
+          "text_md": "32"
         }
       ],
       "match_right": [],
@@ -2058,7 +2058,7 @@
           "b"
         ]
       },
-      "solution_md": "More turns (or more current, or a soft iron core) make the electromagnet stronger — option (b).",
+      "solution_md": "Doubling the turns doubles the strength (4 to 8) and doubling the current doubles it as well (4 to 8). Doing both doubles it twice: 4 × 2 × 2 = 16 — option (b). Adding the two gains (12) ignores that the effects multiply.",
       "marking_scheme": [
         {
           "step": "Correct option (b)",
@@ -2066,9 +2066,9 @@
         }
       ],
       "marks": 1,
-      "difficulty": 1,
-      "competency": "application",
-      "bloom": "apply",
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
       "topic_ids": [
         "icse-10-physics-ch10-t02"
       ],
@@ -2090,23 +2090,23 @@
       "unit": "icse-10-physics-ch10",
       "language": "en",
       "type": "mcq",
-      "stem_md": "The core of the electromagnet in a scrapyard crane is made of soft iron and not steel because soft iron:",
+      "stem_md": "In an electric bell, the electromagnet pulls an iron armature, which makes the hammer strike the gong and also breaks the circuit so that a spring can pull the armature back. If the soft iron core were replaced by a steel rod of the same size, the bell would most likely:",
       "options": [
         {
           "id": "a",
-          "text_md": "is strongly magnetised by the current and loses almost all its magnetism when the current is switched off"
+          "text_md": "ring once and then stick, because the steel stays magnetised and keeps holding the armature"
         },
         {
           "id": "b",
-          "text_md": "keeps its magnetism permanently after the current stops"
+          "text_md": "ring continuously, but more loudly, because steel makes a stronger magnet"
         },
         {
           "id": "c",
-          "text_md": "is a poor conductor of electricity"
+          "text_md": "not ring at all, because steel cannot be magnetised"
         },
         {
           "id": "d",
-          "text_md": "cannot be magnetised at all"
+          "text_md": "ring continuously, because steel conducts current better than iron"
         }
       ],
       "match_right": [],
@@ -2115,7 +2115,7 @@
           "a"
         ]
       },
-      "solution_md": "The crane must drop its load when switched off — option (a).",
+      "solution_md": "The bell works only if the core loses its magnetism as soon as the circuit breaks. A steel core stays magnetised, so the armature stays pulled in — option (a).",
       "marking_scheme": [
         {
           "step": "Correct option (a)",
@@ -2123,9 +2123,9 @@
         }
       ],
       "marks": 1,
-      "difficulty": 2,
-      "competency": "analysis",
-      "bloom": "analyze",
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
       "topic_ids": [
         "icse-10-physics-ch10-t02"
       ],
@@ -2204,23 +2204,23 @@
       "unit": "icse-10-physics-ch10",
       "language": "en",
       "type": "mcq",
-      "stem_md": "Which is an advantage of an electromagnet over a permanent magnet?",
+      "stem_md": "A shop’s fire door is held open against a spring by a magnet fixed in the wall. When the fire alarm trips, the door must close by itself. The wall magnet should be:",
       "options": [
         {
           "id": "a",
-          "text_md": "Its strength can be changed by changing the current"
+          "text_md": "an electromagnet, switched off by the alarm so that it lets go of the door"
         },
         {
           "id": "b",
-          "text_md": "It needs no electric supply"
+          "text_md": "a permanent magnet, because it never loses its strength"
         },
         {
           "id": "c",
-          "text_md": "It keeps its magnetism when the supply fails"
+          "text_md": "a permanent magnet, because the alarm can reverse its poles"
         },
         {
           "id": "d",
-          "text_md": "Its poles can never be reversed"
+          "text_md": "an electromagnet with a steel core, which keeps holding the door after the current stops"
         }
       ],
       "match_right": [],
@@ -2229,7 +2229,7 @@
           "a"
         ]
       },
-      "solution_md": "An electromagnet’s strength depends on the current and turns — option (a).",
+      "solution_md": "Only an electromagnet with a soft iron core can be switched off to release the door; a permanent magnet cannot, and a steel core would stay magnetised — option (a).",
       "marking_scheme": [
         {
           "step": "Correct option (a)",
@@ -2237,9 +2237,9 @@
         }
       ],
       "marks": 1,
-      "difficulty": 1,
-      "competency": "understanding",
-      "bloom": "understand",
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
       "topic_ids": [
         "icse-10-physics-ch10-t02"
       ],
@@ -2468,28 +2468,29 @@
       "unit": "icse-10-physics-ch10",
       "language": "en",
       "type": "fill-blank",
-      "stem_md": "Looking at one end of a solenoid, Arjun sees the current flowing clockwise. That end of the solenoid is a ___ pole.",
+      "stem_md": "Looking at the left end of a solenoid, Arjun sees the current flowing anticlockwise. He brings the south pole of a bar magnet towards that end. The magnet and the solenoid ___ each other.",
       "options": [],
       "match_right": [],
       "answer": {
         "blanks": [
           {
             "accepted": [
-              "south",
-              "S"
+              "attract",
+              "attracts",
+              "attracted"
             ]
           }
         ]
       },
-      "solution_md": "Clock rule: clockwise means a **south** pole.",
+      "solution_md": "Clock rule: anticlockwise makes the left end a north pole, and a south pole is attracted to it, so they **attract**.",
       "marking_scheme": [
         {
-          "step": "Blank 1: \"south\"",
+          "step": "Blank 1: \"attract\"",
           "marks": 1
         }
       ],
       "marks": 1,
-      "difficulty": 2,
+      "difficulty": 3,
       "competency": "application",
       "bloom": "apply",
       "topic_ids": [
@@ -2772,23 +2773,23 @@
       "unit": "icse-10-physics-ch10",
       "language": "en",
       "type": "mcq",
-      "stem_md": "A straight wire carrying a current is placed along the field lines, between the poles of a magnet. The force on it is:",
+      "stem_md": "A horizontal rod lies east–west and carries a current from west to east in a uniform horizontal magnetic field pointing north. The rod is pushed upwards. If both the current and the field are now reversed together, the rod is pushed:",
       "options": [
         {
           "id": "a",
-          "text_md": "greatest possible"
+          "text_md": "downwards"
         },
         {
           "id": "b",
-          "text_md": "along the wire"
+          "text_md": "towards the north"
         },
         {
           "id": "c",
-          "text_md": "zero"
+          "text_md": "upwards, as before"
         },
         {
           "id": "d",
-          "text_md": "towards the north pole"
+          "text_md": "nowhere, because the force becomes zero"
         }
       ],
       "match_right": [],
@@ -2797,7 +2798,7 @@
           "c"
         ]
       },
-      "solution_md": "There is no force when the current is parallel to the field — option (c).",
+      "solution_md": "Left hand: forefinger north, middle finger east, so the thumb points up. Reversing only one of the two would reverse the force, but reversing both restores it: upwards again — option (c).",
       "marking_scheme": [
         {
           "step": "Correct option (c)",
@@ -2805,7 +2806,7 @@
         }
       ],
       "marks": 1,
-      "difficulty": 2,
+      "difficulty": 3,
       "competency": "application",
       "bloom": "apply",
       "topic_ids": [
@@ -3165,23 +3166,23 @@
       "unit": "icse-10-physics-ch10",
       "language": "en",
       "type": "mcq",
-      "stem_md": "A bar magnet is held still inside a coil that is connected to a galvanometer. The galvanometer:",
+      "stem_md": "A bar magnet is held still inside a coil connected to a galvanometer. It is then pulled out quickly, held still beside the coil, and finally pushed back in slowly. The galvanometer needle shows:",
       "options": [
         {
           "id": "a",
-          "text_md": "shows a steady deflection, because the magnet is inside the coil"
+          "text_md": "zero, a large swing one way, zero, then a small swing the same way"
         },
         {
           "id": "b",
-          "text_md": "deflects to and fro continuously"
+          "text_md": "zero, a small swing one way, zero, then a large swing the opposite way"
         },
         {
           "id": "c",
-          "text_md": "shows the largest deflection possible"
+          "text_md": "a steady deflection, a large swing, a steady deflection, then a small swing"
         },
         {
           "id": "d",
-          "text_md": "shows no deflection, because the magnetic field through the coil is not changing"
+          "text_md": "zero, a large swing one way, zero, then a small swing the opposite way"
         }
       ],
       "match_right": [],
@@ -3190,7 +3191,7 @@
           "d"
         ]
       },
-      "solution_md": "A current is induced only while the field linked with the coil changes — option (d).",
+      "solution_md": "No change of field means zero; pulling out fast gives a large swing; pushing in reverses the change, so the swing reverses, and slow motion makes it small — option (d).",
       "marking_scheme": [
         {
           "step": "Correct option (d)",
@@ -3198,7 +3199,7 @@
         }
       ],
       "marks": 1,
-      "difficulty": 2,
+      "difficulty": 3,
       "competency": "application",
       "bloom": "apply",
       "topic_ids": [
@@ -3313,8 +3314,8 @@
       ],
       "marks": 1,
       "difficulty": 1,
-      "competency": "application",
-      "bloom": "apply",
+      "competency": "recall",
+      "bloom": "remember",
       "topic_ids": [
         "icse-10-physics-ch10-t04"
       ],
@@ -3427,8 +3428,8 @@
       ],
       "marks": 1,
       "difficulty": 2,
-      "competency": "application",
-      "bloom": "apply",
+      "competency": "understanding",
+      "bloom": "understand",
       "topic_ids": [
         "icse-10-physics-ch10-t04"
       ],
@@ -3450,23 +3451,23 @@
       "unit": "icse-10-physics-ch10",
       "language": "en",
       "type": "mcq",
-      "stem_md": "A student pushes a magnet into a coil connected to a galvanometer, first slowly and then quickly. When it is pushed quickly, the deflection is:",
+      "stem_md": "Pushing the north pole of a magnet slowly into a coil makes the galvanometer needle swing to the right. The same pole is then pulled out of the coil more quickly. The needle swings:",
       "options": [
         {
           "id": "a",
-          "text_md": "smaller, because there is less time"
+          "text_md": "to the right, by a larger amount"
         },
         {
           "id": "b",
-          "text_md": "the same, because the same magnet is used"
+          "text_md": "to the left, by a smaller amount"
         },
         {
           "id": "c",
-          "text_md": "zero, because the magnet moves too fast"
+          "text_md": "not at all, because the magnet is leaving the coil"
         },
         {
           "id": "d",
-          "text_md": "larger, because the field through the coil changes faster"
+          "text_md": "to the left, by a larger amount"
         }
       ],
       "match_right": [],
@@ -3475,7 +3476,7 @@
           "d"
         ]
       },
-      "solution_md": "A faster change induces a larger current — option (d).",
+      "solution_md": "Pulling out reverses the change of field, so the swing reverses (left); the faster change makes it larger — option (d).",
       "marking_scheme": [
         {
           "step": "Correct option (d)",
@@ -3483,7 +3484,7 @@
         }
       ],
       "marks": 1,
-      "difficulty": 2,
+      "difficulty": 3,
       "competency": "application",
       "bloom": "apply",
       "topic_ids": [
@@ -3701,25 +3702,25 @@
       "unit": "icse-10-physics-ch10",
       "language": "en",
       "type": "numerical",
-      "stem_md": "In some countries the mains supply has a frequency of 60 Hz. Find the time for one complete cycle, in milliseconds.",
+      "stem_md": "In some countries the mains supply has a frequency of 60 Hz. How long, in milliseconds, does the supply take to go through 15 complete cycles?",
       "options": [],
       "match_right": [],
       "answer": {
-        "value": 16.666666666666668,
-        "tolerance": 0.1,
+        "value": 250,
+        "tolerance": 0.5,
         "unit": "ms"
       },
-      "solution_md": "$T = \\dfrac{1}{60}$ s $= \\dfrac{1000}{60} \\approx 16.7$ ms, so $T = 16.67$ ms.",
+      "solution_md": "$T = \\dfrac{1}{60}$ s, so 15 cycles take $15 \\times \\dfrac{1}{60} = 0.25$ s $= 250$ ms.",
       "marking_scheme": [
         {
-          "step": "16.7 ms",
+          "step": "250 ms",
           "marks": 1
         }
       ],
       "marks": 1,
-      "difficulty": 2,
-      "competency": "application",
-      "bloom": "apply",
+      "difficulty": 3,
+      "competency": "understanding",
+      "bloom": "understand",
       "topic_ids": [
         "icse-10-physics-ch10-t04"
       ],
@@ -3741,23 +3742,23 @@
       "unit": "icse-10-physics-ch10",
       "language": "en",
       "type": "numerical",
-      "stem_md": "How many complete cycles does the 50 Hz mains supply go through in 3 minutes?",
+      "stem_md": "A lamp is connected to the 50 Hz mains for 3 minutes. How many times does the current in the lamp reverse its direction in this time?",
       "options": [],
       "match_right": [],
       "answer": {
-        "value": 9000,
+        "value": 18000,
         "tolerance": 0,
         "unit": null
       },
-      "solution_md": "$t = 180$ s; cycles $= 50 \\times 180 = 9000$.",
+      "solution_md": "$t = 180$ s, so cycles $= 50 \\times 180 = 9000$. The current reverses twice in every cycle, so reversals $= 2 \\times 9000 = 18000$.",
       "marking_scheme": [
         {
-          "step": "9000",
+          "step": "18000",
           "marks": 1
         }
       ],
       "marks": 1,
-      "difficulty": 2,
+      "difficulty": 3,
       "competency": "application",
       "bloom": "apply",
       "topic_ids": [
@@ -3781,27 +3782,27 @@
       "unit": "icse-10-physics-ch10",
       "language": "en",
       "type": "short",
-      "stem_md": "Describe how you would show, with a coil, a galvanometer and a bar magnet, that a current can be induced. State one way of making the induced current larger.",
+      "stem_md": "A coil is joined to a galvanometer. Pushing the north pole of a bar magnet into the coil at a steady speed makes the needle swing to the right. Predict the swing, with a reason, when (a) the same north pole is pulled out again at the same speed, and (b) the south pole is pushed in at twice that speed.",
       "options": [],
       "match_right": [],
       "answer": {
-        "model_answer_md": "Join the coil to the galvanometer. Push the magnet into the coil: the needle deflects; hold it still: no deflection; pull it out: the needle deflects the other way. The current is larger if the magnet is moved faster (or the coil has more turns, or a stronger magnet is used)."
+        "model_answer_md": "(a) The needle swings to the left by about the same amount: the field through the coil is now decreasing, so the induced current is reversed. (b) The needle swings to the left, because the opposite pole reverses the direction of the change, and by a larger amount, because the field changes faster."
       },
-      "solution_md": "Push in, hold, pull out; faster motion.",
+      "solution_md": "Left, same size; left, larger.",
       "marking_scheme": [
         {
-          "step": "Observations",
+          "step": "(a)",
           "marks": 1
         },
         {
-          "step": "One way to increase",
+          "step": "(b)",
           "marks": 1
         }
       ],
       "marks": 2,
-      "difficulty": 2,
-      "competency": "understanding",
-      "bloom": "understand",
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
       "topic_ids": [
         "icse-10-physics-ch10-t04"
       ],
@@ -3945,8 +3946,8 @@
       ],
       "marks": 1,
       "difficulty": 1,
-      "competency": "application",
-      "bloom": "apply",
+      "competency": "understanding",
+      "bloom": "understand",
       "topic_ids": [
         "icse-10-physics-ch10-t05"
       ],
@@ -4025,23 +4026,23 @@
       "unit": "icse-10-physics-ch10",
       "language": "en",
       "type": "mcq",
-      "stem_md": "One important reason why electricity is supplied to towns as AC rather than DC is that AC:",
+      "stem_md": "Two designs send the same electric power through the same long cable: design X at 11 kV and design Y at 440 V. Compared with design Y, design X wastes:",
       "options": [
         {
           "id": "a",
-          "text_md": "flows in one direction only"
+          "text_md": "less energy as heat in the cable, because its current is larger"
         },
         {
           "id": "b",
-          "text_md": "can be stepped up or down easily with transformers"
+          "text_md": "less energy as heat in the cable, because its current is smaller"
         },
         {
           "id": "c",
-          "text_md": "can be stored in batteries directly"
+          "text_md": "more energy as heat in the cable, because a higher voltage heats the wire more"
         },
         {
           "id": "d",
-          "text_md": "produces no heating in wires"
+          "text_md": "the same energy, because the power sent is the same"
         }
       ],
       "match_right": [],
@@ -4050,7 +4051,7 @@
           "b"
         ]
       },
-      "solution_md": "Transformers make high-voltage transmission possible — option (b).",
+      "solution_md": "For the same power P = VI, the higher voltage means a much smaller current, and the heat produced in the cable depends on the current — option (b).",
       "marking_scheme": [
         {
           "step": "Correct option (b)",
@@ -4058,9 +4059,9 @@
         }
       ],
       "marks": 1,
-      "difficulty": 2,
-      "competency": "understanding",
-      "bloom": "understand",
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
       "topic_ids": [
         "icse-10-physics-ch10-t05"
       ],
@@ -4082,23 +4083,23 @@
       "unit": "icse-10-physics-ch10",
       "language": "en",
       "type": "mcq",
-      "stem_md": "A transformer in a phone charger steps 220 V down to 11 V. The ratio of secondary turns to primary turns, Ns : Np, is:",
+      "stem_md": "A transformer in a hostel has 1000 turns on its primary and 100 turns on its secondary, and its primary is joined to the 220 V mains. The secondary supplies a current of 5 A. Assuming no energy is lost, the current drawn from the mains is:",
       "options": [
         {
           "id": "a",
-          "text_md": "1 : 20"
+          "text_md": "0.5 A"
         },
         {
           "id": "b",
-          "text_md": "20 : 1"
+          "text_md": "50 A"
         },
         {
           "id": "c",
-          "text_md": "1 : 11"
+          "text_md": "5 A"
         },
         {
           "id": "d",
-          "text_md": "11 : 1"
+          "text_md": "0.05 A"
         }
       ],
       "match_right": [],
@@ -4107,7 +4108,7 @@
           "a"
         ]
       },
-      "solution_md": "$\\dfrac{N_{s}}{N_{p}} = \\dfrac{11}{220} = 0.05$, that is 1 : 20 — option (a).",
+      "solution_md": "$V_{s} = 220 \\times \\dfrac{100}{1000} = 22$ V, so the output power is $22 \\times 5 = 110$ W. The primary takes the same power: $I_{p} = \\dfrac{110}{220} = 0.5$ A — option (a).",
       "marking_scheme": [
         {
           "step": "Correct option (a)",
@@ -4115,7 +4116,7 @@
         }
       ],
       "marks": 1,
-      "difficulty": 2,
+      "difficulty": 3,
       "competency": "application",
       "bloom": "apply",
       "topic_ids": [
@@ -4222,8 +4223,8 @@
       ],
       "marks": 1,
       "difficulty": 3,
-      "competency": "analysis",
-      "bloom": "analyze",
+      "competency": "understanding",
+      "bloom": "understand",
       "topic_ids": [
         "icse-10-physics-ch10-t05"
       ],
@@ -4289,23 +4290,23 @@
       "unit": "icse-10-physics-ch10",
       "language": "en",
       "type": "numerical",
-      "stem_md": "The transformer of a bedside lamp has 2200 turns on its primary and 240 turns on its secondary. Find the output voltage, in volts, when the primary is connected to the 220 V mains.",
+      "stem_md": "The transformer of a bedside lamp has 2200 turns on its primary and 240 turns on its secondary, and its primary is connected to the 220 V mains. A small lamp joined across the secondary draws a current of 0.5 A. Find the power delivered to the lamp, in watts.",
       "options": [],
       "match_right": [],
       "answer": {
-        "value": 24,
+        "value": 12,
         "tolerance": 0.01,
-        "unit": "V"
+        "unit": "W"
       },
-      "solution_md": "$V_{s} = V_{p} \\times \\dfrac{N_{s}}{N_{p}} = 220 \\times \\dfrac{240}{2200} = 24$ V.",
+      "solution_md": "$V_{s} = V_{p} \\times \\dfrac{N_{s}}{N_{p}} = 220 \\times \\dfrac{240}{2200} = 24$ V, so $P = V_{s}I_{s} = 24 \\times 0.5 = 12$ W.",
       "marking_scheme": [
         {
-          "step": "24 V",
+          "step": "12 W",
           "marks": 1
         }
       ],
       "marks": 1,
-      "difficulty": 2,
+      "difficulty": 3,
       "competency": "application",
       "bloom": "apply",
       "topic_ids": [
@@ -4329,7 +4330,7 @@
       "unit": "icse-10-physics-ch10",
       "language": "en",
       "type": "numerical",
-      "stem_md": "A step-up transformer in a microwave oven raises 220 V to 2200 V. Its primary has 150 turns. How many turns does its secondary have?",
+      "stem_md": "An ideal step-up transformer in a microwave oven takes 5 A from the 220 V mains and delivers a current of 0.5 A at its output. Its primary has 150 turns. How many turns does its secondary have?",
       "options": [],
       "match_right": [],
       "answer": {
@@ -4337,7 +4338,7 @@
         "tolerance": 0,
         "unit": "turns"
       },
-      "solution_md": "$N_{s} = N_{p} \\times \\dfrac{V_{s}}{V_{p}} = 150 \\times \\dfrac{2200}{220} = 1500$.",
+      "solution_md": "For an ideal transformer $V_{p}I_{p} = V_{s}I_{s}$, so $\\dfrac{V_{s}}{V_{p}} = \\dfrac{I_{p}}{I_{s}} = \\dfrac{5}{0.5} = 10$ and $N_{s} = N_{p} \\times \\dfrac{V_{s}}{V_{p}} = 150 \\times 10 = 1500$.",
       "marking_scheme": [
         {
           "step": "1500 turns",
@@ -4345,7 +4346,7 @@
         }
       ],
       "marks": 1,
-      "difficulty": 2,
+      "difficulty": 3,
       "competency": "application",
       "bloom": "apply",
       "topic_ids": [
@@ -4409,23 +4410,23 @@
       "unit": "icse-10-physics-ch10",
       "language": "en",
       "type": "numerical",
-      "stem_md": "A transformer for a 12 V halogen lamp works from the 220 V mains and has 1650 turns on its primary. How many turns must its secondary have?",
+      "stem_md": "A transformer takes a current of 0.5 A from the 220 V mains. Its secondary delivers 4 A at 22 V to a set of lamps. Find the efficiency of the transformer, as a percentage.",
       "options": [],
       "match_right": [],
       "answer": {
-        "value": 90,
-        "tolerance": 0,
-        "unit": "turns"
+        "value": 80,
+        "tolerance": 0.1,
+        "unit": "%"
       },
-      "solution_md": "$N_{s} = N_{p} \\times \\dfrac{V_{s}}{V_{p}} = 1650 \\times \\dfrac{12}{220} = 90$.",
+      "solution_md": "Input power $= 220 \\times 0.5 = 110$ W; output power $= 22 \\times 4 = 88$ W. Efficiency $= \\dfrac{88}{110} \\times 100 = 80\\%$.",
       "marking_scheme": [
         {
-          "step": "90 turns",
+          "step": "80 %",
           "marks": 1
         }
       ],
       "marks": 1,
-      "difficulty": 2,
+      "difficulty": 3,
       "competency": "application",
       "bloom": "apply",
       "topic_ids": [
@@ -4487,27 +4488,27 @@
       "unit": "icse-10-physics-ch10",
       "language": "en",
       "type": "short",
-      "stem_md": "Give two advantages of alternating current over direct current for supplying electricity to a city.",
+      "stem_md": "A power station sends 22 kW of electric power to a town through two long, thin cables. (a) Find the current in the cables if the power is sent at 220 V, and if it is sent at 22000 V. (b) Which way wastes less energy as heat in the cables, and why can only an alternating supply be changed to that voltage easily?",
       "options": [],
       "match_right": [],
       "answer": {
-        "model_answer_md": "Its voltage can be raised or lowered easily with transformers, so it can be sent at a high voltage and a small current with little loss in the lines. AC generators for large power are simpler and cheaper, and AC can easily be changed into DC when needed."
+        "model_answer_md": "(a) $I = \\dfrac{P}{V}$: at 220 V, $I = \\dfrac{22000}{220} = 100$ A; at 22000 V, $I = \\dfrac{22000}{22000} = 1$ A. (b) Sending at 22000 V wastes far less energy, because its current is 100 times smaller and the heating of the cables depends on the current. A transformer, which works only on AC, can raise the voltage for transmission and lower it again for use."
       },
-      "solution_md": "Transformers; simpler generation or easy conversion.",
+      "solution_md": "100 A and 1 A; high voltage, transformer needs AC.",
       "marking_scheme": [
         {
-          "step": "First advantage",
+          "step": "(a)",
           "marks": 1
         },
         {
-          "step": "Second advantage",
+          "step": "(b)",
           "marks": 1
         }
       ],
       "marks": 2,
-      "difficulty": 2,
-      "competency": "understanding",
-      "bloom": "understand",
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
       "topic_ids": [
         "icse-10-physics-ch10-t05"
       ],
@@ -5105,10 +5106,10 @@
   "build": {
     "run_id": null,
     "checks": {
-      "katex_mhchem": "40 math strings parsed with KaTeX 0.19.0 + mhchem (throwOnError, strict \"error\"), 0 failures",
+      "katex_mhchem": "51 math strings parsed with KaTeX 0.19.0 + mhchem (throwOnError, strict \"error\"), 0 failures",
       "svg_allowlist": "11 SVG visuals (11 distinct diagrams) checked with saxes against svg-allowlist.ts: elements, attributes, class pattern, fragment-only refs, no style, palette incl. named hues, viewBox, title, per-page unique ids — 0 failures",
       "narration": "32 slides, 10–67 words (mean 51), no symbols, formulae or unit abbreviations",
-      "resolve": "20/20 scripted re-solve checks pass",
+      "resolve": "23/23 scripted re-solve checks pass",
       "physics_facts": "Oersted's experiment, concentric field lines round a straight wire and the right-hand thumb rule, the field of a loop and a solenoid with the clock rule, electromagnets on soft iron cores and ways to strengthen them, the force on a current in a field with Fleming's left-hand rule, DC motor and AC generator by parts and energy transfer only (working removed from the syllabus), electromagnetic induction with Fleming's right-hand rule, 50 Hz household AC, advantages of AC and transformers with Vs/Vp = Ns/Np, checked against the ICSE 2027 syllabus (Class X, section 4) and its removed-topics list",
       "diagrams": "11 diagram self-checks (geometry computed in svgs.mjs): 0 failures",
       "content_gate": "npm test -w @soyl/content-templates: all checks pass for this chapter",
