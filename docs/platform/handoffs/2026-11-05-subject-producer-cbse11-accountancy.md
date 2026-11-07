@@ -70,8 +70,7 @@ npx vitest run --root api test/content.test.ts     # 13/13
 |---|---|---|---|
 | g1 | 2026-11-05 09:29 | ch01–03 (ch03 partial) | fully green → ch01, ch02 committed |
 | g2 | 2026-11-07 10:40 | ch01–06 | all green except the API content test, which hit its 180 s setup timeout. That was a platform issue, fixed by a1ae318 on main. Nothing was committed on g2. |
-| g3 | 2026-11-08 | ch01–08, after merging main | → ch03–ch08 |
-| g4 | 2026-11-08 | ch01–09 | → ch09 |
+| g3 | 2026-11-08 01:00 | ch01–09, after merging main (ch09 finished before the run) | templates 4390, catalog 0/0, lint 0/0, verify 9 units 700 q 0 blocking, originality 627 units 0 errors, db6 8/8, api 13/13 → ch03–ch09 |
 
 ## Review (Opus)
 - **Assertion-reason verdicts:** checked every one against its A and R statements; all correct.
