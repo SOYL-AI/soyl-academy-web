@@ -24,7 +24,7 @@ All items are `status: "draft"` until a reviewer approves them.
 | Type | Count | Marks |
 |---|---|---|
 | mcq | 24 | 1 (keys a 6, b 6, c 6, d 6; seeded balanced shuffle) |
-| assertion-reason | 5 | 1 (keys a b d a c) |
+| assertion-reason | 5 | 1 (keys c d b c a) |
 | true-false | 5 | 1 |
 | fill-blank | 9 | 1 (one blank each) |
 | match | 2 | 2 (four pairs, half a mark each) |
@@ -82,4 +82,4 @@ Reference: `docs/platform/content-qa/2026-11-05-competency-retag-audit.md`. Tags
   - q063 (acdc-short2): currents at 220 V and 22000 V for 22 kW, then which wastes less and why AC is needed (application).
 - **Competency now:** recall 21 · understanding 17 · application 25 · analysis 8 (evaluation 0). Application or higher is **33 of 71 = 46.5%** of items, inside the 45–65% band. Difficulty: d1 23 · d2 17 · d3 28 · d4 3.
 - Rebuilt twice with byte-identical `release.json` and `tests.json`; validator 0 errors, 0 warnings; lint 0 errors, 0 warnings; 23 re-solve checks pass.
-
+- **2026-11-05:** assertion-reason options reordered to the ICSE 2027 Physics specimen paper (521) order and wording; every key re-mapped so each item's meaning is unchanged.
