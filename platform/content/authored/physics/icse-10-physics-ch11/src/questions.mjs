@@ -67,8 +67,8 @@ add('findc-num', num({
 add('cap-ar', ar({
   a: 'A large iron pot has a greater heat capacity than a small iron spoon.',
   r: 'Heat capacity depends on the mass of the body as well as on the material.',
-  key: 'a',
-  sol: 'Both are true, and R explains A (C = mc) — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A (C = mc) — option (c).',
   d: 2, c: 'understanding', t: [1],
 }));
 add('cap-tf', tf({
@@ -158,8 +158,8 @@ add('metalc-num', num({
 add('mix-ar', ar({
   a: 'When equal masses of water at 20 °C and 80 °C are mixed, the final temperature is 50 °C.',
   r: 'Heat lost by the hot water equals heat gained by the cold water, and both have the same specific heat capacity.',
-  key: 'a',
-  sol: 'Both are true, and R explains A — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A — option (c).',
   d: 2, c: 'application', t: [2],
 }));
 add('calor-tf', tf({
@@ -225,8 +225,8 @@ add('frost-mcq', mcq({
 add('coolant-ar', ar({
   a: 'Water is used as a coolant in car radiators.',
   r: 'Water has a low specific heat capacity, so it heats up quickly.',
-  key: 'c',
-  sol: 'A is true; R is false: water has a high specific heat capacity, so it absorbs much heat for a small rise — option (c).',
+  key: 'a',
+  sol: 'A is true; R is false: water has a high specific heat capacity, so it absorbs much heat for a small rise — option (a).',
   d: 2, c: 'understanding', t: [3],
 }));
 add('bottle-tf', tf({
@@ -293,8 +293,8 @@ add('icedrink-num', num({
 add('latent-ar', ar({
   a: 'The temperature of a mixture of ice and water stays at 0 °C while it is being heated, until all the ice melts.',
   r: 'Heat absorbed during melting is used to overcome the forces holding the molecules in fixed positions.',
-  key: 'a',
-  sol: 'Both are true, and R explains A — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A — option (c).',
   d: 2, c: 'understanding', t: [4],
 }));
 add('latent-tf', tf({
@@ -417,8 +417,8 @@ add('pond-short2', short({
 add('touch-ar', ar({
   a: 'A lump of ice at 0 °C feels colder to the touch than water at 0 °C.',
   r: 'Melting ice absorbs latent heat from the hand.',
-  key: 'a',
-  sol: 'Both are true, and R explains A — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A — option (c).',
   d: 2, c: 'understanding', t: [5],
 }));
 add('Q-short1', short({
