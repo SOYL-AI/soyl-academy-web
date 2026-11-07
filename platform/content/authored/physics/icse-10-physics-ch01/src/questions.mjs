@@ -117,8 +117,8 @@ add('couplemom-mcq', mcq({
 add('sign-ar', ar({
   a: 'A body acted on by an anticlockwise moment of 20 N m and a clockwise moment of 20 N m about the same axis does not start rotating.',
   r: 'The resultant moment on the body is zero.',
-  key: 'a',
-  sol: 'Both are true, and R explains A — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A — option (c).',
   d: 2, c: 'understanding', t: [2, 3],
 }));
 add('couple-tf', tf({
@@ -192,8 +192,8 @@ add('rule-mcq', mcq({
 add('pom-ar', ar({
   a: 'When moments are taken about the fulcrum of a balanced lever, the force exerted by the fulcrum can be ignored.',
   r: 'The fulcrum force passes through the point about which moments are taken, so its moment is zero.',
-  key: 'a',
-  sol: 'Both are true, and R explains A — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A — option (c).',
   d: 3, c: 'analysis', t: [3],
 }));
 add('pom-tf', tf({
@@ -284,8 +284,8 @@ add('plumb-mcq', mcq({
 add('cg-ar', ar({
   a: 'The centre of gravity of a body always lies within the material of the body.',
   r: 'The centre of gravity is the point through which the whole weight of the body acts.',
-  key: 'd',
-  sol: 'A is false (for a ring it lies in empty space); R is true — option (d).',
+  key: 'b',
+  sol: 'A is false (for a ring it lies in empty space); R is true — option (b).',
   d: 2, c: 'understanding', t: [4],
 }));
 add('cg-tf', tf({
@@ -349,15 +349,15 @@ add('release-mcq', mcq({
 add('centri-ar', ar({
   a: 'Centrifugal force is not shown when we draw the forces acting on a stone whirled on a string, as seen from the ground.',
   r: 'Centrifugal force is an apparent force that is felt only in the rotating frame.',
-  key: 'a',
-  sol: 'Both are true, and R explains A — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A — option (c).',
   d: 3, c: 'analysis', t: [5],
 }));
 add('centri2-ar', ar({
   a: 'In uniform circular motion the speed is constant, so there is no acceleration.',
   r: 'In uniform circular motion the velocity is always along the tangent.',
-  key: 'd',
-  sol: 'A is false (velocity changes direction, so the body accelerates); R is true — option (d).',
+  key: 'b',
+  sol: 'A is false (velocity changes direction, so the body accelerates); R is true — option (b).',
   d: 2, c: 'understanding', t: [5],
 }));
 add('speed-tf', tf({
