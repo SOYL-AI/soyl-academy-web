@@ -19,7 +19,7 @@ provenance `origin: "human"`, `model: null`. All items are `status: "draft"` unt
 | Check slides | 3 + 4, all MCQ (q002, q003, q005; q008, q010, q012, q013) |
 | Notes | 7 sections with key terms and formulas; exam tips with a mark split and 6 common mistakes |
 | Flashcards | 30 (definition 6, concept 8, example 10, formula 4, exam-tip 2) |
-| Questions | 66 items, 157 marks: mcq 18, assertion-reason 6 (keys a c d b a c), true-false 6, fill-blank 7, numerical 8 (1 and 2 marks), short-2 4, short-3 5, short-4 6, long-10 6 (parts (a)(b)(c) worth 3 + 3 + 4) |
+| Questions | 66 items, 157 marks: mcq 18, assertion-reason 6 (keys c a b d c a), true-false 6, fill-blank 7, numerical 8 (1 and 2 marks), short-2 4, short-3 5, short-4 6, long-10 6 (parts (a)(b)(c) worth 3 + 3 + 4) |
 | Difficulty | d1 13, d2 18, d3 28, d4 7 |
 | Competency | recall 7, understanding 22, application 28, analysis 9 — application or higher 56% of items, 78% of marks |
 | Topics | t01 10, t02 24, t03 12, t04 12, t05 13 (items may carry two topics) |
@@ -49,3 +49,4 @@ All figures, numbers and set-ups were chosen to differ from CBSE 10 Mathematics 
 - Narration audio not generated (TTS stage).
 - The alternate segment theorem is proved for the acute case drawn (diameter construction); the obtuse case is stated in words only, as the syllabus asks for the proof and use of the standard figure.
 - Constructions of tangents belong to ch18 and are not covered here.
+- **2026-11-05:** assertion-reason options reordered to the ICSE 2027 Mathematics specimen paper (511) order and wording; every key re-mapped so each item's meaning is unchanged.

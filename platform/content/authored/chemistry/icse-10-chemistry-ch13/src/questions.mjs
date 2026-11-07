@@ -30,8 +30,8 @@ add('triple-mcq', mcq({
 add('tetra-ar', ar({
   a: 'Carbon readily forms C⁴⁻ ions in its compounds.',
   r: 'A carbon atom has four electrons in its outermost shell.',
-  key: 'd',
-  sol: 'A is false: a nucleus with six protons cannot easily hold ten electrons, so carbon shares electrons instead. R is true (configuration 2, 4) — option (d).',
+  key: 'b',
+  sol: 'A is false: a nucleus with six protons cannot easily hold ten electrons, so carbon shares electrons instead. R is true (configuration 2, 4) — option (b).',
   d: 2, c: 'understanding', t: [1],
 }));
 add('ionic-tf', tf({
@@ -193,15 +193,15 @@ add('isomercount-mcq', mcq({
 add('isomer-ar', ar({
   a: 'But-1-ene and but-2-ene are position isomers.',
   r: 'They have the same molecular formula and the same carbon chain, but the double bond is in a different position.',
-  key: 'a',
-  sol: 'Both are true, and R is the definition of position isomerism applied to A — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R is the definition of position isomerism applied to A — option (c).',
   d: 2, c: 'understanding', t: [4],
 }));
 add('mass-ar', ar({
   a: 'Butane and 2-methylpropane have the same molecular mass.',
   r: 'Butane and 2-methylpropane are position isomers.',
-  key: 'c',
-  sol: 'A is true (both C₄H₁₀, 58). R is false: they differ in the carbon skeleton, so they are chain isomers — option (c).',
+  key: 'a',
+  sol: 'A is true (both C₄H₁₀, 58). R is false: they differ in the carbon skeleton, so they are chain isomers — option (a).',
   d: 3, c: 'analysis', t: [4],
 }));
 add('propene-tf', tf({
@@ -302,8 +302,8 @@ add('isomass-num', num({
 add('gradation-ar', ar({
   a: 'Pentane is a liquid at room temperature, while propane is a gas.',
   r: 'All the members of a homologous series have the same general formula.',
-  key: 'b',
-  sol: 'Both are true, but R does not explain A: pentane is a liquid because its larger molecular mass gives it a higher boiling point (gradation of physical properties) — option (b).',
+  key: 'd',
+  sol: 'Both are true, but R does not explain A: pentane is a liquid because its larger molecular mass gives it a higher boiling point (gradation of physical properties) — option (d).',
   d: 2, c: 'understanding', t: [5],
 }));
 add('next-short1', short({
@@ -370,8 +370,8 @@ add('ether-mcq', mcq({
 add('name-ar', ar({
   a: 'The correct IUPAC name of CH₃–CH₂–CH=CH₂ is but-1-ene, not but-3-ene.',
   r: 'The chain is numbered from the end nearer the double bond, so that the double bond gets the lowest number.',
-  key: 'a',
-  sol: 'Both are true, and R explains A — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A — option (c).',
   d: 2, c: 'application', t: [6],
 }));
 add('suffix-fill', fill({

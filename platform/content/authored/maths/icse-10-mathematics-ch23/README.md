@@ -20,7 +20,7 @@ CBSE maths chapter approach (builders + independent re-solve). Author: `claude-o
 | Check slides | 4 + 4, all objective (q017 mcq, q002 mcq, q011 mcq, q025 true-false; q018 mcq, q012 mcq, q007 mcq, q033 fill-blank) |
 | Notes | 8 sections with key terms and formulas; exam tips with mark split and 6 common mistakes |
 | Flashcards | 30 (concept 8, fact 6, formula 5, example 5, definition 4, exam-tip 2) |
-| Questions | 66 items, 176 marks: mcq 18, assertion-reason 6 (keys a b c d a c), true-false 5, fill-blank 5, numerical 9, short-2 4, short-3 6, short-4 6, long-10 7 (structured (a)(b)(c), 3 + 3 + 4, 6–7 step marks each). Two items carry a figure (l01 histogram, l03 ogive) |
+| Questions | 66 items, 176 marks: mcq 18, assertion-reason 6 (keys c d a b c a), true-false 5, fill-blank 5, numerical 9, short-2 4, short-3 6, short-4 6, long-10 7 (structured (a)(b)(c), 3 + 3 + 4, 6–7 step marks each). Two items carry a figure (l01 histogram, l03 ogive) |
 | Difficulty | d1 17, d2 22, d3 23, d4 4 |
 | Competency | recall 9, understanding 21, application 29, analysis 7 — application or higher 55% of items, 81% of marks |
 | Topics | t01 17, t02 19, t03 37 (items may carry two topics) |
@@ -51,3 +51,4 @@ All set-ups and data are new and imagined (typing trainees, ferry passengers, ma
 - Histograms are drawn as outlines (line series) because the shared plot builder's bars are capped in width and do not touch; if a native touching-bar histogram kind is added, `histPlot` in `src/gr.mjs` is the one place to change.
 - Unequal class widths (adjusted frequencies) and the more-than ogive are not taught; no case-based items; four d4 items.
 - A few data sets (toll plaza, practice minutes) are reused across a short question and a long question with different wording and tasks.
+- **2026-11-05:** assertion-reason options reordered to the ICSE 2027 Mathematics specimen paper (511) order and wording; every key re-mapped so each item's meaning is unchanged.

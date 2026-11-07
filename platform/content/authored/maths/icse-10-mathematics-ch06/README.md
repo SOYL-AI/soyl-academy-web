@@ -20,7 +20,7 @@ CBSE maths chapter approach (builders + independent re-solve). Author: `claude-o
 | Check slides | 4 + 4, all objective (q001 mcq, q004 mcq, q033 fill-blank, q012 mcq; q008 mcq, q009 mcq, q039 numerical, q014 mcq) |
 | Notes | 7 sections with key terms and formulas; exam tips with mark split and 6 common mistakes |
 | Flashcards | 30 (formula 9, definition 7, example 6, concept 3, exam-tip 3, fact 1, diagram 1) |
-| Questions | 66 items, 161 marks: mcq 20, assertion-reason 6 (keys a b c d a d), true-false 6, fill-blank 6, numerical 6, short-2 4, short-3 5, short-4 6, long-10 7 (structured (a)(b)(c), 3 + 3 + 4, 6–8 step marks each) |
+| Questions | 66 items, 161 marks: mcq 20, assertion-reason 6 (keys c d a b c b), true-false 6, fill-blank 6, numerical 6, short-2 4, short-3 5, short-4 6, long-10 7 (structured (a)(b)(c), 3 + 3 + 4, 6–8 step marks each) |
 | Difficulty | d1 15, d2 29, d3 21, d4 1 |
 | Competency | recall 7, understanding 21, application 29, analysis 9 — application or higher 58% of items, 81% of marks (lint band 45–65% of items) |
 | Topics | t01 37, t02 26, t03 14 (items may carry two topics) |
@@ -49,3 +49,4 @@ All set-ups and numbers are new (chosen so every answer is exact: e.g. $15, 23, 
 - Narration audio not generated (TTS stage).
 - Addendo, subtrahendo and continued ratios of the form $\frac{a}{b} = \frac{c}{d} = \frac{e}{f}$ are not taught (not in the ICSE 2027 topic list); k-method proofs use two-ratio proportions and three- or four-term continued proportions only.
 - Difficulty is concentrated at d1–d3 (one d4 item); most proofs are 3–4 marks.
+- **2026-11-05:** assertion-reason options reordered to the ICSE 2027 Mathematics specimen paper (511) order and wording; every key re-mapped so each item's meaning is unchanged.

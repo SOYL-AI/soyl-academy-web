@@ -63,15 +63,15 @@ add('slag-mcq', mcq({
 add('ar-loc', ar({
   a: 'Integrated steel plants are usually located close to their raw materials or at ports.',
   r: 'The raw materials of steel are heavy and lose much of their weight during smelting.',
-  key: 'a',
-  sol: 'Both are true, and R explains A — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A — option (c).',
   d: 2, c: 'understanding', t: [1],
 }));
 add('ar-water', ar({
   a: 'An integrated steel plant needs very little water.',
   r: 'Large amounts of water are used to cool furnaces, coke and hot steel.',
-  key: 'd',
-  sol: 'A is false: steel plants need huge amounts of water; R is true — option (d).',
+  key: 'b',
+  sol: 'A is false: steel plants need huge amounts of water; R is true — option (b).',
   d: 2, c: 'understanding', t: [1],
 }));
 add('tf-flux', tf({
@@ -189,15 +189,15 @@ add('compare-mcq', mcq({
 add('ar-tata', ar({
   a: 'Tata Steel at Jamshedpur was India’s first large integrated steel plant.',
   r: 'It is owned by the Steel Authority of India.',
-  key: 'c',
-  sol: 'A is true; R is false: Tata Steel is a private company — option (c).',
+  key: 'a',
+  sol: 'A is true; R is false: Tata Steel is a private company — option (a).',
   d: 2, c: 'understanding', t: [2],
 }));
 add('ar-vsp', ar({
   a: 'The Visakhapatnam Steel Plant is a shore-based integrated plant.',
   r: 'The Visakhapatnam Steel Plant is run by Rashtriya Ispat Nigam Limited.',
-  key: 'b',
-  sol: 'Both are true, but the name of the owner does not explain why the plant is on the shore (imported coal and exports do) — option (b).',
+  key: 'd',
+  sol: 'Both are true, but the name of the owner does not explain why the plant is on the shore (imported coal and exports do) — option (d).',
   d: 3, c: 'analysis', t: [2],
 }));
 add('tf-rkl', tf({
@@ -311,15 +311,15 @@ add('port-mcq', mcq({
 add('ar-petro', ar({
   a: 'Petrochemical products have replaced wood, metal and natural fibres in many uses.',
   r: 'Petrochemical products are light, cheap, durable and resistant to water and rust.',
-  key: 'a',
-  sol: 'Both are true, and R explains A — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A — option (c).',
   d: 2, c: 'understanding', t: [3],
 }));
 add('ar-polyester', ar({
   a: 'Synthetic fibres such as polyester are petrochemical products.',
   r: 'Polyester is made from cotton grown on the black soils of the Deccan.',
-  key: 'c',
-  sol: 'A is true; R is false: polyester is made from chemicals derived from oil and gas — option (c).',
+  key: 'a',
+  sol: 'A is true; R is false: polyester is made from chemicals derived from oil and gas — option (a).',
   d: 2, c: 'understanding', t: [3],
 }));
 add('tf-petro', tf({
@@ -421,15 +421,15 @@ add('relevance-mcq', mcq({
 add('ar-elec', ar({
   a: 'Bengaluru became a leading centre of the electronics industry.',
   r: 'The city had a large pool of skilled engineers trained in public sector units and institutes such as the Indian Institute of Science.',
-  key: 'a',
-  sol: 'Both are true, and R explains A — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A — option (c).',
   d: 2, c: 'understanding', t: [4],
 }));
 add('ar-elec2', ar({
   a: 'Electronics factories must be built next to coalfields.',
   r: 'Electronic goods are assembled from small, light components.',
-  key: 'd',
-  sol: 'A is false: electronics is footloose and needs skills, not coal; R is true — option (d).',
+  key: 'b',
+  sol: 'A is false: electronics is footloose and needs skills, not coal; R is true — option (b).',
   d: 2, c: 'application', t: [4],
 }));
 add('tf-elec', tf({

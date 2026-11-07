@@ -4789,31 +4789,31 @@
       "options": [
         {
           "id": "a",
-          "text_md": "Both Assertion (A) and Reason (R) are true, and R is the correct explanation of A."
+          "text_md": "(A) is true and (R) is false."
         },
         {
           "id": "b",
-          "text_md": "Both Assertion (A) and Reason (R) are true, but R is not the correct explanation of A."
+          "text_md": "(A) is false and (R) is true."
         },
         {
           "id": "c",
-          "text_md": "Assertion (A) is true, but Reason (R) is false."
+          "text_md": "Both (A) and (R) are true, and (R) is the correct explanation for (A)."
         },
         {
           "id": "d",
-          "text_md": "Assertion (A) is false, but Reason (R) is true."
+          "text_md": "Both (A) and (R) are true, but (R) is not the correct explanation for (A)."
         }
       ],
       "match_right": [],
       "answer": {
         "option_ids": [
-          "a"
+          "c"
         ]
       },
       "solution_md": "$T_{n+1} - T_n = [9 - 4(n + 1)] - (9 - 4n) = -4$ for every $n$; the terms are $5, 1, -3, \\ldots$, so A is true. R is true in general, because the difference between consecutive terms is $p(n + 1) + q - (pn + q) = p$; A is the case $p = -4$, so R explains A.",
       "marking_scheme": [
         {
-          "step": "Correct option (a)",
+          "step": "Correct option (c)",
           "marks": 1
         }
       ],
@@ -4846,31 +4846,31 @@
       "options": [
         {
           "id": "a",
-          "text_md": "Both Assertion (A) and Reason (R) are true, and R is the correct explanation of A."
+          "text_md": "(A) is true and (R) is false."
         },
         {
           "id": "b",
-          "text_md": "Both Assertion (A) and Reason (R) are true, but R is not the correct explanation of A."
+          "text_md": "(A) is false and (R) is true."
         },
         {
           "id": "c",
-          "text_md": "Assertion (A) is true, but Reason (R) is false."
+          "text_md": "Both (A) and (R) are true, and (R) is the correct explanation for (A)."
         },
         {
           "id": "d",
-          "text_md": "Assertion (A) is false, but Reason (R) is true."
+          "text_md": "Both (A) and (R) are true, but (R) is not the correct explanation for (A)."
         }
       ],
       "match_right": [],
       "answer": {
         "option_ids": [
-          "c"
+          "a"
         ]
       },
       "solution_md": "$T_{15} = 1.5 + 14 \\times 2.5 = 1.5 + 35 = 36.5$, so A is true. R is false: the $n$th term is $a + (n - 1)d$, because there are only $n - 1$ steps from the first term to the $n$th. (Using R would give $1.5 + 15 \\times 2.5 = 39$.)",
       "marking_scheme": [
         {
-          "step": "Correct option (c)",
+          "step": "Correct option (a)",
           "marks": 1
         }
       ],
@@ -4903,31 +4903,31 @@
       "options": [
         {
           "id": "a",
-          "text_md": "Both Assertion (A) and Reason (R) are true, and R is the correct explanation of A."
+          "text_md": "(A) is true and (R) is false."
         },
         {
           "id": "b",
-          "text_md": "Both Assertion (A) and Reason (R) are true, but R is not the correct explanation of A."
+          "text_md": "(A) is false and (R) is true."
         },
         {
           "id": "c",
-          "text_md": "Assertion (A) is true, but Reason (R) is false."
+          "text_md": "Both (A) and (R) are true, and (R) is the correct explanation for (A)."
         },
         {
           "id": "d",
-          "text_md": "Assertion (A) is false, but Reason (R) is true."
+          "text_md": "Both (A) and (R) are true, but (R) is not the correct explanation for (A)."
         }
       ],
       "match_right": [],
       "answer": {
         "option_ids": [
-          "b"
+          "d"
         ]
       },
       "solution_md": "$S_{10} = \\dfrac{10}{2}[2 \\times 20 + 9 \\times (-3)] = 5 \\times 13 = 65$, so A is true. R is also true (here $T_8 = 20 + 7 \\times (-3) = -1$), but it is not the reason for A, which follows from the sum formula.",
       "marking_scheme": [
         {
-          "step": "Correct option (b)",
+          "step": "Correct option (d)",
           "marks": 1
         }
       ],
@@ -4960,31 +4960,31 @@
       "options": [
         {
           "id": "a",
-          "text_md": "Both Assertion (A) and Reason (R) are true, and R is the correct explanation of A."
+          "text_md": "(A) is true and (R) is false."
         },
         {
           "id": "b",
-          "text_md": "Both Assertion (A) and Reason (R) are true, but R is not the correct explanation of A."
+          "text_md": "(A) is false and (R) is true."
         },
         {
           "id": "c",
-          "text_md": "Assertion (A) is true, but Reason (R) is false."
+          "text_md": "Both (A) and (R) are true, and (R) is the correct explanation for (A)."
         },
         {
           "id": "d",
-          "text_md": "Assertion (A) is false, but Reason (R) is true."
+          "text_md": "Both (A) and (R) are true, but (R) is not the correct explanation for (A)."
         }
       ],
       "match_right": [],
       "answer": {
         "option_ids": [
-          "d"
+          "b"
         ]
       },
       "solution_md": "R is true: each term is $5 + 8(n - 1)$, a multiple of $8$ plus $5$. But $300 = 8 \\times 37 + 4$ leaves remainder $4$, so $300$ is not a term; equivalently, $5 + (n - 1) \\times 8 = 300$ gives $n - 1 = 36.875$, since $36.875 \\times 8 = 295$. A is false.",
       "marking_scheme": [
         {
-          "step": "Correct option (d)",
+          "step": "Correct option (b)",
           "marks": 1
         }
       ],
@@ -5017,31 +5017,31 @@
       "options": [
         {
           "id": "a",
-          "text_md": "Both Assertion (A) and Reason (R) are true, and R is the correct explanation of A."
+          "text_md": "(A) is true and (R) is false."
         },
         {
           "id": "b",
-          "text_md": "Both Assertion (A) and Reason (R) are true, but R is not the correct explanation of A."
+          "text_md": "(A) is false and (R) is true."
         },
         {
           "id": "c",
-          "text_md": "Assertion (A) is true, but Reason (R) is false."
+          "text_md": "Both (A) and (R) are true, and (R) is the correct explanation for (A)."
         },
         {
           "id": "d",
-          "text_md": "Assertion (A) is false, but Reason (R) is true."
+          "text_md": "Both (A) and (R) are true, but (R) is not the correct explanation for (A)."
         }
       ],
       "match_right": [],
       "answer": {
         "option_ids": [
-          "b"
+          "d"
         ]
       },
       "solution_md": "The $6$th term is what the sixth addition contributes: $T_6 = S_6 - S_5 = 51 - 40 = 11$, so A is true. R is also true, but A uses $T_n = S_n - S_{n-1}$, not the common difference, so R does not explain A.",
       "marking_scheme": [
         {
-          "step": "Correct option (b)",
+          "step": "Correct option (d)",
           "marks": 1
         }
       ],
@@ -5074,31 +5074,31 @@
       "options": [
         {
           "id": "a",
-          "text_md": "Both Assertion (A) and Reason (R) are true, and R is the correct explanation of A."
+          "text_md": "(A) is true and (R) is false."
         },
         {
           "id": "b",
-          "text_md": "Both Assertion (A) and Reason (R) are true, but R is not the correct explanation of A."
+          "text_md": "(A) is false and (R) is true."
         },
         {
           "id": "c",
-          "text_md": "Assertion (A) is true, but Reason (R) is false."
+          "text_md": "Both (A) and (R) are true, and (R) is the correct explanation for (A)."
         },
         {
           "id": "d",
-          "text_md": "Assertion (A) is false, but Reason (R) is true."
+          "text_md": "Both (A) and (R) are true, but (R) is not the correct explanation for (A)."
         }
       ],
       "match_right": [],
       "answer": {
         "option_ids": [
-          "a"
+          "c"
         ]
       },
       "solution_md": "$T_9 = 12 + 8 \\times (-3) = -12$, which is $-a$, so $S_9 = \\dfrac{9}{2}(12 - 12) = 0$: A is true, and R is exactly the reason.",
       "marking_scheme": [
         {
-          "step": "Correct option (a)",
+          "step": "Correct option (c)",
           "marks": 1
         }
       ],

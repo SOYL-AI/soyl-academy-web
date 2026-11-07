@@ -19,7 +19,7 @@ CBSE maths chapter approach (builders + independent re-solve). Author: `claude-o
 | Check slides | 4 + 4, all objective (q002 mcq, q039 numerical, q005 mcq, q026 true-false; q015 mcq, q042 numerical, q029 true-false, q016 mcq) |
 | Notes | 7 sections with key terms and formulas; exam tips with mark split and 6 common mistakes |
 | Flashcards | 29 (definition 2, example 8, formula 7, concept 6, exam-tip 5, diagram 1) |
-| Questions | 68 items, 169 marks: mcq 19, assertion-reason 6 (keys a c b d b a), true-false 6, fill-blank 7, numerical 7 (2 × 1 mark, 5 × 2 marks), short-2 5, short-3 5, short-4 6, long-10 7 (structured (a)(b)(c), 3 + 3 + 4, 5–8 step marks each) |
+| Questions | 68 items, 169 marks: mcq 19, assertion-reason 6 (keys c a d b d c), true-false 6, fill-blank 7, numerical 7 (2 × 1 mark, 5 × 2 marks), short-2 5, short-3 5, short-4 6, long-10 7 (structured (a)(b)(c), 3 + 3 + 4, 5–8 step marks each) |
 | Difficulty | d1 7, d2 35, d3 24, d4 2 |
 | Competency | recall 3, understanding 25, application 27, analysis 13 — application or higher 59% of items, 82% of marks (lint band 45–65% of items) |
 | Topics | t01 44, t02 30, t03 13 (items may carry two or three topics) |
@@ -59,3 +59,4 @@ specimen paper or past paper; CISCE documents were used for pattern only.
 - Model answers describe graphs in words (answers carry no visuals); no question carries a figure in its stem.
 - Arithmetic mean as a named topic is not taught (only the condition $2b = a + c$), as the ICSE 2027 syllabus does not list it.
 - Infinite APs and sums to infinity do not arise (not in the syllabus).
+- **2026-11-05:** assertion-reason options reordered to the ICSE 2027 Mathematics specimen paper (511) order and wording; every key re-mapped so each item's meaning is unchanged.

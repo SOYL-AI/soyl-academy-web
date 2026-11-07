@@ -39,8 +39,8 @@ add('hydrate-mcq', mcq({
 add('hydrate-ar', ar({
   a: 'Blue crystals of copper(II) sulphate lose mass when they are heated strongly.',
   r: 'Hydrated copper(II) sulphate, CuSO₄·5H₂O, contains 25.6% copper by mass (Cu = 64).',
-  key: 'b',
-  sol: 'Both statements are true (64 ÷ 250 × 100 = 25.6%), but the loss of mass is due to the water of crystallisation being driven off — option (b).',
+  key: 'd',
+  sol: 'Both statements are true (64 ÷ 250 × 100 = 25.6%), but the loss of mass is due to the water of crystallisation being driven off — option (d).',
   d: 2, c: 'understanding', t: [1],
 }));
 add('constant-tf', tf({
@@ -142,15 +142,15 @@ add('ratio-mcq', mcq({
 add('sameef-ar', ar({
   a: 'Ethyne, C₂H₂, and benzene, C₆H₆, have the same empirical formula.',
   r: 'The empirical formula shows the simplest whole-number ratio of the atoms in a compound.',
-  key: 'a',
-  sol: 'Both have C : H = 1 : 1, so both have the empirical formula CH; R explains A — option (a).',
+  key: 'c',
+  sol: 'Both have C : H = 1 : 1, so both have the empirical formula CH; R explains A — option (c).',
   d: 2, c: 'understanding', t: [2],
 }));
 add('mfalways-ar', ar({
   a: 'The molecular formula of a compound is always different from its empirical formula.',
   r: 'Molecular formula = n × empirical formula, where n is a whole number.',
-  key: 'd',
-  sol: 'A is false: when n = 1 the two are the same (H₂O, CH₄, CO₂). R is true — option (d).',
+  key: 'b',
+  sol: 'A is false: when n = 1 the two are the same (H₂O, CH₄, CO₂). R is true — option (b).',
   d: 2, c: 'understanding', t: [2],
 }));
 add('efmf-tf', tf({
@@ -355,15 +355,15 @@ add('read-mcq', mcq({
 add('mass-ar', ar({
   a: 'In any chemical reaction, the total mass of the reactants used equals the total mass of the products.',
   r: 'In any chemical reaction, the total number of moles of reactants equals the total number of moles of products.',
-  key: 'c',
-  sol: 'A is true (conservation of mass). R is false: in 2H₂ + O₂ → 2H₂O, 3 mol of reactants give 2 mol of product — option (c).',
+  key: 'a',
+  sol: 'A is true (conservation of mass). R is false: in 2H₂ + O₂ → 2H₂O, 3 mol of reactants give 2 mol of product — option (a).',
   d: 2, c: 'understanding', t: [4],
 }));
 add('ratio-ar', ar({
   a: 'In the reaction N₂ + 3H₂ → 2NH₃, 1 mol of nitrogen gives 34 g of ammonia (N = 14, H = 1).',
   r: 'The coefficients of a balanced equation give the ratio in which moles react and are formed.',
-  key: 'a',
-  sol: '1 mol of N₂ gives 2 mol of NH₃, that is 2 × 17 = 34 g; R explains A — option (a).',
+  key: 'c',
+  sol: '1 mol of N₂ gives 2 mol of NH₃, that is 2 × 17 = 34 g; R explains A — option (c).',
   d: 2, c: 'application', t: [4],
 }));
 add('eqn-tf', tf({

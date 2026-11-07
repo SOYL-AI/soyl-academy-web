@@ -56,8 +56,8 @@ add('energy-mcq', mcq({
 add('power-ar', ar({
   a: 'A 2000 W heater has a lower resistance than a 1000 W heater made for the same voltage.',
   r: 'At a fixed voltage the power P = V²/R is inversely proportional to the resistance.',
-  key: 'a',
-  sol: 'Both are true; since R = V²/P, doubling the power halves the resistance — option (a).',
+  key: 'c',
+  sol: 'Both are true; since R = V²/P, doubling the power halves the resistance — option (c).',
   d: 2, c: 'analysis', t: [1],
 }));
 add('heat-tf', tf({
@@ -272,22 +272,22 @@ add('order-mcq', mcq({
 add('fuse-ar', ar({
   a: 'A fuse wire is connected in series with the live wire of the circuit it protects.',
   r: 'A fuse wire is made of a material with a low melting point.',
-  key: 'b',
-  sol: 'Both are true, but R explains why the fuse melts, not why it is placed in series in the live wire — option (b).',
+  key: 'd',
+  sol: 'Both are true, but R explains why the fuse melts, not why it is placed in series in the live wire — option (d).',
   d: 3, c: 'analysis', t: [3],
 }));
 add('ring-ar', ar({
   a: 'The cable of a ring main can be thinner than a single cable feeding the same sockets from one end.',
   r: 'In a ring main, current reaches each socket along two paths.',
-  key: 'a',
-  sol: 'Both are true; sharing the current between two paths means each part of the cable carries less — option (a).',
+  key: 'c',
+  sol: 'Both are true; sharing the current between two paths means each part of the cable carries less — option (c).',
   d: 3, c: 'analysis', t: [3],
 }));
 add('trans-ar', ar({
   a: 'Electric power is transmitted over long distances at low voltage to reduce the energy lost.',
   r: 'The heat lost in a transmission line is I²R, where I is the current in the line.',
-  key: 'd',
-  sol: 'A is false: power is sent at high voltage, so that the current, and the I²R loss, is small. R is true — option (d).',
+  key: 'b',
+  sol: 'A is false: power is sent at high voltage, so that the current, and the I²R loss, is small. R is true — option (b).',
   d: 2, c: 'analysis', t: [3],
 }));
 add('mcb-tf', tf({
@@ -389,8 +389,8 @@ add('thickpin-mcq', mcq({
 add('earth-ar', ar({
   a: 'The metal body of an electric oven is connected to the earth wire.',
   r: 'The earth wire carries the working current of the oven during normal use.',
-  key: 'c',
-  sol: 'A is true; R is false: in normal use the earth wire carries no current — it carries current only during a fault — option (c).',
+  key: 'a',
+  sol: 'A is true; R is false: in normal use the earth wire carries no current — it carries current only during a fault — option (a).',
   d: 2, c: 'understanding', t: [4],
 }));
 add('twoway-tf', tf({

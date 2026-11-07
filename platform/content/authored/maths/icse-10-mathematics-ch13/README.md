@@ -21,7 +21,7 @@ CBSE maths chapter approach (builders + independent re-solve). Author: `claude-o
 | Check slides | 4 + 4, all objective (q003 q018 q008 mcq, q026 true-false; q009 q012 q014 mcq, q030 true-false) |
 | Notes | 7 sections with key terms and formulas; exam tips with mark split and 6 common mistakes |
 | Flashcards | 30 (definition 2, formula 8, concept 8, example 9, exam-tip 2, diagram 1) |
-| Questions | 66 items, 166 marks: mcq 18, assertion-reason 6 (keys a c d b a c), true-false 6, fill-blank 6, numerical 7 (3 × 1 mark, 4 × 2 marks), short-2 5, short-3 5, short-4 6, long-10 7 (structured (a)(b)(c), 3 + 3 + 4, 6–7 step marks each) |
+| Questions | 66 items, 166 marks: mcq 18, assertion-reason 6 (keys c a b d c a), true-false 6, fill-blank 6, numerical 7 (3 × 1 mark, 4 × 2 marks), short-2 5, short-3 5, short-4 6, long-10 7 (structured (a)(b)(c), 3 + 3 + 4, 6–7 step marks each) |
 | Difficulty | d1 8, d2 34, d3 22, d4 2 |
 | Competency | recall 5, understanding 23, application 31, analysis 7 — application or higher 58% of items, 81% of marks (lint band 45–65% of items) |
 | Topics | t01 15, t02 22, t03 14, t04 22, t05 14 (items may carry two or three topics) |
@@ -58,3 +58,4 @@ content and similar items are worded differently.
 - Model answers describe the working in words and equations; no question carries a figure.
 - Plots do not force equal axis scales, so perpendicular lines may not look exactly perpendicular in the renderer; captions state the slopes.
 - ch12's release did not exist when the originality gate ran; re-run originality after ch12 lands.
+- **2026-11-05:** assertion-reason options reordered to the ICSE 2027 Mathematics specimen paper (511) order and wording; every key re-mapped so each item's meaning is unchanged.

@@ -19,7 +19,7 @@ CBSE maths chapter approach (builders + independent re-solve). Author: `claude-o
 | Check slides | 3 + 4, all objective mcq (q001 q003 q005; q007 q010 q017 q011) |
 | Notes | 8 sections with key terms and formulas; exam tips with mark split and 6 common mistakes |
 | Flashcards | 30 (fact 10, definition 7, example 6, exam-tip 3, formula 2, concept 2) |
-| Questions | 65 items, 169 marks: mcq 18, assertion-reason 6 (keys a b c d a c), true-false 5, fill-blank 5, numerical 9, short-2 4, short-3 5, short-4 6, long-10 7 (structured (a)(b)(c), 3 + 3 + 4, 6–9 step marks each) |
+| Questions | 65 items, 169 marks: mcq 18, assertion-reason 6 (keys c d a b c a), true-false 5, fill-blank 5, numerical 9, short-2 4, short-3 5, short-4 6, long-10 7 (structured (a)(b)(c), 3 + 3 + 4, 6–9 step marks each) |
 | Difficulty | d1 27, d2 23, d3 13, d4 2 |
 | Competency | recall 6, understanding 26, application 28, analysis 5 — application or higher 51% of items, 76% of marks |
 | Topics | t01 13, t02 26, t03 40 (items may carry two or three topics) |
@@ -48,3 +48,4 @@ All set-ups and data are new and imagined (tokens, beads, a purse of coins, seed
 - Two dice are deliberately not used (treated as combined events, removed for ICSE 2027); the lead may allow them if the owner reads the syllabus differently.
 - Difficulty is concentrated at d1–d3 (two d4 items); no case-based items.
 - Frequency-style data (the transport and car-park tables) are treated as a random choice from the listed pupils or cars, i.e. classical probability, not experimental probability.
+- **2026-11-05:** assertion-reason options reordered to the ICSE 2027 Mathematics specimen paper (511) order and wording; every key re-mapped so each item's meaning is unchanged.

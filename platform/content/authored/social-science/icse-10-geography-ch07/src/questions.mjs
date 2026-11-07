@@ -45,8 +45,8 @@ add('delta-mcq', mcq({
 add('ar-khadar', ar({
   a: 'Bhangar is renewed by a fresh layer of silt during floods every year.',
   r: 'Bhangar contains nodules of lime called kankar.',
-  key: 'd',
-  sol: 'A is false: bhangar lies on higher terraces above normal flood level, so it is not renewed each year (khadar is). R is true — option (d).',
+  key: 'b',
+  sol: 'A is false: bhangar lies on higher terraces above normal flood level, so it is not renewed each year (khadar is). R is true — option (b).',
   d: 2, c: 'understanding', t: [1],
 }));
 add('tf-khadar', tf({
@@ -110,8 +110,8 @@ add('black-states-mcq', mcq({
 add('ar-black', ar({
   a: 'Black soil is described as "self-ploughing".',
   r: 'Deep cracks open in it during the dry season, and loose soil falls into them, turning the soil over.',
-  key: 'a',
-  sol: 'Both are true, and R explains why the soil is called self-ploughing — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains why the soil is called self-ploughing — option (c).',
   d: 2, c: 'understanding', t: [2],
 }));
 add('fill-basalt', fill({
@@ -176,8 +176,8 @@ add('laterite-crop-mcq', mcq({
 add('ar-laterite', ar({
   a: 'Blocks of laterite are used as building bricks in parts of Kerala.',
   r: 'Laterite is rich in nitrogen and humus.',
-  key: 'c',
-  sol: 'A is true (laterite hardens in air); R is false: laterite is poor in nitrogen and humus — option (c).',
+  key: 'a',
+  sol: 'A is true (laterite hardens in air); R is false: laterite is poor in nitrogen and humus — option (a).',
   d: 2, c: 'understanding', t: [3],
 }));
 add('tf-red', tf({
@@ -263,8 +263,8 @@ add('jhum-mcq', mcq({
 add('ar-chambal', ar({
   a: 'Gully erosion has made large areas of the Chambal valley unfit for farming.',
   r: 'The Chambal is a tributary of the Yamuna.',
-  key: 'b',
-  sol: 'Both statements are true, but the river’s being a tributary does not explain the gullying (soft soil, heavy downpours and bare slopes do) — option (b).',
+  key: 'd',
+  sol: 'Both statements are true, but the river’s being a tributary does not explain the gullying (soft soil, heavy downpours and bare slopes do) — option (d).',
   d: 3, c: 'analysis', t: [4],
 }));
 add('fill-gully', fill({
@@ -330,8 +330,8 @@ add('trial-mcq', mcq({
 add('ar-shelter', ar({
   a: 'Shelter belts are mainly used to check gully erosion on steep hill slopes.',
   r: 'Rows of trees reduce the speed of the wind near the ground.',
-  key: 'd',
-  sol: 'A is false: shelter belts protect windy dry plains from wind erosion; R is true — option (d).',
+  key: 'b',
+  sol: 'A is false: shelter belts protect windy dry plains from wind erosion; R is true — option (b).',
   d: 2, c: 'application', t: [5],
 }));
 add('tf-afforest', tf({

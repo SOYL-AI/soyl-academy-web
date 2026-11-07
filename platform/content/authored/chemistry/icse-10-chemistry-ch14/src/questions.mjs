@@ -56,8 +56,8 @@ add('propanoate-tf', tf({
 add('cao-ar', ar({
   a: 'Calcium oxide is mixed with sodium hydroxide in the soda lime used to prepare methane.',
   r: 'Calcium oxide keeps the sodium hydroxide dry and prevents it from attacking the glass of the test tube.',
-  key: 'a',
-  sol: 'Both are true, and R gives the purpose of calcium oxide stated in A — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R gives the purpose of calcium oxide stated in A — option (c).',
   d: 2, c: 'understanding', t: [1],
 }));
 add('decarb-short1', short({
@@ -132,8 +132,8 @@ add('dark-mcq', mcq({
 add('co-ar', ar({
   a: 'Burning methane in a closed room with poor ventilation is dangerous.',
   r: 'In a limited supply of air, methane burns incompletely to form carbon monoxide, a poisonous gas.',
-  key: 'a',
-  sol: 'Both are true, and R explains the danger in A — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains the danger in A — option (c).',
   d: 2, c: 'understanding', t: [2],
 }));
 add('combustion-tf', tf({
@@ -206,8 +206,8 @@ add('wash-mcq', mcq({
 add('koh-ar', ar({
   a: 'Ethene can be prepared by boiling bromoethane with aqueous potassium hydroxide.',
   r: 'Alcoholic potassium hydroxide removes a hydrogen atom and a bromine atom from neighbouring carbon atoms of bromoethane.',
-  key: 'd',
-  sol: 'A is false: aqueous KOH replaces Br by OH and gives ethanol. R is true: alcoholic KOH gives ethene — option (d).',
+  key: 'b',
+  sol: 'A is false: aqueous KOH replaces Br by OH and gives ethanol. R is true: alcoholic KOH gives ethene — option (b).',
   d: 3, c: 'analysis', t: [3],
 }));
 add('dehydro-fill', fill({
@@ -251,8 +251,8 @@ add('dibromo-mcq', mcq({
 add('ethyne-ar', ar({
   a: 'Ethyne decolourises bromine water.',
   r: 'Ethyne contains a carbon–carbon double bond.',
-  key: 'c',
-  sol: 'A is true (bromine adds across the multiple bond). R is false: ethyne has a triple bond — option (c).',
+  key: 'a',
+  sol: 'A is true (bromine adds across the multiple bond). R is false: ethyne has a triple bond — option (a).',
   d: 2, c: 'understanding', t: [4, 5],
 }));
 add('carbide-short1', short({
@@ -312,8 +312,8 @@ add('cl2add-mcq', mcq({
 add('bromine-ar', ar({
   a: 'Ethane does not decolourise bromine water in the dark.',
   r: 'Ethane has a higher molecular mass than methane.',
-  key: 'b',
-  sol: 'Both are true, but R does not explain A; ethane does not react because it is saturated and has no multiple bond for bromine to add to — option (b).',
+  key: 'd',
+  sol: 'Both are true, but R does not explain A; ethane does not react because it is saturated and has no multiple bond for bromine to add to — option (d).',
   d: 2, c: 'understanding', t: [5],
 }));
 add('addition-tf', tf({

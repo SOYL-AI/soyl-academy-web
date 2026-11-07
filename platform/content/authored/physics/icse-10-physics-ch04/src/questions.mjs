@@ -41,15 +41,15 @@ add('rod-mcq', mcq({
 add('bend-ar', ar({
   a: 'A ray of light going obliquely from water into air bends away from the normal.',
   r: 'Light travels faster in air than in water.',
-  key: 'a',
-  sol: 'Both are true; the increase in speed is the cause of bending away — option (a).',
+  key: 'c',
+  sol: 'Both are true; the increase in speed is the cause of bending away — option (c).',
   d: 2, c: 'understanding', t: [1],
 }));
 add('slow-ar', ar({
   a: 'A beam of light that falls along the normal on a glass block passes through it without changing direction.',
   r: 'The frequency of light does not change when it enters glass.',
-  key: 'b',
-  sol: 'Both statements are true, but the undeviated path is due to i = 0, not to the constant frequency — option (b).',
+  key: 'd',
+  sol: 'Both statements are true, but the undeviated path is due to i = 0, not to the constant frequency — option (d).',
   d: 3, c: 'analysis', t: [1],
 }));
 add('freq-tf', tf({
@@ -175,8 +175,8 @@ add('mu-tf', tf({
 add('colour-ar', ar({
   a: 'A green traffic light seen by a diver under water still looks green.',
   r: 'The frequency of light, which decides its colour, does not change on refraction.',
-  key: 'a',
-  sol: 'Both are true, and R explains A — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A — option (c).',
   d: 2, c: 'understanding', t: [1, 2],
 }));
 add('mu-short1', short({
@@ -247,8 +247,8 @@ add('lateral-fill', fill({
 add('thick-ar', ar({
   a: 'A thick plane mirror silvered at the back forms several images of a bright object.',
   r: 'Light undergoes repeated partial reflection and refraction between the front glass surface and the silvered back.',
-  key: 'a',
-  sol: 'Both are true, and R explains A — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A — option (c).',
   d: 2, c: 'understanding', t: [3],
 }));
 const rSana = asinD(sinD(50) / 1.5);
@@ -324,8 +324,8 @@ add('depth-fill', fill({
 add('fish-ar', ar({
   a: 'A fish in a pond appears to a boy on the bank to be nearer the surface than it actually is.',
   r: 'Light from the fish bends towards the normal as it comes out of the water into air.',
-  key: 'c',
-  sol: 'A is true; R is false — light leaving water bends away from the normal — option (c).',
+  key: 'a',
+  sol: 'A is true; R is false — light leaving water bends away from the normal — option (a).',
   d: 2, c: 'analysis', t: [4],
 }));
 add('oblique-short1', short({
@@ -401,8 +401,8 @@ add('dev-fill', fill({
 add('glassair-ar', ar({
   a: 'When light passes from the glass of a prism back into air, its speed decreases.',
   r: 'Glass is optically denser than air.',
-  key: 'd',
-  sol: 'A is false — light speeds up on entering air; R is true — option (d).',
+  key: 'b',
+  sol: 'A is false — light speeds up on entering air; R is true — option (b).',
   d: 2, c: 'understanding', t: [1, 5],
 }));
 add('devfactors-short2', short({
@@ -482,8 +482,8 @@ add('crit-fill', fill({
 add('airtir-ar', ar({
   a: 'Total internal reflection cannot occur when light passes from air into water.',
   r: 'A ray entering an optically denser medium bends towards the normal, so the angle of refraction never reaches 90°.',
-  key: 'a',
-  sol: 'Both are true, and R explains A — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A — option (c).',
   d: 3, c: 'analysis', t: [6],
 }));
 add('tirname-short1', short({

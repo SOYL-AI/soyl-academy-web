@@ -19,7 +19,7 @@ CBSE maths chapter approach (builders + independent re-solve). Author: `claude-o
 | Check slides | 4 + 4, all objective (q002 mcq, q031 fill-blank, q006 mcq, q030 true-false; q039 numerical, q010 mcq, q014 mcq, q025 true-false) |
 | Notes | 7 sections with key terms and formulas; exam tips with mark split and 6 common mistakes |
 | Flashcards | 28 (definition 2, fact 4, formula 2, concept 8, example 6, diagram 1, exam-tip 5) |
-| Questions | 67 items, 169 marks: mcq 18, assertion-reason 6 (keys a b d c a d), true-false 6, fill-blank 6, numerical 7 (3 × 1 mark, 4 × 2 marks), short-2 5, short-3 6, short-4 6, long-10 7 (structured (a)(b)(c), 3 + 3 + 4 or 3 + 4 + 3, 5–7 step marks each) |
+| Questions | 67 items, 169 marks: mcq 18, assertion-reason 6 (keys c d b a c b), true-false 6, fill-blank 6, numerical 7 (3 × 1 mark, 4 × 2 marks), short-2 5, short-3 6, short-4 6, long-10 7 (structured (a)(b)(c), 3 + 3 + 4 or 3 + 4 + 3, 5–7 step marks each) |
 | Difficulty | d1 11, d2 31, d3 23, d4 2 |
 | Competency | recall 3, understanding 25, application 28, analysis 11 — application or higher 58% of items, 81% of marks (lint band 45–65% of items) |
 | Topics | t01 31, t02 31, t03 21 (items may carry two or three topics) |
@@ -58,3 +58,4 @@ were used for pattern only.
 - Long division is shown as step tables and step lines (divide, multiply back, subtract), not in the traditional bracket layout.
 - Model answers describe graphs in words (answers carry no visuals); only q017 carries a figure in the stem.
 - Synthetic division is not used (not required by the syllabus).
+- **2026-11-05:** assertion-reason options reordered to the ICSE 2027 Mathematics specimen paper (511) order and wording; every key re-mapped so each item's meaning is unchanged.

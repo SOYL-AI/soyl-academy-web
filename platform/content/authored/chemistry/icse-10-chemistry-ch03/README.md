@@ -24,7 +24,7 @@ All items are `status: "draft"` until a reviewer approves them.
 | Type | Count | Marks |
 |---|---|---|
 | mcq | 20 | 1 (keys a 5, b 5, c 5, d 5; seeded balanced shuffle) |
-| assertion-reason | 6 | 1 (keys a c c a c a) |
+| assertion-reason | 6 | 1 (keys c a a c a c) |
 | true-false | 6 | 1 |
 | fill-blank | 2 | 1 per blank (the 3-blank bracket completion carries 3) |
 | match | 1 | 1 per pair (4 or 5 pairs) |
@@ -58,4 +58,4 @@ Every question and every internal-choice alternative was re-solved from its stem
 ## Known gaps
 - Narration audio is not generated (TTS stage).
 - SVGs were reviewed by coordinates, not rasterised.
-
+- **2026-11-05:** assertion-reason options reordered to the ICSE 2027 Chemistry specimen paper (522) order and wording; every key re-mapped so each item's meaning is unchanged.

@@ -146,11 +146,12 @@ export function sl(layout, heading, o) {
 }
 
 // ---------------------------------------------------------------- questions
+// Option order and wording as in the ICSE 2027 Mathematics specimen paper (511).
 const AR_OPTIONS = [
-  { id: 'a', text_md: 'Both Assertion (A) and Reason (R) are true, and R is the correct explanation of A.' },
-  { id: 'b', text_md: 'Both Assertion (A) and Reason (R) are true, but R is not the correct explanation of A.' },
-  { id: 'c', text_md: 'Assertion (A) is true, but Reason (R) is false.' },
-  { id: 'd', text_md: 'Assertion (A) is false, but Reason (R) is true.' },
+  { id: 'a', text_md: '(A) is true and (R) is false.' },
+  { id: 'b', text_md: '(A) is false and (R) is true.' },
+  { id: 'c', text_md: 'Both (A) and (R) are true, and (R) is the correct explanation for (A).' },
+  { id: 'd', text_md: 'Both (A) and (R) are true, but (R) is not the correct explanation for (A).' },
 ];
 const scheme = (s) => s.map(([step, marks]) => ({ step, marks }));
 function base(o, type, marks, answer, options = []) {

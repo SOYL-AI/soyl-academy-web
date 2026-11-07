@@ -23,7 +23,7 @@ maths builder lib (`src/lib.mjs`, unchanged). Author: `claude-opus-5-5 (subject-
 | Check slides | 4 + 4, all objective (m01, tf1, m06, m10; fb4, m16, n08 and one more per the build log); none is used in a chapter test |
 | Notes | 8 sections with key terms, formulas and a visual each; exam tips with a mark split and 6 common mistakes |
 | Flashcards | 32 |
-| Questions | 64 items, 169 marks: mcq 18, assertion-reason 6 (keys a c d b c a), true-false 5, fill-blank 5, numerical 8, short-2 4, short-3 5, short-4 6, long-10 7 |
+| Questions | 64 items, 169 marks: mcq 18, assertion-reason 6 (keys c a b d a c), true-false 5, fill-blank 5, numerical 8, short-2 4, short-3 5, short-4 6, long-10 7 |
 | Difficulty | d1 7, d2 22, d3 30, d4 5 |
 | Competency | recall 4, understanding 23, application 27, analysis 10: application or higher 58% of items |
 | Tests | `t_icse10math_ch19_short` (A = m03, m07, m14, ar2, s301, s303; B = one of l01, l06) and `_long` (A = m02, m05, m08, m11, m13, m17, ar4, ar6, s401, s404, s405; B = any two of l03, l04, l07); disjoint, shapes asserted by `chapterTests` |
@@ -42,3 +42,4 @@ Run from `platform/`: `npx tsx content/authored/maths/icse-10-mathematics-ch19/s
 ## Known gaps
 - Labels of a thin pipe sketch (inner and outer radius) sit close together; they are legible but tight.
 - Figures are oblique sketches, not scale drawings.
+- **2026-11-05:** assertion-reason options reordered to the ICSE 2027 Mathematics specimen paper (511) order and wording; every key re-mapped so each item's meaning is unchanged.

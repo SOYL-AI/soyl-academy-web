@@ -20,7 +20,7 @@ CBSE maths chapter approach (builders + independent re-solve). Author: `claude-o
 | Check slides | 4 + 4, all objective (q001 mcq, q028 true-false, q034 fill-blank, q041 numerical; q006 mcq, q038 fill-blank, q029 true-false, q012 mcq) |
 | Notes | 7 sections with key terms and formulas; exam tips with mark split and 6 common mistakes |
 | Flashcards | 30 (definition 8, formula 7, example 5, concept 4, fact 3, exam-tip 2, diagram 1) |
-| Questions | 66 items, 161 marks: mcq 20, assertion-reason 6 (keys c a d b a d), true-false 6, fill-blank 6, numerical 6, short-2 4, short-3 5, short-4 6, long-10 7 (structured (a)(b)(c), 3 + 3 + 4, 7 step marks each) |
+| Questions | 66 items, 161 marks: mcq 20, assertion-reason 6 (keys a c b d c b), true-false 6, fill-blank 6, numerical 6, short-2 4, short-3 5, short-4 6, long-10 7 (structured (a)(b)(c), 3 + 3 + 4, 7 step marks each) |
 | Difficulty | d1 19, d2 30, d3 16, d4 1 |
 | Competency | recall 6, understanding 21, application 29, analysis 10 — application or higher 59% of items, 83% of marks (lint band 45–65% of items) |
 | Topics | t01 17, t02 11, t03 23, t04 33 (items may carry two or three topics) |
@@ -48,3 +48,4 @@ All set-ups and matrices are new and kept to Class 10 level. CBSE 12 Mathematics
 - Narration audio not generated (TTS stage).
 - Transpose, symmetric matrices, determinants and inverses are not taught (not in the ICSE 2027 Class 10 topic list); `T` in `mat.mjs` is used only to compute one distractor.
 - Difficulty is concentrated at d1–d3 (one d4 item, l05).
+- **2026-11-05:** assertion-reason options reordered to the ICSE 2027 Mathematics specimen paper (511) order and wording; every key re-mapped so each item's meaning is unchanged.

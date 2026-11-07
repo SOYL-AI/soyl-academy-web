@@ -102,15 +102,15 @@ add('fe-oxid-mcq', mcq({
 add('fe-ar', ar({
   a: 'A solution of iron(II) sulphate can be told apart from a solution of iron(III) chloride by adding sodium hydroxide solution.',
   r: 'Iron(II) hydroxide and iron(III) hydroxide both dissolve in excess sodium hydroxide solution.',
-  key: 'c',
-  sol: 'A is true: the precipitates differ in colour (dirty green and reddish brown). R is false: neither hydroxide dissolves in excess NaOH — option (c).',
+  key: 'a',
+  sol: 'A is true: the precipitates differ in colour (dirty green and reddish brown). R is false: neither hydroxide dissolves in excess NaOH — option (a).',
   d: 2, c: 'application', t: [2],
 }));
 add('zincate-ar', ar({
   a: 'When sodium hydroxide solution is added in excess to zinc sulphate solution, the white precipitate first formed disappears.',
   r: 'Zinc hydroxide reacts with sodium hydroxide to form sodium zincate, which is soluble in water.',
-  key: 'a',
-  sol: 'Both are true, and R explains A: Zn(OH)₂ + 2NaOH → Na₂ZnO₂ + 2H₂O — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A: Zn(OH)₂ + 2NaOH → Na₂ZnO₂ + 2H₂O — option (c).',
   d: 2, c: 'understanding', t: [2, 5],
 }));
 add('naoh-tf', tf({
@@ -230,8 +230,8 @@ add('nh4oh-chk-mcq', mcq({
 add('brown-ar', ar({
   a: 'The precipitate formed by adding ammonium hydroxide to iron(III) chloride solution does not dissolve in excess.',
   r: 'Iron(III) hydroxide is reddish brown in colour.',
-  key: 'b',
-  sol: 'Both statements are true, but the colour of the precipitate does not explain why it is insoluble in excess — option (b).',
+  key: 'd',
+  sol: 'Both statements are true, but the colour of the precipitate does not explain why it is insoluble in excess — option (d).',
   d: 2, c: 'understanding', t: [3],
 }));
 add('inky-fill', fill({
@@ -283,8 +283,8 @@ add('nh4-mcq', mcq({
 add('nh3-ar', ar({
   a: 'Ammonia is given off when ammonium sulphate is warmed with sodium hydroxide solution.',
   r: 'Sodium hydroxide is a stronger base than ammonia and displaces it from its salt.',
-  key: 'a',
-  sol: 'Both are true, and R explains A — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A — option (c).',
   d: 2, c: 'understanding', t: [4],
 }));
 add('nh4-tf', tf({
@@ -365,8 +365,8 @@ add('koh-mcq', mcq({
 add('al2o3-ar', ar({
   a: 'Aluminium oxide is a purely basic oxide.',
   r: 'Aluminium oxide reacts with hydrochloric acid and with sodium hydroxide to form a salt and water.',
-  key: 'd',
-  sol: 'A is false: aluminium oxide is amphoteric. R is true, and it is exactly why the oxide is amphoteric — option (d).',
+  key: 'b',
+  sol: 'A is false: aluminium oxide is amphoteric. R is true, and it is exactly why the oxide is amphoteric — option (b).',
   d: 2, c: 'understanding', t: [5],
 }));
 add('amph-tf', tf({

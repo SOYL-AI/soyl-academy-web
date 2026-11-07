@@ -73,15 +73,15 @@ add('grade-mcq', mcq({
 add('ar-hem', ar({
   a: 'Most of the iron ore mined in India is hematite.',
   r: 'India has large deposits of high-grade hematite in Odisha, Chhattisgarh, Jharkhand and Karnataka.',
-  key: 'a',
-  sol: 'Both are true, and the large hematite deposits explain why it dominates mining — option (a).',
+  key: 'c',
+  sol: 'Both are true, and the large hematite deposits explain why it dominates mining — option (c).',
   d: 2, c: 'understanding', t: [1],
 }));
 add('ar-mag', ar({
   a: 'Magnetite has the highest iron content of the iron ores.',
   r: 'Magnetite is a carbonate of iron.',
-  key: 'c',
-  sol: 'A is true; R is false: magnetite is an oxide of iron; siderite is the carbonate — option (c).',
+  key: 'a',
+  sol: 'A is true; R is false: magnetite is an oxide of iron; siderite is the carbonate — option (a).',
   d: 2, c: 'understanding', t: [1],
 }));
 add('tf-limonite', tf({
@@ -193,8 +193,8 @@ add('mn-region-mcq', mcq({
 add('ar-mn', ar({
   a: 'Odisha produces both iron ore and manganese.',
   r: 'Manganese is used in making dry-cell batteries.',
-  key: 'b',
-  sol: 'Both are true, but a use of manganese does not explain where the two minerals occur — option (b).',
+  key: 'd',
+  sol: 'Both are true, but a use of manganese does not explain where the two minerals occur — option (d).',
   d: 3, c: 'analysis', t: [1, 2],
 }));
 add('tf-mn', tf({
@@ -272,8 +272,8 @@ add('demand-mcq', mcq({
 add('ar-cu', ar({
   a: 'Copper is widely used for electrical wiring.',
   r: 'Copper is an excellent conductor of electricity and can be drawn into thin wires.',
-  key: 'a',
-  sol: 'Both are true, and R explains A — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A — option (c).',
   d: 2, c: 'understanding', t: [3],
 }));
 add('tf-cu', tf({
@@ -384,15 +384,15 @@ add('refinery-mcq', mcq({
 add('ar-bx', ar({
   a: 'Bauxite is used mainly as a fuel in thermal power stations.',
   r: 'Bauxite is the main ore of aluminium.',
-  key: 'd',
-  sol: 'A is false: bauxite is not a fuel; R is true — option (d).',
+  key: 'b',
+  sol: 'A is false: bauxite is not a fuel; R is true — option (b).',
   d: 1, c: 'understanding', t: [4],
 }));
 add('ar-smelter', ar({
   a: 'An aluminium smelter was set up at Hirakud in Odisha.',
   r: 'The Hirakud dam supplies hydroelectricity, and smelting aluminium needs large amounts of power.',
-  key: 'a',
-  sol: 'Both are true, and the cheap power explains the location — option (a).',
+  key: 'c',
+  sol: 'Both are true, and the cheap power explains the location — option (c).',
   d: 3, c: 'analysis', t: [4],
 }));
 add('tf-bx', tf({

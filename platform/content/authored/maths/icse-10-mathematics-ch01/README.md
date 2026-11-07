@@ -21,7 +21,7 @@ provenance `origin: "human"`, `model: null`. All items are `status: "draft"` unt
 | Check slides | 4 + 4, all objective (m02, tf1, fb1, n01; m10, tf3, fb5, n05); none is used in a chapter test |
 | Notes | 7 sections with key terms, formulas and a visual each; exam tips with a mark split and 8 common mistakes |
 | Flashcards | 32 (formula 7, definition 5, example 5, concept 5, fact 4, exam-tip 4, diagram 2) |
-| Questions | 66 items, 162 marks: mcq 18 (keys a5 b5 c4 d4 after rotation), assertion-reason 7 (keys a d c a b c d), true-false 5, fill-blank 5, numerical 8, short-2 5, short-3 5, short-4 6, long-10 7 (each (a)(b)(c) = 3 + 3 + 4, 5–8 step marks) |
+| Questions | 66 items, 162 marks: mcq 18 (keys a5 b5 c4 d4 after rotation), assertion-reason 7 (keys c b a c d a b), true-false 5, fill-blank 5, numerical 8, short-2 5, short-3 5, short-4 6, long-10 7 (each (a)(b)(c) = 3 + 3 + 4, 5–8 step marks) |
 | Difficulty | d1 11, d2 27, d3 25, d4 3 |
 | Competency | recall 5, understanding 23, application 29, analysis 9 — application or higher 58% of items, 81% of marks (lint band 45–65%) |
 | Topics | t01 20, t02 15, t03 24, t04 17 (an item can carry two topics) |
@@ -51,3 +51,4 @@ All set-ups are original and imagined (shops, dealers and firms are unnamed or g
 - Narration audio not generated (TTS stage).
 - Bar charts are `plot` series with one bar per series (the legend names the bars; the x axis is only a step index).
 - Table cells use plain text with ₹ and inline KaTeX in a few rule tables.
+- **2026-11-05:** assertion-reason options reordered to the ICSE 2027 Mathematics specimen paper (511) order and wording; every key re-mapped so each item's meaning is unchanged.

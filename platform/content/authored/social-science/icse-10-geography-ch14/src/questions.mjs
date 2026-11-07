@@ -50,8 +50,8 @@ add('cane-states-mcq', mcq({
 add('cane-ar', ar({
   a: 'Sugarcane in Maharashtra is grown with heavy irrigation.',
   r: 'Sugarcane needs a great deal of water over a long period, while much of Maharashtra receives only moderate rainfall.',
-  key: 'a',
-  sol: 'Both are true, and R explains A — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A — option (c).',
   d: 2, c: 'application', t: [1],
 }));
 add('cane-tf', tf({
@@ -124,8 +124,8 @@ add('groundnut-state-mcq', mcq({
 add('oil-ar', ar({
   a: 'Groundnut grows poorly on heavy clayey soils that become waterlogged.',
   r: 'Groundnut pods form underground and need loose, well-drained soil.',
-  key: 'a',
-  sol: 'Both are true, and R explains A — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A — option (c).',
   d: 2, c: 'analysis', t: [2],
 }));
 add('oil-tf', tf({
@@ -212,15 +212,15 @@ add('ginning-mcq', mcq({
 add('cotton-ar', ar({
   a: 'Cotton is a kharif crop.',
   r: 'Cotton needs high temperatures and moderate rain during growth, and dry, sunny weather at picking time.',
-  key: 'a',
-  sol: 'Both are true, and R explains A — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A — option (c).',
   d: 2, c: 'understanding', t: [3],
 }));
 add('cotton-ar2', ar({
   a: 'Gujarat is a leading producer of cotton (as of the early 2020s).',
   r: 'Ahmedabad has many cotton textile mills.',
-  key: 'b',
-  sol: 'Both are true, but R does not explain A — production depends on soil, climate and irrigation, not on mills — option (b).',
+  key: 'd',
+  sol: 'Both are true, but R does not explain A — production depends on soil, climate and irrigation, not on mills — option (d).',
   d: 3, c: 'analysis', t: [3],
 }));
 add('cotton-tf', tf({
@@ -313,15 +313,15 @@ add('jute-future-mcq', mcq({
 add('jute-ar', ar({
   a: 'Jute cultivation is concentrated in the delta of West Bengal.',
   r: 'Retting needs plenty of slow-moving or still water, which the delta provides.',
-  key: 'a',
-  sol: 'Both are true, and R is a correct explanation of A — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R is a correct explanation of A — option (c).',
   d: 2, c: 'application', t: [4],
 }));
 add('jute-ar2', ar({
   a: 'Jute is a kharif crop.',
   r: 'Jute needs a cool, dry climate with frost.',
-  key: 'c',
-  sol: 'A is true; R is false — jute needs a hot, humid climate with heavy rain — option (c).',
+  key: 'a',
+  sol: 'A is true; R is false — jute needs a hot, humid climate with heavy rain — option (a).',
   d: 2, c: 'understanding', t: [4],
 }));
 add('jute-tf', tf({
@@ -407,15 +407,15 @@ add('shade-mcq', mcq({
 add('tea-ar', ar({
   a: 'Tea estates need a large labour force.',
   r: 'Leaves are plucked by hand at short intervals through much of the year.',
-  key: 'a',
-  sol: 'Both are true, and R explains A — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A — option (c).',
   d: 2, c: 'understanding', t: [5],
 }));
 add('tea-ar2', ar({
   a: 'Tea grows best on flat land where rainwater collects.',
   r: 'Tea needs heavy, well-distributed rainfall.',
-  key: 'd',
-  sol: 'A is false (waterlogging harms tea roots, so slopes are used); R is true — option (d).',
+  key: 'b',
+  sol: 'A is false (waterlogging harms tea roots, so slopes are used); R is true — option (b).',
   d: 2, c: 'understanding', t: [5],
 }));
 add('tea-tf', tf({

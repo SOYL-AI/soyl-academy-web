@@ -20,7 +20,7 @@ CBSE maths chapter approach (builders + independent re-solve). Author: `claude-o
 | Check slides | 3 + 3, all objective mcq (q001 q003 q006; q009 q010 q014) |
 | Notes | 7 sections with key terms and formulas; exam tips with mark split and 6 common mistakes |
 | Flashcards | 30 (definition 10, formula 1, concept 6, example 11, exam-tip 2) |
-| Questions | 72 items, 175 marks: mcq 18, assertion-reason 6 (keys a c d b a c), true-false 8, fill-blank 8, numerical 8 (3 × 1 mark, 5 × 2 marks), short-2 5, short-3 6, short-4 6, long-10 7 (structured (a)(b)(c), 3 + 3 + 4, 6–7 step marks each) |
+| Questions | 72 items, 175 marks: mcq 18, assertion-reason 6 (keys c a b d c a), true-false 8, fill-blank 8, numerical 8 (3 × 1 mark, 5 × 2 marks), short-2 5, short-3 6, short-4 6, long-10 7 (structured (a)(b)(c), 3 + 3 + 4, 6–7 step marks each) |
 | Difficulty | d1 18, d2 18, d3 29, d4 7 |
 | Competency | recall 10, understanding 21, application 30, analysis 11 — application or higher 57% of items, 81% of marks |
 | Topics | t01 25, t02 25, t03 38 (items may carry two or three topics) |
@@ -69,3 +69,4 @@ taken from a textbook (Selina, ML Aggarwal, NCERT), specimen paper or past paper
 - Equal chords and arcs are placed under t01 (the catalog lists no separate topic for them).
 - Two of the answers to the "sides produced" items depend on the produced sides meeting beyond B and C; the figures and
   checks assert that on the coordinates.
+- **2026-11-05:** assertion-reason options reordered to the ICSE 2027 Mathematics specimen paper (511) order and wording; every key re-mapped so each item's meaning is unchanged.

@@ -45,8 +45,8 @@ add('pyrite-mcq', mcq({
 add('contact-ar', ar({
   a: 'In the Contact process, sulphur trioxide is absorbed in concentrated sulphuric acid rather than in water.',
   r: 'Sulphur trioxide reacts with water so exothermically that a dense acid mist forms, which is difficult to condense.',
-  key: 'a',
-  sol: 'Both are true, and R explains A — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A — option (c).',
   d: 2, c: 'understanding', t: [1],
 }));
 add('v2o5-tf', tf({
@@ -148,15 +148,15 @@ add('bisulphite-mcq', mcq({
 add('dibasic-ar', ar({
   a: 'Sulphuric acid forms two kinds of salts with sodium hydroxide.',
   r: 'Sulphuric acid is a monobasic acid.',
-  key: 'c',
-  sol: 'A is true (NaHSO₄ and Na₂SO₄); R is false: sulphuric acid is dibasic — option (c).',
+  key: 'a',
+  sol: 'A is true (NaHSO₄ and Na₂SO₄); R is false: sulphuric acid is dibasic — option (a).',
   d: 2, c: 'understanding', t: [2],
 }));
 add('copper-ar', ar({
   a: 'Dilute sulphuric acid reacts with copper to give hydrogen.',
   r: 'Copper is below hydrogen in the activity series.',
-  key: 'd',
-  sol: 'A is false: copper does not displace hydrogen from dilute acids. R is true — option (d).',
+  key: 'b',
+  sol: 'A is false: copper does not displace hydrogen from dilute acids. R is true — option (b).',
   d: 2, c: 'application', t: [2],
 }));
 add('nahso4-tf', tf({
@@ -307,15 +307,15 @@ add('drydehyd-mcq', mcq({
 add('sugar-ar', ar({
   a: 'Concentrated sulphuric acid chars cane sugar.',
   r: 'Concentrated sulphuric acid is a non-volatile acid.',
-  key: 'b',
-  sol: 'Both are true, but charring is due to the dehydrating property, not to the acid being non-volatile — option (b).',
+  key: 'd',
+  sol: 'Both are true, but charring is due to the dehydrating property, not to the acid being non-volatile — option (d).',
   d: 2, c: 'understanding', t: [4, 5],
 }));
 add('drying-ar', ar({
   a: 'Concentrated sulphuric acid is not used to dry ammonia gas.',
   r: 'Ammonia, a base, reacts with sulphuric acid to form ammonium sulphate.',
-  key: 'a',
-  sol: 'Both are true, and R explains A: 2NH₃ + H₂SO₄ → (NH₄)₂SO₄ — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A: 2NH₃ + H₂SO₄ → (NH₄)₂SO₄ — option (c).',
   d: 2, c: 'application', t: [4],
 }));
 add('dry-tf', tf({

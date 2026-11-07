@@ -40,8 +40,8 @@ add('reverse-mcq', mcq({
 add('thumb-ar', ar({
   a: 'Reversing the current in a straight wire reverses the direction of the magnetic field around it.',
   r: 'By the right-hand thumb rule, the curl of the fingers gives the field direction when the thumb points along the current.',
-  key: 'a',
-  sol: 'Both are true; reversing the thumb reverses the curl of the fingers — option (a).',
+  key: 'c',
+  sol: 'Both are true; reversing the thumb reverses the curl of the fingers — option (c).',
   d: 2, c: 'understanding', t: [1],
 }));
 add('loop-tf', tf({
@@ -142,8 +142,8 @@ add('compass-mcq', mcq({
 add('emag-ar', ar({
   a: 'A coil with a soft iron core makes a stronger magnet than the same coil, carrying the same current, without a core.',
   r: 'Soft iron is a good conductor of electricity.',
-  key: 'b',
-  sol: 'Both are true, but the core strengthens the magnet because soft iron is easily magnetised, not because it conducts electricity — option (b).',
+  key: 'd',
+  sol: 'Both are true, but the core strengthens the magnet because soft iron is easily magnetised, not because it conducts electricity — option (d).',
   d: 3, c: 'analysis', t: [2],
 }));
 add('perm-tf', tf({
@@ -220,8 +220,8 @@ add('parts-mcq', mcq({
 add('flhr-ar', ar({
   a: 'A current-carrying wire lying along the magnetic field lines experiences the largest possible force.',
   r: 'The force on a current-carrying wire in a magnetic field is greatest when the wire is at right angles to the field.',
-  key: 'd',
-  sol: 'A is false: a wire along the field lines experiences no force. R is true — option (d).',
+  key: 'b',
+  sol: 'A is false: a wire along the field lines experiences no force. R is true — option (b).',
   d: 2, c: 'understanding', t: [3],
 }));
 add('motor-tf', tf({
@@ -306,8 +306,8 @@ add('speed-mcq', mcq({
 add('induced-ar', ar({
   a: 'A current is induced in a closed coil when a bar magnet is moved towards it.',
   r: 'The magnetic field linked with the coil changes while the magnet moves.',
-  key: 'a',
-  sol: 'Both are true, and the changing field is the cause of the induced current — option (a).',
+  key: 'c',
+  sol: 'Both are true, and the changing field is the cause of the induced current — option (c).',
   d: 2, c: 'understanding', t: [4],
 }));
 add('induce-tf', tf({
@@ -403,8 +403,8 @@ add('stepdown-mcq', mcq({
 add('trans-ar', ar({
   a: 'A step-down transformer has fewer turns on its secondary coil than on its primary coil.',
   r: 'A step-down transformer raises both the voltage and the current.',
-  key: 'c',
-  sol: 'A is true (Vs ÷ Vp = Ns ÷ Np). R is false: it lowers the voltage, and the current is stepped up — option (c).',
+  key: 'a',
+  sol: 'A is true (Vs ÷ Vp = Ns ÷ Np). R is false: it lowers the voltage, and the current is stepped up — option (a).',
   d: 2, c: 'understanding', t: [5],
 }));
 add('trans-tf', tf({

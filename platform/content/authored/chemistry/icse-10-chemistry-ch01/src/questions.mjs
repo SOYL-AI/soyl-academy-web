@@ -95,8 +95,8 @@ add('pull-mcq', mcq({
 add('shield-ar', ar({
   a: 'Potassium loses its valence electron more easily than sodium.',
   r: 'The valence electron of potassium is in the fourth shell, farther from the nucleus and shielded by more inner electrons.',
-  key: 'a',
-  sol: 'Both are true, and R explains A — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A — option (c).',
   d: 2, c: 'understanding', t: [2, 6],
 }));
 add('nuclear-short1', short({
@@ -134,8 +134,8 @@ add('ion-mcq', mcq({
 add('noble-ar', ar({
   a: 'The atomic radius of argon is not compared with that of chlorine to show the trend across period 3.',
   r: 'Argon has more protons than chlorine.',
-  key: 'b',
-  sol: 'Both statements are true, but the reason is that argon’s radius is a van der Waals radius, measured differently — option (b).',
+  key: 'd',
+  sol: 'Both statements are true, but the reason is that argon’s radius is a van der Waals radius, measured differently — option (d).',
   d: 3, c: 'understanding', t: [3],
 }));
 add('size-tf', tf({
@@ -262,15 +262,15 @@ add('eacl-mcq', mcq({
 add('ea-ar', ar({
   a: 'Noble gases have practically zero electron affinity.',
   r: 'Noble gases have the lowest ionisation potentials in their periods.',
-  key: 'c',
-  sol: 'A is true (a stable octet or duplet does not accept an electron); R is false: they have the highest ionisation potentials — option (c).',
+  key: 'a',
+  sol: 'A is true (a stable octet or duplet does not accept an electron); R is false: they have the highest ionisation potentials — option (a).',
   d: 2, c: 'understanding', t: [5],
 }));
 add('ip-ar', ar({
   a: 'Sodium has a higher ionisation potential than magnesium.',
   r: 'Ionisation potential generally increases across a period from left to right.',
-  key: 'd',
-  sol: 'A is false (magnesium, further right, has the higher value); R is true — option (d).',
+  key: 'b',
+  sol: 'A is false (magnesium, further right, has the higher value); R is true — option (b).',
   d: 2, c: 'application', t: [5],
 }));
 add('en-tf', tf({
@@ -370,8 +370,8 @@ add('brom-mcq', mcq({
 add('halogen-ar', ar({
   a: 'Fluorine is the most reactive halogen.',
   r: 'Fluorine has the smallest atom in group 17, so its nucleus strongly attracts an incoming electron.',
-  key: 'a',
-  sol: 'Both are true, and R explains A — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A — option (c).',
   d: 2, c: 'understanding', t: [6],
 }));
 add('alkali-tf', tf({

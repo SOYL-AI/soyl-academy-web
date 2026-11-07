@@ -38,15 +38,15 @@ add('full-mcq', mcq({
 add('dry-ar', ar({
   a: 'Concentrated sulphuric acid is used to dry hydrogen chloride gas.',
   r: 'Concentrated sulphuric acid is a dibasic acid.',
-  key: 'b',
-  sol: 'Both are true, but it is used because it absorbs water and does not react with hydrogen chloride, not because it is dibasic — option (b).',
+  key: 'd',
+  sol: 'Both are true, but it is used because it absorbs water and does not react with hydrogen chloride, not because it is dibasic — option (d).',
   d: 3, c: 'analysis', t: [1],
 }));
 add('collect-ar', ar({
   a: 'Hydrogen chloride is not collected over water.',
   r: 'Hydrogen chloride is extremely soluble in water.',
-  key: 'a',
-  sol: 'Both are true, and R explains A — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A — option (c).',
   d: 1, c: 'understanding', t: [1],
 }));
 add('eq-short1', short({
@@ -115,8 +115,8 @@ add('jet-mcq', mcq({
 add('density-ar', ar({
   a: 'Hydrogen chloride is heavier than air.',
   r: 'The vapour density of hydrogen chloride (18.25) is greater than the average vapour density of air (about 14.4).',
-  key: 'a',
-  sol: 'Both are true, and R explains A — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A — option (c).',
   d: 2, c: 'application', t: [2],
 }));
 add('lighter-tf', tf({
@@ -239,8 +239,8 @@ add('bicarb-mcq', mcq({
 add('copper-ar', ar({
   a: 'Copper reacts with dilute hydrochloric acid to give hydrogen.',
   r: 'Copper is below hydrogen in the activity series.',
-  key: 'd',
-  sol: 'A is false (there is no reaction); R is true — option (d).',
+  key: 'b',
+  sol: 'A is false (there is no reaction); R is true — option (b).',
   d: 2, c: 'understanding', t: [4],
 }));
 add('fumes-short1', short({
@@ -348,8 +348,8 @@ add('gold-mcq', mcq({
 add('aqua-ar', ar({
   a: 'Aqua regia dissolves gold.',
   r: 'Aqua regia contains three volumes of concentrated nitric acid to one volume of concentrated hydrochloric acid.',
-  key: 'c',
-  sol: 'A is true; R is false: the ratio is three volumes of hydrochloric acid to one of nitric acid — option (c).',
+  key: 'a',
+  sol: 'A is true; R is false: the ratio is three volumes of hydrochloric acid to one of nitric acid — option (a).',
   d: 2, c: 'recall', t: [5],
 }));
 add('litmus-tf', tf({

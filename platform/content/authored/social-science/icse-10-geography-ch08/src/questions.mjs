@@ -32,8 +32,8 @@ add('industry-mcq', mcq({
 add('ar-forest-rain', ar({
   a: 'Forests help to recharge groundwater.',
   r: 'Roots and a layer of fallen leaves let rainwater soak slowly into the ground instead of running off.',
-  key: 'a',
-  sol: 'Both are true, and R explains A — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A — option (c).',
   d: 2, c: 'understanding', t: [1],
 }));
 add('tf-forest', tf({
@@ -141,15 +141,15 @@ add('commercial-mcq', mcq({
 add('ar-evergreen', ar({
   a: 'Tropical evergreen forests have several storeys of trees.',
   r: 'Heavy rain and high temperatures throughout the year allow plants to grow all the time and compete for sunlight.',
-  key: 'a',
-  sol: 'Both are true, and R explains the layered structure — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains the layered structure — option (c).',
   d: 3, c: 'analysis', t: [2],
 }));
 add('ar-deciduous', ar({
   a: 'Tropical deciduous forests are also called monsoon forests.',
   r: 'They grow in regions that have no dry season.',
-  key: 'c',
-  sol: 'A is true; R is false: these forests have a marked dry season, when the trees shed their leaves — option (c).',
+  key: 'a',
+  sol: 'A is true; R is false: these forests have a marked dry season, when the trees shed their leaves — option (a).',
   d: 2, c: 'understanding', t: [2],
 }));
 add('tf-evergreen', tf({
@@ -270,15 +270,15 @@ add('meadow-mcq', mcq({
 add('ar-mountain', ar({
   a: 'Vegetation in the Himalayas changes from tropical to alpine types as one climbs.',
   r: 'The Himalayas receive no rainfall.',
-  key: 'c',
-  sol: 'A is true; R is false: the change is due to falling temperature, and the Himalayas do receive rain and snow — option (c).',
+  key: 'a',
+  sol: 'A is true; R is false: the change is due to falling temperature, and the Himalayas do receive rain and snow — option (a).',
   d: 2, c: 'understanding', t: [3],
 }));
 add('ar-mangrove', ar({
   a: 'Mangrove forests grow widely on the Malwa plateau.',
   r: 'Mangroves can tolerate salty water.',
-  key: 'd',
-  sol: 'A is false: mangroves grow on tidal coasts and deltas; R is true — option (d).',
+  key: 'b',
+  sol: 'A is false: mangroves grow on tidal coasts and deltas; R is true — option (b).',
   d: 2, c: 'understanding', t: [3],
 }));
 add('tf-tidal', tf({
@@ -395,8 +395,8 @@ add('vanm-mcq', mcq({
 add('ar-agro', ar({
   a: 'Agroforestry can give farmers extra income.',
   r: 'Van Mahotsav is celebrated in the first week of July.',
-  key: 'b',
-  sol: 'Both are true, but the date of Van Mahotsav does not explain why agroforestry adds income (timber, fruit and fodder from the trees do) — option (b).',
+  key: 'd',
+  sol: 'Both are true, but the date of Van Mahotsav does not explain why agroforestry adds income (timber, fruit and fodder from the trees do) — option (d).',
   d: 3, c: 'analysis', t: [4],
 }));
 add('tf-reforest', tf({

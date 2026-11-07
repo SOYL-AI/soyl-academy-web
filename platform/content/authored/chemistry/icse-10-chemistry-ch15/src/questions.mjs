@@ -30,8 +30,8 @@ add('bp-mcq', mcq({
 add('hydrolysis-ar', ar({
   a: 'Bromoethane gives ethanol when boiled with aqueous potassium hydroxide.',
   r: 'In aqueous solution, the hydroxide ion takes the place of the bromine atom in bromoethane.',
-  key: 'a',
-  sol: 'Both are true, and R explains how the –OH group of ethanol comes to replace Br — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains how the –OH group of ethanol comes to replace Br — option (c).',
   d: 2, c: 'understanding', t: [1],
 }));
 add('neutral-tf', tf({
@@ -95,8 +95,8 @@ add('ester-mcq', mcq({
 add('sodium-ar', ar({
   a: 'Ethanol reacts with sodium to give off hydrogen.',
   r: 'Ethanol is a strong acid that turns blue litmus red.',
-  key: 'c',
-  sol: 'A is true (sodium replaces the H of –OH). R is false: ethanol is neutral to litmus — option (c).',
+  key: 'a',
+  sol: 'A is true (sodium replaces the H of –OH). R is false: ethanol is neutral to litmus — option (a).',
   d: 2, c: 'understanding', t: [1, 2],
 }));
 add('reversible-tf', tf({
@@ -193,8 +193,8 @@ add('thermo-mcq', mcq({
 add('denature-ar', ar({
   a: 'Denatured alcohol must not be drunk.',
   r: 'Ethanol is a good solvent for many organic compounds.',
-  key: 'b',
-  sol: 'Both are true, but R does not explain A: denatured alcohol is unfit to drink because poisons such as methanol and pyridine have been added — option (b).',
+  key: 'd',
+  sol: 'Both are true, but R does not explain A: denatured alcohol is unfit to drink because poisons such as methanol and pyridine have been added — option (d).',
   d: 2, c: 'understanding', t: [3],
 }));
 add('methylated-tf', tf({
@@ -271,8 +271,8 @@ add('vinegar-mcq', mcq({
 add('glacial-ar', ar({
   a: 'Pure ethanoic acid is called glacial acetic acid.',
   r: 'Pure ethanoic acid freezes at about 17 °C into colourless crystals that look like ice.',
-  key: 'a',
-  sol: 'Both are true, and R explains the name in A — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains the name in A — option (c).',
   d: 2, c: 'understanding', t: [4],
 }));
 add('bpacid-tf', tf({
@@ -359,8 +359,8 @@ add('methylester-mcq', mcq({
 add('ester-ar', ar({
   a: 'Ethyl ethanoate is formed when ethanol is warmed with sodium hydroxide solution.',
   r: 'Ethyl ethanoate is formed when ethanol is warmed with ethanoic acid and a few drops of concentrated sulphuric acid.',
-  key: 'd',
-  sol: 'A is false: ethanol does not react with sodium hydroxide to give an ester. R is true (esterification) — option (d).',
+  key: 'b',
+  sol: 'A is false: ethanol does not react with sodium hydroxide to give an ester. R is true (esterification) — option (b).',
   d: 2, c: 'analysis', t: [5],
 }));
 add('acid-fill', fill({

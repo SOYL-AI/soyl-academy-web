@@ -20,7 +20,7 @@ CBSE maths chapter approach (builders + independent re-solve). Author: `claude-o
 | Check slides | 4 + 4, all objective (q002 mcq, q026 true-false, q006 mcq, q038 numerical; q011 mcq, q033 fill-blank, q016 mcq, q041 numerical) |
 | Notes | 7 sections with key terms and formulas; exam tips with mark split and 6 common mistakes |
 | Flashcards | 30 (definition 3, fact 4, concept 5, formula 2, example 8, exam-tip 5, diagram 3) |
-| Questions | 69 items, 173 marks: mcq 19, assertion-reason 6 (keys a d b a d c), true-false 6, fill-blank 6, numerical 7 (4 × 1 mark, 3 × 2 marks), short-2 5, short-3 6, short-4 7, long-10 7 (structured (a)(b)(c), 3 + 3 + 4, 6–10 step marks each) |
+| Questions | 69 items, 173 marks: mcq 19, assertion-reason 6 (keys c b d c b a), true-false 6, fill-blank 6, numerical 7 (4 × 1 mark, 3 × 2 marks), short-2 5, short-3 6, short-4 7, long-10 7 (structured (a)(b)(c), 3 + 3 + 4, 6–10 step marks each) |
 | Difficulty | d1 9, d2 28, d3 25, d4 7 |
 | Competency | recall 4, understanding 26, application 31, analysis 8 — application or higher 57% of items, 79% of marks (lint band 45–65% of items) |
 | Topics | t01 23, t02 16, t03 19, t04 18 (items may carry two or three topics) |
@@ -58,3 +58,4 @@ places" items, two rate problems) use different wording, since the bank duplicat
 - Narration audio not generated (TTS stage).
 - Model answers describe graphs in words (answers carry no visuals); q019 and q065 carry figures in the stem.
 - t02 has the fewest tagged items (16) because many factorisation steps sit inside t04 word problems tagged t04 only.
+- **2026-11-05:** assertion-reason options reordered to the ICSE 2027 Mathematics specimen paper (511) order and wording; every key re-mapped so each item's meaning is unchanged.

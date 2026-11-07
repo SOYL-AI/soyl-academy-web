@@ -99,8 +99,8 @@ add('stream-tf', tf({
 add('colour-ar', ar({
   a: 'Cultivated land on the sheet is shown in yellow.',
   r: 'Yellow is the conventional tint for cultivated land.',
-  key: 'a',
-  sol: 'Both are true, and R explains A — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A — option (c).',
   d: 1, c: 'understanding', t: [1],
 }));
 add('colour-match', match({
@@ -201,8 +201,8 @@ add('scale-fill', fill({
 add('scale-ar', ar({
   a: 'An RF of 1 : 50 000 means that 1 cm on the map stands for 50 000 cm on the ground.',
   r: 'A representative fraction is always written with units, such as 1 cm : 50 000 cm.',
-  key: 'c',
-  sol: 'A is true. R is false: an RF is a ratio without units — option (c).',
+  key: 'a',
+  sol: 'A is true. R is false: an RF is a ratio without units — option (a).',
   d: 2, c: 'understanding', t: [2],
 }));
 add('scale-num', num({
@@ -305,8 +305,8 @@ add('dist-fill', fill({
 add('dist-ar', ar({
   a: 'In this course, the distance between two places on a sheet is measured along the road that joins them.',
   r: 'Only the direct, straight-line distance between two places is measured on the sheet.',
-  key: 'd',
-  sol: 'A is false: only the straight-line distance is measured. R is true — option (d).',
+  key: 'b',
+  sol: 'A is false: only the straight-line distance is measured. R is true — option (b).',
   d: 2, c: 'understanding', t: [3],
 }));
 add('dist-short2', short({
@@ -370,8 +370,8 @@ add('area-fill', fill({
 add('area-ar', ar({
   a: 'Each complete grid square of the sheet stands for an area of 1 sq km on the ground.',
   r: 'The eastings of the sheet are numbered from west to east.',
-  key: 'b',
-  sol: 'Both statements are true, but the way the eastings are numbered does not explain the area of a square — option (b).',
+  key: 'd',
+  sol: 'Both statements are true, but the way the eastings are numbered does not explain the area of a square — option (d).',
   d: 2, c: 'understanding', t: [4],
 }));
 add('area-short2', short({
@@ -435,8 +435,8 @@ add('dir-fill', fill({
 add('dir-ar', ar({
   a: 'If B lies to the north-east of A, then A lies to the south-west of B.',
   r: 'Reversing the two places reverses the direction to the opposite compass point.',
-  key: 'a',
-  sol: 'Both are true, and R explains A — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A — option (c).',
   d: 2, c: 'understanding', t: [5],
 }));
 add('dir-short2', short({

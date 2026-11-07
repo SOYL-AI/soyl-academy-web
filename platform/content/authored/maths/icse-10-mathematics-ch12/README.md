@@ -19,7 +19,7 @@ CBSE maths chapter approach (builders + independent re-solve). Author: `claude-o
 | Check slides | 4 + 4, all objective (q001 mcq, q011 mcq, q037 numerical, q026 true-false; q002 mcq, q008 mcq, q016 mcq, q029 true-false) |
 | Notes | 7 sections with key terms and formulas; exam tips with mark split and 6 common mistakes |
 | Flashcards | 30 (definition 3, formula 6, example 8, concept 8, exam-tip 4, diagram 1) |
-| Questions | 66 items, 166 marks: mcq 18, assertion-reason 6 (keys a c d b a c), true-false 6, fill-blank 6, numerical 7 (3 × 1 mark, 4 × 2 marks), short-2 5, short-3 5, short-4 6, long-10 7 (structured (a)(b)(c), 3 + 3 + 4, 6–8 step marks each) |
+| Questions | 66 items, 166 marks: mcq 18, assertion-reason 6 (keys c a b d c a), true-false 6, fill-blank 6, numerical 7 (3 × 1 mark, 4 × 2 marks), short-2 5, short-3 5, short-4 6, long-10 7 (structured (a)(b)(c), 3 + 3 + 4, 6–8 step marks each) |
 | Difficulty | d1 12, d2 33, d3 18, d4 3 (q055 both axes through the origin, q059 vertices from mid-points, q062 centroids trisecting a parallelogram diagonal) |
 | Competency | recall 3, understanding 23, application 33, analysis 7 — application or higher 61% of items, 83% of marks (lint band 45–65% of items) |
 | Topics | t01 33, t02 31, t03 22 (items may carry two or three topics) |
@@ -55,3 +55,4 @@ Stems name their own content and similar items are worded differently.
 - Narration audio not generated (TTS stage).
 - Model answers describe the working in words and equations (answers carry no visuals); no question carries a figure in its stem.
 - Plot labels sit to the upper right of each point; on the densest slides (part 2 worked example 6, six labelled points) labels may sit close together at 360 px and should be checked in the staging UI.
+- **2026-11-05:** assertion-reason options reordered to the ICSE 2027 Mathematics specimen paper (511) order and wording; every key re-mapped so each item's meaning is unchanged.

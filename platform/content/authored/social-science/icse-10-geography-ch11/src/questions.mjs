@@ -57,8 +57,8 @@ add('korba-mcq', mcq({
 add('coal-ar', ar({
   a: 'Coal from the Makum field of Assam is not preferred for making steel.',
   r: 'Tertiary coal of the north-east has a high sulphur content.',
-  key: 'a',
-  sol: 'Both are true, and the sulphur makes the coal unsuitable for good steel — option (a).',
+  key: 'c',
+  sol: 'Both are true, and the sulphur makes the coal unsuitable for good steel — option (c).',
   d: 3, c: 'analysis', t: [1],
 }));
 add('coal-tf', tf({
@@ -137,15 +137,15 @@ add('hvj-mcq', mcq({
 add('gas-ar', ar({
   a: 'Natural gas is used both as a fuel and as a raw material in fertiliser plants.',
   r: 'Natural gas is found only in the coal seams of the Damodar valley.',
-  key: 'c',
-  sol: 'A is true (urea is made from gas); R is false — gas comes from Mumbai High, Bassein, the Krishna–Godavari basin and other fields — option (c).',
+  key: 'a',
+  sol: 'A is true (urea is made from gas); R is false — gas comes from Mumbai High, Bassein, the Krishna–Godavari basin and other fields — option (a).',
   d: 2, c: 'understanding', t: [2],
 }));
 add('oil-ar', ar({
   a: 'Some of India’s largest oil refineries stand at coastal sites such as Jamnagar in Gujarat.',
   r: 'Most of the crude oil India uses is imported by sea (as of the early 2020s).',
-  key: 'a',
-  sol: 'Both are true; a coastal refinery receives imported crude straight from tankers — option (a).',
+  key: 'c',
+  sol: 'Both are true; a coastal refinery receives imported crude straight from tankers — option (c).',
   d: 3, c: 'analysis', t: [2],
 }));
 add('oil-tf', tf({
@@ -224,8 +224,8 @@ add('hydel-site-mcq', mcq({
 add('hydel-ar', ar({
   a: 'Hydel power is hardly produced in the Thar desert.',
   r: 'A hydel station needs a regular flow of water falling from a height.',
-  key: 'a',
-  sol: 'Both are true; the desert lacks perennial rivers and steep slopes — option (a).',
+  key: 'c',
+  sol: 'Both are true; the desert lacks perennial rivers and steep slopes — option (c).',
   d: 2, c: 'application', t: [3],
 }));
 add('hydel-tf', tf({
@@ -320,8 +320,8 @@ add('sundarbans-mcq', mcq({
 add('tn-ar', ar({
   a: 'Tamil Nadu has a large installed capacity of wind power.',
   r: 'Tamil Nadu also has nuclear power stations at Kalpakkam and Kudankulam.',
-  key: 'b',
-  sol: 'Both are true, but nuclear stations do not explain the wind power, which depends on strong, steady winds — option (b).',
+  key: 'd',
+  sol: 'Both are true, but nuclear stations do not explain the wind power, which depends on strong, steady winds — option (d).',
   d: 3, c: 'analysis', t: [4, 5],
 }));
 add('wind-tf', tf({
@@ -406,15 +406,15 @@ add('nuclear-against-mcq', mcq({
 add('nuclear-ar', ar({
   a: 'The Rawatbhata nuclear power station in Rajasthan is built beside the Rana Pratap Sagar reservoir on the Chambal.',
   r: 'A nuclear power station needs a large, reliable supply of water to cool its reactors.',
-  key: 'a',
-  sol: 'Both are true, and the need for cooling water explains the site — option (a).',
+  key: 'c',
+  sol: 'Both are true, and the need for cooling water explains the site — option (c).',
   d: 2, c: 'application', t: [5],
 }));
 add('geo-ar', ar({
   a: 'Geothermal energy supplies a large share of India’s electricity today.',
   r: 'Geothermal energy comes from the natural heat inside the Earth.',
-  key: 'd',
-  sol: 'A is false (India’s geothermal sites are few and remote and are only being explored); R is true — option (d).',
+  key: 'b',
+  sol: 'A is false (India’s geothermal sites are few and remote and are only being explored); R is true — option (b).',
   d: 2, c: 'understanding', t: [5],
 }));
 add('geo-tf', tf({

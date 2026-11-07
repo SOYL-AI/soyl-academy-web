@@ -21,7 +21,7 @@ CBSE maths chapter approach (builders + independent re-solve). Author: `claude-o
 | Check slides | 3 + 3, all objective mcq (q003 q006 q004; q010 q014 q016) |
 | Notes | 7 sections with key terms and formulas; exam tips with mark split and 6 common mistakes |
 | Flashcards | 30 (definition 8, formula 4, concept 5, example 10, exam-tip 3) |
-| Questions | 68 items, 169 marks: mcq 18, assertion-reason 6 (keys a c d b a c), true-false 6, fill-blank 6, numerical 8 (5 × 1 mark, 3 × 2 marks), short-2 5, short-3 6, short-4 6, long-10 7 (structured (a)(b)(c), 3 + 3 + 4, 6–8 step marks each) |
+| Questions | 68 items, 169 marks: mcq 18, assertion-reason 6 (keys c a b d c a), true-false 6, fill-blank 6, numerical 8 (5 × 1 mark, 3 × 2 marks), short-2 5, short-3 6, short-4 6, long-10 7 (structured (a)(b)(c), 3 + 3 + 4, 6–8 step marks each) |
 | Difficulty | d1 9, d2 28, d3 28, d4 3 |
 | Competency | recall 6, understanding 26, application 29, analysis 7 — application or higher 53% of items, 79% of marks (lint band 45–65% of items) |
 | Topics | t01 8, t02 22, t03 17, t04 19, t05 16 (items may carry two or three topics) |
@@ -53,3 +53,4 @@ CBSE 10 Mathematics ch06 (Triangles) was not present in the worktree's bank, so 
 - Only six questions carry a figure; most model answers describe the figure in words.
 - Equal-angle marks use arcs without degree labels where side lengths are given with them (to avoid over-determining the triangle); degree labels appear only where the angles are exact.
 - The altitude-on-the-hypotenuse result is used through AA similarity only (no mean-proportional theorem is quoted), as the syllabus lists only the conditions and simple applications.
+- **2026-11-05:** assertion-reason options reordered to the ICSE 2027 Mathematics specimen paper (511) order and wording; every key re-mapped so each item's meaning is unchanged.

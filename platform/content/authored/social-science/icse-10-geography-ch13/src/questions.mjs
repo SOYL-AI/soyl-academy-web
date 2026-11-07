@@ -55,15 +55,15 @@ add('rice-states-mcq', mcq({
 add('rice-ar', ar({
   a: 'Rice is a kharif crop in most of India.',
   r: 'Rice needs high temperatures and plenty of water during growth, which the monsoon season provides.',
-  key: 'a',
-  sol: 'Both are true, and R explains A — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A — option (c).',
   d: 2, c: 'understanding', t: [1],
 }));
 add('rice-ar2', ar({
   a: 'Some districts of West Bengal raise three rice crops in a year.',
   r: 'Rice is the staple food of most people in West Bengal.',
-  key: 'b',
-  sol: 'Both are true, but R does not explain A — three crops are possible because of year-round warmth, monsoon rain and irrigation — option (b).',
+  key: 'd',
+  sol: 'Both are true, but R does not explain A — three crops are possible because of year-round warmth, monsoon rain and irrigation — option (d).',
   d: 3, c: 'analysis', t: [1],
 }));
 add('rice-tf', tf({
@@ -150,15 +150,15 @@ add('hail-mcq', mcq({
 add('wheat-ar', ar({
   a: 'Wheat yields are high in Punjab and Haryana.',
   r: 'These states have assured irrigation, fertile alluvial soil and widespread use of HYV seeds.',
-  key: 'a',
-  sol: 'Both are true, and R explains A — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A — option (c).',
   d: 2, c: 'application', t: [2],
 }));
 add('wheat-ar2', ar({
   a: 'Wheat is a kharif crop of the Ganga plain.',
   r: 'Wheat needs a cool growing season.',
-  key: 'd',
-  sol: 'A is false (wheat is a rabi crop); R is true — option (d).',
+  key: 'b',
+  sol: 'A is false (wheat is a rabi crop); R is true — option (b).',
   d: 2, c: 'understanding', t: [2],
 }));
 add('wheat-tf', tf({
@@ -237,15 +237,15 @@ add('millet-nutri-mcq', mcq({
 add('millet-ar', ar({
   a: 'Millets are widely grown in the rain-shadow areas of the Deccan plateau.',
   r: 'Millets need little water and can withstand dry spells.',
-  key: 'a',
-  sol: 'Both are true, and R explains A — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A — option (c).',
   d: 2, c: 'application', t: [3],
 }));
 add('millet-ar2', ar({
   a: 'Jowar is grown as a rabi crop in parts of Maharashtra and Karnataka.',
   r: 'Jowar needs standing water throughout its growth.',
-  key: 'c',
-  sol: 'A is true (rabi jowar uses moisture stored in black soil); R is false — option (c).',
+  key: 'a',
+  sol: 'A is true (rabi jowar uses moisture stored in black soil); R is false — option (a).',
   d: 3, c: 'analysis', t: [3],
 }));
 add('millet-tf', tf({
@@ -331,15 +331,15 @@ add('pulse-import-mcq', mcq({
 add('pulse-ar', ar({
   a: 'Pulses improve the fertility of the soil.',
   r: 'Leguminous plants have root nodules containing nitrogen-fixing bacteria.',
-  key: 'a',
-  sol: 'Both are true, and R explains A — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A — option (c).',
   d: 2, c: 'understanding', t: [4],
 }));
 add('pulse-ar2', ar({
   a: 'Pulses are grown mostly as rain-fed crops in the drier parts of India.',
   r: 'Pulses are a cheap source of protein.',
-  key: 'b',
-  sol: 'Both are true, but R does not explain A — pulses grow in dry areas because they need little water — option (b).',
+  key: 'd',
+  sol: 'Both are true, but R does not explain A — pulses grow in dry areas because they need little water — option (d).',
   d: 3, c: 'analysis', t: [4],
 }));
 add('pulse-tf', tf({

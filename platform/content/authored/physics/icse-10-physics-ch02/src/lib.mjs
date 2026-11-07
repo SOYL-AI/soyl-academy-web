@@ -148,11 +148,12 @@ export function deck({ part, title, goals, slides }) {
 }
 
 // ---------------------------------------------------------------- questions
+// Option order and wording as in the ICSE 2027 Physics specimen paper (521).
 const AR_OPTIONS = [
-  { id: 'a', text_md: 'Both A and R are true, and R is the correct explanation of A.' },
-  { id: 'b', text_md: 'Both A and R are true, but R is not the correct explanation of A.' },
-  { id: 'c', text_md: 'A is true, but R is false.' },
-  { id: 'd', text_md: 'A is false, but R is true.' },
+  { id: 'a', text_md: '(A) is true and (R) is false.' },
+  { id: 'b', text_md: '(A) is false and (R) is true.' },
+  { id: 'c', text_md: 'Both (A) and (R) are true, and (R) is the correct explanation of (A).' },
+  { id: 'd', text_md: 'Both (A) and (R) are true, but (R) is not the correct explanation of (A).' },
 ];
 const scheme = (s) => s.map(([step, marks]) => ({ step, marks }));
 const DEFAULT_WL = {}; // ICSE papers set no word limits; pass o.wl to add one

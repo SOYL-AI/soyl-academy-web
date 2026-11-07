@@ -43,8 +43,8 @@ add('lioxide-mcq', mcq({
 add('transfer-ar', ar({
   a: 'Sodium and chlorine combine by transfer of an electron rather than by sharing.',
   r: 'Sodium has a low ionisation potential and chlorine has a high electron affinity.',
-  key: 'a',
-  sol: 'Both are true, and R explains A — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A — option (c).',
   d: 2, c: 'understanding', t: [1],
 }));
 add('ion-tf', tf({
@@ -117,8 +117,8 @@ add('solvent-mcq', mcq({
 add('electrolysis-ar', ar({
   a: 'Molten calcium chloride is decomposed when a current is passed through it.',
   r: 'Calcium chloride is a covalent compound.',
-  key: 'c',
-  sol: 'A is true (electrolysis of the free ions); R is false: calcium chloride is electrovalent — option (c).',
+  key: 'a',
+  sol: 'A is true (electrolysis of the free ions); R is false: calcium chloride is electrovalent — option (a).',
   d: 2, c: 'understanding', t: [2],
 }));
 add('solid-tf', tf({
@@ -184,8 +184,8 @@ add('h2-mcq', mcq({
 add('covalent-ar', ar({
   a: 'In a molecule of nitrogen, each nitrogen atom has one lone pair.',
   r: 'Each nitrogen atom contributes three electrons to the shared pairs.',
-  key: 'b',
-  sol: 'Both are true; R explains the triple bond, but A follows from 5 − 3 = 2 unshared electrons (one lone pair) — option (b).',
+  key: 'd',
+  sol: 'Both are true; R explains the triple bond, but A follows from 5 − 3 = 2 unshared electrons (one lone pair) — option (d).',
   d: 3, c: 'analysis', t: [3],
 }));
 add('ch4-tf', tf({
@@ -264,8 +264,8 @@ add('watershape-mcq', mcq({
 add('polar-ar', ar({
   a: 'Ammonia is a polar molecule.',
   r: 'The ammonia molecule has a lone pair of electrons on nitrogen and is not symmetrical.',
-  key: 'a',
-  sol: 'Both are true, and R explains A — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A — option (c).',
   d: 3, c: 'analysis', t: [4],
 }));
 add('dpolar-tf', tf({
@@ -376,15 +376,15 @@ add('acceptor-mcq', mcq({
 add('coord-ar', ar({
   a: 'Methane does not form a coordinate bond with a hydrogen ion.',
   r: 'Methane has no lone pair on its carbon atom.',
-  key: 'a',
-  sol: 'Both are true, and R explains A — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A — option (c).',
   d: 3, c: 'analysis', t: [6],
 }));
 add('coord-ar2', ar({
   a: 'All four N–H bonds in the ammonium ion are different from one another once the ion is formed.',
   r: 'One N–H bond in the ammonium ion is formed by a lone pair donated by nitrogen.',
-  key: 'd',
-  sol: 'A is false: once formed, the coordinate bond is identical to the others; R is true — option (d).',
+  key: 'b',
+  sol: 'A is false: once formed, the coordinate bond is identical to the others; R is true — option (b).',
   d: 4, c: 'evaluation', t: [6],
 }));
 add('coord-tf', tf({

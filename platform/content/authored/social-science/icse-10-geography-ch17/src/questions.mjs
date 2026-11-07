@@ -103,8 +103,8 @@ add('delta-road-mcq', mcq({
 add('road-ar2', ar({
   a: 'Roads can reach hilly areas where railways are difficult to build.',
   r: 'Road transport causes no pollution.',
-  key: 'c',
-  sol: 'A is true (roads can climb steep slopes with bends); R is false — vehicles cause air and noise pollution — option (c).',
+  key: 'a',
+  sol: 'A is true (roads can climb steep slopes with bends); R is false — vehicles cause air and noise pollution — option (a).',
   d: 2, c: 'understanding', t: [2],
 }));
 add('road-tf', tf({
@@ -192,15 +192,15 @@ add('gq-benefit-mcq', mcq({
 add('gq-ar', ar({
   a: 'Many industries have come up along the Golden Quadrilateral.',
   r: 'Fast, reliable road links lower the cost of bringing in materials and sending out goods.',
-  key: 'a',
-  sol: 'Both are true, and R explains A — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A — option (c).',
   d: 2, c: 'understanding', t: [3],
 }));
 add('gq-ar2', ar({
   a: 'The Golden Quadrilateral passes through Srinagar.',
   r: 'The North–South Corridor begins at Srinagar.',
-  key: 'd',
-  sol: 'A is false (the GQ joins Delhi, Mumbai, Chennai and Kolkata); R is true — option (d).',
+  key: 'b',
+  sol: 'A is false (the GQ joins Delhi, Mumbai, Chennai and Kolkata); R is true — option (b).',
   d: 2, c: 'understanding', t: [3],
 }));
 add('gq-tf', tf({
@@ -286,15 +286,15 @@ add('rail-adv-mcq', mcq({
 add('rail-ar', ar({
   a: 'The rail network is sparse in Arunachal Pradesh.',
   r: 'Its rugged, forested hills and heavy rainfall make railway building difficult and costly.',
-  key: 'a',
-  sol: 'Both are true, and R explains A — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A — option (c).',
   d: 2, c: 'analysis', t: [4],
 }));
 add('rail-ar2', ar({
   a: 'Indian Railways carries very large amounts of coal.',
   r: 'Indian Railways employs a very large number of people.',
-  key: 'b',
-  sol: 'Both are true, but R does not explain A — coal goes by rail because rail is cheap for bulky, long hauls — option (b).',
+  key: 'd',
+  sol: 'Both are true, but R does not explain A — coal goes by rail because rail is cheap for bulky, long hauls — option (d).',
   d: 3, c: 'analysis', t: [4],
 }));
 add('rail-tf', tf({
@@ -365,8 +365,8 @@ add('vaccine-mcq', mcq({
 add('air-ar', ar({
   a: 'Air transport is vital for Ladakh in winter.',
   r: 'Snow closes the high mountain passes over which the roads run.',
-  key: 'a',
-  sol: 'Both are true, and R explains A — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A — option (c).',
   d: 2, c: 'application', t: [5],
 }));
 add('air-tf', tf({
@@ -424,15 +424,15 @@ add('peninsular-mcq', mcq({
 add('water-ar', ar({
   a: 'Kolkata port needs constant dredging.',
   r: 'The Hooghly brings down large amounts of silt.',
-  key: 'a',
-  sol: 'Both are true, and R explains A — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A — option (c).',
   d: 2, c: 'application', t: [6],
 }));
 add('water-ar2', ar({
   a: 'Coastal shipping can reduce the load on railways.',
   r: 'Ships can sail inland across the Deccan plateau.',
-  key: 'c',
-  sol: 'A is true; R is false — option (c).',
+  key: 'a',
+  sol: 'A is true; R is false — option (a).',
   d: 2, c: 'understanding', t: [6],
 }));
 add('water-tf', tf({

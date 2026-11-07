@@ -38,15 +38,15 @@ add('solid-mcq', mcq({
 add('solid-ar', ar({
   a: 'Solid lead bromide does not conduct electricity.',
   r: 'In solid lead bromide, the Pb²⁺ and Br⁻ ions are held in fixed positions and cannot move.',
-  key: 'a',
-  sol: 'Both true; with no mobile ions there is no conduction, so R explains A — option (a).',
+  key: 'c',
+  sol: 'Both true; with no mobile ions there is no conduction, so R explains A — option (c).',
   d: 2, c: 'understanding', t: [1, 4],
 }));
 add('sugar-ar', ar({
   a: 'An aqueous solution of glucose does not conduct electricity.',
   r: 'Glucose is an ionic compound.',
-  key: 'c',
-  sol: 'A is true; R is false: glucose is a covalent compound whose solution contains molecules only — option (c).',
+  key: 'a',
+  sol: 'A is true; R is false: glucose is a covalent compound whose solution contains molecules only — option (a).',
   d: 2, c: 'understanding', t: [1],
 }));
 add('metal-tf', tf({
@@ -248,8 +248,8 @@ add('ratio-mcq', mcq({
 add('h2ratio-ar', ar({
   a: 'In the electrolysis of acidified water, the volume of hydrogen collected is twice the volume of oxygen.',
   r: 'Four electrons give two molecules of hydrogen at the cathode but only one molecule of oxygen at the anode.',
-  key: 'a',
-  sol: 'By Avogadro’s law, twice as many molecules occupy twice the volume, so R explains A — option (a).',
+  key: 'c',
+  sol: 'By Avogadro’s law, twice as many molecules occupy twice the volume, so R explains A — option (c).',
   d: 2, c: 'understanding', t: [5],
 }));
 add('acidamt-tf', tf({
@@ -323,8 +323,8 @@ add('colour-mcq', mcq({
 add('cuanode-ar', ar({
   a: 'In the electrolysis of copper(II) sulphate solution with copper electrodes, the copper anode loses mass.',
   r: 'Copper is below hydrogen in the activity series.',
-  key: 'b',
-  sol: 'Both statements are true, but the anode loses mass because copper atoms of the active anode lose electrons more easily than any anion and dissolve; R explains why copper (not hydrogen) is deposited at the cathode — option (b).',
+  key: 'd',
+  sol: 'Both statements are true, but the anode loses mass because copper atoms of the active anode lose electrons more easily than any anion and dissolve; R explains why copper (not hydrogen) is deposited at the cathode — option (d).',
   d: 3, c: 'analysis', t: [3, 6],
 }));
 add('blue-tf', tf({
@@ -389,8 +389,8 @@ add('mud-mcq', mcq({
 add('agno3-ar', ar({
   a: 'Silver nitrate solution is the best electrolyte for silver plating.',
   r: 'Silver nitrate solution contains Ag⁺ ions.',
-  key: 'd',
-  sol: 'A is false: silver nitrate deposits silver too quickly, giving a rough coat; sodium argentocyanide is used. R is true — option (d).',
+  key: 'b',
+  sol: 'A is false: silver nitrate deposits silver too quickly, giving a rough coat; sodium argentocyanide is used. R is true — option (b).',
   d: 2, c: 'understanding', t: [7],
 }));
 add('plate-fill', fill({
