@@ -20,7 +20,7 @@ CBSE maths chapter approach (builders + independent re-solve). Author: `claude-o
 | Check slides | 4 + 4, all objective (q001 mcq, q033 fill-blank, q005 mcq, q028 true-false; q008 mcq, q010 mcq, q044 numerical, q031 true-false) |
 | Notes | 7 sections with key terms and formulas; exam tips with mark split and 6 common mistakes |
 | Flashcards | 30 (definition 5, formula 8, concept 6, fact 2, example 4, exam-tip 3, diagram 2) |
-| Questions | 69 items, 164 marks: mcq 20, assertion-reason 6 (keys a b c d a b), true-false 6, fill-blank 7, numerical 8, short-2 4, short-3 5, short-4 6, long-10 7 (structured (a)(b)(c), 3 + 3 + 4, 4–6 step marks each) |
+| Questions | 69 items, 164 marks: mcq 20, assertion-reason 6 (keys c d a b c d), true-false 6, fill-blank 7, numerical 8, short-2 4, short-3 5, short-4 6, long-10 7 (structured (a)(b)(c), 3 + 3 + 4, 4–6 step marks each) |
 | Difficulty | d1 11, d2 29, d3 25, d4 4 |
 | Competency | recall 6, understanding 25, application 23, analysis 14, evaluation 1 — application or higher 55% of items, 79% of marks (lint band 45–65% of items) |
 | Topics | t01 18, t02 30, t03 31, t04 13 (items may carry two topics) |
@@ -49,3 +49,4 @@ All set-ups, names and numbers are new. Every company is imagined and labelled a
 - Narration audio not generated (TTS stage).
 - Tables use plain digits inside maths below one lakh (so the arithmetic lint can read them) and grouped digits in prose (₹31,500).
 - No item uses brokerage, fractional shares, bonus or rights issues, or stock-exchange mechanics; these are outside the ICSE 2027 topic list.
+- **2026-11-05:** assertion-reason options reordered to the ICSE 2027 Mathematics specimen paper (511) order and wording; every key re-mapped so each item's meaning is unchanged.
