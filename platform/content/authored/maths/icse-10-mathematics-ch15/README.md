@@ -20,7 +20,7 @@ CBSE maths chapter approach (builders + independent re-solve). Author: `claude-o
 | Check slides | 3 + 3, all objective mcq (q002 q006 q003; q004 q009 q017) |
 | Notes | 7 sections with key terms and formulas; exam tips with mark split and 6 common mistakes |
 | Flashcards | 30 (definition 7, concept 11, example 7, formula 2, exam-tip 3) |
-| Questions | 77 items, 178 marks: mcq 20, assertion-reason 6 (keys a c d b a c), true-false 10, fill-blank 8, numerical 9 (6 × 1 mark, 3 × 2 marks), short-2 5, short-3 6, short-4 6, long-10 7 (structured (a)(b)(c), 3 + 3 + 4, 7 step marks each) |
+| Questions | 77 items, 178 marks: mcq 20, assertion-reason 6 (keys c a b d c a), true-false 10, fill-blank 8, numerical 9 (6 × 1 mark, 3 × 2 marks), short-2 5, short-3 6, short-4 6, long-10 7 (structured (a)(b)(c), 3 + 3 + 4, 7 step marks each) |
 | Difficulty | d1 20, d2 23, d3 23, d4 10, d5 1 |
 | Competency | recall 12, understanding 20, application 28, analysis 17 — application or higher 58% of items, 80% of marks (lint band 45–65%) |
 | Topics | t01 15, t02 26, t03 27, t04 29 (items may carry two or three topics) |
@@ -54,3 +54,4 @@ Set-ups, numbers and wording were chosen for this chapter (clock hand, coin on a
 - Constructions are described step by step and drawn as computed figures; the "measure" results are the values a careful $0.1$ cm drawing gives, not tolerances: a marking scheme may accept $\pm 0.1$ cm.
 - Locus regions (shading) are described and tested with points, not shaded in a figure, because the figure schema has no filled circle sector.
 - The "stadium" locus (a fixed distance from a line segment) is not covered: ICSE 2027 lists fixed distance from a line and points, and the segment case needs semicircular ends that the figure schema cannot draw.
+- **2026-11-05:** assertion-reason options reordered to the ICSE 2027 Mathematics specimen paper (511) order and wording; every key re-mapped so each item's meaning is unchanged.
