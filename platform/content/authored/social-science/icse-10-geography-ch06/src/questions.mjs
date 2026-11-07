@@ -53,8 +53,8 @@ add('equable-fill', fill({
 add('factor-ar', ar({
   a: 'Places in the northern plains are colder in winter than places at the same height in the peninsula.',
   r: 'The northern plains lie in the sub-tropical zone, farther from the Equator.',
-  key: 'a',
-  sol: 'Both are true, and R explains A (latitude) — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A (latitude) — option (c).',
   d: 2, c: 'understanding', t: [1],
 }));
 add('factor-short2', short({
@@ -143,15 +143,15 @@ add('ne-mcq', mcq({
 add('monsoon-ar', ar({
   a: 'The Konkan coast receives very heavy rain from the south-west monsoon.',
   r: 'The monsoon winds blow almost parallel to the Western Ghats.',
-  key: 'c',
-  sol: 'A is true; R is false: the winds strike the Ghats almost at right angles and rise, giving heavy rain — option (c).',
+  key: 'a',
+  sol: 'A is true; R is false: the winds strike the Ghats almost at right angles and rise, giving heavy rain — option (a).',
   d: 3, c: 'analysis', t: [3],
 }));
 add('monsoon-ar2', ar({
   a: 'Mawsynram in Meghalaya is one of the wettest places on Earth.',
   r: 'Moist winds of the Bay of Bengal branch are trapped and forced up by the funnel-shaped Khasi hills.',
-  key: 'a',
-  sol: 'Both are true, and R explains A — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A — option (c).',
   d: 2, c: 'understanding', t: [3],
 }));
 add('monsoon-tf', tf({
@@ -220,8 +220,8 @@ add('season-fill', fill({
 add('season-ar', ar({
   a: 'The Tamil Nadu coast receives little rain from the south-west monsoon.',
   r: 'It lies in the rain-shadow of the Western Ghats, and the Bay of Bengal branch blows nearly parallel to its coast.',
-  key: 'a',
-  sol: 'Both are true, and R explains A — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A — option (c).',
   d: 3, c: 'analysis', t: [4],
 }));
 add('season-short3', short({
@@ -266,8 +266,8 @@ add('wd-mcq', mcq({
 add('loo-ar', ar({
   a: 'The loo can cause heatstroke in the northern plains.',
   r: 'The loo is a hot, dry wind that blows in the afternoons of May and June.',
-  key: 'a',
-  sol: 'Both are true, and R explains A — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A — option (c).',
   d: 1, c: 'understanding', t: [5],
 }));
 add('blossom-fill', fill({
