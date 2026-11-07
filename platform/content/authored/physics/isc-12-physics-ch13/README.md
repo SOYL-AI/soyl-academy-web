@@ -57,3 +57,9 @@ Every question was re-solved from its stem. Findings and fixes:
 ## Known gaps
 - Ray diagrams asked for in answers (the mirror-formula derivation, R = 2f, apparent depth, the prisms) are described in words; graders should accept any correct sketch.
 - Narration was not yet run through TTS (stage 8); slide `audio` is null.
+
+## Competency audit 2026-11-05
+
+Follow-up to the content-verifier audit `docs/platform/content-qa/2026-11-05-competency-retag-audit.md`, which named ISC 12 Physics ch09 onwards as a lead (the handoff reports one-step items relabelled to stay under 65%). The subject-producer re-read every objective and numerical item tagged application or higher against the audit's definitions: a single formula substitution (with or without a unit conversion), or a stated rule applied directly, is **understanding**; chained relations, a non-routine step (plane vs normal, round trips, reversibility) or a new set-up keep application or analysis. Retagged application/analysis → understanding, with no text, key or solution changed: `q003` (mirror formula for v), `q038` (normal shift t(1 − 1/n)), `q050` (critical angle from two indices).
+
+Now: recall 2 · understanding 31 · application 21 · analysis 14 · evaluation 2; application or higher **37 of 70 = 52.9% of items (62% of marks)**, inside the 45–65% band. This supersedes the competency figures above. Short and long answers were not re-judged in this pass.
