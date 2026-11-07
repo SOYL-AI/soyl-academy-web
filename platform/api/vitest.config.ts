@@ -6,7 +6,9 @@ export default defineConfig({
     // One embedded PostgreSQL for the run unless TEST_DATABASE_URL is set (CI).
     globalSetup: ['@soyl/db/testing/global-setup'],
     testTimeout: 60_000,
-    hookTimeout: 180_000,
+    // seedRealContent() publishes every authored chapter in beforeAll; at ~620 chapters (2026-11-07) that exceeds
+    // 180 s on the dev machine, and the bank keeps growing toward ~2,000 chapters.
+    hookTimeout: 900_000,
     teardownTimeout: 60_000,
     env: { APP_ENV: 'test' },
     coverage: {
