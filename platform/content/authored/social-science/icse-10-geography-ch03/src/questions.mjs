@@ -71,8 +71,8 @@ add('service-fill', fill({
 add('site-ar', ar({
   a: 'Nandiwadi has grown beside the metalled road.',
   r: 'A road gives a village links for trade and travel.',
-  key: 'a',
-  sol: 'Both are true, and R explains A — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A — option (c).',
   d: 2, c: 'understanding', t: [1],
 }), () => sN.road[1] === 'metalled' && sN.road[2] < 0.15 || 'road');
 add('service-match', match({
@@ -139,8 +139,8 @@ add('occ-mcq', mcq({
 add('lu-ar', ar({
   a: 'The southern plain of the imagined sheet is mainly cultivated land.',
   r: 'The southern plain is tinted green on the sheet.',
-  key: 'c',
-  sol: 'A is true: the plain is yellow. R is false: green shows forest, not the plain — option (c).',
+  key: 'a',
+  sol: 'A is true: the plain is yellow. R is false: green shows forest, not the plain — option (a).',
   d: 2, c: 'understanding', t: [2],
 }));
 add('fallow-tf', tf({
@@ -325,15 +325,15 @@ add('pat-fill', fill({
 add('flow-ar', ar({
   a: 'Tributaries join the main river at obtuse angles pointing upstream.',
   r: 'Tributaries join the main river at acute angles pointing downstream.',
-  key: 'd',
-  sol: 'A is false. R is true — option (d).',
+  key: 'b',
+  sol: 'A is false. R is true — option (b).',
   d: 2, c: 'understanding', t: [4],
 }));
 add('pat-ar', ar({
   a: 'A radial drainage pattern forms around a dome or a conical hill.',
   r: 'A dendritic pattern looks like the branches of a tree.',
-  key: 'b',
-  sol: 'Both are true, but R describes a different pattern and does not explain A — option (b).',
+  key: 'd',
+  sol: 'Both are true, but R describes a different pattern and does not explain A — option (d).',
   d: 2, c: 'understanding', t: [4],
 }));
 add('pattern-chk', mcq({
@@ -454,8 +454,8 @@ add('set-fill', fill({
 add('settle-ar', ar({
   a: 'The huts of each village on the imagined sheet stand close together.',
   r: 'People settle near a well, a tank and a road, which gather the huts into a cluster.',
-  key: 'a',
-  sol: 'Both are true, and R explains A — option (a).',
+  key: 'c',
+  sol: 'Both are true, and R explains A — option (c).',
   d: 2, c: 'understanding', t: [5],
 }));
 add('clus-short2', short({
