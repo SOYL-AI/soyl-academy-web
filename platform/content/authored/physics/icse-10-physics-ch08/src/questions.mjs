@@ -55,8 +55,8 @@ add('nonohm-mcq', mcq({
 add('ohm-ar', ar({
   a: 'For a nichrome wire held at constant temperature, the graph of V against I is a straight line through the origin.',
   r: 'At constant temperature the resistance of the nichrome wire does not change.',
-  key: 'a',
-  sol: 'Constant R means V/I is constant, so the graph is a straight line through the origin. Both are true, and R explains A — option (a).',
+  key: 'c',
+  sol: 'Constant R means V/I is constant, so the graph is a straight line through the origin. Both are true, and R explains A — option (c).',
   d: 2, c: 'understanding', t: [1],
 }));
 add('conv-tf', tf({
@@ -176,8 +176,8 @@ add('stretch-mcq', mcq({
 add('thick-ar', ar({
   a: 'A thick copper wire has a lower resistance than a thin copper wire of the same length.',
   r: 'The resistance of a wire is inversely proportional to its length.',
-  key: 'c',
-  sol: 'A is true (R is inversely proportional to the area); R is false, since resistance is directly proportional to length — option (c).',
+  key: 'a',
+  sol: 'A is true (R is inversely proportional to the area); R is false, since resistance is directly proportional to length — option (a).',
   d: 2, c: 'analysis', t: [2],
 }));
 add('super-tf', tf({
@@ -273,15 +273,15 @@ add('intr-mcq', mcq({
 add('emf-ar', ar({
   a: 'The terminal voltage of a cell is less than its e.m.f. while the cell supplies a current.',
   r: 'Part of the e.m.f. is used in driving the current through the internal resistance of the cell.',
-  key: 'a',
-  sol: 'Both are true, and the lost volts Ir explain why V = E − Ir is smaller — option (a).',
+  key: 'c',
+  sol: 'Both are true, and the lost volts Ir explain why V = E − Ir is smaller — option (c).',
   d: 2, c: 'understanding', t: [3],
 }));
 add('emf2-ar', ar({
   a: 'The e.m.f. of a cell depends on the size of its electrodes.',
   r: 'The internal resistance of a cell depends on the area of its electrodes in contact with the electrolyte.',
-  key: 'd',
-  sol: 'A is false: the e.m.f. depends on the materials of the electrodes and the electrolyte, not on their size. R is true — option (d).',
+  key: 'b',
+  sol: 'A is false: the e.m.f. depends on the materials of the electrodes and the electrolyte, not on their size. R is true — option (b).',
   d: 3, c: 'analysis', t: [3],
 }));
 add('ir-tf', tf({
@@ -381,8 +381,8 @@ add('ratio-mcq', mcq({
 add('parb-ar', ar({
   a: 'The equivalent resistance of two resistors in parallel is less than either resistor.',
   r: 'In a parallel combination the p.d. across each resistor is the same.',
-  key: 'b',
-  sol: 'Both statements are true, but the reason Rp is smaller is that each branch adds an extra path for current (the reciprocals add), not merely that the p.d. is common — option (b).',
+  key: 'd',
+  sol: 'Both statements are true, but the reason Rp is smaller is that each branch adds an extra path for current (the reciprocals add), not merely that the p.d. is common — option (d).',
   d: 3, c: 'analysis', t: [4],
 }));
 add('series-tf', tf({

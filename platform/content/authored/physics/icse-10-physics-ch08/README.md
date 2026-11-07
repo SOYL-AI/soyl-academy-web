@@ -23,7 +23,7 @@ All items are `status: "draft"` until a reviewer approves them.
 | Type | Count | Marks |
 |---|---|---|
 | mcq | 21 | 1 (keys a 6, b 5, c 5, d 5; seeded balanced shuffle) |
-| assertion-reason | 5 | 1 (keys a c a d b) |
+| assertion-reason | 5 | 1 (keys c a c b d) |
 | true-false | 5 | 1 |
 | fill-blank | 7 | 1 (one blank each) |
 | match | 2 | 2 (four pairs, half a mark each) |
@@ -57,4 +57,4 @@ Every question and every internal-choice alternative was re-solved from its stem
 ## Known gaps
 - Narration audio is not generated (TTS stage).
 - SVGs were reviewed by coordinates, not rasterised.
-
+- **2026-11-05:** assertion-reason options reordered to the ICSE 2027 Physics specimen paper (521) order and wording; every key re-mapped so each item's meaning is unchanged.
