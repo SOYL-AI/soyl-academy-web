@@ -17,7 +17,7 @@ Hand-authored production chapter (DECISIONS D-025, D-026) in the ICSE 2027 Mathe
 | Check slides | 4 + 4, all objective (q002 mcq, q006 mcq, q036 fill-blank, q032 true-false; q015 mcq, q029 true-false, q017 mcq, q026 assertion-reason) |
 | Notes | 7 sections with key terms and formulas; exam tips with mark split and 6 common mistakes |
 | Flashcards | 28 (formula 8, concept 6, fact 6, definition 2, example 3, exam-tip 3) |
-| Questions | 68 items, 172 marks: mcq 20, assertion-reason 6 (keys a b c d b a), true-false 7, fill-blank 7, numerical 6 (2–3 marks), short-2 4, short-3 5, short-4 6, long-10 7 (structured (a)(b)(c), 3 + 3 + 4, 6–8 step marks each); figures attached to 5 questions (q052, q057, q062, q065, q068) |
+| Questions | 68 items, 172 marks: mcq 20, assertion-reason 6 (keys c d a b d c), true-false 7, fill-blank 7, numerical 6 (2–3 marks), short-2 4, short-3 5, short-4 6, long-10 7 (structured (a)(b)(c), 3 + 3 + 4, 6–8 step marks each); figures attached to 5 questions (q052, q057, q062, q065, q068) |
 | Difficulty | d1 12, d2 30, d3 23, d4 3 |
 | Competency | recall 6, understanding 23, application 32, analysis 7 — application or higher 57% of items, 81% of marks (lint band 45–65% of items) |
 | Topics | t01 18, t02 34, t03 25 (items may carry two topics) |
@@ -42,3 +42,4 @@ CBSE 10 Mathematics ch09 (Some Applications of Trigonometry) is in the bank; its
 - Difficulty is concentrated at d2–d3 (three d4 items: the ratio proof s406, the three-observer long question l04 and the two-pole long question l07); the 10-mark questions use at most two right-angled triangles, in line with the syllabus.
 - Table-based items quote the needed table values in the stem (as the ICSE paper provides tables); inverse-table reading is used twice (n04, l06).
 - `src/prop.mjs` is a copy of the ch06 rational-arithmetic helper kept only for its `Fr` class (used by `trig.mjs`).
+- **2026-11-05:** assertion-reason options reordered to the ICSE 2027 Mathematics specimen paper (511) order and wording; every key re-mapped so each item's meaning is unchanged.
