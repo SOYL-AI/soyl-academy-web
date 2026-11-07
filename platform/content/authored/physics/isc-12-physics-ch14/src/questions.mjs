@@ -23,7 +23,7 @@ add('r1r2-mcq', mcq({
   right: '31°',
   wrong: ['21°', '73°', '26°'],
   sol: r`The angles inside a prism satisfy $r_1 + r_2 = A$, so $r_2 = 52^\circ - 21^\circ = 31^\circ$. (73° adds instead of subtracting; 26° is half of A, true only at minimum deviation.) — option (@K).`,
-  d: 2, c: 'application', t: [1],
+  d: 2, c: 'understanding', t: [1],
 }), () => 52 - 21 === 31 || 'r1r2');
 add('quad-mcq', mcq({
   stem: 'The two refracting faces of a quartz prism meet at 64°. A ray crosses the prism, and the normals to the faces drawn at the points where it enters and leaves meet inside the prism. The angle between these normals, facing the base, is',
