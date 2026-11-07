@@ -20,7 +20,7 @@ CBSE maths chapter approach (builders + independent re-solve). Author: `claude-o
 | Check slides | 4 + 4, all objective (q002 mcq, q027 true-false, q004 mcq, q032 true-false; q008 mcq, q009 mcq, q011 mcq, q028 true-false) |
 | Notes | 7 sections with key terms and formulas; exam tips with mark split and 6 common mistakes |
 | Flashcards | 30 (definition 7, fact 3, concept 6, example 5, exam-tip 6, diagram 3) |
-| Questions | 67 items, 162 marks: mcq 20, assertion-reason 6 (keys a b c d a d), true-false 6, fill-blank 7, numerical 6, short-2 4, short-3 5, short-4 6, long-10 7 (structured (a)(b)(c), 3 + 3 + 4, 6–8 step marks each) |
+| Questions | 67 items, 162 marks: mcq 20, assertion-reason 6 (keys c d a b c b), true-false 6, fill-blank 7, numerical 6, short-2 4, short-3 5, short-4 6, long-10 7 (structured (a)(b)(c), 3 + 3 + 4, 6–8 step marks each) |
 | Difficulty | d1 10, d2 27, d3 27, d4 3 |
 | Competency | recall 5, understanding 22, application 27, analysis 12, evaluation 1 — application or higher 60% of items, 81% of marks (lint band 45–65% of items) |
 | Topics | t01 38, t02 50, t03 18 (items may carry two or three topics) |
@@ -61,3 +61,4 @@ paper; CISCE documents were used for pattern only. Similar shapes (several "grea
 - Narration audio not generated (TTS stage).
 - Model answers describe the required number-line graphs in words (answers carry no visuals); the stems of q011 and q066 carry number-line figures.
 - t03 has fewer items (18) than t01/t02, because most number-line work sits inside t02 structured questions tagged with both topics.
+- **2026-11-05:** assertion-reason options reordered to the ICSE 2027 Mathematics specimen paper (511) order and wording; every key re-mapped so each item's meaning is unchanged.
