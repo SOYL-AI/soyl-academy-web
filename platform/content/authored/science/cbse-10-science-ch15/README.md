@@ -40,7 +40,7 @@ All items are `status: "draft"` until a reviewer approves them.
 
 - **Contract v2:** `passage_origin: "soyl-original"` on every passage; `word_limit` on the 13 prose short/long items, left off classification and list answers.
 - **Difficulty:** d1 8 · d2 20 · d3 29 · d4 7.
-- **Competency:** recall 8 · understanding 26 · application 21 · analysis 8 · evaluation 1. Application or higher is **47% of items (48% of marks)**.
+- **Competency:** recall 8 · understanding 26 · application 21 · analysis 8 · evaluation 1. Application or higher is **47% of items (48% of marks)** (superseded: see Competency audit 2026-11-05).
 - **Topic tags:** t01 14 · t02 22 · t03 20 · t04 15.
 - **Cases:** a four-year grasshopper survey near Jodhpur during a drought (80% brown in year 4; evaluation of "they turned brown to hide"); an island cut off by rising sea with about 30 founding rats (drift, reproductive isolation, selection for size); a museum skeleton visit in Kolkata (homologous vs analogous; evaluation of "bats are related to butterflies"); fossil layers in a Kutch cliff with carbon-14 at one-half (≈ 5730 years; why carbon-14 cannot date ammonites); a vegetable market in Shimla (artificial vs natural selection; evaluation of an argument from artificial selection).
 - **Deck checks:** q006, q015, q020 (Part 1); q032, q033, q052 (Part 2) — all objective.
@@ -82,3 +82,13 @@ Every item, case part and alternative was re-solved from its stem; no key was wr
 ## Competency audit by assessment-designer (2026-10-27)
 
 Re-read against the rule used for CBSE 10 Maths (D-035 context): a routine, textbook-standard step on given data — a one-step formula numerical, a balanced equation, an electron-dot structure, a named part or a value read off a table — is **understanding**; applying ideas to new situations, interpreting data, explaining observations, analysis and evaluation keep their tags. 2 item tag(s) and 3 case/source-part tag(s) changed to understanding (case items whose parts are now mostly recall/understanding carry `understanding` at the top level). No question text, key, solution or marking scheme changed. Now: recall 8, understanding 28, application 19, analysis 8, evaluation 1 — application or higher 44% of items, 43% of marks (supersedes the competency figures above).
+
+## Competency audit 2026-11-05
+
+Audit reference: `docs/platform/content-qa/2026-11-05-competency-retag-audit.md`. After the downward audit above the chapter stood at 28/64 (43.8%) at application or higher, below the 45% floor. No retags were needed. Three 1-mark true-false items (none in the frozen series or `tests.json`) were rewritten in `src/questions.mjs` into genuine application items, each judging a claim against an imagined result; keys (f, f, f), marks, topics and test use are unchanged, difficulty rose from 2 to 3:
+
+- q_cbse10sci_ch15_006 (`acquired-tf`): judge whether pups of trained rats that run no faster support inheritance of learnt skills.
+- q_cbse10sci_ch15_022 (`species-tf`): decide from lab interbreeding results whether two visibly different, separated frog groups are separate species.
+- q_cbse10sci_ch15_053 (`progress-tf`): judge whether eye loss in cave fish is "evolution going backwards" using cost and benefit of eyes in the dark.
+
+Now: recall 8, understanding 25, application 22, analysis 8, evaluation 1 — application or higher 31 of 64 items (48.4%) and 45% of marks. Build run twice: 0 validator errors/warnings, lint 0/0, 9/9 re-solves, release.json and tests.json byte-identical between runs.

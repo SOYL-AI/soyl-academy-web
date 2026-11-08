@@ -56,14 +56,14 @@ add('hwfreq-mcq', mcq({
   right: '40 Hz',
   wrong: ['20 Hz', '80 Hz', 'zero, since the output is direct'],
   sol: 'A half-wave rectifier passes one positive half-cycle in each cycle of the input, so it gives one output pulse per input cycle: the pulses repeat at the input frequency, 40 Hz — option (@K). The output is unidirectional but not steady, so its frequency is not zero.',
-  d: 2, c: 'application', t: [4],
+  d: 2, c: 'understanding', t: [4],
 }));
 add('fwfreq-mcq', mcq({
   stem: 'The two-diode full-wave rectifier of a bench supply is driven from the same 40 Hz source. The frequency of the ripple in its unfiltered output is',
   right: '80 Hz',
   wrong: ['40 Hz', '20 Hz', '160 Hz'],
   sol: 'Each input cycle has two half-cycles, and the two diodes take them in turn, so the load receives two pulses per input cycle: 2 × 40 = 80 Hz — option (@K).',
-  d: 2, c: 'application', t: [4],
+  d: 2, c: 'understanding', t: [4],
 }));
 add('ct-mcq', mcq({
   stem: 'In the two-diode full-wave rectifier, the centre tap of the transformer secondary is needed to',
@@ -91,7 +91,7 @@ add('reversed-mcq', mcq({
   right: 'pulses of opposite polarity, formed from the negative half-cycles of the input',
   wrong: ['zero, since the diode now blocks both half-cycles', 'the same as before, since the transformer supplies alternating current', 'an alternating voltage of the same size as the input'],
   sol: 'A diode conducts when its anode is positive with respect to its cathode. Reversed, it now conducts in the half-cycles for which the secondary terminal is negative, so the load receives the negative half-cycles as unidirectional pulses, with the opposite polarity — option (@K).',
-  d: 2, c: 'application', t: [4],
+  d: 2, c: 'understanding', t: [4],
 }));
 add('unfiltered-tf', tf({
   stem: 'The output of a rectifier that has no filter is a steady direct voltage with no variation.',
@@ -234,7 +234,7 @@ add('ledcolour-mcq', mcq({
   right: 'The semiconductor of the blue LED has the larger forbidden gap, because each blue photon carries more energy than a red one',
   wrong: ['The semiconductor of the blue LED has the smaller forbidden gap, because blue light has the shorter wavelength', 'Both semiconductors have the same gap; the colour comes only from the tint of the plastic case', 'The blue LED needs the smaller forward voltage, because its photons carry less energy'],
   sol: r`The photon energy is about the band gap, $E = \dfrac{hc}{\lambda}$. Blue light has the shorter wavelength, so a larger photon energy (about 2.7 eV against about 1.9 eV for red), which needs a larger gap — and a larger forward voltage — option (@K).`,
-  d: 3, c: 'application', t: [5],
+  d: 3, c: 'understanding', t: [5],
 }), () => photonEv(460) > photonEv(650) || 'ledcolour');
 add('pd-mcq', mcq({
   stem: 'A photodiode used as a light detector is operated in reverse bias because',
@@ -304,7 +304,7 @@ add('egblue-num', num({
   value: Number(dec(eb.Eg, 2)), tol: 0.03, unit: 'eV',
   sol: r`$E_g \approx \dfrac{hc}{\lambda} = \dfrac{1240}{460} = ${dec(eb.Eg, 3)}$ eV $\approx ${dec(eb.Eg, 2)}$ eV.`,
   scheme: [['Eg ≈ hc/λ = 1240/460 = 2.7 eV', 1]],
-  d: 2, c: 'application', t: [5],
+  d: 2, c: 'understanding', t: [5],
 }), (q) => near((6.626e-34 * 2.998e8) / (460e-9) / 1.602e-19, q.answer.value, 0.02) || 'egblue');
 const ph = { P: 3.0e-3, nm: 620 };
 ph.E = photonEv(ph.nm);

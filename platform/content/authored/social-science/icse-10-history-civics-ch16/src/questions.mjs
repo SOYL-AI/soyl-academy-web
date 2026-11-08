@@ -217,10 +217,10 @@ Q("m_japan_leaves", mcq({
   sol: "Japan walked out of the League in 1933 and kept Manchuria. The League could only condemn; it had no army, which exposed its weakness.",
 }));
 Q("m_china_1937", mcq({
-  t: 2, d: 3, c: "application",
-  stem: "An imagined newspaper of 1937 reports that the power which had seized a north-eastern province of China six years earlier has now launched a full-scale war on the whole of China. Which power and which province are meant?",
-  opts: ["Japan; Manchuria", "Italy; Abyssinia", "Germany; the Rhineland", "The USSR; Poland"],
-  sol: "Japan seized Manchuria in 1931 and began its full-scale war on China in 1937, six years later. The other pairs are aggressions in Africa or Europe.",
+  t: 2, d: 4, c: "analysis",
+  stem: "An imagined chronology reads: 1931, Japan seizes Manchuria; the League condemns it; 1933, Japan leaves the League and keeps Manchuria; 1937, Japan begins a full-scale war on the rest of China. A student writes that the League's condemnation of 1933 caused the war of 1937. Which statement is best supported by the chronology?",
+  opts: ["Japan paid no real price for keeping Manchuria, which made further expansion look safe; the chronology suggests encouragement, not a cause proved by the condemnation", "The condemnation itself provoked the war, since Japan attacked China in order to answer the League", "The war began because the League had imposed strict sanctions on Japan in 1933, which Japan resisted", "The war shows that the League had defeated Japan in Manchuria and Japan wished to take revenge"],
+  sol: "The League condemned Japan but did nothing effective, and Japan left it and kept Manchuria; that failure encouraged later aggression, though the chronology alone does not prove a single cause. The League imposed no sanctions on Japan and never defeated it, and a condemnation is not itself an act that provokes war.",
 }));
 Q("m_abyssinia", mcq({
   t: 2, d: 2, c: "understanding",
@@ -332,10 +332,10 @@ Q("m_hiroshima_date", mcq({
   sol: "The USA dropped atomic bombs on Hiroshima on 6 August 1945 and on Nagasaki on 9 August 1945, three days apart.",
 }));
 Q("m_atomic_result", mcq({
-  t: 3, d: 3, c: "application",
-  stem: "An imagined Indian soldier serving in Burma writes home in late August 1945 that the fighting in Asia has suddenly stopped, only days after two enemy cities were destroyed by a new kind of bomb. What had happened?",
-  opts: ["Japan announced its surrender, ending the war in Asia", "Germany surrendered for the first time", "The USA left the war", "The League of Nations was founded"],
-  sol: "Japan announced its surrender in August 1945 and signed it in early September. Germany had already surrendered in May 1945, and the League dated from 1920.",
+  t: 3, d: 4, c: "application",
+  stem: "An imagined Indian soldier serving in Burma writes home in late August 1945 that fighting in Asia has suddenly stopped, days after two cities were destroyed by a new kind of bomb. His friend says: 'So the bombs ended the whole Second World War.' Which correction is best?",
+  opts: ["The war in Europe had already ended with Germany's surrender in May, so the bombs can be linked only to the end of the war in Asia", "Nothing needs correcting, because Germany surrendered in the same week as Japan", "The bombs ended the war in Europe only, because Japan fought on until the United Nations was founded in October", "Nothing needs correcting, because the surrender of Japan ended the war in Europe too, as Germany's ally"],
+  sol: "Germany surrendered in May 1945, three months before the bombs, so the war in Europe was already over. Japan announced its surrender in August and signed in early September, which ended the war in Asia. Germany did not surrender in August, and the UN's founding in October 1945 came after Japan's surrender.",
 }));
 Q("ar_pearl", ar({
   t: 3, d: 3, c: "analysis", verdict: "both-true-explains",
@@ -365,10 +365,10 @@ Q("s_atomic_two", short({
 
 // ================================================================ t04 Consequences
 Q("m_germany_surrender", mcq({
-  t: 4, d: 3, c: "application",
-  stem: "An imagined London diary entry of May 1945 records crowds celebrating in the streets because the war in Europe is over, although fighting still goes on in Asia. What event are they celebrating?",
-  opts: ["The unconditional surrender of Germany", "The surrender of Japan", "The attack on Pearl Harbour", "The founding of the United Nations"],
-  sol: "Germany surrendered unconditionally in May 1945, ending the war in Europe. Japan surrendered only in August–September 1945, and the United Nations came into existence in October 1945.",
+  t: 4, d: 4, c: "application",
+  stem: "An imagined London diary entry of May 1945 records crowds celebrating that the war in Europe is over, while the writer's brother is still fighting in Asia. Which of these statements could the diarist NOT truthfully have written that month?",
+  opts: ["Japan has surrendered after the atomic bombs", "Germany has surrendered and the war in Europe is over", "The USA has been at war for more than three years", "Japan is still fighting in Asia and the Pacific"],
+  sol: "The atomic bombs were dropped in August 1945, and Japan surrendered after them, so a diarist writing in May could not have known of either. Germany had surrendered in May, the USA had been at war since December 1941, and Japan was still fighting.",
 }));
 Q("m_un_date", mcq({
   t: 4, d: 1, c: "recall",
@@ -430,28 +430,28 @@ Q("m_nato_meaning", mcq({
   sol: "The North Atlantic Treaty Organisation (1949) joined the USA, Canada and western European countries, promising to defend one another. The Warsaw Pact was the Soviet-led alliance.",
 }));
 Q("m_warsaw_year", mcq({
-  t: 5, d: 3, c: "application",
+  t: 5, d: 3, c: "recall",
   stem: "An imagined factory newsletter from Poland in 1955 announces that the country has joined a new military alliance led by the Soviet Union and signed in the Polish capital. Which alliance is meant?",
   opts: ["The Warsaw Pact", "NATO", "The Rome-Berlin Axis", "The League of Nations"],
   sol: "The Warsaw Pact of 1955, named after the Polish capital, joined the USSR and the communist states of eastern Europe. NATO was the western alliance.",
 }));
 Q("m_nato_year", mcq({
-  t: 5, d: 3, c: "application",
+  t: 5, d: 3, c: "recall",
   stem: "An imagined Canadian sailor writes in 1950 that his country joined, the year before, an alliance with the USA and western Europe in which an attack on one member is treated as an attack on all. Which alliance is it?",
   opts: ["The North Atlantic Treaty Organisation", "The Warsaw Pact", "The Rome-Berlin Axis", "The Triple Entente"],
   sol: "NATO was formed in April 1949 by the USA, Canada and western European countries for mutual defence. The Warsaw Pact was the Soviet-led alliance of 1955.",
 }));
 Q("m_app_pact_cartoon", mcq({
-  t: 2, d: 3, c: "application",
-  stem: "An imagined cartoon of late August 1939 shows two dictators who had long attacked each other in speeches now shaking hands over a map of the country lying between them. What does the cartoon show?",
-  opts: ["The Nazi-Soviet Non-Aggression Pact, which left Poland exposed", "The Munich Agreement over the Sudetenland", "The Rome-Berlin Axis between Italy and Germany", "The formation of NATO"],
-  sol: "Germany and the USSR, long hostile, signed the Non-Aggression Pact on 23 August 1939; Poland lay between them and was invaded on 1 September. Munich (1938) and the Axis (1936) came earlier.",
+  t: 2, d: 4, c: "analysis",
+  stem: "An imagined cartoon of late August 1939 shows two dictators who had long attacked each other in speeches shaking hands over a map of the country lying between them. A student says: 'The handshake proves that Germany and the USSR had become lasting friends.' Which reply is best supported by what happened next?",
+  opts: ["It was a convenience: it protected Germany's eastern side while it attacked Poland, and Germany itself invaded the USSR in 1941", "The student is right, because the two states fought side by side against Britain until 1945", "The student is right, because the pact made the USSR a member of the Axis with Italy and Japan", "The student is wrong, because the pact was signed to stop Germany attacking Poland"],
+  sol: "The Non-Aggression Pact of 23 August 1939 freed Hitler from a war on two fronts when he invaded Poland on 1 September, but it did not end the hostility: Germany invaded the USSR in 1941, and the USSR then fought on the Allied side. It never joined the Axis, and it did not prevent the attack on Poland.",
 }));
 Q("m_app_aid_offers", mcq({
-  t: 5, d: 3, c: "application",
-  stem: "In an imagined case of 1956, a newly independent country receives offers of loans and weapons from both superpowers, each hoping to win it as a friend. Which feature of the Cold War does this show?",
-  opts: ["Competition between the two blocs for allies and influence", "Appeasement of an aggressor", "Collective security under the League", "The policy of Anschluss"],
-  sol: "Both superpowers used aid and arms to win friends among new nations; this competition for influence was a key feature of the Cold War.",
+  t: 5, d: 4, c: "understanding",
+  stem: "In an imagined case of 1956, a newly independent country receives offers of loans and weapons from both superpowers. Its leaders fear that taking arms from one will make the other treat it as an opponent. Which course would best protect its independence?",
+  opts: ["Stay outside both military alliances and accept help from either on its own terms (non-alignment)", "Join the alliance of the superpower that offered the larger loan", "Join both alliances at once, so that neither superpower can object", "Refuse all foreign help permanently, whatever the cost to its development"],
+  sol: "Staying outside both blocs, while dealing with both on its own terms, keeps the country free of obligations to either superpower. Joining one bloc invites the opposition of the other, the two alliances were rivals and could not both be joined, and refusing all help would ignore the country's need for development.",
 }));
 Q("s_app_sanctions_letter", short({
   t: 2, d: 3, c: "application", marks: 2, wl: S2,
@@ -593,40 +593,40 @@ Q("sb_geneva_lecture", source({
 
 // ================================================================ application items (imagined scenarios)
 Q("m_app_poster", mcq({
-  t: 1, d: 3, c: "application",
-  stem: "An imagined German poster of 1936 shows soldiers crossing a bridge over a great western river, with the words 'our own land again'. Which event does it celebrate?",
-  opts: ["The remilitarisation of the Rhineland", "The invasion of Poland", "The Munich Agreement", "The attack on Pearl Harbour"],
-  sol: "German troops entered the demilitarised Rhineland in 1936, breaking the Treaty of Versailles. Poland, Munich and Pearl Harbour came later.",
+  t: 1, d: 4, c: "analysis",
+  stem: "An imagined German poster of 1936 shows soldiers crossing a bridge over a great western river, with the words 'our own land again'. A student says the poster shows Germany recovering territory that the Treaty of Versailles had taken away. Which correction is best?",
+  opts: ["The Rhineland had stayed German; the treaty only banned troops there, so the poster describes the breaking of a restriction as if it were a recovery of land", "The student is right, because the treaty had handed the Rhineland to France", "The student is right, because the treaty had placed the Rhineland under League of Nations rule, as it did with the Saar", "The student is wrong, because the poster must show the Anschluss of 1938"],
+  sol: "The Rhineland remained part of Germany; the treaty demilitarised it, so German troops entering in March 1936 broke a restriction and did not regain lost land. It was not given to France, the Saar (not the Rhineland) was placed under the League for a time, and the Anschluss concerned Austria.",
 }));
 Q("m_app_radio", mcq({
-  t: 2, d: 3, c: "application",
-  stem: "An imagined radio broadcast in London on a Sunday morning in September 1939 tells listeners that the country is now at war because a promise to an eastern European ally has been broken. Which ally is meant?",
-  opts: ["Poland", "Czechoslovakia", "Austria", "Abyssinia"],
-  sol: "Britain declared war on 3 September 1939 because Germany had invaded Poland, whose independence Britain had guaranteed.",
+  t: 2, d: 4, c: "analysis",
+  stem: "An imagined radio broadcast in London on a Sunday morning in September 1939 says the country is at war because a promise to an eastern European ally has been broken. A listener asks why Britain went to war over Poland in 1939 but had not done so over Austria in 1938. Which explanation fits best?",
+  opts: ["After March 1939 Britain and France had given Poland a guarantee, so an attack on it broke a promise; they had made no such promise to Austria", "The Treaty of Versailles had created Poland, so Britain was bound by that treaty to defend it", "Poland was a member of the League of Nations, whereas Austria was not", "Germany had left the League of Nations in 1933, so any later attack automatically meant war"],
+  sol: "Britain and France guaranteed Poland's independence in March 1939, after Germany occupied the rest of Czechoslovakia; Hitler's attack on 1 September broke that guarantee and they declared war on 3 September. Poland did owe its re-creation to the 1919 settlement, but that created no duty to defend it. Austria was a League member too, and leaving the League did not bring war.",
 }));
 Q("m_app_map", mcq({
-  t: 1, d: 3, c: "application",
-  stem: "A student's imagined sketch map of Europe in 1938 shades Austria in the same colour as Germany. Which event does the shading show?",
-  opts: ["The Anschluss of March 1938", "The Munich Agreement over the Sudetenland", "The Nazi-Soviet Pact", "The formation of NATO"],
-  sol: "Austria joined to Germany shows the Anschluss of March 1938. Munich concerned the Sudetenland of Czechoslovakia.",
+  t: 1, d: 4, c: "understanding",
+  stem: "A student's imagined sketch map of Europe in 1938 shades Austria in the same colour as Germany, and the student writes beneath it: 'Germany conquered Austria in a war.' Which correction fits the facts?",
+  opts: ["Austria was joined to Germany in March 1938 without a war, by the Anschluss, which broke the Versailles ban on such a union and met no armed response from Britain or France", "Austria was handed to Germany by the Munich Agreement in September 1938", "Austria was joined to Germany after the League of Nations voted for the union", "Austria was conquered in 1939 in the same campaign as Poland"],
+  sol: "German troops entered Austria in March 1938 and it was declared part of Germany; there was no war, and the union broke the ban in the treaties of 1919 while Britain and France protested but took no military action. Munich in September 1938 concerned the Sudetenland. The League never approved the union, and Poland was invaded in 1939, not Austria.",
 }));
 Q("m_app_sanctions", mcq({
-  t: 2, d: 3, c: "application",
-  stem: "An imagined shipping clerk in 1936 notes that oil tankers are still sailing to an Italian port even though Italy is under League sanctions. What does this show about the League's response to the Abyssinian crisis?",
-  opts: ["The sanctions left out vital goods such as oil and were too weak to stop Italy", "The League had forbidden all trade with Italy", "The League had sent its army to Abyssinia", "Italy had left the war"],
-  sol: "Oil was not included in the sanctions, so Italy could continue its war. The League had no army.",
+  t: 2, d: 4, c: "analysis",
+  stem: "An imagined shipping clerk in 1936 notes that oil tankers are still sailing to an Italian port although Italy is under League sanctions. A historian claims: 'Had the League simply added oil to its list, Italy's campaign would have been stopped.' Which qualification is soundest?",
+  opts: ["An oil ban could have hampered Italy, but only if the main oil suppliers, including countries outside the League such as the USA, also stopped selling", "No qualification is needed, since Italy produced no oil and the League members supplied all of it", "An oil ban would have made no difference, because Italy produced all the oil it needed", "An oil ban would have forced the League to send its own army, which would have ended the war at once"],
+  sol: "Oil was left out of the sanctions, but a ban could work only if the major suppliers, including non-members such as the USA, joined it; otherwise Italy could buy elsewhere. Italy imported most of its oil, and the League had no army of its own.",
 }));
 Q("m_app_arms", mcq({
-  t: 5, d: 3, c: "application",
-  stem: "An imagined news report of 1953 says that each of two rival powers has tested a more powerful bomb, and that each fears falling behind the other. Which feature of the Cold War does this show?",
-  opts: ["The arms race", "Appeasement", "Collective security", "The Anschluss"],
-  sol: "Competing to build ever more powerful weapons was the arms race, a central feature of the Cold War.",
+  t: 5, d: 4, c: "analysis",
+  stem: "An imagined news report of 1953 says that each of two rival powers has tested a more powerful bomb, and that each fears falling behind the other. A student concludes: 'So a direct full-scale war between them is now certain.' Which reply is best?",
+  opts: ["Overstated: the race raised fear and rivalry, but the terrible power of the weapons made direct war risky for both, and the Cold War was carried on through rivalry and alliances", "Correct: the Cold War was itself a direct full-scale war fought between their armies from 1945", "Mistaken: only one of the two powers was building bombs, so there was no race", "Mistaken: the race had already ended when NATO was formed in 1949"],
+  sol: "Competing to build ever stronger weapons was the arms race, which deepened mistrust, but the Cold War stayed a rivalry without a direct full-scale war between the USA and the USSR. Both were building weapons, and the race continued well after 1949.",
 }));
 Q("m_app_un_choice", mcq({
-  t: 4, d: 3, c: "application",
-  stem: "In an imagined school debate in 1946, a student argues that the world needs a stronger body than the one that failed in the 1930s. Which organisation, just founded, is she supporting?",
-  opts: ["The United Nations", "The League of Nations", "The Warsaw Pact", "The Rome-Berlin Axis"],
-  sol: "The United Nations, founded on 24 October 1945, replaced the League of Nations, which had failed to prevent the war.",
+  t: 4, d: 4, c: "application",
+  stem: "In an imagined school debate in 1946, a student says a new world body will not succeed merely because it is new. Using the League's record in the 1930s, which condition for success is best supported?",
+  opts: ["Its leading members must be ready to back its decisions with real action, since the League had no army and its sanctions were weakly enforced", "It must hold its meetings at Geneva, as the League did", "It must rely on condemning aggressors, as the League had done successfully over Manchuria", "It must admit only states that have never broken a treaty"],
+  sol: "The League failed over Manchuria and Abyssinia because it had no army of its own and its leading members would not enforce sanctions firmly, so a new body needs members ready to act. The League's home at Geneva was not the cause of failure, its condemnation of Japan did not succeed, and a rule excluding all treaty-breakers is not suggested by that record.",
 }));
 Q("s_app_wrong_claim", short({
   t: [1, 2], d: 3, c: "application", marks: 2, wl: S2,

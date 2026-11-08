@@ -67,18 +67,19 @@ add('satcount-num', num({
   value: Number(dec(sc.n / 1e13, 2)), tol: 0.05, unit: null,
   sol: r`At saturation every emitted electron is collected: $n = \dfrac{I}{e} = \dfrac{4.8 \times 10^{-6}}{1.6 \times 10^{-19}} = 3.0 \times 10^{13}$ per second, so $\dfrac{n}{10^{13}} = 3.0$.`,
   scheme: [['n = I/e = 3.0 × 10¹³ per second', 1]],
-  d: 2, c: 'application', t: [1],
+  d: 2, c: 'understanding', t: [1],
 }), (q) => near(q.answer.value * 1e13 * 1.6e-19, 4.8e-6) || `sc ${sc.n}`);
-const sp = { V0: 0.91 };
-sp.KJ = sp.V0 * QE;
+const sp = { lam: 300, W: 2.5 };
+sp.K = HC / sp.lam - sp.W;
+sp.KJ = sp.K * QE;
 sp.v = Math.sqrt((2 * sp.KJ) / ME);
 add('speed-num', num({
-  stem: 'The fastest photoelectrons from a barium emitter are just stopped when the collector is 0.91 V below the emitter. Find their speed, in units of 10⁵ m s⁻¹ (3 significant figures). (mₑ = 9.1 × 10⁻³¹ kg, e = 1.6 × 10⁻¹⁹ C.)',
+  stem: 'Ultraviolet light of wavelength 300 nm falls on a barium emitter, whose work function is 2.5 eV. Find the speed of the fastest photoelectrons, in units of 10⁵ m s⁻¹ (3 significant figures). (hc = 1237.5 eV nm, mₑ = 9.1 × 10⁻³¹ kg, e = 1.6 × 10⁻¹⁹ C.)',
   value: Number(dec(sp.v / 1e5, 3)), tol: 0.02, unit: null,
-  sol: r`$K_{\max} = eV_0 = 1.6 \times 10^{-19} \times 0.91 = 1.456 \times 10^{-19}$ J. $v_{\max} = \sqrt{\dfrac{2K_{\max}}{m}} = \sqrt{\dfrac{2 \times 1.456 \times 10^{-19}}{9.1 \times 10^{-31}}} = \sqrt{3.2 \times 10^{11}} \approx ${sci(sp.v, 3)}$ m s⁻¹, so $\dfrac{v_{\max}}{10^{5}\ \text{m s}^{-1}} = 5.66$.`,
-  scheme: [['K_max = eV₀ = 1.456 × 10⁻¹⁹ J', 1], ['v = √(2K/m) = 5.66 × 10⁵ m s⁻¹', 1]],
-  marks: 2, d: 2, c: 'application', t: [1, 2],
-}), (q) => near(0.5 * ME * (q.answer.value * 1e5) ** 2, 0.91 * QE, 0.005) && q.answer.value === 5.66 || `sp ${sp.v}`);
+  sol: r`The photon energy is $\dfrac{hc}{\lambda} = \dfrac{1237.5}{300} = 4.125$ eV, so $K_{\max} = 4.125 - 2.5 = 1.625$ eV $= 1.625 \times 1.6 \times 10^{-19} = 2.60 \times 10^{-19}$ J. Then $v_{\max} = \sqrt{\dfrac{2K_{\max}}{m}} = \sqrt{\dfrac{2 \times 2.60 \times 10^{-19}}{9.1 \times 10^{-31}}} \approx ${sci(sp.v, 3)}$ m s⁻¹, so $\dfrac{v_{\max}}{10^{5}\ \text{m s}^{-1}} = 7.56$.`,
+  scheme: [['K_max = hc/λ − W₀ = 1.625 eV = 2.60 × 10⁻¹⁹ J', 1], ['v = √(2K/m) = 7.56 × 10⁵ m s⁻¹', 1]],
+  marks: 2, d: 3, c: 'application', t: [1, 2],
+}), (q) => near(0.5 * ME * (q.answer.value * 1e5) ** 2, EJ(300) - 2.5 * QE, 0.005) && q.answer.value === 7.56 || `sp ${sp.v}`);
 const tl = { P: 1.0, rr: 3.0, A: 2.0e-20, W: 3.0 };
 tl.I = tl.P / (4 * Math.PI * tl.rr ** 2);
 tl.p = tl.I * tl.A;
@@ -138,12 +139,12 @@ add('lenard-long', long({
 const uv = { lam: 375 };
 uv.E = photonEV(uv.lam);
 add('e375-mcq', mcq({
-  stem: `An ultraviolet LED used to check banknotes emits light of wavelength 375 nm. Each of its photons carries an energy of about ${CONSTS}`,
-  right: '3.3 eV',
-  wrong: ['5.3 eV', '0.33 eV', '2.2 eV'],
-  sol: r`$E = \dfrac{hc}{\lambda} = \dfrac{6.6 \times 10^{-34} \times 3 \times 10^{8}}{375 \times 10^{-9}} = 5.28 \times 10^{-19}$ J, which is $\dfrac{5.28 \times 10^{-19}}{1.6 \times 10^{-19}} = 3.3$ eV — option (@K). (5.3 is the energy in units of 10⁻¹⁹ J, not in eV.)`,
-  d: 1, c: 'application', t: [2],
-}), () => near(EJ(375) / QE, 3.3) || `uv ${uv.E}`);
+  stem: `An ultraviolet LED used to check banknotes emits 2.0 mW of light of wavelength 375 nm. The number of photons it emits each second is about ${CONSTS}`,
+  right: '3.8 × 10¹⁵',
+  wrong: ['3.8 × 10¹⁸', '2.6 × 10⁻¹⁶', '6.1 × 10⁻⁴'],
+  sol: r`Each photon carries $E = \dfrac{hc}{\lambda} = \dfrac{6.6 \times 10^{-34} \times 3 \times 10^{8}}{375 \times 10^{-9}} = 5.28 \times 10^{-19}$ J. Photons per second $= \dfrac{P}{E} = \dfrac{2.0 \times 10^{-3}}{5.28 \times 10^{-19}} = 3.8 \times 10^{15}$ — option (@K). Taking 2.0 mW as 2.0 W gives 3.8 × 10¹⁸; dividing the other way round gives 2.6 × 10⁻¹⁶; dividing the power by the energy in eV (3.3) gives 6.1 × 10⁻⁴.`,
+  d: 2, c: 'application', t: [2],
+}), () => near(2e-3 / EJ(375), 3.788e15, 0.002) && near(2 / EJ(375), 3.788e18, 0.002) && near(EJ(375) / 2e-3, 2.64e-16, 0.002) && near(2e-3 / 3.3, 6.06e-4, 0.002) || `uv ${uv.E}`);
 const gr = { lam: 540 };
 gr.E = photonEV(gr.lam);
 add('green-mcq', mcq({
@@ -174,15 +175,17 @@ add('twometals-mcq', mcq({
   sol: 'K_max = hf − W₀: the slope h is the same for every metal, so the lines are parallel; the threshold f₀ = W₀/h doubles when W₀ doubles — option (@K).',
   d: 2, c: 'understanding', t: [2, 3],
 }), () => near(thresholdF(5) / thresholdF(2.5), 2) || 'tm');
-const st = { W: 2.6 };
-st.lam0 = thresholdLam(st.W);
+const st = { f1: 8.0e14, V1: 0.80, f2: 1.2e15, V2: 2.45 };
+st.slope = (st.V2 - st.V1) / (st.f2 - st.f1);
+st.f0 = st.f1 - st.V1 / st.slope;
+st.lam0 = (CL / st.f0) * 1e9;
 add('lam0-num', num({
-  stem: `The work function of strontium is 2.6 eV. Find its threshold wavelength, in nm (3 significant figures). ${CONSTS}`,
-  value: Number(dec(st.lam0, 3)), tol: 1, unit: 'nm',
-  sol: r`$hc = 6.6 \times 10^{-34} \times 3 \times 10^{8} = 1.98 \times 10^{-25}$ J m and $W_0 = 2.6 \times 1.6 \times 10^{-19} = 4.16 \times 10^{-19}$ J, so $\lambda_0 = \dfrac{hc}{W_0} = \dfrac{1.98 \times 10^{-25}}{4.16 \times 10^{-19}} \approx 4.76 \times 10^{-7}$ m, that is $\lambda_0 = ${dec(st.lam0, 3)}$ nm.`,
-  scheme: [['λ₀ = hc/W₀ with W₀ in joules', 1], ['λ₀ = 476 nm', 1]],
-  marks: 2, d: 2, c: 'application', t: [2],
-}), (q) => near(EJ(q.answer.value), 2.6 * QE, 0.002) || `st ${st.lam0}`);
+  stem: 'A student measures the stopping potential of a photocell for two frequencies of light: 0.80 V for 8.0 × 10¹⁴ Hz and 2.45 V for 1.2 × 10¹⁵ Hz. Using only these two readings, find the threshold wavelength of the emitter, in nm (3 significant figures). (c = 3 × 10⁸ m s⁻¹.)',
+  value: Number(dec(st.lam0, 3)), tol: 2, unit: 'nm',
+  sol: r`Einstein’s equation gives a straight line $V_0 = \dfrac{h}{e}(f - f_0)$, so the slope is $\dfrac{2.45 - 0.80}{1.2 \times 10^{15} - 8.0 \times 10^{14}} = 4.125 \times 10^{-15}$ V s (this is $h/e$). The line reaches $V_0 = 0$ at the threshold: $f_0 = f_1 - \dfrac{V_1}{\text{slope}} = 8.0 \times 10^{14} - \dfrac{0.80}{4.125 \times 10^{-15}} = 6.06 \times 10^{14}$ Hz. Then $\lambda_0 = \dfrac{c}{f_0} = \dfrac{3 \times 10^{8}}{6.06 \times 10^{14}} \approx 4.95 \times 10^{-7}$ m, that is $\lambda_0 = ${dec(st.lam0, 3)}$ nm.`,
+  scheme: [['slope = ΔV₀/Δf = 4.125 × 10⁻¹⁵ V s; f₀ = f₁ − V₁/slope = 6.06 × 10¹⁴ Hz', 1], ['λ₀ = c/f₀ = 495 nm', 1]],
+  marks: 2, d: 3, c: 'application', t: [2],
+}), (q) => near(st.slope * QE, 6.6e-34, 0.001) && near(EJ(q.answer.value), 2.5 * QE, 0.005) && q.answer.value === 495 || `st ${st.lam0}`);
 const tg = { W: 4.5 };
 tg.f0 = thresholdF(tg.W);
 add('f0-num', num({
@@ -399,12 +402,12 @@ add('force-num', num({
   marks: 2, d: 3, c: 'analysis', t: [3],
 }), (q) => { const lam = 532e-9; const N = 3.0 / ((H * CL) / lam); return near(N * (H / lam), q.answer.value * 1e-8) || `fo ${fo.F}`; });
 add('pratio-mcq', mcq({
-  stem: 'A photon of X-rays of wavelength 0.11 nm is compared with a photon of green light of wavelength 550 nm. The ratio of the momentum of the X-ray photon to that of the green-light photon is',
-  right: '5000',
-  wrong: ['0.0002', '71', '1'],
-  sol: 'p = h/λ, so the ratio is λ(green)/λ(X-ray) = 550/0.11 = 5000 — option (@K). 0.0002 is the inverse ratio and 71 its square root; photons do not all have the same momentum.',
-  d: 2, c: 'application', t: [3],
-}), () => near(H / 0.11e-9 / (H / 550e-9), 5000) || 'pr');
+  stem: 'An electron and an X-ray photon have the same wavelength, 0.11 nm. The kinetic energy of the electron divided by the energy of the photon is about (h = 6.6 × 10⁻³⁴ J s, c = 3 × 10⁸ m s⁻¹, mₑ = 9.1 × 10⁻³¹ kg)',
+  right: '1.1 × 10⁻²',
+  wrong: ['2.2 × 10⁻²', '91', '1.0'],
+  sol: r`Same wavelength means the same momentum $p = \dfrac{h}{\lambda}$. The electron’s kinetic energy is $\dfrac{p^2}{2m} = \dfrac{h^2}{2m\lambda^2}$, the photon’s energy is $pc = \dfrac{hc}{\lambda}$. The ratio is $\dfrac{p}{2mc} = \dfrac{h}{2mc\lambda} = \dfrac{6.6 \times 10^{-34}}{2 \times 9.1 \times 10^{-31} \times 3 \times 10^{8} \times 0.11 \times 10^{-9}} = 1.1 \times 10^{-2}$ — option (@K). Dropping the factor 2 gives 2.2 × 10⁻²; inverting gives 91; equal wavelengths do not mean equal energies, so 1.0 is wrong.`,
+  d: 3, c: 'application', t: [3],
+}), () => { const lam = 0.11e-9; const p = H / lam; return near(p ** 2 / (2 * ME) / (p * CL), 1.0985e-2, 0.002) && near(1 / (p ** 2 / (2 * ME) / (p * CL)), 91, 0.01) && near(2 * (p ** 2 / (2 * ME) / (p * CL)), 2.2e-2, 0.01) || 'pr'; });
 add('graphh-short2', short({
   marks: 2,
   stem: 'Explain how a graph of stopping potential against frequency for a photocell can be used to find (a) Planck’s constant, (b) the work function of the emitter.',
@@ -470,14 +473,14 @@ add('samespeed-mcq', mcq({
   right: '1835',
   wrong: ['1/1835', '43', '1'],
   sol: 'λ = h/(mv): at equal speeds λ ∝ 1/m, so λₑ/λₚ = mₚ/mₑ = 1.67 × 10⁻²⁷/9.1 × 10⁻³¹ ≈ 1835 — option (@K). 43 would be the square root (equal kinetic energies).',
-  d: 2, c: 'application', t: [4],
+  d: 2, c: 'understanding', t: [4],
 }), () => near(MP / ME, 1835, 0.001) || 'ss');
 add('nine-mcq', mcq({
   stem: 'In an electron diffraction tube, the de Broglie wavelength of the electrons must be reduced to one third of its present value. The accelerating potential difference must be',
   right: 'made 9 times as large',
   wrong: ['made 3 times as large', 'made √3 times as large', 'reduced to one ninth of its value'],
   sol: 'λ = h/√(2meV) ∝ 1/√V. To make λ one third, √V must triple, so V must become 9 times as large — option (@K).',
-  d: 2, c: 'application', t: [4],
+  d: 2, c: 'understanding', t: [4],
 }), () => near(lamElectron(900) / lamElectron(100), 1 / 3) || 'nine');
 add('lp-mcq', mcq({
   stem: 'For a moving particle, a graph of its de Broglie wavelength λ (y-axis) against its momentum p (x-axis) is',
@@ -500,7 +503,7 @@ add('e600-num', num({
   value: Number(dec(e6.lam * 1e12, 3)), tol: 0.2, unit: 'pm',
   sol: r`$\lambda = \dfrac{h}{\sqrt{2meV}} = \dfrac{6.6 \times 10^{-34}}{\sqrt{2 \times 9.1 \times 10^{-31} \times 1.6 \times 10^{-19} \times 600}} \approx ${sci(e6.lam, 3)}$ m, that is 49.9 pm (check: $\dfrac{1.22}{\sqrt{600}} \approx 0.0499$ nm).`,
   scheme: [['λ = h/√(2meV) with the values substituted', 1], ['λ ≈ 49.9 pm', 1]],
-  marks: 2, d: 2, c: 'application', t: [4],
+  marks: 2, d: 2, c: 'understanding', t: [4],
 }), (q) => { const v = vFromJ(600 * QE); return near(H / (ME * v) * 1e12, q.answer.value, 0.003) || `e6 ${e6.lam}`; });
 const k2 = { lam: 0.2e-9 };
 k2.K = keForLam(k2.lam);
@@ -529,13 +532,17 @@ add('bohr-num', num({
   scheme: [['λ = h/mv ≈ 0.330 nm', 1]],
   d: 2, c: 'understanding', t: [4],
 }), (q) => near(q.answer.value * 1e-9 * ME * 2.2e6, H, 0.002) || `bo ${bo.lam}`);
+const rt = { V: 50 };
+rt.lamE = H / Math.sqrt(2 * ME * rt.V * QE);
+rt.lamP = (H * CL) / (rt.V * QE);
+rt.ratio = rt.lamE / rt.lamP;
 add('ratio-num', num({
-  stem: 'Electrons accelerated from rest through 50 V and through 800 V are compared. Find the ratio of their de Broglie wavelengths, λ(50 V)/λ(800 V).',
-  value: 4, tol: 0.01, unit: null,
-  sol: r`$\lambda \propto \dfrac{1}{\sqrt{V}}$, so the ratio is $\sqrt{\dfrac{800}{50}} = \sqrt{16} = 4$.`,
-  scheme: [['λ ∝ 1/√V; ratio √(800/50) = 4', 1]],
-  d: 2, c: 'application', t: [4],
-}), (q) => near(lamElectron(50) / lamElectron(800), q.answer.value) || 'ratio');
+  stem: 'An electron is accelerated from rest through 50 V. Find the ratio of its de Broglie wavelength to the wavelength of a photon whose energy equals the electron’s kinetic energy. Give the ratio in units of 10⁻³ (3 significant figures). (h = 6.6 × 10⁻³⁴ J s, c = 3 × 10⁸ m s⁻¹, mₑ = 9.1 × 10⁻³¹ kg, e = 1.6 × 10⁻¹⁹ C.)',
+  value: Number(dec(rt.ratio / 1e-3, 3)), tol: 0.05, unit: null,
+  sol: r`The kinetic energy is $K = eV = 50$ eV $= 8.0 \times 10^{-18}$ J. The electron’s wavelength is $\lambda_e = \dfrac{h}{\sqrt{2mK}} = \dfrac{6.6 \times 10^{-34}}{\sqrt{2 \times 9.1 \times 10^{-31} \times 8.0 \times 10^{-18}}} = 1.73 \times 10^{-10}$ m. A photon of energy 50 eV has $\lambda_\gamma = \dfrac{hc}{K} = \dfrac{1237.5}{50} = 24.75$ nm $= 2.475 \times 10^{-8}$ m. The ratio is $\dfrac{\lambda_e}{\lambda_\gamma} = \dfrac{1.73 \times 10^{-10}}{2.475 \times 10^{-8}} = ${sci(rt.ratio, 3)}$, i.e. $\dfrac{${sci(rt.ratio, 3)}}{10^{-3}} = ${dec(rt.ratio / 1e-3, 3)}$ in units of $10^{-3}$, so the electron’s wavelength is about 143 times shorter.`,
+  scheme: [['λ_e = h/√(2meV) = 0.173 nm', 1]],
+  d: 3, c: 'application', t: [4],
+}), (q) => near(lamElectron(50) / (HC / 50 * 1e-9), q.answer.value * 1e-3, 0.002) || 'ratio');
 add('car-ar', ar({
   a: 'A car driving through a garage doorway shows no diffraction.',
   r: 'The de Broglie wavelength of the car is many orders of magnitude smaller than the width of the doorway.',

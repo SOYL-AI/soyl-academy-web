@@ -94,3 +94,22 @@ All are stable, widely taught dates and names. No casualty figures are given any
 
 - Nobody has seen the two SVG figures (the 1919–1955 timeline and the Cold War bloc diagram) rendered, so they need a look at 360 px on staging. A label overflow and overlap check found no issues.
 - NATO and Warsaw Pact members are shown in the bloc diagram only as examples ("and others").
+
+## Competency audit 2026-11-05
+
+Reference: `docs/platform/content-qa/2026-11-05-competency-retag-audit.md`, which found 13 scenario items tagged application that only ask for a name, event or named feature. Keys, types, marks, topic tags and test slots are unchanged; items were edited in place.
+
+- **Retagged honestly (application → recall):** 053 (the Warsaw Pact) and 054 (NATO), both named from a description.
+- **Rewritten as genuine higher-order items:**
+  - 020 (analysis): a 1931–37 chronology and a student's claim that the League's condemnation caused the 1937 war; judge what the chronology supports (encouragement through an unpunished seizure, not proof of a single cause).
+  - 038 (application): correct a friend's claim that the atomic bombs ended the whole war, using the May 1945 surrender in Europe.
+  - 043 (application): which statement a diarist could not have written in May 1945 (chronological reasoning).
+  - 055 (analysis): judge a claim that the Nazi-Soviet handshake of August 1939 made lasting friends, using what happened next.
+  - 073 (analysis): correct a reading of a 1936 poster as recovery of land; the Rhineland stayed German and only the troop ban was broken.
+  - 074 (analysis): why Britain went to war over Poland in 1939 but not over Austria in 1938 (the March 1939 guarantee).
+  - 076 (analysis): qualify a historian's claim that an oil ban would have stopped Italy (non-member suppliers such as the USA).
+  - 077 (analysis): assess the claim that the arms race made direct war certain.
+  - 078 (application): the condition for a new world body's success best supported by the League's record.
+- **Rewritten but kept below application by the reviewer:** 056 (a new state offered help by both superpowers; the best course is non-alignment, which restates its definition) and 075 (correcting "Germany conquered Austria in a war" with the facts of the Anschluss) are **understanding**.
+- **MCQ keys** stay balanced at a10 b10 c10 d10.
+- **Now:** recall 23 · understanding 24 · application 7 · analysis 30 · evaluation 3; application or higher **40 of 87 = 46.0% of items (71% of marks)**, inside the 45–65% band. This supersedes the competency line under "Question bank".

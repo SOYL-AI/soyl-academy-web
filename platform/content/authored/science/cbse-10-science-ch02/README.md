@@ -40,7 +40,7 @@ All items are `status: "draft"` until a reviewer approves them.
 - **MCQ keys:** a 7, b 8, c 7, d 6.
 - **Contract v2:** every case passage has `passage_origin: "soyl-original"`; `word_limit` (CBSE guidance: 1 mark 5–30, 2 marks 30–50, 3 marks 50–80, 5 marks 80–120 words) is set on the 24 of 36 short/long items whose model answers are prose, and left out where the answer is an equation, a structure or a diagram.
 - **Difficulty:** d1 11 · d2 32 · d3 27 · d4 6 · d5 1.
-- **Competency:** recall 10 · understanding 30 · application 23 · analysis 12 · evaluation 2. Application or higher is **48% of items (59% of marks)**.
+- **Competency:** recall 10 · understanding 30 · application 23 · analysis 12 · evaluation 2. Application or higher is **48% of items (59% of marks)** (superseded: see Competency audit 2026-11-05).
 - **Topic tags:** t01 7 · t02 14 · t03 10 · t04 11 · t05 11 · t06 11 · t07 18.
 - **Cases:** indicator data table (A–E), marble chips with strong vs weak acid (lab), tooth-surface pH readings (data, d4), chlor-alkali plant (industry), crucible masses for copper sulphate (data with a numerical part), pH of two acids on dilution (data, d5 evaluation).
 - **Deck checks:** q001, q009, q011, q023 (Part 1); q031, q038, q047, q051 (Part 2); q057, q059, q061 (Part 3) — all objective.
@@ -71,3 +71,18 @@ Every question, case part and alternative was re-solved from its stem alone and 
 ## Competency audit by assessment-designer (2026-10-27)
 
 Re-read against the rule used for CBSE 10 Maths (D-035 context): a routine, textbook-standard step on given data — a one-step formula numerical, a balanced equation, an electron-dot structure, a named part or a value read off a table — is **understanding**; applying ideas to new situations, interpreting data, explaining observations, analysis and evaluation keep their tags. 5 item tag(s) and 2 case/source-part tag(s) changed to understanding (case items whose parts are now mostly recall/understanding carry `understanding` at the top level). No question text, key, solution or marking scheme changed. Now: recall 10, understanding 35, application 18, analysis 12, evaluation 2 — application or higher 42% of items, 50% of marks (supersedes the competency figures above).
+
+## Competency audit 2026-11-05
+
+Audit reference: `docs/platform/content-qa/2026-11-05-competency-retag-audit.md`. After the downward audit above this chapter stood at 32/77 (41.6%) at application or higher, below the 45% floor. No retags were needed; four 1-mark recall/understanding items were rewritten into genuine application items (none appears in the frozen series `cbse-10-science.json` or in `tests.json`).
+
+**This chapter has no `src/` folder: `release.json` and `tests.json` are the hand-authored source of truth, so `release.json` was edited directly (Edit tool, not rebuilt).** `tests.json` is unchanged. For each id below, exactly these fields changed: `stem_md`, `solution_md`, `marking_scheme[0].step`, `difficulty` (to 3), `competency` (to `application`), `bloom` (to `apply`) and `expected_time_sec`; for 007 and 020 also the `options[].text_md` texts. Option ids, correct option ids, `type`, `marks`, `topic_ids`, `id`, `version`, `status` and `provenance` are unchanged. `build.checks` records no competency counts and was not touched.
+
+- q_cbse10sci_ch02_006 (true-false, key f): infer from vanilla-essence observations in two liquids which one is a base (smell lost only in a base); time 40 to 60 s.
+- q_cbse10sci_ch02_007 (mcq, key c): identify three unlabelled solids from gas tests with dilute HCl (carbon dioxide, hydrogen, no reaction); time 60 to 90 s.
+- q_cbse10sci_ch02_020 (mcq, key d): predict litmus results for HCl gas in water versus dry toluene; time 60 to 90 s.
+- q_cbse10sci_ch02_064 (true-false, key t): curd (lactic acid) in baking-soda batter leaves less sodium carbonate; time 40 to 70 s.
+
+A fifth rewrite (q024, the pH after a 100-fold dilution) was withdrawn by the reviewer and restored to its earlier text, because the tenfold-per-pH-unit relation is beyond the CBSE 10 syllabus.
+
+Now: recall 9, understanding 32, application 22, analysis 12, evaluation 2 (from 10 / 35 / 18 / 12 / 2) — application or higher **36 of 77 items (46.8%)**, inside the 45–65% band. MCQ key spread unchanged (a 7, b 8, c 7, d 6).

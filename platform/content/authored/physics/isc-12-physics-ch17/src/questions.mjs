@@ -25,7 +25,7 @@ add('envelope-mcq', mcq({
   right: '10 cm, and the new wavefront is the plane touching their forward edges',
   wrong: ['15 cm, and the new wavefront is the plane touching their forward edges', '10 cm, and the new wavefront is the plane through their centres', '5.0 cm, and the new wavefront is the plane touching their forward edges'],
   sol: r`Wavelet radius $vt = 2.0 \times 10^{8} \times 0.50 \times 10^{-9} = ${dec(env.r, 2)}$ m $= 10$ cm, using the speed **in the glass** (15 cm would use the speed in vacuum). The new wavefront is the forward envelope of the wavelets — option (@K).`,
-  d: 2, c: 'application', t: [1],
+  d: 2, c: 'understanding', t: [1],
 }), () => near(env.r, 0.1) || `env ${env.r}`);
 add('amp-mcq', mcq({
   stem: 'A glowing wire 3 m long acts as a line source for points near its middle. The amplitude of its light wave is A at 10 cm from the wire. At 40 cm from the wire the amplitude is',
@@ -129,7 +129,7 @@ add('crystal-num', num({
   value: Number(dec(qz.v / 1e8, 3)), tol: 0.01, unit: '10⁸ m s⁻¹',
   sol: r`$v_2 = v_1\dfrac{\sin r}{\sin i} = 3.0 \times 10^{8} \times \dfrac{\sin 29°}{\sin 48°} = 3.0 \times 10^{8} \times \dfrac{0.485}{0.743} = 1.957 \times 10^{8}$ m s⁻¹, so in units of $10^{8}$ m s⁻¹, $v_2 = ${dec(qz.v / 1e8, 3)}$.`,
   scheme: [['v₂ = v₁ sin r / sin i', 1], ['v₂ = 1.96 × 10⁸ m s⁻¹', 1]],
-  marks: 2, d: 2, c: 'application', t: [2],
+  marks: 2, d: 2, c: 'understanding', t: [2],
 }), (q) => {
   // independent: index from the angles, then v = c/n
   const n = sinD(48) / sinD(29);
@@ -142,7 +142,7 @@ add('waterglass-num', num({
   value: Number(wg.r.toFixed(1)), tol: 0.2, unit: '°',
   sol: r`$\dfrac{\sin i}{\sin r} = \dfrac{v_1}{v_2} = \dfrac{n_2}{n_1}$, so $\sin r = \dfrac{1.33 \sin 42°}{1.60} = \dfrac{1.33 \times 0.669}{1.60} = ${dec((1.33 * sinD(42)) / 1.6, 3)}$ and $r = ${wg.r.toFixed(1)}$°.`,
   scheme: [['sin r = (n₁/n₂) sin i', 1], ['r = 33.8°', 1]],
-  marks: 2, d: 3, c: 'application', t: [2],
+  marks: 2, d: 3, c: 'understanding', t: [2],
 }), (q) => {
   // independent: speeds in the two media and Huygens' ratio
   const v1 = C_LIGHT / 1.33;
@@ -157,7 +157,7 @@ add('diamond-mcq', mcq({
   right: '275 nm and 1.25 × 10⁸ m s⁻¹',
   wrong: ['660 nm and 1.25 × 10⁸ m s⁻¹', '1584 nm and 7.2 × 10⁸ m s⁻¹', '275 nm and 3.0 × 10⁸ m s⁻¹'],
   sol: r`The frequency is unchanged, so both speed and wavelength are divided by n: $\lambda_m = \dfrac{660}{2.4} = ${dec(dia.lamM * 1e9, 3)}$ nm and $v = \dfrac{3.0 \times 10^{8}}{2.4} = 1.25 \times 10^{8}$ m s⁻¹ — option (@K).`,
-  d: 2, c: 'application', t: [2],
+  d: 2, c: 'understanding', t: [2],
 }), () => near(dia.lamM, 275e-9) && near(dia.v, 1.25e8) && near(dia.v / dia.lamM, C_LIGHT / dia.lam) || 'dia');
 add('freq-ar', ar({
   a: 'When light passes from air into glass, its frequency does not change.',
@@ -198,7 +198,7 @@ add('phase-num', num({
   value: Number(dec(ph.k, 2)), tol: 0.05, unit: 'π rad',
   sol: r`$\varphi = \dfrac{2\pi}{\lambda}\Delta = 2\pi \times \dfrac{1.08 \times 10^{-6}}{720 \times 10^{-9}} = 2\pi \times 1.5 = ${dec(ph.k, 2)}\pi$ rad, so in units of π rad, $\varphi/\pi = ${dec(ph.k, 2)}$ (the point is dark).`,
   scheme: [['φ = (2π/λ)Δ = 3π rad', 1]],
-  d: 2, c: 'application', t: [3],
+  d: 2, c: 'understanding', t: [3],
 }), (q) => near(Math.cos(ph.k * Math.PI), -1) && q.answer.value === 3 || `ph ${ph.k}`);
 const bp = { lam: 480e-9, opts: [1.2e-6, 1.68e-6, 1.92e-6, 2.16e-6] };
 bp.ratios = bp.opts.map((p) => p / bp.lam);
@@ -207,7 +207,7 @@ add('brightpick-mcq', mcq({
   right: 'the point with path difference 1.92 μm',
   wrong: ['the point with path difference 1.20 μm', 'the point with path difference 1.68 μm', 'the point with path difference 2.16 μm'],
   sol: r`Divide by λ: 1.20 μm → 2.5λ, 1.68 μm → 3.5λ, 1.92 μm → 4.0λ, 2.16 μm → 4.5λ. Only 1.92 μm is a whole number of wavelengths (constructive); the others are odd half wavelengths (dark) — option (@K).`,
-  d: 2, c: 'application', t: [3],
+  d: 2, c: 'understanding', t: [3],
 }), () => near(bp.ratios[2], 4) && [0, 1, 3].every((k) => near(bp.ratios[k] % 1, 0.5)) || `bp ${bp.ratios}`);
 add('phasepath-mcq', mcq({
   stem: 'Two sources emit light of wavelength λ in phase. At a point P the waves from them have a phase difference of 5π/2. The path difference at P is',
@@ -363,14 +363,16 @@ add('change-mcq', mcq({
   sol: r`$\beta = \dfrac{\lambda D}{d}$, so the new value is $\dfrac{1.2 \times 0.75}{1.5} = ${dec(chg, 1)}$ times the old one — option (@K).`,
   d: 2, c: 'application', t: [4],
 }), () => near(fringeWidth(1.2 * 500e-9, 0.75, 1.5e-3) / fringeWidth(500e-9, 1, 1e-3), 0.6) || 'chg');
-const ang = (720e-9 / 0.36e-3) * 1e3;
+const ang = { d: 0.36e-3, D: 1.5, y6: 10.8e-3 };
+ang.beta = ang.y6 / 6;
+ang.lam = (ang.beta * ang.d) / ang.D;
 add('angular-num', num({
-  stem: 'Two slits 0.36 mm apart are lit by deep-red light of wavelength 720 nm. Find the angular fringe width of the pattern, in milliradians.',
-  value: Number(dec(ang, 2)), tol: 0.05, unit: 'mrad',
-  sol: r`$\theta_\beta = \dfrac{\beta}{D} = \dfrac{\lambda}{d} = \dfrac{720 \times 10^{-9}}{0.36 \times 10^{-3}} = 2.0 \times 10^{-3}$ rad $= ${dec(ang, 2)}$ mrad.`,
-  scheme: [['θ = λ/d = 2.0 mrad', 1]],
-  d: 1, c: 'understanding', t: [4],
-}), (q) => near(Math.asin(720e-9 / 0.36e-3) * 1e3, 2.0, 1e-3) && q.answer.value === 2 || `ang ${ang}`);
+  stem: 'A student finds the wavelength of a laser by double-slit fringes. The slits are 0.36 mm apart and the screen is 1.50 m away. She measures 10.8 mm from the central bright fringe to the 6th bright fringe on one side. Find the wavelength of the laser, in nm.',
+  value: Number(dec(ang.lam * 1e9, 3)), tol: 2, unit: 'nm',
+  sol: r`The 6th bright fringe is at $y_6 = 6\beta$, so $\beta = \dfrac{10.8}{6} = 1.80$ mm. From $\beta = \dfrac{\lambda D}{d}$: $\lambda = \dfrac{\beta d}{D} = \dfrac{1.80 \times 10^{-3} \times 0.36 \times 10^{-3}}{1.50} = 4.32 \times 10^{-7}$ m $= ${dec(ang.lam * 1e9, 3)}$ nm.`,
+  scheme: [['β = 10.8/6 = 1.80 mm', 1]],
+  d: 2, c: 'application', t: [4],
+}), (q) => near(fringeWidth(432e-9, ang.D, ang.d), ang.beta, 1e-3) && q.answer.value === 432 || `ang ${ang.lam}`);
 add('white-ar', ar({
   a: 'With white light in Young’s experiment, the bright fringe next to the white central fringe has a violet inner edge and a red outer edge.',
   r: 'The fringe width in Young’s experiment does not depend on the wavelength of the light.',
@@ -378,15 +380,16 @@ add('white-ar', ar({
   sol: 'A is true: the first bright fringe of each colour is at y = λD/d, nearer the centre for violet (short λ) than for red. R is false: β = λD/d is proportional to λ — option (c).',
   d: 2, c: 'understanding', t: [4],
 }), () => (400e-9 * 1) / 1e-3 < (700e-9 * 1) / 1e-3 || 'wh');
-const scr = { beta: 1.5e-3, d: 0.28e-3, lam: 420e-9 };
+const scr = { beta: 1.5e-3, d: 0.28e-3, lam: 420e-9, n: 1.33, d2: 0.20e-3 };
 scr.D = (scr.beta * scr.d) / scr.lam;
+scr.beta2 = fringeWidth(scr.lam / scr.n, scr.D, scr.d2) * 1e3;
 add('screen-num', num({
-  stem: 'Violet light of wavelength 420 nm passes through two slits 0.28 mm apart. How far from the slits must the screen be placed for the fringes to be 1.5 mm wide? Answer in m.',
-  value: Number(dec(scr.D, 2)), tol: 0.02, unit: 'm',
-  sol: r`$D = \dfrac{\beta d}{\lambda} = \dfrac{1.5 \times 10^{-3} \times 0.28 \times 10^{-3}}{420 \times 10^{-9}} = ${dec(scr.D, 2)}$ m.`,
-  scheme: [['D = βd/λ', 1], ['D = 1.0 m', 1]],
-  marks: 2, d: 2, c: 'application', t: [4],
-}), (q) => near(fringeWidth(scr.lam, 1, scr.d), 1.5e-3) && q.answer.value === 1 || `scr ${scr.D}`);
+  stem: 'Violet light of wavelength 420 nm (in air) passes through two slits 0.28 mm apart, and the fringes on the screen are 1.5 mm wide. The slits are then replaced by a pair 0.20 mm apart, the screen is not moved, and the whole apparatus is immersed in water (n = 1.33). What is the fringe width now? Answer in mm (3 significant figures).',
+  value: Number(dec(scr.beta2, 3)), tol: 0.02, unit: 'mm',
+  sol: r`The screen distance is not given, so find it from the first arrangement: $D = \dfrac{\beta d}{\lambda} = \dfrac{1.5 \times 10^{-3} \times 0.28 \times 10^{-3}}{420 \times 10^{-9}} = ${dec(scr.D, 2)}$ m. In water the wavelength becomes $\lambda' = \dfrac{\lambda}{n} = \dfrac{420}{1.33} = 316$ nm, so $\beta' = \dfrac{\lambda' D}{d'} = \dfrac{316 \times 10^{-9} \times 1.0}{0.20 \times 10^{-3}} = ${dec(scr.beta2, 3)}$ mm. (Equivalently $\beta' = 1.5 \times \dfrac{0.28}{0.20} \times \dfrac{1}{1.33}$: the narrower slit separation widens the fringes by 1.4 times, the water narrows them by 1.33 times.)`,
+  scheme: [['D = βd/λ = 1.0 m', 1], ['β′ = (λ/n)D/d′ = 1.58 mm', 1]],
+  marks: 2, d: 3, c: 'application', t: [4],
+}), (q) => near(fringeWidth(scr.lam, 1, scr.d), 1.5e-3) && near(scr.D, 1) && near((1.5 * scr.d) / scr.d2 / scr.n, 1.5789, 0.001) && q.answer.value === 1.58 || `scr ${scr.beta2}`);
 const cnt = { lam: 480e-9, d: 2.0e-6 };
 cnt.nmax = Math.floor(cnt.d / cnt.lam);
 cnt.total = 2 * cnt.nmax + 1;
@@ -625,7 +628,7 @@ add('central-num', num({
   value: Number(dec(cw, 2)), tol: 0.1, unit: 'mm',
   sol: r`$W = \dfrac{2\lambda D}{a} = \dfrac{2 \times 640 \times 10^{-9} \times 1.25}{0.16 \times 10^{-3}} = 1.0 \times 10^{-2}$ m $= ${dec(cw, 2)}$ mm.`,
   scheme: [['W = 2λD/a', 1], ['W = 10 mm', 1]],
-  marks: 2, d: 2, c: 'application', t: [7],
+  marks: 2, d: 2, c: 'understanding', t: [7],
 }), (q) => singleSlit(0.16e-3, 640e-9, Math.sin(Math.atan(5e-3 / 1.25))) < 1e-5 && q.answer.value === 10 || `cw ${cw}`);
 const aw2 = (2 * 480e-9) / 0.32e-3;
 add('angwidth-mcq', mcq({
@@ -637,13 +640,14 @@ add('angwidth-mcq', mcq({
 }), () => near(aw2, 3e-3) || `aw2 ${aw2}`);
 const sn = { W: 6e-3, D: 2.5, lam: 540e-9 };
 sn.a = (2 * sn.lam * sn.D) / sn.W;
+sn.W2 = (2 * 650e-9 * 1.8) / sn.a;
 add('slitneeded-num', num({
-  stem: 'A teacher wants the central bright band of a single-slit pattern to be 6.0 mm wide on a wall 2.5 m from the slit, using light of wavelength 540 nm. How wide must the slit be? Answer in mm.',
-  value: Number(dec(sn.a * 1e3, 2)), tol: 0.01, unit: 'mm',
-  sol: r`$W = \dfrac{2\lambda D}{a}$, so $a = \dfrac{2\lambda D}{W} = \dfrac{2 \times 540 \times 10^{-9} \times 2.5}{6.0 \times 10^{-3}} = ${dec(sn.a * 1e3, 2)}$ mm.`,
-  scheme: [['a = 2λD/W', 1], ['a = 0.45 mm', 1]],
+  stem: 'A teacher sets a single slit so that light of wavelength 540 nm gives a central bright band 6.0 mm wide on a wall 2.5 m away. She then replaces the lamp by a red laser of wavelength 650 nm and moves the wall to 1.8 m from the slit, leaving the slit as it was. How wide is the central bright band now? Answer in mm (3 significant figures).',
+  value: Number(dec(sn.W2 * 1e3, 3)), tol: 0.05, unit: 'mm',
+  sol: r`The slit width is not given, so find it first: $W = \dfrac{2\lambda D}{a}$ gives $a = \dfrac{2\lambda D}{W} = \dfrac{2 \times 540 \times 10^{-9} \times 2.5}{6.0 \times 10^{-3}} = ${dec(sn.a * 1e3, 2)}$ mm. With the laser at the new distance, $W' = \dfrac{2\lambda' D'}{a} = \dfrac{2 \times 650 \times 10^{-9} \times 1.8}{0.45 \times 10^{-3}} = ${dec(sn.W2 * 1e3, 3)}$ mm. (Check by scaling: $6.0 \times \dfrac{650}{540} \times \dfrac{1.8}{2.5} = 5.20$ mm.)`,
+  scheme: [['a = 2λD/W = 0.45 mm', 1], ['W′ = 2λ′D′/a = 5.20 mm', 1]],
   marks: 2, d: 3, c: 'application', t: [7],
-}), (q) => singleSlit(sn.a, sn.lam, Math.sin(Math.atan(3e-3 / sn.D))) < 1e-5 && q.answer.value === 0.45 || `sn ${sn.a}`);
+}), (q) => singleSlit(sn.a, sn.lam, Math.sin(Math.atan(3e-3 / sn.D))) < 1e-5 && near(sn.a, 0.45e-3) && near(6 * (650 / 540) * (1.8 / 2.5), 5.2, 1e-6) && q.answer.value === 5.2 || `sn ${sn.W2}`);
 const wss = 12 / (4 / 3);
 add('waterss-mcq', mcq({
   stem: 'A single-slit diffraction set-up gives a central maximum 12 mm wide on a screen in air. The whole set-up, slit and screen, is then immersed in water (n = 4/3). The width of the central maximum becomes',

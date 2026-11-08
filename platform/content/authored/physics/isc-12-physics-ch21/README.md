@@ -36,7 +36,7 @@ All items are `status: "draft"` until a reviewer approves them.
 | short | 11 | 3 |
 | long | 6 | 5, set in parts with the marks shown |
 
-- **Difficulty:** d1 22 · d2 42 · d3 28 · d4 7. **Competency:** understanding 44 · application 33 · analysis 21 · evaluation 1: application or higher **56% of items (59% of marks)** (inside the 45–65% band).
+- **Difficulty:** d1 22 · d2 42 · d3 28 · d4 7. **Competency:** understanding 44 · application 33 · analysis 21 · evaluation 1: application or higher **56% of items (59% of marks)** (inside the 45–65% band) (superseded: see Competency audit 2026-11-05).
 - **Topic tags:** t01 12 · t02 14 · t03 18 · t04 20 · t05 20 · t06 17 (the reverse-current assertion-reason is tagged t01 and t03; the device match t05 and t06).
 - Several numericals are keyed in units of a power of ten (`× 10²¹ m⁻³`, `× 10⁻³ Ω m`, `× 10⁵`, `× 10⁶ V m⁻¹`, `× 10¹⁵ s⁻¹`) so that the key equals the final figure stated in the solution.
 
@@ -69,4 +69,11 @@ Every question was re-solved from its stem and read for physics. Findings and fi
 ## Known gaps
 - Diagrams asked for in answers (circuits, V–I curves) are described in words; graders should accept any correct sketch.
 - Narration was not yet run through TTS (stage 8); slide `audio` is null.
+
+## Competency audit 2026-11-05
+Follows the audit's ISC 12 Physics lead (`docs/platform/content-qa/2026-11-05-competency-retag-audit.md`). Rule applied: one-formula substitutions (with or without a unit conversion) and directly applied stated rules are understanding; chained relations, a non-routine step or a new set-up keep application.
+- **Retagged to understanding:** q004, q008, q009, q020, q033, q036, q044, q045, q049, q065, q074. Of these, q008 and q036 were then rewritten (below) and are application again for real.
+- **Rewritten as genuine application items (same key, type, marks, topic, test slots):** q008 (decide which of two beams can lift electrons across the 1.1 eV gap, then count the pairs per second from the beam power and photon energy; d3); q036 (dynamic resistance from two readings, then predict the forward voltage for a new current; d3).
+- **New counts (99 items):** understanding 53 · application 24 · analysis 21 · evaluation 1: application or higher 46/99 = **46.5% of items (53% of marks)**; difficulty d1 22 · d2 40 · d3 30 · d4 7.
+- Short and long answers were not re-judged.
 - Transistors and logic gates are deliberately absent: they are not in this ISC syllabus entry.

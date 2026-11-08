@@ -61,7 +61,7 @@ All three syllabus topics are covered:
 
 - **Source documents:** a Milan railway clerk's diary (1921), a Berlin shopkeeper's letter (1932) and an Indian student's travel notes (1937). All are imagined and labelled as such.
 - **Difficulty:** d1 10, d2 29, d3 35, d4 6.
-- **Competency:** recall 16, understanding 24, application 12, analysis 25, evaluation 3. That puts 50% of items at application or above, inside the lint band of 45–65%, reached with scenario items rather than retagging.
+- **Competency:** recall 16, understanding 24, application 12, analysis 25, evaluation 3. That puts 50% of items at application or above, inside the lint band of 45–65%, reached with scenario items rather than retagging. (superseded: see Competency audit 2026-11-05)
 
 ## Facts for a reviewer
 
@@ -94,3 +94,19 @@ All three syllabus topics are covered:
 
 - Nobody has seen the two SVGs rendered, so they need a look at 360 px on staging. The timeline has seven labels in lanes; the comparison chart has three boxes side by side.
 - Later events (the Rome-Berlin Axis, the invasion of Ethiopia, rearmament) belong to the Second World War chapter and are not taught here.
+
+## Competency audit 2026-11-05
+
+Reference: `docs/platform/content-qa/2026-11-05-competency-retag-audit.md`.
+
+- **Retagged honestly:** 009 `m_app_it_squads` application to recall (a group named from a description; it is also the deck check slide, which asks "who were they"); 031 `m_app_de_wheelbarrow` application to recall; 058 `m_app_sim_newspaper` application to understanding (a described rule named as censorship).
+- **Rewritten as genuine application or analysis, same key, type, marks, topic and test slots:**
+  - 007 `m_app_it_strike` (application): decide whether a friend's cause fits an owner's described motives, weighing fear of revolution against the peace grievance.
+  - 008 `m_app_it_veteran`: rewritten to match two different people to the causes that fit each, but each half is a cue-to-named-cause match, so the reviewer tagged it **understanding**.
+  - 032 `m_app_de_unemployed` (analysis): explain why Nazi support rose after 1929 and not earlier, when older grievances already existed (timing).
+  - 033 `m_app_de_coalitions` (application): the long-term consequence of rule by Article 48 decree in a concrete budget case.
+  - 034 `m_app_de_middle` (analysis): why two people with different losses made the same choice.
+  - 056 `m_app_sim_poster` (analysis): what a propaganda poster can and cannot show about popular opinion.
+  - 057 `m_app_sim_school` (analysis): which described detail is the strongest evidence of a political aim.
+- **MCQ keys changed** (shuffle by order, the key table of the build): 007 d, 008 b, 032 a, 033 d, 034 b, 056 a, 057 b; 009 a, 031 c and 058 d unchanged in substance.
+- **Counts now:** recall 18, understanding 26, application 4, analysis 29, evaluation 3; application or above **36 of 80 (45.0%)**, inside the 45–65% band (71% of marks).

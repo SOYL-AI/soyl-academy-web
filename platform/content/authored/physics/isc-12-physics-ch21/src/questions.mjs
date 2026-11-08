@@ -45,7 +45,7 @@ add('temp-mcq', mcq({
   right: 'falls, because more electrons are lifted across the gap and more electron–hole pairs are formed',
   wrong: ['rises, because the lattice vibrations scatter the carriers more, as in a metal', 'does not change, because the forbidden gap of silicon has a fixed value', 'rises, because electrons are removed from the conduction band by the heat'],
   sol: 'In a pure semiconductor heating creates many more free electrons and holes, and this increase of the number of carriers far outweighs the extra scattering by the lattice, so the resistance falls (a negative temperature coefficient) — option (@K).',
-  d: 2, c: 'application', t: [1],
+  d: 2, c: 'understanding', t: [1],
 }));
 add('gegap-tf', tf({
   stem: 'Germanium has a larger forbidden gap than silicon, so it takes more energy to release an electron from a bond in germanium than in silicon.',
@@ -66,15 +66,17 @@ add('si-ar', ar({
   sol: 'Both are true, and R explains A: near 0 K the valence band is full and the conduction band empty, so there is no conduction; at room temperature a few thermally excited electrons (and the holes they leave) can carry a small current — option (a).',
   d: 2, c: 'understanding', t: [1],
 }));
-const sw = { Eg: GAPS.si };
+const sw = { Eg: GAPS.si, P: 0.5e-6 };
 sw.lam = cutoff(sw.Eg);
+sw.E800 = photonEv(800) * QE;
+sw.N = sw.P / sw.E800;
 add('siwave-num', num({
-  stem: `Silicon has a forbidden gap of 1.1 eV. Find the longest wavelength of light that can lift an electron across this gap, in nm, to 3 significant figures. ${HCTXT}`,
-  value: Number(dec(sw.lam, 3)), tol: 5, unit: 'nm',
-  sol: r`$\lambda_{max} = \dfrac{hc}{E_g} = \dfrac{1240}{1.1} = ${dec(sw.lam, 4)}$ nm $\approx ${dec(sw.lam, 3)}$ nm, in the infrared.`,
-  scheme: [['λ = hc/Eg = 1240/1.1', 1], ['λ = 1.13 × 10³ nm (1130 nm, infrared)', 1]],
-  marks: 2, d: 2, c: 'application', t: [1],
-}), (q) => near(photonEvHCE(q.answer.value) , 1.1, 0.01) || `siwave ${sw.lam}`);
+  stem: `A silicon wafer (forbidden gap 1.1 eV) is lit by two beams, each of power 0.50 μW: one of wavelength 800 nm and one of wavelength 1300 nm. Assuming that every photon able to do so creates one electron–hole pair, find the number of pairs created per second, in units of 10¹² (3 significant figures). ${HCTXT}, e = 1.6 × 10⁻¹⁹ C`,
+  value: Number(dec(sw.N / 1e12, 3)), tol: 0.02, unit: null,
+  sol: r`First decide which beam can act. The longest wavelength that lifts an electron across the gap is $\dfrac{1240}{1.1} \approx 1127$ nm, so the 800 nm photons (1240/800 = 1.55 eV, more than 1.1 eV) create pairs, but the 1300 nm photons (1240/1300 = 0.95 eV) do not. The 800 nm photon energy is $1.55 \times 1.6 \times 10^{-19} = 2.48 \times 10^{-19}$ J, so the pairs per second are $N = \dfrac{P}{E} = \dfrac{0.50 \times 10^{-6}}{2.48 \times 10^{-19}} = ${sci(sw.N, 3)}$, i.e. $\dfrac{${sci(sw.N, 3)}}{10^{12}} = ${dec(sw.N / 1e12, 3)}$ in units of $10^{12}$.`,
+  scheme: [['Only 800 nm (1.55 eV > 1.1 eV) creates pairs; 1300 nm (0.95 eV) does not', 1], ['N = P/E = 0.50 × 10⁻⁶ / 2.48 × 10⁻¹⁹ = 2.02 × 10¹²', 1]],
+  marks: 2, d: 3, c: 'application', t: [1],
+}), (q) => near(photonEv(800), 1.55, 0.001) && photonEv(1300) < 1.1 && sw.lam > 800 && sw.lam < 1300 && near(q.answer.value * 1e12 * 1.55 * 1.6e-19, 0.5e-6, 0.01) && q.answer.value === 2.02 || `siwave ${sw.N}`);
 const dm = { Eg: GAPS.diamond };
 dm.lam = cutoff(dm.Eg);
 add('diamond-num', num({
@@ -82,7 +84,7 @@ add('diamond-num', num({
   value: Number(dec(dm.lam, 3)), tol: 2, unit: 'nm',
   sol: r`$\lambda_{max} = \dfrac{1240}{5.5} = ${dec(dm.lam, 3)}$ nm, in the ultraviolet (below 400 nm): visible light is not absorbed.`,
   scheme: [['λ = 1240/5.5 = 225 nm', 1]],
-  d: 2, c: 'application', t: [1],
+  d: 2, c: 'understanding', t: [1],
 }), (q) => near(photonEvHCE(q.answer.value), 5.5, 0.01) && q.answer.value < 400 || `diamond ${dm.lam}`);
 add('diamond-short2', short({
   marks: 2,
@@ -168,7 +170,7 @@ add('dopant-num', num({
   value: Number(dec(dp.n / 1e21, 2)), tol: 0, unit: '× 10²¹ m⁻³',
   sol: r`Donor atoms per m³ $= 5.0 \times 10^{28} \times 10^{-7} = ${sci(dp.n, 2)}$; each gives one electron, so the doping adds $${sci(dp.n, 2)}$ free electrons per m³. In units of $10^{21}$ m⁻³: $n = ${dec(dp.n / 1e21, 2)}$.`,
   scheme: [['n = 5.0 × 10²⁸ × 10⁻⁷ = 5.0 × 10²¹ m⁻³', 1]],
-  d: 2, c: 'application', t: [2],
+  d: 2, c: 'understanding', t: [2],
 }), (q) => near(q.answer.value * 1e21, 5.0e28 / 1e7, 1e-9) || 'dopant');
 const sg = { n: 5.0e21, mu: 0.135 };
 sg.sigma = sg.n * QE * sg.mu;
@@ -271,7 +273,7 @@ add('field-num', num({
   value: fl.E / 1e6, tol: 0.02, unit: '× 10⁶ V m⁻¹',
   sol: r`$E = \dfrac{V_0}{d} = \dfrac{0.70}{0.50 \times 10^{-6}} = ${sci(fl.E, 2)}$ V m⁻¹, a very strong field, directed from the n side to the p side. In units of $10^{6}$ V m⁻¹: $E = ${dec(fl.E / 1e6, 2)}$.`,
   scheme: [['E = V₀/d = 0.70/(0.50 × 10⁻⁶)', 1], ['E = 1.4 × 10⁶ V m⁻¹', 1]],
-  marks: 2, d: 2, c: 'application', t: [3],
+  marks: 2, d: 2, c: 'understanding', t: [3],
 }), (q) => near(q.answer.value * 1e6 * 0.5e-6, 0.7, 0.02) || 'field');
 const s1 = { E: 9.0, R: 470 };
 s1.I = seriesI(s1.E, s1.R, VSI) * 1000;
@@ -293,13 +295,14 @@ add('parallel-num', num({
 }), (q) => near(loop(12, 330, [0.7]) * 1000 + loop(12, 220, [Infinity]) * 1000, q.answer.value, 0.01) || 'parallel');
 const dr = { dV: 0.73 - 0.70, dI: 10.0e-3 - 4.0e-3 };
 dr.r = dr.dV / dr.dI;
+dr.V = 0.73 + dr.r * 2.0e-3;
 add('dynres-num', num({
-  stem: 'The forward current of a diode is 4.0 mA at 0.70 V and 10.0 mA at 0.73 V. Find the dynamic (a.c.) resistance of the diode over this range, in ohm.',
-  value: Number(dec(dr.r, 2)), tol: 0.1, unit: 'Ω',
-  sol: r`$r_d = \dfrac{\Delta V}{\Delta I} = \dfrac{0.73 - 0.70}{(10.0 - 4.0) \times 10^{-3}} = \dfrac{0.03}{6.0 \times 10^{-3}} = ${dec(dr.r, 2)}$ Ω. (The static resistance V/I at 10 mA is about 73 Ω, much larger.)`,
-  scheme: [['r = ΔV/ΔI = 0.03 V / 6.0 mA', 1], ['r = 5.0 Ω', 1]],
-  marks: 2, d: 2, c: 'application', t: [3],
-}), (q) => near(0.03 / 0.006, q.answer.value, 0.01) || 'dynres');
+  stem: 'The forward current of a diode is 4.0 mA at 0.70 V and 10.0 mA at 0.73 V. Assuming the characteristic stays straight just beyond these readings, what forward voltage is needed to raise the current to 12.0 mA? Answer in volts to 3 significant figures.',
+  value: Number(dec(dr.V, 3)), tol: 0.002, unit: 'V',
+  sol: r`First find the slope of the characteristic, the dynamic resistance: $r_d = \dfrac{\Delta V}{\Delta I} = \dfrac{0.73 - 0.70}{(10.0 - 4.0) \times 10^{-3}} = \dfrac{0.03}{6.0 \times 10^{-3}} = ${dec(dr.r, 2)}$ Ω. Raising the current from 10.0 mA to 12.0 mA adds $\Delta V = r_d \Delta I = 5.0 \times 2.0 \times 10^{-3} = 0.010$ V, so the voltage needed is $0.73 + 0.010 = ${dec(dr.V, 3)}$ V.`,
+  scheme: [['r_d = ΔV/ΔI = 5.0 Ω', 1], ['V = 0.73 + 5.0 × 2.0 × 10⁻³ = 0.740 V', 1]],
+  marks: 2, d: 3, c: 'application', t: [3],
+}), (q) => near(0.03 / 0.006, dr.r, 0.01) && near(0.7 + (0.03 / 0.006) * 8.0e-3, q.answer.value, 0.002) || 'dynres');
 const gs = { E: 5.0, R: 400 };
 gs.I = seriesI(gs.E, gs.R, VGE + VSI) * 1000;
 add('gese-num', num({

@@ -107,22 +107,22 @@ Q("m_obj_apartheid", mcq({
   sol: "Apartheid was a system of racial segregation, and opposing racial discrimination was one of the movement's stated aims. The other options describe bloc politics, which the movement rejected.",
 }));
 Q("m_scn_aid", mcq({
-  t: 1, d: 2, c: "application",
-  stem: "The imagined republic of Saranpur, free since 1950, buys steel plants from one superpower and food grain from the other, but signs no military pact with either. Which feature of its foreign policy does this show?",
-  opts: ["An independent, non-aligned foreign policy", "Membership of the Eastern bloc", "Membership of the Western bloc", "A policy of complete isolation"],
-  sol: "Taking help from both sides without joining a military bloc is the mark of non-alignment. Bloc membership meant a military pact, and isolation would mean refusing contact altogether.",
+  t: 1, d: 3, c: "analysis",
+  stem: "The imagined republic of Saranpur, free since 1950, buys steel plants from one superpower and food grain from the other and speaks freely at the United Nations. It has also let the first superpower supply and train its army and run a radar station on its coast, though no treaty has been signed. A commentator says trade with both sides proves Saranpur is non-aligned. Which assessment is best?",
+  opts: ["The trade and the independent voice do not settle the matter; the army links and the radar station tie its security to one side, so its non-alignment is doubtful", "Trade with both sides is the test of non-alignment, so Saranpur is fully non-aligned whatever else it allows", "Speaking freely at the United Nations shows Saranpur is fully non-aligned, since military links do not count", "Any dealings with a superpower, even trade, would place Saranpur inside that superpower's bloc"],
+  sol: "Non-alignment was judged mainly by freedom from military ties to a bloc, with an independent voice. Here two features pull apart: even trade and an open voice are present, but supply, training and a base-like station tie security to one side. Trade alone is not the test, and ordinary trade or aid did not make a state a bloc member, so the last option overstates.",
 }));
 Q("m_scn_base", mcq({
-  t: 1, d: 3, c: "application",
-  stem: "The imagined state of Korvania allows a superpower to build an air base on its soil and signs that superpower's defence treaty. Can Korvania be described as non-aligned?",
-  opts: ["No, because joining a bloc's military arrangements is the opposite of non-alignment", "Yes, because it still trades with other countries", "Yes, because every free country is non-aligned", "No, because non-aligned countries could not trade with superpowers"],
-  sol: "Non-alignment meant staying out of the military alliances and base systems of both blocs. Trade with anyone was allowed; that is why the last option is wrong too.",
+  t: 1, d: 3, c: "analysis",
+  stem: "Two imagined states, Alta and Berin, both stay out of every military alliance. Alta takes aid from both superpowers and, in world meetings, judges each question on its merits, speaking against colonial rule and racial discrimination. Berin has promised to take no stand on any dispute and to abstain every time. Which comparison is correct?",
+  opts: ["Alta's active policy matches non-alignment as the movement understood it, while Berin's silence is closer to neutrality", "Berin is the truer non-aligned state, because it avoids offending either bloc on any question", "Neither is non-aligned, since Alta takes aid from the superpowers and Berin takes no stand", "Both are simply neutral, since staying out of alliances is all that either word means"],
+  sol: "Both avoid blocs, but non-alignment was active: members spoke out on colonialism, racism and peace and took aid from both sides. Berin's promise to stay silent and abstain is the stand-aside attitude of neutrality. Aid did not end non-alignment, and the two words are not the same.",
 }));
 Q("m_scn_vote", mcq({
-  t: 1, d: 3, c: "application",
-  stem: "At an imagined United Nations debate, the delegate of a non-aligned country votes against a superpower's resolution on one question and for the same superpower's resolution on another. Which idea of non-alignment does this best show?",
-  opts: ["Judging each issue on its merits rather than following a bloc", "Strict neutrality on every question", "Loyalty to one bloc on all questions", "Refusing to take part in world bodies"],
-  sol: "A non-aligned delegate was free to support or oppose any power on the merits of the issue. Neutrality would mean abstaining, and bloc loyalty would mean voting the same way every time.",
+  t: 1, d: 3, c: "analysis",
+  stem: "An imagined critic notes that the non-aligned state of Marnia voted with one superpower on nine of ten United Nations questions in a year. Marnia gave its reasons for each vote, signed no pact and allowed no foreign base. The critic says the record proves Marnia is in that superpower's bloc. Which reply is best?",
+  opts: ["Agreeing often is not bloc membership; membership meant military commitments and following the bloc's line whatever the merits, and Marnia has neither", "The critic is right, because a state that agrees with a superpower nine times in ten has in effect joined it", "The critic is wrong, because a non-aligned state had to vote against both superpowers equally often", "The critic is wrong, because non-alignment applied to wars and had no bearing on votes at the United Nations"],
+  sol: "Non-alignment meant judging each issue on its merits, so frequent agreement with one power can happen when the merits point that way. What marked a bloc member was a military commitment and a fixed line. Marnia has neither. Nothing required equal opposition to both sides, and non-aligned states did speak and vote on world issues.",
 }));
 Q("m_disarm", mcq({
   t: 1, d: 2, c: "understanding",
@@ -254,9 +254,9 @@ Q("m_panch_link", mcq({
 }));
 Q("m_scn_panch", mcq({
   t: 2, d: 3, c: "application",
-  stem: "Two imagined neighbouring states, Velora and Durmak, agree to live in peace, settle disputes by talks and leave each other's internal affairs alone, though one is a monarchy and the other a republic. Their agreement follows the spirit of",
-  opts: ["Panchsheel", "the Munich Agreement", "the Warsaw Pact", "the policy of appeasement"],
-  sol: "Living peacefully side by side despite different systems is the spirit of Panchsheel. Munich and appeasement meant giving way to an aggressor, and the Warsaw Pact was a military alliance.",
+  stem: "Two imagined neighbouring states, Velora (a monarchy) and Durmak (a republic), sign an agreement in the spirit of Panchsheel: peace, talks to settle disputes, and respect for each other's borders and internal affairs. A year later, Velora's radio begins daily broadcasts urging Durmak's citizens to overthrow their government, though no soldier crosses the border. Which assessment is best?",
+  opts: ["The broadcasts go against the spirit of the agreement, because peaceful coexistence includes leaving each other's internal affairs alone, even without any border crossing", "The broadcasts do not breach it, because the agreement dealt only with armies and borders, and none has been crossed", "The agreement was void from the start, because a monarchy and a republic cannot coexist peacefully", "The broadcasts show that Velora has joined the bloc opposed to Durmak's"],
+  sol: "Non-interference in internal affairs is part of the idea of peaceful coexistence, so urging a rising against the neighbour's government breaks the spirit even though no border is crossed. The agreement was meant to let different systems live side by side, and broadcasts alone do not show bloc membership.",
 }));
 Q("ar_panch_coexist", ar({
   t: 2, d: 2, c: "analysis", verdict: "A-true-R-false",
@@ -336,13 +336,13 @@ Q("m_bandung_role", mcq({
   sol: "Bandung gathered newly free Asian and African states and set out shared ideas of peace and anti-colonialism. The first non-aligned summit came later, at Belgrade in 1961.",
 }));
 Q("m_scn_odd", mcq({
-  t: 3, d: 2, c: "application",
+  t: 3, d: 2, c: "recall",
   stem: "A quiz team lists four leaders as architects of the Non-Aligned Movement. Which name does NOT belong on the list?",
   opts: ["Winston Churchill", "Jawaharlal Nehru", "Josip Broz Tito", "Gamal Abdel Nasser"],
   sol: "Churchill led Britain, a member of the western bloc. Nehru, Tito and Nasser were architects of the movement, along with Sukarno and Nkrumah.",
 }));
 Q("m_scn_chart", mcq({
-  t: 3, d: 3, c: "application",
+  t: 3, d: 3, c: "recall",
   stem: "An imagined student's revision chart reads: Nehru, India; Tito, Egypt; Nasser, Yugoslavia; Sukarno, Indonesia. Which correction does the chart need?",
   opts: ["Tito and Nasser's countries should be swapped", "Nehru and Sukarno's countries should be swapped", "Sukarno should be shown as the leader of Ghana", "No correction is needed"],
   sol: "The Yugoslav and Egyptian entries have been swapped: Tito's country was Yugoslavia and Nasser's was Egypt. The pairs for Nehru (India) and Sukarno (Indonesia) need no change.",
@@ -535,35 +535,35 @@ Q("sb_radio_talk", source({
 
 // ================================================================ more scenario items (application)
 Q("m_app_scholarships", mcq({
-  t: 1, d: 3, c: "application",
-  stem: "The imagined state of Nalupura sends students to universities in both superpowers and joins non-aligned summits. A visiting journalist calls it a hidden member of one bloc. Which fact would best show the journalist is wrong?",
-  opts: ["Nalupura has signed no military treaty with either superpower", "Nalupura has a large army", "Nalupura trades with many countries", "Nalupura is a member of the United Nations"],
-  sol: "Bloc membership was shown by military treaties. Having an army, trading widely or belonging to the United Nations says nothing about bloc membership.",
+  t: 1, d: 3, c: "analysis",
+  stem: "An imagined editorial of 1960, written by SOYL, reads in outline: the country will sign neither pact offered by the two great powers, but it will not stay silent while colonial rulers govern its neighbours, and it will say so wherever delegates meet. Which reading of the writer's position is best supported?",
+  opts: ["The writer backs non-alignment rather than neutrality, since refusing both pacts is joined to a duty to speak on colonial rule", "The writer backs neutrality, since refusing both pacts is the whole of the policy described", "The writer backs one bloc, since a call to end colonial rule was the line of only one side", "The writer backs isolation, since refusing both pacts means having no dealings with the powers"],
+  sol: "Refusing both pacts shows the writer stands outside the blocs. The promise to speak out on colonial rule shows an active stand, which separates non-alignment from neutrality. Opposing colonial rule was not the line of one bloc alone, and refusing pacts is not the same as refusing all dealings.",
 }));
 Q("m_app_resolution", mcq({
-  t: 1, d: 3, c: "application",
-  stem: "At an imagined non-aligned summit, members pass a resolution asking both superpowers to stop testing nuclear weapons. Which aim of the movement does this resolution serve?",
-  opts: ["Disarmament and world peace", "Ending racial discrimination", "Fair prices for raw materials", "Support for one bloc"],
-  sol: "A call to stop nuclear tests serves the aim of disarmament and peace. The other aims are real but are not what this resolution is about, except the last, which the movement rejected.",
+  t: 1, d: 3, c: "analysis",
+  stem: "An imagined student writes: 'The non-aligned countries called for disarmament, so the movement wanted every state to give up all its armed forces.' Which qualification is best?",
+  opts: ["The call was aimed at the arms race between the blocs, above all nuclear weapons, which threatened world peace; members still kept forces for their own defence", "The claim is correct, since a call to disarm is a call to abolish all armed forces everywhere", "The claim is wrong, because the non-aligned countries asked only the weaker bloc to disarm", "The claim is wrong, because the movement approved nuclear weapons for its members to match the superpowers"],
+  sol: "The part that is right is that the movement pressed for disarmament. The overstatement is the word 'every': its concern was the blocs' arms race and nuclear danger, and members kept ordinary forces. It did not single out one bloc and did not approve nuclear weapons for its members.",
 }));
 Q("m_app_prices", mcq({
-  t: 1, d: 3, c: "application",
-  stem: "Imagined cocoa-growing and copper-mining members of the movement jointly ask richer countries for steadier prices for their exports. Which aim are they pursuing?",
-  opts: ["A fairer world economic order", "Joining a military alliance", "Ending all foreign trade", "Peaceful coexistence through Panchsheel"],
-  sol: "Asking for fair and steady export prices is part of the demand for a fairer world economic order. It has nothing to do with alliances, and it relies on trade rather than ending it.",
+  t: 1, d: 3, c: "analysis",
+  stem: "In 1962, an imagined newly free country earns almost all its money from one crop, sold mostly to countries of one bloc. Its army is small, and both blocs are offering it aid. Which reasoning best explains why its government may prefer non-alignment?",
+  opts: ["A pact would tie its politics and trade to one bloc and could make it a target for the other, while staying out keeps aid and markets open on both sides", "A pact would forbid it from trading at all, so staying out is the only way to sell its crop", "Non-alignment promises it military protection from both blocs at once, which no pact could give", "Most of the movement's founders had been colonies, so every former colony was bound to stay out of pacts"],
+  sol: "Two pressures meet here: dependence on a few buyers and a small army. A pact would bind it to one bloc and expose it to the other's pressure, while staying out keeps help and markets open on both sides. Pacts did not forbid trade, non-alignment gave no guarantee of protection, and no former colony was bound to join anything.",
 }));
 Q("m_app_newnation", mcq({
   t: 1, d: 3, c: "application",
-  stem: "A newly free country in 1960 is offered a defence treaty by one superpower and a loan with no conditions by the other. If it follows non-alignment, what is it most likely to do?",
-  opts: ["Accept the loan and refuse the defence treaty", "Accept the defence treaty and refuse the loan", "Accept both and join that bloc", "Refuse both and cut all foreign ties"],
-  sol: "A non-aligned state takes help without strings but stays out of military treaties. Joining a bloc or cutting all ties would contradict non-alignment.",
+  stem: "In 1960, an imagined newly free country is offered a large grant by one superpower. No treaty is asked for, but the grant comes with a joint military exercise programme and an agreement to settle its United Nations votes in advance with that superpower. If the country follows non-alignment, what is it most likely to do?",
+  opts: ["Accept the grant but decline the exercises and the vote-settling that would tie it to that bloc", "Accept everything, since no treaty has been signed and so nothing has been given up", "Accept everything and ask the other superpower for an equal package to keep the balance", "Refuse the grant as well, since non-alignment meant taking no help from any superpower"],
+  sol: "The money can be taken, as non-aligned states accepted aid from both sides. The exercises and the advance settling of votes would bind its security and its voice to one bloc, which is what non-alignment avoided. A missing treaty does not remove such ties, matching the offer from the other side would still be a tie, and aid itself was not refused.",
 }));
 Q("s_app_wrong_claim", short({
-  t: [1, 3], d: 3, c: "application", marks: 2, wl: S2,
-  stem: "An imagined student writes: 'The Non-Aligned Movement was founded by Nehru alone at Bandung in 1955.' Correct two errors in this sentence.",
-  model: "1. It was founded by **several leaders**, including **Tito**, **Nasser**, **Sukarno** and **Nkrumah**, not Nehru alone.\n2. It was founded at the **Belgrade** summit in **1961**; Bandung (1955) was an earlier **Asian–African** conference.",
-  sol: "Two corrections.",
-  scheme: [["Several founders", 1], ["Belgrade 1961", 1]],
+  t: [1, 3], d: 3, c: "analysis", marks: 2, wl: S2,
+  stem: "An imagined student argues: 'Bandung in 1955 was the first summit of the Non-Aligned Movement, because Asian and African leaders, Nehru among them, met there to speak for peace and against colonial rule. So the movement is six years older than 1961.' Assess the claim in two points.",
+  model: "1. **Partly right:** Bandung was an important **step**; **Asian and African** states shared ideas of **peace** and **anti-colonialism** there.\n2. **Not the first summit:** some states at Bandung had **joined bloc alliances**, so it was not a non-aligned meeting; that came at **Belgrade** in **1961**.",
+  sol: "Credit for what is right; evidence that it was not the first summit.",
+  scheme: [["What the claim gets right, with evidence", 1], ["Why Bandung was not the first summit, with evidence", 1]],
 }));
 
 // ================================================================ deck-check items (not used in tests)

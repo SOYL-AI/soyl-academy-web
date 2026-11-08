@@ -34,7 +34,7 @@ All items are `status: "draft"` until a reviewer approves them.
 | short | 9 | 3 (the proof that ε₀ dΦE/dt equals the lead current; a q–t graph; a capacitor’s C, dE/dt and i_d; the transverse sketch with B₀; how changing fields sustain a wave; classifying three radiations; ranges, sources and detectors; X-ray production and uses; evaluating a UV-C hand lamp) |
 | long | 5 | 5, set in parts with the marks shown (displacement current with a constant charging current; the wave sketch and a green laser; a smartphone’s four kinds of wave; an airport radar with an approaching aircraft; infrared and ultraviolet) |
 
-- **Difficulty:** d1 6 · d2 33 · d3 28 · d4 1. **Competency:** recall 3 · understanding 28 · application 25 · analysis 10 · evaluation 2: application or higher **54% of items (65% of marks)** (within the 45–65% band the stage-4 lint applies to physics).
+- **Difficulty:** d1 6 · d2 33 · d3 28 · d4 1. **Competency:** recall 3 · understanding 28 · application 25 · analysis 10 · evaluation 2: application or higher **54% of items (65% of marks)** (within the 45–65% band the stage-4 lint applies to physics) (superseded: see Competency audit 2026-11-05).
 - **Topic tags:** t01 17 · t02 19 · t03 33 (one long is tagged t02 and t03).
 
 ## Chapter tests (ISC defaults)
@@ -58,3 +58,10 @@ Every question was re-solved from its stem. Findings and fixes:
 - The approximate band edges differ between textbooks (some put the radio/microwave boundary at 10 cm); every classification question avoids the boundary regions, but reviewers should accept answers that quote other common edges. The decks place 2.45 GHz (12.2 cm, the oven) and the 3.0 GHz radar (10 cm) in the microwave band, as is usual for ovens and radar.
 - Sketches asked for in answers (the EM wave) are described in words; graders should accept any correct sketch.
 - Narration was not yet run through TTS (stage 8); slide `audio` is null.
+
+## Competency audit 2026-11-05
+Follows the audit's ISC 12 Physics lead (`docs/platform/content-qa/2026-11-05-competency-retag-audit.md`). Rule applied: one-formula substitutions (with or without a unit conversion) and directly applied stated rules are understanding; chained relations, a non-routine step or a new set-up keep application.
+- **Retagged:** q002, q008, q045, q046, q047, q048, q050 (application to understanding: one-formula substitutions); q017, q023, q024 (application to understanding); q021, q039 (analysis to understanding). Of these, q002, q008, q023, q045, q046, q047, q048 were then rewritten (below) and are application again for real.
+- **Rewritten as genuine application items (same key, type, marks, topic, test slots):** q002 (charging current and plate diameter to dE/dt: area from the diameter, then i_d = ε₀A dE/dt; d3); q008 (capacitance not given: C = ε₀A/d from plate area and gap, then dV/dt = i_d/C; d3); q023 (E₀ to B₀ then the factor by which the Earth's field exceeds it, judging a claim; d3); q025 (round-trip delay minus processing time, then d = ct/2; d3); q045 (frequency limits from 8.0 and 14 μm, then the width of the detectable band; d3); q046 (f = c/λ then number of oscillations in a 2.0 ns flash; d3); q047 (λ = c/f then ratio of a 0.25 nm layer spacing to λ, to judge whether diffraction is noticeable; d3); q048 (λ = c/f then wavelengths across a 40 m dish; d3).
+- **New counts (68 items):** recall 3 · understanding 32 · application 23 · analysis 8 · evaluation 2: application or higher 33/68 = **48.5% of items (62% of marks)**; difficulty d1 6 · d2 26 · d3 35 · d4 1.
+- Short and long answers were not re-judged.

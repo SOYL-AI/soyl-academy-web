@@ -46,10 +46,10 @@ add('acq-ar', ar({
   d: 2, c: 'understanding', t: [1],
 }));
 add('acquired-tf', tf({
-  stem: 'A rat that has learnt to find its way through a maze will pass this skill to its pups through its genes.',
+  stem: 'In an imagined experiment, adult rats are trained for months to run a maze quickly. Their pups, raised without any training, are tested later and run the maze no faster than pups of untrained rats. The result supports the view that a skill learnt by parents is passed to their pups through genes.',
   key: 'f',
-  sol: 'False. Learning changes the rat’s brain during its life, not the DNA of its germ cells, so the skill is an acquired trait and is not inherited.',
-  d: 2, c: 'understanding', t: [1],
+  sol: 'False. If learning altered the genes, the pups of trained parents would run faster even without training; they do not. Learning changes the parents’ brains, not the DNA of their germ cells, so the skill is an acquired trait and the result goes against the claim.',
+  d: 3, c: 'application', t: [1],
 }));
 add('acquired-fill', fill({
   stem: 'A trait that develops in an individual during its lifetime and is not passed on through its DNA is called an ___ trait.',
@@ -160,10 +160,10 @@ add('isolation-ar', ar({
   d: 2, c: 'understanding', t: [2],
 }));
 add('species-tf', tf({
-  stem: 'Members of two different species can usually interbreed and produce fertile offspring.',
+  stem: 'Frogs from two ponds differ in colour and call, and never meet in the wild. In a laboratory they mate readily, and their offspring grow up and reproduce normally. The differences in colour and the separation of the ponds prove that the two groups are different species.',
   key: 'f',
-  sol: 'False. Being unable to interbreed and produce fertile offspring is what separates two species; horses and donkeys, for example, produce mules that are usually sterile.',
-  d: 2, c: 'understanding', t: [2],
+  sol: 'False. Different appearance and living apart show only that the groups are separated, not that they are reproductively isolated. Because they interbreed and have fertile offspring, genes can still flow between them, so they are still one species.',
+  d: 3, c: 'application', t: [2],
 }));
 add('drift-fill', fill({
   stem: 'Random changes in how common a variation is in a small population, caused by chance events rather than by any advantage, are called genetic ___.',
@@ -386,10 +386,10 @@ add('chimp-ar', ar({
   d: 2, c: 'understanding', t: [4],
 }));
 add('progress-tf', tf({
-  stem: 'Evolution always produces more complex organisms that are "better" than older forms.',
+  stem: 'Some fish living in a dark cave have lost the eyes that their surface-living ancestors had. This shows that evolution has gone backwards, leaving these fish less well suited to their surroundings than their ancestors were.',
   key: 'f',
-  sol: 'False. Evolution produces organisms suited to their surroundings, not a ladder of progress; simple bacteria are as successful today as complex animals.',
-  d: 2, c: 'understanding', t: [4],
+  sol: 'False. In a dark cave eyes give no advantage and cost energy to grow, so fish with reduced eyes survive and reproduce at least as well. The change fits the fish to the cave; evolution is not a ladder of progress, so losing a feature is not "going backwards".',
+  d: 3, c: 'application', t: [4],
 }));
 add('sapiens-fill', fill({
   stem: 'The scientific name of modern humans, a single species found all over the world, is Homo ___.',
