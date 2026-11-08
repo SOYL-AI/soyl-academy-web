@@ -50,7 +50,7 @@ All three syllabus topics are covered:
 | source-based | 3 (imagined student diary, imagined lawyer's letter, SOYL timeline); each has an either/or part (c) |
 
 - **Difficulty:** d1 12, d2 32, d3 28, d4 5.
-- **Competency:** recall 21, understanding 20, application 11, analysis 20, evaluation 5. That puts 47% of items at application or above, inside the lint band of 45–65%.
+- **Competency:** recall 21, understanding 20, application 11, analysis 20, evaluation 5. That puts 47% of items at application or above, inside the lint band of 45–65%. (superseded: see Competency audit 2026-11-05)
 - **Retag note:** the first build was at 39%, so I added seven scenario-identification items (six MCQs and a 2-mark short) in place of three plain recall MCQs. No existing tag was raised.
 
 ## Facts a reviewer should double-check
@@ -77,3 +77,16 @@ All three syllabus topics are covered:
 ## Gaps
 
 - **Rendering:** nobody has seen the SVG labels rendered (the timeline with nine labels in lanes, and the Pact diagram). They need a look at 360 px on staging.
+
+## Competency audit 2026-11-05
+
+Audit: `docs/platform/content-qa/2026-11-05-competency-retag-audit.md`. The eight items that were tagged application although they only identified a factor, objective, term, Act, change, event or development from a paraphrased cue were rewritten in place (same key, type, marks, topic and test slot) so that each now asks the student to use the idea. No tag was simply relabelled.
+- `m_sort_factor` (analysis): infer a pamphlet writer's approach from a grievance, a request and a warning.
+- `m_sort_objective` (application): pick the 1906 objective that conflicts with joining a protest campaign.
+- `m_identify_term` (rewritten: the effect of fixed seat shares in a province where Muslims are a small minority). The reviewer judged the key a restatement of what fixed shares mean, so it is tagged **understanding**, not application.
+- `m_apply_electorate` (application): spot a chronological flaw (1909 arrangement, accepted by the Congress only in 1916).
+- `m_apply_change` (application): choose the pair of pre-1914 developments that explains the change of aim, against true but unfitting pairs.
+- `m_apply_1911` (analysis): explain why the 1911 decision outweighed the 1909 gain for an imagined member.
+- `m_apply_reunion` (application): explain why reunion was possible in 1916 and not in 1907.
+- `s_apply_speech` (application, 2 marks): give two points in support of the Pact against a delegate's objection.
+Competency now: recall 21, understanding 21, application 9, analysis 21, evaluation 5; application and above **35 of 77 (45.5%)**, inside the 45–65% band.
