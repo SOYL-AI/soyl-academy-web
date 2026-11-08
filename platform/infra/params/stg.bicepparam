@@ -60,6 +60,8 @@ param appSecrets = [
   { secretName: 'otp-pepper', envName: 'OTP_PEPPER', apps: ['api'] }
   { secretName: 'auth-secret', envName: 'AUTH_SECRET', apps: ['api'] }
   { secretName: 'mfa-encryption-key', envName: 'MFA_ENCRYPTION_KEY', apps: ['api'] }
+  // Future Builders ingest (ADR-027): shared with the marketing site's server (Vercel FB_INGEST_KEY).
+  { secretName: 'fb-ingest-key', envName: 'FB_INGEST_KEY', apps: ['api'] }
 ]
 
 // AI services reachable only through private endpoints (INFRA-5); the pipeline runs as a job in the VNet.

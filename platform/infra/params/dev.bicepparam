@@ -64,6 +64,8 @@ param appSecrets = [
   { secretName: 'otp-pepper', envName: 'OTP_PEPPER', apps: ['api'] }
   { secretName: 'auth-secret', envName: 'AUTH_SECRET', apps: ['api'] }
   { secretName: 'mfa-encryption-key', envName: 'MFA_ENCRYPTION_KEY', apps: ['api'] }
+  // Future Builders ingest (ADR-027): shared with the marketing site's server (Vercel FB_INGEST_KEY).
+  { secretName: 'fb-ingest-key', envName: 'FB_INGEST_KEY', apps: ['api'] }
 ]
 
 // dev keeps AI public network access (Entra-only, keys disabled) so the content pipeline can run

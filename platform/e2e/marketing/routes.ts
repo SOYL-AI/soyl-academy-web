@@ -20,6 +20,8 @@ export const MARKETING_PAGES: MarketingPage[] = [
   { name: 'book-a-demo', path: '/book-a-demo', status: 200 },
   { name: 'contact', path: '/contact', status: 200 },
   { name: 'future-builders', path: '/future-builders', status: 200 },
+  // Confirmation page after a verified payment (noindex, not in the sitemap). Renders without a receipt too.
+  { name: 'future-builders-registered', path: '/future-builders/registered', status: 200 },
   { name: 'journal', path: '/journal', status: 200 },
   { name: 'journal-homework-after-chatgpt', path: '/journal/homework-after-chatgpt', status: 200 },
   { name: 'journal-why-outcomes-matter', path: '/journal/why-outcomes-matter', status: 200 },
@@ -64,13 +66,25 @@ export const MARKETING_ENDPOINTS: MarketingEndpoint[] = [
     path: '/api/razorpay',
     method: 'GET',
     status: 405,
-    note: 'POST-only (Future Builders order creation). Not POSTed by the suite: with live keys it would create a Razorpay order. Expected POST behaviour: 409 while the cohort is closed (waitlist), else 200 with an order (mock order when RAZORPAY_KEY_* are unset).',
+    note: 'POST-only (Future Builders order creation, priced on the server). Not POSTed by the suite: with live keys it would create a Razorpay order. Expected POST behaviour: 409 while registration is closed, 400 on an invalid registrant, else 200 with an order (mock order only in local dev; 503 in production without RAZORPAY_KEY_*).',
+  },
+  {
+    path: '/api/razorpay/verify',
+    method: 'GET',
+    status: 405,
+    note: 'POST-only (checkout signature + Razorpay payment fetch, then the platform ingest). Unit-tested in lib/future-builders/__tests__.',
+  },
+  {
+    path: '/api/razorpay/webhook',
+    method: 'GET',
+    status: 405,
+    note: 'POST-only (Razorpay webhook safety net; X-Razorpay-Signature with RAZORPAY_WEBHOOK_SECRET, 503 while unset). Unit-tested in lib/future-builders/__tests__.',
   },
   {
     path: '/api/enroll',
     method: 'GET',
     status: 405,
-    note: 'POST-only (Future Builders enrolment to the Google Sheets webhook). Not POSTed by the suite: with GOOGLE_SHEETS_WEBHOOK_URL set it would write a row. Expected POST behaviour: 200 {success:true} (simulated when the webhook is unset), 500 on invalid JSON.',
+    note: 'POST-only (Future Builders call / notify / waitlist requests to the platform leads ingest). Not POSTed by the suite: with the ingest configured it would record a lead. Expected POST behaviour: 201 {success:true}, 400 on invalid input, 502/503 when it cannot be recorded.',
   },
 ];
 

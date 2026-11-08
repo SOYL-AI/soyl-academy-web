@@ -94,6 +94,8 @@ param appSecrets = [
   { secretName: 'otp-pepper', envName: 'OTP_PEPPER', apps: ['api'] }
   { secretName: 'auth-secret', envName: 'AUTH_SECRET', apps: ['api'] }
   { secretName: 'mfa-encryption-key', envName: 'MFA_ENCRYPTION_KEY', apps: ['api'] }
+  // Future Builders ingest (ADR-027): shared with the marketing site's server (Vercel FB_INGEST_KEY).
+  { secretName: 'fb-ingest-key', envName: 'FB_INGEST_KEY', apps: ['api'] }
 ]
 
 // Billing (D-038): the LIVE Razorpay account of the Future Builders payments. ONE switch, like aiOn:
@@ -196,5 +198,7 @@ param appSettings = {
   // Spend caps (D-038): rupees per day for all interactive AI, and the content programme's total.
   AI_DAILY_SPEND_CAP_INR: aiOn ? '3000' : '0'
   CONTENT_BUDGET_INR: aiOn ? '300000' : '0'
+  // Future Builders (D-051, ADR-027): staff notice for each registration and enquiry.
+  FB_NOTIFY_EMAIL: 'outreach@soyl.cloud'
   LOG_LEVEL: 'info'
 }
