@@ -35,7 +35,7 @@ All items are `status: "draft"` until a reviewer approves them.
 | short | 9 | 3 (proofs: reflection and refraction with Huygens’ construction, φ = 2πΔ/λ with a bright-or-dark decision, the fringe width; problems: wavefront shapes and intensity ratios, a set-up immersed in a liquid, a light meter across a pattern from unequal slits, single-slit dark and bright directions by dividing the slit, a single-slit calculation of minima and widths) |
 | long | 5 | 5, set in parts with the marks shown (wavefronts, Huygens’ principle and the reflection proof with glass-to-air refraction; the refraction proof with glass-to-water at 60° and the no-tangent case at 70°; Young’s experiment with a moved screen in a liquid; the intensity distribution, contrast and the half-intensity point; the single-slit pattern with the width of the central maximum) |
 
-- **Difficulty:** d1 9 · d2 37 · d3 24 · d4 4. **Competency:** understanding 33 · application 23 · analysis 16 · evaluation 2: application or higher **55% of items (65% of marks)** (within the 45–65% band the stage-4 lint applies to physics).
+- **Difficulty:** d1 9 · d2 37 · d3 24 · d4 4. **Competency:** understanding 33 · application 23 · analysis 16 · evaluation 2: application or higher **55% of items (65% of marks)** (within the 45–65% band the stage-4 lint applies to physics) (superseded: see Competency audit 2026-11-05).
 - **Topic tags:** t01 11 · t02 11 · t03 12 · t04 17 · t05 12 · t06 12 · t07 10 (three contrast/intensity numericals are tagged t03 and t05; the single-slit calculation short and long t06 and t07; the slit-comparison MCQ t04 and t07).
 
 ## Chapter tests (ISC defaults)
@@ -59,3 +59,10 @@ Every question was re-solved from its stem. Findings and fixes:
 ## Known gaps
 - Sketches and construction figures asked for in answers (Huygens’ constructions, the intensity graph, the single-slit pattern) are described in words; graders should accept any correct sketch.
 - Narration was not yet run through TTS (stage 8); slide `audio` is null.
+
+## Competency audit 2026-11-05
+Follows the audit's ISC 12 Physics lead (`docs/platform/content-qa/2026-11-05-competency-retag-audit.md`). Rule applied: one-formula substitutions (with or without a unit conversion) and directly applied stated rules are understanding; chained relations, a non-routine step or a new set-up keep application.
+- **Retagged to understanding:** q002, q013, q014, q015, q020, q021, q039, q063, q065. Of these, q039 and q065 were then rewritten (below) and are application again for real.
+- **Rewritten as genuine application items (same key, type, marks, topic, test slots):** q039 (the screen distance is not given: D from the first arrangement, then the fringe width after changing the slit separation and immersing everything in water together; d3); q065 (slit width from the first pattern, then the central-band width for a different wavelength and a moved wall; d3); q037 (interpret a measured position of the 6th bright fringe: fringe width, then the laser wavelength; d2).
+- **New counts (74 items):** understanding 39 · application 17 · analysis 16 · evaluation 2: application or higher 35/74 = **47.3% of items (59% of marks)**; difficulty d1 8 · d2 37 · d3 25 · d4 4.
+- Short and long answers were not re-judged.
