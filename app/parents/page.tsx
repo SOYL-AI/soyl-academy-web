@@ -86,7 +86,7 @@ export default function ParentsPage() {
                 <p className="t-eyebrow text-muted">Grades 7–12</p>
                 <h3 className="t-title mt-2">Future Builders</h3>
                 <p className="mt-2 text-muted">
-                  A separate, paid weekend cohort where students build a working product across software, AI, IoT robotics and entrepreneurship.
+                  A separate, paid summer camp where students build a working product across software, AI, IoT robotics and entrepreneurship.
                 </p>
                 <span className="arrow-link mt-5">
                   About Future Builders <ArrowRight />

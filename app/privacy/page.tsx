@@ -77,7 +77,7 @@ export default function PrivacyPage() {
                 <div className="border border-rule bg-white p-4">
                   <h3 className="font-semibold mb-1">Functional & Preference Storage</h3>
                   <p className="t-small text-muted">
-                    Browser storage used to remember your coupon codes (e.g. <code>BUILDER10</code>) and popup dismissal state so you are not interrupted repeatedly.
+                    Browser storage used to remember your coupon codes (e.g. <code>FRIEND500</code>) and popup dismissal state so you are not interrupted repeatedly.
                   </p>
                 </div>
               </div>
@@ -102,6 +102,7 @@ export default function PrivacyPage() {
                 <li><strong>Payment Aggregator:</strong> Razorpay Software Private Limited (PCI-DSS Level 1 compliant tokenized payment processing).</li>
                 <li><strong>Logistics Partners:</strong> Delhivery, BlueDart, DTDC, and India Post for doorstep delivery of hardware kits.</li>
                 <li><strong>Infrastructure & Telemetry:</strong> Vercel Inc. for secure global hosting and privacy-friendly web analytics.</li>
+                <li><strong>Registration Records:</strong> Future Builders registrations, payment confirmations and enquiries are stored on SOYL&apos;s platform, hosted on Microsoft Azure in India.</li>
                 <li><strong>Direct Communication:</strong> WhatsApp/Meta for student cohort announcements and support.</li>
               </ul>
             </section>

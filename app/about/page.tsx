@@ -68,7 +68,7 @@ export default function AboutPage() {
               Software can generate content. It can’t inspire, build relationships or read a room.
             </p>
             <p className="mt-5 text-muted">
-              SOYL builds tools that give teachers time back and a clearer view of each pupil’s thinking, so they can do what only people can: mentor, challenge and guide. Alongside the school platform, we run Future Builders, a weekend programme where students in Grades 7–12 build real products.
+              SOYL builds tools that give teachers time back and a clearer view of each pupil’s thinking, so they can do what only people can: mentor, challenge and guide. Alongside the school platform, we run Future Builders, a summer camp where students in Grades 7–12 build real products.
             </p>
           </div>
         </div>

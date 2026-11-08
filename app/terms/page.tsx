@@ -57,7 +57,7 @@ export default function TermsPage() {
             <section className="border-b border-rule py-8">
               <h2 className="t-subtitle mb-3">4. Session 1 Money-Back Guarantee</h2>
               <p className="mb-3">
-                We maintain a <strong>100% Session 1 Money-Back Guarantee</strong>. Have your student attend the first weekend of live classes. If they do not wish to continue, notify our team via email (<a href="mailto:outreach@soyl.cloud" className="link">outreach@soyl.cloud</a>) or WhatsApp within 24 hours of Session 1 to receive a 100% full refund.
+                We maintain a <strong>100% Session 1 Money-Back Guarantee</strong>. Have your student attend Session 1, the first live class. If they do not wish to continue, notify our team via email (<a href="mailto:outreach@soyl.cloud" className="link">outreach@soyl.cloud</a>) or WhatsApp within 24 hours of Session 1 to receive a 100% full refund.
               </p>
               <p>
                 The delivered physical ESP32-C3 hardware kit remains yours to keep.

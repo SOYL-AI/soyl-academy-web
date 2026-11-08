@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
 
 interface StickyCtaProps {
-  /** Short status, e.g. "₹5,499 · closes 22 Oct" or "Next cohort: dates soon". */
+  /** Short status, e.g. "₹9,999 · April–May 2027 summer camp" or "Next camp: dates soon". */
   line: string;
   label: string;
   /** Analytics action label for the button. */

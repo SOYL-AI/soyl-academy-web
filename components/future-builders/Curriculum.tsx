@@ -1,27 +1,24 @@
 import { Photo } from '@/components/media/Photo';
 import { SectionHeader } from '@/components/ui/SectionHeader';
-import { CONTACT_HOURS } from '@/content/future-builders';
 import { images, type EditorialImage } from '@/content/images';
 import { cn } from '@/lib/utils';
 
 interface Module {
-  /** First and last week (1-based, inclusive). */
-  from: number;
-  to: number;
+  /** Relative share of the camp, for the bar's segment width (the curriculum's proportions). */
+  span: number;
   short: string;
   title: string;
   learn: string;
   build: string;
   image: EditorialImage;
-  /** Bar fill, dot and week-tag colours. */
+  /** Bar fill and dot colours. */
   fill: string;
   text: string;
 }
 
 const MODULES: Module[] = [
   {
-    from: 1,
-    to: 4,
+    span: 4,
     short: 'Software',
     title: 'Software and computing',
     learn: 'Logic, Python, APIs and SQLite databases, from the very first line of code.',
@@ -31,8 +28,7 @@ const MODULES: Module[] = [
     text: 'text-cobalt',
   },
   {
-    from: 5,
-    to: 6,
+    span: 2,
     short: 'AI',
     title: 'AI and automation',
     learn: 'Machine learning, deep learning, image processing and reinforcement-learning agents.',
@@ -42,8 +38,7 @@ const MODULES: Module[] = [
     text: 'text-red-ink',
   },
   {
-    from: 7,
-    to: 9,
+    span: 3,
     short: 'IoT',
     title: 'IoT and robotics',
     learn: 'Low-voltage ESP32 electronics, sensors, servos and networking, on their own kit.',
@@ -53,8 +48,7 @@ const MODULES: Module[] = [
     text: 'text-ink',
   },
   {
-    from: 10,
-    to: 12,
+    span: 3,
     short: 'Business',
     title: 'Entrepreneurship',
     learn: 'Market discovery, customer interviews, cost sheets and how to pitch.',
@@ -65,62 +59,51 @@ const MODULES: Module[] = [
   },
 ];
 
-const WEEKS = Array.from({ length: 12 }, (_, i) => i + 1);
-const moduleFor = (week: number) => MODULES.find((m) => week >= m.from && week <= m.to)!;
-
 const MILESTONES = [
-  { when: 'Before week 1', what: 'Orientation: meet the instructors, set up the tools' },
-  { when: 'Weeks 3–4', what: 'The hardware kit arrives at home' },
-  { when: 'Week 12', what: 'Demo Day: teams pitch to parents and guests' },
+  { when: 'Before the first class', what: 'Orientation: meet the instructors, set up the tools' },
+  { when: 'Before the IoT module', what: 'The hardware kit arrives at home' },
+  { when: 'The final session', what: 'Demo Day: teams pitch to parents and guests' },
 ];
 
 const STACK = ['Python tool', 'AI model', 'Device', 'Pitch'];
 
 /**
- * The 12 weeks: a week bar coloured by module, the milestones, then one card per module.
- * `upcomingName`: an announced cohort whose timetable isn't set; the week plan is
- * then labelled as the weekend format, with its own timetable to come.
+ * The camp, module by module: a bar coloured by module (proportional to each module's share),
+ * the milestones, then one card per module. Same curriculum as before; the summer camp's exact
+ * dates and timetable are shared after registration, so no weeks or session counts are stated.
  */
-export function Curriculum({ upcomingName }: { upcomingName?: string }) {
+export function Curriculum({ timing }: { timing?: string }) {
   return (
     <section className="section bg-paper" aria-labelledby="weeks-heading">
       <div className="page">
         <SectionHeader
           id="weeks-heading"
-          label={upcomingName ? 'The programme' : 'The 12 weeks'}
+          label="The programme"
           num="02"
           title={
             <>
               Four modules. One <span className="t-accent">working</span> product.
             </>
           }
-          intro={`${upcomingName ? "Live" : `${CONTACT_HOURS} hours of live`}, hands-on building. Each module adds a layer to the same team project, so by Demo Day the code, the AI and the hardware fit together.`}
+          intro="Live, hands-on building. Each module adds a layer to the same team project, so by Demo Day the code, the AI and the hardware fit together."
         />
 
-        {/* Week bar: decorative; the same facts are in the module list below. */}
+        {/* Module bar: decorative; the same facts are in the module list below. */}
         <div className="mt-12 md:mt-16" data-reveal aria-hidden="true">
-          <div className="grid grid-cols-12 gap-1 sm:gap-1.5">
-            {MODULES.map((m) => (
-              <p
-                key={m.short}
-                className="t-small truncate pb-2 font-semibold text-ink"
-                style={{ gridColumn: `${m.from} / ${m.to + 1}` }}
-              >
-                {m.short}
-              </p>
-            ))}
-            {WEEKS.map((w) => (
-              <div key={w} className="flex flex-col items-center gap-2">
-                <span className={cn('h-3 w-full rounded-full sm:h-4', moduleFor(w).fill)} />
-                <span className="t-num text-[13px] text-muted">{w}</span>
+          <div className="grid gap-1 sm:gap-1.5" style={{ gridTemplateColumns: MODULES.map((m) => `${m.span}fr`).join(' ') }}>
+            {MODULES.map((m, i) => (
+              <div key={m.short} className="flex min-w-0 flex-col gap-2">
+                <p className="t-small truncate font-semibold text-ink">{m.short}</p>
+                <span className={cn('h-3 w-full rounded-full sm:h-4', m.fill)} />
+                <span className="t-num text-[13px] text-muted">{i + 1}</span>
               </div>
             ))}
           </div>
         </div>
 
-        {upcomingName && (
+        {timing && (
           <p className="t-small mt-5 max-w-[70ch] text-muted" data-reveal>
-            The week plan shows the 12-week weekend format. The {upcomingName}’s detailed timetable is announced at registration.
+            {timing}.
           </p>
         )}
 
@@ -142,7 +125,7 @@ export function Curriculum({ upcomingName }: { upcomingName?: string }) {
               <Photo image={m.image} aspect="aspect-[4/3]" reveal={false} sizes="(min-width: 1320px) 290px, (min-width: 768px) 45vw, 100vw" />
               <p className="t-label t-num mt-6 flex items-center gap-2 text-muted">
                 <span aria-hidden="true" className={cn('h-2.5 w-2.5 rounded-full', m.fill)} />
-                Weeks {m.from}–{m.to}
+                Module {i + 1}
               </p>
               <h3 className="t-title mt-2">{m.title}</h3>
               <p className="mb-5 mt-3 text-muted">

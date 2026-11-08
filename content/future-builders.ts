@@ -1,74 +1,77 @@
 /**
- * Future Builders cohort facts — the single file to edit by hand.
+ * Future Builders summer camp facts: the single file to edit by hand.
  *
- * Every date, seat count, price and discount code shown anywhere on the site
- * (banner, programme page, form, FAQ, payment API) reads from here.
+ * Every date, price, offer and discount code shown anywhere on the site (homepage tab and
+ * feature, programme page, form, FAQ, JSON-LD, payment API) reads from here.
+ *
+ * Owner decisions, 8 Nov 2026 (binding):
+ * - The programme is a 2-month SUMMER CAMP, April–May 2027, during the summer break. Same
+ *   curriculum as before. Never call it a "12-week cohort"; state no cohort size or seat count,
+ *   no session count and no contact hours. Timing copy: "April–May 2027 · exact dates and
+ *   timetable shared after registration".
+ * - Prices in rupees only: list price ₹11,999 (shown struck through). Diwali early-bird ₹3,299
+ *   until 15 Nov 2026, 23:59 IST; after that ₹9,999. Only FRIEND500 (₹500 off, with the friend's
+ *   name) is accepted, during and after the offer.
+ * - Registration is open from the relaunch until 31 Mar 2027, 23:59 IST.
  *
  * Registration state is derived from the dates, so nothing goes stale:
- *   open          → a cohort is taking registrations, more than CLOSING_SOON_DAYS before the close
+ *   upcoming      → before `registrationOpens` (the page collects "notify me" sign-ups; payment is refused)
+ *   open          → taking registrations, more than CLOSING_SOON_DAYS before the close
  *   closing-soon  → within CLOSING_SOON_DAYS of the close
- *   upcoming      → NEXT_COHORT is announced but registration hasn't opened yet
- *                   (the page collects "notify me" sign-ups; payment is refused)
- *   waitlist      → nothing open and nothing announced
+ *   waitlist      → registration has closed (or no camp is set)
  *
- * To open the next cohort, either:
- *   - set NEXT_COHORT.registrationOpens AND NEXT_COHORT.dates: the site switches
- *     from "upcoming" to "open" by itself at that moment; or
- *   - replace COHORT with the new cohort's dates (and set NEXT_COHORT to null).
+ * The offer (Diwali early-bird or the standard fee) is derived from the date the same way.
+ *
+ * To run the next camp: replace CAMP with its facts (slug, months, registration window) and
+ * add or replace the offers below. A camp can have month-level timing only; exact `dates` are
+ * optional and are shown only once set.
  */
 
-export interface Cohort {
-  /** Shown in headings, e.g. "January 2027 cohort". */
+export interface Camp {
+  /** Stable id sent to the platform with each registration, e.g. "summer-2027". */
+  slug: string;
+  /** Shown in headings, e.g. "Summer 2027 camp". */
   name: string;
-  /** ISO dates (IST). */
-  orientation: string;
-  classesStart: string;
-  /** Registration close, ISO timestamp with offset. */
-  registrationCloses: string;
-  /** Demo Day / end date, ISO. */
-  ends: string;
-}
-
-/** The most recent cohort with full dates. Open from now until `registrationCloses`. */
-export const COHORT: Cohort | null = {
-  name: 'October 2026 cohort',
-  orientation: '2026-10-20',
-  classesStart: '2026-10-24',
-  registrationCloses: '2026-10-22T23:59:00+05:30',
-  ends: '2027-01-12',
-};
-
-/** An announced cohort whose registration has not opened yet. */
-export interface UpcomingCohort {
-  /** Shown in headings, e.g. "Summer 2027 cohort". */
-  name: string;
-  /** When it runs, in words. No exact dates until they are set. */
-  window: string;
-  /** When registration opens, in words, e.g. "mid-November 2026". */
+  /** When it runs, month-level, e.g. "April–May 2027". */
+  months: string;
+  /** The same, as ISO year-months for structured data, e.g. "2027-04" and "2027-05". */
+  startMonth: string;
+  endMonth: string;
+  /** e.g. "a 2-month camp during the summer break". */
+  format: string;
+  /** e.g. "exact dates and timetable shared after registration". */
+  timingNote: string;
+  /** Registration opens, ISO timestamp with offset. */
+  registrationOpens: string;
+  /** In words, for "upcoming" copy, e.g. "8 November 2026". */
   registrationOpensLabel: string;
-  /**
-   * Optional exact opening, ISO timestamp with offset (e.g. "2026-11-15T10:00:00+05:30").
-   * Once it has passed AND `dates` is filled in, the state becomes open automatically.
-   */
-  registrationOpens?: string;
-  /** The cohort's dates; required before it can take payments. */
-  dates?: Omit<Cohort, 'name'>;
-  /** Tag stored with "notify me" and call requests in the Google Sheet. */
+  /** Registration closes, ISO timestamp with offset (the last moment payment is accepted). */
+  registrationCloses: string;
+  /** Exact dates (ISO, IST), only once the owner has fixed them. Optional; shown only when set. */
+  dates?: { orientation?: string; classesStart?: string; ends?: string };
+  /** Tag stored with "notify me", waitlist and call requests. */
   sourceTag: string;
 }
 
-/**
- * D-038 (owner, 28 Oct 2026): the next cohort runs in the summer break, April–May 2027;
- * registration opens mid-November 2026. Exact dates, timetable and price are not set yet,
- * so none are stated: the page shows the current BASE_PRICE and "timetable announced at registration".
- * Set to `null` when nothing is announced; the site then shows the plain waitlist.
- */
-export const NEXT_COHORT: UpcomingCohort | null = {
-  name: 'Summer 2027 cohort',
-  window: 'April–May 2027, during the summer break',
-  registrationOpensLabel: 'mid-November 2026',
+export const CAMP: Camp | null = {
+  slug: 'summer-2027',
+  name: 'Summer 2027 camp',
+  months: 'April–May 2027',
+  startMonth: '2027-04',
+  endMonth: '2027-05',
+  format: 'a 2-month camp during the summer break',
+  timingNote: 'exact dates and timetable shared after registration',
+  // Open from the 8 Nov 2026 relaunch until 31 Mar 2027, 23:59 IST.
+  registrationOpens: '2026-11-08T00:00:00+05:30',
+  registrationOpensLabel: '8 November 2026',
+  registrationCloses: '2027-03-31T23:59:59+05:30',
   sourceTag: 'fb_summer_2027',
 };
+
+/** "April–May 2027 · exact dates and timetable shared after registration" */
+export function campTimingLine(camp: Camp): string {
+  return `${camp.months} · ${camp.timingNote}`;
+}
 
 export const CLOSING_SOON_DAYS = 5;
 
@@ -76,53 +79,49 @@ export type CohortState = 'open' | 'closing-soon' | 'upcoming' | 'waitlist';
 
 /**
  * Development only, ignored in production builds:
- * - COHORT_PREVIEW_DATE (e.g. 2026-10-10) previews the site on that day;
- * - COHORT_PREVIEW_NEXT=none previews it as if no next cohort were announced.
+ * COHORT_PREVIEW_DATE previews the site at that moment: a day ("2026-11-20", read as noon IST)
+ * or a full timestamp ("2026-11-15T23:58:00+05:30"). It drives the camp state AND the offer,
+ * in the pages and in the payment API alike.
+ *   Diwali offer on:                 COHORT_PREVIEW_DATE=2026-11-10
+ *   Diwali offer over (₹9,999):      COHORT_PREVIEW_DATE=2026-11-20
+ *   Registration closed (waitlist):  COHORT_PREVIEW_DATE=2027-04-02
  */
 const DEV = process.env.NODE_ENV !== 'production';
 
-function today(): Date {
-  const preview = DEV ? process.env.COHORT_PREVIEW_DATE : undefined;
-  return preview ? new Date(`${preview}T12:00:00+05:30`) : new Date();
+export function previewNow(): Date | null {
+  const preview = DEV ? process.env.COHORT_PREVIEW_DATE?.trim() : undefined;
+  if (!preview) return null;
+  const date = new Date(/^\d{4}-\d{2}-\d{2}$/.test(preview) ? `${preview}T12:00:00+05:30` : preview);
+  return Number.isNaN(date.getTime()) ? null : date;
 }
 
-function announcedNext(): UpcomingCohort | null {
-  return DEV && process.env.COHORT_PREVIEW_NEXT === 'none' ? null : NEXT_COHORT;
+/** Now, or the dev preview moment. Every date rule on the site goes through this. */
+export function today(): Date {
+  return previewNow() ?? new Date();
 }
 
 const ms = (iso: string) => new Date(iso).getTime();
 
-interface Schedule {
-  current: Cohort | null;
-  next: UpcomingCohort | null;
-}
-
-/** The cohort taking registrations right now, if any. Payment is allowed only when this is not null. */
-export function getOpenCohort(now: Date = today(), { current, next }: Schedule = { current: COHORT, next: announcedNext() }): Cohort | null {
+/** The camp taking registrations right now, if any. Payment is allowed only when this is not null. */
+export function getOpenCohort(now: Date = today(), camp: Camp | null = CAMP): Camp | null {
+  if (!camp) return null;
   const t = now.getTime();
-  if (current && t < ms(current.registrationCloses)) return current;
-  if (next?.registrationOpens && next.dates && t >= ms(next.registrationOpens) && t < ms(next.dates.registrationCloses)) {
-    return { name: next.name, ...next.dates };
-  }
-  return null;
+  return t >= ms(camp.registrationOpens) && t <= ms(camp.registrationCloses) ? camp : null;
 }
 
-/** The announced cohort, while its registration has not opened yet. */
-export function getUpcomingCohort(now: Date = today(), schedule: Schedule = { current: COHORT, next: announcedNext() }): UpcomingCohort | null {
-  const { next } = schedule;
-  if (!next || getOpenCohort(now, schedule)) return null;
-  // Its registration has already closed: it is no longer "upcoming".
-  if (next.dates && now.getTime() >= ms(next.dates.registrationCloses)) return null;
-  return next;
+/** The announced camp, while its registration has not opened yet. */
+export function getUpcomingCohort(now: Date = today(), camp: Camp | null = CAMP): Camp | null {
+  if (!camp) return null;
+  return now.getTime() < ms(camp.registrationOpens) ? camp : null;
 }
 
-export function getCohortState(now: Date = today(), schedule: Schedule = { current: COHORT, next: announcedNext() }): CohortState {
-  const open = getOpenCohort(now, schedule);
+export function getCohortState(now: Date = today(), camp: Camp | null = CAMP): CohortState {
+  const open = getOpenCohort(now, camp);
   if (open) {
     const left = ms(open.registrationCloses) - now.getTime();
     return left <= CLOSING_SOON_DAYS * 24 * 60 * 60 * 1000 ? 'closing-soon' : 'open';
   }
-  return getUpcomingCohort(now, schedule) ? 'upcoming' : 'waitlist';
+  return getUpcomingCohort(now, camp) ? 'upcoming' : 'waitlist';
 }
 
 /** "22 Oct" in IST, from an ISO date or timestamp. */
@@ -136,27 +135,55 @@ export function formatCohortDate(iso: string, withYear = false): string {
   });
 }
 
-// ── Cohort size ───────────────────────────────────────────────────────────
-/** Maximum students per cohort (stated on the page and in the FAQ). */
-export const SEATS_TOTAL: number = 10;
+// ── Price & offers (rupees; the payment API converts to paise) ────────────
+/** The list price, always shown struck through next to the price actually charged. */
+export const LIST_PRICE = 11999;
 
-export const SCHEDULE = {
-  days: 'Saturday evenings + Sunday mornings',
-  short: 'Sat evening · Sun morning',
-  hours: '~3 hrs per session, live on video (IST)',
-} as const;
+export type OfferSlug = 'diwali-2026' | 'standard';
 
-export const CONTACT_HOURS = 75;
+export interface Offer {
+  /** Sent to the platform with each registration. */
+  slug: OfferSlug;
+  /** e.g. "Diwali early-bird". */
+  name: string;
+  /** What is charged before any discount code, in rupees. */
+  price: number;
+  /** Exclusive end, ISO timestamp with offset. Absent = no end (the standard fee). */
+  endsAt?: string;
+  /** The end in words, e.g. "15 Nov, 11:59 pm". */
+  endsLabel?: string;
+  /** Page theme while this offer runs. */
+  theme?: 'diwali';
+}
 
-// ── Price & offers ────────────────────────────────────────────────────────
-export const BASE_PRICE = 5499;
-/** ₹5,499 ÷ 75 h = ₹73.3, rounded up to the next ₹5 → "under ₹75/hour". */
-export const PER_HOUR_UNDER = Math.ceil(BASE_PRICE / CONTACT_HOURS / 5) * 5;
-export const VALUE_LINE = `₹${BASE_PRICE.toLocaleString('en-IN')} ÷ ${CONTACT_HOURS} hours = under ₹${PER_HOUR_UNDER}/hour · kit included, shipped to your door`;
+/** Diwali early-bird: ₹3,299 until 15 Nov 2026, 23:59 IST (the offer ends at midnight IST). */
+export const DIWALI_OFFER: Offer = {
+  slug: 'diwali-2026',
+  name: 'Diwali early-bird',
+  price: 3299,
+  endsAt: '2026-11-16T00:00:00+05:30',
+  endsLabel: '15 Nov, 11:59 pm',
+  theme: 'diwali',
+};
 
-/** Early-bird code. */
-export const EARLY_BIRD_CODE = 'BUILDER10';
-/** Referral / bring-a-friend code. Requires the friend's name at checkout. */
+/** After the Diwali offer: ₹11,999 struck → ₹9,999, no theme. */
+export const STANDARD_OFFER: Offer = {
+  slug: 'standard',
+  name: 'Summer camp fee',
+  price: 9999,
+};
+
+/** The offer in force at `now`: Diwali until its end, then the standard fee. */
+export function getActiveOffer(now: Date = today()): Offer {
+  return DIWALI_OFFER.endsAt && now.getTime() < ms(DIWALI_OFFER.endsAt) ? DIWALI_OFFER : STANDARD_OFFER;
+}
+
+/** "₹3,299" */
+export function rupees(amount: number): string {
+  return `₹${amount.toLocaleString('en-IN')}`;
+}
+
+/** Referral / bring-a-friend code: the only code accepted. Requires the friend's name at checkout. */
 export const FRIEND_CODE = 'FRIEND500';
 export const FRIEND_DISCOUNT = 500;
 

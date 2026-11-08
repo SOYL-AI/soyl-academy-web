@@ -7,24 +7,27 @@ import { Drawn } from '@/components/motion/Text';
 import { Label, SectionHeader } from '@/components/ui/SectionHeader';
 import { Faq } from '@/components/seo/Faq';
 import { StructuredData } from '@/components/seo/StructuredData';
-import { PRICE, PriceCard, StatusCard } from '@/components/future-builders/Cards';
+import { PriceCard, StatusCard } from '@/components/future-builders/Cards';
 import { Curriculum } from '@/components/future-builders/Curriculum';
 import { CtaTracker } from '@/components/future-builders/CtaTracker';
+import { DiwaliOfferBand } from '@/components/future-builders/Diwali';
 import { StickyCta } from '@/components/future-builders/StickyCta';
 import { getFutureBuildersFaqs } from '@/content/future-builders-faqs';
 import {
-  BASE_PRICE,
-  COHORT as LAST_COHORT,
-  CONTACT_HOURS,
   FRIEND_CODE,
   FRIEND_DISCOUNT,
-  SCHEDULE,
-  SEATS_TOTAL,
+  LIST_PRICE,
+  STANDARD_OFFER,
   WHATSAPP_DISPLAY,
+  campTimingLine,
   formatCohortDate,
+  getActiveOffer,
   getCohortState,
   getOpenCohort,
   getUpcomingCohort,
+  previewNow,
+  rupees,
+  today,
   whatsappLink,
   whatsappShareLink,
 } from '@/content/future-builders';
@@ -35,13 +38,14 @@ import { breadcrumbNode, faqNode, graph, topLevelCrumbs, webPageNode } from '@/l
 
 export const metadata = createMetadata({
   path: '/future-builders',
-  keywords: ['online coding classes for kids', 'robotics for students', 'AI course for teenagers', 'IoT for grades 7 to 12', 'summer coding course for students', 'entrepreneurship for students', 'Future Builders SOYL'],
+  keywords: ['summer coding camp for kids', 'online summer camp India', 'robotics for students', 'AI course for teenagers', 'IoT for grades 7 to 12', 'entrepreneurship for students', 'Future Builders SOYL'],
 });
 
-// Registration state comes from today's date; re-check every hour.
-export const revalidate = 3600;
+// Registration state and the offer come from the date; re-check every 5 minutes so the Diwali
+// price and theme go within minutes of the offer's end (the payment API prices by its own clock).
+export const revalidate = 300;
 
-const WHATSAPP_URL = whatsappLink('Hi, I have a question about Future Builders');
+const WHATSAPP_URL = whatsappLink('Hi, I have a question about the Future Builders summer camp');
 
 /** Problem → transformation: where a student starts, and what they can do by Demo Day. */
 const CHANGES: [string, string][] = [
@@ -61,66 +65,61 @@ const PORTFOLIO = [
 
 const SKILLS = ['Python', 'APIs', 'SQLite', 'Machine learning', 'Image recognition', 'ESP32 electronics', 'Sensors and servos', 'Customer interviews', 'Cost sheets', 'Pitching', 'Teamwork'];
 
-const capitalise = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
-
 /**
- * Future Builders: the programme's sales page. One structure, four registration
- * states from content/future-builders.ts:
- *   open / closing-soon → pay (Razorpay) or request a call
- *   upcoming            → "notify me when registration opens" or request a call (D-038)
+ * Future Builders: the summer camp's sales page. One structure, four registration states from
+ * content/future-builders.ts:
+ *   open / closing-soon → pay (Razorpay, verified on the server) or request a call
+ *   upcoming            → "notify me when registration opens" or request a call
  *   waitlist            → join the waitlist or request a call
- * Nothing about a cohort is stated unless it is in the config: no invented dates,
- * timetable, price, scarcity or proof.
+ * and two offers by date: the Diwali early-bird (with its theme, until 15 Nov 2026 23:59 IST), then
+ * the standard fee. Nothing is stated unless it is in the config: no invented dates, timetable,
+ * seat counts, hours or proof.
  */
 export default function FutureBuildersPage() {
-  const state = getCohortState();
-  const cohort = getOpenCohort();
-  const upcoming = cohort ? null : getUpcomingCohort();
-  const open = Boolean(cohort);
-  const faqs = getFutureBuildersFaqs(state);
+  const now = today();
+  const state = getCohortState(now);
+  const camp = getOpenCohort(now);
+  const upcoming = camp ? null : getUpcomingCohort(now);
+  const shown = camp ?? upcoming;
+  const offer = getActiveOffer(now);
+  const diwali = Boolean(camp) && offer.theme === 'diwali';
+  const preview = previewNow();
+  // eslint-disable-next-line react-hooks/purity -- dev preview only: aligns the countdown with COHORT_PREVIEW_DATE
+  const offsetMs = preview ? preview.getTime() - Date.now() : undefined;
+  const faqs = getFutureBuildersFaqs(state, now);
   const url = absoluteUrl('/future-builders');
+  const price = rupees(offer.price);
 
-  const primary = cohort
-    ? { label: `Enrol now · ${PRICE}`, short: 'Enrol', track: 'enrol' }
+  const primary = camp
+    ? { label: `Register now · ${price}`, short: 'Register', track: 'enrol' }
     : upcoming
       ? { label: 'Notify me when registration opens', short: 'Notify me', track: 'notify' }
       : { label: 'Join the waitlist', short: 'Join waitlist', track: 'waitlist' };
 
-  const chips = upcoming
-    ? ['Live online', upcoming.window.split(',')[0], 'Four modules', `At most ${SEATS_TOTAL} per cohort`, 'Kit shipped home']
-    : ['Live online', 'Weekends', `12 weeks · ${CONTACT_HOURS} hours`, `At most ${SEATS_TOTAL} per cohort`, 'Kit shipped home'];
+  const chips = ['Live online', shown ? `${shown.months} summer camp` : 'Summer camp', 'Four modules', 'Grades 7–12', 'Kit shipped home'];
 
-  // While the next cohort's format isn't fixed, state only what is: no weekly hours or weekend slots.
-  const facts: [number, string][] = upcoming
-    ? [
-        [4, 'modules: software, AI, IoT and entrepreneurship'],
-        [1, 'working product per team, pitched on Demo Day'],
-        [SEATS_TOTAL, 'students at most in a cohort'],
-      ]
-    : [
-        [12, 'weeks, from the first line of code to Demo Day'],
-        [CONTACT_HOURS, 'hours of live, hands-on classes'],
-        [SEATS_TOTAL, 'students at most in a cohort'],
-      ];
+  const facts: [number, string][] = [
+    [4, 'modules: software, AI, IoT and entrepreneurship'],
+    [1, 'working product per team, pitched on Demo Day'],
+    [2, 'months of live building, in the summer break'],
+  ];
 
   const how: [string, string][] = [
-    upcoming
-      ? ['When it runs', `${capitalise(upcoming.window)}. Live on video (IST); the detailed timetable is announced at registration.`]
-      : ['Every weekend', `${SCHEDULE.days}, about 3 hours each, live on video (IST). Exact timings are confirmed at orientation.`],
-    ['Recorded, always', 'Every session is recorded. A clash or a family function? Watch it later and catch up on that week’s build.'],
-    ['Small and personal', `At most ${SEATS_TOTAL} students, building in teams of 3–4. Instructors review every student’s project.`],
+    ['When it runs', shown ? `${shown.months}, during the summer break. Live on video (IST); the exact dates and timetable are shared after registration.` : 'During the summer break, live on video (IST). Dates for the next camp are being set.'],
+    ['Recorded, always', 'Every session is recorded. A clash or a family function? Watch it later and catch up on the build.'],
+    ['Personal attention', 'Students build in teams of 3–4, and instructors review every student’s project.'],
     ['A kit of their own', 'An ESP32-C3 microcontroller, breadboard, sensors, LEDs and a servo, shipped free across India. Theirs to keep.'],
     ['What they need', 'A laptop or desktop computer with a USB port, and internet that can handle a video call. We help set up the tools at orientation.'],
     ['What parents see', 'You’re invited to Demo Day, the code lives in a GitHub repository you can open any time, and our team is a WhatsApp message away.'],
   ];
 
-  // Course rich result: only facts that are true today. The offer and the
-  // course instance (dates, schedule) exist only while registration is open.
+  // Course rich result: only facts that are true today. The offer and the course instance exist
+  // only while registration is open; the instance is month-level until exact dates are set.
   const courseNode = {
     '@type': 'Course',
     '@id': `${url}#course`,
-    name: 'Future Builders Programme',
-    description: 'A live online programme for Grades 7 to 12: software, AI, IoT robotics and entrepreneurship, with a hardware kit. Students build a working prototype in teams and pitch it on Demo Day.',
+    name: 'Future Builders Summer Camp',
+    description: 'A live online summer camp for Grades 7 to 12: software, AI, IoT robotics and entrepreneurship, with a hardware kit. Students build a working prototype in teams and pitch it on Demo Day.',
     url,
     image: ogImageUrl('/future-builders'),
     inLanguage: 'en-IN',
@@ -129,23 +128,25 @@ export default function FutureBuildersPage() {
     coursePrerequisites: 'None. Designed for complete beginners.',
     teaches: ['Python programming', 'APIs and SQLite databases', 'Machine learning and image recognition', 'ESP32 electronics, sensors and servos', 'Entrepreneurship and pitching'],
     educationalCredentialAwarded: 'Certificate of completion',
-    ...(cohort
+    ...(camp
       ? {
           offers: {
             '@type': 'Offer',
             category: 'Paid',
-            price: String(BASE_PRICE),
+            name: offer.name,
+            price: String(offer.price),
             priceCurrency: 'INR',
+            availability: 'https://schema.org/InStock',
             url: `${url}#enroll`,
-            validThrough: cohort.registrationCloses,
+            validFrom: camp.registrationOpens,
+            validThrough: offer.endsAt ?? camp.registrationCloses,
           },
           hasCourseInstance: {
             '@type': 'CourseInstance',
-            name: cohort.name,
+            name: `Future Builders ${camp.name}`,
             courseMode: 'online',
-            startDate: cohort.classesStart,
-            endDate: cohort.ends,
-            courseWorkload: `PT${CONTACT_HOURS}H`,
+            startDate: camp.dates?.classesStart ?? camp.startMonth,
+            endDate: camp.dates?.ends ?? camp.endMonth,
           },
         }
       : {}),
@@ -163,21 +164,17 @@ export default function FutureBuildersPage() {
       />
       <CtaTracker state={state} />
 
+      {diwali && <DiwaliOfferBand offer={offer} listPrice={LIST_PRICE} nextPrice={STANDARD_OFFER.price} offsetMs={offsetMs} />}
+
       <PageHero
         tone="yellow"
-        label="Future Builders · Grades 7–12"
+        label="Future Builders · Summer camp · Grades 7–12"
         title={
-          upcoming ? (
-            <>
-              Build a <span className="t-accent">real</span> product this summer.
-            </>
-          ) : (
-            <>
-              Build a <span className="t-accent">real</span> product in 12 weekends.
-            </>
-          )
+          <>
+            Build a <span className="t-accent">real</span> product this summer.
+          </>
         }
-        intro="A live online cohort where your child learns to code in Python, trains an AI model, wires a device that senses and acts, and pitches it on Demo Day. No coding experience needed."
+        intro="A live online summer camp where your child learns to code in Python, trains an AI model, wires a device that senses and acts, and pitches it on Demo Day. No coding experience needed."
         actions={
           <div id="hero-cta" className="flex w-full flex-col gap-6">
             <ul className="flex flex-wrap gap-2" aria-label="The programme in brief">
@@ -196,7 +193,7 @@ export default function FutureBuildersPage() {
               </ButtonLink>
             </div>
             <p className="t-small max-w-[56ch] text-muted">
-              {cohort
+              {camp
                 ? 'Full refund if Session 1 isn’t right for your child, and the kit is theirs to keep. Secure payment by Razorpay.'
                 : upcoming
                   ? `Registration opens ${upcoming.registrationOpensLabel}. Getting notified is free and commits you to nothing. Prefer to chat?`
@@ -207,7 +204,7 @@ export default function FutureBuildersPage() {
             </p>
           </div>
         }
-        aside={<StatusCard state={state} cohort={cohort} upcoming={upcoming} lastCohortName={LAST_COHORT?.name} />}
+        aside={<StatusCard state={state} camp={camp} upcoming={upcoming} offer={offer} listPrice={LIST_PRICE} />}
         image={images.fbPresentation}
         imageLayout="wide"
       />
@@ -226,7 +223,7 @@ export default function FutureBuildersPage() {
                   From using technology to <span className="t-accent">building</span> it.
                 </>
               }
-              intro="Most teenagers spend hours a day on apps someone else made, and meet coding as theory for marks. Future Builders gives them a few months to make something that works."
+              intro="Most teenagers spend hours a day on apps someone else made, and meet coding as theory for marks. Future Builders gives them a summer to make something that works."
             />
             <Photo
               backdrop="blue"
@@ -261,7 +258,7 @@ export default function FutureBuildersPage() {
       </section>
 
       {/* 02 · The programme, module by module */}
-      <Curriculum upcomingName={upcoming?.name} />
+      <Curriculum timing={shown ? `The ${shown.name} runs in ${shown.months}; the ${shown.timingNote}` : undefined} />
 
       {/* 03 · How it works */}
       <section className="section" aria-labelledby="how-heading">
@@ -271,21 +268,11 @@ export default function FutureBuildersPage() {
             label="How it works"
             num="03"
             title={
-              upcoming ? (
-                <>
-                  Live, small and <span className="t-accent">hands-on.</span>
-                </>
-              ) : (
-                <>
-                  Built around <span className="t-accent">school</span>, not instead of it.
-                </>
-              )
+              <>
+                Live, personal and <span className="t-accent">hands-on.</span>
+              </>
             }
-            intro={
-              upcoming
-                ? 'Live sessions on video, in a group small enough for an instructor to review every student’s project.'
-                : 'Two live sessions a weekend, in a group small enough for an instructor to review every student’s project.'
-            }
+            intro="Live sessions on video during the summer break, with instructors who review every student’s project."
           />
 
           <dl className="mt-12 grid grid-cols-1 border-y border-ink sm:grid-cols-3 md:mt-16" data-reveal>
@@ -357,8 +344,8 @@ export default function FutureBuildersPage() {
         </div>
       </section>
 
-      {/* Bring a friend: only while there is something to enrol in */}
-      {open && (
+      {/* Bring a friend: only while there is something to register for */}
+      {camp && (
         <section className="section-tight">
           <div className="page">
             <div className="grid-12 items-center gap-y-6 rounded-[var(--radius-lg)] bg-highlighter p-6 md:p-12" data-reveal>
@@ -366,15 +353,16 @@ export default function FutureBuildersPage() {
                 <p className="t-eyebrow mb-4 text-ink">Bring a friend</p>
                 <h2 className="t-headline">You both save ₹{FRIEND_DISCOUNT}.</h2>
                 <p className="mt-4 max-w-[52ch] text-ink">
-                  Projects are built in teams of 3–4, so it’s better with a friend. Use code <strong className="rounded bg-ink px-1.5 py-0.5 font-mono text-[15px] text-white">{FRIEND_CODE}</strong> at checkout; your friend gets ₹{FRIEND_DISCOUNT} too.
+                  Projects are built in teams of 3–4, so it’s better with a friend. Use code <strong className="rounded bg-ink px-1.5 py-0.5 font-mono text-[15px] text-white">{FRIEND_CODE}</strong> at checkout with your friend’s name
+                  {diwali ? `: ${rupees(offer.price - FRIEND_DISCOUNT)} instead of ${price} during the ${offer.name} offer` : ''}. Your friend gets ₹{FRIEND_DISCOUNT} too.
                 </p>
               </div>
               <div className="col-span-12 flex flex-col gap-3 lg:col-span-4">
                 <ButtonLink href={`/future-builders?coupon=${FRIEND_CODE}#enroll`} size="lg" data-track="enrol" data-track-at="friend">
-                  Enrol with {FRIEND_CODE}
+                  Register with {FRIEND_CODE}
                 </ButtonLink>
                 <a
-                  href={whatsappShareLink(`Future Builders by SOYL Academy: a live online course for Grades 7–12 (software, AI, IoT, with a hardware kit). Use code ${FRIEND_CODE} and we both save ₹${FRIEND_DISCOUNT}: ${SITE_URL}/future-builders?coupon=${FRIEND_CODE}`)}
+                  href={whatsappShareLink(`Future Builders by SOYL Academy: a live online summer camp for Grades 7–12 (software, AI, IoT, with a hardware kit), ${camp.months}. Use code ${FRIEND_CODE} and we both save ₹${FRIEND_DISCOUNT}: ${SITE_URL}/future-builders?coupon=${FRIEND_CODE}`)}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="arrow-link justify-center"
@@ -389,45 +377,45 @@ export default function FutureBuildersPage() {
         </section>
       )}
 
-      {/* 05 · Fee and enrolment / notify / waitlist: exactly one state */}
+      {/* 05 · Fee and registration / notify / waitlist: exactly one state */}
       <section id="enroll" className="section scroll-mt-16" aria-labelledby="enroll-heading">
         <div className="page grid-12 gap-y-10 lg:gap-y-8">
           <div className="col-span-12 lg:col-span-5 lg:row-start-1">
-            <Label num="05" className="mb-6">{cohort ? 'Fee and enrolment' : upcoming ? 'Registration opens soon' : 'Waitlist'}</Label>
+            <Label num="05" className="mb-6">{camp ? 'Fee and registration' : upcoming ? 'Registration opens soon' : 'Waitlist'}</Label>
             <h2 id="enroll-heading" className="t-headline max-w-[14ch]">
-              {cohort ? `Join the ${cohort.name}.` : upcoming ? 'Be first when registration opens.' : 'Be first in the next cohort.'}
+              {camp ? `Join the ${camp.name}.` : upcoming ? 'Be first when registration opens.' : 'Be first for the next camp.'}
             </h2>
             <p className="mt-5 max-w-[42ch] text-muted">
-              {cohort
-                ? `Registration closes ${formatCohortDate(cohort.registrationCloses)}, or earlier once all ${SEATS_TOTAL} seats are taken.`
+              {camp
+                ? `${campTimingLine(camp)}. Registration is open until ${formatCohortDate(camp.registrationCloses, true)}.`
                 : upcoming
-                  ? `The ${upcoming.name} runs in ${upcoming.window}. Each cohort has at most ${SEATS_TOTAL} students.`
-                  : `Each cohort has at most ${SEATS_TOTAL} students. Waitlisted families hear the dates first.`}
+                  ? `The ${upcoming.name} runs in ${upcoming.months}. Registration opens ${upcoming.registrationOpensLabel}.`
+                  : 'Waitlisted families hear the next camp’s dates and fee first.'}
             </p>
           </div>
           <div className="col-span-12 lg:col-span-7 lg:col-start-6 lg:row-span-2 lg:row-start-1">
             <span id="talk" aria-hidden="true" className="block scroll-mt-24" />
-            {cohort ? (
+            {camp ? (
               <FutureBuildersForm
-                closesOn={formatCohortDate(cohort.registrationCloses)}
-                orientationOn={formatCohortDate(cohort.orientation)}
-                cohortName={cohort.name}
+                closesOn={formatCohortDate(camp.registrationCloses, true)}
+                campName={camp.name}
+                sourceTag={camp.sourceTag}
+                listPrice={LIST_PRICE}
+                offer={{ slug: offer.slug, name: offer.name, price: offer.price, endsLabel: offer.endsLabel }}
               />
             ) : upcoming ? (
-              <WaitlistForm
-                notify={{ cohortName: upcoming.name, opensLabel: upcoming.registrationOpensLabel }}
-                source={upcoming.sourceTag}
-                state={state}
-              />
+              <WaitlistForm notify={{ cohortName: upcoming.name, opensLabel: upcoming.registrationOpensLabel }} source={upcoming.sourceTag} state={state} />
             ) : (
               <WaitlistForm source="fb_waitlist" state={state} />
             )}
           </div>
           <div className="col-span-12 lg:col-span-5 lg:row-start-2">
             <PriceCard
-              mode={cohort ? 'open' : upcoming ? 'upcoming' : 'waitlist'}
-              cohortName={cohort?.name ?? upcoming?.name}
+              mode={camp ? 'open' : upcoming ? 'upcoming' : 'waitlist'}
+              campName={camp?.name ?? upcoming?.name}
               opensLabel={upcoming?.registrationOpensLabel}
+              offer={offer}
+              listPrice={LIST_PRICE}
             />
           </div>
         </div>
@@ -440,18 +428,18 @@ export default function FutureBuildersPage() {
       <section id="final-cta" className="bg-white" aria-labelledby="final-heading">
         <div className="page section grid-12 items-end gap-y-10">
           <h2 id="final-heading" className="t-display col-span-12 max-w-[13ch] lg:col-span-8" data-reveal>
-            {upcoming ? 'This summer, one' : 'Twelve weekends. One'}{' '}
+            This summer, one{' '}
             <span className="t-accent">
               <Drawn>real product.</Drawn>
             </span>
           </h2>
           <div className="col-span-12 lg:col-span-4" data-reveal style={{ '--d': '120ms' } as React.CSSProperties}>
             <p className="t-lead max-w-[40ch] text-ink">
-              {cohort
-                ? `Registration for the ${cohort.name} closes ${formatCohortDate(cohort.registrationCloses)}. At most ${SEATS_TOTAL} students per cohort.`
+              {camp
+                ? `Registration for the ${camp.name} is open until ${formatCohortDate(camp.registrationCloses, true)}.${diwali ? ` The ${offer.name} price of ${price} ends ${offer.endsLabel}.` : ''}`
                 : upcoming
                   ? `Registration for the ${upcoming.name} opens ${upcoming.registrationOpensLabel}. Leave your details and we’ll tell you the day it does.`
-                  : 'Dates for the next cohort are being set. Join the waitlist to hear them first, or talk to us now.'}
+                  : 'Dates for the next camp are being set. Join the waitlist to hear them first, or talk to us now.'}
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-3">
               <ButtonLink href="#enroll" size="lg" arrow data-track={primary.track} data-track-at="final">
@@ -467,11 +455,13 @@ export default function FutureBuildersPage() {
 
       <StickyCta
         line={
-          cohort
-            ? `${PRICE} · closes ${formatCohortDate(cohort.registrationCloses)}`
+          camp
+            ? diwali
+              ? `${price} (${rupees(LIST_PRICE)}) · Diwali offer ends ${offer.endsLabel}`
+              : `${price} · ${camp.months} summer camp`
             : upcoming
               ? `Opens ${upcoming.registrationOpensLabel}`
-              : 'Next cohort: dates soon'
+              : 'Next camp: dates soon'
         }
         label={primary.short}
         track={primary.track}

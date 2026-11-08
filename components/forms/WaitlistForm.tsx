@@ -5,6 +5,7 @@ import { cn } from '@/lib/utils';
 import { Field, describedBy, inputClasses } from '@/components/ui/Field';
 import { buttonClasses } from '@/components/ui/Button';
 import { CALLBACK_PROMISE, whatsappLink } from '@/content/future-builders';
+import { normalizeIndianPhone } from '@/lib/future-builders/registration';
 import { trackEvent } from '@/lib/analytics/track';
 import { useTalkMode } from './use-talk-mode';
 
@@ -14,11 +15,12 @@ type Errors = Partial<Record<keyof FormFields, string>>;
 
 const GRADES = ['7', '8', '9', '10', '11', '12'];
 const FIELD_ORDER: (keyof FormFields)[] = ['parentName', 'grade', 'email', 'phone'];
-const WHATSAPP_URL = whatsappLink('Hi, I have a question about the next Future Builders cohort.');
+const WHATSAPP_URL = whatsappLink('Hi, I have a question about the next Future Builders summer camp.');
 
 /**
  * Only what each request needs: no student name while there is nothing to enrol in.
- * Waitlist / notify → we email (phone optional). Call → we phone (email optional).
+ * Waitlist / notify → we email and WhatsApp. Call → we phone (email optional).
+ * A mobile number is required in every mode (the platform's leads record needs one).
  */
 function validate(f: FormFields, mode: Mode): Errors {
   const e: Errors = {};
@@ -27,14 +29,14 @@ function validate(f: FormFields, mode: Mode): Errors {
   if (f.parentName.trim().length < 2) e.parentName = 'Please enter your name.';
   if (!f.grade) e.grade = 'Please choose a grade.';
   if ((mode === 'waitlist' || email) && !/^\S+@\S+\.\S+$/.test(email)) e.email = 'Please enter a valid email address.';
-  if ((mode === 'callback' || phone) && !/^[+()\-\s\d]{8,20}$/.test(phone)) e.phone = 'Please enter a valid phone number.';
+  if (!normalizeIndianPhone(phone)) e.phone = 'Please enter a 10-digit Indian mobile number.';
   return e;
 }
 
 interface WaitlistFormProps {
   /** An announced cohort whose registration hasn't opened: the form becomes "notify me when it opens". */
   notify?: { cohortName: string; opensLabel: string };
-  /** Tag stored with the request in the sheet, e.g. `fb_summer_2027`. */
+  /** Tag stored with the request on the platform, e.g. `fb_summer_2027`. */
   source?: string;
   /** Cohort state, for the (consent-gated, anonymous) conversion event. */
   state?: string;
@@ -43,8 +45,8 @@ interface WaitlistFormProps {
 /**
  * Shown instead of the enrol form when registration is not open: join the
  * waitlist (or, once the next cohort is announced, ask to be notified when its
- * registration opens), or ask for a call. Both save to the same Google Sheet as
- * enrolments (via /api/enroll), with mode `waitlist` or `callback` and a source tag.
+ * registration opens), or ask for a call. Both are recorded on SOYL's platform via
+ * /api/enroll, with mode `notify`, `waitlist` or `callback` and a source tag.
  */
 export function WaitlistForm({ notify, source, state = 'waitlist' }: WaitlistFormProps) {
   const [mode, setMode] = useState<Mode>('waitlist');
@@ -100,7 +102,7 @@ export function WaitlistForm({ notify, source, state = 'waitlist' }: WaitlistFor
           email: data.email.trim(),
           phone: data.phone.trim(),
           grade: data.grade,
-          mode,
+          mode: mode === 'waitlist' && notify ? 'notify' : mode,
           source,
         }),
       });
@@ -133,7 +135,7 @@ export function WaitlistForm({ notify, source, state = 'waitlist' }: WaitlistFor
           <p className="mt-3 text-muted">
             {notify
               ? `We’ll email ${data.email.trim()} when registration for the ${notify.cohortName} opens (${notify.opensLabel}), with the dates, the timetable and the fee.`
-              : `We’ll email ${data.email.trim()} as soon as dates for the next cohort are set, before registration opens to everyone.`}
+              : `We’ll email ${data.email.trim()} as soon as dates for the next camp are set, before registration opens to everyone.`}
           </p>
         )}
         <button
@@ -176,7 +178,7 @@ export function WaitlistForm({ notify, source, state = 'waitlist' }: WaitlistFor
           ? 'A short call with our team: ask about the curriculum, the timings, or whether it suits your child.'
           : notify
             ? `Registration for the ${notify.cohortName} opens ${notify.opensLabel}. We’ll email you the day it does.`
-            : 'Hear the next cohort’s dates and fee before registration opens to everyone.'}
+            : 'Hear the next camp’s dates and fee before registration opens to everyone.'}
       </p>
 
       <div role="group" aria-label="What would you like to do?" className="mb-6 mt-6 grid grid-cols-2 rounded-full border border-rule bg-paper p-1">
@@ -228,11 +230,11 @@ export function WaitlistForm({ notify, source, state = 'waitlist' }: WaitlistFor
         {mode === 'waitlist' ? (
           <>
             {field('email', 'Email', true, 'email', 'email')}
-            {field('phone', 'Phone', false, 'tel', 'tel', notify ? 'For a WhatsApp message when registration opens.' : 'For a WhatsApp message when dates are out.')}
+            {field('phone', 'Mobile number', true, 'tel', 'tel', notify ? 'For a WhatsApp message when registration opens.' : 'For a WhatsApp message when dates are out.')}
           </>
         ) : (
           <>
-            {field('phone', 'Phone', true, 'tel', 'tel')}
+            {field('phone', 'Mobile number', true, 'tel', 'tel')}
             {field('email', 'Email', false, 'email', 'email')}
           </>
         )}
