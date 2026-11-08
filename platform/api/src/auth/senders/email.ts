@@ -16,6 +16,8 @@ export interface EmailMessage {
   html?: string;
   /** For logs/metrics only, e.g. 'otp', 'link-notice'. */
   tag: string;
+  /** Reply-To address (e.g. the support inbox; the sender is a no-reply address). */
+  replyTo?: string;
   /** Files, e.g. an invoice PDF (ADR-024). ACS accepts up to 10 MB per message in total. */
   attachments?: EmailAttachment[];
 }
@@ -97,6 +99,7 @@ export class AcsEmailSender implements EmailSender {
     const body = JSON.stringify({
       senderAddress: senderAddress(this.o.from),
       recipients: { to: [{ address: message.to }] },
+      ...(message.replyTo ? { replyTo: [{ address: message.replyTo }] } : {}),
       content: { subject: message.subject, plainText: message.text, ...(message.html ? { html: message.html } : {}) },
       ...(message.attachments?.length ? { attachments: message.attachments.map((a) => ({ name: a.name, contentType: a.contentType, contentInBase64: a.content.toString('base64') })) } : {}),
       userEngagementTrackingDisabled: true,
@@ -126,12 +129,12 @@ export class AcsEmailSender implements EmailSender {
 }
 
 /** Escapes text for HTML element content and attribute values. */
-function escapeHtml(s: string): string {
+export function escapeHtml(s: string): string {
   return s.replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]!);
 }
 
 /** SOYL brand colours (app/globals.css): paper, ink, muted, cobalt. */
-const BRAND = { paper: '#F4F0E7', white: '#FFFFFF', ink: '#171717', muted: '#5E5E59', cobalt: '#3155FF', line: '#E4DED1' } as const;
+export const BRAND = { paper: '#F4F0E7', white: '#FFFFFF', ink: '#171717', muted: '#5E5E59', cobalt: '#3155FF', line: '#E4DED1' } as const;
 
 /**
  * The sign-in code email: plain text plus a simple HTML part. No images, no links, no tracking pixels

@@ -24,6 +24,8 @@ export const PROBLEMS = {
   unauthenticated: [401, 'Please sign in to continue.'],
   forbidden: [403, 'You do not have access to this.'],
   edge_auth_failed: [403, 'Forbidden.'],
+  /** ADR-027: a server-to-server ingest call without the right x-soyl-ingest-key. */
+  ingest_auth_failed: [401, 'Unauthorized.'],
   origin_not_allowed: [403, 'This request was blocked for your security.'],
   consent_required: [403, 'A parent or guardian needs to give consent first.'],
   fresh_session_required: [403, 'Please sign in again to confirm it is you.'],

@@ -22,6 +22,7 @@ import { createRazorpayClient, type RazorpayClient } from './billing/razorpay';
 import { AiServices, type AiDeps } from './ai/services';
 import { StaffService } from './domain/admin/staff';
 import { InterestCounters } from './domain/admin/counters';
+import { FutureBuildersService } from './future-builders/service';
 
 export interface Providers {
   sms: SmsSender;
@@ -88,7 +89,9 @@ export function createServices(deps: AppDeps) {
   const consentFlow = isBuiltinProvider(providers.consent)
     ? new BuiltinConsentFlow({ db, clock, limiter, email: providers.email, consent, pepper: config.otpPepper, publicBaseUrl: config.publicBaseUrl, uploads: () => ai.uploads })
     : null;
-  return { auth, adapter, limiter, sessions, otp, identity, google, consent, consentFlow, mfa, billing, ai, staff, counters };
+  // ADR-027: Future Builders registrations and enquiries (emails through the sign-in email provider).
+  const futureBuilders = new FutureBuildersService({ db, clock, email: providers.email, config: config.futureBuilders, publicBaseUrl: config.publicBaseUrl });
+  return { auth, adapter, limiter, sessions, otp, identity, google, consent, consentFlow, mfa, billing, ai, staff, counters, futureBuilders };
 }
 
 export type Services = ReturnType<typeof createServices>;

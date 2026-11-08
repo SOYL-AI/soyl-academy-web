@@ -7267,6 +7267,418 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/v1/ingest/future-builders/enrollments": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Record a verified Future Builders payment (marketing server only: x-soyl-edge-auth + x-soyl-ingest-key). Idempotent on razorpayPaymentId. */
+        post: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody: {
+                content: {
+                    "application/json": components["schemas"]["FbEnrollmentIngestInput"];
+                };
+            };
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["FbEnrollmentIngestResult"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/ingest/future-builders/leads": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Record a Future Builders enquiry (marketing server only). The same phone, kind and form within a day returns the first lead. */
+        post: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody: {
+                content: {
+                    "application/json": components["schemas"]["FbLeadIngestInput"];
+                };
+            };
+            responses: {
+                /** @description Default Response */
+                201: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["FbLeadIngestResult"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/admin/future-builders/enrollments": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Future Builders registrations, newest payment first, with totals over the filters (superadmin; audited). from/to are IST days. */
+        get: {
+            parameters: {
+                query?: {
+                    from?: string;
+                    to?: string;
+                    emailStatus?: "pending" | "sent" | "failed";
+                    limit?: number;
+                    cursor?: string;
+                };
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["FbEnrollmentsPage"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/admin/future-builders/enrollments/export": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Future Builders registrations as CSV (superadmin; audited) */
+        get: {
+            parameters: {
+                query?: {
+                    from?: string;
+                    to?: string;
+                    emailStatus?: "pending" | "sent" | "failed";
+                };
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description text/csv; charset=utf-8 */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": string;
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/admin/future-builders/enrollments/{id}/resend": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Email the parent's confirmation again (superadmin; audited) */
+        post: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path: {
+                    id: string;
+                };
+                cookie?: never;
+            };
+            requestBody: {
+                content: {
+                    "application/json": Record<string, never> | null;
+                };
+            };
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["FbResendResult"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/admin/future-builders/leads": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Future Builders enquiries, newest first, with the count over the filters (superadmin; audited). from/to are IST days. */
+        get: {
+            parameters: {
+                query?: {
+                    from?: string;
+                    to?: string;
+                    kind?: "callback" | "notify" | "waitlist";
+                    limit?: number;
+                    cursor?: string;
+                };
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["FbLeadsPage"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/admin/future-builders/leads/export": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Future Builders enquiries as CSV (superadmin; audited) */
+        get: {
+            parameters: {
+                query?: {
+                    from?: string;
+                    to?: string;
+                    kind?: "callback" | "notify" | "waitlist";
+                };
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description text/csv; charset=utf-8 */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": string;
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/v1/webhooks/razorpay": {
         parameters: {
             query?: never;
@@ -9093,7 +9505,7 @@ export interface components {
             /** @enum {string} */
             role: "reviewer" | "admin";
             capabilities: "superadmin"[];
-            sections: ("analytics" | "users" | "reports")[];
+            sections: ("analytics" | "users" | "future_builders" | "reports")[];
         };
         AdminAnalyticsOverviewInput: {
             range: components["schemas"]["AdminRangeInput"];
@@ -10181,6 +10593,113 @@ export interface components {
             updatedAt: string;
             student: string | null;
             address: components["schemas"]["ShippingAddressInput"] | null;
+        };
+        /** @description A verified Future Builders payment, posted by the marketing server (ADR-027). */
+        FbEnrollmentIngestInput: {
+            razorpayOrderId: string;
+            razorpayPaymentId: string;
+            amountPaise: number;
+            /** @constant */
+            currency: "INR";
+            /** Format: date-time */
+            paidAt: string;
+            cohort: string;
+            /** @enum {string} */
+            offer: "diwali-2026" | "standard";
+            coupon?: string | null;
+            friendName?: string | null;
+            parentName: string;
+            studentName: string;
+            email: string;
+            phone: string;
+            grade: string;
+            /** @enum {string} */
+            source: "checkout" | "webhook";
+        };
+        FbEnrollmentIngestResultInput: {
+            /** Format: uuid */
+            enrollmentId: string;
+            receiptNumber: string;
+            created: boolean;
+        };
+        /** @description A Future Builders enquiry from a marketing form (ADR-027). */
+        FbLeadIngestInput: {
+            /** @enum {string} */
+            kind: "callback" | "notify" | "waitlist";
+            parentName: string;
+            studentName?: string | null;
+            email?: string | null;
+            phone: string;
+            grade?: string | null;
+            source: string;
+        };
+        FbLeadIngestResultInput: {
+            /** Format: uuid */
+            leadId: string;
+        };
+        FbEnrollmentInput: {
+            /** Format: uuid */
+            id: string;
+            receiptNumber: string;
+            /** Format: date-time */
+            paidAt: string;
+            parentName: string;
+            studentName: string;
+            email: string;
+            phone: string;
+            grade: string;
+            amountPaise: number;
+            /** @constant */
+            currency: "INR";
+            cohort: string;
+            /** @enum {string} */
+            offer: "diwali-2026" | "standard";
+            coupon: string | null;
+            friendName: string | null;
+            razorpayPaymentId: string;
+            razorpayOrderId: string;
+            /** @enum {string} */
+            source: "checkout" | "webhook";
+            /** @enum {string} */
+            emailStatus: "pending" | "sent" | "failed";
+            emailAttempts: number;
+            emailSentAt: string | null;
+            /** Format: date-time */
+            createdAt: string;
+        };
+        FbEnrollmentsPageInput: {
+            enrollments: components["schemas"]["FbEnrollmentInput"][];
+            nextCursor: string | null;
+            summary: {
+                count: number;
+                totalPaise: number;
+                emailFailed: number;
+            };
+        };
+        FbLeadInput: {
+            /** Format: uuid */
+            id: string;
+            /** @enum {string} */
+            kind: "callback" | "notify" | "waitlist";
+            parentName: string;
+            studentName: string | null;
+            email: string | null;
+            phone: string;
+            grade: string | null;
+            source: string;
+            /** Format: date-time */
+            createdAt: string;
+        };
+        FbLeadsPageInput: {
+            leads: components["schemas"]["FbLeadInput"][];
+            nextCursor: string | null;
+            summary: {
+                count: number;
+            };
+        };
+        FbResendResultInput: {
+            /** @enum {string} */
+            emailStatus: "sent" | "failed";
         };
         PublicNameResponseInput: {
             publicName: string;
@@ -11973,7 +12492,7 @@ export interface components {
             /** @enum {string} */
             role: "reviewer" | "admin";
             capabilities: "superadmin"[];
-            sections: ("analytics" | "users" | "reports")[];
+            sections: ("analytics" | "users" | "future_builders" | "reports")[];
         };
         AdminAnalyticsOverview: {
             range: components["schemas"]["AdminRange"];
@@ -13061,6 +13580,114 @@ export interface components {
             updatedAt: string;
             student: string | null;
             address: components["schemas"]["ShippingAddress"] | null;
+        };
+        /** @description A verified Future Builders payment, posted by the marketing server (ADR-027). */
+        FbEnrollmentIngest: {
+            razorpayOrderId: string;
+            razorpayPaymentId: string;
+            amountPaise: number;
+            /** @constant */
+            currency: "INR";
+            /** Format: date-time */
+            paidAt: string;
+            cohort: string;
+            /** @enum {string} */
+            offer: "diwali-2026" | "standard";
+            coupon: unknown;
+            friendName: unknown;
+            parentName: string;
+            studentName: string;
+            /** Format: email */
+            email: string;
+            phone: string;
+            grade: string;
+            /** @enum {string} */
+            source: "checkout" | "webhook";
+        };
+        FbEnrollmentIngestResult: {
+            /** Format: uuid */
+            enrollmentId: string;
+            receiptNumber: string;
+            created: boolean;
+        };
+        /** @description A Future Builders enquiry from a marketing form (ADR-027). */
+        FbLeadIngest: {
+            /** @enum {string} */
+            kind: "callback" | "notify" | "waitlist";
+            parentName: string;
+            studentName: unknown;
+            email: unknown;
+            phone: string;
+            grade: unknown;
+            source: string;
+        };
+        FbLeadIngestResult: {
+            /** Format: uuid */
+            leadId: string;
+        };
+        FbEnrollment: {
+            /** Format: uuid */
+            id: string;
+            receiptNumber: string;
+            /** Format: date-time */
+            paidAt: string;
+            parentName: string;
+            studentName: string;
+            email: string;
+            phone: string;
+            grade: string;
+            amountPaise: number;
+            /** @constant */
+            currency: "INR";
+            cohort: string;
+            /** @enum {string} */
+            offer: "diwali-2026" | "standard";
+            coupon: string | null;
+            friendName: string | null;
+            razorpayPaymentId: string;
+            razorpayOrderId: string;
+            /** @enum {string} */
+            source: "checkout" | "webhook";
+            /** @enum {string} */
+            emailStatus: "pending" | "sent" | "failed";
+            emailAttempts: number;
+            emailSentAt: string | null;
+            /** Format: date-time */
+            createdAt: string;
+        };
+        FbEnrollmentsPage: {
+            enrollments: components["schemas"]["FbEnrollment"][];
+            nextCursor: string | null;
+            summary: {
+                count: number;
+                totalPaise: number;
+                emailFailed: number;
+            };
+        };
+        FbLead: {
+            /** Format: uuid */
+            id: string;
+            /** @enum {string} */
+            kind: "callback" | "notify" | "waitlist";
+            parentName: string;
+            studentName: string | null;
+            email: string | null;
+            phone: string;
+            grade: string | null;
+            source: string;
+            /** Format: date-time */
+            createdAt: string;
+        };
+        FbLeadsPage: {
+            leads: components["schemas"]["FbLead"][];
+            nextCursor: string | null;
+            summary: {
+                count: number;
+            };
+        };
+        FbResendResult: {
+            /** @enum {string} */
+            emailStatus: "sent" | "failed";
         };
         PublicNameResponse: {
             publicName: string;

@@ -58,6 +58,7 @@ import { registerBillingRoutes } from './billing/routes';
 import { registerAiRoutes } from './ai/routes';
 import { registerCoinsRoutes } from './modules/coins';
 import { registerEventRoutes } from './modules/events';
+import { registerFutureBuildersRoutes } from './future-builders/routes';
 import { observeProblem, observeResponse } from './domain/admin/observe';
 
 export const HEALTH_PATHS = new Set(['/healthz', '/readyz']);
@@ -112,6 +113,7 @@ export async function buildApp(deps: AppDeps, opts: BuildAppOptions = {}): Promi
   const services = createServices(deps);
   app.decorate('services', services);
   services.billing.useLog(app.log);
+  services.futureBuilders.useLog(app.log);
   app.decorate('deps', deps);
   app.decorateRequest('clientIp', '');
   app.decorateRequest('edgeSecretIndex', null);
@@ -317,6 +319,7 @@ export async function buildApp(deps: AppDeps, opts: BuildAppOptions = {}): Promi
   registerBillingRoutes(app, services.billing);
   registerAiRoutes(app, deps, services);
   registerCoinsRoutes(app, deps, services);
+  registerFutureBuildersRoutes(app, services.futureBuilders, config);
   if (config.devOtpOutbox) registerDevRoutes(app, deps);
   opts.extraRoutes?.(app, services);
 

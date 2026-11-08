@@ -64,11 +64,23 @@ describe('route policy (API-6)', () => {
     expect(outside.sort()).toEqual(['/healthz', '/readyz']);
   });
 
-  it('every state-changing route has csrf=true, except the HMAC-verified Razorpay webhook (AUTH-12)', () => {
+  // Exempt: the HMAC-verified Razorpay webhook, and the server-to-server Future Builders ingest routes, which need a
+  // server secret no browser holds (x-soyl-ingest-key, ADR-027; the web proxy never forwards that header).
+  const CSRF_EXEMPT = ['POST /v1/webhooks/razorpay', 'POST /v1/ingest/future-builders/enrollments', 'POST /v1/ingest/future-builders/leads'];
+
+  it('every state-changing route has csrf=true, except the HMAC-verified Razorpay webhook and the key-authenticated ingest routes (AUTH-12)', () => {
     const exempt = h.app.routeTable.filter((r) => !r.policy.csrf).map((r) => `${r.method} ${r.url}`);
-    expect(exempt).toEqual(['POST /v1/webhooks/razorpay']);
-    for (const r of h.app.routeTable.filter((r) => ['POST', 'PUT', 'PATCH', 'DELETE'].includes(r.method) && r.url !== '/v1/webhooks/razorpay'))
+    expect(exempt.sort()).toEqual([...CSRF_EXEMPT].sort());
+    for (const r of h.app.routeTable.filter((r) => ['POST', 'PUT', 'PATCH', 'DELETE'].includes(r.method) && !CSRF_EXEMPT.includes(`${r.method} ${r.url}`)))
       expect(r.policy.csrf, `${r.method} ${r.url}`).toBe(true);
+  });
+
+  it('the ingest routes refuse a call without the ingest key, even with the edge secret (ADR-027)', async () => {
+    for (const url of ['/v1/ingest/future-builders/enrollments', '/v1/ingest/future-builders/leads']) {
+      const res = await h.client().post(url, {}, { origin: null });
+      expect(res.statusCode, url).toBe(401);
+      expect(res.json().code).toBe('ingest_auth_failed');
+    }
   });
 
   it('the local-only OTP outbox answers only for reserved test identifiers', async () => {

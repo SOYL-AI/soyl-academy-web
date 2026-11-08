@@ -150,7 +150,7 @@ describe('superadmin under the default policy', () => {
   });
 
   it('reaches the dashboard and the audited PII reveal without TOTP', async () => {
-    expect((await sa.get('/v1/admin/me')).json()).toEqual({ userId: saId, role: 'admin', capabilities: ['superadmin'], sections: ['analytics', 'users', 'reports'] });
+    expect((await sa.get('/v1/admin/me')).json()).toEqual({ userId: saId, role: 'admin', capabilities: ['superadmin'], sections: ['analytics', 'users', 'future_builders', 'reports'] });
     expect((await sa.get(`/v1/admin/analytics/overview${RANGE}`)).statusCode).toBe(200);
     const reveal = await sa.post(`/v1/admin/users/${target}/reveal`, {});
     expect(reveal.statusCode).toBe(200);
@@ -180,7 +180,7 @@ describe('admin bootstrap CLI + first email sign-in (runbook: admin-dashboard.md
     expect(res.isNewUser).toBe(false);
     const [u] = await h.t.db.select().from(users).where(eq(users.id, r.userId));
     expect(u!.emailVerified).toBe(true);
-    expect((await c.get('/v1/admin/me')).json()).toEqual({ userId: r.userId, role: 'admin', capabilities: ['superadmin'], sections: ['analytics', 'users', 'reports'] });
+    expect((await c.get('/v1/admin/me')).json()).toEqual({ userId: r.userId, role: 'admin', capabilities: ['superadmin'], sections: ['analytics', 'users', 'future_builders', 'reports'] });
     expect((await c.get(`/v1/admin/analytics/overview${RANGE}`)).statusCode).toBe(200);
   });
 
