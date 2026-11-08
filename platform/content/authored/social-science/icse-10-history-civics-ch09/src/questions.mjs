@@ -111,16 +111,26 @@ Q('m_early_faith', mcq({
   sol: 'The Moderates had faith in the British sense of justice and fair play, so they tried to educate British opinion. They did have supporters in India, meetings in Britain were not banned, and they were not trying to emigrate.',
 }));
 Q('m_early_economic', mcq({
-  t: 1, d: 2, c: 'application',
-  stem: 'An imagined resolution passed at an early Congress session asks for lower land revenue, less military spending from Indian funds and protection for Indian industries. To which group of Moderate demands does it belong?',
-  opts: ['Economic reforms', 'Religious reforms', 'Demands for complete independence', 'Demands for boycott of foreign goods'],
-  sol: 'Lower land revenue, reduced military expenditure and protection of Indian industry were economic reforms demanded by the Early Nationalists. The resolution is not religious, does not ask for independence, and boycott belongs to the Assertive phase.',
+  t: 1, d: 3, c: 'analysis',
+  stem: 'An imagined resolution of an early Congress session asks the government to lower land revenue, to reduce the share of military spending paid from Indian funds, and to protect Indian industries. Which conclusion about the thinking behind it is best supported?',
+  opts: [
+    'Its authors held that existing economic policy was hurting India, but they believed that the remedy lay in asking the government to change that policy',
+    'Its authors held that British rule must end at once before any economic recovery was possible',
+    'Its authors thought that economic policy was already fair and asked only for more jobs for educated Indians',
+    'Its authors wanted Indians to stop buying British goods until the demands were met',
+  ],
+  sol: 'The resolution criticises economic policy (revenue, military burden, neglect of industry) yet only asks the government to reform it, which fits the Moderate faith in constitutional pressure. It does not call for an end to British rule or for boycott (both Assertive ideas), and it would make no sense if policy were thought fair.',
 }));
 Q('m_councils_1892', mcq({
-  t: 1, d: 2, c: 'application',
-  stem: 'At an imagined public meeting in 1893, a Moderate speaker says that the councils have at last been enlarged and that members may now discuss the budget. Which Act is he most likely referring to?',
-  opts: ['The Indian Councils Act, 1892', 'The Government of India Act, 1858', 'The Vernacular Press Act, 1878', 'The Rowlatt Act, 1919'],
-  sol: 'The Indian Councils Act of 1892 enlarged the councils and let members discuss the budget, partly in response to Moderate demands. The 1858 Act ended Company rule, the 1878 Act curbed the Press, and the Rowlatt Act came much later.',
+  t: 1, d: 3, c: 'application',
+  stem: 'An imagined Moderate editor writes in 1893 that the enlarged councils are welcome: members may now discuss the budget, but they cannot vote on it and many seats are still filled by nomination. Which course of action would best fit his position?',
+  opts: [
+    'Welcome the change, and keep asking by resolutions and petitions for more elected members and a real say over the budget',
+    'Boycott the councils and call on people to stop paying taxes until the budget is changed',
+    'Declare that the change proves the Congress has achieved its aims and should be closed',
+    'Give up constitutional methods and organise an armed rising, since the councils have no power',
+  ],
+  sol: 'He sees the Act of 1892 as a step forward but an incomplete one, so a Moderate would press on with constitutional demands for more elected members and budget powers. Boycott and tax refusal belong to the Assertive phase, declaring victory ignores his own complaints, and armed rising was never a Moderate method.',
 }));
 Q('ar_moderate_constitutional', ar({
   t: 1, d: 2, c: 'analysis', verdict: 'both-true-explains',
@@ -182,10 +192,15 @@ Q('m_naoroji_commons', mcq({
   sol: 'Dadabhai Naoroji was elected to the House of Commons in 1892 and used his seat to raise Indian issues. Gokhale served in the Imperial Legislative Council in India; Tilak and Pal were Assertive leaders.',
 }));
 Q('m_naoroji_title', mcq({
-  t: 2, d: 2, c: 'application',
-  stem: 'An imagined school exhibition honours a leader who argued that India\'s wealth was being drained to Britain and who later sat in the British Parliament. Which title, widely used for him, should the exhibition card give?',
-  opts: ['The Grand Old Man of India', 'Punjab Kesari', 'Lokmanya', 'The Lion of Bengal'],
-  sol: 'The clues point to Dadabhai Naoroji, widely called the Grand Old Man of India. Punjab Kesari was Lala Lajpat Rai, Lokmanya was Tilak, and the last title does not belong to him.',
+  t: 2, d: 3, c: 'application',
+  stem: 'An imagined exhibition card says of a leader: "He explained India\'s poverty by the steady flow of wealth to Britain, and he won a seat in the British House of Commons." Why would a student of the Early Nationalists see these two achievements as fitting together?',
+  opts: [
+    'The seat let him put evidence of India\'s grievances before British lawmakers and public, whom the Moderates hoped to persuade',
+    'The seat let him command the army and end British rule, which proved the drain argument',
+    'The two achievements show that he thought India\'s economy was doing well and needed no reform',
+    'The seat made him the organiser of the boycott of British goods in Bengal',
+  ],
+  sol: 'The Moderates relied on persuading British opinion, so winning a place in the House of Commons gave Naoroji a platform to argue the drain of wealth where decisions were made. A Commons seat gave no command of the army, his argument says India was being impoverished, and the boycott was an Assertive method.',
 }));
 Q('m_naoroji_thrice', mcq({
   t: 2, d: 2, c: 'recall',
@@ -201,9 +216,14 @@ Q('m_banerjee_assoc', mcq({
 }));
 Q('m_banerjee_age', mcq({
   t: 2, d: 3, c: 'application',
-  stem: 'In the late 1870s, an imagined young graduate in Lahore complains that a lower maximum age for the civil service examination, held only in London, shuts Indians out. Which leader toured India to rally opinion on exactly this issue?',
-  opts: ['Surendranath Banerjee', 'Dadabhai Naoroji', 'Bal Gangadhar Tilak', 'Lala Lajpat Rai'],
-  sol: 'Surendranath Banerjee led an all-India campaign through the Indian Association against the reduction of the maximum age for the civil service examination. Naoroji worked mainly in Britain, while Tilak and Lajpat Rai belong to the Assertive phase.',
+  stem: 'In the late 1870s, an imagined young graduate in Lahore is refused entry to the civil service examination because he is just over the lowered age limit; the examination is held only in London, which his family cannot afford. Which pair of Early Nationalist demands, if granted, would most directly have removed both of his obstacles?',
+  opts: [
+    'A higher maximum age, and the examination held in India as well as in England',
+    'Lower land revenue, and protection for Indian industries',
+    'More elected Indian members in the councils, and the right to discuss the budget',
+    'Freedom of the Press, and the right to hold public meetings',
+  ],
+  sol: 'His two obstacles are the age limit and the London-only examination, which the Moderates answered with a demand for a higher age limit and simultaneous examinations in India. The other pairs are real Moderate demands but would not have helped him: they concern revenue and industry, the councils, and civil liberties.',
 }));
 Q('m_bengalee', mcq({
   t: 2, d: 2, c: 'understanding',
@@ -310,21 +330,26 @@ Q('m_partition_real', mcq({
   sol: 'Nationalists saw the partition as a way to break the political strength of Bengal, then the centre of nationalist activity, and to create a Muslim-majority province in the east, setting communities against each other. The other options are not the nationalist view.',
 }));
 Q('m_partition_new', mcq({
-  t: 3, d: 2, c: 'application',
-  stem: 'An imagined official letter of 1906 is sent from Dacca to district officers of a province formed the year before by joining eastern Bengal with its north-eastern neighbour. Which province is it?',
-  opts: ['Eastern Bengal and Assam', 'Bihar and Orissa', 'The Central Provinces', 'The North-West Frontier Province'],
-  sol: 'The eastern districts were joined with Assam to form Eastern Bengal and Assam, with Dacca as its capital. Bihar and Orissa became a separate province only after 1911; the other provinces are unrelated.',
+  t: 3, d: 3, c: 'analysis',
+  stem: 'The government said it divided Bengal in 1905 because the province was too large to govern well. A student wants to show from the shape of the new arrangement that the aim was also political. Which detail best supports her case?',
+  opts: [
+    'The division created a Muslim-majority eastern province, separate from the western part in which Calcutta, the centre of nationalist activity, lay',
+    'The eastern districts were joined with Assam to form the province of Eastern Bengal and Assam',
+    'Dacca was made the capital of the new eastern province',
+    'The order was issued under the Viceroy, Lord Curzon, in July 1905',
+  ],
+  sol: 'A size argument cannot explain why the line was drawn so as to make a Muslim-majority eastern province and to separate it from Calcutta, where nationalist opinion was strongest; this is the evidence for "divide and rule". The other three are true but neutral details that fit the administrative reason equally well.',
 }));
 Q('m_annulled', mcq({
-  t: 3, d: 2, c: 'application',
-  stem: 'An imagined Calcutta student who protested in 1905 hears in 1911 that his long campaign has borne fruit. What has happened?',
+  t: 3, d: 3, c: 'understanding',
+  stem: 'An imagined Calcutta shopkeeper who protested in 1905 says at the end of 1911, "Our long campaign has won, yet our city has lost something." Which pair of announcements made at the Delhi Durbar would make both halves of his remark true?',
   opts: [
-    'The Partition of Bengal has been annulled, as announced at the Delhi Durbar of 1911',
-    'Bengal has become an independent country',
-    'The Congress has been banned in Bengal',
-    'The Surat Split has been reversed',
+    'The partition was annulled, and the capital of British India was to move from Calcutta to Delhi',
+    'The partition was confirmed, and the capital of British India was to move from Calcutta to Delhi',
+    'The partition was annulled, and the Congress was banned in Bengal',
+    'The partition was annulled, and Calcutta was to remain the capital with greater powers',
   ],
-  sol: `The partition was annulled in ${ANNULLED}, ${yearsBetween(PARTITION, ANNULLED)} years after it came into effect, and the capital was moved from Calcutta to Delhi. Bengal did not become independent, the Congress was not banned, and the Congress reunited only in 1916.`,
+  sol: `His gain is the annulment of the partition in ${ANNULLED}, ${yearsBetween(PARTITION, ANNULLED)} years after it came into effect; his loss is Calcutta giving up its place as capital to Delhi, announced at the same Durbar. Confirming the partition would not be a victory, the Congress was not banned in Bengal, and Calcutta did not keep the capital.`,
 }));
 Q('ar_partition_mourning', ar({
   t: 3, d: 2, c: 'analysis', verdict: 'both-true-explains',
@@ -390,10 +415,15 @@ Q('m_surat_issue', mcq({
   sol: 'The real issue was methods and goals: the Assertive Nationalists wanted to continue the 1906 resolutions on swadeshi, boycott and national education, while many Moderates wanted to soften them. The other options are not the cause.',
 }));
 Q('m_surat_reunite', mcq({
-  t: 4, d: 2, c: 'application',
-  stem: 'A timeline in an imagined textbook marks the year when the two groups that split at Surat came together again. Which session should it show?',
-  opts: ['Lucknow, 1916', 'Calcutta, 1906', 'Bombay, 1885', 'Lahore, 1929'],
-  sol: 'The two groups reunited at the Lucknow session of 1916. Calcutta 1906 was before the split, Bombay 1885 the first session, and Lahore 1929 much later.',
+  t: 4, d: 3, c: 'understanding',
+  stem: 'An imagined student lists four developments as reasons why the Moderates and the Assertive group could come together again at Lucknow in 1916. One of them cannot be a reason, because of its date. Which one?',
+  opts: [
+    'Lala Lajpat Rai\'s injury at a demonstration against the Simon Commission, 1928',
+    'The annulment of the Partition of Bengal, 1911',
+    'Tilak\'s release from Mandalay, 1914',
+    'The weakening of the Congress after the Surat Split, 1907',
+  ],
+  sol: 'An event can only help explain a reunion if it came before it. The Simon Commission demonstration of 1928 was twelve years after Lucknow, so it cannot be a reason. The annulment of the partition (1911), Tilak\'s return from prison (1914) and the weakness the split had caused (from 1907) all came earlier.',
 }));
 Q('tf_surat_venue', tf({
   t: 4, d: 2, c: 'recall', ans: true,
@@ -445,10 +475,15 @@ Q('m_swadeshi', mcq({
   sol: 'Swadeshi meant using goods made in India, which encouraged Indian industry. It did not mean tax refusal, army service or study abroad.',
 }));
 Q('m_boycott_scenario', mcq({
-  t: 5, d: 2, c: 'application',
-  stem: 'In an imagined Calcutta market of 1906, shopkeepers stop stocking Manchester cloth and students picket shops that still sell it. Which method of the Assertive Nationalists does this show?',
-  opts: ['Boycott of foreign goods', 'Petitioning Parliament', 'Armed revolt', 'Accepting government titles'],
-  sol: 'Refusing to sell or buy British cloth and picketing shops is boycott. Petitions were a Moderate method, there was no armed revolt here, and accepting titles is the opposite of protest.',
+  t: 5, d: 3, c: 'application',
+  stem: 'In an imagined Calcutta market of 1906, students picket shops that still sell Manchester cloth, and the same students raise money for a handloom workshop that will supply cloth made in Bengal. Why would Assertive leaders want both activities together?',
+  opts: [
+    'Boycott pressed British trade while swadeshi supplied Indian goods in its place, so the two supported each other',
+    'Picketing was lawful but the workshop was a form of armed resistance',
+    'The workshop would sell cloth in Britain to repay the drain of wealth',
+    'Both were meant to persuade Parliament to pass a law, in the manner of the Moderates',
+  ],
+  sol: 'Boycott alone would leave buyers without cloth; swadeshi alone would not pressure British trade. Together they hurt foreign trade and built Indian industry. A workshop is not armed resistance, the aim was not to export to Britain, and appealing to Parliament was the Moderate way, not theirs.',
 }));
 Q('m_national_education', mcq({
   t: 5, d: 2, c: 'analysis',
@@ -549,10 +584,15 @@ Q('m_tilak_festivals', mcq({
   sol: 'Public festivals let Tilak reach ordinary people and build pride and unity. They did not raise money for the government, did not replace the Congress, and promoted rather than suppressed Marathi.',
 }));
 Q('m_tilak_homerule', mcq({
-  t: 6, d: 3, c: 'application',
-  stem: 'An imagined Pune newspaper reports that a leader, freed from imprisonment in Burma two years earlier, has launched a league demanding self-government for India. In which year is the report most likely written?',
-  opts: ['1916', '1905', '1907', '1885'],
-  sol: 'Tilak was released from Mandalay in 1914 and started his Home Rule League in 1916. 1905 was the partition, 1907 the Surat Split and 1885 the founding of the Congress.',
+  t: 6, d: 3, c: 'analysis',
+  stem: 'An imagined student writes: "Tilak was freed from Mandalay in 1914 and started his Home Rule League in 1916, so the League was a protest against the Partition of Bengal." Which correction is best?',
+  opts: [
+    'The partition had been annulled in 1911, so the League of 1916 pressed a wider demand for self-government instead',
+    'The League was started before his release, so the sequence must be reversed',
+    'The League was started in 1907, straight after the Surat Split, so it was a protest against the split',
+    'Tilak was never imprisoned at Mandalay, so his dates are wrong',
+  ],
+  sol: 'The student has taken the order of events as proof of a cause. The partition was annulled in 1911, five years before the League, and the League demanded self-government, so the cause cannot be the partition. The other options contradict the dates: release (1914) came before the League (1916), the League was not started in 1907, and Tilak was imprisoned at Mandalay (1908–14).',
 }));
 Q('m_tilak_swaraj', mcq({
   t: 6, d: 2, c: 'understanding',
@@ -566,10 +606,15 @@ Q('m_tilak_swaraj', mcq({
   sol: 'The declaration, described here in our own words, treats swaraj as a right Indians possess, not a concession. The other options contradict it.',
 }));
 Q('m_pal_paper', mcq({
-  t: 6, d: 2, c: 'application',
-  stem: 'An imagined Calcutta reader of the early 1900s subscribes to the English weekly of the Bengal leader who was the "Pal" of Lal, Bal and Pal. Which weekly does he read?',
-  opts: ['New India', 'Kesari', 'The Bengalee', 'Mahratta'],
-  sol: 'Bipin Chandra Pal started New India. Kesari and Mahratta were Tilak\'s, and The Bengalee was Banerjee\'s.',
+  t: 6, d: 3, c: 'application',
+  stem: 'An imagined editorial in a Calcutta weekly of 1906 says that its writer will send no more petitions, and urges readers to stop buying foreign cloth, to leave official schools and to build institutions of their own. Which reading of the editorial is best?',
+  opts: [
+    'It is Assertive, because it replaces petitions with refusal and self-reliance',
+    'It is Moderate, because it asks the British to hear the case of Indians',
+    'It is Assertive, because it calls for armed attack on government offices',
+    'It is Moderate, because boycott had been the Moderate method since 1885',
+  ],
+  sol: 'Giving up petitions, boycotting foreign cloth, leaving official schools and building national institutions are the marks of the Assertive programme of swadeshi, boycott and national education, as argued by leaders such as Bipin Chandra Pal. Nothing in it asks the British to hear a case, it proposes no armed attack, and boycott was not a Moderate method.',
 }));
 Q('m_lajpat_title', mcq({
   t: 6, d: 1, c: 'recall',
@@ -578,10 +623,15 @@ Q('m_lajpat_title', mcq({
   sol: 'Lala Lajpat Rai was known as Punjab Kesari. Pal was from Bengal, and Gokhale and Banerjee were Moderates.',
 }));
 Q('m_lajpat_deport', mcq({
-  t: 6, d: 2, c: 'application',
-  stem: 'An imagined Lahore newspaper of 1907 reports that a popular Punjabi leader linked with the Arya Samaj has been deported to Mandalay without trial. Which leader is it?',
-  opts: ['Lala Lajpat Rai', 'Bal Gangadhar Tilak', 'Dadabhai Naoroji', 'Rash Behari Ghosh'],
-  sol: 'Lala Lajpat Rai, a Punjabi leader associated with the Arya Samaj, was deported to Mandalay in 1907. Tilak was also later sent to Mandalay, but in 1908 after a trial, and he was from Maharashtra; Naoroji and Ghosh were Moderates.',
+  t: 6, d: 3, c: 'analysis',
+  stem: 'An imagined Lahore newspaper of 1907 reports that a popular leader has been deported without trial after farmers\' meetings against new land rules. Which inference about the government\'s thinking is best supported?',
+  opts: [
+    'It feared a leader who could rouse ordinary people on everyday grievances, which petitions in the council hall never did',
+    'It was punishing him for a petition he had sent to Parliament',
+    'It was acting on a request from the Congress after the Surat Split',
+    'It had accepted his demand for swaraj and was removing him to a safe place',
+  ],
+  sol: 'Deportation without trial, following mass meetings of farmers, shows alarm at popular agitation of the Assertive kind (the leader was Lala Lajpat Rai, who was deported to Mandalay in 1907). A petition to Parliament was a Moderate, lawful method and would not be punished so, the Congress made no such request, and the government had not accepted swaraj.',
 }));
 Q('m_lal_bal_pal', mcq({
   t: 6, d: 1, c: 'recall',

@@ -52,7 +52,7 @@ All six syllabus topics are covered:
 | source-based | 3 | an imagined student's diary (16 October 1905), an imagined reporter's notes (Surat 1907) and the comparison chart; each with an either/or part (c) |
 
 - Difficulty d1 25, d2 47, d3 19, d4 2.
-- Competency: recall 29, understanding 20; application and above 47% of items (lint band 45–65%). Five recall items were rewritten as imagined scenarios (`m_councils_1892`, `m_naoroji_title`, `m_partition_new`, `m_tilak_homerule`, `m_pal_paper`) so that the share is earned, not retagged.
+- Competency: recall 29, understanding 20; application and above 47% of items (lint band 45–65%). Five recall items were rewritten as imagined scenarios (`m_councils_1892`, `m_naoroji_title`, `m_partition_new`, `m_tilak_homerule`, `m_pal_paper`) so that the share is earned, not retagged. (superseded: see Competency audit 2026-11-05)
 - The bank is larger than the 66–76 asked for; the extras are spares outside both tests.
 
 ## Facts used, for the reviewer
@@ -78,3 +78,18 @@ Dates and names are the stable, widely taught ones; none is quoted from a textbo
 ## Gaps
 - Nobody has seen the SVG labels rendered; they need a look at 360 px on staging (the timeline is the denser one).
 - Only 2 items are d4; the bank leans to d1–d2.
+
+## Competency audit 2026-11-05
+Audit: `docs/platform/content-qa/2026-11-05-competency-retag-audit.md`. Eleven items that were tagged application although they only named a fact or restated a textbook point were rewritten in place (same key, type, marks, topic and test slot) so that each now asks the student to use the idea. No tag was simply relabelled.
+- `m_early_economic` (analysis): infer the thinking behind a resolution that criticises policy but only asks for reform.
+- `m_councils_1892` (application): choose the course of action that fits a Moderate editor who welcomes the 1892 councils but notes their limits.
+- `m_naoroji_title` (application): explain why a Commons seat and the drain argument fit the Moderate method of persuading British opinion.
+- `m_banerjee_age` (application): pick the pair of Moderate demands that removes both obstacles faced by an imagined candidate.
+- `m_partition_new` (analysis): choose the detail that supports a political, not administrative, reading of the partition, against true but neutral details.
+- `m_annulled` (rewritten: choose the pair of 1911 announcements that make both halves of a shopkeeper's remark true). The reviewer judged it mostly recall of the two Durbar announcements with one small inference, so it is tagged **understanding**, not application.
+- `m_surat_reunite` (rewritten: which listed event cannot be a reason for the 1916 reunion because of its date). On the 2026-11-09 re-check every date is printed in the options, so the only step is comparing each year with 1916; it is tagged **understanding**, not application.
+- `m_boycott_scenario` (application): explain why boycott and swadeshi were run together.
+- `m_tilak_homerule` (analysis): correct a student's post hoc inference that the 1916 League protested the partition.
+- `m_pal_paper` (application): classify an imagined editorial as Assertive or Moderate with the right reason.
+- `m_lajpat_deport` (analysis): infer what deportation after farmers' meetings shows about the government's thinking.
+Competency now: recall 29, understanding 22, application 6, analysis 34, evaluation 2; application and above **42 of 93 (45.2%)**, inside the 45–65% band. Of the audit's pool of 12 application items, the one not listed in the audit keeps its tag.
