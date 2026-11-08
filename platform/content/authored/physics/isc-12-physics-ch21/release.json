@@ -4096,8 +4096,8 @@
       ],
       "marks": 1,
       "difficulty": 2,
-      "competency": "application",
-      "bloom": "apply",
+      "competency": "understanding",
+      "bloom": "understand",
       "topic_ids": [
         "isc-12-physics-ch21-t01"
       ],
@@ -4271,27 +4271,27 @@
       "unit": "isc-12-physics-ch21",
       "language": "en",
       "type": "numerical",
-      "stem_md": "Silicon has a forbidden gap of 1.1 eV. Find the longest wavelength of light that can lift an electron across this gap, in nm, to 3 significant figures. (hc = 1240 eV nm)",
+      "stem_md": "A silicon wafer (forbidden gap 1.1 eV) is lit by two beams, each of power 0.50 μW: one of wavelength 800 nm and one of wavelength 1300 nm. Assuming that every photon able to do so creates one electron–hole pair, find the number of pairs created per second, in units of 10¹² (3 significant figures). (hc = 1240 eV nm), e = 1.6 × 10⁻¹⁹ C",
       "options": [],
       "match_right": [],
       "answer": {
-        "value": 1130,
-        "tolerance": 5,
-        "unit": "nm"
+        "value": 2.02,
+        "tolerance": 0.02,
+        "unit": null
       },
-      "solution_md": "$\\lambda_{max} = \\dfrac{hc}{E_g} = \\dfrac{1240}{1.1} = 1127$ nm $\\approx 1130$ nm, in the infrared.",
+      "solution_md": "First decide which beam can act. The longest wavelength that lifts an electron across the gap is $\\dfrac{1240}{1.1} \\approx 1127$ nm, so the 800 nm photons (1240/800 = 1.55 eV, more than 1.1 eV) create pairs, but the 1300 nm photons (1240/1300 = 0.95 eV) do not. The 800 nm photon energy is $1.55 \\times 1.6 \\times 10^{-19} = 2.48 \\times 10^{-19}$ J, so the pairs per second are $N = \\dfrac{P}{E} = \\dfrac{0.50 \\times 10^{-6}}{2.48 \\times 10^{-19}} = 2.02 \\times 10^{12}$, i.e. $\\dfrac{2.02 \\times 10^{12}}{10^{12}} = 2.02$ in units of $10^{12}$.",
       "marking_scheme": [
         {
-          "step": "λ = hc/Eg = 1240/1.1",
+          "step": "Only 800 nm (1.55 eV > 1.1 eV) creates pairs; 1300 nm (0.95 eV) does not",
           "marks": 1
         },
         {
-          "step": "λ = 1.13 × 10³ nm (1130 nm, infrared)",
+          "step": "N = P/E = 0.50 × 10⁻⁶ / 2.48 × 10⁻¹⁹ = 2.02 × 10¹²",
           "marks": 1
         }
       ],
       "marks": 2,
-      "difficulty": 2,
+      "difficulty": 3,
       "competency": "application",
       "bloom": "apply",
       "topic_ids": [
@@ -4332,8 +4332,8 @@
       ],
       "marks": 1,
       "difficulty": 2,
-      "competency": "application",
-      "bloom": "apply",
+      "competency": "understanding",
+      "bloom": "understand",
       "topic_ids": [
         "isc-12-physics-ch21-t01"
       ],
@@ -4939,8 +4939,8 @@
       ],
       "marks": 1,
       "difficulty": 2,
-      "competency": "application",
-      "bloom": "apply",
+      "competency": "understanding",
+      "bloom": "understand",
       "topic_ids": [
         "isc-12-physics-ch21-t02"
       ],
@@ -5582,8 +5582,8 @@
       ],
       "marks": 2,
       "difficulty": 2,
-      "competency": "application",
-      "bloom": "apply",
+      "competency": "understanding",
+      "bloom": "understand",
       "topic_ids": [
         "isc-12-physics-ch21-t03"
       ],
@@ -5693,27 +5693,27 @@
       "unit": "isc-12-physics-ch21",
       "language": "en",
       "type": "numerical",
-      "stem_md": "The forward current of a diode is 4.0 mA at 0.70 V and 10.0 mA at 0.73 V. Find the dynamic (a.c.) resistance of the diode over this range, in ohm.",
+      "stem_md": "The forward current of a diode is 4.0 mA at 0.70 V and 10.0 mA at 0.73 V. Assuming the characteristic stays straight just beyond these readings, what forward voltage is needed to raise the current to 12.0 mA? Answer in volts to 3 significant figures.",
       "options": [],
       "match_right": [],
       "answer": {
-        "value": 5,
-        "tolerance": 0.1,
-        "unit": "Ω"
+        "value": 0.74,
+        "tolerance": 0.002,
+        "unit": "V"
       },
-      "solution_md": "$r_d = \\dfrac{\\Delta V}{\\Delta I} = \\dfrac{0.73 - 0.70}{(10.0 - 4.0) \\times 10^{-3}} = \\dfrac{0.03}{6.0 \\times 10^{-3}} = 5.0$ Ω. (The static resistance V/I at 10 mA is about 73 Ω, much larger.)",
+      "solution_md": "First find the slope of the characteristic, the dynamic resistance: $r_d = \\dfrac{\\Delta V}{\\Delta I} = \\dfrac{0.73 - 0.70}{(10.0 - 4.0) \\times 10^{-3}} = \\dfrac{0.03}{6.0 \\times 10^{-3}} = 5.0$ Ω. Raising the current from 10.0 mA to 12.0 mA adds $\\Delta V = r_d \\Delta I = 5.0 \\times 2.0 \\times 10^{-3} = 0.010$ V, so the voltage needed is $0.73 + 0.010 = 0.740$ V.",
       "marking_scheme": [
         {
-          "step": "r = ΔV/ΔI = 0.03 V / 6.0 mA",
+          "step": "r_d = ΔV/ΔI = 5.0 Ω",
           "marks": 1
         },
         {
-          "step": "r = 5.0 Ω",
+          "step": "V = 0.73 + 5.0 × 2.0 × 10⁻³ = 0.740 V",
           "marks": 1
         }
       ],
       "marks": 2,
-      "difficulty": 2,
+      "difficulty": 3,
       "competency": "application",
       "bloom": "apply",
       "topic_ids": [
@@ -6099,8 +6099,8 @@
       ],
       "marks": 1,
       "difficulty": 2,
-      "competency": "application",
-      "bloom": "apply",
+      "competency": "understanding",
+      "bloom": "understand",
       "topic_ids": [
         "isc-12-physics-ch21-t04"
       ],
@@ -6156,8 +6156,8 @@
       ],
       "marks": 1,
       "difficulty": 2,
-      "competency": "application",
-      "bloom": "apply",
+      "competency": "understanding",
+      "bloom": "understand",
       "topic_ids": [
         "isc-12-physics-ch21-t04"
       ],
@@ -6384,8 +6384,8 @@
       ],
       "marks": 1,
       "difficulty": 2,
-      "competency": "application",
-      "bloom": "apply",
+      "competency": "understanding",
+      "bloom": "understand",
       "topic_ids": [
         "isc-12-physics-ch21-t04"
       ],
@@ -7155,8 +7155,8 @@
       ],
       "marks": 1,
       "difficulty": 3,
-      "competency": "application",
-      "bloom": "apply",
+      "competency": "understanding",
+      "bloom": "understand",
       "topic_ids": [
         "isc-12-physics-ch21-t05"
       ],
@@ -7666,8 +7666,8 @@
       ],
       "marks": 1,
       "difficulty": 2,
-      "competency": "application",
-      "bloom": "apply",
+      "competency": "understanding",
+      "bloom": "understand",
       "topic_ids": [
         "isc-12-physics-ch21-t05"
       ],
@@ -8874,7 +8874,7 @@
   "build": {
     "run_id": null,
     "checks": {
-      "katex_mhchem": "216 math strings parsed with KaTeX 0.19.0 + mhchem (throwOnError, strict \"error\"), 0 failures",
+      "katex_mhchem": "221 math strings parsed with KaTeX 0.19.0 + mhchem (throwOnError, strict \"error\"), 0 failures",
       "svg_allowlist": "31 SVG visuals (12 distinct diagrams) checked with saxes against svg-allowlist.ts: elements, attributes, class pattern, fragment-only refs, no style, palette incl. named hues, viewBox, title, per-page unique ids — 0 failures",
       "narration": "39 slides, 12–81 words (mean 62), no symbols, formulae or unit abbreviations",
       "resolve": "41/41 scripted re-solve checks pass",
