@@ -7,6 +7,7 @@
 import { z } from 'zod/v4';
 import { CONSENT_PROVIDERS, OAUTH, OTP, STAFF_AUTH, staffAuthProblems, type ConsentProviderName, type StaffAuthPolicy } from '@soyl/shared/config/security';
 import { COIN_STORE } from '@soyl/shared/config/coins';
+import { INVOICING } from '@soyl/shared/config/invoicing';
 import { loadBillingConfig, type BillingConfig } from './billing/config';
 
 export const APP_ENVS = ['local', 'test', 'dev', 'stg', 'prod'] as const;
@@ -25,6 +26,8 @@ export const DEV_DEFAULTS = {
   googleClientSecret: 'soyl-local-mock-client-secret', // gitleaks:allow (mock OIDC client secret, refused outside local/test)
   /** 32 bytes, base64url of "local-dev-mfa-key-not-for-deploy". AUTH-11 TOTP secret encryption key (development only). */
   mfaEncryptionKey: 'bG9jYWwtZGV2LW1mYS1rZXktbm90LWZvci1kZXBsb3k', // gitleaks:allow (public dev placeholder, refused outside local/test)
+  /** ADR-027: the marketing server's Future Builders ingest key (x-soyl-ingest-key). */
+  fbIngestKey: 'local-dev-fb-ingest-key-not-for-deployment-0000', // gitleaks:allow (public dev placeholder, refused outside local/test)
 } as const;
 
 const csv = z
@@ -132,6 +135,18 @@ const EnvSchema = z.object({
   COINS_PHYSICAL_REDEMPTION_ENABLED: z.enum(['true', 'false', '1', '0']).optional(),
   /** SOYL Coins (D-038): master switch for every redemption. Default COIN_STORE.redemptionEnabled (off at launch). */
   COINS_REDEMPTION_ENABLED: z.enum(['true', 'false', '1', '0']).optional(),
+
+  /**
+   * ADR-027 Future Builders ingest (marketing server → API): the shared key in x-soyl-ingest-key (Key Vault in
+   * production; at least 32 characters; required outside local/test like the edge secret, GEN-1). FB_INGEST_KEY_PREVIOUS
+   * is accepted too while rotating.
+   */
+  FB_INGEST_KEY: z.string().optional(),
+  FB_INGEST_KEY_PREVIOUS: z.string().optional(),
+  /** Optional staff inbox told about each new registration and enquiry. */
+  FB_NOTIFY_EMAIL: z.email().optional(),
+  /** Reply-To of the parent confirmation email. Default: the contact address on invoices (INVOICING.seller.email). */
+  FB_REPLY_TO: z.email().optional(),
 });
 
 export interface Config {
@@ -182,6 +197,8 @@ export interface Config {
   billing: BillingConfig;
   /** SOYL Coins (ADR-021). */
   coins: { redemptionEnabled: boolean; physicalRedemptionEnabled: boolean };
+  /** Future Builders registrations and enquiries (ADR-027). Empty `ingestKeys`: every ingest call is refused. */
+  futureBuilders: { ingestKeys: string[]; notifyEmail: string | null; replyTo: string };
 }
 
 export class ConfigError extends Error {
@@ -308,6 +325,15 @@ export function loadConfig(env: Record<string, string | undefined> = process.env
   const devOtpOutbox = e.DEV_OTP_OUTBOX && isLocal;
   if (e.DEV_OTP_OUTBOX && !isLocal) problems.push('DEV_OTP_OUTBOX is only allowed when APP_ENV is local or test');
 
+  // ADR-027: Future Builders ingest key (current + previous while rotating); the dev default only in local/test.
+  const fbCurrent = need('FB_INGEST_KEY', e.FB_INGEST_KEY?.trim(), DEV_DEFAULTS.fbIngestKey);
+  const fbIngestKeys = [...new Set([fbCurrent, e.FB_INGEST_KEY_PREVIOUS?.trim()].filter((k): k is string => Boolean(k)))];
+  for (const k of fbIngestKeys) {
+    if (k.length < 32) problems.push('FB_INGEST_KEY / FB_INGEST_KEY_PREVIOUS must be at least 32 characters');
+    if (!isLocal && k.includes(DEV_DEFAULTS.fbIngestKey)) problems.push('FB_INGEST_KEY uses the public development default; set a real secret');
+    if (edgeSecrets.includes(k)) problems.push('FB_INGEST_KEY must differ from the edge secret');
+  }
+
   const billing = loadBillingConfig(env, { appEnv: e.APP_ENV, isLocal, isProduction });
   problems.push(...billing.problems);
   problems.push(...staffAuthProblems(staffAuth));
@@ -361,6 +387,7 @@ export function loadConfig(env: Record<string, string | undefined> = process.env
     academicYear: e.ACADEMIC_YEAR,
     devOtpOutbox,
     billing: billing.config,
+    futureBuilders: { ingestKeys: fbIngestKeys, notifyEmail: e.FB_NOTIFY_EMAIL ?? null, replyTo: e.FB_REPLY_TO ?? INVOICING.seller.email },
     coins: {
       redemptionEnabled:
         e.COINS_REDEMPTION_ENABLED === undefined ? COIN_STORE.redemptionEnabled : e.COINS_REDEMPTION_ENABLED === 'true' || e.COINS_REDEMPTION_ENABLED === '1',

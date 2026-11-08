@@ -32,6 +32,7 @@ const prodEnv = {
   EDGE_SECRETS: S('a'),
   AUTH_SECRET: S('b'),
   OTP_PEPPER: S('c'),
+  FB_INGEST_KEY: S('f'),
   MFA_ENCRYPTION_KEY: Buffer.alloc(32, 7).toString('base64'),
   GOOGLE_CLIENT_ID: 'id',
   GOOGLE_CLIENT_SECRET: 'secret',
@@ -67,11 +68,12 @@ describe('config', () => {
       googleClientId: 'GOOGLE_CLIENT_ID',
       googleClientSecret: 'GOOGLE_CLIENT_SECRET',
       mfaEncryptionKey: 'MFA_ENCRYPTION_KEY',
+      fbIngestKey: 'FB_INGEST_KEY',
     };
     for (const appEnv of ['dev', 'stg', 'prod'] as const) {
       const env = { ...prodEnv, APP_ENV: appEnv };
       const loaded = loadConfig(env);
-      const values = [loaded.edgeSecrets.join(','), loaded.authSecret, loaded.otpPepper, loaded.google.clientId, loaded.google.clientSecret, loaded.mfaEncryptionKey.toString('base64')];
+      const values = [loaded.edgeSecrets.join(','), loaded.authSecret, loaded.otpPepper, loaded.google.clientId, loaded.google.clientSecret, loaded.mfaEncryptionKey.toString('base64'), loaded.futureBuilders.ingestKeys.join(',')];
       for (const dev of Object.values(DEV_DEFAULTS)) expect(values.some((v) => v.includes(dev)), `${appEnv}: ${dev}`).toBe(false);
       for (const [key, name] of Object.entries(vars) as [keyof typeof DEV_DEFAULTS, string][]) {
         expect(() => loadConfig({ ...env, [name]: undefined }), `${appEnv} ${name} unset`).toThrow(new RegExp(`${name} is required`));
@@ -104,6 +106,9 @@ describe('config', () => {
     ['entra redis without username', { REDIS_AUTH: 'entra' }, /REDIS_USERNAME/],
     ['entra redis without TLS', { REDIS_AUTH: 'entra', REDIS_USERNAME: 'oid', REDIS_URL: 'redis://cache:10000' }, /rediss:\/\//],
     ['invalid APP_ENV', { APP_ENV: 'production' }, /APP_ENV/],
+    ['short FB ingest key (ADR-027)', { FB_INGEST_KEY: 'short' }, /FB_INGEST_KEY \/ FB_INGEST_KEY_PREVIOUS must be at least 32/],
+    ['FB ingest key equal to the edge secret', { FB_INGEST_KEY: S('a') }, /must differ from the edge secret/],
+    ['bad FB notify email', { FB_NOTIFY_EMAIL: 'not-an-email' }, /FB_NOTIFY_EMAIL/],
   ])('refuses %s', (_l, patch, re) => {
     expect(() => loadConfig({ ...prodEnv, ...patch })).toThrow(re);
   });

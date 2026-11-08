@@ -174,7 +174,7 @@ describe('access: superadmin only, staff MFA, rate-limited, never cached', () =>
     const ok = await superadmin.get(`/v1/admin/analytics/overview${RANGE}`);
     expect(ok.statusCode).toBe(200);
     expect(ok.headers['cache-control']).toBe('no-store');
-    expect((await superadmin.get('/v1/admin/me')).json()).toEqual({ userId: superadminId, role: 'admin', capabilities: ['superadmin'], sections: ['analytics', 'users', 'reports'] });
+    expect((await superadmin.get('/v1/admin/me')).json()).toEqual({ userId: superadminId, role: 'admin', capabilities: ['superadmin'], sections: ['analytics', 'users', 'future_builders', 'reports'] });
     expect(h.logs.some((l) => l.event === 'authz_denied' && l.reason === 'capability')).toBe(true);
   });
 

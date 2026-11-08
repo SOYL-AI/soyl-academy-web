@@ -107,6 +107,7 @@ weekly `leagues` and `league_memberships.league_id/tier/outcome`; the `ai_answer
 `0012_consent_interim` (backend-api, D-039, ADR-022: `consent_records` for the built-in consent provider,
 `profiles.public_name_seed` for auto-generated public names).
 `0016_invoices` (billing-razorpay, ADR-024: `invoices` + gap-free `invoice_sequences`, checkout `place_of_supply` / `buyer_name` on orders and subscriptions, the `soyl_invoices_guard` immutability trigger and the `soyl_billing_buyer_anonymise` trigger on `users.deleted_at`). Renumbered 0016 at integration if the credits/avatars 0015 merges first.
+`0017_future_builders` (backend-api, ADR-027: `fb_enrollments` (paid summer-camp registrations posted by the marketing server, unique `razorpay_payment_id`, gap-free `FB-YYYY-NNNNNN` receipt numbers, confirmation-email state) and `fb_leads` (callback / notify / waitlist enquiries); replaces the Google Sheet).
 
 ## Roles (DB-1) and Azure mapping
 

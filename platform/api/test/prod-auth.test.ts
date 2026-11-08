@@ -35,6 +35,7 @@ const prodEnv = {
   EDGE_SECRET_PREVIOUS: S('a'),
   AUTH_SECRET: S('b'),
   OTP_PEPPER: S('c'),
+  FB_INGEST_KEY: S('f'),
   MFA_ENCRYPTION_KEY: Buffer.alloc(32, 7).toString('base64'),
   AUTH_METHODS: 'email',
   EMAIL_PROVIDER: 'acs',

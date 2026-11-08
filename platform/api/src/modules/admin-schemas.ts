@@ -52,7 +52,7 @@ export const AdminMe = z
     role: z.enum(['reviewer', 'admin']),
     capabilities: z.array(z.enum(STAFF_CAPABILITIES)),
     /** Tabs this account may open (the web hides the rest; the API enforces it anyway). */
-    sections: z.array(z.enum(['analytics', 'users', 'reports'])),
+    sections: z.array(z.enum(['analytics', 'users', 'future_builders', 'reports'])),
   })
   .meta({ id: 'AdminMe' });
 

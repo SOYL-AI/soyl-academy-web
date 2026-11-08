@@ -187,6 +187,12 @@ export type MySubscription = Schemas['MySubscription'];
 export type Invoice = Schemas['Invoice'];
 export type MyInvoices = Schemas['MyInvoices'];
 export type AdminInvoice = Schemas['AdminInvoice'];
+// Future Builders registrations and enquiries (ADR-027; superadmin)
+export type FbEnrollment = Schemas['FbEnrollment'];
+export type FbEnrollmentsPage = Schemas['FbEnrollmentsPage'];
+export type FbLead = Schemas['FbLead'];
+export type FbLeadsPage = Schemas['FbLeadsPage'];
+export type FbResendResult = Schemas['FbResendResult'];
 // SOYL Coins (ADR-021, D-037)
 export type CoinAward = Schemas['CoinAward'];
 export type CoinEarnSource = Schemas['CoinEarnSource'];

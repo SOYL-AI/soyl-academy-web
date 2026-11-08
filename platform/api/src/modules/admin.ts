@@ -13,6 +13,7 @@
  *   POST /v1/admin/users/search {email}        exact email lookup (audited)
  *   POST /v1/admin/users/:id/reveal            full email (audited)
  *   GET  /v1/admin/users/:id/summary           counts only (audited)
+ *   Future Builders registrations and enquiries: future-builders/routes.ts (ADR-027; section 'future_builders')
  *
  * Responses are personal to the caller, so the global onSend hook marks them `no-store` (API-4).
  */
@@ -87,7 +88,7 @@ export function registerAdminRoutes(appIn: FastifyInstance, deps: AppDeps, servi
         userId: user.id,
         role: user.role as 'reviewer' | 'admin',
         capabilities,
-        sections: [...(superadmin ? (['analytics', 'users'] as const) : []), 'reports' as const],
+        sections: [...(superadmin ? (['analytics', 'users', 'future_builders'] as const) : []), 'reports' as const],
       };
     },
   });

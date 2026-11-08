@@ -88,6 +88,7 @@ export function loggerOptions(level: string, stream?: DestinationStream): Logger
 
 export type SecurityEventName =
   | 'edge_auth_failed'
+  | 'ingest_auth_failed'
   | 'origin_rejected'
   | 'content_type_rejected'
   | 'authz_denied'
