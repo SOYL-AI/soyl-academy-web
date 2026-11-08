@@ -37,7 +37,7 @@ Q('det_afew', mcq({
   sol: '"Students" is a **countable plural**, which rules out *a little, much* and *little* (all for uncountable nouns). "Only a few" is the natural fixed pairing for a small number.',
 }));
 Q('det_each', mcq({
-  t: 1, d: 2, c: 'analysis',
+  t: 1, d: 2, c: 'understanding',
   stem: 'Which sentence uses the determiner correctly?',
   opts: ['Each student must carry an ID card.', 'Every students must carry an ID card.', 'Much students carry ID cards.', 'Each of student must carry an ID card.'],
   sol: '*Each* and *every* take a **singular** noun ("each student", "every student"). "Much" is for uncountable nouns. "Each of" needs a plural noun with a determiner ("each of the students").',
@@ -119,7 +119,7 @@ Q('ten_since', mcq({
   sol: '*Since + a point in the past*, with the activity continuing now ("still practises"), needs the **present perfect continuous**: *has been learning*.',
 }));
 Q('ten_hadeaten', mcq({
-  t: 2, d: 3, c: 'analysis',
+  t: 2, d: 3, c: 'understanding',
   stem: 'Which sentence shows an action that was completed **before** another past action?',
   opts: ['I had already eaten when Papa came home.', 'I was eating when Papa came home.', 'I eat when Papa comes home.', 'I will eat when Papa comes home.'],
   sol: 'The past perfect *had eaten* marks the earlier of two past actions. "Was eating" shows an action in progress at the same time; the other two are present or future.',
@@ -210,7 +210,7 @@ Q('mod_neednot', mcq({
   sol: 'A holiday makes coming **unnecessary**, not forbidden. *Need not* = it is not necessary. *Must not* would mean you are not allowed to come; *should/must* would mean you ought to or have to come.',
 }));
 Q('mod_polite', mcq({
-  t: 3, d: 2, c: 'analysis',
+  t: 3, d: 2, c: 'understanding',
   stem: 'Which sentence makes a **polite request**?',
   opts: ['Could you please lower the volume?', 'You must lower the volume.', 'You might lower the volume.', 'You need not lower the volume.'],
   sol: '*Could you … ?* with *please* is the polite request form. *Must* is an order, *might* suggests a possibility, and *need not* removes the obligation.',

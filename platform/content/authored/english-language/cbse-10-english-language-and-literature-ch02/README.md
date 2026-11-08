@@ -61,3 +61,12 @@ Every item and passage part was re-answered from its stem alone, then compared w
 ## Known gaps
 - The grammar question's exact 2026-27 mix (how many gap-fill vs editing vs transformation items, which carry options) should be confirmed against the 2026-27 sample paper; the bank covers all three.
 - Passive voice and clauses are not syllabus topics for this chapter and are not taught separately.
+
+## Competency audit 2026-11-05
+
+The content-verifier audit `docs/platform/content-qa/2026-11-05-competency-retag-audit.md` named this chapter's relabel (84% → 62%, handoff `2026-10-27-subject-producer-cbse10-english-a.md`) as a lead. The subject-producer checked it: the downward relabel is honest, and it follows the rule stated above (one-rule recognition items are understanding; contextual gap filling, error detection, transformation and multi-change items are application or analysis). Three recognition MCQs still carried analysis against that rule and are now **understanding**, with no text, key or solution changed:
+- `q004` (which sentence uses the determiner correctly: *each* + singular noun);
+- `q016` (which sentence shows the earlier of two past actions: the past perfect);
+- `q030` (which sentence is a polite request: *could you … please*).
+
+Now: recall 4 · understanding 28 · application 25 · analysis 19; application or higher **44 of 76 = 57.9% of items**, inside the 45–65% band. This supersedes the competency figures above.
