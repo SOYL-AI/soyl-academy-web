@@ -1,19 +1,22 @@
 import { futureBuilders } from '@/content/home';
 import { images } from '@/content/images';
-import { formatCohortDate, getOpenCohort, getUpcomingCohort, type CohortState } from '@/content/future-builders';
+import { LIST_PRICE, formatCohortDate, getActiveOffer, getOpenCohort, getUpcomingCohort, rupees, today, type CohortState } from '@/content/future-builders';
 import { ButtonLink } from '@/components/ui/Button';
 import { Label } from '@/components/ui/SectionHeader';
 import { Photo } from '@/components/media/Photo';
 
-/** Future Builders, introduced on the homepage. Status line follows the cohort state. */
+/** Future Builders, introduced on the homepage. Status line follows the camp state and the offer. */
 export function FutureBuildersFeature({ state }: { state: CohortState }) {
-  const open = getOpenCohort();
-  const upcoming = getUpcomingCohort();
+  const now = today();
+  const open = getOpenCohort(now);
+  const upcoming = getUpcomingCohort(now);
+  const offer = getActiveOffer(now);
+  const fee = offer.theme === 'diwali' ? `${offer.name}: ${rupees(offer.price)} (list ${rupees(LIST_PRICE)}) until ${offer.endsLabel}.` : `Fee ${rupees(offer.price)} (list ${rupees(LIST_PRICE)}).`;
   const status = open
-    ? `${open.name}: registration ${state === 'closing-soon' ? 'closes' : 'open until'} ${formatCohortDate(open.registrationCloses)}.`
+    ? `${open.name}, ${open.months}: registration ${state === 'closing-soon' ? 'closes' : 'open until'} ${formatCohortDate(open.registrationCloses, true)}. ${fee}`
     : upcoming
-      ? `${upcoming.name}, ${upcoming.window}. Registration opens ${upcoming.registrationOpensLabel}.`
-      : 'Dates for the next cohort are being set. The waitlist is open.';
+      ? `${upcoming.name}, ${upcoming.months}. Registration opens ${upcoming.registrationOpensLabel}.`
+      : 'Dates for the next camp are being set. The waitlist is open.';
 
   return (
     <section className="section bg-paper">

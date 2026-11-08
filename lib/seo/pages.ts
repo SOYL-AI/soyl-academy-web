@@ -163,10 +163,10 @@ export const PAGES: Record<string, PageEntry> = {
   },
   '/future-builders': {
     path: '/future-builders',
-    title: 'Future Builders — Live Tech Cohort for Grades 7–12',
+    title: 'Future Builders — Live Tech Summer Camp for Grades 7–12',
     label: 'Future Builders',
     description:
-      'Live online cohort for Grades 7–12: Python, AI, IoT and entrepreneurship. Students build a working prototype with a home hardware kit and pitch it on Demo Day.',
+      'Live online summer camp for Grades 7–12, April–May 2027: Python, AI, IoT and entrepreneurship. Students build a working prototype with a home hardware kit and pitch it on Demo Day.',
     type: 'WebPage',
     eyebrow: 'Future Builders',
     priority: 0.8,

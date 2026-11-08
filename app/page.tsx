@@ -9,18 +9,19 @@ import { Audiences } from '@/components/home/Audiences';
 import { FutureBuildersFeature } from '@/components/home/FutureBuildersFeature';
 import { JournalTeaser } from '@/components/home/JournalTeaser';
 import { FinalCta } from '@/components/home/FinalCta';
-import { FutureBuildersBanner } from '@/components/marketing/FutureBuildersBanner';
+import { DiwaliOfferTab } from '@/components/marketing/DiwaliOfferTab';
 import { Faq } from '@/components/seo/Faq';
 import { StructuredData } from '@/components/seo/StructuredData';
 import { homeFaqs } from '@/content/faqs';
-import { formatCohortDate, getCohortState, getOpenCohort } from '@/content/future-builders';
+import { LIST_PRICE, getActiveOffer, getCohortState, getOpenCohort, previewNow, rupees, today } from '@/content/future-builders';
 import { createMetadata } from '@/lib/seo/metadata';
 import { breadcrumbNode, faqNode, graph, webPageNode } from '@/lib/seo/schema';
 
 export const metadata = createMetadata({ path: '/' });
 
-// The Future Builders banner and feature depend on today's date; re-check hourly.
-export const revalidate = 3600;
+// The Future Builders offer tab and feature depend on today's date; re-check every 5 minutes
+// (the tab also hides itself in the browser at the offer's end).
+export const revalidate = 300;
 
 /**
  * Homepage: promise → the shift → the method → how it works → belief →
@@ -28,8 +29,13 @@ export const revalidate = 3600;
  * Every section is fully visible without JS; motion only decorates.
  */
 export default function HomePage() {
-  const cohortState = getCohortState();
-  const openCohort = getOpenCohort();
+  const now = today();
+  const cohortState = getCohortState(now);
+  const openCohort = getOpenCohort(now);
+  const offer = getActiveOffer(now);
+  const preview = previewNow();
+  // eslint-disable-next-line react-hooks/purity -- dev preview only: aligns the tab's expiry with COHORT_PREVIEW_DATE
+  const offsetMs = preview ? preview.getTime() - Date.now() : undefined;
 
   return (
     <>
@@ -41,11 +47,9 @@ export default function HomePage() {
         )}
       />
 
-      {openCohort && (
-        <FutureBuildersBanner
-          cohortKey={openCohort.registrationCloses}
-          message={`Live online cohort for Grades 7–12. Registration ${cohortState === 'closing-soon' ? 'closes' : 'open until'} ${formatCohortDate(openCohort.registrationCloses)}.`}
-        />
+      {/* Future Builders "Diwali offer" side tab: only while registration is open and the offer runs. */}
+      {openCohort && offer.theme === 'diwali' && offer.endsAt && (
+        <DiwaliOfferTab offerKey={offer.slug} price={rupees(offer.price)} listPrice={rupees(LIST_PRICE)} endsAt={offer.endsAt} offsetMs={offsetMs} />
       )}
 
       <Hero />

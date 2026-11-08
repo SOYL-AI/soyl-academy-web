@@ -80,7 +80,7 @@ export default function WhatWeTeachPage() {
               <p className="t-eyebrow text-muted">Grades 7–12</p>
               <h2 className="t-title mt-2">Future Builders</h2>
               <p className="mt-2 max-w-[56ch] text-muted">
-                A 12-weekend live online cohort: software, AI, IoT robotics and entrepreneurship, ending in a Demo Day pitch.
+                A 2-month live online summer camp: software, AI, IoT robotics and entrepreneurship, ending in a Demo Day pitch.
               </p>
             </div>
             <div className="col-span-12 md:col-span-3 md:text-right">

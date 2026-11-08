@@ -110,7 +110,7 @@ export default function StudentsPage() {
               <p className="t-eyebrow text-muted">Grades 7–12</p>
               <h2 className="t-title mt-3">Want to build something real? Try Future Builders.</h2>
               <p className="mt-3 max-w-[52ch] text-muted">
-                A weekend cohort in software, AI, IoT robotics and entrepreneurship. You build a working product and pitch it.
+                A summer camp in software, AI, IoT robotics and entrepreneurship. You build a working product and pitch it.
               </p>
               <span className="arrow-link mt-5">
                 About Future Builders <ArrowRight />

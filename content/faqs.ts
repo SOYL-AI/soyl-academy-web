@@ -111,7 +111,7 @@ export const studentsFaqs: FaqItem[] = [
   {
     question: 'Can individual students join SOYL Academy?',
     answer:
-      'Yes. Future Builders is a 12-week live online programme for Grades 7 to 12 that individual students can join directly, without a school partnership. The Future Builders page shows the next cohort’s dates, or a waitlist when registration is closed.',
+      'Yes. Future Builders is a 2-month live online summer camp for Grades 7 to 12 that individual students can join directly, without a school partnership. The Future Builders page shows when the next camp runs and how to register, or a waitlist when registration is closed.',
   },
   {
     question: 'What will I do in a SOYL assignment?',
@@ -124,11 +124,11 @@ export const whatWeTeachFaqs: FaqItem[] = [
   {
     question: 'What does SOYL Academy teach?',
     answer:
-      'SOYL Academy runs Future Builders, a 12-week weekend programme for Grades 7 to 12 covering Software, AI, IoT, and Entrepreneurship. Additional programmes in AI & Technology, Building & Making, Communication & Ideas, and Problem Solving are coming soon.',
+      'SOYL Academy runs Future Builders, a 2-month summer camp for Grades 7 to 12 covering Software, AI, IoT, and Entrepreneurship. Additional programmes in AI & Technology, Building & Making, Communication & Ideas, and Problem Solving are coming soon.',
   },
   {
     question: 'How are SOYL Academy programs delivered?',
     answer:
-      'Future Builders is delivered through live online weekend sessions and is open to individual students in Grades 7 to 12. SOYL Academy also offers workshops and collaborative experiences through partner schools.',
+      'Future Builders is delivered through live online sessions during the summer break and is open to individual students in Grades 7 to 12. SOYL Academy also offers workshops and collaborative experiences through partner schools.',
   },
 ];

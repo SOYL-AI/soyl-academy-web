@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint",
     "test:platform-ui": "vitest run --config components/platform/ui/vitest.config.mts",
-    "test:platform-web": "vitest run --config components/platform/vitest.config.mts"
+    "test:platform-web": "vitest run --config components/platform/vitest.config.mts",
+    "test:future-builders": "vitest run --config lib/future-builders/vitest.config.mts"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.9.1",

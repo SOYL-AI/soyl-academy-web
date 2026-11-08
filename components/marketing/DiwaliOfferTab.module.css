@@ -1,0 +1,108 @@
+/*
+ * Homepage "Diwali offer" side tab (owner, 8 Nov 2026). Scoped CSS module; no global styles.
+ * Phones: a compact pill bottom-right, above the safe area, below the cookie bar (z-50) and the
+ * mobile menu (z-40). From md: a vertical tab on the right edge, centred vertically.
+ */
+.tab {
+  --dw-maroon: #3a0b16;
+  --dw-marigold: #ffc94a;
+  --dw-ivory: #fff7e8;
+  position: fixed;
+  z-index: 30;
+  right: 12px;
+  bottom: calc(12px + env(safe-area-inset-bottom));
+  display: flex;
+  align-items: center;
+  border-radius: 999px;
+  color: var(--dw-ivory);
+  background: linear-gradient(135deg, #3a0b16, #5c1424);
+  box-shadow:
+    0 0 0 1px rgba(255, 201, 74, 0.45),
+    0 14px 30px -12px rgba(58, 11, 22, 0.6);
+  color-scheme: dark;
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  padding: 0 4px 0 14px;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  color: var(--dw-ivory);
+  border-radius: 999px;
+}
+.price {
+  color: var(--dw-marigold);
+}
+.link:focus-visible,
+.close:focus-visible {
+  outline: 3px solid var(--dw-marigold);
+  outline-offset: 2px;
+}
+
+.close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 44px;
+  border-radius: 999px;
+  color: rgba(255, 247, 232, 0.8);
+}
+.close:hover {
+  color: var(--dw-ivory);
+}
+
+@media (min-width: 768px) {
+  .tab {
+    right: 0;
+    bottom: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    flex-direction: column;
+    border-radius: 14px 0 0 14px;
+    padding: 6px 0 10px;
+  }
+  .link {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    padding: 14px 10px;
+    min-height: 0;
+    min-width: 44px;
+    gap: 8px;
+    font-size: 15px;
+    letter-spacing: 0.01em;
+  }
+  .diya {
+    transform: rotate(180deg);
+  }
+  .close {
+    width: 44px;
+    height: 36px;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .tab {
+    animation: enter 420ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  @keyframes enter {
+    from {
+      opacity: 0;
+      translate: 0 12px;
+    }
+    to {
+      opacity: 1;
+      translate: 0 0;
+    }
+  }
+}
+
+@media print {
+  .tab {
+    display: none;
+  }
+}

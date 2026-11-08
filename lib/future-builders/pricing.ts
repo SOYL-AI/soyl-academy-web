@@ -1,4 +1,4 @@
-import { BASE_PRICE, EARLY_BIRD_CODE, FRIEND_CODE, FRIEND_DISCOUNT } from '@/content/future-builders';
+import { FRIEND_CODE, FRIEND_DISCOUNT, LIST_PRICE, getActiveOffer, today, type Offer } from '@/content/future-builders';
 
 export interface Coupon {
   code: string;
@@ -8,33 +8,53 @@ export interface Coupon {
   needsFriendName?: boolean;
 }
 
+/** The only accepted code, during the Diwali offer and after it (owner, 8 Nov 2026). */
 const COUPONS: Record<string, Omit<Coupon, 'code'>> = {
-  [EARLY_BIRD_CODE]: {
-    discount: Math.floor(BASE_PRICE * 0.1),
-    message: '10% early-bird discount applied!',
-  },
   [FRIEND_CODE]: {
     discount: FRIEND_DISCOUNT,
-    message: `₹${FRIEND_DISCOUNT} friend discount applied! Your friend gets ₹${FRIEND_DISCOUNT} too.`,
+    message: `₹${FRIEND_DISCOUNT} friend discount applied. Your friend gets ₹${FRIEND_DISCOUNT} too.`,
     needsFriendName: true,
-  },
-  SOYL500: { discount: 500, message: '₹500 discount applied!' },
-  ARNAV15: {
-    discount: Math.floor(BASE_PRICE * 0.15),
-    message: '15% discount applied!',
   },
 };
 
 export function findCoupon(raw: string | undefined | null): Coupon | null {
   const code = (raw ?? '').trim().toUpperCase();
-  const coupon = COUPONS[code];
+  const coupon = Object.prototype.hasOwnProperty.call(COUPONS, code) ? COUPONS[code] : undefined;
   return coupon ? { code, ...coupon } : null;
 }
 
-/** Final price in rupees. Shared by the form (display) and the payment API (charge). */
-export function priceFor(raw: string | undefined | null, friendName?: string): number {
-  const coupon = findCoupon(raw);
-  if (!coupon) return BASE_PRICE;
-  if (coupon.needsFriendName && !friendName?.trim()) return BASE_PRICE;
-  return BASE_PRICE - coupon.discount;
+/** A friend's name counts once it has at least 2 non-space characters. */
+export function hasFriendName(friendName: string | null | undefined): boolean {
+  return (friendName ?? '').trim().length >= 2;
+}
+
+export interface Quote {
+  offer: Offer;
+  /** ₹11,999, shown struck through. */
+  listPrice: number;
+  /** The offer's price before any code. */
+  basePrice: number;
+  /** The code that counted, or null (an unknown code, or FRIEND500 without a friend's name). */
+  coupon: Coupon | null;
+  discount: number;
+  /** What is charged, in rupees. */
+  total: number;
+}
+
+/**
+ * The one pricing rule, shared by the form (display) and the payment API (charge):
+ * the offer in force at `now` (Diwali early-bird or standard), less FRIEND500 when a friend's
+ * name is given. The payment API always prices the order by the server clock.
+ */
+export function quote(raw: string | undefined | null, friendName?: string | null, now: Date = today()): Quote {
+  const offer = getActiveOffer(now);
+  const found = findCoupon(raw);
+  const coupon = found && (!found.needsFriendName || hasFriendName(friendName)) ? found : null;
+  const discount = coupon ? coupon.discount : 0;
+  return { offer, listPrice: LIST_PRICE, basePrice: offer.price, coupon, discount, total: offer.price - discount };
+}
+
+/** Final price in rupees. */
+export function priceFor(raw: string | undefined | null, friendName?: string | null, now: Date = today()): number {
+  return quote(raw, friendName, now).total;
 }
