@@ -93,10 +93,10 @@ Q('m_rowlatt_feature', mcq({
   sol: 'The Act gave the government power to detain people without trial and to hold trials without the usual safeguards. The other options are either unrelated or the opposite of what the Act did.',
 }));
 Q('m_rowlatt_scenario', mcq({
-  t: 1, d: 2, c: 'application',
-  stem: 'In an imagined story set in 1919, a printer in Lahore is picked up by the police and held for months without any case being heard in court. Under which law of that year could this have happened?',
-  opts: ['The Rowlatt Act', 'The Vernacular Press Act', 'The Indian Councils Act', 'The Government of India Act, 1935'],
-  sol: 'Detention without trial was the feature of the Rowlatt Act passed in March 1919. The Vernacular Press Act was of 1878, the Indian Councils Act of 1909, and the 1935 Act came much later.',
+  t: 1, d: 3, c: 'application',
+  stem: 'An imagined newspaper editor in 1919 argues that the Rowlatt Act was unjust even to people who had never broken any law. Which feature of the Act best supports the editor\'s point?',
+  opts: ['It allowed a person to be held in prison on suspicion, without a trial, so someone who had done nothing wrong had no court in which to prove it', 'It continued, in peacetime, some of the emergency powers the government had held during the First World War', 'It was passed in the Imperial Legislative Council although the elected Indian members opposed it', 'It was followed within weeks by a nationwide hartal on 6 April 1919'],
+  sol: 'The editor\'s point is about innocent people, so the best support is the power to detain on suspicion without a trial, which left an innocent person with no way to clear his name. The other three statements are true of the Act: it carried wartime powers into peacetime, Indian members opposed it, and a hartal followed. But they show that the Act was unpopular or unwelcome, not that it could punish the innocent.',
 }));
 Q('m_jallianwala_date', mcq({
   t: 1, d: 1, c: 'recall',
@@ -123,22 +123,22 @@ Q('m_ncm_sessions', mcq({
   sol: 'The special session at Calcutta in September 1920 accepted the programme, and the Nagpur session in December 1920 confirmed it. Lahore 1929, Lucknow 1916, Surat 1907 and Bombay 1942 belong to other events.',
 }));
 Q('m_negative_item', mcq({
-  t: 1, d: 2, c: 'application',
-  stem: 'Sort these actions of 1920–21. Which one belongs to the boycott (negative) side of the Non-Cooperation programme?',
-  opts: ['Lawyers giving up practice in the British law courts', 'Opening a national school in a town', 'Spinning yarn on the charkha at home', 'Settling village disputes through panchayats'],
-  sol: 'Giving up the government courts is a boycott item. National schools, the charkha and panchayats are constructive items that built Indian alternatives.',
+  t: 1, d: 3, c: 'application',
+  stem: 'An imagined town committee in 1921 has decided to boycott foreign cloth, but its members worry that many poor families will then have no cloth to wear. Which step from the Non-Cooperation programme would best meet this worry?',
+  opts: ['Promoting khadi, with families spinning yarn on the charkha and weaving it into cloth', 'Asking lawyers of the town to give up practice in the government courts', 'Asking holders of government titles to return them', 'Opening a national school for the children whose parents had left the government schools'],
+  sol: 'The worry is a shortage of cloth once foreign cloth is given up, so the answer must supply cloth: khadi spun and woven at home replaces what was boycotted and gives work to families. Giving up the courts, returning titles and opening a national school are real items of the programme, but none of them produces cloth.',
 }));
 Q('m_positive_item', mcq({
-  t: 1, d: 2, c: 'application',
-  stem: 'A village group in 1921 decides to do something that builds rather than boycotts. Which action fits the constructive (positive) side of the Non-Cooperation programme?',
-  opts: ['Promoting khadi and hand-spinning', 'Returning a title given by the government', 'Refusing to attend a government function', 'Withdrawing children from a government school'],
-  sol: 'Promoting khadi was constructive. Returning titles, avoiding government functions and leaving government schools were boycott items.',
+  t: 1, d: 3, c: 'application',
+  stem: 'In an imagined village of 1921, the parents have taken their children out of the government school, but the children now have nowhere to study. Which step would close this gap and also show that Indians could run their own institutions?',
+  opts: ['Starting a national school run by the village with local teachers', 'Promoting khadi and hand-spinning in every home', 'Refusing to attend a function held by a government officer', 'Returning the government title held by a village headman'],
+  sol: 'Withdrawing from government schools was a boycott step, and it left a gap. A national school fills that gap and is a constructive item. Khadi, refusing to attend government functions and returning titles belong to the programme too, but khadi is a constructive step for cloth, not for schooling, and the other two are further boycott steps that would leave the children without a school.',
 }));
 Q('m_student_1921', mcq({
-  t: 1, d: 2, c: 'application',
-  stem: 'Kamala, a character in an imagined story set in 1921, leaves her government-run college and joins a newly opened national college. Which programme was she following?',
-  opts: ['The Non-Cooperation Movement', 'The Quit India Movement', 'The Swadeshi Movement of 1905', 'The Civil Disobedience Movement of 1932'],
-  sol: 'Leaving government institutions for national ones was part of the Non-Cooperation programme of 1920–22. The 1905 Swadeshi Movement came earlier and the other two came later.',
+  t: 1, d: 3, c: 'application',
+  stem: 'In an imagined story, Kamala leaves her government-run college and joins a national college, while her father gives up practice in the government courts. Nobody in the story breaks any law. Which reading of the story is best?',
+  opts: ['It fits Non-Cooperation, whose method was to withdraw from government institutions and build Indian ones, without deliberately breaking laws', 'It fits Civil Disobedience, because that movement began with leaving government colleges and courts', 'It cannot belong to any movement of the 1920s, because the Congress had not yet adopted Purna Swaraj as its goal', 'It fits Non-Cooperation, because that movement was started to oppose the Simon Commission'],
+  sol: 'Leaving government colleges and courts while breaking no law is the pattern of Non-Cooperation (1920–22). Civil Disobedience began with the deliberate breaking of the salt law, so the second option reverses the order. The Purna Swaraj resolution (1929) is a true date but has no bearing on the method of the story. The Simon Commission (1927–28) came after Non-Cooperation, so the last option gives a wrong cause.',
 }));
 // ================================================================ t02 Suspension and impact
 Q('m_chauri_place', mcq({
@@ -191,13 +191,13 @@ Q('m_dandi_start', mcq({
   sol: 'The march began at Sabarmati Ashram in Ahmedabad and ended at Dandi on the coast. The other places are linked with other phases of his work.',
 }));
 Q('m_salt_choice', mcq({
-  t: 3, d: 3, c: 'analysis',
+  t: 3, d: 3, c: 'understanding',
   stem: 'Why did salt make an effective symbol for starting the Civil Disobedience Movement?',
   opts: ['Every household needed salt, so a tax on it touched rich and poor alike and was easy to break openly', 'Salt was produced only in Bombay', 'Salt was a luxury item bought by a few', 'The British had already removed the salt tax'],
   sol: 'Because everyone used salt, the tax on it was felt by all, and making salt from sea water was a simple, visible way to break the law. The other options are untrue.',
 }));
 Q('m_cdm_vs_ncm', mcq({
-  t: 3, d: 3, c: 'analysis',
+  t: 3, d: 3, c: 'understanding',
   stem: 'Which statement best brings out the main difference between Civil Disobedience and Non-Cooperation?',
   opts: ['Civil Disobedience asked people to break chosen laws; Non-Cooperation asked them to stop cooperating with the government', 'Civil Disobedience was violent; Non-Cooperation was peaceful', 'Only Non-Cooperation had a constructive programme', 'Civil Disobedience was limited to Punjab'],
   sol: 'Civil Disobedience went further by deliberately breaking laws such as the salt law; Non-Cooperation mainly withdrew cooperation. Both were meant to be non-violent and both spread widely.',
@@ -234,10 +234,10 @@ Q('m_rtc_fail', mcq({
   sol: 'The talks failed mainly over the representation of minorities, on which no agreement could be reached. The other options were not the issue.',
 }));
 Q('m_renew_scenario', mcq({
-  t: 4, d: 2, c: 'application',
-  stem: 'An imagined diary entry from January 1932 reads: "Bapu is back from London with nothing. Today he and many others were arrested, and the Congress has been declared unlawful." Which development does it describe?',
-  opts: ['The renewal of Civil Disobedience after the Second Round Table Conference', 'The start of Non-Cooperation in 1920', 'The suspension after Chauri Chaura', 'The Quit India Resolution'],
-  sol: 'On his return in December 1931 the movement was renewed; the government, under Lord Willingdon, arrested leaders and banned the Congress in January 1932. The other events fall in 1920, 1922 and 1942.',
+  t: 4, d: 3, c: 'application',
+  stem: 'Civil Disobedience had been paused in March 1931 but was renewed in January 1932. Which development of the months in between best explains the renewal?',
+  opts: ['The Second Round Table Conference ended without agreement, and Gandhiji returned to find the government taking harsh measures against the Congress', 'The Gandhi-Irwin Pact, which had allowed some salt-making for home use on the coast', 'The Congress decision to stay away from the First Round Table Conference', 'The Hunter Committee report on the Punjab disturbances'],
+  sol: 'The renewal followed the break-down of the Second Round Table Conference (September to December 1931) and the government\'s repressive measures under the new Viceroy, Lord Willingdon, which the Congress treated as a failure of the Pact\'s spirit. The Pact itself caused the pause, not the renewal. The boycott of the First Conference came before the Pact, in 1930. The Hunter Committee belongs to 1919–20.',
 }));
 // ================================================================ t05 Quit India
 Q('m_cripps_year', mcq({
@@ -284,7 +284,7 @@ Q('m_check_bardoli', mcq({
   sol: 'The Working Committee met at Bardoli and passed the resolution suspending the movement. Chauri Chaura was the place of the violence.',
 }));
 Q('m_check_dandi_days', mcq({
-  t: 3, d: 2, c: 'application',
+  t: 3, d: 2, c: 'understanding',
   stem: `Gandhiji left Sabarmati on 12 March 1930 and reached Dandi on 5 April 1930. About how many days was the march?`,
   opts: [`${DANDI_DAYS} days`, '12 days', '40 days', '6 days'],
   sol: `From 12 March to 5 April is 19 days of March plus 5 of April, that is ${DANDI_DAYS} days. The salt law was broken the next morning, 6 April.`,
@@ -335,9 +335,9 @@ Q('tf_ncm_violent', tf({
   sol: 'False. It was planned as a non-violent movement of non-cooperation; that is why Gandhiji suspended it when violence broke out.',
 }));
 Q('tf_first_rtc', tf({
-  t: 4, d: 2, c: 'application', ans: true,
-  stem: 'True or false? A Congress member reading the news in November 1930 would have found no Congress delegate at the Round Table Conference then meeting in London.',
-  sol: 'True. The Congress boycotted the First Round Table Conference (1930–31) because Civil Disobedience was going on.',
+  t: 4, d: 3, c: 'application', ans: true,
+  stem: 'True or false? Gandhiji could go to London in 1931 as the Congress representative only because an understanding had been reached with the Viceroy earlier that year, since the Congress had stayed away from the first conference while Civil Disobedience continued.',
+  sol: 'True. The Congress boycotted the First Round Table Conference (1930–31) while Civil Disobedience was on and its leaders were in prison. The Gandhi-Irwin Pact of March 1931 paused the movement and opened the way for Congress to take part in the Second Conference, where Gandhiji was its only representative.',
 }));
 Q('tf_quit_date', tf({
   t: 5, d: 1, c: 'recall', ans: true,
@@ -345,9 +345,9 @@ Q('tf_quit_date', tf({
   sol: 'True. The leaders were arrested early the next morning, 9 August 1942.',
 }));
 Q('tf_pact_salt', tf({
-  t: 4, d: 2, c: 'application', ans: true,
-  stem: 'True or false? Under the Gandhi-Irwin Pact, a family living near the sea could make salt for its own use.',
-  sol: 'True. The Pact allowed people in coastal areas to make salt for personal use, though the salt tax itself remained.',
+  t: 4, d: 3, c: 'application', ans: false,
+  stem: 'True or false? In April 1931, a villager on the coast boils sea water and sells the salt in the next town. The Gandhi-Irwin Pact protected him from the salt law.',
+  sol: 'False. The Pact allowed people living near the sea to make salt for their own use, but it did not allow sale, and the salt tax itself remained. A villager making salt for sale was outside this concession.',
 }));
 Q('fb_dyer', fb({
   t: 1, d: 1, c: 'recall',

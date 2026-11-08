@@ -55,7 +55,7 @@ All five syllabus topics are covered:
 | source-based | 3 (imagined teacher's letter from Amritsar, 1919; imagined marcher's diary, 1930; imagined student's diary, Bombay, 1942); each has an either/or part (c) |
 
 - **Difficulty:** d1 20, d2 30, d3 27, d4 3.
-- **Competency:** recall 27, understanding 13, application 10, analysis 25, evaluation 5. That puts 50% of items at application or above (lint band 45–65%), reached with scenario items, not by retagging.
+- **Competency:** recall 27, understanding 13, application 10, analysis 25, evaluation 5. That puts 50% of items at application or above (lint band 45–65%), reached with scenario items, not by retagging. (superseded: see Competency audit 2026-11-05)
 
 ## Facts a reviewer should double-check
 
@@ -82,3 +82,19 @@ All five syllabus topics are covered:
 ## Gaps
 
 - **Rendering:** nobody has seen the SVG labels rendered (the 1918–1944 timeline with ten labels in lanes, and the schematic Dandi sketch). They need a look at 360 px on staging. The script check finds no label overflow or overlap.
+
+## Competency audit 2026-11-05
+
+Audit reference: `docs/platform/content-qa/2026-11-05-competency-retag-audit.md`.
+
+- **Retagged honestly:** `m_check_dandi_days` (item 035, a one-step day count) application to understanding.
+- **Rewritten as genuine application items (tag kept, demand raised, difficulty 2 to 3):** the scenario wrappers 004, 009, 010, 011, 027, 043 and 045 were replaced, not relabelled.
+  - `m_rowlatt_scenario` (004): choose which feature of the Rowlatt Act supports a claim that it was unjust to the innocent, among three true statements about the Act.
+  - `m_negative_item` (009): pick the step that answers a shortage of cloth after foreign cloth is boycotted.
+  - `m_positive_item` (010): pick the step that fills the gap left by leaving government schools.
+  - `m_student_1921` (011): read a story with no law-breaking as Non-Cooperation rather than Civil Disobedience.
+  - `m_renew_scenario` (027): choose which development of 1931 best explains the renewal of 1932, among real earlier events.
+  - `tf_first_rtc` (043): judge a claim that links the Pact of 1931 to Gandhiji's attendance at the Second Round Table Conference.
+  - `tf_pact_salt` (045): apply the home-use salt concession to a villager who sells salt (false).
+- **Also retagged by the reviewer (analysis → understanding):** `m_salt_choice` (why salt was an effective symbol) and `m_cdm_vs_ncm` (the main difference between the two movements) restate textbook reasons. The assertion-reason items keep analysis (causal judgement between two statements).
+- **Competency now:** recall 27, understanding 16, application 9, analysis 23, evaluation 5. That is **37 of 80 (46.3%)** at application or above, inside the lint band of 45 to 65%.
