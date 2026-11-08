@@ -17,15 +17,16 @@ add('dispsurface-mcq', mcq({
   sol: 'No charge crosses the gap between the plates, so the bag-shaped surface encloses no conduction current, while the flat disc encloses i. The same loop would have two different values of ∮B · dl, which is why Maxwell added the displacement current ε₀ dΦE/dt through the gap — option (@K).',
   d: 2, c: 'understanding', t: [1],
 }));
-const ir = { C: 50e-9, V: 12, t: 3e-3 };
-ir.id = (ir.C * ir.V) / ir.t;
+const ir = { D: 0.10, i: 2e-4 };
+ir.A = Math.PI * (ir.D / 2) ** 2;
+ir.rate = ir.i / (EPS0 * ir.A);
 add('idrule-mcq', mcq({
-  stem: 'The p.d. across a 50 nF capacitor in a timing circuit rises steadily from 0 to 12 V in 3.0 ms. While it rises, the displacement current between the plates is',
-  right: '0.20 mA',
-  wrong: ['0.60 μA', '0.20 μA', '2.0 mA'],
-  sol: r`$i_d = C\dfrac{dV}{dt} = 50 \times 10^{-9} \times \dfrac{12}{3.0 \times 10^{-3}} = ${sci(ir.id, 2)}$ A, i.e. 0.20 mA. 0.60 μC is the final charge (forgetting to divide by the time) — option (@K).`,
-  d: 2, c: 'application', t: [1],
-}), () => near(ir.id, 2e-4) || 'ir');
+  stem: 'A capacitor has circular plates of diameter 10 cm. It is being charged so that a steady current of 0.20 mA flows in its leads, and the field is uniform between the plates. The electric field in the gap is growing at',
+  right: '2.9 × 10⁹ V m⁻¹ s⁻¹',
+  wrong: ['7.2 × 10⁸ V m⁻¹ s⁻¹', '1.4 × 10⁸ V m⁻¹ s⁻¹', '2.3 × 10⁷ V m⁻¹ s⁻¹'],
+  sol: r`The displacement current equals the charging current, $i_d = \varepsilon_0 A\dfrac{dE}{dt}$, with $A = \pi\left(\dfrac{0.10}{2}\right)^2 = ${sci(ir.A, 3)}$ m$^2$. So $\dfrac{dE}{dt} = \dfrac{2.0 \times 10^{-4}}{8.85 \times 10^{-12} \times ${sci(ir.A, 3)}} = ${sci(ir.rate, 2)}$ V m$^{-1}$ s$^{-1}$ — option (@K). Using the diameter as the radius gives 7.2 × 10⁸; using πr in place of πr² gives 1.4 × 10⁸; leaving out the area gives 2.3 × 10⁷.`,
+  d: 3, c: 'application', t: [1],
+}), () => near(ir.rate, 2.877e9, 0.002) && near(ir.i / (EPS0 * Math.PI * ir.D ** 2), 7.19e8, 0.005) && near(ir.i / (EPS0 * Math.PI * ir.D / 2), 1.44e8, 0.005) && near(ir.i / EPS0, 2.26e7, 0.005) || 'ir');
 add('Bloop-mcq', mcq({
   stem: 'Viewed along the axis of a pair of circular plates while the capacitor they form is being charged, the magnetic field lines in and around the gap',
   right: 'are circles centred on the axis, as round a wire carrying the charging current',
@@ -67,15 +68,16 @@ add('IdE-num', num({
   scheme: [['dΦE/dt = A dE/dt = 2.16 × 10⁹ V m s⁻¹', 1], ['i_d = 19.1 mA', 1]],
   marks: 2, d: 3, c: 'application', t: [1],
 }), (q) => near(ie.id, 0.019116, 0.001) && near(q.answer.value, 19.1) || `ie ${ie.id}`);
-const dv = { C: 2.5e-9, id: 5e-3 };
+const dv = { A: 0.040, d: 1.0e-3, id: 5e-3 };
+dv.C = (EPS0 * dv.A) / dv.d;
 dv.rate = dv.id / dv.C;
 add('dvdt-num', num({
-  stem: 'A displacement current of 5.0 mA is to be set up between the plates of a 2.5 nF capacitor. At what rate must the p.d. across it change? Answer in megavolts per second (MV s⁻¹).',
-  value: Number(dec(dv.rate / 1e6, 2)), tol: 0.05, unit: 'MV s⁻¹',
-  sol: r`$i_d = C\dfrac{dV}{dt}$, so $\dfrac{dV}{dt} = \dfrac{5.0 \times 10^{-3}}{2.5 \times 10^{-9}} = ${sci(dv.rate, 2)}$ V s$^{-1}$, i.e. $\dfrac{${sci(dv.rate, 2)}}{10^{6}} = ${dec(dv.rate / 1e6, 2)}$ MV s$^{-1}$.`,
-  scheme: [['dV/dt = i_d/C', 1], ['2.0 × 10⁶ V s⁻¹ = 2.0 MV s⁻¹', 1]],
+  stem: 'An air-filled parallel-plate capacitor has plates of area 0.040 m² set 1.0 mm apart. A displacement current of 5.0 mA is to be set up between its plates. At what rate must the p.d. across it change? Answer in megavolts per second (MV s⁻¹) to 3 significant figures.',
+  value: Number(dec(dv.rate / 1e6, 3)), tol: 0.2, unit: 'MV s⁻¹',
+  sol: r`The capacitance is not given, so first find it: $C = \dfrac{\varepsilon_0 A}{d} = \dfrac{8.85 \times 10^{-12} \times 0.040}{1.0 \times 10^{-3}} = ${sci(dv.C, 3)}$ F. Then $i_d = C\dfrac{dV}{dt}$ gives $\dfrac{dV}{dt} = \dfrac{5.0 \times 10^{-3}}{${sci(dv.C, 3)}} = ${sci(dv.rate, 3)}$ V s$^{-1}$, i.e. $\dfrac{${sci(dv.rate, 3)}}{10^{6}} = ${dec(dv.rate / 1e6, 3)}$ MV s$^{-1}$.`,
+  scheme: [['C = ε₀A/d = 3.54 × 10⁻¹⁰ F', 1], ['dV/dt = i_d/C = 1.41 × 10⁷ V s⁻¹ = 14.1 MV s⁻¹', 1]],
   marks: 2, d: 3, c: 'application', t: [1],
-}), (q) => near(dv.rate, 2e6) && q.answer.value === 2 || 'dv');
+}), (q) => near(dv.C, 3.54e-10) && near(dv.rate, 1.4124e7, 0.001) && near(q.answer.value, 14.1, 0.005) || `dv ${dv.rate}`);
 const fr = { id: 1 };
 fr.rate = fr.id / EPS0;
 add('fluxrate-num', num({
@@ -161,7 +163,7 @@ add('transverse-mcq', mcq({
   right: 'both in horizontal directions, at right angles to each other',
   wrong: ['both vertically, along the direction of travel', 'E vertically and B horizontally', 'both horizontally, parallel to each other'],
   sol: 'EM waves are transverse: E and B are both perpendicular to the direction of travel (here vertical), so both lie in the horizontal plane, and they are also perpendicular to each other — option (@K).',
-  d: 2, c: 'application', t: [2],
+  d: 2, c: 'understanding', t: [2],
 }), () => {
   const E = [1, 0, 0];
   const B = [0, 1, 0];
@@ -193,7 +195,7 @@ add('cdepends-mcq', mcq({
   right: 'at half its actual speed',
   wrong: ['at twice its actual speed', 'at a quarter of its actual speed', 'at the same speed, since c is a universal constant'],
   sol: r`$c = \dfrac{1}{\sqrt{\mu_0\varepsilon_0}} \propto \dfrac{1}{\sqrt{\varepsilon_0}}$, so four times $\varepsilon_0$ gives $\dfrac{1}{\sqrt 4} = \dfrac{1}{2}$ of the speed — option (@K).`,
-  d: 3, c: 'analysis', t: [2],
+  d: 3, c: 'understanding', t: [2],
 }), () => near(1 / Math.sqrt(MU0 * 4 * EPS0) / (1 / Math.sqrt(MU0 * EPS0)), 0.5) || 'cd');
 const cv = { c: 1 / Math.sqrt(MU0 * EPS0) };
 add('cvalue-num', num({
@@ -205,13 +207,14 @@ add('cvalue-num', num({
 }), (q) => near(cv.c, 2.9986e8, 0.001) && q.answer.value === 3 || `cv ${cv.c}`);
 const bw = { E0: 0.6 };
 bw.B0 = bw.E0 / C0;
+bw.ratio = 50e-6 / bw.B0;
 add('B0wifi-num', num({
-  stem: 'A few metres from a home Wi-Fi router, the peak electric field of its signal is 0.60 V m⁻¹. Find the peak magnetic field of the signal there, in nanotesla.',
-  value: Number(dec(bw.B0 * 1e9, 2)), tol: 0.05, unit: 'nT',
-  sol: r`$B_0 = \dfrac{E_0}{c} = \dfrac{0.60}{3.0 \times 10^{8}} = ${sci(bw.B0, 2)}$ T, i.e. $${sci(bw.B0, 2)} \times 10^{9} = ${dec(bw.B0 * 1e9, 2)}$ nT, about ten thousand times weaker than the Earth’s field.`,
+  stem: 'A few metres from a home Wi-Fi router, the peak electric field of its signal is 0.60 V m⁻¹. A student claims that this signal could disturb a compass needle, since the Earth’s field there is 50 μT. By what factor is the Earth’s field larger than the peak magnetic field of the signal? Give the factor in units of 10⁴ (2 significant figures).',
+  value: Number(dec(bw.ratio / 1e4, 2)), tol: 0.05,
+  sol: r`The magnetic field of the signal follows from the electric field: $B_0 = \dfrac{E_0}{c} = \dfrac{0.60}{3.0 \times 10^{8}} = ${sci(bw.B0, 2)}$ T (2.0 nT). Then $\dfrac{B_{\text{Earth}}}{B_0} = \dfrac{50 \times 10^{-6}}{${sci(bw.B0, 2)}} = ${sci(bw.ratio, 2)}$, i.e. $\dfrac{${sci(bw.ratio, 2)}}{10^{4}} = ${dec(bw.ratio / 1e4, 2)}$ in units of $10^4$. The signal’s field is about $4 \times 10^{-5}$ of the Earth’s, so the claim fails.`,
   scheme: [['B₀ = E₀/c = 2.0 nT', 1]],
-  d: 2, c: 'application', t: [2],
-}), (q) => near(bw.B0, 2e-9) && q.answer.value === 2 || 'bw');
+  d: 3, c: 'application', t: [2],
+}), (q) => near(bw.B0, 2e-9) && near(bw.ratio, 2.5e4) && q.answer.value === 2.5 || 'bw');
 const er = { B0: 4.5e-6 };
 er.E0 = er.B0 * C0;
 add('E0radar-num', num({
@@ -219,17 +222,17 @@ add('E0radar-num', num({
   value: Number(dec(er.E0 / 1e3, 3)), tol: 0.01, unit: 'kV m⁻¹',
   sol: r`$E_0 = cB_0 = 3.0 \times 10^{8} \times 4.5 \times 10^{-6} = ${dec(er.E0, 4)}$ V m$^{-1}$, i.e. $\dfrac{${dec(er.E0, 4)}}{10^{3}} = ${dec(er.E0 / 1e3, 3)}$ kV m$^{-1}$.`,
   scheme: [['E₀ = cB₀ = 1.35 kV m⁻¹', 1]],
-  d: 2, c: 'application', t: [2],
-}), (q) => near(er.E0, 1350) && q.answer.value === 1.35 || 'er');
-const mo = { d: 3.84e8 };
-mo.t = mo.d / C0;
-add('moon-num', num({
-  stem: 'A ground station in Karnataka sends a radio command to a spacecraft orbiting near the Moon, 3.84 × 10⁸ m away. How long does the command take to arrive, in seconds (3 significant figures)?',
-  value: Number(dec(mo.t, 3)), tol: 0.01, unit: 's',
-  sol: r`Radio waves travel at $c$ through the near-vacuum of space: $t = \dfrac{d}{c} = \dfrac{3.84 \times 10^{8}}{3.0 \times 10^{8}} = ${dec(mo.t, 3)}$ s.`,
-  scheme: [['t = d/c = 1.28 s', 1]],
   d: 2, c: 'understanding', t: [2],
-}), (q) => near(mo.t, 1.28) && q.answer.value === 1.28 || 'mo');
+}), (q) => near(er.E0, 1350) && q.answer.value === 1.35 || 'er');
+const mo = { T: 3.46, wait: 0.90 };
+mo.d = (C0 * (mo.T - mo.wait)) / 2;
+add('moon-num', num({
+  stem: 'A ground station in Karnataka sends a radio command to a spacecraft orbiting near the Moon. The spacecraft takes 0.90 s to process the command and then sends a reply, which reaches the station 3.46 s after the command was sent. How far from the station is the spacecraft? Give the distance in units of 10⁸ m (3 significant figures).',
+  value: Number(dec(mo.d / 1e8, 3)), tol: 0.02, unit: '10⁸ m',
+  sol: r`The signal travels out and back at $c$, but only $3.46 - 0.90 = 2.56$ s of the delay is travel time. One way: $d = \dfrac{c\,t}{2} = \dfrac{3.0 \times 10^{8} \times 2.56}{2} = ${sci(mo.d, 3)}$ m, i.e. $\dfrac{${sci(mo.d, 3)}}{10^{8}} = ${dec(mo.d / 1e8, 3)}$ in units of $10^{8}$ m.`,
+  scheme: [['Travel time = 3.46 − 0.90 = 2.56 s (round trip)', 1]],
+  d: 3, c: 'application', t: [2],
+}), (q) => near(mo.d, 3.84e8) && q.answer.value === 3.84 || 'mo');
 add('nomedium-tf', tf({
   stem: 'Sunlight reaches the Earth across about 150 million km of almost empty space because electromagnetic waves, unlike sound, need no material medium to travel through.',
   key: 't',
@@ -336,7 +339,7 @@ add('crystal-mcq', mcq({
   right: 'comparable to the spacing of atoms (about 0.1 nm), so the atomic layers diffract them',
   wrong: ['far longer than the spacing of atoms, so they pass through without scattering', 'the same as those of gamma rays, which nuclei emit', 'able to travel faster than light inside the crystal'],
   sol: 'Diffraction is strong when the wavelength is similar to the spacing of the obstacles. Atoms in a crystal are about 0.1–0.3 nm apart, like X-ray wavelengths, while visible light (400–700 nm) is thousands of times too long — option (@K).',
-  d: 3, c: 'analysis', t: [3],
+  d: 3, c: 'understanding', t: [3],
 }));
 add('irthermo-mcq', mcq({
   stem: 'A nurse checks a child’s temperature with a thermometer gun held a few centimetres from the forehead, without touching it. The gun works by',
@@ -383,40 +386,45 @@ add('jobs-match', match({
 }));
 const th = { lam: 9.5e-6 };
 th.f = C0 / th.lam;
+th.f1 = C0 / 8.0e-6;
+th.f2 = C0 / 14e-6;
 add('thermal-num', num({
-  stem: 'A thermal camera at an airport arrival hall picks up radiation from travellers’ skin, which is strongest near a wavelength of 9.5 μm. Find the frequency of this radiation, in terahertz (1 THz = 10¹² Hz), to 3 significant figures.',
-  value: Number(dec(th.f / 1e12, 3)), tol: 0.2, unit: 'THz',
-  sol: r`$f = \dfrac{c}{\lambda} = \dfrac{3.0 \times 10^{8}}{9.5 \times 10^{-6}} = ${sci(th.f, 3)}$ Hz, i.e. $\dfrac{${sci(th.f, 3)}}{10^{12}} = ${dec(th.f / 1e12, 3)}$ THz, in the infrared.`,
-  scheme: [['f = c/λ = 31.6 THz', 1]],
-  d: 2, c: 'application', t: [3],
-}), (q) => near(th.f, 3.1579e13, 0.001) && bandOf(th.lam) === 'Infrared' && near(q.answer.value, 31.6) || 'th');
+  stem: 'A thermal camera at an airport arrival hall detects radiation from travellers’ skin, which is strongest near a wavelength of 9.5 μm. Its detector responds only to wavelengths from 8.0 μm to 14 μm. What is the width of the band of frequencies it can detect, in terahertz (1 THz = 10¹² Hz), to 3 significant figures?',
+  value: Number(dec((th.f1 - th.f2) / 1e12, 3)), tol: 0.2, unit: 'THz',
+  sol: r`Short wavelength means high frequency, so the limits are $f_{\max} = \dfrac{c}{8.0 \times 10^{-6}} = ${sci(th.f1, 3)}$ Hz and $f_{\min} = \dfrac{c}{14 \times 10^{-6}} = ${sci(th.f2, 3)}$ Hz. The width is $f_{\max} - f_{\min} = ${dec((th.f1 - th.f2) / 1e12, 3)}$ THz. The 9.5 μm skin peak (${dec(th.f / 1e12, 1)} THz) lies inside this band, in the infrared.`,
+  scheme: [['f = c/λ at both limits: 37.5 THz and 21.4 THz', 1]],
+  d: 3, c: 'application', t: [3],
+}), (q) => near(th.f1, 3.75e13, 0.001) && near(th.f2, 2.1429e13, 0.001) && bandOf(th.lam) === 'Infrared' && th.f2 < th.f && th.f < th.f1 && q.answer.value === 16.1 || 'th');
 const uf = { lam: 365e-9 };
 uf.f = C0 / uf.lam;
+uf.n = uf.f * 2.0e-9;
 add('uvf-num', num({
-  stem: 'A “black light” tube used to inspect banknotes emits ultraviolet of wavelength 365 nm. Find its frequency, in units of 10¹⁴ Hz (3 significant figures).',
-  value: Number(dec(uf.f / 1e14, 3)), tol: 0.02, unit: '10¹⁴ Hz',
-  sol: r`$f = \dfrac{c}{\lambda} = \dfrac{3.0 \times 10^{8}}{365 \times 10^{-9}} = ${sci(uf.f, 3)}$ Hz, i.e. $\dfrac{${sci(uf.f, 3)}}{10^{14}} = ${dec(uf.f / 1e14, 3)}$ in units of $10^{14}$ Hz, just above the violet end of the visible band.`,
+  stem: 'A “black light” tube used to inspect banknotes emits ultraviolet of wavelength 365 nm. A flash from it lasts 2.0 ns. How many complete wave oscillations does the flash contain? Give the answer in units of 10⁶ (3 significant figures).',
+  value: Number(dec(uf.n / 1e6, 3)), tol: 0.02, unit: '10⁶',
+  sol: r`First find the frequency: $f = \dfrac{c}{\lambda} = \dfrac{3.0 \times 10^{8}}{365 \times 10^{-9}} = ${sci(uf.f, 3)}$ Hz (ultraviolet, just above the violet end of the visible band). The number of oscillations in time $t$ is $N = ft = ${sci(uf.f, 3)} \times 2.0 \times 10^{-9} = ${sci(uf.n, 3)}$, i.e. $\dfrac{${sci(uf.n, 3)}}{10^{6}} = ${dec(uf.n / 1e6, 3)}$ in units of $10^{6}$.`,
   scheme: [['f = c/λ = 8.22 × 10¹⁴ Hz', 1]],
-  d: 2, c: 'application', t: [3],
-}), (q) => near(uf.f, 8.2192e14, 0.001) && bandOf(uf.lam) === 'Ultraviolet' && near(q.answer.value, 8.22) || 'uf');
+  d: 3, c: 'application', t: [3],
+}), (q) => near(uf.f, 8.2192e14, 0.001) && bandOf(uf.lam) === 'Ultraviolet' && near(uf.n, 1.6438e6, 0.001) && q.answer.value === 1.64 || 'uf');
 const xr = { f: 6e18 };
 xr.lam = C0 / xr.f;
+xr.ratio = 0.25e-9 / xr.lam;
 add('xray-num', num({
-  stem: 'A dental X-ray unit produces radiation of frequency 6.0 × 10¹⁸ Hz. Find its wavelength, in picometres (1 pm = 10⁻¹² m).',
-  value: Number(dec(xr.lam * 1e12, 2)), tol: 0.5, unit: 'pm',
-  sol: r`$\lambda = \dfrac{c}{f} = \dfrac{3.0 \times 10^{8}}{6.0 \times 10^{18}} = ${sci(xr.lam, 2)}$ m, i.e. $${sci(xr.lam, 2)} \times 10^{12} = ${dec(xr.lam * 1e12, 2)}$ pm (0.050 nm).`,
+  stem: 'A dental X-ray unit produces radiation of frequency 6.0 × 10¹⁸ Hz. A crystal being studied has layers of atoms 0.25 nm apart. How many times larger than the wavelength of this radiation is the layer spacing? (A spacing within a few times the wavelength is what makes diffraction by the layers noticeable.)',
+  value: Number(dec(xr.ratio, 2)), tol: 0.1,
+  sol: r`First the wavelength: $\lambda = \dfrac{c}{f} = \dfrac{3.0 \times 10^{8}}{6.0 \times 10^{18}} = ${sci(xr.lam, 2)}$ m (50 pm, 0.050 nm). Then $\dfrac{d}{\lambda} = \dfrac{0.25 \times 10^{-9}}{${sci(xr.lam, 2)}} = ${dec(xr.ratio, 2)}$. The spacing is only 5 times the wavelength, so these X-rays can be diffracted by the crystal layers.`,
   scheme: [['λ = c/f = 50 pm', 1]],
-  d: 2, c: 'application', t: [3],
-}), (q) => near(xr.lam, 5e-11) && bandOf(xr.lam) === 'X-rays' && q.answer.value === 50 || 'xr');
+  d: 3, c: 'application', t: [3],
+}), (q) => near(xr.lam, 5e-11) && bandOf(xr.lam) === 'X-rays' && near(xr.ratio, 5) && q.answer.value === 5 || 'xr');
 const gm = { f: 610e6 };
 gm.lam = C0 / gm.f;
+gm.n = 40 / gm.lam;
 add('gmrt-num', num({
-  stem: 'One of the observing bands of the Giant Metrewave Radio Telescope near Pune is centred on 610 MHz. Find the wavelength at this frequency, in metres (3 significant figures).',
-  value: Number(dec(gm.lam, 3)), tol: 0.002, unit: 'm',
-  sol: r`$\lambda = \dfrac{c}{f} = \dfrac{3.0 \times 10^{8}}{610 \times 10^{6}} = ${dec(gm.lam, 3)}$ m, about half a metre: radio waves, as the telescope’s name suggests.`,
+  stem: 'One of the observing bands of the Giant Metrewave Radio Telescope near Pune is centred on 610 MHz. Each of its dishes is 40 m across. How many wavelengths of this radiation fit across one dish? Give the answer to the nearest whole number.',
+  value: Number(dec(gm.n, 2)), tol: 1,
+  sol: r`First the wavelength: $\lambda = \dfrac{c}{f} = \dfrac{3.0 \times 10^{8}}{610 \times 10^{6}} = ${dec(gm.lam, 3)}$ m (radio waves, as the telescope’s name suggests). Then $\dfrac{40}{${dec(gm.lam, 3)}} = ${dec(gm.n, 3)}$, i.e. about ${dec(gm.n, 2)} wavelengths: the dish is large compared with the wavelength, which is what lets it collect and focus the waves.`,
   scheme: [['λ = c/f = 0.492 m', 1]],
-  d: 2, c: 'application', t: [3],
-}), (q) => near(gm.lam, 0.4918, 0.001) && bandOf(gm.lam) === 'Radio' && q.answer.value === 0.492 || 'gm');
+  d: 3, c: 'application', t: [3],
+}), (q) => near(gm.lam, 0.4918, 0.001) && bandOf(gm.lam) === 'Radio' && near(gm.n, 81.3, 0.002) && q.answer.value === 81 || 'gm');
 const dt = { f: 12e9 };
 dt.lam = C0 / dt.f;
 add('dth-num', num({
@@ -433,7 +441,7 @@ add('fibre-num', num({
   value: Number(dec(fb.f / 1e12, 3)), tol: 0.5, unit: 'THz',
   sol: r`$f = \dfrac{c}{\lambda} = \dfrac{3.0 \times 10^{8}}{1550 \times 10^{-9}} = ${sci(fb.f, 3)}$ Hz, i.e. $\dfrac{${sci(fb.f, 3)}}{10^{12}} = ${dec(fb.f / 1e12, 3)}$ THz.`,
   scheme: [['f = c/λ ≈ 194 THz', 1]],
-  d: 2, c: 'application', t: [3],
+  d: 2, c: 'understanding', t: [3],
 }), (q) => near(fb.f, 1.9355e14, 0.001) && bandOf(fb.lam) === 'Infrared' && q.answer.value === 194 || 'fb');
 const rd = { t: 0.4e-3 };
 rd.d = (C0 * rd.t) / 2;
