@@ -51,7 +51,7 @@ All three syllabus topics are covered:
 | source-based, each with an either/or part (c) | 3 (an imagined volunteer's diary from Jabalpur 1939, a shopkeeper's letter from Singapore 1943, a law student's notes from Delhi 1945) |
 
 - **Difficulty:** d1 10, d2 30, d3 34, d4 6.
-- **Competency:** recall 23, understanding 17, application 15, analysis 19, evaluation 6. That puts 50% of items at application or above (lint band 45–65%). The level was reached with scenario items, not by retagging: six near-duplicate recall items were dropped, two recall MCQs were rewritten as imagined scenarios, and ten scenario items (`m_app_*`, `s_app_broadcast`) are in the bank.
+- **Competency:** recall 23, understanding 17, application 15, analysis 19, evaluation 6. That puts 50% of items at application or above (lint band 45–65%). The level was reached with scenario items, not by retagging: six near-duplicate recall items were dropped, two recall MCQs were rewritten as imagined scenarios, and ten scenario items (`m_app_*`, `s_app_broadcast`) are in the bank. (superseded: see Competency audit 2026-11-05)
 
 ## Facts a reviewer should check
 
@@ -86,3 +86,22 @@ All are stable, widely taught facts; none is a statistic. Everything after 1945 
 
 - **Rendering:** nobody has seen the SVG labels rendered, so they need a look at 360 px on staging. A script estimate found no overflow or overlap.
 - **Content:** items are `draft`, and the content-verifier sample has not been done.
+
+## Competency audit 2026-11-05
+
+Audit reference: `docs/platform/content-qa/2026-11-05-competency-retag-audit.md`.
+
+- **Audited as recall, so rewritten:** all twelve items (034, 035, 063 to 072) were name-the-person or name-the-event items behind a scenario. None was relabelled; each now asks the student to use a fact.
+  - `m_escape` (034, application): decide what the date and route of the 1941 escape imply about the purpose of the journey.
+  - `m_germany` (035, analysis): choose the pair of facts that links Bose's German and Southeast Asian phases.
+  - `m_app_fb_member` (063, analysis): correct a student who reverses the 1939 election result.
+  - `m_app_planning` (064, application): pick the earlier fact that disproves a claim that the Bloc's economic aims were new.
+  - `m_app_pow` (065, application): use dates to doubt that a 1942 recruit served under Bose.
+  - `m_app_brigade` (066, analysis): read what the brigade and regiment names say about the INA's self-image, rejecting three plausible misreadings.
+  - `m_app_rani` (067, analysis): choose the fact that supports a claim that the women's regiment was mainly a message.
+  - `m_app_donor` (068): rewritten (why the League was needed alongside the army), but the answer is close to the textbook role of the League, so the reviewer tagged it **understanding**.
+  - `m_app_campaign` (069, application): correct a student who gives a wrong cause by checking the proclamation date.
+  - `m_app_trial_public` (070, application): pick the development that shows a plan to deter soldiers by public trials backfired.
+  - `m_app_navy` (071, analysis): explain why unrest among sailors worried the government more than a student procession.
+  - `s_app_broadcast` (072, application): from a listener's log, identify the speaker with two clues and explain why Germany.
+- **Competency now:** recall 23, understanding 18, application 9, analysis 24, evaluation 6. That is **39 of 80 (48.8%)** at application or above, inside the lint band of 45 to 65%.

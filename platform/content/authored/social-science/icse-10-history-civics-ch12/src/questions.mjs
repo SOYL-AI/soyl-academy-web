@@ -289,16 +289,16 @@ Q('s3_ina_obj', short({
 
 // ================================================================ t03 Contribution of Bose; the INA trials
 Q('m_escape', mcq({
-  t: 3, d: 2, c: 'application',
-  stem: 'An imagined railway clerk in January 1941 reads that a well-known leader under police watch in his own home has vanished from the city. If the leader is Bose, which city is the clerk reading about?',
-  opts: ['Calcutta', 'Bombay', 'Delhi', 'Madras'],
-  sol: 'He escaped from house arrest in Calcutta in January 1941 and travelled through Peshawar and Kabul towards Europe.',
+  t: 3, d: 3, c: 'application',
+  stem: 'An imagined police note of 1941 records that a leader placed under house arrest in Calcutta slipped away in January and was next reported at Kabul, travelling towards Europe. Which conclusion best fits the date and the route?',
+  opts: ['He was seeking help abroad from powers at war with Britain, because the Second World War had begun in 1939', 'He was on his way to take command of the INA, which was already waiting for him in Singapore', 'He was travelling to preside over the Haripura session of the Congress', 'He was going abroad to defend the INA officers who were about to be tried'],
+  sol: 'In January 1941 the Second World War was already two years old, and the route through Peshawar and Kabul towards Europe points to a search for support from powers fighting Britain. The INA was not formed until 1942 and Bose reached Southeast Asia only in 1943. The Haripura session was held in 1938, and the INA trials took place in 1945–46. All three are real events, but none of them can be dated to the journey of 1941.',
 }));
 Q('m_germany', mcq({
-  t: 3, d: 3, c: 'application',
-  stem: 'An imagined Indian soldier, captured in North Africa and held as a prisoner of war in Europe in 1942, is visited by Bose, who urges captured Indians to fight for freedom. In which country is the soldier most likely held?',
-  opts: ['Germany', 'Japan', 'The United States', 'Britain'],
-  sol: 'Bose was in Germany from 1941 to 1943, where he organised Indian prisoners of war and broadcast to India. Japan is in Asia, and the United States and Britain were fighting Germany, so Bose could not have worked there.',
+  t: 3, d: 3, c: 'analysis',
+  stem: 'An imagined historian says that Bose\'s years in Germany (1941–43) and in Southeast Asia (1943–45) were two phases of one effort. Which pair of facts best supports this view?',
+  opts: ['In both phases he worked among Indian prisoners of war and looked for help from a power at war with Britain', 'He was Congress President in both phases', 'He formed the Forward Bloc in both phases', 'He was reported to have died in both phases'],
+  sol: 'In Germany he organised Indian prisoners of war and broadcast to India, and in Southeast Asia he took over the INA, which drew its first men from prisoners of war, with Japanese support. Both phases therefore show the same method. The Forward Bloc was formed in 1939 and his Congress presidency was in 1938–39, so both came before either phase. His reported death was in August 1945, at the end of the second phase only. These are true facts about his life, but none of them links the two phases.',
 }));
 Q('m_netaji', mcq({
   t: 3, d: 1, c: 'recall',
@@ -513,65 +513,65 @@ Q('sb_red_fort_notes', source({
 
 // ================================================================ application items (imagined scenarios)
 Q('m_app_fb_member', mcq({
-  t: 1, d: 2, c: 'application',
-  stem: 'An imagined Congress member in 1939 tells his friends that he wants to join a new group inside the party that will unite those who favour a bolder fight for full freedom. Which group is he planning to join?',
-  opts: ['The Forward Bloc', 'The Swaraj Party', 'The Muslim League', 'The Indian Independence League'],
-  sol: 'A group inside the Congress formed in 1939 to unite those favouring a bolder fight is the Forward Bloc. The Swaraj Party belongs to the 1920s, the League was a separate party, and the Indian Independence League worked in Southeast Asia.',
+  t: 1, d: 3, c: 'analysis',
+  stem: 'An imagined student writes: "Bose formed the Forward Bloc because he lost the 1939 presidential election to Pattabhi Sitaramayya." Which correction is best?',
+  opts: ['He won the election, but senior leaders would not work with him on the working committee and he resigned; the Bloc was formed afterwards to unite radical members within the Congress', 'He won the election and formed the Bloc the same day, as a party outside the Congress', 'He won the election and stayed on as President for the rest of 1939, forming the Bloc as a second office', 'He lost the election and resigned, and the Bloc was formed by Rajendra Prasad'],
+  sol: 'The student has the result reversed. Bose defeated Pattabhi Sitaramayya, but the senior leaders who had backed his rival did not cooperate over the working committee and he resigned in 1939. The Bloc followed in May 1939, at first within the Congress. The other options repeat slips: forming a party outside the Congress at once, staying on as President, or crediting Rajendra Prasad, who succeeded Bose as President.',
 }));
 Q('m_app_planning', mcq({
   t: 1, d: 3, c: 'application',
-  stem: 'An imagined economist in 1938 is invited to join a Congress committee that will prepare plans for industry and agriculture in a free India. During whose term as Congress President was this committee set up?',
-  opts: ['Subhas Chandra Bose', 'Dadabhai Naoroji', 'Gopal Krishna Gokhale', 'Bal Gangadhar Tilak'],
-  sol: 'The National Planning Committee was set up in 1938, when Bose was Congress President. The other leaders belong to earlier periods.',
+  stem: 'An imagined student says that the economic aims of the Forward Bloc (1939), such as planned development, were new ideas that had nothing to do with Bose\'s earlier career. Which fact best shows the student is mistaken?',
+  opts: ['The National Planning Committee had been set up in 1938, during his term as Congress President, so planning was already part of his programme', 'He had passed the ICS examination in 1920', 'He was born at Cuttack in 1897', 'He had been re-elected for the Tripuri session in 1939'],
+  sol: 'The student claims there was no earlier link between Bose and economic planning. The National Planning Committee of 1938, set up while he was President, is a direct earlier link. The ICS examination, his birthplace and his re-election are true facts about him, but none concerns economic planning.',
 }));
 Q('m_app_pow', mcq({
-  t: 2, d: 2, c: 'application',
-  stem: 'An imagined soldier of the British Indian Army is captured in Malaya in 1942 and is later asked to join an Indian army being formed with Japanese help. Who was organising that army at the time?',
-  opts: ['Captain Mohan Singh', 'Subhas Chandra Bose', 'Lord Mountbatten', 'Shah Nawaz Khan'],
-  sol: 'In 1942 the first INA was being organised by Captain Mohan Singh from Indian prisoners of war. Bose arrived in 1943; Mountbatten was an Allied commander; Shah Nawaz Khan was an officer.',
+  t: 2, d: 3, c: 'application',
+  stem: 'An imagined student claims that a soldier who joined the INA from a prisoner-of-war camp in mid-1942 was serving under Subhas Chandra Bose. Which fact best shows that this is doubtful?',
+  opts: ['Bose reached Southeast Asia and took command only in 1943; the INA of 1942 was organised by Captain Mohan Singh', 'Bose had formed the Forward Bloc in 1939', 'Bose had been Congress President in 1938', 'The INA later fought around Imphal and Kohima'],
+  sol: 'The claim fails on dates: in mid-1942 Bose was still in Germany, and the first INA was raised by Captain Mohan Singh from prisoners of war. Bose took command in 1943. The Forward Bloc, the presidency of 1938 and the Imphal–Kohima campaign are true facts, but none of them fixes who led the INA in 1942.',
 }));
 Q('m_app_brigade', mcq({
-  t: 2, d: 3, c: 'application',
-  stem: 'An imagined INA recruit is posted to a brigade named after the leader who led the Salt March. Which brigade did he join?',
-  opts: ['The Gandhi Brigade', 'The Nehru Brigade', 'The Azad Brigade', 'The Rani of Jhansi Regiment'],
-  sol: 'The Salt March of 1930 was led by Gandhi, so the recruit joined the Gandhi Brigade. The Nehru and Azad Brigades honoured other leaders, and the Rani of Jhansi Regiment was the women\'s regiment.',
+  t: 2, d: 3, c: 'analysis',
+  stem: 'A visitor to Singapore in 1943 notes that the INA has three brigades named after Gandhi, Nehru and Azad, and a women\'s regiment named after a queen of 1857. Which reading of these names is best?',
+  opts: ['The INA presented itself as part of the whole national struggle, from 1857 to the leaders of its own day, above region and religion', 'The INA was an arm of the Congress and took orders from its Working Committee', 'Each brigade recruited only from the home province of the leader it was named after', 'The three leaders named were commanding the brigades'],
+  sol: 'Names of leaders from different backgrounds, together with the heroine of 1857, show that the INA claimed the national movement as a whole as its heritage. A name honours a person; it does not mean control by the Congress, recruitment by province or command by the leader. Bose commanded the INA, and these leaders were in India.',
 }));
 Q('m_app_rani', mcq({
-  t: 2, d: 2, c: 'application',
-  stem: 'An imagined young nurse in Rangoon decides in 1943 to train as a soldier for India\'s freedom in a unit open only to women. Which unit did she join?',
-  opts: ['The Rani of Jhansi Regiment', 'The Gandhi Brigade', 'The Indian Independence League', 'The Forward Bloc'],
-  sol: 'The INA unit for women was the Rani of Jhansi Regiment. The Gandhi Brigade was a men\'s brigade, the Indian Independence League was a civilian body, and the Forward Bloc was a political group in India.',
+  t: 2, d: 3, c: 'analysis',
+  stem: 'An imagined columnist in 1943 says that the Rani of Jhansi Regiment mattered more as a message than as a fighting force. Which fact best supports this claim?',
+  opts: ['Its name recalled a woman who fought in 1857, linking the INA\'s struggle to the earlier revolt, and it showed that women could serve as soldiers for freedom', 'It was led by Captain Lakshmi Swaminathan, later Sahgal', 'It was one of the units shown under the INA in the Provisional Government\'s organisation', 'Many of its recruits were Indian civilians living in Southeast Asia'],
+  sol: 'The claim is about symbolic meaning, so the best support is the regiment\'s name and the example of women soldiers. Its commander, its place among the INA units and its recruitment from civilians in Southeast Asia are all true, but they describe how it was organised, not what it stood for.',
 }));
 Q('m_app_donor', mcq({
-  t: 2, d: 3, c: 'application',
-  stem: 'An imagined trader in Kuala Lumpur in 1943 gives jewellery and money to an organisation that supports the INA among Indians in Southeast Asia. Which organisation is this?',
-  opts: ['The Indian Independence League', 'The Forward Bloc', 'The Indian National Congress', 'The National Planning Committee'],
-  sol: 'The Indian Independence League organised civilian support, funds and recruits for the INA in Southeast Asia. The other bodies worked inside India.',
+  t: 2, d: 3, c: 'understanding',
+  stem: 'An imagined student asks why Bose needed the Indian Independence League once the INA already existed. Which answer is best?',
+  opts: ['The INA was the fighting force, while the League drew funds, supplies and recruits from Indian civilians in Southeast Asia, which an army far from India could not do without', 'The League commanded the INA in battle, and Bose only held a political office', 'The League replaced the INA after its retreat from Imphal and Kohima', 'The League was the political party that governed India under the British'],
+  sol: 'An army operating far from India needed money, supplies and recruits; the League organised them among Indians living in Southeast Asia, while the INA fought. Bose was Supreme Commander of the INA, the League did not command it, it did not replace it, and it was not a party in India.',
 }));
 Q('m_app_campaign', mcq({
   t: 2, d: 3, c: 'application',
-  stem: 'An imagined INA veteran recalls a hard campaign in 1944 in the hills of Manipur, with heavy rain and little food, that ended in retreat. Which campaign is he describing?',
-  opts: ['The Imphal-Kohima campaign', 'The Dandi March', 'The Quit India Movement', 'The Battle of Plassey'],
-  sol: 'A 1944 campaign in Manipur ending in retreat is the Imphal-Kohima campaign. The Dandi March and Quit India were non-violent movements, and Plassey was in 1757.',
+  stem: 'An imagined student says the INA\'s campaign of 1944 failed because the Provisional Government of Free India had not yet been proclaimed. Which correction is best?',
+  opts: ['The Government had been proclaimed at Singapore in October 1943; the retreat came from shortages of supplies, disease, the monsoon and stronger Allied forces', 'The Government was proclaimed in 1945, after the retreat, so the student is right', 'The Government had been proclaimed in 1943, and the retreat came because the Congress withdrew its support', 'The Government had been proclaimed in 1942 by Captain Mohan Singh, before the campaign'],
+  sol: 'The campaign followed the proclamation of 21 October 1943, so the student\'s reason cannot hold. The causes of the retreat were supply shortages, disease, the heavy monsoon and stronger Allied forces with air power. The Government was not proclaimed in 1945 or 1942, and the Congress did not withdraw support from the campaign.',
 }));
 Q('m_app_trial_public', mcq({
   t: 3, d: 3, c: 'application',
-  stem: 'In an imagined city in late 1945, students of every community hold a joint meeting to demand the release of three army officers on trial in Delhi. Which event are they reacting to?',
-  opts: ['The INA trials at the Red Fort', 'The Lahore Conspiracy Case', 'The Simon Commission', 'The Cabinet Mission'],
-  sol: 'Three army officers on trial in Delhi in 1945 points to the INA trials at the Red Fort. The other events belong to different years and contexts.',
+  stem: 'An imagined official in 1945 argues that trying three INA officers in public will show other soldiers what happens to those who break their oath. Which development shows that the plan did not work as he hoped?',
+  opts: ['Joint meetings of every community and unrest among Indian troops, followed by the remission of the sentences', 'The proclamation of the Provisional Government of Free India at Singapore', 'The retreat of the INA from Imphal and Kohima', 'The report of Bose\'s death after an air crash at Taipei'],
+  sol: 'The plan failed if the trials won sympathy instead of fear: protests across communities, doubts among Indian soldiers and the remission of the sentences show this. The Singapore proclamation (1943), the retreat (1944) and the reported death (August 1945) are real events, but they came before the trials and say nothing about how the public reacted to them.',
 }));
 Q('m_app_navy', mcq({
-  t: 3, d: 4, c: 'application',
-  stem: 'An imagined naval rating in Bombay in February 1946 says that the INA trials made him question why he should serve a foreign government. Which later event is this feeling connected with?',
-  opts: ['The naval mutiny of 1946', 'The Partition of Bengal', 'The Lucknow Pact', 'The Gandhi-Irwin Pact'],
-  sol: 'Unrest among Indian sailors in Bombay in February 1946 is the naval mutiny, which historians link with the feelings stirred by the INA trials. The other events are earlier.',
+  t: 3, d: 4, c: 'analysis',
+  stem: 'In February 1946 ratings of the Royal Indian Navy in Bombay went on strike. Why would the government treat unrest among sailors as more serious than a student procession on the same cause?',
+  opts: ['British rule depended on Indian soldiers, sailors and airmen, so doubts about their loyalty threatened the means by which it held the country', 'A strike in a port stops trade, and the government cared about trade more than about politics', 'The sailors had been tried at the Red Fort', 'Student processions were banned by the Cabinet Mission'],
+  sol: 'Students could protest, but only the armed forces could be used to keep order, so unrest among Indian service men shook a government that relied on them. A port strike does hurt trade, but that is not why historians stress the mutiny. The sailors were not the accused of the Red Fort trials, and the Cabinet Mission did not ban processions.',
 }));
 Q('s_app_broadcast', short({
   t: 3, d: 3, c: 'application', marks: 2, wl: S2,
-  stem: 'An imagined listener in Bengal in 1942 hears a radio broadcast from Germany urging Indians to keep up the fight for freedom. Who was most likely making such broadcasts, and why was he abroad?',
-  model: 'Most likely **Subhas Chandra Bose**. He had **escaped from house arrest** in Calcutta in **January 1941** and gone to **Germany** to seek **outside support** for India\'s freedom.',
-  sol: 'Bose; escape and search for support.',
-  scheme: [['Bose identified', 1], ['Why he was abroad', 1]],
+  stem: 'An imagined listener\'s log of 1942 notes a radio broadcast from Germany to Indians. The speaker says he left India more than a year ago, that Indian prisoners of war are being gathered where he is, and that India should look for help to those fighting Britain. Using two clues from the log, say who the speaker most likely was, and explain why a speaker with this aim would be in Germany.',
+  model: 'Most likely **Subhas Chandra Bose**. Clues: he **left India in January 1941** (more than a year earlier) after **escaping house arrest**, and he **organised Indian prisoners of war** in Germany. Germany was **at war with Britain**, so he hoped for **its help and a platform** for India\'s freedom.',
+  sol: 'Bose, with two clues from the log; Germany at war with Britain, so a source of help.',
+  scheme: [['Bose identified with two clues from the log', 1], ['Germany was at war with Britain and offered help or a platform', 1]],
 }));
 
 // ================================================================ extra objective items for check slides
