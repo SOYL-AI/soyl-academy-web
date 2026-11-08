@@ -18,7 +18,7 @@ export const ANALYTICS_TABS = [
   { id: 'content', label: 'Content' },
 ] as const;
 export type AnalyticsTabId = (typeof ANALYTICS_TABS)[number]['id'];
-export type AdminTabId = AnalyticsTabId | 'users' | 'reports';
+export type AdminTabId = AnalyticsTabId | 'users' | 'future_builders' | 'reports';
 
 /** The tabs an account may open: superadmins see everything, other staff only Reports. */
 export function tabsFor(me: Pick<AdminMe, 'sections'> | null): { id: AdminTabId; label: string }[] {
@@ -26,6 +26,7 @@ export function tabsFor(me: Pick<AdminMe, 'sections'> | null): { id: AdminTabId;
   const out: { id: AdminTabId; label: string }[] = [];
   if (me.sections.includes('analytics')) out.push(...ANALYTICS_TABS);
   if (me.sections.includes('users')) out.push({ id: 'users', label: 'Users' });
+  if (me.sections.includes('future_builders')) out.push({ id: 'future_builders', label: 'Future Builders' });
   if (me.sections.includes('reports')) out.push({ id: 'reports', label: 'Reports' });
   return out;
 }

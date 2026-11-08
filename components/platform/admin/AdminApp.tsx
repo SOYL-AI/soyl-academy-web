@@ -11,7 +11,7 @@
  *    confirm with a code, show the 10 recovery codes once) or verify (a 6-digit code, or a recovery code).
  *    Enrolment needs a fresh sign-in (`fresh_session_required`). With no second factor it goes straight in.
  * 3. GET /v1/admin/me decides the sections (D-045). Superadmins get the dashboard tabs (Overview, Growth,
- *    Engagement, Retention, AI and credits, Revenue, Interest, Content, Users) plus Reports; other staff
+ *    Engagement, Retention, AI and credits, Revenue, Interest, Content, Users, Future Builders) plus Reports; other staff
  *    see the reports queue only. Analytics and Users are lazy chunks.
  * 4. The content reports queue (GET /v1/admin/reports, newest first, cursor paging). Comments are shown as
  *    plain text (React text nodes), never as Markdown or HTML.
@@ -37,6 +37,8 @@ const QrCode = lazy(() => import('./QrCode').then((m) => ({ default: m.QrCode })
 // D-045 super-admin sections: separate chunks, so reviewers (Reports only) never download them.
 const Analytics = lazy(() => import('./analytics/Analytics'));
 const UsersPanel = lazy(() => import('./analytics/UsersPanel'));
+// ADR-027: Future Builders registrations and enquiries (replaces the Google Sheet).
+const FutureBuildersPanel = lazy(() => import('./future-builders/FutureBuildersPanel'));
 
 type Report = AdminContentReports['reports'][number];
 const STATUSES = ['open', 'triaged', 'fixed', 'rejected', 'duplicate'] as const;
@@ -151,6 +153,12 @@ function StaffArea({ onSignInAgain }: { onSignInAgain: () => void }) {
       return (
         <Suspense fallback={<Skeleton lines={4} />}>
           <UsersPanel onProblem={onProblem} />
+        </Suspense>
+      );
+    if (id === 'future_builders')
+      return (
+        <Suspense fallback={<Skeleton lines={4} />}>
+          <FutureBuildersPanel onProblem={onProblem} />
         </Suspense>
       );
     return (
