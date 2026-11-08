@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import { getCohortState, getOpenCohort, today } from '@/content/future-builders';
 import { quote } from '@/lib/future-builders/pricing';
 import { firstIssue, registrantSchema } from '@/lib/future-builders/registration';
-import { isProductionRuntime, orderNotes } from '@/lib/future-builders/razorpay';
+import { MOCK_ORDER_PREFIX, isProductionRuntime, orderNotes } from '@/lib/future-builders/razorpay';
 import { razorpayClient, razorpayKeys } from '@/lib/future-builders/server';
 
 /**
@@ -52,7 +52,7 @@ export async function POST(req: Request) {
       );
     }
     console.warn('[future-builders] Razorpay keys missing: mock order (local development only).');
-    return NextResponse.json({ id: `mock_order_${Date.now()}`, keyId: 'rzp_test_mock', mock: true, ...priced });
+    return NextResponse.json({ id: `${MOCK_ORDER_PREFIX}${Date.now()}`, keyId: 'rzp_test_mock', mock: true, ...priced });
   }
 
   try {

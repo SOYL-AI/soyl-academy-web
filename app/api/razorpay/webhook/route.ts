@@ -50,7 +50,8 @@ export async function POST(req: Request) {
   try {
     const result = await confirmAndRecord({
       gateway: razorpayGateway(razorpayClient(keys)),
-      record: recorders.enrollment,
+      // No client IP: the caller is Razorpay, not a parent's browser.
+      record: (payload) => recorders.enrollment(payload),
       ...ref,
       source: 'webhook',
     });

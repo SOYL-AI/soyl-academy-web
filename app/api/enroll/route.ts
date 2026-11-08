@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import { z } from 'zod';
 import { GRADES, emailSchema, phoneSchema } from '@/lib/future-builders/registration';
 import { platformRecorders } from '@/lib/future-builders/server';
+import { clientIpFrom } from '@/lib/platform-ingest';
 
 const optionalText = z
   .string()
@@ -50,7 +51,7 @@ export async function POST(request: Request) {
   }
 
   try {
-    await recorders.lead({ kind: mode, ...lead });
+    await recorders.lead({ kind: mode, ...lead }, clientIpFrom(request.headers));
     return NextResponse.json({ success: true }, { status: 201 });
   } catch (err) {
     console.error('[future-builders] enroll: recording the lead failed:', (err as Error).message, { kind: mode, source: lead.source });

@@ -212,7 +212,7 @@ export function FutureBuildersForm({ closesOn, campName, sourceTag, listPrice, o
 
       if (order.mock) {
         // Local development only (no Razorpay keys): skip the checkout window.
-        await confirm({ razorpay_order_id: order.id, razorpay_payment_id: `mock_pay_${Date.now()}`, razorpay_signature: 'mock' }, order.amount, true);
+        await confirm({ razorpay_order_id: order.id, razorpay_payment_id: `pay_devmock${Date.now()}`, razorpay_signature: 'mock' }, order.amount, true);
         return;
       }
 

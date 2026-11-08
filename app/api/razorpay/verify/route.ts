@@ -3,9 +3,10 @@ import { z } from 'zod';
 import { getOpenCohort, today } from '@/content/future-builders';
 import { CheckoutError, confirmAndRecord } from '@/lib/future-builders/checkout';
 import { quote } from '@/lib/future-builders/pricing';
-import { isProductionRuntime, orderNotes, verifyCheckoutSignature } from '@/lib/future-builders/razorpay';
+import { MOCK_ORDER_PREFIX, isProductionRuntime, orderNotes, verifyCheckoutSignature } from '@/lib/future-builders/razorpay';
 import { registrantSchema } from '@/lib/future-builders/registration';
 import { platformRecorders, razorpayClient, razorpayGateway, razorpayKeys } from '@/lib/future-builders/server';
+import { clientIpFrom } from '@/lib/platform-ingest';
 
 export const maxDuration = 30;
 
@@ -37,9 +38,10 @@ export async function POST(req: Request) {
 
   const recorders = platformRecorders();
   const keys = razorpayKeys();
+  const clientIp = clientIpFrom(req.headers);
 
   // Local development without Razorpay keys: the mock order from POST /api/razorpay.
-  if (!keys && !isProductionRuntime() && orderId.startsWith('mock_order_')) {
+  if (!keys && !isProductionRuntime() && orderId.startsWith(MOCK_ORDER_PREFIX)) {
     const registrant = registrantSchema.safeParse(parsed.data.registrant);
     const camp = getOpenCohort(today());
     if (!registrant.success || !camp || !recorders) return fail(400, 'invalid_request', 'Mock confirmation needs the registrant.');
@@ -61,7 +63,7 @@ export async function POST(req: Request) {
       phone: registrant.data.phone,
       grade: registrant.data.grade,
       source: 'checkout',
-    });
+    }, clientIp);
     return NextResponse.json({ receiptNumber: result.receiptNumber, email: registrant.data.email, created: result.created });
   }
 
@@ -78,7 +80,7 @@ export async function POST(req: Request) {
   try {
     const result = await confirmAndRecord({
       gateway: razorpayGateway(razorpayClient(keys)),
-      record: recorders.enrollment,
+      record: (payload) => recorders.enrollment(payload, clientIp),
       orderId,
       paymentId,
       source: 'checkout',

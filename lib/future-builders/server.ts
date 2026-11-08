@@ -51,15 +51,16 @@ const devLead = async (payload: LeadPayload): Promise<LeadResult> => {
 };
 
 export interface Recorders {
-  enrollment: (payload: EnrollmentPayload) => Promise<EnrollmentResult>;
-  lead: (payload: LeadPayload) => Promise<LeadResult>;
+  /** clientIp: the parent's IP for the platform's per-IP rate limit (none for the webhook). */
+  enrollment: (payload: EnrollmentPayload, clientIp?: string | null) => Promise<EnrollmentResult>;
+  lead: (payload: LeadPayload, clientIp?: string | null) => Promise<LeadResult>;
 }
 
 /** Null in production when the ingest settings are missing (the routes then answer 503). */
 export function platformRecorders(env: Env = process.env): Recorders | null {
   const config = readIngestConfig(env);
   if (config) {
-    return { enrollment: (p) => recordEnrollment(config, p), lead: (p) => recordLead(config, p) };
+    return { enrollment: (p, ip) => recordEnrollment(config, p, ip), lead: (p, ip) => recordLead(config, p, ip) };
   }
   if (isProductionRuntime(env)) return null;
   return { enrollment: devEnrollment, lead: devLead };

@@ -1,6 +1,8 @@
 import { describe, expect, it, vi } from 'vitest';
 import {
+  CLIENT_IP_HEADER,
   EDGE_AUTH_HEADER,
+  clientIpFrom,
   ENROLLMENTS_PATH,
   INGEST_KEY_HEADER,
   IngestError,
@@ -76,6 +78,16 @@ describe('recordEnrollment', () => {
     expect(JSON.parse(init.body as string)).toEqual(ENROLLMENT);
   });
 
+  it('forwards the parent IP as x-soyl-client-ip only when given', async () => {
+    const fetchMock = vi.fn(async () => json(200, OK_ENROLLMENT));
+    await recordEnrollment(config(fetchMock), ENROLLMENT, '203.0.113.7');
+    await recordEnrollment(config(fetchMock), ENROLLMENT);
+    const headersOf = (i: number) => (fetchMock.mock.calls[i] as unknown as [string, RequestInit])[1].headers as Record<string, string>;
+    expect(CLIENT_IP_HEADER).toBe('x-soyl-client-ip');
+    expect(headersOf(0)[CLIENT_IP_HEADER]).toBe('203.0.113.7');
+    expect(headersOf(1)).not.toHaveProperty(CLIENT_IP_HEADER);
+  });
+
   it('retries once after a 5xx and succeeds', async () => {
     const fetchMock = vi.fn().mockResolvedValueOnce(json(503, { error: 'busy' })).mockResolvedValueOnce(json(200, { ...OK_ENROLLMENT, created: false }));
     await expect(recordEnrollment(config(fetchMock), ENROLLMENT)).resolves.toMatchObject({ created: false });
@@ -121,6 +133,21 @@ describe('recordEnrollment', () => {
     await expect(recordEnrollment(config(fetchMock), ENROLLMENT)).rejects.toThrow(/unexpected body/);
     const notJson = vi.fn(async () => new Response('<html>', { status: 200 }));
     await expect(recordEnrollment(config(notJson), ENROLLMENT)).rejects.toThrow(/unexpected body/);
+  });
+});
+
+describe('clientIpFrom', () => {
+  const h = (init: Record<string, string>) => new Headers(init);
+  it('takes the first x-forwarded-for hop, else x-real-ip', () => {
+    expect(clientIpFrom(h({ 'x-forwarded-for': '203.0.113.7, 10.0.0.1', 'x-real-ip': '198.51.100.2' }))).toBe('203.0.113.7');
+    expect(clientIpFrom(h({ 'x-real-ip': '198.51.100.2' }))).toBe('198.51.100.2');
+    expect(clientIpFrom(h({ 'x-forwarded-for': ' 2001:DB8::1 ' }))).toBe('2001:db8::1');
+  });
+  it('drops anything that is not a plain IP literal', () => {
+    expect(clientIpFrom(h({}))).toBeNull();
+    expect(clientIpFrom(h({ 'x-forwarded-for': 'evil.example, 10.0.0.1' }))).toBeNull();
+    expect(clientIpFrom(h({ 'x-forwarded-for': '999.1.1.1' }))).toBeNull();
+    expect(clientIpFrom(h({ 'x-forwarded-for': 'unknown', 'x-real-ip': '198.51.100.2' }))).toBe('198.51.100.2');
   });
 });
 

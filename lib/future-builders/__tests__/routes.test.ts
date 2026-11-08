@@ -29,6 +29,8 @@ describe('POST /api/razorpay (order)', () => {
     vi.stubEnv('COHORT_PREVIEW_DATE', '2026-11-10');
     const plain = await (await createOrder(post('/api/razorpay', REGISTRANT))).json();
     expect(plain).toMatchObject({ amount: 329900, currency: 'INR', offer: 'diwali-2026', mock: true, coupon: null });
+    // Shaped like a real Razorpay id (the platform requires order_…).
+    expect(plain.id).toMatch(/^order_devmock\d+$/);
     const friend = await (await createOrder(post('/api/razorpay', { ...REGISTRANT, coupon: 'FRIEND500', friendName: 'Asha' }))).json();
     expect(friend).toMatchObject({ amount: 279900, coupon: 'FRIEND500' });
     // An amount from the browser is ignored.
@@ -80,15 +82,28 @@ describe('POST /api/razorpay/verify', () => {
     expect(await res.json()).toMatchObject({ code: 'invalid_signature' });
     expect(fetchSpy).not.toHaveBeenCalled();
   });
+  it('records a mock order on a configured local platform, forwarding the parent IP', async () => {
+    vi.stubEnv('COHORT_PREVIEW_DATE', '2026-11-10');
+    vi.stubEnv('PLATFORM_API_ORIGIN', 'https://api.test');
+    vi.stubEnv('PLATFORM_EDGE_SECRET', 'e');
+    vi.stubEnv('FB_INGEST_KEY', 'k');
+    const fetchSpy = vi.spyOn(globalThis, 'fetch').mockResolvedValue(new Response(JSON.stringify({ enrollmentId: 'enr_1', receiptNumber: 'FB-2027-000001', created: true }), { status: 200 }));
+    const res = await verify(post('/api/razorpay/verify', { razorpay_order_id: 'order_devmock1', razorpay_payment_id: 'pay_devmock1', razorpay_signature: 'mock', registrant: REGISTRANT }, { 'x-real-ip': '198.51.100.2' }));
+    expect(await res.json()).toMatchObject({ receiptNumber: 'FB-2027-000001' });
+    const [url, init] = fetchSpy.mock.calls[0] as unknown as [string, RequestInit];
+    expect(url).toBe('https://api.test/v1/ingest/future-builders/enrollments');
+    expect((init.headers as Record<string, string>)['x-soyl-client-ip']).toBe('198.51.100.2');
+    expect(JSON.parse(init.body as string)).toMatchObject({ razorpayOrderId: 'order_devmock1', razorpayPaymentId: 'pay_devmock1', phone: '+919876543210', coupon: null, friendName: null });
+  });
   it('confirms a development mock order with a dev receipt', async () => {
     vi.stubEnv('COHORT_PREVIEW_DATE', '2026-11-10');
-    const res = await verify(post('/api/razorpay/verify', { razorpay_order_id: 'mock_order_1', razorpay_payment_id: 'mock_pay_1', razorpay_signature: 'mock', registrant: REGISTRANT }));
+    const res = await verify(post('/api/razorpay/verify', { razorpay_order_id: 'order_devmock1', razorpay_payment_id: 'pay_devmock1', razorpay_signature: 'mock', registrant: REGISTRANT }));
     expect(res.status).toBe(200);
     expect(await res.json()).toMatchObject({ receiptNumber: expect.stringMatching(/^FB-DEV-\d{6}$/), email: 'priya@example.com' });
   });
   it('never accepts a mock order in production', async () => {
     vi.stubEnv('VERCEL_ENV', 'production');
-    const res = await verify(post('/api/razorpay/verify', { razorpay_order_id: 'mock_order_1', razorpay_payment_id: 'mock_pay_1', razorpay_signature: 'mock', registrant: REGISTRANT }));
+    const res = await verify(post('/api/razorpay/verify', { razorpay_order_id: 'order_devmock1', razorpay_payment_id: 'pay_devmock1', razorpay_signature: 'mock', registrant: REGISTRANT }));
     expect(res.status).toBe(503);
   });
 });
@@ -124,10 +139,12 @@ describe('POST /api/enroll (leads)', () => {
     vi.stubEnv('PLATFORM_EDGE_SECRET', 'e');
     vi.stubEnv('FB_INGEST_KEY', 'k');
     const fetchSpy = vi.spyOn(globalThis, 'fetch').mockResolvedValue(new Response(JSON.stringify({ leadId: 'lead_1' }), { status: 201 }));
-    const res = await enroll(post('/api/enroll', { mode: 'callback', parentName: 'Priya', phone: '98765 43210', grade: '9', source: 'fb_summer_2027', email: '' }));
+    const res = await enroll(post('/api/enroll', { mode: 'callback', parentName: 'Priya', phone: '98765 43210', grade: '9', source: 'fb_summer_2027', email: '' }, { 'x-forwarded-for': '203.0.113.7, 10.0.0.1' }));
     expect(res.status).toBe(201);
     const [url, init] = fetchSpy.mock.calls[0] as unknown as [string, RequestInit];
     expect(url).toBe('https://api.test/v1/ingest/future-builders/leads');
+    // The parent's IP (first x-forwarded-for hop) for the platform's per-IP rate limit.
+    expect((init.headers as Record<string, string>)['x-soyl-client-ip']).toBe('203.0.113.7');
     expect(JSON.parse(init.body as string)).toEqual({ kind: 'callback', parentName: 'Priya', phone: '+919876543210', grade: '9', source: 'fb_summer_2027' });
   });
   it('400 without a valid phone; an unknown source becomes future_builders', async () => {

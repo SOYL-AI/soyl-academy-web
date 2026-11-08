@@ -258,7 +258,7 @@ export default function FutureBuildersPage() {
       </section>
 
       {/* 02 · The programme, module by module */}
-      <Curriculum timing={shown ? `The ${shown.name} runs in ${shown.months}; the ${shown.timingNote}` : undefined} />
+      <Curriculum timing={shown ? `The ${shown.name} runs in ${shown.months}. Exact dates and the timetable are shared after registration` : undefined} />
 
       {/* 03 · How it works */}
       <section className="section" aria-labelledby="how-heading">

@@ -14,6 +14,9 @@ export function isProductionRuntime(env: Record<string, string | undefined> = pr
   return env.NODE_ENV === 'production' || env.VERCEL_ENV === 'production';
 }
 
+/** Local-development mock ids (no Razorpay keys). Shaped like real ids, which the platform requires. */
+export const MOCK_ORDER_PREFIX = 'order_devmock';
+
 function hmacHex(secret: string, message: string): string {
   return createHmac('sha256', secret).update(message, 'utf8').digest('hex');
 }

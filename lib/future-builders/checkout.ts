@@ -27,6 +27,7 @@ export class CheckoutError extends Error {
 
 export interface ConfirmInput {
   gateway: RazorpayGateway;
+  /** Records on the platform; the routes bind the parent's IP (checkout) or none (webhook). */
   record: (payload: EnrollmentPayload) => Promise<EnrollmentResult>;
   orderId: string;
   paymentId: string;
