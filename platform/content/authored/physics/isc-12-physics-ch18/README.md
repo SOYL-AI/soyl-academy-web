@@ -35,7 +35,7 @@ All items are `status: "draft"` until a reviewer approves them.
 | short | 9 | 3 (wave-theory delay estimate; Lenard’s arrangement; a surface from one stopping potential; three graphs; the V₀–f line; a reflected laser beam; de Broglie for an accelerated electron (derivation); electron and photon of 2.0 keV; electron rings against X-ray rings) |
 | long | 5 | 5, set in parts with the marks shown (Lenard’s apparatus and curves; Einstein’s equation with calcium at 248 nm; h and W₀ from four readings; de Broglie derivation with 1.5 kV electrons; the Davisson–Germer experiment) |
 
-- **Difficulty:** d1 11 · d2 46 · d3 15 · d4 3. **Competency:** recall 3 · understanding 33 · application 24 · analysis 13 · evaluation 2: application or higher **52% of items (59% of marks)** (within the 45–65% band the stage-4 lint applies to physics).
+- **Difficulty:** d1 11 · d2 46 · d3 15 · d4 3. **Competency:** recall 3 · understanding 33 · application 24 · analysis 13 · evaluation 2: application or higher **52% of items (59% of marks)** (within the 45–65% band the stage-4 lint applies to physics) (superseded: see Competency audit 2026-11-05).
 - **Topic tags:** t01 18 · t02 25 · t03 15 · t04 19 · t05 12 (multi-tagged items: the stopping-speed numerical and the LED photocurrent t01/t02; two shorts t01/t02; the two-metals MCQ t02/t03; the electron–photon momentum numerical t03/t04; the 2.0 keV short t04/t03; the microscope short and the de Broglie long t04/t05; the ring-evidence MCQ and the rings short t04/t05).
 
 ## Chapter tests (ISC defaults)
@@ -62,3 +62,10 @@ Every question was re-solved from its stem. Findings and fixes:
 ## Known gaps
 - Diagrams asked for in answers (Lenard’s apparatus, the Davisson–Germer apparatus, graphs) are described in words; graders should accept any correct sketch.
 - Narration was not yet run through TTS (stage 8); slide `audio` is null.
+
+## Competency audit 2026-11-05
+Follows the audit's ISC 12 Physics lead (`docs/platform/content-qa/2026-11-05-competency-retag-audit.md`). Rule applied: one-formula substitutions (with or without a unit conversion) and directly applied stated rules are understanding; chained relations, a non-routine step or a new set-up keep application.
+- **Retagged to understanding:** q008, q009, q015, q020, q044, q050, q051, q054, q058. Of these, q009, q015, q020, q044 and q058 were then rewritten (below) and are application again for real.
+- **Rewritten as genuine application items (same key, type, marks, topic, test slots):** q009 (Einstein's equation then the electron speed: photon energy at 300 nm, minus the work function, then v = √(2K/m); d3); q015 (photon energy at 375 nm, then photons per second from a 2.0 mW output, MCQ with slip-based distractors; d2); q020 (interpret two stopping-potential readings: slope, then threshold frequency, then threshold wavelength; d3); q044 (equal-wavelength electron and photon: compare kinetic energy with photon energy through p = h/λ; d3); q058 (de Broglie wavelength of a 50 eV electron compared with the wavelength of a 50 eV photon; d3).
+- **New counts (75 items):** recall 3 · understanding 37 · application 20 · analysis 13 · evaluation 2: application or higher 35/75 = **46.7% of items (56% of marks)**; difficulty d1 10 · d2 43 · d3 19 · d4 3.
+- Short and long answers were not re-judged.
