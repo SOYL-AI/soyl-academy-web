@@ -57,7 +57,7 @@ All three syllabus topics are covered:
 
 - **Source documents:** all imagined and labelled as such: an interpreter's diary at Belgrade (1961), a Lucknow student's letter about the 1954 agreement, and a schoolteacher's radio talk in a newly free African country (1962).
 - **Difficulty:** d1 23, d2 20, d3 31, d4 4.
-- **Competency:** recall 22, understanding 16, application 14, analysis 22, evaluation 4. That puts 51% of items at application or above, reached with scenario items rather than retagging.
+- **Competency:** recall 22, understanding 16, application 14, analysis 22, evaluation 4. That puts 51% of items at application or above, reached with scenario items rather than retagging. (superseded: see Competency audit 2026-11-05)
 
 ## Facts for a reviewer to check
 
@@ -81,3 +81,20 @@ Every scenario and document is written by SOYL. No textbook text or exercise and
 
 - Nobody has seen the two SVG figures (three groups, and the 1945–1965 timeline) rendered, so they need a look at 360 px on staging. A label overflow and overlap script finds no issues.
 - No map item: the chapter has no map work.
+
+## Competency audit 2026-11-05
+
+Audit reference: `docs/platform/content-qa/2026-11-05-competency-retag-audit.md`. No item was added, removed or reordered; keys, types, marks, topic tags and test slots are unchanged, so the MCQ key table above still holds (keys follow the shared lib's rotation, and the correct option is still written first).
+
+- **Retagged honestly (no rewrite):** `m_scn_odd` (041) application to recall; `m_scn_chart` (042) application to recall.
+- **Rewritten as genuine items** (ids are release order):
+  - `m_scn_aid` (005), application to analysis: weigh a borderline state (trade with both, but army supply, training and a radar station from one side).
+  - `m_scn_base` (006), application to analysis: compare two states on non-alignment against neutrality.
+  - `m_scn_vote` (007), application to analysis: judge whether frequent agreement with one power proves bloc membership.
+  - `m_scn_panch` (028), application kept and made genuine: judge radio broadcasts against the spirit of a Panchsheel-style agreement.
+  - `m_app_scholarships` (066), application to analysis: infer an imagined editorial's position (non-alignment, neutrality, bloc or isolation).
+  - `m_app_resolution` (067), application to analysis: qualify an over-broad claim about the disarmament call.
+  - `m_app_prices` (068), application to analysis: explain why a newly free state might prefer non-alignment given two concrete pressures.
+  - `m_app_newnation` (069), application kept and made genuine: separate acceptable aid from bloc-binding strings in a mixed offer.
+  - `s_app_wrong_claim` (070), application to analysis: assess a partly right claim that Bandung was the first summit, with evidence.
+- **Counts now:** application or above 38 of 78 (48.7%), up from 29 after the honest retags (the earlier 40 included items the audit judged recall or understanding).
