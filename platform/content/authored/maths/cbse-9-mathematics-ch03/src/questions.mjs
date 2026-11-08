@@ -185,5 +185,5 @@ function MT(key, o, check) {
 }
 {
   const n = range(1, 500).find((k) => ap(14, 7, k) === 357);
-  Q('n05', mk.num({ stem: r`How many terms are there in the arithmetic progression $14, 21, 28, \ldots, 357$?`, value: 50, sol: r`Here $a = 14$ and $d = 7$. Solve $14 + (n - 1) \times 7 = 357$: $(n - 1) \times 7 = 343$, so $n - 1 = 49$ and $n = 50$.`, scheme: [['14 + (n - 1) x 7 = 357', 0.5], ['n = 50', 0.5]], d: 2, c: 'application', t: [2], time: 75 }), (Cx) => { Cx.assert(n === 50, '50 terms'); Cx.val(n); });
+  Q('n05', mk.num({ stem: r`The multiples of 7 from 14 up to 357 are written as the progression $14, 21, 28, \ldots, 357$. Count how many multiples it lists.`, value: 50, sol: r`Here $a = 14$ and $d = 7$. Solve $14 + (n - 1) \times 7 = 357$: $(n - 1) \times 7 = 343$, so $n - 1 = 49$ and $n = 50$.`, scheme: [['14 + (n - 1) x 7 = 357', 0.5], ['n = 50', 0.5]], d: 2, c: 'application', t: [2], time: 75 }), (Cx) => { Cx.assert(n === 50, '50 terms'); Cx.val(n); });
 }

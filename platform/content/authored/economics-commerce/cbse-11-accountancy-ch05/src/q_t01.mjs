@@ -153,7 +153,7 @@ QQ('fb_causes', fb({
 }));
 QQ('mt_terms', match({
   t: 1, d: 1, c: 'recall',
-  stem: 'Match each term in column A with its meaning in column B.',
+  stem: 'Match each bank-reconciliation term in column A with what it means for the cash book or passbook in column B.',
   pairs: [
     ['Pass book', 'The bank\'s record of a customer\'s account'],
     ['Cash book', 'The firm\'s own record of receipts and payments including the bank column'],
