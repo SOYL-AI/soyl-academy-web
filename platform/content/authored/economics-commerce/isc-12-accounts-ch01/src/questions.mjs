@@ -232,10 +232,10 @@ QQ('fb_current', fb({
   sol: 'They go to the current account; only permanent changes in capital pass through the capital account.',
 }));
 QQ('ar_fluct', ar({
-  t: 3, d: 2, c: 'understanding', key: 'd',
-  a: 'Under the fluctuating capital method, a partner\'s capital account can never show a debit balance.',
+  t: 3, d: 2, c: 'understanding', key: 'a',
+  a: 'Under the fluctuating capital method, a partner\'s capital account can show a debit balance.',
   r: 'Under the fluctuating capital method, drawings, interest, salary and the share of profit or loss are all recorded in the partner\'s capital account.',
-  sol: 'A is false: heavy drawings or a share of loss recorded in the single capital account can push it into debit. R is true, and is the reason the balance fluctuates.',
+  sol: 'Both are true: because drawings, interest, salary and the share of profit or loss all pass through the single capital account, heavy drawings or a share of loss can push it into debit. R explains A.',
 }));
 const DL = { open: 250000, rate: 10, salaryPm: 1500, profit: 42000, drawings: 30000, iod: 900 };
 const DLclose = same(DL.open + interest(DL.open, DL.rate) + DL.salaryPm * 12 + DL.profit - DL.drawings - DL.iod, 304100, 'n_closing_cap');
@@ -717,8 +717,8 @@ QQ('m_guar_nodef', mcq({
 QQ('ar_guar_total', ar({
   t: 6, d: 3, c: 'analysis', key: 'd',
   a: 'When a partner is guaranteed a minimum profit, the total profit of the firm increases by the amount of the deficiency.',
-  r: 'The deficiency of a guaranteed partner is borne by the partner or partners who gave the guarantee, out of their own shares.',
-  sol: 'A is false: the deficiency only moves from the guarantors\' shares to the guaranteed partner, so the firm\'s total profit is unchanged. R is true.',
+  r: 'The deficiency of a guaranteed partner is charged to the Profit and Loss Account as an expense of the firm.',
+  sol: 'Both are false: the deficiency is borne by the guarantors out of their own shares, so it only moves between partners; it is not an expense, and the firm\'s total profit is unchanged.',
 }));
 QQ('tf_guar_loss', tf({
   t: 6, d: 2, c: 'understanding', ans: true,

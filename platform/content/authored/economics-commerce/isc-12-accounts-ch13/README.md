@@ -77,7 +77,7 @@ Each section has key terms, formula patterns in the body and visuals. The exam t
 | Type | Count | Marks | Notes |
 |---|---|---|---|
 | mcq | 27 | 1 | Keys: a 7, b 7, c 7, d 6. Options are computed for the column after Z, cells in a range, the percentage format, the date format, operator precedence, AVERAGE with a blank, IF with AND, date difference, a copied formula, freeze panes, PF, two-slab commission, profit on sales, nested grade, a two-key sort and a two-condition filter |
-| assertion-reason | 6 | 1 | Keys: a 3, b 1, c 1, d 1 |
+| assertion-reason | 6 | 1 | Keys: a 3, b 2, c 1, d 0 |
 | true-false | 5 | 1 | 2 true, 3 false |
 | fill-blank · match · ordering | 5 · 3 · 1 | 1 · 2 · 2 | Matches: workbook terms, formats to displays (computed), parts of a chart. The ordering item copies a sheet into another workbook |
 | numerical | 7 | 1 | Quarter total from three sheets, percentage share, days overdue, gross pay, slab commission, COUNTIF, SUMIF |
@@ -145,3 +145,7 @@ Formulas and values carry separate scheme marks.
 - There is no case-based item; written items are self-evaluated against the marking scheme.
 - Wide sheets (payroll with 11 columns, the Kinnari and Bhorthal completed sheets) are long markdown tables that scroll on a phone. The SVGs place labels by pixel coordinates. Both should be checked at 360 px on staging.
 - Hands-on practice in real software (the ISC practical) cannot be graded here. Items ask for formulas and the values they show.
+
+## Assertion-reason options (2026-11-09)
+
+Options aligned with the latest Class XII Accounts specimen paper (858, ISC 2026; no 2027 Class XII Accounts specimen is published): (a) both true, R explains A; (b) both true, R does not explain A; (c) A true, R false; (d) both false. For this chapter option (d) is now "Both Assertion and Reason are false" (was "A is false, but R is true"); every item keyed (d) under the old order was rewritten (its assertion corrected so both are true, or its reason made false so both are false), and its key and solution updated. Keys in bank order: a b a b c a. Tests are unchanged (same items in the same slots).

@@ -31,7 +31,7 @@ Partnership vs firm · Section 48 · Memorandum Balance Sheet · Realisation Acc
 | Type | Count | Marks | Notes |
 |---|---|---|---|
 | mcq | 23 | 1 | keys a6 b5 c6 d6 |
-| assertion-reason | 6 | 1 | keys a2 b1 c1 d2 |
+| assertion-reason | 6 | 1 | keys a3 b1 c1 d1 (ISC specimen options; (d) = both false) |
 | true-false · fill-blank · match | 5 · 3 · 2 | 1 · 1 · 2 | T/F 2 true, 3 false |
 | numerical | 6 | 1 | Section 48 capital payout, realisation loss with silent furniture, creditors' cash after an asset and a discount, debtors realised, net effect of a remuneration, a partner's final payment |
 | short | 9 | 2 | partnership vs firm, Realisation vs Revaluation Account, takeovers, silent items, investments with their fund, expense cases, overdraft vs bank loan, loans to and from partners, Memorandum Balance Sheet |
@@ -67,3 +67,7 @@ Accounts has no subject blueprint, so the tests use the ISC 12 defaults. Board d
 - No case-based item; written items are self-evaluated against the marking scheme.
 - Capital accounts with three partners make wide (8-column) markdown tables that scroll on a phone.
 - The two SVGs place labels by pixel coordinates; check them at 360 px on staging.
+
+## Assertion-reason options (2026-11-09)
+
+Options aligned with the latest Class XII Accounts specimen paper (858, ISC 2026; no 2027 Class XII Accounts specimen is published): (a) both true, R explains A; (b) both true, R does not explain A; (c) A true, R false; (d) both false. For this chapter option (d) is now "Both Assertion and Reason are false" (was "A is false, but R is true"); every item keyed (d) under the old order was rewritten (its assertion corrected so both are true, or its reason made false so both are false), and its key and solution updated. Keys in bank order: a c d b a a. Tests are unchanged (same items in the same slots).

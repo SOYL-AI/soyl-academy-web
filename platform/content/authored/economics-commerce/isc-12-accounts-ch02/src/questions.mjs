@@ -75,10 +75,10 @@ QQ('ar_selfgen', ar({
   sol: 'Both are true. A rests on Accounting Standard 26: goodwill not acquired for a consideration cannot be measured reliably. R is a different feature of goodwill, so it does not explain A.',
 }));
 QQ('ar_current', ar({
-  t: 1, d: 2, c: 'understanding', key: 'd',
-  a: 'Goodwill is a current asset, because its value changes from year to year.',
+  t: 1, d: 2, c: 'understanding', key: 'a',
+  a: 'Goodwill is an intangible asset whose value can change from year to year.',
   r: 'The value of goodwill depends on the profits a firm expects to earn in future.',
-  sol: 'A is false: goodwill is a non-current intangible asset; it is not held for conversion into cash within a year. R is true.',
+  sol: 'Both are true: goodwill is valued on the profits the firm expects to earn, and as those expectations change, so does its value. R explains A.',
 }));
 QQ('tf_selfgen_record', tf({
   t: 1, d: 1, c: 'understanding', ans: false,
@@ -470,10 +470,10 @@ QQ('ar_nosuper', ar({
   sol: 'Both are true and R explains A: with no excess over normal profit there is no super profit to multiply.',
 }));
 QQ('ar_normalrate', ar({
-  t: 3, d: 2, c: 'understanding', key: 'd',
-  a: 'Normal profit is found by multiplying a firm\'s average profit by the normal rate of return.',
+  t: 3, d: 2, c: 'understanding', key: 'b',
+  a: 'Normal profit is found by multiplying the capital employed by the normal rate of return.',
   r: 'The normal rate of return is the rate that similar firms in the same industry usually earn on their capital.',
-  sol: 'A is false: normal profit = capital employed × normal rate ÷ 100; average profit is not used. R is true.',
+  sol: 'Both are true, but R only says what the normal rate of return is; it does not explain why normal profit is worked out on the capital employed.',
 }));
 QQ('fb_super', fb({
   t: 3, d: 1, c: 'recall',

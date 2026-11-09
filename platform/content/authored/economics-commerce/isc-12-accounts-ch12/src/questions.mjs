@@ -401,10 +401,10 @@ Q('m_wct_meaning', mcq({
 }));
 
 Q('ar_itr', ar({
-  t: 3, d: 2, c: 'understanding', key: 'd',
-  a: 'The inventory turnover ratio of an imagined company, Panthi Poha Mills Ltd, Bhatapara, is found by dividing its revenue from operations by its average inventory.',
+  t: 3, d: 2, c: 'understanding', key: 'a',
+  a: 'The inventory turnover ratio of an imagined company, Panthi Poha Mills Ltd, Bhatapara, is found by dividing its cost of revenue from operations by its average inventory.',
   r: 'Inventory is valued at cost, so it should be compared with the cost of revenue from operations.',
-  sol: 'A is false: the numerator is the cost of revenue from operations. R is true and is the very reason the numerator is cost, not revenue.',
+  sol: 'Both are true: inventory is valued at cost, so it is compared with the cost of revenue from operations rather than with revenue. R explains A.',
 }));
 
 const DB = { cost: 1800000, open: 220000, close: 260000 };
@@ -609,8 +609,8 @@ Q('fb_ce', fb({
 Q('ar_pe', ar({
   t: 4, d: 3, c: 'analysis', key: 'd',
   a: 'Since its price-earnings ratio is 25 against 10 for a rival, an imagined company, Tippani Ceramics Ltd, Wankaner, must have the higher earnings per share of the two.',
-  r: 'The price-earnings ratio is the market price per equity share divided by the earnings per share.',
-  sol: 'A is false: a P/E ratio relates price to earnings, so a higher figure can come from a higher share price or from lower earnings; it says nothing on its own about which company earns more per share. R is true.',
+  r: 'The price-earnings ratio is the earnings per share divided by the market price per equity share.',
+  sol: 'Both are false: the P/E ratio is the market price per share divided by the earnings per share, so a higher figure can come from a higher share price or from lower earnings; on its own it does not show which company earns more per share.',
 }));
 
 const GT = { pat: 720000, pd: 120000, shares: 240000 };

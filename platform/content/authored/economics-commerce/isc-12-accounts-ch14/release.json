@@ -3974,19 +3974,19 @@
    "options": [
     {
      "id": "a",
-     "text_md": "Both A and R are true, and R is the correct explanation of A."
+     "text_md": "Both Assertion and Reason are true and Reason is the correct explanation for Assertion."
     },
     {
      "id": "b",
-     "text_md": "Both A and R are true, but R is not the correct explanation of A."
+     "text_md": "Both Assertion and Reason are true but Reason is not the correct explanation for Assertion."
     },
     {
      "id": "c",
-     "text_md": "A is true, but R is false."
+     "text_md": "Assertion is true and Reason is false."
     },
     {
      "id": "d",
-     "text_md": "A is false, but R is true."
+     "text_md": "Both Assertion and Reason are false."
     }
    ],
    "match_right": [],
@@ -4031,19 +4031,19 @@
    "options": [
     {
      "id": "a",
-     "text_md": "Both A and R are true, and R is the correct explanation of A."
+     "text_md": "Both Assertion and Reason are true and Reason is the correct explanation for Assertion."
     },
     {
      "id": "b",
-     "text_md": "Both A and R are true, but R is not the correct explanation of A."
+     "text_md": "Both Assertion and Reason are true but Reason is not the correct explanation for Assertion."
     },
     {
      "id": "c",
-     "text_md": "A is true, but R is false."
+     "text_md": "Assertion is true and Reason is false."
     },
     {
      "id": "d",
-     "text_md": "A is false, but R is true."
+     "text_md": "Both Assertion and Reason are false."
     }
    ],
    "match_right": [],
@@ -4748,27 +4748,27 @@
    "unit": "isc-12-accounts-ch14",
    "language": "en",
    "type": "assertion-reason",
-   "stem_md": "**Assertion (A):** Creating an index on every field of the Invoices table of Treepie Ceramics Ltd, an imagined company, will make every operation on that table faster.\n\n**Reason (R):** An index lets the DBMS find the records holding a given value without reading the whole table.\n\nChoose the correct option.",
+   "stem_md": "**Assertion (A):** Creating an index on every field of the Invoices table of Treepie Ceramics Ltd, an imagined company, slows down adding, changing and deleting records in that table.\n\n**Reason (R):** An index lets the DBMS find the records holding a given value without reading the whole table.\n\nChoose the correct option.",
    "options": [
     {
      "id": "a",
-     "text_md": "Both A and R are true, and R is the correct explanation of A."
+     "text_md": "Both Assertion and Reason are true and Reason is the correct explanation for Assertion."
     },
     {
      "id": "b",
-     "text_md": "Both A and R are true, but R is not the correct explanation of A."
+     "text_md": "Both Assertion and Reason are true but Reason is not the correct explanation for Assertion."
     },
     {
      "id": "c",
-     "text_md": "A is true, but R is false."
+     "text_md": "Assertion is true and Reason is false."
     },
     {
      "id": "d",
-     "text_md": "A is false, but R is true."
+     "text_md": "Both Assertion and Reason are false."
     }
    ],
    "match_right": [],
-   "solution_md": "**Correct option: (d)** R is true. A is false: every index takes space and must be updated each time a record is added, changed or deleted, so indexing every field slows down data entry. Index only the fields that are searched or sorted often.",
+   "solution_md": "**Correct option: (b)** Both are true, but faster searching is not the reason for the slowdown: every index takes space and must be updated each time a record is added, changed or deleted.",
    "marks": 1,
    "difficulty": 3,
    "competency": "analysis",
@@ -4780,12 +4780,12 @@
    "assets": [],
    "answer": {
     "option_ids": [
-     "d"
+     "b"
     ]
    },
    "marking_scheme": [
     {
-     "step": "Correct option (d)",
+     "step": "Correct option (b)",
      "marks": 1
     }
    ],
@@ -4809,19 +4809,19 @@
    "options": [
     {
      "id": "a",
-     "text_md": "Both A and R are true, and R is the correct explanation of A."
+     "text_md": "Both Assertion and Reason are true and Reason is the correct explanation for Assertion."
     },
     {
      "id": "b",
-     "text_md": "Both A and R are true, but R is not the correct explanation of A."
+     "text_md": "Both Assertion and Reason are true but Reason is not the correct explanation for Assertion."
     },
     {
      "id": "c",
-     "text_md": "A is true, but R is false."
+     "text_md": "Assertion is true and Reason is false."
     },
     {
      "id": "d",
-     "text_md": "A is false, but R is true."
+     "text_md": "Both Assertion and Reason are false."
     }
    ],
    "match_right": [],
@@ -4866,19 +4866,19 @@
    "options": [
     {
      "id": "a",
-     "text_md": "Both A and R are true, and R is the correct explanation of A."
+     "text_md": "Both Assertion and Reason are true and Reason is the correct explanation for Assertion."
     },
     {
      "id": "b",
-     "text_md": "Both A and R are true, but R is not the correct explanation of A."
+     "text_md": "Both Assertion and Reason are true but Reason is not the correct explanation for Assertion."
     },
     {
      "id": "c",
-     "text_md": "A is true, but R is false."
+     "text_md": "Assertion is true and Reason is false."
     },
     {
      "id": "d",
-     "text_md": "A is false, but R is true."
+     "text_md": "Both Assertion and Reason are false."
     }
    ],
    "match_right": [],
@@ -6156,19 +6156,19 @@
    "options": [
     {
      "id": "a",
-     "text_md": "Both A and R are true, and R is the correct explanation of A."
+     "text_md": "Both Assertion and Reason are true and Reason is the correct explanation for Assertion."
     },
     {
      "id": "b",
-     "text_md": "Both A and R are true, but R is not the correct explanation of A."
+     "text_md": "Both Assertion and Reason are true but Reason is not the correct explanation for Assertion."
     },
     {
      "id": "c",
-     "text_md": "A is true, but R is false."
+     "text_md": "Assertion is true and Reason is false."
     },
     {
      "id": "d",
-     "text_md": "A is false, but R is true."
+     "text_md": "Both Assertion and Reason are false."
     }
    ],
    "match_right": [],
@@ -6214,19 +6214,19 @@
    "options": [
     {
      "id": "a",
-     "text_md": "Both A and R are true, and R is the correct explanation of A."
+     "text_md": "Both Assertion and Reason are true and Reason is the correct explanation for Assertion."
     },
     {
      "id": "b",
-     "text_md": "Both A and R are true, but R is not the correct explanation of A."
+     "text_md": "Both Assertion and Reason are true but Reason is not the correct explanation for Assertion."
     },
     {
      "id": "c",
-     "text_md": "A is true, but R is false."
+     "text_md": "Assertion is true and Reason is false."
     },
     {
      "id": "d",
-     "text_md": "A is false, but R is true."
+     "text_md": "Both Assertion and Reason are false."
     }
    ],
    "match_right": [],

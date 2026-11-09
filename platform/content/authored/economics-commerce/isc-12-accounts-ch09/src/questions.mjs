@@ -389,10 +389,10 @@ Q('m_curmat', mcq({
 }));
 
 Q('ar_curmat', ar({
-  t: [2, 3], d: 3, c: 'analysis', key: 'd',
-  a: 'Muthyala Turmeric Exports Ltd, an imagined company at Bhupalpally, shows the instalment of its term loan due in December 2026 under Long-term Borrowings in its Balance Sheet as at 31 March 2026.',
+  t: [2, 3], d: 3, c: 'analysis', key: 'a',
+  a: 'Muthyala Turmeric Exports Ltd, an imagined company at Bhupalpally, shows the instalment of its term loan due in December 2026 under Short-term Borrowings in its Balance Sheet as at 31 March 2026.',
   r: 'Under the amended Schedule III, current maturities of long-term borrowings are shown under Short-term Borrowings.',
-  sol: 'A is false: the December 2026 instalment falls due within twelve months, so it must be moved to Short-term Borrowings. R is true and states the rule.',
+  sol: 'Both are true: the December 2026 instalment falls due within twelve months of the balance sheet date, so as a current maturity it is shown under Short-term Borrowings. R explains A.',
 }));
 
 // --- property, plant and equipment

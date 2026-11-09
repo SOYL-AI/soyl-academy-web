@@ -335,10 +335,10 @@ Q('n_interest_advance', num({
 }));
 
 Q('ar_advance', ar({
-  t: [3, 6], d: 3, c: 'analysis', key: 'd',
-  a: 'Calls in advance received by Ramkali Glass Wool Ltd, an imagined company, are added to its paid-up share capital in the Note on Share Capital.',
+  t: [3, 6], d: 3, c: 'analysis', key: 'a',
+  a: 'Calls in advance received by Ramkali Glass Wool Ltd, an imagined company, are not added to its paid-up share capital in the Note on Share Capital.',
   r: 'Calls in advance are money received for calls not yet made, so the company owes them to the shareholders until the calls are made.',
-  sol: 'A is false: until the call is made the money is not share capital; it is shown under Other Current Liabilities. R is true and gives the reason.',
+  sol: 'Both are true: until the call is made the money is owed to the shareholders, so it is shown under Other Current Liabilities, not as share capital. R explains A.',
 }));
 
 Q('tf_interest_arrears', tf({

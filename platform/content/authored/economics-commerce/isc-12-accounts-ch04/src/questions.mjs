@@ -274,8 +274,8 @@ Q('ar_existing', ar({
 Q('ar_hidden', ar({
   t: 2, d: 3, c: 'analysis', key: 'd',
   a: 'When Mrigashira Pulse Mills, an imagined firm, pays a retiring partner exactly the balance of his capital account after all adjustments, hidden goodwill arises.',
-  r: "Hidden goodwill on retirement is the amount by which the agreed settlement exceeds the retiring partner's capital after all other adjustments.",
-  sol: 'R is the correct meaning of hidden goodwill on retirement, and it shows why A is false: a settlement equal to his adjusted capital leaves no excess at all.',
+  r: 'Hidden goodwill on retirement is the retiring partner\'s capital balance after all other adjustments.',
+  sol: 'Both are false: hidden goodwill on retirement is the excess of the agreed settlement over the retiring partner\'s adjusted capital, and a settlement equal to that capital leaves no excess, so no hidden goodwill arises.',
 }));
 
 Q('match_reval', match({

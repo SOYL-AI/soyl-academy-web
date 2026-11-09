@@ -242,10 +242,10 @@ Q('m_index', mcq({
 }));
 
 Q('ar_index', ar({
-  t: 4, d: 3, c: 'analysis', key: 'd',
-  a: 'Creating an index on every field of the Invoices table of Treepie Ceramics Ltd, an imagined company, will make every operation on that table faster.',
+  t: 4, d: 3, c: 'analysis', key: 'b',
+  a: 'Creating an index on every field of the Invoices table of Treepie Ceramics Ltd, an imagined company, slows down adding, changing and deleting records in that table.',
   r: 'An index lets the DBMS find the records holding a given value without reading the whole table.',
-  sol: 'R is true. A is false: every index takes space and must be updated each time a record is added, changed or deleted, so indexing every field slows down data entry. Index only the fields that are searched or sorted often.',
+  sol: 'Both are true, but faster searching is not the reason for the slowdown: every index takes space and must be updated each time a record is added, changed or deleted.',
 }));
 
 const CR = mk(['Assets', [['AssetNo', 'text'], ['AssetName', 'text'], ['Cost', 'currency']], { pk: 'AssetNo' }, [['M1', 'Bearing grinder', 450000]]]);

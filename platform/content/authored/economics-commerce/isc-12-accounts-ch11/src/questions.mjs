@@ -618,10 +618,10 @@ Q('m_amort', mcq({
 }));
 
 Q('ar_prop_div', ar({
-  t: 5, d: 3, c: 'understanding', key: 'd',
-  a: 'The dividend proposed by the directors of an imagined company, Namika La Apricots Ltd, for 2025-26 is shown as a financing outflow in its cash flow statement for 2025-26.',
+  t: 5, d: 3, c: 'understanding', key: 'a',
+  a: 'The dividend proposed by the directors of an imagined company, Namika La Apricots Ltd, for 2025-26 is not shown as a financing outflow in its cash flow statement for 2025-26.',
   r: 'A proposed dividend is disclosed as a contingent liability in the notes and is not provided for until the shareholders approve it.',
-  sol: 'A is false: nothing is paid in 2025-26 and nothing is provided for, so the proposal has no effect on that year’s statement; it becomes an outflow in the year it is paid. R is true.',
+  sol: 'Both are true: the proposed dividend is only disclosed as a contingent liability and nothing is paid or provided for in 2025-26; it becomes an outflow in the year it is paid. R explains A.',
 }));
 
 Q('ar_tax_paid', ar({
