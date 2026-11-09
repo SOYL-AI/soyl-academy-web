@@ -32,7 +32,7 @@ Meaning, methods and sources · DRR (who and how much) · DRI · exemptions and 
 | Type | Count | Marks | Notes |
 |---|---|---|---|
 | mcq | 20 | 1 | keys a5 b5 c5 d5 |
-| assertion-reason | 6 | 1 | keys a2 b1 c2 d1 |
+| assertion-reason | 6 | 1 | keys a3 b1 c2 d0 (ISC specimen options; (d) = both false) |
 | true-false · fill-blank · match | 5 · 3 · 2 | 1 · 1 · 2 | T/F 2 true, 3 false |
 | numerical | 6 | 1 | DRR shortfall (one and two series), DRI on the series maturing, General Reserve after a statutory redemption, amount paid at a premium, interest on the DRI |
 | short | 9 | 2 | DRR top-up entry, why a reserve, DRI made and encashed, DRR vs DRI, profits vs capital, listed company out of capital, lump sum at par, premium redemption, draw of lots explained |
@@ -69,3 +69,7 @@ Accounts has no subject blueprint, so the tests use the ISC 12 defaults. Board r
 - No case-based item; written items are self-evaluated against the marking scheme.
 - No item combines an issue (ch07) with its redemption in one problem beyond the premium on redemption carried forward.
 - Dated journals and the closing table scroll on a phone; the four SVGs place labels by pixel coordinates — check them at 360 px on staging.
+
+## Assertion-reason options (2026-11-09)
+
+Options aligned with the latest Class XII Accounts specimen paper (858, ISC 2026; no 2027 Class XII Accounts specimen is published): (a) both true, R explains A; (b) both true, R does not explain A; (c) A true, R false; (d) both false. For this chapter option (d) is now "Both Assertion and Reason are false" (was "A is false, but R is true"); every item keyed (d) under the old order was rewritten (its assertion corrected so both are true, or its reason made false so both are false), and its key and solution updated. Keys in bank order: a c b c a a. Tests are unchanged (same items in the same slots).

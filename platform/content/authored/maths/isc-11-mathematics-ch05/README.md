@@ -59,3 +59,7 @@ All set-ups, values and wording are this chapter's own. The CBSE 11 Mathematics 
 - Polar form of products is taught as a rule for moduli and arguments only; de Moivre's theorem for powers is left out because it is not in the ISC Class XI topic list.
 - Circles and loci beyond $|z| = k$ and $|z - a| = |z - b|$ are not taught.
 - The share of application-or-higher items (56%) is in the upper middle of the lint band because the chapter is computational; 40 of 90 items are recall or understanding.
+
+## Assertion-reason options (2026-11-09)
+
+Options aligned with the ISC 2027 Mathematics specimen paper (860): (a) both true, R explains A; (b) both true, R does not explain A; (c) A true, R false; (d) A false, R true. For this chapter the order is unchanged ((d) "Assertion is false and Reason is true"); only the wording now follows the specimen, so no key changed. Keys in bank order: a b c d a c. Tests are unchanged (same items in the same slots).

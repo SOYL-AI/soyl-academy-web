@@ -62,3 +62,7 @@ This is a hand-authored production chapter (DECISIONS D-025, D-026). It follows 
 - **AR keys:** `ar4` is keyed (b), because the point lying on a boundary line does not explain why it is optimal. `ar6` is keyed (c).
 - **`m24`:** the bounded-region item uses $x - y \le 2$ as an unbounded distractor.
 - **Rendering:** nobody has seen the region plots and the vertical boundary lines (`vlines`) rendered, so they need a look at 360 px on staging. The shading of regions is described in the alt text and captions, because plots do not shade.
+
+## Assertion-reason options (2026-11-09)
+
+Options aligned with the ISC 2027 Mathematics specimen paper (860): (a) both true, R explains A; (b) both true, R does not explain A; (c) A true, R false; (d) A false, R true. For this chapter the order is unchanged ((d) "Assertion is false and Reason is true"); only the wording now follows the specimen, so no key changed. Keys in bank order: a c d b a c. Tests are unchanged (same items in the same slots).

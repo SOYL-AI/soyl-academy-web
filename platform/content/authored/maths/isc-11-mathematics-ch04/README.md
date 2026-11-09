@@ -59,3 +59,7 @@ All set-ups, values and wording are this chapter's own. The CBSE 11 Mathematics 
 - Half-angle exact values (e.g. $\cos 22.5^\circ$) are verified numerically and by squaring in the field, since the nested radicals lie outside Q(sqrt 2, sqrt 3).
 - Competency share (62% application or higher) sits in the upper half of the lint band because the chapter's questions are largely computational.
 - Practice-only case items are not included (the ISC blueprints have no case slot).
+
+## Assertion-reason options (2026-11-09)
+
+Options aligned with the ISC 2027 Mathematics specimen paper (860): (a) both true, R explains A; (b) both true, R does not explain A; (c) A true, R false; (d) A false, R true. For this chapter the order is unchanged ((d) "Assertion is false and Reason is true"); only the wording now follows the specimen, so no key changed. Keys in bank order: a b c d a c. Tests are unchanged (same items in the same slots).

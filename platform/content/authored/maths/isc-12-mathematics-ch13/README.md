@@ -62,3 +62,7 @@ The builders come from the shared ISC 12 lib `isc-12-mathematics-ch01/src/lib.mj
 - `n05` uses work done ($\vec{F} \cdot \vec{d}$) as an application of the scalar product. The formula is stated in the stem.
 - **Scenarios:** all contexts and numbers are our own (kite string, survey drone, Ladakh tent, Shillong footbridge, metro stations, robotics lab). Familiar textbook data such as $|\vec{a}| = 3, |\vec{b}| = 5, |\vec{c}| = 7$ was deliberately avoided; `s306` uses $5, 8, 7$.
 - **Rendering:** nobody has seen the geometry figures and wide tables rendered at 360 px, so they need a look on staging.
+
+## Assertion-reason options (2026-11-09)
+
+Options aligned with the ISC 2027 Mathematics specimen paper (860): (a) both true, R explains A; (b) both true, R does not explain A; (c) A true, R false; (d) A false, R true. For this chapter the order is unchanged ((d) "Assertion is false and Reason is true"); only the wording now follows the specimen, so no key changed. Keys in bank order: d a a c a c. Tests are unchanged (same items in the same slots).

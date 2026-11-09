@@ -142,9 +142,9 @@ add('hydrolysis-mcq', mcq({
 }));
 add('markov-ar', ar({
   a: 'Acid-catalysed hydration of propene gives mainly propan-1-ol.',
-  r: 'The reaction proceeds through the more stable secondary carbocation.',
+  r: 'The reaction proceeds through the less stable primary carbocation.',
   key: 'd',
-  sol: 'A is false: the secondary carbocation leads to propan-2-ol. R is true — option (d).',
+  sol: 'Both are false: hydration goes through the more stable secondary carbocation, which leads to propan-2-ol as the main product — option (d).',
   d: 2, c: 'understanding', t: [2],
 }));
 add('hcho-tf', tf({

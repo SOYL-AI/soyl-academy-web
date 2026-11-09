@@ -32,7 +32,7 @@ Debentures, the Act and issue for cash · par, premium and discount · the six c
 | Type | Count | Marks | Notes |
 |---|---|---|---|
 | mcq | 22 | 1 | keys a6 b5 c6 d5 |
-| assertion-reason | 6 | 1 | keys a2 b1 c2 d1 |
+| assertion-reason | 6 | 1 | keys a2 b1 c2 d1 (ISC specimen options; (d) = both false) |
 | true-false · fill-blank · match | 4 · 3 · 2 | 1 · 1 · 2 | T/F 2 true, 2 false |
 | numerical | 7 | 1 | cash kept after a refund, loss on issue, write-off to profit and loss, debentures to a vendor, goodwill, interest on calls in arrears, TDS for a half-year |
 | short | 8 | 2 | lump sum with premium and refund, two issue-redemption entries, write-off rule, collateral both methods, promoters and underwriters, interest with TDS, arrears and advance on a call, current maturities |
@@ -68,3 +68,7 @@ Accounts has no subject blueprint, so the tests use the ISC 12 defaults. Board d
 - No case-based item; written items are self-evaluated against the marking scheme.
 - Pro-rata allotment on over-subscription of debentures is not covered (refund only); issues with more than one call are not used.
 - Dated journals and six-column tables (WE4) scroll on a phone; the three SVGs place labels by pixel coordinates — check them at 360 px on staging.
+
+## Assertion-reason options (2026-11-09)
+
+Options aligned with the latest Class XII Accounts specimen paper (858, ISC 2026; no 2027 Class XII Accounts specimen is published): (a) both true, R explains A; (b) both true, R does not explain A; (c) A true, R false; (d) both false. For this chapter option (d) is now "Both Assertion and Reason are false" (was "A is false, but R is true"); every item keyed (d) under the old order was rewritten (its assertion corrected so both are true, or its reason made false so both are false), and its key and solution updated. Keys in bank order: a c b d a c. Tests are unchanged (same items in the same slots).

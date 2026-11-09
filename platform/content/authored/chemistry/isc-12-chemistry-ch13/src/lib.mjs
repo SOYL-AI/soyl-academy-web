@@ -118,11 +118,12 @@ export function deck({ part, title, goals, slides }) {
 }
 
 // ---------------------------------------------------------------- questions
+// Option order and wording as in the ISC 2027 Chemistry specimen paper (862).
 const AR_OPTIONS = [
-  { id: 'a', text_md: 'Both A and R are true, and R is the correct explanation of A.' },
-  { id: 'b', text_md: 'Both A and R are true, but R is not the correct explanation of A.' },
-  { id: 'c', text_md: 'A is true, but R is false.' },
-  { id: 'd', text_md: 'A is false, but R is true.' },
+  { id: 'a', text_md: 'Both Assertion and Reason are true, and Reason is the correct explanation for Assertion.' },
+  { id: 'b', text_md: 'Both Assertion and Reason are true, but Reason is not the correct explanation for Assertion.' },
+  { id: 'c', text_md: 'Assertion is true and Reason is false.' },
+  { id: 'd', text_md: 'Both Assertion and Reason are false.' },
 ];
 const scheme = (s) => s.map(([step, marks]) => ({ step, marks }));
 const DEFAULT_WL = {}; // ISC papers set no word limits; pass o.wl to add one

@@ -69,3 +69,7 @@ This is a hand-authored production chapter (D-025, D-026) for ISC 2027 Mathemati
 - **Sum formulae:** the $\sin^{-1}$/$\cos^{-1}$ sum formulae are given with simplified sufficient conditions ($x, y \ge 0$ and $x^2 + y^2 \le 1$ for the sine sum; $x + y \ge 0$ for the cosine sum). The items themselves use the method of naming the angles and checking the range.
 - **Fill-blank answers:** these accept the forms written with π, with pi, and in degrees (for example `5π/6`, `5pi/6`, `150°`).
 - **Rendering:** nobody has seen the plot labels rendered, so they need a look at 360 px on staging. The `sec^-1` plot draws its two pieces as separate function domains.
+
+## Assertion-reason options (2026-11-09)
+
+Options aligned with the ISC 2027 Mathematics specimen paper (860): (a) both true, R explains A; (b) both true, R does not explain A; (c) A true, R false; (d) A false, R true. For this chapter the order is unchanged ((d) "Assertion is false and Reason is true"); only the wording now follows the specimen, so no key changed. Keys in bank order: a c a d a b. Tests are unchanged (same items in the same slots).

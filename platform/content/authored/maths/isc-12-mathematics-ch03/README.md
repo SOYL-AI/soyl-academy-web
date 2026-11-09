@@ -89,3 +89,7 @@ Run from `platform/`: `npx tsx content/authored/maths/isc-12-mathematics-ch03/sr
 
 - **Audio:** narration audio is not generated yet (TTS stage).
 - **Visuals:** the chapter has no plots. Matrices are shown as tables and flows; matrices inside table cells are rendered by KaTeX inline.
+
+## Assertion-reason options (2026-11-09)
+
+Options aligned with the ISC 2027 Mathematics specimen paper (860): (a) both true, R explains A; (b) both true, R does not explain A; (c) A true, R false; (d) A false, R true. For this chapter the order is unchanged ((d) "Assertion is false and Reason is true"); only the wording now follows the specimen, so no key changed. Keys in bank order: a a a c d b. Tests are unchanged (same items in the same slots).

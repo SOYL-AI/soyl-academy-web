@@ -28,7 +28,7 @@ All five syllabus topics, exactly as `catalog/cisce/isc-12/accounts/syllabus.yam
 | Type | Count | Marks | Notes |
 |---|---|---|---|
 | mcq | 21 | 1 | keys a5 b5 c6 d5 |
-| assertion-reason | 8 | 1 | keys a2 b2 c2 d2 (lib options; (d) = A false, R true) |
+| assertion-reason | 8 | 1 | keys a3 b3 c2 d0 (ISC specimen options; (d) = both false) |
 | numerical | 9 | 1 | average and weighted goodwill, a stock-error correction, super profit, years' purchase worked back, normal rate worked back, both capitalisations, capital employed |
 | true-false · fill-blank · match | 5 · 4 · 3 | 1 · 1 · 2 | T/F 3 true, 2 false |
 | short | 11 | 2 | features, purchased vs self-generated, occasions, why normalise, partner remuneration, five years with a loss, normal and super profit, no goodwill, capitalised super profit, average profit worked back, capital employed from the capital side |
@@ -67,3 +67,7 @@ No ISC textbook (or reference book) illustration, exercise or wording and no CIS
 - No narration audio (TTS needs OA-03).
 - Horizontal balance-sheet tables in stems and model answers have four columns with long labels (e.g. "Advertisement Suspense (deferred revenue expenditure)"); check them at 360 px on staging.
 - The SVG stacked bars place labels by computed pixel coordinates; check them in both themes.
+
+## Assertion-reason options (2026-11-09)
+
+Options aligned with the latest Class XII Accounts specimen paper (858, ISC 2026; no 2027 Class XII Accounts specimen is published): (a) both true, R explains A; (b) both true, R does not explain A; (c) A true, R false; (d) both false. For this chapter option (d) is now "Both Assertion and Reason are false" (was "A is false, but R is true"); every item keyed (d) under the old order was rewritten (its assertion corrected so both are true, or its reason made false so both are false), and its key and solution updated. Keys in bank order: c b a a a b c b. Tests are unchanged (same items in the same slots).

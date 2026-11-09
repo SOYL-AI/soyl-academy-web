@@ -51,3 +51,7 @@ Hand-authored production chapter (D-025, D-026, D-050) for ISC 2028 Mathematics 
 - Exact values are required only at multiples of 30 and 45 degrees in this chapter; other multiples of 15 degrees appear in chapter 4 (compound angles).
 - No case-based items (the ISC blueprints have no case slot).
 - Geometry and plot visuals are validated structurally and numerically but were not viewed in a browser.
+
+## Assertion-reason options (2026-11-09)
+
+Options aligned with the ISC 2027 Mathematics specimen paper (860): (a) both true, R explains A; (b) both true, R does not explain A; (c) A true, R false; (d) A false, R true. For this chapter the order is unchanged ((d) "Assertion is false and Reason is true"); only the wording now follows the specimen, so no key changed. Keys in bank order: a d b c a c b. Tests are unchanged (same items in the same slots).
