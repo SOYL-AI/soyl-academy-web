@@ -68,3 +68,7 @@ The tests are disjoint, contain no deck-check item, and follow the `isc-11-defau
 - Division into groups (equal and unequal) is outside the ISC topic list and is not covered; add it only if the syllabus file changes.
 - Narration is written for the text-to-speech pipeline but not yet synthesised; audio is `null` until the content pipeline runs `tts`.
 - No case-based items are included (the ISC blueprints have no case slot).
+
+## Assertion-reason options (2026-11-09)
+
+Options aligned with the ISC 2027 Mathematics specimen paper (860): (a) both true, R explains A; (b) both true, R does not explain A; (c) A true, R false; (d) A false, R true. For this chapter the order is unchanged ((d) "Assertion is false and Reason is true"); only the wording now follows the specimen, so no key changed. Keys in bank order: a c d b a d. Tests are unchanged (same items in the same slots).

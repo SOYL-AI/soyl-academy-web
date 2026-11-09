@@ -67,3 +67,7 @@ The tests are disjoint, contain no deck-check item, and follow the `isc-11-defau
 - Harmonic progression and arithmetico-geometric series are outside the ISC topic list, so they are not covered; if CISCE adds them the chapter needs one extra deck section.
 - No case-based items (the ISC blueprints have no case slot).
 - Visuals are tables, flow charts and two plots; there are no geometry figures (none are needed by the topics).
+
+## Assertion-reason options (2026-11-09)
+
+Options aligned with the ISC 2027 Mathematics specimen paper (860): (a) both true, R explains A; (b) both true, R does not explain A; (c) A true, R false; (d) A false, R true. For this chapter the order is unchanged ((d) "Assertion is false and Reason is true"); only the wording now follows the specimen, so no key changed. Keys in bank order: a c d b a c. Tests are unchanged (same items in the same slots).
