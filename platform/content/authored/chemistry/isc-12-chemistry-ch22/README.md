@@ -24,7 +24,7 @@ All items are `status: "draft"` until a reviewer approves them.
 | Type | Count | Marks |
 |---|---|---|
 | mcq | 25 | 1 (keys a 7, b 6, c 6, d 6; seeded balanced shuffle) |
-| assertion-reason | 6 | 1 (keys a b a c a d) |
+| assertion-reason | 6 | 1 (keys a b a c a b) |
 | true-false | 5 | 1 |
 | fill-blank | 5 | 1 |
 | match | 2 | 2 |
@@ -64,3 +64,6 @@ Audit: `docs/platform/content-qa/2026-11-05-competency-retag-audit.md`.
 - **Rewritten as genuine application items (same key, type, marks, topic tags, test slots):** q028 (infer from molar-mass and hydrolysis data which structural levels a boiled protein has lost); q030 (interpret activity-vs-temperature data, including a cooled sample, to explain the optimum and irreversible denaturation); q032 (diabetic patient skips a meal after insulin: cause and emergency treatment); q043 (dim-light vision plus slow clotting after fat malabsorption: two fat-soluble vitamins); q044 (bleeding gums and slow clotting: assign vitamins C and K and decide, from storage, which must be eaten every day); q045 (two patients, rickets and osteomalacia, with a storage argument for weekly dosing); q027 (long: number of tripeptides, sequence and terminals from partial-hydrolysis fragments, molar mass); q041 (long: which structural levels are lost under three different treatments, and effect on activity); q054 (long: beriberi and osteomalacia from a diet case, with a water-/fat-soluble storage argument).
 - **Result:** recall 18 · understanding 16 · application 27 · analysis 6 · evaluation 1. Application or higher is **34 of 68 (50.0%) of items, 61% of marks**.
 
+## Assertion-reason options (2026-11-09)
+
+Options aligned with the ISC 2027 Chemistry specimen paper (862): (a) both true, R explains A; (b) both true, R does not explain A; (c) A true, R false; (d) both false. For this chapter option (d) is now "Both Assertion and Reason are false" (was "A is false, but R is true"); every item keyed (d) under the old order was rewritten (its assertion corrected so both are true, or its reason made false so both are false), and its key, solution and scheme updated. Keys in bank order: a b a c a b. Tests are unchanged (same items in the same slots).

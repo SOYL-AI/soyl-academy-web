@@ -33,7 +33,7 @@ Retirement and death under the Act · new and gaining ratios · goodwill, book g
 | Type | Count | Marks | Notes |
 |---|---|---|---|
 | mcq | 25 | 1 | keys a7 b6 c6 d6 |
-| assertion-reason | 6 | 1 | keys a2 b1 c2 d1 |
+| assertion-reason | 6 | 1 | keys a2 b1 c2 d1 (ISC specimen options; (d) = both false) |
 | true-false · fill-blank · match | 5 · 3 · 2 | 1 · 1–2 · 2 | T/F 2 true, 3 false |
 | numerical | 6 | 1 | goodwill charged to a partner who acquires a fraction, hidden goodwill of the firm, revaluation profit of the retiring partner, profit till death (average-time and turnover), cash brought in |
 | short | 9 | 2 | ratio taken in a given ratio, sacrificing vs gaining (theory), goodwill with a stated ratio, hidden goodwill, workmen compensation and investment fluctuation reserves, time basis with entry, capital adjustment to a total, amount due with a current-account debit, Section 37 (theory) |
@@ -71,3 +71,7 @@ Accounts has no subject blueprint, so the tests use the ISC 12 defaults. The boa
 - Capital accounts with three partners make wide (8-column) markdown tables that scroll on a phone; the four-year loan ledger (WE8) is long.
 - The SVG bar diagram places labels by pixel coordinates; check it at 360 px on staging.
 - Loans use equal instalments of principal only (no equal-total annuity instalments).
+
+## Assertion-reason options (2026-11-09)
+
+Options aligned with the latest Class XII Accounts specimen paper (858, ISC 2026; no 2027 Class XII Accounts specimen is published): (a) both true, R explains A; (b) both true, R does not explain A; (c) A true, R false; (d) both false. For this chapter option (d) is now "Both Assertion and Reason are false" (was "A is false, but R is true"); every item keyed (d) under the old order was rewritten (its assertion corrected so both are true, or its reason made false so both are false), and its key and solution updated. Keys in bank order: b a c d c a. Tests are unchanged (same items in the same slots).

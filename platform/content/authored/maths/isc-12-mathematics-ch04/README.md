@@ -70,3 +70,7 @@ Nine routine one-step items (m03, m08, m14, m20, n01, n02, n03, s202, s207) are 
 - **Word problems** use prices and quantities that are imagined and labelled as such. The stationery shop prices are ₹40, ₹15 and ₹120; the bakery runs 6, 4 and 3 batches.
 - **Originality:** every set-up and matrix is our own (D-036). Stems were checked by the build against every authored chapter, including CBSE 12 Mathematics ch04, for identical prose with maths removed, and none was found. No textbook or past-paper item is reused.
 - **Rendering:** nobody has seen the plots (triangle, collinear points, parallel lines) or the wide matrices in table cells at 360 px, so they need a look on staging.
+
+## Assertion-reason options (2026-11-09)
+
+Options aligned with the ISC 2027 Mathematics specimen paper (860): (a) both true, R explains A; (b) both true, R does not explain A; (c) A true, R false; (d) A false, R true. For this chapter the order is unchanged ((d) "Assertion is false and Reason is true"); only the wording now follows the specimen, so no key changed. Keys in bank order: a d a b b. Tests are unchanged (same items in the same slots).

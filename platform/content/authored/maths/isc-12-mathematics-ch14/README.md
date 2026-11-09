@@ -80,3 +80,7 @@ Build from `platform/` with `npx tsx content/authored/maths/isc-12-mathematics-c
 - **`l03(b)`** finds the image of a point in a line as $2F - P$. This is a direct use of the foot, not a separate syllabus topic.
 - **`l04`** is in units of tens of metres, so its distance of 2 units is 20 m, and the model answer states both.
 - **Rendering:** the 3-D sketches are oblique projections captioned "not to scale". Nobody has seen their labels rendered at 360 px, so they need a look on staging.
+
+## Assertion-reason options (2026-11-09)
+
+Options aligned with the ISC 2027 Mathematics specimen paper (860): (a) both true, R explains A; (b) both true, R does not explain A; (c) A true, R false; (d) A false, R true. For this chapter the order is unchanged ((d) "Assertion is false and Reason is true"); only the wording now follows the specimen, so no key changed. Keys in bank order: a d c b a. Tests are unchanged (same items in the same slots).

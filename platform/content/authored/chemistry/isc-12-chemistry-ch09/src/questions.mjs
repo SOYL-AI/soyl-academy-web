@@ -381,9 +381,9 @@ add('redox-ar', ar({
 }));
 add('strength-ar', ar({
   a: 'Acidified potassium dichromate is a stronger oxidising agent than acidified potassium permanganate.',
-  r: 'The standard potential of Cr₂O₇²⁻/Cr³⁺ (+1.33 V) is lower than that of MnO₄⁻/Mn²⁺ (+1.52 V).',
+  r: 'The standard potential of Cr₂O₇²⁻/Cr³⁺ is higher than that of MnO₄⁻/Mn²⁺.',
   key: 'd',
-  sol: 'A is false: the lower potential means dichromate is the weaker oxidant. R is true — option (d).',
+  sol: 'Both are false: E°(Cr₂O₇²⁻/Cr³⁺) = +1.33 V is lower than E°(MnO₄⁻/Mn²⁺) = +1.52 V, so acidified dichromate is the weaker oxidising agent — option (d).',
   d: 3, c: 'analysis', t: [4],
 }));
 add('hcl-tf', tf({

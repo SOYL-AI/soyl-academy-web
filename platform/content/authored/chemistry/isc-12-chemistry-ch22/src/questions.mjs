@@ -462,10 +462,10 @@ add('base-ar', ar({
   d: 2, c: 'understanding', t: [5],
 }));
 add('rna-ar', ar({
-  a: 'RNA contains thymine as one of its bases.',
+  a: 'RNA contains uracil in place of thymine.',
   r: 'The sugar in RNA is ribose.',
-  key: 'd',
-  sol: 'A is false (RNA has uracil instead); R is true — option (d).',
+  key: 'b',
+  sol: 'Both are true, but the presence of ribose does not explain why RNA uses uracil instead of thymine — option (b).',
   d: 2, c: 'understanding', t: [5],
 }));
 add('ratio-tf', tf({

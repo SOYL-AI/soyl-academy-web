@@ -75,3 +75,7 @@ The tests are disjoint, contain no deck-check item, and follow the `isc-11-defau
 - Complex-number arithmetic beyond conjugates and modulus (polar form, De Moivre) is ch05's and is not used here.
 - Quadratic inequalities are ch07's: items on the sign of a quadratic use sign patterns only.
 - No case-based item (the ISC blueprints have no case slot).
+
+## Assertion-reason options (2026-11-09)
+
+Options aligned with the ISC 2027 Mathematics specimen paper (860): (a) both true, R explains A; (b) both true, R does not explain A; (c) A true, R false; (d) A false, R true. For this chapter the order is unchanged ((d) "Assertion is false and Reason is true"); only the wording now follows the specimen, so no key changed. Keys in bank order: a d b c d a. Tests are unchanged (same items in the same slots).

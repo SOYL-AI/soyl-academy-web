@@ -613,10 +613,10 @@ Q('m_lots_dri', mcq({
 }));
 
 Q('ar_lots', ar({
-  t: 5, d: 3, c: 'analysis', key: 'd',
-  a: 'When Lepakshi Toys Ltd, an imagined company, redeems its debentures in instalments by draw of lots, every holder receives part of the face value of each debenture every year.',
+  t: 5, d: 3, c: 'analysis', key: 'a',
+  a: 'When Lepakshi Toys Ltd, an imagined company, redeems its debentures in instalments by draw of lots, some holders are repaid in full in a year while others receive nothing that year.',
   r: 'Under redemption by draw of lots, the debentures to be redeemed in a year are chosen by lot, and their holders are repaid in full.',
-  sol: 'A is false: holders whose debentures are not drawn receive nothing that year. R is true and describes the method correctly.',
+  sol: 'Both are true: only the debentures drawn by lot in a year are redeemed, and their holders are repaid in full, so holders whose debentures are not drawn receive nothing that year. R explains A.',
 }));
 
 Q('tf_lots', tf({

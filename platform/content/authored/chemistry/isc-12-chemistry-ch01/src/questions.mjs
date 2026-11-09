@@ -472,10 +472,10 @@ add('azeo-fill', fill({
   d: 1, c: 'recall', t: [5],
 }));
 add('azeo-ar', ar({
-  a: 'Pure ethanol can be obtained by fractional distillation of a mixture of ethanol and water.',
+  a: 'Pure ethanol cannot be obtained by fractional distillation of a mixture of ethanol and water.',
   r: 'Ethanol and water form a minimum-boiling azeotrope.',
-  key: 'd',
-  sol: 'A is false — the azeotrope (about 95% ethanol) distils over and pure ethanol is not obtained; R is true — option (d).',
+  key: 'a',
+  sol: 'Both are true: ethanol and water form a minimum-boiling azeotrope (about 95% ethanol) that distils over unchanged, so fractional distillation cannot go beyond it; R explains A — option (a).',
   d: 2, c: 'understanding', t: [5],
 }));
 add('azeo-short', short({

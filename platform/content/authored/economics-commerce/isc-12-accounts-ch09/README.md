@@ -30,7 +30,7 @@ Company final accounts and Schedule III Part I (with the removed-topic line) · 
 | Type | Count | Marks | Notes |
 |---|---|---|---|
 | mcq | 22 | 1 | keys a6 b5 c6 d5 |
-| assertion-reason | 6 | 1 | keys a2 b1 c2 d1 |
+| assertion-reason | 6 | 1 | keys a3 b1 c2 d0 (ISC specimen options; (d) = both false) |
 | true-false · fill-blank · match | 4 · 3 · 3 | 1 · 1 · 2 | T/F 2 true, 2 false |
 | numerical | 6 | 1 | current liabilities total, share capital with arrears and forfeiture, shareholders' funds, long-term borrowings, PPE with depreciation, proposed dividend |
 | short | 10 | 2 | four classifications, the current-liability conditions, a simple share capital note, a note with arrears and forfeiture, surplus after an opening debit balance, a loan split at twelve months, receivables note, proposed dividend treatment, amended fixed-asset captions, why notes |
@@ -66,3 +66,7 @@ Accounts has no subject blueprint, so the tests use the ISC 12 defaults. The boa
 - No case-based item; written items are self-evaluated against the marking scheme.
 - Balance Sheets show only the current year's column (no previous-year figures); preference share capital, deferred tax and share warrants appear only in the format tables and classification items, not in a full practical.
 - The full Balance Sheets and notes are long tables that scroll on a phone; the two SVGs place labels by pixel coordinates — check them at 360 px on staging.
+
+## Assertion-reason options (2026-11-09)
+
+Options aligned with the latest Class XII Accounts specimen paper (858, ISC 2026; no 2027 Class XII Accounts specimen is published): (a) both true, R explains A; (b) both true, R does not explain A; (c) A true, R false; (d) both false. For this chapter option (d) is now "Both Assertion and Reason are false" (was "A is false, but R is true"); every item keyed (d) under the old order was rewritten (its assertion corrected so both are true, or its reason made false so both are false), and its key and solution updated. Keys in bank order: a a c a c b. Tests are unchanged (same items in the same slots).

@@ -34,7 +34,7 @@ Ratio analysis and the four ISC groups · one set of definitions and the roundin
 | Type | Count | Marks | Notes |
 |---|---|---|---|
 | mcq | 27 | 1 | keys a7 b7 c7 d6; computed options (and computed common mistakes as distractors) for quick, debt to total assets, interest coverage, inventory and receivables turnover, gross profit, earnings per share, price-earnings, return on investment and the three transaction effects |
-| assertion-reason | 6 | 1 | keys a2 b1 c1 d2 |
+| assertion-reason | 6 | 1 | keys a3 b1 c1 d1 (ISC specimen options; (d) = both false) |
 | true-false · fill-blank · match | 6 · 5 · 2 | 1 · 1 · 2 | T/F 3 true, 3 false; matches: ISC groups, turnover denominators |
 | numerical | 5 | 1 | current ratio, inventory turnover, operating ratio, earnings per share, return on investment |
 | short | 12 | 2 | liquidity pair, current liabilities from the quick ratio, quick versus current ratio, proprietary and debt to total assets, interest coverage on two loans, receivables turnover with bills, inventory signals, turnover with gross profit on cost, earnings per share and price-earnings, operating versus operating profit ratio, two effects on the current ratio, two on the debt-equity ratio |
@@ -73,3 +73,7 @@ Accounts has no subject blueprint, so the tests use the ISC 12 defaults. The boa
 - No case-based item; written items are self-evaluated against the marking scheme.
 - Limitations of ratio analysis are not taught (not in this chapter's topic list); interpretation is limited to reading ratios against benchmarks and each other.
 - The condensed balance sheets and the eight-ratio practical are long tables that scroll on a phone; the SVG places labels by pixel coordinates — check at 360 px on staging.
+
+## Assertion-reason options (2026-11-09)
+
+Options aligned with the latest Class XII Accounts specimen paper (858, ISC 2026; no 2027 Class XII Accounts specimen is published): (a) both true, R explains A; (b) both true, R does not explain A; (c) A true, R false; (d) both false. For this chapter option (d) is now "Both Assertion and Reason are false" (was "A is false, but R is true"); every item keyed (d) under the old order was rewritten (its assertion corrected so both are true, or its reason made false so both are false), and its key and solution updated. Keys in bank order: a b c a d a. Tests are unchanged (same items in the same slots).

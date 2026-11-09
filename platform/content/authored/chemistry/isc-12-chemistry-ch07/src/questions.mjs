@@ -308,10 +308,10 @@ add('ferro-mcq', mcq({
   d: 1, c: 'recall', t: [4],
 }));
 add('sc-ar', ar({
-  a: 'Aqueous solutions of scandium(III) sulfate are coloured.',
+  a: 'Aqueous solutions of scandium(III) sulfate are colourless.',
   r: 'The Sc³⁺ ion has no d electrons.',
-  key: 'd',
-  sol: 'A is false: Sc³⁺ salts are colourless. R is true, and it explains why no d–d transition is possible — option (d).',
+  key: 'a',
+  sol: 'Both are true: with no d electrons, Sc³⁺ cannot undergo a d–d transition, so its salts are colourless; R explains A — option (a).',
   d: 2, c: 'understanding', t: [4],
 }));
 add('cu1-tf', tf({

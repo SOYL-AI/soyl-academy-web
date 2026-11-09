@@ -234,10 +234,10 @@ add('benzyl-mcq', mcq({
   d: 3, c: 'analysis', t: [4],
 }));
 add('sn2-ar', ar({
-  a: '2-Bromo-2-methylpropane reacts faster than bromomethane by the SN2 mechanism.',
+  a: 'Bromomethane reacts faster than 2-bromo-2-methylpropane by the SN2 mechanism.',
   r: 'Three methyl groups hinder the backside approach of the nucleophile in 2-bromo-2-methylpropane.',
-  key: 'd',
-  sol: 'A is false: bromomethane reacts much faster by SN2. R is true — option (d).',
+  key: 'a',
+  sol: 'Both are true: the three methyl groups of 2-bromo-2-methylpropane block the backside approach that SN2 needs, so bromomethane reacts much faster; R explains A — option (a).',
   d: 3, c: 'analysis', t: [4],
 }));
 add('sn1-ar', ar({

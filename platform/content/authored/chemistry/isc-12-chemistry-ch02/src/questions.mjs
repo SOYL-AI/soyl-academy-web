@@ -210,10 +210,10 @@ add('road-mcq', mcq({
   d: 1, c: 'application', t: [3],
 }));
 add('kf-ar', ar({
-  a: 'The cryoscopic constant of a solvent depends on the solute dissolved in it.',
+  a: 'The cryoscopic constant of a solvent does not depend on the solute dissolved in it.',
   r: 'Kf = R(Tf°)²M₁ ÷ (1000 ΔfusH), where all quantities refer to the solvent.',
-  key: 'd',
-  sol: 'A is false (Kf depends only on the solvent); R is true and shows why — option (d).',
+  key: 'a',
+  sol: 'Both are true: every quantity in the expression for Kf (Tf°, M₁ and ΔfusH) belongs to the solvent, so R explains A — option (a).',
   d: 2, c: 'understanding', t: [3],
 }));
 add('tf-num', num({

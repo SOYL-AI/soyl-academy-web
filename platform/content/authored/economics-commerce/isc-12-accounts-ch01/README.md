@@ -30,7 +30,7 @@ All seven syllabus topics, following the ISC 2027 Accountancy syllabus rather th
 | Type | Count | Marks | Notes |
 |---|---|---|---|
 | mcq | 23 | 1 | keys a6 b5 c6 d6; 4 are deck checks |
-| assertion-reason | 9 | 1 | keys a3 b2 c2 d2 (CBSE-style option (d) "A false, R true", as in the shared lib) |
+| assertion-reason | 9 | 1 | keys a4 b2 c2 d1 (ISC specimen options; (d) = both false) |
 | numerical | 9 | 1 | closing capital, interest on capital with a withdrawal, partner's commission after a manager's, commission after charging, divisible profit, product method, part-year average period, guarantee in an agreed ratio, past adjustment |
 | true-false · fill-blank · match | 7 · 5 · 2 | 1 · 1 · 2 | T/F 3 true, 4 false |
 | short | 11 | 2 | partner or lender, Sections 9 and 12, why a deed, fixed vs fluctuating, manager's commission, profit short of interest, charge vs appropriation, quarterly drawings, why 6½ months, guarantee by one partner, wrong ratio |
@@ -73,4 +73,8 @@ No ISC or CBSE textbook illustration, exercise or wording (including T.S. Grewal
 - No narration audio (TTS needs OA-03).
 - Columnar capital and current-account tables have up to eight columns; check them at 360 px on staging.
 - The two SVGs place labels by pixel coordinates; check both themes.
-- Assertion-reason option (d) follows the shared lib ("A is false, but R is true"); the ISC Biology chapter uses "both false". Both (d)-keyed items here (`ar_fluct`, `ar_guar_total`) have A false and R true, so neither reading changes a key.
+- Assertion-reason options follow the ISC Accounts specimen (858): option (d) is "Both Assertion and Reason are false" (see the note at the end).
+
+## Assertion-reason options (2026-11-09)
+
+Options aligned with the latest Class XII Accounts specimen paper (858, ISC 2026; no 2027 Class XII Accounts specimen is published): (a) both true, R explains A; (b) both true, R does not explain A; (c) A true, R false; (d) both false. For this chapter option (d) is now "Both Assertion and Reason are false" (was "A is false, but R is true"); every item keyed (d) under the old order was rewritten (its assertion corrected so both are true, or its reason made false so both are false), and its key and solution updated. Keys in bank order: a c a a b c a d b. Tests are unchanged (same items in the same slots).

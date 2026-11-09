@@ -430,10 +430,10 @@ add('anprep-mcq', mcq({
   d: 2, c: 'application', t: [5],
 }));
 add('anisole-ar', ar({
-  a: 'Anisole reacts with hydrogen iodide to give iodobenzene and methanol.',
+  a: 'Anisole reacts with hydrogen iodide to give phenol and iodomethane.',
   r: 'The aryl C–O bond in anisole has partial double-bond character.',
-  key: 'd',
-  sol: 'A is false: anisole gives phenol and iodomethane. R is true, and is the reason the aryl C–O bond does not break — option (d).',
+  key: 'a',
+  sol: 'Both are true: the aryl C–O bond has partial double-bond character and does not break, so the O–CH₃ bond breaks and phenol and iodomethane form; R explains A — option (a).',
   d: 3, c: 'analysis', t: [5],
 }));
 add('anisole-tf', tf({

@@ -354,8 +354,8 @@ Q('s2_existing', short({
 Q('ar_existing', ar({
   t: 3, d: 3, c: 'understanding', key: 'd',
   a: 'Goodwill already appearing in the books of an imagined firm at the time of admission is written off among all the partners, including the new one, in the new ratio.',
-  r: 'Accounting Standard 26 permits a firm to carry only purchased goodwill in its books.',
-  sol: 'A is false: the old goodwill belongs to the old firm and is written off among the old partners in their old ratio. R is a true statement of the standard.',
+  r: 'Accounting Standard 26 permits a firm to record the goodwill it has built up itself, as well as purchased goodwill, in its books.',
+  sol: 'Both are false: the old goodwill belongs to the old firm and is written off among the old partners in their old ratio, and Accounting Standard 26 permits only purchased goodwill to be recorded, never self-generated goodwill.',
 }));
 
 Q('ar_hidden', ar({
@@ -779,10 +779,10 @@ Q('s3_change', short({
 }));
 
 Q('ar_gain', ar({
-  t: 7, d: 3, c: 'analysis', key: 'd',
-  a: 'When the partners of an imagined firm change their profit-sharing ratio, goodwill is adjusted by debiting the partner who sacrifices and crediting the partner who gains.',
+  t: 7, d: 3, c: 'analysis', key: 'a',
+  a: 'When the partners of an imagined firm change their profit-sharing ratio, goodwill is adjusted by debiting the partner who gains and crediting the partner who sacrifices.',
   r: 'A partner who gains acquires a larger share of the future profits that the firm\'s goodwill helps to earn.',
-  sol: 'A reverses the entry: the gaining partner is debited and the sacrificing partner credited. R is true, and it is the reason the gainer pays.',
+  sol: 'Both are true: the gaining partner receives a larger share of the future profits that goodwill helps to earn, so he compensates the sacrificing partner. R explains A.',
 }));
 
 const LCH = change(['Rajni', 'Sohan', 'Trilok'], [5, 3, 2], [2, 2, 1]);

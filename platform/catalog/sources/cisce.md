@@ -1249,6 +1249,7 @@ some questions of B, C and D), which `cisce/blueprints/12/*.yaml` scale down to 
 - **Exam year:** ISC 2027
 - **Fetched:** 2026-10-30
 - **Use:** Class 12 default blueprints: 3 hours, 80 marks, 20 compulsory questions; Section A 20 (1-mark items including MCQs and assertion-reason), B 2-mark, C 3-mark, D 5-mark (25 marks); internal choice in three questions each of B, C and D.
+- **A-R order:** Assertion-reason options (checked 2026-11-09; used for ISC 11 and ISC 12 Mathematics): (a) Both Assertion and Reason are true, and Reason is the correct explanation of Assertion. (b) Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion. (c) Assertion is true and Reason is false. (d) Assertion is false and Reason is true.
 
 ### `isc-2027-specimen-861-physics`
 - **Title:** ISC 2027 Specimen Question Paper and Answer Key - Physics, Paper 1 (861)
@@ -1257,6 +1258,7 @@ some questions of B, C and D), which `cisce/blueprints/12/*.yaml` scale down to 
 - **Exam year:** ISC 2027
 - **Fetched:** 2026-10-30
 - **Use:** Class 12 default blueprints: 3 hours, 70 marks, 20 questions; Section A 14 (one question of 14 one-mark subparts incl. MCQs and an assertion-reason item), B 7 x 2, C 9 x 3, D 3 x 5; internal choice in two questions each of B, C and D.
+- **A-R order:** Assertion-reason options (checked 2026-11-09; used for ISC 12 Physics): (a) Both Assertion and Reason are true, and Reason is the correct explanation for Assertion. (b) Both Assertion and Reason are true, but Reason is not the correct explanation for Assertion. (c) Assertion is true and Reason is false. (d) Assertion is false and Reason is true.
 
 ### `isc-2027-specimen-862-chemistry`
 - **Title:** ISC 2027 Specimen Question Paper and Answer Key - Chemistry, Paper 1 Theory (862)
@@ -1265,6 +1267,7 @@ some questions of B, C and D), which `cisce/blueprints/12/*.yaml` scale down to 
 - **Exam year:** ISC 2027
 - **Fetched:** 2026-10-30
 - **Use:** Class 12 default blueprints: 3 hours, 70 marks, 21 questions; Section A 14 one-mark subparts (incl. MCQs and assertion-reason), B 10 x 2, C 7 x 3, D 3 x 5; internal choice in two questions each of B, C and D.
+- **A-R order:** Assertion-reason options (checked 2026-11-09; used for ISC 11 and ISC 12 Chemistry): (a) Both Assertion and Reason are true, and Reason is the correct explanation for Assertion. (b) Both Assertion and Reason are true, but Reason is not the correct explanation for Assertion. (c) Assertion is true and Reason is false. (d) Both Assertion and Reason are false.
 
 ### `isc-2027-specimen-863-biology`
 - **Title:** ISC 2027 Specimen Question Paper and Answer Key - Biology, Paper 1 Theory (863)
@@ -1273,6 +1276,7 @@ some questions of B, C and D), which `cisce/blueprints/12/*.yaml` scale down to 
 - **Exam year:** ISC 2027
 - **Fetched:** 2026-10-30
 - **Use:** Class 12 default blueprints and the ISC 12 Biology question style: 3 hours, 70 marks, 18 compulsory questions; Section A one question of 18 one-mark subparts (MCQs, two assertion-reason items whose option (d) reads "both false", analogies, give-a-reason, short calculations), B 7 x 2, C 7 x 3, D 3 x 5 set in parts (pedigree, diagram and data stimuli); internal choice in two questions each of B, C and D; every subpart tagged with a cognitive level (Recall to Create).
+- **A-R order:** Assertion-reason options (checked 2026-11-09; used for ISC 11 and ISC 12 Biology): (a) Both Assertion and Reason are true, and Reason is the correct explanation for Assertion. (b) Both Assertion and Reason are true, but Reason is not the correct explanation for Assertion. (c) Assertion is true and Reason is false. (d) Both Assertion and Reason are false.
 
 #### ISC Commerce (857): no 2027 specimen; the 2026 specimen is used for the pattern
 
@@ -1288,6 +1292,7 @@ answer is reproduced. Chapter tests still use the `isc-12-default-*` blueprints.
 - **Exam year:** ISC 2026
 - **Fetched:** 2026-10-31
 - **Use:** Index linking the 2026 Commerce specimen (857), the latest Commerce specimen published.
+- **A-R order:** Assertion-reason options of the 2026 Accounts specimen (858, https://cisce.org/wp-content/uploads/2025/08/858-ACCOUNTS-SQP-AK.pdf, the latest Class XII Accounts specimen; checked 2026-11-09; used for ISC 12 Accounts): (a) Both Assertion and Reason are true and Reason is the correct explanation for Assertion. (b) Both Assertion and Reason are true but Reason is not the correct explanation for Assertion. (c) Assertion is true and Reason is false. (d) Both Assertion and Reason are false.
 
 ### `isc-2026-specimen-857-commerce`
 - **Title:** ISC 2026 Specimen Question Paper and Answer Key - Commerce (857)
@@ -1296,6 +1301,7 @@ answer is reproduced. Chapter tests still use the `isc-12-default-*` blueprints.
 - **Exam year:** ISC 2026 (pattern carried into 2027 by the circular above)
 - **Fetched:** 2026-10-31
 - **Use:** ISC 12 Commerce question style: 3 hours, 80 marks, 13 compulsory questions; Section A one question of 16 one-mark subparts (case-based MCQs including statement-combination items, an assertion-reason item whose option (d) reads "Both Assertion and Reason are false", analogies, true/false, fill-in-the-blank, identify-the-concept and a document-based item), B 8 x 4 (short case scenarios, some split 1 + 3 or 2 + 2), C 4 x 8 (parts of 5 + 3 and a 2 + 2 + 4 passage); internal choice in two questions of B and one of C; every subpart tagged with a cognitive level (Recall to Evaluate).
+- **A-R order:** Assertion-reason options (checked 2026-11-09; used for ISC 12 Commerce): (a) Both Assertion and Reason are true and Reason is the correct explanation for Assertion. (b) Both Assertion and Reason are true but Reason is not the correct explanation for Assertion. (c) Assertion is true and Reason is false. (d) Both Assertion and Reason are false.
 
 ### `isc-2027-specimen-856-economics`
 - **Title:** ISC 2027 Specimen Question Paper and Answer Key - Economics (856)
@@ -1304,6 +1310,7 @@ answer is reproduced. Chapter tests still use the `isc-12-default-*` blueprints.
 - **Exam year:** ISC 2027
 - **Fetched:** 2026-10-31
 - **Use:** ISC 12 Economics question style only (pattern, never questions): 3 hours plus 15 minutes reading, 80 marks, 13 compulsory questions in three sections. Section A is one question of 16 one-mark subparts (MCQs, some on a diagram, table or dated news extract; two assertion-reason items whose option (d) reads "Both Assertion and Reason are false"; very short answers such as a calculation, a definition, defend-or-refute and a data trend). Section B has eight 4-mark questions, usually set as 2 + 2 subparts (scenario explanations, diagrams, a national-income calculation from a table), with internal choice in three of them (attempt either subparts (i) and (ii) or (iii) and (iv)). Section C has four 8-mark questions set as 4 + 4 subparts, with internal choice in two. Every subpart carries a cognitive tag (Recall, Understand, Apply, Analyse, Evaluate, Create). SOYL chapter tests use the isc-12-default blueprints (1/2/3/5 marks); each ISC 12 Economics chapter bank also has some 4-mark and 8-mark items in this paper style for a future subject blueprint.
+- **A-R order:** Assertion-reason options (checked 2026-11-09; used for ISC 12 Economics): (a) Both Assertion and Reason are true, and Reason is the correct explanation of Assertion. (b) Both Assertion and Reason are true, but Reason is not the correct explanation of Assertion. (c) Assertion is true but Reason is false. (d) Both Assertion and Reason are false.
 
 ### `isc-2027-prescribed-books`
 - **Title:** ISC 2027 - Appendix I: List of Prescribed Textbooks (revised April 2026)

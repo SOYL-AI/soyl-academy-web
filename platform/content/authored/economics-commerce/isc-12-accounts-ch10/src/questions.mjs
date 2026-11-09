@@ -539,8 +539,8 @@ Q('ar_cs_size', ar({
 Q('ar_share_fall', ar({
   t: 3, d: 4, c: 'analysis', key: 'd',
   a: 'Since depreciation fell from 4.00% to 3.50% of revenue in the common-size statements of Bekal Coir Ltd, an imagined company, the depreciation charged in rupees must have fallen.',
-  r: 'A common-size percentage depends both on the item and on the revenue from operations of that year.',
-  sol: 'A is false: if revenue grew faster than depreciation, the charge could rise in rupees while its share fell. R is true, and it is why A fails.',
+  r: 'A common-size percentage depends only on the item itself and not on the revenue from operations of that year.',
+  sol: 'Both are false: a common-size percentage depends on both the item and that year\'s revenue, so if revenue grew faster than depreciation the charge could rise in rupees while its share fell.',
 }));
 
 Q('ar_cs_bs', ar({

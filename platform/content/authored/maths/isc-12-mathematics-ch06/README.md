@@ -81,3 +81,7 @@ Build from `platform/` with `npx tsx content/authored/maths/isc-12-mathematics-c
 
 - **Audio:** narration audio is not generated yet (TTS stage).
 - **Parametric plots:** the self-crossing curve is drawn as a `series` of computed points, so the plot-point lint (which needs functions) does not check its two marked points. They are asserted in `build.mjs` instead.
+
+## Assertion-reason options (2026-11-09)
+
+Options aligned with the ISC 2027 Mathematics specimen paper (860): (a) both true, R explains A; (b) both true, R does not explain A; (c) A true, R false; (d) A false, R true. For this chapter the order is unchanged ((d) "Assertion is false and Reason is true"); only the wording now follows the specimen, so no key changed. Keys in bank order: a d a b a c. Tests are unchanged (same items in the same slots).

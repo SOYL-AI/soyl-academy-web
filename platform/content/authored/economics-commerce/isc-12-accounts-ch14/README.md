@@ -32,7 +32,7 @@ Data, information, database and DBMS · types of DBMS · features, advantages an
 | Type | Count | Marks | Notes |
 |---|---|---|---|
 | mcq | 27 | 1 | keys a7 b7 c7 d6; computed options for fields and records, primary and composite keys, which record is saved, SELECT / AND / AND-OR precedence results, UPDATE effects, SUM, COUNT with NULLs, AVG, a debtor balance, an unmatched bank item, depreciation |
-| assertion-reason | 7 | 1 | keys a3 b1 c2 d1 |
+| assertion-reason | 7 | 1 | keys a3 b2 c2 d0 (ISC specimen options; (d) = both false) |
 | true-false · fill-blank · match | 7 · 4 · 4 | 1 · 1–2 · 2 | T/F 4 true, 3 false; matches: DBMS types, relationships, data types, aggregate functions |
 | numerical | 7 | 1–2 | report total for an area, rows returned by OR, rows changed by UPDATE, SUM, AVG, pass book balance (2 marks), machinery depreciation |
 | short | 11 | 2 | DBMS features, data and information, primary and foreign keys, form and report, indexing, write a SELECT, output of an AND query, UPDATE and DELETE with counts, aggregate queries, debtor balances with opening balances, unpaid creditors' bills due |
@@ -69,3 +69,7 @@ Accounts has no subject blueprint, so the tests use the ISC 12 defaults; they fi
 - No case-based item; written items are self-evaluated against the marking scheme.
 - No practice in a real database package (practical work is outside the platform).
 - Stems with three linked tables (Baya, Coot, Robin, Lammergeier) and wide result tables scroll on a phone; the two SVGs place boxes by pixel coordinates — check at 360 px on staging.
+
+## Assertion-reason options (2026-11-09)
+
+Options aligned with the latest Class XII Accounts specimen paper (858, ISC 2026; no 2027 Class XII Accounts specimen is published): (a) both true, R explains A; (b) both true, R does not explain A; (c) A true, R false; (d) both false. For this chapter option (d) is now "Both Assertion and Reason are false" (was "A is false, but R is true"); every item keyed (d) under the old order was rewritten (its assertion corrected so both are true, or its reason made false so both are false), and its key and solution updated. Keys in bank order: a c b a b a c. Tests are unchanged (same items in the same slots).

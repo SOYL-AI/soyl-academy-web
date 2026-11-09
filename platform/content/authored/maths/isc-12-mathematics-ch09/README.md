@@ -77,3 +77,7 @@ This is a hand-authored production chapter (DECISIONS D-025, D-026) that follows
 - **`s309`** uses $\sin x + \sqrt3\cos x = 2\sin\left(x + \dfrac{\pi}{3}\right)$ on $\left(-\tfrac{\pi}{3}, \tfrac{2\pi}{3}\right)$.
 - **Originality:** all integrands are SOYL's own. The order for choosing $u$ is taught by name only on slides. Narration spells it out, because text-to-speech would read capital-letter abbreviations letter by letter.
 - **Rendering:** nobody has seen the wide tables in the decks rendered at 360 px, so they need a look on staging.
+
+## Assertion-reason options (2026-11-09)
+
+Options aligned with the ISC 2027 Mathematics specimen paper (860): (a) both true, R explains A; (b) both true, R does not explain A; (c) A true, R false; (d) A false, R true. For this chapter the order is unchanged ((d) "Assertion is false and Reason is true"); only the wording now follows the specimen, so no key changed. Keys in bank order: a a a c d b a. Tests are unchanged (same items in the same slots).

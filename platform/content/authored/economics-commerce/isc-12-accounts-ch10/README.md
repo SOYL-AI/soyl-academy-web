@@ -30,7 +30,7 @@ Financial statement analysis and its tools (with the removed-topic line) · sign
 | Type | Count | Marks | Notes |
 |---|---|---|---|
 | mcq | 22 | 1 | keys a6 b5 c6 d5 |
-| assertion-reason | 6 | 1 | keys a2 b1 c2 d1 |
+| assertion-reason | 6 | 1 | keys a2 b1 c2 d1 (ISC specimen options; (d) = both false) |
 | true-false · fill-blank · match | 4 · 3 · 3 | 1 · 1 · 2 | T/F 2 true, 2 false |
 | numerical | 8 | 1 | percentage change, a rounded change (11.67), earlier year from the change (₹7,00,000), inter-firm difference, two common-size shares, the balance sheet total from a share (₹28,00,000), profit after tax share |
 | short | 11 | 2 | meaning of common-size, two limitations, two uses, intra- versus inter-firm, two changes, earlier-year figures from percentages, interpreting two changes, head changes, two differences, two shares, profit in rupees from shares (9.375 → 9.38) |
@@ -68,3 +68,7 @@ Accounts has no subject blueprint, so the tests use the ISC 12 defaults. The boa
 - No case-based item; written items are self-evaluated against the marking scheme.
 - Statements cover two years or two firms only (no three-year trend percentages, which the syllabus does not name).
 - Comparative and common-size statements are wide five-column tables that scroll on a phone; the three SVGs place labels by pixel coordinates — check at 360 px on staging.
+
+## Assertion-reason options (2026-11-09)
+
+Options aligned with the latest Class XII Accounts specimen paper (858, ISC 2026; no 2027 Class XII Accounts specimen is published): (a) both true, R explains A; (b) both true, R does not explain A; (c) A true, R false; (d) both false. For this chapter option (d) is now "Both Assertion and Reason are false" (was "A is false, but R is true"); every item keyed (d) under the old order was rewritten (its assertion corrected so both are true, or its reason made false so both are false), and its key and solution updated. Keys in bank order: a b a c d c. Tests are unchanged (same items in the same slots).
