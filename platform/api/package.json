@@ -24,18 +24,18 @@
     "billing": "tsx scripts/billing.ts"
   },
   "dependencies": {
-    "@fastify/swagger": "9.9.2",
+    "@fastify/swagger": "9.9.3",
     "@soyl/ai-core": "*",
     "@soyl/content-pipeline": "*",
     "@soyl/db": "*",
     "@soyl/shared": "*",
-    "better-auth": "1.7.13",
+    "better-auth": "1.7.18",
     "drizzle-orm": "0.45.4",
-    "fastify": "5.12.7",
+    "fastify": "5.12.8",
     "fastify-type-provider-zod": "7.0.0",
     "ioredis": "5.11.1",
-    "jose": "6.2.13",
-    "openid-client": "6.8.8",
+    "jose": "6.2.15",
+    "openid-client": "6.8.9",
     "pg": "8.23.1",
     "pino": "10.4.0",
     "zod": "4.6.7"
@@ -43,11 +43,11 @@
   "devDependencies": {
     "@types/node": "24.19.2",
     "@types/pg": "8.23.1",
-    "@vitest/coverage-v8": "5.0.5",
+    "@vitest/coverage-v8": "5.1.0",
     "esbuild": "0.28.2",
     "ioredis-mock": "8.13.1",
     "tsx": "4.23.15",
     "typescript": "5.9.3",
-    "vitest": "5.0.5"
+    "vitest": "5.1.0"
   }
 }
