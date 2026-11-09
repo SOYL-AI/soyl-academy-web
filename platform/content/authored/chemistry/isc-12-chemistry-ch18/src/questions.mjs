@@ -366,9 +366,9 @@ add('hvz-ar', ar({
 }));
 add('kolbe-ar', ar({
   a: 'Kolbe electrolysis of sodium ethanoate gives methane.',
-  r: 'In Kolbe electrolysis, carboxylate ions lose CO₂ at the anode.',
+  r: 'In Kolbe electrolysis, the carboxylate ions gain electrons at the cathode.',
   key: 'd',
-  sol: 'A is false: the methyl radicals couple to give ethane. R is true — option (d).',
+  sol: 'Both are false: the carboxylate ions lose electrons and CO₂ at the anode, and the methyl radicals formed couple to give ethane — option (d).',
   d: 3, c: 'analysis', t: [5],
 }));
 add('sodalime-fill', fill({

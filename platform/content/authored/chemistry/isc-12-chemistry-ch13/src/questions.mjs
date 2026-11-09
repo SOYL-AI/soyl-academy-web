@@ -319,10 +319,10 @@ add('nuc-ar', ar({
   d: 3, c: 'analysis', t: [4],
 }));
 add('sn2-ar', ar({
-  a: 'Chlorobenzene readily undergoes SN2 substitution with hydroxide ions.',
+  a: 'Chlorobenzene does not undergo SN2 substitution with hydroxide ions under ordinary conditions.',
   r: 'The benzene ring blocks backside attack on the carbon bonded to chlorine.',
-  key: 'd',
-  sol: 'A is false; R is true and is one reason why SN2 does not occur — option (d).',
+  key: 'a',
+  sol: 'Both are true: the benzene ring lies behind the carbon bonded to chlorine, so the nucleophile cannot make the backside attack that SN2 needs; R explains A — option (a).',
   d: 2, c: 'understanding', t: [4],
 }));
 add('meta-tf', tf({

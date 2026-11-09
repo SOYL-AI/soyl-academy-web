@@ -78,10 +78,10 @@ add('catalyst-ar', ar({
   d: 2, c: 'understanding', t: [1],
 }));
 add('endo-ar', ar({
-  a: 'For an endothermic reaction such as the decomposition of N₂O₄ into NO₂, the forward activation energy can be smaller than ΔH.',
+  a: 'For an endothermic reaction such as the decomposition of N₂O₄ into NO₂, the forward activation energy is greater than ΔH.',
   r: 'ΔH = Ea(forward) − Ea(reverse).',
-  key: 'd',
-  sol: 'A is false: since Ea(reverse) is positive, Ea(forward) = ΔH + Ea(reverse) > ΔH. R is true — option (d).',
+  key: 'a',
+  sol: 'Both are true: rearranging R gives Ea(forward) = ΔH + Ea(reverse), and Ea(reverse) is positive, so Ea(forward) exceeds ΔH; R explains A — option (a).',
   d: 3, c: 'analysis', t: [1],
 }));
 add('complex-tf', tf({

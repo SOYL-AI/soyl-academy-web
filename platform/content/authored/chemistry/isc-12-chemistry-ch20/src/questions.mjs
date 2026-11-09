@@ -348,10 +348,10 @@ add('naphthol-mcq', mcq({
   d: 2, c: 'application', t: [4],
 }));
 add('couple-ar', ar({
-  a: 'Benzenediazonium ion couples with aniline in strongly acidic solution.',
+  a: 'Benzenediazonium ion does not couple with aniline in strongly acidic solution.',
   r: 'In strongly acidic solution aniline is protonated to the deactivated anilinium ion.',
-  key: 'd',
-  sol: 'A is false (coupling needs mildly acidic conditions). R is true and explains why strong acid prevents coupling — option (d).',
+  key: 'a',
+  sol: 'Both are true: in strong acid aniline is protonated to the deactivated anilinium ion, which the weakly electrophilic diazonium ion cannot attack; R explains A — option (a).',
   d: 3, c: 'analysis', t: [4],
 }));
 add('para-tf', tf({

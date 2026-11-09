@@ -58,3 +58,6 @@ Every question and every internal-choice alternative was re-solved from its stem
 - Narration audio is not generated (TTS stage).
 - SVGs were reviewed by coordinates, not rasterised.
 
+## Assertion-reason options (2026-11-09)
+
+Options aligned with the ISC 2027 Chemistry specimen paper (862): (a) both true, R explains A; (b) both true, R does not explain A; (c) A true, R false; (d) both false. For this chapter option (d) is now "Both Assertion and Reason are false" (was "A is false, but R is true"); every item keyed (d) under the old order was rewritten (its assertion corrected so both are true, or its reason made false so both are false), and its key, solution and scheme updated. Keys in bank order: d a b c a. Tests are unchanged (same items in the same slots).

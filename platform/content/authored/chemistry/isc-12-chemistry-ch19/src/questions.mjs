@@ -429,10 +429,10 @@ add('nitroben-ar', ar({
   d: 2, c: 'understanding', t: [6],
 }));
 add('acet-ar', ar({
-  a: 'Bromine water converts acetanilide into 2,4,6-tribromoacetanilide.',
+  a: 'Bromine water converts acetanilide mainly into 4-bromoacetanilide.',
   r: 'The acetamido group is a weaker activator than the amino group.',
-  key: 'd',
-  sol: 'A is false: acetanilide gives mainly 4-bromoacetanilide. R is true — option (d).',
+  key: 'a',
+  sol: 'Both are true: the acetamido group activates the ring less than the amino group, so bromination stops at the para product instead of going to the tribromo compound; R explains A — option (a).',
   d: 3, c: 'analysis', t: [6],
 }));
 add('aniline-num', num({

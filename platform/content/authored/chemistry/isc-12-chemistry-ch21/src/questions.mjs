@@ -300,9 +300,9 @@ add('fehlingfru-mcq', mcq({
 }));
 add('fehling-ar', ar({
   a: 'Tollens’ reagent can be used to distinguish glucose from fructose.',
-  r: 'Fructose is a reducing sugar.',
+  r: 'Fructose is a non-reducing sugar.',
   key: 'd',
-  sol: 'A is false (both give a silver mirror); R is true — option (d).',
+  sol: 'Both are false: fructose is a reducing sugar, so glucose and fructose both give a silver mirror and Tollens’ reagent cannot tell them apart — option (d).',
   d: 2, c: 'understanding', t: [3],
 }));
 add('brwater-ar', ar({

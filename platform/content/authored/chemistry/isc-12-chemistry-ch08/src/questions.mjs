@@ -63,10 +63,10 @@ add('ln-plus3-ar', ar({
   d: 3, c: 'understanding', t: [1],
 }));
 add('lu-colour-ar', ar({
-  a: 'Aqueous solutions of lutetium(III) salts are coloured.',
+  a: 'Aqueous solutions of lutetium(III) salts are colourless.',
   r: 'The Lu³⁺ ion has a completely filled 4f subshell.',
-  key: 'd',
-  sol: 'A is false: with 4f¹⁴ there is no f–f transition, so Lu³⁺ is colourless. R is true — option (d).',
+  key: 'a',
+  sol: 'Both are true: with a full 4f¹⁴ subshell there is no f–f transition, so Lu³⁺ salts are colourless; R explains A — option (a).',
   d: 2, c: 'understanding', t: [1],
 }));
 add('tb4-tf', tf({
