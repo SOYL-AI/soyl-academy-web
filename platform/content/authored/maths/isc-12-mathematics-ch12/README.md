@@ -59,3 +59,7 @@ The build runs the shared lib's checks: KaTeX strict parse (1,211 maths strings)
 - **`s305`:** the solution is valid for $1 \le x < \sqrt{e}$, and the model answer says so.
 - **`l06`:** uses $\int e^{x}\sin x\,dx = \dfrac{e^{x}(\sin x - \cos x)}{2}$, from integration by parts in ch09.
 - **Rendering:** nobody has seen the plot labels rendered, so they need a look at 360 px on staging.
+
+## Assertion-reason options (2026-11-09)
+
+Options aligned with the ISC 2027 Mathematics specimen paper (860): (a) both true, R explains A; (b) both true, R does not explain A; (c) A true, R false; (d) A false, R true. For this chapter the order is unchanged ((d) "Assertion is false and Reason is true"); only the wording now follows the specimen, so no key changed. Keys in bank order: a a a d b c. Tests are unchanged (same items in the same slots).
