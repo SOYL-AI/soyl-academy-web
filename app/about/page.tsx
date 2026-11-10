@@ -4,6 +4,7 @@ import { Label } from '@/components/ui/SectionHeader';
 import { Photo } from '@/components/media/Photo';
 import { StructuredData } from '@/components/seo/StructuredData';
 import { images } from '@/content/images';
+import { PHOTO_CREDITS } from '@/content/credits';
 import { ORGANIZATION_ID, SITE_CONTACT_EMAIL, SITE_LEGAL_NAME } from '@/lib/seo/config';
 import { createMetadata } from '@/lib/seo/metadata';
 import { breadcrumbNode, graph, topLevelCrumbs, webPageNode } from '@/lib/seo/schema';
@@ -85,6 +86,27 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Credits for the real photographs on the site (content/credits.ts, DESIGN.md §6). */}
+      <section aria-labelledby="credits-title" className="section-tight">
+        <div className="page">
+          <h2 id="credits-title" className="t-eyebrow text-muted">Photographs</h2>
+          <ul className="mt-4 grid gap-2 text-[15px] text-muted md:grid-cols-2">
+            {PHOTO_CREDITS.map((c) => (
+              <li key={c.slug}>
+                {c.alt}: photo by{' '}
+                <a href={c.photographerUrl} className="link" rel="noopener noreferrer">
+                  {c.photographer}
+                </a>{' '}
+                on{' '}
+                <a href={c.sourceUrl} className="link" rel="noopener noreferrer">
+                  {c.source}
+                </a>
+                .
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
       <FinalCta />
     </>
   );
