@@ -14,6 +14,8 @@ const eslintConfig = defineConfig([
     "next-env.d.ts",
     // Platform services have their own toolchain (platform/package.json, ADR-001).
     "platform/**",
+    // Offline painting tools: p5.brush (minified, MIT) and the plate recipes run in headless Chrome, not on the site (ADR-028).
+    "tools/**",
   ]),
   // WEB-6 (ADR-011): platform code never injects HTML, except the reviewed, sanitising renderers.
   // Scoped to platform paths only; marketing files are unaffected.
