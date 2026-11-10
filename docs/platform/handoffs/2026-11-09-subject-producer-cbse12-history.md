@@ -33,7 +33,7 @@ The chapters are hand-authored under D-025/D-026/D-050, in family folder `social
 | 09 | Colonialism and the Countryside | 740e6d9a | 21 + 21 | 7 | 32 | 72 | 50.0% |
 | 10 | Rebels and the Raj | da0b8685 | 21 + 21 | 7 | 33 | 75 | 48.0% |
 | 11 | Mahatma Gandhi and the Nationalist Movement | b71cda62 | 21 + 21 | 7 | 32 | 75 | 48.0% |
-| 12 | Framing the Constitution | committed with this note | 20 + 20 | 7 | 33 | 73 | 47.9% |
+| 12 | Framing the Constitution | 27f8c574 | 20 + 20 | 7 | 33 | 73 | 47.9% |
 | **Total** | | | **24 decks, 495 slides** | 84 | 393 | **891** | |
 
 "App.+" is the share of top-level items at application or above. Every chapter is inside the lint band of 45–65%.
