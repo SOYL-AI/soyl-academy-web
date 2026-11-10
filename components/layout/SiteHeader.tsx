@@ -264,7 +264,7 @@ export function SiteHeader({ groups, logo, actions, panels, sheetPanels, sheetTo
     <>
       <header
         ref={headerRef}
-        className="sticky top-0 z-40 border-b border-rule bg-white/90 backdrop-blur-md backdrop-saturate-150"
+        className="sticky top-0 z-40 border-b border-rule bg-paper/92 backdrop-blur-md"
       >
         <div className="page flex h-16 items-center gap-3 md:h-[72px] md:gap-6">
           {logo}
@@ -283,14 +283,14 @@ export function SiteHeader({ groups, logo, actions, panels, sheetPanels, sheetTo
                       aria-controls={`nav-panel-${group.id}`}
                       onClick={(e) => onTriggerClick(group.id, e)}
                       onKeyDown={(e) => onTriggerKeyDown(index, e)}
-                      className={`group/trig relative inline-flex h-10 items-center gap-1 rounded-full px-3.5 text-[15px] font-medium transition-colors duration-200 ${
-                        open ? 'bg-paper text-ink' : current ? 'text-ink hover:bg-paper/70' : 'text-muted hover:bg-paper/70 hover:text-ink'
+                      className={`group/trig relative inline-flex h-11 items-center gap-1 rounded-[var(--radius-sm)] px-3 text-[15px] font-medium transition-colors duration-150 ${
+                        open ? 'bg-paper-2 text-ink' : current ? 'text-ink hover:bg-paper-2' : 'text-graphite hover:bg-paper-2 hover:text-ink'
                       }`}
                     >
                       {group.label}
                       <Chevron className="-mr-1 transition-transform duration-300 group-aria-expanded/trig:rotate-180" />
                       {current && (
-                        <span aria-hidden="true" className="absolute bottom-0.5 left-1/2 h-1 w-1 -translate-x-1/2 rounded-full bg-red-pen" />
+                        <span aria-hidden="true" className="absolute bottom-1 left-1/2 h-1 w-1 -translate-x-1/2 rounded-full bg-madder" />
                       )}
                     </button>
                     <div
@@ -298,7 +298,7 @@ export function SiteHeader({ groups, logo, actions, panels, sheetPanels, sheetTo
                       hidden={!open}
                       onKeyDown={(e) => onPanelKeyDown(group.id, e)}
                       onClick={closeOnLink}
-                      className="absolute inset-x-0 top-full border-b border-rule bg-white shadow-[0_28px_48px_-28px_rgba(20,20,20,0.28)] transition-[opacity,translate] duration-200 ease-out starting:-translate-y-1 starting:opacity-0"
+                      className="absolute inset-x-0 top-full border-b border-rule bg-paper shadow-[0_28px_48px_-28px_rgba(27,26,25,0.28)] transition-[opacity,translate] duration-200 ease-out starting:-translate-y-1 starting:opacity-0"
                     >
                       {panels[group.id]}
                     </div>
@@ -319,7 +319,7 @@ export function SiteHeader({ groups, logo, actions, panels, sheetPanels, sheetTo
               }}
               aria-expanded={mobileOpen}
               aria-controls="mobile-menu"
-              className="press -mr-2 inline-flex h-11 w-11 items-center justify-center rounded-full hover:bg-paper lg:hidden"
+              className="press -mr-2 inline-flex h-11 w-11 items-center justify-center rounded-[var(--radius-sm)] hover:bg-paper-2 lg:hidden"
             >
               <span className="sr-only">{mobileOpen ? 'Close menu' : 'Open menu'}</span>
               <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true">
@@ -346,7 +346,7 @@ export function SiteHeader({ groups, logo, actions, panels, sheetPanels, sheetTo
         ref={sheetRef}
         hidden={!mobileOpen}
         onClick={closeOnLink}
-        className="fixed inset-x-0 bottom-0 top-16 z-40 flex flex-col border-t border-rule bg-white md:top-[72px] lg:hidden"
+        className="fixed inset-x-0 bottom-0 top-16 z-40 flex flex-col border-t border-rule bg-paper md:top-[72px] lg:hidden"
       >
         <nav aria-label="Mobile" className="min-h-0 flex-1 overflow-y-auto overscroll-contain">
           <div className="page pb-6 pt-4">
@@ -365,9 +365,9 @@ export function SiteHeader({ groups, logo, actions, panels, sheetPanels, sheetTo
                     >
                       <span className="flex items-center gap-2.5">
                         {group.label}
-                        {group.hrefs.some(isCurrent) && <span aria-hidden="true" className="h-2 w-2 rounded-full bg-red-pen" />}
+                        {group.hrefs.some(isCurrent) && <span aria-hidden="true" className="h-2 w-2 rounded-full bg-madder" />}
                       </span>
-                      <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full border border-rule text-ink transition-colors group-aria-expanded/acc:bg-paper">
+                      <span className="grid h-10 w-10 shrink-0 place-items-center rounded-[var(--radius-sm)] border border-rule text-ink transition-colors group-aria-expanded/acc:bg-paper-2">
                         <Chevron className="h-[18px] w-[18px] transition-transform duration-300 group-aria-expanded/acc:rotate-180" />
                       </span>
                     </button>
@@ -380,7 +380,7 @@ export function SiteHeader({ groups, logo, actions, panels, sheetPanels, sheetTo
             </ul>
           </div>
         </nav>
-        <div className="border-t border-rule bg-white pb-[max(1rem,env(safe-area-inset-bottom))] pt-4">
+        <div className="border-t border-rule bg-paper pb-[max(1rem,env(safe-area-inset-bottom))] pt-4">
           <div className="page flex gap-3">{sheetFooter}</div>
         </div>
       </div>

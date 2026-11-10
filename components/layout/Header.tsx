@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { APP_URL, NAV_GROUPS, PLATFORM_ENABLED, PLATFORM_LOGIN_HREF, PRIMARY_CTA, type NavFeature } from '@/lib/site';
 import { formatArticleDate, journalArticles } from '@/content/journal';
 import { Logo } from '@/components/ui/Logo';
-import { buttonClasses } from '@/components/ui/Button';
+import { inkButtonClasses } from '@/components/ink/Button';
 import { SiteHeader } from './SiteHeader';
 import { DesktopPanel, FeatureCard, SheetPanel, type ResolvedNavGroup } from './MenuParts';
 
@@ -65,7 +65,7 @@ export function Header() {
           <SignIn className="hover-line hidden py-1 text-[15px] font-medium text-ink sm:inline" />
           <Link
             href={PRIMARY_CTA.href}
-            className={buttonClasses('primary', 'md', 'hidden h-9 px-3.5 text-[14px] min-[375px]:inline-flex md:h-11 md:px-5 md:text-[15px]')}
+            className={inkButtonClasses('primary', 'md', 'hidden px-3.5 text-[14px] min-[375px]:inline-flex md:px-5 md:text-[15px]')}
           >
             {PRIMARY_CTA.label}
           </Link>
@@ -76,8 +76,8 @@ export function Header() {
       sheetTop={learn ? <FeatureCard feature={learn.feature} compact /> : undefined}
       sheetFooter={
         <>
-          <SignIn className={buttonClasses('secondary', 'lg', 'flex-1 px-4')} />
-          <Link href={PRIMARY_CTA.href} className={buttonClasses('primary', 'lg', 'flex-[1.4] px-4')}>
+          <SignIn className={inkButtonClasses('secondary', 'lg', 'flex-1 px-4')} />
+          <Link href={PRIMARY_CTA.href} className={inkButtonClasses('primary', 'lg', 'flex-[1.4] px-4')}>
             {PRIMARY_CTA.label}
           </Link>
         </>
