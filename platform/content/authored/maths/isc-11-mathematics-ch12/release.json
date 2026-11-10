@@ -4353,7 +4353,7 @@
           "d"
         ]
       },
-      "solution_md": "For $y = 0$: $x^2 + 6x + 9 = (x + 3)^2 = 0$, a repeated root, so it touches the $x$-axis at $(-3, 0)$. For $x = 0$: $y^2 - 8y + 9 = 0$ has discriminant $64 - 36 = 28$, so the chord on the $y$-axis has length $\\sqrt{28} = 2\\sqrt{7}$. The second option swaps the axes; the circle does meet the $y$-axis in two points, so the last two are false.",
+      "solution_md": "For $y = 0$: $x^2 + 6x + 9 = (x + 3)^2 = 0$, a repeated root, so it touches the $x$-axis at $(-3, 0)$. For $x = 0$: $y^2 - 8y + 9 = 0$ has discriminant $64 - 36 = 28$, so the chord on the $y$-axis has length $\\sqrt{28} = 2\\sqrt{7}$. The statement that it touches the $y$-axis and cuts a chord of $2\\sqrt{7}$ on the $x$-axis swaps the axes; the circle does meet the $y$-axis in two points, so \"touches both axes\" and \"meets neither axis\" are false.",
       "marking_scheme": [
         {
           "step": "Correct option (d)",
@@ -4581,7 +4581,7 @@
           "d"
         ]
       },
-      "solution_md": "Adding the two lines gives $x = 3$ and then $y = 1$. Then $r^2 = (5 - 3)^2 + (6 - 1)^2 = 4 + 25 = 29$, so $(x - 3)^2 + (y - 1)^2 = 29$. The second option swaps the coordinates of the centre; $25$ keeps only the term $(6 - 1)^2$; and the last option reverses the signs of the centre.",
+      "solution_md": "Adding the two lines gives $x = 3$ and then $y = 1$. Then $r^2 = (5 - 3)^2 + (6 - 1)^2 = 4 + 25 = 29$, so $(x - 3)^2 + (y - 1)^2 = 29$. The equation $(x - 1)^2 + (y - 3)^2 = 29$ swaps the coordinates of the centre; $(x - 3)^2 + (y - 1)^2 = 25$ keeps only the term $(6 - 1)^2$; and $(x + 3)^2 + (y + 1)^2 = 29$ reverses the signs of the centre.",
       "marking_scheme": [
         {
           "step": "Correct option (d)",
@@ -7570,7 +7570,7 @@
     "checks": {
       "syllabus": "topics t01-t03 of isc-11-mathematics-ch12 (no removed topics); the ISC topic list is followed exactly: standard, diameter, general and parametric forms, centre and radius from the general equation, a circle through three points or a circle whose centre lies on a line, intercepts on the axes, relative positions of two circles and circles touching externally and internally; tangents, normals, the length of a tangent and the radical axis are not in the ISC topic list for this chapter and are not taught or tested",
       "self_checks": "every centre, radius, equation, intercept and point of contact is computed in circ.mjs from the givens by a closed formula on exact rationals and by testing points on the curve (substitution and 720-point sampling), and asserted in vis.mjs and the question files",
-      "katex": "2069 math strings parsed with KaTeX 0.19.0 (throwOnError, strict: error), 0 failures; 0 LaTeX commands missing their backslash; 0 LaTeX outside $…$",
+      "katex": "2074 math strings parsed with KaTeX 0.19.0 (throwOnError, strict: error), 0 failures; 0 LaTeX commands missing their backslash; 0 LaTeX outside $…$",
       "plots": "11 deck plots + 9 notes/question plots: 71 marked points all on their curves and matching their labels; 9 zeros located numerically and all marked; 10 intersection points lie on both lines",
       "re_solve": "156/156 checks pass (independent arithmetic from the givens; keys, numerical values, and the numbers inside solutions and model answers)",
       "narration": "44 slides, max 86 words, mean 60; no symbols, LaTeX or letter abbreviations",

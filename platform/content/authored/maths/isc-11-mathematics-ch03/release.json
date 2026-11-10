@@ -6980,7 +6980,7 @@
           "d"
         ]
       },
-      "solution_md": "Divide $\\sin^2\\theta + \\cos^2\\theta = 1$ by $\\sin^2\\theta$: $1 + \\cot^2\\theta = \\operatorname{cosec}^2\\theta$. The companion identity $1 + \\tan^2\\theta = \\sec^2\\theta$ is the one that gives the second option.",
+      "solution_md": "Divide $\\sin^2\\theta + \\cos^2\\theta = 1$ by $\\sin^2\\theta$: $1 + \\cot^2\\theta = \\operatorname{cosec}^2\\theta$. The companion identity $1 + \\tan^2\\theta = \\sec^2\\theta$ is the one that gives the wrong option $\\sec^2\\theta$.",
       "marking_scheme": [
         {
           "step": "Correct option (d)",
@@ -10510,7 +10510,7 @@
     "checks": {
       "syllabus": "topics t01-t04 of isc-11-mathematics-ch03; compound, multiple and sub-multiple angles are chapter 4 and are not taught here",
       "self_checks": "every table value, plotted point, allied-angle rule, standard value, period and worked example is computed or sampled in build.mjs and asserted",
-      "katex": "1901 math strings parsed with KaTeX 0.19.0 (throwOnError, strict: error), 0 failures; 0 LaTeX commands missing their backslash; 0 LaTeX outside $…$",
+      "katex": "1902 math strings parsed with KaTeX 0.19.0 (throwOnError, strict: error), 0 failures; 0 LaTeX commands missing their backslash; 0 LaTeX outside $…$",
       "plots": "7 deck plots + 8 notes/question plots: 85 marked points all on their curves and matching their labels; 32 zeros located numerically and all marked; 3 intersection points lie on both lines",
       "re_solve": "139/139 checks pass (independent arithmetic from the givens; keys, numerical values, and the numbers inside solutions and model answers)",
       "narration": "45 slides, max 77 words, mean 54; no symbols, LaTeX or letter abbreviations",
