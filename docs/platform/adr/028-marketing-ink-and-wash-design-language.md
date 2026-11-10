@@ -1,6 +1,7 @@
 # ADR-028: Marketing design language "Ink and wash", with a slate night theme for the app
 
-Status: **proposed** (marketing, 2026-11-10). Owner decisions are recorded in
+Status: **proposed** (marketing, 2026-11-10; phase 1 implemented on the branch 2026-11-10, see
+`docs/platform/handoffs/2026-11-10-marketing-ink-and-wash-phase1.md`). Owner decisions are recorded in
 [`docs/redesign-ink-and-wash.md`](../../redesign-ink-and-wash.md) §0. The visual baseline is
 **not** re-captured by this ADR: the owner approves the new look first (see "Baseline").
 Related: ADR-001 (platform inside the marketing app; shared-file rule), ADR-023 (platform app
@@ -61,9 +62,19 @@ c. *Fetch at build time into a git-ignored folder and self-host with `next/font/
 - `app/layout.tsx`: Newsreader is replaced by Zodiak and Switzer through `next/font/local`.
   `--font-inter` and `--font-instrument-serif` stay defined until the app's own theme change
   (below) lands, because the platform UI kit reads them.
-- `package.json`: a `prebuild` and `predev` step runs `scripts/fetch-fonts.mjs`. It exits 0 when
-  Fontshare is unreachable (the metric-matched fallbacks render), so it can never fail a build.
-  `.gitignore` gains `assets/fonts/`.
+- `package.json`: `postinstall`, `predev` and `prebuild` run `scripts/fetch-fonts.mjs`. It exits 0 when
+  Fontshare is unreachable (the metric-matched fallbacks render), so it can never fail an install or a
+  build. `.gitignore` gains `assets/fonts/` and `tools/art/out/`.
+  *Amended in phase 1:* `postinstall` was added because several e2e scripts call `npx next build` and
+  `npx next dev` directly, which skips the `pre*` hooks; `npm ci` always runs first. `next/font/local`
+  fails to compile when a file is missing, so the script's last resort is a glyphless placeholder
+  (`scripts/fonts/placeholder.woff2`, made by `make-placeholder.py`, containing no outlines from any
+  font): the build succeeds and every character renders in the fallback. Before that it tries a cache in
+  `node_modules/.cache/soyl-fonts/`.
+- `eslint.config.mjs`: `tools/**` is ignored (minified p5.brush and the painting recipes; not site code).
+- The Future Builders pages keep their look (plan §3.3) through `app/future-builders/layout.tsx`: a
+  `.brand-legacy` wrapper that restores the legacy token values and loads Newsreader for those routes
+  only. Only the shared header and footer change there.
 - No new runtime dependency. Paint is shipped as images from `public/art/`; the site carries no
   canvas, WebGL or animation library. Sources live in `tools/art/` (p5.brush is MIT; its licence
   file is added there).
