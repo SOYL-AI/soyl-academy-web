@@ -2,6 +2,7 @@
 
 import { useId, useRef, useState } from 'react';
 import { cn } from '@/lib/utils';
+import { feedbackFor, fmt, hintsFor, label, type Pt } from './coordinates';
 
 /**
  * A small, honest taste of a SOYL question: plot a point on a coordinate grid.
@@ -11,8 +12,6 @@ import { cn } from '@/lib/utils';
  * Pointer: tap or drag on the grid. Keyboard: arrow keys move the point,
  * Enter checks. No animation library; transitions are CSS and under 300 ms.
  */
-
-type Pt = { x: number; y: number };
 
 const TARGETS: Pt[] = [
   { x: 3, y: -2 },
@@ -27,31 +26,7 @@ const SIZE = RANGE * 2 * UNIT; // 200
 const PAD = 14;
 
 const toSvg = (p: Pt) => ({ cx: PAD + (p.x + RANGE) * UNIT, cy: PAD + (RANGE - p.y) * UNIT });
-const fmt = (n: number) => (n < 0 ? `−${Math.abs(n)}` : String(n));
-const label = (p: Pt) => `(${fmt(p.x)}, ${fmt(p.y)})`;
-
-/** A nudge about what went wrong — never the answer itself. */
-function feedbackFor(guess: Pt, target: Pt): string {
-  if (guess.x === target.y && guess.y === target.x && target.x !== target.y) {
-    return 'Looks like x and y swapped places. The first number is always x: across before up.';
-  }
-  if (guess.x === target.x) {
-    return guess.y === -target.y
-      ? 'Your x is right. Check the sign of y: positive is above the x-axis, negative is below.'
-      : 'Your x is right. Now count the y-steps again, up or down from the x-axis.';
-  }
-  if (guess.y === target.y) {
-    return guess.x === -target.x
-      ? 'Your y is right. Check the sign of x: positive is to the right, negative to the left.'
-      : 'Your y is right. Count the x-steps again along the horizontal axis.';
-  }
-  return 'Not yet. Start at the origin (0, 0), move along x first, then up or down for y.';
-}
-
-const HINTS = (t: Pt) => [
-  `Start at the origin, where the two axes cross. That point is (0, 0).`,
-  `The first number is x. Move ${Math.abs(t.x)} step${Math.abs(t.x) === 1 ? '' : 's'} ${t.x < 0 ? 'left' : 'right'} along the horizontal axis.`,
-];
+const HINTS = hintsFor;
 
 export function MiniSimulator() {
   const [round, setRound] = useState(0);

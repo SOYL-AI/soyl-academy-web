@@ -5,11 +5,12 @@ import { Photo } from '@/components/media/Photo';
 import { Drawn } from '@/components/motion/Text';
 import { AssignmentToggle } from './AssignmentToggle';
 
-export function Shift() {
+/** The before/after assignment toggle. Moved from the homepage to /schools (docs/redesign-ink-and-wash.md §3.2). */
+export function Shift({ num = '01' }: { num?: string }) {
   return (
     <section className="section">
       <div className="page">
-        <SectionHeader label={shift.label} num="01" title={shift.headline} intro={shift.intro} />
+        <SectionHeader label={shift.label} num={num} title={shift.headline} intro={shift.intro} />
 
         <div className="grid-12 mt-12 gap-y-10 md:mt-16">
           <div className="col-span-12 lg:col-span-5">

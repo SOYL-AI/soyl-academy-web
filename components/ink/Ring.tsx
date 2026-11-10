@@ -27,6 +27,10 @@ interface RingProps {
   draw?: 'load' | 'view' | 'none';
   /** Which painted layers lie under the ring. Default: all of them. */
   layers?: { wash?: boolean; sun?: boolean; rays?: boolean };
+  /** Show the whole stroke faintly under the drawn part, so an unfinished ring still reads as a ring. */
+  ghost?: boolean;
+  /** Keep the wash pale until this is true, then let it bloom (the right answer). Default: always full. */
+  bloom?: boolean;
   /** Preload the ring plate (use when the ring is the hero, so it can be the LCP image). */
   priority?: boolean;
   /** Rendered width of the ring, for the image optimiser, e.g. "(min-width: 1024px) 520px, 90vw". */
@@ -46,7 +50,7 @@ interface RingProps {
  * The stroke is revealed by a conic mask whose angle is the registered `--sweep` property (app/globals.css), so
  * it draws in the direction it was painted. Without @property support it still shows the right amount, unanimated.
  */
-export function Ring({ progress = 3, night, draw = 'none', layers, priority, sizes, label, children, className }: RingProps) {
+export function Ring({ progress = 3, night, draw = 'none', layers, ghost, bloom, priority, sizes, label, children, className }: RingProps) {
   const set = LAYERS[night ? 'night' : 'day'];
   const show = { wash: true, sun: true, rays: true, ...layers };
   const sweep = ringSweep(progress);
@@ -70,9 +74,14 @@ export function Ring({ progress = 3, night, draw = 'none', layers, priority, siz
       role={label ? 'img' : undefined}
       aria-label={label}
     >
-      {show.wash ? layer(set.wash) : null}
+      {show.wash ? layer(set.wash, cn(s.ringWash, bloom === false && s.ringWashWaiting)) : null}
       {show.sun ? layer(set.sun) : null}
       {show.rays ? layer(set.rays) : null}
+      {ghost ? (
+        <span aria-hidden="true" className={cn(s.ringLayer, s.ringGhost)}>
+          <Image src={set.ring} alt="" fill sizes={sizes} priority={priority} />
+        </span>
+      ) : null}
       <span aria-hidden="true" data-ring-stroke="" className={cn(s.ringLayer, s.ringStroke)}>
         <Image src={set.ring} alt="" fill sizes={sizes} priority={priority} />
       </span>

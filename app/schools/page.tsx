@@ -1,4 +1,5 @@
 import { FinalCta } from '@/components/home/FinalCta';
+import { Shift } from '@/components/home/Shift';
 import { ButtonLink } from '@/components/ui/Button';
 import { PageHero } from '@/components/ui/PageHero';
 import { Label, SectionHeader } from '@/components/ui/SectionHeader';
@@ -147,6 +148,7 @@ export default function SchoolsPage() {
         </div>
       </section>
 
+      <Shift num="04" />
       <Faq faqs={schoolsFaqs} heading="Questions from school leaders" className="pt-0" />
       <FinalCta headline="Start with one class." line="Book a demo to see SOYL and plan a ten-week pilot for your school." />
     </>
