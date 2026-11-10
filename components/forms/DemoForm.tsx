@@ -133,7 +133,7 @@ export function DemoForm() {
   return (
     <form onSubmit={onSubmit} noValidate className="module p-5 shadow-[0_30px_60px_-45px_rgba(20,20,20,0.4)] md:p-10">
       {status === 'error' && (
-        <div role="alert" className="t-small mb-6 border-l-2 border-red-pen bg-paper px-3 py-2 text-ink">
+        <div role="alert" className="t-small mb-6 border-l-2 border-red-pen bg-paper-2 px-3 py-2 text-ink">
           {serverMessage}
         </div>
       )}

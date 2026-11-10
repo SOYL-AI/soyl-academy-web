@@ -84,7 +84,7 @@ export default function SchoolsPage() {
         </div>
       </section>
 
-      <section id="workflow" className="section scroll-mt-16 bg-paper">
+      <section id="workflow" className="section scroll-mt-16 bg-paper-2">
         <div className="page">
           <SectionHeader label="The SOYL workflow" num="02" title="Six steps, teacher-led throughout." />
           <ol className="mt-12 grid grid-cols-1 gap-x-8 sm:grid-cols-2 md:mt-16 lg:grid-cols-3">

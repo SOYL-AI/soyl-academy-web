@@ -64,7 +64,7 @@ export default function ParentsPage() {
         </div>
       </section>
 
-      <section className="section bg-paper">
+      <section className="section bg-paper-2">
         <div className="page grid-12 gap-y-12">
           <div className="col-span-12 lg:col-span-6" data-reveal>
             <Label num="02" className="mb-6">Is your child’s school on SOYL?</Label>

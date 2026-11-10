@@ -81,7 +81,7 @@ export default function TeachersPage() {
         </div>
       </section>
 
-      <section id="workflow" className="section scroll-mt-16 bg-paper">
+      <section id="workflow" className="section scroll-mt-16 bg-paper-2">
         <div className="page">
           <SectionHeader label={howItWorks.label} num="02" title={howItWorks.headline} intro={howItWorks.intro} />
           <div className="grid-12 mt-12 gap-y-12 md:mt-16">

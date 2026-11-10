@@ -73,7 +73,7 @@ export default function MethodPage() {
                     <p className="t-lead mt-6 text-ink">{p.content[0]}</p>
                     <p className="mt-4 text-muted">{p.content[1]}</p>
                     <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2">
-                      <div className="rounded-[var(--radius-md)] bg-paper p-5">
+                      <div className="rounded-[var(--radius-md)] bg-paper-2 p-5">
                         <p className="t-eyebrow mb-2 text-muted">Traditional</p>
                         <p className="text-ink line-through decoration-red-pen decoration-2">{p.traditional}</p>
                       </div>

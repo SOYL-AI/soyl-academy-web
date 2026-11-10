@@ -19,7 +19,7 @@ export function FinalCta({ headline = finalCta.headline, line = finalCta.line }:
   const head = words.slice(0, -2).join(' ');
 
   return (
-    <section className="bg-paper">
+    <section className="bg-paper-2">
       <div className="page section grid-12 items-end gap-y-10">
         <h2 className="t-display col-span-12 max-w-[13ch] lg:col-span-8" data-reveal>
           {head}{' '}

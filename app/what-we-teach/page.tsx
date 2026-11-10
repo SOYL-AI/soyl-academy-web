@@ -72,7 +72,7 @@ export default function WhatWeTeachPage() {
 
       <section className="section-tight">
         <div className="page">
-          <div className="grid-12 items-center gap-y-6 rounded-[var(--radius-lg)] bg-paper p-5 md:p-6" data-reveal>
+          <div className="grid-12 items-center gap-y-6 rounded-[var(--radius-lg)] bg-paper-2 p-5 md:p-6" data-reveal>
             <div className="col-span-12 md:col-span-4">
               <Photo image={images.fbSoftware} aspect="aspect-[3/2]" reveal={false} sizes="(min-width: 768px) 380px, 100vw" />
             </div>

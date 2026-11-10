@@ -19,7 +19,7 @@ export function FutureBuildersFeature({ state }: { state: CohortState }) {
       : 'Dates for the next camp are being set. The waitlist is open.';
 
   return (
-    <section className="section bg-paper">
+    <section className="section bg-paper-2">
       <div className="page grid-12 items-center gap-y-12">
         <div className="relative col-span-12 lg:col-span-7">
           <Photo

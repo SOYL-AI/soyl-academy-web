@@ -6,7 +6,7 @@ import { MiniSimulator } from './MiniSimulator';
 
 export function HowItWorks() {
   return (
-    <section id="how-it-works" className="section scroll-mt-16 bg-paper">
+    <section id="how-it-works" className="section scroll-mt-16 bg-paper-2">
       <div className="page">
         <SectionHeader label={howItWorks.label} num="03" title={howItWorks.headline} intro={howItWorks.intro} />
 

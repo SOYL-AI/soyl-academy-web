@@ -250,7 +250,7 @@ export function MiniSimulator() {
                 </span>
               </p>
             ) : message ? (
-              <p className="t-small rounded-[var(--radius-sm)] border-l-2 border-red-pen bg-paper px-3 py-2 text-ink">{message}</p>
+              <p className="t-small rounded-[var(--radius-sm)] border-l-2 border-red-pen bg-paper-2 px-3 py-2 text-ink">{message}</p>
             ) : point ? (
               <p className="t-small text-muted">
                 Your point: <span className="t-num text-ink">{label(point)}</span>

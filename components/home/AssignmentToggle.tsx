@@ -25,7 +25,7 @@ export function AssignmentToggle() {
       <div
         role="group"
         aria-label="Compare the traditional and SOYL versions of the assignment"
-        className="relative mb-5 inline-grid grid-cols-2 rounded-full border border-rule bg-paper p-1"
+        className="relative mb-5 inline-grid grid-cols-2 rounded-full border border-rule bg-paper-2 p-1"
       >
         {/* Sliding thumb */}
         <span
@@ -60,7 +60,7 @@ export function AssignmentToggle() {
           aria-hidden={!isOld}
           style={{ gridArea: '1 / 1' }}
           className={cn(
-            'rounded-[var(--radius-md)] border border-rule bg-paper px-6 py-8 transition-[opacity,transform] duration-500 ease-[var(--ease-out-expo)] md:px-10 md:py-10',
+            'rounded-[var(--radius-md)] border border-rule bg-paper-2 px-6 py-8 transition-[opacity,transform] duration-500 ease-[var(--ease-out-expo)] md:px-10 md:py-10',
             isOld ? 'opacity-100' : 'pointer-events-none invisible translate-y-2 opacity-0'
           )}
         >

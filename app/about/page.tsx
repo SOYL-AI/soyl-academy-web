@@ -35,7 +35,7 @@ export default function AboutPage() {
 
       <section className="section">
         <div className="page grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6">
-          <div className="rounded-[var(--radius-lg)] bg-paper p-7 md:p-12" data-reveal>
+          <div className="rounded-[var(--radius-lg)] bg-paper-2 p-7 md:p-12" data-reveal>
             <p className="t-eyebrow mb-6 text-muted">The old model</p>
             <p className="t-title">The essay and the worksheet belonged to a world where producing the work was proof of effort.</p>
           </div>

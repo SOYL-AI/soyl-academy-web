@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next';
-import { Inter, Instrument_Serif, Newsreader } from 'next/font/google';
+import { Inter, Instrument_Serif } from 'next/font/google';
+import { switzer, zodiak } from '@/lib/fonts';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { CookieConsent } from '@/components/legal/CookieConsent';
@@ -20,35 +21,16 @@ import { HOME_TITLE } from '@/lib/seo/pages';
 import { graph, organizationNode, websiteNode } from '@/lib/seo/schema';
 import './globals.css';
 
-// Body face, shared with the product app (the platform UI kit reads --font-inter).
+// The marketing faces are Zodiak and Switzer (lib/fonts.ts, ADR-028). Inter and Instrument Serif stay defined
+// because the learning platform's UI kit reads --font-inter and --font-instrument-serif (until plan phase 4), and
+// the Future Builders pages keep Inter (app/future-builders/layout.tsx).
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
   display: 'swap',
 });
 
-// Display serif for the marketing pages. One static weight per style keeps each
-// file small. `optional`: the headline never re-flows when the font arrives late
-// (no layout shift); on a first, very slow visit the size-adjusted fallback stays.
-const newsreader = Newsreader({
-  subsets: ['latin'],
-  variable: '--font-newsreader',
-  display: 'optional',
-  weight: '400',
-  style: 'normal',
-});
-
-// Italic accents in headlines.
-const newsreaderItalic = Newsreader({
-  subsets: ['latin'],
-  variable: '--font-newsreader-italic',
-  display: 'optional',
-  weight: '400',
-  style: 'italic',
-});
-
-// Kept for the learning platform's UI kit (--font-instrument-serif). The marketing
-// pages no longer use it, so it is not preloaded.
+// The marketing pages do not use it, so it is not preloaded.
 const instrumentSerif = Instrument_Serif({
   subsets: ['latin'],
   variable: '--font-instrument-serif',
@@ -109,7 +91,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
-  themeColor: '#FFFFFF',
+  themeColor: '#FBFAF7',
 };
 
 export default function RootLayout({
@@ -119,7 +101,7 @@ export default function RootLayout({
 }) {
   return (
     // suppressHydrationWarning: the consent boot script may add data-consent before React hydrates.
-    <html lang="en-IN" className={`${inter.variable} ${newsreader.variable} ${newsreaderItalic.variable} ${instrumentSerif.variable}`} suppressHydrationWarning>
+    <html lang="en-IN" className={`${zodiak.variable} ${switzer.variable} ${inter.variable} ${instrumentSerif.variable}`} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: CONSENT_BOOT_SCRIPT }} />
       </head>

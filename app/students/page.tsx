@@ -38,7 +38,7 @@ export default function StudentsPage() {
         image={images.studentsBuilding}
       />
 
-      <section className="section bg-paper">
+      <section className="section bg-paper-2">
         <div className="page grid-12 items-start gap-y-12">
           <div className="col-span-12 lg:col-span-5" data-reveal>
             <Label num="01" className="mb-6">Try one</Label>

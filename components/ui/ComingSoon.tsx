@@ -24,7 +24,7 @@ export function ComingSoon({
 }: ComingSoonProps) {
   return (
     <div
-      className={cn('tri-top relative grid-12 items-end gap-y-8 overflow-hidden rounded-[var(--radius-lg)] bg-paper px-6 py-10 md:px-12 md:py-14', className)}
+      className={cn('tri-top relative grid-12 items-end gap-y-8 overflow-hidden rounded-[var(--radius-lg)] bg-paper-2 px-6 py-10 md:px-12 md:py-14', className)}
       data-reveal
     >
       <div className="col-span-12 lg:col-span-7">
