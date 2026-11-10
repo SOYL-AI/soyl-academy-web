@@ -89,6 +89,8 @@ phase 5 of the plan is done.
   title `1.45rem/1.15`; lead `clamp(1.05rem, 1.4vw, 1.25rem)/1.5`; body `1rem` to `1.0625rem/1.6`;
   label `0.72rem`, 600, `0.1em`, uppercase (inside product moments only).
 - Headlines are two lines or fewer at 390, 768 and 1440. Sentence case. No dashes in visible copy.
+- In code these are Tailwind utilities in `app/globals.css`: `ink-hero`, `ink-head`, `ink-title`, `ink-lead`,
+  `ink-ask` (the italic line) and `ink-label` (0.75rem, the smallest type on a page).
 
 **Font files.** Zodiak and Switzer are Fontshare faces (ITF Free Font License): free to use on a website, not to
 be redistributed as files. This repo is public, so the files are not committed. `scripts/fetch-fonts.mjs` runs on
