@@ -8,9 +8,59 @@
  * themselves do not make.
  */
 
+import { formatInr, getPlan, planPrice } from '@/platform/shared/config/plans';
+
 export interface FaqItem {
   question: string;
   answer: string;
+}
+
+const price = (id: 'plus' | 'pro' | 'board_exam_pass', interval: 'monthly' | 'one_time') => {
+  const p = planPrice(id, interval);
+  return p ? formatInr(p.amountPaise) : null;
+};
+
+/**
+ * The homepage FAQ with the learning platform on (plan §3.2, screen 6). Every number comes from
+ * platform/shared/config/plans.ts, so a price change in config changes the answer. The rules behind the
+ * answers: CONTEXT.md §5 (access model) and §7 (plans).
+ */
+export function freeLearningFaqs(): FaqItem[] {
+  const free = getPlan('free').creditsPerDay;
+  const plus = price('plus', 'monthly');
+  const pro = price('pro', 'monthly');
+  const pass = price('board_exam_pass', 'one_time');
+  const passUntil = getPlan('board_exam_pass').validUntil;
+  const until = passUntil
+    ? new Intl.DateTimeFormat('en-IN', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'Asia/Kolkata' }).format(new Date(passUntil))
+    : null;
+  const paid = [
+    plus && pro ? `Plus (${plus} a month) and Pro (${pro} a month) give more credits a day` : null,
+    pass && until ? `the Board Exam Pass is ${pass} once, with Pro's benefits until ${until}` : null,
+  ]
+    .filter(Boolean)
+    .join('; ');
+  return [
+    {
+      question: 'Is it really free?',
+      answer:
+        'Yes. Lessons, notes, flashcards and practice with instant checks are free for every student, and so are chapter tests, mock papers and All-India mocks with a free account. Only AI help is metered, because it costs money to run.',
+    },
+    {
+      question: 'What do I pay for?',
+      answer: `Only AI help: doubts answered step by step, explanations of a slide, and checking of written answers. Each AI action costs credits, and a free account gets ${free} credits every day.${paid ? ` ${paid.charAt(0).toUpperCase()}${paid.slice(1)}.` : ''}`,
+    },
+    {
+      question: 'Which boards and classes?',
+      answer:
+        'CBSE Classes 7 to 12, ICSE Classes 7 to 10 and ISC Classes 11 and 12. Lessons are added chapter by chapter; open your class to see what is ready.',
+    },
+    {
+      question: 'Do I need an account?',
+      answer:
+        'Not to learn. Lessons, notes, flashcards and practice work without one, and your progress is kept on that device. Tests and AI help need a free account; when you sign in, what you did as a guest moves into it.',
+    },
+  ];
 }
 
 export const homeFaqs: FaqItem[] = [
