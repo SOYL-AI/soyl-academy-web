@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
-import { FOOTER_NAV, PRIMARY_CTA, SOCIAL_LINKS } from '@/lib/site';
+import { FOOTER_NAV, PLATFORM_ENABLED, PRIMARY_CTA, SOCIAL_LINKS, START_FREE } from '@/lib/site';
 import { SITE_CONTACT_EMAIL, SITE_LEGAL_NAME } from '@/lib/seo/config';
 import { Logo } from '@/components/ui/Logo';
 import { InkLink } from '@/components/ink/Button';
@@ -26,11 +26,18 @@ export function Footer() {
             Learning that still asks students to <span className="t-accent">think.</span>
           </p>
           <Stroke pigment="chalk" width="6.5em" className="mt-3 text-[clamp(2rem,3.6vw,3rem)] opacity-80" />
-          <p className="mt-5 max-w-[38ch] text-chalk-muted">
-            Interactive assignments for <span className="whitespace-nowrap">Grades 1–10</span>, written from your notes and approved by you.
-          </p>
-          <InkLink href={PRIMARY_CTA.href} variant="night" size="lg" className="mt-8" arrow>
-            {PRIMARY_CTA.label}
+          {PLATFORM_ENABLED ? (
+            <p className="mt-5 max-w-[38ch] text-chalk-muted">
+              Free lessons, notes, practice and tests for Classes 7 to 12, and interactive assignments for schools. You only
+              ever pay for AI.
+            </p>
+          ) : (
+            <p className="mt-5 max-w-[38ch] text-chalk-muted">
+              Interactive assignments for <span className="whitespace-nowrap">Grades 1–10</span>, written from your notes and approved by you.
+            </p>
+          )}
+          <InkLink href={(PLATFORM_ENABLED ? START_FREE : PRIMARY_CTA).href} variant="night" size="lg" className="mt-8" arrow>
+            {(PLATFORM_ENABLED ? START_FREE : PRIMARY_CTA).label}
           </InkLink>
         </div>
 

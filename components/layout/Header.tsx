@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { APP_URL, NAV_GROUPS, PLATFORM_ENABLED, PLATFORM_LOGIN_HREF, PRIMARY_CTA, type NavFeature } from '@/lib/site';
+import { APP_URL, NAV_GROUPS, PLATFORM_ENABLED, PLATFORM_LOGIN_HREF, PRIMARY_CTA, START_FREE, type NavFeature } from '@/lib/site';
 import { formatArticleDate, journalArticles } from '@/content/journal';
 import { Logo } from '@/components/ui/Logo';
 import { inkButtonClasses } from '@/components/ink/Button';
@@ -48,6 +48,8 @@ function SignIn({ className }: { className: string }) {
 }
 
 export function Header() {
+  // The bar's one action: free learning when the platform is on (plan §3.3), the demo booking when it is off.
+  const action = PLATFORM_ENABLED ? START_FREE : PRIMARY_CTA;
   const latest = latestJournalFeature();
   const groups: ResolvedNavGroup[] = NAV_GROUPS.map((group) => ({
     ...group,
@@ -64,10 +66,10 @@ export function Header() {
         <>
           <SignIn className="hover-line hidden py-1 text-[15px] font-medium text-ink sm:inline" />
           <Link
-            href={PRIMARY_CTA.href}
+            href={action.href}
             className={inkButtonClasses('primary', 'md', 'hidden px-3.5 text-[14px] min-[375px]:inline-flex md:px-5 md:text-[15px]')}
           >
-            {PRIMARY_CTA.label}
+            {action.label}
           </Link>
         </>
       }
@@ -77,8 +79,8 @@ export function Header() {
       sheetFooter={
         <>
           <SignIn className={inkButtonClasses('secondary', 'lg', 'flex-1 px-4')} />
-          <Link href={PRIMARY_CTA.href} className={inkButtonClasses('primary', 'lg', 'flex-[1.4] px-4')}>
-            {PRIMARY_CTA.label}
+          <Link href={action.href} className={inkButtonClasses('primary', 'lg', 'flex-[1.4] px-4')}>
+            {action.label}
           </Link>
         </>
       }

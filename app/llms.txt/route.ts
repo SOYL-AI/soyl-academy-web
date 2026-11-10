@@ -9,7 +9,7 @@ export async function GET() {
 > ${SITE_DESCRIPTION}
 
 ## About
-SOYL Academy helps teachers create outcome-based learning experiences that ask students to think, apply, create, explain and defend — not simply submit.
+SOYL Academy gives every student in Classes 7 to 12 (CBSE, ICSE and ISC) free lessons, notes, flashcards, practice and tests; only AI help is metered, with free credits every day. For schools, it turns teachers' notes into interactive, teacher-approved assignments that ask students to think, apply, create, explain and defend, not simply submit.
 
 ## Pages
 ${sortedPages.map((page) => `- [${page.label}](${SITE_URL}${page.path}): ${page.description}`).join('\n')}

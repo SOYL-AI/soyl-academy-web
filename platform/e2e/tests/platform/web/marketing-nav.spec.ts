@@ -10,7 +10,10 @@ import { expect, expectNoHorizontalScroll, test } from './fixtures';
  */
 
 const flagOff = () => /flag-off\.config\.ts$/.test(test.info().config.configFile ?? '');
-const GROUPS = () => (flagOff() ? ['Programs', 'Future Builders', 'About'] : ['Programs', 'Future Builders', 'Learn', 'About']);
+// Flag on, Learn comes first: the homepage leads with free learning (docs/redesign-ink-and-wash.md §3.3).
+const GROUPS = () => (flagOff() ? ['Programs', 'Future Builders', 'About'] : ['Learn', 'Programs', 'Future Builders', 'About']);
+/** The bar's one action: "Start free" into /learn with the platform on, the demo booking with it off. */
+const ACTION = () => (flagOff() ? { name: 'Book a demo', href: '/book-a-demo' } : { name: 'Start free', href: '/learn' });
 const DESKTOP = { viewport: { width: 1280, height: 860 }, isMobile: false, hasTouch: false } as const;
 
 async function declineAnalytics(page: Page) {
@@ -69,7 +72,7 @@ test.describe('desktop mega menus', () => {
       expect(await page.content()).not.toContain('href="/learn"');
     } else {
       await expect(banner.getByRole('link', { name: 'Log in', exact: true })).toHaveAttribute('href', '/me');
-      await expect(banner.getByRole('link', { name: 'Book a demo', exact: true })).toHaveAttribute('href', '/book-a-demo');
+      await expect(banner.getByRole('link', { name: ACTION().name, exact: true })).toHaveAttribute('href', ACTION().href);
     }
   });
 
@@ -209,7 +212,7 @@ test.describe('mobile sheet at 360 px', () => {
     // Accordion groups: the same items and descriptions as the desktop menus.
     const groupButtons = sheet.locator('button[aria-expanded]');
     await expect(groupButtons).toHaveText(GROUPS());
-    const programs = groupButtons.first();
+    const programs = groupButtons.filter({ hasText: 'Programs' });
     await programs.click();
     await expect(programs).toHaveAttribute('aria-expanded', 'true');
     const region = page.locator(`#${await programs.getAttribute('aria-controls')}`);
@@ -217,7 +220,7 @@ test.describe('mobile sheet at 360 px', () => {
     await expect(region.getByText('A ten-week pilot that rethinks homework for the age of AI.')).toBeVisible();
     await expectNoHorizontalScroll(page);
     // The call to action stays pinned at the bottom of the screen.
-    const cta = sheet.getByRole('link', { name: 'Book a demo', exact: true });
+    const cta = sheet.getByRole('link', { name: ACTION().name, exact: true });
     const box = await cta.boundingBox();
     expect(box && box.y + box.height).toBeGreaterThan(700);
     if (flagOff()) {

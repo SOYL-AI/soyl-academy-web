@@ -24,6 +24,9 @@ export const SHOW_CONTENT_TODOS =
 
 export const PRIMARY_CTA = { label: 'Book a demo', href: '/book-a-demo' } as const;
 
+/** The free learning platform's entry (plan §3.3): the bar's action when the platform is on. */
+export const START_FREE = { label: 'Start free', href: '/learn' } as const;
+
 export interface NavLink {
   label: string;
   href: string;
@@ -180,9 +183,9 @@ const LEARN_GROUP: NavGroup = {
   heading: 'Free learning platform',
   items: [ITEMS.lessons, ITEMS.tests, ITEMS.ask],
   feature: {
-    eyebrow: 'Now live: CBSE Class 10',
+    eyebrow: 'CBSE, ICSE and ISC · Classes 7 to 12',
     title: 'Free for every student',
-    description: 'Lessons, practice and tests are free. Only AI help uses credits. More classes and ICSE are on the way.',
+    description: 'Lessons, notes, practice and tests, opening subject by subject. Only AI help uses credits.',
     href: '/learn',
     cta: 'Start learning free',
     tone: 'ink',
@@ -199,7 +202,9 @@ const LEARN_GROUP: NavGroup = {
  */
 const COMPANY_ITEMS: NavItem[] = [ITEMS.about, ITEMS.method, ITEMS.journal, ITEMS.contact, ITEMS.demo];
 
+/** The homepage leads with free learning (plan §3.2), so with the platform on, Learn comes first. */
 export const NAV_GROUPS: NavGroup[] = [
+  ...(PLATFORM_ENABLED ? [LEARN_GROUP] : []),
   {
     id: 'programs',
     label: 'Programs',
@@ -228,7 +233,6 @@ export const NAV_GROUPS: NavGroup[] = [
       tone: 'paper',
     },
   },
-  ...(PLATFORM_ENABLED ? [LEARN_GROUP] : []),
   {
     id: 'about',
     label: 'About',
