@@ -5166,7 +5166,7 @@
           "d"
         ]
       },
-      "solution_md": "$T_{r+1} = \\binom{9}{r}(2x^{3})^{9-r}\\left(-\\dfrac{1}{x}\\right)^{r} = (-1)^{r}\\binom{9}{r}2^{9-r}x^{3(9-r)-r}$ and $3(9 - r) - r = 27 - 4r$. The second option has $x^{27-2r}$ (the power $x^{-r}$ was mishandled), the third swaps the power of $2$, and the fourth drops the sign.",
+      "solution_md": "$T_{r+1} = \\binom{9}{r}(2x^{3})^{9-r}\\left(-\\dfrac{1}{x}\\right)^{r} = (-1)^{r}\\binom{9}{r}2^{9-r}x^{3(9-r)-r}$ and $3(9 - r) - r = 27 - 4r$. The option with $x^{27-2r}$ mishandles the power $x^{-r}$, the option with $2^{r}$ swaps the power of $2$, and the option without $(-1)^{r}$ drops the sign.",
       "marking_scheme": [
         {
           "step": "Correct option (d)",
@@ -7970,7 +7970,7 @@
     "checks": {
       "syllabus": "topics t01-t03 of isc-11-mathematics-ch09 (no removed topics); the ISC list is followed: Pascal's triangle with its history, the binomial theorem with proof by induction, general term, middle terms, term independent of x, sums of binomial coefficients and approximations; the greatest term is not in the topic list and is left out",
       "self_checks": "every expansion, term and coefficient is computed by the exact formula and by multiplying the brackets out (bin.mjs, vis.mjs and the question files) and asserted equal; numerical approximations use exact rational arithmetic",
-      "katex": "2318 math strings parsed with KaTeX 0.19.0 (throwOnError, strict: error), 0 failures; 0 LaTeX commands missing their backslash; 0 LaTeX outside $…$",
+      "katex": "2320 math strings parsed with KaTeX 0.19.0 (throwOnError, strict: error), 0 failures; 0 LaTeX commands missing their backslash; 0 LaTeX outside $…$",
       "plots": "0 deck plots + 0 notes/question plots: 0 marked points all on their curves and matching their labels; 0 zeros located numerically and all marked; 0 intersection points lie on both lines",
       "re_solve": "139/139 checks pass (independent arithmetic from the givens; keys, numerical values, and the numbers inside solutions and model answers)",
       "narration": "42 slides, max 74 words, mean 54; no symbols, LaTeX or letter abbreviations",

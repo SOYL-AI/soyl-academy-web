@@ -61,7 +61,7 @@ From `platform/` in the worktree, wrapped in `_tools/heavy.sh` and started only 
 - No narration audio (TTS stage).
 - No Class XI specimen paper is published for ISC Mathematics; question style follows the ISC 12 pattern and the syllabus.
 - Renderer checks on staging at 360 px for wide tables and dense plots; ch15 (3-D sketches drawn as oblique 2-D projections), ch18 (no box-plot element: dot strips and histograms) and ch19 (no Venn element: two-way tables and a tree flow) were not viewed on screen.
-- Outside this task's owned paths (ch01–ch10): the same position-named distractor explanations exist in ch03 q_isc11math_ch03_008 ("the second option" is $\sec^2\theta$, shown as (a)) and ch09 q_isc11math_ch09_012 ("second/third/fourth option" mapped to the wrong options). Not changed here; a one-line fix each for whoever owns ch01–ch10.
+- Fixed on 2026-11-10 after merging platform/main (wave 35): the position-named distractor explanations in ch03 q_isc11math_ch03_008, ch09 q_isc11math_ch09_012 and ch01 q_isc11math_ch01_004 now name the options by value; a scan of ch01–ch19 found no other position-based option references (gate run 9, 22:36 IST: catalog valid; content gate 4747 passed; lint 0/0; verify 19 units, 1405 questions, 0 blocking; originality 678 units, 0 errors; DB-6 8/8; API content 13/13; series 41/41; leak 0; backslash 0).
 - The plot spec has no circle, conic or vertical-line element, so closed curves are drawn as upper and lower halves and vertical directrices appear in tables or captions.
 
 ## Decisions made
