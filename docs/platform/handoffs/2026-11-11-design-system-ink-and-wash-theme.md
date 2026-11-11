@@ -106,3 +106,16 @@ Results on this branch (Windows 11, Node 24.14.1, npm 11.11.0):
 ## Needs from owner
 
 None for the change itself. The Lead's agreement to open the PR (plan §6 phase 4), and a look at the screenshots.
+
+## After review (integrator, 2026-11-11)
+
+- **The stamp is mounted** (`badfba9d`): in place of the flame on the learning home's dashboard card from day 1,
+  and beside the streak in the daily check-in once today is checked in (not in the compact check-in). Both are
+  decorative; the count is still written beside them, so the existing tests and screen readers read the same text.
+  Not on the dashboard header: its streak is a small stat chip and a 72 px stamp does not fit it.
+- **Gradients removed** (`de13c356`): the `/learn` hero is a plain sheet; the cobalt "continue" and "welcome"
+  tiles are flat indigo `#27467e` (white text 9.3:1). Kept, as functional: the scroll fades in course and lesson,
+  the flashcard dial, the mastery hatching, the goal stripe. **Kept, for the owner to decide:** the coin store's
+  night-sky hero and the rank-card metals (bronze, silver, gold, amethyst) in `me/insights.module.css`, and the
+  league card's tier tint. They are deliberate, but the language says no gradients.
+- **ADR index**: 028 and 029 are listed in `docs/platform/adr/README.md`; the next free number is 030.
