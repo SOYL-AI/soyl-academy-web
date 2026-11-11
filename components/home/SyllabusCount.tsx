@@ -54,7 +54,7 @@ export function SyllabusCount() {
         <p className="mt-3 text-[0.875rem] text-muted">A filled square is a chapter you can open today; an outline is one still to come. Counted from the 2026-27 syllabus.</p>
         <div className="mt-5">
           <InkLink href={learnPath(board, chapters > 0 ? classLevel : entry.fromClass)} variant="quiet" arrow>
-            Open Class {chapters > 0 ? classLevel : entry.fromClass}
+            {chapters > 0 ? `Every subject in Class ${classLevel}` : `Open Class ${entry.fromClass} meanwhile`}
           </InkLink>
         </div>
       </div>
