@@ -3,8 +3,9 @@
 /**
  * /plans (billing-razorpay M4 handoff "What web needs for /plans"; CONTEXT §7; D-034):
  * - cards from GET /v1/plans: names, daily credits, features (from the API, not hard-coded per plan) and
- *   price labels ("incl. GST" only when `pricesIncludeGst`: the seller is not GST-registered yet); buttons
- *   off when `purchasable` is false (billing off → "Coming soon");
+ *   price labels ("incl. GST" only when `pricesIncludeGst`: the seller is not GST-registered yet), each paid
+ *   price also per day (lib/pricing/per-day.ts, Ink and wash phase 3); buttons off when `purchasable` is false
+ *   (billing off → "Opens soon");
  * - invoice details (ADR-024): the payer's state (GST place of supply; default the seller's state) and an
  *   optional name for the invoice, sent with the purchase;
  * - Buy: POST /v1/billing/subscriptions | /orders → Razorpay Checkout (no prefill) → on success
@@ -27,6 +28,8 @@ import { GST_STATES } from '@/platform/shared/billing/gst';
 import { Field } from '@/components/platform/ui/kit/Field';
 import field from '@/components/platform/ui/kit/Interactive.module.css';
 import { trackInterest } from '../lib/interest';
+import { PerDay } from '@/components/ink/PerDay';
+import { perDayFor } from '@/lib/pricing/per-day';
 import { allowanceLine, bonusCopy, priceExamples } from './plans-copy';
 import { checkoutOptions, loadCheckout } from './razorpay';
 import s from './plans.module.css';
@@ -229,7 +232,7 @@ export function PlansClient() {
     <div className={s.page} data-testid="plans" data-billing={plans.billingEnabled ? 'on' : 'off'}>
       {!plans.billingEnabled && (
         <p className={s.notice} role="status" data-testid="billing-off">
-          <Icon name="info" size={18} /> Plans are not on sale yet. Everyone gets free AI credits every day; lessons, practice and tests are always free.
+          <Icon name="info" size={18} /> Plans open soon. Until then everyone gets free AI credits every day, and lessons, practice and tests are always free.
         </p>
       )}
       {consentNeeded && plans.billingEnabled && (
@@ -247,7 +250,7 @@ export function PlansClient() {
       )}
       {buy.kind === 'activating' && (
         <p className={s.current} role="status" data-testid="activating">
-          <Icon name="clock" size={18} /> Payment received — activating your plan…
+          <Icon name="clock" size={18} /> Payment received. Activating your plan…
         </p>
       )}
       {buy.kind === 'done' && (
@@ -350,6 +353,15 @@ export function PlansClient() {
                 })()}
                 {price && plans.pricesIncludeGst && <span className={s.gst}> incl. GST</span>}
               </p>
+              {(() => {
+                // A parent's units (plan §4, device 7): the same amount spread over a month, a year or the pass's days left.
+                const perDay = price ? perDayFor(price, p.validUntil, new Date()) : null;
+                return perDay ? (
+                  <p className={s.perDay} data-testid={`per-day-${p.id}`}>
+                    <PerDay perDay={perDay} />
+                  </p>
+                ) : null;
+              })()}
               {p.validUntil && <p className={s.muted}>Valid until {new Date(p.validUntil).toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'Asia/Kolkata' })}</p>}
               <ul className={s.features}>
                 {p.features.map((f) => (
@@ -370,7 +382,7 @@ export function PlansClient() {
                   disabled={!plans.billingEnabled || !p.purchasable || consentNeeded}
                   data-testid={`buy-${p.id}`}
                 >
-                  {!plans.billingEnabled || !p.purchasable ? 'Coming soon' : member ? `Choose ${p.name}` : 'Log in to choose'}
+                  {!plans.billingEnabled || !p.purchasable ? 'Opens soon' : member ? `Choose ${p.name}` : 'Log in to choose'}
                 </Button>
               )}
             </li>

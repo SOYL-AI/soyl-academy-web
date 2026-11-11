@@ -17,6 +17,7 @@ vi.mock('next/navigation', () => ({ useRouter: () => h.router, usePathname: () =
 import { AttemptPlayer } from '../tests/AttemptPlayer';
 import { ResultView } from '../tests/ResultView';
 import { PlansClient } from '../plans/PlansClient';
+import { perDayFor } from '@/lib/pricing/per-day';
 import { AskClient } from '../ai/AskClient';
 import { LeaderboardClient } from '../leaderboard/LeaderboardClient';
 import { QuestionCard } from '../ui/question/QuestionCard';
@@ -236,7 +237,7 @@ describe('PlansClient', () => {
     ],
   });
 
-  it('billing off: prices with GST, "Coming soon" buttons, never loads Checkout', async () => {
+  it('billing off: prices with GST, "Opens soon" buttons, never loads Checkout', async () => {
     h.session.state = { status: 'guest' };
     h.api.get.mockResolvedValue(plans(false));
     wrap(<PlansClient />);
@@ -245,9 +246,13 @@ describe('PlansClient', () => {
     expect(screen.getByTestId('price-plus').textContent).toBe('₹199/month incl. GST');
     expect(screen.getByText(/Prices include GST./)).toBeTruthy();
     expect((screen.getByTestId('buy-plus') as HTMLButtonElement).disabled).toBe(true);
-    expect(screen.getByTestId('buy-plus').textContent).toBe('Coming soon');
+    expect(screen.getByTestId('buy-plus').textContent).toBe('Opens soon');
+    // Ink and wash phase 3: each paid price per day, from the API's amount (a month is 30 days, a year 365).
+    expect(screen.getByTestId('per-day-plus').textContent).toBe(`About ${perDayFor({ interval: 'monthly', amountPaise: 19900 }, null, new Date())} a day`);
+    expect(screen.queryByTestId('per-day-free')).toBeNull();
     fireEvent.click(screen.getByRole('radio', { name: 'Yearly' }));
     expect(screen.getByTestId('price-plus').textContent).toBe('₹1,499/year incl. GST');
+    expect(screen.getByTestId('per-day-plus').textContent).toBe(`About ${perDayFor({ interval: 'yearly', amountPaise: 149900 }, null, new Date())} a day`);
     expect(document.querySelector('script[src*="razorpay"]')).toBeNull();
   });
 
