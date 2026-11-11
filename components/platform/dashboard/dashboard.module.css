@@ -275,9 +275,8 @@
   gap: var(--p-space-2);
   padding: var(--p-space-5);
   border-radius: var(--p-radius-xl);
-  background:
-    radial-gradient(120% 140% at 100% 0%, rgba(255, 255, 255, 0.16) 0, transparent 55%),
-    linear-gradient(135deg, #2b4fe6, #1f3bb3);
+  /* Ink and wash (ADR-029): flat indigo, no gradient or sheen. White on #27467e is 9.3:1. */
+  background: #27467e;
   color: #ffffff;
 }
 .welcome h2 {
