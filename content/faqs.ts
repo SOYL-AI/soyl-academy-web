@@ -152,21 +152,26 @@ export const schoolsFaqs: FaqItem[] = [
   },
 ];
 
+/**
+ * /students hands straight to free learning (plan §3.3), so its questions are about that. The answers state the
+ * access rules (docs/platform/CONTEXT.md §5), which hold whether or not the platform is switched on yet; they
+ * carry no price and no link.
+ */
 export const studentsFaqs: FaqItem[] = [
   {
-    question: 'Can I use AI in a SOYL assignment?',
+    question: 'Is SOYL Academy free for students?',
     answer:
-      'Yes, you can use AI tools, but you cannot simply copy and paste an answer. In a SOYL assignment you explain your process, defend your choices and show that the ideas are yours.',
+      'Yes. Lessons, notes, flashcards and practice for CBSE, ICSE and ISC Classes 7 to 12 are free, and so are chapter tests and mock papers with a free account. Only AI help is metered, because it costs money to run.',
   },
   {
-    question: 'Can individual students join SOYL Academy?',
+    question: 'Do I need an account to learn?',
     answer:
-      'Yes. Future Builders is a 2-month live online summer camp for Grades 7 to 12 that individual students can join directly, without a school partnership. The Future Builders page shows when the next camp runs and how to register, or a waitlist when registration is closed.',
+      'No. Lessons, notes, flashcards and practice work without one, and your progress is kept on that device. Tests and AI help need a free account; when you sign in, what you did as a guest moves into it.',
   },
   {
-    question: 'What will I do in a SOYL assignment?',
+    question: 'Can I join without my school?',
     answer:
-      'You learn by doing: you solve, build, argue, explain and reflect. Instead of worksheets and formulaic essays, you show what you can build, how you reason and how you tackle real problems.',
+      'Yes. The free lessons need no school. Future Builders, a 2-month live online summer camp for Grades 7 to 12, also takes students directly, without a school partnership. Its page shows when the next camp runs and how to register, or a waitlist when registration is closed.',
   },
 ];
 

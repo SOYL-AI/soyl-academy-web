@@ -120,10 +120,11 @@ export const PAGES: Record<string, PageEntry> = {
   },
   '/students': {
     path: '/students',
-    title: 'For Students — Learn Beyond the Answer',
+    // Merged into free learning (docs/redesign-ink-and-wash.md §3.3).
+    title: 'For Students: Free Lessons for Classes 7 to 12',
     label: 'For Students',
     description:
-      'Solve, build, argue, explain and reflect. SOYL Academy assignments let you use AI — and ask you to explain your process and defend your ideas.',
+      'Free lessons, notes, flashcards and practice for CBSE, ICSE and ISC, Classes 7 to 12. Start without an account; only AI help uses credits.',
     type: 'WebPage',
     eyebrow: 'For Students',
     priority: 0.7,
