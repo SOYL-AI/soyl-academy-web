@@ -1,0 +1,75 @@
+@layer properties, theme, base, components, utilities;
+
+/* LedgerColumns (components/ink/LedgerColumns.tsx): free, always | metered.
+   Colours follow the app's theme inside the platform (--p-*), the paper tokens elsewhere. */
+@layer components {
+
+.ledger {
+  --k-ink: var(--p-ink, var(--color-ink));
+  --k-soft: var(--p-ink-muted, var(--color-graphite));
+  --k-subtle: var(--p-ink-subtle, var(--color-muted));
+  --k-rule: var(--p-border, var(--color-rule));
+  --k-card: var(--p-surface, var(--color-paper));
+  display: grid;
+  gap: 1rem;
+  color: var(--k-ink);
+}
+/* Side by side from a laptop up; each column as tall as its content (the free list is short, and stretching it
+   only opened an empty field above its note). */
+@media (min-width: 860px) {
+  .ledger { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 1.25rem; align-items: start; }
+}
+.col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  min-width: 0;
+  padding: 1.4rem;
+  border: 1px solid var(--k-rule);
+  border-radius: var(--radius-md);
+  background: var(--k-card);
+}
+@media (min-width: 640px) { .col { padding: 1.9rem; } }
+
+.label {
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--k-subtle);
+}
+.items {
+  display: grid;
+  gap: 0.85rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.0625rem;
+}
+.item .dab { font-size: 1.6rem; }
+.note {
+  margin: 0;
+  color: var(--k-subtle);
+  font-size: 0.9375rem;
+}
+.why {
+  margin: 0;
+  color: var(--k-soft);
+  max-width: 46ch;
+}
+
+
+/* The app's night theme (the platform's dark tokens; phase 4's slate): there are no chalk pools, so the pigment
+   pools are lifted to read on a dark ground. Marketing pages are paper only. */
+@media (prefers-color-scheme: dark) {
+  :global(.soyl-platform:not([data-theme="light"])) .dab { filter: brightness(1.75) saturate(1.1); }
+}
+:global(.soyl-platform[data-theme="dark"]) .dab { filter: brightness(1.75) saturate(1.1); }
+
+} /* @layer components */

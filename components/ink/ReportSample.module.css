@@ -1,0 +1,141 @@
+@layer properties, theme, base, components, utilities;
+
+/* ReportSample (components/ink/ReportSample.tsx): the sample weekly report, as a sheet.
+   Colours follow the app's theme inside the platform (--p-*), the paper tokens elsewhere. */
+@layer components {
+
+.sheet {
+  --k-ink: var(--p-ink, var(--color-ink));
+  --k-soft: var(--p-ink-muted, var(--color-graphite));
+  --k-subtle: var(--p-ink-subtle, var(--color-muted));
+  --k-rule: var(--p-border, var(--color-rule));
+  --k-sheet: var(--p-surface, var(--color-paper));
+  --k-miss: var(--p-danger, var(--color-madder));
+  display: grid;
+  gap: 1.25rem;
+  margin: 0;
+  padding: 1.25rem;
+  border: 1px solid var(--k-rule);
+  border-radius: var(--radius-md);
+  background: var(--k-sheet);
+  color: var(--k-ink);
+}
+@media (min-width: 640px) { .sheet { padding: 1.75rem; } }
+
+.top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.25rem 1rem;
+}
+.title {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 1.45rem;
+  line-height: 1.15;
+}
+/* Small capitals inside a product moment (DESIGN.md §1). Madder so "sample" cannot be missed. */
+.sample {
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--k-miss);
+}
+.who {
+  margin: 0.2rem 0 0;
+  color: var(--k-subtle);
+  font-size: 0.9375rem;
+}
+
+.days {
+  display: flex;
+  gap: 0.3rem;
+}
+.day {
+  display: block;
+  width: 1.15rem;
+  height: 1.15rem;
+  background: url("/art/pool-indigo.webp") center / contain no-repeat;
+}
+/* A day without study: the same pool, faint (an untouched chapter is an outline). */
+.dayOff { opacity: 0.22; filter: grayscale(1); }
+
+.rows {
+  display: grid;
+  margin: 0;
+}
+.row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.15rem 1rem;
+  padding-block: 0.6rem;
+  border-top: 1px solid var(--k-rule);
+}
+.row dt { margin: 0; color: var(--k-soft); }
+.row dd { margin: 0; text-align: right; font-weight: 600; font-variant-numeric: tabular-nums; }
+.note {
+  grid-column: 1 / -1;
+  margin: 0;
+  color: var(--k-subtle);
+  font-size: 0.875rem;
+  font-weight: 400;
+  text-align: left;
+}
+@media (min-width: 480px) {
+  .note { grid-column: 2; text-align: right; }
+}
+
+.label {
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--k-subtle);
+}
+.stuck {
+  display: grid;
+  gap: 0.6rem;
+  margin: 0.6rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+.chapter {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0 0.65rem;
+  align-items: baseline;
+}
+.chapter .dab { font-size: 1.15rem; align-self: center; }
+.chapterTitle { font-weight: 600; }
+.chapterNote {
+  grid-column: 2;
+  color: var(--k-subtle);
+  font-size: 0.875rem;
+}
+
+.foot {
+  margin: 0;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--k-rule);
+  color: var(--k-subtle);
+  font-size: 0.875rem;
+}
+
+
+/* The app's night theme (the platform's dark tokens; phase 4's slate): there are no chalk pools, so the pigment
+   pools are lifted to read on a dark ground. Marketing pages are paper only. */
+@media (prefers-color-scheme: dark) {
+  :global(.soyl-platform:not([data-theme="light"])) :is(.day, .dab) { filter: brightness(1.75) saturate(1.1); }
+}
+:global(.soyl-platform[data-theme="dark"]) :is(.day, .dab) { filter: brightness(1.75) saturate(1.1); }
+@media (prefers-color-scheme: dark) {
+  :global(.soyl-platform:not([data-theme="light"])) .dayOff { filter: grayscale(1) brightness(1.75); }
+}
+:global(.soyl-platform[data-theme="dark"]) .dayOff { filter: grayscale(1) brightness(1.75); }
+
+} /* @layer components */

@@ -104,10 +104,14 @@
   margin: 0;
   font-size: var(--p-text-xl);
 }
+/* Prices are Zodiak (font-serif, from the root layout): Switzer, the app's face after Ink and wash phase 4, has
+   no rupee sign (DESIGN.md §3). Zodiak has one weight, 400; nothing is synthesised. */
 .price {
   margin: 0;
-  font-size: var(--p-text-2xl);
-  font-weight: 800;
+  font-family: var(--font-serif);
+  font-size: 1.75rem;
+  font-weight: 400;
+  line-height: 1.15;
 }
 .amount {
   font-variant-numeric: tabular-nums;
@@ -115,10 +119,15 @@
 /* "/month", " one-time": proportional figures and hyphen. */
 .per {
   font-size: var(--p-text-lg);
-  font-weight: 650;
   white-space: nowrap;
 }
+/* "About ₹6.60 a day" under the price (lib/pricing/per-day.ts). */
+.perDay {
+  margin: calc(-1 * var(--p-space-2)) 0 0;
+  font-size: var(--p-text-sm);
+}
 .gst {
+  font-family: var(--p-font-sans);
   font-size: var(--p-text-sm);
   font-weight: 500;
   color: var(--p-ink-muted);

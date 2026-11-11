@@ -35,6 +35,11 @@ describe('perDayLabel', () => {
     expect(perDayLabel(100, 30)).toBe('₹0.10'); // never shows ₹0.00
   });
 
+  it('switches to whole rupees when the rounding reaches ₹10', () => {
+    expect(perDayLabel(29_900, 30)).toBe('₹10'); // 996.7 paise, not "₹10.00"
+    expect(perDayLabel(29_700, 30)).toBe('₹9.90');
+  });
+
   it('refuses zero days', () => {
     expect(() => perDayLabel(49_900, 0)).toThrow();
   });
