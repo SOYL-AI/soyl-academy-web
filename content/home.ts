@@ -35,18 +35,93 @@ export const shift = {
   },
 } as const;
 
-export const method = {
-  label: 'The SOYL Method',
+/**
+ * A checkpoint on the /method walk (components/method/MethodWalk.tsx). `pick`: the reader chooses which of the
+ * pillar's two assignments (content/method.ts, `traditional` and `soyl`) does what the question asks; `order`
+ * says which is shown first. `reflect`: the reader names the checkpoint that made them think hardest; any choice
+ * completes it, because a reflection has no wrong answer.
+ */
+export type MethodCheckpoint =
+  | { kind: 'pick'; ask: string; answer: 'traditional' | 'soyl'; order: readonly ['traditional', 'soyl'] | readonly ['soyl', 'traditional']; right: string; wrong: string }
+  | { kind: 'reflect'; ask: string; done: string };
+
+export interface MethodStep {
+  verb: 'Understand' | 'Apply' | 'Create' | 'Defend' | 'Reflect';
+  line: string;
+  /** One plain sentence on why the verb shows learning, drawn from the pillar's text in content/method.ts. */
+  why: string;
+  checkpoint: MethodCheckpoint;
+}
+
+/** The five verbs of the SOYL Method: the list on /schools (Shift) and the walk on /method. */
+export const method: { headline: string; intro: string; steps: readonly MethodStep[] } = {
   headline: 'Learning is a verb.',
   intro: 'Every SOYL assignment asks for at least one of five things a generated answer can’t fake.',
   steps: [
-    { verb: 'Understand', line: 'Know more than the answer.' },
-    { verb: 'Apply', line: 'Use it in a new situation.' },
-    { verb: 'Create', line: 'Make something with it.' },
-    { verb: 'Defend', line: 'Explain why, not just what.' },
-    { verb: 'Reflect', line: 'Look again. Do it better.' },
+    {
+      verb: 'Understand',
+      line: 'Know more than the answer.',
+      why: 'Understanding shows when a student can connect a new idea to something they already know, and say where their knowledge stops.',
+      checkpoint: {
+        kind: 'pick',
+        ask: 'Which one shows that a student understands the idea?',
+        answer: 'soyl',
+        order: ['traditional', 'soyl'],
+        right: 'Yes. An analogy only works if you can see how the idea is built. The ten answers are already printed in the chapter.',
+        wrong: 'Not yet. Those ten answers are already printed in the chapter, so finding them shows reading. Look at the other one.',
+      },
+    },
+    {
+      verb: 'Apply',
+      line: 'Use it in a new situation.',
+      why: 'Taking an idea to a real problem shows the gap between the theory and the world. Working across that gap is where the learning happens.',
+      checkpoint: {
+        kind: 'pick',
+        ask: 'Which one puts the idea to work in a new place?',
+        answer: 'soyl',
+        order: ['soyl', 'traditional'],
+        right: 'Yes. Nobody has laid out this garden before, so the student has to decide how the maths fits it.',
+        wrong: 'Not yet. Twenty similar equations repeat one move twenty times. Which one takes the idea somewhere new?',
+      },
+    },
+    {
+      verb: 'Create',
+      line: 'Make something with it.',
+      why: 'Making something new means pulling ideas together, choosing between options and finishing the piece.',
+      checkpoint: {
+        kind: 'pick',
+        ask: 'Which one ends with something the student made and has to stand behind?',
+        answer: 'soyl',
+        order: ['traditional', 'soyl'],
+        right: 'Yes. The diary entry is new, and it still has to be true to its time.',
+        wrong: 'Not yet. A standard essay follows a set shape. Which one asks for something new?',
+      },
+    },
+    {
+      verb: 'Defend',
+      line: 'Explain why, not just what.',
+      why: 'If you cannot say why your answer works, you do not hold it yet. Defending means weighing the evidence and answering the hard question.',
+      checkpoint: {
+        kind: 'pick',
+        ask: 'Which one could a chatbot do for the student?',
+        answer: 'traditional',
+        order: ['soyl', 'traditional'],
+        right: 'Yes. A chatbot can pick an option. Only the student can stand up and answer questions about how they worked.',
+        wrong: 'Not this one. Nobody else can stand in front of the class and answer for how the student worked. Look at the other one.',
+      },
+    },
+    {
+      verb: 'Reflect',
+      line: 'Look again. Do it better.',
+      why: 'Looking back at what worked, what failed and what to change is how students learn to learn.',
+      checkpoint: {
+        kind: 'reflect',
+        ask: 'Look back. Which checkpoint made you think hardest?',
+        done: 'That is a reflection: you looked back at your own work and named the hard part. A SOYL assignment asks one more thing, how you got past it.',
+      },
+    },
   ],
-} as const;
+};
 
 /**
  * How it works for a teacher (/teachers, components/home/HowItWorks.tsx). Text only: the screenshot slots in

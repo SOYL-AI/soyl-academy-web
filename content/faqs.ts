@@ -127,6 +127,11 @@ export const methodFaqs: FaqItem[] = [
     answer:
       'SOYL teaches students to use technology as a thought partner. The method demands transparency in their process and holds them accountable for the integrity of their work.',
   },
+  {
+    question: 'Does the SOYL Method replace teachers?',
+    answer:
+      'No. The tools extend a teacher’s reach and give deeper insight, but the teaching decisions, the relationships and the final assessment stay human.',
+  },
 ];
 
 export const schoolsFaqs: FaqItem[] = [
