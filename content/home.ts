@@ -14,13 +14,15 @@ export const hero = {
   points: ['You approve every question', 'Hints never give the answer', 'Every attempt is kept'],
 } as const;
 
+/** The before/after assignment toggle on /schools (components/home/Shift.tsx, AssignmentToggle.tsx). */
 export const shift = {
-  label: 'The shift',
   headline: 'Now change the assignment.',
   intro: 'Same topic, same class. One asks for an answer AI can write in seconds. The other asks students to do the thinking.',
   old: {
     subject: 'Science · Class 8',
+    due: 'Due Monday',
     prompt: 'Write 500 words about renewable energy.',
+    note: 'One prompt, one answer, one mark. A chatbot can write it in seconds, and the mark looks the same.',
   },
   soyl: {
     eyebrow: 'The energy challenge',

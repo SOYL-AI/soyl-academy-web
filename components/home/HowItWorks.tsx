@@ -1,46 +1,63 @@
-import { hero, howItWorks } from '@/content/home';
-import { media } from '@/content/media';
-import { SectionHeader } from '@/components/ui/SectionHeader';
-import { ProductShot } from '@/components/ui/ProductShot';
+import type { ReactNode } from 'react';
+import { Section } from '@/components/ink/Section';
+import { Stroke } from '@/components/ink/Stroke';
+import { hero } from '@/content/home';
 import { MiniSimulator } from './MiniSimulator';
 
-export function HowItWorks() {
+export interface HowItWorksStep {
+  title: string;
+  line: string;
+}
+
+interface HowItWorksProps {
+  /** The section's anchor (the /schools HowTo structured data points at `#workflow`). */
+  id: string;
+  title: ReactNode;
+  intro?: string;
+  /** The steps in order, as each page already states them (/schools: six, /teachers: four). */
+  steps: readonly HowItWorksStep[];
+  /** The heading over the simulator, e.g. "What your pupils see". */
+  tryTitle: string;
+}
+
+/**
+ * How it works, beside a SOYL question played as a pupil (/schools and /teachers, plan §3.3). The steps are text
+ * only: there are no real product screenshots yet (content/media.ts), so none are shown. The simulator is the
+ * real interaction, on the painted wash.
+ */
+export function HowItWorks({ id, title, intro, steps, tryTitle }: HowItWorksProps) {
+  const titleId = `${id}-title`;
   return (
-    <section id="how-it-works" className="section scroll-mt-16 bg-paper-2">
-      <div className="page">
-        <SectionHeader label={howItWorks.label} num="03" title={howItWorks.headline} intro={howItWorks.intro} />
+    <Section id={id} ground="paper-2" aria-labelledby={titleId} className="scroll-mt-16">
+      <h2 id={titleId} className="ink-head max-w-[18ch]">
+        {title}
+      </h2>
+      <Stroke pigment="indigo" width="5em" className="text-[clamp(1.9rem,4.2vw,3.2rem)]" />
+      {intro ? <p className="ink-lead mt-6 max-w-[52ch]">{intro}</p> : null}
 
-        <div className="grid-12 mt-12 gap-y-12 md:mt-16">
-          <ol className="col-span-12 lg:col-span-5">
-            {howItWorks.steps.map((step, i) => (
-              <li
-                key={step.title}
-                data-reveal
-                style={{ '--d': `${i * 80}ms` } as React.CSSProperties}
-                className="grid grid-cols-[3.25rem_1fr] gap-x-4 border-t border-rule-strong py-6 first:border-t-0 first:pt-0 md:py-7"
-              >
-                <span
-                  className={`t-num flex h-12 w-12 items-center justify-center rounded-full font-serif text-[1.75rem] leading-none ${['bg-cobalt text-white', 'bg-red-pen text-white', 'bg-highlighter text-ink'][i % 3]}`}
-                >
-                  {i + 1}
-                </span>
-                <div>
-                  <h3 className="t-subtitle">{step.title}</h3>
-                  <p className="mt-1.5 text-muted">{step.line}</p>
-                  <ProductShot slot={media[step.media]} sizes="(min-width: 1024px) 420px, 90vw" className="mt-5" />
-                </div>
-              </li>
-            ))}
-          </ol>
+      <div className="mt-10 grid gap-12 lg:grid-cols-12 lg:gap-8">
+        <ol className="lg:col-span-5">
+          {steps.map((step, i) => (
+            <li key={step.title} className="grid grid-cols-[2.25rem_1fr] gap-x-3 border-t border-rule py-5 first:border-t-0 first:pt-0">
+              <span aria-hidden="true" className="font-serif text-[1.6rem] leading-none tabular-nums text-indigo">
+                {i + 1}
+              </span>
+              <div>
+                <h3 className="text-[1.0625rem] font-semibold leading-snug">{step.title}</h3>
+                <p className="mt-1 text-graphite">{step.line}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
 
-          {/* A real interaction, not a screenshot */}
-          <div id="try-it" className="col-span-12 scroll-mt-24 lg:col-span-7 lg:col-start-6 lg:pl-4" data-reveal style={{ '--d': '120ms' } as React.CSSProperties}>
-            <p className="t-eyebrow mb-4 text-muted">Try a SOYL question</p>
+        <div id="try" className="scroll-mt-24 lg:col-span-7 lg:pl-4">
+          <h3 className="ink-title">{tryTitle}</h3>
+          <div className="mt-6">
             <MiniSimulator />
-            <p className="t-small mt-4 max-w-[52ch] text-muted">{hero.caption}</p>
           </div>
+          <p className="mt-6 max-w-[52ch] text-[0.9375rem] text-graphite">{hero.caption}</p>
         </div>
       </div>
-    </section>
+    </Section>
   );
 }

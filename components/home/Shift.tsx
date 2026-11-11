@@ -1,41 +1,49 @@
-import { shift } from '@/content/home';
-import { images } from '@/content/images';
-import { SectionHeader } from '@/components/ui/SectionHeader';
-import { Photo } from '@/components/media/Photo';
-import { Drawn } from '@/components/motion/Text';
+import { InkLink } from '@/components/ink/Button';
+import { Dab } from '@/components/ink/Dab';
+import { Section } from '@/components/ink/Section';
+import { Stroke } from '@/components/ink/Stroke';
+import { method, shift } from '@/content/home';
 import { AssignmentToggle } from './AssignmentToggle';
 
-/** The before/after assignment toggle. Moved from the homepage to /schools (docs/redesign-ink-and-wash.md §3.2). */
-export function Shift({ num = '01' }: { num?: string }) {
+/**
+ * The shift (/schools; moved from the homepage, docs/redesign-ink-and-wash.md §3.2 and §3.3): one assignment in
+ * two lives, and beside it the five verbs of the SOYL Method that the SOYL card is tagged with. The verbs are a
+ * plain list (the old marquee is gone); /method walks them one by one.
+ */
+export function Shift() {
   return (
-    <section className="section">
-      <div className="page">
-        <SectionHeader label={shift.label} num={num} title={shift.headline} intro={shift.intro} />
+    <Section id="shift" aria-labelledby="shift-title" className="scroll-mt-16">
+      <h2 id="shift-title" className="ink-head max-w-[16ch]">
+        {shift.headline}
+      </h2>
+      <Stroke pigment="madder" width="5em" className="text-[clamp(1.9rem,4.2vw,3.2rem)]" />
+      <p className="ink-lead mt-6 max-w-[52ch]">{shift.intro}</p>
 
-        <div className="grid-12 mt-12 gap-y-10 md:mt-16">
-          <div className="col-span-12 lg:col-span-5">
-            <Photo
-              backdrop="red"
-              backdropSide="left"
-              image={images.traditionalClassroom}
-              aspect="aspect-[4/3] lg:aspect-[4/5]"
-              parallax
-              sizes="(min-width: 1320px) 480px, (min-width: 1024px) 38vw, 100vw"
-            />
-          </div>
-          <div className="col-span-12 flex flex-col justify-between gap-10 lg:col-span-7 lg:pl-6">
-            <div data-reveal style={{ '--d': '120ms' } as React.CSSProperties}>
-              <AssignmentToggle />
-            </div>
-            <p className="font-serif text-[clamp(1.75rem,2.6vw,2.375rem)] leading-[1.1] tracking-[-0.015em]" data-reveal>
-              Same subject.{' '}
-              <span className="t-accent">
-                <Drawn>Very different learning.</Drawn>
-              </span>
-            </p>
+      <div className="mt-10 grid gap-12 lg:grid-cols-12 lg:gap-8">
+        <div className="lg:col-span-7">
+          <AssignmentToggle />
+        </div>
+
+        <div className="lg:col-span-4 lg:col-start-9">
+          <h3 className="ink-title">{method.headline}</h3>
+          <p className="mt-3 text-graphite">{method.intro}</p>
+          <ul className="mt-6 border-t border-rule">
+            {method.steps.map((step) => (
+              <li key={step.verb} className="flex items-baseline gap-3 border-b border-rule py-3">
+                <Dab pigment="indigo" className="text-[1.3rem]" />
+                <span>
+                  <span className="font-semibold">{step.verb}.</span> <span className="text-graphite">{step.line}</span>
+                </span>
+              </li>
+            ))}
+          </ul>
+          <div className="mt-5">
+            <InkLink href="/method" variant="quiet" arrow>
+              Walk the SOYL Method
+            </InkLink>
           </div>
         </div>
       </div>
-    </section>
+    </Section>
   );
 }

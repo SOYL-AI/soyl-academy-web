@@ -133,7 +133,7 @@ export const schoolsFaqs: FaqItem[] = [
   {
     question: 'What does a SOYL Academy pilot look like?',
     answer:
-      'A pilot runs in three phases over about ten weeks. In Introduce (weeks 1–2), a core cohort of early-adopter teachers receives professional development and maps 2–3 units to the SOYL framework. In Implement (weeks 3–8), teachers deploy SOYL challenges with ongoing support. In Evaluate (weeks 9–10), the school reviews student portfolios and teacher feedback and plans a wider rollout.',
+      'A pilot runs in three phases over about ten weeks. In Introduce (weeks 1 and 2), a core cohort of early-adopter teachers receives professional development and maps 2 or 3 units to the SOYL framework. In Implement (weeks 3 to 8), teachers deploy SOYL challenges with ongoing support. In Evaluate (weeks 9 and 10), the school reviews student portfolios and teacher feedback and plans a wider rollout.',
   },
   {
     question: 'Does SOYL Academy work with our existing curriculum?',
@@ -143,12 +143,12 @@ export const schoolsFaqs: FaqItem[] = [
   {
     question: 'How does the SOYL workflow work for teachers?',
     answer:
-      'Teachers define an objective, generate a real-world context with SOYL’s help, assign a challenge, review the students’ process and defence, and evaluate the evidence of thinking. The six steps are Define Objective, Generate Context, Assign Challenge, Student Action, Defense & Reflection and Educator Review.',
+      'The teacher frames the learning objective, students meet the scenario and its constraints, plan their approach, do the work, then explain and defend their choices, and the teacher reviews the evidence of thinking. The six steps are teacher design, student context, strategy and ideation, student action, defence and reflection, and educator review.',
   },
   {
     question: 'What happens to homework when students have AI?',
     answer:
-      'SOYL Academy’s answer is neither banning technology nor retreating to pen-and-paper exams. The answer is to change the assignment so that it asks students to apply, create and defend ideas — work that cannot be completed by copying a generated answer.',
+      'SOYL Academy’s answer is neither banning technology nor retreating to pen-and-paper exams. The answer is to change the assignment so that it asks students to apply, create and defend ideas: work that cannot be completed by copying a generated answer.',
   },
 ];
 
