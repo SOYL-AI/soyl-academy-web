@@ -1,0 +1,74 @@
+@layer properties, theme, base, components, utilities;
+/* Form fields in Ink and wash (components/forms/InkField.tsx). Tokens from app/globals.css.
+   The line above declares Tailwind's layer order before this file uses a layer (see the header of
+   components/ink/ink.module.css): a CSS module can load before app/globals.css, and its `components` layer
+   must never be the first one the page meets. Everything is in `components`, so a utility in className wins. */
+
+@layer components {
+
+.input {
+  display: block;
+  width: 100%;
+  min-height: 48px;
+  padding: 0.625rem 0.875rem;
+  border: 1px solid rgba(27, 26, 25, 0.55); /* 3.9:1 on paper: a field's edge is visible (WCAG 1.4.11) */
+  border-radius: var(--radius-sm);
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: 1rem; /* 16 px: phones do not zoom into the field */
+  line-height: 1.5;
+  transition: border-color 140ms var(--ease-ink), outline-color 140ms var(--ease-ink);
+}
+.input::placeholder { color: var(--color-muted); opacity: 1; }
+.input:focus {
+  border-color: var(--color-indigo);
+  outline: 2px solid var(--color-indigo);
+  outline-offset: 2px;
+}
+.input[aria-invalid="true"] { border-color: var(--color-madder); }
+.input[aria-invalid="true"]:focus { outline-color: var(--color-madder); }
+.input:disabled { cursor: not-allowed; opacity: 0.6; }
+@media (hover: hover) and (pointer: fine) {
+  .input:hover:not(:focus):not([aria-invalid="true"]) { border-color: var(--color-ink); }
+}
+
+textarea.input { resize: vertical; min-height: 8.5rem; }
+
+/* A select: the same field, with a drawn chevron in place of the platform's arrow. */
+.select {
+  cursor: pointer;
+  appearance: none;
+  padding-right: 2.75rem;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M4 6l4 4 4-4' stroke='%231B1A19' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.9rem center;
+  background-size: 16px 16px;
+}
+
+/* A choice among several (grades): a checkbox drawn as an ink chip, 44 x 44 px at least, never a pill.
+   Markup: <label class="choice"><input type="checkbox" class="sr-only"><span>…</span></label> */
+.choice { position: relative; display: inline-flex; cursor: pointer; }
+.choice > span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  padding-inline: 0.85rem;
+  border: 1px solid rgba(27, 26, 25, 0.55);
+  border-radius: var(--radius-sm);
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-weight: 500;
+  font-size: 0.9375rem;
+  font-variant-numeric: tabular-nums;
+  transition: background-color 120ms var(--ease-ink), color 120ms var(--ease-ink), border-color 120ms var(--ease-ink);
+}
+.choice > input:checked + span { background: var(--color-ink); border-color: var(--color-ink); color: var(--color-paper); }
+.choice > input:focus-visible + span { outline: 2px solid var(--color-indigo); outline-offset: 2px; }
+@media (hover: hover) and (pointer: fine) {
+  .choice:hover > input:not(:checked) + span { border-color: var(--color-ink); background: var(--color-paper-2); }
+}
+
+} /* @layer components */
