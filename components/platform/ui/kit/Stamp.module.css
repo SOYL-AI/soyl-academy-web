@@ -1,0 +1,85 @@
+/* The rubber stamp (ADR-029): streak days and rank cards only. Madder by day, madder-rose at night; leaf for
+   tone="solved". Sizes in the SVG are user units of a 120 x 120 ring, so the stamp scales as one piece. */
+.stamp {
+  display: inline-block;
+  flex: none;
+  width: var(--stamp-size, 112px);
+  height: var(--stamp-size, 112px);
+  color: var(--p-stamp);
+  line-height: 0;
+  vertical-align: middle;
+  rotate: var(--stamp-tilt, -7deg);
+}
+.stamp[data-tone='solved'] {
+  color: var(--p-stamp-solved);
+}
+.svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.ringOuter,
+.ringInner {
+  fill: none;
+  stroke: currentColor;
+}
+.ringOuter {
+  stroke-width: 3.2;
+}
+.ringInner {
+  stroke-width: 1.2;
+}
+.dot {
+  fill: currentColor;
+}
+
+/* The label and caption around the ring: the small-caps label of a product moment (DESIGN.md §3). */
+.arc {
+  fill: currentColor;
+  font-family: var(--p-font-sans);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-anchor: middle;
+}
+.arc[data-step='sm'] {
+  font-size: 8.5px;
+  letter-spacing: 1px;
+}
+.arc[data-step='xs'] {
+  font-size: 7.5px;
+  letter-spacing: 0.6px;
+}
+
+/* The number: Zodiak, the display face. */
+.mark {
+  fill: currentColor;
+  font-family: var(--p-font-serif);
+  font-size: 40px;
+  font-weight: 400;
+  font-variant-numeric: lining-nums;
+  letter-spacing: -0.5px;
+  text-anchor: middle;
+  dominant-baseline: central;
+}
+.mark[data-length='3'] {
+  font-size: 32px;
+}
+.mark[data-length='4'] {
+  font-size: 26px;
+}
+.mark[data-length='5'] {
+  font-size: 21px;
+}
+
+/* Windows high contrast: the stamp keeps its shape in the system text colour, without the worn texture. */
+@media (forced-colors: active) {
+  .stamp {
+    color: CanvasText;
+  }
+  .stamp g {
+    filter: none;
+  }
+}
