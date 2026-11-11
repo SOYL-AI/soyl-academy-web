@@ -49,8 +49,9 @@ export function quickDoubtCredits(): number | null {
 export function perDayLabel(amountPaise: number, days: number): string {
   if (days <= 0) throw new Error('perDayLabel needs at least one day');
   const perDayPaise = amountPaise / days;
-  if (perDayPaise >= 1000) return formatInr(Math.round(perDayPaise / 100) * 100);
   const tenPaise = Math.max(10, Math.round(perDayPaise / 10) * 10);
+  // 996 paise rounds up to 1000: that is "₹10", not "₹10.00".
+  if (tenPaise >= 1000) return formatInr(Math.round(perDayPaise / 100) * 100);
   return `₹${(tenPaise / 100).toFixed(2)}`;
 }
 
