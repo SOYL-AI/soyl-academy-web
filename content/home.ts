@@ -14,13 +14,15 @@ export const hero = {
   points: ['You approve every question', 'Hints never give the answer', 'Every attempt is kept'],
 } as const;
 
+/** The before/after assignment toggle on /schools (components/home/Shift.tsx, AssignmentToggle.tsx). */
 export const shift = {
-  label: 'The shift',
   headline: 'Now change the assignment.',
   intro: 'Same topic, same class. One asks for an answer AI can write in seconds. The other asks students to do the thinking.',
   old: {
     subject: 'Science · Class 8',
+    due: 'Due Monday',
     prompt: 'Write 500 words about renewable energy.',
+    note: 'One prompt, one answer, one mark. A chatbot can write it in seconds, and the mark looks the same.',
   },
   soyl: {
     eyebrow: 'The energy challenge',
@@ -33,77 +35,117 @@ export const shift = {
   },
 } as const;
 
-export const method = {
-  label: 'The SOYL Method',
+/**
+ * A checkpoint on the /method walk (components/method/MethodWalk.tsx). `pick`: the reader chooses which of the
+ * pillar's two assignments (content/method.ts, `traditional` and `soyl`) does what the question asks; `order`
+ * says which is shown first. `reflect`: the reader names the checkpoint that made them think hardest; any choice
+ * completes it, because a reflection has no wrong answer.
+ */
+export type MethodCheckpoint =
+  | { kind: 'pick'; ask: string; answer: 'traditional' | 'soyl'; order: readonly ['traditional', 'soyl'] | readonly ['soyl', 'traditional']; right: string; wrong: string }
+  | { kind: 'reflect'; ask: string; done: string };
+
+export interface MethodStep {
+  verb: 'Understand' | 'Apply' | 'Create' | 'Defend' | 'Reflect';
+  line: string;
+  /** One plain sentence on why the verb shows learning, drawn from the pillar's text in content/method.ts. */
+  why: string;
+  checkpoint: MethodCheckpoint;
+}
+
+/** The five verbs of the SOYL Method: the list on /schools (Shift) and the walk on /method. */
+export const method: { headline: string; intro: string; steps: readonly MethodStep[] } = {
   headline: 'Learning is a verb.',
   intro: 'Every SOYL assignment asks for at least one of five things a generated answer can’t fake.',
   steps: [
-    { verb: 'Understand', line: 'Know more than the answer.' },
-    { verb: 'Apply', line: 'Use it in a new situation.' },
-    { verb: 'Create', line: 'Make something with it.' },
-    { verb: 'Defend', line: 'Explain why, not just what.' },
-    { verb: 'Reflect', line: 'Look again. Do it better.' },
+    {
+      verb: 'Understand',
+      line: 'Know more than the answer.',
+      why: 'Understanding shows when a student can connect a new idea to something they already know, and say where their knowledge stops.',
+      checkpoint: {
+        kind: 'pick',
+        ask: 'Which one shows that a student understands the idea?',
+        answer: 'soyl',
+        order: ['traditional', 'soyl'],
+        right: 'Yes. An analogy only works if you can see how the idea is built. The ten answers are already printed in the chapter.',
+        wrong: 'Not yet. Those ten answers are already printed in the chapter, so finding them shows reading. Look at the other one.',
+      },
+    },
+    {
+      verb: 'Apply',
+      line: 'Use it in a new situation.',
+      why: 'Taking an idea to a real problem shows the gap between the theory and the world. Working across that gap is where the learning happens.',
+      checkpoint: {
+        kind: 'pick',
+        ask: 'Which one puts the idea to work in a new place?',
+        answer: 'soyl',
+        order: ['soyl', 'traditional'],
+        right: 'Yes. Nobody has laid out this garden before, so the student has to decide how the maths fits it.',
+        wrong: 'Not yet. Twenty similar equations repeat one move twenty times. Which one takes the idea somewhere new?',
+      },
+    },
+    {
+      verb: 'Create',
+      line: 'Make something with it.',
+      why: 'Making something new means pulling ideas together, choosing between options and finishing the piece.',
+      checkpoint: {
+        kind: 'pick',
+        ask: 'Which one ends with something the student made and has to stand behind?',
+        answer: 'soyl',
+        order: ['traditional', 'soyl'],
+        right: 'Yes. The diary entry is new, and it still has to be true to its time.',
+        wrong: 'Not yet. A standard essay follows a set shape. Which one asks for something new?',
+      },
+    },
+    {
+      verb: 'Defend',
+      line: 'Explain why, not just what.',
+      why: 'If you cannot say why your answer works, you do not hold it yet. Defending means weighing the evidence and answering the hard question.',
+      checkpoint: {
+        kind: 'pick',
+        ask: 'Which one could a chatbot do for the student?',
+        answer: 'traditional',
+        order: ['soyl', 'traditional'],
+        right: 'Yes. A chatbot can pick an option. Only the student can stand up and answer questions about how they worked.',
+        wrong: 'Not this one. Nobody else can stand in front of the class and answer for how the student worked. Look at the other one.',
+      },
+    },
+    {
+      verb: 'Reflect',
+      line: 'Look again. Do it better.',
+      why: 'Looking back at what worked, what failed and what to change is how students learn to learn.',
+      checkpoint: {
+        kind: 'reflect',
+        ask: 'Look back. Which checkpoint made you think hardest?',
+        done: 'That is a reflection: you looked back at your own work and named the hard part. A SOYL assignment asks one more thing, how you got past it.',
+      },
+    },
   ],
-} as const;
+};
 
+/**
+ * How it works for a teacher (/teachers, components/home/HowItWorks.tsx). Text only: the screenshot slots in
+ * content/media.ts have no real product images yet, so the page shows none.
+ */
 export const howItWorks = {
-  label: 'How it works',
   headline: 'From notes to evidence.',
   intro: 'Start from what you already teach. SOYL drafts; you decide; students do the work; you see the thinking.',
   steps: [
     {
       title: 'Upload your notes',
       line: 'Start from the notes you already teach with. SOYL drafts interactive questions from them.',
-      media: 'uploadNotes',
     },
     {
       title: 'You approve every question',
       line: 'Edit, reorder or reject. Nothing reaches students until you say so.',
-      media: 'teacherApproves',
     },
     {
       title: 'Students work it out',
       line: 'Unlimited attempts and step-by-step hints that never give the answer away.',
-      media: 'studentHints',
     },
     {
       title: 'See each pupil’s path',
       line: 'A class heatmap of attempts and hints shows who struggled, where, and who got there alone.',
-      media: 'teacherHeatmap',
-    },
-  ],
-} as const;
-
-export const subjects = {
-  label: 'Subjects and simulators',
-  headline: 'Less busywork. More doing.',
-  intro: 'Simulators for maths, physics and chemistry let students move things and see what happens, not just pick an option.',
-} as const;
-
-export const audiences = {
-  label: 'Who it’s for',
-  headline: 'One assignment, three people who care.',
-  items: [
-    {
-      id: 'teachers',
-      title: 'For teachers',
-      line: 'Assignments from your own notes in minutes, and a clear view of how each pupil worked.',
-      link: { label: 'How SOYL works for teachers', href: '/teachers' },
-      image: 'teacherMentoring',
-    },
-    {
-      id: 'schools',
-      title: 'For schools',
-      line: 'A ten-week pilot that fits your curriculum, with teachers in control from day one.',
-      link: { label: 'Plan a pilot', href: '/schools' },
-      image: 'classroomWide',
-    },
-    {
-      id: 'parents',
-      title: 'For parents',
-      line: 'See your child’s progress and their teacher’s feedback, not just a mark.',
-      link: { label: 'What parents see', href: '/parents' },
-      image: 'studentThinking',
     },
   ],
 } as const;
@@ -113,17 +155,6 @@ export const futureBuilders = {
   headline: 'Build a real product.',
   line: 'Alongside the school platform, we run a live online summer camp: software, AI, IoT robotics and entrepreneurship, ending with a Demo Day pitch.',
   link: { label: 'Explore Future Builders', href: '/future-builders' },
-} as const;
-
-export const journalTeaser = {
-  label: 'The SOYL Journal',
-  headline: 'Ideas about learning after AI.',
-  link: { label: 'All essays', href: '/journal' },
-} as const;
-
-export const belief = {
-  first: 'We don’t want students to stop using AI.',
-  second: 'We want learning that still requires them to think.',
 } as const;
 
 export const finalCta = {

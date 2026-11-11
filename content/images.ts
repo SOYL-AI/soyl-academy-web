@@ -13,15 +13,7 @@
  */
 import type { StaticImageData } from 'next/image';
 
-import heroCollab from '@/public/images/hero_students_collaborating.jpg';
-import classroomWide from '@/public/images/classroom_wide_establishing.jpg';
-import classroomMaking from '@/public/images/classroom_wide_making.jpg';
-import teacherMentoring from '@/public/images/teacher_mentoring.jpg';
 import studentThinking from '@/public/images/student_thinking_portrait.jpg';
-import studentsBuilding from '@/public/images/students_building_project.jpg';
-import studentsDebating from '@/public/images/students_debating.jpg';
-import studentsPresenting from '@/public/images/students_presenting.jpg';
-import traditionalClassroom from '@/public/images/traditional_classroom.jpg';
 import fbPresentation from '@/public/images/future-builders/hero_presentation.jpg';
 import fbIot from '@/public/images/future-builders/iot_wiring.jpg';
 import fbSoftware from '@/public/images/future-builders/software_coding.jpg';
@@ -37,47 +29,10 @@ export interface EditorialImage {
 }
 
 export const images = {
-  heroCollab: {
-    src: heroCollab,
-    alt: 'Three secondary-school students around a desk, one explaining a model bridge they are building',
-    focus: '40% 40%',
-  },
-  classroomWide: {
-    src: classroomWide,
-    alt: 'A busy classroom where small groups of students work at tables while their teacher moves between them',
-  },
-  classroomMaking: {
-    src: classroomMaking,
-    alt: 'Students building and sketching in groups while a teacher leans in to help one table',
-  },
-  teacherMentoring: {
-    src: teacherMentoring,
-    alt: 'A teacher talking through a model with four students at a shared table',
-    focus: '45% 50%',
-  },
   studentThinking: {
     src: studentThinking,
     alt: 'A student pausing to think, pen in hand, over an open notebook',
     focus: '50% 35%',
-  },
-  studentsBuilding: {
-    src: studentsBuilding,
-    alt: 'Four students building a model tower from card and string, working from a sketch',
-  },
-  studentsDebating: {
-    src: studentsDebating,
-    alt: 'A student making a point with his hands while three classmates listen closely',
-    focus: '40% 50%',
-  },
-  studentsPresenting: {
-    src: studentsPresenting,
-    alt: 'A student at the whiteboard explaining her design sketches to classmates',
-    focus: '65% 40%',
-  },
-  traditionalClassroom: {
-    src: traditionalClassroom,
-    alt: 'Over a student’s shoulder: a worked maths proof in a notebook, a phone beside it, and a teacher at the board',
-    focus: '55% 60%',
   },
   fbPresentation: {
     src: fbPresentation,

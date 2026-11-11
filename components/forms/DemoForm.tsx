@@ -11,16 +11,27 @@ import {
   type DemoFormData,
   type Grade,
 } from '@/lib/validation/demo-fields';
-import { Field, FieldError, describedBy, inputClasses } from '@/components/ui/Field';
-import { buttonClasses } from '@/components/ui/Button';
-import { cn } from '@/lib/utils';
+import {
+  InkField as Field,
+  InkFieldError as FieldError,
+  RequiredMark,
+  describedBy,
+  inkChoiceClasses,
+  inkInputClasses as inputClasses,
+  inkSelectClasses,
+} from '@/components/forms/InkField';
+import { InkButton } from '@/components/ink/Button';
+import { Dab } from '@/components/ink/Dab';
 
 type TextKey = 'name' | 'school' | 'email' | 'phone' | 'city';
 const FIELD_ORDER: (keyof DemoFormData)[] = ['name', 'role', 'school', 'email', 'phone', 'city', 'grades'];
 
 const EMPTY: DemoFormData = { name: '', school: '', role: '', email: '', phone: '', city: '', grades: [], honeypot: '' };
 
-/** Book-a-demo form: validates inline on blur and on submit; no form library, so the page stays light. */
+/**
+ * Book-a-demo form: validates inline on blur and on submit; no form library, so the page stays light.
+ * Ink and wash (phase 5): the fields are components/forms/InkField; names, validation and the action are as before.
+ */
 export function DemoForm() {
   const [data, setData] = useState<DemoFormData>(EMPTY);
   const [errors, setErrors] = useState<DemoErrors>({});
@@ -76,18 +87,19 @@ export function DemoForm() {
   if (status === 'done') {
     const first = data.name.trim().split(' ')[0];
     return (
-      <div ref={thanksRef} tabIndex={-1} className="module border-success/40 p-6 outline-none md:p-8" role="status">
-        <p className="t-label mb-3 flex items-center gap-2 text-success">
-          <span aria-hidden="true" className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-success text-[12px] text-white">✓</span>
+      <div ref={thanksRef} tabIndex={-1} className="rounded-[var(--radius-md)] bg-paper-2 p-6 outline-none md:p-8" role="status">
+        <p className="flex items-center gap-2.5 font-semibold text-leaf">
+          <Dab pigment="leaf" className="text-[1.4rem]" />
           Request received
         </p>
-        <h2 className="t-title">Thank you{first ? `, ${first}` : ''}.</h2>
-        <p className="mt-3 max-w-[46ch] text-muted">
+        <h2 className="ink-head mt-3">Thank you{first ? `, ${first}` : ''}.</h2>
+        <p className="mt-4 max-w-[46ch] text-graphite">
           The SOYL team will get back to you to find a time that suits your school. In the meantime:
         </p>
         <ul className="mt-5 space-y-2">
           <li>
-            <Link href="/#try-it" className="link">Try a SOYL question yourself</Link>
+            {/* The homepage opens on a question to play (the ring); /#try-it went with the old homepage. */}
+            <Link href="/" className="link">Try a SOYL question yourself</Link>
           </li>
           <li>
             <Link href="/method" className="link">Read about the SOYL Method</Link>
@@ -131,9 +143,9 @@ export function DemoForm() {
   };
 
   return (
-    <form onSubmit={onSubmit} noValidate className="module p-5 shadow-[0_30px_60px_-45px_rgba(20,20,20,0.4)] md:p-10">
+    <form onSubmit={onSubmit} noValidate className="rounded-[var(--radius-md)] bg-paper-2 p-5 md:p-8">
       {status === 'error' && (
-        <div role="alert" className="t-small mb-6 border-l-2 border-red-pen bg-paper px-3 py-2 text-ink">
+        <div role="alert" className="mb-6 rounded-[var(--radius-sm)] border border-madder/40 bg-paper px-4 py-3 text-[0.9375rem] text-madder">
           {serverMessage}
         </div>
       )}
@@ -160,7 +172,7 @@ export function DemoForm() {
             value={data.role}
             onChange={(e) => update({ ...data, role: e.target.value as DemoFormData['role'] }, 'role')}
             onBlur={() => blur('role')}
-            className={cn(inputClasses, 'cursor-pointer')}
+            className={inkSelectClasses}
             aria-invalid={!!errors.role}
             aria-describedby={describedBy('demo-role', { error: !!errors.role })}
           >
@@ -181,20 +193,20 @@ export function DemoForm() {
         {text('city', 'City', { autoComplete: 'address-level2', span: true })}
 
         <fieldset className="md:col-span-2" aria-describedby={describedBy('demo-grades', { error: !!errors.grades })}>
-          <legend className="t-label mb-2 text-ink">
-            Grades you’re interested in <span aria-hidden="true" className="text-muted">*</span>
+          <legend className="mb-2 text-[0.9375rem] font-medium leading-[1.4] text-ink">
+            Grades you’re interested in<RequiredMark required />
           </legend>
           <div className="flex flex-wrap gap-2">
             {GRADES.map((g) => (
-              <label key={g} className="relative cursor-pointer">
+              <label key={g} className={inkChoiceClasses}>
                 <input
                   id={`demo-grade-${g}`}
                   type="checkbox"
                   checked={data.grades.includes(g)}
                   onChange={() => toggleGrade(g)}
-                  className="peer sr-only"
+                  className="sr-only"
                 />
-                <span className="press t-num inline-flex h-11 min-w-11 items-center justify-center rounded-full border border-control/70 bg-white px-3 hover:border-ink text-[15px] font-medium peer-checked:border-ink peer-checked:bg-ink peer-checked:text-white peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-cobalt">
+                <span>
                   <span className="sr-only">Grade </span>
                   {g}
                 </span>
@@ -206,13 +218,13 @@ export function DemoForm() {
       </div>
 
       <div className="mt-8 flex flex-col gap-4 border-t border-rule pt-6 sm:flex-row sm:items-center sm:justify-between">
-        <p className="t-small max-w-[40ch] text-muted">
+        <p className="max-w-[40ch] text-[0.875rem] leading-[1.55] text-muted">
           We use these details only to arrange your demo. See our{' '}
           <Link href="/privacy" className="link">privacy policy</Link>.
         </p>
-        <button type="submit" disabled={status === 'sending'} className={buttonClasses('primary', 'lg')}>
+        <InkButton type="submit" size="lg" disabled={status === 'sending'}>
           {status === 'sending' ? 'Sending…' : 'Book a demo'}
-        </button>
+        </InkButton>
       </div>
     </form>
   );

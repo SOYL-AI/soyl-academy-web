@@ -1,8 +1,8 @@
 import { DemoForm } from '@/components/forms/DemoForm';
-import { PageHero } from '@/components/ui/PageHero';
-import { Photo } from '@/components/media/Photo';
-import { images } from '@/content/images';
+import { InkPhoto } from '@/components/ink/InkPhoto';
+import { PageIntro } from '@/components/ink/PageIntro';
 import { StructuredData } from '@/components/seo/StructuredData';
+import { photo } from '@/content/credits';
 import { SITE_CONTACT_EMAIL } from '@/lib/seo/config';
 import { createMetadata } from '@/lib/seo/metadata';
 import { breadcrumbNode, graph, topLevelCrumbs, webPageNode } from '@/lib/seo/schema';
@@ -15,45 +15,49 @@ const WHAT_HAPPENS = [
   { title: 'We plan a pilot', line: 'If it fits, a ten-week pilot shaped around your curriculum.' },
 ];
 
+/**
+ * Book a demo, in Ink and wash (plan §3.3, phase 5): the quiet opener, the form (components/forms/DemoForm, its
+ * fields, validation and action unchanged) and what happens next beside it, with a real photograph.
+ */
 export default function BookDemoPage() {
+  const teacher = photo('teacher-blackboard');
   return (
     <>
       <StructuredData
         data={graph(webPageNode({ path: '/book-a-demo' }), breadcrumbNode('/book-a-demo', topLevelCrumbs('/book-a-demo')))}
       />
-      <PageHero
-        tone="blue"
-        label="Book a demo"
-        title={
-          <>
-            See SOYL with your own <span className="t-accent">eyes.</span>
-          </>
-        }
-        intro="Tell us a little about your school. It takes a minute, and we’ll take it from there."
-        size="headline"
+      <PageIntro
+        size="head"
+        title="See SOYL with your own eyes."
+        lead="Tell us a little about your school. It takes a minute, and we’ll take it from there."
+        className="pb-8 md:pb-10"
       />
 
-      <section className="pb-20 md:pb-28">
-        <div className="page grid-12 gap-y-12">
-          <div className="col-span-12 lg:col-span-7">
+      <section aria-label="Book a demo" className="pb-20 md:pb-28">
+        <div className="page grid gap-12 lg:grid-cols-12 lg:gap-8">
+          <div className="lg:col-span-7">
             <DemoForm />
           </div>
 
-          <aside className="col-span-12 lg:col-span-4 lg:col-start-9">
-            <Photo image={images.teacherMentoring} aspect="aspect-[4/3]" className="mb-8" sizes="(min-width: 1024px) 380px, 100vw" />
-            <h2 className="t-eyebrow mb-4 text-muted">What happens next</h2>
-            <ol className="border-t border-ink">
-              {WHAT_HAPPENS.map((s, i) => (
-                <li key={s.title} className="flex gap-4 border-b border-rule py-4">
-                  <span className="t-num font-serif text-[2rem] leading-none text-cobalt">{i + 1}</span>
+          <aside aria-labelledby="next-title" className="lg:col-span-4 lg:col-start-9">
+            <InkPhoto src={teacher.src} alt={teacher.alt} aspect="4 / 3" position="40% 40%" sizes="(min-width: 1320px) 400px, (min-width: 1024px) 31vw, 92vw" className="mb-8" />
+            <h2 id="next-title" className="ink-title">
+              What happens next
+            </h2>
+            <ol className="mt-4 border-t border-rule">
+              {WHAT_HAPPENS.map((step, i) => (
+                <li key={step.title} className="flex gap-4 border-b border-rule py-4">
+                  <span aria-hidden="true" className="w-6 shrink-0 font-serif text-[1.75rem] leading-none text-indigo tabular-nums">
+                    {i + 1}
+                  </span>
                   <div>
-                    <p className="font-semibold">{s.title}</p>
-                    <p className="t-small mt-0.5 text-muted">{s.line}</p>
+                    <p className="font-semibold">{step.title}</p>
+                    <p className="mt-0.5 text-[0.9375rem] text-graphite">{step.line}</p>
                   </div>
                 </li>
               ))}
             </ol>
-            <p className="t-small mt-6 text-muted">
+            <p className="mt-6 text-[0.9375rem] text-graphite">
               Prefer email? Write to{' '}
               <a href={`mailto:${SITE_CONTACT_EMAIL}`} className="link">
                 {SITE_CONTACT_EMAIL}

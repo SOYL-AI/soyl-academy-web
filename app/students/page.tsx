@@ -1,126 +1,82 @@
 import Link from 'next/link';
-import { MiniSimulator } from '@/components/home/MiniSimulator';
-import { ArrowRight } from '@/components/ui/Button';
-import { PageHero } from '@/components/ui/PageHero';
-import { Label } from '@/components/ui/SectionHeader';
-import { Photo } from '@/components/media/Photo';
-import { Faq } from '@/components/seo/Faq';
+import { DoorPicker } from '@/components/home/DoorPicker';
+import { DoorStateProvider } from '@/components/home/DoorState';
+import { Arrow } from '@/components/ink/Button';
+import { FaqList } from '@/components/ink/FaqList';
+import { InkPhoto } from '@/components/ink/InkPhoto';
+import { PageIntro } from '@/components/ink/PageIntro';
 import { StructuredData } from '@/components/seo/StructuredData';
+import { photo } from '@/content/credits';
 import { studentsFaqs } from '@/content/faqs';
-import { images } from '@/content/images';
+import { PLATFORM_ENABLED } from '@/lib/site';
 import { createMetadata } from '@/lib/seo/metadata';
 import { breadcrumbNode, faqNode, graph, topLevelCrumbs, webPageNode } from '@/lib/seo/schema';
 
 export const metadata = createMetadata({ path: '/students' });
 
-const VERBS = ['Solve.', 'Build.', 'Argue.', 'Explain.', 'Reflect.'];
-
+/**
+ * For students, merged into free learning (docs/redesign-ink-and-wash.md §3.3): a short page that hands straight
+ * to the homepage door. The URL keeps answering 200.
+ *
+ * With the platform on, the door's own picker sits under the heading (board, class, "Open Class N" into /learn),
+ * sharing the homepage's stored pick. With it off (GEN-4) there is no platform link: the door's "open soon"
+ * line instead. Then Future Builders, which takes students without their school, and three questions.
+ */
 export default function StudentsPage() {
+  const fb = photo('arduino-team');
   return (
     <>
       <StructuredData
-        data={graph(
-          webPageNode({ path: '/students' }),
-          breadcrumbNode('/students', topLevelCrumbs('/students')),
-          faqNode('/students', studentsFaqs)
-        )}
+        data={graph(webPageNode({ path: '/students' }), breadcrumbNode('/students', topLevelCrumbs('/students')), faqNode('/students', studentsFaqs))}
       />
 
-      <PageHero
-        tone="blue"
-        label="For students"
-        title={
-          <>
-            Learn beyond the <span className="t-accent">answer.</span>
-          </>
+      <PageIntro
+        title="Every lesson is free."
+        lead="Classes 7 to 12. CBSE, ICSE and ISC. Lessons, notes, flashcards and practice cost nothing, and you only ever pay for AI."
+        actions={
+          <div className="w-full">
+            {PLATFORM_ENABLED ? (
+              <>
+                <p className="ink-ask">What are you studying?</p>
+                <DoorStateProvider remember>
+                  <DoorPicker />
+                </DoorStateProvider>
+              </>
+            ) : (
+              <p className="ink-ask">Free lessons for Classes 7 to 12 open soon.</p>
+            )}
+          </div>
         }
-        intro="School isn’t only about finding an answer someone else already found. It’s about learning how to think when the answer isn’t obvious. In SOYL you get as many tries as you need, and hints that help you get there yourself."
-        image={images.studentsBuilding}
+        photo={{ slug: 'desk-pages', position: '62% 70%' }}
       />
 
-      <section className="section bg-paper">
-        <div className="page grid-12 items-start gap-y-12">
-          <div className="col-span-12 lg:col-span-5" data-reveal>
-            <Label num="01" className="mb-6">Try one</Label>
-            <h2 className="t-headline max-w-[12ch]">
-              Mistakes are part of the <span className="t-accent">work.</span>
-            </h2>
-            <p className="t-lead mt-6 max-w-[40ch]">
-              Every try is kept, and nobody minds how many it takes. When you get there, SOYL tells you how: “You worked it out · 3 tries · 1 hint.”
-            </p>
-          </div>
-          <div className="col-span-12 lg:col-span-7" data-reveal style={{ '--d': '120ms' } as React.CSSProperties}>
-            <MiniSimulator />
-          </div>
-        </div>
-      </section>
-
-      <section className="section overflow-hidden">
-        <div className="page">
-          <ul className="flex flex-wrap items-baseline gap-x-6 gap-y-1 md:gap-x-10" aria-label="What you do in a SOYL assignment">
-            {VERBS.map((v, i) => (
-              <li
-                key={v}
-                data-reveal
-                style={{ '--d': `${i * 90}ms` } as React.CSSProperties}
-                className={i % 2 ? 't-display t-accent text-muted' : 't-display'}
-              >
-                {v}
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      <section className="section-tight">
-        <div className="page">
-          <div className="on-dark grid-12 items-center gap-y-10 overflow-hidden rounded-[var(--radius-lg)] bg-ink text-white">
-            <div className="col-span-12 px-6 pt-10 md:px-12 md:pt-14 lg:col-span-6 lg:py-16 lg:pr-0" data-reveal>
-              <p className="t-eyebrow mb-6 text-white/70">About AI</p>
-              <h2 className="t-headline max-w-[16ch]">
-                Use AI to think better, not to <span className="t-accent text-highlighter">skip</span> thinking.
-              </h2>
-              <p className="mt-6 max-w-[48ch] text-white/80">
-                You have powerful AI tools, and you’re allowed to use them. But in a SOYL assignment you can’t just paste an answer: you explain your process, defend your choices and show the ideas are yours.
-              </p>
-            </div>
-            <div className="col-span-12 h-full min-h-[18rem] lg:col-span-5 lg:col-start-8">
-              <Photo
-                image={images.studentsPresenting}
-                aspect="h-full min-h-[18rem]"
-                className="rounded-none"
-                sizes="(min-width: 1320px) 520px, (min-width: 1024px) 40vw, 100vw"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="section-tight">
+      <section aria-labelledby="fb-title" className="pb-16 md:pb-24">
         <div className="page">
           <Link
             href="/future-builders"
-            className="group grid-12 items-center gap-y-6 rounded-[var(--radius-lg)] border border-rule p-5 transition-colors duration-300 hover:border-ink/40 md:p-6"
-            data-reveal
+            className="group grid items-center gap-6 rounded-[var(--radius-md)] bg-[#F3D36B] p-5 text-ink md:grid-cols-12 md:gap-8 md:p-6"
           >
-            <div className="col-span-12 md:col-span-4">
-              <Photo image={images.fbIot} aspect="aspect-[3/2]" zoom reveal={false} sizes="(min-width: 768px) 360px, 100vw" />
+            <div className="md:col-span-5">
+              <InkPhoto src={fb.src} alt={fb.alt} aspect="3 / 2" sizes="(min-width: 1320px) 480px, (min-width: 768px) 38vw, 88vw" />
             </div>
-            <div className="col-span-12 md:col-span-7 md:col-start-6">
-              <p className="t-eyebrow text-muted">Grades 7–12</p>
-              <h2 className="t-title mt-3">Want to build something real? Try Future Builders.</h2>
-              <p className="mt-3 max-w-[52ch] text-muted">
-                A summer camp in software, AI, IoT robotics and entrepreneurship. You build a working product and pitch it.
+            <div className="md:col-span-7">
+              <p className="text-[0.75rem] font-semibold uppercase tracking-[0.1em] text-ink/75">Future Builders · Grades 7 to 12</p>
+              <h2 id="fb-title" className="ink-title mt-2">
+                Want to build something real?
+              </h2>
+              <p className="mt-3 max-w-[52ch] text-ink/85">
+                A live online summer camp in software, AI, IoT robotics and entrepreneurship. You build a working product and pitch it, and you can join without your school.
               </p>
-              <span className="arrow-link mt-5">
-                About Future Builders <ArrowRight />
+              <span className="mt-5 inline-flex min-h-11 items-center gap-2 font-semibold">
+                About Future Builders
+                <Arrow className="transition-transform duration-150 group-hover:translate-x-1" />
               </span>
             </div>
           </Link>
         </div>
       </section>
 
-      <Faq faqs={studentsFaqs} heading="Questions from students" />
+      <FaqList faqs={studentsFaqs} heading="Questions from students" />
     </>
   );
 }

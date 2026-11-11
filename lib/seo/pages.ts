@@ -37,7 +37,8 @@ export interface PageEntry {
   changeFrequency: 'daily' | 'weekly' | 'monthly' | 'yearly';
 }
 
-export const HOME_TITLE = 'SOYL Academy | Interactive Assignments for Grades 1–10';
+// The homepage leads with free learning (docs/redesign-ink-and-wash.md §3.2); /schools carries the assignments.
+export const HOME_TITLE = 'SOYL Academy | The whole syllabus, free. CBSE and ICSE/ISC, Classes 7 to 12';
 
 export const PAGES: Record<string, PageEntry> = {
   '/': {
@@ -45,7 +46,7 @@ export const PAGES: Record<string, PageEntry> = {
     title: HOME_TITLE,
     label: 'Home',
     description:
-      'SOYL Academy turns teachers’ notes into interactive, teacher-approved assignments for Grades 1–10. Students learn by doing, with hints that never give the answer.',
+      'Free lessons, notes, flashcards, practice and tests for CBSE, ICSE and ISC, Classes 7 to 12. Only AI help is metered, with free credits every day.',
     type: 'WebPage',
     eyebrow: 'SOYL Academy',
     priority: 1,
@@ -75,7 +76,7 @@ export const PAGES: Record<string, PageEntry> = {
   },
   '/schools': {
     path: '/schools',
-    title: 'For Schools — Rethink Homework in the AI Era',
+    title: 'For Schools — Interactive Assignments for Grades 1–10',
     label: 'For Schools',
     description:
       'Partner with SOYL Academy to redesign assignments for the age of AI. A ten-week pilot that fits Common Core, IB, IGCSE or local curricula, with teachers in control.',
@@ -97,10 +98,12 @@ export const PAGES: Record<string, PageEntry> = {
   },
   '/parents': {
     path: '/parents',
-    title: 'For Parents — See How Your Child Learns',
+    // Ink and wash phase 3: the page is now the learning platform for the payer (weekly report, free and metered,
+    // consent), no longer the school-assignment parent view.
+    title: 'For Parents: See What Your Child Did This Week',
     label: 'For Parents',
     description:
-      'With SOYL, parents see their child’s progress and teacher feedback, not just a mark. Hints guide students without giving answers away.',
+      'Lessons, practice and tests are free for Classes 7 to 12; only AI help is metered. A weekly report for a parent, and how approval and safety work.',
     type: 'WebPage',
     eyebrow: 'For Parents',
     priority: 0.7,
@@ -119,10 +122,11 @@ export const PAGES: Record<string, PageEntry> = {
   },
   '/students': {
     path: '/students',
-    title: 'For Students — Learn Beyond the Answer',
+    // Merged into free learning (docs/redesign-ink-and-wash.md §3.3).
+    title: 'For Students: Free Lessons for Classes 7 to 12',
     label: 'For Students',
     description:
-      'Solve, build, argue, explain and reflect. SOYL Academy assignments let you use AI — and ask you to explain your process and defend your ideas.',
+      'Free lessons, notes, flashcards and practice for CBSE, ICSE and ISC, Classes 7 to 12. Start without an account; only AI help uses credits.',
     type: 'WebPage',
     eyebrow: 'For Students',
     priority: 0.7,
@@ -247,7 +251,7 @@ export function getOgContent(path: string): { eyebrow: string; title: string; de
 
   return {
     eyebrow: 'SOYL Academy',
-    title: 'Homework was built for a world before AI.',
+    title: 'The whole syllabus, free.',
     description: PAGES['/'].description,
   };
 }

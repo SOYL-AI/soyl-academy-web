@@ -3,13 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "postinstall": "node scripts/fetch-fonts.mjs",
+    "predev": "node scripts/fetch-fonts.mjs",
     "dev": "next dev",
+    "prebuild": "node scripts/fetch-fonts.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
     "test:platform-ui": "vitest run --config components/platform/ui/vitest.config.mts",
     "test:platform-web": "vitest run --config components/platform/vitest.config.mts",
-    "test:future-builders": "vitest run --config lib/future-builders/vitest.config.mts"
+    "test:future-builders": "vitest run --config lib/future-builders/vitest.config.mts",
+    "test:home": "vitest run --config lib/home/vitest.config.mts",
+    "test:pricing": "vitest run --config lib/pricing/vitest.config.mts"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.9.1",

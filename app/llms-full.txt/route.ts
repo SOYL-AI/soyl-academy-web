@@ -3,7 +3,7 @@ import { SITE_NAME, SITE_DESCRIPTION, SITE_URL } from '@/lib/seo/config';
 import { pillars } from '@/content/method';
 import { programs } from '@/content/programs';
 import { articles } from '@/content/journal';
-import { homeFaqs, methodFaqs, schoolsFaqs, studentsFaqs, whatWeTeachFaqs } from '@/content/faqs';
+import { freeLearningFaqs, homeFaqs, methodFaqs, schoolsFaqs, studentsFaqs, whatWeTeachFaqs } from '@/content/faqs';
 
 export async function GET() {
   const content = `# ${SITE_NAME} - Full Knowledge Base
@@ -26,6 +26,9 @@ Topics: ${p.topics.join(', ')}
 `).join('\n')}
 
 ## Frequently Asked Questions
+
+### Free learning (Classes 7 to 12)
+${freeLearningFaqs().map(f => `**Q: ${f.question}**\nA: ${f.answer}`).join('\n\n')}
 
 ### General FAQ
 ${homeFaqs.map(f => `**Q: ${f.question}**\nA: ${f.answer}`).join('\n\n')}

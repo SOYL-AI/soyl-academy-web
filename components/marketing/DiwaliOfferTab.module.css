@@ -1,25 +1,24 @@
 /*
- * Homepage "Diwali offer" side tab (owner, 8 Nov 2026). Scoped CSS module; no global styles.
- * Phones: a compact pill bottom-right, above the safe area, below the cookie bar (z-50) and the
- * mobile menu (z-40). From md: a vertical tab on the right edge, centred vertically.
+ * Homepage "Diwali offer" side tab (owner, 8 Nov 2026; restyled for Ink and wash, plan §3.4). Same logic,
+ * dates and dismiss button; now a painted turmeric tab with ink text so it belongs to the page.
+ * Phones: a compact tab bottom-right, above the safe area, below the cookie bar (z-50) and the mobile menu
+ * (z-40). From md: a vertical tab on the right edge, centred vertically. Ink on turmeric is 7.7:1.
  */
 .tab {
-  --dw-maroon: #3a0b16;
-  --dw-marigold: #ffc94a;
-  --dw-ivory: #fff7e8;
   position: fixed;
   z-index: 30;
   right: 12px;
   bottom: calc(12px + env(safe-area-inset-bottom));
   display: flex;
   align-items: center;
-  border-radius: 999px;
-  color: var(--dw-ivory);
-  background: linear-gradient(135deg, #3a0b16, #5c1424);
-  box-shadow:
-    0 0 0 1px rgba(255, 201, 74, 0.45),
-    0 14px 30px -12px rgba(58, 11, 22, 0.6);
-  color-scheme: dark;
+  border-radius: 7px;
+  color: var(--color-ink);
+  background-color: var(--color-turmeric);
+  /* The painted pool gives the flat colour a brushed edge and some depth. */
+  background-image: url("/art/pool-turmeric.webp");
+  background-size: 160% 220%;
+  background-position: 30% 45%;
+  box-shadow: 0 14px 30px -16px rgba(27, 26, 25, 0.55);
 }
 
 .link {
@@ -31,15 +30,17 @@
   font-size: 14px;
   font-weight: 600;
   white-space: nowrap;
-  color: var(--dw-ivory);
-  border-radius: 999px;
+  color: var(--color-ink);
+  border-radius: 7px;
 }
 .price {
-  color: var(--dw-marigold);
+  font-family: var(--font-serif); /* Zodiak has the rupee sign; Switzer does not */
+  font-weight: 400;
+  font-size: 1.12em;
 }
 .link:focus-visible,
 .close:focus-visible {
-  outline: 3px solid var(--dw-marigold);
+  outline: 2px solid var(--color-ink);
   outline-offset: 2px;
 }
 
@@ -49,11 +50,17 @@
   justify-content: center;
   width: 40px;
   height: 44px;
-  border-radius: 999px;
-  color: rgba(255, 247, 232, 0.8);
+  border-radius: 7px;
+  color: rgba(27, 26, 25, 0.75);
 }
-.close:hover {
-  color: var(--dw-ivory);
+@media (hover: hover) and (pointer: fine) {
+  .close:hover {
+    color: var(--color-ink);
+  }
+  .link:hover {
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+  }
 }
 
 @media (min-width: 768px) {
@@ -63,8 +70,9 @@
     top: 50%;
     transform: translateY(-50%);
     flex-direction: column;
-    border-radius: 14px 0 0 14px;
+    border-radius: 7px 0 0 7px;
     padding: 6px 0 10px;
+    background-size: 260% 140%;
   }
   .link {
     writing-mode: vertical-rl;
@@ -87,7 +95,7 @@
 
 @media (prefers-reduced-motion: no-preference) {
   .tab {
-    animation: enter 420ms cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation: enter 420ms cubic-bezier(0.3, 0.7, 0.2, 1) both;
   }
   @keyframes enter {
     from {

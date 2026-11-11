@@ -24,6 +24,9 @@ export const SHOW_CONTENT_TODOS =
 
 export const PRIMARY_CTA = { label: 'Book a demo', href: '/book-a-demo' } as const;
 
+/** The free learning platform's entry (plan §3.3): the bar's action when the platform is on. */
+export const START_FREE = { label: 'Start free', href: '/learn' } as const;
+
 export interface NavLink {
   label: string;
   href: string;
@@ -103,13 +106,14 @@ const ITEMS = {
   parents: {
     label: 'For parents',
     href: '/parents',
-    description: 'See your child’s progress and feedback, not just a mark.',
+    description: 'The weekly report, what is free, and how consent works.',
     icon: 'parent',
   },
   students: {
     label: 'For students',
     href: '/students',
-    description: 'Solve, build, argue and explain: learn beyond the answer.',
+    // /students is free learning now (phase 5a): with the platform off the lessons are not open yet.
+    description: PLATFORM_ENABLED ? 'Free lessons, notes and practice for Classes 7 to 12.' : 'Free lessons for Classes 7 to 12, opening soon.',
     icon: 'student',
   },
   method: {
@@ -180,9 +184,9 @@ const LEARN_GROUP: NavGroup = {
   heading: 'Free learning platform',
   items: [ITEMS.lessons, ITEMS.tests, ITEMS.ask],
   feature: {
-    eyebrow: 'Now live: CBSE Class 10',
+    eyebrow: 'CBSE, ICSE and ISC · Classes 7 to 12',
     title: 'Free for every student',
-    description: 'Lessons, practice and tests are free. Only AI help uses credits. More classes and ICSE are on the way.',
+    description: 'Lessons, notes, practice and tests, opening subject by subject. Only AI help uses credits.',
     href: '/learn',
     cta: 'Start learning free',
     tone: 'ink',
@@ -199,7 +203,9 @@ const LEARN_GROUP: NavGroup = {
  */
 const COMPANY_ITEMS: NavItem[] = [ITEMS.about, ITEMS.method, ITEMS.journal, ITEMS.contact, ITEMS.demo];
 
+/** The homepage leads with free learning (plan §3.2), so with the platform on, Learn comes first. */
 export const NAV_GROUPS: NavGroup[] = [
+  ...(PLATFORM_ENABLED ? [LEARN_GROUP] : []),
   {
     id: 'programs',
     label: 'Programs',
@@ -208,7 +214,7 @@ export const NAV_GROUPS: NavGroup[] = [
     feature: {
       eyebrow: 'For schools',
       title: 'See SOYL in your school',
-      description: 'Interactive, teacher-approved assignments for Grades 1–10, and a ten-week pilot plan.',
+      description: 'Interactive, teacher-approved assignments for Grades 1 to 10, and a ten-week pilot plan.',
       href: '/book-a-demo',
       cta: 'Book a demo',
       tone: 'cobalt',
@@ -228,7 +234,6 @@ export const NAV_GROUPS: NavGroup[] = [
       tone: 'paper',
     },
   },
-  ...(PLATFORM_ENABLED ? [LEARN_GROUP] : []),
   {
     id: 'about',
     label: 'About',

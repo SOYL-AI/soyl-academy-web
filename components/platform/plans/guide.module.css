@@ -1,0 +1,139 @@
+/* /plans, above the plan cards (PlansGuide.tsx; docs/redesign-ink-and-wash.md §3.3). Platform tokens only, so
+   the bands follow the app's light and dark themes (and phase 4's paper and slate). Headings and prices are
+   Zodiak (font-serif): Switzer, the app's face after phase 4, has no rupee sign. */
+
+.guide {
+  display: grid;
+  gap: var(--p-space-10);
+  margin-top: var(--p-space-6);
+}
+@media (min-width: 960px) {
+  .guide { gap: 3.5rem; margin-top: var(--p-space-8); }
+}
+
+.band {
+  display: grid;
+  gap: var(--p-space-5);
+  min-width: 0;
+}
+/* Heading on the left, the moment on the right, from a laptop up. */
+@media (min-width: 960px) {
+  .split {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    column-gap: var(--p-space-10);
+    align-items: start;
+  }
+}
+
+.head {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: clamp(1.6rem, 3vw, 2.25rem);
+  line-height: 1.08;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+  max-width: 22ch;
+}
+.lead {
+  margin: var(--p-space-3) 0 0;
+  color: var(--p-ink-muted);
+  max-width: 44ch;
+  text-wrap: pretty;
+}
+.lead + .lead { margin-top: var(--p-space-2); }
+
+.card {
+  display: grid;
+  gap: var(--p-space-3);
+  padding: var(--p-space-5);
+  border: 1px solid var(--p-border);
+  border-radius: 14px;
+  background: var(--p-surface);
+}
+@media (min-width: 640px) { .card { padding: var(--p-space-8); } }
+
+.label {
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--p-ink-subtle);
+}
+.offer {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  line-height: 1.2;
+}
+.offer .perDay { font-family: var(--font-serif); color: var(--p-ink-muted); }
+.small {
+  margin: 0;
+  color: var(--p-ink-muted);
+  font-size: var(--p-text-sm);
+}
+.exams {
+  display: grid;
+  gap: var(--p-space-1);
+  margin: var(--p-space-3) 0 0;
+  padding: 0;
+  list-style: none;
+  color: var(--p-ink-muted);
+}
+
+/* ── FAQ: native disclosure, every answer in the HTML ───────────────────── */
+.faq { min-width: 0; }
+.faq details { border-bottom: 1px solid var(--p-border); }
+.faq details:first-child { border-top: 1px solid var(--p-border); }
+.faq summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--p-space-4);
+  min-height: 56px;
+  padding-block: var(--p-space-3);
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary svg { flex: none; transition: transform var(--p-duration-fast) ease; }
+.faq details[open] summary svg { transform: rotate(45deg); }
+.faq details p {
+  margin: 0;
+  padding-bottom: var(--p-space-4);
+  color: var(--p-ink-muted);
+  max-width: 62ch;
+}
+.policy {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  margin-top: var(--p-space-3);
+  color: var(--p-accent);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+}
+
+/* ── The cards' own section, and the jump to it ─────────────────────────── */
+.choose {
+  display: grid;
+  gap: var(--p-space-2);
+  margin-top: var(--p-space-10);
+  padding-top: var(--p-space-8);
+  border-top: 1px solid var(--p-border);
+}
+.jump {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--p-space-2);
+  min-height: 44px;
+  margin-top: var(--p-space-2);
+  color: var(--p-accent);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+}
+.jump svg { transform: rotate(90deg); }

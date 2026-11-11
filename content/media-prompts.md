@@ -1,5 +1,10 @@
 # SOYL Academy — Media
 
+> **Retired, 11 Nov 2026 (Ink and wash, ADR-028).** The site now uses real photographs from Pexels
+> (`public/photos/`, credited in `content/credits.ts` and on /about). The generated images below were removed,
+> except `student_thinking_portrait.jpg` and `future-builders/*`, which the Future Builders pages still use.
+> The loop video and `VideoLoop.tsx` were removed in phase 2 and phase 6. This file is kept as a record.
+
 ## Delivered
 
 All nine photographs are in `public/images/`, generated to the master style

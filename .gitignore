@@ -40,3 +40,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# brand fonts: downloaded by scripts/fetch-fonts.mjs, never committed (ITF Free Font License, ADR-028)
+/assets/fonts/
+
+# painted plates: raw paint on white, reproducible from the seeds (tools/art/paint.py)
+/tools/art/out/

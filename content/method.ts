@@ -22,7 +22,7 @@ export const pillars: Pillar[] = [
       'In a world where answers are instantly available, understanding must be measured by a student\'s ability to identify relationships, contrast differing perspectives, and recognize the boundaries of their own knowledge.'
     ],
     traditional: 'Read chapter 4 and answer the 10 questions at the end.',
-    soyl: 'Given this new concept, explain it using an analogy related to your favorite hobby.'
+    soyl: 'Given this new concept, explain it using an analogy from your favourite hobby.'
   },
   {
     num: '02',
@@ -33,7 +33,7 @@ export const pillars: Pillar[] = [
       'When students apply what they\'ve learned, they invariably encounter friction—the gap between theory and reality. Navigating this friction is where true learning occurs.'
     ],
     traditional: 'Solve these 20 similar equations.',
-    soyl: 'Use these mathematical principles to optimize the layout of a school garden.'
+    soyl: 'Use these mathematical principles to plan the layout of a school garden.'
   },
   {
     num: '03',
@@ -43,7 +43,7 @@ export const pillars: Pillar[] = [
       'Creation requires synthesis. It demands that students pull from multiple domains, evaluate options, make decisions, and construct something that did not previously exist.',
       'This pillar focuses on originality, coherence, and the ability to bring an idea to fruition, demonstrating mastery over the underlying components.'
     ],
-    traditional: 'Write a standard 5-paragraph essay on the causes of the Civil War.',
+    traditional: 'Write a five-paragraph essay on the causes of the Revolt of 1857.',
     soyl: 'Create a historical artifact (like a diary entry or a newspaper article) that reflects the tension of the era, and defend its historical accuracy.'
   },
   {
@@ -65,7 +65,7 @@ export const pillars: Pillar[] = [
       'Reflection is the engine of improvement. It requires students to look back at their process, identify what worked, what failed, and what they would do differently.',
       'By cultivating metacognition, students learn how to learn. They become self-aware practitioners capable of continuous growth.'
     ],
-    traditional: 'Receive a grade of B- and move on to the next unit.',
+    traditional: 'Get 14 out of 20 and move on to the next chapter.',
     soyl: 'Write a brief retrospective on your project: what was the hardest part, and how did you overcome it?'
   }
 ];

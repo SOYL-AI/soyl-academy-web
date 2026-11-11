@@ -1,0 +1,62 @@
+@layer properties, theme, base, components, utilities;
+
+/* PerDay and PriceList (components/ink/PerDay.tsx): prices in a parent's units.
+   Colours follow the app's theme inside the platform (--p-*), and the paper tokens on marketing pages.
+   Rupee figures are set in Zodiak: Switzer has no ₹ (DESIGN.md §3). */
+@layer components {
+
+.perDay {
+  --k-soft: var(--p-ink-muted, var(--color-graphite));
+  color: var(--k-soft);
+}
+.money {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-variant-numeric: tabular-nums;
+  color: var(--p-ink, var(--color-ink));
+}
+
+/* ── PriceList ─────────────────────────────────────────────────────────── */
+.list {
+  --k-ink: var(--p-ink, var(--color-ink));
+  --k-rule: var(--p-border, var(--color-rule));
+  margin: 0;
+  color: var(--k-ink);
+}
+.row {
+  display: grid;
+  gap: 0.25rem 1.5rem;
+  padding-block: 0.9rem;
+  border-top: 1px solid var(--k-rule);
+}
+.row:last-child { border-bottom: 1px solid var(--k-rule); }
+@media (min-width: 640px) {
+  .row { grid-template-columns: minmax(7.5rem, 0.32fr) 1fr; align-items: baseline; }
+}
+.plan {
+  margin: 0;
+  font-weight: 600;
+}
+.credits {
+  display: block;
+  color: var(--p-ink-subtle, var(--color-muted));
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+.prices {
+  display: grid;
+  gap: 0.35rem;
+  margin: 0;
+}
+.price {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: 0.75rem;
+  row-gap: 0.1rem;
+}
+.amount { font-size: 1.25rem; }
+.each { font-size: 0.9375rem; }
+
+} /* @layer components */

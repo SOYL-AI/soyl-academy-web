@@ -1,16 +1,14 @@
-import { FinalCta } from '@/components/home/FinalCta';
-import { MiniSimulator } from '@/components/home/MiniSimulator';
-import { ButtonLink } from '@/components/ui/Button';
-import { PageHero } from '@/components/ui/PageHero';
-import { ProductShot } from '@/components/ui/ProductShot';
-import { SectionHeader } from '@/components/ui/SectionHeader';
-import { Photo } from '@/components/media/Photo';
-import { Faq } from '@/components/seo/Faq';
+import { HowItWorks } from '@/components/home/HowItWorks';
+import { InkLink } from '@/components/ink/Button';
+import { ClosingCta } from '@/components/ink/ClosingCta';
+import { Dab } from '@/components/ink/Dab';
+import { FaqList } from '@/components/ink/FaqList';
+import { PageIntro } from '@/components/ink/PageIntro';
+import { Section } from '@/components/ink/Section';
+import { Stroke } from '@/components/ink/Stroke';
 import { StructuredData } from '@/components/seo/StructuredData';
 import { homeFaqs } from '@/content/faqs';
 import { howItWorks } from '@/content/home';
-import { images } from '@/content/images';
-import { media } from '@/content/media';
 import { PRIMARY_CTA } from '@/lib/site';
 import { createMetadata } from '@/lib/seo/metadata';
 import { breadcrumbNode, faqNode, graph, topLevelCrumbs, webPageNode } from '@/lib/seo/schema';
@@ -28,101 +26,65 @@ const faqs = homeFaqs.filter((f) =>
   ['Who writes the questions, the AI or the teacher?', 'Do the hints just give students the answer?', 'Does SOYL Academy replace teachers?'].includes(f.question)
 );
 
+/**
+ * For teachers, in Ink and wash (docs/redesign-ink-and-wash.md §3.3). Job: book a pilot (a demo first).
+ *
+ *   intro         "Your notes in. Better homework out."   (photo: a teacher at a blackboard, an adult)
+ *   how it works  the four steps, beside the question a pupil sees, playable
+ *   in charge     what stays the teacher's call
+ *   FAQ, then the closing action (Book a demo)
+ */
 export default function TeachersPage() {
   return (
     <>
       <StructuredData
-        data={graph(
-          webPageNode({ path: '/teachers' }),
-          breadcrumbNode('/teachers', topLevelCrumbs('/teachers')),
-          faqNode('/teachers', faqs)
-        )}
+        data={graph(webPageNode({ path: '/teachers' }), breadcrumbNode('/teachers', topLevelCrumbs('/teachers')), faqNode('/teachers', faqs))}
       />
 
-      <PageHero
-        tone="blue"
-        label="For teachers"
+      <PageIntro
         title={
           <>
-            Your notes in. Better homework <span className="t-accent">out.</span>
+            <span className="block">Your notes in.</span>
+            <span className="block">Better homework out.</span>
           </>
         }
-        intro="SOYL turns the notes you already teach from into interactive assignments for Grades 1–10. You approve every question. Your pupils work it out for themselves. You see how each of them got there."
+        className="[&_h1]:max-w-[24ch]"
+        lead="SOYL turns the notes you already teach from into interactive assignments for Grades 1 to 10. You approve every question. Your pupils work it out for themselves, and you see how each of them got there."
         actions={
           <>
-            <ButtonLink href={PRIMARY_CTA.href} size="lg" arrow>
+            <InkLink href={PRIMARY_CTA.href} size="lg" arrow>
               {PRIMARY_CTA.label}
-            </ButtonLink>
-            <ButtonLink href="#workflow" variant="secondary" size="lg">
-              See the workflow
-            </ButtonLink>
+            </InkLink>
+            <InkLink href="#try" variant="quiet">
+              Try it as a pupil
+            </InkLink>
           </>
         }
-        image={images.teacherMentoring}
-        imageLayout="wide"
+        photo={{ slug: 'teacher-blackboard', position: '30% 50%' }}
       />
 
-      <section className="section">
-        <div className="page">
-          <SectionHeader label="You stay in charge" num="01" title="Built around your judgement." />
-          <ul className="mt-12 grid grid-cols-1 gap-x-10 md:mt-16 md:grid-cols-2">
-            {IN_CHARGE.map((item, i) => (
-              <li
-                key={item.title}
-                data-reveal
-                style={{ '--d': `${(i % 2) * 90}ms` } as React.CSSProperties}
-                className="border-t border-rule-strong py-7 md:py-9"
-              >
-                <h3 className="t-title">{item.title}</h3>
-                <p className="mt-3 max-w-[48ch] text-muted">{item.line}</p>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
+      <HowItWorks id="workflow" title={howItWorks.headline} intro={howItWorks.intro} steps={howItWorks.steps} tryTitle="What your pupils see" />
 
-      <section id="workflow" className="section scroll-mt-16 bg-paper">
-        <div className="page">
-          <SectionHeader label={howItWorks.label} num="02" title={howItWorks.headline} intro={howItWorks.intro} />
-          <div className="grid-12 mt-12 gap-y-12 md:mt-16">
-            <ol className="col-span-12 lg:col-span-5">
-              {howItWorks.steps.map((step, i) => (
-                <li
-                  key={step.title}
-                  data-reveal
-                  style={{ '--d': `${i * 80}ms` } as React.CSSProperties}
-                  className="grid grid-cols-[3.25rem_1fr] gap-x-4 border-t border-rule-strong py-6 first:border-t-0 first:pt-0 md:py-7"
-                >
-                  <span
-                  className={`t-num flex h-12 w-12 items-center justify-center rounded-full font-serif text-[1.75rem] leading-none ${['bg-cobalt text-white', 'bg-red-pen text-white', 'bg-highlighter text-ink'][i % 3]}`}
-                >
-                  {i + 1}
-                </span>
-                  <div>
-                    <h3 className="t-subtitle">{step.title}</h3>
-                    <p className="mt-1.5 text-muted">{step.line}</p>
-                    <ProductShot slot={media[step.media]} sizes="(min-width: 1024px) 420px, 90vw" className="mt-5" />
-                  </div>
-                </li>
-              ))}
-            </ol>
-            <div className="col-span-12 lg:col-span-7 lg:col-start-6 lg:pl-4" data-reveal style={{ '--d': '120ms' } as React.CSSProperties}>
-              <p className="t-eyebrow mb-4 text-muted">What your pupils see</p>
-              <MiniSimulator />
-            </div>
-          </div>
-        </div>
-      </section>
+      <Section aria-labelledby="charge-title">
+        <h2 id="charge-title" className="ink-head max-w-[16ch]">
+          Built around your judgement.
+        </h2>
+        <Stroke pigment="madder" width="5em" className="text-[clamp(1.9rem,4.2vw,3.2rem)]" />
+        <ul className="mt-10 grid gap-x-10 md:grid-cols-2">
+          {IN_CHARGE.map((item) => (
+            <li key={item.title} className="flex gap-4 border-t border-rule py-6 md:py-8">
+              <Dab pigment="indigo" className="mt-1 text-[1.5rem]" />
+              <div>
+                <h3 className="ink-title">{item.title}</h3>
+                <p className="mt-2 max-w-[46ch] text-graphite">{item.line}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </Section>
 
-      <section className="section-tight">
-        <div className="page grid grid-cols-1 gap-4 md:grid-cols-2">
-          <Photo image={images.studentsBuilding} aspect="aspect-[4/3]" large sizes="(min-width: 1320px) 600px, (min-width: 768px) 48vw, 100vw" />
-          <Photo image={images.studentsPresenting} aspect="aspect-[4/3]" large delay={120} sizes="(min-width: 1320px) 600px, (min-width: 768px) 48vw, 100vw" />
-        </div>
-      </section>
-
-      <Faq faqs={faqs} heading="Questions from teachers" />
-      <FinalCta headline="Try it with your next lesson." line="Book a demo and we’ll show you SOYL, from your notes to your class heatmap." />
+      <FaqList faqs={faqs} heading="Questions from teachers" />
+      <ClosingCta headline="Try it with your next lesson." line="Book a demo and we’ll show you SOYL, from your notes to your class heatmap." />
     </>
   );
 }

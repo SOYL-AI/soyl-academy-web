@@ -1,27 +1,29 @@
 import Link from 'next/link';
-import { ArrowRight } from '@/components/ui/Button';
-import { PageHero } from '@/components/ui/PageHero';
-import { ComingSoon } from '@/components/ui/ComingSoon';
-import { Photo } from '@/components/media/Photo';
-import { images } from '@/content/images';
-import { SectionHeader } from '@/components/ui/SectionHeader';
-import { Faq } from '@/components/seo/Faq';
+import { Arrow } from '@/components/ink/Button';
+import { ClosingCta } from '@/components/ink/ClosingCta';
+import { Dab, type Pigment } from '@/components/ink/Dab';
+import { FaqList } from '@/components/ink/FaqList';
+import { InkPhoto } from '@/components/ink/InkPhoto';
+import { PageIntro } from '@/components/ink/PageIntro';
+import { Section } from '@/components/ink/Section';
+import { Stroke } from '@/components/ink/Stroke';
 import { StructuredData } from '@/components/seo/StructuredData';
+import { photo } from '@/content/credits';
 import { whatWeTeachFaqs } from '@/content/faqs';
-import { PRIMARY_CTA } from '@/lib/site';
 import { absoluteUrl } from '@/lib/seo/config';
 import { createMetadata } from '@/lib/seo/metadata';
 import { breadcrumbNode, faqNode, graph, programListNode, topLevelCrumbs, webPageNode } from '@/lib/seo/schema';
 
 export const metadata = createMetadata({ path: '/what-we-teach' });
 
-const programs = [
+const programs: { id: string; category: string; title: string; description: string; tags: string[]; pigment: Pigment }[] = [
   {
     id: 'ai-tech',
     category: 'AI & Technology',
     title: 'Applied Intelligence',
     description: 'Move beyond prompting. Learn to build systems, automate workflows, and use AI as a co-creator rather than a search engine.',
     tags: ['Machine learning basics', 'Prompt engineering', 'Ethical AI', 'Workflow automation'],
+    pigment: 'indigo',
   },
   {
     id: 'build-make',
@@ -29,6 +31,7 @@ const programs = [
     title: 'Digital Craftsmanship',
     description: 'The distance between an idea and a product has never been shorter. Bring ideas to life through code, design, and prototyping.',
     tags: ['Web development', 'UI/UX design', 'Rapid prototyping', 'Product thinking'],
+    pigment: 'turmeric',
   },
   {
     id: 'comm-ideas',
@@ -36,6 +39,7 @@ const programs = [
     title: 'The Art of Argument',
     description: 'In an era of deepfakes and algorithmic feeds, clarity of thought and expression is a superpower.',
     tags: ['Debate', 'Editorial writing', 'Data storytelling', 'Media literacy'],
+    pigment: 'madder',
   },
   {
     id: 'problem-solving',
@@ -43,10 +47,16 @@ const programs = [
     title: 'Systems Thinking',
     description: 'Complex problems rarely have simple answers. Learn to map systems, identify feedback loops, and design interventions.',
     tags: ['Systems mapping', 'Root cause analysis', 'Design thinking', 'Simulation'],
+    pigment: 'leaf',
   },
 ];
 
+/**
+ * What we teach, in Ink and wash (plan §3.3, phase 5): Future Builders, open now (its card keeps the camp's
+ * sunflower, as on the homepage), the school workshops that are coming, the questions, and one action.
+ */
 export default function WhatWeTeachPage() {
+  const team = photo('arduino-team');
   return (
     <>
       <StructuredData
@@ -58,73 +68,78 @@ export default function WhatWeTeachPage() {
         )}
       />
 
-      <PageHero
-        tone="yellow"
-        label="What we teach"
-        title={
-          <>
-            Some things are better learned <span className="t-accent">together.</span>
-          </>
-        }
-        intro="Join Future Builders online as an individual student, or bring SOYL workshops into your school."
-        image={images.studentsDebating}
+      <PageIntro
+        title="Some things are better learned together."
+        lead="Join Future Builders online as an individual student, or bring SOYL workshops into your school."
+        photo={{ slug: 'electronics-top', position: '50% 55%' }}
+        className="[&_h1]:max-w-[19ch]"
       />
 
-      <section className="section-tight">
+      <section aria-labelledby="fb-title" className="pb-16 md:pb-24">
         <div className="page">
-          <div className="grid-12 items-center gap-y-6 rounded-[var(--radius-lg)] bg-paper p-5 md:p-6" data-reveal>
-            <div className="col-span-12 md:col-span-4">
-              <Photo image={images.fbSoftware} aspect="aspect-[3/2]" reveal={false} sizes="(min-width: 768px) 380px, 100vw" />
+          <Link href="/future-builders" className="group grid items-center gap-6 rounded-[var(--radius-md)] bg-[#F3D36B] p-5 text-ink md:grid-cols-12 md:gap-8 md:p-6">
+            <div className="md:col-span-5 lg:col-span-4">
+              <InkPhoto src={team.src} alt={team.alt} aspect="3 / 2" position="30% 50%" sizes="(min-width: 1320px) 400px, (min-width: 768px) 38vw, 92vw" />
             </div>
-            <div className="col-span-12 md:col-span-5 md:pl-4">
-              <p className="t-eyebrow text-muted">Grades 7–12</p>
-              <h2 className="t-title mt-2">Future Builders</h2>
-              <p className="mt-2 max-w-[56ch] text-muted">
+            <div className="md:col-span-7 lg:col-span-8 lg:pr-6">
+              <p className="text-[0.9375rem] font-medium text-ink/80">Grades 7 to 12</p>
+              <h2 id="fb-title" className="ink-head mt-2">
+                Future Builders
+              </h2>
+              <p className="mt-3 max-w-[56ch] text-ink/85">
                 A 2-month live online summer camp: software, AI, IoT robotics and entrepreneurship, ending in a Demo Day pitch.
               </p>
+              <span className="mt-5 inline-flex min-h-11 items-center gap-2 font-semibold">
+                See dates and fees
+                <Arrow className="transition-transform duration-150 group-hover:translate-x-1" />
+              </span>
             </div>
-            <div className="col-span-12 md:col-span-3 md:text-right">
-              <Link href="/future-builders" className="arrow-link">
-                See dates and fees <ArrowRight />
-              </Link>
-            </div>
+          </Link>
+        </div>
+      </section>
+
+      <Section ground="paper-2" aria-labelledby="workshops-title">
+        <div className="grid gap-6 lg:grid-cols-12 lg:items-end">
+          <div className="lg:col-span-7">
+            <h2 id="workshops-title" className="ink-head max-w-[16ch]">
+              School workshops and programmes.
+            </h2>
+            <Stroke pigment="turmeric" width="5em" className="text-[clamp(1.9rem,4.2vw,3.2rem)]" />
+          </div>
+          <div className="lg:col-span-5">
+            <p className="ink-lead max-w-[42ch]">Intensive sessions where students negotiate, build and defend ideas in real time.</p>
+            <p className="mt-4 inline-flex rounded-[var(--radius-xs)] bg-paper px-2.5 py-1 text-[0.875rem] font-semibold text-ink">Coming soon</p>
           </div>
         </div>
-      </section>
 
-      <section className="section">
-        <div className="page">
-          <SectionHeader label="Coming soon" title="School workshops and programmes." intro="Intensive sessions where students negotiate, build and defend ideas in real time." />
-          <ul className="mt-12 grid grid-cols-1 gap-x-10 md:mt-16 md:grid-cols-2">
-            {programs.map((p, i) => (
-              <li key={p.id} data-reveal style={{ '--d': `${(i % 2) * 90}ms` } as React.CSSProperties} className="flex flex-col border-t border-rule-strong pb-12 pt-7">
-                <div className="flex items-baseline justify-between gap-4">
-                  <p className="t-eyebrow text-muted">{p.category}</p>
-                  <p className="t-label rounded-full bg-highlighter px-2.5 py-0.5 text-ink">Coming soon</p>
-                </div>
-                <h3 className="t-title mt-3">{p.title}</h3>
-                <p className="mt-2 text-muted">{p.description}</p>
-                <ul className="mt-5 flex flex-wrap gap-2" aria-label="Topics">
-                  {p.tags.map((t) => (
-                    <li key={t} className="t-label rounded-full border border-rule-strong px-3 py-1 text-ink">
-                      {t}
-                    </li>
-                  ))}
-                </ul>
-              </li>
-            ))}
-          </ul>
-          <ComingSoon
-            className="mt-4"
-            title={<>Workshops for your <span className="t-accent">school.</span></>}
-            line="We are shaping the first school workshops now. Tell us about your school and we will be in touch when they open."
-            primary={{ label: 'Register your school', href: '/contact' }}
-            secondary={{ label: PRIMARY_CTA.label, href: PRIMARY_CTA.href }}
-          />
-        </div>
-      </section>
+        <ul className="mt-10 grid gap-4 md:mt-14 md:grid-cols-2 md:gap-5">
+          {programs.map((p) => (
+            <li key={p.id} className="flex flex-col rounded-[var(--radius-md)] bg-paper p-6 md:p-8">
+              <p className="flex items-center gap-2.5 text-[0.9375rem] font-medium text-graphite">
+                <Dab pigment={p.pigment} className="text-[2rem]" />
+                {p.category}
+              </p>
+              <h3 className="ink-title mt-4">{p.title}</h3>
+              <p className="mt-2 flex-1 text-graphite">{p.description}</p>
+              <ul aria-label="Topics" className="mt-6 flex flex-wrap gap-2">
+                {p.tags.map((t) => (
+                  <li key={t} className="rounded-[var(--radius-xs)] bg-paper-2 px-2.5 py-1 text-[0.875rem] text-ink">
+                    {t}
+                  </li>
+                ))}
+              </ul>
+            </li>
+          ))}
+        </ul>
+      </Section>
 
-      <Faq faqs={whatWeTeachFaqs} heading="Questions about our programmes" />
+      <FaqList faqs={whatWeTeachFaqs} heading="Questions, answered." />
+
+      <ClosingCta
+        headline="Workshops for your school."
+        line="We are shaping the first school workshops now. Tell us about your school and we will be in touch when they open."
+        action={{ label: 'Register your school', href: '/contact' }}
+      />
     </>
   );
 }

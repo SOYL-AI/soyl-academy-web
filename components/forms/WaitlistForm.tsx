@@ -181,7 +181,7 @@ export function WaitlistForm({ notify, source, state = 'waitlist' }: WaitlistFor
             : 'Hear the next camp’s dates and fee before registration opens to everyone.'}
       </p>
 
-      <div role="group" aria-label="What would you like to do?" className="mb-6 mt-6 grid grid-cols-2 rounded-full border border-rule bg-paper p-1">
+      <div role="group" aria-label="What would you like to do?" className="mb-6 mt-6 grid grid-cols-2 rounded-full border border-rule bg-paper-2 p-1">
         {(['waitlist', 'callback'] as const).map((m) => (
           <button
             key={m}
@@ -196,7 +196,7 @@ export function WaitlistForm({ notify, source, state = 'waitlist' }: WaitlistFor
       </div>
 
       {status === 'error' && (
-        <div role="alert" className="t-small mb-6 border-l-2 border-red-pen bg-paper px-3 py-2 text-ink">
+        <div role="alert" className="t-small mb-6 border-l-2 border-red-pen bg-paper-2 px-3 py-2 text-ink">
           We couldn’t save that just now. Please try again, or{' '}
           <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="link">
             message us on WhatsApp

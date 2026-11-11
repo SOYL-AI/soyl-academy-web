@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import { APP_URL, type NavFeature, type NavGroup, type NavItem } from '@/lib/site';
+import { Dab, type Pigment } from '@/components/ink/Dab';
 import { NavIcon } from './NavIcon';
 
 /**
@@ -11,7 +12,7 @@ import { NavIcon } from './NavIcon';
 /** A menu group whose feature card is resolved (the latest Journal post is filled in by Header.tsx). */
 export type ResolvedNavGroup = Omit<NavGroup, 'feature'> & { feature: NavFeature };
 
-/** Icon tiles cycle through the three brand tones (globals.css .tone-*). */
+/** Icon tiles cycle through three pigments (globals.css .tone-*, re-pointed to indigo, madder and turmeric). */
 const TONES = ['tone-blue', 'tone-red', 'tone-yellow'] as const;
 
 export function MenuItemLink({ item, index }: { item: NavItem; index: number }) {
@@ -19,12 +20,12 @@ export function MenuItemLink({ item, index }: { item: NavItem; index: number }) 
     <Link
       href={item.href}
       data-menu-item=""
-      className="group/item flex items-start gap-3.5 rounded-[14px] p-3 transition-colors duration-200 hover:bg-paper/70 focus-visible:bg-paper/70 aria-[current=page]:bg-paper/50"
+      className="group/item flex items-start gap-3.5 rounded-[var(--radius-sm)] p-3 transition-colors duration-150 hover:bg-paper-2 focus-visible:bg-paper-2 aria-[current=page]:bg-paper-2/70"
     >
       <span
         className={cn(
           TONES[index % TONES.length],
-          'grid h-10 w-10 shrink-0 place-items-center rounded-[11px] bg-[var(--tone-soft)] text-[var(--tone-text)] transition-transform duration-300 group-hover/item:-translate-y-0.5'
+          'grid h-10 w-10 shrink-0 place-items-center rounded-[var(--radius-sm)] bg-[var(--tone-soft)] text-[var(--tone-text)]'
         )}
       >
         <NavIcon name={item.icon} size={20} />
@@ -44,10 +45,11 @@ export function MenuItemLink({ item, index }: { item: NavItem; index: number }) 
   );
 }
 
-const FEATURE_TONES: Record<NavFeature['tone'], { card: string; eyebrow: string; body: string }> = {
-  cobalt: { card: 'on-dark bg-cobalt text-white', eyebrow: 'text-white/85', body: 'text-white/90' },
-  ink: { card: 'on-dark bg-ink text-white', eyebrow: 'text-highlighter', body: 'text-white/80' },
-  paper: { card: 'bg-paper text-ink', eyebrow: 'text-muted', body: 'text-muted' },
+/** Feature cards: indigo (the action), slate (night) or the paper band, each with one painted pool. */
+const FEATURE_TONES: Record<NavFeature['tone'], { card: string; eyebrow: string; body: string; pool: Pigment }> = {
+  cobalt: { card: 'on-dark bg-indigo text-paper', eyebrow: 'text-paper/85', body: 'text-paper/90', pool: 'turmeric' },
+  ink: { card: 'on-dark bg-slate text-chalk', eyebrow: 'text-lamp', body: 'text-chalk-muted', pool: 'turmeric' },
+  paper: { card: 'bg-paper-2 text-ink', eyebrow: 'text-muted', body: 'text-graphite', pool: 'indigo' },
 };
 
 /** The card on the right of a menu panel (and at the top of the mobile sheet for Learn). */
@@ -58,26 +60,15 @@ export function FeatureCard({ feature, compact }: { feature: NavFeature; compact
       href={feature.href}
       data-feature-card=""
       className={cn(
-        'group/feat relative isolate flex h-full flex-col overflow-hidden rounded-[var(--radius-lg)]',
+        'group/feat relative isolate flex h-full flex-col overflow-hidden rounded-[var(--radius-md)]',
         compact ? 'p-5' : 'min-h-[236px] p-6',
         tone.card
       )}
     >
-      <span aria-hidden="true" className="tri-stripe absolute inset-x-0 top-0 h-[5px]" />
-      {/* Brand shapes: a highlighter disc and a red quarter, cut by the card edge. */}
-      <span
-        aria-hidden="true"
-        className={cn(
-          'absolute -right-10 -bottom-12 -z-10 h-32 w-32 rounded-full transition-transform duration-500 group-hover/feat:scale-110',
-          feature.tone === 'paper' ? 'bg-highlighter/70' : 'bg-white/10'
-        )}
-      />
-      <span
-        aria-hidden="true"
-        className={cn(
-          'absolute right-[4.5rem] -bottom-6 -z-10 h-12 w-12 rounded-tl-full',
-          feature.tone === 'paper' ? 'bg-red-pen/80' : 'bg-highlighter/90'
-        )}
+      {/* One painted pool, cut by the card edge (plan §2.1: pigment dabs). */}
+      <Dab
+        pigment={tone.pool}
+        className={cn('absolute -right-9 -bottom-10 -z-10 h-36 w-36', feature.tone === 'paper' ? 'opacity-80' : 'opacity-90')}
       />
       <span className={cn('t-eyebrow', tone.eyebrow)}>{feature.eyebrow}</span>
       <span
@@ -93,7 +84,7 @@ export function FeatureCard({ feature, compact }: { feature: NavFeature; compact
       <span className={cn('mt-2.5 block max-w-[36ch] text-[15px] leading-snug', tone.body)}>{feature.description}</span>
       <span className={cn('inline-flex items-center gap-2 text-[15px] font-semibold', compact ? 'mt-4' : 'mt-auto pt-6')}>
         {feature.cta}
-        <NavIcon name="arrow" size={16} className="transition-transform duration-300 group-hover/feat:translate-x-1" />
+        <NavIcon name="arrow" size={16} className="transition-transform duration-150 group-hover/feat:translate-x-1" />
       </span>
     </Link>
   );

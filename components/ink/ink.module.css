@@ -1,0 +1,226 @@
+/* ==========================================================================
+   Ink and wash: the shared marketing components (ADR-028, plan §2).
+   Tokens come from app/globals.css (@theme static). The reveal states
+   (data-reveal="ink-wipe" / "ink-ring") live in globals.css with the other
+   RevealObserver rules. Hover is gated to fine pointers; everything moves
+   with one easing, --ease-ink.
+   Everything is in Tailwind's `components` layer, so a utility in className
+   (hidden, px-*, w-*) overrides it, as it would a Tailwind component class.
+   ========================================================================== */
+
+/* Declare Tailwind's layer order before using a layer. The root layout imports the header (and so this file)
+   before app/globals.css, so without this line `components` would be the first layer the page meets and
+   Tailwind's reset (`base`) would then outrank it, and every `.page` gutter with it. */
+@layer properties, theme, base, components, utilities;
+
+@layer components {
+
+/* ── Button ─────────────────────────────────────────────────────────────── */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 44px;
+  padding-inline: 1.25rem;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  line-height: 1.2;
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background-color 140ms var(--ease-ink),
+    border-color 140ms var(--ease-ink),
+    color 140ms var(--ease-ink),
+    transform 140ms var(--ease-ink);
+}
+.button:active { transform: translateY(1px); }
+.button:disabled,
+.button[aria-disabled="true"] { cursor: not-allowed; opacity: 0.55; }
+.button svg { flex: none; transition: transform 160ms var(--ease-ink); }
+
+.lg { min-height: 52px; padding-inline: 1.6rem; font-size: 1rem; }
+
+.primary { background: var(--color-indigo); color: var(--color-paper); }
+.secondary { background: transparent; color: var(--color-ink); border-color: rgba(27, 26, 25, 0.3); }
+.quiet {
+  min-height: 44px;
+  padding-inline: 0;
+  background: transparent;
+  color: var(--color-ink);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-decoration-color: var(--color-rule);
+  text-underline-offset: 0.28em;
+}
+/* At night (slate): mint is the action. */
+.night { background: var(--color-mint); color: var(--color-mint-ink); }
+.nightSecondary { background: transparent; color: var(--color-chalk); border-color: rgba(242, 238, 228, 0.36); }
+
+@media (hover: hover) and (pointer: fine) {
+  .primary:hover { background: var(--color-indigo-deep); }
+  .secondary:hover { background: var(--color-paper-2); border-color: var(--color-ink); }
+  .quiet:hover { color: var(--color-indigo); text-decoration-color: currentColor; }
+  .night:hover { background: var(--color-chalk); }
+  .nightSecondary:hover { border-color: var(--color-chalk); background: rgba(242, 238, 228, 0.06); }
+  .button:hover svg { transform: translateX(3px); }
+}
+
+/* ── Chip: a choice (aria-pressed) ──────────────────────────────────────── */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  padding-inline: 0.9rem;
+  border: 1px solid rgba(27, 26, 25, 0.3);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 0.9375rem;
+  font-variant-numeric: tabular-nums;
+  cursor: pointer;
+  transition: background-color 120ms var(--ease-ink), color 120ms var(--ease-ink), border-color 120ms var(--ease-ink);
+}
+.chip[aria-pressed="true"] { background: var(--color-ink); border-color: var(--color-ink); color: var(--color-paper); }
+.chipNight { border-color: rgba(242, 238, 228, 0.36); color: var(--color-chalk); }
+.chipNight[aria-pressed="true"] { background: var(--color-chalk); border-color: var(--color-chalk); color: var(--color-slate); }
+@media (hover: hover) and (pointer: fine) {
+  .chip:not([aria-pressed="true"]):hover { border-color: var(--color-ink); background: var(--color-paper-2); }
+  .chipNight:not([aria-pressed="true"]):hover { border-color: var(--color-chalk); background: rgba(242, 238, 228, 0.06); }
+}
+
+/* ── Section: page rhythm and grounds ───────────────────────────────────── */
+.section { position: relative; padding-block: clamp(3.5rem, 8vw, 7rem); }
+.tight { padding-block: clamp(2.5rem, 5vw, 4.5rem); }
+.groundPaper { background: var(--color-paper); color: var(--color-ink); }
+.groundPaper2 { background: var(--color-paper-2); color: var(--color-ink); }
+.groundSlate { background: var(--color-slate); color: var(--color-chalk); }
+
+/* ── Stroke: one drawn stroke under a heading or a number ───────────────── */
+.stroke {
+  display: block;
+  width: min(100%, 11em);
+  height: 0.42em;
+  margin-top: 0.12em;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  pointer-events: none;
+}
+.strokeInline { display: inline-block; vertical-align: -0.1em; }
+.strokeIndigo { background-image: url("/art/stroke-indigo.webp"); }
+.strokeMadder { background-image: url("/art/stroke-madder.webp"); }
+.strokeTurmeric { background-image: url("/art/stroke-turmeric.webp"); }
+.strokeChalk { background-image: url("/art/stroke-chalk.webp"); }
+
+/* ── Dab: a pigment pool as a list bullet or a subject mark ─────────────── */
+.dab {
+  display: inline-block;
+  flex: none;
+  width: 0.95em;
+  height: 0.95em;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  vertical-align: -0.12em;
+}
+.dabIndigo { background-image: url("/art/pool-indigo.webp"); }
+.dabMadder { background-image: url("/art/pool-madder.webp"); }
+.dabTurmeric { background-image: url("/art/pool-turmeric.webp"); }
+.dabLeaf { background-image: url("/art/pool-leaf.webp"); }
+.dabHenna { background-image: url("/art/pool-henna.webp"); }
+.dabInk { background-image: url("/art/pool-ink.webp"); }
+
+/* ── Wash: the ragged wash a product moment lies on ─────────────────────── */
+.wash { position: relative; isolation: isolate; }
+.washLayer {
+  position: absolute;
+  inset: -6% -4%;
+  z-index: -1;
+  background: url("/art/panel.webp") center / 100% 100% no-repeat;
+  pointer-events: none;
+}
+.washSoft { opacity: 0.55; }
+.washContent { position: relative; }
+
+/* ── InkPhoto: a real photograph printed as a duotone inside the panel ──── */
+/* grayscale → multiply by the light ink → screen with the dark ink: shadows
+   take the dark ink, highlights the light one, midtones fall between. */
+.photo {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background: var(--duo-dark);
+  --duo-dark: var(--color-indigo-deep);
+  --duo-light: var(--color-paper);
+}
+.photoNight { --duo-dark: var(--color-slate); --duo-light: #E9E2D2; }
+.photo img { filter: grayscale(1) contrast(1.3) brightness(0.96); }
+.photo::before,
+.photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+.photo::before { background: var(--duo-light); mix-blend-mode: multiply; }
+.photo::after { background: var(--duo-dark); mix-blend-mode: screen; }
+/* The panel's watercolour alpha is only partly opaque; three copies added together keep its ragged edge
+   and make the print solid inside (alpha 1 - (1 - a)^3). */
+.photoMasked {
+  -webkit-mask-image: url("/art/panel.webp"), url("/art/panel.webp"), url("/art/panel.webp");
+  mask-image: url("/art/panel.webp"), url("/art/panel.webp"), url("/art/panel.webp");
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-composite: source-over;
+  mask-composite: add;
+}
+
+/* ── Ring: the painted enso and its stage ───────────────────────────────── */
+/* Registration (tools/art/process.py): every layer is the same square crop.
+   Ring centre 44.2% / 46.2%; the stroke starts at 222deg and runs 336deg. */
+.ring {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  isolation: isolate;
+}
+.ringLayer { position: absolute; inset: 0; pointer-events: none; }
+.ringLayer img { object-fit: contain; }
+.ringStroke {
+  --sweep: var(--ring-to, 360deg);
+  -webkit-mask-image: conic-gradient(from 222deg at 44.2% 46.2%, #000 calc(var(--sweep) - 12deg), transparent var(--sweep));
+  mask-image: conic-gradient(from 222deg at 44.2% 46.2%, #000 calc(var(--sweep) - 12deg), transparent var(--sweep));
+  transition: --sweep 900ms var(--ease-ink);
+}
+.drawLoad .ringStroke {
+  animation: ink-sweep var(--ring-ms, 2700ms) var(--ease-ink) 150ms both;
+}
+/* The whole path, faint: an unfinished ring still reads as a ring ("an untouched chapter is an outline"). */
+.ringGhost { opacity: 0.17; }
+/* The wash under the ring waits pale until the question is solved, then blooms. */
+.ringWash { transition: opacity 700ms var(--ease-ink), transform 900ms var(--ease-ink); transform-origin: 50% 90%; }
+.ringWashWaiting { opacity: 0.62; transform: scale(0.97); }
+/* What sits inside the ring (the playable question): centred on the ring's centre. */
+.ringInner {
+  position: absolute;
+  left: 44.2%;
+  top: 46.2%;
+  width: 52%;
+  translate: -50% -50%;
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+
+} /* @layer components */

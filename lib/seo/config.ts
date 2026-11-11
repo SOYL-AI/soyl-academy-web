@@ -37,9 +37,14 @@ export const SITE_LOCALE = 'en_IN';
 export const SITE_LANGUAGE = 'en-IN';
 
 export const SITE_DESCRIPTION =
-  'SOYL Academy turns teachers’ notes into interactive, teacher-approved assignments for Grades 1–10. Students learn by doing, with hints that never give the answer, and teachers see each pupil’s process.';
+  'SOYL Academy: free lessons, notes, practice and tests for CBSE, ICSE and ISC, Classes 7 to 12, where only AI help is metered; and interactive, teacher-approved assignments for schools.';
 
 export const SITE_KEYWORDS = [
+  'free CBSE lessons',
+  'ICSE and ISC study material',
+  'Class 10 board exam preparation',
+  'Class 12 board exam preparation',
+  'free practice tests',
   'outcome-based learning',
   'AI in education',
   'homework in the age of AI',
