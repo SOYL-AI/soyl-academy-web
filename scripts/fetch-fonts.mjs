@@ -40,6 +40,13 @@ const FAMILIES = [
 /** The files lib/fonts.ts expects. Keep the two lists in step. */
 export const FILES = ['zodiak-400.woff2', 'zodiak-400-italic.woff2', 'switzer-400.woff2', 'switzer-500.woff2', 'switzer-600.woff2'];
 
+/**
+ * The share card (app/og/route.tsx) is drawn by satori, which reads WOFF or TTF but not WOFF2. These are fetched
+ * from the same Fontshare answer, best effort: when they are missing the card falls back to its default font and
+ * nothing fails.
+ */
+export const OG_FILES = ['zodiak-400.woff', 'switzer-500.woff'];
+
 /** A real woff2 from Fontshare is tens of kilobytes; the placeholder is a few hundred bytes. */
 const REAL_MIN_BYTES = 4000;
 const TIMEOUT_MS = 15000;
@@ -59,22 +66,25 @@ function faces(css, family) {
   for (const block of css.split('@font-face').slice(1)) {
     const weight = /font-weight:\s*(\d+)/.exec(block)?.[1];
     const italic = /font-style:\s*italic/.test(block);
-    const url = /url\('([^']+\.woff2)'\)/.exec(block)?.[1];
-    if (!weight || !url) continue;
-    out.push({ file: `${family.slug}-${weight}${italic ? '-italic' : ''}.woff2`, url: url.startsWith('//') ? `https:${url}` : url });
+    const base = `${family.slug}-${weight}${italic ? '-italic' : ''}`;
+    for (const ext of ['woff2', 'woff']) {
+      const url = new RegExp(`url\\('([^']+\\.${ext})'\\)`).exec(block)?.[1];
+      if (weight && url) out.push({ file: `${base}.${ext}`, url: url.startsWith('//') ? `https:${url}` : url });
+    }
   }
   return out;
 }
 
 async function download() {
-  const wanted = new Set(FILES);
+  const wanted = new Set([...FILES, ...OG_FILES]);
   const got = [];
   for (const family of FAMILIES) {
     const css = await get(`https://api.fontshare.com/v2/css?f[]=${family.slug}@${family.weights}&display=swap`, 'text');
     for (const face of faces(css, family)) {
       if (!wanted.has(face.file)) continue;
       const data = await get(face.url, 'buffer');
-      if (data.length < REAL_MIN_BYTES || data.subarray(0, 4).toString('latin1') !== 'wOF2') throw new Error(`not a woff2: ${face.url}`);
+      const magic = face.file.endsWith('.woff2') ? 'wOF2' : 'wOFF';
+      if (data.length < REAL_MIN_BYTES || data.subarray(0, 4).toString('latin1') !== magic) throw new Error(`not a ${magic}: ${face.url}`);
       writeFileSync(join(OUT, face.file), data);
       writeFileSync(join(CACHE, face.file), data);
       got.push(face.file);
@@ -86,7 +96,7 @@ async function download() {
 
 function fromCache() {
   if (!FILES.every((f) => isReal(join(CACHE, f)))) return false;
-  for (const f of FILES) copyFileSync(join(CACHE, f), join(OUT, f));
+  for (const f of [...FILES, ...OG_FILES.filter((o) => isReal(join(CACHE, o)))]) copyFileSync(join(CACHE, f), join(OUT, f));
   return true;
 }
 
@@ -98,7 +108,7 @@ async function main() {
   mkdirSync(OUT, { recursive: true });
   mkdirSync(CACHE, { recursive: true });
   const force = process.argv.includes('--force');
-  if (!force && FILES.every((f) => isReal(join(OUT, f)))) {
+  if (!force && [...FILES, ...OG_FILES].every((f) => isReal(join(OUT, f)))) {
     log('brand fonts present');
     return;
   }
