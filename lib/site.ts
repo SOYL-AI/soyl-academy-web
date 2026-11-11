@@ -112,7 +112,8 @@ const ITEMS = {
   students: {
     label: 'For students',
     href: '/students',
-    description: 'Solve, build, argue and explain: learn beyond the answer.',
+    // /students is free learning now (phase 5a): with the platform off the lessons are not open yet.
+    description: PLATFORM_ENABLED ? 'Free lessons, notes and practice for Classes 7 to 12.' : 'Free lessons for Classes 7 to 12, opening soon.',
     icon: 'student',
   },
   method: {
@@ -213,7 +214,7 @@ export const NAV_GROUPS: NavGroup[] = [
     feature: {
       eyebrow: 'For schools',
       title: 'See SOYL in your school',
-      description: 'Interactive, teacher-approved assignments for Grades 1–10, and a ten-week pilot plan.',
+      description: 'Interactive, teacher-approved assignments for Grades 1 to 10, and a ten-week pilot plan.',
       href: '/book-a-demo',
       cta: 'Book a demo',
       tone: 'cobalt',

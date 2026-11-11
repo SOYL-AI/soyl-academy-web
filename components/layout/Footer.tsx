@@ -33,7 +33,7 @@ export function Footer() {
             </p>
           ) : (
             <p className="mt-5 max-w-[38ch] text-chalk-muted">
-              Interactive assignments for <span className="whitespace-nowrap">Grades 1–10</span>, written from your notes and approved by you.
+              Interactive assignments for Grades 1 to 10, written from your notes and approved by you.
             </p>
           )}
           <InkLink href={(PLATFORM_ENABLED ? START_FREE : PRIMARY_CTA).href} variant="night" size="lg" className="mt-8" arrow>
