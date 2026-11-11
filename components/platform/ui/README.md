@@ -12,7 +12,7 @@ Gallery (dev only): `/dev/ui` with `NEXT_PUBLIC_PLATFORM_ENABLED=true` and `npm 
 | `PlatformRoot.tsx` | `.soyl-platform` scope; imports `styles/tokens.css`. Put it on the outermost platform element. |
 | `fonts.ts` | `notoDevanagari` (next/font, `--font-noto-devanagari`). |
 | `styles/tokens.css` | Design tokens (all rules scoped under `.soyl-platform`). |
-| `kit/` | Button, IconButton, Card, Dialog, BottomSheet, Tabs, ProgressBar, Badge, Chip, Toast, Skeleton, EmptyState, Field, TextInput, OTPInput, CreditChip, Avatar, Icon; ADR-023: `Mastery.tsx` (MasteryPip, MasteryBar, ProgressRing, DifficultyTag). |
+| `kit/` | Button, IconButton, Card, Dialog, BottomSheet, Tabs, ProgressBar, Badge, Chip, Toast, Skeleton, EmptyState, Field, TextInput, OTPInput, CreditChip, Avatar, Icon; ADR-023: `Mastery.tsx` (MasteryPip, MasteryBar, ProgressRing, DifficultyTag); ADR-029: `Stamp.tsx` (the rubber stamp, streak days and rank cards only). |
 | `render/` | **Reviewed renderers** (the only code allowed to inject HTML): `Markdown`, `MathBlock`/`MathInline`, `SvgDiagram`, plus `policy.ts`, `math.ts`, `sanitize-svg.ts`, `remark-soyl.ts`. |
 | `visual/` | `Visual` dispatcher and one renderer per kind in `platform/shared/content/visual.ts`; safe expression parser `expr.ts`; flow layout. |
 | `slides/` | `SlideFrame`, one component per layout, `renderSlide(slide, options)`, `ReadAlong`, narration `segment.ts`. |
@@ -126,21 +126,26 @@ All tokens are CSS custom properties on `.soyl-platform`; light by default, dark
 Since ADR-023 the student picks **Light / Dark / System** (top bar and /me → Appearance): the `soyl_theme` cookie, a
 hash-allowed inline boot script and `ThemeProvider` (`components/platform/shell/`) always put the resolved
 `data-theme` on the root before first paint; the media query only covers the moment before the script runs.
-Light is a cool neutral app background with white surfaces; dark is a neutral near-black (never pure black).
+Since ADR-029 the two themes are the "Ink and wash" grounds (DESIGN.md, `docs/redesign-ink-and-wash.md` §2.2): **day is
+paper** (ground `#FBFAF7`, paper-2 surfaces, ink text, indigo `#27467E` as the action and focus) and **night is slate**
+(ground `#0E1215`, slate-2 surfaces, chalk text, mint `#9EC9C2` as the action with `#0B0F12` on it). Meaning is carried
+by pigments: madder a miss or an error (madder-rose at night), leaf a right answer, turmeric marks (deepened wherever it
+must be read), henna, lamp. No gradients, no glow, no pills (`--p-radius-pill` is the soft 7 px corner).
 Contrast is tested (`__tests__/kit.test.tsx`): text pairs ≥ 4.5:1, control boundaries and graphics ≥ 3:1, both themes.
 
 | Group | Tokens |
 |---|---|
-| Surfaces | `--p-bg` (paper), `--p-surface`, `--p-surface-2`, `--p-surface-3`, `--p-scrim` |
+| Surfaces | `--p-bg` (paper / slate), `--p-surface` (paper-2 / slate-2), `--p-surface-2`, `--p-surface-3`, `--p-scrim` |
 | Text | `--p-ink`, `--p-ink-muted`, `--p-ink-subtle` |
 | Lines | `--p-border` (decorative), `--p-border-strong` (controls, ≥ 3:1) |
-| Action | `--p-accent` (cobalt), `--p-accent-hover`, `--p-accent-soft`, `--p-on-accent`, `--p-focus`, `--p-focus-ring` |
+| Action | `--p-accent` (indigo / mint), `--p-accent-hover`, `--p-accent-soft`, `--p-on-accent`, `--p-focus`, `--p-focus-ring` |
 | Status | `--p-success`, `--p-warning`, `--p-danger`, `--p-info` and `-soft` backgrounds; `--p-highlight` / `--p-on-highlight` |
 | Type | `--p-font-sans`, `--p-font-devanagari`, `--p-font-serif`, `--p-font-mono`; `--p-text-xs` (13 px floor) … `--p-text-3xl`; `--p-leading-body` 1.55, `--p-leading-devanagari` 1.75 |
-| Space / shape | `--p-space-1…10` (4 px grid), `--p-gutter` (16 px), `--p-radius-sm|md|lg|pill`, `--p-shadow-1|2|3` |
+| Space / shape | `--p-space-1…10` (4 px grid), `--p-gutter` (16 px), `--p-radius-sm|md|lg|pill` (pill = 7 px since ADR-029), `--p-shadow-1|2|3` |
 | Interaction | `--p-touch` (44 px), `--p-ease`, `--p-duration-fast|base` (0 under reduced motion), `--p-z-sheet`, `--p-z-toast` |
 | Diagrams | `--diagram-accent`, `--diagram-muted`, `--diagram-fill`, `--diagram-paper` (label halo), named colours `--diagram-blue`, `--diagram-green`, `--diagram-yellow`, `--diagram-brown`, `--diagram-red` |
-| Brand (ADR-023) | `--p-brand-blue`, `--p-brand-red`, `--p-brand-yellow` (the marketing tri-stripe; decoration only, never text) |
+| Pigments (ADR-023 "brand") | `--p-brand-blue` (indigo / mint), `--p-brand-red` (madder / madder-rose), `--p-brand-yellow` (turmeric / lamp): decoration only, never text |
+| Stamp (ADR-029) | `--p-stamp` (madder / madder-rose), `--p-stamp-solved` (leaf): text-grade on bg and surface |
 | Difficulty | `--p-easy`, `--p-medium`, `--p-hard` (AA text on surface) and `-soft` fills (AA text on them) |
 | Mastery | `--p-m-none`, `--p-m-attempted`, `--p-m-familiar`, `--p-m-proficient`, `--p-m-mastered` (graphics, >= 3:1; the level is always written too) |
 | Gamification | `--p-flame` (streak), `--p-heat-0…4` (activity heatmap), `--p-tier-bronze|silver|gold|elite` (player card, league, rarity) |
@@ -151,9 +156,12 @@ Diagram colours are for SVG attributes (`stroke="var(--diagram-red)"`, `fill="va
 colour-blind students. The sanitiser keeps only `diagram-*` classes; `tokens.css` styles
 `diagram-accent`, `diagram-muted`, `diagram-fill`, `diagram-fill-accent`, `diagram-label`, `diagram-thin`.
 
-**Fonts.** `--font-inter` comes from the root layout; `--font-noto-devanagari` from `fonts.ts`
-(self-hosted variable font, Devanagari subset, `display: swap`). `--p-font-sans` lists Noto Devanagari
-after Inter so mixed Hinglish text falls back per glyph; `lang="hi"` (also `mr`, `ne`, `sa`) switches to
+**Fonts.** `--font-switzer` (text, 400/500/600) and `--font-zodiak` (display, 400 only) come from the root layout
+(`lib/fonts.ts`, ADR-028; since ADR-029 the kit no longer reads `--font-inter` or `--font-instrument-serif`);
+`--font-noto-devanagari` from `fonts.ts` (self-hosted variable font, Devanagari subset, `display: swap`). `--p-font-sans`
+is Switzer with Noto Devanagari after it, so mixed Hinglish text falls back per glyph; `--p-font-serif` is Zodiak (page
+titles, title slides). Switzer has no rupee sign, so ₹ falls back to the next face that has it. Weights above 600
+render as 600 (`font-synthesis-weight: none`); `lang="hi"` (also `mr`, `ne`, `sa`) switches to
 `--p-font-devanagari`, line-height 1.75, no letter-spacing, and turns italics into weight.
 
 **Tailwind leak rule.** Tailwind v4 scans *every* source file (including Markdown docs) for class-like
@@ -181,6 +189,21 @@ Original, hand-drawn flat SVG for the platform; no icon set, emoji, illustration
 | Empty states (6) | `empty-art.ts` (theme tokens only) | `EmptyIllustration` → `EmptyState art={…}` | dashboard, /me badges, Ask AI, 404, error | own module |
 
 All drawings are `SvgNode` data (`svg-tree.ts`), rendered with `SvgTree` (no `dangerouslySetInnerHTML`) or as a string by the avatar route. Avatar backgrounds are the tokens `--p-avatar-<bg>` (8 themes, light and dark) with `--p-avatar-ink` (AA on all of them); the art's dark features are ≥ 3:1 on every background (kit test). Bump `AVATAR_IMAGE_VERSION` (`avatar-src.ts`) when a drawing changes. Dev review page: `/dev/ui/art`.
+
+## Stamp (`kit/Stamp.tsx`, ADR-029)
+
+```tsx
+import { Stamp } from '@/components/platform/ui/kit/Stamp';
+<Stamp value={streak.current} label="day streak" caption="11 Nov 2026" />          // madder
+<Stamp value="#3" label="weekly rank" caption="Gold league" tilt={6} />           // a rank card
+<Stamp value={30} label="day streak" caption="goal met" tone="solved" />         // leaf
+```
+
+A double-ringed, slightly rotated rubber stamp (label round the top, caption round the bottom, the number in Zodiak).
+**Streak days and rank cards only** (DESIGN.md §1); anywhere else it is cut at review. Server-safe, one inline SVG, no
+image request; `useId` keeps each stamp's text paths and its fixed-seed wear filter unique. Accessible name defaults to
+"value label, caption"; pass `decorative` when the same fact is written beside it. `tilt` is clamped to ±12°, `size` is at
+least 72 px. Gallery: `/dev/ui#stamp`. Not yet mounted in the app (the streak displays live in web-platform files).
 
 ## Renderer security rules (WEB-6, WEB-7, AC-19, F-012)
 

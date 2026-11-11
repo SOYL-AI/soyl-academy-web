@@ -61,17 +61,21 @@
   box-shadow: var(--p-focus-ring);
 }
 
+/* ADR-029: page titles are display type, Zodiak 400 (the face has one weight; Devanagari falls back per glyph). */
 .title {
   margin: 0;
-  font-size: var(--p-text-2xl);
-  line-height: var(--p-leading-tight);
-  font-weight: 750;
+  font-family: var(--p-font-serif);
+  font-size: 1.75rem;
+  line-height: 1.1;
+  font-weight: 400;
   letter-spacing: -0.015em;
   /* Wrap between words (anywhere split "Chemical Reac|tions" at 360 px) and balance the lines. */
   overflow-wrap: break-word;
   text-wrap: balance;
 }
 .title:lang(hi) {
+  font-weight: 600;
+  line-height: var(--p-leading-tight);
   letter-spacing: normal;
 }
 .lead {
@@ -81,7 +85,7 @@
 }
 @media (min-width: 640px) {
   .title {
-    font-size: var(--p-text-3xl);
+    font-size: 2.25rem;
   }
 }
 

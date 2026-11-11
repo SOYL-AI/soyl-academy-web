@@ -124,9 +124,9 @@ button.chip:hover {
 .skeleton {
   display: block;
   border-radius: var(--p-radius-sm);
-  background: linear-gradient(90deg, var(--p-surface-2) 25%, var(--p-surface-3) 50%, var(--p-surface-2) 75%);
-  background-size: 200% 100%;
-  animation: shimmer 1.4s ease-in-out infinite;
+  /* ADR-029: a flat wash that breathes, not a gradient sweep (the language has no gradients). */
+  background: var(--p-surface-3);
+  animation: shimmer 1.6s var(--p-ease) infinite alternate;
 }
 .skeletonText {
   height: 0.9em;
@@ -137,10 +137,10 @@ button.chip:hover {
 }
 @keyframes shimmer {
   from {
-    background-position: 100% 0;
+    opacity: 1;
   }
   to {
-    background-position: -100% 0;
+    opacity: 0.45;
   }
 }
 
