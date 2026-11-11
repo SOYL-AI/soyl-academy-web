@@ -48,30 +48,29 @@ export const method = {
   ],
 } as const;
 
+/**
+ * How it works for a teacher (/teachers, components/home/HowItWorks.tsx). Text only: the screenshot slots in
+ * content/media.ts have no real product images yet, so the page shows none.
+ */
 export const howItWorks = {
-  label: 'How it works',
   headline: 'From notes to evidence.',
   intro: 'Start from what you already teach. SOYL drafts; you decide; students do the work; you see the thinking.',
   steps: [
     {
       title: 'Upload your notes',
       line: 'Start from the notes you already teach with. SOYL drafts interactive questions from them.',
-      media: 'uploadNotes',
     },
     {
       title: 'You approve every question',
       line: 'Edit, reorder or reject. Nothing reaches students until you say so.',
-      media: 'teacherApproves',
     },
     {
       title: 'Students work it out',
       line: 'Unlimited attempts and step-by-step hints that never give the answer away.',
-      media: 'studentHints',
     },
     {
       title: 'See each pupil’s path',
       line: 'A class heatmap of attempts and hints shows who struggled, where, and who got there alone.',
-      media: 'teacherHeatmap',
     },
   ],
 } as const;
