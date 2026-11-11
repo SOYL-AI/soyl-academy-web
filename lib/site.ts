@@ -106,7 +106,7 @@ const ITEMS = {
   parents: {
     label: 'For parents',
     href: '/parents',
-    description: 'See your child’s progress and feedback, not just a mark.',
+    description: 'The weekly report, what is free, and how consent works.',
     icon: 'parent',
   },
   students: {

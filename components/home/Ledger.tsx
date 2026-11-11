@@ -1,4 +1,5 @@
 import { Dab } from '@/components/ink/Dab';
+import { FREE_ALWAYS } from '@/components/ink/LedgerColumns';
 import { InkLink } from '@/components/ink/Button';
 import { Section } from '@/components/ink/Section';
 import { Stroke } from '@/components/ink/Stroke';
@@ -9,7 +10,8 @@ import { freeCreditsPerDay } from '@/lib/home/numbers';
  * why. Rests on golden rule 3 (learning and tests are free; only AI costs credits). The allowance is read from
  * platform/shared/config/plans.ts. Only rendered with the platform on.
  */
-const FREE = ['Lessons', 'Notes and flashcards', 'Practice with instant checks', 'Chapter tests, mock papers and All-India mocks'];
+/** The same four as /plans and /parents (components/ink/LedgerColumns.tsx). */
+const FREE = FREE_ALWAYS;
 
 export function Ledger() {
   const credits = freeCreditsPerDay();
