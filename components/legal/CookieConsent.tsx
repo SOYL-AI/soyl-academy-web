@@ -2,6 +2,7 @@
 
 import { useEffect, useId, useState } from 'react';
 import Link from 'next/link';
+import { inkButtonClasses } from '@/components/ink/Button';
 import { OPEN_COOKIE_SETTINGS_EVENT, readConsent, writeConsent } from './consent';
 
 /**
@@ -50,18 +51,22 @@ export function CookieConsent() {
 
   if (!open) return null;
 
+  // Ink and wash (phase 5): paper bar, ink buttons with soft corners (never pills), 44 px targets. The class names
+  // and the DOM shape stay as they were: app/globals.css hides `.cookie-bar` once a choice exists, and
+  // components/platform/shell/platform-global.css restyles `.cookie-bar` h2, p, a, label, button and
+  // `button:first-child` (the primary choice) for the app's dark theme.
   return (
     <section
       aria-labelledby={headingId}
       data-forced={forced || undefined}
-      className="cookie-bar fixed inset-x-0 bottom-0 z-50 border-t border-rule bg-white/95 backdrop-blur-md shadow-[0_-12px_32px_-20px_rgba(20,20,20,0.35)]"
+      className="cookie-bar fixed inset-x-0 bottom-0 z-50 border-t border-ink/15 bg-paper"
     >
       <div className="page flex flex-col gap-3 py-3 md:flex-row md:items-center md:gap-8 md:py-4">
         <div className="min-w-0 flex-1">
-          <h2 id={headingId} className="t-label text-ink">
+          <h2 id={headingId} className="text-[0.9375rem] font-semibold leading-[1.4] text-ink">
             Cookies
           </h2>
-          <p className="t-small max-w-[70ch] text-muted">
+          <p className="max-w-[70ch] text-[0.875rem] leading-[1.55] text-graphite">
             Essential cookies keep the site working. With your OK we also use cookieless analytics.{' '}
             <Link href="/privacy#cookies" className="link">
               Cookie policy
@@ -69,27 +74,27 @@ export function CookieConsent() {
           </p>
 
           {custom && (
-            <fieldset className="mt-3 flex flex-col gap-2 sm:flex-row sm:gap-6">
+            <fieldset className="mt-2 flex flex-col sm:flex-row sm:flex-wrap sm:gap-x-6">
               <legend className="sr-only">Choose cookie categories</legend>
-              <label className="t-small flex items-center gap-2 text-muted">
-                <input type="checkbox" checked disabled className="h-4 w-4 accent-cobalt" />
+              <label className="flex min-h-11 items-center gap-2.5 text-[0.875rem] text-muted">
+                <input type="checkbox" checked disabled className="h-[1.125rem] w-[1.125rem] accent-indigo" />
                 Essential (always on)
               </label>
-              <label className="t-small flex cursor-pointer items-center gap-2 text-ink">
+              <label className="flex min-h-11 cursor-pointer items-center gap-2.5 text-[0.875rem] text-ink">
                 <input
                   type="checkbox"
                   checked={analytics}
                   onChange={(e) => setAnalytics(e.target.checked)}
-                  className="h-4 w-4 accent-cobalt"
+                  className="h-[1.125rem] w-[1.125rem] cursor-pointer accent-indigo"
                 />
                 Analytics
               </label>
-              <label className="t-small flex cursor-pointer items-center gap-2 text-ink">
+              <label className="flex min-h-11 cursor-pointer items-center gap-2.5 text-[0.875rem] text-ink">
                 <input
                   type="checkbox"
                   checked={marketing}
                   onChange={(e) => setMarketing(e.target.checked)}
-                  className="h-4 w-4 accent-cobalt"
+                  className="h-[1.125rem] w-[1.125rem] cursor-pointer accent-indigo"
                 />
                 Preferences (remember offers and form details)
               </label>
@@ -97,35 +102,25 @@ export function CookieConsent() {
           )}
         </div>
 
-        <div className="flex shrink-0 flex-wrap items-center gap-2">
+        <div className="flex shrink-0 flex-wrap items-center gap-x-2 gap-y-2">
           {custom ? (
-            <button
-              type="button"
-              onClick={() => save({ analytics, marketing })}
-              className="press h-10 rounded-full bg-ink px-5 text-[15px] font-semibold text-white hover:bg-cobalt"
-            >
+            <button type="button" onClick={() => save({ analytics, marketing })} className={inkButtonClasses('primary')}>
               Save choices
             </button>
           ) : (
             <>
-              <button
-                type="button"
-                onClick={() => save({ analytics: true, marketing: true })}
-                className="press h-10 rounded-full bg-ink px-5 text-[15px] font-semibold text-white hover:bg-cobalt"
-              >
+              <button type="button" onClick={() => save({ analytics: true, marketing: true })} className={inkButtonClasses('primary')}>
                 Accept all
               </button>
-              <button
-                type="button"
-                onClick={() => save({ analytics: false, marketing: false })}
-                className="press h-10 rounded-full border border-ink/25 px-5 text-[15px] font-semibold text-ink hover:border-ink hover:bg-ink hover:text-white"
-              >
+              <button type="button" onClick={() => save({ analytics: false, marketing: false })} className={inkButtonClasses('secondary')}>
                 Essential only
               </button>
+              {/* border-0 and a currentColor underline: the platform's dark rules colour every button's border and
+                  text, and this one stays a plain underlined word there, as it was. */}
               <button
                 type="button"
                 onClick={() => setCustom(true)}
-                className="h-10 px-2 text-[15px] font-medium text-ink underline underline-offset-4 hover:text-cobalt"
+                className={inkButtonClasses('quiet', 'md', 'border-0 px-2 [text-decoration-color:color-mix(in_srgb,currentColor_45%,transparent)]')}
               >
                 Choose
               </button>
