@@ -1,0 +1,79 @@
+@layer properties, theme, base, components, utilities;
+/* The legal pages in Ink and wash (components/legal/LegalPage.tsx): a readable column of policy text. Restyle
+   only: the text of the policies lives in app/{privacy,terms,refund-policy,shipping-policy}/page.tsx and is not
+   changed by these rules. The line above declares Tailwind's layer order first (see the header of
+   components/ink/ink.module.css); everything below is in `components`, so a utility in className wins. */
+
+@layer components {
+
+/* Policy text: Switzer at body size, ink, a comfortable measure. */
+.body {
+  color: var(--color-ink);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+@media (min-width: 768px) {
+  .body { font-size: 1.0625rem; }
+}
+
+.section {
+  padding-block: 2rem;
+  border-top: 1px solid var(--color-rule);
+  scroll-margin-top: 5.5rem;
+}
+.section:last-child { border-bottom: 1px solid var(--color-rule); }
+.section h2 {
+  margin-bottom: 0.9rem;
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: clamp(1.25rem, 1rem + 1vw, 1.45rem);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+.body p + p,
+.body p + ul,
+.body ul + p,
+.body p + div,
+.body div + p { margin-top: 0.85rem; }
+
+.body ul { padding-left: 1.35rem; list-style: disc; }
+.body li { padding-left: 0.2rem; }
+.body li + li { margin-top: 0.5rem; }
+.body li::marker { color: var(--color-muted); }
+
+.body strong { font-weight: 600; }
+.body code {
+  font-family: var(--font-sans);
+  font-size: inherit;
+  font-weight: 500;
+}
+
+/* A box of facts inside a section (cookie categories, the grievance officer, delivery times). */
+.note {
+  padding: 1.1rem 1.25rem;
+  border-radius: var(--radius-md);
+  background: var(--color-paper-2);
+}
+.note + .note { margin-top: 0.75rem; }
+.note h3 { margin-bottom: 0.2rem; font-weight: 600; }
+.note p + p { margin-top: 0.4rem; }
+/* Secondary lines inside a note (the old `t-small text-muted`). */
+.quiet { color: var(--color-graphite); font-size: 0.9375rem; line-height: 1.6; }
+
+/* The one highlighted section of a page (the refund guarantee): the section on the paper band. */
+.highlight {
+  margin-block: 2rem;
+  padding: 1.5rem 1.25rem;
+  border-top: 0;
+  border-radius: var(--radius-md);
+  background: var(--color-paper-2);
+}
+.highlight:first-child { margin-top: 0; }
+.highlight + .section { border-top: 0; }
+@media (min-width: 768px) {
+  .highlight { padding: 2rem; }
+}
+
+} /* @layer components */
