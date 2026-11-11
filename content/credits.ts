@@ -14,6 +14,8 @@ export interface PhotoCredit {
   source: 'Pexels';
   sourceUrl: string;
   licence: string;
+  /** A recognisable person is in the picture. A child's face never sits beside a price, a claim or a number. */
+  face: boolean;
 }
 
 export const PHOTO_CREDITS: PhotoCredit[] = [
@@ -28,7 +30,8 @@ export const PHOTO_CREDITS: PhotoCredit[] = [
     "photographerUrl": "https://www.pexels.com/@rdne",
     "source": "Pexels",
     "sourceUrl": "https://www.pexels.com/photo/mother-and-daughter-reading-a-book-while-sitting-on-the-couch-7104388/",
-    "licence": "Pexels licence"
+    "licence": "Pexels licence",
+    "face": true
   },
   {
     "slug": "classroom-from-behind",
@@ -41,7 +44,8 @@ export const PHOTO_CREDITS: PhotoCredit[] = [
     "photographerUrl": "https://www.pexels.com/@siddharth-rathod-1277003",
     "source": "Pexels",
     "sourceUrl": "https://www.pexels.com/photo/women-wearing-blue-and-white-uniform-6217466/",
-    "licence": "Pexels licence"
+    "licence": "Pexels licence",
+    "face": false
   },
   {
     "slug": "hands-breadboard",
@@ -54,7 +58,204 @@ export const PHOTO_CREDITS: PhotoCredit[] = [
     "photographerUrl": "https://www.pexels.com/@chengxin-zhao-1218017",
     "source": "Pexels",
     "sourceUrl": "https://www.pexels.com/photo/close-up-of-a-person-connecting-electronic-components-15470540/",
-    "licence": "Pexels licence"
+    "licence": "Pexels licence",
+    "face": false
+  },
+  {
+    "slug": "hands-red-pencil",
+    "src": "/photos/hands-red-pencil.jpg",
+    "width": 1600,
+    "height": 1068,
+    "alt": "A hand holding a red pencil over an open notebook",
+    "use": "Study, marking",
+    "photographer": "Towfiqu barbhuiya",
+    "photographerUrl": "https://www.pexels.com/@towfiqu-barbhuiya-3440682",
+    "source": "Pexels",
+    "sourceUrl": "https://www.pexels.com/photo/a-person-writing-on-notebook-9797031/",
+    "licence": "Pexels licence",
+    "face": false
+  },
+  {
+    "slug": "hands-writing-night",
+    "src": "/photos/hands-writing-night.jpg",
+    "width": 1600,
+    "height": 1067,
+    "alt": "Hands writing in a notebook in low light",
+    "use": "Study at night",
+    "photographer": "Pew Nguyen",
+    "photographerUrl": "https://www.pexels.com/@nguyendesigner",
+    "source": "Pexels",
+    "sourceUrl": "https://www.pexels.com/photo/person-writing-while-using-phone-239548/",
+    "licence": "Pexels licence",
+    "face": false
+  },
+  {
+    "slug": "desk-pages",
+    "src": "/photos/desk-pages.jpg",
+    "width": 1600,
+    "height": 1068,
+    "alt": "Hands turning the pages of a book beside a notebook, seen from above",
+    "use": "Study desk from above",
+    "photographer": "Pavel Danilyuk",
+    "photographerUrl": "https://www.pexels.com/@pavel-danilyuk",
+    "source": "Pexels",
+    "sourceUrl": "https://www.pexels.com/photo/a-person-reading-a-book-8423372/",
+    "licence": "Pexels licence",
+    "face": false
+  },
+  {
+    "slug": "notes-top",
+    "src": "/photos/notes-top.jpg",
+    "width": 1600,
+    "height": 1067,
+    "alt": "Two people writing notes in notebooks on a wooden table, seen from above",
+    "use": "Notes from above",
+    "photographer": "Polina Tankilevitch",
+    "photographerUrl": "https://www.pexels.com/@polina-tankilevitch",
+    "source": "Pexels",
+    "sourceUrl": "https://www.pexels.com/photo/top-view-of-a-person-writing-notes-on-her-notebook-6929270/",
+    "licence": "Pexels licence",
+    "face": false
+  },
+  {
+    "slug": "night-study",
+    "src": "/photos/night-study.jpg",
+    "width": 1600,
+    "height": 1200,
+    "alt": "Reading under a desk lamp at night",
+    "use": "Night theme",
+    "photographer": "MT photography 😊📸📸",
+    "photographerUrl": "https://www.pexels.com/@mt-photography-503025765",
+    "source": "Pexels",
+    "sourceUrl": "https://www.pexels.com/photo/young-man-studying-hard-under-desk-lamp-33940743/",
+    "licence": "Pexels licence",
+    "face": false
+  },
+  {
+    "slug": "lamplight",
+    "src": "/photos/lamplight.jpg",
+    "width": 1600,
+    "height": 1067,
+    "alt": "A child reading by lamplight",
+    "use": "Night, small only",
+    "photographer": "angel studio",
+    "photographerUrl": "https://www.pexels.com/@angel-studio-2158692889",
+    "source": "Pexels",
+    "sourceUrl": "https://www.pexels.com/photo/child-studying-under-soft-lamplight-at-home-40746551/",
+    "licence": "Pexels licence",
+    "face": true
+  },
+  {
+    "slug": "classroom-girls",
+    "src": "/photos/classroom-girls.jpg",
+    "width": 1600,
+    "height": 1067,
+    "alt": "Schoolgirls in uniform listening in a classroom",
+    "use": "Classroom",
+    "photographer": "Yogendra  Singh",
+    "photographerUrl": "https://www.pexels.com/@yogendras31",
+    "source": "Pexels",
+    "sourceUrl": "https://www.pexels.com/photo/photograph-of-girls-in-a-classroom-3231358/",
+    "licence": "Pexels licence",
+    "face": true
+  },
+  {
+    "slug": "classroom-boys",
+    "src": "/photos/classroom-boys.jpg",
+    "width": 1600,
+    "height": 900,
+    "alt": "Young schoolboys in uniform at their desks in a classroom",
+    "use": "Classroom",
+    "photographer": "Swastik Arora",
+    "photographerUrl": "https://www.pexels.com/@swastikarora",
+    "source": "Pexels",
+    "sourceUrl": "https://www.pexels.com/photo/children-sitting-in-a-classroom-with-desks-and-chairs-18012456/",
+    "licence": "Pexels licence",
+    "face": true
+  },
+  {
+    "slug": "parents-alt",
+    "src": "/photos/parents-alt.jpg",
+    "width": 1600,
+    "height": 1067,
+    "alt": "A mother and her daughter smiling over a painting the girl made",
+    "use": "Parents",
+    "photographer": "RDNE Stock project",
+    "photographerUrl": "https://www.pexels.com/@rdne",
+    "source": "Pexels",
+    "sourceUrl": "https://www.pexels.com/photo/mother-and-daughter-sitting-together-7104142/",
+    "licence": "Pexels licence",
+    "face": true
+  },
+  {
+    "slug": "teacher-blackboard",
+    "src": "/photos/teacher-blackboard.jpg",
+    "width": 1600,
+    "height": 1067,
+    "alt": "A teacher writing on a blackboard",
+    "use": "Teachers",
+    "photographer": "fauxels",
+    "photographerUrl": "https://www.pexels.com/@fauxels",
+    "source": "Pexels",
+    "sourceUrl": "https://www.pexels.com/photo/man-writing-on-a-blackboard-3184658/",
+    "licence": "Pexels licence",
+    "face": true
+  },
+  {
+    "slug": "chalk-maths",
+    "src": "/photos/chalk-maths.jpg",
+    "width": 1600,
+    "height": 900,
+    "alt": "A hand writing maths on a blackboard in chalk",
+    "use": "Night theme, teachers",
+    "photographer": "Vitaly Gariev",
+    "photographerUrl": "https://www.pexels.com/@silverkblack",
+    "source": "Pexels",
+    "sourceUrl": "https://www.pexels.com/photo/hand-writing-equations-on-a-classroom-chalkboard-39191015/",
+    "licence": "Pexels licence",
+    "face": false
+  },
+  {
+    "slug": "chalk-alt",
+    "src": "/photos/chalk-alt.jpg",
+    "width": 1600,
+    "height": 1067,
+    "alt": "A hand writing trigonometry in chalk on a blackboard",
+    "use": "Night theme",
+    "photographer": "https://kaboompics.com/",
+    "photographerUrl": "https://www.pexels.com/@karola-g",
+    "source": "Pexels",
+    "sourceUrl": "https://www.pexels.com/photo/hand-writing-mathematical-formulas-on-a-blackboard-6256258/",
+    "licence": "Pexels licence",
+    "face": false
+  },
+  {
+    "slug": "arduino-team",
+    "src": "/photos/arduino-team.jpg",
+    "width": 1600,
+    "height": 898,
+    "alt": "Several hands wiring an Arduino board beside a laptop",
+    "use": "Future Builders",
+    "photographer": "Youn Seung Jin",
+    "photographerUrl": "https://www.pexels.com/@youn-seung-jin-36101845",
+    "source": "Pexels",
+    "sourceUrl": "https://www.pexels.com/photo/close-up-of-team-working-on-arduino-project-33373082/",
+    "licence": "Pexels licence",
+    "face": false
+  },
+  {
+    "slug": "electronics-top",
+    "src": "/photos/electronics-top.jpg",
+    "width": 1600,
+    "height": 1067,
+    "alt": "Hands soldering electronic components on a workbench, seen from above",
+    "use": "Future Builders",
+    "photographer": "cottonbro studio",
+    "photographerUrl": "https://www.pexels.com/@cottonbro",
+    "source": "Pexels",
+    "sourceUrl": "https://www.pexels.com/photo/person-holding-yellow-and-black-pen-4709369/",
+    "licence": "Pexels licence",
+    "face": false
   }
 ];
 
