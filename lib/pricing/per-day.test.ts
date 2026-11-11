@@ -1,7 +1,10 @@
+import { readFileSync } from 'node:fs';
+import { resolve } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { formatInr, getPlan, planPrice, PLANS, type Plan } from '@/platform/shared/config/plans';
 import { boardExamPass, formatIstDate } from '@/lib/home/numbers';
-import { DAYS_PER_PERIOD, daysCovered, perDayFor, priceRows } from './per-day';
+import { DAYS_PER_PERIOD, daysCovered, perDayFor, perDayLabel } from './per-day';
+import { priceRows } from './price-rows';
 
 const NOV_11 = new Date('2026-11-11T06:00:00Z'); // 11:30 IST
 
@@ -11,6 +14,18 @@ function expected(amountPaise: number, days: number): string {
   const ten = Math.max(10, Math.round(paise / 10) * 10);
   return ten >= 1000 ? `₹${Math.round(paise / 100)}` : `₹${(ten / 100).toFixed(2)}`;
 }
+
+describe('per-day.ts runs in the browser', () => {
+  it('imports nothing at runtime (config carries zod; the /plans cards import this file)', () => {
+    const src = readFileSync(resolve(process.cwd(), 'lib/pricing/per-day.ts'), 'utf8');
+    const imports = src.match(/^import .*$/gm) ?? [];
+    for (const line of imports) expect(line).toMatch(/^import type /);
+  });
+
+  it('writes whole rupees the way formatInr does', () => {
+    for (const paise of [100_000, 1_000_000, 12_345_600]) expect(perDayLabel(paise, 1)).toBe(formatInr(Math.round(paise / 100) * 100));
+  });
+});
 
 describe('daysCovered', () => {
   it('spreads a month over 30 days and a year over 365', () => {
@@ -67,6 +82,7 @@ describe('priceRows (from config)', () => {
       const price = plan.prices.find((x) => x.interval === r.interval)!;
       expect(r.price).toBe(formatInr(price.amountPaise));
       expect(r.planName).toBe(plan.name);
+      expect(r.creditsPerDay).toBe(plan.creditsPerDay);
       const days = r.interval === 'one_time' ? daysCovered('one_time', plan.validUntil, NOV_11)! : DAYS_PER_PERIOD[r.interval];
       expect(r.perDay).toBe(expected(price.amountPaise, days));
       expect(r.period).toBe({ monthly: 'a month', yearly: 'a year', one_time: 'once' }[r.interval]);

@@ -7,19 +7,11 @@
 import { AI_ACTIONS } from '@/platform/shared/config/ai-actions';
 import { formatInr, getPlan, planPrice } from '@/platform/shared/config/plans';
 import { firstPaperFor, type BoardExam } from '@/content/exam-dates';
+import { daysUntil, perDayLabel } from '@/lib/pricing/per-day';
 
-const IST_OFFSET_MS = 5.5 * 60 * 60 * 1000;
-const DAY_MS = 24 * 60 * 60 * 1000;
-
-/** The IST calendar day of an instant, as a day number (days since 1970-01-01 in IST). */
-export function istDay(at: Date): number {
-  return Math.floor((at.getTime() + IST_OFFSET_MS) / DAY_MS);
-}
-
-/** IST calendar days from `now` to the day of `target` (0 on the day itself, negative once it has passed). */
-export function daysUntil(target: Date, now: Date): number {
-  return istDay(target) - istDay(now);
-}
+// IST days and the per-day rule live in lib/pricing/per-day.ts, which the /plans cards import in the browser and
+// so must not import config at runtime (plans.ts carries zod). Re-exported here for the homepage and its tests.
+export { daysUntil, istDay, perDayLabel } from '@/lib/pricing/per-day';
 
 /** A `YYYY-MM-DD` date in IST, as the instant at its IST midnight. */
 export function istDate(ymd: string): Date {
@@ -40,19 +32,6 @@ export function freeCreditsPerDay(): number {
 export function quickDoubtCredits(): number | null {
   const pricing = AI_ACTIONS['quick-doubt'].pricing;
   return pricing.kind === 'flat' ? pricing.credits : null;
-}
-
-/**
- * Price per day, rounded to the nearest 10 paise, as a label: "₹3.50". From ₹10 a day up, whole rupees.
- * "About" belongs in the sentence, not here.
- */
-export function perDayLabel(amountPaise: number, days: number): string {
-  if (days <= 0) throw new Error('perDayLabel needs at least one day');
-  const perDayPaise = amountPaise / days;
-  const tenPaise = Math.max(10, Math.round(perDayPaise / 10) * 10);
-  // 996 paise rounds up to 1000: that is "₹10", not "₹10.00".
-  if (tenPaise >= 1000) return formatInr(Math.round(perDayPaise / 100) * 100);
-  return `₹${(tenPaise / 100).toFixed(2)}`;
 }
 
 export interface PassOffer {
