@@ -232,6 +232,11 @@ describe('design tokens', () => {
     ]),
     // Avatar backgrounds (2026-10-29): the avatar ink (initials, icons on a swatch) is AA on every theme colour.
     ...AVATAR_BACKGROUND_IDS.map((bg) => ['--p-avatar-ink', `--p-avatar-${bg}`] as [string, string]),
+    // ADR-029: the rubber stamp's number and label are text, on the page and on a card.
+    ...(['stamp', 'stamp-solved'] as const).flatMap((c) => [
+      [`--p-${c}`, '--p-bg'] as [string, string],
+      [`--p-${c}`, '--p-surface'] as [string, string],
+    ]),
   ];
   const GRAPHIC_PAIRS: Array<[string, string]> = [
     ['--p-border-strong', '--p-surface'],
