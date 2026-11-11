@@ -98,10 +98,12 @@ export const PAGES: Record<string, PageEntry> = {
   },
   '/parents': {
     path: '/parents',
-    title: 'For Parents — See How Your Child Learns',
+    // Ink and wash phase 3: the page is now the learning platform for the payer (weekly report, free and metered,
+    // consent), no longer the school-assignment parent view.
+    title: 'For Parents: See What Your Child Did This Week',
     label: 'For Parents',
     description:
-      'With SOYL, parents see their child’s progress and teacher feedback, not just a mark. Hints guide students without giving answers away.',
+      'Lessons, practice and tests are free for Classes 7 to 12; only AI help is metered. A weekly report for a parent, and how approval and safety work.',
     type: 'WebPage',
     eyebrow: 'For Parents',
     priority: 0.7,
