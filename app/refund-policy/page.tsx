@@ -5,7 +5,7 @@ import { createMetadata } from '@/lib/seo/metadata';
 
 export const metadata: Metadata = createMetadata({
   path: '/refund-policy',
-  title: 'Cancellation & Refund Policy | SOYL Academy',
+  title: 'Cancellation & Refund Policy',
   description: 'Official cancellation and refund policy of SOYL Academy, including our 100% Session 1 Money-Back Guarantee.',
 });
 

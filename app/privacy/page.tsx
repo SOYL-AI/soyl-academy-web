@@ -4,7 +4,7 @@ import { createMetadata } from '@/lib/seo/metadata';
 
 export const metadata: Metadata = createMetadata({
   path: '/privacy',
-  title: 'Privacy & Cookie Policy | SOYL Academy',
+  title: 'Privacy & Cookie Policy',
   description: 'Privacy Policy and Cookie Notice of SOYL Academy (SOYL AI Private Limited) under India DPDP Act and GDPR.',
 });
 

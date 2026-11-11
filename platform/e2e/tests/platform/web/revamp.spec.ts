@@ -89,7 +89,7 @@ test.describe('ADR-023 app shell', () => {
       await expect(page.locator('#mobile-menu')).toHaveCount(1); // the marketing header
       await expect(page.locator('#soyl-platform-root')).toHaveCount(0);
       await expect(page.locator('html')).not.toHaveAttribute('data-platform-theme', /.*/);
-      expect(await bg(page.locator('body'))).toBe('rgb(255, 255, 255)');
+      expect(await bg(page.locator('body'))).toBe('rgb(251, 250, 247)'); // paper, Ink and wash (ADR-028)
     });
   }
 
@@ -148,7 +148,7 @@ test.describe('ADR-023 theme', () => {
     await setThemeCookie(page, baseURL, 'dark');
     await page.goto('/about', { waitUntil: 'networkidle' });
     await expect(page.locator('html')).not.toHaveAttribute('data-platform-theme', /.*/);
-    expect(await bg(page.locator('body'))).toBe('rgb(255, 255, 255)');
+    expect(await bg(page.locator('body'))).toBe('rgb(251, 250, 247)'); // paper, Ink and wash (ADR-028)
   });
 
   test('dark theme: platform pages pass axe (AA contrast) and fit 360 px', async ({ page, baseURL }) => {

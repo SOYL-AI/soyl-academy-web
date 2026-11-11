@@ -4,7 +4,7 @@ import { createMetadata } from '@/lib/seo/metadata';
 
 export const metadata: Metadata = createMetadata({
   path: '/terms',
-  title: 'Terms of Service | SOYL Academy',
+  title: 'Terms of Service',
   description: 'Terms of Service and Enrollment Conditions for SOYL Academy and the Future Builders Programme.',
 });
 

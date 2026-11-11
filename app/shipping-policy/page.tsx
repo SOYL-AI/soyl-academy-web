@@ -4,7 +4,7 @@ import { createMetadata } from '@/lib/seo/metadata';
 
 export const metadata: Metadata = createMetadata({
   path: '/shipping-policy',
-  title: 'Shipping & Delivery Policy | SOYL Academy',
+  title: 'Shipping & Delivery Policy',
   description: 'Shipping, packaging, and delivery timelines for the official ESP32-C3 hardware kit dispatched to Future Builders students across India.',
 });
 
