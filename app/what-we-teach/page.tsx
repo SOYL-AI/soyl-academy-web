@@ -72,8 +72,7 @@ export default function WhatWeTeachPage() {
         title="Some things are better learned together."
         lead="Join Future Builders online as an individual student, or bring SOYL workshops into your school."
         photo={{ slug: 'electronics-top', position: '50% 55%' }}
-        size="head"
-        className="[&_h1]:max-w-[22ch]"
+        className="[&_h1]:max-w-[19ch]"
       />
 
       <section aria-labelledby="fb-title" className="pb-16 md:pb-24">

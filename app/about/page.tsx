@@ -28,11 +28,15 @@ export default function AboutPage() {
       />
 
       <PageIntro
-        title="Answers are cheap. Thinking is not."
+        title={
+          <>
+            <span className="block">Answers are cheap.</span>
+            <span className="block">Thinking is not.</span>
+          </>
+        }
         lead="For most of history, a correct answer meant a student had learned. Today technology can produce the answer for free, so school has to ask for something more."
         photo={{ slug: 'chalk-alt', position: '45% 40%' }}
-        size="head"
-        className="[&_h1]:max-w-[20ch]"
+        className="[&_h1]:max-w-[19ch]"
       />
 
       {/* The argument in two grounds: paper for the world that was, slate for the one we are in. */}

@@ -30,7 +30,7 @@ export function PilotPlan() {
           </h2>
           <Stroke pigment="turmeric" width="5em" className="text-[clamp(1.9rem,4.2vw,3.2rem)]" />
           <p className="ink-lead mt-6 max-w-[46ch]">
-            SOYL works alongside your existing standards, whether Common Core, IB, IGCSE or local frameworks. It changes how learning is assessed, not what is taught.
+            SOYL works alongside your existing standards, whether CBSE, ICSE, a state board, IB or IGCSE. It changes how learning is assessed, not what is taught.
           </p>
 
           <ol className="mt-10 border-t border-ink">

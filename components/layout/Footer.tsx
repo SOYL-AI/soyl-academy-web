@@ -50,7 +50,8 @@ export function Footer() {
         >
           {FOOTER_NAV.map((col) => (
             <div key={col.heading}>
-              <h2 className="t-eyebrow mb-5 text-chalk-muted">{col.heading}</h2>
+              {/* Two lines tall from lg up, set on the baseline, so a heading that wraps ("Future Builders") does not drop its links below the others. */}
+              <h2 className="t-eyebrow mb-5 text-chalk-muted lg:flex lg:min-h-[3em] lg:items-end">{col.heading}</h2>
               <ul className="space-y-3">
                 {col.links.map((link) => (
                   <li key={link.href}>

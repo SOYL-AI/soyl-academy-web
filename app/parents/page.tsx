@@ -50,9 +50,10 @@ export default function ParentsPage() {
       <section aria-labelledby="parents-title" className="pb-14 pt-10 md:pb-20 md:pt-14 lg:pt-16">
         <div className="page grid gap-10 lg:grid-cols-12 lg:items-center lg:gap-8">
           <div className="lg:col-span-6">
-            <h1 id="parents-title" className="ink-hero max-w-[12ch]">
+            <h1 id="parents-title" className="ink-hero text-[clamp(2.6rem,5.2vw,4.2rem)] max-w-[12ch]">
               See your child’s week.
             </h1>
+            <Stroke pigment="indigo" width="5em" reveal={false} className="text-[clamp(2.6rem,5.2vw,4.2rem)]" />
             <p className="ink-lead mt-5 max-w-[36ch]">One short report a week: what they studied and practised, and where it got hard.</p>
             <div className="mt-9">
               <InkLink href={ACTION.href} size="lg" arrow>
@@ -76,7 +77,7 @@ export default function ParentsPage() {
             <p className="ink-lead mt-6 max-w-[38ch]">Days studied, lessons and questions, tests, and the chapters where it got hard. It comes with {reportPlans()}.</p>
           </div>
           <div className="lg:col-span-6 lg:col-start-7">
-            <Wash soft className="mx-auto max-w-[34rem] px-3 py-4 sm:px-6 sm:py-7">
+            <Wash className="mx-auto max-w-[34rem] px-4 py-6 sm:px-6 sm:py-7">
               <ReportSample />
             </Wash>
           </div>

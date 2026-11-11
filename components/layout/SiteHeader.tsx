@@ -173,6 +173,8 @@ export function SiteHeader({ groups, logo, actions, panels, sheetPanels, sheetTo
   if (platformChromeActive(pathname)) return null;
 
   const isCurrent = (href: string) => pathname === href || pathname.startsWith(`${href}/`);
+  // A page can sit in two groups (/method is under Programs and About): only the first one is marked current.
+  const currentGroupId = groups.find((g) => g.hrefs.some(isCurrent))?.id ?? null;
 
   const closeAll = () => {
     clearTimer();
@@ -273,7 +275,7 @@ export function SiteHeader({ groups, logo, actions, panels, sheetPanels, sheetTo
             <ul className="flex items-center gap-1">
               {groups.map((group, index) => {
                 const open = openId === group.id;
-                const current = group.hrefs.some(isCurrent);
+                const current = group.id === currentGroupId;
                 return (
                   <li key={group.id} onPointerEnter={(e) => onPointerEnter(group.id, e)} onPointerLeave={onPointerLeave}>
                     <button
@@ -365,7 +367,7 @@ export function SiteHeader({ groups, logo, actions, panels, sheetPanels, sheetTo
                     >
                       <span className="flex items-center gap-2.5">
                         {group.label}
-                        {group.hrefs.some(isCurrent) && <span aria-hidden="true" className="h-2 w-2 rounded-full bg-madder" />}
+                        {group.id === currentGroupId && <span aria-hidden="true" className="h-2 w-2 rounded-full bg-madder" />}
                       </span>
                       <span className="grid h-10 w-10 shrink-0 place-items-center rounded-[var(--radius-sm)] border border-rule text-ink transition-colors group-aria-expanded/acc:bg-paper-2">
                         <Chevron className="h-[18px] w-[18px] transition-transform duration-300 group-aria-expanded/acc:rotate-180" />

@@ -121,7 +121,7 @@ export function MiniSimulator() {
   };
 
   return (
-    <Wash className="p-3 sm:p-5">
+    <Wash className="px-4 py-5 sm:p-5">
       <div className="overflow-hidden rounded-[var(--radius-md)] border border-rule bg-paper">
         {/* The question's header, as in the student app */}
         <div className="border-b border-rule px-4 py-3 md:px-6">

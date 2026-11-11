@@ -42,7 +42,13 @@ export default function TeachersPage() {
       />
 
       <PageIntro
-        title="Your notes in. Better homework out."
+        title={
+          <>
+            <span className="block">Your notes in.</span>
+            <span className="block">Better homework out.</span>
+          </>
+        }
+        className="[&_h1]:max-w-[24ch]"
         lead="SOYL turns the notes you already teach from into interactive assignments for Grades 1 to 10. You approve every question. Your pupils work it out for themselves, and you see how each of them got there."
         actions={
           <>

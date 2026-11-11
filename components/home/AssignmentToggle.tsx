@@ -52,7 +52,7 @@ export function AssignmentToggle() {
 
         {/* The SOYL challenge */}
         <Wash
-          className={cn('p-3 transition-opacity duration-150 [grid-area:1/1] sm:p-5', isOld ? 'invisible opacity-0' : 'opacity-100')}
+          className={cn('px-4 py-5 transition-opacity duration-150 [grid-area:1/1] sm:p-5', isOld ? 'invisible opacity-0' : 'opacity-100')}
         >
           <article
             aria-hidden={isOld}

@@ -108,9 +108,9 @@ export const homeFaqs: FaqItem[] = [
 
 export const methodFaqs: FaqItem[] = [
   {
-    question: 'What are the five pillars of the SOYL Method?',
+    question: 'What are the five verbs of the SOYL Method?',
     answer:
-      'The five pillars are Understand, Apply, Create, Defend and Reflect. Together they move students from comprehension, through application and creation, to justifying their reasoning and reflecting on how they learned.',
+      'The five verbs are Understand, Apply, Create, Defend and Reflect. Together they move students from comprehension, through application and creation, to justifying their reasoning and reflecting on how they learned.',
   },
   {
     question: 'Why do assignments need to change in the age of AI?',
@@ -143,7 +143,7 @@ export const schoolsFaqs: FaqItem[] = [
   {
     question: 'Does SOYL Academy work with our existing curriculum?',
     answer:
-      'Yes. The SOYL Method is a pedagogical overlay, not a replacement curriculum. It integrates with existing standards such as Common Core, IB, IGCSE or local frameworks, changing how learning is assessed rather than what is taught.',
+      'Yes. The SOYL Method is a pedagogical overlay, not a replacement curriculum. It works with the curriculum you already follow, whether CBSE, ICSE, a state board, IB or IGCSE, changing how learning is assessed rather than what is taught.',
   },
   {
     question: 'How does the SOYL workflow work for teachers?',
@@ -187,7 +187,7 @@ export const whatWeTeachFaqs: FaqItem[] = [
       'SOYL Academy runs Future Builders, a 2-month summer camp for Grades 7 to 12 covering Software, AI, IoT, and Entrepreneurship. Additional programmes in AI & Technology, Building & Making, Communication & Ideas, and Problem Solving are coming soon.',
   },
   {
-    question: 'How are SOYL Academy programs delivered?',
+    question: 'How are SOYL Academy programmes delivered?',
     answer:
       'Future Builders is delivered through live online sessions during the summer break and is open to individual students in Grades 7 to 12. SOYL Academy also offers workshops and collaborative experiences through partner schools.',
   },

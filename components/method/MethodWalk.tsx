@@ -170,11 +170,12 @@ export function MethodWalk() {
 
   const finish = (
     <div className="grid gap-6 rounded-[var(--radius-md)] border border-rule bg-paper p-6 md:grid-cols-12 md:items-center md:p-8">
-      <ol aria-label="The route" className="flex flex-wrap gap-x-5 gap-y-3 md:col-span-6">
+      {/* Five even columns: the route never wraps one verb onto a second row at 390. */}
+      <ol aria-label="The route" className="grid grid-cols-5 gap-x-1 md:col-span-6 md:gap-x-3">
         {method.steps.map((s) => (
           <li key={s.verb} className="flex flex-col items-center gap-1">
             <RouteMark passed={stops[s.verb].passed} />
-            <span className="text-[0.8125rem] text-graphite">
+            <span className="text-[0.6875rem] text-graphite sm:text-[0.8125rem]">
               {s.verb}
               <span className="sr-only">{stops[s.verb].passed ? ', passed' : ', not yet'}</span>
             </span>
