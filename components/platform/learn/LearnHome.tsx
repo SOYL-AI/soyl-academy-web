@@ -12,6 +12,7 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { Button } from '@/components/platform/ui/kit/Button';
 import { Icon } from '@/components/platform/ui/kit/Icon';
+import { Stamp } from '@/components/platform/ui/kit/Stamp';
 import { MasteryPip, ProgressRing } from '@/components/platform/ui/kit/Mastery';
 import { Skeleton } from '@/components/platform/ui/kit/Display';
 import { useSession } from '../auth/SessionProvider';
@@ -133,9 +134,14 @@ function DashboardLinkCard() {
   return (
     <Link href={DASHBOARD_PATH} className={`${s.tile} ${s.tileLink}`} data-testid="dashboard-link">
       <div className={s.streakRow}>
-        <span className={`${s.flameBig} ${!streak?.current || streak.atRisk ? s.flameCold : ''}`} aria-hidden="true">
-          <Icon name="flame" size={30} />
-        </span>
+        {/* ADR-029: a streak day is stamped. The count is written beside it, so the stamp is decorative. */}
+        {streak?.current ? (
+          <Stamp value={streak.current} label="day streak" size={72} tilt={-7} decorative className={s.streakStamp} />
+        ) : (
+          <span className={`${s.flameBig} ${s.flameCold}`} aria-hidden="true">
+            <Icon name="flame" size={30} />
+          </span>
+        )}
         <span>
           <span className={s.bigNum}>{streak?.current ?? 0}</span>
           <span className={s.muted}> day streak</span>

@@ -3,7 +3,7 @@ import { Noto_Sans_Devanagari } from 'next/font/google';
 /**
  * Noto Sans Devanagari for Hindi (and other Devanagari) content, self-hosted by next/font at
  * build time as one variable font file (no request to Google at runtime, WEB-1), `display: swap`, Devanagari subset only
- * (Latin text keeps the site's Inter).
+ * (Latin text keeps the site's Switzer and Zodiak, `--font-switzer` / `--font-zodiak` from the root layout, ADR-029).
  *
  * Contract: put `notoDevanagari.variable` on the element that wraps platform pages (the
  * (platform) layout). It defines `--font-noto-devanagari`, which tokens.css uses in

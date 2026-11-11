@@ -15,6 +15,7 @@ import { PlatformRoot } from '@/components/platform/ui/PlatformRoot';
 import { Button, IconButton } from '@/components/platform/ui/kit/Button';
 import { CreditChip } from '@/components/platform/ui/kit/CreditChip';
 import { Avatar, Badge, Card, CardMeta, CardTitle, Chip, EmptyState, ProgressBar, Skeleton } from '@/components/platform/ui/kit/Display';
+import { Stamp } from '@/components/platform/ui/kit/Stamp';
 import { Markdown } from '@/components/platform/ui/render/Markdown';
 import { MathBlock } from '@/components/platform/ui/render/MathBlock';
 import { renderSlide } from '@/components/platform/ui/slides/layouts';
@@ -68,9 +69,21 @@ function loadExemplar(path = 'science/cbse-10-science-ch01'): { decks: Deck[]; q
 
 const SWATCHES = [
   '--p-bg', '--p-surface', '--p-surface-2', '--p-ink', '--p-ink-muted', '--p-ink-subtle', '--p-border-strong', '--p-accent',
-  '--p-highlight', '--p-danger', '--p-success', '--p-warning', '--diagram-accent', '--diagram-muted', '--diagram-fill',
-  '--diagram-blue', '--diagram-green', '--diagram-yellow', '--diagram-brown', '--diagram-red',
+  '--p-highlight', '--p-danger', '--p-success', '--p-warning', '--p-stamp', '--p-stamp-solved', '--diagram-accent', '--diagram-muted',
+  '--diagram-fill', '--diagram-blue', '--diagram-green', '--diagram-yellow', '--diagram-brown', '--diagram-red',
 ];
+
+/** ADR-029: the rubber stamp, for streak days and rank cards only. */
+function StampSample() {
+  return (
+    <div className={s.row}>
+      <Stamp value={7} label="day streak" caption="11 Nov 2026" />
+      <Stamp value="#3" label="weekly rank" caption="Gold league" tilt={6} />
+      <Stamp value={30} label="day streak" caption="goal met" tone="solved" tilt={-4} />
+      <Stamp value={124} label="day streak" size={80} tilt={-10} />
+    </div>
+  );
+}
 
 function Section({ id, title, children }: { id: string; title: string; children: React.ReactNode }) {
   return (
@@ -149,6 +162,7 @@ export default function UiGalleryPage() {
             {[
               ['tokens', 'Tokens'],
               ['kit', 'Components'],
+              ['stamp', 'Stamp'],
               ['overlays', 'Overlays'],
               ['forms', 'Forms'],
               ['markdown', 'Markdown & maths'],
@@ -217,6 +231,14 @@ export default function UiGalleryPage() {
             notes={<Markdown>{'**Notes** with maths: $\\ce{CaO + H2O -> Ca(OH)2}$'}</Markdown>}
             practice={<p>Practice: 77 questions in board formats.</p>}
           />
+        </Section>
+
+        <Section id="stamp" title="Stamp (streak days and rank cards only)">
+          <p className={s.note}>
+            Madder by default, leaf for a goal met. Not yet mounted in the app: it belongs beside the streak on the learning home and the dashboard,
+            and on the weekly league card (ADR-029).
+          </p>
+          <StampSample />
         </Section>
 
         <Section id="overlays" title="Dialog, bottom sheet, toast">
@@ -307,6 +329,7 @@ export default function UiGalleryPage() {
           <PlatformRoot theme="dark" className={s.darkPanel}>
             <div className={s.stack}>
               <KitSample />
+              <StampSample />
               {renderSlide(deck.slides[2], { index: 3, total: deck.slides.length, idPrefix: 'dark' })}
               {renderSlide(deck.slides[6], { index: 7, total: deck.slides.length, idPrefix: 'dark2' })}
             </div>

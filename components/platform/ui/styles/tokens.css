@@ -1,92 +1,105 @@
 /* ==========================================================================
-   SOYL platform tokens (design-system, M1)
+   SOYL platform tokens (design-system; "Ink and wash" since ADR-029)
 
    Every rule in this file is scoped under `.soyl-platform`, so importing it can never
    change a marketing page: marketing markup never carries that class. The file is imported
    only by components/platform/ui/PlatformRoot.tsx (ADR-001 §7, ADR-009).
 
-   Family resemblance with the marketing "Working Notebook" (app/globals.css): paper and ink,
-   cobalt as the single action colour, highlighter yellow, red-pen for errors, square-ish
-   radii. The platform is a study app, so it is denser, calmer and higher-contrast.
+   One language on two grounds (DESIGN.md, docs/redesign-ink-and-wash.md §2.2, ADR-028/029):
+   - Day (light theme): paper and ink. Paper ground, paper-2 surfaces, ink text, graphite and
+     muted secondary text, indigo as the one action colour (buttons, links, focus).
+   - Night (dark theme): slate and chalk. Slate ground, slate-2 surfaces, chalk text,
+     chalk-muted secondary text, mint as the action with near-black text on it.
+   Pigments carry meaning: madder a missed try or an error (madder-rose at night), leaf a right
+   answer, turmeric marks (never text; a deepened turmeric where a warning must be read), henna
+   the fifth pigment, lamp the night's mark colour. The token NAMES are the M1/ADR-023 contract;
+   only the values changed, so components did not.
 
    Contract for other agents:
    - Put `.soyl-platform` (use <PlatformRoot>) on the outermost platform element.
-   - Fonts: the (platform) layout sets `--font-noto-devanagari` with next/font (see
-     components/platform/ui/fonts.ts). `--font-inter` comes from the root layout.
+   - Fonts: Switzer (`--font-switzer`) and Zodiak (`--font-zodiak`) come from the root layout
+     (lib/fonts.ts, ADR-028); the (platform) layout sets `--font-noto-devanagari` with next/font
+     (components/platform/ui/fonts.ts).
    - Theme: light/dark follow prefers-color-scheme; `data-theme="light|dark"` on the root
      element forces one.
    - Diagrams use currentColor and --diagram-accent / --diagram-muted / --diagram-fill.
+   - Contrast is a test (__tests__/kit.test.tsx): change a value, run `npm run test:platform-ui`.
    ========================================================================== */
 
 .soyl-platform {
-  /* ── Colour: light (default) ───────────────────────────────────────────── */
-  --p-bg: #f5f6f8;            /* app background: cool, quiet (ADR-023) */
-  --p-surface: #ffffff;       /* cards, sheets, slides */
-  --p-surface-2: #f1f3f6;     /* quiet fill: table stripes, code, skeleton base */
-  --p-surface-3: #e4e7ec;     /* pressed / selected fill, empty track */
-  --p-ink: #15171c;
-  --p-ink-muted: #474c56;     /* secondary text, >= 7:1 on surface */
-  --p-ink-subtle: #5f6570;    /* captions, meta, >= 4.5:1 on surface, surface-2 and bg */
-  --p-border: rgba(21, 23, 28, 0.12);   /* decorative separators */
-  --p-border-strong: #7a808b; /* control boundaries (inputs, chips): >= 3:1 (WCAG 1.4.11) */
-  --p-accent: #2b4fe6;        /* SOYL cobalt (marketing --color-cobalt): actions, links, progress */
-  --p-accent-hover: #1f3bb3;
-  --p-accent-soft: #e8edff;
-  --p-on-accent: #ffffff;
-  --p-highlight: #f2d45c;     /* highlighter: listen-mode words, key terms */
-  --p-on-highlight: #15171c;
-  --p-danger: #b23a30;        /* red-pen ink, AA as text */
-  --p-danger-soft: #fbe9e6;
-  --p-success: #1b6e44;
-  --p-success-soft: #e3f3ea;
-  --p-warning: #7a5200;
-  --p-warning-soft: #fdf3d3;
-  --p-info: #1f3bb3;
-  --p-info-soft: #e8edff;
-  --p-focus: #2b4fe6;
-  --p-scrim: rgba(21, 23, 28, 0.55);
+  /* ── Colour: day, paper (default) ──────────────────────────────────────── */
+  --p-bg: #fbfaf7;            /* paper: the ground */
+  --p-surface: #f3f1ea;       /* paper-2: cards, sheets, slides, the bars */
+  --p-surface-2: #ece9e0;     /* quiet fill: hover, table stripes, code, skeleton (muted text stays 4.5:1 on it) */
+  --p-surface-3: #e0dccf;     /* pressed / selected fill, empty track (a step past paper-3) */
+  --p-ink: #1b1a19;           /* ink */
+  --p-ink-muted: #4a4744;     /* graphite: secondary text */
+  --p-ink-subtle: #6b6762;    /* muted: captions, meta, >= 4.5:1 on bg, surface and surface-2 */
+  --p-border: rgba(27, 26, 25, 0.14);   /* rule: hairlines */
+  --p-border-strong: #77736d; /* control boundaries (inputs, chips): >= 3:1 (WCAG 1.4.11) */
+  --p-accent: #27467e;        /* indigo: THE action (buttons, links, progress) */
+  --p-accent-hover: #14294f;  /* indigo-deep */
+  --p-accent-soft: #e4e8f0;   /* an indigo wash on paper */
+  --p-on-accent: #fbfaf7;     /* paper text on indigo, 8.9:1 */
+  --p-highlight: #ecc874;     /* light turmeric: listen-mode words, key terms (ink on it ~11:1) */
+  --p-on-highlight: #1b1a19;
+  --p-danger: #a3302a;        /* madder: a missed try, errors */
+  --p-danger-soft: #f5e4e1;
+  --p-success: #3f6a2a;       /* leaf: a right answer */
+  --p-success-soft: #e6eddf;
+  --p-warning: #7a5512;       /* turmeric deepened until it can be read */
+  --p-warning-soft: #f8edd3;
+  --p-info: #27467e;
+  --p-info-soft: #e4e8f0;
+  --p-focus: #27467e;
+  --p-scrim: rgba(27, 26, 25, 0.55);
 
-  /* Brand accents (marketing tri-stripe): decoration only, never text. */
-  --p-brand-blue: #2b4fe6;
-  --p-brand-red: #c8473c;
-  --p-brand-yellow: #f2d45c;
+  /* Pigments (ADR-023 called these the brand tri-stripe): decoration only, never text. */
+  --p-brand-blue: #27467e;    /* indigo */
+  --p-brand-red: #a3302a;     /* madder */
+  --p-brand-yellow: #dfa22a;  /* turmeric */
 
-  /* Difficulty tags (LeetCode style): text on surface and on its -soft fill is AA. */
-  --p-easy: #0f7a5c;
-  --p-easy-soft: #e0f4ec;
-  --p-medium: #8a5a00;
-  --p-medium-soft: #fdf0d5;
-  --p-hard: #b42f3a;
-  --p-hard-soft: #fbe6e8;
+  /* The rubber stamp (kit/Stamp.tsx): streak days and rank cards only. Text-grade on bg and surface. */
+  --p-stamp: #a3302a;         /* madder */
+  --p-stamp-solved: #3f6a2a;  /* leaf */
 
-  /* Mastery levels (Khan style; graphics >= 3:1 on surface and bg; the level is always also written). */
-  --p-m-none: #e4e7ec;
-  --p-m-attempted: #c2570c;
-  --p-m-familiar: #a87400;
-  --p-m-proficient: #2b4fe6;
-  --p-m-mastered: #6d3fd6;
+  /* Difficulty tags: text on surface and on its -soft fill is AA. */
+  --p-easy: #3f6a2a;
+  --p-easy-soft: #e6eddf;
+  --p-medium: #7a5512;
+  --p-medium-soft: #f8edd3;
+  --p-hard: #a3302a;
+  --p-hard-soft: #f5e4e1;
 
-  /* Streak flame, activity heatmap ramp (heat-0 = no activity). */
-  --p-flame: #d9480f;
-  --p-heat-0: #e4e7ec;
-  --p-heat-1: #c3cdfb;
-  --p-heat-2: #8ea2ff;
-  --p-heat-3: #4f6df0;
-  --p-heat-4: #1f3bb3;
+  /* Mastery: an outline washes in (graphics >= 3:1 on surface and bg; the level is always also written). */
+  --p-m-none: #e0dccf;
+  --p-m-attempted: #9c6c10;   /* turmeric, deepened */
+  --p-m-familiar: #9a562a;    /* henna */
+  --p-m-proficient: #27467e;  /* indigo */
+  --p-m-mastered: #3f6a2a;    /* leaf */
+
+  /* Streak flame (madder, like the streak stamp), activity heatmap as an indigo wash (heat-0 = no activity). */
+  --p-flame: #a3302a;
+  --p-heat-0: #e0dccf;
+  --p-heat-1: #d5dbe6;
+  --p-heat-2: #a9b7cf;
+  --p-heat-3: #6f88b5;        /* indigo-pale */
+  --p-heat-4: #27467e;        /* indigo */
 
   /* League / player-card tiers (graphics). */
-  --p-tier-bronze: #a0602b;
-  --p-tier-silver: #7d8794;
-  --p-tier-gold: #a87400;
-  --p-tier-elite: #6d3fd6;
+  --p-tier-bronze: #9a562a;   /* henna */
+  --p-tier-silver: #77736d;
+  --p-tier-gold: #8a6410;     /* turmeric, deepened (also read as text) */
+  --p-tier-elite: #1b1a19;    /* ink */
 
   /* League tiers above gold (crests): graphics >= 3:1 on surface and bg. */
-  --p-tier-sapphire: #1f5fbf;
-  --p-tier-diamond: #0d7a8a;
+  --p-tier-sapphire: #27467e; /* indigo */
+  --p-tier-diamond: #2e6b64;  /* mint, deepened for paper */
 
   /* Avatar background themes (platform/shared/config/avatars.ts AVATAR_BACKGROUNDS, token p-avatar-<id>).
-     Light pastels; dark mode uses calmer mid-tones (not glaring on the dark canvas). The animal art keeps fixed
-     colours, so every background stays light enough for its dark features; --p-avatar-ink is AA on all of them. */
+     The student picked these by name, so they keep their hues; light pastels by day, calmer mid-tones at night.
+     The animal art keeps fixed colours, so every background stays light enough for its dark features;
+     --p-avatar-ink is AA on all of them. */
   --p-avatar-sky: #cfe2fb;
   --p-avatar-mint: #c9efdc;
   --p-avatar-sunflower: #fbe7a1;
@@ -95,25 +108,28 @@
   --p-avatar-meadow: #d6ebb3;
   --p-avatar-peach: #fde0c2;
   --p-avatar-ocean: #bfe4ec;
-  --p-avatar-ink: #15171c;
+  --p-avatar-ink: #1b1a19;
 
   /* Diagram tokens (svg-allowlist.ts DIAGRAM_PALETTE). */
-  --diagram-accent: #2b4fe6;
-  --diagram-muted: #5f6570;
-  --diagram-fill: rgba(43, 79, 230, 0.12);
-  --diagram-paper: #ffffff;   /* label halos */
+  --diagram-accent: #27467e;
+  --diagram-muted: #6b6762;
+  --diagram-fill: rgba(39, 70, 126, 0.12);
+  --diagram-paper: #f3f1ea;   /* label halos: the surface a diagram sits on */
   /* Named semantic colours (graphics: >= 3:1 on surface and bg in both themes). Say the colour in the label too. */
-  --diagram-blue: #2f4fd8;
-  --diagram-green: #1b7a4a;
-  --diagram-yellow: #8f6a00;
-  --diagram-brown: #8a5a2b;
-  --diagram-red: #c0392b;
+  --diagram-blue: #27467e;    /* indigo */
+  --diagram-green: #3f6a2a;   /* leaf */
+  --diagram-yellow: #8a6410;  /* turmeric, deepened */
+  --diagram-brown: #9a562a;   /* henna */
+  --diagram-red: #a3302a;     /* madder */
 
   /* ── Type ──────────────────────────────────────────────────────────────── */
+  /* Switzer for text and interface; Zodiak (400 only) for display. Neither has Devanagari, so Noto Sans
+     Devanagari follows per glyph (and leads under lang="hi"). Switzer has no rupee sign: ₹ falls back to the
+     next face that has it (Switzer's metric-matched Arial fallback, else Noto Sans Devanagari). */
   --p-font-devanagari: var(--font-noto-devanagari, "Noto Sans Devanagari"), "Nirmala UI", "Mangal", sans-serif;
-  --p-font-sans: var(--font-inter, ui-sans-serif), var(--font-noto-devanagari, "Noto Sans Devanagari"), system-ui,
+  --p-font-sans: var(--font-switzer, ui-sans-serif), var(--font-noto-devanagari, "Noto Sans Devanagari"), system-ui,
     -apple-system, "Segoe UI", "Nirmala UI", sans-serif;
-  --p-font-serif: var(--font-instrument-serif, Georgia), Georgia, "Times New Roman", serif;
+  --p-font-serif: var(--font-zodiak, Georgia), Georgia, "Times New Roman", serif;
   --p-font-mono: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
 
   --p-text-xs: 0.8125rem;   /* 13 px floor, same as marketing */
@@ -141,15 +157,17 @@
   --p-radius-md: 8px;
   --p-radius-lg: 12px;
   --p-radius-xl: 16px;
-  --p-radius-pill: 999px;
-  --p-shadow-1: 0 1px 2px rgba(21, 23, 28, 0.06);
-  --p-shadow-2: 0 2px 6px rgba(21, 23, 28, 0.08), 0 8px 24px rgba(21, 23, 28, 0.08);
-  --p-shadow-3: 0 12px 40px rgba(21, 23, 28, 0.22);
+  /* The language has no pills (DESIGN.md §1): the old pill token is the soft 7 px corner of the marketing
+     buttons and chips. Thin bars (8 px tracks) still end round, because a radius never exceeds half the height. */
+  --p-radius-pill: 7px;
+  --p-shadow-1: 0 1px 2px rgba(27, 26, 25, 0.06);
+  --p-shadow-2: 0 2px 6px rgba(27, 26, 25, 0.07), 0 8px 24px rgba(27, 26, 25, 0.07);
+  --p-shadow-3: 0 12px 40px rgba(27, 26, 25, 0.2);
 
   /* ── Interaction ───────────────────────────────────────────────────────── */
   --p-touch: 44px;          /* minimum touch target */
   --p-focus-ring: 0 0 0 2px var(--p-surface), 0 0 0 4px var(--p-focus);
-  --p-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --p-ease: cubic-bezier(0.3, 0.7, 0.2, 1);   /* bleed and settle (DESIGN.md §5, --ease-ink) */
   --p-duration-fast: 120ms;
   --p-duration-base: 200ms;
   --p-z-sheet: 60;
@@ -166,60 +184,62 @@
   color-scheme: light;
 }
 
-/* ── Colour: dark ─────────────────────────────────────────────────────────── */
+/* ── Colour: night, slate ─────────────────────────────────────────────────── */
 @media (prefers-color-scheme: dark) {
   .soyl-platform:not([data-theme="light"]) {
-    --p-bg: #16171a;
-    --p-surface: #1f2024;
-    --p-surface-2: #26272c;
-    --p-surface-3: #313238;
-    --p-ink: #eceef2;
-    --p-ink-muted: #b9bdc7;
-    --p-ink-subtle: #9ea3ae;
-    --p-border: rgba(236, 238, 242, 0.12);
-    --p-border-strong: #7c818c;
-    --p-accent: #8ea2ff;
-    --p-accent-hover: #b5c2ff;
-    --p-accent-soft: #252c4a;
-    --p-on-accent: #0e1222;
-    --p-highlight: #f2d45c;
-    --p-on-highlight: #15171c;
-    --p-danger: #ff958a;
-    --p-danger-soft: #3a1f1d;
-    --p-success: #6fd39b;
-    --p-success-soft: #173024;
-    --p-warning: #f2c75c;
-    --p-warning-soft: #33290f;
-    --p-info: #b3c1ff;
-    --p-info-soft: #232a45;
-    --p-focus: #8ea2ff;
-    --p-scrim: rgba(0, 0, 0, 0.66);
-    --p-brand-blue: #6f88ff;
-    --p-brand-red: #f0766b;
-    --p-brand-yellow: #f2d45c;
-    --p-easy: #5fd3a8;
-    --p-easy-soft: #14302a;
-    --p-medium: #f2c75c;
-    --p-medium-soft: #33290f;
-    --p-hard: #ff8f9a;
-    --p-hard-soft: #3a1d22;
-    --p-m-none: #313238;
-    --p-m-attempted: #f08a5d;
-    --p-m-familiar: #e5b84b;
-    --p-m-proficient: #8ea2ff;
-    --p-m-mastered: #b99cff;
-    --p-flame: #ff8a4c;
-    --p-heat-0: #2a2b31;
-    --p-heat-1: #2f3b73;
-    --p-heat-2: #3f56c4;
-    --p-heat-3: #6f88ff;
-    --p-heat-4: #b5c2ff;
-    --p-tier-bronze: #d9925a;
-    --p-tier-silver: #b4bcc8;
-    --p-tier-gold: #e5b84b;
-    --p-tier-elite: #b99cff;
-    --p-tier-sapphire: #7fa8ff;
-    --p-tier-diamond: #6fd6e0;
+    --p-bg: #0e1215;
+    --p-surface: #14181c;
+    --p-surface-2: #1b2025;
+    --p-surface-3: #252b31;
+    --p-ink: #f2eee4;
+    --p-ink-muted: #b9b5aa;
+    --p-ink-subtle: #9a968c;
+    --p-border: rgba(242, 238, 228, 0.16);
+    --p-border-strong: #77736b;
+    --p-accent: #9ec9c2;
+    --p-accent-hover: #bfddd8;
+    --p-accent-soft: #1a2a2a;
+    --p-on-accent: #0b0f12;
+    --p-highlight: #f4c95d;
+    --p-on-highlight: #0b0f12;
+    --p-danger: #e08a7f;
+    --p-danger-soft: #33201e;
+    --p-success: #a8cc8f;
+    --p-success-soft: #1c2a1c;
+    --p-warning: #f4c95d;
+    --p-warning-soft: #2f2915;
+    --p-info: #bfddd8;
+    --p-info-soft: #1a2a2a;
+    --p-focus: #9ec9c2;
+    --p-scrim: rgba(5, 7, 9, 0.7);
+    --p-brand-blue: #9ec9c2;
+    --p-brand-red: #e08a7f;
+    --p-brand-yellow: #f4c95d;
+    --p-stamp: #e08a7f;
+    --p-stamp-solved: #a8cc8f;
+    --p-easy: #a8cc8f;
+    --p-easy-soft: #1c2a1c;
+    --p-medium: #f4c95d;
+    --p-medium-soft: #2f2915;
+    --p-hard: #e08a7f;
+    --p-hard-soft: #33201e;
+    --p-m-none: #252b31;
+    --p-m-attempted: #f4c95d;
+    --p-m-familiar: #dda27a;
+    --p-m-proficient: #9fb4de;
+    --p-m-mastered: #a8cc8f;
+    --p-flame: #e08a7f;
+    --p-heat-0: #1e2429;
+    --p-heat-1: #1f3836;
+    --p-heat-2: #2f5a55;
+    --p-heat-3: #5f948c;
+    --p-heat-4: #9ec9c2;
+    --p-tier-bronze: #dda27a;
+    --p-tier-silver: #b9b5aa;
+    --p-tier-gold: #f4c95d;
+    --p-tier-elite: #f2eee4;
+    --p-tier-sapphire: #9fb4de;
+    --p-tier-diamond: #9ec9c2;
     --p-avatar-sky: #9db8e0;
     --p-avatar-mint: #93c9ae;
     --p-avatar-sunflower: #d9c06a;
@@ -228,16 +248,16 @@
     --p-avatar-meadow: #a9c47e;
     --p-avatar-peach: #e0b48a;
     --p-avatar-ocean: #8ec4cf;
-    --p-avatar-ink: #15171c;
-    --diagram-accent: #8ea2ff;
-    --diagram-muted: #9ea3ae;
-    --diagram-fill: rgba(142, 162, 255, 0.2);
-    --diagram-paper: #1f2024;
-    --diagram-blue: #8ea2ff;
-    --diagram-green: #6fd39b;
-    --diagram-yellow: #f2d45c;
-    --diagram-brown: #d9a066;
-    --diagram-red: #ff958a;
+    --p-avatar-ink: #1b1a19;
+    --diagram-accent: #9ec9c2;
+    --diagram-muted: #9a968c;
+    --diagram-fill: rgba(158, 201, 194, 0.18);
+    --diagram-paper: #14181c;
+    --diagram-blue: #9fb4de;
+    --diagram-green: #a8cc8f;
+    --diagram-yellow: #f4c95d;
+    --diagram-brown: #dda27a;
+    --diagram-red: #e08a7f;
     --p-shadow-1: 0 1px 2px rgba(0, 0, 0, 0.4);
     --p-shadow-2: 0 2px 6px rgba(0, 0, 0, 0.4), 0 8px 24px rgba(0, 0, 0, 0.35);
     --p-shadow-3: 0 12px 40px rgba(0, 0, 0, 0.6);
@@ -246,57 +266,59 @@
 }
 
 .soyl-platform[data-theme="dark"] {
-  --p-bg: #16171a;
-  --p-surface: #1f2024;
-  --p-surface-2: #26272c;
-  --p-surface-3: #313238;
-  --p-ink: #eceef2;
-  --p-ink-muted: #b9bdc7;
-  --p-ink-subtle: #9ea3ae;
-  --p-border: rgba(236, 238, 242, 0.12);
-  --p-border-strong: #7c818c;
-  --p-accent: #8ea2ff;
-  --p-accent-hover: #b5c2ff;
-  --p-accent-soft: #252c4a;
-  --p-on-accent: #0e1222;
-  --p-highlight: #f2d45c;
-  --p-on-highlight: #15171c;
-  --p-danger: #ff958a;
-  --p-danger-soft: #3a1f1d;
-  --p-success: #6fd39b;
-  --p-success-soft: #173024;
-  --p-warning: #f2c75c;
-  --p-warning-soft: #33290f;
-  --p-info: #b3c1ff;
-  --p-info-soft: #232a45;
-  --p-focus: #8ea2ff;
-  --p-scrim: rgba(0, 0, 0, 0.66);
-  --p-brand-blue: #6f88ff;
-  --p-brand-red: #f0766b;
-  --p-brand-yellow: #f2d45c;
-  --p-easy: #5fd3a8;
-  --p-easy-soft: #14302a;
-  --p-medium: #f2c75c;
-  --p-medium-soft: #33290f;
-  --p-hard: #ff8f9a;
-  --p-hard-soft: #3a1d22;
-  --p-m-none: #313238;
-  --p-m-attempted: #f08a5d;
-  --p-m-familiar: #e5b84b;
-  --p-m-proficient: #8ea2ff;
-  --p-m-mastered: #b99cff;
-  --p-flame: #ff8a4c;
-  --p-heat-0: #2a2b31;
-  --p-heat-1: #2f3b73;
-  --p-heat-2: #3f56c4;
-  --p-heat-3: #6f88ff;
-  --p-heat-4: #b5c2ff;
-  --p-tier-bronze: #d9925a;
-  --p-tier-silver: #b4bcc8;
-  --p-tier-gold: #e5b84b;
-  --p-tier-elite: #b99cff;
-  --p-tier-sapphire: #7fa8ff;
-  --p-tier-diamond: #6fd6e0;
+  --p-bg: #0e1215;
+  --p-surface: #14181c;
+  --p-surface-2: #1b2025;
+  --p-surface-3: #252b31;
+  --p-ink: #f2eee4;
+  --p-ink-muted: #b9b5aa;
+  --p-ink-subtle: #9a968c;
+  --p-border: rgba(242, 238, 228, 0.16);
+  --p-border-strong: #77736b;
+  --p-accent: #9ec9c2;
+  --p-accent-hover: #bfddd8;
+  --p-accent-soft: #1a2a2a;
+  --p-on-accent: #0b0f12;
+  --p-highlight: #f4c95d;
+  --p-on-highlight: #0b0f12;
+  --p-danger: #e08a7f;
+  --p-danger-soft: #33201e;
+  --p-success: #a8cc8f;
+  --p-success-soft: #1c2a1c;
+  --p-warning: #f4c95d;
+  --p-warning-soft: #2f2915;
+  --p-info: #bfddd8;
+  --p-info-soft: #1a2a2a;
+  --p-focus: #9ec9c2;
+  --p-scrim: rgba(5, 7, 9, 0.7);
+  --p-brand-blue: #9ec9c2;
+  --p-brand-red: #e08a7f;
+  --p-brand-yellow: #f4c95d;
+  --p-stamp: #e08a7f;
+  --p-stamp-solved: #a8cc8f;
+  --p-easy: #a8cc8f;
+  --p-easy-soft: #1c2a1c;
+  --p-medium: #f4c95d;
+  --p-medium-soft: #2f2915;
+  --p-hard: #e08a7f;
+  --p-hard-soft: #33201e;
+  --p-m-none: #252b31;
+  --p-m-attempted: #f4c95d;
+  --p-m-familiar: #dda27a;
+  --p-m-proficient: #9fb4de;
+  --p-m-mastered: #a8cc8f;
+  --p-flame: #e08a7f;
+  --p-heat-0: #1e2429;
+  --p-heat-1: #1f3836;
+  --p-heat-2: #2f5a55;
+  --p-heat-3: #5f948c;
+  --p-heat-4: #9ec9c2;
+  --p-tier-bronze: #dda27a;
+  --p-tier-silver: #b9b5aa;
+  --p-tier-gold: #f4c95d;
+  --p-tier-elite: #f2eee4;
+  --p-tier-sapphire: #9fb4de;
+  --p-tier-diamond: #9ec9c2;
   --p-avatar-sky: #9db8e0;
   --p-avatar-mint: #93c9ae;
   --p-avatar-sunflower: #d9c06a;
@@ -305,16 +327,16 @@
   --p-avatar-meadow: #a9c47e;
   --p-avatar-peach: #e0b48a;
   --p-avatar-ocean: #8ec4cf;
-  --p-avatar-ink: #15171c;
-  --diagram-accent: #8ea2ff;
-  --diagram-muted: #9ea3ae;
-  --diagram-fill: rgba(142, 162, 255, 0.2);
-  --diagram-paper: #1f2024;
-  --diagram-blue: #8ea2ff;
-  --diagram-green: #6fd39b;
-  --diagram-yellow: #f2d45c;
-  --diagram-brown: #d9a066;
-  --diagram-red: #ff958a;
+  --p-avatar-ink: #1b1a19;
+  --diagram-accent: #9ec9c2;
+  --diagram-muted: #9a968c;
+  --diagram-fill: rgba(158, 201, 194, 0.18);
+  --diagram-paper: #14181c;
+  --diagram-blue: #9fb4de;
+  --diagram-green: #a8cc8f;
+  --diagram-yellow: #f4c95d;
+  --diagram-brown: #dda27a;
+  --diagram-red: #e08a7f;
   --p-shadow-1: 0 1px 2px rgba(0, 0, 0, 0.4);
   --p-shadow-2: 0 2px 6px rgba(0, 0, 0, 0.4), 0 8px 24px rgba(0, 0, 0, 0.35);
   --p-shadow-3: 0 12px 40px rgba(0, 0, 0, 0.6);

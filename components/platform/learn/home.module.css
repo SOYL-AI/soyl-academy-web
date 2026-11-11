@@ -6,10 +6,8 @@
   overflow: hidden;
   padding: var(--p-space-6) var(--p-space-4);
   border-radius: var(--p-radius-xl);
-  background:
-    radial-gradient(90% 120% at 100% 0%, color-mix(in srgb, var(--p-brand-yellow) 26%, transparent) 0, transparent 60%),
-    radial-gradient(80% 120% at 0% 100%, color-mix(in srgb, var(--p-brand-blue) 16%, transparent) 0, transparent 60%),
-    var(--p-surface);
+  /* Ink and wash (ADR-029): no gradients; the hero is a plain sheet. */
+  background: var(--p-surface);
   border: 1px solid var(--p-border);
 }
 .heroKicker {
@@ -151,9 +149,8 @@
   gap: var(--p-space-1);
   padding: var(--p-space-5);
   border: 0;
-  background:
-    radial-gradient(120% 140% at 100% 0%, rgba(255, 255, 255, 0.16) 0, transparent 55%),
-    linear-gradient(135deg, #2b4fe6, #1f3bb3);
+  /* Ink and wash (ADR-029): flat indigo, no gradient or sheen. White on #27467e is 9.3:1. */
+  background: #27467e;
   color: #ffffff;
 }
 .continueTitle {
@@ -202,6 +199,11 @@
   border-radius: 50%;
   background: color-mix(in srgb, var(--p-flame) 14%, var(--p-surface));
   color: var(--p-flame);
+}
+/* The stamp in place of the flame: a little room for its tilt. */
+.streakStamp {
+  flex: none;
+  margin: -4px 2px -4px -4px;
 }
 .flameCold {
   background: var(--p-surface-2);
