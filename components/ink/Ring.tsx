@@ -31,7 +31,7 @@ interface RingProps {
   ghost?: boolean;
   /** Keep the wash pale until this is true, then let it bloom (the right answer). Default: always full. */
   bloom?: boolean;
-  /** Preload the ring plate (use when the ring is the hero, so it can be the LCP image). */
+  /** Load the ring plate first, eagerly and at high fetch priority (use when the ring is the hero, the LCP image). */
   priority?: boolean;
   /** Rendered width of the ring, for the image optimiser, e.g. "(min-width: 1024px) 520px, 90vw". */
   sizes: string;
@@ -60,9 +60,12 @@ export function Ring({ progress = 3, night, draw = 'none', layers, ghost, bloom,
     '--ring-ms': `${Math.max(1, Math.round(sweep / THIRD_DEG)) * 900}ms`,
   } as CSSProperties;
 
+  // In the hero every layer is a candidate for the largest paint (the stroke starts masked, so the wash or the sun
+  // can win), so all of them load eagerly and early; they are small (2 to 11 KB at phone widths).
+  const hero = priority ? ({ loading: 'eager', fetchPriority: 'high' } as const) : {};
   const layer = (src: string, extra?: string) => (
     <span aria-hidden="true" className={cn(s.ringLayer, extra)}>
-      <Image src={src} alt="" fill sizes={sizes} />
+      <Image src={src} alt="" fill sizes={sizes} {...hero} />
     </span>
   );
 
@@ -79,11 +82,13 @@ export function Ring({ progress = 3, night, draw = 'none', layers, ghost, bloom,
       {show.rays ? layer(set.rays) : null}
       {ghost ? (
         <span aria-hidden="true" className={cn(s.ringLayer, s.ringGhost)}>
-          <Image src={set.ring} alt="" fill sizes={sizes} priority={priority} />
+          {/* Same URL as the stroke and first in the page, so it sets the request's priority and React's preload. */}
+          <Image src={set.ring} alt="" fill sizes={sizes} {...hero} />
         </span>
       ) : null}
       <span aria-hidden="true" data-ring-stroke="" className={cn(s.ringLayer, s.ringStroke)}>
-        <Image src={set.ring} alt="" fill sizes={sizes} priority={priority} />
+        {/* Next 16: fetchPriority on the hero image rather than the deprecated `priority` preload. */}
+        <Image src={set.ring} alt="" fill sizes={sizes} {...hero} />
       </span>
       {children ? <div className={s.ringInner}>{children}</div> : null}
     </div>

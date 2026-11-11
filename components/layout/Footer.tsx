@@ -102,9 +102,8 @@ export function Footer() {
           (container query units), centred even though its advance box is wider than the page, and resting on the
           footer's bottom edge: the baseline sits on the edge so every letter, including the foot of the L, stays whole. */}
       <div aria-hidden="true" className="page flex select-none justify-center [container-type:inline-size]">
-        <p className="-mb-[0.035em] mt-4 whitespace-nowrap font-semibold leading-[0.8] tracking-[-0.06em] text-chalk/[0.13] [font-size:41.5cqw]">
-          SOYL
-        </p>
+        {/* The letters come from CSS (::before): decoration, not text, for screen readers and contrast checks. */}
+        <p className="-mb-[0.035em] mt-4 whitespace-nowrap font-semibold leading-[0.8] tracking-[-0.06em] text-chalk/[0.13] [font-size:41.5cqw] before:content-['SOYL']" />
       </div>
     </footer>
     </MarketingOnly>

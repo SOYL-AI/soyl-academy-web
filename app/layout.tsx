@@ -24,10 +24,13 @@ import './globals.css';
 // The marketing faces are Zodiak and Switzer (lib/fonts.ts, ADR-028). Inter and Instrument Serif stay defined
 // because the learning platform's UI kit reads --font-inter and --font-instrument-serif (until plan phase 4), and
 // the Future Builders pages keep Inter (app/future-builders/layout.tsx).
+// Not preloaded: no marketing page in Ink and wash uses it, so preloading it on every page only competed with the
+// hero image (Lighthouse, 11 Nov 2026). The pages that use it fetch it on first use (display: swap).
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
   display: 'swap',
+  preload: false,
 });
 
 // The marketing pages do not use it, so it is not preloaded.

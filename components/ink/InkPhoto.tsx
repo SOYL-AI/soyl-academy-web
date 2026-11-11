@@ -28,7 +28,7 @@ interface InkPhotoProps {
 export function InkPhoto({ src, alt, aspect = '4 / 3', sizes, night, masked = true, priority, position, className }: InkPhotoProps) {
   return (
     <div className={cn(s.photo, night && s.photoNight, masked && s.photoMasked, className)} style={{ aspectRatio: aspect }}>
-      <Image src={src} alt={alt} fill sizes={sizes} priority={priority} style={{ objectFit: 'cover', objectPosition: position }} />
+      <Image src={src} alt={alt} fill sizes={sizes} loading={priority ? 'eager' : undefined} fetchPriority={priority ? 'high' : undefined} style={{ objectFit: 'cover', objectPosition: position }} />
     </div>
   );
 }
