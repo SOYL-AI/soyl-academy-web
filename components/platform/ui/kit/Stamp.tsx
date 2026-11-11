@@ -81,7 +81,7 @@ export function Stamp({ value, label, caption, tone = 'madder', size = 112, tilt
             <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves={2} seed={4} result="grain" />
             <feDisplacementMap in="SourceGraphic" in2="grain" scale={1.4} xChannelSelector="R" yChannelSelector="G" result="edge" />
             <feTurbulence type="fractalNoise" baseFrequency="0.22" numOctaves={2} seed={11} result="blots" />
-            <feColorMatrix in="blots" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -2.4 2.05" result="press" />
+            <feColorMatrix in="blots" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -1.8 1.85" result="press" />
             <feComposite in="edge" in2="press" operator="in" />
           </filter>
         </defs>
