@@ -1,52 +1,62 @@
 /* ==========================================================================
-   Page-level theme for platform pages (ADR-023). Imported only by the (platform) layout.
+   Page-level theme for platform pages (ADR-023; paper and slate since ADR-029). Imported only by the
+   (platform) layout.
 
    Every selector requires `html[data-platform-theme]`, an attribute that only the platform's theme boot
    script / ThemeProvider set (and remove again when the platform unmounts), so these rules can never apply
    to a marketing page, even after a client-side navigation has loaded this stylesheet.
+
+   The values repeat the kit's grounds (components/platform/ui/styles/tokens.css): this file styles <html>,
+   <body> and the cookie bar, which sit outside `.soyl-platform` and so cannot read its tokens.
    ========================================================================== */
 
 /* Page canvas (overscroll, short pages) and the sticky app bar offset for anchor links. */
 html[data-platform-theme] {
   scroll-padding-top: 4.5rem;
 }
+/* Day: paper. */
 html[data-platform-theme='light'],
 html[data-platform-theme='light'] body {
-  background-color: #f5f6f8;
+  background-color: #fbfaf7;
   color-scheme: light;
 }
+/* Night: slate. */
 html[data-platform-theme='dark'],
 html[data-platform-theme='dark'] body {
-  background-color: #16171a;
+  background-color: #0e1215;
   color-scheme: dark;
 }
 
-/* The site's cookie bar (components/legal/CookieConsent.tsx, unchanged) in the platform's dark theme. */
+/* The site's cookie bar (components/legal/CookieConsent.tsx, unchanged) in the platform's night theme:
+   a slate-2 band, chalk text, mint for the link and the hover. */
 html[data-platform-theme='dark'] .cookie-bar {
-  border-color: rgba(236, 238, 242, 0.12);
-  background-color: rgba(31, 32, 36, 0.97);
-  color: #eceef2;
+  border-color: rgba(242, 238, 228, 0.16);
+  background-color: rgba(20, 24, 28, 0.97);
+  color: #f2eee4;
 }
 html[data-platform-theme='dark'] .cookie-bar h2,
 html[data-platform-theme='dark'] .cookie-bar label {
-  color: #eceef2;
+  color: #f2eee4;
 }
 html[data-platform-theme='dark'] .cookie-bar p {
-  color: #b9bdc7;
+  color: #b9b5aa;
 }
 html[data-platform-theme='dark'] .cookie-bar a {
-  color: #8ea2ff;
+  color: #9ec9c2;
+}
+html[data-platform-theme='dark'] .cookie-bar input {
+  accent-color: #9ec9c2;
 }
 html[data-platform-theme='dark'] .cookie-bar button {
-  border-color: rgba(236, 238, 242, 0.35);
-  color: #eceef2;
+  border-color: rgba(242, 238, 228, 0.36);
+  color: #f2eee4;
 }
 html[data-platform-theme='dark'] .cookie-bar button:first-child {
-  background-color: #eceef2;
-  color: #15171c;
+  background-color: #f2eee4;
+  color: #0e1215;
 }
 html[data-platform-theme='dark'] .cookie-bar button:hover {
-  background-color: #8ea2ff;
-  border-color: #8ea2ff;
-  color: #0e1222;
+  background-color: #9ec9c2;
+  border-color: #9ec9c2;
+  color: #0b0f12;
 }
