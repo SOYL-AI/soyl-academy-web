@@ -150,56 +150,11 @@ export const howItWorks = {
   ],
 } as const;
 
-export const subjects = {
-  label: 'Subjects and simulators',
-  headline: 'Less busywork. More doing.',
-  intro: 'Simulators for maths, physics and chemistry let students move things and see what happens, not just pick an option.',
-} as const;
-
-export const audiences = {
-  label: 'Who it’s for',
-  headline: 'One assignment, three people who care.',
-  items: [
-    {
-      id: 'teachers',
-      title: 'For teachers',
-      line: 'Assignments from your own notes in minutes, and a clear view of how each pupil worked.',
-      link: { label: 'How SOYL works for teachers', href: '/teachers' },
-      image: 'teacherMentoring',
-    },
-    {
-      id: 'schools',
-      title: 'For schools',
-      line: 'A ten-week pilot that fits your curriculum, with teachers in control from day one.',
-      link: { label: 'Plan a pilot', href: '/schools' },
-      image: 'classroomWide',
-    },
-    {
-      id: 'parents',
-      title: 'For parents',
-      line: 'See your child’s progress and their teacher’s feedback, not just a mark.',
-      link: { label: 'What parents see', href: '/parents' },
-      image: 'studentThinking',
-    },
-  ],
-} as const;
-
 export const futureBuilders = {
   label: 'Future Builders · Grades 7–12',
   headline: 'Build a real product.',
   line: 'Alongside the school platform, we run a live online summer camp: software, AI, IoT robotics and entrepreneurship, ending with a Demo Day pitch.',
   link: { label: 'Explore Future Builders', href: '/future-builders' },
-} as const;
-
-export const journalTeaser = {
-  label: 'The SOYL Journal',
-  headline: 'Ideas about learning after AI.',
-  link: { label: 'All essays', href: '/journal' },
-} as const;
-
-export const belief = {
-  first: 'We don’t want students to stop using AI.',
-  second: 'We want learning that still requires them to think.',
 } as const;
 
 export const finalCta = {

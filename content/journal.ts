@@ -1,4 +1,3 @@
-import type { ImageKey } from './images';
 
 export interface JournalArticle {
   slug: string;
@@ -10,14 +9,11 @@ export interface JournalArticle {
   category: string;
   readingTime: number;
   image?: string;
-  /** Editorial photograph for listings and the article header (illustrative; see content/images.ts). */
-  photo?: ImageKey;
 }
 
 export const articles: JournalArticle[] = [
   {
     slug: 'homework-after-chatgpt',
-    photo: 'traditionalClassroom',
     title: 'Homework after ChatGPT',
     excerpt: 'What happens when answers become abundant?',
     content: `When answers are free and immediate, asking the right questions becomes the ultimate skill. We explore how homework can evolve beyond recall and into critical application.
@@ -32,7 +28,6 @@ This changes everything about how we structure curriculum. It's an opportunity t
   },
   {
     slug: 'why-outcomes-matter',
-    photo: 'studentsBuilding',
     title: 'Why outcomes matter',
     excerpt: 'A better assignment starts by asking what a student should be able to do.',
     content: `Traditional education often focuses on what a student should know. But knowledge without application is inert. We believe in starting with the end in mind.
@@ -47,7 +42,6 @@ Outcome-based learning transforms the classroom from a place of passive receptio
   },
   {
     slug: 'should-schools-ban-ai',
-    photo: 'studentThinking',
     title: 'Should schools ban AI?',
     excerpt: 'Maybe that\'s the wrong question.',
     content: `Banning AI in schools is like trying to ban the calculator in the 1980s. It might work for a moment, but it's ultimately a losing battle. 
@@ -62,7 +56,6 @@ We need to integrate AI into our teaching methods, teaching students to evaluate
   },
   {
     slug: 'learning-to-defend-an-idea',
-    photo: 'studentsPresenting',
     title: 'Learning to defend an idea',
     excerpt: 'Why explanation may matter as much as the answer.',
     content: `In a world where you can look up any fact in seconds, the ability to synthesize information and form a coherent argument is more valuable than ever.
