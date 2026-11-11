@@ -9,6 +9,7 @@ import type { CoinCheckIn } from '@/platform/shared/api-client';
 import { COIN_EARN } from '@/platform/shared/config/coins';
 import { Button } from '@/components/platform/ui/kit/Button';
 import { Icon } from '@/components/platform/ui/kit/Icon';
+import { Stamp } from '@/components/platform/ui/kit/Stamp';
 import { cx } from '@/components/platform/ui/cx';
 import { api } from '../lib/api-browser';
 import { coinsProblemMessage, coinsText, summariseAwards } from './coins-logic';
@@ -58,7 +59,12 @@ export function CheckIn({ compact = false }: { compact?: boolean }) {
           {done ? 'Checked in today' : `Check in (+${coinsText(COIN_EARN.dailyCheckIn)})`}
         </Button>
         <span className={s.streak} data-testid="check-in-streak">
-          <Icon name="flame" size={18} className={s.flameIcon} />
+          {/* ADR-029: once today is checked in, the day is stamped (decorative: the count is written beside it). */}
+          {done && streak > 0 && !compact ? (
+            <Stamp value={streak} label="day streak" size={72} tilt={-6} decorative />
+          ) : (
+            <Icon name="flame" size={18} className={s.flameIcon} />
+          )}
           <span>
             {streak}-day streak{longest > streak ? ` · best ${longest}` : ''}
           </span>

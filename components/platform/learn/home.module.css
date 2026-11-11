@@ -203,6 +203,11 @@
   background: color-mix(in srgb, var(--p-flame) 14%, var(--p-surface));
   color: var(--p-flame);
 }
+/* The stamp in place of the flame: a little room for its tilt. */
+.streakStamp {
+  flex: none;
+  margin: -4px 2px -4px -4px;
+}
 .flameCold {
   background: var(--p-surface-2);
   color: var(--p-ink-subtle);
