@@ -43,7 +43,7 @@ Q('m01', mk.mcq({ stem: r`By convention, an angle formed by turning the initial 
   const f = (x) => 1 + 1 / (tan(x) ** 2);
   const cands = [(x) => csc(x) ** 2, (x) => sec(x) ** 2, (x) => tan(x) ** 2, (x) => csc(x)];
   const xs = G.filter((x) => Math.abs(sin(x)) > 1e-3 && Math.abs(cos(x)) > 1e-3);
-  Q('m08', mk.mcq({ stem: r`Wherever the expressions are defined, $1 + \cot^2\theta$ is identical to`, opts: [r`$\operatorname{cosec}^2\theta$`, r`$\sec^2\theta$`, r`$\tan^2\theta$`, r`$\operatorname{cosec}\theta$`], key: 'a', sol: r`Divide $\sin^2\theta + \cos^2\theta = 1$ by $\sin^2\theta$: $1 + \cot^2\theta = \operatorname{cosec}^2\theta$. The companion identity $1 + \tan^2\theta = \sec^2\theta$ is the one that gives the second option.`, d: 1, c: 'recall', t: [2], time: 40 }), (C) => C.which(cands.map((g) => holds1(f, g, xs)), true));
+  Q('m08', mk.mcq({ stem: r`Wherever the expressions are defined, $1 + \cot^2\theta$ is identical to`, opts: [r`$\operatorname{cosec}^2\theta$`, r`$\sec^2\theta$`, r`$\tan^2\theta$`, r`$\operatorname{cosec}\theta$`], key: 'a', sol: r`Divide $\sin^2\theta + \cos^2\theta = 1$ by $\sin^2\theta$: $1 + \cot^2\theta = \operatorname{cosec}^2\theta$. The companion identity $1 + \tan^2\theta = \sec^2\theta$ is the one that gives the wrong option $\sec^2\theta$.`, d: 1, c: 'recall', t: [2], time: 40 }), (C) => C.which(cands.map((g) => holds1(f, g, xs)), true));
 }
 {
   const V = [3 / 4, -1 / 2, -5 / 4, 0];

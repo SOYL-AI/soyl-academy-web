@@ -95,7 +95,7 @@ const same = (C, texts, key) => C.which(texts, key);
 {
   const c = Circle.general(6, -8, 9), xc = c.xCut(), yc = c.yCut();
   const o = [r`touches the $x$-axis and cuts off a chord of length $2\sqrt{7}$ on the $y$-axis`, r`touches the $y$-axis and cuts off a chord of length $2\sqrt{7}$ on the $x$-axis`, 'touches both axes', 'meets neither axis'];
-  M('m12', { stem: r`The circle $x^2 + y^2 + 6x - 8y + 9 = 0$`, opts: o, sol: r`For $y = 0$: $x^2 + 6x + 9 = (x + 3)^2 = 0$, a repeated root, so it touches the $x$-axis at $(-3, 0)$. For $x = 0$: $y^2 - 8y + 9 = 0$ has discriminant $64 - 36 = 28$, so the chord on the $y$-axis has length $\sqrt{28} = 2\sqrt{7}$. The second option swaps the axes; the circle does meet the $y$-axis in two points, so the last two are false.`, d: 4, c: 'analysis', t: [3], time: 110 }, (C) => {
+  M('m12', { stem: r`The circle $x^2 + y^2 + 6x - 8y + 9 = 0$`, opts: o, sol: r`For $y = 0$: $x^2 + 6x + 9 = (x + 3)^2 = 0$, a repeated root, so it touches the $x$-axis at $(-3, 0)$. For $x = 0$: $y^2 - 8y + 9 = 0$ has discriminant $64 - 36 = 28$, so the chord on the $y$-axis has length $\sqrt{28} = 2\sqrt{7}$. The statement that it touches the $y$-axis and cuts a chord of $2\sqrt{7}$ on the $x$-axis swaps the axes; the circle does meet the $y$-axis in two points, so "touches both axes" and "meets neither axis" are false.`, d: 4, c: 'analysis', t: [3], time: 110 }, (C) => {
     C.assert(xc.disc.isZero() && xc.roots.map(String).join() === '-3,-3' && yc.disc.eq(28) && sqTex(28) === r`2\sqrt{7}` && c.cen() === '(-3, 4)' && c.r2.eq(16) && !c.h.abs().eq(c.rad), 'x-axis: repeated root; y-axis: discriminant 28, length 2 sqrt 7; centre (-3, 4), r = 4 so it does not touch the y-axis'); same(C, o, o[0]);
   });
 }
@@ -123,7 +123,7 @@ const same = (C, texts, key) => C.which(texts, key);
 {
   const c = Circle.centreThrough(solve2(1, 1, 4, 1, -1, 2), [5, 6]), eq = (h, k, rr) => T(new Circle(h, k, rr).std());
   const o = [eq(3, 1, 29), eq(1, 3, 29), eq(3, 1, 25), eq(-3, -1, 29)];
-  M('m16', { stem: r`A circle has its centre at the point where the lines $x + y = 4$ and $x - y = 2$ meet, and it passes through $(5, 6)$. Its equation is`, opts: o, sol: r`Adding the two lines gives $x = 3$ and then $y = 1$. Then $r^2 = (5 - 3)^2 + (6 - 1)^2 = 4 + 25 = 29$, so $(x - 3)^2 + (y - 1)^2 = 29$. The second option swaps the coordinates of the centre; $25$ keeps only the term $(6 - 1)^2$; and the last option reverses the signs of the centre.`, d: 3, c: 'application', t: [2], time: 90 }, (C) => {
+  M('m16', { stem: r`A circle has its centre at the point where the lines $x + y = 4$ and $x - y = 2$ meet, and it passes through $(5, 6)$. Its equation is`, opts: o, sol: r`Adding the two lines gives $x = 3$ and then $y = 1$. Then $r^2 = (5 - 3)^2 + (6 - 1)^2 = 4 + 25 = 29$, so $(x - 3)^2 + (y - 1)^2 = 29$. The equation $(x - 1)^2 + (y - 3)^2 = 29$ swaps the coordinates of the centre; $(x - 3)^2 + (y - 1)^2 = 25$ keeps only the term $(6 - 1)^2$; and $(x + 3)^2 + (y + 1)^2 = 29$ reverses the signs of the centre.`, d: 3, c: 'application', t: [2], time: 90 }, (C) => {
     C.assert(c.cen() === '(3, 1)' && c.r2.eq(29) && c.on([5, 6]) && !c.on([1, 3]) && !new Circle(1, 3, 29).on([5, 6]) && !new Circle(3, 1, 25).on([5, 6]) && !new Circle(-3, -1, 29).on([5, 6]), 'centre (3, 1) is the intersection; r^2 = 29; the distractors miss (5, 6)'); same(C, o, o[0]);
   });
 }
