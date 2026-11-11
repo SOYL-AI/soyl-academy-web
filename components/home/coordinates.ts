@@ -1,7 +1,6 @@
 /**
- * The coordinate-grid question shared by the homepage ring question (components/home/RingQuestion.tsx) and the
- * classic simulator on /teachers and /students (MiniSimulator.tsx): points, labels, and the nudges that say
- * what went wrong without giving the answer.
+ * The coordinate-grid question of the classic simulator (MiniSimulator.tsx): points, labels, and the nudges that
+ * say what went wrong without giving the answer. (The homepage ring now asks an authored question per class.)
  */
 export type Pt = { x: number; y: number };
 

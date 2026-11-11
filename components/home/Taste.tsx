@@ -7,12 +7,14 @@ import { examLabel, learnPath } from '@/components/platform/lib/catalog';
 import { TASTE, type TasteEntry } from '@/content/taste.generated';
 import { cn } from '@/lib/utils';
 import { useDoor } from './DoorState';
+import { SyllabusCount } from './SyllabusCount';
 
 /**
  * Screen 3, the taste (plan §3.2): three live miniatures of the real features for the class chosen on the door,
  * each a link into the feature. The text is verbatim from the authored chapters (content/taste.generated.ts,
  * made by scripts/build-taste.mjs). No AI call is made for a guest: the doubt card shows a question and what
- * asking it costs, not an answer. Then, once the visitor has done anything as a guest, the saved-place line.
+ * asking it costs, not an answer. Then, once the visitor has done anything as a guest, the saved-place line, and
+ * the class's syllabus, counted (SyllabusCount).
  */
 
 /** **bold** and *italic* from the authored markdown; nothing else is interpreted. */
@@ -146,6 +148,8 @@ export function Taste({ doubtCredits, doubtGuide }: { doubtCredits: number | nul
             </InkLink>
           </p>
         ) : null}
+
+        <SyllabusCount />
       </div>
     </section>
   );
