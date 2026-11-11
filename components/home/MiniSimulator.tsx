@@ -1,16 +1,19 @@
 'use client';
 
 import { useId, useRef, useState } from 'react';
+import { InkButton } from '@/components/ink/Button';
+import { Wash } from '@/components/ink/Wash';
 import { cn } from '@/lib/utils';
-import { feedbackFor, fmt, hintsFor, label, type Pt } from './coordinates';
+import { feedbackFor, fmt, hintsFor, label, samePoint, type Pt } from './coordinates';
 
 /**
- * A small, honest taste of a SOYL question: plot a point on a coordinate grid.
- * Unlimited attempts, every attempt kept in a trail, hints that nudge without
- * giving the answer, and a success line that counts the effort.
+ * A SOYL question played as a pupil (/schools, /teachers): plot a point on a coordinate grid. Unlimited
+ * attempts, every wrong try kept on the grid and in the list as a madder mark, hints that nudge without giving
+ * the answer, and a line that counts the effort when the pupil gets there. It lies on the painted wash, as a
+ * product moment does in Ink and wash.
  *
- * Pointer: tap or drag on the grid. Keyboard: arrow keys move the point,
- * Enter checks. No animation library; transitions are CSS and under 300 ms.
+ * Pointer: tap or drag on the grid. Keyboard: Tab to the grid, arrow keys move the point, Enter or Space
+ * checks. No library; the only motion is the point sliding between squares (120 ms).
  */
 
 const TARGETS: Pt[] = [
@@ -20,17 +23,36 @@ const TARGETS: Pt[] = [
   { x: -1, y: -3 },
 ];
 
-const RANGE = 5; // grid runs -5..5 on both axes
+const RANGE = 5; // the grid runs −5..5 on both axes
 const UNIT = 20; // viewBox units per grid step
 const SIZE = RANGE * 2 * UNIT; // 200
 const PAD = 14;
+const VIEW = SIZE + PAD * 2;
 
 const toSvg = (p: Pt) => ({ cx: PAD + (p.x + RANGE) * UNIT, cy: PAD + (RANGE - p.y) * UNIT });
-const HINTS = hintsFor;
+
+const INK = '#1B1A19';
+const GRAPHITE = '#4A4744';
+const INDIGO = '#27467E';
+const MADDER = '#A3302A';
+const LEAF = '#3F6A2A';
+const PAPER = '#FBFAF7';
+
+function Mark({ ok }: { ok: boolean }) {
+  return ok ? (
+    <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true" focusable="false">
+      <path d="M2 6.5 5 9l5-6" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  ) : (
+    <svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true" focusable="false">
+      <path d="M2 2l6 6M8 2 2 8" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+    </svg>
+  );
+}
 
 export function MiniSimulator() {
   const [round, setRound] = useState(0);
-  const target = TARGETS[round % TARGETS.length];
+  const target = TARGETS[round % TARGETS.length]!;
   const [point, setPoint] = useState<Pt | null>(null);
   const [attempts, setAttempts] = useState<{ p: Pt; ok: boolean }[]>([]);
   const [hintsUsed, setHintsUsed] = useState(0);
@@ -40,29 +62,32 @@ export function MiniSimulator() {
   const ids = { prompt: useId(), help: useId() };
 
   const solved = attempts.some((a) => a.ok);
+  const hints = hintsFor(target);
+  const tries = attempts.length;
 
   const place = (p: Pt) => {
     if (solved) return;
-    const clamped = {
-      x: Math.max(-RANGE, Math.min(RANGE, p.x)),
-      y: Math.max(-RANGE, Math.min(RANGE, p.y)),
-    };
-    setPoint(clamped);
+    setPoint({ x: Math.max(-RANGE, Math.min(RANGE, p.x)), y: Math.max(-RANGE, Math.min(RANGE, p.y)) });
   };
 
-  const pointFromEvent = (e: React.PointerEvent<SVGSVGElement>): Pt | null => {
+  const fromEvent = (e: React.PointerEvent<SVGSVGElement>): Pt | null => {
     const svg = svgRef.current;
     if (!svg) return null;
     const rect = svg.getBoundingClientRect();
-    const scale = (SIZE + PAD * 2) / rect.width;
-    const vx = (e.clientX - rect.left) * scale - PAD;
-    const vy = (e.clientY - rect.top) * scale - PAD;
-    return { x: Math.round(vx / UNIT) - RANGE, y: RANGE - Math.round(vy / UNIT) };
+    const scale = VIEW / rect.width;
+    return {
+      x: Math.round(((e.clientX - rect.left) * scale - PAD) / UNIT) - RANGE,
+      y: RANGE - Math.round(((e.clientY - rect.top) * scale - PAD) / UNIT),
+    };
   };
 
   const check = () => {
     if (!point || solved) return;
-    const ok = point.x === target.x && point.y === target.y;
+    if (attempts.some((a) => samePoint(a.p, point))) {
+      setMessage(`You tried ${label(point)} already. Move the point first.`);
+      return;
+    }
+    const ok = samePoint(point, target);
     setAttempts((a) => [...a, { p: point, ok }]);
     setMessage(ok ? '' : feedbackFor(point, target));
   };
@@ -73,6 +98,8 @@ export function MiniSimulator() {
     setAttempts([]);
     setHintsUsed(0);
     setMessage('');
+    // The next question starts on the grid.
+    svgRef.current?.focus();
   };
 
   const onKeyDown = (e: React.KeyboardEvent<SVGSVGElement>) => {
@@ -85,196 +112,181 @@ export function MiniSimulator() {
     };
     if (moves[e.key]) {
       e.preventDefault();
-      place(point ? moves[e.key] : p);
+      // The first arrow press puts the point on the origin; the next ones move it.
+      place(point ? moves[e.key]! : p);
     } else if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault();
       check();
     }
   };
 
-  const tries = attempts.length;
-  const hints = HINTS(target);
-
   return (
-    <div className="module relative overflow-hidden shadow-[0_30px_60px_-40px_rgba(20,20,20,0.35)]">
-      {/* Question header, as in the student app */}
-      <div className="flex items-center justify-between gap-4 border-b border-rule bg-white px-4 py-3 md:px-6">
-        <p className="t-label text-muted">
-          <span className="t-num text-ink">Question {(round % TARGETS.length) + 1}</span> · Coordinates · Grade 6
-        </p>
-        <p className="t-label inline-flex items-center gap-1.5 text-muted"><span aria-hidden="true" className="h-2 w-2 animate-pulse rounded-full bg-success" />Live</p>
-      </div>
-
-      <div className="grid gap-6 p-4 md:p-6 sm:grid-cols-[minmax(0,1fr)_minmax(0,0.9fr)] lg:grid-cols-1 xl:grid-cols-[minmax(0,1fr)_minmax(0,0.85fr)]">
-        <div>
-          <p id={ids.prompt} className="t-subtitle mb-3">
-            Plot the point <span className="t-num whitespace-nowrap">{label(target)}</span>.
+    <Wash className="p-3 sm:p-5">
+      <div className="overflow-hidden rounded-[var(--radius-md)] border border-rule bg-paper">
+        {/* The question's header, as in the student app */}
+        <div className="border-b border-rule px-4 py-3 md:px-6">
+          <p className="ink-label">
+            <span className="tabular-nums text-ink">Question {(round % TARGETS.length) + 1}</span> · Coordinates · Grade 6
           </p>
-          <svg
-            ref={svgRef}
-            viewBox={`0 0 ${SIZE + PAD * 2} ${SIZE + PAD * 2}`}
-            role="application"
-            aria-roledescription="coordinate grid"
-            aria-labelledby={ids.prompt}
-            aria-describedby={ids.help}
-            tabIndex={0}
-            onKeyDown={onKeyDown}
-            onPointerDown={(e) => {
-              dragging.current = true;
-              e.currentTarget.setPointerCapture(e.pointerId);
-              const p = pointFromEvent(e);
-              if (p) place(p);
-            }}
-            onPointerMove={(e) => {
-              if (!dragging.current) return;
-              const p = pointFromEvent(e);
-              if (p) place(p);
-            }}
-            onPointerUp={() => (dragging.current = false)}
-            className={cn(
-              'block w-full max-w-[340px] touch-none select-none rounded-[var(--radius-sm)] border border-rule bg-white',
-              solved ? 'cursor-default' : 'cursor-crosshair'
-            )}
-          >
-            {/* grid lines */}
-            {Array.from({ length: RANGE * 2 + 1 }, (_, i) => {
-              const v = PAD + i * UNIT;
-              return (
-                <g key={i} stroke="#2B4FE6" strokeOpacity={0.14} strokeWidth={0.6}>
-                  <line x1={PAD} y1={v} x2={PAD + SIZE} y2={v} />
-                  <line x1={v} y1={PAD} x2={v} y2={PAD + SIZE} />
-                </g>
-              );
-            })}
-            {/* axes */}
-            <g stroke="#141414" strokeWidth={1.1}>
-              <line x1={PAD} y1={PAD + SIZE / 2} x2={PAD + SIZE} y2={PAD + SIZE / 2} />
-              <line x1={PAD + SIZE / 2} y1={PAD} x2={PAD + SIZE / 2} y2={PAD + SIZE} />
-            </g>
-            {/* 11.5 units renders at ≥13 px: the grid is never drawn narrower than ~260 px. */}
-            <g fontSize={11.5} fill="#55554F" fontFamily="var(--font-inter), sans-serif">
-              {[-4, -2, 2, 4].map((n) => (
-                <g key={n}>
-                  <text x={toSvg({ x: n, y: 0 }).cx} y={PAD + SIZE / 2 + 12} textAnchor="middle">{fmt(n)}</text>
-                  <text x={PAD + SIZE / 2 - 5} y={toSvg({ x: 0, y: n }).cy + 3.5} textAnchor="end">{fmt(n)}</text>
-                </g>
-              ))}
-              <text x={PAD + SIZE - 2} y={PAD + SIZE / 2 - 5} textAnchor="end" fill="#141414">x</text>
-              <text x={PAD + SIZE / 2 + 6} y={PAD + 8} fill="#141414">y</text>
-            </g>
+        </div>
 
-            {/* earlier wrong attempts stay visible: the trail */}
-            {attempts
-              .filter((a) => !a.ok)
-              .map((a, i) => {
-                const { cx, cy } = toSvg(a.p);
+        <div className="grid gap-6 p-4 sm:grid-cols-[minmax(0,1fr)_minmax(0,0.9fr)] md:p-6 lg:grid-cols-1 xl:grid-cols-[minmax(0,1fr)_minmax(0,0.85fr)]">
+          <div>
+            <p id={ids.prompt} className="ink-title mb-4">
+              Plot the point <span className="whitespace-nowrap tabular-nums">{label(target)}</span>.
+            </p>
+            <svg
+              ref={svgRef}
+              viewBox={`0 0 ${VIEW} ${VIEW}`}
+              role="application"
+              aria-roledescription="coordinate grid"
+              aria-labelledby={ids.prompt}
+              aria-describedby={ids.help}
+              tabIndex={0}
+              onKeyDown={onKeyDown}
+              onPointerDown={(e) => {
+                dragging.current = true;
+                e.currentTarget.setPointerCapture(e.pointerId);
+                const p = fromEvent(e);
+                if (p) place(p);
+              }}
+              onPointerMove={(e) => {
+                if (!dragging.current) return;
+                const p = fromEvent(e);
+                if (p) place(p);
+              }}
+              onPointerUp={() => (dragging.current = false)}
+              className={cn(
+                'block w-full max-w-[340px] touch-none select-none rounded-[var(--radius-sm)] border border-rule bg-paper',
+                solved ? 'cursor-default' : 'cursor-crosshair'
+              )}
+            >
+              {Array.from({ length: RANGE * 2 + 1 }, (_, i) => {
+                const v = PAD + i * UNIT;
                 return (
-                  <g key={i} stroke="#C8473C" strokeWidth={1.6} strokeLinecap="round" opacity={0.8}>
-                    <line x1={cx - 4} y1={cy - 4} x2={cx + 4} y2={cy + 4} />
-                    <line x1={cx + 4} y1={cy - 4} x2={cx - 4} y2={cy + 4} />
+                  <g key={i} stroke={INDIGO} strokeOpacity={0.18} strokeWidth={0.6}>
+                    <line x1={PAD} y1={v} x2={PAD + SIZE} y2={v} />
+                    <line x1={v} y1={PAD} x2={v} y2={PAD + SIZE} />
                   </g>
                 );
               })}
+              <g stroke={INK} strokeWidth={1.1}>
+                <line x1={PAD} y1={PAD + SIZE / 2} x2={PAD + SIZE} y2={PAD + SIZE / 2} />
+                <line x1={PAD + SIZE / 2} y1={PAD} x2={PAD + SIZE / 2} y2={PAD + SIZE} />
+              </g>
+              {/* 11.5 units renders at 13 px or more: the grid is never drawn narrower than about 260 px. */}
+              <g fontSize={11.5} fill={GRAPHITE} fontFamily="var(--font-switzer), sans-serif">
+                {[-4, -2, 2, 4].map((n) => (
+                  <g key={n}>
+                    <text x={toSvg({ x: n, y: 0 }).cx} y={PAD + SIZE / 2 + 12} textAnchor="middle">
+                      {fmt(n)}
+                    </text>
+                    <text x={PAD + SIZE / 2 - 5} y={toSvg({ x: 0, y: n }).cy + 3.5} textAnchor="end">
+                      {fmt(n)}
+                    </text>
+                  </g>
+                ))}
+                <text x={PAD + SIZE - 2} y={PAD + SIZE / 2 - 5} textAnchor="end" fill={INK}>
+                  x
+                </text>
+                <text x={PAD + SIZE / 2 + 6} y={PAD + 8} fill={INK}>
+                  y
+                </text>
+              </g>
 
-            {point && (
-              <circle
-                {...toSvg(point)}
-                r={6}
-                fill={solved ? '#1E7A4C' : '#2B4FE6'}
-                stroke="#fff"
-                strokeWidth={2}
-                style={{ transition: 'cx 120ms ease-out, cy 120ms ease-out, fill 200ms' }}
-              />
-            )}
-          </svg>
-          <p id={ids.help} className="sr-only">
-            Use the arrow keys to move the point and Enter to check your answer, or tap the grid.
-          </p>
-        </div>
+              {/* Earlier wrong tries stay on the grid: the trail the teacher sees. */}
+              {attempts
+                .filter((a) => !a.ok)
+                .map((a, i) => {
+                  const { cx, cy } = toSvg(a.p);
+                  return (
+                    <g key={i} stroke={MADDER} strokeWidth={1.6} strokeLinecap="round">
+                      <line x1={cx - 4} y1={cy - 4} x2={cx + 4} y2={cy + 4} />
+                      <line x1={cx + 4} y1={cy - 4} x2={cx - 4} y2={cy + 4} />
+                    </g>
+                  );
+                })}
 
-        <div className="flex flex-col">
-          {/* Attempt trail */}
-          <p className="t-label mb-2 text-muted">Your attempts</p>
-          <ol className="mb-4 flex min-h-9 flex-wrap gap-1.5" aria-label="Your attempts">
-            {attempts.length === 0 && (
-              <li className="t-small text-muted">Place a point, then check it.</li>
-            )}
-            {attempts.map((a, i) => (
-              <li
-                key={i}
-                className={cn(
-                  't-num inline-flex h-8 items-center gap-1 rounded-full border px-2.5 text-[14px]',
-                  a.ok ? 'border-success bg-success text-white' : 'border-rule-strong bg-white text-ink'
-                )}
-              >
-                <span aria-hidden="true" className={a.ok ? '' : 'text-red-pen'}>
-                  {a.ok ? '✓' : '✗'}
-                </span>
-                <span className="sr-only">{a.ok ? 'Correct:' : 'Not yet:'}</span>
-                {label(a.p)}
-              </li>
-            ))}
-          </ol>
-
-          <div aria-live="polite" className="min-h-[3.5rem]">
-            {solved ? (
-              <p className="sim-pop rounded-[var(--radius-sm)] border-l-2 border-success bg-success/10 px-3 py-2 font-semibold text-success">
-                You worked it out
-                <span className="t-num font-medium text-ink">
-                  {' '}· {tries} {tries === 1 ? 'try' : 'tries'} · {hintsUsed} {hintsUsed === 1 ? 'hint' : 'hints'}
-                </span>
-              </p>
-            ) : message ? (
-              <p className="t-small rounded-[var(--radius-sm)] border-l-2 border-red-pen bg-paper-2 px-3 py-2 text-ink">{message}</p>
-            ) : point ? (
-              <p className="t-small text-muted">
-                Your point: <span className="t-num text-ink">{label(point)}</span>
-              </p>
-            ) : null}
+              {point ? (
+                <circle
+                  {...toSvg(point)}
+                  r={6}
+                  fill={solved ? LEAF : INDIGO}
+                  stroke={PAPER}
+                  strokeWidth={2}
+                  style={{ transition: 'cx 120ms ease-out, cy 120ms ease-out, fill 160ms' }}
+                />
+              ) : null}
+            </svg>
+            <p id={ids.help} className="sr-only">
+              Use the arrow keys to move the point and Enter to check your answer, or tap the grid.
+            </p>
           </div>
 
-          {hintsUsed > 0 && !solved && (
-            <ul className="mt-3 space-y-1.5">
-              {hints.slice(0, hintsUsed).map((h, i) => (
-                <li key={i} className="t-small rounded-[var(--radius-sm)] bg-highlighter/40 px-3 py-2 text-ink">
-                  <span className="font-semibold">Hint {i + 1}.</span> {h}
+          <div className="flex flex-col">
+            <p className="ink-label">Your tries</p>
+            <ol aria-label="Your tries" className="mt-2 flex min-h-9 flex-wrap gap-1.5">
+              {attempts.length === 0 ? <li className="text-[0.9375rem] text-muted">Place a point, then check it.</li> : null}
+              {attempts.map((a, i) => (
+                <li
+                  key={i}
+                  className={cn(
+                    'inline-flex h-8 items-center gap-1.5 rounded-[var(--radius-sm)] border px-2.5 text-[0.875rem] tabular-nums',
+                    a.ok ? 'border-leaf bg-leaf text-paper' : 'border-madder/40 text-madder'
+                  )}
+                >
+                  <Mark ok={a.ok} />
+                  <span className="sr-only">{a.ok ? 'Right:' : 'Not yet:'}</span>
+                  {label(a.p)}
                 </li>
               ))}
-            </ul>
-          )}
+            </ol>
 
-          <div className="mt-auto flex flex-wrap items-center gap-2 pt-4">
-            {solved ? (
-              <button
-                type="button"
-                onClick={next}
-                className="press h-11 rounded-full bg-ink px-5 text-[15px] font-semibold text-white hover:bg-cobalt"
-              >
-                Try another
-              </button>
-            ) : (
-              <>
-                <button
-                  type="button"
-                  onClick={check}
-                  disabled={!point}
-                  className="press h-11 rounded-full bg-ink px-5 text-[15px] font-semibold text-white hover:bg-cobalt disabled:cursor-not-allowed disabled:bg-muted"
-                >
-                  Check
-                </button>
-                <button
-                  type="button"
+            <div aria-live="polite" className="mt-3 min-h-[3.5rem]">
+              {solved ? (
+                <p className="font-semibold text-leaf">
+                  You worked it out{' '}
+                  <span className="font-normal tabular-nums text-graphite">
+                    · {tries} {tries === 1 ? 'try' : 'tries'} · {hintsUsed} {hintsUsed === 1 ? 'hint' : 'hints'}
+                  </span>
+                </p>
+              ) : message ? (
+                <p className="border-l-2 border-madder pl-3 text-[0.9375rem] text-ink">{message}</p>
+              ) : point ? (
+                <p className="text-[0.9375rem] text-muted">
+                  Your point: <span className="tabular-nums text-ink">{label(point)}</span>
+                </p>
+              ) : null}
+              {hintsUsed > 0 && !solved ? (
+                <ul className="mt-3 space-y-1.5">
+                  {hints.slice(0, hintsUsed).map((h, i) => (
+                    <li key={i} className="text-[0.9375rem] text-graphite">
+                      <span className="font-semibold text-ink">Hint {i + 1}.</span> {h}
+                    </li>
+                  ))}
+                </ul>
+              ) : null}
+            </div>
+
+            {/* aria-disabled, not disabled: a button that is pressed stays focusable, so keyboard focus never drops
+                to the page when it changes. The first button is one element whose job changes once it is solved. */}
+            <div className="mt-auto flex flex-wrap items-center gap-2 pt-4">
+              <InkButton variant={solved ? 'secondary' : 'primary'} onClick={solved ? next : check} aria-disabled={!solved && !point}>
+                {solved ? 'Try another' : 'Check'}
+              </InkButton>
+              {solved ? null : (
+                <InkButton
+                  variant="secondary"
                   onClick={() => setHintsUsed((h) => Math.min(h + 1, hints.length))}
-                  disabled={hintsUsed >= hints.length}
-                  className="press h-11 rounded-full border border-ink/25 px-5 text-[15px] font-semibold text-ink hover:border-ink hover:bg-ink hover:text-white disabled:cursor-not-allowed disabled:opacity-60"
+                  aria-disabled={hintsUsed >= hints.length}
                 >
                   {hintsUsed >= hints.length ? 'No more hints' : 'Hint'}
-                </button>
-              </>
-            )}
+                </InkButton>
+              )}
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </Wash>
   );
 }

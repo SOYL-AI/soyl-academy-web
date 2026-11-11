@@ -127,13 +127,18 @@ export const methodFaqs: FaqItem[] = [
     answer:
       'SOYL teaches students to use technology as a thought partner. The method demands transparency in their process and holds them accountable for the integrity of their work.',
   },
+  {
+    question: 'Does the SOYL Method replace teachers?',
+    answer:
+      'No. The tools extend a teacher’s reach and give deeper insight, but the teaching decisions, the relationships and the final assessment stay human.',
+  },
 ];
 
 export const schoolsFaqs: FaqItem[] = [
   {
     question: 'What does a SOYL Academy pilot look like?',
     answer:
-      'A pilot runs in three phases over about ten weeks. In Introduce (weeks 1–2), a core cohort of early-adopter teachers receives professional development and maps 2–3 units to the SOYL framework. In Implement (weeks 3–8), teachers deploy SOYL challenges with ongoing support. In Evaluate (weeks 9–10), the school reviews student portfolios and teacher feedback and plans a wider rollout.',
+      'A pilot runs in three phases over about ten weeks. In Introduce (weeks 1 and 2), a core cohort of early-adopter teachers receives professional development and maps 2 or 3 units to the SOYL framework. In Implement (weeks 3 to 8), teachers deploy SOYL challenges with ongoing support. In Evaluate (weeks 9 and 10), the school reviews student portfolios and teacher feedback and plans a wider rollout.',
   },
   {
     question: 'Does SOYL Academy work with our existing curriculum?',
@@ -143,30 +148,35 @@ export const schoolsFaqs: FaqItem[] = [
   {
     question: 'How does the SOYL workflow work for teachers?',
     answer:
-      'Teachers define an objective, generate a real-world context with SOYL’s help, assign a challenge, review the students’ process and defence, and evaluate the evidence of thinking. The six steps are Define Objective, Generate Context, Assign Challenge, Student Action, Defense & Reflection and Educator Review.',
+      'The teacher frames the learning objective, students meet the scenario and its constraints, plan their approach, do the work, then explain and defend their choices, and the teacher reviews the evidence of thinking. The six steps are teacher design, student context, strategy and ideation, student action, defence and reflection, and educator review.',
   },
   {
     question: 'What happens to homework when students have AI?',
     answer:
-      'SOYL Academy’s answer is neither banning technology nor retreating to pen-and-paper exams. The answer is to change the assignment so that it asks students to apply, create and defend ideas — work that cannot be completed by copying a generated answer.',
+      'SOYL Academy’s answer is neither banning technology nor retreating to pen-and-paper exams. The answer is to change the assignment so that it asks students to apply, create and defend ideas: work that cannot be completed by copying a generated answer.',
   },
 ];
 
+/**
+ * /students hands straight to free learning (plan §3.3), so its questions are about that. The answers state the
+ * access rules (docs/platform/CONTEXT.md §5), which hold whether or not the platform is switched on yet; they
+ * carry no price and no link.
+ */
 export const studentsFaqs: FaqItem[] = [
   {
-    question: 'Can I use AI in a SOYL assignment?',
+    question: 'Is SOYL Academy free for students?',
     answer:
-      'Yes, you can use AI tools, but you cannot simply copy and paste an answer. In a SOYL assignment you explain your process, defend your choices and show that the ideas are yours.',
+      'Yes. Lessons, notes, flashcards and practice for CBSE, ICSE and ISC Classes 7 to 12 are free, and so are chapter tests and mock papers with a free account. Only AI help is metered, because it costs money to run.',
   },
   {
-    question: 'Can individual students join SOYL Academy?',
+    question: 'Do I need an account to learn?',
     answer:
-      'Yes. Future Builders is a 2-month live online summer camp for Grades 7 to 12 that individual students can join directly, without a school partnership. The Future Builders page shows when the next camp runs and how to register, or a waitlist when registration is closed.',
+      'No. Lessons, notes, flashcards and practice work without one, and your progress is kept on that device. Tests and AI help need a free account; when you sign in, what you did as a guest moves into it.',
   },
   {
-    question: 'What will I do in a SOYL assignment?',
+    question: 'Can I join without my school?',
     answer:
-      'You learn by doing: you solve, build, argue, explain and reflect. Instead of worksheets and formulaic essays, you show what you can build, how you reason and how you tackle real problems.',
+      'Yes. The free lessons need no school. Future Builders, a 2-month live online summer camp for Grades 7 to 12, also takes students directly, without a school partnership. Its page shows when the next camp runs and how to register, or a waitlist when registration is closed.',
   },
 ];
 
