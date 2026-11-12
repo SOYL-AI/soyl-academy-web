@@ -384,13 +384,17 @@
   flex: none;
   color: var(--p-tint-blue-ink);
 }
+/* Two lines at most, wrapping (a nowrap title would size the one-column page grid by its full width on phones). */
 .chatTitle {
+  display: -webkit-box;
   flex: 1;
   min-width: 0;
   overflow: hidden;
   font-weight: 600;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  overflow-wrap: anywhere;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
 }
 .chatDate {
   flex: none;
