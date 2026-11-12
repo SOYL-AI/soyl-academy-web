@@ -1,9 +1,10 @@
 /**
- * Student dashboard view-models (D-043): pure functions from `GET /v1/me/dashboard` (and the insights APIs) to
- * what the page shows, including the text alternative of every chart. No invented metrics: every number here
- * is a field of the API response or a direct ratio of two of them. Tested in __tests__/dashboard.test.tsx.
+ * Student dashboard view-models (D-043), shared by Home (`/me/dashboard`) and Progress (`/me/progress`, design
+ * language v3): pure functions from `GET /v1/me/dashboard` to what the pages show, including the text alternative of
+ * the score chart. No invented metrics: every number here is a field of the API response or a direct ratio of two of
+ * them. Tested in __tests__/dashboard.test.tsx.
  */
-import type { ChapterLink, DashboardProfile, MyDashboard, RecentEvent, SolvedByDifficulty, TestHistoryItem, WeeklyGoal } from '@/platform/shared/api-client';
+import type { ChapterLink, DashboardProfile, MyDashboard, RecentEvent, TestHistoryItem, WeeklyGoal } from '@/platform/shared/api-client';
 import { DASHBOARD } from '@/platform/shared/config/learning';
 import { examLabel, learnPath, type BoardSlug } from '../lib/catalog';
 import { dayLabel } from '../me/heatmap-model';
@@ -41,57 +42,6 @@ export function accuracyDelta(recent: number | null, previous: number | null): D
   return { direction: 'same', text: 'Same as the 7 days before' };
 }
 
-export interface KpiTile {
-  key: 'solved' | 'accuracy' | 'lessons' | 'tests' | 'active';
-  label: string;
-  value: string;
-  sub: string;
-  delta: Delta | null;
-}
-
-export function kpiTiles(d: Pick<MyDashboard, 'totals'>): KpiTile[] {
-  const t = d.totals;
-  const acc = pct(t.accuracy.recent.accuracy);
-  const tests = t.tests;
-  return [
-    {
-      key: 'solved',
-      label: 'Solved this week',
-      value: t.solved.thisWeek.toLocaleString('en-IN'),
-      sub: `${t.solved.allTime.toLocaleString('en-IN')} all time`,
-      delta: countDelta(t.solved.thisWeek, t.solved.lastWeek),
-    },
-    {
-      key: 'accuracy',
-      label: 'Accuracy, last 7 days',
-      value: acc === null ? '–' : `${acc}%`,
-      sub: t.accuracy.recent.checked > 0 ? `${t.accuracy.recent.right} of ${plural(t.accuracy.recent.checked, 'checked answer')} right` : 'No auto-checked answers yet',
-      delta: accuracyDelta(t.accuracy.recent.accuracy, t.accuracy.previous.accuracy),
-    },
-    {
-      key: 'lessons',
-      label: 'Lessons completed',
-      value: t.lessonsCompleted.allTime.toLocaleString('en-IN'),
-      sub: `${t.lessonsCompleted.thisWeek} this week`,
-      delta: countDelta(t.lessonsCompleted.thisWeek, t.lessonsCompleted.lastWeek),
-    },
-    {
-      key: 'tests',
-      label: 'Tests taken',
-      value: tests.submitted.allTime.toLocaleString('en-IN'),
-      sub: tests.averagePct === null ? 'No marked tests yet' : `Average ${Math.round(tests.averagePct)}% · best ${Math.round(tests.bestPct ?? tests.averagePct)}%`,
-      delta: null,
-    },
-    {
-      key: 'active',
-      label: 'Active days this week',
-      value: `${t.activeDays.thisWeek}/7`,
-      sub: `${plural(t.activeDays.allTime, 'day')} all time`,
-      delta: countDelta(t.activeDays.thisWeek, t.activeDays.lastWeek),
-    },
-  ];
-}
-
 /** A brand-new account: nothing answered, finished or submitted yet. */
 export function isNewAccount(d: Pick<MyDashboard, 'totals'>): boolean {
   const t = d.totals;
@@ -104,12 +54,6 @@ export function isNewAccount(d: Pick<MyDashboard, 'totals'>): boolean {
 export function greeting(now: Date): string {
   const h = (now.getUTCHours() + 5 + Math.floor((now.getUTCMinutes() + 30) / 60)) % 24;
   return h < 12 ? 'Good morning' : h < 17 ? 'Good afternoon' : 'Good evening';
-}
-
-/** "CBSE Class 10", "ICSE Class 9", or null when the class is not set. */
-export function classLine(profile: Pick<DashboardProfile, 'board' | 'classLevel'>): string | null {
-  if (!profile.board || !profile.classLevel) return null;
-  return `${examLabel(profile.board as BoardSlug, profile.classLevel)} Class ${profile.classLevel}`;
 }
 
 export function schoolLine(school: DashboardProfile['school']): string | null {
@@ -151,51 +95,9 @@ export function parseGoal(raw: string): { ok: true; value: number } | { ok: fals
   return { ok: true, value: n };
 }
 
-export interface GoalView {
-  percent: number;
-  label: string;
-  status: string;
-}
-
-export function goalView(g: Pick<WeeklyGoal, 'target' | 'progress' | 'remaining' | 'met' | 'daysLeft'>): GoalView {
-  const percent = g.target > 0 ? Math.min(100, Math.round((g.progress / g.target) * 100)) : 0;
-  const label = `Weekly goal: ${g.progress} of ${g.target} questions solved this week`;
-  const status = g.met
-    ? `Goal met. ${g.progress > g.target ? `${g.progress - g.target} extra so far.` : 'Well done!'}`
-    : `${plural(g.remaining, 'question')} to go · ${plural(g.daysLeft, 'day')} left`;
-  return { percent, label, status };
-}
-
 /** The dashboard's goal after a new target is saved ( → Me.weeklyGoal); progress stays the API's. */
 export function withTarget(g: WeeklyGoal, saved: { target: number; isDefault: boolean }): WeeklyGoal {
   return { ...g, target: saved.target, isDefault: saved.isDefault, remaining: Math.max(0, saved.target - g.progress), met: g.progress >= saved.target };
-}
-
-/* ── Solved by difficulty (LeetCode) ────────────────────────────────────── */
-
-export interface DifficultyRow {
-  band: 'easy' | 'medium' | 'hard';
-  label: string;
-  solved: number;
-  total: number;
-  percent: number;
-}
-
-const share = (solved: number, total: number) => (total > 0 ? Math.round((solved / total) * 100) : 0);
-
-export function difficultyView(sbd: SolvedByDifficulty): { solved: number; total: number; percent: number; rows: DifficultyRow[]; summary: string } {
-  const rows: DifficultyRow[] = (['easy', 'medium', 'hard'] as const).map((band) => ({
-    band,
-    label: band === 'easy' ? 'Easy' : band === 'medium' ? 'Medium' : 'Hard',
-    solved: sbd[band].solved,
-    total: sbd[band].total,
-    percent: share(sbd[band].solved, sbd[band].total),
-  }));
-  const summary =
-    sbd.all.total === 0
-      ? 'No practice questions in your subjects yet.'
-      : `Solved ${sbd.all.solved} of ${sbd.all.total} practice questions: ` + rows.map((r) => `${r.label} ${r.solved} of ${r.total}`).join(', ') + '.';
-  return { solved: sbd.all.solved, total: sbd.all.total, percent: share(sbd.all.solved, sbd.all.total), rows, summary };
 }
 
 /* ── Mastery scope ──────────────────────────────────────────────────────── */
@@ -208,13 +110,6 @@ export function scopeText(scope: MyDashboard['scope']): string {
     return `${chapters} in ${subjects} of ${examLabel(scope.board as BoardSlug, scope.classLevel)} Class ${scope.classLevel} with lessons or practice`;
   }
   return `${chapters} in the ${subjects} you have practised`;
-}
-
-/** What the difficulty counts cover. */
-export function difficultyScopeNote(scope: MyDashboard['scope']): string {
-  if (scope.kind === 'class') return 'Every practice question in your class subjects that have practice.';
-  if (scope.kind === 'activity') return 'Practice questions in the subjects you have practised. Set your class to count all of them.';
-  return 'Set your class to count the practice questions in your subjects.';
 }
 
 /** /learn/cbse/10/science from `cbse-10-science` (CISCE ids start with icse/isc), else null. */

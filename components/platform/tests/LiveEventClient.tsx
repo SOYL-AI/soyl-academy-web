@@ -115,7 +115,7 @@ export function LiveEventClient({ eventId }: { eventId: string }) {
 
   return (
     <div className={s.stack} data-testid="live-event" data-phase={event.phase}>
-      <header className={s.scoreHero}>
+      <header className={s.liveHero}>
         <p className={s.row}>
           <Badge tone={event.phase === 'live' ? 'danger' : 'accent'}>{LIVE_PHASE_LABELS[event.phase] ?? event.phase}</Badge>
           {event.ranksBeta && <Badge tone="warning">Ranks in beta</Badge>}

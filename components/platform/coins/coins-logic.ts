@@ -2,13 +2,15 @@
  * SOYL Coins (D-037, ADR-021): pure helpers for the coins chip, /coins, /store and award notes.
  * Every number comes from the API or `platform/shared/config/coins.ts`; nothing is hardcoded here.
  */
-import { isApiError, type CoinRedemption, type CoinStoreItem, type ShippingAddress, type StoreItemState } from '@/platform/shared/api-client';
+import { isApiError, type CoinHistoryEntry, type CoinRedemption, type CoinStoreItem, type ShippingAddress, type StoreItemState } from '@/platform/shared/api-client';
+import type { IconName } from '@/components/platform/ui/kit/Icon';
+import type { Tint } from '@/components/platform/ui/kit/tints';
 import { INDIA_STATES } from '@/platform/shared/config/coins';
 import { INDIA_MOBILE_REGEX } from '@/platform/shared/config/security';
 import { nationalDigits } from '../lib/phone';
 import { problemMessage } from '../lib/problems';
 
-import { coinsText, formatSpan } from './coins-format';
+import { coinsText, formatSpan, SOURCE_LABELS } from './coins-format';
 export { CAP_NOTE, coinsText, formatSpan, SOURCE_LABELS, summariseAwards, type AwardSummary } from './coins-format';
 
 /** Friendly copy for coins problems (ADR-021); other codes fall back to the shared messages. */
@@ -173,4 +175,58 @@ export function validateAddress(d: AddressDraft): { value: ShippingAddress | nul
 /** Hindi subjects render in Devanagari (font and `lang`); the API sends no language on a challenge. */
 export function challengeLang(subjectId: string): string | undefined {
   return /(^|-)hindi(-|$)/.test(subjectId) ? 'hi' : undefined;
+}
+
+/* ── /coins view-models (design language v3) ──────────────────────────────── */
+
+/** One coin-history row as the table shows it: what, when, the signed amount (written, not only coloured). */
+export interface HistoryRowView {
+  label: string;
+  /** "28 Oct 2026" (IST), plus "daily limit reached" when the award was capped. */
+  date: string;
+  note: string | null;
+  /** "+5", "-60", "0". */
+  amountText: string;
+  tone: 'plus' | 'minus' | 'zero';
+  balanceText: string;
+}
+
+const sentenceCase = (t: string) => t.charAt(0).toLocaleUpperCase('en-IN') + t.slice(1);
+
+export function historyRow(e: Pick<CoinHistoryEntry, 'kind' | 'source' | 'amount' | 'balanceAfter' | 'createdAt' | 'cappedOut'>): HistoryRowView {
+  return {
+    label: e.kind === 'refund' ? 'Coins returned' : sentenceCase(SOURCE_LABELS[e.source] ?? e.source),
+    date: istDate(e.createdAt),
+    note: e.cappedOut ? 'Daily limit reached' : null,
+    amountText: `${e.amount > 0 ? '+' : ''}${e.amount.toLocaleString('en-IN')}`,
+    tone: e.amount > 0 ? 'plus' : e.amount < 0 ? 'minus' : 'zero',
+    balanceText: e.balanceAfter.toLocaleString('en-IN'),
+  };
+}
+
+/** The icon and tint for a way to earn (keys from `howToEarn()`); unknown keys get the coin. */
+export function earnVisual(key: string): { icon: IconName; tint: Tint } {
+  switch (key) {
+    case 'checkin':
+      return { icon: 'calendar', tint: 'yellow' };
+    case 'checkin_streak':
+      return { icon: 'flame', tint: 'orange' };
+    case 'daily_challenge':
+      return { icon: 'target', tint: 'green' };
+    case 'solved_milestone':
+      return { icon: 'checkCircle', tint: 'teal' };
+    case 'chapter_mastered':
+      return { icon: 'star', tint: 'violet' };
+    case 'test_submitted':
+    case 'perfect_paper':
+      return { icon: 'clock', tint: 'pink' };
+    case 'live_participation':
+    case 'live_rank':
+      return { icon: 'trophy', tint: 'red' };
+    case 'league_promotion':
+    case 'league_top_finish':
+      return { icon: 'arrowUp', tint: 'blue' };
+    default:
+      return { icon: 'coin', tint: 'yellow' };
+  }
 }

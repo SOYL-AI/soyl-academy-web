@@ -16,13 +16,17 @@ import { useCallback, useEffect, useId, useRef, useState } from 'react';
 import { isApiError, type AiActionId, type AiConversation, type AiQuote } from '@/platform/shared/api-client';
 import { cx } from '@/components/platform/ui/cx';
 import { Button } from '@/components/platform/ui/kit/Button';
-import { Badge, EmptyState } from '@/components/platform/ui/kit/Display';
+import { Card, EmptyState, Skeleton } from '@/components/platform/ui/kit/Display';
 import { EmptyIllustration } from '@/components/platform/ui/art/EmptyIllustration';
 import { Icon } from '@/components/platform/ui/kit/Icon';
+import { List } from '@/components/platform/ui/kit/Lists';
+import { PageColumns } from '@/components/platform/ui/kit/Page';
+import { RailCard } from '@/components/platform/ui/kit/Rail';
 import { consentAllows } from '@/platform/shared/config/consent';
 import { useSession } from '../auth/SessionProvider';
 import { api } from '../lib/api-browser';
 import { trackInterest } from '../lib/interest';
+import { useStage } from '../shell/StageProvider';
 import { AiNotice, PaywallDialog, QuoteDialog } from './AiDialogs';
 import { useCredits } from './CreditsProvider';
 import { aiBlockFrom, aiMessage, creditsText, type AiBlock } from './problems';
@@ -50,18 +54,26 @@ interface Pending {
 
 export function AskClient() {
   const { state, openLogin } = useSession();
-  if (state.status === 'loading') return <p className={s.muted}>Loading…</p>;
+  if (state.status === 'loading') {
+    return (
+      <div aria-busy="true" aria-label="Loading the AI tutor">
+        <Skeleton variant="block" height={200} />
+      </div>
+    );
+  }
   if (state.status === 'guest') {
     return (
-      <EmptyState
-        title="Log in to ask the AI tutor"
-        headingLevel="h2"
-        icon="chat"
-        art={<EmptyIllustration kind="no-chats" />}
-        action={<Button onClick={() => openLogin({ reason: 'Log in to ask the AI tutor. You get free AI credits every day.' })}>Log in</Button>}
-      >
-        Ask any doubt from your syllabus and get a hint first, then the full solution. Free AI credits every day.
-      </EmptyState>
+      <Card className={s.guestCard}>
+        <EmptyState
+          title="Log in to ask the AI tutor"
+          headingLevel="h2"
+          icon="chat"
+          art={<EmptyIllustration kind="no-chats" />}
+          action={<Button onClick={() => openLogin({ reason: 'Log in to ask the AI tutor. You get free AI credits every day.' })}>Log in</Button>}
+        >
+          Ask any doubt from your syllabus and get a hint first, then the full solution. Free AI credits every day.
+        </EmptyState>
+      </Card>
     );
   }
   // D-052: AI needs no consent (only if CONSENT_REQUIRED.ai is switched back on).
@@ -70,7 +82,8 @@ export function AskClient() {
 }
 
 function Tutor() {
-  const { credits } = useCredits();
+  const { credits, openGuide } = useCredits();
+  const { pick } = useStage();
   const chat = useAiStream();
   const [mode, setMode] = useState<AskMode>('quick-doubt');
   const [text, setText] = useState('');
@@ -208,145 +221,185 @@ function Tutor() {
     }
   };
 
-  return (
-    <div className={s.ask} data-testid="ask">
-      {chat.messages.length === 0 && (
-        <div className={s.askEmpty} data-testid="ask-empty">
-          <EmptyIllustration kind="no-chats" width={120} />
-          <p className={s.muted}>No chats yet. Ask a doubt from your syllabus: you get a hint first, then the full solution if you want it.</p>
-        </div>
-      )}
-      {chat.messages.length > 0 && (
-        <ol className={s.thread} aria-label="Conversation" aria-live="polite" data-testid="thread">
-          {chat.messages.map((m) => (
-            <Message key={m.id} m={m} />
-          ))}
-        </ol>
-      )}
-      <div ref={endRef} />
-
-      {canFollowUp && (
-        <div className={s.composer} data-testid="follow-up">
-          <p className={s.muted}>That was a hint. Try the next step yourself, or see the full solution.</p>
-          <label htmlFor={attemptId} className={s.muted}>
-            Your working (optional)
-          </label>
-          <textarea id={attemptId} className={s.textarea} value={attemptText} onChange={(e) => setAttemptText(e.target.value.slice(0, 2000))} rows={3} />
-          <div className={s.composerRow}>
-            <Button
-              variant="secondary"
-              disabled={!attemptText.trim()}
-              loading={quoteBusy}
-              onClick={() => void ask({ action: lastAction, body: revealBody({ message: 'Here is my working. Please check it.', attempt: attemptText.trim() }), userText: attemptText.trim(), what: 'checking your working' })}
-            >
-              Check my working
-            </Button>
-            <Button
-              loading={quoteBusy}
-              onClick={() => void ask({ action: lastAction, body: revealBody({ message: 'Please show me the full solution.', reveal: true }), userText: 'Show me the full solution', what: 'the full solution' })}
-              data-testid="reveal"
-            >
-              Show full solution
-            </Button>
-          </div>
-        </div>
-      )}
-
-      {block && block.kind !== 'paywall' && block.kind !== 'plan' && <AiNotice block={block} />}
-
-      <form
-        className={s.composer}
-        onSubmit={(e) => {
-          e.preventDefault();
-          submit();
-        }}
-        aria-label="Ask a question"
-      >
-        <fieldset className={s.modes}>
-          <legend className="p-visually-hidden">What kind of help?</legend>
-          {MODES.map((m) => (
-            <label key={m.id} className={cx(s.mode, mode === m.id && s.modeOn)}>
-              <input type="radio" name="ask-mode" value={m.id} checked={mode === m.id} onChange={() => setMode(m.id)} />
-              {m.label} <Badge>{creditsText(price(m.id))}</Badge>
-            </label>
-          ))}
-        </fieldset>
-        <label htmlFor={textId} className={s.muted}>
-          {mode === 'photo-doubt' ? 'Anything to add? (optional)' : 'Your question'}
-        </label>
-        <textarea
-          id={textId}
-          className={s.textarea}
-          value={text}
-          maxLength={2000}
-          onChange={(e) => setText(e.target.value)}
-          placeholder={mode === 'photo-doubt' ? 'e.g. I am stuck on part (b)' : 'e.g. Why does iron rust faster near the sea?'}
-          data-testid="ask-input"
-        />
-        {mode === 'photo-doubt' && (
-          <div className={s.photo}>
-            <label className={s.fileLabel}>
-              <Icon name="camera" size={18} /> {photo ? 'Change photo' : 'Add a photo'}
-              <input
-                className={s.fileInput}
-                type="file"
-                accept="image/jpeg,image/png,image/webp,image/heic,image/heif"
-                capture="environment"
-                data-testid="photo-input"
-                onChange={(e) => {
-                  const f = e.target.files?.[0];
-                  if (f) setPhoto({ file: f, preview: URL.createObjectURL(f) });
-                  e.target.value = '';
-                }}
-              />
-            </label>
-            {photo && (
-              // eslint-disable-next-line @next/next/no-img-element -- local preview (blob: URL), never a remote image
-              <img src={photo.preview} alt="Your photo of the question" />
-            )}
-            {uploadStage !== 'idle' && <span role="status">{uploadStage === 'checking' ? 'Checking the photo…' : 'Uploading…'}</span>}
-          </div>
-        )}
-        <div className={s.composerRow}>
-          <span className={s.muted}>{credits ? `${creditsText(credits.balance)} left today` : ''}</span>
-          {chat.busy ? (
-            <Button variant="secondary" icon="stop" onClick={chat.stop} data-testid="stop">
-              Stop
-            </Button>
+  const empty = chat.messages.length === 0;
+  const rail = (
+    <>
+      <RailCard id="ask-credits-title" title="AI credits" data-testid="ask-credits">
+        <p className={s.railBalance}>
+          <Icon name="spark" size={20} className={s.railSpark} />
+          {credits ? (
+            <span>
+              <b>{creditsText(credits.balance)}</b> left today
+            </span>
           ) : (
-            <Button type="submit" icon="send" loading={quoteBusy || uploadStage !== 'idle'} data-testid="ask-send">
-              Ask ({creditsText(price(mode))})
-            </Button>
+            <span>Free AI credits every day</span>
           )}
+        </p>
+        <p className={s.muted}>They refill at 00:00 IST. Lessons, practice and tests never use credits.</p>
+        <div>
+          <Button variant="ghost" icon="info" onClick={openGuide} data-testid="ask-credit-guide">
+            What can I do with my credits?
+          </Button>
         </div>
-      </form>
-
-      <details className={s.history}>
-        <summary>
-          <Icon name="chat" size={18} /> Your recent chats
-        </summary>
+      </RailCard>
+      <RailCard id="ask-chats-title" title="Recent chats" data-testid="ask-history">
         {history === null ? (
           <p className={s.muted}>Loading…</p>
         ) : history.length === 0 ? (
           <p className={s.muted}>No chats yet. Chats are kept for 30 days.</p>
         ) : (
-          <ul className={s.historyList}>
+          <List inset label="Recent chats" className={s.chats}>
             {history.map((c) => (
-              <li key={c.id}>
-                <button type="button" className={s.historyItem} onClick={() => void openConversation(c)}>
-                  <span>{c.title || 'Untitled chat'}</span>
-                  <span>{new Date(c.lastMessageAt ?? c.createdAt).toLocaleDateString('en-IN', { day: 'numeric', month: 'short' })}</span>
+              <li key={c.id} className={s.chatItem}>
+                <button type="button" className={s.chatButton} onClick={() => void openConversation(c)}>
+                  <Icon name="chat" size={18} className={s.chatIcon} />
+                  <span className={s.chatTitle}>{c.title || 'Untitled chat'}</span>
+                  <span className={s.chatDate}>{new Date(c.lastMessageAt ?? c.createdAt).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', timeZone: 'Asia/Kolkata' })}</span>
                 </button>
               </li>
             ))}
-          </ul>
+          </List>
         )}
         {chat.messages.length > 0 && (
-          <Button variant="ghost" size="sm" onClick={chat.reset}>
-            Start a new chat
-          </Button>
+          <div>
+            <Button variant="soft" icon="plus" onClick={chat.reset} data-testid="new-chat">
+              Start a new chat
+            </Button>
+          </div>
         )}
-      </details>
+      </RailCard>
+    </>
+  );
+
+  return (
+    <div className={s.askWrap} data-testid="ask">
+      <PageColumns rail={rail} railLabel="AI credits and recent chats">
+        <div className={s.ask}>
+          {empty && (
+            <div className={s.askEmpty} data-testid="ask-empty">
+              <EmptyIllustration kind="no-chats" width={112} />
+              <div className={s.askEmptyText}>
+                <h2 className={s.askEmptyTitle}>{pick({ junior: 'Stuck on something? Ask away.', middle: 'What are you stuck on?', senior: 'Ask a doubt' })}</h2>
+                <p className={s.muted}>
+                  {pick({
+                    junior: 'No chats yet. Ask a doubt from your syllabus: you get a hint first, then the full solution if you want it.',
+                    middle: 'No chats yet. Ask a doubt from your syllabus: you get a hint first, then the full solution if you want it.',
+                    senior: 'No chats yet. Any doubt from your syllabus: a hint first, the full solution when you ask for it.',
+                  })}
+                </p>
+              </div>
+            </div>
+          )}
+          {!empty && (
+            <ol className={s.thread} aria-label="Conversation" aria-live="polite" data-testid="thread">
+              {chat.messages.map((m) => (
+                <Message key={m.id} m={m} />
+              ))}
+            </ol>
+          )}
+          <div ref={endRef} />
+
+          {canFollowUp && (
+            <Card className={s.followUp} data-testid="follow-up">
+              <p className={s.muted}>That was a hint. Try the next step yourself, or see the full solution.</p>
+              <label htmlFor={attemptId} className={s.label}>
+                Your working (optional)
+              </label>
+              <textarea id={attemptId} className={s.textarea} value={attemptText} onChange={(e) => setAttemptText(e.target.value.slice(0, 2000))} rows={3} />
+              <div className={s.composerRow}>
+                <Button
+                  variant="secondary"
+                  disabled={!attemptText.trim()}
+                  loading={quoteBusy}
+                  onClick={() => void ask({ action: lastAction, body: revealBody({ message: 'Here is my working. Please check it.', attempt: attemptText.trim() }), userText: attemptText.trim(), what: 'checking your working' })}
+                >
+                  Check my working
+                </Button>
+                <Button
+                  loading={quoteBusy}
+                  onClick={() => void ask({ action: lastAction, body: revealBody({ message: 'Please show me the full solution.', reveal: true }), userText: 'Show me the full solution', what: 'the full solution' })}
+                  data-testid="reveal"
+                >
+                  Show full solution
+                </Button>
+              </div>
+            </Card>
+          )}
+
+          {block && block.kind !== 'paywall' && block.kind !== 'plan' && <AiNotice block={block} />}
+
+          <Card className={s.composerCard}>
+            <form
+              className={s.composer}
+              onSubmit={(e) => {
+                e.preventDefault();
+                submit();
+              }}
+              aria-label="Ask a question"
+            >
+              <fieldset className={s.modes}>
+                <legend className={s.legend}>What kind of help?</legend>
+                <div className={s.modeList}>
+                  {MODES.map((m) => (
+                    <label key={m.id} className={cx(s.mode, mode === m.id && s.modeOn)}>
+                      <input type="radio" name="ask-mode" value={m.id} checked={mode === m.id} onChange={() => setMode(m.id)} />
+                      <span>{m.label}</span> <span className={s.modePrice}>{creditsText(price(m.id))}</span>
+                    </label>
+                  ))}
+                </div>
+              </fieldset>
+              <label htmlFor={textId} className={s.label}>
+                {mode === 'photo-doubt' ? 'Anything to add? (optional)' : 'Your question'}
+              </label>
+              <textarea
+                id={textId}
+                className={s.textarea}
+                value={text}
+                maxLength={2000}
+                onChange={(e) => setText(e.target.value)}
+                placeholder={mode === 'photo-doubt' ? 'e.g. I am stuck on part (b)' : 'e.g. Why does iron rust faster near the sea?'}
+                data-testid="ask-input"
+              />
+              {mode === 'photo-doubt' && (
+                <div className={s.photo}>
+                  <label className={s.fileLabel}>
+                    <Icon name="camera" size={18} /> {photo ? 'Change photo' : 'Add a photo'}
+                    <input
+                      className={s.fileInput}
+                      type="file"
+                      accept="image/jpeg,image/png,image/webp,image/heic,image/heif"
+                      capture="environment"
+                      data-testid="photo-input"
+                      onChange={(e) => {
+                        const f = e.target.files?.[0];
+                        if (f) setPhoto({ file: f, preview: URL.createObjectURL(f) });
+                        e.target.value = '';
+                      }}
+                    />
+                  </label>
+                  {photo && (
+                    // eslint-disable-next-line @next/next/no-img-element -- local preview (blob: URL), never a remote image
+                    <img src={photo.preview} alt="Your photo of the question" />
+                  )}
+                  {uploadStage !== 'idle' && <span role="status">{uploadStage === 'checking' ? 'Checking the photo…' : 'Uploading…'}</span>}
+                </div>
+              )}
+              <div className={s.composerRow}>
+                <span className={s.muted}>{credits ? `${creditsText(credits.balance)} left today` : ''}</span>
+                {chat.busy ? (
+                  <Button variant="secondary" icon="stop" onClick={chat.stop} data-testid="stop">
+                    Stop
+                  </Button>
+                ) : (
+                  <Button type="submit" icon="send" loading={quoteBusy || uploadStage !== 'idle'} data-testid="ask-send">
+                    Ask ({creditsText(price(mode))})
+                  </Button>
+                )}
+              </div>
+            </form>
+          </Card>
+        </div>
+      </PageColumns>
 
       <QuoteDialog
         open={pending !== null}

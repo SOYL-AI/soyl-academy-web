@@ -9,10 +9,88 @@
 .hero > div {
   min-width: 0;
 }
+/* v3 (ADR-032 §10 "Profile"): settings cards in one column next to the "Your learning" rail. */
 .stack {
   display: grid;
-  gap: var(--p-space-4);
-  max-width: 640px;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--p-stage-gap);
+  min-width: 0;
+}
+.stack > section,
+.stack > .anchor > section {
+  padding: var(--p-stage-card-pad);
+}
+.stack h2 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--p-space-2);
+}
+.anchor {
+  min-width: 0;
+  scroll-margin-top: calc(var(--p-topbar-h) + var(--p-space-4));
+}
+.stack > [id],
+.stack [id$='-title'] {
+  scroll-margin-top: calc(var(--p-topbar-h) + var(--p-space-4));
+}
+.guestCard {
+  margin-top: var(--p-space-2);
+}
+/* The greeting's avatar stays visible on phones too (the kit hides hero art below 560 px). */
+@media (max-width: 559px) {
+  .profileHeader.profileHeader {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+  }
+  .profileHeader > div[aria-hidden='true'] {
+    display: block;
+    width: 72px;
+    height: 72px;
+  }
+  .profileHeader > div[aria-hidden='true'] > * {
+    /* The avatar is drawn at 96 px for wider screens; three quarters of it on phones. */
+    zoom: 0.75;
+  }
+}
+/* "Your learning" rail card (#activity). */
+.streakLine {
+  display: flex;
+  align-items: center;
+  gap: var(--p-space-2);
+  margin: 0 0 var(--p-space-3);
+  font-size: var(--p-text-md);
+}
+.streakLine b {
+  font-size: var(--p-text-xl);
+  font-variant-numeric: tabular-nums;
+}
+.figures {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--p-space-2);
+  margin: 0 0 var(--p-space-3);
+}
+.figures > div {
+  display: grid;
+  gap: 2px;
+  padding: var(--p-space-2) var(--p-space-3);
+  border-radius: var(--p-radius-lg);
+  background: var(--p-surface-2);
+}
+.figures dt {
+  color: var(--p-ink-subtle);
+  font-size: var(--p-text-xs);
+  font-weight: 650;
+}
+.figures dd {
+  margin: 0;
+  font-size: var(--p-text-xl);
+  font-weight: var(--p-weight-display);
+  font-variant-numeric: tabular-nums;
+}
+.ink {
+  color: var(--p-ink);
 }
 .form {
   display: grid;
@@ -43,6 +121,7 @@
   color: var(--p-ink);
   font: inherit;
   font-size: 16px;
+  font-weight: 500;
 }
 .select:focus-visible {
   outline: none;
@@ -106,7 +185,7 @@
   font-size: var(--p-text-sm);
 }
 .danger {
-  border-color: var(--p-danger);
+  border-color: var(--p-danger-soft);
 }
 
 /* M3/M4: tests, plan and credits cards. */
@@ -394,4 +473,52 @@
 }
 .badgeEmpty p {
   flex: 1 1 200px;
+}
+
+/* v3: plan, credits and the ledger. */
+.planLine {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--p-space-2);
+  margin: var(--p-space-2) 0;
+}
+.creditsHead {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--p-space-3);
+  margin: var(--p-space-2) 0;
+}
+.creditsHead p {
+  margin: 0;
+  line-height: 1.5;
+}
+.creditsBig {
+  font-size: var(--p-text-xl);
+  font-variant-numeric: tabular-nums;
+}
+.ledger {
+  margin-top: var(--p-space-3);
+  border-top: 1px solid var(--p-border);
+}
+.ledger summary {
+  display: flex;
+  align-items: center;
+  gap: var(--p-space-2);
+  min-height: var(--p-touch);
+  font-weight: 650;
+  cursor: pointer;
+}
+.ledger summary:focus-visible {
+  outline: none;
+  border-radius: var(--p-radius-sm);
+  box-shadow: var(--p-focus-ring);
+}
+
+/* Room between the greeting and the cards. */
+.profileHeader {
+  margin-bottom: var(--p-space-6);
+}
+.stack h3 {
+  margin-top: var(--p-space-4);
 }

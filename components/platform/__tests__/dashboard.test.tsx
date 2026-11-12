@@ -1,7 +1,9 @@
 /**
- * D-043: the student dashboard (view-models, empty states, prompts from `profile.missing` / `schoolStatus`,
- * chart text alternatives, weekly goal edit), the school picker on /me (debounce, pick, create, validation,
- * clear, consent gate), the default landing after login and the Home entry in the app shell.
+ * D-043 + design language v3: Home (`/me/dashboard`: hero, next step, prompts from `profile.missing` /
+ * `schoolStatus`, the rail cards and their consent rules, a clean welcome for a brand-new student), the shared
+ * dashboard view-models and the score chart's text alternative, the weekly goal editor, the school picker on /me
+ * (debounce, pick, create, validation, clear, consent gate), the default landing after login and the Home entry in
+ * the app shell. Progress (`/me/progress`) has its own file: progress.test.tsx.
  */
 import { act, cleanup, fireEvent, render, screen, waitFor, within } from '@testing-library/react';
 import type { ReactNode } from 'react';
@@ -28,11 +30,8 @@ import {
   accuracyDelta,
   chapterLinkHref,
   countDelta,
-  difficultyView,
-  goalView,
   greeting,
   isNewAccount,
-  kpiTiles,
   parseGoal,
   profilePrompts,
   recentRows,
@@ -43,8 +42,8 @@ import {
   trendSummary,
   withTarget,
 } from '../dashboard/model';
-import { DifficultyChart, ScoreTrendChart } from '../dashboard/charts';
-import { DashboardClient, DashboardView } from '../dashboard/DashboardClient';
+import { ScoreTrendChart } from '../dashboard/charts';
+import { DashboardClient, HomeView } from '../dashboard/DashboardClient';
 import { WeeklyGoalEditor } from '../dashboard/WeeklyGoalEditor';
 import { checkNewSchool, SCHOOL_SEARCH_DEBOUNCE_MS, SchoolSetting } from '../me/SchoolSetting';
 import { DASHBOARD_PATH, defaultLoginReturnTo } from '../lib/return-to';
@@ -187,27 +186,9 @@ describe('dashboard view-models', () => {
     expect(accuracyDelta(null, 0.4)).toEqual({ direction: 'none', text: '' });
   });
 
-  it('KPI tiles use only API fields; a new account shows zeros and dashes, never invented numbers', () => {
-    const fresh = kpiTiles(emptyDashboard());
-    expect(fresh.map((k) => [k.key, k.value])).toEqual([
-      ['solved', '0'],
-      ['accuracy', '–'],
-      ['lessons', '0'],
-      ['tests', '0'],
-      ['active', '0/7'],
-    ]);
-    expect(fresh.find((k) => k.key === 'tests')!.sub).toBe('No marked tests yet');
-    expect(fresh.find((k) => k.key === 'accuracy')!.sub).toBe('No auto-checked answers yet');
+  it('a brand-new account: nothing answered, finished or submitted', () => {
     expect(isNewAccount(emptyDashboard())).toBe(true);
-
-    const d = activeDashboard();
-    expect(isNewAccount(d)).toBe(false);
-    const tiles = Object.fromEntries(kpiTiles(d).map((k) => [k.key, k]));
-    expect(tiles.solved).toMatchObject({ value: '9', sub: '14 all time', delta: { direction: 'up', text: '4 more than last week' } });
-    expect(tiles.accuracy).toMatchObject({ value: '75%', sub: '15 of 20 checked answers right', delta: { direction: 'up', text: 'Up 15 points on the 7 days before' } });
-    expect(tiles.lessons).toMatchObject({ value: '4', sub: '1 this week', delta: { direction: 'down' } });
-    expect(tiles.tests).toMatchObject({ value: '2', sub: 'Average 61% · best 72%', delta: null });
-    expect(tiles.active).toMatchObject({ value: '3/7', sub: '9 days all time', delta: { direction: 'same' } });
+    expect(isNewAccount(activeDashboard())).toBe(false);
   });
 
   it('greeting is by the IST hour (and /learn re-exports the same function)', () => {
@@ -225,7 +206,7 @@ describe('dashboard view-models', () => {
     expect(profilePrompts({ missing: [], schoolStatus: 'consent_required' })).toEqual([{ kind: 'school-consent' }]);
   });
 
-  it('weekly goal: 5–300 whole numbers, progress text, saved target recomputes remaining', () => {
+  it('weekly goal: 5–300 whole numbers; a saved target recomputes remaining', () => {
     expect(parseGoal('25')).toEqual({ ok: true, value: 25 });
     expect(parseGoal(' 300 ')).toEqual({ ok: true, value: 300 });
     expect(parseGoal('4')).toMatchObject({ ok: false });
@@ -233,23 +214,11 @@ describe('dashboard view-models', () => {
     expect(parseGoal('12.5')).toMatchObject({ ok: false });
     expect(parseGoal('')).toMatchObject({ ok: false });
     const g = activeDashboard().weeklyGoal;
-    expect(goalView(g)).toEqual({ percent: 45, label: 'Weekly goal: 9 of 20 questions solved this week', status: '11 questions to go · 5 days left' });
-    expect(goalView({ ...g, progress: 22, remaining: 0, met: true }).status).toBe('Goal met. 2 extra so far.');
-    expect(goalView({ ...g, progress: 22, remaining: 0, met: true }).percent).toBe(100);
     expect(withTarget(g, { target: 8, isDefault: false })).toMatchObject({ target: 8, isDefault: false, remaining: 0, met: true, progress: 9 });
     expect(withTarget(g, { target: 50, isDefault: false })).toMatchObject({ remaining: 41, met: false });
   });
 
-  it('difficulty, scope and links', () => {
-    const v = difficultyView(activeDashboard().solvedByDifficulty);
-    expect(v.percent).toBe(5);
-    expect(v.rows.map((r) => [r.label, r.solved, r.total])).toEqual([
-      ['Easy', 8, 120],
-      ['Medium', 4, 100],
-      ['Hard', 2, 80],
-    ]);
-    expect(v.summary).toBe('Solved 14 of 300 practice questions: Easy 8 of 120, Medium 4 of 100, Hard 2 of 80.');
-    expect(difficultyView(emptyDashboard().solvedByDifficulty).summary).toBe('No practice questions in your subjects yet.');
+  it('scope and links', () => {
     expect(scopeText(activeDashboard().scope)).toBe('42 chapters in 3 subjects of CBSE Class 10 with lessons or practice');
     expect(scopeText({ kind: 'activity', board: null, classLevel: null, subjectCount: 1, chapterCount: 14 })).toBe('14 chapters in the 1 subject you have practised');
     expect(scopeText(emptyDashboard().scope)).toMatch(/^Set your class/);
@@ -289,15 +258,6 @@ describe('dashboard view-models', () => {
 /* ── Charts: text alternatives, not colour alone ──────────────────────────── */
 
 describe('dashboard charts', () => {
-  it('difficulty chart: every band written out, summary as the ring label and caption', () => {
-    render(<DifficultyChart data={activeDashboard().solvedByDifficulty} />);
-    const fig = screen.getByTestId('difficulty-chart');
-    expect(fig.getAttribute('data-solved')).toBe('14');
-    expect(screen.getByRole('img').getAttribute('aria-label')).toBe('Solved 14 of 300 practice questions: Easy 8 of 120, Medium 4 of 100, Hard 2 of 80.');
-    for (const band of ['Easy', 'Medium', 'Hard']) expect(within(fig).getByText(band)).toBeTruthy();
-    expect(fig.querySelector('figcaption')!.textContent).toContain('Hard 2 of 80');
-  });
-
   it('score trend: labelled image, a hidden data table, self-marked bars hatched and in the legend', () => {
     const pts = trendPoints(activeDashboard().testHistory);
     render(<ScoreTrendChart points={pts} />);
@@ -317,76 +277,226 @@ describe('dashboard charts', () => {
 
 /* ── The page ─────────────────────────────────────────────────────────────── */
 
-const loadingHooks = { card: { status: 'loading' as const }, activity: { status: 'loading' as const }, mastery: { status: 'loading' as const } };
+const ACTIVITY_7 = {
+  timezone: 'Asia/Kolkata' as const,
+  from: '2026-10-22',
+  to: '2026-10-28',
+  days: 7,
+  calendar: [
+    { date: '2026-10-26', answered: 3, solved: 2, lessonsCompleted: 0, testsSubmitted: 0, total: 3 },
+    { date: '2026-10-28', answered: 4, solved: 3, lessonsCompleted: 1, testsSubmitted: 0, total: 5 },
+  ],
+  totals: { answered: 7, solved: 5, lessonsCompleted: 1, testsSubmitted: 0, activeDays: 2 },
+  streak: { current: 3, longest: 5, lastActiveDay: '2026-10-28', atRisk: false, freezeAvailableThisWeek: true },
+  activeDaysAllTime: 9,
+};
 
-describe('DashboardView', () => {
-  it('brand-new account: welcome, class prompt; with school/leagues re-gated (CONSENT_REQUIRED) a consent link instead of a school prompt; every block has an empty state', () => {
+const HUB = {
+  chapter: { id: 'cbse-10-science-ch01', number: 1, title: 'Chemical Reactions and Equations', titleEn: null, unit: null, boardAssessed: true, schoolAssessment: null, topics: [] },
+  subject: { id: 'cbse-10-science', name: 'Science', board: 'cbse', exam: 'cbse', classLevel: 10, language: 'en', script: 'Latn' },
+  assets: {
+    lesson: { available: true, parts: [1, 2, 3].map((part) => ({ part, title: `Part ${part}`, slideCount: 20, hasAudio: false, version: 1, reviewStatus: 'beta' })), slideCount: 60 },
+    notes: { available: true, sections: 7, reviewStatus: null },
+    flashcards: { available: false, count: 0, reviewStatus: null },
+    practice: { available: true, count: 77, byType: {}, byDifficulty: {} },
+    tests: { available: true, count: 2, items: [] },
+  },
+};
+
+const DAILY = {
+  day: '2026-10-28',
+  resetsAt: '2026-10-28T18:30:00.000Z',
+  coins: 5,
+  awardsPerDay: 1,
+  earnedToday: 0,
+  board: 'cbse',
+  classLevel: 10,
+  status: 'ok',
+  challenges: [
+    { subjectId: 'cbse-10-science', subjectName: 'Science', chapterId: 'cbse-10-science-ch01', chapterTitle: 'Chemical Reactions and Equations', question: { id: 'q1' }, solved: false },
+    { subjectId: 'cbse-10-mathematics', subjectName: 'Mathematics', chapterId: 'cbse-10-mathematics-ch01', chapterTitle: 'Real Numbers', question: { id: 'q2' }, solved: true },
+  ],
+};
+
+const LEAGUE = {
+  status: 'active',
+  league: { id: 'l1', tier: { level: 1, key: 'bronze', name: 'Bronze', icon: 'b' }, division: 1, size: 7, capacity: 30, promotionPlaces: 3, relegationPlaces: 3, minXpToPromote: 10, isTopTier: false, isBottomTier: true },
+  standings: [
+    { rank: 1, name: 'Quiet Sparrow 9', avatar: { id: 'falcon', bg: 'sky' }, xp: 300, zone: 'promotion', isMe: false },
+    { rank: 2, name: null, avatar: null, xp: 250, zone: 'promotion', isMe: false },
+    { rank: 3, name: 'C', avatar: null, xp: 200, zone: 'promotion', isMe: false },
+    { rank: 4, name: 'D', avatar: null, xp: 150, zone: 'safe', isMe: false },
+    { rank: 5, name: 'E', avatar: null, xp: 120, zone: 'safe', isMe: false },
+    { rank: 6, name: 'F', avatar: null, xp: 110, zone: 'safe', isMe: false },
+    { rank: 7, name: 'Brave Otter 1', avatar: { id: 'otter', bg: 'mint' }, xp: 90, zone: 'relegation', isMe: true },
+  ],
+  me: { rank: 7, xp: 90, zone: 'relegation' },
+};
+
+/** A member with progress in CBSE 10 Science chapter 1 (lesson part 2 of 3 open, 4 answered). */
+function memberProgress() {
+  const ch = {
+    chapterId: 'cbse-10-science-ch01',
+    subjectId: 'cbse-10-science',
+    number: 1,
+    title: 'Chemical Reactions and Equations',
+    level: 'attempted',
+    lessonPartsStarted: 2,
+    lessonPartsCompleted: 1,
+    lastPart: 2,
+    lastSlide: 4,
+    answered: 4,
+    correct: 3,
+    lastActivityAt: '2026-10-28T05:00:00.000Z',
+  };
+  return {
+    source: 'member',
+    xp: 120,
+    level: 2,
+    levelProgress: 0.2,
+    streak: ACTIVITY_7.streak,
+    lessonsCompleted: 1,
+    practiceAnswered: 4,
+    practiceCorrect: 3,
+    accuracy: 0.75,
+    subjects: [{ subjectId: 'cbse-10-science', name: 'Science', chapters: [ch] }],
+    chapters: { [ch.chapterId]: ch },
+  };
+}
+
+const NOW = Date.parse('2026-10-28T13:00:00Z'); // 18:30 IST
+
+describe('HomeView', () => {
+  it('brand-new account, no class: a clean welcome with "Pick a subject", the class prompt, no zeros; consent re-gated: a consent link and the locked league', () => {
     h.session = { state: member('required'), openLogin: vi.fn(), updateUser: vi.fn() };
-    wrap(<DashboardView d={emptyDashboard()} name="Asha" ai={false} leagues={false} {...loadingHooks} onProfileChanged={vi.fn()} />);
-    expect(screen.getByTestId('dashboard').getAttribute('data-new')).toBe('true');
-    expect(screen.getByTestId('dashboard-welcome')).toBeTruthy();
-    expect(screen.getByRole('heading', { level: 1 }).textContent).toMatch(/^Good (morning|afternoon|evening), Asha$/);
+    routeGets({});
+    wrap(<HomeView d={emptyDashboard()} name="Asha" ai={false} leagues={false} now={NOW} onProfileChanged={vi.fn()} />);
+    const home = screen.getByTestId('dashboard');
+    expect(home.getAttribute('data-new')).toBe('true');
+    expect(screen.getAllByRole('heading', { level: 1 })).toHaveLength(1);
+    expect(screen.getByRole('heading', { level: 1 }).textContent).toBe('Good evening, Asha');
     expect(screen.getByTestId('dashboard-profile-line').textContent).toBe('Board and class not set');
+    const next = screen.getByTestId('home-next');
+    expect(next.textContent).toBe('Pick a subject');
+    expect(next.getAttribute('href')).toBe('/learn');
+    expect(screen.getByTestId('dashboard-welcome')).toBeTruthy();
     expect(screen.getByTestId('prompt-class')).toBeTruthy();
     expect(screen.queryByTestId('prompt-school')).toBeNull();
     expect(screen.getByTestId('prompt-school-consent').querySelector('a')!.getAttribute('href')).toBe('/me/consent?next=%2Fme%2Fdashboard');
-    expect(screen.getByTestId('kpi-accuracy').getAttribute('data-value')).toBe('–');
-    expect(screen.getByTestId('mastery-tile').textContent).toContain('Set your board and class, or start any chapter');
-    expect(screen.getByTestId('tests-tile').textContent).toContain('Take a chapter test to see your scores here.');
-    expect(screen.getByTestId('focus-tile').textContent).toContain('Answer at least 3 practice questions');
-    expect(screen.getByTestId('recent-tile').textContent).toContain('will be listed here');
-    expect(screen.getByTestId('weekly-goal').getAttribute('data-target')).toBe('20');
-    // League: consent-gated, explained, no league request.
+    // No ring at 0/20, no continue card, no subjects without a class, no analytics.
+    const goal = screen.getByTestId('today-goal');
+    expect(goal.querySelector('[role="img"]')).toBeNull();
+    expect(goal.textContent).toContain('Solve 20 new practice questions');
+    expect(screen.queryByTestId('continue-card')).toBeNull();
+    expect(screen.queryByTestId('home-subjects')).toBeNull();
+    expect(screen.queryByTestId('kpis')).toBeNull();
+    expect(screen.queryByTestId('heatmap')).toBeNull();
+    expect(screen.queryByText(/Your stats/)).toBeNull();
+    expect(screen.getByTestId('progress-link').getAttribute('href')).toBe('/me/progress');
+    // League: consent-gated, explained, no league request; no AI card without AI.
     expect(screen.getByTestId('league-locked')).toBeTruthy();
     expect(h.api.get).not.toHaveBeenCalledWith('/v1/leagues/current');
+    expect(screen.queryByTestId('credits-tile')).toBeNull();
   });
 
-  it('active student: profile line with school, school prompt only when missing with consent, tests with marking tags, focus links', () => {
-    routeGets({ '/v1/leagues/current': { status: 'active', league: null, me: null } });
+  it('active student: continue to the lesson part, subjects, study modes, goal ring + week, league top five + You, challenge, upcoming mocks', async () => {
     h.session = { state: member(), openLogin: vi.fn(), updateUser: vi.fn() };
-    const d = activeDashboard();
-    const { unmount } = wrap(<DashboardView d={d} name={null} ai leagues {...loadingHooks} onProfileChanged={vi.fn()} />);
-    expect(screen.queryByTestId('dashboard-welcome')).toBeNull();
-    expect(screen.getByTestId('dashboard-profile-line').textContent).toBe("CBSE Class 10 · St. Mary's School, Mumbai");
+    h.progress = { progress: memberProgress(), ready: true, refresh: () => undefined };
+    h.api.get.mockImplementation((path: string, opts?: { params?: { id: string }; query?: Record<string, unknown> }) => {
+      if (path === '/v1/me/activity') return Promise.resolve(ACTIVITY_7);
+      if (path === '/v1/me/mastery') return Promise.resolve({ subjects: [{ subjectId: 'cbse-10-science', name: 'Science', classLevel: 10, score: 34, chapterCount: 13, levels: {}, chapters: [] }] });
+      if (path === '/v1/chapters/{id}' && opts?.params?.id === 'cbse-10-science-ch01') return Promise.resolve(HUB);
+      if (path === '/v1/coins/daily-challenge') return Promise.resolve(DAILY);
+      if (path === '/v1/leagues/current') return Promise.resolve(LEAGUE);
+      if (path === '/v1/live-events')
+        return Promise.resolve({
+          events: [
+            { id: 'past', title: 'Old mock', phase: 'results_published', subject: { id: 'cbse-10-science', name: 'Science' }, testId: 't', durationMin: 180, totalMarks: 80, registrationOpensAt: '2026-10-01T00:00:00Z', startsAt: '2026-10-02T04:30:00Z', lateStartUntil: '2026-10-02T05:00:00Z', endsAt: '2026-10-02T08:00:00Z', resultsPublishedAt: null, ranksBeta: false, me: null },
+            { id: 'live_1', title: 'Science full mock', phase: 'registration_open', subject: { id: 'cbse-10-science', name: 'Science' }, testId: 't', durationMin: 180, totalMarks: 80, registrationOpensAt: '2026-10-20T00:00:00Z', startsAt: '2026-10-31T04:30:00Z', lateStartUntil: '2026-10-31T05:00:00Z', endsAt: '2026-10-31T08:00:00Z', resultsPublishedAt: null, ranksBeta: false, me: { registered: true, attemptId: null, attemptStatus: null } },
+          ],
+        });
+      return new Promise(() => undefined);
+    });
+    wrap(<HomeView d={activeDashboard()} name="Asha" ai={false} leagues now={NOW} onProfileChanged={vi.fn()} />);
+    expect(screen.getByTestId('dashboard').hasAttribute('data-new')).toBe(false);
+    expect(screen.getByTestId('dashboard-profile-line').textContent).toBe("CBSE · Class 10 · St. Mary's School, Mumbai");
     expect(screen.queryByTestId('prompt-class')).toBeNull();
     expect(screen.queryByTestId('prompt-school')).toBeNull();
-    expect(screen.queryByTestId('prompt-school-consent')).toBeNull();
-    const rows = screen.getAllByTestId('test-row');
-    expect(rows.map((r) => [r.getAttribute('data-marking'), within(r).getByText(/marked$/).textContent])).toEqual([
-      ['auto', 'Auto-marked'],
-      ['self', 'Self-marked'],
+    // The one primary action: back into lesson part 2 once the hub says the lesson has 3 parts.
+    const next = screen.getByTestId('home-next');
+    expect(next.textContent).toBe('Continue Chapter 1');
+    await waitFor(() => expect(next.getAttribute('href')).toBe('/learn/cbse/10/science/ch01/lesson?part=2'));
+    expect(screen.getByRole('heading', { level: 1 }).nextElementSibling!.textContent).toBe('Good work: 3 days in a row.');
+    const cont = screen.getByTestId('continue-card');
+    expect(cont.getAttribute('href')).toBe('/learn/cbse/10/science/ch01');
+    expect(cont.textContent).toContain('Science · Chapter 1 · On part 2 of 3 · 4 answered');
+    expect(cont.textContent).toContain('1 of 3 parts done');
+    // Goal ring + week strip (IST days from the activity API).
+    const goal = screen.getByTestId('today-goal');
+    await waitFor(() => expect(within(goal).getByRole('list', { name: 'Study days this week' })).toBeTruthy());
+    expect(within(goal).getByRole('img').getAttribute('aria-label')).toBe('Weekly goal: 9 of 20 questions solved this week');
+    expect(goal.textContent).toContain('11 more to go');
+    expect(goal.textContent).toContain('Mon: studied');
+    expect(goal.textContent).toContain('Wed: today, studied');
+    // Subjects from the content list, mastery once it means something, chapters started as the bar.
+    const subjects = await screen.findByRole('list', { name: 'Your subjects' });
+    const cards = within(subjects).getAllByRole('link');
+    expect(cards.map((c) => c.getAttribute('href'))).toEqual(['/learn/cbse/10/science', '/learn/cbse/10/mathematics']);
+    expect(cards[0]!.getAttribute('data-tint')).toBe('green');
+    expect(cards[1]!.getAttribute('data-tint')).toBe('blue');
+    expect(cards[0]!.textContent).toContain('34% mastery');
+    expect(cards[0]!.textContent).toContain('1 of 13 chapters');
+    expect(cards[1]!.textContent).toContain('Not started yet');
+    // Study modes from the hub: a missing mode is "Coming soon", never a broken link.
+    const modes = screen.getByRole('list', { name: 'Study modes' });
+    expect(within(modes).getAllByRole('link').map((a) => a.getAttribute('href'))).toEqual([
+      '/learn/cbse/10/science/ch01/lesson',
+      '/learn/cbse/10/science/ch01/notes',
+      '/learn/cbse/10/science/ch01/practice',
+      '/tests',
     ]);
-    expect(rows[0]!.getAttribute('href')).toBe('/tests/result/11111111-1111-4111-8111-111111111111');
-    expect(screen.getByTestId('focus-practise').getAttribute('href')).toBe('/learn/cbse/10/science/ch01/practice');
-    expect(within(screen.getByTestId('focus-strongest')).getByText('Chapter 2: Acids, Bases and Salts')).toBeTruthy();
-    expect(screen.getAllByTestId('recent-row')).toHaveLength(4);
-    expect(screen.getByTestId('badge-tile').textContent).toContain('9 of 10');
-    expect(screen.getByTestId('league-card')).toBeTruthy();
-    expect(h.api.get).toHaveBeenCalledWith('/v1/leagues/current');
-    unmount();
+    expect(modes.textContent).toContain('Coming soon');
+    expect(modes.textContent).toContain('4 of 77 questions tried');
+    // League: top five and the student's own row, written as "You".
+    const league = await screen.findByRole('list', { name: 'Top five this week' });
+    expect(within(league).getAllByRole('listitem')).toHaveLength(6);
+    expect(league.textContent).toContain('A student');
+    expect(within(league).getAllByRole('listitem')[5]!.textContent).toContain('You');
+    expect(screen.getByTestId('league-card').textContent).toContain('You are #7 with 90 XP · Relegation zone');
+    // Daily challenge: solved rows say so; others open the solver (soft buttons, one primary per view).
+    const challenge = screen.getByTestId('home-challenge');
+    expect(challenge.textContent).toContain('+5 coins');
+    expect(within(challenge).getByRole('button', { name: 'Solve: Science daily challenge' })).toBeTruthy();
+    expect(within(challenge).getByText('Solved')).toBeTruthy();
+    // Upcoming: only mocks that can still be joined, in India time.
+    const live = await screen.findByTestId('home-live');
+    expect(within(live).getAllByRole('listitem')).toHaveLength(1);
+    expect(live.textContent).toContain('Sat31 Oct');
+    expect(live.textContent).toContain('10:00 · 3 h · 80 marks');
+    expect(live.textContent).toContain('Registered');
+    // Removed from Home: KPI row, difficulty, mastery, charts, focus, heatmap, recent, player card, header chips.
+    for (const id of ['kpis', 'difficulty-tile', 'mastery-tile', 'tests-tile', 'focus-tile', 'activity-card', 'recent-tile', 'card-preview', 'dashboard-streak']) expect(screen.queryByTestId(id)).toBeNull();
+    expect(screen.queryByRole('list', { name: 'Your stats' })).toBeNull();
+  });
 
+  it('school prompt only when missing; stage copy for a junior', () => {
+    h.session = { state: member(), openLogin: vi.fn(), updateUser: vi.fn() };
+    routeGets({});
+    const d = activeDashboard();
     const notSet = { ...d, profile: { ...d.profile, school: null, schoolStatus: 'not_set' as const, missing: ['school' as const] } };
-    wrap(<DashboardView d={notSet} name={null} ai leagues {...loadingHooks} onProfileChanged={vi.fn()} />);
+    wrap(<HomeView d={notSet} name="Asha" ai={false} leagues={false} now={null} onProfileChanged={vi.fn()} />);
     expect(screen.getByTestId('prompt-school').querySelector('a')!.getAttribute('href')).toBe('/me#school');
-    expect(screen.getByTestId('dashboard-profile-line').textContent).toBe('CBSE Class 10');
+    expect(screen.getByTestId('dashboard-profile-line').textContent).toBe('CBSE · Class 10');
+    // Before mount there is no hour: a neutral greeting, never a baked one.
+    expect(screen.getByRole('heading', { level: 1 }).textContent).toBe('Hi, Asha');
   });
 
-  it('level, XP, coins from the card and the streak from activity', () => {
-    const card = { status: 'ready' as const, data: { publicName: 'Brave Otter 123', avatar: { id: 'otter' as const, bg: 'sky' as const, isDefault: true }, level: 4, xp: 1250, coins: 37, overall: 55, tier: 'bronze' as const, provisional: true, formulaVersion: 1, attributes: [], asOfDay: '2026-10-28' } };
-    const activity = { status: 'ready' as const, data: { timezone: 'Asia/Kolkata' as const, from: '2026-06-11', to: '2026-10-28', days: 140, calendar: [], totals: { answered: 0, solved: 0, lessonsCompleted: 0, testsSubmitted: 0, activeDays: 0 }, streak: { current: 3, longest: 5, lastActiveDay: '2026-10-28', atRisk: false, freezeAvailableThisWeek: true }, activeDaysAllTime: 9 } };
-    wrap(<DashboardView d={activeDashboard()} name="Asha" ai={false} leagues={false} card={card} activity={activity} mastery={{ status: 'loading' }} onProfileChanged={vi.fn()} />);
-    const stats = screen.getByRole('list', { name: 'Your stats' });
-    expect(stats.textContent).toContain('3 day streak');
-    expect(stats.textContent).toContain('Level 4 · 1,250 XP');
-    expect(stats.textContent).toContain('37 coins');
-    expect(screen.getByTestId('heatmap')).toBeTruthy();
-  });
-
-  it('class prompt saves board and class, then reloads the dashboard', async () => {
+  it('class prompt saves board and class, then reloads Home', async () => {
     h.session = { state: member('required'), openLogin: vi.fn(), updateUser: vi.fn() };
+    routeGets({});
     h.api.patch.mockResolvedValue({ board: 'cbse', classLevel: 9 });
     const reload = vi.fn();
-    wrap(<DashboardView d={emptyDashboard()} name={null} ai={false} leagues={false} {...loadingHooks} onProfileChanged={reload} />);
+    wrap(<HomeView d={emptyDashboard()} name={null} ai={false} leagues={false} now={NOW} onProfileChanged={reload} />);
     const prompt = screen.getByTestId('prompt-class');
     fireEvent.click(within(prompt).getByTestId('prompt-class-save'));
     expect(within(prompt).getByRole('alert').textContent).toBe('Choose your board and your class.');
@@ -398,48 +508,33 @@ describe('DashboardView', () => {
     expect(h.api.patch).toHaveBeenCalledWith('/v1/me', { body: { board: 'cbse', classLevel: 9 } });
     expect(h.session.updateUser).toHaveBeenCalledWith({ board: 'cbse', classLevel: 9 });
   });
-
-  it('weekly goal edit: validation, PATCH, the ring follows the saved target', async () => {
-    h.session = { state: member(), openLogin: vi.fn(), updateUser: vi.fn() };
-    routeGets({});
-    h.api.patch.mockResolvedValue({ weeklyGoal: { target: 8, isDefault: false } });
-    wrap(<DashboardView d={activeDashboard()} name={null} ai={false} leagues={false} {...loadingHooks} onProfileChanged={vi.fn()} />);
-    const tile = screen.getByTestId('weekly-goal');
-    fireEvent.click(within(tile).getByTestId('goal-change'));
-    const input = within(tile).getByLabelText('Questions to solve each week');
-    fireEvent.change(input, { target: { value: '3' } });
-    fireEvent.click(within(tile).getByTestId('goal-save'));
-    expect(tile.textContent).toContain('Choose a goal from 5 to 300 questions.');
-    expect(h.api.patch).not.toHaveBeenCalled();
-    fireEvent.change(input, { target: { value: '8' } });
-    fireEvent.click(within(tile).getByTestId('goal-save'));
-    await waitFor(() => expect(tile.getAttribute('data-target')).toBe('8'));
-    expect(h.api.patch).toHaveBeenCalledWith('/v1/me', { body: { weeklyGoal: 8 } });
-    expect(tile.textContent).toContain('Goal met.');
-    expect(within(tile).getByRole('img').getAttribute('aria-label')).toBe('Weekly goal: 9 of 8 questions solved this week');
-  });
 });
 
 describe('DashboardClient', () => {
-  it('a member who never consented gets the AI credits tile and the league (D-052)', async () => {
+  it('a member who never consented gets the AI credits card (with its guide) and the league (D-052)', async () => {
     h.session = { state: member('required'), openLogin: vi.fn(), updateUser: vi.fn() };
-    h.credits = { credits: null, aiAllowed: true };
+    const openGuide = vi.fn();
+    h.credits = { credits: { balance: 50, bonusToday: 0 }, aiAllowed: true, openGuide } as typeof h.credits;
     h.api.get.mockImplementation((path: string) => {
       if (path === '/v1/me/dashboard') return Promise.resolve(activeDashboard());
-      if (path === '/v1/leagues/current') return Promise.resolve({ status: 'active', league: null, me: null });
+      if (path === '/v1/leagues/current') return Promise.resolve({ status: 'active', league: null, standings: [], me: null });
       return new Promise(() => undefined);
     });
     wrap(<DashboardClient />);
     expect(await screen.findByTestId('dashboard')).toBeTruthy();
-    expect(screen.getByTestId('credits-tile')).toBeTruthy();
+    const credits = screen.getByTestId('credits-tile');
+    expect(credits.textContent).toContain('50 credits left today');
+    fireEvent.click(within(credits).getByTestId('dashboard-credit-guide'));
+    expect(openGuide).toHaveBeenCalled();
     expect(screen.queryByTestId('league-locked')).toBeNull();
     await waitFor(() => expect(h.api.get).toHaveBeenCalledWith('/v1/leagues/current'));
   });
 
-  it('guests: sign-in prompt that returns to the dashboard, and the progress on this device', () => {
+  it('guests: sign-in prompt that returns to Home, and the progress on this device', () => {
     h.progress = { progress: { source: 'device', lessonsCompleted: 2, practiceAnswered: 5, practiceCorrect: 3, subjects: [], chapters: {}, streak: null, xp: null, level: null, levelProgress: null, accuracy: 0.6 }, ready: true, refresh: () => undefined };
     wrap(<DashboardClient />);
     expect(screen.getByTestId('dashboard-guest')).toBeTruthy();
+    expect(screen.getAllByRole('heading', { level: 1 })).toHaveLength(1);
     expect(screen.getByTestId('device-progress').textContent).toContain('2 lessons done');
     fireEvent.click(screen.getByTestId('dashboard-login'));
     expect(h.session.openLogin).toHaveBeenCalledWith(expect.objectContaining({ returnTo: '/me/dashboard' }));
@@ -460,11 +555,11 @@ describe('DashboardClient', () => {
     });
     wrap(<DashboardClient />);
     expect(screen.getByTestId('dashboard-loading')).toBeTruthy();
-    expect(await screen.findByText('We could not load your dashboard')).toBeTruthy();
+    expect(await screen.findByText('We could not load your home')).toBeTruthy();
     fail = false;
     fireEvent.click(screen.getByRole('button', { name: 'Try again' }));
     expect(await screen.findByTestId('dashboard')).toBeTruthy();
-    expect(screen.getByTestId('kpi-solved').getAttribute('data-value')).toBe('9');
+    expect(screen.getByTestId('today-goal').querySelector('[data-progress]')!.getAttribute('data-progress')).toBe('9');
   });
 });
 

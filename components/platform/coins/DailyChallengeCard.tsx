@@ -105,7 +105,7 @@ export function DailyChallengeCard({ board, classLevel }: DailyChallengeCardProp
                   Solved
                 </Badge>
               )}
-              <Button size="sm" variant={solved ? 'ghost' : 'primary'} onClick={() => setOpen(c)} aria-label={`${solved ? 'Solve again' : 'Solve'}: ${c.subjectName} daily challenge`}>
+              <Button size="sm" variant={solved ? 'ghost' : 'soft'} onClick={() => setOpen(c)} aria-label={`${solved ? 'Solve again' : 'Solve'}: ${c.subjectName} daily challenge`}>
                 {solved ? 'Again' : 'Solve'}
               </Button>
             </li>

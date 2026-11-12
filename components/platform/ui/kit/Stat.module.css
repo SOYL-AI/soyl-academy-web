@@ -1,0 +1,87 @@
+/* StatCard / StatGrid (design language v3, ADR-032). */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--p-stage-gap);
+}
+@media (min-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+}
+.stat {
+  display: grid;
+  align-content: start;
+  gap: var(--p-space-1);
+  min-width: 0;
+  padding: var(--p-space-4);
+  border: 1px solid var(--p-card-border);
+  border-radius: var(--p-stage-card-radius, var(--p-radius-xl));
+  background: var(--p-surface);
+  box-shadow: var(--p-shadow-card);
+  color: var(--p-ink);
+  text-decoration: none;
+}
+@media (min-width: 640px) {
+  .stat {
+    padding: var(--p-space-5);
+  }
+}
+.link {
+  transition: box-shadow var(--p-duration-base) var(--p-ease), transform var(--p-duration-base) var(--p-ease);
+}
+.link:hover {
+  box-shadow: var(--p-shadow-2);
+  transform: translateY(-1px);
+}
+.link:focus-visible {
+  outline: none;
+  box-shadow: var(--p-focus-ring);
+}
+.top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--p-space-2);
+  min-height: 32px;
+}
+.label {
+  color: var(--p-ink-muted);
+  font-size: var(--p-text-sm);
+  font-weight: 600;
+  line-height: 1.3;
+}
+.value {
+  margin: 0;
+  font-size: var(--p-text-3xl);
+  font-weight: var(--p-weight-display);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+}
+.unit {
+  color: var(--p-ink-subtle);
+  font-size: var(--p-text-md);
+  font-weight: 600;
+  letter-spacing: 0;
+}
+.trend {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin: 0;
+  color: var(--p-ink-muted);
+  font-size: var(--p-text-xs);
+  font-weight: 650;
+}
+.trend[data-direction='up'] {
+  color: var(--p-success);
+}
+.trend[data-direction='down'] {
+  color: var(--p-danger);
+}
+.hint {
+  margin: 0;
+  color: var(--p-ink-subtle);
+  font-size: var(--p-text-xs);
+}

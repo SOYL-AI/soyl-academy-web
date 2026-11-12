@@ -1,52 +1,15 @@
 'use client';
 
 /**
- * Dashboard charts (D-043): hand-made inline SVG and CSS with the platform tokens, no chart library.
- * Every chart has a text alternative (a summary sentence and, for the score trend, a visually hidden table),
- * never relies on colour alone (each difficulty row and each bar is labelled in text; self-marked bars are
- * hatched as well as lighter), and reads its colours from tokens, so it follows the Light / Dark theme.
+ * The test score chart (D-043; on Progress since design language v3): hand-made inline SVG with the platform
+ * tokens, no chart library. It has a text alternative (a summary sentence and a visually hidden table), never
+ * relies on colour alone (self-marked bars are hatched as well as lighter), and follows the Light / Dark theme.
+ * Progress shows it only from 3 marked tests (no chart without data).
  */
 import { useEffect, useRef, useState, type RefObject } from 'react';
-import type { SolvedByDifficulty } from '@/platform/shared/api-client';
-import { ProgressRing } from '@/components/platform/ui/kit/Mastery';
 import { dayLabel } from '../me/heatmap-model';
-import { difficultyView, fmtPct, trendSummary, type TrendPoint } from './model';
+import { fmtPct, trendSummary, type TrendPoint } from './model';
 import s from './dashboard.module.css';
-
-/* ── Solved by difficulty: overall ring + Easy / Medium / Hard bars (LeetCode) ─────────────────────── */
-
-export function DifficultyChart({ data }: { data: SolvedByDifficulty }) {
-  const v = difficultyView(data);
-  return (
-    <figure className={s.diff} data-testid="difficulty-chart" data-solved={v.solved}>
-      <ProgressRing value={v.percent} size={112} stroke={9} label={v.summary} className={s.diffRing}>
-        <span className={s.ringStack}>
-          <span className={s.ringBig}>{v.solved.toLocaleString('en-IN')}</span>
-          <span className={s.ringSmall}>of {v.total.toLocaleString('en-IN')}</span>
-          <span className={s.ringSmall}>solved</span>
-        </span>
-      </ProgressRing>
-      <ul className={s.diffRows}>
-        {v.rows.map((r) => (
-          <li key={r.band} data-band={r.band}>
-            <span className={s.diffHead}>
-              <span className={s.diffLabel} data-band={r.band}>
-                {r.label}
-              </span>
-              <span className={s.diffCount}>
-                <b>{r.solved.toLocaleString('en-IN')}</b>/{r.total.toLocaleString('en-IN')}
-              </span>
-            </span>
-            <span className={s.diffTrack} aria-hidden="true">
-              <span className={s.diffFill} data-band={r.band} style={{ width: `${r.percent}%` }} />
-            </span>
-          </li>
-        ))}
-      </ul>
-      <figcaption className="p-visually-hidden">{v.summary}</figcaption>
-    </figure>
-  );
-}
 
 /* ── Test score trend: one bar per marked attempt, oldest → newest ─────────────────────────────────── */
 

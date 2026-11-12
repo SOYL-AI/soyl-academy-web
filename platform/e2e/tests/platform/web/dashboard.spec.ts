@@ -5,10 +5,11 @@ import { acceptAllCookies, expect, openLoginFromHeader, signInWithEmail, test, u
 import { authoredQuestions, checkPage, signUp, startCh02Short } from './m34-helpers';
 
 /**
- * D-043: the student dashboard (/me/dashboard, short link /dashboard) and the school + weekly goal on /me.
- * Real local API (GET /v1/me/dashboard, /v1/schools, PATCH /v1/me), the default landing after login, axe and
- * 360 px (layout viewport too) in light and dark, the school (no consent needed, D-052), and the owner screenshots
- * (test-results/platform-web/dashboard/{desktop,mobile}-{light,dark}-dashboard.png).
+ * D-043 + design language v3: Home (/me/dashboard, short link /dashboard) and the analytics it hands to Progress
+ * (/me/progress), the school + weekly goal on /me. Real local API (GET /v1/me/dashboard, /v1/schools, PATCH /v1/me),
+ * the default landing after login, axe and 360 px (layout viewport too) in light and dark, the school (no consent
+ * needed, D-052), and the owner screenshots (test-results/platform-web/dashboard/{desktop,mobile}-{light,dark}-*.png).
+ * progress.spec.ts covers Progress itself (guests, sections, links, widths).
  */
 const OUT = resolve(import.meta.dirname, '../../../test-results/platform-web/dashboard');
 mkdirSync(OUT, { recursive: true });
@@ -86,7 +87,7 @@ async function setClass(page: Page) {
   await prompt.getByTestId('prompt-class-save').click();
   await reload;
   await expect(page.getByTestId('prompt-class')).toHaveCount(0);
-  await expect(page.getByTestId('dashboard-profile-line')).toHaveText(/^CBSE Class 10/);
+  await expect(page.getByTestId('dashboard-profile-line')).toHaveText(/^CBSE · Class 10/);
 }
 
 test.describe('D-043 dashboard', () => {
@@ -130,40 +131,57 @@ test.describe('D-043 dashboard', () => {
     await expect(page.getByTestId('dashboard')).toBeVisible();
   });
 
-  test('sign up, set the class, practise: solved, accuracy, difficulty, goal, activity and recent show it; axe + 360 px light and dark', async ({ page, baseURL }) => {
+  test('sign up, set the class, practise: Home shows the next step and the week, Progress the numbers; goal edit; axe + 360 px light and dark', async ({ page, baseURL }) => {
     test.setTimeout(8 * 60_000);
     await signUp(page, 'dash', '/learn');
     await expect(page).toHaveURL(/\/me\/dashboard$/);
 
-    // Brand-new account: empty states, the class prompt and (D-052: no consent needed) the school prompt and the league.
+    // Brand-new account: a clean welcome with one way in, the class prompt, (D-052: no consent needed) the school prompt.
     const dash = page.getByTestId('dashboard');
     await expect(dash).toHaveAttribute('data-new', 'true');
     await expect(page.getByTestId('dashboard-welcome')).toBeVisible();
-    await expect(page.getByTestId('kpi-solved')).toHaveAttribute('data-value', '0');
+    await expect(page.locator('h1')).toHaveCount(1);
+    await expect(page.getByTestId('home-next')).toHaveText('Pick a subject');
+    await expect(page.getByTestId('today-goal')).toContainText('Solve 20 new practice questions');
     await expect(page.getByTestId('prompt-school')).toBeVisible();
     await expect(page.getByTestId('prompt-school-consent')).toHaveCount(0);
     await expect(page.getByTestId('league-locked')).toHaveCount(0);
+    // The analytics live on Progress now (ADR-032): no KPI row, charts, heatmap or header chips on Home.
+    for (const id of ['kpis', 'difficulty-chart', 'heatmap', 'dashboard-streak', 'card-preview']) await expect(page.getByTestId(id)).toHaveCount(0);
     await checkPage(page);
     await setClass(page);
+    await expect(page.getByTestId('home-next')).toHaveAttribute('href', '/learn/cbse/10');
+    await expect(page.getByTestId('home-subjects').getByRole('link', { name: /Science/ }).first()).toBeVisible();
 
     await solveOneMcq(page);
     await solveOneMcq(page, 1);
 
     await page.goto('/me/dashboard', { waitUntil: 'networkidle' });
     await expect(dash).not.toHaveAttribute('data-new', /.*/);
-    const solved = Number(await page.getByTestId('kpi-solved').getAttribute('data-value'));
+    // The one primary action continues the chapter the student was practising; the week strip lights today.
+    await expect(page.getByTestId('home-next')).toHaveAttribute('href', /^\/learn\/cbse\/10\/science\/ch01(\/|$)/);
+    await expect(page.getByTestId('continue-card')).toHaveAttribute('href', CH01);
+    await expect(page.getByTestId('home-modes').getByRole('link', { name: /Practice/ })).toHaveAttribute('href', `${CH01}/practice`);
+    await expect(page.getByTestId('today-goal').getByRole('list', { name: 'Study days this week' })).toContainText('today, studied');
+    const solved = Number(await page.getByTestId('today-goal').locator('[data-progress]').getAttribute('data-progress'));
     expect(solved).toBeGreaterThanOrEqual(1);
-    await expect(page.getByTestId('kpi-accuracy')).not.toHaveAttribute('data-value', '–');
-    expect(Number(await page.getByTestId('difficulty-chart').getAttribute('data-solved'))).toBe(solved);
-    await expect(page.getByTestId('weekly-goal')).toHaveAttribute('data-progress', String(solved));
-    await expect(page.getByTestId('kpi-active')).toHaveAttribute('data-value', '1/7');
-    await expect(page.getByTestId('recent-row').first()).toHaveAttribute('data-kind', 'practice');
-    await expect(page.getByTestId('heatmap')).toBeVisible();
-    await expect(page.getByTestId('heatmap').getByRole('img')).toHaveAttribute('aria-label', /^Activity heatmap: 1 active day/);
-    await expect(page.getByTestId('dashboard-streak')).toContainText('1 day streak');
 
-    // Weekly goal: change it on the dashboard; the ring follows.
+    // Progress has the numbers that left Home.
+    await page.getByTestId('progress-link').click();
+    await expect(page).toHaveURL(/\/me\/progress$/);
+    await expect(page.getByTestId('kpi-solved')).toHaveAttribute('data-value', String(solved));
+    await expect(page.getByTestId('kpi-accuracy')).toHaveAttribute('data-value', /^\d+%$/);
+    expect(Number(await page.getByTestId('difficulty-chart').getAttribute('data-solved'))).toBe(solved);
+    await expect(page.getByTestId('kpi-days')).toHaveAttribute('data-value', '1/7');
+    await expect(page.locator('[data-testid^="recent-row-"]').first()).toHaveAttribute('data-testid', 'recent-row-practice');
+    // One active day: this week's strip, not an empty 140-day heatmap.
+    await expect(page.getByTestId('heatmap')).toHaveCount(0);
+    await expect(page.getByTestId('activity-card').getByRole('list', { name: 'Study days this week' })).toBeVisible();
+    await expect(page.getByTestId('progress-streak')).toContainText('1 day streak');
+
+    // Weekly goal: change it on Progress; the ring and Home follow.
     const goal = page.getByTestId('weekly-goal');
+    await expect(goal.locator('[data-progress]')).toHaveAttribute('data-progress', String(solved));
     await goal.getByTestId('goal-change').click();
     await goal.getByLabel('Questions to solve each week').fill('3');
     await goal.getByTestId('goal-save').click();
@@ -172,17 +190,22 @@ test.describe('D-043 dashboard', () => {
     const patch = page.waitForResponse((r) => r.url().endsWith('/api/platform/v1/me') && r.request().method() === 'PATCH');
     await goal.getByTestId('goal-save').click();
     expect((await patch).status()).toBe(200);
-    await expect(goal).toHaveAttribute('data-target', '5');
+    await expect(goal.locator('[data-target]')).toHaveAttribute('data-target', '5');
     await page.reload({ waitUntil: 'networkidle' });
-    await expect(goal).toHaveAttribute('data-target', '5');
+    await expect(goal.locator('[data-target]')).toHaveAttribute('data-target', '5');
+    await page.goto('/me/dashboard', { waitUntil: 'networkidle' });
+    await expect(page.getByTestId('today-goal').locator('[data-target]')).toHaveAttribute('data-target', '5');
 
     for (const theme of ['light', 'dark'] as const) {
       await setTheme(page, baseURL, theme);
-      await page.goto('/me/dashboard', { waitUntil: 'networkidle' });
-      await expect(root(page)).toHaveAttribute('data-theme', theme);
-      await expect(page.getByTestId('kpis')).toBeVisible();
-      await checkPage(page);
-      expect(await page.evaluate(() => window.innerWidth), theme).toBe(360);
+      for (const path of ['/me/dashboard', '/me/progress']) {
+        await page.goto(path, { waitUntil: 'networkidle' });
+        await expect(root(page)).toHaveAttribute('data-theme', theme);
+        await expect(page.getByTestId(path === '/me/dashboard' ? 'today-goal' : 'kpi-solved')).toBeVisible();
+        await expect(page.locator('h1')).toHaveCount(1);
+        await checkPage(page);
+        expect(await page.evaluate(() => window.innerWidth), `${path} ${theme}`).toBe(360);
+      }
     }
 
     // /learn for members: continue + the way to the dashboard (the metrics moved there).
@@ -257,7 +280,7 @@ test.describe('D-043 dashboard', () => {
 /* ── Owner screenshots: desktop 1280 (full page) / mobile 360 (first screen) × light / dark ───────────── */
 
 test.describe('D-043 screenshots', () => {
-  test('dashboard with a little real activity', async ({ page, baseURL }) => {
+  test('Home and Progress with a little real activity', async ({ page, baseURL }) => {
     test.setTimeout(10 * 60_000);
     await signUp(page, 'dash-shots', '/me');
     await page.getByLabel('Display name').fill('Asha');
@@ -287,13 +310,15 @@ test.describe('D-043 screenshots', () => {
         await page.setViewportSize({ width: v.width, height: v.height });
         for (const [shot, path] of [
           ['dashboard', '/me/dashboard'],
+          ['progress', '/me/progress'],
           ['learn-member', '/learn'],
           ['me', '/me'],
         ] as const) {
           await page.goto(path, { waitUntil: 'load' });
           await page.waitForLoadState('networkidle', { timeout: 15_000 }).catch(() => undefined);
           await expect(root(page)).toHaveAttribute('data-theme', theme);
-          if (shot === 'dashboard') await expect(page.getByTestId('score-trend')).toBeVisible();
+          if (shot === 'dashboard') await expect(page.getByTestId('continue-card')).toBeVisible();
+          if (shot === 'progress') await expect(page.getByTestId('test-row')).toHaveCount(1);
           await page.evaluate(() => document.fonts.ready);
           await page.waitForTimeout(400);
           if (v.name === 'mobile') {

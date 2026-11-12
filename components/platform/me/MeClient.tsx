@@ -5,6 +5,9 @@
  * D-043, D-052), the public leaderboard name (D-039), parent approval for paid plans and its status (D-052, D-039:
  * ConsentFlow), sign-in methods, sign out (WEB-9), sign out other devices, account deletion (DELETE /v1/me,
  * needs a fresh session: AUTH-9).
+ * Design language v3 (ADR-032 §10 "Profile"): a plain greeting with the avatar, then cards in order: profile and
+ * school, avatar, appearance, public name, AI credits, badges, tests, plan and approval, account. The learning
+ * analytics (card, heatmap, solved by subject) moved to /me/progress; the rail keeps a short summary (#activity).
  */
 import dynamic from 'next/dynamic';
 import { useRouter } from 'next/navigation';
@@ -13,14 +16,18 @@ import { isApiError, type Me } from '@/platform/shared/api-client';
 import { DISPLAY_NAME } from '@/platform/shared/config/security';
 import { Button } from '@/components/platform/ui/kit/Button';
 import { Dialog } from '@/components/platform/ui/kit/Dialog';
-import { Badge, Card, CardTitle, EmptyState, Skeleton } from '@/components/platform/ui/kit/Display';
+import { ButtonLink } from '@/components/platform/ui/kit/ButtonLink';
+import { Card, CardTitle, EmptyState, SkeletonCard } from '@/components/platform/ui/kit/Display';
 import { AnimalAvatar } from '@/components/platform/ui/kit/AnimalAvatar';
+import { GreetingHeader } from '@/components/platform/ui/kit/Greeting';
+import { StatusPill } from '@/components/platform/ui/kit/Lists';
+import { PageColumns } from '@/components/platform/ui/kit/Page';
 import { TextInput } from '@/components/platform/ui/kit/Field';
 import { useToast } from '@/components/platform/ui/kit/Toast';
 import { useSession } from '../auth/SessionProvider';
 import { ConsentFlow } from '../consent/ConsentFlow';
 import { CreditsCard, MyAttemptsCard, SubscriptionCard } from './MeExtras';
-import { AppearanceCard, MeInsights } from './MeInsights';
+import { ActivitySummary, AppearanceCard, BadgesSection } from './MeInsights';
 import { AvatarCard } from './AvatarCard';
 import { useMyAvatar } from './MyAvatarProvider';
 import { WeeklyGoalEditor } from '../dashboard/WeeklyGoalEditor';
@@ -32,7 +39,7 @@ import { BOARDS, BOARD_NAMES, CLASS_LEVELS, examLabel, learnPath, type BoardSlug
 import { maskedPhone } from '../lib/phone';
 import { problemMessage } from '../lib/problems';
 import { googleStartUrl } from '../lib/return-to';
-import shell from '../shell/shell.module.css';
+import { useStage } from '../shell/StageProvider';
 import s from './me.module.css';
 
 function maskEmailForDisplay(email: string): string {
@@ -64,9 +71,10 @@ export function MeClient() {
   if (state.status === 'loading' || (state.status === 'member' && !me && !loadError)) {
     return (
       <>
-        <h1 className={shell.title}>Your profile</h1>
-        <div className={s.stack} aria-busy="true">
-          <Skeleton variant="text" lines={3} />
+        <GreetingHeader title="Your profile" />
+        <div className={s.stack} aria-busy="true" aria-label="Loading your profile">
+          <SkeletonCard thumb lines={3} />
+          <SkeletonCard lines={2} />
         </div>
       </>
     );
@@ -75,14 +83,18 @@ export function MeClient() {
   if (state.status === 'guest') {
     return (
       <>
-        <h1 className={shell.title}>Your profile</h1>
-        <EmptyState
-          title="Log in to see your profile"
-          headingLevel="h2"
-          action={<Button onClick={() => openLogin({ returnTo: '/me', reason: 'Log in to see your profile, progress and settings.' })}>Log in</Button>}
-        >
-          Your board, class and progress are saved to your account.
-        </EmptyState>
+        <GreetingHeader title="Your profile" subtitle="Your board, class, avatar and settings, in one place." />
+        <Card className={s.guestCard}>
+          <EmptyState
+            title="Log in to see your profile"
+            headingLevel="h2"
+            icon="user"
+            tint="blue"
+            action={<Button onClick={() => openLogin({ returnTo: '/me', reason: 'Log in to see your profile, progress and settings.' })}>Log in</Button>}
+          >
+            Your board, class and progress are saved to your account. Lessons, practice and tests stay free.
+          </EmptyState>
+        </Card>
       </>
     );
   }
@@ -90,8 +102,8 @@ export function MeClient() {
   if (!me) {
     return (
       <>
-        <h1 className={shell.title}>Your profile</h1>
-        <EmptyState title="We could not load your profile" icon="alert" headingLevel="h2" action={<Button variant="secondary" onClick={() => void load()}>Try again</Button>}>
+        <GreetingHeader title="Your profile" />
+        <EmptyState title="We could not load your profile" icon="alert" tint="red" headingLevel="h2" action={<Button variant="secondary" onClick={() => void load()}>Try again</Button>}>
           {loadError}
         </EmptyState>
       </>
@@ -103,46 +115,52 @@ export function MeClient() {
 
 function Profile({ me, onChange }: { me: Me; onChange: (me: Me) => void }) {
   const { signOut } = useSession();
+  const { pick } = useStage();
   const name = me.displayName?.trim() || 'Student';
+  const where = me.board && me.classLevel ? `${examLabel(me.board, me.classLevel)} · Class ${me.classLevel}` : null;
   return (
     <>
-      <div className={s.hero}>
-        <AnimalAvatar avatar={me.avatar} size={64} decorative />
-        <div>
-          <h1 className={shell.title}>{name}</h1>
-          <p className={shell.lead}>
-            {me.board && me.classLevel ? `${examLabel(me.board, me.classLevel)} Class ${me.classLevel}` : 'Choose your board and class below'}
-          </p>
-        </div>
-      </div>
-      <MeInsights />
-      <h2 className={s.settingsTitle}>Settings</h2>
-      <div className={s.stack}>
-        <div id="consent">
-          {/* Leaving 'granted' clears the school on the server (builtin withdrawal), so it goes here too; never-consented accounts keep it (D-052). */}
-          <ConsentFlow onChanged={(v) => onChange({ ...me, consent: v.status, school: me.consent === 'granted' && v.status !== 'granted' ? null : me.school })} />
-        </div>
-        <ProfileForm me={me} onSaved={onChange} />
-        <AvatarCard me={me} onChange={onChange} />
-        <AppearanceCard />
-        <PublicName me={me} onChange={onChange} />
-        <MyAttemptsCard />
-        <SubscriptionCard />
-        <CreditsCard />
-        <Methods me={me} />
-        <Card as="section" aria-labelledby="signout-title">
-          <CardTitle as="h2" id="signout-title">
-            Sign out
-          </CardTitle>
-          <div className={s.actions}>
-            <Button variant="secondary" onClick={() => void signOut()} data-testid="logout-button">
-              Log out
-            </Button>
-            <SignOutOthers />
+      <GreetingHeader
+        eyebrow={where ?? 'Choose your board and class below'}
+        title={name}
+        subtitle={pick({
+          junior: 'Your profile, your avatar and your badges. Make it yours.',
+          middle: 'Your profile, settings and badges.',
+          senior: 'Profile, settings and account.',
+        })}
+        art={<AnimalAvatar avatar={me.avatar} size={96} decorative />}
+        className={s.profileHeader}
+        data-testid="profile-header"
+      />
+      <PageColumns rail={<ActivitySummary />} railLabel="Your learning at a glance">
+        <div className={s.stack}>
+          <ProfileForm me={me} onSaved={onChange} />
+          <AvatarCard me={me} onChange={onChange} />
+          <AppearanceCard />
+          <PublicName me={me} onChange={onChange} />
+          <CreditsCard />
+          <BadgesSection />
+          <MyAttemptsCard />
+          <SubscriptionCard />
+          <div id="consent" className={s.anchor}>
+            {/* Leaving 'granted' clears the school on the server (builtin withdrawal), so it goes here too; never-consented accounts keep it (D-052). */}
+            <ConsentFlow onChanged={(v) => onChange({ ...me, consent: v.status, school: me.consent === 'granted' && v.status !== 'granted' ? null : me.school })} />
           </div>
-        </Card>
-        <DeleteAccount />
-      </div>
+          <Methods me={me} />
+          <Card as="section" aria-labelledby="signout-title">
+            <CardTitle as="h2" id="signout-title">
+              Sign out
+            </CardTitle>
+            <div className={s.actions}>
+              <Button variant="secondary" onClick={() => void signOut()} data-testid="logout-button">
+                Log out
+              </Button>
+              <SignOutOthers />
+            </div>
+          </Card>
+          <DeleteAccount />
+        </div>
+      </PageColumns>
     </>
   );
 }
@@ -192,9 +210,9 @@ function ProfileForm({ me, onSaved }: { me: Me; onSaved: (me: Me) => void }) {
   }
 
   return (
-    <Card as="section" aria-labelledby="profile-title">
+    <Card as="section" aria-labelledby="profile-title" id="profile">
       <CardTitle as="h2" id="profile-title">
-        Profile
+        Profile and school
       </CardTitle>
       <form className={s.form} onSubmit={save} noValidate>
         <TextInput
@@ -249,9 +267,9 @@ function ProfileForm({ me, onSaved }: { me: Me; onSaved: (me: Me) => void }) {
             Save
           </Button>
           {me.board && me.classLevel && (
-            <a className={s.textLink} href={learnPath(me.board, me.classLevel)}>
+            <ButtonLink href={learnPath(me.board, me.classLevel)} variant="ghost" iconEnd="arrowRight">
               Go to my subjects
-            </a>
+            </ButtonLink>
           )}
         </div>
       </form>
@@ -276,17 +294,17 @@ function Methods({ me }: { me: Me }) {
       <ul className={s.methods}>
         <li>
           <span>Phone</span>
-          <span>{me.methods.phone ? maskedPhone(me.methods.phone) : <Badge>Not added</Badge>}</span>
+          <span>{me.methods.phone ? maskedPhone(me.methods.phone) : <StatusPill>Not added</StatusPill>}</span>
         </li>
         <li>
           <span>Email</span>
-          <span>{me.methods.email ? maskEmailForDisplay(me.methods.email) : <Badge>Not added</Badge>}</span>
+          <span>{me.methods.email ? maskEmailForDisplay(me.methods.email) : <StatusPill>Not added</StatusPill>}</span>
         </li>
         <li>
           <span>Google</span>
           <span>
             {me.methods.google ? (
-              <Badge tone="success">Connected</Badge>
+              <StatusPill tone="success">Connected</StatusPill>
             ) : (
               <a className={s.textLink} href={googleStartUrl('/me', 'link')}>
                 Connect Google

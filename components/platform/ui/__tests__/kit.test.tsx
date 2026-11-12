@@ -15,6 +15,7 @@ import { ToastProvider, useToast } from '../kit/Toast';
 import { createSvgSanitizer } from '../render/sanitize-svg';
 import { INK as AVATAR_ART_INK } from '../art/avatar-art';
 import { AVATAR_BACKGROUND_IDS } from '@/platform/shared/config/avatars';
+import { TINT_NAMES } from '../kit/tints';
 
 describe('Button', () => {
   it('loading: aria-busy, cannot submit or fire', () => {
@@ -232,6 +233,14 @@ describe('design tokens', () => {
     ]),
     // Avatar backgrounds (2026-10-29): the avatar ink (initials, icons on a swatch) is AA on every theme colour.
     ...AVATAR_BACKGROUND_IDS.map((bg) => ['--p-avatar-ink', `--p-avatar-${bg}`] as [string, string]),
+    // v3 (ADR-032): every text colour and the cobalt link colour on every tint, each tint's own ink on its fill,
+    // and the quieter canvases (brand paper, wells).
+    ...TINT_NAMES.flatMap((t) =>
+      [`--p-tint-${t}-ink`, '--p-ink', '--p-ink-muted', '--p-ink-subtle', '--p-accent'].map((fg) => [fg, `--p-tint-${t}`] as [string, string]),
+    ),
+    ...(['--p-paper', '--p-surface-2', '--p-surface-3'] as const).flatMap((bg) =>
+      ['--p-ink', '--p-ink-muted', '--p-ink-subtle', '--p-accent'].map((fg) => [fg, bg] as [string, string]),
+    ),
   ];
   const GRAPHIC_PAIRS: Array<[string, string]> = [
     ['--p-border-strong', '--p-surface'],
@@ -264,6 +273,24 @@ describe('design tokens', () => {
     const theme = themeName === 'light' ? light : dark;
     expect(theme[`--p-avatar-${bg}`]).toMatch(/^#[0-9a-f]{6}$/i);
     expect(ratio(AVATAR_ART_INK, theme[`--p-avatar-${bg}`])).toBeGreaterThanOrEqual(3);
+  });
+
+  it.each(TINT_NAMES.flatMap((t) => [['light', t], ['dark', t]] as const))('%s: tint %s is defined with its ink', (themeName, t) => {
+    const theme = themeName === 'light' ? light : dark;
+    expect(theme[`--p-tint-${t}`]).toMatch(/^#[0-9a-f]{6}$/i);
+    expect(theme[`--p-tint-${t}-ink`]).toMatch(/^#[0-9a-f]{6}$/i);
+  });
+
+  it('age stages (ADR-032): junior and senior retune only --p-stage-* tokens, scoped to the platform', () => {
+    for (const stage of ['junior', 'senior']) {
+      // \r?\n: Windows checkouts (core.autocrlf) have CRLF line endings.
+      const m = new RegExp(`\\.soyl-platform \\[data-stage="${stage}"\\],\\r?\\n\\.soyl-platform\\[data-stage="${stage}"\\] \\{([\\s\\S]*?)\\r?\\n\\}`).exec(css);
+      expect(m, stage).not.toBeNull();
+      const names = [...m![1].matchAll(/(--[\w-]+):/g)].map((x) => x[1]);
+      expect(names.length).toBeGreaterThan(3);
+      for (const n of names) expect(n).toMatch(/^--p-stage-/);
+      for (const n of names) expect(css).toContain(`  ${n}: `); // every stage token has a default (middle)
+    }
   });
 
   it('dark media-query block matches the forced dark block', () => {

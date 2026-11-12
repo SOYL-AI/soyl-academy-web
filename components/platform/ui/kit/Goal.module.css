@@ -1,0 +1,104 @@
+/* GoalRing and WeekStrip (design language v3, ADR-032). */
+.goal {
+  display: flex;
+  align-items: center;
+  gap: var(--p-space-4);
+  min-width: 0;
+}
+.ring {
+  flex: none;
+}
+.center {
+  display: grid;
+  justify-items: center;
+  gap: 2px;
+}
+.numbers {
+  display: inline-flex;
+  align-items: baseline;
+  font-variant-numeric: tabular-nums;
+}
+.numbers b {
+  font-size: var(--p-text-2xl);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+.of {
+  color: var(--p-ink-subtle);
+  font-size: var(--p-text-md);
+  font-weight: 650;
+}
+.unit {
+  color: var(--p-ink-subtle);
+  font-size: var(--p-text-xs);
+  font-weight: 600;
+}
+.copy {
+  display: grid;
+  gap: var(--p-space-1);
+  min-width: 0;
+}
+.title {
+  margin: 0;
+  font-weight: 700;
+  line-height: 1.3;
+}
+.caption {
+  margin: 0;
+  color: var(--p-ink-muted);
+  font-size: var(--p-text-sm);
+}
+
+/* WeekStrip: seven equal columns, a 32 px dot over the day name. */
+.week {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: var(--p-space-1);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.day {
+  display: grid;
+  justify-items: center;
+  gap: 6px;
+}
+.dot {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid var(--p-surface-3);
+  background: transparent;
+  color: var(--p-on-accent);
+}
+.day[data-state='done'] .dot,
+.day[data-state='today-done'] .dot {
+  border-color: var(--p-accent);
+  background: var(--p-accent);
+}
+.day[data-state='today'] .dot {
+  border-color: var(--p-accent);
+  box-shadow: 0 0 0 3px var(--p-accent-soft);
+}
+.day[data-state='today-done'] .dot {
+  box-shadow: 0 0 0 3px var(--p-accent-soft);
+}
+.day[data-state='missed'] .dot {
+  border-color: var(--p-border-strong);
+  background: var(--p-surface-2);
+}
+.day[data-state='upcoming'] .dot {
+  border-style: dashed;
+  border-color: var(--p-border-strong);
+}
+.dayLabel {
+  color: var(--p-ink-subtle);
+  font-size: var(--p-text-xs);
+  font-weight: 600;
+}
+.day[data-state^='today'] .dayLabel {
+  color: var(--p-ink);
+  font-weight: 750;
+}
