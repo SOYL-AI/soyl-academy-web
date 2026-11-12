@@ -19,9 +19,9 @@ Decisions: [ADR-032](../adr/032-design-language-v3-shell-and-age-stages.md) (ame
 - Component list with props: see "Kit API for page agents" below.
 
 **Shell** (`components/platform/shell/`)
-- `AppShell.tsx` rewritten: sidebar ≥ 1024 px (icon rail 1024–1279, 248 px from 1280) with nav, AI credits (opens the guide), guest log-in card, "‹ soylai.com", student card; slim top bar (mark below 1024; class chip + date from 1024; streak, coins, theme, avatar / Log in; credits chip only on `/ask` and `/plans`); tab bar < 1024 restyled; immersive routes without sidebar/tab bar.
+- `AppShell.tsx` rewritten: sidebar ≥ 1024 px (icon rail 1024–1279, 248 px from 1280) with nav, AI credits (opens the guide), guest log-in card, "‹ soylai.com", student card; slim top bar (mark below 1024; class chip + date from 1024; streak, coins, theme, avatar / Log in; credits chip only where credits are spent or bought: `/ask`, `/plans`, lesson, test result); tab bar < 1024 restyled; immersive routes without sidebar/tab bar.
 - New `stage.ts` (pure: `stageForClass`, `classFromPath`, `resolveStage`, `byStage`) and `StageProvider.tsx` (`useStage()`); `data-stage` + `data-testid="app-shell"` on the shell root.
-- `navFor(member, 'side' | 'top' | 'tabs')`, `PROGRESS_NAV` (`/me/progress`), `ME_TAB`, `CREDIT_CHIP_ROUTES` exported; `navFor(…, 'top')` and `'tabs'` behave as before.
+- `navFor(member, 'side' | 'top' | 'tabs')`, `PROGRESS_NAV` (`/me/progress`), `ME_TAB`, `CREDIT_CHIP_ROUTES`, `showsCreditChip` exported; `navFor(…, 'top')` and `'tabs'` behave as before.
 - `shell.module.css`: page container uses `--p-content-max` (1200) and the shell's responsive gutter (16/24/32); bigger `h1` (30/36 px).
 - `platform-global.css`: page canvas colours follow the new `--p-bg`. `THEME_BOOT_SCRIPT` unchanged (no CSP hash change).
 

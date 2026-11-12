@@ -50,7 +50,7 @@ Study modes: `STUDY_MODES` in `kit/tints.ts`: Lesson blue (play), Notes yellow (
 | 360–767 | Top bar (mark, chips, theme, avatar / Log in); "Back to soylai.com" row above it; bottom tab bar (5 tabs) | One column, 16 px gutter. Rail content stacks after the main column (or first: `railFirstOnPhones`). |
 | 768–1023 | Same as phones; 24 px gutter | One column; card grids get 2–3 columns. |
 | 1024–1279 | Icon-rail sidebar (80 px; names as tooltips and accessible names), top bar shows the class chip | One column at 1024 px; from about 1100 px the page container reaches 960 px and `PageColumns` shows the right rail. |
-| 1280+ | Full sidebar (248 px) with labels, credits, soylai.com link and the student card; top bar shows class chip + today's date (from 1180 px of top bar) | Main column + 320 px right rail (`PageColumns`: the page container is ≥ 960 px). 32 px gutter. Content max 1200 px. |
+| 1280+ | Full sidebar (248 px) with labels, credits, soylai.com link and the student card; top bar shows the class chip and, from 1180 px, today's date | Main column + 320 px right rail (`PageColumns`: the page container is ≥ 960 px). 32 px gutter. Content max 1200 px. |
 
 The page container is `shell.page` from `components/platform/shell/shell.module.css` (max-width `--p-content-max`, padding `--p-gutter`). It lines up with the top bar; an e2e test checks this on every page. **Every page's first element inside `#platform-content` is this container.**
 
@@ -59,7 +59,7 @@ The page container is `shell.page` from `components/platform/shell/shell.module.
 `components/platform/shell/AppShell.tsx` (client), mounted by `app/(platform)/layout.tsx`. Pages never render navigation themselves.
 
 - **Sidebar (≥ 1024 px):** SOYL mark → `/learn`; nav: members Home (`/me/dashboard`), Learn, Tests, Ask AI, Leaderboard, Progress (`/me/progress`); guests Learn, Tests, Ask AI, Leaderboard. Bottom: members see "N AI credits today" (opens the credits guide, `data-testid="sidebar-credits"`), guests a "Keep your progress / Log in" card; then "‹ soylai.com" (`main-site-link`, owner requirement ADR-023) and, for members, the student card (avatar, name, "Level 3 · Class 10", level bar → `/me`, `sidebar-profile`).
-- **Top bar (slim, 60 px):** below 1024 px the SOYL mark; from 1024 px the page context (`class-chip` "CBSE · Class 10" → that class, and today's date). Right side: streak chip, SOYL Coins chip, the AI credits chip **only on `/ask` and `/plans`** (`credit-chip`, opens the guide), theme picker, avatar (`profile-link`) or Log in (`login-button`). Nothing else goes in the top bar.
+- **Top bar (slim, 60 px):** below 1024 px the SOYL mark; from 1024 px the page context (`class-chip` "CBSE · Class 10" → that class, and today's date). Right side: streak chip, SOYL Coins chip, the AI credits chip **only where credits are spent or bought**: `/ask`, `/plans`, lesson pages (Explain this slide) and test results (AI evaluation) (`credit-chip`, opens the guide; `showsCreditChip(pathname)`), theme picker, avatar (`profile-link`) or Log in (`login-button`). Nothing else goes in the top bar.
 - **Tab bar (< 1024 px):** members Home, Learn, Tests, Ask AI, Me; guests Learn, Tests, Ask AI, Ranks, Me. Home stays lit on `/leaderboard` and `/me/progress`; Me on `/me`, `/coins`, `/store`.
 - **Immersive routes** (lesson, flashcards, test attempt, live mock; `isFocusRoute`): no sidebar, no tab bar; top bar = mark + soylai.com (≥ 768 px) + chips. The page owns the bottom of the screen.
 - Also: skip link, `CelebrationHost`, the app footer (soylai.com, Plans, Privacy, Terms, Cookie preferences), Light/Dark/System with no flash, dark cookie bar.
@@ -285,4 +285,4 @@ Three plan `Card`s (Free, Plus, Pro + Board Exam Pass) with the current plan as 
 
 ## 11. Testids the shell owns (keep them)
 
-`app-shell` (+ `data-stage`), `sidebar`, `sidebar-credits` (+ `data-balance`), `sidebar-profile`, `class-chip`, `today`, `main-site-link`, `main-site-row-link`, `streak-chip`, `coin-chip`, `credit-chip` (+ `data-balance`; `/ask` and `/plans` only), `theme-toggle`, `theme-options`, `login-button`, `profile-link`; `nav[aria-label="Learning platform"]` (sidebar, tab bar); `#platform-content`.
+`app-shell` (+ `data-stage`), `sidebar`, `sidebar-credits` (+ `data-balance`), `sidebar-profile`, `class-chip`, `today`, `main-site-link`, `main-site-row-link`, `streak-chip`, `coin-chip`, `credit-chip` (+ `data-balance`; `/ask`, `/plans`, lesson, test result only), `theme-toggle`, `theme-options`, `login-button`, `profile-link`; `nav[aria-label="Learning platform"]` (sidebar, tab bar); `#platform-content`.

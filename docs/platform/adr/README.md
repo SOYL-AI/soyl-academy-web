@@ -35,7 +35,7 @@ Format and rules: AGENTS.md §4.4 (context, options, decision, consequences). An
 | [027](027-future-builders-registrations-on-platform.md) | Future Builders registrations and enquiries recorded on the platform (Postgres, admin panel, confirmation email) through a server-to-server ingest key; Razorpay checkout and verification stay on the website server; the Google Sheet is retired | Accepted | 2026-11-08 | Payments, marketing |
 | [030](030-consent-only-for-purchases.md) | Consent needed only to buy a paid plan (and for physical merch); every other feature open to signed-in students; per-feature switch in `shared/config/consent.ts` (D-052) |
 | [031](031-google-ads-tag-on-marketing-pages.md) | Google Ads tag (`GTM-WC7CFG2T`) on marketing pages only, after the visitor allows a new "Advertising" cookie category; never on platform pages; no remarketing | Accepted | 2026-11-12 | Marketing, privacy |
-| [032](032-design-language-v3-shell-and-age-stages.md) | Design language v3 (warm paper, soft cards, pill buttons, tint family), sidebar app shell from 1024 px with a slim top bar (AI credits chip only on Ask AI and Plans), age stages `data-stage` junior/middle/senior; amends ADR-023 §a | Accepted | 2026-11-12 | Web, UI |
+| [032](032-design-language-v3-shell-and-age-stages.md) | Design language v3 (warm paper, soft cards, pill buttons, tint family), sidebar app shell from 1024 px with a slim top bar (AI credits chip only where credits are spent or bought), age stages `data-stage` junior/middle/senior; amends ADR-023 §a | Accepted | 2026-11-12 | Web, UI |
 
 ## Housekeeping notes
 

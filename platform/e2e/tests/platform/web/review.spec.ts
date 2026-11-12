@@ -67,7 +67,7 @@ test.describe('Lead review: shell and layout', () => {
     test.setTimeout(6 * 60_000);
     await signUp(page, 'topbar', '/me');
     await grantConsent(page);
-    // ADR-032: the credits chip is in the top bar only on Ask AI and Plans (the widest member bar); elsewhere the
+    // ADR-032: the credits chip is in the top bar only where credits are spent or bought (Ask AI is the widest member bar); elsewhere the
     // sidebar (≥ 1024 px) carries the credits.
     await page.goto('/learn', { waitUntil: 'networkidle' });
     await expect(page.getByTestId('credit-chip')).toHaveCount(0);

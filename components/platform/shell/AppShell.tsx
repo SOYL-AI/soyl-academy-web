@@ -7,7 +7,7 @@
  *   (avatar, name, level; links to the profile). Guests get a "save your progress" card instead.
  * - A slim top bar: the SOYL mark (below 1024 px, where there is no sidebar), the page context on wide screens (the
  *   member's class and today's date), then only the streak and SOYL Coins chips, the theme picker and the profile
- *   (or Log in). The AI credits chip shows in the top bar only where credits are the subject: Ask AI and Plans.
+ *   (or Log in). The AI credits chip shows in the top bar only where credits matter on the page: Ask AI, Plans, the lesson (Explain) and a test result (AI evaluation).
  * - < 1024 px: the bottom tab bar, and the way back to soylai.com as a slim row above the top bar.
  * - Immersive routes (lesson, flashcards, test player, live mock): no sidebar and no tab bar; the top bar keeps the
  *   mark, the soylai.com link (from 768 px) and the chips.
@@ -44,6 +44,9 @@ export interface NavItem {
   also?: string[];
   /** Prefixes under `href` that belong to another section. */
   except?: string[];
+  /** false: never prefetch (a route that may not exist yet: a prefetched 404 RSC request can stay open and keeps the
+   *  page from going network-idle). */
+  prefetch?: false;
 }
 
 export const PRIMARY_NAV: readonly NavItem[] = [
@@ -54,12 +57,25 @@ export const PRIMARY_NAV: readonly NavItem[] = [
 ];
 /** The student's "today" page (D-043): first for members. */
 export const HOME_NAV: NavItem = { href: '/me/dashboard', label: 'Home', short: 'Home', icon: 'home' };
-/** The analytics moved off Home (ADR-032; the page is built by a page agent at /me/progress). */
-export const PROGRESS_NAV: NavItem = { href: '/me/progress', label: 'Progress', short: 'Progress', icon: 'chart' };
+/**
+ * The analytics moved off Home (ADR-032; the page is built by a page agent at /me/progress). Not prefetched: until
+ * the page exists its 404 prefetch never settles in Chromium and members' pages never went network-idle (e2e).
+ */
+export const PROGRESS_NAV: NavItem = { href: '/me/progress', label: 'Progress', short: 'Progress', icon: 'chart', prefetch: false };
 export const ME_TAB: NavItem = { href: '/me', label: 'Profile', short: 'Me', icon: 'user', also: ['/coins', '/store'], except: [HOME_NAV.href, PROGRESS_NAV.href] };
 
 /** Pages where AI credits are the subject: the top bar shows the credits chip there (ADR-032). */
 export const CREDIT_CHIP_ROUTES: readonly string[] = ['/ask', '/plans'];
+
+/**
+ * Where the top bar shows today's AI credits (ADR-032): where credits are the subject (Ask AI, Plans) and where a
+ * student spends them on the page (the lesson's "Explain this slide", a test result's AI evaluation). Elsewhere the
+ * sidebar (≥ 1024 px) and the Home credits card carry them.
+ */
+export function showsCreditChip(pathname: string): boolean {
+  if (CREDIT_CHIP_ROUTES.some((h) => under(pathname, h))) return true;
+  return /^\/learn\/[^/]+\/[^/]+\/[^/]+\/[^/]+\/lesson(\/|$)/.test(pathname) || /^\/tests\/result\//.test(pathname);
+}
 
 const under = (pathname: string, h: string) => pathname === h || pathname.startsWith(`${h}/`);
 
@@ -158,7 +174,7 @@ function Sidebar({ pathname }: { pathname: string }) {
               const on = isCurrentSection(pathname, n);
               return (
                 <li key={n.href}>
-                  <Link href={n.href} className={cx(s.sideLink, on && s.sideOn)} aria-current={on ? 'page' : undefined} data-label={n.label}>
+                  <Link href={n.href} prefetch={n.prefetch} className={cx(s.sideLink, on && s.sideOn)} aria-current={on ? 'page' : undefined} data-label={n.label}>
                     <Icon name={n.icon} size={22} />
                     <span className={s.sideLabel}>{n.label}</span>
                   </Link>
@@ -239,7 +255,7 @@ function TopBar({ pathname, focus }: { pathname: string; focus: boolean }) {
   const { credits, aiAllowed, openGuide } = useCredits();
   const mine = useMyAvatar();
   const member = state.status === 'member';
-  const showCredits = member && aiAllowed && !!credits && CREDIT_CHIP_ROUTES.some((h) => under(pathname, h));
+  const showCredits = member && aiAllowed && !!credits && showsCreditChip(pathname);
   return (
     <header className={s.top}>
       <div className={s.stripe} aria-hidden="true" />

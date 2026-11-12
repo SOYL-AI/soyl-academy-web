@@ -21,7 +21,7 @@ import { parseThemePref, readThemeCookie, resolveTheme, themeCookie, THEME_BOOT_
 import { ThemeProvider, useTheme } from '../shell/ThemeProvider';
 import { ThemeOptions, ThemeToggle } from '../shell/ThemeToggle';
 import { isFocusRoute, platformChromeActive } from '../shell/chrome';
-import { AppShell, isCurrentSection, PRIMARY_NAV } from '../shell/AppShell';
+import { AppShell, isCurrentSection, PRIMARY_NAV, showsCreditChip } from '../shell/AppShell';
 import { MarketingOnly } from '../shell/MarketingOnly';
 import { byStage, classFromPath, resolveStage, stageForClass } from '../shell/stage';
 import { useStage } from '../shell/StageProvider';
@@ -274,7 +274,7 @@ describe('AppShell', () => {
     expect((screen.getByTestId('streak-chip')).getAttribute('data-streak')).toBe('6');
     expect((screen.getByTestId('streak-chip')).textContent).toContain('6-day streak');
     expect((screen.getByTestId('coin-chip')).getAttribute('data-balance')).toBe('42');
-    // ADR-032: no credits chip in the top bar outside Ask AI and Plans; the sidebar keeps the way to the guide.
+    // ADR-032: no credits chip in the top bar on learning pages (only where credits are spent or bought); the sidebar keeps the way to the guide.
     expect(screen.queryByTestId('credit-chip')).toBeNull();
     const side = screen.getByTestId('sidebar-credits');
     expect(side.getAttribute('data-balance')).toBe('25');
@@ -297,6 +297,11 @@ describe('AppShell', () => {
     expect(chip.getAttribute('data-balance')).toBe('25');
     fireEvent.click(chip);
     expect(openGuide).toHaveBeenCalledTimes(1);
+  });
+
+  it('the credits chip shows only where credits are spent or bought', () => {
+    for (const p of ['/ask', '/plans', '/learn/cbse/10/science/ch01/lesson', '/learn/cbse/10/science/ch01/lesson/2', '/tests/result/abc']) expect(showsCreditChip(p), p).toBe(true);
+    for (const p of ['/learn', '/learn/cbse/10/science/ch01', '/learn/cbse/10/science/ch01/practice', '/me/dashboard', '/tests', '/tests/attempt/abc', '/asked']) expect(showsCreditChip(p), p).toBe(false);
   });
 
   it('no credits anywhere without AI allowed (D-014)', () => {
