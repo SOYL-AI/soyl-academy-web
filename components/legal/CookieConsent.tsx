@@ -16,6 +16,7 @@ export function CookieConsent() {
   const [custom, setCustom] = useState(false);
   const [analytics, setAnalytics] = useState(false);
   const [marketing, setMarketing] = useState(false);
+  const [advertising, setAdvertising] = useState(false);
   const headingId = useId();
 
   useEffect(() => {
@@ -26,12 +27,14 @@ export function CookieConsent() {
       setOpen(false);
       setAnalytics(saved.analytics);
       setMarketing(saved.marketing);
+      setAdvertising(saved.advertising);
     }
 
     const reopen = () => {
       const current = readConsent();
       setAnalytics(current?.analytics ?? false);
       setMarketing(current?.marketing ?? false);
+      setAdvertising(current?.advertising ?? false);
       setCustom(true);
       setForced(true);
       setOpen(true);
@@ -40,7 +43,7 @@ export function CookieConsent() {
     return () => window.removeEventListener(OPEN_COOKIE_SETTINGS_EVENT, reopen);
   }, []);
 
-  const save = (prefs: { analytics: boolean; marketing: boolean }) => {
+  const save = (prefs: { analytics: boolean; marketing: boolean; advertising: boolean }) => {
     writeConsent(prefs);
     document.documentElement.dataset.consent = '1';
     setOpen(false);
@@ -62,7 +65,7 @@ export function CookieConsent() {
             Cookies
           </h2>
           <p className="t-small max-w-[70ch] text-muted">
-            Essential cookies keep the site working. With your OK we also use cookieless analytics.{' '}
+            Essential cookies keep the site working. With your OK we also use cookieless analytics and Google Ads cookies that measure our ads.{' '}
             <Link href="/privacy#cookies" className="link">
               Cookie policy
             </Link>
@@ -93,6 +96,15 @@ export function CookieConsent() {
                 />
                 Preferences (remember offers and form details)
               </label>
+              <label className="t-small flex cursor-pointer items-center gap-2 text-ink">
+                <input
+                  type="checkbox"
+                  checked={advertising}
+                  onChange={(e) => setAdvertising(e.target.checked)}
+                  className="h-4 w-4 accent-cobalt"
+                />
+                Advertising (measure our Google ads)
+              </label>
             </fieldset>
           )}
         </div>
@@ -101,7 +113,7 @@ export function CookieConsent() {
           {custom ? (
             <button
               type="button"
-              onClick={() => save({ analytics, marketing })}
+              onClick={() => save({ analytics, marketing, advertising })}
               className="press h-10 rounded-full bg-ink px-5 text-[15px] font-semibold text-white hover:bg-cobalt"
             >
               Save choices
@@ -110,14 +122,14 @@ export function CookieConsent() {
             <>
               <button
                 type="button"
-                onClick={() => save({ analytics: true, marketing: true })}
+                onClick={() => save({ analytics: true, marketing: true, advertising: true })}
                 className="press h-10 rounded-full bg-ink px-5 text-[15px] font-semibold text-white hover:bg-cobalt"
               >
                 Accept all
               </button>
               <button
                 type="button"
-                onClick={() => save({ analytics: false, marketing: false })}
+                onClick={() => save({ analytics: false, marketing: false, advertising: false })}
                 className="press h-10 rounded-full border border-ink/25 px-5 text-[15px] font-semibold text-ink hover:border-ink hover:bg-ink hover:text-white"
               >
                 Essential only

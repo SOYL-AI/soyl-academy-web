@@ -24,7 +24,7 @@ export default function PrivacyPage() {
               Privacy & Cookie Policy
             </h1>
             <p className="t-small text-muted">
-              Last updated: October 2026 • Compliant with India DPDP Act 2023 & GDPR
+              Last updated: November 2026 • Compliant with India DPDP Act 2023 & GDPR
             </p>
           </div>
 
@@ -80,6 +80,12 @@ export default function PrivacyPage() {
                     Browser storage used to remember your coupon codes (e.g. <code>FRIEND500</code>) and popup dismissal state so you are not interrupted repeatedly.
                   </p>
                 </div>
+                <div className="border border-rule bg-white p-4">
+                  <h3 className="font-semibold mb-1">Advertising Measurement (only with your consent)</h3>
+                  <p className="t-small text-muted">
+                    If you allow &quot;Advertising&quot; in the cookie bar, our public website pages load the Google tag (Google Ads), which sets cookies to measure whether our ads led to a visit, enquiry or registration. We do not use it for remarketing or personalised ads, and it never loads inside the SOYL learning platform. You can withdraw this choice at any time from &quot;Cookie preferences&quot; in the footer.
+                  </p>
+                </div>
               </div>
             </section>
 
@@ -102,6 +108,7 @@ export default function PrivacyPage() {
                 <li><strong>Payment Aggregator:</strong> Razorpay Software Private Limited (PCI-DSS Level 1 compliant tokenized payment processing).</li>
                 <li><strong>Logistics Partners:</strong> Delhivery, BlueDart, DTDC, and India Post for doorstep delivery of hardware kits.</li>
                 <li><strong>Infrastructure & Telemetry:</strong> Vercel Inc. for secure global hosting and privacy-friendly web analytics.</li>
+                <li><strong>Advertising Measurement:</strong> Google LLC (Google Ads), only on our public website pages and only after you allow advertising cookies.</li>
                 <li><strong>Registration Records:</strong> Future Builders registrations, payment confirmations and enquiries are stored on SOYL&apos;s platform, hosted on Microsoft Azure in India.</li>
                 <li><strong>Direct Communication:</strong> WhatsApp/Meta for student cohort announcements and support.</li>
               </ul>

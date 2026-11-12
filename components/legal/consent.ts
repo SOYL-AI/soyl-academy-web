@@ -13,14 +13,19 @@ export const CONSENT_BOOT_SCRIPT = `try{if(localStorage.getItem(${JSON.stringify
 export interface CookiePreferences {
   necessary: true;
   analytics: boolean;
+  /** "Preferences": remember offers and form details. Not advertising. */
   marketing: boolean;
+  /** Google Ads measurement cookies (ADR-031). Choices saved before 2026-11-12 have no value: treated as false. */
+  advertising: boolean;
   timestamp: string;
 }
 
 export function readConsent(): CookiePreferences | null {
   try {
     const raw = window.localStorage.getItem(CONSENT_STORAGE_KEY);
-    return raw ? (JSON.parse(raw) as CookiePreferences) : null;
+    if (!raw) return null;
+    const saved = JSON.parse(raw) as Partial<CookiePreferences>;
+    return { ...saved, advertising: saved.advertising === true } as CookiePreferences;
   } catch {
     return null;
   }

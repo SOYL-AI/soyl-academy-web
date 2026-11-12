@@ -5,6 +5,7 @@ import { Footer } from '@/components/layout/Footer';
 import { CookieConsent } from '@/components/legal/CookieConsent';
 import { CONSENT_BOOT_SCRIPT } from '@/components/legal/consent';
 import { ConsentedAnalytics } from '@/components/legal/ConsentedAnalytics';
+import { ConsentedGoogleTag } from '@/components/legal/ConsentedGoogleTag';
 import { StructuredData } from '@/components/seo/StructuredData';
 import { RevealObserver } from '@/components/motion/RevealObserver';
 import {
@@ -133,6 +134,7 @@ export default function RootLayout({
         <Footer />
         <CookieConsent />
         <ConsentedAnalytics />
+        <ConsentedGoogleTag />
         <RevealObserver />
       </body>
     </html>
