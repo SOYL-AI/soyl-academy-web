@@ -1,0 +1,281 @@
+/* Progress (/me/progress), design language v3 §10. Phones first (360 px); tokens only, Light and Dark. */
+
+.page {
+  display: grid;
+  gap: var(--p-space-6);
+  min-width: 0;
+}
+@media (min-width: 1024px) {
+  .page {
+    gap: var(--p-space-8);
+  }
+}
+.muted {
+  margin: 0;
+  color: var(--p-ink-muted);
+  font-size: var(--p-text-sm);
+}
+.nowrap {
+  white-space: nowrap;
+}
+.guestCard,
+.welcomeCard {
+  padding: 0;
+}
+.skeletonStats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--p-space-3);
+}
+
+/* The kit's StatGrid switches columns by viewport, so in the main column next to the rail four stats became 3 + 1.
+   Here the columns follow the column's own width: 2 × 2, and 4 in a row only when there is room (handoff: kit note). */
+.statsWrap {
+  container-type: inline-size;
+  min-width: 0;
+}
+.stats.stats {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+@container (min-width: 760px) {
+  .stats.stats {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  }
+}
+
+/* StatCard in a cell that carries the e2e data attributes: the card fills its grid cell. */
+.statCell {
+  display: grid;
+  min-width: 0;
+}
+
+/* ── Mastery ─────────────────────────────────────────────────────────────── */
+.masteryCard {
+  display: grid;
+  gap: var(--p-space-4);
+}
+.masteryTop {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--p-space-4);
+}
+.masteryTop > :last-child {
+  flex: 1 1 220px;
+  min-width: 0;
+}
+
+/* ── Test scores ─────────────────────────────────────────────────────────── */
+.testsCard {
+  display: grid;
+  gap: var(--p-space-4);
+  min-width: 0;
+}
+.rowLink {
+  color: var(--p-ink);
+  font-weight: 650;
+  text-decoration: none;
+}
+.rowLink:hover {
+  color: var(--p-accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.rowLink:focus-visible {
+  outline: none;
+  border-radius: var(--p-radius-sm);
+  box-shadow: var(--p-focus-ring);
+}
+.rowMeta {
+  display: block;
+  margin-top: 2px;
+  color: var(--p-ink-subtle);
+  font-size: var(--p-text-xs);
+  font-weight: 500;
+}
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+/* ── Focus areas ─────────────────────────────────────────────────────────── */
+.focus {
+  display: grid;
+  gap: var(--p-space-5);
+  min-width: 0;
+}
+.focusCol {
+  display: grid;
+  align-content: start;
+  gap: var(--p-space-2);
+  min-width: 0;
+}
+.subTitle {
+  margin: 0;
+  color: var(--p-ink-muted);
+  font-size: var(--p-text-sm);
+  font-weight: 700;
+}
+
+/* ── Activity ────────────────────────────────────────────────────────────── */
+.activityCard {
+  display: grid;
+  gap: var(--p-space-4);
+  min-width: 0;
+}
+.activityCard > * {
+  min-width: 0;
+}
+.streaks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--p-space-2) var(--p-space-5);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.streaks li {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--p-space-2);
+  color: var(--p-ink-muted);
+  font-size: var(--p-text-sm);
+}
+.streaks b {
+  color: var(--p-ink);
+  font-size: var(--p-text-md);
+  font-variant-numeric: tabular-nums;
+}
+.weekOnly {
+  display: grid;
+  gap: var(--p-space-3);
+  max-width: 460px;
+}
+
+/* ── Rail ────────────────────────────────────────────────────────────────── */
+.railAside {
+  color: var(--p-ink-subtle);
+  font-size: var(--p-text-sm);
+  font-weight: 600;
+  white-space: nowrap;
+}
+.railText {
+  margin: 0;
+  color: var(--p-ink-muted);
+  font-size: var(--p-text-sm);
+}
+.goalBody {
+  display: grid;
+  gap: var(--p-space-4);
+}
+.cardWrap {
+  display: grid;
+  justify-items: center;
+}
+.badgeNext {
+  display: grid;
+  gap: var(--p-space-3);
+}
+.badgeHead {
+  display: flex;
+  align-items: center;
+  gap: var(--p-space-3);
+}
+.badgeHead > :first-child {
+  flex: none;
+}
+.badgeText {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+  margin: 0;
+  color: var(--p-ink-muted);
+  font-size: var(--p-text-sm);
+}
+.badgeText b {
+  color: var(--p-ink);
+  font-size: var(--p-text-md);
+}
+.badgeKicker {
+  color: var(--p-ink-subtle);
+  font-size: var(--p-text-xs);
+  font-weight: 650;
+}
+
+/* ── Brand-new student ───────────────────────────────────────────────────── */
+.fresh {
+  display: grid;
+  gap: var(--p-space-4);
+  padding: var(--p-stage-card-pad, var(--p-space-5));
+  border: 1px solid var(--p-card-border);
+  border-radius: var(--p-stage-card-radius, var(--p-radius-xl));
+  background: var(--p-surface);
+  box-shadow: var(--p-shadow-card);
+}
+.freshHead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--p-space-3) var(--p-space-4);
+}
+.freshText {
+  display: grid;
+  flex: 1 1 220px;
+  gap: var(--p-space-1);
+  min-width: 0;
+}
+.freshTitle {
+  margin: 0;
+  font-size: var(--p-text-xl);
+  font-weight: var(--p-weight-display);
+  line-height: var(--p-leading-tight);
+  letter-spacing: -0.01em;
+}
+.freshAction {
+  flex: none;
+}
+
+/* ── Quiet empty state (one row) ─────────────────────────────────────────── */
+.quiet {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--p-space-3) var(--p-space-4);
+  padding: var(--p-space-4);
+  border: 1px solid var(--p-card-border);
+  border-radius: var(--p-stage-card-radius, var(--p-radius-xl));
+  background: var(--p-surface);
+  box-shadow: var(--p-shadow-card);
+}
+.quietText {
+  display: grid;
+  flex: 1 1 220px;
+  gap: 2px;
+  min-width: 0;
+  margin: 0;
+  color: var(--p-ink-muted);
+  font-size: var(--p-text-sm);
+}
+.quietText b {
+  color: var(--p-ink);
+  font-size: var(--p-text-md);
+}
+.quietAction {
+  flex: none;
+}
+.goalFresh {
+  display: flex;
+  align-items: center;
+  gap: var(--p-space-3);
+  margin: 0;
+}
+.goalFresh > span:last-child {
+  display: grid;
+  gap: 2px;
+  color: var(--p-ink-muted);
+  font-size: var(--p-text-sm);
+}
+.goalFresh b {
+  color: var(--p-ink);
+}

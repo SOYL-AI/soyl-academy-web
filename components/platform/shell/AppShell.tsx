@@ -57,11 +57,8 @@ export const PRIMARY_NAV: readonly NavItem[] = [
 ];
 /** The student's "today" page (D-043): first for members. */
 export const HOME_NAV: NavItem = { href: '/me/dashboard', label: 'Home', short: 'Home', icon: 'home' };
-/**
- * The analytics moved off Home (ADR-032; the page is built by a page agent at /me/progress). Not prefetched: until
- * the page exists its 404 prefetch never settles in Chromium and members' pages never went network-idle (e2e).
- */
-export const PROGRESS_NAV: NavItem = { href: '/me/progress', label: 'Progress', short: 'Progress', icon: 'chart', prefetch: false };
+/** The analytics moved off Home (ADR-032): mastery, test scores, focus areas and activity at /me/progress. */
+export const PROGRESS_NAV: NavItem = { href: '/me/progress', label: 'Progress', short: 'Progress', icon: 'chart' };
 export const ME_TAB: NavItem = { href: '/me', label: 'Profile', short: 'Me', icon: 'user', also: ['/coins', '/store'], except: [HOME_NAV.href, PROGRESS_NAV.href] };
 
 /** Pages where AI credits are the subject: the top bar shows the credits chip there (ADR-032). */

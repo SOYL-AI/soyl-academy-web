@@ -1,0 +1,428 @@
+/* Home (/me/dashboard), design language v3 §10. Phones first (360 px); tokens only, so Light and Dark both work.
+   Card radius, padding and gaps follow the age stage through --p-stage-* (DESIGN-LANGUAGE §6). */
+
+.home {
+  display: grid;
+  gap: var(--p-space-6);
+  min-width: 0;
+}
+@media (min-width: 1024px) {
+  .home {
+    gap: var(--p-space-8);
+  }
+}
+.muted {
+  margin: 0;
+  color: var(--p-ink-muted);
+  font-size: var(--p-text-sm);
+}
+.textLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  min-height: var(--p-touch);
+  border-radius: var(--p-radius-sm);
+  color: var(--p-accent);
+  font-size: var(--p-text-sm);
+  font-weight: 650;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.textLink:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.textLink:focus-visible {
+  outline: none;
+  box-shadow: var(--p-focus-ring);
+}
+
+/* ── Hero art: the student's own animal, a little bigger for juniors ──────── */
+.heroArt {
+  display: block;
+}
+
+/* ── Layout ──────────────────────────────────────────────────────────────────
+   Phones: goal first, then the main column, then the rest of the rail (DESIGN-LANGUAGE §10 Home: "Today's goal
+   first on phones"). From a 960 px page container: main column + 320 px rail, the goal on top of the rail. A page
+   grid instead of PageColumns because PageColumns can only move the whole rail (handoff: kit request). */
+.board {
+  container-type: inline-size;
+  min-width: 0;
+}
+.layout {
+  display: grid;
+  gap: var(--p-space-6);
+  min-width: 0;
+}
+.goalSlot,
+.mainSlot,
+.railSlot {
+  display: grid;
+  align-content: start;
+  gap: var(--p-space-6);
+  min-width: 0;
+}
+.railSlot:empty {
+  display: none;
+}
+@container (min-width: 960px) {
+  .layout {
+    grid-template-columns: minmax(0, 1fr) var(--p-right-rail-w);
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+      'main goal'
+      'main rail';
+    column-gap: var(--p-space-8);
+    row-gap: var(--p-space-5);
+  }
+  .goalSlot {
+    grid-area: goal;
+  }
+  .mainSlot {
+    grid-area: main;
+    gap: var(--p-space-8);
+  }
+  .railSlot {
+    grid-area: rail;
+    gap: var(--p-space-5);
+  }
+}
+.skeletonGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, var(--p-stage-tile-min)), 1fr));
+  gap: var(--p-stage-gap);
+}
+
+/* ── Prompts (compact; they never push the day off the first screen) ──────── */
+.prompts {
+  display: grid;
+  gap: var(--p-space-3);
+  margin-top: calc(-1 * var(--p-space-2));
+}
+.note {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--p-space-1) var(--p-space-3);
+  margin: 0;
+  padding: var(--p-space-2) var(--p-space-2) var(--p-space-2) var(--p-space-3);
+  border: 1px solid var(--p-card-border);
+  border-radius: var(--p-radius-lg);
+  background: var(--p-surface);
+  color: var(--p-ink-muted);
+  font-size: var(--p-text-sm);
+}
+.noteText {
+  flex: 1 1 180px;
+  min-width: 0;
+}
+.note .textLink {
+  margin-left: auto;
+  padding: 0 var(--p-space-2);
+}
+.classPrompt {
+  display: grid;
+  gap: var(--p-space-3);
+  padding: var(--p-stage-card-pad, var(--p-space-5));
+  border-radius: var(--p-stage-card-radius, var(--p-radius-xl));
+  background: var(--p-tint-blue);
+  color: var(--p-ink);
+}
+.classPromptText {
+  margin: 0;
+  color: var(--p-ink-muted);
+  font-size: var(--p-text-sm);
+}
+.classPromptText b {
+  display: block;
+  margin-bottom: 2px;
+  color: var(--p-ink);
+  font-size: var(--p-text-md);
+}
+.classForm {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: var(--p-space-3);
+}
+.field {
+  display: grid;
+  flex: 1 1 130px;
+  gap: var(--p-space-1);
+  min-width: 0;
+}
+.field label {
+  color: var(--p-ink);
+  font-size: var(--p-text-sm);
+  font-weight: 650;
+}
+.select {
+  width: 100%;
+  min-height: var(--p-touch);
+  padding: 0 var(--p-space-3);
+  border: 1px solid var(--p-border-strong);
+  border-radius: var(--p-radius-md);
+  background: var(--p-surface);
+  color: var(--p-ink);
+  font: inherit;
+  font-size: 16px;
+}
+.select:focus-visible {
+  outline: none;
+  box-shadow: var(--p-focus-ring);
+  border-color: var(--p-focus);
+}
+.classSave {
+  flex: 0 0 auto;
+}
+.error {
+  margin: 0;
+  color: var(--p-danger);
+  font-size: var(--p-text-sm);
+  font-weight: 600;
+}
+
+/* ── Welcome (brand-new student) ──────────────────────────────────────────── */
+.welcome {
+  display: grid;
+  gap: var(--p-space-4);
+  padding: var(--p-stage-card-pad, var(--p-space-5));
+  border: 1px solid var(--p-card-border);
+  border-radius: var(--p-stage-card-radius, var(--p-radius-xl));
+  background: var(--p-surface);
+  box-shadow: var(--p-shadow-card);
+}
+.welcomeTitle {
+  margin: 0;
+  font-size: var(--p-text-xl);
+  font-weight: var(--p-weight-display);
+  line-height: var(--p-leading-tight);
+  letter-spacing: -0.01em;
+}
+.steps {
+  display: grid;
+  gap: var(--p-space-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+@media (min-width: 640px) {
+  .steps {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+.step {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--p-space-3);
+  min-width: 0;
+}
+.stepText {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+  color: var(--p-ink-muted);
+  font-size: var(--p-text-sm);
+}
+.stepText b {
+  color: var(--p-ink);
+  font-size: var(--p-text-md);
+}
+
+/* ── "See all your progress" (quiet link card) ────────────────────────────── */
+.progressLink {
+  display: flex;
+  align-items: center;
+  gap: var(--p-space-4);
+  min-height: 72px;
+  padding: var(--p-space-4) var(--p-space-5);
+  color: var(--p-ink);
+  text-decoration: none;
+}
+.progressText {
+  display: grid;
+  flex: 1 1 auto;
+  gap: 2px;
+  min-width: 0;
+}
+.progressTitle {
+  font-weight: 700;
+}
+.progressMeta {
+  color: var(--p-ink-subtle);
+  font-size: var(--p-text-sm);
+}
+.progressArrow {
+  flex: none;
+  color: var(--p-accent);
+}
+
+/* ── Quiet one-row empty state ───────────────────────────────────────────── */
+.quiet {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--p-space-3) var(--p-space-4);
+  padding: var(--p-space-4);
+  border: 1px solid var(--p-card-border);
+  border-radius: var(--p-stage-card-radius, var(--p-radius-xl));
+  background: var(--p-surface);
+  box-shadow: var(--p-shadow-card);
+}
+.quietText {
+  display: grid;
+  flex: 1 1 220px;
+  gap: 2px;
+  min-width: 0;
+  margin: 0;
+  color: var(--p-ink-muted);
+  font-size: var(--p-text-sm);
+}
+.quietText b {
+  color: var(--p-ink);
+  font-size: var(--p-text-md);
+}
+
+/* ── Rail cards ──────────────────────────────────────────────────────────── */
+.railAside {
+  color: var(--p-ink-subtle);
+  font-size: var(--p-text-sm);
+  font-weight: 600;
+  white-space: nowrap;
+}
+.railText {
+  margin: 0;
+  color: var(--p-ink-muted);
+  font-size: var(--p-text-sm);
+}
+.railText b {
+  color: var(--p-ink);
+}
+.goalBody {
+  display: grid;
+  gap: var(--p-space-4);
+}
+.goalFresh {
+  display: flex;
+  align-items: center;
+  gap: var(--p-space-3);
+}
+.goalFreshText {
+  display: grid;
+  gap: 2px;
+  margin: 0;
+  color: var(--p-ink-muted);
+  font-size: var(--p-text-sm);
+}
+.goalFreshText b {
+  color: var(--p-ink);
+  font-size: var(--p-text-md);
+}
+.tier {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px var(--p-space-2) 2px 4px;
+  border-radius: var(--p-radius-pill);
+  background: var(--p-surface-2);
+  color: var(--p-ink-muted);
+  font-size: var(--p-text-xs);
+  font-weight: 700;
+  white-space: nowrap;
+}
+/* The challenge rows sit on the yellow card: white rows, no extra card shadow. */
+.challengeList {
+  background: var(--p-surface);
+  box-shadow: none;
+}
+
+/* Credits */
+.creditsTop {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--p-space-2) var(--p-space-3);
+}
+.creditsLine {
+  display: grid;
+  flex: 1 1 160px;
+  gap: 2px;
+  min-width: 0;
+  margin: 0;
+  color: var(--p-ink-muted);
+}
+.creditsLine b {
+  color: var(--p-ink);
+  font-size: var(--p-text-lg);
+}
+.creditsNote {
+  color: var(--p-ink-subtle);
+  font-size: var(--p-text-xs);
+}
+.creditsBonus {
+  flex: none;
+}
+.bonusList {
+  display: grid;
+  gap: var(--p-space-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.bonusRow {
+  display: grid;
+  gap: 4px;
+}
+.bonusTitle {
+  margin: 0;
+  color: var(--p-ink);
+  font-size: var(--p-text-sm);
+  font-weight: 650;
+}
+.bonusDetail {
+  margin: 0;
+  color: var(--p-ink-muted);
+  font-size: var(--p-text-xs);
+}
+
+/* ── Guests ──────────────────────────────────────────────────────────────── */
+.guestCard {
+  padding: 0;
+}
+.device {
+  display: grid;
+  gap: var(--p-space-3);
+  padding: var(--p-stage-card-pad, var(--p-space-5));
+  border: 1px solid var(--p-card-border);
+  border-radius: var(--p-stage-card-radius, var(--p-radius-xl));
+  background: var(--p-surface);
+  box-shadow: var(--p-shadow-card);
+}
+.deviceTitle {
+  margin: 0;
+  font-size: var(--p-text-lg);
+  font-weight: 700;
+}
+.deviceStats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--p-space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.deviceStats li {
+  display: grid;
+  gap: 2px;
+  padding: var(--p-space-3);
+  border-radius: var(--p-radius-md);
+  background: var(--p-surface-2);
+  color: var(--p-ink-muted);
+  font-size: var(--p-text-xs);
+}
+.deviceStats b {
+  color: var(--p-ink);
+  font-size: var(--p-text-xl);
+  font-variant-numeric: tabular-nums;
+}
