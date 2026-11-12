@@ -20,11 +20,17 @@ import { useCallback, useEffect, useState } from 'react';
 import { isApiError, type MySubscription, type PlansResponse, type PlanView } from '@/platform/shared/api-client';
 import { cx } from '@/components/platform/ui/cx';
 import { Button } from '@/components/platform/ui/kit/Button';
-import { Badge, EmptyState, Skeleton } from '@/components/platform/ui/kit/Display';
-import { Icon } from '@/components/platform/ui/kit/Icon';
+import { ButtonLink } from '@/components/platform/ui/kit/ButtonLink';
+import { Card, EmptyState, Skeleton } from '@/components/platform/ui/kit/Display';
+import { Icon, type IconName } from '@/components/platform/ui/kit/Icon';
+import { StatusPill } from '@/components/platform/ui/kit/Lists';
+import { CardGrid } from '@/components/platform/ui/kit/Page';
+import { IconTile } from '@/components/platform/ui/kit/Tiles';
+import type { Tint } from '@/components/platform/ui/kit/tints';
 import { consentAllows } from '@/platform/shared/config/consent';
 import { useSession } from '../auth/SessionProvider';
 import { useCredits } from '../ai/CreditsProvider';
+import { useStage } from '../shell/StageProvider';
 import { api } from '../lib/api-browser';
 import { GST_STATES } from '@/platform/shared/billing/gst';
 import { Field } from '@/components/platform/ui/kit/Field';
@@ -61,6 +67,25 @@ export function priceParts(label: string | null): { amount: string; suffix: stri
 export function featureText(id: string, plan: Pick<PlanView, 'creditsPerDay'>): string {
   if (id === 'ai_credits') return `${plan.creditsPerDay} AI credits every day`;
   return FEATURE_TEXT[id] ?? id.replace(/_/g, ' ').replace(/^./, (c) => c.toUpperCase());
+}
+
+/** The plan with the most AI per rupee: its card is featured and carries the page's one primary button. */
+export const FEATURED_PLAN = 'pro';
+
+/** Icon and tint per plan (decoration only: the plan's name is always written). Unknown plans get sparkles. */
+export function planLook(id: string): { icon: IconName; tint: Tint } {
+  switch (id) {
+    case 'free':
+      return { icon: 'spark', tint: 'neutral' };
+    case 'plus':
+      return { icon: 'sparkles', tint: 'blue' };
+    case 'pro':
+      return { icon: 'star', tint: 'violet' };
+    case 'board_exam_pass':
+      return { icon: 'trophy', tint: 'yellow' };
+    default:
+      return { icon: 'sparkles', tint: 'blue' };
+  }
 }
 
 type Interval = 'monthly' | 'yearly';
@@ -215,7 +240,7 @@ export function PlansClient() {
   }
   if (!plans) {
     return (
-      <div aria-busy="true" aria-label="Loading plans" className={s.grid}>
+      <div aria-busy="true" aria-label="Loading plans" className={s.loadingGrid}>
         <Skeleton variant="block" height={220} />
         <Skeleton variant="block" height={220} />
       </div>
@@ -232,64 +257,78 @@ export function PlansClient() {
     <div className={s.page} data-testid="plans" data-billing={plans.billingEnabled ? 'on' : 'off'}>
       {!plans.billingEnabled && (
         <p className={s.notice} role="status" data-testid="billing-off">
-          <Icon name="info" size={18} /> <strong>Paid plans are coming soon.</strong> Everyone gets free AI credits every day (they refill at 00:00 IST); lessons, practice
-          and tests are always free.
-          {consentNeeded && (
-            <>
-              {' '}
-              Buying a plan will need a parent’s approval (or yours if you are 18 or older).{' '}
-              <Link href="/me/consent?next=%2Fplans" data-testid="plans-consent-soon">
-                Set up approval
-              </Link>
-            </>
-          )}
+          <Icon name="info" size={18} className={s.noticeIcon} />
+          <span>
+            <strong>Paid plans are coming soon.</strong> Everyone gets free AI credits every day (they refill at 00:00 IST); lessons, practice and tests are always free.
+            {consentNeeded && (
+              <>
+                {' '}
+                Buying a plan will need a parent’s approval (or yours if you are 18 or older).{' '}
+                <Link href="/me/consent?next=%2Fplans" data-testid="plans-consent-soon">
+                  Set up approval
+                </Link>
+              </>
+            )}
+          </span>
         </p>
       )}
       {consentNeeded && plans.billingEnabled && (
         <p className={s.notice} role="note" data-testid="plans-consent">
-          <Icon name="lock" size={18} /> A parent needs to approve your account (or you confirm you are 18 or older) before you can buy a plan.{' '}
-          <Link href="/me/consent?next=%2Fplans">Ask a parent to approve</Link>
+          <Icon name="lock" size={18} className={s.noticeIcon} />
+          <span>
+            A parent needs to approve your account (or you confirm you are 18 or older) before you can buy a plan. <Link href="/me/consent?next=%2Fplans">Ask a parent to approve</Link>
+          </span>
         </p>
       )}
       {mine && mine.plan !== 'free' && (
         <p className={s.current} data-testid="current-plan">
-          <Icon name="check" size={18} /> Your plan: <strong>{mine.planName}</strong> ({mine.creditsPerDay} credits a day)
-          {mine.validUntil ? `, until ${new Date(mine.validUntil).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })}` : ''}.{' '}
-          <Link href="/me#subscription">Manage</Link>
+          <StatusPill tone="success" dot>
+            Active
+          </StatusPill>
+          <span>
+            Your plan: <strong>{mine.planName}</strong> ({mine.creditsPerDay} credits a day)
+            {mine.validUntil ? `, until ${new Date(mine.validUntil).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'Asia/Kolkata' })}` : ''}.{' '}
+            <Link href="/me#subscription">Manage</Link>
+          </span>
         </p>
       )}
       {buy.kind === 'activating' && (
         <p className={s.current} role="status" data-testid="activating">
-          <Icon name="clock" size={18} /> Payment received — activating your plan…
+          <Icon name="clock" size={18} className={s.noticeIcon} /> <span>Payment received — activating your plan…</span>
         </p>
       )}
       {buy.kind === 'done' && (
         <p className={s.success} role="status" data-testid="activated">
-          <Icon name="check" size={18} /> {buy.planName} is active. Your extra credits are ready.
+          <Icon name="check" size={18} className={s.noticeIcon} /> <span>{buy.planName} is active. Your extra credits are ready.</span>
         </p>
       )}
       {buy.kind === 'dismissed' && (
         <p className={s.notice} role="status">
-          Payment not completed. You have not been charged.
+          <span>Payment not completed. You have not been charged.</span>
         </p>
       )}
       {buy.kind === 'problem' && (
         <p className={s.problem} role="alert" data-testid="plans-problem" data-code={buy.code}>
-          <Icon name="alert" size={18} /> {buy.message}
-          {buy.code === 'already_subscribed' && (
-            <>
-              {' '}
-              <Link href="/me#subscription">Manage your plan</Link>
-            </>
-          )}
-          {buy.code === 'consent_required' && (
-            <>
-              {' '}
-              <Link href="/me/consent?next=%2Fplans">Ask a parent to approve</Link>
-            </>
-          )}
+          <Icon name="alert" size={18} className={s.noticeIcon} />
+          <span>
+            {buy.message}
+            {buy.code === 'already_subscribed' && (
+              <>
+                {' '}
+                <Link href="/me#subscription">Manage your plan</Link>
+              </>
+            )}
+            {buy.code === 'consent_required' && (
+              <>
+                {' '}
+                <Link href="/me/consent?next=%2Fplans">Ask a parent to approve</Link>
+              </>
+            )}
+          </span>
         </p>
       )}
+
+      <FreeForever />
 
       {hasYearly && (
         <div className={s.toggle} role="radiogroup" aria-label="Billing period">
@@ -341,69 +380,84 @@ export function PlansClient() {
         </fieldset>
       )}
 
-      <ul className={s.grid}>
+      <CardGrid label="Plans" min={220} className={s.grid}>
         {ordered.map((p) => {
           const price = p.prices.find((x) => x.interval === (p.id === 'board_exam_pass' ? 'one_time' : interval)) ?? p.prices[0];
           const isCurrent = (mine?.plan ?? 'free') === p.id;
           const busy = (buy.kind === 'working' || buy.kind === 'activating') && buy.planId === p.id;
+          const featured = p.id === FEATURED_PLAN;
+          const look = planLook(p.id);
+          const parts = priceParts(price?.label ?? null);
           return (
-            <li key={p.id} className={cx(s.card, p.id === 'pro' && s.cardFeatured)} data-plan={p.id}>
-              <h2 className={s.planName}>
-                {p.name} {p.id === 'pro' && <Badge tone="accent">Most AI</Badge>}
-              </h2>
+            <Card as="li" key={p.id} className={cx(s.card, featured && s.cardFeatured)} data-plan={p.id}>
+              <div className={s.cardHead}>
+                <IconTile icon={look.icon} tint={look.tint} size="md" />
+                <span className={s.pills}>
+                  {featured && <StatusPill tone="info">Most AI</StatusPill>}
+                  {isCurrent && member && (
+                    <StatusPill tone="success" dot>
+                      Your plan
+                    </StatusPill>
+                  )}
+                </span>
+              </div>
+              <h2 className={s.planName}>{p.name}</h2>
               <p className={s.price} data-testid={`price-${p.id}`}>
-                {(() => {
-                  const parts = priceParts(price?.label ?? null);
-                  return (
-                    <>
-                      <span className={s.amount}>{parts.amount}</span>
-                      {parts.suffix && <span className={s.per}>{parts.suffix}</span>}
-                    </>
-                  );
-                })()}
+                <span className={s.amount}>{parts.amount}</span>
+                {parts.suffix && <span className={s.per}>{parts.suffix}</span>}
                 {price && plans.pricesIncludeGst && <span className={s.gst}> incl. GST</span>}
               </p>
               {p.validUntil && <p className={s.muted}>Valid until {new Date(p.validUntil).toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'Asia/Kolkata' })}</p>}
-              <ul className={s.features}>
+              <ul className={s.features} aria-label={`${p.name} includes`}>
                 {p.features.map((f) => (
                   <li key={f}>
-                    <Icon name="check" size={16} /> {featureText(f, p)}
+                    <Icon name="check" size={16} className={s.featureIcon} /> <span>{featureText(f, p)}</span>
                   </li>
                 ))}
               </ul>
-              {p.id === 'free' ? (
-                <p className={s.muted}>{isCurrent && member ? 'Your current plan' : 'For every logged-in student'}</p>
-              ) : isCurrent ? (
-                <Badge tone="success">Your plan</Badge>
-              ) : (
-                <Button
-                  block
-                  onClick={() => void start(p)}
-                  loading={busy}
-                  disabled={!plans.billingEnabled || !p.purchasable || consentNeeded}
-                  data-testid={`buy-${p.id}`}
-                >
-                  {!plans.billingEnabled || !p.purchasable ? 'Coming soon' : member ? `Choose ${p.name}` : 'Log in to choose'}
-                </Button>
-              )}
-            </li>
+              <div className={s.cardFoot}>
+                {p.id === 'free' ? (
+                  <p className={s.muted}>{isCurrent && member ? 'Your current plan' : 'For every logged-in student'}</p>
+                ) : isCurrent ? (
+                  <ButtonLink href="/me#subscription" variant="secondary" block>
+                    Manage your plan
+                  </ButtonLink>
+                ) : (
+                  <Button
+                    block
+                    variant={featured ? 'primary' : 'soft'}
+                    onClick={() => void start(p)}
+                    loading={busy}
+                    disabled={!plans.billingEnabled || !p.purchasable || consentNeeded}
+                    data-testid={`buy-${p.id}`}
+                  >
+                    {!plans.billingEnabled || !p.purchasable ? 'Coming soon' : member ? `Choose ${p.name}` : 'Log in to choose'}
+                  </Button>
+                )}
+              </div>
+            </Card>
           );
         })}
-      </ul>
-      <section className={s.howCredits} aria-labelledby="how-credits" data-testid="how-credits">
-        <h2 id="how-credits" className={s.howTitle}>
-          How AI credits work
-        </h2>
+      </CardGrid>
+
+      <Card as="section" className={s.howCredits} aria-labelledby="how-credits" data-testid="how-credits">
+        <div className={s.howHead}>
+          <IconTile icon="sparkles" tint="blue" size="sm" />
+          <h2 id="how-credits" className={s.howTitle}>
+            How AI credits work
+          </h2>
+        </div>
         <p>{allowanceLine(ordered)}</p>
-        <ul className={s.examples}>
+        <ul className={s.examples} aria-label="What AI help costs">
           {priceExamples().map((t) => (
             <li key={t}>{t}</li>
           ))}
         </ul>
         <p>{bonusCopy()}</p>
-      </section>
+      </Card>
       <p className={s.muted}>
-        {plans.pricesIncludeGst ? 'Prices include GST. ' : ''}Payments are handled by Razorpay (UPI, cards). An invoice is emailed for every payment and kept under <Link href="/me/invoices">Invoices</Link>. Monthly and yearly plans renew automatically until you cancel; you keep the plan until the end of the period you paid for.</p>
+        {plans.pricesIncludeGst ? 'Prices include GST. ' : ''}Payments are handled by Razorpay (UPI, cards). An invoice is emailed for every payment and kept under <Link href="/me/invoices">Invoices</Link>. Monthly and yearly plans renew automatically until you cancel; you keep the plan until the end of the period you paid for.
+      </p>
 
       {mine?.subscription && !mine.subscription.cancelAtPeriodEnd && (mine.subscription.status === 'active' || mine.subscription.status === 'authenticated') && (
         <p>
@@ -413,5 +467,27 @@ export function PlansClient() {
         </p>
       )}
     </div>
+  );
+}
+
+/** The promise that sits above every price (CONTEXT §7, golden rule 3): learning is never paywalled. */
+export function FreeForever() {
+  const { pick } = useStage();
+  return (
+    <Card as="section" tint="green" className={s.free} aria-labelledby="free-forever-title" data-testid="free-forever">
+      <IconTile icon="checkCircle" tint="green" size="lg" inverse />
+      <div className={s.freeText}>
+        <h2 id="free-forever-title" className={s.freeTitle}>
+          Learning and tests are free forever
+        </h2>
+        <p className={s.freeBody}>
+          {pick({
+            junior: 'Every lesson, note, flashcard, practice question and test is free for you, on every plan. Plans only add AI credits and AI features.',
+            middle: 'Every lesson, note, flashcard, practice question and test stays free on every plan. Plans only add AI credits and AI features.',
+            senior: 'Lessons, notes, flashcards, practice and every test stay free on every plan. Plans only add AI credits and AI features.',
+          })}
+        </p>
+      </div>
+    </Card>
   );
 }

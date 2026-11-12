@@ -1,7 +1,8 @@
-/* SOYL Coins: header chip, check-in, /coins, the daily challenge card. Mobile-first at 360 px; camelCase
-   class names (Tailwind leak rule, ui/README). The coin gold is decorative; text stays on --p-* tokens. */
+/* SOYL Coins: header chip, check-in, /coins (design language v3, ADR-032), the daily challenge card. Mobile-first
+   at 360 px; camelCase class names (Tailwind leak rule, ui/README). Tokens only: the coin gold is --p-tier-gold
+   (decorative, beside written numbers); text stays on --p-ink tokens. */
 .coinIcon {
-  color: #b08a00;
+  color: var(--p-tier-gold);
   flex: none;
 }
 .small {
@@ -21,8 +22,17 @@
 }
 .stack {
   display: grid;
-  gap: var(--p-space-4);
-  margin-top: var(--p-space-5);
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--p-space-6);
+  margin-top: var(--p-space-2);
+}
+.stack > * {
+  min-width: 0;
+}
+@media (min-width: 1024px) {
+  .stack {
+    gap: var(--p-space-8);
+  }
 }
 
 /* Header chip */
@@ -68,7 +78,7 @@
   }
 }
 
-/* Check-in */
+/* Check-in (also on the Learn pages' daily challenge card: keep these class names) */
 .checkIn {
   display: grid;
   gap: var(--p-space-2);
@@ -92,109 +102,109 @@
   font-weight: 600;
 }
 .flameIcon {
-  color: #c2410c;
+  color: var(--p-flame);
 }
 
-/* /coins hero */
+/* /coins hero: a yellow Card (Card tint="yellow") with the balance, the check-in and the store link. */
 .hero {
   display: grid;
   gap: var(--p-space-2);
-  padding: var(--p-space-5) var(--p-space-4);
-  border-radius: var(--p-radius-lg);
-  background: linear-gradient(135deg, #10131f 0%, #1d2766 70%, #2f3e9e 100%);
-  color: #f4f0e7;
+  padding: var(--p-stage-card-pad, var(--p-space-5));
+  border-radius: var(--p-stage-card-radius, var(--p-radius-xl));
+}
+.heroTop {
+  display: flex;
+  align-items: center;
+  gap: var(--p-space-4);
+  min-width: 0;
+}
+.heroText {
+  display: grid;
+  gap: var(--p-space-1);
+  min-width: 0;
 }
 .heroBalance {
   display: flex;
+  flex-wrap: wrap;
   align-items: baseline;
   gap: var(--p-space-2);
   margin: 0;
-  font-size: 2.5rem;
-  font-weight: 800;
   line-height: 1;
+}
+.heroNumber {
+  font-size: var(--p-text-4xl);
+  font-weight: var(--p-weight-display);
+  letter-spacing: var(--p-tracking-display);
   font-variant-numeric: tabular-nums;
 }
-.heroCoin {
-  align-self: center;
-  color: #f2d45c;
-}
 .heroUnit {
+  color: var(--p-ink-muted);
   font-size: var(--p-text-lg);
-  font-weight: 600;
-  color: #d9d5ca;
+  font-weight: 650;
 }
 .heroMeta {
   margin: 0;
-  color: #d9d5ca;
+  color: var(--p-ink-muted);
   font-size: var(--p-text-sm);
 }
-.heroLink {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--p-space-2);
-  justify-self: start;
-  min-height: var(--p-touch);
-  padding: 0 var(--p-space-4);
-  border-radius: var(--p-radius-pill);
-  background: #f2d45c;
-  color: #171717;
-  font-weight: 700;
-  text-decoration: none;
-}
-.heroLink:focus-visible {
-  outline: 3px solid #f4f0e7;
-  outline-offset: 2px;
-}
-
-/* How to earn */
-.earnList,
-.historyList,
-.milestones,
-.challengeList {
-  display: grid;
-  gap: 0;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-.earnRow,
-.historyRow {
+.heroFoot {
   display: flex;
   flex-wrap: wrap;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: var(--p-space-1) var(--p-space-3);
-  padding: var(--p-space-2) 0;
-  border-top: 1px solid var(--p-border);
+  gap: var(--p-space-2);
+  margin-top: var(--p-space-1);
 }
-.earnLabel {
-  flex: 1 1 14rem;
-  min-width: 0;
+/* The check-in sits on the yellow card: its texts stay on --p-ink tokens (AA on every tint). */
+.hero .checkIn {
+  margin-top: var(--p-space-2);
+  padding-top: var(--p-space-3);
+  border-top: 1px solid color-mix(in srgb, var(--p-tint-yellow-ink) 22%, transparent);
+}
+.hero .small {
+  color: var(--p-ink-muted);
+}
+
+/* Today + milestones: two cards side by side when there is room. */
+.duo {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--p-stage-gap, var(--p-space-4));
+  align-items: start;
+}
+@media (min-width: 760px) {
+  .duo {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Ways to earn (List rows) */
+.earnMeta {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--p-space-1) var(--p-space-2);
+  margin-top: 2px;
 }
 .earnCoins {
   display: inline-flex;
-  flex-wrap: wrap;
   align-items: center;
   gap: var(--p-space-1);
+  color: var(--p-ink);
   font-weight: 650;
   font-variant-numeric: tabular-nums;
-}
-.capTag {
-  padding: 0 var(--p-space-2);
-  border-radius: var(--p-radius-pill);
-  background: var(--p-surface-2);
-  color: var(--p-ink-muted);
-  font-size: var(--p-text-xs);
-  font-weight: 600;
+  overflow-wrap: anywhere;
 }
 
-/* History */
-.historyMain {
+/* History (DataTable) */
+.historyWhat {
   display: grid;
+  gap: 2px;
   min-width: 0;
 }
+.historyWhat .small {
+  font-weight: 400;
+}
 .historyLabel {
-  font-weight: 600;
+  font-weight: 650;
 }
 .historyAmount {
   font-weight: 750;
@@ -207,35 +217,34 @@
   color: var(--p-danger);
 }
 
-/* Milestones */
-.milestones {
-  margin-top: var(--p-space-3);
-}
+/* Milestones (List rows in a RailCard) */
 .milestone {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: var(--p-space-2);
-  padding: var(--p-space-2) 0;
-  border-top: 1px solid var(--p-border);
   color: var(--p-ink-muted);
 }
 .milestoneDone {
   color: var(--p-ink);
 }
 
-/* Daily challenge (learn hub; ADR-023: a compact card, subject tiles in a grid) */
+/* Daily challenge (learn hub; ADR-023: a compact card, subject tiles in a grid). v3 tokens: card hairline,
+   soft card shadow and the stage radius; markup and layout unchanged. */
+.challengeList {
+  display: grid;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
 .challenge {
   display: grid;
   gap: var(--p-space-2);
   margin-top: var(--p-space-6);
-  padding: var(--p-space-4);
-  border: 1px solid var(--p-border);
-  border-radius: var(--p-radius-xl);
+  padding: var(--p-stage-card-pad, var(--p-space-4));
+  border: 1px solid var(--p-card-border);
+  border-radius: var(--p-stage-card-radius, var(--p-radius-xl));
   background:
     radial-gradient(120% 140% at 100% 0%, color-mix(in srgb, var(--p-highlight) 22%, transparent) 0, transparent 55%),
     var(--p-surface);
-  box-shadow: var(--p-shadow-1);
+  box-shadow: var(--p-shadow-card);
 }
 .challengeHead {
   display: flex;
@@ -258,11 +267,8 @@
   font-size: var(--p-text-sm);
 }
 .challengeList {
-  display: grid;
   gap: var(--p-space-2);
   margin: var(--p-space-2) 0 0;
-  padding: 0;
-  list-style: none;
 }
 @media (min-width: 640px) {
   .challengeList {

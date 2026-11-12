@@ -14,16 +14,22 @@ import type { CoinRedemption, CoinStore, CoinStoreItem } from '@/platform/shared
 import { howToEarn } from '@/platform/shared/config/coins';
 import { Button } from '@/components/platform/ui/kit/Button';
 import { Dialog } from '@/components/platform/ui/kit/Dialog';
-import { Badge, EmptyState, Skeleton } from '@/components/platform/ui/kit/Display';
+import { ButtonLink } from '@/components/platform/ui/kit/ButtonLink';
+import { Badge, Card, EmptyState, Skeleton } from '@/components/platform/ui/kit/Display';
+import { GreetingHeader } from '@/components/platform/ui/kit/Greeting';
 import { Icon } from '@/components/platform/ui/kit/Icon';
+import { List, ListRow, StatusPill } from '@/components/platform/ui/kit/Lists';
+import { CardGrid, PageSection } from '@/components/platform/ui/kit/Page';
+import { IconTile } from '@/components/platform/ui/kit/Tiles';
 import { useToast } from '@/components/platform/ui/kit/Toast';
 import { cx } from '@/components/platform/ui/cx';
 import { consentAllows } from '@/platform/shared/config/consent';
 import { useSession } from '../auth/SessionProvider';
+import { useStage } from '../shell/StageProvider';
 import { api } from '../lib/api-browser';
 import { trackInterest } from '../lib/interest';
 import { AddressForm } from './AddressForm';
-import { canCancel, coinsProblemMessage, coinsText, dropLine, istDate, needsAddress, REDEMPTION_STATUS_LABELS, stateCopy } from './coins-logic';
+import { canCancel, coinsProblemMessage, coinsText, dropLine, earnVisual, istDate, needsAddress, REDEMPTION_STATUS_LABELS, stateCopy } from './coins-logic';
 import { useCoins } from './CoinsProvider';
 import { StoreArt } from './StoreArt';
 import { useNow } from './useNow';
@@ -176,14 +182,12 @@ const EARN_NOW = ['checkin', 'daily_challenge', 'solved_milestone', 'test_submit
 
 /** D-038: the store before redemption opens. Teasers, no items, prices or buttons that spend coins. */
 function ComingSoon({ member }: { member: boolean }) {
+  const { pick } = useStage();
   const ways = howToEarn().filter((r) => EARN_NOW.includes(r.key));
   return (
     <>
-      <section aria-labelledby="soon-title" className={s.section} data-testid="store-coming-soon">
-        <h2 id="soon-title" className={s.sectionTitle}>
-          What is coming <span className={s.sectionSub}>Opening soon</span>
-        </h2>
-        <ul className={s.grid}>
+      <PageSection id="soon-title" title="What is coming" action={<StatusPill tone="highlight">Opening soon</StatusPill>} data-testid="store-coming-soon">
+        <CardGrid label="Rewards coming soon" min={240} className={s.grid}>
           {TEASERS.map((t) => (
             <li key={t.image} className={cx(s.item, s.teaser)} data-testid="store-teaser" data-rarity={t.rarity}>
               <div className={cx(s.art, s.artDigital)}>
@@ -199,27 +203,41 @@ function ComingSoon({ member }: { member: boolean }) {
               </div>
             </li>
           ))}
-        </ul>
-      </section>
-      <section aria-labelledby="earn-now-title" className={cx(s.section, s.earnNow)}>
-        <h2 id="earn-now-title" className={s.sectionTitle}>
-          Start earning now
-        </h2>
-        <p className={s.muted}>Coins you earn today stay in your balance for the launch.</p>
-        <ul className={s.earnNowList}>
-          {ways.map((w) => (
-            <li key={w.key}>
-              <span>{w.label}</span>
-              <span className={s.earnNowCoins}>
-                <Icon name="coin" size={16} className={s.priceCoin} /> {w.coins}
-              </span>
-            </li>
-          ))}
-        </ul>
-        <Link href="/coins" className={s.footLink} data-testid="store-how-to-earn">
-          {member ? 'Your coins and every way to earn' : 'Every way to earn SOYL Coins'} <Icon name="chevronRight" size={18} />
-        </Link>
-      </section>
+        </CardGrid>
+      </PageSection>
+      <PageSection
+        id="earn-now-title"
+        title="Start earning now"
+        description={pick({
+          junior: 'Coins you earn today stay in your balance for the launch. A check-in is a good start.',
+          middle: 'Coins you earn today stay in your balance for the launch.',
+          senior: 'Coins you earn today stay in your balance for the launch.',
+        })}
+      >
+        <List label="Ways to start earning">
+          {ways.map((w) => {
+            const v = earnVisual(w.key);
+            return (
+              <ListRow
+                key={w.key}
+                leading={<IconTile icon={v.icon} tint={v.tint} size="sm" />}
+                title={w.label}
+                trailing={
+                  <span className={s.earnNowCoins}>
+                    <Icon name="coin" size={16} className={s.priceCoin} /> {w.coins}
+                    <span className="p-visually-hidden"> {w.coins === '1' ? 'coin' : 'coins'}</span>
+                  </span>
+                }
+              />
+            );
+          })}
+        </List>
+        <div>
+          <ButtonLink href="/coins" variant="soft" iconEnd="chevronRight" data-testid="store-how-to-earn">
+            {member ? 'Your coins and every way to earn' : 'Every way to earn SOYL Coins'}
+          </ButtonLink>
+        </div>
+      </PageSection>
     </>
   );
 }
@@ -355,31 +373,35 @@ export function StoreClient() {
 
   return (
     <div className={s.store} data-testid="store" data-redemption={store ? (open ? 'on' : 'off') : 'loading'}>
-      <section className={s.hero} aria-labelledby="store-title">
-        <p className={s.eyebrow}>The SOYL Store · Earned, never sold</p>
-        <h1 id="store-title" className={s.heroTitle}>
-          {closed ? 'Exclusive rewards — coming soon' : 'The SOYL Store'}
-        </h1>
-        <p className={s.heroLead}>
-          {closed
+      <GreetingHeader
+        variant="hero"
+        tint="yellow"
+        className={s.hero}
+        eyebrow="The SOYL Store · Earned, never sold"
+        title={closed ? 'Exclusive rewards — coming soon' : 'The SOYL Store'}
+        subtitle={
+          closed
             ? 'Your SOYL Coins will redeem exclusive rewards that cannot be bought, only earned. Our merch is being designed now. Every coin you earn today counts.'
-            : 'Rewards you cannot buy. Every item here is paid for with SOYL Coins, and coins only come from learning.'}
-        </p>
-        <div className={s.heroBar}>
-          {member ? (
-            <p className={s.heroBalance} data-testid="store-balance">
-              <Icon name="coin" size={24} className={s.heroCoin} />
-              <span className={s.heroNumber}>{balance === null ? '…' : balance.toLocaleString('en-IN')}</span>
-              <span>{balance === 1 ? 'coin' : 'coins'}</span>
-            </p>
-          ) : state.status === 'guest' ? (
-            <Button onClick={signIn}>Log in to start earning</Button>
-          ) : null}
-          <Link href="/coins" className={s.heroLink}>
-            How to earn <Icon name="chevronRight" size={18} />
-          </Link>
-        </div>
-      </section>
+            : 'Rewards you cannot buy. Every item here is paid for with SOYL Coins, and coins only come from learning.'
+        }
+        actions={
+          <>
+            {member ? (
+              <p className={s.heroBalance} data-testid="store-balance">
+                <Icon name="coin" size={22} className={s.priceCoin} />
+                <span className={s.heroNumber}>{balance === null ? '…' : balance.toLocaleString('en-IN')}</span>
+                <span>{balance === 1 ? 'coin' : 'coins'}</span>
+              </p>
+            ) : state.status === 'guest' ? (
+              <Button onClick={signIn}>Log in to start earning</Button>
+            ) : null}
+            <ButtonLink href="/coins" variant="ghost" iconEnd="chevronRight">
+              How to earn
+            </ButtonLink>
+          </>
+        }
+        art={<StoreArt image="hoodie" className={s.heroArt} />}
+      />
 
       {loadError && (
         <EmptyState title="Could not load the store" headingLevel="h2" icon="alert" action={<Button onClick={() => void load()}>Try again</Button>}>
@@ -397,16 +419,12 @@ export function StoreClient() {
 
       {store && open && (
         <>
-          <section aria-labelledby="digital-title" className={s.section}>
-            <h2 id="digital-title" className={s.sectionTitle}>
-              Profile rewards <span className={s.sectionSub}>Unlocked at once</span>
-            </h2>
-            <ul className={s.grid}>{digital.map(card)}</ul>
-          </section>
-          <section aria-labelledby="merch-title" className={s.section}>
-            <h2 id="merch-title" className={s.sectionTitle}>
-              SOYL merch <span className={s.sectionSub}>Shipped in India</span>
-            </h2>
+          <PageSection id="digital-title" title="Profile rewards" action={<StatusPill tone="info">Unlocked at once</StatusPill>}>
+            <CardGrid label="Profile rewards" min={240} className={s.grid}>
+              {digital.map(card)}
+            </CardGrid>
+          </PageSection>
+          <PageSection id="merch-title" title="SOYL merch" action={<StatusPill>Shipped in India</StatusPill>}>
             {!store.physicalRedemptionEnabled ? (
               <p className={s.notice} data-testid="merch-coming-soon">
                 <Icon name="info" size={18} /> Merch redemption opens soon. Keep earning: your coins are safe, and prices will not change for coins you already have.
@@ -419,22 +437,23 @@ export function StoreClient() {
                 </p>
               )
             )}
-            <ul className={s.grid}>{merch.map(card)}</ul>
-          </section>
+            <CardGrid label="SOYL merch" min={240} className={s.grid}>
+              {merch.map(card)}
+            </CardGrid>
+          </PageSection>
         </>
       )}
 
       {member && (open || (orders !== null && orders.length > 0)) && (
-        <section aria-labelledby="orders-title" className={s.section} data-testid="my-redemptions">
-          <h2 id="orders-title" className={s.sectionTitle}>
-            Your redemptions
-          </h2>
+        <PageSection id="orders-title" title="Your redemptions" data-testid="my-redemptions">
           {orders === null ? (
             <Skeleton lines={2} />
           ) : (
-            <Redemptions list={orders} onAddress={(r) => setPending({ kind: 'address', redemption: r })} onCancel={(r) => setPending({ kind: 'cancel', redemption: r })} />
+            <Card>
+              <Redemptions list={orders} onAddress={(r) => setPending({ kind: 'address', redemption: r })} onCancel={(r) => setPending({ kind: 'cancel', redemption: r })} />
+            </Card>
           )}
-        </section>
+        </PageSection>
       )}
 
       <p className={s.small}>SOYL Coins have no cash value and cannot be bought, sold or transferred.{open ? ' Merch is free; delivery is within India only.' : ''}</p>

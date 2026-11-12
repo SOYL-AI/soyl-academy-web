@@ -1,56 +1,117 @@
+/* /plans (design language v3, ADR-032): status notices, the green "free forever" card, the billing-period
+   toggle, plan Cards (one featured, carrying the one primary button), invoice details and how credits work.
+   Tokens only; mobile-first at 360 px. */
 .page {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
-  gap: var(--p-space-4);
-  margin-top: var(--p-space-4);
+  gap: var(--p-space-5);
+  margin-top: var(--p-space-2);
+}
+.page > * {
+  min-width: 0;
 }
 .muted {
   margin: 0;
   color: var(--p-ink-muted);
   font-size: var(--p-text-sm);
 }
+
+/* Notices: a soft fill, the icon in the notice's colour, the words on --p-ink. */
 .notice,
 .current,
 .success,
 .problem {
   display: flex;
+  align-items: flex-start;
+  gap: var(--p-space-2) var(--p-space-3);
+  margin: 0;
+  padding: var(--p-space-3) var(--p-space-4);
+  border-radius: var(--p-radius-lg);
+  background: var(--p-info-soft);
+  color: var(--p-ink);
+}
+.current {
   flex-wrap: wrap;
   align-items: center;
-  gap: var(--p-space-2);
-  margin: 0;
-  padding: var(--p-space-3);
-  border-radius: var(--p-radius-md);
-  border: 1px solid var(--p-border-strong);
-  background: var(--p-surface-2);
+  border: 1px solid var(--p-card-border);
+  background: var(--p-surface);
+  box-shadow: var(--p-shadow-card);
 }
 .success {
-  border-color: var(--p-success);
   background: var(--p-success-soft);
 }
 .problem {
-  border-color: var(--p-danger);
   background: var(--p-danger-soft);
 }
-.current {
-  border-color: var(--p-accent);
-  background: var(--p-accent-soft);
+.notice > span,
+.current > span,
+.success > span,
+.problem > span {
+  flex: 1 1 14rem;
+  min-width: 0;
 }
+.noticeIcon {
+  flex: none;
+  margin-top: 2px;
+  color: var(--p-info);
+}
+.success .noticeIcon {
+  color: var(--p-success);
+}
+.problem .noticeIcon {
+  color: var(--p-danger);
+}
+.notice a,
+.current a,
+.problem a {
+  color: var(--p-accent);
+  font-weight: 650;
+  text-underline-offset: 3px;
+}
+
+/* "Learning and tests are free forever" (Card tint="green") */
+.free {
+  display: flex;
+  align-items: center;
+  gap: var(--p-space-4);
+  padding: var(--p-stage-card-pad, var(--p-space-5));
+  border-radius: var(--p-stage-card-radius, var(--p-radius-xl));
+}
+.freeText {
+  display: grid;
+  gap: var(--p-space-1);
+  min-width: 0;
+}
+.freeTitle {
+  margin: 0;
+  font-size: var(--p-text-lg);
+  font-weight: 700;
+  line-height: var(--p-leading-tight);
+}
+.freeBody {
+  margin: 0;
+  color: var(--p-ink-muted);
+}
+
+/* Billing period: a segmented pill */
 .toggle {
   display: inline-flex;
   justify-self: start;
   padding: 3px;
   border-radius: var(--p-radius-pill);
-  border: 1px solid var(--p-border);
+  border: 1px solid var(--p-card-border);
   background: var(--p-surface-2);
 }
 .toggleOption {
+  position: relative;
   display: inline-flex;
   align-items: center;
   gap: var(--p-space-1);
-  min-height: 40px;
-  padding: 0 var(--p-space-4);
+  min-height: var(--p-touch);
+  padding: 0 var(--p-space-5);
   border-radius: var(--p-radius-pill);
-  font-weight: 600;
+  color: var(--p-ink-muted);
+  font-weight: 650;
   cursor: pointer;
 }
 .toggleOption input {
@@ -64,70 +125,84 @@
 }
 .toggleOn {
   background: var(--p-surface);
+  color: var(--p-ink);
   box-shadow: var(--p-shadow-1);
 }
+
+/* Plan cards (CardGrid of Card as="li") */
 .grid {
+  align-items: stretch;
+}
+.loadingGrid {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
-  gap: var(--p-space-3);
-  margin: 0;
-  padding: 0;
-  list-style: none;
+  gap: var(--p-stage-gap, var(--p-space-4));
 }
 @media (min-width: 720px) {
-  .grid {
+  .loadingGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
-@media (min-width: 1040px) {
-  .grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-}
 .card {
-  display: grid;
-  align-content: start;
+  display: flex;
+  flex-direction: column;
   gap: var(--p-space-3);
-  padding: var(--p-space-4);
-  border: 1px solid var(--p-border);
-  border-radius: var(--p-radius-lg);
-  background: var(--p-surface);
+  height: 100%;
+  min-width: 0;
+  padding: var(--p-stage-card-pad, var(--p-space-5));
 }
 .cardFeatured {
   border: 2px solid var(--p-accent);
+  box-shadow: var(--p-shadow-2);
+}
+.cardHead {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--p-space-2);
+}
+.pills {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: var(--p-space-1);
 }
 .planName {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: var(--p-space-2);
   margin: 0;
   font-size: var(--p-text-xl);
+  font-weight: 700;
+  line-height: var(--p-leading-tight);
 }
 .price {
   margin: 0;
-  font-size: var(--p-text-2xl);
-  font-weight: 800;
+  font-size: var(--p-text-3xl);
+  font-weight: var(--p-weight-display);
+  letter-spacing: var(--p-tracking-display);
+  line-height: 1.1;
 }
 .amount {
   font-variant-numeric: tabular-nums;
 }
 /* "/month", " one-time": proportional figures and hyphen. */
 .per {
-  font-size: var(--p-text-lg);
+  color: var(--p-ink-muted);
+  font-size: var(--p-text-md);
   font-weight: 650;
+  letter-spacing: normal;
   white-space: nowrap;
 }
 .gst {
+  color: var(--p-ink-muted);
   font-size: var(--p-text-sm);
   font-weight: 500;
-  color: var(--p-ink-muted);
+  letter-spacing: normal;
 }
 .features {
   display: grid;
   gap: var(--p-space-2);
   margin: 0;
-  padding: 0;
+  padding: var(--p-space-3) 0 0;
+  border-top: 1px solid var(--p-border);
   list-style: none;
 }
 .features li {
@@ -135,18 +210,29 @@
   gap: var(--p-space-2);
   align-items: flex-start;
 }
+.featureIcon {
+  flex: none;
+  margin-top: 3px;
+  color: var(--p-success);
+}
+.cardFoot {
+  margin-top: auto;
+  padding-top: var(--p-space-2);
+}
 
 /* D-044: how credits work (numbers from config). */
 .howCredits {
   display: grid;
-  gap: var(--p-space-2);
-  padding: var(--p-space-4);
-  border: 1px solid var(--p-border);
-  border-radius: var(--p-radius-lg);
-  background: var(--p-surface);
+  gap: var(--p-space-3);
+  padding: var(--p-stage-card-pad, var(--p-space-5));
 }
 .howCredits p {
   margin: 0;
+}
+.howHead {
+  display: flex;
+  align-items: center;
+  gap: var(--p-space-2);
 }
 .howTitle {
   margin: 0;
@@ -162,29 +248,37 @@
   list-style: none;
 }
 .examples li {
-  padding: 2px var(--p-space-2);
+  padding: 4px var(--p-space-3);
   border-radius: var(--p-radius-pill);
   background: var(--p-surface-2);
   font-size: var(--p-text-sm);
 }
-/* Invoice details at checkout (ADR-024) */
+
+/* Invoice details at checkout (ADR-024): a card with two fields */
 .invoice {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   gap: var(--p-space-3);
-  margin: 0;
-  padding: var(--p-space-3);
-  border: 1px solid var(--p-border);
-  border-radius: var(--p-radius-md);
-  background: var(--p-surface);
   min-width: 0;
+  margin: 0;
+  padding: var(--p-stage-card-pad, var(--p-space-4));
+  border: 1px solid var(--p-card-border);
+  border-radius: var(--p-stage-card-radius, var(--p-radius-xl));
+  background: var(--p-surface);
+  box-shadow: var(--p-shadow-card);
 }
 .invoiceLegend {
-  padding: 0 var(--p-space-1);
-  font-weight: 600;
+  float: left;
+  width: 100%;
+  margin-bottom: var(--p-space-1);
+  padding: 0;
+  font-weight: 700;
 }
 @media (min-width: 720px) {
   .invoice {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .invoiceLegend {
+    grid-column: 1 / -1;
   }
 }
