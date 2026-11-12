@@ -67,8 +67,11 @@ test('browse board → class → subject → chapter by tapping', async ({ page 
   await expect(page).toHaveURL(/\/learn\/cisce\/10\/chemistry$/);
   await page.getByRole('link', { name: /Chapter 1:/ }).click();
   await expect(page).toHaveURL(/\/learn\/cisce\/10\/chemistry\/ch01$/);
-  // No content for this chapter yet (M2): every view says "Coming soon" instead of linking.
-  for (const v of ['hub-lesson', 'hub-notes', 'hub-flashcards', 'hub-practice']) await expect(page.getByTestId(v)).toContainText('Coming soon');
+  // Every step of the path either opens its view or says "Coming soon" (this chapter has had content since M5).
+  for (const v of ['hub-lesson', 'hub-notes', 'hub-flashcards', 'hub-practice']) {
+    const step = page.getByTestId(v);
+    await expect(step.getByRole('link').or(step.getByText('Coming soon')).first()).toBeVisible();
+  }
   await expect(page.getByTestId('chapter-tests')).toBeVisible();
 });
 

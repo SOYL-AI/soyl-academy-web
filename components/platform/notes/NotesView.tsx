@@ -1,6 +1,6 @@
 /**
  * Notes body (Server Component): a reading layout (learn-mode, 2026-10-29). Header (breadcrumb, title, sections,
- * reading time), the contents (inline on phones, a sticky sidebar with the section being read from 1024 px), a
+ * reading time), the contents (a card below 1280 px, a sticky right rail with the section being read from 1280 px), a
  * sticky reader bar on phones (section, reading progress, "Sections" sheet), the sections (body, visuals,
  * formulas and key terms as callouts, a report button), exam tips as a callout, then "what next" (back to the
  * chapter, flashcards / practice). Markdown, KaTeX and diagrams are rendered here (no client JS); only the
