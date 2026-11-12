@@ -283,7 +283,8 @@ describe('design tokens', () => {
 
   it('age stages (ADR-032): junior and senior retune only --p-stage-* tokens, scoped to the platform', () => {
     for (const stage of ['junior', 'senior']) {
-      const m = new RegExp(`\\.soyl-platform \\[data-stage="${stage}"\\],\\n\\.soyl-platform\\[data-stage="${stage}"\\] \\{([\\s\\S]*?)\\n\\}`).exec(css);
+      // \r?\n: Windows checkouts (core.autocrlf) have CRLF line endings.
+      const m = new RegExp(`\\.soyl-platform \\[data-stage="${stage}"\\],\\r?\\n\\.soyl-platform\\[data-stage="${stage}"\\] \\{([\\s\\S]*?)\\r?\\n\\}`).exec(css);
       expect(m, stage).not.toBeNull();
       const names = [...m![1].matchAll(/(--[\w-]+):/g)].map((x) => x[1]);
       expect(names.length).toBeGreaterThan(3);
