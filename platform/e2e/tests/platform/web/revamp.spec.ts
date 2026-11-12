@@ -13,8 +13,8 @@ const OUT = resolve(import.meta.dirname, '../../../test-results/platform-web/rev
 mkdirSync(OUT, { recursive: true });
 
 const CH01 = '/learn/cbse/10/science/ch01';
-const DARK_BG = 'rgb(22, 23, 26)'; // --p-bg (dark)
-const LIGHT_BG = 'rgb(245, 246, 248)'; // --p-bg (light)
+const DARK_BG = 'rgb(18, 19, 22)'; // --p-bg (dark), design language v3 (ADR-032)
+const LIGHT_BG = 'rgb(246, 244, 239)'; // --p-bg (light): warm paper
 
 const root = (page: Page) => page.locator('#soyl-platform-root');
 const bg = (l: Locator) => l.evaluate((el) => getComputedStyle(el).backgroundColor);

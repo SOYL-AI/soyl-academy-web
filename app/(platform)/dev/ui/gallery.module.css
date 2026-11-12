@@ -42,6 +42,8 @@
 }
 .section {
   display: grid;
+  /* One track that never grows past the section (a wide demo scrolls inside itself, the page never does). */
+  grid-template-columns: minmax(0, 1fr);
   gap: var(--p-space-4);
   min-width: 0;
 }

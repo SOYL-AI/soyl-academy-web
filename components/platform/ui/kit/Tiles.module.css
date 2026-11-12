@@ -107,6 +107,7 @@ a.mode:hover,
 }
 .subjectTop {
   display: flex;
+  flex-wrap: wrap;
   align-items: flex-start;
   justify-content: space-between;
   gap: var(--p-space-2);
