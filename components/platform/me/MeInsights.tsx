@@ -1,18 +1,23 @@
 'use client';
 
 /**
- * /me learning profile (ADR-023): the private player card (FUT style, GET /v1/me/card), the activity heatmap
+ * Learning profile blocks (ADR-023): the private player card (FUT style, GET /v1/me/card), the activity heatmap
  * with streak and totals (LeetCode style, GET /v1/me/activity, IST days), solved questions per subject
  * (GET /v1/me/progress) and badges (GET /v1/me/badges). Plus the Appearance setting (Light / Dark / System).
  * Every block has its own empty and error state; nothing here is shown to anyone else.
+ * Design language v3 (ADR-032 §10): the full analytics live on /me/progress; /me shows `ActivitySummary` (streak,
+ * totals and the card's rating, with a link to Progress), `BadgesSection` and `AppearanceCard`. `MeInsights` stays
+ * exported for other pages.
  */
 import dynamic from 'next/dynamic';
 import { useEffect, useState } from 'react';
 import type { Schemas } from '@/platform/shared/api-client';
 
 type MyBadges = Schemas['MyBadges'];
+import { ButtonLink } from '@/components/platform/ui/kit/ButtonLink';
 import { Card, CardTitle, Skeleton } from '@/components/platform/ui/kit/Display';
 import { Icon } from '@/components/platform/ui/kit/Icon';
+import { RailCard } from '@/components/platform/ui/kit/Rail';
 import { api } from '../lib/api-browser';
 import { useLearnerProgress } from '../learn/ProgressProvider';
 import { useActivity, usePlayerCard } from '../learn/useInsights';
@@ -147,7 +152,73 @@ function SolvedSection() {
   );
 }
 
-function BadgesSection() {
+export interface ActivityFigures {
+  streak: number;
+  longest: number;
+  solved: number | null;
+  lessons: number | null;
+  tests: number | null;
+}
+
+/** The /me summary's figures: only what is known (null = still loading or not available; pure; tested). */
+export function activityFigures(streak: { current?: number; longest?: number } | null | undefined, totals: { solved: number; lessonsCompleted: number; testsSubmitted: number } | null): ActivityFigures {
+  return {
+    streak: streak?.current ?? 0,
+    longest: streak?.longest ?? 0,
+    solved: totals ? totals.solved : null,
+    lessons: totals ? totals.lessonsCompleted : null,
+    tests: totals ? totals.testsSubmitted : null,
+  };
+}
+
+/**
+ * /me "Your learning" (anchor #activity): streak, totals and the player card's rating in a few numbers, and the way to
+ * /me/progress, where the heatmap, the card and the per-subject charts live (DESIGN-LANGUAGE §10 "Progress").
+ */
+export function ActivitySummary() {
+  const activity = useActivity();
+  const card = usePlayerCard();
+  const { progress } = useLearnerProgress();
+  const streak = activity.status === 'ready' ? activity.data.streak : progress?.streak;
+  const f = activityFigures(streak, activity.status === 'ready' ? activity.data.totals : null);
+  const rated = card.status === 'ready' && card.data.attributes.length > 0 ? card.data : null;
+  const cell = (value: number | null) => (value === null ? '–' : value.toLocaleString('en-IN'));
+  return (
+    <RailCard id="activity" title="Your learning" data-testid="activity-section">
+      <p className={s.streakLine}>
+        <Icon name="flame" size={22} className={s.flame} />
+        <span>
+          <b>{f.streak}</b> day streak{f.longest > f.streak ? ` · best ${f.longest}` : ''}
+        </span>
+      </p>
+      <dl className={s.figures}>
+        <div>
+          <dt>Solved</dt>
+          <dd>{cell(f.solved)}</dd>
+        </div>
+        <div>
+          <dt>Lessons</dt>
+          <dd>{cell(f.lessons)}</dd>
+        </div>
+        <div>
+          <dt>Tests</dt>
+          <dd>{cell(f.tests)}</dd>
+        </div>
+      </dl>
+      {activity.status === 'error' && <p className={s.muted}>We could not load your activity. Try again later.</p>}
+      {rated && (
+        <p className={s.muted} data-testid="card-rating">
+          Player card: <b className={s.ink}>{rated.overall}</b> overall{rated.provisional ? ' (provisional)' : ''}. Only you can see it.
+        </p>
+      )}
+      <ButtonLink href="/me/progress" variant="soft" icon="chart" block data-testid="progress-link">
+        See all your progress
+      </ButtonLink>
+    </RailCard>
+  );
+}
+
+export function BadgesSection() {
   const [badges, setBadges] = useState<MyBadges['badges'] | null | 'error'>(null);
   useEffect(() => {
     let alive = true;
