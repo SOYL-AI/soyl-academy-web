@@ -102,7 +102,7 @@ test.describe('Lead review: shell and layout', () => {
 
   test('one page container: content lines up with the top bar on every page (1280 px)', async ({ page }) => {
     await page.setViewportSize({ width: 1280, height: 900 });
-    for (const path of ['/learn', '/learn/cbse/10', SUBJECT, `${SUBJECT}/ch01`, '/tests', '/ask', '/plans', '/leaderboard', '/me/dashboard']) {
+    for (const path of ['/learn', '/learn/cbse/10', SUBJECT, `${SUBJECT}/ch01`, '/tests', '/ask', '/plans', '/leaderboard', '/me/dashboard', '/me/progress']) {
       await page.goto(path, { waitUntil: 'networkidle' });
       const [bar, content] = await page.evaluate(() => {
         const left = (el: Element) => el.getBoundingClientRect().left + parseFloat(getComputedStyle(el).paddingLeft);
