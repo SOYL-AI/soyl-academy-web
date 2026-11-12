@@ -80,6 +80,8 @@ export class IdentityService {
     private readonly staff: StaffSignInRules,
     /** D-045: the server-observed `signup` interest counter (aggregate, by method; no user link). */
     private readonly counters?: { observe(name: 'signup', dimension: string, log?: IdentityContext['log']): Promise<void> },
+    /** New student sign-up notice to the owner (notifications/signup.ts): background, never throws. */
+    private readonly signups?: { accountCreated(user: AuthUser, method: SignInMethod, log?: IdentityContext['log']): void },
   ) {}
 
   private async findActiveUser(where: ReturnType<typeof eq>): Promise<AuthUser | null> {
@@ -104,6 +106,7 @@ export class IdentityService {
     }
     authEvent(ctx.log, 'account_created', { outcome: 'success', userId: user.id, method, ip: ctx.ip, userAgent: ctx.userAgent });
     await this.counters?.observe('signup', method, ctx.log);
+    this.signups?.accountCreated(user, method, ctx.log);
   }
 
   private assertCanUseOtp(user: AuthUser, method: 'phone' | 'email', ctx: IdentityContext) {

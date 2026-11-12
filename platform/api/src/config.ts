@@ -147,6 +147,12 @@ const EnvSchema = z.object({
   FB_NOTIFY_EMAIL: z.email().optional(),
   /** Reply-To of the parent confirmation email. Default: the contact address on invoices (INVOICING.seller.email). */
   FB_REPLY_TO: z.email().optional(),
+
+  /**
+   * Optional owner inbox told about each new student account (notifications/signup.ts). One address; unset or
+   * empty = off. Set in deployment config (Bicep params), never in source.
+   */
+  SIGNUP_NOTIFY_EMAIL: z.preprocess((v) => (typeof v === 'string' && v.trim() === '' ? undefined : v), z.email().optional()),
 });
 
 export interface Config {
@@ -199,6 +205,8 @@ export interface Config {
   coins: { redemptionEnabled: boolean; physicalRedemptionEnabled: boolean };
   /** Future Builders registrations and enquiries (ADR-027). Empty `ingestKeys`: every ingest call is refused. */
   futureBuilders: { ingestKeys: string[]; notifyEmail: string | null; replyTo: string };
+  /** New student sign-up notice (SIGNUP_NOTIFY_EMAIL). null = off. */
+  signupNotifyEmail: string | null;
 }
 
 export class ConfigError extends Error {
@@ -388,6 +396,7 @@ export function loadConfig(env: Record<string, string | undefined> = process.env
     devOtpOutbox,
     billing: billing.config,
     futureBuilders: { ingestKeys: fbIngestKeys, notifyEmail: e.FB_NOTIFY_EMAIL ?? null, replyTo: e.FB_REPLY_TO ?? INVOICING.seller.email },
+    signupNotifyEmail: e.SIGNUP_NOTIFY_EMAIL ?? null,
     coins: {
       redemptionEnabled:
         e.COINS_REDEMPTION_ENABLED === undefined ? COIN_STORE.redemptionEnabled : e.COINS_REDEMPTION_ENABLED === 'true' || e.COINS_REDEMPTION_ENABLED === '1',

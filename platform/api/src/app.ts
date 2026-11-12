@@ -114,6 +114,9 @@ export async function buildApp(deps: AppDeps, opts: BuildAppOptions = {}): Promi
   app.decorate('services', services);
   services.billing.useLog(app.log);
   services.futureBuilders.useLog(app.log);
+  services.signupNotifier.useLog(app.log);
+  // Sign-up notices in flight finish before the server closes (graceful shutdown).
+  app.addHook('onClose', async () => services.signupNotifier.drain());
   app.decorate('deps', deps);
   app.decorateRequest('clientIp', '');
   app.decorateRequest('edgeSecretIndex', null);
