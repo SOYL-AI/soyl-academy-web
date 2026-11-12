@@ -200,5 +200,7 @@ param appSettings = {
   CONTENT_BUDGET_INR: aiOn ? '300000' : '0'
   // Future Builders (D-051, ADR-027): staff notice for each registration and enquiry.
   FB_NOTIFY_EMAIL: 'outreach@soyl.cloud'
+  // Owner notice for each new student sign-up (owner request 2026-11-12; masked address and counts only).
+  SIGNUP_NOTIFY_EMAIL: 'ryan.gomez@soyl.cloud'
   LOG_LEVEL: 'info'
 }
