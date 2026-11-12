@@ -2,8 +2,8 @@
 
 /**
  * Compact teasers on the dashboard: the private player card (→ /me) and the weekly league (→ /leaderboard).
- * The league is consent-gated (D-014): without consent no league request is made and the tile explains how to
- * unlock it. (Moved here from the /learn home, ADR-023.)
+ * The league needs no consent since D-052; only if CONSENT_REQUIRED.leaderboards is switched back on does the
+ * dashboard show LeagueLocked (no league request, and the tile explains how to unlock it). (Moved here from the /learn home, ADR-023.)
  */
 import Link from 'next/link';
 import { useEffect, useState } from 'react';

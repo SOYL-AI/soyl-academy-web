@@ -1,15 +1,17 @@
 'use client';
 
 /**
- * School on the profile (D-043, D-014). Only for accounts whose consent is `granted`: search-as-you-type
+ * School on the profile (D-043, D-052). For every member (no consent needed since D-052): search-as-you-type
  * (`GET /v1/schools`, debounced), pick a result, or "Add my school" (name, city, optional state and board,
  * checked in the browser with the shared validator before `PATCH /v1/me { school }`), and remove it again.
- * Without consent nothing is shown but one line and the way to the approval flow, and no school request is
- * ever sent. The school is private: it is never shown to other students.
+ * Only if CONSENT_REQUIRED.profile_school_city is switched back on: without consent nothing is shown but one
+ * line and the way to the approval flow, and no school request is ever sent. The school is private: it is
+ * never shown to other students.
  */
 import { useEffect, useId, useRef, useState, type FormEvent } from 'react';
 import { isApiError, type Me, type School, type SchoolCreate } from '@/platform/shared/api-client';
 import { INDIAN_STATES } from '@/platform/shared/config/schools';
+import { consentAllows } from '@/platform/shared/config/consent';
 import { canonicalState, schoolSearchKeys, validateCity, validateSchoolName } from '@/platform/shared/profile/school';
 import { Button } from '@/components/platform/ui/kit/Button';
 import { Badge } from '@/components/platform/ui/kit/Display';
@@ -66,15 +68,15 @@ function apiFieldErrors(err: unknown): NewSchoolErrors | null {
 }
 
 export function SchoolSetting({ me, onChange }: { me: Me; onChange: (me: Me) => void }) {
-  if (me.consent !== 'granted') {
+  if (!consentAllows(me.consent, 'profile_school_city')) {
     return (
       <section className={s.subsection} aria-labelledby="school-title" id="school" data-testid="school-locked">
         <h3 id="school-title" className={s.subTitle}>
           School
         </h3>
-        <p className={s.muted}>You can add your school after a parent approves extra features (or you confirm you are 18 or older).</p>
+        <p className={s.muted}>You can add your school after a parent approves your account (or you confirm you are 18 or older).</p>
         <a className={s.textLink} href="/me/consent?next=%2Fme">
-          Turn on extra features
+          Parent approval
         </a>
       </section>
     );

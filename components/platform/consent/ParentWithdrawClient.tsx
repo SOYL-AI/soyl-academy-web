@@ -61,8 +61,14 @@ export function ParentWithdrawClient() {
         )}
         {phase.kind === 'ready' && (
           <div className={c.form}>
-            <p className={c.muted}>Withdrawing switches these off at once for your child’s account: {UNLOCKS.join(', ')}. Their AI conversations and uploaded photos are deleted.</p>
-            <p className={c.muted}>If you have not approved yet, this declines the request and the code in the email stops working. Lessons, practice, tests and progress are not affected.</p>
+            <p className={c.muted}>
+              Withdrawing stops these at once for your child’s account: {UNLOCKS.join(', ')}. As a privacy step, their AI conversations and uploaded photos are deleted. A plan
+              already bought keeps running until it is cancelled.
+            </p>
+            <p className={c.muted}>
+              If you have not approved yet, this declines the request and the code in the email stops working. Lessons, practice, tests, AI help, leaderboards and progress are
+              not affected.
+            </p>
             {error && (
               <p className={c.error} role="alert">
                 {error}
@@ -77,8 +83,8 @@ export function ParentWithdrawClient() {
         )}
         {phase.kind === 'done' && (
           <p className={c.ok} role="status" data-testid="parent-withdraw-done">
-            {phase.already ? 'Approval was already withdrawn. Nothing else to do.' : 'Done. Approval is withdrawn and those features are off.'} If your child asks again, you will get a new email,
-            and nothing switches on unless you give them the new code.
+            {phase.already ? 'Approval was already withdrawn. Nothing else to do.' : 'Done. Approval is withdrawn: paid plans cannot be bought.'} If your child asks again, you will get a new email,
+            and nothing changes unless you give them the new code.
           </p>
         )}
       </Card>

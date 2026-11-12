@@ -4,9 +4,9 @@
  * All-India live mock (ARCHITECTURE §3.1, §9; backend-api M3 handoff §9): phases
  *   upcoming → registration_open (Register) → live (Start, until lateStartUntil) → writing (only students
  *   who started can resume) → closed ("results soon") → results_published (ranks).
- * The leaderboard needs consent (D-014): on 403 consent_required (or no approval yet) a friendly
- * consent-needed state. Names are auto-generated public names (D-039), "Student" when that student's consent is
- * not granted; ranks are labelled beta. After the event the same paper can be taken unranked.
+ * The leaderboard needs no consent since D-052 (a consent-needed state remains for 403 consent_required, if
+ * CONSENT_REQUIRED.leaderboards is switched back on). Names are auto-generated public names (D-039), "Student" for
+ * a deleted account; ranks are labelled beta. After the event the same paper can be taken unranked.
  */
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
@@ -16,6 +16,7 @@ import { Button } from '@/components/platform/ui/kit/Button';
 import { Badge, Card, CardTitle, EmptyState, Skeleton } from '@/components/platform/ui/kit/Display';
 import { Icon } from '@/components/platform/ui/kit/Icon';
 import { useToast } from '@/components/platform/ui/kit/Toast';
+import { consentAllows } from '@/platform/shared/config/consent';
 import { useSession } from '../auth/SessionProvider';
 import { AnimalAvatar } from '@/components/platform/ui/kit/AnimalAvatar';
 import { AiNotice } from '../ai/AiDialogs';
@@ -188,7 +189,7 @@ export function Leaderboard({ eventId, compact }: { eventId: string; compact?: b
   const [board, setBoard] = useState<LiveLeaderboard | null>(null);
   const [problem, setProblem] = useState<'consent' | 'error' | null>(null);
   const member = state.status === 'member';
-  const consent = member && state.consent === 'granted';
+  const consent = member && consentAllows(state.consent, 'leaderboards');
 
   useEffect(() => {
     if (!member || !consent) return;

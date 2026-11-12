@@ -4,7 +4,9 @@
  * Shared AI UI (ai-gateway M4 handoff "What web needs" §3, §6; CONTEXT §6; D-014):
  * - `QuoteDialog`: the cost of an action before the student confirms it;
  * - `PaywallDialog`: credits are used up (countdown to the 00:00 IST reset, link to plans) or the action
- *   needs another plan; never blocks lessons, practice or tests;
+ *   needs another plan; never blocks lessons, practice or tests. While billing is off (BILLING_ENABLED=false,
+ *   `billingEnabled` from GET /v1/credits; unknown counts as off) neither dialog suggests buying: free
+ *   credits refill at 00:00 IST and paid plans are "coming soon" (D-052);
  * - `AiNotice` (AiNotice.tsx, re-exported): consent-needed, paused (spend breaker) and unavailable states;
  * - both dialogs link to "What can I do with my credits?" (D-044).
  */
@@ -40,6 +42,11 @@ export function ResetCountdown({ resetAt, resetInSeconds }: { resetAt: string | 
   if (now === null) return <span>at midnight IST</span>;
   const target = resetAt && Number.isFinite(Date.parse(resetAt)) ? Date.parse(resetAt) : resetInSeconds !== null ? arrived + resetInSeconds * 1000 : null;
   return <span data-testid="reset-countdown">{target ? `in ${formatCountdown(target - now)}` : 'at midnight IST'}</span>;
+}
+
+/** Whether paid plans can be bought now (GET /v1/credits); unknown (guests, loading, tests) counts as no. */
+export function useBillingOn(): boolean {
+  return useOptionalCredits()?.billingEnabled === true;
 }
 
 /** Closes this dialog and opens the credit guide (D-044). */
@@ -78,6 +85,7 @@ export function QuoteDialog({
   busy?: boolean;
 }) {
   const cost = quote ? (quote.perAnswer && quote.answers ? Math.min(quote.credits * quote.answers, quote.maxCredits) : quote.credits) : 0;
+  const billingOn = useBillingOn();
   return (
     <Dialog
       open={open}
@@ -108,8 +116,8 @@ export function QuoteDialog({
           {quote.status === 'paused' && <AiNotice block={{ kind: 'paused', retryAfterSeconds: quote.resetInSeconds }} />}
           {!quote.affordable && quote.status !== 'paused' && (
             <p className={s.warnText} role="alert">
-              Not enough credits. Credits reset <ResetCountdown resetAt={quote.resetAt} resetInSeconds={quote.resetInSeconds} />.{' '}
-              <Link href={safePlansPath(quote.plansUrl)}>See plans</Link>
+              Not enough credits. Your free credits refill <ResetCountdown resetAt={quote.resetAt} resetInSeconds={quote.resetInSeconds} /> (00:00 IST).{' '}
+              {billingOn ? <Link href={safePlansPath(quote.plansUrl)}>See plans</Link> : <span data-testid="plans-coming-soon">Paid plans are coming soon.</span>}
             </p>
           )}
         </div>
@@ -121,20 +129,25 @@ export function QuoteDialog({
 export function PaywallDialog({ block, onClose }: { block: Extract<AiBlock, { kind: 'paywall' | 'plan' }> | null; onClose: () => void }) {
   const open = block !== null;
   const plan = block?.kind === 'plan';
+  const billingOn = useBillingOn();
   return (
     <Dialog
       open={open}
       onClose={onClose}
-      title={plan ? 'This needs a paid plan' : 'You have used today’s AI credits'}
+      title={plan ? (billingOn ? 'This needs a paid plan' : 'This will be part of a paid plan') : 'You have used today’s AI credits'}
       footer={
-        <>
-          <Button variant="secondary" onClick={onClose}>
-            Not now
-          </Button>
-          <Link href={block?.plansUrl ?? '/plans'} className={s.linkButton} data-testid="paywall-plans">
-            See plans
-          </Link>
-        </>
+        billingOn ? (
+          <>
+            <Button variant="secondary" onClick={onClose}>
+              Not now
+            </Button>
+            <Link href={block?.plansUrl ?? '/plans'} className={s.linkButton} data-testid="paywall-plans">
+              See plans
+            </Link>
+          </>
+        ) : (
+          <Button onClick={onClose}>OK</Button>
+        )
       }
     >
       {block && (
@@ -145,15 +158,18 @@ export function PaywallDialog({ block, onClose }: { block: Extract<AiBlock, { ki
                 <Icon name="spark" size={18} /> Your free credits reset <strong><ResetCountdown resetAt={block.resetAt} resetInSeconds={block.resetInSeconds} /></strong> (00:00 IST).
                 {block.required !== null && block.balance !== null ? ` This needs ${creditsText(block.required)}; you have ${creditsText(block.balance)}.` : ''}
               </p>
-              <p className={s.muted}>Lessons, practice and tests are always free. Plans add more AI credits each day.</p>
+              <p className={s.muted}>
+                Lessons, practice and tests are always free.{' '}
+                {billingOn ? 'Plans add more AI credits each day.' : <span data-testid="plans-coming-soon">Paid plans with more AI credits each day are coming soon.</span>}
+              </p>
               <GuideLink onClose={onClose} />
             </>
           ) : (
             <p>
               {block.plan === 'pro' || block.plan === 'board_exam_pass'
-                ? '“Papers like my school’s” is part of Pro and the Board Exam Pass.'
-                : 'This AI feature is part of a paid plan.'}{' '}
-              Lessons, practice and tests stay free.
+                ? `“Papers like my school’s” ${billingOn ? 'is' : 'will be'} part of Pro and the Board Exam Pass.`
+                : `This AI feature ${billingOn ? 'is' : 'will be'} part of a paid plan.`}{' '}
+              {billingOn ? 'Lessons, practice and tests stay free.' : <span data-testid="plans-coming-soon">Paid plans are coming soon. Your free credits refill every day at 00:00 IST, and lessons, practice and tests stay free.</span>}
             </p>
           )}
         </div>

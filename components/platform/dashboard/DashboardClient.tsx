@@ -18,6 +18,7 @@ import { Button } from '@/components/platform/ui/kit/Button';
 import { Badge, EmptyState, ProgressBar, Skeleton } from '@/components/platform/ui/kit/Display';
 import { Icon, type IconName } from '@/components/platform/ui/kit/Icon';
 import { MasteryBar, MasteryPip, ProgressRing } from '@/components/platform/ui/kit/Mastery';
+import { consentAllows } from '@/platform/shared/config/consent';
 import { useSession } from '../auth/SessionProvider';
 import { trackInterest } from '../lib/interest';
 import { useMyAvatar } from '../me/MyAvatarProvider';
@@ -65,7 +66,8 @@ export function DashboardClient() {
   }, []);
   if (state.status === 'loading') return <DashboardSkeleton />;
   if (state.status === 'guest') return <GuestDashboard />;
-  return <MemberDashboard userId={state.user.id} name={state.user.displayName?.trim() || null} consent={state.consent === 'granted'} />;
+  // D-052: AI credits and the league need no consent (unless CONSENT_REQUIRED switches them back on).
+  return <MemberDashboard userId={state.user.id} name={state.user.displayName?.trim() || null} ai={consentAllows(state.consent, 'ai')} leagues={consentAllows(state.consent, 'leaderboards')} />;
 }
 
 function DashboardSkeleton() {
@@ -147,7 +149,7 @@ function GuestDashboard() {
 
 /* ── Members ───────────────────────────────────────────────────────────────── */
 
-function MemberDashboard({ userId, name, consent }: { userId: string; name: string | null; consent: boolean }) {
+function MemberDashboard({ userId, name, ai, leagues }: { userId: string; name: string | null; ai: boolean; leagues: boolean }) {
   const [reload, setReload] = useState(0);
   const key = `${userId}:${reload}`;
   const [result, setResult] = useState<{ key: string; value: Loadable<MyDashboard> } | null>(null);
@@ -180,13 +182,14 @@ function MemberDashboard({ userId, name, consent }: { userId: string; name: stri
     }
     return <DashboardSkeleton />;
   }
-  return <DashboardView d={data} name={name} consent={consent} card={card} activity={activity} mastery={mastery} onProfileChanged={() => setReload((n) => n + 1)} />;
+  return <DashboardView d={data} name={name} ai={ai} leagues={leagues} card={card} activity={activity} mastery={mastery} onProfileChanged={() => setReload((n) => n + 1)} />;
 }
 
 export function DashboardView({
   d,
   name,
-  consent,
+  ai,
+  leagues,
   card,
   activity,
   mastery,
@@ -194,7 +197,10 @@ export function DashboardView({
 }: {
   d: MyDashboard;
   name: string | null;
-  consent: boolean;
+  /** AI credits tile: the student may use AI (consentAllows 'ai'; every member since D-052). */
+  ai: boolean;
+  /** League teaser instead of the locked tile (consentAllows 'leaderboards'; every member since D-052). */
+  leagues: boolean;
   card: ReturnType<typeof usePlayerCard>;
   activity: ReturnType<typeof useActivity>;
   mastery: Loadable<MyMastery>;
@@ -225,7 +231,7 @@ export function DashboardView({
       <Kpis d={d} />
       <div className={s.grid}>
         <GoalTile goal={weeklyGoal} onSaved={(saved) => setGoal({ base: d.weeklyGoal, value: withTarget(weeklyGoal, saved) })} />
-        {consent && <CreditsTile />}
+        {ai && <CreditsTile />}
         <section className={s.tile} aria-labelledby="diff-title" data-testid="difficulty-tile">
           <div className={s.tileHead}>
             <h2 id="diff-title" className={s.tileTitle}>
@@ -261,7 +267,7 @@ export function DashboardView({
         <RecentTile d={d} />
         <BadgeTile d={d} />
         <CardTeaser card={card} />
-        {consent ? <LeagueTeaser /> : <LeagueLocked />}
+        {leagues ? <LeagueTeaser /> : <LeagueLocked />}
       </div>
     </div>
   );
@@ -340,7 +346,7 @@ function Prompt({ prompt, profile, onSaved }: { prompt: ProfilePrompt; profile: 
   }
   return (
     <p className={s.note} data-testid="prompt-school-consent">
-      <Icon name="lock" size={16} /> You can add your school after a parent approves extra features.
+      <Icon name="lock" size={16} /> You can add your school after a parent approves your account.
       <Link href="/me/consent?next=%2Fme%2Fdashboard" className={s.more}>
         How to approve
       </Link>

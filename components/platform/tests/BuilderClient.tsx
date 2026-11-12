@@ -16,7 +16,7 @@ import { Badge, Card, CardTitle, EmptyState, Skeleton } from '@/components/platf
 import { Icon } from '@/components/platform/ui/kit/Icon';
 import { QUESTION_TYPE_LABELS } from '@/components/platform/ui/question/model';
 import { useSession } from '../auth/SessionProvider';
-import { AiNotice, PaywallDialog, QuoteDialog } from '../ai/AiDialogs';
+import { AiNotice, PaywallDialog, QuoteDialog, useBillingOn } from '../ai/AiDialogs';
 import { useCredits } from '../ai/CreditsProvider';
 import { aiBlockFrom, creditsText, newIdempotencyKey, type AiBlock } from '../ai/problems';
 import { AI_UPLOADS } from '@/platform/shared/config/ai-actions';
@@ -306,6 +306,7 @@ function Builder({ initialBoard, initialClass }: { initialBoard: BoardSlug; init
 function PaperFromUpload({ subjectId }: { subjectId: string }) {
   const router = useRouter();
   const { aiAllowed, setBalance } = useCredits();
+  const billingOn = useBillingOn();
   const fileId = useId();
   const [quote, setQuote] = useState<AiQuote | null>(null);
   const [file, setFile] = useState<File | null>(null);
@@ -373,8 +374,16 @@ function PaperFromUpload({ subjectId }: { subjectId: string }) {
         block ? <AiNotice block={block} /> : <Skeleton lines={1} />
       ) : !quote.allowedForPlan ? (
         <div className={s.row} data-testid="pfu-upgrade">
-          <p className={s.muted}>This is part of Pro and the Board Exam Pass ({creditsText(quote.credits)} per paper).</p>
-          <Link href="/plans">Upgrade to Pro</Link>
+          {billingOn ? (
+            <>
+              <p className={s.muted}>This is part of Pro and the Board Exam Pass ({creditsText(quote.credits)} per paper).</p>
+              <Link href="/plans">Upgrade to Pro</Link>
+            </>
+          ) : (
+            <p className={s.muted} data-testid="plans-coming-soon">
+              This will be part of Pro and the Board Exam Pass ({creditsText(quote.credits)} per paper). Paid plans are coming soon.
+            </p>
+          )}
         </div>
       ) : (
         <>

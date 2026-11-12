@@ -18,6 +18,7 @@ import { Badge, EmptyState, Skeleton } from '@/components/platform/ui/kit/Displa
 import { Icon } from '@/components/platform/ui/kit/Icon';
 import { useToast } from '@/components/platform/ui/kit/Toast';
 import { cx } from '@/components/platform/ui/cx';
+import { consentAllows } from '@/platform/shared/config/consent';
 import { useSession } from '../auth/SessionProvider';
 import { api } from '../lib/api-browser';
 import { trackInterest } from '../lib/interest';
@@ -412,7 +413,7 @@ export function StoreClient() {
               </p>
             ) : (
               member &&
-              store.consentStatus !== 'granted' && (
+              !consentAllows(store.consentStatus, 'physical_rewards') && (
                 <p className={s.notice} data-testid="merch-consent">
                   <Icon name="info" size={18} /> Merch is sent to your home, so a parent or guardian must approve first. <Link href="/me/consent?next=%2Fstore">Ask a parent to approve</Link>.
                 </p>

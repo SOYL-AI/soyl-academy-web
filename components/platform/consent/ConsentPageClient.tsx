@@ -32,9 +32,9 @@ export function ConsentPageClient() {
       <EmptyState
         title="Log in first"
         headingLevel="h2"
-        action={<Button onClick={() => openLogin({ reason: 'Log in to turn on AI help, photo doubts and leaderboards.' })}>Log in</Button>}
+        action={<Button onClick={() => openLogin({ reason: 'Log in to set up parent approval for paid plans.' })}>Log in</Button>}
       >
-        Approval belongs to your account. Lessons, practice and tests work without it.
+        Approval belongs to your account and is only needed to buy a paid plan. Lessons, practice, tests, AI help and leaderboards work without it.
       </EmptyState>
     );
   }

@@ -19,6 +19,7 @@ import { ResultView } from '../tests/ResultView';
 import { PlansClient } from '../plans/PlansClient';
 import { AskClient } from '../ai/AskClient';
 import { LeaderboardClient } from '../leaderboard/LeaderboardClient';
+import { PaywallDialog, QuoteDialog } from '../ai/AiDialogs';
 import { QuestionCard } from '../ui/question/QuestionCard';
 import { buildQuestionSlots } from '../ui/question/slots';
 
@@ -51,6 +52,7 @@ beforeEach(() => {
   h.session.state = member();
   h.credits.aiAllowed = true;
   h.credits.credits = null;
+  (h.credits as { billingEnabled?: boolean }).billingEnabled = undefined;
   for (const fn of [...Object.values(h.api), ...Object.values(h.router)]) fn.mockReset();
 });
 afterEach(() => {
@@ -249,6 +251,24 @@ describe('PlansClient', () => {
     fireEvent.click(screen.getByRole('radio', { name: 'Yearly' }));
     expect(screen.getByTestId('price-plus').textContent).toBe('₹1,499/year incl. GST');
     expect(document.querySelector('script[src*="razorpay"]')).toBeNull();
+    // D-052: a clear "coming soon" with the free-credits sentence; guests get no approval link.
+    expect(screen.getByTestId('billing-off').textContent).toContain('Paid plans are coming soon.');
+    expect(screen.getByTestId('billing-off').textContent).toContain('free AI credits every day (they refill at 00:00 IST)');
+    expect(screen.queryByTestId('plans-consent-soon')).toBeNull();
+  });
+
+  it('billing off, member without approval: the approval page stays one link away; buttons stay "Coming soon"', async () => {
+    h.session.state = member('required');
+    h.api.get.mockImplementation(async (p: string) => {
+      if (p === '/v1/plans') return plans(false);
+      if (p === '/v1/me/subscription') return { plan: 'free', planName: 'Free', creditsPerDay: 25, source: 'free', validUntil: null, subscription: null, billingEnabled: false };
+      return new Promise(() => undefined);
+    });
+    wrap(<PlansClient />);
+    await waitFor(() => expect(screen.getByTestId('billing-off')).toBeTruthy());
+    expect(screen.getByTestId('plans-consent-soon').getAttribute('href')).toBe('/me/consent?next=%2Fplans');
+    expect(screen.queryByTestId('plans-consent')).toBeNull();
+    expect(screen.getByTestId('buy-plus').textContent).toBe('Coming soon');
   });
 
   it('not GST-registered (owner, 2026-10-28): plain prices, no "incl. GST" anywhere', async () => {
@@ -288,11 +308,15 @@ describe('PlansClient', () => {
 });
 
 describe('AskClient', () => {
-  it('consent needed: friendly state, no AI calls', () => {
-    h.session.state = member('pending');
-    wrap(<AskClient />);
-    expect(screen.getByTestId('ai-consent-needed')).toBeTruthy();
-    expect(h.api.get).not.toHaveBeenCalled();
+  it('no consent needed (D-052): a pending or never-consented member gets the tutor, not an approval notice', () => {
+    for (const consent of ['pending', 'required'] as const) {
+      h.session.state = member(consent);
+      h.api.get.mockImplementation(() => new Promise(() => undefined));
+      const { unmount } = wrap(<AskClient />);
+      expect(screen.queryByTestId('ai-consent-needed')).toBeNull();
+      expect(h.api.get).toHaveBeenCalledWith('/v1/ai/conversations', expect.anything());
+      unmount();
+    }
   });
 
   it('quote first, then streams the reply; paused AI is explained', async () => {
@@ -329,9 +353,51 @@ describe('AskClient', () => {
 });
 
 describe('LeaderboardClient', () => {
-  it('needs consent (D-014)', () => {
+  it('needs no consent (D-052): a never-consented member sees leagues and mock ranks', () => {
     h.session.state = member('required');
+    h.api.get.mockImplementation(() => new Promise(() => undefined));
     wrap(<LeaderboardClient />);
-    expect(screen.getByTestId('leaderboard-consent')).toBeTruthy();
+    expect(screen.queryByTestId('leaderboard-consent')).toBeNull();
+    expect(screen.getByTestId('leaderboards')).toBeTruthy();
+    expect(h.api.get).toHaveBeenCalledWith('/v1/live-events');
+  });
+});
+
+describe('AI dialogs while billing is off (D-052)', () => {
+  const paywall = { kind: 'paywall' as const, balance: 0, required: 7, resetAt: new Date(Date.now() + 3_600_000).toISOString(), resetInSeconds: 3600, plansUrl: '/plans' };
+  const quote = { action: 'hard-doubt', label: 'Step-by-step doubt', credits: 7, perAnswer: false, answers: null, maxCredits: 7, tier: 'mid', mode: 'stream', requiresUpload: false, plan: 'free', allowedForPlan: true, balance: 2, affordable: false, status: 'available', resetAt: new Date(Date.now() + 3_600_000).toISOString(), resetInSeconds: 3600, plansUrl: '/plans' };
+
+  it('out of credits: free credits refill at 00:00 IST, paid plans are coming soon, no "See plans"', () => {
+    h.credits = { ...h.credits, billingEnabled: false } as typeof h.credits;
+    wrap(<PaywallDialog block={paywall} onClose={vi.fn()} />);
+    expect(screen.getByTestId('paywall').textContent).toContain('00:00 IST');
+    expect(screen.getByTestId('plans-coming-soon').textContent).toContain('coming soon');
+    expect(screen.queryByTestId('paywall-plans')).toBeNull();
+  });
+
+  it('a plan-only action: "will be part of a paid plan", coming soon, no buy link', () => {
+    h.credits = { ...h.credits, billingEnabled: false } as typeof h.credits;
+    wrap(<PaywallDialog block={{ kind: 'plan', plan: 'pro', plansUrl: '/plans' }} onClose={vi.fn()} />);
+    expect(screen.getByText('This will be part of a paid plan')).toBeTruthy();
+    expect(screen.getByTestId('plans-coming-soon').textContent).toContain('refill every day at 00:00 IST');
+    expect(screen.queryByTestId('paywall-plans')).toBeNull();
+  });
+
+  it('quote that cannot be afforded: no "See plans" while billing is off; the link returns when it is on', () => {
+    h.credits = { ...h.credits, billingEnabled: false } as typeof h.credits;
+    const { unmount } = wrap(<QuoteDialog open quote={quote as never} what="this doubt" onConfirm={vi.fn()} onClose={vi.fn()} />);
+    expect(screen.getByTestId('plans-coming-soon')).toBeTruthy();
+    expect(screen.queryByRole('link', { name: 'See plans' })).toBeNull();
+    unmount();
+    h.credits = { ...h.credits, billingEnabled: true } as typeof h.credits;
+    wrap(<QuoteDialog open quote={quote as never} what="this doubt" onConfirm={vi.fn()} onClose={vi.fn()} />);
+    expect(screen.getByRole('link', { name: 'See plans' }).getAttribute('href')).toBe('/plans');
+  });
+
+  it('billing on: the paywall links to plans', () => {
+    h.credits = { ...h.credits, billingEnabled: true } as typeof h.credits;
+    wrap(<PaywallDialog block={paywall} onClose={vi.fn()} />);
+    expect(screen.getByTestId('paywall-plans').getAttribute('href')).toBe('/plans');
+    expect(screen.queryByTestId('plans-coming-soon')).toBeNull();
   });
 });

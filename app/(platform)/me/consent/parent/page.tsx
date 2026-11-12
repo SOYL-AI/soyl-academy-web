@@ -18,7 +18,7 @@ export default async function ParentConsentPage() {
   await connection();
   return (
     <div className={shell.page}>
-      <PageHeader crumbs={[{ name: 'Parent approval', path: '/me/consent/parent' }]} title="Parent approval" lead="Withdraw or decline approval for your child’s extra features on SOYL Academy." structuredData={false} />
+      <PageHeader crumbs={[{ name: 'Parent approval', path: '/me/consent/parent' }]} title="Parent approval" lead="Withdraw or decline approval for your child to buy paid plans on SOYL Academy." structuredData={false} />
       <ParentWithdrawClient />
     </div>
   );

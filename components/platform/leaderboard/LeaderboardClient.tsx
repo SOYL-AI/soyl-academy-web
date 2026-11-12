@@ -1,10 +1,11 @@
 'use client';
 
 /**
- * /leaderboard (ARCHITECTURE §3.1, §12; CONTEXT §11; D-014). Leaderboards need a parent's approval: until
- * then a friendly consent-needed state (production today: CONSENT_PROVIDER=unavailable → everyone sees it).
+ * /leaderboard (ARCHITECTURE §3.1, §12; CONTEXT §11; D-052). Leaderboards need no approval since D-052: every
+ * member sees them (auto-generated public names only, D-039). The consent-needed state remains for the case
+ * where CONSENT_REQUIRED.leaderboards is switched back on.
  * - All-India mock ranks: the live events the student took (GET /v1/me/attempts → liveEventId) and the
- *   current events, each with its consent-gated leaderboard.
+ *   current events, each with its leaderboard.
  * - Weekly league (ADR-023): GET /v1/leagues/current as a tiered league with a podium and promotion /
  *   relegation zones (WeeklyLeague).
  */
@@ -13,6 +14,7 @@ import { useEffect, useState } from 'react';
 import type { LiveEvent, MyAttempt } from '@/platform/shared/api-client';
 import { Button } from '@/components/platform/ui/kit/Button';
 import { EmptyState, Skeleton } from '@/components/platform/ui/kit/Display';
+import { consentAllows } from '@/platform/shared/config/consent';
 import { useSession } from '../auth/SessionProvider';
 import { AiNotice } from '../ai/AiDialogs';
 import { api } from '../lib/api-browser';
@@ -27,7 +29,7 @@ export function LeaderboardClient() {
   const [events, setEvents] = useState<LiveEvent[] | null>(null);
   const [mine, setMine] = useState<MyAttempt[]>([]);
   const member = state.status === 'member';
-  const consent = member && state.consent === 'granted';
+  const consent = member && consentAllows(state.consent, 'leaderboards');
 
   useEffect(() => {
     if (!consent) return;

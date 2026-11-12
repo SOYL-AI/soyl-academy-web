@@ -141,7 +141,7 @@ export function SubscriptionCard() {
             </p>
           )}
           <div className={s.actions}>
-            <Link href="/plans">{sub.plan === 'free' ? 'See plans' : 'Change plan'}</Link>
+            <Link href="/plans">{sub.plan !== 'free' ? 'Change plan' : sub.billingEnabled ? 'See plans' : 'Paid plans (coming soon)'}</Link>
             {/* Bills of Supply and credit notes (invoices work, merged separately into platform/main). */}
             <Link href="/me/invoices" data-testid="invoices-link">
               Invoices and receipts
@@ -224,7 +224,7 @@ export function CreditsCard() {
       ) : (
         <Skeleton lines={1} />
       )}
-      {!aiAllowed && <p className={s.muted}>AI features switch on once a parent approves your account.</p>}
+      {!aiAllowed && <p className={s.muted}>AI features are not available for this account right now.</p>}
       {aiAllowed && (
         <>
           <div className={s.actions}>

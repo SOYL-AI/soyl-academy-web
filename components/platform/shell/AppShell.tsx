@@ -5,7 +5,7 @@
  * - the way back to the main site (owner, 2026-10-28): "‹ soylai.com" in the top bar from 768 px; below that a
  *   slim row above the top bar (the phone top bar is full for members), never sticky, also for guests;
  * - top bar: SOYL mark → /learn (the academy home), primary nav (≥ 1024 px; members: Home first), streak,
- *   SOYL Coins, today's AI credits (consented members, D-014), theme picker, profile / log in;
+ *   SOYL Coins, today's AI credits (members; D-052: no consent needed), theme picker, profile / log in;
  * - phones and tablets (< 1024 px): a bottom tab bar, hidden on immersive pages (lesson, flashcards, test player);
  * - a quiet app footer (server-rendered, passed in) with the way back to the main site and the legal links.
  */

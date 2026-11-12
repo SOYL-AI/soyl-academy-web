@@ -10,7 +10,8 @@
  *   then status (who approved, when) and "Withdraw approval".
  * Other providers keep the earlier behaviour: `external` = start + redirect (ConsentNotice), `none` = not yet.
  *
- * Lessons, practice and tests never need any of this (D-014); the copy says so on every step.
+ * D-052 (ADR-030): approval is needed only to buy a paid plan (and for merch delivery, if offered). Lessons,
+ * practice, tests, AI help, leaderboards and SOYL Coins never need it; the copy says so on every step.
  */
 import Link from 'next/link';
 import { useCallback, useEffect, useId, useState, type FormEvent } from 'react';
@@ -27,16 +28,19 @@ import c from './consent.module.css';
 
 export type { ConsentView };
 
-/** What switches on with approval (mirrors the parent email, platform/api/src/consent/email.ts). */
-export const UNLOCKS = ['AI tutor and AI marking', 'Photo doubts', 'Leaderboards, leagues and SOYL Coins rewards'] as const;
+/** What approval allows (mirrors the parent email, platform/api/src/consent/email.ts; config: CONSENT_REQUIRED). */
+export const UNLOCKS = ['Buying a paid plan', 'Merch delivery (if offered)'] as const;
+
+/** What is open without approval (D-052). */
+export const OPEN_WITHOUT_APPROVAL = 'Lessons, practice, tests, AI help with free daily credits, leaderboards and SOYL Coins are open without it.';
 
 const dateText = (iso: string | null) =>
   iso ? new Date(iso).toLocaleString('en-IN', { day: 'numeric', month: 'short', year: 'numeric', hour: 'numeric', minute: '2-digit', timeZone: 'Asia/Kolkata' }) : '';
 
 const BADGE: Record<ConsentView['status'], { text: string; tone: 'success' | 'warning' | 'neutral' }> = {
-  granted: { text: 'On', tone: 'success' },
+  granted: { text: 'Approved', tone: 'success' },
   pending: { text: 'Waiting for a parent', tone: 'warning' },
-  required: { text: 'Off', tone: 'neutral' },
+  required: { text: 'Not yet', tone: 'neutral' },
   revoked: { text: 'Withdrawn', tone: 'neutral' },
 };
 
@@ -70,7 +74,7 @@ export function ConsentFlow({ next, onChanged }: ConsentFlowProps) {
     async (v: ConsentView) => {
       setView(v);
       onChanged?.(v);
-      await refresh(); // the session's consent state drives /ask, /leaderboard and /plans
+      await refresh(); // the session's consent state drives /plans (D-052)
     },
     [onChanged, refresh],
   );
@@ -78,7 +82,7 @@ export function ConsentFlow({ next, onChanged }: ConsentFlowProps) {
   const titleId = useId();
   const Title = (
     <CardTitle as="h2" id={titleId}>
-      Extra features <Badge tone={view ? BADGE[view.status].tone : 'neutral'}>{view ? BADGE[view.status].text : '…'}</Badge>
+      Parent approval for paid plans <Badge tone={view ? BADGE[view.status].tone : 'neutral'}>{view ? BADGE[view.status].text : '…'}</Badge>
     </CardTitle>
   );
 
@@ -111,7 +115,7 @@ export function ConsentFlow({ next, onChanged }: ConsentFlowProps) {
   return (
     <Card as="section" aria-labelledby={titleId} data-testid="consent-flow" data-consent={view.status} data-age-band={view.ageBand ?? 'none'}>
       {Title}
-      <p className={c.muted}>Lessons, practice and tests are always free and open. Approval only switches on: {UNLOCKS.join(', ')}.</p>
+      <p className={c.muted}>Only needed to buy a paid plan. {OPEN_WITHOUT_APPROVAL}</p>
       {view.flow === 'none' ? (
         <p className={c.muted} data-testid="consent-none">
           Approval is not available yet. We will let you know when it is.
@@ -211,8 +215,7 @@ function AgeStep({ onChanged }: StepProps) {
         <label className={c.check}>
           <input type="checkbox" checked={agree} onChange={(e) => setAgree(e.target.checked)} />
           <span>
-            I am 18 or older and I agree to the <PrivacyLink />: my AI questions and photos are kept for 30 days, and leaderboards show an
-            auto-generated name, never my real name.
+            I am 18 or older and I agree to the <PrivacyLink />. This lets me buy a paid plan.
           </span>
         </label>
       )}
@@ -248,7 +251,7 @@ function ParentStep({ view, onChanged }: StepProps & { view: ConsentView }) {
       )}
       <TextInput
         label="Parent’s or guardian’s email"
-        hint="We email them a 6-digit code and a short note on what this switches on. We do not keep their address."
+        hint="We email them a 6-digit code and a short note on what approval is for. We do not keep their address."
         type="email"
         inputMode="email"
         autoComplete="off"
@@ -293,7 +296,7 @@ function CodeStep({ view, onChanged }: StepProps & { view: ConsentView }) {
         <OTPInput label="Approval code from your parent" value={code} onChange={setCode} onComplete={verify} error={error ?? undefined} name="approvalCode" />
         <div className={c.actions}>
           <Button type="submit" loading={busy} disabled={code.length !== 6}>
-            Turn on
+            Approve
           </Button>
         </div>
       </form>
@@ -321,7 +324,7 @@ function AdultOff({ view, onChanged }: StepProps & { view: ConsentView }) {
         void run(async () => onChanged(await api.post('/v1/me/consent/age-band', { body: { ageBand: 'adult', agree: true } })));
       }}
     >
-      <p className={c.muted}>You switched these features off{view.revokedAt ? ` on ${dateText(view.revokedAt)}` : ''}.</p>
+      <p className={c.muted}>You withdrew approval{view.revokedAt ? ` on ${dateText(view.revokedAt)}` : ''}.</p>
       <label className={c.check}>
         <input type="checkbox" checked={agree} onChange={(e) => setAgree(e.target.checked)} />
         <span>
@@ -331,7 +334,7 @@ function AdultOff({ view, onChanged }: StepProps & { view: ConsentView }) {
       <ErrorLine error={error} />
       <div className={c.actions}>
         <Button type="submit" loading={busy}>
-          Turn on again
+          Approve again
         </Button>
       </div>
     </form>
@@ -344,7 +347,7 @@ function Granted({ view, next, onChanged }: StepProps & { view: ConsentView; nex
     <div className={c.form} data-testid="consent-granted">
       <p className={c.ok} role="status">
         {who}
-        {view.grantedAt ? ` on ${dateText(view.grantedAt)}` : ''}. AI help, photo doubts, leaderboards and rewards are on.
+        {view.grantedAt ? ` on ${dateText(view.grantedAt)}` : ''}. You can buy a paid plan whenever they are on sale.
       </p>
       <div className={c.actions}>
         {next && (
@@ -380,7 +383,7 @@ function WithdrawButton({ label, onChanged, confirm }: StepProps & { label: stri
           footer={
             <>
               <Button variant="secondary" onClick={() => setOpen(false)}>
-                Keep it on
+                Keep approval
               </Button>
               <Button variant="danger" loading={busy} onClick={go} data-testid="consent-withdraw-confirm">
                 Withdraw
@@ -388,8 +391,8 @@ function WithdrawButton({ label, onChanged, confirm }: StepProps & { label: stri
             </>
           }
         >
-          <p>AI help, photo doubts, leaderboards and rewards switch off at once, and your AI conversations and uploaded photos are deleted.</p>
-          <p>Lessons, practice, tests and your progress stay.</p>
+          <p>You will not be able to buy a paid plan. As a privacy step, your AI conversations and uploaded photos are deleted. A plan you already have keeps running until you cancel it.</p>
+          <p>Lessons, practice, tests, AI help, leaderboards and your progress stay.</p>
           <ErrorLine error={error} />
         </Dialog>
       )}

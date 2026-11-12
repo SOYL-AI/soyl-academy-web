@@ -65,7 +65,7 @@ export interface BonusLine {
   target: number;
 }
 
-/** The two learning bonuses with today's progress; [] without consent (the API sends `bonuses: null`). */
+/** The two learning bonuses with today's progress; [] when the API sends `bonuses: null` (only if AI is consent-gated again). */
 export function bonusLines(g: Pick<CreditGuide, 'bonuses'>): BonusLine[] {
   if (!g.bonuses) return [];
   const { dailyGoal: goal, streakMilestone: st } = g.bonuses;

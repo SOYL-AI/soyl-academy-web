@@ -320,9 +320,9 @@ describe('dashboard charts', () => {
 const loadingHooks = { card: { status: 'loading' as const }, activity: { status: 'loading' as const }, mastery: { status: 'loading' as const } };
 
 describe('DashboardView', () => {
-  it('brand-new account: welcome, class prompt, consent link instead of a school prompt, every block has an empty state', () => {
+  it('brand-new account: welcome, class prompt; with school/leagues re-gated (CONSENT_REQUIRED) a consent link instead of a school prompt; every block has an empty state', () => {
     h.session = { state: member('required'), openLogin: vi.fn(), updateUser: vi.fn() };
-    wrap(<DashboardView d={emptyDashboard()} name="Asha" consent={false} {...loadingHooks} onProfileChanged={vi.fn()} />);
+    wrap(<DashboardView d={emptyDashboard()} name="Asha" ai={false} leagues={false} {...loadingHooks} onProfileChanged={vi.fn()} />);
     expect(screen.getByTestId('dashboard').getAttribute('data-new')).toBe('true');
     expect(screen.getByTestId('dashboard-welcome')).toBeTruthy();
     expect(screen.getByRole('heading', { level: 1 }).textContent).toMatch(/^Good (morning|afternoon|evening), Asha$/);
@@ -345,7 +345,7 @@ describe('DashboardView', () => {
     routeGets({ '/v1/leagues/current': { status: 'active', league: null, me: null } });
     h.session = { state: member(), openLogin: vi.fn(), updateUser: vi.fn() };
     const d = activeDashboard();
-    const { unmount } = wrap(<DashboardView d={d} name={null} consent {...loadingHooks} onProfileChanged={vi.fn()} />);
+    const { unmount } = wrap(<DashboardView d={d} name={null} ai leagues {...loadingHooks} onProfileChanged={vi.fn()} />);
     expect(screen.queryByTestId('dashboard-welcome')).toBeNull();
     expect(screen.getByTestId('dashboard-profile-line').textContent).toBe("CBSE Class 10 · St. Mary's School, Mumbai");
     expect(screen.queryByTestId('prompt-class')).toBeNull();
@@ -366,7 +366,7 @@ describe('DashboardView', () => {
     unmount();
 
     const notSet = { ...d, profile: { ...d.profile, school: null, schoolStatus: 'not_set' as const, missing: ['school' as const] } };
-    wrap(<DashboardView d={notSet} name={null} consent {...loadingHooks} onProfileChanged={vi.fn()} />);
+    wrap(<DashboardView d={notSet} name={null} ai leagues {...loadingHooks} onProfileChanged={vi.fn()} />);
     expect(screen.getByTestId('prompt-school').querySelector('a')!.getAttribute('href')).toBe('/me#school');
     expect(screen.getByTestId('dashboard-profile-line').textContent).toBe('CBSE Class 10');
   });
@@ -374,7 +374,7 @@ describe('DashboardView', () => {
   it('level, XP, coins from the card and the streak from activity', () => {
     const card = { status: 'ready' as const, data: { publicName: 'Brave Otter 123', avatar: { id: 'otter' as const, bg: 'sky' as const, isDefault: true }, level: 4, xp: 1250, coins: 37, overall: 55, tier: 'bronze' as const, provisional: true, formulaVersion: 1, attributes: [], asOfDay: '2026-10-28' } };
     const activity = { status: 'ready' as const, data: { timezone: 'Asia/Kolkata' as const, from: '2026-06-11', to: '2026-10-28', days: 140, calendar: [], totals: { answered: 0, solved: 0, lessonsCompleted: 0, testsSubmitted: 0, activeDays: 0 }, streak: { current: 3, longest: 5, lastActiveDay: '2026-10-28', atRisk: false, freezeAvailableThisWeek: true }, activeDaysAllTime: 9 } };
-    wrap(<DashboardView d={activeDashboard()} name="Asha" consent={false} card={card} activity={activity} mastery={{ status: 'loading' }} onProfileChanged={vi.fn()} />);
+    wrap(<DashboardView d={activeDashboard()} name="Asha" ai={false} leagues={false} card={card} activity={activity} mastery={{ status: 'loading' }} onProfileChanged={vi.fn()} />);
     const stats = screen.getByRole('list', { name: 'Your stats' });
     expect(stats.textContent).toContain('3 day streak');
     expect(stats.textContent).toContain('Level 4 · 1,250 XP');
@@ -386,7 +386,7 @@ describe('DashboardView', () => {
     h.session = { state: member('required'), openLogin: vi.fn(), updateUser: vi.fn() };
     h.api.patch.mockResolvedValue({ board: 'cbse', classLevel: 9 });
     const reload = vi.fn();
-    wrap(<DashboardView d={emptyDashboard()} name={null} consent={false} {...loadingHooks} onProfileChanged={reload} />);
+    wrap(<DashboardView d={emptyDashboard()} name={null} ai={false} leagues={false} {...loadingHooks} onProfileChanged={reload} />);
     const prompt = screen.getByTestId('prompt-class');
     fireEvent.click(within(prompt).getByTestId('prompt-class-save'));
     expect(within(prompt).getByRole('alert').textContent).toBe('Choose your board and your class.');
@@ -403,7 +403,7 @@ describe('DashboardView', () => {
     h.session = { state: member(), openLogin: vi.fn(), updateUser: vi.fn() };
     routeGets({});
     h.api.patch.mockResolvedValue({ weeklyGoal: { target: 8, isDefault: false } });
-    wrap(<DashboardView d={activeDashboard()} name={null} consent={false} {...loadingHooks} onProfileChanged={vi.fn()} />);
+    wrap(<DashboardView d={activeDashboard()} name={null} ai={false} leagues={false} {...loadingHooks} onProfileChanged={vi.fn()} />);
     const tile = screen.getByTestId('weekly-goal');
     fireEvent.click(within(tile).getByTestId('goal-change'));
     const input = within(tile).getByLabelText('Questions to solve each week');
@@ -421,6 +421,21 @@ describe('DashboardView', () => {
 });
 
 describe('DashboardClient', () => {
+  it('a member who never consented gets the AI credits tile and the league (D-052)', async () => {
+    h.session = { state: member('required'), openLogin: vi.fn(), updateUser: vi.fn() };
+    h.credits = { credits: null, aiAllowed: true };
+    h.api.get.mockImplementation((path: string) => {
+      if (path === '/v1/me/dashboard') return Promise.resolve(activeDashboard());
+      if (path === '/v1/leagues/current') return Promise.resolve({ status: 'active', league: null, me: null });
+      return new Promise(() => undefined);
+    });
+    wrap(<DashboardClient />);
+    expect(await screen.findByTestId('dashboard')).toBeTruthy();
+    expect(screen.getByTestId('credits-tile')).toBeTruthy();
+    expect(screen.queryByTestId('league-locked')).toBeNull();
+    await waitFor(() => expect(h.api.get).toHaveBeenCalledWith('/v1/leagues/current'));
+  });
+
   it('guests: sign-in prompt that returns to the dashboard, and the progress on this device', () => {
     h.progress = { progress: { source: 'device', lessonsCompleted: 2, practiceAnswered: 5, practiceCorrect: 3, subjects: [], chapters: {}, streak: null, xp: null, level: null, levelProgress: null, accuracy: 0.6 }, ready: true, refresh: () => undefined };
     wrap(<DashboardClient />);
@@ -512,15 +527,12 @@ describe('school picker', () => {
     expect(checkNewSchool({ name: 'Good School', city: 'Pune', state: '', board: '' })).toEqual({ ok: true, body: { name: 'Good School', city: 'Pune' } });
   });
 
-  it('not consented: one line and the approval link, no controls and no school request', () => {
+  it('never consented (D-052): the school editor shows, with no approval step', () => {
     const onChange = vi.fn();
     wrap(<SchoolSetting me={me({ consent: 'required' })} onChange={onChange} />);
-    const locked = screen.getByTestId('school-locked');
-    expect(locked.querySelector('a')!.getAttribute('href')).toBe('/me/consent?next=%2Fme');
-    expect(screen.queryByTestId('school-search')).toBeNull();
-    expect(screen.queryByRole('textbox')).toBeNull();
-    expect(h.api.get).not.toHaveBeenCalled();
-    expect(h.api.patch).not.toHaveBeenCalled();
+    expect(screen.queryByTestId('school-locked')).toBeNull();
+    expect(screen.getByTestId('school-search')).toBeTruthy();
+    expect(screen.queryByText(/after a parent approves/)).toBeNull();
   });
 
   it('search is debounced and needs 2 letters; picking a result saves it by id', async () => {

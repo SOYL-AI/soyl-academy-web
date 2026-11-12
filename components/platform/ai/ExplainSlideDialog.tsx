@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import type { AiQuote } from '@/platform/shared/api-client';
 import { Button } from '@/components/platform/ui/kit/Button';
 import { Dialog } from '@/components/platform/ui/kit/Dialog';
+import { consentAllows } from '@/platform/shared/config/consent';
 import { useSession } from '../auth/SessionProvider';
 import { api } from '../lib/api-browser';
 import { AiNotice, PaywallDialog, ResetCountdown } from './AiDialogs';
@@ -17,7 +18,8 @@ export function ExplainSlideDialog({ open, onClose, chapterId, part, slideId, sl
   const chat = useAiStream();
   const [quote, setQuote] = useState<AiQuote | null>(null);
   const [problem, setProblem] = useState<AiBlock | null>(null);
-  const consent = state.status === 'member' && state.consent === 'granted';
+  // D-052: every member may use AI (consent only if CONSENT_REQUIRED.ai is switched back on).
+  const consent = state.status === 'member' && consentAllows(state.consent, 'ai');
 
   // A different slide is a fresh explanation.
   const { reset } = chat;

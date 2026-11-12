@@ -1,7 +1,7 @@
 'use client';
 
 /**
- * Dashboard "AI credits" tile (D-044; consented members only): today's balance with the bonus credits earned
+ * Dashboard "AI credits" tile (D-044; every member since D-052): today's balance with the bonus credits earned
  * today, progress towards today's practice-goal bonus and the next streak bonus (GET /v1/me/credits/guide), and the
  * way into "What can I do with my credits?".
  */

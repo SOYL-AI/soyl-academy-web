@@ -1,7 +1,7 @@
 'use client';
 
 /**
- * Weekly league (ADR-023, FIFA Ultimate Team / Duolingo style; GET /v1/leagues/current, consent-gated D-014):
+ * Weekly league (ADR-023, FIFA Ultimate Team / Duolingo style; GET /v1/leagues/current, no consent needed D-052):
  * a tier crest, the week's countdown, a podium for the top three and the division standings with promotion and
  * relegation zones. Names are the auto-generated public names (D-039). XP comes only from learning; nothing
  * here is random or bought.

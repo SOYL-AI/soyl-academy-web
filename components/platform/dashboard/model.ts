@@ -120,9 +120,9 @@ export function schoolLine(school: DashboardProfile['school']): string | null {
 export type ProfilePrompt =
   /** Board and/or class missing: ask inline. */
   | { kind: 'class'; missing: ('board' | 'classLevel')[] }
-  /** Consent granted, no school saved: link to the profile. */
+  /** No school saved: link to the profile (D-052: no consent needed). */
   | { kind: 'school' }
-  /** Consent not granted: the school can only be added after approval (D-014), so link to the consent flow. */
+  /** Only if school/city is consent-gated again (schoolStatus consent_required): link to the consent flow. */
   | { kind: 'school-consent' };
 
 /** Prompts from `profile.missing` and `profile.schoolStatus` (the API decides; the page only reads). */

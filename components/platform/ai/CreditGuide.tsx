@@ -3,8 +3,9 @@
 /**
  * "What can I do with my credits?" (D-044): every AI action with its price, whether the student's plan has it and
  * about how many are left today, the two learning bonuses with today's progress, and the daily credits of each plan.
- * GET /v1/me/credits/guide (members with consent). Loaded lazily: the header credit chip, the paywall and quote
- * dialogs and /me open it (CreditsProvider.openGuide).
+ * GET /v1/me/credits/guide (members; D-052: no consent needed). Loaded lazily: the header credit chip, the paywall
+ * and quote dialogs and /me open it (CreditsProvider.openGuide). While billing is off, the plans section says paid
+ * plans are coming soon instead of inviting a comparison to buy (D-052).
  */
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
@@ -15,6 +16,7 @@ import { Dialog } from '@/components/platform/ui/kit/Dialog';
 import { ProgressBar, Skeleton } from '@/components/platform/ui/kit/Display';
 import { Icon } from '@/components/platform/ui/kit/Icon';
 import { api } from '../lib/api-browser';
+import { useOptionalCredits } from './CreditsProvider';
 import { balanceLine, bonusLines, guideRows } from './credit-guide-model';
 import s from './credits.module.css';
 
@@ -37,6 +39,7 @@ export function useCreditGuide(enabled = true): Guide | null | 'error' {
 export function CreditGuidePanel({ guide, headingLevel: H = 'h3', onLeave }: { guide: Guide; headingLevel?: 'h2' | 'h3'; /** Called before a link inside navigates away (closes the dialog). */ onLeave?: () => void }) {
   const rows = guideRows(guide);
   const bonuses = bonusLines(guide);
+  const billingOn = useOptionalCredits()?.billingEnabled === true;
   return (
     <div className={s.guide} data-testid="credit-guide">
       <p className={s.balance}>
@@ -87,12 +90,22 @@ export function CreditGuidePanel({ guide, headingLevel: H = 'h3', onLeave }: { g
             </li>
           ))}
         </ul>
-        <p className={s.muted}>
-          Lessons, practice and tests are always free; credits are only for AI help.{' '}
-          <Link href="/plans" className={s.inlineLink} onClick={onLeave}>
-            Compare plans
-          </Link>
-        </p>
+        {billingOn ? (
+          <p className={s.muted}>
+            Lessons, practice and tests are always free; credits are only for AI help.{' '}
+            <Link href="/plans" className={s.inlineLink} onClick={onLeave}>
+              Compare plans
+            </Link>
+          </p>
+        ) : (
+          <p className={s.muted} data-testid="plans-coming-soon">
+            Lessons, practice and tests are always free; credits are only for AI help. Your free credits refill every day at 00:00 IST. Paid plans are
+            coming soon.{' '}
+            <Link href="/plans" className={s.inlineLink} onClick={onLeave}>
+              See what they will include
+            </Link>
+          </p>
+        )}
       </section>
     </div>
   );

@@ -19,6 +19,7 @@ import { Button } from '@/components/platform/ui/kit/Button';
 import { Badge, EmptyState } from '@/components/platform/ui/kit/Display';
 import { EmptyIllustration } from '@/components/platform/ui/art/EmptyIllustration';
 import { Icon } from '@/components/platform/ui/kit/Icon';
+import { consentAllows } from '@/platform/shared/config/consent';
 import { useSession } from '../auth/SessionProvider';
 import { api } from '../lib/api-browser';
 import { trackInterest } from '../lib/interest';
@@ -63,7 +64,8 @@ export function AskClient() {
       </EmptyState>
     );
   }
-  if (state.consent !== 'granted') return <AiNotice block={{ kind: 'consent' }} feature="The AI tutor" />;
+  // D-052: AI needs no consent (only if CONSENT_REQUIRED.ai is switched back on).
+  if (!consentAllows(state.consent, 'ai')) return <AiNotice block={{ kind: 'consent' }} feature="The AI tutor" />;
   return <Tutor />;
 }
 

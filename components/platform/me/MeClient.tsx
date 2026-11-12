@@ -1,9 +1,9 @@
 'use client';
 
 /**
- * /me (ARCHITECTURE §3.1): profile (display name, board, class, weekly goal and, for consented accounts only,
- * the school → PATCH /v1/me; D-043), the public leaderboard
- * name (D-039), the consent flow and its status (D-014, D-039: ConsentFlow), sign-in methods, sign out (WEB-9), sign out other devices, account deletion (DELETE /v1/me,
+ * /me (ARCHITECTURE §3.1): profile (display name, board, class, weekly goal and the school → PATCH /v1/me;
+ * D-043, D-052), the public leaderboard name (D-039), parent approval for paid plans and its status (D-052, D-039:
+ * ConsentFlow), sign-in methods, sign out (WEB-9), sign out other devices, account deletion (DELETE /v1/me,
  * needs a fresh session: AUTH-9).
  */
 import dynamic from 'next/dynamic';
@@ -119,8 +119,8 @@ function Profile({ me, onChange }: { me: Me; onChange: (me: Me) => void }) {
       <h2 className={s.settingsTitle}>Settings</h2>
       <div className={s.stack}>
         <div id="consent">
-          {/* Leaving 'granted' clears the school on the server (D-014), so it goes here too. */}
-          <ConsentFlow onChanged={(v) => onChange({ ...me, consent: v.status, school: v.status === 'granted' ? me.school : null })} />
+          {/* Leaving 'granted' clears the school on the server (builtin withdrawal), so it goes here too; never-consented accounts keep it (D-052). */}
+          <ConsentFlow onChanged={(v) => onChange({ ...me, consent: v.status, school: me.consent === 'granted' && v.status !== 'granted' ? null : me.school })} />
         </div>
         <ProfileForm me={me} onSaved={onChange} />
         <AvatarCard me={me} onChange={onChange} />

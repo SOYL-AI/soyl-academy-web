@@ -10,8 +10,10 @@
  * - Buy: POST /v1/billing/subscriptions | /orders → Razorpay Checkout (no prefill) → on success
  *   POST /v1/billing/refresh {} and poll GET /v1/me/subscription (every 2.5 s, up to 60 s) until the plan
  *   changes. The browser never decides the plan (AC-10);
- * - states: guest (log in, back here), consent_required (a parent must approve), billing_disabled,
- *   already_subscribed (manage), plan_unavailable, service unavailable.
+ * - states: guest (log in, back here), consent_required (a parent must approve: the one consent-gated thing,
+ *   D-052), billing_disabled, already_subscribed (manage), plan_unavailable, service unavailable;
+ * - billing off (BILLING_ENABLED=false): "Paid plans are coming soon" with the free-credits sentence; members
+ *   without approval also get the link to /me/consent (approval will be needed to buy, D-052).
  */
 import Link from 'next/link';
 import { useCallback, useEffect, useState } from 'react';
@@ -20,6 +22,7 @@ import { cx } from '@/components/platform/ui/cx';
 import { Button } from '@/components/platform/ui/kit/Button';
 import { Badge, EmptyState, Skeleton } from '@/components/platform/ui/kit/Display';
 import { Icon } from '@/components/platform/ui/kit/Icon';
+import { consentAllows } from '@/platform/shared/config/consent';
 import { useSession } from '../auth/SessionProvider';
 import { useCredits } from '../ai/CreditsProvider';
 import { api } from '../lib/api-browser';
@@ -221,7 +224,7 @@ export function PlansClient() {
 
   const ordered = [...plans.plans].sort((a, b) => a.order - b.order);
   const hasYearly = ordered.some((p) => p.prices.some((x) => x.interval === 'yearly'));
-  const consentNeeded = member && state.consent !== 'granted';
+  const consentNeeded = member && !consentAllows(state.consent, 'purchases');
   const showInvoiceDetails = member && plans.billingEnabled && !consentNeeded && ordered.some((p) => p.purchasable);
   const nameError = buyerName.trim() && !INVOICE_NAME.test(buyerName.trim()) ? "Use English letters, spaces and . ' - only." : undefined;
 
@@ -229,7 +232,17 @@ export function PlansClient() {
     <div className={s.page} data-testid="plans" data-billing={plans.billingEnabled ? 'on' : 'off'}>
       {!plans.billingEnabled && (
         <p className={s.notice} role="status" data-testid="billing-off">
-          <Icon name="info" size={18} /> Plans are not on sale yet. Everyone gets free AI credits every day; lessons, practice and tests are always free.
+          <Icon name="info" size={18} /> <strong>Paid plans are coming soon.</strong> Everyone gets free AI credits every day (they refill at 00:00 IST); lessons, practice
+          and tests are always free.
+          {consentNeeded && (
+            <>
+              {' '}
+              Buying a plan will need a parent’s approval (or yours if you are 18 or older).{' '}
+              <Link href="/me/consent?next=%2Fplans" data-testid="plans-consent-soon">
+                Set up approval
+              </Link>
+            </>
+          )}
         </p>
       )}
       {consentNeeded && plans.billingEnabled && (
