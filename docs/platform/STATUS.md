@@ -10,7 +10,7 @@ Single source of truth for progress (AGENTS.md §4.3). Updated by the Lead after
 - Worktrees: `C:/Users/Prabhu/soyl-wt/<agent>-<task>` (D-009); at most 5 agents at a time (D-024)
 - Gate policy: owner credentials are still missing for most services → stand-in evidence, reported as **green (stand-in)** (D-010)
 - Owner blockers: [OWNER_ACTIONS.md](OWNER_ACTIONS.md). Open now: **OA-21/OA-04** (Razorpay: owner needs more time), **OA-03** (Speech + Content Safety: narration audio, managed moderation), **OA-14** (counsel on children's data), **OA-16/OA-20** (syllabus and ICSE papers), **OA-12** (marketing-site security fixes).
-- Last refreshed: 2026-11-07 10:00 IST at `platform/main` 00729c1 (released: 12 CBSE 9 + 95 CBSE 10 + 94 CBSE 11 + 115 CBSE 12 + 44 ICSE 9 + 101 ICSE 10 + 21 ISC 11 + 128 ISC 12 = 610 chapters); production backend `f645d53` + content release 00729c1; Vercel `f645d53`. The platform is **live** on www.soylai.com since 2026-10-28 (D-041).
+- Last refreshed: 2026-11-12 IST (Lead, checked in Azure): production backend `54643166` (api/worker revision 0000012, deployed 2026-11-09, migrations through 0017 Future Builders); content release 2026-11-11 00:03 IST from `platform/main` 5981a357 (waves through w36, 722 chapter folders); Vercel serves `main` 54643166. The platform is **live** on www.soylai.com since 2026-10-28 (D-041). Usage 28 Oct–12 Nov (Log Analytics): 13 new student accounts, most activity on 10–11 Nov (379 test answers, 291 lesson-progress saves, 91 practice answers, 7 AI actions).
 
 ## Current milestone: **M5 content waves + M6 hardening**
 
@@ -124,11 +124,17 @@ M0–M4 are done or built on stand-ins. CBSE Class 10 core five subjects are com
 | M6 | Production readiness (keyless MI auth, email-only OTP via ACS, consent fail-safe, prod Bicep, runbook) | backend-api + infra-azure | `platform/backend-api/prod-auth` | api, db, worker, infra | merged b3379cc | — |
 | — | Marketing editorial redesign (owner request) | marketing-editorial | `marketing/editorial-restore` | marketing app | **live** on `main` a2c76a5, then Future Builders 9432809 | re-baseline on `platform/main` (owner-approved): first run lost 2 screenshots to an out-of-memory crash; re-running after merging 9432809 |
 | — | As-built documentation (handbook, API reference, data model, content, operations, M2–M4 reports) | technical writer | `platform/docs/as-built` | `docs/platform/**`, CLAUDE.md commands | **in review** | — |
+| M6+ | Consent only for buying a paid plan; AI, uploads, leaderboards, leagues, coin rewards, school open without consent; "paid plans coming soon" copy (D-052, ADR-030) | backend-api + web-platform | `platform/backend-api/consent-purchases-only` | api, worker, shared config, `components/platform/`, e2e specs | **integrated** on `platform/lead/integrate-d052`, not deployed | owner go-ahead to deploy |
+| M6+ | Owner email at each new student sign-up (`SIGNUP_NOTIFY_EMAIL`, prod Bicep param) | backend-api | `platform/backend-api/signup-notifications` | `platform/api/src/notifications/`, identity hook, prod params | **integrated** on `platform/lead/integrate-d052`, not deployed | owner go-ahead to deploy |
 
 ## Backlog (found at integration)
 
 | Found | Item | Owner | Status |
 |---|---|---|---|
+| 2026-11-12 | Background-failure logs pass `err: (err as Error).name` (a string), which the logger turns into `{}`, so the error class is lost (FB `fb_*_failed`, invoice email/delivery, `credit_topup_failed`); use an `errorClass` field as notifications/signup.ts does | backend-api | open |
+| 2026-11-12 | No alert fires on `alert: true` log lines (e.g. `signup_notify_failed`, `fb_confirmation_email_failed`); add a Log Analytics alert rule | infra-azure | open |
+| 2026-11-12 | `components/platform/ui` test `visual-v2.test.tsx > table` ("script-like aria-label") fails on main too | design-system | open |
+| 2026-11-12 | `platform/db/PII.md`: note that a masked identifier of each new student goes to the owner's inbox (sign-up notices) | db-schema | open |
 | 2026-10-29 | Runbooks `billing-go-live.md` (step with `billing events`) and `razorpay-webhook-replay.md` pass dashed CLI flags through `az containerapp job start --args` (e.g. `"--dry-run"`); the Azure CLI rejects them ("unrecognized arguments"). Switch them to the REST start call used in `admin-dashboard.md` before Razorpay goes live (OA-21) | billing-razorpay | open |
 | 2026-10-29 | Platform unit tests on the 8 GB dev machine: a vitest fork worker can die with Windows 0xC0000409 under memory pressure (gate 27723d7: api `coins.test.ts`, db `avatars-bonus.test.ts` not run; both passed alone, 23 + 3). The npm run still exits 0; read the summaries ("44 passed (45)"). Consider `--pool=threads` or a lower `maxWorkers` locally | qa-e2e | open |
 | 2026-10-29 | e2e: the local API (api-e2e.ts, stdout ignored) exited silently about 35 min into two full runs (learn-mode agent, Lead gate 2609f32); not reproduced on a watched re-run (memory steady, about 1.4 GB free). Capture API stdout to a log file in the e2e config so the next occurrence shows its cause | qa-e2e | open |
