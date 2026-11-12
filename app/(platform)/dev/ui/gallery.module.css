@@ -116,7 +116,14 @@
 }
 .slides {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: var(--p-space-6);
+}
+/* Gallery only: wide display maths (chemical equations) scroll inside their own block instead of widening the
+   slide's auto grid tracks at 360 px (the renderers are unchanged; see the v3 handoff). */
+.slideWrap *,
+.section > div > * {
+  min-width: 0;
 }
 .slideWrap {
   min-width: 0;
