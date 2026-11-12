@@ -111,9 +111,8 @@ test('AI tutor: quote → stream → credits; hint → full; refund on failure; 
   await expect(lastAnswer(page)).toHaveAttribute('data-status', 'done', { timeout: 30_000 });
   await expect(chip(page)).toHaveAttribute('data-balance', '36');
 
-  // History.
-  await page.getByText('Your recent chats').click();
-  await expect(page.locator('details').getByRole('button').first()).toBeVisible();
+  // History: the "Recent chats" rail card (after the composer on phones).
+  await expect(page.getByRole('list', { name: 'Recent chats' }).getByRole('button').first()).toBeVisible();
 
   // Explain this slide (1 credit, quoted in the dialog).
   await page.goto('/learn/cbse/10/science/ch01/lesson', { waitUntil: 'networkidle' });

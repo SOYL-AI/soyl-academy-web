@@ -45,7 +45,7 @@ export function AvatarPicker({ publicName, onSaved }: { publicName: string; onSa
     return (
       <p className={s.error} role="alert">
         The avatars could not load.{' '}
-        <Button variant="ghost" size="sm" onClick={() => setReload((n) => n + 1)}>
+        <Button variant="ghost" onClick={() => setReload((n) => n + 1)}>
           Try again
         </Button>
       </p>

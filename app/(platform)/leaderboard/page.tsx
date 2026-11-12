@@ -1,11 +1,11 @@
 /**
- * /leaderboard — weekly leagues and All-India mock ranks (ARCHITECTURE §3.1: login, client). Consent-gated
- * (D-014). Rendered per request (nonce CSP, WEB-3).
+ * /leaderboard — weekly leagues and All-India mock ranks (ARCHITECTURE §3.1: login, client; D-052: no approval
+ * needed). Rendered per request (nonce CSP, WEB-3). The page title ("Weekly league", with the tier crest once the
+ * league loads) is the client's GreetingHeader (design language v3, ADR-032).
  */
 import type { Metadata } from 'next';
 import { connection } from 'next/server';
 import { requirePlatform } from '@/components/platform/server/gate';
-import { PageHeader } from '@/components/platform/shell/PageHeader';
 import { LeaderboardClient } from '@/components/platform/leaderboard/LeaderboardClient';
 import shell from '@/components/platform/shell/shell.module.css';
 
@@ -16,7 +16,6 @@ export default async function LeaderboardPage() {
   await connection();
   return (
     <div className={shell.page}>
-      <PageHeader crumbs={[{ name: 'Leaderboards', path: '/leaderboard' }]} title="Leaderboards" lead="Weekly leagues and All-India mock ranks. Everyone appears under an auto-generated name, never a real name." structuredData={false} />
       <LeaderboardClient />
     </div>
   );

@@ -1,12 +1,14 @@
 /**
- * /tests — test series catalogue (ARCHITECTURE §3.1: public list, login to start; client). The shell is
- * static; subjects and the student's attempts load in the browser.
+ * /tests — test series catalogue (ARCHITECTURE §3.1: public list, login to start; client; design language v3,
+ * ADR-032 §10 "Tests hub"). Rendered per request (the proxy's CSP nonce, S6-L03), so the date chip is today's
+ * date in India time; subjects, live mocks and the student's attempts load in the browser.
  */
 import type { Metadata } from 'next';
 import { connection } from 'next/server';
 import { requirePlatform } from '@/components/platform/server/gate';
 import { platformMetadata } from '@/components/platform/server/metadata';
-import { PageHeader } from '@/components/platform/shell/PageHeader';
+import { ButtonLink } from '@/components/platform/ui/kit/ButtonLink';
+import { DateChip, GreetingHeader } from '@/components/platform/ui/kit/Greeting';
 import { TestsHome } from '@/components/platform/tests/TestsHome';
 import shell from '@/components/platform/shell/shell.module.css';
 
@@ -21,7 +23,22 @@ export default async function TestsPage() {
   await connection(); // S6-L03: rendered per request so the proxy's CSP nonce applies
   return (
     <div className={shell.page}>
-      <PageHeader crumbs={[{ name: 'Tests', path: '/tests' }]} title="Tests" lead="Chapter tests, unit tests, full mock papers and live All-India mocks. Free, with results and analysis." />
+      <GreetingHeader
+        title="Tests"
+        subtitle="Practise like the real paper: chapter tests, full mocks and live All-India mocks. Free, with results and analysis."
+        aside={<DateChip />}
+        actions={
+          <>
+            <ButtonLink href="/tests/builder" icon="plus">
+              Build your own test
+            </ButtonLink>
+            <ButtonLink href="/leaderboard" icon="trophy" variant="soft">
+              Leaderboards
+            </ButtonLink>
+          </>
+        }
+        data-testid="tests-header"
+      />
       <TestsHome />
     </div>
   );

@@ -133,7 +133,8 @@ test.describe('Lead review: content pages', () => {
     expect(await readyCards.count()).toBeGreaterThan(0);
     // Every ready subject carries a badge that is true (full series or a test count).
     for (const text of await readyCards.allTextContents()) expect(text).toMatch(/Full series|\d+ (chapter )?tests?/);
-    await expect(readyCards.filter({ hasText: 'Science' }).first()).toHaveAttribute('data-has-tests', 'true');
+    // v3: the kit SubjectCard is the link; data-has-tests sits on its grid item.
+    await expect(ready.locator('li[data-has-tests="true"]').filter({ hasText: 'Science' }).first()).toBeVisible();
     const more = page.getByTestId('more-subjects');
     await expect(more).not.toHaveAttribute('open', /.*/);
     await expect(more.locator('a').first()).toBeHidden();

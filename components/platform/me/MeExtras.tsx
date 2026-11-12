@@ -12,13 +12,18 @@ import { useCallback, useEffect, useState } from 'react';
 import type { CreditLedger, Credits, MyAttempt, MySubscription } from '@/platform/shared/api-client';
 import { Button } from '@/components/platform/ui/kit/Button';
 import { Dialog } from '@/components/platform/ui/kit/Dialog';
-import { Badge, Card, CardTitle, Skeleton } from '@/components/platform/ui/kit/Display';
+import { ButtonLink } from '@/components/platform/ui/kit/ButtonLink';
+import { Card, CardTitle, EmptyState, Skeleton } from '@/components/platform/ui/kit/Display';
 import { formatCountdown } from '@/components/platform/ui/kit/CreditChip';
+import { Icon } from '@/components/platform/ui/kit/Icon';
+import { IconTile } from '@/components/platform/ui/kit/Tiles';
+import { List, ListRow, StatusPill } from '@/components/platform/ui/kit/Lists';
 import { useCredits } from '../ai/CreditsProvider';
 import { creditsText } from '../ai/problems';
 import { api } from '../lib/api-browser';
 import { problemMessage } from '../lib/problems';
-import { attemptPath, resultPath, scoreText } from '../tests/player-model';
+import { useStage } from '../shell/StageProvider';
+import { attemptRow } from '../tests/player-model';
 import s from './me.module.css';
 
 // D-044: the 14-day chart loads after the page (JS budget on /me).
@@ -30,6 +35,7 @@ function shortDate(iso: string | null): string {
 }
 
 export function MyAttemptsCard() {
+  const { pick } = useStage();
   const [list, setList] = useState<MyAttempt[] | null>(null);
   const [cursor, setCursor] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
@@ -60,27 +66,38 @@ export function MyAttemptsCard() {
       {list === null ? (
         <Skeleton lines={3} />
       ) : list.length === 0 ? (
-        <p className={s.muted}>
-          No tests yet. <Link href="/tests">Find a test</Link>
-        </p>
+        <EmptyState
+          title={pick({ junior: 'Nothing here yet', middle: 'No tests yet', senior: 'No attempts yet' })}
+          icon="clock"
+          tint="pink"
+          compact
+          action={
+            <ButtonLink href="/tests" variant="soft">
+              Find a test
+            </ButtonLink>
+          }
+        >
+          {pick({ junior: 'Your first test will show up here.', middle: 'Your scores appear here.', senior: 'Scores appear here.' })}
+        </EmptyState>
       ) : (
-        <ul className={s.list}>
+        <List label="Your tests" inset>
           {list.map((a) => {
-            const done = a.status === 'submitted' || a.status === 'auto_submitted';
+            const r = attemptRow(a);
             return (
-              <li key={a.id} className={s.listRow}>
-                <Link href={done ? resultPath(a.id) : attemptPath(a.id)}>{a.title}</Link>
-                <span className={s.muted}>
-                  {done ? `${scoreText(a.score)} / ${scoreText(a.maxScore)} · ${shortDate(a.submittedAt)}` : a.status === 'created' ? 'Not started' : 'In progress'}
-                  {a.liveEventId ? ' · Live mock' : ''}
-                </span>
-              </li>
+              <ListRow
+                key={a.id}
+                href={r.href}
+                leading={<IconTile icon={r.done ? 'checkCircle' : 'clock'} tint="pink" size="sm" />}
+                title={a.title}
+                meta={`${r.done ? shortDate(a.submittedAt) : r.status}${a.liveEventId ? ' · Live mock' : ''}`}
+                trailing={<StatusPill tone={r.tone}>{r.done ? r.score : r.status}</StatusPill>}
+              />
             );
           })}
-        </ul>
+        </List>
       )}
       {cursor && (
-        <Button variant="ghost" size="sm" loading={busy} onClick={() => void load(cursor)}>
+        <Button variant="ghost" loading={busy} onClick={() => void load(cursor)}>
           Show more
         </Button>
       )}
@@ -130,24 +147,30 @@ export function SubscriptionCard() {
         <Skeleton lines={2} />
       ) : (
         <>
-          <p>
-            <strong>{sub.planName}</strong> · {creditsText(sub.creditsPerDay)} a day
-            {sub.validUntil && sub.plan !== 'free' ? ` · until ${shortDate(sub.validUntil)}` : ''}
+          <p className={s.planLine}>
+            <StatusPill tone={sub.plan === 'free' ? 'neutral' : 'success'}>{sub.planName}</StatusPill>
+            <span>
+              {creditsText(sub.creditsPerDay)} a day
+              {sub.validUntil && sub.plan !== 'free' ? ` · until ${shortDate(sub.validUntil)}` : ''}
+            </span>
           </p>
           {recurring && (
             <p className={s.muted}>
               {recurring.interval === 'yearly' ? 'Yearly' : 'Monthly'} plan ·{' '}
-              {recurring.cancelAtPeriodEnd ? <Badge tone="warning">Ends {shortDate(recurring.currentPeriodEnd)}, will not renew</Badge> : recurring.currentPeriodEnd ? `renews ${shortDate(recurring.currentPeriodEnd)}` : recurring.status}
+              {recurring.cancelAtPeriodEnd ? <StatusPill tone="warning">Ends {shortDate(recurring.currentPeriodEnd)}, will not renew</StatusPill> : recurring.currentPeriodEnd ? `renews ${shortDate(recurring.currentPeriodEnd)}` : recurring.status}
             </p>
           )}
+          <p className={s.muted}>Lessons, practice and tests are free on every plan. Plans only add AI credits.</p>
           <div className={s.actions}>
-            <Link href="/plans">{sub.plan !== 'free' ? 'Change plan' : sub.billingEnabled ? 'See plans' : 'Paid plans (coming soon)'}</Link>
+            <ButtonLink href="/plans" variant="soft">
+              {sub.plan !== 'free' ? 'Change plan' : sub.billingEnabled ? 'See plans' : 'Paid plans (coming soon)'}
+            </ButtonLink>
             {/* Bills of Supply and credit notes (invoices work, merged separately into platform/main). */}
-            <Link href="/me/invoices" data-testid="invoices-link">
+            <Link href="/me/invoices" className={s.textLink} data-testid="invoices-link">
               Invoices and receipts
             </Link>
             {canCancel && (
-              <Button variant="secondary" size="sm" onClick={() => setConfirm(true)} data-testid="cancel-plan">
+              <Button variant="secondary" onClick={() => setConfirm(true)} data-testid="cancel-plan">
                 Cancel renewal
               </Button>
             )}
@@ -217,10 +240,13 @@ export function CreditsCard() {
         AI credits
       </CardTitle>
       {credits ? (
-        <p>
-          <strong>{creditsText(credits.balance)}</strong> left today of {credits.dailyCredits} ({credits.planName})
-          {credits.bonusToday > 0 ? ` · ${credits.bonusToday} bonus credits earned today (included)` : ''}. Resets in {formatCountdown(credits.resetInSeconds * 1000)} (00:00 IST).
-        </p>
+        <div className={s.creditsHead}>
+          <IconTile icon="sparkles" tint="violet" size="md" />
+          <p>
+            <strong className={s.creditsBig}>{creditsText(credits.balance)}</strong> left today of {credits.dailyCredits} ({credits.planName})
+            {credits.bonusToday > 0 ? ` · ${credits.bonusToday} bonus credits earned today (included)` : ''}. Resets in {formatCountdown(credits.resetInSeconds * 1000)} (00:00 IST).
+          </p>
+        </div>
       ) : (
         <Skeleton lines={1} />
       )}
@@ -228,7 +254,7 @@ export function CreditsCard() {
       {aiAllowed && (
         <>
           <div className={s.actions}>
-            <Button variant="secondary" size="sm" onClick={openGuide} data-testid="me-credit-guide">
+            <Button variant="soft" icon="sparkles" onClick={openGuide} data-testid="me-credit-guide">
               What can I do with my credits?
             </Button>
           </div>
@@ -236,8 +262,10 @@ export function CreditsCard() {
           <CreditHistorySection />
         </>
       )}
-      <details>
-        <summary>Credits history</summary>
+      <details className={s.ledger}>
+        <summary>
+          <Icon name="list" size={18} /> Credits history
+        </summary>
         {ledger === null ? (
           <Skeleton lines={3} />
         ) : ledger.length === 0 ? (
@@ -258,7 +286,7 @@ export function CreditsCard() {
           </ul>
         )}
         {cursor && (
-          <Button variant="ghost" size="sm" onClick={() => void load(cursor)}>
+          <Button variant="ghost" onClick={() => void load(cursor)}>
             Show more
           </Button>
         )}
