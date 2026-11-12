@@ -174,7 +174,7 @@ function Sidebar({ pathname }: { pathname: string }) {
               const on = isCurrentSection(pathname, n);
               return (
                 <li key={n.href}>
-                  <Link href={n.href} prefetch={n.prefetch} className={cx(s.sideLink, on && s.sideOn)} aria-current={on ? 'page' : undefined} data-label={n.label}>
+                  <Link href={n.href} prefetch={n.prefetch} className={cx(s.sideLink, on && s.sideOn)} aria-current={on ? 'page' : undefined}>
                     <Icon name={n.icon} size={22} />
                     <span className={s.sideLabel}>{n.label}</span>
                   </Link>
@@ -232,7 +232,7 @@ function SidebarProfile({ pathname }: { pathname: string }) {
   const line = [level ? `Level ${level}` : null, cls].filter(Boolean).join(' · ') || 'Your profile';
   const lp = progress?.levelProgress;
   return (
-    <Link href="/me" className={cx(s.profileCard, on && s.profileOn)} aria-current={on ? 'page' : undefined} data-testid="sidebar-profile" data-label="Profile">
+    <Link href="/me" className={cx(s.profileCard, on && s.profileOn)} aria-current={on ? 'page' : undefined} data-testid="sidebar-profile">
       <AnimalAvatar avatar={mine?.avatar} size={40} decorative />
       <span className={s.profileText}>
         <b>{name}</b>

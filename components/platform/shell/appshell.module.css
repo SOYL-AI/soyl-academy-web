@@ -271,12 +271,12 @@
   .sideInner {
     align-items: center;
     padding: var(--p-space-5) var(--p-space-2) var(--p-space-4);
+    overflow: visible; /* the tooltips sit outside the rail */
   }
   .sideBrand {
     padding: 0;
   }
   .sideBrand .brandName,
-  .sideLabel,
   .creditsWord,
   .profileText {
     position: absolute;
@@ -299,9 +299,9 @@
     padding: 0;
     min-height: 48px;
   }
-  .sideLink::after,
-  .profileCard::after {
-    content: attr(data-label);
+  /* The label becomes a tooltip on hover and keyboard focus. It stays the link's text (its accessible name):
+     no CSS generated content, which browsers would add to the name. */
+  .sideLabel {
     position: absolute;
     left: calc(100% + 10px);
     top: 50%;
@@ -318,10 +318,8 @@
     transform: translate(-4px, -50%);
     transition: opacity var(--p-duration-fast) var(--p-ease), transform var(--p-duration-fast) var(--p-ease);
   }
-  .sideLink:hover::after,
-  .sideLink:focus-visible::after,
-  .profileCard:hover::after,
-  .profileCard:focus-visible::after {
+  .sideLink:hover .sideLabel,
+  .sideLink:focus-visible .sideLabel {
     opacity: 1;
     transform: translate(0, -50%);
   }
