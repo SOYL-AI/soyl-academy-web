@@ -32,8 +32,13 @@ Owner request (2026-11-12): "every time there is a new sign up ... it would be n
 ## How to verify
 From `platform/`:
 - `npx vitest run test/signup-notifications.test.ts` in `api/` → 11 passed.
-- `npm run typecheck`, `npm test -w @soyl/api`, `npm test -w @soyl/shared`, `npm run build`,
-  `BICEP_BIN=<bicep> node infra/validate.mjs --strict` (results in the agent report / below).
+- Run 2026-11-12 on Windows 11 / Node 24:
+  - `npm run typecheck` → exit 0 (all workspaces);
+  - `npm test -w @soyl/api` → 47 files passed, 724 passed + 1 skipped (route-policy test unchanged);
+  - `npm test -w @soyl/shared` → 19 files, 213 passed;
+  - `npm run build` → api + worker bundles built, exit 0;
+  - `BICEP_BIN=~/.azure/bin/bicep.exe node infra/validate.mjs --strict` (Bicep 0.47.16 from the Azure CLI; CI pins
+    0.48.1) → 0 errors, 0 warnings, all four params files build.
 - After deploy: sign up a new test account on production; the owner inbox gets "New SOYL sign-up (#N)" within
   seconds. App Insights: `traces | where customDimensions.event startswith "signup_notif"`.
 
