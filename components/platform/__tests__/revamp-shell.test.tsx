@@ -23,6 +23,8 @@ import { ThemeOptions, ThemeToggle } from '../shell/ThemeToggle';
 import { isFocusRoute, platformChromeActive } from '../shell/chrome';
 import { AppShell, isCurrentSection, PRIMARY_NAV } from '../shell/AppShell';
 import { MarketingOnly } from '../shell/MarketingOnly';
+import { byStage, classFromPath, resolveStage, stageForClass } from '../shell/stage';
+import { useStage } from '../shell/StageProvider';
 
 let darkQuery = false;
 const listeners = new Set<(e: { matches: boolean }) => void>();
@@ -253,31 +255,119 @@ describe('AppShell', () => {
     expect((screen.getByRole('link', { name: 'Skip to page content' })).getAttribute('href')).toBe('#platform-content');
   });
 
-  it('member: streak, coins, credits (consented) and profile link', () => {
-    h.session = { state: { status: 'member', user: { id: 'u1', displayName: 'Asha' }, consent: 'granted' }, openLogin: vi.fn() };
-    h.credits = { credits: { balance: 25, resetAt: new Date(Date.now() + 3_600_000).toISOString() }, aiAllowed: true };
+  function asMember(user: Record<string, unknown> = {}) {
+    const openGuide = vi.fn();
+    h.session = { state: { status: 'member', user: { id: 'u1', displayName: 'Asha', board: 'cbse', classLevel: 10, ...user }, consent: 'granted' }, openLogin: vi.fn() };
+    h.credits = { credits: { balance: 25, resetAt: new Date(Date.now() + 3_600_000).toISOString() }, aiAllowed: true, openGuide } as typeof h.credits;
     h.coins = { summary: { balance: 42, checkIn: { checkedInToday: true } } };
-    h.progress = { progress: { streak: { current: 6, longest: 9, lastActiveDay: '2026-10-28', atRisk: false, freezeAvailableThisWeek: true } }, ready: true, refresh: () => undefined };
+    h.progress = {
+      progress: { level: 3, levelProgress: 0.4, streak: { current: 6, longest: 9, lastActiveDay: '2026-10-28', atRisk: false, freezeAvailableThisWeek: true } },
+      ready: true,
+      refresh: () => undefined,
+    };
+    return openGuide;
+  }
+
+  it('member (v3): streak and coins in the top bar; credits in the sidebar (opens the guide); profile link and card', () => {
+    const openGuide = asMember();
     shell();
     expect((screen.getByTestId('streak-chip')).getAttribute('data-streak')).toBe('6');
     expect((screen.getByTestId('streak-chip')).textContent).toContain('6-day streak');
     expect((screen.getByTestId('coin-chip')).getAttribute('data-balance')).toBe('42');
-    expect((screen.getByTestId('credit-chip')).getAttribute('data-balance')).toBe('25');
+    // ADR-032: no credits chip in the top bar outside Ask AI and Plans; the sidebar keeps the way to the guide.
+    expect(screen.queryByTestId('credit-chip')).toBeNull();
+    const side = screen.getByTestId('sidebar-credits');
+    expect(side.getAttribute('data-balance')).toBe('25');
+    fireEvent.click(side);
+    expect(openGuide).toHaveBeenCalledTimes(1);
     expect((screen.getByTestId('profile-link')).getAttribute('href')).toBe('/me');
+    const card = screen.getByTestId('sidebar-profile');
+    expect(card.getAttribute('href')).toBe('/me');
+    expect(card.textContent).toContain('Asha');
+    expect(card.textContent).toContain('Level 3 · Class 10');
     expect(screen.queryByTestId('login-button')).toBeNull();
+    expect(screen.getByTestId('class-chip').getAttribute('href')).toBe('/learn/cbse/10');
   });
 
-  it('no credits chip without AI consent (D-014)', () => {
+  it.each(['/ask', '/plans'])('member on %s: the credits chip is in the top bar and opens the guide', (path) => {
+    const openGuide = asMember();
+    h.pathname = path;
+    shell();
+    const chip = screen.getByTestId('credit-chip');
+    expect(chip.getAttribute('data-balance')).toBe('25');
+    fireEvent.click(chip);
+    expect(openGuide).toHaveBeenCalledTimes(1);
+  });
+
+  it('no credits anywhere without AI allowed (D-014)', () => {
     h.session = { state: { status: 'member', user: { id: 'u1', displayName: null }, consent: 'required' }, openLogin: vi.fn() };
     h.credits = { credits: { balance: 25, resetAt: new Date().toISOString() }, aiAllowed: false };
+    h.pathname = '/ask';
     shell();
     expect(screen.queryByTestId('credit-chip')).toBeNull();
+    expect(screen.queryByTestId('sidebar-credits')).toBeNull();
   });
 
-  it('immersive pages drop the tab bar', () => {
+  it('sidebar nav: members get Home … Progress, guests the four sections and a log-in card', () => {
+    asMember();
+    h.pathname = '/me/progress';
+    shell();
+    const [side, tabs] = [...document.querySelectorAll<HTMLElement>('nav[aria-label="Learning platform"]')];
+    expect(within(side!).getAllByRole('link', { hidden: true }).map((a) => a.textContent)).toEqual(['Home', 'Learn', 'Tests', 'Ask AI', 'Leaderboard', 'Progress']);
+    expect(within(side!).getByRole('link', { name: 'Progress', hidden: true }).getAttribute('aria-current')).toBe('page');
+    // Phones: Progress lives under Home (no sixth tab), and is not "Me".
+    expect(within(tabs!).getByRole('link', { name: 'Home' }).getAttribute('aria-current')).toBe('page');
+    expect(within(tabs!).getByRole('link', { name: 'Me' }).hasAttribute('aria-current')).toBe(false);
+    expect(screen.getByTestId('sidebar-profile').hasAttribute('aria-current')).toBe(false);
+    cleanup();
+
+    h.session = { state: { status: 'guest' }, openLogin: vi.fn() };
+    h.pathname = '/learn';
+    shell();
+    const side2 = document.querySelector<HTMLElement>('[data-testid="sidebar"] nav')!;
+    expect(within(side2).getAllByRole('link', { hidden: true }).map((a) => a.textContent)).toEqual(['Learn', 'Tests', 'Ask AI', 'Leaderboard']);
+    fireEvent.click(within(screen.getByTestId('sidebar')).getByRole('button', { name: 'Log in', hidden: true }));
+    expect(h.session.openLogin).toHaveBeenCalled();
+    expect(screen.queryByTestId('sidebar-profile')).toBeNull();
+  });
+
+  it('the profile card is current on /me, /coins and /store', () => {
+    asMember();
+    for (const path of ['/me', '/coins', '/store']) {
+      h.pathname = path;
+      shell();
+      expect(screen.getByTestId('sidebar-profile').getAttribute('aria-current'), path).toBe('page');
+      cleanup();
+    }
+  });
+
+  it('immersive pages drop the sidebar and the tab bar; the top bar keeps the mark and the soylai.com link', () => {
     h.pathname = '/learn/cbse/10/science/ch01/lesson';
     shell();
-    expect([...document.querySelectorAll<HTMLElement>('nav[aria-label="Learning platform"]')]).toHaveLength(1);
+    expect([...document.querySelectorAll<HTMLElement>('nav[aria-label="Learning platform"]')]).toHaveLength(0);
+    expect(screen.queryByTestId('sidebar')).toBeNull();
+    expect(screen.getByTestId('main-site-link').closest('header')).not.toBeNull();
+    expect(screen.getByRole('link', { name: 'SOYL Academy, learning home' }).getAttribute('href')).toBe('/learn');
+  });
+
+  it('age stage on the shell root: member class first, then the course URL, then middle', () => {
+    const stageOf = () => screen.getByTestId('app-shell').getAttribute('data-stage');
+    h.pathname = '/learn/cbse/7/science';
+    shell();
+    expect(stageOf()).toBe('junior'); // guest on a Class 7 page
+    cleanup();
+    h.pathname = '/tests/series/icse/12/physics';
+    shell();
+    expect(stageOf()).toBe('senior');
+    cleanup();
+    h.pathname = '/leaderboard';
+    shell();
+    expect(stageOf()).toBe('middle');
+    cleanup();
+    asMember({ classLevel: 8 });
+    h.pathname = '/learn/cbse/12/physics';
+    shell();
+    expect(stageOf()).toBe('junior'); // a Class 8 member keeps their own tone
   });
 
   it('sections: /coins and /store count as Me; prefixes only', () => {
@@ -286,5 +376,48 @@ describe('AppShell', () => {
     expect(isCurrentSection('/me/consent', me)).toBe(true);
     expect(isCurrentSection('/meet', me)).toBe(false);
     expect(PRIMARY_NAV.map((n) => n.label)).toEqual(['Learn', 'Tests', 'Ask AI', 'Leaderboard']);
+  });
+});
+
+describe('age stages (ADR-032)', () => {
+  it('class → stage; out of range and unknown → middle', () => {
+    expect([7, 8, 9, 10, 11, 12].map(stageForClass)).toEqual(['junior', 'junior', 'middle', 'middle', 'senior', 'senior']);
+    expect(stageForClass(null)).toBe('middle');
+    expect(stageForClass(6)).toBe('middle');
+    expect(stageForClass(13)).toBe('middle');
+    expect(stageForClass(10.5)).toBe('middle');
+  });
+  it('reads the class from course URLs only', () => {
+    expect(classFromPath('/learn/cbse/7')).toBe(7);
+    expect(classFromPath('/learn/icse/12/physics/ch03/notes')).toBe(12);
+    expect(classFromPath('/tests/series/cbse/9/maths')).toBe(9);
+    expect(classFromPath('/learn')).toBeNull();
+    expect(classFromPath('/learn/cbse/5')).toBeNull();
+    expect(classFromPath('/tests/attempt/10')).toBeNull();
+    expect(classFromPath('/me')).toBeNull();
+  });
+  it('resolveStage: profile, then URL, then default; byStage picks', () => {
+    expect(resolveStage({ pathname: '/learn/cbse/11', memberClass: 7 })).toEqual({ stage: 'junior', classLevel: 7, source: 'profile' });
+    expect(resolveStage({ pathname: '/learn/cbse/11', memberClass: null })).toEqual({ stage: 'senior', classLevel: 11, source: 'url' });
+    expect(resolveStage({ pathname: '/ask' })).toEqual({ stage: 'middle', classLevel: null, source: 'default' });
+    expect(byStage('senior', { junior: 1, middle: 2, senior: 3 })).toBe(3);
+  });
+  it('useStage: the shell provides it; outside the shell it is the default', () => {
+    function Probe() {
+      const st = useStage();
+      return <output data-testid="stage">{`${st.stage}/${st.source}/${st.pick({ junior: 'Nice one!', middle: 'Good work', senior: 'Done' })}`}</output>;
+    }
+    render(<Probe />);
+    expect(screen.getByTestId('stage').textContent).toBe('middle/default/Good work');
+    cleanup();
+    h.pathname = '/learn/cbse/8/science';
+    render(
+      <ThemeProvider>
+        <AppShell>
+          <Probe />
+        </AppShell>
+      </ThemeProvider>,
+    );
+    expect(screen.getByTestId('stage').textContent).toBe('junior/url/Nice one!');
   });
 });

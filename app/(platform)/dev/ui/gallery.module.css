@@ -153,3 +153,50 @@
   gap: var(--p-space-2);
   grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
 }
+
+/* Design language v3 (ADR-032) */
+.tints {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: var(--p-space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.tints li {
+  display: flex;
+  align-items: center;
+  gap: var(--p-space-2);
+  padding: var(--p-space-3);
+  border-radius: var(--p-radius-lg);
+  font-weight: 700;
+}
+.v3Copy {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+  color: var(--p-ink-muted);
+}
+.v3Copy b {
+  color: var(--p-ink);
+}
+.stages {
+  display: grid;
+  gap: var(--p-space-4);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+}
+.stagePanel {
+  display: grid;
+  align-content: start;
+  gap: var(--p-space-4);
+  min-width: 0;
+  padding: var(--p-space-4);
+  border: 1px dashed var(--p-border-strong);
+  border-radius: var(--p-radius-xl);
+}
+.v3Dark {
+  padding: var(--p-space-4);
+  border-radius: var(--p-radius-xl);
+  background: var(--p-bg);
+  color: var(--p-ink);
+}

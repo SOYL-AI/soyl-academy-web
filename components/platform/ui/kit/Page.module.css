@@ -1,0 +1,119 @@
+/* Page layout primitives (design language v3, ADR-032). */
+.columnsWrap {
+  container-type: inline-size;
+}
+.columns {
+  display: grid;
+  gap: var(--p-space-6);
+  min-width: 0;
+}
+.main,
+.rail {
+  display: grid;
+  align-content: start;
+  gap: var(--p-space-6);
+  min-width: 0;
+}
+.railFirst .rail {
+  order: -1;
+}
+@container (min-width: 1000px) {
+  .withRail {
+    grid-template-columns: minmax(0, 1fr) var(--p-right-rail-w);
+    gap: var(--p-space-8);
+  }
+  .railFirst .rail {
+    order: 0;
+  }
+  .rail {
+    position: sticky;
+    top: calc(var(--p-topbar-h) + var(--p-space-4));
+    gap: var(--p-space-5);
+  }
+}
+
+/* Section header: title (+ count) left, "See all" right. */
+.section {
+  display: grid;
+  gap: var(--p-space-3);
+  min-width: 0;
+}
+.sectionHeader {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--p-space-3);
+  min-width: 0;
+}
+.sectionText {
+  min-width: 0;
+}
+.sectionTitle {
+  display: flex;
+  align-items: baseline;
+  gap: var(--p-space-2);
+  margin: 0;
+  color: var(--p-ink);
+  font-size: var(--p-text-xl);
+  font-weight: var(--p-weight-display);
+  line-height: var(--p-leading-tight);
+  letter-spacing: -0.01em;
+  overflow-wrap: break-word;
+}
+h3.sectionTitle {
+  font-size: var(--p-text-lg);
+}
+.count {
+  display: inline-grid;
+  place-items: center;
+  min-width: 1.75rem;
+  height: 1.5rem;
+  padding: 0 var(--p-space-2);
+  border-radius: var(--p-radius-pill);
+  background: var(--p-surface-3);
+  color: var(--p-ink-muted);
+  font-size: var(--p-text-xs);
+  font-weight: 700;
+  letter-spacing: 0;
+  font-variant-numeric: tabular-nums;
+}
+.sectionDescription {
+  margin: var(--p-space-1) 0 0;
+  color: var(--p-ink-subtle);
+  font-size: var(--p-text-sm);
+}
+.sectionAction {
+  flex: none;
+}
+.seeAll {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  gap: 2px;
+  min-height: var(--p-touch);
+  padding: 0 var(--p-space-1) 0 var(--p-space-2);
+  border-radius: var(--p-radius-pill);
+  color: var(--p-accent);
+  font-size: var(--p-text-sm);
+  font-weight: 650;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.seeAll:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.seeAll:focus-visible {
+  outline: none;
+  box-shadow: var(--p-focus-ring);
+}
+
+/* Card grid: auto-fill tracks (the stage sets the minimum). */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, var(--grid-min, var(--p-stage-tile-min))), 1fr));
+  gap: var(--p-stage-gap);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
