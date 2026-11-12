@@ -2,12 +2,12 @@ import { mkdirSync } from 'node:fs';
 import { resolve } from 'node:path';
 import type { Page } from '@playwright/test';
 import { acceptAllCookies, expect, openLoginFromHeader, signInWithEmail, test, uniqueEmail } from './fixtures';
-import { authoredQuestions, checkPage, grantConsent, signUp, startCh02Short } from './m34-helpers';
+import { authoredQuestions, checkPage, signUp, startCh02Short } from './m34-helpers';
 
 /**
  * D-043: the student dashboard (/me/dashboard, short link /dashboard) and the school + weekly goal on /me.
  * Real local API (GET /v1/me/dashboard, /v1/schools, PATCH /v1/me), the default landing after login, axe and
- * 360 px (layout viewport too) in light and dark, the consent gate on the school, and the owner screenshots
+ * 360 px (layout viewport too) in light and dark, the school (no consent needed, D-052), and the owner screenshots
  * (test-results/platform-web/dashboard/{desktop,mobile}-{light,dark}-dashboard.png).
  */
 const OUT = resolve(import.meta.dirname, '../../../test-results/platform-web/dashboard');
@@ -135,14 +135,14 @@ test.describe('D-043 dashboard', () => {
     await signUp(page, 'dash', '/learn');
     await expect(page).toHaveURL(/\/me\/dashboard$/);
 
-    // Brand-new account: empty states and the class prompt (no consent yet: the approval link, no school prompt).
+    // Brand-new account: empty states, the class prompt and (D-052: no consent needed) the school prompt and the league.
     const dash = page.getByTestId('dashboard');
     await expect(dash).toHaveAttribute('data-new', 'true');
     await expect(page.getByTestId('dashboard-welcome')).toBeVisible();
     await expect(page.getByTestId('kpi-solved')).toHaveAttribute('data-value', '0');
-    await expect(page.getByTestId('prompt-school-consent')).toBeVisible();
-    await expect(page.getByTestId('prompt-school')).toHaveCount(0);
-    await expect(page.getByTestId('league-locked')).toBeVisible();
+    await expect(page.getByTestId('prompt-school')).toBeVisible();
+    await expect(page.getByTestId('prompt-school-consent')).toHaveCount(0);
+    await expect(page.getByTestId('league-locked')).toHaveCount(0);
     await checkPage(page);
     await setClass(page);
 
@@ -192,11 +192,11 @@ test.describe('D-043 dashboard', () => {
     await expect(page.getByTestId('heatmap')).toHaveCount(0);
   });
 
-  test('school on the profile: consented accounts search, add, see it on the dashboard and remove it', async ({ page }) => {
+  test('school on the profile: a never-consented account searches, adds, sees it on the dashboard and removes it (D-052)', async ({ page }) => {
     test.setTimeout(5 * 60_000);
     await signUp(page, 'school', '/me');
-    await grantConsent(page);
     await page.goto('/me', { waitUntil: 'networkidle' });
+    await expect(page.getByTestId('school-locked')).toHaveCount(0);
     const section = page.getByTestId('school-setting');
     await expect(section).toBeVisible();
     await expect(section).toContainText('never shown to other students');
@@ -242,23 +242,15 @@ test.describe('D-043 dashboard', () => {
     expect(me.school).toBeNull();
   });
 
-  test('school without consent: one line and the approval link; no school request is ever made', async ({ page }) => {
-    const schoolCalls: string[] = [];
-    page.on('request', (r) => {
-      if (r.url().includes('/api/platform/v1/schools') || (r.url().endsWith('/api/platform/v1/me') && r.method() === 'PATCH' && (r.postData() ?? '').includes('school'))) schoolCalls.push(r.url());
-    });
+  test('school without consent (D-052): the editor shows and the API saves it', async ({ page }) => {
     await signUp(page, 'school-none', '/me');
-    await expect(page.getByTestId('school-locked')).toBeVisible();
-    await expect(page.getByTestId('school-locked').getByRole('link', { name: 'Turn on extra features' })).toHaveAttribute('href', '/me/consent?next=%2Fme');
-    await expect(page.getByTestId('school-search')).toHaveCount(0);
-    await expect(page.getByLabel('Find your school')).toHaveCount(0);
+    await expect(page.getByTestId('school-locked')).toHaveCount(0);
+    await expect(page.getByTestId('school-search')).toBeVisible();
     // The weekly goal is for everyone.
     await expect(page.getByTestId('profile-weekly-goal')).toContainText('20 questions a week (default)');
     await checkPage(page);
-    expect(schoolCalls).toEqual([]);
-    // The API refuses a school without consent anyway (D-014).
     const res = await page.request.patch('/api/platform/v1/me', { data: { school: { name: 'Good School', city: 'Pune' } }, headers: { origin: new URL(page.url()).origin } });
-    expect(res.status()).toBe(403);
+    expect(res.status()).toBe(200);
   });
 });
 
@@ -273,7 +265,6 @@ test.describe('D-043 screenshots', () => {
     await page.getByLabel('Class', { exact: true }).selectOption('10');
     await page.getByRole('button', { name: 'Save' }).first().click();
     await expect(page.getByText('Profile saved')).toBeVisible();
-    await grantConsent(page);
     await page.goto('/me', { waitUntil: 'networkidle' });
     const section = page.getByTestId('school-setting');
     await section.getByTestId('school-add').click();

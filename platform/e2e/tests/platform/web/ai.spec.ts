@@ -1,10 +1,10 @@
 import type { Page } from '@playwright/test';
 import { acceptAllCookies, expect, test } from './fixtures';
-import { checkPage, CONTROL_ORIGIN, grantConsent, question, shot, signUp, startCh02Short } from './m34-helpers';
+import { checkPage, CONTROL_ORIGIN, question, shot, signUp, startCh02Short } from './m34-helpers';
 
 /**
  * M4 AI flows against the deterministic mock provider (api-e2e.ts), at 360 px:
- * consent-needed → consent → quote → stream → credits decrease (header chip) → hint → full solution →
+ * no consent needed (D-052) → quote → stream → credits decrease (header chip) → hint → full solution →
  * failure before output refunded → photo doubt (browser re-encode, PUT to "Blob", complete, poll) →
  * explain this slide → AI evaluation of a written answer (labels, separate from the score) →
  * exhaustion → paywall with the reset countdown. No third-party requests (fixture); uploads go only to the
@@ -34,14 +34,11 @@ test('AI tutor: quote → stream → credits; hint → full; refund on failure; 
   watch.allowOrigins.push(CONTROL_ORIGIN); // the upload origin (Blob storage stand-in), /ask only
   await signUp(page, 'ai', '/ask');
   await page.goto('/ask', { waitUntil: 'networkidle' });
-  await expect(page.getByTestId('ai-consent-needed')).toBeVisible();
-  await expect(chip(page)).toHaveCount(0);
-  await checkPage(page);
-  await shot(page, 'ask-consent-needed');
-
-  await grantConsent(page);
-  await page.goto('/ask', { waitUntil: 'networkidle' });
+  // D-052: a student who never consented uses AI at once.
+  await expect(page.getByTestId('ai-consent-needed')).toHaveCount(0);
   await expect(chip(page)).toHaveAttribute('data-balance', '50'); // D-044: 50 free credits a day
+  await checkPage(page);
+  await shot(page, 'ask-no-consent-needed');
 
   // Quick doubt: 1 credit, quoted first, streamed, hint first.
   await ask(page, 'Quick doubt', 'Why does iron rust faster near the sea?', 1);

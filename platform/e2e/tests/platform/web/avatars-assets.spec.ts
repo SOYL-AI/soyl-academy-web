@@ -3,7 +3,7 @@ import { mkdirSync } from 'node:fs';
 import { resolve } from 'node:path';
 import type { Page } from '@playwright/test';
 import { acceptAllCookies, expect, test } from './fixtures';
-import { checkPage, grantConsent, signUp } from './m34-helpers';
+import { checkPage, signUp } from './m34-helpers';
 
 /**
  * Design-system 2026-10-29: avatars and the D-044 credits UI against the real local API.
@@ -98,7 +98,6 @@ test('avatar: pick an unlocked one → top bar and dashboard; a locked one canno
 test('credits: the guide opens from the header chip; bonuses, history and the dashboard tile; axe + 360 px light and dark', async ({ page, baseURL }) => {
   test.setTimeout(6 * 60_000);
   await signUp(page, 'guide', '/learn');
-  await grantConsent(page);
   for (const theme of ['light', 'dark'] as const) {
     await setTheme(page, baseURL, theme);
     await page.goto('/me/dashboard', { waitUntil: 'networkidle' });

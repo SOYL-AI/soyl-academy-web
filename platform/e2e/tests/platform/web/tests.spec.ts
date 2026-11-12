@@ -1,5 +1,5 @@
 import { acceptAllCookies, expect, test } from './fixtures';
-import { authoredQuestions, checkPage, CONTROL_ORIGIN, ctl, grantConsent, openFromPalette, question, shot, signUp, startCh02Short } from './m34-helpers';
+import { authoredQuestions, checkPage, CONTROL_ORIGIN, ctl, openFromPalette, question, shot, signUp, startCh02Short } from './m34-helpers';
 
 /**
  * M3 test player and test pages against the real local API (api-e2e.ts) at 360 px:
@@ -8,7 +8,7 @@ import { authoredQuestions, checkPage, CONTROL_ORIGIN, ctl, grantConsent, openFr
  *   self-evaluation per step;
  * - auto-submit at the (server) deadline;
  * - custom builder (+ bank_too_small);
- * - live mock: register, countdown, start, rank, consent-needed leaderboard;
+ * - live mock: register, countdown, start, rank, leaderboard (no consent needed, D-052);
  * - axe (no serious/critical), no horizontal scroll, no third-party requests (fixture).
  */
 const CH = 'cbse-10-science-ch02';
@@ -108,8 +108,9 @@ test('test player: autosave, reload, 2 minutes offline, reconnect, submit; resul
   await expect(page.getByTestId('percentile')).toContainText('–');
   await expect(page.locator(`li[data-status="correct"] article[data-question-id="${Q.mcq1}"]`)).toBeVisible();
   await expect(page.locator(`li[data-status="wrong"] article[data-question-id="${Q.mcq2}"]`)).toBeVisible();
-  // AI marking needs a parent's approval (D-014): friendly state, no AI call.
-  await expect(page.getByTestId('ai-evaluation').getByTestId('ai-consent-needed')).toBeVisible();
+  // D-052: AI marking needs no approval (no consent notice).
+  await expect(page.getByTestId('ai-evaluation')).toBeVisible();
+  await expect(page.getByTestId('ai-evaluation').getByTestId('ai-consent-needed')).toHaveCount(0);
 
   // Self-evaluation per marking-scheme step: the total rises, the auto score does not.
   const item = page.locator('li[data-item-id]').filter({ has: question(page, Q.short1) });
@@ -194,7 +195,7 @@ test('live mock: register, countdown, start, rank; leaderboard needs consent', a
   await ctl('/ctl/live-shift', { eventId: ev!.id, startsInSeconds: -5 });
   await page.reload({ waitUntil: 'networkidle' });
   await expect(page.getByTestId('live-event')).toHaveAttribute('data-phase', 'live');
-  await expect(page.getByTestId('leaderboard').getByTestId('ai-consent-needed')).toBeVisible();
+  await expect(page.getByTestId('leaderboard').getByTestId('ai-consent-needed')).toHaveCount(0); // D-052
   await page.getByTestId('live-start').click();
   await page.waitForURL(/\/tests\/attempt\//);
   await expect(page.getByTestId('test-player')).toHaveAttribute('data-ready', 'true');
@@ -207,7 +208,7 @@ test('live mock: register, countdown, start, rank; leaderboard needs consent', a
   await page.waitForURL(new RegExp(`/tests/result/${attemptId}`));
   await expect(page.getByText('All-India rank')).toBeVisible();
 
-  await grantConsent(page);
+  // D-052: no approval needed to see the rank and the leaderboard.
   await page.goto(`/tests/live/${ev!.id}`, { waitUntil: 'networkidle' });
   await expect(page.getByTestId('my-rank')).toContainText('Your rank');
   await checkPage(page);
@@ -218,12 +219,13 @@ test('live mock: register, countdown, start, rank; leaderboard needs consent', a
   await shot(page, 'leaderboard');
 });
 
-test('/me lists attempts; leaderboard and pages without consent are friendly; no third-party requests', async ({ page }) => {
+test('/me lists attempts; the leaderboard is open without consent (D-052); no third-party requests', async ({ page }) => {
   await signUp(page, 'me-tests', '/tests');
   await page.goto('/leaderboard', { waitUntil: 'networkidle' });
-  await expect(page.getByTestId('leaderboard-consent')).toBeVisible();
+  await expect(page.getByTestId('leaderboard-consent')).toHaveCount(0);
+  await expect(page.getByTestId('leaderboards')).toBeVisible();
   await checkPage(page);
-  await shot(page, 'leaderboard-consent');
+  await shot(page, 'leaderboard-no-consent');
   await page.goto('/me', { waitUntil: 'networkidle' });
   await expect(page.getByTestId('my-attempts')).toBeVisible();
   await expect(page.getByTestId('subscription')).toContainText('Free');
