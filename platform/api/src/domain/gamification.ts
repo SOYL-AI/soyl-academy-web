@@ -7,7 +7,7 @@
  *   replays never double-award. `streaks.total_xp`/`level` are recomputed from xp_events.
  * - A streak day is an IST calendar day with learning activity (a saved practice answer, a graded test or a lesson
  *   completion). One missed day per IST week (Monday–Sunday) is covered by the automatic freeze.
- * - Leaderboards/leagues are M3+ and consent-gated (D-014); nothing here is shown to other users.
+ * - Leaderboards/leagues live elsewhere (no consent needed since D-052); nothing here is shown to other users.
  */
 import { and, eq, inArray, sql } from 'drizzle-orm';
 import { attempts, badges, istDay, lessonProgress, practiceAnswers, streaks, userBadges, xpEvents, type Database } from '@soyl/db';
@@ -78,7 +78,7 @@ type StreakRow = typeof streaks.$inferSelect;
 /**
  * Records learning activity on the IST day of `now` and returns the updated streak. When this records a
  * new streak day that is a 7-day milestone, the D-044 streak bonus credits are granted in the same
- * transaction (consent `granted` only; once per IST day); `out.creditBonuses` collects it for the caller.
+ * transaction (whoever may use AI, bonusEligible; once per IST day); `out.creditBonuses` collects it for the caller.
  */
 export async function recordActivity(tx: Tx, userId: string, now: Date, out?: { creditBonuses: CreditBonusAward[] }): Promise<StreakView> {
   const today = istDay(now);

@@ -26,7 +26,8 @@ describe('startWorker (self-migrating, local/test)', () => {
 
     expect(worker.state.started).toBe(true);
     expect(worker.state.lastBossOkAt).toBeInstanceOf(Date);
-    expect(worker.jobs.map((j) => j.name).sort()).toEqual(Object.values(JOB_NAMES).sort());
+    // AUTH-15 purge is off under UNCONSENTED_PURGE=auto (D-052), so every job but that one.
+    expect(worker.jobs.map((j) => j.name).sort()).toEqual(Object.values(JOB_NAMES).filter((name) => name !== JOB_NAMES.accountPurgeUnconsented).sort());
     expect(await httpGet(worker.port, '/healthz')).toEqual({ status: 200, body: '{"status":"ok"}' });
     expect(await httpGet(worker.port, '/readyz')).toEqual({ status: 200, body: '{"status":"ready"}' });
 

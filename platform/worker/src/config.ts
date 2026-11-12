@@ -9,8 +9,6 @@
 import { z } from 'zod/v4';
 import { CONSENT } from '@soyl/shared/config/security';
 
-/** AUTH-15 `auto`: providers under which "never consented" is not a reason to delete an account (see UNCONSENTED_PURGE). */
-export const CONSENT_PROVIDERS_WITHOUT_PURGE: readonly string[] = ['unavailable', 'builtin'];
 import { loadBillingConfig, type BillingConfig } from '@soyl/api/billing/config';
 
 export const APP_ENVS = ['local', 'test', 'dev', 'stg', 'prod'] as const;
@@ -43,11 +41,11 @@ const EnvSchema = z.object({
   UNCONSENTED_ACCOUNT_TTL_DAYS: z.coerce.number().int().min(1).max(3650).default(CONSENT.unconsentedAccountTtlDays),
   /** Graceful shutdown budget for in-flight jobs (ACA sends SIGTERM, then SIGKILL after 30 s by default). */
   /**
-   * AUTH-15 purge of never-consented student accounts. `auto` (default) = on, except with
-   * CONSENT_PROVIDER=unavailable (no consent system yet, OA-08: nobody can ever reach `granted`, so the
-   * purge would delete every student 30 days after sign-up) and CONSENT_PROVIDER=builtin (D-039: consent is
-   * asked only when a gated feature is first used; lessons, practice and tests never need it, D-014, so
-   * "never consented" is a normal state). `on`/`off` force it.
+   * AUTH-15 purge of never-consented student accounts. `auto` (default) = OFF with every consent
+   * provider since D-052 (ADR-030): consent is asked only before buying a paid plan, so "never consented"
+   * is the normal state of a student who learns, practises, tests and uses AI for free; a purge would
+   * delete almost every student 30 days after sign-up. (Before D-052 `auto` was already off for
+   * `unavailable` and `builtin`.) `on` forces it, for an owner decision only; `off` = `auto`.
    */
   UNCONSENTED_PURGE: z.enum(['on', 'off', 'auto']).default('auto'),
   CONSENT_PROVIDER: z.string().optional(),
@@ -119,7 +117,7 @@ export function loadConfig(env: Record<string, string | undefined> = process.env
     logLevel: e.LOG_LEVEL,
     pgboss: { schema: e.PGBOSS_SCHEMA, migrate, appRole: e.PGBOSS_APP_ROLE },
     unconsentedAccountTtlDays: e.UNCONSENTED_ACCOUNT_TTL_DAYS,
-    unconsentedPurge: e.UNCONSENTED_PURGE === 'on' || (e.UNCONSENTED_PURGE === 'auto' && !CONSENT_PROVIDERS_WITHOUT_PURGE.includes(e.CONSENT_PROVIDER ?? '')),
+    unconsentedPurge: e.UNCONSENTED_PURGE === 'on',
     shutdownTimeoutMs: e.WORKER_SHUTDOWN_TIMEOUT_MS,
     billing: billing.config,
   };

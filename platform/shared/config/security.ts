@@ -1,10 +1,12 @@
 /**
  * Security numbers for the platform (docs/platform/security/requirements-for-m1.md). Values marked
- * *(config)* in the requirements live here so they can be tuned without touching logic. No imports:
- * the Next.js platform pages may import this file (ADR-001), e.g. `safeReturnTo` (AUTH-13).
+ * *(config)* in the requirements live here so they can be tuned without touching logic. No package
+ * imports: the Next.js platform pages may import this file (ADR-001), e.g. `safeReturnTo` (AUTH-13).
+ * The only import is the sibling ./consent (D-052 consent map; it imports nothing at runtime).
  *
  * Owner: backend-api. Every block cites the requirement id it implements.
  */
+import { consentGatedFeatures } from './consent';
 
 /* ------------------------------------------------------------------------------------------------
  * Identifiers (AUTH-1, AUTH-5, GEN-2, GEN-3)
@@ -341,20 +343,25 @@ export const CONSENT_FEATURES = [
   'test_attempts',
   /** SOYL Coins physical merch (D-037): a child's shipping address is collected only after consent. */
   'physical_rewards',
+  /** D-052: buying a paid plan (subscription or one-time order). */
+  'purchases',
 ] as const;
 export type ConsentFeature = (typeof CONSENT_FEATURES)[number];
 
 export const CONSENT = {
   /**
-   * D-014 (binding until the owner's consent rules arrive, OA-08/OA-14): these need `granted`.
-   * Learning, practice, tests and guest-progress merge stay available (CONTEXT §5 "learning is free").
-   * API-11 lists test attempts and merge-guest as consent-gated by default; D-014 is the later,
-   * more specific decision, so they are declared but not gated. Add them here to gate them.
+   * The features that need `granted`, derived from CONSENT_REQUIRED in ./consent (D-052, ADR-030: only
+   * purchases and physical-reward redemption). Edit the map there, not this list. D-014 (AI, uploads,
+   * leaderboards, rank cards, school/city, notifications) is superseded by D-052.
    */
-  gatedFeatures: ['ai', 'uploads', 'leaderboards', 'rank_cards', 'profile_school_city', 'notifications', 'physical_rewards'] as readonly ConsentFeature[],
+  gatedFeatures: consentGatedFeatures() as readonly ConsentFeature[],
   /** API-11: cached status is refreshed after this long (and on every sign-in). */
   cacheTtlSeconds: 15 * 60,
-  /** AUTH-15: accounts that never reach `granted` are deleted after this many days (owner to confirm). */
+  /**
+   * AUTH-15: accounts that never reach `granted` are deleted after this many days when the worker's
+   * purge is switched on explicitly (UNCONSENTED_PURGE=on). Off by default since D-052: never consenting
+   * is the normal state for a student who does not buy.
+   */
   unconsentedAccountTtlDays: 30,
 } as const;
 
@@ -385,9 +392,10 @@ export type ConsentRevoker = (typeof CONSENT_REVOKERS)[number];
 export const BUILTIN_CONSENT = {
   /**
    * Version of the notice the parent / adult agrees to (privacy notice + what the gated features do).
-   * Recorded on every consent. Bump it when the notice changes materially.
+   * Recorded on every consent. Bump it when the notice changes materially. 2026-11-12: approval is for
+   * paid plans (and merch delivery) only, D-052 / ADR-030.
    */
-  policyVersion: '2026-10-28',
+  policyVersion: '2026-11-12',
   /** The parent's approval code: digits from crypto.randomInt. */
   codeLength: 6,
   /** Parents do not always read email at once; the code stays valid for two days. */

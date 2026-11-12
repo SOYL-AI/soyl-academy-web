@@ -30,7 +30,7 @@ describe('balance and the lazy daily grant', () => {
     const res = await c.get('/v1/credits');
     expect(res.statusCode).toBe(200);
     const b = res.json();
-    expect(b).toMatchObject({ plan: 'free', planName: 'Free', dailyCredits: 50, balance: 50, grantedToday: 50, bonusToday: 0, reservedNow: 0, spentToday: 0, day: '2026-11-02', resetAt: '2026-11-02T18:30:00.000Z', resetInSeconds: 8.5 * 3600, plansUrl: 'https://www.soylai.test/plans' });
+    expect(b).toMatchObject({ plan: 'free', planName: 'Free', dailyCredits: 50, balance: 50, grantedToday: 50, bonusToday: 0, reservedNow: 0, spentToday: 0, day: '2026-11-02', resetAt: '2026-11-02T18:30:00.000Z', resetInSeconds: 8.5 * 3600, plansUrl: 'https://www.soylai.test/plans', billingEnabled: false });
     expect(b.prices).toEqual(expect.arrayContaining([
       { action: 'quick-doubt', label: 'Quick doubt', credits: 1, perAnswer: false, maxCredits: 1, allowedForPlan: true },
       { action: 'hard-doubt', label: 'Step-by-step doubt', credits: 7, perAnswer: false, maxCredits: 7, allowedForPlan: true },

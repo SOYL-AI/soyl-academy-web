@@ -32,7 +32,7 @@ export const DashboardProfileSchema = z
     /** Null unless consent is granted and a school is saved (D-014). */
     school: SchoolSchema.nullable(),
     schoolStatus: SchoolStatusSchema,
-    /** Fields the UI can prompt for, in this order. `school` is listed only when consent is granted. */
+    /** Fields the UI can prompt for, in this order. `school` is left out only while schoolStatus is consent_required (school/city re-gated). */
     missing: z.array(z.enum(PROFILE_FIELDS)),
   })
   .meta({ id: 'DashboardProfile' });

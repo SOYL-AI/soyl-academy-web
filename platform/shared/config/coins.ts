@@ -414,7 +414,7 @@ export function howToEarn(): { key: string; label: string; coins: string; capped
     { key: 'test_submitted', label: 'Finish a series test (first time, at least half answered)', coins: String(e.testSubmitted), capped: true },
     { key: 'perfect_paper', label: 'Perfect paper', coins: String(e.perfectPaper), capped: true },
     { key: 'live_participation', label: 'Take a live All-India mock', coins: String(e.liveParticipation), capped: true },
-    { key: 'live_rank', label: 'Live mock top ranks (with parent consent)', coins: tiers(e.liveRankTiers), capped: false },
+    { key: 'live_rank', label: 'Live mock top ranks', coins: tiers(e.liveRankTiers), capped: false },
     { key: 'league_promotion', label: 'Weekly league promotion', coins: String(e.leaguePromotion), capped: false },
     { key: 'league_top_finish', label: 'Weekly league top finish', coins: tiers(e.leagueTopFinishTiers), capped: false },
   ];

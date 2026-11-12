@@ -44,7 +44,7 @@ describe('coins jobs', () => {
     expect(job(COINS_JOB_NAMES.housekeeping).cron).toBe('15 21 * * *');
   });
 
-  it('live-rank awards: only ranked students with consent granted, only events with enough participants, once', async () => {
+  it('live-rank awards: ranked students whatever their consent (D-052), only events with enough participants, once', async () => {
     const [ev] = await t.db
       .insert(liveEvents)
       .values({ key: 'live-coins-1', academicYear: '2026-27', testId, title: 'Live', registrationOpensAt: new Date(NOW.getTime() - 3 * 3600_000), startsAt: new Date(NOW.getTime() - 2 * 3600_000), endsAt: new Date(NOW.getTime() - 3600_000), status: 'results_published', resultsPublishedAt: NOW })
@@ -59,15 +59,19 @@ describe('coins jobs', () => {
       { liveEventId: ev!.id, userId: pending, finalRank: 2 },
       ...others.map((userId, i) => ({ liveEventId: ev!.id, userId, finalRank: 3 + i })),
     ]);
+    const tiers = [...COIN_EARN.liveRankTiers].sort((a, b) => a.maxRank - b.maxRank);
+    const maxRank = tiers.at(-1)!.maxRank;
+    let expectedCoins = 0;
+    for (let rank = 1; rank <= Math.min(maxRank, n); rank++) expectedCoins += tiers.find((x) => rank <= x.maxRank)!.coins;
     const first = await job(COINS_JOB_NAMES.liveRankAwards).handler(ctxAt(NOW), null);
-    expect(first).toMatchObject({ events: 1, awarded: 1, coins: COIN_EARN.liveRankTiers.find((x) => x.maxRank === 1)!.coins });
-    expect((first as { skippedNoConsent: number }).skippedNoConsent).toBeGreaterThanOrEqual(1);
+    expect(first).toMatchObject({ events: 1, awarded: Math.min(maxRank, n), coins: expectedCoins, skippedNoConsent: 0 });
     expect(await job(COINS_JOB_NAMES.liveRankAwards).handler(ctxAt(NOW), null)).toMatchObject({ awarded: 0 });
     // Outside the award window the event is not looked at any more.
     const late = new Date(NOW.getTime() + (COIN_EARN.liveRankAwardWindowDays + 1) * DAY);
     expect(await job(COINS_JOB_NAMES.liveRankAwards).handler(ctxAt(late), null)).toMatchObject({ events: 0 });
     const rows = await t.db.select().from(coinLedger).where(eq(coinLedger.source, 'live_rank'));
-    expect(rows.map((r) => r.userId)).toEqual([consenting]);
+    expect(rows).toHaveLength(Math.min(maxRank, n));
+    expect(rows.map((r) => r.userId)).toEqual(expect.arrayContaining([consenting, pending]));
   });
 
   it('housekeeping erases shipped addresses after retention and cancels requests without an address (refunded)', async () => {

@@ -79,14 +79,16 @@ describe('retrieval index', () => {
 });
 
 describe('streaming answers', () => {
-  it('needs consent (D-014): not granted → 403 consent_required, nothing reserved', async () => {
+  it.each(['required', 'pending', 'revoked'] as const)('needs no consent (D-052): a %s student uses an AI action with credits', async (state) => {
     const { c, id } = await h.member();
-    h.consent.setStatus(id, 'pending');
+    h.consent.setStatus(id, state);
     await h.services.consent.refresh(id);
     const res = await c.post('/v1/ai/quick-doubt', { message: 'What is an acid?' });
-    expect(res.statusCode).toBe(403);
-    expect(res.json().code).toBe('consent_required');
-    expect(await h.t.db.select().from(aiRequests).where(eq(aiRequests.userId, id))).toHaveLength(0);
+    expect(res.statusCode).toBe(200);
+    const ev = sse(res);
+    expect(ev.at(-1)).toMatchObject({ event: 'done', data: { status: 'succeeded', creditsCharged: 1, balance: 49 } });
+    const [req] = await h.t.db.select().from(aiRequests).where(eq(aiRequests.userId, id));
+    expect(req).toMatchObject({ status: 'succeeded', creditsCharged: 1 });
     expect((await h.client().post('/v1/ai/quick-doubt', { message: 'x' })).statusCode).toBe(401);
   });
 

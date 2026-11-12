@@ -1,7 +1,7 @@
 /**
  * Weekly leagues (backend-api M5; ARCHITECTURE §12, CONTEXT §11, D-014, F-017): IST weeks, class
  * cohorts, divisions of at most LEAGUES.size, week XP from xp_events, promotion and relegation zones,
- * lazy close + placement on the first visit of a week, the weekly formation job's logic, consent gate,
+ * lazy close + placement on the first visit of a week, the weekly formation job's logic, no consent gate (D-052),
  * names (auto-generated public names only, D-039) and account deletion.
  */
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
@@ -137,16 +137,15 @@ describe('league rules (pure)', () => {
 });
 
 describe('GET /v1/leagues/current', () => {
-  it('needs a session and consent (D-014); school/city are not available; class and role are required', async () => {
+  it('needs a session but no consent (D-052); school/city are not available; class and role are required', async () => {
     expect((await h.client().get('/v1/leagues/current')).statusCode).toBe(401);
     const s = await student('Kabir Mehta');
     h.consent.setStatus(s.id, 'pending');
     await h.t.db.update(consentStatus).set({ status: 'pending' }).where(eq(consentStatus.userId, s.id));
-    const denied = await s.c.get('/v1/leagues/current');
-    expect(denied.statusCode).toBe(403);
-    expect(denied.json().code).toBe('consent_required');
-    h.consent.setStatus(s.id, 'granted');
-    await h.t.db.update(consentStatus).set({ status: 'granted' }).where(eq(consentStatus.userId, s.id));
+    const open = await s.c.get('/v1/leagues/current');
+    expect(open.statusCode).toBe(200);
+    expect(open.json().status).toBe('active');
+    expect(open.json().standings.find((x: { isMe: boolean }) => x.isMe)).toMatchObject({ name: publicName(s.id) });
 
     const school = await s.c.get('/v1/leagues/current?scope=school');
     expect(school.statusCode).toBe(501);
@@ -203,12 +202,12 @@ describe('GET /v1/leagues/current', () => {
     expect((await a.c.get('/v1/leagues/current')).json().league.id).toBe(body.league.id);
     expect(await h.t.db.select().from(leagueMemberships).where(eq(leagueMemberships.userId, a.id))).toHaveLength(1);
 
-    // Consent revoked later: still ranked, but unnamed; the student can no longer open leagues.
+    // Consent revoked later (D-052): nothing changes — still ranked and named by the public name, still playing.
     await h.t.db.update(consentStatus).set({ status: 'revoked' }).where(eq(consentStatus.userId, b.id));
     h.consent.setStatus(b.id, 'revoked');
     const after = (await c.c.get('/v1/leagues/current')).json();
-    expect(after.standings[0]).toEqual({ rank: 1, name: null, avatar: null, xp: 50, zone: 'promotion', isMe: false });
-    expect((await b.c.get('/v1/leagues/current')).statusCode).toBe(403);
+    expect(after.standings[0]).toEqual({ rank: 1, name: publicName(b.id), avatar: defaultAvatar(b.id), xp: 50, zone: 'promotion', isMe: false });
+    expect((await b.c.get('/v1/leagues/current')).statusCode).toBe(200);
 
     // Account deletion: the student leaves the standings.
     await a.c.signInEmail(a.email);
@@ -269,10 +268,11 @@ describe('weekly formation (worker job logic)', () => {
     const [l] = await h.t.db.insert(leagues).values({ weekStart: WEEK, scope: 'class', scopeKey: 'cbse-12', tier: 1, division: 1 }).returning();
     const ok = [await dbStudent({ board: 'cbse', classLevel: 12 }), await dbStudent({ board: 'cbse', classLevel: 12 }), await dbStudent({ board: 'cbse', classLevel: 12 })];
     const notConsented = await dbStudent({ board: 'cbse', classLevel: 12, consent: 'revoked' });
+    const noConsentRow = await dbStudent({ board: 'cbse', classLevel: 12, consent: null });
     const deleted = await dbStudent({ board: 'cbse', classLevel: 12, deleted: true });
     const noClass = await dbStudent({ board: 'cbse', classLevel: null });
     const movedClass = await dbStudent({ board: 'cisce', classLevel: 11 });
-    for (const id of [...ok, notConsented, deleted, noClass, movedClass]) await h.t.db.insert(leagueMemberships).values({ userId: id, weekStart: WEEK, scope: 'class', scopeKey: 'cbse-12', tier: 1, leagueId: l!.id });
+    for (const id of [...ok, notConsented, noConsentRow, deleted, noClass, movedClass]) await h.t.db.insert(leagueMemberships).values({ userId: id, weekStart: WEEK, scope: 'class', scopeKey: 'cbse-12', tier: 1, leagueId: l!.id });
     await xp(ok[0]!, 40, WED);
 
     const result = await runLeagueWeek(h.t.db, NEXT_MON);
@@ -284,13 +284,15 @@ describe('weekly formation (worker job logic)', () => {
     expect(await mine(ok[0]!)).toMatchObject({ tier: 2, scopeKey: 'cbse-12' }); // promoted
     expect(await mine(ok[1]!)).toMatchObject({ tier: 1, scopeKey: 'cbse-12' });
     expect(await mine(movedClass)).toMatchObject({ tier: 1, scopeKey: 'cisce-11' }); // cohort from the current profile
-    for (const id of [notConsented, deleted, noClass]) expect(await mine(id)).toBeUndefined();
+    // D-052: consent does not matter for leagues; deleted accounts and students without a class are left out.
+    for (const id of [notConsented, noConsentRow]) expect(await mine(id)).toMatchObject({ tier: 1, scopeKey: 'cbse-12' });
+    for (const id of [deleted, noClass]) expect(await mine(id)).toBeUndefined();
 
     const again = await runLeagueWeek(h.t.db, NEXT_MON + 3_600_000);
     expect(again).toMatchObject({ closed: 0, students: 0, leaguesCreated: 0 });
     // Standings of a formed league work like any other.
     const [formed] = await h.t.db.select().from(leagues).where(and(eq(leagues.weekStart, NEXT), eq(leagues.scopeKey, 'cbse-12'), eq(leagues.tier, 1)));
-    expect((await leagueStandings(h.t.db, formed!)).map((s) => s.userId).sort()).toEqual([ok[1]!, ok[2]!].sort());
+    expect((await leagueStandings(h.t.db, formed!)).map((s) => s.userId).sort()).toEqual([ok[1]!, ok[2]!, notConsented, noConsentRow].sort());
   });
 
   it('a group that already has a division is filled instead of re-formed', async () => {

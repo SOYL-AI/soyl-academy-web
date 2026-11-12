@@ -14,12 +14,14 @@
  * and publishes them; the leaderboard then reads Postgres. Only auto-graded marks rank (AC-14).
  *
  * Leaderboard rows show the auto-generated public name (D-039; never a real name, F-017, AC-18) of
- * students whose consent is granted; everyone else is ranked but unnamed (D-014).
+ * every non-deleted student (D-052: leaderboards need no consent; if `leaderboards` is consent-gated
+ * again in CONSENT_REQUIRED, only students whose consent is granted are named, the rest ranked unnamed).
  */
 import { and, asc, eq, inArray, isNotNull, sql } from 'drizzle-orm';
 import { attempts, consentStatus, liveEvents, liveRegistrations, profiles, subjects, tests, users, type Database } from '@soyl/db';
 import { TEST_ENGINE } from '@soyl/shared/config/tests';
 import { publicName } from '@soyl/shared/config/public-names';
+import { consentAllows, consentRequiredFor } from '@soyl/shared/config/consent';
 import { avatarFor, type AvatarDto } from '../avatars';
 import type { KeyValueStore } from '../../kv';
 import { ApiProblem } from '../../errors';
@@ -172,8 +174,8 @@ export interface LeaderboardIdentity {
 
 /**
  * Leaderboard identities for user ids (D-039): the auto-generated public name ("Brave Otter 417", never a
- * real name) and the avatar the student wears (config ids only), only for consented, non-deleted students;
- * null otherwise (the UI shows "Student" with a neutral avatar).
+ * real name) and the avatar the student wears (config ids only), for non-deleted students the
+ * `leaderboards` consent rule allows (D-052: all of them); null otherwise (the UI shows "Student" with a neutral avatar).
  */
 export async function leaderboardIdentities(db: Database, userIds: string[]): Promise<Map<string, LeaderboardIdentity | null>> {
   if (!userIds.length) return new Map();
@@ -185,7 +187,7 @@ export async function leaderboardIdentities(db: Database, userIds: string[]): Pr
     .where(inArray(users.id, userIds));
   return new Map(
     rows.map((r) => {
-      if (r.deletedAt || r.consent !== 'granted') return [r.id, null];
+      if (r.deletedAt || !consentAllows(r.consent, 'leaderboards')) return [r.id, null];
       const a = avatarFor(r.id, { publicNameSeed: r.seed ?? 0, avatarId: r.avatarId, avatarBg: r.avatarBg });
       return [r.id, { name: publicName(r.id, r.seed ?? 0), avatar: { id: a.id, bg: a.bg } }];
     }),
@@ -317,9 +319,10 @@ export async function liveLeaderboard(db: Database, kv: KeyValueStore, year: str
 
 /**
  * One event with everything the live page needs: the phase timeline, registration window, your
- * registration/attempt (members), and whether ranks exist yet and whether you may see them (consent,
- * D-014). `consentGranted` is null for guests. Ranks themselves stay behind the consent-gated
- * leaderboard route.
+ * registration/attempt (members), and whether ranks exist yet and whether you may see them.
+ * `consentGranted` is null for guests. Since D-052 the leaderboard route needs no consent
+ * (`requiresConsent: false`), so every member may view ranks once they exist; `consentGranted` is still
+ * reported for the consent page.
  */
 export async function liveEventDetail(db: Database, year: string, now: number, userId: string | null, key: string, consentGranted: boolean | null) {
   const { ev, test } = await eventWithTest(db, key, year);
@@ -381,10 +384,10 @@ export async function liveEventDetail(db: Database, year: string, now: number, u
     ranks: {
       status: rankStatus,
       beta: true,
-      /** The leaderboard needs consent (D-014): GET /v1/live-events/:id/leaderboard answers 403 consent_required otherwise. */
-      requiresConsent: true,
+      /** Whether GET /v1/live-events/:id/leaderboard needs consent (CONSENT_REQUIRED.leaderboards; false since D-052). */
+      requiresConsent: consentRequiredFor('leaderboards'),
       consentGranted,
-      canView: consentGranted === true && (rankStatus === 'provisional' || rankStatus === 'final'),
+      canView: consentGranted !== null && consentAllows(consentGranted ? 'granted' : null, 'leaderboards') && (rankStatus === 'provisional' || rankStatus === 'final'),
     },
   };
 }

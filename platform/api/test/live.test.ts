@@ -1,8 +1,8 @@
 /**
  * Live All-India mocks: registration window, questions only after the start (embargoed pool,
  * AC-11), late start ≤ 15 min, deadline cap, one attempt per event, per-attempt shuffle, provisional
- * ranks in the KV sorted set, consent-gated leaderboard with auto-generated public names (D-039, F-017,
- * D-014), account deletion removing KV ranks, the worker's final-rank snapshot, unranked attempts
+ * ranks in the KV sorted set, a leaderboard open without consent (D-052) with auto-generated public
+ * names (D-039, F-017), account deletion removing KV ranks, the worker's final-rank snapshot, unranked attempts
  * after the event, and the schedule CLI logic (Wave 1 sittings, dev fallback, production refusal).
  */
 import path from 'node:path';
@@ -176,7 +176,7 @@ describe('live window', () => {
     // Existing attempts resume.
     expect((await a.c.post(`/v1/tests/${L.testKey}/attempts`)).json().attempt.id).toBe(stA.attempt.id);
 
-    // Scores: A 5/6, B 3/6, C3 6/6 (C3 not consented → unnamed).
+    // Scores: A 5/6, B 3/6, C3 6/6 (C3 never consented: named all the same, D-052).
     await answer(a.c, stA.attempt.id, stA.items, L.testKey, 5);
     await answer(b.c, sb.attempt.id, sb.items, L.testKey, 3);
     await answer(c3.c, late.attempt.id, late.items, L.testKey, 6);
@@ -196,8 +196,8 @@ describe('live window', () => {
     expect(board.status).toBe('provisional');
     expect(board.total).toBe(3);
     expect(board.entries).toEqual([
-      // No consent: no name and no avatar.
-      { rank: 1, name: null, avatar: null, score: 6, isMe: false },
+      // No consent: the auto-generated public name and avatar all the same (D-052).
+      { rank: 1, name: publicName(c3.id), avatar: defaultAvatar(c3.id), score: 6, isMe: false },
       { rank: 2, name: publicName(a.id), avatar: defaultAvatar(a.id), score: 5, isMe: true },
       { rank: 3, name: publicName(b.id), avatar: { id: 'kiwi', bg: 'meadow' }, score: 3, isMe: false },
     ]);
@@ -205,10 +205,10 @@ describe('live window', () => {
     // F-017 / D-039: no ids, emails or real names (not even first names) anywhere in the leaderboard.
     expect(lb.body).not.toMatch(/Priya|Aarav|Sharma|Kumar|@example\.com/);
     expect(lb.body).not.toContain(a.id);
-    // D-014: viewing needs consent.
-    const denied = await c3.c.get(`/v1/live-events/${L.eventKey}/leaderboard`);
-    expect(denied.statusCode).toBe(403);
-    expect(denied.json().code).toBe('consent_required');
+    // D-052: viewing needs no consent.
+    const open = await c3.c.get(`/v1/live-events/${L.eventKey}/leaderboard`);
+    expect(open.statusCode).toBe(200);
+    expect(open.json().me).toMatchObject({ rank: 1, score: 6 });
     // The result shows the provisional live rank.
     expect((await a.c.get(`/v1/attempts/${stA.attempt.id}/result`)).json().live).toMatchObject({ eventId: L.eventKey, status: 'provisional', rank: 2, total: 3 });
 
@@ -322,7 +322,7 @@ describe('GET /v1/live-events/:id', () => {
       writingUntil: iso(L.startsAt + 45 * MIN + TEST_ENGINE.graceSeconds.live * 1000),
       graceSeconds: TEST_ENGINE.graceSeconds.live,
       registration: { open: true, opensAt: iso(L.startsAt - 3 * 86_400_000), closesAt: iso(L.startsAt + 15 * MIN) },
-      ranks: { status: 'not_started', beta: true, requiresConsent: true, consentGranted: null, canView: false },
+      ranks: { status: 'not_started', beta: true, requiresConsent: false, consentGranted: null, canView: false },
       me: null,
     });
     expect(g.timeline.map((p: { phase: string }) => p.phase)).toEqual(['upcoming', 'registration_open', 'live', 'writing', 'closed', 'results_published']);
@@ -342,7 +342,7 @@ describe('GET /v1/live-events/:id', () => {
 
     h.clock.set(L.startsAt + MIN);
     expect((await a.c.get(url)).json()).toMatchObject({ phase: 'live', me: { canStart: true, canResume: false }, ranks: { status: 'provisional', canView: true } });
-    expect((await noConsent.c.get(url)).json()).toMatchObject({ ranks: { status: 'provisional', consentGranted: false, canView: false }, me: { canStart: true, canRegister: true } });
+    expect((await noConsent.c.get(url)).json()).toMatchObject({ ranks: { status: 'provisional', consentGranted: false, canView: true }, me: { canStart: true, canRegister: true } });
     const started = (await a.c.post(`/v1/tests/${L.testKey}/attempts`)).json();
     const live = (await a.c.get(url)).json();
     expect(live.me).toMatchObject({ attemptId: started.attempt.id, attemptStatus: 'in_progress', deadlineAt: started.attempt.deadlineAt, canStart: false, canResume: true });

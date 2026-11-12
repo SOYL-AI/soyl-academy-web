@@ -40,7 +40,7 @@ export const RoutePolicySchema = z.strictObject({
     z.literal(false),
     z.strictObject({ buckets: z.array(z.enum(bucketNames)).default([]), failClosed: z.boolean().default(false) }),
   ]),
-  /** API-11: a feature from CONSENT_FEATURES (gated if listed in CONSENT.gatedFeatures) or false. */
+  /** API-11: a feature from CONSENT_FEATURES (gated only if CONSENT_REQUIRED says so, D-052) or false. */
   consent: z.union([z.literal(false), z.enum(CONSENT_FEATURES)]),
   /** AUTH-9: the session must be at most SESSION.freshSeconds old. */
   fresh: z.boolean().optional(),

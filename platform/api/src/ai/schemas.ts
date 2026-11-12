@@ -83,6 +83,8 @@ export const CreditsResponse = z
     resetAt: z.iso.datetime(),
     resetInSeconds: z.number().int(),
     plansUrl: z.string(),
+    /** BILLING_ENABLED: false = paid plans are "coming soon" (nothing can be bought), so the UI must not suggest buying (D-052). */
+    billingEnabled: z.boolean(),
     prices: z.array(
       z.object({
         action: z.enum(AI_ACTION_IDS),
@@ -122,7 +124,7 @@ export const CreditBonusKindSchema = z.enum(CREDIT_BONUS_KINDS).meta({ id: 'Cred
 /** A D-044 bonus just granted (practice answer / self-mark responses), for a "+10 credits" toast. */
 export const CreditBonusAwardSchema = z
   .object({ kind: CreditBonusKindSchema, credits: z.number().int(), label: z.string() })
-  .meta({ id: 'CreditBonusAward', description: 'Bonus AI credits for learning (D-044): usable today only (they lapse at 00:00 IST). Consent-granted accounts only.' });
+  .meta({ id: 'CreditBonusAward', description: 'Bonus AI credits for learning (D-044): usable today only (they lapse at 00:00 IST).' });
 
 export const CreditGuideResponse = z
   .object({
@@ -158,7 +160,7 @@ export const CreditGuideResponse = z
         perDay: z.array(z.object({ plan: PlanId, count: z.number().int() })),
       }),
     ),
-    /** D-044 learning bonuses; null unless consent is granted (then nothing is earned or shown). */
+    /** D-044 learning bonuses; null for an account that cannot earn them (only if AI is consent-gated again, CONSENT_REQUIRED). */
     bonuses: z
       .object({
         dailyGoal: z.object({ credits: z.number().int(), target: z.number().int(), solvedToday: z.number().int(), earnedToday: z.boolean() }),

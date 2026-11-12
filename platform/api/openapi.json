@@ -1240,7 +1240,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "API-8: only these fields; role, status, xp, schoolId, city etc. are rejected (400). A school is saved through `school`, and only with consent granted (D-014)."
+        "description": "API-8: only these fields; role, status, xp, schoolId, city etc. are rejected (400). A school is saved through `school` (no consent needed, D-052)."
       },
       "DeleteMeResponseInput": {
         "type": "object",
@@ -3322,6 +3322,9 @@
           "plansUrl": {
             "type": "string"
           },
+          "billingEnabled": {
+            "type": "boolean"
+          },
           "prices": {
             "type": "array",
             "items": {
@@ -3383,6 +3386,7 @@
           "resetAt",
           "resetInSeconds",
           "plansUrl",
+          "billingEnabled",
           "prices"
         ],
         "description": "Today’s AI credits (1 credit = ₹0.10 of AI). Resets at 00:00 IST; no rollover."
@@ -3488,7 +3492,7 @@
           "credits",
           "label"
         ],
-        "description": "Bonus AI credits for learning (D-044): usable today only (they lapse at 00:00 IST). Consent-granted accounts only."
+        "description": "Bonus AI credits for learning (D-044): usable today only (they lapse at 00:00 IST)."
       },
       "CreditGuideInput": {
         "type": "object",
@@ -16016,7 +16020,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "API-8: only these fields; role, status, xp, schoolId, city etc. are rejected (400). A school is saved through `school`, and only with consent granted (D-014)."
+        "description": "API-8: only these fields; role, status, xp, schoolId, city etc. are rejected (400). A school is saved through `school` (no consent needed, D-052)."
       },
       "DeleteMeResponse": {
         "type": "object",
@@ -18150,6 +18154,9 @@
           "plansUrl": {
             "type": "string"
           },
+          "billingEnabled": {
+            "type": "boolean"
+          },
           "prices": {
             "type": "array",
             "items": {
@@ -18212,6 +18219,7 @@
           "resetAt",
           "resetInSeconds",
           "plansUrl",
+          "billingEnabled",
           "prices"
         ],
         "additionalProperties": false,
@@ -18321,7 +18329,7 @@
           "label"
         ],
         "additionalProperties": false,
-        "description": "Bonus AI credits for learning (D-044): usable today only (they lapse at 00:00 IST). Consent-granted accounts only."
+        "description": "Bonus AI credits for learning (D-044): usable today only (they lapse at 00:00 IST)."
       },
       "CreditGuide": {
         "type": "object",
@@ -34587,7 +34595,7 @@
     },
     "/v1/live-events/{id}/leaderboard": {
       "get": {
-        "summary": "Live mock leaderboard: provisional during the event, final once ranks are published. Needs consent (D-014).",
+        "summary": "Live mock leaderboard: provisional during the event, final once ranks are published. Auto-generated public names only (D-039); no consent needed (D-052).",
         "tags": [
           "live"
         ],
@@ -34650,7 +34658,7 @@
     },
     "/v1/leagues/current": {
       "get": {
-        "summary": "Your weekly league: tier, division standings (auto-generated public names), promotion and relegation zones. Needs consent (D-014).",
+        "summary": "Your weekly league: tier, division standings (auto-generated public names), promotion and relegation zones. No consent needed (D-052).",
         "tags": [
           "gamification"
         ],
@@ -35318,7 +35326,7 @@
     },
     "/v1/me/credits/guide": {
       "get": {
-        "summary": "“What can I do with my credits?”: each AI action with its price, the plans that offer it and how many you can still do today, plus the learning bonuses (consent granted only).",
+        "summary": "“What can I do with my credits?”: each AI action with its price, the plans that offer it and how many you can still do today, plus the learning bonuses.",
         "tags": [
           "credits"
         ],

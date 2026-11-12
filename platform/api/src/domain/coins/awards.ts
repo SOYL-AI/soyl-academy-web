@@ -10,7 +10,8 @@
  *
  * Anti-grinding: practice counts distinct first-correct answers given in the app (`source = 'app'`);
  * tests need COIN_TEST_RULES.minAnsweredShare answered and pay once per test; custom tests pay nothing;
- * every key is unique in the ledger. Consent: rank and league awards only for consent `granted` (D-014).
+ * every key is unique in the ledger. Consent: rank and league awards follow consentAllows for `rank_cards`
+ * and `leaderboards` (since D-052, ADR-030: every student; only `granted` if those are consent-gated again).
  */
 import { and, eq, gte, inArray, isNotNull, isNull, sql } from 'drizzle-orm';
 import { chapters, coinLedger, coinWallets, consentStatus, istDay, liveEvents, liveRegistrations, practiceAnswers, users, type Database } from '@soyl/db';
@@ -24,6 +25,7 @@ import {
   type RankTier,
 } from '@soyl/shared/config/coins';
 import { dayNumber } from '../gamification';
+import { consentAllows, consentRequiredFor } from '@soyl/shared/config/consent';
 import { awardCoins, cappedEarnedOn, coinsPaid, lockWallet, type AwardOutcome, type Db, type Tx } from './ledger';
 
 export interface CoinAwardDto {
@@ -189,9 +191,9 @@ export interface LiveRankAwardResult {
 
 /**
  * For every live event whose results were published in the last `liveRankAwardWindowDays` and that had
- * at least `liveRankMinParticipants` ranked students: pay the rank tier to each ranked student whose
- * consent is `granted` (cached consent_status; D-014 — ranks are consent-gated). Idempotent per
- * (student, event); a student whose consent arrives later is paid on a later run inside the window.
+ * at least `liveRankMinParticipants` ranked students: pay the rank tier to each ranked student the
+ * `rank_cards` consent rule allows (D-052: everyone; cached consent_status `granted` if re-gated).
+ * Idempotent per (student, event); a student whose consent arrives later is paid on a later run inside the window.
  */
 export async function awardLiveRanks(
   db: Database,
@@ -223,7 +225,7 @@ export async function awardLiveRanks(
     for (const r of ranked) {
       const tier = rankTierCoins(r.rank, tiers);
       if (!tier) continue;
-      if (r.consent !== 'granted') {
+      if (!consentAllows(r.consent, 'rank_cards')) {
         result.skippedNoConsent++;
         continue;
       }
@@ -249,20 +251,23 @@ export interface LeagueStandingForCoins {
 }
 
 /**
- * Runs in the league-close transaction: promotion and top-finish coins for members whose consent is
- * still `granted` (leagues are consent-gated, D-014) and who earned XP that week. Idempotent per league.
+ * Runs in the league-close transaction: promotion and top-finish coins for members the `leaderboards`
+ * consent rule allows (D-052: everyone; still `granted` if re-gated) and who earned XP that week.
+ * Idempotent per league.
  */
 export async function onLeagueClosed(tx: Tx, leagueId: string, now: Date, standings: LeagueStandingForCoins[]): Promise<number> {
   const eligible = standings.filter((s) => s.xp > 0 && (s.outcome === 'promoted' || rankTierCoins(s.rank, COIN_EARN.leagueTopFinishTiers)));
   if (!eligible.length) return 0;
-  const granted = new Set(
-    (await tx.select({ userId: consentStatus.userId }).from(consentStatus).where(and(inArray(consentStatus.userId, eligible.map((s) => s.userId)), eq(consentStatus.status, 'granted')))).map(
-      (r) => r.userId,
-    ),
-  );
+  const granted = consentRequiredFor('leaderboards')
+    ? new Set(
+        (await tx.select({ userId: consentStatus.userId }).from(consentStatus).where(and(inArray(consentStatus.userId, eligible.map((s) => s.userId)), eq(consentStatus.status, 'granted')))).map(
+          (r) => r.userId,
+        ),
+      )
+    : null;
   let paid = 0;
   for (const s of eligible) {
-    if (!granted.has(s.userId)) continue;
+    if (granted && !granted.has(s.userId)) continue;
     const awards: Parameters<typeof awardCoins>[3] = [];
     if (s.outcome === 'promoted') awards.push({ source: 'league_promotion', amount: COIN_EARN.leaguePromotion, key: `league_promotion:${s.userId}:${leagueId}`, metadata: { rank: s.rank } });
     const tier = rankTierCoins(s.rank, COIN_EARN.leagueTopFinishTiers);

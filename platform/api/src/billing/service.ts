@@ -7,8 +7,9 @@
  * Checkout `handler` callback in the browser is ignored: entitlement is written only by sync.ts from
  * state re-fetched from Razorpay (webhook, `POST /v1/billing/refresh`, reconciliation).
  *
- * Consent (D-014, ADR-016): buying is for a parent. Until the account's consent status is `granted`,
- * purchases are refused (403 consent_required); with CONSENT_PROVIDER=unavailable (production today)
+ * Consent (D-014, ADR-016, D-052): buying is for a parent, and since D-052 (ADR-030) it is the one
+ * thing that needs consent (the `purchases` feature in CONSENT_REQUIRED). Until the account's consent
+ * status is `granted`, purchases are refused (403 consent_required); with CONSENT_PROVIDER=unavailable
  * nobody can buy. Cancelling, the subscription view and webhooks never depend on consent or on
  * BILLING_ENABLED, so an existing subscription can always be managed and renewals keep applying.
  *
@@ -237,13 +238,14 @@ export class BillingService {
   private async assertCanPurchase(userId: string, log: FastifyBaseLogger): Promise<RazorpayClient> {
     if (!this.d.config.enabled) throw new ApiProblem('billing_disabled');
     if (!this.d.razorpay) throw new ApiProblem('billing_unavailable');
+    if (!this.d.consent.isGated('purchases')) return this.d.razorpay;
     let status: string;
     try {
       status = await this.d.consent.getStatus(userId, { strict: true });
     } catch {
       throw new ApiProblem('consent_unavailable');
     }
-    if (status !== 'granted') {
+    if (!this.d.consent.allows(status, 'purchases')) {
       securityEvent(log, 'consent_denied', { userId, feature: 'purchases', status });
       throw new ApiProblem('consent_required', { detail: 'A parent or guardian needs to give consent before a purchase.' });
     }

@@ -3,7 +3,7 @@
  * ids of other users' resources return 404.
  *
  *   GET    /v1/me                    profile, consent, sign-in methods
- *   PATCH  /v1/me                    board, classLevel, displayName, locale, weeklyGoal, avatar; school only with consent (D-014)
+ *   PATCH  /v1/me                    board, classLevel, displayName, locale, weeklyGoal, avatar, school (no consent needed since D-052)
  *   GET    /v1/me/avatars            every avatar with its unlock rule, progress and lock state
  *   DELETE /v1/me                    anonymise + revoke now, purge ≤ 30 days (fresh session)
  *   POST   /v1/me/merge-guest        guest progress, once per account (256 KB body)
@@ -52,7 +52,7 @@ const MeResponse = z
     avatar: MyAvatarSchema,
     locale: z.string(),
     consent: ConsentStateSchema,
-    /** D-014: null unless consent is granted and a school is saved. */
+    /** null unless a school is saved (or, only if school/city is consent-gated again, consent is not granted). */
     school: SchoolSchema.nullable(),
     /** Practice questions to solve per IST week (the dashboard goal); isDefault until you pick one. */
     weeklyGoal: z.object({ target: z.number().int(), isDefault: z.boolean() }),
@@ -69,8 +69,8 @@ const PatchMeBody = z
     classLevel: ClassLevelSchema.optional(),
     locale: LocaleSchema.optional(),
     /**
-     * D-014: pick ({ schoolId }) or add ({ name, city, state?, board? }) your school; 403 consent_required
-     * unless consent is granted. null clears it (always allowed).
+     * Pick ({ schoolId }) or add ({ name, city, state?, board? }) your school. No consent needed (D-052);
+     * 403 consent_required only if `profile_school_city` is consent-gated again. null clears it (always allowed).
      */
     school: SchoolInput.optional(),
     /** Weekly goal (practice questions solved per IST week); null resets it to the default. */
@@ -81,7 +81,7 @@ const PatchMeBody = z
   .refine((b) => Object.keys(b).length > 0, 'at least one field')
   .meta({
     id: 'PatchMe',
-    description: 'API-8: only these fields; role, status, xp, schoolId, city etc. are rejected (400). A school is saved through `school`, and only with consent granted (D-014).',
+    description: 'API-8: only these fields; role, status, xp, schoolId, city etc. are rejected (400). A school is saved through `school` (no consent needed, D-052).',
   });
 
 const SessionsResponse = z.object({
@@ -102,8 +102,8 @@ export function registerMeRoutes(appIn: FastifyInstance, services: Services, dep
     if (!user) throw new ApiProblem('not_found');
     const p = await loadProfile(db, userId);
     const consent: ConsentState = await services.consent.getStatus(userId);
-    // D-014: the school is shown only while consent is granted (it stays stored until cleared or withdrawn).
-    const school = await visibleSchool(db, p?.schoolId, consent === 'granted');
+    // D-052: the school is shown whatever the consent state (while `profile_school_city` is not consent-gated).
+    const school = await visibleSchool(db, p?.schoolId, services.consent.allows(consent, 'profile_school_city'));
     return {
       id: user.id,
       role: user.role,
@@ -150,7 +150,7 @@ export function registerMeRoutes(appIn: FastifyInstance, services: Services, dep
       if (b.avatar !== undefined) Object.assign(set, await avatarUpdate(db, userId, b.avatar));
       if (b.school === null) Object.assign(set, profileSchoolFields(null)); // clearing is always allowed
       else if (b.school !== undefined) {
-        // D-014: 403 consent_required (503 consent_unavailable) before anything is validated or stored.
+        // A no-op since D-052; if re-gated: 403 consent_required (503 consent_unavailable) before anything is validated or stored.
         await services.consent.assertAllowed(userId, 'profile_school_city');
         const s = 'schoolId' in b.school ? await schoolById(db, b.school.schoolId) : await findOrCreateSchool(db, clock, userId, b.school);
         if (!s) throw new ApiProblem('validation_failed', { errors: [{ path: 'body.school.schoolId', message: 'Unknown school.' }] });

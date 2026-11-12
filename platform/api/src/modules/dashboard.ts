@@ -2,7 +2,7 @@
  * GET /v1/me/dashboard (backend-api, 2026-10-28): the student's progress dashboard in one call.
  * Member-only, scoped to the caller (API-7), never cached; computed on read from stored progress
  * (domain/insights/dashboard.ts). Contract: ./dashboard-schemas.ts. Guests get 401 (their progress
- * stays on the device). The school is included only while consent is granted (D-014).
+ * stays on the device). The school is included whatever the consent state (D-052; config CONSENT_REQUIRED).
  */
 import type { FastifyInstance } from 'fastify';
 import type { ZodTypeProvider } from 'fastify-type-provider-zod';

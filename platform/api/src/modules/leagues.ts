@@ -3,11 +3,10 @@
  *
  *   GET /v1/leagues/current?scope=class     your league this week: tier, division, standings, zones
  *
- * Member route, consent-gated (`leaderboards`, D-014: 403 consent_required until consent is granted;
- * production's CONSENT_PROVIDER=unavailable keeps it closed for everyone). Standings show rank, week
- * XP and the auto-generated public name only (D-039, F-017, AC-18). The first visit of a week may place the
- * student in a league (idempotent), so the route has its own per-user limit. School and city leagues
- * are opt-in (school/city fields are consent-gated) and answer 501 not_implemented for now.
+ * Member route declaring the `leaderboards` consent feature, which is not gated since D-052 (ADR-030):
+ * every student can play. Standings show rank, week XP and the auto-generated public name only (D-039,
+ * F-017, AC-18). The first visit of a week may place the student in a league (idempotent), so the route
+ * has its own per-user limit. School and city leagues are opt-in and answer 501 not_implemented for now.
  */
 import type { FastifyInstance } from 'fastify';
 import type { ZodTypeProvider } from 'fastify-type-provider-zod';
@@ -60,7 +59,7 @@ export const LeagueCurrentResponse = z
     standings: z.array(
       z.object({
         rank: z.number().int(),
-        /** Auto-generated public name (D-039, e.g. "Brave Otter 417"; never a real name); null when that student's consent is not granted (show "Student"). */
+        /** Auto-generated public name (D-039, e.g. "Brave Otter 417"; never a real name); null for a deleted account, or without consent if leaderboards are consent-gated again (show "Student"). */
         name: z.string().nullable(),
         /** The avatar shown next to the name (config ids); null exactly when `name` is null. */
         avatar: AvatarRefSchema.nullable(),
@@ -89,7 +88,7 @@ export function registerLeagueRoutes(appIn: FastifyInstance, deps: AppDeps): voi
     config: { policy: policies.member({ rateLimit: { buckets: ['leagues.read.user'] }, consent: 'leaderboards' }) },
     schema: {
       tags: ['gamification'],
-      summary: 'Your weekly league: tier, division standings (auto-generated public names), promotion and relegation zones. Needs consent (D-014).',
+      summary: 'Your weekly league: tier, division standings (auto-generated public names), promotion and relegation zones. No consent needed (D-052).',
       querystring: z.strictObject({ scope: z.enum(['class', 'school', 'city']).default('class') }),
       response: withProblems({ 200: LeagueCurrentResponse }),
     },

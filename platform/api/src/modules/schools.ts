@@ -1,6 +1,6 @@
 /**
  * GET /v1/schools?q=&city= (backend-api, 2026-10-28): school search for the profile picker.
- * D-014: consent-gated (`profile_school_city`): 403 consent_required unless consent is granted.
+ * Declares the `profile_school_city` consent feature, not gated since D-052 (ADR-030): every member may search.
  * Saving a school goes through PATCH /v1/me `school` (modules/me.ts). Contract: ./schools-schemas.ts.
  */
 import type { FastifyInstance } from 'fastify';

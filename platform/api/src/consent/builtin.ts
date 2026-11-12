@@ -19,6 +19,10 @@
  * Every transition rewrites the `consent_status` cache at once (no 15-minute wait) and writes an audit
  * row with ids and states only. Leaving `granted` deletes the AI data PII.md lists for deletion
  * (conversations + messages, uploads + their blobs) and clears the profile's school and city (D-014).
+ * Since D-052 (ADR-030) consent gates only purchases, and AI and the school work without it; a withdrawal
+ * still deletes that data, because a parent's or student's withdrawal is the clearest "stop" signal we
+ * get. Only a transition out of `granted` deletes anything: an account that never consented keeps its
+ * AI data and school.
  *
  * Why a code and not a click-to-approve link (ADR-022): approval happens inside the student's signed-in
  * session, so no unauthenticated endpoint can grant anything; email link scanners that open every link

@@ -14,9 +14,11 @@
  *   XP desc, then whoever reached their total first, then whoever joined first. The top places are
  *   promoted (never with 0 XP, never from the top tier), the bottom places relegated (never from the
  *   bottom tier). Final XP, rank and outcome stay on `league_memberships` (cascade on account purge).
- * - **Privacy (D-014, F-017, AC-18).** Only students with consent `granted` are placed in a league,
- *   and the route itself needs consent. Standings carry rank, XP and the auto-generated public name (D-039); the
- *   name is null when that student's consent is no longer granted. Deleted accounts are left out.
+ * - **Privacy (D-039, D-052, F-017, AC-18).** Leagues need no consent since D-052 (ADR-030): every
+ *   student with a board and class plays. Standings carry rank, XP and the auto-generated public name
+ *   (D-039; never a real name). If `leaderboards` is consent-gated again in CONSENT_REQUIRED, only
+ *   students with consent `granted` are placed (the route then checks it too) and names are null for
+ *   the rest. Deleted accounts are left out.
  *
  * Concurrency: joins and division formation for one (week, cohort, tier) take a transaction-scoped
  * advisory lock, so two first visits never overfill a division; every query inside a transaction
@@ -26,6 +28,7 @@ import { and, asc, desc, eq, isNull, lt, sql } from 'drizzle-orm';
 import { createHash } from 'node:crypto';
 import { consentStatus, istDay, leagueMemberships, leagues, profiles, users, type Database } from '@soyl/db';
 import { LEAGUE_TIERS, LEAGUES, leagueZones } from '@soyl/shared/config/gamification';
+import { consentRequiredFor } from '@soyl/shared/config/consent';
 import { dayNumber, dayString, weekMonday } from '../gamification';
 import { leaderboardIdentities } from '../tests/live';
 import { onLeagueClosed } from '../coins/awards';
@@ -224,8 +227,15 @@ export async function joinLeague(db: Database, userId: string, c: Cohort, week: 
   });
 }
 
-/** Students who may play: role student, not deleted, consent granted, board and class set. */
-const eligible = () => and(eq(users.role, 'student'), isNull(users.deletedAt), eq(consentStatus.status, 'granted'), sql`${profiles.board} IS NOT NULL`, sql`${profiles.classLevel} IS NOT NULL`);
+/** Students who may play: role student, not deleted, board and class set; consent `granted` only while `leaderboards` is consent-gated (D-052). */
+const eligible = () =>
+  and(
+    eq(users.role, 'student'),
+    isNull(users.deletedAt),
+    consentRequiredFor('leaderboards') ? eq(consentStatus.status, 'granted') : undefined,
+    sql`${profiles.board} IS NOT NULL`,
+    sql`${profiles.classLevel} IS NOT NULL`,
+  );
 
 export interface FormResult {
   week: string;
@@ -246,7 +256,7 @@ export async function formWeek(db: Database, now: number): Promise<FormResult> {
     .from(leagueMemberships)
     .innerJoin(users, eq(users.id, leagueMemberships.userId))
     .innerJoin(profiles, eq(profiles.userId, users.id))
-    .innerJoin(consentStatus, eq(consentStatus.userId, users.id))
+    .leftJoin(consentStatus, eq(consentStatus.userId, users.id))
     .where(
       and(
         eq(leagueMemberships.weekStart, prev),
@@ -307,7 +317,7 @@ export async function runLeagueWeek(db: Database, now: number): Promise<{ closed
 export type LeagueStatus = 'active' | 'class_required' | 'students_only';
 
 /**
- * The caller's league this week. The route has already checked consent (D-014). On the first visit
+ * The caller's league this week. The route has already checked consent if `leaderboards` is gated. On the first visit
  * of a week this closes the student's ended league (if the job has not yet) and places them.
  */
 export async function currentLeague(db: Database, now: number, userId: string, scope: LeagueScope) {

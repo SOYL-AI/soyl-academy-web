@@ -4984,7 +4984,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        /** Live mock leaderboard: provisional during the event, final once ranks are published. Needs consent (D-014). */
+        /** Live mock leaderboard: provisional during the event, final once ranks are published. Auto-generated public names only (D-039); no consent needed (D-052). */
         get: {
             parameters: {
                 query?: {
@@ -5042,7 +5042,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        /** Your weekly league: tier, division standings (auto-generated public names), promotion and relegation zones. Needs consent (D-014). */
+        /** Your weekly league: tier, division standings (auto-generated public names), promotion and relegation zones. No consent needed (D-052). */
         get: {
             parameters: {
                 query?: {
@@ -5776,7 +5776,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        /** “What can I do with my credits?”: each AI action with its price, the plans that offer it and how many you can still do today, plus the learning bonuses (consent granted only). */
+        /** “What can I do with my credits?”: each AI action with its price, the plans that offer it and how many you can still do today, plus the learning bonuses. */
         get: {
             parameters: {
                 query?: never;
@@ -7983,7 +7983,7 @@ export interface components {
             /** Format: date-time */
             createdAt: string;
         };
-        /** @description API-8: only these fields; role, status, xp, schoolId, city etc. are rejected (400). A school is saved through `school`, and only with consent granted (D-014). */
+        /** @description API-8: only these fields; role, status, xp, schoolId, city etc. are rejected (400). A school is saved through `school` (no consent needed, D-052). */
         PatchMeInput: {
             displayName?: string | null;
             board?: components["schemas"]["BoardInput"];
@@ -8429,6 +8429,7 @@ export interface components {
             resetAt: string;
             resetInSeconds: number;
             plansUrl: string;
+            billingEnabled: boolean;
             prices: {
                 /** @enum {string} */
                 action: "quick-doubt" | "explain-slide" | "hard-doubt" | "photo-doubt" | "evaluate-answer" | "evaluate-paper" | "paper-from-upload";
@@ -8456,7 +8457,7 @@ export interface components {
         };
         /** @enum {string} */
         CreditBonusKindInput: "bonus_goal" | "bonus_streak";
-        /** @description Bonus AI credits for learning (D-044): usable today only (they lapse at 00:00 IST). Consent-granted accounts only. */
+        /** @description Bonus AI credits for learning (D-044): usable today only (they lapse at 00:00 IST). */
         CreditBonusAwardInput: {
             kind: components["schemas"]["CreditBonusKindInput"];
             credits: number;
@@ -10970,7 +10971,7 @@ export interface components {
             /** Format: date-time */
             createdAt: string;
         };
-        /** @description API-8: only these fields; role, status, xp, schoolId, city etc. are rejected (400). A school is saved through `school`, and only with consent granted (D-014). */
+        /** @description API-8: only these fields; role, status, xp, schoolId, city etc. are rejected (400). A school is saved through `school` (no consent needed, D-052). */
         PatchMe: {
             displayName?: string | null;
             board?: components["schemas"]["Board"];
@@ -11416,6 +11417,7 @@ export interface components {
             resetAt: string;
             resetInSeconds: number;
             plansUrl: string;
+            billingEnabled: boolean;
             prices: {
                 /** @enum {string} */
                 action: "quick-doubt" | "explain-slide" | "hard-doubt" | "photo-doubt" | "evaluate-answer" | "evaluate-paper" | "paper-from-upload";
@@ -11443,7 +11445,7 @@ export interface components {
         };
         /** @enum {string} */
         CreditBonusKind: "bonus_goal" | "bonus_streak";
-        /** @description Bonus AI credits for learning (D-044): usable today only (they lapse at 00:00 IST). Consent-granted accounts only. */
+        /** @description Bonus AI credits for learning (D-044): usable today only (they lapse at 00:00 IST). */
         CreditBonusAward: {
             kind: components["schemas"]["CreditBonusKind"];
             credits: number;

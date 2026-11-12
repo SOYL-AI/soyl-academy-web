@@ -47,7 +47,8 @@ describe('leagues.weekly', () => {
     await t.db.insert(leagueMemberships).values({ userId: revoked, weekStart: LAST, scope: 'class', scopeKey: 'cbse-10', tier: 2, leagueId: l!.id });
 
     const r = await runLeagues({ db: t.db, now: MONDAY, log });
-    expect(r).toEqual({ closed: 1, week: THIS, students: 7, leaguesCreated: 2 });
+    // D-052: the revoked student plays on (relegated to tier 1).
+    expect(r).toEqual({ closed: 1, week: THIS, students: 8, leaguesCreated: 3 });
     const last = await t.db.select().from(leagueMemberships).where(eq(leagueMemberships.leagueId, l!.id));
     const of = (id: string) => last.find((m) => m.userId === id)!;
     expect(of(ids[0]!)).toMatchObject({ finalRank: 1, xp: 70, outcome: 'promoted' });
@@ -61,10 +62,10 @@ describe('leagues.weekly', () => {
     expect(now.find((m) => m.userId === ids[0])!.tier).toBe(3);
     expect(now.find((m) => m.userId === ids[1])!.tier).toBe(2);
     expect(now.find((m) => m.userId === ids[6])!.tier).toBe(2);
-    expect(now.find((m) => m.userId === revoked)).toBeUndefined(); // consent no longer granted
+    expect(now.find((m) => m.userId === revoked)!.tier).toBe(1); // consent does not matter for leagues (D-052)
     expect(now.every((m) => m.leagueId && m.scopeKey === 'cbse-10')).toBe(true);
     const formed = await t.db.select().from(leagues).where(and(eq(leagues.weekStart, THIS), eq(leagues.scopeKey, 'cbse-10')));
-    expect(formed.map((f) => f.tier).sort()).toEqual([2, 3]);
+    expect(formed.map((f) => f.tier).sort()).toEqual([1, 2, 3]);
     expect(formed.every((f) => f.status === 'open' && f.division === 1)).toBe(true);
 
     expect(await runLeagues({ db: t.db, now: new Date(MONDAY.getTime() + 3_600_000), log })).toEqual({ closed: 0, week: THIS, students: 0, leaguesCreated: 0 });

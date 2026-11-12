@@ -10,7 +10,7 @@
  * Physical merch needs, in this order (each refusal is a problem code):
  *   (a) a verified account (verified email or phone)                     → verification_required
  *   (b) consent `granted` from the consent provider (strict, fail closed) → consent_required / consent_unavailable
- *       (production runs CONSENT_PROVIDER=unavailable, so physical redemption is refused there)
+ *       (`physical_rewards` stays consent-gated under D-052/ADR-030: it collects a child's address)
  *   (c) COINS_PHYSICAL_REDEMPTION_ENABLED (default off until OA-19)       → redemption_disabled
  * and only then may the shipping address be sent (PUT …/address re-checks (a)–(c)).
  *
@@ -158,7 +158,7 @@ export async function storeView(deps: StoreDeps, now: Date, viewer: StoreViewer 
   let consent: ConsentState | null = null;
   if (viewer) {
     [balance, stats, held] = await Promise.all([balanceOf(deps.db, viewer.id), eligibilityStats(deps.db, viewer.id), heldBy(deps.db, viewer.id)]);
-    if (items.some((i) => i.type === 'physical')) consent = await deps.consent.getStatus(viewer.id).catch(() => null);
+    if (items.some((i) => i.type === 'physical') && deps.consent.isGated('physical_rewards')) consent = await deps.consent.getStatus(viewer.id).catch(() => null);
   }
   const ms = now.getTime();
   return {
@@ -180,7 +180,7 @@ export async function storeView(deps: StoreDeps, now: Date, viewer: StoreViewer 
       else if (mine >= i.maxPerUser) state = i.type === 'digital' ? 'owned' : 'limit_reached';
       else if (!isEligible) state = 'locked';
       else if (i.type === 'physical' && !isVerified(viewer)) state = 'verification_needed';
-      else if (i.type === 'physical' && consent !== 'granted') state = 'consent_needed';
+      else if (i.type === 'physical' && !deps.consent.allows(consent, 'physical_rewards')) state = 'consent_needed';
       else if ((balance ?? 0) < i.priceCoins) state = 'insufficient_coins';
       else state = 'available';
       if (i.type === 'digital' && mine > 0) state = 'owned';
@@ -482,13 +482,15 @@ export async function adminApprove(deps: StoreDeps, now: Date, actor: StaffActor
   const [peek] = await deps.db.select({ userId: coinRedemptions.userId }).from(coinRedemptions).where(eq(coinRedemptions.id, id));
   if (!peek) throw new ApiProblem('not_found');
   if (!peek.userId) throw new ApiProblem('conflict', { detail: 'The student account no longer exists.' });
-  let consent: ConsentState;
-  try {
-    consent = await deps.consent.getStatus(peek.userId, { strict: true });
-  } catch {
-    throw new ApiProblem('consent_unavailable');
+  let consent: ConsentState | null = null;
+  if (deps.consent.isGated('physical_rewards')) {
+    try {
+      consent = await deps.consent.getStatus(peek.userId, { strict: true });
+    } catch {
+      throw new ApiProblem('consent_unavailable');
+    }
   }
-  if (consent !== 'granted') throw new ApiProblem('consent_required', { detail: `The student's consent status is ${consent}.` });
+  if (!deps.consent.allows(consent, 'physical_rewards')) throw new ApiProblem('consent_required', { detail: `The student's consent status is ${consent}.` });
   return staffTransition(deps, now, actor, id, requestId, ['parent_approval_pending'], async (tx, r) => {
     const [u] = await tx.update(coinRedemptions).set({ status: 'approved', approvedAt: now, reviewedBy: actor.id, updatedAt: now }).where(eq(coinRedemptions.id, r.id)).returning();
     return u!;

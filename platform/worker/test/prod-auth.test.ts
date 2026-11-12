@@ -29,13 +29,14 @@ describe('DATABASE_AUTH=entra', () => {
 describe('AUTH-15 purge guard', () => {
   const names = (purge: boolean) => allJobs({ unconsentedPurge: purge }).map((j) => j.name);
 
-  it('is on by default and with a real consent provider', () => {
-    expect(loadConfig({ APP_ENV: 'test' }).unconsentedPurge).toBe(true);
-    expect(loadConfig({ ...PROD, CONSENT_PROVIDER: 'owner' }).unconsentedPurge).toBe(true);
+  it('is off by default with every consent provider (D-052: consent is only for purchases)', () => {
+    expect(loadConfig({ APP_ENV: 'test' }).unconsentedPurge).toBe(false);
+    expect(loadConfig({ ...PROD, CONSENT_PROVIDER: 'owner' }).unconsentedPurge).toBe(false);
+    expect(loadConfig({ ...PROD, CONSENT_PROVIDER: 'owner', UNCONSENTED_PURGE: 'on' }).unconsentedPurge).toBe(true);
     expect(names(true)).toContain(JOB_NAMES.accountPurgeUnconsented);
   });
 
-  it('is off with CONSENT_PROVIDER=unavailable (nobody can reach granted), unless forced on', () => {
+  it('is off with CONSENT_PROVIDER=unavailable or builtin, unless forced on', () => {
     expect(loadConfig({ ...PROD, CONSENT_PROVIDER: 'unavailable' }).unconsentedPurge).toBe(false);
     expect(loadConfig({ ...PROD, CONSENT_PROVIDER: 'unavailable', UNCONSENTED_PURGE: 'on' }).unconsentedPurge).toBe(true);
     // D-039: with the built-in provider consent is optional for learning, so auto keeps the purge off too.

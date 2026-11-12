@@ -230,6 +230,7 @@ describe('email-only sign-in + CONSENT_PROVIDER=unavailable (app)', () => {
         extraRoutes: (a) => {
           a.post('/v1/test/ai', { config: { policy: { roles: [...MEMBER_ROLES], csrf: true, rateLimit: { buckets: [] }, consent: 'ai' } } }, async () => ({ ok: true }));
           a.post('/v1/test/leaderboard', { config: { policy: { roles: [...MEMBER_ROLES], csrf: true, rateLimit: { buckets: [] }, consent: 'leaderboards' } } }, async () => ({ ok: true }));
+          a.post('/v1/test/buy', { config: { policy: { roles: [...MEMBER_ROLES], csrf: true, rateLimit: { buckets: [] }, consent: 'purchases' } } }, async () => ({ ok: true }));
           a.post('/v1/test/attempt', { config: { policy: { roles: [...MEMBER_ROLES], csrf: true, rateLimit: { buckets: [] }, consent: 'test_attempts' } } }, async () => ({ ok: true }));
         },
       },
@@ -282,21 +283,20 @@ describe('email-only sign-in + CONSENT_PROVIDER=unavailable (app)', () => {
     expect((await c.post('/v1/auth/link/phone/send-otp', { phoneNumber: '+919876543210' })).json().code).toBe('method_disabled');
   });
 
-  it('every consent-gated feature answers the friendly consent problem; tests/learning work', async () => {
+  it('a consent-gated feature (purchases) answers the friendly consent problem; AI, leaderboards and tests work (D-052)', async () => {
     const c = new Client(h);
     await c.signInEmail(`gated.${Date.now()}@example.com`);
-    for (const url of ['/v1/test/ai', '/v1/test/leaderboard']) {
-      const res = await c.post(url);
-      expect(res.statusCode).toBe(403);
-      expect(res.json()).toMatchObject({ code: 'consent_required', title: 'A parent or guardian needs to give consent first.' });
-    }
+    const res = await c.post('/v1/test/buy');
+    expect(res.statusCode).toBe(403);
+    expect(res.json()).toMatchObject({ code: 'consent_required', title: 'A parent or guardian needs to give consent first.' });
+    for (const url of ['/v1/test/ai', '/v1/test/leaderboard']) expect((await c.post(url)).statusCode).toBe(200);
     // School is not collected at all since D-039 (it was gated under D-014): refused before any consent check.
     const school = await c.patch('/v1/me', { schoolId: randomUUID() });
     expect(school.statusCode).toBe(400);
     expect(school.json().code).toBe('validation_failed');
     // D-014: tests are not gated.
     expect((await c.post('/v1/test/attempt')).statusCode).toBe(200);
-    expect(CONSENT.gatedFeatures).toEqual(expect.arrayContaining(['ai', 'leaderboards', 'rank_cards', 'profile_school_city']));
+    expect(CONSENT.gatedFeatures).toEqual(['purchases', 'physical_rewards']);
   });
 
   it('the Origin used by the client matches the allowlist', () => {

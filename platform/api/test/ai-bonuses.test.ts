@@ -1,7 +1,7 @@
 /**
  * D-044 credits: bonus credits for learning (+10 when the daily practice goal of 10 solves is met, +5 on
  * each 7-day streak milestone) on real PostgreSQL — exactly at the 10th solve, once under concurrent
- * answers, same IST day only (no rollover), consent `granted` only, shown in balance / ledger / history,
+ * answers, same IST day only (no rollover), with or without consent (D-052), shown in balance / ledger / history,
  * still behind the global spend breaker — and the "What can I do with my credits?" guide and the
  * per-IST-day history.
  */
@@ -146,18 +146,21 @@ describe('daily practice goal bonus (D-044)', () => {
     expect((await c.get('/v1/me/credits/guide')).json().bonuses.dailyGoal).toMatchObject({ solvedToday: 0, earnedToday: false });
   });
 
-  it('is never granted (or shown) without consent `granted` (D-014/D-039)', async () => {
+  it('is granted (and shown) to a student who never consented (D-052: AI needs no consent)', async () => {
     const { c, id } = await h.member();
     await h.t.db.update(consentStatus).set({ status: 'required' }).where(eq(consentStatus.userId, id));
     h.consent.setStatus(id, 'required');
-    // A streak milestone would be due with the next answer, too.
+    // A streak milestone is due with the next answer, too.
     await miss(c, QUESTIONS);
     await h.t.db.update(streaks).set({ currentDays: 6, longestDays: 6, lastActiveIstDay: '2026-11-01' }).where(eq(streaks.userId, id));
-    for (let i = 1; i <= TARGET + 1; i++) expect((await solve(c, i)).creditBonuses).toEqual([]);
-    expect(await checkDailyGoal(h.t.db, id, new Date(h.clock.now()))).toBeNull();
-    expect(await bonusRows(id)).toEqual([]);
-    expect(await credits(c)).toMatchObject({ balance: FREE, bonusToday: 0 });
-    expect((await c.get('/v1/me/credits/guide')).json().bonuses).toBeNull();
+    const awarded = [];
+    for (let i = 1; i <= TARGET; i++) awarded.push(...(await solve(c, i)).creditBonuses);
+    expect(awarded.map((a) => a.kind).sort()).toEqual(['bonus_goal', 'bonus_streak']);
+    expect((await bonusRows(id)).map((r) => r.kind).sort()).toEqual(['bonus_goal', 'bonus_streak']);
+    expect(await credits(c)).toMatchObject({ balance: FREE + GOAL + STREAK, bonusToday: GOAL + STREAK });
+    const guide = (await c.get('/v1/me/credits/guide')).json();
+    expect(guide.bonuses.dailyGoal).toMatchObject({ earnedToday: true });
+    expect(guide.bonuses.streakMilestone).toMatchObject({ earnedToday: true, currentStreak: 7 });
   });
 });
 

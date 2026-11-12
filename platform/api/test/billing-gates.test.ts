@@ -71,7 +71,7 @@ describe('GET /v1/plans', () => {
   });
 });
 
-describe('consent (D-014): purchases are for a parent', () => {
+describe('consent (D-014, D-052): purchases are for a parent — the one consent-gated thing besides merch', () => {
   let h: BillingHarness;
   beforeAll(async () => {
     h = await createBillingHarness();

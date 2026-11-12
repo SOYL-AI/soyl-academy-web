@@ -16,10 +16,10 @@
  *   GET  /v1/live-events                          live mocks (+ your registration when signed in)
  *   GET  /v1/live-events/:id                      one event: timeline, registration, your status, rank availability
  *   POST /v1/live-events/:id/register             register (idempotent)
- *   GET  /v1/live-events/:id/leaderboard          consent-gated (D-014), auto-generated public names (D-039)
+ *   GET  /v1/live-events/:id/leaderboard          declares `leaderboards` (not gated since D-052), auto-generated public names (D-039)
  *
- * Test attempts are declared under the `test_attempts` consent feature but not gated (D-014; see
- * CONSENT.gatedFeatures). Attempt-keyed limits (`attempt.autosave`, `attempt.submit`) are checked in
+ * Test attempts are declared under the `test_attempts` consent feature but not gated (D-014, D-052; see
+ * CONSENT_REQUIRED in @soyl/shared/config/consent). Attempt-keyed limits (`attempt.autosave`, `attempt.submit`) are checked in
  * the handlers because the policy hook knows only IP and user keys.
  */
 import type { FastifyInstance } from 'fastify';
@@ -336,7 +336,7 @@ export function registerTestRoutes(appIn: FastifyInstance, deps: AppDeps, servic
     config: { policy: policies.member({ rateLimit: { buckets: ['attempt.read.user'] }, consent: 'leaderboards' }) },
     schema: {
       tags: ['live'],
-      summary: 'Live mock leaderboard: provisional during the event, final once ranks are published. Needs consent (D-014).',
+      summary: 'Live mock leaderboard: provisional during the event, final once ranks are published. Auto-generated public names only (D-039); no consent needed (D-052).',
       params: LiveEventParams,
       querystring: LeaderboardQuery,
       response: withProblems({ 200: LeaderboardResponse }),

@@ -507,10 +507,10 @@ describe('store: physical merch', () => {
   });
 });
 
-describe('live ranks and leagues (consent-gated)', () => {
-  it('pays rank tiers after results are published, only with consent granted, once', async () => {
+describe('live ranks and leagues (no consent needed, D-052)', () => {
+  it('pays rank tiers after results are published, with or without consent, once', async () => {
     const a = await member();
-    const b = await member();
+    const b = await member(); // never consented
     const cc = await member();
     h.consent.setStatus(a.id, 'granted');
     await h.services.consent.refresh(a.id);
@@ -528,22 +528,20 @@ describe('live ranks and leagues (consent-gated)', () => {
     const tiers = COIN_EARN.liveRankTiers;
     expect((await awardLiveRanks(h.t.db, now, { minParticipants: 50 })).awarded).toBe(0); // too few participants
     const r = await awardLiveRanks(h.t.db, now, { minParticipants: 3 });
-    expect(r).toMatchObject({ awarded: 1, skippedNoConsent: 1 });
-    expect(r.coins).toBe(tiers.find((x) => x.maxRank === 1)!.coins);
+    expect(r).toMatchObject({ awarded: 2, skippedNoConsent: 0 });
+    expect(r.coins).toBe(tiers.find((x) => x.maxRank === 1)!.coins + tiers.find((x) => x.maxRank === 10)!.coins);
     expect((await awardLiveRanks(h.t.db, now, { minParticipants: 3 })).awarded).toBe(0);
-    // b's consent arrives later: paid on the next run inside the window.
-    h.consent.setStatus(b.id, 'granted');
-    await h.services.consent.refresh(b.id);
-    expect((await awardLiveRanks(h.t.db, new Date(now.getTime() + 86_400_000), { minParticipants: 3 })).awarded).toBe(1);
+    expect((await awardLiveRanks(h.t.db, new Date(now.getTime() + 86_400_000), { minParticipants: 3 })).awarded).toBe(0);
+    expect(await balance(h, b.id)).toBe(tiers.find((x) => x.maxRank === 10)!.coins);
     expect((await a.c.get('/v1/coins/history')).json().entries[0]).toMatchObject({ source: 'live_rank', detail: { rank: 1 } });
     // The achievement-gated drop sees the rank.
     expect(eligible({ kind: 'live_rank', maxRank: 100 }, await eligibilityStats(h.t.db, a.id))).toBe(true);
     expect(eligible({ kind: 'live_rank', maxRank: 100 }, await eligibilityStats(h.t.db, cc.id))).toBe(false);
   });
 
-  it('league promotion and top finish pay consenting members with XP, once per league', async () => {
+  it('league promotion and top finish pay members with XP whatever their consent state, once per league', async () => {
     const a = await member();
-    const b = await member();
+    const b = await member(); // never consented
     h.consent.setStatus(a.id, 'granted');
     await h.services.consent.refresh(a.id);
     const leagueId = '0190a1b2-0000-7000-8000-0000000000aa';
@@ -551,10 +549,11 @@ describe('live ranks and leagues (consent-gated)', () => {
       { userId: a.id, rank: 1, xp: 120, outcome: 'promoted' as const },
       { userId: b.id, rank: 2, xp: 90, outcome: 'promoted' as const },
     ];
+    const top = (rank: number) => COIN_EARN.leagueTopFinishTiers.find((x) => rank <= x.maxRank)!.coins;
     const paid = await h.t.db.transaction((tx) => onLeagueClosed(tx, leagueId, new Date(), standings));
-    expect(paid).toBe(COIN_EARN.leaguePromotion + COIN_EARN.leagueTopFinishTiers.find((x) => x.maxRank === 1)!.coins);
+    expect(paid).toBe(2 * COIN_EARN.leaguePromotion + top(1) + top(2));
     expect(await h.t.db.transaction((tx) => onLeagueClosed(tx, leagueId, new Date(), standings))).toBe(0);
-    expect(await balance(h, b.id)).toBe(0);
+    expect(await balance(h, b.id)).toBe(COIN_EARN.leaguePromotion + top(2));
   });
 });
 

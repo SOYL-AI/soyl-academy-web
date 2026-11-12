@@ -1,9 +1,8 @@
 /**
  * CONSENT_PROVIDER=unavailable (D-031): production runs before the owner's consent system has an
  * adapter (OA-08). Every account is `pending` and consent can never be granted here, so every
- * consent-gated feature (CONSENT.gatedFeatures, D-014: AI, uploads, leaderboards/rank cards,
- * school/city, notifications) stays OFF and answers 403 consent_required, while learning, practice
- * and tests (not gated) work for everyone.
+ * consent-gated feature (CONSENT.gatedFeatures; since D-052 only purchases and physical-reward
+ * redemption) stays OFF and answers 403 consent_required, while everything else works for everyone.
  *
  * Not a mock (GEN-3): it is a real, fail-closed provider, so it is allowed with APP_ENV=prod. It is
  * authoritative, so a stale cached value can never be read back as `granted`.

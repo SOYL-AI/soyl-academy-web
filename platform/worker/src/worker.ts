@@ -143,7 +143,7 @@ export async function startWorker(deps: WorkerDeps): Promise<RunningWorker> {
 
   heartbeatTimer = setInterval(() => void heartbeat(), deps.heartbeatMs ?? HEARTBEAT_MS);
   heartbeatTimer.unref();
-  if (!config.unconsentedPurge) log.warn('AUTH-15 unconsented-account purge is OFF (CONSENT_PROVIDER=unavailable or UNCONSENTED_PURGE=off)');
+  if (!config.unconsentedPurge) log.warn('AUTH-15 unconsented-account purge is OFF (D-052: consent is only for purchases; UNCONSENTED_PURGE=on forces it)');
   log.info('worker started', { appEnv: config.appEnv, schema: config.pgboss.schema, migrate: config.pgboss.migrate, healthPort: port });
 
   let stopping: Promise<void> | null = null;

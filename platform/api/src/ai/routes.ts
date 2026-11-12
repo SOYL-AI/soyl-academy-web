@@ -17,10 +17,11 @@
  *   GET  /v1/attempts/:id/ai-evaluation      AI marks of a submitted attempt (never ranked)
  *   (POST /v1/attempts/:id/ai-evaluation lives in modules/tests.ts and calls startAttemptEvaluation)
  *
- * Policies: AI routes need a member session; actions, uploads and evaluation need consent `ai`
- * (`uploads` for uploads, plus `ai` checked in the handler; D-014, D-031). AI limits fail closed when
- * the KV store is down (F-027). Credits and quotes need no consent: the balance and prices are shown
- * to every member, and nothing is spent.
+ * Policies: AI routes need a member session; actions, uploads and evaluation declare the consent
+ * feature `ai` (`uploads` for uploads, plus `ai` checked in the handler). Since D-052 (ADR-030) neither
+ * is consent-gated (CONSENT_REQUIRED in @soyl/shared/config/consent), so every student can use AI with
+ * credits; flipping the config re-gates them. AI limits fail closed when the KV store is down (F-027).
+ * Credits and quotes never need consent: the balance and prices are shown to every member.
  */
 import { PassThrough } from 'node:stream';
 import type { FastifyInstance } from 'fastify';
@@ -107,6 +108,7 @@ export function registerAiRoutes(appIn: FastifyInstance, deps: AppDeps, services
         ...b,
         resetAt: b.resetAt.toISOString(),
         plansUrl,
+        billingEnabled: deps.config.billing.enabled,
         prices: AI_ACTION_IDS.map((id) => {
           const a = AI_ACTIONS[id];
           return {
@@ -129,7 +131,7 @@ export function registerAiRoutes(appIn: FastifyInstance, deps: AppDeps, services
     config: { policy: creditsRead() },
     schema: {
       tags: ['credits'],
-      summary: '“What can I do with my credits?”: each AI action with its price, the plans that offer it and how many you can still do today, plus the learning bonuses (consent granted only).',
+      summary: '“What can I do with my credits?”: each AI action with its price, the plans that offer it and how many you can still do today, plus the learning bonuses.',
       response: withProblems({ 200: CreditGuideResponse }),
     },
     handler: async (request) => creditGuide({ db: deps.db, clock: deps.clock, credits: ai.credits, plansUrl }, request.auth!.user.id),

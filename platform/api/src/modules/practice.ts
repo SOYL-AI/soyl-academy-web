@@ -104,7 +104,7 @@ const AnswerResult = z
     badgesAwarded: z.array(z.string()),
     streak: StreakSchema.nullable(),
     ...coinAwardFields,
-    /** D-044 bonus AI credits this answer earned (daily practice goal met, 7-day streak milestone); [] for guests and without consent. */
+    /** D-044 bonus AI credits this answer earned (daily practice goal met, 7-day streak milestone); [] for guests. */
     creditBonuses: z.array(CreditBonusAwardSchema),
   })
   .meta({ id: 'PracticeAnswerResult' });

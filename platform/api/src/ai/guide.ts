@@ -4,8 +4,9 @@
  * config + today's balance + two small reads (the goal and streak progress); nothing is written except
  * the lazy daily grant that every balance read does.
  *
- * Bonuses are shown only to students who can earn them (consent `granted`, D-014/D-039); for everyone
- * else `bonuses` is null ("non-consented accounts earn nothing and see nothing").
+ * Bonuses are shown only to students who can earn them (bonusEligible: since D-052 every student; if AI
+ * is consent-gated again, consent `granted` only); for everyone else `bonuses` is null ("accounts that
+ * cannot earn see nothing").
  */
 import { eq } from 'drizzle-orm';
 import { istDay, streaks, type Database } from '@soyl/db';

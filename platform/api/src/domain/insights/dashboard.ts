@@ -18,6 +18,7 @@ import { dashboardWindows, dayRuns, latestEvents, nextBadge, percentOf, pickFocu
 import { chapterMastery, difficultyBand, subjectMastery, type ChapterEvidence } from '@soyl/shared/learning/mastery';
 import type { TestKind } from '@soyl/shared/content/test';
 import type { ConsentState } from '@soyl/shared/config/security';
+import { consentAllows } from '@soyl/shared/config/consent';
 import type { Clock } from '../../clock';
 import { activeReleases, practicePool } from '../content';
 import { chaptersMastered, ensureBadges, learnerStats, streakView, testStats } from '../gamification';
@@ -327,7 +328,8 @@ export async function dashboardFor(db: Database, clock: Clock, year: string, use
   const profile = await loadProfile(db, userId);
   const board = asBoard(profile?.board);
   const classLevel = profile?.classLevel ?? null;
-  const granted = consent === 'granted';
+  // D-052: the school needs no consent; `consent_required` appears only if school/city is re-gated.
+  const granted = consentAllows(consent, 'profile_school_city');
 
   const [school, total, scope, attempted, history, recent, badgeInfo] = await Promise.all([
     visibleSchool(db, profile?.schoolId, granted),

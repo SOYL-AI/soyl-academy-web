@@ -82,41 +82,38 @@ describe('GET/PATCH /v1/me', () => {
     expect((await c.patch('/v1/me', {})).statusCode).toBe(400);
   });
 
-  it('school is consent-gated (D-014): refused without consent and nothing stored; raw schoolId/city fields are never accepted', async () => {
+  it('school needs no consent (D-052): a never-consented student saves, adds and clears one; raw schoolId/city fields are never accepted', async () => {
     const [school] = await h.t.db.insert(schools).values({ name: 'Test School', nameNormalized: 'test school', city: 'Pune', cityNormalized: 'pune', source: 'udise', verifiedAt: new Date() }).returning();
     const c = h.client();
     const { user } = await c.signInEmail(email('school'));
+    expect((await c.get('/v1/me')).json().consent).toBe('required');
     // Raw columns are not part of the allowlist (API-8), with or without consent.
     expect((await c.patch('/v1/me', { schoolId: school!.id })).json().code).toBe('validation_failed');
     expect((await c.patch('/v1/me', { city: 'Pune' })).statusCode).toBe(400);
-    // `school` without consent: 403 consent_required, nothing stored, nothing created.
-    const denied = await c.patch('/v1/me', { school: { schoolId: school!.id } });
-    expect(denied.statusCode).toBe(403);
-    expect(denied.json().code).toBe('consent_required');
-    const create = await c.patch('/v1/me', { school: { name: 'Unconsented Academy', city: 'Pune' } });
-    expect(create.json().code).toBe('consent_required');
-    expect(await h.t.db.select().from(schools).where(eq(schools.nameNormalized, 'unconsented academy'))).toHaveLength(0);
-    // Clearing is always allowed.
-    expect((await c.patch('/v1/me', { school: null })).statusCode).toBe(200);
-    let [p] = await h.t.db.select().from(profiles).where(eq(profiles.userId, user.id));
-    expect({ schoolId: p?.schoolId ?? null, city: p?.city ?? null }).toEqual({ schoolId: null, city: null });
-
-    h.consent.setStatus(user.id, 'granted');
-    h.clock.advance(16 * 60_000); // cache TTL
+    // `school` without consent: saved and returned.
     const ok = await c.patch('/v1/me', { school: { schoolId: school!.id } });
     expect(ok.statusCode, ok.body).toBe(200);
     expect(ok.json().school).toEqual({ id: school!.id, name: 'Test School', city: 'Pune', state: null, board: null, verified: true });
-    [p] = await h.t.db.select().from(profiles).where(eq(profiles.userId, user.id));
+    let [p] = await h.t.db.select().from(profiles).where(eq(profiles.userId, user.id));
     expect({ schoolId: p!.schoolId, city: p!.city }).toEqual({ schoolId: school!.id, city: 'Pune' });
     expect((await c.get('/v1/me')).json()).not.toHaveProperty('schoolId');
+    // Adding a new school works too.
+    const create = await c.patch('/v1/me', { school: { name: 'Unconsented Academy', city: 'Nashik' } });
+    expect(create.statusCode, create.body).toBe(200);
+    expect(create.json().school).toMatchObject({ name: 'Unconsented Academy', city: 'Nashik', verified: false });
+    expect(await h.t.db.select().from(schools).where(eq(schools.nameNormalized, 'unconsented academy'))).toHaveLength(1);
+    // Clearing is always allowed.
+    expect((await c.patch('/v1/me', { school: null })).statusCode).toBe(200);
+    [p] = await h.t.db.select().from(profiles).where(eq(profiles.userId, user.id));
+    expect({ schoolId: p?.schoolId ?? null, city: p?.city ?? null }).toEqual({ schoolId: null, city: null });
 
-    // Consent no longer granted (e.g. another provider's revocation): stored, but never returned.
+    // A revoked state from another provider no longer hides a saved school (only leaving `granted` in the built-in flow clears it).
+    expect((await c.patch('/v1/me', { school: { schoolId: school!.id } })).statusCode).toBe(200);
     h.consent.setStatus(user.id, 'revoked');
     h.clock.advance(16 * 60_000);
     const me = (await c.get('/v1/me')).json();
     expect(me.consent).toBe('revoked');
-    expect(me.school).toBeNull();
-    expect(JSON.stringify(me)).not.toContain('Pune');
+    expect(me.school).toMatchObject({ id: school!.id, city: 'Pune' });
   });
 
   it('weekly goal: default until set, bounds enforced, null resets', async () => {

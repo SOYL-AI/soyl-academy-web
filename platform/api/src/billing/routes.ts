@@ -11,7 +11,8 @@
  *   + the invoice routes (invoices/routes.ts, ADR-024)
  *
  * Purchases: 403 billing_disabled while BILLING_ENABLED=false; 403 consent_required until consent is
- * granted. Purchase responses never grant anything (no entitlement until Razorpay confirms payment).
+ * granted (the `purchases` consent feature, D-052; checked in BillingService after billing_disabled, so
+ * the route policy says consent=no). Purchase responses never grant anything (no entitlement until Razorpay confirms payment).
  */
 import type { FastifyInstance } from 'fastify';
 import type { ZodTypeProvider } from 'fastify-type-provider-zod';

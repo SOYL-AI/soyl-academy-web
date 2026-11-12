@@ -191,7 +191,7 @@ export interface SubmitAnswerResult extends QuestionGrade {
   /** SOYL Coins this answer earned (ADR-021): daily challenge, solved milestones, chapter mastery. */
   coinsAwarded: number;
   coinAwards: CoinAwardDto[];
-  /** D-044 bonus AI credits this answer earned (daily practice goal met, 7-day streak milestone); consent `granted` only. */
+  /** D-044 bonus AI credits this answer earned (daily practice goal met, 7-day streak milestone); see bonusEligible. */
   creditBonuses: CreditBonusAward[];
 }
 

@@ -1,9 +1,11 @@
 /**
  * API-6 route-policy test: every registered route has an explicit, valid policy; the table is
  * snapshotted so any change shows up in review (AUTH-1: no other auth pathway exists).
- * Also: a route without a policy stops the server from starting.
+ * Also: a route without a policy stops the server from starting. A declared consent feature that the
+ * config does not gate (CONSENT_REQUIRED, D-052) shows as `consent=<feature>(open)`.
  */
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
+import { isGated } from '../src/consent/service';
 import { assertPolicy, MissingPolicyError, RoutePolicySchema } from '../src/policy';
 import { createHarness, type Harness } from './helpers';
 
@@ -29,7 +31,7 @@ describe('route policy (API-6)', () => {
       .map((r) => {
         const p = r.policy;
         const rl = p.rateLimit === false ? 'none' : `${['default', ...(p.rateLimit.buckets ?? [])].join('+')}${p.rateLimit.failClosed ? ' (fail-closed)' : ''}`;
-        return `${r.method.padEnd(6)} ${r.url.padEnd(38)} roles=${p.roles.join('|')} csrf=${p.csrf} rl=${rl} consent=${p.consent || 'no'}${p.fresh ? ' fresh' : ''}${p.mfa ? ' mfa' : ''}${p.capability ? ` cap=${p.capability}` : ''}${r.hidden ? ' (dev-only, hidden)' : ''}`;
+        return `${r.method.padEnd(6)} ${r.url.padEnd(38)} roles=${p.roles.join('|')} csrf=${p.csrf} rl=${rl} consent=${p.consent ? (isGated(p.consent) ? p.consent : `${p.consent}(open)`) : 'no'}${p.fresh ? ' fresh' : ''}${p.mfa ? ' mfa' : ''}${p.capability ? ` cap=${p.capability}` : ''}${r.hidden ? ' (dev-only, hidden)' : ''}`;
       })
       .sort();
     expect(table.join('\n')).toMatchSnapshot();

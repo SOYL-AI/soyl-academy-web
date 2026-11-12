@@ -4,6 +4,10 @@
  * `consent_status` caches the provider's answer for CONSENT.cacheTtlSeconds and is refreshed on every
  * sign-in. If the cache is stale and the provider is down, the gate fails closed (503
  * consent_unavailable) for gated features; status displays fall back to the cached value.
+ *
+ * Which features are gated is config (D-052, ADR-030: CONSENT_REQUIRED in
+ * @soyl/shared/config/consent — today only `purchases` and `physical_rewards`). An ungated feature
+ * never reads the cache or calls the provider.
  */
 import { eq, sql } from 'drizzle-orm';
 import { consentStatus, type Database } from '@soyl/db';
@@ -99,7 +103,7 @@ export class ConsentService {
     }
   }
 
-  /** API-11 gate: 403 consent_required unless granted; 503 consent_unavailable when it cannot be checked. */
+  /** API-11 gate for gated features: 403 consent_required unless granted; 503 consent_unavailable when it cannot be checked. */
   async assertAllowed(userId: string, feature: ConsentFeature): Promise<void> {
     if (!isGated(feature, this.gatedFeatures)) return;
     let status: ConsentState;
@@ -113,6 +117,11 @@ export class ConsentService {
 
   isGated(feature: ConsentFeature): boolean {
     return isGated(feature, this.gatedFeatures);
+  }
+
+  /** Whether a (cached) status allows `feature`: always when the feature is not gated, else only `granted`. */
+  allows(status: ConsentState | string | null | undefined, feature: ConsentFeature): boolean {
+    return !this.isGated(feature) || status === 'granted';
   }
 
   async startFlow(userId: string): Promise<ConsentFlow> {

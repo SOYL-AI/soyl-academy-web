@@ -53,28 +53,19 @@ afterAll(async () => {
   await h?.close();
 });
 
-describe('consent gate (D-014)', () => {
-  it('guests get 401; members without granted consent get 403 consent_required on search and on saving, and nothing leaks', async () => {
+describe('no consent gate (D-052)', () => {
+  it('guests get 401; members without consent search, save and see their school on /v1/me and the dashboard', async () => {
     expect((await h.client().get('/v1/schools?q=delhi')).statusCode).toBe(401);
     const s = await official(`${word()} Public School`, 'Delhi');
-    const { c, id } = await member('required');
+    const { c } = await member('required');
     const search = await c.get('/v1/schools?q=delhi');
-    expect(search.statusCode).toBe(403);
-    expect(search.json().code).toBe('consent_required');
-    expect((await c.patch('/v1/me', { school: { schoolId: s.id } })).json().code).toBe('consent_required');
-
-    // A school stored earlier (e.g. before a withdrawal handled by another provider) is never returned.
-    await h.t.db.insert(profiles).values({ userId: id, schoolId: s.id, city: 'Delhi' }).onConflictDoUpdate({ target: profiles.userId, set: { schoolId: s.id, city: 'Delhi' } });
-    const me = await c.get('/v1/me');
-    expect(me.json().school).toBeNull();
+    expect(search.statusCode, search.body).toBe(200);
+    const saved = await c.patch('/v1/me', { school: { schoolId: s.id } });
+    expect(saved.statusCode, saved.body).toBe(200);
+    expect(saved.json()).toMatchObject({ consent: 'required', school: { id: s.id, city: 'Delhi' } });
     const dash = await c.get('/v1/me/dashboard');
     expect(dash.statusCode, dash.body).toBe(200);
-    expect(dash.json().profile).toEqual({ board: null, classLevel: null, school: null, schoolStatus: 'consent_required', missing: ['board', 'classLevel'] });
-    for (const body of [me.body, dash.body]) {
-      expect(body).not.toContain(s.name);
-      expect(body).not.toContain(s.id);
-      expect(body).not.toContain('Delhi');
-    }
+    expect(dash.json().profile).toMatchObject({ school: { id: s.id }, schoolStatus: 'set', missing: ['board', 'classLevel'] });
   });
 });
 

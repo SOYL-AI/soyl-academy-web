@@ -208,7 +208,7 @@ export interface JobSettings {
   unconsentedAccountTtlDays?: number;
   /** AI gateway jobs (ai-jobs.ts): runtime from env unless given (tests). */
   ai?: AiWorkerSettings;
-  /** false: the AUTH-15 purge is not registered (no consent system, CONSENT_PROVIDER=unavailable). */
+  /** false: the AUTH-15 purge is not registered (the worker passes config.unconsentedPurge: false unless UNCONSENTED_PURGE=on, D-052). */
   unconsentedPurge?: boolean;
   /** Billing jobs (billing-jobs.ts). Default: no Razorpay provider (reconcile skips, expiry runs). */
   billing?: BillingJobSettings;

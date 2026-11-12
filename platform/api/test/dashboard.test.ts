@@ -134,7 +134,7 @@ describe('a brand-new account', () => {
       today: '2026-11-04',
       thisWeek: { from: '2026-11-02', to: '2026-11-08' },
       lastWeek: { from: '2026-10-26', to: '2026-11-01' },
-      profile: { board: null, classLevel: null, school: null, schoolStatus: 'consent_required', missing: ['board', 'classLevel'] },
+      profile: { board: null, classLevel: null, school: null, schoolStatus: 'not_set', missing: ['board', 'classLevel', 'school'] },
       totals: {
         solved: zero,
         answered: zero,
@@ -159,7 +159,7 @@ describe('a brand-new account', () => {
     // With board and class: the class scope covers every chapter of the class's subjects, all not started.
     expect((await c.patch('/v1/me', { board: 'cbse', classLevel: 10 })).statusCode).toBe(200);
     const d = (await c.get('/v1/me/dashboard')).json();
-    expect(d.profile.missing).toEqual([]);
+    expect(d.profile.missing).toEqual(['school']); // D-052: the school prompt shows without consent
     expect(d.scope).toMatchObject({ kind: 'class', board: 'cbse', classLevel: 10, subjectCount: 1 });
     expect(d.scope.chapterCount).toBeGreaterThan(1);
     expect(d.mastery).toEqual({ score: 0, chapterCount: d.scope.chapterCount, levels: { not_started: d.scope.chapterCount, attempted: 0, familiar: 0, proficient: 0, mastered: 0 } });

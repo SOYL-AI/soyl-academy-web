@@ -1,4 +1,4 @@
-/** Consent gate (API-11, D-014, API-16) with the mock provider in every state. */
+/** Consent gate (API-11, D-014, D-052, API-16) with the mock provider in every state. */
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 import { eq } from 'drizzle-orm';
 import { consentStatus } from '@soyl/db';
@@ -14,7 +14,9 @@ const email = () => `consent.${Date.now().toString(36)}${++n}@example.com`;
 beforeAll(async () => {
   h = await createHarness({
     extraRoutes: (app) => {
-      // An AI-like route (consent: 'ai') and a test-attempt-like route (consent: 'test_attempts').
+      // A purchase-like route (consent: 'purchases', gated since D-052), an AI-like route (consent: 'ai',
+      // open since D-052) and a test-attempt-like route (consent: 'test_attempts').
+      app.post('/v1/test/buy', { config: { policy: { roles: [...MEMBER_ROLES], csrf: true, rateLimit: { buckets: [] }, consent: 'purchases' } } }, async () => ({ ok: true }));
       app.post('/v1/test/ai', { config: { policy: { roles: [...MEMBER_ROLES], csrf: true, rateLimit: { buckets: [] }, consent: 'ai' } } }, async () => ({ ok: true }));
       app.post('/v1/test/attempt', { config: { policy: { roles: [...MEMBER_ROLES], csrf: true, rateLimit: { buckets: [] }, consent: 'test_attempts' } } }, async () => ({ ok: true }));
     },
@@ -30,12 +32,12 @@ describe('consent gate', () => {
     ['pending', 403],
     ['granted', 200],
     ['revoked', 403],
-  ] as const)('state %s → %i on a gated feature', async (state, status) => {
+  ] as const)('state %s → %i on a gated feature (purchases)', async (state, status) => {
     const c = h.client();
     const { user } = await c.signInEmail(email());
     h.consent.setStatus(user.id, state);
     h.clock.advance(CONSENT.cacheTtlSeconds * 1000 + 1000);
-    const res = await c.post('/v1/test/ai');
+    const res = await c.post('/v1/test/buy');
     expect(res.statusCode).toBe(status);
     if (status === 403) {
       expect(res.json().code).toBe('consent_required');
@@ -43,13 +45,30 @@ describe('consent gate', () => {
     }
   });
 
-  it('D-014: tests and guest merge are not gated', async () => {
+  it('D-052: only purchases and physical rewards are gated; AI, tests and guest merge are not', async () => {
     expect(isGated('test_attempts')).toBe(false);
     expect(isGated('merge_guest')).toBe(false);
-    expect(isGated('ai')).toBe(true);
+    expect(isGated('ai')).toBe(false);
+    expect(isGated('leaderboards')).toBe(false);
+    expect(isGated('purchases')).toBe(true);
+    expect(isGated('physical_rewards')).toBe(true);
     const c = h.client();
     await c.signInEmail(email());
     expect((await c.post('/v1/test/attempt')).statusCode).toBe(200);
+    expect((await c.post('/v1/test/ai')).statusCode).toBe(200);
+  });
+
+  it.each(['required', 'pending', 'revoked'] as const)('D-052: an ungated feature (ai) answers 200 in state %s, even with the provider down', async (state) => {
+    const c = h.client();
+    const { user } = await c.signInEmail(email());
+    h.consent.setStatus(user.id, state);
+    h.clock.advance(CONSENT.cacheTtlSeconds * 1000 + 1000);
+    h.consent.failing = true;
+    try {
+      expect((await c.post('/v1/test/ai')).statusCode).toBe(200);
+    } finally {
+      h.consent.failing = false;
+    }
   });
 
   it('sign-in refreshes the cache from the provider', async () => {
@@ -70,12 +89,12 @@ describe('consent gate', () => {
     const { user } = await c.signInEmail(email());
     h.consent.setStatus(user.id, 'granted');
     h.clock.advance(CONSENT.cacheTtlSeconds * 1000 + 1000);
-    expect((await c.post('/v1/test/ai')).statusCode).toBe(200); // refreshes the cache
+    expect((await c.post('/v1/test/buy')).statusCode).toBe(200); // refreshes the cache
     h.consent.failing = true;
     try {
-      expect((await c.post('/v1/test/ai')).statusCode).toBe(200); // cache still fresh
+      expect((await c.post('/v1/test/buy')).statusCode).toBe(200); // cache still fresh
       h.clock.advance(CONSENT.cacheTtlSeconds * 1000 + 1000);
-      const res = await c.post('/v1/test/ai');
+      const res = await c.post('/v1/test/buy');
       expect(res.statusCode).toBe(503);
       expect(res.json().code).toBe('consent_unavailable');
       // learning-type routes keep working

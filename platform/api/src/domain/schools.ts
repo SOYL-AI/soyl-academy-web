@@ -1,13 +1,15 @@
 /**
  * Schools (backend-api, 2026-10-28; D-014). Search for the profile picker, find-or-create of a school a
- * student adds, saving/clearing it on the profile, and reading it back only while consent is granted.
+ * student adds, saving/clearing it on the profile, and reading it back (D-052: with or without consent;
+ * only while consent is granted if `profile_school_city` is consent-gated again in CONSENT_REQUIRED).
  *
  * - Child safety: other students see a student-added (unverified) school in search only once
  *   SCHOOLS.search.unverifiedMinStudents accounts have picked it; the student who added it always sees it.
  * - Dedupe: student-added schools are unique by (name_normalized, city_normalized) (migration 0013); a
  *   matching verified/official school is preferred over adding a new row.
  * - Privacy: profiles.city mirrors the school's city and is cleared with it; account deletion clears both
- *   and unlinks the schools the account added (account-deletion.ts); consent withdrawal clears both.
+ *   and unlinks the schools the account added (account-deletion.ts); consent withdrawal (leaving
+ *   `granted`) clears both. An account that never consented keeps its school.
  */
 import { and, asc, eq, gte, sql } from 'drizzle-orm';
 import { profiles, schools, type Database } from '@soyl/db';
@@ -154,14 +156,14 @@ export function profileSchoolFields(s: Pick<SchoolRow, 'id' | 'city'> | null): {
   return s ? { schoolId: s.id, city: s.city } : { schoolId: null, city: null };
 }
 
-/** The caller's school for display, only while consent is granted (D-014). */
-export async function visibleSchool(db: Db, schoolId: string | null | undefined, consentGranted: boolean): Promise<SchoolDto | null> {
-  if (!consentGranted || !schoolId) return null;
+/** The caller's school for display, when the `profile_school_city` consent rule allows it (D-052: always). */
+export async function visibleSchool(db: Db, schoolId: string | null | undefined, allowed: boolean): Promise<SchoolDto | null> {
+  if (!allowed || !schoolId) return null;
   const s = await schoolById(db, schoolId);
   return s ? schoolDto(s) : null;
 }
 
-/** D-014 on withdrawal: school and city are off for an account whose consent is no longer granted. */
+/** On withdrawal (leaving `granted`, builtin.ts deleteAiData): school and city are cleared (D-014, kept under D-052). */
 export async function clearSchool(db: Db, userId: string, now: Date): Promise<boolean> {
   const r = await db
     .update(profiles)

@@ -14,13 +14,15 @@
  * nothing, so concurrent triggers are idempotent. A bonus row is positive, so it can never make a balance
  * negative and needs no wallet lock.
  *
- * Only students allowed to use AI earn bonuses: consent `granted` (cached consent_status, D-014/D-039,
- * as for coin rewards). Purchases and SOYL Coins never grant credits (D-037).
+ * Only students allowed to use AI earn bonuses: consentAllows(status, 'ai') — since D-052 (ADR-030) every
+ * student, because AI needs no consent; if CONSENT_REQUIRED.ai is switched back on, only cached
+ * consent_status `granted`. Purchases and SOYL Coins never grant credits (D-037).
  */
 import { and, eq, inArray, sql } from 'drizzle-orm';
 import { consentStatus, creditLedger, istDay, type Database } from '@soyl/db';
 import { CREDIT_BONUSES, CREDIT_BONUS_KINDS, isStreakMilestone, type CreditBonusKind } from '@soyl/shared/config/credit-bonuses';
 import { DAILY_PRACTICE_GOAL } from '@soyl/shared/config/learning';
+import { consentAllows, consentRequiredFor } from '@soyl/shared/config/consent';
 
 type Tx = Parameters<Parameters<Database['transaction']>[0]>[0];
 type Exec = Database | Tx;
@@ -45,10 +47,11 @@ function istBounds(day: string): { start: string; end: string } {
   return { start: start.toISOString(), end: new Date(start.getTime() + 86_400_000).toISOString() };
 }
 
-/** D-014/D-039: only consent `granted` (the cached status, as for coin rewards). */
+/** Whoever may use AI (D-052: everyone; the cached status is read only while `ai` is consent-gated). */
 export async function bonusEligible(db: Exec, userId: string): Promise<boolean> {
+  if (!consentRequiredFor('ai')) return true;
   const [c] = await db.select({ status: consentStatus.status }).from(consentStatus).where(eq(consentStatus.userId, userId));
-  return c?.status === 'granted';
+  return consentAllows(c?.status, 'ai');
 }
 
 /** Bonus kinds already granted to the user on `day`. */
@@ -97,7 +100,7 @@ export async function solvedOnDay(db: Exec, userId: string, day: string): Promis
 
 /**
  * Follow-up after a solving practice answer or self-mark is committed: grants `bonus_goal` once the
- * day's solves reach DAILY_PRACTICE_GOAL.target. Cheap exits first: already granted today, then consent.
+ * day's solves reach DAILY_PRACTICE_GOAL.target. Cheap exits first: already granted today, then eligibility.
  */
 export async function checkDailyGoal(db: Database, userId: string, now: Date, target: number = DAILY_PRACTICE_GOAL.target): Promise<CreditBonusAward | null> {
   const day = istDay(now);

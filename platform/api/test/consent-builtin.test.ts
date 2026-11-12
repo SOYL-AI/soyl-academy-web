@@ -1,14 +1,15 @@
 /**
  * Built-in interim consent provider (D-039, ADR-022): the state machine, idempotency, expiry, wrong codes,
  * withdrawal by the student and by the parent's link (with AI data deletion), rate limits (account,
- * parent email, IP), the gates on AI, uploads and leaderboards, and the `unavailable`/`mock` providers
- * answering the new routes without changing.
+ * parent email, IP), D-052 (AI, uploads and leaderboards open without consent; a never-consented
+ * account's AI data is never deleted), and the `unavailable`/`mock` providers answering the new routes
+ * without changing.
  */
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 import { and, eq } from 'drizzle-orm';
 import { aiConversations, auditLog, consentRecords, consentStatus, profiles, uploads } from '@soyl/db';
 import { AI_UPLOADS } from '@soyl/shared/config/ai-actions';
-import { BUILTIN_CONSENT, CONSENT } from '@soyl/shared/config/security';
+import { BUILTIN_CONSENT } from '@soyl/shared/config/security';
 import { publicName } from '@soyl/shared/config/public-names';
 import { BuiltinConsentProvider, maskEmail } from '../src/consent/builtin';
 import { UnavailableConsentProvider } from '../src/consent/unavailable';
@@ -162,11 +163,11 @@ describe('built-in consent: state machine', () => {
   it('the parent email names the student only by a masked address and explains what unlocks, data and links', async () => {
     const s = await minorWithCode();
     const { m } = parentMail(s.parent);
-    expect(m.subject).toBe('Approve extra features on SOYL Academy');
+    expect(m.subject).toBe('Approve paid plans on SOYL Academy');
     expect(m.text.startsWith(`Your approval code is ${s.code}`)).toBe(true);
     expect(m.text).not.toContain(s.email);
     expect(m.text).toContain(maskEmail(s.email));
-    for (const words of ['AI tutor', 'Photo doubts', 'Leaderboards and rewards', 'Lessons, practice and tests are free', `${h.config.publicBaseUrl}/privacy`, `${h.config.publicBaseUrl}/terms`, '48 hours'])
+    for (const words of ['Paid plans', 'Merch delivery', 'Lessons, practice and tests are free', 'the AI tutor with its free daily credits', 'leaderboards (under an auto-generated nickname', `${h.config.publicBaseUrl}/privacy`, `${h.config.publicBaseUrl}/terms`, '48 hours'])
       expect(m.text).toContain(words);
     expect(m.html).toContain(`${h.config.publicBaseUrl}/me/consent/parent#t=`);
     expect(m.html).not.toMatch(/<img|<script/i);
@@ -174,7 +175,7 @@ describe('built-in consent: state machine', () => {
 });
 
 describe('built-in consent: withdrawal', () => {
-  it('the student withdraws: gated features off, AI conversations and uploads (with both blobs) deleted', async () => {
+  it('the student withdraws: AI conversations and uploads (with both blobs) deleted; AI itself stays open (D-052)', async () => {
     const s = await minorWithCode();
     await s.c.post('/v1/me/consent/verify', { code: s.code });
     // AI data to delete.
@@ -193,7 +194,7 @@ describe('built-in consent: withdrawal', () => {
     expect(await h.t.db.select().from(uploads).where(eq(uploads.userId, s.id))).toHaveLength(0);
     expect(h.blob.has(AI_UPLOADS.containers.quarantine, up!.blobKey)).toBe(false);
     expect(h.blob.has(AI_UPLOADS.containers.clean, up!.processedKey!)).toBe(false);
-    expect((await s.c.post('/v1/ai/quick-doubt', { message: 'What is an acid?' })).json().code).toBe('consent_required');
+    expect((await s.c.post('/v1/ai/quick-doubt', { message: 'What is an acid?' })).statusCode).toBe(200);
     // Idempotent.
     expect((await s.c.post('/v1/me/consent/withdraw')).json().status).toBe('revoked');
     // The student may ask again (after the 1-a-minute send limit); the same parent approves again.
@@ -224,7 +225,7 @@ describe('built-in consent: withdrawal', () => {
     expect(res.statusCode).toBe(200);
     expect(res.json()).toEqual({ status: 'revoked', alreadyWithdrawn: false });
     expect(await status(s.c)).toMatchObject({ status: 'revoked', revokedBy: 'parent' });
-    expect((await s.c.get('/v1/leagues/current')).json().code).toBe('consent_required');
+    expect((await s.c.get('/v1/leagues/current')).statusCode).toBe(200); // D-052: leagues need no consent
     expect((await parentBrowser.post('/v1/consent/parent/withdraw', { token: s.token })).json()).toEqual({ status: 'revoked', alreadyWithdrawn: true });
     const audit = await h.t.db.select().from(auditLog).where(and(eq(auditLog.targetId, s.id), eq(auditLog.action, 'consent.revoked')));
     expect(audit.at(-1)).toMatchObject({ actorUserId: null, actorRole: 'parent' });
@@ -325,27 +326,44 @@ describe('built-in consent: rate limits', () => {
   });
 });
 
-describe('built-in consent: the gates (D-014: learning stays open)', () => {
-  it('AI, uploads and leaderboards are refused until approval and allowed after; tests and practice never need it', async () => {
-    const s = await minorWithCode();
-    expect((await s.c.post('/v1/ai/quick-doubt', { message: 'What is an acid?' })).statusCode).toBe(403);
-    expect((await s.c.post('/v1/ai/uploads', { kind: 'photo_doubt', contentType: 'image/png', bytes: 100 })).statusCode).toBe(403);
-    expect((await s.c.get('/v1/leagues/current')).statusCode).toBe(403);
-    expect(h.services.consent.isGated('test_attempts')).toBe(false);
-    expect((await s.c.get('/v1/credits')).statusCode).toBe(200); // balances and prices are visible without consent
+describe('built-in consent: the gates (D-052: only purchases and physical rewards)', () => {
+  it('AI, uploads and leaderboards work before, during and after a pending approval; only purchases and merch are gated', async () => {
+    expect(h.services.consent.isGated('purchases')).toBe(true);
+    expect(h.services.consent.isGated('physical_rewards')).toBe(true);
+    for (const f of ['ai', 'uploads', 'leaderboards', 'rank_cards', 'profile_school_city', 'test_attempts', 'merge_guest'] as const) expect(h.services.consent.isGated(f)).toBe(false);
 
+    const fresh = await student(); // never declared anything: `required`
+    expect((await fresh.c.post('/v1/ai/quick-doubt', { message: 'What is an acid?' })).statusCode).toBe(200);
+    expect((await fresh.c.post('/v1/ai/uploads', { kind: 'photo_doubt', contentType: 'image/png', bytes: 100 })).statusCode).toBe(201);
+    expect((await fresh.c.get('/v1/leagues/current')).statusCode).toBe(200);
+    expect(await cache(fresh.id)).toMatchObject({ status: 'required' });
+
+    const s = await minorWithCode(); // pending
+    expect((await s.c.post('/v1/ai/quick-doubt', { message: 'What is an acid?' })).statusCode).toBe(200);
+    expect((await s.c.get('/v1/leagues/current')).statusCode).toBe(200);
     await s.c.post('/v1/me/consent/verify', { code: s.code });
-    // No 15-minute cache wait: approval applies at once.
-    const ai = await s.c.post('/v1/ai/quick-doubt', { message: 'What is an acid?' });
-    expect(ai.statusCode).toBe(200);
-    expect((await s.c.post('/v1/ai/uploads', { kind: 'photo_doubt', contentType: 'image/png', bytes: 100 })).statusCode).toBe(201);
-    expect((await s.c.get('/v1/leagues/current')).statusCode).toBe(200);
-    // SOYL Coins rewards (D-037) and leagues read the consent_status cache: it says granted.
+    // No 15-minute cache wait: approval applies at once (purchases read it).
     expect(await cache(s.id)).toMatchObject({ status: 'granted', provider: 'builtin' });
+    expect((await s.c.post('/v1/ai/quick-doubt', { message: 'What is an acid?' })).statusCode).toBe(200);
+  });
 
-    // A stale cache is re-read from the record (authoritative), never trusted.
-    h.clock.advance(CONSENT.cacheTtlSeconds * 1000 + 1000);
-    expect((await s.c.get('/v1/leagues/current')).statusCode).toBe(200);
+  it('never deletes the AI data or school of an account that never reached `granted`', async () => {
+    const s = await student();
+    const ask = await s.c.post('/v1/ai/quick-doubt', { message: 'What is an acid?' });
+    expect(ask.statusCode).toBe(200);
+    const set = await s.c.patch('/v1/me', { school: { name: `Never Consented School ${uniq().replace(/\d/g, '')}`, city: 'Pune' } });
+    expect(set.statusCode, set.body).toBe(200);
+    const convs = async () => (await h.t.db.select().from(aiConversations).where(eq(aiConversations.userId, s.id))).length;
+    expect(await convs()).toBe(1);
+    // required → minor/required → pending → parent declines (revoked): never `granted`, so nothing is deleted.
+    expect((await s.c.post('/v1/me/consent/age-band', { ageBand: 'minor' })).statusCode).toBe(200);
+    const parent = parentAddr();
+    expect((await s.c.post('/v1/me/consent/parent', { parentEmail: parent })).statusCode).toBe(200);
+    expect((await s.c.post('/v1/me/consent/withdraw')).json().status).toBe('revoked');
+    expect(await convs()).toBe(1);
+    expect((await s.c.get('/v1/me')).json().school).toMatchObject({ city: 'Pune' });
+    const deleted = await h.t.db.select().from(auditLog).where(and(eq(auditLog.targetId, s.id), eq(auditLog.action, 'consent.ai_data_deleted')));
+    expect(deleted).toHaveLength(0);
   });
 });
 

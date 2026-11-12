@@ -49,7 +49,7 @@ describe('upload URLs (F-013, AC-16)', () => {
     expect((await other.c.post(`/v1/ai/uploads/${t.uploadId}/complete`)).statusCode).toBe(404);
   });
 
-  it('refuses SVG/HTML types, files over 10 MB and PDFs (S6-M01: images only, both kinds); needs consent; is rate limited', async () => {
+  it('refuses SVG/HTML types, files over 10 MB and PDFs (S6-M01: images only, both kinds); needs no consent (D-052); is rate limited', async () => {
     const { c, id } = await h.member();
     expect((await c.post('/v1/ai/uploads', { kind: 'photo_doubt', contentType: 'image/svg+xml', bytes: 10 })).statusCode).toBe(400);
     expect((await c.post('/v1/ai/uploads', { kind: 'photo_doubt', contentType: 'image/heic', bytes: 10 })).statusCode).toBe(400);
@@ -70,7 +70,8 @@ describe('upload URLs (F-013, AC-16)', () => {
     const noConsent = await h.member();
     h.consent.setStatus(noConsent.id, 'pending');
     await h.services.consent.refresh(noConsent.id);
-    expect((await noConsent.c.post('/v1/ai/uploads', { kind: 'photo_doubt', contentType: 'image/png', bytes: 10 })).statusCode).toBe(403);
+    // D-052: uploads need no consent.
+    expect((await noConsent.c.post('/v1/ai/uploads', { kind: 'photo_doubt', contentType: 'image/png', bytes: 10 })).statusCode).toBe(201);
   });
 
   it('an expired or forged SAS cannot write', async () => {

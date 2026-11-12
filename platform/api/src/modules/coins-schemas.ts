@@ -84,6 +84,7 @@ export const StoreSchema = z
     /** D-038: false at launch — no items are listed; the page shows "Exclusive rewards — coming soon". */
     redemptionEnabled: z.boolean(),
     physicalRedemptionEnabled: z.boolean(),
+    /** Signed in, physical items listed and `physical_rewards` consent-gated: your consent state; null otherwise. */
     consentStatus: z.enum(['required', 'pending', 'granted', 'revoked']).nullable(),
     verified: z.boolean().nullable(),
     items: z.array(
