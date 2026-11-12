@@ -42,7 +42,8 @@ export default defineConfig({
       command: 'npx tsx e2e/tests/platform/web/api-e2e.ts',
       cwd: platformRoot,
       url: `${API_ORIGIN}/healthz`,
-      timeout: 300_000,
+      // Publishing every authored chapter (729 on 2026-11-12) takes ~310 s on the Windows dev machine; 300 s timed out.
+      timeout: 600_000,
       reuseExistingServer: false,
       stdout: 'ignore',
       stderr: 'pipe',

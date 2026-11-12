@@ -258,7 +258,7 @@ export function V3Gallery({ prefix: p }: { prefix: string }) {
         </Card>
       </div>
 
-      <h3 className={s.h3}>Page template: PageColumns + PageSection (two columns when the page is ≥ 1000 px wide)</h3>
+      <h3 className={s.h3}>Page template: PageColumns + PageSection (two columns when the page is ≥ 960 px wide)</h3>
       <PageColumns
         railLabel="Today"
         rail={

@@ -17,7 +17,7 @@
 .railFirst .rail {
   order: -1;
 }
-@container (min-width: 1000px) {
+@container (min-width: 960px) {
   .withRail {
     grid-template-columns: minmax(0, 1fr) var(--p-right-rail-w);
     gap: var(--p-space-8);

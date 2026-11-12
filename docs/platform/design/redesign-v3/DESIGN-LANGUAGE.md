@@ -49,8 +49,8 @@ Study modes: `STUDY_MODES` in `kit/tints.ts`: Lesson blue (play), Notes yellow (
 |---|---|---|
 | 360–767 | Top bar (mark, chips, theme, avatar / Log in); "Back to soylai.com" row above it; bottom tab bar (5 tabs) | One column, 16 px gutter. Rail content stacks after the main column (or first: `railFirstOnPhones`). |
 | 768–1023 | Same as phones; 24 px gutter | One column; card grids get 2–3 columns. |
-| 1024–1279 | Icon-rail sidebar (80 px; names as tooltips and accessible names), top bar shows the class chip | One column unless the page container is ≥ 1000 px (it is not at this width). |
-| 1280+ | Full sidebar (248 px) with labels, credits, soylai.com link and the student card; top bar shows class chip + today's date (from 1180 px of top bar) | Main column + 320 px right rail when the page container is ≥ 1000 px (true from about 1300 px). 32 px gutter. Content max 1200 px. |
+| 1024–1279 | Icon-rail sidebar (80 px; names as tooltips and accessible names), top bar shows the class chip | One column at 1024 px; from about 1100 px the page container reaches 960 px and `PageColumns` shows the right rail. |
+| 1280+ | Full sidebar (248 px) with labels, credits, soylai.com link and the student card; top bar shows class chip + today's date (from 1180 px of top bar) | Main column + 320 px right rail (`PageColumns`: the page container is ≥ 960 px). 32 px gutter. Content max 1200 px. |
 
 The page container is `shell.page` from `components/platform/shell/shell.module.css` (max-width `--p-content-max`, padding `--p-gutter`). It lines up with the top bar; an e2e test checks this on every page. **Every page's first element inside `#platform-content` is this container.**
 
@@ -228,7 +228,7 @@ Each brief: purpose → sections in order (phone order = this order unless noted
 
 ### Home: `/me/dashboard` (members' "today")
 Purpose: one calm screen that starts today's learning.
-1. `GreetingHeader variant="hero"`: eyebrow "{BOARD} · Class N" (or the add-class prompt), title `greetingFor(), FirstName`, subtitle one encouraging line (streak or goal), ONE action: `ButtonLink` to the next step (resume lesson/practice; new students: "Pick a subject"), art: the student's `AnimalAvatar` (112 px; 72/56/48 by stage via `--p-stage-avatar` × 2).
+1. `GreetingHeader variant="hero"`: eyebrow "{BOARD} · Class N" (or the add-class prompt), title `greetingFor(), FirstName`, subtitle one encouraging line (streak or goal), ONE action: `ButtonLink` to the next step (resume lesson/practice; new students: "Pick a subject"), art: the student's `AnimalAvatar` (`size={112}`, decorative; the hero hides art below 560 px).
 2. `ContinueCard` (only if there is something to continue): subject tint + glyph, "Unit 2 · Lesson 3"-style meta, progress.
 3. Rail first on phones (`railFirstOnPhones`): **Today's goal** `RailCard` with `GoalRing` (weekly goal or today's practice goal) + `WeekStrip`.
 4. **Your subjects**: `PageSection` + `CardGrid` of `SubjectCard` (class subjects with lessons; progress where known; "See all" → `/learn/{board}/{class}`).
@@ -257,7 +257,7 @@ Members: do not repeat the board/class picker at full size; show `ContinueCard`,
 `PageHeader` (breadcrumbs) → `CardGrid` of `SubjectCard` grouped by tier (core, languages, electives: `PageSection` each, `count`). `variant="plain"` when a group has > 8 subjects. Rail (≥ 1280): "Tests for Class N" `RailCard` + daily challenge.
 
 ### Subject hub: `/learn/{board}/{class}/{subject}`
-`PageHeader` with the subject `IconTile` (xl, tint) → course progress `Card` (ProgressRing + MasteryBar + "Up next" `ButtonLink`) → chapters as `List`s per unit (`ListRow` with mastery pip as `leading`, status pill as `trailing`). Keep the course sidebar at ≥ 1280 if it still fits (container ≥ 1000 px), otherwise drop it below the list; keep `course-sidebar`, `chapters-title` testids/ids.
+`PageHeader` with the subject `IconTile` (xl, tint) → course progress `Card` (ProgressRing + MasteryBar + "Up next" `ButtonLink`) → chapters as `List`s per unit (`ListRow` with mastery pip as `leading`, status pill as `trailing`). Keep the course sidebar at ≥ 1280 if it still fits (page container ≥ 960 px), otherwise drop it below the list; keep `course-sidebar`, `chapters-title` testids/ids.
 
 ### Chapter hub: `/learn/…/{chapter}`
 `PageHeader` → `ContinueCard` (resume point) → "Study your way" `ModeTile` grid (Lesson, Notes, Flashcards, Practice, Chapter test) with state in `meta` ("Part 2 of 3", "18 of 77 solved") → the path list (existing) restyled as a `List`. Rail: mastery for this chapter, related tests.

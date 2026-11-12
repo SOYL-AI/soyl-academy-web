@@ -2,7 +2,7 @@
  * Page layout primitives of design language v3 (ADR-032; DESIGN-LANGUAGE.md "Page template"). Server-safe.
  *
  * - PageColumns: the main column plus an optional right rail. Two columns when the page container is at least
- *   1000 px wide (a container query, so it follows the space the app shell leaves, not the window); otherwise one
+ *   960 px wide (a container query, so it follows the space the app shell leaves, not the window); otherwise one
  *   column with the rail after the main column (or before it: `railFirstOnPhones`).
  * - SectionHeader: a section title with an optional count, description and "See all" link.
  * - PageSection: a <section> labelled by its SectionHeader.
