@@ -39,7 +39,7 @@ All four syllabus topics are covered:
 | Type | Count | Notes |
 |---|---|---|
 | mcq | 40 | keys a10 b10 c10 d10 |
-| assertion-reason | 7 | ICSE option order, set by verdict; keys c, a, c, a, c, d, b |
+| assertion-reason | 7 | ICSE option order, set by verdict; keys c, d, c, c, b, d, b (superseded: see Competency audit 2026-11-05; was c, a, c, a, c, d, b) |
 | true-false | 6 | |
 | fill-blank | 4 | |
 | match | 1 | Reformers and organisations |
@@ -55,7 +55,7 @@ The three source-based items use imagined documents written by SOYL and labelled
 - a schematic timeline.
 
 - **Difficulty:** d1 24, d2 42, d3 17, d4 4.
-- **Competency:** recall 31, understanding 12, application 13, analysis 30, evaluation 1. That puts 51% of items at application or above (lint band 45–65%).
+- **Competency:** recall 31, understanding 12, application 13, analysis 30, evaluation 1. That puts 51% of items at application or above (lint band 45–65%). (Superseded: see Competency audit 2026-11-05.)
 - The bank is larger than the 66–76 asked for; the extra items are spares not used in either test.
 
 ## Facts a reviewer should double-check
@@ -102,3 +102,59 @@ The three source-based items use imagined documents written by SOYL and labelled
 
 - **Rendering:** nobody has seen the SVG labels rendered, so they need a look at 360 px on staging. The timeline has nine labels in six lanes.
 - **Audio:** no narration audio yet (TTS stage).
+
+## Competency audit 2026-11-05
+
+Reference: `docs/platform/content-qa/2026-11-05-competency-retag-audit.md`. This chapter was a named lead: ten "why" and "how" stems and several scenario-wrapped name, Act and provision items had been tagged application or analysis although their answers restate a textbook reason, feature or fact. Tags now follow the competency definitions; the band was restored by rewriting items, not by relabelling.
+
+**Honest retags (no rewrite):**
+- 049 `tf_press_english` application to understanding (restates the Act's scope).
+- 084 `m_reform_pick` application to understanding (matches listed features to an organisation).
+- 085 `m_press_language` analysis to understanding (textbook reason).
+- 086 `m_inc_platform` analysis to understanding (textbook reason).
+- 076 `l_inc` understanding to recall (all three parts ask for dates, names and facts).
+- 036 `mt_reformers` understanding to recall (names matched to organisations).
+- The four check-slide items (085, 086, 049, 084) are retagged and not rewritten, so the deck check slides still match them.
+
+**Rewritten to genuine application or analysis (same key, type, marks, topics and test slots):**
+- 003 `m_drain_item` application: classify two payments by where the money goes.
+- 004 `m_crafts` analysis: pick the cause that fits all report details; duties in Britain are a true but partial distractor.
+- 005 `m_revenue` analysis: which feature explains why one bad harvest led to land sales.
+- 006 `m_famine` application: chronology, could the 1877 Durbar have caused the famine of 1876–78.
+- 009 `m_arms` analysis: reply to a claim that the Act was ordinary regulation (discrimination, not regulation).
+- 013 `ar_vpa_discrimination` application: a paper switches to English, because the Act covered Indian-language papers only.
+- 014 `ar_durbar_famine` analysis, now both true, R not the explanation (key d): coincidence of date is not a reason.
+- 017 `s_drain_two` application: profits sent to Britain against profits reinvested in India.
+- 018 `s_crafts_ruin` analysis: why "lost income" is an incomplete reading; the cause was read as policy.
+- 020 `s_ilbert_effect` analysis: choose between two readings of the diluted Bill.
+- 021 `s3_economic_three` analysis: which grievance spreads beyond its region, and why a local one does not.
+- 024 `m_roy_education` application: chronology, sati ban of 1829 against the Congress of 1885.
+- 026 `m_phule_girls` analysis: correct a claim that Phule and Dayananda "did the same thing".
+- 030 `m_chicago` application: chronology, Chicago 1893 could not have inspired the 1885 founders.
+- 031 `m_reform_link` analysis: qualify a claim that reform had nothing to do with nationalism.
+- 032 `ar_vivek_service` application, both true and R explains: respect abroad strengthened self-confidence.
+- 033 `ar_dayananda_caste` analysis, now both true and R explains (key c): the Vedas used as an argument for reform.
+- 040 `s_dayananda_two` evaluation: assess "return to the Vedas means undoing reform" with two features.
+- 041 `s_vivek_two` evaluation: qualify "only through the Chicago speech" with two facts.
+- 042 `s3_reform_nation` analysis: compare the bases of Phule and Dayananda and judge which appeals to excluded groups.
+- 043 `m_press_role` analysis: infer the government's thinking from the Act covering Indian-language papers only.
+- 046 `m_amrita` analysis: what a paper's switch to English shows about the Act.
+- 048 `ar_press_unity` analysis, now A false and R true (key b): language limits a paper's reach.
+- 050 `s_press_two` application: what a mixed-province issue gives nationalism and the risk under the Act.
+- 052 `s3_press_three` analysis: infer government concern from an imagined official note.
+- 061 `m_precursor` analysis: which fact weakens "no Indian political body before 1885".
+- 063 `ar_inc_independence` analysis, A false and R true (key b): 72 delegates against where they came from.
+- 069 `s_hume_why` evaluation: a fact for and a fact against "an official's founding means it was not Indian".
+- 070 `s3_inc_why` analysis: infer from an imagined note on separate local associations, plus the 1883 lesson.
+- 071 `l_economic`, 072 `l_repression`, 073 `l_reformers_a`, 074 `l_reformers_b`, 075 `l_press`: every part rewritten as application, analysis or assessment (new-case classification, comparison, chronology, evaluation of a claim); marks per part unchanged.
+- 077 `l_inc_why`: parts (i) and (ii) rewritten (a claim that one development was enough; one fact read both ways); part (iii) was already an evaluation.
+- 078 `l_factors`: part (ii) rewritten as a no-newspapers counterfactual; parts (ii) and (iii) now make 7 of 10 marks.
+- 079 `sb_weaver_letter`: part (b) is now an inference about why a switch of language helps; part (c) (ii) assesses the letter as evidence.
+- 080 `sb_delegate_diary`: part (b) dates the diary from its details; part (c) (ii) weighs two readings of a detail.
+- 081 `sb_timeline`: part (b) and part (c) (ii) are chronology reasoning from the timeline.
+
+**Judged honest and left alone:** 011 `m_ilbert_lesson` (infer a lesson from a described outcome), 060 `m_safety_valve` (weigh a balanced reading against overclaims), 062 `ar_inc_unity` (needs a causal judgement that R does not explain A).
+
+**Judged recall or understanding and left as such (not in the band):** every name, date, venue and Act item; 001, 008, 010, 015, 023, 028, 059 stay understanding.
+
+**New counts:** recall 33, understanding 12, application 10, analysis 28, evaluation 4. That is 42 of 87 at application or above, 48.3% (lint band 45–65%). The assertion-reason keys are now c, d, c, c, b, d, b. Two builds give byte-identical `release.json` and `tests.json`.

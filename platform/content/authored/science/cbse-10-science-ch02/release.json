@@ -3251,7 +3251,7 @@
       "unit": "cbse-10-science-ch02",
       "language": "en",
       "type": "true-false",
-      "stem_md": "True or false? Vanilla essence loses its smell when it is added to an **acidic** solution.",
+      "stem_md": "True or false? A student adds a few drops of vanilla essence to two colourless liquids. In liquid P the vanilla smell stays; in liquid Q the smell disappears. Therefore P must be a base and Q must be an acid.",
       "options": [
         {
           "id": "t",
@@ -3268,21 +3268,21 @@
           "f"
         ]
       },
-      "solution_md": "False. Vanilla essence is an olfactory indicator: its smell remains in an acid and disappears in a **base**.",
+      "solution_md": "False. Vanilla essence is an olfactory indicator: its smell disappears only in a **base**. So Q, where the smell vanished, is a base. In P the smell stays, which happens in an acid and also in a neutral liquid, so P is not shown to be a base; the conclusion has the two liquids the wrong way round.",
       "marking_scheme": [
         {
-          "step": "Correct option (f): the smell disappears only in a base",
+          "step": "Correct option (f): Q is the base; P is acidic or neutral",
           "marks": 1
         }
       ],
       "marks": 1,
-      "difficulty": 1,
-      "competency": "recall",
-      "bloom": "remember",
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
       "topic_ids": [
         "cbse-10-science-ch02-t01"
       ],
-      "expected_time_sec": 40,
+      "expected_time_sec": 60,
       "assets": [],
       "children": [],
       "status": "draft",
@@ -3300,23 +3300,23 @@
       "unit": "cbse-10-science-ch02",
       "language": "en",
       "type": "mcq",
-      "stem_md": "Ravi adds dilute sulphuric acid to zinc granules and passes the gas into soap solution. When a burning candle is brought near a rising soap bubble, the bubble bursts with a **pop**. The gas is:",
+      "stem_md": "A student drops three unlabelled solids, X, Y and Z, into separate test tubes of dilute hydrochloric acid and tests any gas given off with a burning splinter. X fizzes, and its gas puts the splinter out and turns lime water milky. Y fizzes, and its gas burns with a pop. Z shows no change. Which row is the best identification?",
       "options": [
         {
           "id": "a",
-          "text_md": "carbon dioxide"
+          "text_md": "X is a metal, Y is a carbonate, Z is copper."
         },
         {
           "id": "b",
-          "text_md": "oxygen"
+          "text_md": "X is a carbonate, Y is a carbonate, Z is zinc."
         },
         {
           "id": "c",
-          "text_md": "hydrogen"
+          "text_md": "X is a carbonate, Y is a reactive metal such as zinc, and Z may be an unreactive metal such as copper."
         },
         {
           "id": "d",
-          "text_md": "sulphur dioxide"
+          "text_md": "X is a metal, Y is a metal, Z is a carbonate."
         }
       ],
       "match_right": [],
@@ -3325,21 +3325,21 @@
           "c"
         ]
       },
-      "solution_md": "Step 1: A metal reacting with a dilute acid gives a salt and hydrogen: $\\ce{Zn + H2SO4 -> ZnSO4 + H2}$.\nStep 2: Hydrogen burns with a pop sound, which confirms it. Carbon dioxide puts out a flame, and oxygen would make the candle burn brighter, not pop. So (c).",
+      "solution_md": "Step 1: A gas that puts out a flame and turns lime water milky is carbon dioxide, so X is a carbonate: $\\ce{CaCO3 + 2HCl -> CaCl2 + H2O + CO2}$.\nStep 2: A gas that burns with a pop is hydrogen, so Y is a metal above hydrogen in the reactivity series: $\\ce{Zn + 2HCl -> ZnCl2 + H2}$.\nStep 3: No change means Z neither releases carbon dioxide nor displaces hydrogen, so it can be an unreactive metal such as copper, but it cannot be zinc. So (c). (a) swaps the two gases. (b) calls Y a carbonate, but carbon dioxide does not pop, and a zinc sample would fizz. (d) makes Z a carbonate, which would fizz.",
       "marking_scheme": [
         {
-          "step": "Correct option (c): metal + acid gives hydrogen, which burns with a pop",
+          "step": "Correct option (c): X carbonate (carbon dioxide), Y reactive metal (hydrogen), Z unreactive",
           "marks": 1
         }
       ],
       "marks": 1,
-      "difficulty": 2,
-      "competency": "understanding",
-      "bloom": "understand",
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
       "topic_ids": [
         "cbse-10-science-ch02-t02"
       ],
-      "expected_time_sec": 60,
+      "expected_time_sec": 90,
       "assets": [],
       "children": [],
       "status": "draft",
@@ -4044,23 +4044,23 @@
       "unit": "cbse-10-science-ch02",
       "language": "en",
       "type": "mcq",
-      "stem_md": "Dry hydrogen chloride gas does not change the colour of **dry** blue litmus paper, but it turns **moist** blue litmus paper red. The best explanation is:",
+      "stem_md": "Hydrogen chloride gas is bubbled separately into water and into dry toluene, an organic liquid that does not split it into ions. A strip of blue litmus paper is dipped into each solution. Which prediction is correct?",
       "options": [
         {
           "id": "a",
-          "text_md": "Hydrogen chloride is not an acid."
+          "text_md": "Both strips turn red, because both solutions contain hydrogen chloride."
         },
         {
           "id": "b",
-          "text_md": "Moisture makes the litmus paper basic."
+          "text_md": "Only the strip in toluene turns red, because there is no water to weaken the acid."
         },
         {
           "id": "c",
-          "text_md": "Dry litmus paper cannot detect any acid at all."
+          "text_md": "Neither strip changes, because a gas cannot act as an acid."
         },
         {
           "id": "d",
-          "text_md": "Hydrogen ions form only when hydrogen chloride dissolves in water."
+          "text_md": "Only the strip in water turns red, because hydrogen ions form only when hydrogen chloride dissolves in water."
         }
       ],
       "match_right": [],
@@ -4069,21 +4069,21 @@
           "d"
         ]
       },
-      "solution_md": "Step 1: Acidic behaviour comes from hydrogen ions, and hydrogen chloride gives them only in water: $\\ce{HCl + H2O -> H3O+ + Cl-}$.\nStep 2: Without water there are no ions, so dry litmus does not change. So (d).\nStep 3: (a) is wrong — its solution is a strong acid. (c) misses the real reason, the need for ions. (b) is wrong — water is neutral.",
+      "solution_md": "Step 1: Acidic behaviour comes from hydrogen ions, and hydrogen chloride forms them only with water: $\\ce{HCl + H2O -> H3O+ + Cl-}$.\nStep 2: In water, hydronium ions are present, so the blue litmus turns red. In toluene the molecules stay as $\\ce{HCl}$ with no ions, just as dry hydrogen chloride does not change dry litmus, so the strip stays blue. So (d).\nStep 3: (a) assumes the molecules alone act as an acid. (b) reverses the role of water, which is needed, not harmful. (c) is wrong because the aqueous solution is a strong acid.",
       "marking_scheme": [
         {
-          "step": "Correct option (d): ions form only in water",
+          "step": "Correct option (d): only the aqueous solution has hydrogen ions, so only that strip turns red",
           "marks": 1
         }
       ],
       "marks": 1,
-      "difficulty": 2,
-      "competency": "understanding",
-      "bloom": "understand",
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
       "topic_ids": [
         "cbse-10-science-ch02-t03"
       ],
-      "expected_time_sec": 60,
+      "expected_time_sec": 90,
       "assets": [],
       "children": [],
       "status": "draft",
@@ -6450,7 +6450,7 @@
       "unit": "cbse-10-science-ch02",
       "language": "en",
       "type": "true-false",
-      "stem_md": "True or false? A cake made with baking soda alone (and no acid) may taste bitter, because heating baking soda leaves sodium carbonate behind.",
+      "stem_md": "True or false? A baker finds that a cake made with baking soda alone tastes bitter. Mixing a little curd, which contains lactic acid, into the batter before baking should reduce the bitterness, because the lactic acid reacts with the baking soda, so less sodium carbonate is left behind after baking.",
       "options": [
         {
           "id": "t",
@@ -6467,21 +6467,21 @@
           "t"
         ]
       },
-      "solution_md": "True. $\\ce{2NaHCO3 -> Na2CO3 + H2O + CO2}$ on heating; the sodium carbonate left behind tastes bitter. Baking powder contains tartaric acid to neutralise it.",
+      "solution_md": "True. Baking soda alone, when heated, leaves bitter sodium carbonate: $\\ce{2NaHCO3 -> Na2CO3 + H2O + CO2}$. An acid in the batter uses up the baking soda before it can break down this way: $\\ce{NaHCO3 + C3H6O3 -> C3H5O3Na + H2O + CO2}$, giving a neutral salt (sodium lactate) and carbon dioxide that makes the cake rise. This is the same idea as baking powder, which contains tartaric acid.",
       "marking_scheme": [
         {
-          "step": "Correct option (t)",
+          "step": "Correct option (t): the acid neutralises the baking soda, so no sodium carbonate forms",
           "marks": 1
         }
       ],
       "marks": 1,
-      "difficulty": 2,
-      "competency": "understanding",
-      "bloom": "understand",
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
       "topic_ids": [
         "cbse-10-science-ch02-t07"
       ],
-      "expected_time_sec": 40,
+      "expected_time_sec": 70,
       "assets": [],
       "children": [],
       "status": "draft",

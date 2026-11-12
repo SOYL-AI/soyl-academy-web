@@ -115,19 +115,19 @@ Q('m_it_red_fear', mcq({
   sol: 'Strikes, factory occupations and peasant land seizures in 1919–20 alarmed the propertied classes, who saw the Fascists as a force against socialism and communism.',
 }));
 Q('m_app_it_strike', mcq({
-  t: 1, d: 3, c: 'application',
-  stem: 'An imagined Turin factory owner in 1920 finds that workers have occupied his factory and raised a red flag. Which cause of the rise of Fascism does his fear illustrate?',
-  opts: ['Fear of socialism and communism among the propertied classes', 'Dissatisfaction with the Treaty of Versailles in Germany', 'The Great Depression of 1929', 'The cult of the leader'],
-  sol: 'Factory occupations in 1919–20 made owners fear a red revolution, and many turned to the Fascists, who promised order. The Depression came later, in 1929.',
+  t: 1, d: 4, c: 'application',
+  stem: 'An imagined Turin factory owner saw workers occupy his plant in 1920. In 1921 he pays a fascist squad, although he finds their talk of national glory tiresome and has no interest in Fiume. A friend says: "He backs them because Italy was cheated at the peace." Which reply fits the details best?',
+  opts: ['His own experience points to fear of a socialist revolution; the peace-settlement grievance explains other supporters, such as nationalist veterans', 'The friend is right, because every Italian who supported the Fascists did so out of anger over Fiume and Dalmatia', 'The friend is right, because the occupation shows that Italy had been defeated and was being run by workers', 'The owner was reacting to the Great Depression, which had by 1920 closed most Italian factories'],
+  sol: 'The owner\'s loss of control in the occupation, and his lack of interest in nationalist claims, show that fear of socialism and communism moved him; the "mutilated victory" moved others. The Depression began only in 1929, Italy was on the winning side, and not every supporter shared one motive.',
 }));
 Q('m_app_it_veteran', mcq({
-  t: 1, d: 3, c: 'application',
-  stem: 'An imagined Italian soldier returns home in 1919, finds no job and hears that Italy gained little from the war. Which two causes of Fascism does his situation combine?',
-  opts: ['Economic hardship and dissatisfaction with the peace settlement', 'Hyperinflation of 1923 and the Enabling Act', 'The Great Depression and the Reichstag elections', 'Antisemitism and the Nuremberg Laws'],
-  sol: 'Unemployment shows economic hardship, and "Italy gained little" reflects the feeling of a mutilated victory. The other options concern Germany.',
+  t: 1, d: 4, c: 'understanding',
+  stem: 'Two imagined Italians in 1920. Marco is a returned soldier with no job who is bitter that Italy did not receive Fiume. Elena owns an estate where peasants have seized some fields. Which statement best matches why each might turn to the Fascists?',
+  opts: ['Marco: economic hardship and the "mutilated victory"; Elena: fear of a socialist revolution', 'Marco: fear of a socialist revolution; Elena: economic hardship and the "mutilated victory"', 'Both mainly because unemployment hurt landowners as well as soldiers', 'Both mainly because the Great Depression of 1929 had ruined them'],
+  sol: 'Marco\'s unemployment and his anger over Fiume are economic hardship and the mutilated victory; Elena\'s seized fields show the propertied classes\' fear of socialism. The causes are not swapped, landowners were driven by fear of revolution more than by unemployment, and the Depression began in 1929.',
 }));
 Q('m_app_it_squads', mcq({
-  t: 1, d: 3, c: 'application',
+  t: 1, d: 3, c: 'recall',
   stem: 'An imagined report from 1921 says a group of men in black shirts broke up a socialist meeting in a Po valley town while the local police stood by. Which group is described?',
   opts: ['Fascist squads (the Blackshirts) of Mussolini', 'The Brownshirts (SA) of the Nazi Party', 'The Red Army', 'A League of Nations peace force'],
   sol: 'Mussolini\'s armed squads wore black shirts and attacked socialists; the weak response of the authorities helped them grow. The Brownshirts were German.',
@@ -267,28 +267,28 @@ Q('m_de_majority', mcq({
   sol: 'The Nazis were the largest party but never won an absolute majority in a free election. Hitler became Chancellor by appointment in January 1933, after conservatives believed they could control him.',
 }));
 Q('m_app_de_wheelbarrow', mcq({
-  t: 2, d: 3, c: 'application',
+  t: 2, d: 3, c: 'recall',
   stem: 'An imagined German teacher in 1923 says her month\'s salary now buys only a loaf of bread, and people carry banknotes in baskets. Which crisis is she describing?',
   opts: ['Hyperinflation', 'The Great Depression of 1929', 'The Enabling Act', 'The Moroccan crisis'],
   sol: 'Money losing almost all its value in 1923 was hyperinflation. The Depression came after 1929 and caused mass unemployment rather than worthless money.',
 }));
 Q('m_app_de_unemployed', mcq({
-  t: 2, d: 3, c: 'application',
-  stem: 'An imagined Hamburg dock worker has had no job since 1930 and in 1932 votes for a party promising work and bread. Which cause of the rise of Nazism does this show?',
-  opts: ['Mass unemployment during the Great Depression', 'The March on Rome', 'Dissatisfaction with Italy\'s mutilated victory', 'The policy of appeasement'],
-  sol: 'Unemployment from 1930 onwards came from the Great Depression, and the Nazis drew votes by promising jobs.',
+  t: 2, d: 4, c: 'analysis',
+  stem: 'An imagined historian notes that the Nazis won only a small share of the vote in the mid-1920s, although the Treaty of Versailles had been signed in 1919 and the hyperinflation of 1923 had ruined many savers. Their vote grew sharply between 1929 and 1932. Which explanation best fits this timing?',
+  opts: ['Old resentments mattered more once the Depression brought mass unemployment and the weak coalition governments could not relieve it', 'The Treaty of Versailles, which was resented from 1919, was the main cause, so the vote should have grown in the mid-1920s', 'The hyperinflation of 1923 was still ruining savers in 1932, which is why the vote suddenly grew', 'The Enabling Act of 1933 had already given the Nazis control of elections in 1930'],
+  sol: 'Grievances over the treaty and lost savings existed from the early 1920s but did not by themselves produce a mass vote. The jump came after 1929, when millions lost jobs and unstable governments seemed unable to respond. A grievance present throughout cannot explain a sudden change, the mark was stabilised after 1923, and the Enabling Act came in 1933.',
 }));
 Q('m_app_de_coalitions', mcq({
-  t: 2, d: 3, c: 'application',
-  stem: 'An imagined German newspaper of 1930 reports that the fifth government in two years has fallen because the parties could not agree. Which weakness of the Weimar Republic does it show?',
-  opts: ['Unstable coalition governments formed from many parties', 'The power of the King', 'Control of Germany by the League of Nations', 'A one-party Nazi state'],
-  sol: 'Weimar had many parties and short-lived coalitions, so governments fell often. Germany had no King after 1918.',
+  t: 2, d: 4, c: 'application',
+  stem: 'An imagined German newspaper of 1930 reports that a government has fallen because the parties could not agree on a budget, and that the President has issued the budget by emergency decree under Article 48. What was the most serious long-term effect of this way of governing?',
+  opts: ['Germans grew used to government by decree instead of by votes in the Reichstag, which made a later dictatorship easier to accept', 'The decree gave the Nazi Party control of the government in 1930', 'The decree was illegal, so the President was removed from office', 'The decree ended the coalition problem and made the republic more democratic'],
+  sol: 'Article 48 let the President rule by decree, so when coalitions failed, laws were made without parliament. This weakened the Reichstag and the habit of democratic decision, preparing the way for Hitler. The Nazis did not hold office in 1930, the decree was permitted by the constitution, and decree rule reduced, not increased, democratic control.',
 }));
 Q('m_app_de_middle', mcq({
-  t: 2, d: 3, c: 'application',
-  stem: 'An imagined retired clerk lost the savings of a lifetime in 1923 and lost his pension again after 1929. Which group\'s experience does he represent, and where did many of them turn?',
-  opts: ['The middle class, many of whom turned to the Nazis', 'The army officers, who joined the Communists', 'The landowners of Italy, who joined the Fascists', 'Foreign bankers, who left Germany'],
-  sol: 'Middle-class savers were ruined by hyperinflation and the Depression, and many lost faith in the republic and voted for the Nazis.',
+  t: 2, d: 4, c: 'analysis',
+  stem: 'Two imagined Germans vote for the Nazis in 1932. A retired clerk lost his savings in 1923; a dock worker has been jobless since 1930. Their losses came from different crises. Which statement best explains why both could still make the same choice?',
+  opts: ['Each had lost faith in a republic that had failed to protect him, and the Nazis promised security to one and work to the other', 'Both losses were caused by the Great Depression, so only one cause is involved', 'Both feared a Communist revolution so strongly that their own losses were irrelevant to their votes', 'Both had belonged to the Nazi Party since 1923 and simply stayed loyal'],
+  sol: 'The clerk\'s loss belongs to the hyperinflation of 1923 and the worker\'s to the Depression after 1929, yet both blamed the republic\'s governments, and Nazi promises of order, security and jobs appealed to each. The Depression did not cause the 1923 loss, fear of communism was one cause but did not make personal losses irrelevant, and the party was small in 1923.',
 }));
 Q('m_app_de_rally', mcq({
   t: 2, d: 4, c: 'analysis',
@@ -428,19 +428,19 @@ Q('m_sim_youth', mcq({
   sol: 'Youth organisations (such as the Hitler Youth) shaped the young to obey the leader, accept the party\'s ideas and be ready for military service.',
 }));
 Q('m_app_sim_poster', mcq({
-  t: 3, d: 3, c: 'application',
-  stem: 'An imagined poster of 1936 shows a giant portrait of the national leader above cheering crowds, with the words "He is never wrong". Which feature of both ideologies does it show?',
-  opts: ['The cult of the leader', 'Collective security', 'Free and fair elections', 'The separation of powers'],
-  sol: 'Showing the leader as infallible and larger than life is the cult of the leader.',
+  t: 3, d: 4, c: 'analysis',
+  stem: 'An imagined poster of 1936 shows a giant portrait of the national leader above cheering crowds, with a caption saying he is never wrong. A student says: "This proves that most citizens admired him." Which reply is best?',
+  opts: ['The poster shows what the regime wanted people to believe; with no free press, other evidence is needed to know what citizens really thought', 'The student is right, because a regime could not print a poster that most citizens disliked', 'The student is wrong, because posters are produced by governments and so are useless as evidence of anything', 'The student is right, because the crowds in the picture show how many people attended the rallies'],
+  sol: 'A poster is evidence of the regime\'s propaganda and of the cult of the leader, but under a one-party state with no free press it cannot show real public opinion. It is useful evidence for what the regime wanted, so it is not worthless, and a drawn crowd is not a count of attendance.',
 }));
 Q('m_app_sim_school', mcq({
-  t: 3, d: 3, c: 'application',
-  stem: 'An imagined student in 1937 must join a uniformed youth group after school, sing songs praising the leader and practise marching. Which feature of dictatorship does this illustrate?',
-  opts: ['Control of the young through official youth organisations', 'Freedom of association', 'Respect for the League of Nations', 'Rule by a coalition of parties'],
-  sol: 'Compulsory, uniformed youth groups trained children in loyalty to the leader, a shared feature of both regimes.',
+  t: 3, d: 4, c: 'analysis',
+  stem: 'An imagined 1937 report on a state youth group in a dictatorship notes that members wear uniforms, meet after school, practise marching, and sing songs praising the leader, while all other youth clubs have been closed. Which detail is the strongest evidence that the aim was loyalty to the leader rather than leisure?',
+  opts: ['The songs praising the leader, together with the closing of every other youth club', 'The uniforms, since only political groups wear uniforms', 'The meetings after school, since leisure groups never meet at that time', 'The marching, since marching is never part of a sports club'],
+  sol: 'Songs of praise show what the group taught, and closing all rival clubs shows that children were allowed no other loyalty. Uniforms, after-school meetings and drill also occur in sports and scouting groups, so alone they do not show a political aim.',
 }));
 Q('m_app_sim_newspaper', mcq({
-  t: 3, d: 3, c: 'application',
+  t: 3, d: 3, c: 'understanding',
   stem: 'An imagined editor in 1934 is told that every article must be checked by a government office and that criticising the leader is a crime. Which common feature does this show?',
   opts: ['Suppression of civil liberties and control of the press', 'A free press protected by courts', 'Rule by the League of Nations', 'Separation of powers'],
   sol: 'Censorship and punishment of criticism show the suppression of free speech and the press under both regimes.',

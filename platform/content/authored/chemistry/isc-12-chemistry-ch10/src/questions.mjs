@@ -292,9 +292,9 @@ add('bis-mcq', mcq({
 }));
 add('ate-ar', ar({
   a: '[Ni(CO)₄] is named tetracarbonylnickelate(0).',
-  r: 'The suffix -ate is used for the metal when the complex is an anion.',
+  r: 'The suffix -ate is added to the name of the metal in every carbonyl complex.',
   key: 'd',
-  sol: 'A is false: [Ni(CO)₄] is neutral, so it is tetracarbonylnickel(0). R is true — option (d).',
+  sol: 'Both are false: [Ni(CO)₄] is neutral, so it is named tetracarbonylnickel(0); the suffix -ate is used only when the complex is an anion — option (d).',
   d: 2, c: 'understanding', t: [3],
 }));
 add('aqua-tf', tf({

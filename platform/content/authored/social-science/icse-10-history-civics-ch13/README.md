@@ -51,7 +51,7 @@ All three syllabus topics are covered. As the removed list says, only the clause
 | source-based, each with an either/or part (c) | 3 (an imagined clerk's diary from Delhi 1946, a teacher's letter from Amritsar 1947, a debating club's minutes from Lucknow 1947) |
 
 - **Difficulty:** d1 13, d2 37, d3 26, d4 4.
-- **Competency:** recall 20, understanding 21, application 22, analysis 15, evaluation 2. That puts 49% of items at application or above (lint band 45–65%). The first build came out at 38%. I raised it by rewriting nine recall or understanding items as imagined scenarios (an official sorting subjects, a provincial minister, a ruler and his adviser, a district officer, a dewan, a student's diary, a journalist, a newspaper report, a London clerk), not by retagging.
+- **Competency:** recall 20, understanding 21, application 22, analysis 15, evaluation 2. That puts 49% of items at application or above (lint band 45–65%) (superseded: see Competency audit 2026-11-05). The first build came out at 38%. I raised it by rewriting nine recall or understanding items as imagined scenarios (an official sorting subjects, a provincial minister, a ruler and his adviser, a district officer, a dewan, a student's diary, a journalist, a newspaper report, a London clerk), not by retagging.
 
 ## Facts a reviewer should check
 
@@ -104,3 +104,12 @@ All are stable, widely taught facts; none is a statistic. Every clause is paraph
 
 - **Rendering:** nobody has seen the SVG labels rendered, so they need a look at 360 px on staging. A script estimate found no overflow or overlap.
 - **Content:** items are `draft`, and the content-verifier sample has not been done.
+
+## Competency audit 2026-11-05
+
+Audit reference: `docs/platform/content-qa/2026-11-05-competency-retag-audit.md`. Tags now describe the items honestly; the share was raised by rewriting items, not by relabelling.
+
+- **Retagged to recall** (recall cued by a name, Section, order or pair): 009 `m_cm_scenario_province`, 018 `mt_cm_sections`, 044 `ord_1946_47`, 074 `tf_chk_section_c`, 075 `m_chk_two_parts`; child parts (b) of `sb_cm_diary`, `sb_mb_letter` and `sb_iia_minutes`. 025 `s3_cm_fail` (textbook reasons) went from evaluation to understanding.
+- **Rewritten as genuine application or analysis** (ids by definition order): 003 (sort a school scheme and a railway treaty between Union and province), 004 (who can act on an unlisted matter, and the difficulty for the Union), 008 (which of a state's subjects a Union subject takes), 012 (assess a partly right claim about leaving a group), 021 (what a missing League member shows on 3 September 1946), 034 (how a commission treats an isolated village; rewritten, but its key restates the commission's brief, so the reviewer tagged it understanding), 035 (a state's choice, legal against practical), 036 (why Sylhet needed a referendum), 038 (which early-1947 fact supports advancing the date), 054 (correct a diary entry on dominion and republic), 057 (why the Assembly was also made the legislature), 058 (answer a clerk's claim about the 1935 Act), 059 (assess a claim about the Governor-General's appointment), 067 (why one office ended and one continued), 068 (what the Act changed and did not change for a ruler).
+- **Other upgrades:** 006 (assess a claim on the League's concerns), 013 and 014 (new assertion-reason pairs on powers and franchise), 020 (effect and advantage of election through assemblies), 022 (which view fits the dates), 023 (assess a claim about the Sections), 032 (apply the two-part vote to a split result), 037 (which fact supports accepting the plan), 040, 061 and 062 (new assertion-reason pairs), 046 (assess a claim about Attlee's date), 047 (one point for and one against), 055 (consequence of lapsed paramountcy), 060 (which provision ended British authority).
+- **Competency now:** recall 25, understanding 18, application 13, analysis 21, evaluation 3; application or above **37 of 80 (46.3%)**, inside the 45–65% band. Assertion-reason keys are now c, b, c, d, d, c (supersedes the keys in the table above).

@@ -77,11 +77,12 @@ export function mcq(o) {
   return q;
 }
 
+// Option order and wording as in the ISC 2026 Accounts specimen paper (858, the latest Class XII Accounts specimen).
 const AR_OPTS = [
-  'Both A and R are true, and R is the correct explanation of A.',
-  'Both A and R are true, but R is not the correct explanation of A.',
-  'A is true, but R is false.',
-  'A is false, but R is true.',
+  'Both Assertion and Reason are true and Reason is the correct explanation for Assertion.',
+  'Both Assertion and Reason are true but Reason is not the correct explanation for Assertion.',
+  'Assertion is true and Reason is false.',
+  'Both Assertion and Reason are false.',
 ];
 export function ar(o) {
   const q = common('assertion-reason', { marks: 1, time: 75, ...o, stem: `${o.pre ?? ''}**Assertion (A):** ${o.a}\n\n**Reason (R):** ${o.r}\n\nChoose the correct option.` });

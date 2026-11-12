@@ -390,10 +390,10 @@ add('mond-mcq', mcq({
   d: 2, c: 'understanding', t: [4],
 }));
 add('hb-ar', ar({
-  a: 'Chlorophyll is a coordination compound of iron.',
+  a: 'Chlorophyll is a coordination compound of magnesium.',
   r: 'Haemoglobin contains iron(II) at the centre of a porphyrin ring.',
-  key: 'd',
-  sol: 'A is false: chlorophyll contains magnesium. R is true — option (d).',
+  key: 'b',
+  sol: 'Both are true, but R is about haemoglobin (iron in a porphyrin ring) and does not explain why chlorophyll contains magnesium — option (b).',
   d: 2, c: 'understanding', t: [4],
 }));
 add('cisplatin-tf', tf({

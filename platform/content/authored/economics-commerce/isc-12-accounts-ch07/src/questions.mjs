@@ -358,8 +358,8 @@ Q('tf_collateral_entry', tf({
 Q('ar_collateral', ar({
   t: 3, d: 2, c: 'understanding', key: 'd',
   a: 'Debentures issued by Brahmatal Ski Lifts Ltd, an imagined company, as collateral security for a bank loan earn interest for the bank from the date they are issued.',
-  r: 'Collateral debentures can be enforced by the lender only if the company fails to repay the loan.',
-  sol: 'A is false: no interest is paid on collateral debentures; the bank earns interest on its loan only. R is true.',
+  r: 'Collateral debentures can be enforced by the lender as soon as they are issued, even if the company repays the loan on time.',
+  sol: 'Both are false: no interest is paid on collateral debentures (the bank earns interest on its loan only), and the lender can enforce them only if the company fails to repay the loan.',
 }));
 
 const NVD = vendorLot({ amount: 480000, rate: 10, iss: -4 });

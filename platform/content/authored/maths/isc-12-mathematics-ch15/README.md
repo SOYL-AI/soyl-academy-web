@@ -76,3 +76,7 @@ Run from `platform/`: `npx tsx content/authored/maths/isc-12-mathematics-ch15/sr
 - **`ar4`:** keyed (c). A is true; R ("$p$ may be negative") is false.
 - **`s302`:** the centroid-of-intercept-triangle set-up is a standard question type; the numbers $(2, -1, 3)$ are our own.
 - **Rendering:** nobody has seen the 3-D sketch labels rendered, so they need a look at 360 px on staging.
+
+## Assertion-reason options (2026-11-09)
+
+Options aligned with the ISC 2027 Mathematics specimen paper (860): (a) both true, R explains A; (b) both true, R does not explain A; (c) A true, R false; (d) A false, R true. For this chapter the order is unchanged ((d) "Assertion is false and Reason is true"); only the wording now follows the specimen, so no key changed. Keys in bank order: a a a c d. Tests are unchanged (same items in the same slots).

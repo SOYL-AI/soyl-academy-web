@@ -69,10 +69,10 @@ Q('ar_whatif', ar({
 }));
 
 Q('ar_always_right', ar({
-  t: 1, d: 3, c: 'analysis', key: 'd',
-  a: 'Because every total in the sales sheet of an imagined firm, Edakka Electricals, is worked out by a formula, the totals in that sheet are always correct.',
+  t: 1, d: 3, c: 'analysis', key: 'b',
+  a: 'Even though every total in the sales sheet of an imagined firm, Edakka Electricals, is worked out by a formula, the totals in that sheet can still be wrong.',
   r: 'A formula recalculates its result whenever a cell it refers to is changed.',
-  sol: 'R is true, but A is false: a formula that points at the wrong range, a figure typed into the wrong cell, or a formula overwritten by a typed number gives a wrong total that still looks neat.',
+  sol: 'Both are true, but automatic recalculation does not explain the errors: a formula pointing at the wrong range, a figure typed into the wrong cell or a formula overwritten by a typed number still gives a wrong total.',
 }));
 
 Q('s2_utility', short({

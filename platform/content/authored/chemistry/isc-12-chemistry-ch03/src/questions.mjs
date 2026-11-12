@@ -262,10 +262,10 @@ add('series-match', match({
   d: 2, c: 'understanding', t: [4],
 }));
 add('intensive-ar', ar({
-  a: 'The standard potential of 2Cu²⁺ + 4e⁻ → 2Cu is twice that of Cu²⁺ + 2e⁻ → Cu.',
+  a: 'The standard potential of 2Cu²⁺ + 4e⁻ → 2Cu is the same as that of Cu²⁺ + 2e⁻ → Cu.',
   r: 'Electrode potential is an intensive property.',
-  key: 'd',
-  sol: 'A is false — both have E° = +0.34 V; R is true and is the reason the value is unchanged — option (d).',
+  key: 'a',
+  sol: 'Both are true: both half-reactions have E° = +0.34 V, because electrode potential is intensive and does not change when the equation is multiplied; R explains A — option (a).',
   d: 2, c: 'understanding', t: [4],
 }));
 add('series-tf', tf({

@@ -63,3 +63,7 @@ This is a hand-authored production chapter (DECISIONS D-025, D-026). It follows 
 - **`s209` and `ar4`:** they use $\int \log x\,dx = x\log x - x$ as a known standard result (integration by parts is ch09).
 - **Notation:** `log` means the natural logarithm throughout.
 - **Rendering:** nobody has seen the plot labels rendered, so they need a look at 360 px on staging. The circle-and-parabola plot is the densest.
+
+## Assertion-reason options (2026-11-09)
+
+Options aligned with the ISC 2027 Mathematics specimen paper (860): (a) both true, R explains A; (b) both true, R does not explain A; (c) A true, R false; (d) A false, R true. For this chapter the order is unchanged ((d) "Assertion is false and Reason is true"); only the wording now follows the specimen, so no key changed. Keys in bank order: a b d a c b. Tests are unchanged (same items in the same slots).

@@ -396,10 +396,10 @@ add('fuel-mcq', mcq({
   d: 2, c: 'understanding', t: [5],
 }));
 add('battery-ar', ar({
-  a: 'A fuel cell must be recharged from an external source when its voltage falls.',
+  a: 'A fuel cell does not need to be recharged from an external source when it has been in use for a long time.',
   r: 'The reactants of a fuel cell are supplied continuously from outside.',
-  key: 'd',
-  sol: 'A is false — a fuel cell keeps working as long as fuel and oxygen are supplied; R is true — option (d).',
+  key: 'a',
+  sol: 'Both are true: a fuel cell keeps working as long as fuel and oxygen are fed in from outside, so it is never recharged like a storage cell; R explains A — option (a).',
   d: 2, c: 'understanding', t: [5],
 }));
 add('battery-match', match({

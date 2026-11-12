@@ -88,9 +88,9 @@ add('active-mcq', mcq({
 }));
 add('mass-action-ar', ar({
   a: 'The law of mass action correctly predicts the rate law of H₂ + Br₂ → 2HBr from its balanced equation.',
-  r: 'For complex reactions, the order with respect to each reactant must be found by experiment.',
+  r: 'The order of a reaction with respect to each reactant is always equal to its coefficient in the balanced equation.',
   key: 'd',
-  sol: 'A is false — the experimental rate law is k[H₂][Br₂]^½, not k[H₂][Br₂]; R is true — option (d).',
+  sol: 'Both are false: the experimental rate law is k[H₂][Br₂]^½, not k[H₂][Br₂], because orders of complex reactions are found by experiment and need not equal the coefficients — option (d).',
   d: 3, c: 'analysis', t: [2, 3],
 }));
 add('mass-action-short', short({

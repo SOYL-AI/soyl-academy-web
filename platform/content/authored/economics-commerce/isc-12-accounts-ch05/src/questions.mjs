@@ -141,8 +141,8 @@ Q('tf_iff_capitals', tf({
 Q('ar_reserve', ar({
   t: [2, 4], d: 2, c: 'understanding', key: 'd',
   a: 'The general reserve of Wayanad Pepper Growers, an imagined firm being dissolved, which is not set aside for any particular asset or liability, is credited to the Realisation Account.',
-  r: "A reserve related to no asset or liability belongs to the partners and is credited to their capital accounts in the profit-sharing ratio.",
-  sol: 'A is false: an unrelated reserve does not pass through the Realisation Account. R is true and states the correct treatment.',
+  r: 'A reserve related to no asset or liability is transferred to the Realisation Account like the firm\'s assets.',
+  sol: 'Both are false: a reserve not set aside for any asset or liability belongs to the partners and is credited to their capital accounts in the profit-sharing ratio; it does not pass through the Realisation Account.',
 }));
 
 Q('fb_nominal', fb({
@@ -560,10 +560,10 @@ Q('m_partner_loan_debit', mcq({
 }));
 
 Q('ar_partner_loan', ar({
-  t: 4, d: 3, c: 'analysis', key: 'd',
-  a: "If Saurav's capital account in Saundatti Tile Works, an imagined firm being dissolved, ends in debit, his loan to the firm is set off against it and only the net amount is settled.",
+  t: 4, d: 3, c: 'analysis', key: 'a',
+  a: 'If Saurav\'s capital account in Saundatti Tile Works, an imagined firm being dissolved, ends in debit, his loan to the firm is not set off against it.',
   r: "Under the ISC syllabus, a loan taken from a partner is paid through the Cash or Bank Account even when that partner's capital account has a debit balance.",
-  sol: 'A is false under the ISC rule, which forbids the set-off; R is true and gives the rule.',
+  sol: 'Both are true: the ISC rule pays a partner\'s loan through the Cash or Bank Account even when his capital account is in debit, so no set-off is made. R explains A.',
 }));
 
 const GPP = { to: 10000, from: 25000 };

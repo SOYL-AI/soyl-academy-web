@@ -62,3 +62,7 @@ No item was retagged after the first build. After the first build the applicatio
 - Irrational critical points are not used (the solver factors over the rationals only); the textbook examples with $x^2 - 4x + 1$-type roots are not covered, and the parameter items avoid them.
 - Inequalities with the unknown in a fraction on both sides are not taught (the syllabus compares a fraction with a constant).
 - t01 has fewer items (20) than t02 (41); the linear skills are also used inside the later items (double inequalities, common parts and the word problems).
+
+## Assertion-reason options (2026-11-09)
+
+Options aligned with the ISC 2027 Mathematics specimen paper (860): (a) both true, R explains A; (b) both true, R does not explain A; (c) A true, R false; (d) A false, R true. For this chapter the order is unchanged ((d) "Assertion is false and Reason is true"); only the wording now follows the specimen, so no key changed. Keys in bank order: a b c d a b. Tests are unchanged (same items in the same slots).

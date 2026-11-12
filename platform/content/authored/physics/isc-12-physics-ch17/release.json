@@ -34268,8 +34268,8 @@
       ],
       "marks": 1,
       "difficulty": 2,
-      "competency": "application",
-      "bloom": "apply",
+      "competency": "understanding",
+      "bloom": "understand",
       "topic_ids": [
         "isc-12-physics-ch17-t01"
       ],
@@ -34833,8 +34833,8 @@
       ],
       "marks": 2,
       "difficulty": 2,
-      "competency": "application",
-      "bloom": "apply",
+      "competency": "understanding",
+      "bloom": "understand",
       "topic_ids": [
         "isc-12-physics-ch17-t02"
       ],
@@ -34877,8 +34877,8 @@
       ],
       "marks": 2,
       "difficulty": 3,
-      "competency": "application",
-      "bloom": "apply",
+      "competency": "understanding",
+      "bloom": "understand",
       "topic_ids": [
         "isc-12-physics-ch17-t02"
       ],
@@ -34934,8 +34934,8 @@
       ],
       "marks": 1,
       "difficulty": 2,
-      "competency": "application",
-      "bloom": "apply",
+      "competency": "understanding",
+      "bloom": "understand",
       "topic_ids": [
         "isc-12-physics-ch17-t02"
       ],
@@ -35179,8 +35179,8 @@
       ],
       "marks": 1,
       "difficulty": 2,
-      "competency": "application",
-      "bloom": "apply",
+      "competency": "understanding",
+      "bloom": "understand",
       "topic_ids": [
         "isc-12-physics-ch17-t03"
       ],
@@ -35236,8 +35236,8 @@
       ],
       "marks": 1,
       "difficulty": 2,
-      "competency": "application",
-      "bloom": "apply",
+      "competency": "understanding",
+      "bloom": "understand",
       "topic_ids": [
         "isc-12-physics-ch17-t03"
       ],
@@ -35986,25 +35986,25 @@
       "unit": "isc-12-physics-ch17",
       "language": "en",
       "type": "numerical",
-      "stem_md": "Two slits 0.36 mm apart are lit by deep-red light of wavelength 720 nm. Find the angular fringe width of the pattern, in milliradians.",
+      "stem_md": "A student finds the wavelength of a laser by double-slit fringes. The slits are 0.36 mm apart and the screen is 1.50 m away. She measures 10.8 mm from the central bright fringe to the 6th bright fringe on one side. Find the wavelength of the laser, in nm.",
       "options": [],
       "match_right": [],
       "answer": {
-        "value": 2,
-        "tolerance": 0.05,
-        "unit": "mrad"
+        "value": 432,
+        "tolerance": 2,
+        "unit": "nm"
       },
-      "solution_md": "$\\theta_\\beta = \\dfrac{\\beta}{D} = \\dfrac{\\lambda}{d} = \\dfrac{720 \\times 10^{-9}}{0.36 \\times 10^{-3}} = 2.0 \\times 10^{-3}$ rad $= 2.0$ mrad.",
+      "solution_md": "The 6th bright fringe is at $y_6 = 6\\beta$, so $\\beta = \\dfrac{10.8}{6} = 1.80$ mm. From $\\beta = \\dfrac{\\lambda D}{d}$: $\\lambda = \\dfrac{\\beta d}{D} = \\dfrac{1.80 \\times 10^{-3} \\times 0.36 \\times 10^{-3}}{1.50} = 4.32 \\times 10^{-7}$ m $= 432$ nm.",
       "marking_scheme": [
         {
-          "step": "θ = λ/d = 2.0 mrad",
+          "step": "β = 10.8/6 = 1.80 mm",
           "marks": 1
         }
       ],
       "marks": 1,
-      "difficulty": 1,
-      "competency": "understanding",
-      "bloom": "understand",
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
       "topic_ids": [
         "isc-12-physics-ch17-t04"
       ],
@@ -36083,27 +36083,27 @@
       "unit": "isc-12-physics-ch17",
       "language": "en",
       "type": "numerical",
-      "stem_md": "Violet light of wavelength 420 nm passes through two slits 0.28 mm apart. How far from the slits must the screen be placed for the fringes to be 1.5 mm wide? Answer in m.",
+      "stem_md": "Violet light of wavelength 420 nm (in air) passes through two slits 0.28 mm apart, and the fringes on the screen are 1.5 mm wide. The slits are then replaced by a pair 0.20 mm apart, the screen is not moved, and the whole apparatus is immersed in water (n = 1.33). What is the fringe width now? Answer in mm (3 significant figures).",
       "options": [],
       "match_right": [],
       "answer": {
-        "value": 1,
+        "value": 1.58,
         "tolerance": 0.02,
-        "unit": "m"
+        "unit": "mm"
       },
-      "solution_md": "$D = \\dfrac{\\beta d}{\\lambda} = \\dfrac{1.5 \\times 10^{-3} \\times 0.28 \\times 10^{-3}}{420 \\times 10^{-9}} = 1.0$ m.",
+      "solution_md": "The screen distance is not given, so find it from the first arrangement: $D = \\dfrac{\\beta d}{\\lambda} = \\dfrac{1.5 \\times 10^{-3} \\times 0.28 \\times 10^{-3}}{420 \\times 10^{-9}} = 1.0$ m. In water the wavelength becomes $\\lambda' = \\dfrac{\\lambda}{n} = \\dfrac{420}{1.33} = 316$ nm, so $\\beta' = \\dfrac{\\lambda' D}{d'} = \\dfrac{316 \\times 10^{-9} \\times 1.0}{0.20 \\times 10^{-3}} = 1.58$ mm. (Equivalently $\\beta' = 1.5 \\times \\dfrac{0.28}{0.20} \\times \\dfrac{1}{1.33}$: the narrower slit separation widens the fringes by 1.4 times, the water narrows them by 1.33 times.)",
       "marking_scheme": [
         {
-          "step": "D = βd/λ",
+          "step": "D = βd/λ = 1.0 m",
           "marks": 1
         },
         {
-          "step": "D = 1.0 m",
+          "step": "β′ = (λ/n)D/d′ = 1.58 mm",
           "marks": 1
         }
       ],
       "marks": 2,
-      "difficulty": 2,
+      "difficulty": 3,
       "competency": "application",
       "bloom": "apply",
       "topic_ids": [
@@ -37321,8 +37321,8 @@
       ],
       "marks": 2,
       "difficulty": 2,
-      "competency": "application",
-      "bloom": "apply",
+      "competency": "understanding",
+      "bloom": "understand",
       "topic_ids": [
         "isc-12-physics-ch17-t07"
       ],
@@ -37401,22 +37401,22 @@
       "unit": "isc-12-physics-ch17",
       "language": "en",
       "type": "numerical",
-      "stem_md": "A teacher wants the central bright band of a single-slit pattern to be 6.0 mm wide on a wall 2.5 m from the slit, using light of wavelength 540 nm. How wide must the slit be? Answer in mm.",
+      "stem_md": "A teacher sets a single slit so that light of wavelength 540 nm gives a central bright band 6.0 mm wide on a wall 2.5 m away. She then replaces the lamp by a red laser of wavelength 650 nm and moves the wall to 1.8 m from the slit, leaving the slit as it was. How wide is the central bright band now? Answer in mm (3 significant figures).",
       "options": [],
       "match_right": [],
       "answer": {
-        "value": 0.45,
-        "tolerance": 0.01,
+        "value": 5.2,
+        "tolerance": 0.05,
         "unit": "mm"
       },
-      "solution_md": "$W = \\dfrac{2\\lambda D}{a}$, so $a = \\dfrac{2\\lambda D}{W} = \\dfrac{2 \\times 540 \\times 10^{-9} \\times 2.5}{6.0 \\times 10^{-3}} = 0.45$ mm.",
+      "solution_md": "The slit width is not given, so find it first: $W = \\dfrac{2\\lambda D}{a}$ gives $a = \\dfrac{2\\lambda D}{W} = \\dfrac{2 \\times 540 \\times 10^{-9} \\times 2.5}{6.0 \\times 10^{-3}} = 0.45$ mm. With the laser at the new distance, $W' = \\dfrac{2\\lambda' D'}{a} = \\dfrac{2 \\times 650 \\times 10^{-9} \\times 1.8}{0.45 \\times 10^{-3}} = 5.20$ mm. (Check by scaling: $6.0 \\times \\dfrac{650}{540} \\times \\dfrac{1.8}{2.5} = 5.20$ mm.)",
       "marking_scheme": [
         {
-          "step": "a = 2λD/W",
+          "step": "a = 2λD/W = 0.45 mm",
           "marks": 1
         },
         {
-          "step": "a = 0.45 mm",
+          "step": "W′ = 2λ′D′/a = 5.20 mm",
           "marks": 1
         }
       ],
@@ -37924,7 +37924,7 @@
   "build": {
     "run_id": null,
     "checks": {
-      "katex_mhchem": "381 math strings parsed with KaTeX 0.19.0 + mhchem (throwOnError, strict \"error\"), 0 failures",
+      "katex_mhchem": "389 math strings parsed with KaTeX 0.19.0 + mhchem (throwOnError, strict \"error\"), 0 failures",
       "svg_allowlist": "27 SVG visuals (10 distinct diagrams) checked with saxes against svg-allowlist.ts: elements, attributes, class pattern, fragment-only refs, no style, palette incl. named hues, viewBox, title, per-page unique ids — 0 failures",
       "narration": "38 slides, 11–84 words (mean 61), no symbols, formulae or unit abbreviations",
       "resolve": "56/56 scripted re-solve checks pass",

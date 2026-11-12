@@ -56,3 +56,7 @@ This is a hand-authored production chapter (DECISIONS D-025, D-026). It follows 
 - **Cattle test:** the items (`n05`, `s306`, `l02`) ask for a judgement on a modest posterior. `s306` and `l02` are tagged evaluation.
 - **Scenarios:** all are imagined and labelled as such: a Dehradun survey, a Siliguri tea box, a Lucknow badminton camp, a Ludhiana bolt factory, a Pune commuter, a Kochi forecaster, a Wayanad herd, Ratnagiri crates and a Jaipur carton. No NCERT or ISC textbook example and no past-paper item is reused (D-036).
 - **Rendering:** nobody has seen the tree diagrams and bar charts rendered, so they need a look at 360 px on staging.
+
+## Assertion-reason options (2026-11-09)
+
+Options aligned with the ISC 2027 Mathematics specimen paper (860): (a) both true, R explains A; (b) both true, R does not explain A; (c) A true, R false; (d) A false, R true. For this chapter the order is unchanged ((d) "Assertion is false and Reason is true"); only the wording now follows the specimen, so no key changed. Keys in bank order: a a d a b c. Tests are unchanged (same items in the same slots).

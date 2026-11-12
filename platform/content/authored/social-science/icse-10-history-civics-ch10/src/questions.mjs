@@ -552,51 +552,86 @@ Q('tf_pact_viceroy', tf({
 
 // ================================================================ application items (imagined scenarios)
 Q('m_sort_factor', mcq({
-  t: 1, d: 2, c: 'application',
-  stem: 'An imagined pamphlet printed in Dacca in 1906 complains that young men of the community find few places in colleges and government offices. Which factor in the founding of the League does it reflect?',
-  opts: ['A sense of educational and economic backwardness', 'The annulment of the Partition of Bengal', 'The Lucknow Pact', 'The reunion of the Congress at Lucknow'],
-  sol: 'Few places in colleges and offices points to the sense of educational and economic backwardness. The annulment (1911), the Pact and the reunion (1916) came after 1906.',
+  t: 1, d: 3, c: 'analysis',
+  stem: 'An imagined pamphlet printed in Dacca in 1906 complains that young men of the community find few places in colleges and government offices. It asks that the community\'s needs be put directly before the government, and it warns members that joining the agitation against the new province would risk the small gains made so far. Which inference about the writer\'s approach is best supported?',
+  opts: [
+    'He believes that the community is better served by pressing its own needs on the government than by joining the Congress-led agitation',
+    'He wants the partition annulled at once so that Bengal is reunited',
+    'He believes that the community is already well represented in colleges and offices',
+    'He wants the community to join the Congress in demanding complete independence',
+  ],
+  sol: 'The pamphlet lists a grievance (few places), asks for direct representation to the government and warns against joining the agitation, so the writer favours a separate, community-centred approach to the government. Wanting the partition annulled contradicts the warning, he complains of too few places so he cannot think the community well represented, and complete independence is not mentioned and was not a League aim in 1906.',
 }));
 Q('m_sort_objective', mcq({
-  t: 2, d: 2, c: 'application',
-  stem: 'An imagined League resolution of 1907 urges members to keep good relations with the rulers and to clear away doubts about the government\'s intentions. Which of the League\'s first objectives does this match?',
-  opts: ['Promoting loyalty to the British government', 'Preventing hostility towards other communities', 'Demanding self-government for India', 'Accepting a joint electorate'],
-  sol: 'Good relations with the rulers and removing doubts about the government match the objective of loyalty. Self-government became an aim only in 1913, and the League sought separate, not joint, electorates.',
+  t: 2, d: 3, c: 'application',
+  stem: 'At an imagined League meeting of 1907, a member proposes that the League join a campaign of public protest against a government decision. Which of the League\'s three objectives of 1906 would an opposing speaker most directly cite?',
+  opts: [
+    'Encouraging loyalty to the British government',
+    'Protecting and advancing the political rights of Muslims',
+    'Preventing hostility towards other communities',
+    'Demanding self-government for India',
+  ],
+  sol: 'A campaign of protest against the government cuts across the objective of loyalty, so the opponent would cite that. The aims of protecting political rights and preventing hostility do not conflict with a protest, and self-government was not an objective of 1906 (it was adopted only in 1913).',
 }));
 Q('m_identify_term', mcq({
-  t: 3, d: 2, c: 'application',
-  stem: 'An imagined councillor in a provincial council in 1917 explains that the number of seats for Muslims in his province had been settled before the elections. Which term of the Lucknow Pact does this reflect?',
-  opts: ['Seat shares for Muslims fixed province by province', 'The joint demand for self-government', 'The reunion of the Congress', 'The abolition of separate electorates'],
-  sol: 'Seats settled in advance for each province reflect the term fixing Muslim seat shares province by province. The joint demand and the reunion are different points, and the Pact accepted rather than abolished separate electorates.',
+  t: 3, d: 3, c: 'understanding',
+  stem: 'In an imagined province, Muslims are a small minority of voters. A councillor explains that, under the Lucknow Pact, the share of seats for Muslims has been settled in advance. What is the most direct effect of this arrangement in his province?',
+  opts: [
+    'The community is assured of a fixed share of the elected seats, whatever its numbers in an open contest',
+    'Muslim voters take part in joint electorates with all other voters',
+    'The community can choose members for every seat in the council',
+    'Seats for all other communities are abolished',
+  ],
+  sol: 'Seat shares fixed in advance, with separate electorates, assure a minority community of its share whether or not it could win it in an open contest. The Pact kept separate electorates rather than joint ones, it did not let one community choose every member, and it did not abolish seats for others.',
 }));
 Q('m_apply_electorate', mcq({
   t: 2, d: 3, c: 'application',
-  stem: 'In an imagined district election of 1912, only Muslim voters could vote for the seat reserved for Muslims. Which measure had introduced this arrangement?',
-  opts: ['The Indian Councils Act of 1909', 'The Lucknow Pact of 1916', 'The Partition of Bengal of 1905', 'The founding of the Congress in 1885'],
-  sol: 'Separate electorates were introduced by the Indian Councils Act of 1909 (the Morley-Minto Reforms). The Lucknow Pact later accepted them, but it came after 1912.',
+  stem: 'An imagined Congress delegate says in 1912, "Our party agreed to separate electorates, so we cannot object to this reserved seat." Which correction to his statement is best?',
+  opts: [
+    'The arrangement dates from 1909, but the Congress accepted it only in 1916, so in 1912 it had not yet agreed',
+    'The arrangement was created by the Lucknow Pact, so no reserved seat could exist in 1912',
+    'Separate electorates were first demanded by the Congress in 1906',
+    'Muslim voters used joint electorates until 1916, so no seat could be reserved in 1912',
+  ],
+  sol: 'Separate electorates were introduced by the Indian Councils Act of 1909, so a reserved seat in 1912 is possible; but the Congress accepted the principle only in the Lucknow Pact of 1916. The other options misplace the dates: the Pact did not create the arrangement, the Congress did not demand it in 1906, and joint electorates were not used by Muslim voters after 1909.',
 }));
 Q('m_apply_change', mcq({
   t: 2, d: 3, c: 'application',
-  stem: 'An imagined League speaker of 1914 calls for self-government suited to India, to be won together with other communities. Which change in the League\'s outlook does the speech reflect?',
-  opts: ['The new aim adopted in 1913', 'The objectives of 1906', 'The demands of the Simla Deputation', 'The reaction to the partition of 1905'],
-  sol: 'Self-government won with other communities is the aim the League adopted in 1913. In 1906 it stressed loyalty, and the Simla Deputation asked for separate representation.',
+  stem: 'In 1906 an imagined League member urged loyalty to the government; in 1914 an imagined League speaker calls for self-government, to be won together with other communities. Which pair of developments best explains the change?',
+  opts: [
+    'The annulment of the partition in 1911 shook trust in the government, and younger leaders such as Jinnah, who joined in 1913, favoured working with the Congress',
+    'The Simla Deputation was received by the Viceroy in 1906, and the Indian Councils Act of 1909 introduced separate electorates',
+    'The founding of the Congress in 1885 and of the Aligarh college in 1875',
+    'The Lucknow Pact and the reunion of the Congress in 1916',
+  ],
+  sol: 'The change had to be caused by events before 1914 that weakened trust in the government and favoured cooperation with others: the annulment of the partition (1911) and the arrival of leaders such as Jinnah (1913). The Deputation and the 1909 Act would, if anything, have strengthened trust in the government; 1885 and 1875 are too early to explain a change of 1913; and the Pact and reunion of 1916 came after the speech.',
 }));
 Q('m_apply_1911', mcq({
   t: 2, d: 3, c: 'application',
-  stem: 'An imagined League member writes in 1912 that he can no longer rely on the government\'s promises after its decision about Bengal. Which event is he reacting to?',
-  opts: ['The annulment of the Partition of Bengal in 1911', 'The Partition of Bengal in 1905', 'The Lucknow Pact of 1916', 'The Indian Councils Act of 1909'],
-  sol: 'His loss of trust follows the annulment of the partition in 1911, which disappointed League leaders who had welcomed the new province.',
+  stem: 'An imagined League member writes in 1912 that he trusts the government less than he did in 1906, although separate electorates were granted in 1909. Which reading best explains why the decision of 1911 about Bengal weighed more with him than that gain?',
+  opts: [
+    'Leaders who had welcomed the eastern province saw its undoing as a sign that the government would give way to agitation',
+    'The decision of 1911 ended separate electorates, which he valued most',
+    'The decision of 1911 moved the capital to Calcutta and so away from Delhi',
+    'The decision of 1911 made the League illegal in Bengal',
+  ],
+  sol: 'Annulling the partition in 1911 disappointed those who had welcomed the new province and suggested that agitation could change government decisions, so it weighed more with him than the 1909 gain. The decision did not end separate electorates, the capital moved from Calcutta to Delhi (not the reverse), and the League was not made illegal.',
 }));
 Q('m_apply_reunion', mcq({
-  t: 3, d: 2, c: 'application',
-  stem: 'An imagined delegate at Lucknow in 1916 notes that leaders who had quarrelled and parted at Surat now sit side by side. Which development does this describe?',
-  opts: ['The reunion of the Moderates and Assertive Nationalists', 'The founding of the Muslim League', 'The Simla Deputation', 'The Morley-Minto Reforms'],
-  sol: 'Old opponents from Surat (1907) sitting together describes the reunion of the Moderates and Assertive Nationalists at Lucknow in 1916.',
+  t: 3, d: 3, c: 'application',
+  stem: 'An imagined delegate at Lucknow in 1916 notes that leaders who had quarrelled and parted at Surat now sit side by side, while the League meets in the same city. Which statement best explains why this was possible in 1916 but not in 1907?',
+  opts: [
+    'Tilak was free again after his years in Mandalay, and with the League also seeking self-government a common programme made unity more useful than the old dispute over methods',
+    'The Congress had given up its demand for self-government, so there was nothing left to quarrel over',
+    'The Viceroy had ordered the two groups to unite and the League to attend',
+    'The Surat Split had been a misunderstanding about the venue, which was cleared up in 1916',
+  ],
+  sol: 'By 1916 a leading Assertive leader, Tilak, was free again (he was released in 1914), and the League had adopted the goal of self-government (1913), so a joint programme made reunion attractive. The Congress had not given up self-government, the Viceroy was not involved in the Congress\'s affairs, and the split had been about goals and methods, not a mere misunderstanding.',
 }));
 Q('s_apply_speech', short({
   t: 3, d: 3, c: 'application', marks: 2, wl: S2,
-  stem: 'An imagined speaker at Lucknow in 1916 says that the seats question has been settled between the two bodies and that both now ask together for a share in governing India. Identify two terms of the Pact reflected in the speech.',
-  model: '1. **Seats settled:** the Congress **accepted separate electorates** with **Muslim seat shares fixed** province by province.\n2. **Asking together:** the **joint demand for self-government** by the Congress and the League.',
-  sol: 'Two terms identified from the speech.',
-  scheme: [['Separate electorates and seat shares', 1], ['Joint demand for self-government', 1]],
+  stem: 'At Lucknow in 1916 an imagined Congress delegate objects: "Why should we accept seats fixed in advance for one community?" Give two points that a supporter of the Pact could make in reply.',
+  model: '1. **Trust:** accepting **separate electorates** and **fixed seat shares** answered the League\'s main worry about representation and built **trust**.\n2. **Strength:** in return the League joined a **joint demand for self-government**, which would weigh more with the government than separate demands.',
+  sol: 'Two points in reply, each tied to a term of the Pact.',
+  scheme: [['Acceptance of seat shares builds trust or answers the League\'s concern', 1], ['Joint demand gives a stronger case for self-government', 1]],
 }));

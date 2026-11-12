@@ -107,16 +107,16 @@ Q('m_cm_date', mcq({
   sol: 'The plan was announced on 16 May 1946. 3 June 1947 is the Mountbatten Plan, 16 August 1946 the Direct Action Day and 20 February 1947 Attlee\'s statement.',
 }));
 Q('m_cm_union_subjects', mcq({
-  t: 1, d: 2, c: 'application',
-  stem: 'An imagined official in 1946 sorts government work into piles for the proposed Union of India and for the provinces. Under the Cabinet Mission Plan, which pile belongs to the Union?',
-  opts: ['Defence, foreign affairs and communications', 'Education, health and agriculture', 'Land revenue, police and local government', 'All subjects, leaving nothing to the provinces'],
-  sol: 'The Union was to deal only with defence, foreign affairs and communications, with power to raise the finances these needed. All other subjects and residuary powers stayed with the provinces.',
+  t: 1, d: 3, c: 'application',
+  stem: 'An imagined province in 1946 plans two things: a free primary-school scheme, and a treaty with a neighbouring country to run a through railway line. Under the Cabinet Mission Plan, how would the two plans be treated?',
+  opts: ['The school scheme would be for the province to decide; the railway treaty would fall to the Union, which held foreign affairs and communications', 'Both would be for the province alone, because every subject not named for the Union stayed with the provinces', 'Both would need the Union, because the Union was to look after anything that affected the unity of India', 'The school scheme would go to the group (Section) as a whole, and the treaty to the British Parliament'],
+  sol: 'Education was not among the three Union subjects, so it stayed with the province. A treaty with another country is foreign affairs and a through railway is communications, so the Union would act. The residuary rule explains why the school scheme was the province\'s, but it cannot cover the treaty; the Union had no general power over "unity"; and groups dealt only with provincial subjects, never with foreign treaties.',
 }));
 Q('m_cm_residuary', mcq({
   t: 1, d: 3, c: 'application',
-  stem: 'An imagined provincial minister in 1946 asks which level of government would control a new matter not named in any list, such as a tax on cinema shows. Under the Cabinet Mission Plan, where would this residuary power lie?',
-  opts: ['With the provinces', 'With the Union of India', 'With the British Parliament', 'With the princely states alone'],
-  sol: 'Residuary powers were to remain with the provinces, keeping the Union weak and limited to three subjects. This was meant to reassure provinces that feared a strong centre.',
+  stem: 'Imagine that in 1950 a disease spreads across several provinces and calls for one common rule on quarantine, a matter named in none of the plan\'s lists. Under the Cabinet Mission Plan, what difficulty would the Union face?',
+  opts: ['It would have no power of its own to act, because the matter was not one of its three subjects and residuary powers lay with the provinces', 'It could act only after the British Parliament passed a law for it', 'It could act freely, since residuary powers lay with the Union', 'It would have to deal with the three Section heads, because the Sections controlled every subject not given to the Union'],
+  sol: 'The Union was limited to defence, foreign affairs and communications, and residuary powers stayed with the provinces, so on a new matter the Union could only persuade the provinces to cooperate or ask for a change in the arrangements. The British Parliament no longer had a role in such matters; the Union did not hold residuary powers; and the Sections were groups of provinces that acted only on provincial subjects the provinces chose to share, not a layer above the provinces.',
 }));
 Q('m_cm_section_b', mcq({
   t: 1, d: 2, c: 'recall',
@@ -125,10 +125,10 @@ Q('m_cm_section_b', mcq({
   sol: 'Section B was the north-western provinces: Punjab, the NWFP and Sind. Bengal and Assam formed Section C; Madras, Bombay, UP, Bihar, CP and Orissa formed Section A.',
 }));
 Q('m_cm_pakistan', mcq({
-  t: 1, d: 2, c: 'understanding',
-  stem: 'What did the Cabinet Mission Plan propose about the demand for a separate, fully sovereign Pakistan?',
-  opts: ['It did not accept it and proposed a single Union with groups of provinces instead', 'It accepted it and drew the boundary at once', 'It left the question to the princely states', 'It asked the United Nations to decide'],
-  sol: 'The Mission rejected a fully sovereign Pakistan and offered a loose Union with groups of provinces as a compromise. The boundary of partition came only with the 1947 plan and the boundary commission.',
+  t: 1, d: 3, c: 'analysis',
+  stem: 'An imagined commentator in May 1946 says that because the Mission rejected a sovereign Pakistan, the League\'s concerns received nothing. Which is the fairest assessment of the plan?',
+  opts: ['It refused a sovereign Pakistan but offered groups of provinces with their own executives and legislatures, meeting part of the concern within one Union', 'The commentator is right: the plan left the Muslim-majority provinces under a strong centre, with no groups', 'The commentator is wrong: the plan accepted Pakistan as a dominion, with the boundary to be settled later', 'The commentator is wrong: the plan promised a referendum in the Muslim-majority provinces on Pakistan'],
+  sol: 'The plan refused a fully sovereign Pakistan, so the commentator is half right, but it also set up groups with their own executives and legislatures under a weak Union, which met part of the concern. A strong centre without groups was not the plan; the acceptance of two dominions belongs to the plan of June 1947; and the referendums of 1947 were limited to the NWFP and Sylhet.',
 }));
 Q('m_cm_ca_election', mcq({
   t: 1, d: 2, c: 'understanding',
@@ -137,13 +137,13 @@ Q('m_cm_ca_election', mcq({
   sol: 'Provincial assemblies were to elect the members by proportional representation, with seats divided among the General, Muslim and Sikh communities roughly by population. There was no direct adult-franchise election.',
 }));
 Q('m_cm_states', mcq({
-  t: 1, d: 2, c: 'application',
-  stem: 'The imagined ruler of a small princely state reads the 1946 plan with his adviser. What does the plan allow his state to do?',
-  opts: ['They would keep all subjects not handed to the Union and could negotiate their entry', 'They would be abolished and merged with provinces at once', 'They would come under the direct rule of the British Parliament', 'They would form Section C of the scheme'],
-  sol: 'The states were to keep every subject and power not ceded to the Union, and to negotiate their place in it. They were not abolished, and Section C was Bengal and Assam.',
+  t: 1, d: 3, c: 'application',
+  stem: 'An imagined ruler in 1946 wants his state to enter the Union but to keep control of its own police, its courts and its own post and telegraph service. How does the plan\'s division of subjects affect him?',
+  opts: ['He could keep the police and courts, but the post and telegraph service would come under the Union, which was given communications', 'He could keep all three, because states kept every subject unless they chose to hand it over', 'He would have to hand over all three, because the Union was to have power over every subject of the states', 'He could keep none of them, because a state entering the Union lost its own government'],
+  sol: 'The states were to keep every subject not ceded to the Union, so police and courts stayed with him. But communications, which covered posts and telegraphs, was one of the three Union subjects for the whole Union, states included. The second option is half right, because it forgets that communications was a Union subject; the third and fourth overstate the Union\'s power, which was limited to three subjects.',
 }));
 Q('m_cm_scenario_province', mcq({
-  t: 1, d: 3, c: 'application',
+  t: 1, d: 2, c: 'recall',
   stem: 'An imagined student sorts provinces for a class chart on the 1946 plan. Into which Section should she place Assam?',
   opts: ['Section C, together with Bengal', 'Section A, with Madras and Bombay', 'Section B, with Punjab and Sind', 'No Section, because Assam was a princely state'],
   sol: 'Assam was grouped with Bengal in Section C. Section A held the Hindu-majority provinces, Section B the north-western provinces, and Assam was a province, not a princely state.',
@@ -161,22 +161,22 @@ Q('m_interim_formed', mcq({
   sol: 'The interim government took office on 2 September 1946, with Nehru as Vice-President of the Viceroy\'s Executive Council. The Muslim League joined it in October 1946.',
 }));
 Q('m_cm_scenario_opt', mcq({
-  t: 1, d: 3, c: 'application',
-  stem: 'In an imagined debate on the 1946 plan, a speaker says a province placed in a group should be able to leave it later. Which provision of the plan supports this speaker?',
-  opts: ['A province could opt out of its group after the first general election under the new constitution', 'A province could leave the Union at any time by a vote of its governor', 'Provinces had no choice once grouped', 'Only princely states could change groups'],
-  sol: 'The plan allowed a province to come out of its group after the first general elections under the new constitution. Provinces could not leave the Union at will, and the provision was about provinces, not states.',
+  t: 1, d: 3, c: 'analysis',
+  stem: 'In an imagined debate of 1946 a speaker says: "Once Bengal and Assam sit together in Section C, Assam can never leave it." What is the best assessment of this claim under the plan?',
+  opts: ['Partly right: Assam would stay in the group at first, but could come out of it after the first general election under the new constitution', 'Entirely right: the plan fixed every province in its Section permanently', 'Wrong: any province could leave its Section at any time by a vote of its legislature', 'Wrong: only the Section as a whole could decide to dissolve, never a single province'],
+  sol: 'The plan did let a province come out of its group, but only after the first general election under the new constitution, so the speaker is right about the early period and wrong about "never". The claim of permanence ignores the provision; the claim of leaving at any time ignores the waiting period; and the plan gave the right of withdrawal to a province, not only to a whole Section.',
 }));
 Q('ar_cm_weak_centre', ar({
   t: 1, d: 3, c: 'analysis', verdict: 'both-true-explains',
-  a: 'The Cabinet Mission Plan gave the Union of India only three subjects.',
-  r: 'The Mission wanted to reassure provinces that feared a strong central government while keeping India united.',
-  sol: 'Both are true, and R explains A: a weak Union with only defence, foreign affairs and communications was the compromise meant to keep the country together without a strong centre.',
+  a: 'Under the Cabinet Mission Plan, a Muslim-majority province in Section B would have had more say over its own affairs than it would have had under a Union with a strong centre.',
+  r: 'The plan left residuary powers with the provinces and gave the Union only three subjects.',
+  sol: 'Both are true, and R explains A: because the Union held only defence, foreign affairs and communications and all other powers stayed with the provinces, a province (and its group) kept control of most subjects, which a strong centre would not have allowed.',
 }));
 Q('ar_cm_direct_election', ar({
   t: 1, d: 3, c: 'analysis', verdict: 'A-false-R-true',
-  a: 'Under the Cabinet Mission Plan the Constituent Assembly was to be elected directly by all adult Indians.',
-  r: 'The plan provided for an interim government of Indian leaders while the constitution was being made.',
-  sol: 'A is false: the provincial assemblies, not the voters directly, were to elect the members. R is true: an interim government of Indian leaders was part of the plan.',
+  a: 'Because the Constituent Assembly under the plan was elected through the provincial assemblies, its members were in effect chosen by every adult in British India.',
+  r: 'The provincial assemblies of 1946 had themselves been elected on a limited franchise.',
+  sol: 'A is false: the voters of 1946 were only a fraction of the adult population, and the Assembly\'s members were chosen by the assemblies those voters had elected, so the Assembly could not be said to represent every adult directly. R is true and is the reason A fails.',
 }));
 Q('tf_cm_union_three', tf({
   t: 1, d: 1, c: 'recall', ans: true,
@@ -195,7 +195,7 @@ Q('fb_cm_sections', fb({
   sol: 'There were three sections: A (Hindu-majority provinces), B (the north-west) and C (Bengal and Assam).',
 }));
 Q('mt_cm_sections', match({
-  t: 1, d: 2, c: 'application',
+  t: 1, d: 2, c: 'recall',
   stem: 'Match each province with the Section of the 1946 grouping scheme in which it was placed.',
   pairs: [
     ['Bombay', 'Section A'],
@@ -213,32 +213,32 @@ Q('s_cm_two_clauses', short({
   scheme: [['First clause', 1], ['Second clause', 1]],
 }));
 Q('s_cm_ca_two', short({
-  t: 1, d: 2, c: 'understanding', marks: 2, wl: S2,
-  stem: 'Give two provisions of the 1946 plan about the body that would frame India\'s constitution.',
-  model: '1. A **Constituent Assembly** whose provincial members were **elected by the provincial assemblies** by proportional representation.\n2. Seats shared among the **General, Muslim and Sikh** communities by population, with **princely states** also represented.',
-  sol: 'Election by assemblies; seats by community and population; states represented.',
-  scheme: [['How members were chosen', 1], ['How seats were shared', 1]],
+  t: 1, d: 3, c: 'analysis', marks: 2, wl: S2,
+  stem: 'Under the 1946 plan the Constituent Assembly was elected through the provincial assemblies, not by a new nationwide vote. Give one effect this had on who sat in it, and one advantage of the method for the Mission.',
+  model: 'Its members reflected the **provincial assemblies** chosen in 1946 on a **limited franchise**, so not every adult had a say in choosing them. The method was **quick**, since no new country-wide election was needed.',
+  sol: 'Limited franchise reflected; speed.',
+  scheme: [['Effect on who sat in it', 1], ['Advantage of the method', 1]],
 }));
 Q('s_interim_two', short({
-  t: 1, d: 2, c: 'application', marks: 2, wl: S2,
-  stem: 'An imagined newspaper of 3 September 1946 reports that Indian leaders have just taken charge of the government departments. Identify this body and say when it took office.',
-  model: 'It was a government of **Indian leaders** holding the portfolios of the Viceroy\'s **Executive Council** while the constitution was framed. It took office on **2 September 1946**, headed by **Jawaharlal Nehru**.',
-  sol: 'Meaning and date.',
-  scheme: [['Meaning', 1], ['Date and head', 1]],
+  t: 1, d: 3, c: 'analysis', marks: 2, wl: S2,
+  stem: 'An imagined newspaper of 3 September 1946 reports that Indian leaders have taken charge of the Viceroy\'s council departments, but that no member of the Muslim League is among them. What does this absence show about the state of the plan, and what changed in October?',
+  model: 'The League had **withdrawn** its acceptance in **July** and stayed out, so the plan\'s idea of a joint government was already **in doubt**. The League **joined** in **October 1946**, but **distrust** inside the government continued.',
+  sol: 'League out after withdrawal; joined in October, distrust.',
+  scheme: [['Absence linked to the League\'s withdrawal', 1], ['October entry and continuing distrust', 1]],
 }));
 Q('s_dad_two', short({
   t: 1, d: 2, c: 'analysis', marks: 2, wl: S2,
-  stem: 'Explain how the Muslim League\'s response to the Cabinet Mission Plan changed between June and August 1946.',
-  model: 'The League first **accepted** the plan in **June 1946**, but after disputes over its meaning it **withdrew** its acceptance in **July** and called for **Direct Action Day** on **16 August 1946**, which was followed by **serious violence**.',
-  sol: 'Acceptance, withdrawal, Direct Action Day.',
-  scheme: [['Acceptance and withdrawal', 1], ['Direct Action Day and its effect', 1]],
+  stem: 'An imagined commentator says the Cabinet Mission Plan broke down because of the events of 16 August 1946. Another says the break had begun earlier. Which view fits the dates better? Give evidence.',
+  model: 'The second view. The League had already **withdrawn** its acceptance in **July**, before **Direct Action Day** on **16 August 1946**, because the two parties read the **grouping** clauses differently. The August violence deepened **distrust** but followed the breakdown.',
+  sol: 'Withdrawal in July predates 16 August; grouping dispute; violence followed.',
+  scheme: [['Withdrawal in July came before 16 August', 1], ['Dispute over grouping as the earlier cause', 1]],
 }));
 Q('s_cm_why_groups', short({
-  t: 1, d: 3, c: 'analysis', marks: 2, wl: S2,
-  stem: 'Why did the Cabinet Mission propose grouping the provinces into Sections A, B and C?',
-  model: 'Grouping let the **Muslim-majority** provinces of the north-west and east act together on many subjects, meeting some of the League\'s concerns, while keeping a **single Union** and so **avoiding partition**.',
-  sol: 'Reassure Muslim-majority provinces; keep one Union.',
-  scheme: [['Concerns of Muslim-majority provinces', 1], ['Keeping India united', 1]],
+  t: 1, d: 3, c: 'evaluation', marks: 2, wl: S2,
+  stem: 'A student says the Section scheme gave the Muslim-majority provinces everything the League wanted. Assess this view with one feature that served them and one that fell short.',
+  model: 'Only partly. The groups let provinces act together on many subjects under a weak **Union**, which met some concerns. But the plan refused a **sovereign Pakistan** and kept **one Union**, so the League\'s main demand was not met.',
+  sol: 'Partly right: groups served; no sovereign Pakistan.',
+  scheme: [['A feature that served them', 1], ['A feature that fell short, with a judgement', 1]],
 }));
 Q('s3_cm_three_clauses', short({
   t: 1, d: 2, c: 'understanding', marks: 3, wl: S3,
@@ -248,7 +248,7 @@ Q('s3_cm_three_clauses', short({
   scheme: [['First clause', 1], ['Second clause', 1], ['Third clause', 1]],
 }));
 Q('s3_cm_fail', short({
-  t: 1, d: 4, c: 'evaluation', marks: 3, wl: S3,
+  t: 1, d: 4, c: 'understanding', marks: 3, wl: S3,
   stem: 'Why did the Cabinet Mission Plan, accepted at first by both major parties, fail to settle the future of India? Give three reasons.',
   model: '1. The parties **read the grouping clauses differently**: one saw grouping as **compulsory**, the other as **optional**.\n2. The League **withdrew its acceptance** in **July 1946** and called **Direct Action Day**, after which **violence** spread.\n3. Distrust deepened in the **interim government**, so the plan\'s idea of **one Union** could not be carried out.',
   sol: 'Differing interpretations; withdrawal and violence; distrust.',
@@ -282,7 +282,7 @@ Q('sb_cm_diary', source({
   passage: '**Diary of an imagined clerk in a government office, New Delhi, 1946**\n\n17 May. Everyone in the office is reading the newspapers about the plan of the three visiting ministers. The centre will look after only the army, foreign affairs and the posts and railways; the rest stays with the provinces. My colleague from Lahore says his province will sit with Sind and the Frontier. 3 September. A new Indian council has taken charge of the departments today. 9 December. The assembly that will write the constitution held its first meeting, but many benches were empty.',
   parts: [
     child('a', short({ t: 1, d: 1, c: 'recall', marks: 1, stem: 'Which plan is the clerk reading about on 17 May?', model: 'The **Cabinet Mission Plan** of **16 May 1946**.', sol: 'The Cabinet Mission Plan.', scheme: [['Cabinet Mission Plan', 1]] })),
-    child('b', short({ t: 1, d: 2, c: 'application', marks: 1, stem: 'In which Section of the plan would the colleague\'s province "sit with Sind and the Frontier"?', model: '**Section B** (Punjab, the NWFP and Sind).', sol: 'Section B.', scheme: [['Section B', 1]] })),
+    child('b', short({ t: 1, d: 2, c: 'recall', marks: 1, stem: 'In which Section of the plan would the colleague\'s province "sit with Sind and the Frontier"?', model: '**Section B** (Punjab, the NWFP and Sind).', sol: 'Section B.', scheme: [['Section B', 1]] })),
     child('c', short({ t: 1, d: 3, c: 'analysis', marks: 2, stem: '**Either** (i): What was the "new Indian council" of 3 September, and why was it formed?', model: 'The **interim government** headed by **Jawaharlal Nehru**, which took office on **2 September 1946**. The plan provided for Indian leaders to run the government **while the constitution was being framed**.', sol: 'Interim government; purpose.', scheme: [['Interim government named', 1], ['Why it was formed', 1]] }), [
       short({ t: 1, d: 3, c: 'analysis', marks: 2, stem: '**Or** (ii): Why might "many benches" have been empty at the meeting of 9 December 1946?', model: 'The **Muslim League** had withdrawn its acceptance of the plan and **boycotted** the **Constituent Assembly**, so its elected members did not attend the **first meeting**.', sol: 'League boycott.', scheme: [['League had withdrawn acceptance', 1], ['Boycott of the Assembly', 1]] }),
     ]),
@@ -303,10 +303,10 @@ Q('m_mb_date', mcq({
   sol: 'The Mountbatten Plan was announced on 3 June 1947. 16 May 1946 is the Cabinet Mission Plan, 18 July 1947 the royal assent to the Independence Act and 20 February 1947 Attlee\'s statement.',
 }));
 Q('m_mb_punjab_bengal', mcq({
-  t: 2, d: 2, c: 'understanding',
-  stem: 'How was the question of dividing Punjab and Bengal to be decided under the 3 June plan?',
-  opts: ['Members of each provincial assembly would meet in two parts, by Muslim-majority and other districts, and vote', 'The Viceroy would decide alone', 'A referendum of all adults in India would decide', 'The princely states would decide'],
-  sol: 'Each assembly was to meet in two parts, representing the Muslim-majority districts and the rest; if either part voted for partition, the province would be divided. No all-India referendum was held.',
+  t: 2, d: 3, c: 'application',
+  stem: 'Suppose that in some province under the 3 June plan the members from the Muslim-majority districts voted for division and those from the other districts voted against. What would follow?',
+  opts: ['The province would be divided, and a boundary commission would then mark the line', 'The province would stay whole, because the two parts disagreed', 'The matter would go to a referendum of the whole province, as in Sylhet', 'The province would be divided, and each part would then choose its dominion by referendum'],
+  sol: 'A vote for division by either part was enough to divide the province, and the boundary commission would then draw the line. A split vote did not keep the province whole; a referendum was used only in the NWFP and Sylhet; and the two parts of a divided province did not hold referendums of their own.',
 }));
 Q('m_mb_referendum', mcq({
   t: 2, d: 2, c: 'recall',
@@ -315,34 +315,34 @@ Q('m_mb_referendum', mcq({
   sol: 'Referendums were held in the NWFP and in Sylhet. Punjab and Bengal decided through their assemblies; Sind through its assembly; princely states such as Hyderabad and Kashmir were left to choose.',
 }));
 Q('m_mb_boundary', mcq({
-  t: 2, d: 2, c: 'application',
-  stem: 'After the Punjab assembly votes for division in June 1947, an imagined district officer asks who will decide which villages go to which dominion. What does the 3 June plan provide?',
-  opts: ['A boundary commission to mark the new borders', 'A new Cabinet Mission', 'A Round Table Conference', 'An election commission for the princely states'],
-  sol: 'A boundary commission was to demarcate the border within Punjab and Bengal; it was headed by Sir Cyril Radcliffe. The other bodies played no part in drawing the boundary.',
+  t: 2, d: 3, c: 'understanding',
+  stem: 'An imagined district officer in 1947 knows of a village with a Muslim majority that is surrounded on every side by districts with a non-Muslim majority. How was the commission set up under the 3 June plan to treat such a case?',
+  opts: ['It was to mark the line by contiguous majority areas but also weigh other factors, so a village was not settled by its own majority alone', 'Every village would go to the dominion in which its own community was in a majority', 'The village would be asked to vote in a referendum of its own', 'The Viceroy would decide each such village case by case'],
+  sol: 'The commission was to demarcate the two parts of each divided province on the basis of contiguous majority areas, taking other factors into account too, so an isolated village could not be decided by its own majority alone. Village-by-village allocation, a separate village referendum and a Viceroy\'s ruling on each case were not part of the plan.',
 }));
 Q('m_mb_states', mcq({
-  t: 2, d: 2, c: 'application',
-  stem: 'In July 1947 the imagined dewan of a princely state asks what choice the plan announced in June leaves his ruler. What is the answer?',
-  opts: ['They could join either India or Pakistan', 'They had to join India', 'They had to join Pakistan', 'They would stay under British rule'],
-  sol: 'With British paramountcy ending, the princely states were free to join either dominion. In practice they were advised to join the one to which they were geographically linked.',
+  t: 2, d: 3, c: 'application',
+  stem: 'In July 1947 the imagined dewan of a princely state that lies wholly inside the territory of the coming India, with no border with Pakistan, asks what the plan announced in June leaves his ruler. Which answer is most accurate?',
+  opts: ['He was legally free to join either dominion, though geography made India the practical choice', 'He was bound to join India, because the plan required each state to join the dominion surrounding it', 'He had to remain under British protection until the two Constituent Assemblies had met', 'His subjects would decide by referendum, as in the Frontier province'],
+  sol: 'The plan left the states free to join either dominion, but a state with no link to Pakistan had little practical option except India. The plan did not compel a state to join the dominion around it, did not keep British protection after 15 August, and provided referendums only in the NWFP and Sylhet.',
 }));
 Q('m_mb_scenario_sylhet', mcq({
   t: 2, d: 3, c: 'application',
-  stem: 'An imagined teacher in Shillong in July 1947 tells her class that people in one district of their province will vote on which country to join. Which district is she describing?',
-  opts: ['Sylhet', 'Lahore', 'Dacca', 'Peshawar'],
-  sol: 'Sylhet, a Muslim-majority district of Assam, decided by referendum. Lahore was in Punjab, Dacca in Bengal and Peshawar in the NWFP, which held its own referendum but is not in Assam.',
+  stem: 'An imagined student asks why Sylhet, a district of Assam, was given a referendum when Punjab and Bengal were left to their assemblies. Which explanation fits the plan best?',
+  opts: ['Assam as a whole was not being divided by an assembly vote; the only question was whether this one Muslim-majority district should leave it, so its own voters were asked', 'The Punjab and Bengal assemblies had already met in two parts', 'Sylhet had a Muslim majority', 'A referendum had also been held in the NWFP'],
+  sol: 'Punjab and Bengal were divided by their assemblies, but Assam\'s assembly was not asked to divide the province, so the one question was whether Sylhet should leave Assam, and its people were asked directly. The other three options are true facts but do not explain the method: the assemblies of Punjab and Bengal did meet in two parts, Sylhet did have a Muslim majority, and the NWFP did hold a referendum, yet none of these says why Sylhet needed one.',
 }));
 Q('m_mb_reason_violence', mcq({
   t: 2, d: 3, c: 'analysis',
-  stem: 'Which reason best explains why many Congress leaders agreed to the partition plan of 1947?',
-  opts: ['Widespread communal violence and a deadlocked interim government made an early, agreed transfer seem the lesser evil', 'They believed partition would be reversed within a year', 'The princely states had demanded partition', 'The British had refused to leave India without it'],
-  sol: 'Leaders accepted partition reluctantly because violence was spreading and the interim government could not work as a team, so an early, agreed transfer of power seemed better than continued conflict. The other options are not supported.',
+  stem: 'In 1947 an imagined Congress member argues that accepting the plan of 3 June, though it divides provinces, is better than waiting for a united settlement. Which fact from the preceding months most strongly supports this argument?',
+  opts: ['Violence had spread in several places and the interim government was deadlocked, so a long delay risked more disorder', 'The Cabinet Mission had proposed a single Union in 1946', 'Attlee\'s statement of February 1947 had set June 1948 as the latest date for the transfer', 'The Constituent Assembly had held its first meeting in December 1946'],
+  sol: 'The member\'s case is that delay is costly, and spreading violence together with a deadlocked government is the fact that shows the cost. The Mission\'s offer of a single Union supports the opposite side; the June 1948 deadline and the December 1946 meeting are true but do not show that waiting would be harmful.',
 }));
 Q('m_mb_advance', mcq({
-  t: 2, d: 3, c: 'application',
-  stem: 'An imagined news-sheet of June 1947 reports that the date for handing over power has been brought forward. To which date was it brought forward?',
-  opts: ['15 August 1947', '30 June 1948', '26 January 1950', '1 April 1947'],
-  sol: 'The transfer was advanced from June 1948 to 15 August 1947. 26 January 1950 is when the Constitution came into force.',
+  t: 2, d: 3, c: 'analysis',
+  stem: 'An imagined analyst asks why the date for the transfer of power, set in February 1947 for June 1948, was brought forward to 15 August 1947 in the June plan. Which fact from the first half of 1947 best supports the change?',
+  opts: ['The main parties had agreed to the principle of partition, so the question that had held up a settlement was answered and waiting longer risked more unrest', 'The Cabinet Mission Plan had just been announced', 'Direct Action Day had just been observed', 'Attlee had set June 1948 as the latest date, and Britain wished to keep to it'],
+  sol: 'Once the main parties accepted the plan, there was no constitutional question left to wait for, and delay would only prolong uncertainty and unrest. The Cabinet Mission Plan (May 1946) and Direct Action Day (August 1946) belong to the year before; and Attlee\'s deadline of June 1948 explains the original date, not the advance.',
 }));
 Q('m_mb_dominion', mcq({
   t: 2, d: 2, c: 'understanding',
@@ -352,9 +352,9 @@ Q('m_mb_dominion', mcq({
 }));
 Q('ar_mb_assemblies', ar({
   t: 2, d: 3, c: 'analysis', verdict: 'both-true-explains',
-  a: 'Under the 3 June plan the Punjab and Bengal assemblies met in two parts to vote on partition.',
-  r: 'Each of these provinces had Muslim-majority districts and districts where others were in a majority.',
-  sol: 'Both are true, and R explains A: because each province had districts of both kinds, its assembly was split into two parts so that each could decide whether to divide the province.',
+  a: 'Under the 3 June plan the assembly of Bengal could be made to divide the province even if a majority of the whole assembly was against division.',
+  r: 'The plan provided that a vote for division by either of the two parts of the assembly was enough to partition the province.',
+  sol: 'Both are true, and R explains A: because either part\'s vote sufficed, the members of one part could carry the decision for division even when they were outnumbered in the assembly as a whole.',
 }));
 Q('ar_mb_gandhi', ar({
   t: 2, d: 3, c: 'analysis', verdict: 'both-true-not-explains',
@@ -374,7 +374,7 @@ Q('fb_mb_viceroy', fb({
   sol: 'Lord Mountbatten, who became Viceroy in March 1947, announced the plan; it is named after him.',
 }));
 Q('ord_1946_47', ord({
-  t: 2, d: 2, c: 'application', marks: 1,
+  t: 2, d: 2, c: 'recall', marks: 1,
   stem: 'Arrange these events of 1946–47 in the order in which they happened.',
   items: ['The Cabinet Mission Plan is announced', 'Direct Action Day', 'Attlee announces the British will leave by June 1948', 'The Mountbatten Plan is announced'],
   sol: 'May 1946 plan, August 1946 Direct Action Day, February 1947 Attlee\'s statement, June 1947 Mountbatten Plan.',
@@ -387,18 +387,18 @@ Q('s_mb_two_clauses', short({
   scheme: [['First clause', 1], ['Second clause', 1]],
 }));
 Q('s_attlee_two', short({
-  t: 2, d: 2, c: 'understanding', marks: 2, wl: S2,
-  stem: 'What did the British Prime Minister announce on 20 February 1947, and why was it important?',
-  model: 'He announced that Britain would **transfer power** to Indian hands by **June 1948**. It made the British **departure certain** and pressed Indian parties to reach a **settlement** quickly.',
-  sol: 'Announcement and importance.',
-  scheme: [['Announcement', 1], ['Importance', 1]],
+  t: 2, d: 3, c: 'evaluation', marks: 2, wl: S2,
+  stem: 'An imagined analyst says the statement of 20 February 1947 did nothing to hasten the transfer, since it named a date as far off as June 1948. Assess this claim, using what happened later.',
+  model: 'Partly true: it set only a **latest** date. But it made the British **departure certain** and pressed the parties to settle, and power in fact passed on **15 August 1947**, ten months **earlier**.',
+  sol: 'Latest date only; pressure to settle; actual transfer earlier.',
+  scheme: [['What the statement set, and its limit', 1], ['Its effect, with the actual date', 1]],
 }));
 Q('s_mb_reasons_two', short({
   t: 2, d: 3, c: 'analysis', marks: 2, wl: S2,
-  stem: 'Give two reasons why the Congress accepted the plan of 3 June 1947.',
-  model: '1. **Communal violence** was spreading and leaders feared **civil war**.\n2. The **interim government** could not work as a team, so an **early, agreed transfer** of power seemed the lesser evil.',
-  sol: 'Any two reasons.',
-  scheme: [['First reason', 1], ['Second reason', 1]],
+  stem: 'An imagined Congress member in June 1947 says accepting the plan is painful but that delay would cost more. Give one consideration that supports this view and one that a critic would raise against it.',
+  model: '**For:** spreading **violence** and a deadlocked **interim government** made an early transfer seem the **lesser evil**.\n**Against:** the plan **divided** provinces and communities and gave up the ideal of a **united** country.',
+  sol: 'One for, one against.',
+  scheme: [['A consideration in favour', 1], ['A consideration against', 1]],
 }));
 Q('s_mb_nwfp_sylhet', short({
   t: 2, d: 2, c: 'understanding', marks: 2, wl: S2,
@@ -434,7 +434,7 @@ Q('sb_mb_letter', source({
   passage: '**Letter from an imagined schoolteacher in Amritsar to her brother in Bombay, June 1947**\n\nBrother, the radio has given the news we feared. The country will become two, and our own province may be cut in two as well: the members of our assembly will sit in two groups and vote. Some say a commission will then draw the line through the villages. Our neighbours of every faith are anxious. The leaders say it is better to end the fighting and the quarrels in Delhi and take freedom now than to wait another year. I am not sure what to think.',
   parts: [
     child('a', short({ t: 2, d: 1, c: 'recall', marks: 1, stem: 'Which plan of June 1947 is the "news we feared" in the letter?', model: 'The **Mountbatten Plan** of **3 June 1947**.', sol: 'The Mountbatten Plan.', scheme: [['Mountbatten Plan', 1]] })),
-    child('b', short({ t: 2, d: 2, c: 'application', marks: 1, stem: 'What is the "commission" that will "draw the line through the villages"?', model: 'The **boundary commission** (headed by **Radcliffe**) that would mark the new border in **Punjab**.', sol: 'Boundary commission.', scheme: [['Boundary commission', 1]] })),
+    child('b', short({ t: 2, d: 2, c: 'recall', marks: 1, stem: 'What is the "commission" that will "draw the line through the villages"?', model: 'The **boundary commission** (headed by **Radcliffe**) that would mark the new border in **Punjab**.', sol: 'Boundary commission.', scheme: [['Boundary commission', 1]] })),
     child('c', short({ t: 2, d: 3, c: 'analysis', marks: 2, stem: '**Either** (i): Which two reasons for accepting the plan does the letter mention?', model: 'To **end the fighting**, that is the **communal violence**; and to end the **quarrels in Delhi**, meaning the **deadlock** in the **interim government**, so that freedom could come **early**.', sol: 'Violence; deadlock and early freedom.', scheme: [['End the violence', 1], ['End the deadlock and take freedom early', 1]] }), [
       short({ t: 2, d: 3, c: 'analysis', marks: 2, stem: '**Or** (ii): Explain the procedure by which "our own province may be cut in two".', model: 'The **Punjab assembly** would meet in **two parts**, members from **Muslim-majority districts** and the **rest**. If **either part** voted for division, the province would be **partitioned**.', sol: 'Two parts; either votes for division.', scheme: [['Assembly in two parts', 1], ['Effect of the vote', 1]] }),
     ]),
@@ -449,16 +449,16 @@ Q('m_iia_assent', mcq({
   sol: 'The Act received the royal assent on 18 July 1947 and took effect on 15 August 1947. The plan it put into law had been announced in June.',
 }));
 Q('m_iia_dominions', mcq({
-  t: 3, d: 2, c: 'application',
-  stem: 'On 15 August 1947 an imagined student writes in her diary what the new law from London has just created. Which entry is correct according to the Indian Independence Act?',
-  opts: ['Two independent dominions, India and Pakistan', 'A single federation of India and the states', 'An Indian republic with an elected President', 'A British-controlled interim council'],
-  sol: 'Two independent dominions came into being on 15 August 1947. India became a republic only on 26 January 1950.',
+  t: 3, d: 3, c: 'analysis',
+  stem: 'On 15 August 1947 an imagined student writes in her diary: "Today India became fully independent, a republic with its own President." What is the best correction according to the Indian Independence Act?',
+  opts: ['Right about independence, wrong about the form: India became a dominion with a Governor-General, and a republic only when its own constitution came into force in 1950', 'Wrong about independence: the Act left the British Parliament free to make laws for India until 1950', 'Right on both points: the Constituent Assembly had already declared a republic', 'Wrong on both points: independence was to come only in June 1948, as Attlee had said'],
+  sol: 'The Act created independent dominions on 15 August 1947, with a Governor-General as head, and India became a republic only on 26 January 1950, so the diary is right on independence and wrong on the republic. The 1935 Act did continue to be used, which may tempt the second option, but the British Parliament lost its power to legislate; June 1948 was the latest date in Attlee\'s statement, later replaced by 15 August 1947.',
 }));
 Q('m_iia_paramountcy', mcq({
-  t: 3, d: 2, c: 'understanding',
-  stem: 'What did the Indian Independence Act provide about British paramountcy over the princely states?',
-  opts: ['It would lapse, ending British authority over them', 'It would pass to the Government of India', 'It would pass to the Government of Pakistan', 'It would continue until 1950'],
-  sol: 'Paramountcy lapsed on 15 August 1947; it was not transferred to either dominion. The states then decided on accession.',
+  t: 3, d: 3, c: 'application',
+  stem: 'A historian notes that the Indian Independence Act ended British paramountcy but did not say which dominion any state belonged to. What consequence followed for the states?',
+  opts: ['Each state had to settle its own position, in practice by accession to India or Pakistan, now that the Crown\'s protection was withdrawn', 'Each state passed automatically to the dominion nearest to it', 'Each state stayed under the Crown\'s protection until the new constitutions were ready', 'Each state became a province of the Government of India Act, 1935'],
+  sol: 'With paramountcy lapsed and no state assigned to a dominion, every ruler had to decide his state\'s future, in practice by accession. Automatic transfer to the nearest dominion, continued protection and conversion into provinces were not provided by the Act.',
 }));
 Q('m_iia_sos', mcq({
   t: 3, d: 2, c: 'understanding',
@@ -468,39 +468,39 @@ Q('m_iia_sos', mcq({
 }));
 Q('m_iia_ca_role', mcq({
   t: 3, d: 3, c: 'application',
-  stem: 'In late 1947 an imagined journalist notices that the body writing India\'s constitution is also passing ordinary laws. Which provision of the Indian Independence Act explains this?',
-  opts: ['It could frame the constitution and also act as the dominion\'s legislature', 'It could only advise the Governor-General', 'It could only choose the Prime Minister', 'It had no power until the British Parliament approved its laws'],
-  sol: 'Each Constituent Assembly was to frame a constitution and also act as the legislature, with full power to make laws. The British Parliament lost its authority over the dominions.',
+  stem: 'In late 1947 an imagined journalist sees the Constituent Assembly pass an ordinary law one day and debate the draft constitution the next. Which fact best explains why the Act needed to give the Assembly this second role?',
+  opts: ['The British Parliament could no longer legislate for India, so an Indian body with full law-making power was needed at once, while the new constitution was still being prepared', 'The Government of India Act, 1935 stayed in force as adapted', 'Each dominion was to have a Governor-General', 'The office of Secretary of State for India was abolished'],
+  sol: 'From 15 August 1947 the British Parliament had no power to make laws for the dominions, and elections under a new constitution were still some way off, so the Assembly was made the legislature as well. The other three options are true provisions of the Act, but none of them supplies a law-making body.',
 }));
 Q('m_iia_interim_law', mcq({
   t: 3, d: 3, c: 'application',
-  stem: 'An imagined official in Delhi in September 1947 needs to know which law still governs the working of the new government until India\'s own constitution is ready. What should she consult?',
-  opts: ['The Government of India Act, 1935, as adapted', 'The Cabinet Mission Plan of 1946', 'The Queen\'s Proclamation of 1858', 'The Constitution of 1950'],
-  sol: 'Until new constitutions were made, each dominion was governed by the Government of India Act, 1935, with necessary changes. The plan of 1946 was not a law, and the Constitution came only in 1950.',
+  stem: 'In September 1947 an imagined clerk says that since the British Parliament has lost its power over India, the Government of India Act, 1935 must have ended too, leaving no law to run the government. What is the best response?',
+  opts: ['The 1935 Act remained the working framework, with adaptations, until the new constitution came into force; what ended was Britain\'s power to legislate, not the framework', 'The clerk is right, because the Independence Act repealed the 1935 Act on 15 August', 'The government is run under the Cabinet Mission Plan of 1946 until the constitution is ready', 'The Constitution of 1950 already applies, since the Assembly has begun its work'],
+  sol: 'The Independence Act kept the 1935 Act in use, as adapted, because no new constitution was yet ready. Ending Britain\'s power to make laws for India is a different matter from ending the Act. The Mission Plan was a set of proposals, not a law, and the Constitution came into force only in 1950.',
 }));
 Q('m_iia_gg', mcq({
-  t: 3, d: 3, c: 'application',
-  stem: 'An imagined student says that after 15 August 1947 the head of state of each new dominion was a Governor-General. Which provision of the Act is she describing?',
-  opts: ['Each dominion would have a Governor-General appointed by the Crown on the advice of its own cabinet', 'The British Prime Minister would govern both dominions', 'The Secretary of State for India would remain head of both', 'The President of the Constituent Assembly would be head of state'],
-  sol: 'The Act provided a Governor-General for each dominion, appointed on the advice of that dominion\'s cabinet. The Secretary of State\'s office was abolished.',
+  t: 3, d: 3, c: 'analysis',
+  stem: 'An imagined student argues: "Each dominion had a Governor-General appointed by the Crown, so the British cabinet still chose who ruled India." What is the best assessment?',
+  opts: ['Partly right: the Crown made the appointment, but on the advice of the dominion\'s own cabinet, so India\'s ministers decided who it would be', 'Right: the British Prime Minister selected the Governor-General of each dominion', 'Wrong: the Governor-General of each dominion was elected by its Constituent Assembly', 'Wrong: the post of Governor-General was abolished together with that of the Secretary of State'],
+  sol: 'The formal appointment was by the Crown, but it followed the advice of the dominion\'s own cabinet, so the argument is only half right. The Governor-General was neither chosen by the British Prime Minister nor elected by the Assembly, and the post continued; it was the Secretary of State\'s office that was abolished.',
 }));
 Q('m_iia_parliament', mcq({
   t: 3, d: 3, c: 'analysis',
-  stem: 'Why is the Indian Independence Act seen as ending Britain\'s legal authority over India?',
-  opts: ['After 15 August 1947 no law of the British Parliament would apply to the dominions unless they adopted it', 'It made the British monarch the President of India', 'It placed India under the League of Nations', 'It kept the Secretary of State in charge of foreign affairs'],
-  sol: 'From the appointed day, the British Parliament could no longer legislate for the dominions, and their own legislatures became sovereign. The other options are wrong.',
+  stem: 'An imagined student claims the Act ended British legal authority simply by naming two dominions and a date. Which further provision shows that more than that was needed?',
+  opts: ['The British Parliament lost its power to make laws for the dominions', 'The Government of India Act, 1935 stayed in force as adapted', 'Each dominion received a Governor-General', 'The two dominions could share one Governor-General if they agreed'],
+  sol: 'Naming the dominions did not by itself stop Parliament in London from legislating for them; the clause that took that power away is what ended British legal authority. The other three are true provisions, but they describe continuing machinery of government, not the end of Britain\'s authority.',
 }));
 Q('ar_iia_paramountcy', ar({
-  t: 3, d: 3, c: 'analysis', verdict: 'both-true-explains',
-  a: 'After 15 August 1947 the princely states had to decide their future relationship with the dominions.',
-  r: 'The Indian Independence Act provided that British paramountcy over the states would lapse.',
-  sol: 'Both are true, and R explains A: with paramountcy lapsing, the states were no longer tied to the British Crown and had to choose accession to India or Pakistan.',
+  t: 3, d: 3, c: 'analysis', verdict: 'both-true-not-explains',
+  a: 'The Government of India Act, 1935 continued to be used in India after 15 August 1947.',
+  r: 'The Indian Independence Act ended the power of the British Parliament to make laws for the dominions.',
+  sol: 'Both are true, but R does not explain A. The 1935 Act stayed in use, as adapted, because no new constitution was ready yet; ending Parliament\'s power to legislate for India does not by itself say anything about which Act governed the working of the government.',
 }));
 Q('ar_iia_republic', ar({
-  t: 3, d: 2, c: 'analysis', verdict: 'A-true-R-false',
-  a: 'The Indian Independence Act came into force on 15 August 1947.',
-  r: 'The Act made India a republic on the same day.',
-  sol: 'A is true. R is false: India became a dominion on 15 August 1947 and a republic only on 26 January 1950.',
+  t: 3, d: 3, c: 'analysis', verdict: 'both-true-explains',
+  a: 'India was a dominion, not a republic, on 15 August 1947.',
+  r: 'The head of each dominion was a Governor-General who represented the Crown and acted on the advice of the dominion\'s own ministers.',
+  sol: 'Both are true, and R explains A: a republic has a head of state who does not derive office from the Crown, whereas the Governor-General represented the Crown, so India stayed a dominion until its own constitution made it a republic in 1950.',
 }));
 Q('tf_iia_one_gg', tf({
   t: 3, d: 3, c: 'understanding', ans: true,
@@ -529,17 +529,17 @@ Q('s_iia_ca_two', short({
 }));
 Q('s_iia_offices_two', short({
   t: 3, d: 2, c: 'application', marks: 2, wl: S2,
-  stem: 'An imagined clerk in a London ministry learns in August 1947 that his department is closing. Name the office that ended under the Indian Independence Act, and the office that would head each new dominion.',
-  model: 'The office of the **Secretary of State for India** was **abolished**. Each dominion would have a **Governor-General**, appointed on the advice of its own **cabinet**.',
-  sol: 'Abolished office; kept office.',
-  scheme: [['Secretary of State abolished', 1], ['Governor-General for each dominion', 1]],
+  stem: 'An imagined clerk in a London ministry learns in August 1947 that his India department will close, while the post of Governor-General in Delhi continues. Explain why one office ended and the other did not.',
+  model: 'The **Secretary of State\'s** office existed to supervise India from London; with British authority over India ended, it had no work left. The **Governor-General** stayed as the dominion\'s head, but now on the advice of its own **cabinet**.',
+  sol: 'Supervision from London ended; Governor-General continued on cabinet advice.',
+  scheme: [['Why the Secretary of State\'s office ended', 1], ['Why the Governor-General continued, and on whose advice', 1]],
 }));
 Q('s_iia_apply', short({
   t: 3, d: 3, c: 'application', marks: 2, wl: S2,
-  stem: 'An imagined ruler of a small princely state asks his adviser in August 1947 whether the British Crown still protects his state. What should the adviser reply, using the Indian Independence Act?',
-  model: 'The adviser should say **no**: the Act ended **British paramountcy** on **15 August 1947**, so the state must now decide whether to **join India or Pakistan**.',
-  sol: 'Paramountcy lapsed; choice of accession.',
-  scheme: [['Paramountcy lapsed', 1], ['Must choose accession', 1]],
+  stem: 'An imagined ruler in August 1947 hopes to stay apart from both dominions, saying the Act has ended British paramountcy. His adviser calls this argument only half right. Explain what the Act did and did not change for him.',
+  model: 'The Act **ended paramountcy**, so the Crown no longer protected the state and its treaties lapsed. But it created only **two dominions**, giving no separate place to a state, so in practice the ruler had to decide on **accession** to **India or Pakistan**.',
+  sol: 'Paramountcy lapsed; no separate place; accession in practice.',
+  scheme: [['What the Act changed: paramountcy lapsed', 1], ['What it did not change: no place outside the two dominions', 1]],
 }));
 Q('s3_iia_three', short({
   t: 3, d: 2, c: 'understanding', marks: 3, wl: S3,
@@ -568,7 +568,7 @@ Q('sb_iia_minutes', source({
   passage: '**Minutes of an imagined college debating club, Lucknow, August 1947**\n\nThe motion was that the law passed in London last month has truly ended foreign rule. The first speaker noted that from the fifteenth of this month two new countries exist, each with its own assembly to make laws and write a constitution. The second speaker reminded us that the old minister in London who supervised India no longer holds office. A third speaker asked what would happen to the rulers of the states, now that the Crown\'s protection has ended. The motion was carried.',
   parts: [
     child('a', short({ t: 3, d: 1, c: 'recall', marks: 1, stem: 'Name the "law passed in London last month".', model: 'The **Indian Independence Act, 1947**.', sol: 'The Act.', scheme: [['Indian Independence Act', 1]] })),
-    child('b', short({ t: 3, d: 2, c: 'application', marks: 1, stem: 'Which office is "the old minister in London who supervised India"?', model: 'The **Secretary of State for India**, abolished by the Act.', sol: 'Secretary of State.', scheme: [['Secretary of State for India', 1]] })),
+    child('b', short({ t: 3, d: 2, c: 'recall', marks: 1, stem: 'Which office is "the old minister in London who supervised India"?', model: 'The **Secretary of State for India**, abolished by the Act.', sol: 'Secretary of State.', scheme: [['Secretary of State for India', 1]] })),
     child('c', short({ t: 3, d: 3, c: 'analysis', marks: 2, stem: '**Either** (i): Answer the third speaker\'s question using the provisions of the Act.', model: 'The Act ended **British paramountcy**, so the rulers lost the Crown\'s protection and had to decide their **future**, in practice by **acceding** to **India** or **Pakistan**.', sol: 'Paramountcy lapsed; accession.', scheme: [['Paramountcy ended', 1], ['Decision on accession', 1]] }), [
       short({ t: 3, d: 3, c: 'analysis', marks: 2, stem: '**Or** (ii): Which two clauses of the Act did the first speaker refer to?', model: '1. Two independent **dominions**, India and Pakistan, from **15 August 1947**.\n2. Each **Constituent Assembly** would act as the **legislature** and frame the **constitution**.', sol: 'Two clauses.', scheme: [['Two dominions', 1], ['Constituent Assembly as legislature', 1]] }),
     ]),
@@ -583,12 +583,12 @@ Q('m_chk_cm_year', mcq({
   sol: 'The Mission arrived in March 1946 and announced its plan in May 1946. 1942 is the Cripps Mission; 1947 the Mountbatten Plan.',
 }));
 Q('tf_chk_section_c', tf({
-  t: 1, d: 2, c: 'application', ans: false,
+  t: 1, d: 2, c: 'recall', ans: false,
   stem: 'True or false? In the 1946 grouping scheme, Punjab was placed in Section C.',
   sol: 'False. Punjab was in Section B, with the NWFP and Sind; Section C was Bengal and Assam.',
 }));
 Q('m_chk_two_parts', mcq({
-  t: 2, d: 2, c: 'application',
+  t: 2, d: 2, c: 'recall',
   stem: 'Under the 3 June 1947 plan, an assembly met in two parts to vote on dividing its province. Which pair of provinces did this apply to?',
   opts: ['Punjab and Bengal', 'Bombay and Madras', 'Sind and the NWFP', 'Assam and Orissa'],
   sol: 'The two-part vote applied to Punjab and Bengal, which had both Muslim-majority and other districts. Sind decided through its whole assembly and the NWFP by referendum.',

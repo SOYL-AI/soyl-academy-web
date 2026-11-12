@@ -32,7 +32,7 @@ Meaning, importance and AS 3 (revised) · cash, cash equivalents and what is not
 | Type | Count | Marks | Notes |
 |---|---|---|---|
 | mcq | 22 | 1 | keys a6 b5 c6 d5 |
-| assertion-reason | 7 | 1 | keys a2 b3 c1 d1 |
+| assertion-reason | 7 | 1 | keys a3 b3 c1 d0 (ISC specimen options; (d) = both false) |
 | true-false · fill-blank · match | 4 · 3 · 3 | 1 · 1 · 2 | T/F 3 true, 1 false |
 | numerical | 6 | 1 | cash equivalents, net profit before tax, depreciation, purchase at written-down value, financing total, tax paid |
 | short | 10 | 2 | cash equivalents, importance to a lender, two non-cash items, four classifications, net profit before tax, working capital, depreciation account, premium received behind issue expenses, tax account, three dividends |
@@ -67,3 +67,7 @@ Accounts has no subject blueprint, so the tests use the ISC 12 defaults. The boa
 - No case-based item; written items are self-evaluated against the marking scheme.
 - Balance sheets are comparative extracts in Schedule III order without note numbers; deferred tax, bank overdraft and foreign-currency flows are not used.
 - Full statements and balance sheets are long tables that scroll on a phone; the waterfall SVG places labels by pixel coordinates — check at 360 px on staging.
+
+## Assertion-reason options (2026-11-09)
+
+Options aligned with the latest Class XII Accounts specimen paper (858, ISC 2026; no 2027 Class XII Accounts specimen is published): (a) both true, R explains A; (b) both true, R does not explain A; (c) A true, R false; (d) both false. For this chapter option (d) is now "Both Assertion and Reason are false" (was "A is false, but R is true"); every item keyed (d) under the old order was rewritten (its assertion corrected so both are true, or its reason made false so both are false), and its key and solution updated. Keys in bank order: a b c a b a b. Tests are unchanged (same items in the same slots).
