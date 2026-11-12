@@ -72,7 +72,7 @@ export function MyAttemptsCard() {
           tint="pink"
           compact
           action={
-            <ButtonLink href="/tests" size="sm" variant="soft">
+            <ButtonLink href="/tests" variant="soft">
               Find a test
             </ButtonLink>
           }
@@ -97,7 +97,7 @@ export function MyAttemptsCard() {
         </List>
       )}
       {cursor && (
-        <Button variant="ghost" size="sm" loading={busy} onClick={() => void load(cursor)}>
+        <Button variant="ghost" loading={busy} onClick={() => void load(cursor)}>
           Show more
         </Button>
       )}
@@ -162,7 +162,7 @@ export function SubscriptionCard() {
           )}
           <p className={s.muted}>Lessons, practice and tests are free on every plan. Plans only add AI credits.</p>
           <div className={s.actions}>
-            <ButtonLink href="/plans" size="sm" variant="soft">
+            <ButtonLink href="/plans" variant="soft">
               {sub.plan !== 'free' ? 'Change plan' : sub.billingEnabled ? 'See plans' : 'Paid plans (coming soon)'}
             </ButtonLink>
             {/* Bills of Supply and credit notes (invoices work, merged separately into platform/main). */}
@@ -170,7 +170,7 @@ export function SubscriptionCard() {
               Invoices and receipts
             </Link>
             {canCancel && (
-              <Button variant="secondary" size="sm" onClick={() => setConfirm(true)} data-testid="cancel-plan">
+              <Button variant="secondary" onClick={() => setConfirm(true)} data-testid="cancel-plan">
                 Cancel renewal
               </Button>
             )}
@@ -254,7 +254,7 @@ export function CreditsCard() {
       {aiAllowed && (
         <>
           <div className={s.actions}>
-            <Button variant="soft" size="sm" icon="sparkles" onClick={openGuide} data-testid="me-credit-guide">
+            <Button variant="soft" icon="sparkles" onClick={openGuide} data-testid="me-credit-guide">
               What can I do with my credits?
             </Button>
           </div>
@@ -286,7 +286,7 @@ export function CreditsCard() {
           </ul>
         )}
         {cursor && (
-          <Button variant="ghost" size="sm" onClick={() => void load(cursor)}>
+          <Button variant="ghost" onClick={() => void load(cursor)}>
             Show more
           </Button>
         )}

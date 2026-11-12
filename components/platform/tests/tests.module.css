@@ -20,7 +20,7 @@
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   gap: var(--p-space-6);
-  margin-top: var(--p-space-2);
+  margin-top: var(--p-space-6);
 }
 @media (min-width: 1024px) {
   .stack {
@@ -86,6 +86,9 @@
 }
 
 /* ── Hub ──────────────────────────────────────────────────────────────────── */
+.hub {
+  margin-top: var(--p-space-6);
+}
 .railNote {
   margin: 0 0 var(--p-space-3);
   color: var(--p-ink-muted);
@@ -223,7 +226,7 @@
 .scoreText {
   display: grid;
   gap: var(--p-space-2);
-  flex: 1 1 16rem;
+  flex: 1 1 auto;
   min-width: 0;
 }
 .eyebrow {
@@ -271,6 +274,12 @@
   flex-wrap: wrap;
   gap: var(--p-space-2);
 }
+.scoreRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--p-space-4);
+}
 .scoreRing {
   flex: none;
   padding: var(--p-space-2);
@@ -279,7 +288,7 @@
   box-shadow: var(--p-shadow-card);
 }
 .ringValue {
-  font-size: var(--p-text-2xl);
+  font-size: var(--p-text-xl);
   font-weight: var(--p-weight-display);
   font-variant-numeric: tabular-nums;
 }
@@ -414,14 +423,14 @@
 
 /* ── Builder ──────────────────────────────────────────────────────────────── */
 .builderPage {
-  margin-top: var(--p-space-2);
+  margin-top: var(--p-space-6);
 }
 .formCard {
   padding: var(--p-stage-card-pad);
 }
 .form {
   display: grid;
-  gap: var(--p-space-6);
+  gap: var(--p-space-8);
 }
 .fieldset {
   display: grid;
@@ -430,10 +439,6 @@
   margin: 0;
   padding: 0;
   border: 0;
-}
-.fieldset + .fieldset {
-  padding-top: var(--p-space-6);
-  border-top: 1px solid var(--p-border);
 }
 .fieldset legend {
   display: flex;
@@ -949,4 +954,10 @@
   margin: 0;
   font-size: var(--p-text-xl);
   font-weight: 700;
+}
+
+/* Review filters: chips at the 44 px touch size (the kit chip is 36 px). */
+.filterRow > button {
+  min-height: var(--p-touch);
+  padding-inline: var(--p-space-4);
 }

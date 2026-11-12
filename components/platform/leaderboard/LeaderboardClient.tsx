@@ -143,7 +143,7 @@ export function LeaderboardClient() {
 
   const taken = new Set(mine.map((a) => a.liveEventId));
   const shown = (events ?? []).filter((e) => taken.has(e.id) || e.phase === 'live' || e.phase === 'writing' || e.phase === 'results_published');
-  const upcoming = (events ?? []).filter((e) => e.phase === 'upcoming' || e.phase === 'registration_open');
+  const upcoming = (events ?? []).filter((e) => e.phase === 'upcoming' || e.phase === 'registration_open').sort((a, b) => Date.parse(a.startsAt) - Date.parse(b.startsAt)).slice(0, 4);
 
   const rail = (
     <>

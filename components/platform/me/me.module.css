@@ -50,8 +50,7 @@
   }
   .profileHeader > div[aria-hidden='true'] > * {
     /* The avatar is drawn at 96 px for wider screens; three quarters of it on phones. */
-    transform: scale(0.75);
-    transform-origin: top left;
+    zoom: 0.75;
   }
 }
 /* "Your learning" rail card (#activity). */
@@ -514,4 +513,12 @@
   outline: none;
   border-radius: var(--p-radius-sm);
   box-shadow: var(--p-focus-ring);
+}
+
+/* Room between the greeting and the cards. */
+.profileHeader {
+  margin-bottom: var(--p-space-6);
+}
+.stack h3 {
+  margin-top: var(--p-space-4);
 }

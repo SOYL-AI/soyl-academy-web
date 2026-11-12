@@ -211,7 +211,8 @@ export function ActivitySummary() {
           Player card: <b className={s.ink}>{rated.overall}</b> overall{rated.provisional ? ' (provisional)' : ''}. Only you can see it.
         </p>
       )}
-      <ButtonLink href="/me/progress" variant="soft" icon="chart" block data-testid="progress-link">
+      {/* prefetch off like the shell's PROGRESS_NAV: a prefetched /me/progress kept members' pages from going network-idle before that page existed (design-system v3 handoff). */}
+      <ButtonLink href="/me/progress" variant="soft" icon="chart" block prefetch={false} data-testid="progress-link">
         See all your progress
       </ButtonLink>
     </RailCard>

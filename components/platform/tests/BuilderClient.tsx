@@ -401,7 +401,7 @@ function PaperFromUpload({ subjectId }: { subjectId: string }) {
           {billingOn ? (
             <>
               <p className={s.muted}>This is part of Pro and the Board Exam Pass ({creditsText(quote.credits)} per paper).</p>
-              <ButtonLink href="/plans" variant="soft" size="sm" icon="sparkles">
+              <ButtonLink href="/plans" variant="soft" icon="sparkles">
                 Upgrade to Pro
               </ButtonLink>
             </>

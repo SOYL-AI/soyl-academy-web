@@ -200,9 +200,16 @@ function Result({ result, onChange, late }: { result: AttemptResult; onChange: (
           <h1 className={s.resultTitle} lang={lang}>
             {result.test.title}
           </h1>
-          <p className={s.scoreBig} data-testid="score">
-            {scoreText(score.total)} <span className={s.scoreMax}>/ {scoreText(score.max)}</span>
-          </p>
+          <div className={s.scoreRow}>
+            <p className={s.scoreBig} data-testid="score">
+              {scoreText(score.total)} <span className={s.scoreMax}>/ {scoreText(score.max)}</span>
+            </p>
+            {pct !== null && (
+              <ProgressRing value={pct} size={88} stroke={8} label={`Score: ${pct}%`} className={s.scoreRing}>
+                <span className={s.ringValue}>{pct}%</span>
+              </ProgressRing>
+            )}
+          </div>
           {band && <p className={s.scoreLine}>{pick(SCORE_LINES[band])}</p>}
           <div className={s.scoreParts}>
             <StatusPill tone="success">Auto-graded: {scoreText(score.auto)}</StatusPill>
@@ -215,11 +222,6 @@ function Result({ result, onChange, late }: { result: AttemptResult; onChange: (
             </p>
           )}
         </div>
-        {pct !== null && (
-          <ProgressRing value={pct} size={120} stroke={10} label={`Score: ${pct}%`} className={s.scoreRing}>
-            <span className={s.ringValue}>{pct}%</span>
-          </ProgressRing>
-        )}
       </Card>
 
       {late > 0 && (
@@ -257,7 +259,7 @@ function Result({ result, onChange, late }: { result: AttemptResult; onChange: (
             {live.rank !== null ? `Rank ${live.rank} of ${live.total}` : 'Your rank appears soon.'}
             {live.percentile !== null ? ` · percentile ${Math.round(live.percentile)}` : ''}. Ranks use auto-graded marks only.
           </p>
-          <ButtonLink href={`/tests/live/${encodeURIComponent(live.eventId)}`} variant="soft" size="sm" icon="trophy">
+          <ButtonLink href={`/tests/live/${encodeURIComponent(live.eventId)}`} variant="soft" icon="trophy">
             See the leaderboard
           </ButtonLink>
         </Card>
@@ -602,7 +604,7 @@ function ReviewList({ result, lang, ai, onChange, onAi }: { result: AttemptResul
                 {hasWrittenPart(item) && item.response !== null && <SelfEvaluation item={item} attemptId={result.attempt.id} onChange={onChange} />}
                 {aiItem && <AiMarks item={aiItem} />}
                 {hasWrittenPart(item) && item.response !== null && aiAllowed && !aiItem && (
-                  <Button size="sm" variant="ghost" icon="spark" onClick={() => void evalApi.ask([item.itemId])} loading={evalApi.running}>
+                  <Button variant="ghost" icon="spark" onClick={() => void evalApi.ask([item.itemId])} loading={evalApi.running}>
                     Ask AI to mark this answer
                   </Button>
                 )}
@@ -676,7 +678,7 @@ function SelfEvaluation({ item, attemptId, onChange }: { item: AttemptResultItem
         </div>
       ))}
       <div className={s.row}>
-        <Button type="submit" size="sm" loading={state === 'saving'} disabled={!ready}>
+        <Button type="submit" loading={state === 'saving'} disabled={!ready}>
           {done ? 'Update my marks' : 'Save my marks'}
         </Button>
         {state === 'error' && (

@@ -24,7 +24,7 @@
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   gap: var(--p-space-6);
-  margin-top: var(--p-space-2);
+  margin-top: var(--p-space-6);
 }
 .stack > * {
   min-width: 0;

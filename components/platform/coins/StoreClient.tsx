@@ -105,17 +105,17 @@ function ItemCard({ item, balance, now, equipped, busy, onRedeem, onSignIn, onEq
         <div className={s.itemFoot}>
           <Price coins={item.priceCoins} />
           {copy.action === 'redeem' && (
-            <Button size="sm" onClick={onRedeem} data-testid="redeem">
+            <Button onClick={onRedeem} data-testid="redeem">
               Redeem
             </Button>
           )}
           {copy.action === 'sign_in' && (
-            <Button size="sm" variant="secondary" onClick={onSignIn}>
+            <Button variant="secondary" onClick={onSignIn}>
               {copy.label}
             </Button>
           )}
           {copy.action === 'equip' && (
-            <Button size="sm" variant={isEquipped ? 'secondary' : 'primary'} loading={busy} onClick={() => onEquip(!isEquipped)} data-testid="equip" aria-pressed={isEquipped}>
+            <Button variant={isEquipped ? 'secondary' : 'primary'} loading={busy} onClick={() => onEquip(!isEquipped)} data-testid="equip" aria-pressed={isEquipped}>
               {isEquipped ? 'Equipped' : 'Equip'}
             </Button>
           )}
@@ -157,12 +157,12 @@ function Redemptions({ list, onAddress, onCancel }: { list: CoinRedemption[]; on
           </span>
           <span className={s.orderActions}>
             {needsAddress(r) && (
-              <Button size="sm" onClick={() => onAddress(r)} data-testid="add-address">
+              <Button onClick={() => onAddress(r)} data-testid="add-address">
                 Add address
               </Button>
             )}
             {canCancel(r) && (
-              <Button size="sm" variant="ghost" onClick={() => onCancel(r)} data-testid="cancel-redemption">
+              <Button variant="ghost" onClick={() => onCancel(r)} data-testid="cancel-redemption">
                 Cancel
               </Button>
             )}
@@ -222,7 +222,7 @@ function ComingSoon({ member }: { member: boolean }) {
                 key={w.key}
                 leading={<IconTile icon={v.icon} tint={v.tint} size="sm" />}
                 title={w.label}
-                trailing={
+                meta={
                   <span className={s.earnNowCoins}>
                     <Icon name="coin" size={16} className={s.priceCoin} /> {w.coins}
                     <span className="p-visually-hidden"> {w.coins === '1' ? 'coin' : 'coins'}</span>

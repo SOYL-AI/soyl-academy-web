@@ -106,7 +106,8 @@ describe('tests view-models', () => {
 
   it('live timeline: IST day, date and time, subject tint, status written; only open mocks, soonest first', () => {
     const item = liveEventItem(live());
-    expect(item).toMatchObject({ time: 'Sun', timeSub: '15 Nov', title: 'Science full mock', meta: '10:00 IST · 3 h · Science', href: '/tests/live/live_1', tint: 'green' });
+    expect(item).toMatchObject({ time: 'Sun', timeSub: '15 Nov', title: 'Science full mock', meta: '10:00 IST · 3 h', href: '/tests/live/live_1', tint: 'green' });
+    expect(liveEventItem(live({ title: 'All-India Mock 1' })).meta).toBe('10:00 IST · 3 h · Science');
     const { container } = render(<>{liveEventItem(live({ me: { registered: true, attemptId: null, attemptStatus: null } })).status}</>);
     expect(container.textContent).toBe('Registered');
     const list = upcomingLive([live({ id: 'c', phase: 'closed' }), live({ id: 'b', startsAt: '2026-11-20T04:30:00.000Z' }), live({ id: 'a', phase: 'live', startsAt: '2026-11-13T04:30:00.000Z' })]);

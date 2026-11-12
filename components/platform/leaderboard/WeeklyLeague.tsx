@@ -124,7 +124,7 @@ export function WeeklyLeague({ league, now }: { league: LeagueState; now: number
       <Notice title="Choose your class to join a league" testId="league-class-required">
         <p className={s.muted}>Leagues are for your class. Choose your board and class first.</p>
         <div>
-          <ButtonLink href="/me" variant="soft" size="sm">
+          <ButtonLink href="/me" variant="soft">
             Set my class
           </ButtonLink>
         </div>

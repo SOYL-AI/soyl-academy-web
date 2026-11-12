@@ -97,7 +97,7 @@ describe('league model', () => {
 
   it('an upcoming live mock becomes a Timeline item in India time with its status written', () => {
     const item = liveEventItem(liveEvent());
-    expect(item).toMatchObject({ id: 'ev1', time: 'Sun', timeSub: '15 Nov', title: 'Science full mock', meta: '10:00 IST · 3 h · Science', href: '/tests/live/ev1', tint: 'green' });
+    expect(item).toMatchObject({ id: 'ev1', time: 'Sun', timeSub: '15 Nov', title: 'Science full mock', meta: '10:00 IST · 3 h', href: '/tests/live/ev1', tint: 'green' });
     render(<>{item.status}</>);
     expect(screen.getByText('Registered')).toBeTruthy();
     cleanup();

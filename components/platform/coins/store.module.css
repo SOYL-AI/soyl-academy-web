@@ -312,9 +312,10 @@
   display: inline-flex;
   align-items: center;
   gap: var(--p-space-1);
-  color: var(--p-ink);
-  font-weight: 650;
+  color: var(--p-ink-muted);
+  font-weight: 600;
   font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
 }
 
 /* ── ADR-023: collectible rarity frames (deterministic; see rarity.ts) ───── */

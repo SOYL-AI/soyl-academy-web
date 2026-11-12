@@ -237,7 +237,7 @@ function Tutor() {
         </p>
         <p className={s.muted}>They refill at 00:00 IST. Lessons, practice and tests never use credits.</p>
         <div>
-          <Button variant="ghost" size="sm" icon="info" onClick={openGuide} data-testid="ask-credit-guide">
+          <Button variant="ghost" icon="info" onClick={openGuide} data-testid="ask-credit-guide">
             What can I do with my credits?
           </Button>
         </div>
@@ -262,7 +262,7 @@ function Tutor() {
         )}
         {chat.messages.length > 0 && (
           <div>
-            <Button variant="soft" size="sm" icon="plus" onClick={chat.reset} data-testid="new-chat">
+            <Button variant="soft" icon="plus" onClick={chat.reset} data-testid="new-chat">
               Start a new chat
             </Button>
           </div>

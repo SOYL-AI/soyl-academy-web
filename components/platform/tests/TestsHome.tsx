@@ -282,62 +282,64 @@ export function TestsHome() {
     ) : undefined;
 
   return (
-    <PageColumns rail={rail} railLabel="Upcoming live mocks" railFirstOnPhones>
-      <PageSection
-        id="subjects-title"
-        title={user ? 'Your subjects with tests' : 'Subjects with tests'}
-        description="Chapter tests, unit tests and full papers in board pattern."
-        data-testid="hub-subjects"
-      >
-        <div className={s.pickers} role="group" aria-label="Board and class">
-          <label className={s.field} htmlFor={boardId}>
-            Board
-            <select id={boardId} className={s.select} value={board} onChange={(e) => setBoard(e.target.value as BoardSlug)}>
-              {BOARDS.map((b) => (
-                <option key={b} value={b}>
-                  {BOARD_NAMES[b]}
-                </option>
-              ))}
-            </select>
-          </label>
-          <label className={s.field} htmlFor={classId}>
-            Class
-            <select id={classId} className={s.select} value={classLevel} onChange={(e) => setClassLevel(Number(e.target.value))}>
-              {CLASS_LEVELS.map((cl) => (
-                <option key={cl} value={cl}>
-                  Class {cl} ({examLabel(board, cl)})
-                </option>
-              ))}
-            </select>
-          </label>
-        </div>
-
-        {error && (
-          <EmptyState title="We could not load the subjects" icon="alert" tint="red" compact>
-            Check your connection and try again.
-          </EmptyState>
-        )}
-        {(!subjects || summaries === 'loading') && !error && (
-          <div aria-busy="true" aria-label="Loading subjects" className={s.skeletonGrid}>
-            <SkeletonCard thumb lines={2} />
-            <SkeletonCard thumb lines={2} />
-            <SkeletonCard thumb lines={2} />
+    <div className={s.hub}>
+      <PageColumns rail={rail} railLabel="Upcoming live mocks" railFirstOnPhones>
+        <PageSection
+          id="subjects-title"
+          title={user ? 'Your subjects with tests' : 'Subjects with tests'}
+          description="Chapter tests, unit tests and full papers in board pattern."
+          data-testid="hub-subjects"
+        >
+          <div className={s.pickers} role="group" aria-label="Board and class">
+            <label className={s.field} htmlFor={boardId}>
+              Board
+              <select id={boardId} className={s.select} value={board} onChange={(e) => setBoard(e.target.value as BoardSlug)}>
+                {BOARDS.map((b) => (
+                  <option key={b} value={b}>
+                    {BOARD_NAMES[b]}
+                  </option>
+                ))}
+              </select>
+            </label>
+            <label className={s.field} htmlFor={classId}>
+              Class
+              <select id={classId} className={s.select} value={classLevel} onChange={(e) => setClassLevel(Number(e.target.value))}>
+                {CLASS_LEVELS.map((cl) => (
+                  <option key={cl} value={cl}>
+                    Class {cl} ({examLabel(board, cl)})
+                  </option>
+                ))}
+              </select>
+            </label>
           </div>
-        )}
-        {subjects && subjects.subjects.length === 0 && (
-          <EmptyState title="No subjects yet" icon="book" tint="neutral" compact>
-            This class is coming soon.
-          </EmptyState>
-        )}
-        {subjects && summaries !== 'loading' && subjects.subjects.length > 0 && <SubjectGroups subjects={subjects.subjects} board={board} classLevel={classLevel} summaries={summaries} />}
-      </PageSection>
 
-      {user && (
-        <PageSection id="recent-title" title="Recent attempts" action={attempts && attempts.length > 0 ? { href: '/me#attempts', label: 'See all' } : undefined} data-testid="recent-attempts">
-          <RecentAttempts attempts={attempts} />
+          {error && (
+            <EmptyState title="We could not load the subjects" icon="alert" tint="red" compact>
+              Check your connection and try again.
+            </EmptyState>
+          )}
+          {(!subjects || summaries === 'loading') && !error && (
+            <div aria-busy="true" aria-label="Loading subjects" className={s.skeletonGrid}>
+              <SkeletonCard thumb lines={2} />
+              <SkeletonCard thumb lines={2} />
+              <SkeletonCard thumb lines={2} />
+            </div>
+          )}
+          {subjects && subjects.subjects.length === 0 && (
+            <EmptyState title="No subjects yet" icon="book" tint="neutral" compact>
+              This class is coming soon.
+            </EmptyState>
+          )}
+          {subjects && summaries !== 'loading' && subjects.subjects.length > 0 && <SubjectGroups subjects={subjects.subjects} board={board} classLevel={classLevel} summaries={summaries} />}
         </PageSection>
-      )}
-    </PageColumns>
+
+        {user && (
+          <PageSection id="recent-title" title="Recent attempts" action={attempts && attempts.length > 0 ? { href: '/me#attempts', label: 'See all' } : undefined} data-testid="recent-attempts">
+            <RecentAttempts attempts={attempts} />
+          </PageSection>
+        )}
+      </PageColumns>
+    </div>
   );
 }
 

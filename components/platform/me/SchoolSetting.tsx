@@ -122,10 +122,10 @@ function SchoolEditor({ me, onChange }: { me: Me; onChange: (me: Me) => void }) 
           </p>
           {schoolPlace(me.school) && <p className={s.muted}>{schoolPlace(me.school)}</p>}
           <div className={s.actions}>
-            <Button variant="secondary" size="sm" onClick={() => setMode('search')} disabled={busy}>
+            <Button variant="secondary" onClick={() => setMode('search')} disabled={busy}>
               Change school
             </Button>
-            <Button variant="ghost" size="sm" onClick={() => void save(null)} loading={busy} data-testid="school-remove">
+            <Button variant="ghost" onClick={() => void save(null)} loading={busy} data-testid="school-remove">
               Remove
             </Button>
           </div>
@@ -221,11 +221,11 @@ function SchoolSearchBox({ busy, onPick, onAdd, onCancel }: { busy: boolean; onP
           ))}
       </div>
       <div className={s.actions}>
-        <Button variant="secondary" size="sm" onClick={onAdd} disabled={busy} data-testid="school-add">
+        <Button variant="secondary" onClick={onAdd} disabled={busy} data-testid="school-add">
           <Icon name="plus" size={16} /> Add my school
         </Button>
         {onCancel && (
-          <Button variant="ghost" size="sm" onClick={onCancel} disabled={busy}>
+          <Button variant="ghost" onClick={onCancel} disabled={busy}>
             Cancel
           </Button>
         )}

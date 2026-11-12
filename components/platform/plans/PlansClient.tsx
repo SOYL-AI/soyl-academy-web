@@ -461,7 +461,7 @@ export function PlansClient() {
 
       {mine?.subscription && !mine.subscription.cancelAtPeriodEnd && (mine.subscription.status === 'active' || mine.subscription.status === 'authenticated') && (
         <p>
-          <Button variant="ghost" size="sm" onClick={() => void cancel()}>
+          <Button variant="ghost" onClick={() => void cancel()}>
             Cancel renewal
           </Button>
         </p>

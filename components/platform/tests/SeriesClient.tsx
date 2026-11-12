@@ -93,7 +93,7 @@ export function SeriesClient({ subjectId, subjectName }: { subjectId: string; su
           tint="pink"
           headingLevel="h2"
           action={
-            <ButtonLink href="/tests/builder" icon="plus" size="sm">
+            <ButtonLink href="/tests/builder" icon="plus">
               Build your own test
             </ButtonLink>
           }
@@ -150,11 +150,11 @@ function TestRow({ t, icon, tint, onStart, member }: { t: TestSeriesTest; icon: 
       <div className={s.testActions}>
         {member && <StatusPill tone={status.tone}>{status.label}</StatusPill>}
         {me?.activeAttemptId ? (
-          <ButtonLink href={attemptPath(me.activeAttemptId)} size="sm" icon="play" data-testid="resume-test">
+          <ButtonLink href={attemptPath(me.activeAttemptId)} icon="play" data-testid="resume-test">
             Resume
           </ButtonLink>
         ) : (
-          <Button size="sm" variant={again ? 'soft' : 'primary'} onClick={onStart} data-testid="start-test-open">
+          <Button variant={again ? 'secondary' : 'soft'} onClick={onStart} data-testid="start-test-open">
             {again ? 'Take again' : pick({ junior: "Let's go", middle: 'Start', senior: 'Start' })}
           </Button>
         )}

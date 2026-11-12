@@ -16,7 +16,7 @@ export const PHASE_TONES: Partial<Record<LiveEvent['phase'], StatusTone>> = { li
 /** Phases a student can still join or register for (the hub's "Upcoming live mocks"). */
 export const OPEN_PHASES: ReadonlySet<LiveEvent['phase']> = new Set(['upcoming', 'registration_open', 'live', 'writing']);
 
-/** An upcoming live mock as a Timeline item: "Sat / 15 Nov", title, "10:00 IST · 3 h · Science", status (pure; tested). */
+/** An upcoming live mock as a Timeline item: "Sat / 15 Nov", title, "10:00 IST · 3 h" (+ " · Science" unless the title names it), status (pure; tested). */
 export function liveEventItem(e: LiveEvent): TimelineItem {
   const d = new Date(e.startsAt);
   const day = new Intl.DateTimeFormat('en-IN', { weekday: 'short', timeZone: IST }).format(d);
@@ -28,7 +28,8 @@ export function liveEventItem(e: LiveEvent): TimelineItem {
     time: day,
     timeSub: date,
     title: e.title,
-    meta: `${time} IST · ${durationText(e.durationMin)} · ${e.subject.name}`,
+    // The subject only when the title does not already say it ("Science full mock").
+    meta: `${time} IST · ${durationText(e.durationMin)}${e.title.toLowerCase().includes(e.subject.name.toLowerCase()) ? '' : ` · ${e.subject.name}`}`,
     href: `/tests/live/${encodeURIComponent(e.id)}`,
     status: <StatusPill tone={registered ? 'success' : (PHASE_TONES[e.phase] ?? 'neutral')}>{registered ? 'Registered' : (LIVE_PHASE_LABELS[e.phase] ?? e.phase)}</StatusPill>,
     tint: subjectTint(subjectStyle(e.subject.id, e.subject.name).hue),

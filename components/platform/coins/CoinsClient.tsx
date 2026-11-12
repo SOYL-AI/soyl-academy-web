@@ -96,7 +96,7 @@ function History() {
       {error && (
         <p className={s.errorText} role="alert">
           {error}{' '}
-          <Button size="sm" variant="secondary" onClick={() => void load(null)}>
+          <Button variant="secondary" onClick={() => void load(null)}>
             Try again
           </Button>
         </p>
@@ -144,7 +144,7 @@ function History() {
       )}
       {cursor && (
         <div>
-          <Button variant="secondary" size="sm" loading={busy} onClick={() => void load(cursor)} data-testid="history-more">
+          <Button variant="secondary" loading={busy} onClick={() => void load(cursor)} data-testid="history-more">
             Show older
           </Button>
         </div>
@@ -230,7 +230,7 @@ export function CoinsClient() {
         </div>
         <CheckIn />
         <div className={s.heroFoot}>
-          <ButtonLink href="/store" variant="soft" size="sm" icon="gift" data-testid="store-link">
+          <ButtonLink href="/store" variant="soft" icon="gift" data-testid="store-link">
             Exclusive rewards: coming soon
           </ButtonLink>
         </div>
