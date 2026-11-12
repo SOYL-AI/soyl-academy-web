@@ -46,6 +46,8 @@ What production does today: migrations 0000–0007 applied; catalog seeded; **41
 
 **Email (OA-17, done 2026-10-27).** `soylai.com` is verified (Domain, SPF, DKIM, DKIM2) and linked to ACS; a test email from `noreply@soylai.com` to the owner inbox succeeded. SPF ends in `-all`. The full OTP flow is tested when the platform is lit.
 
+**Sign-up notices (2026-11-12).** `SIGNUP_NOTIFY_EMAIL` (API app setting in `platform/infra/params/prod.bicepparam`, today the owner's inbox; empty = off) gets one email per new student account: masked email/phone, method, IST time, sign-ups today and total, link to `/admin`. At most `SIGNUP_NOTIFY.maxPerHour` (60, `platform/shared/config/notifications.ts`) per hour; beyond that the API logs `signup_notify_suppressed`; a send failure logs `signup_notify_failed` (`alert: true`) and never affects sign-up. Change the address by editing the param and redeploying the API.
+
 ### Before launch (scale-up)
 
 From [prod-first-deploy §13](runbooks/prod-first-deploy.md#13-scale-up-before-launch-owner-go-ahead): Postgres General Purpose (D2ds_v5 or larger) with zone-redundant HA; Redis Balanced_B1+ with HA (AOF once credits use Redis); API min 2 replicas / 1 vCPU; `deployFrontDoor=true` when audio/diagram assets exist; `deployAi=true` after OA-02; Vercel env `PLATFORM_API_ORIGIN`, `PLATFORM_EDGE_SECRET`, flags (OA-09); consent adapter (OA-08); AUTH-15 decision (OA-14); Google for staff sign-in (OA-05). Plus the security "must-fix before launch" list (S6-H01, S6-M01..M04).
