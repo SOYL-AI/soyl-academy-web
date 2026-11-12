@@ -1,84 +1,97 @@
 'use client';
 
 /**
- * The student dashboard (D-043; route /me/dashboard). Private data, so it is fetched in the browser (ADR-010):
- * `GET /v1/me/dashboard` (totals, accuracy windows, difficulty split, mastery, tests, focus, recent, badges,
- * weekly goal), plus `GET /v1/me/card` (level, XP, coins, player card), `GET /v1/me/activity` (streak and
- * heatmap) and `GET /v1/me/mastery` (per-subject mastery). Every block has a skeleton, an empty state for a
- * brand-new account and degrades on its own when its request fails. Guests get a sign-in prompt with what
- * this device has recorded (the existing guest model).
+ * Home (`/me/dashboard`, D-043; design language v3 §10 "Home", ADR-032): one calm "today" screen that starts
+ * today's learning. A greeting hero with ONE primary action (the real next step), "Continue where you left off",
+ * this week's goal, your subjects, the chapter's study modes, and a rail with upcoming live mocks, the weekly league,
+ * today's daily challenge and AI credits. The analytics live on Progress (`/me/progress`).
+ *
+ * Private data is fetched in the browser (ADR-010): GET /v1/me/dashboard (profile prompts, weekly goal, totals),
+ * /v1/me/progress (via the shell's ProgressProvider: what to continue), /v1/me/activity (streak and this week),
+ * /v1/me/mastery (subject progress), /v1/chapters/{id} (what the chapter has), /v1/coins/daily-challenge (subjects
+ * with content, the challenge), /v1/live-events, /v1/leagues/current. Every block has its own loading and failure
+ * state. Guests get a sign-in prompt with what this device has recorded (the existing guest model).
  */
 import Link from 'next/link';
-import { useEffect, useState, type FormEvent } from 'react';
-import { BadgeMedal } from '@/components/platform/ui/art/Art';
-import { EmptyIllustration } from '@/components/platform/ui/art/EmptyIllustration';
+import { useEffect, useMemo, useState, type FormEvent } from 'react';
+import type { ChapterHub, MyDashboard } from '@/platform/shared/api-client';
+import { SubjectGlyph } from '@/components/platform/ui/art/SubjectGlyph';
 import { AnimalAvatar } from '@/components/platform/ui/kit/AnimalAvatar';
-import type { MyDashboard, MyMastery, WeeklyGoal } from '@/platform/shared/api-client';
 import { Button } from '@/components/platform/ui/kit/Button';
-import { Badge, EmptyState, ProgressBar, Skeleton } from '@/components/platform/ui/kit/Display';
-import { Icon, type IconName } from '@/components/platform/ui/kit/Icon';
-import { MasteryBar, MasteryPip, ProgressRing } from '@/components/platform/ui/kit/Mastery';
+import { ButtonLink } from '@/components/platform/ui/kit/ButtonLink';
+import { Card, EmptyState, SkeletonCard, Skeleton, cardLinkClass } from '@/components/platform/ui/kit/Display';
+import { GreetingHeader, greetingFor } from '@/components/platform/ui/kit/Greeting';
+import { Icon } from '@/components/platform/ui/kit/Icon';
+import { CardGrid, PageSection } from '@/components/platform/ui/kit/Page';
+import { ContinueCard, IconTile, ModeTile, SubjectCard } from '@/components/platform/ui/kit/Tiles';
 import { consentAllows } from '@/platform/shared/config/consent';
 import { useSession } from '../auth/SessionProvider';
+import { useNow } from '../coins/useNow';
 import { trackInterest } from '../lib/interest';
-import { useMyAvatar } from '../me/MyAvatarProvider';
-import { CreditsTile } from './CreditsTile';
-import { api } from '../lib/api-browser';
-import { BOARDS, BOARD_NAMES, CLASS_LEVELS, chapterSlug, examLabel, learnPath, type BoardSlug } from '../lib/catalog';
-import { continueChapter } from '../lib/learner';
+import { BOARDS, BOARD_NAMES, CLASS_LEVELS, chapterSlug, examLabel, type BoardSlug } from '../lib/catalog';
+import { continueChapter, type ChapterSnapshot } from '../lib/learner';
 import { problemMessage } from '../lib/problems';
 import { DASHBOARD_PATH } from '../lib/return-to';
+import { api } from '../lib/api-browser';
+import { useMyAvatar } from '../me/MyAvatarProvider';
 import { useLearnerProgress } from '../learn/ProgressProvider';
-import { useActivity, useMastery, usePlayerCard, type Loadable } from '../learn/useInsights';
+import { useActivity, useMastery } from '../learn/useInsights';
 import { chapterHref } from '../learn/links';
-import { Heatmap } from '../me/Heatmap';
-import { dayLabel } from '../me/heatmap-model';
-import { DifficultyChart, ScoreTrendChart } from './charts';
+import { useStage } from '../shell/StageProvider';
+import { CreditsTile } from './CreditsTile';
+import { ChallengeCard, GoalCard, LeagueCard, LeagueLocked, UpcomingCard } from './HomeRail';
 import {
-  chapterLinkHref,
-  difficultyScopeNote,
-  classLine,
-  fmtPct,
-  goalView,
-  greeting,
-  isNewAccount,
-  kpiTiles,
-  profilePrompts,
-  recentRows,
-  schoolLine,
-  scopeText,
-  subjectHref,
-  TEST_KIND_LABELS,
-  trendPoints,
-  withTarget,
-  type Delta,
-  type ProfilePrompt,
-  type RecentRow,
-} from './model';
-import { CardTeaser, LeagueLocked, LeagueTeaser } from './Teasers';
-import { WeeklyGoalEditor } from './WeeklyGoalEditor';
-import s from './dashboard.module.css';
+  activeDays,
+  contentSubjects,
+  continueMeta,
+  continueProgress,
+  homeSubtitle,
+  homeTitle,
+  modeTiles,
+  nextStep,
+  subjectCards,
+  subjectLook,
+  type DayPart,
+} from './home-model';
+import { isNewAccount, profilePrompts, schoolLine, type ProfilePrompt } from './model';
+import { useChapterHub, useDailyChallenge, useLeague, useLiveEvents, useMyDashboard } from './useHomeData';
+import s from './home.module.css';
 
 export function DashboardClient() {
   const { state } = useSession();
+  // The hour is read after mount only (static HTML never bakes a time); the shell renders members client-side.
+  const now = useNow(60_000);
   useEffect(() => {
     trackInterest('dashboard_view'); // D-045: aggregate count, only after analytics consent
   }, []);
-  if (state.status === 'loading') return <DashboardSkeleton />;
-  if (state.status === 'guest') return <GuestDashboard />;
+  if (state.status === 'loading') return <HomeSkeleton />;
+  if (state.status === 'guest') return <GuestHome />;
   // D-052: AI credits and the league need no consent (unless CONSENT_REQUIRED switches them back on).
-  return <MemberDashboard userId={state.user.id} name={state.user.displayName?.trim() || null} ai={consentAllows(state.consent, 'ai')} leagues={consentAllows(state.consent, 'leaderboards')} />;
+  return (
+    <MemberHome
+      userId={state.user.id}
+      name={state.user.displayName?.trim() || null}
+      ai={consentAllows(state.consent, 'ai')}
+      leagues={consentAllows(state.consent, 'leaderboards')}
+      now={now}
+    />
+  );
 }
 
-function DashboardSkeleton() {
+function HomeSkeleton() {
   return (
-    <div className={s.page} aria-busy="true" data-testid="dashboard-loading">
-      <h1 className={s.title}>Your dashboard</h1>
-      <Skeleton lines={2} />
-      <div className={s.grid}>
-        <Skeleton variant="block" height={140} />
-        <Skeleton variant="block" height={140} />
-        <Skeleton variant="block" height={180} className={s.wide} />
+    <div className={s.home} aria-busy="true" data-testid="dashboard-loading">
+      <GreetingHeader variant="hero" title="Welcome back" subtitle={<Skeleton width={220} />} />
+      <div className={s.board}>
+        <div className={s.layout}>
+          <div className={s.goalSlot}>
+            <SkeletonCard lines={3} />
+          </div>
+          <div className={s.mainSlot}>
+            <SkeletonCard thumb lines={2} />
+            <SkeletonCard lines={2} />
+          </div>
+        </div>
       </div>
     </div>
   );
@@ -86,59 +99,61 @@ function DashboardSkeleton() {
 
 /* ── Guests ────────────────────────────────────────────────────────────────── */
 
-function GuestDashboard() {
+function GuestHome() {
   const { openLogin } = useSession();
   const { progress, ready } = useLearnerProgress();
   const next = continueChapter(progress);
   const href = next ? chapterHref(next.chapterId) : null;
+  const has = !!progress && (progress.lessonsCompleted > 0 || progress.practiceAnswered > 0);
   return (
-    <div className={s.page} data-testid="dashboard-guest">
-      <div>
-        <p className={s.kicker}>Your dashboard</p>
-        <h1 className={s.title}>See all your progress in one place</h1>
-      </div>
-      <EmptyState
-        title="Log in to see your dashboard"
-        headingLevel="h2"
-        icon="target"
-        action={
-          <Button onClick={() => openLogin({ returnTo: DASHBOARD_PATH, reason: 'Log in to see your progress dashboard. It is free.' })} data-testid="dashboard-login">
-            Log in or sign up
-          </Button>
-        }
-      >
-        A free account keeps your streak, weekly goal, mastery and test scores on every device. Lessons, practice and tests stay free.
-      </EmptyState>
-      <section className={`${s.tile} ${s.device}`} aria-labelledby="device-title" data-testid="device-progress">
-        <h2 id="device-title" className={s.tileTitle}>
+    <div className={s.home} data-testid="dashboard-guest">
+      <GreetingHeader title="Your home for learning" subtitle="Log in to keep your streak, weekly goal, mastery and test scores on every device. Lessons, practice and tests stay free." />
+      <Card className={s.guestCard}>
+        <EmptyState
+          title="Log in to see your home"
+          headingLevel="h2"
+          icon="target"
+          tint="blue"
+          compact
+          action={
+            <Button onClick={() => openLogin({ returnTo: DASHBOARD_PATH, reason: 'Log in to see your progress dashboard. It is free.' })} data-testid="dashboard-login">
+              Log in or sign up
+            </Button>
+          }
+        >
+          A free account. No name needed.
+        </EmptyState>
+      </Card>
+      <section className={s.device} aria-labelledby="device-title" data-testid="device-progress">
+        <h2 id="device-title" className={s.deviceTitle}>
           On this device
         </h2>
         {!ready ? (
           <Skeleton lines={2} />
-        ) : !progress || (progress.lessonsCompleted === 0 && progress.practiceAnswered === 0) ? (
+        ) : !has ? (
           <p className={s.muted}>Nothing yet. Open a chapter and try its lesson or practice: your progress is kept on this device until you log in.</p>
         ) : (
           <>
             <ul className={s.deviceStats}>
               <li>
-                <b>{progress.lessonsCompleted}</b> lessons done
+                <b>{progress!.lessonsCompleted.toLocaleString('en-IN')}</b> lessons done
               </li>
               <li>
-                <b>{progress.practiceAnswered}</b> answered
+                <b>{progress!.practiceAnswered.toLocaleString('en-IN')}</b> answered
               </li>
               <li>
-                <b>{progress.practiceCorrect}</b> correct
+                <b>{progress!.practiceCorrect.toLocaleString('en-IN')}</b> correct
               </li>
             </ul>
             <p className={s.muted}>It moves into your account when you log in.</p>
           </>
         )}
         {next && href ? (
-          <Link href={href} className={s.more} data-testid="continue-card">
+          <Link href={href} className={s.textLink} data-testid="continue-card">
             Continue{next.title ? `: ${next.title}` : ` chapter ${next.number ?? chapterSlug(next.chapterId)}`} <Icon name="chevronRight" size={16} />
           </Link>
         ) : (
-          <Link href="/learn" className={s.more}>
+          <Link href="/learn" className={s.textLink}>
             Start learning <Icon name="chevronRight" size={16} />
           </Link>
         )}
@@ -149,196 +164,256 @@ function GuestDashboard() {
 
 /* ── Members ───────────────────────────────────────────────────────────────── */
 
-function MemberDashboard({ userId, name, ai, leagues }: { userId: string; name: string | null; ai: boolean; leagues: boolean }) {
+function MemberHome({ userId, name, ai, leagues, now }: { userId: string; name: string | null; ai: boolean; leagues: boolean; now: number | null }) {
   const [reload, setReload] = useState(0);
-  const key = `${userId}:${reload}`;
-  const [result, setResult] = useState<{ key: string; value: Loadable<MyDashboard> } | null>(null);
-  useEffect(() => {
-    let alive = true;
-    api
-      .get('/v1/me/dashboard')
-      .then((data) => alive && setResult({ key, value: { status: 'ready', data } }))
-      .catch(() => alive && setResult({ key, value: { status: 'error' } }));
-    return () => {
-      alive = false;
-    };
-  }, [key]);
-  const card = usePlayerCard();
-  const activity = useActivity(140);
-  const mastery = useMastery();
-  // A reload (after saving the class) keeps the previous data on screen until the new response arrives.
-  const data = result?.value.status === 'ready' ? result.value.data : null;
-
-  if (!data) {
-    if (result?.key === key && result.value.status === 'error') {
+  const dash = useMyDashboard(userId, reload);
+  if (dash.status !== 'ready') {
+    if (dash.status === 'error') {
       return (
-        <div className={s.page}>
-          <h1 className={s.title}>Your dashboard</h1>
-          <EmptyState title="We could not load your dashboard" icon="alert" headingLevel="h2" action={<Button variant="secondary" onClick={() => setReload((n) => n + 1)}>Try again</Button>}>
+        <div className={s.home}>
+          <GreetingHeader title="Your home" />
+          <EmptyState title="We could not load your home" icon="alert" headingLevel="h2" action={<Button variant="secondary" onClick={() => setReload((n) => n + 1)}>Try again</Button>}>
             Your progress is safe. Check your connection and try again.
           </EmptyState>
         </div>
       );
     }
-    return <DashboardSkeleton />;
+    return <HomeSkeleton />;
   }
-  return <DashboardView d={data} name={name} ai={ai} leagues={leagues} card={card} activity={activity} mastery={mastery} onProfileChanged={() => setReload((n) => n + 1)} />;
+  return <HomeView d={dash.data} name={name} ai={ai} leagues={leagues} now={now} onProfileChanged={() => setReload((n) => n + 1)} />;
 }
 
-export function DashboardView({
-  d,
-  name,
-  ai,
-  leagues,
-  card,
-  activity,
-  mastery,
-  onProfileChanged,
-}: {
+export interface HomeViewProps {
   d: MyDashboard;
   name: string | null;
-  /** AI credits tile: the student may use AI (consentAllows 'ai'; every member since D-052). */
+  /** AI credits card: the student may use AI (consentAllows 'ai'; every member since D-052). */
   ai: boolean;
-  /** League teaser instead of the locked tile (consentAllows 'leaderboards'; every member since D-052). */
+  /** The league card instead of the locked one (consentAllows 'leaderboards'; every member since D-052). */
   leagues: boolean;
-  card: ReturnType<typeof usePlayerCard>;
-  activity: ReturnType<typeof useActivity>;
-  mastery: Loadable<MyMastery>;
+  /** Epoch ms after mount (null before: no greeting by the hour yet). */
+  now: number | null;
   onProfileChanged: () => void;
-}) {
-  const [now] = useState(() => new Date());
-  const [goal, setGoal] = useState<{ base: WeeklyGoal; value: WeeklyGoal } | null>(null);
-  const weeklyGoal = goal?.base === d.weeklyGoal ? goal.value : d.weeklyGoal;
+}
+
+export function HomeView({ d, name, ai, leagues, now, onProfileChanged }: HomeViewProps) {
+  const { state } = useSession();
+  const { stage, pick: byStage } = useStage();
+  const { progress, ready } = useLearnerProgress();
+  const activity = useActivity(7);
+  const mastery = useMastery();
+  const mine = useMyAvatar();
+  const userId = state.status === 'member' ? state.user.id : null;
+
+  const board = (d.profile.board as BoardSlug | null) ?? null;
+  const classLevel = d.profile.classLevel ?? null;
   const prompts = profilePrompts(d.profile);
-  const fresh = isNewAccount(d);
-  const pick = d.profile.board && d.profile.classLevel ? { board: d.profile.board as BoardSlug, classLevel: d.profile.classLevel } : null;
-  const learnHref = pick ? learnPath(pick.board, pick.classLevel) : '/learn';
+  const chapter = ready ? continueChapter(progress) : null;
+  const hub = useChapterHub(chapter?.chapterId ?? null);
+  const hubData = hub.status === 'ready' ? hub.data : null;
+  const fresh = isNewAccount(d) && ready && !chapter;
+  const dc = useDailyChallenge(board, classLevel);
+  const live = useLiveEvents(true, board, classLevel);
+  const league = useLeague(leagues, userId);
+
+  const streak = activity.status === 'ready' ? activity.data.streak : progress?.streak ?? null;
+  const today = d.today;
+  const part: DayPart | null = now === null ? null : greetingFor(new Date(now));
+  const title = homeTitle(stage, part, name);
+  const subtitle = homeSubtitle(stage, { fresh, goal: d.weeklyGoal, streak: streak ? { current: streak.current, today: streak.lastActiveDay === today } : null });
+  const next = nextStep(stage, { chapter, hub: hubData, board, classLevel });
+  const school = schoolLine(d.profile.school);
+  const cls = board && classLevel ? `${examLabel(board, classLevel)} · Class ${classLevel}` : null;
+
+  const started = useMemo(() => new Map((progress?.subjects ?? []).map((x) => [x.subjectId, x.chapters.length])), [progress]);
+  const subjects = board && classLevel && dc.status === 'ready' ? subjectCards(contentSubjects(dc.data), board, classLevel, mastery.status === 'ready' ? mastery.data.subjects : [], started, stage) : null;
+  const chapterSubject = chapter ? (progress?.subjects.find((x) => x.subjectId === chapter.subjectId)?.name ?? hubData?.subject.name ?? null) : null;
+
   return (
-    <div className={s.page} data-testid="dashboard" data-new={fresh || undefined}>
-      <DashboardHeader d={d} name={name} now={now} card={card} activity={activity} />
-      {prompts.map((p) => (
-        <Prompt key={p.kind} prompt={p} profile={d.profile} onSaved={onProfileChanged} />
-      ))}
-      {fresh && (
-        <section className={s.welcome} aria-labelledby="welcome-title" data-testid="dashboard-welcome">
-          <h2 id="welcome-title">Your dashboard fills in as you learn</h2>
-          <p>Open a chapter, read the lesson and solve a few practice questions. Your solved count, accuracy, mastery and test scores will show up here.</p>
-          <Link href={learnHref} className={s.welcomeGo}>
-            <Icon name="play" size={18} /> Start learning
-          </Link>
-        </section>
+    <div className={s.home} data-testid="dashboard" data-new={fresh || undefined} data-stage-copy={stage}>
+      <GreetingHeader
+        variant="hero"
+        eyebrow={
+          <span data-testid="dashboard-profile-line">
+            {cls ?? 'Board and class not set'}
+            {school ? ` · ${school}` : ''}
+          </span>
+        }
+        title={title}
+        subtitle={subtitle}
+        actions={
+          <ButtonLink href={next.href} icon={next.kind === 'class' || next.kind === 'learn' ? 'book' : 'play'} size="lg" data-testid="home-next" data-kind={next.kind}>
+            {next.label}
+          </ButtonLink>
+        }
+        art={
+          <span className={s.heroArt} data-testid="dashboard-avatar">
+            <AnimalAvatar avatar={mine?.avatar ?? null} size={byStage({ junior: 128, middle: 112, senior: 96 })} decorative />
+          </span>
+        }
+      />
+
+      {prompts.length > 0 && (
+        <div className={s.prompts}>
+          {prompts.map((p) => (
+            <Prompt key={p.kind} prompt={p} profile={d.profile} onSaved={onProfileChanged} />
+          ))}
+        </div>
       )}
-      <Kpis d={d} />
-      <div className={s.grid}>
-        <GoalTile goal={weeklyGoal} onSaved={(saved) => setGoal({ base: d.weeklyGoal, value: withTarget(weeklyGoal, saved) })} />
-        {ai && <CreditsTile />}
-        <section className={s.tile} aria-labelledby="diff-title" data-testid="difficulty-tile">
-          <div className={s.tileHead}>
-            <h2 id="diff-title" className={s.tileTitle}>
-              Solved by difficulty
-            </h2>
-            <Link href={learnHref} className={s.more}>
-              Practise
+
+      <div className={s.board}>
+        <div className={s.layout}>
+          <aside className={s.goalSlot} aria-label="This week">
+            <GoalCard goal={d.weeklyGoal} fresh={fresh} active={activity.status === 'ready' ? activeDays(activity.data.calendar) : null} today={today} />
+          </aside>
+
+          <div className={s.mainSlot}>
+            {chapter && <ContinueBlock chapter={chapter} hub={hubData} subjectName={chapterSubject} />}
+            {fresh && <Welcome hasSubjects={!!subjects?.length} />}
+
+            {board && classLevel && (
+              <PageSection
+                id="subjects-title"
+                title="Your subjects"
+                count={subjects?.length || undefined}
+                action={{ href: `/learn/${board}/${classLevel}`, label: 'See all' }}
+                data-testid="home-subjects"
+              >
+                {subjects === null ? (
+                  dc.status === 'error' ? (
+                    <p className={s.muted}>Your subjects could not load. Open them from Learn.</p>
+                  ) : (
+                    <div className={s.skeletonGrid} aria-busy="true">
+                      <SkeletonCard thumb lines={1} />
+                      <SkeletonCard thumb lines={1} />
+                    </div>
+                  )
+                ) : subjects.length === 0 ? (
+                  <div className={s.quiet} data-testid="home-subjects-empty">
+                    <IconTile icon="book" tint="blue" size="md" />
+                    <p className={s.quietText}>
+                      <b>Lessons for your class are on the way</b>
+                      <span>You can open any other class in the meantime. Everything is free.</span>
+                    </p>
+                    <ButtonLink href="/learn" size="sm" variant="secondary">
+                      Browse classes
+                    </ButtonLink>
+                  </div>
+                ) : (
+                  <CardGrid label="Your subjects">
+                    {subjects.map((sub) => (
+                      <SubjectCard
+                        key={sub.subjectId}
+                        href={sub.href}
+                        title={sub.name}
+                        lang={sub.lang}
+                        meta={sub.meta}
+                        tint={sub.tint}
+                        art={<SubjectGlyph kind={sub.art} size={32} />}
+                        progress={sub.progress ?? undefined}
+                        variant={stage === 'senior' && subjects.length > 6 ? 'plain' : 'tinted'}
+                      />
+                    ))}
+                  </CardGrid>
+                )}
+              </PageSection>
+            )}
+
+            {chapter && hubData && <StudyModes chapter={chapter} hub={hubData} />}
+
+            <Link href="/me/progress" className={cardLinkClass(s.progressLink)} data-testid="progress-link">
+              <IconTile icon="chart" tint="teal" size="md" />
+              <span className={s.progressText}>
+                <span className={s.progressTitle}>See all your progress</span>
+                <span className={s.progressMeta}>Mastery, test scores, focus areas and your activity</span>
+              </span>
+              <Icon name="arrowRight" size={20} className={s.progressArrow} />
             </Link>
           </div>
-          <DifficultyChart data={d.solvedByDifficulty} />
-          <p className={s.muted}>{difficultyScopeNote(d.scope)}</p>
-        </section>
-        <MasteryTile d={d} mastery={mastery} />
-        <TestsTile d={d} />
-        <FocusTile d={d} />
-        <section className={`${s.tile} ${s.wide}`} aria-labelledby="activity-title" data-testid="activity-card">
-          <div className={s.tileHead}>
-            <h2 id="activity-title" className={s.tileTitle}>
-              Activity
-            </h2>
-            <Link href="/me#activity" className={s.more}>
-              Profile
-            </Link>
-          </div>
-          {activity.status === 'ready' ? (
-            <Heatmap activity={activity.data} />
-          ) : activity.status === 'error' ? (
-            <p className={s.muted}>Your activity could not load. Try again later.</p>
-          ) : (
-            <Skeleton variant="block" height={110} />
-          )}
-        </section>
-        <RecentTile d={d} />
-        <BadgeTile d={d} />
-        <CardTeaser card={card} />
-        {leagues ? <LeagueTeaser /> : <LeagueLocked />}
+
+          <aside className={s.railSlot} aria-label="More for today">
+            <UpcomingCard events={live} now={now} />
+            {leagues ? <LeagueCard league={league} /> : <LeagueLocked />}
+            {board && classLevel && <ChallengeCard data={dc} board={board} classLevel={classLevel} />}
+            {ai && <CreditsTile />}
+          </aside>
+        </div>
       </div>
     </div>
   );
 }
 
-/* ── Header ───────────────────────────────────────────────────────────────── */
+/* ── Continue and study modes ─────────────────────────────────────────────── */
 
-function DashboardHeader({ d, name, now, card, activity }: { d: MyDashboard; name: string | null; now: Date; card: ReturnType<typeof usePlayerCard>; activity: ReturnType<typeof useActivity> }) {
-  const { progress } = useLearnerProgress();
-  const streak = activity.status === 'ready' ? activity.data.streak : progress?.streak ?? null;
-  const cls = classLine(d.profile);
-  const school = schoolLine(d.profile.school);
-  const mine = useMyAvatar();
-  const avatar = card.status === 'ready' ? card.data.avatar : (mine?.avatar ?? null);
+function ContinueBlock({ chapter, hub, subjectName }: { chapter: ChapterSnapshot; hub: ChapterHub | null; subjectName: string | null }) {
+  const href = chapterHref(chapter.chapterId);
+  if (!href) return null;
+  const look = subjectLook(chapter.subjectId, subjectName ?? hub?.subject.name ?? '', hub?.subject.language);
+  const progress = continueProgress(chapter, hub);
   return (
-    <header className={s.head}>
-      <div className={s.headWho}>
-        <Link href="/me#avatar" className={s.avatarLink} aria-label="Your avatar: change it on your profile" data-testid="dashboard-avatar">
-          <AnimalAvatar avatar={avatar} size={56} decorative />
-        </Link>
-        <div>
-          <p className={s.kicker}>Your dashboard</p>
-          <h1 className={s.title}>
-            {greeting(now)}
-            {name ? `, ${name}` : ''}
-          </h1>
-          <p className={s.headMeta} data-testid="dashboard-profile-line">
-            {cls ?? 'Board and class not set'}
-            {school ? ` · ${school}` : ''}
-          </p>
-        </div>
-      </div>
-      <ul className={s.stats} aria-label="Your stats">
-        <li className={s.stat} data-testid="dashboard-streak">
-          <Icon name="flame" size={18} className={streak?.current ? s.statFlame : s.statCold} />
-          <span>
-            <b>{streak?.current ?? 0}</b> day streak
-          </span>
-        </li>
-        {card.status === 'ready' ? (
-          <>
-            <li className={s.stat}>
-              <Icon name="spark" size={18} />
-              <span>
-                Level <b>{card.data.level}</b> · <b>{card.data.xp.toLocaleString('en-IN')}</b> XP
-              </span>
-            </li>
-            <li className={s.stat}>
-              <Icon name="coin" size={18} />
-              <span>
-                <b>{card.data.coins.toLocaleString('en-IN')}</b> coins
-              </span>
-            </li>
-          </>
-        ) : card.status === 'loading' ? (
-          <li className={s.stat} aria-hidden="true">
-            <Skeleton width={120} />
-          </li>
-        ) : null}
-      </ul>
-    </header>
+    <ContinueCard
+      href={href}
+      title={chapter.title ?? hub?.chapter.title ?? `Chapter ${chapter.number ?? chapterSlug(chapter.chapterId)}`}
+      lang={look.lang}
+      meta={continueMeta(chapter, hub, subjectName ?? hub?.subject.name ?? null)}
+      tint={look.tint}
+      art={<SubjectGlyph kind={look.art} size={56} />}
+      progress={progress ?? undefined}
+      cta="Open chapter"
+      data-testid="continue-card"
+    />
   );
 }
+
+function StudyModes({ chapter, hub }: { chapter: ChapterSnapshot; hub: ChapterHub }) {
+  const tiles = modeTiles(chapter.chapterId, hub, chapter);
+  return (
+    <PageSection id="modes-title" title="Study your way" description={`Chapter ${hub.chapter.number}: ${hub.chapter.title}`} data-testid="home-modes">
+      <CardGrid label="Study modes" min={200}>
+        {tiles.map((t) => (
+          <ModeTile key={t.mode} mode={t.mode} href={t.href ?? undefined} meta={t.meta} disabled={!t.href} />
+        ))}
+      </CardGrid>
+    </PageSection>
+  );
+}
+
+function Welcome({ hasSubjects }: { hasSubjects: boolean }) {
+  const { pick } = useStage();
+  const steps = [
+    { icon: 'book' as const, tint: 'blue' as const, title: 'Pick a subject', text: hasSubjects ? 'Your subjects are below.' : 'Start from Pick a subject above.' },
+    { icon: 'play' as const, tint: 'violet' as const, title: 'Watch a short lesson', text: pick({ junior: 'Slides with pictures and sound.', middle: 'Slides you can read or listen to.', senior: 'Read or listen, at your pace.' }) },
+    { icon: 'target' as const, tint: 'green' as const, title: 'Practise a few questions', text: 'Every answer is checked right away.' },
+  ];
+  return (
+    <section className={s.welcome} aria-labelledby="welcome-title" data-testid="dashboard-welcome">
+      <h2 id="welcome-title" className={s.welcomeTitle}>
+        {pick({ junior: 'Start in three easy steps', middle: 'Start in three steps', senior: 'How to start' })}
+      </h2>
+      <ol className={s.steps}>
+        {steps.map((st) => (
+          <li key={st.title} className={s.step}>
+            <IconTile icon={st.icon} tint={st.tint} size="md" />
+            <span className={s.stepText}>
+              <b>{st.title}</b>
+              <span>{st.text}</span>
+            </span>
+          </li>
+        ))}
+      </ol>
+    </section>
+  );
+}
+
+/* ── Profile prompts (compact) ────────────────────────────────────────────── */
 
 function Prompt({ prompt, profile, onSaved }: { prompt: ProfilePrompt; profile: MyDashboard['profile']; onSaved: () => void }) {
   if (prompt.kind === 'class') return <ClassPrompt profile={profile} onSaved={onSaved} />;
   if (prompt.kind === 'school') {
     return (
       <p className={s.note} data-testid="prompt-school">
-        <Icon name="book" size={16} /> Add your school to your profile. It stays private: other students never see it.
-        <Link href="/me#school" className={s.more}>
+        <IconTile icon="book" tint="yellow" size="sm" />
+        <span className={s.noteText}>Add your school. Only you can see it.</span>
+        <Link href="/me#school" className={s.textLink}>
           Add my school
         </Link>
       </p>
@@ -346,8 +421,9 @@ function Prompt({ prompt, profile, onSaved }: { prompt: ProfilePrompt; profile: 
   }
   return (
     <p className={s.note} data-testid="prompt-school-consent">
-      <Icon name="lock" size={16} /> You can add your school after a parent approves your account.
-      <Link href="/me/consent?next=%2Fme%2Fdashboard" className={s.more}>
+      <IconTile icon="lock" tint="neutral" size="sm" />
+      <span className={s.noteText}>You can add your school after a parent approves your account.</span>
+      <Link href="/me/consent?next=%2Fme%2Fdashboard" className={s.textLink}>
         How to approve
       </Link>
     </p>
@@ -381,12 +457,12 @@ function ClassPrompt({ profile, onSaved }: { profile: MyDashboard['profile']; on
   }
 
   return (
-    <section className={s.prompt} aria-labelledby="class-prompt-title" data-testid="prompt-class">
-      <p id="class-prompt-title" className={s.promptText}>
-        What do you study? Your board and class pick the subjects, mastery and league on this page.
+    <section className={s.classPrompt} aria-labelledby="class-prompt-title" data-testid="prompt-class">
+      <p id="class-prompt-title" className={s.classPromptText}>
+        <b>What do you study?</b> Your board and class pick your subjects and your league.
       </p>
-      <form className={s.promptForm} onSubmit={save} noValidate>
-        <div>
+      <form className={s.classForm} onSubmit={save} noValidate>
+        <div className={s.field}>
           <label htmlFor="dash-board">Board</label>
           <select id="dash-board" className={s.select} value={board} onChange={(e) => setBoard(e.target.value as BoardSlug)}>
             <option value="" disabled>
@@ -399,7 +475,7 @@ function ClassPrompt({ profile, onSaved }: { profile: MyDashboard['profile']; on
             ))}
           </select>
         </div>
-        <div>
+        <div className={s.field}>
           <label htmlFor="dash-class">Class</label>
           <select id="dash-class" className={s.select} value={classLevel} onChange={(e) => setClassLevel(e.target.value)}>
             <option value="" disabled>
@@ -412,7 +488,7 @@ function ClassPrompt({ profile, onSaved }: { profile: MyDashboard['profile']; on
             ))}
           </select>
         </div>
-        <Button type="submit" loading={busy} data-testid="prompt-class-save">
+        <Button type="submit" variant="secondary" loading={busy} data-testid="prompt-class-save" className={s.classSave}>
           Save
         </Button>
       </form>
@@ -420,306 +496,6 @@ function ClassPrompt({ profile, onSaved }: { profile: MyDashboard['profile']; on
         <p className={s.error} role="alert">
           {error}
         </p>
-      )}
-    </section>
-  );
-}
-
-/* ── KPIs ─────────────────────────────────────────────────────────────────── */
-
-const DELTA_ICON: Record<Delta['direction'], IconName | null> = { up: 'arrowUp', down: 'arrowDown', same: null, none: null };
-
-function Kpis({ d }: { d: MyDashboard }) {
-  return (
-    <ul className={s.kpis} aria-label="This week at a glance" data-testid="kpis">
-      {kpiTiles(d).map((k) => (
-        <li key={k.key} className={s.kpi} data-testid={`kpi-${k.key}`} data-value={k.value}>
-          <p className={s.kpiLabel}>{k.label}</p>
-          <p className={s.kpiValue}>{k.value}</p>
-          <p className={s.kpiSub}>{k.sub}</p>
-          {k.delta && k.delta.text && (
-            <p className={s.delta} data-direction={k.delta.direction}>
-              {DELTA_ICON[k.delta.direction] && <Icon name={DELTA_ICON[k.delta.direction]!} size={14} />}
-              {k.delta.text}
-            </p>
-          )}
-        </li>
-      ))}
-    </ul>
-  );
-}
-
-/* ── Weekly goal ──────────────────────────────────────────────────────────── */
-
-function GoalTile({ goal, onSaved }: { goal: WeeklyGoal; onSaved: (saved: { target: number; isDefault: boolean }) => void }) {
-  const v = goalView(goal);
-  return (
-    <section className={s.tile} aria-labelledby="goal-title" data-testid="weekly-goal" data-progress={goal.progress} data-target={goal.target}>
-      <div className={s.tileHead}>
-        <h2 id="goal-title" className={s.tileTitle}>
-          Weekly goal
-        </h2>
-        <span className={s.muted}>
-          {dayLabel(goal.weekStart).replace(/ \d{4}$/, '')} – {dayLabel(goal.weekEnd).replace(/ \d{4}$/, '')}
-        </span>
-      </div>
-      <div className={s.goal}>
-        <ProgressRing value={v.percent} size={112} stroke={9} label={v.label} level={goal.met ? 'mastered' : undefined}>
-          <span className={s.ringStack}>
-            <span className={s.ringBig}>
-              {goal.progress}/{goal.target}
-            </span>
-            <span className={s.ringSmall}>solved</span>
-          </span>
-        </ProgressRing>
-        <div className={s.goalText}>
-          <p className={s.goalStatus}>{v.status}</p>
-          <p className={s.muted}>
-            Solve {goal.target} practice questions for the first time this week{goal.isDefault ? ' (the starting goal; change it any time)' : ''}.
-          </p>
-          <WeeklyGoalEditor target={goal.target} isDefault={goal.isDefault} onSaved={onSaved} />
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ── Mastery ──────────────────────────────────────────────────────────────── */
-
-function MasteryTile({ d, mastery }: { d: MyDashboard; mastery: Loadable<MyMastery> }) {
-  const subjects = mastery.status === 'ready' ? mastery.data.subjects.filter((x) => x.chapterCount > 0) : [];
-  return (
-    <section className={`${s.tile} ${s.wide}`} aria-labelledby="mastery-title" data-testid="mastery-tile">
-      <div className={s.tileHead}>
-        <h2 id="mastery-title" className={s.tileTitle}>
-          Mastery
-        </h2>
-        <span className={s.muted}>{scopeText(d.scope)}</span>
-      </div>
-      {d.scope.kind === 'none' || d.mastery.chapterCount === 0 ? (
-        <p className={s.muted}>Set your board and class, or start any chapter, to see how many chapters you have mastered.</p>
-      ) : (
-        <div className={s.masteryTop}>
-          <ProgressRing value={d.mastery.score} size={72} stroke={7} label={`Overall mastery: ${d.mastery.score}%`} />
-          <MasteryBar counts={d.mastery.levels} label={`${d.mastery.chapterCount} chapters by mastery level`} />
-        </div>
-      )}
-      {mastery.status === 'loading' ? (
-        <Skeleton lines={2} />
-      ) : subjects.length > 0 ? (
-        <ul className={s.subjects} aria-label="Mastery by subject">
-          {subjects.map((sub) => {
-            const href = subjectHref(sub.subjectId);
-            const body = (
-              <>
-                <span className={s.rowMain}>
-                  <span className={s.rowTitle}>{sub.name}</span>
-                  <MasteryBar counts={sub.levels} legend={false} label={`${sub.name}: chapters by mastery level`} />
-                </span>
-                <span className={s.score}>{sub.score}%</span>
-              </>
-            );
-            return <li key={sub.subjectId}>{href ? <Link href={href} className={s.rowLink}>{body}</Link> : <span className={s.rowLink}>{body}</span>}</li>;
-          })}
-        </ul>
-      ) : null}
-    </section>
-  );
-}
-
-/* ── Tests ────────────────────────────────────────────────────────────────── */
-
-function TestsTile({ d }: { d: MyDashboard }) {
-  const points = trendPoints(d.testHistory);
-  const latest = d.testHistory.slice(0, 5);
-  return (
-    <section className={`${s.tile} ${s.wide}`} aria-labelledby="tests-title" data-testid="tests-tile">
-      <div className={s.tileHead}>
-        <h2 id="tests-title" className={s.tileTitle}>
-          Test scores
-        </h2>
-        <Link href="/me#attempts" className={s.more}>
-          All your tests
-        </Link>
-      </div>
-      {d.testHistory.length === 0 ? (
-        <div className={s.emptyArtRow} data-testid="tests-empty">
-          <EmptyIllustration kind="no-tests" width={104} />
-          <p className={s.muted}>
-            Take a chapter test to see your scores here.{' '}
-            <Link href="/tests" className={s.more}>
-              Find a test
-            </Link>
-          </p>
-        </div>
-      ) : (
-        <>
-          {points.length > 0 && <ScoreTrendChart points={points} />}
-          <ul className={s.tests} aria-label="Latest tests">
-            {latest.map((t) => (
-              <li key={t.attemptId}>
-                <Link href={`/tests/result/${t.attemptId}`} className={s.rowLink} data-testid="test-row" data-marking={t.marking}>
-                  <span className={s.rowMain}>
-                    <span className={s.rowTitle}>{t.title}</span>
-                    <span className={s.rowMeta}>
-                      {TEST_KIND_LABELS[t.kind]} · {t.subjectName} · {dayLabel(t.day)}
-                    </span>
-                    <span className={s.tags}>
-                      <Badge tone={t.marking === 'self' ? 'highlight' : 'neutral'}>{t.marking === 'self' ? 'Self-marked' : 'Auto-marked'}</Badge>
-                      {t.autoSubmitted && <Badge>Submitted at time-up</Badge>}
-                    </span>
-                  </span>
-                  <span className={s.score}>{t.percentage === null ? '–' : fmtPct(t.percentage)}</span>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </>
-      )}
-    </section>
-  );
-}
-
-/* ── Focus areas ──────────────────────────────────────────────────────────── */
-
-function FocusTile({ d }: { d: MyDashboard }) {
-  const { weakest, strongest } = d.focus;
-  return (
-    <section className={`${s.tile} ${s.wide}`} aria-labelledby="focus-title" data-testid="focus-tile">
-      <h2 id="focus-title" className={s.tileTitle}>
-        Focus areas
-      </h2>
-      {weakest.length === 0 && strongest.length === 0 ? (
-        <p className={s.muted}>Answer at least 3 practice questions in a chapter (or take its chapter test) and your weakest and strongest chapters will show here.</p>
-      ) : (
-        <div className={s.focus}>
-          <div>
-            <h3 className={s.focusTitle}>Practise next</h3>
-            {weakest.length === 0 ? (
-              <p className={s.muted}>No weak chapters right now. Keep going!</p>
-            ) : (
-              <ul className={s.focusList} data-testid="focus-weakest">
-                {weakest.map((c) => (
-                  <FocusItem key={c.chapterId} c={c} weak />
-                ))}
-              </ul>
-            )}
-          </div>
-          <div>
-            <h3 className={s.focusTitle}>Your strongest</h3>
-            {strongest.length === 0 ? (
-              <p className={s.muted}>Reach Proficient in a chapter to see it here.</p>
-            ) : (
-              <ul className={s.focusList} data-testid="focus-strongest">
-                {strongest.map((c) => (
-                  <FocusItem key={c.chapterId} c={c} />
-                ))}
-              </ul>
-            )}
-          </div>
-        </div>
-      )}
-    </section>
-  );
-}
-
-function FocusItem({ c, weak = false }: { c: MyDashboard['focus']['weakest'][number]; weak?: boolean }) {
-  const acc = c.firstTryAccuracy === null ? null : Math.round(c.firstTryAccuracy * 100);
-  return (
-    <li className={s.focusItem}>
-      <span className={s.rowTitle}>
-        Chapter {c.number}: {c.title}
-      </span>
-      <span className={s.rowMeta}>
-        {c.subjectName} · {c.practiceAttempted}/{c.practiceTotal} practised{acc !== null ? ` · ${acc}% right first time` : ''}
-        {c.chapterTestPct !== null ? ` · chapter test ${fmtPct(c.chapterTestPct)}` : ''}
-      </span>
-      <MasteryPip level={c.level} showLabel />
-      <span className={s.focusActions}>
-        {weak ? (
-          <Link href={chapterLinkHref(c.link, 'practice')} className={s.more} data-testid="focus-practise">
-            Practise now <Icon name="chevronRight" size={16} />
-          </Link>
-        ) : (
-          <Link href={chapterLinkHref(c.link)} className={s.more}>
-            Open chapter <Icon name="chevronRight" size={16} />
-          </Link>
-        )}
-      </span>
-    </li>
-  );
-}
-
-/* ── Recent activity and next badge ───────────────────────────────────────── */
-
-const RECENT_ICON: Record<RecentRow['kind'], IconName> = { lesson: 'book', practice: 'check', test: 'clock', badge: 'trophy' };
-
-function RecentTile({ d }: { d: MyDashboard }) {
-  const rows = recentRows(d.recent, d.today);
-  return (
-    <section className={s.tile} aria-labelledby="recent-title" data-testid="recent-tile">
-      <h2 id="recent-title" className={s.tileTitle}>
-        Recent activity
-      </h2>
-      {rows.length === 0 ? (
-        <div className={s.emptyArtRow} data-testid="recent-empty">
-          <EmptyIllustration kind="no-activity" width={104} />
-          <p className={s.muted}>Lessons you finish, practice, tests and badges will be listed here.</p>
-        </div>
-      ) : (
-        <ul className={s.recent}>
-          {rows.map((r) => {
-            const body = (
-              <>
-                <span className={s.recentIcon} aria-hidden="true">
-                  <Icon name={RECENT_ICON[r.kind]} size={16} />
-                </span>
-                <span className={s.rowMain}>
-                  <span className={s.rowTitle}>{r.text}</span>
-                  <span className={s.rowMeta}>{r.when}</span>
-                </span>
-              </>
-            );
-            return (
-              <li key={r.id} data-kind={r.kind} data-testid="recent-row">
-                {r.href ? (
-                  <Link href={r.href} className={`${s.rowLink} ${s.recentRow}`}>
-                    {body}
-                  </Link>
-                ) : (
-                  <span className={`${s.rowLink} ${s.recentRow}`}>{body}</span>
-                )}
-              </li>
-            );
-          })}
-        </ul>
-      )}
-    </section>
-  );
-}
-
-function BadgeTile({ d }: { d: MyDashboard }) {
-  const next = d.badges.next;
-  return (
-    <section className={s.tile} aria-labelledby="badge-title" data-testid="badge-tile">
-      <div className={s.tileHead}>
-        <h2 id="badge-title" className={s.tileTitle}>
-          Next badge
-        </h2>
-        <Link href="/me#badges" className={s.more}>
-          {d.badges.earned} of {d.badges.total} earned
-        </Link>
-      </div>
-      {next ? (
-        <>
-          <p className={s.leagueTier}>
-            <BadgeMedal badge={next.key} size={40} decorative className={s.badgeArt} /> {next.name}
-          </p>
-          <p className={s.muted}>{next.description}</p>
-          <ProgressBar value={next.current} max={next.target} label={`Progress to ${next.name}`} valueText={`${next.current} of ${next.target}`} />
-        </>
-      ) : (
-        <p className={s.muted}>You have earned every badge. Amazing!</p>
       )}
     </section>
   );
