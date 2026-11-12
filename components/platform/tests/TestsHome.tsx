@@ -23,7 +23,6 @@ import { DataTable, dataTableNum, StatusPill, Timeline } from '@/components/plat
 import { CardGrid, PageColumns, PageSection } from '@/components/platform/ui/kit/Page';
 import { RailCard } from '@/components/platform/ui/kit/Rail';
 import { SubjectCard } from '@/components/platform/ui/kit/Tiles';
-import { subjectTint } from '@/components/platform/ui/kit/tints';
 import { SubjectGlyph } from '@/components/platform/ui/art/SubjectGlyph';
 import { useSession } from '../auth/SessionProvider';
 import { fetchContentSubjects } from '../learn/content-subjects';
@@ -31,7 +30,7 @@ import { subjectStyle } from '../learn/subject-style';
 import { api } from '../lib/api-browser';
 import { BOARDS, BOARD_NAMES, CLASS_LEVELS, examLabel, subjectSlug, type BoardSlug } from '../lib/catalog';
 import { useStage } from '../shell/StageProvider';
-import { liveEventItem, upcomingLive } from './live-timeline';
+import { liveEventItem, subjectTintOf, upcomingLive } from './live-timeline';
 import { attemptRow } from './player-model';
 
 export { attemptRow };
@@ -150,7 +149,7 @@ function SubjectCards({
                 title={sub.name}
                 lang={sub.language === 'hi' ? 'hi' : undefined}
                 meta={summaries ? seriesMeta(sum) : soon ? 'Coming soon' : `${examLabel(board, classLevel)} Class ${classLevel}`}
-                tint={subjectTint(st.hue)}
+                tint={subjectTintOf(sub.id, sub.name, sub.language)}
                 art={<SubjectGlyph kind={st.art} size={28} />}
                 badge={badge ? <StatusPill tone="success">{badge}</StatusPill> : undefined}
                 variant={plain ? 'plain' : 'tinted'}

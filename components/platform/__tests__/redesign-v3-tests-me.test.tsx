@@ -26,7 +26,7 @@ import { seriesMeta, TestsHome } from '../tests/TestsHome';
 import { seriesLook, SeriesClient, testStatus } from '../tests/SeriesClient';
 import { ResultView, SCORE_LINES, scoreBand } from '../tests/ResultView';
 import { attemptRow } from '../tests/player-model';
-import { liveEventItem, upcomingLive } from '../tests/live-timeline';
+import { liveEventItem, subjectTintOf, upcomingLive } from '../tests/live-timeline';
 import { activityFigures } from '../me/MeInsights';
 
 const ATT = 'aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa';
@@ -112,6 +112,14 @@ describe('tests view-models', () => {
     expect(container.textContent).toBe('Registered');
     const list = upcomingLive([live({ id: 'c', phase: 'closed' }), live({ id: 'b', startsAt: '2026-11-20T04:30:00.000Z' }), live({ id: 'a', phase: 'live', startsAt: '2026-11-13T04:30:00.000Z' })]);
     expect(list.map((e) => e.id)).toEqual(['a', 'b']);
+  });
+
+  it('one subject tint rule (DESIGN-LANGUAGE §2): the art kind first, the hue only for generic subjects', () => {
+    expect(subjectTintOf('cbse-10-english', 'English Language and Literature', 'en')).toBe('pink');
+    expect(subjectTintOf('cisce-10-history', 'History and Civics', 'en')).toBe('orange');
+    expect(subjectTintOf('cbse-10-mathematics', 'Mathematics', 'en')).toBe('blue');
+    expect(subjectTintOf('cbse-10-science', 'Science', 'en')).toBe('green');
+    expect(subjectTintOf('cbse-10-hindi-a', 'Hindi Course A', 'hi')).toBe('red');
   });
 
   it('activity figures: only what is known', () => {
