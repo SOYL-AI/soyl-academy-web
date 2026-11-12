@@ -85,7 +85,9 @@ test.describe('Lead review: shell and layout', () => {
     expect((await sidebar.boundingBox())!.width).toBeGreaterThan(200);
     await expect(sidebar.getByRole('link', { name: 'Learn', exact: true })).toHaveAttribute('aria-current', 'page');
     await page.setViewportSize({ width: 1100, height: 800 });
-    expect((await sidebar.boundingBox())!.width).toBeLessThan(100); // icon rail
+    await page.reload({ waitUntil: 'networkidle' }); // the mobile-emulated layout viewport settles on load
+    expect(await page.evaluate(() => window.innerWidth)).toBe(1100);
+    await expect.poll(async () => (await sidebar.boundingBox())?.width ?? 0).toBeLessThan(100); // icon rail
     await expect(sidebar.getByRole('link', { name: 'Tests', exact: true })).toBeVisible(); // named by its (hidden) label
     await page.setViewportSize({ width: 900, height: 800 });
     await expect(sidebar).toBeHidden();

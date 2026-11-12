@@ -39,14 +39,19 @@ Decisions: [ADR-032](../adr/032-design-language-v3-shell-and-age-stages.md) (ame
 
 | Gate | Command | Result |
 |---|---|---|
-| Lint | `npm run lint` (root) | exit 0 |
-| Build | `npm run build` (root) | exit 0 |
-| UI kit unit | `npm run test:platform-ui` | 797 passed, 1 failed — the failure is `visual-v2.test.tsx › real content … › table` ("script-like aria-label on <div>"), **pre-existing on main @59982c2e** (reproduced before any change), content data, not touched here |
-| Web unit | `npm run test:platform-web` | 23 files, 479 passed |
+| Lint | `npm run lint` (root) | exit 0 (final commit) |
+| Build | `npm run build` (root) | exit 0 (1ec28a2c); later commits built by the web e2e's flag-on `next build` (b042fa1a) |
+| UI kit unit | `npm run test:platform-ui` | 797 passed, 1 failed — `visual-v2.test.tsx › real content … › table` ("script-like aria-label on <div>"), **pre-existing on main @59982c2e** (reproduced before any change), content data, not touched here |
+| Web unit | `npm run test:platform-web` | 23 files, 480 passed |
 | Platform typecheck | `cd platform && npm run typecheck` | exit 0 |
-| Design-system e2e | `npm run test:design-system -w @soyl/e2e` | 14 passed |
-| Web e2e | `npm run test:platform-web -w @soyl/e2e` | RESULT_WEB_E2E |
-| Marketing | `npm run marketing:diff -w @soyl/e2e -- --base main` | RESULT_MDIFF |
+| Design-system e2e | `npm run test:design-system -w @soyl/e2e` | 14 passed (gallery axe, 360/1280 fit, Devanagari, XSS) |
+| Web e2e, flag OFF | `npm run test:platform-web -w @soyl/e2e -- --off-only` | 57 passed, 1 skipped (the flag-ON-only marketing-nav test, by design) |
+| Web e2e, flag ON (full) | `npm run test:platform-web -w @soyl/e2e -- --on-only` on 5f27f42d | 125 passed, 2 failed: `pages.spec.ts › browse board → class → subject → chapter` (**pre-existing**: the class page, unchanged here, now lists ICSE 10 core subjects under "Start learning" and puts "Core subjects" inside the collapsed "More subjects: coming soon"; the spec expects a visible "Core subjects" h2: web-platform/page agent to update) and the new v3 shell test (fixed in b042fa1a: rail tooltips had added generated content to link names; test made resize-safe) |
+| Web e2e, flag ON (shell specs rerun) | `… -- --on-only review.spec.ts revamp.spec.ts pages.spec.ts guest.spec.ts dashboard.spec.ts` on b042fa1a | 53 passed, 2 failed (same two); then `… -- --on-only --skip-build review.spec.ts -g "v3 shell"` with the final spec: 1 passed |
+| Marketing | `npm run marketing:diff -w @soyl/e2e -- --base main` | PASSED: zero visual diffs (46 base snapshots, 50 checks incl. route status) |
+| Marketing CSS bytes | global CSS of the base build vs this branch's latest build | identical (md5 `c07d0a1267c1`, 89,122 B): no Tailwind utility leaked from the new TSX/MD |
+
+E2E harness change: `platform/e2e/tests/platform/web/playwright.config.ts` API web-server timeout 300 → 600 s. Publishing every authored chapter (729) takes about 310 s here, so the flag-on suite could not start at all with 300 s (also on main). Full flag-on run takes about 55 minutes on this machine.
 
 ## Kit API for page agents
 
@@ -98,6 +103,9 @@ Import from `@/components/platform/ui/kit/<file>`. Details and snippets: DESIGN-
 8. Renderer follow-up (not changed here): slide layouts `.split`/`.problem` use auto grid tracks, so a wide display equation can widen a narrow container (seen only in the gallery at 360 px; the lesson player at 360 px has no overflow on CBSE 10 Science ch. 1 part 1).
 
 ## Known gaps / follow-ups
+
+- `PROGRESS_NAV` has `prefetch: false`: a prefetched 404 RSC request for the not-yet-built `/me/progress` stayed open in Chromium, so members' desktop pages never went network-idle (it timed out avatars-assets.spec). Keep it until the page exists; then it can be removed.
+- `pages.spec.ts › browse board → class …` fails on main and here (class page grouping vs the spec, see Gates).
 
 - `visual-v2.test.tsx › table` fails on main and here (content data); owner: content/pipeline.
 - The coin chip's check-in dot is unchanged (owner feature, ADR-021).
