@@ -63,13 +63,41 @@ test.describe('Lead review: shell and layout', () => {
     await shellFits(page, SUBJECT);
   });
 
-  test('members with every chip (streak, coins, AI credits, Home in the nav): the top bar still fits', async ({ page }) => {
-    test.setTimeout(5 * 60_000);
+  test('members with every chip (streak, coins, AI credits on Ask AI; Home in the nav): the top bar still fits', async ({ page }) => {
+    test.setTimeout(6 * 60_000);
     await signUp(page, 'topbar', '/me');
     await grantConsent(page);
+    // ADR-032: the credits chip is in the top bar only where credits are spent or bought (Ask AI is the widest member bar); elsewhere the
+    // sidebar (≥ 1024 px) carries the credits.
     await page.goto('/learn', { waitUntil: 'networkidle' });
-    await expect(page.getByTestId('credit-chip')).toBeVisible();
-    await shellFits(page, '/me/dashboard', 'credit-chip');
+    await expect(page.getByTestId('credit-chip')).toHaveCount(0);
+    await shellFits(page, '/ask', 'credit-chip');
+    await shellFits(page, '/me/dashboard');
+    await expect(page.getByTestId('sidebar-credits')).toBeVisible(); // 1440 px (the last width)
+  });
+
+  test('v3 shell (ADR-032): sidebar from 1024 px (icon rail to 1279), stage from the class, no sidebar on immersive pages', async ({ page }) => {
+    await page.setViewportSize({ width: 1280, height: 800 });
+    await page.goto('/learn/cbse/7/science', { waitUntil: 'networkidle' });
+    await expect(page.getByTestId('app-shell')).toHaveAttribute('data-stage', 'junior');
+    const sidebar = page.getByTestId('sidebar');
+    await expect(sidebar).toBeVisible();
+    expect((await sidebar.boundingBox())!.width).toBeGreaterThan(200);
+    await expect(sidebar.getByRole('link', { name: 'Learn', exact: true })).toHaveAttribute('aria-current', 'page');
+    await page.setViewportSize({ width: 1100, height: 800 });
+    await page.reload({ waitUntil: 'networkidle' }); // the mobile-emulated layout viewport settles on load
+    expect(await page.evaluate(() => window.innerWidth)).toBe(1100);
+    await expect.poll(async () => (await sidebar.boundingBox())?.width ?? 0).toBeLessThan(100); // icon rail
+    await expect(sidebar.getByRole('link', { name: 'Tests', exact: true })).toBeVisible(); // named by its (hidden) label
+    await page.setViewportSize({ width: 900, height: 800 });
+    await expect(sidebar).toBeHidden();
+    await page.goto('/learn/cbse/12/physics', { waitUntil: 'networkidle' });
+    await expect(page.getByTestId('app-shell')).toHaveAttribute('data-stage', 'senior');
+    await page.setViewportSize({ width: 1280, height: 800 });
+    await page.goto('/learn/cbse/10/science/ch01/lesson', { waitUntil: 'networkidle' });
+    await expect(page.getByTestId('sidebar')).toHaveCount(0);
+    await expect(page.getByTestId('main-site-link')).toBeVisible();
+    await checkPage(page);
   });
 
   test('one page container: content lines up with the top bar on every page (1280 px)', async ({ page }) => {

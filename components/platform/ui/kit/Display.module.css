@@ -1,14 +1,36 @@
-/* Card */
+/* Card (v3, ADR-032): white on the warm canvas, a hairline plus a soft shadow, the stage's radius. */
 .card {
   background: var(--p-surface);
-  border: 1px solid var(--p-border);
-  border-radius: var(--p-radius-lg);
+  border: 1px solid var(--p-card-border);
+  border-radius: var(--p-stage-card-radius, var(--p-radius-xl));
   padding: var(--p-space-4);
   color: var(--p-ink);
+  box-shadow: var(--p-shadow-card);
 }
 .cardElevated {
   box-shadow: var(--p-shadow-2);
   border-color: transparent;
+}
+/* A tinted card (Card tint="green"): pastel fill, no shadow; text stays --p-ink (AA on every tint). */
+.card[data-tint] {
+  border-color: transparent;
+  box-shadow: none;
+  background: var(--card-tint);
+}
+/* Interactive card (the whole card is one link): lifts on hover, ring on focus. */
+.cardInteractive {
+  position: relative;
+  display: block;
+  text-decoration: none;
+  transition: box-shadow var(--p-duration-base) var(--p-ease), transform var(--p-duration-base) var(--p-ease);
+}
+.cardInteractive:hover {
+  box-shadow: var(--p-shadow-2);
+  transform: translateY(-1px);
+}
+.cardInteractive:focus-visible {
+  outline: none;
+  box-shadow: var(--p-focus-ring);
 }
 .cardFlush {
   padding: 0;
@@ -37,7 +59,7 @@
   align-items: center;
   gap: var(--p-space-1);
   padding: 2px var(--p-space-2);
-  border-radius: var(--p-radius-sm);
+  border-radius: var(--p-radius-pill);
   font-size: var(--p-text-xs);
   font-weight: 600;
   line-height: 1.4;
@@ -153,14 +175,18 @@ button.chip:hover {
   text-align: center;
   color: var(--p-ink-muted);
 }
+/* v3: the icon sits in a soft tinted squircle (EmptyState tint, default blue). */
 .emptyIcon {
   display: grid;
   place-items: center;
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  background: var(--p-surface-2);
-  color: var(--p-ink-muted);
+  width: 64px;
+  height: 64px;
+  border-radius: var(--p-radius-xl);
+  background: var(--empty-tint, var(--p-tint-blue));
+  color: var(--empty-tint-ink, var(--p-tint-blue-ink));
+}
+.emptyCompact {
+  padding: var(--p-space-5) var(--p-space-4);
 }
 .emptyArt {
   display: grid;
@@ -195,11 +221,13 @@ button.chip:hover {
   display: inline-flex;
   align-items: center;
   gap: var(--p-space-2);
-  min-height: var(--p-touch);
+  min-height: 36px;
   padding: 0 var(--p-space-3);
   border-radius: var(--p-radius-pill);
   background: var(--p-surface);
-  border: 1px solid var(--p-border-strong);
+  /* v3: a soft chip like the streak and coins chips; the low-balance state keeps a visible border. */
+  border: 1px solid transparent;
+  box-shadow: var(--p-shadow-card);
   color: var(--p-ink);
   font-size: var(--p-text-sm);
   white-space: nowrap;
@@ -232,4 +260,15 @@ button.chip:hover {
 }
 .creditLow {
   border-color: var(--p-warning);
+}
+
+/* SkeletonCard (v3) */
+.skeletonCard {
+  display: grid;
+  gap: var(--p-space-2);
+  box-shadow: none;
+}
+.skeletonThumb {
+  border-radius: 30%;
+  margin-bottom: var(--p-space-2);
 }

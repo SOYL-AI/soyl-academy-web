@@ -12,12 +12,12 @@ html[data-platform-theme] {
 }
 html[data-platform-theme='light'],
 html[data-platform-theme='light'] body {
-  background-color: #f5f6f8;
+  background-color: #f6f4ef; /* --p-bg (light), design language v3 (ADR-032) */
   color-scheme: light;
 }
 html[data-platform-theme='dark'],
 html[data-platform-theme='dark'] body {
-  background-color: #16171a;
+  background-color: #121316; /* --p-bg (dark) */
   color-scheme: dark;
 }
 

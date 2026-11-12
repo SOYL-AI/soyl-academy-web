@@ -1,13 +1,15 @@
 /* ==========================================================================
-   SOYL platform tokens (design-system, M1)
+   SOYL platform tokens: design language v3 (ADR-032; v1 M1, v2 ADR-023)
 
    Every rule in this file is scoped under `.soyl-platform`, so importing it can never
    change a marketing page: marketing markup never carries that class. The file is imported
    only by components/platform/ui/PlatformRoot.tsx (ADR-001 §7, ADR-009).
 
-   Family resemblance with the marketing "Working Notebook" (app/globals.css): paper and ink,
-   cobalt as the single action colour, highlighter yellow, red-pen for errors, square-ish
-   radii. The platform is a study app, so it is denser, calmer and higher-contrast.
+   v3 ("warm notebook, soft cards"): warm paper canvas, white cards with soft elevation, large
+   radii, pill buttons, one action colour (SOYL cobalt), brand accents red-pen and highlighter
+   yellow, and a pastel tint family (--p-tint-*) for subjects, study modes and friendly cards.
+   Every text pair is AA in both themes (components/platform/ui/__tests__/kit.test.tsx).
+   Contract: docs/platform/design/redesign-v3/DESIGN-LANGUAGE.md.
 
    Contract for other agents:
    - Put `.soyl-platform` (use <PlatformRoot>) on the outermost platform element.
@@ -15,25 +17,29 @@
      components/platform/ui/fonts.ts). `--font-inter` comes from the root layout.
    - Theme: light/dark follow prefers-color-scheme; `data-theme="light|dark"` on the root
      element forces one.
+   - Age stage: `data-stage="junior|middle|senior"` on the app shell (ADR-032) retunes the
+     --p-stage-* tokens (card radius, tile size, gaps, greeting size). Default: middle.
    - Diagrams use currentColor and --diagram-accent / --diagram-muted / --diagram-fill.
    ========================================================================== */
 
 .soyl-platform {
   /* ── Colour: light (default) ───────────────────────────────────────────── */
-  --p-bg: #f5f6f8;            /* app background: cool, quiet (ADR-023) */
+  --p-bg: #f6f4ef;            /* app canvas: warm paper (v3), quieter than the brand paper */
+  --p-paper: #f6f2ea;         /* SOYL brand paper: hero panels, quiet bands (decorative fill) */
   --p-surface: #ffffff;       /* cards, sheets, slides */
-  --p-surface-2: #f1f3f6;     /* quiet fill: table stripes, code, skeleton base */
-  --p-surface-3: #e4e7ec;     /* pressed / selected fill, empty track */
+  --p-surface-2: #f3f1ec;     /* quiet fill: table stripes, code, skeleton base, inset wells */
+  --p-surface-3: #e7e4dd;     /* pressed / selected fill, empty track */
   --p-ink: #15171c;
   --p-ink-muted: #474c56;     /* secondary text, >= 7:1 on surface */
-  --p-ink-subtle: #5f6570;    /* captions, meta, >= 4.5:1 on surface, surface-2 and bg */
-  --p-border: rgba(21, 23, 28, 0.12);   /* decorative separators */
+  --p-ink-subtle: #5f6570;    /* captions, meta, >= 4.5:1 on surface, surface-2, bg and every tint */
+  --p-border: rgba(21, 23, 28, 0.09);   /* decorative separators */
+  --p-card-border: rgba(21, 23, 28, 0.06); /* the hairline under a card's soft shadow */
   --p-border-strong: #7a808b; /* control boundaries (inputs, chips): >= 3:1 (WCAG 1.4.11) */
   --p-accent: #2b4fe6;        /* SOYL cobalt (marketing --color-cobalt): actions, links, progress */
   --p-accent-hover: #1f3bb3;
-  --p-accent-soft: #e8edff;
+  --p-accent-soft: #e9edff;
   --p-on-accent: #ffffff;
-  --p-highlight: #f2d45c;     /* highlighter: listen-mode words, key terms */
+  --p-highlight: #f2d45c;     /* highlighter: listen-mode words, key terms, "new" */
   --p-on-highlight: #15171c;
   --p-danger: #b23a30;        /* red-pen ink, AA as text */
   --p-danger-soft: #fbe9e6;
@@ -42,7 +48,7 @@
   --p-warning: #7a5200;
   --p-warning-soft: #fdf3d3;
   --p-info: #1f3bb3;
-  --p-info-soft: #e8edff;
+  --p-info-soft: #e9edff;
   --p-focus: #2b4fe6;
   --p-scrim: rgba(21, 23, 28, 0.55);
 
@@ -50,6 +56,32 @@
   --p-brand-blue: #2b4fe6;
   --p-brand-red: #c8473c;
   --p-brand-yellow: #f2d45c;
+  /* Hero decoration (GreetingHeader hero): soft brand shapes, decorative only. */
+  --p-decor-yellow: rgba(242, 212, 92, 0.55);
+  --p-decor-blue: rgba(43, 79, 230, 0.14);
+  --p-decor-red: rgba(200, 71, 60, 0.13);
+
+  /* Tints (v3): pastel fills for subjects, study modes, friendly cards and icon tiles. --p-tint-X-ink is the
+     matching strong hue for icons and short labels: AA (4.5:1) on its own fill, and --p-ink / --p-ink-muted /
+     --p-ink-subtle are AA on every fill. Never the only cue: always write the subject or mode too. */
+  --p-tint-blue: #e8edff;
+  --p-tint-blue-ink: #2643c4;
+  --p-tint-violet: #efe9ff;
+  --p-tint-violet-ink: #5a3bc2;
+  --p-tint-pink: #fce8f1;
+  --p-tint-pink-ink: #9e2f67;
+  --p-tint-red: #fde9e5;
+  --p-tint-red-ink: #ad382e;
+  --p-tint-orange: #feecdc;
+  --p-tint-orange-ink: #964507;
+  --p-tint-yellow: #fcf3cf;
+  --p-tint-yellow-ink: #735200;
+  --p-tint-green: #e2f4e9;
+  --p-tint-green-ink: #19683f;
+  --p-tint-teal: #ddf2f1;
+  --p-tint-teal-ink: #0c616a;
+  --p-tint-neutral: #f1eee8;
+  --p-tint-neutral-ink: #474c56;
 
   /* Difficulty tags (LeetCode style): text on surface and on its -soft fill is AA. */
   --p-easy: #0f7a5c;
@@ -60,7 +92,7 @@
   --p-hard-soft: #fbe6e8;
 
   /* Mastery levels (Khan style; graphics >= 3:1 on surface and bg; the level is always also written). */
-  --p-m-none: #e4e7ec;
+  --p-m-none: #e7e4dd;
   --p-m-attempted: #c2570c;
   --p-m-familiar: #a87400;
   --p-m-proficient: #2b4fe6;
@@ -68,7 +100,7 @@
 
   /* Streak flame, activity heatmap ramp (heat-0 = no activity). */
   --p-flame: #d9480f;
-  --p-heat-0: #e4e7ec;
+  --p-heat-0: #e7e4dd;
   --p-heat-1: #c3cdfb;
   --p-heat-2: #8ea2ff;
   --p-heat-3: #4f6df0;
@@ -123,9 +155,16 @@
   --p-text-xl: 1.25rem;
   --p-text-2xl: 1.5rem;
   --p-text-3xl: 1.875rem;
+  --p-text-4xl: 2.25rem;
+  /* v3 greeting / page hero: 28 px at 360 px, 40 px on wide screens. */
+  --p-text-greet: clamp(1.75rem, 1.35rem + 1.6vw, 2.5rem);
   --p-leading-tight: 1.25;
+  --p-leading-display: 1.12;
   --p-leading-body: 1.55;
   --p-leading-devanagari: 1.75; /* matras and conjuncts need more room */
+  --p-weight-strong: 650;
+  --p-weight-display: 750;
+  --p-tracking-display: -0.02em;
 
   /* ── Space (4 px grid), radii, elevation ───────────────────────────────── */
   --p-space-1: 0.25rem;
@@ -136,15 +175,37 @@
   --p-space-6: 1.5rem;
   --p-space-8: 2rem;
   --p-space-10: 2.5rem;
-  --p-gutter: 1rem;         /* page side gutter at 360 px */
-  --p-radius-sm: 4px;
-  --p-radius-md: 8px;
-  --p-radius-lg: 12px;
-  --p-radius-xl: 16px;
+  --p-space-12: 3rem;
+  --p-space-16: 4rem;
+  --p-gutter: 1rem;         /* page side gutter at 360 px (1.5rem from 768 px, 2rem from 1280 px: shell.module.css) */
+  --p-radius-sm: 6px;
+  --p-radius-md: 10px;
+  --p-radius-lg: 16px;
+  --p-radius-xl: 20px;
+  --p-radius-2xl: 24px;
   --p-radius-pill: 999px;
-  --p-shadow-1: 0 1px 2px rgba(21, 23, 28, 0.06);
-  --p-shadow-2: 0 2px 6px rgba(21, 23, 28, 0.08), 0 8px 24px rgba(21, 23, 28, 0.08);
+  --p-shadow-1: 0 1px 2px rgba(21, 23, 28, 0.05);
+  /* Resting card: a hairline plus a soft, low shadow (v3: elevation instead of grey borders). */
+  --p-shadow-card: 0 1px 2px rgba(21, 23, 28, 0.04), 0 8px 24px -12px rgba(21, 23, 28, 0.12);
+  /* Hovered / lifted card, popovers. */
+  --p-shadow-2: 0 2px 6px rgba(21, 23, 28, 0.06), 0 16px 36px -12px rgba(21, 23, 28, 0.16);
   --p-shadow-3: 0 12px 40px rgba(21, 23, 28, 0.22);
+
+  /* ── App shell layout (ADR-032) ────────────────────────────────────────── */
+  --p-topbar-h: 60px;
+  --p-tabbar-h: 60px;
+  --p-sidebar-w: 248px;      /* full sidebar, >= 1280 px */
+  --p-sidebar-rail-w: 80px;  /* icon rail, 1024–1279 px */
+  --p-content-max: 1200px;   /* page container (top bar and pages share it) */
+  --p-right-rail-w: 320px;   /* PageColumns right rail, >= 1280 px */
+
+  /* ── Age stage (ADR-032): middle (Classes 9–10) is the default ─────────── */
+  --p-stage-card-radius: var(--p-radius-xl);
+  --p-stage-card-pad: var(--p-space-5);
+  --p-stage-gap: var(--p-space-4);
+  --p-stage-tile-min: 156px;     /* grid track minimum for SubjectCard / ModeTile */
+  --p-stage-greet: var(--p-text-greet);
+  --p-stage-avatar: 56px;
 
   /* ── Interaction ───────────────────────────────────────────────────────── */
   --p-touch: 44px;          /* minimum touch target */
@@ -169,14 +230,16 @@
 /* ── Colour: dark ─────────────────────────────────────────────────────────── */
 @media (prefers-color-scheme: dark) {
   .soyl-platform:not([data-theme="light"]) {
-    --p-bg: #16171a;
-    --p-surface: #1f2024;
-    --p-surface-2: #26272c;
-    --p-surface-3: #313238;
+    --p-bg: #121316;
+    --p-paper: #1a1915;
+    --p-surface: #1b1c20;
+    --p-surface-2: #232429;
+    --p-surface-3: #2e3036;
     --p-ink: #eceef2;
     --p-ink-muted: #b9bdc7;
     --p-ink-subtle: #9ea3ae;
-    --p-border: rgba(236, 238, 242, 0.12);
+    --p-border: rgba(236, 238, 242, 0.1);
+    --p-card-border: rgba(236, 238, 242, 0.08);
     --p-border-strong: #7c818c;
     --p-accent: #8ea2ff;
     --p-accent-hover: #b5c2ff;
@@ -197,13 +260,34 @@
     --p-brand-blue: #6f88ff;
     --p-brand-red: #f0766b;
     --p-brand-yellow: #f2d45c;
+    --p-decor-yellow: rgba(242, 212, 92, 0.16);
+    --p-decor-blue: rgba(142, 162, 255, 0.12);
+    --p-decor-red: rgba(240, 118, 107, 0.1);
+    --p-tint-blue: #1f2747;
+    --p-tint-blue-ink: #aebcff;
+    --p-tint-violet: #282145;
+    --p-tint-violet-ink: #c9b9ff;
+    --p-tint-pink: #371e2c;
+    --p-tint-pink-ink: #f4a7cb;
+    --p-tint-red: #3a201d;
+    --p-tint-red-ink: #ffa298;
+    --p-tint-orange: #37261a;
+    --p-tint-orange-ink: #f6b37f;
+    --p-tint-yellow: #322a12;
+    --p-tint-yellow-ink: #ecd06a;
+    --p-tint-green: #15301f;
+    --p-tint-green-ink: #86d9a9;
+    --p-tint-teal: #122f30;
+    --p-tint-teal-ink: #80d5d6;
+    --p-tint-neutral: #26272c;
+    --p-tint-neutral-ink: #b9bdc7;
     --p-easy: #5fd3a8;
     --p-easy-soft: #14302a;
     --p-medium: #f2c75c;
     --p-medium-soft: #33290f;
     --p-hard: #ff8f9a;
     --p-hard-soft: #3a1d22;
-    --p-m-none: #313238;
+    --p-m-none: #2e3036;
     --p-m-attempted: #f08a5d;
     --p-m-familiar: #e5b84b;
     --p-m-proficient: #8ea2ff;
@@ -232,28 +316,31 @@
     --diagram-accent: #8ea2ff;
     --diagram-muted: #9ea3ae;
     --diagram-fill: rgba(142, 162, 255, 0.2);
-    --diagram-paper: #1f2024;
+    --diagram-paper: #1b1c20;
     --diagram-blue: #8ea2ff;
     --diagram-green: #6fd39b;
     --diagram-yellow: #f2d45c;
     --diagram-brown: #d9a066;
     --diagram-red: #ff958a;
     --p-shadow-1: 0 1px 2px rgba(0, 0, 0, 0.4);
-    --p-shadow-2: 0 2px 6px rgba(0, 0, 0, 0.4), 0 8px 24px rgba(0, 0, 0, 0.35);
+    --p-shadow-card: 0 1px 2px rgba(0, 0, 0, 0.35);
+    --p-shadow-2: 0 2px 6px rgba(0, 0, 0, 0.4), 0 16px 36px -12px rgba(0, 0, 0, 0.55);
     --p-shadow-3: 0 12px 40px rgba(0, 0, 0, 0.6);
     color-scheme: dark;
   }
 }
 
 .soyl-platform[data-theme="dark"] {
-  --p-bg: #16171a;
-  --p-surface: #1f2024;
-  --p-surface-2: #26272c;
-  --p-surface-3: #313238;
+  --p-bg: #121316;
+  --p-paper: #1a1915;
+  --p-surface: #1b1c20;
+  --p-surface-2: #232429;
+  --p-surface-3: #2e3036;
   --p-ink: #eceef2;
   --p-ink-muted: #b9bdc7;
   --p-ink-subtle: #9ea3ae;
-  --p-border: rgba(236, 238, 242, 0.12);
+  --p-border: rgba(236, 238, 242, 0.1);
+  --p-card-border: rgba(236, 238, 242, 0.08);
   --p-border-strong: #7c818c;
   --p-accent: #8ea2ff;
   --p-accent-hover: #b5c2ff;
@@ -274,13 +361,34 @@
   --p-brand-blue: #6f88ff;
   --p-brand-red: #f0766b;
   --p-brand-yellow: #f2d45c;
+  --p-decor-yellow: rgba(242, 212, 92, 0.16);
+  --p-decor-blue: rgba(142, 162, 255, 0.12);
+  --p-decor-red: rgba(240, 118, 107, 0.1);
+  --p-tint-blue: #1f2747;
+  --p-tint-blue-ink: #aebcff;
+  --p-tint-violet: #282145;
+  --p-tint-violet-ink: #c9b9ff;
+  --p-tint-pink: #371e2c;
+  --p-tint-pink-ink: #f4a7cb;
+  --p-tint-red: #3a201d;
+  --p-tint-red-ink: #ffa298;
+  --p-tint-orange: #37261a;
+  --p-tint-orange-ink: #f6b37f;
+  --p-tint-yellow: #322a12;
+  --p-tint-yellow-ink: #ecd06a;
+  --p-tint-green: #15301f;
+  --p-tint-green-ink: #86d9a9;
+  --p-tint-teal: #122f30;
+  --p-tint-teal-ink: #80d5d6;
+  --p-tint-neutral: #26272c;
+  --p-tint-neutral-ink: #b9bdc7;
   --p-easy: #5fd3a8;
   --p-easy-soft: #14302a;
   --p-medium: #f2c75c;
   --p-medium-soft: #33290f;
   --p-hard: #ff8f9a;
   --p-hard-soft: #3a1d22;
-  --p-m-none: #313238;
+  --p-m-none: #2e3036;
   --p-m-attempted: #f08a5d;
   --p-m-familiar: #e5b84b;
   --p-m-proficient: #8ea2ff;
@@ -309,16 +417,39 @@
   --diagram-accent: #8ea2ff;
   --diagram-muted: #9ea3ae;
   --diagram-fill: rgba(142, 162, 255, 0.2);
-  --diagram-paper: #1f2024;
+  --diagram-paper: #1b1c20;
   --diagram-blue: #8ea2ff;
   --diagram-green: #6fd39b;
   --diagram-yellow: #f2d45c;
   --diagram-brown: #d9a066;
   --diagram-red: #ff958a;
   --p-shadow-1: 0 1px 2px rgba(0, 0, 0, 0.4);
-  --p-shadow-2: 0 2px 6px rgba(0, 0, 0, 0.4), 0 8px 24px rgba(0, 0, 0, 0.35);
+  --p-shadow-card: 0 1px 2px rgba(0, 0, 0, 0.35);
+  --p-shadow-2: 0 2px 6px rgba(0, 0, 0, 0.4), 0 16px 36px -12px rgba(0, 0, 0, 0.55);
   --p-shadow-3: 0 12px 40px rgba(0, 0, 0, 0.6);
   color-scheme: dark;
+}
+
+/* ── Age stages (ADR-032): the shell sets data-stage from the student's class ─ */
+/* junior = Classes 7–8: warmer and roomier (bigger tiles, rounder cards, larger greeting). */
+.soyl-platform [data-stage="junior"],
+.soyl-platform[data-stage="junior"] {
+  --p-stage-card-radius: var(--p-radius-2xl);
+  --p-stage-card-pad: var(--p-space-6);
+  --p-stage-gap: var(--p-space-5);
+  --p-stage-tile-min: 168px;
+  --p-stage-greet: clamp(1.875rem, 1.4rem + 1.9vw, 2.75rem);
+  --p-stage-avatar: 72px;
+}
+/* senior = Classes 11–12: denser and calmer (exam and stream focus). */
+.soyl-platform [data-stage="senior"],
+.soyl-platform[data-stage="senior"] {
+  --p-stage-card-radius: var(--p-radius-lg);
+  --p-stage-card-pad: var(--p-space-4);
+  --p-stage-gap: var(--p-space-3);
+  --p-stage-tile-min: 140px;
+  --p-stage-greet: clamp(1.625rem, 1.3rem + 1.2vw, 2.125rem);
+  --p-stage-avatar: 48px;
 }
 
 /* ── Devanagari (Hindi, Marathi, Nepali, Sanskrit) ───────────────────────── */

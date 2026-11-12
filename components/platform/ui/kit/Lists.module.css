@@ -1,0 +1,278 @@
+/* StatusPill, List/ListRow, DataTable, Timeline (design language v3, ADR-032). */
+
+/* StatusPill */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 24px;
+  padding: 2px 10px;
+  border-radius: var(--p-radius-pill);
+  background: var(--p-surface-2);
+  color: var(--p-ink-muted);
+  font-size: var(--p-text-xs);
+  font-weight: 650;
+  line-height: 1.3;
+  white-space: nowrap;
+}
+.pill[data-tone='info'] {
+  background: var(--p-info-soft);
+  color: var(--p-info);
+}
+.pill[data-tone='success'] {
+  background: var(--p-success-soft);
+  color: var(--p-success);
+}
+.pill[data-tone='warning'] {
+  background: var(--p-warning-soft);
+  color: var(--p-warning);
+}
+.pill[data-tone='danger'],
+.pill[data-tone='live'] {
+  background: var(--p-danger-soft);
+  color: var(--p-danger);
+}
+.pill[data-tone='highlight'] {
+  background: var(--p-highlight);
+  color: var(--p-on-highlight);
+}
+.pillDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: currentColor;
+}
+.pill[data-tone='live'] .pillDot {
+  animation: pulse 1.6s ease-in-out infinite;
+}
+@keyframes pulse {
+  50% {
+    opacity: 0.35;
+  }
+}
+
+/* List / ListRow */
+.list {
+  margin: 0;
+  padding: var(--p-space-1);
+  list-style: none;
+  border: 1px solid var(--p-card-border);
+  border-radius: var(--p-stage-card-radius, var(--p-radius-xl));
+  background: var(--p-surface);
+  box-shadow: var(--p-shadow-card);
+}
+.listInset {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+.rowItem + .rowItem {
+  border-top: 1px solid var(--p-border);
+}
+.row {
+  display: flex;
+  align-items: center;
+  gap: var(--p-space-3);
+  min-height: 56px;
+  padding: var(--p-space-2) var(--p-space-3);
+  border-radius: var(--p-radius-lg);
+  color: var(--p-ink);
+  text-decoration: none;
+}
+.rowLink {
+  transition: background-color var(--p-duration-fast) var(--p-ease);
+}
+.rowLink:hover {
+  background: var(--p-surface-2);
+}
+.rowLink:focus-visible {
+  outline: none;
+  box-shadow: inset 0 0 0 2px var(--p-focus);
+}
+.rowItem[data-current] .row {
+  background: var(--p-accent-soft);
+}
+.leading {
+  display: inline-flex;
+  flex: none;
+}
+.rowText {
+  display: grid;
+  flex: 1;
+  min-width: 0;
+}
+.rowTitle {
+  font-weight: 650;
+  line-height: 1.35;
+  overflow-wrap: break-word;
+}
+.rowMeta {
+  color: var(--p-ink-subtle);
+  font-size: var(--p-text-sm);
+  line-height: 1.35;
+}
+.trailing {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  gap: var(--p-space-2);
+  color: var(--p-ink-muted);
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
+}
+
+/* DataTable */
+.tableWrap {
+  max-width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--p-card-border);
+  border-radius: var(--p-stage-card-radius, var(--p-radius-xl));
+  background: var(--p-surface);
+  box-shadow: var(--p-shadow-card);
+}
+.tableWrap:focus-visible {
+  outline: none;
+  box-shadow: var(--p-focus-ring);
+}
+.table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: var(--p-text-sm);
+}
+.caption {
+  padding: var(--p-space-4) var(--p-space-4) var(--p-space-2);
+  color: var(--p-ink);
+  font-size: var(--p-text-md);
+  font-weight: 700;
+  text-align: left;
+}
+.table th,
+.table td {
+  padding: var(--p-space-3) var(--p-space-4);
+  text-align: left;
+  vertical-align: middle;
+}
+.table thead th {
+  color: var(--p-ink-subtle);
+  font-size: var(--p-text-xs);
+  font-weight: 650;
+  white-space: nowrap;
+  border-bottom: 1px solid var(--p-border);
+}
+.table tbody tr + tr > * {
+  border-top: 1px solid var(--p-border);
+}
+.table tbody tr:hover > * {
+  background: var(--p-surface-2);
+}
+.table tbody th {
+  font-weight: 650;
+}
+.dense th,
+.dense td {
+  padding: var(--p-space-2) var(--p-space-3);
+}
+.num {
+  text-align: right !important;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+/* Timeline: [time] [dot + line] [card] */
+.timeline {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.tlItem {
+  display: grid;
+  grid-template-columns: 3.5rem 16px minmax(0, 1fr);
+  gap: var(--p-space-3);
+  min-width: 0;
+}
+.tlTime {
+  display: grid;
+  align-content: start;
+  padding-top: var(--p-space-3);
+  line-height: 1.25;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+.tlTime b {
+  font-size: var(--p-text-sm);
+  font-weight: 700;
+}
+.tlTime span {
+  color: var(--p-ink-subtle);
+  font-size: var(--p-text-xs);
+}
+.tlRail {
+  position: relative;
+  display: grid;
+  justify-items: center;
+}
+.tlRail::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--p-border);
+}
+.tlItem:first-child .tlRail::before {
+  top: var(--p-space-4);
+}
+.tlItem:last-child .tlRail::before {
+  bottom: auto;
+  height: var(--p-space-4);
+}
+.tlDot {
+  position: relative;
+  width: 12px;
+  height: 12px;
+  margin-top: var(--p-space-4);
+  border-radius: 50%;
+  background: var(--tl-ink);
+  box-shadow: 0 0 0 4px var(--tl);
+}
+.tlCardWrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: var(--p-space-2);
+  min-width: 0;
+  padding-bottom: var(--p-space-3);
+}
+.tlCard {
+  display: grid;
+  flex: 1 1 12rem;
+  gap: 2px;
+  min-width: 0;
+  padding: var(--p-space-3) var(--p-space-4);
+  border-radius: var(--p-radius-lg);
+  background: var(--tl);
+  color: var(--p-ink);
+  text-decoration: none;
+}
+.tlCardLink:hover {
+  box-shadow: var(--p-shadow-2);
+}
+.tlCardLink:focus-visible {
+  outline: none;
+  box-shadow: var(--p-focus-ring);
+}
+.tlTitle {
+  font-weight: 700;
+  line-height: 1.3;
+}
+.tlMeta {
+  color: var(--p-ink-muted);
+  font-size: var(--p-text-sm);
+}
+.tlStatus {
+  justify-self: start;
+  padding-top: var(--p-space-1);
+}

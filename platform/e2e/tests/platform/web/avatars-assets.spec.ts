@@ -105,6 +105,9 @@ test('credits: the guide opens from the header chip; bonuses, history and the da
     await expect(page.getByTestId('credits-tile')).toBeVisible();
     await expect(page.getByTestId('credits-tile')).toContainText('+10 AI credits for hitting today\'s practice goal');
 
+    // ADR-032: the top-bar credits chip shows where credits are spent or bought (Ask AI, Plans, lesson, test result); from 1024 px the
+    // sidebar opens the same guide.
+    await page.goto('/ask', { waitUntil: 'networkidle' });
     await page.getByTestId('credit-chip').click();
     const dialog = page.getByRole('dialog', { name: 'What can I do with my credits?' });
     await expect(dialog).toBeVisible();

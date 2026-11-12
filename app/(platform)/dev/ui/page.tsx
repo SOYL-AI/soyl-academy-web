@@ -22,6 +22,7 @@ import { Visual } from '@/components/platform/ui/visual/Visual';
 import { SAMPLE_CHECK_QUESTION, SAMPLE_DECK, SAMPLE_DECK_HI } from '@/components/platform/ui/__fixtures__/sample-deck';
 import { MARKDOWN_XSS, SVG_XSS } from '@/components/platform/ui/__fixtures__/xss-corpus';
 import { ChipDemo, FormDemo, OverlayDemo, TabsDemo } from './GalleryClient';
+import { V3Gallery } from './V3Gallery';
 import s from './gallery.module.css';
 
 export const metadata: Metadata = {
@@ -67,7 +68,7 @@ function loadExemplar(path = 'science/cbse-10-science-ch01'): { decks: Deck[]; q
 }
 
 const SWATCHES = [
-  '--p-bg', '--p-surface', '--p-surface-2', '--p-ink', '--p-ink-muted', '--p-ink-subtle', '--p-border-strong', '--p-accent',
+  '--p-bg', '--p-paper', '--p-surface', '--p-surface-2', '--p-surface-3', '--p-ink', '--p-ink-muted', '--p-ink-subtle', '--p-border-strong', '--p-accent',
   '--p-highlight', '--p-danger', '--p-success', '--p-warning', '--diagram-accent', '--diagram-muted', '--diagram-fill',
   '--diagram-blue', '--diagram-green', '--diagram-yellow', '--diagram-brown', '--diagram-red',
 ];
@@ -147,6 +148,8 @@ export default function UiGalleryPage() {
           </p>
           <nav aria-label="Gallery sections" className={s.toc}>
             {[
+              ['v3', 'Design v3'],
+              ['v3-dark', 'Design v3 (dark)'],
               ['tokens', 'Tokens'],
               ['kit', 'Components'],
               ['overlays', 'Overlays'],
@@ -166,6 +169,19 @@ export default function UiGalleryPage() {
             ))}
           </nav>
         </header>
+
+        <Section id="v3" title="Design language v3 (ADR-032): today page kit">
+          <p className={s.note}>
+            Warm paper canvas, soft white cards, pill buttons, the tint family and the age-stage knob. Contract: docs/platform/design/redesign-v3/DESIGN-LANGUAGE.md.
+          </p>
+          <V3Gallery prefix="v3l" />
+        </Section>
+
+        <Section id="v3-dark" title="Design language v3 (dark, forced)">
+          <PlatformRoot theme="dark" className={s.v3Dark}>
+            <V3Gallery prefix="v3d" />
+          </PlatformRoot>
+        </Section>
 
         <Section id="tokens" title="Tokens">
           <ul className={s.swatches}>

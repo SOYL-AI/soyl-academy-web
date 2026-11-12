@@ -8,16 +8,22 @@
   line-height: var(--p-leading-body);
 }
 
-/* One container for every platform page: the top bar's width and gutter, so page headers line up with the
-   SOYL mark (Lead review 2026-10-28). Reading-width limits belong to the content inside, not to the page. */
+/* One container for every platform page: the top bar's width and gutter (both var(--p-content-max) and the shell's
+   responsive --p-gutter), so page headers line up with the top bar (Lead review 2026-10-28; v3 ADR-032).
+   Reading-width limits belong to the content inside, not to the page. */
 .page {
-  max-width: 1280px;
+  max-width: var(--p-content-max);
   margin: 0 auto;
-  padding: var(--p-space-5) var(--p-gutter) var(--p-space-10);
+  padding: var(--p-space-6) var(--p-gutter) var(--p-space-12);
+}
+@media (min-width: 1024px) {
+  .page {
+    padding-top: var(--p-space-8);
+  }
 }
 /* Wide pages with a course sidebar (subject, chapter hub, practice, profile). */
 .wide {
-  max-width: 1280px;
+  max-width: var(--p-content-max);
 }
 
 .crumbs {
@@ -63,10 +69,10 @@
 
 .title {
   margin: 0;
-  font-size: var(--p-text-2xl);
-  line-height: var(--p-leading-tight);
-  font-weight: 750;
-  letter-spacing: -0.015em;
+  font-size: var(--p-text-3xl);
+  line-height: var(--p-leading-display);
+  font-weight: var(--p-weight-display);
+  letter-spacing: var(--p-tracking-display);
   /* Wrap between words (anywhere split "Chemical Reac|tions" at 360 px) and balance the lines. */
   overflow-wrap: break-word;
   text-wrap: balance;
@@ -81,7 +87,7 @@
 }
 @media (min-width: 640px) {
   .title {
-    font-size: var(--p-text-3xl);
+    font-size: var(--p-text-4xl);
   }
 }
 

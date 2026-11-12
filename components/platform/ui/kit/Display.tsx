@@ -1,6 +1,7 @@
 import type { ButtonHTMLAttributes, CSSProperties, HTMLAttributes, ReactNode } from 'react';
 import { cx } from '../cx';
 import { Icon, type IconName } from './Icon';
+import type { Tint } from './tints';
 import s from './Display.module.css';
 
 /* ── Card ──────────────────────────────────────────────────────────────────── */
@@ -9,10 +10,18 @@ export interface CardProps extends HTMLAttributes<HTMLElement> {
   as?: 'div' | 'section' | 'article' | 'li';
   elevated?: boolean;
   flush?: boolean;
+  /** v3 (ADR-032): a pastel fill from the tint family instead of white (no shadow). */
+  tint?: Tint;
 }
 
-export function Card({ as: Tag = 'div', elevated, flush, className, ...rest }: CardProps) {
-  return <Tag className={cx(s.card, elevated && s.cardElevated, flush && s.cardFlush, className)} {...rest} />;
+export function Card({ as: Tag = 'div', elevated, flush, tint, className, style, ...rest }: CardProps) {
+  const tintStyle = tint ? ({ '--card-tint': `var(--p-tint-${tint})`, ...style } as CSSProperties) : style;
+  return <Tag className={cx(s.card, elevated && s.cardElevated, flush && s.cardFlush, className)} data-tint={tint} style={tintStyle} {...rest} />;
+}
+
+/** Class names for a whole-card link (`<Link className={cardLinkClass()}>`): card look, hover lift, focus ring. */
+export function cardLinkClass(extra?: string): string {
+  return cx(s.card, s.cardInteractive, extra);
 }
 
 export function CardTitle({ as: Tag = 'h3', className, ...rest }: HTMLAttributes<HTMLHeadingElement> & { as?: 'h2' | 'h3' | 'h4' }) {
@@ -144,19 +153,24 @@ export interface EmptyStateProps {
   action?: ReactNode;
   /** h1 when the empty state is the whole page (e.g. a test that could not load). */
   headingLevel?: 'h1' | 'h2' | 'h3' | 'h4';
+  /** v3: the icon squircle's tint (default blue). */
+  tint?: Tint;
+  /** v3: less padding, for an empty card inside a page (not a whole page). */
+  compact?: boolean;
   className?: string;
 }
 
-export function EmptyState({ title, children, icon = 'book', art, action, headingLevel: H = 'h3', className }: EmptyStateProps) {
+export function EmptyState({ title, children, icon = 'book', art, action, headingLevel: H = 'h3', tint, compact, className }: EmptyStateProps) {
+  const style = tint ? ({ '--empty-tint': `var(--p-tint-${tint})`, '--empty-tint-ink': `var(--p-tint-${tint}-ink)` } as CSSProperties) : undefined;
   return (
-    <div className={cx(s.empty, className)}>
+    <div className={cx(s.empty, compact && s.emptyCompact, className)} style={style}>
       {art ? (
         <span className={s.emptyArt} aria-hidden="true">
           {art}
         </span>
       ) : (
         <span className={s.emptyIcon}>
-          <Icon name={icon} size={26} />
+          <Icon name={icon} size={28} />
         </span>
       )}
       <H className={s.emptyTitle}>{title}</H>
@@ -204,5 +218,19 @@ export function Avatar({ name, size = 40, decorative = false, className }: Avata
     >
       {initialsOf(name)}
     </span>
+  );
+}
+
+/* ── SkeletonCard (v3) ─────────────────────────────────────────────────────── */
+
+/** A card-shaped loading placeholder (v3): optional square thumbnail, title bar and text lines. Decorative; put
+ *  aria-busy="true" on the region that is loading. */
+export function SkeletonCard({ lines = 2, thumb = false, className }: { lines?: number; thumb?: boolean; className?: string }) {
+  return (
+    <div className={cx(s.card, s.skeletonCard, className)} aria-hidden="true">
+      {thumb && <Skeleton variant="block" width={52} height={52} className={s.skeletonThumb} />}
+      <Skeleton width="55%" height="1.1em" />
+      <Skeleton lines={lines} />
+    </div>
   );
 }

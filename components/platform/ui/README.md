@@ -12,7 +12,7 @@ Gallery (dev only): `/dev/ui` with `NEXT_PUBLIC_PLATFORM_ENABLED=true` and `npm 
 | `PlatformRoot.tsx` | `.soyl-platform` scope; imports `styles/tokens.css`. Put it on the outermost platform element. |
 | `fonts.ts` | `notoDevanagari` (next/font, `--font-noto-devanagari`). |
 | `styles/tokens.css` | Design tokens (all rules scoped under `.soyl-platform`). |
-| `kit/` | Button, IconButton, Card, Dialog, BottomSheet, Tabs, ProgressBar, Badge, Chip, Toast, Skeleton, EmptyState, Field, TextInput, OTPInput, CreditChip, Avatar, Icon; ADR-023: `Mastery.tsx` (MasteryPip, MasteryBar, ProgressRing, DifficultyTag). |
+| `kit/` | Button, IconButton, Card, Dialog, BottomSheet, Tabs, ProgressBar, Badge, Chip, Toast, Skeleton, EmptyState, Field, TextInput, OTPInput, CreditChip, Avatar, Icon; ADR-023: `Mastery.tsx` (MasteryPip, MasteryBar, ProgressRing, DifficultyTag). **v3 (ADR-032):** `tints.ts` (Tint, subjectTint, STUDY_MODES), `ButtonLink`, `Page.tsx` (PageColumns, PageSection, SectionHeader, CardGrid), `Greeting.tsx` (GreetingHeader, DateChip, greetingFor), `Stat.tsx` (StatCard, StatGrid), `Goal.tsx` (GoalRing, WeekStrip, weekDays), `Tiles.tsx` (IconTile, SubjectCard, ModeTile, ContinueCard), `Rail.tsx` (RailCard, LeaderboardMini), `Lists.tsx` (List, ListRow, StatusPill, DataTable, Timeline); `SkeletonCard`, `Card tint`, `cardLinkClass`. Usage: [DESIGN-LANGUAGE.md](../../../docs/platform/design/redesign-v3/DESIGN-LANGUAGE.md). |
 | `render/` | **Reviewed renderers** (the only code allowed to inject HTML): `Markdown`, `MathBlock`/`MathInline`, `SvgDiagram`, plus `policy.ts`, `math.ts`, `sanitize-svg.ts`, `remark-soyl.ts`. |
 | `visual/` | `Visual` dispatcher and one renderer per kind in `platform/shared/content/visual.ts`; safe expression parser `expr.ts`; flow layout. |
 | `slides/` | `SlideFrame`, one component per layout, `renderSlide(slide, options)`, `ReadAlong`, narration `segment.ts`. |
@@ -126,7 +126,7 @@ All tokens are CSS custom properties on `.soyl-platform`; light by default, dark
 Since ADR-023 the student picks **Light / Dark / System** (top bar and /me → Appearance): the `soyl_theme` cookie, a
 hash-allowed inline boot script and `ThemeProvider` (`components/platform/shell/`) always put the resolved
 `data-theme` on the root before first paint; the media query only covers the moment before the script runs.
-Light is a cool neutral app background with white surfaces; dark is a neutral near-black (never pure black).
+Since ADR-032 (design language v3) light is a warm paper canvas (`#f6f4ef`) with white, softly elevated cards; dark is a neutral near-black (`#121316`, never pure black). v3 adds the tint family (`--p-tint-*` + `-ink`), `--p-paper`, `--p-card-border`, `--p-shadow-card`, `--p-decor-*`, `--p-radius-2xl`, display type tokens, shell layout tokens and the age-stage tokens `--p-stage-*` (retuned by `data-stage="junior|senior"` on the shell).
 Contrast is tested (`__tests__/kit.test.tsx`): text pairs ≥ 4.5:1, control boundaries and graphics ≥ 3:1, both themes.
 
 | Group | Tokens |

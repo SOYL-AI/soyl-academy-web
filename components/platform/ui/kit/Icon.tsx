@@ -55,6 +55,12 @@ const PATHS = {
   // Student dashboard (2026-10-28).
   home: 'M3 11l9-7 9 7M5.5 9.5V20H10v-6h4v6h4.5V9.5',
   pencil: 'M4 20h4L19 9l-4-4L4 16v4zM13.5 6.5l4 4',
+  // Design language v3 (ADR-032): shell and kit.
+  chart: 'M4 20h16M7 16v-5M12 16V7M17 16v-8',
+  calendar: 'M4 6h16v14H4V6zM4 10h16M8 3.5v4M16 3.5v4',
+  arrowRight: 'M5 12h14M13 6l6 6-6 6',
+  star: 'M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8L3.5 9.7l5.9-.9L12 3.5z',
+  sparkles: 'M10 4l1.6 4.4L16 10l-4.4 1.6L10 16l-1.6-4.4L4 10l4.4-1.6L10 4zM18 14l.8 2.2L21 17l-2.2.8L18 20l-.8-2.2L15 17l2.2-.8L18 14z',
 } as const;
 
 export type IconName = keyof typeof PATHS;
