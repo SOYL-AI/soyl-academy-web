@@ -23,6 +23,7 @@ import { AiServices, type AiDeps } from './ai/services';
 import { StaffService } from './domain/admin/staff';
 import { InterestCounters } from './domain/admin/counters';
 import { FutureBuildersService } from './future-builders/service';
+import { SignupNotifier } from './notifications/signup';
 
 export interface Providers {
   sms: SmsSender;
@@ -66,7 +67,18 @@ export function createServices(deps: AppDeps) {
   // D-045: staff capabilities (superadmin) and the aggregate interest counters.
   const staff = new StaffService(db);
   const counters = new InterestCounters(db, clock);
-  const identity = new IdentityService(db, adapter, limiter, clock, providers, { domains: config.google.adminDomains, signInMethods: config.staffAuth.signInMethods }, counters);
+  // Owner notice for each new student account (SIGNUP_NOTIFY_EMAIL; off when unset).
+  const signupNotifier = new SignupNotifier({ db, clock, email: providers.email, limiter, to: config.signupNotifyEmail, publicBaseUrl: config.publicBaseUrl });
+  const identity = new IdentityService(
+    db,
+    adapter,
+    limiter,
+    clock,
+    providers,
+    { domains: config.google.adminDomains, signInMethods: config.staffAuth.signInMethods },
+    counters,
+    signupNotifier,
+  );
   const mfa = new MfaService(db, clock, limiter, { encryptionKey: config.mfaEncryptionKey, pepper: config.otpPepper, issuer: MFA.totp.issuer });
   const razorpay = deps.billing && 'razorpay' in deps.billing ? (deps.billing.razorpay ?? null) : createRazorpayClient(config.billing, () => clock.now());
   // Invoices (ADR-024): PDFs go to the same Blob account as AI uploads (private `invoices` container), emails
@@ -91,7 +103,7 @@ export function createServices(deps: AppDeps) {
     : null;
   // ADR-027: Future Builders registrations and enquiries (emails through the sign-in email provider).
   const futureBuilders = new FutureBuildersService({ db, clock, email: providers.email, config: config.futureBuilders, publicBaseUrl: config.publicBaseUrl });
-  return { auth, adapter, limiter, sessions, otp, identity, google, consent, consentFlow, mfa, billing, ai, staff, counters, futureBuilders };
+  return { auth, adapter, limiter, sessions, otp, identity, google, consent, consentFlow, mfa, billing, ai, staff, counters, futureBuilders, signupNotifier };
 }
 
 export type Services = ReturnType<typeof createServices>;
