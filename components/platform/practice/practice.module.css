@@ -161,8 +161,8 @@
   .listPane {
     position: sticky;
     top: calc(var(--p-topbar-h) + var(--p-space-4));
-    max-height: calc(100vh - var(--p-topbar-h) - var(--p-space-8));
-    max-height: calc(100dvh - var(--p-topbar-h) - var(--p-space-8));
+    max-height: calc(100vh - 96px);
+    max-height: calc(100dvh - 96px);
     overflow-y: auto;
     overscroll-behavior: contain;
     padding: var(--p-space-3);

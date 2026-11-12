@@ -27,8 +27,9 @@
     position: sticky;
     top: calc(var(--p-topbar-h) + var(--p-space-4));
     display: block;
-    max-height: calc(100vh - var(--p-topbar-h) - var(--p-space-8));
-    max-height: calc(100dvh - var(--p-topbar-h) - var(--p-space-8));
+    /* The top bar, the page's top padding and a little air: the whole card fits the screen (review.spec). */
+    max-height: calc(100vh - 96px);
+    max-height: calc(100dvh - 96px);
     overflow-y: auto;
     overscroll-behavior: contain;
     padding: var(--p-space-3);
