@@ -5,6 +5,7 @@
  * places that print text.
  */
 import type { SubjectArtKind } from '@/components/platform/ui/art/subject-art';
+import { subjectTint, type Tint } from '@/components/platform/ui/kit/tints';
 
 export type SubjectHue = 'blue' | 'red' | 'yellow' | 'green' | 'violet' | 'teal';
 
@@ -36,4 +37,15 @@ export function subjectStyle(subjectId: string, name: string, language?: string 
   let h = 0;
   for (const ch of subjectId) h = (h * 31 + ch.charCodeAt(0)) >>> 0;
   return { glyph: glyph.charAt(0).toUpperCase() + glyph.slice(1).toLowerCase(), hue: hues[h % hues.length]!, art: 'generic' };
+}
+
+/**
+ * The v3 tint of a subject (ADR-032, DESIGN-LANGUAGE §2 "Subject tints"): from its drawing's kind, as in the kit
+ * gallery (Maths blue, Science/Biology green, Physics/Computer violet, Chemistry/Geography teal, History/Social
+ * orange, Civics/Economics/Sanskrit yellow, English pink, Hindi red); subjects without a drawing keep their stable
+ * hue, so a grid of electives is not all grey. One subject, one tint, on every page.
+ */
+export function subjectTintFor(subjectId: string, name: string, language?: string | null): Tint {
+  const st = subjectStyle(subjectId, name, language);
+  return st.art === 'generic' ? subjectTint(st.hue) : subjectTint(st.art);
 }

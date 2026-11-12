@@ -1,22 +1,37 @@
-/* Practice (ADR-023, LeetCode style): summary, problem list + filters, question workspace.
-   Mobile-first at 360 px (stacked); split view from 1024 px. camelCase class names (Tailwind leak rule). */
+/* Practice (ADR-023, LeetCode style; design language v3, ADR-032): a stat row (solved + Easy / Medium / Hard),
+   the problem list with chip filters, and the question workspace as a v3 card. Mobile-first at 360 px (stacked);
+   split view from 1024 px. Tokens only; camelCase class names (Tailwind leak rule). */
 .app {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
-  gap: var(--p-space-4);
-  margin-top: var(--p-space-4);
+  gap: var(--p-space-5);
+  margin-top: var(--p-space-5);
 }
 
-/* ── "Solved x/y" summary ───────────────────────────────────────────────── */
+/* ── Stat row: "Solved x of y" + one tile per difficulty ──────────────────── */
 .summary {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--p-stage-gap);
+}
+@media (min-width: 768px) {
+  .summary {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
+    align-items: stretch;
+  }
+}
+.solvedCard,
+.bandCounts li {
+  border: 1px solid var(--p-card-border);
+  border-radius: var(--p-stage-card-radius);
+  background: var(--p-surface);
+  box-shadow: var(--p-shadow-card);
+}
+.solvedCard {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   gap: var(--p-space-4);
-  padding: var(--p-space-4);
-  border: 1px solid var(--p-border);
-  border-radius: var(--p-radius-xl);
-  background: var(--p-surface);
+  padding: var(--p-stage-card-pad);
 }
 .ringText {
   display: grid;
@@ -33,16 +48,18 @@
 }
 .summaryBody {
   display: grid;
-  flex: 1 1 220px;
-  gap: var(--p-space-2);
+  flex: 1;
+  gap: var(--p-space-1);
   min-width: 0;
 }
 .summaryTitle {
   margin: 0;
+  font-size: var(--p-text-md);
   font-weight: 650;
 }
 .summaryTitle b {
-  font-size: var(--p-text-lg);
+  font-size: var(--p-text-xl);
+  font-weight: var(--p-weight-display);
   font-variant-numeric: tabular-nums;
 }
 .summaryMuted {
@@ -52,21 +69,34 @@
 .bandCounts {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: var(--p-space-2);
+  gap: var(--p-stage-gap);
   margin: 0;
   padding: 0;
   list-style: none;
 }
 .bandCounts li {
   display: grid;
-  gap: 2px;
-  padding: var(--p-space-2) var(--p-space-3);
-  border-radius: var(--p-radius-md);
-  background: var(--p-surface-2);
+  align-content: center;
+  gap: var(--p-space-1);
+  min-width: 0;
+  padding: var(--p-space-3) var(--p-space-4);
+  border-color: transparent;
+  box-shadow: none;
+}
+.bandCounts li[data-band='easy'] {
+  background: var(--p-easy-soft);
+}
+.bandCounts li[data-band='medium'] {
+  background: var(--p-medium-soft);
+}
+.bandCounts li[data-band='hard'] {
+  background: var(--p-hard-soft);
 }
 .bandName {
   font-size: var(--p-text-xs);
   font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 .bandCounts li[data-band='easy'] .bandName {
   color: var(--p-easy);
@@ -78,25 +108,28 @@
   color: var(--p-hard);
 }
 .bandNum {
-  font-weight: 750;
+  color: var(--p-ink);
+  font-size: var(--p-text-xl);
+  font-weight: var(--p-weight-display);
+  line-height: 1.1;
   font-variant-numeric: tabular-nums;
 }
 .bandNum span {
-  color: var(--p-ink-subtle);
+  color: var(--p-ink-muted);
   font-size: var(--p-text-sm);
   font-weight: 500;
 }
 .deviceNote {
   margin: 0;
-  color: var(--p-ink-subtle);
+  color: var(--p-ink-muted);
   font-size: var(--p-text-sm);
 }
 
-/* ── Split view ──────────────────────────────────────────────────────────── */
+/* ── Split view: list pane + workspace ───────────────────────────────────── */
 .split {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
-  gap: var(--p-space-4);
+  gap: var(--p-space-5);
   align-items: start;
 }
 .listPane {
@@ -113,20 +146,32 @@
 .workspace:focus {
   outline: none;
 }
+/* The question card is the workspace's v3 card: hairline, soft shadow, the stage radius and padding. */
+.workspace > article {
+  padding: var(--p-stage-card-pad);
+  border-color: var(--p-card-border);
+  border-radius: var(--p-stage-card-radius);
+  box-shadow: var(--p-shadow-card);
+}
 @media (min-width: 1024px) {
   .split {
-    grid-template-columns: minmax(300px, 380px) minmax(0, 1fr);
+    grid-template-columns: minmax(300px, 360px) minmax(0, 1fr);
+    gap: var(--p-space-6);
   }
   .listPane {
     position: sticky;
-    top: 76px;
-    max-height: calc(100vh - 92px);
+    top: calc(var(--p-topbar-h) + var(--p-space-4));
+    max-height: calc(100vh - var(--p-topbar-h) - var(--p-space-8));
+    max-height: calc(100dvh - var(--p-topbar-h) - var(--p-space-8));
     overflow-y: auto;
+    overscroll-behavior: contain;
     padding: var(--p-space-3);
-    border: 1px solid var(--p-border);
-    border-radius: var(--p-radius-xl);
+    border: 1px solid var(--p-card-border);
+    border-radius: var(--p-stage-card-radius);
     background: var(--p-surface);
+    box-shadow: var(--p-shadow-card);
     scrollbar-width: thin;
+    scrollbar-color: var(--p-border-strong) transparent;
   }
 }
 
@@ -142,16 +187,16 @@
   margin: 0;
   padding: 3px;
   border: 0;
-  border-radius: var(--p-radius-lg);
+  border-radius: var(--p-radius-pill);
   background: var(--p-surface-3);
 }
 .segment {
   position: relative;
   display: grid;
   place-items: center;
-  min-height: 36px;
+  min-height: 38px;
   padding: 0 var(--p-space-1);
-  border-radius: var(--p-radius-md);
+  border-radius: var(--p-radius-pill);
   color: var(--p-ink-muted);
   font-size: var(--p-text-sm);
   font-weight: 650;
@@ -188,11 +233,12 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  min-height: 36px;
+  min-height: 40px;
   padding: 0 var(--p-space-3);
   border: 1px solid var(--p-border-strong);
   border-radius: var(--p-radius-pill);
   background: var(--p-surface);
+  box-shadow: var(--p-shadow-1);
   font-size: var(--p-text-sm);
   font-weight: 650;
   cursor: pointer;
@@ -225,7 +271,7 @@
 .filters {
   border: 1px solid var(--p-border);
   border-radius: var(--p-radius-lg);
-  background: var(--p-surface);
+  background: var(--p-surface-2);
   padding: 0 var(--p-space-3);
 }
 .filters[open] {
@@ -267,7 +313,9 @@
   padding: 0 var(--p-space-3);
   border: 1px solid var(--p-border-strong);
   border-radius: var(--p-radius-pill);
+  background: var(--p-surface);
   font-size: var(--p-text-sm);
+  font-weight: 600;
   cursor: pointer;
 }
 .chip input {
@@ -282,6 +330,7 @@
 .chipOn {
   border-color: var(--p-accent);
   background: var(--p-accent-soft);
+  color: var(--p-info);
 }
 .status {
   display: flex;
@@ -298,9 +347,10 @@
   gap: var(--p-space-2);
   min-height: var(--p-touch);
   padding: 0 var(--p-space-3);
-  border: 1px solid var(--p-border);
-  border-radius: var(--p-radius-lg);
+  border: 1px solid var(--p-card-border);
+  border-radius: var(--p-radius-pill);
   background: var(--p-surface);
+  box-shadow: var(--p-shadow-card);
   color: var(--p-ink);
   font: inherit;
   font-weight: 650;
@@ -343,22 +393,19 @@
   min-height: 52px;
   padding: var(--p-space-2);
   border: 1px solid transparent;
-  border-radius: var(--p-radius-md);
+  border-radius: var(--p-radius-lg);
   background: transparent;
   color: var(--p-ink);
   font: inherit;
   text-align: left;
   cursor: pointer;
 }
-.problemList > li:nth-child(odd) .problem {
-  background: var(--p-surface-2);
-}
 .problem:hover {
-  border-color: var(--p-border-strong);
+  background: var(--p-surface-2);
 }
 .problemList > li .problemOn,
 .problemList > li .problemOn:hover {
-  border-color: var(--p-accent);
+  border-color: transparent;
   background: var(--p-accent-soft);
 }
 .problem:focus-visible {
@@ -411,8 +458,8 @@
   flex-wrap: wrap;
   align-items: center;
   gap: var(--p-space-2);
-  padding: var(--p-space-3);
-  border-radius: var(--p-radius-md);
+  padding: var(--p-space-3) var(--p-space-4);
+  border-radius: var(--p-stage-card-radius);
   background: var(--p-danger-soft);
   color: var(--p-ink);
 }

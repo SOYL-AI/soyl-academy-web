@@ -7,11 +7,12 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
 import { Button } from '@/components/platform/ui/kit/Button';
+import { ButtonLink } from '@/components/platform/ui/kit/ButtonLink';
 
 import { useSession } from '../auth/SessionProvider';
 import { chapterSummary, readGuestProgress, rememberGuestBoardClass, type ChapterGuestSummary } from '../lib/guest-storage';
 import type { BoardSlug } from '../lib/catalog';
-import s from './learn.module.css';
+import v from './v3.module.css';
 
 /** Remembers the class a guest opens, so the profile can be filled after sign-up (merge-guest). */
 export function RememberClass({ board, classLevel }: { board: BoardSlug; classLevel: number }) {
@@ -38,7 +39,7 @@ export function ChapterProgressNote({ chapterId }: { chapterId: string }) {
   else if (summary.lessonSlide !== null) parts.push(`Lesson: slide ${summary.lessonSlide + 1}`);
   if (summary.practiceAnswered > 0) parts.push(`${summary.practiceCorrect}/${summary.practiceAnswered} practice correct`);
   if (parts.length === 0) return null;
-  return <span className={s.progressNote}>{parts.join(' · ')}</span>;
+  return <span className={v.progressNote}>{parts.join(' · ')}</span>;
 }
 
 export interface ChapterTestItem {
@@ -54,30 +55,34 @@ export interface ChapterTestItem {
  */
 export function ChapterTestsCard({ tests = [], seriesHref }: { tests?: ChapterTestItem[]; seriesHref?: string }) {
   const { state, openLogin } = useSession();
+  const short = (title: string) => title.replace(/\s+—.*$/, '');
   return (
-    <div className={s.testsBody} data-testid="chapter-tests">
-      {tests.length > 0 && (
-        <ul className={s.testList}>
+    <div className={v.tests} data-testid="chapter-tests">
+      {tests.length > 0 ? (
+        <ul className={v.testList}>
           {tests.map((t) => (
-            <li key={t.id}>
-              {seriesHref ? <Link href={`${seriesHref}#test-${t.id}`}>{t.title.replace(/s+—.*$/, '')}</Link> : t.title.replace(/s+—.*$/, '')} · {t.totalMarks} marks · {t.durationMin} min
+            <li key={t.id} className={v.testItem}>
+              {seriesHref ? <Link href={`${seriesHref}#test-${t.id}`}>{short(t.title)}</Link> : <b>{short(t.title)}</b>}
+              <span className={v.testMeta}>
+                {t.totalMarks} marks · {t.durationMin} min
+              </span>
             </li>
           ))}
         </ul>
+      ) : (
+        <p className={v.railText}>Short and long chapter tests in the board pattern, with results and analysis.</p>
       )}
       {state.status === 'member' ? (
         seriesHref ? (
-          <p className={s.viewBlurb}>
-            <Link href={seriesHref} data-testid="chapter-tests-link">
-              All tests for this subject
-            </Link>
-          </p>
+          <ButtonLink href={seriesHref} variant="soft" size="sm" iconEnd="chevronRight" data-testid="chapter-tests-link">
+            All tests for this subject
+          </ButtonLink>
         ) : null
       ) : (
         <div>
           <Button
             size="sm"
-            variant="secondary"
+            variant="soft"
             disabled={state.status === 'loading'}
             onClick={() => openLogin({ reason: 'Log in to take chapter tests. They are free, and your results are saved.' })}
           >

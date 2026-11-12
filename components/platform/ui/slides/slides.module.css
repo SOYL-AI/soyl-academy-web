@@ -91,7 +91,11 @@
 }
 .split {
   display: grid;
+  /* minmax(0, 1fr), not an auto track: a wide display equation scrolls in its own box instead of widening the
+     slide (design-system v3 handoff, rough edge 8). */
+  grid-template-columns: minmax(0, 1fr);
   gap: var(--p-space-4);
+  min-width: 0;
 }
 @container (min-width: 640px) {
   .split {
@@ -188,6 +192,7 @@ ol.bullets:not(.bullets-steps) {
 }
 
 .problem {
+  min-width: 0; /* a grid item of the slide body: never widen its auto track */
   padding: var(--p-space-3) var(--p-space-4);
   border-left: 3px solid var(--p-highlight);
   background: var(--p-surface-2);

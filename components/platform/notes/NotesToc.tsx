@@ -2,7 +2,7 @@
 
 /**
  * Notes navigation (client islands; the notes themselves stay server-rendered):
- * - `NotesToc`: the contents list. Inline above the notes on phones and tablets; a sticky sidebar from 1024 px
+ * - `NotesToc`: the contents list. A card above the notes below 1280 px; a sticky right rail from 1280 px
  *   with the section being read marked and "38% read".
  * - `NotesReaderBar`: phones and tablets only, sticky under the app top bar: the section being read, a reading
  *   progress bar and a "Sections" button that opens the contents as a bottom sheet.
@@ -17,9 +17,9 @@ import s from './notes.module.css';
 
 export const NOTES_ARTICLE_ID = 'notes-article';
 
-/** Where a section counts as "being read": below the top bar (60 px) and, under 1024 px, the reader bar. */
+/** Where a section counts as "being read": below the top bar (60 px) and, under 1280 px, the reader bar. */
 function readingLine(): number {
-  return window.innerWidth >= 1024 ? 96 : 136;
+  return window.innerWidth >= 1280 ? 96 : 136;
 }
 
 function useReading(items: TocItem[]): { active: number; progress: number } {

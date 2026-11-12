@@ -206,30 +206,32 @@ export function PracticeApp({ chapterId, lang, total, byType, byDifficulty }: Pr
   return (
     <div className={s.app} data-testid="practice">
       <section className={s.summary} aria-label="Your progress in this chapter" data-testid="practice-summary">
-        <ProgressRing value={solvedPct} size={76} stroke={7} label={`Solved ${counts.solved} of ${counts.total} questions`} level={solvedPct >= 100 ? 'mastered' : undefined}>
-          <span className={s.ringText}>
-            <b>{counts.solved}</b>
-            <span>/{counts.total}</span>
-          </span>
-        </ProgressRing>
-        <div className={s.summaryBody}>
-          <p className={s.summaryTitle} data-testid="solved-count" data-solved={counts.solved}>
-            Solved <b>{counts.solved}</b> of {counts.total}
-            {counts.attempted > 0 && <span className={s.summaryMuted}> · {counts.attempted} attempted</span>}
-          </p>
-          <ul className={s.bandCounts}>
-            {BANDS.map((b) => (
-              <li key={b} data-band={b}>
-                <span className={s.bandName}>{BAND_LABELS[b]}</span>
-                <span className={s.bandNum}>
-                  {counts.byBand[b].solved}
-                  <span>/{counts.byBand[b].total || bandTotals[b]}</span>
-                </span>
-              </li>
-            ))}
-          </ul>
-          {session.status === 'guest' && <p className={s.deviceNote}>Progress is saved on this device. Log in to keep it.</p>}
+        <div className={s.solvedCard}>
+          <ProgressRing value={solvedPct} size={72} stroke={7} label={`Solved ${counts.solved} of ${counts.total} questions`} level={solvedPct >= 100 ? 'mastered' : undefined}>
+            <span className={s.ringText}>
+              <b>{counts.solved}</b>
+              <span>/{counts.total}</span>
+            </span>
+          </ProgressRing>
+          <div className={s.summaryBody}>
+            <p className={s.summaryTitle} data-testid="solved-count" data-solved={counts.solved}>
+              Solved <b>{counts.solved}</b> of {counts.total}
+              {counts.attempted > 0 && <span className={s.summaryMuted}> · {counts.attempted} attempted</span>}
+            </p>
+            {session.status === 'guest' && <p className={s.deviceNote}>Saved on this device. Log in to keep it.</p>}
+          </div>
         </div>
+        <ul className={s.bandCounts} aria-label="Solved by difficulty">
+          {BANDS.map((b) => (
+            <li key={b} data-band={b}>
+              <span className={s.bandName}>{BAND_LABELS[b]}</span>
+              <span className={s.bandNum}>
+                {counts.byBand[b].solved}
+                <span>/{counts.byBand[b].total || bandTotals[b]}</span>
+              </span>
+            </li>
+          ))}
+        </ul>
       </section>
 
       <div className={s.split}>
@@ -385,7 +387,7 @@ export function PracticeApp({ chapterId, lang, total, byType, byDifficulty }: Pr
               <Button variant="secondary" icon="chevronLeft" onClick={() => goTo(pos - 1)} disabled={pos === 0}>
                 Previous
               </Button>
-              <Button onClick={() => goTo(pos + 1)} disabled={pos >= visible.length - 1} loading={loading && pos >= visible.length - 1} data-testid="next-question">
+              <Button variant="soft" onClick={() => goTo(pos + 1)} disabled={pos >= visible.length - 1} loading={loading && pos >= visible.length - 1} data-testid="next-question">
                 Next question <Icon name="chevronRight" size={18} />
               </Button>
             </nav>
