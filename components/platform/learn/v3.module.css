@@ -36,6 +36,17 @@
   grid-template-columns: minmax(0, 1fr);
 }
 
+/* Two subject tiles to a row on phones: a little less padding and a smaller title, so "Mathematics" fits. */
+@media (max-width: 479px) {
+  .tiles > li > a {
+    padding: var(--p-space-4);
+  }
+  .tiles > li > a > :nth-child(2) {
+    font-size: var(--p-text-md);
+    hyphens: auto;
+  }
+}
+
 /* Long tiers (more than 8 subjects): plain SubjectCards laid out as compact rows (glyph left, name and meta
    right), so 40 electives read as a calm list instead of a wall of tall tiles. */
 .dense > li > a {

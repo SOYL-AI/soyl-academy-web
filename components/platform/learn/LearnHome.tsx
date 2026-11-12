@@ -33,6 +33,7 @@ import { MASTERY_LABELS } from '../lib/mastery';
 import { DASHBOARD_PATH } from '../lib/return-to';
 import { useStage } from '../shell/StageProvider';
 import { continuePill, learnSubtitle, noClassText, stageGreeting } from './copy';
+import { TILE_MIN } from './class-hub';
 import { LiveSubjectCard } from './CourseIslands';
 import { fetchContentSubjects, type ContentSubject } from './content-subjects';
 import { chapterHref } from './links';
@@ -112,7 +113,7 @@ function SubjectGrid({ pick, subjects, label }: { pick: Pick; subjects: ContentS
       </CardGrid>
     );
   return (
-    <CardGrid label={label}>
+    <CardGrid label={label} min={TILE_MIN} className={v.tiles}>
       {subjects.map((sub) => {
         const st = subjectStyle(sub.subjectId, sub.name);
         return (

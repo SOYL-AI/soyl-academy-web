@@ -17,7 +17,7 @@ import { stageForClass } from '@/components/platform/shell/stage';
 import { RememberClass } from '@/components/platform/learn/LearnClient';
 import { MasteryProvider } from '@/components/platform/learn/MasteryProvider';
 import { LiveSubjectCard } from '@/components/platform/learn/CourseIslands';
-import { PLAIN_OVER, readyFirst, subjectMeta } from '@/components/platform/learn/class-hub';
+import { PLAIN_OVER, readyFirst, subjectMeta, TILE_MIN } from '@/components/platform/learn/class-hub';
 import { classLead } from '@/components/platform/learn/copy';
 import { subjectStyle, subjectTintFor } from '@/components/platform/learn/subject-style';
 import { SubjectGlyph } from '@/components/platform/ui/art/SubjectGlyph';
@@ -110,7 +110,7 @@ export default async function ClassPage({ params }: { params: Promise<Params> })
               const plain = g.subjects.length > PLAIN_OVER;
               return (
                 <PageSection key={g.tier} id={`tier-${g.tier}`} title={TIER_HEADINGS[g.tier]} count={g.subjects.length} data-testid={`tier-${g.tier}`}>
-                  <CardGrid label={TIER_HEADINGS[g.tier]} className={plain ? v.dense : undefined} min={plain ? 240 : undefined}>
+                  <CardGrid label={TIER_HEADINGS[g.tier]} className={plain ? v.dense : v.tiles} min={plain ? 240 : TILE_MIN}>
                     {g.subjects.map((subject) => (
                       <SubjectTile
                         key={subject.id}

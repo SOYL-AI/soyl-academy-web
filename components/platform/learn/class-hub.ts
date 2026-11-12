@@ -6,6 +6,9 @@
 /** More subjects than this in a tier: plain cards (a calmer, denser grid; DESIGN-LANGUAGE §10 "Class hub"). */
 export const PLAIN_OVER = 8;
 
+/** Subject tiles: two to a row on a 360 px phone at every stage (the junior stage's 168 px default gives one). */
+export const TILE_MIN = 148;
+
 /** Subjects with lessons first, keeping the catalog order otherwise; unknown (`null`): the catalog order. */
 export function readyFirst<T extends { id: string }>(subjects: readonly T[], ready: ReadonlySet<string> | null): T[] {
   if (!ready) return [...subjects];
