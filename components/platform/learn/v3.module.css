@@ -47,6 +47,15 @@
   }
 }
 
+/* From 480 px the tiles get wider: at 148 px a desktop row packs five tiles too narrow for a title like
+   "Mathematics (Standard 041 / Basic 241)", which then broke mid-word. CardGrid sets --grid-min inline, so the
+   override needs !important (phones keep 148 px for two tiles to a row). */
+@media (min-width: 480px) {
+  .tiles {
+    --grid-min: 184px !important;
+  }
+}
+
 /* Long tiers (more than 8 subjects): plain SubjectCards laid out as compact rows (glyph left, name and meta
    right), so 40 electives read as a calm list instead of a wall of tall tiles. */
 .dense > li > a {

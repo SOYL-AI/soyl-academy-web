@@ -18,6 +18,7 @@ const ROUTES = [
   '/me',
   // Student dashboard (D-043) and its short link
   '/me/dashboard',
+  '/me/progress',
   '/dashboard',
   '/api/platform/v1/me/dashboard',
   '/api/platform/v1/schools?q=st',

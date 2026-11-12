@@ -100,10 +100,10 @@ describe('next step and continue', () => {
   });
 
   it('continue meta and progress use the hub’s real part count', () => {
-    expect(continueMeta(snap({ answered: 4 }), hub(), 'Science')).toBe('Science · Chapter 3 · Part 2 of 3 · 4 answered');
+    expect(continueMeta(snap({ answered: 4 }), hub(), 'Science')).toBe('Science · Chapter 3 · On part 2 of 3 · 4 answered');
     expect(continueMeta(snap({ lessonPartsCompleted: 3 }), hub(), 'Science')).toBe('Science · Chapter 3 · Lesson done');
     expect(continueMeta(snap(), null, null)).toBe('Chapter 3');
-    expect(continueProgress(snap(), hub())).toEqual({ value: (1 / 3) * 100, label: '1 of 3 parts' });
+    expect(continueProgress(snap(), hub())).toEqual({ value: (1 / 3) * 100, label: '1 of 3 parts done' });
     expect(continueProgress(snap({ lessonPartsCompleted: 0 }), hub({ parts: [0] }))).toEqual({ value: 0, label: 'Lesson started' });
     expect(continueProgress(snap(), hub({ parts: [] }))).toBeNull();
   });

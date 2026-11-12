@@ -9,10 +9,10 @@ import type { ChapterSnapshot } from '../lib/learner';
 import { learnPath, type BoardSlug } from '../lib/catalog';
 import { lessonHref } from '../lib/lesson-links';
 import { chapterHref } from '../learn/links';
-import { subjectStyle } from '../learn/subject-style';
+import { subjectStyle, subjectTintFor } from '../learn/subject-style';
 import type { SubjectArtKind } from '@/components/platform/ui/art/subject-art';
 import type { LeaderboardRow } from '@/components/platform/ui/kit/Rail';
-import { subjectTint, type Tint } from '@/components/platform/ui/kit/tints';
+import type { Tint } from '@/components/platform/ui/kit/tints';
 import type { StatusTone } from '@/components/platform/ui/kit/Lists';
 import type { Stage } from '../shell/stage';
 
@@ -140,7 +140,7 @@ export function continueMeta(chapter: ChapterSnapshot, hub: ChapterHub | null, s
   if (parts > 0 && chapter.lessonPartsCompleted >= parts) bits.push('Lesson done');
   else if (parts > 1 && chapter.lastPart !== null) {
     const idx = hub!.assets.lesson.parts.findIndex((p) => p.part === chapter.lastPart);
-    if (idx >= 0) bits.push(`Part ${idx + 1} of ${parts}`);
+    if (idx >= 0) bits.push(`On part ${idx + 1} of ${parts}`);
   }
   if (chapter.answered > 0) bits.push(`${n(chapter.answered)} answered`);
   return bits.join(' · ');
@@ -151,7 +151,7 @@ export function continueProgress(chapter: ChapterSnapshot, hub: ChapterHub | nul
   const parts = lessonParts(hub);
   if (parts === 0) return null;
   const done = Math.min(parts, chapter.lessonPartsCompleted);
-  return { value: (done / parts) * 100, label: parts === 1 ? (done ? 'Lesson done' : 'Lesson started') : `${done} of ${parts} parts` };
+  return { value: (done / parts) * 100, label: parts === 1 ? (done ? 'Lesson done' : 'Lesson started') : `${done} of ${parts} parts done` };
 }
 
 /* ── Subjects ────────────────────────────────────────────────────────────── */
@@ -171,7 +171,7 @@ const DEVANAGARI = /[ऀ-ॿ]/;
  */
 export function subjectLook(subjectId: string, name: string, language?: string | null): SubjectLook {
   const st = subjectStyle(subjectId, name, language);
-  return { tint: st.art === 'generic' ? subjectTint(st.hue) : subjectTint(st.art), art: st.art, ...(DEVANAGARI.test(name) || language === 'hi' ? { lang: 'hi' } : {}) };
+  return { tint: subjectTintFor(subjectId, name, language), art: st.art, ...(DEVANAGARI.test(name) || language === 'hi' ? { lang: 'hi' } : {}) };
 }
 
 /** Mastery under this many percent is not named on a subject card (it reads as failure, not progress). */

@@ -429,8 +429,8 @@ describe('HomeView', () => {
     expect(screen.getByRole('heading', { level: 1 }).nextElementSibling!.textContent).toBe('Good work: 3 days in a row.');
     const cont = screen.getByTestId('continue-card');
     expect(cont.getAttribute('href')).toBe('/learn/cbse/10/science/ch01');
-    expect(cont.textContent).toContain('Science · Chapter 1 · Part 2 of 3 · 4 answered');
-    expect(cont.textContent).toContain('1 of 3 parts');
+    expect(cont.textContent).toContain('Science · Chapter 1 · On part 2 of 3 · 4 answered');
+    expect(cont.textContent).toContain('1 of 3 parts done');
     // Goal ring + week strip (IST days from the activity API).
     const goal = screen.getByTestId('today-goal');
     await waitFor(() => expect(within(goal).getByRole('list', { name: 'Study days this week' })).toBeTruthy());

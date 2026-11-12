@@ -4,8 +4,8 @@
  */
 import type { LiveEvent } from '@/platform/shared/api-client';
 import { StatusPill, type StatusTone, type TimelineItem } from '@/components/platform/ui/kit/Lists';
-import { subjectTint, type Tint } from '@/components/platform/ui/kit/tints';
-import { subjectStyle } from '../learn/subject-style';
+import { type Tint } from '@/components/platform/ui/kit/tints';
+import { subjectTintFor } from '../learn/subject-style';
 import { LIVE_PHASE_LABELS } from './player-model';
 import { durationText } from './timer';
 
@@ -15,10 +15,8 @@ const IST = 'Asia/Kolkata';
  * A subject's tint, one rule on every page (DESIGN-LANGUAGE §2: History/Social orange, English pink…): the subject-art
  * kind first, the course hue only for generic subjects.
  */
-// TODO(lead): use subjectTintFor (components/platform/learn/subject-style.ts, B2) at integration.
 export function subjectTintOf(id: string, name: string, language?: string | null): Tint {
-  const st = subjectStyle(id, name, language);
-  return st.art === 'generic' ? subjectTint(st.hue) : subjectTint(st.art);
+  return subjectTintFor(id, name, language);
 }
 
 export const PHASE_TONES: Partial<Record<LiveEvent['phase'], StatusTone>> = { live: 'live', writing: 'info', registration_open: 'info', results_published: 'success', cancelled: 'neutral' };
