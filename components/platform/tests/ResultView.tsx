@@ -11,7 +11,6 @@
  *   percentiles or ranks (F-028).
  */
 import dynamic from 'next/dynamic';
-import Link from 'next/link';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import {
   isApiError,
@@ -23,13 +22,19 @@ import {
 } from '@/platform/shared/api-client';
 import { cx } from '@/components/platform/ui/cx';
 import { Button } from '@/components/platform/ui/kit/Button';
-import { Badge, Card, CardTitle, EmptyState, ProgressBar, Skeleton } from '@/components/platform/ui/kit/Display';
+import { ButtonLink } from '@/components/platform/ui/kit/ButtonLink';
+import { Card, CardTitle, Chip, EmptyState, ProgressBar, Skeleton, SkeletonCard } from '@/components/platform/ui/kit/Display';
 import { Icon } from '@/components/platform/ui/kit/Icon';
+import { DataTable, dataTableNum, StatusPill, type StatusTone } from '@/components/platform/ui/kit/Lists';
+import { ProgressRing } from '@/components/platform/ui/kit/Mastery';
+import { PageSection } from '@/components/platform/ui/kit/Page';
+import { StatCard, StatGrid } from '@/components/platform/ui/kit/Stat';
 import { useToast } from '@/components/platform/ui/kit/Toast';
 import { fromResponse, isWritten, selfMarkSteps } from '@/components/platform/ui/question/model';
 import { QuestionCard } from '@/components/platform/ui/question/QuestionCard';
 import type { QuestionSlots } from '@/components/platform/ui/question/slots';
 import { useSession } from '../auth/SessionProvider';
+import { useStage } from '../shell/StageProvider';
 import { AiNotice } from '../ai/AiNotice';
 import { useCredits } from '../ai/CreditsProvider';
 import { aiBlockFrom, newIdempotencyKey, type AiBlock } from '../ai/problems';
@@ -45,13 +50,30 @@ const PaywallDialog = dynamic(() => import('../ai/AiDialogs').then((m) => m.Payw
 type SlotsModule = typeof import('@/components/platform/ui/question/slots');
 type Filter = 'all' | 'wrong' | 'unanswered' | 'written';
 
-const STATUS_TEXT: Record<AttemptResultItem['status'], { label: string; tone: 'success' | 'warning' | 'danger' | 'neutral' | 'accent' }> = {
+const STATUS_TEXT: Record<AttemptResultItem['status'], { label: string; tone: StatusTone }> = {
   correct: { label: 'Correct', tone: 'success' },
   partial: { label: 'Partly correct', tone: 'warning' },
   wrong: { label: 'Wrong', tone: 'danger' },
   unanswered: { label: 'Not answered', tone: 'neutral' },
-  pending_self: { label: 'Mark it yourself', tone: 'accent' },
-  evaluated: { label: 'Self-marked', tone: 'accent' },
+  pending_self: { label: 'Mark it yourself', tone: 'info' },
+  evaluated: { label: 'Self-marked', tone: 'info' },
+};
+
+export type ScoreBand = 'strong' | 'steady' | 'start';
+
+/** How the score reads (pure; tested): at least 75% strong, at least 40% steady, else a start. Null while unmarked. */
+export function scoreBand(percentage: number | null): ScoreBand | null {
+  if (percentage === null) return null;
+  if (percentage >= 75) return 'strong';
+  if (percentage >= 40) return 'steady';
+  return 'start';
+}
+
+/** The encouraging line under the score, by band and age stage (DESIGN-LANGUAGE §6 copy tone). */
+export const SCORE_LINES: Record<ScoreBand, { junior: string; middle: string; senior: string }> = {
+  strong: { junior: 'Nice one. That is a great score.', middle: 'Good work: a strong score.', senior: 'Strong score.' },
+  steady: { junior: 'Good effort. Look at the questions below to do even better.', middle: 'Good effort. Review the wrong answers below.', senior: 'Review the wrong answers below.' },
+  start: { junior: 'Every test helps you learn. The solutions below show each step.', middle: 'Review the solutions below, then try again.', senior: 'Review the solutions, then retake.' },
 };
 
 function langFor(subjectId: string): string | undefined {
@@ -119,7 +141,7 @@ export function ResultView({ attemptId }: { attemptId: string }) {
 
   if (state.status === 'guest') {
     return (
-      <EmptyState title="Log in to see your result" headingLevel="h1" icon="lock" action={<Button onClick={() => openLogin()}>Log in</Button>}>
+      <EmptyState title="Log in to see your result" headingLevel="h1" icon="user" tint="pink" action={<Button onClick={() => openLogin()}>Log in</Button>}>
         Your results are saved to your account.
       </EmptyState>
     );
@@ -130,9 +152,12 @@ export function ResultView({ attemptId }: { attemptId: string }) {
         title={error.notSubmitted ? 'This test is not submitted yet' : 'We could not load this result'}
         headingLevel="h1"
         icon="alert"
+        tint={error.notSubmitted ? 'pink' : 'red'}
         action={
           error.notSubmitted ? (
-            <Link href={attemptPath(attemptId)}>Continue the test</Link>
+            <ButtonLink href={attemptPath(attemptId)} icon="play">
+              Continue the test
+            </ButtonLink>
           ) : (
             <Button variant="secondary" onClick={() => void load()}>
               Try again
@@ -147,8 +172,8 @@ export function ResultView({ attemptId }: { attemptId: string }) {
   if (!result) {
     return (
       <div aria-busy="true" aria-label="Loading your result" className={s.loading}>
-        <Skeleton lines={2} />
-        <Skeleton variant="block" height={180} />
+        <SkeletonCard thumb lines={3} />
+        <SkeletonCard lines={2} />
       </div>
     );
   }
@@ -161,25 +186,41 @@ function Result({ result, onChange, late }: { result: AttemptResult; onChange: (
   const written = result.items.filter(hasWrittenPart);
   const lang = langFor(result.test.subject.id);
 
+  const { pick } = useStage();
+  const band = scoreBand(score.percentage);
+  const pct = score.percentage === null ? null : Math.round(score.percentage);
+
   return (
     <div className={s.stack} data-testid="result">
-      <header className={s.scoreHero}>
-        <h1 className={s.startTitle}>{result.test.title}</h1>
-        <p className={s.scoreBig} data-testid="score">
-          {scoreText(score.total)} <span className={s.muted}>/ {scoreText(score.max)}</span>
-        </p>
-        <div className={s.scoreParts}>
-          <Badge tone="success">Auto-graded: {scoreText(score.auto)}</Badge>
-          {score.self > 0 && <Badge tone="accent">Self-marked: {scoreText(score.self)}</Badge>}
-          {score.percentage !== null && <Badge>{Math.round(score.percentage)}%</Badge>}
-          {result.attempt.status === 'auto_submitted' && <Badge tone="warning">Submitted when time ran out</Badge>}
-        </div>
-        {score.pendingSelfEvaluation.items > 0 && result.review?.status !== 'after_event' && (
-          <p className={s.muted} data-testid="pending-self">
-            {score.pendingSelfEvaluation.items} written answer{score.pendingSelfEvaluation.items === 1 ? '' : 's'} ({marksText(score.pendingSelfEvaluation.marks)}) to mark yourself below.
+      <Card className={s.scoreHero} data-band={band ?? undefined}>
+        <div className={s.scoreText}>
+          <p className={s.eyebrow}>
+            <span lang={lang}>{result.test.subject.name}</span> · Result
           </p>
+          <h1 className={s.resultTitle} lang={lang}>
+            {result.test.title}
+          </h1>
+          <p className={s.scoreBig} data-testid="score">
+            {scoreText(score.total)} <span className={s.scoreMax}>/ {scoreText(score.max)}</span>
+          </p>
+          {band && <p className={s.scoreLine}>{pick(SCORE_LINES[band])}</p>}
+          <div className={s.scoreParts}>
+            <StatusPill tone="success">Auto-graded: {scoreText(score.auto)}</StatusPill>
+            {score.self > 0 && <StatusPill tone="info">Self-marked: {scoreText(score.self)}</StatusPill>}
+            {result.attempt.status === 'auto_submitted' && <StatusPill tone="warning">Submitted when time ran out</StatusPill>}
+          </div>
+          {score.pendingSelfEvaluation.items > 0 && result.review?.status !== 'after_event' && (
+            <p className={s.muted} data-testid="pending-self">
+              {score.pendingSelfEvaluation.items} written answer{score.pendingSelfEvaluation.items === 1 ? '' : 's'} ({marksText(score.pendingSelfEvaluation.marks)}) to mark yourself below.
+            </p>
+          )}
+        </div>
+        {pct !== null && (
+          <ProgressRing value={pct} size={120} stroke={10} label={`Score: ${pct}%`} className={s.scoreRing}>
+            <span className={s.ringValue}>{pct}%</span>
+          </ProgressRing>
         )}
-      </header>
+      </Card>
 
       {late > 0 && (
         <div className={s.warn} role="alert">
@@ -190,41 +231,35 @@ function Result({ result, onChange, late }: { result: AttemptResult; onChange: (
         </div>
       )}
 
-      <dl className={s.statGrid}>
-        <div>
-          <dt>Answered</dt>
-          <dd>
-            {score.answered} / {score.questions}
-          </dd>
-        </div>
-        <div>
-          <dt>Time taken</dt>
-          <dd>{formatClock(result.time.totalSec * 1000)}</dd>
-        </div>
-        <div>
-          <dt>Per question</dt>
-          <dd>{Math.round(result.time.averagePerQuestionSec)} s</dd>
-        </div>
-        <div data-testid="percentile">
-          <dt>Percentile</dt>
-          <dd>{percentile.value !== null ? Math.round(percentile.value) : '–'}</dd>
-        </div>
-      </dl>
+      <StatGrid label="This attempt">
+        <StatCard label="Answered" value={`${score.answered}/${score.questions}`} icon="checkCircle" tint="green" />
+        <StatCard label="Time taken" value={formatClock(result.time.totalSec * 1000)} icon="clock" tint="blue" />
+        <StatCard label="Per question" value={Math.round(result.time.averagePerQuestionSec)} unit="s" icon="target" tint="yellow" />
+        <StatCard
+          label="Percentile"
+          value={percentile.value !== null ? Math.round(percentile.value) : '–'}
+          icon="chart"
+          tint="violet"
+          data-testid="percentile"
+        />
+      </StatGrid>
       {percentile.value === null && (
         <p className={s.muted}>
           Your percentile appears once {percentile.minAttempts} students have taken this test ({percentile.attempts} so far).
         </p>
       )}
       {live && (
-        <Card as="section" aria-labelledby="live-rank">
+        <Card as="section" aria-labelledby="live-rank" tint="yellow" className={s.liveRank}>
           <CardTitle as="h2" id="live-rank">
-            All-India rank <Badge tone="warning">Beta</Badge> {live.status === 'provisional' && <Badge>Provisional</Badge>}
+            All-India rank <StatusPill tone="warning">Beta</StatusPill> {live.status === 'provisional' && <StatusPill>Provisional</StatusPill>}
           </CardTitle>
           <p className={s.muted}>
             {live.rank !== null ? `Rank ${live.rank} of ${live.total}` : 'Your rank appears soon.'}
             {live.percentile !== null ? ` · percentile ${Math.round(live.percentile)}` : ''}. Ranks use auto-graded marks only.
           </p>
-          <Link href={`/tests/live/${encodeURIComponent(live.eventId)}`}>See the leaderboard</Link>
+          <ButtonLink href={`/tests/live/${encodeURIComponent(live.eventId)}`} variant="soft" size="sm" icon="trophy">
+            See the leaderboard
+          </ButtonLink>
         </Card>
       )}
 
@@ -248,8 +283,10 @@ function Result({ result, onChange, late }: { result: AttemptResult; onChange: (
         </>
       )}
 
-      <p>
-        <Link href="/tests">Back to tests</Link>
+      <p className={s.backRow}>
+        <ButtonLink href="/tests" variant="soft" icon="chevronLeft">
+          Back to tests
+        </ButtonLink>
       </p>
     </div>
   );
@@ -259,92 +296,93 @@ function Analysis({ result }: { result: AttemptResult }) {
   return (
     <>
       {result.sections.length > 1 && (
-        <section aria-labelledby="sections-title">
-          <h2 id="sections-title" className={s.sectionHeading}>
-            Sections
-          </h2>
-          <div className={s.tableWrap}>
-            <table className={s.table}>
-              <thead>
-                <tr>
-                  <th scope="col">Section</th>
-                  <th scope="col" className={s.num}>
-                    Score
-                  </th>
-                  <th scope="col" className={s.num}>
-                    Out of
-                  </th>
+        <PageSection id="sections-title" title="Sections">
+          <DataTable caption="Score by section" hideCaption data-testid="sections">
+            <thead>
+              <tr>
+                <th scope="col">Section</th>
+                <th scope="col" className={dataTableNum}>
+                  Score
+                </th>
+                <th scope="col" className={dataTableNum}>
+                  Out of
+                </th>
+                <th scope="col" className={dataTableNum}>
+                  %
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {result.sections.map((sec) => (
+                <tr key={sec.id}>
+                  <th scope="row">{sec.title}</th>
+                  <td className={dataTableNum}>{scoreText(sec.score)}</td>
+                  <td className={dataTableNum}>{scoreText(sec.maxScore)}</td>
+                  <td className={dataTableNum}>{sec.maxScore > 0 ? `${Math.round((sec.score / sec.maxScore) * 100)}%` : '–'}</td>
                 </tr>
-              </thead>
-              <tbody>
-                {result.sections.map((sec) => (
-                  <tr key={sec.id}>
-                    <th scope="row">{sec.title}</th>
-                    <td className={s.num}>{scoreText(sec.score)}</td>
-                    <td className={s.num}>{scoreText(sec.maxScore)}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </section>
+              ))}
+            </tbody>
+          </DataTable>
+        </PageSection>
       )}
-      {result.topics.length > 0 && (
-        <section aria-labelledby="topics-title">
-          <h2 id="topics-title" className={s.sectionHeading}>
-            Topic mastery
-          </h2>
-          <ul className={s.mastery} data-testid="topics">
-            {result.topics.map((t) => (
-              <li key={t.id}>
-                <ProgressBar
-                  value={t.mastery === null ? 0 : Math.round(t.mastery * 100)}
-                  max={100}
-                  label={t.title}
-                  valueText={t.mastery === null ? 'not graded yet' : `${Math.round(t.mastery * 100)}% (${scoreText(t.earned)}/${scoreText(t.max)})`}
-                  tone={t.mastery !== null && t.mastery >= 0.75 ? 'success' : 'accent'}
-                />
-              </li>
-            ))}
-          </ul>
-        </section>
-      )}
-      {result.byDifficulty.length > 0 && (
-        <section aria-labelledby="difficulty-title">
-          <h2 id="difficulty-title" className={s.sectionHeading}>
-            Accuracy by difficulty
-          </h2>
-          <div className={s.tableWrap}>
-            <table className={s.table} data-testid="difficulty">
-              <thead>
-                <tr>
-                  <th scope="col">Difficulty</th>
-                  <th scope="col" className={s.num}>
-                    Attempted
-                  </th>
-                  <th scope="col" className={s.num}>
-                    Correct
-                  </th>
-                  <th scope="col" className={s.num}>
-                    Accuracy
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {result.byDifficulty.map((d) => (
-                  <tr key={d.difficulty}>
-                    <th scope="row">{DIFFICULTY_NAMES[d.difficulty] ?? `Level ${d.difficulty}`}</th>
-                    <td className={s.num}>
-                      {d.attempted}/{d.total}
-                    </td>
-                    <td className={s.num}>{d.correct}</td>
-                    <td className={s.num}>{d.accuracy === null ? '–' : `${Math.round(d.accuracy * 100)}%`}</td>
-                  </tr>
+      {(result.topics.length > 0 || result.byDifficulty.length > 0) && (
+        <div className={s.analysisGrid}>
+          {result.topics.length > 0 && (
+            <Card as="section" aria-labelledby="topics-title">
+              <CardTitle as="h2" id="topics-title">
+                Topic mastery
+              </CardTitle>
+              <ul className={s.mastery} data-testid="topics">
+                {result.topics.map((t) => (
+                  <li key={t.id}>
+                    <ProgressBar
+                      value={t.mastery === null ? 0 : Math.round(t.mastery * 100)}
+                      max={100}
+                      label={t.title}
+                      valueText={t.mastery === null ? 'not graded yet' : `${Math.round(t.mastery * 100)}% (${scoreText(t.earned)}/${scoreText(t.max)})`}
+                      tone={t.mastery !== null && t.mastery >= 0.75 ? 'success' : 'accent'}
+                    />
+                  </li>
                 ))}
-              </tbody>
-            </table>
-          </div>
-        </section>
+              </ul>
+            </Card>
+          )}
+          {result.byDifficulty.length > 0 && (
+            <Card as="section" aria-labelledby="difficulty-title" className={s.flushTable}>
+              <CardTitle as="h2" id="difficulty-title">
+                Accuracy by difficulty
+              </CardTitle>
+              <DataTable caption="Accuracy by difficulty" hideCaption dense data-testid="difficulty">
+                <thead>
+                  <tr>
+                    <th scope="col">Difficulty</th>
+                    <th scope="col" className={dataTableNum}>
+                      Attempted
+                    </th>
+                    <th scope="col" className={dataTableNum}>
+                      Correct
+                    </th>
+                    <th scope="col" className={dataTableNum}>
+                      Accuracy
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {result.byDifficulty.map((d) => (
+                    <tr key={d.difficulty}>
+                      <th scope="row">{DIFFICULTY_NAMES[d.difficulty] ?? `Level ${d.difficulty}`}</th>
+                      <td className={dataTableNum}>
+                        {d.attempted}/{d.total}
+                      </td>
+                      <td className={dataTableNum}>{d.correct}</td>
+                      <td className={dataTableNum}>{d.accuracy === null ? '–' : `${Math.round(d.accuracy * 100)}%`}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </DataTable>
+            </Card>
+          )}
+        </div>
       )}
     </>
   );
@@ -423,9 +461,9 @@ function AiEvaluationPanel({ result, written, ai, onAi }: { result: AttemptResul
   }, [aiAllowed, result.attempt.id, onAi]);
 
   return (
-    <Card as="section" aria-labelledby="ai-eval-title" data-testid="ai-evaluation">
+    <Card as="section" aria-labelledby="ai-eval-title" data-testid="ai-evaluation" className={s.aiPanel}>
       <CardTitle as="h2" id="ai-eval-title">
-        AI marks for written answers <Badge tone="accent">Optional</Badge>
+        AI marks for written answers <StatusPill tone="info">Optional</StatusPill>
       </CardTitle>
       {!aiAllowed ? (
         <AiNotice block={{ kind: 'consent' }} feature="AI marking" />
@@ -443,7 +481,7 @@ function AiEvaluationPanel({ result, written, ai, onAi }: { result: AttemptResul
             </p>
           )}
           <div className={s.row}>
-            <Button icon="spark" onClick={() => void evalApi.ask()} loading={evalApi.running} disabled={answered === 0} data-testid="ai-evaluate-all">
+            <Button icon="spark" variant="soft" onClick={() => void evalApi.ask()} loading={evalApi.running} disabled={answered === 0} data-testid="ai-evaluate-all">
               {ai && ai.items.length > 0 ? 'Mark the rest with AI' : 'Get AI marks'}
             </Button>
             {evalApi.running && <span role="status">The AI is marking your answers…</span>}
@@ -462,7 +500,7 @@ function AiMarks({ item }: { item: AiEvaluation['items'][number] }) {
   return (
     <div className={s.aiBox} data-testid="ai-marks">
       <h4>
-        <Icon name="spark" size={16} /> AI marks: {scoreText(item.marks)} / {scoreText(item.maxMarks)} <Badge tone={item.lowConfidence ? 'warning' : 'accent'}>{item.label}</Badge>
+        <Icon name="spark" size={16} /> AI marks: {scoreText(item.marks)} / {scoreText(item.maxMarks)} <StatusPill tone={item.lowConfidence ? 'warning' : 'info'}>{item.label}</StatusPill>
       </h4>
       <p className={s.muted}>Not part of your score.</p>
       {item.steps.length > 0 && (
@@ -519,15 +557,12 @@ function ReviewList({ result, lang, ai, onChange, onAi }: { result: AttemptResul
   };
 
   return (
-    <section aria-labelledby="review-title">
-      <h2 id="review-title" className={s.sectionHeading}>
-        Questions and solutions
-      </h2>
+    <PageSection id="review-title" title="Questions and solutions" count={items.length}>
       <div className={s.filterRow} role="group" aria-label="Show">
         {(['all', 'wrong', 'unanswered', 'written'] as const).map((f) => (
-          <Button key={f} size="sm" variant={filter === f ? 'primary' : 'secondary'} aria-pressed={filter === f} onClick={() => setFilter(f)}>
+          <Chip key={f} selected={filter === f} onClick={() => setFilter(f)}>
             {f === 'all' ? 'All' : f === 'wrong' ? 'Wrong' : f === 'unanswered' ? 'Not answered' : 'Written'} ({counts[f]})
-          </Button>
+          </Chip>
         ))}
       </div>
       {!slotsModule && <Skeleton variant="block" height={160} />}
@@ -539,12 +574,20 @@ function ReviewList({ result, lang, ai, onChange, onAi }: { result: AttemptResul
             const st = STATUS_TEXT[item.status];
             const aiItem = aiFor(item.itemId);
             return (
-              <li key={item.itemId} data-item-id={item.itemId} data-status={item.status}>
+              <li key={item.itemId} className={s.reviewItem} data-item-id={item.itemId} data-status={item.status}>
                 <p className={s.reviewMeta}>
-                  <Badge tone={st.tone}>{st.label}</Badge>
-                  {!item.counted && <Badge>Not counted (choice)</Badge>}
-                  {item.markedForReview && <Badge icon="flag">Marked</Badge>}
-                  <span>Time: {item.timeSpentSec >= 60 ? durationText(Math.round(item.timeSpentSec / 60)) : `${item.timeSpentSec} s`}</span>
+                  <StatusPill tone={st.tone} dot>
+                    {st.label}
+                  </StatusPill>
+                  {!item.counted && <StatusPill>Not counted (choice)</StatusPill>}
+                  {item.markedForReview && (
+                    <StatusPill tone="warning">
+                      <Icon name="flag" size={14} /> Marked
+                    </StatusPill>
+                  )}
+                  <span className={s.reviewTime}>
+                    <Icon name="clock" size={14} /> {item.timeSpentSec >= 60 ? durationText(Math.round(item.timeSpentSec / 60)) : `${item.timeSpentSec} s`}
+                  </span>
                 </p>
                 <QuestionCard
                   mode="review"
@@ -570,7 +613,7 @@ function ReviewList({ result, lang, ai, onChange, onAi }: { result: AttemptResul
       <QuoteDialog open={evalApi.quote !== null} quote={evalApi.quote?.quote ?? null} what={evalApi.quote?.what ?? ''} onConfirm={() => void evalApi.run()} onClose={evalApi.cancel} />
       <PaywallDialog block={evalApi.block && (evalApi.block.kind === 'paywall' || evalApi.block.kind === 'plan') ? evalApi.block : null} onClose={() => evalApi.setBlock(null)} />
       {evalApi.block && evalApi.block.kind !== 'paywall' && evalApi.block.kind !== 'plan' && <AiNotice block={evalApi.block} />}
-    </section>
+    </PageSection>
   );
 }
 

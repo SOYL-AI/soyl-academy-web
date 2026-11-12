@@ -2,7 +2,7 @@
  * Pure helpers for the test player and result pages: palette states, choice groups, section order,
  * friendly problem text for the test-engine codes (backend-api M3 handoff §10).
  */
-import { isApiError, type AttemptState, type PracticeResponse } from '@/platform/shared/api-client';
+import { isApiError, type AttemptState, type MyAttempt, type PracticeResponse } from '@/platform/shared/api-client';
 
 export interface ItemUiState {
   response: PracticeResponse | null;
@@ -157,4 +157,28 @@ export function attemptPath(id: string): string {
 }
 export function resultPath(id: string): string {
   return `/tests/result/${encodeURIComponent(id)}`;
+}
+
+export interface AttemptRowView {
+  href: string;
+  done: boolean;
+  date: string;
+  score: string;
+  status: string;
+  tone: 'success' | 'info' | 'neutral';
+}
+
+/** A recent attempt as a table row: where it goes, its date (IST) and what to write in the status column (pure; tested). */
+export function attemptRow(a: Pick<MyAttempt, 'id' | 'status' | 'score' | 'maxScore' | 'submittedAt' | 'startedAt' | 'liveEventId'>): AttemptRowView {
+  const done = a.status === 'submitted' || a.status === 'auto_submitted';
+  const when = done ? a.submittedAt : a.startedAt;
+  const date = when ? new Date(when).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', timeZone: 'Asia/Kolkata' }) : '–';
+  return {
+    href: done ? resultPath(a.id) : attemptPath(a.id),
+    done,
+    date,
+    score: done ? `${scoreText(a.score)}/${scoreText(a.maxScore)}` : '–',
+    status: done ? (a.liveEventId ? 'Live mock' : 'Marked') : a.status === 'created' ? 'Not started' : 'In progress',
+    tone: done ? 'success' : a.status === 'created' ? 'neutral' : 'info',
+  };
 }

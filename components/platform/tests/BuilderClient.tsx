@@ -7,13 +7,15 @@
  * Also the entry point for "Papers like my school's" (paper-from-upload, AI): Pro and Board Exam Pass only
  * (D-034), so the quote's `allowedForPlan` decides between the upload form and an upgrade prompt.
  */
-import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useEffect, useId, useState, type FormEvent } from 'react';
 import { isApiError, type AiJobAccepted, type AiQuote, type CatalogChapters, type CatalogSubjects, type CustomTest, type QuestionType } from '@/platform/shared/api-client';
 import { Button } from '@/components/platform/ui/kit/Button';
-import { Badge, Card, CardTitle, EmptyState, Skeleton } from '@/components/platform/ui/kit/Display';
+import { ButtonLink } from '@/components/platform/ui/kit/ButtonLink';
+import { Card, CardTitle, EmptyState, Skeleton } from '@/components/platform/ui/kit/Display';
 import { Icon } from '@/components/platform/ui/kit/Icon';
+import { List, StatusPill } from '@/components/platform/ui/kit/Lists';
+import { PageColumns } from '@/components/platform/ui/kit/Page';
 import { QUESTION_TYPE_LABELS } from '@/components/platform/ui/question/model';
 import { useSession } from '../auth/SessionProvider';
 import { AiNotice, PaywallDialog, QuoteDialog, useBillingOn } from '../ai/AiDialogs';
@@ -34,7 +36,7 @@ export function BuilderClient() {
   if (state.status === 'loading') return <Skeleton lines={3} />;
   if (state.status === 'guest') {
     return (
-      <EmptyState title="Log in to build a test" headingLevel="h2" icon="lock" action={<Button onClick={() => openLogin({ reason: 'Log in to build your own tests. It is free.' })}>Log in</Button>}>
+      <EmptyState title="Log in to build a test" headingLevel="h2" icon="plus" tint="pink" action={<Button onClick={() => openLogin({ reason: 'Log in to build your own tests. It is free.' })}>Log in</Button>}>
         Pick chapters and question types, and we make a paper from our question bank. Free.
       </EmptyState>
     );
@@ -143,9 +145,9 @@ function Builder({ initialBoard, initialClass }: { initialBoard: BoardSlug; init
 
   if (built) {
     return (
-      <Card as="section" aria-labelledby="built-title" data-testid="built">
+      <Card as="section" aria-labelledby="built-title" data-testid="built" tint="green" className={s.builtCard}>
         <CardTitle as="h2" id="built-title">
-          Your test is ready
+          <Icon name="checkCircle" size={22} /> Your test is ready
         </CardTitle>
         <p>
           <strong>{built.title}</strong>: {built.questionCount} questions · {built.totalMarks} marks · {built.durationMin} min
@@ -164,7 +166,7 @@ function Builder({ initialBoard, initialClass }: { initialBoard: BoardSlug; init
           <Button onClick={() => void start()} loading={busy} data-testid="start-custom">
             Start test
           </Button>
-          <Button variant="secondary" onClick={() => setBuilt(null)}>
+          <Button variant="soft" onClick={() => setBuilt(null)}>
             Change choices
           </Button>
         </div>
@@ -173,131 +175,153 @@ function Builder({ initialBoard, initialClass }: { initialBoard: BoardSlug; init
   }
 
   return (
-    <div className={s.stack}>
-      <form className={s.form} onSubmit={(e) => void build(e)} noValidate data-testid="builder">
-        <fieldset className={s.fieldset}>
-          <legend>Subject</legend>
-          <div className={s.pickers}>
-            <label className={s.field} htmlFor={ids.board}>
-              Board
-              <select id={ids.board} className={s.select} value={board} onChange={(e) => setBoard(e.target.value as BoardSlug)}>
-                {BOARDS.map((b) => (
-                  <option key={b} value={b}>
-                    {BOARD_NAMES[b]}
-                  </option>
-                ))}
-              </select>
-            </label>
-            <label className={s.field} htmlFor={ids.cls}>
-              Class
-              <select id={ids.cls} className={s.select} value={classLevel} onChange={(e) => setClassLevel(Number(e.target.value))}>
-                {CLASS_LEVELS.map((c) => (
-                  <option key={c} value={c}>
-                    Class {c} ({examLabel(board, c)})
-                  </option>
-                ))}
-              </select>
-            </label>
-            <label className={s.field} htmlFor={ids.subject}>
-              Subject
-              <select id={ids.subject} className={s.select} value={subjectId} onChange={(e) => setSubjectId(e.target.value)} disabled={!subjects?.subjects.length}>
-                {subjects?.subjects.map((x) => (
-                  <option key={x.id} value={x.id}>
-                    {x.name}
-                  </option>
-                ))}
-              </select>
-            </label>
-          </div>
-        </fieldset>
-
-        <fieldset className={s.fieldset}>
-          <legend>
-            Chapters <span className={s.muted}>({picked.length} chosen, up to {BUILDER_LIMITS.maxChapters})</span>
-          </legend>
-          {!chapters ? (
-            <Skeleton lines={4} />
-          ) : (
-            <ul className={s.checkList} data-testid="chapter-picker">
-              {chapters.chapters.map((c) => (
-                <li key={c.id}>
-                  <label className={s.check}>
-                    <input type="checkbox" checked={picked.includes(c.id)} onChange={() => setPicked((p) => toggle(p, c.id))} value={c.id} />
-                    <span>
-                      {c.number}. {c.title}
-                    </span>
-                  </label>
-                </li>
-              ))}
-            </ul>
-          )}
-        </fieldset>
-
-        <fieldset className={s.fieldset}>
-          <legend>Paper</legend>
-          <div className={s.pickers}>
-            <label className={s.field} htmlFor={ids.count}>
-              Questions ({BUILDER_LIMITS.minQuestions}–{BUILDER_LIMITS.maxQuestions})
-              <input id={ids.count} className={s.numberInput} inputMode="numeric" value={count} onChange={(e) => setCount(e.target.value.replace(/\D/g, '').slice(0, 2))} />
-            </label>
-            <label className={s.field} htmlFor={ids.duration}>
-              Minutes (optional)
-              <input id={ids.duration} className={s.numberInput} inputMode="numeric" value={duration} placeholder="auto" onChange={(e) => setDuration(e.target.value.replace(/\D/g, '').slice(0, 3))} />
-            </label>
-            <label className={s.field} htmlFor={ids.dmin}>
-              Easiest
-              <select id={ids.dmin} className={s.select} value={dmin} onChange={(e) => setDmin(e.target.value)}>
-                {[1, 2, 3, 4, 5].map((d) => (
-                  <option key={d} value={d}>
-                    {d}
-                  </option>
-                ))}
-              </select>
-            </label>
-            <label className={s.field} htmlFor={ids.dmax}>
-              Hardest
-              <select id={ids.dmax} className={s.select} value={dmax} onChange={(e) => setDmax(e.target.value)}>
-                {[1, 2, 3, 4, 5].map((d) => (
-                  <option key={d} value={d}>
-                    {d}
-                  </option>
-                ))}
-              </select>
-            </label>
-          </div>
-          <label className={s.field} htmlFor={ids.title}>
-            Title (optional)
-            <input id={ids.title} className={s.select} value={title} maxLength={120} onChange={(e) => setTitle(e.target.value)} />
-          </label>
-        </fieldset>
-
-        <fieldset className={s.fieldset}>
-          <legend>
-            Question types <span className={s.muted}>(optional: all types if none)</span>
-          </legend>
-          <ul className={s.checkList}>
-            {TYPES.map((t) => (
-              <li key={t}>
-                <label className={s.check}>
-                  <input type="checkbox" checked={types.includes(t)} onChange={() => setTypes((x) => toggle(x, t))} />
-                  <span>{QUESTION_TYPE_LABELS[t]}</span>
+    <div className={s.builderPage}>
+      <PageColumns rail={subjectId ? <PaperFromUpload subjectId={subjectId} /> : undefined} railLabel="Papers like your school’s">
+        <Card className={s.formCard}>
+          <form className={s.form} onSubmit={(e) => void build(e)} noValidate data-testid="builder">
+            <fieldset className={s.fieldset}>
+              <legend>
+                <span className={s.stepNo} aria-hidden="true">
+                  1
+                </span>
+                Subject
+              </legend>
+              <div className={s.pickers}>
+                <label className={s.field} htmlFor={ids.board}>
+                  Board
+                  <select id={ids.board} className={s.select} value={board} onChange={(e) => setBoard(e.target.value as BoardSlug)}>
+                    {BOARDS.map((b) => (
+                      <option key={b} value={b}>
+                        {BOARD_NAMES[b]}
+                      </option>
+                    ))}
+                  </select>
                 </label>
-              </li>
-            ))}
-          </ul>
-        </fieldset>
+                <label className={s.field} htmlFor={ids.cls}>
+                  Class
+                  <select id={ids.cls} className={s.select} value={classLevel} onChange={(e) => setClassLevel(Number(e.target.value))}>
+                    {CLASS_LEVELS.map((c) => (
+                      <option key={c} value={c}>
+                        Class {c} ({examLabel(board, c)})
+                      </option>
+                    ))}
+                  </select>
+                </label>
+                <label className={s.field} htmlFor={ids.subject}>
+                  Subject
+                  <select id={ids.subject} className={s.select} value={subjectId} onChange={(e) => setSubjectId(e.target.value)} disabled={!subjects?.subjects.length}>
+                    {subjects?.subjects.map((x) => (
+                      <option key={x.id} value={x.id}>
+                        {x.name}
+                      </option>
+                    ))}
+                  </select>
+                </label>
+              </div>
+            </fieldset>
 
-        {error && (
-          <p className={s.error} role="alert" data-testid="builder-error">
-            <Icon name="alert" size={16} /> {error}
-          </p>
-        )}
-        <Button type="submit" size="lg" loading={busy} disabled={!subjectId} data-testid="build-test">
-          Build my test
-        </Button>
-      </form>
+            <fieldset className={s.fieldset}>
+              <legend>
+                <span className={s.stepNo} aria-hidden="true">
+                  2
+                </span>
+                Chapters <span className={s.legendNote}>({picked.length} chosen, up to {BUILDER_LIMITS.maxChapters})</span>
+              </legend>
+              {!chapters ? (
+                <Skeleton lines={4} />
+              ) : (
+                <div data-testid="chapter-picker">
+                  <List label="Chapters">
+                    {chapters.chapters.map((c) => (
+                      <li key={c.id} className={s.checkRow} data-checked={picked.includes(c.id) || undefined}>
+                        <label className={s.check}>
+                          <input type="checkbox" checked={picked.includes(c.id)} onChange={() => setPicked((p) => toggle(p, c.id))} value={c.id} />
+                          <span className={s.chapterNo}>{c.number}</span>
+                          <span className={s.checkText}>{c.title}</span>
+                        </label>
+                      </li>
+                    ))}
+                  </List>
+                </div>
+              )}
+            </fieldset>
 
-      {subjectId && <PaperFromUpload subjectId={subjectId} />}
+            <fieldset className={s.fieldset}>
+              <legend>
+                <span className={s.stepNo} aria-hidden="true">
+                  3
+                </span>
+                Paper
+              </legend>
+              <div className={s.pickers}>
+                <label className={s.field} htmlFor={ids.count}>
+                  Questions ({BUILDER_LIMITS.minQuestions}–{BUILDER_LIMITS.maxQuestions})
+                  <input id={ids.count} className={s.numberInput} inputMode="numeric" value={count} onChange={(e) => setCount(e.target.value.replace(/\D/g, '').slice(0, 2))} />
+                </label>
+                <label className={s.field} htmlFor={ids.duration}>
+                  Minutes (optional)
+                  <input id={ids.duration} className={s.numberInput} inputMode="numeric" value={duration} placeholder="auto" onChange={(e) => setDuration(e.target.value.replace(/\D/g, '').slice(0, 3))} />
+                </label>
+                <label className={s.field} htmlFor={ids.dmin}>
+                  Easiest
+                  <select id={ids.dmin} className={s.select} value={dmin} onChange={(e) => setDmin(e.target.value)}>
+                    {[1, 2, 3, 4, 5].map((d) => (
+                      <option key={d} value={d}>
+                        {d}
+                      </option>
+                    ))}
+                  </select>
+                </label>
+                <label className={s.field} htmlFor={ids.dmax}>
+                  Hardest
+                  <select id={ids.dmax} className={s.select} value={dmax} onChange={(e) => setDmax(e.target.value)}>
+                    {[1, 2, 3, 4, 5].map((d) => (
+                      <option key={d} value={d}>
+                        {d}
+                      </option>
+                    ))}
+                  </select>
+                </label>
+              </div>
+              <label className={s.field} htmlFor={ids.title}>
+                Title (optional)
+                <input id={ids.title} className={s.textInput} value={title} maxLength={120} onChange={(e) => setTitle(e.target.value)} />
+              </label>
+            </fieldset>
+
+            <fieldset className={s.fieldset}>
+              <legend>
+                <span className={s.stepNo} aria-hidden="true">
+                  4
+                </span>
+                Question types <span className={s.legendNote}>(optional: all types if none)</span>
+              </legend>
+              <ul className={s.typePills}>
+                {TYPES.map((t) => (
+                  <li key={t}>
+                    <label className={s.typePill} data-checked={types.includes(t) || undefined}>
+                      <input type="checkbox" checked={types.includes(t)} onChange={() => setTypes((x) => toggle(x, t))} />
+                      <span>{QUESTION_TYPE_LABELS[t]}</span>
+                    </label>
+                  </li>
+                ))}
+              </ul>
+            </fieldset>
+
+            {error && (
+              <p className={s.error} role="alert" data-testid="builder-error">
+                <Icon name="alert" size={16} /> {error}
+              </p>
+            )}
+            <div className={s.formFoot}>
+              <Button type="submit" size="lg" icon="sparkles" loading={busy} disabled={!subjectId} data-testid="build-test">
+                Build my test
+              </Button>
+              <span className={s.meta}>Free. Questions come from our practice bank.</span>
+            </div>
+          </form>
+        </Card>
+      </PageColumns>
     </div>
   );
 }
@@ -363,9 +387,9 @@ function PaperFromUpload({ subjectId }: { subjectId: string }) {
   };
 
   return (
-    <Card as="section" aria-labelledby="pfu-title" data-testid="paper-from-upload">
+    <Card as="section" aria-labelledby="pfu-title" data-testid="paper-from-upload" className={s.pfuCard}>
       <CardTitle as="h2" id="pfu-title">
-        Papers like your school’s <Badge tone="accent">Pro</Badge>
+        Papers like your school’s <StatusPill tone="info">Pro · AI</StatusPill>
       </CardTitle>
       <p className={s.muted}>Upload a sample paper from your school. The AI reads its pattern (sections, marks, chapters) and builds a fresh paper from our question bank. Your school’s questions are never reused.</p>
       {!aiAllowed ? (
@@ -377,7 +401,9 @@ function PaperFromUpload({ subjectId }: { subjectId: string }) {
           {billingOn ? (
             <>
               <p className={s.muted}>This is part of Pro and the Board Exam Pass ({creditsText(quote.credits)} per paper).</p>
-              <Link href="/plans">Upgrade to Pro</Link>
+              <ButtonLink href="/plans" variant="soft" size="sm" icon="sparkles">
+                Upgrade to Pro
+              </ButtonLink>
             </>
           ) : (
             <p className={s.muted} data-testid="plans-coming-soon">
@@ -391,7 +417,7 @@ function PaperFromUpload({ subjectId }: { subjectId: string }) {
             Sample paper (a photo of the paper, up to 10 MB)
             <input id={fileId} type="file" accept={AI_UPLOADS.contentTypes.join(',')} onChange={(e) => setFile(e.target.files?.[0] ?? null)} />
           </label>
-          <Button icon="spark" disabled={!file || stage !== 'idle'} loading={stage !== 'idle'} onClick={() => setConfirming(true)}>
+          <Button icon="spark" variant="soft" disabled={!file || stage !== 'idle'} loading={stage !== 'idle'} onClick={() => setConfirming(true)}>
             Build a paper ({creditsText(quote.credits)})
           </Button>
           {stage !== 'idle' && <p role="status">{stage === 'building' ? 'Reading the pattern and building your paper…' : 'Uploading…'}</p>}

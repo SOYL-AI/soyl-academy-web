@@ -11,14 +11,35 @@ import { useRouter } from 'next/navigation';
 import { useCallback, useEffect, useState } from 'react';
 import type { TestMeta, TestSeries, TestSeriesTest } from '@/platform/shared/api-client';
 import { Button } from '@/components/platform/ui/kit/Button';
+import { ButtonLink } from '@/components/platform/ui/kit/ButtonLink';
 import { Dialog } from '@/components/platform/ui/kit/Dialog';
-import { Badge, EmptyState, Skeleton } from '@/components/platform/ui/kit/Display';
-import { Icon } from '@/components/platform/ui/kit/Icon';
+import { EmptyState, Skeleton, SkeletonCard } from '@/components/platform/ui/kit/Display';
+import { Icon, type IconName } from '@/components/platform/ui/kit/Icon';
+import { DataTable, dataTableNum, List, StatusPill, Timeline, type StatusTone } from '@/components/platform/ui/kit/Lists';
+import { PageSection } from '@/components/platform/ui/kit/Page';
+import { IconTile } from '@/components/platform/ui/kit/Tiles';
+import type { Tint } from '@/components/platform/ui/kit/tints';
 import { useSession } from '../auth/SessionProvider';
 import { api } from '../lib/api-browser';
-import { attemptPath, LIVE_PHASE_LABELS, marksText, resultPath, scoreText, SERIES_KIND_LABELS, testProblemMessage } from './player-model';
-import { durationText, istDateTime } from './timer';
+import { useStage } from '../shell/StageProvider';
+import { liveEventItem } from './live-timeline';
+import { attemptPath, marksText, resultPath, scoreText, SERIES_KIND_LABELS, testProblemMessage } from './player-model';
+import { durationText } from './timer';
 import s from './tests.module.css';
+
+/** The status a series row writes for a member (pure; tested): not started, in progress, or the best score so far. */
+export function testStatus(me: TestSeriesTest['me'] | null | undefined): { key: 'not-started' | 'in-progress' | 'done'; label: string; tone: StatusTone } {
+  if (me?.activeAttemptId) return { key: 'in-progress', label: 'In progress', tone: 'info' };
+  if (me && me.attempts > 0) return { key: 'done', label: `Best ${scoreText(me.bestScore)}/${scoreText(me.maxScore)}`, tone: 'success' };
+  return { key: 'not-started', label: 'Not started', tone: 'neutral' };
+}
+
+/** The icon and tint of a series group's rows: tests are pink (STUDY_MODES.tests); full papers get the paper icon. */
+export function seriesLook(kind: string): { icon: IconName; tint: Tint } {
+  if (kind === 'full' || kind === 'term' || kind === 'second_exam') return { icon: 'list', tint: 'violet' };
+  if (kind === 'unit') return { icon: 'layers', tint: 'pink' };
+  return { icon: 'clock', tint: 'pink' };
+}
 
 export function SeriesClient({ subjectId, subjectName }: { subjectId: string; subjectName: string }) {
   const { state } = useSession();
@@ -43,7 +64,7 @@ export function SeriesClient({ subjectId, subjectName }: { subjectId: string; su
 
   if (error) {
     return (
-      <EmptyState title="We could not load the tests" icon="alert" headingLevel="h2" action={<Button variant="secondary" onClick={() => void load()}>Try again</Button>}>
+      <EmptyState title="We could not load the tests" icon="alert" tint="red" headingLevel="h2" action={<Button variant="secondary" onClick={() => void load()}>Try again</Button>}>
         {error}
       </EmptyState>
     );
@@ -51,87 +72,91 @@ export function SeriesClient({ subjectId, subjectName }: { subjectId: string; su
   if (!data) {
     return (
       <div aria-busy="true" aria-label="Loading tests" className={s.loading}>
-        <Skeleton lines={2} />
-        <Skeleton variant="block" height={140} />
+        <SkeletonCard lines={2} />
+        <SkeletonCard lines={3} />
       </div>
     );
   }
   const groups = data.series.filter((g) => g.tests.length > 0);
+  const member = state.status === 'member';
   return (
     <div className={s.stack} data-testid="series">
       {data.liveEvents.length > 0 && (
-        <section aria-labelledby="live-title">
-          <h2 id="live-title" className={s.sectionHeading}>
-            All-India live mocks
-          </h2>
-          <ul className={s.cards}>
-            {data.liveEvents.map((ev) => (
-              <li key={ev.id}>
-                <Link href={`/tests/live/${encodeURIComponent(ev.id)}`} className={s.linkCard} data-testid="live-event-link">
-                  <span className={s.linkTitle}>{ev.title}</span>
-                  <span className={s.meta}>
-                    <Badge tone={ev.phase === 'live' ? 'danger' : ev.phase === 'registration_open' ? 'accent' : 'neutral'}>{LIVE_PHASE_LABELS[ev.phase] ?? ev.phase}</Badge> {istDateTime(ev.startsAt)} ·{' '}
-                    {durationText(ev.durationMin)}
-                    {ev.me?.registered ? ' · You are registered' : ''}
-                  </span>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </section>
+        <PageSection id="live-title" title="All-India live mocks" count={data.liveEvents.length} description="Free, at the same time for everyone, with an All-India rank.">
+          <Timeline label="All-India live mocks" items={data.liveEvents.map(liveEventItem)} />
+        </PageSection>
       )}
       {groups.length === 0 && (
-        <EmptyState title="Tests for this subject are coming soon" headingLevel="h2" action={<Link href="/tests/builder">Build your own test</Link>}>
+        <EmptyState
+          title="Tests for this subject are coming soon"
+          icon="clock"
+          tint="pink"
+          headingLevel="h2"
+          action={
+            <ButtonLink href="/tests/builder" icon="plus" size="sm">
+              Build your own test
+            </ButtonLink>
+          }
+        >
           Meanwhile you can build a test from the practice questions of any chapter.
         </EmptyState>
       )}
-      {groups.map((g) => (
-        <section key={g.id} aria-labelledby={`series-${g.id}`}>
-          <h2 id={`series-${g.id}`} className={s.sectionHeading}>
-            {g.title || SERIES_KIND_LABELS[g.kind] || 'Tests'}
-          </h2>
-          <ul className={s.cards}>
-            {g.tests.map((t) => (
-              <TestCard key={t.id} t={t} onStart={() => setOpen(t)} member={state.status === 'member'} />
-            ))}
-          </ul>
-        </section>
-      ))}
+      {groups.map((g) => {
+        const look = seriesLook(g.kind);
+        const name = g.title || SERIES_KIND_LABELS[g.kind] || 'Tests';
+        return (
+          <PageSection key={g.id} id={`series-${g.id}`} title={name} count={g.tests.length}>
+            <List label={name}>
+              {g.tests.map((t) => (
+                <TestRow key={t.id} t={t} icon={look.icon} tint={look.tint} onStart={() => setOpen(t)} member={member} />
+              ))}
+            </List>
+          </PageSection>
+        );
+      })}
       <TestDialog test={open} subjectName={subjectName} onClose={() => setOpen(null)} />
     </div>
   );
 }
 
-function TestCard({ t, onStart, member }: { t: TestSeriesTest; onStart: () => void; member: boolean }) {
+function TestRow({ t, icon, tint, onStart, member }: { t: TestSeriesTest; icon: IconName; tint: Tint; onStart: () => void; member: boolean }) {
+  const { pick } = useStage();
   const me = t.me;
+  const status = testStatus(me);
+  const again = !!me && me.attempts > 0;
   return (
-    <li id={`test-${t.id}`} className={s.testCard} data-testid="test-card" data-test-id={t.id}>
-      <h3 className={s.testTitle}>{t.title}</h3>
-      <p className={s.meta}>
-        {t.questionCount} questions · {marksText(t.totalMarks)} · {durationText(t.durationMin)}
-        {t.chapter ? ` · Chapter ${t.chapter.number}` : ''}
-      </p>
-      {member && me && me.attempts > 0 && (
+    <li id={`test-${t.id}`} className={s.testRow} data-testid="test-card" data-test-id={t.id} data-status={member ? status.key : undefined}>
+      <IconTile icon={icon} tint={tint} size="md" />
+      <div className={s.testText}>
+        <h3 className={s.testTitle}>{t.title}</h3>
         <p className={s.meta}>
-          {me.attempts} attempt{me.attempts === 1 ? '' : 's'} · best {scoreText(me.bestScore)} / {scoreText(me.maxScore)}
+          {t.questionCount} questions · {marksText(t.totalMarks)} · {durationText(t.durationMin)}
+          {t.chapter ? ` · Chapter ${t.chapter.number}` : ''}
         </p>
-      )}
-      <div className={s.row}>
-        {me?.activeAttemptId ? (
-          <Link href={attemptPath(me.activeAttemptId)} className={s.linkCard} data-testid="resume-test">
-            <span className={s.linkTitle}>
-              Resume <Icon name="chevronRight" size={16} />
-            </span>
-          </Link>
-        ) : (
-          <Button onClick={onStart} data-testid="start-test-open">
-            {me && me.attempts > 0 ? 'Take again' : 'Start'}
-          </Button>
+        {member && me && me.attempts > 0 && (
+          <p className={s.meta}>
+            {me.attempts} attempt{me.attempts === 1 ? '' : 's'}
+            {me.lastAttemptId && !me.activeAttemptId && (
+              <>
+                {' · '}
+                <Link href={resultPath(me.lastAttemptId)} className={s.inlineLink}>
+                  Last result
+                </Link>
+              </>
+            )}
+          </p>
         )}
-        {me?.lastAttemptId && !me.activeAttemptId && (
-          <Link href={resultPath(me.lastAttemptId)} className={s.meta}>
-            Last result
-          </Link>
+      </div>
+      <div className={s.testActions}>
+        {member && <StatusPill tone={status.tone}>{status.label}</StatusPill>}
+        {me?.activeAttemptId ? (
+          <ButtonLink href={attemptPath(me.activeAttemptId)} size="sm" icon="play" data-testid="resume-test">
+            Resume
+          </ButtonLink>
+        ) : (
+          <Button size="sm" variant={again ? 'soft' : 'primary'} onClick={onStart} data-testid="start-test-open">
+            {again ? 'Take again' : pick({ junior: "Let's go", middle: 'Start', senior: 'Start' })}
+          </Button>
         )}
       </div>
     </li>
@@ -209,34 +234,31 @@ function TestDialog({ test, subjectName, onClose }: { test: TestSeriesTest | nul
             ))}
           </ul>
           {meta.sections.length > 0 && (
-            <div className={s.tableWrap}>
-              <table className={s.table}>
-                <caption className="p-visually-hidden">Sections</caption>
-                <thead>
-                  <tr>
-                    <th scope="col">Section</th>
-                    <th scope="col" className={s.num}>
-                      Questions
+            <DataTable caption="Sections" hideCaption dense>
+              <thead>
+                <tr>
+                  <th scope="col">Section</th>
+                  <th scope="col" className={dataTableNum}>
+                    Questions
+                  </th>
+                  <th scope="col" className={dataTableNum}>
+                    Marks
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {meta.sections.map((sec) => (
+                  <tr key={sec.id}>
+                    <th scope="row">
+                      {sec.title}
+                      {sec.choiceGroups.length > 0 && <div className={s.meta}>Internal choice in {sec.choiceGroups.length} question{sec.choiceGroups.length === 1 ? '' : 's'}</div>}
                     </th>
-                    <th scope="col" className={s.num}>
-                      Marks
-                    </th>
+                    <td className={dataTableNum}>{sec.questionCount}</td>
+                    <td className={dataTableNum}>{sec.maxMarks}</td>
                   </tr>
-                </thead>
-                <tbody>
-                  {meta.sections.map((sec) => (
-                    <tr key={sec.id}>
-                      <th scope="row">
-                        {sec.title}
-                        {sec.choiceGroups.length > 0 && <div className={s.meta}>Internal choice in {sec.choiceGroups.length} question{sec.choiceGroups.length === 1 ? '' : 's'}</div>}
-                      </th>
-                      <td className={s.num}>{sec.questionCount}</td>
-                      <td className={s.num}>{sec.maxMarks}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
+                ))}
+              </tbody>
+            </DataTable>
           )}
           {meta.autoGradedCount < meta.questionCount && (
             <p className={s.muted}>

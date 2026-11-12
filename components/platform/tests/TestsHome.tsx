@@ -1,24 +1,40 @@
 'use client';
 
 /**
- * /tests — the test series catalogue (ARCHITECTURE §3.1: public list, login to start). Pick a board and
- * class (defaults: the student's profile), then a subject; plus the custom builder, live mocks and your
- * recent attempts. Subjects come from the public catalog API. Subjects that really have tests come first, with
- * a badge that says what is there ("Full series" only with a full mock paper, else the chapter-test count); the
- * rest sit under a collapsed "More subjects: coming soon" (the class page's rule, Lead review 2026-10-28).
- * "Has tests" = a subject with learning content (the daily-challenge list, as on the class page) whose
- * GET /v1/test-series has at least one test. If that cannot be told, every subject is listed without badges.
+ * /tests — the test series catalogue (ARCHITECTURE §3.1: public list, login to start; design language v3, ADR-032 §10
+ * "Tests hub"). The page's header (title, date, Build your own test) is server-rendered; this client part shows:
+ * - Upcoming live mocks (GET /v1/live-events, open phases only) as a Timeline in the rail (first on phones; hidden
+ *   when there are none);
+ * - "Your subjects with tests": pick a board and class (defaults: the student's profile), then a subject card.
+ *   Subjects come from the public catalog API. Subjects that really have tests come first, with a pill that says what
+ *   is there ("Full series" only with a full mock paper, else the chapter-test count); the rest sit under a collapsed
+ *   "More subjects: coming soon" (the class page's rule, Lead review 2026-10-28). "Has tests" = a subject with
+ *   learning content (the daily-challenge list, as on the class page) whose GET /v1/test-series has at least one
+ *   test. If that cannot be told, every subject is listed without pills.
+ * - Recent attempts (members) as a DataTable: resume or see the result.
+ * Tests are free: no prices, locks or credits anywhere here.
  */
 import Link from 'next/link';
 import { useEffect, useId, useState } from 'react';
-import type { CatalogSubject, CatalogSubjects, MyAttempt, TestSeries } from '@/platform/shared/api-client';
-import { Badge, EmptyState, Skeleton } from '@/components/platform/ui/kit/Display';
+import type { CatalogSubject, CatalogSubjects, LiveEvent, MyAttempt, TestSeries } from '@/platform/shared/api-client';
+import { EmptyState, SkeletonCard } from '@/components/platform/ui/kit/Display';
 import { Icon } from '@/components/platform/ui/kit/Icon';
+import { DataTable, dataTableNum, StatusPill, Timeline } from '@/components/platform/ui/kit/Lists';
+import { CardGrid, PageColumns, PageSection } from '@/components/platform/ui/kit/Page';
+import { RailCard } from '@/components/platform/ui/kit/Rail';
+import { SubjectCard } from '@/components/platform/ui/kit/Tiles';
+import { subjectTint } from '@/components/platform/ui/kit/tints';
+import { SubjectGlyph } from '@/components/platform/ui/art/SubjectGlyph';
 import { useSession } from '../auth/SessionProvider';
 import { fetchContentSubjects } from '../learn/content-subjects';
+import { subjectStyle } from '../learn/subject-style';
 import { api } from '../lib/api-browser';
 import { BOARDS, BOARD_NAMES, CLASS_LEVELS, examLabel, subjectSlug, type BoardSlug } from '../lib/catalog';
-import { attemptPath, resultPath, scoreText } from './player-model';
+import { useStage } from '../shell/StageProvider';
+import { liveEventItem, upcomingLive } from './live-timeline';
+import { attemptRow } from './player-model';
+
+export { attemptRow };
 import s from './tests.module.css';
 import c from '../learn/course.module.css';
 
@@ -51,6 +67,14 @@ export function seriesBadge(sum: SeriesSummary | undefined): string | null {
   if (sum.fullPapers > 0) return 'Full series';
   if (sum.chapterTests > 0) return `${sum.chapterTests} chapter ${sum.chapterTests === 1 ? 'test' : 'tests'}`;
   return `${sum.total} ${sum.total === 1 ? 'test' : 'tests'}`;
+}
+
+/** The line under a subject's name on the hub: how many tests, and that they are free (pure; tested). */
+export function seriesMeta(sum: SeriesSummary | undefined): string {
+  if (!sum || sum.total === 0) return 'Coming soon';
+  const tests = `${sum.total.toLocaleString('en-IN')} ${sum.total === 1 ? 'test' : 'tests'}`;
+  if (sum.fullPapers > 0) return `${tests} · ${sum.fullPapers} full ${sum.fullPapers === 1 ? 'paper' : 'papers'}`;
+  return `${tests} · free`;
 }
 
 /** Subjects with tests (in catalog order) and the rest; `ready` is null when it cannot be told. */
@@ -90,29 +114,103 @@ function useSeriesSummaries(board: BoardSlug, classLevel: number): Map<string, S
   return result?.key === key ? result.value : 'loading';
 }
 
-function SubjectCards({ subjects, board, classLevel, summaries, testId }: { subjects: readonly CatalogSubject[]; board: BoardSlug; classLevel: number; summaries: ReadonlyMap<string, SeriesSummary> | null; testId?: string }) {
+function SubjectCards({
+  subjects,
+  board,
+  classLevel,
+  summaries,
+  plain,
+  soon,
+  testId,
+  label,
+}: {
+  subjects: readonly CatalogSubject[];
+  board: BoardSlug;
+  classLevel: number;
+  summaries: ReadonlyMap<string, SeriesSummary> | null;
+  plain?: boolean;
+  /** The "coming soon" group: no series yet. */
+  soon?: boolean;
+  testId?: string;
+  label: string;
+}) {
   return (
-    <ul className={s.cards} data-testid={testId}>
-      {subjects.map((sub) => {
-        const badge = seriesBadge(summaries?.get(sub.id));
-        return (
-          <li key={sub.id}>
-            <Link href={seriesPath(board, classLevel, sub.id)} className={s.linkCard} lang={sub.language === 'hi' ? 'hi' : undefined} data-has-tests={badge ? 'true' : undefined}>
-              <span className={s.linkTitle}>{sub.name}</span>
-              <span className={s.meta}>
-                {examLabel(board, classLevel)} Class {classLevel}
-                {badge && (
-                  <>
-                    {' '}
-                    <Badge tone="accent">{badge}</Badge>
-                  </>
-                )}
-              </span>
-            </Link>
-          </li>
-        );
-      })}
-    </ul>
+    <div data-testid={testId}>
+      <CardGrid label={label}>
+        {subjects.map((sub) => {
+          const sum = summaries?.get(sub.id);
+          const badge = seriesBadge(sum);
+          const st = subjectStyle(sub.id, sub.name, sub.language);
+          return (
+            // data-has-tests marks the subjects with a real series (review.spec); the card itself is one link.
+            <li key={sub.id} className={s.gridItem} data-has-tests={badge ? 'true' : undefined}>
+              <SubjectCard
+                listItem={false}
+                href={seriesPath(board, classLevel, sub.id)}
+                title={sub.name}
+                lang={sub.language === 'hi' ? 'hi' : undefined}
+                meta={summaries ? seriesMeta(sum) : soon ? 'Coming soon' : `${examLabel(board, classLevel)} Class ${classLevel}`}
+                tint={subjectTint(st.hue)}
+                art={<SubjectGlyph kind={st.art} size={28} />}
+                badge={badge ? <StatusPill tone="success">{badge}</StatusPill> : undefined}
+                variant={plain ? 'plain' : 'tinted'}
+              />
+            </li>
+          );
+        })}
+      </CardGrid>
+    </div>
+  );
+}
+
+function RecentAttempts({ attempts }: { attempts: MyAttempt[] | null }) {
+  const { pick } = useStage();
+  if (attempts === null) {
+    return (
+      <div aria-busy="true" aria-label="Loading your attempts">
+        <SkeletonCard lines={3} />
+      </div>
+    );
+  }
+  if (attempts.length === 0) {
+    return (
+      <EmptyState title={pick({ junior: 'Nothing here yet', middle: 'No tests yet', senior: 'No attempts yet' })} icon="clock" tint="pink" compact>
+        {pick({ junior: 'Your first test will show up here.', middle: 'Your scores appear here.', senior: 'Scores and time taken appear here.' })}
+      </EmptyState>
+    );
+  }
+  return (
+    <DataTable caption="Recent attempts" hideCaption>
+      <thead>
+        <tr>
+          <th scope="col">Test</th>
+          <th scope="col">Date</th>
+          <th scope="col" className={dataTableNum}>
+            Score
+          </th>
+          <th scope="col">Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        {attempts.map((a) => {
+          const r = attemptRow(a);
+          return (
+            <tr key={a.id} data-testid="recent-attempt">
+              <th scope="row">
+                <Link href={r.href} className={s.tableLink}>
+                  {a.title}
+                </Link>
+              </th>
+              <td className={s.nowrap}>{r.date}</td>
+              <td className={dataTableNum}>{r.score}</td>
+              <td>
+                <StatusPill tone={r.tone}>{r.status}</StatusPill>
+              </td>
+            </tr>
+          );
+        })}
+      </tbody>
+    </DataTable>
   );
 }
 
@@ -125,6 +223,7 @@ export function TestsHome() {
   const [subjects, setSubjects] = useState<CatalogSubjects | null>(null);
   const [error, setError] = useState(false);
   const [attempts, setAttempts] = useState<MyAttempt[] | null>(null);
+  const [live, setLive] = useState<LiveEvent[] | null>(null);
   const summaries = useSeriesSummaries(board, classLevel);
 
   const user = state.status === 'member' ? state.user : null;
@@ -148,6 +247,20 @@ export function TestsHome() {
     };
   }, [board, classLevel]);
 
+  // Upcoming live mocks (members get their registration); after the session is known so it is fetched once.
+  const sessionKnown = state.status !== 'loading';
+  useEffect(() => {
+    if (!sessionKnown) return;
+    let alive = true;
+    api
+      .get('/v1/live-events')
+      .then((r) => alive && setLive(upcomingLive(r.events)))
+      .catch(() => alive && setLive([]));
+    return () => {
+      alive = false;
+    };
+  }, [sessionKnown, user?.id]);
+
   useEffect(() => {
     if (!user) return;
     let alive = true;
@@ -160,53 +273,23 @@ export function TestsHome() {
     };
   }, [user]);
 
+  const rail =
+    live && live.length > 0 ? (
+      <RailCard id="live-title" title="Upcoming live mocks" action={{ href: '/leaderboard', label: 'Ranks' }} data-testid="hub-live-mocks">
+        <p className={s.railNote}>Free All-India mocks in board pattern, ranked when they close.</p>
+        <Timeline label="Upcoming live mocks" items={live.map(liveEventItem)} />
+      </RailCard>
+    ) : undefined;
+
   return (
-    <div className={s.stack}>
-      <ul className={s.cards}>
-        <li>
-          <Link href="/tests/builder" className={s.linkCard}>
-            <span className={s.linkTitle}>
-              <Icon name="plus" size={18} /> Build your own test
-            </span>
-            <span className={s.meta}>Pick chapters and question types. Free.</span>
-          </Link>
-        </li>
-        <li>
-          <Link href="/leaderboard" className={s.linkCard}>
-            <span className={s.linkTitle}>
-              <Icon name="trophy" size={18} /> Leaderboards
-            </span>
-            <span className={s.meta}>All-India mock ranks and weekly leagues.</span>
-          </Link>
-        </li>
-      </ul>
-
-      {attempts && attempts.length > 0 && (
-        <section aria-labelledby="recent-title">
-          <h2 id="recent-title" className={s.sectionHeading}>
-            Your recent tests
-          </h2>
-          <ul className={s.cards}>
-            {attempts.map((a) => {
-              const done = a.status === 'submitted' || a.status === 'auto_submitted';
-              return (
-                <li key={a.id}>
-                  <Link href={done ? resultPath(a.id) : attemptPath(a.id)} className={s.linkCard}>
-                    <span className={s.linkTitle}>{a.title}</span>
-                    <span className={s.meta}>{done ? `Score ${scoreText(a.score)} / ${scoreText(a.maxScore)}` : 'In progress: continue'}</span>
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-        </section>
-      )}
-
-      <section aria-labelledby="pick-title">
-        <h2 id="pick-title" className={s.sectionHeading}>
-          Find your test series
-        </h2>
-        <div className={s.pickers}>
+    <PageColumns rail={rail} railLabel="Upcoming live mocks" railFirstOnPhones>
+      <PageSection
+        id="subjects-title"
+        title={user ? 'Your subjects with tests' : 'Subjects with tests'}
+        description="Chapter tests, unit tests and full papers in board pattern."
+        data-testid="hub-subjects"
+      >
+        <div className={s.pickers} role="group" aria-label="Board and class">
           <label className={s.field} htmlFor={boardId}>
             Board
             <select id={boardId} className={s.select} value={board} onChange={(e) => setBoard(e.target.value as BoardSlug)}>
@@ -220,47 +303,50 @@ export function TestsHome() {
           <label className={s.field} htmlFor={classId}>
             Class
             <select id={classId} className={s.select} value={classLevel} onChange={(e) => setClassLevel(Number(e.target.value))}>
-              {CLASS_LEVELS.map((c) => (
-                <option key={c} value={c}>
-                  Class {c} ({examLabel(board, c)})
+              {CLASS_LEVELS.map((cl) => (
+                <option key={cl} value={cl}>
+                  Class {cl} ({examLabel(board, cl)})
                 </option>
               ))}
             </select>
           </label>
         </div>
-      </section>
 
-      {error && (
-        <EmptyState title="We could not load the subjects" icon="alert" headingLevel="h3">
-          Check your connection and try again.
-        </EmptyState>
+        {error && (
+          <EmptyState title="We could not load the subjects" icon="alert" tint="red" compact>
+            Check your connection and try again.
+          </EmptyState>
+        )}
+        {(!subjects || summaries === 'loading') && !error && (
+          <div aria-busy="true" aria-label="Loading subjects" className={s.skeletonGrid}>
+            <SkeletonCard thumb lines={2} />
+            <SkeletonCard thumb lines={2} />
+            <SkeletonCard thumb lines={2} />
+          </div>
+        )}
+        {subjects && subjects.subjects.length === 0 && (
+          <EmptyState title="No subjects yet" icon="book" tint="neutral" compact>
+            This class is coming soon.
+          </EmptyState>
+        )}
+        {subjects && summaries !== 'loading' && subjects.subjects.length > 0 && <SubjectGroups subjects={subjects.subjects} board={board} classLevel={classLevel} summaries={summaries} />}
+      </PageSection>
+
+      {user && (
+        <PageSection id="recent-title" title="Recent attempts" action={attempts && attempts.length > 0 ? { href: '/me#attempts', label: 'See all' } : undefined} data-testid="recent-attempts">
+          <RecentAttempts attempts={attempts} />
+        </PageSection>
       )}
-      {(!subjects || summaries === 'loading') && !error && (
-        <div aria-busy="true" aria-label="Loading subjects" className={s.loading}>
-          <Skeleton lines={3} />
-        </div>
-      )}
-      {subjects && subjects.subjects.length === 0 && (
-        <EmptyState title="No subjects yet" headingLevel="h3">
-          This class is coming soon.
-        </EmptyState>
-      )}
-      {subjects && summaries !== 'loading' && subjects.subjects.length > 0 && <SubjectGroups subjects={subjects.subjects} board={board} classLevel={classLevel} summaries={summaries} />}
-    </div>
+    </PageColumns>
   );
 }
 
 function SubjectGroups({ subjects, board, classLevel, summaries }: { subjects: readonly CatalogSubject[]; board: BoardSlug; classLevel: number; summaries: Map<string, SeriesSummary> | null }) {
   const { ready, rest } = splitBySeries(subjects, summaries);
-  if (!ready) return <SubjectCards subjects={rest} board={board} classLevel={classLevel} summaries={summaries} testId="subject-list" />;
+  if (!ready) return <SubjectCards subjects={rest} board={board} classLevel={classLevel} summaries={summaries} testId="subject-list" label="Subjects" plain={rest.length > 8} />;
   return (
     <>
-      <section aria-labelledby="ready-tests-title">
-        <h2 id="ready-tests-title" className={s.sectionHeading}>
-          Ready to take <span className={s.countNote}>{ready.length}</span>
-        </h2>
-        <SubjectCards subjects={ready} board={board} classLevel={classLevel} summaries={summaries} testId="subject-list" />
-      </section>
+      <SubjectCards subjects={ready} board={board} classLevel={classLevel} summaries={summaries} testId="subject-list" label="Subjects with tests" />
       {rest.length > 0 && (
         <details className={c.moreSubjects} data-testid="more-subjects">
           <summary>
@@ -271,7 +357,7 @@ function SubjectGroups({ subjects, board, classLevel, summaries }: { subjects: r
           </summary>
           <div className={c.moreBody}>
             <p className={c.soonNote}>We are writing tests for these subjects. Their series pages show what is planned.</p>
-            <SubjectCards subjects={rest} board={board} classLevel={classLevel} summaries={null} />
+            <SubjectCards subjects={rest} board={board} classLevel={classLevel} summaries={null} label="Subjects coming soon" plain soon />
           </div>
         </details>
       )}
