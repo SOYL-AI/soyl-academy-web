@@ -8,7 +8,7 @@ export interface Coupon {
   needsFriendName?: boolean;
 }
 
-/** The only accepted code, during the Diwali offer and after it (owner, 8 Nov 2026). */
+/** The only accepted code, during the early-bird offer and after it (owner, 8 Nov 2026). */
 const COUPONS: Record<string, Omit<Coupon, 'code'>> = {
   [FRIEND_CODE]: {
     discount: FRIEND_DISCOUNT,
@@ -43,7 +43,7 @@ export interface Quote {
 
 /**
  * The one pricing rule, shared by the form (display) and the payment API (charge):
- * the offer in force at `now` (Diwali early-bird or standard), less FRIEND500 when a friend's
+ * the offer in force at `now` (Children’s Day early-bird or standard), less FRIEND500 when a friend's
  * name is given. The payment API always prices the order by the server clock.
  */
 export function quote(raw: string | undefined | null, friendName?: string | null, now: Date = today()): Quote {

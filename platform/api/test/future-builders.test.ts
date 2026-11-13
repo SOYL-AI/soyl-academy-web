@@ -196,7 +196,7 @@ describe('registration ingest', () => {
       'ESP32-C3',
       '+91 70225 09965',
       'https://www.soylai.com/refund-policy',
-      'Diwali 2026 offer, code FRIEND500',
+      'Early-bird offer, code FRIEND500',
     ])
       expect(m.text, s).toContain(s);
     // HTML: every value escaped, the brand, the links.

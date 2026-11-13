@@ -10,7 +10,7 @@ import { StructuredData } from '@/components/seo/StructuredData';
 import { PriceCard, StatusCard } from '@/components/future-builders/Cards';
 import { Curriculum } from '@/components/future-builders/Curriculum';
 import { CtaTracker } from '@/components/future-builders/CtaTracker';
-import { DiwaliOfferBand } from '@/components/future-builders/Diwali';
+import { OfferBand } from '@/components/future-builders/OfferBand';
 import { StickyCta } from '@/components/future-builders/StickyCta';
 import { getFutureBuildersFaqs } from '@/content/future-builders-faqs';
 import {
@@ -41,7 +41,7 @@ export const metadata = createMetadata({
   keywords: ['summer coding camp for kids', 'online summer camp India', 'robotics for students', 'AI course for teenagers', 'IoT for grades 7 to 12', 'entrepreneurship for students', 'Future Builders SOYL'],
 });
 
-// Registration state and the offer come from the date; re-check every 5 minutes so the Diwali
+// Registration state and the offer come from the date; re-check every 5 minutes so the offer
 // price and theme go within minutes of the offer's end (the payment API prices by its own clock).
 export const revalidate = 300;
 
@@ -71,7 +71,7 @@ const SKILLS = ['Python', 'APIs', 'SQLite', 'Machine learning', 'Image recogniti
  *   open / closing-soon → pay (Razorpay, verified on the server) or request a call
  *   upcoming            → "notify me when registration opens" or request a call
  *   waitlist            → join the waitlist or request a call
- * and two offers by date: the Diwali early-bird (with its theme, until 15 Nov 2026 23:59 IST), then
+ * and two offers by date: the early-bird (now the Children’s Day offer, with its theme, until 20 Nov 2026 23:59 IST), then
  * the standard fee. Nothing is stated unless it is in the config: no invented dates, timetable,
  * seat counts, hours or proof.
  */
@@ -82,7 +82,7 @@ export default function FutureBuildersPage() {
   const upcoming = camp ? null : getUpcomingCohort(now);
   const shown = camp ?? upcoming;
   const offer = getActiveOffer(now);
-  const diwali = Boolean(camp) && offer.theme === 'diwali';
+  const festive = Boolean(camp) && offer.theme === 'festive';
   const preview = previewNow();
   // eslint-disable-next-line react-hooks/purity -- dev preview only: aligns the countdown with COHORT_PREVIEW_DATE
   const offsetMs = preview ? preview.getTime() - Date.now() : undefined;
@@ -164,7 +164,7 @@ export default function FutureBuildersPage() {
       />
       <CtaTracker state={state} />
 
-      {diwali && <DiwaliOfferBand offer={offer} listPrice={LIST_PRICE} nextPrice={STANDARD_OFFER.price} offsetMs={offsetMs} />}
+      {festive && <OfferBand offer={offer} listPrice={LIST_PRICE} nextPrice={STANDARD_OFFER.price} offsetMs={offsetMs} />}
 
       <PageHero
         tone="yellow"
@@ -354,7 +354,7 @@ export default function FutureBuildersPage() {
                 <h2 className="t-headline">You both save ₹{FRIEND_DISCOUNT}.</h2>
                 <p className="mt-4 max-w-[52ch] text-ink">
                   Projects are built in teams of 3–4, so it’s better with a friend. Use code <strong className="rounded bg-ink px-1.5 py-0.5 font-mono text-[15px] text-white">{FRIEND_CODE}</strong> at checkout with your friend’s name
-                  {diwali ? `: ${rupees(offer.price - FRIEND_DISCOUNT)} instead of ${price} during the ${offer.name} offer` : ''}. Your friend gets ₹{FRIEND_DISCOUNT} too.
+                  {festive ? `: ${rupees(offer.price - FRIEND_DISCOUNT)} instead of ${price} during the ${offer.name} offer` : ''}. Your friend gets ₹{FRIEND_DISCOUNT} too.
                 </p>
               </div>
               <div className="col-span-12 flex flex-col gap-3 lg:col-span-4">
@@ -436,7 +436,7 @@ export default function FutureBuildersPage() {
           <div className="col-span-12 lg:col-span-4" data-reveal style={{ '--d': '120ms' } as React.CSSProperties}>
             <p className="t-lead max-w-[40ch] text-ink">
               {camp
-                ? `Registration for the ${camp.name} is open until ${formatCohortDate(camp.registrationCloses, true)}.${diwali ? ` The ${offer.name} price of ${price} ends ${offer.endsLabel}.` : ''}`
+                ? `Registration for the ${camp.name} is open until ${formatCohortDate(camp.registrationCloses, true)}.${festive ? ` The ${offer.name} price of ${price} ends ${offer.endsLabel}.` : ''}`
                 : upcoming
                   ? `Registration for the ${upcoming.name} opens ${upcoming.registrationOpensLabel}. Leave your details and we’ll tell you the day it does.`
                   : 'Dates for the next camp are being set. Join the waitlist to hear them first, or talk to us now.'}
@@ -456,8 +456,8 @@ export default function FutureBuildersPage() {
       <StickyCta
         line={
           camp
-            ? diwali
-              ? `${price} (${rupees(LIST_PRICE)}) · Diwali offer ends ${offer.endsLabel}`
+            ? festive
+              ? `${price} (${rupees(LIST_PRICE)}) · ${offer.label ?? offer.name} ends ${offer.endsLabel}`
               : `${price} · ${camp.months} summer camp`
             : upcoming
               ? `Opens ${upcoming.registrationOpensLabel}`

@@ -11,7 +11,7 @@ export function FutureBuildersFeature({ state }: { state: CohortState }) {
   const open = getOpenCohort(now);
   const upcoming = getUpcomingCohort(now);
   const offer = getActiveOffer(now);
-  const fee = offer.theme === 'diwali' ? `${offer.name}: ${rupees(offer.price)} (list ${rupees(LIST_PRICE)}) until ${offer.endsLabel}.` : `Fee ${rupees(offer.price)} (list ${rupees(LIST_PRICE)}).`;
+  const fee = offer.theme === 'festive' ? `${offer.name}: ${rupees(offer.price)} (list ${rupees(LIST_PRICE)}) until ${offer.endsLabel}.` : `Fee ${rupees(offer.price)} (list ${rupees(LIST_PRICE)}).`;
   const status = open
     ? `${open.name}, ${open.months}: registration ${state === 'closing-soon' ? 'closes' : 'open until'} ${formatCohortDate(open.registrationCloses, true)}. ${fee}`
     : upcoming

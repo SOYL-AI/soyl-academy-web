@@ -10,7 +10,7 @@ import {
   type Offer,
 } from '@/content/future-builders';
 import { cn } from '@/lib/utils';
-import styles from './diwali.module.css';
+import styles from './offer.module.css';
 
 function Facts({ rows }: { rows: [string, string][] }) {
   return (
@@ -55,7 +55,7 @@ interface StatusCardProps {
 /** Hero aside: where registration stands, when the camp runs and the fee. */
 export function StatusCard({ state, camp, upcoming, offer, listPrice }: StatusCardProps) {
   const shown = camp ?? upcoming;
-  const diwali = offer.theme === 'diwali' && !!camp;
+  const festive = offer.theme === 'festive' && !!camp;
 
   if (!shown) {
     return (
@@ -78,7 +78,7 @@ export function StatusCard({ state, camp, upcoming, offer, listPrice }: StatusCa
 
   const closing = state === 'closing-soon';
   return (
-    <div className={cn('module p-6 shadow-[0_30px_60px_-40px_rgba(20,20,20,0.4)] md:p-8', diwali && styles.cardAccent)}>
+    <div className={cn('module p-6 shadow-[0_30px_60px_-40px_rgba(20,20,20,0.4)] md:p-8', festive && styles.cardAccent)}>
       <p className="t-eyebrow inline-flex items-center gap-2.5 rounded-full bg-highlighter px-3.5 py-1.5 text-ink">
         <span aria-hidden="true" className="h-2 w-2 rounded-full bg-red-pen" />
         {camp ? (closing ? 'Registration closing soon' : 'Registration open') : 'Opening soon'}
@@ -97,10 +97,10 @@ export function StatusCard({ state, camp, upcoming, offer, listPrice }: StatusCa
       />
       <div className="mt-5 border-t border-rule pt-5">
         <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-2">
-          <span className="t-small text-muted">{diwali ? `${offer.name}, kit included` : 'The fee, kit included'}</span>
+          <span className="t-small text-muted">{festive ? `${offer.name}, kit included` : 'The fee, kit included'}</span>
           <PriceLine list={listPrice} price={offer.price} />
         </div>
-        {diwali && offer.endsLabel && (
+        {festive && offer.endsLabel && (
           <p className="t-small mt-2 text-right text-muted">
             Until {offer.endsLabel}; {rupees(STANDARD_OFFER.price)} after that.
           </p>
@@ -144,11 +144,11 @@ export function PriceCard({
   className?: string;
 }) {
   const open = mode === 'open';
-  const diwali = open && offer.theme === 'diwali';
+  const festive = open && offer.theme === 'festive';
   return (
-    <div className={cn('tri-top relative overflow-hidden rounded-[var(--radius-md)] border border-rule bg-white p-6 pt-8 md:p-8 md:pt-10', diwali && styles.cardAccent, className)}>
+    <div className={cn('tri-top relative overflow-hidden rounded-[var(--radius-md)] border border-rule bg-white p-6 pt-8 md:p-8 md:pt-10', festive && styles.cardAccent, className)}>
       <p className="t-eyebrow text-muted">{mode === 'waitlist' ? 'The last fee' : `The fee · ${campName}`}</p>
-      {diwali && (
+      {festive && (
         <p className={cn('t-small mt-3 inline-flex items-center gap-2 rounded-full px-3 py-1 font-semibold', styles.chip)}>
           {offer.name} · until {offer.endsLabel}
         </p>
@@ -157,7 +157,7 @@ export function PriceCard({
       <p className="mt-2 text-muted">One payment, everything included.</p>
       <p className="t-small mt-3 text-muted">
         {open
-          ? `This is the full amount charged at checkout: nothing is added for the kit or delivery.${diwali ? ` From the end of the offer the fee is ${rupees(STANDARD_OFFER.price)}.` : ''}`
+          ? `This is the full amount charged at checkout: nothing is added for the kit or delivery.${festive ? ` From the end of the offer the fee is ${rupees(STANDARD_OFFER.price)}.` : ''}`
           : mode === 'upcoming'
             ? `Confirmed when registration opens ${opensLabel}. Asking to be notified is free and commits you to nothing.`
             : 'The next camp’s fee is confirmed when its dates are announced. Joining the waitlist is free and commits you to nothing.'}

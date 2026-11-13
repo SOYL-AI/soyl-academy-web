@@ -59,7 +59,7 @@ export function rupees(paise: number): string {
   return `₹${new Intl.NumberFormat('en-IN', { minimumFractionDigits: Number.isInteger(r) ? 0 : 2, maximumFractionDigits: 2 }).format(r)}`;
 }
 
-export const OFFER_LABELS: Record<string, string> = { 'diwali-2026': 'Diwali 2026', standard: 'Standard' };
+export const OFFER_LABELS: Record<string, string> = { 'diwali-2026': 'Early-bird', standard: 'Standard' };
 export const KIND_LABELS: Record<string, string> = { callback: 'Call back', notify: 'Notify me', waitlist: 'Waitlist' };
 
 export function emailStatusTone(status: FbEnrollment['emailStatus']): 'success' | 'warning' | 'danger' {

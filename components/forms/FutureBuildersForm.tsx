@@ -196,7 +196,7 @@ export function FutureBuildersForm({ closesOn, campName, sourceTag, listPrice, o
       const order = (await res.json().catch(() => ({ error: 'Payment couldn’t start. Please try again.' }))) as OrderResponse;
       if (!res.ok || order.error) throw new Error(order.error || 'Payment couldn’t start. Please try again.');
 
-      // The offer changed since the page loaded (e.g. the Diwali price ended): show the new total first.
+      // The offer changed since the page loaded (e.g. the early-bird price ended): show the new total first.
       if (order.amount !== price * 100) {
         const newBase = order.amount / 100 + discount;
         setBasePrice(newBase);

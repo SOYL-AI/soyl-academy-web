@@ -35,6 +35,7 @@ export const fbCohort = (slug: string): FbCohort => FB_COHORTS[slug] ?? FB_DEFAU
 
 /** Offer labels for emails, admin and CSV. */
 export const FB_OFFER_LABELS: Readonly<Record<string, string>> = {
-  'diwali-2026': 'Diwali 2026 offer',
+  // The early-bird price: the Diwali offer, then the Children's Day offer (D-054); one slug for both.
+  'diwali-2026': 'Early-bird offer',
   standard: 'Standard',
 };

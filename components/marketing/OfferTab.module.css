@@ -1,5 +1,5 @@
 /*
- * Homepage "Diwali offer" side tab (owner, 8 Nov 2026). Scoped CSS module; no global styles.
+ * Homepage offer side tab (owner, 8 Nov 2026; Children’s Day offer from 13 Nov). Scoped CSS module; no global styles.
  * Phones: a compact pill bottom-right, above the safe area, below the cookie bar (z-50) and the
  * mobile menu (z-40). From md: a vertical tab on the right edge, centred vertically.
  */
@@ -68,6 +68,8 @@
   }
   .link {
     writing-mode: vertical-rl;
+    /* Every glyph turns with the line, so punctuation such as the apostrophe in "Children’s" reads normally. */
+    text-orientation: sideways;
     transform: rotate(180deg);
     padding: 14px 10px;
     min-height: 0;
@@ -76,7 +78,7 @@
     font-size: 15px;
     letter-spacing: 0.01em;
   }
-  .diya {
+  .icon {
     transform: rotate(180deg);
   }
   .close {

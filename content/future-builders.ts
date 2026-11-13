@@ -9,10 +9,12 @@
  *   curriculum as before. Never call it a "12-week cohort"; state no cohort size or seat count,
  *   no session count and no contact hours. Timing copy: "April–May 2027 · exact dates and
  *   timetable shared after registration".
- * - Prices in rupees only: list price ₹11,999 (shown struck through). Diwali early-bird ₹3,299
- *   until 15 Nov 2026, 23:59 IST; after that ₹9,999. Only FRIEND500 (₹500 off, with the friend's
- *   name) is accepted, during and after the offer.
+ * - Prices in rupees only: list price ₹11,999 (shown struck through). Early-bird ₹3,299, then
+ *   ₹9,999. Only FRIEND500 (₹500 off, with the friend's name) is accepted, during and after the offer.
  * - Registration is open from the relaunch until 31 Mar 2027, 23:59 IST.
+ *
+ * Owner decision, 13 Nov 2026 (D-054): the early-bird runs as the "Children's Day offer" (was the
+ * Diwali offer) until 20 Nov 2026, 23:59 IST. Same price, code and terms.
  *
  * Registration state is derived from the dates, so nothing goes stale:
  *   upcoming      → before `registrationOpens` (the page collects "notify me" sign-ups; payment is refused)
@@ -20,7 +22,7 @@
  *   closing-soon  → within CLOSING_SOON_DAYS of the close
  *   waitlist      → registration has closed (or no camp is set)
  *
- * The offer (Diwali early-bird or the standard fee) is derived from the date the same way.
+ * The offer (Children's Day early-bird or the standard fee) is derived from the date the same way.
  *
  * To run the next camp: replace CAMP with its facts (slug, months, registration window) and
  * add or replace the offers below. A camp can have month-level timing only; exact `dates` are
@@ -82,8 +84,8 @@ export type CohortState = 'open' | 'closing-soon' | 'upcoming' | 'waitlist';
  * COHORT_PREVIEW_DATE previews the site at that moment: a day ("2026-11-20", read as noon IST)
  * or a full timestamp ("2026-11-15T23:58:00+05:30"). It drives the camp state AND the offer,
  * in the pages and in the payment API alike.
- *   Diwali offer on:                 COHORT_PREVIEW_DATE=2026-11-10
- *   Diwali offer over (₹9,999):      COHORT_PREVIEW_DATE=2026-11-20
+ *   Children's Day offer on:         COHORT_PREVIEW_DATE=2026-11-14
+ *   Offer over (₹9,999):             COHORT_PREVIEW_DATE=2026-11-22
  *   Registration closed (waitlist):  COHORT_PREVIEW_DATE=2027-04-02
  */
 const DEV = process.env.NODE_ENV !== 'production';
@@ -139,43 +141,54 @@ export function formatCohortDate(iso: string, withYear = false): string {
 /** The list price, always shown struck through next to the price actually charged. */
 export const LIST_PRICE = 11999;
 
+/**
+ * The early-bird price keeps the slug `diwali-2026`: it is stored with each registration and the
+ * platform database only accepts 'diwali-2026' | 'standard'. Read it as "early-bird"; the name
+ * people see comes from `name` / `label`.
+ */
 export type OfferSlug = 'diwali-2026' | 'standard';
 
 export interface Offer {
   /** Sent to the platform with each registration. */
   slug: OfferSlug;
-  /** e.g. "Diwali early-bird". */
+  /** e.g. "Children's Day early-bird" ("during the … offer", "…, kit included"). */
   name: string;
+  /** Short badge text, e.g. "Children's Day offer" (homepage tab, sticky bar, ended note). */
+  label?: string;
+  /** Campaign key: analytics and the homepage tab's "dismissed" memory, so a new campaign shows again. */
+  campaign?: string;
   /** What is charged before any discount code, in rupees. */
   price: number;
   /** Exclusive end, ISO timestamp with offset. Absent = no end (the standard fee). */
   endsAt?: string;
-  /** The end in words, e.g. "15 Nov, 11:59 pm". */
+  /** The end in words, e.g. "20 Nov, 11:59 pm". */
   endsLabel?: string;
   /** Page theme while this offer runs. */
-  theme?: 'diwali';
+  theme?: 'festive';
 }
 
-/** Diwali early-bird: ₹3,299 until 15 Nov 2026, 23:59 IST (the offer ends at midnight IST). */
-export const DIWALI_OFFER: Offer = {
+/** Children's Day early-bird: ₹3,299 until 20 Nov 2026, 23:59 IST (the offer ends at midnight IST). */
+export const EARLY_BIRD_OFFER: Offer = {
   slug: 'diwali-2026',
-  name: 'Diwali early-bird',
+  name: 'Children’s Day early-bird',
+  label: 'Children’s Day offer',
+  campaign: 'childrens-day-2026',
   price: 3299,
-  endsAt: '2026-11-16T00:00:00+05:30',
-  endsLabel: '15 Nov, 11:59 pm',
-  theme: 'diwali',
+  endsAt: '2026-11-21T00:00:00+05:30',
+  endsLabel: '20 Nov, 11:59 pm',
+  theme: 'festive',
 };
 
-/** After the Diwali offer: ₹11,999 struck → ₹9,999, no theme. */
+/** After the early-bird: ₹11,999 struck → ₹9,999, no theme. */
 export const STANDARD_OFFER: Offer = {
   slug: 'standard',
   name: 'Summer camp fee',
   price: 9999,
 };
 
-/** The offer in force at `now`: Diwali until its end, then the standard fee. */
+/** The offer in force at `now`: the early-bird until its end, then the standard fee. */
 export function getActiveOffer(now: Date = today()): Offer {
-  return DIWALI_OFFER.endsAt && now.getTime() < ms(DIWALI_OFFER.endsAt) ? DIWALI_OFFER : STANDARD_OFFER;
+  return EARLY_BIRD_OFFER.endsAt && now.getTime() < ms(EARLY_BIRD_OFFER.endsAt) ? EARLY_BIRD_OFFER : STANDARD_OFFER;
 }
 
 /** "₹3,299" */

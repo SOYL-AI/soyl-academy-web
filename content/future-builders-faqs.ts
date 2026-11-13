@@ -28,7 +28,7 @@ export function getFutureBuildersFaqs(state: CohortState, now: Date = today()): 
   const upcoming = state === 'upcoming' ? getUpcomingCohort(now) : null;
   const shown = camp ?? upcoming;
   const offer = getActiveOffer(now);
-  const diwali = offer.theme === 'diwali';
+  const festive = offer.theme === 'festive';
 
   const faqs: (FaqItem | false)[] = [
     {
@@ -76,7 +76,7 @@ export function getFutureBuildersFaqs(state: CohortState, now: Date = today()): 
     {
       question: 'What does the fee cover?',
       answer: camp
-        ? `${diwali ? `The ${offer.name} fee is ${rupees(offer.price)} (list price ${rupees(LIST_PRICE)}) until ${offer.endsLabel} IST; after that it is ${rupees(STANDARD_OFFER.price)}.` : `The fee is ${rupees(offer.price)} (list price ${rupees(LIST_PRICE)}).`} It covers the live classes across all four modules, the recordings, and the hardware kit shipped free to your door. It is the full amount charged at checkout; nothing is added for the kit or delivery. Payment is handled securely by Razorpay, and we email your confirmation and receipt as soon as it is confirmed.`
+        ? `${festive ? `The ${offer.name} fee is ${rupees(offer.price)} (list price ${rupees(LIST_PRICE)}) until ${offer.endsLabel} IST; after that it is ${rupees(STANDARD_OFFER.price)}.` : `The fee is ${rupees(offer.price)} (list price ${rupees(LIST_PRICE)}).`} It covers the live classes across all four modules, the recordings, and the hardware kit shipped free to your door. It is the full amount charged at checkout; nothing is added for the kit or delivery. Payment is handled securely by Razorpay, and we email your confirmation and receipt as soon as it is confirmed.`
         : upcoming
           ? `The fee is confirmed when registration opens ${upcoming.registrationOpensLabel}. It covers the live classes, the recordings, and the hardware kit shipped free to your door. Asking to be notified is free and commits you to nothing.`
           : 'The fee for the next camp is confirmed when its dates are announced. It covers the live classes, the recordings, and the hardware kit shipped free to your door. Joining the waitlist is free.',
@@ -91,7 +91,7 @@ export function getFutureBuildersFaqs(state: CohortState, now: Date = today()): 
     },
     camp !== null && {
       question: 'Is there a discount for registering with a friend?',
-      answer: `Yes. If two friends register together, or your child was referred by someone already registered, use code ${FRIEND_CODE} at checkout and enter your friend’s name. You save ₹${FRIEND_DISCOUNT}${diwali ? ` (${rupees(offer.price - FRIEND_DISCOUNT)} during the ${offer.name} offer)` : ''}, and your friend gets ₹${FRIEND_DISCOUNT} too: as a discount if they have not paid yet, or as a refund if they already have. ${FRIEND_CODE} is the only discount code.`,
+      answer: `Yes. If two friends register together, or your child was referred by someone already registered, use code ${FRIEND_CODE} at checkout and enter your friend’s name. You save ₹${FRIEND_DISCOUNT}${festive ? ` (${rupees(offer.price - FRIEND_DISCOUNT)} during the ${offer.name} offer)` : ''}, and your friend gets ₹${FRIEND_DISCOUNT} too: as a discount if they have not paid yet, or as a refund if they already have. ${FRIEND_CODE} is the only discount code.`,
     },
     {
       question: 'I still have questions. How do I reach you?',

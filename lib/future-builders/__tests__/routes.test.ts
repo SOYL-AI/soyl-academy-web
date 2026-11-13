@@ -25,7 +25,7 @@ beforeEach(() => {
 afterEach(() => vi.unstubAllEnvs());
 
 describe('POST /api/razorpay (order)', () => {
-  it('prices a mock order server-side in development: Diwali ₹3,299, FRIEND500 ₹2,799', async () => {
+  it('prices a mock order server-side in development: early-bird ₹3,299, FRIEND500 ₹2,799', async () => {
     vi.stubEnv('COHORT_PREVIEW_DATE', '2026-11-10');
     const plain = await (await createOrder(post('/api/razorpay', REGISTRANT))).json();
     expect(plain).toMatchObject({ amount: 329900, currency: 'INR', offer: 'diwali-2026', mock: true, coupon: null });
@@ -37,8 +37,8 @@ describe('POST /api/razorpay (order)', () => {
     const tampered = await (await createOrder(post('/api/razorpay', { ...REGISTRANT, amount: 100 }))).json();
     expect(tampered.amount).toBe(329900);
   });
-  it('charges ₹9,999 after the Diwali offer', async () => {
-    vi.stubEnv('COHORT_PREVIEW_DATE', '2026-11-16T00:00:00+05:30');
+  it('charges ₹9,999 after the early-bird offer', async () => {
+    vi.stubEnv('COHORT_PREVIEW_DATE', '2026-11-21T00:00:00+05:30');
     expect(await (await createOrder(post('/api/razorpay', REGISTRANT))).json()).toMatchObject({ amount: 999900, offer: 'standard' });
   });
   it('refuses payment once registration has closed (409)', async () => {

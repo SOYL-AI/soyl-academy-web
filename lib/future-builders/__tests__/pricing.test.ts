@@ -1,7 +1,7 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import {
   CAMP,
-  DIWALI_OFFER,
+  EARLY_BIRD_OFFER,
   LIST_PRICE,
   STANDARD_OFFER,
   getActiveOffer,
@@ -16,35 +16,36 @@ import { findCoupon, priceFor, quote } from '../pricing';
 
 const at = (iso: string) => new Date(iso);
 const DIWALI_DAY = at('2026-11-10T12:00:00+05:30');
-const LAST_MINUTE = at('2026-11-15T23:59:00+05:30');
-const LAST_SECOND = at('2026-11-15T23:59:59.999+05:30');
-const MIDNIGHT = at('2026-11-16T00:00:00+05:30');
-const AFTER = at('2026-11-20T12:00:00+05:30');
+const LAST_MINUTE = at('2026-11-20T23:59:00+05:30');
+const LAST_SECOND = at('2026-11-20T23:59:59.999+05:30');
+const MIDNIGHT = at('2026-11-21T00:00:00+05:30');
+const AFTER = at('2026-11-22T12:00:00+05:30');
 
 describe('prices (owner, 8 Nov 2026)', () => {
-  it('are in rupees: list ₹11,999, Diwali ₹3,299, standard ₹9,999', () => {
+  it('are in rupees: list ₹11,999, early-bird ₹3,299, standard ₹9,999', () => {
     expect(LIST_PRICE).toBe(11999);
-    expect(DIWALI_OFFER.price).toBe(3299);
+    expect(EARLY_BIRD_OFFER.price).toBe(3299);
     expect(STANDARD_OFFER.price).toBe(9999);
     expect(rupees(LIST_PRICE)).toBe('₹11,999');
     expect(rupees(3299)).toBe('₹3,299');
   });
 });
 
-describe('getActiveOffer: Diwali until 15 Nov 2026 23:59 IST, then standard', () => {
-  it('is the Diwali offer during the offer, including its last minute and second', () => {
-    for (const now of [at('2026-11-08T00:00:00+05:30'), DIWALI_DAY, LAST_MINUTE, LAST_SECOND]) {
+describe('getActiveOffer: early-bird (Diwali, then Children’s Day) until 20 Nov 2026 23:59 IST, then standard', () => {
+  it('is the early-bird during the offer (Diwali days and Children’s Day alike), including its last minute and second', () => {
+    for (const now of [at('2026-11-08T00:00:00+05:30'), DIWALI_DAY, at('2026-11-14T12:00:00+05:30'), LAST_MINUTE, LAST_SECOND]) {
       expect(getActiveOffer(now).slug).toBe('diwali-2026');
     }
   });
-  it('is the standard fee from 16 Nov 00:00 IST (= 15 Nov 18:30 UTC)', () => {
+  it('is the standard fee from 21 Nov 00:00 IST (= 20 Nov 18:30 UTC)', () => {
     expect(getActiveOffer(MIDNIGHT).slug).toBe('standard');
-    expect(getActiveOffer(at('2026-11-15T18:30:00Z')).slug).toBe('standard');
-    expect(getActiveOffer(at('2026-11-15T18:29:59Z')).slug).toBe('diwali-2026');
+    expect(getActiveOffer(at('2026-11-20T18:30:00Z')).slug).toBe('standard');
+    expect(getActiveOffer(at('2026-11-20T18:29:59Z')).slug).toBe('diwali-2026');
     expect(getActiveOffer(AFTER)).toEqual(STANDARD_OFFER);
   });
-  it('only the Diwali offer carries the theme', () => {
-    expect(getActiveOffer(DIWALI_DAY).theme).toBe('diwali');
+  it('only the early-bird carries the theme, named for Children’s Day', () => {
+    expect(getActiveOffer(DIWALI_DAY).theme).toBe('festive');
+    expect(getActiveOffer(DIWALI_DAY)).toMatchObject({ name: 'Children’s Day early-bird', label: 'Children’s Day offer', campaign: 'childrens-day-2026', endsLabel: '20 Nov, 11:59 pm' });
     expect(getActiveOffer(AFTER).theme).toBeUndefined();
   });
 });
@@ -63,12 +64,12 @@ describe('codes: only FRIEND500', () => {
 });
 
 describe('quote / priceFor', () => {
-  it('Diwali: ₹3,299; with FRIEND500 and a friend’s name ₹2,799', () => {
+  it('early-bird: ₹3,299; with FRIEND500 and a friend’s name ₹2,799', () => {
     expect(priceFor(null, null, DIWALI_DAY)).toBe(3299);
     expect(priceFor('FRIEND500', 'Asha', DIWALI_DAY)).toBe(2799);
     expect(priceFor('friend500', 'Asha', LAST_MINUTE)).toBe(2799);
   });
-  it('after Diwali: ₹9,999; with FRIEND500 and a name ₹9,499', () => {
+  it('after the early-bird: ₹9,999; with FRIEND500 and a name ₹9,499', () => {
     expect(priceFor(undefined, undefined, MIDNIGHT)).toBe(9999);
     expect(priceFor('FRIEND500', 'Asha', AFTER)).toBe(9499);
   });

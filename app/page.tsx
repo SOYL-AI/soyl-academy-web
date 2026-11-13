@@ -9,7 +9,7 @@ import { Audiences } from '@/components/home/Audiences';
 import { FutureBuildersFeature } from '@/components/home/FutureBuildersFeature';
 import { JournalTeaser } from '@/components/home/JournalTeaser';
 import { FinalCta } from '@/components/home/FinalCta';
-import { DiwaliOfferTab } from '@/components/marketing/DiwaliOfferTab';
+import { OfferTab } from '@/components/marketing/OfferTab';
 import { Faq } from '@/components/seo/Faq';
 import { StructuredData } from '@/components/seo/StructuredData';
 import { homeFaqs } from '@/content/faqs';
@@ -47,9 +47,9 @@ export default function HomePage() {
         )}
       />
 
-      {/* Future Builders "Diwali offer" side tab: only while registration is open and the offer runs. */}
-      {openCohort && offer.theme === 'diwali' && offer.endsAt && (
-        <DiwaliOfferTab offerKey={offer.slug} price={rupees(offer.price)} listPrice={rupees(LIST_PRICE)} endsAt={offer.endsAt} offsetMs={offsetMs} />
+      {/* Future Builders offer side tab (now the Children’s Day offer): only while registration is open and the offer runs. */}
+      {openCohort && offer.theme === 'festive' && offer.endsAt && (
+        <OfferTab offerKey={offer.campaign ?? offer.slug} label={offer.label ?? offer.name} price={rupees(offer.price)} listPrice={rupees(LIST_PRICE)} endsAt={offer.endsAt} offsetMs={offsetMs} />
       )}
 
       <Hero />

@@ -115,7 +115,7 @@ describe('panel', () => {
     expect(rows[1]!.textContent).toContain('8 Nov 2026, 3:42 pm');
     expect(rows[1]!.textContent).toContain('+919876543210');
     expect(rows[1]!.textContent).toContain('₹4,999');
-    expect(rows[1]!.textContent).toContain('Diwali 2026');
+    expect(rows[1]!.textContent).toContain('Early-bird');
     expect(rows[1]!.textContent).toContain('pay_A1');
     expect(within(await screen.findByTestId('fb-enquiries')).getByText('Ravi Kumar')).toBeTruthy();
     expect(h.api.get).toHaveBeenCalledWith('/v1/admin/future-builders/enrollments', { query: { limit: 50 } });

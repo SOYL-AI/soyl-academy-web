@@ -1,5 +1,5 @@
 /*
- * Diwali early-bird theme for /future-builders only (owner, 8 Nov 2026). Scoped CSS module: nothing
+ * Early-bird offer theme for /future-builders only (owner, 8 Nov 2026; the Children’s Day offer from 13 Nov). Scoped CSS module: nothing
  * here reaches globals.css, the root layout or the Tailwind config. Shown only while the offer runs.
  * Palette: deep maroon ground, marigold and saffron accents, warm ivory text (all text pairs ≥ 7:1).
  * The site has no dark theme; colours are explicit so a forced dark UA theme can't wash them out.
@@ -126,42 +126,23 @@
   border-radius: 4px;
 }
 
-/* Diya: the flame glows and flickers softly; still for anyone who prefers reduced motion. */
-.diya {
+/* Kite: sways gently; still for anyone who prefers reduced motion. */
+.kite {
   overflow: visible;
+  transform-origin: 50% 30%;
+  animation: sway 3.2s ease-in-out infinite;
 }
-.flame {
-  transform-origin: 50% 100%;
-  transform-box: fill-box;
-  animation: flicker 2.8s ease-in-out infinite;
-}
-.halo {
-  animation: halo 2.8s ease-in-out infinite;
-}
-@keyframes flicker {
+@keyframes sway {
   0%,
   100% {
-    transform: scale(1, 1);
-  }
-  35% {
-    transform: scale(0.94, 1.06);
-  }
-  65% {
-    transform: scale(1.04, 0.97);
-  }
-}
-@keyframes halo {
-  0%,
-  100% {
-    opacity: 0.55;
+    transform: rotate(-5deg);
   }
   50% {
-    opacity: 0.8;
+    transform: rotate(5deg);
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  .flame,
-  .halo {
+  .kite {
     animation: none;
   }
   .cta {

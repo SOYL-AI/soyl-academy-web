@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
-import styles from './diwali.module.css';
+import styles from './offer.module.css';
 
 interface Left {
   days: number;
@@ -36,7 +36,7 @@ interface Props {
  * is not a live region, so nothing is announced unprompted. Renders nothing until mounted, so the
  * server HTML never disagrees with the client clock.
  */
-export function DiwaliCountdown({ endsAt, offsetMs = 0, endedText, className }: Props) {
+export function OfferCountdown({ endsAt, offsetMs = 0, endedText, className }: Props) {
   const endsAtMs = new Date(endsAt).getTime();
   const [left, setLeft] = useState<Left | null>(null);
 
