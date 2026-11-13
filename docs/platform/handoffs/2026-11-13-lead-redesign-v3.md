@@ -69,4 +69,4 @@ Screenshots (production builds, 360 / 1100 / 1280, light + dark), all under `doc
 ADR-032 (design language v3, sidebar shell, age stages; amends ADR-023 §a).
 
 ## Needs from owner
-- Plans: Pro and Board Exam Pass list "Weekly progress report for parents", which is not an AI feature. Should paid plans keep listing it? Config is unchanged until you decide.
+- None. Answered 2026-11-13: paid plans keep "Weekly progress report for parents" (D-053); config unchanged.
