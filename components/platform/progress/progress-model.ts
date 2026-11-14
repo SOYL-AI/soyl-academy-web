@@ -4,7 +4,9 @@
  * a stat with no data is hidden (an empty state explains it instead of a zero), trends are written in words, and no
  * "N of 7,537" denominators (totals over 1,000 are left out). Tested in __tests__/progress-model.test.ts.
  */
-import type { DashboardProfile, MyDashboard, SolvedByDifficulty, TestHistoryItem } from '@/platform/shared/api-client';
+import type { DashboardProfile, MyDashboard, MyPlayerCard, SolvedByDifficulty, SubjectMastery, TestHistoryItem } from '@/platform/shared/api-client';
+import { CARD_ATTRIBUTES, PLAYER_CARD } from '@/platform/shared/config/learning';
+import type { RadarAxis } from '@/components/platform/ui/kit/RadarChart';
 import type { IconName } from '@/components/platform/ui/kit/Icon';
 import type { StatTrend } from '@/components/platform/ui/kit/Stat';
 import type { StatusTone } from '@/components/platform/ui/kit/Lists';
@@ -186,4 +188,78 @@ export function focusMeta(c: MyDashboard['focus']['weakest'][number]): string {
   const acc = c.firstTryAccuracy === null ? null : Math.round(c.firstTryAccuracy * 100);
   const practised = c.practiceTotal > 0 && c.practiceTotal <= MAX_DENOMINATOR ? `${n(c.practiceAttempted)} of ${n(c.practiceTotal)} practised` : `${n(c.practiceAttempted)} practised`;
   return [c.subjectName, practised, acc !== null ? `${acc}% right first time` : null, c.chapterTestPct !== null ? `chapter test ${fmtPct(c.chapterTestPct)}` : null].filter(Boolean).join(' · ');
+}
+
+/* ── Player card radar and subject radar (progress radar, 2026-11-14) ─────────── */
+
+/** The card's scale: 40 at the centre, 99 on the outer ring; grid rings at 40/60/80/99 (40 is the centre). */
+export const CARD_RADAR = { min: PLAYER_CARD.floor, max: PLAYER_CARD.ceiling, rings: [PLAYER_CARD.floor, 60, 80, PLAYER_CARD.ceiling] } as const;
+
+/**
+ * A card is "rated" (numbers on the card and the radar) only when it is not provisional: before that the page shows
+ * the blank card and a dashed hexagon, never the floor numbers (PLAYER_CARD.provisional: 10 checked answers and 3
+ * active days in the window).
+ */
+export function isRatedCard(card: MyPlayerCard | null | undefined): card is MyPlayerCard {
+  return !!card && card.attributes.length > 0 && !card.provisional;
+}
+
+/**
+ * The card radar's axes. Rated: the card's own attributes in card order (Speed is left out until it has data, so the
+ * shape is a pentagon then; the caption says why). Unrated: all six attribute names (for the blank hexagon; the
+ * values are never shown).
+ */
+export function cardRadarAxes(card: MyPlayerCard | null | undefined): RadarAxis[] {
+  if (isRatedCard(card)) return card.attributes.map((a) => ({ key: a.key, label: a.label, value: a.value, max: CARD_RADAR.max }));
+  return CARD_ATTRIBUTES.map((key) => ({ key, label: PLAYER_CARD.attributes[key].label, value: CARD_RADAR.min, max: CARD_RADAR.max }));
+}
+
+/** The line under the card radar: the scale, and why Speed is missing when it is. */
+export function cardRadarCaption(card: MyPlayerCard): string {
+  const speed = card.attributes.some((a) => a.key === 'SPD') ? '' : ` Speed joins your card after ${PLAYER_CARD.attributes.SPD.minItems} timed test questions answered right.`;
+  return `The centre is ${CARD_RADAR.min} and the outer ring ${CARD_RADAR.max}.${speed}`;
+}
+
+/** The blank card's line before the first rating. */
+export const UNRATED_TITLE = `Solve ${PLAYER_CARD.provisional.minCheckedQuestions} questions to get rated`;
+
+/** What it takes to get rated (from config, so the copy follows the rule). */
+export function unratedText(): string {
+  const p = PLAYER_CARD.provisional;
+  return `Your card is rated once you have checked ${plural(p.minCheckedQuestions, 'practice answer')} and learned on ${plural(p.minActiveDays, 'different day')} in the last ${PLAYER_CARD.attributes.CON.windowDays / 7} weeks. Here is where each part stands:`;
+}
+
+/** The subject radar shows 3 to this many axes; more are counted in "+N more". */
+export const SUBJECT_RADAR_MAX = 8;
+/** Fewer subjects than this: a ranked bar list instead of a radar. */
+export const SUBJECT_RADAR_MIN = 3;
+
+export interface SubjectBarView {
+  subjectId: string;
+  name: string;
+  score: number;
+}
+
+export type SubjectRadarView =
+  | { kind: 'none' }
+  | { kind: 'bars'; bars: SubjectBarView[] }
+  | { kind: 'radar'; axes: RadarAxis[]; more: number };
+
+/**
+ * Mastery by subject (GET /v1/me/mastery `subjects`, score 0–100 over all chapters of the subject). Ranked by activity
+ * (chapters started, then score, then name), so the radar keeps the subjects the student actually works on: the top
+ * `SUBJECT_RADAR_MAX`, with the rest counted. Fewer than `SUBJECT_RADAR_MIN` subjects: bars, highest score first.
+ */
+export function subjectRadar(subjects: readonly SubjectMastery[]): SubjectRadarView {
+  const ranked = subjects
+    .filter((x) => x.chapterCount > 0)
+    .map((x) => ({ x, started: x.chapterCount - x.levels.not_started }))
+    .sort((a, b) => b.started - a.started || b.x.score - a.x.score || a.x.name.localeCompare(b.x.name))
+    .map(({ x }) => x);
+  if (ranked.length === 0) return { kind: 'none' };
+  if (ranked.length < SUBJECT_RADAR_MIN) {
+    return { kind: 'bars', bars: [...ranked].sort((a, b) => b.score - a.score || a.name.localeCompare(b.name)).map((x) => ({ subjectId: x.subjectId, name: x.name, score: Math.round(x.score) })) };
+  }
+  const shown = ranked.slice(0, SUBJECT_RADAR_MAX);
+  return { kind: 'radar', axes: shown.map((x) => ({ key: x.subjectId, label: x.name, value: Math.round(x.score), max: 100 })), more: ranked.length - shown.length };
 }

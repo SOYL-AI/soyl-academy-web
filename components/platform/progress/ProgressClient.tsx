@@ -7,10 +7,12 @@
  * Private data in the browser (ADR-010): GET /v1/me/dashboard (totals, difficulty, mastery, tests, focus, recent,
  * badges, weekly goal), /v1/me/mastery (per subject), /v1/me/activity (streak and calendar), /v1/me/card (player
  * card). Each block has a skeleton and its own empty state; a brand-new student sees what will appear, never zeros.
+ * The player card is the page's centrepiece (progress radar, 2026-11-14): the full card and its attribute radar at
+ * the top (`#card`, CardSection.tsx), and a radar of mastery by subject above the Mastery list.
  */
 import Link from 'next/link';
 import { useState, type ReactNode } from 'react';
-import type { MyDashboard, WeeklyGoal } from '@/platform/shared/api-client';
+import type { MyDashboard, MyMastery, WeeklyGoal } from '@/platform/shared/api-client';
 import { BadgeMedal } from '@/components/platform/ui/art/Art';
 import { Button } from '@/components/platform/ui/kit/Button';
 import { ButtonLink } from '@/components/platform/ui/kit/ButtonLink';
@@ -31,10 +33,10 @@ import { activeDays, goalCaption, goalTitle } from '../dashboard/home-model';
 import { chapterLinkHref, isNewAccount, recentRows, scopeText, subjectHref, trendPoints, withTarget, type RecentRow } from '../dashboard/model';
 import { useMyDashboard } from '../dashboard/useHomeData';
 import { WeeklyGoalEditor } from '../dashboard/WeeklyGoalEditor';
-import { useActivity, useMastery, usePlayerCard } from '../learn/useInsights';
+import { useActivity, useMastery, usePlayerCard, type Loadable } from '../learn/useInsights';
 import { Heatmap } from '../me/Heatmap';
-import { BlankPlayerCard, PlayerCard } from '../me/PlayerCard';
 import { useStage } from '../shell/StageProvider';
+import { CardSection, SubjectsSection } from './CardSection';
 import { difficultyStats, focusMeta, MIN_CHART_POINTS, progressStats, progressSubtitle, showHeatmap, testRows } from './progress-model';
 import s from './progress.module.css';
 
@@ -103,10 +105,13 @@ export function ProgressView({ d }: { d: MyDashboard }) {
   const fresh = isNewAccount(d);
   const stats = progressStats(d);
   const activity = useActivity(140);
+  const card = usePlayerCard();
   return (
     <div className={s.page} data-testid="progress" data-new={fresh || undefined}>
       <GreetingHeader title="Your progress" subtitle={progressSubtitle(d.profile, d.thisWeek)} />
-      <PageColumns railLabel="Your card, badges and goal" rail={<ProgressRail d={d} fresh={fresh} />}>
+      <PageColumns railLabel="Your weekly goal and badges" rail={<ProgressRail d={d} fresh={fresh} />}>
+        {/* A brand-new student reads the welcome first; everyone else starts with their card. */}
+        {!fresh && <CardSection card={card} />}
         {fresh || stats.length === 0 ? (
           <FreshWelcome />
         ) : (
@@ -120,9 +125,10 @@ export function ProgressView({ d }: { d: MyDashboard }) {
             </StatGrid>
           </div>
         )}
+        {fresh && <CardSection card={card} />}
         {!fresh && (
           <>
-            <MasterySection d={d} />
+            <MasteryBlocks d={d} />
             <TestsSection d={d} />
             <DifficultySection d={d} />
             <FocusSection d={d} />
@@ -189,8 +195,18 @@ function QuietEmpty({ icon, tint, title, children, action, testId }: { icon: Ico
 
 /* ── Mastery ──────────────────────────────────────────────────────────────── */
 
-function MasterySection({ d }: { d: MyDashboard }) {
+/** One GET /v1/me/mastery for both the subject radar and the per-subject list below it. */
+function MasteryBlocks({ d }: { d: MyDashboard }) {
   const mastery = useMastery();
+  return (
+    <>
+      <SubjectsSection mastery={mastery} />
+      <MasterySection d={d} mastery={mastery} />
+    </>
+  );
+}
+
+function MasterySection({ d, mastery }: { d: MyDashboard; mastery: Loadable<MyMastery> }) {
   const subjects = mastery.status === 'ready' ? mastery.data.subjects.filter((x) => x.chapterCount > 0) : [];
   const none = d.scope.kind === 'none' || d.mastery.chapterCount === 0;
   return (
@@ -458,10 +474,9 @@ function RecentSection({ d }: { d: MyDashboard }) {
   );
 }
 
-/* ── Rail: player card, badges, weekly goal ───────────────────────────────── */
+/* ── Rail: weekly goal, badges (the player card is the page's first section) ── */
 
 function ProgressRail({ d, fresh }: { d: MyDashboard; fresh: boolean }) {
-  const card = usePlayerCard();
   const { stage } = useStage();
   const [goal, setGoal] = useState<{ base: WeeklyGoal; value: WeeklyGoal } | null>(null);
   const g = goal?.base === d.weeklyGoal ? goal.value : d.weeklyGoal;
@@ -483,17 +498,6 @@ function ProgressRail({ d, fresh }: { d: MyDashboard; fresh: boolean }) {
           )}
           <WeeklyGoalEditor target={g.target} isDefault={g.isDefault} onSaved={(saved) => setGoal({ base: d.weeklyGoal, value: withTarget(g, saved) })} />
         </div>
-      </RailCard>
-
-      <RailCard id="card-title" title="Your player card" action={{ href: '/me#card', label: 'Details' }} data-testid="card-preview">
-        <div className={s.cardWrap}>
-          {card.status === 'ready' && card.data.attributes.length > 0 ? (
-            <PlayerCard card={card.data} compact />
-          ) : (
-            <BlankPlayerCard compact title={card.status === 'loading' ? 'Loading your card' : card.status === 'error' ? 'Your card could not load' : 'Solve 10 questions to get rated'} />
-          )}
-        </div>
-        <p className={s.railText}>Only you can see your card. It changes as you learn.</p>
       </RailCard>
 
       <RailCard id="badges-title" title="Badges" aside={<StatusPill tone="neutral">{`${d.badges.earned} of ${d.badges.total}`}</StatusPill>} action={{ href: '/me#badges', label: 'See all' }} data-testid="badge-tile">
