@@ -46,6 +46,18 @@ are off without consent). An `audit_log` row (action "consent.ai_data_deleted") 
 (conversations, uploads, schoolCleared).
 Learning records (progress, practice, attempts, XP) are not AI data and stay.
 
+## Email reminders (D-055)
+
+Reminder emails go to the student's own verified address (`users.email`) by default, at most one every 3 days and only
+after 2 inactive IST days; the student turns them off on /me or with the one-click link in every email. The only
+other address is the optional **parent email for updates** (`notification_preferences.parent_email`): the student adds
+it, the parent must confirm it on a platform page (a POST; opening the link changes nothing), and the parent can
+unsubscribe in one click, which erases the address. `DELETE /v1/me` deletes the whole `notification_preferences` row in
+step 1 (no email can go out afterwards: the account is also anonymised to a `.invalid` address and skipped);
+`reminder_log` (no address or content) cascades at the purge. Logs carry counts only, never an address.
+There is no self-service data export yet; when one is built it must include `notification_preferences` (the parent
+address in full: the student typed it).
+
 ## Invoices (*_invoices, ADR-024)
 
 GST law needs invoices and credit notes kept for 8 years (CGST Act s.36: 72 months from the annual return due date), so account deletion never deletes them. What it does:
@@ -60,7 +72,7 @@ GST law needs invoices and credit notes kept for 8 years (CGST Act s.36: 72 mont
 Two steps, implemented by backend-api:
 
 1. **Immediately (anonymise + revoke):** delete the user's `sessions`, `accounts` and `verifications`
-   (by identifier = their email/phone), `consent_status`, `consent_records`, `guardian_links` (both directions), `user_mfa`,
+   (by identifier = their email/phone), `consent_status`, `consent_records`, `notification_preferences` (the parent address for reminders, D-055), `guardian_links` (both directions), `user_mfa`,
    `ai_conversations` (cascades `ai_messages`), and the user's uploads with their blobs (S6-M02: in the
    transaction the `uploads` rows are marked `deleted`, so they are unusable at once; right after it the API
    deletes each upload's quarantine original (`uploads-quarantine/<blob_key>`) and cleaned copy
@@ -182,6 +194,9 @@ Legend for **On deletion**: *delete* = removed in step 1; *anonymise* = overwrit
 | `coin_redemptions.address_submitted_at`, `coin_redemptions.address_erased_at` | When the address was given / erased | life of row | detach |
 | `coin_redemptions.tracking_ref` | Courier tracking reference (links to the delivery address at the courier) | life of account | delete |
 | `coin_redemptions.reviewed_by` | Staff member who approved/shipped/rejected | life of row | detach |
+| `notification_preferences.parent_email` | Optional parent address for reminder emails (D-055), typed by the student on /me (lower-cased, plain text: needed to send). Nothing but one confirmation email is sent to it until the parent presses Confirm on the platform page; then at most one short reminder every 7 days while the student is inactive (no progress report). Never the consent flow's parent address (that one is only hashed) | until the student removes or changes it, or the parent unsubscribes (then erased at once) | delete |
+| `notification_preferences.student_reminders`, `notification_preferences.parent_status`, `notification_preferences.parent_reminders`, `notification_preferences.parent_generation`, `notification_preferences.parent_confirm_sent_at`, `notification_preferences.parent_confirmed_at`, `notification_preferences.parent_unsubscribed_at` | Reminder settings: on/off switches, the parent address state and link generation, when the confirmation went out, was confirmed, or the parent unsubscribed | life of account | delete |
+| `reminder_log.*` | One row per reminder email (D-055): user, kind (student / parent), IST day, sent / failed, attempts. No address, no content | life of account (gap and unanswered count need the history) | cascade |
 
 ## Not personal data
 

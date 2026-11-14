@@ -1,15 +1,14 @@
 'use client';
 
 /**
- * Learning profile blocks (ADR-023): the private player card (FUT style, GET /v1/me/card), the activity heatmap
- * with streak and totals (LeetCode style, GET /v1/me/activity, IST days), solved questions per subject
- * (GET /v1/me/progress) and badges (GET /v1/me/badges). Plus the Appearance setting (Light / Dark / System).
- * Every block has its own empty and error state; nothing here is shown to anyone else.
- * Design language v3 (ADR-032 §10): the full analytics live on /me/progress; /me shows `ActivitySummary` (streak,
- * totals and the card's rating, with a link to Progress), `BadgesSection` and `AppearanceCard`. `MeInsights` stays
- * exported for other pages.
+ * Learning profile blocks for /me (ADR-023, design language v3 §10): `ActivitySummary` (streak, totals and the
+ * player card's rating, with a link to Progress; GET /v1/me/activity, /v1/me/card), `BadgesSection`
+ * (GET /v1/me/badges) and the Appearance setting (Light / Dark / System). Every block has its own empty and error
+ * state; nothing here is shown to anyone else. The full analytics, the heatmap and the player card with its radar
+ * live on /me/progress (components/platform/progress/, card section anchor `/me/progress#card`).
  */
 import dynamic from 'next/dynamic';
+import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import type { Schemas } from '@/platform/shared/api-client';
 
@@ -21,136 +20,13 @@ import { RailCard } from '@/components/platform/ui/kit/Rail';
 import { api } from '../lib/api-browser';
 import { useLearnerProgress } from '../learn/ProgressProvider';
 import { useActivity, usePlayerCard } from '../learn/useInsights';
+import { isRatedCard } from '../progress/progress-model';
 import { ThemeOptions } from '../shell/ThemeToggle';
-import { Heatmap } from './Heatmap';
-import { BlankPlayerCard, CardAttributes, PlayerCard } from './PlayerCard';
 import shellCss from '../shell/appshell.module.css';
 import s from './me.module.css';
 
 // Medal art for the 12 badges loads after the page (it is below the fold on phones).
 const BadgeGrid = dynamic(() => import('./BadgeGrid').then((m) => m.BadgeGrid), { ssr: false, loading: () => <Skeleton lines={2} /> });
-
-export function MeInsights() {
-  return (
-    <div className={s.insights}>
-      <PlayerCardSection />
-      <ActivitySection />
-      <SolvedSection />
-      <BadgesSection />
-    </div>
-  );
-}
-
-function PlayerCardSection() {
-  const card = usePlayerCard();
-  return (
-    <Card as="section" aria-labelledby="card-title" id="card" className={s.cardSection} data-testid="card-section">
-      <CardTitle as="h2" id="card-title">
-        Your player card
-      </CardTitle>
-      {card.status === 'loading' ? (
-        <Skeleton variant="block" height={300} />
-      ) : card.status === 'ready' && card.data.attributes.length > 0 ? (
-        <div className={s.cardLayout}>
-          <PlayerCard card={card.data} />
-          <div className={s.cardSide}>
-            <CardAttributes card={card.data} />
-            <p className={s.muted}>
-              {card.data.provisional ? 'Provisional: keep learning for a few more days to settle your rating. ' : ''}
-              Only you can see this card. It is worked out from your own learning, the same way for everyone, and it changes as you learn.
-            </p>
-          </div>
-        </div>
-      ) : (
-        <div className={s.cardLayout}>
-          <BlankPlayerCard title={card.status === 'error' ? 'Your card could not load' : 'Solve 10 practice questions to get your first rating'} />
-          <p className={s.muted}>
-            Your card rates accuracy, consistency, breadth, mastery and tests from 40 to 99, with bronze, silver, gold and elite frames. Only you can see it.
-          </p>
-        </div>
-      )}
-    </Card>
-  );
-}
-
-function ActivitySection() {
-  const activity = useActivity();
-  const { progress } = useLearnerProgress();
-  const streak = activity.status === 'ready' ? activity.data.streak : progress?.streak;
-  return (
-    <Card as="section" aria-labelledby="activity-title" id="activity" data-testid="activity-section">
-      <CardTitle as="h2" id="activity-title">
-        Activity
-      </CardTitle>
-      <ul className={s.statRow}>
-        <li>
-          <Icon name="flame" size={20} className={s.flame} />
-          <b>{streak?.current ?? 0}</b> day streak
-        </li>
-        <li>
-          <b>{streak?.longest ?? 0}</b> longest
-        </li>
-        {activity.status === 'ready' && (
-          <>
-            <li>
-              <b>{activity.data.totals.solved}</b> solved
-            </li>
-            <li>
-              <b>{activity.data.totals.lessonsCompleted}</b> lessons
-            </li>
-            <li>
-              <b>{activity.data.totals.testsSubmitted}</b> tests
-            </li>
-          </>
-        )}
-      </ul>
-      {activity.status === 'ready' ? (
-        <Heatmap activity={activity.data} />
-      ) : activity.status === 'error' ? (
-        <p className={s.muted}>We could not load your activity. Try again later.</p>
-      ) : (
-        <Skeleton variant="block" height={120} />
-      )}
-    </Card>
-  );
-}
-
-function SolvedSection() {
-  const { progress, ready } = useLearnerProgress();
-  const rows = (progress?.subjects ?? [])
-    .map((sub) => ({ id: sub.subjectId, name: sub.name ?? sub.subjectId, solved: sub.chapters.reduce((n, c) => n + c.correct, 0), answered: sub.chapters.reduce((n, c) => n + c.answered, 0) }))
-    .filter((r) => r.answered > 0)
-    .sort((a, b) => b.solved - a.solved);
-  const max = Math.max(1, ...rows.map((r) => r.solved));
-  return (
-    <Card as="section" aria-labelledby="solved-title" data-testid="solved-section">
-      <CardTitle as="h2" id="solved-title">
-        Solved by subject
-      </CardTitle>
-      {!ready ? (
-        <Skeleton lines={3} />
-      ) : rows.length === 0 ? (
-        <p className={s.muted}>Questions you get right in practice are counted here.</p>
-      ) : (
-        <ul className={s.solvedList}>
-          {rows.map((r) => (
-            <li key={r.id}>
-              <span className={s.solvedHead}>
-                <span>{r.name}</span>
-                <span>
-                  <b>{r.solved}</b> solved · {r.answered} tried
-                </span>
-              </span>
-              <span className={s.solvedTrack} aria-hidden="true">
-                <span className={s.solvedFill} style={{ width: `${Math.round((r.solved / max) * 100)}%` }} />
-              </span>
-            </li>
-          ))}
-        </ul>
-      )}
-    </Card>
-  );
-}
 
 export interface ActivityFigures {
   streak: number;
@@ -181,7 +57,7 @@ export function ActivitySummary() {
   const { progress } = useLearnerProgress();
   const streak = activity.status === 'ready' ? activity.data.streak : progress?.streak;
   const f = activityFigures(streak, activity.status === 'ready' ? activity.data.totals : null);
-  const rated = card.status === 'ready' && card.data.attributes.length > 0 ? card.data : null;
+  const rated = card.status === 'ready' && isRatedCard(card.data) ? card.data : null;
   const cell = (value: number | null) => (value === null ? '–' : value.toLocaleString('en-IN'));
   return (
     <RailCard id="activity" title="Your learning" data-testid="activity-section">
@@ -206,9 +82,18 @@ export function ActivitySummary() {
         </div>
       </dl>
       {activity.status === 'error' && <p className={s.muted}>We could not load your activity. Try again later.</p>}
-      {rated && (
+      {card.status === 'ready' && (
         <p className={s.muted} data-testid="card-rating">
-          Player card: <b className={s.ink}>{rated.overall}</b> overall{rated.provisional ? ' (provisional)' : ''}. Only you can see it.
+          {rated ? (
+            <>
+              Player card: <b className={s.ink}>{rated.overall}</b> overall.{' '}
+            </>
+          ) : (
+            'Your player card is not rated yet. '
+          )}
+          <Link href="/me/progress#card" prefetch={false} className={s.textLink} data-testid="card-link">
+            See your card
+          </Link>
         </p>
       )}
       {/* prefetch off like the shell's PROGRESS_NAV: a prefetched /me/progress kept members' pages from going network-idle before that page existed (design-system v3 handoff). */}

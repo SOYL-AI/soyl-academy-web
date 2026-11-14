@@ -1,12 +1,14 @@
 /**
  * Progress (`/me/progress`, design language v3 §10 "Progress"): the view-models (honest stats, no denominators over
  * 1,000, IST days, heatmap only from 7 active days) and the page (members only, one h1, every section, a calm
- * welcome instead of zeros for a brand-new student, the weekly goal editor in the rail).
+ * welcome instead of zeros for a brand-new student, the weekly goal editor in the rail). Progress radar
+ * (2026-11-14): the player card section (`#card`: rated card + attribute radar, or the blank card and a dashed
+ * hexagon before the first rating) and the subject radar (3–8 axes, bars below 3, "+N more" above 8).
  */
 import { cleanup, fireEvent, render, screen, waitFor, within } from '@testing-library/react';
 import type { ReactNode } from 'react';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
-import type { MyDashboard } from '@/platform/shared/api-client';
+import type { MyDashboard, MyPlayerCard, SubjectMastery } from '@/platform/shared/api-client';
 import { ToastProvider } from '@/components/platform/ui/kit/Toast';
 
 const h = vi.hoisted(() => ({
@@ -20,7 +22,7 @@ vi.mock('../lib/api-browser', () => ({ api: h.api }));
 vi.mock('../learn/ProgressProvider', () => ({ useLearnerProgress: () => h.progress }));
 
 import { ProgressClient, ProgressView } from '../progress/ProgressClient';
-import { difficultyStats, focusMeta, progressStats, progressSubtitle, shortDay, showHeatmap, testRows, toTrend } from '../progress/progress-model';
+import { cardRadarAxes, cardRadarCaption, chaptersStartedText, difficultyStats, shortSubjectName, startedMastery, focusMeta, isRatedCard, progressStats, progressSubtitle, shortDay, showHeatmap, subjectRadar, testRows, toTrend, unratedText } from '../progress/progress-model';
 
 const zero = { allTime: 0, thisWeek: 0, lastWeek: 0 };
 const win = (checked = 0, right = 0) => ({ from: '2026-11-07', to: '2026-11-13', checked, right, accuracy: checked ? right / checked : null });
@@ -89,6 +91,41 @@ const activity = (activeDays: number) => ({
   streak: { current: 3, longest: 5, lastActiveDay: '2026-11-13', atRisk: false, freezeAvailableThisWeek: true },
   activeDaysAllTime: 9,
 });
+
+const attr = (key: string, label: string, value: number, explain: string) => ({ key, label, value, raw: (value - 40) / 59, weight: 0.2, explain }) as MyPlayerCard['attributes'][number];
+function playerCard(over: Partial<MyPlayerCard> = {}): MyPlayerCard {
+  return {
+    publicName: 'Brave Otter 123',
+    avatar: { id: 'otter', bg: 'sky', isDefault: true },
+    level: 4,
+    xp: 1240,
+    coins: 30,
+    overall: 77,
+    tier: 'gold',
+    provisional: false,
+    formulaVersion: 1,
+    asOfDay: '2026-11-13',
+    attributes: [
+      attr('ACC', 'Accuracy', 81, '78% right first time on 40 questions'),
+      attr('CON', 'Consistency', 64, 'Learned on 7 days of the last 28 (full at 16)'),
+      attr('BRE', 'Breadth', 70, '10 chapters explored (full at 20)'),
+      attr('MAS', 'Mastery', 75, 'Average mastery 60/100 on 10 chapters'),
+      attr('TST', 'Tests', 90, 'Average 85% over 3 tests'),
+    ],
+    ...over,
+  };
+}
+/** A subject with `started` chapters at mastery `startedScore` and the rest not started (the API's score is diluted). */
+const subj = (subjectId: string, name: string, startedScore: number, started: number, chapterCount = 12): SubjectMastery =>
+  ({
+    subjectId,
+    name,
+    classLevel: 10,
+    score: chapterCount ? Math.round((startedScore * started) / chapterCount) : 0,
+    chapterCount,
+    levels: { not_started: chapterCount - started, attempted: started, familiar: 0, proficient: 0, mastered: 0 },
+    chapters: Array.from({ length: chapterCount }, (_, i) => ({ chapterId: `${subjectId}-ch${i + 1}`, number: i + 1, title: `Chapter ${i + 1}`, level: i < started ? 'attempted' : 'not_started', score: i < started ? startedScore : 0 })),
+  }) as unknown as SubjectMastery;
 
 const member = { status: 'member', user: { id: 'u1', role: 'student', displayName: 'Asha', board: 'cbse', classLevel: 10 }, consent: 'granted' };
 const wrap = (ui: ReactNode) => render(<ToastProvider>{ui}</ToastProvider>);
@@ -204,11 +241,13 @@ describe('ProgressView', () => {
     expect(screen.queryByTestId('heatmap')).toBeNull();
     expect(screen.getByTestId('progress-streak').textContent).toBe('3 day streak');
     expect(screen.getByTestId('recent-row-practice').querySelector('a')!.getAttribute('href')).toBe('/learn/cbse/10/science/ch01/practice');
-    // Rail: goal ring + editor, player card, badges teaser.
+    // Rail: goal ring + editor, badges teaser; the player card moved to the page's first section (no rail copy).
     const goal = screen.getByTestId('weekly-goal');
     expect(within(goal).getByRole('img').getAttribute('aria-label')).toBe('Weekly goal: 9 of 20 questions solved this week');
     expect(within(goal).getByTestId('goal-change')).toBeTruthy();
-    expect(screen.getByTestId('card-preview')).toBeTruthy();
+    expect(screen.queryByTestId('card-preview')).toBeNull();
+    expect(screen.getByTestId('card-section')).toBeTruthy();
+    expect(screen.getByRole('complementary').getAttribute('aria-label')).toBe('Your weekly goal and badges');
     expect(screen.getByTestId('badge-tile').textContent).toContain('On a roll');
     expect(screen.getByTestId('badge-tile').textContent).toContain('2 of 12');
   });
@@ -240,5 +279,194 @@ describe('ProgressView', () => {
     await waitFor(() => expect(goal.querySelector('[data-target]')!.getAttribute('data-target')).toBe('8'));
     expect(h.api.patch).toHaveBeenCalledWith('/v1/me', { body: { weeklyGoal: 8 } });
     expect(goal.textContent).toContain('Goal met · 1 extra');
+  });
+});
+
+describe('progress radar view-models', () => {
+  it('the card is rated only when it is not provisional; axes follow the card (no Speed without data)', () => {
+    expect(isRatedCard(playerCard())).toBe(true);
+    expect(isRatedCard(playerCard({ provisional: true }))).toBe(false);
+    expect(isRatedCard(playerCard({ attributes: [] }))).toBe(false);
+    expect(isRatedCard(null)).toBe(false);
+    expect(cardRadarAxes(playerCard()).map((a) => [a.key, a.label, a.value, a.max])).toEqual([
+      ['ACC', 'Accuracy', 81, 99],
+      ['CON', 'Consistency', 64, 99],
+      ['BRE', 'Breadth', 70, 99],
+      ['MAS', 'Mastery', 75, 99],
+      ['TST', 'Tests', 90, 99],
+    ]);
+    // Unrated: the six names for the blank hexagon (values never shown).
+    expect(cardRadarAxes(playerCard({ provisional: true })).map((a) => a.label)).toEqual(['Accuracy', 'Consistency', 'Speed', 'Breadth', 'Mastery', 'Tests']);
+    expect(cardRadarCaption(playerCard())).toBe('The centre is 40 and the outer ring 99. Speed joins your card after 10 timed test questions answered right.');
+    const withSpeed = playerCard();
+    withSpeed.attributes.splice(2, 0, attr('SPD', 'Speed', 66, 'On 12 test questions you got right, you took 90% of the expected time'));
+    expect(cardRadarCaption(withSpeed)).toBe('The centre is 40 and the outer ring 99.');
+    expect(unratedText()).toBe('Your card is rated once you have checked 10 practice answers and learned on 3 different days in the last 4 weeks. Here is where each part stands:');
+  });
+
+  it('subjects: none, bars below 3 (highest first), a radar of 3–8 ranked by chapters started, "+N more" above 8', () => {
+    expect(subjectRadar([])).toEqual({ kind: 'none' });
+    expect(subjectRadar([subj('x', 'Empty', 0, 0, 0)])).toEqual({ kind: 'none' });
+    // No chapter started: left out.
+    expect(subjectRadar([subj('z', 'Zero', 0, 0), subj('y', 'Also zero', 50, 0)])).toEqual({ kind: 'none' });
+    expect(subjectRadar([subj('m', 'Mathematics', 12, 3), subj('s', 'Science', 34, 1)])).toEqual({
+      kind: 'bars',
+      bars: [
+        { subjectId: 's', name: 'Science', score: 34, started: 1, chapterCount: 12 },
+        { subjectId: 'm', name: 'Mathematics', score: 12, started: 3, chapterCount: 12 },
+      ],
+    });
+    const three = subjectRadar([subj('e', 'English', 5, 1), subj('m', 'Mathematics', 12.6, 3), subj('s', 'Science', 34, 3)]);
+    if (three.kind !== 'radar') throw new Error('expected a radar');
+    expect(three.axes.map((a) => [a.key, a.value, a.max, a.note, a.noteShort])).toEqual([
+      ['s', 34, 100, '3 of 12 chapters started', '3/12 chapters'],
+      ['m', 13, 100, '3 of 12 chapters started', '3/12 chapters'],
+      ['e', 5, 100, '1 of 12 chapters started', '1/12 chapters'],
+    ]);
+    // Short names on the chart only.
+    const named = subjectRadar([subj('a', 'Mathematics (Standard 041 / Basic 241)', 40, 3), subj('b', 'Science', 30, 2), subj('c', 'Biology (Science Paper 3)', 20, 1)]);
+    if (named.kind !== 'radar') throw new Error('expected a radar');
+    expect(named.axes.map((a) => [a.label, a.short])).toEqual([
+      ['Mathematics (Standard 041 / Basic 241)', 'Mathematics'],
+      ['Science', 'Science'],
+      ['Biology (Science Paper 3)', 'Biology'],
+    ]);
+    expect(three.more).toBe(0);
+    const eleven = subjectRadar(Array.from({ length: 11 }, (_, i) => subj(`s${i}`, `Subject ${i}`, 50, i + 1)));
+    if (eleven.kind !== 'radar') throw new Error('expected a radar');
+    expect(eleven.axes).toHaveLength(8);
+    expect(eleven.axes[0]!.key).toBe('s10');
+    expect(eleven.axes.map((a) => a.key)).not.toContain('s0');
+    expect(eleven.more).toBe(3);
+  });
+});
+
+describe('subject names and mastery over started chapters', () => {
+  it('shortSubjectName drops parentheses, spaced-dash suffixes and subject codes; never empty', () => {
+    expect(shortSubjectName('Mathematics (Standard 041 / Basic 241)')).toBe('Mathematics');
+    expect(shortSubjectName('Geography (Thailand) (H.C.G. Thailand Paper 2)')).toBe('Geography');
+    expect(shortSubjectName('Bengali (Bangla) (Second Language)')).toBe('Bengali');
+    expect(shortSubjectName('Modern English: English Language (Paper 1)')).toBe('Modern English: English Language');
+    expect(shortSubjectName('Hindi — Course A')).toBe('Hindi');
+    expect(shortSubjectName('Sanskrit – Communicative')).toBe('Sanskrit');
+    expect(shortSubjectName('Physics 042')).toBe('Physics');
+    expect(shortSubjectName('Physics - 042')).toBe('Physics');
+    expect(shortSubjectName('Mathematics 041/241')).toBe('Mathematics');
+    expect(shortSubjectName('Computer Applications (Code 165)')).toBe('Computer Applications');
+    expect(shortSubjectName('English Language and Literature')).toBe('English Language and Literature');
+    expect(shortSubjectName('Hindi Course A')).toBe('Hindi Course A');
+    expect(shortSubjectName('Social-Science')).toBe('Social-Science');
+    expect(shortSubjectName('(Paper 1)')).toBe('(Paper 1)');
+    expect(shortSubjectName('  Science  ')).toBe('Science');
+  });
+
+  it('startedMastery: the mean over chapters started; without chapter rows, the subject score scaled back', () => {
+    expect(startedMastery(subj('s', 'Science', 60, 3, 15))).toBe(60);
+    const mixed = subj('m', 'Maths', 0, 0, 4);
+    mixed.chapters[0] = { ...mixed.chapters[0]!, level: 'proficient', score: 70 };
+    mixed.chapters[1] = { ...mixed.chapters[1]!, level: 'attempted', score: 0 };
+    expect(startedMastery(mixed)).toBe(35);
+    const noRows = { ...subj('e', 'English', 50, 2, 10), chapters: [] };
+    expect(noRows.score).toBe(10);
+    expect(startedMastery(noRows)).toBe(50);
+    expect(startedMastery({ ...subj('z', 'Zero', 0, 0, 10), chapters: [] })).toBe(0);
+    expect(chaptersStartedText(1, 1)).toEqual({ full: '1 of 1 chapter started', short: '1/1 chapter' });
+    expect(chaptersStartedText(3, 15)).toEqual({ full: '3 of 15 chapters started', short: '3/15 chapters' });
+  });
+});
+
+describe('player card section (#card) and subject radar', () => {
+  it('a rated card: the full card, a radar in its tier colour, every attribute with its explanation', async () => {
+    h.session = { ...h.session, state: member };
+    routeGets({ '/v1/me/card': playerCard(), '/v1/me/mastery': { subjects: [] } });
+    wrap(<ProgressView d={active()} />);
+    const section = screen.getByTestId('card-section');
+    expect(section.querySelector('h2')!.id).toBe('card');
+    expect(section.getAttribute('aria-labelledby')).toBe('card');
+    // The card is the first section of the main column.
+    expect(section.parentElement!.firstElementChild).toBe(section);
+    const radar = await within(section).findByTestId('card-radar');
+    expect(within(section).getByTestId('player-card').getAttribute('data-tier')).toBe('gold');
+    expect(radar.getAttribute('data-tone')).toBe('gold');
+    expect(radar.getAttribute('data-axes')).toBe('5');
+    expect(radar.querySelector('[role="img"]')!.getAttribute('aria-label')).toBe('Your card attributes, from 40 to 99: Accuracy 81, Consistency 64, Breadth 70, Mastery 75 and Tests 90.');
+    expect(radar.textContent).toContain('Speed joins your card after 10 timed test questions');
+    const attrs = within(section).getByTestId('card-attributes');
+    expect(attrs.getAttribute('data-rated')).toBe('true');
+    expect(attrs.textContent).toContain('Learned on 7 days of the last 28 (full at 16)');
+    expect(attrs.textContent).toContain('90');
+    expect(within(section).queryByTestId('player-card-blank')).toBeNull();
+    // Nothing links to the old /me#card anchor.
+    expect(document.querySelector('a[href="/me#card"]')).toBeNull();
+  });
+
+  it('a provisional card: the blank card and a dashed hexagon, no numbers, what it takes, where each part stands', async () => {
+    h.session = { ...h.session, state: member };
+    routeGets({ '/v1/me/card': playerCard({ provisional: true, overall: 41, tier: 'bronze' }), '/v1/me/mastery': { subjects: [] } });
+    wrap(<ProgressView d={active()} />);
+    const section = screen.getByTestId('card-section');
+    const radar = await within(section).findByTestId('card-radar');
+    expect(radar.hasAttribute('data-blank')).toBe(true);
+    expect(radar.getAttribute('data-axes')).toBe('6');
+    expect(radar.querySelector('[data-testid="radar-shape"]')).toBeNull();
+    expect(radar.querySelector('[role="img"]')!.getAttribute('aria-label')).toBe('Your card attributes: not rated yet (Accuracy, Consistency, Speed, Breadth, Mastery and Tests).');
+    expect(within(section).getByTestId('player-card-blank').textContent).toContain('Solve 10 questions to get rated');
+    expect(within(section).queryByTestId('player-card')).toBeNull();
+    expect(section.textContent).toContain('Your card is rated once you have checked 10 practice answers');
+    const attrs = within(section).getByTestId('card-attributes');
+    expect(attrs.getAttribute('data-rated')).toBe('false');
+    expect(attrs.textContent).toContain('78% right first time on 40 questions');
+    // No ratings: the radar has no digits, the attribute list no values or bars (the explanations' own counts stay).
+    expect(radar.textContent).not.toMatch(/\d/);
+    for (const v of ['81', '64', '70', '75', '41']) expect(attrs.textContent).not.toContain(` ${v}`);
+    expect(attrs.querySelectorAll('[aria-hidden="true"]')).toHaveLength(0);
+  });
+
+  it('a brand-new student: the welcome first, then the blank card; the card could not load: a calm message', async () => {
+    h.session = { ...h.session, state: member };
+    routeGets({ '/v1/me/card': playerCard({ provisional: true }) });
+    wrap(<ProgressView d={dash()} />);
+    const welcome = screen.getByTestId('progress-empty');
+    const section = screen.getByTestId('card-section');
+    expect(welcome.compareDocumentPosition(section) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+    expect((await within(section).findByTestId('card-radar')).hasAttribute('data-blank')).toBe(true);
+    expect(screen.queryByTestId('subjects-section')).toBeNull();
+    cleanup();
+    h.api.get.mockImplementation((path: string) => (path === '/v1/me/card' ? Promise.reject(new Error('down')) : new Promise(() => undefined)));
+    wrap(<ProgressView d={active()} />);
+    expect(await screen.findByText('Your card could not load')).toBeTruthy();
+    expect(screen.queryByTestId('card-radar')).toBeNull();
+  });
+
+  it('subjects: a radar of the top 8 with "+N more" to the Mastery list; bars below 3', async () => {
+    h.session = { ...h.session, state: member };
+    const many = Array.from({ length: 10 }, (_, i) => subj(`cbse-10-s${i}`, `Subject ${i}`, 10 + i, i + 1));
+    routeGets({ '/v1/me/mastery': { subjects: many } });
+    wrap(<ProgressView d={active()} />);
+    const section = await screen.findByTestId('subjects-section');
+    const radar = await within(section).findByTestId('subjects-radar');
+    expect(radar.getAttribute('data-axes')).toBe('8');
+    expect(radar.querySelector('[role="img"]')!.getAttribute('aria-label')).toMatch(
+      /^Subject mastery, from 0 to 100%: Subject 9 19% \(10 of 12 chapters started\), Subject 8 18% \(9 of 12 chapters started\), .* and Subject 2 12% \(3 of 12 chapters started\)\.$/,
+    );
+    expect(radar.querySelector('[data-axis="cbse-10-s9"]')!.textContent).toBe('Subject 9 19%10/12 chapters');
+    expect(within(radar).getAllByRole('columnheader').map((h) => h.textContent)).toEqual(['Subject', 'Mastery', 'Chapters']);
+    expect(section.textContent).toContain("Mastery out of 100 in the chapters you've started.");
+    expect(radar.textContent).toContain('The number of chapters under each subject grows as you cover more.');
+    const more = within(section).getByRole('link', { name: /\+2 more subjects/ });
+    expect(more.getAttribute('href')).toBe('#mastery-title');
+    expect(document.getElementById('mastery-title')).toBeTruthy();
+    // The subject section sits right above Mastery.
+    expect(section.nextElementSibling!.getAttribute('data-testid')).toBe('mastery-tile');
+    cleanup();
+    routeGets({ '/v1/me/mastery': { subjects: [subj('cbse-10-mathematics', 'Mathematics', 12, 3), subj('cbse-10-science', 'Science', 34, 1)] } });
+    wrap(<ProgressView d={active()} />);
+    const bars = await screen.findByTestId('subjects-bars');
+    expect(screen.queryByTestId('subjects-radar')).toBeNull();
+    expect(within(bars).getAllByRole('progressbar').map((b) => [b.getAttribute('aria-label'), b.getAttribute('aria-valuetext')])).toEqual([
+      ['Science', '34% · 1 of 12 chapters started'],
+      ['Mathematics', '12% · 3 of 12 chapters started'],
+    ]);
+    expect(screen.getByRole('list', { name: 'Your subjects by mastery' })).toBeTruthy();
   });
 });

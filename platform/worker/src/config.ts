@@ -10,6 +10,8 @@ import { z } from 'zod/v4';
 import { CONSENT } from '@soyl/shared/config/security';
 
 import { loadBillingConfig, type BillingConfig } from '@soyl/api/billing/config';
+import { DEV_DEFAULTS } from '@soyl/api/config';
+import { REMINDERS } from '@soyl/shared/config/notifications';
 
 export const APP_ENVS = ['local', 'test', 'dev', 'stg', 'prod'] as const;
 export type AppEnv = (typeof APP_ENVS)[number];
@@ -50,6 +52,15 @@ const EnvSchema = z.object({
   UNCONSENTED_PURGE: z.enum(['on', 'off', 'auto']).default('auto'),
   CONSENT_PROVIDER: z.string().optional(),
   WORKER_SHUTDOWN_TIMEOUT_MS: z.coerce.number().int().min(1000).max(120_000).default(20_000),
+  /**
+   * D-055 email reminders (notifications.reminders). Unset: on in local/test/dev, OFF in stg/prod (production turns it
+   * on with REMINDERS_ENABLED=true once the worker has OTP_PEPPER and the ACS email settings).
+   */
+  REMINDERS_ENABLED: optionalBool,
+  /** Signs the unsubscribe links in reminder emails; must equal the API's OTP_PEPPER (Key Vault otp-pepper). */
+  OTP_PEPPER: z.string().optional(),
+  PUBLIC_BASE_URL: z.url().optional(),
+  API_PUBLIC_PATH: z.string().regex(/^\/[a-z0-9/_-]*[a-z0-9]$/).default('/api/platform'),
 });
 
 export interface WorkerConfig {
@@ -73,6 +84,8 @@ export interface WorkerConfig {
   shutdownTimeoutMs: number;
   /** Razorpay settings for the billing jobs (same variables as the API, ADR-016). */
   billing: BillingConfig;
+  /** D-055 email reminders. `pepper` null = not configured (the job is a logged no-op). */
+  reminders: { enabled: boolean; pepper: string | null; publicBaseUrl: string; apiPublicPath: string };
 }
 
 export class ConfigError extends Error {
@@ -105,6 +118,12 @@ export function loadConfig(env: Record<string, string | undefined> = process.env
   const billing = loadBillingConfig(cleaned, { appEnv: e.APP_ENV, isLocal, isProduction: e.APP_ENV === 'prod' });
   problems.push(...billing.problems);
 
+  // D-055: the pepper signs unsubscribe links the API verifies. The public dev placeholder only locally.
+  const pepper = e.OTP_PEPPER ?? (isLocal ? DEV_DEFAULTS.otpPepper : null);
+  if (pepper !== null && pepper.length < 32) problems.push('OTP_PEPPER must be at least 32 characters');
+  if (!isLocal && pepper === DEV_DEFAULTS.otpPepper) problems.push('OTP_PEPPER must not be the local development placeholder');
+  const remindersEnabled = REMINDERS.enabled && (e.REMINDERS_ENABLED ?? (isLocal || e.APP_ENV === 'dev'));
+
   if (problems.length) throw new ConfigError(problems);
 
   return {
@@ -120,5 +139,6 @@ export function loadConfig(env: Record<string, string | undefined> = process.env
     unconsentedPurge: e.UNCONSENTED_PURGE === 'on',
     shutdownTimeoutMs: e.WORKER_SHUTDOWN_TIMEOUT_MS,
     billing: billing.config,
+    reminders: { enabled: remindersEnabled, pepper, publicBaseUrl: (e.PUBLIC_BASE_URL ?? (isLocal ? 'http://localhost:3000' : 'https://www.soylai.com')).replace(/\/+$/, ''), apiPublicPath: e.API_PUBLIC_PATH },
   };
 }

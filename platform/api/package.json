@@ -10,7 +10,9 @@
     "./billing/*": "./src/billing/*.ts",
     "./ai/*": "./src/ai/*.ts",
     "./leagues/*": "./src/domain/leagues/*.ts",
-    "./coins/*": "./src/domain/coins/*.ts"
+    "./coins/*": "./src/domain/coins/*.ts",
+    "./notifications/*": "./src/notifications/*.ts",
+    "./config": "./src/config.ts"
   },
   "scripts": {
     "dev": "tsx scripts/dev.ts",

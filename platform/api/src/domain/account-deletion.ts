@@ -1,6 +1,7 @@
 /**
  * DELETE /v1/me — step 1 of platform/db/PII.md "Account deletion" (AC-25 erasure, AC-26):
- * in one transaction delete sessions, accounts, pending OTP rows, consent_status, consent_records (D-039), guardian links
+ * in one transaction delete sessions, accounts, pending OTP rows, consent_status, consent_records (D-039), the reminder
+ * settings with the optional parent address (notification_preferences, D-055), guardian links
  * (both directions), AI conversations (messages cascade) and the staff TOTP enrolment; mark the user's
  * uploads `deleted` (S6-M02: their blobs — the photo/paper in `uploads-quarantine` and its cleaned copy
  * in `uploads` — are deleted right after by UploadService.purgeDeleted, then the rows; the worker's
@@ -18,6 +19,7 @@ import {
   consentRecords,
   consentStatus,
   guardianLinks,
+  notificationPreferences,
   profiles,
   sessions,
   uploads,
@@ -54,6 +56,8 @@ export async function deleteAccount(
     await tx.delete(accounts).where(eq(accounts.userId, user.id));
     await tx.delete(consentStatus).where(eq(consentStatus.userId, user.id));
     await tx.delete(consentRecords).where(eq(consentRecords.userId, user.id));
+    // D-055: reminder settings, including the optional parent address (plain text), go at once; reminder_log cascades at the purge.
+    await tx.delete(notificationPreferences).where(eq(notificationPreferences.userId, user.id));
     await tx.delete(guardianLinks).where(or(eq(guardianLinks.parentUserId, user.id), eq(guardianLinks.studentUserId, user.id)));
     await tx.delete(aiConversations).where(eq(aiConversations.userId, user.id));
     // Blobs first, then rows (UploadService.purgeDeleted): the rows are the index of the blobs.

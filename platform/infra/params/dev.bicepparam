@@ -61,7 +61,7 @@ param kvSecretRefs = bool(readEnvironmentVariable('SOYL_KV_SECRET_REFS', 'true')
 param appSecrets = [
   { secretName: 'edge-secret-current', envName: 'EDGE_SECRET_CURRENT', apps: ['api'] }
   { secretName: 'edge-secret-previous', envName: 'EDGE_SECRET_PREVIOUS', apps: ['api'] }
-  { secretName: 'otp-pepper', envName: 'OTP_PEPPER', apps: ['api'] }
+  { secretName: 'otp-pepper', envName: 'OTP_PEPPER', apps: ['api', 'worker'] } // worker: signs reminder unsubscribe links (D-055)
   { secretName: 'auth-secret', envName: 'AUTH_SECRET', apps: ['api'] }
   { secretName: 'mfa-encryption-key', envName: 'MFA_ENCRYPTION_KEY', apps: ['api'] }
   // Future Builders ingest (ADR-027): shared with the marketing site's server (Vercel FB_INGEST_KEY).

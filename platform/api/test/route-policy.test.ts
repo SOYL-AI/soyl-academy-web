@@ -66,11 +66,13 @@ describe('route policy (API-6)', () => {
     expect(outside.sort()).toEqual(['/healthz', '/readyz']);
   });
 
-  // Exempt: the HMAC-verified Razorpay webhook, and the server-to-server Future Builders ingest routes, which need a
-  // server secret no browser holds (x-soyl-ingest-key, ADR-027; the web proxy never forwards that header).
-  const CSRF_EXEMPT = ['POST /v1/webhooks/razorpay', 'POST /v1/ingest/future-builders/enrollments', 'POST /v1/ingest/future-builders/leads'];
+  // Exempt: the HMAC-verified Razorpay webhook, the server-to-server Future Builders ingest routes, which need a
+  // server secret no browser holds (x-soyl-ingest-key, ADR-027; the web proxy never forwards that header), and the RFC 8058
+  // one-click unsubscribe (D-055): mailbox providers POST without an Origin; an HMAC token authorises it and it can only
+  // switch email off.
+  const CSRF_EXEMPT = ['POST /v1/webhooks/razorpay', 'POST /v1/ingest/future-builders/enrollments', 'POST /v1/ingest/future-builders/leads', 'POST /v1/email/unsubscribe/one-click'];
 
-  it('every state-changing route has csrf=true, except the HMAC-verified Razorpay webhook and the key-authenticated ingest routes (AUTH-12)', () => {
+  it('every state-changing route has csrf=true, except the HMAC-verified Razorpay webhook, the key-authenticated ingest routes and the token-authenticated one-click unsubscribe (AUTH-12)', () => {
     const exempt = h.app.routeTable.filter((r) => !r.policy.csrf).map((r) => `${r.method} ${r.url}`);
     expect(exempt.sort()).toEqual([...CSRF_EXEMPT].sort());
     for (const r of h.app.routeTable.filter((r) => ['POST', 'PUT', 'PATCH', 'DELETE'].includes(r.method) && !CSRF_EXEMPT.includes(`${r.method} ${r.url}`)))

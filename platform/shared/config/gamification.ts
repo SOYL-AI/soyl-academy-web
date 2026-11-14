@@ -5,7 +5,8 @@
  *
  * D-014: XP, streaks and badges are part of the learning feature itself (not consent-gated);
  * leaderboards, leagues and rank cards are consent-gated and arrive in M3+.
- * F-016: no streak-anxiety notifications for under-18s without owner sign-off (none exist yet).
+ * F-016: no streak-anxiety notifications. The only reminders are the D-055 emails (notifications.ts REMINDERS):
+ * email only, gentle wording, no streak-loss threats, no counts of days missed, at most one every few days.
  */
 
 export const XP_AWARDS = {

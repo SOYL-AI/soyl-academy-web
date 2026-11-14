@@ -20,6 +20,11 @@ export interface EmailMessage {
   replyTo?: string;
   /** Files, e.g. an invoice PDF (ADR-024). ACS accepts up to 10 MB per message in total. */
   attachments?: EmailAttachment[];
+  /**
+   * Extra message headers (D-055: List-Unsubscribe and List-Unsubscribe-Post, RFC 8058). Sent to ACS in the request
+   * body's `headers` object (Azure Communication Services Email custom headers, API version 2023-03-31).
+   */
+  headers?: Record<string, string>;
 }
 
 export interface EmailAttachment {
@@ -101,6 +106,7 @@ export class AcsEmailSender implements EmailSender {
       recipients: { to: [{ address: message.to }] },
       ...(message.replyTo ? { replyTo: [{ address: message.replyTo }] } : {}),
       content: { subject: message.subject, plainText: message.text, ...(message.html ? { html: message.html } : {}) },
+      ...(message.headers && Object.keys(message.headers).length ? { headers: message.headers } : {}),
       ...(message.attachments?.length ? { attachments: message.attachments.map((a) => ({ name: a.name, contentType: a.contentType, contentInBase64: a.content.toString('base64') })) } : {}),
       userEngagementTrackingDisabled: true,
     });

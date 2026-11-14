@@ -57,6 +57,8 @@ param pgDatabase string
 
 @description('API-only plain env vars (e.g. ACS_ENDPOINT from the Communication Services resource).')
 param apiExtraEnv array
+@description('Extra plain env vars for the worker only (e.g. ACS Email for reminders and invoices).')
+param workerExtraEnv array = []
 
 @description('Blob endpoint the release job publishes content releases to (D-026).')
 param blobAccountUrl string
@@ -191,6 +193,7 @@ var workerEnv = concat(
       value: workerIdentity.principalId
     }
   ],
+  workerExtraEnv,
   map(workerSecretRefs, s => {
     name: s.envName
     secretRef: s.secretName

@@ -1,0 +1,188 @@
+/* RadarChart (kit). Tokens only, Light and Dark. Labels are HTML around an SVG plot so they wrap, never clip.
+   Layout maths (all in px, from the chart's own width through container query units):
+   r = plot radius, shrunk until the widest side label (--label-w) fits beside the furthest-out vertex (--reach =
+   largest |cos| of an axis); every label sits --gap beyond its vertex and is anchored on the side facing away from
+   the centre, with a max-width that keeps it inside the chart's box. */
+
+.root {
+  --radar-tone: var(--p-accent);
+  --label-w: 84px;
+  --gap: 10px;
+  --label-h: 40px;
+  --r-max: 124px;
+  container-type: inline-size;
+  display: grid;
+  gap: var(--p-space-2);
+  min-width: 0;
+  margin: 0;
+}
+.root[data-tone='bronze'] {
+  --radar-tone: var(--p-tier-bronze);
+}
+.root[data-tone='silver'] {
+  --radar-tone: var(--p-tier-silver);
+}
+.root[data-tone='gold'] {
+  --radar-tone: var(--p-tier-gold);
+}
+.root[data-tone='elite'] {
+  --radar-tone: var(--p-tier-elite);
+}
+
+.plot {
+  --r: clamp(44px, calc((50cqi - var(--label-w)) / var(--reach, 1) - var(--gap)), var(--r-max));
+  position: relative;
+  height: calc(2 * (var(--r) + var(--gap) + var(--label-h)));
+}
+
+.svg {
+  position: absolute;
+  top: calc(var(--label-h) + var(--gap));
+  left: calc(50% - var(--r));
+  width: calc(2 * var(--r));
+  height: calc(2 * var(--r));
+  overflow: visible;
+}
+
+/* Grid: rings and spokes are decoration (the numbers are written); the outer ring is the strongest line. */
+.radarRing,
+.radarOuter,
+.radarSpoke {
+  fill: none;
+  stroke: var(--p-border-strong);
+  stroke-width: 1px;
+  vector-effect: non-scaling-stroke;
+}
+.radarRing {
+  stroke-opacity: 0.38;
+}
+.radarOuter {
+  stroke-opacity: 0.75;
+}
+.radarSpoke {
+  stroke-opacity: 0.28;
+}
+.root[data-blank] .radarRing,
+.root[data-blank] .radarOuter {
+  stroke-dasharray: 4 4;
+}
+.root[data-blank] .radarOuter {
+  stroke-width: 1.5px;
+  stroke-opacity: 1;
+}
+
+.radarGhost {
+  fill: none;
+  stroke: var(--p-ink-subtle);
+  stroke-width: 1.5px;
+  stroke-dasharray: 3 3;
+  stroke-opacity: 0.8;
+  vector-effect: non-scaling-stroke;
+}
+
+.radarShape {
+  transform-box: view-box;
+  transform-origin: 50% 50%;
+  animation: radarGrow 720ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  animation-play-state: paused;
+}
+.root[data-in] .radarShape {
+  animation-play-state: running;
+}
+@keyframes radarGrow {
+  from {
+    opacity: 0;
+    transform: scale(0.15);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .radarShape {
+    animation: none;
+  }
+}
+.radarArea {
+  fill: var(--radar-tone);
+  fill-opacity: 0.22;
+  stroke: var(--radar-tone);
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+.radarDot {
+  fill: var(--radar-tone);
+  stroke: var(--p-surface);
+  stroke-width: 1.5px;
+  vector-effect: non-scaling-stroke;
+}
+
+/* Axis labels: name, then the value (wraps to two lines when the side is narrow). */
+.radarLabel {
+  position: absolute;
+  top: calc(var(--label-h) + var(--gap) + var(--r) + var(--y) * (var(--r) + var(--gap)));
+  left: calc(50% + var(--x) * (var(--r) + var(--gap)));
+  width: max-content;
+  max-width: min(calc(2 * var(--label-w)), calc((50cqi - var(--ax) * (var(--r) + var(--gap))) * 2 / (1 + var(--ax))));
+  transform: translate(calc(-50% + var(--x) * 50%), calc(-50% + var(--y) * 50%));
+  color: var(--p-ink-muted);
+  font-size: var(--p-text-xs);
+  font-weight: 600;
+  line-height: 1.3;
+  text-align: center;
+  overflow-wrap: break-word;
+}
+.radarLabel[data-side='start'] {
+  text-align: left;
+}
+.radarLabel[data-side='end'] {
+  text-align: right;
+}
+.labelName {
+  overflow-wrap: break-word;
+}
+.labelValue {
+  color: var(--p-ink);
+  font-size: var(--p-text-sm);
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.labelNote {
+  display: block;
+  color: var(--p-ink-subtle);
+  font-weight: 500;
+}
+/* A note line under each label: more room above and below the plot. */
+.root[data-notes] {
+  --label-h: 56px;
+}
+.root[data-blank] .radarLabel {
+  color: var(--p-ink-subtle);
+}
+
+.caption {
+  color: var(--p-ink-subtle);
+  font-size: var(--p-text-xs);
+  text-align: center;
+}
+
+.radarDetails {
+  min-width: 0;
+}
+.summary {
+  width: fit-content;
+  margin-inline: auto;
+  padding: 12px var(--p-space-2);
+  border-radius: var(--p-radius-sm);
+  color: var(--p-accent);
+  font-size: var(--p-text-sm);
+  font-weight: 650;
+  cursor: pointer;
+}
+.summary:focus-visible {
+  outline: none;
+  box-shadow: var(--p-focus-ring);
+}

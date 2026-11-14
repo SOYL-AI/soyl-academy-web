@@ -7679,6 +7679,368 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/v1/me/email-preferences": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Your reminder email settings: your address (masked), whether reminders are on, and the optional parent address (D-055) */
+        get: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["EmailPreferences"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        /** Turn reminder emails to you, or to your confirmed parent address, on or off. Turning yours on needs an email address (409 reminders_unavailable). */
+        patch: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody: {
+                content: {
+                    "application/json": components["schemas"]["EmailPreferencesPatchInput"];
+                };
+            };
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["EmailPreferences"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        trace?: never;
+    };
+    "/v1/me/parent-email": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        /** Add or change the optional parent email for reminders. Only a confirmation email is sent to it; reminders start after the parent confirms. Rate-limited per account, address and IP. */
+        put: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody: {
+                content: {
+                    "application/json": components["schemas"]["ParentEmailBodyInput"];
+                };
+            };
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["ParentEmailResponse"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        post?: never;
+        /** Remove the parent email (erased at once; links already sent to it stop working). Idempotent. */
+        delete: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["EmailPreferences"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/me/parent-email/resend": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Send the confirmation email again to the pending parent address (the earlier link stops working). Same rate limits as adding it; no-op unless pending. */
+        post: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["ParentEmailResponse"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/email/parent-confirm": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** The parent's Confirm button (token from the confirmation email; no sign-in). Only the latest link for the current address works, for 72 hours. Idempotent. */
+        post: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody: {
+                content: {
+                    "application/json": components["schemas"]["EmailTokenBodyInput"];
+                };
+            };
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["ParentConfirmResponse"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/email/unsubscribe": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Unsubscribe from reminder emails (token from the email; no sign-in). A student token turns the student’s reminders off; a parent token erases the parent address. Idempotent. */
+        post: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody: {
+                content: {
+                    "application/json": components["schemas"]["EmailTokenBodyInput"];
+                };
+            };
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["EmailUnsubscribeResponse"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/v1/webhooks/razorpay": {
         parameters: {
             query?: never;
@@ -7705,6 +8067,62 @@ export interface paths {
                     };
                     content: {
                         "application/json": components["schemas"]["RazorpayWebhookAck"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/email/unsubscribe/one-click": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** RFC 8058 one-click unsubscribe (List-Unsubscribe-Post). Token in the query; any form body is ignored. Same effect as POST /v1/email/unsubscribe. */
+        post: {
+            parameters: {
+                query: {
+                    token: string;
+                };
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["EmailUnsubscribeResponse"];
                     };
                 };
                 /** @description Default Response */
@@ -10702,6 +11120,69 @@ export interface components {
             /** @enum {string} */
             emailStatus: "sent" | "failed";
         };
+        EmailPreferencesInput: {
+            /** @description Your address, masked (a***@gmail.com); null for a phone-only account. */
+            studentEmail: string | null;
+            /** @description Reminder emails to your own address are on. */
+            reminders: boolean;
+            /** @description False when the account has no email address (phone sign-up): no reminders possible. */
+            remindersAvailable: boolean;
+            parent: {
+                /** @description The parent address, masked; null when none. */
+                email: string | null;
+                /**
+                 * @description none | pending (waiting for the parent to confirm) | active (confirmed).
+                 * @enum {string}
+                 */
+                status: "none" | "pending" | "active";
+                /** @description Your switch for reminders to the confirmed parent address. */
+                reminders: boolean;
+                /** @description When a parent last unsubscribed (their address was erased then). */
+                unsubscribedAt: string | null;
+            };
+        };
+        EmailPreferencesPatchInput: {
+            reminders?: boolean;
+            parentReminders?: boolean;
+        };
+        ParentEmailBodyInput: {
+            email: string;
+        };
+        ParentEmailResponseInput: {
+            /** @description Your address, masked (a***@gmail.com); null for a phone-only account. */
+            studentEmail: string | null;
+            /** @description Reminder emails to your own address are on. */
+            reminders: boolean;
+            /** @description False when the account has no email address (phone sign-up): no reminders possible. */
+            remindersAvailable: boolean;
+            parent: {
+                /** @description The parent address, masked; null when none. */
+                email: string | null;
+                /**
+                 * @description none | pending (waiting for the parent to confirm) | active (confirmed).
+                 * @enum {string}
+                 */
+                status: "none" | "pending" | "active";
+                /** @description Your switch for reminders to the confirmed parent address. */
+                reminders: boolean;
+                /** @description When a parent last unsubscribed (their address was erased then). */
+                unsubscribedAt: string | null;
+            };
+            resendAfterSeconds: number;
+        };
+        EmailTokenBodyInput: {
+            token: string;
+        };
+        ParentConfirmResponseInput: {
+            /** @constant */
+            status: "active";
+            alreadyConfirmed: boolean;
+        };
+        EmailUnsubscribeResponseInput: {
+            /** @enum {string} */
+            kind: "student" | "parent";
+            alreadyOff: boolean;
+        };
         PublicNameResponseInput: {
             publicName: string;
         };
@@ -13690,6 +14171,69 @@ export interface components {
         FbResendResult: {
             /** @enum {string} */
             emailStatus: "sent" | "failed";
+        };
+        EmailPreferences: {
+            /** @description Your address, masked (a***@gmail.com); null for a phone-only account. */
+            studentEmail: string | null;
+            /** @description Reminder emails to your own address are on. */
+            reminders: boolean;
+            /** @description False when the account has no email address (phone sign-up): no reminders possible. */
+            remindersAvailable: boolean;
+            parent: {
+                /** @description The parent address, masked; null when none. */
+                email: string | null;
+                /**
+                 * @description none | pending (waiting for the parent to confirm) | active (confirmed).
+                 * @enum {string}
+                 */
+                status: "none" | "pending" | "active";
+                /** @description Your switch for reminders to the confirmed parent address. */
+                reminders: boolean;
+                /** @description When a parent last unsubscribed (their address was erased then). */
+                unsubscribedAt: string | null;
+            };
+        };
+        EmailPreferencesPatch: {
+            reminders?: boolean;
+            parentReminders?: boolean;
+        };
+        ParentEmailBody: {
+            email: string;
+        };
+        ParentEmailResponse: {
+            /** @description Your address, masked (a***@gmail.com); null for a phone-only account. */
+            studentEmail: string | null;
+            /** @description Reminder emails to your own address are on. */
+            reminders: boolean;
+            /** @description False when the account has no email address (phone sign-up): no reminders possible. */
+            remindersAvailable: boolean;
+            parent: {
+                /** @description The parent address, masked; null when none. */
+                email: string | null;
+                /**
+                 * @description none | pending (waiting for the parent to confirm) | active (confirmed).
+                 * @enum {string}
+                 */
+                status: "none" | "pending" | "active";
+                /** @description Your switch for reminders to the confirmed parent address. */
+                reminders: boolean;
+                /** @description When a parent last unsubscribed (their address was erased then). */
+                unsubscribedAt: string | null;
+            };
+            resendAfterSeconds: number;
+        };
+        EmailTokenBody: {
+            token: string;
+        };
+        ParentConfirmResponse: {
+            /** @constant */
+            status: "active";
+            alreadyConfirmed: boolean;
+        };
+        EmailUnsubscribeResponse: {
+            /** @enum {string} */
+            kind: "student" | "parent";
+            alreadyOff: boolean;
         };
         PublicNameResponse: {
             publicName: string;

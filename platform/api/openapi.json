@@ -14658,6 +14658,227 @@
           "emailStatus"
         ]
       },
+      "EmailPreferencesInput": {
+        "type": "object",
+        "properties": {
+          "studentEmail": {
+            "description": "Your address, masked (a***@gmail.com); null for a phone-only account.",
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "reminders": {
+            "type": "boolean",
+            "description": "Reminder emails to your own address are on."
+          },
+          "remindersAvailable": {
+            "type": "boolean",
+            "description": "False when the account has no email address (phone sign-up): no reminders possible."
+          },
+          "parent": {
+            "type": "object",
+            "properties": {
+              "email": {
+                "description": "The parent address, masked; null when none.",
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "status": {
+                "type": "string",
+                "enum": [
+                  "none",
+                  "pending",
+                  "active"
+                ],
+                "description": "none | pending (waiting for the parent to confirm) | active (confirmed)."
+              },
+              "reminders": {
+                "type": "boolean",
+                "description": "Your switch for reminders to the confirmed parent address."
+              },
+              "unsubscribedAt": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "format": "date-time",
+                    "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "description": "When a parent last unsubscribed (their address was erased then)."
+              }
+            },
+            "required": [
+              "email",
+              "status",
+              "reminders",
+              "unsubscribedAt"
+            ]
+          }
+        },
+        "required": [
+          "studentEmail",
+          "reminders",
+          "remindersAvailable",
+          "parent"
+        ]
+      },
+      "EmailPreferencesPatchInput": {
+        "type": "object",
+        "properties": {
+          "reminders": {
+            "type": "boolean"
+          },
+          "parentReminders": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ParentEmailBodyInput": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "minLength": 3,
+            "maxLength": 254
+          }
+        },
+        "required": [
+          "email"
+        ],
+        "additionalProperties": false
+      },
+      "ParentEmailResponseInput": {
+        "type": "object",
+        "properties": {
+          "studentEmail": {
+            "description": "Your address, masked (a***@gmail.com); null for a phone-only account.",
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "reminders": {
+            "type": "boolean",
+            "description": "Reminder emails to your own address are on."
+          },
+          "remindersAvailable": {
+            "type": "boolean",
+            "description": "False when the account has no email address (phone sign-up): no reminders possible."
+          },
+          "parent": {
+            "type": "object",
+            "properties": {
+              "email": {
+                "description": "The parent address, masked; null when none.",
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "status": {
+                "type": "string",
+                "enum": [
+                  "none",
+                  "pending",
+                  "active"
+                ],
+                "description": "none | pending (waiting for the parent to confirm) | active (confirmed)."
+              },
+              "reminders": {
+                "type": "boolean",
+                "description": "Your switch for reminders to the confirmed parent address."
+              },
+              "unsubscribedAt": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "format": "date-time",
+                    "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "description": "When a parent last unsubscribed (their address was erased then)."
+              }
+            },
+            "required": [
+              "email",
+              "status",
+              "reminders",
+              "unsubscribedAt"
+            ]
+          },
+          "resendAfterSeconds": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 9007199254740991
+          }
+        },
+        "required": [
+          "studentEmail",
+          "reminders",
+          "remindersAvailable",
+          "parent",
+          "resendAfterSeconds"
+        ]
+      },
+      "EmailTokenBodyInput": {
+        "type": "object",
+        "properties": {
+          "token": {
+            "type": "string",
+            "minLength": 10,
+            "maxLength": 200
+          }
+        },
+        "required": [
+          "token"
+        ],
+        "additionalProperties": false
+      },
+      "ParentConfirmResponseInput": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "const": "active"
+          },
+          "alreadyConfirmed": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "status",
+          "alreadyConfirmed"
+        ]
+      },
+      "EmailUnsubscribeResponseInput": {
+        "type": "object",
+        "properties": {
+          "kind": {
+            "type": "string",
+            "enum": [
+              "student",
+              "parent"
+            ]
+          },
+          "alreadyOff": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "kind",
+          "alreadyOff"
+        ]
+      },
       "PublicNameResponseInput": {
         "type": "object",
         "properties": {
@@ -29693,6 +29914,233 @@
         ],
         "additionalProperties": false
       },
+      "EmailPreferences": {
+        "type": "object",
+        "properties": {
+          "studentEmail": {
+            "description": "Your address, masked (a***@gmail.com); null for a phone-only account.",
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "reminders": {
+            "type": "boolean",
+            "description": "Reminder emails to your own address are on."
+          },
+          "remindersAvailable": {
+            "type": "boolean",
+            "description": "False when the account has no email address (phone sign-up): no reminders possible."
+          },
+          "parent": {
+            "type": "object",
+            "properties": {
+              "email": {
+                "description": "The parent address, masked; null when none.",
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "status": {
+                "type": "string",
+                "enum": [
+                  "none",
+                  "pending",
+                  "active"
+                ],
+                "description": "none | pending (waiting for the parent to confirm) | active (confirmed)."
+              },
+              "reminders": {
+                "type": "boolean",
+                "description": "Your switch for reminders to the confirmed parent address."
+              },
+              "unsubscribedAt": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "format": "date-time",
+                    "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "description": "When a parent last unsubscribed (their address was erased then)."
+              }
+            },
+            "required": [
+              "email",
+              "status",
+              "reminders",
+              "unsubscribedAt"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "studentEmail",
+          "reminders",
+          "remindersAvailable",
+          "parent"
+        ],
+        "additionalProperties": false
+      },
+      "EmailPreferencesPatch": {
+        "type": "object",
+        "properties": {
+          "reminders": {
+            "type": "boolean"
+          },
+          "parentReminders": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ParentEmailBody": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "minLength": 3,
+            "maxLength": 254
+          }
+        },
+        "required": [
+          "email"
+        ],
+        "additionalProperties": false
+      },
+      "ParentEmailResponse": {
+        "type": "object",
+        "properties": {
+          "studentEmail": {
+            "description": "Your address, masked (a***@gmail.com); null for a phone-only account.",
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "reminders": {
+            "type": "boolean",
+            "description": "Reminder emails to your own address are on."
+          },
+          "remindersAvailable": {
+            "type": "boolean",
+            "description": "False when the account has no email address (phone sign-up): no reminders possible."
+          },
+          "parent": {
+            "type": "object",
+            "properties": {
+              "email": {
+                "description": "The parent address, masked; null when none.",
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "status": {
+                "type": "string",
+                "enum": [
+                  "none",
+                  "pending",
+                  "active"
+                ],
+                "description": "none | pending (waiting for the parent to confirm) | active (confirmed)."
+              },
+              "reminders": {
+                "type": "boolean",
+                "description": "Your switch for reminders to the confirmed parent address."
+              },
+              "unsubscribedAt": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "format": "date-time",
+                    "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "description": "When a parent last unsubscribed (their address was erased then)."
+              }
+            },
+            "required": [
+              "email",
+              "status",
+              "reminders",
+              "unsubscribedAt"
+            ],
+            "additionalProperties": false
+          },
+          "resendAfterSeconds": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 9007199254740991
+          }
+        },
+        "required": [
+          "studentEmail",
+          "reminders",
+          "remindersAvailable",
+          "parent",
+          "resendAfterSeconds"
+        ],
+        "additionalProperties": false
+      },
+      "EmailTokenBody": {
+        "type": "object",
+        "properties": {
+          "token": {
+            "type": "string",
+            "minLength": 10,
+            "maxLength": 200
+          }
+        },
+        "required": [
+          "token"
+        ],
+        "additionalProperties": false
+      },
+      "ParentConfirmResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "const": "active"
+          },
+          "alreadyConfirmed": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "status",
+          "alreadyConfirmed"
+        ],
+        "additionalProperties": false
+      },
+      "EmailUnsubscribeResponse": {
+        "type": "object",
+        "properties": {
+          "kind": {
+            "type": "string",
+            "enum": [
+              "student",
+              "parent"
+            ]
+          },
+          "alreadyOff": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "kind",
+          "alreadyOff"
+        ],
+        "additionalProperties": false
+      },
       "PublicNameResponse": {
         "type": "object",
         "properties": {
@@ -37397,6 +37845,322 @@
         }
       }
     },
+    "/v1/me/email-preferences": {
+      "get": {
+        "summary": "Your reminder email settings: your address (masked), whether reminders are on, and the optional parent address (D-055)",
+        "tags": [
+          "me"
+        ],
+        "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EmailPreferences"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "summary": "Turn reminder emails to you, or to your confirmed parent address, on or off. Turning yours on needs an email address (409 reminders_unavailable).",
+        "tags": [
+          "me"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EmailPreferencesPatchInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EmailPreferences"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/me/parent-email": {
+      "put": {
+        "summary": "Add or change the optional parent email for reminders. Only a confirmation email is sent to it; reminders start after the parent confirms. Rate-limited per account, address and IP.",
+        "tags": [
+          "me"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ParentEmailBodyInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ParentEmailResponse"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Remove the parent email (erased at once; links already sent to it stop working). Idempotent.",
+        "tags": [
+          "me"
+        ],
+        "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EmailPreferences"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/me/parent-email/resend": {
+      "post": {
+        "summary": "Send the confirmation email again to the pending parent address (the earlier link stops working). Same rate limits as adding it; no-op unless pending.",
+        "tags": [
+          "me"
+        ],
+        "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ParentEmailResponse"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/email/parent-confirm": {
+      "post": {
+        "summary": "The parent's Confirm button (token from the confirmation email; no sign-in). Only the latest link for the current address works, for 72 hours. Idempotent.",
+        "tags": [
+          "email"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EmailTokenBodyInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ParentConfirmResponse"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/email/unsubscribe": {
+      "post": {
+        "summary": "Unsubscribe from reminder emails (token from the email; no sign-in). A student token turns the student’s reminders off; a parent token erases the parent address. Idempotent.",
+        "tags": [
+          "email"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EmailTokenBodyInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EmailUnsubscribeResponse"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/v1/webhooks/razorpay": {
       "post": {
         "summary": "Razorpay webhook (X-Razorpay-Signature over the raw body; X-Razorpay-Event-Id)",
@@ -37410,6 +38174,58 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/RazorpayWebhookAck"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/email/unsubscribe/one-click": {
+      "post": {
+        "summary": "RFC 8058 one-click unsubscribe (List-Unsubscribe-Post). Token in the query; any form body is ignored. Same effect as POST /v1/email/unsubscribe.",
+        "tags": [
+          "email"
+        ],
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "minLength": 10,
+              "maxLength": 200
+            },
+            "in": "query",
+            "name": "token",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EmailUnsubscribeResponse"
                 }
               }
             }
