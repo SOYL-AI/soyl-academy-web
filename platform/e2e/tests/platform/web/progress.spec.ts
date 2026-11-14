@@ -6,7 +6,9 @@ import { checkPage, signUp } from './m34-helpers';
  * Progress (/me/progress, design language v3 §10, ADR-032): members only (guests get the /me-style log-in prompt
  * that returns here), one h1, every section for a student with activity, a calm welcome for a brand-new one, the
  * platform nonce CSP (it is under /me), no horizontal scroll at 360 px in light and dark, and the ways in: the link
- * on Home, the sidebar (≥ 1024 px, current page) and the phone tab bar (Home stays lit).
+ * on Home, the sidebar (≥ 1024 px, current page) and the phone tab bar (Home stays lit). Progress radar (2026-11-14):
+ * the player card section (#card) with its attribute radar (blank until rated) and the subject bars/radar; radar
+ * labels stay inside the chart at 360 px.
  */
 const CH01 = 'cbse-10-science-ch01';
 
@@ -15,6 +17,19 @@ async function setTheme(page: Page, baseURL: string | undefined, value: 'light' 
 }
 
 /** Class + a few practice answers through the API (first try with option 1; a wrong try then the revealed key). */
+/** Radar axis labels that leave their chart's box (clipped or overflowing at narrow widths). */
+async function labelsOutside(page: Page, testId: string): Promise<string[]> {
+  return page.getByTestId(testId).evaluate((fig) => {
+    const box = fig.getBoundingClientRect();
+    return [...fig.querySelectorAll('[data-axis]')]
+      .filter((l) => {
+        const r = l.getBoundingClientRect();
+        return r.left < box.left - 0.5 || r.right > box.right + 0.5 || r.top < box.top - 0.5 || r.right > window.innerWidth;
+      })
+      .map((l) => l.textContent ?? '');
+  });
+}
+
 async function practise(page: Page, count: number) {
   const origin = new URL(page.url()).origin;
   const headers = { origin, 'content-type': 'application/json' };
@@ -82,9 +97,19 @@ test.describe('Progress (/me/progress)', () => {
     await practise(page, 4);
     await page.goto('/me/progress', { waitUntil: 'networkidle' });
     await expect(page.getByTestId('progress')).not.toHaveAttribute('data-new', /.*/);
-    for (const id of ['kpi-solved', 'mastery-tile', 'tests-tile', 'difficulty-tile', 'focus-tile', 'activity-card', 'recent-tile', 'weekly-goal', 'card-preview', 'badge-tile']) {
+    for (const id of ['card-section', 'kpi-solved', 'subjects-section', 'mastery-tile', 'tests-tile', 'difficulty-tile', 'focus-tile', 'activity-card', 'recent-tile', 'weekly-goal', 'badge-tile']) {
       await expect(page.getByTestId(id), id).toBeVisible();
     }
+    // The card moved from the rail to the first section (#card). Four answers are not a rating yet: the blank card and
+    // a dashed hexagon with the six attribute names, no numbers. One subject: a bar, not a radar.
+    await expect(page.getByTestId('card-preview')).toHaveCount(0);
+    await expect(page.locator('#card')).toHaveText('Your player card');
+    await expect(page.getByTestId('card-radar')).toHaveAttribute('data-blank', 'true');
+    await expect(page.getByTestId('card-radar').locator('[data-axis]')).toHaveCount(6);
+    expect(await page.getByTestId('card-radar').innerText()).not.toMatch(/\d/);
+    await expect(page.getByTestId('player-card-blank')).toContainText('Solve 10 questions to get rated');
+    await expect(page.getByTestId('subjects-bars')).toContainText('Science');
+    await expect(page.locator('a[href="/me#card"]')).toHaveCount(0);
     await expect(page.getByTestId('tests-empty')).toBeVisible();
     await expect(page.getByRole('list', { name: 'Mastery by subject' })).toContainText('Science');
     await expect(page.locator('h1')).toHaveCount(1);
@@ -98,6 +123,7 @@ test.describe('Progress (/me/progress)', () => {
         await page.goto('/me/progress', { waitUntil: 'networkidle' });
         await expect(page.locator('#soyl-platform-root')).toHaveAttribute('data-theme', theme);
         await expect(page.getByTestId('kpi-solved')).toBeVisible();
+        expect(await labelsOutside(page, 'card-radar'), `${theme} ${width}`).toEqual([]);
         await checkPage(page);
         expect(await page.evaluate(() => window.innerWidth), `${theme} ${width}`).toBe(width);
       }

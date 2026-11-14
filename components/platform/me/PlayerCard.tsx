@@ -57,22 +57,27 @@ export function PlayerCard({ card, compact = false, className }: { card: MyPlaye
   );
 }
 
-/** Attribute rows with what each one measures (shown next to the card on /me). */
-export function CardAttributes({ card }: { card: MyPlayerCard }) {
+/**
+ * Attribute rows with what each one measures and how to raise it (the /me/progress card section). `rated={false}`
+ * (a provisional card): names and the explanation only, no values or bars (never show unsettled numbers).
+ */
+export function CardAttributes({ card, rated = true, className }: { card: MyPlayerCard; rated?: boolean; className?: string }) {
   if (card.attributes.length === 0) return null;
   return (
-    <ul className={s.attrList}>
+    <ul className={cx(s.attrList, className)} data-testid="card-attributes" data-rated={rated}>
       {card.attributes.map((a) => (
         <li key={a.key}>
           <span className={s.attrHead}>
             <span>
               <b>{a.label}</b> <span className={s.attrKey}>{a.key}</span>
             </span>
-            <span className={s.attrValue}>{a.value}</span>
+            {rated && <span className={s.attrValue}>{a.value}</span>}
           </span>
-          <span className={s.attrTrack} aria-hidden="true">
-            <span className={s.attrFill} style={{ width: `${Math.round(((a.value - 40) / 59) * 100)}%` }} />
-          </span>
+          {rated && (
+            <span className={s.attrTrack} aria-hidden="true">
+              <span className={s.attrFill} style={{ width: `${Math.round(((a.value - 40) / 59) * 100)}%` }} />
+            </span>
+          )}
           <span className={s.attrExplain}>{a.explain}</span>
         </li>
       ))}
