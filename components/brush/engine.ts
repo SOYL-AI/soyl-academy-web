@@ -22,6 +22,8 @@ export interface PaintJob<A extends ArtName = ArtName> {
   instant: boolean;
   /** The paper colour under the artwork (the section background). */
   bg: string;
+  /** Called once the painting is finished. */
+  onDone?: () => void;
 }
 
 const MAX_DPR = 2;
@@ -29,7 +31,7 @@ const MAX_DPR = 2;
 let worker: Worker | null = null;
 let failed = false;
 let nextId = 1;
-const live = new Map<number, { canvas: HTMLCanvasElement; ctx: CanvasRenderingContext2D }>();
+const live = new Map<number, { canvas: HTMLCanvasElement; ctx: CanvasRenderingContext2D; onDone?: () => void }>();
 
 /** True when this browser can paint off the main thread (Worker + OffscreenCanvas + WebGL2). Cached. */
 let supported: boolean | null = null;
@@ -61,6 +63,7 @@ function stop() {
   failed = true;
   worker?.terminate();
   worker = null;
+  live.forEach((j) => j.onDone?.());
   live.clear();
 }
 
@@ -84,6 +87,7 @@ function getWorker(): Worker | null {
       }
       bitmap.close();
     } else if (type === 'done' && id) {
+      target?.onDone?.();
       live.delete(id);
     }
   };
@@ -100,7 +104,7 @@ export function paint<A extends ArtName>(job: PaintJob<A>): () => void {
   job.canvas.width = Math.max(2, Math.round(job.w * dpr));
   job.canvas.height = Math.max(2, Math.round(job.h * dpr));
   const id = nextId++;
-  live.set(id, { canvas: job.canvas, ctx });
+  live.set(id, { canvas: job.canvas, ctx, onDone: job.onDone });
   w.postMessage({ type: 'paint', id, w: job.w, h: job.h, dpr, seed: job.seed, art: job.art, options: job.options, bg: job.bg, stepMs: job.stepMs, instant: job.instant });
   return () => {
     if (!live.delete(id)) return;

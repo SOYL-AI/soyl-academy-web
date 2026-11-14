@@ -1,0 +1,104 @@
+/*
+ * /about (ADR-034): the story opens like a book. The cover swings open on scroll (scrubbed by the scene's --p);
+ * the first page carries the prologue. Page-local CSS, loaded only by the about page.
+ */
+
+.book-area {
+  /* One page of the book. */
+  --W: min(78vw, 300px);
+  --H: calc(var(--W) * 1.36);
+  /* 0 → 1 while the cover opens. */
+  --open: clamp(0, calc((var(--p) - 0.06) / 0.4), 1);
+  perspective: 1800px;
+}
+@media (min-width: 768px) {
+  .book-area {
+    --H: min(calc(100svh - 230px), 540px);
+    --W: calc(var(--H) * 0.72);
+  }
+}
+@media (min-width: 1024px) {
+  .book-area { --H: min(calc(100svh - 180px), 560px); }
+}
+
+.book {
+  position: relative;
+  width: var(--W);
+  height: var(--H);
+  transform-style: preserve-3d;
+}
+/* Wide screens: the closed book sits centred, then slides right so the open spread is centred. */
+@media (min-width: 768px) {
+  .book-area { width: calc(var(--W) * 2); }
+  .book { translate: calc(var(--W) * 0.5 * (var(--open) - 1)) 0; margin-left: var(--W); }
+}
+
+.book-page,
+.book-cover {
+  position: absolute;
+  inset: 0;
+  border-radius: 2px 10px 10px 2px;
+}
+.book-page {
+  background: #fffdf7;
+  box-shadow: 0 1px 0 rgba(31, 28, 25, 0.06), 0 30px 60px -36px rgba(31, 28, 25, 0.45), inset 14px 0 18px -16px rgba(31, 28, 25, 0.22);
+}
+/* The page edges under the first page: a few sheets of paper. */
+.book-page::before {
+  content: '';
+  position: absolute;
+  inset: 4px -5px -5px 4px;
+  z-index: -1;
+  border-radius: inherit;
+  background: repeating-linear-gradient(90deg, #f3ecdc 0 1px, #fbf7ee 1px 3px);
+  box-shadow: 0 24px 40px -30px rgba(31, 28, 25, 0.5);
+}
+
+.book-cover {
+  transform-origin: left center;
+  transform-style: preserve-3d;
+  rotate: y calc(var(--open) * -178deg);
+  z-index: 2;
+}
+.book-cover > .face {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  overflow: hidden;
+}
+.book-cover > .face--front {
+  background: var(--color-sheet-deep);
+  box-shadow: 0 34px 60px -30px rgba(31, 28, 25, 0.55), inset 0 0 0 1px rgba(31, 28, 25, 0.08);
+}
+.book-cover > .face--back {
+  rotate: y 180deg;
+  border-radius: 10px 2px 2px 10px;
+  background:
+    radial-gradient(ellipse 60% 45% at 26% 22%, color-mix(in srgb, var(--color-ochre) 34%, transparent) 0 55%, transparent 72%),
+    radial-gradient(ellipse 55% 50% at 78% 82%, color-mix(in srgb, var(--color-ultramarine) 22%, transparent) 0 50%, transparent 72%),
+    radial-gradient(ellipse 30% 26% at 76% 18%, color-mix(in srgb, var(--color-vermilion) 22%, transparent) 0 50%, transparent 72%),
+    #fbf6ea;
+  box-shadow: inset -14px 0 18px -16px rgba(31, 28, 25, 0.25);
+}
+/* The cloth spine strip. */
+.book-spine {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 14px;
+  background: linear-gradient(90deg, #a63a23, #cf4a2e 60%, #b8432a);
+  border-radius: 2px 0 0 2px;
+}
+
+/* A "scroll to open" hint that fades as the cover lifts. */
+.book-hint { opacity: calc(1 - var(--open) * 3); }
+
+@media (prefers-reduced-motion: reduce) {
+  .book-area { --open: 0; }
+  .scene:is([data-step="1"], [data-step="2"], [data-step="3"]) .book-area { --open: 1; }
+  .book-cover { transition: none; }
+}
+
+/* S · O · Y · L, the letters standing for words. */
+.soyl-letter { transition: color 400ms var(--ease-out); }

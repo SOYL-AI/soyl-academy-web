@@ -7,9 +7,9 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { contactSchema, ContactFormData, InterestEnum, RoleEnum } from '@/lib/validation/contact-schema';
 import { Field, describedBy, inputClasses } from '@/components/ui/Field';
 import { buttonClasses } from '@/components/ui/Button';
-import { Label } from '@/components/ui/SectionHeader';
 import { cn } from '@/lib/utils';
-import { Marked, Note } from '@/components/brush/marks';
+import { Marked } from '@/components/brush/marks';
+import { Postcard } from '@/components/contact/Postcard';
 import { submitContact } from './actions';
 
 export default function ContactPage() {
@@ -53,35 +53,24 @@ export default function ContactPage() {
   return (
     <>
       <section>
-        <div className="page grid-12 items-end gap-y-6 pb-10 pt-10 md:pb-14 md:pt-16 lg:pt-20">
-          <div className="col-span-12 lg:col-span-7">
-            <div className="rise"><Label tone="red" className="mb-6 md:mb-8">Contact</Label></div>
-            <h1 className="t-display rise max-w-[14ch]" style={{ '--d': '80ms' } as React.CSSProperties}>
-              Talk to the SOYL{' '}
-              <Marked mark="under" ink="vermilion" load delay={700} weight={4.5}>
-                team.
-              </Marked>
-            </h1>
-            <p className="t-lead mt-6 max-w-[48ch] text-graphite">
-              Questions, partnerships or anything else. To see a mission,{' '}
-              <Link href="/book-a-demo" className="link">book a demo</Link>.
-            </p>
-          </div>
-          <p className="rise col-span-12 lg:col-span-4 lg:col-start-9" style={{ '--d': '240ms' } as React.CSSProperties}>
-            <Note ink="graphite" tilt={-2} className="text-[1.2rem]">
-              or write to us
-            </Note>
-            <br />
-            <a href="mailto:outreach@soyl.cloud" className="link font-medium">
-              outreach@soyl.cloud
-            </a>
+        <div className="page pb-8 pt-8 md:pb-12 md:pt-12">
+          <p className="hand rise text-[1.25rem] text-vermilion-ink">Contact</p>
+          <h1 className="t-headline rise mt-2 max-w-[14ch]" style={{ '--d': '60ms' } as React.CSSProperties}>
+            Talk to the SOYL{' '}
+            <Marked mark="under" ink="vermilion" load delay={650} weight={4.5}>
+              team.
+            </Marked>
+          </h1>
+          <p className="t-lead rise mt-4 max-w-[48ch] text-graphite" style={{ '--d': '140ms' } as React.CSSProperties}>
+            Questions, partnerships or anything else. To see a mission,{' '}
+            <Link href="/book-a-demo" className="link">book a demo</Link>.
           </p>
         </div>
       </section>
 
       <section className="pb-20 md:pb-28">
-        <div className="page grid-12">
-          <div className="col-span-12 lg:col-span-8">
+        <div className="page grid-12 gap-y-12 md:gap-x-10">
+          <div className="col-span-12 lg:col-span-7">
             {status === 'success' ? (
               <div role="status" className="leaf tape p-6 md:p-10" style={{ '--tape': 'var(--color-sap)' } as React.CSSProperties}>
                 <p className="hand mb-3 text-[1.25rem] text-sap">Message sent</p>
@@ -163,6 +152,11 @@ export default function ContactPage() {
               </form>
             )}
           </div>
+          <aside className="col-span-12 lg:col-span-4 lg:col-start-9">
+            <div className="lg:sticky lg:top-28">
+              <Postcard email="outreach@soyl.cloud" className="mx-auto max-w-[400px] rotate-[-1.5deg] lg:mx-0" />
+            </div>
+          </aside>
         </div>
       </section>
     </>

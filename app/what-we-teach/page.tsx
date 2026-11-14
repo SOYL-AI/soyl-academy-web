@@ -2,7 +2,9 @@ import Link from 'next/link';
 import { PageHero } from '@/components/ui/PageHero';
 import { ComingSoon } from '@/components/ui/ComingSoon';
 import { Photo } from '@/components/media/Photo';
-import { images } from '@/content/images';
+import { images, type EditorialImage } from '@/content/images';
+import { Kinetic } from '@/components/story/Kinetic';
+import { Tilt } from '@/components/story/Tilt';
 import { SectionHeader } from '@/components/ui/SectionHeader';
 import { Faq } from '@/components/seo/Faq';
 import { StructuredData } from '@/components/seo/StructuredData';
@@ -50,7 +52,18 @@ const programs: { id: string; category: string; title: string; description: stri
   },
 ];
 
-/** What we teach (ADR-033): Future Builders, open now, then the four programme areas as notebook pages. */
+/** A photograph for each programme area's page. */
+const PHOTOS: Record<string, EditorialImage> = {
+  'ai-tech': images.fbAi,
+  'build-make': images.studentsBuilding,
+  'comm-ideas': images.studentsDebating,
+  'problem-solving': images.handsSquaredPaper,
+};
+
+/**
+ * What we teach (ADR-033, retold in ADR-034): the promise (learning together), Future Builders open now as a
+ * photo-led feature, then the four programme areas as notebook pages with a print each.
+ */
 export default function WhatWeTeachPage() {
   return (
     <>
@@ -66,28 +79,28 @@ export default function WhatWeTeachPage() {
       <PageHero
         tone="yellow"
         label="What we teach"
-        title={
-          <>
-            Some things are better learned <span className="t-accent">together.</span>
-          </>
-        }
+        title={<Kinetic as="span" load text="Some things are better learned together." />}
         intro="Future Builders online for individual students now; workshops for schools next."
-        image={images.studentsDebating}
+        image={images.groupOnGrass}
       />
 
-      <section className="section-tight">
+      <section className="section-tight" aria-labelledby="fb-feature-heading">
         <div className="page">
-          <Link href="/future-builders" className="leaf group grid-12 items-center gap-y-6 p-5 transition-transform duration-500 ease-[var(--ease-out-expo)] hover:-translate-y-1 md:p-7" data-reveal>
-            <div className="col-span-12 md:col-span-4">
-              <Photo image={images.fbSoftware} aspect="aspect-[3/2]" reveal={false} sizes="(min-width: 768px) 380px, 100vw" />
+          <Link href="/future-builders" className="group grid-12 items-center gap-y-8" data-reveal>
+            <div className="col-span-12 md:col-span-7">
+              <Tilt max={4}>
+                <span className="relative block rotate-[-1.2deg] bg-white p-2 pb-3 shadow-[0_26px_50px_-30px_rgba(31,28,25,0.6)] md:p-3">
+                  <span aria-hidden="true" className="tape absolute -top-3 left-[42%] z-10 h-6 w-24 rotate-[3deg]" />
+                  <Photo image={images.fbPresentation} aspect="aspect-[16/10]" reveal={false} zoom sizes="(min-width: 1320px) 720px, (min-width: 768px) 56vw, 100vw" className="rounded-none" />
+                  <span className="hand block px-1 pt-2 text-[1.1rem] text-graphite">From an idea on paper to a device that works.</span>
+                </span>
+              </Tilt>
             </div>
-            <div className="col-span-12 md:col-span-5 md:pl-4">
-              <p className="hand text-[1.25rem] text-sap">Open now · Grades 7–12</p>
-              <h2 className="t-title mt-1">Future Builders</h2>
-              <p className="mt-2 max-w-[48ch] text-graphite">A live online summer camp: software, AI, IoT and entrepreneurship, ending in a Demo Day pitch.</p>
-            </div>
-            <div className="col-span-12 md:col-span-3 md:text-right">
-              <span className="relative inline-flex items-center gap-2 font-semibold">
+            <div className="col-span-12 md:col-span-5 md:pl-8">
+              <p className="hand text-[1.3rem] text-sap">Open now · Grades 7–12</p>
+              <h2 id="fb-feature-heading" className="t-headline mt-1">Future Builders</h2>
+              <p className="t-lead mt-3 max-w-[40ch] text-graphite">A live online summer camp: software, AI, IoT and entrepreneurship, ending in a Demo Day pitch.</p>
+              <span className="relative mt-6 inline-flex items-center gap-2 font-semibold">
                 See dates and fees
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true" className="transition-transform duration-300 group-hover:translate-x-1">
                   <path d="M3 12.5 C 9 11.5, 14 12.8, 20 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
@@ -102,25 +115,26 @@ export default function WhatWeTeachPage() {
 
       <section className="section bg-sheet-deep" id="programs">
         <div className="page">
-          <SectionHeader label="Coming soon" title="Workshops and programmes for schools." intro="Intensive sessions where students negotiate, build and defend ideas in real time." />
+          <SectionHeader label="Coming soon" title={<Kinetic as="span" text="Workshops and programmes for schools." />} intro="Intensive sessions where students negotiate, build and defend ideas in real time." />
           <ul className="mt-12 grid grid-cols-1 gap-6 md:mt-16 md:grid-cols-2">
             {programs.map((p, i) => (
               <li
                 key={p.id}
                 data-reveal
                 style={{ '--d': `${(i % 2) * 90}ms` } as React.CSSProperties}
-                className={`leaf flex flex-col p-6 md:p-8 ${i % 2 ? 'tilt-r' : 'tilt-l'}`}
+                className={`leaf flex flex-col p-4 pb-6 md:p-5 md:pb-8 ${i % 2 ? 'tilt-r' : 'tilt-l'}`}
               >
-                <div className="flex items-center justify-between gap-4">
+                <Photo image={PHOTOS[p.id]!} aspect="aspect-[16/9]" reveal={false} sizes="(min-width: 1320px) 600px, (min-width: 768px) 46vw, 100vw" className="mb-5 rounded-none" />
+                <div className="flex items-center justify-between gap-4 px-2">
                   <p className="hand flex items-center gap-2 text-[1.2rem] text-graphite">
                     <Dab ink={p.ink} />
                     {p.category}
                   </p>
                   <p className="swipe text-[0.85rem] font-semibold">Coming soon</p>
                 </div>
-                <h3 className="t-title mt-4">{p.title}</h3>
-                <p className="mt-2 text-graphite">{p.description}</p>
-                <ul className="mt-5 flex flex-wrap gap-2" aria-label="Topics">
+                <h3 className="t-title mt-4 px-2">{p.title}</h3>
+                <p className="mt-2 px-2 text-graphite">{p.description}</p>
+                <ul className="mt-5 flex flex-wrap gap-2 px-2" aria-label="Topics">
                   {p.tags.map((t) => (
                     <li key={t} className="sketch-soft px-3 py-1 text-[0.875rem] text-ink">
                       {t}

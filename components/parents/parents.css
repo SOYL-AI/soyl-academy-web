@@ -1,0 +1,50 @@
+/*
+ * /parents, "What comes home" (ADR-034). Page-local: loaded only by the parents components.
+ */
+
+/* ── Tonight: the worksheet turns over and a Thoughtprint is on the back ──────────────────────────────── */
+.flip {
+  perspective: 1600px;
+  /* The turn runs from 38% to 68% of the scene. */
+  --f: clamp(0, calc((var(--p) - 0.38) / 0.3), 1);
+}
+.flip-inner {
+  position: relative;
+  height: 100%;
+  transform-style: preserve-3d;
+  rotate: y calc(var(--f) * -180deg);
+  /* A slight lift mid-turn. */
+  translate: 0 calc(sin(var(--f) * 180deg) * -14px);
+  will-change: rotate;
+}
+.flip-face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.flip-back { rotate: y 180deg; }
+
+/* The red-pen mark on the worksheet. */
+.pen-ring {
+  border: 3px solid var(--color-vermilion);
+  border-radius: 52% 48% 55% 45% / 50% 56% 44% 50%;
+  rotate: -8deg;
+}
+
+/* ── At dinner: three slips of paper ──────────────────────────────────────────────────────────────────── */
+.slip {
+  background: #fffdf8;
+  box-shadow: 0 1px 0 rgba(31, 28, 25, 0.06), 0 16px 30px -20px rgba(31, 28, 25, 0.45);
+  clip-path: polygon(0 4%, 6% 0, 18% 3%, 34% 0, 52% 2%, 70% 0, 86% 3%, 100% 1%, 99% 96%, 92% 100%, 74% 97%, 55% 100%, 38% 97%, 20% 100%, 4% 97%, 1% 100%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flip-inner { rotate: none; translate: none; }
+  .flip-face { backface-visibility: visible; -webkit-backface-visibility: visible; transition: opacity 200ms linear; }
+  .flip-back { rotate: none; opacity: 0; }
+  .scene[data-step="2"] .flip-back { opacity: 1; }
+  .scene[data-step="2"] .flip-front { opacity: 0; }
+}

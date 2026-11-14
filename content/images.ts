@@ -27,6 +27,25 @@ import fbIot from '@/public/images/future-builders/iot_wiring.jpg';
 import fbSoftware from '@/public/images/future-builders/software_coding.jpg';
 import fbAi from '@/public/images/future-builders/ai_classifier.jpg';
 import fbPitch from '@/public/images/future-builders/entrepreneurship_pitch.jpg';
+import pupilsReading from '@/public/images/stock/pupils-reading.jpg';
+import boyWriting from '@/public/images/stock/boy-writing.jpg';
+import notebookOutdoors from '@/public/images/stock/notebook-outdoors.jpg';
+import lateNightStudy from '@/public/images/stock/late-night-study.jpg';
+import lampHomework from '@/public/images/stock/lamp-homework.jpg';
+import handsSquaredPaper from '@/public/images/stock/hands-squared-paper.jpg';
+import handsBreadboard from '@/public/images/stock/hands-breadboard.jpg';
+import parentReading from '@/public/images/stock/parent-reading.jpg';
+import parentTablet from '@/public/images/stock/parent-tablet.jpg';
+import teacherCircle from '@/public/images/stock/teacher-circle.jpg';
+import teacherLeaning from '@/public/images/stock/teacher-leaning.jpg';
+import teacherOneToOne from '@/public/images/stock/teacher-one-to-one.jpg';
+import schoolVerandah from '@/public/images/stock/school-verandah.jpg';
+import schoolAssembly from '@/public/images/stock/school-assembly.jpg';
+import emptyClassroom from '@/public/images/stock/empty-classroom.jpg';
+import walkToSchool from '@/public/images/stock/walk-to-school.jpg';
+import magnifier from '@/public/images/stock/magnifier.jpg';
+import groupOnGrass from '@/public/images/stock/group-on-grass.jpg';
+import deskPencils from '@/public/images/stock/desk-pencils.jpg';
 
 export interface EditorialImage {
   src: StaticImageData;
@@ -102,6 +121,31 @@ export const images = {
     alt: 'A student presenting a project poster to her class and teacher',
     focus: '55% 40%',
   },
+  // Stock photography (Pexels License, ADR-034; credits in public/images/stock/CREDITS.md). Placeholders until
+  // consented SOYL photography exists; same rules as above.
+  pupilsReading: {
+    src: pupilsReading,
+    alt: 'Two pupils in light-blue school uniforms bent over their books at a shared desk',
+    focus: '55% 45%',
+  },
+  boyWriting: { src: boyWriting, alt: 'Close-up of a boy leaning over his desk, writing intently', focus: '50% 40%' },
+  notebookOutdoors: { src: notebookOutdoors, alt: 'A boy sitting outdoors by green fields, writing in a notebook on his lap', focus: '55% 45%' },
+  lateNightStudy: { src: lateNightStudy, alt: 'A student working late at a table under a single desk lamp in a dark room', focus: '45% 50%' },
+  lampHomework: { src: lampHomework, alt: 'A child working through an exercise book under a warm lamp at night', focus: '60% 45%' },
+  handsSquaredPaper: { src: handsSquaredPaper, alt: 'Close-up of a pupil’s hands drawing on squared paper with a pencil' },
+  handsBreadboard: { src: handsBreadboard, alt: 'Hands pushing jumper wires into a breadboard on a workbench' },
+  parentReading: { src: parentReading, alt: 'A mother and her teenage daughter sitting close on a sofa, reading together', focus: '45% 40%' },
+  parentTablet: { src: parentTablet, alt: 'A mother and her son on a patterned rug, looking at a tablet together', focus: '50% 60%' },
+  teacherCircle: { src: teacherCircle, alt: 'A teacher explaining something to a circle of pupils in a room with a carved stone screen', focus: '55% 45%' },
+  teacherLeaning: { src: teacherLeaning, alt: 'A teacher leaning over a desk to help two pupils with their work', focus: '60% 45%' },
+  teacherOneToOne: { src: teacherOneToOne, alt: 'A teacher sitting across a desk from a pupil, going through a notebook together', focus: '55% 50%' },
+  schoolVerandah: { src: schoolVerandah, alt: 'A long, empty school verandah with painted arches and classroom doors' },
+  schoolAssembly: { src: schoolAssembly, alt: 'Rows of schoolgirls in uniform seen from behind at a morning assembly' },
+  emptyClassroom: { src: emptyClassroom, alt: 'An empty classroom with rows of wooden desks and benches in morning light' },
+  walkToSchool: { src: walkToSchool, alt: 'Four schoolgirls in uniform walking along a quiet tree-lined road' },
+  magnifier: { src: magnifier, alt: 'A schoolgirl studying a white flower through a magnifying glass', focus: '60% 45%' },
+  groupOnGrass: { src: groupOnGrass, alt: 'Five students sitting on the grass with books and a laptop, talking through their work' },
+  deskPencils: { src: deskPencils, alt: 'Overhead view of pencils, an eraser and a ruler beside a lined notebook' },
 } satisfies Record<string, EditorialImage>;
 
 export type ImageKey = keyof typeof images;

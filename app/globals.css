@@ -705,40 +705,42 @@ html:not([data-platform-theme]) body {
 .nav-link .ink path { stroke-dashoffset: 1; transition: stroke-dashoffset 420ms var(--ease-out); }
 .nav-link:hover .ink path,
 .nav-link:focus-visible .ink path,
-.nav-link[aria-current="page"] .ink path { stroke-dashoffset: 0; }
+.nav-link[aria-current="page"] .ink path,
+.nav-link[data-current="true"] .ink path { stroke-dashoffset: 0; }
 
 /* A mark that draws itself when its link (or any .group ancestor) is hovered or focused. */
 .ink-hover path { stroke-dashoffset: 1; transition: stroke-dashoffset 420ms var(--ease-out); }
 .group:hover .ink-hover path,
 .group:focus-visible .ink-hover path { stroke-dashoffset: 0; }
 
-/* The index: a full page that opens from the button like ink spreading. */
-.index-sheet {
-  clip-path: circle(0 at var(--ox, 100%) var(--oy, 0));
-  visibility: hidden;
-  transition: clip-path 650ms var(--ease-out-expo), visibility 0s linear 650ms;
+/* Drop-down menus (ADR-034): a sheet of paper that unrolls under the bar, items rising in after it. */
+.menu-panel {
+  clip-path: inset(0 0 0 0);
+  animation: menu-unroll 420ms var(--ease-out-expo) both;
 }
-.index-sheet[data-open="true"] {
-  clip-path: circle(150% at var(--ox, 100%) var(--oy, 0));
-  visibility: visible;
-  transition: clip-path 750ms var(--ease-out-expo), visibility 0s;
+@keyframes menu-unroll {
+  from { clip-path: inset(0 0 100% 0); }
+  to { clip-path: inset(0 0 -40px 0); }
 }
-.index-row .index-arrow { transition: transform var(--duration-base) var(--ease-out); }
-.index-row:hover .index-arrow,
-.index-row:focus-visible .index-arrow { transform: translateX(6px); }
-.index-row .ink path { stroke-dashoffset: 1; transition: stroke-dashoffset 450ms var(--ease-out); }
-.index-row:hover .ink path,
-.index-row:focus-visible .ink path { stroke-dashoffset: 0; }
-.index-item {
-  opacity: 0;
-  transform: translateY(14px);
-  transition: opacity 400ms var(--ease-out), transform 600ms var(--ease-out-expo);
+.menu-item {
+  animation: menu-rise 480ms var(--ease-out-expo) both;
+  animation-delay: calc(var(--i, 0) * 40ms + 90ms);
 }
-.index-sheet[data-open="true"] .index-item {
-  opacity: 1;
-  transform: none;
-  transition-delay: calc(var(--i, 0) * 35ms + 180ms);
+@keyframes menu-rise {
+  from { opacity: 0; transform: translateY(10px); }
 }
+.menu-row .menu-arrow { transition: transform var(--duration-base) var(--ease-out), opacity var(--duration-base) var(--ease-out); opacity: 0; }
+.menu-row:hover .menu-arrow,
+.menu-row:focus-visible .menu-arrow { transform: translateX(4px); opacity: 1; }
+.menu-row .ink path { stroke-dashoffset: 1; transition: stroke-dashoffset 450ms var(--ease-out); }
+.menu-row:hover .ink path,
+.menu-row:focus-visible .ink path,
+.menu-row[aria-current="page"] .ink path { stroke-dashoffset: 0; }
+.menu-print { transition: rotate 500ms var(--ease-out-expo), translate 500ms var(--ease-out-expo); }
+.menu-feature:hover .menu-print,
+.menu-feature:focus-visible .menu-print { rotate: 0deg; translate: 0 -4px; }
+.menu-trigger[aria-expanded="true"] .menu-chevron { rotate: 180deg; }
+.menu-chevron { transition: rotate 300ms var(--ease-out); }
 
 /* Stage tabs in the pupil's hour. */
 .stage-panel { animation: rise 520ms var(--ease-out-expo) both; }
@@ -750,7 +752,7 @@ html:not([data-platform-theme]) body {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .index-sheet,
-  .index-sheet[data-open="true"] { transition: none; }
+  .menu-panel,
+  .menu-item { animation: none; }
 }
 

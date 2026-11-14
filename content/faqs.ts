@@ -112,6 +112,30 @@ export const schoolsFaqs: FaqItem[] = [
   },
 ];
 
+/** /parents (ADR-034). Every answer restates what the home, parents and pupils pages already say. */
+export const parentsFaqs: FaqItem[] = [
+  {
+    question: 'What is a Thoughtprint?',
+    answer:
+      'A Thoughtprint is the card your child gets at the end of every mission. It leads with what they can now do, then shows the moment their thinking turned and the misconception that was found and fixed. A mark is never the headline.',
+  },
+  {
+    question: 'How long does a mission take?',
+    answer:
+      'A mission never runs past an hour, and most end around 45 minutes. There is no countdown and no question counter. Time spent working on paper does not count as screen time.',
+  },
+  {
+    question: 'Do the hints give my child the answer?',
+    answer:
+      'No. Hints ask, point and narrow; your child does the thinking. If they stay stuck, the mission makes the problem smaller and then flags them for their teacher.',
+  },
+  {
+    question: 'Can I sign my child up for missions myself?',
+    answer:
+      'Missions come through your child’s school, so share this page with their teacher or principal, or book a demo on the school’s behalf. Future Builders, our live online summer camp for Grades 7 to 12, is the one programme individual students can join directly.',
+  },
+];
+
 export const studentsFaqs: FaqItem[] = [
   {
     question: 'What is a mission like?',

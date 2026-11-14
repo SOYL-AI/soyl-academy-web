@@ -1,0 +1,19 @@
+/*
+ * /students (ADR-034): the trail the reader walks. `Trail.tsx` writes --p (0 → 1) as the trail passes the middle of
+ * the screen; the line inks itself in behind the reader. Each stop's marker fills when the stop scrolls in.
+ * Transform, opacity and stroke-dashoffset only. Reduced motion: the whole line is drawn.
+ */
+.trail { --p: 0; }
+.trail-ink path {
+  stroke-dasharray: 1;
+  stroke-dashoffset: calc(1 - var(--p));
+}
+.trail-marker {
+  transition: background-color 500ms var(--ease-out), scale 600ms var(--ease-out-expo);
+}
+[data-rs="pending"] .trail-marker { background-color: var(--color-sheet); scale: 0.7; }
+
+@media (prefers-reduced-motion: reduce) {
+  .trail-ink path { stroke-dashoffset: 0; }
+  .trail-marker { transition: none; }
+}

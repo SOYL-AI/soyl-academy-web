@@ -1,9 +1,13 @@
+import '@/components/journal/journal.css';
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { FinalCta } from '@/components/home/FinalCta';
 import { ArticleImage } from '@/components/journal/ArticleImage';
 import { StructuredData } from '@/components/seo/StructuredData';
+import { Kinetic } from '@/components/story/Kinetic';
+import { Tilt } from '@/components/story/Tilt';
+import { Dab } from '@/components/brush/marks';
 import { formatArticleDate, formatReadingTime, getArticleBySlug, journalArticles } from '@/content/journal';
 import { absoluteUrl } from '@/lib/seo/config';
 import { createMetadata } from '@/lib/seo/metadata';
@@ -73,6 +77,7 @@ export default async function JournalArticlePage({ params }: Props) {
       />
 
       <article>
+        <div aria-hidden="true" className="read-thread" />
         <header>
           <div className="page grid-12 pb-10 pt-10 md:pb-14 md:pt-16">
             <div className="col-span-12 lg:col-span-9">
@@ -90,22 +95,29 @@ export default async function JournalArticlePage({ params }: Props) {
                 <span aria-hidden="true">·</span>
                 <span>{formatReadingTime(article.readingTime)}</span>
               </p>
-              <h1 className="t-display rise mt-5 max-w-[16ch]" style={{ '--d': '80ms' } as React.CSSProperties}>{article.title}</h1>
+              <Kinetic as="h1" load delay={80} text={article.title} className="t-display mt-5 max-w-[16ch]" />
               <p className="t-lead mt-6 max-w-[56ch] text-graphite">{article.excerpt}</p>
               {article.author && <p className="hand mt-6 text-[1.2rem] text-graphite">By {article.author}</p>}
             </div>
           </div>
           {article.photo && (
             <div className="page">
-              <ArticleImage article={article} aspect="aspect-[4/3] sm:aspect-[16/9] lg:aspect-[21/9]" large priority sizes="(min-width: 1320px) 1210px, 100vw" />
+              <ArticleImage article={article} aspect="aspect-[4/3] sm:aspect-[16/9] lg:aspect-[21/9]" large priority parallax sizes="(min-width: 1320px) 1210px, 100vw" />
             </div>
           )}
         </header>
 
         <div className="page grid-12 section-tight">
-          <div className="col-span-12 max-w-[68ch] space-y-6 text-[1.125rem] leading-[1.8] text-ink/90 md:col-span-8 md:col-start-3 lg:col-span-7 lg:col-start-3 [&>p:first-child]:first-letter:float-left [&>p:first-child]:first-letter:mr-3 [&>p:first-child]:first-letter:mt-1 [&>p:first-child]:first-letter:font-serif [&>p:first-child]:first-letter:text-[4.5rem] [&>p:first-child]:first-letter:leading-[0.8] [&>p:first-child]:first-letter:text-vermilion-ink">
+          <div className="essay col-span-12 max-w-[68ch] space-y-6 text-[1.125rem] leading-[1.8] text-ink/90 md:col-span-8 md:col-start-3 lg:col-span-7 lg:col-start-3">
             {paragraphs.length > 0 ? paragraphs.map((p, i) => <p key={i}>{p}</p>) : <p>Article coming soon.</p>}
           </div>
+          {/* The end mark: S·O·Y·L in its four pigments. */}
+          <p aria-hidden="true" className="col-span-12 mt-12 flex items-center justify-center gap-2.5 md:col-span-8 md:col-start-3 lg:col-span-7 lg:col-start-3">
+            <Dab ink="ultramarine" />
+            <Dab ink="vermilion" />
+            <Dab ink="ochre" />
+            <Dab ink="sap" />
+          </p>
         </div>
       </article>
 
@@ -116,13 +128,17 @@ export default async function JournalArticlePage({ params }: Props) {
             <ul className="grid grid-cols-1 gap-x-6 gap-y-10 md:grid-cols-2">
               {related.map((item) => (
                 <li key={item.slug}>
-                  <Link href={`/journal/${item.slug}`} className="group grid grid-cols-[7.5rem_1fr] items-start gap-5 sm:grid-cols-[10rem_1fr]">
-                    <ArticleImage article={item} aspect="aspect-square" sizes="160px" />
-                    <div>
-                    <p className="t-title transition-colors duration-200 group-hover:text-ultramarine">{item.title}</p>
-                    <p className="mt-2 text-graphite">{item.excerpt}</p>
-                    </div>
-                  </Link>
+                  <Tilt max={4}>
+                    <Link href={`/journal/${item.slug}`} className="journal-card group grid grid-cols-[7.5rem_1fr] items-start gap-5 sm:grid-cols-[10rem_1fr]">
+                      <div className="print -rotate-[1.2deg]">
+                        <ArticleImage article={item} aspect="aspect-square" sizes="160px" />
+                      </div>
+                      <div>
+                        <p className="t-title"><span className="card-title">{item.title}</span></p>
+                        <p className="mt-2 text-graphite">{item.excerpt}</p>
+                      </div>
+                    </Link>
+                  </Tilt>
                 </li>
               ))}
             </ul>

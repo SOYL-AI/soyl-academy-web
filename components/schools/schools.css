@@ -1,0 +1,44 @@
+/*
+ * /schools, "A term with SOYL" (ADR-034). Page-local: loaded only by the schools components.
+ */
+
+/* ── The term: a line that fills as the reader travels down it (TermLine.tsx writes --f, 0 → 1) ─────────── */
+.term { --f: 0; }
+.term-track {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  border-radius: 3px;
+  background: color-mix(in srgb, var(--color-ink) 14%, transparent);
+}
+.term-fill {
+  position: absolute;
+  inset: 0;
+  border-radius: 3px;
+  background: linear-gradient(180deg, var(--color-ultramarine) 0 18%, var(--color-vermilion) 30% 74%, var(--color-sap) 86% 100%);
+  /* Revealed in place, so each phase keeps its colour beside its weeks. */
+  clip-path: inset(0 0 calc((1 - var(--f)) * 100%) 0);
+}
+.term-dot {
+  border: 3px solid var(--color-sheet);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--color-ink) 22%, transparent);
+  background: var(--color-sheet-deep);
+  transition: background-color 400ms var(--ease-out), scale 500ms var(--ease-out-expo);
+}
+[data-rs="in"] .term-dot,
+.term-step:not([data-rs]) .term-dot { background: var(--dot); scale: 1.15; }
+
+/* The ten weeks of the term, as a strip of squares. */
+.week-cell {
+  border-radius: 3px 5px 4px 6px;
+}
+
+/* ── What leaders see: cells change with the weeks ────────────────────────────────────────────────────── */
+.cv-cell { display: grid; }
+.cv-cell > * { grid-area: 1 / 1; }
+
+@media (prefers-reduced-motion: reduce) {
+  .term { --f: 1 !important; }
+  .term-dot { background: var(--dot); }
+}

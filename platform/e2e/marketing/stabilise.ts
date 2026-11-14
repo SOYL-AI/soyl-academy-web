@@ -88,6 +88,13 @@ export async function stabilisePage(page: Page): Promise<void> {
   });
 
   await page.waitForLoadState('networkidle');
+  // p5.brush paintings (ADR-033/034): under automation each one paints in a single frame on load and marks its box
+  // data-paint="done" (or "off" without WebGL2). Wait for all of them, so the capture never catches one mid-way.
+  await page
+    .waitForFunction(() => Array.from(document.querySelectorAll<HTMLElement>('[data-paint]')).every((el) => el.dataset.paint === 'done' || el.dataset.paint === 'off'), undefined, {
+      timeout: 60_000,
+    })
+    .catch(() => undefined);
   // Two frames so layout after the last image decode is painted.
   await page.evaluate(
     () => new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(() => r(null))))

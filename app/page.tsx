@@ -1,13 +1,16 @@
-import { Hero } from '@/components/home/Hero';
-import { ProofStrip } from '@/components/home/ProofStrip';
-import { Shift } from '@/components/home/Shift';
-import { PupilsHour } from '@/components/home/PupilsHour';
-import { ThoughtprintCard } from '@/components/home/ThoughtprintCard';
-import { MondayScreen } from '@/components/home/MondayScreen';
-import { MissionLoop } from '@/components/home/MissionLoop';
-import { Audiences } from '@/components/home/Audiences';
+import { Prologue } from '@/components/home/story/Prologue';
+import { Tuesday } from '@/components/home/story/Tuesday';
+import { Wednesday } from '@/components/home/story/Wednesday';
+import { TheHour } from '@/components/home/story/TheHour';
+import { ThoughtprintChapter } from '@/components/home/story/ThoughtprintChapter';
+import { Monday } from '@/components/home/story/Monday';
+import { Recheck } from '@/components/home/story/Recheck';
+import { StoryChapter } from '@/components/home/story/StoryChapter';
+import { HouseRules } from '@/components/home/story/HouseRules';
+import { FourWays } from '@/components/home/story/FourWays';
+import { Epilogue } from '@/components/home/story/Epilogue';
 import { FutureBuildersFeature } from '@/components/home/FutureBuildersFeature';
-import { FinalCta } from '@/components/home/FinalCta';
+import { ChapterRail } from '@/components/story/ChapterRail';
 import { OfferTab } from '@/components/marketing/OfferTab';
 import { Faq } from '@/components/seo/Faq';
 import { StructuredData } from '@/components/seo/StructuredData';
@@ -23,9 +26,10 @@ export const metadata = createMetadata({ path: '/' });
 export const revalidate = 300;
 
 /**
- * Homepage (ADR-033): from assignments to missions → the shift → the pupil's hour → the Thoughtprint →
- * the teacher's Monday screen → the loop → who it's for → Future Builders → FAQ → close.
- * Every section is fully visible without JS; the paintings and motion only decorate.
+ * Homepage (ADR-034): the story of one mission, in chapters. Prologue → Tuesday night (the old way) → Wednesday (a
+ * mission) → the hour (five stages) → the Thoughtprint → Monday (groups, not marks) → seven days later → the Story
+ * (Story of Your Life) → house rules → four readers → Future Builders → FAQ → epilogue. Ira and Ms Rao are an
+ * illustrative story; the page says so. Native scroll; pinned scenes are short and the chapter rail skips them.
  */
 export default function HomePage() {
   const now = today();
@@ -51,17 +55,20 @@ export default function HomePage() {
         <OfferTab offerKey={offer.campaign ?? offer.slug} label={offer.label ?? offer.name} price={rupees(offer.price)} listPrice={rupees(LIST_PRICE)} endsAt={offer.endsAt} offsetMs={offsetMs} />
       )}
 
-      <Hero />
-      <ProofStrip />
-      <Shift />
-      <PupilsHour />
-      <ThoughtprintCard />
-      <MondayScreen />
-      <MissionLoop />
-      <Audiences />
+      <ChapterRail label="Chapters of the story" />
+      <Prologue />
+      <Tuesday />
+      <Wednesday />
+      <TheHour />
+      <ThoughtprintChapter />
+      <Monday />
+      <Recheck />
+      <StoryChapter />
+      <HouseRules />
+      <FourWays />
       <FutureBuildersFeature state={cohortState} />
-      <Faq faqs={homeFaqs} heading="Common questions about SOYL missions" num="07" />
-      <FinalCta />
+      <Faq faqs={homeFaqs} heading="Common questions about SOYL missions" />
+      <Epilogue />
     </>
   );
 }

@@ -74,7 +74,7 @@ test('/dashboard and /me/dashboard are the marketing 404 with the marketing chro
   for (const path of ['/dashboard', '/me/dashboard']) {
     const res = await page.goto(path);
     expect(res?.status(), path).toBe(404);
-    await expect(page.locator('#site-index'), path).toHaveCount(1); // the marketing header's menu
+    await expect(page.locator('#mobile-menu'), path).toHaveCount(1); // the marketing header's menu
     await expect(page.locator('#soyl-platform-root'), path).toHaveCount(0);
     await expect(page.getByRole('navigation', { name: 'Learning platform' }), path).toHaveCount(0);
   }

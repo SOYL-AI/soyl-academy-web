@@ -2,315 +2,315 @@
   "nextVersion": "16.4.3",
   "note": "Next.js 16 does not print sizes in the build route table; measured from .next: JS/CSS referenced by each prerendered page (first load), gzip level 9. Dynamic routes (ƒ) have no prerendered HTML and are not listed.",
   "totals": {
-    "staticBytes": 8062660,
-    "staticJsBytes": 3260013,
-    "staticCssBytes": 363607,
-    "staticMediaBytes": 4438987
+    "staticBytes": 13889762,
+    "staticJsBytes": 3333561,
+    "staticCssBytes": 414149,
+    "staticMediaBytes": 10141999
   },
   "routes": {
     "/": {
       "firstLoadJsFiles": 11,
-      "firstLoadJsBytes": 666334,
-      "firstLoadJsGzipBytes": 207996,
-      "cssBytes": 94195,
-      "cssGzipBytes": 18382,
-      "htmlBytes": 209584
+      "firstLoadJsBytes": 669008,
+      "firstLoadJsGzipBytes": 208951,
+      "cssBytes": 133547,
+      "cssGzipBytes": 25579,
+      "htmlBytes": 375417
     },
     "/_not-found": {
       "firstLoadJsFiles": 10,
-      "firstLoadJsBytes": 656568,
-      "firstLoadJsGzipBytes": 203540,
-      "cssBytes": 92351,
-      "cssGzipBytes": 17517,
-      "htmlBytes": 73205
+      "firstLoadJsBytes": 656395,
+      "firstLoadJsGzipBytes": 203795,
+      "cssBytes": 121675,
+      "cssGzipBytes": 21729,
+      "htmlBytes": 158736
     },
     "/about": {
       "firstLoadJsFiles": 11,
-      "firstLoadJsBytes": 660460,
-      "firstLoadJsGzipBytes": 205607,
-      "cssBytes": 92351,
-      "cssGzipBytes": 17517,
-      "htmlBytes": 96656
+      "firstLoadJsBytes": 664190,
+      "firstLoadJsGzipBytes": 207363,
+      "cssBytes": 128225,
+      "cssGzipBytes": 23835,
+      "htmlBytes": 219736
     },
     "/admin": {
       "firstLoadJsFiles": 12,
-      "firstLoadJsBytes": 697128,
-      "firstLoadJsGzipBytes": 219313,
-      "cssBytes": 235834,
-      "cssGzipBytes": 43455,
-      "htmlBytes": 33080
+      "firstLoadJsBytes": 697178,
+      "firstLoadJsGzipBytes": 219341,
+      "cssBytes": 265158,
+      "cssGzipBytes": 47667,
+      "htmlBytes": 88942
     },
     "/ask": {
       "firstLoadJsFiles": 13,
-      "firstLoadJsBytes": 726850,
-      "firstLoadJsGzipBytes": 228494,
-      "cssBytes": 262389,
-      "cssGzipBytes": 48023,
-      "htmlBytes": 33448
+      "firstLoadJsBytes": 726900,
+      "firstLoadJsGzipBytes": 228522,
+      "cssBytes": 291713,
+      "cssGzipBytes": 52235,
+      "htmlBytes": 89310
     },
     "/book-a-demo": {
       "firstLoadJsFiles": 11,
-      "firstLoadJsBytes": 666130,
-      "firstLoadJsGzipBytes": 207317,
-      "cssBytes": 92351,
-      "cssGzipBytes": 17517,
-      "htmlBytes": 86896
+      "firstLoadJsBytes": 665957,
+      "firstLoadJsGzipBytes": 207572,
+      "cssBytes": 121675,
+      "cssGzipBytes": 21729,
+      "htmlBytes": 178244
     },
     "/coins": {
       "firstLoadJsFiles": 13,
-      "firstLoadJsBytes": 712673,
-      "firstLoadJsGzipBytes": 224250,
-      "cssBytes": 235834,
-      "cssGzipBytes": 43455,
-      "htmlBytes": 33207
+      "firstLoadJsBytes": 712723,
+      "firstLoadJsGzipBytes": 224278,
+      "cssBytes": 265158,
+      "cssGzipBytes": 47667,
+      "htmlBytes": 89069
     },
     "/contact": {
       "firstLoadJsFiles": 13,
-      "firstLoadJsBytes": 753083,
-      "firstLoadJsGzipBytes": 231743,
-      "cssBytes": 92351,
-      "cssGzipBytes": 17517,
-      "htmlBytes": 77009
+      "firstLoadJsBytes": 759034,
+      "firstLoadJsGzipBytes": 234748,
+      "cssBytes": 121675,
+      "cssGzipBytes": 21729,
+      "htmlBytes": 165080
     },
     "/dashboard": {
       "firstLoadJsFiles": 11,
-      "firstLoadJsBytes": 674879,
-      "firstLoadJsGzipBytes": 211480,
-      "cssBytes": 235834,
-      "cssGzipBytes": 43455,
-      "htmlBytes": 33046
+      "firstLoadJsBytes": 674929,
+      "firstLoadJsGzipBytes": 211508,
+      "cssBytes": 265158,
+      "cssGzipBytes": 47667,
+      "htmlBytes": 88908
     },
     "/future-builders": {
       "firstLoadJsFiles": 12,
-      "firstLoadJsBytes": 742011,
-      "firstLoadJsGzipBytes": 226959,
-      "cssBytes": 93253,
-      "cssGzipBytes": 18032,
-      "htmlBytes": 267753
+      "firstLoadJsBytes": 745741,
+      "firstLoadJsGzipBytes": 228545,
+      "cssBytes": 126916,
+      "cssGzipBytes": 23439,
+      "htmlBytes": 392944
     },
     "/future-builders/registered": {
       "firstLoadJsFiles": 12,
-      "firstLoadJsBytes": 712547,
-      "firstLoadJsGzipBytes": 217199,
-      "cssBytes": 92351,
-      "cssGzipBytes": 17517,
-      "htmlBytes": 78075
+      "firstLoadJsBytes": 716321,
+      "firstLoadJsGzipBytes": 219332,
+      "cssBytes": 126014,
+      "cssGzipBytes": 22924,
+      "htmlBytes": 179210
     },
     "/journal": {
-      "firstLoadJsFiles": 10,
-      "firstLoadJsBytes": 656568,
-      "firstLoadJsGzipBytes": 203540,
-      "cssBytes": 92351,
-      "cssGzipBytes": 17517,
-      "htmlBytes": 99395
+      "firstLoadJsFiles": 11,
+      "firstLoadJsBytes": 657139,
+      "firstLoadJsGzipBytes": 204249,
+      "cssBytes": 127342,
+      "cssGzipBytes": 23514,
+      "htmlBytes": 191077
     },
     "/journal/homework-after-chatgpt": {
       "firstLoadJsFiles": 11,
-      "firstLoadJsBytes": 660460,
-      "firstLoadJsGzipBytes": 205607,
-      "cssBytes": 92351,
-      "cssGzipBytes": 17517,
-      "htmlBytes": 98110
+      "firstLoadJsBytes": 661096,
+      "firstLoadJsGzipBytes": 206156,
+      "cssBytes": 127342,
+      "cssGzipBytes": 23514,
+      "htmlBytes": 184296
     },
     "/journal/learning-to-defend-an-idea": {
       "firstLoadJsFiles": 11,
-      "firstLoadJsBytes": 660460,
-      "firstLoadJsGzipBytes": 205607,
-      "cssBytes": 92351,
-      "cssGzipBytes": 17517,
-      "htmlBytes": 98335
+      "firstLoadJsBytes": 661096,
+      "firstLoadJsGzipBytes": 206156,
+      "cssBytes": 127342,
+      "cssGzipBytes": 23514,
+      "htmlBytes": 185945
     },
     "/journal/should-schools-ban-ai": {
       "firstLoadJsFiles": 11,
-      "firstLoadJsBytes": 660460,
-      "firstLoadJsGzipBytes": 205607,
-      "cssBytes": 92351,
-      "cssGzipBytes": 17517,
-      "htmlBytes": 98047
+      "firstLoadJsBytes": 661096,
+      "firstLoadJsGzipBytes": 206156,
+      "cssBytes": 127342,
+      "cssGzipBytes": 23514,
+      "htmlBytes": 184426
     },
     "/journal/why-outcomes-matter": {
       "firstLoadJsFiles": 11,
-      "firstLoadJsBytes": 660460,
-      "firstLoadJsGzipBytes": 205607,
-      "cssBytes": 92351,
-      "cssGzipBytes": 17517,
-      "htmlBytes": 98277
+      "firstLoadJsBytes": 661096,
+      "firstLoadJsGzipBytes": 206156,
+      "cssBytes": 127342,
+      "cssGzipBytes": 23514,
+      "htmlBytes": 184470
     },
     "/leaderboard": {
       "firstLoadJsFiles": 12,
-      "firstLoadJsBytes": 735751,
-      "firstLoadJsGzipBytes": 230234,
-      "cssBytes": 269206,
-      "cssGzipBytes": 49630,
-      "htmlBytes": 33575
+      "firstLoadJsBytes": 735801,
+      "firstLoadJsGzipBytes": 230262,
+      "cssBytes": 298530,
+      "cssGzipBytes": 53842,
+      "htmlBytes": 89437
     },
     "/learn": {
       "firstLoadJsFiles": 15,
-      "firstLoadJsBytes": 747885,
-      "firstLoadJsGzipBytes": 237347,
-      "cssBytes": 247448,
-      "cssGzipBytes": 45832,
-      "htmlBytes": 33113
+      "firstLoadJsBytes": 747935,
+      "firstLoadJsGzipBytes": 237375,
+      "cssBytes": 276772,
+      "cssGzipBytes": 50044,
+      "htmlBytes": 88975
     },
     "/me": {
       "firstLoadJsFiles": 14,
-      "firstLoadJsBytes": 757919,
-      "firstLoadJsGzipBytes": 237848,
-      "cssBytes": 235834,
-      "cssGzipBytes": 43455,
-      "htmlBytes": 33329
+      "firstLoadJsBytes": 757969,
+      "firstLoadJsGzipBytes": 237876,
+      "cssBytes": 265158,
+      "cssGzipBytes": 47667,
+      "htmlBytes": 89191
     },
     "/me/consent": {
       "firstLoadJsFiles": 12,
-      "firstLoadJsBytes": 697655,
-      "firstLoadJsGzipBytes": 218702,
-      "cssBytes": 235834,
-      "cssGzipBytes": 43455,
-      "htmlBytes": 33655
+      "firstLoadJsBytes": 697705,
+      "firstLoadJsGzipBytes": 218730,
+      "cssBytes": 265158,
+      "cssGzipBytes": 47667,
+      "htmlBytes": 89517
     },
     "/me/consent/parent": {
       "firstLoadJsFiles": 12,
-      "firstLoadJsBytes": 699252,
-      "firstLoadJsGzipBytes": 219116,
-      "cssBytes": 235834,
-      "cssGzipBytes": 43455,
-      "htmlBytes": 34246
+      "firstLoadJsBytes": 699302,
+      "firstLoadJsGzipBytes": 219144,
+      "cssBytes": 265158,
+      "cssGzipBytes": 47667,
+      "htmlBytes": 90108
     },
     "/me/dashboard": {
       "firstLoadJsFiles": 14,
-      "firstLoadJsBytes": 744095,
-      "firstLoadJsGzipBytes": 235667,
-      "cssBytes": 242818,
-      "cssGzipBytes": 44962,
-      "htmlBytes": 34081
+      "firstLoadJsBytes": 744145,
+      "firstLoadJsGzipBytes": 235695,
+      "cssBytes": 272142,
+      "cssGzipBytes": 49174,
+      "htmlBytes": 89943
     },
     "/me/invoices": {
       "firstLoadJsFiles": 12,
-      "firstLoadJsBytes": 681382,
-      "firstLoadJsGzipBytes": 213940,
-      "cssBytes": 237550,
-      "cssGzipBytes": 44087,
-      "htmlBytes": 33894
+      "firstLoadJsBytes": 681432,
+      "firstLoadJsGzipBytes": 213968,
+      "cssBytes": 266874,
+      "cssGzipBytes": 48299,
+      "htmlBytes": 89756
     },
     "/me/progress": {
       "firstLoadJsFiles": 14,
-      "firstLoadJsBytes": 756749,
-      "firstLoadJsGzipBytes": 238797,
-      "cssBytes": 240058,
-      "cssGzipBytes": 44491,
-      "htmlBytes": 34088
+      "firstLoadJsBytes": 756799,
+      "firstLoadJsGzipBytes": 238825,
+      "cssBytes": 269382,
+      "cssGzipBytes": 48703,
+      "htmlBytes": 89950
     },
     "/method": {
       "firstLoadJsFiles": 11,
-      "firstLoadJsBytes": 660460,
-      "firstLoadJsGzipBytes": 205607,
-      "cssBytes": 92351,
-      "cssGzipBytes": 17517,
-      "htmlBytes": 181293
+      "firstLoadJsBytes": 679961,
+      "firstLoadJsGzipBytes": 213057,
+      "cssBytes": 128245,
+      "cssGzipBytes": 23628,
+      "htmlBytes": 327860
     },
     "/parents": {
       "firstLoadJsFiles": 11,
-      "firstLoadJsBytes": 660460,
-      "firstLoadJsGzipBytes": 205607,
-      "cssBytes": 92351,
-      "cssGzipBytes": 17517,
-      "htmlBytes": 97760
+      "firstLoadJsBytes": 664190,
+      "firstLoadJsGzipBytes": 207363,
+      "cssBytes": 126975,
+      "cssGzipBytes": 23464,
+      "htmlBytes": 240651
     },
     "/plans": {
       "firstLoadJsFiles": 12,
-      "firstLoadJsBytes": 713149,
-      "firstLoadJsGzipBytes": 223469,
-      "cssBytes": 240586,
-      "cssGzipBytes": 44673,
-      "htmlBytes": 32396
+      "firstLoadJsBytes": 713199,
+      "firstLoadJsGzipBytes": 223497,
+      "cssBytes": 269910,
+      "cssGzipBytes": 48885,
+      "htmlBytes": 88258
     },
     "/privacy": {
       "firstLoadJsFiles": 10,
-      "firstLoadJsBytes": 656568,
-      "firstLoadJsGzipBytes": 203540,
-      "cssBytes": 92351,
-      "cssGzipBytes": 17517,
-      "htmlBytes": 84824
+      "firstLoadJsBytes": 656395,
+      "firstLoadJsGzipBytes": 203795,
+      "cssBytes": 121675,
+      "cssGzipBytes": 21729,
+      "htmlBytes": 167889
     },
     "/refund-policy": {
       "firstLoadJsFiles": 10,
-      "firstLoadJsBytes": 656568,
-      "firstLoadJsGzipBytes": 203540,
-      "cssBytes": 92351,
-      "cssGzipBytes": 17517,
-      "htmlBytes": 76774
+      "firstLoadJsBytes": 656395,
+      "firstLoadJsGzipBytes": 203795,
+      "cssBytes": 121675,
+      "cssGzipBytes": 21729,
+      "htmlBytes": 159882
     },
     "/schools": {
       "firstLoadJsFiles": 11,
-      "firstLoadJsBytes": 660460,
-      "firstLoadJsGzipBytes": 205607,
-      "cssBytes": 92351,
-      "cssGzipBytes": 17517,
-      "htmlBytes": 144017
+      "firstLoadJsBytes": 664925,
+      "firstLoadJsGzipBytes": 207505,
+      "cssBytes": 126907,
+      "cssGzipBytes": 23376,
+      "htmlBytes": 333271
     },
     "/shipping-policy": {
       "firstLoadJsFiles": 10,
-      "firstLoadJsBytes": 656568,
-      "firstLoadJsGzipBytes": 203540,
-      "cssBytes": 92351,
-      "cssGzipBytes": 17517,
-      "htmlBytes": 77547
+      "firstLoadJsBytes": 656395,
+      "firstLoadJsGzipBytes": 203795,
+      "cssBytes": 121675,
+      "cssGzipBytes": 21729,
+      "htmlBytes": 160655
     },
     "/store": {
       "firstLoadJsFiles": 13,
-      "firstLoadJsBytes": 731698,
-      "firstLoadJsGzipBytes": 230158,
-      "cssBytes": 242026,
-      "cssGzipBytes": 45025,
-      "htmlBytes": 32489
+      "firstLoadJsBytes": 731748,
+      "firstLoadJsGzipBytes": 230186,
+      "cssBytes": 271350,
+      "cssGzipBytes": 49237,
+      "htmlBytes": 88351
     },
     "/students": {
       "firstLoadJsFiles": 11,
-      "firstLoadJsBytes": 667639,
-      "firstLoadJsGzipBytes": 208340,
-      "cssBytes": 92351,
-      "cssGzipBytes": 17517,
-      "htmlBytes": 126431
+      "firstLoadJsBytes": 670482,
+      "firstLoadJsGzipBytes": 209559,
+      "cssBytes": 126377,
+      "cssGzipBytes": 23143,
+      "htmlBytes": 269916
     },
     "/teachers": {
       "firstLoadJsFiles": 11,
-      "firstLoadJsBytes": 660460,
-      "firstLoadJsGzipBytes": 205607,
-      "cssBytes": 92351,
-      "cssGzipBytes": 17517,
-      "htmlBytes": 137696
+      "firstLoadJsBytes": 668588,
+      "firstLoadJsGzipBytes": 208966,
+      "cssBytes": 129217,
+      "cssGzipBytes": 24056,
+      "htmlBytes": 288115
     },
     "/terms": {
       "firstLoadJsFiles": 10,
-      "firstLoadJsBytes": 656568,
-      "firstLoadJsGzipBytes": 203540,
-      "cssBytes": 92351,
-      "cssGzipBytes": 17517,
-      "htmlBytes": 74737
+      "firstLoadJsBytes": 656395,
+      "firstLoadJsGzipBytes": 203795,
+      "cssBytes": 121675,
+      "cssGzipBytes": 21729,
+      "htmlBytes": 157845
     },
     "/tests": {
       "firstLoadJsFiles": 12,
-      "firstLoadJsBytes": 713577,
-      "firstLoadJsGzipBytes": 224365,
-      "cssBytes": 262389,
-      "cssGzipBytes": 48023,
-      "htmlBytes": 32663
+      "firstLoadJsBytes": 713627,
+      "firstLoadJsGzipBytes": 224393,
+      "cssBytes": 291713,
+      "cssGzipBytes": 52235,
+      "htmlBytes": 88525
     },
     "/tests/builder": {
       "firstLoadJsFiles": 12,
-      "firstLoadJsBytes": 730827,
-      "firstLoadJsGzipBytes": 228963,
-      "cssBytes": 262389,
-      "cssGzipBytes": 48023,
-      "htmlBytes": 33902
+      "firstLoadJsBytes": 730877,
+      "firstLoadJsGzipBytes": 228991,
+      "cssBytes": 291713,
+      "cssGzipBytes": 52235,
+      "htmlBytes": 89764
     },
     "/what-we-teach": {
-      "firstLoadJsFiles": 10,
-      "firstLoadJsBytes": 656568,
-      "firstLoadJsGzipBytes": 203540,
-      "cssBytes": 92351,
-      "cssGzipBytes": 17517,
-      "htmlBytes": 113253
+      "firstLoadJsFiles": 11,
+      "firstLoadJsBytes": 657139,
+      "firstLoadJsGzipBytes": 204249,
+      "cssBytes": 126014,
+      "cssGzipBytes": 22924,
+      "htmlBytes": 220347
     }
   }
 }

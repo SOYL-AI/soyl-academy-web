@@ -4,7 +4,7 @@ import { Photo } from '@/components/media/Photo';
 import { cn } from '@/lib/utils';
 
 /**
- * The photograph for a journal article as a print on the page (ADR-033), or a quiet paper card with the
+ * The photograph for a journal article as a print on the page (ADR-033/034), or a quiet paper card with the
  * category in handwriting when there is none.
  */
 export function ArticleImage({
@@ -13,12 +13,15 @@ export function ArticleImage({
   aspect = 'aspect-[3/2]',
   priority,
   large,
+  parallax,
 }: {
   article: JournalArticle;
   sizes: string;
   aspect?: string;
   priority?: boolean;
   large?: boolean;
+  /** Scroll-linked drift (the reading view's header image). */
+  parallax?: boolean;
 }) {
   if (article.photo) {
     return (
@@ -30,7 +33,8 @@ export function ArticleImage({
           priority={priority}
           settle={priority}
           large={large}
-          zoom
+          zoom={!parallax}
+          parallax={parallax}
           reveal={false}
         />
       </div>

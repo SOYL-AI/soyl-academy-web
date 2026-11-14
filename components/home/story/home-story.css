@@ -1,0 +1,158 @@
+/*
+ * The home page's chapters (ADR-034). Scene mechanics live in components/story/story.css; this file holds the
+ * home-specific choreography. Every scrubbed movement reads the scene's --p and is removed under
+ * prefers-reduced-motion, where each chapter shows its finished state.
+ */
+
+/* ── Prologue ──────────────────────────────────────────────────────────────────────────────────────────── */
+.prologue-print { animation: print-drop 1100ms var(--ease-out-expo) 250ms both; }
+@keyframes print-drop {
+  from { opacity: 0; translate: 0 28px; rotate: -6deg; }
+}
+.prologue-cue path { animation: cue-bob 2.4s var(--ease-in-out) infinite; }
+@keyframes cue-bob { 50% { translate: 0 4px; } }
+
+/* ── Tuesday: night ────────────────────────────────────────────────────────────────────────────────────── */
+.night {
+  background:
+    radial-gradient(60rem 40rem at 72% 46%, rgba(226, 177, 60, 0.18), transparent 60%),
+    #1b1916;
+  color: #f2ecdf;
+}
+.night-photo { opacity: 0.38; mask-image: linear-gradient(to right, transparent 0%, #000 38%, #000 100%); }
+@media (max-width: 1023px) {
+  .night-photo { opacity: 0.26; mask-image: linear-gradient(to bottom, transparent 0%, #000 40%, #000 100%); }
+}
+.worksheet { rotate: 1.6deg; transition: filter 600ms var(--ease-out); }
+.scene[data-step="3"] .worksheet { filter: saturate(0.25) brightness(0.92); }
+.score-stamp {
+  rotate: -12deg;
+  transition: opacity 260ms var(--ease-out), scale 520ms var(--ease-out-expo);
+}
+.scene:not([data-step="2"]):not([data-step="3"]) .score-stamp { scale: 1.8; }
+
+/* ── Wednesday: the worksheet tears in two ─────────────────────────────────────────────────────────────── */
+.tear { --t: clamp(0, calc((var(--p) - 0.12) / 0.5), 1); }
+.tear-left {
+  clip-path: polygon(0 0, 52% 0, 47% 9%, 53% 18%, 46% 29%, 52% 40%, 47% 52%, 54% 63%, 48% 74%, 53% 86%, 49% 100%, 0 100%);
+  translate: calc(var(--t) * -62vw) calc(var(--t) * 6vh);
+  rotate: calc(var(--t) * -14deg);
+}
+.tear-right {
+  clip-path: polygon(52% 0, 100% 0, 100% 100%, 49% 100%, 53% 86%, 48% 74%, 54% 63%, 47% 52%, 52% 40%, 46% 29%, 53% 18%, 47% 9%);
+  translate: calc(var(--t) * 62vw) calc(var(--t) * -4vh);
+  rotate: calc(var(--t) * 12deg);
+}
+.tear-left,
+.tear-right { opacity: calc(1 - var(--t) * 0.6); }
+.mission-reveal { scale: calc(0.9 + var(--t) * 0.1); opacity: calc(0.25 + var(--t) * 0.75); }
+
+/* ── The hour: a spiral-bound pad whose sheets flip up ─────────────────────────────────────────────────── */
+.pad { perspective: 1600px; }
+.pad-sheet {
+  --t: clamp(0, calc((var(--p) * 5 - var(--i) - 0.62) / 0.34), 1);
+  transform-origin: 50% 0;
+  transform: rotateX(calc(var(--t) * 178deg));
+  backface-visibility: hidden;
+  z-index: calc(10 - var(--i));
+  box-shadow: 0 calc(10px + var(--t) * 30px) 40px -24px rgba(31, 28, 25, 0.45);
+}
+.pad-sheet[data-last] { --t: 0; }
+.pad-ring { background: radial-gradient(circle at 50% 35%, #fff 0 22%, #8a8378 23% 52%, #4a4640 53% 70%, transparent 71%); }
+.stage-li { transition: color 300ms var(--ease-out); color: var(--color-graphite); }
+.stage-li .stage-tick { scale: 0; transition: scale 400ms var(--ease-out-expo); }
+.scene[data-step="0"] .stage-li[data-i="0"],
+.scene[data-step="1"] .stage-li[data-i="1"],
+.scene[data-step="2"] .stage-li[data-i="2"],
+.scene[data-step="3"] .stage-li[data-i="3"],
+.scene[data-step="4"] .stage-li[data-i="4"] { color: var(--color-ink); font-style: italic; }
+.scene[data-step="1"] .stage-li[data-i="0"] .stage-tick,
+.scene[data-step="2"] .stage-li:is([data-i="0"], [data-i="1"]) .stage-tick,
+.scene[data-step="3"] .stage-li:is([data-i="0"], [data-i="1"], [data-i="2"]) .stage-tick,
+.scene[data-step="4"] .stage-li:is([data-i="0"], [data-i="1"], [data-i="2"], [data-i="3"]) .stage-tick { scale: 1; }
+.scene[data-step="1"] .stage-li[data-i="0"],
+.scene[data-step="2"] .stage-li:is([data-i="0"], [data-i="1"]),
+.scene[data-step="3"] .stage-li:is([data-i="0"], [data-i="1"], [data-i="2"]),
+.scene[data-step="4"] .stage-li:is([data-i="0"], [data-i="1"], [data-i="2"], [data-i="3"]) { color: var(--color-ink); }
+
+/* ── Monday: the class sorts itself into groups ────────────────────────────────────────────────────────── */
+.board { container-type: size; }
+.dot {
+  --t: clamp(0, calc((var(--p) - 0.28) / 0.42), 1);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4.2cqw;
+  height: 4.2cqw;
+  max-width: 26px;
+  max-height: 26px;
+  margin: -2.1cqw 0 0 -2.1cqw;
+  translate:
+    calc((var(--x0) + (var(--x1) - var(--x0)) * var(--t)) * 1cqw)
+    calc((var(--y0) + (var(--y1) - var(--y0)) * var(--t)) * 1cqh);
+  border-radius: 58% 42% 55% 45% / 47% 58% 42% 53%;
+  background: var(--color-graphite);
+  opacity: 0.55;
+  transition: background-color 500ms var(--ease-out), opacity 500ms var(--ease-out);
+}
+@media (max-width: 767px) {
+  .dot {
+    width: 6cqw;
+    height: 6cqw;
+    margin: -3cqw 0 0 -3cqw;
+    translate:
+      calc((var(--x0) + (var(--x1m) - var(--x0)) * var(--t)) * 1cqw)
+      calc((var(--y0) + (var(--y1m) - var(--y0)) * var(--t)) * 1cqh);
+  }
+}
+.scene:is([data-step="1"], [data-step="2"]) .dot { background: var(--c); opacity: 0.9; }
+.dot[data-ira]::after {
+  content: '';
+  position: absolute;
+  inset: -45%;
+  border: 2px solid var(--color-ink);
+  border-radius: 50%;
+}
+.group-col { opacity: 0; transition: opacity 500ms var(--ease-out) 150ms; left: calc(var(--gl) * 1%); top: 0; width: 25%; height: 100%; }
+@media (max-width: 767px) {
+  .group-col { left: calc(var(--glm) * 1%); top: calc(var(--gtm) * 1%); width: 50%; height: 50%; }
+}
+.scene:is([data-step="1"], [data-step="2"]) .group-col { opacity: 1; }
+.board:has(.group-col:hover) .dot,
+.board:has(.group-col:focus-within) .dot { opacity: 0.25; }
+.board:has(.group-col[data-g="0"]:is(:hover, :focus-within)) .dot[data-g="0"],
+.board:has(.group-col[data-g="1"]:is(:hover, :focus-within)) .dot[data-g="1"],
+.board:has(.group-col[data-g="2"]:is(:hover, :focus-within)) .dot[data-g="2"],
+.board:has(.group-col[data-g="3"]:is(:hover, :focus-within)) .dot[data-g="3"] { opacity: 1; }
+
+/* ── Seven days: Ira's dot crosses over ────────────────────────────────────────────────────────────────── */
+.cross-dot { offset-path: path('M 20 60 C 120 -10, 260 130, 380 40'); offset-distance: 0%; offset-rotate: 0deg; }
+[data-rs="in"] .cross-dot { animation: cross 1600ms var(--ease-in-out) 500ms both; }
+@keyframes cross { to { offset-distance: 100%; background: var(--color-sap); } }
+
+/* ── The Story: pages drift past ───────────────────────────────────────────────────────────────────────── */
+.story-row {
+  --t: clamp(0, calc((var(--p) - 0.08) / 0.8), 1);
+  translate: calc((100vw - 100% - 2.5rem) * var(--t)) 0;
+}
+.story-page { rotate: var(--r, 0deg); }
+
+@media (prefers-reduced-motion: reduce) {
+  .prologue-print,
+  .prologue-cue path { animation: none; }
+  .tear-left,
+  .tear-right { display: none; }
+  .mission-reveal { scale: 1; opacity: 1; }
+  .pad-sheet { transform: none !important; opacity: 0; transition: opacity 200ms linear; }
+  .scene[data-step="0"] .pad-sheet[data-i="0"],
+  .scene[data-step="1"] .pad-sheet[data-i="1"],
+  .scene[data-step="2"] .pad-sheet[data-i="2"],
+  .scene[data-step="3"] .pad-sheet[data-i="3"],
+  .scene[data-step="4"] .pad-sheet[data-i="4"] { opacity: 1; }
+  .dot { --t: 1; }
+  .group-col { opacity: 1; }
+  [data-rs="in"] .cross-dot { animation: none; offset-distance: 100%; }
+  .story-row { translate: none; }
+  .story-track { overflow-x: auto; scroll-snap-type: x mandatory; }
+  .story-page { scroll-snap-align: start; }
+}

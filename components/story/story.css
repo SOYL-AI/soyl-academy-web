@@ -1,0 +1,140 @@
+/*
+ * Story toolkit (ADR-034): scroll-told scenes for the marketing pages. Loaded only by the components that use it,
+ * never by the learning platform. Native scroll throughout: a scene is a tall section with a sticky stage, and
+ * `Scene.tsx` writes its progress (`--p`, 0 → 1) and its current step (`data-step`). Everything else is CSS.
+ * Animate transform and opacity only. Under prefers-reduced-motion, scrubbed movement is removed and steps simply
+ * appear.
+ */
+
+/* ── Scene: tall section, sticky stage ─────────────────────────────────────────────────────────────────── */
+.scene {
+  --p: 0;
+  position: relative;
+  height: calc(var(--len, 3) * 100svh);
+}
+@media (max-width: 767px) {
+  .scene { height: calc(var(--len-m, var(--len, 3)) * 100svh); }
+}
+.scene-stage {
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  overflow: hidden;
+}
+/* Under the 64/72 px header. */
+.scene-stage--under-nav { top: 0; padding-top: 64px; }
+@media (min-width: 768px) { .scene-stage--under-nav { padding-top: 72px; } }
+
+/*
+ * Steps: an element with data-at="n" shows from step n on; data-only="n" shows on step n only. Hidden steps stay in
+ * the accessibility tree (opacity only), so screen readers read every line in order.
+ */
+.scene [data-at],
+.scene [data-only] {
+  transition: opacity 520ms var(--ease-out), translate 700ms var(--ease-out-expo), filter 520ms var(--ease-out);
+}
+.scene [data-at]:not([data-at="0"]),
+.scene [data-only] {
+  opacity: 0;
+  translate: 0 14px;
+  filter: blur(3px);
+  pointer-events: none;
+}
+.scene[data-step="0"] [data-only="0"],
+.scene[data-step="1"] :is([data-at="1"], [data-only="1"]),
+.scene[data-step="2"] :is([data-at="1"], [data-at="2"], [data-only="2"]),
+.scene[data-step="3"] :is([data-at="1"], [data-at="2"], [data-at="3"], [data-only="3"]),
+.scene[data-step="4"] :is([data-at="1"], [data-at="2"], [data-at="3"], [data-at="4"], [data-only="4"]),
+.scene[data-step="5"] :is([data-at="1"], [data-at="2"], [data-at="3"], [data-at="4"], [data-at="5"], [data-only="5"]),
+.scene[data-step="6"] :is([data-at="1"], [data-at="2"], [data-at="3"], [data-at="4"], [data-at="5"], [data-at="6"], [data-only="6"]),
+.scene[data-step="7"] :is([data-at="1"], [data-at="2"], [data-at="3"], [data-at="4"], [data-at="5"], [data-at="6"], [data-at="7"], [data-only="7"]) {
+  opacity: 1;
+  translate: 0 0;
+  filter: none;
+  pointer-events: auto;
+}
+/* Earlier narration lines fade back once a later one arrives (add data-fade to a line). */
+.scene[data-step="1"] [data-fade][data-at="0"],
+.scene[data-step="2"] [data-fade]:is([data-at="0"], [data-at="1"]),
+.scene[data-step="3"] [data-fade]:is([data-at="0"], [data-at="1"], [data-at="2"]),
+.scene[data-step="4"] [data-fade]:is([data-at="0"], [data-at="1"], [data-at="2"], [data-at="3"]),
+.scene[data-step="5"] [data-fade]:is([data-at="0"], [data-at="1"], [data-at="2"], [data-at="3"], [data-at="4"]),
+.scene[data-step="6"] [data-fade]:is([data-at="0"], [data-at="1"], [data-at="2"], [data-at="3"], [data-at="4"], [data-at="5"]) {
+  opacity: var(--fade-to, 0.32);
+}
+/* Narration that keeps one line on screen at a time (stack the lines in one grid cell). */
+.narr-stack { display: grid; --fade-to: 0; }
+.narr-stack > * { grid-area: 1 / 1; }
+/* The same, on phones and small tablets only. */
+@media (max-width: 1023px) {
+  .narr-stack-m { display: grid; --fade-to: 0; }
+  .narr-stack-m > * { grid-area: 1 / 1; margin: 0 !important; }
+}
+
+/* A progress thread along a scene (e.g. a drawn line that fills): set width/scale from --p. */
+.scene-thread { transform-origin: left center; scale: var(--p) 1; }
+
+/* ── Kinetic type: words rise out of the paper ──────────────────────────────────────────────────────────── */
+.kw {
+  display: inline-block;
+  white-space: pre;
+}
+.kinetic-load .kw {
+  animation: kw-in 900ms var(--ease-out-expo) both;
+  animation-delay: calc(var(--wi, 0) * 55ms + var(--kd, 0ms));
+}
+[data-rs="pending"] .kinetic .kw,
+[data-rs="pending"].kinetic .kw { opacity: 0; translate: 0 0.5em; filter: blur(6px); }
+[data-rs="in"] .kinetic .kw,
+[data-rs="in"].kinetic .kw {
+  animation: kw-in 900ms var(--ease-out-expo) both;
+  animation-delay: calc(var(--wi, 0) * 45ms + var(--kd, 0ms));
+}
+@keyframes kw-in {
+  from { opacity: 0; translate: 0 0.5em; filter: blur(6px); }
+  to { opacity: 1; translate: 0 0; filter: blur(0); }
+}
+
+/* ── Chapter rail ──────────────────────────────────────────────────────────────────────────────────────── */
+.rail-dot { transition: scale 400ms var(--ease-out-expo), background-color 300ms var(--ease-out); }
+.rail-link[aria-current="step"] .rail-dot { scale: 1.6; background-color: var(--color-vermilion); }
+.rail-label { transition: opacity 300ms var(--ease-out), translate 400ms var(--ease-out-expo); }
+.rail-link .rail-label { opacity: 0; translate: -6px 0; }
+@media (min-width: 1600px) {
+  .rail-link[aria-current="step"] .rail-label { opacity: 1; translate: 0 0; }
+}
+.rail:hover .rail-link .rail-label,
+.rail:focus-within .rail-link .rail-label { opacity: 1; translate: 0 0; }
+
+/* ── Film ──────────────────────────────────────────────────────────────────────────────────────────────── */
+.film-dialog::backdrop { background: color-mix(in srgb, var(--color-ink) 82%, transparent); backdrop-filter: blur(4px); }
+.film-dialog[open] { animation: film-in 420ms var(--ease-out-expo) both; }
+@keyframes film-in { from { opacity: 0; scale: 0.96; } }
+.film-play { transition: scale 400ms var(--ease-out-expo); }
+.film-trigger:hover .film-play,
+.film-trigger:focus-visible .film-play { scale: 1.08; }
+
+/* ── Paper depth: things that sit a little above the page ─────────────────────────────────────────────── */
+.lift { transition: translate 500ms var(--ease-out-expo), rotate 500ms var(--ease-out-expo), box-shadow 500ms var(--ease-out); }
+.lift:hover,
+.lift:focus-visible { translate: 0 -6px; rotate: 0deg; box-shadow: 0 30px 50px -30px rgba(31, 28, 25, 0.5); }
+
+/* Tilt that follows the pointer (set by Tilt.tsx as --rx / --ry). */
+.tilt-3d {
+  transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+  transition: transform 500ms var(--ease-out-expo);
+  transform-style: preserve-3d;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scene [data-at],
+  .scene [data-only] { transition: opacity 200ms linear; translate: none !important; filter: none !important; }
+  .kinetic-load .kw,
+  [data-rs] .kinetic .kw,
+  [data-rs].kinetic .kw { animation: none; opacity: 1; translate: none; filter: none; }
+  .scene-thread { scale: 1 1; }
+  .film-dialog[open] { animation: none; }
+  .tilt-3d { transform: none; }
+  .lift:hover,
+  .lift:focus-visible { translate: none; }
+}

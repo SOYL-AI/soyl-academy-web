@@ -35,9 +35,16 @@ export function BrushArt<A extends ArtName>({ art, options, seed = 1, stepMs = 0
   useEffect(() => {
     const box = boxRef.current;
     const canvas = canvasRef.current;
-    if (!box || !canvas || !canPaint()) return;
+    if (!box || !canvas) return;
+    if (!canPaint()) {
+      box.dataset.paint = 'off';
+      return;
+    }
 
     const automated = isAutomated();
+    // Screenshots and tests: every painting starts on load and reports when it is done (data-paint), and none
+    // repaints on resize, so a full-page capture (which stretches the viewport) stays still.
+    box.dataset.paint = 'wait';
     const still = automated || prefersReducedMotion();
     const resolvedSeed = seed === 'visit' ? (automated ? 7 : Math.floor(Math.random() * 1e9)) : seed;
     const opts = JSON.parse(optionsKey) as ArtOptions[A];
@@ -45,7 +52,7 @@ export function BrushArt<A extends ArtName>({ art, options, seed = 1, stepMs = 0
     let cancel: (() => void) | null = null;
     let lastW = 0;
     // Eager (the hero): do not wait to be scrolled to. Everything waits for the page to load and settle.
-    let visible = eager;
+    let visible = eager || automated;
     let ready = false;
 
     const start = (instant: boolean) => {
@@ -63,7 +70,11 @@ export function BrushArt<A extends ArtName>({ art, options, seed = 1, stepMs = 0
         stepMs,
         instant,
         bg,
+        onDone: () => {
+          box.dataset.paint = 'done';
+        },
       });
+      box.dataset.paint = 'busy';
       setPainted(true);
     };
 
@@ -81,6 +92,7 @@ export function BrushArt<A extends ArtName>({ art, options, seed = 1, stepMs = 0
     io.observe(box);
 
     const ro = new ResizeObserver(() => {
+      if (automated) return;
       const w = box.getBoundingClientRect().width;
       if (lastW > 0 && Math.abs(w - lastW) / lastW > 0.12) start(true);
     });

@@ -1,6 +1,7 @@
 /**
  * Site-wide configuration that is not SEO (see lib/seo/config.ts for that).
  */
+import type { ImageKey } from '@/content/images';
 
 /**
  * The product app. "Sign in" links here. Set NEXT_PUBLIC_APP_URL once the app
@@ -39,10 +40,10 @@ export const PLATFORM_ENABLED = process.env.NEXT_PUBLIC_PLATFORM_ENABLED === 'tr
 /** The platform's log-in entry: /me shows the log-in sheet to guests and the profile to members. */
 export const PLATFORM_LOGIN_HREF = '/me';
 
-/* ── Header, site index and footer (ADR-025, redrawn in ADR-033) ─────────────────────────────────────────── */
+/* ── Header and footer (ADR-025, redrawn in ADR-033 and ADR-034) ─────────────────────────────────────────── */
 
 export interface NavItem extends NavLink {
-  /** One line under the title in the site index, written from the page's own copy. */
+  /** One line under the title in the menu, written from the page's own copy. */
   description: string;
 }
 
@@ -119,30 +120,86 @@ const ITEMS = {
   },
 } as const satisfies Record<string, NavItem>;
 
-/** The links in the top bar on wide screens. Everything else lives in the site index. */
-export const NAV_LINKS: NavLink[] = [
-  { label: 'Missions', href: '/method' },
-  { label: 'Schools', href: '/schools' },
-  { label: 'Teachers', href: '/teachers' },
-  { label: 'Parents', href: '/parents' },
-  { label: 'Future Builders', href: '/future-builders' },
-];
+/** A photo card on the right of a menu panel (and at the top of a mobile group). */
+export interface NavFeature {
+  eyebrow: string;
+  title: string;
+  href: string;
+  cta: string;
+  /** A key of content/images.ts. */
+  image: ImageKey;
+}
 
-export interface IndexChapter {
+export interface NavGroup {
+  id: string;
+  label: string;
+  /** Handwritten heading over the panel's list. */
   heading: string;
   items: NavItem[];
+  feature: NavFeature;
 }
 
 /**
- * The site index: the full-page table of contents behind the header's "Index" button, and the footer's columns.
- * Company pages that do not exist yet (Team, Careers): add ONE item to the SOYL chapter once the page exists.
- * Never link a page that does not exist.
+ * The header's drop-down groups (ADR-034), also the footer's columns. Company pages that do not exist yet
+ * (Team, Careers): add ONE item to the About group once the page exists. Never link a page that does not exist.
  */
-export const SITE_INDEX: IndexChapter[] = [
-  { heading: 'Missions', items: [ITEMS.method, ITEMS.schools, ITEMS.teachers, ITEMS.parents, ITEMS.students] },
-  { heading: 'Programmes', items: [ITEMS.futureBuilders, ITEMS.whatWeTeach] },
-  ...(PLATFORM_ENABLED ? [{ heading: 'Learn free', items: [ITEMS.lessons, ITEMS.tests, ITEMS.ask] }] : []),
-  { heading: 'SOYL', items: [ITEMS.about, ITEMS.journal, ITEMS.contact, ITEMS.demo] },
+export const NAV_GROUPS: NavGroup[] = [
+  {
+    id: 'missions',
+    label: 'Missions',
+    heading: 'Missions, for everyone around a pupil',
+    items: [ITEMS.method, ITEMS.schools, ITEMS.teachers, ITEMS.parents, ITEMS.students],
+    feature: {
+      eyebrow: 'One hour, five stages',
+      title: 'Walk through a mission',
+      href: '/method',
+      cta: 'See how it works',
+      image: 'studentThinking',
+    },
+  },
+  {
+    id: 'future-builders',
+    label: 'Future Builders',
+    heading: 'Programmes',
+    items: [ITEMS.futureBuilders, ITEMS.whatWeTeach],
+    feature: {
+      eyebrow: 'Live cohort · Grades 7–12',
+      title: 'Build a working prototype',
+      href: '/future-builders',
+      cta: 'Explore Future Builders',
+      image: 'fbIot',
+    },
+  },
+  ...(PLATFORM_ENABLED
+    ? [
+        {
+          id: 'learn',
+          label: 'Learn',
+          heading: 'Free learning platform',
+          items: [ITEMS.lessons, ITEMS.tests, ITEMS.ask],
+          feature: {
+            eyebrow: 'Free for every student',
+            title: 'Lessons, practice and tests',
+            href: '/learn',
+            cta: 'Start learning free',
+            image: 'studentsBuilding',
+          },
+        } satisfies NavGroup,
+      ]
+    : []),
+  {
+    id: 'about',
+    label: 'About',
+    heading: 'Story of Your Life',
+    items: [ITEMS.about, ITEMS.journal, ITEMS.contact, ITEMS.demo],
+    feature: {
+      eyebrow: 'Our story',
+      title: 'Answers are cheap. Thinking is not.',
+      href: '/about',
+      cta: 'Read our story',
+      image: 'classroomWide',
+    },
+  },
 ];
 
 export const LEGAL_LINKS: NavLink[] = [
@@ -155,7 +212,7 @@ export const LEGAL_LINKS: NavLink[] = [
 const footerLink = ({ label, href }: NavLink): NavLink => ({ label, href });
 
 export const FOOTER_NAV: { heading: string; links: NavLink[] }[] = [
-  ...SITE_INDEX.map((c) => ({ heading: c.heading, links: c.items.map(footerLink) })),
+  ...NAV_GROUPS.map((g) => ({ heading: g.label, links: g.items.map(footerLink) })),
   { heading: 'Legal', links: LEGAL_LINKS },
 ];
 

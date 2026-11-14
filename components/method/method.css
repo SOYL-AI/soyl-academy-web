@@ -1,0 +1,68 @@
+/*
+ * /method (ADR-034): the flip-pad of the pupil's hour, the stage strip, the signed brief and the pledge.
+ * Loaded only by components/method. Transform and opacity only; reduced motion gets a static page.
+ */
+
+/* ── The flip-pad: one sheet per stage, flipping up over the spiral binding as the scene scrolls ──────────── */
+.pad {
+  perspective: 1300px;
+  perspective-origin: 50% 20%;
+}
+.pad-sheet {
+  position: absolute;
+  inset: 0;
+  transform-origin: 50% 0;
+  backface-visibility: hidden;
+  /* This sheet's flip, 0 → 1, across the boundary into the next step. */
+  --t: clamp(0, calc((var(--p) * 5 - var(--i) - 0.78) / 0.4), 1);
+  transform: rotateX(calc(var(--t) * -105deg));
+  opacity: calc(1 - max(0, var(--t) - 0.72) / 0.28);
+  will-change: transform, opacity;
+}
+.pad-sheet[data-last] { --t: 0; }
+/* The page underneath darkens a little while the one above lifts off it. */
+.pad-sheet .pad-shade {
+  opacity: calc(var(--t) * 0.35);
+}
+.pad-under-shadow {
+  opacity: calc(0.35 - var(--p) * 0.2);
+}
+
+/* The stage strip: the current stage is inked in (colour, not opacity, so the text keeps its contrast). */
+.stage-tab { transition: color 300ms var(--ease-out); color: var(--color-graphite); font-weight: 500; }
+.stage-tab .stage-dot { transition: scale 400ms var(--ease-out-expo), opacity 300ms var(--ease-out); scale: 0.6; opacity: 0.45; }
+.scene[data-step="0"] .stage-tab[data-tab="0"],
+.scene[data-step="1"] .stage-tab[data-tab="1"],
+.scene[data-step="2"] .stage-tab[data-tab="2"],
+.scene[data-step="3"] .stage-tab[data-tab="3"],
+.scene[data-step="4"] .stage-tab[data-tab="4"] { color: var(--color-ink); font-weight: 700; }
+.scene[data-step="0"] .stage-tab[data-tab="0"] .stage-dot,
+.scene[data-step="1"] .stage-tab[data-tab="1"] .stage-dot,
+.scene[data-step="2"] .stage-tab[data-tab="2"] .stage-dot,
+.scene[data-step="3"] .stage-tab[data-tab="3"] .stage-dot,
+.scene[data-step="4"] .stage-tab[data-tab="4"] .stage-dot { scale: 1.25; opacity: 1; }
+
+/* ── The signature that writes itself once the brief scrolls in ──────────────────────────────────────── */
+.sign path { stroke-dasharray: 1; stroke-dashoffset: 0; }
+[data-rs="pending"] .sign path { stroke-dashoffset: 1; }
+[data-rs="in"] .sign path { stroke-dashoffset: 0; transition: stroke-dashoffset 1400ms var(--ease-out) 500ms; }
+.stamp { transition: opacity 400ms var(--ease-out) 1500ms, scale 500ms var(--ease-out-expo) 1500ms; }
+[data-rs="pending"] .stamp { opacity: 0; scale: 1.4; }
+
+/* Subject switcher panel. */
+.subject-panel { animation: subject-in 480ms var(--ease-out-expo) both; }
+@keyframes subject-in { from { opacity: 0; translate: 0 10px; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .pad-sheet { transform: none; opacity: 0; transition: opacity 200ms linear; }
+  .scene[data-step="0"] .pad-sheet[data-sheet="0"],
+  .scene[data-step="1"] .pad-sheet[data-sheet="1"],
+  .scene[data-step="2"] .pad-sheet[data-sheet="2"],
+  .scene[data-step="3"] .pad-sheet[data-sheet="3"],
+  .scene[data-step="4"] .pad-sheet[data-sheet="4"] { opacity: 1; }
+  .pad-sheet .pad-shade { opacity: 0; }
+  .sign path { stroke-dashoffset: 0; transition: none; }
+  .stamp { transition: none; }
+  [data-rs="pending"] .stamp { opacity: 1; scale: 1; }
+  .subject-panel { animation: none; }
+}

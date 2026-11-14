@@ -1,0 +1,119 @@
+/*
+ * /teachers, "A teacher's week" (ADR-034). Page-local: loaded only by the teachers components.
+ */
+
+/* ── Diary day heading ─────────────────────────────────────────────────────────────────────────────────── */
+.day-leaf {
+  background: #fffdf8;
+  border-radius: 4px;
+  box-shadow: 0 1px 0 rgba(31, 28, 25, 0.06), 0 14px 30px -18px rgba(31, 28, 25, 0.4);
+}
+.day-leaf::before {
+  /* The calendar's binding holes. */
+  content: "";
+  position: absolute;
+  inset: 8px 22% auto;
+  height: 8px;
+  background: radial-gradient(circle, var(--color-sheet-deep) 0 3.5px, transparent 4px) 0 0 / 22px 8px repeat-x;
+}
+
+/* ── Saturday: the approval stamp ─────────────────────────────────────────────────────────────────────── */
+.stamp {
+  rotate: -9deg;
+  color: var(--color-vermilion-ink);
+  border: 3px solid currentColor;
+  border-radius: 10px 14px 9px 13px;
+  mix-blend-mode: multiply;
+  background: color-mix(in srgb, var(--color-vermilion-soft) 35%, transparent);
+}
+[data-rs="pending"] .stamp { opacity: 0; scale: 2.2; rotate: -24deg; }
+[data-rs="in"] .stamp { animation: stamp-down 520ms cubic-bezier(0.2, 0.9, 0.3, 1.25) 900ms both; }
+@keyframes stamp-down {
+  from { opacity: 0; scale: 2.2; rotate: -24deg; }
+  70% { opacity: 1; scale: 0.96; rotate: -8deg; }
+  to { opacity: 1; scale: 1; rotate: -9deg; }
+}
+
+/* ── Monday: the class sorts itself ───────────────────────────────────────────────────────────────────── */
+.mon-field {
+  container-type: size;
+  position: relative;
+  /* Grouping runs from 22% to 55% of the scene. */
+  --t: clamp(0, calc((var(--p) - 0.22) / 0.33), 1);
+}
+.mon-dot {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: var(--dot, 18px);
+  height: var(--dot, 18px);
+  border-radius: 58% 42% 55% 45% / 47% 58% 42% 53%;
+  background: radial-gradient(circle at 38% 35%, color-mix(in srgb, var(--c-now) 55%, white) 0 28%, var(--c-now) 72%);
+  --c-now: var(--color-graphite);
+  translate: calc((var(--sx) + (var(--gx) - var(--sx)) * var(--t)) * 1cqw) calc((var(--sy) + (var(--gy) - var(--sy)) * var(--t)) * 1cqh);
+  rotate: var(--r, 0deg);
+  transition: opacity 300ms var(--ease-out);
+  will-change: translate;
+}
+@media (max-width: 767px) {
+  .mon-field { --dot: 11px; }
+}
+.scene:not([data-step="0"]) .mon-dot { --c-now: var(--c); }
+.mon-dot { transition: opacity 300ms var(--ease-out), --c-now 400ms; }
+
+.mon-label {
+  position: absolute;
+  left: calc(var(--ox) * 1cqw);
+  top: calc(var(--oy) * 1cqh);
+  width: 44cqw;
+}
+/* Group labels are buttons: out of the tab order until they are on screen. */
+.scene:is([data-step="0"], [data-step="1"]) .mon-label { visibility: hidden; }
+
+/* A picked (or hovered) group: the others fade back. */
+.mon-field[data-pick="a"] .mon-dot:not([data-g="a"]),
+.mon-field[data-pick="b"] .mon-dot:not([data-g="b"]),
+.mon-field[data-pick="c"] .mon-dot:not([data-g="c"]),
+.mon-field[data-pick="d"] .mon-dot:not([data-g="d"]),
+.mon-field:has(.mon-label[data-g="a"]:hover) .mon-dot:not([data-g="a"]),
+.mon-field:has(.mon-label[data-g="b"]:hover) .mon-dot:not([data-g="b"]),
+.mon-field:has(.mon-label[data-g="c"]:hover) .mon-dot:not([data-g="c"]),
+.mon-field:has(.mon-label[data-g="d"]:hover) .mon-dot:not([data-g="d"]) {
+  opacity: 0.18;
+}
+.mon-label[aria-pressed="true"] { box-shadow: 0 0 0 2px var(--color-ink); }
+
+/* ── Next Tuesday: the recheck ────────────────────────────────────────────────────────────────────────── */
+.re-dot {
+  width: 22px;
+  height: 22px;
+  border-radius: 58% 42% 55% 45% / 47% 58% 42% 53%;
+  background: radial-gradient(circle at 38% 35%, color-mix(in srgb, var(--c) 55%, white) 0 28%, var(--c) 72%);
+  --c: var(--color-vermilion);
+}
+.re-dot[data-turn] { --c: var(--color-sap); }
+[data-rs="pending"] .re-dot[data-turn] { --c: var(--color-vermilion); }
+[data-rs="in"] .re-dot[data-turn] { animation: re-turn 600ms var(--ease-out) both; animation-delay: calc(700ms + var(--i) * 140ms); }
+@keyframes re-turn {
+  from { --c: var(--color-vermilion); scale: 1; }
+  50% { scale: 1.35; }
+  to { --c: var(--color-sap); scale: 1; }
+}
+@property --c {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #4a4640;
+}
+@property --c-now {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #4a4640;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mon-field { --t: 1; }
+  .mon-dot { --c-now: var(--c); }
+  .scene .mon-label { visibility: visible; }
+  [data-rs] .stamp { animation: none; opacity: 1; scale: 1; rotate: -9deg; }
+  [data-rs] .re-dot[data-turn] { animation: none; --c: var(--color-sap); }
+}

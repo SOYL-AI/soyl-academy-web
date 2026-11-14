@@ -1,0 +1,51 @@
+/*
+ * The Journal (ADR-034): a small magazine. Page-local CSS for the index and the reading view.
+ */
+
+/* Masthead: the nameplate sits between two rules, like a printed magazine. */
+.masthead-rule { border-top: 3px double var(--color-ink); }
+
+/* Reading progress: a pencil thread under the header that fills as the essay is read. CSS scroll-driven
+   animation where supported (no JavaScript); elsewhere it simply is not shown. */
+.read-thread { display: none; }
+@supports (animation-timeline: scroll()) {
+  .read-thread {
+    display: block;
+    position: fixed;
+    inset: 64px 0 auto 0;
+    z-index: 41;
+    height: 3px;
+    background: var(--color-vermilion);
+    transform-origin: left center;
+    scale: 0 1;
+    animation: read-fill linear both;
+    animation-timeline: scroll(root block);
+  }
+  @keyframes read-fill { to { scale: 1 1; } }
+  @media (min-width: 768px) { .read-thread { inset-block-start: 72px; } }
+}
+@media (prefers-reduced-motion: reduce) {
+  .read-thread { animation: none; display: none; }
+}
+
+/* Essay body: a comfortable measure and a drop cap. */
+.essay > p:first-child::first-letter {
+  float: left;
+  margin: 0.08em 0.12em 0 0;
+  font-family: var(--font-serif);
+  font-size: 4.6em;
+  line-height: 0.8;
+  color: var(--color-vermilion-ink);
+}
+
+/* Cards: a number in the margin, a print that lifts. */
+.journal-card .print { transition: translate 500ms var(--ease-out-expo), rotate 500ms var(--ease-out-expo), box-shadow 500ms var(--ease-out); }
+.journal-card:hover .print,
+.journal-card:focus-visible .print { translate: 0 -6px; rotate: 0deg; box-shadow: 0 30px 50px -30px rgba(31, 28, 25, 0.5); }
+.journal-card .card-title { background: linear-gradient(var(--color-ochre-soft), var(--color-ochre-soft)) 0 88% / 0 0.38em no-repeat; transition: background-size 500ms var(--ease-out-expo); }
+.journal-card:hover .card-title,
+.journal-card:focus-visible .card-title { background-size: 100% 0.38em; }
+@media (prefers-reduced-motion: reduce) {
+  .journal-card:hover .print,
+  .journal-card:focus-visible .print { translate: none; }
+}

@@ -1,6 +1,6 @@
 # ADR-033: Marketing site redrawn in the brush language, and told as missions
 
-Status: accepted by the Lead for owner review (marketing, 2026-11-14). The owner asked for this redesign. The marketing visual baseline is **not** re-captured until the owner has reviewed the new look (`marketing:baseline` is owner-approved only).
+Status: accepted (live 2026-11-14, a73f2ba0). The header's Index is superseded by ADR-034 (drop-down menus back); the rest stays in force. The owner asked for this redesign. The marketing visual baseline is **not** re-captured until the owner has reviewed the new look (`marketing:baseline` is owner-approved only).
 Related: ADR-001 (shared-file rule), ADR-023 (marketing chrome steps aside on platform paths), ADR-025 (the header and footer this replaces), ADR-032 (platform design language v3, untouched here). Source for the product story: *SOYL Missions product spec v1.2* (11 Nov 2026).
 
 ## Context

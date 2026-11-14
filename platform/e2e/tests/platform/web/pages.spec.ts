@@ -146,8 +146,9 @@ test('the marketing header shows the Learn entry point when the flag is on', asy
     }
   });
   await page.goto('/');
-  await page.getByRole('button', { name: /Index/ }).click();
-  await expect(page.locator('#site-index').getByRole('link', { name: /Free lessons/ })).toHaveAttribute('href', '/learn');
+  await page.getByRole('button', { name: 'Open menu' }).click();
+  await page.locator('#mobile-menu').getByRole('button', { name: 'Learn', exact: true }).click();
+  await expect(page.locator('#mobile-menu').getByRole('link', { name: /^Free lessons/ })).toHaveAttribute('href', '/learn');
 });
 
 test('platform sitemap lists /learn, class and subject pages', async ({ request }) => {
