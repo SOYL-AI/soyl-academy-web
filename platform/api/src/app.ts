@@ -59,6 +59,7 @@ import { registerAiRoutes } from './ai/routes';
 import { registerCoinsRoutes } from './modules/coins';
 import { registerEventRoutes } from './modules/events';
 import { registerFutureBuildersRoutes } from './future-builders/routes';
+import { registerEmailReminderRoutes } from './notifications/routes';
 import { observeProblem, observeResponse } from './domain/admin/observe';
 
 export const HEALTH_PATHS = new Set(['/healthz', '/readyz']);
@@ -323,6 +324,7 @@ export async function buildApp(deps: AppDeps, opts: BuildAppOptions = {}): Promi
   registerAiRoutes(app, deps, services);
   registerCoinsRoutes(app, deps, services);
   registerFutureBuildersRoutes(app, services.futureBuilders, config);
+  registerEmailReminderRoutes(app, services);
   if (config.devOtpOutbox) registerDevRoutes(app, deps);
   opts.extraRoutes?.(app, services);
 

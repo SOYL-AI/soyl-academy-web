@@ -29,6 +29,11 @@ export type ConsentStartResponse = Schemas['ConsentStartResponse'];
 export type ConsentView = Schemas['ConsentView'];
 export type ConsentParentResponse = Schemas['ConsentParentResponse'];
 export type PublicNameResponse = Schemas['PublicNameResponse'];
+// D-055 email reminders: settings, the optional confirmed parent address, signed email links
+export type EmailPreferences = Schemas['EmailPreferences'];
+export type ParentEmailResponse = Schemas['ParentEmailResponse'];
+export type ParentConfirmResponse = Schemas['ParentConfirmResponse'];
+export type EmailUnsubscribeResponse = Schemas['EmailUnsubscribeResponse'];
 export type GuestProgress = Schemas['GuestProgressInput'];
 export type GuestLesson = Schemas['GuestLessonInput'];
 export type GuestPracticeAnswer = Schemas['GuestPracticeAnswerInput'];

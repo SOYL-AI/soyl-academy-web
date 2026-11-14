@@ -228,6 +228,13 @@ export const RATE_LIMITS = {
   'fb.ingest.ip': { key: 'ip', limit: 60, windowSeconds: 60 },
   /** POST /v1/events (D-045 interest counters): strict per IP; the IP is a rate-limit key only, never stored. */
   'events.ip': { key: 'ip', limit: 30, windowSeconds: 60 },
+  /** Email reminders (D-055): the student's own preference and parent-address writes (confirmation sends have their own limits). */
+  'email.prefs.user': { key: 'user', limit: 30, windowSeconds: 3600 },
+  /**
+   * Email reminders (D-055): the signed links in emails (unsubscribe, one-click unsubscribe, parent confirm), no session,
+   * per IP. Generous because mailbox providers send one-click unsubscribes from shared addresses; the tokens are HMACs.
+   */
+  'email.link.ip': { key: 'ip', limit: 300, windowSeconds: 3600 },
 } as const satisfies Record<string, RateLimitBucket>;
 
 export type RateLimitBucketName = keyof typeof RATE_LIMITS;

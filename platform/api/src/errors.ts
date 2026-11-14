@@ -76,6 +76,12 @@ export const PROBLEMS = {
   consent_code_expired: [400, 'That approval code has expired or was replaced. Ask for a new one.'],
   /** The parent's withdraw link is malformed, forged or for an earlier request. */
   consent_link_invalid: [404, 'This link is not valid any more. If you need help, contact SOYL Academy.'],
+  /** D-055: an unsubscribe or parent-confirm link from an email is malformed or forged. */
+  email_link_invalid: [404, 'This link is not valid. Open it straight from the email, or copy the whole link into the address bar.'],
+  /** D-055: the parent-confirm link expired, was replaced by a newer one, or the address was changed or removed. */
+  email_link_expired: [410, 'This confirmation link has expired or was replaced. Ask for a new one to be sent from the SOYL Academy profile page.'],
+  /** D-055: student reminders need an email address on the account (phone-only accounts cannot get them). */
+  reminders_unavailable: [409, 'Reminder emails need an email address on your account.'],
   internal: [500, 'Something went wrong on our side.'],
   not_implemented: [501, 'This is not available yet.'],
   /** AI gateway (M4, ADR-013). Paywall: extension fields balance, required, resetAt, resetInSeconds, plan, plansUrl. */

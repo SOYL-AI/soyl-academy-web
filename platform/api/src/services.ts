@@ -24,6 +24,9 @@ import { StaffService } from './domain/admin/staff';
 import { InterestCounters } from './domain/admin/counters';
 import { FutureBuildersService } from './future-builders/service';
 import { SignupNotifier } from './notifications/signup';
+import { EmailPreferencesService } from './notifications/preferences';
+import { EmailTokens } from './notifications/tokens';
+import { EmailLinks } from './notifications/links';
 
 export interface Providers {
   sms: SmsSender;
@@ -103,7 +106,11 @@ export function createServices(deps: AppDeps) {
     : null;
   // ADR-027: Future Builders registrations and enquiries (emails through the sign-in email provider).
   const futureBuilders = new FutureBuildersService({ db, clock, email: providers.email, config: config.futureBuilders, publicBaseUrl: config.publicBaseUrl });
-  return { auth, adapter, limiter, sessions, otp, identity, google, consent, consentFlow, mfa, billing, ai, staff, counters, futureBuilders, signupNotifier };
+  // D-055: reminder email settings, the optional confirmed parent address and the signed links in reminder emails.
+  const emailTokens = new EmailTokens(config.otpPepper);
+  const emailLinks = new EmailLinks({ publicBaseUrl: config.publicBaseUrl, apiPublicPath: config.apiPublicPath }, emailTokens);
+  const emailPreferences = new EmailPreferencesService({ db, clock, limiter, email: providers.email, tokens: emailTokens, links: emailLinks });
+  return { auth, adapter, limiter, sessions, otp, identity, google, consent, consentFlow, mfa, billing, ai, staff, counters, futureBuilders, signupNotifier, emailTokens, emailLinks, emailPreferences };
 }
 
 export type Services = ReturnType<typeof createServices>;
