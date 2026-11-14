@@ -29,6 +29,7 @@ import { ConsentFlow } from '../consent/ConsentFlow';
 import { CreditsCard, MyAttemptsCard, SubscriptionCard } from './MeExtras';
 import { ActivitySummary, AppearanceCard, BadgesSection } from './MeInsights';
 import { AvatarCard } from './AvatarCard';
+import { EmailPreferences } from './EmailPreferences';
 import { useMyAvatar } from './MyAvatarProvider';
 import { WeeklyGoalEditor } from '../dashboard/WeeklyGoalEditor';
 
@@ -147,6 +148,7 @@ function Profile({ me, onChange }: { me: Me; onChange: (me: Me) => void }) {
             <ConsentFlow onChanged={(v) => onChange({ ...me, consent: v.status, school: me.consent === 'granted' && v.status !== 'granted' ? null : me.school })} />
           </div>
           <Methods me={me} />
+          <EmailPreferences />
           <Card as="section" aria-labelledby="signout-title">
             <CardTitle as="h2" id="signout-title">
               Sign out
