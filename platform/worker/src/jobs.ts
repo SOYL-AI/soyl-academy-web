@@ -182,6 +182,7 @@ export const JOB_NAMES = {
   // SOYL Coins (coins-jobs.ts, ADR-021)
   coinsLiveRankAwards: COINS_JOB_NAMES.liveRankAwards,
   coinsHousekeeping: COINS_JOB_NAMES.housekeeping,
+  notificationsReminders: NOTIFICATION_JOB_NAMES.reminders,
 } as const;
 
 /** Test-engine sweeps run often and are short: one run at a time, no pile-up, a few quick retries. */
