@@ -347,6 +347,8 @@ module communication 'modules/communication.bicep' = {
     dataLocation: acsDataLocation
     senderPrincipalIds: [
       ids.outputs.api.principalId
+      // D-055: the worker sends reminder emails (and the billing.invoices sweep's invoice emails).
+      ids.outputs.worker.principalId
     ]
     senderRoleDefinitionId: acsSenderRoleId
     linkDomain: acsLinkDomain
@@ -560,6 +562,17 @@ module apps 'modules/containerApps.bicep' = {
       }
       {
         // The ACS sender username of the verified domain (noreply@soylai.com).
+        name: 'EMAIL_FROM'
+        value: communication.outputs.senderAddress
+      }
+    ]
+    workerExtraEnv: [
+      {
+        // D-055: reminder emails and invoice emails leave from the worker, with its managed identity.
+        name: 'ACS_ENDPOINT'
+        value: communication.outputs.endpoint
+      }
+      {
         name: 'EMAIL_FROM'
         value: communication.outputs.senderAddress
       }

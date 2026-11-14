@@ -91,7 +91,7 @@ param kvSecretRefs = bool(readEnvironmentVariable('SOYL_KV_SECRET_REFS', 'true')
 param appSecrets = [
   { secretName: 'edge-secret-current', envName: 'EDGE_SECRET_CURRENT', apps: ['api'] }
   { secretName: 'edge-secret-previous', envName: 'EDGE_SECRET_PREVIOUS', apps: ['api'] }
-  { secretName: 'otp-pepper', envName: 'OTP_PEPPER', apps: ['api'] }
+  { secretName: 'otp-pepper', envName: 'OTP_PEPPER', apps: ['api', 'worker'] } // worker: signs reminder unsubscribe links (D-055)
   { secretName: 'auth-secret', envName: 'AUTH_SECRET', apps: ['api'] }
   { secretName: 'mfa-encryption-key', envName: 'MFA_ENCRYPTION_KEY', apps: ['api'] }
   // Future Builders ingest (ADR-027): shared with the marketing site's server (Vercel FB_INGEST_KEY).
@@ -179,6 +179,9 @@ param appSettings = {
   // Purchases (D-003, D-038): false until launch, even with billingOn (runbooks/billing-go-live.md step 6).
   BILLING_ENABLED: 'false'
   PUBLIC_BASE_URL: 'https://www.soylai.com'
+  // Reminder emails (D-055): the worker's notifications.reminders job. Off until the owner's go-ahead;
+  // 'true' and redeploy to start (migration 0018 first). The code also defaults to off in stg/prod.
+  REMINDERS_ENABLED: 'false'
   WEB_ORIGIN: 'https://www.soylai.com'
   AUTH_METHODS: 'email'
   EMAIL_PROVIDER: 'acs'
