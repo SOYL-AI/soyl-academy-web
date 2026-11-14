@@ -84,7 +84,9 @@ export function BrushArt<A extends ArtName>({ art, options, seed = 1, stepMs = 0
 
     const io = new IntersectionObserver(
       ([entry]) => {
-        visible = entry.isIntersecting;
+        // Eager and automated paintings never wait to be scrolled to (the observer's first report, "off screen",
+        // used to override that, so full-page screenshots caught the footer painted or not at random).
+        visible = eager || automated || Boolean(entry?.isIntersecting);
         maybeStart();
       },
       { rootMargin: '200px 0px' }
