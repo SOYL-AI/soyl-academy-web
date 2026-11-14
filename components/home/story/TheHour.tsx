@@ -7,7 +7,7 @@ import { Dab, Note, type Ink } from '@/components/brush/marks';
 
 /**
  * Chapter three, the hour (ADR-034): a spiral-bound pad whose sheets flip up, one per stage, as the reader scrolls
- * (CSS 3D, driven by the scene's --p). Each sheet is a page of Ira's hour: a photo, what she does, what she thinks,
+ * (CSS 3D, driven by the scene's progress, --sp on each sheet). Each sheet is a page of Ira's hour: a photo, what she does, what she thinks,
  * and what SOYL captures. The stage list on the left ticks along. Reduced motion: the sheets swap without turning.
  */
 const INK_VAR: Record<string, string> = {
@@ -38,7 +38,7 @@ const HAND: Record<string, Ink | 'vermilion-ink'> = {
 export function TheHour() {
   const n = hour.stages.length;
   return (
-    <Scene id="the-hour" chapter={hour.chapter} length={3.4} mobileLength={3.2} steps={n} className="bg-sheet-deep" aria-label="Chapter three: the hour">
+    <Scene id="the-hour" chapter={hour.chapter} length={3.4} mobileLength={3.2} steps={n} progress="targets" className="bg-sheet-deep" aria-label="Chapter three: the hour">
       <div className="page grid h-full grid-cols-12 content-center gap-x-6 gap-y-6 py-8 md:py-10">
         <div className="col-span-12 lg:col-span-5 lg:pr-6">
           <p className="hand text-[1.35rem] text-vermilion-ink">Wednesday, the mission</p>
@@ -80,6 +80,7 @@ export function TheHour() {
                     key={s.name}
                     data-i={i}
                     data-last={i === n - 1 ? '' : undefined}
+                    data-p
                     className="pad-sheet absolute inset-0 flex flex-col bg-[#fdfaf3] px-5 pb-5 pt-7 md:px-7 md:pb-6 md:pt-9"
                     style={{ '--i': i } as React.CSSProperties}
                     aria-label={`Stage ${i + 1} of ${n}: ${s.name}`}

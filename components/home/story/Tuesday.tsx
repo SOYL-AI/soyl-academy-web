@@ -13,7 +13,7 @@ export function Tuesday() {
   const photo = images.lateNightStudy;
   const { sheet } = tuesday;
   return (
-    <Scene id="tuesday" chapter={tuesday.chapter} length={2.8} mobileLength={2.6} steps={4} className="night" aria-label="Chapter one: Tuesday night">
+    <Scene id="tuesday" chapter={tuesday.chapter} length={2.8} mobileLength={2.6} steps={4} progress="targets" className="night" aria-label="Chapter one: Tuesday night">
       <div aria-hidden="true" className="night-photo absolute inset-y-0 right-0 w-full lg:w-[68%]">
         <Image src={photo.src} alt="" fill sizes="(min-width: 1024px) 68vw, 100vw" className="object-cover" style={{ objectPosition: '40% 50%' }} />
       </div>

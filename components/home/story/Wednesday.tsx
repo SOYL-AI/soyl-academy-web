@@ -28,7 +28,7 @@ function Worksheet() {
 export function Wednesday() {
   const { mission } = wednesday;
   return (
-    <Scene id="wednesday" chapter={wednesday.chapter} length={2.1} mobileLength={1.9} steps={2} className="tear bg-sheet" aria-label="Chapter two: Wednesday">
+    <Scene id="wednesday" chapter={wednesday.chapter} length={2.1} mobileLength={1.9} steps={2} className="tear bg-sheet" progress="targets" aria-label="Chapter two: Wednesday">
       <div className="page flex h-full flex-col items-center justify-center gap-8 py-10 text-center md:gap-10">
         <div>
           <p className="hand text-[1.35rem] text-vermilion-ink">{wednesday.time}</p>
@@ -45,7 +45,7 @@ export function Wednesday() {
         </div>
 
         <div className="relative w-full max-w-[560px]">
-          <div className="mission-reveal relative rotate-[-1deg] bg-white p-6 text-left shadow-[0_30px_70px_-30px_rgba(31,28,25,0.55)] md:p-9">
+          <div data-p className="mission-reveal relative rotate-[-1deg] bg-white p-6 text-left shadow-[0_30px_70px_-30px_rgba(31,28,25,0.55)] md:p-9">
             <span aria-hidden="true" className="tape absolute -top-3 left-10 h-6 w-24 rotate-[-4deg]" />
             <p className="flex items-center gap-2 text-[13px] font-semibold uppercase tracking-[0.12em] text-ultramarine">
               <Dab ink="ultramarine" className="h-2.5 w-2.5" />
@@ -67,10 +67,10 @@ export function Wednesday() {
           </div>
 
           <div aria-hidden="true" className="pointer-events-none absolute -inset-x-4 -inset-y-6 md:-inset-x-10">
-            <div className="tear-left absolute inset-0">
+            <div data-p className="tear-left absolute inset-0">
               <Worksheet />
             </div>
-            <div className="tear-right absolute inset-0">
+            <div data-p className="tear-right absolute inset-0">
               <Worksheet />
             </div>
           </div>

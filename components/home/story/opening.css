@@ -1,0 +1,532 @@
+/*
+ * The opening (ADR-034, amended 2026-11-14): Ira's Story as a 3D book on a desk. OpeningMotion.tsx turns the
+ * scene's scroll progress p and the mouse into the numbers below and writes each one only on the elements that use
+ * it. They are registered as non-inherited numbers, so a scroll frame re-styles about fifteen elements, not the
+ * whole book (that cost 12–16 ms a frame on a fast laptop and dropped a mid-range phone to ~9 fps). Phases of p:
+ *
+ *   0.03–0.15  the words leave            --op-copy
+ *   0.05–0.30  the book lifts off the desk --rise (eased: --op-riseE)
+ *   0.27–0.43  the cover opens            --op-open
+ *   0.46–0.57  leaf one turns             --f1   contents → before
+ *   0.60–0.71  leaf two turns             --f2   before → after
+ *   0.74–0.85  leaf three turns           --f3   after → Chapter one
+ *   0.87–1.00  the camera falls in        --op-dive
+ *   the mouse                             --op-mx / --op-my (−0.5 … 0.5)
+ *
+ * Sizes come from one page width --W (1% of it is --u, the book's type unit). Transform and opacity only; nothing
+ * that flattens 3D (opacity, filter, overflow, contain) sits on an element with 3D children.
+ */
+
+@property --op-copy { syntax: '<number>'; inherits: false; initial-value: 0; }
+@property --op-riseE { syntax: '<number>'; inherits: false; initial-value: 0; }
+@property --op-open { syntax: '<number>'; inherits: false; initial-value: 0; }
+@property --op-f { syntax: '<number>'; inherits: false; initial-value: 0; }
+@property --op-dive { syntax: '<number>'; inherits: false; initial-value: 0; }
+@property --op-mx { syntax: '<number>'; inherits: false; initial-value: 0; }
+@property --op-my { syntax: '<number>'; inherits: false; initial-value: 0; }
+
+.opening {
+  /* Phones: the closed book lies low under the words; open, the right-hand page sits near the middle. */
+  --W: min(50vw, 220px);
+  --H: calc(var(--W) * 1.38);
+  --T: calc(var(--W) * 0.075);
+  --u: calc(var(--W) / 100);
+  --hx: 0px;
+  --hy: 28svh;
+  --hs: 0.7;
+  --spread: 0.14;
+  background: var(--color-sheet);
+}
+@media (min-width: 768px) {
+  .opening { --W: min(34vw, 290px); --hy: 21svh; --hs: 0.72; --spread: 0.5; }
+}
+@media (min-width: 1024px) {
+  .opening {
+    --H: min(calc(100svh - 240px), 540px);
+    --W: calc(var(--H) * 0.72);
+    --hx: 21vw;
+    --hy: 3svh;
+    --hs: 0.92;
+  }
+}
+
+/* ── The world: one perspective for the book and everything on the desk ───────────────────────────────── */
+.op-world {
+  position: absolute;
+  inset: 64px 0 0;
+  perspective: 1800px;
+  perspective-origin: 50% 38%;
+  pointer-events: none;
+  /* The fall into Chapter one: scale about the centre of the last right-hand page. */
+  transform-origin: calc(50% + var(--W) * var(--spread)) 50%;
+  transform:
+    translateX(calc(var(--W) * var(--spread) * var(--op-dive) * -1))
+    scale(calc(1 + var(--op-dive) * var(--op-dive) * 2.8));
+}
+@media (min-width: 768px) {
+  .op-world { inset: 72px 0 0; }
+}
+
+.op-book-area {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: var(--W);
+  height: var(--H);
+  margin: calc(var(--H) * -0.5) 0 0 calc(var(--W) * -0.5);
+  transform-style: preserve-3d;
+  transform:
+    translate3d(calc(var(--hx) * (1 - var(--op-riseE))), calc(var(--hy) * (1 - var(--op-riseE))), 0)
+    scale(calc(var(--hs) + (1 - var(--hs)) * var(--op-riseE)));
+}
+
+/* The desk plane: lying back and turned on the desk, then lifting upright towards the reader. */
+.op-plane {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  will-change: transform;
+  transform:
+    rotateX(calc(4deg + (1 - var(--op-riseE)) * 52deg - var(--op-my) * 8deg))
+    rotateY(calc(var(--op-mx) * 14deg))
+    rotateZ(calc((1 - var(--op-riseE)) * -18deg));
+}
+
+.op-float {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  animation: op-bob 7s var(--ease-in-out) infinite;
+}
+.opening[data-off] .op-float,
+.opening[data-off] .op-cue-arrow { animation-play-state: paused; }
+@keyframes op-bob {
+  50% { transform: translate3d(0, -6px, 8px); }
+}
+
+.op-book {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  transform: translateX(calc(var(--W) * var(--spread) * var(--op-open)));
+}
+
+/* ── The binding and the block of pages ────────────────────────────────────────────────────────────────── */
+.op-backboard {
+  position: absolute;
+  inset: -3px -5px -3px 0;
+  border-radius: 2px 7px 7px 2px;
+  background: #1b2b6e;
+  transform: translateZ(calc(var(--T) * -1));
+  box-shadow: 0 calc(var(--u) * 6) calc(var(--u) * 14) calc(var(--u) * -3) rgba(31, 28, 25, 0.45);
+}
+.op-edge {
+  position: absolute;
+  backface-visibility: visible;
+}
+.op-edge--right {
+  top: 1px;
+  bottom: 1px;
+  left: 100%;
+  width: var(--T);
+  transform-origin: left center;
+  transform: rotateY(90deg);
+  background: repeating-linear-gradient(90deg, #e9e0cc 0 1px, #fbf7ee 1px 3px);
+}
+.op-edge--bottom,
+.op-edge--top {
+  left: 0;
+  right: 1px;
+  height: var(--T);
+  transform-origin: top center;
+  transform: rotateX(-90deg);
+  background: repeating-linear-gradient(180deg, #e9e0cc 0 1px, #fbf7ee 1px 3px);
+}
+.op-edge--bottom { top: 100%; }
+.op-edge--top { top: 0; }
+.op-spine {
+  position: absolute;
+  top: -3px;
+  bottom: -3px;
+  left: 0;
+  width: var(--T);
+  transform-origin: left center;
+  transform: rotateY(90deg);
+  background: linear-gradient(90deg, #a63a23, #cf4a2e 55%, #b8432a);
+}
+
+/* ── Pages and leaves ──────────────────────────────────────────────────────────────────────────────────── */
+.op-page,
+.op-leaf {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+}
+.op-page--night { transform: translateZ(0.5px); }
+
+.op-leaf {
+  /* Height in the stack: unturned leaves pile on the right (cover on top), turned ones on the left (last on top). */
+  transform-origin: left center;
+  will-change: transform;
+  /* Height in the stack, written out (a derived custom property would be inherited and re-style the pages). */
+  transform:
+    translateZ(calc(((5 - var(--i)) * (1 - var(--op-f)) + (var(--i) + 1) * var(--op-f)) * 1.2px))
+    rotateY(calc(var(--op-f) * -179.4deg));
+}
+@supports (width: calc(sin(1deg) * 1px)) {
+  /* A turning leaf lifts off the stack a little. */
+  .op-leaf {
+    transform:
+      translateZ(calc(((5 - var(--i)) * (1 - var(--op-f)) + (var(--i) + 1) * var(--op-f)) * 1.2px + sin(calc(var(--op-f) * 180deg)) * var(--W) * 0.06))
+      rotateY(calc(var(--op-f) * -179.4deg));
+  }
+}
+/* A leaf's face darkens as it stands on edge (OpeningMotion sets the opacity). */
+.op-shade {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  background: rgba(31, 28, 25, 0.28);
+  opacity: 0;
+}
+.op-leaf--cover { inset: -3px -5px -3px 0; }
+
+.op-face {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: 2px 6px 6px 2px;
+  padding: calc(var(--u) * 9) calc(var(--u) * 9) calc(var(--u) * 8) calc(var(--u) * 11);
+  background: #fffdf7;
+  color: var(--color-ink);
+  font-size: calc(var(--u) * 4.2);
+  line-height: 1.35;
+}
+.op-face--back,
+.op-face--endpaper {
+  transform: rotateY(180deg);
+  border-radius: 6px 2px 2px 6px;
+  padding: calc(var(--u) * 9) calc(var(--u) * 11) calc(var(--u) * 8) calc(var(--u) * 9);
+}
+/* The gutter: a soft shadow along the spine side of every page. */
+.op-face::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(90deg, rgba(31, 28, 25, 0.16), transparent 16%);
+}
+.op-face--back::after,
+.op-face--endpaper::after { background: linear-gradient(270deg, rgba(31, 28, 25, 0.16), transparent 16%); }
+.op-face--cover::after { background: linear-gradient(90deg, rgba(0, 0, 0, 0.18), transparent 12%, transparent 88%, rgba(0, 0, 0, 0.18)); }
+
+/* Type on the pages, in book units. */
+.op-k { font-size: calc(var(--u) * 5.8); line-height: 1.1; }
+.op-eyebrow {
+  font-family: var(--font-sans);
+  font-size: calc(var(--u) * 3.3);
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-graphite);
+}
+.op-serif { font-family: var(--font-serif); letter-spacing: -0.015em; }
+.op-title { font-size: calc(var(--u) * 9.5); line-height: 1; margin-top: calc(var(--u) * 1.5); }
+.op-line { font-size: calc(var(--u) * 7.4); line-height: 1.08; margin-top: calc(var(--u) * 2); }
+.op-small { font-size: calc(var(--u) * 3.9); line-height: 1.4; color: var(--color-graphite); }
+.op-small b { color: var(--color-ink); font-weight: 600; }
+.op-folio {
+  position: absolute;
+  bottom: calc(var(--u) * 4);
+  right: calc(var(--u) * 7);
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: calc(var(--u) * 3.4);
+  color: var(--color-graphite);
+}
+.op-folio--l { right: auto; left: calc(var(--u) * 7); }
+
+/* Contents. */
+.op-toc { margin-top: calc(var(--u) * 6); display: grid; gap: calc(var(--u) * 2.9); font-size: calc(var(--u) * 4.7); }
+.op-toc li { display: flex; align-items: baseline; gap: calc(var(--u) * 2); }
+.op-toc-n { width: calc(var(--u) * 4); font-family: var(--font-serif); font-style: italic; color: var(--color-vermilion-ink); }
+.op-toc-dots { flex: 1; border-bottom: max(1px, calc(var(--u) * 0.5)) dotted color-mix(in srgb, var(--color-graphite) 55%, transparent); translate: 0 calc(var(--u) * -0.9); }
+.op-toc-p { font-variant-numeric: tabular-nums; color: var(--color-graphite); }
+
+/* Before: a worksheet with a counter, a countdown and a score. */
+.op-sheet {
+  position: relative;
+  margin: calc(var(--u) * 6) calc(var(--u) * 2) calc(var(--u) * 9) 0;
+  padding: calc(var(--u) * 4) calc(var(--u) * 4.5) calc(var(--u) * 6);
+  background: #fbf8f1;
+  rotate: -1.6deg;
+  box-shadow: 0 calc(var(--u) * 2) calc(var(--u) * 6) calc(var(--u) * -2) rgba(31, 28, 25, 0.35), inset 0 0 0 1px rgba(31, 28, 25, 0.06);
+}
+.op-sheet-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: calc(var(--u) * 2);
+  font-family: var(--font-mono, ui-monospace, monospace);
+  font-size: calc(var(--u) * 3.3);
+}
+.op-rule { display: block; height: 1px; margin-top: calc(var(--u) * 5.5); background: rgba(31, 28, 25, 0.22); }
+.op-rule--short { width: 62%; }
+.op-stamp {
+  position: absolute;
+  right: calc(var(--u) * -4);
+  bottom: calc(var(--u) * -8);
+  display: grid;
+  place-items: center;
+  width: calc(var(--u) * 24);
+  height: calc(var(--u) * 24);
+  border: calc(var(--u) * 0.9) solid var(--color-vermilion);
+  border-radius: 50%;
+  rotate: -12deg;
+  font-family: var(--font-serif);
+  font-size: calc(var(--u) * 8);
+  color: var(--color-vermilion);
+  background: color-mix(in srgb, #fbf8f1 70%, transparent);
+}
+
+/* After: five stages. */
+.op-stages { margin: calc(var(--u) * 6) 0 calc(var(--u) * 6); display: grid; gap: calc(var(--u) * 2.4); font-family: var(--font-serif); font-size: calc(var(--u) * 6.2); line-height: 1; }
+.op-stages li { display: flex; align-items: center; gap: calc(var(--u) * 3); }
+.op-stages li > span { width: calc(var(--u) * 3.6); height: calc(var(--u) * 3.6); }
+
+/* Paintings on the left-hand pages. */
+.op-art { position: relative; width: 100%; aspect-ratio: 1; margin-top: calc(var(--u) * 6); }
+.op-caption { font-size: calc(var(--u) * 6.4); line-height: 1.1; margin-top: calc(var(--u) * 5); }
+.op-stage-row { margin-top: calc(var(--u) * 6); text-align: center; font-size: calc(var(--u) * 3.9); font-weight: 600; }
+
+/* A photo taped into the book. */
+.op-photo {
+  position: absolute;
+  inset: calc(var(--u) * 12) calc(var(--u) * 14) calc(var(--u) * 26) calc(var(--u) * 9);
+  padding: calc(var(--u) * 2.6) calc(var(--u) * 2.6) calc(var(--u) * 13);
+  background: #fff;
+  rotate: -2.4deg;
+  box-shadow: 0 calc(var(--u) * 3) calc(var(--u) * 8) calc(var(--u) * -3) rgba(31, 28, 25, 0.45);
+}
+.op-photo-tape {
+  position: absolute;
+  top: calc(var(--u) * -2.6);
+  left: 34%;
+  z-index: 1;
+  width: calc(var(--u) * 26);
+  height: calc(var(--u) * 6);
+  rotate: -5deg;
+}
+.op-photo-note { position: absolute; left: calc(var(--u) * 5); bottom: calc(var(--u) * 3); font-size: calc(var(--u) * 5.4); }
+
+/* Chapter one: the page the camera falls into. */
+.op-face--night {
+  background:
+    radial-gradient(75% 55% at 68% 76%, rgba(226, 177, 60, 0.3), transparent 70%),
+    #1b1916;
+  color: #f2ecdf;
+}
+.op-face--night .op-k { color: #e9c46a; }
+.op-night-title { font-size: calc(var(--u) * 12); line-height: 0.98; margin-top: calc(var(--u) * 3); }
+.op-night-time { font-size: calc(var(--u) * 6.4); color: #e9c46a; margin-top: calc(var(--u) * 3); }
+.op-lamp {
+  position: absolute;
+  right: calc(var(--u) * 16);
+  bottom: calc(var(--u) * 20);
+  width: calc(var(--u) * 10);
+  height: calc(var(--u) * 10);
+  border-radius: 50%;
+  background: radial-gradient(circle, #fff3c4 0 30%, rgba(233, 196, 106, 0.55) 45%, transparent 72%);
+}
+
+/* ── The cover ─────────────────────────────────────────────────────────────────────────────────────────── */
+.op-face--cover {
+  padding: calc(var(--u) * 9) calc(var(--u) * 9) calc(var(--u) * 8) calc(var(--u) * 14);
+  background:
+    repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.03) 0 2px, transparent 2px 4px),
+    radial-gradient(130% 90% at 25% 12%, #3655d2, #23398f 55%, #182866);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+.op-cover-spine {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: calc(var(--u) * 5.5);
+  background: linear-gradient(90deg, #a63a23, #cf4a2e 60%, #b8432a);
+}
+.op-cover-kicker {
+  font-family: var(--font-sans);
+  font-size: calc(var(--u) * 3.3);
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #e9c46a;
+}
+.op-cover-label {
+  position: absolute;
+  left: 22%;
+  right: 13%;
+  top: 16%;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: 3px;
+  background: #fbf7ee;
+  box-shadow: 0 0 0 calc(var(--u) * 1.4) rgba(233, 196, 106, 0.55), inset 0 1px 3px rgba(0, 0, 0, 0.25);
+}
+/* Gold foil: the glint follows the pointer. */
+.op-cover-title {
+  position: absolute;
+  left: calc(var(--u) * 14);
+  bottom: 17%;
+  font-family: var(--font-serif);
+  font-size: calc(var(--u) * 11.5);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  background: linear-gradient(100deg, #b98a2a 0%, #f6dd92 30%, #c8962e 50%, #f3d27a 70%, #b98a2a 100%);
+  background-size: 260% 100%;
+  background-position: calc(50% + var(--op-mx) * 120%) 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.op-cover-owner { position: absolute; left: calc(var(--u) * 14); bottom: 6%; font-size: calc(var(--u) * 5); color: #e9c46a; }
+
+/* The inside of the cover: marbled endpaper and a bookplate. */
+.op-face--endpaper {
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(ellipse 60% 45% at 26% 22%, color-mix(in srgb, var(--color-ochre) 34%, transparent) 0 55%, transparent 72%),
+    radial-gradient(ellipse 55% 50% at 78% 82%, color-mix(in srgb, var(--color-ultramarine) 22%, transparent) 0 50%, transparent 72%),
+    radial-gradient(ellipse 30% 26% at 76% 18%, color-mix(in srgb, var(--color-vermilion) 22%, transparent) 0 50%, transparent 72%),
+    #fbf6ea;
+}
+.op-bookplate {
+  width: 78%;
+  padding: calc(var(--u) * 6) calc(var(--u) * 5);
+  text-align: center;
+  background: #fffdf7;
+  border: 1px solid rgba(31, 28, 25, 0.18);
+  outline: 1px solid rgba(31, 28, 25, 0.12);
+  outline-offset: calc(var(--u) * -2.2);
+  box-shadow: 0 calc(var(--u) * 2) calc(var(--u) * 6) calc(var(--u) * -3) rgba(31, 28, 25, 0.3);
+}
+.op-bookplate-name { font-size: calc(var(--u) * 13); line-height: 1.1; color: var(--color-ultramarine); margin: calc(var(--u) * 1.5) 0; }
+
+/* ── Things on the desk ────────────────────────────────────────────────────────────────────────────────── */
+.op-prop {
+  position: absolute;
+  left: calc(var(--x) * var(--W));
+  top: calc(var(--y) * var(--H));
+  transform:
+    translate3d(calc(var(--sx) * var(--op-riseE)), calc(var(--sy) * var(--op-riseE)), calc(var(--z) + var(--op-riseE) * 320px))
+    rotate(var(--r));
+  opacity: clamp(0, calc(1 - var(--op-riseE) * 1.6), 1);
+}
+.op-pencil { width: calc(var(--W) * 0.95); height: calc(var(--W) * 0.11); filter: drop-shadow(0 6px 6px rgba(31, 28, 25, 0.25)); }
+.op-airplane { width: calc(var(--W) * 0.42); height: calc(var(--W) * 0.28); filter: drop-shadow(0 10px 10px rgba(31, 28, 25, 0.2)); }
+.op-sticky {
+  display: grid;
+  place-items: center;
+  width: calc(var(--W) * 0.46);
+  aspect-ratio: 1;
+  padding: calc(var(--u) * 5);
+  background: linear-gradient(160deg, #f6dc7c, #eec85a);
+  box-shadow: 0 calc(var(--u) * 4) calc(var(--u) * 8) calc(var(--u) * -4) rgba(31, 28, 25, 0.4);
+  font-size: calc(var(--u) * 5.4);
+  line-height: 1.2;
+  text-align: center;
+  color: var(--color-ink);
+}
+.op-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: calc(var(--u) * 2);
+  padding: calc(var(--u) * 2.2) calc(var(--u) * 4.5);
+  border-radius: 999px;
+  background: #fff;
+  white-space: nowrap;
+  font-size: calc(var(--u) * 4);
+  font-weight: 600;
+  box-shadow: 0 calc(var(--u) * 2) calc(var(--u) * 6) calc(var(--u) * -2) rgba(31, 28, 25, 0.35);
+}
+.op-drop {
+  width: calc(var(--u) * 7);
+  height: calc(var(--u) * 7);
+  border-radius: 58% 42% 55% 45% / 47% 58% 42% 53%;
+  background: var(--c);
+}
+.op-drop--s { width: calc(var(--u) * 4.5); height: calc(var(--u) * 4.5); }
+
+/* Phones and tablets keep the desk clear around the words. */
+@media (max-width: 1023px) {
+  .op-sticky,
+  .op-airplane { display: none; }
+}
+
+/* ── The night the camera falls into ───────────────────────────────────────────────────────────────────── */
+.op-night {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: #1b1916;
+  opacity: calc(var(--op-dive) * var(--op-dive) * var(--op-dive));
+}
+
+/* ── The words ─────────────────────────────────────────────────────────────────────────────────────────── */
+.op-copy-wrap {
+  position: absolute;
+  inset: 64px 0 0;
+  z-index: 2;
+  pointer-events: none;
+}
+@media (min-width: 768px) {
+  .op-copy-wrap { inset: 72px 0 0; }
+}
+.op-copy-page { display: flex; height: 100%; align-items: flex-start; padding-top: clamp(14px, 3.5svh, 44px); }
+.op-copy {
+  width: 100%;
+  pointer-events: auto;
+  opacity: calc(1 - var(--op-copy));
+  translate: 0 calc(var(--op-copy) * -5svh);
+}
+.opening:not([data-step="0"]) .op-copy { visibility: hidden; }
+@media (min-width: 1024px) {
+  .op-copy-page { align-items: center; padding-top: 0; }
+  .op-copy { width: 50%; }
+}
+/* Short phones: the book needs the bottom of the screen. */
+@media (max-width: 767px) and (max-height: 720px) {
+  .op-support { display: none; }
+}
+
+.op-cue {
+  position: absolute;
+  left: 50%;
+  bottom: max(14px, 2.5svh);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  translate: -50% 0;
+  white-space: nowrap;
+  font-size: 1.1rem;
+  color: var(--color-graphite);
+  opacity: clamp(0, calc(1 - var(--op-copy) * 1.6), 1);
+  pointer-events: none;
+}
+.op-cue-arrow { display: inline-block; animation: op-cue 2.4s var(--ease-in-out) infinite; }
+@keyframes op-cue { 50% { translate: 0 4px; } }
+@media (max-width: 1023px) {
+  .op-cue { display: none; }
+}
+
+/* ── Reduced motion: the book sits still; each step shows the next spread ──────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  /* OpeningMotion writes the step's values (opening, then one leaf per step) instead of following the scroll. */
+  .op-float,
+  .op-cue-arrow { animation: none; }
+}

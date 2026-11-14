@@ -15,6 +15,42 @@ export const prologue = {
   cue: 'Turn the page',
 } as const;
 
+/**
+ * The 3D opening (ADR-034, amended 2026-11-14): Ira's Story as a hardcover book on the desk. Scrolling lifts it,
+ * opens it and turns three leaves (contents, before, after) before the camera falls into Chapter one.
+ */
+export const opening = {
+  cue: 'Scroll to open her story',
+  cover: { kicker: 'SOYL Academy', owner: 'Ira · Class 8' },
+  bookplate: { label: 'This story belongs to', name: 'Ira', note: 'Class 8 · an illustrative story' },
+  contents: [
+    { title: 'Tuesday night', page: 3 },
+    { title: 'A mission', page: 9 },
+    { title: 'The hour', page: 14 },
+    { title: 'The Thoughtprint', page: 21 },
+    { title: 'Monday', page: 26 },
+    { title: 'Seven days later', page: 31 },
+    { title: 'Her Story', page: 35 },
+  ],
+  before: {
+    label: 'Before',
+    line: 'Twenty questions. A timer. A score.',
+    question: 'Which three were wrong, and why?',
+    answer: 'Nobody ever knew.',
+    score: '7/10',
+  },
+  photoNote: 'Tuesday, 9:40 pm',
+  after: {
+    label: 'After',
+    line: 'One mission. Five stages. Her own path through it.',
+    rules: 'No counter. No countdown. No mark as the headline.',
+  },
+  print: 'She leaves with a Thoughtprint, not a mark.',
+  chapterOne: { label: 'Chapter one', title: 'Tuesday night', time: '9:40 pm' },
+  summary:
+    'An illustration: Ira’s Story as a book. It opens on a contents page, then compares homework before SOYL (twenty questions, a timer, a score of seven out of ten) with a mission after (five stages and a Thoughtprint), and turns to Chapter one.',
+} as const;
+
 export const tuesday = {
   chapter: 'Tuesday',
   time: 'Tuesday, 9:40 pm',

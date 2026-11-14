@@ -1,4 +1,4 @@
-import { Prologue } from '@/components/home/story/Prologue';
+import { Opening } from '@/components/home/story/Opening';
 import { Tuesday } from '@/components/home/story/Tuesday';
 import { Wednesday } from '@/components/home/story/Wednesday';
 import { TheHour } from '@/components/home/story/TheHour';
@@ -26,7 +26,7 @@ export const metadata = createMetadata({ path: '/' });
 export const revalidate = 300;
 
 /**
- * Homepage (ADR-034): the story of one mission, in chapters. Prologue → Tuesday night (the old way) → Wednesday (a
+ * Homepage (ADR-034): the story of one mission, in chapters. The 3D opening (Ira’s Story as a book that opens) → Tuesday night (the old way) → Wednesday (a
  * mission) → the hour (five stages) → the Thoughtprint → Monday (groups, not marks) → seven days later → the Story
  * (Story of Your Life) → house rules → four readers → Future Builders → FAQ → epilogue. Ira and Ms Rao are an
  * illustrative story; the page says so. Native scroll; pinned scenes are short and the chapter rail skips them.
@@ -56,7 +56,7 @@ export default function HomePage() {
       )}
 
       <ChapterRail label="Chapters of the story" />
-      <Prologue />
+      <Opening />
       <Tuesday />
       <Wednesday />
       <TheHour />

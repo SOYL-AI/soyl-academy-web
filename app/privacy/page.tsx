@@ -97,6 +97,9 @@ export default function PrivacyPage() {
               <p>
                 We do not sell student data, build commercial profiling databases, or target students with behavioral advertising.
               </p>
+              <p className="mt-3">
+                <strong>Learning reminders:</strong> If you sign up with an email address, we may send occasional reminders about your learning (at most once every few days). You can turn these off at any time from your profile or with the unsubscribe link in any email. We only email a parent if their address is added and confirmed for updates.
+              </p>
             </section>
 
             <section className="border-b border-ink/10 py-8 last:border-b-0">

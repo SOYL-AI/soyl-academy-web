@@ -95,7 +95,16 @@ export function StoryNav({ groups, logo, actions, panels, sheetPanels, sheetFoot
   useEffect(() => clearTimer, []);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 8);
+    // Only touch React state when the answer flips: a same-value setState on every scroll frame still costs a
+    // render pass's worth of work on slower phones.
+    let last: boolean | null = null;
+    const onScroll = () => {
+      const now = window.scrollY > 8;
+      if (now !== last) {
+        last = now;
+        setScrolled(now);
+      }
+    };
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);

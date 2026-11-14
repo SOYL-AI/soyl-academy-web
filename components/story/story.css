@@ -7,6 +7,8 @@
  */
 
 /* ── Scene: tall section, sticky stage ─────────────────────────────────────────────────────────────────── */
+/* Scene progress="targets": progress on [data-p] elements only, as a non-inherited number (see Scene.tsx). */
+@property --sp { syntax: '<number>'; inherits: false; initial-value: 0; }
 .scene {
   --p: 0;
   position: relative;
@@ -53,14 +55,15 @@
   filter: none;
   pointer-events: auto;
 }
-/* Earlier narration lines fade back once a later one arrives (add data-fade to a line). */
+/* Earlier narration lines fade back once a later one arrives (add data-fade to a line). 0.68 keeps them readable:
+   ink on paper and paper on night both stay above 4.5:1 (0.32 did not). */
 .scene[data-step="1"] [data-fade][data-at="0"],
 .scene[data-step="2"] [data-fade]:is([data-at="0"], [data-at="1"]),
 .scene[data-step="3"] [data-fade]:is([data-at="0"], [data-at="1"], [data-at="2"]),
 .scene[data-step="4"] [data-fade]:is([data-at="0"], [data-at="1"], [data-at="2"], [data-at="3"]),
 .scene[data-step="5"] [data-fade]:is([data-at="0"], [data-at="1"], [data-at="2"], [data-at="3"], [data-at="4"]),
 .scene[data-step="6"] [data-fade]:is([data-at="0"], [data-at="1"], [data-at="2"], [data-at="3"], [data-at="4"], [data-at="5"]) {
-  opacity: var(--fade-to, 0.32);
+  opacity: var(--fade-to, 0.68);
 }
 /* Narration that keeps one line on screen at a time (stack the lines in one grid cell). */
 .narr-stack { display: grid; --fade-to: 0; }

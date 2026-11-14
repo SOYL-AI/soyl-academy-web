@@ -9,7 +9,7 @@ import { seededRandom } from '@/components/brush/random';
  * Chapter five, Monday morning (ADR-034): the class re-sorts itself. Thirty-two pupils start scattered (a class
  * list); as the reader scrolls they move into groups by misconception, take their group's colour, and each group
  * gets a next move. Hover or focus a group to pick out its pupils. Positions are computed here, on the server, in
- * container units, so the movement is pure CSS (`--p`); reduced motion shows the grouped board.
+ * container units, so the movement is pure CSS (`--sp` on each dot); reduced motion shows the grouped board.
  */
 const INK: Record<string, string> = {
   vermilion: 'var(--color-vermilion)',
@@ -52,7 +52,7 @@ export function Monday() {
   const dots = layout();
   const photo = images.emptyClassroom;
   return (
-    <Scene id="monday" chapter={monday.chapter} length={2.7} mobileLength={2.5} steps={3} className="bg-sheet" aria-label="Chapter five: Monday morning">
+    <Scene id="monday" chapter={monday.chapter} length={2.7} mobileLength={2.5} steps={3} progress="targets" className="bg-sheet" aria-label="Chapter five: Monday morning">
       <div className="page grid h-full grid-cols-12 content-center gap-x-8 gap-y-6 py-8">
         <div className="col-span-12 lg:col-span-4">
           <p className="hand text-[1.35rem] text-vermilion-ink">{monday.time}</p>
@@ -83,26 +83,8 @@ export function Monday() {
               <p className="text-[12px] uppercase tracking-[0.1em] text-graphite">{monday.label}</p>
             </div>
             <div className="board relative mt-3 aspect-[4/5] w-full md:aspect-[16/10]">
-              {dots.map((d, i) => (
-                <span
-                  key={i}
-                  aria-hidden="true"
-                  data-g={d.g}
-                  data-ira={d.ira ? '' : undefined}
-                  className="dot"
-                  style={
-                    {
-                      '--x0': d.x0.toFixed(2),
-                      '--y0': d.y0.toFixed(2),
-                      '--x1': d.x1.toFixed(2),
-                      '--y1': d.y1.toFixed(2),
-                      '--x1m': d.x1m.toFixed(2),
-                      '--y1m': d.y1m.toFixed(2),
-                      '--c': INK[monday.groups[d.g]!.ink],
-                    } as React.CSSProperties
-                  }
-                />
-              ))}
+              {/* Columns first, dots after: the hover rules use `.group-col:hover ~ .dot` (no :has, which every dot
+                  re-checked on every scroll frame). Dots draw above the columns by z-index. */}
               {monday.groups.map((group, g) => (
                 <div
                   key={group.name}
@@ -122,6 +104,27 @@ export function Monday() {
                     {group.move}
                   </p>
                 </div>
+              ))}
+              {dots.map((d, i) => (
+                <span
+                  key={i}
+                  aria-hidden="true"
+                  data-g={d.g}
+                  data-ira={d.ira ? '' : undefined}
+                  data-p
+                  className="dot"
+                  style={
+                    {
+                      '--x0': d.x0.toFixed(2),
+                      '--y0': d.y0.toFixed(2),
+                      '--x1': d.x1.toFixed(2),
+                      '--y1': d.y1.toFixed(2),
+                      '--x1m': d.x1m.toFixed(2),
+                      '--y1m': d.y1m.toFixed(2),
+                      '--c': INK[monday.groups[d.g]!.ink],
+                    } as React.CSSProperties
+                  }
+                />
               ))}
             </div>
             <p className="sr-only">
