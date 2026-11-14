@@ -1,6 +1,6 @@
 # subject-producer — ICSE Class 9 Mathematics (hand-authored) — 2026-11-09
 
-Status: partial — ch01–ch09 of 21 gated and committed (one commit each); ch10–ch21 not started (ch10/ch11 writers were interrupted after writing helper files only; those drafts are parked outside the tree in `C:/Users/Prabhu/soyl-wt/icse9-partial/`).
+Status: partial — PAUSED by the owner on 2026-11-12 ("focus on getting 11th grade done; pause 9th grade"). ch01–ch11 of 21 gated and committed (one commit each); ch12–ch21 not started. Nothing is left uncommitted in the worktree and `C:/Users/Prabhu/soyl-wt/icse9-partial/` no longer exists (its ch10/ch11 drafts were finished and committed).
 
 Branch: `platform/subject-producer/icse-9-mathematics` (fast-forwarded to `platform/main` 54643166, `npm ci` in `platform/` under the heavy lock). Provenance `origin: "human"`, author `claude-sonnet-5-5 (writer; reviewed by the subject-producer)`, all items `status: "draft"` (D-025/D-026/D-050).
 
@@ -22,7 +22,9 @@ New folders only: `platform/content/authored/maths/icse-9-mathematics-chNN/` wit
 | 07 | Logarithms | 20 + 21 | 29 | 7 | 30 | 65 (151) | 63% | Sonnet 5.5 | 0862c540 |
 | 08 | Triangles: Congruency and Inequalities | 21 + 23 | 34 | 7 | 30 | 65 (151) | 60% | Sonnet 5.5 | db0c0308 |
 | 09 | Mid-Point and Intercept Theorems | 22 + 22 | 38 | 8 | 30 | 65 (151) | 62% | Sonnet 5.5 | 627071cf |
-| | **Total (9 chapters)** | **383 slides** | | | **272** | **582 (1,350)** | | | |
+| 10 | Pythagoras Theorem | 23 + 22 | 38 | 8 | 31 | 65 (155) | 60% | Sonnet 5.5 (finished an interrupted draft's helpers) | aea65c26 |
+| 11 | Rectilinear Figures: Parallelograms | 22 + 21 | 43 | 8 | 30 | 65 (144) | 62% | Sonnet 5.5 (finished an interrupted draft's helpers) | 45726d89 |
+| | **Total (11 chapters)** | **471 slides** | | | **333** | **712 (1,649)** | | | |
 
 Each chapter: two tests matching the blueprints exactly, disjoint, using no deck-check item; 3–4 check slides per deck, all objective; long items in parts 3 + 3 + 4 with 6–10 step marks; A-R keys spread a–d; MCQ keys rotated a/b/c/d.
 
@@ -40,6 +42,8 @@ From `platform/`, under `_tools/heavy.sh` (script `C:/Users/Prabhu/soyl-wt/icse9
 - `npm run content -- originality --authored`: 673 units, 0 errors (run 2 had 16 duplicate-stem errors, fixed above).
 - `npx vitest run --root db test/db6-split.test.ts` 8/8; `--root api test/content.test.ts` 13/13 (it failed once in run 2 under machine contention — a hook timeout, 13 skipped — and passed alone in 649 s and again in run 3); `--root content-pipeline test/series.test.ts` 41/41.
 
+- Run 4 — ch01–ch11 (2026-11-12 00:05–00:14 IST, log `icse9-maths-gates4.log`, after the ch10/ch11 final builds): 11 chapters rebuilt byte-identical; content-templates 4726/4726; lint exit 0, every icse-9-mathematics unit 0/0; verify 11 units, 712 questions, 0 blocking; originality 675 units, 0 errors; DB-6 8/8; API content 13/13; series 41/41.
+
 ## Scope decisions / points for a reviewer
 - Topics follow `catalog/cisce/icse-9/mathematics/syllabus.yaml`; removed topics appear at most as one "not in the syllabus" line (ch02 loan instalments; ch08 inequality proofs).
 - ch01: fill-blank surd answers are asked as a coefficient or rational value (the grader compares text); figures draw full compass circles (no arc primitive).
@@ -51,10 +55,12 @@ From `platform/`, under `_tools/heavy.sh` (script `C:/Users/Prabhu/soyl-wt/icse9
 - ch07: fractional log values (log₈ 32 = 5/3) appear; log tables and change of base only mentioned as not required.
 - ch08: one numerical (q044) uses the cosine rule — a reviewer may prefer an angle-only replacement; label placement on figures was not rendered.
 - ch09: two items go slightly past the syllabus wording (mid-point triangle area one quarter; trapezium diagonal mid-points); equal-intercept proof is given for three lines.
+- ch10: deck 1 has 23 slides; a second area proof (middle square b − a) appears only in long q060; the m, n triple parametrisation is stated without proof.
+- ch11: the rectangle equal-diagonals proof and the "identify the shape from its diagonals" converses go slightly past the syllabus wording; Pythagoras (ch10) is used for rhombus lengths.
 - Originality (D-036): imagined people, places and objects; content-specific stems; repo gate clean against all banks.
 
 ## Known gaps / follow-ups
-- ch10–ch21 (Pythagoras through Distance Formula) not yet authored.
+- ch12–ch21 (Construction of Polygons through Distance Formula) not yet authored — paused by the owner on 2026-11-12. To resume: same lib (copy `icse-9-mathematics-ch01/src/lib.mjs`), writer brief pattern as above, gate script `C:/Users/Prabhu/soyl-wt/icse9-maths-gates.sh`.
 - No narration audio (TTS stage); renderer checks at 360 px for geometry figures and wide tables still to do on staging.
 - Unit tests and frozen series for ICSE 9 Mathematics are for assessment-designer.
 
