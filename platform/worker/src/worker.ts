@@ -15,6 +15,7 @@ import { allJobs } from './jobs';
 import { RazorpayHttpClient } from '@soyl/api/billing/razorpay/http';
 import { invoiceBlobStore, invoiceEmailSender } from '@soyl/api/billing/invoices/delivery';
 import type { BillingJobSettings } from './billing-jobs';
+import type { NotificationJobSettings } from './notification-jobs';
 import { errorFields, type Logger } from './logger';
 import { registerJobs, type JobDefinition, type RegisteredJob } from './registry';
 
@@ -84,6 +85,12 @@ export function invoiceSettings(config: WorkerConfig, env: Record<string, string
   return { runtime: config.billing.invoicing, blob: () => blob, email: invoiceEmailSender({ appEnv: config.appEnv, env }), publicBaseUrl: env.PUBLIC_BASE_URL ?? 'https://www.soylai.com' };
 }
 
+/** D-055 reminder emails: the same ACS email env as the invoice sweep, and the API's OTP_PEPPER for the links. */
+export function notificationSettings(config: WorkerConfig, env: Record<string, string | undefined> = process.env): NotificationJobSettings {
+  const r = config.reminders;
+  return { enabled: r.enabled, email: r.enabled ? invoiceEmailSender({ appEnv: config.appEnv, env }) : null, pepper: r.pepper, publicBaseUrl: r.publicBaseUrl, apiPublicPath: r.apiPublicPath };
+}
+
 export function billingClient(config: WorkerConfig): RazorpayHttpClient | null {
   const b = config.billing;
   return b.provider === 'razorpay' ? new RazorpayHttpClient({ keyId: b.keyId!, keySecret: b.keySecret!, baseUrl: b.apiBaseUrl }) : null;
@@ -122,7 +129,7 @@ export async function startWorker(deps: WorkerDeps): Promise<RunningWorker> {
   try {
     await boss.start({ attempts: 3 });
     state.lastBossOkAt = new Date();
-    jobs = await registerJobs(boss, deps.jobs ?? allJobs({ unconsentedAccountTtlDays: config.unconsentedAccountTtlDays, unconsentedPurge: config.unconsentedPurge, billing: { razorpay: billingClient(config), invoices: invoiceSettings(config) } }), {
+    jobs = await registerJobs(boss, deps.jobs ?? allJobs({ unconsentedAccountTtlDays: config.unconsentedAccountTtlDays, unconsentedPurge: config.unconsentedPurge, billing: { razorpay: billingClient(config), invoices: invoiceSettings(config) }, notifications: notificationSettings(config) }), {
       db: deps.db,
       log,
       now,

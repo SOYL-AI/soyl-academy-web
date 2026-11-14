@@ -14,6 +14,7 @@
  * - leagues.weekly             hourly (first run Monday 00:05 IST): close last week's leagues (final ranks,
  *                              promotion/relegation) and form this week's for returning students (M5).
  * - coins.*                     SOYL Coins (coins-jobs.ts): live-mock rank awards, address retention.
+ * - notifications.reminders     D-055 reminder emails (notification-jobs.ts), daily 12:00 UTC = 17:30 IST.
  *
  * Cron expressions are UTC (GEN-6): 20:30 UTC = 02:00 IST, the quietest hour.
  */
@@ -29,6 +30,7 @@ import { defineJob, type JobContext, type JobDefinition, type JobQueueOptions } 
 import { BILLING_JOB_NAMES, billingJobs, type BillingJobSettings } from './billing-jobs';
 import { AI_JOB_NAMES, aiJobs } from './ai-jobs';
 import { COINS_JOB_NAMES, coinsJobs } from './coins-jobs';
+import { NOTIFICATION_JOB_NAMES, notificationJobs, type NotificationJobSettings } from './notification-jobs';
 import type { AiWorkerSettings } from '@soyl/api/ai/worker';
 
 const DAY_MS = 86_400_000;
@@ -212,6 +214,8 @@ export interface JobSettings {
   unconsentedPurge?: boolean;
   /** Billing jobs (billing-jobs.ts). Default: no Razorpay provider (reconcile skips, expiry runs). */
   billing?: BillingJobSettings;
+  /** D-055 reminder emails (notification-jobs.ts). Absent: the job is registered and no-ops (switched off). */
+  notifications?: NotificationJobSettings;
 }
 
 /** Every job the worker runs. */
@@ -269,6 +273,7 @@ export function allJobs(settings: JobSettings = {}): JobDefinition[] {
     ...billingJobs(settings.billing ?? { razorpay: null }),
     ...aiJobs(settings.ai),
     ...coinsJobs(),
+    ...notificationJobs(settings.notifications),
   ] as JobDefinition[];
   return settings.unconsentedPurge === false ? jobs.filter((j) => j.name !== JOB_NAMES.accountPurgeUnconsented) : jobs;
 }
