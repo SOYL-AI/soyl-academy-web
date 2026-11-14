@@ -93,6 +93,9 @@
   border-radius: 58% 42% 55% 45% / 47% 58% 42% 53%;
   background: var(--color-graphite);
   opacity: 0.55;
+  /* Above the group columns (whose hover tint would wash them out), and transparent to the pointer. */
+  z-index: 1;
+  pointer-events: none;
   transition: background-color 500ms var(--ease-out), opacity 500ms var(--ease-out);
 }
 @media (max-width: 767px) {
