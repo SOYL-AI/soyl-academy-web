@@ -121,6 +121,30 @@ describe('RadarChart', () => {
     expect(within(root).getAllByRole('columnheader').map((h) => h.textContent)).toEqual(['Axis', 'Value', 'Last month']);
   });
 
+  it('short names on the chart only; notes under the labels, in the sentence and as a table column', () => {
+    const axes: RadarAxis[] = [
+      { key: 'm', label: 'Mathematics (Standard 041 / Basic 241)', short: 'Mathematics', value: 61, max: 100, note: '3 of 14 chapters started', noteShort: '3/14 chapters' },
+      { key: 's', label: 'Science', value: 40, max: 100, note: '2 of 15 chapters started' },
+      { key: 'e', label: 'English', value: 20, max: 100 },
+    ];
+    render(<RadarChart axes={axes} label="Subject mastery" unit="%" columns={{ axis: 'Subject', value: 'Mastery', note: 'Chapters' }} data-testid="r" />);
+    const root = screen.getByTestId('r');
+    expect(root.hasAttribute('data-notes')).toBe(true);
+    expect(root.querySelector('[data-axis="m"]')!.textContent).toBe('Mathematics 61%3/14 chapters');
+    expect(root.querySelector('[data-axis="s"]')!.textContent).toBe('Science 40%2 of 15 chapters started');
+    expect(root.querySelector('[data-axis="e"]')!.textContent).toBe('English 20%');
+    expect(within(root).getByRole('img').getAttribute('aria-label')).toBe(
+      'Subject mastery, from 0 to 100%: Mathematics (Standard 041 / Basic 241) 61% (3 of 14 chapters started), Science 40% (2 of 15 chapters started) and English 20%.',
+    );
+    const table = within(root).getByRole('table');
+    expect(within(table).getAllByRole('columnheader').map((h) => h.textContent)).toEqual(['Subject', 'Mastery', 'Chapters']);
+    expect(within(table).getAllByRole('row').slice(1).map((r) => r.textContent)).toEqual(['Mathematics (Standard 041 / Basic 241)61%3 of 14 chapters started', 'Science40%2 of 15 chapters started', 'English20%']);
+    // No notes: no note column and no extra label room.
+    render(<RadarChart axes={card.slice(0, 3)} label="Card" min={40} data-testid="plain" />);
+    expect(screen.getByTestId('plain').hasAttribute('data-notes')).toBe(false);
+    expect(within(screen.getByTestId('plain')).getAllByRole('columnheader')).toHaveLength(2);
+  });
+
   it('fewer than 3 axes: nothing (the page shows a list instead)', () => {
     const { container } = render(<RadarChart axes={card.slice(0, 2)} label="Two" />);
     expect(container.innerHTML).toBe('');

@@ -150,6 +150,15 @@
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
 }
+.labelNote {
+  display: block;
+  color: var(--p-ink-subtle);
+  font-weight: 500;
+}
+/* A note line under each label: more room above and below the plot. */
+.root[data-notes] {
+  --label-h: 56px;
+}
 .root[data-blank] .radarLabel {
   color: var(--p-ink-subtle);
 }

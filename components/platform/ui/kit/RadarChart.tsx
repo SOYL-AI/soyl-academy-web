@@ -12,6 +12,9 @@
  * - Labels are HTML around the plot ("Accuracy 72"), so they wrap instead of clipping: the plot radius shrinks with
  *   the container (a container query unit) until the widest side label fits, and every label's max-width keeps it
  *   inside the chart's box. Tested at 360 px.
+ * - Axis `short` replaces the name on the chart only (the table and sentence keep `label`); `note` adds context
+ *   ("3 of 15 chapters started") to the sentence and a table column, and `noteShort` (or `note`) a line under the
+ *   chart label.
  * - `blank`: the dashed grid and axis names only, no shape and no numbers (unrated; never invent numbers).
  * - `ghost`: an optional earlier shape ("Last month") drawn as a faint dashed outline under the main shape.
  * - Accessibility: the plot is `role="img"` with one sentence naming every value; a `<details>` table repeats the
@@ -28,11 +31,17 @@ import s from './RadarChart.module.css';
 export interface RadarAxis {
   /** Stable id (also the `ghost.values` key). */
   key: string;
-  /** Full word shown next to the axis ("Accuracy", "Science"). */
+  /** Full name: the table, the accessible sentence and (unless `short` is set) the chart ("Accuracy", "Science"). */
   label: string;
   value: number;
   /** The value on the outer ring. */
   max: number;
+  /** A shorter name for the chart label only ("Mathematics" for "Mathematics (Standard 041 / Basic 241)"). */
+  short?: string;
+  /** Context for the value, in the sentence and the table ("3 of 15 chapters started"). */
+  note?: string;
+  /** The note under the chart label where space is tight ("3/15 chapters"; default `note`). */
+  noteShort?: string;
 }
 
 export type RadarTone = 'accent' | 'bronze' | 'silver' | 'gold' | 'elite';
@@ -58,8 +67,8 @@ export interface RadarChartProps {
   blank?: boolean;
   /** Written after every value ("%"). */
   unit?: string;
-  /** Table column headings (default "Axis" / "Value"). */
-  columns?: { axis: string; value: string };
+  /** Table column headings (default "Axis" / "Value" / "Note"; the note column only when an axis has a note). */
+  columns?: { axis: string; value: string; note?: string };
   /** Small text under the chart (what the rings mean, what is missing). */
   caption?: ReactNode;
   className?: string;
@@ -107,7 +116,7 @@ const fmt = (v: number) => String(Math.round(v));
 export function radarSentence({ axes, label, min = 0, unit = '', blank, ghost }: Pick<RadarChartProps, 'axes' | 'label' | 'min' | 'unit' | 'blank' | 'ghost'>): string {
   if (blank) return `${label}: not rated yet (${listText(axes.map((a) => a.label))}).`;
   const max = Math.max(...axes.map((a) => a.max));
-  const main = `${label}, from ${fmt(min)} to ${fmt(max)}${unit}: ${listText(axes.map((a) => `${a.label} ${fmt(a.value)}${unit}`))}.`;
+  const main = `${label}, from ${fmt(min)} to ${fmt(max)}${unit}: ${listText(axes.map((a) => `${a.label} ${fmt(a.value)}${unit}${a.note ? ` (${a.note})` : ''}`))}.`;
   if (!ghost) return main;
   return `${main} ${ghost.label}: ${listText(axes.map((a) => `${a.label} ${fmt(ghost.values[a.key] ?? min)}${unit}`))}.`;
 }
@@ -144,9 +153,10 @@ export function RadarChart({ axes, label, min = 0, rings, tone = 'accent', ghost
   const dirs = axes.map((_, i) => ({ x: round3(Math.cos(radarAngle(i, n))), y: round3(Math.sin(radarAngle(i, n))) }));
   const reach = Math.max(...dirs.map((d) => Math.abs(d.x)));
   const plotStyle = { '--reach': reach } as CSSProperties;
+  const notes = !blank && axes.some((a) => a.note);
 
   return (
-    <figure ref={ref} className={cx(s.root, className)} data-tone={tone} data-blank={blank || undefined} data-axes={n} data-testid={testId}>
+    <figure ref={ref} className={cx(s.root, className)} data-tone={tone} data-blank={blank || undefined} data-axes={n} data-notes={notes || undefined} data-testid={testId}>
       <div className={s.plot} role="img" aria-label={radarSentence({ axes, label, min, unit, blank, ghost })} style={plotStyle}>
         <svg className={s.svg} viewBox={`0 0 ${RADAR_VIEW} ${RADAR_VIEW}`} aria-hidden="true" focusable="false">
           <g className={s.radarGrid}>
@@ -178,7 +188,7 @@ export function RadarChart({ axes, label, min = 0, rings, tone = 'accent', ghost
           const side = d.x > 0.2 ? 'start' : d.x < -0.2 ? 'end' : 'middle';
           return (
             <span key={a.key} className={s.radarLabel} data-side={side} data-axis={a.key} style={{ '--x': d.x, '--y': d.y, '--ax': Math.abs(d.x) } as CSSProperties}>
-              <span className={s.labelName}>{a.label}</span>
+              <span className={s.labelName}>{a.short ?? a.label}</span>
               {!blank && (
                 <>
                   {' '}
@@ -186,6 +196,7 @@ export function RadarChart({ axes, label, min = 0, rings, tone = 'accent', ghost
                     {fmt(a.value)}
                     {unit}
                   </b>
+                  {(a.noteShort ?? a.note) && <span className={s.labelNote}>{a.noteShort ?? a.note}</span>}
                 </>
               )}
             </span>
@@ -208,6 +219,7 @@ export function RadarChart({ axes, label, min = 0, rings, tone = 'accent', ghost
                     {ghost.label}
                   </th>
                 )}
+                {notes && <th scope="col">{columns?.note ?? 'Note'}</th>}
               </tr>
             </thead>
             <tbody>
@@ -224,6 +236,7 @@ export function RadarChart({ axes, label, min = 0, rings, tone = 'accent', ghost
                       {unit}
                     </td>
                   )}
+                  {notes && <td>{a.note ?? ''}</td>}
                 </tr>
               ))}
             </tbody>

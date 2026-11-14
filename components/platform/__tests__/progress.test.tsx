@@ -22,7 +22,7 @@ vi.mock('../lib/api-browser', () => ({ api: h.api }));
 vi.mock('../learn/ProgressProvider', () => ({ useLearnerProgress: () => h.progress }));
 
 import { ProgressClient, ProgressView } from '../progress/ProgressClient';
-import { cardRadarAxes, cardRadarCaption, difficultyStats, focusMeta, isRatedCard, progressStats, progressSubtitle, shortDay, showHeatmap, subjectRadar, testRows, toTrend, unratedText } from '../progress/progress-model';
+import { cardRadarAxes, cardRadarCaption, chaptersStartedText, difficultyStats, shortSubjectName, startedMastery, focusMeta, isRatedCard, progressStats, progressSubtitle, shortDay, showHeatmap, subjectRadar, testRows, toTrend, unratedText } from '../progress/progress-model';
 
 const zero = { allTime: 0, thisWeek: 0, lastWeek: 0 };
 const win = (checked = 0, right = 0) => ({ from: '2026-11-07', to: '2026-11-13', checked, right, accuracy: checked ? right / checked : null });
@@ -115,8 +115,17 @@ function playerCard(over: Partial<MyPlayerCard> = {}): MyPlayerCard {
     ...over,
   };
 }
-const subj = (subjectId: string, name: string, score: number, started: number, chapterCount = 12): SubjectMastery =>
-  ({ subjectId, name, classLevel: 10, score, chapterCount, levels: { not_started: chapterCount - started, attempted: started, familiar: 0, proficient: 0, mastered: 0 }, chapters: [] }) as SubjectMastery;
+/** A subject with `started` chapters at mastery `startedScore` and the rest not started (the API's score is diluted). */
+const subj = (subjectId: string, name: string, startedScore: number, started: number, chapterCount = 12): SubjectMastery =>
+  ({
+    subjectId,
+    name,
+    classLevel: 10,
+    score: chapterCount ? Math.round((startedScore * started) / chapterCount) : 0,
+    chapterCount,
+    levels: { not_started: chapterCount - started, attempted: started, familiar: 0, proficient: 0, mastered: 0 },
+    chapters: Array.from({ length: chapterCount }, (_, i) => ({ chapterId: `${subjectId}-ch${i + 1}`, number: i + 1, title: `Chapter ${i + 1}`, level: i < started ? 'attempted' : 'not_started', score: i < started ? startedScore : 0 })),
+  }) as unknown as SubjectMastery;
 
 const member = { status: 'member', user: { id: 'u1', role: 'student', displayName: 'Asha', board: 'cbse', classLevel: 10 }, consent: 'granted' };
 const wrap = (ui: ReactNode) => render(<ToastProvider>{ui}</ToastProvider>);
@@ -298,19 +307,29 @@ describe('progress radar view-models', () => {
   it('subjects: none, bars below 3 (highest first), a radar of 3–8 ranked by chapters started, "+N more" above 8', () => {
     expect(subjectRadar([])).toEqual({ kind: 'none' });
     expect(subjectRadar([subj('x', 'Empty', 0, 0, 0)])).toEqual({ kind: 'none' });
+    // No chapter started: left out.
+    expect(subjectRadar([subj('z', 'Zero', 0, 0), subj('y', 'Also zero', 50, 0)])).toEqual({ kind: 'none' });
     expect(subjectRadar([subj('m', 'Mathematics', 12, 3), subj('s', 'Science', 34, 1)])).toEqual({
       kind: 'bars',
       bars: [
-        { subjectId: 's', name: 'Science', score: 34 },
-        { subjectId: 'm', name: 'Mathematics', score: 12 },
+        { subjectId: 's', name: 'Science', score: 34, started: 1, chapterCount: 12 },
+        { subjectId: 'm', name: 'Mathematics', score: 12, started: 3, chapterCount: 12 },
       ],
     });
     const three = subjectRadar([subj('e', 'English', 5, 1), subj('m', 'Mathematics', 12.6, 3), subj('s', 'Science', 34, 3)]);
     if (three.kind !== 'radar') throw new Error('expected a radar');
-    expect(three.axes.map((a) => [a.key, a.value, a.max])).toEqual([
-      ['s', 34, 100],
-      ['m', 13, 100],
-      ['e', 5, 100],
+    expect(three.axes.map((a) => [a.key, a.value, a.max, a.note, a.noteShort])).toEqual([
+      ['s', 34, 100, '3 of 12 chapters started', '3/12 chapters'],
+      ['m', 13, 100, '3 of 12 chapters started', '3/12 chapters'],
+      ['e', 5, 100, '1 of 12 chapters started', '1/12 chapters'],
+    ]);
+    // Short names on the chart only.
+    const named = subjectRadar([subj('a', 'Mathematics (Standard 041 / Basic 241)', 40, 3), subj('b', 'Science', 30, 2), subj('c', 'Biology (Science Paper 3)', 20, 1)]);
+    if (named.kind !== 'radar') throw new Error('expected a radar');
+    expect(named.axes.map((a) => [a.label, a.short])).toEqual([
+      ['Mathematics (Standard 041 / Basic 241)', 'Mathematics'],
+      ['Science', 'Science'],
+      ['Biology (Science Paper 3)', 'Biology'],
     ]);
     expect(three.more).toBe(0);
     const eleven = subjectRadar(Array.from({ length: 11 }, (_, i) => subj(`s${i}`, `Subject ${i}`, 50, i + 1)));
@@ -319,6 +338,40 @@ describe('progress radar view-models', () => {
     expect(eleven.axes[0]!.key).toBe('s10');
     expect(eleven.axes.map((a) => a.key)).not.toContain('s0');
     expect(eleven.more).toBe(3);
+  });
+});
+
+describe('subject names and mastery over started chapters', () => {
+  it('shortSubjectName drops parentheses, spaced-dash suffixes and subject codes; never empty', () => {
+    expect(shortSubjectName('Mathematics (Standard 041 / Basic 241)')).toBe('Mathematics');
+    expect(shortSubjectName('Geography (Thailand) (H.C.G. Thailand Paper 2)')).toBe('Geography');
+    expect(shortSubjectName('Bengali (Bangla) (Second Language)')).toBe('Bengali');
+    expect(shortSubjectName('Modern English: English Language (Paper 1)')).toBe('Modern English: English Language');
+    expect(shortSubjectName('Hindi — Course A')).toBe('Hindi');
+    expect(shortSubjectName('Sanskrit – Communicative')).toBe('Sanskrit');
+    expect(shortSubjectName('Physics 042')).toBe('Physics');
+    expect(shortSubjectName('Physics - 042')).toBe('Physics');
+    expect(shortSubjectName('Mathematics 041/241')).toBe('Mathematics');
+    expect(shortSubjectName('Computer Applications (Code 165)')).toBe('Computer Applications');
+    expect(shortSubjectName('English Language and Literature')).toBe('English Language and Literature');
+    expect(shortSubjectName('Hindi Course A')).toBe('Hindi Course A');
+    expect(shortSubjectName('Social-Science')).toBe('Social-Science');
+    expect(shortSubjectName('(Paper 1)')).toBe('(Paper 1)');
+    expect(shortSubjectName('  Science  ')).toBe('Science');
+  });
+
+  it('startedMastery: the mean over chapters started; without chapter rows, the subject score scaled back', () => {
+    expect(startedMastery(subj('s', 'Science', 60, 3, 15))).toBe(60);
+    const mixed = subj('m', 'Maths', 0, 0, 4);
+    mixed.chapters[0] = { ...mixed.chapters[0]!, level: 'proficient', score: 70 };
+    mixed.chapters[1] = { ...mixed.chapters[1]!, level: 'attempted', score: 0 };
+    expect(startedMastery(mixed)).toBe(35);
+    const noRows = { ...subj('e', 'English', 50, 2, 10), chapters: [] };
+    expect(noRows.score).toBe(10);
+    expect(startedMastery(noRows)).toBe(50);
+    expect(startedMastery({ ...subj('z', 'Zero', 0, 0, 10), chapters: [] })).toBe(0);
+    expect(chaptersStartedText(1, 1)).toEqual({ full: '1 of 1 chapter started', short: '1/1 chapter' });
+    expect(chaptersStartedText(3, 15)).toEqual({ full: '3 of 15 chapters started', short: '3/15 chapters' });
   });
 });
 
@@ -393,7 +446,13 @@ describe('player card section (#card) and subject radar', () => {
     const section = await screen.findByTestId('subjects-section');
     const radar = await within(section).findByTestId('subjects-radar');
     expect(radar.getAttribute('data-axes')).toBe('8');
-    expect(radar.querySelector('[role="img"]')!.getAttribute('aria-label')).toMatch(/^Subject mastery, from 0 to 100%: Subject 9 19%, Subject 8 18%, .* and Subject 2 12%\.$/);
+    expect(radar.querySelector('[role="img"]')!.getAttribute('aria-label')).toMatch(
+      /^Subject mastery, from 0 to 100%: Subject 9 19% \(10 of 12 chapters started\), Subject 8 18% \(9 of 12 chapters started\), .* and Subject 2 12% \(3 of 12 chapters started\)\.$/,
+    );
+    expect(radar.querySelector('[data-axis="cbse-10-s9"]')!.textContent).toBe('Subject 9 19%10/12 chapters');
+    expect(within(radar).getAllByRole('columnheader').map((h) => h.textContent)).toEqual(['Subject', 'Mastery', 'Chapters']);
+    expect(section.textContent).toContain("Mastery out of 100 in the chapters you've started.");
+    expect(radar.textContent).toContain('The number of chapters under each subject grows as you cover more.');
     const more = within(section).getByRole('link', { name: /\+2 more subjects/ });
     expect(more.getAttribute('href')).toBe('#mastery-title');
     expect(document.getElementById('mastery-title')).toBeTruthy();
@@ -405,8 +464,8 @@ describe('player card section (#card) and subject radar', () => {
     const bars = await screen.findByTestId('subjects-bars');
     expect(screen.queryByTestId('subjects-radar')).toBeNull();
     expect(within(bars).getAllByRole('progressbar').map((b) => [b.getAttribute('aria-label'), b.getAttribute('aria-valuetext')])).toEqual([
-      ['Science', '34% mastery'],
-      ['Mathematics', '12% mastery'],
+      ['Science', '34% · 1 of 12 chapters started'],
+      ['Mathematics', '12% · 3 of 12 chapters started'],
     ]);
     expect(screen.getByRole('list', { name: 'Your subjects by mastery' })).toBeTruthy();
   });

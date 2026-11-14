@@ -9,7 +9,8 @@
  *   out (so the student knows how to raise it).
  * - Provisional card (fewer than 10 checked answers or 3 active days): the blank card, a dashed hexagon with the six
  *   attribute names and no numbers, what it takes to get rated, and where each part stands in words.
- * - Subjects: 3–8 axes (the most active subjects; "+N more" jumps to the Mastery list), a ranked bar list for 1–2.
+ * - Subjects: mastery over the chapters started, with "N of M chapters started"; 3–8 axes (the most active
+ *   subjects, short names on the chart; "+N more" jumps to the Mastery list), a ranked bar list for 1–2.
  */
 import type { MyPlayerCard, MyMastery } from '@/platform/shared/api-client';
 import { Card, ProgressBar, Skeleton } from '@/components/platform/ui/kit/Display';
@@ -17,7 +18,7 @@ import { PageSection } from '@/components/platform/ui/kit/Page';
 import { RadarChart } from '@/components/platform/ui/kit/RadarChart';
 import type { Loadable } from '../learn/useInsights';
 import { BlankPlayerCard, CardAttributes, PlayerCard } from '../me/PlayerCard';
-import { CARD_RADAR, cardRadarAxes, cardRadarCaption, isRatedCard, subjectRadar, UNRATED_TITLE, unratedText } from './progress-model';
+import { CARD_RADAR, cardRadarAxes, chaptersStartedText, cardRadarCaption, isRatedCard, subjectRadar, UNRATED_TITLE, unratedText } from './progress-model';
 import s from './progress.module.css';
 
 export function CardSection({ card }: { card: Loadable<MyPlayerCard> }) {
@@ -89,7 +90,7 @@ export function SubjectsSection({ mastery }: { mastery: Loadable<MyMastery> }) {
     <PageSection
       id="subjects-title"
       title="Your subjects"
-      description="Mastery out of 100 in each subject you have started. Every chapter counts, so it grows as you cover more."
+      description="Mastery out of 100 in the chapters you've started."
       action={view.kind === 'radar' && view.more > 0 ? { href: '#mastery-title', label: `+${view.more} more ${view.more === 1 ? 'subject' : 'subjects'}` } : undefined}
       data-testid="subjects-section"
     >
@@ -101,19 +102,20 @@ export function SubjectsSection({ mastery }: { mastery: Loadable<MyMastery> }) {
             min={0}
             rings={[25, 50, 75, 100]}
             unit="%"
-            columns={{ axis: 'Subject', value: 'Mastery' }}
-            caption="The centre is 0 and the outer ring 100."
+            columns={{ axis: 'Subject', value: 'Mastery', note: 'Chapters' }}
+            caption="The number of chapters under each subject grows as you cover more. The centre is 0 and the outer ring 100."
             data-testid="subjects-radar"
           />
         ) : (
           <ol className={s.subjectBars} aria-label="Your subjects by mastery" data-testid="subjects-bars">
             {view.bars.map((b) => (
               <li key={b.subjectId}>
-                <ProgressBar value={b.score} label={b.name} valueText={`${b.score}% mastery`} />
+                <ProgressBar value={b.score} label={b.name} valueText={`${b.score}% · ${chaptersStartedText(b.started, b.chapterCount).full}`} />
               </li>
             ))}
           </ol>
         )}
+        {view.kind === 'bars' && <p className={s.muted}>The number of chapters grows as you cover more.</p>}
       </Card>
     </PageSection>
   );

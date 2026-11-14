@@ -234,10 +234,46 @@ export const SUBJECT_RADAR_MAX = 8;
 /** Fewer subjects than this: a ranked bar list instead of a radar. */
 export const SUBJECT_RADAR_MIN = 3;
 
+/**
+ * A subject's name for chart labels only: parenthetical text ("Mathematics (Standard 041 / Basic 241)" →
+ * "Mathematics", "Biology (Science Paper 3)" → "Biology"), anything after a spaced dash ("Hindi — Course A" →
+ * "Hindi") and a trailing subject code ("Physics 042", "Physics - 042", "Maths 041/241") are dropped. Never empty: falls
+ * back to the full name. Tables and accessible text keep the full name.
+ */
+export function shortSubjectName(name: string): string {
+  const s = name
+    .replace(/\s*\([^()]*\)/g, ' ')
+    .split(/\s+[—–]\s+/)[0]!
+    .replace(/\s*(?:[-–—:]\s*)?(?:code\s*)?\d{3}(?:\s*\/\s*\d{3})*\s*$/i, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+  return s || name.trim();
+}
+
+/**
+ * Mastery over the chapters the student has started (any level above "not started"), 0–100, rounded. Uses the
+ * chapters in the response; if they are missing, the subject score (a mean over every chapter, untouched = 0) is
+ * scaled back up to the started chapters.
+ */
+export function startedMastery(x: SubjectMastery): number {
+  const started = x.chapters.filter((c) => c.level !== 'not_started');
+  if (started.length) return Math.round(started.reduce((n, c) => n + c.score, 0) / started.length);
+  const count = x.chapterCount - x.levels.not_started;
+  return count > 0 ? Math.min(100, Math.round((x.score * x.chapterCount) / count)) : 0;
+}
+
+/** "3 of 15 chapters started" (table, sentence, bars) and "3/15 chapters" (under a chart label). */
+export function chaptersStartedText(started: number, total: number): { full: string; short: string } {
+  return { full: `${n(started)} of ${n(total)} ${total === 1 ? 'chapter' : 'chapters'} started`, short: `${n(started)}/${n(total)} ${total === 1 ? 'chapter' : 'chapters'}` };
+}
+
 export interface SubjectBarView {
   subjectId: string;
   name: string;
+  /** Mastery over the chapters started. */
   score: number;
+  started: number;
+  chapterCount: number;
 }
 
 export type SubjectRadarView =
@@ -246,20 +282,31 @@ export type SubjectRadarView =
   | { kind: 'radar'; axes: RadarAxis[]; more: number };
 
 /**
- * Mastery by subject (GET /v1/me/mastery `subjects`, score 0–100 over all chapters of the subject). Ranked by activity
- * (chapters started, then score, then name), so the radar keeps the subjects the student actually works on: the top
- * `SUBJECT_RADAR_MAX`, with the rest counted. Fewer than `SUBJECT_RADAR_MIN` subjects: bars, highest score first.
+ * Mastery by subject (GET /v1/me/mastery `subjects`). Each value is the mean mastery over the chapters the student
+ * has started (`startedMastery`), with "N of M chapters started" beside it, so a subject is not judged on chapters
+ * not yet opened. Subjects with no chapter started are left out. Ranked by chapters started (then value, then name),
+ * so the radar keeps the subjects the student works on: the top `SUBJECT_RADAR_MAX`, with the rest counted. Fewer
+ * than `SUBJECT_RADAR_MIN` subjects: bars, highest value first. Chart labels use `shortSubjectName`.
  */
 export function subjectRadar(subjects: readonly SubjectMastery[]): SubjectRadarView {
   const ranked = subjects
-    .filter((x) => x.chapterCount > 0)
-    .map((x) => ({ x, started: x.chapterCount - x.levels.not_started }))
-    .sort((a, b) => b.started - a.started || b.x.score - a.x.score || a.x.name.localeCompare(b.x.name))
-    .map(({ x }) => x);
+    .map((x) => ({ x, started: x.chapterCount - x.levels.not_started, score: startedMastery(x) }))
+    .filter((r) => r.x.chapterCount > 0 && r.started > 0)
+    .sort((a, b) => b.started - a.started || b.score - a.score || a.x.name.localeCompare(b.x.name));
   if (ranked.length === 0) return { kind: 'none' };
   if (ranked.length < SUBJECT_RADAR_MIN) {
-    return { kind: 'bars', bars: [...ranked].sort((a, b) => b.score - a.score || a.name.localeCompare(b.name)).map((x) => ({ subjectId: x.subjectId, name: x.name, score: Math.round(x.score) })) };
+    return {
+      kind: 'bars',
+      bars: [...ranked].sort((a, b) => b.score - a.score || a.x.name.localeCompare(b.x.name)).map((r) => ({ subjectId: r.x.subjectId, name: r.x.name, score: r.score, started: r.started, chapterCount: r.x.chapterCount })),
+    };
   }
   const shown = ranked.slice(0, SUBJECT_RADAR_MAX);
-  return { kind: 'radar', axes: shown.map((x) => ({ key: x.subjectId, label: x.name, value: Math.round(x.score), max: 100 })), more: ranked.length - shown.length };
+  return {
+    kind: 'radar',
+    axes: shown.map((r) => {
+      const ch = chaptersStartedText(r.started, r.x.chapterCount);
+      return { key: r.x.subjectId, label: r.x.name, short: shortSubjectName(r.x.name), value: r.score, max: 100, note: ch.full, noteShort: ch.short };
+    }),
+    more: ranked.length - shown.length,
+  };
 }

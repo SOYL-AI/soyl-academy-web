@@ -86,6 +86,7 @@
 }
 .subjectsCard {
   display: grid;
+  gap: var(--p-space-3);
   min-width: 0;
 }
 .subjectsCard > figure {
