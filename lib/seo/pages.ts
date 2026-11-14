@@ -37,7 +37,7 @@ export interface PageEntry {
   changeFrequency: 'daily' | 'weekly' | 'monthly' | 'yearly';
 }
 
-export const HOME_TITLE = 'SOYL Academy | Interactive Assignments for Grades 1–10';
+export const HOME_TITLE = 'SOYL Academy | Missions, Not Assignments';
 
 export const PAGES: Record<string, PageEntry> = {
   '/': {
@@ -45,7 +45,7 @@ export const PAGES: Record<string, PageEntry> = {
     title: HOME_TITLE,
     label: 'Home',
     description:
-      'SOYL Academy turns teachers’ notes into interactive, teacher-approved assignments for Grades 1–10. Students learn by doing, with hints that never give the answer.',
+      'SOYL Academy replaces assignments with missions: one scene, a different path for every pupil, and a Thoughtprint instead of a mark. Teachers approve every mission.',
     type: 'WebPage',
     eyebrow: 'SOYL Academy',
     priority: 1,
@@ -53,12 +53,12 @@ export const PAGES: Record<string, PageEntry> = {
   },
   '/method': {
     path: '/method',
-    title: 'The SOYL Method — Outcome-Based Learning',
-    label: 'The SOYL Method',
+    title: 'How Missions Work — Spark, Build, Defend, Fix, Reflect',
+    label: 'How missions work',
     description:
-      'An outcome-based framework with five pillars — Understand, Apply, Create, Defend, Reflect — that makes student thinking visible in the age of AI.',
+      'A SOYL mission is one hour at most, in five stages: Spark, Build, Defend, Fix and Reflect. It adapts to each pupil and ends when the evidence is in.',
     type: 'WebPage',
-    eyebrow: 'The SOYL Method',
+    eyebrow: 'How missions work',
     priority: 0.9,
     changeFrequency: 'monthly',
   },
@@ -75,10 +75,10 @@ export const PAGES: Record<string, PageEntry> = {
   },
   '/schools': {
     path: '/schools',
-    title: 'For Schools — Rethink Homework in the AI Era',
+    title: 'For Schools — Bring Missions to Your School',
     label: 'For Schools',
     description:
-      'Partner with SOYL Academy to redesign assignments for the age of AI. A ten-week pilot that fits Common Core, IB, IGCSE or local curricula, with teachers in control.',
+      'Replace assignments with missions in a ten-week pilot that fits your curriculum, with teachers approving every mission and seeing each pupil’s thinking.',
     type: 'WebPage',
     eyebrow: 'For Schools',
     priority: 0.9,
@@ -86,10 +86,10 @@ export const PAGES: Record<string, PageEntry> = {
   },
   '/teachers': {
     path: '/teachers',
-    title: 'For Teachers — Assignments From Your Own Notes',
+    title: 'For Teachers — Set Outcomes, Approve the Mission',
     label: 'For Teachers',
     description:
-      'Turn your notes into interactive assignments for Grades 1–10. You approve every question; students get hints, not answers; you see each pupil’s path.',
+      'Set the outcomes, read a short mission brief and approve it. Afterwards, see your class grouped by misconception, with evidence and a suggested next move.',
     type: 'WebPage',
     eyebrow: 'For Teachers',
     priority: 0.9,
@@ -97,10 +97,10 @@ export const PAGES: Record<string, PageEntry> = {
   },
   '/parents': {
     path: '/parents',
-    title: 'For Parents — See How Your Child Learns',
+    title: 'For Parents — A Thoughtprint, Not Just a Mark',
     label: 'For Parents',
     description:
-      'With SOYL, parents see their child’s progress and teacher feedback, not just a mark. Hints guide students without giving answers away.',
+      'After every SOYL mission your child gets a Thoughtprint: what they can now do and how they got there. Never more than 60 minutes, never a mark as the headline.',
     type: 'WebPage',
     eyebrow: 'For Parents',
     priority: 0.7,
@@ -111,7 +111,7 @@ export const PAGES: Record<string, PageEntry> = {
     title: 'Book a Demo of SOYL Academy',
     label: 'Book a demo',
     description:
-      'Book a demo of SOYL Academy for your school: interactive, teacher-approved assignments for Grades 1–10, and a ten-week pilot plan.',
+      'Book a demo of SOYL Academy: see a mission from the pupil’s side and the teacher’s, and get a ten-week pilot plan for your school.',
     type: 'ContactPage',
     eyebrow: 'Book a demo',
     priority: 0.9,
@@ -119,12 +119,12 @@ export const PAGES: Record<string, PageEntry> = {
   },
   '/students': {
     path: '/students',
-    title: 'For Students — Learn Beyond the Answer',
-    label: 'For Students',
+    title: 'For Pupils — Your Path Through Every Mission',
+    label: 'For pupils',
     description:
-      'Solve, build, argue, explain and reflect. SOYL Academy assignments let you use AI — and ask you to explain your process and defend your ideas.',
+      'One scene, your own path, and a guide that never gives the answer. Say it, type it or snap your notebook, and leave with a Thoughtprint.',
     type: 'WebPage',
-    eyebrow: 'For Students',
+    eyebrow: 'For pupils',
     priority: 0.7,
     changeFrequency: 'monthly',
   },
@@ -144,7 +144,7 @@ export const PAGES: Record<string, PageEntry> = {
     title: 'About SOYL Academy — Why School Has to Change',
     label: 'About',
     description:
-      'Answers changed, so school has to change too. The thesis behind SOYL Academy: assess the process, not the product, and keep teachers at the centre of learning.',
+      'SOYL stands for Story of Your Life. Answers are cheap now; thinking is not. Why we are replacing assignments with missions, and keeping teachers at the centre.',
     type: 'AboutPage',
     eyebrow: 'About',
     priority: 0.7,
@@ -155,7 +155,7 @@ export const PAGES: Record<string, PageEntry> = {
     title: 'Contact — Bring SOYL to Your School',
     label: 'Contact',
     description:
-      'Get in touch with SOYL Academy at outreach@soyl.cloud to enquire about a school pilot. Based in Bengaluru 560043.',
+      'Get in touch with SOYL Academy at outreach@soyl.cloud about missions for your school. Based in Bengaluru 560043.',
     type: 'ContactPage',
     eyebrow: 'Contact',
     priority: 0.6,

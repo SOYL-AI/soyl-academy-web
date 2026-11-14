@@ -73,18 +73,19 @@ export function Photo({
   );
 
   if (!backdrop) return photo;
+  // Brush (ADR-033): a print pinned to the page with a strip of tape, a pigment wash peeking out behind it.
+  const tape = { blue: 'var(--color-ultramarine)', red: 'var(--color-vermilion)', yellow: 'var(--color-ochre)' }[backdrop];
+  const wash = { blue: 'var(--color-ultramarine-soft)', red: 'var(--color-vermilion-soft)', yellow: 'var(--color-ochre-soft)' }[backdrop];
   return (
-    <div className={cn('relative isolate', `tone-${backdrop}`)}>
+    <div className="relative isolate">
       <div
         aria-hidden="true"
-        className={cn(
-          'absolute -z-10 rounded-[var(--radius-lg)] bg-[var(--tone)]',
-          backdropSide === 'right'
-            ? '-bottom-3 -right-3 left-6 top-6 md:-bottom-5 md:-right-5 md:left-10 md:top-10'
-            : '-bottom-3 -left-3 right-6 top-6 md:-bottom-5 md:-left-5 md:right-10 md:top-10'
-        )}
+        className={cn('absolute -z-10', backdropSide === 'right' ? '-bottom-6 -right-6 left-12 top-10' : '-bottom-6 -left-6 right-12 top-10')}
+        style={{ background: wash, borderRadius: '46% 54% 42% 58% / 55% 41% 59% 45%', filter: 'blur(1px)' }}
       />
-      {photo}
+      <div className={cn('leaf tape p-2 md:p-2.5', backdropSide === 'right' ? 'tilt-r' : 'tilt-l')} style={{ '--tape': tape } as React.CSSProperties}>
+        {photo}
+      </div>
     </div>
   );
 }

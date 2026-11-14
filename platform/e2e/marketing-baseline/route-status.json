@@ -1,5 +1,5 @@
 {
-  "checked": 52,
+  "checked": 55,
   "routes": [
     {
       "path": "/",
@@ -24,7 +24,7 @@
       "actual": 405,
       "contentType": "",
       "ok": true,
-      "note": "POST-only (Future Builders enrolment to the Google Sheets webhook). Not POSTed by the suite: with GOOGLE_SHEETS_WEBHOOK_URL set it would write a row. Expected POST behaviour: 200 {success:true} (simulated when the webhook is unset), 500 on invalid JSON."
+      "note": "POST-only (Future Builders call / notify / waitlist requests to the platform leads ingest). Not POSTed by the suite: with the ingest configured it would record a lead. Expected POST behaviour: 201 {success:true}, 400 on invalid input, 502/503 when it cannot be recorded."
     },
     {
       "path": "/api/razorpay",
@@ -33,7 +33,25 @@
       "actual": 405,
       "contentType": "",
       "ok": true,
-      "note": "POST-only (Future Builders order creation). Not POSTed by the suite: with live keys it would create a Razorpay order. Expected POST behaviour: 409 while the cohort is closed (waitlist), else 200 with an order (mock order when RAZORPAY_KEY_* are unset)."
+      "note": "POST-only (Future Builders order creation, priced on the server). Not POSTed by the suite: with live keys it would create a Razorpay order. Expected POST behaviour: 409 while registration is closed, 400 on an invalid registrant, else 200 with an order (mock order only in local dev; 503 in production without RAZORPAY_KEY_*)."
+    },
+    {
+      "path": "/api/razorpay/verify",
+      "method": "GET",
+      "expected": 405,
+      "actual": 405,
+      "contentType": "",
+      "ok": true,
+      "note": "POST-only (checkout signature + Razorpay payment fetch, then the platform ingest). Unit-tested in lib/future-builders/__tests__."
+    },
+    {
+      "path": "/api/razorpay/webhook",
+      "method": "GET",
+      "expected": 405,
+      "actual": 405,
+      "contentType": "",
+      "ok": true,
+      "note": "POST-only (Razorpay webhook safety net; X-Razorpay-Signature with RAZORPAY_WEBHOOK_SECRET, 503 while unset). Unit-tested in lib/future-builders/__tests__."
     },
     {
       "path": "/apple-icon.png",
@@ -77,6 +95,14 @@
     },
     {
       "path": "/future-builders",
+      "method": "GET",
+      "expected": 200,
+      "actual": 200,
+      "contentType": "text/html; charset=utf-8",
+      "ok": true
+    },
+    {
+      "path": "/future-builders/registered",
       "method": "GET",
       "expected": 200,
       "actual": 200,

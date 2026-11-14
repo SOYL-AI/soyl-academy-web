@@ -10,14 +10,15 @@ import {
   type Offer,
 } from '@/content/future-builders';
 import { cn } from '@/lib/utils';
+import { Dab } from '@/components/brush/marks';
 import styles from './offer.module.css';
 
 function Facts({ rows }: { rows: [string, string][] }) {
   return (
-    <dl className="t-small mt-5 grid grid-cols-[auto_1fr] gap-x-6 gap-y-2.5 border-t border-rule pt-5">
+    <dl className="t-small mt-5 grid grid-cols-[auto_1fr] gap-x-6 gap-y-2.5 border-t border-ink/15 pt-5">
       {rows.map(([k, v]) => (
         <div key={k} className="contents">
-          <dt className="text-muted">{k}</dt>
+          <dt className="text-graphite">{k}</dt>
           <dd className="t-num text-right text-ink">{v}</dd>
         </div>
       ))}
@@ -33,9 +34,9 @@ export function PriceLine({ list, price, className, size = 'md' }: { list: numbe
         <span className="sr-only">Now </span>
         {rupees(price)}
       </span>
-      <span className="t-num text-muted">
+      <span className="t-num text-graphite">
         <span className="sr-only">, list price </span>
-        <s>{rupees(list)}</s>
+        <s className="decoration-vermilion decoration-2">{rupees(list)}</s>
       </span>
     </p>
   );
@@ -59,13 +60,13 @@ export function StatusCard({ state, camp, upcoming, offer, listPrice }: StatusCa
 
   if (!shown) {
     return (
-      <div className="module p-6 shadow-[0_30px_60px_-40px_rgba(20,20,20,0.4)] md:p-8">
-        <p className="t-eyebrow inline-flex items-center gap-2.5 rounded-full bg-highlighter px-3.5 py-1.5 text-ink">
-          <span aria-hidden="true" className="h-2 w-2 rounded-full bg-red-pen" />
+      <div className="leaf tape tilt-r p-6 md:p-8">
+        <p className="hand inline-flex items-center gap-2.5 text-[1.3rem] text-vermilion-ink">
+          <Dab ink="vermilion" />
           Waitlist open
         </p>
         <p className="t-title mt-5">Next camp: dates being set</p>
-        <p className="mt-3 text-muted">Registration has closed. Waitlisted families hear the next dates and fee first.</p>
+        <p className="mt-3 text-graphite">Registration has closed. Waitlisted families hear the next dates and fee first.</p>
         <Facts
           rows={[
             ['Format', 'Live online, recorded'],
@@ -78,9 +79,9 @@ export function StatusCard({ state, camp, upcoming, offer, listPrice }: StatusCa
 
   const closing = state === 'closing-soon';
   return (
-    <div className={cn('module p-6 shadow-[0_30px_60px_-40px_rgba(20,20,20,0.4)] md:p-8', festive && styles.cardAccent)}>
-      <p className="t-eyebrow inline-flex items-center gap-2.5 rounded-full bg-highlighter px-3.5 py-1.5 text-ink">
-        <span aria-hidden="true" className="h-2 w-2 rounded-full bg-red-pen" />
+    <div className={cn('leaf tape tilt-r p-6 md:p-8', festive && styles.cardAccent)}>
+      <p className="hand inline-flex items-center gap-2.5 text-[1.3rem] text-vermilion-ink">
+        <Dab ink="vermilion" />
         {camp ? (closing ? 'Registration closing soon' : 'Registration open') : 'Opening soon'}
       </p>
       <p className="t-title mt-5">Future Builders {shown.name}</p>
@@ -95,13 +96,13 @@ export function StatusCard({ state, camp, upcoming, offer, listPrice }: StatusCa
             : ['Registration', `Opens ${shown.registrationOpensLabel}`],
         ]}
       />
-      <div className="mt-5 border-t border-rule pt-5">
+      <div className="mt-5 border-t border-ink/15 pt-5">
         <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-2">
-          <span className="t-small text-muted">{festive ? `${offer.name}, kit included` : 'The fee, kit included'}</span>
+          <span className="t-small text-graphite">{festive ? `${offer.name}, kit included` : 'The fee, kit included'}</span>
           <PriceLine list={listPrice} price={offer.price} />
         </div>
         {festive && offer.endsLabel && (
-          <p className="t-small mt-2 text-right text-muted">
+          <p className="t-small mt-2 text-right text-graphite">
             Until {offer.endsLabel}; {rupees(STANDARD_OFFER.price)} after that.
           </p>
         )}
@@ -111,9 +112,9 @@ export function StatusCard({ state, camp, upcoming, offer, listPrice }: StatusCa
 }
 
 const INCLUDED = [
-  'Live online classes across all four modules: software, AI, IoT and entrepreneurship',
+  'Live online classes: software, AI, IoT and entrepreneurship',
   'A recording of every session',
-  'A personal ESP32-C3 hardware kit, shipped free in India and theirs to keep',
+  'A personal ESP32-C3 kit, shipped free in India, theirs to keep',
   'Demo Day, a recorded pitch and a certificate of completion',
   'A team project in groups of 3–4, reviewed by an instructor',
 ];
@@ -121,8 +122,7 @@ const INCLUDED = [
 function Check({ className }: { className?: string }) {
   return (
     <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true" className={className}>
-      <circle cx="9" cy="9" r="9" className="fill-cobalt-soft" />
-      <path d="M5.2 9.3l2.4 2.4 5-5.2" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M3 9.6 C 4.6 10.8, 6 12.4, 7 14 C 9 9.4, 11.6 6, 15.4 3.2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }
@@ -146,16 +146,16 @@ export function PriceCard({
   const open = mode === 'open';
   const festive = open && offer.theme === 'festive';
   return (
-    <div className={cn('tri-top relative overflow-hidden rounded-[var(--radius-md)] border border-rule bg-white p-6 pt-8 md:p-8 md:pt-10', festive && styles.cardAccent, className)}>
-      <p className="t-eyebrow text-muted">{mode === 'waitlist' ? 'The last fee' : `The fee · ${campName}`}</p>
+    <div className={cn('leaf tape-r relative p-6 pt-8 md:p-8 md:pt-10', festive && styles.cardAccent, className)}>
+      <p className="hand text-[1.25rem] text-graphite">{mode === 'waitlist' ? 'The last fee' : `The fee · ${campName}`}</p>
       {festive && (
         <p className={cn('t-small mt-3 inline-flex items-center gap-2 rounded-full px-3 py-1 font-semibold', styles.chip)}>
           {offer.name} · until {offer.endsLabel}
         </p>
       )}
       <PriceLine list={listPrice} price={offer.price} size="lg" className="mt-3" />
-      <p className="mt-2 text-muted">One payment, everything included.</p>
-      <p className="t-small mt-3 text-muted">
+      <p className="mt-2 text-graphite">One payment, everything included.</p>
+      <p className="t-small mt-3 text-graphite">
         {open
           ? `This is the full amount charged at checkout: nothing is added for the kit or delivery.${festive ? ` From the end of the offer the fee is ${rupees(STANDARD_OFFER.price)}.` : ''}`
           : mode === 'upcoming'
@@ -167,13 +167,13 @@ export function PriceCard({
       <ul className="mt-3 space-y-2.5">
         {INCLUDED.map((item) => (
           <li key={item} className="flex gap-3 text-ink">
-            <Check className="mt-1 shrink-0 text-cobalt" />
+            <Check className="mt-1 shrink-0 text-sap" />
             <span>{item}</span>
           </li>
         ))}
       </ul>
 
-      <div className="mt-7 rounded-[var(--radius-sm)] bg-paper p-5">
+      <div className="sketch-soft mt-7 bg-sheet p-5">
         <h3 className="t-label font-semibold text-ink">If it isn’t the right fit</h3>
         <ul className="t-small mt-2 space-y-2 text-ink">
           <li>
@@ -183,12 +183,12 @@ export function PriceCard({
             <span className="font-semibold">Plans change before the start.</span> Cancel more than 48 hours before the first class for a full refund, or move to a later camp.
           </li>
         </ul>
-        <Link href="/refund-policy" className="arrow-link t-small mt-3">
+        <Link href="/refund-policy" className="t-small mt-3 inline-flex min-h-11 items-center gap-2 font-semibold text-ink underline decoration-pencil decoration-2 underline-offset-4 hover:text-ultramarine">
           Read the refund policy <ArrowRight />
         </Link>
       </div>
 
-      {open && <p className="t-small mt-5 text-muted">Secure checkout by Razorpay. Registering with a friend? Use code FRIEND500 in the form.</p>}
+      {open && <p className="t-small mt-5 text-graphite">Secure checkout by Razorpay. Registering with a friend? Use code FRIEND500 in the form.</p>}
     </div>
   );
 }

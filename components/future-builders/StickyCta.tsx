@@ -67,19 +67,19 @@ export function StickyCta({ line, label, track, after, hideOver }: StickyCtaProp
       aria-hidden={!visible}
       inert={!visible}
       className={cn(
-        'fixed inset-x-0 bottom-0 z-30 border-t border-rule bg-white/95 pb-[env(safe-area-inset-bottom)] shadow-[0_-12px_32px_-20px_rgba(20,20,20,0.35)] backdrop-blur-md transition-[transform,visibility] duration-300 ease-out md:hidden',
+        'fixed inset-x-0 bottom-0 z-30 border-t-2 border-ink bg-sheet/95 pb-[env(safe-area-inset-bottom)] shadow-[0_-12px_32px_-20px_rgba(20,20,20,0.35)] backdrop-blur-md transition-[transform,visibility] duration-300 ease-out md:hidden',
         visible ? 'visible translate-y-0' : 'invisible translate-y-full'
       )}
     >
       <div className="page flex min-h-[68px] items-center justify-between gap-3 py-2.5">
         <p className="t-small min-w-0 leading-snug text-ink">{line}</p>
         <div className="flex shrink-0 items-center gap-3">
-          <a href="#talk" className="t-small font-semibold text-ink underline decoration-rule-strong underline-offset-4" data-track="talk" data-track-at="sticky">
+          <a href="#talk" className="t-small inline-flex min-h-11 items-center font-semibold text-ink underline decoration-pencil decoration-2 underline-offset-4" data-track="talk" data-track-at="sticky">
             Talk to us
           </a>
           <a
             href="#enroll"
-            className="press inline-flex h-11 items-center justify-center rounded-full bg-ink px-5 text-[15px] font-semibold text-white hover:bg-cobalt"
+            className="press btn-brush inline-flex h-11 items-center justify-center bg-ink px-5 text-[15px] font-semibold text-sheet hover:bg-ultramarine"
             data-track={track}
             data-track-at="sticky"
           >

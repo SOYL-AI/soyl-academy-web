@@ -1,8 +1,7 @@
 import { DemoForm } from '@/components/forms/DemoForm';
 import { PageHero } from '@/components/ui/PageHero';
-import { Photo } from '@/components/media/Photo';
-import { images } from '@/content/images';
 import { StructuredData } from '@/components/seo/StructuredData';
+import { Arrow, Marked, Note } from '@/components/brush/marks';
 import { SITE_CONTACT_EMAIL } from '@/lib/seo/config';
 import { createMetadata } from '@/lib/seo/metadata';
 import { breadcrumbNode, graph, topLevelCrumbs, webPageNode } from '@/lib/seo/schema';
@@ -11,8 +10,8 @@ export const metadata = createMetadata({ path: '/book-a-demo' });
 
 const WHAT_HAPPENS = [
   { title: 'We get in touch', line: 'By email or phone, to find a time that suits you.' },
-  { title: 'We show you SOYL', line: 'The teacher, student and parent views, live.' },
-  { title: 'We plan a pilot', line: 'If it fits, a ten-week pilot shaped around your curriculum.' },
+  { title: 'You see a mission from both sides', line: 'The pupil’s hour, the Thoughtprint, and the teacher’s Monday screen, live.' },
+  { title: 'We plan a pilot', line: 'If it fits, ten weeks shaped around your curriculum.' },
 ];
 
 export default function BookDemoPage() {
@@ -26,39 +25,43 @@ export default function BookDemoPage() {
         label="Book a demo"
         title={
           <>
-            See SOYL with your own <span className="t-accent">eyes.</span>
+            See a mission from{' '}
+            <Marked mark="under" ink="ultramarine" load delay={700} weight={4.5}>
+              both sides.
+            </Marked>
           </>
         }
-        intro="Tell us a little about your school. It takes a minute, and we’ll take it from there."
+        intro="Tell us a little about your school. It takes a minute; we’ll take it from there."
         size="headline"
       />
 
       <section className="pb-20 md:pb-28">
-        <div className="page grid-12 gap-y-12">
+        <div className="page grid-12 gap-y-14">
           <div className="col-span-12 lg:col-span-7">
             <DemoForm />
           </div>
 
-          <aside className="col-span-12 lg:col-span-4 lg:col-start-9">
-            <Photo image={images.teacherMentoring} aspect="aspect-[4/3]" className="mb-8" sizes="(min-width: 1024px) 380px, 100vw" />
-            <h2 className="t-eyebrow mb-4 text-muted">What happens next</h2>
-            <ol className="border-t border-ink">
+          <aside className="col-span-12 lg:col-span-4 lg:col-start-9 lg:pt-4">
+            <h2 className="hand mb-2 text-[1.4rem] text-vermilion-ink">What happens next</h2>
+            <ol className="border-t-2 border-ink">
               {WHAT_HAPPENS.map((s, i) => (
-                <li key={s.title} className="flex gap-4 border-b border-rule py-4">
-                  <span className="t-num font-serif text-[2rem] leading-none text-cobalt">{i + 1}</span>
+                <li key={s.title} className="flex gap-4 border-b border-ink/15 py-5">
+                  <span className="t-num font-serif text-[2.2rem] italic leading-none text-ultramarine">{i + 1}</span>
                   <div>
                     <p className="font-semibold">{s.title}</p>
-                    <p className="t-small mt-0.5 text-muted">{s.line}</p>
+                    <p className="t-small mt-1 text-graphite">{s.line}</p>
                   </div>
                 </li>
               ))}
             </ol>
-            <p className="t-small mt-6 text-muted">
-              Prefer email? Write to{' '}
-              <a href={`mailto:${SITE_CONTACT_EMAIL}`} className="link">
+            <p className="mt-8 text-[1.15rem]">
+              <Note ink="graphite" tilt={-2}>
+                Prefer email?
+              </Note>
+              <Arrow to="right" ink="graphite" className="mx-2 inline-block h-5 w-12 align-middle" />
+              <a href={`mailto:${SITE_CONTACT_EMAIL}`} className="link text-base font-medium">
                 {SITE_CONTACT_EMAIL}
               </a>
-              .
             </p>
           </aside>
         </div>

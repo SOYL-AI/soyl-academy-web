@@ -1,32 +1,40 @@
+import Link from 'next/link';
 import { FinalCta } from '@/components/home/FinalCta';
-import { MiniSimulator } from '@/components/home/MiniSimulator';
 import { ButtonLink } from '@/components/ui/Button';
 import { PageHero } from '@/components/ui/PageHero';
-import { ProductShot } from '@/components/ui/ProductShot';
 import { SectionHeader } from '@/components/ui/SectionHeader';
-import { Photo } from '@/components/media/Photo';
 import { Faq } from '@/components/seo/Faq';
 import { StructuredData } from '@/components/seo/StructuredData';
+import { Arrow, Dab, Marked, Note, type Ink } from '@/components/brush/marks';
+import { MissionBrief } from '@/components/teachers/MissionBrief';
+import { MondayGroup } from '@/components/teachers/MondayGroup';
 import { homeFaqs } from '@/content/faqs';
-import { howItWorks } from '@/content/home';
 import { images } from '@/content/images';
-import { media } from '@/content/media';
 import { PRIMARY_CTA } from '@/lib/site';
 import { createMetadata } from '@/lib/seo/metadata';
 import { breadcrumbNode, faqNode, graph, topLevelCrumbs, webPageNode } from '@/lib/seo/schema';
 
 export const metadata = createMetadata({ path: '/teachers' });
 
-const IN_CHARGE = [
-  { title: 'AI drafts, you decide', line: 'Every question is a draft until you approve it. Edit the wording, change the difficulty, or throw it out.' },
-  { title: 'Hints that teach', line: 'Students get step-by-step nudges, never the answer, so the work they hand in is their own.' },
-  { title: 'The process, not just the score', line: 'See how many tries each pupil needed, which hints they used, and where the class got stuck.' },
-  { title: 'Simulators where they help', line: 'Maths, physics and chemistry questions can use interactive simulators instead of a text box.' },
+const STEPS = [
+  { title: 'Set the outcomes', line: 'Class, chapter, and two to four things pupils should be able to do. Type them in your own words.' },
+  { title: 'Read the brief', line: 'What pupils will do, the misconceptions we will listen for, and every question if you want it.' },
+  { title: 'Approve', line: 'Nothing reaches a pupil before you do. Each pupil then takes their own path through it.' },
 ];
 
-const faqs = homeFaqs.filter((f) =>
-  ['Who writes the questions, the AI or the teacher?', 'Do the hints just give students the answer?', 'Does SOYL Academy replace teachers?'].includes(f.question)
-);
+const MONDAY_POINTS: { text: string; ink: Ink }[] = [
+  { text: 'Grouped by what to teach, never by score.', ink: 'ultramarine' },
+  { text: 'Every label shows its evidence: a quote, a clip, a photo, the attempt.', ink: 'vermilion' },
+  { text: 'Confirm, change or reject a label in one tap. Your corrections are kept and teach the engine.', ink: 'ochre' },
+  { text: 'Pupils who are stuck are marked “needs you”, so no one slips through.', ink: 'sap' },
+];
+
+const FAQ_QUESTIONS = [
+  'Who decides what pupils are asked, the AI or the teacher?',
+  'Do the hints give pupils the answer?',
+  'What does the teacher see afterwards?',
+];
+const faqs = homeFaqs.filter((f) => FAQ_QUESTIONS.includes(f.question));
 
 export default function TeachersPage() {
   return (
@@ -44,85 +52,100 @@ export default function TeachersPage() {
         label="For teachers"
         title={
           <>
-            Your notes in. Better homework <span className="t-accent">out.</span>
+            Set outcomes, <span className="t-accent">not questions.</span>
           </>
         }
-        intro="SOYL turns the notes you already teach from into interactive assignments for Grades 1–10. You approve every question. Your pupils work it out for themselves. You see how each of them got there."
+        intro="Say what pupils should be able to do. SOYL drafts the mission, you read a short brief and approve it, and on Monday you see who needs what."
         actions={
           <>
             <ButtonLink href={PRIMARY_CTA.href} size="lg" arrow>
               {PRIMARY_CTA.label}
             </ButtonLink>
-            <ButtonLink href="#workflow" variant="secondary" size="lg">
-              See the workflow
+            <ButtonLink href="#brief" variant="secondary" size="lg">
+              See a brief
             </ButtonLink>
           </>
         }
         image={images.teacherMentoring}
-        imageLayout="wide"
       />
 
+      {/* 01 · Three steps */}
       <section className="section">
         <div className="page">
-          <SectionHeader label="You stay in charge" num="01" title="Built around your judgement." />
-          <ul className="mt-12 grid grid-cols-1 gap-x-10 md:mt-16 md:grid-cols-2">
-            {IN_CHARGE.map((item, i) => (
-              <li
-                key={item.title}
-                data-reveal
-                style={{ '--d': `${(i % 2) * 90}ms` } as React.CSSProperties}
-                className="border-t border-rule-strong py-7 md:py-9"
-              >
-                <h3 className="t-title">{item.title}</h3>
-                <p className="mt-3 max-w-[48ch] text-muted">{item.line}</p>
+          <SectionHeader label="How you make a mission" num="01" title="Outcomes in. A mission out." layout="stack" />
+          <ol className="mt-12 grid gap-10 md:mt-16 md:grid-cols-3 md:gap-8">
+            {STEPS.map((s, i) => (
+              <li key={s.title} className="relative" data-reveal style={{ '--d': `${i * 90}ms` } as React.CSSProperties}>
+                <span className="t-num font-serif text-[3rem] italic leading-none text-vermilion-ink">{i + 1}</span>
+                <h3 className="mt-3 font-serif text-[1.75rem] leading-tight tracking-[-0.015em]">{s.title}</h3>
+                <p className="mt-2 max-w-[34ch] text-graphite">{s.line}</p>
+                {i < STEPS.length - 1 && <Arrow to="right" ink="graphite" className="absolute -right-8 top-2 hidden h-10 w-20 md:block lg:-right-4" />}
               </li>
             ))}
-          </ul>
+          </ol>
+          <p className="mt-12 text-[1.3rem]" data-reveal>
+            <Note ink="vermilion-ink" tilt={-2}>
+              Teachers approve every mission.
+            </Note>
+          </p>
         </div>
       </section>
 
-      <section id="workflow" className="section scroll-mt-16 bg-paper">
-        <div className="page">
-          <SectionHeader label={howItWorks.label} num="02" title={howItWorks.headline} intro={howItWorks.intro} />
-          <div className="grid-12 mt-12 gap-y-12 md:mt-16">
-            <ol className="col-span-12 lg:col-span-5">
-              {howItWorks.steps.map((step, i) => (
-                <li
-                  key={step.title}
-                  data-reveal
-                  style={{ '--d': `${i * 80}ms` } as React.CSSProperties}
-                  className="grid grid-cols-[3.25rem_1fr] gap-x-4 border-t border-rule-strong py-6 first:border-t-0 first:pt-0 md:py-7"
-                >
-                  <span
-                  className={`t-num flex h-12 w-12 items-center justify-center rounded-full font-serif text-[1.75rem] leading-none ${['bg-cobalt text-white', 'bg-red-pen text-white', 'bg-highlighter text-ink'][i % 3]}`}
-                >
-                  {i + 1}
-                </span>
-                  <div>
-                    <h3 className="t-subtitle">{step.title}</h3>
-                    <p className="mt-1.5 text-muted">{step.line}</p>
-                    <ProductShot slot={media[step.media]} sizes="(min-width: 1024px) 420px, 90vw" className="mt-5" />
-                  </div>
-                </li>
-              ))}
-            </ol>
-            <div className="col-span-12 lg:col-span-7 lg:col-start-6 lg:pl-4" data-reveal style={{ '--d': '120ms' } as React.CSSProperties}>
-              <p className="t-eyebrow mb-4 text-muted">What your pupils see</p>
-              <MiniSimulator />
-            </div>
+      {/* 02 · The mission brief */}
+      <section id="brief" className="section scroll-mt-16 bg-sheet-deep">
+        <div className="page grid-12 items-start gap-y-12">
+          <div className="col-span-12 lg:col-span-5 lg:pt-6">
+            <SectionHeader
+              label="The mission brief"
+              num="02"
+              title={
+                <>
+                  One screen. <Marked mark="under" ink="ultramarine">Everything</Marked> you approve.
+                </>
+              }
+              intro="No two pupils follow the same path, so you approve the pool behind the mission rather than one fixed list. The question editor is still there, behind “See every question”."
+              layout="stack"
+            />
+          </div>
+          <div className="col-span-12 lg:col-span-7" data-reveal style={{ '--d': '120ms' } as React.CSSProperties}>
+            <MissionBrief />
           </div>
         </div>
       </section>
 
-      <section className="section-tight">
-        <div className="page grid grid-cols-1 gap-4 md:grid-cols-2">
-          <Photo image={images.studentsBuilding} aspect="aspect-[4/3]" large sizes="(min-width: 1320px) 600px, (min-width: 768px) 48vw, 100vw" />
-          <Photo image={images.studentsPresenting} aspect="aspect-[4/3]" large delay={120} sizes="(min-width: 1320px) 600px, (min-width: 768px) 48vw, 100vw" />
+      {/* 03 · Monday */}
+      <section className="section">
+        <div className="page grid-12 items-start gap-y-12">
+          <div className="col-span-12 lg:col-span-5 lg:pt-6">
+            <SectionHeader
+              label="After the mission"
+              num="03"
+              title="Monday: who needs what."
+              layout="stack"
+            />
+            <ul className="mt-8 space-y-4" data-reveal>
+              {MONDAY_POINTS.map((p) => (
+                <li key={p.text} className="flex items-start gap-3">
+                  <Dab ink={p.ink} className="mt-1.5" />
+                  <span>{p.text}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="col-span-12 lg:col-span-7" data-reveal style={{ '--d': '120ms' } as React.CSSProperties}>
+            <MondayGroup />
+            <p className="mt-5 text-graphite">
+              Seven days later a short recheck shows whether it stuck.{' '}
+              <Link href="/students" className="font-semibold text-ink underline decoration-pencil decoration-2 underline-offset-4 hover:text-ultramarine">
+                See the pupil’s side
+              </Link>
+            </p>
+          </div>
         </div>
       </section>
 
-      <Faq faqs={faqs} heading="Questions from teachers" />
-      <FinalCta headline="Try it with your next lesson." line="Book a demo and we’ll show you SOYL, from your notes to your class heatmap." />
+      <Faq faqs={faqs} heading="Questions from teachers" className="bg-sheet-deep" />
+      <FinalCta headline="Try it with your next chapter." line="Book a demo and we’ll build a mission from your outcomes, then show you the brief and the Monday screen." />
     </>
   );
 }

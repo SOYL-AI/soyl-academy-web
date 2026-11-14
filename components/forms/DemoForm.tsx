@@ -76,21 +76,21 @@ export function DemoForm() {
   if (status === 'done') {
     const first = data.name.trim().split(' ')[0];
     return (
-      <div ref={thanksRef} tabIndex={-1} className="module border-success/40 p-6 outline-none md:p-8" role="status">
-        <p className="t-label mb-3 flex items-center gap-2 text-success">
-          <span aria-hidden="true" className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-success text-[12px] text-white">✓</span>
+      <div ref={thanksRef} tabIndex={-1} className="leaf tape p-6 outline-none md:p-10" role="status" style={{ '--tape': 'var(--color-sap)' } as React.CSSProperties}>
+        <p className="hand mb-3 flex items-center gap-2 text-[1.25rem] text-sap">
+          <span aria-hidden="true" className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-sap text-[13px] text-white">✓</span>
           Request received
         </p>
         <h2 className="t-title">Thank you{first ? `, ${first}` : ''}.</h2>
-        <p className="mt-3 max-w-[46ch] text-muted">
+        <p className="mt-3 max-w-[46ch] text-graphite">
           The SOYL team will get back to you to find a time that suits your school. In the meantime:
         </p>
         <ul className="mt-5 space-y-2">
           <li>
-            <Link href="/#try-it" className="link">Try a SOYL question yourself</Link>
+            <Link href="/#the-hour" className="link">Walk through a mission</Link>
           </li>
           <li>
-            <Link href="/method" className="link">Read about the SOYL Method</Link>
+            <Link href="/method" className="link">How missions work</Link>
           </li>
         </ul>
       </div>
@@ -131,9 +131,9 @@ export function DemoForm() {
   };
 
   return (
-    <form onSubmit={onSubmit} noValidate className="module p-5 shadow-[0_30px_60px_-45px_rgba(20,20,20,0.4)] md:p-10">
+    <form onSubmit={onSubmit} noValidate className="leaf tape p-5 pt-8 md:p-10">
       {status === 'error' && (
-        <div role="alert" className="t-small mb-6 border-l-2 border-red-pen bg-paper px-3 py-2 text-ink">
+        <div role="alert" className="t-small mb-6 rounded-md border-l-4 border-vermilion bg-vermilion-soft/60 px-3 py-2 text-ink">
           {serverMessage}
         </div>
       )}
@@ -181,8 +181,8 @@ export function DemoForm() {
         {text('city', 'City', { autoComplete: 'address-level2', span: true })}
 
         <fieldset className="md:col-span-2" aria-describedby={describedBy('demo-grades', { error: !!errors.grades })}>
-          <legend className="t-label mb-2 text-ink">
-            Grades you’re interested in <span aria-hidden="true" className="text-muted">*</span>
+          <legend className="mb-2 text-[0.95rem] font-semibold text-ink">
+            Grades you’re interested in <span aria-hidden="true" className="text-vermilion-ink">*</span>
           </legend>
           <div className="flex flex-wrap gap-2">
             {GRADES.map((g) => (
@@ -194,7 +194,7 @@ export function DemoForm() {
                   onChange={() => toggleGrade(g)}
                   className="peer sr-only"
                 />
-                <span className="press t-num inline-flex h-11 min-w-11 items-center justify-center rounded-full border border-control/70 bg-white px-3 hover:border-ink text-[15px] font-medium peer-checked:border-ink peer-checked:bg-ink peer-checked:text-white peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-cobalt">
+                <span className="press btn-brush t-num inline-flex h-11 min-w-11 items-center justify-center border-2 border-ink/25 bg-[#fffdf8] px-3 text-[15px] font-medium hover:border-ink peer-checked:border-ink peer-checked:bg-ink peer-checked:text-sheet peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-ultramarine">
                   <span className="sr-only">Grade </span>
                   {g}
                 </span>
@@ -205,8 +205,8 @@ export function DemoForm() {
         </fieldset>
       </div>
 
-      <div className="mt-8 flex flex-col gap-4 border-t border-rule pt-6 sm:flex-row sm:items-center sm:justify-between">
-        <p className="t-small max-w-[40ch] text-muted">
+      <div className="mt-8 flex flex-col gap-4 border-t border-ink/15 pt-6 sm:flex-row sm:items-center sm:justify-between">
+        <p className="t-small max-w-[40ch] text-graphite">
           We use these details only to arrange your demo. See our{' '}
           <Link href="/privacy" className="link">privacy policy</Link>.
         </p>

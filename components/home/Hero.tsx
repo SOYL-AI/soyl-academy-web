@@ -1,39 +1,40 @@
-import { hero } from '@/content/home';
-import { images } from '@/content/images';
+import { hero, renames } from '@/content/home';
 import { PRIMARY_CTA } from '@/lib/site';
 import { ButtonLink } from '@/components/ui/Button';
 import { Label } from '@/components/ui/SectionHeader';
-import { Photo } from '@/components/media/Photo';
-import { Drawn, RiseWords } from '@/components/motion/Text';
-
-const headlineWords = hero.headline.split(' ').length;
+import { BrushArt } from '@/components/brush/BrushArt';
+import { Arrow, Marked, Note } from '@/components/brush/marks';
 
 /**
- * Server Component. The headline is plain HTML in the first paint; its words
- * rise in with CSS only. The photograph is the preloaded LCP candidate and only
- * ever animates `transform`.
+ * The opener (ADR-033). The headline is plain server HTML (the LCP element); "assignments" is struck through in
+ * vermilion as the page loads. On the right a Thoughtprint draws itself ridge by ridge with p5.brush, seeded per
+ * visit, so no two visitors see the same one. Below, the three renames from the spec's cover.
  */
 export function Hero() {
   return (
     <section className="relative overflow-hidden">
-      <div className="page grid-12 items-center gap-y-12 pb-6 pt-10 md:pb-10 md:pt-16 lg:pb-12 lg:pt-20">
-        <div className="col-span-12 lg:col-span-6 lg:pr-4">
+      <div className="page grid-12 items-center gap-y-6 pb-4 pt-8 md:pt-12 lg:pb-10 lg:pt-14">
+        <div className="col-span-12 lg:col-span-7">
           <div className="rise">
-            <Label tone="blue" className="mb-7 md:mb-9">{hero.label}</Label>
+            <Label tone="red" className="mb-6 md:mb-8">
+              {hero.label}
+            </Label>
           </div>
-          <h1 className="t-display max-w-[11ch]">
-            <RiseWords text={hero.headline} />{' '}
+          <h1 className="t-display rise max-w-[12ch]" style={{ '--d': '60ms' } as React.CSSProperties}>
+            {hero.before}{' '}
+            <Marked mark="strike" ink="vermilion" load delay={650} className="text-graphite">
+              {hero.struck}
+            </Marked>{' '}
+            {hero.to}{' '}
             <span className="t-accent">
-              <Drawn trigger="load">
-                <RiseWords text={hero.highlight} start={headlineWords} />
-              </Drawn>
+              <Marked mark="under" ink="ultramarine" load delay={1250} weight={4.5}>
+                {hero.word}
+              </Marked>
             </span>
           </h1>
-          {/* Static on purpose: on phones this paragraph is the LCP element. */}
-          <p className="t-lead mt-8 max-w-[46ch] md:mt-10">
-            {hero.support}
-          </p>
-          <div className="rise mt-9 flex flex-wrap items-center gap-3" style={{ '--d': '480ms' } as React.CSSProperties}>
+          {/* Static on purpose: on phones this paragraph can be the LCP element. */}
+          <p className="t-lead mt-7 max-w-[44ch] text-graphite md:mt-9">{hero.support}</p>
+          <div className="rise mt-8 flex flex-wrap items-center gap-3 md:mt-10" style={{ '--d': '380ms' } as React.CSSProperties}>
             <ButtonLink href={PRIMARY_CTA.href} size="lg" arrow>
               {PRIMARY_CTA.label}
             </ButtonLink>
@@ -41,76 +42,39 @@ export function Hero() {
               {hero.secondary.label}
             </ButtonLink>
           </div>
-          <ul className="rise mt-10 flex flex-wrap gap-x-6 gap-y-2" style={{ '--d': '580ms' } as React.CSSProperties}>
-            {hero.points.map((p, i) => (
-              <li key={p} className="t-small flex items-center gap-2 text-muted">
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 16 16"
-                  fill="none"
-                  aria-hidden="true"
-                  className={['rounded-full bg-cobalt p-1 text-white', 'rounded-full bg-red-pen p-1 text-white', 'rounded-full bg-highlighter p-1 text-ink'][i % 3]}
-                >
-                  <path d="M3.5 8.5l3 3 6-7" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-                {p}
-              </li>
-            ))}
-          </ul>
         </div>
 
-        <div className="col-span-12 lg:col-span-6">
-          <div className="relative pb-10 sm:pb-12 lg:pb-0">
-            <Photo
-              backdrop="yellow"
-              image={images.heroCollab}
-              priority
-              settle
-              large
-              aspect="aspect-[4/3] lg:aspect-[5/6]"
-              sizes="(min-width: 1320px) 600px, (min-width: 1024px) 48vw, 100vw"
-            />
-
-            {/* Illustration of a SOYL question, not a real pupil's result. */}
-            <div
-              role="img"
-              aria-label="Illustration of a SOYL question: two attempts marked not yet, a third marked correct, and the line You worked it out, 3 tries, 1 hint"
-              className="rise absolute bottom-0 left-3 right-3 sm:left-6 sm:right-auto sm:w-[22rem] lg:-left-10 lg:bottom-10"
-              style={{ '--d': '700ms' } as React.CSSProperties}
-            >
-              <div className="float rounded-[var(--radius-md)] border border-rule bg-white p-4 shadow-[0_24px_48px_-24px_rgba(20,20,20,0.35)] md:p-5">
-                <div className="flex items-center justify-between gap-3">
-                  <p className="t-label text-muted">Question 3 · Coordinates</p>
-                  <p className="t-label text-muted">Plot (3, −2)</p>
-                </div>
-                <ol className="mt-3 flex flex-wrap gap-1.5" aria-hidden="true">
-                  {['(−2, 3)', '(3, 2)'].map((a) => (
-                    <li key={a} className="t-num inline-flex h-8 items-center gap-1 rounded-full border border-rule-strong px-2.5 text-[14px]">
-                      <span className="text-red-pen">✗</span> {a}
-                    </li>
-                  ))}
-                  <li className="t-num inline-flex h-8 items-center gap-1 rounded-full bg-success px-2.5 text-[14px] text-white">
-                    ✓ (3, −2)
-                  </li>
-                </ol>
-                <p className="mt-3 font-semibold text-success">
-                  You worked it out <span className="t-num font-medium text-ink">· 3 tries · 1 hint</span>
-                </p>
-              </div>
-            </div>
-
-            <p
-              aria-hidden="true"
-              className="rise absolute -top-4 right-3 hidden md:block lg:-right-3 lg:top-8"
-              style={{ '--d': '850ms' } as React.CSSProperties}
-            >
-              <span className="float block -rotate-6 rounded-full bg-highlighter t-accent px-4 py-2 text-[1.2rem] text-ink [animation-delay:-3s]">
-                Thinking is the work.
-              </span>
-            </p>
+        <div className="relative col-span-12 lg:col-span-5">
+          <div className="relative mx-auto aspect-square w-full max-w-[300px] sm:max-w-[420px] lg:max-w-[520px]">
+            <BrushArt art="thoughtprint" options={{}} seed="visit" stepMs={55} eager className="absolute inset-0" />
           </div>
+          <p className="absolute bottom-0 left-0 hidden max-w-[17ch] text-[1.15rem] sm:block lg:-left-6 lg:bottom-6">
+            <Note ink="graphite" tilt={-4}>
+              {hero.note}
+            </Note>
+            <Arrow to="right" ink="graphite" load delay={2600} className="mt-1 h-8 w-24" />
+          </p>
         </div>
+      </div>
+
+      <div className="page pb-6 md:pb-10">
+        <ul className="grid gap-x-8 gap-y-5 border-y-2 border-ink py-6 md:grid-cols-3 md:py-7">
+          {renames.map((r, i) => (
+            <li key={r.now} className="rise flex flex-col gap-1.5" style={{ '--d': `${500 + i * 90}ms` } as React.CSSProperties}>
+              <p className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                <Marked mark="strike" ink="vermilion" weight={2.5} load delay={1600 + i * 220} className="text-[1.05rem] text-graphite">
+                  {r.old}
+                </Marked>
+                <svg width="28" height="14" viewBox="0 0 28 14" fill="none" aria-hidden="true" className="translate-y-0.5 text-graphite">
+                  <path d="M2 8 C 9 6, 16 8.5, 25 7" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+                  <path d="M20 2.5 L 25.5 7 L 20 11.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+                <span className="font-serif text-[1.75rem] leading-none tracking-[-0.015em]">{r.now}</span>
+              </p>
+              <p className="text-[0.95rem] leading-snug text-graphite">{r.line}</p>
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );

@@ -118,13 +118,13 @@ export function WaitlistForm({ notify, source, state = 'waitlist' }: WaitlistFor
   if (status === 'done') {
     const first = data.parentName.trim().split(' ')[0];
     return (
-      <div ref={doneRef} tabIndex={-1} role="status" className="module border-success/40 p-6 outline-none md:p-8">
+      <div ref={doneRef} tabIndex={-1} role="status" className="leaf tape p-6 outline-none md:p-8">
         <p className="t-label mb-3 text-success">
           {mode === 'callback' ? 'Call requested' : notify ? 'You’re on the list' : 'You’re on the waitlist'}
         </p>
         <h3 className="t-title">Thank you, {first}.</h3>
         {mode === 'callback' ? (
-          <p className="mt-3 text-muted">
+          <p className="mt-3 text-graphite">
             We’ll call you at {data.phone.trim()} {CALLBACK_PROMISE}. Can’t wait?{' '}
             <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="link">
               Message us on WhatsApp
@@ -132,7 +132,7 @@ export function WaitlistForm({ notify, source, state = 'waitlist' }: WaitlistFor
             .
           </p>
         ) : (
-          <p className="mt-3 text-muted">
+          <p className="mt-3 text-graphite">
             {notify
               ? `We’ll email ${data.email.trim()} when registration for the ${notify.cohortName} opens (${notify.opensLabel}), with the dates, the timetable and the fee.`
               : `We’ll email ${data.email.trim()} as soon as dates for the next camp are set, before registration opens to everyone.`}
@@ -171,9 +171,9 @@ export function WaitlistForm({ notify, source, state = 'waitlist' }: WaitlistFor
   );
 
   return (
-    <form onSubmit={onSubmit} noValidate className="module p-5 shadow-[0_30px_60px_-45px_rgba(20,20,20,0.4)] md:p-10">
+    <form onSubmit={onSubmit} noValidate className="leaf tape p-5 md:p-10">
       <h3 className="t-title">{mode === 'callback' ? 'Talk to us first' : notify ? 'Notify me when registration opens' : 'Join the waitlist'}</h3>
-      <p className="mt-2 text-muted">
+      <p className="mt-2 text-graphite">
         {mode === 'callback'
           ? 'A short call with our team: ask about the curriculum, the timings, or whether it suits your child.'
           : notify
@@ -181,14 +181,14 @@ export function WaitlistForm({ notify, source, state = 'waitlist' }: WaitlistFor
             : 'Hear the next camp’s dates and fee before registration opens to everyone.'}
       </p>
 
-      <div role="group" aria-label="What would you like to do?" className="mb-6 mt-6 grid grid-cols-2 rounded-full border border-rule bg-paper p-1">
+      <div role="group" aria-label="What would you like to do?" className="mb-6 mt-6 grid grid-cols-2 sketch bg-sheet p-1">
         {(['waitlist', 'callback'] as const).map((m) => (
           <button
             key={m}
             type="button"
             aria-pressed={mode === m}
             onClick={() => switchMode(m)}
-            className={cn('press h-10 rounded-full text-[15px] font-semibold', mode === m ? 'bg-ink text-white' : 'text-ink hover:text-cobalt')}
+            className={cn('press btn-brush min-h-11 text-[15px] font-semibold', mode === m ? 'bg-ink text-sheet' : 'text-ink hover:bg-ochre-soft')}
           >
             {m === 'callback' ? 'Request a call' : listLabel}
           </button>
@@ -196,7 +196,7 @@ export function WaitlistForm({ notify, source, state = 'waitlist' }: WaitlistFor
       </div>
 
       {status === 'error' && (
-        <div role="alert" className="t-small mb-6 border-l-2 border-red-pen bg-paper px-3 py-2 text-ink">
+        <div role="alert" className="t-small mb-6 border-l-2 border-vermilion bg-vermilion-soft/50 px-3 py-2 text-ink">
           We couldn’t save that just now. Please try again, or{' '}
           <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="link">
             message us on WhatsApp
@@ -248,7 +248,7 @@ export function WaitlistForm({ notify, source, state = 'waitlist' }: WaitlistFor
           Or WhatsApp us
         </a>
       </div>
-      <p className="t-small mt-4 text-muted">
+      <p className="t-small mt-4 text-graphite">
         {mode === 'waitlist'
           ? 'Free, with no payment and no commitment. We use these details only to tell you about Future Builders.'
           : `We call back ${CALLBACK_PROMISE}. We use these details only to talk to you about Future Builders.`}

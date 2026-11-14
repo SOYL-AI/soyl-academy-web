@@ -24,16 +24,16 @@ export function ComingSoon({
 }: ComingSoonProps) {
   return (
     <div
-      className={cn('tri-top relative grid-12 items-end gap-y-8 overflow-hidden rounded-[var(--radius-lg)] bg-paper px-6 py-10 md:px-12 md:py-14', className)}
+      className={cn('leaf tape relative grid-12 items-end gap-y-8 px-6 py-10 md:px-12 md:py-14', className)}
       data-reveal
     >
       <div className="col-span-12 lg:col-span-7">
-        <p className="t-eyebrow inline-flex items-center gap-2.5 rounded-full bg-highlighter px-3.5 py-1.5 text-ink">
-          <span aria-hidden="true" className="h-2 w-2 animate-pulse rounded-full bg-red-pen" />
+        <p className="hand inline-flex items-center gap-2.5 text-[1.3rem] text-vermilion-ink">
+          <span aria-hidden="true" className="h-2.5 w-2.5 animate-pulse rounded-full bg-vermilion" />
           Coming soon
         </p>
-        <h2 className="t-headline mt-5 max-w-[16ch]">{title}</h2>
-        <p className="t-lead mt-5 max-w-[48ch]">{line}</p>
+        <h2 className="t-headline mt-4 max-w-[16ch]">{title}</h2>
+        <p className="t-lead mt-5 max-w-[48ch] text-graphite">{line}</p>
       </div>
       <div className="col-span-12 flex flex-wrap gap-3 lg:col-span-5 lg:justify-end">
         <ButtonLink href={primary.href} size="lg" arrow>

@@ -1,6 +1,7 @@
 /**
- * The five pillars of the SOYL Method.
- * Shared by the /method page, its JSON-LD, and llms-full.txt so the copy never drifts.
+ * How missions work (/method), from the SOYL Missions product spec v1.2 (ADR-033).
+ * `pillars` (the SOYL Method) is shared with the page's JSON-LD and llms-full.txt, so the copy never drifts.
+ * British English, sentence case, pupils not users. Any pupil words are examples and are labelled as such.
  */
 
 export interface Pillar {
@@ -12,60 +13,149 @@ export interface Pillar {
   soyl: string;
 }
 
+/** The SOYL Method, in its order. Each pillar happens inside a mission stage. */
 export const pillars: Pillar[] = [
   {
     num: '01',
     name: 'Understand',
-    tagline: 'Comprehension beyond the surface.',
-    content: [
-      'True understanding is not the ability to regurgitate facts, but the capacity to map new information to existing knowledge structures.',
-      'In a world where answers are instantly available, understanding must be measured by a student\'s ability to identify relationships, contrast differing perspectives, and recognize the boundaries of their own knowledge.'
-    ],
-    traditional: 'Read chapter 4 and answer the 10 questions at the end.',
-    soyl: 'Given this new concept, explain it using an analogy related to your favorite hobby.'
+    tagline: 'Know more than the answer.',
+    content: ['Happens in Spark: a short prediction or a worked solution to check, always followed by “why?”, finds where a pupil starts before anything is taught.'],
+    traditional: 'Read chapter 4 and answer the ten questions at the end.',
+    soyl: 'Predict what the circuit will do, then say why.',
   },
   {
     num: '02',
     name: 'Apply',
-    tagline: 'Knowledge in action.',
-    content: [
-      'Application tests the utility of knowledge. It asks students to take an abstract concept and use it to solve a concrete problem in a novel context.',
-      'When students apply what they\'ve learned, they invariably encounter friction—the gap between theory and reality. Navigating this friction is where true learning occurs.'
-    ],
-    traditional: 'Solve these 20 similar equations.',
-    soyl: 'Use these mathematical principles to optimize the layout of a school garden.'
+    tagline: 'Use it in a new situation.',
+    content: ['Happens in Build and again in Fix: the real work on the simulator, in the story or on paper, then one new case on the same idea.'],
+    traditional: 'Solve these twenty similar equations.',
+    soyl: 'Change one variable at a time on the simulator and record what happens.',
   },
   {
     num: '03',
     name: 'Create',
-    tagline: 'Synthesis and expression.',
-    content: [
-      'Creation requires synthesis. It demands that students pull from multiple domains, evaluate options, make decisions, and construct something that did not previously exist.',
-      'This pillar focuses on originality, coherence, and the ability to bring an idea to fruition, demonstrating mastery over the underlying components.'
-    ],
-    traditional: 'Write a standard 5-paragraph essay on the causes of the Civil War.',
-    soyl: 'Create a historical artifact (like a diary entry or a newspaper article) that reflects the tension of the era, and defend its historical accuracy.'
+    tagline: 'Make something with it.',
+    content: ['Happens in Build: pupils tell the story, run the experiment or solve the problem their own way.'],
+    traditional: 'Write a five-paragraph essay on the causes of 1857.',
+    soyl: 'Arrive in 1857 Meerut, make choices and live with their consequences.',
   },
   {
     num: '04',
     name: 'Defend',
-    tagline: 'Reasoning and justification.',
-    content: [
-      'If you cannot defend your position, you do not truly hold it. The ability to articulate why a decision was made, why a solution works, or why an argument is sound is paramount.',
-      'Defending work requires students to anticipate counterarguments, evaluate evidence, and communicate their reasoning with clarity and conviction.'
-    ],
+    tagline: 'Explain why, not just what.',
+    content: ['Happens in Defend: a live follow-up aimed at this pupil’s gap. It is the part a generated answer cannot fake.'],
     traditional: 'Select the correct multiple-choice answer.',
-    soyl: 'Present your solution to the class and answer three challenging questions about your methodology.'
+    soyl: 'Explain to the guide why the result surprised you.',
   },
   {
     num: '05',
     name: 'Reflect',
-    tagline: 'Metacognition and growth.',
-    content: [
-      'Reflection is the engine of improvement. It requires students to look back at their process, identify what worked, what failed, and what they would do differently.',
-      'By cultivating metacognition, students learn how to learn. They become self-aware practitioners capable of continuous growth.'
-    ],
-    traditional: 'Receive a grade of B- and move on to the next unit.',
-    soyl: 'Write a brief retrospective on your project: what was the hardest part, and how did you overcome it?'
-  }
+    tagline: 'Look again. Do it better.',
+    content: ['Happens in Reflect: how sure are you, and what would you do differently? Confidence is compared with what the pupil actually did.'],
+    traditional: 'Receive a mark and move on to the next unit.',
+    soyl: 'Rate your confidence and name one thing you would change.',
+  },
+];
+
+export type StageInk = 'ochre' | 'ultramarine' | 'vermilion' | 'sap';
+
+/** The five mission stages, with the SOYL Method demonstration each one carries. */
+export const stages: { name: string; method: string; pupil: string; soyl: string; measure: string; ink: StageInk }[] = [
+  {
+    name: 'Spark',
+    method: 'Understand',
+    pupil: 'A short, intriguing prompt inside the scene. Predict, spot the error, read aloud. Then: why?',
+    soyl: 'Finds the starting misconception, if there is one.',
+    measure: 'the starting point',
+    ink: 'ochre',
+  },
+  {
+    name: 'Build',
+    method: 'Apply · Create',
+    pupil: 'The real work: the simulator, the story, the conversation, the notebook.',
+    soyl: 'Records every action, attempt and hint, and adapts the path as it goes.',
+    measure: 'attempts, process, time',
+    ink: 'ultramarine',
+  },
+  {
+    name: 'Defend',
+    method: 'Defend',
+    pupil: 'The guide asks one or two questions aimed at what this pupil got wrong, or nearly right.',
+    soyl: 'Scores the depth of reasoning against a rubric.',
+    measure: 'depth of reasoning',
+    ink: 'vermilion',
+  },
+  {
+    name: 'Fix',
+    method: 'Apply, somewhere new',
+    pupil: 'One new situation on the same idea. It feels like the next part of the story, not a retest.',
+    soyl: 'Checks the same misconception as Spark: the gain inside the hour.',
+    measure: 'learning gain',
+    ink: 'sap',
+  },
+  {
+    name: 'Reflect',
+    method: 'Reflect',
+    pupil: 'How sure are you? What would you do differently? Ten seconds.',
+    soyl: 'Compares confidence with performance.',
+    measure: 'self-awareness',
+    ink: 'ochre',
+  },
+];
+
+export type MediumIcon = 'voice' | 'type' | 'paper' | 'sim';
+
+/** How pupils can work: they choose wherever the skill allows. */
+export const media: { icon: MediumIcon; title: string; line: string }[] = [
+  { icon: 'voice', title: 'Say it', line: 'Oral answers, reading aloud, and every Defend answer.' },
+  { icon: 'type', title: 'Type it', line: 'Short and long written answers.' },
+  { icon: 'paper', title: 'Snap your notebook', line: 'Write on paper, upload a photo. Paper time is not screen time.' },
+  { icon: 'sim', title: 'Run the apparatus', line: 'Every dial turned and every reading taken counts.' },
+];
+
+/** The engine's rules, in plain words. */
+export const rules: { title: string; line: string }[] = [
+  { title: 'No fixed length', line: 'A mission ends when every outcome has two pieces of evidence that agree, not after a set number of questions.' },
+  { title: 'Stuck is fine', line: 'After two tries that go nowhere, the guide makes the step smaller. After three, it moves on and tells the teacher.' },
+  { title: 'Pause any time', line: 'Pupils can leave and come back. Only active time counts.' },
+];
+
+/** The quiet clock (never shown to pupils), in minutes. */
+export const timeline: { at: number; label: string }[] = [
+  { at: 0, label: 'A Spark for each outcome' },
+  { at: 40, label: 'Starts closing: Fix and Reflect' },
+  { at: 45, label: 'Most missions end around here' },
+  { at: 55, label: 'Straight to Reflect' },
+  { at: 60, label: 'Ends and saves' },
+];
+
+export const guide = {
+  does: [
+    'Asks short questions, 25 words or fewer',
+    'Names what it noticed: “You changed the voltage, not the time.”',
+    'Praises reasoning, not speed',
+    'Offers a choice: say it, type it, or snap your notebook',
+    'Stays quiet while the pupil works',
+  ],
+  never: [
+    'Gives the answer, even when asked',
+    'Announces scores, ranks or “correct!”',
+    'Counts down time or nags',
+    'Asks anything outside what the teacher approved',
+    'Uses sarcasm or shame',
+  ],
+};
+
+export const bench = {
+  points: [
+    { title: 'Real apparatus', line: 'Cells, wires, bulbs, burners and meters you drag, connect and switch.' },
+    { title: 'Readings on the instruments', line: 'The needle moves and the bulb glows. No paragraphs of text.' },
+    { title: 'A lab notebook', line: 'Aim, prediction, readings and conclusion. One tap records a reading; the graph draws itself.' },
+  ],
+};
+
+export const after: { title: string; line: string; ink: StageInk }[] = [
+  { title: 'Thoughtprint', line: 'What the pupil can now do, where their thinking turned, and what was fixed. Never a mark as the headline.', ink: 'ultramarine' },
+  { title: '7-day recheck', line: 'Three to five minutes on the same misconceptions, a week later: retained, partly retained or lost.', ink: 'vermilion' },
+  { title: 'Story', line: 'Every Thoughtprint over time. The next mission starts from what is still open.', ink: 'sap' },
 ];

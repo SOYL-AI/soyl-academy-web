@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next';
-import { Inter, Instrument_Serif, Newsreader } from 'next/font/google';
+import { Inter, Instrument_Serif, Kalam, Newsreader } from 'next/font/google';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { CookieConsent } from '@/components/legal/CookieConsent';
@@ -56,6 +56,16 @@ const instrumentSerif = Instrument_Serif({
   display: 'swap',
   weight: '400',
   style: 'normal',
+  preload: false,
+});
+
+// Handwriting for the marketing pages' notes and labels (ADR-033). Kalam is by the Indian Type Foundry.
+// Not preloaded: it is never in the first headline, and the learning platform does not use it.
+const kalam = Kalam({
+  subsets: ['latin'],
+  variable: '--font-kalam',
+  display: 'swap',
+  weight: '400',
   preload: false,
 });
 
@@ -120,7 +130,7 @@ export default function RootLayout({
 }) {
   return (
     // suppressHydrationWarning: the consent boot script may add data-consent before React hydrates.
-    <html lang="en-IN" className={`${inter.variable} ${newsreader.variable} ${newsreaderItalic.variable} ${instrumentSerif.variable}`} suppressHydrationWarning>
+    <html lang="en-IN" className={`${inter.variable} ${newsreader.variable} ${newsreaderItalic.variable} ${instrumentSerif.variable} ${kalam.variable}`} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: CONSENT_BOOT_SCRIPT }} />
       </head>

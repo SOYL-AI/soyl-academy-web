@@ -15,23 +15,23 @@ export default function ShippingPolicyPage() {
         <div className="max-w-3xl lg:ml-[16.666%]">
           {/* Header */}
           <div className="mb-12">
-            <div className="t-label mb-5 flex items-center gap-2.5 text-muted before:h-px before:w-5 before:bg-red-pen before:content-['']">
+            <div className="hand mb-4 flex items-center gap-2.5 text-[1.3rem] text-vermilion-ink before:h-[3px] before:w-6 before:rounded-full before:bg-vermilion before:content-['']">
               <span >
                 Physical Hardware Delivery
               </span>
             </div>
-            <h1 className="t-headline mb-4">
+            <h1 className="t-headline mb-4 max-w-[18ch]">
               Shipping & Delivery Policy
             </h1>
-            <p className="t-small text-muted">
+            <p className="t-small text-graphite">
               Last updated: October 2026 • SOYL AI Private Limited (Bengaluru 560043)
             </p>
           </div>
 
           {/* Policy Content */}
-          <div className="border-t border-rule text-ink">
-            <section className="border-b border-rule py-8">
-              <h2 className="t-subtitle mb-3">1. Hardware Kit Overview</h2>
+          <div className="leaf px-5 text-ink md:px-10">
+            <section className="border-b border-ink/10 py-8 last:border-b-0">
+              <h2 className="mb-3 font-serif text-[1.5rem] leading-tight tracking-[-0.012em]">1. Hardware Kit Overview</h2>
               <p className="mb-3">
                 Students enrolling in the <strong>Future Builders Programme (Grades 7–12)</strong> receive our custom physical hardware kit, which includes:
               </p>
@@ -44,8 +44,8 @@ export default function ShippingPolicyPage() {
               </ul>
             </section>
 
-            <section className="border-b border-rule py-8">
-              <h2 className="t-subtitle mb-3">2. Shipping Costs & Domestic Coverage</h2>
+            <section className="border-b border-ink/10 py-8 last:border-b-0">
+              <h2 className="mb-3 font-serif text-[1.5rem] leading-tight tracking-[-0.012em]">2. Shipping Costs & Domestic Coverage</h2>
               <p className="mb-3">
                 <strong>100% Free Shipping Across India:</strong> All shipping, handling, and packaging costs are included in the tuition fee. There are no hidden or extra delivery charges.
               </p>
@@ -54,18 +54,18 @@ export default function ShippingPolicyPage() {
               </p>
             </section>
 
-            <section className="border-b border-rule py-8">
-              <h2 className="t-subtitle mb-3">3. Dispatch & Delivery Timelines</h2>
+            <section className="border-b border-ink/10 py-8 last:border-b-0">
+              <h2 className="mb-3 font-serif text-[1.5rem] leading-tight tracking-[-0.012em]">3. Dispatch & Delivery Timelines</h2>
               <div className="space-y-4">
-                <div className="border border-rule bg-white p-4">
+                <div className="rounded-md border border-ink/10 bg-sheet p-4">
                   <h3 className="font-semibold mb-1">Dispatch Window</h3>
-                  <p className="t-small text-muted">
+                  <p className="t-small text-graphite">
                     Hardware kits are carefully packaged and sent around <strong>week 3 or 4 of the programme</strong>.
                   </p>
                 </div>
-                <div className="border border-rule bg-white p-4">
+                <div className="rounded-md border border-ink/10 bg-sheet p-4">
                   <h3 className="font-semibold mb-1">Estimated Delivery Time</h3>
-                  <p className="t-small text-muted">
+                  <p className="t-small text-graphite">
                     Metro areas (Bengaluru, Mumbai, Delhi NCR, Hyderabad, Chennai, Kolkata, Pune): <strong>2–3 business days</strong>.<br />
                     Rest of India: <strong>3–5 business days</strong>.
                   </p>
@@ -73,15 +73,15 @@ export default function ShippingPolicyPage() {
               </div>
             </section>
 
-            <section className="border-b border-rule py-8">
-              <h2 className="t-subtitle mb-3">4. Shipment Tracking</h2>
+            <section className="border-b border-ink/10 py-8 last:border-b-0">
+              <h2 className="mb-3 font-serif text-[1.5rem] leading-tight tracking-[-0.012em]">4. Shipment Tracking</h2>
               <p className="mb-3">
                 As soon as your hardware kit is picked up by the courier partner, an automated notification containing the courier name and live tracking link will be sent to the parent email address and WhatsApp number provided at registration.
               </p>
             </section>
 
-            <section className="border-b border-rule py-8">
-              <h2 className="t-subtitle mb-3">5. Damaged or Missing Components Replacement</h2>
+            <section className="border-b border-ink/10 py-8 last:border-b-0">
+              <h2 className="mb-3 font-serif text-[1.5rem] leading-tight tracking-[-0.012em]">5. Damaged or Missing Components Replacement</h2>
               <p className="mb-3">
                 We test all microcontrollers and sensor modules before dispatch. In the unlikely event that a component arrives damaged or non-functional:
               </p>
@@ -92,9 +92,9 @@ export default function ShippingPolicyPage() {
               </ul>
             </section>
 
-            <section className="border-b border-rule py-8">
-              <h2 className="t-subtitle mb-3">6. Shipping Support Contact</h2>
-              <div className="border border-rule bg-white p-4 text-sm space-y-2">
+            <section className="border-b border-ink/10 py-8 last:border-b-0">
+              <h2 className="mb-3 font-serif text-[1.5rem] leading-tight tracking-[-0.012em]">6. Shipping Support Contact</h2>
+              <div className="rounded-md border border-ink/10 bg-sheet p-4 text-sm space-y-2">
                 <p><strong>Dispatch Origin:</strong> Bengaluru 560043, India</p>
                 <p><strong>Support Email:</strong> <a href="mailto:outreach@soyl.cloud" className="link font-medium">outreach@soyl.cloud</a></p>
                 <p><strong>WhatsApp Support:</strong> <a href="https://wa.me/917022509965" className="link font-medium">+91 7022509965</a></p>
@@ -103,7 +103,7 @@ export default function ShippingPolicyPage() {
           </div>
 
           {/* Bottom Navigation */}
-          <div className="mt-12 pt-8 border-t border-rule flex flex-wrap items-center justify-between gap-4">
+          <div className="mt-12 pt-8 border-t border-ink/15 flex flex-wrap items-center justify-between gap-4">
             <Link
               href="/"
               className="t-small link font-medium"
@@ -113,13 +113,13 @@ export default function ShippingPolicyPage() {
             <div className="flex gap-4">
               <Link
                 href="/refund-policy"
-                className="t-small text-muted underline underline-offset-4 hover:text-ink"
+                className="t-small text-graphite underline decoration-pencil decoration-2 underline-offset-4 hover:text-ink"
               >
                 Refund Policy →
               </Link>
               <Link
                 href="/privacy"
-                className="t-small text-muted underline underline-offset-4 hover:text-ink"
+                className="t-small text-graphite underline decoration-pencil decoration-2 underline-offset-4 hover:text-ink"
               >
                 Privacy Policy →
               </Link>

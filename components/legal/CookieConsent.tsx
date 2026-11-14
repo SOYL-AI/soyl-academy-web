@@ -57,14 +57,14 @@ export function CookieConsent() {
     <section
       aria-labelledby={headingId}
       data-forced={forced || undefined}
-      className="cookie-bar fixed inset-x-0 bottom-0 z-50 border-t border-rule bg-white/95 backdrop-blur-md shadow-[0_-12px_32px_-20px_rgba(20,20,20,0.35)]"
+      className="cookie-bar fixed inset-x-0 bottom-0 z-50 border-t border-rule bg-white/95 backdrop-blur-md shadow-[0_-12px_32px_-20px_rgba(20,20,20,0.35)] [html:not([data-platform-theme])_&]:border-t-2 [html:not([data-platform-theme])_&]:border-ink [html:not([data-platform-theme])_&]:bg-[#fffdf8]/95"
     >
       <div className="page flex flex-col gap-3 py-3 md:flex-row md:items-center md:gap-8 md:py-4">
         <div className="min-w-0 flex-1">
-          <h2 id={headingId} className="t-label text-ink">
+          <h2 id={headingId} className="t-label text-ink [html:not([data-platform-theme])_&]:font-[family-name:var(--font-hand)] [html:not([data-platform-theme])_&]:text-[1.2rem] [html:not([data-platform-theme])_&]:font-normal [html:not([data-platform-theme])_&]:text-vermilion-ink">
             Cookies
           </h2>
-          <p className="t-small max-w-[70ch] text-muted">
+          <p className="t-small max-w-[70ch] text-muted [html:not([data-platform-theme])_&]:text-graphite">
             Essential cookies keep the site working. With your OK we also use cookieless analytics and Google Ads cookies that measure our ads.{' '}
             <Link href="/privacy#cookies" className="link">
               Cookie policy
@@ -114,7 +114,7 @@ export function CookieConsent() {
             <button
               type="button"
               onClick={() => save({ analytics, marketing, advertising })}
-              className="press h-10 rounded-full bg-ink px-5 text-[15px] font-semibold text-white hover:bg-cobalt"
+              className="press h-11 rounded-full bg-ink px-5 text-[15px] font-semibold text-white hover:bg-cobalt [html:not([data-platform-theme])_&]:rounded-[255px_22px_225px_22px/22px_225px_22px_255px] [html:not([data-platform-theme])_&]:text-sheet [html:not([data-platform-theme])_&]:hover:bg-ultramarine"
             >
               Save choices
             </button>
@@ -123,21 +123,21 @@ export function CookieConsent() {
               <button
                 type="button"
                 onClick={() => save({ analytics: true, marketing: true, advertising: true })}
-                className="press h-10 rounded-full bg-ink px-5 text-[15px] font-semibold text-white hover:bg-cobalt"
+                className="press h-11 rounded-full bg-ink px-5 text-[15px] font-semibold text-white hover:bg-cobalt [html:not([data-platform-theme])_&]:rounded-[255px_22px_225px_22px/22px_225px_22px_255px] [html:not([data-platform-theme])_&]:text-sheet [html:not([data-platform-theme])_&]:hover:bg-ultramarine"
               >
                 Accept all
               </button>
               <button
                 type="button"
                 onClick={() => save({ analytics: false, marketing: false, advertising: false })}
-                className="press h-10 rounded-full border border-ink/25 px-5 text-[15px] font-semibold text-ink hover:border-ink hover:bg-ink hover:text-white"
+                className="press h-11 rounded-full border border-ink/25 px-5 text-[15px] font-semibold text-ink hover:border-ink hover:bg-ink hover:text-white [html:not([data-platform-theme])_&]:rounded-[255px_22px_225px_22px/22px_225px_22px_255px] [html:not([data-platform-theme])_&]:border-2 [html:not([data-platform-theme])_&]:border-ink [html:not([data-platform-theme])_&]:hover:bg-ochre-soft [html:not([data-platform-theme])_&]:hover:text-ink"
               >
                 Essential only
               </button>
               <button
                 type="button"
                 onClick={() => setCustom(true)}
-                className="h-10 px-2 text-[15px] font-medium text-ink underline underline-offset-4 hover:text-cobalt"
+                className="h-11 px-2 text-[15px] font-medium text-ink underline underline-offset-4 hover:text-cobalt [html:not([data-platform-theme])_&]:decoration-pencil [html:not([data-platform-theme])_&]:decoration-2"
               >
                 Choose
               </button>

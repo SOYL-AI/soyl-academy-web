@@ -31,6 +31,23 @@
   --color-rule-strong: rgba(20, 20, 20, 0.28);
   --color-control: #77776F;
 
+  /* ── Brush (Nov 2026, ADR-033): marketing pages only ───────────────────── */
+  --color-sheet: #F6F1E6;        /* the paper every marketing page is drawn on */
+  --color-sheet-deep: #EDE5D4;
+  --color-sheet-shade: #E3D8C2;
+  --color-graphite: #4A4640;     /* secondary text on paper (8:1) */
+  --color-pencil: #8A847A;       /* rules, faint marks (not for text) */
+  --color-ultramarine: #2B48C8;
+  --color-ultramarine-soft: #DCE2F7;
+  --color-vermilion: #CF4A2E;
+  --color-vermilion-ink: #A63A23; /* vermilion as text (5.6:1 on paper) */
+  --color-vermilion-soft: #F6DDD3;
+  --color-ochre: #E2B13C;
+  --color-ochre-soft: #F6E7BC;
+  --color-sap: #33684A;          /* also as text on --color-sap-soft (5.1:1) */
+  --color-sap-soft: #DCEBDF;
+  --font-hand: var(--font-kalam), "Segoe Print", "Bradley Hand", cursive;
+
   /* ── Type ─────────────────────────────────────────────────────────────── */
   --font-sans: var(--font-inter), system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-serif: var(--font-newsreader), Georgia, "Times New Roman", serif;
@@ -123,8 +140,12 @@ h1, h2, h3, h4 {
 /* In headlines on light backgrounds the accent word gets a highlighter stroke
    (yellow by default; a section can switch it with --hl). Never on dark bands,
    and not where a drawn pen underline already marks the word. */
-:is(h1, h2, .t-display, .t-headline) .t-accent:not(:has(.drawn)) {
-  background-image: linear-gradient(transparent 64%, var(--hl, var(--color-highlighter)) 64%, var(--hl, var(--color-highlighter)) 90%, transparent 90%);
+:is(h1, h2, .t-display, .t-headline) .t-accent:not(:has(.drawn, .marked)) {
+  /* Brush (ADR-033): a soft, slightly crooked ochre swipe. */
+  background-image: linear-gradient(100deg, transparent 0.5%, var(--hl, var(--color-ochre-soft)) 2%, var(--hl, var(--color-ochre-soft)) 97%, transparent 99%);
+  background-size: 100% 34%;
+  background-position: 0 86%;
+  background-repeat: no-repeat;
   padding-inline: 0.04em;
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;
@@ -549,3 +570,187 @@ main > section ~ section,
   .motion-clip { display: none !important; }
   .motion-still { display: block; }
 }
+
+
+/* ==========================================================================
+   BRUSH (Nov 2026, ADR-033) — the marketing site's sketchbook language.
+   Graphite on warm paper, watercolour pigments painted with p5.brush
+   (components/brush), hand-drawn SVG marks, handwritten notes in Kalam.
+   Learning-platform pages never use these classes; they set
+   html[data-platform-theme], which keeps the paper off their body.
+   ========================================================================== */
+
+html:not([data-platform-theme]) body {
+  background-color: var(--color-sheet);
+}
+
+@layer components {
+
+/* Handwritten note: annotations, eyebrows, the guide's voice. */
+.hand {
+  font-family: var(--font-hand);
+  font-weight: 400;
+  line-height: 1.25;
+  letter-spacing: 0;
+}
+
+/* A sketched box: the classic uneven radius of a hand-drawn rectangle. */
+.sketch {
+  border: 2px solid var(--color-ink);
+  border-radius: 255px 18px 225px 18px / 18px 225px 18px 255px;
+}
+.sketch-soft {
+  border: 1.5px solid color-mix(in srgb, var(--color-ink) 70%, transparent);
+  border-radius: 12px 220px 14px 200px / 200px 14px 220px 12px;
+}
+
+/* A sheet of paper lying on the page. */
+.leaf {
+  position: relative;
+  background: #FFFDF8;
+  border-radius: 6px;
+  box-shadow:
+    0 1px 0 rgba(31, 28, 25, 0.06),
+    0 18px 40px -22px rgba(31, 28, 25, 0.38),
+    0 2px 6px -2px rgba(31, 28, 25, 0.12);
+}
+
+.leaf > .frame { border-radius: 3px; }
+
+/* Washi tape across a corner or the top edge. */
+.tape::before,
+.tape-r::after {
+  content: "";
+  position: absolute;
+  width: 86px;
+  height: 24px;
+  background: color-mix(in srgb, var(--tape, var(--color-ochre)) 55%, transparent);
+  box-shadow: 0 1px 2px rgba(31, 28, 25, 0.08);
+  mask-image: linear-gradient(90deg, transparent 0 3px, #000 3px calc(100% - 3px), transparent calc(100% - 3px)),
+    repeating-linear-gradient(0deg, #000 0 2px, transparent 2px 3px);
+  mask-composite: add;
+  z-index: 2;
+  pointer-events: none;
+}
+.tape::before { top: -12px; left: 28px; transform: rotate(-4deg); }
+.tape-r::after { top: -10px; right: 26px; transform: rotate(5deg); --tape: var(--color-ultramarine); }
+
+/* Exercise-book ruling (the old way: worksheets). */
+.ruled {
+  background-color: #FFFDF8;
+  background-image:
+    linear-gradient(90deg, transparent 2.75rem, rgba(207, 74, 46, 0.45) 2.75rem, rgba(207, 74, 46, 0.45) calc(2.75rem + 1px), transparent calc(2.75rem + 1px)),
+    repeating-linear-gradient(180deg, transparent 0 1.95rem, rgba(43, 72, 200, 0.16) 1.95rem 2rem);
+}
+
+/* Highlighter swipe behind a word, slightly crooked like a real one. */
+.swipe {
+  background-image: linear-gradient(100deg, transparent 0.5%, var(--swipe, var(--color-ochre-soft)) 2%, var(--swipe, var(--color-ochre-soft)) 97%, transparent 99%);
+  background-size: 100% 62%;
+  background-position: 0 78%;
+  background-repeat: no-repeat;
+  padding-inline: 0.08em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+/* Hand-drawn SVG marks (components/brush/marks.tsx) trace themselves. */
+.ink {
+  overflow: visible;
+  pointer-events: none;
+}
+.ink path {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 0;
+}
+.ink[data-draw="load"] path {
+  animation: draw 900ms var(--ease-out) var(--ink-d, 500ms) both;
+}
+[data-rs="pending"] .ink path { stroke-dashoffset: 1; }
+[data-rs="in"] .ink path {
+  transition: stroke-dashoffset 1000ms var(--ease-out) calc(var(--d, 0ms) + var(--ink-d, 300ms));
+}
+
+/* A word with a mark laid over or under it. */
+.marked {
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+}
+.marked > .ink {
+  position: absolute;
+  color: var(--mark, var(--color-vermilion));
+}
+.marked > .ink-under { left: -2%; width: 104%; bottom: -0.16em; height: 0.3em; }
+.marked > .ink-strike { left: -4%; width: 108%; top: 42%; height: 0.32em; }
+.marked > .ink-ring { left: -9%; top: -16%; width: 118%; height: 136%; }
+
+/* Brushed buttons: uneven radius, ink fill. */
+.btn-brush {
+  border-radius: 255px 22px 225px 22px / 22px 225px 22px 255px;
+}
+
+/* Header: a strip of paper that gets a drawn edge once the page scrolls. */
+.nav-bar {
+  transition: background-color var(--duration-base) var(--ease-out), box-shadow var(--duration-base) var(--ease-out);
+}
+.nav-bar[data-scrolled="true"] {
+  background-color: color-mix(in srgb, var(--color-sheet) 92%, transparent);
+  backdrop-filter: saturate(1.2) blur(10px);
+  -webkit-backdrop-filter: saturate(1.2) blur(10px);
+}
+.nav-edge path { stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 700ms var(--ease-out); }
+.nav-bar[data-scrolled="true"] .nav-edge path { stroke-dashoffset: 0; }
+
+.nav-link .ink path { stroke-dashoffset: 1; transition: stroke-dashoffset 420ms var(--ease-out); }
+.nav-link:hover .ink path,
+.nav-link:focus-visible .ink path,
+.nav-link[aria-current="page"] .ink path { stroke-dashoffset: 0; }
+
+/* A mark that draws itself when its link (or any .group ancestor) is hovered or focused. */
+.ink-hover path { stroke-dashoffset: 1; transition: stroke-dashoffset 420ms var(--ease-out); }
+.group:hover .ink-hover path,
+.group:focus-visible .ink-hover path { stroke-dashoffset: 0; }
+
+/* The index: a full page that opens from the button like ink spreading. */
+.index-sheet {
+  clip-path: circle(0 at var(--ox, 100%) var(--oy, 0));
+  visibility: hidden;
+  transition: clip-path 650ms var(--ease-out-expo), visibility 0s linear 650ms;
+}
+.index-sheet[data-open="true"] {
+  clip-path: circle(150% at var(--ox, 100%) var(--oy, 0));
+  visibility: visible;
+  transition: clip-path 750ms var(--ease-out-expo), visibility 0s;
+}
+.index-row .index-arrow { transition: transform var(--duration-base) var(--ease-out); }
+.index-row:hover .index-arrow,
+.index-row:focus-visible .index-arrow { transform: translateX(6px); }
+.index-row .ink path { stroke-dashoffset: 1; transition: stroke-dashoffset 450ms var(--ease-out); }
+.index-row:hover .ink path,
+.index-row:focus-visible .ink path { stroke-dashoffset: 0; }
+.index-item {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 400ms var(--ease-out), transform 600ms var(--ease-out-expo);
+}
+.index-sheet[data-open="true"] .index-item {
+  opacity: 1;
+  transform: none;
+  transition-delay: calc(var(--i, 0) * 35ms + 180ms);
+}
+
+/* Stage tabs in the pupil's hour. */
+.stage-panel { animation: rise 520ms var(--ease-out-expo) both; }
+
+/* A slight, fixed tilt for pinned paper. */
+.tilt-l { rotate: -1.6deg; }
+.tilt-r { rotate: 1.4deg; }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .index-sheet,
+  .index-sheet[data-open="true"] { transition: none; }
+}
+

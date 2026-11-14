@@ -1,129 +1,38 @@
 /*
- * Early-bird offer theme for /future-builders only (owner, 8 Nov 2026; the Children’s Day offer from 13 Nov). Scoped CSS module: nothing
- * here reaches globals.css, the root layout or the Tailwind config. Shown only while the offer runs.
- * Palette: deep maroon ground, marigold and saffron accents, warm ivory text (all text pairs ≥ 7:1).
- * The site has no dark theme; colours are explicit so a forced dark UA theme can't wash them out.
+ * Children’s Day offer styling for /future-builders (owner, 8 Nov 2026; brush language from ADR-033). Scoped CSS
+ * module: nothing here reaches globals.css. Shown only while the offer runs. Colours follow the brush palette.
  */
 .band {
-  --dw-maroon: #3a0b16;
-  --dw-maroon-2: #5c1424;
-  --dw-marigold: #ffc94a;
-  --dw-saffron: #f28c28;
-  --dw-ivory: #fff7e8;
-  --dw-ivory-soft: rgba(255, 247, 232, 0.78);
   position: relative;
-  overflow: hidden;
-  isolation: isolate;
-  color: var(--dw-ivory);
-  background:
-    radial-gradient(60% 120% at 12% 0%, rgba(242, 140, 40, 0.28), transparent 60%),
-    radial-gradient(50% 90% at 92% 100%, rgba(255, 201, 74, 0.2), transparent 65%),
-    linear-gradient(135deg, var(--dw-maroon) 0%, var(--dw-maroon-2) 100%);
-  color-scheme: dark;
-}
-
-.rangoli {
-  position: absolute;
-  z-index: -1;
-  pointer-events: none;
-  color: var(--dw-marigold);
-  opacity: 0.16;
-}
-.rangoliLeft {
-  width: 340px;
-  height: 340px;
-  left: -120px;
-  top: -130px;
-}
-.rangoliRight {
-  width: 420px;
-  height: 420px;
-  right: -150px;
-  bottom: -200px;
-}
-
-.eyebrow {
-  color: var(--dw-marigold);
-  letter-spacing: 0.08em;
-}
-
-.price {
-  color: var(--dw-marigold);
-}
-
-.muted {
-  color: var(--dw-ivory-soft);
-}
-
-.save {
-  color: var(--dw-maroon);
-  background: var(--dw-marigold);
 }
 
 .count {
   display: flex;
+  flex-wrap: wrap;
   gap: 8px;
 }
 .countBox {
   min-width: 64px;
   padding: 10px 8px 8px;
   text-align: center;
-  border-radius: 12px;
-  border: 1px solid rgba(255, 201, 74, 0.38);
-  background: rgba(255, 247, 232, 0.07);
-  box-shadow: 0 0 24px -8px rgba(255, 201, 74, 0.45) inset;
+  background: #f6f1e6;
+  border: 2px solid #1f1c19;
+  border-radius: 255px 14px 225px 14px / 14px 225px 14px 255px;
 }
 .countNum {
   display: block;
   font-variant-numeric: tabular-nums;
   font-size: 1.75rem;
   line-height: 1;
-  color: var(--dw-ivory);
+  color: #1f1c19;
 }
 .countUnit {
   display: block;
   margin-top: 6px;
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--dw-ivory-soft);
-}
-
-.cta {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  min-height: 52px;
-  padding: 0 26px;
-  border-radius: 999px;
-  font-weight: 600;
-  font-size: 16px;
-  color: var(--dw-maroon);
-  background: var(--dw-marigold);
-  box-shadow: 0 10px 30px -12px rgba(255, 201, 74, 0.8);
-  transition: background-color 160ms ease, transform 160ms ease;
-}
-.cta:hover {
-  background: #ffd976;
-}
-.cta:focus-visible {
-  outline: 3px solid var(--dw-ivory);
-  outline-offset: 3px;
-}
-.ctaSecondary {
-  color: var(--dw-ivory);
-  text-decoration: underline;
-  text-decoration-color: rgba(255, 247, 232, 0.5);
-  text-underline-offset: 4px;
-}
-.ctaSecondary:hover {
-  text-decoration-color: var(--dw-ivory);
-}
-.ctaSecondary:focus-visible {
-  outline: 3px solid var(--dw-ivory);
-  outline-offset: 3px;
-  border-radius: 4px;
+  color: #4a4640;
 }
 
 /* Kite: sways gently; still for anyone who prefers reduced motion. */
@@ -145,19 +54,17 @@
   .kite {
     animation: none;
   }
-  .cta {
-    transition: none;
-  }
 }
 
-/* Light accents used on the white cards of the same page while the offer runs. */
+/* Accent on the paper cards of the same page while the offer runs: an ochre edge. */
 .cardAccent {
   box-shadow:
-    inset 0 3px 0 #e9a21b,
-    0 30px 60px -40px rgba(58, 11, 22, 0.45);
+    inset 0 4px 0 #e2b13c,
+    0 1px 0 rgba(31, 28, 25, 0.06),
+    0 18px 40px -22px rgba(31, 28, 25, 0.38);
 }
 .chip {
-  color: #5c1424;
-  background: #fff1d6;
-  border: 1px solid #f2b53a;
+  color: #1f1c19;
+  background: #f6e7bc;
+  border: 1.5px solid #1f1c19;
 }

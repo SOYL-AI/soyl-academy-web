@@ -1,25 +1,38 @@
 /*
- * Homepage offer side tab (owner, 8 Nov 2026; Children’s Day offer from 13 Nov). Scoped CSS module; no global styles.
- * Phones: a compact pill bottom-right, above the safe area, below the cookie bar (z-50) and the
- * mobile menu (z-40). From md: a vertical tab on the right edge, centred vertically.
+ * Homepage offer side tab (owner, 8 Nov 2026; Children’s Day offer from 13 Nov; brush language from ADR-033).
+ * Scoped CSS module; no global styles. A slip of paper pinned to the edge with washi tape.
+ * Phones: a compact slip bottom-right, above the safe area, below the cookie bar (z-50) and the
+ * site index (z-60). From md: a vertical tab on the right edge, centred vertically.
  */
 .tab {
-  --dw-maroon: #3a0b16;
-  --dw-marigold: #ffc94a;
-  --dw-ivory: #fff7e8;
+  --ink: #1f1c19;
+  --paper: #fffdf8;
+  --vermilion-ink: #a63a23;
+  --ochre: #e2b13c;
   position: fixed;
   z-index: 30;
   right: 12px;
   bottom: calc(12px + env(safe-area-inset-bottom));
   display: flex;
   align-items: center;
-  border-radius: 999px;
-  color: var(--dw-ivory);
-  background: linear-gradient(135deg, #3a0b16, #5c1424);
-  box-shadow:
-    0 0 0 1px rgba(255, 201, 74, 0.45),
-    0 14px 30px -12px rgba(58, 11, 22, 0.6);
-  color-scheme: dark;
+  color: var(--ink);
+  background: var(--paper);
+  border: 2px solid var(--ink);
+  border-radius: 255px 16px 225px 16px / 16px 225px 16px 255px;
+  box-shadow: 0 14px 30px -14px rgba(31, 28, 25, 0.45);
+  rotate: -1.2deg;
+}
+/* Washi tape */
+.tab::before {
+  content: "";
+  position: absolute;
+  top: -11px;
+  left: 18px;
+  width: 54px;
+  height: 18px;
+  background: color-mix(in srgb, var(--ochre) 60%, transparent);
+  transform: rotate(-6deg);
+  pointer-events: none;
 }
 
 .link {
@@ -31,15 +44,15 @@
   font-size: 14px;
   font-weight: 600;
   white-space: nowrap;
-  color: var(--dw-ivory);
+  color: var(--ink);
   border-radius: 999px;
 }
 .price {
-  color: var(--dw-marigold);
+  color: var(--vermilion-ink);
 }
 .link:focus-visible,
 .close:focus-visible {
-  outline: 3px solid var(--dw-marigold);
+  outline: 3px solid #2b48c8;
   outline-offset: 2px;
 }
 
@@ -50,10 +63,10 @@
   width: 40px;
   height: 44px;
   border-radius: 999px;
-  color: rgba(255, 247, 232, 0.8);
+  color: #4a4640;
 }
 .close:hover {
-  color: var(--dw-ivory);
+  color: var(--ink);
 }
 
 @media (min-width: 768px) {
@@ -62,9 +75,18 @@
     bottom: auto;
     top: 50%;
     transform: translateY(-50%);
+    rotate: none;
     flex-direction: column;
-    border-radius: 14px 0 0 14px;
+    border-right: 0;
+    border-radius: 16px 0 0 16px / 40px 0 0 40px;
     padding: 6px 0 10px;
+  }
+  .tab::before {
+    top: 10px;
+    left: -12px;
+    width: 18px;
+    height: 48px;
+    transform: rotate(-5deg);
   }
   .link {
     writing-mode: vertical-rl;

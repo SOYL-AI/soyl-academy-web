@@ -3,9 +3,9 @@
  * the first sentence of every answer is a complete, quotable answer on its
  * own, so search snippets and AI assistants can lift it verbatim.
  *
- * Every claim here is drawn from copy that already exists on the site.
- * Keep it that way — do not add statistics or promises that the pages
- * themselves do not make.
+ * Every claim here is drawn from copy on the site or from the SOYL Missions
+ * product spec v1.2 (ADR-033). Keep it that way: no statistics or promises
+ * that the pages themselves do not make.
  */
 
 export interface FaqItem {
@@ -17,65 +17,70 @@ export const homeFaqs: FaqItem[] = [
   {
     question: 'What is SOYL Academy?',
     answer:
-      'SOYL Academy is an assignment platform for Grades 1 to 10. Teachers turn their own notes into interactive assignments, students work them out with unlimited attempts and step-by-step hints, and teachers see how each pupil got there. It is built by SOYL AI Private Limited in Bengaluru, India.',
+      'SOYL Academy replaces assignments with missions. A mission is one continuous scene of about 45 minutes, a simulator, a story or a conversation, where every pupil takes their own path and leaves with a Thoughtprint instead of a mark. It is built by SOYL AI Private Limited in Bengaluru, India. SOYL stands for Story of Your Life.',
   },
   {
-    question: 'Who writes the questions, the AI or the teacher?',
+    question: 'What is a mission?',
     answer:
-      'The teacher decides. SOYL drafts questions from the teacher’s notes, and nothing reaches students until the teacher has reviewed, edited and approved it.',
+      'A mission is a bounded learning experience of no more than 60 minutes, designed for about 45. It runs through five stages, Spark, Build, Defend, Fix and Reflect, and ends when each learning outcome has enough evidence, not after a fixed number of questions.',
   },
   {
-    question: 'Do the hints just give students the answer?',
+    question: 'What is a Thoughtprint?',
     answer:
-      'No. Hints are step-by-step nudges that never reveal the answer. Students can try as many times as they need, and every attempt and hint is recorded so the teacher can see the process, not just the score.',
+      'A Thoughtprint is the card each pupil gets at the end of a mission. Its headline is what the pupil can now do; it also shows where their thinking turned and which misconception was found and fixed. A mark is never the headline.',
   },
   {
-    question: 'What is the SOYL Method?',
+    question: 'Who decides what pupils are asked, the AI or the teacher?',
     answer:
-      'The SOYL Method is an outcome-based framework designed to make student thinking visible. It replaces transactional submissions with five demonstrations of learning: Understand, Apply, Create, Defend and Reflect.',
+      'The teacher. Teachers set the learning outcomes, read a short mission brief and approve the mission before any pupil sees it. Everything a pupil can be asked comes from the approved pool or from approved templates.',
   },
   {
-    question: 'What is outcome-based learning?',
+    question: 'Do the hints give pupils the answer?',
     answer:
-      'Outcome-based learning designs every assignment around what a student should be able to do, rather than only what they should know. Each step of the work has a clear purpose, so students practise a real skill instead of memorising content.',
+      'No. Hints and the guide ask, point and narrow; the pupil does the thinking. After two unproductive attempts the problem is made smaller, and after three the mission moves on and flags the pupil for the teacher.',
   },
   {
-    question: 'Does SOYL Academy ban AI in the classroom?',
+    question: 'Is there a timer or a question counter?',
     answer:
-      'No. SOYL Academy treats AI as a thought partner, not a shortcut. Students may use AI tools, but they must explain their process, defend their choices and show that the ideas are their own, so using AI does not replace thinking.',
+      'No. Pupils never see a countdown, a question counter or a running score. The mission tracks time quietly, starts closing at 40 minutes and never runs past 60.',
   },
   {
-    question: 'Does SOYL Academy replace teachers?',
+    question: 'What does the teacher see afterwards?',
     answer:
-      'No. Educators stay at the centre of every SOYL experience. The tools are designed to amplify a teacher’s reach and reduce administrative burden, while pedagogical decisions, relationships and final assessments remain entirely human.',
+      'A Monday screen that groups pupils by misconception rather than by score. Each group shows every pupil’s own evidence, a voice clip, a photo of their working or the attempt where it happened, and a suggested next move the teacher can approve, edit or skip.',
   },
   {
     question: 'How can a school start with SOYL Academy?',
     answer:
-      'Schools begin with a pilot of roughly ten weeks: Introduce (weeks 1–2), Implement (weeks 3–8) and Evaluate (weeks 9–10). To start, book a demo and the SOYL team will walk you through the platform and the pilot plan.',
+      'Schools begin with a pilot of roughly ten weeks: Introduce (weeks 1–2), Implement (weeks 3–8) and Evaluate (weeks 9–10). To start, book a demo and the SOYL team will walk you through a mission and the pilot plan.',
   },
 ];
 
 export const methodFaqs: FaqItem[] = [
   {
-    question: 'What are the five pillars of the SOYL Method?',
+    question: 'What are the five stages of a mission?',
     answer:
-      'The five pillars are Understand, Apply, Create, Defend and Reflect. Together they move students from comprehension, through application and creation, to justifying their reasoning and reflecting on how they learned.',
+      'Spark, Build, Defend, Fix and Reflect. Spark finds where a pupil starts, Build is the real work, Defend is a live follow-up on their gap, Fix is one new case on the same idea, and Reflect asks how sure they are and what they would change.',
   },
   {
-    question: 'Why do assignments need to change in the age of AI?',
+    question: 'How do the stages relate to the SOYL Method?',
     answer:
-      'Because the finished artifact alone no longer proves that thinking happened. When technology can generate essays, solve equations and write code in seconds, learning has to be assessed through the process, the reasoning and the student’s ability to use knowledge.',
+      'They are how the five SOYL demonstrations happen inside one hour: Understand in Spark, Apply and Create in Build, Defend in Defend, Apply in a new situation in Fix, and Reflect in Reflect.',
   },
   {
-    question: 'What is the difference between a traditional assignment and a SOYL assignment?',
+    question: 'How long is a mission?',
     answer:
-      'A traditional assignment asks students to produce an answer, such as completing twenty similar equations. A SOYL assignment asks them to apply the idea in a new context, for example optimising a school garden layout, and to explain and defend what they did.',
+      'Never more than 60 minutes of pupil time, and designed for about 45. A mission ends when each outcome has enough evidence; it starts closing at 40 minutes, goes straight to Reflect at 55 and saves at 60. Pupils never see this clock.',
   },
   {
-    question: 'How does SOYL Academy approach responsible AI use?',
+    question: 'What happens when a pupil is stuck?',
     answer:
-      'SOYL teaches students to use technology as a thought partner. The method demands transparency in their process and holds them accountable for the integrity of their work.',
+      'After two tries that go nowhere, the guide makes the step smaller: a smaller question, a worked part or a nudge on the simulator. After three, the mission moves on and flags the pupil for the teacher. The guide never gives the answer.',
+  },
+  {
+    question: 'Why does this matter now that pupils have AI?',
+    answer:
+      'Because a finished answer no longer proves that thinking happened. A mission collects evidence along the way, and the Defend stage asks follow-up questions aimed at each pupil’s own gap, which a generated answer cannot fake.',
   },
 ];
 
@@ -83,40 +88,55 @@ export const schoolsFaqs: FaqItem[] = [
   {
     question: 'What does a SOYL Academy pilot look like?',
     answer:
-      'A pilot runs in three phases over about ten weeks. In Introduce (weeks 1–2), a core cohort of early-adopter teachers receives professional development and maps 2–3 units to the SOYL framework. In Implement (weeks 3–8), teachers deploy SOYL challenges with ongoing support. In Evaluate (weeks 9–10), the school reviews student portfolios and teacher feedback and plans a wider rollout.',
+      'A pilot runs in three phases over about ten weeks. In Introduce (weeks 1–2), a core group of early-adopter teachers is trained and maps two or three units to missions. In Implement (weeks 3–8), teachers run missions with their classes, with ongoing support. In Evaluate (weeks 9–10), the school reviews the Thoughtprints, the rechecks and teacher feedback, and plans a wider rollout.',
   },
   {
     question: 'Does SOYL Academy work with our existing curriculum?',
     answer:
-      'Yes. The SOYL Method is a pedagogical overlay, not a replacement curriculum. It integrates with existing standards such as Common Core, IB, IGCSE or local frameworks, changing how learning is assessed rather than what is taught.',
+      'Yes. Missions are built from the chapters and learning outcomes you already teach, whether CBSE, ICSE or a state board. They change how learning is shown, not what is taught.',
   },
   {
-    question: 'How does the SOYL workflow work for teachers?',
+    question: 'How does a teacher create a mission?',
     answer:
-      'Teachers define an objective, generate a real-world context with SOYL’s help, assign a challenge, review the students’ process and defence, and evaluate the evidence of thinking. The six steps are Define Objective, Generate Context, Assign Challenge, Student Action, Defense & Reflection and Educator Review.',
+      'The teacher picks the class, the chapter and two to four learning outcomes. SOYL drafts the mission and a short brief: what pupils will do, the misconceptions it will listen for, and every question on demand. Nothing reaches pupils until the teacher approves it.',
   },
   {
-    question: 'What happens to homework when students have AI?',
+    question: 'What do school leaders see?',
     answer:
-      'SOYL Academy’s answer is neither banning technology nor retreating to pen-and-paper exams. The answer is to change the assignment so that it asks students to apply, create and defend ideas — work that cannot be completed by copying a generated answer.',
+      'Heads of department get a class view of misconceptions over time: which ideas are still open, where a Fix mission went out, and what held at the seven-day recheck. Teachers work from their own Monday screen, which groups pupils by misconception, never by score.',
+  },
+  {
+    question: 'What happens to homework when pupils have AI?',
+    answer:
+      'SOYL Academy’s answer is neither banning technology nor retreating to pen-and-paper tests. It is to change the work itself: a mission asks pupils to predict, build, defend and fix in their own words, voice and working, which a copied answer cannot do.',
   },
 ];
 
 export const studentsFaqs: FaqItem[] = [
   {
-    question: 'Can I use AI in a SOYL assignment?',
+    question: 'What is a mission like?',
     answer:
-      'Yes, you can use AI tools, but you cannot simply copy and paste an answer. In a SOYL assignment you explain your process, defend your choices and show that the ideas are yours.',
+      'One scene instead of a list of questions: a lab bench, a moment in history or a conversation. You take your own path through it, explain your thinking, and finish with a Thoughtprint that shows what you can now do.',
+  },
+  {
+    question: 'Is there a timer or a score?',
+    answer:
+      'No. There is no countdown, no question counter and no running score on your screen. A mission never runs past an hour, and most end around 45 minutes.',
+  },
+  {
+    question: 'Can I answer out loud or on paper?',
+    answer:
+      'Yes, wherever the skill allows. You can say it, type it, or write in your notebook and upload a photo. Time on paper does not count as screen time.',
+  },
+  {
+    question: 'Can I use AI?',
+    answer:
+      'You can use AI to think better, but a pasted answer will not get you through a mission. The guide asks follow-up questions about your own reasoning, so you need to understand what you say.',
   },
   {
     question: 'Can individual students join SOYL Academy?',
     answer:
-      'Yes. Future Builders is a 2-month live online summer camp for Grades 7 to 12 that individual students can join directly, without a school partnership. The Future Builders page shows when the next camp runs and how to register, or a waitlist when registration is closed.',
-  },
-  {
-    question: 'What will I do in a SOYL assignment?',
-    answer:
-      'You learn by doing: you solve, build, argue, explain and reflect. Instead of worksheets and formulaic essays, you show what you can build, how you reason and how you tackle real problems.',
+      'Yes. Future Builders is a live online summer camp for Grades 7 to 12 that individual students can join directly, without a school partnership. The Future Builders page shows when the next camp runs and how to register, or a waitlist when registration is closed.',
   },
 ];
 
@@ -124,11 +144,11 @@ export const whatWeTeachFaqs: FaqItem[] = [
   {
     question: 'What does SOYL Academy teach?',
     answer:
-      'SOYL Academy runs Future Builders, a 2-month summer camp for Grades 7 to 12 covering Software, AI, IoT, and Entrepreneurship. Additional programmes in AI & Technology, Building & Making, Communication & Ideas, and Problem Solving are coming soon.',
+      'SOYL Academy runs Future Builders, a two-month summer camp for Grades 7 to 12 covering software, AI, IoT and entrepreneurship. Programmes in AI & Technology, Building & Making, Communication & Ideas and Problem Solving are coming soon.',
   },
   {
-    question: 'How are SOYL Academy programs delivered?',
+    question: 'How are SOYL Academy programmes delivered?',
     answer:
-      'Future Builders is delivered through live online sessions during the summer break and is open to individual students in Grades 7 to 12. SOYL Academy also offers workshops and collaborative experiences through partner schools.',
+      'Future Builders runs as live online sessions in the summer break, open to individual students in Grades 7 to 12. Workshops for schools are coming soon.',
   },
 ];

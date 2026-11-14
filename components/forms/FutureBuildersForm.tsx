@@ -282,13 +282,13 @@ export function FutureBuildersForm({ closesOn, campName, sourceTag, listPrice, o
 
   if (pending) {
     return (
-      <div ref={doneRef} tabIndex={-1} role="status" className="module border-success/40 p-6 outline-none md:p-8">
+      <div ref={doneRef} tabIndex={-1} role="status" className="leaf tape p-6 outline-none md:p-8">
         <p className="t-label mb-3 text-success">Payment received</p>
         <h3 className="t-title">We’re confirming your registration.</h3>
         <p className="mt-3 text-ink">
           <strong>Please don’t pay again.</strong> Razorpay has your payment, and we’ll email {formData.email.trim()} your confirmation and receipt shortly.
         </p>
-        <p className="t-small mt-3 text-muted">
+        <p className="t-small mt-3 text-graphite">
           Payment reference: <span className="font-mono text-ink">{pending.paymentId}</span>. If the email hasn’t arrived within a few hours,{' '}
           <a href={whatsappLink(`Hi, I paid for Future Builders (payment ${pending.paymentId}) and I’m waiting for my confirmation.`)} target="_blank" rel="noopener noreferrer" className="link">
             message us on WhatsApp
@@ -301,10 +301,10 @@ export function FutureBuildersForm({ closesOn, campName, sourceTag, listPrice, o
 
   if (callbackDone) {
     return (
-      <div ref={doneRef} tabIndex={-1} role="status" className="module border-success/40 p-6 outline-none md:p-8">
+      <div ref={doneRef} tabIndex={-1} role="status" className="leaf tape p-6 outline-none md:p-8">
         <p className="t-label mb-3 text-success">Request received</p>
         <h3 className="t-title">Thank you, {formData.parentName.trim().split(' ')[0]}.</h3>
-        <p className="mt-3 text-muted">
+        <p className="mt-3 text-graphite">
           Our team will call you at {formData.phone.trim()} {CALLBACK_PROMISE}. Can’t wait?{' '}
           <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="link">
             Message us on WhatsApp
@@ -339,20 +339,20 @@ export function FutureBuildersForm({ closesOn, campName, sourceTag, listPrice, o
   const busyLabel = confirming ? 'Confirming payment…' : mode === 'pay' ? 'Opening payment…' : 'Sending…';
 
   return (
-    <form onSubmit={handleSubmit} noValidate className="module p-5 shadow-[0_30px_60px_-45px_rgba(20,20,20,0.4)] md:p-10">
+    <form onSubmit={handleSubmit} noValidate className="leaf tape p-5 md:p-10">
       <div className="mb-6 flex flex-wrap items-baseline justify-between gap-2">
         <h3 className="t-title">Register your child</h3>
-        <p className="t-small text-muted">Registration open until {closesOn}</p>
+        <p className="t-small text-graphite">Registration open until {closesOn}</p>
       </div>
 
-      <div role="group" aria-label="How would you like to register?" className="mb-6 grid grid-cols-2 rounded-full border border-rule bg-paper p-1">
+      <div role="group" aria-label="How would you like to register?" className="mb-6 grid grid-cols-2 sketch bg-sheet p-1">
         {(['pay', 'callback'] as const).map((m) => (
           <button
             key={m}
             type="button"
             aria-pressed={mode === m}
             onClick={() => setMode(m)}
-            className={cn('press h-10 rounded-full text-[15px] font-semibold', mode === m ? 'bg-ink text-white' : 'text-ink hover:text-cobalt')}
+            className={cn('press btn-brush min-h-11 text-[15px] font-semibold', mode === m ? 'bg-ink text-sheet' : 'text-ink hover:bg-ochre-soft')}
           >
             {m === 'pay' ? 'Pay and register' : 'Request a call'}
           </button>
@@ -360,7 +360,7 @@ export function FutureBuildersForm({ closesOn, campName, sourceTag, listPrice, o
       </div>
 
       {error && (
-        <div role="alert" className="t-small mb-6 border-l-2 border-red-pen bg-paper px-3 py-2 text-ink">
+        <div role="alert" className="t-small mb-6 border-l-2 border-vermilion bg-vermilion-soft/50 px-3 py-2 text-ink">
           {error}{' '}
           <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="link">
             WhatsApp us
@@ -368,7 +368,7 @@ export function FutureBuildersForm({ closesOn, campName, sourceTag, listPrice, o
         </div>
       )}
       {notice && (
-        <div role="status" className="t-small mb-6 border-l-2 border-ink bg-paper px-3 py-2 text-ink">
+        <div role="status" className="t-small mb-6 border-l-2 border-ink bg-sheet px-3 py-2 text-ink">
           {notice}
         </div>
       )}
@@ -402,7 +402,7 @@ export function FutureBuildersForm({ closesOn, campName, sourceTag, listPrice, o
       {mode === 'pay' && (
         <div className="mt-6">
           <label htmlFor="fb-coupon" className="t-label mb-1.5 block text-ink">
-            Friend code <span className="font-normal text-muted">(optional)</span>
+            Friend code <span className="font-normal text-graphite">(optional)</span>
           </label>
           <div className="flex gap-2">
             <input
@@ -436,7 +436,7 @@ export function FutureBuildersForm({ closesOn, campName, sourceTag, listPrice, o
             </Field>
           )}
           {!applied && (
-            <p className="t-small mt-2 text-muted">
+            <p className="t-small mt-2 text-graphite">
               Registering with a friend, or referred by one? Use{' '}
               <button type="button" onClick={() => applyCouponCode(FRIEND_CODE)} className="link font-semibold">
                 {FRIEND_CODE}
@@ -447,8 +447,8 @@ export function FutureBuildersForm({ closesOn, campName, sourceTag, listPrice, o
         </div>
       )}
 
-      <div className="mt-8 border-t border-rule pt-6">
-        <dl className="t-small space-y-1.5 text-muted">
+      <div className="mt-8 border-t border-ink/15 pt-6">
+        <dl className="t-small space-y-1.5 text-graphite">
           <div className="flex justify-between">
             <dt>List price</dt>
             <dd className="t-num line-through">{rupees(listPrice)}</dd>
@@ -464,16 +464,16 @@ export function FutureBuildersForm({ closesOn, campName, sourceTag, listPrice, o
             </div>
           )}
         </dl>
-        <p className="mt-3 flex items-baseline justify-between border-t border-rule pt-3">
+        <p className="mt-3 flex items-baseline justify-between border-t border-ink/15 pt-3">
           <span className="font-semibold">Total</span>
           <span className="t-num font-serif text-[2.5rem] leading-none">{rupees(mode === 'pay' ? price : basePrice)}</span>
         </p>
         {offer.endsLabel && offerName === offer.name && (
-          <p className="t-small mt-2 text-muted">
+          <p className="t-small mt-2 text-graphite">
             {offer.name} price until {offer.endsLabel} IST. One payment; the hardware kit and its delivery are included.
           </p>
         )}
-        <p className="t-small mt-1 text-muted">Full refund if requested within 24 hours of Session 1; the kit is yours to keep.</p>
+        <p className="t-small mt-1 text-graphite">Full refund if requested within 24 hours of Session 1; the kit is yours to keep.</p>
       </div>
 
       <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
@@ -485,9 +485,9 @@ export function FutureBuildersForm({ closesOn, campName, sourceTag, listPrice, o
         </a>
       </div>
       {mode === 'pay' ? (
-        <p className="t-small mt-4 text-muted">Payments are processed securely by Razorpay. We email your confirmation and receipt as soon as the payment is confirmed.</p>
+        <p className="t-small mt-4 text-graphite">Payments are processed securely by Razorpay. We email your confirmation and receipt as soon as the payment is confirmed.</p>
       ) : (
-        <p className="t-small mt-4 text-muted">We call back {CALLBACK_PROMISE}.</p>
+        <p className="t-small mt-4 text-graphite">We call back {CALLBACK_PROMISE}.</p>
       )}
     </form>
   );

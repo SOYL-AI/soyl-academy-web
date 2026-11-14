@@ -47,15 +47,15 @@ export function getFutureBuildersFaqs(state: CohortState, now: Date = today()): 
     },
     {
       question: 'What device and internet connection do they need?',
-      answer: `A laptop or desktop computer with a USB port (to program the hardware kit), and an internet connection that can handle a video call. A phone or tablet is not enough for the coding and hardware sessions. We help set up the tools at orientation. Not sure your computer will do? Ask us on WhatsApp at ${WHATSAPP_DISPLAY}.`,
+      answer: `A laptop or desktop with a USB port (to program the kit) and internet that can handle a video call; a phone or tablet is not enough. We help set up the tools at orientation. Not sure your computer will do? Ask us on WhatsApp at ${WHATSAPP_DISPLAY}.`,
     },
     {
       question: 'What will my child actually learn to do?',
-      answer: 'By the end of the camp, your child will write and debug Python programs, train small AI models to recognise images, wire physical IoT circuits, and present a final business pitch. They move from consuming technology to building it.',
+      answer: 'Write and debug Python programs, train small AI models to recognise images, wire physical IoT circuits, and pitch a product. They move from using technology to building it.',
     },
     {
       question: 'What happens if they miss a live session?',
-      answer: 'Every live session is recorded and shared with students. If your child misses a class, they watch the recording, catch up on the project, and can bring any questions to the next live session.',
+      answer: 'Every live session is recorded and shared. A missed class can be caught up from the recording, with questions brought to the next live session.',
     },
     {
       question: 'Is it right for both a Grade 7 and a Grade 12 student?',
@@ -71,7 +71,7 @@ export function getFutureBuildersFaqs(state: CohortState, now: Date = today()): 
     },
     {
       question: 'How does this help students in Grades 10 to 12 applying to university?',
-      answer: 'Admissions and scholarship panels look for evidence of technical initiative beyond marks. Future Builders students finish with a public GitHub repository of their code, a recorded 3-minute Demo Day pitch, and a certificate of completion: concrete proof of work for applications, essays and interviews.',
+      answer: 'Admissions and scholarship panels look for evidence of initiative beyond marks. Students finish with a public GitHub repository, a recorded three-minute Demo Day pitch and a certificate of completion: proof of work for applications, essays and interviews.',
     },
     {
       question: 'What does the fee cover?',

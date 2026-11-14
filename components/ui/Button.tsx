@@ -4,17 +4,18 @@ import { cn } from '@/lib/utils';
 type Variant = 'primary' | 'secondary' | 'inverse' | 'outline-inverse' | 'ghost';
 type Size = 'md' | 'lg';
 
+// Brushed buttons (ADR-033): the uneven radius of a hand-drawn shape, ink on paper.
 const base =
-  'press group/btn inline-flex items-center justify-center gap-2 font-semibold whitespace-nowrap rounded-full disabled:cursor-not-allowed disabled:opacity-60';
+  'press btn-brush group/btn inline-flex items-center justify-center gap-2 font-semibold whitespace-nowrap disabled:cursor-not-allowed disabled:opacity-60';
 
 const variants: Record<Variant, string> = {
-  // Ink is the action colour; cobalt is its hover.
-  primary: 'bg-ink text-white hover:bg-cobalt',
-  secondary: 'border border-ink/25 bg-white text-ink hover:border-highlighter hover:bg-highlighter',
+  // Ink is the action colour; ultramarine is its hover.
+  primary: 'bg-ink text-sheet hover:bg-ultramarine',
+  secondary: 'border-2 border-ink bg-transparent text-ink hover:bg-ochre-soft',
   // For use on ink / dark blocks.
-  inverse: 'bg-white text-ink hover:bg-highlighter',
-  'outline-inverse': 'border border-white/45 text-white hover:border-white hover:bg-white hover:text-ink',
-  ghost: 'text-ink underline decoration-rule-strong underline-offset-4 hover:text-cobalt hover:decoration-current',
+  inverse: 'bg-sheet text-ink hover:bg-ochre',
+  'outline-inverse': 'border-2 border-sheet/60 text-sheet hover:border-sheet hover:bg-sheet hover:text-ink',
+  ghost: 'text-ink underline decoration-pencil decoration-2 underline-offset-4 hover:text-ultramarine hover:decoration-current',
 };
 
 const sizes: Record<Size, string> = {

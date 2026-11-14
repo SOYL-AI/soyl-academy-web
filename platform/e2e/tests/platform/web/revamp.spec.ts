@@ -45,7 +45,7 @@ test.describe('ADR-023 app shell', () => {
   test('platform pages have their own shell (no marketing header/footer); the cookie bar and legal links stay', async ({ page }) => {
     await essentialCookiesOnly(page);
     await page.goto('/learn', { waitUntil: 'networkidle' });
-    await expect(page.locator('#mobile-menu')).toHaveCount(0); // the marketing header's menu
+    await expect(page.locator('#site-index')).toHaveCount(0); // the marketing header's menu
     await expect(page.getByRole('link', { name: 'Book a demo' })).toHaveCount(0);
     await expect(page.getByRole('link', { name: 'SOYL Academy, learning home' })).toHaveAttribute('href', '/learn');
     const tabs = page.getByRole('navigation', { name: 'Learning platform' });
@@ -63,7 +63,7 @@ test.describe('ADR-023 app shell', () => {
     // Back to the main site: the marketing header and footer are there again, the platform theme is gone.
     await footer.getByRole('link', { name: 'soylai.com' }).click();
     await expect(page).toHaveURL(/\/$/);
-    await expect(page.locator('#mobile-menu')).toHaveCount(1);
+    await expect(page.locator('#site-index')).toHaveCount(1);
     await expect(page.locator('html')).not.toHaveAttribute('data-platform-theme', /.*/);
   });
 
@@ -86,10 +86,10 @@ test.describe('ADR-023 app shell', () => {
       await checkPage(page);
       await link.click();
       await expect(page).toHaveURL(/\/$/);
-      await expect(page.locator('#mobile-menu')).toHaveCount(1); // the marketing header
+      await expect(page.locator('#site-index')).toHaveCount(1); // the marketing header
       await expect(page.locator('#soyl-platform-root')).toHaveCount(0);
       await expect(page.locator('html')).not.toHaveAttribute('data-platform-theme', /.*/);
-      expect(await bg(page.locator('body'))).toBe('rgb(255, 255, 255)');
+      expect(await bg(page.locator('body'))).toBe('rgb(246, 241, 230)'); // marketing paper, --color-sheet (ADR-033)
     });
   }
 
@@ -148,7 +148,7 @@ test.describe('ADR-023 theme', () => {
     await setThemeCookie(page, baseURL, 'dark');
     await page.goto('/about', { waitUntil: 'networkidle' });
     await expect(page.locator('html')).not.toHaveAttribute('data-platform-theme', /.*/);
-    expect(await bg(page.locator('body'))).toBe('rgb(255, 255, 255)');
+    expect(await bg(page.locator('body'))).toBe('rgb(246, 241, 230)'); // marketing paper, --color-sheet (ADR-033)
   });
 
   test('dark theme: platform pages pass axe (AA contrast) and fit 360 px', async ({ page, baseURL }) => {

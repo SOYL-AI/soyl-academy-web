@@ -76,23 +76,23 @@ export default async function JournalArticlePage({ params }: Props) {
         <header>
           <div className="page grid-12 pb-10 pt-10 md:pb-14 md:pt-16">
             <div className="col-span-12 lg:col-span-9">
-              <nav aria-label="Breadcrumb" className="t-label rise mb-8 text-muted">
+              <nav aria-label="Breadcrumb" className="t-label rise mb-8 text-graphite">
                 <ol className="flex flex-wrap items-center gap-2">
-                  <li><Link href="/" className="hover-line hover:text-ink">Home</Link></li>
+                  <li><Link href="/" className="underline-offset-4 hover:text-ink hover:underline">Home</Link></li>
                   <li aria-hidden="true">/</li>
-                  <li><Link href="/journal" className="hover-line hover:text-ink">Journal</Link></li>
+                  <li><Link href="/journal" className="underline-offset-4 hover:text-ink hover:underline">Journal</Link></li>
                 </ol>
               </nav>
-              <p className="t-label rise flex flex-wrap gap-x-2 text-muted">
-                <span className="text-ink">{article.category}</span>
+              <p className="t-label rise flex flex-wrap items-baseline gap-x-2 text-graphite">
+                <span className="hand text-[1.2rem] text-vermilion-ink">{article.category}</span>
                 <span aria-hidden="true">·</span>
                 <time dateTime={article.date}>{formatArticleDate(article.date)}</time>
                 <span aria-hidden="true">·</span>
                 <span>{formatReadingTime(article.readingTime)}</span>
               </p>
               <h1 className="t-display rise mt-5 max-w-[16ch]" style={{ '--d': '80ms' } as React.CSSProperties}>{article.title}</h1>
-              <p className="t-lead mt-6 max-w-[56ch]">{article.excerpt}</p>
-              {article.author && <p className="t-small mt-6 text-muted">By {article.author}</p>}
+              <p className="t-lead mt-6 max-w-[56ch] text-graphite">{article.excerpt}</p>
+              {article.author && <p className="hand mt-6 text-[1.2rem] text-graphite">By {article.author}</p>}
             </div>
           </div>
           {article.photo && (
@@ -103,7 +103,7 @@ export default async function JournalArticlePage({ params }: Props) {
         </header>
 
         <div className="page grid-12 section-tight">
-          <div className="col-span-12 space-y-6 text-[1.125rem] leading-[1.75] md:col-span-8 md:col-start-3 lg:col-span-7 lg:col-start-3 [&>p:first-child]:first-letter:float-left [&>p:first-child]:first-letter:mr-3 [&>p:first-child]:first-letter:font-serif [&>p:first-child]:first-letter:text-[4.25rem] [&>p:first-child]:first-letter:leading-[0.85]">
+          <div className="col-span-12 max-w-[68ch] space-y-6 text-[1.125rem] leading-[1.8] text-ink/90 md:col-span-8 md:col-start-3 lg:col-span-7 lg:col-start-3 [&>p:first-child]:first-letter:float-left [&>p:first-child]:first-letter:mr-3 [&>p:first-child]:first-letter:mt-1 [&>p:first-child]:first-letter:font-serif [&>p:first-child]:first-letter:text-[4.5rem] [&>p:first-child]:first-letter:leading-[0.8] [&>p:first-child]:first-letter:text-vermilion-ink">
             {paragraphs.length > 0 ? paragraphs.map((p, i) => <p key={i}>{p}</p>) : <p>Article coming soon.</p>}
           </div>
         </div>
@@ -112,15 +112,15 @@ export default async function JournalArticlePage({ params }: Props) {
       {related.length > 0 && (
         <aside aria-labelledby="keep-reading" className="section-tight">
           <div className="page">
-            <h2 id="keep-reading" className="t-eyebrow mb-8 border-t border-ink pt-8 text-muted">Keep reading</h2>
+            <h2 id="keep-reading" className="hand mb-8 border-t-2 border-ink pt-6 text-[1.4rem] text-vermilion-ink">Keep reading</h2>
             <ul className="grid grid-cols-1 gap-x-6 gap-y-10 md:grid-cols-2">
               {related.map((item) => (
                 <li key={item.slug}>
                   <Link href={`/journal/${item.slug}`} className="group grid grid-cols-[7.5rem_1fr] items-start gap-5 sm:grid-cols-[10rem_1fr]">
                     <ArticleImage article={item} aspect="aspect-square" sizes="160px" />
                     <div>
-                    <p className="t-title transition-colors duration-200 group-hover:text-cobalt">{item.title}</p>
-                    <p className="mt-2 text-muted">{item.excerpt}</p>
+                    <p className="t-title transition-colors duration-200 group-hover:text-ultramarine">{item.title}</p>
+                    <p className="mt-2 text-graphite">{item.excerpt}</p>
                     </div>
                   </Link>
                 </li>

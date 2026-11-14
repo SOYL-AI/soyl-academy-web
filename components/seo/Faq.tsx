@@ -28,21 +28,22 @@ export function Faq({ faqs, heading = 'Common questions', label = 'FAQ', num, cl
           </h2>
         </div>
 
-        <div className="col-span-12 border-t border-ink lg:col-span-7 lg:col-start-6" data-reveal style={{ '--d': '100ms' } as React.CSSProperties}>
+        <div className="col-span-12 border-t-2 border-ink lg:col-span-7 lg:col-start-6" data-reveal style={{ '--d': '100ms' } as React.CSSProperties}>
           {faqs.map((faq) => (
-            <details key={faq.question} className="group border-b border-rule">
+            <details key={faq.question} className="group border-b border-ink/15">
               <summary className="flex min-h-16 cursor-pointer list-none items-start justify-between gap-6 py-5 md:py-6 [&::-webkit-details-marker]:hidden">
-                <h3 className="t-subtitle transition-colors duration-200 group-hover:text-cobalt">{faq.question}</h3>
+                <h3 className="t-subtitle transition-colors duration-200 group-hover:text-ultramarine">{faq.question}</h3>
                 <span
                   aria-hidden="true"
-                  className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-rule-strong text-ink transition-[transform,background-color,color] duration-300 group-open:rotate-45 group-open:border-cobalt group-open:bg-cobalt group-open:text-white"
+                  className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center text-ink transition-[transform,color] duration-300 group-open:rotate-45 group-open:text-vermilion"
                 >
-                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                    <path d="M6 1v10M1 6h10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                    <path d="M12.3 3.5 C 11.6 9, 12.4 15, 11.8 20.5" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" />
+                    <path d="M3.5 11.6 C 9 12.4, 15 11.5, 20.5 12.2" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" />
                   </svg>
                 </span>
               </summary>
-              <div className="max-w-[62ch] pb-7 pr-12 text-muted">{faq.answer}</div>
+              <div className="max-w-[62ch] pb-7 pr-12 text-graphite">{faq.answer}</div>
             </details>
           ))}
         </div>

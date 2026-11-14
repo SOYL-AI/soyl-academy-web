@@ -51,8 +51,9 @@ export function OfferTab({ offerKey, label, price, listPrice, endsAt, offsetMs =
     <aside aria-label={label} className={styles.tab}>
       <Link href="/future-builders" className={styles.link}>
         <svg className={styles.icon} width="18" height="18" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
-          <path d="M30 4 50 22 30 42 10 22z" fill="#ffc94a" />
-          <path d="M30 4 50 22 30 22zM30 22 30 42 10 22z" fill="#f28c28" />
+          <path d="M30 4 50 22 30 42 10 22z" fill="#e2b13c" />
+          <path d="M30 4 50 22 30 22z" fill="#cf4a2e" />
+          <path d="M30 22 30 42 10 22z" fill="#2b48c8" />
           <path d="M30 42c-2 6 4 8 2 13s-6 5-4 8" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
         </svg>
         <span>

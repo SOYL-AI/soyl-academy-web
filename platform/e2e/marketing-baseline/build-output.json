@@ -2,299 +2,315 @@
   "nextVersion": "16.4.3",
   "note": "Next.js 16 does not print sizes in the build route table; measured from .next: JS/CSS referenced by each prerendered page (first load), gzip level 9. Dynamic routes (ƒ) have no prerendered HTML and are not listed.",
   "totals": {
-    "staticBytes": 7531210,
-    "staticJsBytes": 2782092,
-    "staticCssBytes": 321034,
-    "staticMediaBytes": 4428084
+    "staticBytes": 8062660,
+    "staticJsBytes": 3260013,
+    "staticCssBytes": 363607,
+    "staticMediaBytes": 4438987
   },
   "routes": {
     "/": {
-      "firstLoadJsFiles": 10,
-      "firstLoadJsBytes": 653457,
-      "firstLoadJsGzipBytes": 203354,
-      "cssBytes": 88651,
-      "cssGzipBytes": 16200,
-      "htmlBytes": 310966
+      "firstLoadJsFiles": 11,
+      "firstLoadJsBytes": 666334,
+      "firstLoadJsGzipBytes": 207996,
+      "cssBytes": 94195,
+      "cssGzipBytes": 18382,
+      "htmlBytes": 209584
     },
     "/_not-found": {
-      "firstLoadJsFiles": 8,
-      "firstLoadJsBytes": 613094,
-      "firstLoadJsGzipBytes": 189991,
-      "cssBytes": 88651,
-      "cssGzipBytes": 16200,
-      "htmlBytes": 138580
+      "firstLoadJsFiles": 10,
+      "firstLoadJsBytes": 656568,
+      "firstLoadJsGzipBytes": 203540,
+      "cssBytes": 92351,
+      "cssGzipBytes": 17517,
+      "htmlBytes": 73205
     },
     "/about": {
-      "firstLoadJsFiles": 8,
-      "firstLoadJsBytes": 613094,
-      "firstLoadJsGzipBytes": 189991,
-      "cssBytes": 88651,
-      "cssGzipBytes": 16200,
-      "htmlBytes": 159170
+      "firstLoadJsFiles": 11,
+      "firstLoadJsBytes": 660460,
+      "firstLoadJsGzipBytes": 205607,
+      "cssBytes": 92351,
+      "cssGzipBytes": 17517,
+      "htmlBytes": 96656
     },
     "/admin": {
       "firstLoadJsFiles": 12,
-      "firstLoadJsBytes": 688886,
-      "firstLoadJsGzipBytes": 217500,
-      "cssBytes": 222816,
-      "cssGzipBytes": 39202,
-      "htmlBytes": 82077
+      "firstLoadJsBytes": 697128,
+      "firstLoadJsGzipBytes": 219313,
+      "cssBytes": 235834,
+      "cssGzipBytes": 43455,
+      "htmlBytes": 33080
     },
     "/ask": {
       "firstLoadJsFiles": 13,
-      "firstLoadJsBytes": 708724,
-      "firstLoadJsGzipBytes": 224266,
-      "cssBytes": 232545,
-      "cssGzipBytes": 41165,
-      "htmlBytes": 82554
+      "firstLoadJsBytes": 726850,
+      "firstLoadJsGzipBytes": 228494,
+      "cssBytes": 262389,
+      "cssGzipBytes": 48023,
+      "htmlBytes": 33448
     },
     "/book-a-demo": {
-      "firstLoadJsFiles": 10,
-      "firstLoadJsBytes": 649741,
-      "firstLoadJsGzipBytes": 202291,
-      "cssBytes": 88651,
-      "cssGzipBytes": 16200,
-      "htmlBytes": 158444
+      "firstLoadJsFiles": 11,
+      "firstLoadJsBytes": 666130,
+      "firstLoadJsGzipBytes": 207317,
+      "cssBytes": 92351,
+      "cssGzipBytes": 17517,
+      "htmlBytes": 86896
     },
     "/coins": {
-      "firstLoadJsFiles": 12,
-      "firstLoadJsBytes": 690538,
-      "firstLoadJsGzipBytes": 218099,
-      "cssBytes": 222816,
-      "cssGzipBytes": 39202,
-      "htmlBytes": 82134
+      "firstLoadJsFiles": 13,
+      "firstLoadJsBytes": 712673,
+      "firstLoadJsGzipBytes": 224250,
+      "cssBytes": 235834,
+      "cssGzipBytes": 43455,
+      "htmlBytes": 33207
     },
     "/contact": {
-      "firstLoadJsFiles": 11,
-      "firstLoadJsBytes": 734788,
-      "firstLoadJsGzipBytes": 225582,
-      "cssBytes": 88651,
-      "cssGzipBytes": 16200,
-      "htmlBytes": 145745
+      "firstLoadJsFiles": 13,
+      "firstLoadJsBytes": 753083,
+      "firstLoadJsGzipBytes": 231743,
+      "cssBytes": 92351,
+      "cssGzipBytes": 17517,
+      "htmlBytes": 77009
     },
     "/dashboard": {
       "firstLoadJsFiles": 11,
-      "firstLoadJsBytes": 667792,
-      "firstLoadJsGzipBytes": 210001,
-      "cssBytes": 222816,
-      "cssGzipBytes": 39202,
-      "htmlBytes": 82059
+      "firstLoadJsBytes": 674879,
+      "firstLoadJsGzipBytes": 211480,
+      "cssBytes": 235834,
+      "cssGzipBytes": 43455,
+      "htmlBytes": 33046
     },
     "/future-builders": {
-      "firstLoadJsFiles": 10,
-      "firstLoadJsBytes": 663046,
-      "firstLoadJsGzipBytes": 206288,
-      "cssBytes": 88651,
-      "cssGzipBytes": 16200,
-      "htmlBytes": 305242
+      "firstLoadJsFiles": 12,
+      "firstLoadJsBytes": 742011,
+      "firstLoadJsGzipBytes": 226959,
+      "cssBytes": 93253,
+      "cssGzipBytes": 18032,
+      "htmlBytes": 267753
+    },
+    "/future-builders/registered": {
+      "firstLoadJsFiles": 12,
+      "firstLoadJsBytes": 712547,
+      "firstLoadJsGzipBytes": 217199,
+      "cssBytes": 92351,
+      "cssGzipBytes": 17517,
+      "htmlBytes": 78075
     },
     "/journal": {
-      "firstLoadJsFiles": 8,
-      "firstLoadJsBytes": 613094,
-      "firstLoadJsGzipBytes": 189991,
-      "cssBytes": 88651,
-      "cssGzipBytes": 16200,
-      "htmlBytes": 168893
+      "firstLoadJsFiles": 10,
+      "firstLoadJsBytes": 656568,
+      "firstLoadJsGzipBytes": 203540,
+      "cssBytes": 92351,
+      "cssGzipBytes": 17517,
+      "htmlBytes": 99395
     },
     "/journal/homework-after-chatgpt": {
-      "firstLoadJsFiles": 8,
-      "firstLoadJsBytes": 613094,
-      "firstLoadJsGzipBytes": 189991,
-      "cssBytes": 88651,
-      "cssGzipBytes": 16200,
-      "htmlBytes": 166869
+      "firstLoadJsFiles": 11,
+      "firstLoadJsBytes": 660460,
+      "firstLoadJsGzipBytes": 205607,
+      "cssBytes": 92351,
+      "cssGzipBytes": 17517,
+      "htmlBytes": 98110
     },
     "/journal/learning-to-defend-an-idea": {
-      "firstLoadJsFiles": 8,
-      "firstLoadJsBytes": 613094,
-      "firstLoadJsGzipBytes": 189991,
-      "cssBytes": 88651,
-      "cssGzipBytes": 16200,
-      "htmlBytes": 167107
+      "firstLoadJsFiles": 11,
+      "firstLoadJsBytes": 660460,
+      "firstLoadJsGzipBytes": 205607,
+      "cssBytes": 92351,
+      "cssGzipBytes": 17517,
+      "htmlBytes": 98335
     },
     "/journal/should-schools-ban-ai": {
-      "firstLoadJsFiles": 8,
-      "firstLoadJsBytes": 613094,
-      "firstLoadJsGzipBytes": 189991,
-      "cssBytes": 88651,
-      "cssGzipBytes": 16200,
-      "htmlBytes": 166806
+      "firstLoadJsFiles": 11,
+      "firstLoadJsBytes": 660460,
+      "firstLoadJsGzipBytes": 205607,
+      "cssBytes": 92351,
+      "cssGzipBytes": 17517,
+      "htmlBytes": 98047
     },
     "/journal/why-outcomes-matter": {
-      "firstLoadJsFiles": 8,
-      "firstLoadJsBytes": 613094,
-      "firstLoadJsGzipBytes": 189991,
-      "cssBytes": 88651,
-      "cssGzipBytes": 16200,
-      "htmlBytes": 167036
+      "firstLoadJsFiles": 11,
+      "firstLoadJsBytes": 660460,
+      "firstLoadJsGzipBytes": 205607,
+      "cssBytes": 92351,
+      "cssGzipBytes": 17517,
+      "htmlBytes": 98277
     },
     "/leaderboard": {
-      "firstLoadJsFiles": 13,
-      "firstLoadJsBytes": 709723,
-      "firstLoadJsGzipBytes": 224276,
-      "cssBytes": 227762,
-      "cssGzipBytes": 40532,
-      "htmlBytes": 82566
+      "firstLoadJsFiles": 12,
+      "firstLoadJsBytes": 735751,
+      "firstLoadJsGzipBytes": 230234,
+      "cssBytes": 269206,
+      "cssGzipBytes": 49630,
+      "htmlBytes": 33575
     },
     "/learn": {
-      "firstLoadJsFiles": 14,
-      "firstLoadJsBytes": 722670,
-      "firstLoadJsGzipBytes": 229651,
-      "cssBytes": 229902,
-      "cssGzipBytes": 40945,
-      "htmlBytes": 81839
+      "firstLoadJsFiles": 15,
+      "firstLoadJsBytes": 747885,
+      "firstLoadJsGzipBytes": 237347,
+      "cssBytes": 247448,
+      "cssGzipBytes": 45832,
+      "htmlBytes": 33113
     },
     "/me": {
-      "firstLoadJsFiles": 13,
-      "firstLoadJsBytes": 741334,
-      "firstLoadJsGzipBytes": 233046,
-      "cssBytes": 222816,
-      "cssGzipBytes": 39202,
-      "htmlBytes": 82202
+      "firstLoadJsFiles": 14,
+      "firstLoadJsBytes": 757919,
+      "firstLoadJsGzipBytes": 237848,
+      "cssBytes": 235834,
+      "cssGzipBytes": 43455,
+      "htmlBytes": 33329
     },
     "/me/consent": {
       "firstLoadJsFiles": 12,
-      "firstLoadJsBytes": 689540,
-      "firstLoadJsGzipBytes": 216938,
-      "cssBytes": 222816,
-      "cssGzipBytes": 39202,
-      "htmlBytes": 82659
+      "firstLoadJsBytes": 697655,
+      "firstLoadJsGzipBytes": 218702,
+      "cssBytes": 235834,
+      "cssGzipBytes": 43455,
+      "htmlBytes": 33655
     },
     "/me/consent/parent": {
       "firstLoadJsFiles": 12,
-      "firstLoadJsBytes": 691112,
-      "firstLoadJsGzipBytes": 217359,
-      "cssBytes": 222816,
-      "cssGzipBytes": 39202,
-      "htmlBytes": 83243
+      "firstLoadJsBytes": 699252,
+      "firstLoadJsGzipBytes": 219116,
+      "cssBytes": 235834,
+      "cssGzipBytes": 43455,
+      "htmlBytes": 34246
     },
     "/me/dashboard": {
-      "firstLoadJsFiles": 13,
-      "firstLoadJsBytes": 739468,
-      "firstLoadJsGzipBytes": 232736,
-      "cssBytes": 222816,
-      "cssGzipBytes": 39202,
-      "htmlBytes": 82725
+      "firstLoadJsFiles": 14,
+      "firstLoadJsBytes": 744095,
+      "firstLoadJsGzipBytes": 235667,
+      "cssBytes": 242818,
+      "cssGzipBytes": 44962,
+      "htmlBytes": 34081
     },
     "/me/invoices": {
       "firstLoadJsFiles": 12,
-      "firstLoadJsBytes": 673657,
-      "firstLoadJsGzipBytes": 212250,
-      "cssBytes": 224532,
-      "cssGzipBytes": 39834,
-      "htmlBytes": 82891
+      "firstLoadJsBytes": 681382,
+      "firstLoadJsGzipBytes": 213940,
+      "cssBytes": 237550,
+      "cssGzipBytes": 44087,
+      "htmlBytes": 33894
+    },
+    "/me/progress": {
+      "firstLoadJsFiles": 14,
+      "firstLoadJsBytes": 756749,
+      "firstLoadJsGzipBytes": 238797,
+      "cssBytes": 240058,
+      "cssGzipBytes": 44491,
+      "htmlBytes": 34088
     },
     "/method": {
-      "firstLoadJsFiles": 8,
-      "firstLoadJsBytes": 613094,
-      "firstLoadJsGzipBytes": 189991,
-      "cssBytes": 88651,
-      "cssGzipBytes": 16200,
-      "htmlBytes": 208268
+      "firstLoadJsFiles": 11,
+      "firstLoadJsBytes": 660460,
+      "firstLoadJsGzipBytes": 205607,
+      "cssBytes": 92351,
+      "cssGzipBytes": 17517,
+      "htmlBytes": 181293
     },
     "/parents": {
-      "firstLoadJsFiles": 8,
-      "firstLoadJsBytes": 613094,
-      "firstLoadJsGzipBytes": 189991,
-      "cssBytes": 88651,
-      "cssGzipBytes": 16200,
-      "htmlBytes": 161333
+      "firstLoadJsFiles": 11,
+      "firstLoadJsBytes": 660460,
+      "firstLoadJsGzipBytes": 205607,
+      "cssBytes": 92351,
+      "cssGzipBytes": 17517,
+      "htmlBytes": 97760
     },
     "/plans": {
       "firstLoadJsFiles": 12,
-      "firstLoadJsBytes": 691815,
-      "firstLoadJsGzipBytes": 218320,
-      "cssBytes": 226048,
-      "cssGzipBytes": 40033,
-      "htmlBytes": 81299
+      "firstLoadJsBytes": 713149,
+      "firstLoadJsGzipBytes": 223469,
+      "cssBytes": 240586,
+      "cssGzipBytes": 44673,
+      "htmlBytes": 32396
     },
     "/privacy": {
-      "firstLoadJsFiles": 8,
-      "firstLoadJsBytes": 613094,
-      "firstLoadJsGzipBytes": 189991,
-      "cssBytes": 88651,
-      "cssGzipBytes": 16200,
-      "htmlBytes": 152070
+      "firstLoadJsFiles": 10,
+      "firstLoadJsBytes": 656568,
+      "firstLoadJsGzipBytes": 203540,
+      "cssBytes": 92351,
+      "cssGzipBytes": 17517,
+      "htmlBytes": 84824
     },
     "/refund-policy": {
-      "firstLoadJsFiles": 8,
-      "firstLoadJsBytes": 613094,
-      "firstLoadJsGzipBytes": 189991,
-      "cssBytes": 88651,
-      "cssGzipBytes": 16200,
-      "htmlBytes": 146676
+      "firstLoadJsFiles": 10,
+      "firstLoadJsBytes": 656568,
+      "firstLoadJsGzipBytes": 203540,
+      "cssBytes": 92351,
+      "cssGzipBytes": 17517,
+      "htmlBytes": 76774
     },
     "/schools": {
-      "firstLoadJsFiles": 8,
-      "firstLoadJsBytes": 613094,
-      "firstLoadJsGzipBytes": 189991,
-      "cssBytes": 88651,
-      "cssGzipBytes": 16200,
-      "htmlBytes": 189623
+      "firstLoadJsFiles": 11,
+      "firstLoadJsBytes": 660460,
+      "firstLoadJsGzipBytes": 205607,
+      "cssBytes": 92351,
+      "cssGzipBytes": 17517,
+      "htmlBytes": 144017
     },
     "/shipping-policy": {
-      "firstLoadJsFiles": 8,
-      "firstLoadJsBytes": 613094,
-      "firstLoadJsGzipBytes": 189991,
-      "cssBytes": 88651,
-      "cssGzipBytes": 16200,
-      "htmlBytes": 147181
+      "firstLoadJsFiles": 10,
+      "firstLoadJsBytes": 656568,
+      "firstLoadJsGzipBytes": 203540,
+      "cssBytes": 92351,
+      "cssGzipBytes": 17517,
+      "htmlBytes": 77547
     },
     "/store": {
       "firstLoadJsFiles": 13,
-      "firstLoadJsBytes": 711502,
-      "firstLoadJsGzipBytes": 224888,
-      "cssBytes": 230876,
-      "cssGzipBytes": 41133,
-      "htmlBytes": 81392
+      "firstLoadJsBytes": 731698,
+      "firstLoadJsGzipBytes": 230158,
+      "cssBytes": 242026,
+      "cssGzipBytes": 45025,
+      "htmlBytes": 32489
     },
     "/students": {
-      "firstLoadJsFiles": 10,
-      "firstLoadJsBytes": 647939,
-      "firstLoadJsGzipBytes": 201605,
-      "cssBytes": 88651,
-      "cssGzipBytes": 16200,
-      "htmlBytes": 179539
+      "firstLoadJsFiles": 11,
+      "firstLoadJsBytes": 667639,
+      "firstLoadJsGzipBytes": 208340,
+      "cssBytes": 92351,
+      "cssGzipBytes": 17517,
+      "htmlBytes": 126431
     },
     "/teachers": {
-      "firstLoadJsFiles": 10,
-      "firstLoadJsBytes": 647939,
-      "firstLoadJsGzipBytes": 201605,
-      "cssBytes": 88651,
-      "cssGzipBytes": 16200,
-      "htmlBytes": 189039
+      "firstLoadJsFiles": 11,
+      "firstLoadJsBytes": 660460,
+      "firstLoadJsGzipBytes": 205607,
+      "cssBytes": 92351,
+      "cssGzipBytes": 17517,
+      "htmlBytes": 137696
     },
     "/terms": {
-      "firstLoadJsFiles": 8,
-      "firstLoadJsBytes": 613094,
-      "firstLoadJsGzipBytes": 189991,
-      "cssBytes": 88651,
-      "cssGzipBytes": 16200,
-      "htmlBytes": 144384
+      "firstLoadJsFiles": 10,
+      "firstLoadJsBytes": 656568,
+      "firstLoadJsGzipBytes": 203540,
+      "cssBytes": 92351,
+      "cssGzipBytes": 17517,
+      "htmlBytes": 74737
     },
     "/tests": {
       "firstLoadJsFiles": 12,
-      "firstLoadJsBytes": 684945,
-      "firstLoadJsGzipBytes": 215788,
-      "cssBytes": 235438,
-      "cssGzipBytes": 41775,
-      "htmlBytes": 81566
+      "firstLoadJsBytes": 713577,
+      "firstLoadJsGzipBytes": 224365,
+      "cssBytes": 262389,
+      "cssGzipBytes": 48023,
+      "htmlBytes": 32663
     },
     "/tests/builder": {
       "firstLoadJsFiles": 12,
-      "firstLoadJsBytes": 713189,
-      "firstLoadJsGzipBytes": 224731,
-      "cssBytes": 222816,
-      "cssGzipBytes": 39202,
-      "htmlBytes": 82660
+      "firstLoadJsBytes": 730827,
+      "firstLoadJsGzipBytes": 228963,
+      "cssBytes": 262389,
+      "cssGzipBytes": 48023,
+      "htmlBytes": 33902
     },
     "/what-we-teach": {
-      "firstLoadJsFiles": 8,
-      "firstLoadJsBytes": 613094,
-      "firstLoadJsGzipBytes": 189991,
-      "cssBytes": 88651,
-      "cssGzipBytes": 16200,
-      "htmlBytes": 180360
+      "firstLoadJsFiles": 10,
+      "firstLoadJsBytes": 656568,
+      "firstLoadJsGzipBytes": 203540,
+      "cssBytes": 92351,
+      "cssGzipBytes": 17517,
+      "htmlBytes": 113253
     }
   }
 }

@@ -1,8 +1,12 @@
 import type { JournalArticle } from '@/content/journal';
 import { images } from '@/content/images';
 import { Photo } from '@/components/media/Photo';
+import { cn } from '@/lib/utils';
 
-/** The editorial photograph for a journal article, or a quiet typographic card when there is none. */
+/**
+ * The photograph for a journal article as a print on the page (ADR-033), or a quiet paper card with the
+ * category in handwriting when there is none.
+ */
 export function ArticleImage({
   article,
   sizes,
@@ -18,21 +22,30 @@ export function ArticleImage({
 }) {
   if (article.photo) {
     return (
-      <Photo
-        image={images[article.photo]}
-        aspect={aspect}
-        sizes={sizes}
-        priority={priority}
-        settle={priority}
-        large={large}
-        zoom
-        reveal={false}
-      />
+      <div className={cn('leaf', large ? 'p-2 md:p-2.5' : 'p-1.5')}>
+        <Photo
+          image={images[article.photo]}
+          aspect={aspect}
+          sizes={sizes}
+          priority={priority}
+          settle={priority}
+          large={large}
+          zoom
+          reveal={false}
+        />
+      </div>
     );
   }
   return (
-    <div aria-hidden="true" className={`frame ${aspect} flex items-end p-6`}>
-      <span className="font-serif text-[2rem] leading-none text-muted">{article.category}</span>
+    <div
+      aria-hidden="true"
+      className={cn('leaf relative flex items-end overflow-hidden p-6', aspect)}
+      style={{
+        backgroundImage:
+          'radial-gradient(ellipse 70% 60% at 22% 28%, var(--color-ochre-soft) 0 55%, transparent 72%), radial-gradient(ellipse 55% 50% at 82% 78%, var(--color-ultramarine-soft) 0 50%, transparent 70%)',
+      }}
+    >
+      <span className="hand text-[1.6rem] leading-none text-graphite">{article.category}</span>
     </div>
   );
 }

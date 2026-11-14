@@ -33,16 +33,17 @@ export default function JournalPage() {
         label="The SOYL Journal"
         title={
           <>
-            Ideas about learning, technology and the <span className="t-accent">school that’s coming next.</span>
+            Notes on learning after <span className="t-accent">AI.</span>
           </>
         }
+        intro="Essays on missions, thinking, and the school that’s coming next."
         size="headline"
       />
 
       <section className="pb-20 md:pb-28">
         <div className="page">
           {featured && (
-            <article className="border-t border-ink pt-10 md:pt-14">
+            <article className="border-t-2 border-ink pt-10 md:pt-14">
               <Link href={`/journal/${featured.slug}`} className="group grid-12 items-center gap-y-8">
                 <div className="col-span-12 lg:col-span-7">
                   <ArticleImage
@@ -55,8 +56,8 @@ export default function JournalPage() {
                 </div>
                 <div className="col-span-12 lg:col-span-5">
                   <ArticleMeta date={featured.date} readingTime={featured.readingTime} category={featured.category} />
-                  <h2 className="t-headline mt-4 transition-colors duration-200 group-hover:text-cobalt">{featured.title}</h2>
-                  <p className="t-lead mt-5 max-w-[44ch]">{featured.excerpt}</p>
+                  <h2 className="t-headline mt-4 transition-colors duration-200 group-hover:text-ultramarine">{featured.title}</h2>
+                  <p className="t-lead mt-5 max-w-[44ch] text-graphite">{featured.excerpt}</p>
                   <span className="arrow-link mt-7">
                     Read the essay <ArrowRight />
                   </span>
@@ -65,7 +66,7 @@ export default function JournalPage() {
             </article>
           )}
 
-          <ul className="mt-16 grid grid-cols-1 gap-x-6 gap-y-14 border-t border-rule pt-12 md:mt-24 md:grid-cols-3">
+          <ul className="mt-16 grid grid-cols-1 gap-x-8 gap-y-14 border-t border-ink/15 pt-12 md:mt-24 md:grid-cols-3">
             {rest.map((a, i) => (
               <li key={a.slug} data-reveal style={{ '--d': `${i * 90}ms` } as React.CSSProperties}>
                 <Link href={`/journal/${a.slug}`} className="group block">
@@ -73,8 +74,8 @@ export default function JournalPage() {
                   <div className="mt-5">
                     <ArticleMeta date={a.date} readingTime={a.readingTime} category={a.category} />
                   </div>
-                  <h3 className="t-title mt-2 transition-colors duration-200 group-hover:text-cobalt">{a.title}</h3>
-                  <p className="mt-2 text-muted">{a.excerpt}</p>
+                  <h3 className="t-title mt-2 transition-colors duration-200 group-hover:text-ultramarine">{a.title}</h3>
+                  <p className="mt-2 text-graphite">{a.excerpt}</p>
                 </Link>
               </li>
             ))}
@@ -87,8 +88,8 @@ export default function JournalPage() {
 
 function ArticleMeta({ date, readingTime, category }: { date: string; readingTime: number; category: string }) {
   return (
-    <p className="t-label flex flex-wrap items-center gap-x-2 text-muted">
-      <span className="text-red-ink">{category}</span>
+    <p className="t-label flex flex-wrap items-center gap-x-2 text-graphite">
+      <span className="hand text-[1.15rem] text-vermilion-ink">{category}</span>
       <span aria-hidden="true">·</span>
       <time dateTime={date}>{formatArticleDate(date)}</time>
       <span aria-hidden="true">·</span>

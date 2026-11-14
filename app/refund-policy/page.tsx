@@ -15,26 +15,26 @@ export default function RefundPolicyPage() {
         <div className="max-w-3xl lg:ml-[16.666%]">
           {/* Header */}
           <div className="mb-12">
-            <div className="t-label mb-5 flex items-center gap-2.5 text-muted before:h-px before:w-5 before:bg-red-pen before:content-['']">
+            <div className="hand mb-4 flex items-center gap-2.5 text-[1.3rem] text-vermilion-ink before:h-[3px] before:w-6 before:rounded-full before:bg-vermilion before:content-['']">
               <span >
                 Fair & Transparent Policies
               </span>
             </div>
-            <h1 className="t-headline mb-4">
+            <h1 className="t-headline mb-4 max-w-[18ch]">
               Cancellation & Refund Policy
             </h1>
-            <p className="t-small text-muted">
+            <p className="t-small text-graphite">
               Last updated: October 2026 • SOYL AI Private Limited (Bengaluru 560043)
             </p>
           </div>
 
           {/* Policy Content */}
-          <div className="border-t border-rule text-ink">
+          <div className="leaf px-5 text-ink md:px-10">
             {/* Highlight: Money-back Guarantee */}
-            <section className="my-8 border border-rule border-l-4 border-l-highlighter bg-white p-6">
+            <section className="my-8 rounded-md border-l-4 border-l-ochre bg-ochre-soft/60 p-6">
               <div className="flex items-center gap-3 mb-3">
                 <span className="text-2xl" role="img" aria-label="Shield">🛡️</span>
-                <h2 className="t-subtitle">1. 100% Session 1 Money-Back Guarantee</h2>
+                <h2 className="font-serif text-[1.5rem] leading-tight tracking-[-0.012em]">1. 100% Session 1 Money-Back Guarantee</h2>
               </div>
               <p className="mb-3 font-semibold">
                 We believe in the transformative experience of our cohorts. If your child attends Session 1 and does not love building their project, you are entitled to a 100% full refund with zero questions asked.
@@ -49,8 +49,8 @@ export default function RefundPolicyPage() {
               </ul>
             </section>
 
-            <section className="border-b border-rule py-8">
-              <h2 className="t-subtitle mb-3">2. Cancellation Prior to Cohort Start</h2>
+            <section className="border-b border-ink/10 py-8 last:border-b-0">
+              <h2 className="mb-3 font-serif text-[1.5rem] leading-tight tracking-[-0.012em]">2. Cancellation Prior to Cohort Start</h2>
               <p className="mb-3">
                 If you need to cancel your enrollment before the cohort start date:
               </p>
@@ -64,8 +64,8 @@ export default function RefundPolicyPage() {
               </ul>
             </section>
 
-            <section className="border-b border-rule py-8">
-              <h2 className="t-subtitle mb-3">3. Refund Processing & Timelines</h2>
+            <section className="border-b border-ink/10 py-8 last:border-b-0">
+              <h2 className="mb-3 font-serif text-[1.5rem] leading-tight tracking-[-0.012em]">3. Refund Processing & Timelines</h2>
               <p className="mb-3">
                 Once a refund request is received and verified:
               </p>
@@ -82,8 +82,8 @@ export default function RefundPolicyPage() {
               </ul>
             </section>
 
-            <section className="border-b border-rule py-8">
-              <h2 className="t-subtitle mb-3">4. Mid-Cohort Cancellations</h2>
+            <section className="border-b border-ink/10 py-8 last:border-b-0">
+              <h2 className="mb-3 font-serif text-[1.5rem] leading-tight tracking-[-0.012em]">4. Mid-Cohort Cancellations</h2>
               <p className="mb-3">
                 Because places in our live, mentor-led camps are planned and prepared in advance:
               </p>
@@ -92,12 +92,12 @@ export default function RefundPolicyPage() {
               </p>
             </section>
 
-            <section className="border-b border-rule py-8">
-              <h2 className="t-subtitle mb-3">5. How to Initiate a Cancellation or Refund</h2>
+            <section className="border-b border-ink/10 py-8 last:border-b-0">
+              <h2 className="mb-3 font-serif text-[1.5rem] leading-tight tracking-[-0.012em]">5. How to Initiate a Cancellation or Refund</h2>
               <p className="mb-4">
                 To request a refund, simply reach out to our admissions team with your student&apos;s name and enrollment email:
               </p>
-              <div className="border border-rule bg-white p-4 space-y-2 text-sm">
+              <div className="rounded-md border border-ink/10 bg-sheet p-4 space-y-2 text-sm">
                 <p>
                   <strong>Email:</strong>{' '}
                   <a href="mailto:outreach@soyl.cloud" className="link font-medium">
@@ -123,7 +123,7 @@ export default function RefundPolicyPage() {
           </div>
 
           {/* Bottom Navigation */}
-          <div className="mt-12 pt-8 border-t border-rule flex flex-wrap items-center justify-between gap-4">
+          <div className="mt-12 pt-8 border-t border-ink/15 flex flex-wrap items-center justify-between gap-4">
             <Link
               href="/"
               className="t-small link font-medium"
@@ -133,13 +133,13 @@ export default function RefundPolicyPage() {
             <div className="flex gap-4">
               <Link
                 href="/shipping-policy"
-                className="t-small text-muted underline underline-offset-4 hover:text-ink"
+                className="t-small text-graphite underline decoration-pencil decoration-2 underline-offset-4 hover:text-ink"
               >
                 Shipping Policy →
               </Link>
               <Link
                 href="/terms"
-                className="t-small text-muted underline underline-offset-4 hover:text-ink"
+                className="t-small text-graphite underline decoration-pencil decoration-2 underline-offset-4 hover:text-ink"
               >
                 Terms of Service →
               </Link>

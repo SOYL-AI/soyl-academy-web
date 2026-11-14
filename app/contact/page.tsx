@@ -9,6 +9,7 @@ import { Field, describedBy, inputClasses } from '@/components/ui/Field';
 import { buttonClasses } from '@/components/ui/Button';
 import { Label } from '@/components/ui/SectionHeader';
 import { cn } from '@/lib/utils';
+import { Marked, Note } from '@/components/brush/marks';
 import { submitContact } from './actions';
 
 export default function ContactPage() {
@@ -54,16 +55,24 @@ export default function ContactPage() {
       <section>
         <div className="page grid-12 items-end gap-y-6 pb-10 pt-10 md:pb-14 md:pt-16 lg:pt-20">
           <div className="col-span-12 lg:col-span-7">
-            <div className="rise"><Label className="mb-8">Contact</Label></div>
-            <h1 className="t-display rise max-w-[14ch]" style={{ '--d': '80ms' } as React.CSSProperties}>Talk to the SOYL <span className="t-accent">team.</span></h1>
-            <p className="t-lead mt-6 max-w-[48ch]">
-              Questions about SOYL, partnerships or anything else. For a product walkthrough,{' '}
+            <div className="rise"><Label tone="red" className="mb-6 md:mb-8">Contact</Label></div>
+            <h1 className="t-display rise max-w-[14ch]" style={{ '--d': '80ms' } as React.CSSProperties}>
+              Talk to the SOYL{' '}
+              <Marked mark="under" ink="vermilion" load delay={700} weight={4.5}>
+                team.
+              </Marked>
+            </h1>
+            <p className="t-lead mt-6 max-w-[48ch] text-graphite">
+              Questions, partnerships or anything else. To see a mission,{' '}
               <Link href="/book-a-demo" className="link">book a demo</Link>.
             </p>
           </div>
-          <p className="rise col-span-12 text-muted lg:col-span-4 lg:col-start-9" style={{ '--d': '240ms' } as React.CSSProperties}>
-            Or email{' '}
-            <a href="mailto:outreach@soyl.cloud" className="link">
+          <p className="rise col-span-12 lg:col-span-4 lg:col-start-9" style={{ '--d': '240ms' } as React.CSSProperties}>
+            <Note ink="graphite" tilt={-2} className="text-[1.2rem]">
+              or write to us
+            </Note>
+            <br />
+            <a href="mailto:outreach@soyl.cloud" className="link font-medium">
               outreach@soyl.cloud
             </a>
           </p>
@@ -74,18 +83,18 @@ export default function ContactPage() {
         <div className="page grid-12">
           <div className="col-span-12 lg:col-span-8">
             {status === 'success' ? (
-              <div role="status" className="module p-6 md:p-10">
-                <p className="t-label mb-3 text-success">Message sent</p>
+              <div role="status" className="leaf tape p-6 md:p-10" style={{ '--tape': 'var(--color-sap)' } as React.CSSProperties}>
+                <p className="hand mb-3 text-[1.25rem] text-sap">Message sent</p>
                 <h2 className="t-title">Thank you.</h2>
-                <p className="mt-3 text-muted">{message}</p>
+                <p className="mt-3 text-graphite">{message}</p>
                 <button type="button" onClick={() => setStatus('idle')} className="link mt-5 font-medium">
                   Send another message
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit(onSubmit)} noValidate className="module p-5 shadow-[0_30px_60px_-45px_rgba(20,20,20,0.4)] md:p-10">
+              <form onSubmit={handleSubmit(onSubmit)} noValidate className="leaf tape p-5 pt-8 md:p-10">
                 {status === 'error' && (
-                  <div role="alert" className="t-small mb-6 rounded-[var(--radius-sm)] border-l-2 border-red-pen bg-paper px-3 py-2 text-ink">
+                  <div role="alert" className="t-small mb-6 rounded-md border-l-4 border-vermilion bg-vermilion-soft/60 px-3 py-2 text-ink">
                     {message}
                   </div>
                 )}
@@ -146,7 +155,7 @@ export default function ContactPage() {
                   </Field>
                 </div>
 
-                <div className="mt-8 border-t border-rule pt-6">
+                <div className="mt-8 border-t border-ink/15 pt-6">
                   <button type="submit" disabled={status === 'submitting'} className={buttonClasses('primary', 'lg')}>
                     {status === 'submitting' ? 'Sending…' : 'Send message'}
                   </button>

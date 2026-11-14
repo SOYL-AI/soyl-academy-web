@@ -37,13 +37,15 @@ export const SITE_LOCALE = 'en_IN';
 export const SITE_LANGUAGE = 'en-IN';
 
 export const SITE_DESCRIPTION =
-  'SOYL Academy turns teachers’ notes into interactive, teacher-approved assignments for Grades 1–10. Students learn by doing, with hints that never give the answer, and teachers see each pupil’s process.';
+  'SOYL Academy replaces assignments with missions: one scene where every pupil takes their own path, defends their thinking and leaves with a Thoughtprint, not a mark. Teachers approve every mission.';
 
 export const SITE_KEYWORDS = [
   'outcome-based learning',
   'AI in education',
   'homework in the age of AI',
   'AI-resistant assignments',
+  'learning missions',
+  'misconception diagnosis',
   'assessment design',
   'teacher tools',
   'SOYL Method',

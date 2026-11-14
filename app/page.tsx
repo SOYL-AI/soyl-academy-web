@@ -1,13 +1,12 @@
 import { Hero } from '@/components/home/Hero';
 import { ProofStrip } from '@/components/home/ProofStrip';
 import { Shift } from '@/components/home/Shift';
-import { MethodModule } from '@/components/home/MethodModule';
-import { HowItWorks } from '@/components/home/HowItWorks';
-import { Belief } from '@/components/home/Belief';
-import { Subjects } from '@/components/home/Subjects';
+import { PupilsHour } from '@/components/home/PupilsHour';
+import { ThoughtprintCard } from '@/components/home/ThoughtprintCard';
+import { MondayScreen } from '@/components/home/MondayScreen';
+import { MissionLoop } from '@/components/home/MissionLoop';
 import { Audiences } from '@/components/home/Audiences';
 import { FutureBuildersFeature } from '@/components/home/FutureBuildersFeature';
-import { JournalTeaser } from '@/components/home/JournalTeaser';
 import { FinalCta } from '@/components/home/FinalCta';
 import { OfferTab } from '@/components/marketing/OfferTab';
 import { Faq } from '@/components/seo/Faq';
@@ -24,9 +23,9 @@ export const metadata = createMetadata({ path: '/' });
 export const revalidate = 300;
 
 /**
- * Homepage: promise → the shift → the method → how it works → belief →
- * subjects → who it's for → Future Builders → journal → FAQ → close.
- * Every section is fully visible without JS; motion only decorates.
+ * Homepage (ADR-033): from assignments to missions → the shift → the pupil's hour → the Thoughtprint →
+ * the teacher's Monday screen → the loop → who it's for → Future Builders → FAQ → close.
+ * Every section is fully visible without JS; the paintings and motion only decorate.
  */
 export default function HomePage() {
   const now = today();
@@ -55,14 +54,13 @@ export default function HomePage() {
       <Hero />
       <ProofStrip />
       <Shift />
-      <MethodModule />
-      <HowItWorks />
-      <Belief />
-      <Subjects />
+      <PupilsHour />
+      <ThoughtprintCard />
+      <MondayScreen />
+      <MissionLoop />
       <Audiences />
       <FutureBuildersFeature state={cohortState} />
-      <JournalTeaser />
-      <Faq faqs={homeFaqs} heading="Common questions about SOYL Academy" num="07" />
+      <Faq faqs={homeFaqs} heading="Common questions about SOYL missions" num="07" />
       <FinalCta />
     </>
   );

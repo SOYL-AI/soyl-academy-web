@@ -46,12 +46,12 @@ export function RegistrationHeadline() {
 export function RegistrationReceipt() {
   const d = useRegistrationDetails();
   return (
-    <dl className="t-small mt-6 grid grid-cols-[auto_1fr] gap-x-6 gap-y-3 border-t border-rule pt-5">
-      <dt className="text-muted">Receipt number</dt>
+    <dl className="t-small mt-6 grid grid-cols-[auto_1fr] gap-x-6 gap-y-3 border-t border-ink/15 pt-5">
+      <dt className="text-graphite">Receipt number</dt>
       <dd className="t-num text-right font-mono text-[15px] text-ink" aria-live="polite">
         {d?.receiptNumber ?? 'In your confirmation email'}
       </dd>
-      <dt className="text-muted">Confirmation email</dt>
+      <dt className="text-graphite">Confirmation email</dt>
       <dd className="text-right text-ink" aria-live="polite">
         {d?.email ? <>Sent to <span className="break-all font-semibold">{d.email}</span></> : 'Sent to the email address you gave'}
       </dd>

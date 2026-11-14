@@ -4,9 +4,10 @@ import { useId, useRef, useState } from 'react';
 import { cn } from '@/lib/utils';
 
 /**
- * A small, honest taste of a SOYL question: plot a point on a coordinate grid.
- * Unlimited attempts, every attempt kept in a trail, hints that nudge without
- * giving the answer, and a success line that counts the effort.
+ * A small, honest taste of a moment inside a mission (ADR-033): plot a point on a
+ * coordinate grid in a notebook. Unlimited tries, every try kept as a pencil trail,
+ * nudges from the guide that never give the answer, and a line that counts the
+ * effort. No question number, no red crosses or green ticks (spec §02, §14).
  *
  * Pointer: tap or drag on the grid. Keyboard: arrow keys move the point,
  * Enter checks. No animation library; transitions are CSS and under 300 ms.
@@ -121,18 +122,16 @@ export function MiniSimulator() {
   const hints = HINTS(target);
 
   return (
-    <div className="module relative overflow-hidden shadow-[0_30px_60px_-40px_rgba(20,20,20,0.35)]">
-      {/* Question header, as in the student app */}
-      <div className="flex items-center justify-between gap-4 border-b border-rule bg-white px-4 py-3 md:px-6">
-        <p className="t-label text-muted">
-          <span className="t-num text-ink">Question {(round % TARGETS.length) + 1}</span> · Coordinates · Grade 6
-        </p>
-        <p className="t-label inline-flex items-center gap-1.5 text-muted"><span aria-hidden="true" className="h-2 w-2 animate-pulse rounded-full bg-success" />Live</p>
+    <div className="leaf tape relative" style={{ '--tape': 'var(--color-ultramarine)' } as React.CSSProperties}>
+      {/* A maths moment as it sits inside a mission: no question number, no "live" badge. */}
+      <div className="flex items-baseline justify-between gap-4 border-b border-ink/10 px-5 pb-3 pt-6 md:px-7">
+        <p className="hand text-[1.25rem] text-ultramarine">A maths moment · coordinates</p>
+        <p className="t-eyebrow shrink-0 whitespace-nowrap text-graphite">Try it</p>
       </div>
 
-      <div className="grid gap-6 p-4 md:p-6 sm:grid-cols-[minmax(0,1fr)_minmax(0,0.9fr)] lg:grid-cols-1 xl:grid-cols-[minmax(0,1fr)_minmax(0,0.85fr)]">
+      <div className="grid gap-6 p-5 sm:grid-cols-[minmax(0,1fr)_minmax(0,0.9fr)] md:p-7 lg:grid-cols-1 xl:grid-cols-[minmax(0,1fr)_minmax(0,0.85fr)]">
         <div>
-          <p id={ids.prompt} className="t-subtitle mb-3">
+          <p id={ids.prompt} className="mb-3 font-serif text-[1.45rem] leading-tight">
             Plot the point <span className="t-num whitespace-nowrap">{label(target)}</span>.
           </p>
           <svg
@@ -157,56 +156,51 @@ export function MiniSimulator() {
             }}
             onPointerUp={() => (dragging.current = false)}
             className={cn(
-              'block w-full max-w-[340px] touch-none select-none rounded-[var(--radius-sm)] border border-rule bg-white',
+              'block w-full max-w-[340px] touch-none select-none rounded-[4px] border border-ink/15 bg-[#FFFDF8]',
               solved ? 'cursor-default' : 'cursor-crosshair'
             )}
           >
-            {/* grid lines */}
+            {/* graph-paper lines */}
             {Array.from({ length: RANGE * 2 + 1 }, (_, i) => {
               const v = PAD + i * UNIT;
               return (
-                <g key={i} stroke="#2B4FE6" strokeOpacity={0.14} strokeWidth={0.6}>
+                <g key={i} stroke="#2B48C8" strokeOpacity={0.14} strokeWidth={0.6}>
                   <line x1={PAD} y1={v} x2={PAD + SIZE} y2={v} />
                   <line x1={v} y1={PAD} x2={v} y2={PAD + SIZE} />
                 </g>
               );
             })}
-            {/* axes */}
-            <g stroke="#141414" strokeWidth={1.1}>
-              <line x1={PAD} y1={PAD + SIZE / 2} x2={PAD + SIZE} y2={PAD + SIZE / 2} />
-              <line x1={PAD + SIZE / 2} y1={PAD} x2={PAD + SIZE / 2} y2={PAD + SIZE} />
+            {/* axes, drawn by hand */}
+            <g stroke="#1F1C19" strokeWidth={1.3} strokeLinecap="round" fill="none">
+              <path d={`M${PAD} ${PAD + SIZE / 2 + 0.4} C ${PAD + SIZE * 0.3} ${PAD + SIZE / 2 - 0.6}, ${PAD + SIZE * 0.7} ${PAD + SIZE / 2 + 0.7}, ${PAD + SIZE} ${PAD + SIZE / 2}`} />
+              <path d={`M${PAD + SIZE / 2 - 0.4} ${PAD} C ${PAD + SIZE / 2 + 0.6} ${PAD + SIZE * 0.3}, ${PAD + SIZE / 2 - 0.6} ${PAD + SIZE * 0.7}, ${PAD + SIZE / 2 + 0.3} ${PAD + SIZE}`} />
             </g>
             {/* 11.5 units renders at ≥13 px: the grid is never drawn narrower than ~260 px. */}
-            <g fontSize={11.5} fill="#55554F" fontFamily="var(--font-inter), sans-serif">
+            <g fontSize={11.5} fill="#4A4640" fontFamily="var(--font-inter), sans-serif">
               {[-4, -2, 2, 4].map((n) => (
                 <g key={n}>
                   <text x={toSvg({ x: n, y: 0 }).cx} y={PAD + SIZE / 2 + 12} textAnchor="middle">{fmt(n)}</text>
                   <text x={PAD + SIZE / 2 - 5} y={toSvg({ x: 0, y: n }).cy + 3.5} textAnchor="end">{fmt(n)}</text>
                 </g>
               ))}
-              <text x={PAD + SIZE - 2} y={PAD + SIZE / 2 - 5} textAnchor="end" fill="#141414">x</text>
-              <text x={PAD + SIZE / 2 + 6} y={PAD + 8} fill="#141414">y</text>
+              <text x={PAD + SIZE - 2} y={PAD + SIZE / 2 - 5} textAnchor="end" fill="#1F1C19">x</text>
+              <text x={PAD + SIZE / 2 + 6} y={PAD + 8} fill="#1F1C19">y</text>
             </g>
 
-            {/* earlier wrong attempts stay visible: the trail */}
+            {/* earlier tries stay on the page, in pencil: the trail */}
             {attempts
               .filter((a) => !a.ok)
               .map((a, i) => {
                 const { cx, cy } = toSvg(a.p);
-                return (
-                  <g key={i} stroke="#C8473C" strokeWidth={1.6} strokeLinecap="round" opacity={0.8}>
-                    <line x1={cx - 4} y1={cy - 4} x2={cx + 4} y2={cy + 4} />
-                    <line x1={cx + 4} y1={cy - 4} x2={cx - 4} y2={cy + 4} />
-                  </g>
-                );
+                return <circle key={i} cx={cx} cy={cy} r={4.5} fill="none" stroke="#4A4640" strokeWidth={1.4} strokeDasharray="2 2" opacity={0.85} />;
               })}
 
             {point && (
               <circle
                 {...toSvg(point)}
                 r={6}
-                fill={solved ? '#1E7A4C' : '#2B4FE6'}
-                stroke="#fff"
+                fill={solved ? '#3F7A55' : '#2B48C8'}
+                stroke="#FFFDF8"
                 strokeWidth={2}
                 style={{ transition: 'cx 120ms ease-out, cy 120ms ease-out, fill 200ms' }}
               />
@@ -218,24 +212,19 @@ export function MiniSimulator() {
         </div>
 
         <div className="flex flex-col">
-          {/* Attempt trail */}
-          <p className="t-label mb-2 text-muted">Your attempts</p>
-          <ol className="mb-4 flex min-h-9 flex-wrap gap-1.5" aria-label="Your attempts">
-            {attempts.length === 0 && (
-              <li className="t-small text-muted">Place a point, then check it.</li>
-            )}
+          {/* Every try is kept; none is marked wrong in red. */}
+          <p className="mb-2 text-[0.85rem] font-semibold text-graphite">Your tries</p>
+          <ol className="mb-4 flex min-h-9 flex-wrap gap-1.5" aria-label="Your tries">
+            {attempts.length === 0 && <li className="text-[0.92rem] text-graphite">Place a point, then check it.</li>}
             {attempts.map((a, i) => (
               <li
                 key={i}
                 className={cn(
-                  't-num inline-flex h-8 items-center gap-1 rounded-full border px-2.5 text-[14px]',
-                  a.ok ? 'border-success bg-success text-white' : 'border-rule-strong bg-white text-ink'
+                  't-num inline-flex h-8 items-center rounded-full border px-2.5 text-[14px]',
+                  a.ok ? 'border-sap bg-sap-soft font-semibold text-ink' : 'border-ink/20 bg-sheet text-graphite'
                 )}
               >
-                <span aria-hidden="true" className={a.ok ? '' : 'text-red-pen'}>
-                  {a.ok ? '✓' : '✗'}
-                </span>
-                <span className="sr-only">{a.ok ? 'Correct:' : 'Not yet:'}</span>
+                <span className="sr-only">{a.ok ? 'Got there:' : 'Not yet:'}</span>
                 {label(a.p)}
               </li>
             ))}
@@ -243,26 +232,26 @@ export function MiniSimulator() {
 
           <div aria-live="polite" className="min-h-[3.5rem]">
             {solved ? (
-              <p className="sim-pop rounded-[var(--radius-sm)] border-l-2 border-success bg-success/10 px-3 py-2 font-semibold text-success">
-                You worked it out
-                <span className="t-num font-medium text-ink">
-                  {' '}· {tries} {tries === 1 ? 'try' : 'tries'} · {hintsUsed} {hintsUsed === 1 ? 'hint' : 'hints'}
+              <p className="sim-pop">
+                <span className="hand block text-[1.45rem] leading-tight text-sap">You worked it out.</span>
+                <span className="t-num text-[0.92rem] text-graphite">
+                  {tries} {tries === 1 ? 'try' : 'tries'} · {hintsUsed} {hintsUsed === 1 ? 'nudge' : 'nudges'}
                 </span>
               </p>
             ) : message ? (
-              <p className="t-small rounded-[var(--radius-sm)] border-l-2 border-red-pen bg-paper px-3 py-2 text-ink">{message}</p>
+              <GuideSays>{message}</GuideSays>
             ) : point ? (
-              <p className="t-small text-muted">
+              <p className="text-[0.92rem] text-graphite">
                 Your point: <span className="t-num text-ink">{label(point)}</span>
               </p>
             ) : null}
           </div>
 
           {hintsUsed > 0 && !solved && (
-            <ul className="mt-3 space-y-1.5">
+            <ul className="mt-3 space-y-2">
               {hints.slice(0, hintsUsed).map((h, i) => (
-                <li key={i} className="t-small rounded-[var(--radius-sm)] bg-highlighter/40 px-3 py-2 text-ink">
-                  <span className="font-semibold">Hint {i + 1}.</span> {h}
+                <li key={i}>
+                  <GuideSays>{h}</GuideSays>
                 </li>
               ))}
             </ul>
@@ -270,11 +259,7 @@ export function MiniSimulator() {
 
           <div className="mt-auto flex flex-wrap items-center gap-2 pt-4">
             {solved ? (
-              <button
-                type="button"
-                onClick={next}
-                className="press h-11 rounded-full bg-ink px-5 text-[15px] font-semibold text-white hover:bg-cobalt"
-              >
+              <button type="button" onClick={next} className="press btn-brush h-11 bg-ink px-5 text-[15px] font-semibold text-sheet hover:bg-ultramarine">
                 Try another
               </button>
             ) : (
@@ -283,7 +268,7 @@ export function MiniSimulator() {
                   type="button"
                   onClick={check}
                   disabled={!point}
-                  className="press h-11 rounded-full bg-ink px-5 text-[15px] font-semibold text-white hover:bg-cobalt disabled:cursor-not-allowed disabled:bg-muted"
+                  className="press btn-brush h-11 bg-ink px-5 text-[15px] font-semibold text-sheet hover:bg-ultramarine disabled:cursor-not-allowed disabled:opacity-50"
                 >
                   Check
                 </button>
@@ -291,9 +276,9 @@ export function MiniSimulator() {
                   type="button"
                   onClick={() => setHintsUsed((h) => Math.min(h + 1, hints.length))}
                   disabled={hintsUsed >= hints.length}
-                  className="press h-11 rounded-full border border-ink/25 px-5 text-[15px] font-semibold text-ink hover:border-ink hover:bg-ink hover:text-white disabled:cursor-not-allowed disabled:opacity-60"
+                  className="press btn-brush h-11 border-2 border-ink px-5 text-[15px] font-semibold text-ink hover:bg-ochre-soft disabled:cursor-not-allowed disabled:opacity-50"
                 >
-                  {hintsUsed >= hints.length ? 'No more hints' : 'Hint'}
+                  {hintsUsed >= hints.length ? 'No more nudges' : 'A nudge'}
                 </button>
               </>
             )}
@@ -301,5 +286,15 @@ export function MiniSimulator() {
         </div>
       </div>
     </div>
+  );
+}
+
+/** The guide's voice: a short handwritten bubble. It nudges; it never gives the answer. */
+function GuideSays({ children }: { children: React.ReactNode }) {
+  return (
+    <p className="sketch-soft bg-sheet px-3.5 py-2.5">
+      <span className="sr-only">The guide says: </span>
+      <span className="hand text-[1.1rem] leading-snug">{children}</span>
+    </p>
   );
 }
