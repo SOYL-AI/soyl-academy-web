@@ -8,7 +8,7 @@
  * stays out of history, server logs and Referer headers. Nothing changes until the person presses the button:
  * email link scanners that open every link cannot unsubscribe or confirm anyone (a GET never changes state).
  */
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Button } from '@/components/platform/ui/kit/Button';
 import { Card, CardTitle } from '@/components/platform/ui/kit/Display';
 import { REMINDERS } from '@/platform/shared/config/notifications';
@@ -26,10 +26,12 @@ type Phase<T> = { kind: 'loading' } | { kind: 'missing' } | { kind: 'ready'; tok
 
 function useFragmentToken<T>(): [Phase<T>, (p: Phase<T>) => void] {
   const [phase, setPhase] = useState<Phase<T>>({ kind: 'loading' });
+  // Kept across a re-run of the effect (React Strict Mode runs it twice in development, after the hash is gone).
+  const read = useRef<string | null | undefined>(undefined);
   useEffect(() => {
-    const token = emailTokenFromHash(window.location.hash);
+    if (read.current === undefined) read.current = emailTokenFromHash(window.location.hash);
+    const token = read.current;
     if (window.location.hash) window.history.replaceState(null, '', window.location.pathname);
-    // eslint-disable-next-line react-hooks/set-state-in-effect -- read the fragment once on the client
     setPhase(token ? { kind: 'ready', token } : { kind: 'missing' });
   }, []);
   return [phase, setPhase];
