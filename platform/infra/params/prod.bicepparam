@@ -179,9 +179,9 @@ param appSettings = {
   // Purchases (D-003, D-038): false until launch, even with billingOn (runbooks/billing-go-live.md step 6).
   BILLING_ENABLED: 'false'
   PUBLIC_BASE_URL: 'https://www.soylai.com'
-  // Reminder emails (D-055): the worker's notifications.reminders job. Off until the owner's go-ahead;
-  // 'true' and redeploy to start (migration 0018 first). The code also defaults to off in stg/prod.
-  REMINDERS_ENABLED: 'false'
+  // Reminder emails (D-055): the worker's notifications.reminders job. On since the owner's go-ahead
+  // (2026-11-14); 'false' and redeploy to stop. The code defaults to off in stg/prod without this.
+  REMINDERS_ENABLED: 'true'
   WEB_ORIGIN: 'https://www.soylai.com'
   AUTH_METHODS: 'email'
   EMAIL_PROVIDER: 'acs'
