@@ -221,7 +221,8 @@ Unsubscribe: https://www.soylai.com/me/email/unsubscribe#t=01936b2e-1c4a-7d00-8a
   go-ahead. Until then the job logs `reminders_not_configured` / "switched off" and sends nothing.
 - Migration 0018 must run before the new API image (new tables are read by `/v1/me/email-preferences` and `DELETE /v1/me`).
 - Privacy notice: one line about reminder emails and the optional parent address (Lead to propose to the owner).
-- No e2e (Playwright) spec yet for the card or the link pages; covered by unit/component tests and the API tests.
+- No e2e (Playwright) spec yet for the card or the link pages; covered by unit/component tests and the API tests. Checked by hand in the real app (API dev on :8798, web dev on :3102, flag on): the /me card at 360 px in light and dark (no horizontal scroll, scrollWidth 360), adding a parent address → pending + toast, and the unsubscribe page reading and clearing the fragment.
+- Found while checking: in `next dev` (React Strict Mode runs effects twice) a page that reads `#t=` and clears it read an empty hash the second time. Fixed in `EmailPreferencesLinks.tsx` (token kept in a ref). The consent page `components/platform/consent/ParentWithdrawClient.tsx` has the same dev-only pattern (production is unaffected; web-platform may want the same fix).
 - ACS custom headers: request shape unit-tested; not yet observed against the real ACS resource (check a delivered
   message shows Gmail's unsubscribe button after go-live).
 
