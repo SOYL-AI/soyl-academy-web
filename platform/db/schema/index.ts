@@ -14,3 +14,4 @@ export * from './progress';
 export * from './release-items';
 export * from './views';
 export * from './future-builders';
+export * from './notifications';
