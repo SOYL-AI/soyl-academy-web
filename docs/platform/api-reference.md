@@ -38,7 +38,7 @@ Every route declares `config.policy = { roles, csrf, rateLimit, consent, fresh?,
 | Field | Meaning |
 |---|---|
 | `roles` | Who may call the route: `guest` (no session), `student`, `parent`, `reviewer`, `admin`. No session on a route without `guest` → `401 unauthenticated`. Wrong role → `403 forbidden`. |
-| `csrf` | AUTH-12: on POST, PUT, PATCH and DELETE, the `Origin` header must exactly match the environment allowlist, otherwise `403 origin_not_allowed`. Bodies must be `Content-Type: application/json`, otherwise `415 unsupported_media_type`. The check has no effect on GET. **The only `csrf=false` route is `POST /v1/webhooks/razorpay`**, which is verified by HMAC (`X-Razorpay-Signature` over the raw body). A test pins this exemption. |
+| `csrf` | AUTH-12: on POST, PUT, PATCH and DELETE, the `Origin` header must exactly match the environment allowlist, otherwise `403 origin_not_allowed`. Bodies must be `Content-Type: application/json`, otherwise `415 unsupported_media_type`. The check has no effect on GET. **The only `csrf=false` route is `POST /v1/webhooks/razorpay`**, which is verified by HMAC (`X-Razorpay-Signature` over the raw body). A test pins this exemption. Since then the test also pins the key-authenticated Future Builders ingest routes and, with D-055, `POST /v1/email/unsubscribe/one-click` (RFC 8058: mailbox providers POST without an Origin; an HMAC token in the query authorises it and it can only switch email off; it alone also accepts a form body, which is ignored). |
 | `rateLimit` | `false` means no limits; only the health routes use it. Otherwise the API-RL-1 defaults `api.ip` and `api.user` apply, plus any extra `buckets`. `failClosed` (API-16): if the rate-limit store (Redis) is down, the route refuses with `503 service_unavailable` instead of letting the request through. Auth, OTP, MFA and AI routes set it. |
 | `consent` | API-11: a feature from `CONSENT_FEATURES`. It is enforced only for features in `CONSENT.gatedFeatures`: `ai`, `uploads`, `leaderboards`, `rank_cards`, `profile_school_city` and `notifications`. Those need consent state `granted`, otherwise `403 consent_required` (or `503 consent_unavailable` when consent cannot be checked). `test_attempts` and `merge_guest` are **declared but not gated** (D-014 in [DECISIONS.md](DECISIONS.md): learning and tests stay free). In the tables below they carry the mark †. |
 | `fresh` | AUTH-9: the session must be at most 600 s old, otherwise `403 fresh_session_required`. |
@@ -92,6 +92,8 @@ After the hooks, the request goes through:
 | `credits.read.user` | user | 60 / 60 s | `GET /v1/me/credits/guide`, `GET /v1/me/credits/history` |
 | `avatars.read.user` | user | 60 / 60 s | `GET /v1/me/avatars` |
 | `schools.search.user` | user | 60 / 60 s | `GET /v1/schools` |
+| `email.prefs.user` | user | 30 / 3600 s | Reminder settings and parent-address writes (D-055); confirmation sends also have per-account, per-address and per-IP limits (`REMINDERS.parentConfirmSend`) |
+| `email.link.ip` | IP | 300 / 3600 s | Signed email links without a session: parent confirm, unsubscribe, one-click unsubscribe (D-055) |
 | `mfa.user` | user | 20 / 900 s | Staff TOTP routes |
 
 The policy hook only knows IP keys and user keys. The attempt-keyed buckets are therefore enforced in the handlers (`modules/tests.ts`). Those handler-level checks fail open when the rate-limit store is down.
@@ -185,6 +187,21 @@ Outside `/v1`. No edge auth and no rate limits. They are served even when the pl
 | GET | `/v1/me/sessions` | Members | true | default | — | — | Your active sessions | [backend-api M1](handoffs/2026-10-26-backend-api-m1.md) |
 | DELETE | `/v1/me/sessions` | Members | true | default | — | — | Sign out everywhere else | [backend-api M1](handoffs/2026-10-26-backend-api-m1.md) |
 | DELETE | `/v1/me/sessions/:id` | Members | true | default | — | — | Revoke one of your sessions | [backend-api M1](handoffs/2026-10-26-backend-api-m1.md) |
+
+### 6.1 Email reminders (8, D-055)
+
+`notifications/routes.ts`. Reminders go to the student's own verified address, and to an optional parent address only after the parent confirmed it on a platform page. Masked addresses only in responses. The signed tokens (`<userId>.<s|p|c><generation>.<HMAC>`, OTP_PEPPER label `soyl/email/v1`) reach the pages in the URL fragment; only the one-click URL carries one in the query.
+
+| Method | Path | Roles | CSRF | Rate limit | Consent | Fresh/MFA | Purpose | Documented in |
+|---|---|---|---|---|---|---|---|---|
+| GET | `/v1/me/email-preferences` | Student | true | default | — | — | `{ studentEmail (masked) or null, reminders, remindersAvailable, parent: { email (masked) or null, status: none, pending or active, reminders, unsubscribedAt } }` | [email reminders](handoffs/2026-11-14-backend-api-email-reminders.md) |
+| PATCH | `/v1/me/email-preferences` | Student | true | default + `email.prefs.user` | — | — | `{ reminders?, parentReminders? }`; turning your own on without an email address → 409 `reminders_unavailable` | [email reminders](handoffs/2026-11-14-backend-api-email-reminders.md) |
+| PUT | `/v1/me/parent-email` | Student | true | default + `email.prefs.user` | — | — | `{ email }` → pending + ONE confirmation email (own address refused; same confirmed address = no-op); returns the settings + `resendAfterSeconds` | [email reminders](handoffs/2026-11-14-backend-api-email-reminders.md) |
+| POST | `/v1/me/parent-email/resend` | Student | true | default + `email.prefs.user` | — | — | New confirmation email to the pending address (old link dies); no-op unless pending | [email reminders](handoffs/2026-11-14-backend-api-email-reminders.md) |
+| DELETE | `/v1/me/parent-email` | Student | true | default + `email.prefs.user` | — | — | Remove the parent address (erased at once; its links stop working) | [email reminders](handoffs/2026-11-14-backend-api-email-reminders.md) |
+| POST | `/v1/email/parent-confirm` | All | true | default + `email.link.ip` | — | — | `{ token }` the parent's Confirm button → `{ status: active, alreadyConfirmed }`; 410 `email_link_expired` (expired after 72 h, replaced, or address changed), 404 `email_link_invalid` | [email reminders](handoffs/2026-11-14-backend-api-email-reminders.md) |
+| POST | `/v1/email/unsubscribe` | All | true | default + `email.link.ip` | — | — | `{ token }` → `{ kind: student or parent, alreadyOff }`: student reminders off, or the parent address erased | [email reminders](handoffs/2026-11-14-backend-api-email-reminders.md) |
+| POST | `/v1/email/unsubscribe/one-click?token=` | All | **false** | default + `email.link.ip` | — | — | RFC 8058 List-Unsubscribe-Post (form body ignored); same effect as above | [email reminders](handoffs/2026-11-14-backend-api-email-reminders.md) |
 
 ## 7. Catalog (3)
 
@@ -356,6 +373,8 @@ Registered only when `DEV_OTP_OUTBOX=true`. Config refuses that setting unless `
 | Dev-only (hidden) | 1 |
 | **Total** | **81** (snapshot rows; 80 in `openapi.json`) |
 
+> 2026-11-14, email reminders (D-055): §6.1 gained 8 routes (5 student, 3 signed-link routes without a session, one of them the second AUTH-12 exemption kind: RFC 8058 one-click). Buckets `email.prefs.user` and `email.link.ip`.
+
 > 2026-10-28, credits + avatars (D-044): 3 member routes (`/v1/me/credits/guide`, `/v1/me/credits/history`, `/v1/me/avatars`); `/v1/me` and `PATCH /v1/me` gained `avatar` (403 `avatar_locked`); `/v1/credits` gained `bonusToday`; league standings, live leaderboards and the player card gained `avatar` next to the public name; practice answer and self-mark responses gained `creditBonuses`.
 
 > 2026-10-28, dashboard + school capture: 2 member routes (`/v1/me/dashboard`, `/v1/schools`); `/v1/me` gained `school` and `weeklyGoal`.
@@ -395,5 +414,5 @@ cd api && npx vitest run test/route-policy.test.ts -u   # updates the route-poli
 - The route-policy test also pins three things:
   - the AUTH-1 list of auth routes
   - the rule that only health routes sit outside `/v1`
-  - the AUTH-12 rule that **only** `POST /v1/webhooks/razorpay` has `csrf=false`, because it is HMAC-verified
+  - the AUTH-12 exemptions from `csrf=true`: `POST /v1/webhooks/razorpay` (HMAC), the two Future Builders ingest routes (server key) and `POST /v1/email/unsubscribe/one-click` (HMAC token, D-055)
 - When routes change, refresh this document from the two artifacts: the snapshot gives the Roles, CSRF, Rate limit, Consent and Fresh/MFA columns, and `openapi.json` gives the Purpose column. Then re-check the bucket table against `RATE_LIMITS` and the route count in §18.
